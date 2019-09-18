@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0f732eb7b6ee77cb6b16130fc41655922127c3b
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
-ms.translationtype: HT
+ms.openlocfilehash: 9ee68d0da3b7f23d4de0192da076ef6f71d6d222
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469687"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051634"
 ---
 # <a name="specifying-a-character-set"></a>Spécification d'un jeu de caractères
 Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> contrôle le marshaling des chaînes et détermine de quelle façon l’appel de code non managé recherche des noms de fonction dans une DLL. Cette rubrique décrit ces deux comportements.  
@@ -149,6 +149,6 @@ extern "C" int MessageBox(
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
-- [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Exemples d'appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)
-- [Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+- [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
+- [Exemples d'appel de code non managé](platform-invoke-examples.md)
+- [Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)

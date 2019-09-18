@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 380334dbe9b91ea369de6cbe58686a9a74254c2c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32217b9e681179c246560ff5b51b65b4f4e044d5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874664"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052886"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat (MDA)
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dateTimeInvalidLocalFormat` est activé quand une instance de <xref:System.DateTime> stockée en temps universel (UTC, Universal Coordinated Time) est mise en forme à l’aide d’un format conçu uniquement pour des instances de <xref:System.DateTime> locales. Cet Assistant Débogage managé n’est pas activé pour les instances de <xref:System.DateTime> par défaut ou non spécifiées.  
@@ -35,7 +35,7 @@ Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));
 ### <a name="cause"></a>Cause  
  Le format « z » pour la méthode <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, par exemple, « +10:00 » pour l’heure de Sydney. Comme tel, il ne produit un résultat significatif que si <xref:System.DateTime> a une valeur locale. S’il s’agit d’une valeur en heure UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, mais il n’affiche pas et n’ajuste pas le spécificateur de fuseau horaire.  
   
-### <a name="resolution"></a>Résolution  
+### <a name="resolution"></a>Résolution :  
  Les instances de <xref:System.DateTime> en temps universel doivent être mises en forme d’une façon qui indique qu’elles sont au format UTC. Le format recommandé consiste à utiliser un « Z » pour désigner l’heure UTC :  
   
 ```csharp
@@ -89,4 +89,4 @@ String serialized = XmlConvert.ToString(myDateTime,
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9d635100c4e8214a7a8659c2d3e4da61825cf243
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 860f524820e6b92e58f4a593e2ddf651a5e7094d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966304"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052907"
 ---
 # <a name="dangerousthreadingapi-mda"></a>Assistant Débogage managé dangerousThreadingAPI
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dangerousThreadingAPI` est activé quand la méthode <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> est appelée sur un thread autre que le thread actif.  
@@ -70,5 +70,5 @@ Thread t = new Thread(delegate() { Thread.Sleep(1000); });
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Thread>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
 - [lock, instruction](../../csharp/language-reference/keywords/lock-statement.md)

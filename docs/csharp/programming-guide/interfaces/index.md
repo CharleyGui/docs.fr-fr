@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 30c44b9f98bcc61d54b8103b6b40d14fd35715f4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: a2cc7cb1b6da860a2c27bc8d2fe74e0ffde5f5e1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589176"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053276"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
@@ -27,7 +27,7 @@ Le nom du struct doit être un [nom d’identificateur](../inside-a-program/iden
 
 Toute classe ou tout struct qui implémentent l'interface <xref:System.IEquatable%601> doivent contenir une définition pour une méthode <xref:System.IEquatable%601.Equals%2A> qui correspond à la signature spécifiée par l'interface. Ainsi, vous pouvez compter sur une classe qui implémente `IEquatable<T>` pour contenir une méthode `Equals` avec laquelle une instance de la classe peut déterminer si elle est égale à une autre instance de la même classe.  
   
-La définition de `IEquatable<T>` ne fournit pas d'implémentation pour `Equals`. L'interface définit uniquement la signature. De cette façon, une interface en C# est semblable à une classe abstraite dans laquelle toutes les méthodes sont abstraites. En revanche, une classe ou un struct peuvent implémenter plusieurs interfaces, mais une classe peut uniquement hériter d'une seule classe, abstraite ou non.
+La définition de `IEquatable<T>` ne fournit pas d'implémentation pour `Equals`. Une classe ou un struct peut implémenter plusieurs interfaces, mais une classe peut uniquement hériter d’une classe unique.
   
 Pour plus d’informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   

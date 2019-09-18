@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: 1d3c3628a32439d4847505e234b12b084b47ba3d
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8c597738d656b32e7b4c75246027b726f425c6ef
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854120"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053016"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Procédure : Créer un service de données à l’aide d’une source de données ADO.NET Entity Framework (WCF Data Services)
 
 WCF Data Services expose les données d’entité en tant que service de données. Ces données d’entité sont fournies par l’infrastructure ADO. NETEntity Framework lorsque la source de données est une base de données relationnelle. Cette rubrique vous indique comment créer un modèle de données basé sur Entity Framework dans une application Web Visual Studio qui repose sur une base de données existante et utilise ce modèle de données pour créer un service de données.
 
-Entity Framework fournit également un outil en ligne de commande qui peut générer un modèle Entity Framework en dehors d'un projet Visual Studio. Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer les fichiers](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
+Entity Framework fournit également un outil en ligne de commande qui peut générer un modèle Entity Framework en dehors d'un projet Visual Studio. Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour générer les fichiers](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
 
 ## <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Pour ajouter à une application Web existante un modèle Entity Framework qui repose sur une base de données existante
 
@@ -57,7 +57,7 @@ Entity Framework fournit également un outil en ligne de commande qui peut gén�
 
 4. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez le modèle **service de données WCF** dans la catégorie **Web** .
 
-   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](media/wcf-data-service-item-template.png)
+   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
    > Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.
@@ -77,4 +77,4 @@ Entity Framework fournit également un outil en ligne de commande qui peut gén�
 - [Définition de WCF Data Services](defining-wcf-data-services.md)
 - [Fournisseurs de services de données](data-services-providers-wcf-data-services.md)
 - [Guide pratique pour Créer un service de données à l’aide du fournisseur de réflexion](create-a-data-service-using-rp-wcf-data-services.md)
-- [Guide pratique : Créer un service de données à l’aide d’une source de données LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md)
+- [Guide pratique pour Créer un service de données à l’aide d’une source de données LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md)

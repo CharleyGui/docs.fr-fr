@@ -26,12 +26,12 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: 6243046e7e33a73f2479337cb64c2a236efcfafc
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: 1bad43b96fc6f66724e5e40cdf0ae6d76b46d867
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662251"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047851"
 ---
 # <a name="ipv6-addressing"></a>Adressage IPv6
 
@@ -41,7 +41,7 @@ Dans le protocole IPv6, les adresses ont une longueur de 128 bits. Une telle t
 
 Les trois formats conventionnels utilisés pour représenter les adresses IPv6 sous forme de chaînes textuelles sont les suivants :
 
-- **Format hexadécimal/deux-points**. Il s’agit du format recommandé : n:n:n:n:n:n:n:n. Chaque n représente la valeur hexadécimale de l’un des huit éléments 16 bits de l’adresse. Par exemple : `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.
+- **Format hexadécimal/deux-points**. Il s’agit du format recommandé : n:n:n:n:n:n:n:n. Chaque n représente la valeur hexadécimale de l’un des huit éléments 16 bits de l’adresse. Par exemple : `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.
 
 - **Format compressé**. En raison de la longueur des adresses, il est courant d’avoir des adresses comprenant une longue chaîne de zéros. Pour simplifier l’écriture de ces adresses, utilisez le format compressé, dans lequel une séquence ininterrompue de blocs de 0 est représentée par un double deux-points (::). Ce symbole peut n’apparaître qu’une seule fois dans une adresse. Par exemple, l’adresse de multidiffusion `FFED:0:0:0:0:BA98:3210:4562` s’affiche ainsi au format compressé : `FFED::BA98:3210:4562`. L’adresse de monodiffusion `3FFE:FFFF:0:0:8:800:20C4:0` s’affiche ainsi au format compressé : `3FFE:FFFF::8:800:20C4:0`. L’adresse de bouclage `0:0:0:0:0:0:0:1` s’affiche ainsi au format compressé : `::`. L’adresse non spécifiée `0:0:0:0:0:0:0:0` s’affiche ainsi au format compressé : `::`.
 
@@ -77,5 +77,5 @@ En général, un nœud a toujours une adresse link-local. Il peut avoir une adre
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Protocole IPv6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
-- [Sockets](../../../docs/framework/network-programming/sockets.md)
+- [Protocole IPv6](internet-protocol-version-6.md)
+- [Sockets](sockets.md)

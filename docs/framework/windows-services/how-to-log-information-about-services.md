@@ -13,12 +13,12 @@ helpviewer_keywords:
 - logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
-ms.openlocfilehash: 1ffc698910fe722fe761c62b87b059068d5f243f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 3c974d5a98f8056e45899b109878e5a28ab2938e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935519"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053607"
 ---
 # <a name="how-to-log-information-about-services"></a>Procédure : enregistrer des informations relatives aux services
 Par défaut, tous les projets de service Windows ont la possibilité d’interagir avec le journal d’événements des applications et d’y écrire des informations et des exceptions. Vous utilisez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> pour indiquer si vous souhaitez cette fonctionnalité dans votre application. Par défaut, la journalisation est activée pour tout service que vous créez avec le modèle de projet de service Windows. Vous pouvez utiliser un formulaire statique de la classe <xref:System.Diagnostics.EventLog> pour écrire des informations de service dans un journal sans avoir à créer une instance d’un composant <xref:System.Diagnostics.EventLog> ou inscrire manuellement une source.  
@@ -71,4 +71,4 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c1a0e2a6c7851b261baa3e02f6431e7a4ff697e4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7bcdb235ff2a73514c5bb3ad7abc3f4c3fc8e441
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660321"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052923"
 ---
 # <a name="contextswitchdeadlock-mda"></a>Assistant Débogage managé contextSwitchDeadlock
 
@@ -48,9 +48,9 @@ Il est possible que cet Assistant Débogage managé soit faussement activé quan
 Pour déterminer si l'Assistant Débogage managé est faussement activé, désactivez tous les points d'arrêt, redémarrez l'application et laissez-la s'exécuter sans l'interrompre. Si l'Assistant Débogage managé n'est pas activé, l'activation initiale était probablement fausse. Dans ce cas, désactivez l'Assistant Débogage managé pour éviter des interférences avec la session de débogage.
 
 > [!NOTE]
-> Cet Assistant Débogage MANAGÉ est dans l’ensemble par défaut de Visual Studio. Pour plus d’informations sur la désactivation des Assistants Débogage managé, consultez [diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
+> Cet Assistant Débogage managé est défini par défaut pour Visual Studio. Pour plus d’informations sur la désactivation des MDA, consultez [diagnostic des erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
 
-## <a name="resolution"></a>Résolution
+## <a name="resolution"></a>Résolution :
 
 Appliquez les règles COM relatives au pompage des messages de thread cloisonné.
 
@@ -75,5 +75,5 @@ Message décrivant le contexte actuel et le contexte cible.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)

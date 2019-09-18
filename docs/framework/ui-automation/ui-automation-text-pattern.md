@@ -8,12 +8,12 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: b51206f2-1281-4ad0-9820-ea39d88ae577
-ms.openlocfilehash: 27d5bcee34bcbfa101f381a569428a64a45da0b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b7985e6cf3eaa810a893b0b5183a1c141a041768
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69954091"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040510"
 ---
 # <a name="ui-automation-text-pattern"></a>Modèle de texte UI Automation
 > [!NOTE]
@@ -22,14 +22,14 @@ ms.locfileid: "69954091"
  Cette rubrique contient des vues d’ensemble et des rubriques de procédures pour vous aider à commencer à programmer des éléments de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]texte dans.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble de TextPattern d’UI Automation](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)  
- [Vue d’ensemble de TextPattern et des objets incorporés](../../../docs/framework/ui-automation/textpattern-and-embedded-objects-overview.md)  
- [Rubriques de guide pratique](../../../docs/framework/ui-automation/ui-automation-text-pattern-how-to-topics.md)  
+ [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)  
+ [Vue d’ensemble de TextPattern et des objets incorporés](textpattern-and-embedded-objects-overview.md)  
+ [Rubriques de guide pratique](ui-automation-text-pattern-how-to-topics.md)  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation.Text>  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+- [Modèles de contrôle UI Automation](ui-automation-control-patterns.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)

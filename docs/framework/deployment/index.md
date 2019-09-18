@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d9448edab101ef11447b54e12c53abcb578646a
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: f1d13c4c3e27b5af5b3c3e84995cae3df94a307d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971601"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052079"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
 
@@ -38,39 +38,39 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
   - Modes d'installation :
 
-    - [Installation sans assistance](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_custom)
+    - [Installation sans assistance](deployment-guide-for-developers.md#chaining_custom)
 
-    - [Affichage d'une interface utilisateur](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_default)
+    - [Affichage d'une interface utilisateur](deployment-guide-for-developers.md#chaining_default)
 
-  - [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)
+  - [Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md)
 
   - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
 
 - Déploiement du .NET Framework avec une application cliente (pour les développeurs) :
 
-  - [Utilisation d'InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) dans un projet d'installation et de déploiement
+  - [Utilisation d'InstallShield](deployment-guide-for-developers.md#installshield-deployment) dans un projet d'installation et de déploiement
 
-  - [Utilisation d'une application ClickOnce de Visual Studio](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)
+  - [Utilisation d'une application ClickOnce de Visual Studio](deployment-guide-for-developers.md#clickonce-deployment)
 
-  - [Création d'un package d'installation WiX](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)
+  - [Création d'un package d'installation WiX](deployment-guide-for-developers.md#wix)
 
-  - [Utilisation d'un programme d'installation personnalisé](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining)
+  - [Utilisation d'un programme d'installation personnalisé](deployment-guide-for-developers.md#chaining)
 
-  - [Informations supplémentaires](../../../docs/framework/deployment/deployment-guide-for-developers.md) pour les développeurs
+  - [Informations supplémentaires](deployment-guide-for-developers.md) pour les développeurs
 
 - Déploiement du .NET Framework (pour les OEM et les administrateurs) :
 
   - [Kit de déploiement et d'évaluation (ADK) Windows](https://go.microsoft.com/fwlink/p/?LinkId=254976)
 
-  - [Guide de l'administrateur](../../../docs/framework/deployment/guide-for-administrators.md)
+  - [Guide de l'administrateur](guide-for-administrators.md)
 
 **Maintenance**
 
 - Pour obtenir des informations générales, consultez le [blog .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977).
 
-- [Détection des versions](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)
+- [Détection des versions](../migration-guide/how-to-determine-which-versions-are-installed.md)
 
-- [Détection des Service Packs et des mises à jour](../../../docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
+- [Détection des Service Packs et des mises à jour](../migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
 
 ## <a name="features-that-simplify-deployment"></a>Fonctionnalités d’aide au déploiement
 
@@ -154,25 +154,25 @@ Le .NET Framework offre les options suivantes pour distribuer des applications 
 
 ### <a name="installation-location"></a>Emplacement d'installation
 
-Pour déterminer où déployer les assemblys de votre application afin qu'ils puissent être localisés par le runtime, consultez la page [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).
+Pour déterminer où déployer les assemblys de votre application afin qu'ils puissent être localisés par le runtime, consultez la page [Méthode de localisation des assemblys par le runtime](how-the-runtime-locates-assemblies.md).
 
-Prenez également en compte les considérations de sécurité dans votre choix de la méthode de déploiement de votre application. Des autorisations de sécurité sont accordées au code managé en fonction de l'emplacement du code. Le déploiement d'une application ou d'un composant à un emplacement présentant un niveau de confiance faible (Internet, par exemple) limite les actions réalisables par cette application ou ce composant. Pour plus d'informations sur le déploiement et la sécurité, consultez la page [Informations de base sur la sécurité d'accès du code](../../../docs/framework/misc/code-access-security-basics.md).
+Prenez également en compte les considérations de sécurité dans votre choix de la méthode de déploiement de votre application. Des autorisations de sécurité sont accordées au code managé en fonction de l'emplacement du code. Le déploiement d'une application ou d'un composant à un emplacement présentant un niveau de confiance faible (Internet, par exemple) limite les actions réalisables par cette application ou ce composant. Pour plus d'informations sur le déploiement et la sécurité, consultez la page [Informations de base sur la sécurité d'accès du code](../misc/code-access-security-basics.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 |Titre|Description|
 |-----------|-----------------|
-|[Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Décrit comment le common language runtime détermine quel assembly utiliser pour répondre à une demande de liaison.|
-|[Meilleures pratiques pour le chargement d'assemblys](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.|
-|[Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.|
-|[Guide de déploiement pour les administrateurs](../../../docs/framework/deployment/guide-for-administrators.md)|Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système dans un réseau en utilisant System Center Configuration Manager (SCCM).|
-|[Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.|
+|[Méthode de localisation des assemblys par le runtime](how-the-runtime-locates-assemblies.md)|Décrit comment le common language runtime détermine quel assembly utiliser pour répondre à une demande de liaison.|
+|[Meilleures pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)|Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.|
+|[Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md)|Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.|
+|[Guide de déploiement pour les administrateurs](guide-for-administrators.md)|Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système dans un réseau en utilisant System Center Configuration Manager (SCCM).|
+|[Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)|Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.|
 |[Déploiement d’applications, de services et de composants](/visualstudio/deployment/deploying-applications-services-and-components)|Présente les différentes options de déploiement dans Visual Studio, y compris les instructions de publication d'une application à l'aide des fonctionnalités ClickOnce et Windows Installer.|
 |[Publication d’applications ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|
-|[Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Décrit le modèle « Hub and Spoke » utilisé par le .NET Framework pour empaqueter et déployer des ressources. Fournit des informations sur les conventions de dénomination des ressources, le processus de secours et les alternatives à l'empaquetage.|
-|[Déploiement d'une application d'interopérabilité](../../../docs/framework/interop/deploying-an-interop-application.md)|Explique comment livrer et installer des applications Interop, qui comportent généralement un assembly client .NET Framework, un ou plusieurs assemblys d'interopérabilité représentant des bibliothèques de types COM distinctes et un ou plusieurs composants COM inscrits.|
-|[Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Décrit comment lancer et suivre le processus d'installation sans assistance du .NET Framework tout en affichant votre propre vue de la progression de l'installation.|
+|[Empaquetage et déploiement de ressources](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|Décrit le modèle « Hub and Spoke » utilisé par le .NET Framework pour empaqueter et déployer des ressources. Fournit des informations sur les conventions de dénomination des ressources, le processus de secours et les alternatives à l'empaquetage.|
+|[Déploiement d'une application d'interopérabilité](../interop/deploying-an-interop-application.md)|Explique comment livrer et installer des applications Interop, qui comportent généralement un assembly client .NET Framework, un ou plusieurs assemblys d'interopérabilité représentant des bibliothèques de types COM distinctes et un ou plusieurs composants COM inscrits.|
+|[Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|Décrit comment lancer et suivre le processus d'installation sans assistance du .NET Framework tout en affichant votre propre vue de la progression de l'installation.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de développement](../../../docs/framework/development-guide.md)
+- [Guide de développement](../development-guide.md)

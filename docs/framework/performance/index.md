@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea61b3abf920a5261933f56c71011b50bcd52bb2
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: e58c7b3ce134139950de54d98b590ec2e6b0f3de
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927098"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046458"
 ---
 # <a name="net-framework-performance"></a>Performances .NET Framework
 Si vous voulez créer des applications dotées de hautes performances, vous devez concevoir et planifier les performances comme vous concevez n'importe quelle autre fonctionnalité de votre application. Vous pouvez utiliser les outils fournis par Microsoft pour mesurer les performances de votre application et, si nécessaire, apporter des améliorations à l'utilisation de la mémoire, au débit de code et à la réactivité. Cette rubrique répertorie les outils d'analyse de performance fournis par Microsoft et fournit des liens vers d'autres rubriques qui couvrent les performances dans des domaines spécifiques du développement d'applications.  
@@ -38,14 +38,14 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
 |[Windows Performance Analyzer](https://www.microsoft.com/download/details.aspx?id=30652)|Utilisez cet outil pour déterminer les performances globales du système telles que l'utilisation de la mémoire et du stockage par votre application quand plusieurs applications s'exécutent sur le même ordinateur. Cet outil est disponible à partir du centre de téléchargement dans le cadre du Kit de déploiement et d’évaluation Windows (Windows ADK) pour [!INCLUDE[win8](../../../includes/win8-md.md)]. Pour plus d’informations, consultez [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|  
   
 ### <a name="event-tracing-for-windows-etw"></a>Suivi d'événements pour Windows (ETW)  
- Le suivi d'événements pour Windows est une technique qui vous permet d'obtenir des informations de diagnostic sur le code en cours d'exécution et qui est essentielle pour un grand nombre des outils de performance mentionnés précédemment. Il crée des journaux lorsque des événements particuliers sont déclenchés par des applications .NET Framework et par Windows. Le suivi d'événements pour Windows vous permet d'activer et désactiver la journalisation de façon dynamique, et vous pouvez effectuer un traçage détaillé dans un environnement de production sans redémarrer votre application. .NET Framework propose la prise en charge des événements ETW, et le suivi d'événements pour Windows est utilisé par de nombreux outils de profilage et de performance pour générer des données de performance. Ces outils activent et désactivent souvent des événements ETW et il est utile de se familiariser avec eux. Vous pouvez utiliser des événements ETW spécifiques pour collecter des informations de performance sur des composants particuliers de votre application. Pour plus d’informations sur la prise en charge du suivi d’événements pour Windows (ETW) dans .NET Framework, consultez [Événements ETW dans le Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md) et [Événements ETW dans la bibliothèque parallèle de tâches et PLINQ](../../../docs/framework/performance/etw-events-in-task-parallel-library-and-plinq.md).  
+ Le suivi d'événements pour Windows est une technique qui vous permet d'obtenir des informations de diagnostic sur le code en cours d'exécution et qui est essentielle pour un grand nombre des outils de performance mentionnés précédemment. Il crée des journaux lorsque des événements particuliers sont déclenchés par des applications .NET Framework et par Windows. Le suivi d'événements pour Windows vous permet d'activer et désactiver la journalisation de façon dynamique, et vous pouvez effectuer un traçage détaillé dans un environnement de production sans redémarrer votre application. .NET Framework propose la prise en charge des événements ETW, et le suivi d'événements pour Windows est utilisé par de nombreux outils de profilage et de performance pour générer des données de performance. Ces outils activent et désactivent souvent des événements ETW et il est utile de se familiariser avec eux. Vous pouvez utiliser des événements ETW spécifiques pour collecter des informations de performance sur des composants particuliers de votre application. Pour plus d’informations sur la prise en charge du suivi d’événements pour Windows (ETW) dans .NET Framework, consultez [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md) et [Événements ETW dans la bibliothèque parallèle de tâches et PLINQ](etw-events-in-task-parallel-library-and-plinq.md).  
   
 ## <a name="performance-by-app-type"></a>Performances par type d'application  
  Chaque type d'application .NET Framework possède ses propres pratiques recommandées, considérations et outils pour évaluer les performances. Le tableau ci-dessous propose des liens vers des rubriques liées aux performances pour des types d'applications .NET Framework spécifiques.  
   
 |Type d'application|Consultez|  
 |--------------|---------|  
-|Applications .NET Framework pour toutes les plateformes|[Garbage Collection et performances](../../standard/garbage-collection/performance.md)<br /><br /> [Conseils relatifs aux performances](../../../docs/framework/performance/performance-tips.md)|  
+|Applications .NET Framework pour toutes les plateformes|[Garbage Collection et performances](../../standard/garbage-collection/performance.md)<br /><br /> [Conseils relatifs aux performances](performance-tips.md)|  
 |Applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] écrites en C++, C# et Visual Basic|[Bonnes pratiques pour les performances des applications du Windows Store en C++, C# et Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
 |Windows Presentation Foundation (WPF)|[WPF Performance Suite](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))|  
 |ASP.NET|[Vue d’ensemble des performances ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/cc668225(v=vs.100))|  
@@ -54,7 +54,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Mise en cache dans les applications .NET Framework](../../../docs/framework/performance/caching-in-net-framework-applications.md)|Décrit des techniques de mise en cache des données pour améliorer les performances dans votre application.|  
-|[Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md)|Décrit comment initialiser des objets selon vos besoins pour améliorer les performances, notamment au démarrage de l'application.|  
-|[Fiabilité](../../../docs/framework/performance/reliability.md)|Fournit des informations sur la manière d'éviter les exceptions asynchrones dans un environnement serveur.|  
-|[Conception d’applications .NET Framework complexes et réactives](../../../docs/framework/performance/writing-large-responsive-apps.md)|Fournit des conseils liés aux performances, rassemblés lors de la réécriture des compilateurs C# et Visual Basic en code managé, et inclut plusieurs exemples réels issus du compilateur C#.|
+|[Mise en cache dans les applications .NET Framework](caching-in-net-framework-applications.md)|Décrit des techniques de mise en cache des données pour améliorer les performances dans votre application.|  
+|[Initialisation tardive](lazy-initialization.md)|Décrit comment initialiser des objets selon vos besoins pour améliorer les performances, notamment au démarrage de l'application.|  
+|[Fiabilité](reliability.md)|Fournit des informations sur la manière d'éviter les exceptions asynchrones dans un environnement serveur.|  
+|[Conception d’applications .NET Framework complexes et réactives](writing-large-responsive-apps.md)|Fournit des conseils liés aux performances, rassemblés lors de la réécriture des compilateurs C# et Visual Basic en code managé, et inclut plusieurs exemples réels issus du compilateur C#.|

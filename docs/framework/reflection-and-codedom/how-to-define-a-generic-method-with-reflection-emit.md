@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a224093b47241d951b463a7f3e0be389bba2806
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 857bad224d1a88c7011a42d0595b17b1810381aa
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043727"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046060"
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Procédure : définir une méthode générique avec l’émission de réflexion
 
@@ -27,7 +27,7 @@ La deuxième procédure montre comment émettre le corps de la méthode et comme
 La troisième procédure montre comment appeler la méthode générique.
 
 > [!IMPORTANT]
-> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. Une méthode générique peut apparaître sur un type non générique, comme dans cet exemple. Pour obtenir un exemple de méthode non générique sur un type générique, consultez [Guide pratique pour définir un type générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).
+> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. Une méthode générique peut apparaître sur un type non générique, comme dans cet exemple. Pour obtenir un exemple de méthode non générique sur un type générique, consultez [Guide pratique pour définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md).
 
 ### <a name="to-define-a-generic-method"></a>Pour définir une méthode générique
 
@@ -36,7 +36,7 @@ La troisième procédure montre comment appeler la méthode générique.
     [!code-csharp[GenericMethodHowTo#20](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#20)]
     [!code-vb[GenericMethodHowTo#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#20)]
 
-2. Définissez un assembly dynamique et un module dynamique pour contenir le type auquel la méthode générique appartient. Dans ce cas, l’assembly n’a qu’un seul module, nommé `DemoMethodBuilder1`, et le nom du module est identique au nom de l’assembly plus une extension. Dans cet exemple, l’assembly est enregistré sur le disque et exécuté. <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType> est donc spécifié. Vous pouvez utiliser le [désassembleur IL (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour examiner DemoMethodBuilder1.dll et la comparer au code MSIL (Microsoft Intermediate language) de la méthode illustrée à l’étape 1.
+2. Définissez un assembly dynamique et un module dynamique pour contenir le type auquel la méthode générique appartient. Dans ce cas, l’assembly n’a qu’un seul module, nommé `DemoMethodBuilder1`, et le nom du module est identique au nom de l’assembly plus une extension. Dans cet exemple, l’assembly est enregistré sur le disque et exécuté. <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType> est donc spécifié. Vous pouvez utiliser le [désassembleur IL (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) pour examiner DemoMethodBuilder1.dll et la comparer au code MSIL (Microsoft Intermediate language) de la méthode illustrée à l’étape 1.
 
     [!code-csharp[GenericMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#2)]
     [!code-vb[GenericMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#2)]
@@ -150,13 +150,13 @@ La troisième procédure montre comment appeler la méthode générique.
 
 4. La méthode émise peut également être appelée à partir d’un programme qui fait référence à l’assembly enregistré.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant crée un type non générique, `DemoType`, avec une méthode générique, `Factory`. Cette méthode a deux paramètres de type générique, `TInput` pour spécifier un type d’entrée et `TOutput` pour spécifier un type de sortie. Pour implémenter `ICollection<TInput>` (`ICollection(Of TInput)` en Visual Basic), le paramètre de type `TOutput` a deux contraintes : être un type référence et avoir un constructeur sans paramètre.
 
 La méthode a un paramètre formel, qui est un tableau de `TInput`. La méthode retourne une instance de `TOutput` qui contient tous les éléments du tableau d’entrée. `TOutput` peut être n’importe quel type de collection générique qui implémente l’interface générique <xref:System.Collections.Generic.ICollection%601>.
 
-Quand le code est exécuté, l’assembly dynamique est enregistré en tant que DemoGenericMethod1.dll, et peut être examiné à l’aide de [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).
+Quand le code est exécuté, l’assembly dynamique est enregistré en tant que DemoGenericMethod1.dll, et peut être examiné à l’aide de [Ildasm.exe (désassembleur IL)](../tools/ildasm-exe-il-disassembler.md).
 
 > [!NOTE]
 > Pour apprendre comment émettre du code, une méthode efficace consiste à écrire un programme Visual Basic, C# ou Visual C++ qui effectue la tâche que vous tentez d’émettre, et à utiliser le désassembleur pour examiner le code MSIL produit par le compilateur.
@@ -169,4 +169,4 @@ L’exemple de code inclut du code source équivalent à la méthode émise. La 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection.Emit.MethodBuilder>
-- [Guide pratique pour définir un type générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)
+- [Guide pratique : définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)

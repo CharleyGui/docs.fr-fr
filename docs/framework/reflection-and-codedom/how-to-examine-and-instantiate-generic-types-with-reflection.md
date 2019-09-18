@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6517edcc2784b7d70c08c4d15d837fc1f209c49
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6e15ef69c4777cdafe2e5861050a1ccc1f6a1a70
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928238"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046018"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Procédure : examiner et instancier des types génériques avec la réflexion
 Les informations sur les types génériques s’obtiennent de la même façon que les informations sur les autres types : en examinant un objet <xref:System.Type> qui représente le type générique. La principale différence est qu’un type générique a une liste d’objets <xref:System.Type> représentant ses paramètres de type générique. La première procédure de cette section examine les types génériques.  
@@ -102,7 +102,7 @@ Les informations sur les types génériques s’obtiennent de la même façon qu
      [!code-csharp[HowToGeneric#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/ur.cs#13)]
      [!code-vb[HowToGeneric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#13)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant définit une méthode `DisplayGenericType` pour examiner les définitions de type générique et les types construits utilisés dans le code, et pour afficher leurs informations. La méthode `DisplayGenericType` montre comment utiliser les propriétés <xref:System.Type.IsGenericType%2A>, <xref:System.Type.IsGenericParameter%2A> et <xref:System.Type.GenericParameterPosition%2A>, et la méthode <xref:System.Type.GetGenericArguments%2A>.  
   
  L’exemple définit également une méthode `DisplayGenericParameter` pour examiner un paramètre de type générique et afficher ses contraintes.  
@@ -119,6 +119,6 @@ Les informations sur les types génériques s’obtiennent de la même façon qu
 
 - <xref:System.Type>
 - <xref:System.Reflection.MethodInfo>
-- [Réflexion et types génériques](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)
-- [Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Réflexion et types génériques](reflection-and-generic-types.md)
+- [Affichage des informations de type](viewing-type-information.md)
 - [Génériques](../../standard/generics/index.md)

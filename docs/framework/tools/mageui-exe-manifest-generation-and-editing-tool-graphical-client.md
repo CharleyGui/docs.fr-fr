@@ -5,40 +5,40 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 3f303583b1cff785ab0020e616fee58ef02a1c58
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
-ms.translationtype: HT
+ms.openlocfilehash: 2502d542513ace1173b6c33a2399ce010620b888
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487045"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044455"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (outil Manifest Generation and Editing, client graphique)
 
-MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de commande Mage.exe, mais avec une interface utilisateur Windows. Avec cet outil, vous pouvez créer, modifier et signer les manifestes de déploiement et d'application. Les nouveaux manifestes créés avec MageUI.exe ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les versions antérieures de MageUI.exe doivent être utilisées pour cibler des versions précédentes de .NET Framework. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste, ou lors de la nouvelle signature de manifestes existants, MageUI.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour plus d’informations, consultez [Mage.exe (outil Manifest Generation and Editing)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).
+MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de commande Mage.exe, mais avec une interface utilisateur Windows. Avec cet outil, vous pouvez créer, modifier et signer les manifestes de déploiement et d'application. Les nouveaux manifestes créés avec MageUI.exe ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les versions antérieures de MageUI.exe doivent être utilisées pour cibler des versions précédentes de .NET Framework. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste, ou lors de la nouvelle signature de manifestes existants, MageUI.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour plus d’informations, consultez [Mage.exe (outil Manifest Generation and Editing)](mage-exe-manifest-generation-and-editing-tool.md).
 
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
  Deux versions de Mage.exe et MageUI.exe sont incluses en tant que composant d’installation de Visual Studio. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?** , puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.
 
 > [!NOTE]
-> MageUI.exe ne prend pas en charge l’élément [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) lors de l’enregistrement d’un manifeste d’application qui a déjà été signé avec un certificat utilisant MageUI.exe. À la place, vous devez utiliser [Mage.exe](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
+> MageUI.exe ne prend pas en charge l’élément [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) lors de l’enregistrement d’un manifeste d’application qui a déjà été signé avec un certificat utilisant MageUI.exe. À la place, vous devez utiliser [Mage.exe](mage-exe-manifest-generation-and-editing-tool.md).  
   
-## <a name="uielement-list"></a>Liste des éléments d’interface  
+## <a name="uielement-list"></a>Liste des éléments de l'interface utilisateur  
  Le tableau ci-dessous répertorie les éléments de menu et de barre d'outils disponibles.  
   
 |Commande|Menu|Raccourci|Description|  
 |-------------|----------|--------------|-----------------|  
 |**Manifeste d’application**|**Fichier, Nouveau**||Crée un nouveau manifeste d'application.|  
 |**Manifeste de déploiement**|**Fichier, Nouveau**||Crée un nouveau manifeste de déploiement.|  
-|**Ouvrir**|**Fichier**|CTRL+O|Ouvre un manifeste de déploiement, un manifeste d'application ou une licence de confiance existant à modifier.|  
-|**Fermer**|**Fichier**|CTRL+F4|Ferme un fichier ouvert.<br /><br /> Si vous modifiez un fichier avant de le fermer, MageUI.exe vous invite à resigner le fichier avec une clé publique, une paire de clés ou un certificat stocké.|  
-|**Enregistrer**|**Fichier**|CTRL+S|Enregistre sur le disque le document qui possède actuellement le focus d'entrée utilisateur.|  
-|**Enregistrer sous**|**Fichier**||Enregistre un fichier sur le disque, en vous permettant de fournir un nouveau nom et/ou emplacement de fichier.|  
-|**Enregistrer tout**|**Fichier**||Enregistre les modifications apportées à tous les fichiers actuellement ouverts dans MageUI.exe.|  
-|**Préférences**|**Fichier**||Ouvre la boîte de dialogue **Préférences**. Pour plus d'informations, consultez la section suivante.|  
+|**Ouvrir**|**File**|CTRL+O|Ouvre un manifeste de déploiement, un manifeste d'application ou une licence de confiance existant à modifier.|  
+|**Fermer**|**File**|CTRL+F4|Ferme un fichier ouvert.<br /><br /> Si vous modifiez un fichier avant de le fermer, MageUI.exe vous invite à resigner le fichier avec une clé publique, une paire de clés ou un certificat stocké.|  
+|**Enregistrer**|**File**|CTRL+S|Enregistre sur le disque le document qui possède actuellement le focus d'entrée utilisateur.|  
+|**Enregistrer sous**|**File**||Enregistre un fichier sur le disque, en vous permettant de fournir un nouveau nom et/ou emplacement de fichier.|  
+|**Enregistrer tout**|**File**||Enregistre les modifications apportées à tous les fichiers actuellement ouverts dans MageUI.exe.|  
+|**Préférences**|**File**||Ouvre la boîte de dialogue **Préférences**. Pour plus d'informations, consultez la section suivante.|  
 |**Quitter**|**Fichier**|ALT+F4|Quitte MageUI.exe.|  
 |**Couper**|**Edition**|Ctrl+X|Supprime le texte actuellement sélectionné de l'application et le déplace dans le Presse-papiers du système.|  
-|**Copier**|**Edition**|CTRL+C|Copie le texte actuellement sélectionné dans le Presse-papiers du système.|  
+|**Copy**|**Edition**|CTRL+C|Copie le texte actuellement sélectionné dans le Presse-papiers du système.|  
 |**Coller**|**Edition**|CTRL+V|Colle le texte du Presse-papiers du système dans l'élément texte actif.|  
 |**Supprimer**|**Edition**||Supprime un élément actuellement sélectionné dans une liste, comme une licence de confiance dans l’onglet **Manifeste de déploiement**.|  
 |**Fermer tout**|**Fenêtre**||Ferme tous les fichiers actuellement ouverts dans MageUI.exe. Si un ou plusieurs fichiers ont besoin de l'enregistrement, MageUI.exe vous invite à les enregistrer. MageUI.exe vous demande également de sélectionner une clé de signature pour chaque fichier non signé ou modifié.|  
@@ -61,7 +61,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
 |**Signer avec le fichier de certificat**|Signe le manifeste avec un certificat numérique stocké dans le système de fichiers.|  
-|**Fichier**|Fournit une zone pour taper le chemin d’accès au fichier .pfx qui représente le certificat.|  
+|**File**|Fournit une zone pour taper le chemin d’accès au fichier .pfx qui représente le certificat.|  
 |**...**|Ouvre une boîte de dialogue **Choisir un fichier** pour sélectionner un fichier .pfx existant.|  
 |**Nouveau**|Génère un nouveau fichier .pfx qui ne peut pas être vérifié par une Autorité de certification. Pour plus d’informations sur les types de certificats utilisés pour signer les déploiements ClickOnce, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Mot de passe**|Fournit une zone dans laquelle entrer le mot de passe utilisé pour signer ce certificat. Le cas échéant, peut être vide.|  
@@ -90,10 +90,10 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Name**|Obligatoire. Nom du manifeste d'application. Généralement identique au nom de fichier.|  
-|**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
-|**Processeur**|facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez précompilé les assemblys dans votre application pour une architecture spécifique. Pour plus d’informations sur la précompilation, consultez [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
-|**Culture**|facultatif. Code pays et région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
+|**Name**|Requis. Nom du manifeste d'application. Généralement identique au nom de fichier.|  
+|**Version**|Requis. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
+|**Processeur**|facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez précompilé les assemblys dans votre application pour une architecture spécifique. Pour plus d’informations sur la précompilation, consultez [Ngen.exe (Native Image Generator)](ngen-exe-native-image-generator.md).|  
+|**Culture**|facultatif. Code pays et région ISO en deux parties dans lequel cette application s'exécute. Par défaut, il s’agit de `neutral`.|  
 |**Jeton de clé publique**|Facultatif. Clé publique utilisée pour signer ce manifeste d'application. S’il s’agit d’un manifeste nouveau ou non signé, ce champ affiche `Unsigned`.|  
   
 ### <a name="description-tab"></a>Onglet Description  
@@ -120,7 +120,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |**Remplir**|Ajoute tous les fichiers dans le répertoire de l'application et les sous-répertoires au manifeste de l'application. Si MageUI.exe trouve un seul fichier exécutable dans le répertoire, celui-ci est automatiquement marqué comme étant le point d'entrée, à savoir le fichier exécuté en premier quand l'application ClickOnce est lancée sur le client.|  
 |**Fichiers de l’application**|Répertorie tous les fichiers dans l'application. Chaque fichier possède trois attributs modifiables, présentés ci-dessous.|  
 |**Type de fichier**|Le type de fichier peut correspondre à l'une des quatre valeurs suivantes :<br /><br /> - Aucun.<br />- Point d’entrée. Fichier exécutable principal de l'application. Un seul fichier exécutable peut être marqué comme point d'entrée.<br />- Fichier de données. Fichier, tel qu'un fichier XML, qui fournit des données à l'application.<br />- Fichier icône. Icône d'application, comme celle qui apparaît sur le Bureau ou dans le coin de la fenêtre de l'application.|  
-|**Optional**|Les fichiers marqués comme étant facultatifs ne sont pas téléchargées sur l'installation initiale ou une mise à jour, mais ils peuvent être téléchargés au moment de l'exécution à l'aide de l'API à la demande System.Deployment. Pour plus d’informations, consultez [Procédure pas à pas : Téléchargement d’assemblys à la demande avec l’API de déploiement ClickOnce à l’aide du concepteur](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
+|**Facultatif**|Les fichiers marqués comme étant facultatifs ne sont pas téléchargées sur l'installation initiale ou une mise à jour, mais ils peuvent être téléchargés au moment de l'exécution à l'aide de l'API à la demande System.Deployment. Pour plus d’informations, consultez [Procédure pas à pas : Téléchargement d’assemblys à la demande avec l’API de déploiement ClickOnce à l’aide du concepteur](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
 |**Groupe**|Étiquette d'un jeu de fichiers facultatifs. Vous pouvez appliquer une étiquette de groupe à un jeu de fichiers et utiliser l'API à la demande pour télécharger un lot de fichiers en un seul appel d'API.|  
   
 ### <a name="permissions-required-tab"></a>Onglet Autorisations requises  
@@ -147,18 +147,18 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Name**|Obligatoire. Nom du manifeste de déploiement. Généralement identique au nom de fichier.|  
-|**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
+|**Name**|Requis. Nom du manifeste de déploiement. Généralement identique au nom de fichier.|  
+|**Version**|Requis. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
 |**Processeur**|facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez compilé les assemblys dans votre application pour une architecture spécifique.|  
-|**Culture**|facultatif. Code pays/région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
+|**Culture**|facultatif. Code pays/région ISO en deux parties dans lequel cette application s'exécute. Par défaut, il s’agit de `neutral`.|  
 |**Jeton de clé publique**|facultatif. Clé publique utilisée pour signer ce manifeste de déploiement. S’il s’agit d’un manifeste nouveau ou non signé, ce champ affiche `Unsigned`.|  
   
 ### <a name="description-tab"></a>Onglet Description  
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Serveur de publication**|Obligatoire. Nom de la personne ou de l'organisation responsable de l'application. Cette valeur est utilisée comme nom de dossier du menu Démarrer.|  
-|**Produit**|Obligatoire. Nom complet du produit. Si vous avez sélectionné **Installation locale** pour l’élément **Type d’application** sous l’onglet **Options de déploiement**, ce nom apparaîtra dans le lien du menu **Démarrer** et dans **Ajout/Suppression de programmes** pour cette application.|  
+|**Publisher**|Requis. Nom de la personne ou de l'organisation responsable de l'application. Cette valeur est utilisée comme nom de dossier du menu Démarrer.|  
+|**Produit**|Requis. Nom complet du produit. Si vous avez sélectionné **Installation locale** pour l’élément **Type d’application** sous l’onglet **Options de déploiement**, ce nom apparaîtra dans le lien du menu **Démarrer** et dans **Ajout/Suppression de programmes** pour cette application.|  
 |**Emplacement du support**|facultatif. URL à partir de laquelle les clients peuvent obtenir de l'aide pour l'application.|  
   
 ### <a name="deployment-options-tab"></a>Onglet Options de déploiement  
@@ -168,9 +168,9 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |**Type d’application**|facultatif. Spécifie si cette application s’installe sur l’ordinateur client (**Installation locale**), s’exécute en ligne (**En ligne uniquement**) ou constitue une application WPF qui s’exécute dans le navigateur (**Application de navigateur WPF**). La valeur par défaut est **Installation locale**.|  
 |**Emplacement de démarrage**|facultatif. URL à partir de laquelle l'application doit réellement être démarrée. Utile lors du déploiement d'une application à partir d'un CD qui doit se mettre à jour lui-même à partir du web.|  
 |**Inclure l’emplacement de démarrage (ProviderURL) dans le manifeste**|facultatif. Spécifie l'URL vérifiée par ClickOnce pour les mises à jour d'application.|  
-|**Exécuter automatiquement l’application après l’installation**|Obligatoire. Spécifie que l’application ClickOnce doit s’exécuter immédiatement après l’installation initiale à partir d’une URL. Par défaut, la case est cochée.|  
-|**Autoriser les paramètres d’URL à être transmis à l’application**|Obligatoire. Autorise le transfert de données de paramètre à l’application ClickOnce par le biais d’une chaîne de requête ajoutée à l’URL du manifeste de déploiement. Par défaut, la case est décochée.|  
-|**Utiliser l’extension de fichier .deploy**|Obligatoire. Lorsque cette case est cochée, tous les fichiers du manifeste d'application doivent avoir l'extension .deploy. Par défaut, la case est décochée.|  
+|**Exécuter automatiquement l’application après l’installation**|Requis. Spécifie que l’application ClickOnce doit s’exécuter immédiatement après l’installation initiale à partir d’une URL. Par défaut, la case est cochée.|  
+|**Autoriser les paramètres d’URL à être transmis à l’application**|Requis. Autorise le transfert de données de paramètre à l’application ClickOnce par le biais d’une chaîne de requête ajoutée à l’URL du manifeste de déploiement. Par défaut, la case est décochée.|  
+|**Utiliser l’extension de fichier .deploy**|Requis. Lorsque cette case est cochée, tous les fichiers du manifeste d'application doivent avoir l'extension .deploy. Par défaut, la case est décochée.|  
   
 ### <a name="update-options-tab"></a>Onglet Options de mise à jour  
  L’onglet **Options de mise à jour** contient uniquement les options mentionnées ici quand la zone de sélection **Type d’application** de l’onglet **Nom** affiche la valeur **Installation locale**.  
@@ -194,4 +194,4 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 
 - [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Procédure pas à pas : déploiement manuel d'une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)
-- [Mage.exe (outil Manifest Generation and Editing)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [Mage.exe (outil Manifest Generation and Editing)](mage-exe-manifest-generation-and-editing-tool.md)

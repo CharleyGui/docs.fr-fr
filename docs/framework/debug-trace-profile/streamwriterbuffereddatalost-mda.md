@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b35e6ab4de699126b4b3b5f74d7a9a8dacfa4a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3dcdd329318d48efa203d2b9dcbfe3501d94b3e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874404"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052265"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost (MDA)
 L’Assistant Débogage managé `streamWriterBufferedDataLost` est activé lors d’une écriture dans <xref:System.IO.StreamWriter>, mais la méthode <xref:System.IO.StreamWriter.Flush%2A> ou <xref:System.IO.StreamWriter.Close%2A> n’est pas appelée par la suite avant la destruction de l’instance du <xref:System.IO.StreamWriter>. Quand cet Assistant Débogage managé est activé, le runtime détermine s’il existe encore des données mises en mémoire tampon dans <xref:System.IO.StreamWriter>. Si c’est le cas, l’Assistant Débogage managé est activé. L’appel aux méthodes <xref:System.GC.Collect%2A> et <xref:System.GC.WaitForPendingFinalizers%2A> peut forcer des finaliseurs à s’exécuter. Sinon, les finaliseurs s’exécuteront à des moments apparemment arbitraires, voire pas du tout lors de la sortie du processus. L’exécution explicite des finaliseurs avec cet Assistant Débogage managé activé aide à reproduire ce type de problème de façon plus fiable.  
@@ -47,7 +47,7 @@ GC.Collect();
 GC.WaitForPendingFinalizers();  
 ```  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Veillez à appeler <xref:System.IO.StreamWriter.Close%2A> ou <xref:System.IO.StreamWriter.Flush%2A> sur le <xref:System.IO.StreamWriter> avant de fermer une application ou tout bloc de code possédant une instance de <xref:System.IO.StreamWriter>. Pour ce faire, une des solutions les plus efficaces consiste à créer l’instance avec un bloc `using` C# (`Using` en Visual Basic) qui garantit l’appel à la méthode <xref:System.IO.StreamWriter.Dispose%2A> pour le writer, ce qui permet de fermer correctement l’instance.  
   
 ```csharp
@@ -107,4 +107,4 @@ static WriteToFile()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.StreamWriter>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

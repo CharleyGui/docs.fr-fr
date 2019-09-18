@@ -2,12 +2,12 @@
 title: 'Procédure : modifier le fichier config de l’ordinateur en vue d’activer la prise en charge IPv6'
 ms.date: 03/30/2017
 ms.assetid: 5611b677-b9cc-43b8-a434-60e18d89aada
-ms.openlocfilehash: af6eb8a334108c988967a555024b524e27d40f58
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 362e7af36d214df9f0454479e25a80af9d440b2b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959076"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048274"
 ---
 # <a name="how-to-modify-the-computer-configuration-file-to-enable-ipv6-support"></a>Procédure : modifier le fichier config de l’ordinateur en vue d’activer la prise en charge IPv6
 L’exemple de code suivant montre comment modifier le fichier de configuration (*machine.config*) d’un ordinateur pour activer la prise en charge d’IPv6. Le fichier *machine.config* est stocké dans le dossier *%Windir%\Microsoft.NET\Framework*, situé dans le répertoire d’installation de Windows. Il y a un fichier *machine.config* distinct dans les dossiers sous *%Windir%\Microsoft.NET\Framework* pour chaque version de .NET Framework installée sur l’ordinateur (par exemple, *C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config*).  
@@ -21,7 +21,7 @@ L’exemple de code suivant montre comment modifier le fichier de configuration 
 > [!NOTE]
 > Pour .NET Framework version 2.0 ou ultérieure, IPv6 est activé par défaut. Pour .NET Framework version 1.1 ou antérieure, IPv6 est désactivé par défaut.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <system.net>  
@@ -37,6 +37,6 @@ L’exemple de code suivant montre comment modifier le fichier de configuration 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Adressage IPv6](../../../docs/framework/network-programming/ipv6-addressing.md)
-- [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)
-- [\<ipv6>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)
+- [Adressage IPv6](ipv6-addressing.md)
+- [Schéma des paramètres réseau](../configure-apps/file-schema/network/index.md)
+- [\<ipv6>, élément (paramètres réseau)](../configure-apps/file-schema/network/ipv6-element-network-settings.md)

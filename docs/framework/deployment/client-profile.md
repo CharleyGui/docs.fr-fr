@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 86058eb288b54a4bc316900f165ec61e4d05eb1f
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
-ms.translationtype: HT
+ms.openlocfilehash: 25aa7b7c88047a95af3cd1d8f99d96771f252ef4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457283"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052205"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile est un sous-ensemble du .NET Framework fourni avec .NET Framework 4 et versions antérieures, et optimisé pour les applications clientes. Le .NET Framework est une plateforme de développement pour Windows Phone et Microsoft Azure qui fournit un environnement managé d'exécution d'applications et la bibliothèque de classes .NET Framework. .NET Framework 4 et versions antérieures fournissaient deux options de déploiement : le .NET Framework complet et Client Profile. Client Profile a permis d'accélérer le déploiement et de réduire les packages d'installation par rapport au .NET Framework complet.  
@@ -25,7 +25,7 @@ ms.locfileid: "66457283"
   
  Toutefois, si vous ciblez .NET Framework 4 ou 3.5 et que vous souhaitez en savoir plus sur Client Profile et quand l’utiliser, consultez [.NET Framework Client Profile](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29) dans la documentation .NET Framework 4.  
   
- Lorsque vous installez .NET Framework 4.5, .NET Framework 4 Client Profile est mis à jour vers la version complète du .NET Framework. Pour plus d’informations sur l’installation de .NET Framework 4.5, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).  
+ Lorsque vous installez .NET Framework 4.5, .NET Framework 4 Client Profile est mis à jour vers la version complète du .NET Framework. Pour plus d’informations sur l’installation de .NET Framework 4.5, consultez [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

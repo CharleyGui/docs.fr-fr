@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 5cdb12ae-1e37-4a62-8ec7-93d6dcc6e8d9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80c9fe6de0fca86497ffe84cd8dadf0eb8cef6c5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 719ea15de135d8bbeb7bb88ea3d5b5874e30b5d6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108951"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053103"
 ---
 # <a name="retrieving-setup-information-from-an-application-domain"></a>Récupération d'informations d'installation à partir d'un domaine d'application
 Chaque instance d’un domaine d’application se compose des deux propriétés et d’informations <xref:System.AppDomainSetup>. Vous pouvez récupérer les informations d’installation à partir d’un domaine d’application à l’aide de la classe <xref:System.AppDomain?displayProperty=nameWithType>. Cette classe fournit plusieurs membres qui récupèrent les informations de configuration sur un domaine d’application.  
@@ -39,4 +39,4 @@ Chaque instance d’un domaine d’application se compose des deux propriétés 
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation avec des domaines d’application](application-domains.md#programming-with-application-domains)
-- [Utilisation des domaines d’application](../../../docs/framework/app-domains/use.md)
+- [Utilisation des domaines d’application](use.md)

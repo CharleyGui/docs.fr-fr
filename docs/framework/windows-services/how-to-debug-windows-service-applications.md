@@ -9,12 +9,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 74f834261d464430547ba3e1113db0ea780f593e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 860f2ae22eb6510dc1f1a454ae3e51ccb366078b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044444"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053624"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Procédure : déboguer les applications de service Windows
 Un service doit être exécuté à partir du Gestionnaire de contrôle des services plutôt qu'à partir de Visual Studio. C'est pourquoi le débogage d'un service n'est pas aussi simple que le débogage d'autres types d'applications Visual Studio. Pour déboguer un service, vous devez le démarrer et attacher un débogueur au processus dans lequel il s'exécute. Vous pouvez alors déboguer votre application à l'aide de toutes les fonctionnalités de débogage standard de Visual Studio.  
@@ -29,7 +29,7 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
  Cet article décrit le débogage d'un service qui est en cours d'exécution sur l'ordinateur local, mais vous pouvez également déboguer des services Windows qui s'exécutent sur un ordinateur distant. Consultez [Débogage à distance](/visualstudio/debugger/debug-installed-app-package).  
   
 > [!NOTE]
-> Le débogage de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> peut s'avérer difficile, car le Gestionnaire de contrôle des services impose un délai de 30 secondes pour toute tentative de démarrage d'un service. Pour plus d’informations, consultez [Résolution des problèmes : débogage des services Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+> Le débogage de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> peut s'avérer difficile, car le Gestionnaire de contrôle des services impose un délai de 30 secondes pour toute tentative de démarrage d'un service. Pour plus d’informations, consultez [Résolution des problèmes : débogage des services Windows](troubleshooting-debugging-windows-services.md).  
   
 > [!WARNING]
 > Pour obtenir des informations significatives pour le débogage, le débogueur Visual Studio doit rechercher les fichiers de symboles pour les fichiers binaires qui sont en cours de débogage. Si vous déboguez un service que vous avez généré dans Visual Studio, les fichiers de symboles (fichiers .pdb) se trouvent dans le même dossier que l'exécutable ou la bibliothèque, et le débogueur les charge automatiquement. Si vous déboguez un service que vous n'avez pas généré, vous devez d'abord rechercher des symboles pour le service, puis vous assurer qu'ils sont accessibles par le débogueur. Consultez [Spécifier les fichiers de symboles (.pdb) et les fichiers sources dans le débogueur Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Si vous déboguez un processus système ou que vous voulez disposer de symboles pour les appels système dans vos services, vous devez ajouter des serveurs de symboles Microsoft. Consultez [Symboles de débogage](/windows/desktop/DxTechArts/debugging-with-symbols).  
@@ -38,9 +38,9 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
   
 1. Générez votre service dans la configuration Debug.  
   
-2. Installez votre service. Pour plus d'informations, voir [Procédure : Installer et désinstaller des services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+2. Installez votre service. Pour plus d’informations, consultez [Guide pratique pour Installer et désinstaller des services](how-to-install-and-uninstall-services.md).  
   
-3. Démarrez le service à partir du **Gestionnaire de contrôle des services**, à partir de **l’Explorateur de serveurs** ou à partir du code. Pour plus d'informations, voir [Procédure : démarrer des services](../../../docs/framework/windows-services/how-to-start-services.md).  
+3. Démarrez le service à partir du **Gestionnaire de contrôle des services**, à partir de **l’Explorateur de serveurs** ou à partir du code. Pour plus d'informations, voir [Procédure : démarrer des services](how-to-start-services.md).  
   
 4. Démarrez Visual Studio avec des informations d'identification administratives pour pouvoir effectuer un attachement à un processus système.  
   
@@ -66,7 +66,7 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
   
 10. Définissez les points d'arrêt que vous souhaitez utiliser dans votre code.  
   
-11. Accédez au Gestionnaire de contrôle des services et manipulez votre service, en envoyant des commandes d'arrêt, d'interruption et de poursuite pour atteindre vos points d'arrêt. Pour plus d’informations sur l’exécution du Gestionnaire de contrôle des services, consultez [Guide pratique pour démarrer des services](../../../docs/framework/windows-services/how-to-start-services.md). Consultez également [Résolution des problèmes : débogage des services Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+11. Accédez au Gestionnaire de contrôle des services et manipulez votre service, en envoyant des commandes d'arrêt, d'interruption et de poursuite pour atteindre vos points d'arrêt. Pour plus d’informations sur l’exécution du Gestionnaire de contrôle des services, consultez [Guide pratique pour démarrer des services](how-to-start-services.md). Consultez également [Résolution des problèmes : débogage des services Windows](troubleshooting-debugging-windows-services.md).  
   
 ## <a name="debugging-tips-for-windows-services"></a>Conseils relatifs au débogage des services Windows  
  L'attachement au processus du service vous permet de déboguer le code de ce service dans sa majeure partie mais pas dans sa totalité. Par exemple, comme le service a déjà été démarré, vous ne pouvez pas déboguer de cette façon le code de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> du service ni celui de la méthode `Main` qui sert à le charger. Pour remédier à cela, vous pouvez créer, dans votre application de service, un deuxième service temporaire servant uniquement à faciliter le débogage. Vous pouvez installer les deux services, puis démarrer ce service factice pour charger le processus du service. Une fois que le service temporaire a démarré le processus, vous pouvez effectuer l’attachement au processus du service à l’aide du menu **Débogage** de Visual Studio.  
@@ -115,7 +115,7 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Guide pratique pour Installer et désinstaller des services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
-- [Guide pratique pour démarrer des services](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique : Installer et désinstaller des services](how-to-install-and-uninstall-services.md)
+- [Guide pratique pour démarrer des services](how-to-start-services.md)
 - [Débogage d’un service](/windows/desktop/Services/debugging-a-service)

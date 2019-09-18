@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5f5d529451f30a6785547410f5121dbb6f91fe01
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3fd58ae8f73fd932df641ea96a44ff618dd139e2
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660386"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052807"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>Assistant Débogage managé fatalExecutionEngineError
 L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand une erreur irrécupérable dans le common language runtime a été détectée. Le processus se termine.  
@@ -30,32 +30,32 @@ L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand un
 ## <a name="cause"></a>Cause  
  Le common language runtime a été endommagé de façon irréversible. Ceci est dû le plus souvent à une altération des données, qui peut être provoquée par un certain nombre de problèmes, comme des fonctions d’appel de code non managé incorrectement formées et au passage de données non valides au CLR.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  L’activation d’Assistants Débogage managé supplémentaires peut aider à identifier le problème. Les Assistants Débogage managé suivants peuvent être particulièrement utiles pour diagnostiquer le problème :  
   
-- [invalidOverlappedToPinvoke](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)  
+- [invalidOverlappedToPinvoke](invalidoverlappedtopinvoke-mda.md)  
   
-- [overlappedFreeError](../../../docs/framework/debug-trace-profile/overlappedfreeerror-mda.md)  
+- [overlappedFreeError](overlappedfreeerror-mda.md)  
   
-- [pInvokeStackImbalance](../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)  
+- [pInvokeStackImbalance](pinvokestackimbalance-mda.md)  
   
-- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)  
+- [gcUnmanagedToManaged](gcunmanagedtomanaged-mda.md)  
   
-- [gcManagedToUnmanaged](../../../docs/framework/debug-trace-profile/gcmanagedtounmanaged-mda.md)  
+- [gcManagedToUnmanaged](gcmanagedtounmanaged-mda.md)  
   
-- [callbackOnCollectedDelegate](../../../docs/framework/debug-trace-profile/callbackoncollecteddelegate-mda.md)  
+- [callbackOnCollectedDelegate](callbackoncollecteddelegate-mda.md)  
   
-- [reportAvOnComRelease](../../../docs/framework/debug-trace-profile/reportavoncomrelease-mda.md)  
+- [reportAvOnComRelease](reportavoncomrelease-mda.md)  
   
-- [invalidVariant](../../../docs/framework/debug-trace-profile/invalidvariant-mda.md)  
+- [invalidVariant](invalidvariant-mda.md)  
   
-- [invalidIUnknown](../../../docs/framework/debug-trace-profile/invalidiunknown-mda.md)  
+- [invalidIUnknown](invalidiunknown-mda.md)  
   
-- [raceOnRCWCleanup](../../../docs/framework/debug-trace-profile/raceonrcwcleanup-mda.md)  
+- [raceOnRCWCleanup](raceonrcwcleanup-mda.md)  
   
-- [invalidFunctionPointerInDelegate](../../../docs/framework/debug-trace-profile/invalidfunctionpointerindelegate-mda.md)  
+- [invalidFunctionPointerInDelegate](invalidfunctionpointerindelegate-mda.md)  
   
-- [invalidGCHandleCookie](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)  
+- [invalidGCHandleCookie](invalidgchandlecookie-mda.md)  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n’a aucun effet sur le comportement du runtime.  
@@ -77,4 +77,4 @@ L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand un
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution.Cer>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

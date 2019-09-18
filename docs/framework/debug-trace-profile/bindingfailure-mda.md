@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e904d452b9f4a1b172d35984b752c0d97228338
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93c426cce792c8f30a3551e2d4626736dd67278f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875080"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052945"
 ---
 # <a name="bindingfailure-mda"></a>Assistant Débogage managé bindingFailure
 
@@ -40,13 +40,13 @@ Un échec de liaison se produit quand le runtime ne peut pas charger un assembly
 
 - Les informations d’identification de l’utilisateur ne fournissent pas les autorisations requises pour lire le fichier.
 
-## <a name="resolution"></a>Résolution
+## <a name="resolution"></a>Résolution :
 
 La première étape consiste à déterminer pourquoi le CLR n’a pas pu établir de liaison avec l’assembly demandé. Il existe de nombreuses raisons pour lesquelles le runtime est susceptible de ne pas avoir trouvé ou chargé l’assembly demandé, parmi lesquelles les scénarios répertoriés dans la section Cause. Nous vous recommandons d’effectuer les actions suivantes pour éliminer la cause de l’échec de liaison :
 
 - Déterminez la cause à l’aide des données fournies par l’Assistant Débogage managé `bindingFailure` :
 
-  - Exécutez [Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) pour lire les journaux d’erreur produits par le binder d’assembly.
+  - Exécutez [Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)](../tools/fuslogvw-exe-assembly-binding-log-viewer.md) pour lire les journaux d’erreur produits par le binder d’assembly.
 
   - Déterminez si l’assembly se trouve à l’emplacement demandé. Avec les méthodes <xref:System.Reflection.Assembly.LoadFrom%2A> et <xref:System.Reflection.Assembly.LoadFile%2A>, il est facile de déterminer l’emplacement demandé. Avec la méthode <xref:System.Reflection.Assembly.Load%2A>, qui établit une liaison à l’aide de l’identité d’assembly, vous devez rechercher les assemblys qui correspondent à cette identité dans le chemin de sonde de propriété <xref:System.AppDomain.BaseDirectory%2A> du domaine d’application et le global assembly cache.
 
@@ -107,4 +107,4 @@ namespace ConsoleApplication1
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

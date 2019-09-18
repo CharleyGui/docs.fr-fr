@@ -2,12 +2,12 @@
 title: Déploiement d'un service WCF hébergé dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 95c56f767bbe8dce44ea742de00c65c357bd1378
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e46bcec846fcc8f9455c436bb551564e1cb5b5ea
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895110"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053311"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Déploiement d'un service WCF hébergé dans Internet Information Services
 
@@ -29,7 +29,7 @@ Pour obtenir une procédure pas à pas détaillée de la création d’un servic
 
 WCF, IIS et ASP.NET doivent être installés pour que les services WCF hébergés dans IIS fonctionnent correctement. Les procédures d’installation de WCF (dans le cadre de l' .NET Framework), ASP.NET et IIS varient en fonction de votre système d’exploitation. Pour plus d’informations sur l’installation de WCF et du .NET Framework, consultez [installer le .NET Framework pour les développeurs](../../install/guide-for-developers.md). Pour installer IIS sur Windows 10, ouvrez **programmes et fonctionnalités** dans **le panneau de configuration** , puis sélectionnez **activer ou désactiver des fonctionnalités Windows**. Dans **fonctionnalités de Windows**, sélectionnez **Internet Information Services** , puis choisissez **OK**.
 
-![Fonctionnalités Windows avec IIS en surbrillance](media/windows-features-iis.png)
+![Fonctionnalités Windows avec IIS en surbrillance](./media/windows-features-iis.png)
 
 Pour obtenir des instructions sur l’installation d’IIS sur d’autres systèmes d’exploitation, consultez [installer IIS sur Windows Vista et Windows 7](/iis/install/installing-iis-7/installing-iis-on-windows-vista-and-windows-7) et [installer IIS 8,5 sur Windows Server 2012 R2](/iis/install/installing-iis-85/installing-iis-85-on-windows-server-2012-r2).
 

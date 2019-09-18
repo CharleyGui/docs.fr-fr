@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85d64a5577acdaa15a40ae308eb728d75d6a4c69
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 866ec425fd66ee8b3b62263180ac7e6d776108f0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894488"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049806"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
 > [!NOTE]
@@ -33,7 +33,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 [snip]  
 ```  
   
- Nous allons essayer de résoudre les problèmes liés à cette exception à l’aide de l’approche en trois étapes décrite dans la section « Résoudre manuellement les métadonnées manquantes » de [Prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md).  
+ Nous allons essayer de résoudre les problèmes liés à cette exception à l’aide de l’approche en trois étapes décrite dans la section « Résoudre manuellement les métadonnées manquantes » de [Prise en main](getting-started-with-net-native.md).  
   
 ## <a name="what-was-the-app-doing"></a>Que faisait l'application ?  
  La première chose à noter est le mécanisme de mot clé `async` à la base de la pile.  Déterminer ce que l'application était effectivement en train de faire dans une méthode `async` peut être problématique, car la pile a perdu le contexte de l'appel d'origine et a exécuté le code `async` sur un thread différent. Toutefois, nous pouvons déduire que l'application essaie de charger sa première page.  Dans l'implémentation de `NavigationArgs.Setup`, le code suivant a provoqué la violation d'accès :  
@@ -56,9 +56,9 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
  D'autres problèmes peuvent également survenir pendant l'utilisation d'`App.Core.ViewModels`.  Vous devez décider s'il est nécessaire d'identifier et de corriger chaque exception de métadonnées manquantes, ou d'économiser du temps et d'ajouter des directives pour une classe de types plus grande.  En l'occurrence, ajouter des métadonnées `dynamic` pour `App.Core.ViewModels` peut être la meilleure méthode si l'augmentation résultante de la taille du fichier binaire de sortie n'est pas un problème.  
   
 ## <a name="could-the-code-be-rewritten"></a>Le code peut-il être réécrit ?  
- Si l'application a utilisé `typeof(LayoutApplicationVM)` à la place de `Type.GetType("LayoutApplicationVM")`, la chaîne d'outils peut avoir conservé des métadonnées `browse`.  Toutefois, elle n’aurait pas créé de métadonnées `invoke`, ce qui aurait abouti à une exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) à l’occasion de l’instanciation du type. Pour empêcher cette exception, vous devriez quand même ajouter une directive runtime pour l'espace de noms ou le type qui spécifie la stratégie `dynamic`. Pour plus d’informations sur les directives runtime, consultez le [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Si l'application a utilisé `typeof(LayoutApplicationVM)` à la place de `Type.GetType("LayoutApplicationVM")`, la chaîne d'outils peut avoir conservé des métadonnées `browse`.  Toutefois, elle n’aurait pas créé de métadonnées `invoke`, ce qui aurait abouti à une exception [MissingMetadataException](missingmetadataexception-class-net-native.md) à l’occasion de l’instanciation du type. Pour empêcher cette exception, vous devriez quand même ajouter une directive runtime pour l'espace de noms ou le type qui spécifie la stratégie `dynamic`. Pour plus d’informations sur les directives runtime, consultez le [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md)
-- [Exemple : Gestion des exceptions lors de la liaison de données](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
+- [Prise en main](getting-started-with-net-native.md)
+- [Exemple : Gestion des exceptions lors de la liaison de données](example-handling-exceptions-when-binding-data.md)

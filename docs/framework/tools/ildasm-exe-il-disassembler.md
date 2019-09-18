@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d9e6d9e57528f3eae9b30706013a0529313877c7
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 9d08d6164c00d2b5b750c9edda46a7be18153152
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894865"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044655"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
 Le Désassembleur IL est un outil associé à l'Assembleur IL (*Ilasm.exe*). *Ildasm.exe* crée, à partir d'un fichier exécutable portable (PE) contenant du code IL (intermediate language), un fichier texte pouvant servir d'entrée dans *Ilasm.exe*.
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -186,7 +186,7 @@ Un type imbriqué doit être précédé de la classe le contenant, délimitée p
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Ilasm.exe (assembleur IL)](../../../docs/framework/tools/ilasm-exe-il-assembler.md)
+- [Outils](index.md)
+- [Ilasm.exe (assembleur IL)](ilasm-exe-il-assembler.md)
 - [Processus d'exécution managée](../../standard/managed-execution-process.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

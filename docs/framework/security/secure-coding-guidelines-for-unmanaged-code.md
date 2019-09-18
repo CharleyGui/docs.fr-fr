@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec97861a9d748767199da3e1fb7f53361c3a48ee
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 867157b329218b79c8cc1255b2158bbe83666531
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966121"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045368"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Instructions de codage sécurisé pour le code non managé
 Du code de bibliothèque doit appeler dans du code non managé (par exemple, des API de code natif comme Win32). Comme cela signifie sortir du périmètre de sécurité pour le code managé, la prudence est de règle. S’il ne dépend pas de la sécurité, votre code, ainsi que tout code qui l’appelle, doit disposer de l’autorisation de code non managé (<xref:System.Security.Permissions.SecurityPermission> avec l’indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> spécifié).  
   
- Cependant, il est souvent préférable que votre appelant ne possède pas des autorisations aussi puissantes. Dans ces cas-là, votre code fiable peut servir d'intermédiaire, de la même manière que le wrapper managé ou le code de bibliothèque décrit dans [Sécurisation du code wrapper](../../../docs/framework/misc/securing-wrapper-code.md). Si les fonctionnalités de code non managé sous-jacentes sont totalement sécurisées, elles risquent d'être exposées directement ; si cela n'est pas le cas, une vérification d'autorisation appropriée (demande) est nécessaire dans un premier temps.  
+ Cependant, il est souvent préférable que votre appelant ne possède pas des autorisations aussi puissantes. Dans ces cas-là, votre code fiable peut servir d'intermédiaire, de la même manière que le wrapper managé ou le code de bibliothèque décrit dans [Sécurisation du code wrapper](../misc/securing-wrapper-code.md). Si les fonctionnalités de code non managé sous-jacentes sont totalement sécurisées, elles risquent d'être exposées directement ; si cela n'est pas le cas, une vérification d'autorisation appropriée (demande) est nécessaire dans un premier temps.  
   
  Quand votre code appelle dans du code non managé mais que vous ne souhaitez pas que vos appelants soient obligés d'avoir l'autorisation d'accéder à du code non managé, vous devez déclarer ce droit. Une assertion bloque le parcours de la pile à votre frame. Vous devez faire attention à ne pas créer de faille de sécurité pendant ce processus. Habituellement, cela signifie que vous devez exiger une autorisation appropriée de vos appelants, puis vous servir du code non managé pour effectuer uniquement ce que cette autorisation permet et rien de plus. Dans certains cas (par exemple, une fonction récupérant l'heure du jour), du code non managé peut être directement exposé aux appelants sans vérification de la sécurité. Dans tous les cas, tout code qui déclare doit être responsable de la sécurité.  
   

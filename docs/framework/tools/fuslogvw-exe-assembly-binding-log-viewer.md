@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd27bebdc71c70226a61ad8d912135e0e1671dd8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 6077acab533ecb755ae42b7c4359a6c77ff33449
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851247"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044681"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)
 
@@ -25,7 +25,7 @@ La Visionneuse du journal de liaison d’assembly affiche des détails sur les l
 > [!IMPORTANT]
 > Vous devez exécuter fuslogvw.exe avec les droits d'administrateur.
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec des informations d’identification d’administrateur. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec des informations d’identification d’administrateur. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -60,7 +60,7 @@ La visionneuse affiche une entrée pour chaque liaison d'assembly ayant échoué
 
     - Une description des stratégies de version de l'application, de l'éditeur ou de l'administrateur qui ont été appliquées
 
-    - Si l’assembly a été trouvé dans le [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)
+    - Si l’assembly a été trouvé dans le [Global Assembly Cache](../app-domains/gac.md)
 
     - Une liste de toutes les URL recherchées
 
@@ -122,7 +122,7 @@ LOG: All probing URLs attempted and failed.
 
 ## <a name="binding-logs-for-native-images"></a>Liaison de journaux pour des Images natives
 
-Par défaut, Fuslogvw.exe enregistre les demandes de liaison d'assembly normales. Vous pouvez également enregistrer des liaisons d’assemblys pour les images natives qui ont été créées à l’aide de l’outil [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).
+Par défaut, Fuslogvw.exe enregistre les demandes de liaison d'assembly normales. Vous pouvez également enregistrer des liaisons d’assemblys pour les images natives qui ont été créées à l’aide de l’outil [Ngen.exe (Native Image Generator)](ngen-exe-native-image-generator.md).
 
 #### <a name="to-log-assembly-binds-for-native-images"></a>Pour enregistrer des liaisons d'assemblys pour les images natives
 
@@ -218,7 +218,7 @@ Vous pouvez utiliser la boîte de dialogue **Paramètres du journal** pour effec
 2. Entrez le chemin dans la zone de texte **Chemin du journal personnalisé**.
 
 > [!NOTE]
-> La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se pose pas si vous utilisez un chemin d'accès de journal personnalisé.)  Pour résoudre le problème de perte d'intégrité et permettre à la fusion d'afficher à nouveau les journaux de liaison, videz le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d'Internet Explorer.
+> La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se pose pas si vous utilisez un chemin d'accès de journal personnalisé.)  Pour résoudre le problème de perte d'intégrité et permettre à la fusion d'afficher à nouveau les journaux de liaison, videz le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d'Internet Explorer.
 >
 > Si votre application non managée héberge le Common Language Runtime en implémentant les interfaces `IHostAssemblyManager` et `IHostAssemblyStore`, les entrées de journal ne peuvent pas être stockées dans le cache de WinInet.  Pour consulter les entrées de journal correspondant aux hôtes personnalisés qui implémentent ces interfaces, vous devez spécifier un autre chemin d'accès au journal.
 
@@ -234,7 +234,7 @@ Vous pouvez utiliser la boîte de dialogue **Paramètres du journal** pour effec
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.TypeLoadException>
-- [Outils](../../../docs/framework/tools/index.md)
-- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)
-- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Global Assembly Cache](../app-domains/gac.md)
+- [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

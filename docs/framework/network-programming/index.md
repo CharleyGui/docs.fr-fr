@@ -7,82 +7,82 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 245c843d13e70a807807f4e462dd1a5357c25665
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 230825c5259807cf693179878a45aeb3fdcbf0ac
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398519"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047994"
 ---
 # <a name="network-programming-in-the-net-framework"></a>Programmation réseau dans le .NET Framework
 Microsoft .NET Framework fournit une implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications. Les applications réseau peuvent générer des protocoles enfichables pour tirer parti automatiquement de nouveaux protocoles Internet, ou elles peuvent utiliser une implémentation managée de l'interface Windows Socket pour fonctionner au niveau du socket.  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [Introduction aux protocoles enfichables](../../../docs/framework/network-programming/introducing-pluggable-protocols.md)  
+ [Introduction aux protocoles enfichables](introducing-pluggable-protocols.md)  
  Décrit comment accéder à une ressource réseau sans tenir compte du protocole d'accès dont elle a besoin.  
   
- [Demande de données](../../../docs/framework/network-programming/requesting-data.md)  
+ [Demande de données](requesting-data.md)  
  Explique comment utiliser des protocoles enfichables pour charger et télécharger les données à partir des ressources Internet.  
   
- [Programmation de protocoles enfichables](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
+ [Programmation de protocoles enfichables](programming-pluggable-protocols.md)  
  Explique comment dériver les classes spécifiques au protocole pour implémenter des protocoles enfichables.  
   
- [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)  
+ [Utilisation de protocoles d’application](using-application-protocols.md)  
  Décrit les applications de programmation qui tirent parti des protocoles réseau comme TCP, UDP, et HTTP.  
   
- [Protocole IPv6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
+ [Protocole IPv6](internet-protocol-version-6.md)  
  Décrit les avantages du protocole IPv6 (Internet Protocol version 6) par rapport à la version actuelle de la suite des protocoles Internet (IPv4), décrit l’adressage IPv6, le routage et la configuration automatique, et comment activer et désactiver IPv6.  
   
- [Configuration des applications Internet](../../../docs/framework/network-programming/configuring-internet-applications.md)  
+ [Configuration des applications Internet](configuring-internet-applications.md)  
  Explique comment utiliser les fichiers de configuration .NET Framework pour configurer les applications Web.  
   
- [Traçage réseau dans .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
+ [Traçage réseau dans .NET Framework](network-tracing.md)  
  Explique comment utiliser le traçage réseau pour obtenir des informations sur les appels de méthode et le trafic réseau généré par une application managée.  
   
- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)  
  Décrit comment utiliser la mise en cache pour les applications qui utilisent les classes <xref:System.Net.WebClient?displayProperty=nameWithType>, <xref:System.Net.WebRequest?displayProperty=nameWithType>et <xref:System.Net.HttpWebRequest?displayProperty=nameWithType> .  
   
- [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)  
+ [Sécurité dans la programmation réseau](security-in-network-programming.md)  
  Explique comment utiliser des techniques standard de sécurité Internet et d'authentification.  
   
- [Bonnes pratiques pour les classes System.Net](../../../docs/framework/network-programming/best-practices-for-system-net-classes.md)  
+ [Bonnes pratiques pour les classes System.Net](best-practices-for-system-net-classes.md)  
  Fournit des conseils et des astuces pour profiter au mieux de vos applications Web.  
   
- [Accès à Internet via un proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)  
  Décrit comment configurer des proxies.  
   
- [NetworkInformation](../../../docs/framework/network-programming/networkinformation.md)  
+ [NetworkInformation](networkinformation.md)  
  Explique comment collecter des informations sur les événements, les modifications, les statistiques et les propriétés réseau et explique également comment déterminer si un hôte distant est accessible ou non à l'aide de la classe <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> .  
   
- [Modifications apportées à l’espace de noms System.Uri dans la version 2.0](../../../docs/framework/network-programming/changes-to-the-system-uri-namespace-in-version-2-0.md)  
+ [Modifications apportées à l’espace de noms System.Uri dans la version 2.0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
  Décrit plusieurs modifications apportées à la classe <xref:System.Uri?displayProperty=nameWithType> dans la version 2.0 pour corriger les comportements incorrects, améliorer la convivialité et la sécurité.  
   
- [Prise en charge de l’identificateur de ressource internationalisée (IRI) dans System.Uri](../../../docs/framework/network-programming/international-resource-identifier-support-in-system-uri.md)  
+ [Prise en charge de l’identificateur de ressource internationalisée (IRI) dans System.Uri](international-resource-identifier-support-in-system-uri.md)  
  Décrit les améliorations apportées à la classe <xref:System.Uri?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1, et 2.0 SP1 pour la prise en charge de l'identifiant de ressource internationalisée et du nom de domaine internationalisé.  
   
- [Améliorations des performances de socket dans la version 3.5](../../../docs/framework/network-programming/socket-performance-enhancements-in-version-3-5.md)  
+ [Améliorations des performances de socket dans la version 3.5](socket-performance-enhancements-in-version-3-5.md)  
  Décrit un ensemble d'améliorations apportées à la classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1 et 2.0 SP1 qui fournit un autre modèle asynchrone pouvant être utilisé par les applications de socket spécialisées très performantes.  
   
- [Peer Name Resolution Protocol](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)  
+ [Peer Name Resolution Protocol](peer-name-resolution-protocol.md)  
  Décrit l’ajout de la prise en charge à la version 3.5 pour prendre en charge le protocole PNRP (Peer Name Resolution Protocol), une inscription de noms dynamiques et sans serveur et un protocole de résolution de noms. Ces nouvelles fonctionnalités sont prises en charge par l'espace de noms <xref:System.Net.PeerToPeer?displayProperty=nameWithType> .  
   
- [Collaboration pair à pair](../../../docs/framework/network-programming/peer-to-peer-collaboration.md)  
+ [Collaboration pair à pair](peer-to-peer-collaboration.md)  
  Décrit l'ajout de la prise en charge à la version 3.5 pour prendre en charge la collaboration pair à pair qui s'appuie sur PNRP. Ces nouvelles fonctionnalités sont prises en charge par l'espace de noms <xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType> .  
   
- [Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1](../../../docs/framework/network-programming/changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
+ [Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1](changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
  Décrit les changements de sécurité apportés à la version 3.5 SP1 qui affectent la manière dont l'intégration de l'authentification Windows est gérée par <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>, <xref:System.Net.HttpListener?displayProperty=nameWithType>, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType>, et les classes associées dans l'espace de noms System.Net.  
   
- [Authentification Windows intégrée avec protection étendue](../../../docs/framework/network-programming/integrated-windows-authentication-with-extended-protection.md)  
+ [Authentification Windows intégrée avec protection étendue](integrated-windows-authentication-with-extended-protection.md)  
  Décrit les améliorations de la protection étendue qui affectent la manière dont l'authentification Windows intégrée est gérée par <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>, <xref:System.Net.HttpListener?displayProperty=nameWithType>, <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>, <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType>, et les classes associées dans <xref:System.Net?displayProperty=nameWithType> et les espaces de noms associés.  
   
- [Parcours NAT avec IPv6 et Teredo](../../../docs/framework/network-programming/nat-traversal-using-ipv6-and-teredo.md)  
+ [Parcours NAT avec IPv6 et Teredo](nat-traversal-using-ipv6-and-teredo.md)  
  Décrit les améliorations apportées aux espaces de noms <xref:System.Net?displayProperty=nameWithType>, <xref:System.Net.NetworkInformation?displayProperty=nameWithType>, et <xref:System.Net.Sockets?displayProperty=nameWithType> pour prendre en charge le parcours NAT avec IPv6 et Teredo.  
   
- [Isolement réseau pour les applications du Windows Store](../../../docs/framework/network-programming/network-isolation-for-windows-store-apps.md)  
+ [Isolement réseau pour les applications du Windows Store](network-isolation-for-windows-store-apps.md)  
  Décrit l'impact de l'isolement réseau lorsque les classes des espaces de noms <xref:System.Net>, <xref:System.Net.Http>, et <xref:System.Net.Http.Headers> sont utilisées dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] .  
   
- [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Exemples de programmation réseau](network-programming-samples.md)  
  Liens vers des exemples téléchargeables de programmation qui utilisent des classes dans les espaces de noms <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer>, <xref:System.Net.Security>, <xref:System.Net.Sockets> .  
   
 ## <a name="reference"></a>Référence  
@@ -136,7 +136,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bonnes pratiques du protocole TLS (Transport Layer Security) avec le .NET Framework](../../../docs/framework/network-programming/tls.md)
-- [Rubriques de guide pratique sur la programmation réseau](../../../docs/framework/network-programming/network-programming-how-to-topics.md)
-- [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Bonnes pratiques du protocole TLS (Transport Layer Security) avec le .NET Framework](tls.md)
+- [Rubriques de guide pratique sur la programmation réseau](network-programming-how-to-topics.md)
+- [Exemples de programmation réseau](network-programming-samples.md)
 - [Exemple HttpClient](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)

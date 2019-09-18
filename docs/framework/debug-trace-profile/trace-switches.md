@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 16ef27b7d1a36121976cbb026f81984a8b84d1fe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b796d79fc6acf7d54aac7c69d376e587144d14d1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614333"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052263"
 ---
 # <a name="trace-switches"></a>Commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer. Ces commutateurs sont des objets présents dans votre code, mais ils peuvent être configurés en dehors du code via le fichier .config. Trois types de commutateurs de trace sont disponibles dans .NET Framework : la classe <xref:System.Diagnostics.BooleanSwitch> , la classe <xref:System.Diagnostics.TraceSwitch> et la classe <xref:System.Diagnostics.SourceSwitch> . La classe <xref:System.Diagnostics.BooleanSwitch> agit comme un bouton bascule qui active ou désactive diverses instructions de trace. Les classes <xref:System.Diagnostics.TraceSwitch> et <xref:System.Diagnostics.SourceSwitch> vous permettent d'activer un commutateur de trace pour un niveau de traçage spécifique. Les messages <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.TraceSource> spécifiés pour ce niveau et tous les niveaux inférieurs seront alors affichés. Si vous désactivez le commutateur, les messages de trace ne seront pas affichés. Toutes ces classes dérivent de la classe abstraite (**MustInherit**) **Switch**, comme tous les commutateurs créés par l'utilisateur.  
   
- Les commutateurs de trace sont parfois utiles pour filtrer des informations. Supposons que vous vouliez afficher tous les messages de trace dans un module d'accès aux données, mais afficher uniquement les messages d'erreur dans les autres parties de l'application. Dans ce cas, vous pouvez utiliser un commutateur de trace pour le module d'accès aux données et un deuxième commutateur pour les autres parties de l'application. Si vous utilisez le fichier .config pour configurer les commutateurs avec les paramètres appropriés, vous pouvez déterminer les types de messages de trace que vous recevez. Pour plus d'informations, voir [Procédure : Créer, initialiser et configurer des commutateurs de Trace](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+ Les commutateurs de trace sont parfois utiles pour filtrer des informations. Supposons que vous vouliez afficher tous les messages de trace dans un module d'accès aux données, mais afficher uniquement les messages d'erreur dans les autres parties de l'application. Dans ce cas, vous pouvez utiliser un commutateur de trace pour le module d'accès aux données et un deuxième commutateur pour les autres parties de l'application. Si vous utilisez le fichier .config pour configurer les commutateurs avec les paramètres appropriés, vous pouvez déterminer les types de messages de trace que vous recevez. Pour plus d’informations, consultez [Guide pratique pour Créer, initialiser et configurer des commutateurs](how-to-create-initialize-and-configure-trace-switches.md)de trace.  
   
  En règle générale, une application déployée s'exécute sans que les commutateurs ne soient activés. Cela évite aux utilisateurs de voir s'afficher de nombreux messages inutiles à l'écran ou que ces messages soient enregistrés dans un fichier journal durant l'exécution de l'application. Si un problème survient au cours de l'exécution de l'application, vous pouvez arrêter l'application, activer les commutateurs et redémarrer l'application pour afficher les messages de trace.  
   
@@ -49,7 +49,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
 |Valeur énumérée|Valeur entière|Type de message affiché (ou écrit vers une cible de sortie spécifiée)|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
-|Off|0|None|  
+|Désactivé|0|Aucun|  
 |Error|1|Uniquement les messages d'erreur|  
 |Warning|2|Messages d'avertissement et messages d'erreur|  
 |Info|3|Messages d'information, messages d'avertissement et messages d'erreur|  
@@ -57,7 +57,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
  Les propriétés **TraceSwitch** indiquent le niveau de trace maximal pour le commutateur. Autrement dit, les informations de traçage sont écrites pour le niveau spécifié et tous les niveaux inférieurs. Par exemple, si **TraceInfo** a la valeur **true**, **TraceError** et **TraceWarning** ont également la valeur **true** , mais **TraceVerbose** peut très bien avoir la valeur **false**.  
   
- Ces propriétés sont en lecture seule. L'objet **TraceSwitch** les définit automatiquement quand la propriété **TraceLevel** est définie. Exemple :  
+ Ces propriétés sont en lecture seule. L'objet **TraceSwitch** les définit automatiquement quand la propriété **TraceLevel** est définie. Par exemple :  
   
 ```vb  
 Dim myTraceSwitch As New TraceSwitch("SwitchOne", "The first switch")  
@@ -85,6 +85,6 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-- [Guide pratique pour Ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Écouteurs de suivi](trace-listeners.md)
+- [Guide pratique : Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)

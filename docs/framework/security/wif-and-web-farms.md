@@ -3,17 +3,17 @@ title: WIF et batteries de serveurs web
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: 09d5f3f745f170439a7fbf160b78439c103623b9
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 32d2875ebe0a46b9f9b1856ed70a30114793e492
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851524"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045251"
 ---
 # <a name="wif-and-web-farms"></a>WIF et batteries de serveurs web
 Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressources d’une application par partie de confiance déployée dans une batterie de serveurs web, vous devez définir des paramètres spécifiques pour vous assurer que WIF peut traiter les jetons provenant d’instances de l’application par partie de confiance qui sont exécutées sur les différents ordinateurs de la batterie de serveurs. Ces paramètres incluent la validation des signatures de jetons de session, le chiffrement et le déchiffrement des jetons de session, la mise en cache des jetons de session et la détection des jetons de sécurité relus.  
   
- En règle générale, quand WIF est utilisé pour sécuriser les ressources d’une application par partie de confiance (que cette application soit exécutée sur un seul ordinateur ou sur plusieurs ordinateurs dans une batterie de serveurs web), une session est établie avec le client sur la base du jeton de sécurité qui a été obtenu auprès du service d’émission de jeton de sécurité (STS). De cette manière, le client n’a pas à s’authentifier auprès du service STS pour chaque ressource d’application sécurisée à l’aide de WIF. Pour plus d’informations sur la façon dont WIF gère les sessions, consultez [Gestion des sessions par WIF](../../../docs/framework/security/wif-session-management.md).  
+ En règle générale, quand WIF est utilisé pour sécuriser les ressources d’une application par partie de confiance (que cette application soit exécutée sur un seul ordinateur ou sur plusieurs ordinateurs dans une batterie de serveurs web), une session est établie avec le client sur la base du jeton de sécurité qui a été obtenu auprès du service d’émission de jeton de sécurité (STS). De cette manière, le client n’a pas à s’authentifier auprès du service STS pour chaque ressource d’application sécurisée à l’aide de WIF. Pour plus d’informations sur la façon dont WIF gère les sessions, consultez [Gestion des sessions par WIF](wif-session-management.md).  
   
  Quand les paramètres par défaut sont utilisés, WIF procède comme suit :  
   
@@ -40,7 +40,7 @@ Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressource
     </securityTokenHandlers>  
     ```  
   
-- Implémentez une mise en cache distribuée dérivée de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>, autrement dit, un cache qui est accessible à partir de tous les ordinateurs de la batterie de serveurs sur lesquels l’application par partie de confiance est susceptible d’être exécutée. Configurez l’application par partie de confiance pour qu’elle utilise votre cache distribué en spécifiant l’élément [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) dans le fichier de configuration. Vous pouvez substituer la méthode <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> dans votre classe dérivée pour implémenter les éléments enfants de l’élément `<sessionSecurityTokenCache>` qui sont nécessaires.  
+- Implémentez une mise en cache distribuée dérivée de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>, autrement dit, un cache qui est accessible à partir de tous les ordinateurs de la batterie de serveurs sur lesquels l’application par partie de confiance est susceptible d’être exécutée. Configurez l’application par partie de confiance pour qu’elle utilise votre cache distribué en spécifiant l’élément [\<sessionSecurityTokenCache>](../configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) dans le fichier de configuration. Vous pouvez substituer la méthode <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> dans votre classe dérivée pour implémenter les éléments enfants de l’élément `<sessionSecurityTokenCache>` qui sont nécessaires.  
   
     ```xml  
     <caches>  
@@ -52,7 +52,7 @@ Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressource
   
      Un moyen d’implémenter la mise en cache distribuée est de spécifier un serveur frontal WCF pour votre cache personnalisé. Pour plus d’informations sur l’implémentation d’un service caching WCF, consultez [Service caching WCF](#BKMK_TheWCFCachingService). Pour plus d’informations sur l’implémentation d’un client WCF que l’application par partie de confiance peut utiliser pour appeler le service caching, consultez [Client caching WCF](#BKMK_TheWCFClient).  
   
-- Si votre application détecte la présence de jetons relus, vous devez appliquer une stratégie de mise en cache distribuée similaire pour le cache de relecture de jetons. Pour cela, le cache doit être dérivé de <xref:System.IdentityModel.Tokens.TokenReplayCache> et pointer vers votre service caching de relecture de jetons dans l’élément de configuration [\<tokenReplayCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md).  
+- Si votre application détecte la présence de jetons relus, vous devez appliquer une stratégie de mise en cache distribuée similaire pour le cache de relecture de jetons. Pour cela, le cache doit être dérivé de <xref:System.IdentityModel.Tokens.TokenReplayCache> et pointer vers votre service caching de relecture de jetons dans l’élément de configuration [\<tokenReplayCache>](../configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md).  
   
 > [!IMPORTANT]
 > Tous les exemples de code XML et de code figurant dans cette rubrique proviennent de l’exemple [ClaimsAwareWebFarm](https://go.microsoft.com/fwlink/?LinkID=248408) .  
@@ -137,7 +137,7 @@ namespace WcfSessionSecurityTokenCacheService
   
 <a name="BKMK_TheWCFClient"></a>   
 ## <a name="the-wcf-caching-client"></a>Client caching WCF  
- Cette section montre l’implémentation d’une classe dérivée de <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> qui délègue les appels au service caching. Vous devez configurer l’application par partie de confiance pour qu’elle utilise cette classe à l’aide de l’élément [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md), comme dans le code XML suivant :  
+ Cette section montre l’implémentation d’une classe dérivée de <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> qui délègue les appels au service caching. Vous devez configurer l’application par partie de confiance pour qu’elle utilise cette classe à l’aide de l’élément [\<sessionSecurityTokenCache>](../configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md), comme dans le code XML suivant :  
   
 ```xml  
 <caches>  
@@ -255,4 +255,4 @@ namespace CacheLibrary
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>
 - <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>
-- [Gestion de session WIF](../../../docs/framework/security/wif-session-management.md)
+- [Gestion de session WIF](wif-session-management.md)

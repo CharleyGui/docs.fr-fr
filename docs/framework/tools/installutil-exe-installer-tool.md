@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 3f9d0533-f895-4897-b4ea-528284e0241d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04074c8120ad2bc4e279ca0c60624bde9d5e42d9
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
-ms.translationtype: HT
+ms.openlocfilehash: 5ad0497bd5303dc4113dbb7b8078c70cb044cc95
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57496684"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044540"
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (outil Installer Tool)
 
 L'outil Installer est un utilitaire en ligne de commande qui vous permet d'installer et de désinstaller les ressources serveur en exécutant les composants du programme d'installation dans des assemblys spécifiés. Cet outil fonctionne conjointement avec les classes de l'espace de noms <xref:System.Configuration.Install>.
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -48,8 +48,8 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 
 |Option|Description|
 |------------|-----------------|
-|`/h[elp]`<br /><br /> - ou -<br /><br /> `/?`|Affiche la syntaxe et les options de commande de l'outil.|
-|`/help` *assembly*<br /><br /> - ou -<br /><br /> `/?` *assembly*|Affiche les options supplémentaires reconnues par des programmes d'installation individuels dans l'assembly spécifié, avec la syntaxe et les options de commande d'InstallUtil.exe. Cette option ajoute le texte retourné par la propriété <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> de chaque composant de programme d'installation au texte d'aide d'InstallUtil.exe.|
+|`/h[elp]`<br /><br /> ou<br /><br /> `/?`|Affiche la syntaxe et les options de commande de l'outil.|
+|`/help` *assembly*<br /><br /> ou<br /><br /> `/?` *assembly*|Affiche les options supplémentaires reconnues par des programmes d'installation individuels dans l'assembly spécifié, avec la syntaxe et les options de commande d'InstallUtil.exe. Cette option ajoute le texte retourné par la propriété <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> de chaque composant de programme d'installation au texte d'aide d'InstallUtil.exe.|
 |`/AssemblyName` "*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|Spécifie le nom fort d'un assembly, qui doit être enregistré dans le Global Assembly Cache. Le nom de l'assembly doit être qualifié complet avec la version, la culture et le jeton de clé publique de l'assembly. Le nom qualifié complet doit être placé entre guillemets.<br /><br /> Par exemple, "myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" est un nom d'assembly qualifié complet.|
 |`/InstallStateDir=[` *directoryName* `]`|Spécifie le répertoire du fichier .InstallState contenant les données utilisées pour désinstaller l'assembly. La valeur par défaut est le répertoire qui contient l'assembly.|
 |`/LogFile=`[*filename*]|Spécifie le nom du fichier journal dans lequel la progression de l'installation est enregistrée. Par défaut, si l'option `/LogFile` est omise, un fichier journal nommé *assemblyname*.InstallLog est créé. Si *filename* est omis, aucun fichier journal n'est généré.|
@@ -71,7 +71,7 @@ Tous les paramètres de ligne de commande et options sont écrits dans le fichie
 > [!IMPORTANT]
 > Dans certains cas, les paramètres passés au programme d'installation peuvent comprendre des informations sensibles ou personnellement identifiables qui, par défaut, sont écrites dans un fichier journal de texte brut. Pour empêcher ce comportement, vous pouvez supprimer le fichier journal en spécifiant `/LogFile=` (sans l'argument *filename*) après Installutil.exe sur la ligne de commande.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les applications .NET Framework comportent des fichiers programme traditionnels et des ressources associées, comme les files d'attente de messages, les journaux des événements et les compteurs de performance qui doivent être créés lors du déploiement de l'application. Vous pouvez utiliser les composants du programme d'installation d'un assembly pour créer ces ressources lors de l'installation de l'application et les supprimer lors de la désinstallation de l'application. Installutil.exe détecte et exécute les composants de ce programme d'installation.
 
@@ -170,5 +170,5 @@ installutil /LogFile=myLog.InstallLog myAssembly.exe /LogFile=myTestLog.InstallL
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Configuration.Install>
-- [Outils](../../../docs/framework/tools/index.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

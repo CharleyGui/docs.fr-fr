@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 544d04236a8f1b824a15c6ee7912020346841076
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: b9781e7ef8edde182a13779a01e042cb44c92881
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912533"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045995"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Procédure : définir un type générique avec l’émission de réflexion
 Cette rubrique montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.  
   
 > [!IMPORTANT]
-> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. La plupart des méthodes sur les types génériques ne sont pas génériques, comme dans cet exemple. Pour obtenir un exemple d’émission de méthode générique, consultez [Guide pratique pour définir une méthode générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md).  
+> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. La plupart des méthodes sur les types génériques ne sont pas génériques, comme dans cet exemple. Pour obtenir un exemple d’émission de méthode générique, consultez [Guide pratique pour définir une méthode générique avec l’émission de réflexion](how-to-define-a-generic-method-with-reflection-emit.md).  
   
 ### <a name="to-define-a-generic-type"></a>Pour définir un type générique  
   
@@ -121,7 +121,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
   
  Le programme inclut une méthode qui répertorie les informations sur un type générique, et une méthode qui répertorie les contraintes spéciales sur un paramètre de type. Ces méthodes sont utilisées pour afficher des informations sur la classe `Sample` finie.  
   
- Le programme enregistre le module fini sur le disque en tant que `GenericEmitExample1.dll`. Ainsi, vous pouvez l’ouvrir avec [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) et examiner le code MSIL de la classe `Sample`.  
+ Le programme enregistre le module fini sur le disque en tant que `GenericEmitExample1.dll`. Ainsi, vous pouvez l’ouvrir avec [Ildasm.exe (désassembleur IL)](../tools/ildasm-exe-il-disassembler.md) et examiner le code MSIL de la classe `Sample`.  
   
  [!code-cpp[EmitGenericType#1](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#1)]
  [!code-csharp[EmitGenericType#1](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#1)]

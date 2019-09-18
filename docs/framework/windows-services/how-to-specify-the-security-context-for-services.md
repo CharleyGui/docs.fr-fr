@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: 88dc9c40a2b8ff0ac9bba26c991ba2a4ac2dcb43
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: dd2a9c4485e151d4cb1c9d5ae3a95a69fcc416d4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952435"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053579"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Procédure : spécifier le contexte de sécurité des services
 Par défaut, les services s’exécutent dans un contexte de sécurité différent de celui de l’utilisateur connecté. Les services s’exécutent dans le contexte du compte système par défaut, appelé `LocalSystem`, ce qui leur confère des privilèges d’accès aux ressources système différents de ceux de l’utilisateur. Vous pouvez changer ce comportement si vous souhaitez que votre service s’exécute sous un autre compte d’utilisateur.  
@@ -35,7 +35,7 @@ Par défaut, les services s’exécutent dans un contexte de sécurité différe
   
 ### <a name="to-specify-the-security-context-for-a-service"></a>Pour spécifier le contexte de sécurité d’un service  
   
-1. Après avoir créé votre service, ajoutez les programmes d’installation nécessaires à celui-ci. Pour plus d'informations, voir [Procédure : ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1. Après avoir créé votre service, ajoutez les programmes d’installation nécessaires à celui-ci. Pour plus d’informations, consultez [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md).  
   
 2. Dans le concepteur, accédez à la classe `ProjectInstaller`, puis cliquez sur le programme d’installation du processus de service pour le service que vous utilisez.  
   
@@ -46,6 +46,6 @@ Par défaut, les services s’exécutent dans un contexte de sécurité différe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Guide pratique pour ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Guide pratique pour créer des services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)
+- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - UI automation fundamentals
 ms.assetid: d270ab45-542b-45c0-a240-e80aa4a61b95
-ms.openlocfilehash: da333fcd5f76359400e44511820ad9aa34e83bd7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 371d52a09445f735efb41b02780c65579207724f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911474"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042113"
 ---
 # <a name="ui-automation-fundamentals"></a>Notions de base d'UI Automation
 > [!NOTE]
@@ -20,14 +20,14 @@ ms.locfileid: "69911474"
  Cette section contient des vues d’ensemble générales de l' [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] API.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)  
- [UI Automation et Microsoft Active Accessibility](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [Vue d’ensemble des propriétés UI Automation](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
- [Vue d’ensemble des événements UI Automation](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
- [Vue d’ensemble de la sécurité UI Automation](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
- [Utilisation d’UI Automation pour des tests automatisés](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
+ [Vue d’ensemble d’UI Automation](ui-automation-overview.md)  
+ [UI Automation et Microsoft Active Accessibility](ui-automation-and-microsoft-active-accessibility.md)  
+ [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)  
+ [Vue d’ensemble des propriétés UI Automation](ui-automation-properties-overview.md)  
+ [Vue d’ensemble des événements UI Automation](ui-automation-events-overview.md)  
+ [Vue d’ensemble de la sécurité UI Automation](ui-automation-security-overview.md)  
+ [Utilisation d’UI Automation pour des tests automatisés](using-ui-automation-for-automated-testing.md)  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation>  

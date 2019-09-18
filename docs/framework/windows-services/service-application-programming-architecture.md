@@ -15,12 +15,12 @@ helpviewer_keywords:
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
 author: ghogen
-ms.openlocfilehash: d5dc690cfe460be79251d60850319e5232379f3c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 1c197b487f1cb7596f507f663fe3f1fb83857cbd
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935441"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053490"
 ---
 # <a name="service-application-programming-architecture"></a>Architecture de programmation d'une application de service
 Les applications de service Windows sont basées sur une classe qui hérite de la classe <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Substituez les méthodes de cette classe et définissez des fonctionnalités pour qu’elles déterminent le comportement de votre service.  
@@ -57,7 +57,7 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    > Ces exemples utilisent un tableau de type <xref:System.ServiceProcess.ServiceBase>, dans lequel chaque service contenu dans votre application peut être ajouté. Tous les services peuvent ensuite être exécutés ensemble. Toutefois, si vous ne créez qu’un seul service, vous pouvez choisir de ne pas utiliser le tableau. Dans ce cas, déclarez simplement un nouvel objet héritant de <xref:System.ServiceProcess.ServiceBase> et exécutez-le. Pour voir un exemple, consultez [Comment : écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
+    > Ces exemples utilisent un tableau de type <xref:System.ServiceProcess.ServiceBase>, dans lequel chaque service contenu dans votre application peut être ajouté. Tous les services peuvent ensuite être exécutés ensemble. Toutefois, si vous ne créez qu’un seul service, vous pouvez choisir de ne pas utiliser le tableau. Dans ce cas, déclarez simplement un nouvel objet héritant de <xref:System.ServiceProcess.ServiceBase> et exécutez-le. Pour voir un exemple, consultez [Comment : écrire les services par programmation](how-to-write-services-programmatically.md).  
   
 - Une série de propriétés sur la classe <xref:System.ServiceProcess.ServiceBase>. Celles-ci déterminent les méthodes qui peuvent être appelées sur votre service. Par exemple, quand la propriété <xref:System.ServiceProcess.ServiceBase.CanStop%2A> a la valeur `true`, la méthode <xref:System.ServiceProcess.ServiceBase.OnStop%2A> sur votre service peut être appelée. Quand la propriété <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> a la valeur `true`, les méthodes <xref:System.ServiceProcess.ServiceBase.OnPause%2A> et <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> peuvent être appelées. Si vous définissez l’une de ces propriétés avec la valeur `true`, vous devez ensuite remplacer et définir le traitement des méthodes associées.  
   
@@ -68,5 +68,5 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Guide pratique pour créer des services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique pour créer des services Windows](how-to-create-windows-services.md)

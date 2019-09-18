@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.EventLog element
 - event logs, writing to
 ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
-ms.openlocfilehash: c3c7d350132ee6c891633141fc5c4b280989e77f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: HT
+ms.openlocfilehash: 385a85d956a0de727e3c061ec447a3d53ad6c159
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366502"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054148"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Procédure : écrire dans le journal des événements de l’application (Visual Basic)
 
@@ -22,7 +22,7 @@ Vous ne pouvez pas écrire dans le journal de sécurité. Pour pouvoir écrire d
 
 Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorateur de serveurs** ou l’ **Observateur d’événements Windows**. Pour plus d'informations, consultez [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
 
-### <a name="to-add-and-configure-the-event-log-listener"></a>Pour ajouter et configurer l’écouteur de journalisation des événements
+## <a name="to-add-and-configure-the-event-log-listener"></a>Pour ajouter et configurer l’écouteur de journalisation des événements
 
 1. Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions** et choisissez **Ouvrir**.
 
@@ -61,11 +61,11 @@ Pour afficher un journal des événements, vous pouvez utiliser l’ **Explorate
     > [!NOTE]
     > En règle générale, une application écrit les erreurs seulement dans le journal des événements. Pour plus d’informations sur le filtrage de la sortie du journal, consultez [Procédure pas à pas : filtrage de la sortie de My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
-### <a name="to-write-event-information-to-the-event-log"></a>Pour écrire des informations sur les événements dans le journal des événements
+## <a name="to-write-event-information-to-the-event-log"></a>Pour écrire des informations sur les événements dans le journal des événements
 
-- Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal des événements. Pour plus d'informations, voir [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) et [Guide pratique pour journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Utilisez la méthode `My.Application.Log.WriteEntry` ou `My.Application.Log.WriteException` pour écrire des informations dans le journal des événements. Pour plus d'informations, voir [Procédure : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) et [Guide pratique pour journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
-    Une fois l’écouteur de journalisation des événements configuré pour un assembly, il reçoit tous les messages écrits par `My.Application.Log` depuis cet assembly.
+Une fois l’écouteur de journalisation des événements configuré pour un assembly, il reçoit tous les messages écrits par `My.Application.Log` depuis cet assembly.
 
 ## <a name="see-also"></a>Voir aussi
 

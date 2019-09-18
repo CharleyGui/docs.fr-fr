@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: f545cbbacac6670f11f28166191112c9fba4f70f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 320833bf147fa16889cd188c7c729cd4dc028843
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953235"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042520"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "69953235"
   
  Les modèles de contrôle permettent de catégoriser et d'exposer les fonctionnalités d'un contrôle, indépendamment du type de contrôle ou de l'apparence du contrôle. Les clients UI Automation peuvent examiner un <xref:System.Windows.Automation.AutomationElement> pour déterminer les modèles de contrôle pris en charge et s’assurer du comportement du contrôle.  
   
- Pour obtenir la liste complète des modèles de contrôle, consultez [UI Automation Control patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+ Pour obtenir la liste complète des modèles de contrôle, consultez [UI Automation Control patterns Overview](ui-automation-control-patterns-overview.md).  
   
 <a name="uiautomation_getting_control_patterns"></a>   
 ## <a name="getting-control-patterns"></a>Obtention de modèles de contrôle  
@@ -34,7 +34,7 @@ ms.locfileid: "69953235"
   
 <a name="uiautomation_properties_on_control_patterns"></a>   
 ## <a name="retrieving-properties-on-control-patterns"></a>Récupération de propriétés sur des modèles de contrôle  
- Les clients peuvent récupérer les valeurs de propriété sur les modèles de contrôle en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> et en effectuant le cast de l'objet retourné en un type approprié. Pour plus d’informations [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur les propriétés, consultez [UI Automation Properties for clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+ Les clients peuvent récupérer les valeurs de propriété sur les modèles de contrôle en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> et en effectuant le cast de l'objet retourné en un type approprié. Pour plus d’informations [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur les propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
  Outre les `GetPropertyValue` méthodes, les valeurs de propriété peuvent être récupérées par le biais des accesseurs Common Language Runtime (CLR) [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour accéder aux propriétés sur un modèle.  
   
@@ -46,11 +46,11 @@ ms.locfileid: "69953235"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)
-- [Modèle de texte UI Automation](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)
-- [Appeler un contrôle à l’aide d’UI Automation](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)
-- [Obtenir l’état bascule d’une case à cocher à l’aide d’UI Automation](../../../docs/framework/ui-automation/get-the-toggle-state-of-a-check-box-using-ui-automation.md)
-- [Mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)
+- [Modèles de contrôle UI Automation](ui-automation-control-patterns.md)
+- [Modèle de texte UI Automation](ui-automation-text-pattern.md)
+- [Appeler un contrôle à l’aide d’UI Automation](invoke-a-control-using-ui-automation.md)
+- [Obtenir l’état bascule d’une case à cocher à l’aide d’UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)
+- [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)
 - [Exemple d’insertion de texte TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
 - [Exemple de recherche et de sélection de TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)
 - [Exemple InvokePattern, ExpandCollapsePattern et TogglePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)

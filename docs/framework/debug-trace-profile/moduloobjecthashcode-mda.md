@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b1223839be3747b04810d6b5bd131733c41631f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1679e283a801044ad5a0baed89f17e6acc74259c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614388"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052454"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode (MDA)
 L’Assistant Débogage managé `moduloObjectHashcode` modifie le comportement de la classe <xref:System.Object> pour effectuer une opération modulo sur le code de hachage retourné par la méthode <xref:System.Object.GetHashCode%2A>. Le modulo par défaut pour cet Assistant Débogage managé est 1, ce qui fait que <xref:System.Object.GetHashCode%2A> retourne 0 pour tous les objets.  
@@ -38,7 +38,7 @@ L’Assistant Débogage managé `moduloObjectHashcode` modifie le comportement d
   
  L’ordre d’énumération d’un <xref:System.Collections.Hashtable> peut changer d’une version du runtime à l’autre si l’algorithme utilisé pour calculer les codes de hachage de la clé change. Pour tester si votre programme est dépendant de l’ordre d’énumération des clés ou des valeurs provenant d’une table de hachage, vous pouvez activer cet Assistant Débogage managé.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  N’utilisez jamais de codes de hachage en remplacement de l’identité d’un objet. Implémentez le remplacement de la méthode <xref:System.Object.Equals%2A?displayProperty=nameWithType> de façon à ne pas comparer les codes de hachage.  
   
  Ne créez pas de dépendances par rapport à l’ordre des énumérations de clés ou de valeurs dans des tables de hachage.  
@@ -64,4 +64,4 @@ L’Assistant Débogage managé `moduloObjectHashcode` modifie le comportement d
 
 - <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

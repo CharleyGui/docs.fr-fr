@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Afficher le contenu de l’assembly'
+title: 'Procédure : Voir le contenu d’un assembly'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -16,14 +16,15 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 8f27afafde0b83dfe886d218f3148d8ff07b30cb
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 40ed31bb2231775bb2b6eb24586e07c8b07a85bb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973025"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053943"
 ---
-# <a name="how-to-view-assembly-contents"></a>Procédure : Afficher le contenu de l’assembly
+# <a name="how-to-view-assembly-contents"></a>Procédure : Voir le contenu d’un assembly
+
 Vous pouvez utiliser [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) pour visualiser les informations de langage MSIL (Microsoft Intermediate Language) dans un fichier. Si le fichier examiné est un assembly, ces informations peuvent inclure les attributs de l’assembly, ainsi que des références à d’autres modules et assemblys. Ces informations peuvent être utiles pour déterminer si un fichier est un assembly ou fait partie d’un assembly, et s’il a des références à d’autres modules ou assemblys.  
   
 Pour afficher le contenu d’un assembly à l’aide d' *Ildasm. exe*, tapez **Ildasm** \<nom de l' *assembly*> à l’invite de commandes. Par exemple, la commande suivante désassemble l’assembly *Hello. exe* .  
@@ -35,6 +36,7 @@ ildasm Hello.exe
 Pour afficher les informations de manifeste d’assembly, double-cliquez sur l’icône de **manifeste** dans la fenêtre du désassembleur MSIL.  
   
 ## <a name="example"></a>Exemple  
+
 L’exemple suivant démarre avec un programme « Hello World » de base. Après avoir compilé le programme, utilisez *Ildasm. exe* pour désassembler l’assembly *Hello. exe* et afficher le manifeste de l’assembly.  
 
 ```cpp

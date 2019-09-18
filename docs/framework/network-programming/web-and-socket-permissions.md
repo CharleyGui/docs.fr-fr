@@ -15,12 +15,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
-ms.openlocfilehash: fbb4e5d7171c50c06f55706df90240ffa205ee73
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d1b993acbf20eac244e596075c3f826bba3211a1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967618"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046866"
 ---
 # <a name="web-and-socket-permissions"></a>Autorisations web et socket
 La sécurité Internet pour les applications utilisant l’espace de noms <xref:System.Net> est apportée par les classes <xref:System.Net.WebPermission> et <xref:System.Net.SocketPermission>. La classe **WebPermission** détermine si une application est autorisée à demander des données à partir d’un URI ou d’utiliser un URI sur Internet. La classe **SocketPermission** détermine si une application est autorisée à utiliser un <xref:System.Net.Sockets.Socket> pour accepter des données sur un port local ou pour communiquer avec des appareils distants utilisant un protocole de transport à une autre adresse, en fonction de l’hôte, du numéro de port et du protocole de transport du socket.  
@@ -36,4 +36,4 @@ La sécurité Internet pour les applications utilisant l’espace de noms <xref:
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité](../../standard/security/index.md)
-- [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)
+- [Sécurité dans la programmation réseau](security-in-network-programming.md)

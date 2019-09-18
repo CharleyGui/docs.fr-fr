@@ -13,12 +13,12 @@ helpviewer_keywords:
 - HTTP, about HTTP
 - HttpWebRequest class, sending and receiving data
 ms.assetid: 985fe5d8-eb71-4024-b361-41fbdc1618d8
-ms.openlocfilehash: abbb02b7bd22c4b301c5565037f55aa1019fc3ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: c8c799a50e5d63bbf411c338eb9e93f85a942bb0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170597"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048013"
 ---
 # <a name="http"></a>HTTP
 Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebResponse>, le .NET Framework offre une prise en charge complète du protocole HTTP sur lequel repose la majeure partie du trafic Internet global. Ces classes, dérivées de <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse>, sont retournées par défaut dès que la méthode statique <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> détecte un URI commençant par « http » ou « https ». Dans la plupart des cas, les classes **WebRequest** et **WebResponse** fournissent tous les éléments nécessaires pour effectuer une demande mais, si vous avez besoin d’un accès aux fonctionnalités spécifiques à HTTP exposées en tant que propriétés, vous pouvez effectuer un cast du type de ces classes en **HttpWebRequest** ou **HttpWebResponse**.  
@@ -33,6 +33,6 @@ Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebRes
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès à Internet via un proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
-- [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)
-- [Guide pratique pour accéder aux propriétés spécifiques à HTTP](../../../docs/framework/network-programming/how-to-access-http-specific-properties.md)
+- [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
+- [Utilisation de protocoles d’application](using-application-protocols.md)
+- [Guide pratique : accéder aux propriétés spécifiques à HTTP](how-to-access-http-specific-properties.md)

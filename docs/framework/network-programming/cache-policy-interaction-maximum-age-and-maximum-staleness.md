@@ -9,12 +9,12 @@ helpviewer_keywords:
 - staleness of cached resources
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
-ms.openlocfilehash: 3819882fe4a93016b25c10daa198a24fe7b0e951
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: e21cfc28407ba67afdce8d72e5e52c12ab359059
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624682"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048839"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interaction de la stratégie de cache : ancienneté maximale et péremption maximale
 Pour vous assurer que le contenu le plus récent est renvoyé à l’application cliente, l’interaction entre la stratégie de cache du client et les exigences de revalidation du serveur ont toujours comme résultat la stratégie de cache la plus restrictive. Tous les exemples de cette rubrique illustrent la stratégie de cache pour une ressource mise en cache le 1er janvier et expirant le 4 janvier.  
@@ -37,9 +37,9 @@ Pour vous assurer que le contenu le plus récent est renvoyé à l’application
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)
-- [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
-- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)
+- [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)
+- [Stratégie de cache](cache-policy.md)
+- [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
+- [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
+- [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
+- [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)

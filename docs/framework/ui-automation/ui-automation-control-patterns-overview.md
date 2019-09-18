@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 30e8619e70da46cb510fbe28ab2e8bcf27621e19
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c5dce6895ed9962cf20808417c50569db48de6d9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963297"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042354"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
 > [!NOTE]
@@ -74,8 +74,8 @@ ms.locfileid: "69963297"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)
-- [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)
-- [Propriétés UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)
-- [Événements UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)
+- [Vue d’ensemble d’UI Automation](ui-automation-overview.md)
+- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)
+- [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)

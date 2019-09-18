@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e61ae55673cbf745ea4c637c5206efe41d8ab276
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: e0eeaee969eda5e4d0ea1a119991456668c7d44f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946673"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051740"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Procédure : enregistrer des assemblys PIA
 
@@ -24,7 +24,7 @@ Les classes ne peuvent être marshalées que par COM Interop et sont toujours ma
 
  Même si vous ne souhaitez pas exposer des types COM tiers, l’utilisation d’un assembly PIA peut faciliter l’interopérabilité avec les composants COM. Toutefois, cette stratégie ne protège pas des modifications qu'un fournisseur peut apporter aux types définis dans un assembly PIA. Si votre application nécessite une telle protection, générez votre propre assembly d'interopérabilité au lieu d'utiliser un assembly PIA.
 
- Vous devez inscrire tous les assemblys PIA acquis sur votre ordinateur de développement avant de pouvoir les référencer avec Visual Studio. Visual Studio recherche et utilise un assembly PIA la première fois que vous référencez un type à partir d'une bibliothèque de types COM. Si Visual Studio ne peut pas localiser l'assembly PIA associé à la bibliothèque de types, il vous invite à l'acquérir ou vous propose de créer un assembly d'interopérabilité . De même, l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) utilise également le Registre pour rechercher des assemblys PIA.
+ Vous devez inscrire tous les assemblys PIA acquis sur votre ordinateur de développement avant de pouvoir les référencer avec Visual Studio. Visual Studio recherche et utilise un assembly PIA la première fois que vous référencez un type à partir d'une bibliothèque de types COM. Si Visual Studio ne peut pas localiser l'assembly PIA associé à la bibliothèque de types, il vous invite à l'acquérir ou vous propose de créer un assembly d'interopérabilité . De même, l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md) utilise également le Registre pour rechercher des assemblys PIA.
 
  Même s'il n'est pas nécessaire d'inscrire les assemblys PIA si vous ne prévoyez pas d'utiliser Visual Studio, l'inscription offre deux avantages :
 
@@ -32,7 +32,7 @@ Les classes ne peuvent être marshalées que par COM Interop et sont toujours ma
 
 - Vous pouvez éviter de générer et d'utiliser par erreur un nouvel assembly d'interopérabilité si, à un moment donné, vous utilisez Visual Studio pour référencer un type pour lequel vous avez un assembly PIA non inscrit.
 
-Utilisez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) pour inscrire un assembly PIA.
+Utilisez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../tools/regasm-exe-assembly-registration-tool.md) pour inscrire un assembly PIA.
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Pour inscrire un assembly PIA
 
@@ -42,7 +42,7 @@ Utilisez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../../../d
 
      Dans cette commande, *nomassembly* est le nom de fichier de l’assembly inscrit. Regasm.exe ajoute une entrée pour l'assembly PIA sous la même clé de Registre que la bibliothèque de types d'origine.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
  L'exemple suivant inscrit l'assembly PIA `CompanyA.UtilLib.dll`.
 
 ```console

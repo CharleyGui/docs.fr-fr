@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 79cfc607e20d921c7ae942cb9755eee4264336eb
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: HT
+ms.openlocfilehash: 59af252967a18eca858035fb0a3465d909734ddf
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877056"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044725"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Invite de commandes développeur pour Visual Studio
 
@@ -88,9 +88,9 @@ Pour faciliter l’accès, vous pouvez ajouter l’invite de commandes développ
 
    Le nouvel élément de menu est ajouté et vous pouvez accéder à l’invite de commandes à partir du menu **Outils**.
 
-   ![Élément de menu d’invite de commandes dans Visual Studio](media/command-prompt-vs-menu.png)
+   ![Élément de menu d’invite de commandes dans Visual Studio](./media/command-prompt-vs-menu.png)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
+- [Outils](index.md)
 - [Gestion des outils externes](/visualstudio/ide/managing-external-tools)

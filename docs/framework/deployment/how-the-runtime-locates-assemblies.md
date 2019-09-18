@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7f8046852f847cd5493a2ed17b491a39e494ce2b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 01cef9646ca9c4f49ab8376364648f66b9651e4a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969121"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052126"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -144,7 +144,9 @@ Le mode sans échec peut être défini pour toute l'application ou pour des asse
 Finalement, le runtime examine le fichier de configuration de l'ordinateur. Ce fichier, intitulé Machine.config, réside sur l'ordinateur local dans le sous-répertoire Config du répertoire racine où le runtime est installé. Il peut être utilisé par les administrateurs pour spécifier des restrictions de liaison d'assemblys qui sont propres à cet ordinateur. Les paramètres définis dans le fichier de configuration de l'ordinateur sont prioritaires par rapport aux autres paramètres de configuration. Cependant, cela ne signifie pas que tous les paramètres de configuration doivent être placés dans ce fichier. La version déterminée par le fichier de stratégie d'administrateur est finale et ne peut pas être substituée. Les substitutions spécifiées dans le fichier Machine.config s'appliquent à toutes les applications. Pour plus d'informations sur les fichiers de configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
 
 <a name="step2"></a> 
+
 ## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Étape 2 : rechercher les assemblys précédemment référencés
+
 Si l'assembly demandé a aussi été demandé lors d'appels précédents, le common language runtime utilise l'assembly qui est déjà chargé. Ceci peut avoir des implications au moment de l'attribution des noms des assemblys qui composent une application. Pour plus d'informations sur l'attribution des noms des assemblys, voir [Noms d'assemblys](../../standard/assembly/names.md).
 
 Si une précédente demande de chargement de l'assembly avait échoué, toute nouvelle demande échoue immédiatement sans qu'aucune tentative de chargement de l'assembly ne soit effectuée. Depuis la version 2.0 du .NET Framework, les échecs de liaison d'assemblys sont mis en cache et les informations mises en cache sont utilisées pour déterminer s'il faut essayer de charger l'assembly.

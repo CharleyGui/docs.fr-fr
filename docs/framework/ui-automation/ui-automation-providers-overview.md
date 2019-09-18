@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: 45e1cd9bdfcbcf592ce6708496282e2e66a4a2e3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c8db2e6cbd1f0c0dd61ecb8e147133b8c608ea8f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914389"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042040"
 ---
 # <a name="ui-automation-providers-overview"></a>Vue d'ensemble des fournisseurs UI Automation
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "69914389"
 ### <a name="navigation"></a>Navigation  
  Les éléments[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sont exposés aux clients sous la forme d’une arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] construit l’arborescence en naviguant d’un élément à l’autre. La navigation est activée par les fournisseurs pour chaque élément, chacun pouvant pointer vers un parent, des frères ou des enfants.  
   
- Pour plus d’informations sur la vue client de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+ Pour plus d’informations sur la vue client de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
 ### <a name="views"></a>Affichages  
  Un client peut consulter l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dans trois vues principales, telles que répertoriées dans le tableau suivant.  
@@ -57,7 +57,7 @@ ms.locfileid: "69914389"
 |Vue de contrôle|Contient les éléments qui sont des contrôles.|  
 |Vue de contenu|Contient les éléments disposant d’un contenu.|  
   
- Pour plus d’informations sur les vues client de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+ Pour plus d’informations sur les vues client de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
  Il incombe à l’implémentation du fournisseur de définir un élément comme élément de contenu ou élément de contrôle. Les éléments de contrôle peuvent être ou non également des éléments de contenu, mais tous les éléments de contenu sont des éléments de contrôle.  
   
@@ -78,4 +78,4 @@ ms.locfileid: "69914389"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)

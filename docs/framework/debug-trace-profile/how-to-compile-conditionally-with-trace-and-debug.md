@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1692b93e09ec972e537e4a375774eeeb865bd58c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d06d1ef8e1508aefa8c9ed9327b89f58ff6976fa
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043428"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052748"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Procédure : Effectuer une compilation conditionnelle avec Trace et Debug
 Quand vous déboguez une application pendant le développement, les sorties de débogage et de traçage sont dirigées vers la fenêtre de sortie dans Visual Studio. Toutefois, pour inclure les fonctionnalités de suivi dans une application déployée, vous devez compiler vos applications instrumentées en activant la directive de compilateur **TRACE**. De cette façon, le code de traçage peut être compilé dans la version commerciale de votre application. Si vous n’activez pas la directive **TRACE**, tout le code de suivi est ignoré pendant la compilation et n’est pas inclus dans le code exécutable que vous déployez.  
   
  Les méthodes de traçage et de débogage sont associées à des attributs conditionnels. Par exemple, si l’attribut conditionnel pour le suivi a la valeur **true**, toutes les instructions de suivi sont incluses dans un assembly (fichier .exe ou .dll compilé) ; si l’attribut conditionnel **Trace** a la valeur **false**, les instructions de suivi ne sont pas incluses.  
   
- Vous pouvez activer l’attribut conditionnel **Trace** ou **Debug**, les deux ou aucun pour une build. Par conséquent, il existe quatre types de build: **Debug**, **trace**, les deux ou aucune des deux. Certaines versions release pour un déploiement de production peuvent n'en contenir aucun, mais la plupart des builds contiennent les deux.  
+ Vous pouvez activer l’attribut conditionnel **Trace** ou **Debug**, les deux ou aucun pour une build. Par conséquent, il existe quatre types de build : **Debug**, **trace**, les deux ou aucune des deux. Certaines versions release pour un déploiement de production peuvent n'en contenir aucun, mais la plupart des builds contiennent les deux.  
   
  Vous pouvez spécifier les paramètres du compilateur pour votre application de plusieurs façons :  
   
@@ -50,9 +50,9 @@ Quand vous déboguez une application pendant le développement, les sorties de d
   
      Par exemple, l'instruction de compilateur suivante entrée sur la ligne de commande inclut le code de traçage dans un fichier exécutable compilé :  
   
-     Pour Visual Basic: **vbc-r:System.dll-d:trace = true-d:debug = False MyApplication. vb**  
+     Pour Visual Basic : **vbc-r :System.dll-d :trace = true-d :debug = False MyApplication. vb**  
   
-     Pour C#: **csc-r:System.dll-d:trace-d:debug = False MyApplication.cs**  
+     Pour C#: **csc-r :System.dll-d :trace-d :debug = False MyApplication.cs**  
   
     > [!TIP]
     > Pour compiler plusieurs fichiers d’application, insérez un espace entre les noms de fichiers, par exemple **MyApplication1.vb MyApplication2.vb MyApplication3.vb** ou **MyApplication1.cs MyApplication2.cs MyApplication3.cs**.  
@@ -97,10 +97,10 @@ Commentez la directive de compilateur.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-- [Guide pratique pour Créer, initialiser et configurer des commutateurs de trace](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
-- [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-- [Guide pratique : Ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Guide pratique pour Créer, initialiser et configurer des commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md)
+- [Commutateurs de suivi](trace-switches.md)
+- [Écouteurs de suivi](trace-listeners.md)
+- [Guide pratique pour Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
 - [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [Guide pratique pour appeler le compilateur de ligne de commande](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

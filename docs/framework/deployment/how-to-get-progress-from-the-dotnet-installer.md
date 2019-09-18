@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c71816b1bd2e9c95e8c7efb44e3e689dce4ab93
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: bdd2832f112706cef6050774ce3f6db5a940424a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853963"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052087"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Procédure : suivre la progression du programme d’installation de .NET Framework 4.5
 
@@ -50,7 +50,7 @@ ms.locfileid: "70853963"
 
 ## <a name="chainer-sample"></a>Exemple de programme de chaînage
 
-L’exemple de programme de chaînage lance et suit de manière silencieuse l’installation de .NET Framework 4.5 tout en affichant la progression. Cet exemple est similaire à l’exemple de programme de chaînage fourni pour le .NET Framework 4. Toutefois, il peut en plus éviter les redémarrages système en traitant la boîte de message pour la fermeture des applications .NET Framework 4. Pour plus d’informations sur cette boîte de message, consultez [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md). Vous pouvez utiliser cet exemple avec le programme d’installation du .NET Framework 4. Dans ce scénario, le message n’est tout simplement pas envoyé.
+L’exemple de programme de chaînage lance et suit de manière silencieuse l’installation de .NET Framework 4.5 tout en affichant la progression. Cet exemple est similaire à l’exemple de programme de chaînage fourni pour le .NET Framework 4. Toutefois, il peut en plus éviter les redémarrages système en traitant la boîte de message pour la fermeture des applications .NET Framework 4. Pour plus d’informations sur cette boîte de message, consultez [Réduction des redémarrages système lors des installations du .NET Framework 4.5](reducing-system-restarts.md). Vous pouvez utiliser cet exemple avec le programme d’installation du .NET Framework 4. Dans ce scénario, le message n’est tout simplement pas envoyé.
 
 > [!WARNING]
 > Vous devez exécuter l’exemple en tant qu’administrateur.
@@ -311,5 +311,5 @@ Un serveur classique crée un nom de fichier MMIO aléatoire, crée le fichier (
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)
-- [Déploiement](../../../docs/framework/deployment/index.md)
+- [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)
+- [Déploiement](index.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6065e06fa4fb51cd0cd746a1619f8a611f2fc30b
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: 410c8bdb63b56a78dbfa64c21344fdcd6a6656c3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65064096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051610"
 ---
 # <a name="specifying-an-entry-point"></a>Spécification d'un point d'entrée
 Un point d’entrée identifie l’emplacement d’une fonction dans une DLL. Dans un projet managé, le nom d’origine ou le point d’entrée ordinal d’une fonction cible identifie cette fonction dans les limites d’interopérabilité. De plus, vous pouvez mapper le point d’entrée à un autre nom pour renommer la fonction de façon plus appropriée.  
@@ -43,7 +43,7 @@ Friend Class NativeMethods
 End Class
 ```
   
- Vous pouvez remplacer le point d’entrée **MessageBox** par **MsgBox** en incluant le mot clé **Alias** dans votre définition, comme dans l’exemple suivant. Dans les deux exemples, le mot clé **Auto** vous évite de devoir spécifier la version du jeu de caractères pour le point d’entrée. Pour plus d’informations sur la sélection d’un jeu de caractères, consultez [Spécification d’un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md).  
+ Vous pouvez remplacer le point d’entrée **MessageBox** par **MsgBox** en incluant le mot clé **Alias** dans votre définition, comme dans l’exemple suivant. Dans les deux exemples, le mot clé **Auto** vous évite de devoir spécifier la version du jeu de caractères pour le point d’entrée. Pour plus d’informations sur la sélection d’un jeu de caractères, consultez [Spécification d’un jeu de caractères](specifying-a-character-set.md).  
   
 ```vb
 Friend Class NativeMethods
@@ -93,6 +93,6 @@ extern "C" int MsgBox(
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
-- [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Exemples d'appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)
-- [Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+- [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
+- [Exemples d'appel de code non managé](platform-invoke-examples.md)
+- [Marshaling de données à l’aide de l’appel de code managé](marshaling-data-with-platform-invoke.md)

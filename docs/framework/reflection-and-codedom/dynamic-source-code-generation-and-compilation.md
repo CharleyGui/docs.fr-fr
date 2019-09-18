@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: d077a3e8-bd81-4bdf-b6a3-323857ea30fb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8feb94f3d57c25d634bd51b8f41eca42d5e5757a
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: HT
+ms.openlocfilehash: 5fb95ab7ff4fcac7169238d90637d7b83078d6dd
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220307"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046104"
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Génération et compilation de code source dynamique
 Le .NET Framework inclut un mécanisme appelé CodeDOM (Code Document Object Model) qui permet aux développeurs d’émettre du code source pour générer du code source dans plusieurs langages de programmation au moment de l’exécution, en fonction d’un modèle unique qui représente le code à restituer.  
@@ -31,16 +31,16 @@ Le .NET Framework inclut un mécanisme appelé CodeDOM (Code Document Object Mod
  Le .NET Framework inclut des générateurs et des compilateurs de code pour <xref:Microsoft.CSharp.CSharpCodeProvider>, <xref:Microsoft.JScript.JScriptCodeProvider> et <xref:Microsoft.VisualBasic.VBCodeProvider>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Utilisation du CodeDOM](../../../docs/framework/reflection-and-codedom/using-the-codedom.md)  
+ [Utilisation du CodeDOM](using-the-codedom.md)  
  Décrit les utilisations courantes et illustre la création d’un graphique d’objet simple à l’aide du CodeDOM.  
   
- [Génération de code source et compilation d’un programme à partir d’un graphique CodeDOM](../../../docs/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph.md)  
+ [Génération de code source et compilation d’un programme à partir d’un graphique CodeDOM](generating-and-compiling-source-code-from-a-codedom-graph.md)  
  Décrit comment générer du code source et compiler le code généré avec un compilateur externe à l’aide de classes définies dans l’espace de noms `System.CodeDom.Compiler`.  
   
- [Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-an-xml-documentation-file-using-codedom.md)  
+ [Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM](how-to-create-an-xml-documentation-file-using-codedom.md)  
  Décrit comment utiliser CodeDOM pour générer du code avec des commentaires de documentation XML, et compiler le code généré afin qu’il crée la sortie de documentation XML.  
   
- [Guide pratique pour créer une classe à l’aide de CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-a-class-using-codedom.md)  
+ [Guide pratique : créer une classe à l’aide de CodeDOM](how-to-create-a-class-using-codedom.md)  
  Décrit comment utiliser CodeDOM pour générer une classe contenant des champs, des propriétés, une méthode, un constructeur et un point d’entrée.  
   
 ## <a name="reference"></a>Référence  

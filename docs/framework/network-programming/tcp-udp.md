@@ -16,12 +16,12 @@ helpviewer_keywords:
 - requesting data from Internet, TCP/UDP
 - Internet, TCP/UDP
 ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
-ms.openlocfilehash: e074a487c39dfaf1c4704f9dadf7ed8e430fb630
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: d35278ab7feb42453b5a0adbc86c47b7ac3ff5ca
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172547"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047108"
 ---
 # <a name="tcp-udp"></a>TCP-UDP
 Les applications peuvent utiliser les services TCP (Transmission Control Protocol) et UDP (User Datagram Protocol) avec les classes <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener> et <xref:System.Net.Sockets.UdpClient>. Ces classes de protocole reposent sur la classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType>. Elles gèrent les informations relatives au transfert des données.  
@@ -34,9 +34,9 @@ Les applications peuvent utiliser les services TCP (Transmission Control Protoco
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des services TCP](../../../docs/framework/network-programming/using-tcp-services.md)
-- [Utilisation des services UDP](../../../docs/framework/network-programming/using-udp-services.md)
-- [Utilisation de flux sur le réseau](../../../docs/framework/network-programming/using-streams-on-the-network.md)
-- [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)
-- [Utilisation d’un socket client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)
-- [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)
+- [Utilisation des services TCP](using-tcp-services.md)
+- [Utilisation des services UDP](using-udp-services.md)
+- [Utilisation de flux sur le réseau](using-streams-on-the-network.md)
+- [Utilisation d’un socket serveur asynchrone](using-an-asynchronous-server-socket.md)
+- [Utilisation d’un socket client asynchrone](using-an-asynchronous-client-socket.md)
+- [Utilisation de protocoles d’application](using-application-protocols.md)

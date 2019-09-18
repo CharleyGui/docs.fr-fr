@@ -1,19 +1,21 @@
 ---
 title: Analyseur de portabilité .NET – .NET
 description: Découvrez comment utiliser l’outil Analyseur de portabilité .NET pour évaluer la portabilité de votre code sur les différentes implémentations de .NET, notamment .NET Core, .NET Standard, UWP et Xamarin.
-ms.date: 07/18/2019
+ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: fdd2e9f288649b35b778b5da505408822e0ea8fe
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 246c1d25a99e61d7e2f69f1b65ae3534d22571ba
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107503"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054000"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
-Vous voulez que vos bibliothèques prennent en charge plusieurs plateformes ? Vous souhaitez savoir quelle quantité de travail est nécessaire pour rendre votre application compatible avec d’autres profils et implémentations .NET, notamment .NET Core, .NET Standard, UWP et Xamarin pour iOS, Android et Mac ? L’[Analyseur de portabilité .NET](https://github.com/microsoft/dotnet-apiport) est un outil qui vous donne un rapport détaillé sur la flexibilité de votre programme sur les implémentations de .NET en analysant des assemblys. L’Analyseur de portabilité est proposé comme [Extension Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), qui analyse les assemblys par projet, et comme [application console ApiPort](https://aka.ms/apiportdownload), qui analyse les assemblys par fichier ou répertoire spécifié.
+Vous voulez que vos bibliothèques prennent en charge plusieurs plateformes ? Vous voulez savoir quelle quantité de travail est nécessaire pour que votre application .NET Framework s’exécute sur .NET Core ?  L' [Analyseur de portabilité .net](https://github.com/microsoft/dotnet-apiport) est un outil qui vous fournit un rapport détaillé sur les API .net manquantes pour que vos applications ou bibliothèques soient portables sur les plateformes .net ciblées spécifiées en analysant les assemblys. L’Analyseur de portabilité est proposé comme [Extension Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), qui analyse les assemblys par projet, et comme [application console ApiPort](https://aka.ms/apiportdownload), qui analyse les assemblys par fichier ou répertoire spécifié.
+
+Une fois que votre projet a été converti pour cibler votre plateforme ciblée, comme .net Core, vous pouvez utiliser Roslyn sur [API Analyzer[https://docs.microsoft.com/en-us/dotnet/standard/analyzers/api-analyzer](api-analyzer.md) Tool] (pour identifier les API levant PlatformNotSupportedException et d’autres problèmes de compatibilité.
 
 ## <a name="common-targets"></a>Cibles courantes
 
@@ -58,7 +60,7 @@ La section sur la synthèse de la portabilité du rapport montre le pourcentage 
 
 ![Détails de la portabilité](./media/portability-analyzer/portabilitydetails.png)
 
-La section des détails du rapport liste les API manquantes de l’une des plateformes cibles. 
+La section **Détails** du rapport répertorie les API manquantes dans les **plateformes ciblées**sélectionnées. 
 
 - Type cible : le type a une API manquante dans une plateforme cible 
 - Membre cible : la méthode est manquante dans une plateforme cible 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 753312005cd60b5be6bf5504fa9b7f14bd6367fe
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 2e66534cac1edcc6759321c3024effa4990faeda
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894680"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044494"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (License Compiler)
 L'outil License Compiler lit les fichiers texte comportant des informations sur les licences et génère un fichier binaire pouvant être incorporé dans un exécutable du Common Language Runtime en tant que ressource.  
@@ -26,7 +26,7 @@ L'outil License Compiler lit les fichiers texte comportant des informations sur 
   
  La compilation croisée entre 32 bits et 64 bits n'est pas prise en charge lorsque vous utilisez l'outil License Compiler lors de la génération de votre projet. Cela est dû au fait que l'outil License Compiler doit charger des assemblys et que le chargement d'assemblys 64 bits depuis une application 32 bits n'est pas autorisé, et vice versa. Dans ce cas, utilisez l'outil License Compiler à partir de la ligne de commande pour compiler la licence manuellement et spécifiez l'architecture correspondante.  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -94,6 +94,6 @@ lc @response.rsp
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Al.exe (Assembly Linker)](al-exe-assembly-linker.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

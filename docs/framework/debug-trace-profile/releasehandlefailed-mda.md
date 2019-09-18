@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f3ea64668272b6625a9e43c9610496a7e7392129
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 41f6b67ff63d096cc1fa2c599abb06c9c1129952
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854034"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052309"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  
@@ -73,7 +73,7 @@ and closing it directly or building another SafeHandle around it."
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple de code suivant peut activer l'Assistant Débogage managé `releaseHandleFailed`.  
   
 ```csharp
@@ -93,5 +93,5 @@ bool ReleaseHandle()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)

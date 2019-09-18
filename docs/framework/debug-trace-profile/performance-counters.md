@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af558e6712d58e208bf05cdb7a0f847ec4517f0f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eafbd5b1dfa8eeee386cdcf49652aeeee9d635a8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614312"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052393"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
-Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans le [Analyseur de performances Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
+Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
   
 - [Compteurs de performance pour les exceptions](#exception)  
   
@@ -41,7 +41,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |Compteur de performance|Description|  
 |-------------------------|-----------------|  
 |**Nombre d’exceptions levées**|Affiche le nombre total d'exceptions qui ont été levées depuis le démarrage de l'application. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il comptabilise les exceptions levées plusieurs fois.|  
-|**Nombre d’exceptions levées/s**|Affiche le nombre d'exceptions levées par seconde. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon. Ce compteur est un indicateur d’éventuels problèmes de performances si un grand (> 100 s) nombre d’exceptions est levée.|  
+|**Nombre d’exceptions levées/s**|Affiche le nombre d'exceptions levées par seconde. Ce nombre comprend à la fois les exceptions .NET et les exceptions non managées qui sont converties en exceptions .NET. Par exemple, un HRESULT retourné par du code non managé est converti pour donner une exception en code managé.<br /><br /> Ce compteur inclut les exceptions gérées et non gérées. Il ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon. Ce compteur est un indicateur de problèmes de performances potentiels si un nombre élevé d’exceptions (> 100s) est levé.|  
 |**Nombre de filtres/s**|Affiche le nombre de filtres d'exception .NET exécutés par seconde. Un filtre d'exception évalue si une exception doit être gérée ou non.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Nombre de Finally/s**|Affiche le nombre de blocs finally exécutés par seconde. Un bloc finally est toujours exécuté, quelle que soit la méthode de sortie du bloc try.  Seuls les blocs finally exécutés pour une exception sont comptabilisés ; ceux situés dans les chemins de code standard sont ignorés par ce compteur.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Profondeur Throw à Catch/s**|Affiche le nombre de frames de pile traversés, par seconde, entre le frame qui a levé l'exception et celui qui l'a gérée. Ce compteur est remis à zéro quand un gestionnaire d'exceptions est entré. Les exceptions imbriquées indiquent donc la profondeur de la pile entre les gestionnaires.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
@@ -217,7 +217,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
   
  Les compteurs de performance réseau sont accessibles et gérables à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> et des classes connexes dans l'espace de noms <xref:System.Diagnostics>. Les compteurs de performance réseau peuvent également être affichés dans la console Analyseur de performances Windows.  
   
- Les compteurs de performance réseau doivent être activés dans le fichier de configuration pour pouvoir être utilisés. L'ensemble des compteurs de performance réseau sont activés ou désactivés avec un paramètre unique dans le fichier de configuration. Il n'est pas possible d'activer ou de désactiver ces compteurs de manière individuelle. Pour plus d’informations, consultez [\<performanceCounter>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
+ Les compteurs de performance réseau doivent être activés dans le fichier de configuration pour pouvoir être utilisés. L'ensemble des compteurs de performance réseau sont activés ou désactivés avec un paramètre unique dans le fichier de configuration. Il n'est pas possible d'activer ou de désactiver ces compteurs de manière individuelle. Pour plus d’informations, consultez [\<performanceCounter>, élément (paramètres réseau)](../configure-apps/file-schema/network/performancecounter-element-network-settings.md).  
   
  Si les compteurs de performance réseau sont activés, il est possible de créer et d'actualiser des compteurs de performance par AppDomain et globaux. S'ils sont désactivés, l'application ne fournit pas de données de compteur de performance réseau.  
   
@@ -237,7 +237,7 @@ for (int i = 0; i < Array.Length; i++)
   
 - « Réseau CLR .NET 4.0.0.0 » : regroupe tous les compteurs de socket ci-dessus ainsi que les nouveaux compteurs de performance pris en charge par .NET Framework 4 et les versions ultérieures. Ces nouveaux compteurs fournissent des informations sur les performances des objets <xref:System.Net.HttpWebRequest>.  
   
- Pour plus d’informations sur l’accès aux compteurs de performance et la gestion de ces derniers dans une application, consultez [Compteurs de performance](../../../docs/framework/debug-trace-profile/performance-counters.md).  
+ Pour plus d’informations sur l’accès aux compteurs de performance et la gestion de ces derniers dans une application, consultez [Compteurs de performance](performance-counters.md).  
   
 <a name="security"></a>   
 ## <a name="security-performance-counters"></a>Compteurs de performance pour la sécurité  
@@ -253,5 +253,5 @@ for (int i = 0; i < Array.Length; i++)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compteurs de performance](../../../docs/framework/debug-trace-profile/performance-counters.md)
-- [Profilage d’exécution](../../../docs/framework/debug-trace-profile/runtime-profiling.md)
+- [Compteurs de performance](performance-counters.md)
+- [Profilage d’exécution](runtime-profiling.md)

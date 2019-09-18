@@ -3,12 +3,12 @@ title: 'Procédure : Générer une application web ASP.NET MVC prenant en charg
 ms.date: 03/30/2017
 ms.assetid: 0efb76bc-9f7b-4afe-be1c-2a57c917010b
 author: BrucePerlerMS
-ms.openlocfilehash: f2ac263d8869c770594283923a45c7c53c9df4cb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4d245288b04d8ed3d997bc5572b40c7f8a9334e5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626130"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045446"
 ---
 # <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Procédure : Générer une application web ASP.NET MVC prenant en charge les revendications à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -100,7 +100,7 @@ ms.locfileid: "64626130"
     <authentication mode="None" />  
     ```  
   
-4. Ajoutez les entrées de configuration liées à Windows Identity Foundation suivantes et vérifiez que l’URL et le numéro de port de votre application ASP.NET correspondent aux valeurs dans l’entrée **\<audienceUris>**, l’attribut **realm** de l’élément **\<wsFederation>** et l’attribut **reply** de l’élément **\<wsFederation>**. Vérifiez également que la valeur **issuer** correspond à l’URL de votre service d’émission de jeton de sécurité (STS).  
+4. Ajoutez les entrées de configuration liées à Windows Identity Foundation suivantes et vérifiez que l’URL et le numéro de port de votre application ASP.NET correspondent aux valeurs dans l’entrée **\<audienceUris>** , l’attribut **realm** de l’élément **\<wsFederation>** et l’attribut **reply** de l’élément **\<wsFederation>** . Vérifiez également que la valeur **issuer** correspond à l’URL de votre service d’émission de jeton de sécurité (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -218,4 +218,4 @@ ms.locfileid: "64626130"
   
 ## <a name="related-items"></a>Éléments associés  
   
-- [Guide pratique pour Générer des revendications Application Web Forms ASP.NET à l’aide de WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+- [Guide pratique pour Générer des ASP.NET Web Forms application prenant en charge les revendications à l’aide de WIF](how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)

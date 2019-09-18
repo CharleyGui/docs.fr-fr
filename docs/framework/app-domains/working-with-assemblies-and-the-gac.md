@@ -10,22 +10,23 @@ helpviewer_keywords:
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f45f40cd66c63e660b9091c726533dcfe8db086
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 0331e0ad30743d5f0bba125e8e61e636e1c2a5be
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971587"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053024"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Utilisation d'assemblys et du Global Assembly Cache
+
 Si vous prévoyez de partager un assembly entre plusieurs applications, vous pouvez l’installer dans le Global Assembly Cache. Chaque ordinateur où le common language runtime est installé a ce cache de code à l’échelle de l’ordinateur. Le Global Assembly Cache stocke des assemblys spécialement destinés à être partagés entre plusieurs applications sur l’ordinateur. Un assembly doit avoir un nom fort pour être installé dans le Global Assembly Cache.  
   
 > [!NOTE]
 > Les assemblys placés dans le Global Assembly Cache doivent avoir le même nom d’assembly et le même nom de fichier (sans l’extension du nom de fichier). Par exemple, un assembly avec le nom d’assembly monAssembly doit avoir le nom de fichier monAssembly.exe ou monAssembly.dll.  
   
- Il est recommandé de partager des assemblys en les installant dans le Global Assembly Cache seulement quand c’est nécessaire. Une règle générale est de conserver les dépendances d’assembly privées et de placer les assemblys dans le répertoire de l’application, sauf si le partage d’un assembly est explicitement nécessaire. En outre, il n’est pas nécessaire d’installer des assemblys dans le Global Assembly Cache pour les rendre accessibles à COM Interop ou à du code non managé.  
+Il est recommandé de partager des assemblys en les installant dans le Global Assembly Cache seulement quand c’est nécessaire. Une règle générale est de conserver les dépendances d’assembly privées et de placer les assemblys dans le répertoire de l’application, sauf si le partage d’un assembly est explicitement nécessaire. En outre, il n’est pas nécessaire d’installer des assemblys dans le Global Assembly Cache pour les rendre accessibles à COM Interop ou à du code non managé.  
   
- Vous pouvez souhaiter installer un assembly dans le Global Assembly Cache pour plusieurs raisons :  
+Vous pouvez souhaiter installer un assembly dans le Global Assembly Cache pour plusieurs raisons :  
   
 - Emplacement partagé.  
   
@@ -46,30 +47,31 @@ Si vous prévoyez de partager un assembly entre plusieurs applications, vous pou
  Notez que dans certains scénarios, vous ne voulez explicitement pas installer un assembly dans le Global Assembly Cache. Si vous placez un des assemblys composant une application dans le Global Assembly Cache, vous ne pouvez plus répliquer ni installer l’application en utilisant XCOPY pour copier le répertoire de l’application. Dans ce cas, vous devez également déplacer l’assembly dans le Global Assembly Cache.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)  
- Décrit les façons d’installer un assembly dans le Global Assembly Cache.  
+[Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)  
+Décrit les façons d’installer un assembly dans le Global Assembly Cache.  
   
- [Guide pratique pour visualiser le contenu du Global Assembly Cache](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md).  
- Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour visualiser le contenu du Global Assembly Cache.  
+[Guide pratique pour visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md).  
+Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour visualiser le contenu du Global Assembly Cache.  
   
- [Guide pratique pour supprimer un assembly du Global Assembly Cache](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
- Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour supprimer un assembly du Global Assembly Cache.  
+[Guide pratique : supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)  
+Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour supprimer un assembly du Global Assembly Cache.  
   
- [Utilisation de composants de service avec le Global Assembly Cache](../../../docs/framework/app-domains/use-serviced-components-with-the-gac.md)  
- Explique pourquoi les composants traités (composants COM+ managés) doivent être placés dans le Global Assembly Cache.  
+[Utilisation de composants de service avec le Global Assembly Cache](use-serviced-components-with-the-gac.md)  
+Explique pourquoi les composants traités (composants COM+ managés) doivent être placés dans le Global Assembly Cache.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Création d’assemblys](../../standard/assembly/create.md)  
- Fournit une vue d’ensemble de la création d’assemblys.  
+
+[Création d’assemblys](../../standard/assembly/create.md)  
+Fournit une vue d’ensemble de la création d’assemblys.  
   
- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)  
- Décrit le Global Assembly Cache.  
+[Global Assembly Cache](gac.md)  
+Décrit le Global Assembly Cache.  
   
- [Guide pratique pour afficher le contenu d’un assembly](../../standard/assembly/view-contents.md)  
- Explique comment utiliser [Ildasm.exe (Désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour visualiser les informations du langage MSIL (Microsoft Intermediate Language) dans un assembly.  
+[Guide pratique pour afficher le contenu d’un assembly](../../standard/assembly/view-contents.md)  
+Explique comment utiliser [Ildasm.exe (Désassembleur IL)](../tools/ildasm-exe-il-disassembler.md) pour visualiser les informations du langage MSIL (Microsoft Intermediate Language) dans un assembly.  
   
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- Décrit comment le common language runtime localise et charge les assemblys qui composent votre application.  
+[Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)  
+Décrit comment le common language runtime localise et charge les assemblys qui composent votre application.  
   
- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)  
- Décrit les assemblys, les blocs de construction des applications managées.
+[Programmation à l’aide d’assemblys](../../standard/assembly/program.md)  
+Décrit les assemblys, les blocs de construction des applications managées.

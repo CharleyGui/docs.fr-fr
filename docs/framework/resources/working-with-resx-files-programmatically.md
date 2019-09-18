@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18a8748c3175ec7e251116f478069d313ab28d7c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 7e5a57664c5d86ebf394ce026608be9a55872eb8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299239"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045535"
 ---
 # <a name="working-with-resx-files-programmatically"></a>Utilisation des fichiers .resx par programmation
 Étant donné que les fichiers de ressources XML (.resx) doivent être constitués de code XML bien défini, notamment un en-tête qui doit respecter un schéma spécifique, suivi de données dans des paires nom/valeur, la création manuelle de ces fichiers est sujette aux erreurs. Alternativement, vous pouvez créer des fichiers .resx par programmation à l’aide de types et de membres de la bibliothèque de classes .NET. Vous pouvez également utiliser la bibliothèque de classes .NET pour récupérer des ressources stockées dans les fichiers .resx. Cette rubrique explique comment utiliser les types et les membres de l’espace de noms <xref:System.Resources> avec des fichiers .resx.
@@ -46,9 +46,9 @@ L’exemple suivant crée un fichier .resx nommé CarResources.resx qui stocke s
 [!code-vb[Conceptual.Resources.ResX#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/create1.vb#1)]
 
 > [!TIP]
-> Vous pouvez également utiliser [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) pour créer des fichiers .resx. Au moment de la compilation, Visual Studio utilise l’outil [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) pour convertir le fichier .resx en fichier de ressources binaires (.resources), et l’incorpore dans un assembly d’application ou un assembly satellite.
+> Vous pouvez également utiliser [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) pour créer des fichiers .resx. Au moment de la compilation, Visual Studio utilise l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour convertir le fichier .resx en fichier de ressources binaires (.resources), et l’incorpore dans un assembly d’application ou un assembly satellite.
 
-Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Language Runtime ou le compiler dans un assembly satellite. Vous devez convertir votre fichier .resx en fichier de ressources binaires (.resources) à l’aide de l’outil [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md). Le fichier .resources résultant peut ensuite être incorporé dans un assembly d’application ou un assembly satellite. Pour plus d'informations, consultez [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).
+Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Language Runtime ou le compiler dans un assembly satellite. Vous devez convertir votre fichier .resx en fichier de ressources binaires (.resources) à l’aide de l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md). Le fichier .resources résultant peut ensuite être incorporé dans un assembly d’application ou un assembly satellite. Pour plus d'informations, consultez [Creating Resource Files](creating-resource-files-for-desktop-apps.md).
 
 ## <a name="enumerate-resources"></a>Énumérer les ressources
  Dans certains cas, vous voulez récupérer toutes les ressources d’un fichier .resx, et pas seulement une ressource spécifique. Pour ce faire, vous pouvez utiliser la classe <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> , qui fournit un énumérateur pour toutes les ressources du fichier .resx. La classe <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> implémente <xref:System.Collections.IDictionaryEnumerator>, qui retourne un objet <xref:System.Collections.DictionaryEntry> représentant une ressource particulière pour chaque itération de la boucle. Sa propriété <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType> retourne la clé de la ressource et sa propriété <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType> retourne la valeur de la ressource.
@@ -69,7 +69,7 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
 ## <a name="convert-resx-files-to-binary-resources-files"></a>Convertir les fichiers .resx en fichiers binaires .resources
  La conversion de fichiers .resx en fichiers de ressources binaires incorporés (.resources) présente des avantages importants. Bien que les fichiers .resx soient faciles à lire et à gérer pendant le développement d’applications, ils sont rarement inclus avec les applications finies. S’ils sont distribués avec une application, ils existent en tant que fichiers séparés de l’exécutable de l’application et des bibliothèques qui l’accompagnent. En revanche, les fichiers .resources sont incorporés dans l’exécutable d’application ou dans les assemblys qui l’accompagnent. Par ailleurs, pour les applications localisées, l’utilisation de fichiers .resx au moment de l’exécution donne au développeur la responsabilité de la gestion des ressources de secours. En revanche, si un ensemble d’assemblys satellites contenant des fichiers .resources incorporés a été créé, le Common Language Runtime gère le processus de secours pour les ressources.
 
- Pour convertir un fichier .resx en fichier .resources, vous utilisez l’outil [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md), qui présente la syntaxe de base suivante :
+ Pour convertir un fichier .resx en fichier .resources, vous utilisez l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md), qui présente la syntaxe de base suivante :
 
  **Resgen.exe** *.resxFilename*
 
@@ -81,12 +81,12 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
 
  **csc** *filename* **.cs -resource:** *.resourcesFilename*
 
- Le fichier .resources peut également être incorporé dans un assembly satellite à l’aide de l’utilitaire [Assembly Linker (AL.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md), qui présente la syntaxe de base suivante :
+ Le fichier .resources peut également être incorporé dans un assembly satellite à l’aide de l’utilitaire [Assembly Linker (AL.exe)](../tools/al-exe-assembly-linker.md), qui présente la syntaxe de base suivante :
 
  **al** *resourcesFilename* **-out:** *assemblyFilename*
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
-- [Resgen.exe (Resource File Generator)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
-- [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Création de fichiers de ressources](creating-resource-files-for-desktop-apps.md)
+- [Resgen.exe (Resource File Generator)](../tools/resgen-exe-resource-file-generator.md)
+- [Al.exe (Assembly Linker)](../tools/al-exe-assembly-linker.md)

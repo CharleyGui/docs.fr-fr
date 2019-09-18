@@ -6,20 +6,20 @@ helpviewer_keywords:
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ab80cfbd0ae2130f465216ca77812bda0002c24
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2bed01a74c5b3338df958a3e178c06602bd69866
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854002"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052116"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Guide pratique pour déboguer les problèmes d’activation du CLR
 
-Si vous avez des difficultés à faire en sorte que votre application s’exécute avec la version correcte du Common Language Runtime (CLR), vous pouvez afficher et déboguer les journaux d’activation du CLR. Ces journaux peuvent être très utiles pour déterminer la cause d’un problème d’activation, quand votre application charge une autre version du CLR que celle prévue ou ne charge pas du tout le CLR. L’article [Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) décrit l’expérience quand aucun CLR n’est trouvé pour une application.
+Si vous avez des difficultés à faire en sorte que votre application s’exécute avec la version correcte du Common Language Runtime (CLR), vous pouvez afficher et déboguer les journaux d’activation du CLR. Ces journaux peuvent être très utiles pour déterminer la cause d’un problème d’activation, quand votre application charge une autre version du CLR que celle prévue ou ne charge pas du tout le CLR. L’article [Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur](initialization-errors-managing-the-user-experience.md) décrit l’expérience quand aucun CLR n’est trouvé pour une application.
 
 Vous pouvez activer la journalisation de l’activation du CLR à l’échelle du système à l’aide d’une clé de Registre HKEY_LOCAL_MACHINE ou d’une variable d’environnement système. Le journal sera généré jusqu’à ce que l’entrée de Registre ou la variable d’environnement soit supprimée. Vous pouvez également utiliser une variable d’environnement utilisateur ou locale au processus pour activer la journalisation avec une portée et une durée différentes.
 
-Il ne faut pas confondre les journaux d’activation du CLR avec les [journaux de liaison d’assembly](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), qui sont totalement différents.
+Il ne faut pas confondre les journaux d’activation du CLR avec les [journaux de liaison d’assembly](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), qui sont totalement différents.
 
 ## <a name="to-enable-clr-activation-logging"></a>Pour activer la journalisation de l’activation du CLR
 
@@ -106,13 +106,13 @@ Dans l’exemple de journal d’activation suivant, les informations les plus ut
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
     ```
 
-- **built with version** est la version du CLR qui a été utilisée pour générer le fichier binaire fourni à une méthode comme [ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
+- **built with version** est la version du CLR qui a été utilisée pour générer le fichier binaire fourni à une méthode comme [ICLRMetaHostPolicy::GetRequestedRuntime](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
 
     ```output
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
-- **feature-on-demand installation** fait référence à l’activation du .NET Framework 3.5 sur Windows 8. Pour plus d’informations sur ce scénario, consultez [Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).
+- **feature-on-demand installation** fait référence à l’activation du .NET Framework 3.5 sur Windows 8. Pour plus d’informations sur ce scénario, consultez [Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur](initialization-errors-managing-the-user-experience.md).
 
     ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3
@@ -120,5 +120,5 @@ Dans l’exemple de journal d’activation suivant, les informations les plus ut
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Déploiement](../../../docs/framework/deployment/index.md)
-- [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou versions ultérieures](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Déploiement](index.md)
+- [Guide pratique : configurer une application en vue de prendre en charge le .NET Framework 4 ou versions ultérieures](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

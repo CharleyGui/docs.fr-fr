@@ -6,32 +6,34 @@ helpviewer_keywords:
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 01fa0cf9811e72333b091858e2f78a80dda1d9ef
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 78cbb98d4fb3887b82b2432451c47ac64d96ab91
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969101"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052030"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Exécution côte à côte dans .NET Framework
+
 L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versions d'une application ou d'un composant sur le même ordinateur. Vous pouvez avoir plusieurs versions du Common Language Runtime et plusieurs versions d'applications et de composants qui utilisent une version du runtime sur le même ordinateur simultanément.  
   
- L'illustration suivante montre l'utilisation par plusieurs applications de deux versions différentes du runtime sur le même ordinateur. Les applications A, B et C utilisent la version 1.0 du runtime, l'application D utilise la version 1.1 du runtime.  
+L'illustration suivante montre l'utilisation par plusieurs applications de deux versions différentes du runtime sur le même ordinateur. Les applications A, B et C utilisent la version 1.0 du runtime, l'application D utilise la version 1.1 du runtime.  
   
- ![Exécution côte à côte de différentes versions du runtime](./media/side-by-side-execution/side-by-side-runtime-execution.gif)  
+![Exécution côte à côte de différentes versions du runtime](./media/side-by-side-execution/side-by-side-runtime-execution.gif)  
   
- Le .NET Framework se compose du Common Language Runtime et d’une collection d’assemblys qui contiennent les types d’API. Le runtime et les assemblys .NET Framework sont gérés séparément. Par exemple, la version 4.0 du runtime correspond en fait à la version 4.0.319, tandis que la version 1.0 des assemblys .NET Framework correspond à la version 1.0.3300.0.  
+Le .NET Framework se compose du Common Language Runtime et d’une collection d’assemblys qui contiennent les types d’API. Le runtime et les assemblys .NET Framework sont gérés séparément. Par exemple, la version 4.0 du runtime correspond en fait à la version 4.0.319, tandis que la version 1.0 des assemblys .NET Framework correspond à la version 1.0.3300.0.  
   
- L'illustration suivante montre l'utilisation par plusieurs applications de deux versions différentes d'un composant sur le même ordinateur. Les applications A et B utilisent la version 1.0 du composant, l'application C utilise la version 2.0 du même composant.  
+L'illustration suivante montre l'utilisation par plusieurs applications de deux versions différentes d'un composant sur le même ordinateur. Les applications A et B utilisent la version 1.0 du composant, l'application C utilise la version 2.0 du même composant.  
   
- ![Diagramme qui montre l’exécution côte à côte d’un composant.](./media/side-by-side-execution/side-by-side-component-execution.gif)  
+![Diagramme qui montre l’exécution côte à côte d’un composant.](./media/side-by-side-execution/side-by-side-component-execution.gif)  
   
- L'exécution côte à côte vous donne davantage de contrôle sur les versions d'un composant auxquelles se lie une application ainsi que sur la version du runtime utilisée par une application.  
+L'exécution côte à côte vous donne davantage de contrôle sur les versions d'un composant auxquelles se lie une application ainsi que sur la version du runtime utilisée par une application.  
   
 ## <a name="benefits-of-side-by-side-execution"></a>Avantages de l'exécution côte à côte  
- Avant Windows XP et le .NET Framework, les conflits de DLL se produisaient, car les applications étaient incapables de faire la distinction entre les versions incompatibles du même code. Les informations de type contenues dans une DLL étaient liées uniquement à un nom de fichier. Une application ne disposait d'aucun moyen pour déterminer si les types contenus dans une DLL correspondaient aux mêmes types ayant servi à générer l'application. En conséquence, la nouvelle version d'un composant risquait de remplacer l'ancienne version et de provoquer l'interruption des applications.  
+ 
+Avant Windows XP et le .NET Framework, les conflits de DLL se produisaient, car les applications étaient incapables de faire la distinction entre les versions incompatibles du même code. Les informations de type contenues dans une DLL étaient liées uniquement à un nom de fichier. Une application ne disposait d'aucun moyen pour déterminer si les types contenus dans une DLL correspondaient aux mêmes types ayant servi à générer l'application. En conséquence, la nouvelle version d'un composant risquait de remplacer l'ancienne version et de provoquer l'interruption des applications.  
   
- L'exécution côte à côte et le .NET Framework fournissent les fonctionnalités suivantes permettant d'éliminer les conflits de DLL :  
+L'exécution côte à côte et le .NET Framework fournissent les fonctionnalités suivantes permettant d'éliminer les conflits de DLL :  
   
 - Assemblys avec nom fort.  
   
@@ -39,43 +41,49 @@ L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versi
   
 - Stockage de code prenant en compte la version.  
   
-     Le .NET Framework permet le stockage de code prenant en compte la version dans le Global Assembly Cache. Le Global Assembly Cache est un cache de code à l'échelle de l'ordinateur présent sur tous les ordinateurs où est installé le .NET Framework. Il stocke des assemblys basés sur les informations de version, de culture et de l'éditeur et prend en charge plusieurs versions de composants et d'applications. Pour plus d’informations, consultez [Global Assembly Cache](../../../docs/framework/app-domains/gac.md).  
+     Le .NET Framework permet le stockage de code prenant en compte la version dans le Global Assembly Cache. Le Global Assembly Cache est un cache de code à l'échelle de l'ordinateur présent sur tous les ordinateurs où est installé le .NET Framework. Il stocke des assemblys basés sur les informations de version, de culture et de l'éditeur et prend en charge plusieurs versions de composants et d'applications. Pour plus d’informations, consultez [Global Assembly Cache](../app-domains/gac.md).  
   
 - Isolement.  
   
-     À l'aide du .NET Framework, vous pouvez créer des applications et des composants qui s'exécutent de manière isolée. L'isolement est une fonctionnalité essentielle de l'exécution côte à côte. Elle implique la connaissance des ressources que vous utilisez et le partage de celles-ci en toute confiance entre plusieurs versions d'une application ou d'un composant. L'isolement comprend également le stockage de fichiers d'une façon spécifique à la version. Pour plus d’informations sur l’isolation, consultez [Recommandations en matière de création de composants pour l’exécution côte à côte](../../../docs/framework/deployment/guidelines-for-creating-components-for-side-by-side-execution.md).  
+     À l'aide du .NET Framework, vous pouvez créer des applications et des composants qui s'exécutent de manière isolée. L'isolement est une fonctionnalité essentielle de l'exécution côte à côte. Elle implique la connaissance des ressources que vous utilisez et le partage de celles-ci en toute confiance entre plusieurs versions d'une application ou d'un composant. L'isolement comprend également le stockage de fichiers d'une façon spécifique à la version. Pour plus d’informations sur l’isolation, consultez [Recommandations en matière de création de composants pour l’exécution côte à côte](guidelines-for-creating-components-for-side-by-side-execution.md).  
   
 ## <a name="version-compatibility"></a>Compatibilité des versions  
- Les versions 1.0 et 1.1 du .NET Framework sont conçues pour être compatibles. Une application générée avec le .NET Framework version 1.0 doit s'exécuter sur la version 1.1 et une application générée avec le .NET Framework version 1.1 doit s'exécuter sur la version 1.0. Notez toutefois que les fonctionnalités API ajoutées dans la version 1.1 du .NET Framework ne fonctionnent pas avec la version 1.0 du .NET Framework. Les applications créées avec la version 2.0 s'exécuteront uniquement sur la version 2.0. Les applications de la version 2.0 ne pourront pas être utilisées avec la version 1.1 ou avec les versions antérieures.  
+
+Les versions 1.0 et 1.1 du .NET Framework sont conçues pour être compatibles. Une application générée avec le .NET Framework version 1.0 doit s'exécuter sur la version 1.1 et une application générée avec le .NET Framework version 1.1 doit s'exécuter sur la version 1.0. Notez toutefois que les fonctionnalités API ajoutées dans la version 1.1 du .NET Framework ne fonctionnent pas avec la version 1.0 du .NET Framework. Les applications créées avec la version 2.0 s'exécuteront uniquement sur la version 2.0. Les applications de la version 2.0 ne pourront pas être utilisées avec la version 1.1 ou avec les versions antérieures.  
   
- Les versions du .NET Framework sont traitées en tant que bloc unique comportant le runtime et les assemblys .NET Framework associés (un concept appelé unification d'assemblys). Vous pouvez rediriger la liaison d'assembly pour inclure d'autres versions des assemblys .NET Framework. Toutefois, substituer la liaison d'assembly par défaut présente des risques et doit faire l'objet de tests rigoureux avant déploiement.  
+Les versions du .NET Framework sont traitées en tant que bloc unique comportant le runtime et les assemblys .NET Framework associés (un concept appelé unification d'assemblys). Vous pouvez rediriger la liaison d'assembly pour inclure d'autres versions des assemblys .NET Framework. Toutefois, substituer la liaison d'assembly par défaut présente des risques et doit faire l'objet de tests rigoureux avant déploiement.  
   
 ## <a name="locating-runtime-version-information"></a>Localisation des informations de version du runtime  
- Les informations de version du runtime utilisées pour la compilation d'une application ou d'un composant ainsi que les versions du runtime nécessaires à l'exécution de l'application sont stockées dans deux emplacements. Lors de la compilation d'une application ou d'un composant, les informations de version du runtime utilisées pour la compilation sont stockées dans l'exécutable managé. Les informations sur les versions du runtime nécessaires à l'application ou au composant sont stockées dans le fichier de configuration de l'application.  
+
+Les informations de version du runtime utilisées pour la compilation d'une application ou d'un composant ainsi que les versions du runtime nécessaires à l'exécution de l'application sont stockées dans deux emplacements. Lors de la compilation d'une application ou d'un composant, les informations de version du runtime utilisées pour la compilation sont stockées dans l'exécutable managé. Les informations sur les versions du runtime nécessaires à l'application ou au composant sont stockées dans le fichier de configuration de l'application.  
   
 ### <a name="runtime-version-information-in-the-managed-executable"></a>Informations de version du runtime dans l'exécutable managé  
- L'en-tête du fichier exécutable portable (PE) de chaque application et composant managé contient des informations sur la version du runtime utilisée pour sa création. Le common language runtime utilise ces informations pour déterminer la version du runtime la plus appropriée à exécuter par l'application.  
+
+L'en-tête du fichier exécutable portable (PE) de chaque application et composant managé contient des informations sur la version du runtime utilisée pour sa création. Le common language runtime utilise ces informations pour déterminer la version du runtime la plus appropriée à exécuter par l'application.  
   
 ### <a name="runtime-version-information-in-the-application-configuration-file"></a>Informations de version du runtime dans le fichier de configuration de l'application  
- En plus des informations fournies dans l'en-tête du fichier PE, une application peut être déployée avec un fichier de configuration qui fournit des informations de version du runtime. Le fichier de configuration d'application est un fichier XML créé par le développeur de l'application et livré avec l'application. L’élément [\<requiredRuntime>](../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) de la section [\<startup>](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md), s’il est présent dans ce fichier, spécifie les versions du runtime et les versions d’un composant que prend en charge l’application. Vous pouvez également utiliser ce fichier à des fins de test pour vérifier la compatibilité de l'application avec différentes versions du runtime.  
+
+En plus des informations fournies dans l'en-tête du fichier PE, une application peut être déployée avec un fichier de configuration qui fournit des informations de version du runtime. Le fichier de configuration d'application est un fichier XML créé par le développeur de l'application et livré avec l'application. L’élément [\<requiredRuntime>](../configure-apps/file-schema/startup/requiredruntime-element.md) de la section [\<startup>](../configure-apps/file-schema/startup/startup-element.md), s’il est présent dans ce fichier, spécifie les versions du runtime et les versions d’un composant que prend en charge l’application. Vous pouvez également utiliser ce fichier à des fins de test pour vérifier la compatibilité de l'application avec différentes versions du runtime.  
   
- Le runtime peut aussi utiliser un fichier de configuration de l'application pour interagir avec du code non managé, y compris des applications COM et COM+. Le fichier de configuration de l'application s'applique à l'ensemble du code managé que vous activez par l'intermédiaire de COM. Il peut spécifier les versions du runtime qu'il prend en charge ainsi que les redirections d'assemblys. Par défaut, les applications COM Interop qui appellent du code managé utilisent la version du runtime la plus récente installée sur l'ordinateur.  
+Le runtime peut aussi utiliser un fichier de configuration de l'application pour interagir avec du code non managé, y compris des applications COM et COM+. Le fichier de configuration de l'application s'applique à l'ensemble du code managé que vous activez par l'intermédiaire de COM. Il peut spécifier les versions du runtime qu'il prend en charge ainsi que les redirections d'assemblys. Par défaut, les applications COM Interop qui appellent du code managé utilisent la version du runtime la plus récente installée sur l'ordinateur.  
   
- Pour plus d’informations sur les fichiers de configuration de l’application, consultez [Configuration des applications](../../../docs/framework/configure-apps/index.md).  
+ Pour plus d’informations sur les fichiers de configuration de l’application, consultez [Configuration des applications](../configure-apps/index.md).  
   
 ## <a name="determining-which-version-of-the-runtime-to-load"></a>Détermination de la version du runtime à charger  
- Le common language runtime se sert des informations suivantes pour déterminer la version du runtime à charger pour une application :  
+
+Le common language runtime se sert des informations suivantes pour déterminer la version du runtime à charger pour une application :  
   
 - Les versions du runtime disponibles  
   
 - Les versions du runtime prises en charge par l'application  
   
 ### <a name="supported-runtime-versions"></a>Versions du runtime prises en charge  
- Le runtime se base sur le fichier de configuration de l'application et l'en-tête du fichier exécutable portable (PE) pour déterminer la version du runtime prise en charge par l'application. En l'absence de fichier de configuration de l'application, le runtime charge la version du runtime qui est spécifiée dans l'en-tête du fichier PE de l'application (si cette version est disponible).  
+
+Le runtime se base sur le fichier de configuration de l'application et l'en-tête du fichier exécutable portable (PE) pour déterminer la version du runtime prise en charge par l'application. En l'absence de fichier de configuration de l'application, le runtime charge la version du runtime qui est spécifiée dans l'en-tête du fichier PE de l'application (si cette version est disponible).  
   
- S'il existe un fichier de configuration de l'application, le runtime détermine la version appropriée du runtime à charger à partir des résultats du processus suivant :  
+S'il existe un fichier de configuration de l'application, le runtime détermine la version appropriée du runtime à charger à partir des résultats du processus suivant :  
   
-1. Le runtime examine l’élément [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l’application. Si une ou plusieurs des versions du runtime prises en charge spécifiées dans l’élément **\<supportedRuntime>** sont disponibles, le runtime charge la version du runtime indiquée par le premier élément **\<supportedRuntime>** . Si cette version n’est pas disponible, le runtime examine l’élément **\<supportedRuntime>** suivant et tente de charger la version du runtime spécifiée. Si cette version du runtime n’est pas disponible non plus, tous les éléments **\<supportedRuntime>** suivants sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
+1. Le runtime examine l’élément [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l’application. Si une ou plusieurs des versions du runtime prises en charge spécifiées dans l’élément **\<supportedRuntime>** sont disponibles, le runtime charge la version du runtime indiquée par le premier élément **\<supportedRuntime>** . Si cette version n’est pas disponible, le runtime examine l’élément **\<supportedRuntime>** suivant et tente de charger la version du runtime spécifiée. Si cette version du runtime n’est pas disponible non plus, tous les éléments **\<supportedRuntime>** suivants sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
   
 2. Le runtime lit l'en-tête du fichier PE du fichier exécutable de l'application. Si la version du runtime spécifiée par l'en-tête du fichier PE est disponible, le runtime la charge. Sinon, le runtime recherche une version du runtime que Microsoft a déterminé comme compatible avec la version du runtime spécifiée dans l'en-tête du fichier PE. Si cette version est introuvable, le processus continue jusqu'à l'étape 3.  
   
@@ -88,9 +96,10 @@ L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versi
 > Après le chargement d'une version du runtime, les redirections de liaison d'assembly peuvent spécifier qu'une version différente d'un assembly .NET Framework donné soit chargée. Ces redirections de liaison s'appliquent uniquement à l'assembly spécifique qui fait l'objet de la redirection.  
   
 ## <a name="partially-qualified-assembly-names-and-side-by-side-execution"></a>Exécution côte à côte et noms d'assembly partiellement qualifiés  
- Du fait qu'elles représentent une source potentielle de problèmes pour l'exécution côte à côte, les références d'assembly partiellement qualifiées ne peuvent s'utiliser que pour les liaisons à des assemblys au sein du répertoire d'une application. Dans la mesure du possible, n'utilisez pas de références d'assembly partiellement qualifiées dans votre code.  
+
+Du fait qu'elles représentent une source potentielle de problèmes pour l'exécution côte à côte, les références d'assembly partiellement qualifiées ne peuvent s'utiliser que pour les liaisons à des assemblys au sein du répertoire d'une application. Dans la mesure du possible, n'utilisez pas de références d'assembly partiellement qualifiées dans votre code.  
   
- Pour réduire les références d’assembly partiellement qualifiées dans le code, vous pouvez utiliser l’élément [\<qualifyAssembly>](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) dans un fichier de configuration de l’application pour attribuer un nom complet aux références d’assembly partiellement qualifiées qui se trouvent dans le code. Utilisez l’élément **\<qualifyAssembly>** pour spécifier uniquement des champs qui n’ont pas été définis dans la référence partielle. L’identité de l’assembly indiquée dans l’attribut **fullName** doit contenir toutes les informations nécessaires pour qualifier l’assembly avec un nom complet : le nom de l’assembly, la clé publique, la culture et la version.  
+Pour réduire les références d’assembly partiellement qualifiées dans le code, vous pouvez utiliser l’élément [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) dans un fichier de configuration de l’application pour attribuer un nom complet aux références d’assembly partiellement qualifiées qui se trouvent dans le code. Utilisez l’élément **\<qualifyAssembly>** pour spécifier uniquement des champs qui n’ont pas été définis dans la référence partielle. L’identité de l’assembly indiquée dans l’attribut **fullName** doit contenir toutes les informations nécessaires pour qualifier l’assembly avec un nom complet : le nom de l’assembly, la clé publique, la culture et la version.  
   
  L'exemple suivant illustre l'entrée du fichier de configuration de l'application qui permet de qualifier un assembly nommé `myAssembly` avec un nom complet.  
   
@@ -113,11 +122,12 @@ publicKeyToken=...,
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Guide pratique pour Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Explique comment lier une application à une version spécifique d'un assembly.|  
-|[Configuration de la redirection de liaison d’assembly](../../../docs/framework/deployment/configuring-assembly-binding-redirection.md)|Explique comment rediriger les références de liaison d’assembly vers une version spécifique des assemblys du .NET Framework.|  
-|[Exécution côte à côte in-process](../../../docs/framework/deployment/in-process-side-by-side-execution.md)|Explique comment utiliser l'activation d'hôte du runtime côte à côte in-process pour exécuter plusieurs versions du CLR dans un même processus.|  
+|[Guide pratique pour Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Explique comment lier une application à une version spécifique d'un assembly.|  
+|[Configuration de la redirection de liaison d’assembly](configuring-assembly-binding-redirection.md)|Explique comment rediriger les références de liaison d’assembly vers une version spécifique des assemblys du .NET Framework.|  
+|[Exécution côte à côte in-process](in-process-side-by-side-execution.md)|Explique comment utiliser l'activation d'hôte du runtime côte à côte in-process pour exécuter plusieurs versions du CLR dans un même processus.|  
 |[Assemblys dans .NET](../../standard/assembly/index.md)|Fournit une vue d'ensemble conceptuelle des assemblys.|  
-|[Domaines d’application](../../../docs/framework/app-domains/application-domains.md)|Fournit une vue d'ensemble conceptuelle des domaines d'application.|  
+|[Domaines d’application](../app-domains/application-domains.md)|Fournit une vue d'ensemble conceptuelle des domaines d'application.|  
   
 ## <a name="reference"></a>Référence  
- [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+
+[\<supportedRuntime>, élément](../configure-apps/file-schema/startup/supportedruntime-element.md)

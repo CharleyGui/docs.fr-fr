@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46475cbc8517fc73d8b7fd868c7632e5c85a7726
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: f99b2fd4716b069d4ec7a21e369c5178990ce16d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894796"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044195"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil Sign Tool)
 L'outil Signature est un outil en ligne de commande qui signe numériquement les fichiers, vérifie les signatures dans les fichiers et horodate les fichiers.  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -39,10 +39,10 @@ signtool [command] [options] [file_name | ...]
   
 |Commande|Description|  
 |-------------|-----------------|  
-|`catdb`|Ajoute ou supprime un fichier catalogue dans une base de données de catalogue. Les bases de données de catalogue sont utilisées pour la récupération automatique des fichiers catalogue et sont identifiées par un GUID. Pour obtenir la liste des options prises en charge par la commande `catdb`, consultez [Options de commande catdb](../../../docs/framework/tools/signtool-exe.md#catdb).|  
-|`sign`|Signe numériquement les fichiers. Les signatures numériques protègent les fichiers contre la falsification et permettent aux utilisateurs de vérifier le signataire selon un certificat de signature. Pour obtenir la liste des options prises en charge par la commande `sign`, consultez [Options de commande sign](../../../docs/framework/tools/signtool-exe.md#sign).|  
-|`Timestamp`|Horodate les fichiers. Pour obtenir la liste des options prises en charge par la commande `TimeStamp`, consultez [Options de commande TimeStamp](../../../docs/framework/tools/signtool-exe.md#TimeStamp).|  
-|`Verify`|Vérifie la signature numérique des fichiers en déterminant si le certificat de signature a été publié par une autorité de confiance, si le certificat de signature a été révoqué et, éventuellement, si le certificat de signature est valide pour une stratégie spécifique. Pour obtenir la liste des options prises en charge par la commande `Verify`, consultez [Options de commande Verify](../../../docs/framework/tools/signtool-exe.md#Verify).|  
+|`catdb`|Ajoute ou supprime un fichier catalogue dans une base de données de catalogue. Les bases de données de catalogue sont utilisées pour la récupération automatique des fichiers catalogue et sont identifiées par un GUID. Pour obtenir la liste des options prises en charge par la commande `catdb`, consultez [Options de commande catdb](signtool-exe.md#catdb).|  
+|`sign`|Signe numériquement les fichiers. Les signatures numériques protègent les fichiers contre la falsification et permettent aux utilisateurs de vérifier le signataire selon un certificat de signature. Pour obtenir la liste des options prises en charge par la commande `sign`, consultez [Options de commande sign](signtool-exe.md#sign).|  
+|`Timestamp`|Horodate les fichiers. Pour obtenir la liste des options prises en charge par la commande `TimeStamp`, consultez [Options de commande TimeStamp](signtool-exe.md#TimeStamp).|  
+|`Verify`|Vérifie la signature numérique des fichiers en déterminant si le certificat de signature a été publié par une autorité de confiance, si le certificat de signature a été révoqué et, éventuellement, si le certificat de signature est valide pour une stratégie spécifique. Pour obtenir la liste des options prises en charge par la commande `Verify`, consultez [Options de commande Verify](signtool-exe.md#Verify).|  
   
  Les options suivantes s'appliquent à toutes les commandes de l'outil Signature.  
   
@@ -211,5 +211,5 @@ signtool verify /c MyCatalog.cat SystemFile.dll
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

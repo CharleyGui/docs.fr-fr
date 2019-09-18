@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b652fae47a321ca41e1f518e9077cd68f24c91c9
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e2b8f96e9a042681642225ad4e644c6fd1f001cb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894859"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044431"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (débogueur de ligne de commande du .NET Framework)
 Le débogueur de ligne de commande du .NET Framework aide les fournisseurs d'outils et les développeurs d'applications à trouver et à corriger les bogues dans les programmes qui ont pour cible le Common Language Runtime du .NET Framework. Cet outil utilise l'API de débogage du runtime pour fournir des services de débogage. Vous pouvez utiliser MDbg.exe pour déboguer uniquement du code managé ; il n'y a pas de prise en charge du débogage du code non managé.  
@@ -106,5 +106,5 @@ mdbg>
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

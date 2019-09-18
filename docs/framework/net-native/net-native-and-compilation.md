@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce93ea321c0441208e223efc22cf1f50e98b827c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1a15d30ea4d6e0f4456460248e96428419117d85
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044132"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049437"
 ---
 # <a name="net-native-and-compilation"></a>Compilation et .NET natif
 
 Les applications Windows 8.1 et les applications de bureau Windows qui ciblent le .NET Framework sont écrites dans un langage de programmation particulier et compilées dans un langage intermédiaire. Lors de l'exécution, un compilateur juste-à-temps (JIT) est chargé de compiler du langage intermédiaire en code natif pour l'ordinateur local, juste avant qu'une méthode ne soit exécutée pour la première fois. À l'inverse, la chaîne d'outils .NET Native convertit le code source en code natif au moment de la compilation. Cette rubrique compare .NET Native avec d'autres technologies de compilation disponibles pour les applications .NET Framework. Elle explique également de façon pratique comment .NET Native génère le code natif qui peut vous aider à comprendre pourquoi les exceptions qui se produisent dans le code compilé avec .NET Native ne se produisent pas dans le code compilé par le compilateur JIT.
 
-## <a name="net-native-generating-native-binaries"></a>.NET Native: Génération de fichiers binaires natifs
+## <a name="net-native-generating-native-binaries"></a>.NET Native : Génération de fichiers binaires natifs
 
 Une application qui cible .NET Framework et qui n'est pas compilée à l'aide de la chaîne d'outils .NET Native se compose de votre assembly d'application, qui comprend les éléments suivants :
 
@@ -82,7 +82,7 @@ L’application résultante produite par la chaîne d’outils .NET Native est �
 
 - COM Interop
 
-Si le code d'implémentation ou les métadonnées nécessaires sont absents au moment de l'exécution, le runtime .NET Native lève une exception. Vous pouvez éviter ces exceptions et vérifier que la chaîne d’outils .NET Native inclut le code d’implémentation et les métadonnées nécessaires en utilisant un [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Il s’agit d’un fichier XML qui désigne les éléments de programme dont le code d’implémentation ou les métadonnées doivent être disponibles lors de l’exécution, et qui leur attribue une stratégie runtime. Voici le fichier de directives runtime par défaut qui est ajouté à un projet Windows Store compilé par la chaîne d'outils .NET Native :
+Si le code d'implémentation ou les métadonnées nécessaires sont absents au moment de l'exécution, le runtime .NET Native lève une exception. Vous pouvez éviter ces exceptions et vérifier que la chaîne d’outils .NET Native inclut le code d’implémentation et les métadonnées nécessaires en utilisant un [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Il s’agit d’un fichier XML qui désigne les éléments de programme dont le code d’implémentation ou les métadonnées doivent être disponibles lors de l’exécution, et qui leur attribue une stratégie runtime. Voici le fichier de directives runtime par défaut qui est ajouté à un projet Windows Store compilé par la chaîne d'outils .NET Native :
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -96,7 +96,7 @@ Il permet à tous les types, ainsi qu'à tous leurs membres, dans tous les assem
 
 ## <a name="net-native-and-ngen"></a>.NET Native et NGEN
 
-Le [générateur d’images natives](../../../docs/framework/tools/ngen-exe-native-image-generator.md) (NGEN) compile des assemblys en code natif et les installe dans le cache d’images natives sur l’ordinateur local. Toutefois, même si NGEN génère du code natif comme .NET Native, il comporte des différences importantes :
+Le [générateur d’images natives](../tools/ngen-exe-native-image-generator.md) (NGEN) compile des assemblys en code natif et les installe dans le cache d’images natives sur l’ordinateur local. Toutefois, même si NGEN génère du code natif comme .NET Native, il comporte des différences importantes :
 
 - Si aucune image native n'est disponible pour une méthode particulière, NGEN revient au code juste-à-temps. Cela signifie que les images natives doivent continuer d'inclure les métadonnées et le langage intermédiaire dans le cas où NGEN doive revenir à la compilation juste-à-temps. À l'inverse, .NET Native génère uniquement des images natives et ne revient pas à la compilation juste-à-temps. Seules les métadonnées requises pour certains scénarios d'interopérabilité, de sérialisation et de réflexion doivent donc être conservées.
 
@@ -108,5 +108,5 @@ Le [générateur d’images natives](../../../docs/framework/tools/ngen-exe-nati
 
 - [Métadonnées et composants autodescriptifs](../../standard/metadata-and-self-describing-components.md)
 - [À l’intérieur de .NET Native (vidéo Channel 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
-- [Réflexion et .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
-- [Résolution des problèmes généraux liés à .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)
+- [Réflexion et .NET Native](reflection-and-net-native.md)
+- [Résolution des problèmes généraux liés à .NET Native](net-native-general-troubleshooting.md)

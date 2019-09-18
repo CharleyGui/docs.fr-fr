@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a68aac2a92a0569e288da858e4a4e4695fd5eaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d508beb697e07f7d3b960b6627b9a07ffe25adf4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754425"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052635"
 ---
 # <a name="invalidcercall-mda"></a>Assistant Débogage managé invalidCERCall
 L’Assistant Débogage managé `invalidCERCall` est activé en cas d’appel, dans le graphique de la région d’exécution limitée, à une méthode qui ne possède aucun contrat de fiabilité ni contrat excessivement faible. Un contrat faible est un contrat qui déclare que la pire altération d’état envisageable dépasse la portée de l’instance passée à l’appel. En d’autres termes, l’<xref:System.AppDomain> ou l’état du processus peut être endommagé ou il ne sera pas toujours possible de calculer son résultat de façon déterministe lors de son appel dans une région d’exécution limitée.  
@@ -33,7 +33,7 @@ L’Assistant Débogage managé `invalidCERCall` est activé en cas d’appel, d
   
  Dans la mesure où toute méthode avec un contrat faible ou inexistant peut potentiellement échouer de diverses façons, souvent imprévisibles, le runtime ne tente de supprimer de la méthode aucun de ses propres échecs imprévisibles, introduits notamment par une compilation JIT en différé, par un remplissage du dictionnaire des génériques ou par des interruptions de threads. En d’autres termes, quand cet Assistant Débogage managé est activé, il indique que le runtime n’a pas inclus la méthode appelée dans la région d’exécution limitée en cours de définition ; le graphique des appels a été interrompu au niveau de ce nœud, car toute poursuite de la préparation de cette sous-arborescence peut contribuer à masquer l’erreur potentielle.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Ajoutez un contrat de fiabilité valide à la fonction ou évitez d’utiliser cet appel de fonction.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -58,4 +58,4 @@ L’Assistant Débogage managé `invalidCERCall` est activé en cas d’appel, d
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

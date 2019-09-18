@@ -23,19 +23,20 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 374a97eea7f6432833ebbcf40736ea6c7a6d4039
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 57f0a13a5e57898add667082d670de39431f940f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970950"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045875"
 ---
 # <a name="reflection-in-net"></a>Réflexion dans .NET
+
 Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Type?displayProperty=nameWithType> vous permettent d’obtenir des informations sur les [assemblys](../../standard/assembly/index.md) chargés et sur les types définis dans ceux-ci, comme les types des [classes](../../standard/base-types/common-type-system.md#classes), des[interfaces](../../standard/base-types/common-type-system.md#interfaces) et des [valeurs](../../csharp/language-reference/keywords/value-types.md). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
   
- Le chargeur du [common language runtime](../../standard/clr.md) gère les [domaines d’application](../../../docs/framework/app-domains/application-domains.md). Ceux-ci constituent des limites définies autour des objets qui ont la même portée d’application. Cette gestion comprend le chargement de chaque assembly dans le domaine d'application approprié et le contrôle de la disposition en mémoire de la hiérarchie des types dans chaque assembly.  
+Le chargeur du [common language runtime](../../standard/clr.md) gère les [domaines d’application](../app-domains/application-domains.md). Ceux-ci constituent des limites définies autour des objets qui ont la même portée d’application. Cette gestion comprend le chargement de chaque assembly dans le domaine d'application approprié et le contrôle de la disposition en mémoire de la hiérarchie des types dans chaque assembly.  
   
- Les [assemblys](../../../docs/framework/app-domains/index.md) contiennent des modules, les modules contiennent des types, et les types contiennent des membres. La réflexion fournit des objets qui encapsulent les assemblys, les modules et les types. Vous pouvez utiliser la réflexion pour créer dynamiquement une instance d'un type, pour lier le type à un objet existant ou pour obtenir le type d'un objet existant. Vous pouvez ensuite appeler les méthodes du type ou accéder à ses champs et à ses propriétés. Les utilisations courantes de la réflexion sont les suivantes :  
+Les [assemblys](../app-domains/index.md) contiennent des modules, les modules contiennent des types, et les types contiennent des membres. La réflexion fournit des objets qui encapsulent les assemblys, les modules et les types. Vous pouvez utiliser la réflexion pour créer dynamiquement une instance d'un type, pour lier le type à un objet existant ou pour obtenir le type d'un objet existant. Vous pouvez ensuite appeler les méthodes du type ou accéder à ses champs et à ses propriétés. Les utilisations courantes de la réflexion sont les suivantes :  
   
 - Utilisez <xref:System.Reflection.Assembly> pour définir et charger des assemblys, charger les modules répertoriés dans le manifeste d'assembly, et pour localiser un type de cet assembly et créer une instance de celui-ci.  
   
@@ -55,37 +56,39 @@ Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Typ
   
 - Utilisez <xref:System.Reflection.CustomAttributeData> pour découvrir des informations sur les attributs personnalisés quand vous travaillez dans le contexte de réflexion uniquement d'un domaine d'application. <xref:System.Reflection.CustomAttributeData> vous permet d'examiner des attributs sans créer des instances de ceux-ci.  
   
- Les classes de l'espace de noms <xref:System.Reflection.Emit> fournissent une forme de réflexion spécialisée qui vous permet de créer des types au moment de l'exécution.  
+Les classes de l'espace de noms <xref:System.Reflection.Emit> fournissent une forme de réflexion spécialisée qui vous permet de créer des types au moment de l'exécution.  
   
- La réflexion peut également être utilisée pour créer des applications appelées explorateurs de types, qui permettent aux utilisateurs de sélectionner des types et d'afficher les informations sur ces types.  
+La réflexion peut également être utilisée pour créer des applications appelées explorateurs de types, qui permettent aux utilisateurs de sélectionner des types et d'afficher les informations sur ces types.  
   
- Il existe d'autres utilisations de la réflexion. Les compilateurs de langages comme JScript utilisent la réflexion pour construire des tables de symboles. Les classes de l'espace de noms <xref:System.Runtime.Serialization> utilisent la réflexion pour accéder aux données et pour déterminer les champs à rendre persistants. Les classes de l'espace de noms <xref:System.Runtime.Remoting> utilisent la réflexion indirectement via la sérialisation.  
+Il existe d'autres utilisations de la réflexion. Les compilateurs de langages comme JScript utilisent la réflexion pour construire des tables de symboles. Les classes de l'espace de noms <xref:System.Runtime.Serialization> utilisent la réflexion pour accéder aux données et pour déterminer les champs à rendre persistants. Les classes de l'espace de noms <xref:System.Runtime.Remoting> utilisent la réflexion indirectement via la sérialisation.  
   
 ## <a name="runtime-types-in-reflection"></a>Types au moment de l'exécution dans la réflexion  
- La réflexion fournit des classes, comme <xref:System.Type> et <xref:System.Reflection.MethodInfo>, pour représenter des types, des membres, des paramètres et d'autres entités de code. Cependant, quand vous utilisez la réflexion, vous ne travaillez pas directement avec ces classes, dont la plupart sont abstraites (`MustInherit` en Visual Basic). Au lieu de cela, vous utilisez des types fournis par le common language runtime (CLR).  
+La réflexion fournit des classes, comme <xref:System.Type> et <xref:System.Reflection.MethodInfo>, pour représenter des types, des membres, des paramètres et d'autres entités de code. Cependant, quand vous utilisez la réflexion, vous ne travaillez pas directement avec ces classes, dont la plupart sont abstraites (`MustInherit` en Visual Basic). Au lieu de cela, vous utilisez des types fournis par le common language runtime (CLR).  
   
- Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual Basic) pour obtenir un objet <xref:System.Type>, l'objet est réellement d'un type `RuntimeType`. `RuntimeType` dérive de <xref:System.Type> et fournit des implémentation de toutes les méthodes abstraites.  
+Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual Basic) pour obtenir un objet <xref:System.Type>, l'objet est réellement d'un type `RuntimeType`. `RuntimeType` dérive de <xref:System.Type> et fournit des implémentation de toutes les méthodes abstraites.  
   
- Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne sont pas documentées distinctement de leurs classes de base, car leur comportement est décrit par la documentation de la classe de base.  
+Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne sont pas documentées distinctement de leurs classes de base, car leur comportement est décrit par la documentation de la classe de base.  
   
 <a name="related_topics"></a>   
+
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec plusieurs classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|  
-|[Réflexion et types génériques](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)|Explique comment la réflexion gère les paramètres de types et les arguments de types des types génériques et des méthodes génériques.|  
-|[Considérations relatives à la sécurité de la réflexion](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
-|[Chargement et utilisation dynamiques des types](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md)|Décrit l’interface de liaison personnalisée de la réflexion qui prend en charge la liaison tardive.|  
-|[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
-|[Accès aux attributs personnalisés](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)|Montre l'utilisation de la réflexion pour déterminer l'existence et les valeurs des attributs.|  
-|[Spécification des noms de types complets](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)|Décrit le format des noms complets des types sous la forme Backus-Naur (BNF) et la syntaxe requise pour spécifier les caractères spéciaux, les noms d'assemblys, les pointeurs, les références et les tableaux.|  
-|[Guide pratique pour raccorder un délégué à l’aide de la réflexion](../../../docs/framework/reflection-and-codedom/how-to-hook-up-a-delegate-using-reflection.md)|Explique comment créer un délégué pour une méthode et raccorder le délégué à un événement. Explique comment créer une méthode de gestion d'événements à l'exécution à l'aide de <xref:System.Reflection.Emit.DynamicMethod>.|  
-|[Émission d’assemblys et de méthodes dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
+|[Affichage des informations de type](viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec plusieurs classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|  
+|[Réflexion et types génériques](reflection-and-generic-types.md)|Explique comment la réflexion gère les paramètres de types et les arguments de types des types génériques et des méthodes génériques.|  
+|[Considérations relatives à la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
+|[Chargement et utilisation dynamiques des types](dynamically-loading-and-using-types.md)|Décrit l’interface de liaison personnalisée de la réflexion qui prend en charge la liaison tardive.|  
+|[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](how-to-load-assemblies-into-the-reflection-only-context.md).|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
+|[Accès aux attributs personnalisés](accessing-custom-attributes.md)|Montre l'utilisation de la réflexion pour déterminer l'existence et les valeurs des attributs.|  
+|[Spécification des noms de types complets](specifying-fully-qualified-type-names.md)|Décrit le format des noms complets des types sous la forme Backus-Naur (BNF) et la syntaxe requise pour spécifier les caractères spéciaux, les noms d'assemblys, les pointeurs, les références et les tableaux.|  
+|[Guide pratique pour raccorder un délégué à l’aide de la réflexion](how-to-hook-up-a-delegate-using-reflection.md)|Explique comment créer un délégué pour une méthode et raccorder le délégué à un événement. Explique comment créer une méthode de gestion d'événements à l'exécution à l'aide de <xref:System.Reflection.Emit.DynamicMethod>.|  
+|[Émission d’assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
   
 ## <a name="reference"></a>Référence  
- <xref:System.Type?displayProperty=nameWithType>  
+
+<xref:System.Type?displayProperty=nameWithType>  
   
- <xref:System.Reflection>  
+<xref:System.Reflection>  
   
- <xref:System.Reflection.Emit>  
+<xref:System.Reflection.Emit>  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UI Automation, custom user interface (UI) elements
 - providers, UI Automation
 ms.assetid: 88bc4212-3f4e-4bac-bae0-faef31944b71
-ms.openlocfilehash: ac9b20d1fd3356941b75df686b2556b3c3c4f179
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d5f2651c6a74a7f9ac275a55a4e37baebf653305
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914425"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042084"
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Rubriques "Comment" relatives aux fournisseurs UI Automation pour le code managé
 > [!NOTE]
@@ -22,10 +22,10 @@ ms.locfileid: "69914425"
  Cette section contient des exemples de code qui illustrent [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] les tâches [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] d’écriture de fournisseurs pour les éléments.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Exposer un fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
- [Retourner les propriétés d’un fournisseur UI Automation](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [Déclencher des événements à partir d’un fournisseur UI Automation](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [Activer la navigation dans un fournisseur de fragment UI Automation](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Créer un fournisseur UI Automation côté client](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [Implémenter des fournisseurs UI Automation dans une application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+ [Exposer un fournisseur UI Automation côté serveur](expose-a-server-side-ui-automation-provider.md)  
+ [Retourner les propriétés d’un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)  
+ [Déclencher des événements à partir d’un fournisseur UI Automation](raise-events-from-a-ui-automation-provider.md)  
+ [Activer la navigation dans un fournisseur de fragment UI Automation](enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)  
+ [Créer un fournisseur UI Automation côté client](create-a-client-side-ui-automation-provider.md)  
+ [Implémenter des fournisseurs UI Automation dans une application cliente](implement-ui-automation-providers-in-a-client-application.md)

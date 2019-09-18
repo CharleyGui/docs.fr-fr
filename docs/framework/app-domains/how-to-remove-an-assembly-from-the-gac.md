@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: acdcc588-b458-436d-876c-726de68244c1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13c9aa7275ad792f8ace33519438f0a1dcc6b251
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5aa88cbc73415695a1545704a2ad8cab535f011e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971617"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053146"
 ---
 # <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a>Procédure : supprimer un assembly du Global Assembly Cache
 
 Il existe deux façons de supprimer un assembly du Global Assembly Cache (GAC) :
 
-- Utilisation de l’[outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). Vous pouvez utiliser cette option pour désinstaller des assemblys que vous avez placés dans le GAC lors du développement et des tests.
+- Utilisation de l’[outil Global Assembly Cache (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md). Vous pouvez utiliser cette option pour désinstaller des assemblys que vous avez placés dans le GAC lors du développement et des tests.
 
 - Utilisation de [Windows Installer](/windows/desktop/Msi/windows-installer-portal). Utilisez cette option pour désinstaller des assemblys quand vous testez des packages d'installation et pour les systèmes de production.
 
@@ -54,6 +54,6 @@ gacutil -u hello
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation d’assemblys et du Global Assembly Cache](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)
-- [Guide pratique : installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)
-- [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
+- [Utilisation d’assemblys et du Global Assembly Cache](working-with-assemblies-and-the-gac.md)
+- [Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)
+- [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md)

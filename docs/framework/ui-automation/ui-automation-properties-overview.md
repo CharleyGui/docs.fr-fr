@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, properties
 - properties, UI Automation
 ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
-ms.openlocfilehash: d7069769d381a1806f28d538319a49e0cc9cce60
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 59d65601a37c9aba63708748a82fd5e85261b75b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914496"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042141"
 ---
 # <a name="ui-automation-properties-overview"></a>Vue d'ensemble des propriétés UI Automation
 > [!NOTE]
@@ -20,9 +20,9 @@ ms.locfileid: "69914496"
   
  Cette section offre une vue générale des propriétés [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] . Des informations plus spécifiques sont disponibles dans les rubriques suivantes :  
   
-- [Propriétés UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
+- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)  
   
-- [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
+- [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)  
   
 <a name="Property_Identifiers"></a>   
 ## <a name="property-identifiers"></a>Identificateurs de propriété  
@@ -55,7 +55,7 @@ ms.locfileid: "69914496"
 ## <a name="properties-by-category"></a>Propriétés par catégorie  
  Les tableaux suivants catégorisent les propriétés dont les ID sont trouvés <xref:System.Windows.Automation.AutomationElement> dans <xref:System.Windows.Automation.AutomationElementIdentifiers>et. Ces propriétés sont communes à tous les contrôles. Toutefois, certaines d’entre elles sont susceptibles d’être statiques pendant la durée de vie de l’application fournisseur. Les propriétés les plus dynamiques sont associées à des modèles de contrôle.  
   
- La colonne **Accès à la propriété** répertorie tous les autres accesseurs pour chaque propriété, en plus de <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> et <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Pour plus d’informations sur l’obtention des propriétés d’une application cliente, consultez [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+ La colonne **Accès à la propriété** répertorie tous les autres accesseurs pour chaque propriété, en plus de <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> et <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Pour plus d’informations sur l’obtention des propriétés d’une application cliente, consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
 > [!NOTE]
 > Pour obtenir des informations spécifiques sur chaque propriété, suivez le lien de la colonne **Accès à la propriété** .  
@@ -161,9 +161,9 @@ ms.locfileid: "69914496"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mise en cache dans les clients UI Automation](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)
-- [Propriétés UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)
-- [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
-- [Rechercher un élément UI Automation basé sur une condition de propriété](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)
-- [Retourner les propriétés d’un fournisseur UI Automation](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)
-- [Déclencher des événements à partir d’un fournisseur UI Automation](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)
+- [Mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md)
+- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)
+- [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)
+- [Rechercher un élément UI Automation basé sur une condition de propriété](find-a-ui-automation-element-based-on-a-property-condition.md)
+- [Retourner les propriétés d’un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)
+- [Déclencher des événements à partir d’un fournisseur UI Automation](raise-events-from-a-ui-automation-provider.md)

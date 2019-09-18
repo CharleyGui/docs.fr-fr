@@ -2,12 +2,12 @@
 title: État et données dans les applications Docker
 description: Gestion des états et des données dans les applications Docker. Les instances de microservice sont extensibles, mais PAS LES DONNÉES. Comment prendre cela en charge à l’aide des microservices ?
 ms.date: 09/20/2018
-ms.openlocfilehash: 9d7b0ff0e73267c6b80be2f1c956c3b4eae140e2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: bd0ac007479dcd51f2c639881273b81d1fd8b6d7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673126"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039579"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
 
@@ -47,7 +47,7 @@ Les **montages tmpfs** sont essentiellement des dossiers virtuels qui résident 
 
 Comme le montre la figure 4-5, les volumes Docker standard peuvent être stockés en dehors des conteneurs eux-mêmes, mais dans les limites physiques du serveur ou de la machine virtuelle hôte. Toutefois, les conteneurs Docker ne peuvent pas accéder à un volume d’un serveur hôte ou d’une machine virtuelle depuis un autre serveur hôte ou une autre machine virtuelle. En d’autres termes, avec ces volumes, il n’est pas possible de gérer les données partagées entre des conteneurs qui s’exécutent sur des hôtes Docker distincts. Toutefois, cela est possible avec un pilote de volume qui prend en charge les hôtes distants.
 
-![Les volumes peuvent être partagés entre les conteneurs, mais uniquement sur le même hôte, sauf si vous utilisez un pilote distant qui prend en charge les hôtes distants. ](./media/image5.png)
+![Les volumes peuvent être partagés entre les conteneurs, mais uniquement sur le même hôte, sauf si vous utilisez un pilote distant qui prend en charge les hôtes distants.](./media/image5.png)
 
 **Figure 4-5**. Volumes et sources de données externes pour applications conteneurisées
 

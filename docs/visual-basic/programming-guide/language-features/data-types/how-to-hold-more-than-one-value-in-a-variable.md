@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Stocker plusieurs valeurs dans une Variable (Visual Basic)'
+title: 'Procédure : Contenir plusieurs valeurs dans une variable (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,36 +11,37 @@ helpviewer_keywords:
 - arrays [Visual Basic], compilation errors
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
-ms.openlocfilehash: 2c3df9873d184ead2de3f82b89a081955ade93b3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8d07a34a98303f9d220dba0a3c955120b421340e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601123"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054195"
 ---
-# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Procédure : Stocker plusieurs valeurs dans une Variable (Visual Basic)
-Une variable contient plusieurs valeurs si vous déclarez comme étant d’un *type de données composite*.  
-  
- [Les Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) incluent des structures, des tableaux et des classes. Une variable de type de données composite peut contenir une combinaison de types de données élémentaires et d’autres types composites. Structures et classes peuvent contenir du code ainsi que les données.  
-  
-### <a name="to-hold-more-than-one-value-in-a-variable"></a>Pour stocker plusieurs valeurs dans une variable  
-  
-1. Déterminer le type de données composites que vous souhaitez utiliser pour votre variable.  
-  
-2. Si le type de données composite n’est pas déjà défini, définissez-le afin que votre variable puisse l’utiliser.  
-  
-    - Définir une structure avec un [instruction Structure](../../../../visual-basic/language-reference/statements/structure-statement.md).  
-  
-    - Définir un tableau avec un [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
-  
-    - Définir une classe avec un [Class, instruction](../../../../visual-basic/language-reference/statements/class-statement.md).  
-  
-3. Déclarez votre variable avec un `Dim` instruction.  
-  
-4. Suivez le nom de variable avec une `As` clause.  
-  
-5. Suivez le `As` mot clé par le nom du type de données composite approprié.  
-  
+# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Procédure : Contenir plusieurs valeurs dans une variable (Visual Basic)
+
+Une variable contient plusieurs valeurs si vous la déclarez comme étant d’un *type de données composite*.
+
+Les [types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) incluent des structures, des tableaux et des classes. Une variable d’un type de données composite peut contenir une combinaison de types de données élémentaires et d’autres types composites. Les structures et les classes peuvent contenir du code ainsi que des données.
+
+## <a name="to-hold-more-than-one-value-in-a-variable"></a>Pour stocker plusieurs valeurs dans une variable
+
+1. Déterminez le type de données composite que vous souhaitez utiliser pour votre variable.
+
+2. Si le type de données composite n’est pas déjà défini, définissez-le afin que votre variable puisse l’utiliser.
+
+    - Définissez une structure avec une [instruction structure](../../../../visual-basic/language-reference/statements/structure-statement.md).
+
+    - Définissez un tableau avec une [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
+
+    - Définissez une classe avec une [instruction de classe](../../../../visual-basic/language-reference/statements/class-statement.md).
+
+3. Déclarez votre variable avec `Dim` une instruction.
+
+4. Suivez le nom de la variable `As` avec une clause.
+
+5. Suivez le `As` mot clé avec le nom du type de données composite approprié.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Types de données](../../../../visual-basic/language-reference/data-types/index.md)

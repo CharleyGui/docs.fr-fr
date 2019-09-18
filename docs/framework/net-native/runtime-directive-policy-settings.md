@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe78e2bd9c31bfb122e90b97977117adfc0235d5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 33253c249842824a529f4e8b24d4ca4228733041
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967886"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049215"
 ---
 # <a name="runtime-directive-policy-settings"></a>Paramètres de stratégie de directive runtime
 
 > [!NOTE]
 > Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).
 
-Les paramètres de stratégie des directives runtime pour .NET Native déterminent la disponibilité des métadonnées pour les types et les membres de type au moment de l'exécution. Sans les métadonnées nécessaires, les opérations qui reposent sur la réflexion, la sérialisation, la désérialisation ou le marshaling de types .NET Framework vers COM ou Windows Runtime peuvent échouer et lever une exception. Les exceptions les plus courantes sont [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) et, dans le cas de l’interopérabilité, [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md).
+Les paramètres de stratégie des directives runtime pour .NET Native déterminent la disponibilité des métadonnées pour les types et les membres de type au moment de l'exécution. Sans les métadonnées nécessaires, les opérations qui reposent sur la réflexion, la sérialisation, la désérialisation ou le marshaling de types .NET Framework vers COM ou Windows Runtime peuvent échouer et lever une exception. Les exceptions les plus courantes sont [MissingMetadataException](missingmetadataexception-class-net-native.md) et, dans le cas de l’interopérabilité, [MissingInteropDataException](missinginteropdataexception-class-net-native.md).
 
-Les paramètres de stratégie runtime sont contrôlés par un fichier de directives runtime (.rd.xml). Chaque directive runtime définit la stratégie pour un élément de programme particulier, par exemple un assembly (élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)), un type (élément [\<Type>](../../../docs/framework/net-native/type-element-net-native.md)) ou une méthode (élément [\<Method>](../../../docs/framework/net-native/method-element-net-native.md)). La directive inclut un ou plusieurs attributs qui définissent les types de stratégie de réflexion, les types de stratégie de sérialisation et les types de stratégie d'interopérabilité décrits dans la section suivante. La valeur de l'attribut définit le paramètre de stratégie.
+Les paramètres de stratégie runtime sont contrôlés par un fichier de directives runtime (.rd.xml). Chaque directive runtime définit la stratégie pour un élément de programme particulier, par exemple un assembly (élément [\<Assembly>](assembly-element-net-native.md)), un type (élément [\<Type>](type-element-net-native.md)) ou une méthode (élément [\<Method>](method-element-net-native.md)). La directive inclut un ou plusieurs attributs qui définissent les types de stratégie de réflexion, les types de stratégie de sérialisation et les types de stratégie d'interopérabilité décrits dans la section suivante. La valeur de l'attribut définit le paramètre de stratégie.
 
 ## <a name="policy-types"></a>Types de stratégie
 
@@ -36,22 +36,22 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   |Élément|Activate|Parcourir|Dynamique|
   |-------------|--------------|------------|-------------|
-  |[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|
-  |[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|
-  |[\<AttributeImplies>](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|
-  |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)||✓|✓|
-  |[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)||✓|✓|
-  |[\<GenericParameter>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|✓|✓|✓|
-  |[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|
-  |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)||✓|✓|
-  |[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)||✓|✓|
-  |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|
-  |[\<Parameter>](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|
-  |[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)||✓|✓|
-  |[\<Subtypes>](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|
-  |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|✓|✓|✓|
-  |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|✓|✓|✓|
-  |[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✓|✓|✓|
+  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|
+  |[\<Event>](event-element-net-native.md)||✓|✓|
+  |[\<Field>](field-element-net-native.md)||✓|✓|
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|
+  |[\<Method>](method-element-net-native.md)||✓|✓|
+  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||✓|✓|
+  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|
+  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|
+  |[\<Property>](property-element-net-native.md)||✓|✓|
+  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|
+  |[\<Type>](type-element-net-native.md)|✓|✓|✓|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|
 
 - Les types de stratégie de sérialisation déterminent les métadonnées mises à disposition au moment de l’exécution pour la sérialisation et la désérialisation :
 
@@ -67,22 +67,22 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   |Élément|Sérialisation|DataContractSerializer|DataContractJsonSerializer|XmlSerializer|
   |-------------|---------------|----------------------------|--------------------------------|-------------------|
-  |[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|✓|
-  |[\<AttributeImplies>](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|||||
-  |[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)|✓||||
-  |[\<GenericParameter>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|✓|✓|✓|✓|
-  |[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|||||
-  |[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|||||
-  |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Parameter>](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|✓||||
-  |[\<Subtypes>](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|✓|✓|✓|✓|
-  |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|✓|✓|✓|✓|
-  |[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|✓|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Event>](event-element-net-native.md)|||||
+  |[\<Field>](field-element-net-native.md)|✓||||
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|✓|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Method>](method-element-net-native.md)|||||
+  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|||||
+  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Property>](property-element-net-native.md)|✓||||
+  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Type>](type-element-net-native.md)|✓|✓|✓|✓|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|✓|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|✓|
 
 - Les types de stratégie d'interopérabilité déterminent les métadonnées mises à disposition au moment de l'exécution pour passer des types de référence, des types de valeur et des pointeurs de fonction à COM et Windows Runtime :
 
@@ -96,22 +96,22 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   |Élément|MarshalObject|MarshalDelegate|MarshalStructure|
   |-------------|-------------------|---------------------|----------------------|
-  |[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|
-  |[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|
-  |[\<AttributeImplies>](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|✓|✓|✓|
-  |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)||||
-  |[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)||||
-  |[\<GenericParameter>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|✓|✓|✓|
-  |[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|✓|✓|✓|
-  |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)||||
-  |[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)||||
-  |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|✓|✓|✓|
-  |[\<Parameter>](../../../docs/framework/net-native/parameter-element-net-native.md)|✓|✓|✓|
-  |[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)||||
-  |[\<Subtypes>](../../../docs/framework/net-native/subtypes-element-net-native.md)|✓|✓|✓|
-  |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|✓|✓|✓|
-  |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|✓|✓|✓|
-  |[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✓|✓|✓|
+  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|
+  |[\<Event>](event-element-net-native.md)||||
+  |[\<Field>](field-element-net-native.md)||||
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|
+  |[\<Method>](method-element-net-native.md)||||
+  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||||
+  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|
+  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|
+  |[\<Property>](property-element-net-native.md)||||
+  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|
+  |[\<Type>](type-element-net-native.md)|✓|✓|✓|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|
 
 ## <a name="policy-settings"></a>Paramètres de stratégie
 
@@ -132,5 +132,5 @@ Chaque type de stratégie peut être défini sur l'une des valeurs répertoriée
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)

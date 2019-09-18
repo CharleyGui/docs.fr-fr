@@ -10,19 +10,19 @@ helpviewer_keywords:
 - x:ClassModifier attribute [XAML Services]
 - ClassModifier attribute in XAML [XAML Services]
 ms.assetid: ef30ab78-d334-4668-917d-c9f66c3b6aea
-ms.openlocfilehash: c3c08f61b49a6367663cf02099dda86d1a692284
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.openlocfilehash: 5daff0567c1b1415fe994f6e39b4079cb2ab7346
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484749"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053820"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier, directive
 Modifie le comportement de compilation XAML `x:Class` lorsque est également fourni. Plus précisément, au lieu de créer `class` un partiel ayant `Public` un niveau d’accès (valeur par défaut) `x:Class` , le fourni est `NotPublic` créé avec un niveau d’accès. Ce comportement affecte le niveau d’accès de la classe dans les assemblys générés.  
   
 ## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
-```  
+```xaml  
 <object x:Class="namespace.classname" x:ClassModifier="NotPublic">  
    ...  
 </object>  
@@ -35,7 +35,7 @@ Modifie le comportement de compilation XAML `x:Class` lorsque est également fou
 |*NotPublic*|La chaîne exacte à passer pour spécifier <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> et <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> varie selon le langage de programmation code-behind que vous utilisez. Consultez la section Notes.|  
   
 ## <a name="dependencies"></a>Dépendances  
- [x:Class](x-class-directive.md) doit également être fourni sur le même élément, et cet élément doit être l’élément racine d’une page. Pour plus d’informations, consultez [ \[la section\] MS-XAML 4.3.1.8](https://go.microsoft.com/fwlink/?LinkId=114525).  
+ [x :Class](x-class-directive.md) doit également être fourni sur le même élément, et cet élément doit être l’élément racine d’une page. Pour plus d’informations, consultez [ \[la section\] MS-XAML 4.3.1.8](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ## <a name="remarks"></a>Notes  
  La valeur de `x:ClassModifier` dans .NET Framework l’utilisation des services XAML varie en fonction du langage de programmation. La chaîne à utiliser dépend de la façon dont chaque langage implémente son <xref:System.CodeDom.Compiler.CodeDomProvider> et les convertisseurs de type qu’elle retourne pour définir les significations pour <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> et <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, et si cette langue respecte la casse.  
@@ -44,7 +44,7 @@ Modifie le comportement de compilation XAML `x:Class` lorsque est également fou
   
 - Pour Microsoft Visual Basic .net, la chaîne à transmettre à Designate <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> est `Friend`.  
   
-- Pour C++/CLI, il n’existe aucune cible prenant en charge la compilation XAML; par conséquent, la valeur à passer n’est pas spécifiée.  
+- Pour C++/CLI, il n’existe aucune cible prenant en charge la compilation XAML ; par conséquent, la valeur à passer n’est pas spécifiée.  
   
  Vous pouvez également spécifier <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> (`public` dans C#, `Public` dans Visual Basic); Toutefois, la <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> spécification de est rarement effectuée <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> , car est déjà le comportement par défaut.  
   

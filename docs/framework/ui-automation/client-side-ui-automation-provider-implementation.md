@@ -6,12 +6,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 9079dfa03ab81bfa6875e43bfa8a6e5351e0a35d
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 28179ecd27c98f1de5662908ced3ea0e49cb87ad
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015116"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043945"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté client
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "70015116"
   
  [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)]fournit des fournisseurs pour [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] les contrôles standard et Windows Forms. En outre, un fournisseur de secours offre [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] une prise en charge partielle de tout contrôle qui n’est pas pris en charge par un autre fournisseur côté serveur ou un proxy, mais qui a une implémentation Microsoft Active Accessibility. Tous ces fournisseurs sont automatiquement chargés et disponibles pour les applications clientes.  
   
- Pour plus d’informations sur la [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] prise en charge des contrôles et Windows Forms, consultez [UI Automation Support for standard Controls](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
+ Pour plus d’informations sur la [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] prise en charge des contrôles et Windows Forms, consultez [UI Automation Support for standard Controls](ui-automation-support-for-standard-controls.md).  
   
  Les applications peuvent également inscrire d’autres fournisseurs côté client.  
   
@@ -51,5 +51,5 @@ ms.locfileid: "70015116"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer un fournisseur UI Automation côté client](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)
-- [Implémenter des fournisseurs UI Automation dans une application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+- [Créer un fournisseur UI Automation côté client](create-a-client-side-ui-automation-provider.md)
+- [Implémenter des fournisseurs UI Automation dans une application cliente](implement-ui-automation-providers-in-a-client-application.md)

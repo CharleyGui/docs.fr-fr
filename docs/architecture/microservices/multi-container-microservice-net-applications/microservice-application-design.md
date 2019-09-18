@@ -2,12 +2,12 @@
 title: Conception d’une application orientée microservices
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les avantages et les inconvénients d’une application orientée microservices pour vous permettre de prendre une décision éclairée.
 ms.date: 10/02/2018
-ms.openlocfilehash: ddca4ecf0b0ed1103e4da75ecc759546d6e53800
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: dc3c8ccd95505cb828383f499b9bf950e7c12a30
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926537"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039815"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Conception d’une application orientée microservices
 
@@ -89,8 +89,8 @@ Par conséquent, les unités de déploiement pour les microservices (et même po
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Code source de l’application de référence eShopOnContainers Code source de l’application de référence**\
-    <https://aka.ms/eShopOnContainers/>
+- **Code source de l’application de référence eShopOnContainers Code source de l’application de référence** \
+  <https://aka.ms/eShopOnContainers/>
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Avantages d’une solution basée sur des microservices
 
@@ -118,7 +118,7 @@ Une solution basée sur des microservices présente de nombreux avantages :
 
 Une solution basée sur des microservices présente aussi quelques inconvénients :
 
-**Application distribuée** : le fait que l’application soit distribuée complique la tâche des développeurs au moment de concevoir et générer les services. Par exemple, les développeurs doivent implémenter une communication interservice en utilisant des protocoles tels que HTTP ou AMPQ, ce qui ajoute de la complexité pour les tests et la gestion des exceptions. Cela augmente aussi la latence du système.
+**Application distribuée** : le fait que l’application soit distribuée complique la tâche des développeurs au moment de concevoir et générer les services. Par exemple, les développeurs doivent implémenter la communication entre les services à l’aide de protocoles tels que HTTP ou AMPQ, ce qui ajoute de la complexité pour les tests et la gestion des exceptions. Cela augmente aussi la latence du système.
 
 **Complexité du déploiement** : une application qui compte plusieurs dizaines de types de microservice et qui nécessite une haute scalabilité (elle doit pouvoir créer un grand nombre d’instances par service et équilibrer ces services sur les nombreux hôtes) se traduit par une grande complexité de déploiement pour les opérations et la direction informatiques. Si vous n’utilisez pas d’infrastructure orientée microservices (comme un orchestrateur et un planificateur), cette complexité supplémentaire peut demander beaucoup plus d’efforts de déploiement que l’application métier proprement dite.
 

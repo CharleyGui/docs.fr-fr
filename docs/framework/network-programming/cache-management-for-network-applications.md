@@ -6,12 +6,12 @@ helpviewer_keywords:
 - network resources, caching
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
-ms.openlocfilehash: 265b4e451ebb76dbabe0d3e0df065504a3891f32
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: HT
+ms.openlocfilehash: 7e131963999db3e3d5e0e6f3fa110da36e6452a1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199589"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048876"
 ---
 # <a name="cache-management-for-network-applications"></a>Gestion du cache pour les applications réseau
 Cette rubrique et ses sous-rubriques associées décrivent la mise en cache pour les ressources obtenues à l’aide des classes <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.  
@@ -23,16 +23,16 @@ Cette rubrique et ses sous-rubriques associées décrivent la mise en cache pour
  Pour des raisons de sécurité, la mise en cache n’est **pas** recommandée pour les scénarios de couche intermédiaire.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)  
+ [Stratégie de cache](cache-policy.md)  
  Explique ce qu’est une stratégie de cache et comment en définir une.  
   
- [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)  
  Définit chaque type de stratégie de cache basée sur l’emplacement disponible pour les ressources Hypertext Transfer Protocol (http et https).  
   
- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [Stratégies de cache basées sur la durée](time-based-cache-policies.md)  
  Décrit les critères qui peuvent être utilisés pour personnaliser une stratégie de cache basée sur la durée.  
   
- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
+ [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)  
  Décrit comment créer par programmation des stratégies de cache et des demandes qui utilisent la mise en cache.  
   
 ## <a name="reference"></a>Référence  

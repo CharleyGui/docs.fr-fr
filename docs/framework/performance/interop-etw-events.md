@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c52c9bf37e67e4d26867d2b3754945e86e2bf609
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 787c6221b651a53dbb932a5a9d0edea123e1d97d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422421"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046434"
 ---
 # <a name="interop-etw-events"></a>Événements ETW d'interopérabilité
 <a name="top"></a> Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).  
@@ -25,7 +25,7 @@ ms.locfileid: "67422421"
   
 <a name="ilstubgenerated_event"></a>   
 ## <a name="ilstubgenerated-event"></a>Événement ILStubGenerated  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -43,7 +43,7 @@ ms.locfileid: "67422421"
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|Identificateur du module|  
 |StubMethodID|win:UInt64|Identificateur de la méthode stub|  
-|StubFlags|win:UInt64|Indicateurs du stub :<br /><br /> 0x1 – Interopérabilité inversée.<br /><br /> 0x2 – COM Interop<br /><br /> 0x4 – Stub généré par NGen.exe.<br /><br /> 0x8 – Délégué<br /><br /> 0 x 10 - argument variable.<br /><br /> 0x20 – Appelé non managé|  
+|StubFlags|win:UInt64|Indicateurs du stub :<br /><br /> 0x1 – Interopérabilité inversée.<br /><br /> 0x2 – COM Interop<br /><br /> 0x4 – Stub généré par NGen.exe.<br /><br /> 0x8 – Délégué<br /><br /> 0x10 : argument de variable.<br /><br /> 0x20 – Appelé non managé|  
 |ManagedInteropMethodToken|win:UInt32|Jeton de la méthode d’interopérabilité managée|  
 |ManagedInteropMethodNameSpace|win:UnicodeString|Espace de noms de la méthode d’interopérabilité managée|  
 |ManagedInteropMethodName|win:UnicodeString|Nom de la méthode d’interopérabilité managée|  
@@ -53,7 +53,7 @@ ms.locfileid: "67422421"
 |StubMethodILCode|win:UnicodeString|Code MSIL de la méthode stub|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="ilstubcachehit_event"></a>   
 ## <a name="ilstubcachehit-event"></a>Événement ILStubCacheHit  
@@ -81,8 +81,8 @@ ms.locfileid: "67422421"
 |ManagedInteropMethodSignature|win:UnicodeString|Signature de la méthode d'interopérabilité managée|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

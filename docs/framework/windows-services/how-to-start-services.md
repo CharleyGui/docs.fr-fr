@@ -6,12 +6,12 @@ helpviewer_keywords:
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 5be803e2f4face60318a4c9ed12f1b58edaeace6
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044424"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053568"
 ---
 # <a name="how-to-start-services"></a>Procédure : démarrer des services
 
@@ -28,7 +28,7 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
 
 ### <a name="to-specify-how-a-service-should-start"></a>Pour spécifier comment un service doit démarrer
 
-1. Après avoir créé votre service, ajoutez les programmes d’installation nécessaires à celui-ci. Pour plus d'informations, voir [Procédure : ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).
+1. Après avoir créé votre service, ajoutez les programmes d’installation nécessaires à celui-ci. Pour plus d’informations, consultez [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md).
 
 2. Dans le concepteur, cliquez sur le programme d’installation du service que vous utilisez.
 
@@ -80,6 +80,6 @@ Pour indiquer si un service doit être démarré manuellement ou automatiquement
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Guide pratique pour créer des services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
-- [Guide pratique pour ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+- [Introduction aux applications de service Windows](introduction-to-windows-service-applications.md)
+- [Guide pratique : créer des services Windows](how-to-create-windows-services.md)
+- [Guide pratique pour ajouter des programmes d’installation à votre application de service](how-to-add-installers-to-your-service-application.md)

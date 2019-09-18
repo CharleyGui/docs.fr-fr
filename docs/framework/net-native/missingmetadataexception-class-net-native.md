@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fb9300917f06ec8e48f2dd412e008efec4dc6917
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 251d63fe8e025fe73b148c7deb368ab95ca3b1f7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941670"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049480"
 ---
 # <a name="missingmetadataexception-class-net-native"></a>MissingMetadataException, classe (.NET Native)
 
@@ -20,7 +20,7 @@ Exception levée quand la réflexion est utilisée pour récupérer des métadon
 **Espace de noms :** System.Reflection
 
 > [!IMPORTANT]
-> La `MissingMetadataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.
+> La `MissingMetadataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -74,7 +74,7 @@ La classe `MissingMetadataException` possède les membres suivants :
 
 L'exception `MissingMetadataException` est levée quand la réflexion est utilisée pour accéder à des métadonnées qui ne sont pas disponibles dans un assembly.
 
-Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML \*),. rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de manière à définir les métadonnées qui doivent être présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).
+Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML \*),. rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de manière à définir les métadonnées qui doivent être présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).
 
 > [!IMPORTANT]
 > Comme cette exception indique que les métadonnées nécessaires à votre application ne sont pas disponibles au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer à l'aide d'un fichier de directives runtime. Pour obtenir l'entrée que vous pouvez ajouter à votre fichier de directives de runtime qui élimine l'exception, vous pouvez utiliser un des deux utilitaires de résolution des problèmes :
@@ -88,6 +88,6 @@ La classe `MissingMetadataException` ne contient pas de membres uniques ; tous 
 
 - <xref:System.Exception?displayProperty=nameWithType>
 - <xref:System.TypeAccessException>
-- [MissingInteropDataException, classe](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)
-- [MissingRuntimeArtifactException, classe](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [MissingInteropDataException, classe](missinginteropdataexception-class-net-native.md)
+- [MissingRuntimeArtifactException, classe](missingruntimeartifactexception-class-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

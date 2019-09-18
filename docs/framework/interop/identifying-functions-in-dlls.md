@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4c56712460d772426a2d8d6d328cba9bb03373d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: deae99f5bdc7c187997d4bad4957b2fcdccdc166
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648660"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051728"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identification des fonctions des DLL
 L’identité d’une fonction DLL est composée des éléments suivants :  
@@ -31,7 +31,7 @@ L’identité d’une fonction DLL est composée des éléments suivants :
   
  **MessageBoxA** est le point d’entrée ANSI de la fonction **MessageBox** ; **MessageBoxW** correspond à la version Unicode. Vous pouvez obtenir une liste de noms de fonctions pour une DLL spécifique, telle que user32.dll, en exécutant une variété d’outils en ligne de commande. Par exemple, vous pouvez utiliser `dumpbin /exports user32.dll` ou `link /dump /exports user32.dll` pour obtenir des noms de fonctions.  
   
- Vous pouvez renommer une fonction non managée à votre convenance dans votre code à partir du moment où vous mappez le nouveau nom au point d’entrée d’origine dans la DLL. Pour obtenir des instructions sur l’attribution d’un nouveau nom à une fonction DLL non managée dans du code source managé, consultez [Spécification d’un point d’entrée](../../../docs/framework/interop/specifying-an-entry-point.md).  
+ Vous pouvez renommer une fonction non managée à votre convenance dans votre code à partir du moment où vous mappez le nouveau nom au point d’entrée d’origine dans la DLL. Pour obtenir des instructions sur l’attribution d’un nouveau nom à une fonction DLL non managée dans du code source managé, consultez [Spécification d’un point d’entrée](specifying-an-entry-point.md).  
   
  L’appel de code non managé vous permet de contrôler une partie importante du système d’exploitation en appelant des fonctions dans l’interface API Windows et dans d’autres DLL. Outre l’interface API Windows, de nombreuses autres interfaces API et DLL sont à votre disposition via l’appel de code non managé.  
   
@@ -43,12 +43,12 @@ L’identité d’une fonction DLL est composée des éléments suivants :
 |Kernel32.dll|Fonctions du système d’exploitation de bas niveau pour la gestion de la mémoire et des ressources.|  
 |User32.dll|Fonctions de gestion Windows pour les messages, les minuteries, les menus et les communications.|  
   
- Pour obtenir une documentation complète sur l’interface API Windows, consultez le Kit Platform SDK. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Pour obtenir une documentation complète sur l’interface API Windows, consultez le Kit Platform SDK. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Consommation de fonctions DLL non managées](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
-- [Spécification d'un point d'entrée](../../../docs/framework/interop/specifying-an-entry-point.md)
-- [Création d’une classe pour contenir des fonctions DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)
-- [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
+- [Spécification d'un point d'entrée](specifying-an-entry-point.md)
+- [Création d’une classe pour contenir des fonctions DLL](creating-a-class-to-hold-dll-functions.md)
+- [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
+- [Appel à une fonction DLL](calling-a-dll-function.md)

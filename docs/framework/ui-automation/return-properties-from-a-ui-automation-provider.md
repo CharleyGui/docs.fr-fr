@@ -9,12 +9,12 @@ helpviewer_keywords:
 - properties, returned by UI Automation providers
 - UI Automation, providers returning properties
 ms.assetid: 5eba950e-b9e1-48eb-ab8e-b69db76bf589
-ms.openlocfilehash: 7a637f759c952751c0472c51afa42a2c67c58624
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5d073af121eae04a973667739c68a90d6dae9f2d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969105"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042731"
 ---
 # <a name="return-properties-from-a-ui-automation-provider"></a>Retourner les propriétés d'un fournisseur UI Automation
 > [!NOTE]
@@ -30,5 +30,5 @@ ms.locfileid: "69969105"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
-- [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)

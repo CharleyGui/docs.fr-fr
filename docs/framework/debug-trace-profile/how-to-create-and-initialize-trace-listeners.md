@@ -13,20 +13,20 @@ helpviewer_keywords:
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea5db2ba1060479f55bbd7f67266d36085a2535f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a67bd2c0daa8acc81113a1e38ea463753ae34077
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754373"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052727"
 ---
 # <a name="how-to-create-and-initialize-trace-listeners"></a>Procédure : Créer et initialiser les écouteurs de trace
 
 Les classes <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.Trace?displayProperty=nameWithType> envoient des messages à des objets appelés écouteurs qui reçoivent et traitent ces messages. L'un de ces écouteurs, <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType>, est automatiquement créé et initialisé lors de l'activation du traçage ou du débogage. Si vous voulez que la sortie de <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.Debug> soit dirigée vers d'autres sources, créez et initialisez des écouteurs de suivi supplémentaires.
 
-Les écouteurs que vous créez doivent refléter les besoins de l'application. Par exemple, si vous voulez un enregistrement textuel de toutes les sorties de trace, créez un écouteur <xref:System.Diagnostics.TextWriterTraceListener>, qui écrit toutes les sorties dans un nouveau fichier texte quand il est activé. D'un autre côté, si vous voulez afficher la sortie uniquement pendant l'exécution de l'application, créez un écouteur <xref:System.Diagnostics.ConsoleTraceListener>, qui dirige toutes les sorties vers une fenêtre de console. <xref:System.Diagnostics.EventLogTraceListener> peut diriger la sortie de trace vers un journal d'événements. Pour plus d’informations, consultez [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md).
+Les écouteurs que vous créez doivent refléter les besoins de l'application. Par exemple, si vous voulez un enregistrement textuel de toutes les sorties de trace, créez un écouteur <xref:System.Diagnostics.TextWriterTraceListener>, qui écrit toutes les sorties dans un nouveau fichier texte quand il est activé. D'un autre côté, si vous voulez afficher la sortie uniquement pendant l'exécution de l'application, créez un écouteur <xref:System.Diagnostics.ConsoleTraceListener>, qui dirige toutes les sorties vers une fenêtre de console. <xref:System.Diagnostics.EventLogTraceListener> peut diriger la sortie de trace vers un journal d'événements. Pour plus d’informations, consultez [Écouteurs de suivi](trace-listeners.md).
 
-Vous pouvez créer des écouteurs de suivi dans un [fichier de configuration d’application](../../../docs/framework/configure-apps/index.md) ou dans votre code. Nous vous recommandons d'utiliser des fichiers de configuration d'application, car ils vous permettent d'ajouter, de modifier ou de supprimer des écouteurs de suivi sans avoir à modifier votre code.
+Vous pouvez créer des écouteurs de suivi dans un [fichier de configuration d’application](../configure-apps/index.md) ou dans votre code. Nous vous recommandons d'utiliser des fichiers de configuration d'application, car ils vous permettent d'ajouter, de modifier ou de supprimer des écouteurs de suivi sans avoir à modifier votre code.
 
 ### <a name="to-create-and-use-a-trace-listener-by-using-a-configuration-file"></a>Pour créer et utiliser un écouteur de suivi à l'aide d'un fichier de configuration
 
@@ -97,7 +97,7 @@ Vous pouvez créer des écouteurs de suivi dans un [fichier de configuration d�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-- [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Guide pratique pour Ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Écouteurs de suivi](trace-listeners.md)
+- [Commutateurs de suivi](trace-switches.md)
+- [Guide pratique : Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)

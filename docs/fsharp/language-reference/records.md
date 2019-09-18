@@ -2,12 +2,12 @@
 title: Enregistrements
 description: Découvrez comment F# les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.
 ms.date: 06/09/2019
-ms.openlocfilehash: d92a1a7517e5b05ee687926df29f33fab123b4dd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1ba002407b1ccbcbceed32df8636fb860e89e3b6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627287"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053941"
 ---
 # <a name="records"></a>Enregistrements
 
@@ -70,7 +70,7 @@ Une autre forme de construction d’enregistrement peut être utile lorsque vous
 
 Cette forme de l’expression d’enregistrement est appelée *expression d’enregistrement de copie et de mise à jour*.
 
-Les enregistrements sont immuables par défaut; Toutefois, vous pouvez facilement créer des enregistrements modifiés à l’aide d’une expression de copie et de mise à jour. Vous pouvez également spécifier explicitement un champ mutable.
+Les enregistrements sont immuables par défaut ; Toutefois, vous pouvez facilement créer des enregistrements modifiés à l’aide d’une expression de copie et de mise à jour. Vous pouvez également spécifier explicitement un champ mutable.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1909.fs)]
 
@@ -96,7 +96,7 @@ Pendant la création d’un enregistrement, vous souhaiterez peut-être qu’il 
 
 La définition des enregistrements mutuellement récursifs s’effectue `and` à l’aide du mot clé. Cela vous permet de lier simultanément 2 types d’enregistrements ou plus.
 
-Par exemple, le code suivant définit un `Person` type `Address` et comme étant mutuellement récursif:
+Par exemple, le code suivant définit un `Person` type `Address` et comme étant mutuellement récursif :
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -108,7 +108,8 @@ type Person =
 and Address =
   { Line1: string
     Line2: string
-    PostCode: string }
+    PostCode: string
+    Occupant: Person }
 ```
 
 Si vous deviez définir l’exemple précédent sans le `and` mot clé, il n’est pas compilé. Le `and` mot clé est requis pour les définitions mutuellement récursives.
@@ -135,7 +136,7 @@ Comme les types d’Union et de structure, les enregistrements ont une sémantiq
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
-Le résultat de ce code est le suivant:
+Le résultat de ce code est le suivant :
 
 ```
 The records are equal.

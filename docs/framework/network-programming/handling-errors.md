@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: 255a4ab3d6d6e3fc133e809ce360b25d6f82c8d7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: bb478f0742e85cadd9509de823abb0d486170d37
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940067"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048496"
 ---
 # <a name="handling-errors"></a>Gestion des erreurs
 Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèvent à la fois les exceptions système (comme <xref:System.ArgumentException>) et les exceptions spécifiques au web (qui sont des <xref:System.Net.WebException> levées par la méthode <xref:System.Net.WebRequest.GetResponse%2A>).  
@@ -45,7 +45,7 @@ Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèven
   
  Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.  
   
-|Status|Description|  
+|Statut|Description|  
 |------------|-----------------|  
 |ConnectFailure|Le service distant n’a pas pu être contacté au niveau du transport.|  
 |ConnectionClosed|La connexion a été interrompue prématurément.|  
@@ -57,11 +57,11 @@ Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèven
 |SecureChannelFailure|Une erreur s’est produite dans un lien de canal sécurisé.|  
 |SendFailure|Une demande complète n’a pas pu être envoyée au serveur distant.|  
 |ServerProtocolViolation|La réponse du serveur n’était pas une réponse HTTP valide.|  
-|Opération réussie|Aucune erreur n’a été rencontrée.|  
+|Succès|Aucune erreur n’a été rencontrée.|  
 |Délai|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
 |TrustFailure|Un certificat de serveur n’a pas pu être validé.|  
 |MessageLengthLimitExceeded|Un message a été reçu qui dépassait la limite spécifiée lors de l’envoi d’une demande ou de la réception d’une réponse du serveur.|  
-|En attente|Une demande asynchrone interne est en attente.|  
+|Pending|Une demande asynchrone interne est en attente.|  
 |PipelineFailure|Cette valeur prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement dans votre code.|  
 |ProxyNameResolutionFailure|Le service de résolution de nom n’a pas pu résoudre le nom d’hôte proxy.|  
 |UnknownError|Une exception de type inconnu s’est produite.|  
@@ -170,4 +170,4 @@ End Try
 ## <a name="see-also"></a>Voir aussi
 
 - [Notions de base de la gestion des exceptions](../../standard/exceptions/exception-handling-fundamentals.md)
-- [Demande de données](../../../docs/framework/network-programming/requesting-data.md)
+- [Demande de données](requesting-data.md)

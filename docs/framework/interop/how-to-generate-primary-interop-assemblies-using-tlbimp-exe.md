@@ -8,20 +8,20 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4fff2d3309e5f8872a9333bf3d2f86e52bd67ea5
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: ac60fa96b7c9ce6991f89e8c6a37ff5da4a34a50
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971778"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051776"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Procédure : générer des assemblys PIA à l’aide de Tlbimp.exe
 
 Il existe deux manières de générer un assembly PIA :
 
-- En utilisant l’outil [Tlbimp.exe (Importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) fourni par le SDK Windows.
+- En utilisant l’outil [Tlbimp.exe (Importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md) fourni par le SDK Windows.
 
-  La façon la plus simple de générer un assembly PIA est d’utiliser l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Tlbimp.exe offre les protections suivantes :
+  La façon la plus simple de générer un assembly PIA est d’utiliser l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md). Tlbimp.exe offre les protections suivantes :
 
   - Il vérifie les autres assemblys PIA inscrits avant de créer de nouveaux assemblys PIA pour les références de bibliothèque de types imbriquées.
 
@@ -49,7 +49,7 @@ Un assembly PIA avec un numéro de version différent de celui de la bibliothè
 
 Vous pouvez également encapsuler plusieurs versions d'une bibliothèque de types. Pour obtenir des instructions, consultez [Guide pratique pour encapsuler plusieurs versions de bibliothèques de types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans l'exemple suivant, la bibliothèque de types COM `LibUtil.tlb` est importée et l'assembly `LibUtil.dll` est signé avec un nom fort à l'aide du fichier de clé `CompanyA.snk`. En ne spécifiant pas de nom d'espace de noms, cet exemple génère l'espace de noms par défaut `LibUtil`.
 
@@ -71,4 +71,4 @@ tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /refer
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour enregistrer des assemblys PIA](../../../docs/framework/interop/how-to-register-primary-interop-assemblies.md)
+- [Guide pratique : enregistrer des assemblys PIA](how-to-register-primary-interop-assemblies.md)

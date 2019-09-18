@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0ed69f73-5c01-4514-bd63-979c6e38d41d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f2ea19c88ff8b854b09ed372b35bf8c45d994585
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8d09b5b76c39f33848d44beb43d9b09c5e6ed13b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583654"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046179"
 ---
 # <a name="security-etw-events"></a>Événements de sécurité ETW
 <a name="top"></a> Les événements de sécurité sont déclenchés pendant la vérification de nom fort et la vérification Authenticode.  
@@ -24,8 +24,8 @@ ms.locfileid: "64583654"
 - [Événements AuthenticodeVerificationStart_V1 et AuthenticodeVerificationStop_V1](#authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events)  
   
 <a name="strongnameverificationstart_v1_and_strongnameverificationstop_v1_events"></a>   
-## <a name="strongnameverificationstartv1-and-strongnameverificationstopv1-events"></a>Événements StrongNameVerificationStart_V1 et StrongNameVerificationStop_V1  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+## <a name="strongnameverificationstart_v1-and-strongnameverificationstop_v1-events"></a>Événements StrongNameVerificationStart_V1 et StrongNameVerificationStop_V1  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -47,10 +47,10 @@ ms.locfileid: "64583654"
 |FullyQualifiedAssemblyName|win:UnicodeString|Nom d'assembly qualifié complet.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events"></a>   
-## <a name="authenticodeverificationstartv1-and-authenticodeverificationstopv1-events"></a>Événements AuthenticodeVerificationStart_V1 et AuthenticodeVerificationStop_V1  
+## <a name="authenticodeverificationstart_v1-and-authenticodeverificationstop_v1-events"></a>Événements AuthenticodeVerificationStart_V1 et AuthenticodeVerificationStop_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -75,4 +75,4 @@ ms.locfileid: "64583654"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

@@ -7,23 +7,23 @@ helpviewer_keywords:
 ms.assetid: 139d4cb1-5972-40f4-bdd8-1ce68e4dfb80
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7876e21286ee16f16fa51939b09ffd0583b134d0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 92c7bbfe2c35aa1474c83eae49240af39b664714
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132611"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052044"
 ---
 # <a name="deploying-net-framework-applications"></a>Déploiement d'applications .NET Framework
 Cette section de la documentation .NET Framework fournit des informations essentielles pour le déploiement d'applications .NET Framework, notamment des instructions relatives au chargement des assemblys, à la résolution des références d'assembly et à l'amélioration des performances de votre application grâce à la génération d'images natives.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ [Méthode de localisation des assemblys par le runtime](how-the-runtime-locates-assemblies.md)  
  Décrit comment le Common Language Runtime localise et établit une liaison aux assemblys qui composent votre application.  
   
- [Bonnes pratiques pour le chargement d'assemblys](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
+ [Bonnes pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)  
  Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de développement](../../../docs/framework/development-guide.md)
+- [Guide de développement](../development-guide.md)

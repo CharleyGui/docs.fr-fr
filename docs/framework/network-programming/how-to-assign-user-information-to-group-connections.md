@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
-ms.openlocfilehash: 2fa84052bcf9ca97b903111fc02e319b25deb384
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 8e104de891d72e709ae20055737540516109da68
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296964"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048425"
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Procédure : assigner des informations utilisateur aux connexions de groupe
 
@@ -109,5 +109,5 @@ MyWebResponse.Close()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion des connexions](../../../docs/framework/network-programming/managing-connections.md)
-- [Regroupement de connexions](../../../docs/framework/network-programming/connection-grouping.md)
+- [Gestion des connexions](managing-connections.md)
+- [Regroupement de connexions](connection-grouping.md)

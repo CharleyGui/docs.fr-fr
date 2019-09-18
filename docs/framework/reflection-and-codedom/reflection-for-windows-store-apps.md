@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b5503d8a474d7f19348b9342bc02e216bd987223
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: HT
+ms.openlocfilehash: c9edab859900bf2001956045a5285801bb61d310
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378608"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045941"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Réflexion dans le .NET Framework pour les applications Windows Store
 À compter de .NET Framework 4.5, le .NET Framework fournit un ensemble de types et membres de réflexion à utiliser dans les applications du [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Ces types et membres sont disponibles dans le .NET Framework complet et dans [.NET pour les applications du Windows Store](https://go.microsoft.com/fwlink/?LinkID=225700). Ce document explique les principales différences entre ceux-là et leurs équivalents dans .NET Framework 4 et les versions antérieures.  
@@ -35,7 +35,7 @@ ms.locfileid: "66378608"
 ## <a name="restrictions"></a>Restrictions  
  Dans une application du [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], l'accès à certains types et membres de .NET Framework est restreint. Par exemple, vous ne pouvez pas appeler les méthodes .NET Framework qui ne sont pas incluses dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], à l'aide d'un objet <xref:System.Reflection.MethodInfo>. En outre, certains types et membres qui ne sont pas considérés comme sécurisés dans le contexte d'une application du [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] sont bloqués, comme le sont les membres <xref:System.Runtime.InteropServices.Marshal> et <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal>. Cette restriction concerne uniquement les types et membres de .NET Framework. Vous pouvez appeler votre code ou un code tiers de façon habituelle.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Cet exemple utilise les types et membres de réflexion dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] pour récupérer les méthodes et propriétés du type <xref:System.Globalization.Calendar>, y compris les méthodes et propriétés héritées. Pour exécuter ce code, collez-le dans le fichier de code d’une page [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] qui contient un contrôle <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> nommé `textblock1` dans un projet Reflection. Si vous collez ce code dans un projet avec un nom différent, veillez à modifier le nom de l'espace de noms pour refléter celui du projet.  
   
  [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
@@ -43,5 +43,5 @@ ms.locfileid: "66378608"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)
+- [Réflexion](reflection.md)
 - [.NET pour les applications du Windows Store : API prises en charge](https://go.microsoft.com/fwlink/?LinkID=225700)

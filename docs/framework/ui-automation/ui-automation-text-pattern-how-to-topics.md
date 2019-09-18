@@ -8,12 +8,12 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: ca6ac045-7b21-4487-9379-59aa20909670
-ms.openlocfilehash: ca46eb01ee8a18e83cecbc26b2e9bf82778c210b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 450a3f3a4969287181aa031ab581b85447bfde56
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69954089"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040426"
 ---
 # <a name="ui-automation-text-pattern-how-to-topics"></a>Rubriques "Comment" relatives au modèle de texte UI Automation
 > [!NOTE]
@@ -22,9 +22,9 @@ ms.locfileid: "69954089"
  Cette section contient des rubriques qui expliquent comment utiliser le modèle de texte UI Automation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/add-content-to-a-text-box-using-ui-automation.md)  
- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/find-and-highlight-text-using-ui-automation.md)  
- [Obtenir des attributs de texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/obtain-text-attributes-using-ui-automation.md)  
- [Obtenir des détails d’attribut de texte mixte à l’aide d’UI Automation](../../../docs/framework/ui-automation/obtain-mixed-text-attribute-details-using-ui-automation.md)  
- [Accéder au texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
- [Accéder à des objets incorporés à l’aide d’UI Automation](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)
+ [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)  
+ [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)  
+ [Obtenir des attributs de texte à l’aide d’UI Automation](obtain-text-attributes-using-ui-automation.md)  
+ [Obtenir des détails d’attribut de texte mixte à l’aide d’UI Automation](obtain-mixed-text-attribute-details-using-ui-automation.md)  
+ [Accéder au texte à l’aide d’UI Automation](traverse-text-using-ui-automation.md)  
+ [Accéder à des objets incorporés à l’aide d’UI Automation](access-embedded-objects-using-ui-automation.md)

@@ -2,12 +2,12 @@
 title: Noms d’homologues et ID PNRP
 ms.date: 03/30/2017
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-ms.openlocfilehash: 8cdd5151d029436d11c78806cf7673861cc0d8a4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 15b74317507f69d2339a2e5e49b54ae72cda1a7b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623123"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047503"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Noms d’homologues et ID PNRP
 Un nom de pair représente un point de terminaison pour la communication. Il peut s’agir d’un ordinateur, d’un utilisateur, d’un groupe, d’un service ou de tout autre élément associé à un pair pouvant être résolu en une adresse IPv6. Le protocole PNRP utilise le nom de pair statistiquement unique pour la création d’un ID PNRP, qui est utilisé pour identifier les membres du cloud.  
@@ -20,7 +20,7 @@ Un nom de pair représente un point de terminaison pour la communication. Il peu
  Les noms de pairs sécurisés sont inscrits uniquement par leur propriétaire et sont protégés par un chiffrement à clé publique. Un nom de pair sécurisé est considéré comme appartenant à l’entité pair qui contient la clé privée correspondante. La propriété peut être prouvée via l’adresse pair certifiée, qui est signée à l’aide de la clé privée. Un utilisateur malveillant ne peut pas feindre la propriété d’un nom de pair sans disposer de la clé privée correspondante.  
   
 ## <a name="pnrp-ids"></a>ID PNRP  
- ![ID PNRP](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
+ ![ID PNRP](./media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
   
  Les ID PNRP sont formés des composants suivants :  
   

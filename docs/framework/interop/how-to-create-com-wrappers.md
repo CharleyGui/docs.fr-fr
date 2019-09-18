@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1c4423c20a9a485f3c40877ccd489c749dc0e2c
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 56a88a5719fc5630baf2f31ee62fd463980661c2
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971832"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051807"
 ---
 # <a name="how-to-create-com-wrappers"></a>Procédure : créer des wrappers COM
 
@@ -45,7 +45,7 @@ Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouv
   
 ### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Pour créer un wrapper RCW à l’aide des outils .NET Framework  
   
-- Exécutez l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md).  
+- Exécutez l’outil [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md).  
   
  Cet outil crée un assembly qui contient des métadonnées de runtime pour les types définis dans la bibliothèque de types d’origine.  
   
@@ -67,11 +67,11 @@ Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouv
   
 ### <a name="to-create-a-com-callable-wrapper-using-net-framework-tools"></a>Pour créer un wrapper CCW à l’aide des outils .NET Framework  
   
-Exécutez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md).  
+Exécutez l’outil [Regasm.exe (outil d’inscription d’assemblys)](../tools/regasm-exe-assembly-registration-tool.md).  
   
 Cet outil lit les métadonnées de l’assembly et ajoute les entrées nécessaires au Registre. Par conséquent, les clients COM peuvent créer des classes .NET Framework en toute transparence. Vous pouvez utiliser l’assembly comme s’il s’agissait d’une classe COM native.  
   
-Vous pouvez exécuter Regasm.exe sur un assembly situé dans n’importe quel répertoire, puis [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour le déplacer dans le Global Assembly Cache. Le déplacement de l’assembly n’invalide pas les entrées du Registre d’emplacement, car le Global Assembly Cache est toujours examiné si l’assembly est introuvable ailleurs.  
+Vous pouvez exécuter Regasm.exe sur un assembly situé dans n’importe quel répertoire, puis [Gacutil.exe (outil Global Assembly Cache)](../tools/gacutil-exe-gac-tool.md) pour le déplacer dans le Global Assembly Cache. Le déplacement de l’assembly n’invalide pas les entrées du Registre d’emplacement, car le Global Assembly Cache est toujours examiné si l’assembly est introuvable ailleurs.  
   
 ## <a name="see-also"></a>Voir aussi
 
