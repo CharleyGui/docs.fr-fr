@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 5fd17f9ca9d83ab3b226ce9fc0a4aebca4f9352a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: eb7156e0e2794fb7cb18e7bfce0e8488d0b145c3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044157"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042764"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
@@ -34,7 +34,7 @@ En particulier, n'utilisez pas de champs provenant de classes d'UIAutomationClie
 
 ## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>Implémentation de fournisseur par les éléments Windows Presentation Foundation
 
-Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle personnalisé WPF](../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md).
+Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle personnalisé WPF](../wpf/controls/ui-automation-of-a-wpf-custom-control.md).
 
 <a name="Provider_Implementation_by_non_WPF_Elements"></a>
 
@@ -121,7 +121,7 @@ Habituellement, les fournisseurs de contrôles basés sur HWND n'ont pas besoin 
 >
 > La <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> est généralement fournie par le fournisseur hôte. Par exemple, si un contrôle personnalisé est dérivé de <xref:System.Windows.Forms.Control>, le nom est dérivé de la propriété `Text` du contrôle.
 
-Pour obtenir un exemple de code, consultez [Return Properties from a UI Automation Provider](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md).
+Pour obtenir un exemple de code, consultez [Return Properties from a UI Automation Provider](return-properties-from-a-ui-automation-provider.md).
 
 <a name="Events_in_Non_WPF_Providers"></a>
 
@@ -191,9 +191,9 @@ Pour cela, le fournisseur de la racine du fragment pour le rebar expose un jeu d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
-- [Exposer un fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)
-- [Retourner les propriétés d’un fournisseur UI Automation](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)
-- [Déclencher des événements à partir d’un fournisseur UI Automation](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)
-- [Activer la navigation dans un fournisseur de fragment UI Automation](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)
-- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
+- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Exposer un fournisseur UI Automation côté serveur](expose-a-server-side-ui-automation-provider.md)
+- [Retourner les propriétés d’un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)
+- [Déclencher des événements à partir d’un fournisseur UI Automation](raise-events-from-a-ui-automation-provider.md)
+- [Activer la navigation dans un fournisseur de fragment UI Automation](enable-navigation-in-a-ui-automation-fragment-provider.md)
+- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)

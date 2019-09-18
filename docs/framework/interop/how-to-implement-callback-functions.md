@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42daa241d0ebbfeb184b57e682fbb50bdaeead65
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 6eba8202f0284b7b1054585039f12da9364ca1e9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894197"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051765"
 ---
 # <a name="how-to-implement-callback-functions"></a>Procédure : implémenter des fonctions de rappel
 La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
@@ -38,7 +38,7 @@ La procédure et l'exemple suivants montrent comment une application managée pe
   
 4. Assurez-vous que le garbage collector ne récupère pas le délégué avant que la fonction de rappel n’ait effectué sa tâche. Quand vous transmettez un délégué en tant que paramètre ou un délégué contenu en tant que champ dans une structure, il n'est pas collecté pendant toute la durée de l'appel. Par conséquent, comme dans le cas de l'exemple d'énumération suivant, la fonction de rappel effectue sa tâche avant le retour d'appel et ne nécessite aucune action supplémentaire de la part de l'appelant managé.  
   
-     Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche. Pour plus d’informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md) avec l’appel de code non managé.  
+     Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche. Pour plus d’informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d’interopérabilité](interop-marshaling.md) avec l’appel de code non managé.  
   
 ## <a name="example"></a>Exemple  
   
@@ -131,5 +131,5 @@ int main()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions de rappel](../../../docs/framework/interop/callback-functions.md)
-- [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Fonctions de rappel](callback-functions.md)
+- [Appel à une fonction DLL](calling-a-dll-function.md)

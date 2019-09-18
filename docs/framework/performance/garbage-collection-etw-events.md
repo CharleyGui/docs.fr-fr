@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e5e10a1dc1ad3230213a20b850741a6ec0468294
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ec90d022a0c72782f413a84b6fbd2c1b8d663a73
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616422"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046497"
 ---
 # <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection
 <a name="top"></a> Ces événements collectent des informations relatives au garbage collection. Ils vous aident dans le diagnostic et le débogage, y compris pour déterminer combien de fois le garbage collection a été effectué, la quantité de mémoire libérée pendant le garbage collection, etc.  
@@ -49,8 +49,8 @@ ms.locfileid: "64616422"
 - [Événement GCTerminateConcurrentThread_V1](#gcterminateconcurrentthread_v1_event)  
   
 <a name="gcstart_v1_event"></a>   
-## <a name="gcstartv1-event"></a>Événement GCStart_V1  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+## <a name="gcstart_v1-event"></a>Événement GCStart_V1  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -68,14 +68,14 @@ ms.locfileid: "64616422"
 |----------------|---------------|-----------------|  
 |Nombre|win:UInt32|Le *n*ième garbage collection.|  
 |Profondeur|win:UInt32|La génération est collectée.|  
-|Raison|win:UInt32|Pourquoi le garbage collection a été déclenché :<br /><br /> 0x0 – Allocation de tas de petits objets.<br /><br /> 0x1 – Induit.<br /><br /> 0x2 – Mémoire insuffisante.<br /><br /> 0x3 – Vide.<br /><br /> 0x4 – Allocation de tas d'objets volumineux.<br /><br /> 0x5 – Espace insuffisant (pour un tas de petits objets)<br /><br /> 0x6 – Espace insuffisant (pour un tas d'objets volumineux)<br /><br /> 0x7 – Induit mais non forcé comme blocage|  
+|Reason|win:UInt32|Pourquoi le garbage collection a été déclenché :<br /><br /> 0x0 – Allocation de tas de petits objets.<br /><br /> 0x1 – Induit.<br /><br /> 0x2 – Mémoire insuffisante.<br /><br /> 0x3 – Vide.<br /><br /> 0x4 – Allocation de tas d'objets volumineux.<br /><br /> 0x5 – Espace insuffisant (pour un tas de petits objets)<br /><br /> 0x6 – Espace insuffisant (pour un tas d'objets volumineux)<br /><br /> 0x7 – Induit mais non forcé comme blocage|  
 |Type|win:UInt32|0x0 – Un blocage de garbage collection s'est produit en dehors du garbage collection d'arrière-plan.<br /><br /> 0x1 – Garbage collection d'arrière-plan.<br /><br /> 0x2 – Un blocage de garbage collection s'est produit pendant le garbage collection d'arrière-plan.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcend_v1_event"></a>   
-## <a name="gcendv1-event"></a>Événement GCEnd_V1  
+## <a name="gcend_v1-event"></a>Événement GCEnd_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -96,10 +96,10 @@ ms.locfileid: "64616422"
 |Profondeur|win:UInt32|Génération ayant été collectée.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcheapstats_v1_event"></a>   
-## <a name="gcheapstatsv1-event"></a>Événement GCHeapStats_V1  
+## <a name="gcheapstats_v1-event"></a>Événement GCHeapStats_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -131,10 +131,10 @@ ms.locfileid: "64616422"
 |GCHandleCount|win:UInt32|Nombre de handles de garbage collection en cours d'utilisation.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gccreatesegment_v1_event"></a>   
-## <a name="gccreatesegmentv1-event"></a>Événement GCCreateSegment_V1  
+## <a name="gccreatesegment_v1-event"></a>Événement GCCreateSegment_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -145,7 +145,7 @@ ms.locfileid: "64616422"
   
 |Événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
-|`GCCreateSegment_V1`|5|Un nouveau segment de garbage collection a été créé. En outre, quand le suivi est activé sur un processus en cours d'exécution, cet événement est déclenché pour chaque segment existant.|  
+|`GCCreateSegment_V1`|5\.|Un nouveau segment de garbage collection a été créé. En outre, quand le suivi est activé sur un processus en cours d'exécution, cet événement est déclenché pour chaque segment existant.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
@@ -158,10 +158,10 @@ ms.locfileid: "64616422"
   
  Notez que la taille des segments alloués par le garbage collector est spécifique à l'implémentation et susceptible de changer à tout moment, y compris lors des mises à jour périodiques. Votre application ne doit jamais faire d'hypothèses concernant une taille de segment particulière, ni dépendre de celle-ci. Elle ne doit pas non plus tenter de configurer la quantité de mémoire disponible pour les allocations de segments.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcfreesegment_v1_event"></a>   
-## <a name="gcfreesegmentv1-event"></a>Événement GCFreeSegment_V1  
+## <a name="gcfreesegment_v1-event"></a>Événement GCFreeSegment_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -172,7 +172,7 @@ ms.locfileid: "64616422"
   
 |Événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
-|`GCFreeSegment_V1`|6|Un nouveau segment de garbage collection a été libéré.|  
+|`GCFreeSegment_V1`|6\.|Un nouveau segment de garbage collection a été libéré.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
@@ -181,10 +181,10 @@ ms.locfileid: "64616422"
 |Adresse|win:UInt64|Adresse du segment.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcrestarteebegin_v1_event"></a>   
-## <a name="gcrestarteebeginv1-event"></a>Événement GCRestartEEBegin_V1  
+## <a name="gcrestarteebegin_v1-event"></a>Événement GCRestartEEBegin_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -199,10 +199,10 @@ ms.locfileid: "64616422"
   
  Aucune donnée d'événement.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcrestarteeend_v1_event"></a>   
-## <a name="gcrestarteeendv1-event"></a>Événement GCRestartEEEnd_V1  
+## <a name="gcrestarteeend_v1-event"></a>Événement GCRestartEEEnd_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -217,10 +217,10 @@ ms.locfileid: "64616422"
   
  Aucune donnée d'événement.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcsuspendee_v1_event"></a>   
-## <a name="gcsuspendeev1-event"></a>Événement GCSuspendEE_V1  
+## <a name="gcsuspendee_v1-event"></a>Événement GCSuspendEE_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -241,10 +241,10 @@ ms.locfileid: "64616422"
 |Nombre|win:UInt32|Nombre GC à ce moment-là. En règle générale, vous verrez un événement de démarrage de GC par la suite et son nombre doit être égal à ce nombre + 1 à mesure que nous augmentons l’index GC pendant un garbage collection.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcsuspendeeend_v1_event"></a>   
-## <a name="gcsuspendeeendv1-event"></a>Événement GCSuspendEEEnd_V1  
+## <a name="gcsuspendeeend_v1-event"></a>Événement GCSuspendEEEnd_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -259,10 +259,10 @@ ms.locfileid: "64616422"
   
  Aucune donnée d'événement.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcallocationtick_v2_event"></a>   
-## <a name="gcallocationtickv2-event"></a>Événement GCAllocationTick_V2  
+## <a name="gcallocationtick_v2-event"></a>Événement GCAllocationTick_V2  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -287,10 +287,10 @@ ms.locfileid: "64616422"
 |TypeName|win:UnicodeString|Nom du type ayant été alloué. Quand plusieurs types d'objets ont été alloués au cours de cet événement, il s'agit du type du dernier objet alloué (l'objet qui a provoqué le dépassement du seuil de 100 Ko).|  
 |HeapIndex|win:UInt32|Segment de mémoire où l'objet a été alloué. Cette valeur est de 0 (zéro) lors d'une exécution avec le garbage collection pour station de travail.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcfinalizersbegin_v1_event"></a>   
-## <a name="gcfinalizersbeginv1-event"></a>Événement GCFinalizersBegin_V1  
+## <a name="gcfinalizersbegin_v1-event"></a>Événement GCFinalizersBegin_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -305,10 +305,10 @@ ms.locfileid: "64616422"
   
  Aucune donnée d'événement.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcfinalizersend_v1_event"></a>   
-## <a name="gcfinalizersendv1-event"></a>Événement GCFinalizersEnd_V1  
+## <a name="gcfinalizersend_v1-event"></a>Événement GCFinalizersEnd_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -328,10 +328,10 @@ ms.locfileid: "64616422"
 |Nombre|win:UInt32|Nombre de finaliseurs exécutés.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gccreateconcurrentthread_v1_event"></a>   
-## <a name="gccreateconcurrentthreadv1-event"></a>Événement GCCreateConcurrentThread_V1  
+## <a name="gccreateconcurrentthread_v1-event"></a>Événement GCCreateConcurrentThread_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -347,10 +347,10 @@ ms.locfileid: "64616422"
   
  Aucune donnée d'événement.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="gcterminateconcurrentthread_v1_event"></a>   
-## <a name="gcterminateconcurrentthreadv1-event"></a>Événement GCTerminateConcurrentThread_V1  
+## <a name="gcterminateconcurrentthread_v1-event"></a>Événement GCTerminateConcurrentThread_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
@@ -368,4 +368,4 @@ ms.locfileid: "64616422"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

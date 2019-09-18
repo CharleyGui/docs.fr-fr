@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, getting control patterns
 - getting, control patterns
 ms.assetid: 006c54c9-50bf-48d9-a855-9d62eb95603a
-ms.openlocfilehash: 7b194d9430f27fb85723a91f5786ed11a60bfa85
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 133dabe861fbbcf5cac3fbb8669b78e582f8b87b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040979"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043648"
 ---
 # <a name="get-supported-ui-automation-control-patterns"></a>Obtenir des modèles de contrôle UI Automation pris en charge
 > [!NOTE]
@@ -45,4 +45,4 @@ ms.locfileid: "70040979"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)

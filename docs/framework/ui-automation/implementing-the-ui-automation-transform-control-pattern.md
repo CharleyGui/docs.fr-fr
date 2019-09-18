@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: f561f67aed1d024a73d78da26e86110e4cddab2f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbcb7b274144281d88d8fb36b9cb55043658a6a9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932009"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043107"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implémentation du modèle de contrôle Transform d’UI Automation
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69932009"
   
  Cette rubrique présente les conventions et directives à respecter pour implémenter <xref:System.Windows.Automation.Provider.ITransformProvider>, notamment les informations sur les propriétés, les méthodes et les événements. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.TransformPattern> permet de prendre en charge des contrôles qui peuvent être déplacés, redimensionnés ou pivotés dans un espace à deux dimensions. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Le modèle de contrôle <xref:System.Windows.Automation.TransformPattern> permet de prendre en charge des contrôles qui peuvent être déplacés, redimensionnés ou pivotés dans un espace à deux dimensions. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
@@ -60,8 +60,8 @@ ms.locfileid: "69932009"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

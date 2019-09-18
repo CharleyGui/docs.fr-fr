@@ -2,18 +2,18 @@
 title: Images officielles .NET Docker
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Images officielles .NET Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: b184e8f3606da8448a06a1cad90688958ecbce3a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 749485bfe07e0245493da67af915805f644a1897
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675706"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039636"
 ---
 # <a name="official-net-docker-images"></a>Images officielles .NET Docker
 
 Les images officielles .NET Docker sont des images Docker créées et optimisées par Microsoft. Elles sont accessibles au grand public dans les dépôts Microsoft sur [Docker Hub](https://hub.docker.com/u/microsoft/). Chaque dépôt peut contenir plusieurs images, en fonction des versions de .NET, du système d’exploitation et de ses versions (Linux Debian, Linux Alpine, Windows Nano Server, Windows Server Core, etc.).
 
-Depuis .NET Core 2.1, toutes les images .NET Core, notamment pour ASP.NET Core sont disponibles sur Docker Hub dans le référentiel d’images .NET Core : https://hub.docker.com/_/microsoft-dotnet-core/
+Depuis .NET Core 2,1, toutes les images .NET Core, y compris pour les ASP.NET Core, sont disponibles sur le hub de l’arrimeur dans le référentiel <https://hub.docker.com/\_/microsoft-dotnet-core/>d’images .net Core :.
 
 La plupart des dépôts d’images fournissent un balisage complet pour vous aider à sélectionner non seulement une version de framework spécifique, mais aussi un système d’exploitation (distribution Linux ou version de Windows).
 
@@ -43,10 +43,10 @@ Bien qu’il existe plusieurs versions des images .NET Core et ASP.NET Core, ell
 
 En explorant les dépôts d’images .NET dans Docker Hub, vous trouverez plusieurs versions d’images classées ou marquées avec des balises. Ces balises permettent d’identifier la version dont vous avez besoin, comme celles présentées dans le tableau suivant :
 
-| Image                                       | Commentaires                                                                                          |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Image | Commentaires |
+|-------|----------|
 | mcr.microsoft.com/dotnet/core/aspnet:**2.2** | ASP.NET Core, avec le runtime uniquement et les optimisations ASP.NET Core, Linux et Windows (multi-arch) |
-| mcr.microsoft.com/dotnet/core/sdk:**2.2**    | .NET Core, avec les SDK inclus, sur Linux et Windows (multi-arch)                                  |
+| mcr.microsoft.com/dotnet/core/sdk:**2.2** | .NET Core, avec les SDK inclus, sur Linux et Windows (multi-arch) |
 
 > [!div class="step-by-step"]
 > [Précédent](net-container-os-targets.md)

@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bf874f9422db0038a421d5f61ce18d8af8ec401e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6177bdff873feb75eb15dba53bcdb5197260fa9d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616309"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046389"
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
 <a name="top"></a> Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
   
- Tous les événements de chargeur sont déclenchés sous le mot clé `LoaderKeyword` (0x8). Les événements `DCStart` et `DCEnd` sont déclenchés sous `LoaderRundownKeyword` (0x8) avec `StartRundown`/`EndRundown` activé. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Tous les événements de chargeur sont déclenchés sous le mot clé `LoaderKeyword` (0x8). Les événements `DCStart` et `DCEnd` sont déclenchés sous `LoaderRundownKeyword` (0x8) avec `StartRundown`/`EndRundown` activé. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
  Les événements de chargeur sont subdivisés de la façon suivante :  
   
@@ -55,12 +55,12 @@ ms.locfileid: "64616309"
 |Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AppDomainID|win:UInt64|Identificateur unique d’un domaine d'application.|  
-|AppDomainFlags|win:UInt32|0 x 1 : Domaine par défaut.<br /><br /> 0 x 2 : Fichier exécutable.<br /><br /> 0 x 4 : Domaine d’application, bit 28-31 : Stratégie de ce domaine de partage.<br /><br /> 0: Un domaine partagé.|  
+|AppDomainFlags|win:UInt32|0x1 Domaine par défaut.<br /><br /> 0X2 Exécutable.<br /><br /> 0x4 Domaine d’application, bit 28-31 : Stratégie de partage de ce domaine.<br /><br /> 0 : Un domaine partagé.|  
 |AppDomainName|win:UnicodeString|Nom convivial du domaine d'application. Peut changer pendant la durée de vie du processus.|  
 |AppDomainIndex|win:UInt32|Index de ce domaine d'application.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="clr_loader_assembly_events"></a>   
 ## <a name="clr-loader-assembly-events"></a>Événements d'assembly de chargeur du CLR  
@@ -88,11 +88,11 @@ ms.locfileid: "64616309"
 |AssemblyID|win:UInt64|ID unique de l'assembly.|  
 |AppDomainID|win:UInt64|ID du domaine de cet assembly.|  
 |BindingID|win:UInt64|ID qui identifie de façon unique la liaison d'assembly.|  
-|AssemblyFlags|win:UInt32|0 x 1 : Assembly indépendant du domaine.<br /><br /> 0 x 2 : Assembly dynamique.<br /><br /> 0 x 4 : Assembly possède une image native.<br /><br /> 0 x 8 : Assembly pouvant être collecté.|  
+|AssemblyFlags|win:UInt32|0x1 Assembly indépendant du domaine.<br /><br /> 0X2 Assembly dynamique.<br /><br /> 0x4 L’assembly possède une image native.<br /><br /> 0x8 Assembly pouvant être collecté.|  
 |AssemblyName|win:UnicodeString|Nom qualifié complet de l'assembly.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="module_events"></a>   
 ## <a name="module-events"></a>Événements de module  
@@ -120,7 +120,7 @@ ms.locfileid: "64616309"
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|ID unique du module.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
-|ModuleFlags|win:UInt32|0 x 1 : Module indépendant du domaine.<br /><br /> 0 x 2 : Module possède une image native.<br /><br /> 0 x 4 : Module dynamique.<br /><br /> 0 x 8 : Module de manifeste.|  
+|ModuleFlags|win:UInt32|0x1 Module indépendant du domaine.<br /><br /> 0X2 Le module possède une image native.<br /><br /> 0x4 Module dynamique.<br /><br /> 0x8 Module de manifeste.|  
 |Reserved1|win:UInt32|Champ réservé.|  
 |ModuleILPath|win:UnicodeString|Chemin d'accès de l'image MSIL (Microsoft Intermediate Language) du module ou nom du module dynamique s'il s'agit d'un assembly dynamique (se terminant par null).|  
 |ModuleNativePath|win:UnicodeString|Chemin d'accès de l'image native du module, si elle est présente (se terminant par null).|  
@@ -140,7 +140,7 @@ ms.locfileid: "64616309"
   
 - Les noms de champs qui commencent par « NativePdb » font référence au fichier PDB NGen généré par l'appel à `NGEN createPDB`. Ce fichier PDB utilise le format de fichier PDB natif et décrit comment les éléments issus du code source managé d'origine, tels que les fichiers, les numéros de lignes et les noms de symboles sont mappés aux éléments natifs qui sont compilés dans le module NGen.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="clr_domain_module_events"></a>   
 ## <a name="clr-domain-module-events"></a>Événements de module de domaine du CLR  
@@ -167,13 +167,13 @@ ms.locfileid: "64616309"
 |ModuleID|win:UInt64|Identifie l'assembly auquel ce module appartient.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
 |AppDomainID|win:UInt64|ID du domaine d'application dans lequel ce module est utilisé.|  
-|ModuleFlags|win:UInt32|0 x 1 : Module indépendant du domaine.<br /><br /> 0 x 2 : Module possède une image native.<br /><br /> 0 x 4 : Module dynamique.<br /><br /> 0 x 8 : Module de manifeste.|  
+|ModuleFlags|win:UInt32|0x1 Module indépendant du domaine.<br /><br /> 0X2 Le module possède une image native.<br /><br /> 0x4 Module dynamique.<br /><br /> 0x8 Module de manifeste.|  
 |Reserved1|win:UInt32|Champ réservé.|  
 |ModuleILPath|win:UnicodeString|Chemin d'accès de l'image MSIL pour le module, ou nom du module dynamique s'il s'agit d'un assembly dynamique (se terminant par null).|  
 |ModuleNativePath|win:UnicodeString|Chemin d'accès de l'image native du module, si elle est présente (se terminant par null).|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="module_range_events"></a>   
 ## <a name="module-range-events"></a>Événements de plage de module  
@@ -214,4 +214,4 @@ ms.locfileid: "64616309"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

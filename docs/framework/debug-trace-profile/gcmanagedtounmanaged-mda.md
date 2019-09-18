@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7417f837-805e-4fed-a430-ca919c8421dc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7bb4779e300df71a5d075a322bcac8398ce42f34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afc0fd47e51723a7b3ba1b07dffc49260f88917d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754438"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052783"
 ---
 # <a name="gcmanagedtounmanaged-mda"></a>Assistant Débogage managé gcManagedToUnmanaged
 L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opération garbage collection chaque fois qu'un thread effectue la transition du code managé au code non managé.  
@@ -30,7 +30,7 @@ L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opéra
 ## <a name="cause"></a>Cause  
  Si un composant non managé n'effectue pas correctement le décompte de références d'un objet COM managé, le runtime peut collecter un objet managé exposé à COM lorsque le composant non managé détient encore une référence à l'objet. Le runtime appelle <xref:System.Runtime.InteropServices.Marshal.Release%2A> pendant les opérations garbage collection. Par conséquent, si le composant utilisateur a recours à l’objet avant l’opération garbage collection, il n’aura pas encore été collecté. Cela explique le non-déterminisme.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  L’activation de cet assistant réduit le laps de temps entre le moment où l’objet peut participer à une collection et le moment où <xref:System.Runtime.InteropServices.Marshal.Release%2A> est appelé, ce qui facilite la localisation du composant non managé qui tente en premier d’accéder à l’objet récupéré par le garbage collector.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -52,6 +52,6 @@ L'Assistant Débogage managé (MDA) `gcManagedToUnmanaged` déclenche une opéra
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)
+- [gcUnmanagedToManaged](gcunmanagedtomanaged-mda.md)

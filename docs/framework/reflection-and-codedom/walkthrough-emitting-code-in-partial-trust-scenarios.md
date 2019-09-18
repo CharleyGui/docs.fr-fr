@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bf244271010a7eb47a6c7b283a84c405108d803
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 002434cf51b221a456c8752b5b1388912f875a28
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041468"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045752"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Procédure pas à pas : émission de code dans des scénarios de confiance partielle
 
@@ -35,13 +35,13 @@ Cette procédure pas à pas décrit les tâches suivantes :
 - [Configuration d’un bac à sable (sandbox) simple pour le test de code partiellement fiable](#Setting_up).
 
   > [!IMPORTANT]
-  > Il s’agit d’un moyen simple de faire des essais avec du code partiellement fiable. Pour exécuter du code qui provient d’emplacements non approuvés, consultez [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
+  > Il s’agit d’un moyen simple de faire des essais avec du code partiellement fiable. Pour exécuter du code qui provient d’emplacements non approuvés, consultez [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
 
 - [Exécution de code dans des domaines d’application partiellement fiables](#Running_code).
 
 - [Utilisation de méthodes dynamiques hébergées anonymement pour émettre et exécuter du code en confiance partielle](#Using_methods).
 
-Pour plus d’informations sur l’émission de code dans des scénarios de confiance partielle, consultez [Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md).
+Pour plus d’informations sur l’émission de code dans des scénarios de confiance partielle, consultez [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md).
 
 Pour obtenir une liste complète du code utilisé dans ces procédures, consultez la [section Exemple](#Example) à la fin de cette procédure pas à pas.
 
@@ -71,7 +71,7 @@ La procédure suivante crée un domaine d’application sandbox qui exécute vot
 2. Créez un objet <xref:System.AppDomainSetup> pour initialiser le domaine d’application avec un chemin d’application.
 
     > [!IMPORTANT]
-    > Pour simplifier, cet exemple de code utilise le dossier actif. Pour exécuter du code qui provient d’Internet, utilisez un dossier distinct pour le code non fiable, comme décrit dans [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
+    > Pour simplifier, cet exemple de code utilise le dossier actif. Pour exécuter du code qui provient d’Internet, utilisez un dossier distinct pour le code non fiable, comme décrit dans [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
 
     [!code-csharp[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#3)]
     [!code-vb[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#3)]
@@ -192,7 +192,7 @@ Pour empêcher une élévation de privilèges, les informations de pile de l’a
 
 <a name="Example"></a>
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 ### <a name="description"></a>Description
 
@@ -225,5 +225,5 @@ Cette comparaison montre comment <xref:System.Security.Permissions.ReflectionPer
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
-- [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)
+- [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

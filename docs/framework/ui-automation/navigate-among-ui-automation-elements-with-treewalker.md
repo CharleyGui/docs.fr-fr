@@ -10,12 +10,12 @@ helpviewer_keywords:
 - elements, navigating among
 - UI Automation, navigating among elements
 ms.assetid: afcd21dc-2ffa-48c9-9332-51269f44b7e9
-ms.openlocfilehash: 506cc4db3fcf255d270f72470a1f0d68e9cca7ce
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7ecf6edd37b656f7dd1d7e31506d0dd455592d9b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966423"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042979"
 ---
 # <a name="navigate-among-ui-automation-elements-with-treewalker"></a>Naviguer entre les éléments UI Automation avec TreeWalker
 > [!NOTE]
@@ -29,7 +29,7 @@ ms.locfileid: "69966423"
  [!code-csharp[UIAFocusTracker_snip#102](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#102)]
  [!code-vb[UIAFocusTracker_snip#102](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#102)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant utilise <xref:System.Windows.Automation.TreeWalker.GetFirstChild%2A> et <xref:System.Windows.Automation.TreeWalker.GetNextSibling%2A> pour créer un <xref:System.Windows.Forms.TreeView> qui affiche la sous-arborescence entière [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] des éléments qui sont dans l’affichage de contrôle et qui sont activés.  
   
  [!code-csharp[UIAClient_snip#174](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#174)]
@@ -37,4 +37,4 @@ ms.locfileid: "69966423"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Obtention d’éléments UI Automation](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)
+- [Obtention d’éléments UI Automation](obtaining-ui-automation-elements.md)

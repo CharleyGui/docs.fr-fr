@@ -3,12 +3,12 @@ title: Génération de mon premier service WCF prenant en charge les revendicati
 ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
-ms.openlocfilehash: f242de43f1917dd6b01e15914359049ee754aa92
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 330d785721cb434f74ec746310a71bfd39fefd0b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690176"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045552"
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Génération de mon premier service WCF prenant en charge les revendications
 ## <a name="applies-to"></a>S'applique à  
@@ -17,10 +17,10 @@ ms.locfileid: "66690176"
   
 - Windows Communication Foundation (WCF)  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Présentation  
  Cette rubrique décrit le scénario de création des services WCF qui prennent en charge les revendications à l'aide de WIF. Il y a généralement trois participants dans un scénario de service Web qui prend en charge les revendications : le service Web lui-même, l'utilisateur final, et le service d'émission de jeton de sécurité (STS). L'illustration suivante décrit ce scénario :  
   
- ![Diagramme montrant les composants WIF revendications prenant en charge Service WCF de base.](./media/building-my-first-claims-aware-wcf-service/windows-identify-foundation-basic-claims-aware-windows-communication-foundation-service.gif)  
+ ![Diagramme montrant les composants de service WCF prenant en charge les revendications WIF Basic.](./media/building-my-first-claims-aware-wcf-service/windows-identify-foundation-basic-claims-aware-windows-communication-foundation-service.gif)  
   
 1. Le client du service WCF (parfois appelé agent) utilise WIF pour envoyer les informations d'identification à STS et une fois l'authentification réussie, un jeton est émis par STS pour l'agent.  
   
@@ -32,14 +32,14 @@ ms.locfileid: "66690176"
   
  STS est un service qui émet des jetons en cas de réussite de l'authentification. Microsoft propose deux STS standard compatibles :  
   
-- [Active Directory Federation Services (ADFS) 2.0](https://go.microsoft.com/fwlink/?LinkID=247516)
+- [Services ADFS (AD FS) 2,0](https://go.microsoft.com/fwlink/?LinkID=247516)
   
-- [Windows Azure Access Control Service (ACS)](https://docs.microsoft.com/previous-versions/azure/azure-services/hh147631(v=azure.100))
+- [Access Control Service Windows Azure (ACS)](https://docs.microsoft.com/previous-versions/azure/azure-services/hh147631(v=azure.100))
   
- AD FS 2.0 fait partie de Windows Server R2 et peut être utilisé comme un STS pour les scénarios sur site. Azure Active Directory Access Control (également appelé Service de contrôle d'accès ou ACS) est un service cloud proposé dans le cadre de Microsoft Azure. À des fins de test ou à titre éducatif, vous pouvez également utiliser d'autres STS pour générer des applications qui prennent en charge les revendications. Par exemple, vous pouvez utiliser le développement STS Local qui fait partie de la [Identity and Access Tool pour Visual Studio](https://go.microsoft.com/fwlink/?LinkID=245849) qui est disponible gratuitement en ligne.  
+ AD FS 2.0 fait partie de Windows Server R2 et peut être utilisé comme un STS pour les scénarios sur site. Azure Active Directory Access Control (également appelé Service de contrôle d'accès ou ACS) est un service cloud proposé dans le cadre de Microsoft Azure. À des fins de test ou à titre éducatif, vous pouvez également utiliser d'autres STS pour générer des applications qui prennent en charge les revendications. Par exemple, vous pouvez utiliser le STS de développement local qui fait partie de l' [outil Identity and Access Tool pour Visual Studio,](https://go.microsoft.com/fwlink/?LinkID=245849) qui est disponible gratuitement en ligne.  
   
- Pour générer votre premier service WCF prenant en charge les revendications à l’aide de WIF, consultez [How To : Activer WIF pour une Application de Service Web WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md).
+ Pour créer votre premier service WCF prenant en charge les revendications à l' [aide de WIF, consultez Procédure : Activez WIF pour une application](how-to-enable-wif-for-a-wcf-web-service-application.md)de service Web WCF.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main de WIF](../../../docs/framework/security/getting-started-with-wif.md)
+- [Prise en main de WIF](getting-started-with-wif.md)

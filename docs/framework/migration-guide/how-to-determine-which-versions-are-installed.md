@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8d719debd39309415f996d655c68abd8c80ec5e3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 0df5a5be2997958faa43ee67ae64fc37e1998414
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928424"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051592"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Procédure : déterminer les versions du .NET Framework installées
 
@@ -72,7 +72,7 @@ Pour plus d’informations sur la détection des mises à jour installées pour 
 
 3. Recherchez une entrée DWORD nommée **Release**. Si elle existe, alors .NET Framework 4.5 ou des versions ultérieures sont installés. Sa valeur est une clé de version correspondant à une version particulière du .NET Framework. Dans l’illustration suivante, par exemple, la valeur de l’entrée **Release** est *378389*, à savoir la clé de version de .NET Framework 4.5.
 
-     ![Entrée de Registre de .NET Framework 4.5](media/clr-installdir.png "Entrée de Registre de .NET Framework 4.5")
+     ![Entrée de Registre de .NET Framework 4.5](./media/clr-installdir.png "Entrée de Registre de .NET Framework 4.5")
 
 Le tableau suivant présente la valeur DWORD **Version** sur les différents systèmes d’exploitation pour .NET Framework 4.5 et les versions ultérieures.
 
@@ -163,7 +163,7 @@ Pour rechercher une autre version minimale exigée du .NET Framework, remplacez 
 
     La figure suivante illustre la sous-clé et son entrée **Version** pour .NET Framework 3.5.
 
-    ![Entrée de Registre pour .NET Framework 3.5.](media/net-4-and-earlier.png ".NET Framework 3.5 et versions antérieures")
+    ![Entrée de Registre pour .NET Framework 3.5.](./media/net-4-and-earlier.png ".NET Framework 3.5 et versions antérieures")
 
 <a name="net_c"></a>
 
@@ -222,6 +222,6 @@ L’exemple suivant utilise la propriété <xref:System.Environment.Version%2A?d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour déterminer les mises à jour .NET Framework installées](how-to-determine-which-net-framework-updates-are-installed.md)
+- [Guide pratique : déterminer les mises à jour .NET Framework installées](how-to-determine-which-net-framework-updates-are-installed.md)
 - [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md)
 - [Versions et dépendances du .NET Framework](versions-and-dependencies.md)

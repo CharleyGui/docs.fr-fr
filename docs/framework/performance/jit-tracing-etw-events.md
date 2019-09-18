@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 07d84506a7c07bde09b3b46ea608b1874842c3ac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 145a53363c9d7aca622ee0b1ccb2700e5984397d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616390"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046425"
 ---
 # <a name="jit-tracing-etw-events"></a>Événements ETW de traçage JIT
 <a name="top"></a> Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.  
@@ -27,7 +27,7 @@ ms.locfileid: "64616390"
 ## <a name="jit-inlining-events"></a>Événements d’incorporation (inlining) JIT  
   
 ### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -84,7 +84,7 @@ ms.locfileid: "64616390"
 |InlineeNameSignature|win:UnicodeString|Signature de l’inlinee.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="jit_tail_call_events"></a>   
 ## <a name="jit-tail-call-events"></a>Événements d'appel tail JIT  
@@ -151,4 +151,4 @@ ms.locfileid: "64616390"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

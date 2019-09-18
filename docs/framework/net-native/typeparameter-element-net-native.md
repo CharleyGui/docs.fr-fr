@@ -1,15 +1,15 @@
 ---
-title: <TypeParameter> Élément (.NET Native)
+title: <TypeParameter>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b03c87c70fa1bfcd331f468d369632f4164300bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0de00b9313b60b3a527dd0380ae90d82731a8c02
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982460"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049060"
 ---
 # <a name="typeparameter-element-net-native"></a>\<TypeParameter >, élément (.NET Native)
 Applique la stratégie au type représenté par un argument Type passé à une méthode.  
@@ -37,7 +37,7 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
+|`Name`|Généralités|Attribut requis. Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,15 +51,15 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*nom_paramètre*|Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -68,10 +68,10 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
+|[\<Method>](method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
   
 ## <a name="remarks"></a>Notes  
- L’élément `<TypeParameter>` est similaire à l’élément [\<Parameter>](../../../docs/framework/net-native/parameter-element-net-native.md), à ceci près qu’il peut uniquement être appliqué à des paramètres de type <xref:System.Type>. Il applique la stratégie à tout type représenté au moment de l'exécution par l'argument de type spécifié par l'attribut `Name`.  
+ L’élément `<TypeParameter>` est similaire à l’élément [\<Parameter>](parameter-element-net-native.md), à ceci près qu’il peut uniquement être appliqué à des paramètres de type <xref:System.Type>. Il applique la stratégie à tout type représenté au moment de l'exécution par l'argument de type spécifié par l'attribut `Name`.  
   
  Par exemple, le sérialiseur JSON NewtonSoft inclut une méthode `JsonConvert.DeserializeObject(String value, Type type)` statique. Les directives de réflexion suivantes :  
   
@@ -96,7 +96,7 @@ Object obj = JsonConvert.DeserializeObject(data, t);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Method>, élément](../../../docs/framework/net-native/method-element-net-native.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [\<Method>, élément](method-element-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)

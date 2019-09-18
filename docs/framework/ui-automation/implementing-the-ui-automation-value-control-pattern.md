@@ -6,20 +6,20 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: 4af35b3ad1277723d4102b3aeac48748588ef8bf
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 54991ce16aa905f4138013944fb8b5a317675d9b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70244009"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043158"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implémentation du modèle de contrôle Value d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IValueProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.ValuePattern> est utilisé pour prendre en charge les contrôles qui ont une valeur intrinsèque ne couvrant pas de plage et qui peuvent être représentés sous forme de chaîne. Cette chaîne peut être modifiée, en fonction du contrôle et de ses paramètres. Pour obtenir des exemples de contrôles implémentant ce modèle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Le modèle de contrôle <xref:System.Windows.Automation.ValuePattern> est utilisé pour prendre en charge les contrôles qui ont une valeur intrinsèque ne couvrant pas de plage et qui peuvent être représentés sous forme de chaîne. Cette chaîne peut être modifiée, en fonction du contrôle et de ses paramètres. Pour obtenir des exemples de contrôles implémentant ce modèle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
@@ -27,7 +27,7 @@ ms.locfileid: "70244009"
   
 - Les contrôles tels que <xref:System.Windows.Automation.ControlType.ListItem> et <xref:System.Windows.Automation.ControlType.TreeItem> doivent prendre en charge <xref:System.Windows.Automation.ValuePattern> si la valeur d’un des éléments est modifiable, indépendamment du mode d’édition actuel du contrôle. Le contrôle parent doit également prendre en charge <xref:System.Windows.Automation.ValuePattern> si les éléments enfants sont modifiables.  
   
- ![Élément de liste modifiable.](../../../docs/framework/ui-automation/media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
+ ![Élément de liste modifiable.](./media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
 Exemple d’élément de liste modifiable  
   
 - Les contrôles d’édition sur une ligne prennent en charge l’accès par programmation à leur contenu en implémentant <xref:System.Windows.Automation.Provider.IValueProvider>. Toutefois, les contrôles d’édition multilignes n’implémentent pas <xref:System.Windows.Automation.Provider.IValueProvider>. Ils fournissent plutôt un accès à leur contenu en implémentant <xref:System.Windows.Automation.Provider.ITextProvider>.  
@@ -38,7 +38,7 @@ Exemple d’élément de liste modifiable
   
 - <xref:System.Windows.Automation.Provider.IValueProvider>doit être implémenté par des contrôles tels que le contrôle de sélection de [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] **Sélecteur de couleurs** de (illustré ci-dessous), qui prend en charge le mappage de chaînes entre une valeur de couleur (par exemple, « jaune ») et une structure RVB interne équivalente.  
   
- ![Sélecteur de couleurs jaune mis en surbrillance.](../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
+ ![Sélecteur de couleurs jaune mis en surbrillance.](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Exemple de mappage d’une chaîne d’échantillons de couleurs  
   
 - Un contrôle doit avoir <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> défini sur `true` et <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> défini sur `false` avant d’autoriser un appel à <xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>.  
@@ -65,9 +65,9 @@ Exemple de mappage d’une chaîne d’échantillons de couleurs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
 - [Exemple d’insertion de texte ValuePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
-- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

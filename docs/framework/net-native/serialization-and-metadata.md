@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 937577f86ec854f5a458fe6067836a85a540695a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ec8180da9637ec2b2c4e1b432773b4f9f1ac908b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913800"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049171"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
 
@@ -22,7 +22,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>Sérialiseurs tiers
 
- Les sérialiseurs tiers, y compris Newtonsoft.JSON, sont généralement basés sur la réflexion. Avec un objet BLOB (Binary Large Object) de données sérialisées, les champs de données sont affectés à un type concret en fonction des noms des champs du type cible. L’utilisation de ces bibliothèques entraîne au minimum des exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) pour chaque objet <xref:System.Type> que vous essayez de sérialiser ou de désérialiser dans une collection `List<Type>`.  
+ Les sérialiseurs tiers, y compris Newtonsoft.JSON, sont généralement basés sur la réflexion. Avec un objet BLOB (Binary Large Object) de données sérialisées, les champs de données sont affectés à un type concret en fonction des noms des champs du type cible. L’utilisation de ces bibliothèques entraîne au minimum des exceptions [MissingMetadataException](missingmetadataexception-class-net-native.md) pour chaque objet <xref:System.Type> que vous essayez de sérialiser ou de désérialiser dans une collection `List<Type>`.  
   
  La façon la plus simple de résoudre les problèmes causés par les métadonnées manquantes pour ces sérialiseurs consiste à collecter les types qui seront utilisés dans la sérialisation dans un espace de noms unique (tel que `App.Models`) et à lui appliquer une directive de métadonnées `Serialize` :  
   
@@ -30,7 +30,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Namespace Name="App.Models" Serialize="Required PublicAndInternal" />  
 ```  
   
- Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [\<Namespace>, élément](../../../docs/framework/net-native/namespace-element-net-native.md).  
+ Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [\<Namespace>, élément](namespace-element-net-native.md).  
   
 <a name="Microsoft"></a>
 ## <a name="microsoft-serializers"></a>Sérialiseurs Microsoft
@@ -47,7 +47,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 ### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et que vous C# utilisez l’opérateur [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie <xref:System.Type> au paramètre du constructeur, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type:  
+ Si vous appelez un constructeur de ces classes de sérialisation et que vous C# utilisez l’opérateur [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie <xref:System.Type> au paramètre du constructeur, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type :  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -67,11 +67,11 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Type Name="t" Browse="Required Public" />  
 ```  
   
- Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [\<Type>, élément](../../../docs/framework/net-native/type-element-net-native.md).  
+ Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [\<Type>, élément](type-element-net-native.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [\<Type >, élément](../../../docs/framework/net-native/type-element-net-native.md)
-- [\<Namespace>, élément](../../../docs/framework/net-native/namespace-element-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)
+- [\<Type >, élément](type-element-net-native.md)
+- [\<Namespace>, élément](namespace-element-net-native.md)

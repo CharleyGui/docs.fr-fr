@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 968660f2fa043ee4028cb144f368d9380729ffef
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: 4a88cf077c061746f9bc9f4aa0122d2f09b6fbd7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133800"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042273"
 ---
 # <a name="ui-automation-overview"></a>Vue d'ensemble d'UI Automation
 > [!NOTE]
@@ -45,12 +45,12 @@ UI Automation offre des fonctionnalités complètes sur les systèmes d’exploi
   
 |Section|Sujet|Audience|  
 |-------------|--------------------|--------------|  
-|[Notions de base d’UI Automation](../../../docs/framework/ui-automation/index.md) (cette section)|Présentation générale des concepts.|Tout le monde.|  
-|[Fournisseurs UI Automation pour le code managé](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API du fournisseur.|Développeurs de contrôles.|  
-|[Clients UI Automation pour le code managé](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API client.|Développeurs d’applications clientes|  
-|[Modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)|Informations sur la façon dont les fournisseurs doivent implémenter les modèles de contrôle et sur les fonctionnalités disponibles aux clients.|Tout le monde.|  
-|[Modèle de texte UI Automation](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)|Informations sur la façon dont les fournisseurs doivent implémenter le modèle de contrôle Text et sur les fonctionnalités disponibles aux clients.|Tout le monde.|  
-|[UI Automation Control Types](../../../docs/framework/ui-automation/ui-automation-control-types.md)|Informations sur les propriétés et les modèles de contrôle pris en charge par les différents types de contrôle.|Tout le monde.|  
+|[Notions de base d’UI Automation](index.md) (cette section)|Présentation générale des concepts.|Tout le monde.|  
+|[Fournisseurs UI Automation pour le code managé](ui-automation-providers-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API du fournisseur.|Développeurs de contrôles.|  
+|[Clients UI Automation pour le code managé](ui-automation-clients-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API client.|Développeurs d’applications clientes|  
+|[Modèles de contrôle UI Automation](ui-automation-control-patterns.md)|Informations sur la façon dont les fournisseurs doivent implémenter les modèles de contrôle et sur les fonctionnalités disponibles aux clients.|Tout le monde.|  
+|[Modèle de texte UI Automation](ui-automation-text-pattern.md)|Informations sur la façon dont les fournisseurs doivent implémenter le modèle de contrôle Text et sur les fonctionnalités disponibles aux clients.|Tout le monde.|  
+|[UI Automation Control Types](ui-automation-control-types.md)|Informations sur les propriétés et les modèles de contrôle pris en charge par les différents types de contrôle.|Tout le monde.|  
   
  Le tableau suivant répertorie les espaces de noms [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , les DLL qui les contiennent et le public qui les utilise.  
   
@@ -70,14 +70,14 @@ UI Automation offre des fonctionnalités complètes sur les systèmes d’exploi
  En outre, les éléments exposent des modèles de contrôle qui fournissent des propriétés spécifiques à leurs types de contrôle. Les modèles de contrôle exposent également des méthodes qui permettent aux clients d’obtenir des informations supplémentaires sur l’élément et de fournir une entrée.  
   
 > [!NOTE]
-> Il n’existe pas de correspondance bijective entre les types de contrôle et les modèles de contrôle. Un modèle de contrôle peut être pris en charge par plusieurs types de contrôle, et un contrôle peut prendre en charge plusieurs modèles de contrôle, dont chacun expose différents aspects de son comportement. Par exemple, une zone de liste déroulante possède au moins deux modèles de contrôle : un qui représente sa capacité de développement et de réduction, et l’autre qui représente le mécanisme de sélection. Pour découvrir les caractéristiques spécifiques, consultez [UI Automation Control Types](../../../docs/framework/ui-automation/ui-automation-control-types.md).  
+> Il n’existe pas de correspondance bijective entre les types de contrôle et les modèles de contrôle. Un modèle de contrôle peut être pris en charge par plusieurs types de contrôle, et un contrôle peut prendre en charge plusieurs modèles de contrôle, dont chacun expose différents aspects de son comportement. Par exemple, une zone de liste déroulante possède au moins deux modèles de contrôle : un qui représente sa capacité de développement et de réduction, et l’autre qui représente le mécanisme de sélection. Pour découvrir les caractéristiques spécifiques, consultez [UI Automation Control Types](ui-automation-control-types.md).  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fournit également des informations aux applications clientes via des événements. Contrairement à [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)], les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ne reposent pas sur un mécanisme de diffusion. Les clients[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’inscrivent pour des notifications d’événements spécifiques et peuvent demander que des propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifiques et des informations de modèle de contrôle soient passées à leurs gestionnaires d’événements. En outre, un événement [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] contient une référence à l’élément qui l’a déclenché. Les fournisseurs peuvent améliorer les performances en déclenchant des événements de manière sélective, selon que des clients les écoutent ou non.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Vue d’ensemble des propriétés UI Automation](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)
-- [Vue d’ensemble des événements UI Automation](../../../docs/framework/ui-automation/ui-automation-events-overview.md)
-- [Vue d’ensemble de la sécurité UI Automation](../../../docs/framework/ui-automation/ui-automation-security-overview.md)
+- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Vue d’ensemble des propriétés UI Automation](ui-automation-properties-overview.md)
+- [Vue d’ensemble des événements UI Automation](ui-automation-events-overview.md)
+- [Vue d’ensemble de la sécurité UI Automation](ui-automation-security-overview.md)

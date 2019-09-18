@@ -11,15 +11,15 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: 2c2c2718d79ce9aa4fed343cf368bbf541e493d0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: dc9b6b5399063026c0bbe5735964ed42a21168fa
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613709"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048371"
 ---
 # <a name="how-to-configure-network-tracing"></a>Procédure : configurer le traçage réseau
-Le fichier de configuration de l'application ou de l'ordinateur contient les paramètres qui déterminent le format et le contenu des traces réseau. Avant d'effectuer cette procédure, assurez-vous que le traçage est activé. Pour plus d’informations sur l’activation du suivi, consultez [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md).  
+Le fichier de configuration de l'application ou de l'ordinateur contient les paramètres qui déterminent le format et le contenu des traces réseau. Avant d'effectuer cette procédure, assurez-vous que le traçage est activé. Pour plus d’informations sur l’activation du suivi, consultez [Activation du suivi réseau](enabling-network-tracing.md).  
   
  Le fichier de configuration de l’ordinateur, machine.config, est stocké dans le dossier %Windir%\Microsoft.NET\Framework dans le répertoire dans lequel Windows a été installé. Il y a un fichier machine.config distinct dans les dossiers sous %Windir%\Microsoft.NET\Framework pour chaque version de .NET Framework installée sur l’ordinateur (par exemple, C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config ou C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config).  
   
@@ -99,7 +99,7 @@ Le fichier de configuration de l'application ou de l'ordinateur contient les par
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interprétation du suivi réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)
-- [Traçage réseau dans .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
-- [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)
-- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Interprétation du suivi réseau](interpreting-network-tracing.md)
+- [Traçage réseau dans .NET Framework](network-tracing.md)
+- [Activation du suivi réseau](enabling-network-tracing.md)
+- [Suivi et instrumentation d’applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)

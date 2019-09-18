@@ -3,12 +3,12 @@ title: Exemple d’index de code WIF
 ms.date: 03/30/2017
 ms.assetid: 6711f01a-4743-43ce-95ab-5e2302a363ea
 author: BrucePerlerMS
-ms.openlocfilehash: b1c875f6c49a3097a75f88b1c25555fd7e891b1f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e90c5f8681706aa0d52c74e6caff08edbf283da
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909400"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045158"
 ---
 # <a name="wif-code-sample-index"></a>Exemple d’index de code WIF
 
@@ -24,7 +24,7 @@ Les exemples de code suivants s’appliquent à Windows Identity Foundation 4.5
 
 - [ClaimsAwareFormsAuthentication](https://go.microsoft.com/fwlink/?LinkID=248409) : cet exemple très simple montre de quelle façon .NET 4.5 vous permet d’obtenir les revendications dans vos principaux, indépendamment de la méthode d’authentification des utilisateurs que vous utilisez.
 
-- [ClaimsBasedAuthorization](https://go.microsoft.com/fwlink/?LinkID=248410): cet exemple montre comment utiliser la classe ClaimsAuthorizationManager et le ClaimsAuthorizationModule pour appliquer vos propres stratégies d’autorisation.
+- [ClaimsBasedAuthorization](https://go.microsoft.com/fwlink/?LinkID=248410): cet exemple montre comment utiliser votre classe ClaimsAuthorizationManager et le ClaimsAuthorizationModule pour appliquer vos propres stratégies d’autorisation.
 
 - [FederationMetadata](https://go.microsoft.com/fwlink/?LinkID=248411) : cet exemple illustre la génération dynamique (sur un STS personnalisé) et l’utilisation dynamique (sur une application par partie de confiance) de documents de métadonnées.
 
@@ -32,4 +32,4 @@ Les exemples de code suivants s’appliquent à Windows Identity Foundation 4.5
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Windows Identity Foundation](../../../docs/framework/security/index.md)
+- [Windows Identity Foundation](index.md)

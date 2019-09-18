@@ -6,12 +6,12 @@ helpviewer_keywords:
 - control types, Menu Bar
 - Menu Bar control type
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
-ms.openlocfilehash: 72223fd10d6dd856973a5f33c4b4257bb24936ec
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 25c19461c025f5e568ed927024b70f917fe3f923
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69954935"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71041259"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle MenuBar
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "69954935"
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
- Le tableau suivant représente l’affichage de contrôle et l’affichage de contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] relative aux contrôles de barre de menus, et décrit ce que chaque affichage peut contenir. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+ Le tableau suivant représente l’affichage de contrôle et l’affichage de contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] relative aux contrôles de barre de menus, et décrit ce que chaque affichage peut contenir. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
 |Affichage de contrôle|Affichage de contenu|  
 |------------------|------------------|  
@@ -35,9 +35,9 @@ ms.locfileid: "69954935"
   
 <a name="Required_UI_Automation_Properties"></a>   
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation requises  
- Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour le type de contrôle de barre de menus. Pour plus d’informations [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur les propriétés, consultez [UI Automation Properties for clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour le type de contrôle de barre de menus. Pour plus d’informations [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur les propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
-|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|`Value`|Notes|  
+|Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les notes.|La valeur exposée par cette propriété doit inclure tous les contrôles qu’elle contient.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Consultez les notes.|Le contrôle de barre de menus n’a pas besoin d’un nom, sauf si une application contient plusieurs barres de menus. S’il existe plusieurs barres de menus dans une application, cette propriété doit être utilisée pour exposer des noms distinctifs, tels que « Mise en forme » ou « Mode plan ».|  
@@ -55,7 +55,7 @@ ms.locfileid: "69954935"
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
 ## <a name="required-ui-automation-control-patterns"></a>Modèles de contrôle UI Automation obligatoires  
- Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles de barre de menus. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+ Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles de barre de menus. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
   
 |Modèle de contrôle|Assistance|Notes|  
 |---------------------|-------------|-----------|  
@@ -65,7 +65,7 @@ ms.locfileid: "69954935"
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Événements UI Automation requis  
- Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles de barre de menus. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+ Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles de barre de menus. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
   
 |Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge/valeur|Notes|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
@@ -79,5 +79,5 @@ ms.locfileid: "69954935"
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Automation.ControlType.MenuBar>
-- [Vue d’ensemble des types de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)
-- [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)
+- [Vue d’ensemble des types de contrôle UI Automation](ui-automation-control-types-overview.md)
+- [Vue d’ensemble d’UI Automation](ui-automation-overview.md)

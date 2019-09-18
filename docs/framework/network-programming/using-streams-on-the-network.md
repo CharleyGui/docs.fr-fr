@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Internet, streams
 - streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
-ms.openlocfilehash: 9f7d6bfcaa0d1cc4eb6c83cb53120bec695fe85e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: aa3fc56dc461d4fe22e2ff391f3561d8834128d8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583479"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046877"
 ---
 # <a name="using-streams-on-the-network"></a>Utilisation de flux sur le réseau
 Dans .NET Framework, les ressources réseau sont représentées sous forme de flux. .NET Framework traite les flux de manière générique, ce qui offre les avantages suivants :  
@@ -104,5 +104,5 @@ sr.Close()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour demander des données à l’aide de la classe WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
-- [Demande de données](../../../docs/framework/network-programming/requesting-data.md)
+- [Guide pratique pour demander des données à l’aide de la classe WebRequest](how-to-request-data-using-the-webrequest-class.md)
+- [Demande de données](requesting-data.md)

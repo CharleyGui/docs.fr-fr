@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Window control pattern
 - Window control pattern
 ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
-ms.openlocfilehash: 0ff8a5002c82b274a95f7e1ae83bb23707d6cb39
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ad2f84fbde512bb99b213bf3b97f2190091d8576
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968206"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042991"
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implémentation du modèle de contrôle Window d’UI Automation
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69968206"
   
  Cette rubrique présente des conventions et des directives pour implémenter <xref:System.Windows.Automation.Provider.IWindowProvider>, notamment des informations sur les propriétés, méthodes et événements <xref:System.Windows.Automation.WindowPattern> . Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le <xref:System.Windows.Automation.WindowPattern> modèle de contrôle est utilisé pour prendre en charge des contrôles qui fournissent des fonctionnalités fondamentales basées sur les fenêtres dans une interface graphique utilisateur (GUI) traditionnelle. Voici des exemples de contrôles qui doivent implémenter ce modèle de contrôle: les fenêtres d’application de niveau supérieur, les fenêtres enfants de l’interface multidocument (MDI), les contrôles de volet de fractionnement redimensionnables, les boîtes de dialogue modales et les fenêtres d’aide de bulle.  
+ Le <xref:System.Windows.Automation.WindowPattern> modèle de contrôle est utilisé pour prendre en charge des contrôles qui fournissent des fonctionnalités fondamentales basées sur les fenêtres dans une interface graphique utilisateur (GUI) traditionnelle. Voici des exemples de contrôles qui doivent implémenter ce modèle de contrôle : les fenêtres d’application de niveau supérieur, les fenêtres enfants de l’interface multidocument (MDI), les contrôles de volet de fractionnement redimensionnables, les boîtes de dialogue modales et les fenêtres d’aide de bulle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
@@ -65,8 +65,8 @@ ms.locfileid: "69968206"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

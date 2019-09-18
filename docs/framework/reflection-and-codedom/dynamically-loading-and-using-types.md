@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5dbbf0f71eaefd0ef7fc7f2b5e69e47ce7b8db26
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 21d0425de072c91cf7111162e405f826e00e849d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894883"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046090"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Chargement et utilisation dynamiques des types
 La réflexion fournit l’infrastructure utilisée par les compilateurs de langages pour implémenter la liaison tardive implicite. La liaison est le processus de localisation de la déclaration (en d’autres termes, l’implémentation) qui correspond à un type spécifié unique. Quand ce processus se produit au moment de l’exécution plutôt qu’au moment de la compilation, il est appelé liaison tardive. Visual Basic permet d’utiliser la liaison tardive implicite dans le code ; le compilateur Visual Basic appelle une méthode d’assistance qui utilise la réflexion pour récupérer le type d’objet. Les arguments passés à la méthode d’assistance entraînent l’appel de la méthode appropriée au moment de l’exécution. Ces arguments sont l’instance (un objet) sur laquelle appeler la méthode, le nom de la méthode appelée (une chaîne) et les arguments passés à la méthode appelée (un tableau d’objets).  
@@ -102,5 +102,5 @@ End Module
 
 - <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
-- [Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Affichage des informations de type](viewing-type-information.md)
 - [Conversion de type dans le .NET Framework](../../standard/base-types/type-conversion.md)

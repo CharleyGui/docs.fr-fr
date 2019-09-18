@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: b85f878d8a391581fcc7419b3ca4d656eb5595af
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: b42a71993cb120c88b90e867b7af23873b99d280
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660443"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039596"
 ---
 # <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Générer une application C# « Hello World » avec le SDK .NET Core dans Visual Studio 2017.
 
@@ -18,7 +18,7 @@ Cette rubrique fournit une introduction pas à pas pour la création, le déboga
 
 ## <a name="prerequisites"></a>Prérequis
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), avec la charge de travail « Développement multiplateforme .Net Core » installée. Vous pouvez développer votre application avec .NET Core 1.1 ou .NET Core 2.0.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), avec la charge de travail « Développement multiplateforme .Net Core » installée. Vous pouvez développer votre application avec .NET Core 2,1 ou versions ultérieures.
 
 Pour plus d’informations, consultez la rubrique [Configuration requise pour .NET Core sur Windows](../windows-prerequisites.md).
 

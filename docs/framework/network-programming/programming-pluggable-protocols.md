@@ -15,12 +15,12 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
-ms.openlocfilehash: d14eb426c8e142f56d9f024dcbf37a1d2d78664d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 94dfedd317782b9e518df02c84d9af55b1ef2b69
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072339"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047399"
 ---
 # <a name="programming-pluggable-protocols"></a>programmation de protocoles enfichables
 Les classes abstraites <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> fournissent la base des protocoles enfichables. En dérivant de <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> les classes spécifiques au protocole, une application peut demander des données à une ressource Internet et lire la réponse sans spécifier le protocole utilisé.  
@@ -33,7 +33,7 @@ Les classes abstraites <xref:System.Net.WebRequest> et <xref:System.Net.WebRespo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Dérivation de WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)
-- [Dérivation à partir de WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)
-- [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Guide pratique pour caster une classe WebRequest en vue d’accéder aux propriétés spécifiques au protocole](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
+- [Dérivation de WebRequest](deriving-from-webrequest.md)
+- [Dérivation à partir de WebResponse](deriving-from-webresponse.md)
+- [Programmation réseau dans le .NET Framework](index.md)
+- [Guide pratique : caster une classe WebRequest en vue d’accéder aux propriétés spécifiques au protocole](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)

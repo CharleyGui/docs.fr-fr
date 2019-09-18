@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: 34d2a90cb5208736b1b414e25ac3e627929f45a0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 36caff247d031b8808ab953ec884b7ce292858eb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674816"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040214"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -204,28 +204,37 @@ Le fichier Dockerfile initial peut ressembler à ceci :
 
 Voici les détails, ligne par ligne :
 
-<!-- markdownlint-disable MD029-->
-1. Commencez une étape avec une « petite » image de base runtime uniquement, appelez-la **base** pour référence.
-2. Créez le répertoire **/app** dans l’image.
-3. Exposez le port **80**.
-<!-- skip -->
-5. Commencez une nouvelle étape avec une « grande » image pour la génération/publication, appelez-la **build** pour référence.
-6. Créez le répertoire **/src** dans l’image.
-7. Jusqu’à la ligne 16, copiez les fichiers projet référencés **.csproj** pour pouvoir restaurer les packages par la suite.
-<!-- skip -->
-17. Restaurez les packages pour le projet **Catalog.API** et les projets référencés.
-18. Copiez **toute l’arborescence de répertoires de la solution** (sauf les fichiers/répertoires inclus dans le fichier **.dockerignore**) à partir du répertoire **/src** dans l’image.
-19. Remplacez le dossier actuel par le projet **Catalog.API**.
-20. Générez le projet (et les autres dépendances du projet) et placez-la sortie dans le répertoire **/app** de l’image.
-<!-- skip -->
-22. Commencez une nouvelle étape à partir de la build, appelez-la **publish** pour référence.
-23. Publiez le projet (et les dépendances) et placez la sortie dans le répertoire **/app** de l’image.
-<!-- skip -->
-25. Commencez une nouvelle étape à partir de **base** et appelez-la **final**
-26. Remplacez le répertoire actuel par **/app**
-27. Copiez le répertoire **/app** à partir de l’étape **publish** dans le répertoire actuel
-28. Définissez la commande à exécuter au démarrage du conteneur.
-<!-- markdownlint-enable MD029-->
+- **#1 de ligne :** Commencez une étape avec une « petite » image de base runtime uniquement, appelez-la **base** pour référence.
+
+- **#2 de ligne :** Créez le répertoire **/app** dans l’image.
+
+- **#3 de ligne :** Exposez le port **80**.
+
+- **#5 de ligne :** Commencez une nouvelle étape avec l’image « grande » pour la création ou la publication. Appelez-la **Build** à des fins de référence.
+
+- **#6 de ligne :** Créez le répertoire **/src** dans l’image.
+
+- **#7 de ligne :** Jusqu’à la ligne 16, copiez les fichiers projet **. csproj** référencés pour pouvoir restaurer les packages ultérieurement.
+
+- **#17 de ligne :** Restaurez les packages pour le projet **Catalog.API** et les projets référencés.
+
+- **#18 de ligne :** Copiez **toutes les arborescences de répertoires de la solution** (à l’exception des fichiers/répertoires inclus dans le fichier **. dockerignore** ) dans le répertoire **/src** de l’image.
+
+- **#19 de ligne :** Remplacez le dossier actif par le projet **Catalog. API** .
+
+- **#20 de ligne :** Générez le projet (et les autres dépendances du projet) et la sortie dans le répertoire **/app** dans l’image.
+
+- **#22 de ligne :** Commencez une nouvelle étape en continuant à partir de la Build. Appelez-la **publication** pour référence.
+
+- **#23 de ligne :** Publiez le projet (et les dépendances) et la sortie vers le répertoire **/app** dans l’image.
+
+- **#25 de ligne :** Commencez une nouvelle étape en continuant à partir de la **base** et appelez-la **final**.
+
+- **#26 de ligne :** Remplacez le répertoire actif par **/app**.
+
+- **#27 de ligne :** Copiez le répertoire **/app** à partir de l’étape **publier** dans le répertoire actif.
+
+- **#28 de ligne :** Définissez la commande à exécuter au démarrage du conteneur.
 
 Voyons maintenant les optimisations possibles pour améliorer les performances de l’ensemble du processus qui, dans le cas d’eShopOnContainers, signifie 22 minutes ou plus pour générer la solution complète dans des conteneurs Linux.
 
@@ -239,9 +248,9 @@ COPY . .
 
 Elles sont alors identiques pour chaque service, la solution entière est copiée, ce qui produit une couche plus grande, mais :
 
-1) Le processus de copie est seulement exécuté la première fois (et pendant la regénération si un fichier est changé) et utilise le cache pour tous les autres services, et
+1. Le processus de copie est seulement exécuté la première fois (et pendant la regénération si un fichier est changé) et utilise le cache pour tous les autres services, et
 
-2) Comme l’image plus grande est produite dans une étape intermédiaire, cela n’affecte pas la taille de l’image finale.
+2. Comme l’image plus grande est produite dans une étape intermédiaire, cela n’affecte pas la taille de l’image finale.
 
 L’optimisation importante suivante implique la commande `restore` exécutée à la ligne 17, qui est également différente pour chaque service d’eShopOnContainers. Si vous remplacez cette ligne simplement par :
 
@@ -420,7 +429,7 @@ Vous pouvez déployer une application multiconteneur avec un seul fichier docker
 
 ![5 - Exécuter des conteneurs ou une application composée](./media/image12.png)
 
-## <a name="step-5-build-and-run-your-docker-application"></a>Étape 5. Générer et exécuter votre application Docker
+## <a name="step-5-build-and-run-your-docker-application"></a>Étape 5. Générer et exécuter votre application Docker
 
 Si votre application n’a qu’un seul conteneur, vous pouvez l’exécuter en la déployant sur l’hôte Docker (machine virtuelle ou serveur physique). Si votre application contient plusieurs services, vous pouvez la déployer en tant qu’application composée, soit à l’aide d’une seule commande CLI (docker-compose up), soit avec Visual Studio, qui utilise cette commande en arrière-plan. Voyons les différentes options.
 

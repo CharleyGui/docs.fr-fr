@@ -6,29 +6,29 @@ helpviewer_keywords:
 - marshaling data, COM interop
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 279310fe7aa17a73d129edf98f3477a00fd50767
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: 3dd667f681e9b6749f33d6ccfd91035477c56030
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567244"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051697"
 ---
 # <a name="marshaling-data-with-com-interop"></a>marshaler des données avec COM Interop
 COM Interop prend en charge l'utilisation des objets COM à partir de code managé, ainsi que l'exposition des objets managés à COM. La prise en charge du marshaling des données vers et depuis COM est complète et fournit quasiment toujours le comportement de marshaling approprié.  
   
  Le SDK Windows comprend les outils d’interopérabilité COM suivants :  
   
-- [Importateur de bibliothèques de types (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), qui convertit une bibliothèque de types COM en un assembly d’interopérabilité. À partir de cet assembly, le service de marshaling d'interopérabilité génère des wrappers qui effectuent le marshaling des données entre la mémoire managée et non managée.  
+- [Importateur de bibliothèques de types (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md), qui convertit une bibliothèque de types COM en un assembly d’interopérabilité. À partir de cet assembly, le service de marshaling d'interopérabilité génère des wrappers qui effectuent le marshaling des données entre la mémoire managée et non managée.  
   
-- [Exportateur de bibliothèques de types (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), qui produit une bibliothèque de types COM à partir d’un assembly et génère un wrapper qui effectue le marshaling lors des appels de méthode.  
+- [Exportateur de bibliothèques de types (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md), qui produit une bibliothèque de types COM à partir d’un assembly et génère un wrapper qui effectue le marshaling lors des appels de méthode.  
   
  Les sections suivantes fournissent des liens vers des rubriques qui décrivent les processus de personnalisation des wrappers d’interopérabilité quand vous pouvez (ou devez) fournir au marshaleur des informations supplémentaires concernant les types.  
   
 ## <a name="in-this-section"></a>Dans cette section  
-[Guide pratique pour créer manuellement des wrappers](how-to-create-wrappers-manually.md)   
+[Guide pratique : créer manuellement des wrappers](how-to-create-wrappers-manually.md)   
 Décrit comment créer manuellement un wrapper COM dans du code source managé. 
  
- [Guide pratique pour migrer du code DCOM managé vers WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)  
+ [Guide pratique pour migrer du code DCOM managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)  
  Décrit comment migrer du code DCOM managé vers WCF pour obtenir la solution la plus sécurisée.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

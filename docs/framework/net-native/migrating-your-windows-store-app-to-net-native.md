@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac21e8aa67eabcb3e837cb5eca02d1145b765946
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fdff7aa92e4c1c357c83b625a6daadbf0a8d556b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941731"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049515"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migration de votre application du Windows Store vers .NET Native
 
-.NET Native fournit une compilation statique des applications dans le Windows Store ou sur l’ordinateur du développeur. Cela diffère de la compilation dynamique effectuée pour les applications du Windows Store par le compilateur juste-à-temps (JIT) ou le [générateur d'images natives (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) sur l'appareil. Malgré les différences, .NET Native tente de maintenir la compatibilité avec [.net pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). Pour l’essentiel, les éléments qui fonctionnent sur .NET pour les applications du Windows Store fonctionnent également avec .NET Native.  Toutefois, dans certains cas, vous pouvez rencontrer des changements de comportement. Ce document traite de ces différences entre le .NET standard pour les applications du Windows Store et .NET Native dans les domaines suivants:
+.NET Native fournit une compilation statique des applications dans le Windows Store ou sur l’ordinateur du développeur. Cela diffère de la compilation dynamique effectuée pour les applications du Windows Store par le compilateur juste-à-temps (JIT) ou le [générateur d'images natives (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) sur l'appareil. Malgré les différences, .NET Native tente de maintenir la compatibilité avec [.net pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). Pour l’essentiel, les éléments qui fonctionnent sur .NET pour les applications du Windows Store fonctionnent également avec .NET Native.  Toutefois, dans certains cas, vous pouvez rencontrer des changements de comportement. Ce document traite de ces différences entre le .NET standard pour les applications du Windows Store et .NET Native dans les domaines suivants:
 
 - [Différences générales au moment de l'exécution](#Runtime)
 
@@ -67,7 +67,7 @@ La configuration par défaut de .NET Native est suffisante pour la plupart des d
 - Comme le compilateur ne peut pas déterminer les instanciations, un type générique à réfléchir doit être spécifié par les directives runtime. Cela est nécessaire à double titre : tout le code doit être inclus, et la réflexion de types génériques peut former un cycle infini (par exemple, quand une méthode générique est appelée sur un type générique).
 
 > [!NOTE]
-> Les directives runtime sont définies dans un fichier de directives runtime (.rd.xml). Pour obtenir des informations générales sur l’utilisation de ce fichier, consultez la rubrique [Bien démarrer](../../../docs/framework/net-native/getting-started-with-net-native.md). Pour plus d’informations sur les directives runtime, consultez [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).
+> Les directives runtime sont définies dans un fichier de directives runtime (.rd.xml). Pour obtenir des informations générales sur l’utilisation de ce fichier, consultez la rubrique [Bien démarrer](getting-started-with-net-native.md). Pour plus d’informations sur les directives runtime, consultez [Runtime Directives (rd.xml) Configuration File Reference](runtime-directives-rd-xml-configuration-file-reference.md).
 
 .NET Native comprend également des outils de profilage qui permettent au développeur de déterminer quels types en dehors du jeu par défaut doivent prendre en charge la réflexion.
 
@@ -665,7 +665,7 @@ L’activation de .NET Native sur une bibliothèque de tests unitaires pour un p
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Prise en main](getting-started-with-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Vue d’ensemble de .NET pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
 - [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

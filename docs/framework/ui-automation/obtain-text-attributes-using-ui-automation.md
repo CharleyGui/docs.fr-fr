@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, getting text attributes
 - text attributes, getting
 ms.assetid: fdefc6c3-b836-4cfe-8dec-1484bfdc5551
-ms.openlocfilehash: 559f0ee3bf1da1b33ff73b116c67ed2849cbe782
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9bb2b2260c4638fea941e2f26b503c1cfe3d9ba7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966395"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042920"
 ---
 # <a name="obtain-text-attributes-using-ui-automation"></a>Obtenir des attributs de texte à l'aide d'UI Automation
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "69966395"
   
  Cette rubrique montre comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour obtenir des attributs de texte d’une plage de texte. Une plage de texte peut correspondre à l’emplacement actuel du signe insertion (ou de la sélection dégénérée) dans un document, une sélection contiguë de texte, une collection de sélections disjointes de texte ou l’ensemble du contenu textuel d’un document.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant montre comment obtenir le <xref:System.Windows.Automation.TextPattern.FontNameAttribute> d’une plage de texte.  
   
  [!code-csharp[UIATextPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#starttarget)]
@@ -36,9 +36,9 @@ ms.locfileid: "69966395"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de TextPattern d’UI Automation](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)
-- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/add-content-to-a-text-box-using-ui-automation.md)
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/find-and-highlight-text-using-ui-automation.md)
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Obtenir des détails d’attribut de texte mixte à l’aide d’UI Automation](../../../docs/framework/ui-automation/obtain-mixed-text-attribute-details-using-ui-automation.md)
+- [Vue d’ensemble de TextPattern d’UI Automation](ui-automation-textpattern-overview.md)
+- [Ajouter du contenu à une zone de texte à l’aide d’UI Automation](add-content-to-a-text-box-using-ui-automation.md)
+- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Obtenir des détails d’attribut de texte mixte à l’aide d’UI Automation](obtain-mixed-text-attribute-details-using-ui-automation.md)

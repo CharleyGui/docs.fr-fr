@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 793012b21ae6a3a597efaea23a6d3b6d1db58562
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: HT
+ms.openlocfilehash: 91099b9b4d230839bc14c5fe4d5eafd05ac95541
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379962"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052158"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>Guide de déploiement du .NET Framework pour les administrateurs
 
-Cet article explique étape par étape comment un administrateur système peut déployer .NET Framework 4.5 et ses dépendances système dans un réseau à l’aide de Microsoft System Center Configuration Manager (SCCM). Cet article suppose que tous les ordinateurs clients cibles ont la configuration minimale requise pour le .NET Framework. Pour obtenir la liste des configurations logicielle et matérielle requises pour installer .NET Framework 4.5, consultez [Configuration système requise](../../../docs/framework/get-started/system-requirements.md).
+Cet article explique étape par étape comment un administrateur système peut déployer .NET Framework 4.5 et ses dépendances système dans un réseau à l’aide de Microsoft System Center Configuration Manager (SCCM). Cet article suppose que tous les ordinateurs clients cibles ont la configuration minimale requise pour le .NET Framework. Pour obtenir la liste des configurations logicielle et matérielle requises pour installer .NET Framework 4.5, consultez [Configuration système requise](../get-started/system-requirements.md).
 
 > [!NOTE]
 > Les logiciels référencés dans ce document, notamment, mais de manière non limitative, .NET Framework 4.5, System Center Configuration Manager et Active Directory, sont tous soumis à des termes et conditions de contrat de licence. Les présentes instructions supposent que lesdits termes et conditions du contrat de licence ont été passés en revue et acceptés par les propriétaires de licences des logiciels concernés. Ces instructions ne remplacent pas les termes et conditions desdits contrats de licence.
@@ -280,5 +280,5 @@ Autres codes d'erreur :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)
-- [Configuration système requise](../../../docs/framework/get-started/system-requirements.md)
+- [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)
+- [Configuration système requise](../get-started/system-requirements.md)

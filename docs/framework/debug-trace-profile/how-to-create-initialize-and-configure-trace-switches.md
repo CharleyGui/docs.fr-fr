@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b1575d484c58afa3558d9f5b446473b4c89bc51
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 13f89af41520fa023d8841d6dc6d7766e2abe6da
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947997"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052714"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Procédure : Créer, initialiser et configurer les commutateurs de trace
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer.  
@@ -127,7 +127,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-- [Guide pratique pour Ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Schéma des paramètres de trace et de débogage](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Guide pratique pour Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Commutateurs de suivi](trace-switches.md)
+- [Schéma des paramètres de trace et de débogage](../configure-apps/file-schema/trace-debug/index.md)

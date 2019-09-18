@@ -8,12 +8,12 @@ helpviewer_keywords:
 - control patterns, supporting in UI Automation provider
 - UI Automation, supporting control patterns in provider
 ms.assetid: 0d635c35-ffa8-4dc8-bbc9-12fcd5445776
-ms.openlocfilehash: da423af259ac3ef88d5b52d576d3ab5ebb4f916e
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 67f37dfe1fe63f2130646cb227fec855ccc7bf75
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971796"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042604"
 ---
 # <a name="support-control-patterns-in-a-ui-automation-provider"></a>Prendre en charge des modèles de contrôle dans un fournisseur UI Automation
 
@@ -28,7 +28,7 @@ Cette rubrique montre comment implémenter un ou plusieurs modèles de contrôle
 
 2. Retournez l’objet contenant votre implémentation de chaque interface de contrôle dans votre implémentation de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A?displayProperty=nameWithType>.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant illustre une implémentation de <xref:System.Windows.Automation.Provider.ISelectionProvider> pour une zone de liste personnalisée à sélection unique. Elle retourne trois propriétés et obtient l’élément sélectionné.
 
@@ -44,5 +44,5 @@ L’exemple suivant illustre une implémentation de <xref:System.Windows.Automat
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des fournisseurs UI Automation](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
-- [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)
+- [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)

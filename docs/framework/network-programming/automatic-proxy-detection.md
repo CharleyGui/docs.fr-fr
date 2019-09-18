@@ -14,12 +14,12 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: d7d0dae2ffbec5e334057715cd1d8d44e52cec9d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6a52a38473e339b892673e7c1a2f9e1f58dad359
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910462"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048944"
 ---
 # <a name="automatic-proxy-detection"></a>Détection automatique de proxy
 La détection automatique de proxy est un processus par lequel un serveur proxy web est identifié par le système et utilisé pour envoyer des demandes pour le compte du client. Cette fonctionnalité est également connue sous le nom de Découverte automatique de proxy Web (WPAD, Web Proxy Auto-Discovery). Quand la détection automatique de proxy est activée, le système tente de localiser un script de configuration de proxy qui est chargé de retourner l’ensemble des proxys pouvant être utilisés pour la requête. Si le script de configuration de proxy est trouvé, il est téléchargé, compilé et exécuté sur l’ordinateur local quand les informations de proxy, le flux de requête ou la réponse sont obtenus pour une requête qui utilise une instance de <xref:System.Net.WebProxy>.  
@@ -44,7 +44,7 @@ La détection automatique de proxy est un processus par lequel un serveur proxy 
   
  Les proxys sont configurés sur la base de chaque connectoid. Un connectoid est un élément dans la boîte de dialogue de connexion réseau. Il peut s’agir d’un appareil réseau physique (un modem ou une carte Ethernet) ou d’une interface virtuelle (par exemple, une connexion VPN qui s’exécute sur un appareil réseau). Quand un connectoid change (par exemple quand une connexion sans fil change un point d’accès, ou qu’un réseau VPN est activé), l’algorithme de détection de proxy est réexécuté.  
   
- Par défaut, les paramètres de proxy d’Internet Explorer sont utilisés pour détecter le serveur proxy. Si votre application s’exécute sous un compte non interactif (sans aucun moyen pratique de configurer les paramètres de proxy d’Internet Explorer), ou si vous souhaitez utiliser des paramètres de proxy différents des paramètres d’Internet Explorer, vous pouvez configurer votre proxy en créant un fichier de configuration avec les éléments [\<defaultProxy> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) et [\<proxy> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md) définis.  
+ Par défaut, les paramètres de proxy d’Internet Explorer sont utilisés pour détecter le serveur proxy. Si votre application s’exécute sous un compte non interactif (sans aucun moyen pratique de configurer les paramètres de proxy d’Internet Explorer), ou si vous souhaitez utiliser des paramètres de proxy différents des paramètres d’Internet Explorer, vous pouvez configurer votre proxy en créant un fichier de configuration avec les éléments [\<defaultProxy> (Paramètres réseau)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) et [\<proxy> (Paramètres réseau)](../configure-apps/file-schema/network/proxy-element-network-settings.md) définis.  
   
  Pour les requêtes que vous créez, vous pouvez désactiver la détection automatique de proxy au niveau de la requête en utilisant un <xref:System.Net.WebRequest.Proxy%2A> null avec votre requête, comme indiqué dans l’exemple de code suivant.  
   
@@ -71,4 +71,4 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>
-- [\<system.Net>, élément (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<system.Net>, élément (Paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

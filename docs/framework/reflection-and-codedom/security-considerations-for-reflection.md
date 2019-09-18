@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 791c6c8b0396ec958ff0c8378038051b23d486d1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 852490c57a2954e9d56799ef8deebbef31d5f665
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956712"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045883"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 
@@ -61,7 +61,7 @@ Ces règles sont les mêmes si l'accès à un membre critique du point de vue de
 
 Le code d'application qui est exécuté à partir de la ligne de commande s'exécute avec une confiance totale. Tant qu'il n'est pas marqué comme transparent, il peut utiliser la réflexion pour accéder aux membres critiques de sécurité. Quand le même code est exécuté avec un niveau de confiance partiel (par exemple dans un domaine d’application sandbox), le niveau de confiance de l’assembly détermine s’il peut accéder au code critique du point de vue de la sécurité. Si l’assembly a un nom fort et qu’il est installé dans le Global Assembly Cache, c’est un assembly de confiance et il peut appeler des membres critiques de sécurité. Si elle n'est pas de confiance, il devient transparent même s'il n'était pas marqué comme tel, et il ne peut pas accéder aux membres critiques de sécurité.
 
-Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](../../../docs/framework/security/security-changes.md).
+Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](../security/security-changes.md).
 
 ## <a name="reflection-and-transparency"></a>Réflexion et transparence
 
@@ -117,9 +117,9 @@ Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.Securit
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>
-- [Modifications de sécurité](../../../docs/framework/security/security-changes.md)
-- [Sécurité d’accès du code](../../../docs/framework/misc/code-access-security.md)
-- [Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
-- [Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Modifications de sécurité](../security/security-changes.md)
+- [Sécurité d’accès du code](../misc/code-access-security.md)
+- [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)
+- [Affichage des informations de type](viewing-type-information.md)
 - [Application des attributs](../../standard/attributes/applying-attributes.md)
-- [Accès aux attributs personnalisés](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)
+- [Accès aux attributs personnalisés](accessing-custom-attributes.md)

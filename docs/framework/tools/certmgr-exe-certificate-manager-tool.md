@@ -15,24 +15,24 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d13c2d2cc391e61c8ed764c26e5e5b5e7ea2a3bb
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 716513bdcf3ac1b8a2b2b29b23a8dc25a86a0d1c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851385"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044809"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (outil de gestionnaire de certificats)
 L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de certificats de confiance (CTL) et les listes de révocation de certificats (CRL).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l’outil, utilisez des [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l’outil, utilisez des [Invites de commandes](developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
 > L'outil Certificate Manager (Certmgr.exe) est un utilitaire en ligne de commande, alors que Certificats (Certmgr.msc) est un composant logiciel enfichable MMC (Microsoft Management Console). Comme Certmgr.msc se trouve généralement dans le répertoire système de Windows, quand vous entrez `certmgr` sur la ligne de commande, vous pouvez charger le composant logiciel enfichable MMC Certificats même si vous avez ouvert l'invite de commandes développeur pour Visual Studio. Cela se produit parce que le chemin d’accès au composant logiciel enfichable précède le chemin d’accès à l’outil Certificate Manager dans la variable d’environnement PATH. Si vous rencontrez ce problème, vous pouvez exécuter des commandes Certmgr.exe en spécifiant le chemin d'accès au fichier exécutable.  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- Pour une vue d'ensemble des certificats X.509, consultez [Utilisation des certificats](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Pour une vue d'ensemble des certificats X.509, consultez [Utilisation des certificats](../wcf/feature-details/working-with-certificates.md).  
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -92,7 +92,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
  [!code-csharp[Tools.CertMgr#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tools.certmgr/cs/storenames1.cs#1)]
  [!code-vb[Tools.CertMgr#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tools.certmgr/vb/storenames1.vb#1)]  
   
- Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](../wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="examples"></a>Exemples  
  La commande suivante affiche un magasin système par défaut appelé `my` avec une sortie des commentaires.  
@@ -139,6 +139,6 @@ certmgr /put /c /s my newFile
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
+- [Outils](index.md)
 - [Makecert.exe (outil de création du certificat)](/windows/desktop/SecCrypto/makecert)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

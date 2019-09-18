@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20e5f166aad8bc2504ed27b93ec6730bcd26387d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 5079f0243faefaab6ada23cc98f5214a616c1d22
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911596"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044361"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -59,7 +59,7 @@ Pour plus d'informations sur l'utilisation de Ngen.exe et du service d'images na
 > [!NOTE]
 > Vous trouverez la syntaxe de Ngen.exe pour les versions 1.0 et 1.1 du .NET Framework dans [Syntaxe héritée du générateur d’images natives (Ngen.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -83,7 +83,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À compter de .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
 |`update` [`/queue`]|Mettre à jour des images natives qui sont devenues non valides.<br /><br /> Si `/queue` est spécifié, les mises à jour sont mises en file d'attente pour le service d'images natives. Les mises à jour sont toujours planifiées à la priorité 3, de sorte qu'elles s'exécutent lorsque l'ordinateur est inactif.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Afficher l'état des images natives pour un assembly et ses dépendances.<br /><br /> Si aucun argument n’est fourni, tout dans le cache des images natives est affiché.|
-|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -ou-<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
+|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> ou<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
 |`queue` {`pause` &#124; `continue` &#124; `status`}|Suspendre le service d'images natives, reprendre le service suspendu ou interroger l'état du service.|
 
 <a name="ArgumentTable"></a>
@@ -135,7 +135,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`/verbose`|Afficher des informations détaillées sur le débogage. **Remarque :**  En raison des limitations du système d’exploitation, cette option n’affiche pas autant d’informations supplémentaires sur Windows 98 et sur Windows Millennium.|
 |`/help`, `/?`|Afficher la syntaxe de commande et les options de la version actuelle.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Pour exécuter Ngen.exe, vous devez disposer de privilèges d'administrateur.
 
@@ -190,7 +190,7 @@ Dans cette section Notes :
 
   - [Images non valides](#InvalidImages)
 
-- [Résolution des problèmes](#Troubleshooting)
+- [Dépannage](#Troubleshooting)
 
   - [Visionneuse du journal de liaison d’assembly](#Fusion)
 
@@ -392,7 +392,7 @@ Ngen.exe enregistre ces informations lorsqu'il génère une image native. Lorsqu
 
      Le changement de stratégie de sécurité d'un ordinateur pour restreindre les autorisations précédemment accordées à un assembly peut entraîner la perte de validité d'une image native précédemment compilée de cet assembly.
 
-     Pour plus d'informations sur la façon dont le Common Language Runtime administre la sécurité d'accès du code et sur l'utilisation des autorisations, consultez [Sécurité d'accès du code](../../../docs/framework/misc/code-access-security.md).
+     Pour plus d'informations sur la façon dont le Common Language Runtime administre la sécurité d'accès du code et sur l'utilisation des autorisations, consultez [Sécurité d'accès du code](../misc/code-access-security.md).
 
 <a name="Troubleshooting"></a>
 
@@ -404,13 +404,13 @@ Les rubriques de résolution de problèmes suivantes vous permettent d’identif
 
 ### <a name="assembly-binding-log-viewer"></a>visionneuse du journal de liaison d’assembly
 
-Pour confirmer que les images natives sont utilisées par votre application, vous pouvez utiliser [Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md). Sélectionnez **Images natives** dans la zone **Catégories du journal** dans la fenêtre de la visionneuse du journal des liaisons. Fuslogvw.exe fournit des informations sur la raison pour laquelle une image native a été rejetée.
+Pour confirmer que les images natives sont utilisées par votre application, vous pouvez utiliser [Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)](fuslogvw-exe-assembly-binding-log-viewer.md). Sélectionnez **Images natives** dans la zone **Catégories du journal** dans la fenêtre de la visionneuse du journal des liaisons. Fuslogvw.exe fournit des informations sur la raison pour laquelle une image native a été rejetée.
 
 <a name="MDA"></a>
 
 ### <a name="the-jitcompilationstart-managed-debugging-assistant"></a>Assistant Débogage managé JITCompilationStart
 
-Vous pouvez utiliser l'Assistant Débogage managé (MDA) [JITCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md) pour déterminer quand le compilateur JIT commence à compiler une fonction.
+Vous pouvez utiliser l'Assistant Débogage managé (MDA) [JITCompilationStart](../debug-trace-profile/jitcompilationstart-mda.md) pour déterminer quand le compilateur JIT commence à compiler une fonction.
 
 <a name="OptOut"></a>
 
@@ -562,7 +562,7 @@ Pour obtenir des exemples liés au service d'images natives, consultez [Service 
 
 ## <a name="native-image-task"></a>Tâche d’image native
 
-La tâche d'image native est une tâche Windows qui génère et conserve des images natives. La tâche d’image native génère et libère les images natives automatiquement pour les scénarios pris en charge. Elle permet aussi aux programmes d'installation d'utiliser [Ngen.exe (Générateur d'images natives)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) pour créer et mettre à jour des images natives à un moment différé.
+La tâche d'image native est une tâche Windows qui génère et conserve des images natives. La tâche d’image native génère et libère les images natives automatiquement pour les scénarios pris en charge. Elle permet aussi aux programmes d'installation d'utiliser [Ngen.exe (Générateur d'images natives)](ngen-exe-native-image-generator.md) pour créer et mettre à jour des images natives à un moment différé.
 
 La tâche d’image native est enregistrée une seule fois pour chaque architecture de processeur prise en charge sur un ordinateur, pour permettre la compilation des applications qui ciblent chaque architecture :
 
@@ -639,7 +639,7 @@ Dans le .NET Framework version 2.0, la seule interaction avec le service d'imag
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
+- [Outils](index.md)
 - [Processus d'exécution managée](../../standard/managed-execution-process.md)
-- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

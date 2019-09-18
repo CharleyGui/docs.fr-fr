@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29739625d29db6dc7c3876007f1e733b15f5c026
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 17465b07172788f18a432784653afadda18467fe
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970989"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045697"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Création d'assemblys satellites pour les applications bureautiques
 
@@ -54,7 +54,7 @@ Le modèle Hub and Spoke nécessite que vous placiez les ressources à des empla
 
 - Des informations sur la culture de l’assembly satellite doivent être incluses dans les métadonnées de l’assembly. Pour stocker le nom de culture dans les métadonnées de l’assembly satellite, vous spécifiez l’option `/culture` quand vous utilisez [Assembly Linker](../tools/al-exe-assembly-linker.md) pour incorporer des ressources dans l’assembly satellite.
 
-L’illustration suivante propose un exemple de structure de répertoires et de la configuration requise pour les emplacements des applications que vous n’installez pas dans le [Global Assembly Cache](../../framework/app-domains/gac.md). Les éléments avec les extensions .txt et .resources ne sont pas fournis avec l’application finale. Il s’agit des fichiers de ressources intermédiaires utilisés pour créer les assemblys de ressources satellites finaux. Dans cet exemple, vous pouvez remplacer les fichiers .txt par les fichiers .resx. Pour plus d’informations, consultez [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md).
+L’illustration suivante propose un exemple de structure de répertoires et de la configuration requise pour les emplacements des applications que vous n’installez pas dans le [Global Assembly Cache](../app-domains/gac.md). Les éléments avec les extensions .txt et .resources ne sont pas fournis avec l’application finale. Il s’agit des fichiers de ressources intermédiaires utilisés pour créer les assemblys de ressources satellites finaux. Dans cet exemple, vous pouvez remplacer les fichiers .txt par les fichiers .resx. Pour plus d’informations, consultez [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md).
 
 L’illustration suivante montre le répertoire d’assemblys satellites :
 
@@ -95,8 +95,8 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
   
 2. Pour indiquer que l’anglais (en) est la culture par défaut de l’application, ajoutez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> suivant au fichier AssemblyInfo de l’application ou au fichier de code source principal qui sera compilé dans l’assembly principal de l’application.
   
-     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
-     [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+    [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
+    [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3. Ajoutez la prise en charge de cultures supplémentaires (en-US, fr-FR et ru-RU) à l’application comme suit :  
   
@@ -150,17 +150,19 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
  Vous pouvez ensuite exécuter l’exemple. Il choisit au hasard comme culture actuelle l’une des cultures prises en charge et affiche un message d’accueil localisé.
   
 <a name="SN"></a>   
+
 ## <a name="installing-satellite-assemblies-in-the-global-assembly-cache"></a>Installation d’assemblys satellites dans le Global Assembly Cache  
- Au lieu d’installer des assemblys dans un sous-répertoire de l’application locale, vous pouvez les installer dans le Global Assembly Cache. Ceci est particulièrement utile si vous avez des bibliothèques de classes et des assemblys de ressources de bibliothèques de classes qui sont utilisés par plusieurs applications.
+Au lieu d’installer des assemblys dans un sous-répertoire de l’application locale, vous pouvez les installer dans le Global Assembly Cache. Ceci est particulièrement utile si vous avez des bibliothèques de classes et des assemblys de ressources de bibliothèques de classes qui sont utilisés par plusieurs applications.
   
- Pour être installés dans le Global Assembly Cache, les assemblys doivent avoir un nom fort. Les assemblys avec nom fort sont signés avec une paire de clés publique/privée valide. Ils contiennent des informations de version que le runtime utilise pour déterminer l’assembly à utiliser pour répondre à une demande de liaison. Pour plus d’informations sur les noms forts et le contrôle de version, consultez [Contrôle de version des assemblys](../../standard/assembly/versioning.md). Pour plus d’informations sur les noms forts, consultez [Assemblys avec nom fort](../../standard/assembly/strong-named.md).
+Pour être installés dans le Global Assembly Cache, les assemblys doivent avoir un nom fort. Les assemblys avec nom fort sont signés avec une paire de clés publique/privée valide. Ils contiennent des informations de version que le runtime utilise pour déterminer l’assembly à utiliser pour répondre à une demande de liaison. Pour plus d’informations sur les noms forts et le contrôle de version, consultez [Contrôle de version des assemblys](../../standard/assembly/versioning.md). Pour plus d’informations sur les noms forts, consultez [Assemblys avec nom fort](../../standard/assembly/strong-named.md).
   
- Quand vous développez une application, il est peu probable que vous puissiez accéder à la paire de clés publique/privée finale. Pour installer un assembly satellite dans le Global Assembly Cache et vous assurer qu’il fonctionne comme prévu, vous pouvez utiliser une technique appelée signature différée. Quand vous différez la signature d’un assembly, vous réservez au moment de la génération un espace dans le fichier pour la signature de nom fort. La signature réelle est différée jusqu’à une date ultérieure, quand la paire de clés publique/privée finale est disponible. Pour plus d’informations sur la signature différée, consultez [Différer la signature d’un assembly](../../standard/assembly/delay-sign.md).
+Quand vous développez une application, il est peu probable que vous puissiez accéder à la paire de clés publique/privée finale. Pour installer un assembly satellite dans le Global Assembly Cache et vous assurer qu’il fonctionne comme prévu, vous pouvez utiliser une technique appelée signature différée. Quand vous différez la signature d’un assembly, vous réservez au moment de la génération un espace dans le fichier pour la signature de nom fort. La signature réelle est différée jusqu’à une date ultérieure, quand la paire de clés publique/privée finale est disponible. Pour plus d’informations sur la signature différée, consultez [Différer la signature d’un assembly](../../standard/assembly/delay-sign.md).
   
 ### <a name="obtaining-the-public-key"></a>Obtention de la clé publique  
- Pour différer la signature d’un assembly, vous devez avoir accès à la clé publique. Vous pouvez soit obtenir la clé publique réelle à partir de l’organisation de votre société qui effectuera la signature finale, soit créer une clé publique en utilisant l’outil [Strong Name Tool (Sn.exe)](../tools/sn-exe-strong-name-tool.md).
+
+Pour différer la signature d’un assembly, vous devez avoir accès à la clé publique. Vous pouvez soit obtenir la clé publique réelle à partir de l’organisation de votre société qui effectuera la signature finale, soit créer une clé publique en utilisant l’outil [Strong Name Tool (Sn.exe)](../tools/sn-exe-strong-name-tool.md).
   
- La commande Sn.exe suivante crée une paire de clés publique/privée de test. L’option **–k** spécifie que Sn.exe doit créer une paire de clés et l’enregistrer dans un fichier nommé TestKeyPair.snk.
+La commande Sn.exe suivante crée une paire de clés publique/privée de test. L’option **–k** spécifie que Sn.exe doit créer une paire de clés et l’enregistrer dans un fichier nommé TestKeyPair.snk.
   
 ```console
 sn –k TestKeyPair.snk
@@ -196,7 +198,7 @@ sn –R StringLibrary.resources.dll RealKeyPair.snk
 
 ### <a name="installing-a-satellite-assembly-in-the-global-assembly-cache"></a>Installation d’un assembly satellite dans le Global Assembly Cache
 
-Quand le runtime recherche des ressources dans le processus de secours pour les ressources, il cherche d’abord dans le [Global Assembly Cache](../../framework/app-domains/gac.md). (Pour plus d’informations, consultez la section « Processus de secours pour les ressources » de la rubrique [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md).) Dès qu’un assembly satellite est signé avec un nom fort, il peut être installé dans le Global Assembly Cache à l’aide de [Global Assembly Cache Tool (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md).
+Quand le runtime recherche des ressources dans le processus de secours pour les ressources, il cherche d’abord dans le [Global Assembly Cache](../app-domains/gac.md). (Pour plus d’informations, consultez la section « Processus de secours pour les ressources » de la rubrique [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md).) Dès qu’un assembly satellite est signé avec un nom fort, il peut être installé dans le Global Assembly Cache à l’aide de [Global Assembly Cache Tool (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md).
 
 La commande Gacutil.exe suivante installe StringLibrary.resources.dll dans le Global Assembly Cache :
 

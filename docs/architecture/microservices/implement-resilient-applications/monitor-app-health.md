@@ -2,12 +2,12 @@
 title: Surveillance de l’intégrité
 description: Explorez un moyen d’implémenter la supervision de l’intégrité.
 ms.date: 01/07/2019
-ms.openlocfilehash: b03506972166eec1864de840c1abda05bc3e5277
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 3b81537ca8e0c5cc7ce15ab64ab3235b699dc7a9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674496"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040055"
 ---
 # <a name="health-monitoring"></a>Surveillance de l’intégrité
 
@@ -279,7 +279,7 @@ Pour finir, si vous stockez tous les flux d’événements, vous pouvez utiliser
 - **Présentation de la supervision de l’intégrité de Service Fabric** \
   [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
-- **Azure Monitor**
+- **Azure Monitor**  
   <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]

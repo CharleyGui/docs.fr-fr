@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b204eacd43db2c562fbe6d519b5fa91df3466cc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 275aa5bb664e9f5a50f44a72f2506d7984234b31
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626410"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051827"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Création d'une classe pour contenir des fonctions DLL
 L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe managée est une stratégie efficace d’encapsulation des fonctionnalités de la plateforme. Bien que cette opération ne soit pas obligatoire dans tous les cas, un wrapper de classe s’avère pratique, car la définition de fonctions DLL peut être fastidieuse et sujette à erreurs. En cas de programmation en Visual Basic ou C#, vous devez déclarer les fonctions DLL dans une classe ou un module Visual Basic.  
   
- Dans une classe, vous définissez une méthode statique pour chaque fonction DLL que vous souhaitez appeler. La définition peut inclure des informations supplémentaires, telles que le jeu de caractères ou la convention d’appel qui sont utilisés lors du passage des arguments des méthodes. Si vous ne renseignez pas ces informations, les paramètres par défaut sont alors sélectionnés. Pour obtenir une liste complète des options de déclaration et de leurs paramètres par défaut, consultez [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md).  
+ Dans une classe, vous définissez une méthode statique pour chaque fonction DLL que vous souhaitez appeler. La définition peut inclure des informations supplémentaires, telles que le jeu de caractères ou la convention d’appel qui sont utilisés lors du passage des arguments des méthodes. Si vous ne renseignez pas ces informations, les paramètres par défaut sont alors sélectionnés. Pour obtenir une liste complète des options de déclaration et de leurs paramètres par défaut, consultez [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md).  
   
  Une fois les méthodes incluses dans un wrapper, vous pouvez les appeler sur la classe de la même manière que vous appelez des méthodes statiques sur toute autre classe. L’appel de code non managé gère automatiquement la fonction exportée sous-jacente.  
   
@@ -34,11 +34,11 @@ L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe ma
   
 - créer une classe pour un ensemble de fonctions DLL associées afin de former des regroupements logiques et réduire la charge mémoire.  
   
- Vous pouvez nommer la classe et ses méthodes à votre convenance. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Vous pouvez nommer la classe et ses méthodes à votre convenance. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Consommation de fonctions DLL non managées](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
-- [Identification des fonctions des DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)
-- [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md)
+- [Identification des fonctions des DLL](identifying-functions-in-dlls.md)
+- [Création de prototypes dans du code managé](creating-prototypes-in-managed-code.md)
+- [Appel à une fonction DLL](calling-a-dll-function.md)

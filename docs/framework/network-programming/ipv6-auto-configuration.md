@@ -2,12 +2,12 @@
 title: IPv6, configuration automatique
 ms.date: 03/30/2017
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-ms.openlocfilehash: 2c7f77bbdebe093b5e3bc706653ed203082d9c3f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 95d9dce36c70b8f6c6b9f963c0842305a111d436
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647324"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047810"
 ---
 # <a name="ipv6-auto-configuration"></a>IPv6, configuration automatique
 Un objectif important du protocole IPv6 est de prendre en charge le Plug-and-Play des nœuds. Autrement dit, vous devez pouvoir connecter un nœud à un réseau IPv6 et obtenir sa configuration automatique sans intervention humaine.  
@@ -26,5 +26,5 @@ Un objectif important du protocole IPv6 est de prendre en charge le Plug-and-Pl
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Protocole IPv6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
-- [Sockets](../../../docs/framework/network-programming/sockets.md)
+- [Protocole IPv6](internet-protocol-version-6.md)
+- [Sockets](sockets.md)

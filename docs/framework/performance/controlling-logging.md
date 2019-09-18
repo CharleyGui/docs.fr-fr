@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1648af8c3dc407581714e8e863fe4972d6ffadbc
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 45df41e10dc81bc6011e5329723bca55925825f9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894936"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046684"
 ---
 # <a name="controlling-net-framework-logging"></a>Contrôle de l'enregistrement .NET Framework
 
@@ -85,7 +85,7 @@ Pour activer la journalisation, un utilisateur doit spécifier trois éléments�
 
 ## <a name="viewing-clr-etw-events"></a>Affichage des événements ETW du CLR
 
-Utilisez les commandes répertoriées ci-dessous pour afficher les événements ETW du CLR. Pour obtenir une description des événements, consultez [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md).
+Utilisez les commandes répertoriées ci-dessous pour afficher les événements ETW du CLR. Pour obtenir une description des événements, consultez [Événements ETW du CLR](clr-etw-events.md).
 
 ### <a name="to-view-clr-etw-events-using-tracerpt"></a>Pour afficher les événements ETW du CLR à l'aide de Tracerpt
 
@@ -114,4 +114,4 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 ## <a name="see-also"></a>Voir aussi
 
 - [Kit de performances Windows](/windows-hardware/test/wpt/)
-- [Événements ETW dans le Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+- [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md)

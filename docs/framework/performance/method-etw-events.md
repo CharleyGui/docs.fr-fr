@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c7969c0a3f5f828f1a1c0d4f33b82881130c6e15
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 58249a0e080e045223bdaf170f2eaedb67fc0dea
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949251"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046387"
 ---
 # <a name="method-etw-events"></a>Événements ETW de méthode
 
@@ -36,7 +36,7 @@ Les événements de méthode du CLR sont subdivisés comme suit :
 
 ## <a name="clr-method-events"></a>Événements de méthode du CLR
 
-Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)
+Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)
 
 |Mot clé pour déclencher l'événement|Niveau|
 |-----------------------------------|-----------|
@@ -63,10 +63,10 @@ Le tableau ci-dessous montre les données liées aux événements.
 |MethodStartAddress|win:UInt64|Adresse de début de la méthode.|
 |MethodSize|win:UInt32|Taille de la méthode.|
 |MethodToken|win:UInt32|0 pour les méthodes dynamiques et les programmes d'assistance JIT.|
-|MethodFlags|win:UInt32|0 x 1 : Méthode dynamique.<br /><br /> 0 x 2 : Méthode générique.<br /><br /> 0 x 4 : Méthode de code compilé par JIT (sinon code d’image natif NGEN).<br /><br /> 0 x 8 : Méthode d’assistance.|
+|MethodFlags|win:UInt32|0x1 Méthode dynamique.<br /><br /> 0X2 Méthode générique.<br /><br /> 0x4 Méthode de code compilé juste-à-temps (sinon, code d’image native NGEN).<br /><br /> 0x8 Méthode d’assistance.|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Retour au début](#top)
+[Revenir en haut](#top)
 
 <a name="clr_method_marker_events"></a>
 
@@ -97,7 +97,7 @@ Le tableau ci-dessous montre les données liées aux événements.
 |----------------|---------------|-----------------|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Retour au début](#top)
+[Revenir en haut](#top)
 
 <a name="clr_method_verbose_events"></a>
 
@@ -130,13 +130,13 @@ Le tableau ci-dessous montre les données liées aux événements.
 |MethodStartAddress|win:UInt64|Adresse de début.|
 |MethodSize|win:UInt32|Longueur de la méthode.|
 |MethodToken|win:UInt32|0 pour les méthodes dynamiques et les programmes d'assistance JIT.|
-|MethodFlags|win:UInt32|0 x 1 : Méthode dynamique.<br /><br /> 0 x 2 : Méthode générique.<br /><br /> 0 x 4 : Méthode compilé par JIT (ou générée par NGen.exe)<br /><br /> 0 x 8 : Méthode d’assistance.|
+|MethodFlags|win:UInt32|0x1 Méthode dynamique.<br /><br /> 0X2 Méthode générique.<br /><br /> 0x4 Méthode compilée juste-à-temps (sinon, générée par NGen. exe)<br /><br /> 0x8 Méthode d’assistance.|
 |MethodNameSpace|win:UnicodeString|Nom d'espace de noms complet associé à la méthode.|
 |MethodName|win:UnicodeString|Nom complet de classe associé à la méthode.|
 |MethodSignature|win:UnicodeString|Signature de la méthode (liste de noms de types séparés par des virgules).|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Retour au début](#top)
+[Revenir en haut](#top)
 
 <a name="methodjittingstarted_event"></a>
 
@@ -172,4 +172,4 @@ Le tableau ci-dessous montre les données liées aux événements.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

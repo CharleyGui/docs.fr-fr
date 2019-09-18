@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 981f5f23bf2aafc41426c858e150ec3664a494f9
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: db4380e97cf4d556248f42981b350160710f1dd8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205802"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051815"
 ---
 # <a name="exposing-net-components-to-com"></a>Exposition de composants .NET à COM
 
@@ -27,7 +27,7 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
      Les attributs personnalisés dans du code managé peuvent améliorer l’interopérabilité d’un composant.
 
-- [Empaquetage d’un assembly pour COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md).
+- [Empaquetage d’un assembly pour COM](packaging-an-assembly-for-com.md).
 
      Les développeurs COM peuvent vous demander de résumer les étapes impliquées dans le référencement et le déploiement de vos assemblys.
 
@@ -35,11 +35,11 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
 ## <a name="to-consume-a-managed-type-from-com"></a>Pour consommer un type managé à partir de COM
 
-1. [Inscription d’assemblys auprès de COM](../../../docs/framework/interop/registering-assemblies-with-com.md).
+1. [Inscription d’assemblys auprès de COM](registering-assemblies-with-com.md).
 
      Les types d’un assembly (et des bibliothèques de types) doivent être inscrits au moment du design. Si un programme d’installation n’inscrit pas l’assembly, indiquez aux développeurs COM qu’ils doivent utiliser Regasm.exe.
 
-2. [Référencer des types .NET à partir de COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md)
+2. [Référencer des types .NET à partir de COM](how-to-reference-net-types-from-com.md)
 
      Les développeurs COM peuvent référencer des types dans un assembly en utilisant les mêmes outils et techniques que ceux qu’ils utilisent aujourd’hui.
 
@@ -53,5 +53,5 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interopération avec du code non managé](../../../docs/framework/interop/index.md)
-- [COM Interop, exemple : client COM et serveur .NET](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)
+- [Interopération avec du code non managé](index.md)
+- [COM Interop, exemple : client COM et serveur .NET](com-interop-sample-com-client-and-net-server.md)

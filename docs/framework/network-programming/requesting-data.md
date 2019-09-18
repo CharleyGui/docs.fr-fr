@@ -17,12 +17,12 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-ms.openlocfilehash: 4e93b9395e92ff4c1c153f53e0f40ff18c12416a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 1f367caf7656a83597b6262a5746686df15d33b4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228508"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047313"
 ---
 # <a name="requesting-data"></a>Demande de données
 Lorsque vous développez des applications destinées à être exécutées dans l’environnement d’exploitation distribué qu’est l’Internet d’aujourd’hui, il est nécessaire d’employer une méthode facile et efficace pour récupérer les données à partir de ressources de tous types. Les protocoles enfichables vous permettent de développer des applications qui utilisent une même interface pour récupérer les données à partir de plusieurs protocoles Internet.  
@@ -54,6 +54,6 @@ sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Guide pratique pour demander une page web et récupérer les résultats sous forme de flux](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)
-- [Guide pratique pour récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)
+- [Programmation réseau dans le .NET Framework](index.md)
+- [Guide pratique pour demander une page web et récupérer les résultats sous forme de flux](how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)
+- [Guide pratique pour récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest](how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)

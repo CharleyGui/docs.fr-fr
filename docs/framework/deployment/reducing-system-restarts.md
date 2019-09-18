@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a491b0efd38ed7ff37c8c704b6646dddede5efb3
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: HT
+ms.openlocfilehash: 9da78fb161a906f6ef266f98a9f13633da91b61c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379917"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052039"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Réduction des redémarrages système lors des installations de .NET Framework 4.5
-Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de redémarrage](https://go.microsoft.com/fwlink/?LinkId=231425) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d'informations, voir [Procédure : obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
+Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de redémarrage](https://go.microsoft.com/fwlink/?LinkId=231425) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d’informations, consultez [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md).  
   
 ## <a name="reasons-for-a-restart"></a>Raisons pour un redémarrage  
  Lors de l’installation de .NET Framework 4.5, vous devez redémarrer le système si une application .NET Framework 4 est en cours d’utilisation. En effet, .NET Framework 4.5 remplace les fichiers .NET Framework 4 et nécessite que ces fichiers soient disponibles pendant l’installation. Dans de nombreux cas, le redémarrage peut être évité par la détection préemptive et la fermeture des applications .NET Framework 4 en cours d'utilisation. Toutefois, certaines applications de système ne doivent pas être fermées. Dans ces cas là, un redémarrage ne peut pas être évité.  
@@ -29,12 +29,12 @@ Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de 
  ![La boîte de dialogue Fermer l’application listant les programmes en cours d’exécution.](./media/reducing-system-restarts/close-application-dialog.png)  
   
 ## <a name="using-a-chained-installer"></a>Utilisation d'un programme d'installation chaîné  
- Si vous voulez redistribuer .NET Framework avec votre application, mais si vous souhaitez utiliser votre propre programme d'installation et votre propre interface utilisateur, vous pouvez inclure (chaîner) le processus d'installation .NET Framework dans votre processus d'installation. Pour plus d’informations sur les installations chaînées, consultez [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md). Pour réduire le nombre de redémarrages du système dans les installations chaînées, le programme d'installation .NET Framework fournit à votre programme d'installation la liste des applications à fermer. Votre programme d'installation doit fournir ces informations à l'utilisateur via une interface utilisateur telle qu'une boîte de message, obtenir la réponse de l'utilisateur, puis transmettre la réponse au programme d'installation .NET Framework. Pour obtenir un exemple d’un programme d’installation chaîné, consultez l’article [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
+ Si vous voulez redistribuer .NET Framework avec votre application, mais si vous souhaitez utiliser votre propre programme d'installation et votre propre interface utilisateur, vous pouvez inclure (chaîner) le processus d'installation .NET Framework dans votre processus d'installation. Pour plus d’informations sur les installations chaînées, consultez [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md). Pour réduire le nombre de redémarrages du système dans les installations chaînées, le programme d'installation .NET Framework fournit à votre programme d'installation la liste des applications à fermer. Votre programme d'installation doit fournir ces informations à l'utilisateur via une interface utilisateur telle qu'une boîte de message, obtenir la réponse de l'utilisateur, puis transmettre la réponse au programme d'installation .NET Framework. Pour obtenir un exemple d’un programme d’installation chaîné, consultez l’article [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md).  
   
- Si vous utilisez un programme d'installation chaîné, mais que vous ne souhaitez pas fournir votre propre boîte de message pour la fermeture des applications, vous pouvez utiliser les options `/showrmui` et `/passive` sur la ligne de commande lorsque vous chaînez le processus d'installation .NET Framework. Lorsque vous utilisez ces options ensemble, le programme d'installation affiche la boîte de message pour fermer les applications qui peuvent l'être pour éviter le redémarrage du système. Cette boîte de message se comporte de la même manière en mode passif que dans l'interface utilisateur. Consultez [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md) pour les options complètes de la ligne de commande du package redistribuable du .NET Framework.  
+ Si vous utilisez un programme d'installation chaîné, mais que vous ne souhaitez pas fournir votre propre boîte de message pour la fermeture des applications, vous pouvez utiliser les options `/showrmui` et `/passive` sur la ligne de commande lorsque vous chaînez le processus d'installation .NET Framework. Lorsque vous utilisez ces options ensemble, le programme d'installation affiche la boîte de message pour fermer les applications qui peuvent l'être pour éviter le redémarrage du système. Cette boîte de message se comporte de la même manière en mode passif que dans l'interface utilisateur. Consultez [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md) pour les options complètes de la ligne de commande du package redistribuable du .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Déploiement](../../../docs/framework/deployment/index.md)
-- [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)
-- [Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+- [Déploiement](index.md)
+- [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)
+- [Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)

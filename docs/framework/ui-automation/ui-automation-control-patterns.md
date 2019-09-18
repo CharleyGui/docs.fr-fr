@@ -7,12 +7,12 @@ helpviewer_keywords:
 - control patterns, UI Automation
 - UI Automation, control patterns
 ms.assetid: 1f8b5ab3-c193-4d0f-9e67-a0076225a1a5
-ms.openlocfilehash: d4b4817c9b5cd59486c0ce5288d7860933405664
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 75ce2d997efbc465c8a98bce1d42296b37f84f64
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941282"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042330"
 ---
 # <a name="ui-automation-control-patterns"></a>Modèles de contrôle UI Automation
 > [!NOTE]
@@ -21,21 +21,21 @@ ms.locfileid: "69941282"
  Cette section fournit des informations détaillées sur l’utilisation [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] des modèles de contrôle.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Implémentation du modèle de contrôle Dock d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-dock-control-pattern.md)  
- [Implémentation du modèle de contrôle ExpandCollapse d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)  
- [Implémentation du modèle de contrôle Grid d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)  
- [Implémentation du modèle de contrôle GridItem d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md)  
- [Implémentation du modèle de contrôle Invoke d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-invoke-control-pattern.md)  
- [Implémentation du modèle de contrôle MultipleView d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-multipleview-control-pattern.md)  
- [Implémentation du modèle de contrôle RangeValue d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-rangevalue-control-pattern.md)  
- [Implémentation du modèle de contrôle Scroll d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-scroll-control-pattern.md)  
- [Implémentation du modèle de contrôle ScrollItem d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-scrollitem-control-pattern.md)  
- [Implémentation du modèle de contrôle Selection d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)  
- [Implémentation du modèle de contrôle SelectionItem d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-selectionitem-control-pattern.md)  
- [Implémentation du modèle de contrôle Table d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-table-control-pattern.md)  
- [Implémentation du modèle de contrôle TableItem d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-tableitem-control-pattern.md)  
- [Implémentation du modèle de contrôle Toggle d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)  
- [Implémentation du modèle de contrôle Transform d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-transform-control-pattern.md)  
- [Implémentation du modèle de contrôle Value d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-value-control-pattern.md)  
- [Implémentation du modèle de contrôle Window d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-window-control-pattern.md)  
- [Rubriques de guide pratique](../../../docs/framework/ui-automation/ui-automation-control-patterns-how-to-topics.md)
+ [Implémentation du modèle de contrôle Dock d’UI Automation](implementing-the-ui-automation-dock-control-pattern.md)  
+ [Implémentation du modèle de contrôle ExpandCollapse d’UI Automation](implementing-the-ui-automation-expandcollapse-control-pattern.md)  
+ [Implémentation du modèle de contrôle Grid d’UI Automation](implementing-the-ui-automation-grid-control-pattern.md)  
+ [Implémentation du modèle de contrôle GridItem d’UI Automation](implementing-the-ui-automation-griditem-control-pattern.md)  
+ [Implémentation du modèle de contrôle Invoke d’UI Automation](implementing-the-ui-automation-invoke-control-pattern.md)  
+ [Implémentation du modèle de contrôle MultipleView d’UI Automation](implementing-the-ui-automation-multipleview-control-pattern.md)  
+ [Implémentation du modèle de contrôle RangeValue d’UI Automation](implementing-the-ui-automation-rangevalue-control-pattern.md)  
+ [Implémentation du modèle de contrôle Scroll d’UI Automation](implementing-the-ui-automation-scroll-control-pattern.md)  
+ [Implémentation du modèle de contrôle ScrollItem d’UI Automation](implementing-the-ui-automation-scrollitem-control-pattern.md)  
+ [Implémentation du modèle de contrôle Selection d’UI Automation](implementing-the-ui-automation-selection-control-pattern.md)  
+ [Implémentation du modèle de contrôle SelectionItem d’UI Automation](implementing-the-ui-automation-selectionitem-control-pattern.md)  
+ [Implémentation du modèle de contrôle Table d’UI Automation](implementing-the-ui-automation-table-control-pattern.md)  
+ [Implémentation du modèle de contrôle TableItem d’UI Automation](implementing-the-ui-automation-tableitem-control-pattern.md)  
+ [Implémentation du modèle de contrôle Toggle d’UI Automation](implementing-the-ui-automation-toggle-control-pattern.md)  
+ [Implémentation du modèle de contrôle Transform d’UI Automation](implementing-the-ui-automation-transform-control-pattern.md)  
+ [Implémentation du modèle de contrôle Value d’UI Automation](implementing-the-ui-automation-value-control-pattern.md)  
+ [Implémentation du modèle de contrôle Window d’UI Automation](implementing-the-ui-automation-window-control-pattern.md)  
+ [Rubriques de guide pratique](ui-automation-control-patterns-how-to-topics.md)

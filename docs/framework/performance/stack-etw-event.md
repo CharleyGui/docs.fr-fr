@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a7cba2bd1dd5b83e29c7a6c192a1a7e5e2d33ecc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5dc23f5105b589d5b74c9ea6b7f40b84c2b04e6a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949147"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046165"
 ---
 # <a name="stack-etw-event"></a>Événement ETW de pile
 L’événement de pile doit être utilisé conjointement avec d’autres événements pour générer des arborescences d’appels de procédure après le déclenchement d’un événement. Il est enregistré quand le fournisseur du runtime est activé. Il s’agit d’un événement très fréquent, car il est déclenché à chaque déclenchement d’un autre événement runtime. Pour cette raison, nous vous recommandons d’utiliser cet événement avec précaution.  
   
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -41,4 +41,4 @@ L’événement de pile doit être utilisé conjointement avec d’autres évén
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

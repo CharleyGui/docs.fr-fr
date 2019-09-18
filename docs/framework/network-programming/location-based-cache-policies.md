@@ -15,15 +15,15 @@ helpviewer_keywords:
 - Cache Or Next Cache Only policy
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
-ms.openlocfilehash: 04efb24dd9e48d7e33fa3ea3c41a51c2dc96ac77
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: e6896452fce89f69b40f1d03332355df72d93211
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129894"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047664"
 ---
 # <a name="location-based-cache-policies"></a>stratégies de cache basées sur l’emplacement
-Une stratégie de cache basée sur l’emplacement définit l’actualisation des entrées valides mises en cache en fonction de l’emplacement d’où la ressource demandée peut être récupérée. Une ressource mise en cache est valide si elle respecte les exigences de revalidation spécifiées par le serveur. Une stratégie de cache basée sur l’emplacement peut être créée par programmation à l’aide du constructeur de classe <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>. Le type de stratégie basée sur l’emplacement est passé au constructeur avec une valeur d’énumération <xref:System.Net.Cache.RequestCacheLevel> ou <xref:System.Net.Cache.HttpRequestCacheLevel>. Pour obtenir des exemples de code qui créent des stratégies de cache basées sur l’emplacement, consultez [Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Les sections suivantes expliquent chaque type de stratégie de cache basée sur l’emplacement pour les ressources HTTP et HTTPS.  
+Une stratégie de cache basée sur l’emplacement définit l’actualisation des entrées valides mises en cache en fonction de l’emplacement d’où la ressource demandée peut être récupérée. Une ressource mise en cache est valide si elle respecte les exigences de revalidation spécifiées par le serveur. Une stratégie de cache basée sur l’emplacement peut être créée par programmation à l’aide du constructeur de classe <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>. Le type de stratégie basée sur l’emplacement est passé au constructeur avec une valeur d’énumération <xref:System.Net.Cache.RequestCacheLevel> ou <xref:System.Net.Cache.HttpRequestCacheLevel>. Pour obtenir des exemples de code qui créent des stratégies de cache basées sur l’emplacement, consultez [Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application](how-to-set-a-location-based-cache-policy-for-an-application.md). Les sections suivantes expliquent chaque type de stratégie de cache basée sur l’emplacement pour les ressources HTTP et HTTPS.  
   
 ## <a name="cache-if-available-policy"></a>Stratégie de cache si disponible  
  Si une demande est effectuée pour une ressource valide se trouvant dans le cache local, cette ressource est utilisée. Dans le cas contraire, la demande de ressource est envoyée au serveur. Si la ressource demandée est disponible dans un cache situé entre le client ou le serveur, la demande peut être satisfaite par un cache intermédiaire.  
@@ -48,8 +48,8 @@ Une stratégie de cache basée sur l’emplacement définit l’actualisation de
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)
-- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
-- [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)
+- [Stratégie de cache](cache-policy.md)
+- [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
+- [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
+- [\<requestCaching>, élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e2cdaa312c037714a34e25e62ad318c9bc745ea7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 739f0efdb50f8eba4875a42d5173f741b6ee94b3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953188"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051898"
 ---
 # <a name="blittable-and-non-blittable-types"></a>types blittable et non blittable
 La plupart des types de données ont une représentation commune à la fois dans la mémoire managée et non managée, et ne nécessitent pas de traitement particulier par le marshaleur d’interopérabilité. Ces types sont appelés *types blittables*, car ils ne nécessitent pas de conversion quand ils transitent entre le code managé et le code non managé.  
@@ -53,7 +53,7 @@ La plupart des types de données ont une représentation commune à la fois dans
   
  Les références d’objets ne sont pas blittables. Cela inclut un tableau de références aux objets qui sont blittables en eux-mêmes. Par exemple, vous pouvez définir une structure blittable, mais vous ne pouvez pas définir un type blittable contenant un tableau de références à ces structures.  
   
- Par souci d’optimisation, les tableaux de types et de classes blittables qui ne contiennent que des membres blittables sont [épinglés](../../../docs/framework/interop/copying-and-pinning.md) au lieu d’être copiés lors du marshaling. Ces types semblent être marshalés en tant que paramètres en entrée/sortie quand l’appelant et l’appelé résident dans le même cloisonnement. Cependant, ces types sont en fait marshalés en tant que paramètres en entrée et vous devez appliquer les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute> si vous voulez marshaler l’argument en tant que paramètre en entrée/sortie.  
+ Par souci d’optimisation, les tableaux de types et de classes blittables qui ne contiennent que des membres blittables sont [épinglés](copying-and-pinning.md) au lieu d’être copiés lors du marshaling. Ces types semblent être marshalés en tant que paramètres en entrée/sortie quand l’appelant et l’appelé résident dans le même cloisonnement. Cependant, ces types sont en fait marshalés en tant que paramètres en entrée et vous devez appliquer les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute> si vous voulez marshaler l’argument en tant que paramètre en entrée/sortie.  
   
  Certains types de données managés requièrent une représentation différente dans un environnement non managé. Ces types de données non blittables doivent être convertis sous une forme qui peut être marshalée. Par exemple, les chaînes managées sont des types non blittables parce qu’elles doivent être converties en objets String avant de pouvoir être marshalées.  
   
@@ -61,18 +61,18 @@ La plupart des types de données ont une représentation commune à la fois dans
   
 |Type non blittable|Description|  
 |-------------------------|-----------------|  
-|[System.Array](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
+|[System.Array](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
 |[System.Boolean](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|Convertit en valeur de 1, 2 ou 4 octets, la valeur `true` ayant pour valeur 1 ou -1.|  
 |[System.Char](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Convertit en caractère ANSI ou Unicode.|  
 |[System.Class](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|Convertit en interface de classe.|  
-|[System.Object](../../../docs/framework/interop/default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
-|[System.Mdarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
-|[System.String](../../../docs/framework/interop/default-marshaling-for-strings.md)|Convertit en chaîne se terminant par une référence null ou en BSTR.|  
+|[System.Object](default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
+|[System.Mdarray](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
+|[System.String](default-marshaling-for-strings.md)|Convertit en chaîne se terminant par une référence null ou en BSTR.|  
 |[System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Convertit en structure avec une disposition de mémoire fixe.|  
-|[System.Szarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
+|[System.Szarray](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
   
  Les types d’objets et de classes sont pris en charge uniquement par COM Interop. Pour obtenir les types correspondants en Visual Basic, C# et C++, consultez [Vue d’ensemble de la bibliothèque de classes .NET Framework](../../standard/class-library-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comportement de marshaling par défaut](../../../docs/framework/interop/default-marshaling-behavior.md)
+- [Comportement de marshaling par défaut](default-marshaling-behavior.md)

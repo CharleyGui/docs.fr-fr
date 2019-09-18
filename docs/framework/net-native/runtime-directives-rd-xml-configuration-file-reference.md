@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7545e1d7079664fd8706bdddac2ff3c8ebc27c7f
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: adfc0ae6d9bdae333daacee525c7775acd5a8029
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988294"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049140"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Guide de référence du fichier de configuration des directives runtime (rd.xml)
 
@@ -37,35 +37,35 @@ Un fichier de directives runtime (.rd.xml) est un fichier de configuration XML q
 
 Le fichier de directives runtime utilise l'espace de noms `http://schemas.microsoft.com/netfx/2013/01/metadata`.
 
-L’élément racine est l’élément [Directives](../../../docs/framework/net-native/directives-element-net-native.md). Il peut contenir zéro ou plusieurs éléments [Library](../../../docs/framework/net-native/library-element-net-native.md) et zéro ou un élément [Application](../../../docs/framework/net-native/application-element-net-native.md), comme indiqué dans la structure suivante. Les attributs de l’élément [Application](../../../docs/framework/net-native/application-element-net-native.md) peuvent définir une stratégie de réflexion runtime à l’échelle de l’application, ou peuvent servir de conteneur pour les éléments enfants. L’élément [Library](../../../docs/framework/net-native/library-element-net-native.md), quant à lui, sert simplement de conteneur. Les enfants des éléments[Application](../../../docs/framework/net-native/application-element-net-native.md) et [Library](../../../docs/framework/net-native/library-element-net-native.md) définissent les types, méthodes, champs, propriétés et événements qui sont disponibles pour la réflexion.
+L’élément racine est l’élément [Directives](directives-element-net-native.md). Il peut contenir zéro ou plusieurs éléments [Library](library-element-net-native.md) et zéro ou un élément [Application](application-element-net-native.md), comme indiqué dans la structure suivante. Les attributs de l’élément [Application](application-element-net-native.md) peuvent définir une stratégie de réflexion runtime à l’échelle de l’application, ou peuvent servir de conteneur pour les éléments enfants. L’élément [Library](library-element-net-native.md), quant à lui, sert simplement de conteneur. Les enfants des éléments[Application](application-element-net-native.md) et [Library](library-element-net-native.md) définissent les types, méthodes, champs, propriétés et événements qui sont disponibles pour la réflexion.
 
-Pour obtenir des informations de référence, choisissez les éléments dans la structure suivante ou consultez [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md). Dans la hiérarchie suivante, les points de suspension marquent une structure récursive. Les informations entre crochets indiquent si l'élément concerné est facultatif ou obligatoire, et, s'il est utilisé, le nombre d'instances autorisées (une ou plusieurs).
+Pour obtenir des informations de référence, choisissez les éléments dans la structure suivante ou consultez [Éléments de directive runtime](runtime-directive-elements.md). Dans la hiérarchie suivante, les points de suspension marquent une structure récursive. Les informations entre crochets indiquent si l'élément concerné est facultatif ou obligatoire, et, s'il est utilisé, le nombre d'instances autorisées (une ou plusieurs).
 
-[Directives](../../../docs/framework/net-native/directives-element-net-native.md) [1:1] [application](../../../docs/framework/net-native/application-element-net-native.md) [0:1] [assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0: m] [espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: m]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) O:1 [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (le type conteneur est un attribut) O:1 [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [Bibliothèque](../../../docs/framework/net-native/library-element-net-native.md) [0: M] [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) O:1 [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (le type conteneur est un attribut) O:1 [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
-[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M]
+[Directives](directives-element-net-native.md) [1:1] [application](application-element-net-native.md) [0:1] [assembly](assembly-element-net-native.md) [0 : m] [espace de noms](namespace-element-net-native.md) [0 : m]. . .
+[Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Espace de noms](namespace-element-net-native.md) [0 : M] [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+[Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Type](type-element-net-native.md) [0 : M] [Sous-types](subtypes-element-net-native.md) (sous-classes du type conteneur) O :1 [Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) O :1 [GenericParameter](genericparameter-element-net-native.md) [0 : M] [Méthode](method-element-net-native.md) [0 : M] [Paramètre](parameter-element-net-native.md) [0 : M] [TypeParameter](typeparameter-element-net-native.md) [0 : M] [GenericParameter](genericparameter-element-net-native.md) [0 : M] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : M] [Propriété](property-element-net-native.md) [0 : M] [Champ](field-element-net-native.md) [0 : M] [Événement](event-element-net-native.md) [0 : M] [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M] [Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Méthode](method-element-net-native.md) [0 : M] [Paramètre](parameter-element-net-native.md) [0 : M] [TypeParameter](typeparameter-element-net-native.md) [0 : M] [GenericParameter](genericparameter-element-net-native.md) [0 : M] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : M] [Propriété](property-element-net-native.md) [0 : M] [Champ](field-element-net-native.md) [0 : M] [Événement](event-element-net-native.md) [0 : M] [Bibliothèque](library-element-net-native.md) [0 : M] [Assembly](assembly-element-net-native.md) [0 : M] [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+[Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Espace de noms](namespace-element-net-native.md) [0 : M] [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+[Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Type](type-element-net-native.md) [0 : M] [Sous-types](subtypes-element-net-native.md) (sous-classes du type conteneur) O :1 [Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) O :1 [GenericParameter](genericparameter-element-net-native.md) [0 : M] [Méthode](method-element-net-native.md) [0 : M] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : M] [Propriété](property-element-net-native.md) [0 : M] [Champ](field-element-net-native.md) [0 : M] [Événement](event-element-net-native.md) [0 : M] [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M] [Type](type-element-net-native.md) [0 : M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+[Méthode](method-element-net-native.md) [0 : M] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : M] [Propriété](property-element-net-native.md) [0 : M] [Champ](field-element-net-native.md) [0 : M] [Événement](event-element-net-native.md) [0 : M]
 
-L’élément [Application](../../../docs/framework/net-native/application-element-net-native.md) peut n’avoir aucun attribut, ou peut avoir les attributs de stratégie présentés dans la section [Stratégie et directives runtime](#Directives).
+L’élément [Application](application-element-net-native.md) peut n’avoir aucun attribut, ou peut avoir les attributs de stratégie présentés dans la section [Stratégie et directives runtime](#Directives).
 
-Un élément [Library](../../../docs/framework/net-native/library-element-net-native.md) possède un attribut unique (`Name`) qui spécifie le nom d’une bibliothèque ou d’un assembly, sans son extension de fichier. Par exemple, l’élément [Library](../../../docs/framework/net-native/library-element-net-native.md) suivant s’applique à un assembly nommé Extensions.dll.
+Un élément [Library](library-element-net-native.md) possède un attribut unique (`Name`) qui spécifie le nom d’une bibliothèque ou d’un assembly, sans son extension de fichier. Par exemple, l’élément [Library](library-element-net-native.md) suivant s’applique à un assembly nommé Extensions.dll.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -82,15 +82,15 @@ Un élément [Library](../../../docs/framework/net-native/library-element-net-na
 
 ## <a name="runtime-directives-and-policy"></a>Stratégie et directives runtime
 
-L’élément [Application](../../../docs/framework/net-native/application-element-net-native.md) lui-même et les éléments enfants des éléments [Library](../../../docs/framework/net-native/library-element-net-native.md) et [Application](../../../docs/framework/net-native/application-element-net-native.md) expriment la stratégie ; autrement dit, ils définissent la façon dont une application peut appliquer la réflexion à un élément de programme. Le type de stratégie est défini par un attribut de l'élément (par exemple, `Serialize`). La valeur de stratégie est définie par la valeur de l'attribut (par exemple, `Serialize="Required"`).
+L’élément [Application](application-element-net-native.md) lui-même et les éléments enfants des éléments [Library](library-element-net-native.md) et [Application](application-element-net-native.md) expriment la stratégie ; autrement dit, ils définissent la façon dont une application peut appliquer la réflexion à un élément de programme. Le type de stratégie est défini par un attribut de l'élément (par exemple, `Serialize`). La valeur de stratégie est définie par la valeur de l'attribut (par exemple, `Serialize="Required"`).
 
-Toute stratégie spécifiée par un attribut d'un élément s'applique à tous les éléments enfants qui ne définissent pas de valeur pour cette stratégie. Par exemple, si une stratégie est spécifiée par un élément [Type](../../../docs/framework/net-native/type-element-net-native.md), elle s’applique à tous les types et membres contenus pour lesquels une stratégie n’est pas explicitement définie.
+Toute stratégie spécifiée par un attribut d'un élément s'applique à tous les éléments enfants qui ne définissent pas de valeur pour cette stratégie. Par exemple, si une stratégie est spécifiée par un élément [Type](type-element-net-native.md), elle s’applique à tous les types et membres contenus pour lesquels une stratégie n’est pas explicitement définie.
 
-La stratégie qui peut être exprimée par les éléments [Application](../../../docs/framework/net-native/application-element-net-native.md), [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md), [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md), [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md), [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) et [Type](../../../docs/framework/net-native/type-element-net-native.md) diffère de la stratégie qui peut être exprimée pour des membres spécifiques (par les éléments [Method](../../../docs/framework/net-native/method-element-net-native.md), [Property](../../../docs/framework/net-native/property-element-net-native.md), [Field](../../../docs/framework/net-native/field-element-net-native.md), et [Event](../../../docs/framework/net-native/event-element-net-native.md)).
+La stratégie qui peut être exprimée par les éléments [Application](application-element-net-native.md), [Assembly](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [Namespace](namespace-element-net-native.md), [Subtypes](subtypes-element-net-native.md) et [Type](type-element-net-native.md) diffère de la stratégie qui peut être exprimée pour des membres spécifiques (par les éléments [Method](method-element-net-native.md), [Property](property-element-net-native.md), [Field](field-element-net-native.md), et [Event](event-element-net-native.md)).
 
 ### <a name="specifying-policy-for-assemblies-namespaces-and-types"></a>Spécification d'une stratégie pour des assemblys, des espaces de noms et des types
 
-Les éléments [Application](../../../docs/framework/net-native/application-element-net-native.md), [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md), [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md), [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md), [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) et [Type](../../../docs/framework/net-native/type-element-net-native.md) prennent en charge les types de stratégie suivants :
+Les éléments [Application](application-element-net-native.md), [Assembly](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [Namespace](namespace-element-net-native.md), [Subtypes](subtypes-element-net-native.md) et [Type](type-element-net-native.md) prennent en charge les types de stratégie suivants :
 
 - `Activate`. Contrôle l'accès aux constructeurs, pour permettre l'activation d'instances au moment de l'exécution.
 
@@ -147,7 +147,7 @@ Par exemple, le fichier de directives runtime suivant définit la stratégie pou
 
 ### <a name="specifying-policy-for-members"></a>Spécification d'une stratégie pour les membres
 
-Les éléments [Property](../../../docs/framework/net-native/property-element-net-native.md) et [Field](../../../docs/framework/net-native/field-element-net-native.md) prennent en charge les types de stratégie suivants :
+Les éléments [Property](property-element-net-native.md) et [Field](field-element-net-native.md) prennent en charge les types de stratégie suivants :
 
 - `Browse` : contrôle la demande d'informations sur le membre concerné, mais ne permet pas l'accès au moment de l'exécution.
 
@@ -155,7 +155,7 @@ Les éléments [Property](../../../docs/framework/net-native/property-element-ne
 
 - `Serialize` : contrôle l'accès au moment de l'exécution au membre pour permettre la sérialisation et la désérialisation des instances de types par des bibliothèques comme le sérialiseur JSON Newtonsoft. Cette stratégie peut être appliquée à des constructeurs, des champs et des propriétés.
 
-Les éléments [Method](../../../docs/framework/net-native/method-element-net-native.md) et [Event](../../../docs/framework/net-native/event-element-net-native.md) prennent en charge les types de stratégie suivants :
+Les éléments [Method](method-element-net-native.md) et [Event](event-element-net-native.md) prennent en charge les types de stratégie suivants :
 
 - `Browse` : contrôle la demande d'informations sur le membre concerné, mais ne permet pas l'accès au moment de l'exécution.
 
@@ -173,9 +173,9 @@ Les éléments [Method](../../../docs/framework/net-native/method-element-net-na
 
 ## <a name="runtime-directives-file-semantics"></a>Sémantique du fichier de directives runtime
 
-La stratégie peut être définie simultanément pour les éléments de niveau supérieur et de niveau inférieur. Par exemple, la stratégie peut être définie pour un assembly, ainsi que pour certains des types contenus dans cet assembly. Si un élément particulier de niveau inférieur n'est pas représenté, il hérite la stratégie de son parent. Par exemple, si un élément `Assembly` est présent, mais que des éléments `Type` sont absents, la stratégie spécifiée dans l'élément `Assembly` s'applique à chaque type dans l'assembly. Plusieurs éléments peuvent aussi appliquer la stratégie au même élément de programme. Par exemple, des éléments [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) distincts peuvent définir le même élément de stratégie pour le même assembly différemment. Les sections suivantes expliquent comment la stratégie pour un type particulier est résolue dans ces cas.
+La stratégie peut être définie simultanément pour les éléments de niveau supérieur et de niveau inférieur. Par exemple, la stratégie peut être définie pour un assembly, ainsi que pour certains des types contenus dans cet assembly. Si un élément particulier de niveau inférieur n'est pas représenté, il hérite la stratégie de son parent. Par exemple, si un élément `Assembly` est présent, mais que des éléments `Type` sont absents, la stratégie spécifiée dans l'élément `Assembly` s'applique à chaque type dans l'assembly. Plusieurs éléments peuvent aussi appliquer la stratégie au même élément de programme. Par exemple, des éléments [Assembly](assembly-element-net-native.md) distincts peuvent définir le même élément de stratégie pour le même assembly différemment. Les sections suivantes expliquent comment la stratégie pour un type particulier est résolue dans ces cas.
 
-Un élément [Type](../../../docs/framework/net-native/type-element-net-native.md) ou [Method](../../../docs/framework/net-native/method-element-net-native.md) d’une méthode ou type générique applique sa stratégie à toutes les instanciations qui n’ont pas leur propre stratégie. Par exemple, un élément `Type` qui spécifie une stratégie pour <xref:System.Collections.Generic.List%601> s'applique à toutes les instances construites de ce type générique, sauf s'il est substitué pour un type générique construit particulier (comme `List<Int32>`) par un élément `TypeInstantiation`. Dans le cas contraire, les éléments définissent la stratégie pour l'élément de programme nommé.
+Un élément [Type](type-element-net-native.md) ou [Method](method-element-net-native.md) d’une méthode ou type générique applique sa stratégie à toutes les instanciations qui n’ont pas leur propre stratégie. Par exemple, un élément `Type` qui spécifie une stratégie pour <xref:System.Collections.Generic.List%601> s'applique à toutes les instances construites de ce type générique, sauf s'il est substitué pour un type générique construit particulier (comme `List<Int32>`) par un élément `TypeInstantiation`. Dans le cas contraire, les éléments définissent la stratégie pour l'élément de programme nommé.
 
 Quand un élément est ambigu, le moteur recherche des correspondances, et s'il trouve une correspondance exacte, il l'utilise. La présence de plusieurs correspondances entraîne un avertissement ou une erreur.
 
@@ -411,9 +411,9 @@ Appliquer une de ces stratégies à un type permet de sérialiser celui-ci avec 
 
 Ces stratégies n'ont aucun effet sur les méthodes ou champs.
 
-Pour plus d’informations, consultez la section « Différences entre les sérialiseurs » dans [Migration de votre application du Windows Store vers .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
+Pour plus d’informations, consultez la section « Différences entre les sérialiseurs » dans [Migration de votre application du Windows Store vers .NET Native](migrating-your-windows-store-app-to-net-native.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Réflexion et .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)
+- [Réflexion et .NET Native](reflection-and-net-native.md)

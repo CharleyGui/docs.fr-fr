@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8924ed14c597a691698180c7c362b80c41532c2c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 7d0cbe66870fc75da02ad56da73de86d4837c0c8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052136"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Indications pour la création de composants pour l'exécution côte à côte
 Suivez ces recommandations générales pour créer des applications managées ou des composants conçus pour l'exécution côte à côte :  
@@ -60,9 +60,9 @@ Suivez ces recommandations générales pour créer des applications managées ou
   
  La version d'assembly est utilisée par le runtime pour la liaison d'assembly. Deux assemblys identiques avec des numéros de version différents sont traités comme deux assemblys différents par le runtime.  
   
- L’[outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) vous permet de remplacer un assembly quand seul le numéro de version de fichier est plus récent. Le programme d'installation ne remplace généralement pas un assembly, sauf si le numéro de version d'assembly est supérieur.  
+ L’[outil Global Assembly Cache (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md) vous permet de remplacer un assembly quand seul le numéro de version de fichier est plus récent. Le programme d'installation ne remplace généralement pas un assembly, sauf si le numéro de version d'assembly est supérieur.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exécution côte à côte](../../../docs/framework/deployment/side-by-side-execution.md)
-- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+- [Exécution côte à côte](side-by-side-execution.md)
+- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

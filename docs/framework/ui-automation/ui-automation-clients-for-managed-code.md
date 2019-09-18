@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: b8df3d07a18efcfbb6c30b46668ab8fec8736af5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 578a6da0f1545012d5a77edc3db04d52f56180bc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953206"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042509"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Clients UI Automation pour le code managé
 > [!NOTE]
@@ -21,16 +21,16 @@ ms.locfileid: "69953206"
  Cette section contient des vues d’ensemble et des rubriques de procédure pour vous aider à développer des clients UI Automation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Mise à l’échelle de l’écran et UI Automation](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
- [Prise en charge d’UI Automation pour les contrôles standard](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)  
- [Événements UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
- [Mise en cache dans les clients UI Automation](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
- [Propriétés UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
- [Mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Obtention d’éléments UI Automation](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
- [Problèmes liés aux threads UI Automation](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
- [Rubriques de guide pratique](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code-how-to-topics.md)  
+ [Mise à l’échelle de l’écran et UI Automation](ui-automation-and-screen-scaling.md)  
+ [Prise en charge d’UI Automation pour les contrôles standard](ui-automation-support-for-standard-controls.md)  
+ [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)  
+ [Mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md)  
+ [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)  
+ [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)  
+ [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)  
+ [Obtention d’éléments UI Automation](obtaining-ui-automation-elements.md)  
+ [Problèmes liés aux threads UI Automation](ui-automation-threading-issues.md)  
+ [Rubriques de guide pratique](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation>

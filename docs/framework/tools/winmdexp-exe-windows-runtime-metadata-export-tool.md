@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0664a68d258380fd9e4824b80f0d7a244cb61e85
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 0b3cf60d670e7fdfa624599bc0eeddc99219c202
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894777"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044018"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (outil d'exportation de métadonnées Windows Runtime)
 L'outil Metadata Export Windows Runtime (Winmdexp.exe) transforme un module .NET Framework en un fichier qui contient des métadonnées Windows Runtime. Bien que les assemblys .NET Framework et les fichiers de métadonnées Windows Runtime utilisent le même format physique, il y a des différences dans le contenu des tables de métadonnées. Autrement dit, les assemblys .NET Framework ne sont pas utilisables automatiquement comme composants Windows Runtime. Le processus qui transforme un module .NET Framework en composant Windows Runtime s’appelle *exportation*. Dans .NET Framework 4.5 et .NET Framework 4.5.1, le fichier de métadonnées Windows (.winmd) résultant contient à la fois les métadonnées et l’implémentation.  
   
  Quand vous utilisez le modèle **Composant Windows Runtime**, qui se trouve dans le **Windows Store** pour C# et Visual Basic dans Visual Studio 2013 ou Visual Studio 2012, la cible du compilateur est un fichier .winmdobj et une étape de génération appelle Winmdexp.exe pour exporter le fichier .winmdobj vers un fichier .winmd. C'est la méthode recommandée pour générer un composant Windows Runtime. Utilisez Winmdexp.exe directement lorsque vous voulez contrôler davantage le processus de génération que Visual Studio le permet.  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -54,5 +54,5 @@ winmdexp [options] winmdmodule
 
 - [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 - [Création de composants Windows Runtime en C# et Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313)
-- [Messages d’erreur Winmdexp.exe](../../../docs/framework/tools/winmdexp-exe-error-messages.md)
+- [Messages d’erreur Winmdexp.exe](winmdexp-exe-error-messages.md)
 - [Outils de génération, de déploiement et de configuration (.NET Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233108(v=vs.100))

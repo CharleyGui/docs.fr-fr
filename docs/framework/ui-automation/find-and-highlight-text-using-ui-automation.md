@@ -12,12 +12,12 @@ helpviewer_keywords:
 - UI automation, finding text
 - highlighting text
 ms.assetid: b77693f5-87bb-4b29-a297-05ff882e2044
-ms.openlocfilehash: 1e8b69167f470afd5e3049a717978a41078db575
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 084a9cdeaf17d7456116c56e9a12115b478f7384
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969002"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043643"
 ---
 # <a name="find-and-highlight-text-using-ui-automation"></a>Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation
 > [!NOTE]
@@ -37,4 +37,4 @@ ms.locfileid: "69969002"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/find-and-highlight-text-using-ui-automation.md)
+- [Rechercher et mettre en surbrillance le texte à l’aide d’UI Automation](find-and-highlight-text-using-ui-automation.md)

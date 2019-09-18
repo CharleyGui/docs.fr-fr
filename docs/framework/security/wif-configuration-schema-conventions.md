@@ -3,15 +3,15 @@ title: Conventions de schéma de configuration de WIF
 ms.date: 03/30/2017
 ms.assetid: f7864356-f72f-4cae-995c-18e0431f8a58
 author: BrucePerlerMS
-ms.openlocfilehash: 6e13915121884ecb4a0e54344e02d29650f54c6f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: c02d467260a5197cdd01a3819f8a323655a8a08f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851480"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045098"
 ---
 # <a name="wif-configuration-schema-conventions"></a>Conventions de schéma de configuration de WIF
-Cette rubrique explique les conventions employées dans les rubriques traitant de la configuration de WIF (Windows Identity Foundation). Elle décrit également certaines fonctionnalités et attributs souvent utilisés dans les sections [\<system.identityModel>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) et [\<system.identityModel.services>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md).  
+Cette rubrique explique les conventions employées dans les rubriques traitant de la configuration de WIF (Windows Identity Foundation). Elle décrit également certaines fonctionnalités et attributs souvent utilisés dans les sections [\<system.identityModel>](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) et [\<system.identityModel.services>](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md).  
   
 <a name="BKMK_Modes"></a>   
 ## <a name="modes"></a>Modes  
@@ -44,5 +44,5 @@ Cette rubrique explique les conventions employées dans les rubriques traitant d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<system.identityModel>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)
-- [\<system.identityModel.services>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)
+- [\<system.identityModel>](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)
+- [\<system.identityModel.services>](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)

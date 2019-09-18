@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: fb14e195-fea5-4561-b9a8-60a67283edb9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ad78c9a277af23eebe357ef986ea59d16bb444e
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
-ms.translationtype: HT
+ms.openlocfilehash: aae87b60e207ebe406e863f123e1dc3e56aeb4f7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833732"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051935"
 ---
 # <a name="run-net-framework-11-apps-on-windows-8-windows-81-or-windows-10"></a>Exécuter des applications .NET Framework 1.1 sur Windows 8, Windows 8.1 ou Windows 10
 
-Le .NET Framework 1.1 n’est pas pris en charge sur les systèmes d’exploitation [!INCLUDE[win8](../../../includes/win8-md.md)], [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] et Windows 10. Dans certains cas, .NET Framework 1.1 est spécifiquement identifié conformément aux exigences d’exécution de l’application. Dans ces cas-là, vous devez contacter votre éditeur de logiciels indépendant (ISV) pour mettre à niveau l’application afin qu’elle s’exécute sur .NET Framework 3.5 SP1 ou version ultérieure. Pour plus d’informations, consultez [Migration depuis le .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md).
+Le .NET Framework 1.1 n’est pas pris en charge sur les systèmes d’exploitation [!INCLUDE[win8](../../../includes/win8-md.md)], [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] et Windows 10. Dans certains cas, .NET Framework 1.1 est spécifiquement identifié conformément aux exigences d’exécution de l’application. Dans ces cas-là, vous devez contacter votre éditeur de logiciels indépendant (ISV) pour mettre à niveau l’application afin qu’elle s’exécute sur .NET Framework 3.5 SP1 ou version ultérieure. Pour plus d’informations, consultez [Migration depuis le .NET Framework 1.1](../migration-guide/migrating-from-the-net-framework-1-1.md).
 
 ## <a name="install-the-net-framework-11-from-a-cd-or-download-center"></a>Installer le .NET Framework 1.1 à partir d’un CD ou du Centre de téléchargement
 
@@ -24,5 +24,5 @@ Il n’est pas possible d’installer manuellement le .NET Framework 1.1 sur [!
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Migration à partir du .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)
-- [Installation du .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)
+- [Migration à partir du .NET Framework 1.1](../migration-guide/migrating-from-the-net-framework-1-1.md)
+- [Installation du .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](dotnet-35-windows-10.md)

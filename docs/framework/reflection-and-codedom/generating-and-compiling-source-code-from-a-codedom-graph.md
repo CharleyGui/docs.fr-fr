@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7bfc915287e579374c69636135c4b049184ef6ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 4f2576aa0d1cf6a4938c8b1c8ee7883251cc192d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164786"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046076"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Génération et compilation du code source à partir d’un graphique CodeDOM
 L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la génération de code source à partir de graphiques d’objets CodeDOM et pour la gestion de la compilation avec les compilateurs pris en charge. Un fournisseur de code peut produire du code source dans un langage de programmation particulier en fonction d’un graphique CodeDOM. Une classe qui dérive de <xref:System.CodeDom.Compiler.CodeDomProvider> peut fournir en général des méthodes pour générer et compiler le code pour le langage pris en charge par le fournisseur.  
@@ -97,5 +97,5 @@ L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la
 
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
-- [Génération et compilation de code source dynamique](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)
+- [Génération et compilation de code source dynamique](dynamic-source-code-generation-and-compilation.md)
 - [Aide-mémoire de CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

@@ -5,33 +5,33 @@ helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 4223ee8c8790ad4d0ae2275b347c4f974eeb4158
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: e2df35959f9821c65d694079aefa0ae6ba01897f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877961"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053296"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Procédure : créer des certificats temporaires à utiliser pendant le développement
 
-Lorsque vous développez un service sécurisé ou un client à l’aide de Windows Communication Foundation (WCF), il est souvent nécessaire de fournir un certificat X.509 à utiliser comme informations d’identification. Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur. Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division. Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité. Le premier est un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif. Cette rubrique décrit les étapes pour créer ces deux certificats à l’aide de la commande Powershell [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) applet de commande.
+Lors du développement d’un service ou d’un client sécurisé à l’aide de Windows Communication Foundation (WCF), il est souvent nécessaire de fournir un certificat X. 509 à utiliser comme informations d’identification. Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur. Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division. Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité. Le premier est un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif. Cette rubrique décrit les étapes permettant de créer ces deux certificats à l’aide de l’applet de commande PowerShell [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) .
 
 > [!IMPORTANT]
-> Les certificats qui génère l’applet de commande New-SelfSignedCertificate sont fournis uniquement à des fins de test. Lorsque vous déployez un service ou un client, veillez à utiliser un certificat approprié fourni par une autorité de certification. Cela peut provenir d’un serveur de certificats Windows Server dans votre organisation ou un tiers.
+> Les certificats générés par l’applet de commande New-SelfSignedCertificate sont fournis à des fins de test uniquement. Lorsque vous déployez un service ou un client, veillez à utiliser un certificat approprié fourni par une autorité de certification. Il peut s’agir d’un serveur de certificats Windows Server dans votre organisation ou d’un tiers.
 >
-> Par défaut, le [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) applet de commande crée des certificats auto-signés et ces certificats ne sont pas sécurisés. Placer les certificats auto-signés dans Trusted Root Certification Authorities store vous permet de créer un environnement de développement plus fidèlement votre environnement de déploiement.
+> Par défaut, l’applet [de commande New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) crée des certificats auto-signés et ces certificats ne sont pas sécurisés. Le fait de placer les certificats auto-signés dans le magasin autorités de certification racines de confiance vous permet de créer un environnement de développement qui simule plus fidèlement votre environnement de déploiement.
 
- Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat comme information d’identification, consultez [Securing Services and Clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](https://go.microsoft.com/fwlink/?LinkId=88919)(Vues d’ensemble et didacticiels relatifs à Authenticode).
+ Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat en tant qu’informations d’identification, consultez [sécurisation des services et des clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](https://go.microsoft.com/fwlink/?LinkId=88919)(Vues d’ensemble et didacticiels relatifs à Authenticode).
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>Pour créer un certificat d'autorité racine auto-signé et exporter la clé privée
 
-La commande suivante crée un certificat auto-signé avec le nom du sujet du « RootCA » dans le magasin utilisateur actuel personnel.
+La commande suivante crée un certificat auto-signé avec le nom de sujet « RootCA » dans le magasin personnel de l’utilisateur actuel.
 
 ```powershell
-$rootCert = New-SelfSignedCertificate -CertStoreLocation cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.1,1.3.6.1.5.5.7.3.2") -KeyUsage CertSign,DigitalSignature
+$rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-Nous avons besoin d’exporter le certificat vers un fichier PFX afin qu’il puisse être importé à là où cela est nécessaire dans une étape ultérieure. Lorsque vous exportez un certificat avec la clé privée, un mot de passe est nécessaire pour les protéger. Nous enregistrons le mot de passe dans un `SecureString` et utiliser le [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) applet de commande pour exporter le certificat avec la clé privée associée à un fichier PFX. Nous enregistrons également simplement le certificat public dans un fichier de bibliothèque CRT, en utilisant le [Export-Certificate](/powershell/module/pkiclient/export-certificate) applet de commande.
+Nous devons exporter le certificat vers un fichier PFX afin qu’il puisse être importé dans où il est nécessaire dans une étape ultérieure. Lors de l’exportation d’un certificat avec la clé privée, un mot de passe est nécessaire pour le protéger. Nous enregistrons le mot de `SecureString` passe dans un et utilisons l’applet de commande [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) pour exporter le certificat avec la clé privée associée dans un fichier PFX. Nous enregistrons également simplement le certificat public dans un fichier CRT à l’aide de l’applet de commande [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -42,13 +42,13 @@ Export-Certificate -Cert $rootCertPath -FilePath 'RootCA.crt'
 
 ## <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a>Pour créer un nouveau certificat signé par un certificat d'autorité racine
 
-La commande suivante crée un certificat signé par le `RootCA` avec un nom de sujet de « SignedByRootCA » à l’aide de la clé privée de l’émetteur.
+La commande suivante crée un certificat signé par le `RootCA` avec le nom d’objet « SignedByRootCA » à l’aide de la clé privée de l’émetteur.
 
 ```powershell
 $testCert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "SignedByRootCA" -KeyExportPolicy Exportable -KeyLength 2048 -KeyUsage DigitalSignature,KeyEncipherment -Signer $rootCert
 ```
 
-De même, nous enregistrons le certificat signé avec la clé privée dans un fichier PFX et uniquement la clé publique dans un fichier de bibliothèque CRT.
+De même, nous enregistrons le certificat signé avec une clé privée dans un fichier PFX et juste la clé publique dans un fichier CRT.
 
 ```powershell
 [String]$testCertPath = Join-Path -Path 'cert:\LocalMachine\My\' -ChildPath "$($testCert.Thumbprint)"
@@ -62,7 +62,7 @@ Une fois qu'un certificat auto-signé est créé, vous pouvez l'installer dans l
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>Pour installer un certificat auto-signé dans les Autorités de certification racines de confiance
 
-1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d'informations, voir [Procédure : Afficher les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
+1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d’informations, consultez [Guide pratique pour Affichez les certificats avec le composant logiciel](how-to-view-certificates-with-the-mmc-snap-in.md)enfichable MMC.
 
 2. Ouvrez le dossier pour stocker le certificat, soit **Ordinateur local** , soit **Utilisateur actuel**.
 
@@ -70,9 +70,9 @@ Une fois qu'un certificat auto-signé est créé, vous pouvez l'installer dans l
 
 4. Cliquez avec le bouton droit sur le dossier **Certificats** et cliquez sur **Toutes les tâches**, puis cliquez sur **Importer**.
 
-5. Suivez l’Assistant à l’écran des instructions pour importer le RootCA.pfx dans le magasin.
+5. Suivez les instructions de l’Assistant à l’écran pour importer RootCA. pfx dans le magasin.
 
-## <a name="using-certificates-with-wcf"></a>L’utilisation de certificats avec WCF
+## <a name="using-certificates-with-wcf"></a>Utilisation de certificats avec WCF
 
 Une fois que vous avez configuré les certificats temporaires, vous pouvez les utiliser pour développer des solutions WCF qui spécifient des certificats comme un type d'informations d'identification du client. Par exemple, la configuration XML suivante spécifie la sécurité du message et un certificat comme type d'informations d'identification du client.
 
@@ -92,7 +92,7 @@ Une fois que vous avez configuré les certificats temporaires, vous pouvez les u
     </bindings>
     ```
 
-2. Dans le fichier de configuration pour un client, utilisez le code XML suivant pour spécifier que le certificat est trouvé dans le magasin de l’utilisateur et peut être trouvé en recherchant le champ SubjectName pour la valeur « CohoWinery ».
+2. Dans le fichier de configuration d’un client, utilisez le code XML suivant pour spécifier que le certificat se trouve dans le magasin de l’utilisateur et peut être trouvé en recherchant dans le champ SubjectName la valeur « CohoWinery ».
 
     ```xml
     <behaviors>
@@ -115,5 +115,5 @@ Veillez à supprimer tous les certificats d'autorité racines temporaires des do
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation des certificats](working-with-certificates.md)
-- [Guide pratique pour Afficher les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Guide pratique : Afficher les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [Sécurisation des services et des clients](securing-services-and-clients.md)

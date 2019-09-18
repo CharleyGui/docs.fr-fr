@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, control types
 - control types, UI Automation
 ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
-ms.openlocfilehash: 5274a2a090669a9c51c5247b68d2b0460625a494
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3c53d07cc6ebbd5259a4bfb5224c486481167c10
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911573"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042234"
 ---
 # <a name="ui-automation-control-types-overview"></a>Vue d'ensemble des types de contrôle UI Automation
 > [!NOTE]
@@ -36,81 +36,81 @@ ms.locfileid: "69911573"
 ## <a name="current-ui-automation-control-types"></a>Types de contrôle UI Automation actuels  
  La liste suivante contient les différents types de contrôle [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] actuels :  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Button](../../../docs/framework/ui-automation/ui-automation-support-for-the-button-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Button](ui-automation-support-for-the-button-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Calendar](../../../docs/framework/ui-automation/ui-automation-support-for-the-calendar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Calendar](ui-automation-support-for-the-calendar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle CheckBox](../../../docs/framework/ui-automation/ui-automation-support-for-the-checkbox-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle CheckBox](ui-automation-support-for-the-checkbox-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ComboBox](../../../docs/framework/ui-automation/ui-automation-support-for-the-combobox-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ComboBox](ui-automation-support-for-the-combobox-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle DataGrid](../../../docs/framework/ui-automation/ui-automation-support-for-the-datagrid-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle DataGrid](ui-automation-support-for-the-datagrid-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle DataItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-dataitem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle DataItem](ui-automation-support-for-the-dataitem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Document](../../../docs/framework/ui-automation/ui-automation-support-for-the-document-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Document](ui-automation-support-for-the-document-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Edit](../../../docs/framework/ui-automation/ui-automation-support-for-the-edit-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Edit](ui-automation-support-for-the-edit-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Group](../../../docs/framework/ui-automation/ui-automation-support-for-the-group-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Group](ui-automation-support-for-the-group-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Header](../../../docs/framework/ui-automation/ui-automation-support-for-the-header-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Header](ui-automation-support-for-the-header-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle HeaderItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-headeritem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle HeaderItem](ui-automation-support-for-the-headeritem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Hyperlink](../../../docs/framework/ui-automation/ui-automation-support-for-the-hyperlink-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Hyperlink](ui-automation-support-for-the-hyperlink-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Image](../../../docs/framework/ui-automation/ui-automation-support-for-the-image-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Image](ui-automation-support-for-the-image-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle List](../../../docs/framework/ui-automation/ui-automation-support-for-the-list-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle List](ui-automation-support-for-the-list-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ListItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-listitem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ListItem](ui-automation-support-for-the-listitem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Menu](../../../docs/framework/ui-automation/ui-automation-support-for-the-menu-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Menu](ui-automation-support-for-the-menu-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle MenuBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-menubar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle MenuBar](ui-automation-support-for-the-menubar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle MenuItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-menuitem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle MenuItem](ui-automation-support-for-the-menuitem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Pane](../../../docs/framework/ui-automation/ui-automation-support-for-the-pane-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Pane](ui-automation-support-for-the-pane-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ProgressBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-progressbar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ProgressBar](ui-automation-support-for-the-progressbar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle RadioButton](../../../docs/framework/ui-automation/ui-automation-support-for-the-radiobutton-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle RadioButton](ui-automation-support-for-the-radiobutton-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ScrollBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-scrollbar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ScrollBar](ui-automation-support-for-the-scrollbar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Separator](../../../docs/framework/ui-automation/ui-automation-support-for-the-separator-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Separator](ui-automation-support-for-the-separator-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Slider](../../../docs/framework/ui-automation/ui-automation-support-for-the-slider-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Slider](ui-automation-support-for-the-slider-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Spinner](../../../docs/framework/ui-automation/ui-automation-support-for-the-spinner-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Spinner](ui-automation-support-for-the-spinner-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle SplitButton](../../../docs/framework/ui-automation/ui-automation-support-for-the-splitbutton-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle SplitButton](ui-automation-support-for-the-splitbutton-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle StatusBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-statusbar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle StatusBar](ui-automation-support-for-the-statusbar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Tab](../../../docs/framework/ui-automation/ui-automation-support-for-the-tab-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Tab](ui-automation-support-for-the-tab-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle TabItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle TabItem](ui-automation-support-for-the-tabitem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Table](../../../docs/framework/ui-automation/ui-automation-support-for-the-table-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Table](ui-automation-support-for-the-table-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Text](../../../docs/framework/ui-automation/ui-automation-support-for-the-text-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Text](ui-automation-support-for-the-text-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Thumb](../../../docs/framework/ui-automation/ui-automation-support-for-the-thumb-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Thumb](ui-automation-support-for-the-thumb-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle TitleBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-titlebar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle TitleBar](ui-automation-support-for-the-titlebar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ToolBar](../../../docs/framework/ui-automation/ui-automation-support-for-the-toolbar-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ToolBar](ui-automation-support-for-the-toolbar-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle ToolTip](../../../docs/framework/ui-automation/ui-automation-support-for-the-tooltip-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle ToolTip](ui-automation-support-for-the-tooltip-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Tree](../../../docs/framework/ui-automation/ui-automation-support-for-the-tree-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Tree](ui-automation-support-for-the-tree-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle TreeItem](../../../docs/framework/ui-automation/ui-automation-support-for-the-treeitem-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle TreeItem](ui-automation-support-for-the-treeitem-control-type.md)  
   
-- [Prise en charge d’UI Automation pour le type de contrôle Window](../../../docs/framework/ui-automation/ui-automation-support-for-the-window-control-type.md)  
+- [Prise en charge d’UI Automation pour le type de contrôle Window](ui-automation-support-for-the-window-control-type.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

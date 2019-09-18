@@ -10,12 +10,12 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-ms.openlocfilehash: 33043652e11beb374843d43c9683ff4b7928eb3d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 2d3d85ebd80f417ebd0fa0e619097e15f2a6a39b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112799"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048773"
 ---
 # <a name="cache-policy"></a>Stratégie de cache
 Une stratégie de cache définit les règles utilisées pour déterminer si une requête peut être satisfaite à l’aide d’une copie mise en cache de la ressource demandée. Les applications spécifient les exigences d’actualisation du cache du client, mais la stratégie de cache effective est déterminée par les exigences de cache du client, les exigences d’expiration du contenu du serveur, et les exigences de revalidation du serveur. L’interaction entre la stratégie de cache du client et les exigences du serveur ont toujours comme résultat la stratégie de cache la plus restrictive, afin d’aider à garantir que le contenu le plus récent est renvoyé à l’application cliente.  
@@ -32,15 +32,15 @@ Une stratégie de cache définit les règles utilisées pour déterminer si une 
 |<xref:System.Net.Cache.HttpRequestCacheLevel>|Spécifie les valeurs utilisées pour créer des objets <xref:System.Net.Cache.HttpRequestCachePolicy> basés sur la durée et sur l’emplacement.|  
 |<xref:System.Net.Cache.RequestCacheLevel>|Spécifie les valeurs utilisées pour créer des objets basés sur l’emplacement ou les objets <xref:System.Net.Cache.RequestCachePolicy> basés sur la durée <xref:System.Net.Cache.RequestCacheLevel.Default>.|  
   
- Vous pouvez définir une stratégie de cache pour toutes les requêtes effectuées par votre application ou pour des requêtes individuelles. Quand vous spécifiez à la fois une stratégie de cache au niveau de l’application et une stratégie de cache au niveau de la requête, c’est la stratégie au niveau de la requête qui est utilisée. Vous pouvez spécifier une stratégie de cache au niveau de l’application par programmation ou à l’aide de fichiers de configuration d’application ou d’ordinateur. Pour plus d’informations, consultez [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+ Vous pouvez définir une stratégie de cache pour toutes les requêtes effectuées par votre application ou pour des requêtes individuelles. Quand vous spécifiez à la fois une stratégie de cache au niveau de l’application et une stratégie de cache au niveau de la requête, c’est la stratégie au niveau de la requête qui est utilisée. Vous pouvez spécifier une stratégie de cache au niveau de l’application par programmation ou à l’aide de fichiers de configuration d’application ou d’ordinateur. Pour plus d’informations, consultez [\<requestCaching>, élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
  Pour créer une stratégie de cache, vous devez créer un objet de stratégie en créant une instance de la classe <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>. Pour spécifier la stratégie sur une requête, affectez l’objet de stratégie comme valeur de la propriété <xref:System.Net.WebRequest.CachePolicy%2A> de la requête. Quand vous définissez une stratégie au niveau de l’application par programmation, affectez l’objet de stratégie comme valeur de la propriété <xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>.  
   
- Pour obtenir des exemples de code qui montrent comment créer et utiliser des stratégies de cache, consultez [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
+ Pour obtenir des exemples de code qui montrent comment créer et utiliser des stratégies de cache, consultez [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)
+- [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
+- [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
+- [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)

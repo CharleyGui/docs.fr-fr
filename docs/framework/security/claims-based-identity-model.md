@@ -3,15 +3,15 @@ title: Modèle d’identité basée sur les revendications
 ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
-ms.openlocfilehash: b7cafa727251c28b79615a37adce4effe6885392
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: c09d3e177d8b0638f0260b76c163bf668235db29
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422404"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045524"
 ---
 # <a name="claims-based-identity-model"></a>Modèle d’identité basée sur les revendications
-Lorsque vous créez des applications qui prennent en charge les revendications, l'identité de l'utilisateur est représentée dans votre application comme un ensemble de revendications. Une revendication peut être le nom d’utilisateur, un autre peut être une adresse de messagerie. L'idée est qu'un système d'identité externe soit configuré pour fournir à votre application tout ce qu'elle doit savoir à propos de l'utilisateur avec chaque demande effectuée, ainsi que l'assurance de chiffrement que les données d'identité que vous recevez proviennent d'une source approuvée.  
+Lorsque vous créez des applications qui prennent en charge les revendications, l'identité de l'utilisateur est représentée dans votre application comme un ensemble de revendications. Une revendication peut être le nom de l’utilisateur, un autre peut être une adresse de messagerie. L'idée est qu'un système d'identité externe soit configuré pour fournir à votre application tout ce qu'elle doit savoir à propos de l'utilisateur avec chaque demande effectuée, ainsi que l'assurance de chiffrement que les données d'identité que vous recevez proviennent d'une source approuvée.  
   
  Dans ce modèle, une authentification unique est beaucoup plus facile à effectuer, et votre application n'est plus responsable des opérations suivantes :  
   
@@ -27,9 +27,9 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
   
  Cette rubrique fournit les informations suivantes :  
   
-- [Présentation de l’identité basée sur les revendications](../../../docs/framework/security/claims-based-identity-model.md#BKMK_1)  
+- [Présentation de l’identité basée sur les revendications](claims-based-identity-model.md#BKMK_1)  
   
-- [Scénario de base pour un modèle d’identité basé sur des revendications](../../../docs/framework/security/claims-based-identity-model.md#BKMK_2)  
+- [Scénario de base pour un modèle d’identité basé sur des revendications](claims-based-identity-model.md#BKMK_2)  
   
 <a name="BKMK_1"></a>   
 ## <a name="introduction-to-claims-based-identity"></a>Présentation de l'identité basée sur les revendications  
@@ -39,7 +39,7 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
  Pour les besoins de description du modèle de programmation dans Windows Identity Foundation (WIF), nous utiliserons le terme « identité » pour représenter un jeu d’attributs qui décrit un utilisateur ou une autre entité dans un système à sécuriser.  
   
 ### <a name="claim"></a>Revendication  
- Imaginez une revendication comme une partie des informations d’identité tels que le nom, adresse de messagerie, âge, l’appartenance au rôle Sales. Plus votre application reçoit de revendications, plus vous en savez sur l'utilisateur. Vous vous demandez peut-être pourquoi le terme « revendications » est employé plutôt que « attributs », qui est souvent utilisé pour décrire des annuaires d’entreprise. La raison est liée à la méthode de remise. Dans ce modèle, votre application ne recherche pas les attributs utilisateur dans un répertoire. En revanche, l'utilisateur fournit des revendications à votre application, et que celle-ci les examine. Chaque revendication est faite par un émetteur, et vous devez approuver la revendication autant que vous approuvez l'émetteur. Par exemple, vous devez faire confiance à une revendication faite par le contrôleur de domaine de votre société plus que celle faite par l'utilisateur lui-même. WIF représente les revendications avec un type <xref:System.Security.Claims.Claim>, qui possède une propriété <xref:System.Security.Claims.Claim.Issuer%2A> qui vous permet de savoir qui a publié la revendication.  
+ Considérez une revendication comme une partie des informations d’identité, telles que le nom, l’adresse de messagerie, l’âge et l’appartenance au rôle Sales. Plus votre application reçoit de revendications, plus vous en savez sur l'utilisateur. Vous vous demandez peut-être pourquoi le terme « revendications » est employé plutôt que « attributs », qui est souvent utilisé pour décrire des annuaires d’entreprise. La raison est liée à la méthode de remise. Dans ce modèle, votre application ne recherche pas les attributs utilisateur dans un répertoire. En revanche, l'utilisateur fournit des revendications à votre application, et que celle-ci les examine. Chaque revendication est faite par un émetteur, et vous devez approuver la revendication autant que vous approuvez l'émetteur. Par exemple, vous devez faire confiance à une revendication faite par le contrôleur de domaine de votre société plus que celle faite par l'utilisateur lui-même. WIF représente les revendications avec un type <xref:System.Security.Claims.Claim>, qui possède une propriété <xref:System.Security.Claims.Claim.Issuer%2A> qui vous permet de savoir qui a publié la revendication.  
   
 ### <a name="security-token"></a>Jeton de sécurité  
  L'utilisateur fournit un ensemble de revendications à votre application avec une demande. Dans un service Web, ces revendications sont effectuées dans l'en-tête de sécurité de l'enveloppe SOAP. Dans une application Web basée sur un navigateur, les revendications passent par à une publication HTTP à partir du navigateur de l'utilisateur, et peuvent être mises en cache dans un cookie par la suite si une session est requise. Quelle que soit la façon dont ces revendications arrivent, elles doivent être sérialisées, c'est là que les jetons de sécurité entrent en action. Un jeton de sécurité est un ensemble sérialisé de revendications qui est signé numériquement par l'autorité de publication. La signature est importante : elle vous donne l'assurance que l'utilisateur n'a pas simplement effectué un ensemble de revendications et vous l'a envoyé. Lorsque la sécurité n'est pas une priorité et que le chiffrement n'est pas nécessaire ou souhaité, vous pouvez utiliser des jetons non signés, mais ce scénario n'est pas décrit dans cette rubrique.  
@@ -58,7 +58,7 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
  Lorsque vous créez une application qui se base sur les revendications, vous créez une application de partie de confiance. Parmi les synonymes de partie de confiance on trouve « application prenant en charge les revendications » et « application basée sur les revendications ». Les applications Web et les services Web peuvent être des parties de confiance. Une application de partie de confiance consomme des jetons créés par STS et extrait les revendications des jetons pour les utiliser pour les tâches d’identité associées. WIF offre des fonctionnalités pour vous aider à générer des applications de partie de confiance.  
   
 ### <a name="standards"></a>Normes  
- Afin de rendre tout cela interopérable, plusieurs normes WS-* sont utilisées dans le scénario précédent. La stratégie est récupérée à l'aide de WS-MetadataExchange, et la stratégie elle-même est structurée selon la spécification WS-Policy. STS expose les points de terminaison qui implémentent la spécification WS-Trust, qui décrit comment demander et recevoir des jetons de sécurité. La plupart des STS publient aujourd'hui des jetons mis en forme avec Security Assertion Markup Language (SAML). SAML est une terminologie XML reconnue dans l'industrie qui peut être utilisée pour représenter les revendications de façon interopérable. Ou, dans une situation de multi-plateforme, cela vous permet de communiquer avec STS sur une plateforme entièrement différente et d'obtenir une authentification unique pour toutes vos applications, indépendamment de la plateforme.  
+ Afin de rendre tout cela interopérable, plusieurs normes WS-* sont utilisées dans le scénario précédent. La stratégie est récupérée à l'aide de WS-MetadataExchange, et la stratégie elle-même est structurée selon la spécification WS-Policy. STS expose les points de terminaison qui implémentent la spécification WS-Trust, qui décrit comment demander et recevoir des jetons de sécurité. La plupart des émission émettent aujourd’hui des jetons mis en forme avec Security Assertion Markup Language (SAML). SAML est une terminologie XML reconnue dans l'industrie qui peut être utilisée pour représenter les revendications de façon interopérable. Ou, dans une situation de multi-plateforme, cela vous permet de communiquer avec STS sur une plateforme entièrement différente et d'obtenir une authentification unique pour toutes vos applications, indépendamment de la plateforme.  
   
 ### <a name="browser-based-applications"></a>Applications basées sur un navigateur  
  Les clients intelligents ne sont pas les seuls à pouvoir utiliser le modèle d'identité basée sur des revendications. Les applications basées sur un navigateur (également appelées clients passifs) peuvent également l'utiliser. Le scénario suivant décrit comment cela fonctionne.  
@@ -69,14 +69,14 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
 ## <a name="basic-scenario-for-a-claims-based-identity-model"></a>Scénario de base pour un modèle d'identité basé sur des revendications  
  Voici un exemple de système basé sur une revendication.  
   
- ![Flux d’authentification du partenaire de confiance](../../../docs/framework/security/media/conc-relying-partner-processc.png "conc_relying_partner_processc")  
+ ![Flux d’authentification du partenaire de confiance](./media/conc-relying-partner-processc.png "conc_relying_partner_processc")  
   
  Ce diagramme illustre un site web (l’application de la partie de confiance) configuré pour utiliser WIF pour l’authentification et un client, un navigateur Web, qui veut utiliser ce site.  
   
-1. Lorsqu’un utilisateur non authentifié demande une page, son navigateur est redirigé vers les pages de fournisseur (IdP) d’identité.  
+1. Lorsqu’un utilisateur non authentifié demande une page, son navigateur est redirigé vers les pages du fournisseur d’identité (IdP).  
   
-2. Le fournisseur d’identité oblige l’utilisateur à présenter leurs informations d’identification, telles que le nom d’utilisateur/mot de passe ou l’authentification Kerberos.  
+2. L’IdP oblige l’utilisateur à présenter ses informations d’identification, telles que le nom d’utilisateur/mot de passe ou l’authentification Kerberos.  
   
-3. Les problèmes de fournisseur d’identité un jeton qui est renvoyé au navigateur.  
+3. L’IdP renvoie un jeton à qui est renvoyé au navigateur.  
   
 4. Le navigateur est à présent redirigé vers la page demandée à l'origine où WIF détermine si le jeton répond aux besoins pour accéder à la page. Si c'est le cas, un cookie est publié pour établir une session afin que l'authentification ne se produise qu'une fois et que le contrôle soit transmis à l'application.

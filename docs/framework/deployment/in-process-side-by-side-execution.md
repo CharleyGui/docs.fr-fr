@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d9d77ef20090e007e22a0d2f90b29f32ff94b46
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 2a33d3c4216ed8c5d79aef4017c6b9256fc1ad7c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911111"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052103"
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
 À compter de .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
@@ -60,7 +60,7 @@ ms.locfileid: "69911111"
   
      Versions du .NET Framework installées : une version antérieure du .NET Framework et .NET Framework 4.  
   
-     Que faire : dans le [fichier de configuration de l’application](../../../docs/framework/configure-apps/index.md) dans le répertoire de l’application, utilisez l’[élément \<startup>](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) et l’[élément \<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) défini comme suit :  
+     Que faire : dans le [fichier de configuration de l’application](../configure-apps/index.md) dans le répertoire de l’application, utilisez l’[élément \<startup>](../configure-apps/file-schema/startup/startup-element.md) et l’[élément \<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) défini comme suit :  
   
     ```xml  
     <configuration>  
@@ -175,5 +175,5 @@ int _tmain(int argc, _TCHAR* argv[])
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<startup>, élément](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
-- [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<startup>, élément](../configure-apps/file-schema/startup/startup-element.md)
+- [\<supportedRuntime>, élément](../configure-apps/file-schema/startup/supportedruntime-element.md)

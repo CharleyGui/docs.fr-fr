@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Selection Item control pattern
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-ms.openlocfilehash: aef1d31499f65834fa1268147e45f82294fe560a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8b1492bbc9f761c08b178bf42bdf5287bc5ebfb1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935687"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043213"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implémentation du modèle de contrôle SelectionItem d’UI Automation
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69935687"
   
  Cette rubrique présente les conventions et directives à respecter pour implémenter <xref:System.Windows.Automation.Provider.ISelectionItemProvider>, notamment les informations sur les propriétés, les méthodes et les événements. Des liens vers des références supplémentaires sont répertoriés à la fin de la vue d'ensemble.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.SelectionItemPattern> permet de prendre en charge les contrôles qui agissent en tant qu’éléments enfants individuels et sélectionnables de contrôles conteneurs qui implémentent <xref:System.Windows.Automation.Provider.ISelectionProvider>. Pour obtenir des exemples de contrôles qui implémentent le modèle de contrôle SelectionItem, consultez [mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
+ Le modèle de contrôle <xref:System.Windows.Automation.SelectionItemPattern> permet de prendre en charge les contrôles qui agissent en tant qu’éléments enfants individuels et sélectionnables de contrôles conteneurs qui implémentent <xref:System.Windows.Automation.Provider.ISelectionProvider>. Pour obtenir des exemples de contrôles qui implémentent le modèle de contrôle SelectionItem, consultez [mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
@@ -50,10 +50,10 @@ ms.locfileid: "69935687"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Implémentation du modèle de contrôle Selection d’UI Automation](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)
-- [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
+- [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
+- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [Implémentation du modèle de contrôle Selection d’UI Automation](implementing-the-ui-automation-selection-control-pattern.md)
+- [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
+- [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)
 - [Exemple de fournisseur de fragments](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))

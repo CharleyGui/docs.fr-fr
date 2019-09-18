@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e80e044fe01172c587ef029186035a64cdf0b42
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 4038f8e4a3c012fab9df6019b5f9f19375f61f2a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971223"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044286"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (outil Assembly Registration Tool)
 
 L'outil Assembly Registration Tool (Inscription de l'assembly) lit les métadonnées figurant dans un assembly et ajoute les entrées nécessaires au Registre, ce qui permet aux clients COM de créer en toute transparence des classes .NET Framework. Une fois qu'une classe est inscrite, tout client COM peut l'utiliser comme s'il s'agissait d'une classe COM. La classe fait l'objet d'une seule inscription, lors de l'installation de l'assembly. Les instances des classes figurant dans l'assembly ne peuvent pas être créées à partir de COM tant qu'elles n'ont pas été concrètement inscrites.
 
-Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -56,13 +56,13 @@ regasm assemblyFile [options]
 
 Vous pouvez utiliser l’option **/regfile** pour générer un fichier .reg comportant les entrées du Registre plutôt que d’apporter directement les modifications au Registre. Vous pouvez mettre à jour le Registre d'un ordinateur en important le fichier .reg à l'aide de l'Éditeur du Registre (Regedit.exe). Notez que le fichier .reg ne comporte pas de mises à jour du Registre pouvant être effectuées par des fonctions de Registre définies par l'utilisateur.  Notez que l’option **/regfile** émet seulement des entrées du Registre pour les classes managées.  Cette option n'émet pas d'entrée pour `TypeLibID` ou `InterfaceID`.
 
-Quand vous spécifiez l’option **/tlb**, Regasm.exe génère et inscrit une bibliothèque de types décrivant les types figurant dans l’assembly. Regasm.exe place les bibliothèques de types générées dans le répertoire de travail en cours ou dans le répertoire spécifié pour le fichier de sortie. La génération d'une bibliothèque de types pour un assembly référençant d'autres assemblys peut provoquer la génération de plusieurs bibliothèques de types en une seule opération. Vous pouvez utiliser la bibliothèque de types pour fournir les informations de type aux outils de développement comme Visual Studio. Vous ne devez pas utiliser l’option **/tlb** si l’assembly que vous êtes en train d’inscrire a été créé par l’importateur de bibliothèques de types ([Tlbimp.exe](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)). Vous ne pouvez pas exporter de bibliothèque de types à partir d'un assembly ayant été importé depuis une bibliothèque de types. L’option **/tlb** produit le même effet que l’exportateur de bibliothèques de types ([Tlbexp.exe](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)) et Regasm.exe, à l’exception près que Tlbexp.exe n’inscrit pas la bibliothèque de types qu’il génère.  Si vous utilisez l’option **/tlb** pour inscrire une bibliothèque de types, vous pouvez utiliser l’option **/tlb** avec l’option **/unregister** pour annuler l’inscription de la bibliothèque de types. L'utilisation simultanée des deux options annulera l'inscription de la bibliothèque de types et des entrées d'interface, ce qui peut considérablement nettoyer le Registre.
+Quand vous spécifiez l’option **/tlb**, Regasm.exe génère et inscrit une bibliothèque de types décrivant les types figurant dans l’assembly. Regasm.exe place les bibliothèques de types générées dans le répertoire de travail en cours ou dans le répertoire spécifié pour le fichier de sortie. La génération d'une bibliothèque de types pour un assembly référençant d'autres assemblys peut provoquer la génération de plusieurs bibliothèques de types en une seule opération. Vous pouvez utiliser la bibliothèque de types pour fournir les informations de type aux outils de développement comme Visual Studio. Vous ne devez pas utiliser l’option **/tlb** si l’assembly que vous êtes en train d’inscrire a été créé par l’importateur de bibliothèques de types ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)). Vous ne pouvez pas exporter de bibliothèque de types à partir d'un assembly ayant été importé depuis une bibliothèque de types. L’option **/tlb** produit le même effet que l’exportateur de bibliothèques de types ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) et Regasm.exe, à l’exception près que Tlbexp.exe n’inscrit pas la bibliothèque de types qu’il génère.  Si vous utilisez l’option **/tlb** pour inscrire une bibliothèque de types, vous pouvez utiliser l’option **/tlb** avec l’option **/unregister** pour annuler l’inscription de la bibliothèque de types. L'utilisation simultanée des deux options annulera l'inscription de la bibliothèque de types et des entrées d'interface, ce qui peut considérablement nettoyer le Registre.
 
 Lorsque vous inscrivez un assembly destiné à être utilisé par COM, Regasm.exe ajoute des entrées au Registre sur l'ordinateur local. Plus précisément, il crée des clés de Registre dépendantes de la version qui permettent à plusieurs versions du même assembly de s'exécuter côte-à-côte sur un ordinateur. Lorsqu'un assembly est inscrit pour la première fois, une clé de niveau supérieur est créée pour l'assembly et une sous-clé unique est créée pour la version spécifique. Chaque fois que vous inscrivez une nouvelle version de l'assembly, Regasm.exe crée une sous-clé pour la nouvelle version.
 
 Par exemple, imaginons un scénario dans lequel vous inscrivez le composant managé, myComp.dll, version 1.0.0.0 pour qu'il soit utilisé par COM. Par la suite, vous inscrivez myComp.dll, version 2.0.0.0. Vous décidez que toutes les applications clientes COM sur l'ordinateur utilisent myComp.dll version 2.0.0.0 et vous décidez d'annuler l'inscription de myComponent.dll version 1.0.0.0. Ce modèle de Registre vous permet d'annuler l'inscription de myComp.dll version 1.0.0.0, car seule la sous-clé de la version 1.0.0.0 est supprimée.
 
-Après avoir inscrit un assembly à l’aide de Regasm.exe, vous pouvez l’installer dans le [Global Assembly Cache](../../../docs/framework/app-domains/gac.md), pour qu’il puisse être activé à partir d’un client COM. Si l'assembly ne va être activé que par une seule application, vous pouvez alors le placer dans le répertoire de cette application.
+Après avoir inscrit un assembly à l’aide de Regasm.exe, vous pouvez l’installer dans le [Global Assembly Cache](../app-domains/gac.md), pour qu’il puisse être activé à partir d’un client COM. Si l'assembly ne va être activé que par une seule application, vous pouvez alors le placer dans le répertoire de cette application.
 
 ## <a name="examples"></a>Exemples
 
@@ -86,8 +86,8 @@ regasm myTest.dll /tlb:myTest.tlb
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Tlbexp.exe (exportateur de bibliothèques de types)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Tlbimp.exe (importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
-- [Inscription d’assemblys dans COM](../../../docs/framework/interop/registering-assemblies-with-com.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Outils](index.md)
+- [Tlbexp.exe (exportateur de bibliothèques de types)](tlbexp-exe-type-library-exporter.md)
+- [Tlbimp.exe (importateur de bibliothèques de types)](tlbimp-exe-type-library-importer.md)
+- [Inscription d’assemblys dans COM](../interop/registering-assemblies-with-com.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)
