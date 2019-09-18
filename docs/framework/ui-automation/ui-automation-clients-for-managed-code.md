@@ -7,30 +7,30 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: b8df3d07a18efcfbb6c30b46668ab8fec8736af5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 578a6da0f1545012d5a77edc3db04d52f56180bc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953206"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042509"
 ---
-# <a name="ui-automation-clients-for-managed-code"></a><span data-ttu-id="acb5a-102">Clients UI Automation pour le code managé</span><span class="sxs-lookup"><span data-stu-id="acb5a-102">UI Automation Clients for Managed Code</span></span>
+# <a name="ui-automation-clients-for-managed-code"></a><span data-ttu-id="65abf-102">Clients UI Automation pour le code managé</span><span class="sxs-lookup"><span data-stu-id="65abf-102">UI Automation Clients for Managed Code</span></span>
 > [!NOTE]
-> <span data-ttu-id="acb5a-103">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="acb5a-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="acb5a-104">Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="acb5a-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
+> <span data-ttu-id="65abf-103">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="65abf-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="65abf-104">Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="65abf-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- <span data-ttu-id="acb5a-105">Cette section contient des vues d’ensemble et des rubriques de procédure pour vous aider à développer des clients UI Automation.</span><span class="sxs-lookup"><span data-stu-id="acb5a-105">This section contains overviews and how-to topics to help you develop UI Automation clients.</span></span>  
+ <span data-ttu-id="65abf-105">Cette section contient des vues d’ensemble et des rubriques de procédure pour vous aider à développer des clients UI Automation.</span><span class="sxs-lookup"><span data-stu-id="65abf-105">This section contains overviews and how-to topics to help you develop UI Automation clients.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="acb5a-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="acb5a-106">In This Section</span></span>  
- [<span data-ttu-id="acb5a-107">Mise à l’échelle de l’écran et UI Automation</span><span class="sxs-lookup"><span data-stu-id="acb5a-107">UI Automation and Screen Scaling</span></span>](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
- [<span data-ttu-id="acb5a-108">Prise en charge d’UI Automation pour les contrôles standard</span><span class="sxs-lookup"><span data-stu-id="acb5a-108">UI Automation Support for Standard Controls</span></span>](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)  
- [<span data-ttu-id="acb5a-109">Événements UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="acb5a-109">UI Automation Events for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
- [<span data-ttu-id="acb5a-110">Mise en cache dans les clients UI Automation</span><span class="sxs-lookup"><span data-stu-id="acb5a-110">Caching in UI Automation Clients</span></span>](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
- [<span data-ttu-id="acb5a-111">Propriétés UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="acb5a-111">UI Automation Properties for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
- [<span data-ttu-id="acb5a-112">Mappage de modèle de contrôle pour les clients UI Automation</span><span class="sxs-lookup"><span data-stu-id="acb5a-112">Control Pattern Mapping for UI Automation Clients</span></span>](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
- [<span data-ttu-id="acb5a-113">Modèles de contrôle UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="acb5a-113">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [<span data-ttu-id="acb5a-114">Obtention d’éléments UI Automation</span><span class="sxs-lookup"><span data-stu-id="acb5a-114">Obtaining UI Automation Elements</span></span>](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
- [<span data-ttu-id="acb5a-115">Problèmes liés aux threads UI Automation</span><span class="sxs-lookup"><span data-stu-id="acb5a-115">UI Automation Threading Issues</span></span>](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
- [<span data-ttu-id="acb5a-116">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="acb5a-116">How-to Topics</span></span>](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="65abf-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="65abf-106">In This Section</span></span>  
+ [<span data-ttu-id="65abf-107">Mise à l’échelle de l’écran et UI Automation</span><span class="sxs-lookup"><span data-stu-id="65abf-107">UI Automation and Screen Scaling</span></span>](ui-automation-and-screen-scaling.md)  
+ [<span data-ttu-id="65abf-108">Prise en charge d’UI Automation pour les contrôles standard</span><span class="sxs-lookup"><span data-stu-id="65abf-108">UI Automation Support for Standard Controls</span></span>](ui-automation-support-for-standard-controls.md)  
+ [<span data-ttu-id="65abf-109">Événements UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="65abf-109">UI Automation Events for Clients</span></span>](ui-automation-events-for-clients.md)  
+ [<span data-ttu-id="65abf-110">Mise en cache dans les clients UI Automation</span><span class="sxs-lookup"><span data-stu-id="65abf-110">Caching in UI Automation Clients</span></span>](caching-in-ui-automation-clients.md)  
+ [<span data-ttu-id="65abf-111">Propriétés UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="65abf-111">UI Automation Properties for Clients</span></span>](ui-automation-properties-for-clients.md)  
+ [<span data-ttu-id="65abf-112">Mappage de modèle de contrôle pour les clients UI Automation</span><span class="sxs-lookup"><span data-stu-id="65abf-112">Control Pattern Mapping for UI Automation Clients</span></span>](control-pattern-mapping-for-ui-automation-clients.md)  
+ [<span data-ttu-id="65abf-113">Modèles de contrôle UI Automation pour les clients</span><span class="sxs-lookup"><span data-stu-id="65abf-113">UI Automation Control Patterns for Clients</span></span>](ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="65abf-114">Obtention d’éléments UI Automation</span><span class="sxs-lookup"><span data-stu-id="65abf-114">Obtaining UI Automation Elements</span></span>](obtaining-ui-automation-elements.md)  
+ [<span data-ttu-id="65abf-115">Problèmes liés aux threads UI Automation</span><span class="sxs-lookup"><span data-stu-id="65abf-115">UI Automation Threading Issues</span></span>](ui-automation-threading-issues.md)  
+ [<span data-ttu-id="65abf-116">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="65abf-116">How-to Topics</span></span>](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="acb5a-117">Référence</span><span class="sxs-lookup"><span data-stu-id="acb5a-117">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="65abf-117">Référence</span><span class="sxs-lookup"><span data-stu-id="65abf-117">Reference</span></span>  
  <xref:System.Windows.Automation>
