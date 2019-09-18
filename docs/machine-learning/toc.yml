@@ -35,12 +35,16 @@
           href: tutorials/sales-anomaly-detection.md
         - name: Détecter des objets dans des images (détection d’objets)
           href: tutorials/object-detection-onnx.md
+        - name: Classifier les sentiments avec TensorFlow (classification de texte)
+          href: tutorials/text-classification-tf.md
     - name: Outils
       items:
         - name: Prédire des prix avec le Générateur de modèle
           href: tutorials/predict-prices-with-model-builder.md
         - name: Analyser les sentiments à l’aide de la CLI ML.NET
           href: tutorials/mlnet-cli.md
+        - name: Analyser les sentiments avec le Générateur de modèles et Razor Pages
+          href: tutorials/sentiment-analysis-model-builder.md
 - name: Concepts
   items:
     - name: Tâches ML.NET (types de modèles)
