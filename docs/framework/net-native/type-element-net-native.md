@@ -1,15 +1,15 @@
 ---
-title: <Type> Élément (.NET Native)
+title: <Type>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fc93d1af65a34381005c3f3987dd18a8e7bba8d9
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 7ffe37540fe089bfd1e0eca1958498e725eb9b5b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689280"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049150"
 ---
 # <a name="type-element-net-native"></a>\<Type >, élément (.NET Native)
 
@@ -39,7 +39,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Type d'attribut|Description|
 |---------------|--------------------|-----------------|
-|`Name`|Général|Attribut requis. Spécifie le nom du type.|
+|`Name`|Généralités|Attribut requis. Spécifie le nom du type.|
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|
@@ -53,60 +53,60 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="name-attribute"></a>Name (attribut)
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|*type_name*|Nom du type. Si cet élément `<Type>` est l’enfant d’un élément [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md) ou d’un autre élément `<Type>`, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|
+|*type_name*|Nom du type. Si cet élément `<Type>` est l’enfant d’un élément [\<Namespace>](namespace-element-net-native.md) ou d’un autre élément `<Type>`, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|
 
 ## <a name="all-other-attributes"></a>Tous les autres attributs
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|
+|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<AttributeImplies>](../../../docs/framework/net-native/attributeimplies-element-net-native.md)|Si le type conteneur est un attribut, définit la stratégie runtime pour les éléments de code auxquels l'attribut est appliqué.|
-|[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Applique la stratégie de réflexion à un événement appartenant à ce type.|
-|[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)|Applique la stratégie de réflexion à un champ appartenant à ce type.|
-|[\<GenericParameter>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|Applique la stratégie au type de paramètre d'un type générique.|
-|[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|Applique la stratégie à un type, si cette stratégie a été appliquée au type représenté par l'élément conteneur `<Type>`.|
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applique la stratégie de réflexion à une méthode appartenant à ce type.|
-|[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Applique la stratégie de réflexion à une méthode générique construite appartenant à ce type.|
-|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Applique la stratégie de réflexion à une propriété appartenant à ce type.|
-|[\<Subtypes>](../../../docs/framework/net-native/subtypes-element-net-native.md)|Applique la stratégie runtime à toutes les classes héritées du type conteneur.|
+|[\<AttributeImplies>](attributeimplies-element-net-native.md)|Si le type conteneur est un attribut, définit la stratégie runtime pour les éléments de code auxquels l'attribut est appliqué.|
+|[\<Event>](event-element-net-native.md)|Applique la stratégie de réflexion à un événement appartenant à ce type.|
+|[\<Field>](field-element-net-native.md)|Applique la stratégie de réflexion à un champ appartenant à ce type.|
+|[\<GenericParameter>](genericparameter-element-net-native.md)|Applique la stratégie au type de paramètre d'un type générique.|
+|[\<ImpliesType>](impliestype-element-net-native.md)|Applique la stratégie à un type, si cette stratégie a été appliquée au type représenté par l'élément conteneur `<Type>`.|
+|[\<Method>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode appartenant à ce type.|
+|[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|Applique la stratégie de réflexion à une méthode générique construite appartenant à ce type.|
+|[\<Property>](property-element-net-native.md)|Applique la stratégie de réflexion à une propriété appartenant à ce type.|
+|[\<Subtypes>](subtypes-element-net-native.md)|Applique la stratégie runtime à toutes les classes héritées du type conteneur.|
 |`<Type>`|Applique la stratégie de réflexion à un type imbriqué.|
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit.|
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.|
-|[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|Applique la stratégie de réflexion à tous les types d'un assembly spécifié.|
-|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.|
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Applique la stratégie de réflexion à tous les types d'un espace de noms.|
+|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.|
+|[\<Assembly>](assembly-element-net-native.md)|Applique la stratégie de réflexion à tous les types d'un assembly spécifié.|
+|[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.|
+|[\<Namespace>](namespace-element-net-native.md)|Applique la stratégie de réflexion à tous les types d'un espace de noms.|
 |`<Type>`|Applique la stratégie de réflexion à un type et à tous ses membres.|
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|
 
 ## <a name="remarks"></a>Notes
 
 Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs. Si aucun n'est présent, l'élément `<Type>` sert de conteneur dont les types enfants définissent une stratégie pour des membres individuels.
 
-Si un élément `<Type>` est l’enfant d’un élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), `<Type>` ou [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md), il se substitue aux paramètres de stratégie définis par l’élément parent.
+Si un élément `<Type>` est l’enfant d’un élément [\<Assembly>](assembly-element-net-native.md), [\<Namespace>](namespace-element-net-native.md), `<Type>` ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md), il se substitue aux paramètres de stratégie définis par l’élément parent.
 
-Un élément `<Type>` d'un type générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie. La stratégie des types génériques construits est définie par l’élément [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).
+Un élément `<Type>` d'un type générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie. La stratégie des types génériques construits est définie par l’élément [\<TypeInstantiation>](typeinstantiation-element-net-native.md).
 
 Si le type est un type générique, son nom est décoré par un accent grave (\`) suivi de son nombre de paramètres génériques. Par exemple, l'attribut `Name` d'un élément `<Type>` pour la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> est ``Name="System.Collections.Generic.List`1"``.
 
 ## <a name="example"></a>Exemple
 
-L'exemple suivant utilise la réflexion pour afficher des informations sur les champs, les propriétés et les méthodes de la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La variable `b` dans l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle. Comme l'exemple récupère simplement les informations de type, la disponibilité des métadonnées est contrôlée par le paramètre de stratégie `Browse`.
+L'exemple suivant utilise la réflexion pour afficher des informations sur les champs, les propriétés et les méthodes de la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle. Comme l'exemple récupère simplement les informations de type, la disponibilité des métadonnées est contrôlée par le paramètre de stratégie `Browse`.
 
  [!code-csharp[ProjectN_Reflection#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/browsegenerictype1.cs#3)]
 
- Étant donné que les métadonnées pour la <xref:System.Collections.Generic.List%601> classe n’est pas incluse automatiquement par la chaîne d’outils .NET Native, l’exemple ne parvient pas à afficher les informations de membre demandé au moment de l’exécution. Pour fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime. Comme nous avons déjà fourni un élément [<Namespace\>](../../../docs/framework/net-native/namespace-element-net-native.md) parent, nous n’avons pas à fournir un nom de type complet dans l’élément `<Type>`.
+ Étant donné que les <xref:System.Collections.Generic.List%601> métadonnées de la classe ne sont pas automatiquement incluses dans la chaîne d’outils .net native, l’exemple ne parvient pas à afficher les informations de membre demandées au moment de l’exécution. Pour fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime. Comme nous avons déjà fourni un élément [<Namespace\>](namespace-element-net-native.md) parent, nous n’avons pas à fournir un nom de type complet dans l’élément `<Type>`.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -120,11 +120,11 @@ L'exemple suivant utilise la réflexion pour afficher des informations sur les c
 ```
 
 ## <a name="example"></a>Exemple
- L'exemple suivant utilise la réflexion pour récupérer un objet <xref:System.Reflection.PropertyInfo> qui représente la propriété <xref:System.String.Chars%2A?displayProperty=nameWithType>. Il utilise ensuite la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> pour récupérer la valeur du septième caractère d'une chaîne et afficher tous les caractères de la chaîne. La variable `b` dans l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.
+ L'exemple suivant utilise la réflexion pour récupérer un objet <xref:System.Reflection.PropertyInfo> qui représente la propriété <xref:System.String.Chars%2A?displayProperty=nameWithType>. Il utilise ensuite la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> pour récupérer la valeur du septième caractère d'une chaîne et afficher tous les caractères de la chaîne. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.
 
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]
 
- Étant donné que les métadonnées pour le <xref:System.String> objet n’est pas disponible, l’appel au <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> méthode lève une exception un <xref:System.NullReferenceException> exception à l’exécution temps lors de la compilation avec la chaîne d’outils .NET Native. Pour éliminer l'exception et fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime :
+ Étant donné que les <xref:System.String> métadonnées de l’objet ne sont pas <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> disponibles, l’appel <xref:System.NullReferenceException> à la méthode lève une exception au moment de l’exécution lorsqu’elle est compilée avec la chaîne d’outils .net native. Pour éliminer l'exception et fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime :
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -137,6 +137,6 @@ L'exemple suivant utilise la réflexion pour afficher des informations sur les c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)
+- [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

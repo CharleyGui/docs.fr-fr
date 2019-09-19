@@ -1,15 +1,15 @@
 ---
-title: <Assembly> Élément (.NET Native)
+title: <Assembly>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0788c05edace2142d348c679c73aa1b4404ce75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1743264996680c6a0ce308619d7a5bafef5d07a5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868860"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049916"
 ---
 # <a name="assembly-element-net-native"></a>\<Assembly >, élément (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
@@ -37,7 +37,7 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Spécifie le nom simple d'un assembly.|  
+|`Name`|Généralités|Attribut requis. Spécifie le nom simple d'un assembly.|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les types dans l'assembly ou l'énumération de ceux-ci, mais ne permet pas d'effectuer un accès dynamique au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,35 +51,35 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>. Par exemple, le nom d’un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Le paramètre s'applique à ce type de stratégie pour tous les types dans l'assembly. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*paramètre_stratégie*|Le paramètre s'applique à ce type de stratégie pour tous les types dans l'assembly. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Applique la stratégie de réflexion à tous les types dans un espace de noms enfant.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion à un type.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit.|  
+|[\<Namespace>](namespace-element-net-native.md)|Applique la stratégie de réflexion à tous les types dans un espace de noms enfant.|  
+|[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.|  
-|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.|  
+|[\<Application>](application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.|  
+|[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.|  
   
 ## <a name="remarks"></a>Notes  
- L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
+ L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [\<Library>](library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
   
- L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).  
+ L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](application-element-net-native.md).  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">   
@@ -93,6 +93,6 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)

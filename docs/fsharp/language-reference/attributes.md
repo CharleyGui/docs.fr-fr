@@ -2,12 +2,12 @@
 title: Attributs
 description: Découvrez comment F# les attributs permettent d’appliquer des métadonnées à une construction de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: c9691a13ff1e9e892e93a967136a99849da25f1f
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 08d50f7f57b6c0a81221e8f635f77f67750d0ff9
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567504"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082938"
 ---
 # <a name="attributes"></a>Attributs
 
@@ -27,8 +27,8 @@ L' *attribut-Name* fait référence au nom (éventuellement qualifié avec des e
 
 Les *arguments* sont les arguments du constructeur pour le type d’attribut. Si un attribut a un constructeur par défaut, la liste d’arguments et les parenthèses peuvent être omises. Les attributs prennent en charge les arguments positionnels et les arguments nommés. Les *arguments positionnels* sont des arguments utilisés dans l’ordre dans lequel ils apparaissent. Les arguments nommés peuvent être utilisés si l’attribut a des propriétés publiques. Vous pouvez les définir à l’aide de la syntaxe suivante dans la liste d’arguments.
 
-```
-*property-name* = *property-value*
+```fsharp
+property-name = property-value
 ```
 
 Ces initialisations de propriété peuvent être dans n’importe quel ordre, mais elles doivent suivre tous les arguments positionnels. Voici un exemple d’un attribut qui utilise des arguments positionnels et des initialisations de propriété.
@@ -39,7 +39,7 @@ Dans cet exemple, l’attribut est `DllImportAttribute`, ici utilisé sous une f
 
 Les attributs sont une construction de programmation .NET qui permet à un objet connu comme un *attribut* d’être associé à un type ou à un autre élément de programme. L’élément de programme auquel un attribut est appliqué est appelé la *cible d’attribut*. L’attribut contient généralement des métadonnées sur sa cible. Dans ce contexte, les métadonnées peuvent être des données relatives au type autres que ses champs et membres.
 
-Les attributs F# dans peuvent être appliqués aux constructions de programmation suivantes: fonctions, méthodes, assemblys, modules, types (classes, enregistrements, structures, interfaces, délégués, énumérations, unions, etc.), constructeurs, propriétés, champs, paramètres, paramètres de type et valeurs de retour. Les attributs ne sont pas `let` autorisés sur les liaisons dans des classes, des expressions ou des expressions de flux de travail.
+Les attributs F# dans peuvent être appliqués aux constructions de programmation suivantes : fonctions, méthodes, assemblys, modules, types (classes, enregistrements, structures, interfaces, délégués, énumérations, unions, etc.), constructeurs, propriétés, champs, paramètres, paramètres de type et valeurs de retour. Les attributs ne sont pas `let` autorisés sur les liaisons dans des classes, des expressions ou des expressions de flux de travail.
 
 En règle générale, la déclaration d’attribut apparaît directement avant la déclaration de la cible de l’attribut. Plusieurs déclarations d’attribut peuvent être utilisées ensemble, comme suit.
 

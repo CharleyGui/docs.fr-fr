@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 08f67ad363d0bd3efcc7a1eeedd1f48d3bae9407
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9bde6f6e625476712c5af516491ab9dd29b7dea3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875704"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052958"
 ---
 # <a name="asynchronousthreadabort-mda"></a>Assistant Débogage managé asynchronousThreadAbort
 L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quand un thread tente d’introduire un abandon asynchrone dans un autre thread. Les abandons de threads synchrones n’activent pas l’Assistant Débogage managé `asynchronousThreadAbort`.
@@ -36,7 +36,7 @@ L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quan
 
  La cause peut être difficile à déterminer en raison du caractère aléatoire du problème.
 
-## <a name="resolution"></a>Résolution
+## <a name="resolution"></a>Résolution :
  Évitez les conceptions du code qui exigent l’utilisation d’abandons de threads asynchrones. Il existe plusieurs approches plus appropriées pour l’interruption d’un thread cible qui ne nécessitent pas d’appel à <xref:System.Threading.Thread.Abort%2A>. La plus sûre consiste à introduire un mécanisme, par exemple une propriété commune, qui envoie un signal au thread cible pour demander une interruption. Le thread cible vérifie ce signal à certains points de contrôle sécurisés. S’il remarque qu’une interruption a été demandée, il peut s’arrêter correctement.
 
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime
@@ -73,4 +73,4 @@ void FireMda()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Thread>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)

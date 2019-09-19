@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3cb310dc6d786c3c7711f4c194c6623324c777dd
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: HT
+ms.openlocfilehash: d3167abd0c263a0a27573778d6f243bc824306a9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412394"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051685"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Marshaling de données à l’aide de l’appel de code managé
 
@@ -25,7 +25,7 @@ Pour appeler des fonctions exportées depuis une bibliothèque non managée, une
 
 - Remplacez les types de données managés par des types de données non managés.
 
-Vous pouvez utiliser la documentation fournie avec une fonction non managée pour construire un prototype managé équivalent en appliquant l'attribut et ses champs facultatifs, et en remplaçant les types de données managés par des types non managés. Pour obtenir des instructions sur l’application de <xref:System.Runtime.InteropServices.DllImportAttribute>, consultez [Consommation de fonctions DLL non managées](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md).
+Vous pouvez utiliser la documentation fournie avec une fonction non managée pour construire un prototype managé équivalent en appliquant l'attribut et ses champs facultatifs, et en remplaçant les types de données managés par des types non managés. Pour obtenir des instructions sur l’application de <xref:System.Runtime.InteropServices.DllImportAttribute>, consultez [Consommation de fonctions DLL non managées](consuming-unmanaged-dll-functions.md).
 
 Cette section fournit des exemples qui montrent comment créer des prototypes de fonctions managés pour passer des arguments et recevoir des valeurs de retour des fonctions exportées par des bibliothèques non managées. Les exemples montrent également quand utiliser l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> et la classe <xref:System.Runtime.InteropServices.Marshal> pour marshaler explicitement des données.
 
@@ -61,7 +61,7 @@ Pour les types correspondants en Visual Basic, C# et C++, consultez [Introductio
 
 Le code suivant définit les fonctions de bibliothèque fournies par Pinvoke.dll. De nombreux exemples décrits dans cette section appellent cette bibliothèque.
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 [!code-cpp[PInvokeLib#1](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.cpp#1)]
 

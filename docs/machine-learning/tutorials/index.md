@@ -3,12 +3,12 @@ title: Tutoriels ML.NET
 description: Consultez les tutoriels ML.NET pour découvrir comment créer des solutions IA personnalisées et comment les intégrer à vos applications .NET.
 ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: dfc4779a94ae74e35095f654571c6e7c43f295a0
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
-ms.translationtype: HT
+ms.openlocfilehash: 6d5b622194cbaa20ed4e7283e6f1ea66f16a7b47
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671884"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054012"
 ---
 # <a name="mlnet-tutorials"></a>Tutoriels ML.NET 
 
@@ -22,6 +22,7 @@ Les tutoriels suivants vous permettent de comprendre comment utiliser [ML.NET](.
 - [Classification d’images](image-classification.md) : montre comment réentraîner un modèle TensorFlow existant pour créer un classifieur d’images personnalisées avec ML.NET.
 - [Détection d’anomalie](sales-anomaly-detection.md) : montre comment créer une application de détection des anomalies pour une analyse des données de ventes de produits.
 - [Détecter des objets dans des images](object-detection-onnx.md) : montre comment détecter des objets dans des images à l’aide d’un modèle ONNX pré-formé.
+- [Classifier les sentiments des revues de films](text-classification-tf.md): Apprenez à charger un modèle TensorFlow pré-formé pour classer le sentiment des revues de films.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

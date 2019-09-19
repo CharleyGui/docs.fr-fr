@@ -2,12 +2,12 @@
 title: Mappage de type SQL-CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: b209283f5d4e87d1faab06184bda3f79bf1adaed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6710c58a430c35dae41a1a381335019fd3e75192
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792521"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053038"
 ---
 # <a name="sql-clr-type-mapping"></a>Mappage de type SQL-CLR
 Dans vbtecdlinq, le modèle de données d'une base de données relationnelle mappe à un modèle objet qui est exprimé dans le langage de programmation de votre choix. Lors de l'exécution de l'application, LINQ to SQL traduit les requêtes LINQ dans le modèle objet en SQL et les envoie à la base de données pour exécution. Lorsque la base de données retourne les résultats, LINQ to SQL traduit ces derniers en objets que vous pouvez utiliser dans votre propre langage de programmation.  
@@ -44,7 +44,7 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
 ## <a name="type-mapping-run-time-behavior-matrix"></a>Matrice de comportement au moment de l'exécution de mappages de types  
  Le diagramme suivant présente le comportement au moment de l'exécution attendu de mappages de types spécifiques lorsque des données sont récupérées de la base de données ou enregistrées dans celle-ci. À l'exception de la sérialisation, LINQ to SQL ne prend pas en charge le mappage entre des types de données CLR ou SQL Server qui ne sont pas spécifiés dans cette matrice. Pour plus d’informations sur la prise en charge de la sérialisation, consultez [sérialisation binaire](#BinarySerialization).  
  
-![Table de mappage de type de données CLR SQL SQL Server](media/sql-clr-type-mapping.png)
+![Table de mappage de type de données CLR SQL SQL Server](./media/sql-clr-type-mapping.png)
 
 > [!NOTE]
 > Certains mappages de types peuvent entraîner des exceptions de dépassement de capacité ou de perte de données lors de la traduction à partir de la base de données ou vers celle-ci.  

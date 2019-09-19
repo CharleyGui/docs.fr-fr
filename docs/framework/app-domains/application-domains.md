@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9ab95124264b2b59be77695755ab1d1f1c3b1aa
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 4a0a6a00fc76a646b4295db726bd8ae67733e321
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040731"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053217"
 ---
 # <a name="application-domains"></a>Domaines d'application
 
@@ -48,7 +48,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
     > [!NOTE]
     > Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
   
-- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d’informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 - La portée du comportement de code est définie par l'application dans laquelle il s'exécute. En d'autres termes, le domaine d'application fournit des paramètres de configuration tels que les stratégies de version d'application, l'emplacement des assemblys distants auxquels il accède et des informations sur l'emplacement où se trouvent les assemblys qui sont chargés dans le domaine.  
   
@@ -64,7 +64,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
   
 - Si un assembly n'est pas chargé comme indépendant du domaine, il doit être compilé juste-à-temps dans chaque domaine d'application dans lequel il est chargé. Toutefois, l'assembly peut être déchargé du processus via le déchargement de tous les domaines d'application dans lesquels il est chargé.  
   
- L'hôte de runtime détermine s'il convient de charger des assemblys comme indépendants du domaine lorsqu'il charge le runtime dans un processus. Pour les applications managées, appliquez l'attribut <xref:System.LoaderOptimizationAttribute> à la méthode de point d'entrée pour le processus et spécifiez une valeur de l'énumération <xref:System.LoaderOptimization> associée. Pour les applications non managées qui hébergent le Common Language Runtime, spécifiez l’indicateur approprié quand vous appelez la méthode [Fonction CorBindToRuntimeEx](../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md).  
+ L'hôte de runtime détermine s'il convient de charger des assemblys comme indépendants du domaine lorsqu'il charge le runtime dans un processus. Pour les applications managées, appliquez l'attribut <xref:System.LoaderOptimizationAttribute> à la méthode de point d'entrée pour le processus et spécifiez une valeur de l'énumération <xref:System.LoaderOptimization> associée. Pour les applications non managées qui hébergent le Common Language Runtime, spécifiez l’indicateur approprié quand vous appelez la méthode [Fonction CorBindToRuntimeEx](../unmanaged-api/hosting/corbindtoruntimeex-function.md).  
   
  Il existe trois options de chargement des assemblys indépendants du domaine :  
   
@@ -76,7 +76,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
   
  Le code compilé juste-à-temps ne peut pas être partagé pour les assemblys chargés dans le contexte de chargement, à l'aide de la méthode <xref:System.Reflection.Assembly.LoadFrom%2A> de la classe <xref:System.Reflection.Assembly>, ou chargés à partir d'images à l'aide de surcharges de la méthode <xref:System.Reflection.Assembly.Load%2A> qui spécifient des tableaux d'octets.  
   
- Les assemblys, compilés en code natif à l’aide de [Ngen.exe (le générateur d’images natives)](../../../docs/framework/tools/ngen-exe-native-image-generator.md), peuvent être partagés entre des domaines d’application s’ils sont chargés comme indépendants du domaine lors de leur premier chargement dans un processus.  
+ Les assemblys, compilés en code natif à l’aide de [Ngen.exe (le générateur d’images natives)](../tools/ngen-exe-native-image-generator.md), peuvent être partagés entre des domaines d’application s’ils sont chargés comme indépendants du domaine lors de leur premier chargement dans un processus.  
   
  Le code compilé juste-à-temps pour l'assembly contenant le point d'entrée de l'application est partagé uniquement si toutes ses dépendances peuvent être partagées.  
   
@@ -132,7 +132,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
 COMPLUS_LoaderOptimization = 1  
 ```  
   
-### <a name="remarks"></a>Remarques
+### <a name="remarks"></a>Notes
 
  Une application typique charge plusieurs assemblys dans un domaine d'application avant que le code qu'ils contiennent ne puisse être exécuté.  
   

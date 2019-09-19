@@ -8,12 +8,12 @@ helpviewer_keywords:
 - network resources, connections
 - connection pooling
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
-ms.openlocfilehash: 00ccc11919f0ccd4f9361bfd8f265dea1ad2390d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 007366764a7b8e1208e22ef5895e6a9093b090e4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59184562"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048642"
 ---
 # <a name="connection-grouping"></a>Regroupement de connexions
 Le regroupement de connexions associe des requêtes spécifiques au sein d’une application unique à un pool de connexions défini. Cela peut être requis par une application de couche intermédiaire qui se connecte à un serveur principal pour le compte d’un utilisateur et qui utilise un protocole d’authentification prenant en charge la délégation, tel que Kerberos, ou par une application de couche intermédiaire qui fournit ses propres informations d’identification, comme dans l’exemple ci-dessous. Par exemple, supposez qu’un utilisateur (Jean) visite un site web interne qui affiche des informations sur son salaire. Après avoir authentifié Jean, le serveur d’applications de couche intermédiaire utilise ses informations d’identification pour se connecter au serveur principal afin de récupérer des informations sur son salaire. Ensuite, Suzanne accède au site et demande à consulter les informations relatives à son salaire. Étant donné que l’application de couche intermédiaire a déjà établi une connexion à l’aide des informations d’identification de Jean, le serveur principal répond avec les informations relatives à Jean. Toutefois, si l’application assigne chaque requête envoyée au serveur principal à un groupe de connexions formé à partir du nom d’utilisateur, alors chaque utilisateur appartient à un pool de connexions distinct et ne peut pas partager accidentellement des informations d’authentification avec un autre utilisateur.  
@@ -22,5 +22,5 @@ Le regroupement de connexions associe des requêtes spécifiques au sein d’une
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion des connexions](../../../docs/framework/network-programming/managing-connections.md)
-- [Guide pratique pour assigner des informations utilisateur aux connexions de groupe](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)
+- [Gestion des connexions](managing-connections.md)
+- [Guide pratique : assigner des informations utilisateur aux connexions de groupe](how-to-assign-user-information-to-group-connections.md)

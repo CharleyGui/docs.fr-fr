@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: d03a0ae3bc84106d72803b22050a7c75a037be12
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 89be7aa8339a4edf6d6ab9c0c243e4320d2fdfa8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780110"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052971"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Procédure : Développer un service de données WCF s’exécutant sur IIS
 
@@ -132,7 +132,7 @@ Après avoir créé le service, vous devez explicitement fournir un accès aux r
 
 5. Connectez le modèle de données à la base de données en procédant de l’une des manières suivantes, puis cliquez sur **suivant**:
 
-    - Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion. Pour plus d’informations, consultez [Guide pratique pour Créer des connexions aux bases de](https://go.microsoft.com/fwlink/?LinkId=123631)données SQL Server. Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
+    - Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion. Pour plus d'informations, voir [Procédure : Créer des connexions aux bases de](https://go.microsoft.com/fwlink/?LinkId=123631)données SQL Server. Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
 
          \- ou -
 
@@ -148,7 +148,7 @@ Après avoir créé le service, vous devez explicitement fournir un accès aux r
 
 2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **service de données WCF**.
 
-   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](media/wcf-data-service-item-template.png)
+   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
    > Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Désactiver la fonctionnalité de contournement de nom fort'
+title: 'Procédure : Désactiver la fonctionnalité de contournement des noms forts'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-name bypass feature
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8cdc700ecc8195da1b5e0975f00a4dc6785d330
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 35bf61ffd2a85221cdf33a0304765d94770c1eab
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973291"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053992"
 ---
-# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Procédure : Désactiver la fonctionnalité de contournement de nom fort
+# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Procédure : Désactiver la fonctionnalité de contournement des noms forts
 À partir du .NET Framework version 3.5 Service Pack 1 (SP1), les signatures de noms forts ne sont pas validées quand un assembly est chargé dans un objet <xref:System.AppDomain> de confiance totale, tel que le <xref:System.AppDomain> par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d’ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La seule restriction est que l’assembly doit être entièrement fiable, car sa zone est entièrement fiable. Le nom fort n’étant pas un facteur déterminant dans ces conditions, il n’y a aucune raison pour qu’il soit validé. Ignorer la validation des signatures de noms forts fournit une amélioration significative des performances.  
   
  Cette fonctionnalité consistant à ignorer la validation s’applique à tout assembly de confiance totale qui n’est pas à signature différée et qui est chargé dans n’importe quel <xref:System.AppDomain> de confiance totale à partir du répertoire spécifié par sa propriété <xref:System.AppDomainSetup.ApplicationBase%2A>.  
@@ -36,7 +36,7 @@ ms.locfileid: "70973291"
   
 1. Ouvrez ou créez le fichier de configuration de l’application.  
   
-     Pour plus d’informations sur ce fichier, consultez la section fichiers de configuration de l’application dans [configurer des applications](../../framework/configure-apps/index.md).  
+    Pour plus d’informations sur ce fichier, consultez la section fichiers de configuration de l’application dans [configurer des applications](../../framework/configure-apps/index.md).  
   
 2. Ajoutez l’entrée suivante :  
   

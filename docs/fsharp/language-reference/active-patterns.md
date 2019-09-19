@@ -2,12 +2,12 @@
 title: Modèles actifs
 description: Découvrez comment utiliser des modèles actifs pour définir des partitions nommées qui subdivisent les F# données d’entrée dans le langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: 12f423abe05e649e0b527ed04124b991feb5d592
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0c1315f2386b3cea2def698f4725e4c1cf030609
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629947"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083078"
 ---
 # <a name="active-patterns"></a>Modèles actifs
 
@@ -30,7 +30,7 @@ let (|identifier|_|) [arguments ] valueToMatch = expression
 
 ## <a name="remarks"></a>Notes
 
-Dans la syntaxe précédente, les identificateurs sont des noms de partitions des données d’entrée qui sont représentées par des *arguments*, ou, en d’autres termes, des noms pour les sous-ensembles de l’ensemble de toutes les valeurs des arguments. Il peut y avoir jusqu’à sept partitions dans une définition de modèle actif. L' *expression* décrit le formulaire dans lequel décomposer les données. Vous pouvez utiliser une définition de modèle actif pour définir les règles de détermination des partitions nommées auxquelles les valeurs fournies comme arguments appartiennent. Les symboles (| et |) sont appelés « *Banana clips* » et la fonction créée par ce type de liaison Let est appelée «module de *reconnaissance actif*».
+Dans la syntaxe précédente, les identificateurs sont des noms de partitions des données d’entrée qui sont représentées par des *arguments*, ou, en d’autres termes, des noms pour les sous-ensembles de l’ensemble de toutes les valeurs des arguments. Il peut y avoir jusqu’à sept partitions dans une définition de modèle actif. L' *expression* décrit le formulaire dans lequel décomposer les données. Vous pouvez utiliser une définition de modèle actif pour définir les règles de détermination des partitions nommées auxquelles les valeurs fournies comme arguments appartiennent. Les symboles (| et |) sont appelés « *Banana clips* » et la fonction créée par ce type de liaison Let est appelée « module de *reconnaissance actif*».
 
 Par exemple, considérez le modèle actif suivant avec un argument.
 
@@ -40,9 +40,9 @@ Vous pouvez utiliser le modèle actif dans une expression de critères spéciaux
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5002.fs)]
 
-Le résultat de ce programme est le suivant:
+Le résultat de ce programme est le suivant :
 
-```
+```console
 7 is odd
 11 is odd
 32 is even
@@ -52,9 +52,9 @@ Une autre utilisation des modèles actifs consiste à décomposer les types de d
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5003.fs)]
 
-La sortie du programme ci-dessus est la suivante:
+La sortie du programme ci-dessus est la suivante :
 
-```
+```console
 Red
  Red: 255 Green: 0 Blue: 0
  Hue: 360.000000 Saturation: 1.000000 Brightness: 0.500000
@@ -82,9 +82,9 @@ Parfois, vous devez partitionner uniquement une partie de l’espace d’entrée
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5004.fs)]
 
-La sortie de l’exemple précédent est la suivante:
+La sortie de l’exemple précédent est la suivante :
 
-```
+```console
 1.100000 : Floating point
 0 : Integer
 0.000000 : Floating point
@@ -98,7 +98,7 @@ Lorsque vous utilisez des modèles actifs partiels, les choix individuels peuven
 
 La sortie est la suivante :
 
-```
+```console
 1 is a cube and a square
 8 is a cube
 27 is a cube
@@ -117,9 +117,9 @@ Les modèles actifs prennent toujours au moins un argument pour l’élément qu
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
 
-La sortie du code précédent est la suivante:
+La sortie du code précédent est la suivante :
 
-```
+```console
 12/22/2008 12:00:00 AM 1/1/2009 12:00:00 AM 1/15/2008 12:00:00 AM 12/28/1995 12:00:00 AM
 ```
 
@@ -127,9 +127,9 @@ Les modèles actifs ne sont pas limités uniquement aux expressions de critères
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5007.fs)]
 
-La sortie du code précédent est la suivante:
+La sortie du code précédent est la suivante :
 
-```
+```console
 Hello, random citizen!
 Hello, George!
 ```

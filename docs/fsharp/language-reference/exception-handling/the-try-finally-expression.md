@@ -2,12 +2,12 @@
 title: 'Exceptions : try...finally (expression)'
 description: Découvrez comment les F# ... Enfin, l’expression vous permet d’exécuter le code de nettoyage même si un bloc de code lève une exception.
 ms.date: 05/16/2016
-ms.openlocfilehash: 03fbda1ef5d55560232f0217f603fc04c0af0eb4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0ddb64ac13b307404864ec5b54f26fd8a7a3d7d8
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630276"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083005"
 ---
 # <a name="exceptions-the-tryfinally-expression"></a>Exceptions : try...finally (expression)
 
@@ -26,7 +26,7 @@ finally
 
 L' `try...finally` expression peut être utilisée pour exécuter le code dans *Expression2* dans la syntaxe précédente, qu’une exception soit générée ou non lors de l’exécution de *expression1*.
 
-Le type de *Expression2* ne contribue pas à la valeur de l’expression entière; le type retourné lorsqu’une exception ne se produit pas est la dernière valeur dans *expression1*. Lorsqu’une exception se produit, aucune valeur n’est retournée et le déroulement du contrôle est transféré vers le gestionnaire d’exceptions correspondant suivant, en haut de la pile des appels. Si aucun gestionnaire d’exceptions n’est trouvé, le programme se termine. Avant que le code d’un gestionnaire correspondant soit exécuté ou que le programme se termine, le `finally` code de la branche est exécuté.
+Le type de *Expression2* ne contribue pas à la valeur de l’expression entière ; le type retourné lorsqu’une exception ne se produit pas est la dernière valeur dans *expression1*. Lorsqu’une exception se produit, aucune valeur n’est retournée et le déroulement du contrôle est transféré vers le gestionnaire d’exceptions correspondant suivant, en haut de la pile des appels. Si aucun gestionnaire d’exceptions n’est trouvé, le programme se termine. Avant que le code d’un gestionnaire correspondant soit exécuté ou que le programme se termine, le `finally` code de la branche est exécuté.
 
 Le code suivant illustre l’utilisation de l' `try...finally` expression.
 
@@ -34,7 +34,7 @@ Le code suivant illustre l’utilisation de l' `try...finally` expression.
 
 La sortie de la console est la suivante.
 
-```
+```console
 Closing stream
 Exception handled.
 ```

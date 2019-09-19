@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ac396e1a5b83f33068266553024c37ef436c150d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f0e4002ae248022a9e4380c79174109494b5e4ca
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616632"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046768"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>Événements ETW d'analyse de ressource de domaine d'application
 <a name="top"></a> Ces événements fournissent des informations de diagnostic détaillées sur l'état d'un domaine d'application. Vous pouvez utiliser ces événements ou la fonctionnalité ARM d'analyse de ressource de domaine d'application pour obtenir les mêmes informations.  
@@ -33,7 +33,7 @@ ms.locfileid: "64616632"
 ## <a name="threadcreated-event"></a>Événement ThreadCreated  
  Cet événement est également déclenché sous le fournisseur d'arrêt en tant que `ThreadDC` (sous le mot clé `AppDomainResourceManagementRundownKeyword` ). Il s’agit du seul événement déclenché sous le fournisseur d'arrêt dans cette catégorie.  
   
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
@@ -57,7 +57,7 @@ ms.locfileid: "64616632"
 |OSThreadID|win:UInt32|ID de système d’exploitation du thread qui a été créé.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="appdomainmemallocated_event"></a>   
 ## <a name="appdomainmemallocated-event"></a>Événement AppDomainMemAllocated  
@@ -81,7 +81,7 @@ ms.locfileid: "64616632"
 |Allocated|win:UInt64|Nombre total d'octets alloués dans ce domaine d'application depuis sa création (la quantité de mémoire libérée n'est pas soustraite).|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="appdomainmemsurvived_event"></a>   
 ## <a name="appdomainmemsurvived-event"></a>Événement AppDomainMemSurvived  
@@ -106,7 +106,7 @@ ms.locfileid: "64616632"
 |ProcessSurvived|win:UInt64|Nombre total d'octets qui ont survécu à la dernière collection. Après une collection complète, ce nombre représente le nombre d'octets maintenus actifs dans les tas managés. Après une collection éphémère, ce nombre représente le nombre d'octets maintenus actifs dans les générations éphémères.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="threadappdomainenter_event"></a>   
 ## <a name="threadappdomainenter-event"></a>Événement ThreadAppDomainEnter  
@@ -131,7 +131,7 @@ ms.locfileid: "64616632"
 |AppDomainID|win:UInt64|Identificateur du domaine d'application.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="threadterminated_event"></a>   
 ## <a name="threadterminated-event"></a>Événement ThreadTerminated  
@@ -158,4 +158,4 @@ ms.locfileid: "64616632"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Événements ETW du CLR](clr-etw-events.md)

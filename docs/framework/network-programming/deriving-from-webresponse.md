@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Deriving from WebResponse
 ms.assetid: f11d4866-a199-4087-9306-a5a4c18b13db
-ms.openlocfilehash: 6bdb21b8aaf8deb39e3abd68a69a9a5a10247e6f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: bd06928b08eb085ef13371687fb1e5b92c6c1d86
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226043"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048582"
 ---
 # <a name="deriving-from-webresponse"></a>Dérivation à partir de WebResponse
 La classe <xref:System.Net.WebResponse> est une classe de base abstraite qui fournit les méthodes et les propriétés de base pour la création d’une réponse propre au protocole qui correspond au modèle de protocole enfichable .NET Framework. Les applications qui utilisent la classe <xref:System.Net.WebRequest> pour demander des données à des ressources reçoivent les réponses dans un **WebResponse**. Les descendants **WebResponse** propres au protocole doivent implémenter les membres abstraits de la classe **WebResponse**.  
@@ -43,5 +43,5 @@ La classe <xref:System.Net.WebResponse> est une classe de base abstraite qui fou
 - <xref:System.Net.WebResponse>
 - <xref:System.Net.HttpWebResponse>
 - <xref:System.Net.FileWebResponse>
-- [Programmation de protocoles enfichables](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
-- [Dérivation de WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)
+- [Programmation de protocoles enfichables](programming-pluggable-protocols.md)
+- [Dérivation de WebRequest](deriving-from-webrequest.md)

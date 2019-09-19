@@ -11,12 +11,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 328f67c5afe22f336aa6337903b6569fb6ecc359
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 1fbfe25b90e810ff96924a2341582ff3f5ee5e5d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623058"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047358"
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
 Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut retourner une ressource demandée à partir de son cache ou transférer la demande au serveur sur lequel réside la ressource. Les proxies peuvent améliorer les performances réseau en réduisant le nombre de demandes envoyées aux serveurs distants. Les proxies peuvent également être utilisés pour restreindre l'accès aux ressources.  
@@ -24,7 +24,7 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
 ## <a name="adaptive-proxies"></a>Proxies adaptatifs  
  Dans le .NET Framework, les proxies sont fournis sous deux formes : adaptatifs et statiques. Les proxies adaptatifs ajustent leurs paramètres lorsque la configuration du réseau change. Par exemple, si l'utilisateur d'un ordinateur portable démarre une connexion réseau d'accès à distance, un proxy adaptatif identifie cette modification, détecte et exécute son nouveau script de configuration, et ajuste ses paramètres de façon appropriée.  
   
- Les proxys adaptatifs sont configurés par un script de configuration (voir [Détection automatique de proxy](../../../docs/framework/network-programming/automatic-proxy-detection.md)). Le script génère un ensemble de protocoles d'application et un proxy pour chaque protocole.  
+ Les proxys adaptatifs sont configurés par un script de configuration (voir [Détection automatique de proxy](automatic-proxy-detection.md)). Le script génère un ensemble de protocoles d'application et un proxy pour chaque protocole.  
   
  Les modifications apportées à l'environnement réseau peuvent nécessiter que le système utilise un nouvel ensemble de proxies. En cas de défaillance d'une connexion réseau ou d'initialisation d'une nouvelle connexion réseau, le système doit détecter la source appropriée du script de configuration dans le nouvel environnement et exécuter le nouveau script.  
   
@@ -79,4 +79,4 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.GlobalProxySelection>
-- [Détection automatique de proxy](../../../docs/framework/network-programming/automatic-proxy-detection.md)
+- [Détection automatique de proxy](automatic-proxy-detection.md)

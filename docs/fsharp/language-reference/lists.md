@@ -2,12 +2,12 @@
 title: Listes
 description: En savoir F# plus sur les listes, une série immuable et ordonnée d’éléments du même type.
 ms.date: 05/16/2016
-ms.openlocfilehash: e8c4a464306cfedfd36a4685507684d3a1a97a2e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 72f1779d7d077da0f1f4804df93fa4ac11f9b2e3
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630731"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082908"
 ---
 # <a name="lists"></a>Listes
 
@@ -99,7 +99,7 @@ La fonction `RemoveAllMultiples` est récursive et accepte deux listes. La premi
 
 La sortie est la suivante :
 
-```
+```console
 Primes Up To 100:
 [2; 3; 5; 7; 11; 13; 17; 19; 23; 29; 31; 37; 41; 43; 47; 53; 59; 61; 67; 71; 73; 79; 83; 89; 97]
 ```
@@ -120,7 +120,7 @@ Le code suivant montre l'utilisation de `List.exists`.
 
 La sortie est la suivante :
 
-```
+```console
 For list [0; 1; 2; 3], contains zero is true
 ```
 
@@ -130,7 +130,7 @@ L'exemple suivant montre l'utilisation de `List.exists2`.
 
 La sortie est la suivante :
 
-```
+```console
 Lists [1; 2; 3; 4; 5] and [5; 4; 3; 2; 1] have at least one equal element at the same position.
 ```
 
@@ -140,7 +140,7 @@ Vous pouvez utiliser [List. forall](https://msdn.microsoft.com/library/e11a5233-
 
 La sortie est la suivante :
 
-```
+```console
 true
 false
 ```
@@ -151,7 +151,7 @@ De même, [List. forall2](https://msdn.microsoft.com/library/bb611f02-8277-48f5-
 
 La sortie est la suivante :
 
-```
+```console
 true
 false
 ```
@@ -168,7 +168,7 @@ L'exemple suivant montre l'utilisation de `List.sort`.
 
 La sortie est la suivante :
 
-```
+```console
 [-2; 1; 4; 5; 8]
 ```
 
@@ -178,7 +178,7 @@ L'exemple suivant montre l'utilisation de `List.sortBy`.
 
 La sortie est la suivante :
 
-```
+```console
 [1; -2; 4; 5; 8]
 ```
 
@@ -188,7 +188,7 @@ L'exemple suivant montre l'utilisation de `List.sortWith`. Dans cet exemple, la 
 
 La sortie est la suivante :
 
-```
+```console
 [{ID = 92;
 Rev = 1;}; {ID = 92;
 Rev = 1;}; {ID = 100;
@@ -213,7 +213,7 @@ Si les éléments doivent être transformés en premier, appelez [List. Pick](ht
 
 La sortie est la suivante :
 
-```
+```console
 "b"
 ```
 
@@ -223,7 +223,7 @@ Un autre groupe d’opérations de recherche, [List. tryFind](https://msdn.micro
 
 La sortie est la suivante :
 
-```
+```console
 The first even value is 22.
 The first even value is at position 8.
 ```
@@ -252,7 +252,7 @@ Les listes qui contiennent des tuples peuvent être manipulées par des fonction
 
 La sortie est la suivante :
 
-```
+```console
 [(1, -1); (2, -2); (3; -3)]
 ```
 
@@ -262,7 +262,7 @@ L'exemple de code suivant montre l'utilisation de `List.zip3`.
 
 La sortie est la suivante :
 
-```
+```console
 [(1, -1, 0); (2, -2, 0); (3, -3, 0)]
 ```
 
@@ -274,7 +274,7 @@ L’exemple de code suivant illustre l’utilisation de [List. unzip](https://ms
 
 La sortie est la suivante :
 
-```
+```console
 ([1; 3], [2; 4])
 [1; 3] [2; 4]
 ```
@@ -285,7 +285,7 @@ L’exemple de code suivant illustre l’utilisation de [List. unzip3](https://m
 
 La sortie est la suivante :
 
-```
+```console
 ([1; 4], [2; 5], [3; 6])
 ```
 
@@ -297,7 +297,7 @@ F# prend en charge un éventail d'opérations sur des éléments de liste. La m�
 
 La sortie est la suivante :
 
-```
+```console
 List.iter: element is 1
 List.iter: element is 2
 List.iter: element is 3
@@ -318,7 +318,7 @@ Une autre fonction fréquemment utilisée qui transforme les éléments de liste
 
 La sortie est la suivante :
 
-```
+```console
 [2; 3; 4]
 ```
 
@@ -328,7 +328,7 @@ L'exemple suivant montre l'utilisation de `List.map2`.
 
 La sortie est la suivante :
 
-```
+```console
 [5; 7; 9]
 ```
 
@@ -338,7 +338,7 @@ L'exemple suivant montre l'utilisation de `List.map3`.
 
 La sortie est la suivante :
 
-```
+```console
 [7; 10; 13]
 ```
 
@@ -348,7 +348,7 @@ L'exemple suivant montre l'utilisation de `List.mapi`.
 
 La sortie est la suivante :
 
-```
+```console
 [1; 3; 5]
 ```
 
@@ -358,7 +358,7 @@ L'exemple suivant montre l'utilisation de `List.mapi2`.
 
 La sortie est la suivante :
 
-```
+```console
 [0; 7; 18]
 ```
 
@@ -368,7 +368,7 @@ La sortie est la suivante :
 
 La sortie est la suivante :
 
-```
+```console
 [1; 2; 3; 2; 4; 6; 3; 6; 9]
 ```
 
@@ -386,7 +386,7 @@ Le code suivant illustre l'utilisation de `List.choose` pour sélectionner des m
 
 La sortie est la suivante :
 
-```
+```console
 ["Rome's"; "Bob's"]
 ```
 

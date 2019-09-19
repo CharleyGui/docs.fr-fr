@@ -1,15 +1,15 @@
 ---
-title: <ImpliesType> Élément (.NET Native)
+title: <ImpliesType>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1cd2177707edfd29dc393e2bcfd6bbacb749b30
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 10fa3a0ac04038bb686311a4d86c99442c0fcf26
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616690"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049674"
 ---
 # <a name="impliestype-element-net-native"></a>\<ImpliesType >, élément (.NET Native)
 Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode ou au type conteneur.  
@@ -37,7 +37,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Spécifie le nom du type.|  
+|`Name`|Généralités|Attribut requis. Spécifie le nom du type.|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,15 +51,15 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |*type_name*|Nom du type. Si le type représenté par cet élément `<ImpliesType>` se trouve dans le même espace de noms que son élément `<Type>` conteneur, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -68,9 +68,9 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
+|[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
+|[\<Method>](method-element-net-native.md)|Applique la stratégie de réflexion à une méthode.|  
   
 ## <a name="remarks"></a>Notes  
  L'élément `<ImpliesType>` est essentiellement conçu pour une utilisation par des bibliothèques. Il traite le scénario suivant :  
@@ -99,7 +99,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
 </Type>  
 ```  
   
- L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, imaginez une méthode générique `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` qui une bibliothèque donnée accède dynamiquement, ainsi que d’associé <xref:System.Collections.Generic.List%601> et <xref:System.Array> types. Cela peut être exprimé sous la forme :  
+ L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, Imaginez une méthode `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` générique à laquelle une bibliothèque donnée accède dynamiquement avec les types et <xref:System.Collections.Generic.List%601> <xref:System.Array> associés. Cela peut être exprimé sous la forme :  
   
 ```xml  
 <Type Name="MyType">  
@@ -112,6 +112,6 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)
+- [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

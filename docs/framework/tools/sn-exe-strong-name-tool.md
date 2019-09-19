@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ef977206bf0d5b818cfd9779f063fbc2bd50632e
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 262ee168dabafcdc0b284f1ae5528843975a7e9d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971848"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044162"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../standard/assembly/strong-named.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
@@ -27,7 +27,7 @@ L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms for
 
  Pour plus d’informations sur l’utilisation de noms forts et sur les assemblys avec des noms forts, consultez [Assemblys avec nom fort](../../standard/assembly/strong-named.md) et [Guide pratique pour signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
 
 > [!NOTE]
 > Sur les ordinateurs 64 bits, exécutez la version 32 bits de Sn.exe à l’aide de l’invite de commandes développeur pour Visual Studio et la version 64 bits à l’aide de l’invite de commandes Visual Studio x64 Win64. 
@@ -55,7 +55,7 @@ sn [-quiet][option [parameter(s)]]
 |**-k** [*keysize*] *outfile*|Génère une nouvelle clé <xref:System.Security.Cryptography.RSACryptoServiceProvider> de la taille spécifiée et l’écrit dans le fichier spécifié.  Une clé publique et une clé privée sont écrites dans le fichier.<br /><br /> Si vous ne spécifiez pas de taille de clé, une clé de 1 024 bits est générée par défaut si le fournisseur de services de chiffrement avancé Microsoft est installé ; sinon, une clé de 512 bits est générée.<br /><br /> Le paramètre *keysize* prend en charge des longueurs de clé allant de 384 bits à 16 384 bits dans des incréments de 8 bits si le fournisseur de services de chiffrement avancé Microsoft est installé.  Il prend en charge des longueurs de clé allant de 384 bits à 512 bits par incréments de 8 bits si le fournisseur de services de chiffrement de base Microsoft est installé.|  
 |**-m** [**y** *&#124;* **n**]|Spécifie si les conteneurs de clés sont propres à l'ordinateur ou à l'utilisateur. Si vous spécifiez *y*, les conteneurs de clés sont propres à l’ordinateur. Si vous spécifiez *n*, les conteneurs de clés sont propres à l’utilisateur.<br /><br /> Si ni y, ni n ne sont spécifiés, cette option affiche le paramètre actuel.|  
 |**-o**  *infile* [*outfile*]|Extrait la clé publique d’*infile* et la stocke dans un fichier .csv. Chaque octet de la clé publique est séparé par une virgule. Ce format s'avère utile pour les références de codage en dur aux clés sous forme de tableaux initialisés dans le code source. Si *outfile* n’est pas spécifié, cette option place la sortie dans le Presse-papiers. **Remarque :**  cette option ne vérifie pas si l’entrée consiste uniquement en une clé publique. Si `infile` contient une paire de clés dont une est privée, la clé privée est également extraite.|  
-|**-p** *infile outfile* [*hashalg*]|Extrait la clé publique de la paire de clés dans *infile* et la stocke dans *outfile*, éventuellement à l’aide de l’algorithme RSA spécifié par *hashalg*. Cette clé publique permet de différer la signature d’un assembly à l’aide des options **/delaysign+** et **/keyfile** d’[Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). En cas signature différée d'un assembly, seule la clé publique est définie au moment de la compilation et un espace est réservé dans le fichier pour la signature qui sera ajoutée par la suite, lorsque la clé privée sera connue.|  
+|**-p** *infile outfile* [*hashalg*]|Extrait la clé publique de la paire de clés dans *infile* et la stocke dans *outfile*, éventuellement à l’aide de l’algorithme RSA spécifié par *hashalg*. Cette clé publique permet de différer la signature d’un assembly à l’aide des options **/delaysign+** et **/keyfile** d’[Assembly Linker (Al.exe)](al-exe-assembly-linker.md). En cas signature différée d'un assembly, seule la clé publique est définie au moment de la compilation et un espace est réservé dans le fichier pour la signature qui sera ajoutée par la suite, lorsque la clé privée sera connue.|  
 |**-pc**  *container* *outfile* [*hashalg*]|Extrait la clé publique de la paire de clés figurant dans *container* et la stocke dans *outfile*. Si vous utilisez l’option *hashalg*, l’algorithme RSA est utilisé pour récupérer la clé publique.|  
 |**-Pb** [**y** *&#124;* **n**]|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. Par défaut, il s’agit de `y`. **Remarque :**  sur les ordinateurs 64 bits, ce paramètre doit être défini à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
 |**-q**[**uiet**]|Spécifie le mode silencieux ; supprime l'affichage des messages d'opération réussie.|  
@@ -126,7 +126,7 @@ sn -d MyContainer
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Outils](index.md)
+- [Al.exe (Assembly Linker)](al-exe-assembly-linker.md)
 - [Assemblys avec nom fort](../../standard/assembly/strong-named.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

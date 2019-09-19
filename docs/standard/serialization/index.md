@@ -1,47 +1,40 @@
 ---
-title: Sérialisation dans .NET
-ms.date: 03/30/2017
+title: Sérialisation-.NET
+ms.date: 09/02/2019
 helpviewer_keywords:
+- JSON serialization
 - XML serialization, defined
 - binary serialization
 - serializing objects
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-ms.openlocfilehash: 1f90a128ef6b29acbd315beae7aaaf1d1b78a62b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e6db24326c79ab6509b253c45c27f87a2aacd73c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638845"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053345"
 ---
 # <a name="serialization-in-net"></a>Sérialisation dans .NET
-La sérialisation correspond au processus de conversion de l'état d'un objet en un formulaire persistant ou transportable. Le complément de la sérialisation est la désérialisation, qui convertit un flux de données en un objet. Ces deux processus permettent de stocker et de transférer facilement des données.  
-  
-.NET comprend deux technologies de sérialisation :  
-  
-- La sérialisation binaire préserve le respect des types, qui permet de conserver l'état d'un objet entre plusieurs appels d'une application. Par exemple, vous pouvez partager un objet entre plusieurs applications en le sérialisant dans le Presse-papiers. Vous pouvez sérialiser un objet vers un flux, un disque, la mémoire, le réseau, et ainsi de suite. La communication à distance utilise la sérialisation pour passer des objets « par valeur » d'un ordinateur ou d'un domaine d'application à un autre.  
-  
-- La sérialisation XML sérialise uniquement des propriétés et des champs publics mais ne conserve pas le respect des types. Ceci est utile lorsque vous souhaitez fournir ou consommer des données sans restreindre l'application qui les utilise. XML étant une norme ouverte, elle constitue une option intéressante pour partager des données via le Web. Le protocole SOAP est également une norme ouverte et représente par conséquent une option avantageuse.  
-  
-## <a name="in-this-section"></a>Dans cette section  
-[Rubriques de guides pratiques pour la sérialisation](../../../docs/standard/serialization/serialization-how-to-topics.md)  
-Répertorie les liens vers les rubriques Comment contenues dans cette section.
-  
-[Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)  
-Décrit le mécanisme de sérialisation binaire inclus avec le Common Language Runtime.
 
-[Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
-Décrit le mécanisme de sérialisation XML et SOAP inclus avec le Common Language Runtime.
-
-[Outils de sérialisation](../../../docs/standard/serialization/serialization-tools.md)  
-Ces outils vous aident à développer le code de sérialisation.
-
-[Exemples de sérialisation](../../../docs/standard/serialization/serialization-samples.md)  
-Les exemples montrent comment procéder à la sérialisation.
+La sérialisation correspond au processus de conversion de l'état d'un objet en un formulaire persistant ou transportable. Le complément de la sérialisation est la désérialisation, qui convertit un flux de données en un objet. Ensemble, ces processus autorisent le stockage et le transfert des données.  
+  
+.NET propose les technologies de sérialisation suivantes :  
+  
+- [La sérialisation binaire](binary-serialization.md) préserve la fidélité du type, ce qui est utile pour conserver l’état d’un objet entre différents appels d’une application. Par exemple, vous pouvez partager un objet entre plusieurs applications en le sérialisant dans le Presse-papiers. Vous pouvez sérialiser un objet vers un flux, un disque, la mémoire, le réseau, et ainsi de suite. La communication à distance utilise la sérialisation pour passer des objets « par valeur » d'un ordinateur ou d'un domaine d'application à un autre.  
+  
+- [La sérialisation XML et SOAP](xml-and-soap-serialization.md) sérialise uniquement les propriétés et les champs publics et ne conserve pas la fidélité du type. Ceci est utile lorsque vous souhaitez fournir ou consommer des données sans restreindre l'application qui les utilise. XML étant une norme ouverte, elle constitue une option intéressante pour partager des données via le Web. Le protocole SOAP est également une norme ouverte et représente par conséquent une option avantageuse.  
+  
+- [La sérialisation JSON](system-text-json-overview.md) sérialise uniquement les propriétés publiques et ne conserve pas la fidélité du type. JSON est une norme ouverte qui est un choix attrayant pour le partage de données sur le Web.
 
 ## <a name="reference"></a>Référence
-<xref:System.Runtime.Serialization> contient des classes qui peuvent être utilisées pour sérialiser et désérialiser des objets.
+
+<xref:System.Runtime.Serialization>  
+Contient des classes qui peuvent être utilisées pour sérialiser et désérialiser des objets.
   
 <xref:System.Xml.Serialization>  
 Contient des classes qui peuvent être utilisées pour sérialiser des objets en documents ou en flux de données au format XML.
+
+<xref:System.Text.Json>  
+Contient des classes qui peuvent être utilisées pour sérialiser des objets dans des documents ou des flux au format JSON.

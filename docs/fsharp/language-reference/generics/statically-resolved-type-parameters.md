@@ -2,12 +2,12 @@
 title: Paramètres de type résolus statiquement
 description: Découvrez comment utiliser un F# paramètre de type résolu statiquement, qui est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution.
 ms.date: 05/16/2016
-ms.openlocfilehash: 43ed79b6e5f43a499a27b05e26472b021c455e44
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: bc3310192cdaa5ae4862b8aee46b6152f61da38a
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630583"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082923"
 ---
 # <a name="statically-resolved-type-parameters"></a>Paramètres de type résolus statiquement
 
@@ -15,7 +15,7 @@ Un *paramètre de type résolu statiquement* est un paramètre de type qui est r
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```fsharp
 ˆtype-parameter
 ```
 
@@ -52,12 +52,12 @@ when (^a or ^b) : (static member ( + ) : ^a * ^b -> ^d) and
 
 La sortie est la suivante.
 
-```
+```console
 2
 1.500000
 ```
 
-À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement.  Dans les versions antérieures du langage, le nom de type pouvait être inféré en fait par le compilateur, mais il n’a pas pu être spécifié dans la signature.  À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement. Voici un exemple :
+À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement.  Dans les versions antérieures du langage, le nom de type pouvait être inféré en fait par le compilateur, mais il n’a pas pu être spécifié dans la signature.  À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement. Voici un exemple :
 
 ```fsharp
 let inline konst x _ = x

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c7924771-a16b-40fe-b337-ce51dcdf6a12
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 35560b966d5fba60ac35b2eb1e559e196fc868f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea7f48ab61c16cb0430717074f1b1feab4827763
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754534"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052591"
 ---
 # <a name="invalidiunknown-mda"></a>Assistant Débogage managé invalidIUnknown
 L'Assistant Débogage managé (MDA) `invalidIUnknown` est activé quand un pointeur `IUnknown` non valide est passé au code managé à partir du code natif. Le pointeur `IUnknown` ne peut pas retourner un succès quand il est interrogé sur l'interface `IUnknown`.  
@@ -26,7 +26,7 @@ L'Assistant Débogage managé (MDA) `invalidIUnknown` est activé quand un point
 ## <a name="cause"></a>Cause  
  Une implémentation incorrecte de `QueryInterface` sur l'interface COM a été passée au CLR.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Corrigez l'implémentation de `QueryInterface`.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -48,5 +48,5 @@ L'Assistant Débogage managé (MDA) `invalidIUnknown` est activé quand un point
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)

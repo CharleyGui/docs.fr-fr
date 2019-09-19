@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 410f95b373e079fe959068a6540642a6ad043e95
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 22e1ae495276b0c474ad47f695d8410288289f83
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952826"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053721"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -169,7 +169,7 @@ Dans les applications qui ciblent .NET Framework 4.7.2 et versions antérieures
 
 La figure suivante montre l’info-bulle lorsque l’utilisateur a sélectionné un bouton à l’aide du clavier.
 
-![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](media/tooltip.png)
+![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](./media/tooltip.png)
 
 <a name="wpf48" />
 
@@ -189,7 +189,7 @@ Dans .NET Framework 4.7.2, WPF permet désormais de dessiner une sélection de 
 
 Pour utiliser cette propriété, il suffit de l’ajouter à votre code XAML et d’utiliser le pinceau ou la liaison appropriés. La sélection de texte qui en résulte ressemble à ceci :
 
-![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](media/selectiontextbrush-property.png)
+![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](./media/selectiontextbrush-property.png)
 
 Vous pouvez combiner l’utilisation des propriétés `SelectionBrush` et `SelectionTextBrush` pour générer la combinaison de couleurs de premier plan et d’arrière-plan qui vous convient.
 
@@ -478,81 +478,81 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - Contrôle <xref:System.Windows.Controls.Expander>
 
-  L’élément visuel de focus pour le contrôle <xref:System.Windows.Controls.Expander> est désormais visible. Les éléments visuels de clavier pour les contrôles <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox> et <xref:System.Windows.Controls.RadioButton> sont également visibles. Par exemple :
+  L’élément visuel de focus pour le contrôle <xref:System.Windows.Controls.Expander> est désormais visible. Les éléments visuels de clavier pour les contrôles <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox> et <xref:System.Windows.Controls.RadioButton> sont également visibles. Par exemple :
 
   Avant : 
 
-  ![Contrôle Expander avec focus avant les améliorations apportées à l’accessibilité](media/expander-before.png)
+  ![Contrôle Expander avec focus avant les améliorations apportées à l’accessibilité](./media/expander-before.png)
 
   Après : 
 
-  ![Contrôle Expander avec focus après les améliorations apportées à l’accessibilité](media/expander-after.png)
+  ![Contrôle Expander avec focus après les améliorations apportées à l’accessibilité](./media/expander-after.png)
 
 - Contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton>
 
-  Le texte dans les contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton> est désormais plus facile à voir quand il est sélectionné dans les thèmes à contraste élevé. Par exemple :
+  Le texte dans les contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton> est désormais plus facile à voir quand il est sélectionné dans les thèmes à contraste élevé. Par exemple :
 
   Avant : 
 
-  ![Case d’option à contraste élevé avec focus avant les améliorations apportées à l’accessibilité](media/radio-button-before.png)
+  ![Case d’option à contraste élevé avec focus avant les améliorations apportées à l’accessibilité](./media/radio-button-before.png)
 
   Après : 
 
-  ![Case d’option à contraste élevé avec focus après les améliorations apportées à l’accessibilité](media/radio-button-after.png)
+  ![Case d’option à contraste élevé avec focus après les améliorations apportées à l’accessibilité](./media/radio-button-after.png)
 
 - Contrôle <xref:System.Windows.Controls.ComboBox>
 
-  À compter de .NET Framework 4.7.1, la bordure d’un contrôle <xref:System.Windows.Controls.ComboBox> désactivé est de la même couleur que le texte désactivé. Par exemple :
+  À compter de .NET Framework 4.7.1, la bordure d’un contrôle <xref:System.Windows.Controls.ComboBox> désactivé est de la même couleur que le texte désactivé. Par exemple :
 
   Avant : 
 
-  ![Texte et bordure d’un contrôle ComboBox désactivé avant les améliorations apportées à l’accessibilité](media/combo-disabled-before.png)
+  ![Texte et bordure d’un contrôle ComboBox désactivé avant les améliorations apportées à l’accessibilité](./media/combo-disabled-before.png)
 
   Après :   
 
-  ![Texte et bordure d’un contrôle ComboBox désactivé après les améliorations apportées à l’accessibilité](media/combo-disabled-after.png)
+  ![Texte et bordure d’un contrôle ComboBox désactivé après les améliorations apportées à l’accessibilité](./media/combo-disabled-after.png)
 
   En outre, les boutons désactivés et actifs utilisent la couleur de thème correcte.
 
   Avant :
 
-  ![Couleurs de thème des boutons avant les améliorations apportées à l’accessibilité](media/button-themes-before.png) 
+  ![Couleurs de thème des boutons avant les améliorations apportées à l’accessibilité](./media/button-themes-before.png) 
 
   Après : 
 
-  ![Couleurs de thème des boutons après les améliorations apportées à l’accessibilité](media/button-themes-after.png) 
+  ![Couleurs de thème des boutons après les améliorations apportées à l’accessibilité](./media/button-themes-after.png) 
 
-  Enfin, dans .NET Framework 4.7 et versions antérieures, la définition du style d’un contrôle <xref:System.Windows.Controls.ComboBox> sur `Toolbar.ComboBoxStyleKey` rendait la flèche déroulante invisible. Ce problème est résolu depuis .NET Framework 4.7.1. Par exemple :
+  Enfin, dans .NET Framework 4.7 et versions antérieures, la définition du style d’un contrôle <xref:System.Windows.Controls.ComboBox> sur `Toolbar.ComboBoxStyleKey` rendait la flèche déroulante invisible. Ce problème est résolu depuis .NET Framework 4.7.1. Par exemple :
 
   Avant : 
 
-  ![Toolbar.ComboBoxStyleKey avant les améliorations apportées à l’accessibilité](media/comboboxstylekey-before.png) 
+  ![Toolbar.ComboBoxStyleKey avant les améliorations apportées à l’accessibilité](./media/comboboxstylekey-before.png) 
 
   Après : 
 
-  ![Toolbar.ComboBoxStyleKey après les améliorations apportées à l’accessibilité](media/comboboxstylekey-after.png) 
+  ![Toolbar.ComboBoxStyleKey après les améliorations apportées à l’accessibilité](./media/comboboxstylekey-after.png) 
 
 - Contrôle <xref:System.Windows.Controls.DataGrid>
 
-  À compter de .NET Framework 4.7.1, la flèche d’indicateur de tri dans les contrôles <xref:System.Windows.Controls.DataGrid> utilise maintenant les couleurs de thème correctes. Par exemple :
+  À compter de .NET Framework 4.7.1, la flèche d’indicateur de tri dans les contrôles <xref:System.Windows.Controls.DataGrid> utilise maintenant les couleurs de thème correctes. Par exemple :
 
   Avant : 
 
-  ![Flèche d’indicateur de tri avant les améliorations apportées à l’accessibilité](media/sort-indicator-before.png) 
+  ![Flèche d’indicateur de tri avant les améliorations apportées à l’accessibilité](./media/sort-indicator-before.png) 
 
   Après :   
 
-  ![Flèche d’indicateur de tri après les améliorations apportées à l’accessibilité](media/sort-indicator-after.png) 
+  ![Flèche d’indicateur de tri après les améliorations apportées à l’accessibilité](./media/sort-indicator-after.png) 
 
   En outre, dans .NET Framework 4.7 et versions antérieures, le style de lien par défaut prenait une couleur incorrecte lorsque l’utilisateur pointait avec la souris dans des modes de contraste élevé. Ce problème est résolu depuis .NET Framework 4.7.1. De même, depuis .NET Framework 4.7.1, les colonnes de cases à cocher <xref:System.Windows.Controls.DataGrid> utilisent les couleurs attendues pour les commentaires de focus clavier.
 
   Avant : 
 
-  ![Style de lien par défaut DataGrid avant les améliorations apportées à l’accessibilité](media/default-link-style-before.png) 
+  ![Style de lien par défaut DataGrid avant les améliorations apportées à l’accessibilité](./media/default-link-style-before.png) 
 
   Après :    
 
-  ![Style de lien par défaut DataGrid après les améliorations apportées à l’accessibilité](media/default-link-style-after.png) 
+  ![Style de lien par défaut DataGrid après les améliorations apportées à l’accessibilité](./media/default-link-style-after.png) 
 
 Pour plus d’informations sur les améliorations apportées à l’accessibilité WPF dans .NET Framework 4.7.1, consultez [Améliorations apportées à l’accessibilité dans WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf).
 
@@ -579,15 +579,15 @@ Voici quelques exemples de modifications du contraste élevé :
 
 - Le texte dans un contrôle <xref:System.Windows.Forms.Button> sélectionné contraste avec la couleur de sélection.
 
-- Le texte désactivé est plus facile à lire. Par exemple :
+- Le texte désactivé est plus facile à lire. Par exemple :
 
   Avant :
 
-  ![Texte désactivé avant les améliorations apportées à l’accessibilité](media/wf-disabled-before.png) 
+  ![Texte désactivé avant les améliorations apportées à l’accessibilité](./media/wf-disabled-before.png) 
 
   Après :
 
-  ![Texte désactivé après les améliorations apportées à l’accessibilité](media/wf-disabled-after.png) 
+  ![Texte désactivé après les améliorations apportées à l’accessibilité](./media/wf-disabled-after.png) 
 
 - Améliorations du contraste élevé dans la boîte de dialogue Thread Exception (Exception de thread).
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bed0084fd576ba9b9f9eeb51e9e2466938e43490
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 6f867b53f168a394515a1b1eaa6575a72dfb8d91
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106510"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052010"
 ---
 # <a name="net-framework-system-requirements"></a>Configuration requise pour le .NET Framework
 
@@ -34,7 +34,7 @@ Les environnements de développement qui vous permettent de développer des appl
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Pour obtenir des informations et des liens pour le téléchargement, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).
+Pour obtenir des informations et des liens pour le téléchargement, consultez [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md).
 
 Pour plus d’informations sur le cycle de vie du support des versions du .NET Framework, consultez [Cycle de vie de support des produits Microsoft](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
 
@@ -48,7 +48,7 @@ Pour plus d’informations sur le cycle de vie du support des versions du .NET 
 | 32 bits                   | 4,5 Go |
 | 64 bits                   | 4,5 Go |
 
-## <a name="installation-requirements"></a>Configuration requise pour l’installation
+## <a name="installation-requirements"></a>Configuration requise
 
 L’installation du .NET Framework nécessite des privilèges d’administrateur. Si vous n’avez pas de droits d’administrateur sur l’ordinateur sur lequel vous voulez installer le .NET Framework, contactez votre administrateur réseau.
 
@@ -112,6 +112,6 @@ L’installation du .NET Framework nécessite des privilèges d’administrateur
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide d’installation](../../../docs/framework/install/index.md)
-- [Prise en main](../../../docs/framework/get-started/index.md)
-- [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Guide d’installation](../install/index.md)
+- [Prise en main](index.md)
+- [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)

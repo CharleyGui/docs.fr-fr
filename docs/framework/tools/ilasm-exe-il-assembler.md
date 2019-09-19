@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fcc9ba5e379897247f50175603b1002d5688d215
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: b8d1ad081c8d783cd18054078a6eeb82428faa4d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894688"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044632"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
 L'Assembleur IL génère un fichier PE (Portable Executable) en langage IL (Intermediate Language). (Pour plus d’informations sur le langage IL, consultez [Processus d’exécution managée](../../standard/managed-execution-process.md).) Vous pouvez exécuter le fichier exécutable obtenu, qui comporte le langage IL et les métadonnées nécessaires, pour déterminer si le langage IL fonctionne comme prévu.
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -92,7 +92,7 @@ L'Assembleur IL peut exprimer toutes les fonctionnalités métadonnées et IL ex
 > [!NOTE]
 > La compilation peut échouer si la dernière ligne de code du fichier source .il ne comporte pas d'espace blanc de fin ou de caractère de fin de ligne.
 
-Vous pouvez utiliser *Ilasm.exe* avec l’outil qui lui est associé, [*Ildasm.exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). *Ildasm.exe* utilise un fichier PE qui contient le code IL et crée un fichier texte qu’il peut utiliser en entrée dans *Ilasm.exe*. Cet outil s'avère, par exemple, utile lors de la compilation d'un code dans un langage de programmation ne prenant pas en charge tous les attributs de métadonnées du runtime. Une fois le code compilé et la sortie exécutée via *Ildasm.exe*, le fichier texte IL obtenu peut être modifié manuellement pour y ajouter les attributs manquants. Vous pouvez ensuite exécuter ce fichier texte via *Ilasm.exe* pour générer un fichier exécutable final.
+Vous pouvez utiliser *Ilasm.exe* avec l’outil qui lui est associé, [*Ildasm.exe*](ildasm-exe-il-disassembler.md). *Ildasm.exe* utilise un fichier PE qui contient le code IL et crée un fichier texte qu’il peut utiliser en entrée dans *Ilasm.exe*. Cet outil s'avère, par exemple, utile lors de la compilation d'un code dans un langage de programmation ne prenant pas en charge tous les attributs de métadonnées du runtime. Une fois le code compilé et la sortie exécutée via *Ildasm.exe*, le fichier texte IL obtenu peut être modifié manuellement pour y ajouter les attributs manquants. Vous pouvez ensuite exécuter ce fichier texte via *Ilasm.exe* pour générer un fichier exécutable final.
 
 Vous pouvez également utiliser cette technique pour générer un seul fichier exécutable portable à partir de plusieurs fichiers exécutables portables provenant de différents compilateurs.
 
@@ -159,7 +159,7 @@ La commande suivante assemble le fichier IL *myTestFile.il* et génère le fichi
 ilasm myTestFile /dll /output:myNewTestFile.dll
 ```
 
-L’exemple de code suivant illustre une application extrêmement simple qui affiche « Hello World! » dans la console. Vous pouvez compiler ce code, puis utiliser l’outil [*Ildasm.exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour générer un fichier IL.
+L’exemple de code suivant illustre une application extrêmement simple qui affiche « Hello World! » dans la console. Vous pouvez compiler ce code, puis utiliser l’outil [*Ildasm.exe*](ildasm-exe-il-disassembler.md) pour générer un fichier IL.
 
 ```csharp
 using System;
@@ -229,7 +229,7 @@ L'exemple de code IL suivant correspond à l'exemple de code C# précédent. Vou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils](../../../docs/framework/tools/index.md)
-- [*Ildasm.exe* (Désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
+- [Outils](index.md)
+- [*Ildasm.exe* (Désassembleur IL)](ildasm-exe-il-disassembler.md)
 - [Processus d'exécution managée](../../standard/managed-execution-process.md)
-- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Invites de commandes](developer-command-prompt-for-vs.md)

@@ -1,43 +1,43 @@
 ---
-title: Créer un Service WCF compatible AJAX et un Client ASP.NET dans Visual Studio
+title: Créer un service WCF compatible AJAX et un client ASP.NET dans Visual Studio
 ms.date: 08/17/2018
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
-ms.openlocfilehash: 06fa3a9d0151f3b4b865c421f9960854ef471377
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f5c9eb1750b0df28836f147d5b4be1b223bb52e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754604"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053690"
 ---
-# <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>Procédure : Créer un Service WCF compatible AJAX et un Client ASP.NET accédant à Service
+# <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>Procédure : Créer un service WCF compatible AJAX et un client ASP.NET qui accède au service
 
-Cette rubrique montre comment utiliser Visual Studio pour créer un service compatible AJAX Windows Communication Foundation (WCF) et un client ASP.NET qui accède au service.
+Cette rubrique montre comment utiliser Visual Studio pour créer un service Windows Communication Foundation (WCF) compatible AJAX et un client ASP.NET qui accède au service.
 
 ## <a name="create-an-aspnet-web-app"></a>Créer une application web ASP.NET
 
 1. Ouvrez Visual Studio.
 
-1. À partir de la **fichier** menu, sélectionnez **New** > **projet**
+1. Dans le menu **fichier** , sélectionnez **nouveau** > **projet** .
 
-1. Dans le **nouveau projet** boîte de dialogue, développez le **installé** > **Visual C#** > **Web** catégorie, puis Sélectionnez **Application Web ASP.NET (.NET Framework)**.
+1. Dans la boîte de dialogue **nouveau projet** , > développez la catégorie  > **Visual C#**  **Web** installée, puis sélectionnez **application Web ASP.net (.NET Framework)** .
 
-1. Nommez le projet **SandwichServices** et cliquez sur **OK**.
+1. Nommez le projet **SandwichServices** , puis cliquez sur **OK**.
 
-1. Dans le **nouvelle Application Web ASP.NET** boîte de dialogue, sélectionnez **vide** , puis sélectionnez **OK**.
+1. Dans la boîte de dialogue **nouvelle application Web ASP.net** , sélectionnez **vide** , puis cliquez sur **OK**.
 
-   ![ASP.NET web application type boîte de dialogue dans Visual Studio](media/create-an-ajax-wcf-asp-net-client/new-asp-net-web-app-type.png)
+   ![Boîte de dialogue type d’application Web ASP.NET dans Visual Studio](./media/create-an-ajax-wcf-asp-net-client/new-asp-net-web-app-type.png)
 
-## <a name="add-a-web-form"></a>Ajoutez un formulaire web
+## <a name="add-a-web-form"></a>Ajouter un formulaire Web
 
-1. Cliquez sur le projet SandwichServices dans **l’Explorateur de solutions** et sélectionnez **ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur le projet SandwichServices, puis sélectionnez **Ajouter** > **un nouvel élément**.
 
-1. Dans le **ajouter un nouvel élément** boîte de dialogue, développez le **installé** > **Visual C#** > **Web** catégorie, puis Sélectionnez le **Web Form** modèle.
+1. Dans la boîte de dialogue **Ajouter un nouvel élément** , développez la catégorie  > **Visual C#**  **Web** **installée** > , puis sélectionnez le modèle **Web Form** .
 
-1. Acceptez le nom par défaut (**WebForm1**), puis sélectionnez **ajouter**.
+1. Acceptez le nom par défaut (**WebForm1**), puis sélectionnez **Ajouter**.
 
-   *WebForm1.aspx* s’ouvre dans **Source** vue.
+   *WebForm1. aspx* s’ouvre en mode **source** .
 
-1. Ajoutez le balisage suivant à l’intérieur de la  **\<corps >** balises :
+1. Ajoutez le balisage suivant à l’intérieur du  **\<corps >** balises :
 
    ```html
    <input type="button" value="Price of 3 sandwiches" onclick="Calculate()"/>
@@ -47,17 +47,17 @@ Cette rubrique montre comment utiliser Visual Studio pour créer un service comp
 
 ## <a name="create-an-ajax-enabled-wcf-service"></a>Créer un service WCF compatible AJAX
 
-1. Cliquez sur le projet SandwichServices dans **l’Explorateur de solutions** et sélectionnez **ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur le projet SandwichServices, puis sélectionnez **Ajouter** > **un nouvel élément**.
 
-1. Dans le **ajouter un nouvel élément** boîte de dialogue, développez le **installé** > **Visual C#** > **Web** catégorie, puis Sélectionnez le **Service WCF (compatible AJAX)** modèle.
+1. Dans la boîte de dialogue **Ajouter un nouvel élément** , développez la catégorie  > **Visual C#**  **Web** **installée** > , puis sélectionnez le modèle **service WCF (compatible Ajax)** .
 
-   ![Modèle d’élément (compatible AJAX) de Service WCF dans Visual Studio](media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
+   ![Modèle d’élément de service WCF (compatible AJAX) dans Visual Studio](./media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
 
-1. Nommez le service **CostService** , puis sélectionnez **ajouter**.
+1. Nommez le service **CostService** , puis sélectionnez **Ajouter**.
 
    *CostService.svc.cs* s’ouvre dans l’éditeur.
 
-1. Implémenter l’opération dans le service. Ajoutez la méthode suivante à la classe CostService pour calculer le coût d’une quantité de sandwichs :
+1. Implémentez l’opération dans le service. Ajoutez la méthode suivante à la classe CostService pour calculer le coût d’une quantité de sandwiches :
 
     ```csharp
     [OperationContract]
@@ -69,13 +69,13 @@ Cette rubrique montre comment utiliser Visual Studio pour créer un service comp
 
 ## <a name="configure-the-client-to-access-the-service"></a>Configurer le client pour accéder au service
 
-1. Ouvrez le *WebForm1.aspx* fichier et sélectionnez le **conception** vue.
+1. Ouvrez le fichier *WebForm1. aspx* et sélectionnez le mode **Design** .
 
-2. À partir de la **vue** menu, sélectionnez **boîte à outils**.
+2. Dans le menu **affichage** , sélectionnez **boîte à outils**.
 
-3. Développez le **Extensions AJAX** nœud et glisser -déplacer un **ScriptManager** vers le formulaire.
+3. Développez le nœud **Extensions AJAX** et glissez-déposez un **ScriptManager** sur le formulaire.
 
-4. Dans le **Source** afficher, ajoutez le code suivant entre les  **\<ScriptManager >** balises pour spécifier le chemin d’accès au service WCF :
+4. De retour dans la vue **source** , ajoutez le code suivant entre les  **\<** balises de > ScriptManager pour spécifier le chemin d’accès au service WCF :
 
     ```xml
     <Services>
@@ -83,7 +83,7 @@ Cette rubrique montre comment utiliser Visual Studio pour créer un service comp
     </Services>
     ```
 
-5. Ajoutez le code pour la fonction Javascript `Calculate()`. Placez le code suivant dans le **head** section du formulaire web :
+5. Ajoutez le code de la fonction `Calculate()`JavaScript. Placez le code suivant dans la section **Head** du formulaire Web :
 
     ```html
     <script type="text/javascript">
@@ -100,15 +100,15 @@ Cette rubrique montre comment utiliser Visual Studio pour créer un service comp
     </script>
     ```
 
-   Ce code appelle la méthode de CostService pour calculer le prix des trois sandwiches, puis affiche le résultat dans l’étendue appelée **additionResult**.
+   Ce code appelle la méthode de CostService pour calculer le prix de trois sandwichs, puis affiche le résultat dans l’étendue appelée **additionResult**.
 
 ## <a name="run-the-program"></a>Exécuter le programme
 
-Assurez-vous que l’option *WebForm1.aspx* a le focus, puis appuyez sur **Démarrer** bouton pour lancer le client web. Le bouton a un triangle vert et disant quelque chose comme **IIS Express (Microsoft Edge)**. Ou, vous pouvez appuyer sur **F5**. Cliquez sur le **prix de 3 sandwiches** bouton pour générer la sortie attendue de « 3.75 ».
+Assurez-vous que *WebForm1. aspx* a le focus, puis appuyez sur le bouton **Démarrer** pour lancer le client Web. Le bouton a un triangle vert et dit **IIS Express (Microsoft Edge)** . Vous pouvez appuyer sur **F5**. Cliquez sur le bouton **prix de 3 sandwiches** pour générer la sortie attendue de « 3,75 ».
 
-## <a name="example-code"></a>exemple de code
+## <a name="example-code"></a>Exemple de code
 
-Voici le code complet dans le *CostService.svc.cs* fichier :
+Voici le code complet dans le fichier *CostService.svc.cs* :
 
 ```csharp
 using System.ServiceModel;
@@ -129,7 +129,7 @@ namespace SandwichServices
 }
 ```
 
-Voici le contenu complet de la *WebForm1.aspx* page :
+Voici le contenu complet de la page *WebForm1. aspx* :
 
 ```aspx-csharp
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SandwichServices.WebForm1" %>

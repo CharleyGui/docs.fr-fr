@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: b6ab2d48-6eee-4bab-97a3-046b3b0a5470
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: defd7f90fcac8d1e98104796682058638c9bd799
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70d31bc187cabe49351e86a20023e2ec65e87b94
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753684"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052399"
 ---
 # <a name="overlappedfreeerror-mda"></a>Assistant Débogage managé overlappedFreeError
 L’Assistant Débogage managé `overlappedFreeError` est activé quand la méthode <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> est appelée avant la fin de l’opération avec chevauchement.  
@@ -29,7 +29,7 @@ L’Assistant Débogage managé `overlappedFreeError` est activé quand la méth
   
  Cet Assistant Débogage managé peut ne pas représenter une erreur si l’opération avec chevauchement n’a pas démarré correctement.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Vérifiez que l’opération d’E/S utilisant la structure avec chevauchement est terminée avant d’appeler la méthode <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29>.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -53,5 +53,5 @@ L’Assistant Débogage managé `overlappedFreeError` est activé quand la méth
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Marshaling d'interopérabilité](../interop/interop-marshaling.md)

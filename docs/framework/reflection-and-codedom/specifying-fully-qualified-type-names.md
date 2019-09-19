@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc8395492992c22da3c635f0de010516127f9be4
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
-ms.translationtype: HT
+ms.openlocfilehash: 656b82daffc62824ed663ea7080bd6d20cd0dadc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "61793001"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045813"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Spécification des noms de types complets
 
@@ -122,7 +122,7 @@ Utilisez la barre oblique inverse (\\) comme caractère d’échappement pour s
 
 |Token|Signification|
 |-----------|-------------|
-|\\,|Séparateur d’assembly.|
+|\\|Séparateur d’assembly.|
 |\\+|Séparateur de type imbriqué.|
 |\\&|Type référence.|
 |\\*|Type pointeur.|
@@ -149,7 +149,7 @@ Au minimum, vous devez fournir le nom textuel (IDENTIFIER) de l’assembly comme
 |**PublicKey**|Clé publique complète|Valeur de chaîne de la clé publique complète au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
 |**PublicKeyToken**|Jeton de clé publique (hachage de 8 octets de la clé publique complète)|Valeur de chaîne du jeton de clé publique au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
 |**Culture**|Culture de l’assembly|Culture de l’assembly au format RFC-1766 ou « neutre » pour les assemblys indépendants du langage (non-satellites).|
-|**Personnalisé**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
+|**Personnalisé**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
 
 L’exemple suivant illustre un **AssemblyName** pour un assembly nommé simplement avec une culture par défaut.
 
@@ -224,4 +224,4 @@ Pour **ModuleBuilder.GetType**, `MyArray[0..5]` indique un tableau unidimensionn
 - <xref:System.Type.FullName%2A?displayProperty=nameWithType>
 - <xref:System.Type.GetType%2A?displayProperty=nameWithType>
 - <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>
-- [Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Affichage des informations de type](viewing-type-information.md)

@@ -1,17 +1,16 @@
 ---
-title: Bien démarrer avec .NET Core sur macOS
+title: 'Tutoriel : Créer une solution .NET Core dans macOS à l’aide de Visual Studio Code'
 description: Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core à l’aide de Visual Studio Code.
-author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: 572174cb09dbde03095fa9444989356038bab9b7
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 022afd99c6d36d7a60ac40f3f27ba073c5470bd2
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849349"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082811"
 ---
-# <a name="get-started-with-net-core-on-macos"></a>Bien démarrer avec .NET Core sur macOS
+# <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Tutoriel : Créer une solution .NET Core dans macOS à l’aide de Visual Studio Code
 
 Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core pour macOS. Découvrez comment créer des projets et des tests unitaires, utiliser les outils de débogage et incorporer des bibliothèques tierces à l’aide de [NuGet](https://www.nuget.org/).
 
@@ -32,13 +31,13 @@ Dans ce didacticiel, vous créez trois projets : un projet de bibliothèque, de
 
 Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd>+<kbd>\`</kbd> (accent grave) ou sélectionnez **Affichage > Terminal intégré** dans le menu pour ouvrir un terminal incorporé dans Visual Studio Code. Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de Visual Studio Code.
 
-Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core. Dans le terminal, créez un dossier *golden* et ouvrez le dossier. Ce dossier est la racine de votre solution. Exécutez la commande [`dotnet new`](../tools/dotnet-new.md) pour créer une solution, *golden.sln* :
+Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core. Dans le terminal, exécutez la [`dotnet new`](../tools/dotnet-new.md) commande pour créer une solution *Golden. sln* à l’intérieur d’un nouveau dossier nommé *Golden*:
 
 ```console
-dotnet new sln
+dotnet new sln -o golden
 ```
 
-À partir du dossier *golden*, exécutez la commande suivante pour créer un projet de bibliothèque qui génère deux fichiers,*library.csproj* et *Class1.cs*, dans le dossier *library* :
+Accédez au nouveau dossier *Golden* et exécutez la commande suivante pour créer un projet de bibliothèque, qui génère deux fichiers,*Library. csproj* et *Class1.cs*, dans le dossier de *bibliothèque* :
 
 ```console
 dotnet new classlib -o library

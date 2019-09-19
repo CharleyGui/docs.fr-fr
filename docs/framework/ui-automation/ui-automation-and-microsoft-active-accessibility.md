@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 8aadcc213e92fd53490f639f37dc8d8f62762c2c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 63b00f8eb35fa58ea0257d5e996fc2c51a248040
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946480"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042585"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI Automation et Microsoft Active Accessibility
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "69946480"
   
 <a name="Support_in_Windows_Presentation_Foundation_"></a>   
 ## <a name="support-in-windows-presentation-foundation"></a>Prise en charge dans Windows Presentation Foundation  
- Windows Presentation Foundation (WPF) est le nouveau modèle pour la création d’interfaces utilisateur. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les éléments ne contiennent pas de prise en charge native pour Active Accessibility; Toutefois, ils prennent en [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]charge, ce qui comprend la prise en charge du pontage pour les clients Active Accessibility. Seuls les clients spécifiquement écrits pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] peuvent tirer pleinement parti des fonctionnalités d’accessibilité de [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], comme la prise en charge étendue pour le texte.  
+ Windows Presentation Foundation (WPF) est le nouveau modèle pour la création d’interfaces utilisateur. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les éléments ne contiennent pas de prise en charge native pour Active Accessibility ; Toutefois, ils prennent en [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]charge, ce qui comprend la prise en charge du pontage pour les clients Active Accessibility. Seuls les clients spécifiquement écrits pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] peuvent tirer pleinement parti des fonctionnalités d’accessibilité de [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], comme la prise en charge étendue pour le texte.  
   
 <a name="Servers_and_Clients_compare"></a>   
 ## <a name="servers-and-clients"></a>Serveurs et clients  
@@ -110,7 +110,7 @@ ms.locfileid: "69946480"
 |ROLE_SYSTEM_OUTLINEITEM|Élément d’arborescence|  
 |ROLE_SYSTEM_WINDOW|Fenêtre|  
   
- Pour plus d’informations sur les différents types de contrôle, consultez [UI Automation Control Types](../../../docs/framework/ui-automation/ui-automation-control-types.md).  
+ Pour plus d’informations sur les différents types de contrôle, consultez [UI Automation Control Types](ui-automation-control-types.md).  
   
 <a name="States_and_Properties"></a>   
 ## <a name="states-and-properties"></a>États et propriétés  
@@ -176,7 +176,7 @@ ms.locfileid: "69946480"
 |STATE_SYSTEM_HOTTRACKED|Non disponible dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
 |STATE_SYSTEM_PRESSED|Non disponible dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
   
- Pour obtenir la liste complète des identificateurs de propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties Overview](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ Pour obtenir la liste complète des identificateurs de propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Properties Overview](ui-automation-properties-overview.md).  
   
 <a name="uiautomation_events_compare"></a>   
 ## <a name="events"></a>Events  
@@ -251,4 +251,4 @@ ms.locfileid: "69946480"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Notions de base d’UI Automation](../../../docs/framework/ui-automation/index.md)
+- [Notions de base d’UI Automation](index.md)

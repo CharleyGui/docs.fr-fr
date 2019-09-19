@@ -2,12 +2,12 @@
 title: Prise F# en main de dans Visual Studio
 description: Découvrez comment utiliser F# avec Visual Studio.
 ms.date: 07/03/2018
-ms.openlocfilehash: 24c9a81cfa61dc904db9b2213224677696d7eb9b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e573af67a1fc00b0a340f8c73ab1ee0ed2b97810
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629766"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082698"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Prise F# en main de dans Visual Studio
 
@@ -17,7 +17,7 @@ Pour commencer, assurez-vous que [Visual Studio est F#installé avec ](install-f
 
 ## <a name="creating-a-console-application"></a>Création d’une application console
 
-L’un des projets les plus basiques dans Visual Studio est l’application console.  Voici comment faire.  Une fois Visual Studio ouvert:
+L’un des projets les plus basiques dans Visual Studio est l’application console.  Voici comment faire.  Une fois Visual Studio ouvert :
 
 1. Dans le menu **fichier** , pointez sur **nouveau**, puis choisissez **projet**.
 
@@ -29,29 +29,29 @@ L’un des projets les plus basiques dans Visual Studio est l’application cons
 
 ## <a name="writing-your-code"></a>Écriture de votre code
 
-Commençons par écrire du code.  Assurez-vous `Program.fs` que le fichier est ouvert, puis remplacez son contenu par ce qui suit:
+Commençons par écrire du code.  Assurez-vous `Program.fs` que le fichier est ouvert, puis remplacez son contenu par ce qui suit :
 
 [!code-fsharp[HelloSquare](~/samples/snippets/fsharp/getting-started/hello-square.fs)]
 
-Dans l’exemple de code précédent, une `square` fonction a été définie et prend une entrée `x` nommée et la multiplie par elle-même.  Étant F# donné que utilise l’inférence de [type](../language-reference/type-inference.md), le type de `x` n’a pas besoin d’être spécifié.  Le F# compilateur comprend les types où la multiplication est valide, et assigne un type à `x` en fonction de `square` la méthode appelée.  Si vous pointez `square`sur, les éléments suivants doivent s’afficher:
+Dans l’exemple de code précédent, une `square` fonction a été définie et prend une entrée `x` nommée et la multiplie par elle-même.  Étant F# donné que utilise l' [inférence](../language-reference/type-inference.md)de type `x` , le type de n’a pas besoin d’être spécifié.  Le F# compilateur comprend les types où la multiplication est valide, et assigne un type à `x` en fonction de `square` la méthode appelée.  Si vous pointez `square`sur, les éléments suivants doivent s’afficher :
 
 ```fsharp
 val square: x:int -> int
 ```
 
-C’est ce que l’on appelle la signature de type de la fonction.  Il peut être lu comme suit: «Square est une fonction qui accepte un entier nommé x et produit un entier «».  Notez que le compilateur a `square` donné `int` le type pour le moment, car la multiplication n’est pas générique pour *tous les* types, mais plutôt générique dans un ensemble fermé de types.  Le F# compilateur a `int` choisi à ce stade, mais il ajuste la signature de type si `square` vous appelez avec un autre type d’entrée, `float`tel qu’un.
+C’est ce que l’on appelle la signature de type de la fonction.  Il peut être lu comme suit : « Square est une fonction qui accepte un entier nommé x et produit un entier « ».  Notez que le compilateur a `square` donné `int` le type pour le moment, car la multiplication n’est pas générique pour *tous les* types, mais plutôt générique dans un ensemble fermé de types.  Le F# compilateur a `int` choisi à ce stade, mais il ajuste la signature de type si `square` vous appelez avec un autre type d’entrée, `float`tel qu’un.
 
-Une autre fonction `main`,, est définie, qui est décorée `EntryPoint` avec l’attribut pour F# indiquer au compilateur que l’exécution du programme doit démarrer.  Il suit la même convention que les autres langages de [programmation de style C](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), où les arguments de ligne de commande peuvent être passés à cette fonction, et un code `0`d’entier est retourné (en général).
+Une autre fonction `main`,, est définie, qui est décorée `EntryPoint` avec l’attribut pour F# indiquer au compilateur que l’exécution du programme doit démarrer.  Il suit la même convention que les autres [langages de programmation de style C](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), où les arguments de ligne de commande peuvent être passés à cette fonction, et un code `0`d’entier est retourné (en général).
 
 C’est dans cette fonction que nous appelons la `square` fonction avec un argument de `12`.  Le F# compilateur assigne ensuite le type de `square` à la `int -> int` valeur (autrement dit, une fonction qui prend `int` un et produit `int`un).  L’appel à `printfn` est une fonction d’impression mise en forme qui utilise une chaîne de format, semblable aux langages de programmation de style C, des paramètres qui correspondent à ceux spécifiés dans la chaîne de format, puis imprime le résultat et une nouvelle ligne.
 
 ## <a name="running-your-code"></a>Exécution de votre code
 
-Vous pouvez exécuter le code et afficher les résultats en appuyant sur **CTRL**+**F5**.  Cela exécute le programme sans débogage et vous permet de voir les résultats.  Vous pouvez également choisir l’élément de menu de niveau supérieur de débogage dans Visual Studio et choisir **exécuter sans débogage**.
+Vous pouvez exécuter le code et afficher les résultats en appuyant sur **CTRL**+**F5**.  Cela exécute le programme sans débogage et vous permet de voir les résultats.  Vous pouvez également choisir l’élément de menu de niveau supérieur de **débogage** dans Visual Studio et choisir **exécuter sans débogage**.
 
-Vous devez maintenant voir les éléments suivants affichés dans la fenêtre de console affichée par Visual Studio:
+Vous devez maintenant voir les éléments suivants affichés dans la fenêtre de console affichée par Visual Studio :
 
-```
+```console
 12 squared is 144!
 ```
 

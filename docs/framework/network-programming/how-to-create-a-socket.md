@@ -17,17 +17,17 @@ helpviewer_keywords:
 - Internet, sockets
 - sockets, creating
 ms.assetid: c64a049c-5981-43bc-a2dc-1851473589c7
-ms.openlocfilehash: 0bbdab11201171bf8d730276c7f94cbc5317acdd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 54706293784d77e535cac582c99b1dd21a12e380
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101118"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048383"
 ---
 # <a name="how-to-create-a-socket"></a>Procédure : créer un socket
 Avant de pouvoir utiliser un socket pour communiquer avec des appareils distants, le socket doit être initialisé avec des informations de protocole et d’adresse réseau. Le constructeur de la classe <xref:System.Net.Sockets.Socket> a des paramètres qui spécifient la famille d’adresses, le type de socket et le type de protocole que le socket utilise pour établir des connexions.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant crée un socket qui peut être utilisé pour communiquer sur un réseau TCP/IP comme Internet.  
   
 ```csharp  
@@ -62,5 +62,5 @@ Dim s as New Socket(AddressFamily.InterNetwork, _
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de sockets clients](../../../docs/framework/network-programming/using-client-sockets.md)
-- [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)
+- [Utilisation de sockets clients](using-client-sockets.md)
+- [Écoute avec des sockets](listening-with-sockets.md)
