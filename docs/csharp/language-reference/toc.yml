@@ -63,7 +63,7 @@
           items:
             - name: Aide-mémoire
               href: keywords/access-modifiers.md
-            - name: Niveaux d’accessibilité
+            - name: Niveaux d'accessibilité
               href: keywords/accessibility-levels.md
             - name: Domaine d’accessibilité
               href: keywords/accessibility-domain.md
@@ -112,7 +112,7 @@
           href: keywords/virtual.md
         - name: volatile
           href: keywords/volatile.md
-    - name: Mots clés d’instructions
+    - name: Mots clés d'instructions
       items:
         - name: Catégories d’instructions
           href: keywords/statement-keywords.md
@@ -184,7 +184,7 @@
           items:
             - name: Contextes pour using
               href: keywords/using.md
-            - name: '#using, directive'
+            - name: 'using, directive'
               href: keywords/using-directive.md
             - name: 'using static, directive'
               href: keywords/using-static.md
@@ -202,7 +202,7 @@
           href: keywords/new-constraint.md
         - name: où
           href: keywords/where-generic-type-constraint.md
-    - name: Mots clés d’accès
+    - name: Mots clés d'accès
       items:
         - name: de base
           href: keywords/base.md
@@ -226,7 +226,7 @@
           href: keywords/add.md
         - name: get
           href: keywords/get.md
-        - name: partial (type)
+        - name: 'partiel, Type'
           href: keywords/partial-type.md
         - name: partial (méthode)
           href: keywords/partial-method.md
@@ -293,7 +293,7 @@
       displayName: '>, <, >=, <=, greater, less'
     - name: Opérateurs d’accès au membre
       href: operators/member-access-operators.md
-      displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
+      displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
     - name: Opérateurs de conversion et de test de type
       href: operators/type-testing-and-cast.md
       displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
@@ -321,7 +321,7 @@
     - name: '=>, opérateur'
       href: operators/lambda-operator.md
       displayName: lambda
-    - name: '::, opérateur'
+    - name: ':: (opérateur)'
       href: operators/namespace-alias-qualifier.md
       displayName: 'namespace alias qualifier, global namespace'
     - name: 'Await, opérateur'
@@ -335,9 +335,9 @@
       displayName: anonymous
     - name: opérateur nameof
       href: operators/nameof.md
-    - name: 'new, opérateur'
+    - name: Opérateur new
       href: operators/new-operator.md
-    - name: 'sizeof, opérateur'
+    - name: Opérateur sizeof
       href: operators/sizeof.md
     - name: Opérateur stackalloc
       href: operators/stackalloc.md
