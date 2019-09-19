@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: be49e28d3aa09c9b3a3cb169ca39ff817a062b8f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7a599973a1914f0df187557e48718263f16546f3
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849845"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117804"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -24,7 +24,7 @@ Pour suivre une procédure pas à pas et créer un modèle, consultez le didacti
 
 Quand vous installez le [SDK .NET Core](https://dotnet.microsoft.com/download), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://facebook.github.io/react/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
 
-```console
+```dotnetcli
 dotnet new --list
 ```
 
@@ -170,7 +170,7 @@ Utilisez la commande [dotnet new -i|--install](dotnet-new.md) pour installer un 
 
 Utilisez l’identificateur de package NuGet pour installer un package de modèle.
 
-```console
+```dotnetcli
 dotnet new -i <NUGET_PACKAGE_ID>
 ```
 
@@ -178,7 +178,7 @@ dotnet new -i <NUGET_PACKAGE_ID>
 
 Fournissez le chemin d’accès à un fichier de package NuGet *.nupkg*.
 
-```console
+```dotnetcli
 dotnet new -i <PATH_TO_NUPKG_FILE>
 ```
 
@@ -186,7 +186,7 @@ dotnet new -i <PATH_TO_NUPKG_FILE>
 
 Les modèles peuvent être installés à partir d’un dossier de modèles, comme le dossier *mytemplate1*, à partir de l’exemple ci-dessus. Spécifiez le chemin du dossier *.template.config*. Le chemin d’accès au répertoire du modèle n’a pas besoin d’être absolu. Toutefois, un chemin d’accès absolu est requis pour désinstaller un modèle qui est installé à partir d’un dossier.
 
-```console
+```dotnetcli
 dotnet new -i <FILE_SYSTEM_DIRECTORY>
 ```
 
@@ -194,7 +194,7 @@ dotnet new -i <FILE_SYSTEM_DIRECTORY>
 
 La commande de désinstallation, sans autres paramètres, répertorie tous les modèles.
 
-```console
+```dotnetcli
 dotnet new -u
 ```
 
@@ -230,13 +230,13 @@ Utilisez la commande [dotnet new -u|--uninstall](dotnet-new.md) pour désinstall
 
 Si le package a été installé par un flux NuGet ou par un fichier *.nupkg* directement, fournissez l’identificateur.
 
-```console
+```dotnetcli
 dotnet new -u <NUGET_PACKAGE_ID>
 ```
 
 Si le package a été installé en spécifiant un chemin d’accès au dossier *.template.config*, utilisez ce chemin **absolu** pour désinstaller le package. Vous pouvez voir le chemin d’accès absolu du modèle dans la sortie fournie par la commande `dotnet new -u`. Pour plus d’informations, consultez la section [Obtenir la liste des modèles installés](#get-a-list-of-installed-templates) ci-dessus.
 
-```console
+```dotnetcli
 dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>
 ```
 
@@ -244,7 +244,7 @@ dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>
 
 Une fois un modèle installé, utilisez-le en exécutant la commande `dotnet new <TEMPLATE>` comme vous le feriez avec tout autre modèle préinstallé. Vous pouvez également spécifier des [options](dotnet-new.md#options) dans la commande `dotnet new`, notamment des options de modèle que vous avez configurées dans les paramètres de modèle. Indiquez le nom court du modèle directement dans la commande :
 
-```console
+```dotnetcli
 dotnet new <TEMPLATE>
 ```
 

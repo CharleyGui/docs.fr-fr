@@ -4,12 +4,12 @@ description: Versions Linux et dépendances .NET Core prises en charge pour dév
 author: thraka
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: 5fcf931572f3c7e9b9857d2e91e9d620c7aad0bd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 31c53b2cc0fe576e56685f4a5561258136fd2541
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969867"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116585"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Prérequis pour .NET Core sur Linux
 
@@ -71,10 +71,10 @@ Pour obtenir des liens de téléchargement et plus d’informations, voir [Tél�
 
 NET Core 3.0 préversion 1 est pris en charge sur les distributions/versions Linux suivantes. 
 
-SE                            | Version               | Architectures  
+Système d’exploitation                            | Version               | Architectures  
 ------------------------------|-----------------------|----------------
-Red Hat Enterprise Linux      | 6\.                     | X64
-Red Hat Enterprise Linux<br>CentOS<br>Oracle Linux  | 7                     | X64
+Red Hat Enterprise Linux      | 6                     | X64
+Red Hat Enterprise Linux<br>CentOS<br>Oracle Linux  | 7                     | X64
 Fedora                        | 28                    | X64
 Debian                        | 9                     | x64, ARM32\*, ARM64\*
 Ubuntu                        | 16.04+, 18.04+        | x64, ARM32\*, ARM64\*
@@ -150,13 +150,13 @@ Les [scripts dotnet-install](./tools/dotnet-install-script.md) sont utilisés po
 
 Le script installe par défaut la dernière version de « LTS », qui correspond à .NET Core 1.1. Pour installer .NET Core 2.1.x, exécutez le script avec le commutateur suivant :
 
-```console
+```bash
 ./dotnet-install.sh -c Current
 ```
 
 Le script bash du programme d’installation est utilisé dans les scénarios d’automatisation et dans les installations non administratives. Comme ce script lit également les commutateurs PowerShell, ces derniers peuvent être utilisés avec le script sur les systèmes Linux/OS X.
 
-## <a name="troubleshoot"></a>Résolution des problèmes
+## <a name="troubleshoot"></a>Résoudre les problèmes
 
 En cas de problème avec une installation de .NET Core sur une distribution/version de Linux prise en charge, consultez les rubriques suivantes correspondant à vos distributions/versions installées :
 

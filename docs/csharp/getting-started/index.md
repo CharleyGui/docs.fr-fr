@@ -8,12 +8,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 7927cd65de31ba6e835aabdbbd89e410d10d2822
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: ba68425fe37c5b939da22edad38bb03afd2b9068
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104785"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117323"
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C\#
 
@@ -27,7 +27,7 @@ Les rubriques suivantes sont disponibles :
 
 - [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
 
-   Visual Studio 2017, la dernière version de Visual Studio, permet de coder, compiler, exécuter, déboguer, profiler et publier des applications à partir d’un environnement de développement intégré pour Windows.
+   Visual Studio 2019 vous permet de coder, compiler, exécuter, déboguer, Profiler et publier vos applications à partir d’un environnement de développement intégré pour Windows ou Mac.
 
    La rubrique vous permet de créer et d’exécuter une application Hello World simple, puis de la modifier pour exécuter une application Hello World légèrement plus interactive. Une fois que vous aurez terminé la création et l’exécution de votre application, vous pourrez également apprendre à [la déboguer](../../core/tutorials/debugging-with-visual-studio.md) et [la publier](../../core/tutorials/publishing-with-visual-studio.md) afin qu’elle puisse s’exécuter sur n’importe quelle plateforme prise en charge par .NET Core.
 

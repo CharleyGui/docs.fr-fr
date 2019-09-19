@@ -1,16 +1,16 @@
 ---
 title: Effectuer des prédictions avec un modèle entraîné
 description: Apprenez à effectuer des prédictions à l’aide d’un modèle entraîné
-ms.date: 06/20/2019
+ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: ef2b22ff220d1fce1ec43f26c7d51f7e551e038d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
-ms.translationtype: HT
+ms.openlocfilehash: 33e0cb74342ca3e82ff5f108453d63e022d63d20
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307398"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71118010"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Effectuer des prédictions avec un modèle entraîné
 
@@ -43,14 +43,12 @@ Comme les noms de colonne d’entrée `Features` et `Label`, ML.NET a des noms p
 L’algorithme utilisé dans cet exemple étant un algorithme de régression linéaire, le nom par défaut de la colonne de sortie est `Score`, défini par l’attribut [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) sur la propriété `PredictedPrice`.
 
 ```csharp
-class HousingPrediction : HousingData
+class HousingPrediction
 {
     [ColumnName("Score")]
     public float PredictedPrice { get; set; }
 }
 ```
-
-Le modèle de données `HousingPrediction` hérite de `HousingData` pour faciliter la visualisation des données d’entrée d’origine ainsi que de la sortie générée par le modèle.  
 
 ## <a name="set-up-a-prediction-pipeline"></a>Configurer un pipeline de prédiction
 
@@ -90,7 +88,7 @@ HousingPrediction prediction = predictionEngine.Predict(inputData);
 
 Si vous accédez à la propriété `Score` de l’objet `prediction`, vous devez obtenir une valeur similaire à `150079`.
 
-## <a name="batch-prediction"></a>Prédiction par lot
+## <a name="multiple-predictions"></a>Prédictions multiples
 
 Soient les données suivantes. Chargez-les dans un [`IDataView`](xref:Microsoft.ML.IDataView). Dans ce cas, le nom de notre [`IDataView`](xref:Microsoft.ML.IDataView) est `inputData`. `CurrentPrice` étant la cible ou l’étiquette que vous tentez de prédire à l’aide de nouvelles données, aucune valeur correspondante n’est censée exister pour le moment.
 

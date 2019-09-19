@@ -2,12 +2,12 @@
 title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
 ms.date: 08/08/2019
-ms.openlocfilehash: c230fa201fce02ab537afc4e14468788d32b8c8a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 99dd8e35601f82adf2a3101121028f191a4c3da4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039480"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117645"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -17,13 +17,13 @@ ms.locfileid: "71039480"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet pack` : Place le code dans un package NuGet.
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
     [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
     [-v|--verbosity] [--version-suffix]
@@ -127,54 +127,54 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - Empaquetez le projet dans le répertoire actif :
 
-  ```console
+  ```dotnetcli
   dotnet pack
   ```
 
 - Empaqueter le projet `app1` :
 
-  ```console
+  ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj
   ```
 
 - Empaqueter le projet dans le répertoire actif et placer les packages résultants dans le dossier `nupkgs` :
 
-  ```console
+  ```dotnetcli
   dotnet pack --output nupkgs
   ```
 
 - Empaqueter le projet dans le répertoire actif du dossier `nupkgs` et ignorer l’étape de génération :
 
-  ```console
+  ```dotnetcli
   dotnet pack --no-build --output nupkgs
   ```
 
 - Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
 
-  ```console
+  ```dotnetcli
   dotnet pack --version-suffix "ci-1234"
   ```
 
 - Affectez `2.1.0` à la version du package à l’aide de la propriété MSBuild `PackageVersion` :
 
-  ```console
+  ```dotnetcli
   dotnet pack -p:PackageVersion=2.1.0
   ```
 
 - Empaquetez le projet pour un [framework cible](../../standard/frameworks.md) spécifique :
 
-  ```console
+  ```dotnetcli
   dotnet pack -p:TargetFrameworks=net45
   ```
 
 - Empaqueter le projet et utiliser un runtime spécifique (Windows 10) pour l’opération de restauration (SDK .NET Core 2.0 et versions ultérieures) :
 
-  ```console
+  ```dotnetcli
   dotnet pack --runtime win10-x64
   ```
 
 - Empaquetez le projet à l’aide d’un [fichier .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec) :
 
-  ```console
+  ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget
   ```

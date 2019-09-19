@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: d0f4e2997e6e847cfd3c41ddb13096379d75343e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 519c55dbe8b55191b682067da558167f86199b7e
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925724"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116221"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -39,7 +39,7 @@ Un objectif majeur de .NET Core 2.1 est l’amélioration des performances des b
 
 - Utilisation de serveurs de build SDK de longue durée, représentant des processus qui couvrent des appels `dotnet build` individuels. Ils suppriment la nécessité de la compilation JIT de grands blocs de code à chaque exécution de `dotnet build`. Les processus d’un serveur de build peuvent être automatiquement terminés avec la commande suivante :
 
-   ```console
+   ```dotnetcli
    dotnet buildserver shutdown
    ```
 
@@ -49,7 +49,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
 - `dotnet watch` fournit un observateur de système de fichiers qui attend la modification d’un fichier avant d’exécuter un ensemble désigné de commandes. Par exemple, la commande suivante reconstruit automatiquement le projet actuel et génère une sortie détaillée à chaque modification d’un fichier :
 
-   ```console
+   ```dotnetcli
    dotnet watch -- --verbose build
    ```
 
@@ -69,9 +69,9 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
 .NET Core 2.1 prend en charge les *outils globaux*, autrement dit des outils personnalisés disponibles globalement à partir de la ligne de commande. Le modèle d’extensibilité des versions précédentes de .NET Core proposant des outils personnalisés par projet uniquement à l’aide de [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
-Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Par exemple :
+Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Par exemple :
 
-```console
+```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
@@ -116,7 +116,7 @@ Vous pouvez modifier ce paramètre de trois manières :
 
 - Quand vous utilisez les [outils CLI .NET Core](../tools/index.md), ajoutez l’option suivante avec la valeur souhaitée à une commande .NET Core telle que `run` :
 
-   ```console
+   ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0
    ```
 

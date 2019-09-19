@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: 7ef36be47648ae338b5fe70b75431006c99be31f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: b2a660d2fc42f0dfe932afce167058f7c1efc92b
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105212"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116506"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Procédure : Porter une application de bureau Windows Forms sur .NET Core
 
@@ -92,7 +92,7 @@ Créons maintenant le projet **MyFormsCore.csproj** dans le répertoire **MyForm
 
 Si vous ne souhaitez pas créer manuellement le fichier projet, vous pouvez utiliser Visual Studio ou le kit SDK .NET Core pour générer le projet. Il faut toutefois supprimer tous les fichiers générés par le modèle de projet à l’exception du fichier projet. Pour utiliser le kit SDK, exécutez la commande suivante à partir du répertoire **SolutionFolder** :
 
-```cli
+```dotnetcli
 dotnet new winforms -o MyFormsAppCore -n MyFormsCore
 ```
 
@@ -109,7 +109,7 @@ SolutionFolder
 
 Ajoutez le projet **MyFormsCore.csproj** à **MyApps.sln** avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
 
-```cli
+```dotnetcli
 dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 ```
 
@@ -167,7 +167,7 @@ Ajoutez au projet .NET Core chacun des packages NuGet auxquels le projet .NET Fr
 
 Votre application Windows Forms .NET Framework comporte très probablement un fichier **packages.config** contenant la liste de tous les packages NuGet auxquels votre projet fait référence. Vous pouvez consulter cette liste pour déterminer quels packages NuGet ajouter au projet .NET Core. Par exemple, si le projet .NET Framework faisait référence aux packages NuGet `MetroFramework`, `MetroFramework.Design` et `MetroFramework.Fonts`, ajoutez-les au projet avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework.Design
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework.Fonts
@@ -264,7 +264,7 @@ Comme on peut le voir, le nœud `<OutputType>` a été supprimé, ce qui conduit
 
 Maintenant, dans le projet **MyFormsCore.csproj** .NET Core principal, ajoutez une référence à la nouvelle bibliothèque de contrôles Windows Forms .NET Core avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\MyControlsCore.csproj
 ```
 
@@ -280,7 +280,7 @@ La commande précédente ajoute le code suivant au projet **MyFormsCore.csproj**
 
 Si avez des difficultés à compiler vos projets, c’est peut-être le signe que vous utilisez des API Windows disponibles dans .NET Framework et non dans .NET Core. Vous pouvez essayer d’ajouter le package NuGet [Pack de compatibilité Windows][compat-pack] à votre projet. Ce package, qui s’exécute seulement sur Windows, ajoute environ 20 000 API Windows aux projets .NET Core et .NET Standard.
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package Microsoft.Windows.Compatibility
 ```
 

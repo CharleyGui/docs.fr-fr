@@ -4,12 +4,12 @@ description: Découvrez comment créer des bibliothèques .NET Core à l’aide 
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: 90d960c996acd5a34ffb2215344e123dabad1014
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 536319bc02b45e7948c89ae67988e821a55a842d
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849479"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117423"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Développement de bibliothèques avec des outils multiplateformes
 
@@ -249,7 +249,7 @@ Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous 
 
 1. Restaurez les packages et générez les projets :
 
-   ```bash
+   ```dotnetcli
    dotnet restore
    dotnet build
    ```
@@ -321,7 +321,7 @@ Cette opération ajoute les trois projets ci-dessus et un fichier solution qui l
 
 La meilleure façon de référencer un projet consiste à utiliser l’interface CLI .NET Core pour ajouter une référence de projet. À partir des répertoires de projet **AwesomeLibrary.CSharp** et de **AwesomeLibrary.FSharp**, vous pouvez exécuter la commande suivante :
 
-```console
+```dotnetcli
 dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 

@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: 63898f23f7c70a96409c6de9029fb0c067223016
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 1738aa805947fbe0c1b7c2c770947ce650692b5f
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373876"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117050"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de xUnit
 
@@ -24,7 +24,7 @@ Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appel�
 Dans ce nouveau répertoire, exécutez [`dotnet new sln`](../tools/dotnet-new.md) pour créer une solution. Cette méthode permet de simplifier la gestion de la bibliothèque de classes et du projet de test unitaire.
 Dans le répertoire de la solution, créez un répertoire *PrimeService*. Vous disposez de la structure du répertoire et des fichiers suivante :
 
-```console
+```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -48,7 +48,7 @@ Accédez de nouveau au répertoire *unit-testing-vb-using-dotnet-test*. Exécute
 
 Ensuite, créez le répertoire *PrimeService.Tests*. La structure du répertoire est illustrée ci-dessous :
 
-```console
+```
 /unit-testing-vb-using-dotnet-test
     unit-testing-vb-using-dotnet-test.sln
     /PrimeService
@@ -69,7 +69,7 @@ Accédez au répertoire *PrimeService.Tests* et créez un projet à l’aide de 
 
 Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` a ajouté xUnit et le Test Runner xUnit à l’étape précédente. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
-```console
+```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.vbproj
 ```
 
@@ -77,7 +77,7 @@ Vous pouvez consulter le fichier dans son intégralité dans le [dépôt d’exe
 
 Le dossier final se présente comme suit :
 
-```console
+```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService

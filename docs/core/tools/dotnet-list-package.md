@@ -2,12 +2,12 @@
 title: Commande dotnet list package
 description: La commande 'dotnet list package' est pratique pour lister les références de packages à un projet ou à une solution.
 ms.date: 06/26/2019
-ms.openlocfilehash: 48eef0ccc6acf2bbd6c1acf748870882d2480ce5
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: fe95f3898c5bd85956f4312eb4d20259227e9ff0
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168019"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117727"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -19,7 +19,7 @@ ms.locfileid: "70168019"
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
    [--include-prerelease] [--include-transitive] [--interactive] [--outdated] [--source]
 dotnet list package [-h|--help]
@@ -121,18 +121,18 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 
 * Répertorier les références de packages d’un projet spécifique :
 
-  ```console
+  ```dotnetcli
   dotnet list SentimentAnalysis.csproj package
   ```
 
 * Répertorier les références de packages avec des versions plus récentes, y compris des versions préliminaires :
 
-  ```console
+  ```dotnetcli
   dotnet list package --outdated --include-prerelease
   ```
 
 * Répertorier les références de packages pour un framework cible spécifique :
 
-  ```console
+  ```dotnetcli
   dotnet list package --framework netcoreapp3.0
   ```

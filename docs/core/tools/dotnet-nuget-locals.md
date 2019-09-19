@@ -3,12 +3,12 @@ title: Commande dotnet nuget locals
 description: La commande dotnet nuget locals efface ou répertorie les ressources NuGet locales telles que le cache de requête http, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 0cf025f91a7582fafc401799cd1d8b933b087535
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 482e841d3b402084eb8c7f2456779f1600a5dd19
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202468"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117620"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
@@ -24,7 +24,7 @@ ms.locfileid: "70202468"
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
 dotnet nuget locals [-h|--help]
 ```
@@ -66,31 +66,31 @@ La commande `dotnet nuget locals` efface ou liste les ressources NuGet locales d
 
 * Afficher les chemins d’accès de tous les répertoires de cache local (le répertoire du cache HTTP, le répertoire du cache des packages globaux et le répertoire du cache temporaire) :
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals –l all
   ```
 
 * Affiche le chemin du répertoire du cache http local :
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals --list http-cache
   ```
 
 * Effacer tous les fichiers de tous les répertoires de cache local (le répertoire du cache HTTP, le répertoire du cache des packages globaux et le répertoire du cache temporaire) :
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals --clear all
   ```
 
 * Effacer tous les fichiers du répertoire du cache des packages globaux local :
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals -c global-packages
   ```
 
 * Effacer tous les fichiers du répertoire du cache temporaire local :
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals -c temp
   ```
 

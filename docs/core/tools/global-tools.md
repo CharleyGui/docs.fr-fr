@@ -4,12 +4,12 @@ description: Vue d’ensemble des outils globaux .NET Core et des commandes CLI 
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9ff7e33a50eb0c5fb649b44dda6d72412a134584
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 01c1463ceddcd64e5bab05b95a5ae4a91b6da838
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202590"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117456"
 ---
 # <a name="net-core-global-tools-overview"></a>Vue d’ensemble des outils globaux .NET Core
 
@@ -49,7 +49,7 @@ Si l’outil est hébergé sur NuGet, vous pouvez vérifier l’auteur et les st
 
 Pour installer un outil global, utilisez la commande CLI .NET Core [dotnet tool install](dotnet-tool-install.md). L’exemple suivant montre comment installer un outil global à l’emplacement par défaut :
 
-```console
+```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
@@ -57,7 +57,7 @@ Si l’outil ne peut pas être installé, des messages d’erreur s’affichent.
 
 Si vous essayez d’installer une préversion ou une version spécifique de l’outil, vous pouvez spécifier le numéro de version au format suivant :
 
-```console
+```dotnetcli
 dotnet tool install -g <package-name> --version <version-number>
 ```
 
@@ -94,7 +94,7 @@ dotnetsay
 
 Si l’auteur de l’outil voulait que l’outil apparaisse dans le contexte de l’invite `dotnet`, il peut l’avoir écrit de façon à ce que vous l’appeliez en utilisant `dotnet <command>`, par exemple :
 
-```console
+```dotnetcli
 dotnet doc
 ```
 
@@ -120,7 +120,7 @@ Si une application ne trouve pas un runtime approprié, elle ne parvient pas à 
 
 Un autre problème susceptible de se produire vient du fait qu’un outil global créé pendant une préversion antérieure risque de ne pas s’exécuter avec vos runtimes .NET Core actuellement installés. Vous pouvez voir quels runtimes sont installés sur votre machine à l’aide de la commande suivante :
 
-```console
+```dotnetcli
 dotnet --list-runtimes
 ```
 
@@ -141,24 +141,24 @@ Le SDK .NET Core contient d’autres commandes qui prennent en charge des outils
 
 Pour déterminer les commandes disponibles pour les outils globaux :
 
-```console
+```dotnetcli
 dotnet tool --help
 ```
 
 La mise à jour d’un outil global implique de le désinstaller puis de le réinstaller avec la dernière version stable. Pour mettre à jour un outil global, utilisez la commande [dotnet tool update](dotnet-tool-update.md) :
 
-```console
+```dotnetcli
 dotnet tool update -g <packagename>
 ```
 
 Supprimez un outil global avec [dotnet tool uninstall](dotnet-tool-uninstall.md) :
 
-```console
+```dotnetcli
 dotnet tool uninstall -g <packagename>
 ```
 
 Pour afficher tous les outils globaux actuellement installés sur la machine, ainsi que leur version et leurs commandes, utilisez la commande [dotnet tool list](dotnet-tool-list.md) :
 
-```console
+```dotnetcli
 dotnet tool list -g
 ```

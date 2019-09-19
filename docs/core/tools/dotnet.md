@@ -2,18 +2,18 @@
 title: Commande dotnet
 description: Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser.
 ms.date: 06/04/2018
-ms.openlocfilehash: 801320bf7f3527ac70f1d5b9fe3d0ce537e50e93
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: a22340c26ca2e483e43857e2ecb31f2ab53b60f4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969782"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117506"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet` - Outil de gestion du code source et des ressources binaires .NET.
 
@@ -23,14 +23,14 @@ ms.locfileid: "70969782"
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
-```console
+```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
     [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
-```console
+```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
     [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx]
     [--runtimeconfig] [-v|--verbosity] [--version]
@@ -38,7 +38,7 @@ dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--de
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-```console
+```dotnetcli
 dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
     [--fx-version] [-h|--help] [--info] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
@@ -98,7 +98,7 @@ Affiche les kits de développement logiciel .NET Core installés.
 Définit le comportement quand le framework partagé requis n’est pas disponible. `N` peut être :
 
 - `0` : désactiver l’extrapolation même pour les versions mineures.
-- `1` : extrapoler la version mineure, mais pas la version majeure. Il s’agit du comportement par défaut.
+- `1` : extrapoler la version mineure, mais pas la version majeure. Il s'agit du comportement par défaut.
 - `2` : extrapoler les versions majeures et mineures.
 
  Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
@@ -213,7 +213,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 ## <a name="dotnet-commands"></a>Commandes dotnet
 
-### <a name="general"></a>Généralités
+### <a name="general"></a>Général
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
@@ -308,7 +308,7 @@ Commande | Fonction
 
 À partir de .NET Core SDK 2.1.300, un certain nombre d’outils qui étaient disponibles uniquement par projet à l’aide de `DotnetCliToolReference` sont désormais disponibles dans le cadre du Kit de développement .NET Core. Ces outils sont répertoriés dans le tableau suivant :
 
-| Tool                                              | Fonction                                                     |
+| Outil                                              | Fonction                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | dev-certs                                         | Crée et gère les certificats de développement.                |
 | [ef](/ef/core/miscellaneous/cli/dotnet)           | Outils en ligne de commande Entity Framework Core.                    |

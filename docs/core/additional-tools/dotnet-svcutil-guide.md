@@ -4,12 +4,12 @@ description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajo
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7c3e2f7bcfb337a09a9cc13068c22d496762a90f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: c6eb17ca6cd4ce920cd358a87d2a4a6759dc3439
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969936"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117213"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
@@ -38,7 +38,7 @@ L’outil **dotnet-svcutil** est une option alternative au fournisseur de servic
 
 ---
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Bien démarrer
 
 L’exemple suivant explique les étapes à suivre pour ajouter une référence de services web à un projet web .NET Core et appeler le service. Vous allez créer une application web .NET Core nommée _HelloSvcutil_ et ajouter une référence à un service web qui implémente le contrat suivant :
 
@@ -64,14 +64,14 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
 
 2. Créez un projet web C# dans ce répertoire avec la commande [`dotnet new`](../tools/dotnet-new.md) :
 
-    ```console
+    ```dotnetcli
     dotnet new web
     ```
 
 3. Installez le [package NuGet `dotnet-svcutil`](https://nuget.org/packages/dotnet-svcutil) comme un outil CLI :  <!-- markdownlint-disable MD023 -->
     # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-    ```console
+    ```dotnetcli
     dotnet tool install --global dotnet-svcutil
     ```
 
@@ -86,7 +86,7 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
 
     Ensuite, restaurez le package _dotnet-svcutil_ avec la commande [`dotnet restore`](../tools/dotnet-restore.md) :
 
-    ```console
+    ```dotnetcli
     dotnet restore
     ```
 
@@ -96,13 +96,13 @@ Supposons dans cet exemple que le service web sera hébergé à l’adresse suiv
 
     # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-    ```console
+    ```dotnetcli
     dotnet-svcutil http://contoso.com/SayHello.svc
     ```
 
     # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
 
-    ```console
+    ```dotnetcli
     dotnet svcutil http://contoso.com/SayHello.svc
     ```
 
@@ -114,7 +114,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 
 1. Restaurez les packages WCF à l’aide de la commande [`dotnet restore`](../tools/dotnet-restore.md), comme suit :
 
-    ```console
+    ```dotnetcli
     dotnet restore
     ```
 
@@ -148,7 +148,7 @@ Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Referen
 
 5. Exécutez l’application en utilisant la commande [`dotnet run`](../tools/dotnet-run.md), comme suit :
 
-    ```console
+    ```dotnetcli
     dotnet run
     ```
 
@@ -159,13 +159,13 @@ Vous devez voir la sortie suivante : "Hello dotnet-svcutil!"
 Pour obtenir une description détaillée des paramètres de l’outil `dotnet-svcutil`, appelez l’outil en passant le paramètre d’aide comme suit :
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
 
-```console
+```dotnetcli
 dotnet-svcutil --help
 ```
 
 # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
 
-```console
+```dotnetcli
 dotnet svcutil --help
 ```
 

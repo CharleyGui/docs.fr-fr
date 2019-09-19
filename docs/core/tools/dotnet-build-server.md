@@ -2,12 +2,12 @@
 title: Commande dotnet build-server
 description: La commande dotnet build-server interagit avec les serveurs démarrés par une build.
 ms.date: 04/24/2019
-ms.openlocfilehash: b2dfd5f317466f18d9246bd1fb281a92c42f6d9d
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 89d1aba104e2cb07b46766a3768eed68d85a7aa7
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168110"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117772"
 ---
 # <a name="dotnet-build-server"></a>dotnet build-server
 
@@ -23,7 +23,7 @@ ms.locfileid: "70168110"
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
 dotnet build-server shutdown [-h|--help]
 dotnet build-server [-h|--help]

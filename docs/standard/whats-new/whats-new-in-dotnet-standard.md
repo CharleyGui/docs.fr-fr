@@ -6,12 +6,12 @@ ms.date: 04/12/2018
 ms.technology: dotnet-standard
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5be4bccf77d39a0b2c336d98a0e1e4d5250bec91
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 476b6047fe9872f13f2f0298fb331eb7d888a73d
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972406"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117855"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Nouveautés de .NET Standard
 
@@ -77,7 +77,7 @@ Si vous installez Visual Studio avec la charge de travail **Développement multi
 
 Si vous utilisez l’interface CLI .NET Core, la commande [dotnet new](../../core/tools/dotnet-new.md) suivante crée un projet de bibliothèque de classes qui cible .NET Standard 2.0 :
 
-```
+```dotnetcli
 dotnet new classlib
 ```
 
@@ -87,7 +87,7 @@ dotnet new classlib
 
 Si vous utilisez l’interface CLI .NET Core, la commande [dotnet new](../../core/tools/dotnet-new.md) suivante crée un projet de bibliothèque de classes qui cible .NET Standard 2.0 :
 
-```
+```dotnetcli
 dotnet new classlib -lang vb
 ```
 

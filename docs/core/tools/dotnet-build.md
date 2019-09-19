@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 08/08/2019
-ms.openlocfilehash: e92555dad2bc76d8c72eca9a30be1d3a8b5924f7
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0b353d60691fb4bb85536c68dc4ab248f45c3a76
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988526"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117753"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -17,13 +17,13 @@ ms.locfileid: "70988526"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet build` : Génère un projet et l’ensemble de ses dépendances.
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
     [--no-incremental] [--no-restore] [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
@@ -112,7 +112,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`.
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
 
 * **`--version-suffix <VERSION_SUFFIX>`**
 
@@ -122,30 +122,30 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 * Générer un projet et ses dépendances :
 
-  ```console
+  ```dotnetcli
   dotnet build
   ```
 
 * Générer un projet et ses dépendances à l’aide de la configuration Release :
 
-  ```console
+  ```dotnetcli
   dotnet build --configuration Release
   ```
 
 * Générer un projet et ses dépendances pour un runtime spécifique (dans cet exemple, Ubuntu 18.04) :
 
-  ```console
+  ```dotnetcli
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
 * Générer le projet et utiliser la source de package NuGet spécifiée pendant l’opération de restauration (SDK .NET Core 2.0 et versions ultérieures) :
 
-  ```console
+  ```dotnetcli
   dotnet build --source c:\packages\mypackages
   ```
 
 * Générer le projet et définissez la version 1.2.3.4 comme un paramètre de build à l’aide de l’`-p` [option MSBuild](#msbuild) :
 
-  ```console
+  ```dotnetcli
   dotnet build -p:Version=1.2.3.4
   ```

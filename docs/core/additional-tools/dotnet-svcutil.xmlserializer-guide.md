@@ -3,12 +3,12 @@ title: Utiliser dotnet-svcutil.xmlserializer sur .NET Core
 description: Découvrez comment vous pouvez utiliser le package NuGet `dotnet-svcutil.xmlserializer` afin de prégénérer un assembly de sérialisation pour les projets .NET Core.
 author: huanwu
 ms.date: 11/27/2018
-ms.openlocfilehash: a98f8d30f2e37b722a3bf1f93be8fe9df540a468
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f1eebeb70206ce883a8e4e4bbd5216ae0ba5507c
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70848969"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117273"
 ---
 # <a name="using-dotnet-svcutilxmlserializer-on-net-core"></a>Utiliser dotnet-svcutil.xmlserializer sur .NET Core
 
@@ -21,7 +21,7 @@ Le package NuGet `dotnet-svcutil.xmlserializer` peut prégénérer un assembly d
 
 Vous pouvez utiliser la commande `dotnet --info` pour savoir quelles versions du runtime et du kit SDK .NET Core sont déjà installées.
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Bien démarrer
 
 Pour utiliser `dotnet-svcutil.xmlserializer` dans une application console .NET Core :
 
@@ -39,7 +39,7 @@ Pour utiliser `dotnet-svcutil.xmlserializer` dans une application console .NET C
 
 2. créez une application console .NET Core comme application cliente WCF ciblant .NET Core 2.1 ou versions ultérieures. Par exemple, créez une application nommée 'MyWCFClient' avec la commande suivante :
 
-    ```console
+    ```dotnetcli
     dotnet new console --name MyWCFClient
     ```
 
@@ -51,7 +51,7 @@ Pour utiliser `dotnet-svcutil.xmlserializer` dans une application console .NET C
 
 3. Ajoutez une référence de package à `System.ServiceModel.Http` en exécutant la commande suivante :
 
-    ```console
+    ```dotnetcli
     dotnet add package System.ServiceModel.Http
     ```
 
@@ -84,7 +84,7 @@ Pour utiliser `dotnet-svcutil.xmlserializer` dans une application console .NET C
 
 5. Ajoutez une référence au package `dotnet-svcutil.xmlserializer` en exécutant la commande suivante :
   
-    ```console
+    ```dotnetcli
     dotnet add package dotnet-svcutil.xmlserializer
     ```
 

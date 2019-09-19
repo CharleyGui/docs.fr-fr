@@ -2,12 +2,12 @@
 title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
 ms.date: 06/26/2019
-ms.openlocfilehash: 113bc076b9f14a471c631801fe4a7cb1e044a411
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 982232833b460b4ea4181acebee74dcef54d3131
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168058"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117744"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
@@ -23,7 +23,7 @@ ms.locfileid: "70168058"
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] 
     [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
@@ -77,12 +77,12 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * Nettoyez une génération par défaut du projet :
 
-  ```console
+  ```dotnetcli
   dotnet clean
   ```
 
 * Nettoyez un projet généré à l’aide de la configuration Release :
 
-  ```console
+  ```dotnetcli
   dotnet clean --configuration Release
   ```

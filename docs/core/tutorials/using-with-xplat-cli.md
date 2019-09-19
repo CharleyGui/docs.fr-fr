@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 08/07/2019
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: c42a34bc13ff9fb5d8eb5a85b461360915e2c68f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b5ef70967c8404dc5ce5b816bb9a1c3b1d7e4230
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849337"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117355"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande
 
@@ -30,7 +30,7 @@ Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/d
 
 Ouvrez une invite de commandes et créez un dossier nommé *Hello*. Accédez au dossier créé et tapez ce qui suit :
 
-```console
+```dotnetcli
 dotnet new console
 dotnet run
 ```
@@ -154,7 +154,7 @@ Reprenons l’exemple précédent de Fibonacci en mettant en cache certaines val
    377
    ```
 
-## <a name="publish-your-app"></a>Publier votre application
+## <a name="publish-your-app"></a>Publier une application
 
 Lorsque vous êtes prêt à distribuer votre application, utilisez la commande [`dotnet publish`](../tools/dotnet-publish.md) pour générer le dossier _publish_ dans _bin\\debug\\netcoreapp2.1\\publish\\_ (utilisez `/` pour les systèmes non Windows). Vous pouvez distribuer le contenu du dossier _publish_ sur d'autres plates-formes tant qu'elles ont déjà installé le runtime dotnet.
 

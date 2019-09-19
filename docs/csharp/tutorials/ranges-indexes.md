@@ -3,16 +3,16 @@ title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 27f4b90f130345dd10517a5de78c759066afdf07
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: d0eeadfff9732ced22e045536a88ed49cd98bbaa
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926638"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117831"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
-Les plages et les index fournissent une syntaxe concise pour accéder à des éléments uniques ou des plages dans un <xref:System.Array>, <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601>. Ces fonctionnalités permettent d’utiliser une syntaxe plus concise et claire pour accéder à des éléments uniques ou à des plages d’éléments dans une séquence.
+Les plages et les index fournissent une syntaxe concise pour accéder à des éléments ou des plages <xref:System.Array>uniques <xref:System.String>dans <xref:System.Span%601>un, <xref:System.ReadOnlySpan%601>, ou. Ces fonctionnalités permettent d’utiliser une syntaxe plus concise et claire pour accéder à des éléments uniques ou à des plages d’éléments dans une séquence.
 
 Dans ce tutoriel, vous allez apprendre à :
 
@@ -24,12 +24,12 @@ Dans ce tutoriel, vous allez apprendre à :
 
 ## <a name="language-support-for-indices-and-ranges"></a>Prise en charge linguistique pour les index et les plages
 
-Cette prise en charge linguistique s’appuie sur deux nouveaux types et deux nouveaux opérateurs.
+Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
 
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
-- L’opérateur `^` spécifie qu’un index est relatif à la fin d’une séquence.
+- Index de l’opérateur `^`end, qui spécifie qu’un index est relatif à la fin d’une séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- L’opérateur de plage (`..`) spécifie le début et la fin d’une plage comme ses opérandes.
+- Opérateur `..`de plage, qui spécifie le début et la fin d’une plage comme opérandes.
 
 Commençons par les règles concernant les indices. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est le même que l’index `sequence[sequence.Length - n]`.
 

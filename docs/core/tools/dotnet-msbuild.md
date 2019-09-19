@@ -2,12 +2,12 @@
 title: Commande dotnet msbuild
 description: La commande dotnet msbuild fournit l’accès à la ligne de commande MSbuild.
 ms.date: 12/03/2018
-ms.openlocfilehash: 983fae6f4ecf875da0b155a668009984b5df50de
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: b83f1272cdd4c5fcdb6b1e34aef7692e9acc01cd
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632027"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117704"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
@@ -33,24 +33,24 @@ La commande [dotnet build](dotnet-build.md) est équivalente à `dotnet msbuild 
 
 * Générer un projet et ses dépendances :
 
-  ```console
+  ```dotnetcli
   dotnet msbuild
   ```
 
 * Générer un projet et ses dépendances à l’aide de la configuration Release :
 
-  ```console
+  ```dotnetcli
   dotnet msbuild -p:Configuration=Release
   ```
 
 * Exécuter la cible de publication et effectuer une publication pour le RID `osx.10.11-x64` :
 
-  ```console
+  ```dotnetcli
   dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64
   ```
 
 * Consultez la totalité du projet avec toutes les cibles incluses par le kit SDK :
 
-  ```console
+  ```dotnetcli
   dotnet msbuild -pp
   ```

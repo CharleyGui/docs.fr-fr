@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 4bd51f579231b13b0831ef7114c2a648c55cd6a2
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 520af5022e061236c0cfe80379679d9c7b5896b2
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926077"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117410"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Tutoriel : Créer un pack de modèles
 
@@ -45,7 +45,7 @@ Le pack que vous allez créer inclut le [modèle d’élément](cli-templates-cr
 
 Dans votre terminal, accédez au dossier _working_. Créez un nouveau projet et nommez-le `templatepack` et définissez le dossier de sortie sur le dossier actif.
 
-```console
+```dotnetcli
 dotnet new console -n templatepack -o .
 ```
 
@@ -103,7 +103,7 @@ Les trois derniers paramètres concernent la configuration correcte du projet po
 
 Enregistrer ce fichier, puis exécuter la commande pack
 
-```console
+```dotnetcli
 dotnet pack
 ```
 

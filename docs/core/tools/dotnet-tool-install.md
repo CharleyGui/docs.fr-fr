@@ -2,12 +2,12 @@
 title: Commande dotnet tool install
 description: La commande dotnet tool install permet d’installer l’outil global .NET Core spécifié sur votre machine.
 ms.date: 05/29/2018
-ms.openlocfilehash: 1348eb1165c77376a885fdcbf094bd17b2aa3514
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: d6f691117e93a39c9837b282dca19e452515c80a
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563702"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117467"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
@@ -19,7 +19,7 @@ ms.locfileid: "54563702"
 
 ## <a name="synopsis"></a>Résumé
 
-```console
+```dotnetcli
 dotnet tool install <PACKAGE_NAME> <-g|--global> [--add-source] [--configfile] [--framework] [-v|--verbosity] [--version]
 dotnet tool install <PACKAGE_NAME> <--tool-path> [--add-source] [--configfile] [--framework] [-v|--verbosity] [--version]
 dotnet tool install <-h|--help>

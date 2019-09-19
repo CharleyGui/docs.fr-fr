@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 403a79671128ffe95b45c2e18507bb804281d2c5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 766da517d247361f747591c3758e8610927866a9
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925046"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116108"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -22,7 +22,7 @@ C# fournit plusieurs opérateurs pris en charge par les types intégrés. Par ex
 
 Dans une [expression](../../programming-guide/statements-expressions-operators/expressions.md), la priorité et l’associativité des opérateurs déterminent l’ordre dans lequel les opérations sont exécutées. Vous pouvez utiliser des parenthèses pour changer l’ordre d’évaluation imposé par la priorité et l’associativité de l’opérateur.
 
-## <a name="operator-precedence"></a>Précédence des opérateurs
+## <a name="operator-precedence"></a>Priorité des opérateurs
 
 Dans une expression avec plusieurs opérateurs, les opérateurs avec une priorité plus élevée sont évalués avant les opérateurs avec une priorité moins élevée. Dans l’exemple suivant, la multiplication est effectuée en premier, car elle a une priorité plus élevée que l’addition :
 
@@ -43,7 +43,8 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | Opérateurs | Catégorie ou nom |
 | --------- | ---------------- |
 | [x.y](member-access-operators.md#member-access-operator-), [x?.y](member-access-operators.md#null-conditional-operators--and-), [x?[y]](member-access-operators.md#null-conditional-operators--and-), [f(x)](member-access-operators.md#invocation-operator-), [a&#91;i&#93;](member-access-operators.md#indexer-operator-), [x++](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [nouveau](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [vérifié](../keywords/checked.md), [non vérifié](../keywords/unchecked.md), [par défaut](default.md), [nameof](nameof.md), [délégué](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Principale |
-| [+x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [\!x](boolean-logical-operators.md#logical-negation-operator-), [~x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [++x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [(T)x](type-testing-and-cast.md#cast-operator-), [await](await.md), [&x](pointer-related-operators.md#address-of-operator-), [*x](pointer-related-operators.md#pointer-indirection-operator-), [true and false](true-false-operators.md) | Unaire |
+| [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-](arithmetic-operators.md#unary-plus-and-minus-operators) [ \!](boolean-logical-operators.md#logical-negation-operator-)x, x, [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-operator-), [await](await.md), [& x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true et false](true-false-operators.md) | Unaire |
+| [x.. y](member-access-operators.md#range-operator-) | Plage |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x / y](arithmetic-operators.md#division-operator-), [x % y](arithmetic-operators.md#remainder-operator-) | Multiplication|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Addition |
 | [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Shift |

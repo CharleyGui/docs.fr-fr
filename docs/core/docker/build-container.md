@@ -4,12 +4,12 @@ description: Ce tutoriel explique comment conteneuriser une application .NET Cor
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: f0e0fad9bde4c35fb5c5b0b505b9fa8441e432ba
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 5e05fd2a38770ce348fbbfcfaa88267217b806bf
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926301"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116562"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Tutoriel : Conteneuriser une application .NET Core
 
@@ -55,7 +55,7 @@ Enregistrez ce fichier. La présence du fichier forcera .NET Core à utiliser la
 
 Vous avez besoin d’une application .NET Core que le conteneur Docker exécutera. Ouvrez votre terminal, créez un dossier de travail si ce n’est déjà fait, et accédez-y. Dans le dossier de travail, exécutez la commande suivante pour créer un projet dans un sous-répertoire nommé app :
 
-```console
+```dotnetcli
 dotnet new console -o app -n myapp
 ```
 
@@ -146,7 +146,7 @@ Avant d’ajouter votre application .NET Core à l’image Docker, publiez-la. V
 
 Dans le dossier de travail, accédez au dossier **app** contenant l’exemple de code source, puis exécutez la commande suivante :
 
-```console
+```dotnetcli
 dotnet publish -c Release
 ```
 
@@ -419,7 +419,7 @@ Docker propose différentes commandes qui couvrent vos besoins en matière de co
 * [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/)
 * [docker image](https://docs.docker.com/engine/reference/commandline/image/)
 
-## <a name="clean-up-resources"></a>Supprimer des ressources
+## <a name="clean-up-resources"></a>Nettoyer les ressources
 
 Au cours de ce tutoriel, vous avez créé des conteneurs et des images. Si vous le souhaitez, supprimez ces ressources. Utilisez les commandes suivantes pour
 

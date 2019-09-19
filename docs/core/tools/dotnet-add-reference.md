@@ -2,12 +2,12 @@
 title: Commande dotnet-add reference
 description: La commande dotnet add reference est une option pratique pour ajouter des références entre projets.
 ms.date: 06/26/2019
-ms.openlocfilehash: 867596058aad8f9c38918e6d6657709d0d0699b3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 06d10f6903251bc9d29ae856a900a20610565a14
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784049"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117777"
 ---
 # <a name="dotnet-add-reference"></a>dotnet-add reference
 
@@ -17,7 +17,7 @@ ms.locfileid: "70784049"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet add reference` : ajoute des références entre projets (P2P).
 
@@ -65,18 +65,18 @@ La commande `dotnet add reference` est une option pratique pour ajouter des réf
 
 * Ajouter une référence de projet :
 
-  ```console
+  ```dotnetcli
   dotnet add app/app.csproj reference lib/lib.csproj
   ```
 
 * Ajouter plusieurs références de projet au projet dans le répertoire actuel :
 
-  ```console
+  ```dotnetcli
   dotnet add reference lib1/lib1.csproj lib2/lib2.csproj
   ```
 
 * Ajouter plusieurs références de projet à l’aide du modèle d’utilisation des caractères génériques (globbing) sur Linux/Unix :
 
-  ```console
+  ```dotnetcli
   dotnet add app/app.csproj reference **/*.csproj
   ```

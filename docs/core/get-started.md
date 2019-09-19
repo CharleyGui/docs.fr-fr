@@ -4,12 +4,12 @@ description: Découvrez des ressources qui vous apprendront à créer des applic
 author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
-ms.openlocfilehash: 3c530c71d1cfa9d0c4cf09f38519970f6ef8da51
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5846b3c62a4a44b0d6bcdfbaaa00e12e5a157ab0
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969896"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116531"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
@@ -17,13 +17,13 @@ Cet article fournit des informations pour bien démarrer avec .NET Core. .NET Co
 
 Si vous ne savez pas réellement à quoi sert .NET Core ou comment ce produit s’articule avec les autres technologies .NET, commencez par consulter l’article de présentation [Qu’est-ce que .NET ?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet). Pour schématiser, .NET Core est une implémentation open source multiplateforme de .NET.
 
-## <a name="create-an-application"></a>Création d'une application
+## <a name="create-an-application"></a>Créer une application
 
 Tout d’abord, téléchargez et installez le [kit SDK .NET Core](https://dotnet.microsoft.com/download) sur votre ordinateur.
 
 Ensuite, ouvrez un terminal tel que **PowerShell**, une **invite de commandes** ou **Bash**. Tapez les commandes `dotnet` suivantes pour créer et exécuter une application C#.
 
-```console
+```dotnetcli
 dotnet new console --output sample1
 dotnet run --project sample1
 ```
@@ -36,13 +36,13 @@ Hello World!
 
 Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez aussi utiliser [Visual Studio Code](tutorials/with-visual-studio-code.md), [Visual Studio](tutorials/with-visual-studio.md) (Windows uniquement) ou [Visual Studio pour Mac](tutorials/using-on-mac-vs.md) (macOS uniquement) pour créer une application .NET Core.
 
-## <a name="tutorials"></a>Tutoriels
+## <a name="tutorials"></a>Didacticiels
 
 Vous pouvez commencer à développer des applications .NET Core en suivant ces tutoriels pas à pas.
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
 * [Générer une application C# « Hello World » avec .NET Core dans Visual Studio 2017.](./tutorials/with-visual-studio.md)
 

@@ -4,12 +4,12 @@ description: Découvrez comment utiliser le magasin de packages de runtime et le
 author: bleroy
 ms.date: 08/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 2f37e0de4b6fcb1b2047470b0a9df3753fe87d71
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 8a8d2d3298f144347c36c640700a1e578dc14715
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697983"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116547"
 ---
 # <a name="runtime-package-store"></a>Magasin de packages de runtime
 
@@ -64,13 +64,13 @@ L’exemple de manifeste de magasin de packages suivant (*packages.csproj*) est 
 
 Approvisionner le magasin de packages de runtime en exécutant `dotnet store` avec le manifeste de magasin de packages, le runtime et le framework :
 
-```console
+```dotnetcli
 dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> --framework <FRAMEWORK>
 ```
 
 **Exemple**
 
-```console
+```dotnetcli
 dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
 ```
 
@@ -94,13 +94,13 @@ Le fichier *artifact.xml* suivant est issu de l’exécution de l’exemple pré
 
 Si vous avez un fichier manifeste cible sur le disque, vous spécifiez le chemin du fichier quand vous publiez votre application avec la commande [`dotnet publish`](../tools/dotnet-publish.md) :
 
-```console
+```dotnetcli
 dotnet publish --manifest <PATH_TO_MANIFEST_FILE>
 ```
 
 **Exemple**
 
-```console
+```dotnetcli
 dotnet publish --manifest manifest.xml
 ```
 
@@ -110,7 +110,7 @@ Spécifiez plusieurs manifestes cible quand vous publiez une application en rép
 
 ## <a name="specifying-target-manifests-in-the-project-file"></a>Spécification de manifestes cibles dans le fichier projet
 
-Au lieu de spécifier des manifestes cibles avec la commande [`dotnet publish`](../tools/dotnet-publish.md), vous pouvez les spécifier dans le fichier projet sous forme de liste de chemins délimitée par des points-virgules sous une balise **\<TargetManifestFiles>**.
+Au lieu de spécifier des manifestes cibles avec la commande [`dotnet publish`](../tools/dotnet-publish.md), vous pouvez les spécifier dans le fichier projet sous forme de liste de chemins délimitée par des points-virgules sous une balise **\<TargetManifestFiles>** .
 
 ```xml
 <PropertyGroup>
