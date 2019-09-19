@@ -2,12 +2,12 @@
 title: Expressions de calcul
 description: Découvrez comment créer une syntaxe pratique pour écrire des calculs dans F# qui peut être séquencé et combiné à l’aide de constructions et de liaisons de workflow de contrôle.
 ms.date: 03/15/2019
-ms.openlocfilehash: bca328a09ff61fb76d30960221ee3350fcc25fc1
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 9222be5a585914761d3001d6649b196030eec05e
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106572"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083053"
 ---
 # <a name="computation-expressions"></a>Expressions de calcul
 
@@ -22,7 +22,7 @@ Les calculs peuvent prendre plusieurs formes. La forme la plus courante de calcu
 - Calculs avec effet
 - Calculs de la génération de calcul
 
-Plus généralement, il existe des calculs contextuels que vous devez effectuer dans certaines parties d’une application. L’écriture de code contextuel peut être difficile, car il est facile de «fuite» les calculs en dehors d’un contexte donné sans abstractions pour vous empêcher de le faire. Ces abstractions sont souvent difficiles à écrire par vous-même, ce F# qui est la raison pour laquelle il est possible de faire appel à des **expressions de calcul**.
+Plus généralement, il existe des calculs *contextuels* que vous devez effectuer dans certaines parties d’une application. L’écriture de code contextuel peut être difficile, car il est facile de « fuite » les calculs en dehors d’un contexte donné sans abstractions pour vous empêcher de le faire. Ces abstractions sont souvent difficiles à écrire par vous-même, ce F# qui est la raison pour laquelle il est possible de faire appel à des **expressions de calcul**.
 
 Les expressions de calcul offrent une syntaxe uniforme et un modèle d’abstraction pour l’encodage des calculs contextuels.
 
@@ -30,13 +30,13 @@ Chaque expression de calcul est sauvegardée par un type de *Générateur* . Le 
 
 ### <a name="syntax-overview"></a>Vue d’ensemble de la syntaxe
 
-Toutes les expressions de calcul se présentent sous la forme suivante:
+Toutes les expressions de calcul se présentent sous la forme suivante :
 
-```
+```fsharp
 builder-expr { cexper }
 ```
 
-où `builder-expr` est le nom d’un type de générateur qui définit l’expression de calcul, `cexper` et est le corps de l’expression de l’expression de calcul. Par exemple, `async` le code d’expression de calcul peut se présenter comme suit:
+où `builder-expr` est le nom d’un type de générateur qui définit l’expression de calcul, `cexper` et est le corps de l’expression de l’expression de calcul. Par exemple, `async` le code d’expression de calcul peut se présenter comme suit :
 
 ```fsharp
 let fetchAndDownload url =
@@ -49,7 +49,7 @@ let fetchAndDownload url =
     }
 ```
 
-Une syntaxe supplémentaire spéciale est disponible dans une expression de calcul, comme illustré dans l’exemple précédent. Les formules de calcul sont possibles avec les expressions de calcul suivantes:
+Une syntaxe supplémentaire spéciale est disponible dans une expression de calcul, comme illustré dans l’exemple précédent. Les formules de calcul sont possibles avec les expressions de calcul suivantes :
 
 ```fsharp
 expr { let! ... }
@@ -67,7 +67,7 @@ Le type de générateur est un objet qui définit des méthodes spéciales qui r
 
 ### `let!`
 
-Le `let!` mot clé lie le résultat d’un appel à une autre expression de calcul à un nom:
+Le `let!` mot clé lie le résultat d’un appel à une autre expression de calcul à un nom :
 
 ```fsharp
 let doThingsAsync url =
@@ -83,7 +83,7 @@ Si vous liez l’appel à une expression de calcul avec `let`, vous n’obtiendr
 
 ### `do!`
 
-Le `do!` mot clé est utilisé pour appeler une expression de calcul qui `unit`retourne un type semblable à (défini `Zero` par le membre sur le générateur):
+Le `do!` mot clé est utilisé pour appeler une expression de calcul qui `unit`retourne un type semblable à (défini `Zero` par le membre sur le générateur) :
 
 ```fsharp
 let doThingsAsync data url =
@@ -99,7 +99,7 @@ Pour le [flux de travail asynchrone](asynchronous-workflows.md), ce `Async<unit>
 
 ### `yield`
 
-Le `yield` mot clé est utilisé pour retourner une valeur à partir de l’expression de calcul afin qu’il puisse <xref:System.Collections.Generic.IEnumerable%601>être consommé en tant que:
+Le `yield` mot clé est utilisé pour retourner une valeur à partir de l’expression de calcul afin qu’il puisse <xref:System.Collections.Generic.IEnumerable%601>être consommé en tant que :
 
 ```fsharp
 let squares =
@@ -118,7 +118,7 @@ Comme avec le [mot clé yield C#dans ](../../csharp/language-reference/keywords/
 
 ### `yield!`
 
-Le `yield!` mot clé sert à aplatir une collection de valeurs à partir d’une expression de calcul:
+Le `yield!` mot clé sert à aplatir une collection de valeurs à partir d’une expression de calcul :
 
 ```fsharp
 let squares =
@@ -146,7 +146,7 @@ En cas d’évaluation, l’expression de calcul `yield!` appelée par aura ses 
 
 ### `return`
 
-Le `return` mot clé encapsule une valeur dans le type correspondant à l’expression de calcul. Outre les expressions de calcul utilisant `yield`, il est utilisé pour «terminer» une expression de calcul:
+Le `return` mot clé encapsule une valeur dans le type correspondant à l’expression de calcul. Outre les expressions de calcul utilisant `yield`, il est utilisé pour « terminer » une expression de calcul :
 
 ```fsharp
 let req = // 'req' is of type is 'Async<data>'
@@ -163,7 +163,7 @@ let result = Async.RunSynchronously req
 
 ### `return!`
 
-Le `return!` mot clé réalise la valeur d’une expression de calcul et encapsule le résultat dans le type correspondant à l’expression de calcul:
+Le `return!` mot clé réalise la valeur d’une expression de calcul et encapsule le résultat dans le type correspondant à l’expression de calcul :
 
 ```fsharp
 let req = // 'req' is of type is 'Async<data>'
@@ -179,7 +179,7 @@ let result = Async.RunSynchronously req
 
 ### `match!`
 
-À partir F# de 4,5, `match!` le mot clé vous permet d’incorporer un appel à une autre expression de calcul et une correspondance de modèle sur son résultat:
+À partir F# de 4,5, `match!` le mot clé vous permet d’incorporer un appel à une autre expression de calcul et une correspondance de modèle sur son résultat :
 
 ```fsharp
 let doThingsAsync url =
@@ -194,7 +194,7 @@ Lors de l’appel d’une expression `match!`de calcul avec, le résultat de l�
 
 ## <a name="built-in-computation-expressions"></a>Expressions de calcul intégrées
 
-La F# bibliothèque principale définit trois expressions de calcul intégrées: Les [expressions de séquence](sequences.md), les flux de [travail asynchrones](asynchronous-workflows.md)et les expressions de [requête](query-expressions.md).
+La F# bibliothèque principale définit trois expressions de calcul intégrées : Les [expressions de séquence](sequences.md), les flux de [travail asynchrones](asynchronous-workflows.md)et les [expressions de requête](query-expressions.md).
 
 ## <a name="creating-a-new-type-of-computation-expression"></a>Création d’un nouveau type d’expression de calcul
 
@@ -222,7 +222,7 @@ Le tableau suivant décrit les méthodes qui peuvent être utilisées dans une c
 
 La plupart des méthodes d’une classe de générateur utilisent et retournent une `M<'T>` construction, qui est généralement un type défini séparément qui caractérise le type de calculs combinés, par `Async<'T>` exemple pour les flux de travail `Seq<'T>` asynchrones et pour les workflows de séquence. Les signatures de ces méthodes leur permettent d’être combinées et imbriquées les unes avec les autres, afin que l’objet de flux de travail retourné à partir d’une construction puisse être passé au suivant. Lorsqu’il analyse une expression de calcul, le compilateur convertit l’expression en une série d’appels de fonction imbriqués à l’aide des méthodes du tableau précédent et du code de l’expression de calcul.
 
-L’expression imbriquée se présente sous la forme suivante:
+L’expression imbriquée se présente sous la forme suivante :
 
 ```fsharp
 builder.Run(builder.Delay(fun () -> {| cexpr |}))

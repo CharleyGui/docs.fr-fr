@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3fa2238976df9f570fad9eb6947790565a4b0c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 937dca59be8b83526ebf6cd4c369532b1a8b9afe
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935709"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045978"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Procédure : raccorder un délégué à l’aide de la réflexion
 Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C# `+=` ou l’[instruction Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
@@ -80,7 +80,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#9)]
      [!code-vb[HookUpDelegate#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#9)]  
   
-2. Générez un corps de méthode. Cette méthode charge une chaîne, appelle la surcharge de la méthode <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> qui prend une chaîne, dépile la valeur de retour (puisque le gestionnaire n’a aucun type de retour) et retourne. Pour en savoir plus sur l’émission de méthodes dynamiques, consultez [Guide pratique pour définir et exécuter des méthodes dynamiques](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md).  
+2. Générez un corps de méthode. Cette méthode charge une chaîne, appelle la surcharge de la méthode <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> qui prend une chaîne, dépile la valeur de retour (puisque le gestionnaire n’a aucun type de retour) et retourne. Pour en savoir plus sur l’émission de méthodes dynamiques, consultez [Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md).  
   
      [!code-cpp[HookUpDelegate#10](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#10)]
      [!code-csharp[HookUpDelegate#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#10)]
@@ -98,7 +98,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#12)]
      [!code-vb[HookUpDelegate#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#12)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant montre comment raccorder une méthode existante à un événement à l’aide de la réflexion, et également comment utiliser la classe <xref:System.Reflection.Emit.DynamicMethod> pour émettre une méthode au moment de l’exécution et la raccorder à un événement.  
   
  [!code-cpp[HookUpDelegate#1](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#1)]
@@ -111,5 +111,5 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
 - <xref:System.Reflection.Emit.DynamicMethod>
 - <xref:System.Activator.CreateInstance%2A>
 - <xref:System.Delegate.CreateDelegate%2A>
-- [Guide pratique pour définir et exécuter des méthodes dynamiques](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md)
-- [Réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)
+- [Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)
+- [Réflexion](reflection.md)

@@ -1,17 +1,17 @@
 ---
-title: <Subtypes> Élément (.NET Native)
+title: <Subtypes>, Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e0ec1ed73148b319217a70cc3be99b486be2f8e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2af1acc02b18c5b97ef66ccae9b70c1f5327bff4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866848"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049127"
 ---
-# <a name="subtypes-element-net-native"></a>\<Sous-types >, élément (.NET Native)
+# <a name="subtypes-element-net-native"></a>\<Subtypes, élément > (.NET Native)
 Applique la stratégie runtime à toutes les classes héritées du type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,9 +49,9 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
   
 ## <a name="all-attributes"></a>Tous les attributs  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -60,7 +60,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
+|[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
 ## <a name="remarks"></a>Notes  
  L'élément `<Subtypes>` applique la stratégie à tous les sous-types de son type conteneur. Utilisez-le pour appliquer des stratégies distinctes aux types dérivés et à leurs classes de base.  
@@ -91,7 +91,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type > élément](../../../docs/framework/net-native/type-element-net-native.md)
-- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [\<Type >, élément](type-element-net-native.md)
+- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Éléments de directive runtime](runtime-directive-elements.md)
+- [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
