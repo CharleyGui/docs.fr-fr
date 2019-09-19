@@ -9,99 +9,99 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: d03a0ae3bc84106d72803b22050a7c75a037be12
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 89be7aa8339a4edf6d6ab9c0c243e4320d2fdfa8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780110"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052971"
 ---
-# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a><span data-ttu-id="0fdee-102">Procédure : Développer un service de données WCF s’exécutant sur IIS</span><span class="sxs-lookup"><span data-stu-id="0fdee-102">How to: Develop a WCF data service running on IIS</span></span>
+# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a><span data-ttu-id="503dc-102">Procédure : Développer un service de données WCF s’exécutant sur IIS</span><span class="sxs-lookup"><span data-stu-id="503dc-102">How to: Develop a WCF data service running on IIS</span></span>
 
-<span data-ttu-id="0fdee-103">Cette rubrique montre comment utiliser WCF Data Services pour créer un service de données basé sur l’exemple de base de données Northwind hébergé par une application Web ASP.NET qui s’exécute sur Internet Information Services (IIS).</span><span class="sxs-lookup"><span data-stu-id="0fdee-103">This topic shows how to use WCF Data Services to create a data service that is based on the Northwind sample database that is hosted by an ASP.NET Web application that is running on Internet Information Services (IIS).</span></span> <span data-ttu-id="0fdee-104">Pour obtenir un exemple de la façon de créer le même service de données Northwind comme une application Web ASP.NET qui s’exécute sur le Serveur de développement ASP.NET, consultez le Guide de [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="0fdee-104">For an example of how to create the same Northwind data service as an ASP.NET Web application that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>
+<span data-ttu-id="503dc-103">Cette rubrique montre comment utiliser WCF Data Services pour créer un service de données basé sur l’exemple de base de données Northwind hébergé par une application Web ASP.NET qui s’exécute sur Internet Information Services (IIS).</span><span class="sxs-lookup"><span data-stu-id="503dc-103">This topic shows how to use WCF Data Services to create a data service that is based on the Northwind sample database that is hosted by an ASP.NET Web application that is running on Internet Information Services (IIS).</span></span> <span data-ttu-id="503dc-104">Pour obtenir un exemple de la façon de créer le même service de données Northwind comme une application Web ASP.NET qui s’exécute sur le Serveur de développement ASP.NET, consultez le Guide de [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="503dc-104">For an example of how to create the same Northwind data service as an ASP.NET Web application that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="0fdee-105">Pour créer le service de données Northwind, vous avez dû installer l'exemple de base de données Northwind sur l'ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="0fdee-105">To create the Northwind data service, you must have installed the Northwind sample database on the local computer.</span></span> <span data-ttu-id="0fdee-106">Pour télécharger cet exemple de base de données, consultez la page de téléchargement, [Exemples de bases de données pour SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="0fdee-106">To download this sample database, see the download page, [Sample Databases for SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span></span>
+> <span data-ttu-id="503dc-105">Pour créer le service de données Northwind, vous avez dû installer l'exemple de base de données Northwind sur l'ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="503dc-105">To create the Northwind data service, you must have installed the Northwind sample database on the local computer.</span></span> <span data-ttu-id="503dc-106">Pour télécharger cet exemple de base de données, consultez la page de téléchargement, [Exemples de bases de données pour SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="503dc-106">To download this sample database, see the download page, [Sample Databases for SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span></span>
 
-<span data-ttu-id="0fdee-107">Cette rubrique indique comment créer un service de données à l'aide du fournisseur Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="0fdee-107">This topic shows how to create a data service by using the Entity Framework provider.</span></span> <span data-ttu-id="0fdee-108">Il existe d'autres fournisseurs de services de données.</span><span class="sxs-lookup"><span data-stu-id="0fdee-108">Other data services providers are available.</span></span> <span data-ttu-id="0fdee-109">Pour plus d’informations, consultez [Data Services des fournisseurs](data-services-providers-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="0fdee-109">For more information, see [Data Services Providers](data-services-providers-wcf-data-services.md).</span></span>
+<span data-ttu-id="503dc-107">Cette rubrique indique comment créer un service de données à l'aide du fournisseur Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="503dc-107">This topic shows how to create a data service by using the Entity Framework provider.</span></span> <span data-ttu-id="503dc-108">Il existe d'autres fournisseurs de services de données.</span><span class="sxs-lookup"><span data-stu-id="503dc-108">Other data services providers are available.</span></span> <span data-ttu-id="503dc-109">Pour plus d’informations, consultez [Data Services des fournisseurs](data-services-providers-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="503dc-109">For more information, see [Data Services Providers](data-services-providers-wcf-data-services.md).</span></span>
 
-<span data-ttu-id="0fdee-110">Après avoir créé le service, vous devez explicitement fournir un accès aux ressources du service de données.</span><span class="sxs-lookup"><span data-stu-id="0fdee-110">After you create the service, you must explicitly provide access to data service resources.</span></span> <span data-ttu-id="0fdee-111">Pour plus d'informations, voir [Procédure : Activer l’accès au service](how-to-enable-access-to-the-data-service-wcf-data-services.md)de données.</span><span class="sxs-lookup"><span data-stu-id="0fdee-111">For more information, see [How to: Enable Access to the Data Service](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span></span>
+<span data-ttu-id="503dc-110">Après avoir créé le service, vous devez explicitement fournir un accès aux ressources du service de données.</span><span class="sxs-lookup"><span data-stu-id="503dc-110">After you create the service, you must explicitly provide access to data service resources.</span></span> <span data-ttu-id="503dc-111">Pour plus d'informations, voir [Procédure : Activer l’accès au service](how-to-enable-access-to-the-data-service-wcf-data-services.md)de données.</span><span class="sxs-lookup"><span data-stu-id="503dc-111">For more information, see [How to: Enable Access to the Data Service](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span></span>
 
-## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a><span data-ttu-id="0fdee-112">Créer l’application Web ASP.NET qui s’exécute sur IIS</span><span class="sxs-lookup"><span data-stu-id="0fdee-112">Create the ASP.NET web application that runs on IIS</span></span>
+## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a><span data-ttu-id="503dc-112">Créer l’application Web ASP.NET qui s’exécute sur IIS</span><span class="sxs-lookup"><span data-stu-id="503dc-112">Create the ASP.NET web application that runs on IIS</span></span>
 
-1. <span data-ttu-id="0fdee-113">Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau** > **projet**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-113">In Visual Studio, on the **File** menu, select **New** > **Project**.</span></span>
+1. <span data-ttu-id="503dc-113">Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau** > **projet**.</span><span class="sxs-lookup"><span data-stu-id="503dc-113">In Visual Studio, on the **File** menu, select **New** > **Project**.</span></span>
 
-2. <span data-ttu-id="0fdee-114">Dans la boîte de dialogue **nouveau projet** , sélectionnez la catégorie **Web** > [ **C# Visual** ou **Visual Basic**] **installée** >.</span><span class="sxs-lookup"><span data-stu-id="0fdee-114">In the **New Project** dialog box, select the **Installed** > [**Visual C#** or **Visual Basic**] > **Web** category.</span></span>
+2. <span data-ttu-id="503dc-114">Dans la boîte de dialogue **nouveau projet** , sélectionnez la catégorie **Web** > [ **C# Visual** ou **Visual Basic**] **installée** >.</span><span class="sxs-lookup"><span data-stu-id="503dc-114">In the **New Project** dialog box, select the **Installed** > [**Visual C#** or **Visual Basic**] > **Web** category.</span></span>
 
-3. <span data-ttu-id="0fdee-115">Sélectionnez le modèle **application Web ASP.net** .</span><span class="sxs-lookup"><span data-stu-id="0fdee-115">Select the **ASP.NET Web Application** template.</span></span>
+3. <span data-ttu-id="503dc-115">Sélectionnez le modèle **application Web ASP.net** .</span><span class="sxs-lookup"><span data-stu-id="503dc-115">Select the **ASP.NET Web Application** template.</span></span>
 
-4. <span data-ttu-id="0fdee-116">Entrez `NorthwindService` comme nom du projet.</span><span class="sxs-lookup"><span data-stu-id="0fdee-116">Enter `NorthwindService` as the name of the project.</span></span>
+4. <span data-ttu-id="503dc-116">Entrez `NorthwindService` comme nom du projet.</span><span class="sxs-lookup"><span data-stu-id="503dc-116">Enter `NorthwindService` as the name of the project.</span></span>
 
-5. <span data-ttu-id="0fdee-117">Cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-117">Click **OK**.</span></span>
+5. <span data-ttu-id="503dc-117">Cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="503dc-117">Click **OK**.</span></span>
 
-6. <span data-ttu-id="0fdee-118">Dans le menu **projet** , sélectionnez **Propriétés de NorthwindService**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-118">On the **Project** menu, select **NorthwindService Properties**.</span></span>
+6. <span data-ttu-id="503dc-118">Dans le menu **projet** , sélectionnez **Propriétés de NorthwindService**.</span><span class="sxs-lookup"><span data-stu-id="503dc-118">On the **Project** menu, select **NorthwindService Properties**.</span></span>
 
-7. <span data-ttu-id="0fdee-119">Sélectionnez l’onglet **Web** , puis sélectionnez **utiliser le serveur Web IIS local**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-119">Select the **Web** tab, and then select **Use Local IIS Web Server**.</span></span>
+7. <span data-ttu-id="503dc-119">Sélectionnez l’onglet **Web** , puis sélectionnez **utiliser le serveur Web IIS local**.</span><span class="sxs-lookup"><span data-stu-id="503dc-119">Select the **Web** tab, and then select **Use Local IIS Web Server**.</span></span>
 
-8. <span data-ttu-id="0fdee-120">Cliquez sur **créer un répertoire virtuel** , puis sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-120">Click **Create Virtual Directory** and then click **OK**.</span></span>
+8. <span data-ttu-id="503dc-120">Cliquez sur **créer un répertoire virtuel** , puis sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="503dc-120">Click **Create Virtual Directory** and then click **OK**.</span></span>
 
-9. <span data-ttu-id="0fdee-121">À partir de l'invite de commandes avec des privilèges d'administrateur, exécutez une des commandes suivantes (en fonction du système d'exploitation) :</span><span class="sxs-lookup"><span data-stu-id="0fdee-121">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
+9. <span data-ttu-id="503dc-121">À partir de l'invite de commandes avec des privilèges d'administrateur, exécutez une des commandes suivantes (en fonction du système d'exploitation) :</span><span class="sxs-lookup"><span data-stu-id="503dc-121">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
 
-    - <span data-ttu-id="0fdee-122">Systèmes 32 bits :</span><span class="sxs-lookup"><span data-stu-id="0fdee-122">32-bit systems:</span></span>
+    - <span data-ttu-id="503dc-122">Systèmes 32 bits :</span><span class="sxs-lookup"><span data-stu-id="503dc-122">32-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
         ```
 
-    - <span data-ttu-id="0fdee-123">Systèmes 64 bits :</span><span class="sxs-lookup"><span data-stu-id="0fdee-123">64-bit systems:</span></span>
+    - <span data-ttu-id="503dc-123">Systèmes 64 bits :</span><span class="sxs-lookup"><span data-stu-id="503dc-123">64-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
         ```
 
-     <span data-ttu-id="0fdee-124">Cela permet de vérifier que Windows Communication Foundation (WCF) est inscrit sur l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="0fdee-124">This makes sure that Windows Communication Foundation (WCF) is registered on the computer.</span></span>
+     <span data-ttu-id="503dc-124">Cela permet de vérifier que Windows Communication Foundation (WCF) est inscrit sur l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="503dc-124">This makes sure that Windows Communication Foundation (WCF) is registered on the computer.</span></span>
 
-10. <span data-ttu-id="0fdee-125">À partir de l'invite de commandes avec des privilèges d'administrateur, exécutez une des commandes suivantes (en fonction du système d'exploitation) :</span><span class="sxs-lookup"><span data-stu-id="0fdee-125">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
+10. <span data-ttu-id="503dc-125">À partir de l'invite de commandes avec des privilèges d'administrateur, exécutez une des commandes suivantes (en fonction du système d'exploitation) :</span><span class="sxs-lookup"><span data-stu-id="503dc-125">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
 
-    - <span data-ttu-id="0fdee-126">Systèmes 32 bits :</span><span class="sxs-lookup"><span data-stu-id="0fdee-126">32-bit systems:</span></span>
+    - <span data-ttu-id="503dc-126">Systèmes 32 bits :</span><span class="sxs-lookup"><span data-stu-id="503dc-126">32-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable
         ```
 
-    - <span data-ttu-id="0fdee-127">Systèmes 64 bits :</span><span class="sxs-lookup"><span data-stu-id="0fdee-127">64-bit systems:</span></span>
+    - <span data-ttu-id="503dc-127">Systèmes 64 bits :</span><span class="sxs-lookup"><span data-stu-id="503dc-127">64-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable
         ```
 
-     <span data-ttu-id="0fdee-128">Cela permet de s'assurer qu'IIS s'exécute correctement après que WCF a été installé sur l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="0fdee-128">This makes sure that IIS runs correctly after WCF has been installed on the computer.</span></span> <span data-ttu-id="0fdee-129">Vous devrez peut-être redémarrer IIS.</span><span class="sxs-lookup"><span data-stu-id="0fdee-129">You might have to also restart IIS.</span></span>
+     <span data-ttu-id="503dc-128">Cela permet de s'assurer qu'IIS s'exécute correctement après que WCF a été installé sur l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="503dc-128">This makes sure that IIS runs correctly after WCF has been installed on the computer.</span></span> <span data-ttu-id="503dc-129">Vous devrez peut-être redémarrer IIS.</span><span class="sxs-lookup"><span data-stu-id="503dc-129">You might have to also restart IIS.</span></span>
 
-11. <span data-ttu-id="0fdee-130">Lorsque l'application ASP.NET s'exécute sur IIS7, vous devez aussi effectuer les étapes suivantes :</span><span class="sxs-lookup"><span data-stu-id="0fdee-130">When the ASP.NET application runs on IIS7, you must also perform the following steps:</span></span>
+11. <span data-ttu-id="503dc-130">Lorsque l'application ASP.NET s'exécute sur IIS7, vous devez aussi effectuer les étapes suivantes :</span><span class="sxs-lookup"><span data-stu-id="503dc-130">When the ASP.NET application runs on IIS7, you must also perform the following steps:</span></span>
 
-    1. <span data-ttu-id="0fdee-131">Ouvrez le gestionnaire des services Internet et accédez à l’application PhotoService sous **site Web par défaut**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-131">Open IIS Manager and navigate to the PhotoService application under **Default Web Site**.</span></span>
+    1. <span data-ttu-id="503dc-131">Ouvrez le gestionnaire des services Internet et accédez à l’application PhotoService sous **site Web par défaut**.</span><span class="sxs-lookup"><span data-stu-id="503dc-131">Open IIS Manager and navigate to the PhotoService application under **Default Web Site**.</span></span>
 
-    2. <span data-ttu-id="0fdee-132">Dans l' **affichage fonctionnalités**, double-cliquez sur **authentification**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-132">In **Features View**, double-click **Authentication**.</span></span>
+    2. <span data-ttu-id="503dc-132">Dans l' **affichage fonctionnalités**, double-cliquez sur **authentification**.</span><span class="sxs-lookup"><span data-stu-id="503dc-132">In **Features View**, double-click **Authentication**.</span></span>
 
-    3. <span data-ttu-id="0fdee-133">Dans la page **authentification** , sélectionnez **authentification anonyme**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-133">On the **Authentication** page, select **Anonymous Authentication**.</span></span>
+    3. <span data-ttu-id="503dc-133">Dans la page **authentification** , sélectionnez **authentification anonyme**.</span><span class="sxs-lookup"><span data-stu-id="503dc-133">On the **Authentication** page, select **Anonymous Authentication**.</span></span>
 
-    4. <span data-ttu-id="0fdee-134">Dans le volet **actions** , cliquez sur **modifier** pour définir le principal de sécurité sous lequel les utilisateurs anonymes se connecteront au site.</span><span class="sxs-lookup"><span data-stu-id="0fdee-134">In the **Actions** pane, click **Edit** to set the security principal under which anonymous users will connect to the site.</span></span>
+    4. <span data-ttu-id="503dc-134">Dans le volet **actions** , cliquez sur **modifier** pour définir le principal de sécurité sous lequel les utilisateurs anonymes se connecteront au site.</span><span class="sxs-lookup"><span data-stu-id="503dc-134">In the **Actions** pane, click **Edit** to set the security principal under which anonymous users will connect to the site.</span></span>
 
-    5. <span data-ttu-id="0fdee-135">Dans la boîte de dialogue **modifier les informations d’identification d’authentification anonyme** , sélectionnez **identité du pool d’applications**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-135">In the **Edit Anonymous Authentication Credentials** dialog box, select **Application pool identity**.</span></span>
+    5. <span data-ttu-id="503dc-135">Dans la boîte de dialogue **modifier les informations d’identification d’authentification anonyme** , sélectionnez **identité du pool d’applications**.</span><span class="sxs-lookup"><span data-stu-id="503dc-135">In the **Edit Anonymous Authentication Credentials** dialog box, select **Application pool identity**.</span></span>
 
     > [!IMPORTANT]
-    > <span data-ttu-id="0fdee-136">Lorsque vous utilisez le compte de service réseau, vous accordez aux utilisateurs anonymes l'accès à tout le réseau interne associé à ce compte.</span><span class="sxs-lookup"><span data-stu-id="0fdee-136">When you use the Network Service account, you grant anonymous users all the internal network access associated with that account.</span></span>
+    > <span data-ttu-id="503dc-136">Lorsque vous utilisez le compte de service réseau, vous accordez aux utilisateurs anonymes l'accès à tout le réseau interne associé à ce compte.</span><span class="sxs-lookup"><span data-stu-id="503dc-136">When you use the Network Service account, you grant anonymous users all the internal network access associated with that account.</span></span>
 
-12. <span data-ttu-id="0fdee-137">En utilisant SQL Server Management Studio, l'utilitaire sqlcmd.exe ou l'Éditeur Transact-SQL dans Visual Studio, exécutez la commande Transact-SQL suivante sur l'instance SQL Server à laquelle la base de données Northwind est attachée :</span><span class="sxs-lookup"><span data-stu-id="0fdee-137">By using SQL Server Management Studio, the sqlcmd.exe utility, or the Transact-SQL Editor in Visual Studio, execute the following Transact-SQL command against the instance of SQL Server that has the Northwind database attached:</span></span>
+12. <span data-ttu-id="503dc-137">En utilisant SQL Server Management Studio, l'utilitaire sqlcmd.exe ou l'Éditeur Transact-SQL dans Visual Studio, exécutez la commande Transact-SQL suivante sur l'instance SQL Server à laquelle la base de données Northwind est attachée :</span><span class="sxs-lookup"><span data-stu-id="503dc-137">By using SQL Server Management Studio, the sqlcmd.exe utility, or the Transact-SQL Editor in Visual Studio, execute the following Transact-SQL command against the instance of SQL Server that has the Northwind database attached:</span></span>
 
     ```sql
     CREATE LOGIN [NT AUTHORITY\NETWORK SERVICE] FROM WINDOWS;
     GO
     ```
 
-    <span data-ttu-id="0fdee-138">Cela crée une connexion dans l'instance SQL Server pour le compte Windows utilisé pour exécuter IIS.</span><span class="sxs-lookup"><span data-stu-id="0fdee-138">This creates a login in the SQL Server instance for the Windows account used to run IIS.</span></span> <span data-ttu-id="0fdee-139">Cela permet à IIS de se connecter à l'instance de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="0fdee-139">This enables IIS to connect to the SQL Server instance.</span></span>
+    <span data-ttu-id="503dc-138">Cela crée une connexion dans l'instance SQL Server pour le compte Windows utilisé pour exécuter IIS.</span><span class="sxs-lookup"><span data-stu-id="503dc-138">This creates a login in the SQL Server instance for the Windows account used to run IIS.</span></span> <span data-ttu-id="503dc-139">Cela permet à IIS de se connecter à l'instance de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="503dc-139">This enables IIS to connect to the SQL Server instance.</span></span>
 
-13. <span data-ttu-id="0fdee-140">Avec la base de données Northwind attachée, exécutez les commandes Transact-SQL suivantes :</span><span class="sxs-lookup"><span data-stu-id="0fdee-140">With the Northwind database attached, execute the following Transact-SQL commands:</span></span>
+13. <span data-ttu-id="503dc-140">Avec la base de données Northwind attachée, exécutez les commandes Transact-SQL suivantes :</span><span class="sxs-lookup"><span data-stu-id="503dc-140">With the Northwind database attached, execute the following Transact-SQL commands:</span></span>
 
     ```sql
     USE Northwind
@@ -118,50 +118,50 @@ ms.locfileid: "70780110"
     GO
     ```
 
-    <span data-ttu-id="0fdee-141">Cela accorde des droits à la nouvelle connexion et permet à IIS de lire et d'écrire les données dans la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="0fdee-141">This grants rights to the new login, which enables IIS to read data from and write data to the Northwind database.</span></span>
+    <span data-ttu-id="503dc-141">Cela accorde des droits à la nouvelle connexion et permet à IIS de lire et d'écrire les données dans la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="503dc-141">This grants rights to the new login, which enables IIS to read data from and write data to the Northwind database.</span></span>
 
-## <a name="define-the-data-model"></a><span data-ttu-id="0fdee-142">Définir le modèle de données</span><span class="sxs-lookup"><span data-stu-id="0fdee-142">Define the data model</span></span>
+## <a name="define-the-data-model"></a><span data-ttu-id="503dc-142">Définir le modèle de données</span><span class="sxs-lookup"><span data-stu-id="503dc-142">Define the data model</span></span>
 
-1. <span data-ttu-id="0fdee-143">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-143">In **Solution Explorer**, right-click the name of the ASP.NET project, and then click **Add** > **New Item**.</span></span>
+1. <span data-ttu-id="503dc-143">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="503dc-143">In **Solution Explorer**, right-click the name of the ASP.NET project, and then click **Add** > **New Item**.</span></span>
 
-2. <span data-ttu-id="0fdee-144">Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **ADO.NET Entity Data Model**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-144">In the **Add New Item** dialog box, select **ADO.NET Entity Data Model**.</span></span>
+2. <span data-ttu-id="503dc-144">Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **ADO.NET Entity Data Model**.</span><span class="sxs-lookup"><span data-stu-id="503dc-144">In the **Add New Item** dialog box, select **ADO.NET Entity Data Model**.</span></span>
 
-3. <span data-ttu-id="0fdee-145">Pour le nom du modèle de données, tapez `Northwind.edmx`.</span><span class="sxs-lookup"><span data-stu-id="0fdee-145">For the name of the data model, type `Northwind.edmx`.</span></span>
+3. <span data-ttu-id="503dc-145">Pour le nom du modèle de données, tapez `Northwind.edmx`.</span><span class="sxs-lookup"><span data-stu-id="503dc-145">For the name of the data model, type `Northwind.edmx`.</span></span>
 
-4. <span data-ttu-id="0fdee-146">Dans l’Assistant Entity Data Model, sélectionnez **générer à partir de la base de données**, puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-146">In the Entity Data Model Wizard, select **Generate from Database**, and then click **Next**.</span></span>
+4. <span data-ttu-id="503dc-146">Dans l’Assistant Entity Data Model, sélectionnez **générer à partir de la base de données**, puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="503dc-146">In the Entity Data Model Wizard, select **Generate from Database**, and then click **Next**.</span></span>
 
-5. <span data-ttu-id="0fdee-147">Connectez le modèle de données à la base de données en procédant de l’une des manières suivantes, puis cliquez sur **suivant**:</span><span class="sxs-lookup"><span data-stu-id="0fdee-147">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>
+5. <span data-ttu-id="503dc-147">Connectez le modèle de données à la base de données en procédant de l’une des manières suivantes, puis cliquez sur **suivant**:</span><span class="sxs-lookup"><span data-stu-id="503dc-147">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>
 
-    - <span data-ttu-id="0fdee-148">Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion.</span><span class="sxs-lookup"><span data-stu-id="0fdee-148">If you do not have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="0fdee-149">Pour plus d’informations, consultez [Guide pratique pour Créer des connexions aux bases de](https://go.microsoft.com/fwlink/?LinkId=123631)données SQL Server.</span><span class="sxs-lookup"><span data-stu-id="0fdee-149">For more information, see [How to: Create Connections to SQL Server Databases](https://go.microsoft.com/fwlink/?LinkId=123631).</span></span> <span data-ttu-id="0fdee-150">Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.</span><span class="sxs-lookup"><span data-stu-id="0fdee-150">This SQL Server instance must have the Northwind sample database attached.</span></span>
+    - <span data-ttu-id="503dc-148">Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion.</span><span class="sxs-lookup"><span data-stu-id="503dc-148">If you do not have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="503dc-149">Pour plus d'informations, voir [Procédure : Créer des connexions aux bases de](https://go.microsoft.com/fwlink/?LinkId=123631)données SQL Server.</span><span class="sxs-lookup"><span data-stu-id="503dc-149">For more information, see [How to: Create Connections to SQL Server Databases](https://go.microsoft.com/fwlink/?LinkId=123631).</span></span> <span data-ttu-id="503dc-150">Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.</span><span class="sxs-lookup"><span data-stu-id="503dc-150">This SQL Server instance must have the Northwind sample database attached.</span></span>
 
-         <span data-ttu-id="0fdee-151">\- ou -</span><span class="sxs-lookup"><span data-stu-id="0fdee-151">\- or -</span></span>
+         <span data-ttu-id="503dc-151">\- ou -</span><span class="sxs-lookup"><span data-stu-id="503dc-151">\- or -</span></span>
 
-    - <span data-ttu-id="0fdee-152">Si vous avez une connexion de base de données déjà configurée pour vous connecter à la base de données Northwind, sélectionnez cette connexion dans la liste des connexions.</span><span class="sxs-lookup"><span data-stu-id="0fdee-152">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>
+    - <span data-ttu-id="503dc-152">Si vous avez une connexion de base de données déjà configurée pour vous connecter à la base de données Northwind, sélectionnez cette connexion dans la liste des connexions.</span><span class="sxs-lookup"><span data-stu-id="503dc-152">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>
 
-6. <span data-ttu-id="0fdee-153">Dans la page finale de l'Assistant, activez les cases à cocher pour toutes les tables de la base de données puis désactivez les cases pour les vues et les procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="0fdee-153">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>
+6. <span data-ttu-id="503dc-153">Dans la page finale de l'Assistant, activez les cases à cocher pour toutes les tables de la base de données puis désactivez les cases pour les vues et les procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="503dc-153">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>
 
-7. <span data-ttu-id="0fdee-154">Cliquez sur **Terminer** pour fermer l’Assistant.</span><span class="sxs-lookup"><span data-stu-id="0fdee-154">Click **Finish** to close the wizard.</span></span>
+7. <span data-ttu-id="503dc-154">Cliquez sur **Terminer** pour fermer l’Assistant.</span><span class="sxs-lookup"><span data-stu-id="503dc-154">Click **Finish** to close the wizard.</span></span>
 
-## <a name="create-the-data-service"></a><span data-ttu-id="0fdee-155">Créer le service de données</span><span class="sxs-lookup"><span data-stu-id="0fdee-155">Create the data service</span></span>
+## <a name="create-the-data-service"></a><span data-ttu-id="503dc-155">Créer le service de données</span><span class="sxs-lookup"><span data-stu-id="503dc-155">Create the data service</span></span>
 
-1. <span data-ttu-id="0fdee-156">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-156">In **Solution Explorer**, right-click the name of your ASP.NET project, and then click **Add** > **New Item**.</span></span>
+1. <span data-ttu-id="503dc-156">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="503dc-156">In **Solution Explorer**, right-click the name of your ASP.NET project, and then click **Add** > **New Item**.</span></span>
 
-2. <span data-ttu-id="0fdee-157">Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **service de données WCF**.</span><span class="sxs-lookup"><span data-stu-id="0fdee-157">In the **Add New Item** dialog box, select **WCF Data Service**.</span></span>
+2. <span data-ttu-id="503dc-157">Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **service de données WCF**.</span><span class="sxs-lookup"><span data-stu-id="503dc-157">In the **Add New Item** dialog box, select **WCF Data Service**.</span></span>
 
-   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](media/wcf-data-service-item-template.png)
+   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > <span data-ttu-id="0fdee-159">Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.</span><span class="sxs-lookup"><span data-stu-id="0fdee-159">The **WCF Data Service** template is available in Visual Studio 2015, but not in Visual Studio 2017.</span></span>
+   > <span data-ttu-id="503dc-159">Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.</span><span class="sxs-lookup"><span data-stu-id="503dc-159">The **WCF Data Service** template is available in Visual Studio 2015, but not in Visual Studio 2017.</span></span>
 
-3. <span data-ttu-id="0fdee-160">Pour le nom du service, entrez `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="0fdee-160">For the name of the service, enter `Northwind`.</span></span>
+3. <span data-ttu-id="503dc-160">Pour le nom du service, entrez `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="503dc-160">For the name of the service, enter `Northwind`.</span></span>
 
-     <span data-ttu-id="0fdee-161">Visual Studio crée le balisage XML et des fichiers de code pour le nouveau service.</span><span class="sxs-lookup"><span data-stu-id="0fdee-161">Visual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="0fdee-162">La fenêtre de l'éditeur de code s'ouvre par défaut.</span><span class="sxs-lookup"><span data-stu-id="0fdee-162">By default, the code-editor window opens.</span></span> <span data-ttu-id="0fdee-163">Dans **Explorateur de solutions**, le service porte le nom, Northwind et l’extension. svc.cs ou. svc. vb.</span><span class="sxs-lookup"><span data-stu-id="0fdee-163">In **Solution Explorer**, the service has the name, Northwind, and the extension .svc.cs or .svc.vb.</span></span>
+     <span data-ttu-id="503dc-161">Visual Studio crée le balisage XML et des fichiers de code pour le nouveau service.</span><span class="sxs-lookup"><span data-stu-id="503dc-161">Visual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="503dc-162">La fenêtre de l'éditeur de code s'ouvre par défaut.</span><span class="sxs-lookup"><span data-stu-id="503dc-162">By default, the code-editor window opens.</span></span> <span data-ttu-id="503dc-163">Dans **Explorateur de solutions**, le service porte le nom, Northwind et l’extension. svc.cs ou. svc. vb.</span><span class="sxs-lookup"><span data-stu-id="503dc-163">In **Solution Explorer**, the service has the name, Northwind, and the extension .svc.cs or .svc.vb.</span></span>
 
-4. <span data-ttu-id="0fdee-164">Dans le code du service de données, remplacez le commentaire `/* TODO: put your data source class name here */` dans la définition de la classe qui définit le service de données par le type qui est le conteneur d'entités du modèle de données, dans ce cas `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="0fdee-164">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="0fdee-165">La définition de classe doit ressembler aux éléments suivants:</span><span class="sxs-lookup"><span data-stu-id="0fdee-165">The class definition should look this the following:</span></span>
+4. <span data-ttu-id="503dc-164">Dans le code du service de données, remplacez le commentaire `/* TODO: put your data source class name here */` dans la définition de la classe qui définit le service de données par le type qui est le conteneur d'entités du modèle de données, dans ce cas `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="503dc-164">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="503dc-165">La définition de classe doit ressembler aux éléments suivants:</span><span class="sxs-lookup"><span data-stu-id="503dc-165">The class definition should look this the following:</span></span>
 
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
-## <a name="see-also"></a><span data-ttu-id="0fdee-166">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0fdee-166">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="503dc-166">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="503dc-166">See also</span></span>
 
-- [<span data-ttu-id="0fdee-167">Exposition de vos données comme service</span><span class="sxs-lookup"><span data-stu-id="0fdee-167">Exposing Your Data as a Service</span></span>](exposing-your-data-as-a-service-wcf-data-services.md)
+- [<span data-ttu-id="503dc-167">Exposition de vos données comme service</span><span class="sxs-lookup"><span data-stu-id="503dc-167">Exposing Your Data as a Service</span></span>](exposing-your-data-as-a-service-wcf-data-services.md)
