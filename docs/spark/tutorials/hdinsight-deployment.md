@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9da0e0fd83d70887109c63a5e95ec0b0b31a2edd
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 2e8da5497035a83fde75bf91a7d21437d510b480
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928467"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117972"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Déployer une application .NET pour Apache Spark sur Azure HDInsight
 
@@ -49,7 +49,7 @@ Avant de commencer, procédez comme suit :
 
    Vous pouvez exécuter la commande suivante sur Linux.
 
-   ```bash
+   ```dotnetcli
    dotnet publish -c Release -f netcoreapp2.1 -r ubuntu.16.04-x64
    ```
 
@@ -83,7 +83,7 @@ Exécutez `install-worker.sh` sur le cluster en utilisant des [actions de script
 |Paramètre|Valeur|
 |-------|-----|
 |Type de script|Personnalisé|
-|Nom|Installer Microsoft.Spark.Worker|
+|Name|Installer Microsoft.Spark.Worker|
 |URI de script bash|URI vers lequel vous avez chargé `install-worker.sh`. Par exemple, `abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/install-worker.sh`.|
 |Type (s) de nœud|Collabor|
 |Paramètres|Paramètres de `install-worker.sh`. Par exemple, si vous avez chargé `install-worker.sh` dans Azure Data Lake Gen 2, il s’agit de `azure abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/Microsoft.Spark.Worker.<release>.tar.gz /usr/local/bin`.|
