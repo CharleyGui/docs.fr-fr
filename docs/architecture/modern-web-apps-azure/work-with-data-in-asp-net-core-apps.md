@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 3b251003a2da998936a11acff3cc2975c4b78838
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 9d9e75767f5ed5010f618d5dbe1e58fe79454597
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373994"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117306"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -25,13 +25,13 @@ Si vous écrivez une application ASP.NET Core qui doit fonctionner avec des donn
 
 Pour utiliser EF Core avec une base de données SQL Server, exécutez la commande d’interface CLI dotnet suivante :
 
-```console
+```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
 Pour ajouter la prise en charge d’une source de données InMemory, à des fins de test :
 
-```console
+```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
 
