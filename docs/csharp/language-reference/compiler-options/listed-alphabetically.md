@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 37eedc6d41867a6d5e6a49b8df5040c657bb2689
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 450463100782f98b6ded0781b1d3c19b0db97534
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602753"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151774"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Options du compilateur C# par ordre alphabétique
 
@@ -29,7 +29,7 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |[-baseaddress](baseaddress-compiler-option.md)|Spécifie l'adresse de base de la bibliothèque à générer.|
 |[-bugreport](bugreport-compiler-option.md)|Crée un fichier de rapport de bogue. Ce fichier est envoyé avec les informations d’incident s’il est utilisé avec -errorprompt:prompt ou -errorreport:send.|
 |[/checked](checked-compiler-option.md)|Indique au compilateur de générer des contrôles de dépassement de capacité.|
-|-checksumalgorithm:\<alg>|Spécifie l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA1 (par défaut) ou SHA256.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256. |
+|-checksumalgorithm:\<alg>|Spécifie l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA256 (valeur par défaut) ou SHA1.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256. |
 |[-codepage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser à l'ouverture des fichiers sources.|
 |[-debug](debug-compiler-option.md)|Émet des informations de débogage.|
 |[-define](define-compiler-option.md)|Définit des symboles de compilation conditionnelle.|

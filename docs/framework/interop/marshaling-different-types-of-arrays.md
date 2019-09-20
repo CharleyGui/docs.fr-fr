@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 358c7f1a339fd473271574a4e97e201f5c15f871
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 8cbc904b56237d3c875566ee1276c121dae70c4c
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894168"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151741"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Marshaling de différents types de tableaux
 Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus d'informations, voir [Copie et épinglage](copying-and-pinning.md).  
@@ -31,7 +31,7 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 |De structures avec des entiers.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In.|  
 |De structures avec des chaînes.|Passe un tableau de structures contenant uniquement des chaînes en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple montre comment passer les types de tableaux suivants :  
   
 - Tableau d'entiers par valeur.  
@@ -104,7 +104,7 @@ typedef struct _MYPERSON
   
  Dans cet exemple, les structures `MyPoint` et `MyPerson` contiennent des types incorporés. L'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> est défini pour s'assurer que les membres soient disposés en mémoire de manière séquentielle, dans l'ordre dans lequel ils apparaissent.  
   
- La classe `LibWrap` contient un ensemble de méthodes appelé par la classe `App` . Pour obtenir des détails spécifiques sur le passage de tableaux, voir les commentaires de l'exemple suivant. Un tableau, qui est un type référence, est passé en tant que paramètre par défaut. Pour que l'appelant reçoive les résultats, **InAttribute** et **OutAttribute** doivent être appliqués explicitement à l'argument contenant le tableau.  
+ La classe `NativeMethods` contient un ensemble de méthodes appelé par la classe `App` . Pour obtenir des détails spécifiques sur le passage de tableaux, voir les commentaires de l'exemple suivant. Un tableau, qui est un type référence, est passé en tant que paramètre par défaut. Pour que l'appelant reçoive les résultats, **InAttribute** et **OutAttribute** doivent être appliqués explicitement à l'argument contenant le tableau.  
   
 ### <a name="declaring-prototypes"></a>Déclaration de prototypes  
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]

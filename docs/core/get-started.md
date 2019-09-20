@@ -3,13 +3,13 @@ title: Bien démarrer avec .NET Core
 description: Découvrez des ressources qui vous apprendront à créer des applications .NET Core sur Windows, Linux et macOS.
 author: thraka
 ms.author: adegeo
-ms.date: 06/27/2018
-ms.openlocfilehash: 5846b3c62a4a44b0d6bcdfbaaa00e12e5a157ab0
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 09/19/2019
+ms.openlocfilehash: 7dc134696e7dacf531fa6c7f4d84b63eb785ef25
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116531"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151505"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 

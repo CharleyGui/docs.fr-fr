@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 5113de6d8d333983e6e26579ff9803a9f5a62816
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: ab6ff2ba6e0f3f1ea9e34de80b67276a990bc83b
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254171"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151844"
 ---
 # <a name="cleartype-registry-settings"></a>Paramètres du Registre ClearType
 Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsoft ClearType qui sont utilisés par les applications WPF.  
@@ -63,7 +63,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>Niveau gamma  
- Le niveau gamma fait référence à la relation non linéaire entre une valeur de pixel et la luminance. Ce paramètre doit correspondre aux caractéristiques physiques de l’écran d’affichage ; dans le cas contraire, des distorsions dans le rendu pourraient se produire. Par exemple, un test peut apparaître trop large ou trop étroit, ou encore des franges de couleurs peuvent apparaître sur les bords des traits verticaux des glyphes.  
+ Le niveau gamma fait référence à la relation non linéaire entre une valeur de pixel et la luminance. Ce paramètre doit correspondre aux caractéristiques physiques de l’écran d’affichage ; dans le cas contraire, des distorsions dans le rendu pourraient se produire. Par exemple, le texte peut apparaître trop large ou trop étroit, ou des franges de couleur peuvent apparaître sur les bords des tiges verticales de glyphes.  
   
  Le niveau gamma est une valeur entière comprise entre 1 000 et 2 200. Le niveau par défaut est 1 900.  
   
@@ -80,7 +80,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 ## <a name="pixel-structure"></a>Structure des pixels  
  La structure des pixels décrit le type des pixels qui composent un écran d’affichage. Cette structure peut être de trois types :  
   
-|Type|Valeur|Description|  
+|Type|Value|Description|  
 |----------|-----------|-----------------|  
 |À deux dimensions|0|L’écran d’affichage n’a aucune structure de pixels. Cela signifie que les sources de lumière de chaque couleur sont étalées de manière uniforme sur la zone de pixel – ce rendu est appelé « rendu en échelle de gris ». C’est ainsi que fonctionne un écran d’affichage standard. ClearType n’est jamais appliqué au texte rendu.|  
 |RVB|1|L’écran d’affichage comporte des pixels constitués de trois bandes dans l’ordre suivant : rouge, vert et bleu. ClearType est appliqué au texte rendu.|  
