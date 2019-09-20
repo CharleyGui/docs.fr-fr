@@ -1,30 +1,30 @@
 ---
-title: Prédire des prix en utilisant la régression avec Model Builder
+title: 'Tutoriel : Prédire des prix en utilisant la régression avec Model Builder'
 description: Ce tutoriel montre comment créer un modèle de régression Model Builder ML.NET pour prédire des prix, plus précisément celui des courses de taxi à New York.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 09/12/2019
+ms.date: 09/18/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 675ca58ab071293fe5c04b1b85337fb1e48dfbea
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: bb344a7f01e8ffe0e40578c6fb2f28bebd2eb807
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991349"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117959"
 ---
-# <a name="predict-prices-using-regression-with-model-builder"></a>Prédire des prix en utilisant la régression avec Model Builder
+# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Tutoriel : Prédire des prix en utilisant la régression avec Model Builder
 
 Découvrez comment utiliser Model Builder ML.NET pour générer un modèle de régression() pour prédire des prix.  L’application console .NET que vous développez dans ce tutoriel prédit les prix des taxis en fonction de l’historique des prix des courses de taxi à New York.
 
 Le modèle de prédiction des prix de Model Builder peut être utilisé pour tout scénario nécessitant une valeur de prédiction numérique. Voici quelques exemples de scénarios : prédiction des prix de l’immobilier, prédiction de la demande et prévisions des ventes.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 >
 > - Préparer et comprendre les données
 > - Choisir un scénario
-> - Chargement des données
+> - Charger les données
 > - Effectuer l’apprentissage du modèle
 > - Évaluer le modèle
 > - Utiliser le modèle pour les prévisions
@@ -77,7 +77,7 @@ Pour entraîner votre modèle, vous devez sélectionner dans la liste des scéna
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet *TaxiFarePrediction*, puis sélectionnez **Ajouter** > **Machine Learning**.
 1. Dans l’étape de scénario de l’outil Model Builder, sélectionnez le scénario *Prédiction de prix*.
 
-## <a name="load-the-data"></a>Chargement des données
+## <a name="load-the-data"></a>Charger les données
 
 Model Builder accepte des données de deux sources : une base de données SQL Server, ou un fichier csv ou tsv local.
 
@@ -181,12 +181,12 @@ Si vous devez référencer ultérieurement les projets générés à l’intéri
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > - Préparer et comprendre les données
 > - Choisir un scénario
-> - Chargement des données
+> - Charger les données
 > - Effectuer l’apprentissage du modèle
 > - Évaluer le modèle
 > - Utiliser le modèle pour les prévisions
