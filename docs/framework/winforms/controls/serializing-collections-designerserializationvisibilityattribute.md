@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : Sérialisation des collections de types standard avec DesignerSerializationVisibilityAttribute'
+title: 'Procédure pas à pas : sérialisation des collections de types standard avec DesignerSerializationVisibilityAttribute'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,18 +14,18 @@ ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 4fd1f1dc0c2c0ad9ae2009ed592e48b8eeaa2783
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: f051d7a51a5f4ff8debf40fafbb8acfd8f7098f5
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373683"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182631"
 ---
 # <a name="walkthrough-serialize-collections-of-standard-types"></a>Procédure pas à pas : Sérialiser des collections de types standard
 
 Vos contrôles personnalisés exposent parfois une collection en tant que propriété. Cette procédure pas à pas montre comment <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> utiliser la classe pour contrôler la façon dont une collection est sérialisée au moment du Design. L’application <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> de la valeur à votre propriété de collection garantit que la propriété sera sérialisée.
 
-Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Guide pratique pour Sérialiser des collections de types standard avec DesignerSerializationVisibilityAttribute](/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
+Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Guide pratique pour Sérialiser des collections de types standard avec DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -45,7 +45,7 @@ La première étape consiste à créer un contrôle qui a une collection sérial
 
 5. Sélectionnez le contrôle <xref:System.Windows.Forms.TextBox>. Dans la fenêtre **Propriétés** , définissez les propriétés suivantes.
 
-    |Propriété|Remplacer par|
+    |Property|Remplacer par|
     |--------------|---------------|
     |**Multiline**|`true`|
     |**Sa**|<xref:System.Windows.Forms.DockStyle.Fill>|
@@ -129,11 +129,11 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
 
 Une fois que vous savez comment sérialiser une collection de types standard, envisagez d’intégrer vos contrôles personnalisés plus profondément dans l’environnement au moment du Design. Les rubriques suivantes décrivent comment améliorer l’intégration au moment du design de vos contrôles personnalisés :
 
-- [Architecture au moment du design](/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
+- [Architecture au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
 
 - [Attributs dans les contrôles Windows Forms](attributes-in-windows-forms-controls.md)
 
-- [Vue d’ensemble de la sérialisation du concepteur](/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
+- [Vue d’ensemble de la sérialisation du concepteur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
 
 - [Procédure pas à pas : Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](creating-a-wf-control-design-time-features.md)
 

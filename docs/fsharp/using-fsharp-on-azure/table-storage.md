@@ -3,12 +3,12 @@ title: Bien démarrer avec le stockage Table Azure en F#
 description: Stockez des données structurées dans le Cloud à l’aide du stockage table Azure ou Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: f5fe2fe667b6d529bba4d29729a975c7890b5aba
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 509435d47231040362586fa263fbecb1125f862b
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929003"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182602"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Prise en main du stockage table Azure et du Azure Cosmos DB API Table à l’aide de F\#
 
@@ -84,7 +84,7 @@ La `CloudTableClient` classe vous permet de récupérer des tables et des entit�
 
 Vous êtes maintenant prêt à écrire du code qui lit et écrit des données dans le stockage de table.
 
-### <a name="create-a-table"></a>Création d’une table
+### <a name="create-a-table"></a>Créer une table
 
 Cet exemple montre comment créer une table si elle n’existe pas déjà :
 
@@ -192,7 +192,7 @@ Vous pouvez supprimer une table d’un compte de stockage. Une table qui a été
 Maintenant que vous avez appris les principes de base du stockage table, suivez ces liens pour en savoir plus sur les tâches de stockage plus complexes et le Azure Cosmos DB API Table.
 
 - [Présentation de Azure Cosmos DB API Table](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
-- [Référence de la bibliothèque cliente de stockage pour .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+- [Référence de la bibliothèque cliente de stockage pour .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
 - [Fournisseur de type de stockage Azure](https://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog de l’équipe stockage Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/)
 - [Configuration de chaînes de connexion](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string)

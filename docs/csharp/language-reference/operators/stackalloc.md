@@ -1,17 +1,17 @@
 ---
 title: Opérateur stackalloc - Référence C#
 ms.custom: seodec18
-ms.date: 06/10/2019
+ms.date: 09/20/2019
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: f211acaa8c47ab42a1f7f06cff6c35570cd22b75
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
-ms.translationtype: HT
+ms.openlocfilehash: 9ef5f98f2b4973c5873417ecc9a71c187e7299b9
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433826"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182417"
 ---
 # <a name="stackalloc-operator-c-reference"></a>Opérateur stackalloc (Référence C#)
 
@@ -31,6 +31,10 @@ Vous pouvez attribuer le résultat de l’opérateur `stackalloc` à une variabl
 
   [!code-csharp[stackalloc expression](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AsExpression)]
 
+  À partir C# de 8,0, vous pouvez utiliser `stackalloc` une expression dans d’autres expressions <xref:System.Span%601> chaque <xref:System.ReadOnlySpan%601> fois qu’une variable ou est autorisée, comme le montre l’exemple suivant :
+
+  [!code-csharp[stackalloc in nested expressions](~/samples/csharp/language-reference/operators/StackallocOperator.cs#Nested)]
+
   > [!NOTE]
   > Nous vous recommandons d’utiliser les types <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601> pour travailler avec la mémoire allouée dans la pile quand cela est possible.
 
@@ -39,6 +43,8 @@ Vous pouvez attribuer le résultat de l’opérateur `stackalloc` à une variabl
   [!code-csharp[stackalloc pointer](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToPointer)]
 
   Comme le montre l’exemple précédent, vous devez utiliser un contexte `unsafe` lorsque vous travaillez avec des types pointeurs.
+
+  Dans le cas des types pointeur, vous pouvez utiliser une `stackalloc` expression uniquement dans une déclaration de variable locale pour initialiser la variable.
 
 Le contenu de la mémoire nouvellement allouée n’est pas défini. À compter de C# 7.3, vous pouvez utiliser la syntaxe d’initialiseur de tableau pour définir le contenu de la mémoire nouvellement allouée. L’exemple suivant illustre différentes manières de le faire :
 

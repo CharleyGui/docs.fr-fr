@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 4fd8fe00fe6974bdcbf7b4af4da25150996de8c3
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a146f15a1c2755f254e198d471a42ca9ec29b072
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401700"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182532"
 ---
 # <a name="wpf-add-ins-overview"></a>Vue d'ensemble des compléments WPF
 
@@ -27,7 +27,7 @@ ms.locfileid: "68401700"
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec le modèle de complément .NET Framework. Pour plus d’informations, consultez [Compléments et extensibilité](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
+Vous devez être familiarisé avec le modèle de complément .NET Framework. Pour plus d’informations, consultez [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
 <a name="AddInsOverview"></a>
 
@@ -55,18 +55,18 @@ Pour permettre l’utilisation des compléments, les applications hôtes doivent
 
 - **Activation**: Le chargement, l’exécution et l’établissement de la communication avec les compléments.
 
-- **Isolation** : À l’aide de domaines d’application ou de processus pour établir des limites d’isolation qui protègent les applications des problèmes potentiels de sécurité et d’exécution avec les compléments.
+- **Isolation**: À l’aide de domaines d’application ou de processus pour établir des limites d’isolation qui protègent les applications des problèmes potentiels de sécurité et d’exécution avec les compléments.
 
 - **Communication**: Autoriser les compléments et les applications hôtes à communiquer les uns avec les autres à travers les limites d’isolation en appelant des méthodes et en passant des données.
 
 - **Gestion**de la durée de vie: Chargement et déchargement des domaines d’application et des processus de manière propre et prévisible (consultez [domaines d’application](../../app-domains/application-domains.md)).
 
-- Contrôle de **version**: S’assurer que les applications hôtes et les compléments peuvent toujours communiquer quand de nouvelles versions de sont créées.
+- **Gestion de versions** : S’assurer que les applications hôtes et les compléments peuvent toujours communiquer quand de nouvelles versions de sont créées.
 
 Enfin, le développement d’un modèle de complément robuste est une tâche non négligeable. C’est la raison pour laquelle le .NET Framework fournit une infrastructure pour la création de modèles de compléments.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments, consultez [Compléments et extensibilité](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
+> Pour plus d’informations sur les compléments, consultez [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
 <a name="NETFrameworkAddInModelOverview"></a>
 
@@ -127,7 +127,7 @@ La <xref:System.AddIn.Contract.INativeHandleContract>manière <xref:System.AddIn
 
 Pour qu’un complément retourne une interface utilisateur à une application hôte, les conditions suivantes sont requises:
 
-1. L’application hôte, le complément et le pipeline doivent être créés, comme décrit dans la documentation relative aux [compléments et](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) à l’extensibilité de .NET Framework.
+1. L’application hôte, le complément et le pipeline doivent être créés, comme décrit dans la documentation relative aux [compléments et](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) à l’extensibilité de .NET Framework.
 
 2. Le contrat doit implémenter <xref:System.AddIn.Contract.IContract> et, pour retourner une interface utilisateur, le contrat doit déclarer une méthode avec une valeur de retour de type. <xref:System.AddIn.Contract.INativeHandleContract>
 
@@ -147,7 +147,7 @@ Pour obtenir un exemple qui montre comment implémenter un complément qui retou
 
 Quand un complément est une interface utilisateur, les conditions suivantes sont requises:
 
-1. L’application hôte, le complément et le pipeline doivent être créés, comme décrit dans la documentation relative aux [compléments et](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) à l’extensibilité de .NET Framework.
+1. L’application hôte, le complément et le pipeline doivent être créés, comme décrit dans la documentation relative aux [compléments et](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) à l’extensibilité de .NET Framework.
 
 2. L’interface de contrat pour le complément doit implémenter <xref:System.AddIn.Contract.INativeHandleContract>.
 
@@ -187,7 +187,7 @@ Ces tâches sont décrites en détail dans les sous-sections suivantes.
 
 La première étape consiste donc à générer l’assembly de pipeline et de complément à la racine du projet [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] en définissant la sortie de build de chaque projet d’assembly de pipeline et d’assembly de complément. Le tableau suivant présente les chemins de sortie de build des projets d’assembly de pipeline et du projet d’assembly de complément se trouvant dans le même dossier solution et racine que le projet [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] de l’hôte.
 
-Tableau 1 : Chemins de sortie de la génération pour les assemblys de pipeline qui sont hébergés par un XBAP
+Tableau 1: Chemins de sortie de la génération pour les assemblys de pipeline qui sont hébergés par un XBAP
 
 |Projet d’assembly de pipeline|Chemin de sortie de la génération|
 |-------------------------------|-----------------------|
@@ -311,7 +311,7 @@ Par défaut, lorsque plusieurs domaines d’application sont utilisés, les diff
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.LoaderOptimizationAttribute>
-- [Compléments et extensibilité](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
+- [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Domaines d’application](../../app-domains/application-domains.md)
 - [Vue d’ensemble de la communication à distance .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Rendre les objets accessibles à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))

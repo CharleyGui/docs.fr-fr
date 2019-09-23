@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: d8a1e36c0932de9bf50c109ea979a1e358795388
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 8f09566585c06531a346b0143a6002c2854a0b01
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331544"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182567"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic options du compilateur classées par catégorie
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio. La liste suivante répertorie les Visual Basic options du compilateur de ligne de commande triées par catégorie fonctionnelle.  
@@ -72,7 +72,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|Transforme les avertissements en erreurs.|  
 |`-ruleset:<file>`|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|  
   
-## <a name="help"></a>Aide  
+## <a name="help"></a>Help  
   
 |Option|Objectif|  
 |---|---|  
@@ -129,4 +129,4 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 ## <a name="see-also"></a>Voir aussi
 
 - [Options du compilateur Visual Basic par ordre alphabétique](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)
-- [Gérer les propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties?view=vs-2017)
+- [Gérer les propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

@@ -593,7 +593,7 @@
       href: ../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
     - name: Séparateur numérique de début
       href: ../../../_csharplang/proposals/csharp-7.2/leading-separator.md
-- name: 'Propositions de spécification C# 7.3'
+- name: "Propositions de spécification C#\_7.3"
   items:
     - name: Contraintes de type générique non managées
       href: ../../../_csharplang/proposals/csharp-7.3/blittable.md

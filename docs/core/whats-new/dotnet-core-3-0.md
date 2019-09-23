@@ -7,18 +7,18 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 09/17/2019
-ms.openlocfilehash: 08ad77fbad7ad468e45fe629041ded82544792f2
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 45d5117f264a24c2658debad9a111d4d4b9b9a8e
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116114"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182442"
 ---
 # <a name="whats-new-in-net-core-30-release-candidate-1"></a>Nouveautés de .NET Core 3,0 (version Release Candidate 1)
 
 Cet article décrit les nouveautés de .NET Core 3,0 jusqu’à la version Release Candidate 1 (RC1). Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
 
-.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 16,3 Preview 4](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pour Mac 8,3](https://docs.microsoft.com/visualstudio/mac/install-preview?view=vsmac-2019), ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**.
+.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 16,3 Preview 4](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pour Mac 8,3](/visualstudio/mac/install-preview), ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**.
 
 [Téléchargez et commencez à utiliser .net Core 3,0 RC1](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
 

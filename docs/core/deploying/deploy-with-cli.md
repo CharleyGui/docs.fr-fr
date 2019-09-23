@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: a72e5e557cd3aa098b674bffd277e3cc6da99d33
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 00064b774145e7267fe26b31ef3bba4d5271a5c3
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306064"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181509"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publier des applications .NET Core avec l’interface CLI
 
@@ -59,7 +59,7 @@ Vous trouverez davantage d’informations sur les binaires propres à la platefo
 
 ## <a name="sample-app"></a>Exemple d’application
 
-Vous pouvez utiliser l’application ci-dessous pour explorer les commandes de publication. L’application est créée en exécutant les commandes suivantes dans votre terminal :
+Vous pouvez utiliser l’application suivante pour explorer les commandes de publication. L’application est créée en exécutant les commandes suivantes dans votre terminal :
 
 ```dotnetcli
 mkdir apptest1
@@ -118,7 +118,7 @@ La publication d’un déploiement dépendant du framework crée une application
 
 ## <a name="framework-dependent-executable"></a>Exécutable dépendant du framework
 
-Pour l’interface CLI du kit SDK .NET Core 3.x, l’exécutable dépendant du framework est le mode par défaut pour la commande `dotnet publish` de base. Vous n’avez pas besoin de spécifier d’autres paramètres tant que vous souhaitez cibler le système d’exploitation actuel.
+Pour le kit SDK .net Core 3. x CLI, l’exécutable dépendant du Framework (FDE) est le mode par défaut pour la `dotnet publish` commande de base. Vous n’avez pas besoin de spécifier d’autres paramètres tant que vous souhaitez cibler le système d’exploitation actuel.
 
 Dans ce mode, un hôte d’exécutable propre à la plateforme est créé pour héberger votre application multiplateforme. Ce mode est semblable au déploiement dépendant du framework, étant donné que celui-ci nécessite un ordinateur hôte sous la forme de la commande `dotnet`. Le nom de fichier de l’exécutable hôte varie en fonction de la plateforme, et ressemble à `<PROJECT-FILE>.exe`. Vous pouvez exécuter cet exécutable directement au lieu d’appeler `dotnet <PROJECT-FILE>.dll`, qui constitue tout de même une manière acceptable d’exécuter l’application.
 
@@ -141,7 +141,7 @@ Si vous utilisez l’[exemple d’application](#sample-app), exécutez `dotnet p
 
 ## <a name="self-contained-deployment"></a>Déploiement autonome
 
-Quand vous publiez un déploiement autonome, le kit SDK .NET Core crée un exécutable propre à la plateforme. La publication d’un déploiement autonome comprend tous les fichiers .NET Core nécessaires pour exécuter votre application, mais n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Ces dépendances doivent être présentes sur le système avant l’exécution de l’application.
+Quand vous publiez un déploiement autonome, le kit SDK .NET Core crée un exécutable propre à la plateforme. La publication d’une SCD inclut tous les fichiers .NET Core requis pour exécuter votre application, mais elle n’inclut pas les [dépendances natives de .net Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Ces dépendances doivent être présentes sur le système avant l’exécution de l’application.
 
 La publication d’un déploiement autonome crée une application qui n’extrapole pas vers la dernière version de correctif de sécurité .NET Core disponible. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
 

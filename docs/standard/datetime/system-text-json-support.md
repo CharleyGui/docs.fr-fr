@@ -13,17 +13,17 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 83b1b3a7db63154dccc07325b1a1948a2db3953a
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 000a6b6dc892e65b50ae413ab3cb95d2a73ef0ef
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151827"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182575"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Prise en charge de DateTime et DateTimeOffset dans System.Text.Json
 
 La bibliothèque System. Text. JSON analyse et écrit <xref:System.DateTime> les valeurs et <xref:System.DateTimeOffset> en fonction du profil étendu ISO 8601 :-2019.
-Les [convertisseurs](https://docs.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1?view=netcore-3.0) fournissent une prise en charge personnalisée pour la sérialisation et <xref:System.Text.Json.JsonSerializer>la désérialisation avec.
+Les [convertisseurs](xref:System.Text.Json.Serialization.JsonConverter%601) fournissent une prise en charge personnalisée pour la sérialisation et <xref:System.Text.Json.JsonSerializer>la désérialisation avec.
 La prise en charge personnalisée peut également être <xref:System.Text.Json.Utf8JsonReader> implémentée lors de l’utilisation de et. <xref:System.Text.Json.Utf8JsonWriter>
 
 ## <a name="support-for-the-iso-8601-12019-format"></a>Prise en charge du format ISO 8601-1:2019
@@ -67,7 +67,7 @@ Si vous tentez de lire des formats non <xref:System.Text.Json.Utf8JsonReader> co
 
 ### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Quand vous utilisez<xref:System.Text.Json.JsonSerializer>
 
-Si vous souhaitez que le sérialiseur effectue une analyse personnalisée ou une mise en forme, vous pouvez implémenter des [convertisseurs personnalisés](https://docs.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1?view=netcore-3.0).
+Si vous souhaitez que le sérialiseur effectue une analyse personnalisée ou une mise en forme, vous pouvez implémenter des [convertisseurs personnalisés](xref:System.Text.Json.Serialization.JsonConverter%601).
 Voici quelques exemples :
 
 #### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Utilisation `DateTime(Offset).Parse` de et`DateTime(Offset).ToString`
