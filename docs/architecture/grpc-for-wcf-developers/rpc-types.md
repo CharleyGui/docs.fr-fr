@@ -1,0 +1,277 @@
+---
+title: Types de RPC-gRPC pour les développeurs WCF
+description: Examen des types d’appel de procédure distante pris en charge par WCF et de leurs équivalents dans gRPC
+author: markrendle
+ms.date: 09/02/2019
+ms.openlocfilehash: 4fed4ca7fa4ae6a0f861185719917ff0ed5929fd
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71184161"
+---
+# <a name="types-of-rpc"></a><span data-ttu-id="b52bc-103">Types de RPC</span><span class="sxs-lookup"><span data-stu-id="b52bc-103">Types of RPC</span></span>
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+
+<span data-ttu-id="b52bc-104">En tant que développeur Windows Communication Foundation (WCF), vous êtes probablement employé pour traiter les types d’appel de procédure distante (RPC) suivants :</span><span class="sxs-lookup"><span data-stu-id="b52bc-104">As a Windows Communication Foundation (WCF) developer, you're probably used to dealing with the following types of Remote Procedure Call (RPC):</span></span>
+
+- <span data-ttu-id="b52bc-105">Demande/réponse</span><span class="sxs-lookup"><span data-stu-id="b52bc-105">Request/Reply</span></span>
+- <span data-ttu-id="b52bc-106">Duplex</span><span class="sxs-lookup"><span data-stu-id="b52bc-106">Duplex:</span></span>
+  - <span data-ttu-id="b52bc-107">Duplex unidirectionnel avec session</span><span class="sxs-lookup"><span data-stu-id="b52bc-107">One-way duplex with session</span></span>
+  - <span data-ttu-id="b52bc-108">Full duplex avec session</span><span class="sxs-lookup"><span data-stu-id="b52bc-108">Full duplex with session</span></span>
+- <span data-ttu-id="b52bc-109">Unidirectionnel</span><span class="sxs-lookup"><span data-stu-id="b52bc-109">One-way</span></span>
+
+<span data-ttu-id="b52bc-110">Il est possible de mapper ces types RPC assez naturellement à des concepts gRPC existants. ce chapitre examine chacun de ces domaines à leur tour.</span><span class="sxs-lookup"><span data-stu-id="b52bc-110">It's possible to map these RPC types fairly naturally to existing gRPC concepts and this chapter will look at each of these areas in turn.</span></span> <span data-ttu-id="b52bc-111">Des exemples similaires seront explorés plus en détail dans le [Chapitre 5](migrate-wcf-to-grpc.md).</span><span class="sxs-lookup"><span data-stu-id="b52bc-111">Similar examples will be explored in much greater depth in [Chapter 5](migrate-wcf-to-grpc.md).</span></span>
+
+| <span data-ttu-id="b52bc-112">WCF</span><span class="sxs-lookup"><span data-stu-id="b52bc-112">WCF</span></span> | <span data-ttu-id="b52bc-113">gRPC</span><span class="sxs-lookup"><span data-stu-id="b52bc-113">gRPC</span></span> |
+| --- | ---- |
+| <span data-ttu-id="b52bc-114">Demande/réponse régulière</span><span class="sxs-lookup"><span data-stu-id="b52bc-114">Regular request/reply</span></span> | <span data-ttu-id="b52bc-115">Unaire</span><span class="sxs-lookup"><span data-stu-id="b52bc-115">Unary</span></span> |
+| <span data-ttu-id="b52bc-116">Service duplex avec session utilisant une interface de rappel client</span><span class="sxs-lookup"><span data-stu-id="b52bc-116">Duplex service with session using a client callback interface</span></span> | <span data-ttu-id="b52bc-117">Streaming de serveur</span><span class="sxs-lookup"><span data-stu-id="b52bc-117">Server streaming</span></span> |
+| <span data-ttu-id="b52bc-118">Service Full duplex avec session</span><span class="sxs-lookup"><span data-stu-id="b52bc-118">Full duplex service with session</span></span> | <span data-ttu-id="b52bc-119">Diffusion bidirectionnelle</span><span class="sxs-lookup"><span data-stu-id="b52bc-119">Bidirectional streaming</span></span> |
+| <span data-ttu-id="b52bc-120">Opérations unidirectionnelles</span><span class="sxs-lookup"><span data-stu-id="b52bc-120">One-way operations</span></span> | <span data-ttu-id="b52bc-121">Diffusion en continu du client</span><span class="sxs-lookup"><span data-stu-id="b52bc-121">Client streaming</span></span> |
+
+## <a name="requestreply"></a><span data-ttu-id="b52bc-122">Demande/réponse</span><span class="sxs-lookup"><span data-stu-id="b52bc-122">Request/reply</span></span>
+
+<span data-ttu-id="b52bc-123">Pour les méthodes de requête/réponse simples qui acceptent et retournent de petites quantités de données, utilisez le modèle gRPC le plus simple, le RPC unaire.</span><span class="sxs-lookup"><span data-stu-id="b52bc-123">For simple request/reply methods that take and return small amounts of data, use the simplest gRPC pattern, the unary RPC.</span></span>
+
+```protobuf
+service Things {
+    rpc Get(GetThingRequest) returns (GetThingResponse);
+}
+```
+
+```csharp
+public class ThingService : Things.ThingsBase
+{
+    public override async Task<GetThingResponse> Get(GetThingRequest request, ServerCallContext context)
+    {
+        // Get thing from database
+        return new GetThingResponse { Thing = thing };
+    }
+}
+```
+
+```csharp
+public async Task ShowThing(int thingId)
+{
+    var thing = await _thingsClient.GetAsync(new GetThingRequest { ThingId = thingId });
+    Console.WriteLine($"{thing.Name}");
+}
+```
+
+<span data-ttu-id="b52bc-124">Comme vous pouvez le voir, l’implémentation d’une méthode de service RPC unaire gRPC est très semblable à l’implémentation d’une opération WCF, à la différence près qu’avec gRPC, vous substituez une méthode de classe de base au lieu d’implémenter une interface.</span><span class="sxs-lookup"><span data-stu-id="b52bc-124">As you can see, implementing a gRPC unary RPC service method is very similar to implementing a WCF operation, except that with gRPC you override a base class method instead of implementing an interface.</span></span> <span data-ttu-id="b52bc-125">Notez que sur le serveur, les méthodes de base gRPC retournent toujours un <xref:System.Threading.Tasks.Task%601>, bien que le client fournisse des méthodes Async et Blocking pour appeler le service.</span><span class="sxs-lookup"><span data-stu-id="b52bc-125">Note that on the server, gRPC base methods always return a <xref:System.Threading.Tasks.Task%601>, although the client provides both async and blocking methods to call the service.</span></span>
+
+## <a name="wcf-duplex-one-way-to-client"></a><span data-ttu-id="b52bc-126">Duplex WCF, unidirectionnel pour le client</span><span class="sxs-lookup"><span data-stu-id="b52bc-126">WCF duplex, one-way to client</span></span>
+
+<span data-ttu-id="b52bc-127">Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur, et le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> l’aide d’une interface de *rappel* spécifiée dans la propriété.</span><span class="sxs-lookup"><span data-stu-id="b52bc-127">WCF applications (with certain bindings) can create a persistent connection between client and server, and the server can asynchronously send data to the client until the connection is closed, using a *callback interface* specified in the <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> property.</span></span>
+
+<span data-ttu-id="b52bc-128">les services gRPC offrent des fonctionnalités similaires à celles des flux de messages.</span><span class="sxs-lookup"><span data-stu-id="b52bc-128">gRPC services provide similar functionality with message streams.</span></span> <span data-ttu-id="b52bc-129">Les flux ne sont pas mappés *exactement* aux services duplex WCF en termes d’implémentation, mais les mêmes résultats peuvent être obtenus.</span><span class="sxs-lookup"><span data-stu-id="b52bc-129">Streams don't map *exactly* to WCF duplex services in terms of implementation, but the same results can be achieved.</span></span>
+
+### <a name="grpc-streaming"></a><span data-ttu-id="b52bc-130">diffusion en continu gRPC</span><span class="sxs-lookup"><span data-stu-id="b52bc-130">gRPC streaming</span></span>
+
+<span data-ttu-id="b52bc-131">gRPC prend en charge la création de flux persistants entre le client et le serveur, et du serveur au client.</span><span class="sxs-lookup"><span data-stu-id="b52bc-131">gRPC supports the creation of persistent streams from client to server, and from server to client.</span></span> <span data-ttu-id="b52bc-132">Les deux types de flux peuvent être actifs simultanément. C’est ce que l’on appelle la diffusion bidirectionnelle.</span><span class="sxs-lookup"><span data-stu-id="b52bc-132">Both types of stream may be active concurrently; this is called bidirectional streaming.</span></span> <span data-ttu-id="b52bc-133">Les flux peuvent être utilisés pour la messagerie asynchrone arbitraire dans le temps, ou pour transmettre des jeux de données volumineux qui sont trop volumineux pour être générés et envoyés dans une requête ou une réponse unique.</span><span class="sxs-lookup"><span data-stu-id="b52bc-133">Streams can be used for arbitrary, asynchronous messaging over time, or for passing large datasets that are too big to generate and send in a single request or response.</span></span>
+
+<span data-ttu-id="b52bc-134">L’exemple suivant montre un RPC de streaming de serveur.</span><span class="sxs-lookup"><span data-stu-id="b52bc-134">The following example shows a server streaming RPC.</span></span>
+
+```protobuf
+service ClockStreamer {
+    rpc Subscribe(ClockSubscribeRequest) returns (stream ClockMessage);
+}
+```
+
+```csharp
+public class ClockStreamerService : ClockStreamer.ClockStreamerBase
+{
+    public override async Task Subscribe(ClockSubscribeRequest request,
+        IServerStreamWriter<ClockMessage> responseStream,
+        ServerCallContext context)
+    {
+        while (!context.CancellationToken.IsCancellationRequested)
+        {
+            var time = DateTimeOffset.UtcNow;
+            await responseStream.WriteAsync(new ClockMessage { message = $"The time is {time:t}." });
+            await Task.Delay(TimeSpan.FromSeconds(10), context.CancellationToken);
+        }
+    }
+}
+```
+
+<span data-ttu-id="b52bc-135">Ce flux de serveur peut être consommé à partir d’une application cliente, comme illustré dans le code suivant :</span><span class="sxs-lookup"><span data-stu-id="b52bc-135">This server stream could be consumed from a client application as shown in the following code:</span></span>
+
+```csharp
+public async Task TellTheTimeAsync(CancellationToken token)
+{
+    var channel = GrpcChannel.ForAddress("https://localhost:5001");
+    var client = new ClockStreamer.ClockStreamerClient(channel);
+
+    var request = new ClockSubscribeRequest();
+    var response = client.Subscribe(request);
+
+    await foreach (var update in response.ResponseStream.ReadAllAsync(token))
+    {
+        Console.WriteLine(update.Message);
+    }
+}
+```
+
+> [!NOTE]
+> <span data-ttu-id="b52bc-136">Les RPC de streaming de serveur sont utiles pour les services de type abonnement, ainsi que pour l’envoi de jeux de données très volumineux lorsqu’il est inefficace ou impossible de générer l’ensemble du jeu de données en mémoire.</span><span class="sxs-lookup"><span data-stu-id="b52bc-136">Server streaming RPCs are useful for subscription-style services, and also for sending very large datasets when it would be inefficient or impossible to build the entire dataset in memory.</span></span> <span data-ttu-id="b52bc-137">Toutefois, les réponses de diffusion en continu ne `repeated` sont pas aussi rapides que l’envoi de champs dans un seul message, donc la diffusion en continu des règles ne doit pas être utilisée pour les petits jeux de données.</span><span class="sxs-lookup"><span data-stu-id="b52bc-137">However, streaming responses isn't as fast as sending `repeated` fields in a single message, so as a rule streaming shouldn't be used for small datasets.</span></span>
+
+### <a name="differences-to-wcf"></a><span data-ttu-id="b52bc-138">Différences avec WCF</span><span class="sxs-lookup"><span data-stu-id="b52bc-138">Differences to WCF</span></span>
+
+<span data-ttu-id="b52bc-139">Un service duplex WCF utilise une interface de rappel client qui peut avoir plusieurs méthodes.</span><span class="sxs-lookup"><span data-stu-id="b52bc-139">A WCF duplex service uses a client callback interface that can have multiple methods.</span></span> <span data-ttu-id="b52bc-140">Un service de diffusion en continu gRPC Server peut uniquement envoyer des messages sur un seul flux.</span><span class="sxs-lookup"><span data-stu-id="b52bc-140">A gRPC server streaming service can only send messages over a single stream.</span></span> <span data-ttu-id="b52bc-141">Si vous avez besoin de plusieurs méthodes, utilisez un type de message avec un [champ any ou](protobuf-any-oneof.md) un champ pour envoyer des messages différents et écrire du code sur le client pour les gérer.</span><span class="sxs-lookup"><span data-stu-id="b52bc-141">If you need multiple methods, use a message type with either [an Any field or a oneof field](protobuf-any-oneof.md) to send different messages, and write code in the client to handle them.</span></span>
+
+<span data-ttu-id="b52bc-142">Dans WCF, la classe [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) avec la session reste active jusqu’à ce que la connexion soit fermée, et plusieurs méthodes peuvent être appelées dans la session.</span><span class="sxs-lookup"><span data-stu-id="b52bc-142">In WCF, the [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) class with the session is kept alive until the connection is closed, and multiple methods may be called within the session.</span></span> <span data-ttu-id="b52bc-143">Dans gRPC, le `Task` retourné par la méthode d’implémentation ne doit pas se terminer tant que la connexion n’est pas fermée.</span><span class="sxs-lookup"><span data-stu-id="b52bc-143">In gRPC, the `Task` returned by the implementation method shouldn't complete until the connection is closed.</span></span>
+
+## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a><span data-ttu-id="b52bc-144">Opérations unidirectionnelles WCF et diffusion en continu du client gRPC</span><span class="sxs-lookup"><span data-stu-id="b52bc-144">WCF one-way operations and gRPC client streaming</span></span>
+
+<span data-ttu-id="b52bc-145">WCF fournit des opérations unidirectionnelles (marquées avec `[OperationContract(IsOneWay = true)]`) qui retournent un accusé de réception spécifique au transport.</span><span class="sxs-lookup"><span data-stu-id="b52bc-145">WCF provides one-way operations (marked with `[OperationContract(IsOneWay = true)]`) that return a transport-specific acknowledgement.</span></span> <span data-ttu-id="b52bc-146">les méthodes de service gRPC retournent toujours une réponse, même si elles sont vides, et le client doit toujours attendre cette réponse.</span><span class="sxs-lookup"><span data-stu-id="b52bc-146">gRPC service methods always return a response, even if it's empty, and the client should always await that response.</span></span> <span data-ttu-id="b52bc-147">Pour la messagerie de style « Fire-and-oublier » dans gRPC, vous pouvez créer un service de diffusion en continu client.</span><span class="sxs-lookup"><span data-stu-id="b52bc-147">For "fire-and-forget" style messaging in gRPC, you can create a client streaming service.</span></span>
+
+### <a name="thing_logproto"></a><span data-ttu-id="b52bc-148">thing_log. proto</span><span class="sxs-lookup"><span data-stu-id="b52bc-148">thing_log.proto</span></span>
+
+```protobuf
+service ThingLog {
+  rpc OpenConnection(stream Thing) returns (ConnectionClosedResponse);
+}
+```
+
+### <a name="thinglogservicecs"></a><span data-ttu-id="b52bc-149">ThingLogService.cs</span><span class="sxs-lookup"><span data-stu-id="b52bc-149">ThingLogService.cs</span></span>
+
+```csharp
+public class ThingLogService : Protos.ThingLog.ThingLogBase
+{
+    private static readonly ConnectionClosedResponse EmptyResponse = new ConnectionClosedResponse();
+    private readonly ILogger<ThingLogService> _logger;
+    public ThingLogService(ILogger<ThingLogService> logger)
+    {
+        _logger = logger;
+    }
+
+    public override async Task<CompletedResponse> OpenConnection(IAsyncStreamReader<Thing> requestStream, ServerCallContext context)
+    {
+        while (await requestStream.MoveNext(context.CancellationToken))
+        {
+            _logger.LogInformation(requestStream.Current.Description);
+        }
+        return EmptyResponse;
+    }
+}
+```
+
+### <a name="thinglog-client-example"></a><span data-ttu-id="b52bc-150">Exemple de client ThingLog</span><span class="sxs-lookup"><span data-stu-id="b52bc-150">ThingLog client example</span></span>
+
+```csharp
+public class ThingLogger : IAsyncDisposable
+{
+    private readonly ThingLog.ThingLogClient _client;
+    private readonly AsyncClientStreamingCall<ThingLogRequest, CompletedResponse> _stream;
+
+    public ThingLogger(ThingLog.ThingLogClient client)
+    {
+        _client = client;
+        _stream = client.OpenConnection();
+    }
+
+    public async Task WriteAsync(string description)
+    {
+        await _stream.RequestStream.WriteAsync(new Thing
+        {
+            Description = description,
+            Time = Timestamp.FromDateTimeOffset(DateTimeOffset.UtcNow)
+        });
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _stream.RequestStream.CompleteAsync();
+        _stream.Dispose();
+    }
+}
+```
+
+<span data-ttu-id="b52bc-151">Là encore, les RPC de la diffusion en continu des clients peuvent être utilisés pour la messagerie de déclenchement et d’oubli, comme indiqué dans l’exemple précédent, mais également pour l’envoi de jeux de données très volumineux au serveur.</span><span class="sxs-lookup"><span data-stu-id="b52bc-151">Again, client streaming RPCs can be used for fire-and-forget messaging as shown in the previous example, but also for sending very large datasets to the server.</span></span> <span data-ttu-id="b52bc-152">Le même avertissement sur les performances s’applique : pour les jeux de `repeated` données plus petits, utilisez des champs dans les messages ordinaires.</span><span class="sxs-lookup"><span data-stu-id="b52bc-152">The same warning about performance applies: for smaller datasets, use `repeated` fields in regular messages.</span></span>
+
+## <a name="wcf-full-duplex-services"></a><span data-ttu-id="b52bc-153">Services duplex intégral WCF</span><span class="sxs-lookup"><span data-stu-id="b52bc-153">WCF full duplex services</span></span>
+
+<span data-ttu-id="b52bc-154">La liaison duplex WCF prend en charge plusieurs opérations unidirectionnelles sur l’interface de service et l’interface de rappel client, ce qui permet des conversations continues entre le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="b52bc-154">WCF duplex binding supports multiple one-way operations on both the service interface and the client callback interface, allowing ongoing conversations between client and server.</span></span> <span data-ttu-id="b52bc-155">gRPC prend en charge des appels de manière similaire avec les RPC de diffusion bidirectionnelle, `stream` où les deux paramètres sont marqués avec le modificateur.</span><span class="sxs-lookup"><span data-stu-id="b52bc-155">gRPC supports something similar with bidirectional streaming RPCs, where both parameters are marked with the `stream` modifier.</span></span>
+
+### <a name="chatproto"></a><span data-ttu-id="b52bc-156">conversation. proto</span><span class="sxs-lookup"><span data-stu-id="b52bc-156">chat.proto</span></span>
+
+```protobuf
+service Chatter {
+    rpc Connect(stream IncomingMessage) returns (stream OutgoingMessage);
+}
+```
+
+### <a name="chatterservicecs"></a><span data-ttu-id="b52bc-157">ChatterService.cs</span><span class="sxs-lookup"><span data-stu-id="b52bc-157">ChatterService.cs</span></span>
+
+```csharp
+public class ChatterService : Chatter.ChatterBase
+{
+    private readonly IChatHub _hub;
+
+    public ChatterService(IChatHub hub)
+    {
+        _hub = hub;
+    }
+
+    public override async Task Connect(IAsyncStreamReader<MessageRequest> requestStream, IServerStreamWriter<MessageResponse> responseStream, ServerCallContext context)
+    {
+        _hub.MessageReceived += async (sender, args) =>
+            await responseStream.WriteAsync(new MessageResponse {Text = args.Message});
+
+        while (await requestStream.MoveNext(context.CancellationToken))
+        {
+            await _hub.SendAsync(requestStream.Current.Text);
+        }
+    }
+}
+```
+
+<span data-ttu-id="b52bc-158">Dans l’exemple précédent, vous pouvez voir que la méthode d’implémentation reçoit à la fois un`IAsyncStreamReader<MessageRequest>`flux de demande () et`IServerStreamWriter<MessageResponse>`un flux de réponse (), et peut lire et écrire des messages jusqu’à ce que la connexion soit fermée.</span><span class="sxs-lookup"><span data-stu-id="b52bc-158">In the previous example, you can see that the implementation method receives both a request stream (`IAsyncStreamReader<MessageRequest>`) and a response stream (`IServerStreamWriter<MessageResponse>`), and can read and write messages until the connection is closed.</span></span>
+
+### <a name="chatter-client"></a><span data-ttu-id="b52bc-159">Client chatter</span><span class="sxs-lookup"><span data-stu-id="b52bc-159">Chatter client</span></span>
+
+```csharp
+public class Chat : IAsyncDisposable
+{
+    private readonly Chatter.ChatterClient _client;
+    private readonly AsyncDuplexStreamingCall<MessageRequest, MessageResponse> _stream;
+    private readonly CancellationTokenSource _cancellationTokenSource;
+    private readonly Task _readTask;
+
+    public Chat(Chatter.ChatterClient client)
+    {
+        _client = client;
+        _stream = _client.Connect();
+        _cancellationTokenSource = new CancellationTokenSource();
+        _readTask = ReadAsync(_cancellationTokenSource.Token);
+    }
+
+    public async Task SendAsync(string message)
+    {
+        await _stream.RequestStream.WriteAsync(new MessageRequest {Text = message});
+    }
+
+    private async Task ReadAsync(CancellationToken token)
+    {
+        while (await _stream.ResponseStream.MoveNext(token))
+        {
+            Console.WriteLine(_stream.ResponseStream.Current.Text);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _stream.RequestStream.CompleteAsync();
+        await _readTask;
+        _stream.Dispose();
+    }
+}
+```
+
+>[!div class="step-by-step"]
+><span data-ttu-id="b52bc-160">[Précédent](wcf-bindings.md)
+>[Suivant](metadata.md)</span><span class="sxs-lookup"><span data-stu-id="b52bc-160">[Previous](wcf-bindings.md)
+[Next](metadata.md)</span></span>
