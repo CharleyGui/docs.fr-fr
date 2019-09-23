@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 51feb770e84af170bf31a6ba363a1d9e72616284
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 19d1d5f81b5be9b843698b6e61d8571d4edfa66f
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373773"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181941"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -51,7 +51,7 @@ app.UseMvc(routes =>
 
 Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Elle définit un modèle de routage avec des espaces réservés pour _controller_, _action_ et _id_. Les valeurs par défaut sont spécifiées pour les espaces réservés controller et action (« Home » et « Index », respectivement), tandis que l’espace réservé id est facultatif (ce qui est dénoté par « ? »). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
 
-Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
+Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
 
 ```csharp
 [Route("Home")]
@@ -109,7 +109,7 @@ Les projets API web doivent envisager d’utiliser l’attribut `[ApiController]
 > - **Filtres**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **Attribut ApiController**
- > <https://docs.microsoft.com/aspnet/core/web-api/?view=aspnetcore-2.2>
+ > <https://docs.microsoft.com/aspnet/core/web-api/>
 
 ## <a name="working-with-dependencies"></a>Utilisation de dépendances
 
@@ -328,7 +328,7 @@ Pour découvrir plus en détail les filtres d’implémentation et télécharger
 
 La sécurisation des applications web est un vaste sujet qui suscite de nombreuses questions. Au niveau de sécurité le plus élémentaire, vous devez savoir d’où provient une requête donnée et vérifier qu’elle a uniquement accès aux ressources appropriées. L’authentification est le processus qui consiste à comparer les informations d’identification fournies avec une requête à celles contenues dans un magasin de données approuvé pour savoir si la requête doit être traitée comme provenant d’une entité connue. L’autorisation est le processus qui consiste à limiter l’accès à certaines ressources en fonction de l’identité de l’utilisateur. Les écoutes clandestines effectuées par des tiers constituent un problème de sécurité. Pour protéger les requêtes, vous devez au moins [vérifier que votre application utilise le protocole SSL](/aspnet/core/security/enforcing-ssl).
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentification
 
 ASP.NET Core Identity est un système d’abonnement que vous pouvez utiliser pour prendre en charge la fonctionnalité de connexion pour votre application. Il prend en charge les comptes d’utilisateurs locaux et les fournisseurs de connexion externes : compte Microsoft, Twitter, Facebook, Google, etc. Outre ASP.NET Core Identity, votre application peut utiliser l’authentification Windows ou un fournisseur d’identité tiers comme [Identity Server](https://github.com/IdentityServer/IdentityServer4).
 
@@ -369,7 +369,7 @@ UseIdentity doit impérativement apparaître avant UseMvc dans la méthode Confi
 
 Pour découvrir plus en détail [la configuration de l’authentification à deux facteurs](/aspnet/core/security/authentication/2fa) et [l’activation des fournisseurs de connexion externes](/aspnet/core/security/authentication/social/), consultez la documentation officielle d’ASP.NET Core.
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>Autorisation
 
 La forme d’autorisation la plus simple consiste à restreindre l’accès aux utilisateurs anonymes. Pour cela, il vous suffit d’appliquer l’attribut \[Authorize\] à certains contrôleurs ou à certaines actions. Si des rôles sont utilisés, l’attribut peut être étendu de manière à restreindre l’accès aux utilisateurs appartenant à certains rôles, comme indiqué ici :
 

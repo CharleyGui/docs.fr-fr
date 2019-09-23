@@ -2,12 +2,12 @@
 title: Implémentation du modèle Disjoncteur
 description: Découvrez comment implémenter le modèle Disjoncteur en tant que système complémentaire aux nouvelles tentatives Http.
 ms.date: 10/16/2018
-ms.openlocfilehash: f40a8eec50a4293e4dfb4df647ce3f69f6dc361b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: eec14273cb9480df51d6e5865106ccfc045845c4
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674636"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181930"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implémenter le modèle Disjoncteur
 
@@ -55,7 +55,7 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 }
 ```
 
-Dans l’exemple de code ci-dessus, la stratégie Disjoncteur est configurée de manière à rompre ou ouvrir le circuit après cinq erreurs consécutives lors des nouvelles tentatives de requêtes HTTP. Quand cela se produit, le circuit est rompu pendant 30 secondes : durant ce laps de temps, le disjoncteur met immédiatement les appels en échec au lieu de les transmettre.  La stratégie interprète automatiquement [les exceptions et les codes d’état HTTP correspondants](/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1#handle-transient-faults) comme des erreurs.  
+Dans l’exemple de code ci-dessus, la stratégie Disjoncteur est configurée de manière à rompre ou ouvrir le circuit après cinq erreurs consécutives lors des nouvelles tentatives de requêtes HTTP. Quand cela se produit, le circuit est rompu pendant 30 secondes : durant ce laps de temps, le disjoncteur met immédiatement les appels en échec au lieu de les transmettre.  La stratégie interprète automatiquement [les exceptions et les codes d’état HTTP correspondants](/aspnet/core/fundamentals/http-requests#handle-transient-faults) comme des erreurs.  
 
 Les disjoncteurs doivent également être utilisés pour rediriger les requêtes vers une infrastructure de secours si vous rencontrez des problèmes dans une ressource particulière déployée dans un environnement autre que l’application cliente ou le service qui effectue l’appel HTTP. De cette façon, si le centre de données subit une panne qui a un impact uniquement sur vos microservices back-end, mais pas sur vos applications clientes, ces dernières peuvent effectuer une redirection vers les services de secours. Polly planifie une nouvelle stratégie pour automatiser ce scénario de [stratégie de basculement](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy). 
 
