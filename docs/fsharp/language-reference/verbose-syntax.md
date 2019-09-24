@@ -1,21 +1,21 @@
 ---
 title: Syntaxe détaillée
-description: Découvrez la différence entre la syntaxe détaillée et léger le F# langage de programmation.
+description: Découvrez la différence entre la syntaxe détaillée et la syntaxe simplifiée dans le F# langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: c95965d7d9d18a0fca11663a474dbbc9375a9494
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d2459da60bba5d88bd23615c8bf09ba64f7c22c4
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641664"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214036"
 ---
 # <a name="verbose-syntax"></a>Syntaxe détaillée
 
-Il existe deux formes de syntaxe disponibles pour de nombreuses constructions dans le F# langage : *syntaxe détaillée* et *syntaxe simplifiée*. La syntaxe détaillée n’est pas aussi couramment utilisée, mais présente l’avantage d’être moins sensibles à la mise en retrait. La syntaxe simplifiée est plus courte et utilise la mise en retrait pour signaler le début et la fin de constructions, plutôt que mots clés supplémentaires comme `begin`, `end`, `in`, et ainsi de suite. La syntaxe par défaut est la syntaxe simplifiée. Cette rubrique décrit la syntaxe des F# construit lors de la syntaxe simplifiée n’est pas activée. La syntaxe détaillée est toujours activée, même si vous activez la syntaxe simplifiée, vous pouvez toujours utiliser la syntaxe détaillée pour certaines constructions. Vous pouvez désactiver la syntaxe simplifiée à l’aide de la `#light "off"` directive.
+Il existe deux formes de syntaxe disponibles pour de nombreuses constructions dans le F# langage : la *syntaxe détaillée* et la *syntaxe simplifiée*. La syntaxe détaillée n’est pas aussi couramment utilisée, mais elle présente l’avantage d’être moins sensible à la mise en retrait. La syntaxe simplifiée est plus petite et utilise la mise en retrait pour signaler le début et la fin des constructions, plutôt que `begin`des `end`mots `in`clés supplémentaires tels que,,, etc. La syntaxe par défaut est la syntaxe simplifiée. Cette rubrique décrit la syntaxe des F# constructions lorsque la syntaxe simplifiée n’est pas activée. La syntaxe détaillée est toujours activée, donc même si vous activez la syntaxe légère, vous pouvez toujours utiliser la syntaxe détaillée pour certaines constructions. Vous pouvez désactiver la syntaxe simplifiée à `#light "off"` l’aide de la directive.
 
-## <a name="table-of-constructs"></a>Tableau de constructions
+## <a name="table-of-constructs"></a>Table de constructions
 
-Le tableau suivant montre la syntaxe simplifiée et détaillée pour F# constructions de langage dans les contextes où il existe une différence entre les deux formes. Dans ce tableau, les crochets pointus (&lt;&gt;) placez des éléments de syntaxe fourni par l’utilisateur. Reportez-vous à la documentation pour chaque construction de langage pour des informations plus détaillées sur la syntaxe utilisée dans ces constructions.
+Le tableau suivant montre la syntaxe légère et détaillée pour F# les constructions de langage dans les contextes où il existe une différence entre les deux formes. Dans ce tableau, les chevrons&lt;(&gt;) encadrent les éléments de syntaxe fournis par l’utilisateur. Reportez-vous à la documentation de chaque construction de langage pour obtenir des informations plus détaillées sur la syntaxe utilisée dans ces constructions.
 
 <table>
 <tr>
@@ -44,7 +44,7 @@ expressions composées
 </tr>
 <tr><td>
 
-imbriquée `let` liaisons
+`let` liaisons imbriquées
 
 </td><td>
 
@@ -99,7 +99,7 @@ for counter = start to finish do
 
 </td><td>
 
-```
+```fsharp
 for counter = start to finish do
     ...
 done
@@ -227,7 +227,7 @@ type <structure-name> =
 
 </td>
 </tr>
-<tr><td>union discriminée</td><td>
+<tr><td>Union discriminée</td><td>
 
 ```fsharp
 type <union-name> =

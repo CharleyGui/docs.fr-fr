@@ -2,12 +2,12 @@
 title: 'Champs explicites : Mot clé Val'
 description: En savoir plus F# sur le mot clé’Val', qui est utilisé pour déclarer un emplacement pour stocker une valeur dans un type de classe ou de structure sans initialiser le type.
 ms.date: 05/16/2016
-ms.openlocfilehash: 13e0ba2875e8accfd1c0da0e1c6fef4973309f9b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: fe339e33dae27ae226022a68dd8247d1ab1994b3
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627536"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216482"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Champs explicites : Mot clé Val
 
@@ -23,7 +23,7 @@ val [ mutable ] [ access-modifier ] field-name : type-name
 
 La façon habituelle de définir des champs dans un type de classe ou de structure consiste à utiliser une liaison `let`. Toutefois, les liaisons `let` doivent être initialisées dans le cadre du constructeur de classe, ce qui n'est pas toujours possible, nécessaire ou souhaitable. Vous pouvez utiliser le mot clé `val` quand vous voulez un champ qui n'est pas initialisé.
 
-Les champs explicites peuvent être statiques ou non statiques. Le *modificateur d’accès* peut être `public`, `private`ou. `internal` Par défaut, les champs explicites sont publics. À la différence des liaisons `let` dans les classes, qui elles sont toujours privées.
+Les champs explicites peuvent être statiques ou non statiques. Le *modificateur d’accès* peut être `public`, `private`ou `internal`. Par défaut, les champs explicites sont publics. À la différence des liaisons `let` dans les classes, qui elles sont toujours privées.
 
 L’attribut [DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) est requis sur les champs explicites dans les types de classe qui ont un constructeur principal. Cet attribut spécifie que le champ est initialisé à zéro. Le type du champ doit prendre en charge l'initialisation à zéro. Un type prend en charge l'initialisation à zéro s'il s'agit d'un type suivant :
 
@@ -48,7 +48,7 @@ Le code suivant illustre l'utilisation de champs explicites et, à titre de comp
 
 La sortie est la suivante :
 
-```
+```console
 11 12 abc
 30 def
 ```

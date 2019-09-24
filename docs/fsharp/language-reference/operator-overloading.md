@@ -2,12 +2,12 @@
 title: Surcharge d'opérateur
 description: Découvrez comment surcharger les opérateurs arithmétiques dans une classe ou un type d’enregistrement et F#au niveau global dans.
 ms.date: 05/16/2016
-ms.openlocfilehash: c656c1c47938e62386c8f063cf9a6caaaf69d0fe
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d902a06193481ed87131b3336cd8a2ff54b811b4
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627392"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216836"
 ---
 # <a name="operator-overloading"></a>Surcharge d'opérateur
 
@@ -27,7 +27,7 @@ let [inline] (operator-symbols) parameter-list = function-body
 
 Dans la syntaxe précédente, *Operator-Symbol* est l’un des `+`caractères `-` `=`, `*`, `/`,,, et ainsi de suite. La *liste de paramètres* spécifie les opérandes dans l’ordre dans lequel ils apparaissent dans la syntaxe habituelle pour cet opérateur. Le *corps de la méthode* construit la valeur résultante.
 
-Les surcharges d’opérateur pour les opérateurs doivent être statiques. Les surcharges d’opérateur pour les opérateurs unaires `-`, tels que `+` et, doivent`~`utiliser un tilde () dans le *symbole d’opérateur* pour indiquer que l’opérateur est un opérateur unaire et non un opérateur binaire, comme indiqué dans l’exemple suivant: déclaré.
+Les surcharges d’opérateur pour les opérateurs doivent être statiques. Les surcharges d’opérateur pour les opérateurs unaires `-`, tels que `+` et, doivent`~`utiliser un tilde () dans le *symbole d’opérateur* pour indiquer que l’opérateur est un opérateur unaire et non un opérateur binaire, comme indiqué dans l’exemple suivant : déclaré.
 
 ```fsharp
 static member (~-) (v : Vector)
@@ -95,7 +95,7 @@ Le tableau suivant présente les opérateurs standard et leurs noms générés c
 |`..`|`op_Range`|
 |`.. ..`|`op_RangeStep`|
 
-D’autres combinaisons de caractères d’opérateur qui ne sont pas répertoriées ici peuvent être utilisées en tant qu’opérateurs et ont des noms qui sont composés en concaténant des noms pour les caractères individuels du tableau suivant. Par exemple, +! devient `op_PlusBang`.
+D’autres combinaisons de caractères d’opérateur qui ne sont pas répertoriées ici peuvent être utilisées en tant qu’opérateurs et ont des noms qui sont composés en concaténant des noms pour les caractères individuels du tableau suivant. Par exemple, + ! devient `op_PlusBang`.
 
 |Caractère d’opérateur|Name|
 |------------------|----|
@@ -123,19 +123,19 @@ D’autres combinaisons de caractères d’opérateur qui ne sont pas répertori
 
 ## <a name="prefix-and-infix-operators"></a>Opérateurs prefix et infixe
 
-Les opérateurs de préfixe sont censés être placés devant un opérande ou des opérandes, à l’instar d’une fonction. Les opérateurs infixes sont censés être placés entre les deux opérandes.
+Les opérateurs de *préfixe* sont censés être placés devant un opérande ou des opérandes, à l’instar d’une fonction. Les opérateurs *infixes* sont censés être placés entre les deux opérandes.
 
 Seuls certains opérateurs peuvent être utilisés comme opérateurs de préfixe. Certains opérateurs sont toujours des opérateurs de préfixe, d’autres peuvent être infixes ou préfixes, tandis que les autres sont toujours des opérateurs infixes. Les opérateurs qui commencent `!`par, `!=`except et l’opérateur `~`, ou les séquences répétées de, sont toujours des opérateurs de`~`préfixe. Les opérateurs `+` `-` ,,`%`, ,,`-.`, et peuventêtredesopérateursdepréfixeoudesopérateursinfixes.`%%` `&` `+.` `&&` Vous pouvez distinguer la version préfixée de ces opérateurs de la version infix `~` en ajoutant un au début d’un opérateur préfixé lorsqu’il est défini. Le `~` n’est pas utilisé lorsque vous utilisez l’opérateur, uniquement lorsqu’il est défini.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Le code suivant illustre l’utilisation de la surcharge d’opérateur pour implémenter un type de fraction. Une fraction est représentée par un numérateur et un dénominateur. La fonction `hcf` est utilisée pour déterminer le facteur commun le plus élevé, qui est utilisé pour réduire les fractions.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4002.fs)]
 
-**Output:**
+**Sortie :**
 
-```
+```console
 3/4 + 1/2 = 5/4
 3/4 - 1/2 = 1/4
 3/4 * 1/2 = 3/8

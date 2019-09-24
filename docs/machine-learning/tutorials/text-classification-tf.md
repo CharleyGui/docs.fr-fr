@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 2dd10c0843b2bea4755d5f4f0aceea6509c7cf46
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 38b935814d713284dae1ca931b90c63bbcac332b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054306"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216898"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Tutoriel : Analyser les sentiments des revues de films à l’aide d’un modèle TensorFlow pré-formé dans ML.NET
 
@@ -19,8 +19,9 @@ Ce didacticiel vous montre comment utiliser un modèle TensorFlow pré-formé po
 
 Le modèle TensorFlow utilisé dans ce didacticiel a été formé à l’aide des revues de films à partir de la base de données IMDB. Une fois que vous avez terminé de développer l’application, vous serez en mesure de fournir un texte d’examen de films et l’application vous indiquera si la révision a un sentiment positif ou négatif.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
+>
 > * Charger un modèle TensorFlow pré-formé
 > * Transformer le texte de commentaire de site Web en fonctionnalités adaptées au modèle
 > * Utiliser le modèle pour effectuer une prédiction
@@ -80,14 +81,14 @@ Les revues de film sont du texte en forme libre. Votre application convertit le 
 
 La première consiste à fractionner le texte en mots séparés et à utiliser le fichier de mappage fourni pour mapper chaque mot sur un encodage entier. Le résultat de cette transformation est un tableau d’entiers de longueur variable dont la longueur correspond au nombre de mots de la phrase.
 
-|Propriété| Valeur|Type|
+|Property| Value|Type|
 |-------------|-----------------------|------|
 |ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Le tableau de fonctionnalités de longueur variable est ensuite redimensionné à une longueur fixe de 600. Il s’agit de la longueur attendue par le modèle TensorFlow.
 
-|Propriété| Valeur|Type|
+|Property| Value|Type|
 |-------------|-----------------------|------|
 |ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
@@ -120,7 +121,7 @@ Le tableau de fonctionnalités de longueur variable est ensuite redimensionné �
     [!code-csharp[Prediction](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#Prediction "Declare prediction class")]
 
     `MovieReviewSentimentPrediction` est la classe de prédiction utilisée après l’entraînement du modèle. `MovieReviewSentimentPrediction`a un tableau `float` unique (`Prediction`) et un `VectorType` attribut.
-    
+
 ### <a name="create-the-mlcontext-lookup-dictionary-and-action-to-resize-features"></a>Créer le MLContext, le dictionnaire de recherche et l’action pour redimensionner les fonctionnalités
 
 La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ pour toutes les opérations ML.NET. L’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets du workflow de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
@@ -191,7 +192,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 1. Ajoutez le code pour créer le modèle à partir du pipeline :
 
-    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]  
+    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]
 
     Un modèle ml.net est créé à partir de la chaîne d’estimateurs dans le pipeline `Fit` en appelant la méthode. Dans ce cas, nous n’ajustons aucune donnée pour créer le modèle, car le modèle TensorFlow a déjà été formé précédemment. Nous fournissons un objet de vue de données vide pour répondre aux `Fit` exigences de la méthode.
 
@@ -200,10 +201,10 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 1. Ajoutez la `PredictSentiment` méthode en dessous `Main` de la méthode :
 
     ```csharp
-        public static void PredictSentiment(MLContext mlContext, ITransformer model)
-        {
+    public static void PredictSentiment(MLContext mlContext, ITransformer model)
+    {
 
-        }
+    }
     ```
 
 1. Ajoutez le code suivant pour créer le `PredictionEngine` en tant que première ligne de `PredictSentiment()` la méthode :
@@ -222,7 +223,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 1. La fonction [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) effectue une prédiction sur une seule ligne de données :
 
-    |Propriété| Valeur|Type|
+    |Property| Value|Type|
     |-------------|-----------------------|------|
     |Prédiction|[0,5459937, 0,454006255]|float []|
 
@@ -241,16 +242,17 @@ Générez et exécutez votre application.
 Vos résultats doivent être similaires à ce qui suit. Durant le processus, des messages sont affichés. Vous pouvez voir des avertissements ou des messages de traitement. Ces messages ont été supprimés des résultats suivants par souci de clarté.
 
 ```console
-   Number of classes: 2
-   Is sentiment/review positive ? Yes
+Number of classes: 2
+Is sentiment/review positive ? Yes
 ```
 
 Félicitations ! Vous avez maintenant correctement créé un modèle de machine learning pour classer et prédire les sentiments de messages en réutilisant un modèle `TensorFlow` pré-formé dans ml.net.
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TextClassificationTF).
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
+>
 > * Charger un modèle TensorFlow pré-formé
 > * Transformer le texte de commentaire de site Web en fonctionnalités adaptées au modèle
 > * Utiliser le modèle pour effectuer une prédiction

@@ -2,12 +2,12 @@
 title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types référence nullables, ajoutés dans C# 8. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.date: 02/19/2019
-ms.openlocfilehash: e66d74cdde3b3de9ec3f1b435cdbd3e3b24c2663
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7ca3ebc413fbe335f79d415249b952132c38f552
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851064"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214401"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -83,7 +83,7 @@ Vous pouvez aussi utiliser des directives pour définir ces mêmes contextes par
 
 Les contextes d’annotation et d’avertissement nullables par défaut sont `disabled`. Ce parti pris signifie que votre code existant compile sans rien changer et sans générer aucun nouvel avertissement.
 
-### <a name="nullable-annotation-context"></a>Contexte d’annotation nullable
+## <a name="nullable-annotation-context"></a>Contexte d’annotation nullable
 
 Le compilateur utilise les règles suivantes dans un contexte d’annotation nullable désactivé :
 

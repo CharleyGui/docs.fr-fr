@@ -2,12 +2,12 @@
 title: Liaisons let dans des classes
 description: Découvrez comment définir des champs privés et des fonctions privées F# pour les classes en utilisant des liaisons’Let’dans la définition de classe.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0086d3a91f85395c2bd0555f978c5d951c363357
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1366ab8f1f4f606fe5947a8fc4df10de49346b3e
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627484"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216530"
 ---
 # <a name="let-bindings-in-classes"></a>Liaisons let dans des classes
 
@@ -25,7 +25,7 @@ Vous pouvez définir des champs privés et des fonctions F# privées pour les `l
 
 ## <a name="remarks"></a>Notes
 
-La syntaxe précédente apparaît après l’en-tête de classe et les déclarations d’héritage, mais avant les définitions de membre. La syntaxe est similaire à celle `let` des liaisons en dehors des classes, mais les noms définis dans une classe ont une portée limitée à la classe. Une `let` liaison crée une fonction ou un champ privé; pour exposer publiquement des données ou des fonctions, déclarez une propriété ou une méthode de membre.
+La syntaxe précédente apparaît après l’en-tête de classe et les déclarations d’héritage, mais avant les définitions de membre. La syntaxe est similaire à celle `let` des liaisons en dehors des classes, mais les noms définis dans une classe ont une portée limitée à la classe. Une `let` liaison crée une fonction ou un champ privé ; pour exposer publiquement des données ou des fonctions, déclarez une propriété ou une méthode de membre.
 
 Une `let` liaison qui n’est pas statique est appelée liaison `let` d’instance. Les `let` liaisons d’instance s’exécutent lorsque des objets sont créés. Les `let` liaisons statiques font partie de l’initialiseur statique de la classe, dont l’exécution est garantie avant que le type ne soit utilisé pour la première fois.
 
@@ -39,7 +39,7 @@ Les exemples de code suivants illustrent plusieurs `let` types de liaisons dans 
 
 La sortie est la suivante.
 
-```
+```console
 10 52 1 204
 ```
 

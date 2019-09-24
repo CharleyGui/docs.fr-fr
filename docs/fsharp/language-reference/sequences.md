@@ -2,12 +2,12 @@
 title: Séquences
 description: Apprenez à utiliser F# des séquences, lorsque vous disposez d’une collection de données volumineuse et ordonnée, mais que vous n’envisagez pas nécessairement d’utiliser tous les éléments.
 ms.date: 02/19/2019
-ms.openlocfilehash: a57142c5d07455cff02b0b691ebccb9cb9f347fd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 63e878c2c11db25a08d449070ab779a6e6a2c2eb
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627167"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216756"
 ---
 # <a name="sequences"></a>Séquences
 
@@ -42,7 +42,7 @@ Une `if` expression utilisée dans une séquence est un filtre. Par exemple, pou
 
 Quand vous utilisez `yield` ou `->` dans une itération, chaque itération est supposée générer un élément unique de la séquence. Si chaque itération produit une séquence d’éléments, utilisez `yield!`. Dans ce cas, les éléments générés à chaque itération sont concaténés pour produire la séquence finale.
 
-Vous pouvez combiner plusieurs expressions dans une expression de séquence. Les éléments générés par chaque expression sont concaténés ensemble. Pour obtenir un exemple, consultez la section «Exemples» de cette rubrique.
+Vous pouvez combiner plusieurs expressions dans une expression de séquence. Les éléments générés par chaque expression sont concaténés ensemble. Pour obtenir un exemple, consultez la section « Exemples » de cette rubrique.
 
 ## <a name="examples"></a>Exemples
 
@@ -82,7 +82,7 @@ Vous pouvez utiliser [Seq. init](https://msdn.microsoft.com/library/059de69d-812
 
 La sortie est la suivante :
 
-```
+```console
 0 10 20 30 40
 ```
 
@@ -94,7 +94,7 @@ En utilisant [Seq. Cast](https://msdn.microsoft.com/library/1d087db3-a8b2-41dd-8
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet12.fs)]
 
-Vous pouvez définir des séquences infinies à l’aide de la fonction [Seq. initInfinite (](https://msdn.microsoft.com/library/d1804e53-da92-48ec-8d6e-57eaf4c62bef) . Pour une telle séquence, vous fournissez une fonction qui génère chaque élément à partir de l’index de l’élément. Les séquences infinies sont possibles en raison de l’évaluation différée; les éléments sont créés en fonction des besoins en appelant la fonction que vous spécifiez. L’exemple de code suivant produit une séquence infinie de nombres à virgule flottante, dans ce cas, la série alternative de réciproques de carrés d’entiers successifs.
+Vous pouvez définir des séquences infinies à l’aide de la fonction [Seq. initInfinite (](https://msdn.microsoft.com/library/d1804e53-da92-48ec-8d6e-57eaf4c62bef) . Pour une telle séquence, vous fournissez une fonction qui génère chaque élément à partir de l’index de l’élément. Les séquences infinies sont possibles en raison de l’évaluation différée ; les éléments sont créés en fonction des besoins en appelant la fonction que vous spécifiez. L’exemple de code suivant produit une séquence infinie de nombres à virgule flottante, dans ce cas, la série alternative de réciproques de carrés d’entiers successifs.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/fssequences/snippet13.fs)]
 
@@ -104,7 +104,7 @@ Vous pouvez définir des séquences infinies à l’aide de la fonction [Seq. in
 
 La sortie est la suivante :
 
-```
+```console
 The sequence seq1 contains numbers from 0 to 20.
 
 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
@@ -120,7 +120,7 @@ Le code suivant est un exemple qui utilise un grand nombre des fonctions de modu
 
 ## <a name="searching-and-finding-elements"></a>Recherche et recherche d’éléments
 
-Les séquences prennent en charge les fonctionnalités disponibles avec les listes: [Seq. Exists](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq. exists2](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq. Find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq. FindIndex](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [Seq. Pick](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq. tryFind](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47)et [Seq. tryFindIndex](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Les versions de ces fonctions qui sont disponibles pour les séquences évaluent la séquence uniquement jusqu’à l’élément qui fait l’objet de la recherche. Pour obtenir des exemples, consultez [listes](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
+Les séquences prennent en charge les fonctionnalités disponibles avec les listes : [Seq. Exists](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq. exists2](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq. Find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq. FindIndex](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [Seq. Pick](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq. tryFind](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47)et [Seq. tryFindIndex](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Les versions de ces fonctions qui sont disponibles pour les séquences évaluent la séquence uniquement jusqu’à l’élément qui fait l’objet de la recherche. Pour obtenir des exemples, consultez [listes](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
 
 ## <a name="obtaining-subsequences"></a>Obtention de sous-séquences
 
@@ -134,7 +134,7 @@ Le code suivant illustre le comportement de et les différences `Seq.truncate` e
 
 La sortie, avant l’erreur, se présente comme suit.
 
-```
+```console
 1 4 9 16 25 
 1 4 9 16 25 36 49 64 81 100 
 1 4 9 16 25 
@@ -149,7 +149,7 @@ L’exemple de code suivant illustre le comportement de et les différences `Seq
 
 La sortie est la suivante.
 
-```
+```console
 1 4 9 
 36 49 64 81 100 
 16 25 36 49 64 81 100
@@ -169,9 +169,9 @@ L'exemple de code suivant montre l'utilisation de `Seq.windowed`. Dans ce cas, l
 
 La sortie est la suivante.
 
-Séquence initiale:
+Séquence initiale :
 
-```
+```console
 1.0 1.5 2.0 1.5 1.0 1.5 
 
 Windows of length 3: 
@@ -203,7 +203,7 @@ Dans le code précédent, seul le premier élément est calculé et examiné, et
 
 La sortie est la suivante.
 
-```
+```console
 (1, 34) (2, 33) (0, 33)
 ```
 
@@ -217,11 +217,11 @@ L’exemple de code suivant illustre l’utilisation `Seq.groupBy` de pour parti
 
 La sortie est la suivante.
 
-```
+```console
 (1, seq [1; 4; 7; 10; ...]) (2, seq [2; 5; 8; 11; ...]) (0, seq [3; 6; 9; 12; ...])
 ```
 
-Vous pouvez créer une séquence qui élimine les doublons d’éléments en appelant [Seq. distinct](https://msdn.microsoft.com/library/99d01014-7e0e-4e7b-9d0a-41a61d93f401). Ou vous pouvez utiliser [Seq. distinctBy (](https://msdn.microsoft.com/library/9293293b-9420-49c8-848f-401a9cd49b75), qui prend une fonction de génération de clé à appeler sur chaque élément. La séquence résultante contient des éléments de la séquence d’origine qui ont des clés uniques; les éléments ultérieurs qui produisent une clé dupliquée pour un élément antérieur sont ignorés.
+Vous pouvez créer une séquence qui élimine les doublons d’éléments en appelant [Seq. distinct](https://msdn.microsoft.com/library/99d01014-7e0e-4e7b-9d0a-41a61d93f401). Ou vous pouvez utiliser [Seq. distinctBy (](https://msdn.microsoft.com/library/9293293b-9420-49c8-848f-401a9cd49b75), qui prend une fonction de génération de clé à appeler sur chaque élément. La séquence résultante contient des éléments de la séquence d’origine qui ont des clés uniques ; les éléments ultérieurs qui produisent une clé dupliquée pour un élément antérieur sont ignorés.
 
 L’exemple de code suivant illustre l’utilisation de `Seq.distinct`. `Seq.distinct`est démontré en générant des séquences qui représentent des nombres binaires, puis en indiquant que les seuls éléments distincts sont 0 et 1.
 

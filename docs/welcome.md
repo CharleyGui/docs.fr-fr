@@ -3,14 +3,14 @@ title: Bienvenue dans .NET
 description: Bien démarrer avec la famille de technologies .NET.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/06/2019
+ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 2927b892f8f83366a46cb113b3f0233bbd168974
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0b4a2380bf2ddb59c181a07d7f8a006d6252d11f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855470"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216855"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -29,10 +29,10 @@ Pour plus d’informations sur .NET, consultez les blogs suivants :
 
 Suivez également les derniers événements .NET :
 
-- [Microsoft Connect()](https://www.microsoft.com/connectevent)
-- [Microsoft Build 2018](https://channel9.msdn.com/Events/Build/2018)
+- [Microsoft Build](https://www.microsoft.com/build)
 - [.NET Conf](https://www.dotnetconf.net/)
-
+- [Microsoft Connect()](https://www.microsoft.com/connectevent)
+- 
 Pour plus d’informations sur les dernières fonctionnalités ajoutées aux implémentations de .NET et les langages pris en charge, consultez les articles suivants :
 
 - [Nouveautés de .NET Core](core/whats-new/index.md)
@@ -52,10 +52,17 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 - [Guide Visual Basic](visual-basic/index.md)
 - [Guide ML.NET](machine-learning/index.yml)
 - [.NET pour Apache Spark](spark/index.yml)
+- [Architecture des applications .NET](architecture/index.yml)
 
 Vous pouvez également parcourir les [informations de référence sur l’API .NET](/dotnet/api).
 
-## <a name="open-source"></a>Ouvrir la source
+## <a name="videos"></a>Vidéos
+
+Explorez des vidéos sur le Web, les appareils C#mobiles, les postes de travail, les machine learning, les conteneurs, l’ancrage, l’accès aux données, etc. :
+
+[Série de vidéos .NET 101](https://dotnet.microsoft.com/learn/videos)
+
+## <a name="open-source"></a>Open source
 
 Cette documentation est entièrement [open source](https://github.com/dotnet/docs). Vous pouvez y contribuer comme vous le souhaitez, du signalement de problèmes à la création de rubriques de documentation. Par ailleurs, .NET est en grande partie également open source. La liste suivante présente les principaux dépôts .NET GitHub :
 

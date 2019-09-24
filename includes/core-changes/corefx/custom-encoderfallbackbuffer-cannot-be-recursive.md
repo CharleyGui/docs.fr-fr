@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: b4b49b55cda26ac9d9760f93e9758aab940ad135
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 4075eadf7cfb39c913b7657d43335bae5497deff
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117171"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71217051"
 ---
 ### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive
 
-Les <xref:System.Text.EncoderFallbackBuffer> instances personnalisées ne peuvent pas être rétablies de manière récursive. L’implémentation de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> doit entraîner une séquence de caractères convertible en l’encodage de destination. Dans le cas contraire, une exception se produit. 
+Les <xref:System.Text.EncoderFallbackBuffer> instances personnalisées ne peuvent pas être rétablies de manière récursive. L’implémentation de <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> doit entraîner une séquence de caractères convertible en l’encodage de destination. Dans le cas contraire, une exception se produit.
 
 #### <a name="details"></a>Détails
 
 Pendant une opération de transcodage de caractère à octet, le runtime détecte les séquences UTF-16 mal formées ou non convertibles et fournit ces caractères à <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> la méthode. La `Fallback` méthode détermine les caractères qui doivent être substitués aux données d’origine qui ne sont pas convertibles, et ces caractères <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> sont vidés en appelant dans une boucle.
 
-Le runtime tente ensuite de transcoder ces caractères de substitution dans l’encodage cible. Si cette opération a échoué, le runtime continue à effectuer le transcodage à partir de l’endroit où il s’est arrêté dans la chaîne d’entrée d’origine. 
+Le runtime tente ensuite de transcoder ces caractères de substitution dans l’encodage cible. Si cette opération a échoué, le runtime continue à effectuer le transcodage à partir de l’endroit où il s’est arrêté dans la chaîne d’entrée d’origine.
 
 Dans .net Core Preview 7 et les versions antérieures, les implémentations <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> personnalisées de peuvent retourner des séquences de caractères qui ne sont pas convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage cible, le runtime <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> appelle de nouveau la méthode avec les caractères de substitution, <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> en attendant que la méthode retourne une nouvelle séquence de substitution. Ce processus se poursuit jusqu’à ce que le Runtime découvre une substitution correctement formée et convertible, ou jusqu’à ce qu’un nombre maximal de récurrences soit atteint.
 
-À compter de .net Core 3,0, les implémentations <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> personnalisées de doivent retourner des séquences de caractères convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage <xref:System.ArgumentException> cible, une exception est levée. Le runtime n’effectue plus d’appels récursifs dans l' <xref:System.Text.EncoderFallbackBuffer> instance. 
+À compter de .net Core 3,0, les implémentations <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> personnalisées de doivent retourner des séquences de caractères convertibles en l’encodage de destination. Si les caractères substitués ne peuvent pas être transcodés en l’encodage <xref:System.ArgumentException> cible, une exception est levée. Le runtime n’effectue plus d’appels récursifs dans l' <xref:System.Text.EncoderFallbackBuffer> instance.
 
 Ce comportement s’applique uniquement lorsque les trois conditions suivantes sont remplies :
 

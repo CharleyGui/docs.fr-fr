@@ -2,18 +2,18 @@
 title: 'Tutoriel : Créer un fournisseur de type'
 description: Découvrez comment créer vos propres F# fournisseurs de type dans F# 3,0 en examinant plusieurs fournisseurs de types simples pour illustrer les concepts de base.
 ms.date: 02/02/2019
-ms.openlocfilehash: 800b5a670b7f25f462e1ce23c3d40fd2eab3b102
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8d1a1fedf03437ccbacd40616cc7dc3e1da435b2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991864"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214273"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Tutoriel : Créer un fournisseur de type
 
 Le mécanisme du fournisseur de F# type dans est une partie importante de la prise en charge de la programmation riche en informations. Ce didacticiel explique comment créer vos propres fournisseurs de type en vous guidant tout au long du développement de plusieurs fournisseurs de types simples pour illustrer les concepts de base. Pour plus d’informations sur le mécanisme du fournisseur F#de type dans, consultez [fournisseurs de type](index.md).
 
-L' F# écosystème contient une plage de fournisseurs de type pour les services de données Internet et d’entreprise couramment utilisés. Par exemple :
+L' F# écosystème contient une plage de fournisseurs de type pour les services de données Internet et d’entreprise couramment utilisés. Par exemple :
 
 - [FSharp. Data](https://fsharp.github.io/FSharp.Data/) comprend des fournisseurs de type pour les formats de documents JSON, XML, CSV et html.
 
@@ -152,13 +152,13 @@ Avant de recompiler le fournisseur, assurez-vous que vous avez fermé toutes les
 
 Pour déboguer ce fournisseur à l’aide d’instructions print, créez un script qui expose un problème au fournisseur, puis utilisez le code suivant :
 
-```
+```console
 fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 ```
 
 Pour déboguer ce fournisseur à l’aide de Visual Studio, ouvrez le Invite de commandes développeur pour Visual Studio avec les informations d’identification d’administration, puis exécutez la commande suivante :
 
-```
+```console
 devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 ```
 
@@ -459,7 +459,7 @@ let result = reg.IsMatch("425-123-2345")
 let r = reg.Match("425-123-2345").Groups.["AreaCode"].Value //r equals "425"
 ```
 
-Notez les points suivants :
+Notez les points suivants:
 
 - Le type Regex standard représente le `RegexTyped` type paramétré.
 
@@ -525,7 +525,7 @@ type public CheckedRegexProvider() as this =
 do ()
 ```
 
-Notez les points suivants :
+Notez les points suivants:
 
 - Le fournisseur de type accepte deux paramètres statiques `pattern`:, qui est obligatoire, `options`et, qui sont facultatifs (car une valeur par défaut est fournie).
 
@@ -899,7 +899,7 @@ let function1 () =
 
 Voici une image du code obtenu décompilé à l’aide d’Ildasm. exe :
 
-```
+```il
 .class public abstract auto ansi sealed Module1
 extends [mscorlib]System.Object
 {
@@ -933,13 +933,11 @@ Respectez les conventions suivantes lors de la création de fournisseurs de type
 
 **Fournisseurs pour les protocoles de connectivité** En général, les noms de la plupart des dll de fournisseur pour les protocoles de connectivité de données et de services, tels que `TypeProvider` OData `TypeProviders`ou les connexions SQL, doivent se terminer par ou. Par exemple, utilisez un nom de DLL qui ressemble à la chaîne suivante :
 
-```
-  Fabrikam.Management.BasicTypeProviders.dll
-```
+`Fabrikam.Management.BasicTypeProviders.dll`
 
 Assurez-vous que les types fournis sont membres de l’espace de noms correspondant et indiquez le protocole de connectivité que vous avez implémenté :
 
-```
+```fsharp
   Fabrikam.Management.BasicTypeProviders.WmiConnection<…>
   Fabrikam.Management.BasicTypeProviders.DataProtocolConnection<…>
 ```
@@ -1128,8 +1126,8 @@ Vous pouvez appeler des fournisseurs de type à l’aide des outils suivants :
 
 Vous pouvez souvent déboguer les fournisseurs de type le plus facilement à l’aide de FSC. exe sur un fichier de script de test (par exemple, script. FSX). Vous pouvez lancer un débogueur à partir d’une invite de commandes.
 
-```
-  devenv /debugexe fsc.exe script.fsx
+```console
+devenv /debugexe fsc.exe script.fsx
 ```
 
   Vous pouvez utiliser la journalisation de l’impression vers stdout.

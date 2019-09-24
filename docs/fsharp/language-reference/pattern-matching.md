@@ -2,12 +2,12 @@
 title: Critères spéciaux
 description: Découvrez comment les modèles sont utilisés F# dans pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.
 ms.date: 05/16/2016
-ms.openlocfilehash: 60e0d6cd550724bc8448fddd7b163c2c9f1637be
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 0e14fa00103742bbf5f054f8c04a7669ed767e63
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733465"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216802"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -15,7 +15,7 @@ Les modèles sont des règles de transformation des données d’entrée. Elles 
 
 ## <a name="remarks"></a>Notes
 
-Les modèles sont utilisés dans de nombreuses constructions de langage, telles `match` que l’expression. Elles sont utilisées lorsque vous traitez des arguments pour les `let` fonctions dans les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés `try...with` à l’expression. Pour plus d’informations, consultez [expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda: Le `fun` mot](./functions/lambda-expressions-the-fun-keyword.md)clé, [et les exceptions: `try...with` Expression.](./exception-handling/the-try-with-expression.md)
+Les modèles sont utilisés dans de nombreuses constructions de langage, telles `match` que l’expression. Elles sont utilisées lorsque vous traitez des arguments pour les `let` fonctions dans les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés `try...with` à l’expression. Pour plus d’informations, consultez [expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda : Le `fun` mot](./functions/lambda-expressions-the-fun-keyword.md)clé, [et les exceptions : `try...with` Expression.](./exception-handling/the-try-with-expression.md)
 
 Par exemple, dans l' `match` expression, le *modèle* correspond à ce qui suit le symbole de barre verticale.
 
@@ -29,7 +29,7 @@ Chaque modèle agit comme une règle de transformation d’entrée d’une certa
 
 Les modèles pris en charge sont présentés dans le tableau suivant. Au moment de l’exécution, l’entrée est testée par rapport à chacun des modèles suivants dans l’ordre indiqué dans le tableau, et les modèles sont appliqués de manière récursive, de la première à la dernière telle qu’ils apparaissent dans votre code, et de gauche à droite pour les modèles sur chaque ligne.
 
-|Nom|Description|Exemples|
+|Name|Description|Exemple|
 |----|-----------|-------|
 |Modèle de constante|Tout littéral numérique, de caractère ou de chaîne, une constante d’énumération ou un identificateur littéral défini|`1.0`, `"test"`, `30`, `Color.Red`|
 |Modèle d’identificateur|Une valeur case d’une union discriminée, une étiquette d’exception ou un cas de modèle actif|`Some(x)`<br /><br />`Failure(msg)`|
@@ -46,7 +46,7 @@ Les modèles pris en charge sont présentés dans le tableau suivant. Au moment 
 |Modèle de caractère générique|_|`_`|
 |Modèle avec annotation de type|*modèle* : *type*|`a : int`|
 |Modèle de test de type|:? *type* [ *identificateur* As]|`:? System.DateTime as dt`|
-|Modèle null|Null|`null`|
+|Modèle null|null|`null`|
 
 ## <a name="constant-patterns"></a>Modèles de constante
 
@@ -95,7 +95,7 @@ L’utilisation du champ nommé est facultative. par conséquent, dans l’exemp
 
 Lorsque vous spécifiez plusieurs champs, utilisez le point-virgule (;) comme séparateur.
 
-```
+```fsharp
 match shape with
 | Rectangle(height = h; width = w) -> printfn "Rectangle with height %f and width %f" h w
 | _ -> ()
@@ -103,7 +103,7 @@ match shape with
 
 Les modèles actifs vous permettent de définir des critères spéciaux personnalisés plus complexes. Pour plus d’informations sur les modèles actifs, consultez [modèles actifs](active-patterns.md).
 
-Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la [gestion des exceptions, consultez exceptions: `try...with` Expression.](./exception-handling/the-try-with-expression.md)
+Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la [gestion des exceptions, consultez exceptions : `try...with` Expression.](./exception-handling/the-try-with-expression.md)
 
 ## <a name="variable-patterns"></a>Modèles de variables
 
@@ -171,7 +171,7 @@ L’exemple suivant illustre le modèle de tuple et utilise également des modè
 
 ## <a name="record-pattern"></a>Modèle d’enregistrement
 
-Le modèle d’enregistrement est utilisé pour décomposer les enregistrements afin d’extraire les valeurs des champs. Le modèle n’a pas besoin de référencer tous les champs de l’enregistrement; tout champ omis ne fait pas partie de la correspondance et n’est pas extrait.
+Le modèle d’enregistrement est utilisé pour décomposer les enregistrements afin d’extraire les valeurs des champs. Le modèle n’a pas besoin de référencer tous les champs de l’enregistrement ; tout champ omis ne fait pas partie de la correspondance et n’est pas extrait.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4814.fs)]
 

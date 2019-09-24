@@ -2,12 +2,12 @@
 title: Chaînes
 description: Découvrez comment le F# type’String’représente du texte immuable comme une séquence de caractères Unicode.
 ms.date: 07/05/2019
-ms.openlocfilehash: 284de939c90c4d9d4ea064fb4db1fb90a37038e2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 25f5d7ce5059ba5ddb4e938313c511734c2d7320
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627104"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216737"
 ---
 # <a name="strings"></a>Chaînes
 
@@ -32,10 +32,10 @@ Les littéraux de chaîne sont délimités par le caractère guillemet ("). La b
 |Barre oblique inverse|`\\`|
 |Guillemet|`\"`|
 |Caractère|`\'`|
-|caractère Unicode|`\DDD`(où `D` indique un chiffre décimal; la plage de 000-255; par exemple `\231` , = «ç»)|
-|caractère Unicode|`\xHH`(où `H` indique un chiffre hexadécimal; la plage de 00 à FF; par exemple `\xE7` , = "ç")|
-|caractère Unicode|`\uHHHH`(UTF-16) (où `H` indique un chiffre hexadécimal; plage de 0000-FFFF;  par exemple, `\u00E7` = "ç")|
-|caractère Unicode|`\U00HHHHHH`(UTF-32) (où `H` indique un chiffre hexadécimal; plage de 000000-10FFFF;  par exemple, `\U0001F47D` = "👽")|
+|caractère Unicode|`\DDD`(où `D` indique un chiffre décimal ; la plage de 000-255 ; par exemple `\231` , = « ç »)|
+|caractère Unicode|`\xHH`(où `H` indique un chiffre hexadécimal ; la plage de 00 à FF ; par exemple `\xE7` , = "ç")|
+|caractère Unicode|`\uHHHH`(UTF-16) (où `H` indique un chiffre hexadécimal ; plage de 0000-FFFF ;  par exemple, `\u00E7` = "ç")|
+|caractère Unicode|`\U00HHHHHH`(UTF-32) (où `H` indique un chiffre hexadécimal ; plage de 000000-10FFFF ;  par exemple, `\U0001F47D` = "👽")|
 
 > [!IMPORTANT]
 > La `\DDD` séquence d’échappement est une notation décimale, et non une notation octale comme dans la plupart des autres langages. Par conséquent, `8` les `9` chiffres et sont valides, et `\032` une séquence de représente un espace (U + 0020), alors que ce `\040`même point de code en notation octale serait.
@@ -71,7 +71,7 @@ Vous pouvez aussi extraire des sous-chaînes à l’aide de la syntaxe de décou
 
 La sortie est la suivante.
 
-```
+```console
 abc
 def
 ```
@@ -82,7 +82,7 @@ Vous pouvez représenter des chaînes ASCII par des tableaux d’octets non sign
 
 ## <a name="string-operators"></a>Opérateurs de chaîne
 
-Il existe deux façons de concaténer des chaînes: à l' `+` aide de l’opérateur ou `^` à l’aide de l’opérateur. L' `+` opérateur gère la compatibilité avec les fonctionnalités de gestion de chaîne .NET Framework.
+Il existe deux façons de concaténer des chaînes : à l' `+` aide de l’opérateur ou `^` à l’aide de l’opérateur. L' `+` opérateur gère la compatibilité avec les fonctionnalités de gestion de chaîne .NET Framework.
 
 L’exemple suivant illustre la concaténation de chaînes.
 

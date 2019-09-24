@@ -2,12 +2,12 @@
 title: Paramètres et arguments
 description: En savoir F# plus sur la prise en charge linguistique pour définir des paramètres et passer des arguments à des fonctions, des méthodes et des propriétés.
 ms.date: 05/16/2016
-ms.openlocfilehash: 67e82d031c4b22bc30a6f278d9698298ccff2e21
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: e8094ffbc55870b5de75acb740aa2736ec6590a5
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106602"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216827"
 ---
 # <a name="parameters-and-arguments"></a>Paramètres et arguments
 
@@ -56,12 +56,12 @@ Les autres modèles qui sont parfois utilisés dans les arguments `as` sont le m
 
 La sortie est la suivante.
 
-```
+```console
 Data begins at 0 and ends at 4 in string Et tu, Brute?
 Et tu
 ```
 
-Les modèles actifs peuvent être utiles comme paramètres, par exemple lors de la transformation d’un argument dans un format souhaité, comme dans l’exemple suivant:
+Les modèles actifs peuvent être utiles comme paramètres, par exemple lors de la transformation d’un argument dans un format souhaité, comme dans l’exemple suivant :
 
 ```fsharp
 type Point = { x : float; y : float }
@@ -121,7 +121,7 @@ L’exemple suivant illustre l’utilisation de paramètres facultatifs.
 
 La sortie est la suivante.
 
-```
+```console
 Baud Rate: 9600 Duplex: Full Parity: false
 Baud Rate: 4800 Duplex: Half Parity: false
 Baud Rate: 300 Duplex: Half Parity: true
@@ -140,7 +140,7 @@ type C =
         printfn "%s" message
 ```
 
-Vous pouvez également spécifier un nouvel objet en tant que valeur de paramètre par défaut. Par exemple, le `Foo` membre peut avoir un facultatif `CancellationToken` comme entrée à la place:
+Vous pouvez également spécifier un nouvel objet en tant que valeur de paramètre par défaut. Par exemple, le `Foo` membre peut avoir un facultatif `CancellationToken` comme entrée à la place :
 
 ```fsharp
 open System.Threading
@@ -150,7 +150,7 @@ type C =
         printfn "%A" ct
 ```
 
-La valeur donnée comme argument de `DefaultParameterValue` doit correspondre au type du paramètre. Par exemple, ce qui suit n’est pas autorisé:
+La valeur donnée comme argument de `DefaultParameterValue` doit correspondre au type du paramètre. Par exemple, ce qui suit n’est pas autorisé :
 
 ```fsharp
 type C =
@@ -161,7 +161,7 @@ Dans ce cas, le compilateur génère un avertissement et ignore les deux attribu
 
 ## <a name="passing-by-reference"></a>Passer par référence
 
-Le passage F# d’une valeur par référence implique [types ByRef](byrefs.md), qui sont des types pointeur managés. Les instructions pour le type à utiliser sont les suivantes:
+Le passage F# d’une valeur par référence implique [types ByRef](byrefs.md), qui sont des types pointeur managés. Les instructions pour le type à utiliser sont les suivantes :
 
 - Utilisez `inref<'T>` si vous devez uniquement lire le pointeur.
 - Utilisez `outref<'T>` si vous devez uniquement écrire dans le pointeur.
@@ -204,7 +204,7 @@ Le code suivant illustre l’appel d’une méthode .NET qui accepte un tableau 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/parameters-and-arguments-2/snippet3811.fs)]
 
-Lorsqu’il est exécuté dans un projet, la sortie du code précédent se présente comme suit:
+Lorsqu’il est exécuté dans un projet, la sortie du code précédent se présente comme suit :
 
 ```console
 a 1 10 Hello world 1 True

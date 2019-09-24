@@ -2,12 +2,12 @@
 title: Unités de mesure
 description: Découvrez comment les valeurs entières à virgule flottante et les entiers signés dans F# peuvent avoir des unités de mesure associées, qui sont généralement utilisées pour indiquer la longueur, le volume et la masse.
 ms.date: 05/16/2016
-ms.openlocfilehash: f97eac9984f934c55aff8cf9f287afbc3aa098f3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a81f7760301dc580e333d4659a72e6259d2c916b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630156"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216689"
 ---
 # <a name="units-of-measure"></a>Unités de mesure
 
@@ -35,7 +35,7 @@ La ligne suivante définit la mesure `ml` (milliliter) en tant que centimètre c
 
 Dans la syntaxe précédente, *measure* est une formule qui implique des unités. Dans les formules qui impliquent des unités, les puissances entières sont prises en charge (positives et négatives), les espaces entre les `*` unités indiquent un produit des deux unités, `/` indiquent également un produit d’unités et indiquent un quotient d’unités. Pour une unité réciproque, vous pouvez utiliser un entier négatif ou une `/` valeur qui indique une séparation entre le numérateur et le dénominateur d’une formule d’unité. Les unités multiples dans le dénominateur doivent être placées entre parenthèses. Les unités séparées par des espaces `/` après un sont interprétées comme faisant partie du dénominateur, mais toutes les `*` unités qui suivent un sont interprétées comme faisant partie du numérateur.
 
-Vous pouvez utiliser 1 dans les expressions d’unité, soit pour indiquer une quantité sans dimension, soit avec d’autres unités, comme dans le numérateur. Par exemple, les unités d’un taux sont écrites sous la `1/s`forme, `s` où indique des secondes. Les parenthèses ne sont pas utilisées dans les formules d’unité. Vous ne spécifiez pas de constantes de conversion numérique dans les formules d’unité; Toutefois, vous pouvez définir des constantes de conversion avec des unités séparément et les utiliser dans des calculs Check Unit.
+Vous pouvez utiliser 1 dans les expressions d’unité, soit pour indiquer une quantité sans dimension, soit avec d’autres unités, comme dans le numérateur. Par exemple, les unités d’un taux sont écrites sous la `1/s`forme, `s` où indique des secondes. Les parenthèses ne sont pas utilisées dans les formules d’unité. Vous ne spécifiez pas de constantes de conversion numérique dans les formules d’unité ; Toutefois, vous pouvez définir des constantes de conversion avec des unités séparément et les utiliser dans des calculs Check Unit.
 
 Les formules d’unités qui signifient la même chose peuvent être écrites de différentes façons équivalentes. Par conséquent, le compilateur convertit les formules d’unités sous une forme cohérente, ce qui convertit les puissances négatives en valeurs réciproques, regroupe les unités en un seul numérateur et un dénominateur, et alphabetizes les unités dans le numérateur et le dénominateur.
 
@@ -50,7 +50,7 @@ Vous pouvez annoter des littéraux à l’aide d’une formule d’unité entre 
 55.0<miles/hour>
 ```
 
-Vous ne placez pas d’espace entre le nombre et le Chevron; Toutefois, vous pouvez inclure un suffixe littéral, `f`tel que, comme dans l’exemple suivant.
+Vous ne placez pas d’espace entre le nombre et le Chevron ; Toutefois, vous pouvez inclure un suffixe littéral, `f`tel que, comme dans l’exemple suivant.
 
 ```fsharp
 // The f indicates single-precision floating point.
@@ -67,7 +67,7 @@ let convertg2kg (x : float<g>) = x / 1000.0<g/kg>
 
 Les unités de mesure sont utilisées pour la vérification des unités au moment de la compilation, mais ne sont pas conservées dans l’environnement d’exécution. Par conséquent, elles n’affectent pas les performances.
 
-Les unités de mesure peuvent être appliquées à n’importe quel type, pas seulement aux types à virgule flottante; Toutefois, seuls les types à virgule flottante, les types intégraux signés et les types décimaux prennent en charge les quantités dimensionnelles. Par conséquent, il est judicieux d’utiliser des unités de mesure sur les types primitifs et sur les agrégats qui contiennent ces types primitifs.
+Les unités de mesure peuvent être appliquées à n’importe quel type, pas seulement aux types à virgule flottante ; Toutefois, seuls les types à virgule flottante, les types intégraux signés et les types décimaux prennent en charge les quantités dimensionnelles. Par conséquent, il est judicieux d’utiliser des unités de mesure sur les types primitifs et sur les agrégats qui contiennent ces types primitifs.
 
 L’exemple suivant illustre l’utilisation d’unités de mesure.
 
@@ -81,7 +81,7 @@ En outre, lorsque vous transmettez des valeurs dimensionnées à des fonctions q
 
 L’exemple de session suivant montre les sorties de et les entrées de ce code.
 
-```
+```console
 Enter a temperature in degrees Fahrenheit.
 90
 That temperature in degrees Celsius is    32.22.

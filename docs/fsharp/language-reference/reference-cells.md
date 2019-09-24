@@ -2,12 +2,12 @@
 title: Cellules de référence
 description: Découvrez comment F# les cellules de référence sont des emplacements de stockage qui vous permettent de créer des valeurs mutables avec la sémantique de référence.
 ms.date: 05/16/2016
-ms.openlocfilehash: faaa4a6b54ff0366163b6821edff7fa4cb2f5a88
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2bca7797b272c0e7d5bf54df07041dc08e33709a
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627250"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216770"
 ---
 # <a name="reference-cells"></a>Cellules de référence
 
@@ -54,8 +54,8 @@ Le tableau suivant répertorie les fonctionnalités disponibles sur la cellule d
 |--------------------------|-----------|----|----------|
 |`!` (opérateur de déréférence)|Retourne la valeur sous-jacente.|`'a ref -> 'a`|`let (!) r = r.contents`|
 |`:=` (opérateur d'assignation)|Modifie la valeur sous-jacente.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
-|`ref`and|Encapsule une valeur dans une nouvelle cellule de référence.|`'a -> 'a ref`|`let ref x = { contents = x }`|
-|`Value`propriété|Obtient ou définit la valeur sous-jacente.|`unit -> 'a`|`member x.Value = x.contents`|
+|`ref` (opérateur)|Encapsule une valeur dans une nouvelle cellule de référence.|`'a -> 'a ref`|`let ref x = { contents = x }`|
+|`Value` (propriété)|Obtient ou définit la valeur sous-jacente.|`unit -> 'a`|`member x.Value = x.contents`|
 |`contents` (champ d'enregistrement)|Obtient ou définit la valeur sous-jacente.|`'a`|`let ref x = { contents = x }`|
 
 Vous pouvez accéder à la valeur sous-jacente de plusieurs façons. La valeur retournée par l'opérateur de déréférence (`!`) n'est pas une valeur assignable. Par conséquent, si vous modifiez la valeur sous-jacente, vous devez utiliser à la place l'opérateur d'assignation (`:=`).
@@ -66,7 +66,7 @@ La propriété `Value` et le champ `contents` sont des valeurs assignables. Par 
 
 La sortie est la suivante.
 
-```
+```console
 10
 10
 11
@@ -77,7 +77,7 @@ Le champ `contents` est fourni à des fins de compatibilité avec d'autres versi
 
 C#les programmeurs doivent savoir `ref` que C# dans n’est pas la même `ref` chose F#que dans. Les constructions équivalentes dans F# sont des [types ByRef](byrefs.md), qui sont un concept différent des cellules de référence.
 
-Les valeurs marquées comme pouvant être `mutable` `'a ref` promues automatiquement en s’ils sont capturés par une fermeture; consultez [valeurs](./values/index.md).
+Les valeurs marquées comme pouvant être `mutable` `'a ref` promues automatiquement en s’ils sont capturés par une fermeture ; consultez [valeurs](./values/index.md).
 
 ## <a name="see-also"></a>Voir aussi
 

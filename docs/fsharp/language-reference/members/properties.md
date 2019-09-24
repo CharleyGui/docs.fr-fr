@@ -1,15 +1,15 @@
 ---
-title: Properties
+title: Propriétés
 description: En savoir F# plus sur les propriétés, qui sont des membres qui représentent des valeurs associées à un objet.
 ms.date: 05/16/2016
-ms.openlocfilehash: c202927fd0022e042703640cd55fb632c7e36068
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c71d61e033501c2d535b5582c82d36ed8cb2241b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627416"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216419"
 ---
-# <a name="properties"></a>Properties
+# <a name="properties"></a>Propriétés
 
 Les *Propriétés* sont des membres qui représentent des valeurs associées à un objet.
 
@@ -57,9 +57,9 @@ with set parameter =
 
 ## <a name="remarks"></a>Notes
 
-Les propriétés représentent la relation «has a» dans la programmation orientée objet, représentant les données associées aux instances d’objet ou, pour les propriétés statiques, avec le type.
+Les propriétés représentent la relation « has a » dans la programmation orientée objet, représentant les données associées aux instances d’objet ou, pour les propriétés statiques, avec le type.
 
-Vous pouvez déclarer des propriétés de deux façons, selon que vous souhaitez spécifier explicitement la valeur sous-jacente (également appelée magasin de stockage) pour la propriété, ou si vous souhaitez autoriser le compilateur à générer automatiquement le magasin de stockage pour vous. En général, vous devez utiliser la méthode la plus explicite si la propriété a une implémentation non triviale et la façon automatique lorsque la propriété est simplement un wrapper simple pour une valeur ou une variable. Pour déclarer explicitement une propriété, utilisez le `member` mot clé. Cette syntaxe déclarative est suivie par la syntaxe qui spécifie les `get` méthodes `set` et, également appelées *accesseurs*. Les différentes formes de syntaxe explicite indiquées dans la section syntaxe sont utilisées pour les propriétés en lecture/écriture, en lecture seule et en écriture seule. Pour les propriétés en lecture seule, vous définissez uniquement `get` une méthode; pour les propriétés en écriture seule, définissez `set` uniquement une méthode. Notez que lorsqu’une propriété possède des `get` accesseurs et `set` , l’autre syntaxe vous permet de spécifier des attributs et des modificateurs d’accessibilité qui sont différents pour chaque accesseur, comme indiqué dans le code suivant.
+Vous pouvez déclarer des propriétés de deux façons, selon que vous souhaitez spécifier explicitement la valeur sous-jacente (également appelée magasin de stockage) pour la propriété, ou si vous souhaitez autoriser le compilateur à générer automatiquement le magasin de stockage pour vous. En général, vous devez utiliser la méthode la plus explicite si la propriété a une implémentation non triviale et la façon automatique lorsque la propriété est simplement un wrapper simple pour une valeur ou une variable. Pour déclarer explicitement une propriété, utilisez le `member` mot clé. Cette syntaxe déclarative est suivie par la syntaxe qui spécifie les `get` méthodes `set` et, également appelées *accesseurs*. Les différentes formes de syntaxe explicite indiquées dans la section syntaxe sont utilisées pour les propriétés en lecture/écriture, en lecture seule et en écriture seule. Pour les propriétés en lecture seule, vous définissez uniquement `get` une méthode ; pour les propriétés en écriture seule, définissez `set` uniquement une méthode. Notez que lorsqu’une propriété possède des `get` accesseurs et `set` , l’autre syntaxe vous permet de spécifier des attributs et des modificateurs d’accessibilité qui sont différents pour chaque accesseur, comme indiqué dans le code suivant.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3201.fs)]
 
@@ -67,7 +67,7 @@ Pour les propriétés en lecture/écriture, qui ont `get` à `set` la fois une m
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
 
-Les valeurs privées qui contiennent les données pour les propriétés sont appelées *magasins*de stockage. Pour que le compilateur crée automatiquement le magasin de stockage, utilisez les mots `member val`clés, omettez l’auto-identificateur, puis fournissez une expression pour initialiser la propriété. Si la propriété doit être mutable, incluez `with get, set`. Par exemple, le type de classe suivant comprend deux propriétés implémentées automatiquement. `Property1`est en lecture seule et est initialisé à l’argument fourni au constructeur principal, et `Property2` est une propriété définissable initialisée à une chaîne vide:
+Les valeurs privées qui contiennent les données pour les propriétés sont appelées *magasins*de stockage. Pour que le compilateur crée automatiquement le magasin de stockage, utilisez les mots `member val`clés, omettez l’auto-identificateur, puis fournissez une expression pour initialiser la propriété. Si la propriété doit être mutable, incluez `with get, set`. Par exemple, le type de classe suivant comprend deux propriétés implémentées automatiquement. `Property1`est en lecture seule et est initialisé à l’argument fourni au constructeur principal, et `Property2` est une propriété définissable initialisée à une chaîne vide :
 
 ```fsharp
 type MyClass(property1 : int) =
@@ -75,7 +75,7 @@ member val Property1 = property1
 member val Property2 = "" with get, set
 ```
 
-Les propriétés implémentées automatiquement font partie de l’initialisation d’un type. elles doivent donc être incluses avant toute autre définition de membre, `let` tout comme les `do` liaisons et les liaisons dans une définition de type. Notez que l’expression qui initialise une propriété implémentée automatiquement n’est évaluée qu’au moment de l’initialisation, et non à chaque accès à la propriété. Ce comportement diffère du comportement d’une propriété implémentée explicitement. Cela signifie que le code permettant d’initialiser ces propriétés est ajouté au constructeur d’une classe. Prenons le code suivant qui illustre cette différence:
+Les propriétés implémentées automatiquement font partie de l’initialisation d’un type. elles doivent donc être incluses avant toute autre définition de membre, `let` tout comme les `do` liaisons et les liaisons dans une définition de type. Notez que l’expression qui initialise une propriété implémentée automatiquement n’est évaluée qu’au moment de l’initialisation, et non à chaque accès à la propriété. Ce comportement diffère du comportement d’une propriété implémentée explicitement. Cela signifie que le code permettant d’initialiser ces propriétés est ajouté au constructeur d’une classe. Prenons le code suivant qui illustre cette différence :
 
 ```fsharp
 type MyClass() =
@@ -93,7 +93,7 @@ printfn "class1.ExplicitProperty = %d" class1.ExplicitProperty
 
 **Sortie**
 
-```
+```console
 class1.AutoProperty = 1853799794
 class1.AutoProperty = 1853799794
 class1.ExplicitProperty = 978922705
@@ -109,7 +109,7 @@ Les propriétés peuvent être des membres de classes, de structures, d’unions
 
 Les attributs peuvent être appliqués aux propriétés. Pour appliquer un attribut à une propriété, écrivez l’attribut sur une ligne distincte avant la propriété. Pour plus d’informations, consultez [Attributs](../attributes.md).
 
-Par défaut, les propriétés sont publiques. Les modificateurs d’accessibilité peuvent également être appliqués aux propriétés. Pour appliquer un modificateur d’accessibilité, ajoutez-le immédiatement avant le nom de la propriété s’il est destiné à s’appliquer `get` aux `set` deux méthodes et. Ajoutez- `get` le `set` avant les mots clés et si une accessibilité différente est obligatoire pour chaque accesseur. Le *modificateur Accessibility* peut être l’un des suivants: `public`, `private`, `internal`. Pour plus d’informations, consultez [Contrôle d’accès](../access-control.md).
+Par défaut, les propriétés sont publiques. Les modificateurs d’accessibilité peuvent également être appliqués aux propriétés. Pour appliquer un modificateur d’accessibilité, ajoutez-le immédiatement avant le nom de la propriété s’il est destiné à s’appliquer `get` aux `set` deux méthodes et. Ajoutez- `get` le `set` avant les mots clés et si une accessibilité différente est obligatoire pour chaque accesseur. Le *modificateur Accessibility* peut être l’un des suivants : `public`, `private`, `internal`. Pour plus d’informations, consultez [Contrôle d’accès](../access-control.md).
 
 Les implémentations de propriétés sont exécutées chaque fois qu’un utilisateur accède à une propriété.
 

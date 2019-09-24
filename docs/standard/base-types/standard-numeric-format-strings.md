@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c99e3bc59266846fcd5c5774b6050b4e075cbc3f
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: b2f997cf398e59f8e30ac87c1e0360e43a448e85
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374506"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216709"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
@@ -55,15 +55,15 @@ Les chaînes de format numériques standard sont prises en charge par :
 
 |Spécificateur de format|Name|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
-|"C" ou "c"|Devise|Résultat :  une valeur monétaire.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Plus d’informations : [Spécificateur de format monétaire ("C")](#CFormatString).|123,456 ("C", en-US)-> \\$123,46<br /><br /> 123.456 ("C", fr-FR) -> 123,46 €<br /><br /> 123.456 ("C", ja-JP) -> ¥123<br /><br /> -123,456 ("C3", en-US)-> (\\$123,456)<br /><br /> -123.456 ("C3", fr-FR) -> -123,456 €<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
-|"D" ou "d"|Decimal|Résultat :  chiffres entiers avec un signe négatif facultatif.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre minimal de chiffres.<br /><br /> Spécificateur de précision par défaut : nombre minimal de chiffres requis.<br /><br /> Plus d’informations : [Spécificateur de format décimal ("D")](#DFormatString).|1234 ("D") -> 1234<br /><br /> -1234 ("D6") -> -001234|
-|"E" ou "e"|Exponentiel (scientifique)|Résultat :  notation exponentielle.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : 6.<br /><br /> Plus d’informations : [Spécificateur de format exponentiel ("E")](#EFormatString).|1052.0329112756 ("E", en-US) -> 1.052033E+003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1,052033e+003<br /><br /> -1052.0329112756 ("e2", en-US) -> -1.05e+003<br /><br /> -1052.0329112756 ("E2", fr-FR) -> -1,05E+003|
-|"F" ou "f"|Virgule fixe|Résultat :  chiffres intégraux et décimaux avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Plus d’informations : [Spécificateur de format à virgule fixe ("F")](#FFormatString).|1234.567 ("F", en-US) -> 1234.57<br /><br /> 1234.567 ("F", de-DE) -> 1234,57<br /><br /> 1234 ("F1", en-US) -> 1234.0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234.56 ("F4", en-US) -> -1234.5600<br /><br /> -1234.56 ("F4", de-DE) -> -1234,5600|
-|"G" ou "g"|Généralités|Résultat :  format le plus compact (notation à virgule fixe ou scientifique).<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres significatifs.<br /><br /> Spécificateur de précision par défaut : dépend du type numérique.<br /><br /> Plus d’informations : [Spécificateur de format général ("G")](#GFormatString).|-123.456 ("G", en-US) -> -123.456<br /><br /> -123.456 ("G", sv-SE) -> -123,456<br /><br /> 123.4546 ("G4", en-US) -> 123.5<br /><br /> 123.4546 ("G4", sv-SE) -> 123,5<br /><br /> -1.234567890e-25 ("G", en-US) -> -1.23456789E-25<br /><br /> -1.234567890e-25 ("G", sv-SE) -> -1,23456789E-25|
-|"N" ou "n"|Number|Résultat :  chiffres intégraux et décimaux, séparateurs de groupes et séparateur décimal avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Plus d’informations : [Spécificateur de format numérique ("N")](#NFormatString).|1234.567 ("N", en-US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1", en-US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3", en-US) -> -1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> -1 234,560|
-|"P" ou "p"|Percent|Résultat :  nombre multiplié par 100 et affiché avec un symbole de pourcentage.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Plus d’informations : [Spécificateur de format pourcentage ("P")](#PFormatString).|1 ("P", en-US) -> 100.00 %<br /><br /> 1 ("P", fr-FR) -> 100,00 %<br /><br /> -0.39678 ("P1", en-US) -> -39.7 %<br /><br /> -0.39678 ("P1", fr-FR) -> -39,7 %|
-|"R" ou "r"|Aller-retour|Résultat :  chaîne qui peut effectuer un aller-retour vers un nombre identique.<br /><br /> Pris en charge par : <xref:System.Single>, <xref:System.Double> et <xref:System.Numerics.BigInteger>.<br /><br /> Remarque : recommandé pour le type <xref:System.Numerics.BigInteger> uniquement. Pour les types <xref:System.Double>, utilisez "G17" ; pour les types <xref:System.Single>, utilisez "G9". <br> Spécificateur de précision : Ignoré.<br /><br /> Plus d’informations : [Spécificateur de format aller-retour ("R")](#RFormatString).|123456789.12345678 ("R") -> 123456789.12345678<br /><br /> -1234567890.12345678 ("R") -> -1234567890.1234567|
-|"X" ou "x"|Hexadécimal|Résultat :  chaîne hexadécimale.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre de chiffres dans la chaîne de résultat.<br /><br /> Plus d’informations : [Spécificateur de format hexadécimal ("X")](#XFormatString).|255 ("X") -> FF<br /><br /> -1 ("x") -> ff<br /><br /> 255 ("x4") -> 00ff<br /><br /> -1 ("X4") -> 00FF|
+|"C" ou "c"|Devise|Résultat :  une valeur monétaire.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations complémentaires : [Spécificateur de format monétaire ("C")](#CFormatString).|123,456 ("C", en-US)-> \\$123,46<br /><br /> 123.456 ("C", fr-FR) -> 123,46 €<br /><br /> 123.456 ("C", ja-JP) -> ¥123<br /><br /> -123,456 ("C3", en-US)-> (\\$123,456)<br /><br /> -123.456 ("C3", fr-FR) -> -123,456 €<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
+|"D" ou "d"|Decimal|Résultat :  chiffres entiers avec un signe négatif facultatif.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre minimal de chiffres.<br /><br /> Spécificateur de précision par défaut : nombre minimal de chiffres requis.<br /><br /> Informations complémentaires : [Spécificateur de format décimal ("D")](#DFormatString).|1234 ("D") -> 1234<br /><br /> -1234 ("D6") -> -001234|
+|"E" ou "e"|Exponentiel (scientifique)|Résultat :  notation exponentielle.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : 6.<br /><br /> Informations complémentaires : [Spécificateur de format exponentiel ("E")](#EFormatString).|1052.0329112756 ("E", en-US) -> 1.052033E+003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1,052033e+003<br /><br /> -1052.0329112756 ("e2", en-US) -> -1.05e+003<br /><br /> -1052.0329112756 ("E2", fr-FR) -> -1,05E+003|
+|"F" ou "f"|Virgule fixe|Résultat :  chiffres intégraux et décimaux avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations complémentaires : [Spécificateur de format à virgule fixe ("F")](#FFormatString).|1234.567 ("F", en-US) -> 1234.57<br /><br /> 1234.567 ("F", de-DE) -> 1234,57<br /><br /> 1234 ("F1", en-US) -> 1234.0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234.56 ("F4", en-US) -> -1234.5600<br /><br /> -1234.56 ("F4", de-DE) -> -1234,5600|
+|"G" ou "g"|Général|Résultat :  format le plus compact (notation à virgule fixe ou scientifique).<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre de chiffres significatifs.<br /><br /> Spécificateur de précision par défaut : dépend du type numérique.<br /><br /> Informations complémentaires : [Spécificateur de format général ("G")](#GFormatString).|-123.456 ("G", en-US) -> -123.456<br /><br /> -123.456 ("G", sv-SE) -> -123,456<br /><br /> 123.4546 ("G4", en-US) -> 123.5<br /><br /> 123.4546 ("G4", sv-SE) -> 123,5<br /><br /> -1.234567890e-25 ("G", en-US) -> -1.23456789E-25<br /><br /> -1.234567890e-25 ("G", sv-SE) -> -1,23456789E-25|
+|"N" ou "n"|nombre|Résultat :  chiffres intégraux et décimaux, séparateurs de groupes et séparateur décimal avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations complémentaires : [Spécificateur de format numérique ("N")](#NFormatString).|1234.567 ("N", en-US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1", en-US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3", en-US) -> -1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> -1 234,560|
+|"P" ou "p"|Pourcentage|Résultat :  nombre multiplié par 100 et affiché avec un symbole de pourcentage.<br /><br /> Pris en charge par : tous les types numériques<br /><br /> Spécificateur de précision : nombre souhaité de décimales.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations complémentaires : [Spécificateur de format pourcentage ("P")](#PFormatString).|1 ("P", en-US) -> 100.00 %<br /><br /> 1 ("P", fr-FR) -> 100,00 %<br /><br /> -0.39678 ("P1", en-US) -> -39.7 %<br /><br /> -0.39678 ("P1", fr-FR) -> -39,7 %|
+|"R" ou "r"|Aller-retour|Résultat :  chaîne qui peut effectuer un aller-retour vers un nombre identique.<br /><br /> Pris en charge par : <xref:System.Single>, <xref:System.Double> et <xref:System.Numerics.BigInteger>.<br /><br /> Remarque : recommandé pour le type <xref:System.Numerics.BigInteger> uniquement. Pour les types <xref:System.Double>, utilisez "G17" ; pour les types <xref:System.Single>, utilisez "G9". <br> Spécificateur de précision : Ignoré.<br /><br /> Informations complémentaires : [Spécificateur de format aller-retour ("R")](#RFormatString).|123456789.12345678 ("R") -> 123456789.12345678<br /><br /> -1234567890.12345678 ("R") -> -1234567890.1234567|
+|"X" ou "x"|Hexadécimal|Résultat :  chaîne hexadécimale.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre de chiffres dans la chaîne de résultat.<br /><br /> Informations complémentaires : [Spécificateur de format hexadécimal ("X")](#XFormatString).|255 ("X") -> FF<br /><br /> -1 ("x") -> ff<br /><br /> 255 ("x4") -> 00ff<br /><br /> -1 ("X4") -> 00FF|
 |N'importe quel caractère|Spécificateur inconnu|Résultat :  lève un <xref:System.FormatException> au moment de l’exécution.||
 
 <a name="Using"></a>
@@ -117,10 +117,10 @@ Les informations de mise en forme de l'objet <xref:System.Globalization.NumberFo
 |<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>|Définit la chaîne qui sépare les groupes de nombres de la partie entière.|
 |<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSizes%2A>|Définit le nombre de chiffres entiers qui s'affichent dans un groupe.|
 
-L'exemple suivant met en forme une valeur <xref:System.Double> avec le spécificateur de format monétaire.
+L’exemple suivant met en <xref:System.Double> forme une valeur avec le spécificateur de format monétaire :
 
 [!code-cpp[Formatting.Numeric.Standard#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#1)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
+[!code-csharp[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
 [!code-vb[Formatting.Numeric.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#1)]
 
 [Retour au tableau](#table)
@@ -165,10 +165,10 @@ Les informations de mise en forme de l'objet <xref:System.Globalization.NumberFo
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Définit la chaîne qui sépare le chiffre intégral des chiffres décimaux dans le coefficient.|
 |<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>|Définit la chaîne qui indique qu'un exposant est positif.|
 
-L'exemple suivant met en forme une valeur <xref:System.Double> avec le spécificateur de format exponentiel.
+L’exemple suivant met en <xref:System.Double> forme une valeur avec le spécificateur de format exponentiel :
 
 [!code-cpp[Formatting.Numeric.Standard#3](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#3)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
+[!code-csharp[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
 [!code-vb[Formatting.Numeric.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#3)]
 
 [Retour au tableau](#table)
@@ -189,10 +189,10 @@ Les informations de mise en forme de l'objet <xref:System.Globalization.NumberFo
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Définit la chaîne qui sépare les chiffres de la partie entière des chiffres de la partie décimale.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>|Définit le nombre par défaut de chiffres décimaux. Cette valeur peut être substituée à l'aide du spécificateur de précision.|
 
-L'exemple suivant met en forme une valeur <xref:System.Double> et une valeur <xref:System.Int32> avec le spécificateur de format à virgule fixe.
+L’exemple suivant met en <xref:System.Double> forme une <xref:System.Int32> valeur et une valeur avec le spécificateur de format à virgule fixe :
 
 [!code-cpp[Formatting.Numeric.Standard#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#4)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
+[!code-csharp[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
 [!code-vb[Formatting.Numeric.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#4)]
 
 [Retour au tableau](#table)
@@ -236,10 +236,10 @@ Les informations de mise en forme de l'objet <xref:System.Globalization.NumberFo
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Définit la chaîne qui sépare les chiffres de la partie entière des chiffres de la partie décimale.|
 |<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>|Définit la chaîne qui indique qu'un exposant est positif.|
 
-L'exemple suivant met en forme des valeurs à virgule flottante assorties avec le spécificateur de format général.
+L’exemple suivant met en forme les valeurs à virgule flottante assorties avec le spécificateur de format général :
 
 [!code-cpp[Formatting.Numeric.Standard#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#5)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
+[!code-csharp[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
 [!code-vb[Formatting.Numeric.Standard#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#5)]
 
 [Retour au tableau](#table)
@@ -261,10 +261,10 @@ Les informations de mise en forme de l'objet <xref:System.Globalization.NumberFo
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Définit la chaîne qui sépare les chiffres de la partie entière des chiffres de la partie décimale.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>|Définit le nombre par défaut de chiffres décimaux. Cette valeur peut être substituée à l'aide d'un spécificateur de précision.|
 
-L'exemple suivant met en forme des valeurs à virgule flottante assorties avec le spécificateur de format de nombre.
+L’exemple suivant met en forme les valeurs à virgule flottante assorties avec le spécificateur de format de nombre :
 
 [!code-cpp[Formatting.Numeric.Standard#6](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#6)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
+[!code-csharp[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
 [!code-vb[Formatting.Numeric.Standard#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#6)]
 
 [Retour au tableau](#table)
@@ -288,10 +288,10 @@ Le tableau suivant répertorie les propriétés de <xref:System.Globalization.Nu
 |<xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>|Définit la chaîne qui sépare les groupes de nombres de la partie entière.|
 |<xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>|Définit le nombre de chiffres entiers qui s'affichent dans un groupe.|
 
-L'exemple suivant met en forme des valeurs à virgule flottante assorties avec le spécificateur de format pourcentage.
+L’exemple suivant met en forme des valeurs à virgule flottante avec le spécificateur de format pourcentage :
 
 [!code-cpp[Formatting.Numeric.Standard#7](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#7)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
+[!code-csharp[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
 [!code-vb[Formatting.Numeric.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#7)]
 
 [Retour au tableau](#table)
@@ -324,9 +324,9 @@ L'exemple suivant met en forme une valeur <xref:System.Numerics.BigInteger> avec
 > [!IMPORTANT]
 > Dans certains cas, les valeurs <xref:System.Double> mises en forme avec la chaîne de format numérique standard "R" ne font pas un aller-retour correct si elles sont compilées avec les commutateurs `/platform:x64` ou `/platform:anycpu`, et exécutées sur des systèmes 64 bits. Pour plus d'informations, consultez les paragraphes suivants :
 
-Pour contourner le problème des valeurs <xref:System.Double> mises en forme avec la chaîne de format numérique standard « R » et pour lesquelles l'aller-retour ne fonctionne pas correctement dans le cas d'une compilation avec les indicateurs `/platform:x64` ou `/platform:anycpu` et d'une exécution sur des systèmes 64 bits, vous pouvez mettre en forme ces valeurs <xref:System.Double> en utilisant la chaîne de format numérique standard « G17 ». L'exemple suivant utilise la chaîne de format "R" avec une valeur <xref:System.Double> qui ne fait pas un aller-retour correct, et il utilise également la chaîne de format "G17" pour effectuer un aller-retour correct avec la valeur d'origine.
+Pour contourner le problème des valeurs <xref:System.Double> mises en forme avec la chaîne de format numérique standard « R » et pour lesquelles l'aller-retour ne fonctionne pas correctement dans le cas d'une compilation avec les indicateurs `/platform:x64` ou `/platform:anycpu` et d'une exécution sur des systèmes 64 bits, vous pouvez mettre en forme ces valeurs <xref:System.Double> en utilisant la chaîne de format numérique standard « G17 ». L’exemple suivant utilise la chaîne de format "R" avec <xref:System.Double> une valeur qui ne parvient pas à effectuer un aller-retour, et utilise également la chaîne de format "G17" pour effectuer un aller-retour correct de la valeur d’origine :
 
-[!code-csharp-interactive[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
+[!code-csharp[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
 [!code-vb[System.Double.ToString#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]
 
 [Retour au tableau](#table)
@@ -380,7 +380,7 @@ Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottant
 
 L'exemple suivant met en forme une valeur numérique intégrale et à virgule flottante en utilisant la culture en-US et tous les spécificateurs de format numériques standard. Cet exemple utilise deux types numériques particuliers (<xref:System.Double> et <xref:System.Int32>), mais produirait des résultats similaires pour n'importe lequel des autres types numériques de base (<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>, <xref:System.Numerics.BigInteger>, <xref:System.Decimal> et <xref:System.Single>).
 
-[!code-csharp-interactive[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
+[!code-csharp[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
 [!code-vb[system.x.tostring-and-culture#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.X.ToString-and-Culture/vb/xts.vb#1)]
 
 ## <a name="see-also"></a>Voir aussi
@@ -388,7 +388,7 @@ L'exemple suivant met en forme une valeur numérique intégrale et à virgule fl
 - <xref:System.Globalization.NumberFormatInfo>
 - [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Guide pratique : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Guide pratique pour remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

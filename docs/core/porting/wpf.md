@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 1528e578a978de38998b3f3f4b7beb72ff7422d4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 4ff3ca9610e7fa9355931ca2013def1157fab8b2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117063"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216185"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Procédure : Porter une application de bureau WPF sur .NET Core
 
@@ -52,7 +52,7 @@ Voici les points à prendre en compte pour porter une application WPF .NET Frame
 
 01. Vous utilisez une autre version de WPF.
 
-    Lors de la sortie de .NET Core 3.0 Preview 1, WPF est devenu open source sur GitHub. Le code de WPF .NET Core est une duplication du codebase WPF .NET Framework. Il peut y avoir des différences qui empêchent le portage de l’application.
+    Quand .NET Core 3,0 Preview 1 a été publié, WPF est allé Open source sur GitHub. Le code pour .NET Core WPF est une fourche du code base de .NET Framework WPF. Il peut y avoir des différences qui empêchent le portage de l’application.
 
 01. Le [Pack de compatibilité Windows][compat-pack] peut faciliter la migration.
 

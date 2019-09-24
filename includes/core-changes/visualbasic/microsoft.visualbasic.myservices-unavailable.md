@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ba543414d4f84362c9b9b876395815e837efbd3f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d61e4da187b3ede5e49fa80903d6e4c3b40578b9
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181831"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216287"
 ---
 ### <a name="types-in-microsoftvisualbasicmyservices-namespace-not-available"></a>Types dans l’espace de noms Microsoft. VisualBasic. MyServices non disponibles
 
@@ -16,7 +16,7 @@ Les types de l' <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName>
 
 #### <a name="details"></a>Détails
 
-Les types de l' <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> espace de noms étaient disponibles dans certaines versions préliminaires de .net Core 3,0,. Ils ne sont plus disponibles à partir de .NET Core 3,0 Preview 9.
+Les types de l' <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> espace de noms étaient disponibles dans certaines versions préliminaires de .net Core 3,0. Ils ne sont plus disponibles à partir de .NET Core 3,0 Preview 9.
 
 Les types ont été supprimés pour éviter les dépendances d’assembly inutiles ou les modifications importantes dans les versions ultérieures.
  

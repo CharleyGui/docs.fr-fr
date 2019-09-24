@@ -2,12 +2,12 @@
 title: 'Boucles : expression for...in'
 description: Voir comment le F# ... dans, la construction de bouclage d’expression est utilisée pour itérer au sein des correspondances d’un modèle dans une collection énumérable.
 ms.date: 05/16/2016
-ms.openlocfilehash: 640b0f91f6c641f3b49a99dc67abe7e4c31911ea
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5a2ca59ca4199ece5d78010ff780e86ae2b25181
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630712"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216446"
 ---
 # <a name="loops-forin-expression"></a>Boucles : expression for...in
 
@@ -44,7 +44,7 @@ Les exemples de code suivants illustrent l’utilisation `for...in` de l’expre
 
 La sortie est la suivante.
 
-```
+```console
 1
 5
 100
@@ -58,7 +58,7 @@ L’exemple suivant montre comment effectuer une boucle sur une séquence et com
 
 La sortie est la suivante.
 
-```
+```console
 1 squared is 1
 2 squared is 4
 3 squared is 9
@@ -77,7 +77,7 @@ L’exemple suivant montre comment effectuer une boucle sur une plage d’entier
 
 La sortie de function1 est la suivante.
 
-```
+```console
 1 2 3 4 5 6 7 8 9 10
 ```
 
@@ -87,7 +87,7 @@ L’exemple suivant montre comment effectuer une boucle sur une plage avec un sa
 
 La sortie de `function2` est la suivante.
 
-```
+```console
 1 3 5 7 9
 ```
 
@@ -97,7 +97,7 @@ L’exemple suivant montre comment utiliser une plage de caractères.
 
 La sortie de `function3` est la suivante.
 
-```
+```console
 a b c d e f g h i j k l m n o p q r s t u v w x y z
 ```
 
@@ -107,7 +107,7 @@ L’exemple suivant montre comment utiliser une valeur Skip négative pour une i
 
 La sortie de `function4` est la suivante.
 
-```
+```console
 10 9 8 7 6 5 4 3 2 1 ... Lift off!
 ```
 
@@ -117,7 +117,7 @@ Le début et la fin de la plage peuvent également être des expressions, telles
 
 La sortie de `function5` avec cette entrée est la suivante.
 
-```
+```console
 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 ```
 
@@ -127,7 +127,7 @@ L’exemple suivant illustre l’utilisation d’un caractère générique (\_) 
 
 La sortie est la suivante.
 
-```
+```console
 Number of elements in list1: 5
 ```
 

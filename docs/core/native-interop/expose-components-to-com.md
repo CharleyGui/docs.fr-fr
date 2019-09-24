@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 686d1b31478121a8b2c907d99672a5fcc3438a71
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8f9624414a2b423bd43e8790d11b70ae1ca6286d
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849033"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216226"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Exposition de composants .NET Core à COM
 
@@ -25,16 +25,24 @@ Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été co
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Installez le [SDK .NET Core 3.0 Preview 7](https://dotnet.microsoft.com/download) ou une version plus récente.
+- Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
 ## <a name="create-the-library"></a>Créer la bibliothèque
 
 La première étape consiste à créer la bibliothèque.
 
-1. Créez un dossier, puis exécutez-y `dotnet new classlib`.
+1. Créez un nouveau dossier et, dans ce dossier, exécutez la commande suivante :
+    
+    ```dotnetcli
+    dotnet new classlib
+    ```
+
 2. Ouvrez `Class1.cs`.
 3. Ajoutez `using System.Runtime.InteropServices;` en haut du fichier.
-4. Créez une interface nommée `IServer`. Par exemple : [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+4. Créez une interface nommée `IServer`. Par exemple :
+
+   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+
 5. Ajoutez l’attribut `[Guid("<IID>")]` à l’interface, avec le GUID d’interface pour l’interface COM que vous implémentez. Par exemple, `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Notez que ce GUID doit être unique, car il s’agit du seul identificateur de cette interface pour COM. Dans Visual Studio, vous pouvez générer un GUID en accédant à Outils > Créer un GUID pour ouvrir l’outil Créer un GUID.
 6. Ajoutez l’attribut `[InterfaceType]` à l’interface et spécifiez les interfaces COM de base que votre interface doit implémenter.
 7. Créez une classe nommée `Server` qui implémente `IServer`.

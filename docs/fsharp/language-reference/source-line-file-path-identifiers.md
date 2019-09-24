@@ -2,12 +2,12 @@
 title: Identificateurs de ligne, de fichier et de chemin d’accès source
 description: Découvrez comment utiliser des valeurs d' F# identificateur intégrées qui vous permettent d’accéder au numéro de ligne source, au répertoire et au nom de fichier dans votre code.
 ms.date: 05/16/2016
-ms.openlocfilehash: 5ff36210edc75370f8baf9ee7be057f3ac0c3979
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f22c3dfb3cb106fbe45883ffd7de01feac30db00
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627116"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216743"
 ---
 # <a name="source-line-file-and-path-identifiers"></a>Identificateurs de ligne, de fichier et de chemin d’accès source
 
@@ -25,7 +25,7 @@ __SOURCE_FILE__
 
 Chacune de ces valeurs est de `string`type.
 
-Le tableau suivant récapitule les identificateurs de ligne, de fichier et de chemin d’accès source qui F#sont disponibles dans. Ces identificateurs ne sont pas des macros de préprocesseur; Il s’agit de valeurs intégrées qui sont reconnues par le compilateur.
+Le tableau suivant récapitule les identificateurs de ligne, de fichier et de chemin d’accès source qui F#sont disponibles dans. Ces identificateurs ne sont pas des macros de préprocesseur ; Il s’agit de valeurs intégrées qui sont reconnues par le compilateur.
 
 |Identificateur prédéfini|Description|
 |---------------------|-----------|
@@ -41,9 +41,9 @@ L’exemple de code suivant illustre l’utilisation de ces valeurs.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7401.fs)]
 
-Sortie :
+Sortie :
 
-```
+```console
 Line: 4
 Source Directory: C:\Users\username\Documents\Visual Studio 2017\Projects\SourceInfo\SourceInfo
 Source File: Program.fs
