@@ -506,7 +506,7 @@
           href: framework/develop-web-apps-with-aspnet.md
         - name: Programmation réseau dans le .NET Framework
           href: framework/network-programming/
-        - name: Configuration d’applications
+        - name: Configuration d'applications
           href: framework/configure-apps/
         - name: Compilation d'applications avec .NET Native
           href: framework/net-native/
@@ -599,7 +599,7 @@
       href: csharp/tour-of-csharp/
     - name: 'Nouveautés de C#'
       items:
-        - name: "C#\_8.0 - Preview\_5"
+        - name: 'C# 8.0'
           href: csharp/whats-new/csharp-8.md
         - name: "C#\_7.3"
           href: csharp/whats-new/csharp-7-3.md
@@ -687,13 +687,13 @@
               href: csharp/expression-trees-explained.md
             - name: Types de frameworks prenant en charge les arborescences d’expressions
               href: csharp/expression-classes.md
-            - name: Exécution d’expressions
+            - name: Exécution des expressions
               href: csharp/expression-trees-execution.md
             - name: Interprétation des expressions
               href: csharp/expression-trees-interpreting.md
-            - name: Création d’expressions
+            - name: Création des expressions
               href: csharp/expression-trees-building.md
-            - name: Traduction d’expressions
+            - name: Traduction des expressions
               href: csharp/expression-trees-translating.md
             - name: Récapitulatif
               href: csharp/expression-trees-summary.md
@@ -725,9 +725,9 @@
       href: csharp/roslyn-sdk/
     - name: "Guide de programmation\_C#"
       href: csharp/programming-guide/
-    - name: Informations de référence sur le langage
+    - name: Référence du langage
       href: csharp/language-reference/
-    - name: Procédures pas à pas
+    - name: "Procédures pas\_à\_pas"
       href: csharp/walkthroughs.md
 - name: 'Guide F#'
   href: fsharp/index.md
@@ -1020,9 +1020,9 @@
         - name: Programmation dans Visual Basic
           href: visual-basic/developing-apps/programming/index.md
           items:
-            - name: Accès aux ressources de l’ordinateur
+            - name: Accès aux ressources de l'ordinateur
               href: visual-basic/developing-apps/programming/computer-resources/index.md
-            - name: Enregistrement d’informations provenant de l’application
+            - name: Enregistrement d'informations provenant de l'application
               href: visual-basic/developing-apps/programming/log-info/index.md
             - name: Accès aux données d’utilisateur
               href: visual-basic/developing-apps/programming/accessing-user-data.md
@@ -1130,7 +1130,7 @@
       items:
         - name: Tableaux
           href: visual-basic/programming-guide/language-features/arrays/index.md
-        - name: Initialiseurs de collection
+        - name: Initialiseurs de collections
           href: visual-basic/programming-guide/language-features/collection-initializers/index.md
         - name: Constantes et énumérations
           href: visual-basic/programming-guide/language-features/constants-enums/index.md
@@ -1252,7 +1252,7 @@
           href: visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md
         - name: "Procédure pas à pas\_: Implémentation de l’héritage avec les objets COM"
           href: visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md
-    - name: Informations de référence sur le langage
+    - name: Référence du langage
       href: visual-basic/language-reference/index.md
       items:
         - name: Configurer la version de langage
@@ -2420,7 +2420,7 @@
           href: visual-basic/reference/language-specification/
     - name: Exemples d’applications
       href: visual-basic/sample-applications.md
-    - name: Procédures pas à pas
+    - name: "Procédures pas\_à\_pas"
       href: visual-basic/walkthroughs.md
 - name: Guide ML.NET
   href: machine-learning/index.yml
