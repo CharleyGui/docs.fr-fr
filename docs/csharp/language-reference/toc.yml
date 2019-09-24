@@ -200,7 +200,7 @@
       items:
         - name: 'new, contrainte'
           href: keywords/new-constraint.md
-        - name: où
+        - name: where
           href: keywords/where-generic-type-constraint.md
     - name: Mots clés d'accès
       items:

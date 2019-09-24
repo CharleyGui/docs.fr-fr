@@ -19,6 +19,9 @@
             - name: Microservices .NET - Architecture (livre électronique)
               tocHref: /dotnet/architecture/microservices/
               topicHref: /dotnet/architecture/microservices/index
+            - name: Natif cloud
+              tocHref: /dotnet/architecture/cloud-native/
+              topicHref: /dotnet/architecture/cloud-native/index
             - name: Modernisation des applications .NET (livre électronique)
               tocHref: /dotnet/architecture/modernize-with-azure-containers/
               topicHref: /dotnet/architecture/modernize-with-azure-containers/index
@@ -28,6 +31,12 @@
             - name: Livre électronique sur les applications serverless
               tocHref: /dotnet/architecture/serverless/
               topicHref: /dotnet/architecture/serverless/index
+            - name: Livre électronique Blazor pour les développeurs ASP.NET Web Forms
+              tocHref: /dotnet/architecture/blazor-for-web-forms-developers/
+              topicHref: /dotnet/architecture/blazor-for-web-forms-developers/index
+            - name: gRPC ASP.NET Core pour les développeurs WCF
+              tocHref: /dotnet/architecture/grpc-for-wcf-developers/
+              topicHref: /dotnet/architecture/grpc-for-wcf-developers/index
         - name: Guide de .NET
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
@@ -112,7 +121,7 @@
             - name: Compatibilité
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
-        - name: ".NET\_Framework"
+        - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
           items:
@@ -631,7 +640,7 @@
             - name: Ressources
               tocHref: /dotnet/machine-learning/resources/
               topicHref: /dotnet/machine-learning/resources/index
-            - name: Didacticiels
+            - name: Tutoriels
               tocHref: /dotnet/machine-learning/tutorials/
               topicHref: /dotnet/machine-learning/tutorials/index
         - name: Guide .NET pour Apache Spark
