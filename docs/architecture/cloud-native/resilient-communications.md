@@ -2,12 +2,12 @@
 title: Communication résiliente
 description: Architecture des applications .NET natives Cloud pour Azure | Communication résiliente
 ms.date: 06/30/2019
-ms.openlocfilehash: 75a2ffe611ad0cf4bfa20efb49a6993bdbe6b073
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d7fd4552059f527ad5166dcb6be04248bfad8e4a
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184847"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214494"
 ---
 # <a name="resilient-communications"></a>Communications résilientes
 
@@ -75,4 +75,4 @@ Le Cloud Azure prend en charge Istio et fournit un support direct pour celui-ci 
 
 >[!div class="step-by-step"]
 >[Précédent](infrastructure-resiliency-azure.md)
->[Suivant](monitoring-health.md) <!-- Next Chapter -->
+>[Suivant](monitoring-health.md)

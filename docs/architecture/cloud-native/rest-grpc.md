@@ -3,12 +3,12 @@ title: REST et gRPC
 description: En savoir plus sur gRPC, son rôle dans les applications natives du Cloud et sa différence par rapport à HTTP REST
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: 020b29fc13c72d7e42e5b555fe81e2836c907d6e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d888069168aee1fcfb13354f4b6f9ae2c8d1f233
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184819"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214545"
 ---
 # <a name="rest-and-grpc"></a>REST et gRPC
 
@@ -30,7 +30,7 @@ gRPC est une infrastructure RPC moderne, légère et très performante. Il utili
 
 gRPC est pris en charge sur les plateformes les plus C#populaires, y compris Java,, Golang et NodeJS. 
 
-## <a name="protocol-buffers"></a>Mémoires tampons de protocole
+## <a name="protocol-buffers"></a>Mémoires tampon de protocole
 
 gRPC adopte une autre technologie open source appelée [mémoires tampons de protocole](https://developers.google.com/protocol-buffers/docs/overview) ou messages Protobuf pour envoyer et recevoir des données. À l’instar d’un [contrat de données WCF](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/using-data-contracts), Protobuf sérialise les données structurées pour que les systèmes lisent et écrivent. Cela réduit la surcharge que les formats explicites, tels que XML ou JSON, impliquent.
 
@@ -74,4 +74,3 @@ Avant, gRPC peut jouer un rôle majeur dans la dethroning de la domination des R
 >[!div class="step-by-step"]
 >[Précédent](service-to-service-communication.md)
 >[Suivant](service-mesh-communication-infrastructure.md)
-

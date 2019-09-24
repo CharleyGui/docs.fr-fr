@@ -2,12 +2,12 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: ce573546f61b98c2f93e998203497fa949e9efe8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 04e1b29e6a0cef89df05cc9124806c74a38b5249
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673976"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214354"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
@@ -47,8 +47,7 @@ Le développement des applications se déroule de façon similaire avec ou sans 
 
 Avec les dernières versions de Docker pour Mac et Windows, il n’a jamais été aussi facile de développer des applications Docker, car la configuration est très simple.
 
-> [!INFORMATION]
->
+> [!TIP]
 > Pour obtenir des instructions sur la configuration de Docker sur Windows, accédez à <https://docs.docker.com/docker-for-windows/>.
 >
 >Pour obtenir des instructions sur la configuration de Docker sur Mac, accédez à <https://docs.docker.com/docker-for-mac/>.
@@ -57,8 +56,7 @@ Par ailleurs, vous aurez besoin d’un éditeur de code pour développer votre a
 
 Microsoft propose Visual Studio Code, éditeur de code léger et pris en charge sur Mac, Windows et Linux. Il propose également IntelliSense qui fournit une [prise en charge de nombreux langages](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, Go, Java, Ruby, Python et la plupart des langages modernes), des fonctionnalités de [débogage](https://code.visualstudio.com/Docs/editor/debugging), l’[intégration à Git](https://code.visualstudio.com/Docs/editor/versioncontrol) et la [prise en charge des extensions](https://code.visualstudio.com/docs/extensions/overview). Cet éditeur est parfait pour les développeurs Mac et Linux. Dans Windows, vous pouvez également utiliser l’intégralité de l’application Visual Studio.
 
-> [!INFORMATION]
->
+> [!TIP]
 > Pour obtenir des instructions concernant l’installation de Visual Studio Code sur Windows, Mac ou Linux, accédez à <https://code.visualstudio.com/docs/setup/setup-overview/>.
 >
 > Pour obtenir des instructions sur la configuration de Docker sur Mac, accédez à <https://docs.docker.com/docker-for-mac/>.
@@ -94,7 +92,6 @@ Vous aurez besoin qu’un `DockerFile` soit créé pour chaque image personnalis
 Le `DockerFile` est généralement placé dans le dossier racine de votre application ou de votre service. Il contient les commandes dont a besoin Docker pour savoir comment configurer et exécuter l’application ou le service. Vous pouvez créer votre `DockerFile` et l’ajouter à votre projet en même temps que votre code (node.js, .NET Core, etc.). Si vous ne connaissez pas encore bien l’environnement, lisez l’info-bulle suivante.
 
 > [!TIP]
->
 > L’extension Docker peut vous guider lors de l’utilisation des fichiers `Dockerfile` et `docker-compose.yml` associés à vos conteneurs Docker. Vous finirez probablement par écrire ces types de fichiers sans vous aider de cet outil. Toutefois, l’utilisation de l’extension Docker constitue un bon point de départ qui vous permet d’apprendre plus vite.
 
 Dans la figure 4-24, vous pouvez voir comment le fichier docker-compose est ajouté à l’aide de l’extension Docker pour VS Code.
@@ -133,8 +130,7 @@ Dans le fichier DockerFile, vous pouvez également demander à Docker d’écout
 
 Vous pouvez spécifier des paramètres de configuration supplémentaires dans le fichier Dockerfile, en fonction du langage et du framework que vous utilisez. Par exemple, la ligne `ENTRYPOINT` avec `["dotnet", "MySingleContainerWebApp.dll"]` indique à Docker d’exécuter une application .NET Core. Si vous utilisez le SDK et l’interface CLI .NET Core (`dotnet CLI`) pour créer et exécuter l’application .NET, ce paramètre est différent. L’essentiel à retenir est que la ligne ENTRYPOINT et certains autres paramètres varient selon le langage et la plateforme choisis pour votre application.
 
-> [!INFORMATION]
->
+> [!TIP]
 > Pour plus d’informations sur la création d’images Docker pour les applications .NET Core, accédez à <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 >
 > Pour savoir comment créer vos propres images, accédez à <https://docs.docker.com/engine/tutorials/dockerimages/>.
@@ -154,7 +150,6 @@ Vous pouvez créer votre propre image de base Docker à partir de zéro, comme l
 Vous devrez créer une image pour chaque service personnalisé qui compose votre application. Si votre application n’est composée que d’un seul service ou d’une seule application web, vous n’aurez besoin que d’une seule image.
 
 > [!NOTE]
->
 > Avec le « workflow de boucle externe DevOps », les images sont créées par un processus de génération automatique dès que vous poussez (push) votre code source vers un dépôt Git (intégration continue). Les images sont donc créées dans cet environnement global à partir de votre code source.
 >
 > Mais avant de choisir l’option de boucle externe, nous devons vérifier que l’application Docker fonctionne correctement, afin de ne pas pousser (push) vers le système de contrôle de code source (Git, etc.) du code qui ne fonctionne pas correctement.
@@ -214,7 +209,7 @@ Le service redis utilise la [dernière image redis publique](https://hub.docker.
 
 Si votre application ne comprend qu’un seul conteneur, vous pouvez l’exécuter en la déployant sur l’hôte Docker (machine virtuelle ou serveur physique). Toutefois, si votre application est composée de plusieurs services, vous devez également la *composer*. Voyons les différentes options.
 
-***Option A : Exécuter un seul conteneur ou service***
+***Option A : Exécuter un seul conteneur ou service***
 
 Vous pouvez exécuter l’image Docker à l’aide de la commande docker run, comme illustré ici :
 
@@ -224,7 +219,7 @@ docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 
 Pour ce déploiement, nous allons rediriger les requêtes envoyées au port 80 vers le port interne 5000. À présent, l’application écoute le port externe 80 au niveau de l’hôte.
 
-***Option B : Composer et exécuter une application à plusieurs conteneurs***
+***Option B : Composer et exécuter une application à plusieurs conteneurs***
 
 Dans la plupart des scénarios d’entreprise, une application Docker est composée de plusieurs services. Dans ce cas, vous pouvez exécuter la commande `docker-compose up` (figure 4-27), qui utilise le fichier docker-compose.yml que vous avez peut-être créé précédemment. L’exécution de cette commande déploie une application composée avec tous ses conteneurs.
 

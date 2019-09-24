@@ -2,12 +2,12 @@
 title: Résilience de la plateforme Azure
 description: Architecture des applications .NET natives Cloud pour Azure | Résilience de l’infrastructure cloud avec Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 5d8ddc65ccdf4bb305be62e5caca30eab49f87e2
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 7f148588be97fa6bf8a055f5f5bed8e23908277f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182978"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214200"
 ---
 # <a name="azure-platform-resiliency"></a>Résilience de la plateforme Azure
 
@@ -68,7 +68,7 @@ Le Cloud est très prospère en matière de mise à l’échelle. La possibilit�
 
 - *Tirez parti des fonctionnalités de mise à l’échelle automatique de la plateforme.* Utilisez les fonctionnalités de mise à l’échelle automatique dans la mesure du possible, au lieu de mécanismes personnalisés ou tiers. Dans la mesure du possible, utilisez des règles de mise à l’échelle planifiées pour vous assurer que les ressources sont disponibles sans délai de démarrage, mais ajoutez la mise à l’échelle automatique réactive aux règles, le cas échéant, afin de faire face aux modifications inattendues de la demande. Pour plus d’informations, consultez [Guide de mise à l’échelle](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)automatique.
 
- - *Montée en puissance de façon agressive.* Une dernière pratique serait de monter en puissance de façon agressive afin que vous puissiez répondre rapidement aux pics immédiats du trafic sans perdre votre activité. Et, réduisez la taille des ressources (en d’autres, supprimez les ressources inutiles) de manière conservatrice pour garantir la stabilité du système. Un moyen simple d’implémenter cela consiste à définir la période de refroidissement, qui est le temps d’attente entre les opérations de mise à l’échelle, à cinq minutes pour l’ajout de ressources et jusqu’à 15 minutes pour la suppression des instances.
+- *Montée en puissance de façon agressive.* Une dernière pratique serait de monter en puissance de façon agressive afin que vous puissiez répondre rapidement aux pics immédiats du trafic sans perdre votre activité. Et, réduisez la taille des ressources (en d’autres, supprimez les ressources inutiles) de manière conservatrice pour garantir la stabilité du système. Un moyen simple d’implémenter cela consiste à définir la période de refroidissement, qui est le temps d’attente entre les opérations de mise à l’échelle, à cinq minutes pour l’ajout de ressources et jusqu’à 15 minutes pour la suppression des instances.
 
 ## <a name="built-in-retry-in-services"></a>Nouvelle tentative intégrée dans les services
 

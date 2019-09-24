@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: L’utilisation de Azure Monitor pour obtenir une visibilité de votre système est en cours d’exécution.
 ms.date: 09/23/2019
-ms.openlocfilehash: 89c27ffc3ba13194baf7b05e75920bf33dc6c5f3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 20048792e95ef1f6e75551cdd0d3571f972f6c14
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183573"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214095"
 ---
 # <a name="azure-monitor"></a>Azure Monitor 
 
@@ -77,4 +77,4 @@ Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre le
 
 >[!div class="step-by-step"]
 >[Précédent](monitoring-azure-kubernetes.md)
->[Suivant](identity.md) <!-- Next Chapter -->
+>[Suivant](identity.md)

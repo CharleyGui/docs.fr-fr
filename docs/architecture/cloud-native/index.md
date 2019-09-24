@@ -3,12 +3,12 @@ title: Architecture des applications .NET natives Cloud pour Azure
 description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
 ms.date: 03/07/2019
-ms.openlocfilehash: ce9898366d0327dd619b36cdf1487229d9cda7f5
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67e235b051702308d2455b2501bfb59a4317635b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183041"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214168"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
@@ -40,7 +40,7 @@ Le logo de Docker représentant une baleine est une marque déposée de Docker, 
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
-Auteur :
+Extrait
 
 > **Steve « ardalis » Smith** - Architecte et formateur logiciel - [Ardalis.com](https://ardalis.com)
 >
@@ -70,7 +70,7 @@ Ce guide commence par définir le Cloud native et introduit une application de r
 - Modèles de communication
 - Mise à l’échelle et évolutivité
 - Résilience des applications
-- Surveillance et intégrité
+- Supervision et intégrité
 - Identité et sécurité
 - DevOps
 

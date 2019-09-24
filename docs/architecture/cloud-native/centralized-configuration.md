@@ -2,12 +2,12 @@
 title: Configuration centralisée
 description: La configuration centralisée à l’aide de Azure Key Vault peut faciliter la gestion des applications Cloud natives.
 ms.date: 06/30/2019
-ms.openlocfilehash: f4f495591550abccf2c64ef24cbe7620b039d8ca
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 4c516b6773d913acd71ff06742302e9766a141e2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183517"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214000"
 ---
 # <a name="centralized-configuration"></a>Configuration centralisée
 
@@ -27,4 +27,4 @@ Avec la configuration centralisée, les paramètres qui s’appliquent à l’en
 
 >[!div class="step-by-step"]
 >[Précédent](deploy-eshoponcontainers-azure.md)
->[Suivant](scale-applications.md) <!-- Next Chapter -->
+>[Suivant](scale-applications.md)

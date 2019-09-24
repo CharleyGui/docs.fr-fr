@@ -1,16 +1,16 @@
 ---
-title: Infrastructure de communication de maillage de service
+title: Infrastructure de communication Service Mesh
 description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: dc9237197732ea622aad726583140623b0a5a4f4
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 884b3bf9afd80144a36d3328af916f1c1f12bf4f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184784"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214347"
 ---
-# <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication de maillage de service
+# <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -74,4 +74,4 @@ Nous allons ensuite passer aux données distribuées dans les systèmes natifs d
 
 >[!div class="step-by-step"]
 >[Précédent](rest-grpc.md)
->[Suivant](distributed-data.md) <!-- Next Chapter -->
+>[Suivant](distributed-data.md)

@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 7a69678fd38a69c3c2d7e91d4aea019c39141cb6
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: e9f27309fd6b03830ab3098d0fb08a7ecf5c0eaa
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184672"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214390"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -60,7 +60,7 @@ Une option courante pour supprimer le couplage de microservices est le [modèle 
 
 ### <a name="service-aggregator-pattern"></a>Modèle d’agrégateur de service
 
-Une autre option permettant d’éliminer le couplage microservice à micrservice est un [microservice d’agrégation](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), illustré en violet dans la figure 4-10. 
+Une autre option permettant d’éliminer le couplage microservice à microservice est un [microservice d’agrégation](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), illustré en violet dans la figure 4-10. 
 
 ![Service d’agrégation](./media/aggregator-service.png)
 
@@ -232,4 +232,4 @@ Pour les applications Cloud natives qui doivent diffuser en continu un grand nom
 
 >[!div class="step-by-step"]
 >[Précédent](front-end-communication.md)
->[Suivant](rest-grpc.md) <!-- Next Chapter -->
+>[Suivant](rest-grpc.md)

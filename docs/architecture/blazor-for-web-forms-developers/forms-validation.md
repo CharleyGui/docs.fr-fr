@@ -4,12 +4,12 @@ description: Découvrez comment créer des formulaires avec la validation côté
 author: danroth27
 ms.author: daroth
 ms.date: 09/19/2019
-ms.openlocfilehash: 40b0c4ecce15032b0ae834fe3100414abd7e4e59
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 9062e0ab106b7e647646bf5d206106153d7d9009
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183930"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214027"
 ---
 # <a name="forms-and-validation"></a>Formulaires et validation
 
@@ -78,7 +78,7 @@ Le composant suivant illustre la génération d’un formulaire dans éblouissan
     <p>
         <label for="identifier">Identifier: </label>
         <InputText id="identifier" @bind-Value="starship.Identifier" />
-        <ValidationMessage For="() => "starship.Identifier" />
+        <ValidationMessage For="() => starship.Identifier" />
     </p>
     <p>
         <label for="description">Description (optional): </label>
@@ -92,22 +92,22 @@ Le composant suivant illustre la génération d’un formulaire dans éblouissan
             <option value="Diplomacy">Diplomacy</option>
             <option value="Defense">Defense</option>
         </InputSelect>
-        <ValidationMessage For="() => "starship.Classification" />
+        <ValidationMessage For="() => starship.Classification" />
     </p>
     <p>
         <label for="accommodation">Maximum Accommodation: </label>
         <InputNumber id="accommodation" @bind-Value="starship.MaximumAccommodation" />
-        <ValidationMessage For="() => "starship.MaximumAccommodation" />
+        <ValidationMessage For="() => starship.MaximumAccommodation" />
     </p>
     <p>
         <label for="valid">Engineering Approval: </label>
         <InputCheckbox id="valid" @bind-Value="starship.IsValidatedDesign" />
-        <ValidationMessage For="() => "starship.IsValidatedDesign" />
+        <ValidationMessage For="() => starship.IsValidatedDesign" />
     </p>
     <p>
         <label for="productionDate">Production Date: </label>
         <InputDate id="productionDate" @bind-Value="starship.ProductionDate" />
-        <ValidationMessage For="() => "starship.ProductionDate" />
+        <ValidationMessage For="() => starship.ProductionDate" />
     </p>
 
     <button type="submit">Submit</button>
