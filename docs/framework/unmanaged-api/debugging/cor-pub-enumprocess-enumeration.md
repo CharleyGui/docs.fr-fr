@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 412e2bb7da7b5b3396342df169d56d2724ddb466
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eab5fc13b74d8af4f0baaa3953c5c73ea255bfe6
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740552"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274020"
 ---
-# <a name="corpubenumprocess-enumeration"></a>COR_PUB_ENUMPROCESS, énumération
+# <a name="cor_pub_enumprocess-enumeration"></a>COR_PUB_ENUMPROCESS, énumération
 Identifie le type de processus à énumérer.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,20 +38,20 @@ typedef enum {
   
 |Nom de membre|Description|  
 |-----------------|-----------------|  
-|`COR_PUB_MANAGEDONLY`|Un processus managé.|  
+|`COR_PUB_MANAGEDONLY`|Processus managé.|  
   
 ## <a name="remarks"></a>Notes  
  La version actuelle de l’API de débogage non managé énumère uniquement les processus managés.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

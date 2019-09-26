@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: eaf92bea30b80a47d0f623e38eed7768bccdbb6a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 9e70e2fff0bee22bcb7d7668f33302f7e7013117
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928503"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273135"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénarios d'application (services de données WCF)
 
@@ -18,7 +18,7 @@ ms.locfileid: "70928503"
 
 Exposer des données relationnelles d’une base de [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] données en tant que flux.
 
-- [Démarrage rapide](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Démarrage rapide](quickstart-wcf-data-services.md)
 
 - [Exposition de vos données comme service](exposing-your-data-as-a-service-wcf-data-services.md)
 
@@ -26,15 +26,15 @@ Exposer des données relationnelles d’une base de [!INCLUDE[ssODataShort](../.
 
 Exposer des classes de données CLR arbitraires sous forme de flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].
 
-- [Exposition de vos données comme service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)
+- [Exposition de vos données comme service](exposing-your-data-as-a-service-wcf-data-services.md)
 
-- [Guide pratique : Créer un service de données à l’aide du fournisseur de réflexion](create-a-data-service-using-rp-wcf-data-services.md)
+- [Guide pratique pour Créer un service de données à l’aide du fournisseur de réflexion](create-a-data-service-using-rp-wcf-data-services.md)
 
 - [Fournisseurs de services de données](data-services-providers-wcf-data-services.md)
 
 Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dans une application cliente .NET Framework.
 
-- [Démarrage rapide](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Démarrage rapide](quickstart-wcf-data-services.md)
 
 - [Utilisation d’un service de données dans une application cliente](using-a-data-service-in-a-client-application-wcf-data-services.md)
 
@@ -46,11 +46,11 @@ Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.m
 
 - [Opérations asynchrones](asynchronous-operations-wcf-data-services.md)
 
-- [Guide pratique : Lier des données de service de données à des contrôles (client Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
+- [Guide pratique pour Lier des données de service de données à des contrôles (client Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
 
 Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dans une application AJAX cliente.
 
-- [Utilisation d’un service de données dans une application cliente](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)
+- [Utilisation d’un service de données dans une application cliente](using-a-data-service-in-a-client-application-wcf-data-services.md)
 
 - [OData Conventions d’URI](https://go.microsoft.com/fwlink/?LinkId=185564)
 
@@ -58,7 +58,7 @@ Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.m
 
 Créez une solution de données de bout en bout qui utilise [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] pour transférer des données entre le client et le serveur.
 
-- [Démarrage rapide](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Démarrage rapide](quickstart-wcf-data-services.md)
 
 - [Utilisation d’un service de données dans une application cliente](using-a-data-service-in-a-client-application-wcf-data-services.md)
 
@@ -66,7 +66,7 @@ Créez une solution de données de bout en bout qui utilise [!INCLUDE[ssODataSho
 
 Créer une application cliente .NET Framework qui consomme un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] de façon asynchrone pour éviter les problèmes de latence sur le client.
 
-- [Guide pratique pour Exécuter des requêtes de service de données asynchrones](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)
+- [Guide pratique pour Exécuter des requêtes de service de données asynchrones](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)
 
 - [Opérations asynchrones](asynchronous-operations-wcf-data-services.md)
 
@@ -74,13 +74,13 @@ Créer une application cliente .NET Framework qui consomme un flux [!INCLUDE[ssO
 
 Exposer et consommer un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux avec un objet binaire volumineux accessible et modifié en tant que flux.
 
-- [Fournisseur de streaming](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)
+- [Fournisseur de streaming](streaming-provider-wcf-data-services.md)
 
 - [Utilisation des données binaires](working-with-binary-data-wcf-data-services.md)
 
 Liez [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] des flux à des contrôles dans une application WPF (Windows Presentation Framework).
 
-- [Liaison de données aux contrôles](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)
+- [Liaison de données aux contrôles](binding-data-to-controls-wcf-data-services.md)
 
 - [Guide pratique pour Lier des données à des éléments Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
 
@@ -88,13 +88,13 @@ Liez [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] des flux 
 
 Intercepter des messages entrants dans le service de données pour effectuer une validation des données et le filtrage de requêtes basé sur un rôle.
 
-- [Guide pratique pour Intercepter des messages de service de données](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md)
+- [Guide pratique pour Intercepter des messages de service de données](how-to-intercept-data-service-messages-wcf-data-services.md)
 
 - [Intercepteurs](interceptors-wcf-data-services.md)
 
 Créer des points de terminaison sur un service de données pour autoriser des comportements de service personnalisés.
 
-- [Guide pratique : Définir une opération de service](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)
+- [Guide pratique pour Définir une opération de service](how-to-define-a-service-operation-wcf-data-services.md)
 
 - [Opérations de service](service-operations-wcf-data-services.md)
 

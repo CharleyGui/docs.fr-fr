@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Accrocher une commande à un contrôle sans prise en charge de la commande'
+title: 'Procédure : Raccorder une commande à un contrôle sans prise en charge de commande'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,13 +11,13 @@ helpviewer_keywords:
 - classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: dad08f64-700b-46fb-ad3f-fbfee95f0dfe
 ms.openlocfilehash: 3ae45c9a9e33a3cb53ada6e1e5430ae0f9e6c198
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "71263303"
 ---
-# <a name="how-to-hook-up-a-command-to-a-control-with-no-command-support"></a>Procédure : Accrocher une commande à un contrôle sans prise en charge de la commande
+# <a name="how-to-hook-up-a-command-to-a-control-with-no-command-support"></a>Procédure : Raccorder une commande à un contrôle sans prise en charge de commande
 L’exemple suivant montre comment raccorder <xref:System.Windows.Input.RoutedCommand> à un <xref:System.Windows.Controls.Control> qui n’a pas de prise en charge intégrée de la commande.  Pour obtenir un exemple complet qui raccorde des commandes à plusieurs sources, consultez l’exemple [Créer un exemple RoutedCommand personnalisé](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand).  
   
 ## <a name="example"></a>Exemple  

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
 ms.openlocfilehash: 3f1f0698afce6e64711e37ac60d0662d65bbee6b
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70016137"
 ---
 # <a name="opentype-font-features"></a>Fonctionnalités des polices OpenType
@@ -24,7 +24,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
 ## <a name="opentype-font-format"></a>Format des polices OpenType  
  Le format de police OpenType est une extension du [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format de police, qui ajoute la prise en charge des données de police PostScript. Le format de police OpenType a été développé conjointement par Microsoft et Adobe Corporation. Les polices OpenType et les services de système d’exploitation qui prennent en charge les polices OpenType fournissent aux utilisateurs un moyen simple d’installer et d' [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] utiliser des polices, que les polices contiennent des contours ou des contours de ligne (PostScript).  
   
- Le format de police OpenType répond aux défis de développement suivants:  
+ Le format de police OpenType répond aux défis de développement suivants :  
   
 - Prise en charge multi-plateforme élargie.  
   
@@ -50,7 +50,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
   
 - Présence d’informations explicites de script et de langage dans la police, ce qui permet à une application de traitement de texte d’ajuster son comportement en conséquence.  
   
- Les tableaux de disposition OpenType sont décrits plus en détail dans la section [«tables de fichiers de polices»](https://www.microsoft.com/typography/otspec/otff.htm) de la spécification OpenType.  
+ Les tableaux de disposition OpenType sont décrits plus en détail dans la section [« tables de fichiers de polices »](https://www.microsoft.com/typography/otspec/otff.htm) de la spécification OpenType.  
   
  Le reste de cette vue d’ensemble présente la largeur et la flexibilité de certaines des fonctionnalités OpenType visuellement intéressantes qui sont exposées par les propriétés de <xref:System.Windows.Documents.Typography> l’objet. Pour plus d’informations sur cet objet, consultez [Classe Typography](#typography_class).  
   
@@ -63,7 +63,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
   
  Le texte suivant présente des exposants avec la police Palatino Linotype.  
   
- ![Texte utilisant] des exposants OpenType (./media/opentype-font-features/opentype-superscripts.gif "Texte utilisant") des exposants OpenType  
+ ![Texte utilisant des exposants OpenType](./media/opentype-font-features/opentype-superscripts.gif "Texte utilisant des exposants OpenType")  
   
  L’exemple de balisage suivant montre comment définir des exposants pour la police Palatino Linotype, à l' <xref:System.Windows.Documents.Typography> aide des propriétés de l’objet.  
   
@@ -118,7 +118,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
   
 <a name="ligatures"></a>   
 ## <a name="ligatures"></a>Ligatures  
- Une ligature est un glyphe formé de deux ou plusieurs glyphes dans le but de créer un texte plus lisible ou esthétique. Les polices OpenType prennent en charge quatre types de ligatures:  
+ Une ligature est un glyphe formé de deux ou plusieurs glyphes dans le but de créer un texte plus lisible ou esthétique. Les polices OpenType prennent en charge quatre types de ligatures :  
   
 - **Ligatures standard** : conçues pour améliorer la lisibilité. Par exemple, « fi », « fl » et « ff » sont des ligatures standard.  
   
@@ -150,7 +150,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
    
  Vous pouvez cependant désactiver les fonctionnalités de ligature standard de sorte qu’une ligature standard comme « ff » s’affiche comme deux glyphes distincts et non comme un glyphe de caractères combinés.  
   
- ![Texte utilisant des ligatures standard OpenType] désactivées (./media/opentype-font-features/disabled-opentype-standard-ligatures.gif "Texte utilisant des ligatures standard OpenType") désactivées  
+ ![Texte utilisant des ligatures standard OpenType désactivées](./media/opentype-font-features/disabled-opentype-standard-ligatures.gif "Texte utilisant des ligatures standard OpenType désactivées")  
     
  L’exemple de balisage suivant montre comment désactiver les glyphes de ligature standard pour la police Palatino Linotype, à <xref:System.Windows.Documents.Typography> l’aide des propriétés de l’objet.  
   
@@ -187,7 +187,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
 
  La police OpenType Pericles contient des glyphes supplémentaires qui fournissent des variantes stylistiques à l’ensemble de glyphes standard. Le texte suivant présente des glyphes de style alternatif.  
   
- ![Texte utilisant] des glyphes de style alternatif OpenType (./media/opentype-font-features/opentype-stylistic-alternate-glyphs.gif "Texte utilisant") des glyphes de style alternatif OpenType  
+ ![Texte utilisant des glyphes de style alternatif OpenType](./media/opentype-font-features/opentype-stylistic-alternate-glyphs.gif "Texte utilisant des glyphes de style alternatif OpenType")  
   
  L’exemple de balisage suivant montre comment définir des glyphes de substitution stylistiques pour la police Pericles, à <xref:System.Windows.Documents.Typography> l’aide des propriétés de l’objet.  
   
@@ -259,7 +259,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet19](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]  
   
 ### <a name="slashed-zero"></a>Zéro barré  
- Les polices OpenType prennent en charge un format de chiffre zéro barré pour mettre en évidence la différence entre la lettre «O» et le chiffre «0». Le chiffre zéro barré est souvent utilisé pour les identificateurs dans les informations financières et commerciales.  
+ Les polices OpenType prennent en charge un format de chiffre zéro barré pour mettre en évidence la différence entre la lettre « O » et le chiffre « 0 ». Le chiffre zéro barré est souvent utilisé pour les identificateurs dans les informations financières et commerciales.  
   
  Le texte suivant présente un exemple d’identificateur de commande avec la police Miramonte. La première ligne contient des chiffres standard. La deuxième ligne contient des chiffres zéro barré pour mieux les distinguer de la lettre « O » majuscule.  
   
@@ -289,7 +289,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
 ### <a name="typography-class-properties"></a>Propriétés de la classe Typography  
  Le tableau suivant répertorie les propriétés, les valeurs et les paramètres par <xref:System.Windows.Documents.Typography> défaut de l’objet.  
   
-|Propriété|Valeur(s)|Valeur par défaut|  
+|Property|Valeur(s)|Valeur par défaut|  
 |--------------|----------------|-------------------|  
 |<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Valeur numérique - octet|0|  
 |<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals.AllPetiteCaps> &#124; <xref:System.Windows.FontCapitals.AllSmallCaps> &#124; <xref:System.Windows.FontCapitals.Normal> &#124; <xref:System.Windows.FontCapitals.PetiteCaps> &#124; <xref:System.Windows.FontCapitals.SmallCaps> &#124; <xref:System.Windows.FontCapitals.Titling> &#124; <xref:System.Windows.FontCapitals.Unicase>|<xref:System.Windows.FontCapitals.Normal?displayProperty=nameWithType>|  

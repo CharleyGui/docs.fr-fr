@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: f72a9f60d0adcace2df6f1761940f8d8cd33d3af
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a9b6af31b68c25ab58c52757f48ed23cca3f5a35
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119288"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71263311"
 ---
 ### <a name="better-argument-validation-in-the-pkcs8privatekeyinfo-constructor"></a>Meilleure validation d’argument dans le constructeur Pkcs8PrivateKeyInfo
 
-À compter de .net Core 3,0 Preview 9, `Pkcs8PrivateKeyInfo` le constructeur valide le `algorithmParameters` paramètre en tant que valeur codée BER unique. 
+À compter de .net Core 3,0 Preview 9, `Pkcs8PrivateKeyInfo` le constructeur valide le `algorithmParameters` paramètre en tant que valeur codée BER unique.
 
 #### <a name="change-description"></a>Modifier la description
 

@@ -4,17 +4,17 @@ description: Répertorie les dernières modifications apportées à .NET CoreFx,
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7940da342bae6a745b6729ad00c42dbde27a96c8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 3838bcd7c127860a8307fe31bd85ed5addffb59e
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217135"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272714"
 ---
 # <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
 
 > [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub. 
+> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.
 
 La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core. CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.
 
@@ -65,4 +65,3 @@ La liste suivante répertorie les modifications avec rupture CoreFx par version 
 ***
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/ziparchiveentry-and-inconsistent-entry-sizes.md)]
-

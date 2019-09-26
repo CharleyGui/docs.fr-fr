@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6875ce0e7ae4cefa9b0c8abaded0dd4535bdf838
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 50dd4acece43628b20b6bc50a539ee197e865855
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740828"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274155"
 ---
-# <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION, structure
-Contient des informations sur les fonctions qui sont actuellement actives dans les trames d'un thread. Cette structure est utilisée par le [ICorDebugThread2::GetActiveFunctions](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) (méthode).  
+# <a name="cor_active_function-structure"></a>COR_ACTIVE_FUNCTION, structure
+Contient des informations sur les fonctions qui sont actuellement actives dans les trames d'un thread. Cette structure est utilisée par la méthode [ICorDebugThread2 :: GetActiveFunctions,](icordebugthread2-getactivefunctions-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,22 +42,22 @@ typedef struct  _COR_ACTIVE_FUNCTION {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`pAppDomain`|Pointeur vers le propriétaire du domaine d’application le `ilOffset` champ.|  
-|`pModule`|Pointeur vers le propriétaire du module le `ilOffset` champ.|  
-|`pFunction`|Pointeur vers le propriétaire de la fonction de la `ilOffset` champ.|  
-|`ilOffset`|L’offset Microsoft intermediate language (MSIL), du frame.|  
-|`flags`|Réservé pour une extensibilité future.|  
+|`pAppDomain`|Pointeur vers le propriétaire du domaine d’application `ilOffset` du champ.|  
+|`pModule`|Pointeur désignant le propriétaire du `ilOffset` module du champ.|  
+|`pFunction`|Pointeur désignant le propriétaire de `ilOffset` la fonction du champ.|  
+|`ilOffset`|Décalage MSIL (Microsoft Intermediate Language) du frame.|  
+|`flags`|Réservé pour une future extensibilité.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

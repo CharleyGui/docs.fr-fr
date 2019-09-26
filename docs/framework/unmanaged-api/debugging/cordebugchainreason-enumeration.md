@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e46118e97a4b888a16f12cf6705d2b7e67bbf7ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fce803544b393ac2c441779183cbf49d4c39bdae
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740358"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273979"
 ---
 # <a name="cordebugchainreason-enumeration"></a>CorDebugChainReason, énumération
 Indique la ou les raisons de la mise en route d'une chaîne d'appels.  
@@ -65,17 +65,17 @@ typedef enum CorDebugChainReason {
 |`CHAIN_FUNC_EVAL`|La chaîne a été démarrée par une évaluation de fonction.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le [ICorDebugChain::GetReason](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) méthode pour déterminer les raisons de l’initiation d’une chaîne d’appel.  
+ Utilisez la méthode [ICorDebugChain :: GetReason](icordebugchain-getreason-method.md) pour déterminer les raisons de l’initiation d’une chaîne d’appel.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

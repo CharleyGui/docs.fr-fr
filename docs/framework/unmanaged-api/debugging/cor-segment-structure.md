@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eef2d75a2c8a3445c7f8666fec5be9e4d089e3cb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aabf3ac4e51280bd847d145e15ad804d514ede2c
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740520"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274006"
 ---
-# <a name="corsegment-structure"></a>COR_SEGMENT, structure
+# <a name="cor_segment-structure"></a>COR_SEGMENT, structure
 Contient des informations sur une région de la mémoire dans le tas managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,24 +43,24 @@ typedef struct _COR_SEGMENT {
 |------------|-----------------|  
 |`start`|Adresse de départ de la zone de mémoire.|  
 |`end`|Adresse de fin de la zone de mémoire.|  
-|`gen`|Membre d’énumération [CorDebugGenerationTypes](../../../../docs/framework/unmanaged-api/debugging/cordebuggenerationtypes-enumeration.md) qui indique la génération de la zone de mémoire.|  
+|`gen`|Membre d’énumération [CorDebugGenerationTypes](cordebuggenerationtypes-enumeration.md) qui indique la génération de la zone de mémoire.|  
 |`heap`|Numéro du tas dans lequel réside la zone de mémoire. Pour plus d'informations, consultez la section Notes.|  
   
 ## <a name="remarks"></a>Notes  
- La structure `COR_SEGMENTS` représente une zone de mémoire dans le tas managé.  Les objets `COR_SEGMENTS` sont des membres de l’objet de collection [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md), qui est rempli en appelant la méthode [ICorDebugProcess5::EnumerateHeapRegions](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md).  
+ La structure `COR_SEGMENTS` représente une zone de mémoire dans le tas managé.  Les objets `COR_SEGMENTS` sont des membres de l’objet de collection [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md), qui est rempli en appelant la méthode [ICorDebugProcess5::EnumerateHeapRegions](icordebugprocess5-enumerateheapregions-method.md).  
   
  Le champ `heap` est le numéro de processeur, qui correspond au tas signalé. Pour les récupérateurs de mémoire de station de travail, sa valeur est toujours égale à zéro, car les stations de travail n’ont qu’un seul tas de garbage collection. Pour les récupérateurs de mémoire de serveur, sa valeur correspond au processeur auquel le tas est attaché. Notez qu’il peut y avoir plus ou moins de tas de garbage collection que de processeurs, en raison des détails d’implémentation du récupérateur de mémoire.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

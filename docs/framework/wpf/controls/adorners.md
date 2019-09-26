@@ -7,14 +7,14 @@ helpviewer_keywords:
 - adorners [WPF]
 ms.assetid: 5d5f656b-8e05-4839-9d53-b0324d902aa9
 ms.openlocfilehash: b422294095425d163665f59f2bfb451da3158c8a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "71263365"
 ---
 # <a name="adorners"></a>Ornements
-Cette section fournit des informations à propos des ornements et le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] infrastructure d’ornement.  
+Cette section fournit des informations sur les ornements [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] et l’infrastructure d’ornements.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble des ornements](adorners-overview.md)  

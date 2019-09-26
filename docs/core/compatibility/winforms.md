@@ -4,17 +4,17 @@ description: Répertorie les dernières modifications apportées à Windows Form
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b08361bc71149f517d070a58c97d243840500ea
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 436088836ff5441e426379bb41f96821cbc7e500
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217086"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272718"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
 
 > [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub. 
+> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.
 
 La liste suivante répertorie les dernières modifications apportées à Windows Forms par la version de .NET Core.
 
@@ -55,7 +55,6 @@ La liste suivante répertorie les dernières modifications apportées à Windows
 [!INCLUDE[SerializableAttribute removed from some Windows Forms types](~/includes/core-changes/windowsforms/remove-serializationattribute.md)]
 
 ## <a name="net-core-30"></a>.NET Core 3.0
-
 
 [!INCLUDE[Control.DefaultFont changed to Segoe UI 9pt](~/includes/core-changes/windowsforms/control-defaultfont-changed.md)]
 

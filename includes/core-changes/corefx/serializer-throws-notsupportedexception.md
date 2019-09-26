@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 39d1b2dba8077bf9bf998775f8967d455f36b549
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a35439efce25db94e70420fc6aeaf04816525758
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119281"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71263320"
 ---
 ### <a name="json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception"></a>Le type d’exception du sérialiseur `JsonException` JSON est passé de à`NotSupportedException`
 
@@ -14,12 +14,12 @@ Dans .net Core 3,0 Preview 6 à 8, le sérialiseur lève une exception <xref:Sys
 
 Dans .net Core 3,0 Preview 6 à Preview 8, le sérialiseur lève une exception <xref:System.Text.Json.JsonException> lorsqu’il a rencontré un type de collection dérivé non pris en charge. Un *type de collection dérivé non pris en charge* est un type de collection qui n’est pas attribuable à l’un des types suivants :
 
- - <xref:System.Collections.IList>
- - <xref:System.Collections.Generic.ICollection%601>
- - <xref:System.Collections.Generic.Stack%601>
- - <xref:System.Collections.Generic.Queue%601>`
- - <xref:System.Collections.IDictionary>
- - [Chaîne\<IDictionary, T >](xref:System.Collections.Generic.IDictionary%602)
+- <xref:System.Collections.IList>
+- <xref:System.Collections.Generic.ICollection%601>
+- <xref:System.Collections.Generic.Stack%601>
+- <xref:System.Collections.Generic.Queue%601>`
+- <xref:System.Collections.IDictionary>
+- [Chaîne\<IDictionary, T >](xref:System.Collections.Generic.IDictionary%602)
 
 À compter de .net Core 3,0 Preview 9, le sérialiseur lève une <xref:System.NotSupportedException> lorsqu’il rencontre un type de collection non pris en charge. Le nouveau type d’exception reflète mieux la raison pour laquelle l’opération de désérialisation échoue.
 

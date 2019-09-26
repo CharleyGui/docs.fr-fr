@@ -6,10 +6,10 @@ helpviewer_keywords:
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69913032"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Procédure : Activer et désactiver la redirection de liaison automatique
@@ -26,16 +26,16 @@ Si vous disposez de Visual Studio 2017 version 15,7 ou ultérieure, vous pouvez 
 
 1. Cliquez avec le bouton droit sur le projet dans **l’Explorateur de solutions**, puis sélectionnez **Propriétés**.
 
-2. Sur la page **application** , décochez l’option **générer automatiquement** les redirections de liaison.
+2. Sur la page **application** , décochez l’option **générer automatiquement les redirections de liaison** .
 
 3. Appuyez sur **CTRL**+**S** pour enregistrer la modification.
 
 ### <a name="disable-manually-in-the-project-file"></a>Désactiver manuellement dans le fichier projet
 
-1. Ouvrez le fichier projet pour le modifier à l’aide de l’une des méthodes suivantes:
+1. Ouvrez le fichier projet pour le modifier à l’aide de l’une des méthodes suivantes :
 
    - Dans Visual Studio, sélectionnez le projet dans **Explorateur de solutions**, puis choisissez **ouvrir le dossier dans l’Explorateur de fichiers** dans le menu contextuel. Dans l’Explorateur de fichiers, recherchez le fichier projet (. csproj ou. vbproj) et ouvrez-le dans le bloc-notes.
-   - Dans Visual Studio, dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet et choisissez décharger le **projet**. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis choisissez **modifier [ProjectName. csproj]** .
+   - Dans Visual Studio, dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet et choisissez **décharger le projet**. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis choisissez **modifier [ProjectName. csproj]** .
 
 2. Dans le fichier projet, recherchez l'entrée de propriété suivante :
 
@@ -53,18 +53,18 @@ Si vous disposez de Visual Studio 2017 version 15,7 ou ultérieure, vous pouvez 
 
 Vous pouvez activer les redirections de liaison automatiques dans les applications existantes qui ciblent des versions antérieures du .NET Framework ou dans les cas où vous n’êtes pas automatiquement invité à ajouter une redirection. Si vous ciblez une version plus récente du Framework, mais que vous n’êtes pas invité automatiquement à ajouter une redirection, vous obtiendrez probablement une sortie de génération qui vous suggère de remapper les assemblys.
 
-1. Ouvrez le fichier projet pour le modifier à l’aide de l’une des méthodes suivantes:
+1. Ouvrez le fichier projet pour le modifier à l’aide de l’une des méthodes suivantes :
 
    - Dans Visual Studio, sélectionnez le projet dans **Explorateur de solutions**, puis choisissez **ouvrir le dossier dans l’Explorateur de fichiers** dans le menu contextuel. Dans l’Explorateur de fichiers, recherchez le fichier projet (. csproj ou. vbproj) et ouvrez-le dans le bloc-notes.
-   - Dans Visual Studio, dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet et choisissez décharger le **projet**. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis choisissez **modifier [ProjectName. csproj]** .
+   - Dans Visual Studio, dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet et choisissez **décharger le projet**. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis choisissez **modifier [ProjectName. csproj]** .
 
-2. Ajoutez l’élément suivant au premier groupe de propriétés de configuration (sous \<la balise PropertyGroup >):
+2. Ajoutez l’élément suivant au premier groupe de propriétés de configuration (sous \<la balise PropertyGroup >) :
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
    ```
 
-   L’exemple suivant montre un exemple de fichier projet avec l’élément inséré:
+   L’exemple suivant montre un exemple de fichier projet avec l’élément inséré :
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -97,7 +97,7 @@ Pour ajouter des redirections de liaison à un fichier **Web. config** :
 
    Une boîte de dialogue qui vous permet d’ajouter automatiquement les redirections de liaison nécessaires vers le fichier **Web. config** source s’affiche.
 
-   ![Boîte de dialogue autorisation] de redirection de liaison (./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
+   ![Boîte de dialogue autorisation de redirection de liaison](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
 ## <a name="see-also"></a>Voir aussi
 

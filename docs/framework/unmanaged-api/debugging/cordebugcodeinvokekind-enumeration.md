@@ -12,12 +12,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6fa8de1a561e59e00d5bd9e78172d78b417aeff0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 22eeb8aba318d53efbc699d4492a86b2667bcfff
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951968"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274122"
 ---
 # <a name="cordebugcodeinvokekind-enumeration"></a>CorDebugCodeInvokeKind, énumération
 Indique de quelle manière une fonction exportée appelle du code managé.  
@@ -42,13 +42,13 @@ typedef enum CorDebugCodeInvokeKind
 |`CODE_INVOKE_KIND_TAILCALL`|Cette méthode appelle le code managé via un appel tail. Le pas à pas détaillé et le pas à pas principal sur des instructions d'appel doivent normalement se produire dans le code managé.|  
   
 ## <a name="remarks"></a>Notes  
- Cette énumération est utilisée par la méthode [ICorDebugProcess6:: getexportstepinfo,](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-getexportstepinfo-method.md) pour fournir des informations sur l’exécution pas à pas du code managé.  
+ Cette énumération est utilisée par la méthode [ICorDebugProcess6 :: getexportstepinfo,](icordebugprocess6-getexportstepinfo-method.md) pour fournir des informations sur l’exécution pas à pas du code managé.  
   
 > [!NOTE]
 > Cette énumération est destinée à une utilisation dans des scénarios de débogage .NET Native uniquement.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug. idl, CorDebug. h  
   
@@ -58,5 +58,5 @@ typedef enum CorDebugCodeInvokeKind
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Énumérations de débogage](debugging-enumerations.md)
+- [Débogage](index.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3ea71439c9a6c494c218a7cfc18508f4f8173b03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 99fcf160b3e3b2b238520e3db5ba2e74b270380a
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740388"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274142"
 ---
 # <a name="cordebugblockingreason-enumeration"></a>CorDebugBlockingReason, énumération
 Spécifie les raisons pour lesquelles un thread peut être bloqué sur un objet donné.  
@@ -42,22 +42,22 @@ Typedef enum CorDebugBlockingReason
 |Membre|Description|  
 |------------|-----------------|  
 |`BLOCKING_NONE`|Usage interne uniquement.|  
-|`BLOCKING_MONITOR_CRITICAL_SECTION`|Un thread essaie d’acquérir la section critique qui est associée avec le verrou du moniteur sur un objet. En règle générale, cela se produit lorsque vous appelez une de la <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> ou <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> méthodes.|  
-|`BLOCKING_MONITOR_EVENT`|Un thread est en attente sur l’événement qui est associé à un verrou du moniteur pour un objet. En règle générale, cela se produit lorsque vous appelez une de la <xref:System.Threading.Monitor?displayProperty=nameWithType> `Wait` méthodes.|  
+|`BLOCKING_MONITOR_CRITICAL_SECTION`|Un thread tente d’acquérir la section critique associée au verrou du moniteur sur un objet. En général, cela se produit lorsque vous appelez l' <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> une <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> des méthodes ou.|  
+|`BLOCKING_MONITOR_EVENT`|Un thread attend sur l’événement associé à un verrou de moniteur pour un objet. En général, cela se produit lorsque vous appelez l' <xref:System.Threading.Monitor?displayProperty=nameWithType> une des `Wait` méthodes.|  
   
 ## <a name="remarks"></a>Notes  
- Lorsque le `BLOCKING_MONITOR_CRITICAL_SECTION` ou `BLOCKING_MONITOR_EVENT` membre est utilisé dans un [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structure, le `pBlockingObject` membre de la structure pointe vers une interface « ICorDebugValue » qui représente l’objet qui est entré . Il est garanti que pour implémenter le [ICorDebugHeapValue3](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-interface.md) interface.  
+ Quand le `BLOCKING_MONITOR_CRITICAL_SECTION` membre `BLOCKING_MONITOR_EVENT` ou est utilisé dans une structure [CorDebugBlockingObject](cordebugblockingobject-structure.md) , le `pBlockingObject` membre de la structure pointe vers une interface « ICorDebugValue » qui représente l’objet en cours d’entrée. Il est également garanti d’implémenter l’interface [ICorDebugHeapValue3](icordebugheapvalue3-interface.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Énumérations de débogage](debugging-enumerations.md)
+- [Débogage](index.md)

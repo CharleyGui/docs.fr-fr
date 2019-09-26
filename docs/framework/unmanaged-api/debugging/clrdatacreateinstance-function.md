@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a839eb2edd36dc726c819a819fd4d427fbaea40
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a5d44f9b5dc42147959d3f1d127a64d39258f515
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740989"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274261"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance, fonction
 Crée un objet d’interface pour l’élément cible spécifié.  
@@ -39,26 +39,26 @@ HRESULT CLRDataCreateInstance (
   
 ## <a name="parameters"></a>Paramètres  
  `iid`  
- [in] L’identificateur de l’interface à instancier.  
+ dans Identificateur de l’interface à instancier.  
   
  `target`  
- [in] Un pointeur vers un implémenté par l’utilisateur [ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objet qui représente l’élément cible pour lequel créer l’objet d’interface.  
+ dans Pointeur vers un objet [ICLRDataTarget](iclrdatatarget-interface.md) implémenté par l’utilisateur qui représente l’élément cible pour lequel créer l’objet d’interface.  
   
  `iface`  
- [out] Pointeur vers l’adresse de l’objet de l’interface retournée.  
+ à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
 ## <a name="remarks"></a>Notes  
- Le `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation varie selon le type d’élément cible qui est représenté. L’élément cible peut être un processus, vidage de mémoire, ordinateur distant et ainsi de suite.  
+ L' `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData.idl  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [Fonctions statiques globales de débogage](debugging-global-static-functions.md)

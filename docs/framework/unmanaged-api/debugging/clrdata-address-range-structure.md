@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: afcb4e642c9b54107423f7474771fdc28cde709e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8eb841b4c4f06a3932805ae6222bdd693def5ea0
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741014"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274308"
 ---
-# <a name="clrdataaddressrange-structure"></a>CLRDATA_ADDRESS_RANGE, structure
+# <a name="clrdata_address_range-structure"></a>CLRDATA_ADDRESS_RANGE, structure
 
 Définit une plage d’adresses.
 
@@ -42,21 +42,21 @@ typedef struct
 
 | Membre         | Description                     |
 | -------------- | ------------------------------- |
-| `startAddress` | L’adresse de début de la plage. |
-| `endAddress`   | L’adresse de fin de la plage.   |
+| `startAddress` | Adresse de début de la plage. |
+| `endAddress`   | Adresse de fin de la plage.   |
 
 ## <a name="remarks"></a>Notes
 
-Cette structure se trouve au sein du runtime et n’est pas exposée par le biais d’en-têtes ou les fichiers de bibliothèque. Pour l’utiliser, définir la structure comme indiqué ci-dessus, où `CLRDATA_ADDRESS` est un entier non signé 64 bits.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus `CLRDATA_ADDRESS` , où est un entier non signé 64 bits.
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+**En-tête :** Aucun.  
+**Bibliothèque** Aucun.  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Débogage](index.md)
+- [Structures de débogage](debugging-structures.md)

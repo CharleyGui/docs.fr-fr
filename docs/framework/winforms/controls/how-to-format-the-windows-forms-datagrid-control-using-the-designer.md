@@ -10,10 +10,10 @@ helpviewer_keywords:
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
 ms.openlocfilehash: b3a85f5f9e51dae50a40058b8f07f92976da66f2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69666160"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Procédure : mettre en forme le contrôle DataGrid Windows Forms à l’aide du concepteur
@@ -23,7 +23,7 @@ ms.locfileid: "69666160"
 
 L’application de différentes couleurs à différentes parties <xref:System.Windows.Forms.DataGrid> d’un contrôle peut aider à rendre les informations plus faciles à lire et à interpréter. La couleur peut être appliquée aux lignes et aux colonnes. Les lignes et les colonnes peuvent également être masquées ou affichées à votre convenance.
 
-Il existe trois aspects de base de la mise <xref:System.Windows.Forms.DataGrid> en forme du contrôle:
+Il existe trois aspects de base de la mise <xref:System.Windows.Forms.DataGrid> en forme du contrôle :
 
 - Vous pouvez définir des propriétés pour établir un style par défaut dans lequel les données sont affichées.
 
@@ -33,7 +33,7 @@ Il existe trois aspects de base de la mise <xref:System.Windows.Forms.DataGrid> 
 
 En guise d’étape initiale dans la mise en forme d’une grille de données, vous <xref:System.Windows.Forms.DataGrid> pouvez définir les propriétés du lui-même. Ces options de couleur et de format forment une base à partir de laquelle vous pouvez apporter des modifications en fonction des tables de données et des colonnes affichées.
 
-La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.DataGrid> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d'informations, voir [Procédure : Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
+La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.DataGrid> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure : Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit : Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d'informations, voir [Procédure : Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
 
 ### <a name="to-establish-a-default-style-for-the-datagrid-control"></a>Pour établir un style par défaut pour le contrôle DataGrid
 
@@ -41,7 +41,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 2. Dans la fenêtre **Propriétés** , définissez les propriétés suivantes, selon le cas.
 
-    |Propriété|Description|
+    |Property|Description|
     |--------------|-----------------|
     |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|La `BackColor` propriété définit la couleur des lignes paires de la grille. Lorsque vous définissez la <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> propriété sur une couleur différente, chaque autre ligne est définie sur cette nouvelle couleur (lignes 1, 3, 5, etc.).|
     |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|Couleur d’arrière-plan des lignes numérotées de la grille (lignes 0, 2, 4, 6, etc.).|
@@ -76,7 +76,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 1. Sélectionnez le <xref:System.Windows.Forms.DataGrid> contrôle sur votre formulaire.
 
-2. Dans la **fenêtre Propriétés** , sélectionnez la <xref:System.Windows.Forms.DataGrid.TableStyles%2A> propriété et ![cliquez sur le bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)).
+2. Dans la fenêtre **Propriétés** , sélectionnez la <xref:System.Windows.Forms.DataGrid.TableStyles%2A> propriété et![cliquez sur **le bouton de sélection (.** ..) dans le bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)).
 
 3. Dans la boîte de dialogue **éditeur de collections DataGridTableStyle** , cliquez sur **Ajouter** pour ajouter un style de table à la collection.
 

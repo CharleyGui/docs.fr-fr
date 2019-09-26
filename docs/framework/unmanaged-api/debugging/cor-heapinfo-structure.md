@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3dd233643bd18b60b7d6176c34ee57e4061daf7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f7b340a73aa9eaebca9c0d78563ae298557039b8
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740654"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274189"
 ---
-# <a name="corheapinfo-structure"></a>COR_HEAPINFO, structure
+# <a name="cor_heapinfo-structure"></a>COR_HEAPINFO, structure
 Fournit des informations générales sur le tas du récupérateur de mémoire, y compris s’il est ou non énumérable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,27 +42,27 @@ typedef struct _COR_HEAPINFO {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true` Si les structures de garbage collection sont valides et peuvent être énuméré le tas ; Sinon, `false`.|  
-|`pointerSize`|La taille, en octets, des pointeurs de sur l’architecture cible.|  
-|`numHeaps`|Le nombre de nettoyage de la logique segments de mémoire dans le processus.|  
-|`concurrent`|`TRUE` Si simultanées (arrière-plan) le garbage collection est activé ; Sinon, `FALSE`.|  
-|`gcType`|Un membre de la [CorDebugGCType](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md) énumération qui indique si le garbage collector s’exécute sur une station de travail ou un serveur.|  
+|`areGCStructuresValid`|`true`Si les structures garbage collection sont valides et que le tas peut être énuméré ; Sinon, `false`.|  
+|`pointerSize`|Taille, en octets, des pointeurs sur l’architecture cible.|  
+|`numHeaps`|Nombre de tas de garbage collection logiques dans le processus.|  
+|`concurrent`|`TRUE`Si la garbage collection simultanée (arrière-plan) est activée ; Sinon, `FALSE`.|  
+|`gcType`|Membre de l’énumération [cordebuggctype,](cordebuggctype-enumeration.md) qui indique si le garbage collector s’exécute sur une station de travail ou sur un serveur.|  
   
 ## <a name="remarks"></a>Notes  
- Une instance de la `COR_HEAPINFO` structure est retournée en appelant le [ICorDebugProcess5::GetGCHeapInformation](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) (méthode).  
+ Une instance de la `COR_HEAPINFO` structure est retournée en appelant la méthode [ICorDebugProcess5 :: getgcheapinformation,](icordebugprocess5-getgcheapinformation-method.md) .  
   
- Avant de l’énumération des objets sur le tas de garbage collection, vous devez toujours vérifier le `areGCStructuresValid` champ pour vous assurer que le tas est dans un état énumérable. Pour plus d’informations, consultez le [ICorDebugProcess5::GetGCHeapInformation](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) (méthode).  
+ Avant d’énumérer des objets sur le tas garbage collection, vous devez toujours `areGCStructuresValid` vérifier le champ pour vous assurer que le tas est dans un État énumérable. Pour plus d’informations, consultez la méthode [ICorDebugProcess5 :: getgcheapinformation,](icordebugprocess5-getgcheapinformation-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

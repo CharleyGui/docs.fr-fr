@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 426420175a7d05f39859b9e217a888a8c01b6d63
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d76fa4b2352da18b5ef0e547ebc4e2e99d980b8
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740509"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273994"
 ---
-# <a name="cortypeid-structure"></a>COR_TYPEID, structure
+# <a name="cor_typeid-structure"></a>COR_TYPEID, structure
 Contient un identificateur de type.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,24 +39,24 @@ typedef struct COR_TYPEID{
   
 |Membre|Description|  
 |------------|-----------------|  
-|`token1`|Le premier jeton.|  
-|`token2`|Le deuxième jeton.|  
+|`token1`|Premier jeton.|  
+|`token2`|Deuxième jeton.|  
   
 ## <a name="remarks"></a>Notes  
- Le `COR_TYPEID` structure est retournée par un nombre de méthodes de débogage qui fournissent des informations sur les objets de garbage collection. Elle peut ensuite être transmise en tant qu’argument à d’autres méthodes de débogage qui fournissent des informations supplémentaires sur cet élément. Par exemple, en énumérant un [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) de l’objet, vous pouvez récupérer des [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objets qui représentent des objets individuels sur le tas managé. Vous pouvez ensuite passer le `COR_TYPEID` valeur à partir de la `COR_HEAPOBJECT.type` champ la [ICorDebugProcess5::GetTypeForTypeID](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md) méthode pour récupérer un objet ICorDebugType qui fournit des informations de type sur l’objet.  
+ La `COR_TYPEID` structure est retournée par un certain nombre de méthodes de débogage qui fournissent des informations sur les objets qui doivent être récupérés par le garbage collector. Il peut ensuite être passé comme argument à d’autres méthodes de débogage qui fournissent des informations supplémentaires sur cet élément. Par exemple, en énumérant un objet [icordebugheapenum,](icordebugheapenum-interface.md) , vous pouvez récupérer des objets [COR_HEAPOBJECT](cor-heapobject-structure.md) individuels qui représentent des objets individuels sur le tas managé. Vous pouvez ensuite passer la `COR_TYPEID` valeur `COR_HEAPOBJECT.type` du champ à la méthode [ICorDebugProcess5 :: gettypefortypeid,](icordebugprocess5-gettypefortypeid-method.md) pour récupérer un objet ICorDebugType qui fournit des informations de type sur l’objet.  
   
- Un `COR_TYPEID` objet est destiné à être opaque. Ses champs individuels ne doivent pas accessibles ou manipulés. Son utilisation exclusive est celui d’identificateur qui est fourni comme un `out` paramètre dans un appel de méthode et qui peut, à son tour, être transmis à d’autres méthodes pour fournir des informations supplémentaires.  
+ Un `COR_TYPEID` objet est destiné à être opaque. Ses champs individuels ne doivent pas être accessibles ou manipulés. Son unique utilisation est l’identificateur qui est fourni en tant `out` que paramètre dans un appel de méthode et qui peut, à son tour, être passé à d’autres méthodes pour fournir des informations supplémentaires.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

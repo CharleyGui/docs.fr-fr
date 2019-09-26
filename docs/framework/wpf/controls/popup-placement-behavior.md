@@ -8,10 +8,10 @@ helpviewer_keywords:
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
 ms.openlocfilehash: ca984aa724cf3f076d6073aa8b8179abfb91d26c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69951735"
 ---
 # <a name="popup-placement-behavior"></a>Comportement de positionnement de Popup
@@ -28,12 +28,12 @@ Un <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu 
   
  L’illustration suivante montre l’image et les <xref:System.Windows.Controls.Primitives.Popup> contrôles.  
   
- ![Image avec quatre contrôles Popup](./media/popup-placement-behavior/popup-placement-intro.png "Image avec quatre fenêtres") contextuelles    
+ ![Image avec quatre contrôles Popup](./media/popup-placement-behavior/popup-placement-intro.png "Image avec quatre fenêtres contextuelles")    
   
  Cet exemple simple <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> montre comment définir les propriétés et <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> , mais en utilisant les <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>propriétés, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>et <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> , vous avez encore plus de contrôle sur l' <xref:System.Windows.Controls.Primitives.Popup> emplacement où est positionné.  
   
 <a name="Definitions"></a>   
-## <a name="definitions-of-terms-the-anatomy-of-a-popup"></a>Définitions des termes: Anatomie d’une fenêtre contextuelle  
+## <a name="definitions-of-terms-the-anatomy-of-a-popup"></a>Définitions des termes : Anatomie d’une fenêtre contextuelle  
  Les termes suivants sont utiles pour comprendre comment les <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>propriétés <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, et <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> sont liées les unes aux autres et <xref:System.Windows.Controls.Primitives.Popup>:  
   
 - Objet cible  
@@ -71,7 +71,7 @@ Un <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu 
 ### <a name="target-area"></a>Zone cible  
  La *zone cible* correspond à la zone de l’écran à <xref:System.Windows.Controls.Primitives.Popup> laquelle est relatif. Dans les exemples précédents, <xref:System.Windows.Controls.Primitives.Popup> est aligné avec les limites de l’objet cible, mais dans certains cas <xref:System.Windows.Controls.Primitives.Popup> , est aligné sur les autres limites, même si <xref:System.Windows.Controls.Primitives.Popup> a un objet cible.  Si la <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> propriété est définie, la zone cible est différente des limites de l’objet cible.  
   
- L’exemple suivant crée deux <xref:System.Windows.Controls.Canvas> objets, chacun contenant un <xref:System.Windows.Shapes.Rectangle> et un <xref:System.Windows.Controls.Primitives.Popup>.  Dans les deux cas, l’objet cible pour <xref:System.Windows.Controls.Primitives.Popup> est le <xref:System.Windows.Controls.Canvas>. Le <xref:System.Windows.Controls.Primitives.Popup> dans le premier <xref:System.Windows.Controls.Canvas> a le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> jeu, avec ses <xref:System.Windows.Rect.X%2A>propriétés <xref:System.Windows.Rect.Y%2A>, <xref:System.Windows.Rect.Width%2A>, et <xref:System.Windows.Rect.Height%2A> ayant respectivement la valeur 50, 50, 50 et 100. Le <xref:System.Windows.Controls.Primitives.Popup> de la seconde <xref:System.Windows.Controls.Canvas> n’a pas le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> jeu.  Par conséquent, le <xref:System.Windows.Controls.Primitives.Popup> premier est positionné sous le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> et le second <xref:System.Windows.Controls.Primitives.Popup> est positionné sous le <xref:System.Windows.Controls.Canvas>. Chaque <xref:System.Windows.Controls.Canvas> contient également un <xref:System.Windows.Shapes.Rectangle> qui a les <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> mêmes limites que pour le premier <xref:System.Windows.Controls.Primitives.Popup>.  Notez que <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> ne crée pas d’élément visible dans l’application; l’exemple crée un <xref:System.Windows.Shapes.Rectangle> pour représenter le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>.  
+ L’exemple suivant crée deux <xref:System.Windows.Controls.Canvas> objets, chacun contenant un <xref:System.Windows.Shapes.Rectangle> et un <xref:System.Windows.Controls.Primitives.Popup>.  Dans les deux cas, l’objet cible pour <xref:System.Windows.Controls.Primitives.Popup> est le <xref:System.Windows.Controls.Canvas>. Le <xref:System.Windows.Controls.Primitives.Popup> dans le premier <xref:System.Windows.Controls.Canvas> a le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> jeu, avec ses <xref:System.Windows.Rect.X%2A>propriétés <xref:System.Windows.Rect.Y%2A>, <xref:System.Windows.Rect.Width%2A>, et <xref:System.Windows.Rect.Height%2A> ayant respectivement la valeur 50, 50, 50 et 100. Le <xref:System.Windows.Controls.Primitives.Popup> de la seconde <xref:System.Windows.Controls.Canvas> n’a pas le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> jeu.  Par conséquent, le <xref:System.Windows.Controls.Primitives.Popup> premier est positionné sous le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> et le second <xref:System.Windows.Controls.Primitives.Popup> est positionné sous le <xref:System.Windows.Controls.Canvas>. Chaque <xref:System.Windows.Controls.Canvas> contient également un <xref:System.Windows.Shapes.Rectangle> qui a les <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> mêmes limites que pour le premier <xref:System.Windows.Controls.Primitives.Popup>.  Notez que <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> ne crée pas d’élément visible dans l’application ; l’exemple crée un <xref:System.Windows.Shapes.Rectangle> pour représenter le <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>.  
   
  [!code-xaml[PopupPositionSnippet#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#4)]  
   
@@ -133,7 +133,7 @@ Un <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu 
   
 <a name="When"></a>   
 ## <a name="when-the-popup-encounters-the-edge-of-the-screen"></a>Lorsque la fenêtre contextuelle est en contact avec le bord de l’écran  
- Pour des raisons de sécurité <xref:System.Windows.Controls.Primitives.Popup> , un ne peut pas être masqué par le bord d’un écran. L’un des trois événements suivants se produit lorsque <xref:System.Windows.Controls.Primitives.Popup> le rencontre un bord d’écran:  
+ Pour des raisons de sécurité <xref:System.Windows.Controls.Primitives.Popup> , un ne peut pas être masqué par le bord d’un écran. L’un des trois événements suivants se produit lorsque <xref:System.Windows.Controls.Primitives.Popup> le rencontre un bord d’écran :  
   
 - La fenêtre contextuelle s’aligne sur le bord de l’écran qui masquerait le <xref:System.Windows.Controls.Primitives.Popup>.  
   

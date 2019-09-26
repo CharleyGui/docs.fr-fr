@@ -14,10 +14,10 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
 ms.openlocfilehash: d80f8e3bc729689b274af520bc37fda8417b0407
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69658567"
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Procédure pas à pas : création d’une interface de style explorateur avec les contrôles ListView et TreeView à l’aide du concepteur
@@ -28,7 +28,7 @@ L’un des avantages de Visual Studio est la possibilité de créer des applicat
 
 1. Dans le menu **Fichier** , pointez sur **Nouveau**, puis cliquez sur **Projet**.
 
-2. Dans la boîte de dialogue **Nouveau projet** , procédez comme suit :
+2. Dans la boîte de dialogue **nouveau projet** , procédez comme suit :
 
     1. Dans les catégories, choisissez **Visual Basic** ou **visuel C#** .
 
@@ -38,15 +38,15 @@ L’un des avantages de Visual Studio est la possibilité de créer des applicat
 
 4. Ajoutez un <xref:System.Windows.Forms.SplitContainer> contrôle au formulaire et affectez à <xref:System.Windows.Forms.SplitContainer.Dock%2A> <xref:System.Windows.Forms.DockStyle.Fill>sa propriété la valeur.
 
-5. Ajoutez un <xref:System.Windows.Forms.ImageList> nommé `imageList1` au formulaire et utilisez la fenêtre Propriétés pour ajouter deux images: une image de dossier et une image de document, dans cet ordre.
+5. Ajoutez un <xref:System.Windows.Forms.ImageList> nommé `imageList1` au formulaire et utilisez la fenêtre Propriétés pour ajouter deux images : une image de dossier et une image de document, dans cet ordre.
 
-6. Ajoutez un <xref:System.Windows.Forms.TreeView> contrôle nommé `treeview1` au formulaire et positionnez-le sur <xref:System.Windows.Forms.SplitContainer> le côté gauche du contrôle. Dans le fenêtre Propriétés pour `treeView1` , procédez comme suit:
+6. Ajoutez un <xref:System.Windows.Forms.TreeView> contrôle nommé `treeview1` au formulaire et positionnez-le sur <xref:System.Windows.Forms.SplitContainer> le côté gauche du contrôle. Dans le fenêtre Propriétés pour `treeView1` , procédez comme suit :
 
     1. Affectez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.
 
     2. Affectez à la propriété <xref:System.Windows.Forms.TreeView.ImageList%2A> la valeur `imagelist1.`
 
-7. Ajoutez un <xref:System.Windows.Forms.ListView> contrôle nommé `listView1` au formulaire et positionnez-le sur <xref:System.Windows.Forms.SplitContainer> le côté droit du contrôle. Dans le fenêtre Propriétés pour `listview1` , procédez comme suit:
+7. Ajoutez un <xref:System.Windows.Forms.ListView> contrôle nommé `listView1` au formulaire et positionnez-le sur <xref:System.Windows.Forms.SplitContainer> le côté droit du contrôle. Dans le fenêtre Propriétés pour `listview1` , procédez comme suit :
 
     1. Affectez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.
 
@@ -71,7 +71,7 @@ L’un des avantages de Visual Studio est la possibilité de créer des applicat
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.ExplorerStyleInterface#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#2)]
 
-11. Gérez l' <xref:System.Windows.Forms.TreeView.NodeMouseClick> événement pour `treeview1`et implémentez le code pour remplir `listview1` le contenu d’un nœud lorsqu’un utilisateur clique sur un nœud. Ajoutez ce code à la `Form1` classe.
+11. Gérez l' <xref:System.Windows.Forms.TreeView.NodeMouseClick> événement pour `treeview1`et implémentez le **code pour** remplir `listview1` le contenu d’un nœud lorsqu’un utilisateur clique sur un nœud. Ajoutez ce code à la `Form1` classe.
 
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.ExplorerStyleInterface#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#3)]
@@ -92,7 +92,7 @@ Vous pouvez maintenant tester le formulaire pour vous assurer qu’il se comport
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Cette application vous donne un exemple de la façon dont vous pouvez <xref:System.Windows.Forms.TreeView> utiliser <xref:System.Windows.Forms.ListView> et les contrôles ensemble. Pour plus d’informations sur ces contrôles, consultez les rubriques suivantes:
+Cette application vous donne un exemple de la façon dont vous pouvez <xref:System.Windows.Forms.TreeView> utiliser <xref:System.Windows.Forms.ListView> et les contrôles ensemble. Pour plus d’informations sur ces contrôles, consultez les rubriques suivantes :
 
 - [Guide pratique pour Ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)
 

@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2cccb862a0dfd16eb0bbfe557e3c35373cd7e7b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ec9c4f3afb8f3b7e75e22874996d57d29ce8cf16
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740806"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274215"
 ---
-# <a name="corarraylayout-structure"></a>COR_ARRAY_LAYOUT, structure
+# <a name="cor_array_layout-structure"></a>COR_ARRAY_LAYOUT, structure
 Fournit des informations sur la disposition d'un objet Array en mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,30 +45,30 @@ typedef struct COR_ARRAY_LAYOUT {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`componentID`|L’identificateur du type d’objets contenus dans le tableau.|  
-|`componentType`|Une valeur d’énumération CorElementType qui indique si le composant est une référence de garbage collection, une classe value ou un type primitif.|  
-|`firstElementOffset`|Le décalage vers le premier élément du tableau.|  
-|`elementSize`|La taille de chaque élément.|  
-|`countOffset`|Le décalage pour le nombre d’éléments dans le tableau.|  
-|`rankSize`|La taille du rang, en octets.|  
-|`numRanks`|Le nombre de rangées dans le tableau.|  
-|`rankOffset`|L’offset auquel commencer les rangs.|  
+|`componentID`|Identificateur du type d’objets contenu dans le tableau.|  
+|`componentType`|Valeur d’énumération CorElementType qui indique si le composant est une référence garbage collection, une classe value ou une primitive.|  
+|`firstElementOffset`|Offset du premier élément dans le tableau.|  
+|`elementSize`|Taille de chaque élément.|  
+|`countOffset`|Offset du nombre d’éléments dans le tableau.|  
+|`rankSize`|Taille du rang, en octets.|  
+|`numRanks`|Nombre de rangs dans le tableau.|  
+|`rankOffset`|Décalage à partir duquel les rangs commencent.|  
   
 ## <a name="remarks"></a>Notes  
- Le `rankSize` champ spécifie la taille d’un rang dans un tableau multidimensionnel. Elle est précise dans les tableaux unidimensionnels également.  
+ Le `rankSize` champ spécifie la taille d’un rang dans un tableau multidimensionnel. Il est également exact pour les tableaux unidimensionnels.  
   
  La valeur de `numRanks` est 1 pour un tableau unidimensionnel et `N` pour un tableau multidimensionnel de `N` dimensions.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

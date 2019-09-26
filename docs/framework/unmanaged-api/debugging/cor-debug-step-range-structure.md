@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bda8079cff8f5e8fafade03a02c3dfe8798c5ca
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 11d5e2eb5e2743fca4876ed09add79be3eba514f
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740771"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274208"
 ---
-# <a name="cordebugsteprange-structure"></a>COR_DEBUG_STEP_RANGE, structure
+# <a name="cor_debug_step_range-structure"></a>COR_DEBUG_STEP_RANGE, structure
 Contient les informations de décalage pour une plage de code.  
   
- Cette structure est utilisée par le [ICorDebugStepper::StepRange](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) (méthode).  
+ Cette structure est utilisée par la méthode [ICorDebugStepper :: StepRange](icordebugstepper-steprange-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +41,20 @@ typedef struct {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`startOffset`|Le décalage du début de la plage.|  
-|`endOffset`|Le décalage de la fin de la plage.|  
+|`startOffset`|Offset du début de la plage.|  
+|`endOffset`|Décalage de la fin de la plage.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [StepRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [StepRange, méthode](icordebugstepper-steprange-method.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)
