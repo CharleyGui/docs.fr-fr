@@ -4,21 +4,21 @@ description: Répertorie les dernières modifications apportées à Windows Form
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b08361bc71149f517d070a58c97d243840500ea
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 436088836ff5441e426379bb41f96821cbc7e500
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217086"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272718"
 ---
-# <a name="breaking-changes-in-windows-forms"></a><span data-ttu-id="38f3b-103">Modifications avec rupture dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="38f3b-103">Breaking changes in Windows Forms</span></span>
+# <a name="breaking-changes-in-windows-forms"></a><span data-ttu-id="c0254-103">Modifications avec rupture dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c0254-103">Breaking changes in Windows Forms</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="38f3b-104">Cet article est en cours de construction.</span><span class="sxs-lookup"><span data-stu-id="38f3b-104">This article is under construction.</span></span> <span data-ttu-id="38f3b-105">Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="38f3b-105">This is not a complete list of .NET Core breaking changes.</span></span> <span data-ttu-id="38f3b-106">Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="38f3b-106">For more information on .NET Core breaking changes, you can examine individual [breaking changes issues](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) in the dotnet/docs repository on GitHub.</span></span> 
+> <span data-ttu-id="c0254-104">Cet article est en cours de construction.</span><span class="sxs-lookup"><span data-stu-id="c0254-104">This article is under construction.</span></span> <span data-ttu-id="c0254-105">Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c0254-105">This is not a complete list of .NET Core breaking changes.</span></span> <span data-ttu-id="c0254-106">Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="c0254-106">For more information on .NET Core breaking changes, you can examine individual [breaking changes issues](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) in the dotnet/docs repository on GitHub.</span></span>
 
-<span data-ttu-id="38f3b-107">La liste suivante répertorie les dernières modifications apportées à Windows Forms par la version de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="38f3b-107">The following is a list of breaking changes in Windows Forms by .NET Core version.</span></span>
+<span data-ttu-id="c0254-107">La liste suivante répertorie les dernières modifications apportées à Windows Forms par la version de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c0254-107">The following is a list of breaking changes in Windows Forms by .NET Core version.</span></span>
 
-## <a name="net-core-30-preview-9"></a><span data-ttu-id="38f3b-108">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="38f3b-108">.NET Core 3.0 Preview 9</span></span>
+## <a name="net-core-30-preview-9"></a><span data-ttu-id="c0254-108">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="c0254-108">.NET Core 3.0 Preview 9</span></span>
 
 [!INCLUDE[Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls compatibility switch not supported](~/includes/core-changes/windowsforms/deprecate-allowupdatechildcontrolindexfortabcontrols.md)]
 
@@ -54,8 +54,7 @@ ms.locfileid: "71217086"
 
 [!INCLUDE[SerializableAttribute removed from some Windows Forms types](~/includes/core-changes/windowsforms/remove-serializationattribute.md)]
 
-## <a name="net-core-30"></a><span data-ttu-id="38f3b-109">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="38f3b-109">.NET Core 3.0</span></span>
-
+## <a name="net-core-30"></a><span data-ttu-id="c0254-109">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="c0254-109">.NET Core 3.0</span></span>
 
 [!INCLUDE[Control.DefaultFont changed to Segoe UI 9pt](~/includes/core-changes/windowsforms/control-defaultfont-changed.md)]
 
