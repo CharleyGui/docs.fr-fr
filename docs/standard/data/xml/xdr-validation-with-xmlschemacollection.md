@@ -1,5 +1,5 @@
 ---
-title: Validation par rapport à un schéma XDR à l’aide de XmlSchemaCollection
+title: Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ca806f0f9c7e1ad859affe05d5db8ec0d3b36b03
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
-ms.translationtype: HT
+ms.openlocfilehash: 83eabbccfa2116142e9ee5889e3368ad4273b541
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44078873"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306389"
 ---
-# <a name="xdr-validation-with-xmlschemacollection"></a>Validation par rapport à un schéma XDR à l’aide de XmlSchemaCollection
+# <a name="xdr-validation-with-xmlschemacollection"></a>Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 
 Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la validation est stocké dans **XmlSchemaCollection**, il est associé à l’URI d’espace de noms qui a été spécifié lors de l’ajout du schéma à la collection. **XmlValidatingReader** mappe l'URI d'espace de noms du document XML au schéma correspondant à cet URI dans la collection.
 
@@ -28,58 +28,52 @@ Par exemple, si l'élément racine du document XML est `<bookstore xmlns="urn:ne
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
 ```
 
-l'exemple de code ci-après crée un **XmlValidatingReader** qui prend **XmlTextReader** et ajoute un schéma XDR, HeadCount.xdr, à **XmlSchemaCollection**.
+L’exemple de code suivant crée un **XmlValidatingReader** qui prend **XmlTextReader** et ajoute un schéma XDR, HeadCount. XDR, à **XmlSchemaCollection**:
 
 ```vb
-Imports System
 Imports System.IO
 Imports System.Xml
 Imports System.Xml.Schema
 
 Namespace ValidationSample
 
-   Class Sample
+    Class Sample
 
-      Public Shared Sub Main()
-         Dim tr As New XmlTextReader("HeadCount.xml")
-         Dim vr As New XmlValidatingReader(tr)
+        Public Shared Sub Main()
+            Dim tr As New XmlTextReader("HeadCount.xml")
+            Dim vr As New XmlValidatingReader(tr)
 
-         vr.Schemas.Add("xdrHeadCount", "HeadCount.xdr")
-         vr.ValidationType = ValidationType.XDR
-         AddHandler vr.ValidationEventHandler, AddressOf ValidationHandler
+            vr.Schemas.Add("xdrHeadCount", "HeadCount.xdr")
+            vr.ValidationType = ValidationType.XDR
+            AddHandler vr.ValidationEventHandler, AddressOf ValidationHandler
 
-         While vr.Read()
-            PrintTypeInfo(vr)
-            If vr.NodeType = XmlNodeType.Element Then
-               While vr.MoveToNextAttribute()
-                  PrintTypeInfo(vr)
-               End While
+            While vr.Read()
+                PrintTypeInfo(vr)
+                If vr.NodeType = XmlNodeType.Element Then
+                    While vr.MoveToNextAttribute()
+                        PrintTypeInfo(vr)
+                    End While
+                End If
+            End While
+            Console.WriteLine("Validation finished")
+        End Sub
+
+        Public Shared Sub PrintTypeInfo(vr As XmlValidatingReader)
+            If vr.SchemaType IsNot Nothing Then
+                If TypeOf vr.SchemaType Is XmlSchemaDatatype Or TypeOf vr.SchemaType Is XmlSchemaSimpleType Then
+                    Dim value As Object = vr.ReadTypedValue()
+                    Console.WriteLine($"{vr.NodeType}({vr.Name},{value.GetType().Name}):{value}")
+                End If
             End If
-         End While
-         Console.WriteLine("Validation finished")
-      End Sub
-      ' Main
+        End Sub
 
-      Public Shared Sub PrintTypeInfo(vr As XmlValidatingReader)
-         If Not (vr.SchemaType Is Nothing) Then
-            If TypeOf vr.SchemaType Is XmlSchemaDatatype Or TypeOf vr.SchemaType Is XmlSchemaSimpleType Then
-               Dim value As Object = vr.ReadTypedValue()
-               Console.WriteLine("{0}({1},{2}):{3}", vr.NodeType, vr.Name, value.GetType().Name, value)
-            End If
-         End If
-      End Sub
-      ' PrintTypeInfo
-
-      Public Shared Sub ValidationHandler(sender As Object, args As ValidationEventArgs)
-         Console.WriteLine("***Validation error")
-         Console.WriteLine("Severity:{0}", args.Severity)
-         Console.WriteLine("Message:{0}", args.Message)
-      End Sub
-      ' ValidationHandler
-   End Class
-   ' Sample
+        Public Shared Sub ValidationHandler(sender As Object, args As ValidationEventArgs)
+            Console.WriteLine("***Validation error")
+            Console.WriteLine($"Severity:{args.Severity}")
+            Console.WriteLine($"Message:{args.Message}")
+        End Sub
+    End Class
 End Namespace
-' ValidationSample
 ```
 
 ```csharp
@@ -90,48 +84,48 @@ using System.Xml.Schema;
 
 namespace ValidationSample
 {
-   class Sample
-   {
-      public static void Main()
-      {
-         XmlTextReader tr = new XmlTextReader("HeadCount.xml");
-         XmlValidatingReader vr = new XmlValidatingReader(tr);
+    class Sample
+    {
+        public static void Main()
+        {
+            var tr = new XmlTextReader("HeadCount.xml");
+            var vr = new XmlValidatingReader(tr);
 
-         vr.Schemas.Add("xdrHeadCount", "HeadCount.xdr");
-         vr.ValidationType = ValidationType.XDR;
-         vr.ValidationEventHandler += new ValidationEventHandler (ValidationHandler);
+            vr.Schemas.Add("xdrHeadCount", "HeadCount.xdr");
+            vr.ValidationType = ValidationType.XDR;
+            vr.ValidationEventHandler += new ValidationEventHandler (ValidationHandler);
 
-         while(vr.Read())
-         {
-            PrintTypeInfo(vr);
-            if(vr.NodeType == XmlNodeType.Element)
+            while(vr.Read())
             {
-               while(vr.MoveToNextAttribute())
-                  PrintTypeInfo(vr);
+                PrintTypeInfo(vr);
+                if (vr.NodeType == XmlNodeType.Element)
+                {
+                   while(vr.MoveToNextAttribute())
+                       PrintTypeInfo(vr);
+                }
             }
-         }
-         Console.WriteLine("Validation finished");
-      }
+            Console.WriteLine("Validation finished");
+        }
 
-      public static void PrintTypeInfo(XmlValidatingReader vr)
-      {
-         if(vr.SchemaType != null)
-         {
-            if(vr.SchemaType is XmlSchemaDatatype || vr.SchemaType is XmlSchemaSimpleType)
+        public static void PrintTypeInfo(XmlValidatingReader vr)
+        {
+            if (vr.SchemaType != null)
             {
-               object value = vr.ReadTypedValue();
-               Console.WriteLine("{0}({1},{2}):{3}", vr.NodeType, vr.Name, value.GetType().Name, value);
+                if(vr.SchemaType is XmlSchemaDatatype || vr.SchemaType is XmlSchemaSimpleType)
+                {
+                    object value = vr.ReadTypedValue();
+                    Console.WriteLine($"{vr.NodeType}({vr.Name},{value.GetType().Name}):{value}");
+                }
             }
-         }
-      }
+        }
 
-      public static void ValidationHandler(object sender, ValidationEventArgs args)
-      {
-         Console.WriteLine("***Validation error");
-         Console.WriteLine("\tSeverity:{0}", args.Severity);
-         Console.WriteLine("\tMessage:{0}", args.Message);
-      }
-   }
+        public static void ValidationHandler(object sender, ValidationEventArgs args)
+        {
+            Console.WriteLine("***Validation error");
+            Console.WriteLine($"\tSeverity:{args.Severity}");
+            Console.WriteLine($"\tMessage:{args.Message}");
+        }
+    }
 }
 ```
 

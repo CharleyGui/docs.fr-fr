@@ -5,13 +5,16 @@ helpviewer_keywords:
 - accessibility [Windows Forms], Windows applications
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
+dev_langs:
+- csharp
+- vb
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 5768177401504f4776a34e499d07b7600597175a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: de25c3dcf33471a1aadb4445a83affab9c40914b
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957196"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306340"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Procédure pas à pas : création d’une application Windows accessible
 
@@ -58,9 +61,9 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
 
 - Assurez-vous que tous les contrôles Label qui décrivent un contrôle TextBox précèdent immédiatement le contrôle TextBox dans l'ordre de tabulation.
 
-- Ajoutez une touche d’accès, en utilisant le caractère «&», <xref:System.Windows.Forms.Control.Text%2A> à la propriété de n’importe quel contrôle auquel l’utilisateur peut accéder.
+- Ajoutez une touche d’accès, en utilisant le caractère « & », <xref:System.Windows.Forms.Control.Text%2A> à la propriété de n’importe quel contrôle auquel l’utilisateur peut accéder.
 
-- Ajoutez une touche d’accès, en utilisant le caractère «&», <xref:System.Windows.Forms.Control.Text%2A> à la propriété de l’étiquette qui précède un contrôle auquel l’utilisateur peut accéder. Affectez la valeur `true` à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> des étiquettes pour que le focus soit défini sur le contrôle suivant dans l'ordre de tabulation quand l'utilisateur appuie sur la touche d'accès.
+- Ajoutez une touche d’accès, en utilisant le caractère « & », <xref:System.Windows.Forms.Control.Text%2A> à la propriété de l’étiquette qui précède un contrôle auquel l’utilisateur peut accéder. Affectez la valeur `true` à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> des étiquettes pour que le focus soit défini sur le contrôle suivant dans l'ordre de tabulation quand l'utilisateur appuie sur la touche d'accès.
 
 - Ajoutez des touches d'accès rapide à tous les éléments de menu.
 
@@ -68,17 +71,17 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
 
 - Ajoutez les contrôles au formulaire et définissez les propriétés comme décrit ci-dessous. Pour obtenir un modèle décrivant comment organiser les contrôles sur le formulaire, consultez l'image à la fin du tableau.
 
-   |Object|Propriété|`Value`|
+   |Object|Propriété|Value|
    |------------|--------------|-----------|
    |Form1|AccessibleDescription|Formulaire de commande|
    ||AccessibleName|Formulaire de commande|
    ||Taille de police|10|
    ||Text|Formulaire de commande de pizza|
-   |PictureBox|Nom|logo|
+   |PictureBox|Name|logo|
    ||AccessibleDescription|Une tranche de pizza|
    ||AccessibleName|Logo de la société|
    ||Image|Une icône ou bitmap quelconque|
-   |Etiquette|Nom|companyLabel|
+   |Etiquette|Name|companyLabel|
    ||Text|Bonne Pizza|
    ||TabIndex|1|
    ||AccessibleDescription|Nom de la société|
@@ -86,13 +89,13 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
    ||BackColor|Bleu|
    ||ForeColor|Jaune|
    ||Taille de police|18|
-   |Label|Nom|customerLabel|
+   |Label|Name|customerLabel|
    ||Text|&Nom|
    ||TabIndex|2|
    ||AccessibleDescription|Étiquette du nom de client|
    ||AccessibleName|Étiquette du nom de client|
    ||UseMnemonic|True|
-   |TextBox|Nom|CustomerName|
+   |TextBox|Name|CustomerName|
    ||Text|(aucune)|
    ||TabIndex|3|
    ||AccessibleDescription|Nom du client|
@@ -102,7 +105,7 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
    ||AccessibleName|Options de taille de pizza|
    ||Text|Taille de la pizza|
    ||TabIndex|4|
-   |RadioButton|Nom|smallPizza|
+   |RadioButton|Name|smallPizza|
    ||Text|&Petite €6,00|
    ||Activé|True|
    ||TabIndex|0|
@@ -115,16 +118,16 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
    ||AccessibleName|Grande pizza|
    |Etiquette|Name|toppingsLabel|
    ||Text|&Garniture (€0,75 chacune)|
-   ||TabIndex|5\.|
+   ||TabIndex|5|
    ||AccessibleDescription|Étiquette de garniture|
    ||AccessibleName|Étiquette de garniture|
    ||UseMnemonic|True|
-   |CheckedListBox|Nom|Garniture|
+   |CheckedListBox|Name|Garniture|
    ||TabIndex|6\.|
    ||AccessibleDescription|Garniture disponible|
    ||AccessibleName|Garniture disponible|
    ||Éléments|Pepperoni, Saucisson, Champignons|
-   |Button|Nom|order|
+   |Button|Name|order|
    ||Text|&Commande|
    ||TabIndex|7|
    ||AccessibleDescription|Total de la commande|
@@ -134,13 +137,13 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
    ||TabIndex|8|
    ||AccessibleDescription|Annuler la commande|
    ||AccessibleName|Annuler la commande|
-   |MainMenu|Nom|theMainMenu|
-   |MenuItem|Nom|fileCommands|
+   |MainMenu|Name|theMainMenu|
+   |MenuItem|Name|fileCommands|
    ||Text|&Fichier|
    |MenuItem|Name|exitApp|
    ||Text|&Quitter|
 
-   Votre formulaire doit ressembler à l’image suivante:
+   Votre formulaire doit ressembler à l’image suivante :
 
    ![Le formulaire de commande de pizza avec une zone de texte nom, et la sélection de la taille et des pings.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)
 
@@ -165,96 +168,88 @@ Dans notre application, le seul élément qui n’utilise pas les paramètres sy
 1. Créez une méthode pour affecter les couleurs système comme couleurs de l'étiquette.
 
     ```vb
-    ' Visual Basic
     Private Sub SetColorScheme()
-       If SystemInformation.HighContrast Then
-          companyLabel.BackColor = SystemColors.Window
-          companyLabel.ForeColor = SystemColors.WindowText
-       Else
-          companyLabel.BackColor = Color.Blue
-          companyLabel.ForeColor = Color.Yellow
-       End If
+        If SystemInformation.HighContrast Then
+            companyLabel.BackColor = SystemColors.Window
+            companyLabel.ForeColor = SystemColors.WindowText
+        Else
+            companyLabel.BackColor = Color.Blue
+            companyLabel.ForeColor = Color.Yellow
+        End If
     End Sub
     ```
 
     ```csharp
-    // C#
     private void SetColorScheme()
     {
-       if (SystemInformation.HighContrast)
-       {
-          companyLabel.BackColor = SystemColors.Window;
-          companyLabel.ForeColor = SystemColors.WindowText;
-       }
-       else
-       {
-          companyLabel.BackColor = Color.Blue;
-          companyLabel.ForeColor = Color.Yellow;
-       }
+        if (SystemInformation.HighContrast)
+        {
+            companyLabel.BackColor = SystemColors.Window;
+            companyLabel.ForeColor = SystemColors.WindowText;
+        }
+        else
+        {
+            companyLabel.BackColor = Color.Blue;
+            companyLabel.ForeColor = Color.Yellow;
+        }
     }
     ```
 
-2. Appelez la procédure `SetColorScheme` dans le constructeur de formulaire (`Public Sub New()` en Visual Basic et `public class Form1` en Visual C#). Pour accéder au constructeur en Visual Basic, vous devez développer la région nommée **Code généré par le Concepteur Windows Form**.
+2. Appelez la procédure `SetColorScheme` dans le constructeur de formulaire (`Public Sub New()` en Visual Basic et `public Form1()` en Visual C#). Pour accéder au constructeur en Visual Basic, vous devez développer la région nommée **Code généré par le Concepteur Windows Form**.
 
     ```vb
-    ' Visual Basic
     Public Sub New()
-       MyBase.New()
-       InitializeComponent()
-       SetColorScheme()
+        MyBase.New()
+        InitializeComponent()
+        SetColorScheme()
     End Sub
     ```
 
     ```csharp
-    // C#
     public Form1()
     {
-       InitializeComponent();
-       SetColorScheme();
+        InitializeComponent();
+        SetColorScheme();
     }
     ```
 
 3. Créez une procédure événementielle, avec la signature appropriée, pour répondre à l'événement <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>.
 
     ```vb
-    ' Visual Basic
-    Protected Sub UserPreferenceChanged(ByVal sender As Object, _
-    ByVal e As Microsoft.Win32.UserPreferenceChangedEventArgs)
-       SetColorScheme()
+    Protected Sub UserPreferenceChanged(sender As Object, _
+    e As Microsoft.Win32.UserPreferenceChangedEventArgs)
+        SetColorScheme()
     End Sub
     ```
 
     ```csharp
-    // C#
     public void UserPreferenceChanged(object sender,
     Microsoft.Win32.UserPreferenceChangedEventArgs e)
     {
-       SetColorScheme();
+        SetColorScheme();
     }
     ```
 
 4. Ajoutez du code au constructeur de formulaire, après l’appel à `InitializeComponents`, pour raccorder la procédure événementielle à l’événement système. Cette méthode appelle la procédure `SetColorScheme`.
 
     ```vb
-    ' Visual Basic
     Public Sub New()
-       MyBase.New()
-       InitializeComponent()
-       SetColorScheme()
-       AddHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
-          AddressOf Me.UserPreferenceChanged
+        MyBase.New()
+        InitializeComponent()
+        SetColorScheme()
+        AddHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
+           AddressOf Me.UserPreferenceChanged
     End Sub
     ```
 
     ```csharp
-    // C#
     public Form1()
     {
-       InitializeComponent();
-       SetColorScheme();
-       Microsoft.Win32.SystemEvents.UserPreferenceChanged
-          += new Microsoft.Win32.UserPreferenceChangedEventHandler(
-          this.UserPreferenceChanged);
+        InitializeComponent();
+        SetColorScheme();
+        Microsoft.Win32.SystemEvents.UserPreferenceChanged
+           += new Microsoft.Win32.UserPreferenceChangedEventHandler(
+           this.UserPreferenceChanged);
     }
     ```
 
@@ -264,34 +259,27 @@ Dans notre application, le seul élément qui n’utilise pas les paramètres sy
     > Le code d'événement système exécute un thread distinct de l'application principale. Si vous ne libérez pas l'événement, le code que vous raccordez à l'événement s'exécute même après la fermeture du programme.
 
     ```vb
-    ' Visual Basic
     Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
-       If disposing Then
-          If Not (components Is Nothing) Then
-             components.Dispose()
-          End If
-       End If
-       RemoveHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
-          AddressOf Me.UserPreferenceChanged
-       MyBase.Dispose(disposing)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        RemoveHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
+           AddressOf Me.UserPreferenceChanged
+        MyBase.Dispose(disposing)
     End Sub
     ```
 
     ```csharp
-    // C#
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-       if( disposing )
-       {
-          if (components != null)
-          {
-             components.Dispose();
-          }
-       }
-       Microsoft.Win32.SystemEvents.UserPreferenceChanged
-          -= new Microsoft.Win32.UserPreferenceChangedEventHandler(
-          this.UserPreferenceChanged);
-       base.Dispose( disposing );
+        if(disposing && components != null)
+        {
+            components.Dispose();
+        }
+        Microsoft.Win32.SystemEvents.UserPreferenceChanged
+           -= new Microsoft.Win32.UserPreferenceChangedEventHandler(
+           this.UserPreferenceChanged);
+        base.Dispose( disposing );
     }
     ```
 
@@ -303,7 +291,7 @@ Dans cette application, aucune information n'est communiquée que par du son. Si
 
 #### <a name="to-supply-information-by-some-other-means-than-sound"></a>Pour fournir des informations par d'autres moyens que le son
 
-1. Faites clignoter la barre de titre à l'aide de la fonction d'API Windows FlashWindow. Pour obtenir un exemple d’appel de fonctions API Windows, consultez [procédure pas à pas: Appel des API](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)Windows.
+1. Faites clignoter la barre de titre à l'aide de la fonction d'API Windows FlashWindow. Pour obtenir un exemple d’appel de fonctions API Windows, consultez [procédure pas à pas : Appel des API](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)Windows.
 
     > [!NOTE]
     > L'utilisateur a peut-être activé le service SoundSentry Windows, qui provoque aussi le clignotement de la fenêtre quand des sons système sont lus par le haut-parleur intégré de l'ordinateur.
