@@ -5,18 +5,18 @@ metadata:
   title: Documentation .NET pour Apache Spark
   description: Découvrez comment utiliser .NET pour Apache Spark pour traiter des lots de données, des flux en temps réel, des Machine Learning et des requêtes ad hoc avec Apache Spark partout où vous écrivez du code .NET.
   services: service
-  ms.service: dotnet-spark
+  ms.prod: dotnet-spark
   ms.topic: landing-page
   ms.collection: collection
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/11/2019
-  ms.openlocfilehash: 9836e97aa2a958792fe95c8a1241d284ef860c45
-  ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+  ms.openlocfilehash: bce56c20e30df1f6eb6d6be5edb7ea766a783d83
+  ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/12/2019
-  ms.locfileid: "70928513"
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71332562"
 landingContent:
 - title: À propos de .NET pour Apache Spark
   linkLists:
