@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.2
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: a2010b2bda769a625deb545964a2cc127aaf2e06
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: d559f07c501b2a79472d01e2815b50cd8f0f57a5
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332319"
 ---
 # <a name="whats-new-in-c-72"></a>Nouveautés de C# 7.2
 
@@ -57,13 +57,13 @@ Les appels de méthode peuvent désormais utiliser des arguments nommés qui pr�
 
 L’implémentation de la prise en charge des séparateurs numériques dans C# 7.0 n’autorisait pas `_` comme premier caractère de la valeur littérale. Les littéraux numériques binaires et hexadécimaux peuvent maintenant commencer par un caractère `_`.
 
-Par exemple :
+Exemple :
 
 ```csharp
 int binaryValue = 0b_0101_0101;
 ```
 
-## <a name="_private-protected_-access-modifier"></a>_private protected_ (modificateur d’accès)
+## <a name="private-protected-access-modifier"></a>*private protected* (modificateur d’accès)
 
 Enfin, un nouveau modificateur d’accès composé, `private protected`, indique qu’un membre est accessible à la classe globale ou aux classes dérivées déclarées dans le même assembly. Alors que `protected internal` autorise l’accès par des classes dérivées ou qui se trouvent dans le même assembly, `private protected` limite l’accès aux types dérivés déclarés dans le même assembly.
 

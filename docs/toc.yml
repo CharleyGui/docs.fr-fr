@@ -317,13 +317,18 @@
       items:
         - name: Vue d'ensemble
           href: core/tools/index.md
-        - name: Outils globaux
+        - name: Outils
           expanded: true
           items:
-            - name: Vue d'ensemble
-              href: core/tools/global-tools.md
-            - name: Créer un outil global
-              href: core/tools/global-tools-how-to-create.md
+            - name: Outils globaux
+              expanded: true
+              items:
+                - name: Vue d'ensemble
+                  href: core/tools/global-tools.md
+                - name: Créer un outil global
+                  href: core/tools/global-tools-how-to-create.md
+            - name: Résoudre les problèmes d’utilisation des outils
+              href: core/tools/troubleshoot-usage-issues.md
         - name: Accès avec élévation des privilèges
           href: core/tools/elevated-access.md
         - name: Modèle d’extensibilité
