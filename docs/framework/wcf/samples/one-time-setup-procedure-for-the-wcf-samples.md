@@ -65,7 +65,7 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
 
 11. Créez sur l'ordinateur un répertoire C:\logs ; certains exemples peuvent en avoir besoin. Assurez-vous que le compte approprié dispose d’un accès en écriture sur ce dossier. Pour Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]et Windows Server 2008 R2, ce compte est **service réseau**. Pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], le compte est Autorité NT\Service réseau. Pour [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], le compte est ASPNET.
 
-12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le \<dossier InstallPath > \WF_WCF_Samples\WCF\Setup\  Ce script effectue les tâches suivantes :
+12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le \<dossier InstallPath > \WF_WCF_Samples\WCF\Setup  Ce script effectue les tâches suivantes :
 
     - génération de l'outil FindPrivateKey ;
 

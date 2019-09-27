@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: a521be147c462146775caa81b6a31fb37b4103af
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 8985434467346acc360e9a89c052803f495e87d1
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926682"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332005"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -186,7 +186,7 @@ Vous pouvez créer une application (ou service) web unique et monolithique, et l
 
 Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’application. Pour effectuer une mise à l’échelle, vous ajoutez simplement des copies supplémentaires avec un équilibreur de charge en frontal. Cette simplicité provient de la gestion d’un seul déploiement dans un seul conteneur ou une seule machine virtuelle.
 
-![](./media/image5-13.png)
+![Figure 5-13](./media/image5-13.png)
 
 Vous pouvez inclure plusieurs couches internes, composants ou bibliothèques dans chaque conteneur, comme illustré dans la figure 5-13. Cependant, d’après le principe des conteneurs selon lequel « _un conteneur fait une chose et la fait dans un seul processus_ », ce modèle monolithique peut être une source de conflit.
 
@@ -198,7 +198,7 @@ En plus du problème de la mise à l’échelle globale, quand des modifications
 
 L’approche architecturale monolithique est fréquemment choisie pour le développement dans les organisations. Beaucoup de ces organisations sont satisfaites des résultats obtenus, mais certaines se heurtent aux limites de ce modèle d’architecture. Les organisations ont souvent conçu leurs applications d’après ce modèle, car les outils et l’infrastructure étaient trop complexes pour concevoir des architectures orientées services (SOA). Par ailleurs, elles ne voyaient pas la nécessité de changer de modèle tant que leur application ne grossissait pas trop. Si vous vous heurtez aux limites de l’approche monolithique, la prochaine étape logique pour vous est peut-être de scinder votre application pour mieux tirer parti des conteneurs et des microservices.
 
-![](./media/image5-14.png)
+![Figure 5-14](./media/image5-14.png)
 
 Le déploiement d’applications monolithiques dans Microsoft Azure est possible en utilisant des machines virtuelles dédiées pour chaque instance. Avec [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter une gestion des machines virtuelles. Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement. Avec Docker, vous pouvez déployer une seule machine virtuelle comme hôte Docker et exécuter plusieurs instances. Vous pouvez gérer la mise à l’échelle à l’aide de l’équilibreur de charge Azure, comme indiqué dans la figure 5-14.
 
