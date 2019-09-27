@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: ea8059061dccc85060b4f6244ff0d7be9b7708b8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 6b127cce66f2f9ced3cee29336b39e2976e03619
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214417"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332342"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -43,12 +43,6 @@ Créez une application console dans Visual Studio ou en ligne de commande avec `
 <LangVersion>8.0</LangVersion>
 <Nullable>enable</Nullable>
 ```
-
-> [!IMPORTANT]
-> L’élément `Nullable` était nommé `NullableContextOptions`. Les navires renommés avec Visual Studio 2019, 16.2-p1. Le kit SDK .NET Core 3.0.100-preview5-011568 n’a pas cette modification. Si vous utilisez le CLI .NET Core, vous devrez utiliser `NullableContextOptions` jusqu'à ce que la préversion suivante soit disponible.
-
-> [!NOTE]
-> Lorsque C# 8 est publié (pas en préversion), l’élément `Nullable` est ajouté par les nouveaux modèles de projet. En attendant, vous devrez l’ajouter manuellement.
 
 ### <a name="design-the-types-for-the-application"></a>Concevoir les types de l’application
 

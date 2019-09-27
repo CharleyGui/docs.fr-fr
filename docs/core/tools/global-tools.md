@@ -4,12 +4,12 @@ description: Vue d’ensemble des outils globaux .NET Core et des commandes CLI 
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 01c1463ceddcd64e5bab05b95a5ae4a91b6da838
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 40a0aabcf523e8dac9a3ad226064bbb3c1b3ce5b
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332021"
 ---
 # <a name="net-core-global-tools-overview"></a>Vue d’ensemble des outils globaux .NET Core
 
@@ -107,31 +107,6 @@ Vous pouvez également rechercher des instructions d’utilisation sur le site w
 dotnet <command> --help
 ```
 
-### <a name="what-could-go-wrong"></a>Problèmes potentiels
-
-Les outils globaux sont des [applications dépendant du framework](../deploying/index.md#framework-dependent-deployments-fdd), ce qui signifie qu’ils reposent sur un runtime .NET Core installé sur votre machine. Si le runtime attendu est introuvable, ils suivent les règles normales de restauration par progression du runtime .NET Core, à savoir :
-
-* Une application restaure par progression le correctif le plus élevé de la version principale et secondaire spécifiée.
-* En l’absence de runtime correspondant à un numéro de version principale et secondaire, la version secondaire supérieure suivante est utilisée.
-* Une restauration par progression ne se produit pas entre des préversions du runtime ou entre des préversions et des versions finales. C’est pourquoi les outils globaux créés à l’aide de préversions doivent être regénérés et republiés par l’auteur, puis réinstallés.
-* D’autres problèmes peuvent se produire avec les outils globaux créés dans .NET Core 2.1 Preview 1. Pour plus d’informations, consultez [Problèmes connus de .NET Core 2.1 Preview 2](https://github.com/dotnet/core/blob/master/release-notes/2.1/Preview/2.1.0-preview2-known-issues.md).
-
-Si une application ne trouve pas un runtime approprié, elle ne parvient pas à s’exécuter et signale une erreur.
-
-Un autre problème susceptible de se produire vient du fait qu’un outil global créé pendant une préversion antérieure risque de ne pas s’exécuter avec vos runtimes .NET Core actuellement installés. Vous pouvez voir quels runtimes sont installés sur votre machine à l’aide de la commande suivante :
-
-```dotnetcli
-dotnet --list-runtimes
-```
-
-Contactez l’auteur de l’outil global pour voir s’il peut recompiler et republier son package d’outils sur NuGet avec un numéro de version mis à jour. Une fois la mise à jour du package effectuée sur NuGet, vous pouvez mettre à jour votre copie.
-
-CLI .NET Core essaie d’ajouter les emplacements par défaut à la variable d’environnement PATH lors de sa première utilisation. Toutefois, dans certains cas, il n’est pas possible d’ajouter automatiquement l’emplacement à PATH, notamment :
-
-* Si vous avez défini la variable d’environnement `DOTNET_SKIP_FIRST_TIME_EXPERIENCE`.
-* Sur macOS, si vous avez installé le SDK .NET Core à l’aide de fichiers *.tar.gz* et non *.pkg*.
-* Sur Linux, vous devez modifier le fichier d’environnement d’interpréteur de commandes pour configurer PATH.
-
 ## <a name="other-cli-commands"></a>Autres commandes CLI
 
 Le SDK .NET Core contient d’autres commandes qui prennent en charge des outils globaux .NET Core. Utilisez l’une des commandes `dotnet tool` avec l’une des options suivantes :
@@ -162,3 +137,7 @@ Pour afficher tous les outils globaux actuellement installés sur la machine, ai
 ```dotnetcli
 dotnet tool list -g
 ```
+
+## <a name="see-also"></a>Voir aussi
+
+* [Résoudre les problèmes d’utilisation de l’outil .NET Core](troubleshoot-usage-issues.md)

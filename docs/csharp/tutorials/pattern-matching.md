@@ -3,12 +3,12 @@ title: Utiliser les fonctionnalités de critères spéciaux pour étendre les ty
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 9266bb1e998fba77c27e17e498b72f4a5925dd7a
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 036a6bcda04771eb8cf3699af8756e83bb144389
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216535"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332349"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 
@@ -240,6 +240,9 @@ vehicle switch
     DeliveryTruck t when (t.GrossWeightClass > 5000) => 10.00m + 5.00m,
     DeliveryTruck t when (t.GrossWeightClass < 3000) => 10.00m - 2.00m,
     DeliveryTruck t => 10.00m,
+    
+    { }     => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
+    null    => throw new ArgumentNullException(nameof(vehicle))
 };
 ```
 
@@ -294,7 +297,7 @@ Pour cette fonctionnalité, nous allons utiliser les critères spéciaux, mais e
 
 Le tableau suivant montre les combinaisons de valeurs d’entrée et le multiplicateur tarifaire :
 
-| Jour        | réflexion         | Sens | Multiplicateur |
+| Jour        | Time         | Sens | Multiplicateur |
 | ---------- | ------------ | --------- |--------:|
 | Semaine    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 2,00  |
 | Semaine    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |

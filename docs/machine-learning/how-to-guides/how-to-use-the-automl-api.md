@@ -3,12 +3,12 @@ title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 02e4203b0d9f388c7bd7133f3cd4e97cc60cff14
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: a7057337fb6ff19a1e402d7bf74a766b246ea3c1
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929397"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332720"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -36,7 +36,7 @@ Avant de créer une expérience, déterminer le type de problème de machine lea
 
 * Classification binaire
 * Classification multiclasse
-* régression ;
+* Régression
 
 ## <a name="create-experiment-settings"></a>Créer les paramètres de l’expérience
 
@@ -54,7 +54,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
   var experimentSettings = new MulticlassExperimentSettings();
   ```
 
-* régression ;
+* Régression
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
@@ -126,6 +126,9 @@ La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, déte
 |PositiveRecall
 
 ## <a name="data-pre-processing-and-featurization"></a>Prétraitement et caractérisation des données
+
+> [!NOTE]
+> La colonne de fonctionnalité ne prenait en charge que les types de [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [`Single`](https://docs.microsoft.com/en-us/dotnet/api/system.single)et [`String`](https://docs.microsoft.com/en-us/dotnet/api/system.string).
 
 Le prétraitement des données a lieu par défaut et les étapes suivantes sont effectuées automatiquement :
 

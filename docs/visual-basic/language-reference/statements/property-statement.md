@@ -11,16 +11,16 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-ms.openlocfilehash: 55da13eec9dc555c320ecd48d22d984dfcfea84c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2c3e417aad404171a43342dc92773615ec350ef5
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751054"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332743"
 ---
 # <a name="property-statement"></a>Property Statement
 
-Déclare le nom d’une propriété et les procédures de propriété utilisées pour stocker et récupérer la valeur de la propriété.
+Déclare le nom d’une propriété, ainsi que les procédures de propriété utilisées pour stocker et récupérer la valeur de la propriété.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,43 +45,43 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `attributelist`
 
-  Facultatif. Liste des attributs qui s’appliquent à cette propriété ou `Get` ou `Set` procédure. Consultez [liste d’attributs](../../../visual-basic/language-reference/statements/attribute-list.md).
+  facultatif. Liste des attributs qui s’appliquent à cette propriété ou à la procédure `Get` ou `Set`. Consultez la [liste des attributs](attribute-list.md).
 
 - `Default`
 
-  Facultatif. Spécifie que cette propriété est la propriété par défaut pour la classe ou structure sur lesquels il est défini. Propriétés par défaut doivent accepter des paramètres et peuvent être définies et récupérées sans spécifier le nom de propriété. Si vous déclarez la propriété comme `Default`, vous ne pouvez pas utiliser `Private` sur la propriété ou sur un de ses procédures de propriété.
+  facultatif. Spécifie que cette propriété est la propriété par défaut pour la classe ou la structure sur laquelle elle est définie. Les propriétés par défaut doivent accepter des paramètres et peuvent être définies et récupérées sans spécifier le nom de la propriété. Si vous déclarez la propriété comme `Default`, vous ne pouvez pas utiliser `Private` sur la propriété ou sur l’une de ses procédures de propriété.
 
 - `accessmodifier`
 
-  Facultatif sur le `Property` instruction et sur un de la `Get` et `Set` instructions. Il peut s'agir d'une des valeurs suivantes :
+  Facultatif sur l’instruction `Property` et sur au plus une des instructions `Get` et `Set`. Il peut s'agir d'une des valeurs suivantes :
 
-  - [Public](../../../visual-basic/language-reference/modifiers/public.md)
+  - [Public](../modifiers/public.md)
 
-  - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
+  - [Protected](../modifiers/protected.md)
 
-  - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
+  - [Friend](../modifiers/friend.md)
 
-  - [Private](../../../visual-basic/language-reference/modifiers/private.md)
+  - [Private](../modifiers/private.md)
 
-  - [Protected Friend](../../language-reference/modifiers/protected-friend.md)
+  - [Protected Friend](../modifiers/protected-friend.md)
 
-  - [Private Protected](../../language-reference/modifiers/private-protected.md)
+  - [Private Protected](../modifiers/private-protected.md)
 
-  Consultez [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+  Consultez [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
 - `propertymodifiers`
 
-  Facultatif. Il peut s'agir d'une des valeurs suivantes :
+  facultatif. Il peut s'agir d'une des valeurs suivantes :
 
-  - [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
+  - [Overloads](../modifiers/overloads.md)
 
-  - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
+  - [Overrides](../modifiers/overrides.md)
 
-  - [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
+  - [Overridable](../modifiers/overridable.md)
 
-  - [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
+  - [NotOverridable](../modifiers/notoverridable.md)
 
-  - [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)
+  - [MustOverride](../modifiers/mustoverride.md)
 
   - `MustOverride Overrides`
 
@@ -89,31 +89,31 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `Shared`
 
-  Facultatif. Consultez [partagé](../../../visual-basic/language-reference/modifiers/shared.md).
+  facultatif. Consultez [partagé](../modifiers/shared.md).
 
 - `Shadows`
 
-  Facultatif. Consultez [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
+  facultatif. Consultez [Shadows](../modifiers/shadows.md).
 
 - `ReadOnly`
 
-  Facultatif. Consultez [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).
+  facultatif. Consultez [ReadOnly](../modifiers/readonly.md).
 
 - `WriteOnly`
 
-  Facultatif. Consultez [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).
+  facultatif. Consultez [WriteOnly](../modifiers/writeonly.md).
 
 - `Iterator`
 
-  Facultatif. Consultez [itérateur](../../../visual-basic/language-reference/modifiers/iterator.md).
+  facultatif. Consultez [iterator](../modifiers/iterator.md).
 
 - `name`
 
-  Obligatoire. Nom de la propriété. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+  Obligatoire. Nom de la propriété. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).
 
 - `parameterlist`
 
-  Facultatif. Liste des noms de variables locales représentant les paramètres de cette propriété et les éventuels paramètres supplémentaires de la `Set` procédure. Consultez [liste de paramètres](../../../visual-basic/language-reference/statements/parameter-list.md).
+  facultatif. Liste des noms de variables locales qui représentent les paramètres de cette propriété, ainsi que des paramètres supplémentaires possibles de la procédure `Set`. Consultez la [liste des paramètres](parameter-list.md).
 
 - `returntype`
 
@@ -121,11 +121,11 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `Implements`
 
-  Facultatif. Indique que cette propriété implémente une ou plusieurs propriétés, chacune étant définie dans une interface implémentée par la classe ou la structure conteneur de cette propriété. Consultez [implémente instruction](../../../visual-basic/language-reference/statements/implements-statement.md).
+  facultatif. Indique que cette propriété implémente une ou plusieurs propriétés, chacune d’elles étant définie dans une interface implémentée par la classe ou la structure conteneur de cette propriété. Consultez [Implements, instruction](implements-statement.md).
 
 - `implementslist`
 
-  Obligatoire si `Implements` est utilisé. Liste de propriétés en cours d’implémentation.
+  Obligatoire si `Implements` est utilisé. Liste des propriétés en cours d’implémentation.
 
   `implementedproperty [ , implementedproperty ... ]`
 
@@ -135,70 +135,70 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
   |Élément|Description|
   |---|---|
-  |`interface`|Obligatoire. Nom d’une interface implémentée par cette propriété de classe ou la structure conteneur.|
+  |`interface`|Obligatoire. Nom d’une interface implémentée par la classe ou la structure conteneur de cette propriété.|
   |`definedname`|Obligatoire. Nom par lequel la propriété est définie dans `interface`.|
 
 - `Get`
 
-  Facultatif. Obligatoire si la propriété est marquée `WriteOnly`. Démarre un `Get` procédure de propriété qui est utilisée pour retourner la valeur de la propriété.
+  facultatif. Obligatoire si la propriété est marquée `ReadOnly`. Démarre une procédure de propriété `Get` qui est utilisée pour retourner la valeur de la propriété.  L’instruction `Get` n’est pas utilisée avec les [Propriétés implémentées automatiquement](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
 - `statements`
 
-  Facultatif. Bloc d’instructions à exécuter dans le `Get` ou `Set` procédure.
+  facultatif. Bloc d’instructions à exécuter dans la procédure `Get` ou `Set`.
 
 - `End Get`
 
-  Met fin à la `Get` procédure de propriété.
+  Met fin à la procédure de propriété `Get`.
 
 - `Set`
 
-  Facultatif. Obligatoire si la propriété est marquée `ReadOnly`. Démarre un `Set` procédure de propriété qui est utilisé pour stocker la valeur de la propriété.
+  facultatif. Obligatoire si la propriété est marquée `WriteOnly`. Démarre une procédure de propriété `Set` qui est utilisée pour stocker la valeur de la propriété.  L’instruction `Set` n’est pas utilisée avec les [Propriétés implémentées automatiquement](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
 - `End Set`
 
-  Met fin à la `Set` procédure de propriété.
+  Met fin à la procédure de propriété `Set`.
 
 - `End Property`
 
-  Termine la définition de cette propriété.
+  Met fin à la définition de cette propriété.
 
 ## <a name="remarks"></a>Notes
 
-La `Property` instruction introduit la déclaration d’une propriété. Une propriété peut avoir un `Get` procédure (en lecture seule), un `Set` procédure (écriture seule), ou les deux (lecture-écriture). Vous pouvez omettre le `Get` et `Set` procédure lors de l’utilisation d’une propriété implémentée automatiquement. Pour plus d’informations, consultez [Propriétés implémentées automatiquement](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).
+L’instruction `Property` introduit la déclaration d’une propriété. Une propriété peut avoir une procédure `Get` (lecture seule), une procédure `Set` (écriture seule) ou les deux (lecture-écriture). Vous pouvez omettre la procédure `Get` et `Set` lors de l’utilisation d’une propriété implémentée automatiquement. Pour plus d’informations, consultez [Propriétés implémentées automatiquement](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
-Vous pouvez utiliser `Property` uniquement au niveau de classe. Cela signifie que le *contexte de déclaration* pour une propriété doit être une classe, une structure, un module ou une interface et ne peut pas être un fichier source, un espace de noms, une procédure ou un bloc. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+Vous pouvez utiliser `Property` uniquement au niveau de la classe. Cela signifie que le *contexte de déclaration* pour une propriété doit être une classe, une structure, un module ou une interface, et ne peut pas être un fichier source, un espace de noms, une procédure ou un bloc. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](declaration-contexts-and-default-access-levels.md).
 
-Par défaut, les propriétés utilisent un accès public. Vous pouvez ajuster le niveau d’accès d’une propriété avec un modificateur d’accès sur le `Property` instruction et vous pouvez éventuellement ajuster une de ses procédures de propriété à un niveau d’accès plus restrictif.
+Par défaut, les propriétés utilisent un accès public. Vous pouvez ajuster le niveau d’accès d’une propriété à l’aide d’un modificateur d’accès sur l’instruction `Property`, et vous pouvez éventuellement ajuster l’une de ses procédures de propriété à un niveau d’accès plus restrictif.
 
-Visual Basic passe un paramètre à la `Set` procédure pendant les assignations de propriété. Si vous ne fournissez pas un paramètre pour `Set`, l’environnement de développement intégré (IDE) utilise un paramètre implicit nommé `value`. Ce paramètre conserve la valeur à assigner à la propriété. Vous en général de stocker cette valeur dans une variable locale privée et renvoyez-le à chaque fois que le `Get` procédure est appelée.
+Visual Basic passe un paramètre à la procédure `Set` pendant les attributions de propriété. Si vous ne fournissez pas de paramètre pour `Set`, l’environnement de développement intégré (IDE) utilise un paramètre implicite nommé `value`. Ce paramètre contient la valeur à assigner à la propriété. En général, vous stockez cette valeur dans une variable locale privée et la Retournez chaque fois que la procédure `Get` est appelée.
 
 ## <a name="rules"></a>Règles
 
-- **Niveaux d’accès mixtes.** Si vous définissez une propriété en lecture-écriture, vous pouvez éventuellement spécifier un niveau d’accès différent pour un le `Get` ou `Set` procédure, mais pas les deux. Si vous procédez ainsi, le niveau d’accès de la procédure doit être plus restrictif que le niveau d’accès de la propriété. Par exemple, si la propriété est déclarée `Friend`, vous pouvez déclarer le `Set` procédure `Private`, mais pas `Public`.
+- **Niveaux d’accès mixtes.** Si vous définissez une propriété en lecture-écriture, vous pouvez éventuellement spécifier un niveau d’accès différent pour la procédure `Get` ou `Set`, mais pas pour les deux. Dans ce cas, le niveau d’accès de la procédure doit être plus restrictif que le niveau d’accès de la propriété. Par exemple, si la propriété est déclarée `Friend`, vous pouvez déclarer la procédure `Set` `Private`, mais pas `Public`.
 
-  Si vous définissez un `ReadOnly` ou `WriteOnly` propriété, la procédure de propriété unique (`Get` ou `Set`, respectivement) représente la propriété. Vous ne pouvez pas déclarer un niveau d’accès différent pour cette procédure, parce que qui risque de deux niveaux d’accès pour la propriété.
+  Si vous définissez une propriété `ReadOnly` ou `WriteOnly`, la procédure de propriété unique (respectivement `Get` ou `Set`) représente l’ensemble de la propriété. Vous ne pouvez pas déclarer un niveau d’accès différent pour une telle procédure, car cela aurait pour effet de définir deux niveaux d’accès pour la propriété.
 
-- **Type de retour.** La `Property` instruction peut déclarer le type de données de la valeur de retour. Vous pouvez spécifier n’importe quel type de données ou le nom d’une énumération, une structure, une classe ou une interface.
+- **Type de retour.** L’instruction `Property` peut déclarer le type de données de la valeur qu’elle retourne. Vous pouvez spécifier n’importe quel type de données ou le nom d’une énumération, d’une structure, d’une classe ou d’une interface.
 
   Si vous ne spécifiez pas `returntype`, la propriété retourne `Object`.
 
-- **Mise en œuvre.** Si cette propriété utilise la `Implements` mot clé, la classe de conteneur ou la structure doit avoir un `Implements` instruction qui suit immédiatement sa `Class` ou `Structure` instruction. Le `Implements` instruction doit inclure chaque interface spécifiée dans `implementslist`. Toutefois, le nom par lequel une interface définit les `Property` (dans `definedname`) ne doit pas être le même que le nom de cette propriété (dans `name`).
+- **Déploiement.** Si cette propriété utilise le mot clé `Implements`, la classe ou la structure conteneur doit avoir une instruction `Implements` immédiatement après son instruction `Class` ou `Structure`. L’instruction `Implements` doit inclure chaque interface spécifiée dans `implementslist`. Toutefois, le nom par lequel une interface définit le `Property` (dans `definedname`) n’a pas besoin d’être identique au nom de cette propriété (dans `name`).
 
 ## <a name="behavior"></a>Comportement
 
-- **Retour d’une procédure de propriété.** Lorsque le `Get` ou `Set` procédure retourne au code appelant, l’exécution se poursuit avec l’instruction qui suit l’instruction qui l’a appelée.
+- **Retour d’une procédure de propriété.** Lorsque la procédure `Get` ou `Set` retourne au code appelant, l’exécution se poursuit avec l’instruction qui suit l’instruction qui l’a appelée.
 
-  Le `Exit Property` et `Return` instructions provoquent la sortie immédiate d’une procédure de propriété. Un nombre quelconque de `Exit Property` et `Return` instructions peuvent apparaître n’importe où dans la procédure, et vous pouvez combiner `Exit Property` et `Return` instructions.
+  Les instructions `Exit Property` et `Return` provoquent une sortie immédiate d’une procédure de propriété. N’importe quel nombre d’instructions `Exit Property` et `Return` peut apparaître n’importe où dans la procédure, et vous pouvez mélanger des instructions `Exit Property` et `Return`.
 
-- **Valeur de retour.** Pour retourner une valeur à partir d’un `Get` procédure, vous pouvez affecter la valeur au nom de propriété ou l’inclure dans un `Return` instruction. L’exemple suivant affecte la valeur de retour au nom de propriété `quoteForTheDay` et utilise ensuite la `Exit Property` instruction à retourner.
+- **Valeur de retour.** Pour retourner une valeur à partir d’une procédure `Get`, vous pouvez affecter la valeur au nom de la propriété ou l’inclure dans une instruction `Return`. L’exemple suivant affecte la valeur de retour au nom de la propriété `quoteForTheDay`, puis utilise l’instruction `Exit Property` pour retourner.
 
   [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]
 
   [!code-vb[VbVbalrStatements#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#28)]
 
-  Si vous utilisez `Exit Property` sans assigner une valeur à `name`, le `Get` procédure retourne la valeur par défaut type de la propriété de données.
+  Si vous utilisez `Exit Property` sans assigner de valeur à `name`, la procédure `Get` retourne la valeur par défaut pour le type de données de la propriété.
 
-  Le `Return` instruction en même temps affecte le `Get` procédure retourner de valeur et termine la procédure. L’exemple suivant illustre cela.
+  En même temps, l’instruction `Return` affecte la valeur de retour de la procédure `Get` et quitte la procédure. L’exemple suivant illustre cela.
 
   [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]
 
@@ -212,9 +212,9 @@ L’exemple suivant déclare une propriété dans une classe.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Propriétés implémentées automatiquement](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
-- [Objets et classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Get (instruction)](../../../visual-basic/language-reference/statements/get-statement.md)
-- [Set (instruction)](../../../visual-basic/language-reference/statements/set-statement.md)
-- [Liste de paramètres](../../../visual-basic/language-reference/statements/parameter-list.md)
-- [Default](../../../visual-basic/language-reference/modifiers/default.md)
+- [Propriétés implémentées automatiquement](../../programming-guide/language-features/procedures/auto-implemented-properties.md)
+- [Objets et classes](../../programming-guide/language-features/objects-and-classes/index.md)
+- [Get (instruction)](get-statement.md)
+- [Set (instruction)](set-statement.md)
+- [Liste de paramètres](parameter-list.md)
+- [Default](../modifiers/default.md)

@@ -2,12 +2,12 @@
 title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types référence nullables, ajoutés dans C# 8. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.date: 02/19/2019
-ms.openlocfilehash: 80018aaa409e7b4c188362482705de33ac5afd85
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 05a8e14a7c51df685b3ffdf16aab997da0a8036f
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272790"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332372"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -74,9 +74,12 @@ Vous pouvez aussi utiliser des directives pour définir ces mêmes contextes par
 - `#nullable enable`: Définit le contexte d’annotation nullable et le contexte d’avertissement nullable sur **activé**.
 - `#nullable disable`: Définit le contexte d’annotation nullable et le contexte d’avertissement nullable sur **désactivé**.
 - `#nullable restore`: Restaure le contexte d’annotation nullable et le contexte d’avertissement nullable avec les paramètres du projet.
-- `#pragma warning disable nullable`: Définit le contexte d’avertissement nullable sur **désactivé**.
-- `#pragma warning enable nullable`: Définit le contexte d’avertissement nullable sur **activé**.
-- `#pragma warning restore nullable`: Restaure le contexte d’avertissement nullable avec les paramètres du projet.
+- `#nullable disable warnings`: Définit le contexte d’avertissement nullable sur **désactivé**.
+- `#nullable enable warnings`: Définit le contexte d’avertissement nullable sur **activé**.
+- `#nullable restore warnings`: Restaure le contexte d’avertissement nullable avec les paramètres du projet.
+- `#nullable disable annotations`: Affectez la valeur **désactivé**au contexte d’annotation Nullable.
+- `#nullable enable annotations`: Définissez le contexte d’annotation Nullable sur **activé**.
+- `#nullable restore annotations`: Restaure le contexte d’avertissement d’annotation sur les paramètres du projet.
 
 Les contextes d’annotation et d’avertissement nullables par défaut sont `disabled`. Ce parti pris signifie que votre code existant compile sans rien changer et sans générer aucun nouvel avertissement.
 

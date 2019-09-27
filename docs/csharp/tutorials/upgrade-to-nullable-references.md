@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 616c9fdbe62d8147fb74fefc878f9277c2a1156b
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 842b1bb6e0d3032c6181cccf77934541754ff8ec
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214284"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332330"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutoriel : Migrer du code existant avec des types de référence nullable
 
@@ -52,9 +52,6 @@ Une bonne étape suivante consiste à activer le contexte d’annotation nullabl
 ```xml
 <Nullable>enable</Nullable>
 ```
-
-> [!IMPORTANT]
-> L’élément `Nullable` était nommé `NullableContextOptions`. Les navires renommés avec Visual Studio 2019, 16.2-p1. Le kit SDK .NET Core 3.0.100-preview5-011568 n’a pas cette modification. Si vous utilisez le CLI .NET Core, vous devrez utiliser `NullableContextOptions` jusqu'à ce que la préversion suivante soit disponible.
 
 Effectuez une build de test et notez la liste d’avertissements. Dans cette petite application, le compilateur génère cinq avertissements, il est donc probable que vous laissiez le contexte d’annotation nullable activé et commenciez à résoudre les avertissements pour l’ensemble du projet.
 

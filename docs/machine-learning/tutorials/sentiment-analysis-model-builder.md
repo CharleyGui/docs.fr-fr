@@ -1,17 +1,17 @@
 ---
 title: 'Tutoriel : Analyser le sentiment-classification binaire'
 description: Ce didacticiel vous montre comment créer une application Razor Pages qui classe les sentiments à partir de commentaires de site Web et prend les mesures appropriées. Le classifieur de sentiment binaire utilise le générateur de modèles dans Visual Studio.
-ms.date: 09/13/2019
+ms.date: 09/26/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 375440d98fd728cc89c1ac620614067edbd3adf8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 0878a9318e7c60be29eeac9fb4efd47e408ab660
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216878"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332580"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Tutoriel : Analyser les sentiments des commentaires de site Web dans une application Web à l’aide du générateur de modèles ML.NET
 
@@ -66,7 +66,7 @@ Chaque ligne du jeu de données *Wikipédia-Detox-250-Line-Data. TSV* représent
 
 ## <a name="choose-a-scenario"></a>Choisir un scénario
 
-![](./media/sentiment-analysis-model-builder/model-builder-screen.png)
+![Assistant Générateur de modèles dans Visual Studio](./media/sentiment-analysis-model-builder/model-builder-screen.png)
 
 Pour entraîner votre modèle, vous devez sélectionner dans la liste des scénarios Machine Learning disponibles fournis par Model Builder.
 
@@ -79,7 +79,8 @@ Le générateur de modèles accepte les données de deux sources, une base de do
 
 1. Dans l’étape des données de l’outil Model Builder, sélectionnez **Fichier** dans la liste déroulante des sources de données.
 1. Sélectionnez le bouton en regard de la zone de texte **Sélectionner un fichier** et utilisez l’Explorateur de fichiers pour parcourir et sélectionner le fichier *Wikipédia-Detox-250-Line-Data. TSV* .
-1. Choisissez le **sentiment** dans la liste déroulante **étiquette ou colonne à prédire**
+1. Choisissez **sentiments** dans la liste déroulante **colonne à prédire (étiquette)** .
+1. Laissez les valeurs par défaut pour la liste déroulante **colonnes d’entrée (fonctionnalités)** .
 1. Sélectionnez le lien **former** pour passer à l’étape suivante dans l’outil générateur de modèles.
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
@@ -117,23 +118,13 @@ Deux projets sont créés à la suite du processus d’entraînement.
     Les projets suivants doivent apparaître dans le **Explorateur de solutions**:
 
     - *SentimentRazorML. ConsoleApp*: Application console .NET Core qui contient l’apprentissage du modèle et le code de prédiction.
-    - *SentimentRazorML. Model*: Une bibliothèque de classes .NET Standard contenant les modèles de données qui définissent le schéma des données du modèle en entrée et en sortie, ainsi que la version enregistrée du modèle le plus performant lors de l’entraînement.
+    - *SentimentRazorML. Model*: Bibliothèque de classes .NET Standard contenant les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie ainsi que la version enregistrée du modèle le plus performant au cours de l’apprentissage.
 
     Pour ce didacticiel, seul le projet *SentimentRazorML. Model* est utilisé, car les prédictions sont effectuées dans l’application Web *SentimentRazor* plutôt que dans la console. Bien que *SentimentRazorML. ConsoleApp* ne soit pas utilisé pour le calcul de score, il peut être utilisé pour reformer le modèle à l’aide de nouvelles données ultérieurement. Toutefois, la reformation n’entre pas dans le cadre de ce didacticiel.
 
-1. Pour utiliser le modèle formé à l’intérieur de votre application Razor Pages, ajoutez une référence au projet *SentimentRazorML. Model* .
-
-    1. Cliquez avec le bouton droit sur le projet **SentimentRazor** .
-    1. Sélectionnez **Ajouter une référence de >** .
-    1. Sélectionnez le nœud **projets > solution** , puis, dans la liste, vérifiez le projet **SentimentRazorML. Model** .
-    1. Sélectionnez **OK**.
-
 ### <a name="configure-the-predictionengine-pool"></a>Configurer le pool PredictionEngine
 
-Pour établir une prédiction unique, utilisez [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Pour pouvoir utiliser [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) dans votre application, vous devez la créer quand c’est nécessaire. Dans ce cas, il est recommandé d’utiliser l’injection de dépendances.
-
-> [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Pour améliorer les performances et la cohérence de thread, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets `PredictionEngine` à utiliser avec l’application. Lisez le billet de blog suivant pour en savoir plus sur [la création et l’utilisation de pools d’objets `PredictionEngine` dans ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/).
+Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. En outre, vous devez créer une instance de celle-ci partout où elle est nécessaire dans votre application. À mesure que votre application croît, ce processus peut devenir non gérable. Pour améliorer les performances et la sécurité des threads, utilisez une combinaison d’injection de dépendances et le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application.
 
 1. Installez le package NuGet *Microsoft.extensions.ml* :
 
@@ -250,7 +241,7 @@ Maintenant que votre application est configurée, exécutez l’application qui 
 
 Lorsque l’application démarre, entrez le *Générateur de modèles est cool !* dans la zone de texte. Le sentiment prédit affiché ne doit *pas être toxique*.
 
-![](./media/sentiment-analysis-model-builder/web-app.png)
+![Fenêtre en cours d’exécution avec la fenêtre de sentiment prédite](./media/sentiment-analysis-model-builder/web-app.png)
 
 Si vous devez référencer les projets générés par le générateur de modèles ultérieurement dans une autre solution, vous pouvez les Rechercher dans `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` le répertoire.
 

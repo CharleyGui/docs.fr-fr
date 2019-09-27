@@ -1,16 +1,16 @@
 ---
 title: Déployer un modèle sur Azure Functions
 description: Alimentez un modèle Machine Learning d’analyse des sentiments ML.NET à des fins de prédiction sur Internet avec Azure Functions.
-ms.date: 08/20/2019
+ms.date: 09/12/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 96b62017994da5b7b209c441b3e7fb760cad5201
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: ef028fee6cafcf4a775e061d9a5f91f0cf9a7e36
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666670"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332708"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Déployer un modèle sur Azure Functions
 
@@ -68,19 +68,7 @@ Créez une classe pour prédire le sentiment. Ajoutez une nouvelle classe à vot
 
     Le fichier *AnalyzeSentiment.cs* s’ouvre dans l’éditeur de code. Ajoutez l’instruction suivante `using` en haut du fichier *AnalyzeSentiment.cs* :
 
-    ```csharp
-    using System;
-    using System.IO;
-    using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Azure.WebJobs.Extensions.Http;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.Extensions.Logging;
-    using Newtonsoft.Json;
-    using Microsoft.Extensions.ML;
-    using SentimentAnalysisFunctionsApp.DataModels;
-    ```
+    [!code-csharp [AnalyzeUsings](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/AnalyzeSentiment.cs#L1-L11)]
 
     Par défaut, la classe `AnalyzeSentiment` est `static`. Veillez à supprimer le mot clé `static` de la définition de classe.
 
@@ -101,53 +89,28 @@ Vous devez créer des classes pour vos données d’entrée et prévisions. Ajou
 
     Le fichier *SentimentData.cs* s’ouvre dans l’éditeur de code. Ajoutez l’instruction using suivante en haut du fichier *SentimentData.cs* :
 
-    ```csharp
-    using Microsoft.ML.Data;
-    ```
+    [!code-csharp [SentimentDataUsings](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/DataModels/SentimentData.cs#L1)]
 
     Supprimez la définition de classe existante et ajoutez le code suivant au fichier *SentimentData.cs* :
-    
-    ```csharp
-    public class SentimentData
-    {
-        [LoadColumn(0)]
-        public string SentimentText;
 
-        [LoadColumn(1)]
-        [ColumnName("Label")]
-        public bool Sentiment;
-    }
-    ```
+    [!code-csharp [SentimentData](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/DataModels/SentimentData.cs#L5-L13)]
 
 4. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le répertoire *DataModels*, puis sélectionnez **Ajouter > Nouvel élément**.
 5. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et remplacez la valeur du champ **Nom** par *SentimentPrediction.cs*. Ensuite, sélectionnez le bouton **Ajouter**. Le fichier *SentimentPrediction.cs* s’ouvre dans l’éditeur de code. Ajoutez l’instruction using suivante en haut du fichier *SentimentPrediction.cs* :
 
-    ```csharp
-    using Microsoft.ML.Data;
-    ```
+    [!code-csharp [SentimentPredictionUsings](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/DataModels/SentimentPrediction.cs#L1)]
 
     Supprimez la définition de classe existante et ajoutez le code suivant au fichier *SentimentPrediction.cs* :
 
-    ```csharp
-    public class SentimentPrediction : SentimentData
-    {
-
-        [ColumnName("PredictedLabel")]
-        public bool Prediction { get; set; }
-
-        public float Probability { get; set; }
-
-        public float Score { get; set; }
-    }
-    ```
+    [!code-csharp [SentimentPrediction](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/DataModels/SentimentPrediction.cs#L5-L14)]
 
     `SentimentPrediction` hérite de `SentimentData`, qui fournit l’accès aux données d’origine dans la propriété `SentimentText` ainsi que la sortie générée par le modèle.
 
 ## <a name="register-predictionenginepool-service"></a>Inscrire le service PredictionEnginePool
 
-Pour établir une prédiction unique, utilisez [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Pour pouvoir utiliser la classe [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) dans votre application, vous devez la créer quand vous en avez besoin. Dans ce cas, il est recommandé d’utiliser l’injection de dépendances.
+Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. En outre, vous devez créer une instance de celle-ci partout où elle est nécessaire dans votre application. À mesure que votre application croît, ce processus peut devenir non gérable. Pour améliorer les performances et la sécurité des threads, utilisez une combinaison d’injection de dépendances et le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application.
 
-Pour plus d’informations, voir [Injection de dépendances](https://en.wikipedia.org/wiki/Dependency_injection).
+Le lien suivant fournit plus d’informations si vous souhaitez en savoir plus sur l' [injection de dépendances](https://en.wikipedia.org/wiki/Dependency_injection).
 
 1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et définissez la valeur du champ **Nom** sur *Startup.cs*. Ensuite, sélectionnez le bouton **Ajouter**. 
@@ -172,30 +135,27 @@ Pour plus d’informations, voir [Injection de dépendances](https://en.wikipedi
             public override void Configure(IFunctionsHostBuilder builder)
             {
                 builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
-                    .FromFile("MLModels/sentiment_model.zip");
+                    .FromFile(modelName: "SentimentAnalysisModel", filePath:"MLModels/sentiment_model.zip", watchForChanges: true);
             }
         }
     }
     ```
 
-À haut niveau, ce code initialise automatiquement les objets et les services à la demande de l’application, ce qui évite d’avoir à le faire manuellement.
+À un niveau élevé, ce code initialise automatiquement les objets et les services en vue d’une utilisation ultérieure lorsqu’ils sont demandés par l’application au lieu d’avoir à le faire manuellement. 
 
-> [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Pour améliorer les performances et la cohérence de thread, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets `PredictionEngine` à utiliser avec l’application. 
+Les modèles machine learning ne sont pas statiques. À mesure que de nouvelles données d’apprentissage deviennent disponibles, le modèle est reformé et redéployé. Une façon d’utiliser la dernière version du modèle dans votre application consiste à redéployer l’application entière. Toutefois, cela entraîne un temps d’arrêt des applications. Le service `PredictionEnginePool` fournit un mécanisme permettant de recharger un modèle mis à jour sans mettre votre application hors service. 
+
+Définissez le paramètre `watchForChanges` sur `true`, et le `PredictionEnginePool` démarre un [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) qui écoute les notifications de modification du système de fichiers et déclenche des événements lorsqu’une modification est apportée au fichier. Cela invite le `PredictionEnginePool` à recharger automatiquement le modèle.
+
+Le modèle est identifié par le paramètre `modelName` afin que plusieurs modèles par application puissent être rechargés une fois la modification apportée. 
+
+Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application.
 
 ## <a name="load-the-model-into-the-function"></a>Charger le modèle dans la fonction
 
 Insérez le code suivant à l’intérieur de la classe *AnalyzeSentiment* :
 
-```csharp
-private readonly PredictionEnginePool<SentimentData, SentimentPrediction> _predictionEnginePool;
-
-// AnalyzeSentiment class constructor
-public AnalyzeSentiment(PredictionEnginePool<SentimentData, SentimentPrediction> predictionEnginePool)
-{
-    _predictionEnginePool = predictionEnginePool;
-}
-```
+[!code-csharp [AnalyzeCtor](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/AnalyzeSentiment.cs#L18-L24)]
 
 Ce code affecte le `PredictionEnginePool` en le passant au constructeur de la fonction, obtenu par injection de dépendances.
 
@@ -214,9 +174,9 @@ ILogger log)
     //Parse HTTP Request Body
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     SentimentData data = JsonConvert.DeserializeObject<SentimentData>(requestBody);
-    
+
     //Make Prediction
-    SentimentPrediction prediction = _predictionEnginePool.Predict(data);
+    SentimentPrediction prediction = _predictionEnginePool.Predict(modelName: "SentimentAnalysisModel", example: data);
 
     //Convert prediction to string
     string sentiment = Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative";
@@ -226,7 +186,7 @@ ILogger log)
 }
 ```
 
-Quand la méthode `Run` s’exécute, les données entrantes issues de la requête HTTP sont désérialisées et utilisées comme entrée pour le `PredictionEnginePool`. La méthode `Predict` est ensuite appelée pour générer une prédiction et retourner le résultat à l’utilisateur. 
+Quand la méthode `Run` s’exécute, les données entrantes issues de la requête HTTP sont désérialisées et utilisées comme entrée pour le `PredictionEnginePool`. La méthode `Predict` est ensuite appelée pour effectuer des prédictions à l’aide de la `SentimentAnalysisModel` inscrite dans la classe `Startup` et retourne les résultats à l’utilisateur en cas de réussite.
 
 ## <a name="test-locally"></a>Tester localement
 
