@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-ms.openlocfilehash: dd7550b8b1e164c55bd97828d395b43a60c87cfb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: acfe47f52ede289093b3554a7dd190ef3f0e2c80
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929947"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592111"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
 Indique qu'une déclaration de type est une définition partielle du type.  
@@ -31,7 +31,7 @@ Indique qu'une déclaration de type est une définition partielle du type.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attrlist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] _  
 Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]  
     [ Inherits classname ]  
@@ -50,7 +50,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
 |`Shadows`|facultatif. Consultez [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
 |`MustInherit`|facultatif. Consultez [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).|  
 |`NotInheritable`|facultatif. Voir [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).|  
-|`name`|Requis. Nom de ce type. Doit correspondre au nom défini dans toutes les autres déclarations partielles du même type.|  
+|`name`|Obligatoire. Nom de ce type. Doit correspondre au nom défini dans toutes les autres déclarations partielles du même type.|  
 |`Of`|facultatif. Spécifie qu'il s'agit d'un type générique. Consultez [types génériques dans Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).|  
 |`typelist`|Obligatoire si [vous utilisez.](../../../visual-basic/language-reference/statements/of-clause.md) Consultez la [liste des types](../../../visual-basic/language-reference/statements/type-list.md).|  
 |`Inherits`|facultatif. Consultez [Inherits (instruction](../../../visual-basic/language-reference/statements/inherits-statement.md)).|  
@@ -86,7 +86,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
  [Structure (instruction)](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant fractionne la définition de la classe `sampleClass` en deux déclarations, dont chacune définit une procédure `Sub` différente.  
   
  [!code-vb[VbVbalrKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#3)]  

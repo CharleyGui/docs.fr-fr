@@ -2,12 +2,12 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 92f7e94d8003823c0b166cc617563e63aba78027
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: HT
+ms.openlocfilehash: f764bd0183e3881bfb81ebda7d3c7dd49a4cbdde
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038017"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591606"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -66,7 +66,7 @@ Vous aurez peut-être besoin de convertir un objet en un autre type.
 - [Utiliser les critères spéciaux et les opérateurs `as` et `is` pour caster sans risque en un autre type](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Définir des conversions de type personnalisé](../language-reference/operators/user-defined-conversion-operators.md).
 - [Déterminer si un type est un type valeur nullable](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
-- [Convertir entre des types valeur nullable et non nullable](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-type-to-an-underlying-type).
+- [Convertir entre des types valeur nullable et non nullable](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type).
 
 ## <a name="equality-and-ordering-comparisons"></a>Comparaisons d’égalité et de classement
 

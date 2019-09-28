@@ -6,19 +6,19 @@ helpviewer_keywords:
 - TextFieldParser class, aboutTextFieldParser class
 - TextFieldParser class
 ms.assetid: d44bd2b0-7dfc-410b-a48b-534c1e97460b
-ms.openlocfilehash: da5f9058efcbd70c5c76bb1307c126a14861ffc7
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: cac32cd67eb7b6babdf5dab3cb2429c2b8b48ae6
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041775"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592125"
 ---
 # <a name="textfieldparser-object"></a>TextFieldParser Object
 Fournit des méthodes et des propriétés pour analyser des fichiers texte structurés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Public Class TextFieldParser  
 ```  
   
@@ -32,4 +32,4 @@ Public Class TextFieldParser
   
  **Classe :** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>  
   
- **Assembly :** bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)
+ **Chargeur** bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)

@@ -2,26 +2,26 @@
 title: Instructions A-E (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
-ms.openlocfilehash: 4135f7154a73823400d8b1698421e138650d4854
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfe28b28f197759bb2620d12d550a057d47f4d74
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054339"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591999"
 ---
 # <a name="a-e-statements"></a>Instructions A-E
-Le tableau suivant contient une liste d’instructions de langage Visual Basic.  
+Le tableau suivant contient une liste d’instructions Visual Basic Language.  
   
 |||||  
 |---|---|---|---|  
-|[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[Call](../../../visual-basic/language-reference/statements/call-statement.md)|[Classe](../../../visual-basic/language-reference/statements/class-statement.md)|[Const](../../../visual-basic/language-reference/statements/const-statement.md)|  
-|[Continue](../../../visual-basic/language-reference/statements/continue-statement.md)|[Declare](../../../visual-basic/language-reference/statements/declare-statement.md)|[Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md)|  
-|[... Boucle](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Else](../../../visual-basic/language-reference/statements/else-statement.md)|[Fin](../../../visual-basic/language-reference/statements/end-statement.md)|[End \<mot clé>](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|  
-|[Enum](../../../visual-basic/language-reference/statements/enum-statement.md)|[Erase](../../../visual-basic/language-reference/statements/erase-statement.md)|[Error](../../../visual-basic/language-reference/statements/error-statement.md)|[Event](../../../visual-basic/language-reference/statements/event-statement.md)|  
-|[Quitter](../../../visual-basic/language-reference/statements/exit-statement.md)||||  
+|[AddHandler](addhandler-statement.md)|[Call](call-statement.md)|[Classe](class-statement.md)|[Const](const-statement.md)|  
+|[Continue](continue-statement.md)|[Declare](declare-statement.md)|[Delegate](delegate-statement.md)|[Dim](dim-statement.md)|  
+|[... Circuit](do-loop-statement.md)|[Else](else-statement.md)|[Fin](end-statement.md)|[End \<mot clé>](end-keyword-statement.md)|  
+|[Enum](enum-statement.md)|[Erase](erase-statement.md)|[Error](error-statement.md)|[Event](event-statement.md)|  
+|[Quitter](exit-statement.md)||||  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions F-P](../../../visual-basic/language-reference/statements/f-p-statements.md)
-- [Instructions Q-Z](../../../visual-basic/language-reference/statements/q-z-statements.md)
-- [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Instructions F-P](f-p-statements.md)
+- [Instructions Q-Z](q-z-statements.md)
+- [Informations de référence sur le langage Visual Basic](../index.md)

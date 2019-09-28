@@ -81,19 +81,19 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-ms.openlocfilehash: 3321a9a290e6ba49be289848e4d16907ad9edbda
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b448fa23368f7a0848c44362337b0ccc70b6162
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662579"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592075"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Fonctions de conversion de types de données (Visual Basic)
-Ces fonctions sont compilé "inline", ce qui signifie que le code de conversion fait partie du code qui évalue l’expression. Parfois, il n’existe aucun appel à une procédure pour effectuer la conversion, ce qui améliore les performances. Chaque fonction convertit une expression en un type de données spécifique.  
+Ces fonctions sont compilées Inline, ce qui signifie que le code de conversion fait partie du code qui évalue l’expression. Il arrive parfois qu’il n’y ait pas d’appel à une procédure pour effectuer la conversion, ce qui améliore les performances. Chaque fonction convertit une expression en un type de données spécifique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 CBool(expression)  
 CByte(expression)  
 CChar(expression)  
@@ -114,36 +114,36 @@ CUShort(expression)
   
 ## <a name="part"></a>Élément  
  `expression`  
- Obligatoire. Toute expression de type de données source.  
+ Obligatoire. Toute expression du type de données source.  
   
-## <a name="return-value-data-type"></a>Type de données valeur de retour  
- Le nom de la fonction détermine le type de données de la valeur de que retour, comme indiqué dans le tableau suivant.  
+## <a name="return-value-data-type"></a>Type de données de la valeur de retour  
+ Le nom de la fonction détermine le type de données de la valeur qu’il retourne, comme indiqué dans le tableau suivant.  
   
-|Nom de la fonction|Type de données de retour|Plage pour `expression` argument|  
+|Nom de la fonction|Type de données de retour|Plage pour l’argument `expression`|  
 |-------------------|----------------------|-------------------------------------|  
-|`CBool`|[Booléen (type de données)](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Valide `Char` ou `String` ou expression numérique.|  
-|`CByte`|[Byte (type de données)](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte.MinValue?displayProperty=nameWithType> (0) par le biais <xref:System.Byte.MaxValue?displayProperty=nameWithType> (255) (non signé) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances de la virgule flottante pour la conversion d’octets avec la `CByte` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
-|`CChar`|[Char (type de données)](../../../visual-basic/language-reference/data-types/char-data-type.md)|Valide `Char` ou `String` expression ; seul premier caractère d’un `String` est convertie ; valeur peut être 0 et 65 535 (non signé).|  
-|`CDate`|[Date (type de données)](../../../visual-basic/language-reference/data-types/date-data-type.md)|Une représentation valide d’une date et une heure.|  
-|`CDbl`|[Double (type de données)](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1, 79769313486231570E + 308 à - 4, 94065645841246544E-324 pour les valeurs négatives ; 4, 94065645841246544E-324 à 1, 79769313486231570E + 308 pour les valeurs positives.|  
-|`CDec`|[Decimal (type de données)](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 pour les nombres à échelle zéro, autrement dit, les nombres sans décimales. Pour les nombres à 28 décimales, la plage est +/-7,9228162514264337593543950335. Le plus petit nombre possible de zéro est 0,0000000000000000000000000001 (+/-1E-28).|  
-|`CInt`|[Integer (type de données)](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32.MinValue?displayProperty=nameWithType> (allant de -2,147,483,648) via <xref:System.Int32.MaxValue?displayProperty=nameWithType> (2 147 483 647) ; parties fractionnaires sont arrondies.<sup> 1</sup> <br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances de la virgule flottante pour la conversion d’un entier avec la `CInt` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple. |  
-|`CLng`|[Long (type de données)](../../../visual-basic/language-reference/data-types/long-data-type.md)|<xref:System.Int64.MinValue?displayProperty=nameWithType> (-9,223,372,036,854,775,808) via <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9,223,372,036,854,775,807) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances de la virgule flottante pour la conversion d’entier 64 bits avec le `CLng` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
+|`CBool`|[Booléen (type de données)](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Toute expression valide `Char`, `String` ou numérique.|  
+|`CByte`|[Byte (type de données)](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte.MinValue?displayProperty=nameWithType> (0) à <xref:System.Byte.MaxValue?displayProperty=nameWithType> (255) (non signé); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À partir de Visual Basic 15,8, Visual Basic optimise les performances de la conversion à virgule flottante en octet avec la fonction `CByte` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
+|`CChar`|[Char (type de données)](../../../visual-basic/language-reference/data-types/char-data-type.md)|Toute expression valide `Char` ou `String` ; seul le premier caractère d’un `String` est converti ; la valeur peut être comprise entre 0 et 65535 (non signé).|  
+|`CDate`|[Date (type de données)](../../../visual-basic/language-reference/data-types/date-data-type.md)|Toute représentation valide d’une date et d’une heure.|  
+|`CDbl`|[Double (type de données)](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1.79769313486231570 e + 308 à-4.94065645841246544 E-324 pour les valeurs négatives ; 4.94065645841246544 e-324 à 1.79769313486231570 E + 308 pour les valeurs positives.|  
+|`CDec`|[Decimal (type de données)](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79 228 335 pour les nombres à échelle zéro, autrement dit, les nombres sans décimales. Pour les nombres avec 28 décimales, la plage est +/-7,9228162514264337593543950335. Le plus petit nombre non nul possible est 0,0000000000000000000000000001 (+/-1E-28).|  
+|`CInt`|[Integer (type de données)](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32.MinValue?displayProperty=nameWithType> (-2 147 483 648) à <xref:System.Int32.MaxValue?displayProperty=nameWithType> (2 147 483 647); les parties fractionnaires sont arrondies. <sup>1</sup> <br/><br/>À partir de Visual Basic 15,8, Visual Basic optimise les performances de la conversion à virgule flottante en valeur entière avec la fonction `CInt` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) . |  
+|`CLng`|[Long (type de données)](../../../visual-basic/language-reference/data-types/long-data-type.md)|<xref:System.Int64.MinValue?displayProperty=nameWithType> (-9223372036854775808) à <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9 223 372 036 854 775 807); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À compter de Visual Basic 15,8, Visual Basic optimise les performances de la conversion d’un entier à virgule flottante en 64 bits avec la fonction `CLng` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
 |`CObj`|[Object (type de données)](../../../visual-basic/language-reference/data-types/object-data-type.md)|Toute expression valide.|  
-|`CSByte`|[SByte (type de données)](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte.MinValue?displayProperty=nameWithType> -(128) via <xref:System.SByte.MaxValue?displayProperty=nameWithType> (127) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À compter de 15.8 de Visual Basic, Visual Basic optimise les performances des valeurs à virgule flottante conversion octet signé avec la `CSByte` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
-|`CShort`|[Short (type de données)](../../../visual-basic/language-reference/data-types/short-data-type.md)|<xref:System.Int16.MinValue?displayProperty=nameWithType> (-32 768) via <xref:System.Int16.MaxValue?displayProperty=nameWithType> (32 767) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances des valeurs à virgule flottante conversion entier 16 bits avec le `CShort` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
-|`CSng`|[Single (type de données)](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3, 402823E + 38 à - 1, 401298E-45 pour les valeurs négatives ; 1, 401298E-45 et 3, 402823E + 38 pour les valeurs positives.|  
-|`CStr`|[String (type de données)](../../../visual-basic/language-reference/data-types/string-data-type.md)|Retourne pour `CStr` varient selon le `expression` argument. Consultez [retournent des valeurs pour la fonction CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).|  
-|`CUInt`|[UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32.MinValue?displayProperty=nameWithType> (0) par le biais <xref:System.UInt32.MaxValue?displayProperty=nameWithType> (4 294 967 295) (non signé) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances de la virgule flottante pour la conversion d’un entier non signé avec la `CUInt` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
-|`CULng`|[ULong (type de données)](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64.MinValue?displayProperty=nameWithType> (0) par le biais <xref:System.UInt64.MaxValue?displayProperty=nameWithType> (18,446,744,073,709,551,615) (non signé) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À partir de Visual Basic 15.8, Visual Basic optimise les performances de la virgule flottante pour la conversion d’entier long non signé avec la `CULng` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
-|`CUShort`|[UShort (type de données)](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16.MinValue?displayProperty=nameWithType> (0) par le biais <xref:System.UInt16.MaxValue?displayProperty=nameWithType> (65 535) (non signé) ; parties fractionnaires sont arrondies.<sup> 1</sup><br/><br/>À compter de 15.8 de Visual Basic, Visual Basic optimise les performances des valeurs à virgule flottante conversion entier 16 bits non signé avec la `CUShort` fonction ; consultez la [notes](#remarks) section pour plus d’informations. Consultez le [CInt exemple](#cint-example) section pour obtenir un exemple.|  
+|`CSByte`|[SByte (type de données)](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte.MinValue?displayProperty=nameWithType> (-128) à <xref:System.SByte.MaxValue?displayProperty=nameWithType> (127); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À partir de Visual Basic 15,8, Visual Basic optimise les performances de la conversion à virgule flottante en octet signé avec la fonction `CSByte` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
+|`CShort`|[Short (type de données)](../../../visual-basic/language-reference/data-types/short-data-type.md)|<xref:System.Int16.MinValue?displayProperty=nameWithType> (-32 768) à <xref:System.Int16.MaxValue?displayProperty=nameWithType> (32 767); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À compter de Visual Basic 15,8, Visual Basic optimise les performances de la conversion d’un entier à virgule flottante en 16 bits avec la fonction `CShort` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
+|`CSng`|[Single (type de données)](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3.402823 e + 38 à-1.401298 E-45 pour les valeurs négatives ; 1.401298 e-45 à 3.402823 E + 38 pour les valeurs positives.|  
+|`CStr`|[String (type de données)](../../../visual-basic/language-reference/data-types/string-data-type.md)|Retourne pour `CStr` dépend de l’argument `expression`. Consultez [valeurs de retour pour la fonction CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).|  
+|`CUInt`|[UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32.MinValue?displayProperty=nameWithType> (0) à <xref:System.UInt32.MaxValue?displayProperty=nameWithType> (4 294 967 295) (non signé); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À compter de Visual Basic 15,8, Visual Basic optimise les performances de la conversion d’un entier à virgule flottante en non signée avec la fonction `CUInt` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
+|`CULng`|[ULong (type de données)](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64.MinValue?displayProperty=nameWithType> (0) à <xref:System.UInt64.MaxValue?displayProperty=nameWithType> (18446744073709551615) (non signé); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À compter de Visual Basic 15,8, Visual Basic optimise les performances de la conversion de virgule flottante en valeur entière non signée avec la fonction `CULng` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
+|`CUShort`|[UShort (type de données)](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16.MinValue?displayProperty=nameWithType> (0) à <xref:System.UInt16.MaxValue?displayProperty=nameWithType> (65 535) (non signé); les parties fractionnaires sont arrondies. <sup>1</sup><br/><br/>À compter de Visual Basic 15,8, Visual Basic optimise les performances de la conversion d’un entier à virgule flottante en 16 bits non signé avec la fonction `CUShort` ; Pour plus d’informations, consultez la section [Notes](#remarks) . Pour obtenir un exemple, consultez la section [exemple CInt](#cint-example) .|  
   
- <sup>1</sup> fractionnaire peut être soumis à un type spécial de l’arrondi appelée *l’arrondi bancaire*. Pour plus d’informations, consultez « Remarques ».  
+ <sup>1</sup> les parties fractionnaires peuvent être soumises à un type spécial d’arrondi appelé « *arrondi bancaire*». Pour plus d’informations, consultez « Remarques ».  
   
 ## <a name="remarks"></a>Notes  
- En règle générale, vous devez utiliser les fonctions de conversion de type Visual Basic plutôt que les méthodes .NET Framework, tel que `ToString()`, soit sur le <xref:System.Convert> classe ou sur une structure de type classe. Les fonctions Visual Basic sont conçues pour une interaction optimale avec code Visual Basic, et elles rendent également votre code source plus courte et plus facile à lire. En outre, les méthodes de conversion de .NET Framework ne produisent pas toujours les mêmes résultats que les fonctions Visual Basic, par exemple lors de la conversion `Boolean` à `Integer`. Pour plus d’informations, consultez [dépannage des Types de données](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+ En règle générale, vous devez utiliser les fonctions de conversion de type Visual Basic de préférence aux méthodes de .NET Framework telles que `ToString()`, soit sur la classe <xref:System.Convert>, soit sur une structure ou une classe de type individuelle. Les fonctions Visual Basic sont conçues pour une interaction optimale avec Visual Basic Code, et elles rendent également votre code source plus concis et plus facile à lire. En outre, les méthodes de conversion .NET Framework ne produisent pas toujours les mêmes résultats que les fonctions Visual Basic, par exemple lors de la conversion de `Boolean` en `Integer`. Pour plus d’informations, consultez [Dépannage des types de données](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
 
-À partir de Visual Basic 15.8, les performances de la conversion de flottante-virgule en entier sont optimisée quand vous passez le <xref:System.Single> ou <xref:System.Double> valeur retournée par les méthodes suivantes à une des fonctions de conversion d’entier (`CByte`, `CShort`, `CInt`, `CLng`, `CSByte`, `CUShort`, `CUInt`, `CULng`):
+À partir de Visual Basic 15,8, les performances de la conversion de virgule flottante en nombres entiers sont optimisées quand vous transmettez la valeur <xref:System.Single> ou <xref:System.Double> retournée par les méthodes suivantes à l’une des fonctions de conversion d’entiers (`CByte`, `CShort`, `CInt` @no__ t-5, `CSByte`, `CUShort`, `CUInt`, `CULng`) :
 
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Double)?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Object)?displayProperty=nameWithType>
@@ -156,7 +156,7 @@ CUShort(expression)
 - <xref:System.Math.Round(System.Double)?displayProperty=nameWithType>
 - <xref:System.Math.Truncate(System.Double)?displayProperty=nameWithType>
 
-Cette optimisation permet au code qui effectue un grand nombre de conversions entier à s’exécuter jusqu'à deux fois plus vite. L’exemple suivant illustre ces conversions flottante virgule à entier optimisées :
+Cette optimisation permet au code qui effectue un grand nombre de conversions entières de s’exécuter jusqu’à deux fois plus vite. L’exemple suivant illustre ces conversions à virgule flottante, à virgule flottante optimisées :
 
 ```vb
 Dim s As Single = 173.7619
@@ -171,116 +171,116 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 
 ## <a name="behavior"></a>Comportement  
   
-- **Coercion.** En règle générale, vous pouvez utiliser les fonctions de conversion de type de données à forcer le résultat d’une opération à un type de données particulier plutôt que le type de données par défaut. Par exemple, utilisez `CDec` à arithmétique décimale dans les cas où le simple précision, double précision ou arithmétique sur les entiers serait normalement avoir lieu.  
+- **Contrainte.** En général, vous pouvez utiliser les fonctions de conversion de type de données pour forcer le résultat d’une opération sur un type de données particulier plutôt que sur le type de données par défaut. Par exemple, utilisez `CDec` pour forcer l’arithmétique décimale dans les cas où une simple précision, une double précision ou une opération arithmétique sur les entiers aurait normalement lieu.  
   
-- **Échecs de conversion.** Si le `expression` passé à la fonction est en dehors de la plage du type de données vers lequel il doit être converti, un <xref:System.OverflowException> se produit.  
+- **Échec des conversions.** Si le `expression` passé à la fonction est en dehors de la plage du type de données vers lequel il doit être converti, une <xref:System.OverflowException> se produit.  
   
-- **Parties fractionnaires.** Tapez lorsque vous convertissez une valeur non entière en un type intégral, les fonctions de conversion d’entier (`CByte`, `CInt`, `CLng`, `CSByte`, `CShort`, `CUInt`, `CULng`, et `CUShort`) supprimer le fractions de seconde partie et arrondir la valeur à l’entier le plus proche.  
+- **Parties fractionnaires.** Quand vous convertissez une valeur non intégrale en type intégral, les fonctions de conversion d’entier (`CByte`, `CInt`, `CLng`, `CSByte`, `CShort`, `CUInt`, `CULng` et `CUShort`) suppriment la partie fractionnaire et arrondissent la valeur à l’entier le plus proche.  
   
-     Si la partie fractionnaire est exactement égale à 0,5, les fonctions de conversion d’entier arrondissent à l’entier pair le plus proche de. Par exemple, 0,5 est arrondi à 0 et 1,5 et 2,5 que sont arrondis à 2. On parle parfois *l’arrondi bancaire*, et son objectif est de compenser un écart qui pourrait s’accumuler lors de l’ajout de plusieurs nombres ensemble.  
+     Si la partie fractionnaire est exactement 0,5, les fonctions de conversion d’entiers l’arrondissent à l’entier pair le plus proche. Par exemple, 0,5 est arrondi à 0, et 1,5 et 2,5 à 2. C’est ce que l’on appelle parfois *l’arrondi de Banker*, et son objectif est de compenser un biais qui peut s’accumuler lors de l’ajout de nombreux nombres de ce type.  
   
-     `CInt` et `CLng` diffère la <xref:Microsoft.VisualBasic.Conversion.Int%2A> et <xref:Microsoft.VisualBasic.Conversion.Fix%2A> fonctions tronquent arrondissent, la partie fractionnaire d’un nombre. En outre, `Fix` et `Int` retournent toujours une valeur du même type de données que vous passez.  
+     `CInt` et `CLng` diffèrent des fonctions <xref:Microsoft.VisualBasic.Conversion.Int%2A> et <xref:Microsoft.VisualBasic.Conversion.Fix%2A>, qui tronquent, au lieu de les arrondir, la partie fractionnaire d’un nombre. En outre, `Fix` et `Int` retournent toujours une valeur du même type de données que celui que vous transmettez.  
   
-- **Conversions de date/heure.** Utilisez le <xref:Microsoft.VisualBasic.Information.IsDate%2A> fonction permettant de déterminer si une valeur peut être convertie en date et heure. `CDate` reconnaît les littéraux de date et heure mais pas de valeurs numériques. Pour convertir un Visual Basic 6.0 `Date` valeur un `Date` valeur en Visual Basic 2005 ou versions ultérieures, vous pouvez utiliser le <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> (méthode).  
+- **Conversions de date/heure.** Utilisez la fonction <xref:Microsoft.VisualBasic.Information.IsDate%2A> pour déterminer si une valeur peut être convertie en date et heure. `CDate` reconnaît les littéraux de date et d’heure, mais pas les valeurs numériques. Pour convertir une valeur Visual Basic 6,0 `Date` en valeur `Date` dans Visual Basic 2005 ou versions ultérieures, vous pouvez utiliser la méthode <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType>.  
   
-- **Indépendant de valeurs de Date/heure.** Le [Type de données Date](../../../visual-basic/language-reference/data-types/date-data-type.md) contient toujours les informations de date / heure. À des fins de conversion de type, Visual Basic prend en compte la 1/1/0001 (le 1er janvier de l’année 1) pour être un *valeur neutre* pour la date et 00:00:00 (minuit) comme une valeur neutre pour l’heure. Si vous convertissez un `Date` valeur à une chaîne, `CStr` n’inclut pas de valeurs neutres dans la chaîne résultante. Par exemple, si vous convertissez `#January 1, 0001 9:30:00#` vers une chaîne, le résultat est « 9:30:00 AM » ; les informations de date sont supprimées. Toutefois, les informations de date sont toujours présentes dans la version d’origine `Date` valeur et peuvent être récupérées avec des fonctions telles que <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> (fonction).  
+- **Valeurs de date/heure neutres.** Le [type de données date](../../../visual-basic/language-reference/data-types/date-data-type.md) contient toujours des informations de date et d’heure. À des fins de conversion de type, Visual Basic considère que 1/1/0001 (1er janvier de l’année 1) comme étant une *valeur neutre* pour la date, et 00:00:00 (minuit) comme valeur neutre pour le moment. Si vous convertissez une valeur `Date` en chaîne, `CStr` n’inclut pas de valeurs neutres dans la chaîne résultante. Par exemple, si vous convertissez `#January 1, 0001 9:30:00#` en chaîne, le résultat est « 9:30:00 AM ». les informations de date sont supprimées. Toutefois, les informations de date sont toujours présentes dans la valeur `Date` d’origine et peuvent être récupérées avec des fonctions telles que la fonction <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>.  
   
-- **Respect de la culture.** Les fonctions de conversion de type impliquant des chaînes effectuent des conversions en fonction des paramètres de culture actuelle pour l’application. Par exemple, `CDate` reconnaît les formats de date selon les paramètres régionaux de votre système. Vous devez fournir le jour, le mois et l’année dans le bon ordre pour vos paramètres régionaux, ou la date ne peut pas être interprétée correctement. Un format de date longue n’est pas reconnu s’il contient une chaîne de day of week, tels que « Mercredi ».  
+- **Sensibilité de la culture.** Les fonctions de conversion de type impliquant des chaînes effectuent des conversions basées sur les paramètres de culture actuels de l’application. Par exemple, `CDate` reconnaît les formats de date en fonction des paramètres régionaux de votre système. Vous devez fournir le jour, le mois et l’année dans le bon ordre pour vos paramètres régionaux, ou la date peut ne pas être interprétée correctement. Un format de date longue n’est pas reconnu s’il contient une chaîne de jour de la semaine, par exemple « mercredi ».  
   
-     Si vous souhaitez convertir vers ou depuis une représentation sous forme de chaîne d’une valeur dans un format différent de celui spécifié par vos paramètres régionaux, vous ne pouvez pas utiliser les fonctions de conversion de type Visual Basic. Pour ce faire, utilisez le `ToString(IFormatProvider)` et `Parse(String, IFormatProvider)` méthodes du type de cette valeur. Par exemple, utilisez <xref:System.Double.Parse%2A?displayProperty=nameWithType> lors de la conversion d’une chaîne à un `Double`et utiliser <xref:System.Double.ToString%2A?displayProperty=nameWithType> lors de la conversion d’une valeur de type `Double` vers une chaîne.  
+     Si vous devez convertir vers ou à partir d’une représentation sous forme de chaîne d’une valeur dans un format autre que celui spécifié par vos paramètres régionaux, vous ne pouvez pas utiliser les fonctions de conversion de type Visual Basic. Pour ce faire, utilisez les méthodes `ToString(IFormatProvider)` et `Parse(String, IFormatProvider)` du type de cette valeur. Par exemple, utilisez <xref:System.Double.Parse%2A?displayProperty=nameWithType> lors de la conversion d’une chaîne en `Double` et utilisez <xref:System.Double.ToString%2A?displayProperty=nameWithType> lors de la conversion d’une valeur de type `Double` en chaîne.  
   
 ## <a name="ctype-function"></a>CType Function  
- Le [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md) accepte un deuxième argument, `typename`et force `expression` à `typename`, où `typename` peut être n’importe quel type de données, de structure, classe ou interface à laquelle il existe une conversion valide.  
+ La [fonction CType](../../../visual-basic/language-reference/functions/ctype-function.md) accepte un deuxième argument, `typename`, et convertit `expression` en `typename`, où `typename` peut être n’importe quel type de données, structure, classe ou interface pour laquelle il existe une conversion valide.  
   
- Pour obtenir une comparaison de `CType` avec les autres mots-clés de conversion de type, consultez [opérateur DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md) et [opérateur TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md).  
+ Pour obtenir une comparaison entre `CType` et les autres mots clés de conversion de type, consultez l’opérateur [DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md) et l' [opérateur TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md).  
   
 ## <a name="cbool-example"></a>CBool, exemple  
- L’exemple suivant utilise le `CBool` fonction pour convertir les expressions à `Boolean` valeurs. Si une expression correspond à une valeur différente de zéro, `CBool` retourne `True`; sinon, elle retourne `False`.  
+ L’exemple suivant utilise la fonction `CBool` pour convertir des expressions en valeurs `Boolean`. Si une expression est évaluée à une valeur différente de zéro, `CBool` retourne `True` ; Sinon, elle retourne `False`.  
   
  [!code-vb[VbVbalrFunctions#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#1)]  
   
 ## <a name="cbyte-example"></a>CByte, exemple  
- L’exemple suivant utilise le `CByte` fonction pour convertir une expression à un `Byte`.  
+ L’exemple suivant utilise la fonction `CByte` pour convertir une expression en `Byte`.  
   
  [!code-vb[VbVbalrFunctions#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#2)]  
   
-## <a name="cchar-example"></a>CChar, exemple  
- L’exemple suivant utilise le `CChar` fonction pour convertir le premier caractère d’un `String` expression à un `Char` type.  
+## <a name="cchar-example"></a>Exemple CChar  
+ L’exemple suivant utilise la fonction `CChar` pour convertir le premier caractère d’une expression `String` en type `Char`.  
   
  [!code-vb[VbVbalrFunctions#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#3)]  
   
- L’argument d’entrée `CChar` doit être de type de données `Char` ou `String`. Vous ne pouvez pas utiliser `CChar` pour convertir un nombre en un caractère, car `CChar` ne peut pas accepter un type de données numérique. L’exemple suivant obtient un nombre représentant un point de code (code de caractère) et le convertit en caractère correspondant. Il utilise le <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> fonction pour obtenir la chaîne de chiffres, `CInt` pour convertir la chaîne en type `Integer`, et `ChrW` pour convertir le nombre en type `Char`.  
+ L’argument d’entrée pour `CChar` doit être de type de données `Char` ou `String`. Vous ne pouvez pas utiliser `CChar` pour convertir un nombre en caractère, car `CChar` ne peut pas accepter un type de données numérique. L’exemple suivant obtient un nombre qui représente un point de code (code de caractère) et le convertit en caractère correspondant. Elle utilise la fonction <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> pour obtenir la chaîne de chiffres, `CInt` pour convertir la chaîne en type `Integer`, et `ChrW` pour convertir le nombre en type `Char`.  
   
  [!code-vb[VbVbalrFunctions#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#4)]  
   
-## <a name="cdate-example"></a>CDate, exemple  
- L’exemple suivant utilise le `CDate` fonction pour convertir des chaînes à `Date` valeurs. En règle générale, coder en dur les dates et heures sous forme de chaînes (comme indiqué dans cet exemple) est déconseillé. Utiliser des littéraux de date et heure, telles que #Feb 12, 1969 # et # 4:45:23 PM #, à la place.  
+## <a name="cdate-example"></a>Exemple CDate  
+ L’exemple suivant utilise la fonction `CDate` pour convertir des chaînes en valeurs `Date`. En général, les dates et heures de codage en dur en tant que chaînes (comme indiqué dans cet exemple) ne sont pas recommandées. Utilisez des littéraux de date et d’heure, tels que #Feb 12, 1969 # et #4:45:23 PM #, à la place.  
   
  [!code-vb[VbVbalrFunctions#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#5)]  
   
-## <a name="cdbl-example"></a>CDbl, exemple  
+## <a name="cdbl-example"></a>Exemple de CDbl  
  [!code-vb[VbVbalrFunctions#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#6)]  
   
-## <a name="cdec-example"></a>CDec, exemple  
- L’exemple suivant utilise le `CDec` fonction pour convertir une valeur numérique à `Decimal`.  
+## <a name="cdec-example"></a>Exemple CDec  
+ L’exemple suivant utilise la fonction `CDec` pour convertir une valeur numérique en `Decimal`.  
   
  [!code-vb[VbVbalrFunctions#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#7)]  
   
-## <a name="cint-example"></a>Exemple de CInt  
- L’exemple suivant utilise le `CInt` fonction pour convertir une valeur à `Integer`.  
+## <a name="cint-example"></a>Exemple CInt  
+ L’exemple suivant utilise la fonction `CInt` pour convertir une valeur en `Integer`.  
   
  [!code-vb[VbVbalrFunctions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#8)]  
 
-## <a name="clng-example"></a>CLng, exemple
- L’exemple suivant utilise le `CLng` fonction pour convertir des valeurs à `Long`.  
+## <a name="clng-example"></a>Exemple CLng
+ L’exemple suivant utilise la fonction `CLng` pour convertir des valeurs en `Long`.  
   
  [!code-vb[VbVbalrFunctions#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#9)]  
   
-## <a name="cobj-example"></a>CObj, exemple  
- L’exemple suivant utilise le `CObj` fonction pour convertir une valeur numérique à `Object`. Le `Object` variable contient uniquement un pointeur de quatre octets, qui pointe vers le `Double` valeur qui lui est assignée.  
+## <a name="cobj-example"></a>Exemple CObj  
+ L’exemple suivant utilise la fonction `CObj` pour convertir une valeur numérique en `Object`. La variable `Object` elle-même contient uniquement un pointeur de 4 octets, qui pointe vers la valeur `Double` qui lui est assignée.  
   
  [!code-vb[VbVbalrFunctions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#10)]  
   
 ## <a name="csbyte-example"></a>Exemple CSByte  
- L’exemple suivant utilise le `CSByte` fonction pour convertir une valeur numérique à `SByte`.  
+ L’exemple suivant utilise la fonction `CSByte` pour convertir une valeur numérique en `SByte`.  
   
  [!code-vb[VbVbalrFunctions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#11)]  
   
 ## <a name="cshort-example"></a>CShort, exemple  
- L’exemple suivant utilise le `CShort` fonction pour convertir une valeur numérique à `Short`.  
+ L’exemple suivant utilise la fonction `CShort` pour convertir une valeur numérique en `Short`.  
   
  [!code-vb[VbVbalrFunctions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#12)]  
   
 ## <a name="csng-example"></a>CSng, exemple  
- L’exemple suivant utilise le `CSng` fonction pour convertir des valeurs à `Single`.  
+ L’exemple suivant utilise la fonction `CSng` pour convertir des valeurs en `Single`.  
   
  [!code-vb[VbVbalrFunctions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#13)]  
   
-## <a name="cstr-example"></a>Exemple de la fonction CStr  
- L’exemple suivant utilise le `CStr` fonction pour convertir une valeur numérique à `String`.  
+## <a name="cstr-example"></a>Exemple CStr  
+ L’exemple suivant utilise la fonction `CStr` pour convertir une valeur numérique en `String`.  
   
  [!code-vb[VbVbalrFunctions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#14)]  
   
- L’exemple suivant utilise le `CStr` fonction pour convertir `Date` valeurs `String` valeurs.  
+ L’exemple suivant utilise la fonction `CStr` pour convertir les valeurs `Date` en valeurs `String`.  
   
  [!code-vb[VbVbalrFunctions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#15)]  
   
- `CStr` affiche toujours une `Date` valeur dans le format de date courte pour les paramètres régionaux, par exemple, « 6/15/2003 4:35:47 PM ». Toutefois, `CStr` supprime le *valeurs neutres* de 1/1/0001 pour la date et 00:00:00 pour l’heure.  
+ `CStr` affiche toujours une valeur `Date` au format abrégé standard pour les paramètres régionaux actuels, par exemple, « 6/15/2003 4:35:47 PM ». Toutefois, `CStr` supprime les *valeurs neutres* de 1/1/0001 pour la date et 00:00:00 pour l’heure.  
   
- Pour plus d’informations sur les valeurs retournées par `CStr`, consultez [les valeurs de retour pour la fonction CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).  
+ Pour plus d’informations sur les valeurs retournées par `CStr`, consultez [valeurs de retour pour la fonction CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).  
   
 ## <a name="cuint-example"></a>Exemple CUInt  
- L’exemple suivant utilise le `CUInt` fonction pour convertir une valeur numérique à `UInteger`.  
+ L’exemple suivant utilise la fonction `CUInt` pour convertir une valeur numérique en `UInteger`.  
   
  [!code-vb[VbVbalrFunctions#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#16)]  
   
-## <a name="culng-example"></a>CULng, exemple  
- L’exemple suivant utilise le `CULng` fonction pour convertir une valeur numérique à `ULong`.  
+## <a name="culng-example"></a>Exemple CULng  
+ L’exemple suivant utilise la fonction `CULng` pour convertir une valeur numérique en `ULong`.  
   
  [!code-vb[VbVbalrFunctions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#17)]  
   
-## <a name="cushort-example"></a>CUShort, exemple  
- L’exemple suivant utilise le `CUShort` fonction pour convertir une valeur numérique à `UShort`.  
+## <a name="cushort-example"></a>Exemple CUShort  
+ L’exemple suivant utilise la fonction `CUShort` pour convertir une valeur numérique en `UShort`.  
   
  [!code-vb[VbVbalrFunctions#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#18)]  
   
@@ -298,4 +298,4 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 - <xref:Microsoft.VisualBasic.Conversion.Str%2A>
 - <xref:Microsoft.VisualBasic.Conversion.Val%2A>
 - [Fonctions de conversion](../../../visual-basic/language-reference/functions/conversion-functions.md)
-- [Conversions de type en Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type dans Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

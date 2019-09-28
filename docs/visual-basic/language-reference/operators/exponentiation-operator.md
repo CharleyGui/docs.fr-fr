@@ -14,12 +14,12 @@ helpviewer_keywords:
 - powers
 - arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-ms.openlocfilehash: 54de9c91d4e166b8ca1733952dfa9c98ebf11ffe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8cdfbec917608211e19c39eb37bd12dbc7c4d33f
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778493"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592223"
 ---
 # <a name="-operator-visual-basic"></a>^, opérateur (Visual Basic)
 
@@ -27,40 +27,40 @@ ms.locfileid: "61778493"
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 number ^ exponent
 ```
 
 ## <a name="parts"></a>Composants
 
 `number`\
-Obligatoire. Toute expression numérique.
+Requis. Toute expression numérique.
 
 `exponent`\
 Obligatoire. Toute expression numérique.
 
 ## <a name="result"></a>Résultat
 
-Le résultat est `number` élevé à la puissance de `exponent`, toujours comme un `Double` valeur.
+Le résultat est `number` élevé à la puissance de `exponent`, toujours en tant que valeur `Double`.
 
 ## <a name="supported-types"></a>Types pris en charge
 
-`Double`. Opérandes de tous types sont convertis en `Double`.
+`Double` . Les opérandes de tout type différent sont convertis en `Double`.
 
 ## <a name="remarks"></a>Notes
 
-Visual Basic exécute toujours l’élévation à la puissance dans le [Type de données Double](../../../visual-basic/language-reference/data-types/double-data-type.md).
+Visual Basic effectue toujours une élévation à la puissance dans le [type de données double](../../../visual-basic/language-reference/data-types/double-data-type.md).
 
 La valeur de `exponent` peut être fractionnaire, négative ou les deux.
 
-Lorsque plusieurs élévation est effectuée dans une expression unique, la `^` opérateur est évalué comme il est rencontré, de gauche à droite.
+Lorsque plusieurs élévations à une puissance sont effectuées dans une même expression, l’opérateur `^` est évalué à mesure qu’il est rencontré de gauche à droite.
 
 > [!NOTE]
-> Le `^` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. Si votre code utilise cet opérateur sur une telle classe ou structure, veillez à ce que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
+> L’opérateur `^` peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant utilise le `^` opérateur pour élever un nombre à la puissance d’un exposant. Le résultat est le premier opérande élevé à la puissance de la seconde.
+L’exemple suivant utilise l’opérateur `^` pour élever un nombre à la puissance d’un exposant. Le résultat est le premier opérande élevé à la puissance de la seconde.
 
 [!code-vb[VbVbalrOperators#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#20)]
 
@@ -68,21 +68,21 @@ L’exemple précédent produit les résultats suivants :
 
 `exp1` a la valeur 4 (2 au carré).
 
-`exp2` a la valeur 19 683 (3 au cube, puis cette valeur au cube).
+`exp2` est défini sur 19683 (3 cube, puis sur cette valeur cube).
 
-`exp3` a la valeur-125 (-5 au cube).
+`exp3` est défini sur-125 (-5 Cubed).
 
-`exp4` a la valeur 625 (-5 à la puissance quatre).
+`exp4` est défini sur 625 (-5 sur la quatrième puissance).
 
-`exp5` est défini sur 2 (racine cubique de 8).
+`exp5` a la valeur 2 (racine du cube de 8).
 
-`exp6` a la valeur 0,5 (1,0 divisé par la racine cubique de 8).
+`exp6` a la valeur 0,5 (1,0 divisée par la racine du cube de 8).
 
-Notez l’importance des parenthèses dans les expressions dans l’exemple précédent. Raison de *priorité des opérateurs*, Visual Basic exécute normalement le `^` opérateur avant les autres, même l’unaire `–` opérateur. Si `exp4` et `exp6` avait été calculée sans parenthèses, ils aurait produit les résultats suivants :
+Notez l’importance des parenthèses dans les expressions de l’exemple précédent. En raison de la *priorité des opérateurs*, Visual Basic exécute normalement l’opérateur `^` avant les autres, même l’opérateur unaire `–`. Si `exp4` et `exp6` ont été calculés sans parenthèses, ils auraient produit les résultats suivants :
 
-`exp4 = -5 ^ 4` sera calculée comme – (5 à la puissance quatrième), ce qui entraînerait-625.
+`exp4 = -5 ^ 4` est calculé comme-(5 à la quatrième puissance), ce qui se traduirait par-625.
 
-`exp6 = 8 ^ -1.0 / 3.0` sera calculée comme (8 à la puissance-1, ou 0,125) divisé par 3.0, ce qui donnerait 0,041666666666666666666666666666667.
+`exp6 = 8 ^ -1.0 / 3.0` est calculé comme (8 à – 1 puissance, ou 0,125) divisé par 3,0, ce qui se traduirait par 0.041666666666666666666666666666667.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -90,4 +90,4 @@ Notez l’importance des parenthèses dans les expressions dans l’exemple pré
 - [Opérateurs arithmétiques](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Opérateurs arithmétiques en Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Opérateurs arithmétiques dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
