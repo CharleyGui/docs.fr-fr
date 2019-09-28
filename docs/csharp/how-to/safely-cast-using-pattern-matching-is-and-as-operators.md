@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 764a69869b8a5b8f76e2f58aced51761af73e50e
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: d82c60374db637bb8ac879a23e2d74c39194ca18
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566286"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353726"
 ---
 # <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Guide pratique pour caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as
 
@@ -23,11 +23,11 @@ Le code suivant illustre l’instruction `is` relative aux critères spéciaux. 
 
 L’exemple précédent illustre quelques fonctionnalités de la syntaxe relative aux critères spéciaux. Les instructions `if (a is Mammal m)` et `if (o is Mammal m)` combinent le test à une assignation d’initialisation. L’assignation n’a lieu qu’en cas de réussite du test. La variable `m` se trouve uniquement dans l’étendue de l’instruction `if` incorporée, à laquelle elle a été assignée. Vous ne pouvez pas accéder à `m` plus tard dans la même méthode. Faites un essai dans la fenêtre interactive.
 
-Vous pouvez également utiliser la même syntaxe afin de tester l’existence d’une valeur pour un [type Nullable](../programming-guide/nullable-types/index.md), comme indiqué dans l’exemple de code suivant :
+Vous pouvez également utiliser la même syntaxe pour le test si un [type valeur Nullable](../programming-guide/nullable-types/index.md) a une valeur, comme indiqué dans l’exemple de code suivant :
 
 [!code-csharp[Pattern matching with nullable types](../../../samples/snippets/csharp/how-to/safelycast/nullablepatternmatching/Program.cs#PatternMatchingNullable)]
 
-L’exemple précédent illustre d’autres fonctionnalités relatives aux critères spéciaux pour les conversions. Vous pouvez tester le modèle null d’une variable en vérifiant spécifiquement la valeur `null`. Quand la valeur runtime de la variable est `null`, une instruction `is` de vérification de type retourne toujours `false`. L’instruction `is` relative aux critères spéciaux n’autorise aucun type valeur Nullable, par exemple `int?` ou `Nullable<int>`. Toutefois, vous pouvez tester un autre type valeur.
+L’exemple précédent illustre d’autres fonctionnalités relatives aux critères spéciaux pour les conversions. Vous pouvez tester le modèle null d’une variable en vérifiant spécifiquement la valeur `null`. Quand la valeur runtime de la variable est `null`, une instruction `is` de vérification de type retourne toujours `false`. L’instruction `is` relative aux critères spéciaux n’autorise aucun type valeur Nullable, par exemple `int?` ou `Nullable<int>`. Toutefois, vous pouvez tester un autre type valeur. Les modèles `is` de l’exemple précédent ne sont pas limités aux types valeur Nullable. Vous pouvez également utiliser ces modèles pour tester si une variable d’un type de référence a une valeur ou si elle est `null`.
 
 L’exemple précédent montre également comment utiliser l’expression `is` relative aux critères spéciaux dans une instruction `switch`, où la variable peut avoir plusieurs types différents.
 

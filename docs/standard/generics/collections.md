@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0de14fd5d576774ed1605784f5f0c6b0fae2c8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 51938dade8ebd1b84010533e04b26cf989ed5f24
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948924"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353944"
 ---
 # <a name="generic-collections-in-net"></a>Collections génériques dans .NET
 
@@ -40,7 +40,7 @@ ms.locfileid: "69948924"
  La structure générique <xref:System.Nullable%601> vous permet d'utiliser des types valeur comme si la valeur `null` pouvait leur être affectée. Ceci peut être utile quand vous travaillez avec des requêtes de base de données, où des champs contenant des types valeur peuvent être manquants. Le paramètre de type générique peut être n'importe quel type valeur.  
   
 > [!NOTE]
-> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Consultez [Types Nullables (guide de programmation en C#)](../../csharp/programming-guide/nullable-types/index.md) et [Types de valeurs Nullables (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md). 
+> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Consultez [types valeur Nullable (C# Guide de programmation)](../../csharp/programming-guide/nullable-types/index.md) et [types valeur Nullable (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).
   
  La structure générique <xref:System.ArraySegment%601> offre un moyen de délimiter une plage d'éléments dans un tableau unidimensionnel de base zéro, de n'importe quel type. Le paramètre de type générique est le type des éléments du tableau.  
   

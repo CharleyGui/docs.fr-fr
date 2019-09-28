@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 601f9a216bc2e11ccb34f1f3b3df267002efb01f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: ebfc8f79303f89b092dd0fb38237dffffe0a93ba
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353907"
 ---
 # <a name="com-callable-wrapper"></a>Wrapper pouvant être appelé par COM
 
@@ -100,7 +100,7 @@ public class Mammal
 
 Le client COM peut obtenir un pointeur vers une interface de classe nommée `_Mammal`. Sur .NET Framework, vous pouvez utiliser l’outil [Exportateur de bibliothèques de types (Tlbexp. exe)](../../framework/tools/tlbexp-exe-type-library-exporter.md) pour générer une bibliothèque de types contenant la définition de l’interface `_Mammal`. L’exportateur de bibliothèques de types n’est pas pris en charge sur .NET Core. Si la classe `Mammal` implémentait une ou plusieurs interfaces, les interfaces apparaîtraient sous la coclasse.
 
-```
+```console
 [odl, uuid(…), hidden, dual, nonextensible, oleautomation]
 interface _Mammal : IDispatch
 {

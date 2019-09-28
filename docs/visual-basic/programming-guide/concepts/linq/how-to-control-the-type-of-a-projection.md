@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Contrôler le Type d’une Projection (Visual Basic)'
+title: 'Procédure : Contrôler le type d’une projection (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-ms.openlocfilehash: dd09914a75a8d4b20ddf9ff452f046bf7671152f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ec53d1f8e0ae4957857d4b71fddd05205dee6b5
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051785"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351744"
 ---
-# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Procédure : Contrôler le Type d’une Projection (Visual Basic)
+# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Procédure : Contrôler le type d’une projection (Visual Basic)
 La projection est un processus qui consiste à prendre un ensemble de données, à le filtrer, à modifier sa forme et même à modifier son type. La plupart des expressions de requête effectuent des projections. La plupart des expressions de requête illustrées dans cette section évaluent à l'objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement>, mais vous pouvez contrôler le type de projection afin de créer des collections d'autres types. Cette rubrique montre comment procéder.  
   
 ## <a name="example"></a>Exemple  
@@ -79,7 +79,7 @@ End Sub
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 GREAL:Great Lakes Food Market:Howard Snyder  
 HUNGC:Hungry Coyote Import Store:Yoshi Latimer  
 LAZYK:Lazy K Kountry Store:John Steel  
@@ -89,4 +89,4 @@ LETSS:Let's Stop N Shop:Jaime Yorres
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Enumerable.Select%2A>
-- [Projections et Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections et transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

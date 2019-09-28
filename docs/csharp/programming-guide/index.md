@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: f9ac3a6c1e96a1ba4cd78be46a1fd3ad7ee5e4ed
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 25b686e654c5d6bb44a56b96cbf4045d14e95b62
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850961"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392429"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 Cette section fournit des informations détaillées sur les fonctionnalités et fonctions clés du langage C# accessibles par .NET Framework.  
@@ -62,7 +62,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Espaces de noms](./namespaces/index.md)  
   
- [Types Nullable](./nullable-types/index.md)  
+ [Types valeur Nullable](./nullable-types/index.md)  
   
  [Pointeurs et code unsafe](./unsafe-code-pointers/index.md)  
   

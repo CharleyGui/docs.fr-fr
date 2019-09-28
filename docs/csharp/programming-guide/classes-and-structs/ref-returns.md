@@ -4,12 +4,12 @@ description: Découvrir comment définir et utiliser des valeurs de retour de r�
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: fcac162f63438b6cbe54908383467d4b0f227c39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: e23007deffea0f542d623be918cd1c61496d1362
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081830"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353887"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
 
@@ -27,12 +27,12 @@ Certaines restrictions s’appliquent à l’expression qu’une méthode peut r
 
 - La valeur de retour ne peut pas être le littéral `null`. Le retour de `null` génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
-   Une méthode avec un retour de référence peut retourner un alias vers une variable dont la valeur est actuellement la valeur (non instanciée) null ou un [type nullable](../nullable-types/index.md) pour un type valeur.
- 
+   Une méthode avec un retour de référence peut retourner un alias à une variable dont la valeur est actuellement la valeur null (non instanciée) ou un [type valeur Nullable](../nullable-types/index.md) pour un type valeur.
+
 - La valeur de retour ne peut pas être une constante, un membre d’énumération, la valeur de retour par valeur d’une propriété, ou une méthode d’une `class` ou d’un `struct`. Le non-respect de cette règle génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
 En outre, les valeurs de retour de référence ne sont pas autorisées sur les méthodes asynchrones. Une méthode asynchrone peut être retournée avant la fin de son exécution, même si sa valeur de retour est encore inconnue.
- 
+
 ## <a name="defining-a-ref-return-value"></a>Définition d’une valeur de retour de référence
 
 Une méthode qui retourne une *valeur de retour de référence* doit remplir les deux conditions suivantes :

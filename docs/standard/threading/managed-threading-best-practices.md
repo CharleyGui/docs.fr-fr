@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb262f5a02343aeb91c28eb21c939edef8a70f61
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: 1066a3533dedd5976f2dd73b1858ad8fa0c1f653
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392698"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
@@ -145,10 +145,7 @@ Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=
     {  
         lock (lockObject)  
         {  
-            if (x == null)  
-            {  
-                x = y;  
-            }  
+            x ??= y;
         }  
     }  
     ```  

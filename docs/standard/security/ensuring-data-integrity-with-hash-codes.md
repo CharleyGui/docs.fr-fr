@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 33660f33-b70f-4dca-8c87-ab35cfc2961a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0383dc3024352b9fac879532ab2789a60488c96
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 995f54e81a48fb3f809d99981ad135974544eb28
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331639"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353172"
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Garantie de l'intégrité des données à l'aide des codes de hachage
 Une valeur de hachage est une valeur numérique de longueur fixe qui identifie les données de manière unique. Les valeurs de hachage permettent de représenter les grandes quantités de données sous forme de valeurs numériques beaucoup plus petites pour qu'elles puissent être utilisées avec des signatures numériques. Il est plus efficace de signer une valeur de hachage que de signer une valeur élevée. De même, les valeurs de hachage s'avèrent utiles pour vérifier l'intégrité des données envoyées via des canaux non sécurisés. La valeur de hachage des données reçues peut être comparée à celle des données envoyées pour déterminer si les données ont été modifiées.  
@@ -50,13 +50,13 @@ Une valeur de hachage est une valeur numérique de longueur fixe qui identifie l
   
  Si les deux valeurs de hachage correspondent, voici ce que ce code affiche dans la console :  
   
-```  
+```console  
 The hash codes match.  
 ```  
   
  Si elles ne correspondent pas, le code affiche ce qui suit :  
   
-```  
+```console  
 The hash codes do not match.  
 ```  
   

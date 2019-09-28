@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 70ea0110f22e741908ad857fa501553d93c4b98d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 4663c42b784334f66318c61d531ab4cee2f8b02e
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929136"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354057"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Tas de grands objets sur les systèmes Windows
 
@@ -198,7 +198,7 @@ perfview /GCOnly /AcceptEULA /nogui collect
 collecte un événement AllocationTick qui est déclenché toutes les 100 000 allocations environ. En d’autres termes, un événement est déclenché chaque fois qu’un grand objet est alloué. Vous pouvez alors examiner une des vues d’allocation de tas du récupérateur de mémoire qui indique les pile d’appels qui ont alloué des grands objets :
 
 ![Capture d’écran montrant une vue du tas garbage collector.](media/large-object-heap/garbage-collector-heap.png)
-Figure 6 : Une vue d’allocation de tas du récupérateur de mémoire
+Figure 6 : Une vue d’allocation de tas du récupérateur de mémoire
 
 Comme vous pouvez le voir, il s’agit d’un test très simple qui alloue simplement de grands objets à partir de sa méthode `Main`.
 
@@ -211,7 +211,7 @@ Si tout ce que vous avez est un vidage de mémoire et que vous devez examiner le
 
 Le code suivant illustre un exemple de sortie de l’analyse du LOH :
 
-```
+```console
 0:003> .loadby sos mscorwks
 0:003> !eeheap -gc
 Number of GC Heaps: 1
@@ -252,7 +252,7 @@ Comme le LOH n’est pas compacté, il est parfois perçu comme la source de la 
 
    L’exemple suivant montre une fragmentation dans l’espace de mémoire virtuelle :
 
-   ```
+   ```console
    0:000> !address
    00000000 : 00000000 - 00010000
    Type     00000000

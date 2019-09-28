@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6409bbecdef2da03a18ed246cb90478b2a1fd7f6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a0d21ab8af3669575a451644deb2b3572fdb7651
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054068"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354027"
 ---
 # <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
 
 <a name="top"></a> Cette rubrique décrit les problèmes liés au garbage collection et à l’utilisation de la mémoire. Elle apporte des solutions aux problèmes concernant les tas managés et explique comment réduire l’effet du garbage collection sur vos applications. Chaque problème contient des liens vers des procédures à suivre pour résoudre le problème.
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes :
 
 - [Outils d'analyse des performances](#performance_analysis_tools)
 
@@ -75,7 +75,7 @@ Les profileurs peuvent fournir des informations complètes. Toutefois, les profi
 
 À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="troubleshooting_performance_issues"></a>
 
@@ -215,7 +215,7 @@ La durée d’une collection est principalement un facteur du nombre d’objets 
 |------------------------|
 |[Déterminez si l’utilisation élevée du processeur est provoquée par le garbage collection.](#HighCPU)<br /><br /> [Définissez un point d’arrêt à la fin du garbage collection.](#GenBreak)|
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="troubleshooting_guidelines"></a>
 
@@ -261,7 +261,7 @@ La procédure suivante décrit comment définir un point d'arrêt pour mesurer l
 
   Dans le garbage collection pour serveur, un seul thread appelle **RestartEE**. Ainsi, le point d’arrêt se produit une seule fois pendant un garbage collection de génération 2.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="performance_check_procedures"></a>
 
@@ -321,7 +321,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
     Si l'exception est managée, <xref:System.OutOfMemoryException> s'affiche comme le type d'exception, comme illustré dans l'exemple suivant.
 
-    ```
+    ```console
     Exception object: 39594518
     Exception type: System.OutOfMemoryException
     Message: <none>
@@ -335,7 +335,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
     Le thread avec la pile associée aux appels d'exception est indiqué par l'argument `RaiseTheException`. Il s'agit de l'objet exception managée.
 
-    ```
+    ```console
     28adfb44 7923918f 5b61f2b4 00000000 5b61f2b4 mscorwks!RaiseTheException+0xa0
     ```
 
@@ -355,13 +355,13 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   La plus grande région libre est affichée comme dans la sortie suivante.
 
-  ```
+  ```console
   Largest free region: Base 54000000 - Size 0003A980
   ```
 
   Dans cet exemple, la taille de la région libre la plus grande est d'environ 24 000 Ko (3A980 en hexadécimal). Cette région est beaucoup plus petite que ce dont le garbage collector a besoin pour un segment.
 
-  ou
+  \- ou -
 
 - Utilisez la commande **vmstat** :
 
@@ -369,7 +369,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   La région libre la plus grande correspond à la plus grande valeur de la colonne MAXIMUM, comme illustré dans la sortie suivante.
 
-  ```
+  ```console
   TYPE        MINIMUM   MAXIMUM     AVERAGE   BLK COUNT   TOTAL
   ~~~~        ~~~~~~~   ~~~~~~~     ~~~~~~~   ~~~~~~~~~~  ~~~~
   Free:
@@ -415,7 +415,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Le résultat est le suivant :
 
-  ```
+  ```console
   Number of GC Heaps: 2
   ------------------------------
   Heap 0 (002db550)
@@ -457,9 +457,9 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Si le tas managé est volumineux, l’exécution de **dumpheap** peut prendre un certain temps.
 
-  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Par exemple :
+  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Exemple :
 
-  ```
+  ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
   00155f80      533     15216804      Free
   7a747c78   791070     15821400 System.Collections.Specialized.ListDictionary+DictionaryNode
@@ -479,7 +479,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Voici un exemple de résultat.
 
-  ```
+  ```console
   Address  MT           Size  Gen
   1875d2c0 790fa3e0      152    2 System.String HighlightNullStyle_Blotter_PendingOrder-11_Blotter_PendingOrder-11
   …
@@ -503,7 +503,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Les racines trouvées sur les piles peuvent être de faux positifs. Pour plus d'informations, utilisez la commande `!help gcroot`.
 
-  ```
+  ```console
   ebx:Root:19011c5c(System.Windows.Forms.Application+ThreadContext)->
   19010b78(DemoApp.FormDemoApp)->
   19011158(System.Windows.Forms.PropertyStore)->
@@ -551,7 +551,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
     Cette commande fournit une sortie semblable à la suivante.
 
-    ```
+    ```console
        OSID     Special thread type
     2    cd0    DbgHelper
     3    c18    Finalizer
@@ -570,7 +570,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Cette commande affiche la taille totale de tous les objets libres sur le tas managé, comme illustré dans l’exemple suivant.
 
-  ```
+  ```console
   total 230 objects
   Statistics:
         MT    Count    TotalSize Class Name
@@ -584,7 +584,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Cette commande affiche une sortie similaire à la suivante : La dernière ligne indique le segment éphémère.
 
-  ```
+  ```console
   Heap 0 (0015ad08)
   generation 0 starts at 0x49521f8c
   generation 1 starts at 0x494d7f64
@@ -604,7 +604,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Le résultat est le suivant : La génération 0 est d'environ 9 Mo.
 
-  ```
+  ```console
   Evaluate expression: 9321848 = 008e3d78
   ```
 
@@ -614,7 +614,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Le résultat est le suivant :
 
-  ```
+  ```console
   ------------------------------
   Heap 0
   total 409 objects
@@ -647,7 +647,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Les statistiques affichées incluent le nombre de handles épinglés, comme le montre l'exemple suivant.
 
-  ```
+  ```console
   GC Handle Statistics:
   Strong Handles:      29
   Pinned Handles:      10
@@ -665,7 +665,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Les données suivantes montrent quatre échantillons d'intervalles de deux secondes, pour une étude de 8 secondes. Les colonnes `Gen0`, `Gen1` et `Gen2` indiquent le nombre de garbage collection qui se sont produits pendant cet intervalle pour cette génération.
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2    % Time in GC
           1       9       3       1              10
           2      10       3       1               1
@@ -677,7 +677,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Cet exemple comprend 5 périodes.
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2     % Time in GC
           1       9       3       1                3
           2      10       3       1                1
@@ -692,7 +692,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Par exemple, les données suivantes indiquent une séquence d’événements qui se sont produits pendant un garbage collection non simultané.
 
-  ```
+  ```console
   Timestamp    Event name
   513052        GCSuspendEEBegin_V1
   513078        GCSuspendEEEnd
@@ -711,7 +711,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   La sortie suivante fournit un exemple de garbage collection d'arrière-plan et inclut les champs de processus, de thread et d'événement (toutes les données ne sont pas affichées).
 
-  ```
+  ```console
   timestamp(us)    event name            process    thread    event field
   42504385        GCSuspendEEBegin_V1    Test.exe    4372             1
   42504648        GCSuspendEEEnd         Test.exe    4372
@@ -751,7 +751,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Cette commande affiche une sortie similaire à la suivante :
 
-  ```
+  ```console
   0012f3b0 79ff0bf8 mscorwks!WKS::GCHeap::GarbageCollect
   0012f454 30002894 mscorwks!GCInterface::CollectGeneration+0xa4
   0012f490 79fa22bd fragment_ni!request.Main(System.String[])+0x48
@@ -761,7 +761,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Si le garbage collection a été provoqué par l'allocation de mémoire, la pile se présente comme ceci :
 
-  ```
+  ```console
   0012f230 7a07c551 mscorwks!WKS::GCHeap::GarbageCollectGeneration
   0012f2b8 7a07cba8 mscorwks!WKS::gc_heap::try_allocate_more_space+0x1a1
   0012f2d4 7a07cefb mscorwks!WKS::gc_heap::allocate_more_space+0x18
@@ -781,7 +781,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Exemple de sortie (abrégé pour montrer les objets qui utilisent le plus d'espace) :
 
-  ```
+  ```console
   79124228    31857      9862328 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   00155f80    21248     12256296      Free
@@ -803,7 +803,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Exemple de sortie (abrégé pour montrer les objets qui utilisent le plus d'espace) :
 
-  ```
+  ```console
   79124228    26648      9314256 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   79103b6c   296770     13057880 System.Threading.ReaderWriterLock

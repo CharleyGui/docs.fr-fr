@@ -1,22 +1,22 @@
 ---
-title: 'Procédure : Calculer des valeurs de colonne dans un fichier de texte CSV (LINQ) (Visual Basic)'
+title: 'Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 21f4e6445824a6664b5eaa7ff793ee925aa06cef
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c7874615d62b09f3317a3ef39c28a0e74fd349d1
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351760"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Procédure : Calculer des valeurs de colonne dans un fichier de texte CSV (LINQ) (Visual Basic)
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (Visual Basic)
 Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, Average, Min et Max, avec les colonnes d’un fichier .csv. Les exemples de principes montrés ici sont applicables à d’autres types de texte structuré.  
   
 ### <a name="to-create-the-source-file"></a>Pour créer le fichier source  
   
 1. Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet. Supposons que la première colonne contienne un ID d’étudiant et que les colonnes suivantes contiennent les résultats de quatre examens.  
   
-    ```  
+    ```csv  
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -143,9 +143,9 @@ End Class
  La requête fonctionne à l’aide de la méthode <xref:System.String.Split%2A> pour convertir chaque ligne de texte en un tableau. Chaque élément du tableau représente une colonne. Enfin, le texte de chaque colonne est converti en sa représentation numérique. Si votre fichier est un fichier séparé par des tabulations, remplacez l’argument de la méthode `Split` par `\t`.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Créer un projet d’application console VB.NET, avec un `Imports` instruction pour l’espace de noms System.Linq.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

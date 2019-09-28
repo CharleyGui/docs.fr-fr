@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Accès au Web avec Async et await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 72132c4884f3d9bc94de447a122354b3e0dc2ee5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 2d9d3ea3d55fcd3a59039f4b8b93f37df35bf86d
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928449"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351908"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Procédure pas à pas : Accès au Web avec Async et await (Visual Basic)
 
@@ -213,11 +213,11 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 ## <a name="test-the-synchronous-solution"></a>Tester la solution synchrone
 
-1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.
+1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .
 
-    Une sortie semblable à la liste suivante doit apparaître.
+    Une sortie semblable à la liste suivante doit apparaître :
 
-    ```
+    ```console
     msdn.microsoft.com/library/windows/apps/br211380.aspx        383832
     msdn.microsoft.com                                            33964
     msdn.microsoft.com/library/hh290136.aspx               225793

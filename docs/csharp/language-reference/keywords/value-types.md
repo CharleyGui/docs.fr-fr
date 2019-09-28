@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 2bbbac098096b46c659c4efde2d1c998c8e2d9ae
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 2a3e7f02ee9d210acae881edd170edbced82dab6
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608385"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353753"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -32,7 +32,7 @@ Tous les types valeur sont implicitement dérivés de <xref:System.ValueType?dis
 
 Contrairement aux types référence, vous ne pouvez pas faire dériver un nouveau type d’un type valeur. En revanche, comme les types référence, les structs peuvent implémenter des interfaces.
 
-Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types Nullable](../../programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
+Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types valeur Nullable](../../programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
 
 Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
 
@@ -82,7 +82,7 @@ Bien entendu, vous pouvez intégrer la déclaration et l’initialisation dans u
 int myInt = new int();
 ```
 
-– ou –
+\- ou -
 
 ```csharp
 int myInt = 0;
@@ -109,4 +109,4 @@ Pour plus d’informations sur la mise en forme de la sortie des types numériqu
 - [Mots clés C#](index.md)
 - [Types](types.md)
 - [Types référence](reference-types.md)
-- [Types Nullable](../../programming-guide/nullable-types/index.md)
+- [Types valeur Nullable](../../programming-guide/nullable-types/index.md)

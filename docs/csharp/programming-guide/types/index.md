@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 422613a9016efb55c299f24c50cd2eec6c2c1069
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: a5ccd0e9e0e3e5bedad06a619be115c362b38e0d
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588400"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392153"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -46,11 +46,11 @@ Le compilateur utilise les informations de type pour s’assurer que toutes les 
 > [!NOTE]
 > Développeurs C et C++ : notez que dans C#, [bool](../../language-reference/keywords/bool.md) n’est pas convertible en [int](../../language-reference/builtin-types/integral-numeric-types.md).
 
-Le compilateur incorpore les informations de type dans le fichier exécutable sous forme de métadonnées. Le common language runtime (CLR) utilise ces métadonnées au moment de l’exécution pour garantir que le type est sécurisé lorsqu’il alloue et libère de la mémoire.
+Le compilateur incorpore les informations de type dans le fichier exécutable sous forme de métadonnées. Le common language runtime (CLR) utilise ces métadonnées au moment de l’exécution pour garantir la cohérence des types quand il alloue et libère de la mémoire.
 
 ### <a name="specifying-types-in-variable-declarations"></a>Spécification de types dans les déclarations de variable
 
-Lorsque vous déclarez une variable ou une constante dans un programme, vous devez spécifier son type ou utiliser le mot clé [var](../../language-reference/keywords/var.md) pour permettre au compilateur de déduire le type. L’exemple suivant montre des déclarations de variable qui utilisent des types numériques intégrés et des types complexes définis par l’utilisateur :
+Quand vous déclarez une variable ou une constante dans un programme, vous devez spécifier son type ou utiliser le mot clé [var](../../language-reference/keywords/var.md) pour permettre au compilateur de déduire le type. L’exemple suivant montre des déclarations de variable qui utilisent des types numériques intégrés et des types complexes définis par l’utilisateur :
 
 [!code-csharp[csProgGuideTypes#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#36)]
 
@@ -87,7 +87,7 @@ L’image suivante montre les types valeur et les types référence dans CTS :
 > [!NOTE]
 > Vous pouvez voir que les types couramment utilisés sont tous organisés dans l’espace de noms <xref:System>. Toutefois, l’espace de noms qui contient un type n’a aucune incidence sur le fait qu’il s’agisse d’un type valeur ou d’un type référence.
 
-### <a name="value-types"></a>Types valeur
+### <a name="value-types"></a>Types de valeur
 
 Les types valeur dérivent de <xref:System.ValueType?displayProperty=nameWithType>, qui dérive de <xref:System.Object?displayProperty=nameWithType>. Les types qui dérivent de <xref:System.ValueType?displayProperty=nameWithType> ont un comportement spécial dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.
 
@@ -120,7 +120,7 @@ L’autre catégorie de types valeur est [enum](../../language-reference/keyword
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
-La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d’informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
+La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
 Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../enumeration-types.md).
 
@@ -157,7 +157,7 @@ Comme les littéraux sont typés et que tous les types dérivent en fin de compt
 
 ## <a name="generic-types"></a>Types génériques
 
-Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a un paramètre de type qui, par convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets contenus dans la liste, par exemple, une chaîne :
+Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit quand il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a un paramètre de type qui, par convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets contenus dans la liste, par exemple, une chaîne :
 
 ```csharp
 List<string> stringList = new List<string>();
@@ -168,13 +168,13 @@ stringList.Add(4);
 
 L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](../../language-reference/keywords/object.md). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `stringList` dans l’exemple précédent. Pour plus d’informations, consultez la page [Génériques](../generics/index.md).
 
-## <a name="implicit-types-anonymous-types-and-nullable-types"></a>Types implicites, types anonymes et types Nullable
+## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Types implicites, types anonymes et types valeur Nullable
 
 Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](../../language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, consultez [Variables locales implicitement typées](../classes-and-structs/implicitly-typed-local-variables.md).
 
 Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez créer des *types anonymes* à cet effet. Pour plus d’informations, consultez [Types anonymes](../classes-and-structs/anonymous-types.md).
 
-Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](../../language-reference/keywords/null.md). Dans le CTS, les types Nullable sont des instances du type struct générique <xref:System.Nullable%601?displayProperty=nameWithType>. Les types Nullable sont particulièrement utiles lorsque vous passez des données vers et à partir de bases de données dans lesquelles les valeurs numériques peuvent être Null. Pour plus d’informations, consultez [Types Nullable](../nullable-types/index.md).
+Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](../../language-reference/keywords/null.md). Les types valeur Nullable sont des instances du type struct générique <xref:System.Nullable%601?displayProperty=nameWithType>. Les types valeur Nullable sont particulièrement utiles lorsque vous passez des données vers et depuis des bases de données dans lesquelles les valeurs numériques peuvent être null. Pour plus d’informations, consultez [types valeur Nullable](../nullable-types/index.md).
 
 ## <a name="related-sections"></a>Rubriques connexes
 
@@ -196,7 +196,7 @@ Pour plus d’informations, consultez les rubriques suivantes :
 
 - [Génériques](../generics/index.md)
 
-## <a name="c-language-specification"></a>Spécification du langage C#
+## <a name="c-language-specification"></a>spécification du langage C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 

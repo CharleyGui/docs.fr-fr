@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fd74da9be6d6b02817c8969befdc292f6e814628
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d37f7980c3024fa545e5395a4614dcd41a111794
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968705"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353200"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 Le chiffrement symétrique et le chiffrement asymétrique utilisent des processus différents. Le chiffrement symétrique est effectué sur des flux. Il est donc utile pour le chiffrement de grandes quantités de données. Le chiffrement asymétrique s'effectue sur un petit nombre d'octets. Il n'est donc utile que pour les petites quantités de données.  
@@ -160,13 +160,13 @@ public class main
   
  Pour que l’exemple précédent s’exécute correctement, un processus doit écouter l’adresse IP et le numéro de port spécifié dans la classe <xref:System.Net.Sockets.TcpClient> . Si un processus d’écoute existe, le code se connecte à lui, chiffre le flux à l’aide de l’algorithme symétrique Rijndael et écrit « Hello World! » dans le flux. Si le code réussit, il affichera le texte suivant dans la console :  
   
-```  
+```console  
 The message was sent.  
 ```  
   
  Toutefois, si aucun processus d'écoute n'est trouvé, ou si une exception est levée, le code affichera le texte suivant dans la console :  
   
-```  
+```console  
 The connection failed.  
 ```  
   

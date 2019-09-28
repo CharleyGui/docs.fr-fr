@@ -2,12 +2,12 @@
 title: Exemple d’exécution différée (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-ms.openlocfilehash: 29f118b3e6d49840b94277f17858f1339f2fb08c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d1f66cbe246b609f634989625688965dd4e5c93
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61977624"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351800"
 ---
 # <a name="deferred-execution-example-visual-basic"></a>Exemple d’exécution différée (Visual Basic)
 Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.  
@@ -46,7 +46,7 @@ End Module
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 ToUpper: source abc  
 Main: str ABC  
 ToUpper: source def  
@@ -61,4 +61,4 @@ Main: str GHI
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : Exécution différée (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Tutoriel : Exécution différée (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

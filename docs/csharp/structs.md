@@ -3,14 +3,15 @@ title: Structs - Guide C#
 description: En savoir plus sur le type struct et la manière de le créer
 ms.date: 10/12/2016
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: fbaa7fcc26009fe3117784b411941d30af0ba3c5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: e0974b7dcf3c0888cb52bea81b07a58e3a98640b
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608021"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396123"
 ---
 # <a name="structs"></a>Structs
+
 Un *struct* est un type valeur. Lorsqu'un struct est créé, la variable à laquelle le struct est assigné contient les données réelles du struct. Lorsque le struct est affecté à une nouvelle variable, il est copié. La nouvelle variable et la variable d’origine contiennent par conséquent deux copies distinctes des mêmes données. Les modifications apportées à une copie n’affectent pas l’autre copie.
 
 Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
@@ -51,7 +52,8 @@ Les structs partagent presque tous la même syntaxe que les classes, bien qu'ils
   
 - Un struct peut implémenter des interfaces.
 
-## <a name="literal-values"></a>Valeurs littérales  
+## <a name="literal-values"></a>Valeurs littérales
+
 En C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit le type `double` pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](./language-reference/keywords/value-types.md).  
   
 Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object>, vous pouvez écrire et compiler du code, tel que le suivant :  
@@ -62,8 +64,9 @@ Les deux derniers exemples illustrent les fonctionnalités de langage introduite
 
 Le second illustre les *littéraux binaires*, qui vous permettent de spécifier des modèles de bits directement au lieu d’utiliser la notation hexadécimale.
 
-## <a name="nullable-types"></a>Types Nullable  
-Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](./language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un  **?** après le type. Par exemple, **int?** est un type **int** qui peut également avoir la valeur [null](./language-reference/keywords/null.md). Dans le CTS, les types Nullable sont des instances du type struct générique <xref:System.Nullable%601>. Les types Nullable sont particulièrement utiles lorsque vous passez des données vers et à partir de bases de données dans lesquelles les valeurs numériques peuvent être Null. Pour plus d’informations, consultez [Types Nullable (Guide de programmation C#)](./programming-guide/nullable-types/index.md).
+## <a name="nullable-value-types"></a>Types valeur Nullable
+
+Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](./language-reference/keywords/null.md). Les types valeur Nullable sont des instances du type struct générique <xref:System.Nullable%601>. Les types valeur Nullable sont particulièrement utiles lorsque vous passez des données vers et depuis des bases de données dans lesquelles les valeurs numériques peuvent être null ou non définies. Pour plus d’informations, consultez [types valeur Nullable](programming-guide/nullable-types/index.md).
 
 ## <a name="see-also"></a>Voir aussi
 

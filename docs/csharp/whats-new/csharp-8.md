@@ -1,17 +1,17 @@
 ---
-title: Nouveautés de C# 8.0 – Guide C#
-description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0. Cet article a été actualisé par rapport à la préversion 5.
-ms.date: 09/10/2019
-ms.openlocfilehash: 141f7a2fa0bc5f6a2a253e196a218938dd4c170e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+title: Nouveautés de C# 8,0- C# Guide
+description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
+ms.date: 09/20/2019
+ms.openlocfilehash: ee0f6c9d7cfbe829508e3e0900e249c204266ca3
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926523"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396025"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées au langage C#.
+C#8,0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# langage :
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
@@ -28,10 +28,8 @@ Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées a
 - [Index et plages](#indices-and-ranges)
 - [Assignation de fusion Null](#null-coalescing-assignment)
 - [Types construits non managés](#unmanaged-constructed-types)
+- [stackalloc dans les expressions imbriquées](#stackalloc-in-nested-expressions)
 - [Amélioration des chaînes textuelles interpolées](#enhancement-of-interpolated-verbatim-strings)
-
-> [!NOTE]
-> La dernière mise à jour de cet article date de la préversion 5 de C# 8.0.
 
 La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des articles détaillés sont disponibles, des liens vers ces tutoriels et vues d’ensemble sont indiqués. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
 
@@ -377,18 +375,18 @@ Vous pouvez essayer par vous-même les flux asynchrones dans notre tutoriel [Cr�
 
 ## <a name="indices-and-ranges"></a>Index et plages
 
-Les plages et les index offrent une syntaxe concise pour spécifier des sous-plages dans un tableau, <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601>.
+Les index et les plages fournissent une syntaxe concise pour accéder à des éléments ou des plages uniques dans une séquence.
 
 Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
 
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
-- L’opérateur `^` spécifie qu’un index est relatif à la fin de la séquence.
+- L’index de l’opérateur end `^`, qui spécifie qu’un index est relatif à la fin de la séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- L’opérateur de plage (`..`) spécifie le début et la fin d’une plage comme ses opérandes.
+- Opérateur `..`de plage, qui spécifie le début et la fin d’une plage comme opérandes.
 
 Commençons par les règles concernant les index. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence.Length - n`.
 
-Une plage spécifie son *début* et sa *fin*. Le début de la plage est inclus, mais la fin de la plage est exclusive, ce qui signifie que le *début* est inclus dans la plage mais pas la *fin*. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière. 
+Une plage spécifie son *début* et sa *fin*. Le début de la plage est inclus, mais la fin de la plage est exclusive, ce qui signifie que le *début* est inclus dans la plage mais pas la *fin*. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière.
 
 Prenons quelques exemples. Examinez le tableau suivant, annoté avec son index à partir du début et de la fin :
 
@@ -447,6 +445,8 @@ La plage peut ensuite être utilisée à l’intérieur des caractères `[` et `
 var text = words[phrase];
 ```
 
+Non seulement les tableaux prennent en charge les index et les plages. Vous pouvez également utiliser des index et des plages avec [String](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601>. Pour plus d’informations, consultez [prise en charge des types d’index et de plages](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+
 Pour explorer davantage les index et les plages, consultez le tutoriel sur [les index et les plages](../tutorials/ranges-indexes.md).
 
 ## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
@@ -493,6 +493,16 @@ Span<Coords<int>> coordinates = stackalloc[]
 ```
 
 Pour plus d’informations, consultez [types non managés](../language-reference/builtin-types/unmanaged-types.md).
+
+## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
+
+À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
+
+```csharp
+Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
+var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
+Console.WriteLine(ind);  // output: 1
+```
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
 

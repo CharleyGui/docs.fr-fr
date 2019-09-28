@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: bb545d9da73154c237f55809a3a72ff0f121ce1a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5c36639d76a6fbd4e36f39486369a55a56a6e3ea
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253022"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396281"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -20,7 +20,7 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 
 |Contrainte|Description|
 |----------------|-----------------|
-|`where T : struct`|L’argument de type doit être un type valeur. Tout type valeur, excepté <xref:System.Nullable%601>, peut être spécifié. Pour plus d’informations sur les types Nullable en C#, consultez [Types Nullable](../nullable-types/index.md).|
+|`where T : struct`|L’argument de type doit être un type valeur. Tout type valeur, excepté <xref:System.Nullable%601>, peut être spécifié. Pour plus d’informations sur les types valeur Nullable, consultez [types valeur Nullable](../nullable-types/index.md).|
 |`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
 |`where T : notnull`|L’argument de type doit être un type non Nullable. L’argument peut être un type référence non Nullable dans C# 8,0 ou version ultérieure, ou un type valeur Not Nullable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
 |`where T : unmanaged`|L’argument de type doit être un [type non managé](../../language-reference/builtin-types/unmanaged-types.md).|
@@ -29,11 +29,11 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 |`where T :` *\<nom_interface>*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique.|
 |`where T : U`|L’argument de type fourni pour T doit être l’argument fourni pour U ou en dériver.|
 
-Certaines contraintes s’excluent mutuellement. Tous les types valeur doivent avoir un constructeur sans paramètre accessible. La `struct` contrainte implique la `new()` contrainte et la `new()` contrainte ne peut pas être combinée `struct` avec la contrainte. La contrainte `unmanaged` implique la contrainte `struct`. La `unmanaged` contrainte ne peut pas être combinée avec `struct` les `new()` contraintes ou.
+Certaines contraintes s’excluent mutuellement. Tous les types valeur doivent avoir un constructeur sans paramètre accessible. La contrainte `struct` implique la contrainte `new()` et la contrainte `new()` ne peut pas être combinée à la contrainte `struct`. La contrainte `unmanaged` implique la contrainte `struct`. La contrainte `unmanaged` ne peut pas être combinée avec les contraintes `struct` ou `new()`.
 
 ## <a name="why-use-constraints"></a>Pourquoi utiliser des contraintes
 
-En limitant le paramètre de type, vous augmentez le nombre d’opérations et d’appels de méthode autorisés au niveau de celui pris en charge par le type de contrainte et tous les types dans sa hiérarchie d’héritage. Quand vous concevez des classes ou des méthodes génériques, si vous effectuez une opération sur les membres génériques au-delà de la simple assignation ou que <xref:System.Object?displayProperty=nameWithType>vous appelez des méthodes non prises en charge par, vous devez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](introduction-to-generics.md)) en appliquant une contrainte de classe de base.
+En limitant le paramètre de type, vous augmentez le nombre d’opérations et d’appels de méthode autorisés au niveau de celui pris en charge par le type de contrainte et tous les types dans sa hiérarchie d’héritage. Quand vous concevez des classes ou des méthodes génériques, si vous effectuez une opération sur les membres génériques au-delà de la simple assignation ou que vous appelez des méthodes non prises en charge par <xref:System.Object?displayProperty=nameWithType>, vous devez appliquer des contraintes au paramètre de type. Par exemple, la contrainte de classe de base indique au compilateur que seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type. Une fois que le compilateur a cette garantie, il peut autoriser les méthodes de ce type à être appelées dans la classe générique. L’exemple de code suivant illustre la fonctionnalité que vous pouvez ajouter à la classe `GenericList<T>` (dans [Introduction aux génériques](introduction-to-generics.md)) en appliquant une contrainte de classe de base.
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#9)]
 
@@ -59,7 +59,7 @@ Vous pouvez appliquer des contraintes à plusieurs paramètres et plusieurs cont
 
  Les paramètres de type qui n’ont aucune contrainte, tels que T dans la classe publique `SampleClass<T>{}`, sont appelés paramètres de type unbounded. Les paramètres de type unbounded obéissent aux règles suivantes :
 
-- Les `!=` opérateurs `==` et ne peuvent pas être utilisés, car il n’y a aucune garantie que l’argument de type concret prendra en charge ces opérateurs.
+- Les opérateurs `!=` et `==` ne peuvent pas être utilisés, car il n’y a aucune garantie que l’argument de type concret prendra en charge ces opérateurs.
 - Ils peuvent être convertis vers et depuis `System.Object` ou être explicitement convertis vers tout type d’interface.
 - Vous pouvez les comparer à [null](../../language-reference/keywords/null.md). Si un paramètre unbounded est comparé à `null`, la comparaison retourne toujours la valeur false si l’argument de type est un type valeur.
 
@@ -79,9 +79,9 @@ L’utilité des paramètres de type en tant que contraintes avec les classes g�
 
 ## <a name="notnull-constraint"></a>Contrainte NotNull
 
-À partir C# de 8,0, vous pouvez utiliser `notnull` la contrainte pour spécifier que l’argument de type doit être un type valeur non Nullable ou un type référence non Nullable. La `notnull` contrainte ne peut être utilisée que dans `nullable enable` un contexte. Le compilateur génère un avertissement si vous ajoutez la `notnull` contrainte dans un contexte oublie Nullable. 
+À partir C# de 8,0, vous pouvez utiliser la contrainte `notnull` pour spécifier que l’argument de type doit être un type valeur non Nullable ou un type référence non Nullable. La contrainte `notnull` ne peut être utilisée que dans un contexte `nullable enable`. Le compilateur génère un avertissement si vous ajoutez la contrainte `notnull` dans un contexte oublie Nullable. 
 
-Contrairement à d’autres contraintes, lorsqu’un argument de type `notnull` viole la contrainte, le compilateur génère un avertissement lorsque ce code est `nullable enable` compilé dans un contexte. Si le code est compilé dans un contexte oublie Nullable, le compilateur ne génère pas d’avertissements ni d’erreurs.
+Contrairement à d’autres contraintes, lorsqu’un argument de type viole la contrainte `notnull`, le compilateur génère un avertissement lorsque ce code est compilé dans un contexte `nullable enable`. Si le code est compilé dans un contexte oublie Nullable, le compilateur ne génère pas d’avertissements ni d’erreurs.
 
 ## <a name="unmanaged-constraint"></a>Contrainte non managée
 
@@ -101,7 +101,7 @@ Vous pouvez utiliser la méthode ci-dessus pour combiner des délégués qui son
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#17)]
 
-Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compilé. `first` Et`test` sont des types délégués, mais il s’agit de types délégués différents.
+Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compilé. @No__t-0 et `test` sont des types délégués, mais il s’agit de types délégués différents.
 
 ## <a name="enum-constraints"></a>Contraintes d’enum
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b5cf6f0ae66141957d545134a2f8ff8eb799097
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 60693a6570eff6f9d4980d8f29f1385bc7462f08
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946452"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353154"
 ---
 # <a name="plinq-data-sample"></a>Données PLINQ, exemple
 Cet exemple contient des exemples de données au format .csv ainsi que des méthodes qui les transforment en collections en mémoires de clients, de produits, de commandes et de détails des commandes. Pour expérimenter davantage avec PLINQ, vous pouvez coller des exemples de code d’autres rubriques dans le code de cette rubrique et l’appeler à partir de la méthode `Main`. Vous pouvez également utiliser ces données avec vos propres requêtes PLINQ.  
@@ -35,7 +35,7 @@ Cet exemple contient des exemples de données au format .csv ainsi que des méth
   
 4. Appuyez sur F5 pour vérifier que le projet est créé et exécuté correctement. La sortie mentionnée plus bas devrait s’afficher dans la fenêtre de console.  
   
-    ```  
+    ```console  
     Customer count: 50  
     Product count: 77  
     Order count: 190  
@@ -48,7 +48,7 @@ Cet exemple contient des exemples de données au format .csv ainsi que des méth
   
 ## <a name="data"></a>Données  
   
-```  
+```console  
 CUSTOMERS  
 ALFKI,Alfreds Futterkiste,Obere Str. 57,Berlin,12209  
 ANATR,Ana Trujillo Emparedados y helados,Avda. de la Constitución 2222,México D.F.,05021  

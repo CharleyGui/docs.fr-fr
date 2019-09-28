@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b47f4c093acb094188cbd5a8a0a0026c67eb3f2c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f768242bffe619051779f87e950138ae9fcec6c
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795159"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353188"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Procédure : créer des objets GenericPrincipal et GenericIdentity
 
-Vous pouvez utiliser la <xref:System.Security.Principal.GenericIdentity> classe conjointement avec la <xref:System.Security.Principal.GenericPrincipal> classe pour créer un schéma d’autorisation qui existe indépendamment d’un domaine Windows.
+Vous pouvez utiliser la classe <xref:System.Security.Principal.GenericIdentity> conjointement avec la classe <xref:System.Security.Principal.GenericPrincipal> pour créer un schéma d’autorisation indépendant d’un domaine Windows.
 
 ### <a name="to-create-a-genericprincipal-object"></a>Pour créer un objet GenericPrincipal
 
@@ -48,7 +48,7 @@ Vous pouvez utiliser la <xref:System.Security.Principal.GenericIdentity> classe 
     GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myStringArray);
     ```
 
-3. Utilisez le code suivant pour joindre le principal au thread actuel. Ceci est utile dans les situations où le principal doit être validé à plusieurs reprises, il doit être validé par un autre code exécuté dans votre application, ou il doit être validé par un <xref:System.Security.Permissions.PrincipalPermission> objet. Vous pouvez toujours exécuter une validation basée sur les rôles sur l’objet principal sans le joindre au thread. Pour plus d’informations, consultez [Remplacement d’un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md).
+3. Utilisez le code suivant pour joindre le principal au thread actuel. Cela est utile dans les situations où le principal doit être validé plusieurs fois, qu’il doit être validé par un autre code s’exécutant dans votre application ou qu’il doit être validé par un objet <xref:System.Security.Permissions.PrincipalPermission>. Vous pouvez toujours exécuter une validation basée sur les rôles sur l’objet principal sans le joindre au thread. Pour plus d’informations, consultez [Remplacement d’un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md).
 
     ```vb
     Thread.CurrentPrincipal = myPrincipal
@@ -136,7 +136,7 @@ public class Class1
 
 Lorsqu’elle est exécutée, l’application affiche une sortie similaire à ce qui suit.
 
-```
+```console
 The Name is: MyIdentity
 The IsAuthenticated is: True
 Is this a Manager? True

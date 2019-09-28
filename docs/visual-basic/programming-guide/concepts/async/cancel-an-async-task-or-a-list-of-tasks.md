@@ -2,12 +2,12 @@
 title: Annuler une tâche asynchrone ou une liste de tâches (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 2b2fa7447c046f70c840791e7fe9bd874ff3795f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 73627455b1f4460edfe165126a388e961e98921f
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630955"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353129"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Annuler une tâche asynchrone ou une liste de tâches (Visual Basic)
 
@@ -125,16 +125,16 @@ Ajoutez ensuite les modifications suivantes au fichier MainWindow. Xaml. vb de c
     End Function
     ```
 
-5. Si vous n’annulez pas le programme, il génère le résultat suivant.
+5. Si vous n’annulez pas le programme, il génère la sortie suivante :
 
-    ```
+    ```console
     Ready to download.
     Length of the downloaded string: 158125.
     ```
 
-    Si vous choisissez le bouton **Annuler** quand le programme est encore en train de télécharger du contenu, le programme génère le résultat suivant.
+    Si vous choisissez le bouton **Annuler** avant que le programme n’ait terminé le téléchargement du contenu, le programme génère la sortie suivante :
 
-    ```
+    ```console
     Ready to download.
     Download canceled.
     ```
@@ -222,9 +222,9 @@ Pour étendre l’exemple vous-même, pas à pas, suivez les instructions de la 
     Await AccessTheWebAsync(cts.Token)
     ```
 
-5. Si vous n’annulez pas le programme, il génère le résultat suivant.
+5. Si vous n’annulez pas le programme, il génère la sortie suivante :
 
-    ```
+    ```console
     Length of the downloaded string: 35939.
 
     Length of the downloaded string: 237682.
@@ -244,7 +244,7 @@ Pour étendre l’exemple vous-même, pas à pas, suivez les instructions de la 
 
     Si vous choisissez le bouton **Annuler** avant la fin des téléchargements, la sortie contient les longueurs des chaînes ayant été téléchargées avant l’annulation.
 
-    ```
+    ```console
     Length of the downloaded string: 35939.
 
     Length of the downloaded string: 237682.

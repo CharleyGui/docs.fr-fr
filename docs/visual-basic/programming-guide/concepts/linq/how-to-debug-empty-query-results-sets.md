@@ -2,12 +2,12 @@
 title: 'Procédure : Déboguer des ensembles de résultats de requête vides (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-ms.openlocfilehash: cc6a370545b9e4d8c28e0096f5cff73f4d937bd3
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 6fc194432b1d44c1214da32d2c6978a4eeb316dc
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710428"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351776"
 ---
 # <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Procédure : Déboguer des ensembles de résultats de requête vides (Visual Basic)
 
@@ -19,7 +19,7 @@ Le deuxième ensemble d'exemples illustre les corrections que vous devez apporte
 
 Pour plus d’informations, consultez [vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Cet exemple illustre la création de code XML dans un espace de noms et une requête qui retourne un jeu de résultats vide.
 
@@ -45,12 +45,12 @@ Console.WriteLine("End of result set")
 
 Cet exemple génère le résultat suivant :
 
-```
+```console
 Result set follows:
 End of result set
 ```
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.
 
@@ -84,7 +84,7 @@ End Module
 
 Cet exemple génère le résultat suivant :
 
-```
+```console
 Result set follows:
 1
 2

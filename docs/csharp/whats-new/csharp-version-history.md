@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 304c433e7f15301b77e8b2440e27795dcdea345c
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e8bf39716482eb94e5686c1a150667be9f8ef620
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70893166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391951"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -57,7 +57,7 @@ Les choses commencent alors à devenir intéressantes. Examinons certaines fonct
 - [Génériques](../programming-guide/generics/index.md)
 - [Types partiels](../programming-guide/classes-and-structs/partial-classes-and-methods.md#partial-classes)
 - [Méthodes anonymes](../language-reference/operators/delegate-operator.md)
-- [Types Nullable](../programming-guide/nullable-types/index.md)
+- [Types valeur Nullable](../programming-guide/nullable-types/index.md)
 - [Itérateurs](../programming-guide/concepts/iterators.md)
 - [Covariance et contravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 

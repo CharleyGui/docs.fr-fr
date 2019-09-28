@@ -13,12 +13,12 @@ helpviewer_keywords:
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
 author: KrzysztofCwalina
-ms.openlocfilehash: 7cf98b8ed1957352f357c7a9d580b4fd567a1634
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4da14575d29582814d32a3050087b7acc0da802
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757493"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353709"
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
 Les types se composent de membres, de méthodes, de propriétés, d’événements, de constructeurs et de champs. Les sections suivantes décrivent les règles de nommage des membres de type.  
@@ -28,7 +28,7 @@ Les types se composent de membres, de méthodes, de propriétés, d’événemen
   
  **✓ DO** Donner des noms de méthode qui sont des verbes ou des expressions verbales.  
   
-```  
+```csharp  
 public class String {  
     public int CompareTo(...);  
     public string[] Split(...);  
@@ -56,7 +56,7 @@ public class String {
   
  Par exemple, la propriété suivante obtient et définit correctement une valeur enum nommée `Color`, donc la propriété est nommée `Color`:  
   
-```  
+```csharp  
 public enum Color {...}  
 public class Control {  
     public Color Color { get {...} set {...} }  
@@ -99,7 +99,7 @@ public class Control {
   
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Reprinted par l’autorisation de Pearson Education, Inc. des instructions de conception @no__t 1Framework : Conventions, idiomes et modèles pour les bibliothèques .NET réutilisables, 2e édition @ no__t-0 par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 de Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

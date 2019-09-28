@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Intercepter l’analyse des erreurs (Visual Basic)'
+title: 'Procédure : Intercepter les erreurs d’analyse (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-ms.openlocfilehash: 1a5d01d4853a9fd0cc7f0a0e5071b394ab3f218b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a0c0749e8bc6d3fb1a71595778bfc5effaaf8533
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855633"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352938"
 ---
-# <a name="how-to-catch-parsing-errors-visual-basic"></a>Procédure : Intercepter l’analyse des erreurs (Visual Basic)
+# <a name="how-to-catch-parsing-errors-visual-basic"></a>Procédure : Intercepter les erreurs d’analyse (Visual Basic)
 Cette rubrique montre comment détecter du code XML incorrect ou non valide.  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est implémenté avec <xref:System.Xml.XmlReader>. Si du code XML incorrect ou non valide est passé à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], la classe sous-jacente <xref:System.Xml.XmlReader> ève une exception. Les différentes méthodes qui analysent le code XML, telles que <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, n’interceptent pas l’exception. Celle-ci peut donc être interceptée par votre application.  
@@ -35,7 +35,7 @@ End Try
   
  Lorsque vous exécutez ce code, l'exception suivante est levée :  
   
-```  
+```console  
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
@@ -43,4 +43,4 @@ The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line
   
 ## <a name="see-also"></a>Voir aussi
 
-- [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: b2c3553f527e9fec8856297c7424a081b5b31db0
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
-ms.translationtype: HT
+ms.openlocfilehash: 39f5be7a667b4e37e84246ef0bfeb03c0099d4b7
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609924"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353364"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Opérateurs logiques booléens (référence C#)
 
@@ -118,16 +118,16 @@ Dans le cas des opérandes `bool?`, les opérateurs `&` et `|` prennent en charg
 |x|o|x&y|x&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  
-|true|False|false|true|  
-|true|null|null|true|  
-|False|true|False|true|  
-|False|False|False|False|  
-|False|null|False|null|  
-|null|true|null|true|  
-|null|False|False|null|  
-|null|null|null|null|  
+|true|false|false|true|  
+|true|Null|Null|true|  
+|false|true|false|true|  
+|false|false|false|false|  
+|false|Null|false|null|  
+|Null|true|Null|true|  
+|Null|false|false|null|  
+|Null|Null|Null|Null|  
 
-Le comportement de ces opérateurs diffère du comportement classique des opérateurs avec des types valeur Nullable. En règle générale, un opérateur défini pour les opérandes d’un type valeur peut être également utilisé avec des opérandes du type valeur Nullable correspondant. Il produit `null` si l’un de ses opérandes est `null`. Toutefois, les opérateurs `&` et `|` peuvent produire une valeur non Null même si l’un des opérandes est `null`. Pour plus d’informations sur le comportement des opérateurs avec des types valeur Nullable, voir la section [Opérateurs](../../programming-guide/nullable-types/using-nullable-types.md#operators) de l’article [Utiliser des types Nullable](../../programming-guide/nullable-types/using-nullable-types.md).
+Le comportement de ces opérateurs diffère du comportement classique des opérateurs avec des types valeur Nullable. En règle générale, un opérateur défini pour les opérandes d’un type valeur peut être également utilisé avec des opérandes du type valeur Nullable correspondant. Il produit `null` si l’un de ses opérandes est `null`. Toutefois, les opérateurs `&` et `|` peuvent produire une valeur non Null même si l’un des opérandes est `null`. Pour plus d’informations sur le comportement de l’opérateur avec les types valeur Nullable, consultez la section [opérateurs](../../programming-guide/nullable-types/using-nullable-types.md#operators) de l’article [utilisation de types valeur Nullable](../../programming-guide/nullable-types/using-nullable-types.md) .
 
 Vous pouvez également utiliser les opérateurs `!` et `^` avec les opérandes `bool?`, comme le montre l’exemple suivant :
 

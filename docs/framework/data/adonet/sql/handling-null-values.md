@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 763b048fcb517987931b0bdb4f5b9c5a613a05e8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 26b7e3a287c00f103129632ae8b0db882d468ef3
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352976"
 ---
 # <a name="handling-null-values"></a>Gestion des valeurs null
 Une valeur null dans une base de données relationnelle est utilisée lorsque la valeur d'une colonne est inconnue ou manquante. Une valeur null n'est ni une chaîne vide (pour les types de données caractère ou datetime) ni une valeur zéro (pour les types de données numériques). La spécification ANSI SQL-92 stipule qu'une valeur null doit être la même pour tous les types de données afin que toutes les valeurs null soient traitées de manière cohérente. L'espace de noms <xref:System.Data.SqlTypes> fournit des sémantiques de valeurs null en implémentant l'interface <xref:System.Data.SqlTypes.INullable>. Chacun des types de données de l'espace de noms <xref:System.Data.SqlTypes> possède sa propre propriété `IsNull` et une valeur `Null` qui peut être assignée à une instance de ce type de données.  
   
 > [!NOTE]
-> L'une des nouveautés de la version 2.0 du .NET Framework est la prise en charge des types Nullable qui permettent aux programmeurs d'étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types Nullable CLR représentent une instance de la structure <xref:System.Nullable>. Cette fonctionnalité est tout particulièrement utile lorsque des types de valeurs sont boxed et unboxed, ce qui améliore la compatibilité avec les types d'objets. Les types Nullable CLR ne sont pas destinés au stockage de valeurs de base de données null, car une valeur null SQL ANSI ne se comporte pas de la même manière qu'une référence `null` (ou `Nothing` en Visual Basic). Pour travailler avec des valeurs de base de données null SQL ANSI , utilisez des valeurs null <xref:System.Data.SqlTypes> plutôt que <xref:System.Nullable>. Pour plus d’informations sur l’utilisation des types CLR Nullable dans Visual Basic consultez [types valeur Nullable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), C# et pour voir [utilisation de types Nullable](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md).  
+> L'une des nouveautés de la version 2.0 du .NET Framework est la prise en charge des types Nullable qui permettent aux programmeurs d'étendre un type de valeur pour représenter toutes les valeurs du type sous-jacent. Ces types Nullable CLR représentent une instance de la structure <xref:System.Nullable>. Cette fonctionnalité est tout particulièrement utile lorsque des types de valeurs sont boxed et unboxed, ce qui améliore la compatibilité avec les types d'objets. Les types Nullable CLR ne sont pas destinés au stockage de valeurs de base de données null, car une valeur null SQL ANSI ne se comporte pas de la même manière qu'une référence `null` (ou `Nothing` en Visual Basic). Pour travailler avec des valeurs de base de données null SQL ANSI , utilisez des valeurs null <xref:System.Data.SqlTypes> plutôt que <xref:System.Nullable>. Pour plus d’informations sur l’utilisation des types CLR Nullable dans Visual Basic consultez [types valeur Nullable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md), C# et pour voir [utilisation de types valeur Nullable](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md).  
   
 ## <a name="nulls-and-three-valued-logic"></a>Valeurs null et logique à trois valeurs  
  Permettre des valeurs null dans des définitions de colonnes introduit une logique à trois valeurs dans votre application. Une comparaison peut correspondre à l'une des trois conditions :  
@@ -27,7 +27,7 @@ Une valeur null dans une base de données relationnelle est utilisée lorsque la
   
 - Inconnu  
   
- Comme la valeur null est considérée comme inconnue, les deux valeurs null comparées l'une à l'autre ne sont pas considérées comme égales. Dans des expressions utilisant des opérateurs arithmétiques, si l'un des opérandes est une valeur null, le résultat est une valeur null également.  
+ Comme la valeur null est considérée comme inconnue, les deux valeurs null comparées l'une à l'autre ne sont pas considérées comme égales. Dans des expressions utilisant des opérateurs arithmétiques, si l’un des opérandes est une valeur null, le résultat est une valeur null également.  
   
 ## <a name="nulls-and-sqlboolean"></a>Valeurs null et SqlBoolean  
  La comparaison entre tout <xref:System.Data.SqlTypes> retournera un <xref:System.Data.SqlTypes.SqlBoolean>. La fonction `IsNull` de chaque `SqlType` retourne un <xref:System.Data.SqlTypes.SqlBoolean> et peut être utilisée pour vérifier les valeurs null. Les tables de vérité suivantes montrent comment les opérateurs AND, OR et NOT fonctionnent en présence d'une valeur null (T=true, F=false et U=inconnu ou null).  
@@ -35,7 +35,7 @@ Une valeur null dans une base de données relationnelle est utilisée lorsque la
  ![Table de vérité](./media/truthtable-bpuedev11.gif "TruthTable_bpuedev11")  
   
 ### <a name="understanding-the-ansi_nulls-option"></a>Compréhension de l'option ANSI_NULLS  
- <xref:System.Data.SqlTypes> offre les mêmes sémantiques que lorsque l'option ANSI_NULLS est définie dans SQL Server. Tous les opérateurs arithmétiques (+, \*-,,/,%), les opérateurs de bits ( \|~, &,) et la plupart des fonctions retournent Null si l’un des opérandes ou arguments `IsNull`a la valeur null, à l’exception de la propriété.  
+ <xref:System.Data.SqlTypes> offre les mêmes sémantiques que lorsque l'option ANSI_NULLS est définie dans SQL Server. Tous les opérateurs arithmétiques (+,-, \*,/,%), les opérateurs de bits (~, &, \|) et la plupart des fonctions retournent Null si l’un des opérandes ou arguments a la valeur null, à l’exception de la propriété `IsNull`.  
   
  La norme ANSI SQL-92 ne prend pas en charge *ColumnName* = null dans une clause WHERE. Dans SQL Server, l'option ANSI_NULLS contrôle la possibilité de nullité par défaut dans la base de données et l'évaluation des comparaisons par rapport à des valeurs null. Si ANSI_NULLS est activée (par défaut), l'opérateur IS NULL doit être utilisé dans des expressions lors du test des valeurs null. Par exemple, la comparaison suivante entraîne toujours une valeur inconnue si ANSI_NULLS est activée :  
   

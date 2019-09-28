@@ -1,18 +1,18 @@
 ---
 title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
-ms.date: 04/19/2019
+ms.date: 09/20/2019
 ms.custom: mvc
-ms.openlocfilehash: d0eeadfff9732ced22e045536a88ed49cd98bbaa
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a879601e1358f72e80983992a3cd96ba1fb06a38
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117831"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391968"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
-Les plages et les index fournissent une syntaxe concise pour accéder à des éléments ou des plages <xref:System.Array>uniques <xref:System.String>dans <xref:System.Span%601>un, <xref:System.ReadOnlySpan%601>, ou. Ces fonctionnalités permettent d’utiliser une syntaxe plus concise et claire pour accéder à des éléments uniques ou à des plages d’éléments dans une séquence.
+Les plages et les index fournissent une syntaxe concise pour accéder à des éléments ou des plages uniques dans une séquence.
 
 Dans ce tutoriel, vous allez apprendre à :
 
@@ -74,6 +74,14 @@ Vous pouvez également déclarer des plages ou index comme variables. La variabl
 L’exemple suivant montre un grand nombre des raisons de ces choix. Modifiez `x`, `y` et `z` pour essayer différentes combinaisons. Quand vous effectuez des essais, utilisez des valeurs de telle sorte que `x` soit inférieur à `y` et `y` inférieur à `z` pour avoir des combinaisons valides. Ajoutez le code suivant à une nouvelle méthode. Essayez différentes combinaisons :
 
 [!code-csharp[SemanticsExamples](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
+
+## <a name="type-support-for-indices-and-ranges"></a>Prise en charge des types d’index et de plages
+
+Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages respectivement.
+
+Un type est **compté** s’il a une propriété nommée `Length` ou `Count` avec un accesseur Get accessible et un type de retour `int`. Un type pouvant être compté qui ne prend pas explicitement en charge les index ou les plages peut fournir une prise en charge implicite pour eux. Pour plus d’informations, consultez les sections prise en charge d' [index implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et [prise en charge de plage implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la [proposition](~/_csharplang/proposals/csharp-8.0/ranges.md).
+
+Par exemple, les types .NET suivants prennent en charge les index et les plages : <xref:System.Array>, <xref:System.String>, <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>. Le <xref:System.Collections.Generic.List%601> prend en charge les index, mais ne prend pas en charge les plages.
 
 ## <a name="scenarios-for-indices-and-ranges"></a>Scénarios pour les index et les plages
 

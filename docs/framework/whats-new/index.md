@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbf7c1203a1f6089eefce3ed2876c9ade91cc697
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 3acfa0da0caa29b503f47f23b0e9042d73ef0657
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374448"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353391"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -104,17 +104,14 @@ Les points de terminaison d’intégrité sont couramment utilisés par les outi
 
 Deux méthodes permettent d’exposer le point de terminaison d’intégrité et de publier les informations d’intégrité du service WCF :
 
-- Par le biais du code. Par exemple :
+- Par le biais du code. Exemple :
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
                      new Uri("http://contoso:81/Service1"));
   ServiceHealthBehavior healthBehavior =
       host.Description.Behaviors.Find<ServiceHealthBehavior>();
-  if (healthBehavior == null)
-  {
-     healthBehavior = new ServiceHealthBehavior();
-  }
+  healthBehavior ??= new ServiceHealthBehavior();
   host.Description.Behaviors.Add(healthBehavior);
   ```
 
@@ -129,7 +126,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- À l’aide d’un fichier de configuration. Par exemple :
+- À l’aide d’un fichier de configuration. Exemple :
 
   ```xml
   <behaviors>
@@ -141,7 +138,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   </behaviors>
   ```
 
-L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Par exemple :
+L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Exemple :
 
 - OnServiceFailure : `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -257,7 +254,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Par exemple :
+Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Exemple :
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -439,7 +436,7 @@ Vous pouvez ajouter SameSite pour des cookies <xref:System.Web.Security.FormsAut
 
 <a name="net472" />
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 **Implémentation des propriétés HttpClientHandler**
 
@@ -472,7 +469,7 @@ Pour plus d’informations et pour obtenir un exemple, consultez « SQL -- Azur
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, qui fournit les paramètres d’attestation utilisés par SQL Server afin d’obtenir les informations requises pour exécuter un protocole d’attestation spécifique.
 
-Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Par exemple :
+Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Exemple :
 
 ```xml
 <configuration>
@@ -635,7 +632,7 @@ Des modifications apportées à garbage collection (GC) dans .NET Framework 4.7.
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 **Prise en charge de SHA-2 pour Message.HashAlgorithm**
 
@@ -655,7 +652,7 @@ ASP.NET traite les demandes dans un pipeline prédéfini comprenant 23 événeme
 
 **Options de hachage SHA-2 pour les informations d’identification de l’authentification par formulaires ASP.NET**
 
-Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Par exemple :
+Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Exemple :
 
 ```xml
 <system.web>
@@ -704,7 +701,7 @@ Dans .NET Framework 4.7, le <xref:System.Runtime.Serialization.Json.DataContract
 
 <a name="net47" />
 
-#### <a name="networking"></a>Mise en réseau
+#### <a name="networking"></a>Réseau
 
 .NET Framework 4.7 ajoute les fonctionnalités liées au réseau suivantes :
 
@@ -846,7 +843,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Name                                 | `Value`                                     |
+| Name                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -970,7 +967,7 @@ Pour résoudre ce problème dans .NET Framework 4.6.2, les trois méthodes suiv
 
 La bibliothèque de chiffrement Windows (CNG) a ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et .NET Framework 4.6.2 a permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
 
-La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Par exemple :
+La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Exemple :
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1183,7 +1180,7 @@ Dans les versions précédentes du .NET Framework, les applications WPF ne peuve
 
 Pour faire face à la prolifération récente des environnements à haute résolution et à résolution hybride pour les applications WPF, WPF dans le .NET Framework 4.6.2 autorise une prise en charge par moniteur. Pour savoir comment permettre à votre application WPF de prendre en charge la résolution par moniteur, consultez les [exemples et le guide du développeur](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) sur GitHub.
 
-Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée. .
+Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée. ,
 
 Pour les applications s’exécutant sous le .NET Framework 4.6.2, vous pouvez désactiver les changements de résolution par moniteur dans les applications WPF en ajoutant une instruction de configuration à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de votre application, comme suit :
 
@@ -1865,7 +1862,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 Les nouvelles fonctionnalités et améliorations des classes de base de .NET Framework 4.5.1 incluent les suivantes :
 
-- Redirection de liaison automatique des assemblys. Depuis Visual Studio 2013, lorsque vous compilez une application qui cible le .NET Framework 4.5.1, il est possible d'ajouter des redirections de liaison au fichier de configuration de l'application, si votre application ou ses composants référencent plusieurs versions du même assembly. Vous pouvez également activer cette fonctionnalité pour les projets qui ciblent des versions antérieures du .NET Framework. Pour plus d’informations, consultez [Guide pratique pour Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Redirection de liaison automatique des assemblys. Depuis Visual Studio 2013, lorsque vous compilez une application qui cible le .NET Framework 4.5.1, il est possible d'ajouter des redirections de liaison au fichier de configuration de l'application, si votre application ou ses composants référencent plusieurs versions du même assembly. Vous pouvez également activer cette fonctionnalité pour les projets qui ciblent des versions antérieures du .NET Framework. Pour plus d'informations, voir [Procédure : Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Capacité à collecter des informations de diagnostic pour aider les développeurs à améliorer les performances des applications serveur et cloud. Pour plus d'informations, consultez les méthodes <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> et <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> de la classe <xref:System.Diagnostics.Tracing.EventSource>.
 

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: d5bcd5b06f6d922b29c2a494f1f63da1217e2b2d
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: a042f0ae1c7673f7d21b39580db3d373835939cd
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817877"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353830"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Stratégie de sécurité de WPF - ingénierie de sécurité
-Trustworthy Computing (informatique de confiance) est une initiative de Microsoft qui vise à garantir la production de code sécurisé. Un élément clé de l'initiative Trustworthy Computing est [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] est une pratique d’ingénierie utilisée en association avec des processus d’ingénierie standard pour faciliter la livraison de code sécurisé. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] se compose de dix phases qui associent les meilleures pratiques à la formalisation, à la mesurabilité et à une structure supplémentaire qui comprend les aspects suivants :  
+Trustworthy Computing (informatique de confiance) est une initiative de Microsoft qui vise à garantir la production de code sécurisé. L’Microsoft Security Development Lifecycle (SDL) est un élément clé de l’initiative Trustworthy Computing initiative. Le SDL est une pratique d’ingénierie qui est utilisée conjointement avec les processus d’ingénierie standard pour faciliter la livraison de code sécurisé. Le SDL se compose de dix phases qui associent les meilleures pratiques à la formalisation, à la mesurabilité et à une structure supplémentaire, notamment :  
   
 - analyse de la conception de la sécurité ;  
   
@@ -31,7 +31,7 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
 - gestion de la sécurité du produit après lancement.  
   
 ## <a name="wpf-specifics"></a>Spécificités de WPF  
- L'équipe d'ingénierie [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] applique et étend [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)], dont la combinaison inclut les aspects clés suivants :  
+ L’équipe d’ingénierie [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] applique et étend le SDL, dont la combinaison comprend les aspects clés suivants :  
   
  [Modélisation des menaces](#threat_modeling)  
   
@@ -43,7 +43,7 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 <a name="threat_modeling"></a>   
 ### <a name="threat-modeling"></a>Modélisation des menaces  
- La modélisation des menaces est une composante essentielle de [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)], qui vise à profiler un système dans le but d'identifier les failles de sécurité potentielles. Une fois les failles identifiées, la modélisation des menaces permet aussi de s'assurer que des mesures de prévention appropriées ont été prises.  
+ La modélisation des menaces est un composant fondamental de SDL et est utilisée pour profiler un système afin de déterminer les failles de sécurité potentielles. Une fois les failles identifiées, la modélisation des menaces permet aussi de s'assurer que des mesures de prévention appropriées ont été prises.  
   
  D'un point de vue général, la modélisation des menaces comporte les étapes clés suivantes, ici appliquées à l'exemple d'une épicerie :  
   
@@ -65,7 +65,7 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 <a name="tools"></a>   
 ### <a name="source-analysis-and-editing-tools"></a>Analyse de la source et outils de modification  
- Outre les éléments manuels de révision du code de sécurité de [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)], l'équipe [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] utilise plusieurs outils pour analyser la source et apporter les modifications associées pour réduire les vulnérabilités en matière de sécurité. Une large gamme d’outils sources est utilisée et comprend les éléments suivants :  
+ Outre les éléments manuels de révision du code de sécurité de SDL, l’équipe [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] utilise plusieurs outils pour l’analyse de la source et les modifications associées pour réduire les vulnérabilités de sécurité. Une large gamme d’outils sources est utilisée et comprend les éléments suivants :  
   
 - **FxCop**: Recherche des problèmes de sécurité courants dans le code managé, allant des règles d’héritage à l’utilisation de la sécurité d’accès du code à la manière d’interagir en toute sécurité avec du code non managé. Consultez la page [FXCop](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/bb429476%28v=vs.80%29).  
   
@@ -81,13 +81,13 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 - **Tests Blackbox**: Les testeurs essaient de trouver des failles de sécurité en examinant l’API et les fonctionnalités, puis essaient d’attaquer le produit.  
   
-- **Régression des problèmes de sécurité à partir d’autres produits**: Le cas échéant, les problèmes de sécurité provenant de produits connexes sont testés. Par exemple, les variantes appropriées d’environ 60 problèmes de sécurité pour Internet Explorer ont été identifiées et testées [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)]pour leur applicabilité à.  
+- **Régression des problèmes de sécurité à partir d’autres produits**: Le cas échéant, les problèmes de sécurité provenant de produits connexes sont testés. Par exemple, les variantes appropriées d’environ 60 problèmes de sécurité pour Internet Explorer ont été identifiées et essayées pour leur applicabilité à [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
   
 - **Tests de pénétration basés sur des outils via le fuzzing de fichiers**: Le fuzzing de fichier est l’exploitation de la plage d’entrée d’un lecteur de fichier par le biais de diverses entrées. Par exemple, dans [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)], cette technique est employée pour rechercher des défaillances dans le code de décodage d'image.  
   
 <a name="critical_code"></a>   
 ### <a name="critical-code-management"></a>Gestion du code critique  
- Pour [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] ,[!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] génère un bac à sable (sandbox) de sécurité à l’aide de la prise en charge .NET Framework pour le marquage et le suivi du code critique de sécurité qui élève les privilèges (consultez **méthodologie critique de sécurité** dans [stratégie de sécurité WPF-plateforme). Sécurité](wpf-security-strategy-platform-security.md)). Compte tenu des hautes exigences de qualité en matière de sécurité sur le code critique de sécurité, un tel code bénéficie d'un niveau de contrôle supplémentaire sur le plan de la gestion de la source et de l'audit de sécurité. Environ 5 à 10 % de [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] est constitué de code critique de sécurité, qui est examiné par une équipe de révision dédiée. Le processus de code source et d’archivage est géré par le suivi du code critique de sécurité et le mappage de chaque entité critique (c’est-à-dire, une méthode qui contient le code critique) à son état de validation. L'état de validation s'accompagne des noms d'un ou plusieurs réviseurs. Chaque build quotidienne de [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] compare le code critique à celui des versions précédentes pour vérifier la présence éventuelle de modifications non approuvées. Si un ingénieur modifie du code critique sans l'approbation de l'équipe de révision, celui-ci est identifié et corrigé immédiatement. Ce processus permet d'appliquer et de maintenir un niveau particulièrement élevé de surveillance sur le code du bac à sable (sandbox) [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+ Par [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] crée un bac à sable (sandbox) de sécurité à l’aide de .NET Framework prise en charge du marquage et du suivi du code critique de sécurité qui élève les privilèges (consultez **méthodologie critique de sécurité** dans [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme). Compte tenu des hautes exigences de qualité en matière de sécurité sur le code critique de sécurité, un tel code bénéficie d'un niveau de contrôle supplémentaire sur le plan de la gestion de la source et de l'audit de sécurité. Environ 5 à 10 % de [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] est constitué de code critique de sécurité, qui est examiné par une équipe de révision dédiée. Le processus de code source et d’archivage est géré par le suivi du code critique de sécurité et le mappage de chaque entité critique (c’est-à-dire, une méthode qui contient le code critique) à son état de validation. L'état de validation s'accompagne des noms d'un ou plusieurs réviseurs. Chaque build quotidienne de [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] compare le code critique à celui des versions précédentes pour vérifier la présence éventuelle de modifications non approuvées. Si un ingénieur modifie du code critique sans l'approbation de l'équipe de révision, celui-ci est identifié et corrigé immédiatement. Ce processus permet d'appliquer et de maintenir un niveau particulièrement élevé de surveillance sur le code du bac à sable (sandbox) [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
   
 ## <a name="see-also"></a>Voir aussi
 

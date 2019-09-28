@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8820fb898e0944704b7c81363962d523770a541c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
-ms.translationtype: HT
+ms.openlocfilehash: ce2f127858305a96b358c1661b98a359ae565f57
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442475"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393122"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -143,8 +143,7 @@ En règle générale, quand les dates et les heures s’affichent dans l’inter
 
 - méthode <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> sans paramètre ;
 
-- 
-  <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, qui inclut une chaîne de format ;
+- <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, qui inclut une chaîne de format ;
 
 - fonctionnalité de [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md), quand elle est utilisée avec des dates.
 
@@ -184,7 +183,7 @@ L'exemple de code suivant illustre ce problème. Il enregistre une même valeur 
 
 Quand les données sont restaurées sur un système situé dans le même fuseau horaire que le système sur lequel elles ont été sérialisées, les valeurs de date et d’heure désérialisées sont le reflet exact de la valeur d’origine, comme le montre la sortie suivante :
 
-```
+```console
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00.0000000-07:00' --> 3/30/2013 6:00:00 PM Local
@@ -194,7 +193,7 @@ Quand les données sont restaurées sur un système situé dans le même fuseau 
 
 Cependant, si vous restaurez les données sur un système situé dans un autre fuseau horaire, seule la valeur de date et d’heure qui a été mise en forme avec la chaîne de format standard « o » (aller-retour) conserve les informations de fuseau horaire et par conséquent représente le même instant dans le temps. Voici le résultat de la restauration des données de date et d’heure sur un système situé dans le fuseau horaire d’Europe centrale :
 
-```
+```console
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local
@@ -219,7 +218,7 @@ L’exemple suivant illustre chaque technique.
 
 Quand les données sont sérialisées sur un système situé dans le fuseau horaire du Pacifique, puis désérialisées sur un système situé dans le fuseau horaire d’Europe centrale, l’exemple affiche la sortie suivante :
 
-```
+```console
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local
 'Sun, 31 Mar 2013 01:00:00 GMT' --> 3/31/2013 3:00:00 AM Local
 '2013-03-31 01:00:00Z' --> 3/31/2013 3:00:00 AM Local

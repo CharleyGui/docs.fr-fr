@@ -2,12 +2,12 @@
 title: 'Procédure : Combiner et comparer des collections de chaînes (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: 7b56185b98d89572e6a8e3b9bc8ed54ad6ef7b37
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d521e56f9ae311eea53028ba189416db289839cd
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631044"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352884"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Procédure : Combiner et comparer des collections de chaînes (LINQ) (Visual Basic)
 
@@ -17,7 +17,7 @@ Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de 
 
 1. Copiez ces noms dans un fichier texte nommé names1.txt, puis enregistrez-le dans votre dossier de projet :
 
-    ```
+    ```text
     Bankov, Peter
     Holm, Michael
     Garcia, Hugo
@@ -32,7 +32,7 @@ Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de 
 
 2. Copiez ces noms dans un fichier texte nommé names2.txt, puis enregistrez-le dans votre dossier de projet : Notez que les deux fichiers ont des noms en commun.
 
-    ```
+    ```text
     Liu, Jinghao
     Bankov, Peter
     Holm, Michael
@@ -165,7 +165,7 @@ End Class
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Créez un projet d’application console VB.net, avec `Imports` une instruction pour l’espace de noms System. Linq.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 
