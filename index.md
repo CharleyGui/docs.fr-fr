@@ -6,12 +6,12 @@ title: Documentation .NET
 description: Découvrez comment utiliser .NET pour créer diverses applications sur n’importe quelle plateforme en C#, Visual Basic et F#. Parcourez les informations de référence sur les API, les exemples de code, les didacticiels et plus encore.
 ms.custom: updateeachrelease
 ms.date: 09/23/2019
-ms.openlocfilehash: cb567ea473e99c3bbd3d63a2328d45e94ca742ff
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: f58e1c03f529629556f79881aebd69afc9ed9bde
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216703"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351643"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -118,6 +118,7 @@ ms.locfileid: "71216703"
                                                 <p><a href="/dotnet/core/porting/">Portage à partir de .NET Framework</a></p>
                                                 <p><a href="/aspnet/core/getting-started/">ASP.NET Core</a></p>
                                                 <p><a href="/ef/core/">EF Core</a></p>
+                                                <p><a href="/dotnet/desktop-wpf/">Guide Desktop (WPF)</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -581,17 +582,37 @@ ms.locfileid: "71216703"
                                 </a>
                             </li>
                             <li>
+                                <a href="/dotnet/desktop-wpf/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/net-docs-desktop-2-core.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Windows Presentation Foundation (.NET Core)</h3>
+                                                    <p>WPF permet aux développeurs de créer des applications de bureau Windows à l’aide d’un modèle basé sur XAML.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/dotnet/framework/wpf/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="/dotnet/images/hub/net-docs-desktop-2.svg" alt="" />
+                                                        <img src="/dotnet/images/hub/net-docs-desktop-2-framework.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Windows Presentation Foundation (WPF)</h3>
+                                                    <h3>Windows Presentation Foundation (.NET Framework)</h3>
                                                     <p>WPF permet aux développeurs de créer des applications de bureau Windows à l’aide d’un modèle basé sur XAML.
                                                     </p>
                                                 </div>
