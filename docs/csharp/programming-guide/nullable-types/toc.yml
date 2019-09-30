@@ -1,7 +1,7 @@
-- name: Types Nullable
+- name: Types valeur Nullable
   href: index.md
   items:
-    - name: Utilisation des types Nullable
+    - name: Utilisation de types valeur Nullable
       href: using-nullable-types.md
-    - name: "Procédure\_: Identifier un type Nullable"
+    - name: Guide pratique pour identifier un type valeur Nullable
       href: how-to-identify-a-nullable-type.md
