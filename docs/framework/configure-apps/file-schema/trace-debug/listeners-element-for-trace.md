@@ -7,20 +7,20 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: e4550d4c4cd9ff37c5937ad366cccf91387c0e3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84b67532825372e7f69d86e1ef6060f4263587eb
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927019"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699354"
 ---
-# <a name="listeners-element-for-trace"></a>\<écouteur > élément de \<trace >
+# <a name="listeners-element-for-trace"></a>\<listeners > élément de \<trace >
 Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écouteurs dirigent la sortie de suivi vers une cible appropriée.  
   
- \<Élément de > de configuration  
-\<System. Diagnostics, élément >  
-\<Élément trace >  
-\<écouteur > élément de \<trace >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<listeners >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écout
 |-------------|-----------------|  
 |[\<add>](add-element-for-listeners-for-trace.md)|Ajoute un écouteur à la collection `Listeners`.|  
 |[\<clear>](clear-element-for-listeners-for-trace.md)|Efface la collection `Listeners` de la trace.|  
-|[\<remove>](remove-element-for-listeners-for-trace.md)|Supprime un écouteur de la `Listeners` collection.|  
+|[\<remove>](remove-element-for-listeners-for-trace.md)|Supprime un écouteur de la collection `Listeners`.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,13 +55,13 @@ Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écout
 |`trace`|Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.|  
   
 ## <a name="remarks"></a>Notes  
- Les <xref:System.Diagnostics.Debug> classes <xref:System.Diagnostics.Trace> et partagent la même collection d' **écouteurs** . Si vous ajoutez un objet écouteur à la collection dans l’une de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur fournies avec le .NET Framework dérivent de la <xref:System.Diagnostics.TraceListener> classe.  
+ Les classes <xref:System.Diagnostics.Debug> et <xref:System.Diagnostics.Trace> partagent la même collection d' **écouteurs** . Si vous ajoutez un objet écouteur à la collection dans l’une de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur fournies avec le .NET Framework dérivent de la classe <xref:System.Diagnostics.TraceListener>.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser les  **\<écouteurs >** élément `MyListener` pour ajouter les écouteurs et `MyEventListener` la collection d' **écouteurs** . `MyListener`crée un fichier appelé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener`crée une entrée dans le journal des événements.  
+ L’exemple suivant montre comment utiliser l’élément **\<listeners >** pour ajouter les écouteurs `MyListener` et `MyEventListener` à la collection d' **écouteurs** . `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
   
 ```xml  
 <configuration>  

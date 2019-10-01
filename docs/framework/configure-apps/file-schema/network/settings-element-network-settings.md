@@ -8,19 +8,19 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: 12797e2f06d03aacd81700eae57d5776c1a6f354
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ba08f630dc602c950da309bf29482d85b41af7ef
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663993"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697684"
 ---
-# <a name="settings-element-network-settings"></a>\<Paramètres >, élément (paramètres réseau)
+# <a name="settings-element-network-settings"></a>\<settings >, élément (paramètres réseau)
 Configure les options réseau de base pour l’espace de noms <xref:System.Net?displayProperty=nameWithType>.  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<settings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,7 +46,7 @@ Configure les options réseau de base pour l’espace de noms <xref:System.Net?d
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[httpListener](httplistener-element-network-settings.md)|Personnalise les paramètres utilisés par <xref:System.Net.HttpListener> la classe.|  
+|[httpListener](httplistener-element-network-settings.md)|Personnalise les paramètres utilisés par la classe <xref:System.Net.HttpListener>.|  
 |[httpWebRequest](httpwebrequest-element-network-settings.md)|Personnalise les paramètres de la demande Web.|  
 |[ipv6](ipv6-element-network-settings.md)|Active la prise en charge du protocole IPv6 (Internet Protocol version 6).|  
 |[\<performanceCounter >, élément (paramètres réseau)](performancecounter-element-network-settings.md)|Active les compteurs de performances réseau.|  

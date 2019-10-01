@@ -7,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: 55120e292ac2a2c822c5510563d1aa167ca921e4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c4f7e31422ccd8129599db1120f9b0cb327d9319
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920454"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697208"
 ---
-# <a name="source-element"></a>\<Élément > source
+# <a name="source-element"></a>Élément @no__t 0source >
 Spécifie une source de trace qui lance des messages de traçage.  
   
- \<configuration>  
-\<system.diagnostics>  
-\<sources>  
-\<> source  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<source >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,9 +38,9 @@ Spécifie une source de trace qui lance des messages de traçage.
 |Attribut|Description|  
 |---------------|-----------------|  
 |`name`|Attribut facultatif.<br /><br /> Spécifie le nom de la source de suivi.|  
-|`switchName`|Attribut facultatif.<br /><br /> Spécifie le nom d’une instance de commutateur de trace dans l’application. Si le commutateur n’est pas identifié dans `<switches>` un élément, la valeur spécifie le niveau du commutateur.|  
+|`switchName`|Attribut facultatif.<br /><br /> Spécifie le nom d’une instance de commutateur de trace dans l’application. Si le commutateur n’est pas identifié dans un élément `<switches>`, la valeur spécifie le niveau du commutateur.|  
 |`switchType`|Attribut facultatif.<br /><br /> Spécifie le type du commutateur de trace. S’il est présent, le type doit être un nom de classe valide et ne peut pas être une chaîne vide.|  
-|`extraAttribute`|Attribut facultatif.<br /><br /> Spécifie la valeur d’un attribut spécifique à la source de trace <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> identifié par la méthode pour cette source de suivi.|  
+|`extraAttribute`|Attribut facultatif.<br /><br /> Spécifie la valeur d’un attribut spécifique à la source de trace identifié par la méthode <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> pour cette source de suivi.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -59,8 +59,8 @@ Spécifie une source de trace qui lance des messages de traçage.
 ## <a name="remarks"></a>Notes  
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant montre comment utiliser l' `<source>` élément pour ajouter la source `mySource` de suivi et définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté pour écrire des informations de traçage dans la console.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l’élément `<source>` pour ajouter la source de suivi `mySource` et pour définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté pour écrire des informations de traçage dans la console.  
   
 ```xml  
 <configuration>  

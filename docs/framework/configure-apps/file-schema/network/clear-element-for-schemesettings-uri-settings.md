@@ -2,20 +2,20 @@
 title: <clear>, élément de schemeSettings (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
-ms.openlocfilehash: 51c669aff767948523172aa075677ad3fb6478a2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e954fef455d0279a945c33f2014913fea9d63064
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664179"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699447"
 ---
-# <a name="clear-element-for-schemesettings-uri-settings"></a>\<Clear >, élément de schemeSettings (paramètres d’URI)
+# <a name="clear-element-for-schemesettings-uri-settings"></a>Élément @no__t 0clear > pour schemeSettings (paramètres d’URI)
 Efface tous les paramètres de schéma existants.  
   
- \<configuration>  
-\<URI >  
-\<schemeSettings>  
-\<clear>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<schemeSettings >** ](schemesettings-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +39,15 @@ Efface tous les paramètres de schéma existants.
 |[\<schemeSettings, élément (paramètres d’Uri)](schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, la <xref:System.Uri?displayProperty=nameWithType> classe annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes:  
+ Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Si cet URI est passé aux modules qui ne gèrent pas correctement les caractères encodés en pourcentage, cela peut entraîner l’exécution de la commande suivante par le serveur:  
+ Si cet URI est passé aux modules qui ne gèrent pas correctement les caractères encodés en pourcentage, cela peut entraîner l’exécution de la commande suivante par le serveur :  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Pour cette raison, <xref:System.Uri?displayProperty=nameWithType> la classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus au <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant:  
+ C’est la raison pour laquelle la classe <xref:System.Uri?displayProperty=nameWithType> n’ignore pas les délimiteurs de chemin d’accès, puis applique la compression de chemin. Le résultat de la transmission de l’URL malveillante ci-dessus au constructeur de classe <xref:System.Uri?displayProperty=nameWithType> génère l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -56,8 +56,8 @@ Efface tous les paramètres de schéma existants.
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe qui efface tous les paramètres de schéma, puis ajoute la prise en charge pour ne pas échapper les délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> qui efface tous les paramètres de schéma, puis ajoute la prise en charge pour ne pas échapper les délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
 ```xml  
 <configuration>  

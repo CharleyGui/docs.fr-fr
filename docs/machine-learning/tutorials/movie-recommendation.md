@@ -2,21 +2,21 @@
 title: 'Tutoriel : Générer un système de suggestion de films : factorisation de matrice'
 description: Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 author: briacht
-ms.date: 08/26/2019
+ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 4f80ebad0a280040e9f3329dc7b647bd53a48fa0
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1db2ad6c078cb6201b2a6a4e2f8572f589cee684
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929480"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700963"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Tutoriel : Générer un système de suggestion de films à l’aide de la factorisation de matrice avec ML.NET
 
 Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 >
 > * Sélectionner un algorithme de machine learning.
@@ -46,7 +46,7 @@ Il existe plusieurs façons d’aborder les problèmes de suggestion, par exempl
 
 ## <a name="create-a-console-application"></a>Créer une application console
 
-### <a name="create-a-project"></a>Création d’un projet
+### <a name="create-a-project"></a>Créer un projet
 
 1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « MovieRecommender », puis sélectionnez le bouton **OK**.
 
@@ -320,7 +320,10 @@ Utilisez le `PredictionEngine` pour prédire l’évaluation en ajoutant le code
 
 [!code-csharp[PredictionEngine](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#PredictionEngine "Create Prediction Engine")]
 
-La [classe PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique qui vous permet de passer une instance unique de données, puis d’établir sur elle une prédiction.
+Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application)
+
+> [!NOTE]
+> L’extension de service `PredictionEnginePool` est disponible en préversion.
 
 Créez une instance de `MovieRating` nommée `testInput` et transmettez-la au moteur de prédiction en ajoutant les lignes de code suivantes dans la méthode `UseModelForSinglePrediction()` :
 
@@ -465,7 +468,7 @@ Les données utilisées dans ce tutoriel sont dérivées du [Jeu de données Mov
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 
 > [!div class="checklist"]
 >

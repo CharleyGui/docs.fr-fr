@@ -8,20 +8,20 @@ helpviewer_keywords:
 - module element
 - <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
-ms.openlocfilehash: 851a63b41dfb5d3b4058e1373148f48d47d9d6ae
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 15f4d10a70dc3c6abd32869f5b7b0006a799b4bf
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664071"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698042"
 ---
 # <a name="module-element-network-settings"></a>\<module >, élément (paramètres réseau)
 Ajoute un nouveau module proxy à l'application.  
   
- \<configuration>  
-\<system.net>  
-\<defaultProxy>  
-\<module>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<module >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ Ajoute un nouveau module proxy à l'application.
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
-|`type`|Le nom de type qualifié complet (indiqué par <xref:System.Type.FullName%2A> la propriété) et le nom de l’assembly <xref:System.Reflection.Assembly.FullName%2A> (indiqué par la propriété), séparés par une virgule, qui implémente le proxy.|  
+|`type`|Le nom de type qualifié complet (indiqué par la propriété <xref:System.Type.FullName%2A>) et le nom de l’assembly (indiqué par la propriété <xref:System.Reflection.Assembly.FullName%2A>), séparés par une virgule, qui implémente le proxy.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -50,14 +50,14 @@ Ajoute un nouveau module proxy à l'application.
 |[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="remarks"></a>Notes  
- L' `module` élément inscrit des classes proxy qui implémentent <xref:System.Net.IWebProxy> l’interface. Après l’inscription de la classe `module` proxy, peut être utilisé pour demander des informations par le biais du proxy pris en charge.  
+ L’élément `module` inscrit les classes proxy qui implémentent l’interface <xref:System.Net.IWebProxy>. Après l’inscription de la classe proxy, `module` peut être utilisé pour demander des informations par le biais du proxy pris en charge.  
   
- La valeur de l' `type` attribut doit être le nom de classe du module et le nom de la bibliothèque de liens dynamiques (dll) correspondante.  
+ La valeur de l’attribut `type` doit être le nom de classe du module et le nom de la bibliothèque de liens dynamiques (DLL) correspondante.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant inscrit une classe proxy personnalisée.  
   
 ```xml  

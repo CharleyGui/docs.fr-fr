@@ -1,5 +1,5 @@
 ---
-title: <remove>, Élément <listeners> de pour<trace>
+title: Élément <remove> pour <listeners> pour <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: 0c5c9efb8a22d26ea5d4467f9628af5935d6dbad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 56d1e56514aed98d5f3b9f7363e461af6ac68a8c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920476"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697218"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<supprimer > élément pour \<les écouteurs > pour \<la trace >
+# <a name="remove-element-for-listeners-for-trace"></a>\<remove > élément de \<listeners > pour \<trace >
 Supprime un écouteur de la collection d' **écouteurs** .  
   
- \<configuration>  
-\<system.diagnostics>  
-\<> de trace  
-\<listeners>  
-\<remove>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<listeners >** ](listeners-element-for-trace.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,7 +53,7 @@ Supprime un écouteur de la collection d' **écouteurs** .
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
-> La suppression <xref:System.Diagnostics.DefaultTraceListener> du de `Listeners` la <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>collection altère <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>le <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> comportement des méthodes, ,et.<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> L’appel `Assert` d' `Fail` une méthode ou entraîne normalement l’affichage d’une boîte de message, mais la boîte de message ne s' <xref:System.Diagnostics.DefaultTraceListener> affiche pas si le `Listeners` n’est pas dans la collection.  
+> La suppression de la <xref:System.Diagnostics.DefaultTraceListener> de la collection `Listeners` altère le comportement des méthodes <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> et <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType>. L’appel d’une méthode `Assert` ou `Fail` entraîne normalement l’affichage d’une boîte de message, mais la boîte de message ne s’affiche pas si le <xref:System.Diagnostics.DefaultTraceListener> n’est pas dans la collection `Listeners`.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment supprimer l’écouteur de suivi par défaut de la collection d' **écouteurs** de trace.  

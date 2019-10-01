@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: cbdf6150010ca2dace3f0610d9caa90c2bf52746
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eed2a4d06906d2928be62aed20a75484c3eea946
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921055"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699769"
 ---
-# <a name="oidentry-element"></a>\<oidEntry >, élément
+# <a name="oidentry-element"></a>Élément @no__t 0oidEntry >
 Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.  
   
- \<configuration>  
-\<mscorlib>  
-\<cryptographySettings>  
-\<oidMap>  
-\<oidEntry>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<oidMap >** ](oidmap-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 **\<oidEntry >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
 |Attribut|Description|  
 |---------------|-----------------|  
 |**OID**|Attribut requis.<br /><br /> Spécifie l’OID ASN. 1 correspondant à l’algorithme implémenté par votre classe.|  
-|**name**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans la [ \<balise > élément nameEntry](nameentry-element.md) .|  
+|**name**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans la balise [> @no__t 2nameEntry](nameentry-element.md) .|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -56,7 +56,7 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
  Les identificateurs d’objets ASN. 1 identifient les algorithmes dans certains formats de chiffrement. Mappez les identificateurs d’objet à des noms conviviaux pour les algorithmes que vous souhaitez identifier.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l'  **\<élément oidEntry >** pour mapper un identificateur d’objet pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
+ L’exemple suivant montre comment utiliser l’élément **\<oidEntry >** pour mapper un identificateur d’objet pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
   
 ```xml  
 <configuration>  

@@ -7,20 +7,20 @@ helpviewer_keywords:
 - <add> element for <switches>
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
-ms.openlocfilehash: 8fcd5cbe63a323a7509f5ff8c615364295c244d5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2edc890049d62913d693ad61d8d814d012c0f482
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920539"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697177"
 ---
-# <a name="add-element-for-switches"></a>\<Ajoutez > élément pour \<les commutateurs >
+# <a name="add-element-for-switches"></a>\<add > élément de \<switches >
 Spécifie le niveau auquel un commutateur de trace est défini.  
   
- \<configuration>  
-\<system.diagnostics>  
-\<switches>  
-\<add>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<switches >** ](switches-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Ajouter >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,10 +51,10 @@ Spécifie le niveau auquel un commutateur de trace est défini.
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez modifier le niveau d’un commutateur de trace en le plaçant dans un fichier de configuration. Si le commutateur est un <xref:System.Diagnostics.BooleanSwitch>, vous pouvez l’activer ou le désactiver. Si le commutateur est un <xref:System.Diagnostics.TraceSwitch>, vous pouvez lui affecter différents niveaux pour spécifier les types de messages de trace ou de débogage que l’application génère.  
+ Vous pouvez modifier le niveau d’un commutateur de trace en le plaçant dans un fichier de configuration. Si le commutateur est un <xref:System.Diagnostics.BooleanSwitch>, vous pouvez l’activer ou la désactiver. Si le commutateur est un <xref:System.Diagnostics.TraceSwitch>, vous pouvez lui affecter différents niveaux pour spécifier les types de messages de trace ou de débogage que l’application génère.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser <xref:System.Diagnostics.TraceLevel> l' `Data` `General`  **\<élément Add >** pour définir le commutateur de trace sur le niveau et activer le commutateur de trace booléen.  
+ L’exemple suivant montre comment utiliser l’élément **\<add >** pour définir le commutateur de trace `General` sur le niveau <xref:System.Diagnostics.TraceLevel> et activer le commutateur de trace booléen `Data`.  
   
 ```xml  
 <configuration>  

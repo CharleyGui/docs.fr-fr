@@ -9,18 +9,20 @@ helpviewer_keywords:
 - <requiredRuntime> element
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
-ms.openlocfilehash: f5a9f99133c153401694372abaeea10a02e492e5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634194"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697488"
 ---
-# <a name="requiredruntime-element"></a>\<requiredRuntime > élément
+# <a name="requiredruntime-element"></a>élément @no__t 0requiredRuntime >
 
-Spécifie que l’application prend en charge uniquement la version 1.0 du common language runtime. Cet élément est déconseillé et ne doit plus être utilisé. Le [ `supportedRuntime` ](supportedruntime-element.md) élément doit être utilisé à la place.
+Spécifie que l’application prend en charge uniquement la version 1.0 du common language runtime. Cet élément est déconseillé et ne doit plus être utilisé. L’élément [`supportedRuntime`](supportedruntime-element.md) doit être utilisé à la place.
 
-\<configuration> \<startup> \<requiredRuntime>
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<startup >** ](startup-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requiredRuntime >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,15 +40,15 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|`version`|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la version du .NET Framework qui prend en charge de cette application. La valeur de chaîne doit correspondre au nom de répertoire trouvé sous la racine d’installation de .NET Framework. Le contenu de la valeur de chaîne n’est pas analysé.|
-|`safemode`|Attribut facultatif.<br /><br /> Spécifie si le code de démarrage runtime recherche dans le Registre pour déterminer la version du runtime.|
+|`version`|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la version du .NET Framework que cette application prend en charge. La valeur de chaîne doit correspondre au nom de répertoire trouvé sous la racine d’installation .NET Framework. Le contenu de la valeur de chaîne n’est pas analysé.|
+|`safemode`|Attribut facultatif.<br /><br /> Spécifie si le code de démarrage du runtime effectue une recherche dans le registre pour déterminer la version du Runtime.|
 
-## <a name="safemode-attribute"></a>attribut de mode sans échec
+## <a name="safemode-attribute"></a>safemode (attribut)
 
 |Value|Description|
 |-----------|-----------------|
-|`false`|Le code de démarrage runtime recherche dans le Registre. Valeur par défaut.|
-|`true`|Le code de démarrage runtime ne recherche pas dans le Registre.|
+|`false`|Le code de démarrage du runtime recherche dans le registre. Valeur par défaut.|
+|`true`|Le code de démarrage du runtime n’examine pas le registre.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -57,18 +59,18 @@ Aucun.
 |Élément|Description|
 |-------------|-----------------|
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
-|`startup`|Contient le `<requiredRuntime>` élément.|
+|`startup`|Contient l' `<requiredRuntime>` élément.|
 
 ## <a name="remarks"></a>Notes
- Les applications générées pour prendre en charge uniquement la version 1.0 du runtime doivent utiliser le `<requiredRuntime>` élément. Les applications générées à l’aide de la version 1.1 ou ultérieure du runtime doivent utiliser le `<supportedRuntime>` élément.
+ Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l’élément `<requiredRuntime>`. Les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime doivent utiliser l’élément `<supportedRuntime>`.
 
 > [!NOTE]
-> Si vous utilisez le [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) de fonction pour spécifier le fichier de configuration, vous devez utiliser le `<requiredRuntime>` élément pour toutes les versions du runtime. Le `<supportedRuntime>` élément est ignoré lorsque vous utilisez [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).
+> Si vous utilisez la fonction [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) pour spécifier le fichier de configuration, vous devez utiliser l’élément `<requiredRuntime>` pour toutes les versions du Runtime. L’élément `<supportedRuntime>` est ignoré lorsque vous utilisez [CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).
 
- Le `version` chaîne de l’attribut doit correspondre au nom de dossier d’installation de la version spécifiée du .NET Framework. Cette chaîne n’est pas interprétée. Si le code de démarrage runtime ne trouve pas de dossier correspondant, le runtime n’est pas chargé ; le code de démarrage affiche un message d’erreur et se ferme.
+ La chaîne d’attribut `version` doit correspondre au nom du dossier d’installation pour la version spécifiée du .NET Framework. Cette chaîne n’est pas interprétée. Si le code de démarrage du runtime ne trouve pas de dossier correspondant, le runtime n’est pas chargé ; le code de démarrage affiche un message d’erreur et se ferme.
 
 > [!NOTE]
-> Le code de démarrage pour une application qui est hébergé dans Microsoft Internet Explorer ignore les `<requiredRuntime>` élément.
+> Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore l’élément `<requiredRuntime>`.
 
 ## <a name="example"></a>Exemple
 

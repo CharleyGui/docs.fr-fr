@@ -2,19 +2,19 @@
 title: <schemeSettings>, élément (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: 46012b15d41422fb3357e57438e320136809ef41
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 498aef77a1dfd8cffcac73b704b8d1bb6df5d165
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664007"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697767"
 ---
 # <a name="schemesettings-element-uri-settings"></a>\<schemeSettings >, élément (paramètres d’URI)
 Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.  
   
- \<configuration>  
-\<URI >  
-\<schemeSettings>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<schemeSettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,7 +27,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -44,15 +44,15 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
 |[URI](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, la <xref:System.Uri?displayProperty=nameWithType> classe annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes:  
+ Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Si cet URI est passé aux modules qui ne gèrent pas correctement les caractères encodés en pourcentage, cela peut entraîner l’exécution de la commande suivante par le serveur:  
+ Si cet URI est passé aux modules qui ne gèrent pas correctement les caractères encodés en pourcentage, cela peut entraîner l’exécution de la commande suivante par le serveur :  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Pour cette raison, <xref:System.Uri?displayProperty=nameWithType> la classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus au <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant:  
+ C’est la raison pour laquelle la classe <xref:System.Uri?displayProperty=nameWithType> n’ignore pas les délimiteurs de chemin d’accès, puis applique la compression de chemin. Le résultat de la transmission de l’URL malveillante ci-dessus au constructeur de classe <xref:System.Uri?displayProperty=nameWithType> génère l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge la non-échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
+ L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour ne pas prendre en charge l’échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
 ```xml  
 <configuration>  
@@ -78,7 +78,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
   
 |||
 |-|-|  
-|Espace de noms|System|  
+|Espace de noms|Système|  
 |Nom du schéma||  
 |Fichier de validation||  
 |Peut être vide||  

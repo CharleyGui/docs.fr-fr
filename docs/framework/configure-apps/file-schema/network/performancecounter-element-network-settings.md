@@ -8,20 +8,20 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 05aac6c1ed3c04bce263a45cafdb9bec906bd75b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3fe6b19d0055aafad859b55960800d9786d7fa08
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664060"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697999"
 ---
 # <a name="performancecounter-element-network-settings"></a>\<performanceCounter >, élément (paramètres réseau)
 Active ou désactive les compteurs de performance réseau.  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
-\<performanceCounters>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<performanceCounters >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,10 +56,10 @@ Active ou désactive les compteurs de performance réseau.
   
  La valeur par défaut est que les compteurs de performance réseau sont désactivés.  
   
- La <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> propriété peut être utilisée pour récupérer la valeur actuelle de l’attribut **activé** à partir des fichiers de configuration applicables.  
+ La propriété <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> peut être utilisée pour récupérer la valeur actuelle de l’attribut **activé** à partir des fichiers de configuration applicables.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment configurer le et <xref:System.Net> les espaces de noms associés pour activer les compteurs de performances de mise en réseau.  
+ L’exemple suivant montre comment configurer le <xref:System.Net> et les espaces de noms associés pour activer les compteurs de performances de mise en réseau.  
   
 ```xml  
 <configuration>  

@@ -4,12 +4,12 @@ description: Aide destinée aux propriétaires de projet qui souhaitent compiler
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: ab484ccc2c5b51b2ee1dca57df51669d288f3e6b
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
-ms.translationtype: HT
+ms.openlocfilehash: 1e120e1aee60e88ea33a8290f3bf36eb93bfc91c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186063"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698932"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Organiser votre projet pour prendre en charge à la fois le .NET Framework et .NET Core
 
@@ -69,4 +69,4 @@ Les modifications à noter sont :
 
 ## <a name="see-also"></a>Voir aussi
 
-Consultez la [documentation relative au portage vers .NET Core](index.md) pour obtenir des informations supplémentaires sur la migration vers .NET Core.
+- [Documentation sur le portage .NET Core](index.md)

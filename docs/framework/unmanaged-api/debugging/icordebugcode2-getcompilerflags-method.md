@@ -17,35 +17,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95ba19ae908dbf37052c0a74ef8f99090f3313ba
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1605ee92c8743606ff0e958f112a2d90af43e03a
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748570"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700714"
 ---
 # <a name="icordebugcode2getcompilerflags-method"></a>ICorDebugCode2::GetCompilerFlags, méthode
-Obtient les indicateurs qui spécifient les conditions sous lesquelles cet objet de code a été soit juste-à-temps (JIT) compilé ou généré à l’aide du Générateur d’images natives (Ngen.exe).  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT GetCompilerFlags (  
-    [out] DWORD *pdwFlags  
-);  
-```  
-  
-## <a name="parameters"></a>Paramètres  
+
+Obtient les indicateurs qui spécifient les conditions sous lesquelles cet objet de code a été compilé juste-à-temps (JIT) ou généré à l’aide du générateur d’images natives (Ngen. exe).
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT GetCompilerFlags (
+    [out] DWORD *pdwFlags
+);
+```
+
+## <a name="parameters"></a>Paramètres
+
  `pdwFlags`  
- [out] Un pointeur vers une valeur de la [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) énumération qui spécifie le comportement du compilateur JIT ou le Générateur d’images natives.  
-  
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **En-tête :** CorDebug.idl, CorDebug.h  
-  
- **Bibliothèque :** CorGuids.lib  
-  
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Voir aussi
+ à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) qui spécifie le comportement du compilateur JIT ou du générateur d’images natives.
+
+## <a name="requirements"></a>Configuration requise
+
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+
+ **En-tête :** CorDebug. idl, CorDebug. h
+
+ **Bibliothèque** CorGuids.lib
+
+ **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ 

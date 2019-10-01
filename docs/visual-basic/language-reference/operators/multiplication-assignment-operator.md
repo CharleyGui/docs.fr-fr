@@ -10,19 +10,19 @@ helpviewer_keywords:
 - '*= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 96c86509-6eb8-4682-8226-3852e049376f
-ms.openlocfilehash: 7c009a6b3acfe1528a2c34ed1e10735ac86507e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47d3239af6ff24501e6babc23c0db4103c477796
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032129"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701070"
 ---
 # <a name="-operator-visual-basic"></a>*=, opérateur (Visual Basic)
-Multiplie la valeur d’une variable ou une propriété par la valeur d’une expression et assigne le résultat à la variable ou propriété.  
+Multiplie la valeur d’une variable ou d’une propriété par la valeur d’une expression et assigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 variableorproperty *= expression  
 ```  
   
@@ -34,15 +34,15 @@ variableorproperty *= expression
  Obligatoire. Toute expression numérique.  
   
 ## <a name="remarks"></a>Notes  
- L’élément sur le côté gauche de la `*=` opérateur peut être une simple variable scalaire, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ L’élément situé à gauche de l’opérateur `*=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- Le `*=` opérateur multiplie d’abord la valeur de l’expression (sur le côté droit de l’opérateur) par la valeur de la variable ou la propriété (sur le côté gauche de l’opérateur). L’opérateur assigne ensuite le résultat de cette opération à la variable ou la propriété.  
+ L’opérateur `*=` multiplie d’abord la valeur de l’expression (sur le côté droit de l’opérateur) par la valeur de la variable ou de la propriété (sur le côté gauche de l’opérateur). L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
   
 ## <a name="overloading"></a>Surcharge  
- Le [* opérateur](../../../visual-basic/language-reference/operators/multiplication-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. La surcharge la `*` opérateur affecte le comportement de la `*=` opérateur. Si votre code utilise `*=` sur une classe ou structure qui surcharge `*`, assurez-vous que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur *](../../../visual-basic/language-reference/operators/multiplication-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `*` affecte le comportement de l’opérateur `*=`. Si votre code utilise `*=` sur une classe ou une structure qui surcharge `*`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le `*=` opérateur pour multiplier une `Integer` variable par une autre et assigner le résultat à la première variable.  
+ L’exemple suivant utilise l’opérateur `*=` pour multiplier une variable `Integer` par une seconde et assigner le résultat à la première variable.  
   
  [!code-vb[VbVbalrOperators#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#5)]  
   

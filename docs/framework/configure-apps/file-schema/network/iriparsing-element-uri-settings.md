@@ -2,22 +2,19 @@
 title: <iriParsing>, élément (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
-ms.openlocfilehash: 2c99edf2f1a03e0e510858c106cad43b0eaa27b4
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: fd617d1b4ac8e532c6f9aeaa01465e9866b059e9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664084"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698090"
 ---
 # <a name="iriparsing-element-uri-settings"></a>\<iriParsing >, élément (paramètres d’URI)
 Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s’applique à un <xref:System.Uri> et si les règles d’analyse IRI doivent s’appliquer.  
   
-## <a name="schema-hierarchy"></a>Hiérarchie de schéma  
- [\<configuration>, élément](../configuration-element.md)  
-  
- [\<URI >, élément (paramètres d’URI)](uri-element-uri-settings.md)  
-  
- [\<iriParsing>](iriparsing-element-uri-settings.md)  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<iriParsing >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +34,7 @@ Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s�
 |`enabled`|Spécifie si l’analyse IRI est activée. La valeur par défaut est `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -48,7 +45,7 @@ Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s�
 ## <a name="remarks"></a>Notes  
  La classe <xref:System.Uri> existante a été étendue dans .NET Framework 3,5. 3,0 SP1 et 2,0 SP1 pour assurer la prise en charge des IRI (International Resource Identifier) et des noms de domaine internationaux (IDN). Les utilisateurs actuels ne voient aucune modification du comportement .NET Framework 2,0, sauf s’ils activent spécifiquement la prise en charge des IRI et des IDN. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.  
   
- Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises:  
+ Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises :  
   
 1. Ajoutez la ligne suivante au fichier machine. config dans le répertoire .NET Framework 2,0  
   
@@ -58,15 +55,15 @@ Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s�
   
 2. Spécifie si les règles d’analyse IRI doivent être appliquées. Cela est spécifié dans le fichier machine.config ou app.config.  
   
- L’activation de l’analyse IRI (iriParsing `true`Enabled =) effectue la normalisation et la vérification des caractères selon les dernières règles IRI de la norme RFC 3987. La valeur par défaut `false` est et effectue la normalisation et la vérification des caractères selon les spécifications RFC 2396 et RFC 3986 (pour les littéraux IPv6).  
+ L’activation de l’analyse IRI (iriParsing `true`Enabled =) effectue la normalisation et la vérification des caractères selon les dernières règles IRI de la norme RFC 3987. La valeur par défaut est `false` et effectue la normalisation et la vérification des caractères selon les spécifications RFC 2396 et RFC 3986 (pour les littéraux IPv6).  
   
 ### <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge l’analyse des IRI et les noms IDN.  
+ L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour prendre en charge l’analyse des IRI et les noms IDN.  
   
 ### <a name="code"></a>Code  
   

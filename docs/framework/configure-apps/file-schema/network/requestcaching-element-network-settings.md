@@ -8,19 +8,19 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: 2a3d0b182acad2351ed095934ca97c6194d344fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f0979d2e0caeb0b22b90572aef0ad53235020f1d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659132"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697825"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching>, élément (paramètres réseau)
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
   
- \<configuration>  
-\<system.net>  
-\<requestCaching>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requestCaching >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,16 +49,16 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
   
 ## <a name="policylevel-attribute"></a>policyLevel (attribut)  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`Default`|Retourne la ressource mise en cache si la ressource est actualisée, si la longueur du contenu est exacte et si les attributs d’expiration, de modification et de longueur du contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
 |`CacheOnly`|Retourne la ressource mise en cache si la longueur du contenu est présente et correspond à la taille de l’entrée.|  
-|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille de l’entrée; dans le cas contraire, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Retourne la ressource mise en cache si l’horodateur de la ressource mise en cache est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, stockée dans le cache, et est retournée à l’appelant.|  
+|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille de l’entrée ; dans le cas contraire, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
+|`Revalidate`|Retourne la ressource mise en cache si l’horodateur de la ressource mise en cache est le même que celui de la ressource sur le serveur ; dans le cas contraire, la ressource est téléchargée à partir du serveur, stockée dans le cache, et est retournée à l’appelant.|  
 |`Reload`|Télécharge la ressource à partir du serveur, la stocke dans le cache et retourne la ressource à l’appelant.|  
 |`NoCacheNoStore`|Si une ressource mise en cache existe, elle est supprimée. La ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l’horodatage est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
+|`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l’horodatage est le même que celui de la ressource sur le serveur ; dans le cas contraire, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

@@ -9,18 +9,19 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-ms.openlocfilehash: 022f0efbbb2e6e9a4ac9d3d7ddcc1fb1022cdbee
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 634d9c5248c33619abec50d441d95c111febdcbf
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169777"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699417"
 ---
-# <a name="startup-element"></a>\<démarrage > élément
+# <a name="startup-element"></a>élément @no__t 0startup >
 
-Spécifie les informations de démarrage de common language runtime.
+Spécifie common language runtime informations de démarrage.
 
- \<configuration> \<startup>
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<startup>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,20 +38,20 @@ Spécifie les informations de démarrage de common language runtime.
 
 |Attribut|Description|
 |---------------|-----------------|
-|`useLegacyV2RuntimeActivationPolicy`|Attribut facultatif.<br /><br /> Spécifie s’il faut activer la stratégie d’activation du runtime .NET Framework 2.0 ou utiliser la stratégie d’activation de .NET Framework 4.|
+|`useLegacyV2RuntimeActivationPolicy`|Attribut facultatif.<br /><br /> Spécifie s’il faut activer la stratégie d’activation du Runtime .NET Framework 2,0 ou utiliser la stratégie d’activation .NET Framework 4.|
 
-## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy attribute
+## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy (attribut)
 
 |Value|Description|
 |-----------|-----------------|
-|`true`|Activer la stratégie d’activation du runtime .NET Framework 2.0 pour le runtime choisi, qui consiste à lier les techniques d’activation runtime hérité (telles que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)) au runtime choisi à la place du fichier de configuration de limitant les CLR version 2.0. Par conséquent, si la version CLR 4 ou version ultérieure est choisie dans le fichier de configuration, les assemblys en mode mixte créés avec les versions antérieures du .NET Framework sont chargés avec la version du CLR choisie. Définition de cette valeur empêche CLR version 1.1 ou CLR version 2.0 le chargement dans le même processus, en désactivant efficacement la fonctionnalité côte à côte in-process.|
-|`false`|Utilisez la stratégie d’activation par défaut pour le .NET Framework 4 et versions ultérieures, qui consiste à autoriser les techniques d’activation charger le CLR version 1.1 ou 2.0 dans le processus runtime hérité. Ce paramètre empêche les assemblys en mode mixte de charger dans le .NET Framework 4 ou version ultérieure, sauf si elles ont été générées avec le .NET Framework 4 ou version ultérieure. Cette valeur est la valeur par défaut.|
+|`true`|Activez .NET Framework stratégie d’activation du runtime 2,0 pour le runtime choisi, qui consiste à lier les techniques héritées d’activation du Runtime (telles que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)) au runtime choisi à partir du fichier de configuration au lieu de les découper au niveau du CLR version 2,0. Par conséquent, si CLR version 4 ou ultérieure est choisi dans le fichier de configuration, les assemblys en mode mixte créés avec des versions antérieures du .NET Framework sont chargés avec la version CLR choisie. La définition de cette valeur empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process.|
+|`false`|Utilisez la stratégie d’activation par défaut pour le .NET Framework 4 et versions ultérieures, ce qui permet d’autoriser les techniques d’activation du runtime héritées à charger CLR version 1,1 ou 2,0 dans le processus. La définition de cette valeur empêche le chargement des assemblys en mode mixte dans le .NET Framework 4 ou ultérieur, sauf s’ils ont été générés avec le .NET Framework 4 ou version ultérieure. Cette valeur est la valeur par défaut.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<requiredRuntime>](requiredruntime-element.md)|Spécifie que l’application prend en charge uniquement la version 1.0 du common language runtime. Les applications générées avec la version 1.1 ou ultérieure du runtime doivent utiliser le  **\<supportedRuntime >** élément.|
+|[\<requiredRuntime>](requiredruntime-element.md)|Spécifie que l’application prend en charge uniquement la version 1.0 du common language runtime. Les applications générées avec la version 1,1 ou ultérieure du Runtime doivent utiliser l’élément **\<supportedRuntime >** .|
 |[\<supportedRuntime>](supportedruntime-element.md)|Spécifie quelles versions du Common Language Runtime sont prises en charge par l'application.|
 
 ### <a name="parent-elements"></a>Éléments parents
@@ -61,16 +62,16 @@ Spécifie les informations de démarrage de common language runtime.
 
 ## <a name="remarks"></a>Notes
 
- Le  **\<supportedRuntime >** élément doit être utilisé par toutes les applications générées à l’aide de la version 1.1 ou ultérieure du runtime. Les applications générées pour prendre en charge uniquement la version 1.0 du runtime doivent utiliser le  **\<requiredRuntime >** élément.
+ L’élément **\<supportedRuntime >** doit être utilisé par toutes les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime. Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l’élément **\<requiredRuntime >** .
 
- Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore les  **\<démarrage >** élément et ses éléments enfants.
+ Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore l’élément **\<startup >** et ses éléments enfants.
 
-## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>L’attribut useLegacyV2RuntimeActivationPolicy
+## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>Attribut useLegacyV2RuntimeActivationPolicy
 
- Cet attribut est utile si votre application utilise des chemins d’accès d’activation héritée, telle que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est avec le .NET Framework 4 mais a une dépendance sur un assembly en mode mixte généré avec une version antérieure du .NET Framework. Dans ces scénarios, la valeur est l’attribut `true`.
+ Cet attribut est utile si votre application utilise des chemins d’activation hérités, tels que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et si vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec le .net Framework 4, mais a une dépendance sur un assembly en mode mixte créé avec une version antérieure du .NET Framework. Dans ces scénarios, affectez la valeur `true` à l’attribut.
 
 > [!NOTE]
-> Définition de l’attribut sur `true` empêche le chargement dans le même processus, en désactivant efficacement la fonctionnalité côte à côte in-process de CLR version 1.1 ou CLR version 2.0 (consultez [l’exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
+> La définition de l’attribut sur `true` empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process (voir [exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
 
 ## <a name="example"></a>Exemple
 

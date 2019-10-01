@@ -3,56 +3,53 @@ title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
 ms.custom: seodec18
-ms.openlocfilehash: 6334f06a998054cfaf766654dda59d87f5d23ed8
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 167f0707bbaf34ce12a1c56ee2320e7cc4f48bd3
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105306"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698919"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
-Ce document couvre les scénarios de migration pour les projets .NET Core et passe en revue les trois scénarios de migration suivants :
+Ce document traite des trois scénarios de migration suivants pour les projets .NET Core :
 
 1. [Migration à partir du schéma valide le plus récent de *project.json* vers *csproj*](#migration-from-projectjson-to-csproj)
 2. [Migration à partir de DNX vers csproj](#migration-from-dnx-to-csproj)
 3. [Migration de projets csproj .NET Core RC3 et antérieurs vers le format final](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-Ce document s’applique uniquement aux anciens projets .NET Core qui utilisent toujours project.json. Il ne concerne pas la migration de .NET Framework vers .NET Core.
+Ce document s’applique uniquement aux projets .NET Core plus anciens qui utilisent Project. JSON. Elle ne s’applique pas à la migration de .NET Framework à .NET Core.
 
 ## <a name="migration-from-projectjson-to-csproj"></a>Migration de project.json vers csproj
 
 La migration à partir de *project.json* vers *.csproj* peut être effectuée à l’aide de l’une des méthodes suivantes :
 
-- [Visual Studio 2017](#visual-studio-2017)
+- [Visual Studio](#visual-studio)
 - [Outil de ligne de commande dotnet migrate](#dotnet-migrate)
 
-Les deux méthodes utilisant le même moteur sous-jacent pour migrer les projets, les résultats obtenus sont donc identiques dans les deux cas. Dans la plupart des cas, l’utilisation de l’une de ces deux méthodes pour migrer *project.json* vers *csproj* suffit et aucune autre modification manuelle du fichier projet n’est nécessaire. Le fichier *.csproj* obtenu porte le même nom que le répertoire le contenant.
+Les deux méthodes utilisant le même moteur sous-jacent pour migrer les projets, les résultats obtenus sont donc identiques dans les deux cas. Dans la plupart des cas, l’utilisation de l’une de ces deux méthodes pour migrer *Project. JSON* vers *csproj* est la seule chose nécessaire et aucune autre modification manuelle du fichier projet n’est nécessaire. Le fichier *.csproj* obtenu porte le même nom que le répertoire le contenant.
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio"></a>Visual Studio
 
-Quand vous ouvrez un fichier *.xproj* ou un fichier solution qui fait référence à des fichiers *.xproj*, la boîte de dialogue **Mise à niveau définitive** s’affiche. La boîte de dialogue affiche les projets à migrer.
-Si vous ouvrez un fichier solution, tous les projets spécifiés dans le fichier solution sont répertoriés. Passez en revue la liste des projets à migrer, puis sélectionnez **OK**.
+Quand vous ouvrez un fichier *. xproj* ou un fichier solution qui fait référence à des fichiers *. Xproj* dans Visual Studio 2017 ou visual studio 2019 version 16,2 et antérieure, la boîte de dialogue de **mise à niveau unidirectionnelle** s’affiche. La boîte de dialogue affiche les projets à migrer. Si vous ouvrez un fichier solution, tous les projets spécifiés dans le fichier solution sont répertoriés. Passez en revue la liste des projets à migrer, puis sélectionnez **OK**.
 
 ![Boîte de dialogue Mise à niveau définitive indiquant la liste des projets à migrer](media/one-way-upgrade.jpg)
 
-Visual Studio migre les projets choisis automatiquement. Quand vous migrez une solution, si vous ne choisissez pas tous les projets, la même boîte de dialogue s’affiche pour vous demander de mettre à niveau les projets restants de cette solution. Une fois le projet migré, vous pouvez voir et modifier son contenu en double-cliquant sur le projet dans la fenêtre **Explorateur de solutions** et en sélectionnant **Modifier \<nom_projet>.csproj**.
+Visual Studio migre automatiquement les projets sélectionnés. Lors de la migration d’une solution, si vous ne choisissez pas tous les projets, la même boîte de dialogue s’affiche pour vous demander de mettre à niveau les projets restants à partir de cette solution. Une fois le projet migré, vous pouvez voir et modifier son contenu en double-cliquant sur le projet dans la fenêtre **Explorateur de solutions** et en sélectionnant **Modifier \<nom_projet>.csproj**.
 
-Les fichiers qui ont été migrés (*project.json*, *global.json*, *.xproj* et le fichier solution) sont déplacés vers un dossier de *sauvegarde*. Le fichier solution qui est migré est mis à niveau vers Visual Studio 2017 et vous ne pourrez pas l’ouvrir dans les versions précédentes de Visual Studio.
-Un fichier nommé *UpgradeLog.htm* qui contient un rapport de migration est également enregistré et automatiquement ouvert.
+Les fichiers qui ont été migrés (*Project. JSON*, *global. JSON*, *. xproj*et le fichier solution) sont déplacés vers un dossier de *sauvegarde* . Le fichier solution migrée est mis à niveau vers Visual Studio 2017 ou Visual Studio 2019 et vous ne pouvez pas ouvrir ce fichier solution dans Visual Studio 2015 ou versions antérieures. Un fichier nommé *UpgradeLog. htm* qui contient un rapport de migration est également enregistré et ouvert automatiquement.
 
 > [!IMPORTANT]
-> Les nouveaux outils n’étant pas disponibles dans Visual Studio 2015, vous ne pouvez pas migrer vos projets à l’aide de cette version de Visual Studio.
+> Vous ne pouvez pas migrer vos projets à l’aide de Visual Studio 2015.
 
 ### <a name="dotnet-migrate"></a>dotnet migrate
 
-Dans le scénario de ligne de commande, vous pouvez utiliser la commande [`dotnet migrate`](../tools/dotnet-migrate.md). Elle migre un projet, une solution ou un ensemble de dossiers dans cet ordre, selon ceux qui ont été trouvés.
-Quand vous migrez un projet, le projet et toutes ses dépendances sont migrés.
+Dans le scénario de ligne de commande, vous pouvez utiliser la commande [`dotnet migrate`](../tools/dotnet-migrate.md). Il migre un projet, une solution ou un ensemble de dossiers dans cet ordre, en fonction de ceux qui ont été trouvés. Quand vous migrez un projet, le projet et toutes ses dépendances sont migrés.
 
-Les fichiers qui ont été migrés (*project.json*, *global.json* et *.xproj*) sont déplacés vers un dossier de *sauvegarde*.
+Les fichiers qui ont été migrés (*Project. JSON*, *global. JSON*et *. xproj*) sont déplacés vers un dossier de *sauvegarde* .
 
 > [!NOTE]
-> Si vous utilisez Visual Studio Code, la commande `dotnet migrate` ne modifie pas les fichiers spécifiques à Visual Studio Code comme `tasks.json`. Ces fichiers doivent être modifiés manuellement.
+> Si vous utilisez Visual Studio Code, la commande `dotnet migrate` ne modifie pas les fichiers spécifiques à la Visual Studio Code, tels que `tasks.json`. Ces fichiers doivent être modifiés manuellement.
 > Cela s’applique également si vous utilisez Project Ryder ou un éditeur ou environnement de développement intégré (IDE) autre que Visual Studio.
 
 Consultez la page [Mappage entre propriétés project.json et csproj](../tools/project-json-to-csproj.md) pour afficher une comparaison des formats project.json et csproj.

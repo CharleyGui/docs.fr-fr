@@ -8,18 +8,18 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: c780087246ea91846896037a245b82493251e538
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4e2159cda5f35b5795804dede09ec17d07d71b23
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921067"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699745"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a>\<Élément > mscorlib pour les paramètres de chiffrement
-Contient l' [ \<élément cryptographySettings >](cryptographysettings-element.md).  
+# <a name="mscorlib-element-for-cryptography-settings"></a>Élément @no__t 0mscorlib > pour les paramètres de chiffrement
+Contient l' [élément > @no__t 1cryptographySettings](cryptographysettings-element.md).  
   
- \<configuration>  
-\<mscorlib>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1 **\<mscorlib >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,8 +46,8 @@ Contient l' [ \<élément cryptographySettings >](cryptographysettings-element.m
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant montre comment utiliser l'  **\<élément mscorlib >** pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne «RSA» à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l’élément **\<mscorlib >** pour faire référence à une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la méthode <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> et utiliser la méthode <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pour retourner un objet `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  

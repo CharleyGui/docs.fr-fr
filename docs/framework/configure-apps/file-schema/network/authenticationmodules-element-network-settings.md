@@ -8,19 +8,19 @@ helpviewer_keywords:
 - authenticationModules element
 - <authenticationModules> element
 ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
-ms.openlocfilehash: 6488bfcd97e27a184b4a8cd1498d1c60f32babda
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 4fe44deba951e5302518ed855589ad1b0ca75343
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659486"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699532"
 ---
 # <a name="authenticationmodules-element-network-settings"></a>\<authenticationModules >, élément (paramètres réseau)
 Spécifie les modules utilisés pour authentifier les demandes réseau.  
   
- \<configuration>  
-\<system.net>  
-\<authenticationModules>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<authenticationModules >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,7 +50,7 @@ Spécifie les modules utilisés pour authentifier les demandes réseau.
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `authenticationModule` élément spécifie les modules d’authentification qui exécutent le processus d’authentification avec un serveur. Un module d’authentification doit implémenter l' <xref:System.Net.IAuthenticationModule> interface.  
+ L’élément `authenticationModule` spécifie les modules d’authentification qui exécutent le processus d’authentification avec un serveur. Un module d’authentification doit implémenter l’interface <xref:System.Net.IAuthenticationModule>.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

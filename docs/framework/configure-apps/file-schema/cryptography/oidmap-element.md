@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-ms.openlocfilehash: d2929167f5a7de96a868cd1ac884d2203d09dfb6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eec2c4745ad5a0492ccf04c8f23b901275f23c01
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927529"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698439"
 ---
-# <a name="oidmap-element"></a>\<oidMap >, élément
+# <a name="oidmap-element"></a>Élément @no__t 0oidMap >
 Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.  
   
- \<configuration>  
-\<mscorlib>  
-\<cryptographySettings>  
-\<oidMap>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<oidMap >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,7 +51,7 @@ Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.
 |`mscorlib`|Contient l' `cryptographySettings` élément.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l'  **\<élément oidMap >** pour contenir un mappage d’un OID pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
+ L’exemple suivant montre comment utiliser l’élément **\<oidMap >** pour contenir un mappage d’un OID pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
   
 ```xml  
 <configuration>  

@@ -1,5 +1,5 @@
 ---
-title: <filter>, Élément <add> de <listeners> pour pour<source>
+title: Élément <filter> pour <add> pour <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#filter
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - <filter> element for <add> for <listeners> for <source>
 - filter element for <add> for <listeners> for <source>
 ms.assetid: 15808b80-4579-4c25-b385-178cfdf154ba
-ms.openlocfilehash: 0d25d0b955a94986147922914068c8a1cf2d96c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ec288685f47c8a35e2371c31d359b604a4967196
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920522"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697163"
 ---
-# <a name="filter-element-for-add-for-listeners-for-source"></a>\<élément de > de \<filtre pour l' \<ajout de > pour \<les écouteurs > pour le > source
+# <a name="filter-element-for-add-for-listeners-for-source"></a>\<filter > élément de \<Add > pour \<listeners > pour \<Source >
 Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.  
   
- \<configuration>  
-\<system.diagnostics>  
-\<sources>  
-\<> source  
-\<listeners>  
-\<add>  
-\<filter>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9[ **&nbsp;2Add >** ](add-element-for-listeners-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 @ no__t-10 @ no__t-11 **&nbsp;3filter >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`type`|Attribut requis.<br /><br /> Spécifie le type du filtre, qui doit hériter de <xref:System.Diagnostics.TraceFilter> la classe. Vous pouvez utiliser le nom qualifié par un espace de noms du type, qui correspond à la <xref:System.Type.FullName%2A> propriété du type, ou vous pouvez utiliser le nom de type qualifié complet, y compris les informations de <xref:System.Type.AssemblyQualifiedName%2A> l’assembly, qui correspond à la propriété. Pour plus d’informations sur les noms de types qualifiés complets, consultez [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`type`|Attribut requis.<br /><br /> Spécifie le type du filtre, qui doit hériter de la classe <xref:System.Diagnostics.TraceFilter>. Vous pouvez utiliser le nom qualifié par un espace de noms du type, qui correspond à la propriété <xref:System.Type.FullName%2A> du type, ou vous pouvez utiliser le nom de type qualifié complet, y compris les informations de l’assembly, qui correspond à la propriété <xref:System.Type.AssemblyQualifiedName%2A>. Pour plus d’informations sur les noms de types qualifiés complets, consultez [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe de filtre spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -60,12 +60,12 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`add`|Ajoute un écouteur à la collection `Listeners` pour une source de trace.|  
   
 ## <a name="remarks"></a>Notes  
- L' `<filter>` élément doit être contenu dans un `<add>` élément pour un écouteur de source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [ \<> sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans un [ \<> sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
+ L’élément `<filter>` doit être contenu dans un élément `<add>` pour un écouteur source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [> \<sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans une [> \<sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l' `<filter>` élément pour ajouter un filtre à l' `console` écouteur dans la `Listeners` collection pour la source `myTraceSource`de suivi, en spécifiant le niveau d' `Error`événement de filtre en tant que.  
+ L’exemple suivant montre comment utiliser l’élément `<filter>` pour ajouter un filtre à l’écouteur `console` dans la collection `Listeners` pour la source de suivi `myTraceSource`, en spécifiant le niveau d’événement de filtre en tant que `Error`.  
   
 ```xml  
 <configuration>  

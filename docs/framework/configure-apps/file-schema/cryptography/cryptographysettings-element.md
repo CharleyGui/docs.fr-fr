@@ -8,19 +8,19 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: 462db50a42e55c0c5a9570317ceeeb0ae69215a0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 96a8c9accc56274b5cc13dc2a871165857b3a2d9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927652"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699822"
 ---
-# <a name="cryptographysettings-element"></a>\<cryptographySettings >, élément
+# <a name="cryptographysettings-element"></a>Élément @no__t 0cryptographySettings >
 Contient des paramètres de chiffrement.  
   
- \<configuration>  
-\<mscorlib>  
-\<cryptographySettings>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<cryptographySettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,8 +49,8 @@ Contient des paramètres de chiffrement.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`mscorlib`|Contient l' `cryptographySettings` élément.|  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant montre comment utiliser l’élément  **\<cryptographySettings >** pour contenir les mappages de noms de chiffrement et les mappages OID. Cet exemple configure le runtime afin que retourne <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> un `MyHashClass` objet et que la `MyCryptoClass` classe soit mappée à l’identificateur d’objet 1.3.36.2.1.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l’élément **\<cryptographySettings >** pour contenir les mappages de noms de chiffrement et les mappages OID. Cet exemple configure le runtime afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un objet `MyHashClass` et que la classe `MyCryptoClass` soit mappée à l’identificateur d’objet 1.3.36.2.1.  
   
 ```xml  
 <configuration>  

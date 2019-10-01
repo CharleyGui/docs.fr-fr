@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 2f17e9828f46e6355cdbbddb1b8a83f1188b1a01
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6d85cc041850300d1d079b227dcb8ed9201a0502
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791743"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699061"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Isolation d'instantanés dans SQL Server
 L'isolation de capture instantanée améliore l'accès concurrentiel aux applications OLTP.  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Présentation de l'isolation d'instantané et gestion des versions de ligne  
- Une fois l’isolation d’instantané activée, les versions de ligne mises à jour pour chaque transaction sont conservées dans **tempdb**. Un numéro de séquence de transaction unique identifie chaque transaction et ces numéros uniques sont enregistrés pour chaque version de ligne. La transaction opère avec les versions de ligne les plus récentes dont le numéro de séquence est antérieur au numéro de séquence de la transaction. Les versions de ligne plus récentes, créées après que la transaction a commencé sont ignorées par la transaction.  
+ Une fois l’isolation d’instantané activée, les versions de ligne mises à jour pour chaque transaction doivent être conservées.  Avant SQL Server 2019, ces versions étaient stockées dans **tempdb**. SQL Server 2019 introduit une nouvelle fonctionnalité, la récupération de base de données accélérée (ADR) qui requiert son propre ensemble de versions de ligne.  Ainsi, à partir de SQL Server 2019, si la règle ADR n’est pas activée, les versions de ligne sont conservées dans **tempdb** comme toujours.  Si la valeur de la règle ADR est activée, toutes les versions de ligne associées à l’isolement d’instantané et à la règle ADR sont conservées dans la Banque des versions persistante (PVS) de la ADR, qui se trouve dans la base de données utilisateur dans un groupe de fichiers que l’utilisateur spécifie. Un numéro de séquence de transaction unique identifie chaque transaction et ces numéros uniques sont enregistrés pour chaque version de ligne. La transaction opère avec les versions de ligne les plus récentes dont le numéro de séquence est antérieur au numéro de séquence de la transaction. Les versions de ligne plus récentes, créées après que la transaction a commencé sont ignorées par la transaction.  
   
  Le terme « instantané » reflète le fait que toutes les requêtes de la transaction voient la même version, ou instantané, de la base de données, en fonction de l’état de la base de données au moment où la transaction commence. Aucun verrou n’est acquis sur les lignes de données ou les pages de données sous-jacentes dans une transaction d’instantané, ce qui permet à d’autres transactions de s’exécuter sans être bloquées par une transaction inachevée antérieure. Les transactions qui modifient des données ne bloquent pas les transactions qui lisent des données et celles qui lisent des données ne bloquent pas celles qui en écrivent, comme c'est normalement le cas avec le niveau d'isolation READ COMMITTED par défaut dans SQL Server. Ce comportement non bloquant réduit également sensiblement la probabilité d’interblocages pour les transactions complexes.  
   
@@ -76,7 +76,7 @@ SET READ_COMMITTED_SNAPSHOT ON
  Une transaction d’instantané utilise toujours un contrôle d’accès simultané optimiste, rejetant tous les verrous qui empêcheraient d’autres transactions de mettre à jour les lignes. Si une transaction d'instantané tente de valider la mise à jour d'une ligne modifiée après le début de la transaction, la transaction est annulée et une erreur est déclenchée.  
   
 ## <a name="working-with-snapshot-isolation-in-adonet"></a>Utilisation de l'isolation d'instantané dans ADO.NET  
- L'isolation d'instantané est prise en charge dans ADO.NET par la classe <xref:System.Data.SqlClient.SqlTransaction>. Si une base de données a été activée pour l’isolation d’instantané mais n’est pas configurée pour READ_COMMITTED_SNAPSHOT <xref:System.Data.SqlClient.SqlTransaction> on, vous devez lancer une à l’aide de <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> la valeur d’énumération **IsolationLevel. Snapshot** lors de l’appel de la méthode. Ce fragment de code est basé sur l'hypothèse que la connexion est un objet <xref:System.Data.SqlClient.SqlConnection> ouvert.  
+ L'isolation d'instantané est prise en charge dans ADO.NET par la classe <xref:System.Data.SqlClient.SqlTransaction>. Si une base de données a été activée pour l’isolation d’instantané mais n’est pas configurée pour READ_COMMITTED_SNAPSHOT ON, vous devez initialiser un <xref:System.Data.SqlClient.SqlTransaction> à l’aide de la valeur d’énumération **IsolationLevel. Snapshot** lors de l’appel de la méthode <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>. Ce fragment de code est basé sur l'hypothèse que la connexion est un objet <xref:System.Data.SqlClient.SqlConnection> ouvert.  
   
 ```vb  
 Dim sqlTran As SqlTransaction = _  

@@ -10,19 +10,19 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: fd90d271591a47849b3f70aea50cbe909b6fd613
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 02fd794eb7b7b7f46f7f7bc4e43036cb4a4758ed
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920409"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699182"
 ---
-# <a name="trace-element"></a>\<Élément trace >
+# <a name="trace-element"></a>Élément @no__t 0trace >
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
- \<configuration>  
-\<system.diagnostics>  
-\<> de trace  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<trace >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,16 +45,16 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
   
 ## <a name="autoflush-attribute"></a>Attribut de vidage automatique  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`false`|N’efface pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
 |`true`|Vide automatiquement la mémoire tampon de sortie.|  
   
 ## <a name="usegloballock-attribute"></a>Attribut useGlobalLock  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
-|`false`|N’utilise pas le verrou global si l’écouteur est thread-safe; dans le cas contraire, utilise le verrou global.|  
+|`false`|N’utilise pas le verrou global si l’écouteur est thread-safe ; dans le cas contraire, utilise le verrou global.|  
 |`true`|Utilise le verrou global indépendamment du fait que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -70,8 +70,8 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant montre comment utiliser l' `<trace>` élément pour ajouter l' `MyListener` écouteur à la `Listeners` collection. `MyListener`crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L' `useGlobalLock` attribut a la `false`valeur, ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L' `autoflush` attribut a la `true`valeur, ce qui amène l’écouteur de la trace à écrire dans le fichier, <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> que la méthode soit appelée ou non. L' `indentsize` attribut a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> espaces nuls lorsque la méthode est appelée.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l’élément `<trace>` pour ajouter l’écouteur `MyListener` à la collection `Listeners`. `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L’attribut `useGlobalLock` a la valeur `false`, ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L’attribut `autoflush` a la valeur `true`, ce qui a pour effet que l’écouteur de la trace écrit dans le fichier, que la méthode <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> soit appelée ou non. L’attribut `indentsize` a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la méthode <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> est appelée.  
   
 ```xml  
 <configuration>  

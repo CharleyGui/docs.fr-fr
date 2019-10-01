@@ -10,22 +10,22 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-ms.openlocfilehash: 99c18bd5b779845d52831b4a9591eaf4d5e5530b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 97b49a8a520d6a4f72945366874991d2deb18710
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920963"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697892"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<supprimer > élément pour BypassList (paramètres réseau)
+# <a name="remove-element-for-bypasslist-network-settings"></a>\<remove > élément de bypasslist (paramètres réseau)
 
 Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.
 
-\<configuration>\
-\<system.net>\
-\<defaultProxy>\
-\<BypassList > \
-\<remove>
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<remove >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -57,9 +57,9 @@ Aucun.
 
 ## <a name="remarks"></a>Notes
 
-L' `remove` élément supprime les expressions régulières décrivant des adresses IP ou des noms de serveurs DNS de la liste des adresses qui contournent un serveur proxy. Les adresses ont été définies précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
+L’élément `remove` supprime les expressions régulières décrivant les adresses IP ou les noms de serveurs DNS de la liste des adresses qui contournent un serveur proxy. Les adresses ont été définies précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
 
-La valeur de l' `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôtes.
+La valeur de l’attribut `address` doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôte.
 
 Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).
 

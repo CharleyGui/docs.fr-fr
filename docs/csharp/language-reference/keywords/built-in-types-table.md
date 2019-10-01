@@ -7,17 +7,17 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 1f7248a23d53fb90202595defbf70e231bd1d5d3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 687990cc86b3303bdef96af26be63af47410f8c0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605972"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698792"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tableau des types intégrés (référence C#)
 
-Le tableau suivant liste les mots clés des types C# intégrés, qui sont des alias des types prédéfinis de l’espace de noms <xref:System>.  
-  
+Le tableau suivant présente les mots clés des C# types intégrés, qui sont des alias de types prédéfinis dans l’espace de noms <xref:System> :
+
 |Type C#|Type .NET|  
 |--------------|-------------------------|  
 |[bool](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
@@ -36,11 +36,11 @@ Le tableau suivant liste les mots clés des types C# intégrés, qui sont des 
 |[ushort](../builtin-types/integral-numeric-types.md)|<xref:System.UInt16?displayProperty=nameWithType>|  
 |[string](string.md)|<xref:System.String?displayProperty=nameWithType>|  
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
-Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.  
-  
-Les types .NET et leurs alias de mots clés de type C# sont interchangeables. Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :  
+Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.
+
+Les types .NET et leurs alias de mots clés de type C# sont interchangeables. Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :
 
 ```csharp
 int x = 123;

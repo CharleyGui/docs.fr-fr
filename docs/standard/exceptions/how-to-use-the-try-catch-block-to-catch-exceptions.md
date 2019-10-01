@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions
+title: 'Procédure : utiliser le bloc try/catch pour intercepter des exceptions'
 ms.date: 02/06/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5183a854ee2b7462ecc27786a5fc0697565194c0
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: HT
+ms.openlocfilehash: eaa389f461e70aae41f2e09437fd725a3bcefa5e
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092746"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696721"
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions
 
@@ -27,7 +27,7 @@ Placez les instructions de code qui peuvent déclencher ou lever une exception d
 Dans l’exemple suivant, un <xref:System.IO.StreamReader> ouvre un fichier appelé *data.txt* et récupère une ligne de ce fichier. Étant donné que le code peut lever une des trois exceptions, il est placé dans un bloc `try`. Trois blocs `catch` interceptent les exceptions et les gèrent en affichant les résultats dans la console.
 
 [!code-csharp[CatchException#3](~/samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception2.cs#3)]
-[!code-vb[CatchException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]  
+[!code-vb[CatchException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]
 
 Le Common Language Runtime (CLR) intercepte les exceptions non gérées par les blocs `catch`. Si une exception est interceptée par le CLR, il peut se produire l’un des résultats suivants selon la configuration du CLR :
 
@@ -40,5 +40,5 @@ Le Common Language Runtime (CLR) intercepte les exceptions non gérées par les 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Exceptions](index.md)  
-[Gestion des erreurs E/S dans .NET](../io/handling-io-errors.md)
+- [Exceptions](index.md)
+- [Gestion des erreurs E/S dans .NET](../io/handling-io-errors.md)

@@ -8,18 +8,18 @@ helpviewer_keywords:
 - <system.diagnostics> element
 - system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-ms.openlocfilehash: f3b4238a8d7028d47122a420526b38ee4f327332
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dc05c46cb1ba74baceaaeadc2959a6889faf19c9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926946"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699195"
 ---
-# <a name="systemdiagnostics-element"></a>\<System. Diagnostics, élément >
+# <a name="systemdiagnostics-element"></a>Élément \<System. Diagnostics >
 Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.  
   
- \<configuration>  
-\<system.diagnostics>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1 **\<Système. diagnostics >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,10 +52,10 @@ Spécifie les écouteurs de trace qui collectent, stockent et acheminent les mes
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment incorporer un commutateur de trace et un écouteur de suivi à l’intérieur de l'  **\<élément System. Diagnostics >** . Le commutateur de <xref:System.Diagnostics.TraceLevel> traceestdéfini`General` sur le niveau. L’écouteur `myListener` de suivi crée un fichier `MyListener.log` nommé et écrit la sortie dans le fichier.  
+ L’exemple suivant montre comment incorporer un commutateur de trace et un écouteur de trace à l’intérieur de l’élément **\<Système. diagnostics >** . Le commutateur de trace `General` est défini sur le niveau <xref:System.Diagnostics.TraceLevel>. L’écouteur de suivi `myListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier.  
   
 > [!NOTE]
-> Dans .NET Framework 2.0, vous pouvez spécifier la valeur d'un commutateur avec du texte. Par exemple, vous pouvez spécifier `true` pour un <xref:System.Diagnostics.BooleanSwitch> ou utiliser le texte représentant `Error` une valeur d’énumération comme pour <xref:System.Diagnostics.TraceSwitch>un. La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.  
+> Dans .NET Framework 2.0, vous pouvez spécifier la valeur d'un commutateur avec du texte. Par exemple, vous pouvez spécifier `true` pour une <xref:System.Diagnostics.BooleanSwitch> ou utiliser le texte représentant une valeur d’énumération telle que `Error` pour une <xref:System.Diagnostics.TraceSwitch>. La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.  
   
 ```xml  
 <configuration>  

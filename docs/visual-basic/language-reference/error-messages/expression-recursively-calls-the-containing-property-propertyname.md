@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 93d02618ff19f431b3602e74478337f6918df289
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665159"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698566"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Récursive de l’expression appelle la propriété conteneur '\<nom_propriété >'
-Une instruction dans le `Set` d’une définition de propriété stocke une valeur dans le nom de la propriété.  
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>L’expression appelle de manière récursive la propriété conteneur' \<propertyname > '
+Une instruction dans la procédure `Set` d’une définition de propriété stocke une valeur dans le nom de la propriété.  
   
- L’approche recommandée pour stocker la valeur d’une propriété consiste à définir un `Private` variable dans le conteneur de la propriété et l’utiliser à la fois dans le `Get` et `Set` procédures. Le `Set` procédure doit ensuite stocker la valeur entrante dans ce `Private` variable.  
+ L’approche recommandée pour conserver la valeur d’une propriété consiste à définir une variable `Private` dans le conteneur de la propriété et à l’utiliser à la fois dans les procédures `Get` et `Set`. La procédure `Set` doit ensuite stocker la valeur entrante dans cette variable `Private`.  
   
- Le `Get` procédure se comporte comme un `Function` procédure, afin de pouvoir attribuer une valeur au nom de propriété et retourner le contrôle en utilisant la `End Get` instruction. L’approche recommandée, cependant, consiste à inclure le `Private` variable comme valeur dans un [instruction Return](../../../visual-basic/language-reference/statements/return-statement.md).  
+ La procédure `Get` se comporte comme une procédure `Function`, de sorte qu’elle peut attribuer une valeur au nom de la propriété et retourner le contrôle en rencontrant l’instruction `End Get`. Toutefois, l’approche recommandée consiste à inclure la variable `Private` comme valeur dans une [instruction return](../../../visual-basic/language-reference/statements/return-statement.md).  
   
- Le `Set` procédure se comporte comme un `Sub` procédure qui ne retourne pas de valeur. Par conséquent, le nom de la procédure ou propriété n’a aucune signification spéciale dans un `Set` procédure et vous ne pouvez pas stocker une valeur dedans.  
+ La procédure `Set` se comporte comme une procédure `Sub`, qui ne retourne pas de valeur. Par conséquent, le nom de la procédure ou de la propriété n’a aucune signification particulière dans une procédure `Set`, et vous ne pouvez pas y stocker de valeur.  
   
  L’exemple suivant illustre l’approche qui peut provoquer cette erreur, suivie de l’approche recommandée.  
   
-```  
+```vb  
 Public Class illustrateProperties  
 ' The code in the following property causes this error.  
     Public Property badProp() As Char  
@@ -61,7 +61,7 @@ End Class
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Réécrivez la définition de propriété pour utiliser l’approche recommandée, comme illustré dans l’exemple précédent.  
+- Réécrivez la définition de la propriété pour utiliser l’approche recommandée, comme illustré dans l’exemple précédent.  
   
 ## <a name="see-also"></a>Voir aussi
 

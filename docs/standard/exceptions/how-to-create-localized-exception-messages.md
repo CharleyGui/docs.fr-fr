@@ -4,12 +4,12 @@ description: Découvrez comment créer des exceptions définies par l’utilisat
 author: Youssef1313
 ms.author: ronpet
 ms.date: 09/13/2019
-ms.openlocfilehash: 1e5ef5658e4cb71d0689a1786494eaec57d4e7fb
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: b4aa567fccda9354bc5959d6b9838d678d53abef
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332990"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696715"
 ---
 # <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 
@@ -77,16 +77,22 @@ Vous avez créé une exception personnalisée et vous pouvez la lever n’import
 throw new StudentNotFoundException("The student cannot be found.", "John");
 ```
 
-Le problème avec la ligne précédente est le suivant : « le Student est introuvable ». est simplement une chaîne constante. Dans une application localisée, vous souhaitez avoir des messages différents en fonction de la culture de l’utilisateur.
+Le problème avec la ligne précédente est que `"The student cannot be found."` est simplement une chaîne constante. Dans une application localisée, vous souhaitez avoir des messages différents en fonction de la culture de l’utilisateur.
 Les [assemblys satellites](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md) sont un bon moyen de le faire. Un assembly satellite est un fichier. dll qui contient des ressources pour une langue spécifique. Lorsque vous demandez des ressources spécifiques au moment de l’exécution, le CLR trouve cette ressource en fonction de la culture de l’utilisateur. Si aucun assembly satellite n’est trouvé pour cette culture, les ressources de la culture par défaut sont utilisées.
 
 Pour créer les messages d’exception localisés :
 
 1. Créez un dossier nommé *Resources* pour contenir les fichiers de ressources.
-1. Ajoutez-lui un nouveau fichier de ressources. Pour ce faire, dans Visual Studio, cliquez avec le bouton droit sur le dossier dans **Explorateur de solutions**, puis sélectionnez **Ajouter** -> **nouveau élément** -> **ressources**. Nommez le fichier *ExceptionMessages. resx*. Il s’agit du fichier de ressources par défaut.
-1. Ajoutez une paire nom/valeur pour votre message d’exception, comme dans l’illustration suivante : ![Add les ressources à la culture par défaut @ no__t-1
+1. Ajoutez-lui un nouveau fichier de ressources. Pour ce faire, dans Visual Studio, cliquez avec le bouton droit sur le dossier dans **Explorateur de solutions**, puis sélectionnez **Ajouter** > **nouveau élément** > **ressources**. Nommez le fichier *ExceptionMessages. resx*. Il s’agit du fichier de ressources par défaut.
+1. Ajoutez une paire nom/valeur pour votre message d’exception, comme dans l’illustration suivante :
+
+   ![Ajouter des ressources à la culture par défaut](media/add-resources-to-default-culture.jpg)
+
 1. Ajoutez un nouveau fichier de ressources pour le français. Nommez-le *ExceptionMessages.fr-fr. resx*.
-1. Ajoutez une nouvelle paire nom/valeur pour le message d’exception, mais avec une valeur en français : ![Add les ressources à la culture fr-FR @ no__t-1
+1. Ajoutez une nouvelle paire nom/valeur pour le message d’exception, mais avec une valeur en français :
+
+   ![Ajouter des ressources à la culture fr-FR](media/add-resources-to-fr-culture.jpg)
+
 1. Une fois le projet généré, le dossier de sortie de la génération doit contenir le dossier *fr-fr* avec un fichier *. dll* , qui est l’assembly satellite.
 1. Vous levez l’exception à l’aide d’un code semblable au suivant :
 

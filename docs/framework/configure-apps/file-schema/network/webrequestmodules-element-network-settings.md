@@ -8,19 +8,19 @@ helpviewer_keywords:
 - webRequestModules element
 - <webRequestModules> element
 ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
-ms.openlocfilehash: c30a7a0bcce62c99d7c1ec0ff17389b8c2cd2f17
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e119d9ce1f8bb6f07f8050612550db459a2f065c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663948"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697462"
 ---
 # <a name="webrequestmodules-element-network-settings"></a>\<webRequestModules >, élément (paramètres réseau)
 Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.  
   
- \<configuration>  
-\<system.net>  
-\<webRequestModules>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4webRequestModules >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,9 +50,9 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `webRequestModules` élément inscrit les descendants de la <xref:System.Net.WebRequest> classe pour gérer les demandes d’informations aux hôtes réseau. Les modules de demande Web doivent <xref:System.Net.IWebRequestCreate> implémenter l’interface.  
+ L’élément `webRequestModules` inscrit les descendants de la classe <xref:System.Net.WebRequest> pour gérer les demandes d’informations aux hôtes réseau. Les modules de demande Web doivent implémenter l’interface <xref:System.Net.IWebRequestCreate>.  
   
- Le .NET Framework comprend des modules de demande Web pour les URI `http://`qui `https://`commencent par `file://`, et. Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
+ Le .NET Framework comprend des modules de demande Web pour les URI qui commencent par `http://`, `https://` et `file://`. Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

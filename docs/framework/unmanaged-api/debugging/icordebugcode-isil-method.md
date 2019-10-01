@@ -17,35 +17,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1257c870371895cec89996be0e94906597b09ed8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0a81f4a53954c559ab12e27bcf039b7b1a1804cc
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747453"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700794"
 ---
 # <a name="icordebugcodeisil-method"></a>ICorDebugCode::IsIL, méthode
-Obtient une valeur qui indique si ce « ICorDebugCode » représente le code qui a été compilé en langage intermédiaire Microsoft (MSIL).  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT IsIL (  
-    [out] BOOL       *pbIL  
-);  
-```  
-  
-## <a name="parameters"></a>Paramètres  
+
+Obtient une valeur qui indique si ce « ICorDebugCode » représente du code qui a été compilé en langage MSIL (Microsoft Intermediate Language).
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT IsIL (
+    [out] BOOL       *pbIL
+);
+```
+
+## <a name="parameters"></a>Paramètres
  `pbIL`  
- [out] `true` si ce `ICorDebugCode` représente le code qui a été compilé dans le langage MSIL ; sinon, `false`.  
-  
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **En-tête :** CorDebug.idl, CorDebug.h  
-  
- **Bibliothèque :** CorGuids.lib  
-  
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Voir aussi
+ [out] `true` si cet `ICorDebugCode` représente du code qui a été compilé en MSIL ; dans le cas contraire, `false`.
+
+## <a name="requirements"></a>Configuration requise
+
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+
+ **En-tête :** CorDebug. idl, CorDebug. h  
+
+ **Bibliothèque** CorGuids.lib  
+
+ **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ 

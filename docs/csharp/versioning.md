@@ -3,12 +3,12 @@ title: Gestion de version C# - Guide C#
 description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: bfad7abe6b2b5c6a19324656963a79212a317110
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 4c0d5b5c2ac40cb27c90b4908623dc75b26a80cc
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926583"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699923"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -25,9 +25,9 @@ Dans l’idéal, les informations de version ajoutées à votre bibliothèque do
 
 L’approche la plus simple de SemVer est le format à 3 composants `MAJOR.MINOR.PATCH`, où :
 
-* `MAJOR` est incrémenté quand vous apportez des changements d’API incompatibles
-* `MINOR` est incrémenté quand vous ajoutez des fonctionnalités à compatibilité descendante
-* `PATCH` est incrémenté quand vous apportez des correctifs de bogues à compatibilité descendante
+- `MAJOR` est incrémenté quand vous apportez des changements d’API incompatibles
+- `MINOR` est incrémenté quand vous ajoutez des fonctionnalités à compatibilité descendante
+- `PATCH` est incrémenté quand vous apportez des correctifs de bogues à compatibilité descendante
 
 Il existe également des moyens de spécifier d’autres scénarios, tels que des préversions, lors de l’application des informations de version à votre bibliothèque .NET.
 
@@ -38,31 +38,31 @@ Une nouvelle version de la bibliothèque est compatible au format source avec un
 
 Voici quelques éléments à prendre en compte quand vous tentez de maintenir la compatibilité descendante avec d’anciennes versions de votre bibliothèque  :
 
-* Méthodes virtuelles : quand vous rendez une méthode virtuelle non virtuelle dans la nouvelle version, cela signifie que les projets qui substituent cette méthode doivent être mis à jour. Il s’agit là d’une modification avec rupture importante qui est vivement déconseillée.
-* Signatures de méthode : quand la mise à jour d’un comportement de méthode vous oblige à modifier également sa signature, vous devez créer à la place une surcharge afin que le code appelant cette méthode fonctionne toujours.
+- Méthodes virtuelles : quand vous rendez une méthode virtuelle non virtuelle dans la nouvelle version, cela signifie que les projets qui substituent cette méthode doivent être mis à jour. Il s’agit là d’une modification avec rupture importante qui est vivement déconseillée.
+- Signatures de méthode : Lors de la mise à jour d’un comportement de méthode, vous devez également modifier sa signature. vous devez plutôt créer une surcharge afin que le code qui appelle cette méthode continue à fonctionner.
 Vous pouvez toujours manipuler l’ancienne signature de méthode pour appeler la nouvelle signature de méthode afin que l’implémentation reste cohérente.
-* [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
-* Arguments de méthode facultatifs : quand vous rendez obligatoires des arguments de méthode auparavant facultatifs ou modifiez leur valeur par défaut, tout le code qui ne fournit pas ces arguments doit être mis à jour.
+- [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
+- Arguments de méthode facultatifs : quand vous rendez obligatoires des arguments de méthode auparavant facultatifs ou modifiez leur valeur par défaut, tout le code qui ne fournit pas ces arguments doit être mis à jour.
 
 > [!NOTE]
-> Le fait de rendre obligatoires des arguments facultatifs doit avoir très peu d’effet en particulier si le comportement de la méthode ne change pas.
+> Le fait d’avoir des arguments obligatoires facultatifs doit avoir un effet très faible, surtout s’il ne change pas le comportement de la méthode.
 
 Plus il est facile pour vos utilisateurs d’effectuer la mise à niveau vers la nouvelle version de votre bibliothèque, plus il est probable qu’ils le feront rapidement.
 
 ### <a name="application-configuration-file"></a>Fichier de configuration de l'application
 
 En tant que développeur .NET, il est très probable que vous ayez rencontré [le fichier `app.config`](../framework/configure-apps/file-schema/index.md), présent dans la plupart des types de projets.
-Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. Vous devez généralement concevoir vos bibliothèques de sorte que les informations qui sont susceptibles de changer régulièrement soient stockées dans le fichier `app.config` ; ainsi, quand ces informations sont mises à jour, le fichier de configuration des anciennes versions doit uniquement être remplacé par le nouveau sans que la recompilation de la bibliothèque ne soit nécessaire.
+Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. En général, vous devez concevoir vos bibliothèques de sorte que les informations qui sont susceptibles d’être modifiées régulièrement sont stockées dans le fichier `app.config`. ainsi, lorsque ces informations sont mises à jour, le fichier de configuration des versions antérieures doit simplement être remplacé par le nouveau sans le la recompilation de la bibliothèque est nécessaire.
 
 ## <a name="consuming-libraries"></a>Utilisation des bibliothèques
 
 En tant que développeur qui utilise les bibliothèques .NET générées par d’autres développeurs, vous savez probablement qu’une nouvelle version d’une bibliothèque peut ne pas être totalement compatible avec votre projet et vous pouvez souvent être obligé de mettre à jour votre code pour vous adapter à ces modifications.
 
-Heureusement pour vous, C# et l’écosystème .NET sont fournis avec des fonctionnalités et techniques qui nous permettent de mettre facilement à jour notre application pour utiliser les nouvelles versions de bibliothèques qui peuvent présenter des modifications avec rupture.
+Heureusement, C# et l’écosystème .net est fourni avec des fonctionnalités et des techniques qui nous permettent de mettre à jour facilement notre application pour qu’elle fonctionne avec de nouvelles versions de bibliothèques susceptibles d’introduire des modifications avec rupture.
 
 ### <a name="assembly-binding-redirection"></a>Redirection des liaisons d'assembly
 
-Vous pouvez utiliser le fichier `app.config` pour mettre à jour la version d’une bibliothèque que votre application emploie. En ajoutant un élément nommé [*redirection de liaison*](../framework/configure-apps/redirect-assembly-versions.md), vous pouvez utiliser la nouvelle version de bibliothèque sans avoir à recompiler votre application. L’exemple suivant montre comment vous devez mettre à jour le fichier `app.config` de votre application pour utiliser la version corrective `1.0.1` de `ReferencedLibrary` au lieu de la version `1.0.0` avec laquelle il a été compilé à l’origine.
+Vous pouvez utiliser le fichier *app. config* pour mettre à jour la version d’une bibliothèque que votre application utilise. En ajoutant ce que l’on appelle une [*redirection de liaison*](../framework/configure-apps/redirect-assembly-versions.md), vous pouvez utiliser la nouvelle version de la bibliothèque sans avoir à recompiler votre application. L’exemple suivant montre comment mettre à jour le fichier *app. config* de votre application pour utiliser la version de correctif `1.0.1` de `ReferencedLibrary` au lieu de la version de `1.0.0` avec laquelle il a été compilé à l’origine.
 
 ```xml
 <dependentAssembly>
@@ -81,11 +81,11 @@ Vous utilisez le modificateur `new` pour masquer les membres hérités d’une c
 
 Prenons l’exemple suivant :
 
-[!code-csharp[Sample usage of the 'new' modifier](../../samples/csharp/versioning/new/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'new' modifier](~/samples/csharp/versioning/new/Program.cs#sample)]
 
 **Sortie**
 
-```
+```console
 A base method
 A derived method
 ```
@@ -103,7 +103,7 @@ Le modificateur `override` indique qu’une implémentation dérivée étend l�
 
 **Sortie**
 
-```
+```console
 Base Method One: Method One
 Derived Method One: Derived Method One
 ```

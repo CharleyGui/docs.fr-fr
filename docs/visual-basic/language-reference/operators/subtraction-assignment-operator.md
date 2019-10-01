@@ -10,19 +10,19 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: be1ff4f10f6b30d8448d2441ee3ad2c1e2f80e2d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f857c8bf2f89120e047c49674ce9e8a3bff22f7d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013489"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701314"
 ---
 # <a name="--operator-visual-basic"></a>-=, opérateur (Visual Basic)
-Soustrait la valeur d’une expression de la valeur d’une propriété ou une variable et assigne le résultat à la variable ou propriété.  
+Soustrait la valeur d’une expression de la valeur d’une variable ou d’une propriété et assigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 variableorproperty -= expression  
 ```  
   
@@ -34,15 +34,15 @@ variableorproperty -= expression
  Obligatoire. Toute expression numérique.  
   
 ## <a name="remarks"></a>Notes  
- L’élément sur le côté gauche de la `-=` opérateur peut être une simple variable scalaire, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ L’élément situé à gauche de l’opérateur `-=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- Le `-=` opérateur soustrait tout d’abord la valeur de l’expression (sur le côté droit de l’opérateur) à partir de la valeur de la variable ou une propriété (sur le côté gauche de l’opérateur). L’opérateur assigne ensuite le résultat de cette opération à la variable ou la propriété.  
+ L’opérateur `-=` soustrait d’abord la valeur de l’expression (sur le côté droit de l’opérateur) de la valeur de la variable ou de la propriété (sur le côté gauche de l’opérateur). L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
   
 ## <a name="overloading"></a>Surcharge  
- Le [-, opérateur (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. La surcharge la `-` opérateur affecte le comportement de la `-=` opérateur. Si votre code utilise `-=` sur une classe ou structure qui surcharge `-`, assurez-vous que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur-(Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. La surcharge de l’opérateur `-` affecte le comportement de l’opérateur `-=`. Si votre code utilise `-=` sur une classe ou une structure qui surcharge `-`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le `-=` opérateur pour soustraire une `Integer` variable d’une autre et assigner le résultat à la dernière variable.  
+ L’exemple suivant utilise l’opérateur `-=` pour soustraire une variable `Integer` d’une autre et assigner le résultat à cette dernière variable.  
   
  [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  
   

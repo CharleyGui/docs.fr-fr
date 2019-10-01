@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-ms.openlocfilehash: c4704fb09e9519c14f29365b2cf7f536bbbc5dca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6ceebc3af01c13474affa6e728c49d6d246eb331
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619560"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701198"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Dans la mesure où cet appel n'est pas attendu, la méthode actuelle continue de s'exécuter avant la fin de l'appel.
 Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continue avant la fin de l’appel. Envisagez d’appliquer l’opérateur « Await » au résultat de l’appel.  
@@ -83,7 +83,7 @@ Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continu
   
      Dans l'exemple, si vous choisissez Appel #1 ou Appel #2, la méthode asynchrone inattendue (`CalledMethodAsync`) se termine une fois que son appelant (`CallingMethodAsync`) et l'appelant de l'appelant (`StartButton_Click`) sont terminés. La dernière ligne de la sortie suivante vous indique lorsque la méthode appelée se termine. L'entrée et la sortie du gestionnaire d'événements qui appelle `CallingMethodAsync` dans l'exemple complet sont marquées dans la sortie.  
   
-    ```  
+    ```console  
     Entering the Click event handler.  
       Entering calling method.  
         Entering called method, starting and awaiting Task.Delay.  

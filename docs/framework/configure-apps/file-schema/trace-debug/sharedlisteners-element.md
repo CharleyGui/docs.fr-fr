@@ -11,19 +11,19 @@ helpviewer_keywords:
 - trace listeners, <sharedListeners> element
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-ms.openlocfilehash: 41cabcbce13409b0842cbbd625028b51d32d59d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b419ecf451b79808e545525c7b8761175f390200
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926981"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699301"
 ---
-# <a name="sharedlisteners-element"></a>\<sharedListeners >, élément
+# <a name="sharedlisteners-element"></a>Élément @no__t 0sharedListeners >
 Contient des écouteurs auxquels toute source ou tout élément de trace peuvent faire référence.  Ces écouteurs ne reçoivent pas de suivi par défaut, et il n’est pas possible de récupérer ces écouteurs au moment de l’exécution. Les écouteurs identifiés comme écouteurs partagés peuvent être ajoutés à des sources ou des suivis par nom.  
   
- \<configuration>  
-\<system.diagnostics>  
-\<sharedListeners>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<sharedListeners >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,12 +53,12 @@ Contient des écouteurs auxquels toute source ou tout élément de trace peuvent
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
   
 ## <a name="remarks"></a>Notes  
- L’ajout d’un écouteur à la collection d’écouteurs partagés ne fait pas de l’écouteur actif. Il doit toujours être ajouté à une source de suivi ou à une trace en l’ajoutant `Listeners` à la collection de cet élément trace. Les classes d’écouteur dans le .NET Framework dérivent de la <xref:System.Diagnostics.TraceListener> classe.  
+ L’ajout d’un écouteur à la collection d’écouteurs partagés ne fait pas de l’écouteur actif. Il doit toujours être ajouté à une source de suivi ou à une trace en l’ajoutant à la collection `Listeners` pour cet élément de trace. Les classes d’écouteur dans le .NET Framework dérivent de la classe <xref:System.Diagnostics.TraceListener>.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l' `<sharedListeners>` élément pour ajouter l' `console` écouteur à la `Listeners` collection pour les <xref:System.Diagnostics.TraceSource> classes et <xref:System.Diagnostics.Trace> . L’écouteur de suivi de console écrit les informations de trace dans la console <xref:System.Diagnostics.TraceSource> par <xref:System.Diagnostics.Trace>le biais d’appels à ou.  
+ L’exemple suivant montre comment utiliser l’élément `<sharedListeners>` pour ajouter l’écouteur `console` à la collection `Listeners` pour les classes <xref:System.Diagnostics.TraceSource> et <xref:System.Diagnostics.Trace>. L’écouteur de suivi de console écrit les informations de trace dans la console par le biais d’appels à <xref:System.Diagnostics.TraceSource> ou <xref:System.Diagnostics.Trace>.  
   
 ```xml  
 <configuration>  

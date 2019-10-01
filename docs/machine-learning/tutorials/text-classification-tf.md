@@ -1,17 +1,17 @@
 ---
 title: 'Tutoriel : Analyser les sentiments des revues de films à l’aide d’un modèle TensorFlow pré-formé'
 description: Ce didacticiel vous montre comment utiliser un modèle TensorFlow pré-formé pour classer les sentiments dans les commentaires de sites Web. Le classifieur de sentiment binaire C# est une application console développée à l’aide de Visual Studio.
-ms.date: 09/11/2019
+ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 38b935814d713284dae1ca931b90c63bbcac332b
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: e25e884769ad62d3d888986b1475000b543b24b1
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216898"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700938"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Tutoriel : Analyser les sentiments des revues de films à l’aide d’un modèle TensorFlow pré-formé dans ML.NET
 
@@ -81,16 +81,16 @@ Les revues de film sont du texte en forme libre. Votre application convertit le 
 
 La première consiste à fractionner le texte en mots séparés et à utiliser le fichier de mappage fourni pour mapper chaque mot sur un encodage entier. Le résultat de cette transformation est un tableau d’entiers de longueur variable dont la longueur correspond au nombre de mots de la phrase.
 
-|Property| Value|Type|
+|Propriété| Value|Type|
 |-------------|-----------------------|------|
-|ReviewText|ce film est vraiment parfait|string|
+|ReviewText|ce film est vraiment parfait|chaîne|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Le tableau de fonctionnalités de longueur variable est ensuite redimensionné à une longueur fixe de 600. Il s’agit de la longueur attendue par le modèle TensorFlow.
 
-|Property| Value|Type|
+|Propriété| Value|Type|
 |-------------|-----------------------|------|
-|ReviewText|ce film est vraiment parfait|string|
+|ReviewText|ce film est vraiment parfait|chaîne|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 |Fonctionnalités|14, 22, 9, 66, 78,... |int [600]|
 
@@ -211,7 +211,10 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
     [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#CreatePredictionEngine)]
 
-    Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données.
+    Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application)
+
+    > [!NOTE]
+    > L’extension de service `PredictionEnginePool` est disponible en préversion.
 
 1. Ajoutez un commentaire pour tester la prédiction du modèle formé dans la méthode `Predict()` en créant une instance de `MovieReview` :
 
@@ -223,7 +226,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 1. La fonction [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) effectue une prédiction sur une seule ligne de données :
 
-    |Property| Value|Type|
+    |Propriété| Value|Type|
     |-------------|-----------------------|------|
     |Prédiction|[0,5459937, 0,454006255]|float []|
 

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07f8be1a1831bc00eea3cfb659b46b67b6a78711
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1ec7d615b99ac301948d7ea25318115713ce06ea
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747725"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700841"
 ---
 # <a name="icordebugcodecreatebreakpoint-method"></a>ICorDebugCode::CreateBreakpoint, méthode
 Crée un point d’arrêt dans ce segment de code à l’offset spécifié.  
@@ -38,23 +38,21 @@ HRESULT CreateBreakpoint (
   
 ## <a name="parameters"></a>Paramètres  
  `offset`  
- [in] Le décalage à partir duquel créer le point d’arrêt.  
+ dans Offset à partir duquel créer le point d’arrêt.  
   
  `ppBreakpoint`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugFunctionBreakpoint » qui représente le point d’arrêt.  
+ à Pointeur vers l’adresse d’un objet « ICorDebugFunctionBreakpoint » qui représente le point d’arrêt.  
   
 ## <a name="remarks"></a>Notes  
- Avant le point d’arrêt est actif, il doit être ajouté à l’objet de processus.  
+ Avant que le point d’arrêt soit actif, il doit être ajouté à l’objet processus.  
   
- Si ce code est le code Microsoft intermediate language (MSIL), et il existe un juste-à-temps (JIT)-version native compilée du code, le point d’arrêt sera appliquée dans le code compilé par JIT. (Le même est vrai si le code est compilé par JIT ultérieurement).  
+ Si ce code est du code MSIL (Microsoft Intermediate Language), et qu’il existe une version native, compilée juste-à-temps (JIT), du code, le point d’arrêt est également appliqué dans le code compilé juste-à-temps. (C’est également le cas si le code est compilé juste-à-temps ultérieurement.)  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Voir aussi
+ **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

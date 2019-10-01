@@ -1,7 +1,7 @@
 ---
 title: Opérateurs logiques booléens - Référence C#
 description: Découvrez les opérateurs C# qui effectuent des opérations de négation logique, de conjonction (AND) et de disjonction inclusive et exclusive (OR) avec des opérandes booléens.
-ms.date: 04/08/2019
+ms.date: 09/27/2019
 author: pkulikov
 f1_keywords:
 - '!_CSharpKeyword'
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 39f5be7a667b4e37e84246ef0bfeb03c0099d4b7
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: cc25d4bfd444dc0acb30fc1c6e6c3c9918af537c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353364"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698684"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Opérateurs logiques booléens (référence C#)
 
@@ -55,7 +55,9 @@ L’opérateur `!` calcule la négation logique de son opérande. Autrement dit,
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
 
-## <a name="logical-and-operator-"></a> Opérateur AND logique &amp;
+À partir C# de 8,0, l’opérateur unaire postfixé `!` est un opérateur null-indulgent avec. Dans un contexte d’annotation Nullable activé, vous l’utilisez pour déclarer que l’expression `x` d’un type référence Nullable n’a pas la valeur NULL : `x!`. Pour plus d’informations, consultez [types de référence Nullable](../../nullable-references.md).
+
+## <a name="logical-and-operator-"></a>Opérateur ET logique &amp;
 
 L’opérateur `&` calcule le AND logique de ses opérandes. Le résultat de `x & y` est `true` si `x` et `y` prennent la valeur `true`. Sinon, le résultat est `false`.
 

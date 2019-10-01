@@ -10,20 +10,20 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: 86a7a0ab402c8c40ec3b824402a1dba984412b68
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 17b380b12977423669fd413132d69a3082daca41
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659444"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698356"
 ---
-# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Effacer > élément pour connectionManagement (paramètres réseau)
+# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<clear > élément pour connectionManagement (paramètres réseau)
 Efface la liste de gestion des connexions.  
   
- \<configuration>  
-\<system.net>  
-\<connectionManagement>  
-\<clear>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,13 +47,13 @@ Efface la liste de gestion des connexions.
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `clear` élément efface toutes les entrées de la liste de gestion des connexions.  
+ L’élément `clear` efface toutes les entrées de la liste de gestion des connexions.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant efface la liste de gestion des connexions, puis ajoute de nouvelles entrées de gestion `www.contoso.com` des connexions pour le serveur et tous les autres hôtes réseau.  
+ L’exemple suivant efface la liste de gestion des connexions, puis ajoute de nouvelles entrées de gestion des connexions pour le serveur `www.contoso.com` et tous les autres hôtes réseau.  
   
 ```xml  
 <configuration>  

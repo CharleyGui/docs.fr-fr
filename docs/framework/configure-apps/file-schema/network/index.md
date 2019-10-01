@@ -12,15 +12,17 @@ helpviewer_keywords:
 - connections [.NET Framework], network configuration elements
 - network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
-ms.openlocfilehash: 0f5d762a2b688bebcb7c027be6c639b6d64c069d
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5e3bd1b1734fc7fba50b72785531a8b001d6d741
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664106"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698152"
 ---
 # <a name="network-settings-schema"></a>Schéma des paramètres réseau
-Les paramètres réseau spécifient la façon dont le .NET Framework se connecte à Internet. Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<system.Net>, élément (paramètres réseau)](system-net-element-network-settings.md).  
+Les paramètres réseau spécifient la façon dont le .NET Framework se connecte à Internet.
+
+Les paramètres @no__t -0System. net > spécifient la façon dont le .NET Framework se connecte au réseau. Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<system.Net>, élément (paramètres réseau)](system-net-element-network-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  
@@ -31,7 +33,7 @@ Les paramètres réseau spécifient la façon dont le .NET Framework se connecte
 |[\<requestCaching>, élément (paramètres réseau)](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
 |[\<webRequestModules>, élément (paramètres réseau)](webrequestmodules-element-network-settings.md)|Spécifie les modules utilisés pour demander des informations à partir des hôtes Internet.|  
   
- Les paramètres d’URI spécifient la façon dont le .NET Framework gère les adresses web exprimées à l’aide d’URI (Uniform Resource Identifier). Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<Uri>, élément (paramètres d’Uri)](uri-element-uri-settings.md).  
+Les paramètres de > \<uri spécifient la façon dont le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier). Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous l' [élément \<uri > (paramètres d’URI)](uri-element-uri-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  

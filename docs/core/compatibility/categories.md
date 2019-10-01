@@ -4,12 +4,12 @@ description: Découvrez comment les changements cassants sont catégorisés dans
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/10/2019
-ms.openlocfilehash: 68cd3580e80305e54b41610f05d939a6aff8b54d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
-ms.translationtype: HT
+ms.openlocfilehash: e15b0c566584571440eb09c7fb981874b7517c48
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "69577151"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698457"
 ---
 # <a name="breaking-change-categories"></a>Catégories de changements cassants
 
@@ -49,4 +49,4 @@ La conservation de la compatibilité ascendante n’est pas un objectif de .NET 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Évaluer les changements cassants dans .NET Core](index.md)
+- [Évaluer les changements cassants dans .NET Core](index.md)

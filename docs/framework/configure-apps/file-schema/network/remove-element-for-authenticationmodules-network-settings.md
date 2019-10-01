@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, authenticationModules
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
-ms.openlocfilehash: 7f923ce73760fa42a2c435d346f9d1097a5ed82f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 9b73c0dc1fe161616c08ef0501241d55e9fea9bc
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664049"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697926"
 ---
-# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<supprimer > élément pour authenticationModules (paramètres réseau)
+# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<remove > élément pour authenticationModules (paramètres réseau)
 Supprime un module d’authentification de l’application.  
   
- \<configuration>  
-\<system.net>  
-\<authenticationModules>  
-\<remove>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<authenticationModules >** ](authenticationmodules-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,9 +52,9 @@ Supprime un module d’authentification de l’application.
 |[authenticationModules](authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `remove` élément supprime les modules d’authentification qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
+ L’élément `remove` supprime les modules d’authentification qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
   
- La valeur de l' `type` attribut doit être un nom de classe valide.  
+ La valeur de l’attribut `type` doit être un nom de classe valide.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

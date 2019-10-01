@@ -10,20 +10,20 @@ helpviewer_keywords:
 - webRequestModules, clear element
 - clear element, webRequestModules
 ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
-ms.openlocfilehash: e175c70bd4932d6a8f9428e8cd9159a47df52558
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 95a190dac3a9512b404a054c60c48de9c4574790
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659435"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698340"
 ---
-# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<Clear >, élément de webRequestModules (paramètres réseau)
+# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<clear > élément de webRequestModules (paramètres réseau)
 Supprime tous les modules de demande Web inscrits de l’application.  
   
- \<configuration>  
-\<system.net>  
-\<webRequestModules>  
-\<clear>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,12 +47,12 @@ Supprime tous les modules de demande Web inscrits de l’application.
 |[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `clear` élément supprime tous les modules de demande Web inscrits qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
+ L’élément `clear` supprime tous les modules de demande Web inscrits qui ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant efface tous les modules de demande Web, puis inscrit un module de demande Web pour HTTP.  
   
 ```xml  

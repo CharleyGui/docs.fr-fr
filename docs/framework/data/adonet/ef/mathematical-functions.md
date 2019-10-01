@@ -2,12 +2,12 @@
 title: Fonctions mathématiques
 ms.date: 03/30/2017
 ms.assetid: b040c7cb-156d-40f2-9152-61065b18148c
-ms.openlocfilehash: 5e5658e28c7d806f7fd38f941bfa7254e7806e11
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 664d1a4f67ecced6713f83bf3dd11931c9b4dc18
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182486"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700000"
 ---
 # <a name="mathematical-functions"></a>Fonctions mathématiques
 
@@ -107,7 +107,6 @@ Convertit l'expression spécifiée en plus petit entier supérieur ou égal à c
 
 **Exemple** 
 
-[!code-csharp[DP EntityServices Concepts#SQLSERVER_CEILING](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_ceiling)]
 [!code-sql[DP EntityServices Concepts#SQLSERVER_CEILING](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_ceiling)]
 
 ## <a name="cosexpression"></a>COS(expression)
@@ -186,7 +185,6 @@ Convertit l'expression spécifiée en plus grand entier inférieur ou égal à c
 
 **Exemple** 
 
-[!code-csharp[DP EntityServices Concepts#SQLSERVER_FLOOR](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_floor)] 
 [!code-sql[DP EntityServices Concepts#SQLSERVER_FLOOR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_floor)]
 
 ## <a name="logexpression"></a>LOG (expression)
@@ -294,7 +292,7 @@ Retourne une expression numérique, arrondie à la longueur ou à la précision 
 |--|--|
 |`numeric_expression`| ,, Ou`Decimal`. `Int32` `Int64` `Double` 
 |`length`| `Int32` qui représente la précision selon laquelle arrondir `numeric_expression`. Lorsque `length` est un nombre positif, `numeric_expression` est arrondi au nombre de décimales indiqué par `length`. Lorsque `length` est un nombre négatif, `numeric_expression` est arrondi à gauche de la virgule décimale, selon l'indication fournie par `length`.|
-|`function` | Optionnel. `Int32` Qui représente le type d’opération à effectuer. Quand la fonction est omise ou a la valeur 0 (valeur par défaut `numeric_expression` ), est arrondie. Lorsqu’une valeur autre que 0 est spécifiée, `numeric_expression` est tronqué. |
+|`function` | facultatif. `Int32` Qui représente le type d’opération à effectuer. Quand la fonction est omise ou a la valeur 0 (valeur par défaut `numeric_expression` ), est arrondie. Lorsqu’une valeur autre que 0 est spécifiée, `numeric_expression` est tronqué. |
 
 **Valeur de retour** 
 
@@ -382,10 +380,5 @@ Calcule la tangente d'une expression spécifiée.
   
 ## <a name="see-also"></a>Voir aussi
 
-Pour plus d'informations sur les fonctions mathématiques prises en charge par SqlClient, consultez la documentation correspondant à la version de SQL Server que vous avez spécifiée dans le manifeste du fournisseur SqlClient :
-
-- **SQL Server 2005 :** [Fonctions mathématiques (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms177516(v=sql.90))
-- **SQL Server 2008 :** [Fonctions mathématiques (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms177516(v=sql.100))
-- **SQL Server 2012 et versions ultérieures :** [Fonctions mathématiques (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql)
-
+- [Fonctions mathématiques (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql)
 - [Fonctions SqlClient pour Entity Framework](sqlclient-for-ef-functions.md)

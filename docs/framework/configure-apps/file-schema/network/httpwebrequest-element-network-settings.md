@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: de5672e5c6762b1e0742e717a3d499a4f93ee8ec
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: fa00aed2cd1e96ec788d4bc9c1c63f20561d8d1c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659340"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698183"
 ---
 # <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest >, élément (paramètres réseau)
 Personnalise les paramètres de la demande Web.  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
-\<httpWebRequest>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<httpWebRequest >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,7 +56,7 @@ Personnalise les paramètres de la demande Web.
 |[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, le .NET Framework applique strictement la norme RFC 2616 pour l’analyse d’URI. Certaines réponses du serveur peuvent inclure des caractères de contrôle dans les champs interdits <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> , ce qui entraîne <xref:System.Net.WebException>la levée par la méthode de. Si **UseUnsafeHeaderParsing** a la valeur **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> ne lève pas d’exception dans ce cas; toutefois, votre application est vulnérable à plusieurs formes d’attaques d’analyse d’URI. La meilleure solution consiste à modifier le serveur afin que la réponse n’inclue pas les caractères de contrôle.  
+ Par défaut, le .NET Framework applique strictement la norme RFC 2616 pour l’analyse d’URI. Certaines réponses du serveur peuvent inclure des caractères de contrôle dans les champs interdits, ce qui entraîne la levée d’une <xref:System.Net.WebException> par la méthode <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>. Si **UseUnsafeHeaderParsing** a la valeur **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> ne lève pas d’exception dans ce cas ; Toutefois, votre application est vulnérable à plusieurs formes d’attaques d’analyse d’URI. La meilleure solution consiste à modifier le serveur afin que la réponse n’inclue pas les caractères de contrôle.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

@@ -17,38 +17,40 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 155a8d5465e0fb19c55c9d11b67c6031c2b2c4a3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4b6fd6e8043f1c62da8994b43a9b9af45fb2e3c0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747520"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700820"
 ---
 # <a name="icordebugcodegetversionnumber-method"></a>ICorDebugCode::GetVersionNumber, méthode
-Obtient le nombre de base 1 qui identifie la version du code qui représente « ICorDebugCode ».  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT GetVersionNumber (  
-    [out] ULONG32    *nVersion  
-);  
-```  
-  
-## <a name="parameters"></a>Paramètres  
+
+Obtient le nombre de base 1 qui identifie la version du code que ce « ICorDebugCode » représente.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT GetVersionNumber (
+    [out] ULONG32    *nVersion
+);
+```
+
+## <a name="parameters"></a>Paramètres
+
  `nVersion`  
- [out] Pointeur vers le numéro de version du code.  
+ à Pointeur vers le numéro de version du code.
+
+## <a name="remarks"></a>Notes
+
+ Le numéro de version est incrémenté chaque fois qu’une opération de modification et de continuation (EnC) est effectuée sur le code.
+
+## <a name="requirements"></a>Configuration requise
+
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
-## <a name="remarks"></a>Notes  
- Le numéro de version est incrémenté chaque fois qu’une opération modifier et continuer de (EnC) est exécutée sur le code.  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Bibliothèque** CorGuids.lib  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
-  
- **Bibliothèque :** CorGuids.lib  
-  
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Voir aussi
+ **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

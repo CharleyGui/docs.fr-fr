@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: 20a586e945a889d1fd8a8d4c5c09c8b790c56fc3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f8209ea89ac8cd214389feddee8c475e10bc939a
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664018"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697816"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<supprimer > élément de webRequestModules (paramètres réseau)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<remove > élément de webRequestModules (paramètres réseau)
 Supprime un module de demande Web personnalisé de l’application.  
   
- \<configuration>  
-\<system.net>  
-\<webRequestModules>  
-\<remove>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,16 +52,16 @@ Supprime un module de demande Web personnalisé de l’application.
 |[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
 ## <a name="remarks"></a>Notes  
- L' `remove` élément supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
+ L’élément `remove` supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
   
- La valeur de l' `prefix` attribut doit être les caractères de début d’un URI valide, par exemple, «`http`» ou «`http://www.contoso.com`».  
+ La valeur de l’attribut `prefix` doit être celle des caractères de début d’un URI valide, par exemple « `http` » ou « `http://www.contoso.com` ».  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
 
-L’exemple suivant supprime le module de demande Web existant pour HTTP, puis inscrit un nouveau module de demande Web personnalisé pour les requêtes `www.contoso.com`http à.
+L’exemple suivant supprime le module de demande Web existant pour HTTP, puis inscrit un nouveau module de demande Web personnalisé pour les requêtes HTTP à `www.contoso.com`.
   
 ```xml  
 <configuration>  

@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC32039
 ms.assetid: 1d8b6560-c9eb-4b71-a038-24c6f5a5ce46
-ms.openlocfilehash: 9f24dd2a20dc3a4935cd288a20a0e12c1d47bee1
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 9e8bb7b79b5a770c3c92e47d8e7c01c5b83d6061
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912343"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701209"
 ---
 # <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a>Un tableau déclaré en tant que variable de contrôle de boucle for ne peut pas être déclaré avec une taille initiale
-Un `For Each` boucle utilise un tableau en tant que son *élément* variable d’itération initialise, mais ce tableau.  
+Une boucle `For Each` utilise un tableau comme variable d’itération d' *élément* , mais Initialise ce tableau.  
   
  Les instructions suivantes montrent comment cette erreur peut être générée.  
   
-```  
+```vb  
 Dim arrayList As New List(Of Integer())  
 For Each listElement() As Integer In arrayList  
 For Each listElement(1) As Integer In arrayList  
 ```  
   
- La première `For Each` instruction est la méthode correcte pour accéder aux éléments de `arrayList`. La seconde `For Each` instruction génère cette erreur.  
+ La première instruction `For Each` est la méthode correcte pour accéder aux éléments de `arrayList`. La deuxième instruction `For Each` génère cette erreur.  
   
  **ID d’erreur :** BC32039  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Supprimez l’initialisation de la déclaration de la *élément* variable d’itération.  
+- Supprimez l’initialisation de la déclaration de la variable d’itération de l' *élément* .  
   
 ## <a name="see-also"></a>Voir aussi
 

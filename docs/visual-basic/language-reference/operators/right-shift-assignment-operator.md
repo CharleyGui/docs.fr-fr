@@ -10,41 +10,41 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 - '>>= operator [Visual Basic]'
 ms.assetid: 2bcd9abb-7a8c-4229-b75d-8816ff1dc700
-ms.openlocfilehash: 1076ce62077391f2c88ebdd621d1dbd6fb40d647
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08d4e251a96ca387a709319e752351db6825d9e8
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982382"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701355"
 ---
-# <a name="-operator-visual-basic"></a>>> =, opérateur (Visual Basic)
-Effectue un décalage arithmétique vers la droite sur la valeur d’une propriété ou une variable et assigne le résultat à la variable ou propriété.  
+# <a name="-operator-visual-basic"></a>> > =, opérateur (Visual Basic)
+Effectue un décalage arithmétique vers la droite sur la valeur d’une variable ou d’une propriété et réassigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 variableorproperty >>= amount  
 ```  
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Obligatoire. Variable ou propriété d’un type intégral (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, ou `ULong`).  
+ Obligatoire. Variable ou propriété d’un type intégral (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long` ou `ULong`).  
   
  `amount`  
  Obligatoire. Expression numérique d’un type de données qui s’étend à `Integer`.  
   
 ## <a name="remarks"></a>Notes  
- L’élément sur le côté gauche de la `>>=` opérateur peut être une simple variable scalaire, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ L’élément situé à gauche de l’opérateur `>>=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- Le `>>=` opérateur effectue d’abord un décalage arithmétique vers la droite de la valeur de la variable ou propriété. Puis, l’opérateur assigne le résultat de cette opération à la variable ou propriété.  
+ L’opérateur `>>=` effectue d’abord un décalage arithmétique à droite sur la valeur de la variable ou de la propriété. L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
   
- Les décalages arithmétiques ne sont pas circulaires, ce qui signifie que les bits décalés à une extrémité du résultat ne sont pas réintroduits à l’autre extrémité. Dans un décalage arithmétique à droite, les bits décalés au-delà de la position de bit plus à droite sont supprimés, et le bit le plus à gauche est propagé dans les positions de bit libérées à gauche. Cela signifie que si `variableorproperty` a une valeur négative, les positions libérées sont définies sur un. Si `variableorproperty` est positif, ou si son type de données est un type non signé, les positions libérées sont définies à zéro.  
+ Les décalages arithmétiques ne sont pas circulaires, ce qui signifie que les bits décalés d’une extrémité du résultat ne sont pas réintroduits à l’autre extrémité. Dans un décalage arithmétique vers la droite, les bits décalés au-delà de la position du bit le plus à droite sont ignorés, et le bit le plus à gauche est propagé dans les positions de bits libérées à gauche. Cela signifie que si `variableorproperty` a une valeur négative, les positions libérées sont définies sur un. Si `variableorproperty` est positif, ou si son type de données est un type non signé, les positions libérées sont définies à zéro.  
   
 ## <a name="overloading"></a>Surcharge  
- Le [>> opérateur](../../../visual-basic/language-reference/operators/right-shift-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. La surcharge la `>>` opérateur affecte le comportement de la `>>=` opérateur. Si votre code utilise `>>=` sur une classe ou structure qui surcharge `>>`, assurez-vous que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur > >](../../../visual-basic/language-reference/operators/right-shift-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `>>` affecte le comportement de l’opérateur `>>=`. Si votre code utilise `>>=` sur une classe ou une structure qui surcharge `>>`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le `>>=` opérateur pour décaler le modèle binaire d’une `Integer` variable directement par la quantité spécifiée et assigner le résultat à la variable.  
+ L’exemple suivant utilise l’opérateur `>>=` pour déplacer le modèle binaire d’une variable `Integer` vers la droite selon la valeur spécifiée et assigner le résultat à la variable.  
   
  [!code-vb[VbVbalrOperators#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#15)]  
   
