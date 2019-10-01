@@ -3,14 +3,16 @@ title: ASP.NET Core gRPC pour les développeurs WCF-gRPC pour les développeurs 
 description: À ÉCRIRE
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 7d02d7914aed39613b4a41da55515df80abddfe8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: dc39fc96e7154fb50acd0b65a58586b3fa12ab50
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184448"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696918"
 ---
-# <a name="aspnet-core-grpc-for-wcf-developers"></a>ASP.NET Core gRPC pour les développeurs WCF
+# <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pour les développeurs WCF
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![image de couverture](./media/cover.png)
 
@@ -48,7 +50,7 @@ Rédacteurs :
 
 > Développeur de contenu **Maira Wenzel** -SR-Microsoft
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 TODO
 

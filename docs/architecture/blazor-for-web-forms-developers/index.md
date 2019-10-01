@@ -1,17 +1,19 @@
 ---
-title: Éblouissant pour les développeurs ASP.NET Web Forms
+title: Blazor pour les développeurs ASP.NET Web Forms
 description: Découvrez comment créer des applications Web à pile complète avec .NET à l’aide de éblouissant et de .NET Core de manière simple et familière.
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: a80483f6a1f1cb9e5a3e2ffff18cbd59c5b67af3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 936f85d4fda9c5396a6586810735877488226157
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183797"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696932"
 ---
-# <a name="blazor-for-aspnet-web-forms-developers"></a>Éblouissant pour les développeurs ASP.NET Web Forms
+# <a name="blazor-for-aspnet-web-forms-developers"></a>Blazor pour les développeurs ASP.NET Web Forms
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![Capture d’écran montrant la couverture du livre électronique Applications serverless.](./media/index/blazor-for-web-forms-developers-cover.png)
 
@@ -51,7 +53,7 @@ Extrait
 
 > **[Scott Addie](https://github.com/scottaddie)** , développeur de contenu senior, Microsoft Corp.
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 .NET offre un développement d’applications Web long pris en charge via ASP.NET, un ensemble complet d’infrastructures et d’outils permettant de créer n’importe quel type d’application Web. ASP.NET a son propre lignage de frameworks et de technologies Web en commençant par les pages ASP (Classic Active Server Pages). Les infrastructures comme ASP.NET Web Forms, ASP.NET MVC, pages Web ASP.NET et les ASP.NET Core plus récentes offrent un moyen productif et puissant de créer des applications Web de *type serveur* , où le contenu de l’interface utilisateur est généré dynamiquement sur le serveur en réponse à http obtenteur. Chaque Framework ASP.NET répond à un public et une philosophie de construction d’applications différents. ASP.NET Web Forms fourni avec la version d’origine du .NET Framework et du développement Web activé à l’aide de nombreux modèles familiers pour les développeurs de bureau, comme les contrôles d’interface utilisateur réutilisables avec une gestion des événements simple. Toutefois, aucune des offres ASP.NET ne permet d’exécuter du code qui s’exécute dans le navigateur de l’utilisateur. Pour ce faire, il est nécessaire d’écrire du code JavaScript et d’utiliser l’un des nombreux frameworks et outils JavaScript qui ont été mis en avant et non en popularité au fil des années : jQuery, Knockout, angulaire, REACT, etc.
 
