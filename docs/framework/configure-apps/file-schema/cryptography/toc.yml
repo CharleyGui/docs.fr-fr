@@ -1,19 +1,24 @@
 - name: Schéma des paramètres de chiffrement
   href: index.md
   items:
-    - name: Élément <cryptoClasses>
-      href: cryptoclasses-element.md
-    - name: Élément <cryptoClass>
-      href: cryptoclass-element.md
-    - name: Élément <cryptographySettings>
-      href: cryptographysettings-element.md
-    - name: Élément <cryptoNameMapping>
-      href: cryptonamemapping-element.md
     - name: Élément <mscorlib> pour les paramètres de chiffrement
       href: mscorlib-element-for-cryptography-settings.md
-    - name: Élément <nameEntry>
-      href: nameentry-element.md
-    - name: Élément <oidEntry>
-      href: oidentry-element.md
-    - name: Élément <oidMap>
-      href: oidmap-element.md
+      items:
+        - name: Élément <cryptographySettings>
+          href: cryptographysettings-element.md
+          items:
+            - name: Élément <cryptoNameMapping>
+              href: cryptonamemapping-element.md
+              items:
+                - name: Élément <cryptoClasses>
+                  href: cryptoclasses-element.md
+                  items:
+                    - name: Élément <cryptoClass>
+                      href: cryptoclass-element.md
+                - name: Élément <nameEntry>
+                  href: nameentry-element.md
+            - name: Élément <oidMap>
+              href: oidmap-element.md
+              items:
+                - name: Élément <oidEntry>
+                  href: oidentry-element.md
