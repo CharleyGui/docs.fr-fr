@@ -1,5 +1,5 @@
 ---
-title: Nouveautés de C# 8,0- C# Guide
+title: Nouveautés de C# 8.0- C# Guide
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 09/20/2019
 ms.openlocfilehash: ee0f6c9d7cfbe829508e3e0900e249c204266ca3
@@ -11,7 +11,7 @@ ms.locfileid: "71396025"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-C#8,0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# langage :
+C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# :
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
@@ -40,7 +40,7 @@ La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des ar
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
-Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct mutable suivant :
+Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct variable suivant :
 
 ```csharp
 public struct Point
