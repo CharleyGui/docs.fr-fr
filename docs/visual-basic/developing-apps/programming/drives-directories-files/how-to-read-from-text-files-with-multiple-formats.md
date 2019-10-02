@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : lire des fichiers texte avec plusieurs formats en Visual Basic'
+title: 'Procédure : Lire à partir de fichiers texte avec plusieurs formats dans Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, reading from a file
@@ -11,63 +11,62 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
-ms.openlocfilehash: eae60b2fc72ee8b8653d3a0517eeaaf8012e0372
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: dc726f7648c1c0a564594331023f03d20569d766
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696750"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736819"
 ---
-# <a name="how-to-read-from-text-files-with-multiple-formats-in-visual-basic"></a>Procédure : lire des fichiers texte avec plusieurs formats en Visual Basic
-L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyser facilement et efficacement les fichiers texte structurés, tels que les journaux. Vous pouvez traiter un fichier contenant plusieurs formats en utilisant la méthode `PeekChars` pour déterminer le format de chaque ligne à mesure que vous analysez le fichier.  
+# <a name="how-to-read-from-fext-files-with-multiple-formats-in-visual-basic"></a>Procédure : Lire à partir de fichiers FEXT avec plusieurs formats dans Visual Basic
+
+L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyser facilement et efficacement les fichiers texte structurés, tels que les journaux. Vous pouvez traiter un fichier contenant plusieurs formats en utilisant la méthode `PeekChars` pour déterminer le format de chaque ligne à mesure que vous analysez le fichier.
   
-### <a name="to-parse-a-text-file-with-multiple-formats"></a>Pour analyser un fichier texte avec plusieurs formats  
+### <a name="to-parse-a-text-file-with-multiple-formats"></a>Pour analyser un fichier texte avec plusieurs formats
+
+1. Ajoutez un fichier texte nommé *TestFile. txt* à votre projet. Ajoutez le contenu suivant au fichier texte :
+
+    ```text
+    Err  1001 Cannot access resource.
+    Err  2014 Resource not found.
+    Acc  10/03/2009User1      Administrator.
+    Err  0323 Warning: Invalid access attempt.
+    Acc  10/03/2009User2      Standard user.
+    Acc  10/04/2009User2      Standard user.
+    ```
+
+2. Définissez le format attendu et le format utilisé quand une erreur est signalée. La dernière entrée dans chaque tableau étant -1, le dernier champ est supposé avoir une largeur variable. Cela se produit quand la dernière entrée du tableau est inférieure ou égale à 0.
+
+     [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]
+
+3. Créez un nouvel objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> en définissant la largeur et le format.
+
+     [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]
+
+4. Parcourez les lignes en boucle, en testant le format avant la lecture.
+
+     [!code-vb[VbFileIORead#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#6)]
+
+5. Écrivez les erreurs dans la console.
+
+     [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]
+
+## <a name="example"></a>Exemple
+
+Voici l’exemple complet qui lit le fichier `testfile.txt` :
+
+ [!code-vb[VbFileIORead#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#8)]
+
+## <a name="robust-programming"></a>Programmation fiable
+
+Les conditions ci-dessous peuvent générer une exception.  
   
-1. Ajoutez un fichier texte nommé testfile.txt à votre projet. Ajoutez le contenu suivant au fichier texte.  
-  
-    ```text  
-    Err  1001 Cannot access resource.  
-    Err  2014 Resource not found.  
-    Acc  10/03/2009User1      Administrator.  
-    Err  0323 Warning: Invalid access attempt.  
-    Acc  10/03/2009User2      Standard user.  
-    Acc  10/04/2009User2      Standard user.  
-    ```  
-  
-2. Définissez le format attendu et le format utilisé quand une erreur est signalée. La dernière entrée dans chaque tableau étant -1, le dernier champ est supposé avoir une largeur variable. Cela se produit quand la dernière entrée du tableau est inférieure ou égale à 0.  
-  
-     [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]  
-  
-3. Créez un nouvel objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> en définissant la largeur et le format.  
-  
-     [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]  
-  
-4. Parcourez les lignes en boucle, en testant le format avant la lecture.  
-  
-     [!code-vb[VbFileIORead#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#6)]  
-  
-5. Écrivez les erreurs dans la console.  
-  
-     [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]  
-  
-## <a name="example"></a>Exemple  
- Voici l’exemple complet qui lit le fichier `testfile.txt`.  
-  
- [!code-vb[VbFileIORead#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#8)]  
-  
-## <a name="robust-programming"></a>Programmation fiable  
- Les conditions ci-dessous peuvent générer une exception.  
-  
-- Une ligne ne peut pas être analysée à l’aide du format spécifié (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Le message d’exception spécifie la ligne qui provoque l’exception, tandis que la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> est assignée au texte contenu dans la ligne.  
-  
-- Le fichier spécifié n’existe pas (<xref:System.IO.FileNotFoundException>).  
-  
-- Situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.Security.SecurityException>).  
-  
-- Le chemin est trop long (<xref:System.IO.PathTooLongException>).  
-  
-- L’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.UnauthorizedAccessException>).  
-  
+- Une ligne ne peut pas être analysée à l’aide du format spécifié (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Le message d’exception spécifie la ligne qui provoque l’exception, tandis que la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> est assignée au texte contenu dans la ligne.
+- Le fichier spécifié n’existe pas (<xref:System.IO.FileNotFoundException>).
+- Situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.Security.SecurityException>).
+- Le chemin est trop long (<xref:System.IO.PathTooLongException>).
+- L’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.UnauthorizedAccessException>).
+
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=nameWithType>
@@ -76,6 +75,6 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyse
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.EndOfData%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.TextFieldType%2A>
-- [Guide pratique pour lire des fichiers texte délimités par des virgules](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
-- [Guide pratique pour lire des fichiers texte de largeur fixe](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
-- [Analyse des fichiers texte avec l’objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [Guide pratique pour lire des fichiers texte délimités par des virgules](how-to-read-from-comma-delimited-text-files.md)
+- [Guide pratique pour lire des fichiers texte de largeur fixe](how-to-read-from-fixed-width-text-files.md)
+- [Analyse des fichiers texte avec l’objet TextFieldParser](parsing-text-files-with-the-textfieldparser-object.md)

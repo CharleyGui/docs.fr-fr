@@ -5,12 +5,12 @@ ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 9617582c79b2278e3a68e7acf84568247b81eca1
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 8090e4565a7e55aaa9cc9939e61eb728a169de8d
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167659"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736870"
 ---
 # <a name="explain-model-predictions-using-permutation-feature-importance"></a>Expliquer les prédictions de modèle à l’aide de la technique PFI (Permutation Feature Importance)
 
@@ -18,7 +18,7 @@ Découvrez comment expliquer les prédictions de modèle Machine Learning ML.NET
 
 Les modèles Machine Learning sont souvent considérés comme des boîtes noires qui prennent des entrées et génèrent une sortie. Les interactions ou étapes intermédiaires entre les caractéristiques qui influent sur la sortie sont rarement comprises. Le machine learning faisant petit à petit son apparition dans les différents aspects de la vie quotidienne, tels que la santé, il est extrêmement important de comprendre pourquoi un modèle Machine Learning prend telle ou telle décision. Par exemple, si les diagnostics sont effectués par un modèle Machine Learning, les professionnels de la santé doivent pouvoir étudier les facteurs qui ont contribué à l’établissement de ces diagnostics. La fourniture du bon diagnostic peut s’avérer importante quant à la possibilité pour le patient de jouir ou non d’une récupération rapide. Ainsi, plus le niveau d’explicabilité d’un modèle est élevé, plus grande est la confiance des professionnels de la santé quand ils acceptent ou rejettent les décisions prises par le modèle.
 
-Différentes techniques sont utilisées pour expliquer les modèles, dont PFI. PFI est une technique utilisée pour expliquer les modèles de classification et de régression, qui s’inspire du [document *Random Forests* de Leo Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)(voir la section 10). Sur un plan général, elle permute aléatoirement les données à raison d’une caractéristique à la fois pour l’ensemble du jeu de données et calcule la diminution de la métrique de performances d’intérêt. Plus le changement est élevé, plus la caractéristique concernée est importante. 
+Différentes techniques sont utilisées pour expliquer les modèles, dont PFI. PFI est une technique utilisée pour expliquer les modèles de classification et de régression inspirés par le [papier de *forêts aléatoires* de Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (voir la section 10). Sur un plan général, elle permute aléatoirement les données à raison d’une caractéristique à la fois pour l’ensemble du jeu de données et calcule la diminution de la métrique de performances d’intérêt. Plus le changement est élevé, plus la caractéristique concernée est importante. 
 
 De plus, les caractéristiques les plus importantes étant ainsi mises en valeur, les générateurs de modèle peuvent se concentrer sur l’utilisation d’une partie des caractéristiques plus significatives qui sont susceptibles de réduire le bruit et la durée de l’entraînement.
 
@@ -26,14 +26,14 @@ De plus, les caractéristiques les plus importantes étant ainsi mises en valeur
 
 Les caractéristiques dans le jeu de données utilisé pour cet échantillon sont indiquées dans les colonnes 1 à 12. L’objectif est de prédire `Price`. 
 
-| Colonne | Fonctionnalité | Description 
+| colonne | Fonctionnalité | Description 
 | --- | --- | --- |
 | 1 | CrimeRate | Taux de criminalité par habitant
 | 2 | ResidentialZones | Zones résidentielles en ville
 | 3 | CommercialZones | Zones non résidentielles en ville
 | 4 | NearWater | Proximité d’une étendue d’eau
 | 5 | ToxicWasteLevels | Niveaux de toxicité (PPM)
-| 6 | AverageRoomNumber | Nombre moyen de pièces par maison
+| 6\. | AverageRoomNumber | Nombre moyen de pièces par maison
 | 7 | HomeAge | Âge de la maison
 | 8 | BusinessCenterDistance | Distance par rapport aux commerces les plus proches
 | 9 | HighwayAccess | Proximité des autoroutes

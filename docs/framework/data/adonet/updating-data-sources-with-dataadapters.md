@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 503863dab1780b896be5d80edac88d13eaa49842
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 4a6e22352a309f9d624c6922abc531cb31a5baf1
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854175"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736688"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Mise à jour des sources de données avec les DataAdapter
 
-La méthode `Update` de l'objet <xref:System.Data.Common.DataAdapter> est appelée pour répercuter les modifications d'un objet <xref:System.Data.DataSet> dans la source de données. La méthode `Update`, comme la méthode `Fill`, prend comme arguments une instance d'un `DataSet` et un objet <xref:System.Data.DataTable> optionnel ou un nom de `DataTable`. L'instance `DataSet` est le `DataSet` qui contient les modifications apportées et le `DataTable` identifie la table de laquelle les modifications doivent être récupérées. Si aucun `DataTable` n'est spécifié, le premier `DataTable` du `DataSet` est utilisé.
+La méthode `Update` de l'objet <xref:System.Data.Common.DataAdapter> est appelée pour répercuter les modifications d'un objet <xref:System.Data.DataSet> dans la source de données. La méthode `Update`, comme la méthode `Fill`, prend comme arguments une instance d’un `DataSet` et un objet <xref:System.Data.DataTable> optionnel ou un nom de `DataTable`. L'instance `DataSet` est le `DataSet` qui contient les modifications apportées et le `DataTable` identifie la table de laquelle les modifications doivent être récupérées. Si aucun `DataTable` n'est spécifié, le premier `DataTable` du `DataSet` est utilisé.
 
 Lorsque vous appelez la méthode `Update`, le `DataAdapter` analyse les modifications apportées et exécute la commande appropriée (INSERT, UPDATE ou DELETE). Lorsque le `DataAdapter` rencontre une modification apportée à un objet <xref:System.Data.DataRow>, il utilise la propriété <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, ou <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> pour traiter la modification. Cela vous permet d'optimiser les performances de votre application ADO.NET en spécifiant la syntaxe de commande au moment du design et, si possible, par le biais de l'utilisation de procédures stockées. Vous devez explicitement définir les commandes avant d'appeler la méthode `Update`. Si la méthode `Update` est appelée et si la commande appropriée n'existe pas pour une mise à jour particulière (par exemple, pas de `DeleteCommand` pour les lignes supprimées), une exception est levée.
 
@@ -84,7 +84,7 @@ adapter.Update(table.Select(Nothing, Nothing, _
   DataViewRowState.ModifiedCurrent))
 
 ' Finally, process inserts.
-dataAdapater.Update(table.Select(Nothing, Nothing, _
+adapter.Update(table.Select(Nothing, Nothing, _
   DataViewRowState.Added))
 ```
 

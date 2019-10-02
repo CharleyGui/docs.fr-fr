@@ -2,12 +2,12 @@
 title: Attributs
 description: Découvrez comment F# les attributs permettent d’appliquer des métadonnées à une construction de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: 08d50f7f57b6c0a81221e8f635f77f67750d0ff9
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 17822891109b8e8eaa10044f82f0b872ce9d30b5
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71082938"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736810"
 ---
 # <a name="attributes"></a>Attributs
 
@@ -25,13 +25,13 @@ Dans la syntaxe précédente, la *cible* est facultative et, si elle est présen
 
 L' *attribut-Name* fait référence au nom (éventuellement qualifié avec des espaces de noms) d’un type d’attribut valide, avec ou `Attribute` sans le suffixe habituellement utilisé dans les noms de types d’attributs. Par exemple, le type `ObsoleteAttribute` peut être abrégé en juste `Obsolete` dans ce contexte.
 
-Les *arguments* sont les arguments du constructeur pour le type d’attribut. Si un attribut a un constructeur par défaut, la liste d’arguments et les parenthèses peuvent être omises. Les attributs prennent en charge les arguments positionnels et les arguments nommés. Les *arguments positionnels* sont des arguments utilisés dans l’ordre dans lequel ils apparaissent. Les arguments nommés peuvent être utilisés si l’attribut a des propriétés publiques. Vous pouvez les définir à l’aide de la syntaxe suivante dans la liste d’arguments.
+Les *arguments* sont les arguments du constructeur pour le type d’attribut. Si un attribut a un constructeur sans paramètre, la liste d’arguments et les parenthèses peuvent être omises. Les attributs prennent en charge les arguments positionnels et les arguments nommés. Les *arguments positionnels* sont des arguments utilisés dans l’ordre dans lequel ils apparaissent. Les arguments nommés peuvent être utilisés si l’attribut a des propriétés publiques. Vous pouvez les définir à l’aide de la syntaxe suivante dans la liste d’arguments.
 
 ```fsharp
 property-name = property-value
 ```
 
-Ces initialisations de propriété peuvent être dans n’importe quel ordre, mais elles doivent suivre tous les arguments positionnels. Voici un exemple d’un attribut qui utilise des arguments positionnels et des initialisations de propriété.
+Ces initialisations de propriété peuvent être dans n’importe quel ordre, mais elles doivent suivre tous les arguments positionnels. Voici un exemple d’un attribut qui utilise des arguments positionnels et des initialisations de propriétés :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6202.fs)]
 
@@ -41,13 +41,13 @@ Les attributs sont une construction de programmation .NET qui permet à un objet
 
 Les attributs F# dans peuvent être appliqués aux constructions de programmation suivantes : fonctions, méthodes, assemblys, modules, types (classes, enregistrements, structures, interfaces, délégués, énumérations, unions, etc.), constructeurs, propriétés, champs, paramètres, paramètres de type et valeurs de retour. Les attributs ne sont pas `let` autorisés sur les liaisons dans des classes, des expressions ou des expressions de flux de travail.
 
-En règle générale, la déclaration d’attribut apparaît directement avant la déclaration de la cible de l’attribut. Plusieurs déclarations d’attribut peuvent être utilisées ensemble, comme suit.
+En règle générale, la déclaration d’attribut apparaît directement avant la déclaration de la cible de l’attribut. Plusieurs déclarations d’attribut peuvent être utilisées ensemble, comme suit :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6603.fs)]
 
 Vous pouvez interroger des attributs au moment de l’exécution à l’aide de la réflexion .NET.
 
-Vous pouvez déclarer plusieurs attributs individuellement, comme dans l’exemple de code précédent, ou vous pouvez les déclarer en un seul jeu de crochets si vous utilisez un point-virgule pour séparer les attributs et les constructeurs individuels, comme indiqué ici.
+Vous pouvez déclarer plusieurs attributs individuellement, comme dans l’exemple de code précédent, ou vous pouvez les déclarer dans un jeu de crochets si vous utilisez un point-virgule pour séparer les attributs et les constructeurs individuels, comme suit :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6604.fs)]
 
@@ -55,13 +55,13 @@ Les attributs généralement rencontrés incluent `Obsolete` l’attribut, les a
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6605.fs)]
 
-Pour les cibles `assembly` d’attribut `module`et, vous appliquez les attributs à une liaison de `do` niveau supérieur dans votre assembly. Vous pouvez inclure le mot `assembly` ou `module` dans la déclaration d’attribut, comme suit.
+Pour les cibles `assembly` d’attribut `module`et, vous appliquez les attributs à une liaison de `do` niveau supérieur dans votre assembly. Vous pouvez inclure le mot `assembly` ou `module` dans la déclaration d’attribut, comme suit :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6606.fs)]
 
 Si vous omettez la cible d’attribut pour un attribut appliqué à `do` une liaison, F# le compilateur tente de déterminer la cible d’attribut qui est logique pour cet attribut. De nombreuses classes d’attributs ont un attribut `System.AttributeUsageAttribute` de type qui contient des informations sur les cibles possibles prises en charge pour cet attribut. Si le `System.AttributeUsageAttribute` indique que l’attribut prend en charge les fonctions en tant que cibles, l’attribut est pris pour s’appliquer au point d’entrée principal du programme. Si le `System.AttributeUsageAttribute` indique que l’attribut prend en charge les assemblys en tant que cibles, le compilateur prend l’attribut à appliquer à l’assembly. La plupart des attributs ne s’appliquent pas aux fonctions et aux assemblys, mais dans les cas où ils le font, l’attribut est pris pour s’appliquer à la fonction principale du programme. Si la cible de l’attribut est spécifiée explicitement, l’attribut est appliqué à la cible spécifiée.
 
-Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement la cible de l’attribut, les valeurs valides pour la *cible* dans un attribut sont indiquées dans le tableau suivant, ainsi que des exemples d’utilisation.
+Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement la cible de l’attribut, les valeurs valides pour *target* dans un attribut, ainsi que des exemples d’utilisation, sont indiquées dans le tableau suivant :
 
 <table>
   <tr>
@@ -77,7 +77,7 @@ Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement 
     <td><pre lang="fsharp"><code>let function1 x : [&lt;return: Obsolete&gt;] int = x + 1</code></pre></td> 
   </tr>
   <tr>
-    <td>field</td>
+    <td>champ</td>
     <td><pre lang="fsharp"><code>[&lt;field: DefaultValue&gt;] val mutable x: int</code></pre></td> 
   </tr>
   <tr>

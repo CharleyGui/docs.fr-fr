@@ -18,46 +18,46 @@ ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 560597770d667cf8c7668bf2338ac4bac3eb192f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c6f33023d747ce20964c7cb83a66d6764b6030cd
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968574"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736612"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Constructions d'alternative dans les expressions régulières
-<a name="top"></a> Les constructions d'alternative modifient une expression régulière pour permettre la correspondance de type inclusif/exclusif ou conditionnelle. .NET prend en charge trois constructions d’alternative :  
-  
-- [Utilisation des critères spéciaux avec &#124;](#Either_Or)  
-  
-- [Correspondance conditionnelle avec (?(expression)oui&#124;non)](#Conditional_Expr)  
-  
-- [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group)  
-  
-<a name="Either_Or"></a>   
-## <a name="pattern-matching-with-124"></a>Utilisation des critères spéciaux avec &#124;  
- Vous pouvez utiliser la barre verticale (`|`) pour mettre en correspondance un modèle d’une série, dans laquelle le caractère `|` sépare chaque modèle.  
-  
- Tout comme la classe de caractères positive, le caractère `|` peut être utilisé pour mettre en correspondance n’importe quel nombre de caractères uniques. L’exemple suivant utilise une classe de caractères positive et des critères spéciaux de type inclusif/exclusif avec le caractère `|` pour trouver des occurrences des mots « gray » ou « grey » dans une chaîne. Dans ce cas, le caractère `|` produit une expression régulière qui est plus détaillée.  
-  
- [!code-csharp[RegularExpressions.Language.Alternation#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation1.cs#1)]
- [!code-vb[RegularExpressions.Language.Alternation#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation1.vb#1)]  
-  
- L’expression régulière qui utilise le caractère `|` , `\bgr(a|e)y\b`, est interprétée comme indiqué dans le tableau suivant.  
-  
+
+Les constructions d'alternative modifient une expression régulière pour permettre la correspondance de type inclusif/exclusif ou conditionnelle. .NET prend en charge trois constructions d’alternative :
+
+- [Utilisation des critères spéciaux avec &#124;](#Either_Or)
+- [Correspondance conditionnelle avec (?(expression)oui&#124;non)](#Conditional_Expr)
+- [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group)
+
+<a name="Either_Or"></a>
+## <a name="pattern-matching-with-124"></a>Utilisation des critères spéciaux avec &#124;
+
+Vous pouvez utiliser la barre verticale (`|`) pour mettre en correspondance un modèle d’une série, dans laquelle le caractère `|` sépare chaque modèle.
+
+Tout comme la classe de caractères positive, le caractère `|` peut être utilisé pour mettre en correspondance n’importe quel nombre de caractères uniques. L’exemple suivant utilise une classe de caractères positive et des critères spéciaux de type inclusif/exclusif avec le caractère `|` pour trouver des occurrences des mots « gray » ou « grey » dans une chaîne. Dans ce cas, le caractère `|` produit une expression régulière qui est plus détaillée.
+
+[!code-csharp[RegularExpressions.Language.Alternation#1](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation1.cs#1)]
+[!code-vb[RegularExpressions.Language.Alternation#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation1.vb#1)]
+
+L’expression régulière qui utilise le caractère `|`, `\bgr(a|e)y\b`, est interprétée comme indiqué dans le tableau suivant :
+
 |Motif|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`gr`|Mettre en correspondance les caractères « gr ».|  
 |<code>(a&#124;e)</code>|Mettre en correspondance un « a » ou un « e ».|  
 |`y\b`|Mettre en correspondance un « y » à la limite d'un mot.|  
-  
- Le caractère `|` peut également être utilisé pour effectuer une correspondance de type inclusif/exclusif avec plusieurs caractères ou sous-expressions, qui peuvent inclure toute combinaison de caractère littéraux et éléments de langage d’expressions régulières. (La classe de caractères ne fournit pas cette fonctionnalité.) L’exemple suivant utilise le caractère `|` pour extraire un numéro de sécurité sociale (SSN) américain, qui est un nombre de 9 chiffres au format *ddd*-*dd*-*dddd*, ou un numéro d’identification de l’employeur (EIN) américain, qui est un nombre de 9 chiffres au format *dd*-*ddddddd*.  
-  
- [!code-csharp[RegularExpressions.Language.Alternation#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
- [!code-vb[RegularExpressions.Language.Alternation#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
-  
- L'expression régulière `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprétée comme indiqué dans le tableau suivant.  
+
+Le caractère `|` peut également être utilisé pour effectuer une correspondance de type inclusif/exclusif avec plusieurs caractères ou sous-expressions, qui peuvent inclure toute combinaison de caractère littéraux et éléments de langage d’expressions régulières. (La classe de caractères ne fournit pas cette fonctionnalité.) L’exemple suivant utilise le caractère `|` pour extraire un numéro de sécurité sociale (SSN) américain, qui est un nombre de 9 chiffres au format *ddd*-*dd*-*dddd*, ou un numéro d’identification de l’employeur (EIN) américain, qui est un nombre de 9 chiffres au format *dd*-*ddddddd*.
+
+[!code-csharp[RegularExpressions.Language.Alternation#2](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
+[!code-vb[RegularExpressions.Language.Alternation#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
+
+L’expression régulière `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprétée comme indiqué dans le tableau suivant :
   
 |Motif|Description|  
 |-------------|-----------------|  
@@ -65,30 +65,29 @@ ms.locfileid: "69968574"
 |<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Mettre en correspondance l'un ou l'autre des éléments suivants : deux chiffres décimaux suivis d'un trait d'union suivi de sept chiffres décimaux, ou alors trois chiffres décimaux, un trait d'union, deux chiffres décimaux, un autre trait d'union et quatre chiffres décimaux.|  
 |`\d`|Terminer la correspondance à la limite d'un mot.|  
   
- [Retour au début](#top)  
-  
 <a name="Conditional_Expr"></a>   
-## <a name="conditional-matching-with-an-expression"></a>Correspondance conditionnelle avec une expression  
- Cet élément de langage tente de mettre en correspondance un modèle parmi deux fournis selon qu'il parvient ou non à mettre en correspondance un modèle initial. Sa syntaxe est la suivante :  
-  
- `(?(` *expression* `)` *oui* `|` *non* `)`  
-  
- où *expression* est le modèle initial à faire correspondre, *oui* est le modèle à faire correspondre si l' *expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si l' *expression* n'est pas mise en correspondance. Le moteur d'expressions régulières traite *expression* comme une assertion de largeur nulle ; c'est-à-dire que le moteur d'expressions régulières n'avance pas dans le flux d'entrée après avoir évalué l' *expression*. Par conséquent, cette construction est équivalente à la suivante :  
-  
- `(?(?=` *expression* `)` *oui* `|` *non* `)`  
-  
- où `(?=`*expression*`)` est une construction d'assertion de largeur nulle. (Pour plus d'informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète *l’expression* comme une ancre (assertion de largeur nulle), *l’expression* doit être soit une assertion de largeur nulle (pour plus d’informations, consultez [Ancres](../../../docs/standard/base-types/anchors-in-regular-expressions.md)), soit une sous-expression qui est également contenue dans *oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui*.  
+## <a name="conditional-matching-with-an-expression"></a>Correspondance conditionnelle avec une expression
+
+Cet élément de langage tente de mettre en correspondance un modèle parmi deux fournis selon qu'il parvient ou non à mettre en correspondance un modèle initial. Sa syntaxe est la suivante :  
+
+`(?(` *expression* `)` *oui* `|` *non* `)`
+
+où *expression* est le modèle initial à faire correspondre, *oui* est le modèle à faire correspondre si l' *expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si l' *expression* n'est pas mise en correspondance. Le moteur d'expressions régulières traite *expression* comme une assertion de largeur nulle ; c'est-à-dire que le moteur d'expressions régulières n'avance pas dans le flux d'entrée après avoir évalué l' *expression*. Par conséquent, cette construction est équivalente à la suivante :
+
+`(?(?=` *expression* `)` *oui* `|` *non* `)`
+
+où `(?=`*expression*`)` est une construction d'assertion de largeur nulle. (Pour plus d'informations, consultez [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète *l’expression* comme une ancre (assertion de largeur nulle), *l’expression* doit être soit une assertion de largeur nulle (pour plus d’informations, consultez [Ancres](anchors-in-regular-expressions.md)), soit une sous-expression qui est également contenue dans *oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui* .  
   
 > [!NOTE]
-> Si l’ *expression*est un groupe de capture nommé ou numéroté, la construction alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
+> Si l’*expression* est un groupe de capture nommé ou numéroté, la construction d’alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
   
- L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise la mise en correspondance conditionnelle pour déterminer si les trois premiers caractères après une limite de mot se composent de deux chiffres suivis d'un trait d'union. Si c'est le cas, il tente de mettre en correspondance un numéro d'identification de l'employeur (EIN) américain. Si ce n'est pas le cas, il tente de mettre en correspondance un numéro de sécurité sociale (SSN) américain.  
-  
- [!code-csharp[RegularExpressions.Language.Alternation#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation3.cs#3)]
- [!code-vb[RegularExpressions.Language.Alternation#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation3.vb#3)]  
-  
- Le modèle d'expression régulière `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant.  
-  
+L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise la mise en correspondance conditionnelle pour déterminer si les trois premiers caractères après une limite de mot se composent de deux chiffres suivis d'un trait d'union. Si c'est le cas, il tente de mettre en correspondance un numéro d'identification de l'employeur (EIN) américain. Si ce n'est pas le cas, il tente de mettre en correspondance un numéro de sécurité sociale (SSN) américain.
+
+[!code-csharp[RegularExpressions.Language.Alternation#3](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation3.cs#3)]
+[!code-vb[RegularExpressions.Language.Alternation#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation3.vb#3)]
+
+Le modèle d’expression régulière `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant :
+
 |Motif|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
@@ -96,30 +95,29 @@ ms.locfileid: "69968574"
 |`\d{2}-\d{7}`|Si le modèle précédent correspond, mettre en correspondance deux chiffres suivis d'un trait d'union suivi de sept chiffres.|  
 |`\d{3}-\d{2}-\d{4}`|Si le modèle ne correspond pas, faire correspondre trois chiffres décimaux, un trait d'union, deux chiffres décimaux, un autre trait d'union et quatre chiffres décimaux.|  
 |`\b`|Mettre en correspondance la limite d'un mot.|  
-  
- [Retour au début](#top)  
-  
-<a name="Conditional_Group"></a>   
-## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Correspondance conditionnelle selon un groupe capturé valide  
- Cet élément de langage essaie de faire correspondre l'un de deux modèles selon qu'il peut correspondre à un groupe capturé spécifié. Sa syntaxe est la suivante :  
-  
- `(?(` *name* `)` *oui* `|` *non* `)`  
-  
- ou  
-  
- `(?(` *nombre* `)` *oui* `|` *non* `)`  
-  
- où *nom* est le nom et *numéro* est le numéro d'un groupe de capture, *oui* est l'expression à faire correspondre si *nom* ou *nombre* a une correspondance et *non* est l'expression facultative à faire correspondre dans le cas contraire.  
-  
- Si le *nom* ne correspond pas au nom d'un groupe de capture utilisé dans le modèle d'expression régulière, la construction alternative est interprétée comme un test d'expression, comme expliqué dans la section précédente. En général, cela signifie que l' *expression* prend la valeur `false`. Si le *nombre* ne correspond pas à un groupe de capture numéroté utilisé dans le modèle d'expression régulière, le moteur des expressions régulières lève une <xref:System.ArgumentException>.  
-  
- L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise un groupe de capture nommé `n2` qui se compose de deux chiffres suivis d'un trait d'union. La construction d'alternative tests si ce groupe de capture a été mis en correspondance dans la chaîne d'entrée. Si c'est le cas, la construction alternative essaie de mettre en correspondance les sept derniers chiffres d'un numéro d'identification de l'employeur (EIN) américain. Si ce n'est le cas, il essaie de faire correspondre un numéro de sécurité sociale (SSN) américain.  
-  
- [!code-csharp[RegularExpressions.Language.Alternation#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation4.cs#4)]
- [!code-vb[RegularExpressions.Language.Alternation#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation4.vb#4)]  
-  
- Le modèle d'expression régulière `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant.  
-  
+
+<a name="Conditional_Group"></a>
+## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Correspondance conditionnelle selon un groupe capturé valide
+
+Cet élément de langage essaie de faire correspondre l'un de deux modèles selon qu'il peut correspondre à un groupe capturé spécifié. Sa syntaxe est la suivante :
+
+`(?(` *name* `)` *oui* `|` *non* `)`
+
+ou
+
+`(?(` *nombre* `)` *oui* `|` *non* `)`
+
+où *nom* est le nom et *numéro* est le numéro d'un groupe de capture, *oui* est l'expression à faire correspondre si *nom* ou *nombre* a une correspondance et *non* est l'expression facultative à faire correspondre dans le cas contraire.
+
+Si le *nom* ne correspond pas au nom d'un groupe de capture utilisé dans le modèle d'expression régulière, la construction alternative est interprétée comme un test d'expression, comme expliqué dans la section précédente. En général, cela signifie que l' *expression* prend la valeur `false`. Si le *nombre* ne correspond pas à un groupe de capture numéroté utilisé dans le modèle d'expression régulière, le moteur des expressions régulières lève une <xref:System.ArgumentException>.
+
+L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise un groupe de capture nommé `n2` qui se compose de deux chiffres suivis d'un trait d'union. La construction d'alternative tests si ce groupe de capture a été mis en correspondance dans la chaîne d'entrée. Si c'est le cas, la construction alternative essaie de mettre en correspondance les sept derniers chiffres d'un numéro d'identification de l'employeur (EIN) américain. Si ce n'est le cas, il essaie de faire correspondre un numéro de sécurité sociale (SSN) américain.
+
+[!code-csharp[RegularExpressions.Language.Alternation#4](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation4.cs#4)]
+[!code-vb[RegularExpressions.Language.Alternation#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation4.vb#4)]
+
+Le modèle d’expression régulière `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant :
+
 |Motif|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
@@ -128,12 +126,12 @@ ms.locfileid: "69968574"
 |`\d{7}`|Si `n2` a été mis en correspondance, faites correspondre sept chiffres décimaux.|  
 |<code>&#124;\d{3}-\d{2}-\d{4}</code>|Si `n2` ne correspondait pas, faites correspondre trois chiffres décimaux, un trait d'union, deux chiffres décimaux, un autre trait d'union et quatre chiffres décimaux.|  
 |`\b`|Mettre en correspondance la limite d'un mot.|  
-  
- Une variation de cet exemple qui utilise un groupe numéroté au lieu d'un groupe nommé est illustrée dans l'exemple suivant. Son modèle d'expression régulière est `\b(\d{2}-)?(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`.  
-  
- [!code-csharp[RegularExpressions.Language.Alternation#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
- [!code-vb[RegularExpressions.Language.Alternation#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]  
-  
+
+Une variation de cet exemple qui utilise un groupe numéroté au lieu d'un groupe nommé est illustrée dans l'exemple suivant. Son modèle d'expression régulière est `\b(\d{2}-)?(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`.
+
+[!code-csharp[RegularExpressions.Language.Alternation#5](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
+[!code-vb[RegularExpressions.Language.Alternation#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)

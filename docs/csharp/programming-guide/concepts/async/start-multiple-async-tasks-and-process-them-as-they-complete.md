@@ -2,12 +2,12 @@
 title: Traiter les tâches asynchrones terminées
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 464e6be108eef86a023a0bad225d2ad12bfb2c3e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: b618fd6bf80551231d2b285fd0e8aef688d00d93
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926747"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736729"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)
 
@@ -23,25 +23,25 @@ L’exemple suivant utilise une requête pour créer une collection de tâches. 
 Téléchargez l’intégralité des projets Windows Presentation Foundation (WPF) à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async  : Réglage précis de votre application), puis suivez ces étapes.
 
 > [!TIP]
-> Si vous ne souhaitez pas télécharger le projet, vous pouvez passer en revue le fichier MainWindow.xaml.cs à la fin de cette rubrique à la place.
+> Si vous ne souhaitez pas télécharger le projet, vous pouvez consulter le fichier *MainWindow.Xaml.cs* à la fin de cette rubrique.
 
-1. Extrayez les fichiers que vous avez téléchargés à partir du fichier .zip, puis démarrez Visual Studio.
+1. Extrayez les fichiers que vous avez téléchargés à partir du fichier *. zip* , puis démarrez Visual Studio.
 
 2. Dans la barre de menus, choisissez **Fichier** > **Ouvrir** > **Projet/Solution**.
 
-3. Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez téléchargé, puis ouvrez le fichier de solution (.sln) pour AsyncFineTuningCS.
+3. Dans la boîte de dialogue **ouvrir un projet** , ouvrez le dossier qui contient l’exemple de code que vous avez téléchargé, puis ouvrez le fichier solution ( *. sln*) pour *AsyncFineTuningCS*/*AsyncFineTuningVB*.
 
 4. Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour le projet **ProcessTasksAsTheyFinish**, puis choisissez **Définir comme projet de démarrage**.
 
-5. Choisissez la touche **F5** pour exécuter le programme (ou appuyez sur **Ctrl**+**F5** pour exécuter le programme sans le déboguer).
+5. Appuyez sur la touche <kbd>F5</kbd> pour exécuter le programme avec débogage ou appuyez sur <kbd>CTRL</kbd>+ touches<kbd>F5</kbd> pour exécuter le programme sans le déboguer.
 
 6. Exécutez le projet plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.
 
 ## <a name="create-the-program-yourself"></a>Créer le programme vous-même
 
-Cet exemple ajoute le code développé dans [Annuler les tâches Async restantes lorsque l’une d’elles est terminée (C#)](./cancel-remaining-async-tasks-after-one-is-complete.md) et utilise la même interface utilisateur.
+Cet exemple ajoute le code développé dans [Annuler les tâches Async restantes lorsque l’une d’elles est terminée (C#)](cancel-remaining-async-tasks-after-one-is-complete.md) et utilise la même interface utilisateur.
 
-Pour générer l’exemple vous-même, pas à pas, suivez les instructions de la section [Téléchargement de l’exemple](./cancel-remaining-async-tasks-after-one-is-complete.md#downloading-the-example), mais choisissez **CancelAfterOneTask** comme projet de démarrage. Ajoutez les modifications de cette rubrique à la méthode `AccessTheWebAsync` dans ce projet. Les modifications sont marquées par des astérisques.
+Pour générer l’exemple vous-même, pas à pas, suivez les instructions de la section [Téléchargement de l’exemple](cancel-remaining-async-tasks-after-one-is-complete.md#downloading-the-example), mais choisissez **CancelAfterOneTask** comme projet de démarrage. Ajoutez les modifications de cette rubrique à la méthode `AccessTheWebAsync` dans ce projet. Les modifications sont marquées par des astérisques.
 
 Le projet **CancelAfterOneTask** inclut déjà une requête qui, lorsqu’elle est exécutée, crée une collection de tâches. Chaque appel à `ProcessURLAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601>, où `TResult` est un entier :
 
@@ -49,7 +49,7 @@ Le projet **CancelAfterOneTask** inclut déjà une requête qui, lorsqu’elle e
 IEnumerable<Task<int>> downloadTasksQuery = from url in urlList select ProcessURL(url, client, ct);
 ```
 
-Dans le fichier MainWindow.xaml.cs du projet, apportez les modifications suivantes à la méthode `AccessTheWebAsync`.
+Dans le fichier *MainWindow.Xaml.cs* du projet, apportez les modifications suivantes à la méthode `AccessTheWebAsync` :
 
 - Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> au lieu de <xref:System.Linq.Enumerable.ToArray%2A>.
 
@@ -71,7 +71,7 @@ Dans le fichier MainWindow.xaml.cs du projet, apportez les modifications suivant
         downloadTasks.Remove(firstFinishedTask);
         ```
 
-    3. Elle attend `firstFinishedTask`, qui est retourné par un appel à `ProcessURLAsync`. La variable `firstFinishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TReturn` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant.
+    3. Elle attend `firstFinishedTask`, qui est retourné par un appel à `ProcessURLAsync`. La variable `firstFinishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TReturn` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant. Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans la `AggregateException`, contrairement à la lecture de la propriété `Result` qui lèvera la `AggregateException`.
 
         ```csharp
         int length = await firstFinishedTask;
@@ -85,7 +85,7 @@ Exécutez le programme plusieurs fois pour vérifier que les longueurs télécha
 
 ## <a name="complete-example"></a>Exemple complet
 
-Le code suivant est le texte complet du fichier MainWindow.xaml.cs de l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple. Notez aussi que vous devez ajouter une référence pour <xref:System.Net.Http>.
+Le code suivant est le texte complet du fichier *MainWindow.Xaml.cs* pour l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple. Notez aussi que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
 Vous pouvez télécharger le projet à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async : Réglage précis de votre application).
 
@@ -228,6 +228,6 @@ namespace ProcessTasksAsTheyFinish
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [Ajuster une application Async (C#)](./fine-tuning-your-async-application.md)
-- [Programmation asynchrone avec Async et Await (C#)](./index.md)
+- [Ajuster une application Async (C#)](fine-tuning-your-async-application.md)
+- [Programmation asynchrone avec Async et Await (C#)](index.md)
 - [Exemple Async : Réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

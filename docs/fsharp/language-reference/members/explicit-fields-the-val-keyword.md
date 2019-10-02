@@ -2,12 +2,12 @@
 title: 'Champs explicites : Mot clé Val'
 description: En savoir plus F# sur le mot clé’Val', qui est utilisé pour déclarer un emplacement pour stocker une valeur dans un type de classe ou de structure sans initialiser le type.
 ms.date: 05/16/2016
-ms.openlocfilehash: fe339e33dae27ae226022a68dd8247d1ab1994b3
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 2703d9a2734cfda1614a401ec24c6630ec31b2f1
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216482"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736832"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Champs explicites : Mot clé Val
 
@@ -28,19 +28,16 @@ Les champs explicites peuvent être statiques ou non statiques. Le *modificateur
 L’attribut [DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) est requis sur les champs explicites dans les types de classe qui ont un constructeur principal. Cet attribut spécifie que le champ est initialisé à zéro. Le type du champ doit prendre en charge l'initialisation à zéro. Un type prend en charge l'initialisation à zéro s'il s'agit d'un type suivant :
 
 - Type primitif qui a une valeur zéro.
-
 - Type qui prend en charge une valeur null, en tant que valeur normale, en tant que valeur anormale ou en tant que représentation d'une valeur. Sont inclus les classes, les tuples, les enregistrements, les fonctions, les interfaces, les types référence .NET, le type `unit` et les types union discriminée.
-
 - Type valeur .NET.
-
 - Structure dont les champs prennent tous en charge une valeur zéro par défaut.
 
 Par exemple, un champ immuable appelé `someField` a un champ de stockage dans la représentation compilée .NET portant le nom `someField@` et vous accédez à la valeur stockée à l'aide d'une propriété nommée `someField`.
 
 Pour un champ mutable, la représentation compilée .NET est un champ .NET.
 
->[!WARNING]
->L’espace de `System.ComponentModel` noms .NET Framework contient un attribut qui porte le même nom. Pour plus d'informations sur cet attribut, consultez `System.ComponentModel.DefaultValueAttribute`.
+> [!WARNING]
+> L’espace de `System.ComponentModel` noms .NET Framework contient un attribut qui porte le même nom. Pour plus d'informations sur cet attribut, consultez <xref:System.ComponentModel.DefaultValueAttribute>.
 
 Le code suivant illustre l'utilisation de champs explicites et, à titre de comparaison, d'une liaison `let` dans une classe qui a un constructeur principal. Notez que le champ lié à `let``myInt1` est privé. Quand le champ lié à `let``myInt1` est référencé à partir d'une méthode membre, l'auto-identificateur `this` n'est pas requis. Mais quand vous référencez les champs explicites `myInt2` et `myString`, l'auto-identificateur est requis.
 
@@ -59,7 +56,7 @@ Le code suivant illustre l'utilisation de champs explicites dans une classe qui 
 
 Le résultat est `35 22`.
 
-Le code suivant illustre l'utilisation de champs explicites dans une structure. Comme une structure est un type valeur, elle a automatiquement un constructeur par défaut qui définit les valeurs de ses champs à zéro. Ainsi, l'attribut `DefaultValue` n'est pas requis.
+Le code suivant illustre l'utilisation de champs explicites dans une structure. Comme une structure est un type valeur, elle a automatiquement un constructeur sans paramètre qui définit les valeurs de ses champs à zéro. Ainsi, l'attribut `DefaultValue` n'est pas requis.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6703.fs)]
 
