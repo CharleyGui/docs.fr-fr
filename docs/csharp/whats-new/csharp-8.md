@@ -11,7 +11,7 @@ ms.locfileid: "71396025"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# :
+C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au langage C# :
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
@@ -40,7 +40,7 @@ La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des ar
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
-Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct variable suivant :
+Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`. Examinons le struct mutable suivant :
 
 ```csharp
 public struct Point
@@ -87,17 +87,17 @@ Cette fonctionnalité vous permet de spécifier votre intention de conception, a
 
 ## <a name="default-interface-members"></a>Membres d’interface par défaut
 
-Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité du langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Les membres d’interface par défaut activent également des scénarios similaires à une fonctionnalité de langage « caractéristique ».
+Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité de langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Les membres d’interface par défaut activent également des scénarios similaires à une fonctionnalité de langage « caractéristique ».
 
 Les membres d’interface par défaut affectent de nombreux scénarios et éléments de langage. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-members-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
 
 ## <a name="more-patterns-in-more-places"></a>Ajout de filtrage par motif à différents endroits
 
-Le **filtrage par motif** offre des outils permettant de produire des fonctionnalités dépendantes de la forme sur des types de données liés mais différents. C# 7.0 a introduit la syntaxe des motifs de type et des modèles de constantes avec l’expression [`is`](../language-reference/keywords/is.md) et l’instruction [`switch`](../language-reference/keywords/switch.md). Ces fonctionnalités représentaient les premières étapes provisoires de prise en charge de paradigmes de programmation distinguant données et fonctionnalités. Alors que se secteur progresse vers plus de microservices et autres architectures cloud, d’autres outils sont nécessaires pour le langage.
+Le **filtrage par motif** offre des outils permettant de produire des fonctionnalités dépendantes de la forme sur des types de données liés mais différents. C# 7.0 a introduit la syntaxe des motifs de type et des motifs de constante avec l’expression [`is`](../language-reference/keywords/is.md) et l’instruction [`switch`](../language-reference/keywords/switch.md). Ces fonctionnalités représentaient les premières étapes provisoires de prise en charge de paradigmes de programmation distinguant données et fonctionnalités. Alors que se secteur progresse vers plus de microservices et autres architectures cloud, d’autres outils sont nécessaires pour le langage.
 
-C# 8.0 développe ce vocabulaire en offrant la possibilité d’utiliser d’autres expressions de motifs à davantage d’endroits dans le code. Étudiez ces fonctionnalités si vos données et vos fonctionnalités sont séparées. Le filtrage par motif peut être intéressant si vos algorithmes dépendent d’un fait autre que le type de runtime d’un objet. Ces techniques représentent un autre moyen d’exprimer des conceptions.
+C# 8.0 développe ce vocabulaire en offrant la possibilité d’utiliser d’autres expressions de motif à davantage d’endroits dans le code. Étudiez ces fonctionnalités si vos données et vos fonctionnalités sont séparées. Le filtrage par motif peut être intéressant si vos algorithmes dépendent d’un fait autre que le type de runtime d’un objet. Ces techniques représentent un autre moyen d’exprimer des conceptions.
 
-En plus des nouveaux modèles en de nouveaux endroits, C# 8.0 ajoute des **filtrage récursifs**. Le résultat d’une expression de motif est une expression. Un modèle récursif constitue simplement une expression de modèle appliquée à la sortie d’une autre expression de modèle.
+En plus des nouveaux motifs en de nouveaux endroits, C# 8.0 ajoute des **motifs récursifs**. Le résultat d’une expression de motif est une expression. Un motif récursif constitue simplement une expression de motif appliquée à la sortie d’une autre expression de motif.
 
 ### <a name="switch-expressions"></a>Expressions switch
 
@@ -116,7 +116,7 @@ public enum Rainbow
 }
 ```
 
-Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RGB avec la méthode suivante, qui contient une expression switch :
+Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RVB avec la méthode suivante, qui contient une expression switch :
 
 ```csharp
 public static RGBColor FromRainbow(Rainbow colorBand) =>
@@ -137,7 +137,7 @@ Plusieurs améliorations ont ici été apportées à la syntaxe :
 
 - La variable se situe avant le mot clé `switch`. Ce nouvel ordre permet de distinguer visuellement l’expression switch de l’instruction switch.
 - Les éléments `case` et `:` sont remplacés par `=>`, plus concis et plus intuitif.
-- Le cas `default` est remplacé par un élément ignoré `_`.
+- Le cas `default` est remplacé par un discard `_`.
 - Les corps sont des expressions et non des instructions.
 
 Comparez cela avec le code équivalent utilisant l’instruction `switch` classique :
@@ -252,7 +252,7 @@ static Quadrant GetQuadrant(Point point) => point switch
 };
 ```
 
-L'élément ignoré dans le switch précédent indique une correspondance lorsque soit `x`, soit `y` est égal à 0, mais pas les deux. Une expression switch doit produire une valeur ou, si aucun des cas ne correspond, lever une exception. Le compilateur génère un avertissement si tous les cas possibles ne sont pas couverts dans l’expression switch.
+Le modèle discard dans le switch précédent indique une correspondance lorsque soit `x`, soit `y` est égal à 0, mais pas les deux. Une expression switch doit produire une valeur ou, si aucun des cas ne correspond, lever une exception. Le compilateur génère un avertissement si tous les cas possibles ne sont pas couverts dans l’expression switch.
 
 Vous pouvez explorer des techniques de filtrage par motif dans ce [tutoriel avancé sur le filtrage par motif](../tutorials/pattern-matching.md).
 
@@ -451,7 +451,7 @@ Pour explorer davantage les index et les plages, consultez le tutoriel sur [les 
 
 ## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
 
-C#8.0 introduit l’opérateur d’assignation de fusion Null `??=` . Vous pouvez utiliser l'opérateur `??=`  pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend la valeur `null`.
+C#8.0 introduit l’opérateur d’assignation de fusion Null `??=` . Vous pouvez utiliser l'opérateur `??=` pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande gauche prend la valeur `null`.
 
 ```csharp
 List<int> numbers = null;
@@ -469,7 +469,7 @@ Pour plus d’informations, consultez [les = l’article Operators](../language-
 
 ## <a name="unmanaged-constructed-types"></a>Types construits non managés
 
-Dans C# 7.3 et les versions antérieures, un type construit (un type qui comprend au moins un argument de type) ne peut pas être un [type non managé](../language-reference/builtin-types/unmanaged-types.md). À C# partir de 8,0, un type valeur construit est non managé s’il contient uniquement des champs de types non managés.
+Dans C# 7.3 et les versions antérieures, un type construit (un type qui comprend au moins un argument de type) ne peut pas être un [type non managé](../language-reference/builtin-types/unmanaged-types.md). À partir de C# 8.0, un type valeur construit est non managé s’il contient uniquement des champs de types non managés.
 
 Par exemple, étant donné la définition suivante du type `Coords<T>` générique :
 
@@ -496,7 +496,7 @@ Pour plus d’informations, consultez [types non managés](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
 
-À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser 
+À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
 stackalloc` expression dans d’autres expressions :
 
 ```csharp
@@ -507,4 +507,5 @@ Console.WriteLine(ind);  // output: 1
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
 
-Les unités lexicales `$` et `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) peuvent être dans n'importe quel ordre : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, l'unité lexicale `$` doit apparaître avant `@`.
+L'ordre des unités lexicales `$` et `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) est indifférent : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les versions de C# antérieures, l'unité lexicale `$` doit apparaître avant `@`.
+
