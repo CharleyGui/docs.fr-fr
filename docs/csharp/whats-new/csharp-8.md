@@ -1,5 +1,5 @@
 ---
-title: Nouveautés de C# 8,0- C# Guide
+title: Nouveautés de C# 8.0- C# Guide
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 09/20/2019
 ms.openlocfilehash: d948db0523684c998425bc22ab6fd245d65a8045
@@ -11,15 +11,15 @@ ms.locfileid: "71736697"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-C#8,0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# langage :
+C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au langage C# :
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
-- [Amélioration des critères spéciaux](#more-patterns-in-more-places) :
+- [Amélioration du filtrage par motif](#more-patterns-in-more-places) :
   - [Expressions switch](#switch-expressions)
-  - [Modèles de propriétés](#property-patterns)
-  - [Modèles de tuples](#tuple-patterns)
-  - [Modèles positionnels](#positional-patterns)
+  - [Motifs de propriétés](#property-patterns)
+  - [Motifs de tuples](#tuple-patterns)
+  - [Motifs positionnels](#positional-patterns)
 - [Déclarations using](#using-declarations)
 - [Fonctions locales statiques](#static-local-functions)
 - [Structs ref jetables](#disposable-ref-structs)
@@ -40,7 +40,7 @@ La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des ar
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
-Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct mutable suivant :
+Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`. Examinons le struct mutable suivant :
 
 ```csharp
 public struct Point
@@ -91,13 +91,13 @@ Vous pouvez désormais ajouter des membres aux interfaces et fournir une implém
 
 Les membres d’interface par défaut affectent de nombreux scénarios et éléments de langage. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-members-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
 
-## <a name="more-patterns-in-more-places"></a>Ajout de modèles à différents endroits
+## <a name="more-patterns-in-more-places"></a>Ajout de filtrage par motif à différents endroits
 
-Les **critères spéciaux** offrent des outils permettant de produire des fonctionnalités dépendantes de la forme sur des types de données liés mais différents. C# 7.0 a introduit la syntaxe des modèles de type et des modèles de constantes avec l’expression [`is`](../language-reference/keywords/is.md) et l’instruction [`switch`](../language-reference/keywords/switch.md). Ces fonctionnalités représentaient les premières étapes provisoires de prise en charge de paradigmes de programmation distinguant données et fonctionnalités. Face à la transition du secteur vers de nouveaux microservices et autres architectures cloud, d’autres outils sont nécessaires pour le langage.
+Le **filtrage par motif** offre des outils permettant de produire des fonctionnalités dépendantes de la forme sur des types de données liés mais différents. C# 7.0 a introduit la syntaxe des motifs de type et des motifs de constante avec l’expression [`is`](../language-reference/keywords/is.md) et l’instruction [`switch`](../language-reference/keywords/switch.md). Ces fonctionnalités représentaient les premières étapes provisoires de prise en charge de paradigmes de programmation distinguant données et fonctionnalités. Alors que se secteur progresse vers plus de microservices et autres architectures cloud, d’autres outils sont nécessaires pour le langage.
 
-C# 8.0 développe ce vocabulaire en offrant la possibilité d’utiliser d’autres expressions de modèle à davantage d’endroits dans le code. Étudiez ces fonctionnalités si vos données et vos fonctionnalités sont séparées. Les critères spéciaux peuvent être intéressants si vos algorithmes dépendent d’un fait autre que le type de runtime d’un objet. Ces techniques représentent un autre moyen d’exprimer des conceptions.
+C# 8.0 développe ce vocabulaire en offrant la possibilité d’utiliser d’autres expressions de motif à davantage d’endroits dans le code. Étudiez ces fonctionnalités si vos données et vos fonctionnalités sont séparées. Le filtrage par motif peut être intéressant si vos algorithmes dépendent d’un fait autre que le type de runtime d’un objet. Ces techniques représentent un autre moyen d’exprimer des conceptions.
 
-En plus des nouveaux modèles en de nouveaux endroits, C# 8.0 ajoute des **modèles récursifs**. Le résultat d’une expression de modèle est une expression. Un modèle récursif constitue simplement une expression de modèle appliquée à la sortie d’une autre expression de modèle.
+En plus des nouveaux motifs en de nouveaux endroits, C# 8.0 ajoute des **motifs récursifs**. Le résultat d’une expression de motif est une expression. Un motif récursif constitue simplement une expression de motif appliquée à la sortie d’une autre expression de motif.
 
 ### <a name="switch-expressions"></a>Expressions switch
 
@@ -116,7 +116,7 @@ public enum Rainbow
 }
 ```
 
-Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RVB avec la méthode suivante, qui contient une expression switch :
+Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RVB avec la méthode suivante, qui contient une expression switch :
 
 ```csharp
 public static RGBColor FromRainbow(Rainbow colorBand) =>
@@ -167,9 +167,9 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 }
 ```
 
-### <a name="property-patterns"></a>Modèles de propriétés
+### <a name="property-patterns"></a>Motifs de propriétés
 
-Le **modèle de propriété** permet de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. Ce calcul ne fait pas partie des attributions fondamentales d’une classe `Address`. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise le modèle de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
+Les **motifs de propriété** permettent de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. Ce calcul ne fait pas partie des attributions fondamentales d’une classe `Address`. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise les motifs de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
 
 ```csharp
 public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
@@ -183,11 +183,11 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
     };
 ```
 
-Les critères spéciaux offrent une syntaxe concise pour exprimer cet algorithme.
+Le filtrage par motif offre une syntaxe concise pour exprimer cet algorithme.
 
-### <a name="tuple-patterns"></a>Modèles de tuples
+### <a name="tuple-patterns"></a>Motifs de tuples
 
-Certains algorithmes dépendent de plusieurs entrées. Les **modèles de tuples** permettent de basculer des unes aux autres en fonction de plusieurs valeurs exprimées sous forme de [tuple](../tuples.md).  Le code suivant montre une expression switch pour le jeu *Pierre-papier-ciseaux* :
+Certains algorithmes dépendent de plusieurs entrées. Les **motifs de tuples** permettent de basculer des unes aux autres en fonction de plusieurs valeurs exprimées sous forme de [tuple](../tuples.md).  Le code suivant montre une expression switch pour le jeu *Pierre-papier-ciseaux* :
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -205,9 +205,9 @@ public static string RockPaperScissors(string first, string second)
 
 Les messages indiquent le vainqueur. Le cas discard représente les trois combinaisons pour les égalités, ou d’autres entrées de texte.
 
-### <a name="positional-patterns"></a>Modèles positionnels
+### <a name="positional-patterns"></a>Motifs positionnels
 
-Certains types comportent une méthode `Deconstruct` qui décompose ses propriétés en variables discrètes. Lorsqu’une méthode `Deconstruct` est accessible, il est possible d’utiliser des **modèles positionnels** pour inspecter les propriétés de l’objet et de se servir de ces dernières pour un modèle.  Considérez la classe `Point` suivante, dont la méthode `Deconstruct` sert à créer des variables discrètes pour `X` et `Y` :
+Certains types comportent une méthode `Deconstruct` qui décompose ses propriétés en variables discrètes. Lorsqu’une méthode `Deconstruct` est accessible, il est possible d’utiliser des **motifs positionnels** pour inspecter les propriétés de l’objet et de se servir de ces dernières pour un motif.  Considérez la classe `Point` suivante, dont la méthode `Deconstruct` sert à créer des variables discrètes pour `X` et `Y` :
 
 ```csharp
 public class Point
@@ -237,7 +237,7 @@ public enum Quadrant
 }
 ```
 
-La méthode suivante utilise le **modèle positionnel** pour extraire les valeurs de `x` et de `y`. Ensuite, elle utilise une clause `when` pour déterminer le `Quadrant` du point :
+La méthode suivante utilise les **motifs positionnels** pour extraire les valeurs de `x` et de `y`. Ensuite, elle utilise une clause `when` pour déterminer le `Quadrant` du point :
 
 ```csharp
 static Quadrant GetQuadrant(Point point) => point switch
@@ -254,7 +254,7 @@ static Quadrant GetQuadrant(Point point) => point switch
 
 Le modèle discard dans le switch précédent indique une correspondance lorsque soit `x`, soit `y` est égal à 0, mais pas les deux. Une expression switch doit produire une valeur ou, si aucun des cas ne correspond, lever une exception. Le compilateur génère un avertissement si tous les cas possibles ne sont pas couverts dans l’expression switch.
 
-Vous pouvez explorer des techniques de critères spéciaux dans ce [tutoriel avancé sur les critères spéciaux](../tutorials/pattern-matching.md).
+Vous pouvez explorer des techniques de filtrage par motif dans ce [tutoriel avancé sur le filtrage par motif](../tutorials/pattern-matching.md).
 
 ## <a name="using-declarations"></a>Déclarations using
 
@@ -451,7 +451,7 @@ Pour explorer davantage les index et les plages, consultez le tutoriel sur [les 
 
 ## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
 
-C#8,0 introduit l’opérateur `??=`d’assignation de fusion Null. Vous pouvez utiliser l' `??=` opérateur pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend `null`la valeur.
+C#8.0 introduit l’opérateur d’assignation de fusion Null `??=` . Vous pouvez utiliser l'opérateur `??=` pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande gauche prend la valeur `null`.
 
 ```csharp
 List<int> numbers = null;
@@ -469,7 +469,7 @@ Pour plus d’informations, consultez [les = l’article Operators](../language-
 
 ## <a name="unmanaged-constructed-types"></a>Types construits non managés
 
-Dans C# 7,3 et les versions antérieures, un type construit (un type qui comprend au moins un argument de type) ne peut pas être un [type non managé](../language-reference/builtin-types/unmanaged-types.md). À C# partir de 8,0, un type valeur construit est non managé s’il contient uniquement des champs de types non managés.
+Dans C# 7.3 et les versions antérieures, un type construit (un type qui comprend au moins un argument de type) ne peut pas être un [type non managé](../language-reference/builtin-types/unmanaged-types.md). À partir de C# 8.0, un type valeur construit est non managé s’il contient uniquement des champs de types non managés.
 
 Par exemple, étant donné la définition suivante du type `Coords<T>` générique :
 
@@ -496,7 +496,8 @@ Pour plus d’informations, consultez [types non managés](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
 
-À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
+À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
+stackalloc` expression dans d’autres expressions :
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
@@ -506,4 +507,5 @@ Console.WriteLine(ind);  // output: 1
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
 
-L' `$` ordre des jetons `@` et dans les chaînes `$@"..."` textuelles [interpolées](../language-reference/tokens/interpolated.md) peut être any : et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.
+L'ordre des unités lexicales `$` et `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) est indifférent : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les versions de C# antérieures, l'unité lexicale `$` doit apparaître avant `@`.
+
