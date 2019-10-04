@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 298ac8eae0a8b125ddf5f1ff35658f426f6b10aa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 8873b4938f654213bd659631175ba4526a35dcc3
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968580"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957343"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
 La récupération d’un attribut personnalisé est un processus simple. Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer. Ensuite, utilisez la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer. Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  
@@ -44,7 +44,7 @@ La récupération d’un attribut personnalisé est un processus simple. Tout d�
   
  Lorsqu’il est exécuté, ce programme affiche le texte suivant.  
   
-```  
+```console  
 The Name Attribute is: Joan Smith.  
 The Level Attribute is: 42.  
 The Reviewed Attribute is: True.  
@@ -52,7 +52,7 @@ The Reviewed Attribute is: True.
   
  Si l’attribut est introuvable, la méthode **GetCustomAttribute** initialise `MyAttribute` à une valeur null. Cet exemple recherche une telle instance dans `MyAttribute` et avertit l’utilisateur si aucun attribut n’est trouvé. Si aucune valeur `DeveloperAttribute` n’est trouvée dans l’étendue de la classe, le message suivant s’affiche dans la console.  
   
-```  
+```console  
 The attribute was not found.   
 ```  
   

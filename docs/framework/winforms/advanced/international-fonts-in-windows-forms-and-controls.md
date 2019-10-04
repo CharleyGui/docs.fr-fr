@@ -1,5 +1,5 @@
 ---
-title: Polices internationales dans les Windows Forms et contrôles
+title: Polices internationales dans les Windows Forms et les contrôles
 ms.date: 03/30/2017
 helpviewer_keywords:
 - fonts [Windows Forms], international
@@ -13,22 +13,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c3066df-9bac-479a-82b2-79e484b346a3
-ms.openlocfilehash: 1f9afd575e2de04e0b11556ad34436839e13d968
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ddbd6d7a1b614d588a2572b410957a5ed3b768c
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942894"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956918"
 ---
-# <a name="international-fonts-in-windows-forms-and-controls"></a>Polices internationales dans les Windows Forms et contrôles
+# <a name="international-fonts-in-windows-forms-and-controls"></a>Polices internationales dans les Windows Forms et les contrôles
 
-Dans les applications internationales, la méthode recommandée de la sélection de polices est d’utiliser la police de base dans la mesure du possible. Police de substitution signifie que le système détermine quel script le caractère appartient.
+Dans les applications internationales, la méthode recommandée pour sélectionner des polices consiste à utiliser la police de secours dans la mesure du possible. La police de secours signifie que le système détermine à quel script appartient le caractère.
 
-## <a name="using-font-fallback"></a>À l’aide de la police de base
+## <a name="using-font-fallback"></a>Utilisation de la police de secours
 
-Pour tirer parti de cette fonctionnalité, ne définissez pas le <xref:System.Drawing.Font> propriété votre formulaire ou tout autre élément. L’application utilisera automatiquement la police système par défaut, qui diffère d’une langue localisée du système d’exploitation vers un autre. Lorsque l’application s’exécute, le système fournira automatiquement la police correcte pour la culture sélectionnée dans le système d’exploitation.
+Pour tirer parti de cette fonctionnalité, ne définissez pas la propriété <xref:System.Drawing.Font> pour votre formulaire ou tout autre élément. L’application utilisera automatiquement la police système par défaut, qui diffère d’une langue localisée du système d’exploitation à une autre. Lorsque l’application s’exécute, le système fournit automatiquement la police correcte pour la culture sélectionnée dans le système d’exploitation.
 
-Il existe une exception à la règle de ne pas définir la police, permettant de changer le style de police. Cela peut être important pour une application dans laquelle l’utilisateur clique sur un bouton pour rendre du texte dans une zone de texte s’affichent en gras. Pour ce faire, vous écririez une fonction pour modifier le style de police de la zone de texte à afficher en gras, en fonction de quelle que soit la police du formulaire. Il est important d’appeler cette fonction à deux emplacements : dans le bouton <xref:System.Windows.Forms.Control.Click> Gestionnaire d’événements et dans le <xref:System.Windows.Forms.Control.FontChanged> Gestionnaire d’événements. Si la fonction est appelée uniquement dans le <xref:System.Windows.Forms.Control.Click> Gestionnaire d’événements et certains autres morceaux de code modifie la famille de polices de l’intégralité du formulaire, la zone de texte ne change pas avec le reste du formulaire.
+Il existe une exception à la règle qui consiste à ne pas définir la police, qui permet de modifier le style de police. Cela peut être important pour une application dans laquelle l’utilisateur clique sur un bouton pour faire apparaître le texte dans une zone de texte en caractères gras. Pour ce faire, vous devez écrire une fonction pour modifier le style de police de la zone de texte en gras, en fonction de la police du formulaire. Il est important d’appeler cette fonction à deux emplacements : dans le gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> du bouton et dans le gestionnaire d’événements <xref:System.Windows.Forms.Control.FontChanged>. Si la fonction est appelée uniquement dans le gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> et qu’une autre partie du code modifie la famille de polices de la totalité du formulaire, la zone de texte ne change pas avec le reste du formulaire.
 
 ```vb
 Private Sub MakeBold()
@@ -74,7 +74,7 @@ private void Form1_FontChanged(object sender, System.EventArgs e)
 }
 ```
 
-Toutefois, lorsque vous localisez votre application, la police en gras peut afficher mal pour certaines langues. S’il s’agit d’un problème, vous souhaitez que les localisateurs doivent avoir la possibilité de basculer la police de gras au texte normal. Étant donné que les localisateurs ne sont généralement pas des développeurs et n’ont pas accès au code source, uniquement aux fichiers de ressources, cette option doit être définie dans les fichiers de ressources. Pour ce faire, vous devez définir le <xref:System.Drawing.Font.Bold%2A> propriété `true`. Ainsi, le paramètre de police qui est écrit dans les fichiers de ressources, où les localiseurs peuvent modifier. Vous écrivez ensuite du code après le `InitializeComponent` méthode pour rétablir la police quelle que soit la police du formulaire est, en utilisant le style de police spécifié dans le fichier de ressources.
+Toutefois, lorsque vous localisez votre application, la police en gras peut s’afficher mal pour certaines langues. Si cela pose problème, vous souhaitez que les localisateurs aient la possibilité de basculer la police du gras en texte normal. Étant donné que les localiseurs ne sont généralement pas des développeurs et n’ont pas accès au code source, seuls les fichiers de ressources, cette option doit être définie dans les fichiers de ressources. Pour ce faire, vous devez définir la propriété <xref:System.Drawing.Font.Bold%2A> sur `true`. Cela entraîne l’écriture du paramètre de police dans les fichiers de ressources, où les localiseurs peuvent le modifier. Vous écrivez ensuite le code après la méthode `InitializeComponent` pour réinitialiser la police en fonction de la police du formulaire, mais en utilisant le style de police spécifié dans le fichier de ressources.
 
 ```vb
 TextBox1.Font = New System.Drawing.Font(Me.Font, TextBox1.Font.Style)
@@ -86,5 +86,4 @@ textBox1.Font = new System.Drawing.Font(this.Font, textBox1.Font.Style);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Globalisation d’applications Windows Forms](globalizing-windows-forms.md)
 - [Utilisation de polices et de texte](using-fonts-and-text.md)

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a0c34eebda789f6561195c89e2660ae77603dc0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 729e6caa36ed8c2f6e77153f8d8ae356513b0603
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923282"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956994"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. La feuille de style compilée peut être passée directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Vous ne pouvez pas générer d'assemblys signés avec xsltc.exe.  
@@ -19,7 +19,7 @@ Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère u
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]  
 ```  
   
@@ -43,7 +43,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`@` `file`|Vous permet de spécifier un fichier qui contient les options du compilateur.|  
 |`?`|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les solutions XSLT peuvent être constituées de plusieurs modules de feuilles de style. L'outil xsltc.exe génère des assemblys à partir des feuilles de style. Les assemblys peuvent ensuite être passés dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Cela peut permettre de réduire le coût des performances dans certains scénarios de déploiement XSLT.  
   
 > [!NOTE]
@@ -54,31 +54,31 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 ## <a name="examples"></a>Exemples  
  La commande suivante compile la feuille de style et crée un assembly nommé booksort.dll.  
   
-```  
+```console  
 xsltc booksort.xsl  
 ```  
   
  La commande suivante compile la feuille de style et crée un assembly et un fichier PDB nommés respectivement booksort.dll et booksort.pdb.  
   
-```  
+```console  
 xsltc booksort.xsl /debug  
 ```  
   
  La commande suivante compile une feuille de style qui contient un élément msxsl:script et crée deux assemblys nommés calc.dll et calc_Script1.dll.  
   
-```  
+```console  
 xsltc /settings:script+ calc.xsl  
 ```  
   
  La commande suivante active le traitement DTD et la prise en charge de script et crée deux assemblys nommés myTest.dll et myTest_Script1.dll.  
   
-```  
+```console  
 xsltc /settings:DTD+,script+ /out:myTest calc.xsl  
 ```  
   
  La commande suivante compile deux modules de feuilles de style et crée un assembly unique nommé booksort.dll.  
   
-```  
+```console  
 xsltc booksort.xsl output.xsl  
 ```  
   

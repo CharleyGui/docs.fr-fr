@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57198cb9fb0042a3a74589e2781b3db1a2b829f1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ee06454575afc16c904b60a2301feeb05debdcdf
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963381"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957177"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Constructions de regroupement dans les expressions régulières
 Les constructions de regroupement délimitent les sous-expressions d'une expression régulière et capturent les sous-chaînes d'une chaîne d'entrée. Utilisez les constructions de regroupement pour effectuer les opérations suivantes :  
@@ -78,9 +78,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
  Le modèle d'expression régulière est le suivant :  
   
-```  
-(\w+)\s(\1)\W  
-```  
+`(\w+)\s(\1)\W`  
   
  Le tableau suivant montre comment le modèle d'expression régulière est interprété.  
   
@@ -95,15 +93,11 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="named-matched-subexpressions"></a>Sous-expressions mises en correspondance nommées  
  La construction de regroupement suivante capture une sous-expression mise en correspondance et vous permet d'y accéder à partir d'un nom ou d'un nombre :  
   
-```  
-(?<name>subexpression)  
-```  
+`(?<name>subexpression)`  
   
  ou :  
   
-```  
-(?'name'subexpression)  
-```  
+`(?'name'subexpression)`  
   
  où *name* est un nom de groupe valide, et *subexpression* représente un modèle d'expression régulière valide. *name* ne doit pas contenir de caractères de ponctuation et ne peut pas commencer par un nombre.  
   
@@ -141,9 +135,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
  Le modèle d'expression régulière est le suivant :  
   
-```  
-(?<duplicateWord>\w+)\s\k<duplicateWord>\W(?<nextWord>\w+)  
-```  
+`(?<duplicateWord>\w+)\s\k<duplicateWord>\W(?<nextWord>\w+)`  
   
  Le tableau suivant montre comment l'expression régulière est interprétée.  
   
@@ -175,15 +167,11 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="balancing-group-definitions"></a>Définitions de groupe d'équilibrage  
  Une définition de groupe d'équilibrage supprime la définition d'un groupe précédemment défini et stocke, dans le groupe actuel, l'intervalle entre le groupe précédemment défini et ce dernier. Cette construction de regroupement se présente sous la forme suivante :  
   
-```  
-(?<name1-name2>subexpression)  
-```  
+`(?<name1-name2>subexpression)`  
   
  ou :  
   
-```  
-(?'name1-name2' subexpression)  
-```  
+`(?'name1-name2' subexpression)`
   
  où *name1* est le groupe actuel (facultatif), *name2* un groupe précédemment défini et *subexpression* un modèle d'expression régulière valide. La définition de groupe d'équilibrage supprime la définition de *name2* et stocke l'intervalle entre *name2* et *name1* dans *name1*. Si aucun groupe *name2* n'est défini, la recherche de correspondance s'effectue de façon rétroactive. Comme la suppression de la dernière définition de *name2* révèle la définition antérieure de *name2*, cette construction vous permet d'utiliser la pile de captures du groupe *name2* en tant que compteur pour effectuer le suivi des constructions imbriquées, telles que des parenthèses ou des crochets ouvrants et fermants.  
   
@@ -199,9 +187,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
  Le modèle d'expression régulière est le suivant :  
   
-```  
-^[^<>]*(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*(?(Open)(?!))$  
-```  
+`^[^<>]*(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*(?(Open)(?!))$`  
   
  L'expression régulière est interprétée comme suit :  
   
@@ -230,7 +216,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |3|`(((?'Open'<)`|Met en correspondance le chevron gauche dans « \<abc> » et l'affecte au groupe `Open`.|  
 |4|`[^<>]*`|Met en correspondance « abc ».|  
 |5|`)+`|« <abc » est la valeur du deuxième groupe capturé.<br /><br /> Le caractère suivant dans la chaîne d'entrée n'étant pas un chevron gauche, le moteur d'expression régulière ne repasse pas par le sous-modèle `(?'Open'<)[^<>]*)` .|  
-|6|`((?'Close-Open'>)`|Met en correspondance le chevron droit dans «\<abc> », affecte « abc », qui est la sous-chaîne entre le groupe `Open` et le chevron droit, au groupe `Close`, puis supprime la valeur actuelle (« < ») du groupe `Open`, qui se trouve alors vide.|  
+|6\.|`((?'Close-Open'>)`|Met en correspondance le chevron droit dans «\<abc> », affecte « abc », qui est la sous-chaîne entre le groupe `Open` et le chevron droit, au groupe `Close`, puis supprime la valeur actuelle (« < ») du groupe `Open`, qui se trouve alors vide.|  
 |7|`[^<>]*`|Recherche des caractères autres que des chevrons après le chevron droit ; ne trouve aucune correspondance.|  
 |8|`)+`|La valeur du troisième groupe capturé est « > ».<br /><br /> Le caractère suivant dans la chaîne d'entrée n'étant pas un chevron droit, le moteur d'expression régulière ne repasse pas par le sous-modèle `((?'Close-Open'>)[^<>]*)` .|  
 |9|`)*`|La valeur du premier groupe capturé est « \<abc> ».<br /><br /> Le caractère suivant dans la chaîne d'entrée étant un chevron gauche, le moteur d'expression régulière repasse par le sous-modèle `(((?'Open'<)` .|  
@@ -254,9 +240,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="noncapturing-groups"></a>Groupes sans capture  
  La construction de regroupement suivante ne capture pas la sous-chaîne mise en correspondance par une sous-expression :  
   
-```  
-(?:subexpression)  
-```  
+`(?:subexpression)`
   
  où *subexpression* représente un modèle d'expression régulière valide. En règle générale, la construction de groupe sans capture est utilisée quand un quantificateur est appliqué à un groupe, mais que les sous-chaînes capturées par celui-ci ne présentent aucun intérêt.  
   

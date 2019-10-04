@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 592f9dc599a22427a2a79047cd9e96f36d2ae429
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5b3b0af5b46774beff9fb7a2a86c37e5399c0dd2
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972007"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957391"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -52,7 +52,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
-3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
+3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Exemple :
 
     ```console
     > cd /cli-test
@@ -204,7 +204,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
     Exécutez l’application console à partir de l’invite de commandes en tapant les commandes suivantes :
 
-     ```
+     ```bash
      > cd SampleBinaryClassification
      > cd SampleBinaryClassification.ConsoleApp
 
@@ -233,7 +233,7 @@ Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est 
 
 Toutefois, les choses sont heureusement beaucoup plus simples pour vous que ce qui est expliqué dans ce billet de blog. Dans un souci de vous proposer une approche plus simple, nous avons créé un **« package d’intégration .NET Core »** très utile. Vous pouvez facilement vous en servir dans vos applications et services ASP.NET Core en l’inscrivant auprès des services DI, puis en l’utilisant directement à partir de votre code. Consultez le tutoriel et l’exemple ci-dessous pour savoir comment faire :
 
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité » 
@@ -244,14 +244,14 @@ Ce « code de modèle d’entraînement » est actuellement généré dans la 
 
 Plus important encore, pour ce scénario particulier (modèle « Analyse des sentiments »), vous pouvez également comparer ce code d’entraînement généré avec le code décrit dans le tutoriel suivant :
 
-- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
+- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md) 
 - [Guide pratique pour installer l’outil CLI ML.NET](../how-to-guides/install-ml-net-cli.md)
@@ -259,7 +259,7 @@ Il est intéressant de comparer la configuration d’algorithme et de pipeline c
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > - Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)

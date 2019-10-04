@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 2652c080951823e5289785b5906d2b0f48f5d658
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 44a1019ac8169138aa95b03e2027d9539cbf8391
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950785"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957371"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements
 Si vous écrivez une classe qui comporte certaines opérations pouvant entraîner d’importants ralentissements, pensez à lui affecter des fonctionnalités asynchrones en implémentant la [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -91,7 +91,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
   
      Vous recevrez deux avertissements du compilateur :  
   
-    ```  
+    ```console  
     warning CS0067: The event 'AsynchronousPatternExample.PrimeNumberCalculator.ProgressChanged' is never used  
     warning CS0067: The event 'AsynchronousPatternExample.PrimeNumberCalculator.CalculatePrimeCompleted' is never used  
     ```  
@@ -99,7 +99,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
      Ces avertissements seront effacés dans la section suivante.  
   
 ## <a name="defining-private-delegates"></a>Définir des délégués privés  
- Les aspects asynchrones du composant `PrimeNumberCalculator` sont implémentés en interne avec un délégué spécial appelé <xref:System.Threading.SendOrPostCallback>. <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s’exécute sur un thread <xref:System.Threading.ThreadPool>. Elle doit avoir une signature qui prend un seul paramètre de type <xref:System.Object>, ce qui signifie qu’il vous faudra transmettre l’état entre les délégués dans une classe wrapper. Pour plus d’informations, consultez <xref:System.Threading.SendOrPostCallback>.  
+ Les aspects asynchrones du composant `PrimeNumberCalculator` sont implémentés en interne avec un délégué spécial appelé <xref:System.Threading.SendOrPostCallback>. <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s’exécute sur un thread <xref:System.Threading.ThreadPool>. Elle doit avoir une signature qui prend un seul paramètre de type <xref:System.Object>, ce qui signifie qu’il vous faudra transmettre l’état entre les délégués dans une classe wrapper. Pour plus d'informations, consultez <xref:System.Threading.SendOrPostCallback>.  
   
 ### <a name="to-implement-your-components-internal-asynchronous-behavior"></a>Pour implémenter le comportement asynchrone interne du composant :  
   
@@ -162,7 +162,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
   
      Vous recevrez un avertissement du compilateur :  
   
-    ```  
+    ```console  
     warning CS0169: The private field 'AsynchronousPatternExample.PrimeNumberCalculator.workerDelegate' is never used  
     ```  
   

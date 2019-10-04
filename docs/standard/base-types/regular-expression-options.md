@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e77fac49db4a2faadb5785c4ef15e401f340d8b
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: d9cfdcbe1e533f70cdd37b5d0512c781c6c05d22
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663986"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957352"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
@@ -114,7 +114,7 @@ Les sections suivantes répertorient les options prises en charge par les expres
 
 ## <a name="default-options"></a>Options par défaut
 
-L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> indique qu'aucune option n'a été spécifiée et que le moteur d'expression régulière utilise son comportement par défaut. Ce dernier est détaillé ci-après :
+L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> indique qu'aucune option n'a été spécifiée et que le moteur d'expression régulière utilise son comportement par défaut. Notamment :
 
 - Le modèle est interprété en tant qu'expression régulière canonique, plutôt qu'en tant qu'expression régulière ECMAScript.
 
@@ -214,9 +214,7 @@ Par défaut, les groupes de capture sont définis à l’aide de parenthèses da
 
 Les constructions de regroupement sont souvent utilisées pour simplement appliquer des quantificateurs à plusieurs éléments de langage, et les sous-chaînes capturées ne présentent aucun intérêt. Par exemple, si l'expression régulière suivante :
 
-```
-\b\(?((\w+),?\s?)+[\.!?]\)?
-```
+`\b\(?((\w+),?\s?)+[\.!?]\)?`
 
 est uniquement destinée à extraire d'un document les phrases qui se terminent par un point, un point d'exclamation ou un point d'interrogation, seule la phrase résultante (représentée par l'objet <xref:System.Text.RegularExpressions.Match>) présente un intérêt. Les différents mots de la collection n’en présentent pas.
 
@@ -294,7 +292,7 @@ Toutefois, dans les cas suivants, les espaces blancs d’une expression réguli�
 
 - L’espace blanc n’est pas autorisé dans un quantificateur entre accolades, comme `{`*n*`}`, `{`*n*`,}`, and `{`*n*`,`*m*`}`. Par exemple, le modèle d'expression régulière `\d{1, 3}` ne peut pas mettre en correspondance les séquences d'un à trois chiffres, car il contient un espace blanc.
 
-- L'espace blanc n'est pas autorisé dans une séquence de caractères qui introduit un élément de langage. Par exemple :
+- L'espace blanc n'est pas autorisé dans une séquence de caractères qui introduit un élément de langage. Exemple :
 
   - L’élément de langage `(?:`*sous-expression*`)` représente un groupe sans capture, et la partie `(?:` de l’élément ne peut pas comporter d’espaces. Le modèle `(? :`*sous-expression*`)` lève une <xref:System.ArgumentException> au moment de l’exécution, car le moteur d’expression régulière ne peut pas l’analyser, et le modèle `( ?:`*sous-expression*`)` ne parvient pas à mettre en correspondance *sous-expression*.
 
@@ -388,8 +386,8 @@ Le comportement des expressions régulières ECMAScript et canoniques diffère d
   |Expression régulière|Comportement canonique|Comportement ECMAScript|
   |------------------------|------------------------|-------------------------|
   |`\0` suivi de 0 à 2 chiffres octaux|Interpréter comme un octal. Par exemple, `\044` est toujours interprété comme une valeur octale et signifie « $ ».|Même comportement.|
-  |`\` suivi d’un chiffre entre 1 et 9, non suivi de chiffres décimaux |Interpréter comme une référence arrière. Par exemple, `\9` signifie toujours référence arrière 9, même si un neuvième groupe de capture n'existe pas. Si le groupe de capture n'existe pas, l'analyseur de l'expression régulière lève une <xref:System.ArgumentException>.|Si un groupe de capture avec chiffre décimal unique existe, effectuer une référence arrière au niveau de ce chiffre. Sinon, interpréter la valeur en tant que littéral.|
-  |`\` suivi d’un chiffre entre 1 et 9, suivi par d’autres chiffres décimaux |Interpréter les chiffres comme une valeur décimale. Si ce groupe de capture existe, interpréter l'expression en tant que référence arrière.<br /><br /> Sinon, interpréter les chiffres octaux de début jusqu'à l'octal 377 ; en d'autres termes, ne prendre en compte que les 8 bits de poids faible de la valeur. Interpréter les autres chiffres comme des littéraux. Par exemple, dans l'expression `\3000`, si le groupe de capture 300 existe, interpréter en tant que référence arrière 300, sinon, interpréter en tant qu'octal 300 suivi de 0.|Interpréter en tant que référence arrière en convertissant autant de chiffres que possible en valeur décimale pouvant faire référence à une capture. Si aucun chiffre ne peut être converti, interpréter en tant qu'octal en utilisant les chiffres octaux de début jusqu'à l'octal 377 ; interpréter les autres chiffres en tant que littéraux.|
+  |`\` suivi d'un chiffre entre 1 et 9, non suivi de chiffres décimaux.|Interpréter comme une référence arrière. Par exemple, `\9` signifie toujours référence arrière 9, même si un neuvième groupe de capture n'existe pas. Si le groupe de capture n'existe pas, l'analyseur de l'expression régulière lève une <xref:System.ArgumentException>.|Si un groupe de capture avec chiffre décimal unique existe, effectuer une référence arrière au niveau de ce chiffre. Sinon, interpréter la valeur en tant que littéral.|
+  |`\` suivi d'un chiffre entre 1 et 9, suivi de chiffres décimaux supplémentaires.|Interpréter les chiffres en tant que valeur décimale. Si ce groupe de capture existe, interpréter l'expression en tant que référence arrière.<br /><br /> Sinon, interpréter les chiffres octaux de début jusqu'à l'octal 377 ; en d'autres termes, ne prendre en compte que les 8 bits de poids faible de la valeur. Interpréter les autres chiffres comme des littéraux. Par exemple, dans l'expression `\3000`, si le groupe de capture 300 existe, interpréter en tant que référence arrière 300, sinon, interpréter en tant qu'octal 300 suivi de 0.|Interpréter en tant que référence arrière en convertissant autant de chiffres que possible en valeur décimale pouvant faire référence à une capture. Si aucun chiffre ne peut être converti, interpréter en tant qu'octal en utilisant les chiffres octaux de début jusqu'à l'octal 377 ; interpréter les autres chiffres en tant que littéraux.|
 
 [Retour au début](#Top)
 

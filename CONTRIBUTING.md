@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 303d6790f1e4a42b021de3a214e3e7b44e1a4320
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 23501575fb34f0291b3a6b795c197f45a86fd512
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104630"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71955967"
 ---
 # <a name="contributing"></a>Contribuer
 
 Nous vous remercions de l’intérêt que vous portez à la documentation .NET à travers vos contributions.
 
-> Nous transférons actuellement nos instructions dans un guide de contribution à l’échelle du site. 
+> Nous transférons actuellement nos instructions dans un guide de contribution à l’échelle du site.
 > Pour afficher les nouveaux conseils, consultez la [vue d’ensemble du guide du contributeur Microsoft Docs](https://docs.microsoft.com/contribute/).
 
 Le document aborde le processus de contribution aux articles et exemples de code qui sont hébergés sur le [site de la documentation .NET](https://docs.microsoft.com/dotnet). Les contributions peuvent aller de la simple correction de fautes de frappe à la rédaction complexe de nouveaux articles.
@@ -22,20 +22,21 @@ Le document aborde le processus de contribution aux articles et exemples de code
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le site de la documentation de .NET repose sur plusieurs référentiels en plus de celui-ci :
 
-- [Exemples et extraits de code](https://github.com/dotnet/samples)
-- [Informations de référence sur les API](https://github.com/dotnet/dotnet-api-docs)
-- [Informations de référence sur le kit SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)
-
-Le suivi des problèmes et des tâches de ces référentiels se trouve ici.
+- [Exemples et extraits de code](https://github.com/dotnet/samples)  
+    Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
+- [Informations de référence sur l’API .NET](https://github.com/dotnet/dotnet-api-docs)  
+    Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/dotnet-API-docs/Problems](https://github.com/dotnet/dotnet-api-docs/issues).
+- [Informations de référence sur le kit SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)  
+    Les problèmes et Taks pour ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
 
 ## <a name="process-for-contributing"></a>Processus de contribution
 
 Vous devez avoir une connaissance élémentaire de [Git et GitHub.com](https://guides.github.com/activities/hello-world/).
 
 **Étape 1 :** Ignorez cette étape pour les petites modifications (par exemple si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une demande de tirage pour résoudre un problème que vous trouvez dans les documents). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
-Le contenu situé dans le dossier **docs** est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
+Le contenu situé dans le dossier *docs* est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
 
--ou-
+\- ou -
 
 Vous pouvez également choisir des problèmes existants pour lesquels les contributions de la communauté sont les bienvenus. [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) répertorie la plupart des éléments de travail disponibles aux contributeurs de la communauté. Selon vos centres d’intérêt et votre niveau de participation, vous pouvez choisir des problèmes dans les catégories suivantes :
 
@@ -43,7 +44,7 @@ Vous pouvez également choisir des problèmes existants pour lesquels les contri
 
 - **Mises à jour du contenu**. Étant donné l’énorme quantité de documents disponibles, le contenu devient facilement obsolète et nécessite une révision. Par ailleurs, pour diverses raisons, certains contenus ont été dupliqués voire triplés. La mise à jour du contenu consiste à s’assurer que des rubriques individuelles sont actualisées ou à réviser le contenu d’une zone de fonctionnalité afin d’éliminer les doublons et garantir que tout le contenu unique est conservé dans une documentation la plus restreinte possible.
 
-- **Création de nouveau contenu**. Si vous souhaitez créer votre propre rubrique, ces problèmes répertorient les rubriques que nous aimerions ajouter à notre documentation. Veuillez nous prévenir avant de commencer à travailler sur une rubrique. Si vous souhaitez écrire une rubrique qui n’est pas répertoriée ici, ouvrez un problème. 
+- **Création de nouveau contenu**. Si vous souhaitez créer votre propre rubrique, ces problèmes répertorient les rubriques que nous aimerions ajouter à notre documentation. Veuillez nous prévenir avant de commencer à travailler sur une rubrique. Si vous souhaitez écrire une rubrique qui n’est pas répertoriée ici, ouvrez un problème.
 
 Vous pouvez également consulter la liste de nos [problèmes ouverts](https://github.com/dotnet/docs/issues) et vous porter volontaire pour travailler sur ceux qui vous intéressent. Nous utilisons l’étiquette [up-for-grabs](https://github.com/dotnet/docs/labels/up-for-grabs) pour signaler les problèmes auxquels vous pouvez apporter votre contribution. 
 
@@ -58,7 +59,7 @@ S’il s’agit d’une nouvelle rubrique, vous pouvez utiliser ce [fichier de m
 Accédez au dossier qui correspond à l’emplacement de la table des matières de votre article déterminé à l’étape 1.
 Ce dossier contient les fichiers Markdown de tous les articles de la section.
 Si nécessaire, créez un nouveau dossier pour y placer les fichiers de votre contenu. Le principal article de cette section s’appelle *index.md*.
-Pour les images et d’autres ressources statiques, créez un sous-dossier appelé **media** dans le dossier contenant votre article, s’il n’existe pas déjà. Dans le dossier **media**, créez un sous-dossier portant le nom de l’article (sauf pour le fichier index).
+Pour les images et d’autres ressources statiques, créez un sous-dossier appelé *media* dans le dossier contenant votre article, s’il n’existe pas déjà. Dans le dossier *media*, créez un sous-dossier portant le nom de l’article (sauf pour le fichier index).
 Ajoutez les exemples plus volumineux au dossier *samples* à la racine du référentiel.
 
 Veillez à respecter la syntaxe Markdown appropriée. Pour plus d’informations, consultez le [guide de style](./styleguide/template.md).
@@ -76,7 +77,7 @@ docs
             portability_report.png
 ```
 
-**Étape 4 :** Soumettez une demande de tirage (pull request) de votre branche à `dotnet/docs/master`.
+**Étape 4 :** Soumettez une demande de tirage (PR) de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` ou `dotnet/samples/master`.
 
 Votre demande de tirage doit *toujours* cibler la branche principale. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche active.
 

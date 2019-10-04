@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: ad034f0e-ff8b-4a71-9a4c-528c754263c4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a84234ee797dac7487492dc92af2de4fa7ef503
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: fbcd9b93f63d48229c174b0f6518fd0150e98e18
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962549"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957033"
 ---
 # <a name="node-sets-in-transformations"></a>Collections de nœuds dans les transformations
 Les collections de nœuds correspondent à l'un des quatre types de données de base qui sont retournés à partir des expressions XPath (XML Path Language). Une collection de nœuds, qui est une collection non triée de nœuds sans doublons, créée dans l'ordre du document, peut être attribué à une variable dans une feuille de style.  
@@ -60,7 +60,7 @@ Les collections de nœuds correspondent à l'un des quatre types de données de 
   
 ## <a name="output"></a>Sortie  
   
-```  
+```output  
 ******  
 Seven Years in Trenton  
 ******  

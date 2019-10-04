@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7b7783d3360bfb042880f5d1e74bfac77e729299
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6b4e9072100a25c297dbf3bfb70a928e16b06da4
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959478"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956892"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
 Les expressions régulières dans .NET incluent trois constructions de langage diverses. L’une d’elles vous permet d’activer ou de désactiver des options de mise en correspondance particulières au milieu d’un modèle d’expression régulière. Grâce aux deux autres, vous pouvez inclure des commentaires dans une expression régulière.  
@@ -25,9 +25,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
 ## <a name="inline-options"></a>Options inline  
  Vous pouvez définir ou désactiver des options de mise en correspondance de modèle spécifiques pour une partie d’une expression régulière en utilisant la syntaxe suivante :  
   
-```  
-(?imnsx-imnsx)  
-```  
+`(?imnsx-imnsx)`  
   
  Vous répertoriez les options à activer après le point d’interrogation et les options à désactiver après le signe moins. Le tableau suivant décrit chaque option. Pour plus d’informations sur chaque option, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   

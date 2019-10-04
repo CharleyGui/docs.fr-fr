@@ -2,12 +2,12 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: c97cd9ba8d740f13c22caa45e344c4961e3b0600
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 565852511f3a837066d5da5cf0e3ab0a902dd7da
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834493"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956586"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
@@ -54,10 +54,10 @@ Avec les dernières versions de Docker pour Mac et Windows, il n’a jamais ét�
 
 Par ailleurs, vous aurez besoin d’un éditeur de code pour développer votre application tout en utilisant l’interface CLI Docker.
 
-Microsoft propose Visual Studio Code, éditeur de code léger et pris en charge sur Mac, Windows et Linux. Il propose également IntelliSense qui fournit une [prise en charge de nombreux langages](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, Go, Java, Ruby, Python et la plupart des langages modernes), des fonctionnalités de [débogage](https://code.visualstudio.com/Docs/editor/debugging), l’[intégration à Git](https://code.visualstudio.com/Docs/editor/versioncontrol) et la [prise en charge des extensions](https://code.visualstudio.com/docs/extensions/overview). Cet éditeur est parfait pour les développeurs Mac et Linux. Dans Windows, vous pouvez également utiliser l’intégralité de l’application Visual Studio.
+Microsoft fournit Visual Studio Code, qui est un éditeur de code léger pris en charge sur Windows, Linux et macOS, et qui offre à IntelliSense la [prise en charge de nombreux langages](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .net, Go, Java, Ruby, Python et les langages les plus modernes). le [débogage](https://code.visualstudio.com/Docs/editor/debugging), l' [intégration avec git](https://code.visualstudio.com/Docs/editor/versioncontrol) et les [Extensions prennent en charge](https://code.visualstudio.com/docs/extensions/overview). Cet éditeur convient parfaitement aux développeurs macOS et Linux. Dans Windows, vous pouvez également utiliser Visual Studio.
 
 > [!TIP]
-> Pour obtenir des instructions concernant l’installation de Visual Studio Code sur Windows, Mac ou Linux, accédez à <https://code.visualstudio.com/docs/setup/setup-overview/>.
+> Pour obtenir des instructions sur l’installation de Visual Studio Code pour Windows, Linux ou macOS, accédez à <https://code.visualstudio.com/docs/setup/setup-overview/>.
 >
 > Pour obtenir des instructions sur la configuration de Docker sur Mac, accédez à <https://docs.docker.com/docker-for-mac/>.
 
@@ -265,9 +265,8 @@ Visual Studio Code prend en charge le débogage Docker si vous utilisez Node.js 
 
 Vous pouvez également déboguer les conteneurs .NET Core ou .NET Framework dans Docker si vous utilisez Visual Studio pour Windows ou Mac, comme décrit dans la section suivante.
 
-> [!INFORMATION]
->
-> Pour plus d’informations sur le débogage des conteneurs Docker Node.js, accédez à <https://blog.docker.com/2016/07/live-debugging-docker/> et <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
+> [!TIP]
+> To en savoir plus sur le débogage des conteneurs d’ancrage node. js, consultez <https://blog.docker.com/2016/07/live-debugging-docker/> et <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
 
 >[!div class="step-by-step"]
 >[Précédent](docker-apps-development-environment.md)

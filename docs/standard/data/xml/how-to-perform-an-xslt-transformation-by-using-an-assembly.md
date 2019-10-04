@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4bf0669b94f925052ad5f139cce049018ce7da4f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: 7e998526f3e5fcefdf6b776fb493cf9625e6c696
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666533"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957145"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Procédure : effectuer une transformation XSLT à l’aide d’un assembly
 Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. L'assembly peut être passé directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>.  
@@ -134,15 +134,15 @@ Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère u
   
 1. L'exécution de la commande suivante depuis la ligne de commande crée deux assemblys nommés `Transform.dll` et `Transform_Script1.dll` (C'est le comportement par défaut. Sauf spécification contraire, le nom de la classe et de l'assembly est par défaut celui de la feuille de style principale) :  
   
-    ```  
+    ```console  
     xsltc /settings:script+ Transform.xsl  
+    ```
+  
+    La commande suivante donne explicitement à la classe le nom Transform :  
+  
+    ```console  
+    xsltc /settings:script+ /class:Transform Transform.xsl  
     ```  
-  
- La commande suivante donne explicitement à la classe le nom Transform :  
-  
-```  
-xsltc /settings:script+ /class:Transform Transform.xsl  
-```  
   
 ### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Pour inclure l'assembly compilé comme référence lorsque vous compilez votre code.  
   
@@ -150,36 +150,36 @@ xsltc /settings:script+ /class:Transform Transform.xsl
   
 2. Pour la ligne de commande en C#, utilisez la syntaxe suivante :  
   
-    ```  
+    ```console  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
 3. Pour la ligne de commande en Visual Basic, utilisez la syntaxe suivante :  
   
-    ```  
+    ```console  
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
 ### <a name="to-use-the-compiled-assembly-in-your-code"></a>Pour utiliser l'assembly compilé dans votre code.  
   
-1. L'exemple suivant montre comment exécuter la transformation XSLT à l'aide de la feuille de style compilée.  
+L'exemple suivant montre comment exécuter la transformation XSLT à l'aide de la feuille de style compilée.  
   
- [!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
- [!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  
+[!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
+[!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  
   
- Pour établir de manière dynamique une liaison avec l'assembly compilé, remplacez  
+Pour établir de manière dynamique une liaison avec l'assembly compilé, remplacez
   
-```  
-xslt.Load(typeof(Transform))  
-```  
-  
- par  
-  
-```  
-xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
+```csharp  
+xslt.Load(typeof(Transform));  
 ```  
   
- dans l'exemple ci-dessus. Pour plus d'informations sur la méthode Assembly.Load, voir <xref:System.Reflection.Assembly.Load%2A>.  
+par  
+  
+```csharp 
+xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"));  
+``` 
+  
+dans l'exemple ci-dessus. Pour plus d’informations sur la méthode Assembly. Load, consultez <xref:System.Reflection.Assembly.Load%2A>.  
   
 ## <a name="see-also"></a>Voir aussi
 

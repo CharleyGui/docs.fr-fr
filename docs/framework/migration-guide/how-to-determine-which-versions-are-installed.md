@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0df5a5be2997958faa43ee67ae64fc37e1998414
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: abfa42be4b8c759da3fb34a2204058143e39689c
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051592"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956665"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Procédure : déterminer les versions du .NET Framework installées
 
@@ -131,12 +131,6 @@ Cet exemple suit la pratique recommandée concernant la vérification de version
 Les exemples suivants vérifient la valeur de l’entrée **Release** pour déterminer si .NET Framework 4.6.2 ou une version ultérieure sont installés. Ce code retourne `True` s’il est installé et `False` dans le cas contraire.
 
 ```PowerShell
-# PowerShell 5
- Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\' |  Get-ItemPropertyValue -Name Release | Foreach-Object { $_ -ge 394802 }
- ```
-
-```PowerShell
-# PowerShell 4
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
@@ -222,6 +216,6 @@ L’exemple suivant utilise la propriété <xref:System.Environment.Version%2A?d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : déterminer les mises à jour .NET Framework installées](how-to-determine-which-net-framework-updates-are-installed.md)
+- [Guide pratique pour déterminer les mises à jour .NET Framework installées](how-to-determine-which-net-framework-updates-are-installed.md)
 - [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md)
 - [Versions et dépendances du .NET Framework](versions-and-dependencies.md)

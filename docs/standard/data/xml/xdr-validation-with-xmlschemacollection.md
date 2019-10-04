@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83eabbccfa2116142e9ee5889e3368ad4273b541
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: ce0777ba71e5433b42b51ef1530e7a1a46905b25
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306389"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957016"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 
@@ -24,8 +24,12 @@ Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la va
 
 Par exemple, si l'élément racine du document XML est `<bookstore xmlns="urn:newbooks-schema">`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :
 
-```
+```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
+```
+
+```csharp
+xsc.Add("urn:newbooks-schema", "newbooks.xdr");
 ```
 
 L’exemple de code suivant crée un **XmlValidatingReader** qui prend **XmlTextReader** et ajoute un schéma XDR, HeadCount. XDR, à **XmlSchemaCollection**:
