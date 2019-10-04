@@ -1,21 +1,21 @@
 ---
-title: Comparaison de l'interrogation d'un XDocument et d'un Un XElement (Visual Basic)
+title: Comparaison de l'interrogation d'un XDocument et d'un Interrogation d’un XElement (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2d111f84-0ded-4cde-8d93-5440557a726d
-ms.openlocfilehash: 500b1e58663ef6aca052850ad7994687e2cc36f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4aba08319abeb21de79b3b8511044b8272402984
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766491"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834945"
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a><span data-ttu-id="f042f-102">Comparaison de l'interrogation d'un XDocument et d'un Un XElement (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f042f-102">Querying an XDocument vs. Querying an XElement (Visual Basic)</span></span>
-<span data-ttu-id="f042f-103">Lorsque vous chargez un document par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, vous remarquerez que vous devez écrire des requêtes de manière légèrement différente comparé au chargement par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="f042f-103">When you load a document via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, you will notice that you have to write queries slightly differently than when you load via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.</span></span>  
+# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a><span data-ttu-id="1efd4-102">Comparaison de l'interrogation d'un XDocument et d'un Interrogation d’un XElement (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1efd4-102">Querying an XDocument vs. Querying an XElement (Visual Basic)</span></span>
+<span data-ttu-id="1efd4-103">Lorsque vous chargez un document par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, vous remarquerez que vous devez écrire des requêtes de manière légèrement différente comparé au chargement par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1efd4-103">When you load a document via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, you will notice that you have to write queries slightly differently than when you load via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.</span></span>  
   
-## <a name="comparison-of-xdocumentload-and-xelementload"></a><span data-ttu-id="f042f-104">Comparaison de XDocument.Load et XElement.Load</span><span class="sxs-lookup"><span data-stu-id="f042f-104">Comparison of XDocument.Load and XElement.Load</span></span>  
- <span data-ttu-id="f042f-105">Lorsque vous chargez un document XML dans <xref:System.Xml.Linq.XElement> par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, l'objet <xref:System.Xml.Linq.XElement> à la racine de l'arborescence XML contient l'élément racine du document chargé.</span><span class="sxs-lookup"><span data-stu-id="f042f-105">When you load an XML document into an <xref:System.Xml.Linq.XElement> via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, the <xref:System.Xml.Linq.XElement> at the root of the XML tree contains the root element of the loaded document.</span></span> <span data-ttu-id="f042f-106">Toutefois, lorsque vous chargez le même document XML dans un objet <xref:System.Xml.Linq.XDocument> par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, la racine de l'arborescence est un nœud <xref:System.Xml.Linq.XDocument> et l'élément racine du document chargé est le nœud <xref:System.Xml.Linq.XElement> enfant autorisé de l'objet <xref:System.Xml.Linq.XDocument>.</span><span class="sxs-lookup"><span data-stu-id="f042f-106">However, when you load the same XML document into an <xref:System.Xml.Linq.XDocument> via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, the root of the tree is an <xref:System.Xml.Linq.XDocument> node, and the root element of the loaded document is the one allowed child <xref:System.Xml.Linq.XElement> node of the <xref:System.Xml.Linq.XDocument>.</span></span> <span data-ttu-id="f042f-107">Les axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] opèrent relativement au nœud racine.</span><span class="sxs-lookup"><span data-stu-id="f042f-107">The [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axes operate relative to the root node.</span></span>  
+## <a name="comparison-of-xdocumentload-and-xelementload"></a><span data-ttu-id="1efd4-104">Comparaison de XDocument.Load et XElement.Load</span><span class="sxs-lookup"><span data-stu-id="1efd4-104">Comparison of XDocument.Load and XElement.Load</span></span>  
+ <span data-ttu-id="1efd4-105">Lorsque vous chargez un document XML dans <xref:System.Xml.Linq.XElement> par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, l'objet <xref:System.Xml.Linq.XElement> à la racine de l'arborescence XML contient l'élément racine du document chargé.</span><span class="sxs-lookup"><span data-stu-id="1efd4-105">When you load an XML document into an <xref:System.Xml.Linq.XElement> via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, the <xref:System.Xml.Linq.XElement> at the root of the XML tree contains the root element of the loaded document.</span></span> <span data-ttu-id="1efd4-106">Toutefois, lorsque vous chargez le même document XML dans un objet <xref:System.Xml.Linq.XDocument> par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, la racine de l'arborescence est un nœud <xref:System.Xml.Linq.XDocument> et l'élément racine du document chargé est le nœud <xref:System.Xml.Linq.XElement> enfant autorisé de l'objet <xref:System.Xml.Linq.XDocument>.</span><span class="sxs-lookup"><span data-stu-id="1efd4-106">However, when you load the same XML document into an <xref:System.Xml.Linq.XDocument> via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, the root of the tree is an <xref:System.Xml.Linq.XDocument> node, and the root element of the loaded document is the one allowed child <xref:System.Xml.Linq.XElement> node of the <xref:System.Xml.Linq.XDocument>.</span></span> <span data-ttu-id="1efd4-107">Les axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] opèrent relativement au nœud racine.</span><span class="sxs-lookup"><span data-stu-id="1efd4-107">The [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axes operate relative to the root node.</span></span>  
   
- <span data-ttu-id="f042f-108">Ce premier exemple charge une arborescence XML à l'aide de <xref:System.Xml.Linq.XElement.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="f042f-108">This first example loads an XML tree using <xref:System.Xml.Linq.XElement.Load%2A>.</span></span> <span data-ttu-id="f042f-109">Il interroge ensuite les éléments enfants de la racine de l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="f042f-109">It then queries for the child elements of the root of the tree.</span></span>  
+ <span data-ttu-id="1efd4-108">Ce premier exemple charge une arborescence XML à l'aide de <xref:System.Xml.Linq.XElement.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="1efd4-108">This first example loads an XML tree using <xref:System.Xml.Linq.XElement.Load%2A>.</span></span> <span data-ttu-id="1efd4-109">Il interroge ensuite les éléments enfants de la racine de l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="1efd4-109">It then queries for the child elements of the root of the tree.</span></span>  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -36,9 +36,9 @@ For Each e As XElement In childList
 Next  
 ```  
   
- <span data-ttu-id="f042f-110">Comme prévu, cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f042f-110">As expected, this example produces the following output:</span></span>  
+ <span data-ttu-id="1efd4-110">Comme prévu, cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1efd4-110">As expected, this example produces the following output:</span></span>  
   
-```  
+```console
 Querying tree loaded with XElement.Load  
 ----  
 <Child1>1</Child1>  
@@ -46,7 +46,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- <span data-ttu-id="f042f-111">L'exemple suivant est identique au précédent, hormis le fait que l'arborescence XML est chargée dans un objet <xref:System.Xml.Linq.XDocument> au lieu d'un objet <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="f042f-111">The following example is the same as the one above, with the exception that the XML tree is loaded into an <xref:System.Xml.Linq.XDocument> instead of an <xref:System.Xml.Linq.XElement>.</span></span>  
+ <span data-ttu-id="1efd4-111">L'exemple suivant est identique au précédent, hormis le fait que l'arborescence XML est chargée dans un objet <xref:System.Xml.Linq.XDocument> au lieu d'un objet <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="1efd4-111">The following example is the same as the one above, with the exception that the XML tree is loaded into an <xref:System.Xml.Linq.XDocument> instead of an <xref:System.Xml.Linq.XElement>.</span></span>  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -67,9 +67,9 @@ For Each e As XElement In childList
 Next  
 ```  
   
- <span data-ttu-id="f042f-112">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f042f-112">This example produces the following output:</span></span>  
+ <span data-ttu-id="1efd4-112">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1efd4-112">This example produces the following output:</span></span>  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Root>  
@@ -79,9 +79,9 @@ Querying tree loaded with XDocument.Load
 </Root>  
 ```  
   
- <span data-ttu-id="f042f-113">Notez que la même requête a retourné le nœud `Root` au lieu des trois nœuds enfants.</span><span class="sxs-lookup"><span data-stu-id="f042f-113">Notice that the same query returned the one `Root` node instead of the three child nodes.</span></span>  
+ <span data-ttu-id="1efd4-113">Notez que la même requête a retourné le nœud `Root` au lieu des trois nœuds enfants.</span><span class="sxs-lookup"><span data-stu-id="1efd4-113">Notice that the same query returned the one `Root` node instead of the three child nodes.</span></span>  
   
- <span data-ttu-id="f042f-114">L'une des solutions à ce problème consiste à utiliser la propriété <xref:System.Xml.Linq.XDocument.Root%2A> avant d'accéder aux méthodes d'axe, comme suit :</span><span class="sxs-lookup"><span data-stu-id="f042f-114">One approach to dealing with this is to use the <xref:System.Xml.Linq.XDocument.Root%2A> property before accessing the axes methods, as follows:</span></span>  
+ <span data-ttu-id="1efd4-114">L'une des solutions à ce problème consiste à utiliser la propriété <xref:System.Xml.Linq.XDocument.Root%2A> avant d'accéder aux méthodes d'axe, comme suit :</span><span class="sxs-lookup"><span data-stu-id="1efd4-114">One approach to dealing with this is to use the <xref:System.Xml.Linq.XDocument.Root%2A> property before accessing the axes methods, as follows:</span></span>  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -102,9 +102,9 @@ For Each e As XElement In childList
 Next  
 ```  
   
- <span data-ttu-id="f042f-115">Cette requête s'exécute maintenant de la même manière que la requête sur l'arborescence enracinée dans <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="f042f-115">This query now performs in the same way as the query on the tree rooted in <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="f042f-116">L'exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f042f-116">The example produces the following output:</span></span>  
+ <span data-ttu-id="1efd4-115">Cette requête s'exécute maintenant de la même manière que la requête sur l'arborescence enracinée dans <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="1efd4-115">This query now performs in the same way as the query on the tree rooted in <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="1efd4-116">L'exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1efd4-116">The example produces the following output:</span></span>  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Child1>1</Child1>  
@@ -112,6 +112,6 @@ Querying tree loaded with XDocument.Load
 <Child3>3</Child3>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f042f-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f042f-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1efd4-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1efd4-117">See also</span></span>
 
-- [<span data-ttu-id="f042f-118">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f042f-118">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="1efd4-118">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1efd4-118">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
