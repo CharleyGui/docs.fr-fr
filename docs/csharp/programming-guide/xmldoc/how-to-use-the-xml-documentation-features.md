@@ -6,18 +6,18 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 259f0d5e7e1a67a273bccc7847c38a4d694c69ba
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 06b0c3b7877337d8a5703403af98dbacdf3ea93c
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588106"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834174"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Procédure : Utiliser les fonctionnalités de la documentation XML
 
 L’exemple suivant montre un type qui a été documenté.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
@@ -137,3 +137,5 @@ Le début de la documentation XML est symbolisé par trois barres obliques (//
 - [Guide de programmation C#](../index.md)
 - [/doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Commentaires sur la documentation XML](./index.md)
+- [Processeur de documentation DocFX](https://dotnet.github.io/docfx/)
+- [Processeur de documentation Sandcastle](https://github.com/EWSoftware/SHFB)

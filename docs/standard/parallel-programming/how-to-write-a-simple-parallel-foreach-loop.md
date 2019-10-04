@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 599432af178031a85dea4155a8fd2923f879a600
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 9d54f06c1fc774a2e73b3b99a7d5bb24dd8baf3f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427355"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835263"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Procédure : écrire une boucle Parallel.ForEach simple
 
@@ -32,7 +32,7 @@ Cet exemple part du principe que vous disposez de plusieurs fichiers .jpg dans u
 [!code-csharp[TPL_Parallel#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/simpleforeach.cs#03)]
 [!code-vb[TPL_Parallel#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/simpleforeach.vb#03)]
 
-Une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> fonctionne comme une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Les boucles partitionnent la collection source et planifient le travail sur plusieurs threads en fonction de l’environnement système. Plus il y a de processeurs sur le système, plus la méthode parallèle s’exécute rapidement. Pour certaines collections sources, une boucle séquentielle peut être plus rapide, selon la taille de la source et le type de travail exécuté par la boucle. Pour plus d’informations sur les performances, consultez [Pièges potentiels dans le parallélisme des données et des tâches](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)
+Une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> fonctionne comme une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Les boucles partitionnent la collection source et planifient le travail sur plusieurs threads en fonction de l’environnement système. Plus il y a de processeurs sur le système, plus la méthode parallèle s’exécute rapidement. Pour certaines collections sources, une boucle séquentielle peut être plus rapide, selon la taille de la source et le type de travail exécuté par la boucle. Pour plus d’informations sur les performances, consultez [pièges potentiels dans le parallélisme des données et des tâches](potential-pitfalls-in-data-and-task-parallelism.md).
 
 Pour plus d’informations sur les boucles parallèles, consultez [Guide pratique : écrire une boucle Parallel.For simple](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md).
 

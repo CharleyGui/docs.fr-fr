@@ -2,12 +2,12 @@
 title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
 ms.date: 09/20/2018
-ms.openlocfilehash: 65bd0cd2b316fe7011ad8e878852547ee5949f09
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 109737a04eac8cfc30c746d283ca71c697f5b29d
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673316"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834482"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
 
@@ -31,7 +31,7 @@ La communication basée sur les messages avec un récepteur unique convient bien
 
 Une fois la communication basée sur les messages lancée (avec des commandes ou des événements), évitez de mélanger ce type de communication et la communication HTTP synchrone.
 
-![Microservice unique recevant un message asynchrone](./media/image18.png)
+![Microservice unique recevant un message asynchrone](./media/asynchronous-message-based-communication/single-receiver-message-based-communication.png)
 
 **Figure 4-18**. Microservice unique recevant un message asynchrone
 
@@ -53,11 +53,11 @@ Comme indiqué précédemment dans la section [Défis et solutions pour la gesti
 
 Il est important de noter qu’il est possible de communiquer avec plusieurs microservices qui sont abonnés au même événement. Pour ce faire, vous pouvez utiliser la messagerie par publication/abonnement basée sur la communication pilotée par les événements, comme le montre la figure 4-19. Ce mécanisme de publication/d’abonnement n’est pas réservé à l’architecture des microservices. Il est similaire à la façon dont les [contextes délimités](https://martinfowler.com/bliki/BoundedContext.html) dans DDD doivent communiquer, ou à la façon dont vous propagez les mises à jour de la base de données accessible en écriture à la base de données accessible en lecture dans le modèle d’architecture [CQRS (séparation des responsabilités en matière de commande et de requête)](https://martinfowler.com/bliki/CQRS.html). L’objectif est d’obtenir une cohérence à terme entre plusieurs sources de données dans votre système distribué.
 
-![Dans une communication asynchrone pilotée par les événements, un microservice publie les événements sur un bus d’événements. De nombreux microservices peuvent s’y abonner pour recevoir des notifications et agir en conséquence.](./media/image19.png)
+![Diagramme montrant les communications asynchrones pilotées par les événements.](./media/asynchronous-message-based-communication/asynchronous-event-driven-communication.png)
 
 **Figure 4-19**. Communication par message asynchrone pilotée par les événements
 
-Votre implémentation détermine le protocole à utiliser pour les communications basées sur messages et pilotées par les événements. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) peut vous aider à obtenir une communication en file d’attente fiable.
+Dans une communication asynchrone pilotée par les événements, un microservice publie les événements sur un bus d’événements. De nombreux microservices peuvent s’y abonner pour recevoir des notifications et agir en conséquence. Votre implémentation détermine le protocole à utiliser pour les communications basées sur messages et pilotées par les événements. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) peut vous aider à obtenir une communication en file d’attente fiable.
 
 Quand vous utilisez un bus d’événements, vous pouvez utiliser un niveau d’abstraction (par exemple, une interface de bus d’événements) basé sur une implémentation connexe dans des classes avec du code utilisant l’API d’un répartiteur de message comme [RabbitMQ](https://www.rabbitmq.com/) ou d’un Service Bus comme [Azure Service Bus avec des rubriques](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Vous pouvez également utiliser un Service Bus de niveau supérieur comme NServiceBus, MassTransit ou Brighter pour définir votre bus d’événements et votre système de publication/abonnement.
 
@@ -101,7 +101,7 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 - **Cohérence à terme** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy Bogard. Refactorisation vers la résilience: évaluation du couplage** \
+- **Jimmy Bogard. Refactorisation vers la résilience : évaluation du couplage** \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]

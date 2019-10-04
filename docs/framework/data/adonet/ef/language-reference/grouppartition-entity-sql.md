@@ -2,19 +2,19 @@
 title: GROUPPARTITION (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: d0482e9b-086c-451c-9dfa-ccb024a9efb6
-ms.openlocfilehash: 9f0f917380e6422da753282216529580f87f1a1a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19df566c254a3f3202eb3554ab43ee0d7c944181
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774723"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833761"
 ---
 # <a name="grouppartition-entity-sql"></a>GROUPPARTITION (Entity SQL)
 Retourne une collection de valeurs d'argument projetées en dehors de la partition de groupe actuelle à laquelle l'agrégat est associé. L'agrégat `GroupPartition` est un agrégat basé sur les groupes et n'a aucune forme basée sur les collections.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 GROUPPARTITION( [ALL|DISTINCT] expression )  
 ```  
   
@@ -25,33 +25,33 @@ GROUPPARTITION( [ALL|DISTINCT] expression )
 ## <a name="remarks"></a>Notes  
  La requête suivante produit une liste de produits et une collection de quantités de ligne de commande pour chaque produit :  
   
-```  
-select p, GroupPartition(ol.Quantity) from LOB.OrderLines as ol  
-  group by ol.Product as p  
+```sql  
+SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol
+  GROUP BY ol.Product AS p
 ```  
   
  Les deux requêtes suivantes sont sémantiquement égales :  
   
-```  
-select p, Sum(GroupPartition(ol.Quantity)) from LOB.OrderLines as ol  
-  group by ol.Product as p  
-select p, Sum(ol.Quantity) from LOB.OrderLines as ol  
+```sql  
+SELECT p, Sum(GroupPartition(ol.Quantity)) FROM LOB.OrderLines AS ol
+  GROUP BY ol.Product AS p
+SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
   group by ol.Product as p  
 ```  
   
  L'opérateur `GROUPPARTITION` peut être utilisé conjointement à des fonctions d'agrégation définies par l'utilisateur.  
   
- `GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Par exemple :  
+`GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Exemple :
   
-```  
-select p, GroupPartition(ol.Quantity) from LOB.OrderLines as ol group by ol.Product as p  
+```sql  
+SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
- Avec un GROUP BY régulier, les résultats du regroupement sont masqués. Vous pouvez utiliser les résultats uniquement dans une fonction d'agrégation. Pour voir les résultats du regroupement, vous devez mettre en corrélation les résultats du regroupement et le jeu de données d'entrée à l'aide d'une sous-requête. Les deux requêtes suivantes sont équivalentes :  
+ Avec un @no__t normal-0, les résultats du regroupement sont masqués. Vous pouvez utiliser les résultats uniquement dans une fonction d'agrégation. Pour voir les résultats du regroupement, vous devez mettre en corrélation les résultats du regroupement et le jeu de données d'entrée à l'aide d'une sous-requête. Les deux requêtes suivantes sont équivalentes :  
   
-```  
-select p, (select q from GroupPartition(ol.Quantity) as q) from LOB.OrderLines as ol group by ol.Product as p  
-select p, (select ol.Quantity as q from LOB.OrderLines as ol2 where ol2.Product = p) from LOB.OrderLines as ol group by ol.Product as p  
+```sql  
+SELET p, (SELECT q FROM GroupPartition(ol.Quantity) AS q) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
+SELECT p, (SELECT ol.Quantity AS q FROM LOB.OrderLines AS ol2 WHERE ol2.Product = p) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
  Comme le montre l'exemple, l'opérateur d'agrégation GROUPPARTITION simplifie l'obtention d'une référence au jeu de données d'entrée après le regroupement.  
@@ -60,16 +60,16 @@ select p, (select ol.Quantity as q from LOB.OrderLines as ol2 where ol2.Product 
   
  Par exemple, toutes les expressions d'entrée suivantes de la partition de groupe sont valides :  
   
-```  
-select groupkey, GroupPartition(b) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
-select groupkey, GroupPartition(1) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
-select groupkey, GroupPartition(a + b) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
-select groupkey, GroupPartition({a + b}) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
-select groupkey, GroupPartition({42}) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
-select groupkey, GroupPartition(b > a) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
+```sql  
+SELECT groupkey, GroupPartition(b) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey
+SELECT groupkey, GroupPartition(1) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey
+SELECT groupkey, GroupPartition(a + b) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey
+SELECT groupkey, GroupPartition({a + b}) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey  
+SELECT groupkey, GroupPartition({42}) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey  
+SELECT groupkey, GroupPartition(b > a) FROM {1,2,3} AS a INNER JOIN {4,5,6} AS b ON true GROUP BY a AS groupkey  
 ```  
   
 ## <a name="example"></a>Exemple  
  L'exemple ci-dessous montre comment utiliser la clause GROUPPARTITION avec la clause GROUP BY. La clause GROUP BY regroupe les entités `SalesOrderHeader` par leur élément `Contact`. La clause GROUPPARTITION projette alors la propriété `TotalDue` pour chaque groupe, ce qui génère une collection de valeurs décimales.  
   
- [!code-csharp[DP EntityServices Concepts 2#Collection_GroupPartition](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#collection_grouppartition)]
+ [!code-sql[DP EntityServices Concepts#Collection_GroupPartition](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#collection_grouppartition)]

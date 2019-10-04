@@ -4,12 +4,12 @@ description: Guide sur les différentes façons dont les architectures d’entre
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 8a1203ea2fc7089223c03b3a3e02fd3303610272
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4cc8442509fc8a0e2cc0eb797365423458e77684
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577632"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834336"
 ---
 # <a name="architecture-deployment-approaches"></a>Approches du déploiement de l’architecture
 
@@ -17,7 +17,7 @@ Quelle que soit l’approche d’architecture utilisée pour concevoir une appli
 
 ## <a name="n-tier-applications"></a>Applications multicouches
 
-Le [modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) est une architecture mature qui fait simplement référence aux applications qui séparent les différentes couches logiques en niveaux physiques distincts. L’architecture multiniveau est une implémentation physique de l’architecture à N couches. L’implémentation la plus courante de cette architecture comprend les éléments suivants:
+Le [modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) est une architecture mature qui fait simplement référence aux applications qui séparent les différentes couches logiques en niveaux physiques distincts. L’architecture multiniveau est une implémentation physique de l’architecture à N couches. L’implémentation la plus courante de cette architecture comprend les éléments suivants :
 
 * Une couche de présentation, par exemple une application Web.
 * Une API ou une couche d’accès aux données, telle qu’une API REST.
@@ -25,7 +25,7 @@ Le [modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/arch
 
 ![Architecture multiniveau](./media/n-tier-architecture.png)
 
-Les solutions multiniveaux présentent les caractéristiques suivantes:
+Les solutions multiniveaux présentent les caractéristiques suivantes :
 
 * Les projets sont généralement alignés sur des niveaux.
 * Les tests peuvent être approchés différemment par niveau.
@@ -33,18 +33,18 @@ Les solutions multiniveaux présentent les caractéristiques suivantes:
 * En règle générale, les couches interagissent uniquement avec les couches adjacentes.
 * Les mises en production sont souvent gérées au niveau du projet et, par conséquent, de niveau. Une modification d’API simple peut nécessiter une nouvelle version d’une couche intermédiaire entière.
 
-Cette approche offre plusieurs avantages, notamment:
+Cette approche offre plusieurs avantages, notamment :
 
 * Isolation de la base de données (souvent, le serveur frontal ne dispose pas d’un accès direct à la base de données back end).
 * La réutilisation de l’API (par exemple, les clients mobiles, de bureau et d’applications Web peuvent réutiliser les mêmes API).
 * Possibilité de mettre à l’échelle les niveaux indépendamment les uns des autres.
-* Isolation de la refactorisation: un niveau peut être refactorisé sans affecter les autres niveaux.
+* Isolation de la refactorisation : un niveau peut être refactorisé sans affecter les autres niveaux.
 
 ## <a name="on-premises-and-infrastructure-as-a-service-iaas"></a>En local et infrastructure en tant que service (IaaS)
 
-L’approche traditionnelle pour héberger des applications requiert l’achat de matériel et la gestion de toutes les installations logicielles, y compris le système d’exploitation. À l’origine, cela impliquait des centres de données et du matériel physiques coûteux. Les défis liés au fonctionnement du matériel physique sont nombreux, y compris:
+L’approche traditionnelle pour héberger des applications requiert l’achat de matériel et la gestion de toutes les installations logicielles, y compris le système d’exploitation. À l’origine, cela impliquait des centres de données et du matériel physiques coûteux. Les défis liés au fonctionnement du matériel physique sont nombreux, y compris :
 
-* Le besoin d’acheter de l’excédent pour les scénarios «juste au cas» ou pics de demande.
+* Le besoin d’acheter de l’excédent pour les scénarios « juste au cas » ou pics de demande.
 * Sécurisation de l’accès physique au matériel.
 * Responsabilité en cas de défaillance matérielle (défaillance de disque, par exemple).
 * Température.
@@ -54,7 +54,7 @@ L’approche traditionnelle pour héberger des applications requiert l’achat d
 
 ![Approche IaaS](./media/iaas-approach.png)
 
-La virtualisation du matériel via «machines virtuelles» active l’infrastructure en tant que service (IaaS). Les ordinateurs hôtes sont effectivement partitionnés pour fournir des ressources aux instances avec des allocations pour leur propre mémoire, UC et stockage. L’équipe provisionne les machines virtuelles nécessaires et configure les réseaux associés et l’accès au stockage.
+La virtualisation du matériel via « machines virtuelles » active l’infrastructure en tant que service (IaaS). Les ordinateurs hôtes sont effectivement partitionnés pour fournir des ressources aux instances avec des allocations pour leur propre mémoire, UC et stockage. L’équipe provisionne les machines virtuelles nécessaires et configure les réseaux associés et l’accès au stockage.
 
 Pour plus d’informations, consultez [architecture de référence N-Tier de machine virtuelle](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier).
 
@@ -66,7 +66,7 @@ Pour plus d’informations, consultez [machines virtuelles](https://docs.microso
 
 PaaS (Platform as a service) offre des solutions configurées que les développeurs peuvent connecter directement. PaaS est un autre terme pour l’hébergement géré. Cela élimine la nécessité de gérer le système d’exploitation de base, les correctifs de sécurité et, dans de nombreux cas, les dépendances tierces. Les applications Web, les bases de données et les back-end mobiles sont des exemples de plateformes.
 
-PaaS répond aux défis communs à IaaS. PaaS permet au développeur de se concentrer sur le code ou le schéma de base de données plutôt que sur la façon dont il est déployé. Les avantages de PaaS sont les suivants:
+PaaS répond aux défis communs à IaaS. PaaS permet au développeur de se concentrer sur le code ou le schéma de base de données plutôt que sur la façon dont il est déployé. Les avantages de PaaS sont les suivants :
 
 * Payez pour les modèles d’utilisation qui éliminent la surcharge liée à l’investissement sur des machines inactives.
 * Le déploiement direct et les pipelines d’intégration continue, d’intégration continue (CI) et de livraison continue (CD) améliorés.
@@ -87,7 +87,7 @@ En savoir plus sur SaaS à l’aide d’un [exemple d’application](https://doc
 
 Les conteneurs sont une solution intéressante qui offre des avantages de type PaaS sans la surcharge IaaS. Un conteneur est essentiellement un Runtime qui contient les éléments essentiels indispensables à l’exécution d’une application unique. Le noyau ou la partie principale du système d’exploitation hôte et des services tels que le stockage sont partagés sur un hôte. Le noyau partagé permet aux conteneurs d’être légers (certains sont de simples mégaoctets, par rapport à la taille en gigaoctet des machines virtuelles standard). Avec les hôtes déjà en cours d’exécution, les conteneurs peuvent être démarrés rapidement, ce qui facilite la haute disponibilité. La possibilité de créer rapidement des conteneurs fournit également des couches de résilience supplémentaires. L’ancrage est l’une des implémentations les plus populaires des conteneurs.
 
-Les conteneurs présentent les avantages suivants:
+Les conteneurs présentent les avantages suivants :
 
 * Légère et portable
 * Autonome, il n’est donc pas nécessaire d’installer les dépendances
@@ -97,13 +97,13 @@ Les conteneurs présentent les avantages suivants:
 
 Un conteneur s’exécute sur un hôte de conteneur (qui peut à son tour s’exécuter sur un ordinateur nu ou un ordinateur virtuel). Plusieurs conteneurs ou instances des mêmes conteneurs peuvent s’exécuter sur un seul hôte. Pour le basculement et la résilience véritables, les conteneurs doivent être mis à l’échelle entre les ordinateurs hôtes.
 
-Pour plus d’informations sur les conteneurs d’ancrage, consultez [qu’est-ce que l’ancrage](../microservices/container-docker-introduction/docker-defined.md)?
+Pour plus d’informations sur les conteneurs d’ancrage, consultez [qu’est-ce que l’ancrage](../microservices/container-docker-introduction/docker-defined.md).
 
 La gestion des conteneurs sur les hôtes nécessite généralement un outil d’orchestration tel que Kubernetes. La configuration et la gestion des solutions d’orchestration peuvent ajouter une surcharge et une complexité supplémentaires aux projets. Heureusement, de nombreux fournisseurs de Cloud fournissent des services d’orchestration via des solutions PaaS pour simplifier la gestion des conteneurs.
 
 L’image suivante illustre un exemple d’installation de Kubernetes. Les nœuds de l’adresse d’installation sont mis à l’échelle et basculement. Ils exécutent des instances de conteneur de l’arrimeur qui sont gérées par le serveur maître. Le *kubelet* est le client qui relaie les commandes de Kubernetes vers l’ancrage.
 
-![kubernetes](./media/kubernetes-example.png)
+![Kubernetes](./media/kubernetes-example.png)
 
 Pour plus d’informations sur l’orchestration, consultez [Kubernetes sur Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes).
 
@@ -123,7 +123,7 @@ L’illustration suivante montre les quatre composants sans serveur. Une requêt
 
 ![Implémentation sans serveur](./media/serverless-implementation.png)
 
-Les avantages des serveurs sans serveur sont les suivants:
+Les avantages des serveurs sans serveur sont les suivants :
 
 * **Haute densité.** De nombreuses instances du même code sans serveur peuvent s’exécuter sur le même hôte par rapport aux conteneurs ou aux machines virtuelles. Les instances sont mises à l’échelle sur plusieurs hôtes montée en puissance et en résilience.
 * **Micro-facturation**. La plupart des fournisseurs sans serveur facturent en fonction des exécutions sans serveur, ce qui permet de réaliser des économies considérables dans certains scénarios.
@@ -138,10 +138,10 @@ Il existe un large éventail de choix disponibles pour l’architecture, y compr
 
 |         |IaaS     |PaaS     |Conteneur|Sans serveur|
 |---------|---------|---------|---------|----------|
-|**Mettre à l'échelle**|MACHINES       |Instance |Application      |Fonction  |
+|**Échelle**|MACHINES       |Instance |Application      |Fonction  |
 |**Extrait**|Matériel|Plateforme|Hôte de système d’exploitation|Runtime   |
-|**Unité** |MACHINES       |Projet  |Image    |Code      |
-|**Durée de vie**|Suivent|Jours à mois|Minutes et jours|Millisecondes en minutes|
+|**Unités** |MACHINES       |Projet  |Image    |Code      |
+|**Durée de vie**|suivent|Jours à mois|Minutes et jours|Millisecondes en minutes|
 |**Entière**|Applications, dépendances, Runtime et système d’exploitation|Applications et dépendances|Applications, dépendances et Runtime|Fonction
 
 * L' **échelle** fait référence à l’unité utilisée pour mettre à l’échelle l’application

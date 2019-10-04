@@ -2,12 +2,12 @@
 title: Résilience et haute disponibilité dans les microservices
 description: Les microservices doivent être conçus pour gérer les pannes de dépendances et de réseau temporaires auxquelles ils doivent être résilients pour assurer une haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: bb1bef0c9cc08e43aed80a29effe89587fb296f6
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 6c110b0fe7a80842f12779494e5b0bdd29c5fb64
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675056"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834348"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Résilience et haute disponibilité dans les microservices
 
@@ -46,7 +46,7 @@ Une application basée sur des microservices ne doit pas tenter de stocker elle-
 
 Quand vous créez une application basée sur des microservices, vous devez gérer la complexité. Bien sûr, s’il est simple de traiter avec un seul microservice, le problème est bien complexe avec des dizaines ou des centaines de types de microservices, et des milliers d’instances de microservices. Il ne s’agit pas seulement de créer l’architecture de vos microservices : vous avez aussi besoin d’une haute disponibilité, d’adressabilité, de résilience, d’intégrité et de diagnostics si vous voulez avoir d’un système stable et cohésif.
 
-![Les orchestrateurs fournissent une plateforme de prise en charge pour exécuter vos microservices.](./media/image22.png)
+![Diagramme des clusters fournissant une plateforme de prise en charge pour les microservices.](./media/resilient-high-availability-microservices/microservice-platform.png)
 
 **Figure 4-22**. Une plateforme de microservices est essentielle pour la gestion de l’intégrité d’une application
 

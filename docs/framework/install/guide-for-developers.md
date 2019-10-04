@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8902f9a6f37ab45929e147af5f899ef49c4a42b0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0c1a14f0ee36341c9579683f711ae78fc4df3f97
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051941"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833652"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Installer le .NET Framework pour les développeurs
 
@@ -155,7 +155,7 @@ Les deux programmes d’installation web et hors connexion sont conçus pour les
 
 - .NET Framework 4.5, ses versions intermédiaires, .NET Framework 4.6 et ses versions intermédiaires, .NET Framework 4.7 et ses versions intermédiaires, et .NET Framework 4.8 remplacent .NET Framework 4. Quand vous installez ces versions sur un système où .NET Framework 4 est installé, les assemblys sont remplacés.
 
-- La désinstallation de .NET Framework 4.5, de ses versions intermédiaires, de .NET Framework 4.6 et ses versions intermédiaires, de .NET Framework 4.7 et ses versions intermédiaires, ou de .NET Framework 4.8 supprime également les fichiers .NET Framework 4 préexistants. Si vous souhaitez revenir au .NET Framework 4, vous devrez le réinstaller et effectuer toutes ses mises à jour. (Consultez [Installation du .NET Framework 4](https://go.microsoft.com/fwlink/p/?LinkId=230665).)
+- La désinstallation de .NET Framework 4.5, de ses versions intermédiaires, de .NET Framework 4.6 et ses versions intermédiaires, de .NET Framework 4.7 et ses versions intermédiaires, ou de .NET Framework 4.8 supprime également les fichiers .NET Framework 4 préexistants. Si vous souhaitez revenir au .NET Framework 4, vous devrez le réinstaller et effectuer toutes ses mises à jour. Consultez [installation du .NET Framework 4](https://go.microsoft.com/fwlink/p/?LinkId=230665).
 
 - Vous devez disposer d’informations d’identification d’administrateur pour installer .NET Framework 4.5, ses versions intermédiaires, .NET Framework 4.6 et ses versions intermédiaires, .NET Framework 4.7 et sa version intermédiaire, et .NET Framework 4.8.
 

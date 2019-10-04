@@ -2,12 +2,12 @@
 title: Refactorisation dans des fonctions pures (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
-ms.openlocfilehash: 0a37b30278c850256355612cec09a4c017c7adc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e951b3e9108f26a9c861eb49c44bb0a510131819
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787164"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834917"
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>Refactorisation dans des fonctions pures (Visual Basic)
 
@@ -21,7 +21,7 @@ Comme mentionné précédemment dans cette section, une fonction pure présente 
 
  L'une des manières de basculer vers la programmation fonctionnelle consiste à refactoriser le code existant afin d'éliminer les effets secondaires indésirables et les dépendances externes. De cette manière, vous pouvez créer des versions avec fonctions pures du code existant.
 
-Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Tutoriel : Manipulation de contenu dans un WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) didacticiel montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactoriser à l’aide d’une fonction pure.
+Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Tutoriel : Manipulation de contenu dans un document WordprocessingML (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) didacticiel montre comment manipuler un document WordprocessingML et propose deux exemples de refactorisation à l’aide d’une fonction pure.
 
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>Suppression des effets secondaires et des dépendances externes
 
@@ -48,11 +48,11 @@ End Module
 
 Ce code génère la sortie suivante :
 
-```
+```console
 StringOne-StringTwo
 ```
 
-Notez qu’il est sans intérêt si les données modifiées aient `public` ou `private` accéder, ou est un `shared` membre ou un membre d’instance. Une fonction pure ne change aucune donnée en dehors de la fonction.
+Notez qu’il est inutile que les données modifiées aient `public` ou `private` Access, ou qu’il s’agisse d’un membre `shared` ou d’un membre d’instance. Une fonction pure ne change aucune donnée en dehors de la fonction.
 
 ### <a name="non-pure-function-that-changes-an-argument"></a>Fonction non pure qui modifie un argument
 
@@ -103,9 +103,9 @@ L'une des approches qui peuvent se révéler très utiles consiste à écrire de
 
 L'une des caractéristiques importantes des opérateurs de requête standard est qu'ils sont implémentés en tant que fonctions pures.
 
-Pour plus d’informations, consultez [présentation des opérateurs de requête Standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
+Pour plus d’informations, consultez [vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux Transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Comparaison de la programmation fonctionnelle et de la Programmation impérative (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [Présentation des transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Comparaison de la programmation fonctionnelle et de la @No__t de la programmation impérative (Visual Basic)-0

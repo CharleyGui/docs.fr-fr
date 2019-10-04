@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e2e37de4d3032db6d9578eae7ba0be5c1e39f39d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 42edce63856b629511faeb165362da18ea3cecad
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051755"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833633"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Procédure : Migrer du code DCOM managé vers WCF
 Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
@@ -60,7 +60,7 @@ public interface IRemoteService
   
  Dans ce scénario, le client reçoit une copie désérialisée d'un objet à partir du service distant. Le client peut interagir avec cette copie locale sans effectuer de rappel au service.  En d'autres termes, le client a la garantie que le service ne sera impliqué en aucune façon quand les méthodes de la copie locale seront appelées. WCF retourne toujours les objets à partir du service par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.  
   
-### <a name="step-1-define-the-wcf-service-interface"></a>Étape 1 : Définir l’interface du service WCF  
+### <a name="step-1-define-the-wcf-service-interface"></a>Étape 1 : Définir l’interface du service WCF  
  Définissez une interface publique pour le service WCF et marquez-la avec l'attribut [<xref:System.ServiceModel.ServiceContractAttribute>].  Marquez les méthodes que vous souhaitez exposer aux clients avec l'attribut [<xref:System.ServiceModel.OperationContractAttribute>]. L'exemple suivant illustre l'utilisation de ces attributs pour identifier l'interface côté serveur et les méthodes d'interface qu'un client peut appeler. La méthode utilisée pour ce scénario est affichée en gras.  
   
 ```csharp  
@@ -79,7 +79,7 @@ public interface ICustomerManager
 }  
 ```  
   
-### <a name="step-2-define-the-data-contract"></a>Étape 2 : Définir le contrat de données  
+### <a name="step-2-define-the-data-contract"></a>Étape 2 : Définir le contrat de données  
  Ensuite, vous devez créer un contrat de données pour le service, qui décrira comment les données seront échangées entre le service et ses clients.  Les classes décrites dans le contrat de données doivent être marquées avec l'attribut [<xref:System.Runtime.Serialization.DataContractAttribute>]. Les propriétés ou champs individuels que vous souhaitez voir apparaître sur le client et le serveur doivent être marqués avec l’attribut [<xref:System.Runtime.Serialization.DataMemberAttribute>]. Si vous souhaitez autoriser des types dérivés d’une classe dans le contrat de données, vous devez les identifier avec l’attribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>]. WCF va uniquement sérialiser ou désérialiser les types de l'interface de service et les types identifiés comme connus. Si vous essayez d'utiliser un type qui n'est pas connu, une exception se produit.  
   
  Pour plus d’informations sur les contrats de données, consultez [Contrats de données](../wcf/samples/data-contracts.md).  
@@ -121,7 +121,7 @@ public class Address
 }  
 ```  
   
-### <a name="step-3-implement-the-wcf-service"></a>Étape 3 : Implémenter le service WCF  
+### <a name="step-3-implement-the-wcf-service"></a>Étape 3 : Implémenter le service WCF  
  Ensuite, vous devez implémenter la classe du service WCF qui implémente l'interface que vous avez définie à l'étape précédente.  
   
 ```csharp  
@@ -138,7 +138,7 @@ public class CustomerService: ICustomerManager
 }  
 ```  
   
-### <a name="step-4-configure-the-service-and-the-client"></a>Étape 4 : Configurer le service et le client  
+### <a name="step-4-configure-the-service-and-the-client"></a>Étape 4 : Configurer le service et le client  
  Pour exécuter un service WCF, vous devez déclarer un point de terminaison qui expose cette interface de service à une URL spécifique à l'aide d'une liaison WCF spécifique. Une liaison spécifie les détails relatifs au transport, à l’encodage et au protocole pour que le serveur et les clients puissent communiquer. En général, vous ajoutez des liaisons au fichier de configuration du projet de service (web.config). Le code suivant illustre une entrée de liaison pour l’exemple de service :  
   
 ```xml  
@@ -169,7 +169,7 @@ public class CustomerService: ICustomerManager
 </configuration>  
 ```  
   
-### <a name="step-5-run-the-service"></a>Étape 5 : Exécuter le service  
+### <a name="step-5-run-the-service"></a>Étape 5 : Exécuter le service  
  Enfin, vous pouvez automatiquement l'héberger dans une application console en ajoutant les lignes suivantes à l'application de service, puis en démarrant l'application. Pour plus d’informations sur les autres méthodes d’hébergement d’une application de service WCF, consultez [Services d’hébergement](../wcf/hosting-services.md).  
   
 ```csharp  
@@ -250,7 +250,7 @@ public interface IRemoteService
 }  
 ```  
   
-### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Étape 1 : Définir l’interface et l’implémentation du service de session WCF  
+### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Étape 1 : Définir l’interface et l’implémentation du service de session WCF  
  Tout d'abord, définissez une interface de service WCF contenant l'objet de session.  
   
  Dans ce code, l'objet de session est marqué avec l'attribut `ServiceContract`, qui l'identifie comme une interface de service WCF standard.  De plus, la propriété <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> est définie pour indiquer qu'il s'agira d'un service de session.  
@@ -290,7 +290,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
-### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>Étape 2 : Définir le service de fabrique WCF pour l’objet de session  
+### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>Étape 2 : Définir le service de fabrique WCF pour l’objet de session  
  Le service qui crée l'objet de session doit être défini et implémenté. Le code suivant montre comment procéder. Ce code crée un autre service WCF qui retourne un objet <xref:System.ServiceModel.EndpointAddress10>.  Il s'agit d'une forme sérialisable d'un point de terminaison qui peut être utilisée pour créer l'objet de session.  
   
 ```csharp  
@@ -302,7 +302,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
- Voici l'implémentation de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.  
+ Voici l’implémentation de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.
   
 ```csharp  
 public class SessionBoundFactory : ISessionBoundFactory  
@@ -322,7 +322,7 @@ public class SessionBoundFactory : ISessionBoundFactory
     }  
 ```  
   
-### <a name="step-3-configure-and-start-the-wcf-services"></a>Étape 3 : Configurer et démarrer les services WCF  
+### <a name="step-3-configure-and-start-the-wcf-services"></a>Étape 3 : Configurer et démarrer les services WCF  
  Pour héberger ces services, vous devrez effectuer les ajouts suivants au fichier de configuration du serveur (web.config).  
   
 1. Ajoutez une section `<client>` qui décrive le point de terminaison de l'objet de session.  Dans ce scénario, le serveur agit comme un client et doit être configuré pour rendre ceci possible.  
@@ -368,7 +368,7 @@ typeof(MySessionBoundObject));
 sessionBoundServiceHost.Open();  
 ```  
   
-### <a name="step-4-configure-the-client-and-call-the-service"></a>Étape 4 : Configurer le client et appeler le service  
+### <a name="step-4-configure-the-client-and-call-the-service"></a>Étape 4 : Configurer le client et appeler le service  
  Configurez le client pour communiquer avec les services WCF en ajoutant les entrées suivantes dans le fichier de configuration d'application du projet (app.config).  
   
 ```xml  

@@ -2,12 +2,12 @@
 title: Identification des limites du modèle de domaine pour chaque microservice
 description: Explorez l’essence du partitionnement d’une application volumineuse en microservices pour obtenir une architecture solide.
 ms.date: 09/20/2018
-ms.openlocfilehash: aa903e13b20be1084fad60e6fb7bbb1c61403deb
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 9c433066dd8e93dbb09b15e58c9c85617775723d
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673086"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834414"
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Identifier les limites du modèle de domaine pour chaque microservice
 
@@ -27,21 +27,21 @@ Vous savez que vous avez déterminé les bonnes limites et les bonnes tailles de
 
 La meilleure réponse à la question de la taille que doit avoir un modèle de domaine pour chaque microservice est peut-être la suivante : il doit avoir un contexte délimité autonome, aussi isolé que possible, qui vous permet de travailler sans devoir passer constamment à d’autres contextes (autres modèles de microservice). Dans la figure 4-10, vous pouvez voir comment plusieurs microservices (plusieurs contextes délimités) ont chacun leur propre modèle et comment leurs entités peuvent être définies, en fonction des exigences spécifiques de chacun des domaines identifiés dans votre application.
 
-![Entités de plusieurs limites de modèle (contextes délimités), où la même entité apparaît sous les termes « Users » (Utilisateurs), « Buyers » (Acheteurs), « Payers » (Payeurs) et « Customers » (Clients) en fonction du contexte délimité](./media/image10.png)
+![Diagramme montrant des entités dans plusieurs limites de modèle.](./media/identify-microservice-domain-model-boundaries/identify-entities-microservice-model-boundries.png)
 
 **Figure 4-10**. Identification des entités et des limites du modèle de microservice
 
-La figure 4-10 illustre un exemple de scénario relatif à un système de gestion de conférences en ligne. Vous avez identifié plusieurs contextes délimités qui peuvent être implémentés en tant que microservices, en fonction des domaines définis pour vous par les experts des domaines. Comme vous pouvez le voir, il existe des entités qui sont présentes dans un seul modèle de microservice, comme Payments (Paiements) dans le microservice Payment (Paiement). Ceux-ci seront faciles à implémenter.
+La figure 4-10 illustre un exemple de scénario relatif à un système de gestion de conférences en ligne. La même entité apparaît comme « Users », « Buyers », « payer » et « Customers » en fonction du contexte délimité. Vous avez identifié plusieurs contextes délimités qui peuvent être implémentés en tant que microservices, en fonction des domaines définis pour vous par les experts des domaines. Comme vous pouvez le voir, il existe des entités qui sont présentes dans un seul modèle de microservice, comme Payments (Paiements) dans le microservice Payment (Paiement). Ceux-ci seront faciles à implémenter.
 
 Cependant, vous pouvez également avoir des entités qui ont une forme différente, mais qui partagent la même identité entre les différents modèles de domaine des différents microservices. Par exemple, l’entité User (Utilisateur) est identifiée dans le microservice Conferences Management (Gestion des conférences). Ce même utilisateur, avec la même identité, est celui qui est nommé Buyers (Acheteurs) dans le microservice Ordering (Commandes), ou celui qui est nommé Payer (Payeur) dans le microservice Payment (Paiement), et même celui qui est nommé Customer (Client) dans le microservice Customer Service (Service client). C’est pourquoi, en fonction de [l’ubiquité du langage](https://martinfowler.com/bliki/UbiquitousLanguage.html) utilisé par chaque expert du domaine, un utilisateur peut avoir une perspective différente, avec même des attributs différents. L’entité représentant un utilisateur dans le modèle de microservice nommé Conferences Management peut avoir la plupart de ses attributs de données personnelles. Cependant, ce même utilisateur dans la forme Payer du microservice Payment ou dans la forme Customer dans le microservice Customer Service peut ne pas nécessiter la même liste d’attributs.
 
 Une approche similaire est illustrée dans la figure 4-11.
 
-![Quand vous décomposez un modèle de données classique en plusieurs contextes liés, différentes entités peuvent partager la même identité (un acheteur est également un utilisateur) avec des attributs distincts dans chaque contexte lié.](./media/image11.png)
+![Diagramme montrant comment décomposer un modèle de données en plusieurs modèles de domaine.](./media/identify-microservice-domain-model-boundaries/decompose-traditional-data-models.png)
 
 **Figure 4-11**. Décomposition des modèles de données traditionnels en plusieurs modèles de domaine
 
-Vous pouvez voir que l’utilisateur est présent dans le modèle de microservice Conferences Management en tant qu’entité User, et qu’il est également présent sous la forme de l’entité Buyer dans le microservice Pricing (Tarification), avec d’autres attributs ou détails sur l’utilisateur quand il est en fait un acheteur. Chaque microservice ou contexte délimité peut ne pas avoir besoin de toutes les données relatives à une entité User, mais seulement d’une partie d’entre elles, selon le problème à résoudre ou le contexte. Par exemple, dans le modèle de microservice Pricing, vous n’avez pas besoin de l’adresse ou du nom de l’utilisateur, mais simplement d’ID (en tant qu’identité) et de Status (État), qui a un impact sur les remises pour la tarification des sièges par acheteur.
+Quand vous décomposez un modèle de données classique en plusieurs contextes liés, différentes entités peuvent partager la même identité (un acheteur est également un utilisateur) avec des attributs distincts dans chaque contexte lié. Vous pouvez voir que l’utilisateur est présent dans le modèle de microservice Conferences Management en tant qu’entité User, et qu’il est également présent sous la forme de l’entité Buyer dans le microservice Pricing (Tarification), avec d’autres attributs ou détails sur l’utilisateur quand il est en fait un acheteur. Chaque microservice ou contexte délimité peut ne pas avoir besoin de toutes les données relatives à une entité User, mais seulement d’une partie d’entre elles, selon le problème à résoudre ou le contexte. Par exemple, dans le modèle de microservice Pricing, vous n’avez pas besoin de l’adresse ou du nom de l’utilisateur, mais simplement d’ID (en tant qu’identité) et de Status (État), qui a un impact sur les remises pour la tarification des sièges par acheteur.
 
 L’entité Seat (Siège) a le même nom, mais des attributs différents dans chaque modèle de domaine. Cependant, Seat partage l’identité basée sur le même ID, comme cela se passe avec User et Buyer.
 

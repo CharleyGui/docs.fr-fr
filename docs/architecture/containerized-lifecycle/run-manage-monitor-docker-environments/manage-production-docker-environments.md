@@ -2,12 +2,12 @@
 title: Gérer des environnements de production Docker
 description: Découvrez les points clés de la gestion d’un environnement de production basé sur un conteneur.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7d10f670745f8bac1084b8c33c5acde67bac6229
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 26e7a3319afe593d75e2384d023c901a389245dc
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673466"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834506"
 ---
 # <a name="manage-production-docker-environments"></a>Gérer des environnements de production Docker
 
@@ -17,7 +17,7 @@ La gestion et l’orchestration d’un cluster constituent le processus consista
 
 Container Service assure le déploiement rapide des principales solutions de mise en cluster et d’orchestration de containers open source. Il tire parti des images Docker pour garantir la portabilité complète de vos conteneurs d’application. À l’aide de Container Service, vous pouvez déployer des clusters Docker Swarm et DC/OS (technologie Mesosphere et Apache Mesos) à l’aide de modèles Azure Resource Manager ou du portail Azure afin de pouvoir faire évoluer ces applications dans des proportions allant jusqu’à des milliers, voire des dizaines de milliers, de conteneurs.
 
-Vous déployez ces clusters au moyen de jeux de mise à l’échelle de machines virtuelles Azure et les clusters tirent parti des offres de mise en réseau et de stockage Azure. Pour accéder à Container Service, vous devez disposer d’un abonnement Azure. Avec Container Service, vous pouvez bénéficier des fonctionnalités de niveau entreprise d’Azure, tout en conservant la portabilité des applications, notamment au niveau des couches d’orchestration.
+Vous déployez ces clusters à l’aide d’Azure Virtual Machine Scale Sets, et les clusters tirent parti des offres de stockage et de mise en réseau Azure. Pour accéder à Container Service, vous devez disposer d’un abonnement Azure. Avec Container Service, vous pouvez bénéficier des fonctionnalités de niveau entreprise d’Azure, tout en conservant la portabilité des applications, notamment au niveau des couches d’orchestration.
 
 Le tableau 6-1 indique les outils de gestion courants ainsi que les orchestrateurs, planificateurs et plateforme de clustering correspondants.
 
@@ -34,7 +34,7 @@ Le tableau 6-1 indique les outils de gestion courants ainsi que les orchestrate
 
 Une autre option pour la gestion et le déploiement de cluster est Azure Service Fabric. [Service Fabric](https://azure.microsoft.com/services/service-fabric/) est une plateforme de microservices Microsoft qui inclut l’orchestration des conteneurs ainsi que des modèles de programmation permettant aux développeurs de générer des applications de microservices hautement scalables. Service Fabric prend en charge Docker dans les conteneurs Linux et Windows et peut s’exécuter sur les serveurs Windows et Linux.
 
-Voici les outils de gestion Service Fabric :
+Service Fabric outils d’administration sont les suivants :
 
 - [Portail Azure pour Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) : permet d’effectuer les opérations liées à un cluster (création/mise à jour/suppression) ou de configurer son infrastructure (machines virtuelles, équilibreur de charge, réseau, etc.)
 

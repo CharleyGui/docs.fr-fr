@@ -2,12 +2,12 @@
 title: Création d’une interface utilisateur composite basée sur des microservices
 description: Une architecture de microservices n’est pas uniquement conçue pour le back-end. Elle peut également s’utiliser dans un environnement front-end comme vous allez pouvoir le voir.
 ms.date: 09/20/2018
-ms.openlocfilehash: 0d1825d6183b79a0e10f70fc6cfee6ca79a837d8
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
-ms.translationtype: HT
+ms.openlocfilehash: 60e0e6d59738f3f1fec31226cb842ceb1af303e4
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817834"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834377"
 ---
 # <a name="creating-composite-ui-based-on-microservices"></a>Création d’une interface utilisateur composite basée sur des microservices
 
@@ -15,7 +15,7 @@ L’architecture de microservices commence généralement par la gestion côté 
 
 La figure 4-20 montre une approche plus simple consistant à seulement consommer des microservices à partir d’une application cliente monolithique. Bien sûr, vous pourriez avoir un service ASP.NET MVC intermédiaire produisant du code HTML et JavaScript. La figure est une simplification qui met en évidence le fait que vous avez une interface utilisateur cliente (monolithique) consommant les microservices, qui s’occupe seulement de la logique et des données, mais pas de la forme de l’interface utilisateur (HTML et JavaScript).
 
-![Une application avec interface utilisateur monolithique se connectant à des microservices individuels.](./media/image20.png)
+![Diagramme d’une application d’interface utilisateur monolithique se connectant aux microservices.](./media/microservice-based-composite-ui-shape-layout/monolith-ui-consume-microservices.png)
 
 **Figure 4-20**. Une application avec interface utilisateur monolithique consommant des microservices de backend
 
@@ -25,11 +25,11 @@ Au démarrage de l’application cliente, chacun des composants de l’interface
 
 La figure 4-21 montre une version de cette approche de l’interface utilisateur composite. C’est une version simplifiée, car vous pouvez avoir d’autres microservices qui agrègent des parties plus petites selon différentes techniques. Cela dépend de ce que vous créez : une application web traditionnelle (ASP.NET MVC) ou une application monopage (SPA).
 
-![Dans une application d’interface utilisateur composite, chaque partie de l’interface utilisateur est générée par un microservice de composition de l’interface utilisateur, qui fait office de mini-passerelle.](./media/image21.png)
+![Diagramme d’une interface utilisateur composite constituée de nombreux modèles de vue.](./media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png)
 
 **Figure 4-21**. Exemple d’une application d’interface utilisateur composite mise en forme des microservices de backend
 
-Chacun de ces microservices de composition de l’interface utilisateur serait similaire à une petite passerelle d’API. Dans ce cas, chacun est responsable d’une petite partie de l’interface utilisateur.
+Chacun de ces microservices de composition de l’interface utilisateur serait similaire à une petite passerelle d’API. Mais dans ce cas, chacun d’entre eux est responsable d’une petite zone d’interface utilisateur.
 
 Une approche d’interface utilisateur composite basée sur des microservices peut être plus ou moins difficile à implémenter, selon les technologies d’interface utilisateur que vous utilisez. Par exemple, vous n’utilisez pas les mêmes techniques pour créer une application web traditionnelle que pour créer une application monopage ou pour des applications mobiles natives (comme quand vous développez des applications Xamarin, ce qui peut s’avérer plus difficile avec cette approche).
 

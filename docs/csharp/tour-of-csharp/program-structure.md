@@ -3,12 +3,12 @@ title: Structure des programmes C# - Visite guidée du langage C#
 description: Découvrez les composantes élémentaires d’un programme C#
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: e6b3e0d3b91d3dee8cbc8ac530323e23e0ce8b2a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 5102c72d68108f698a0456b9c14e6713778f4325
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634562"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834159"
 ---
 # <a name="program-structure"></a>Structure du programme
 
@@ -20,7 +20,7 @@ L’exemple déclare une classe nommée `Stack` dans un espace de noms appelé `
 
 Le nom qualifié complet de cette classe est `Acme.Collections.Stack`. La classe contient plusieurs membres : un champ nommé `top`, deux méthodes nommées `Push` et `Pop`, et une classe imbriquée nommée `Entry`. La classe `Entry` contient trois membres en plus : un champ nommé `next`, un autre nommé `data` et un constructeur. En supposant que le code source de l’exemple est stocké dans le fichier `acme.cs`, la ligne de commande
 
-```
+```console
 csc /t:library acme.cs
 ```
 
@@ -37,13 +37,13 @@ Comme un assembly est une unité de fonctionnalité autodescriptive contenant du
 
 Si le programme est stocké dans le fichier `example.cs`, lorsque `example.cs` est compilé, l’assembly acme.dll peut être référencé à l’aide de l’option de compilateur /r :
 
-```
+```console
 csc /r:acme.dll example.cs
 ```
 
 Cela permet de créer un assembly exécutable nommé `example.exe`, qui, lors de l’exécution, produit la sortie :
 
-```
+```console
 100
 10
 1

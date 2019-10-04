@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 4c3a39c1d1252951b0847638809c9e1e6be2a21e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2a599322ef955b9f702f8960f294f5d093ede74a
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856192"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834746"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Vue d'ensemble des fonctionnalités bidirectionnelles dans WPF
 
@@ -178,7 +178,7 @@ Cela a permis aux applications de traiter des valeurs numériques sans avoir bes
 
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] continue dans la même tradition et ajoute une prise en charge supplémentaire de cette fonctionnalité qui permet un meilleur contrôle de l’utilisateur sur quand et comment la substitution est utilisée. Bien que cette fonctionnalité soit conçue pour n’importe quelle langue, elle est particulièrement utile pour du contenu bidirectionnel, où la mise en forme des chiffres pour une langue spécifique est habituellement un défi pour les développeurs d’application du fait des différentes cultures dans lesquelles peut s’exécuter l’application.
 
-La propriété de base contrôlant le fonctionnement de la [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] substitution de <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> nombres dans est la propriété de dépendance. La <xref:System.Windows.Media.NumberSubstitution> classe spécifie le mode d’affichage des nombres dans le texte. Elle a trois propriétés publiques qui définissent son comportement. Voici un résumé de chacune des propriétés.
+La propriété de base contrôlant le fonctionnement de la [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] substitution de <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> nombres dans est la propriété de dépendance. La <xref:System.Windows.Media.NumberSubstitution> classe spécifie le mode d’affichage des nombres dans le texte. Elle a trois propriétés publiques qui définissent son comportement. Voici un résumé de chacune des propriétés :
 
 **CultureSource :**
 
@@ -188,7 +188,7 @@ Cette propriété spécifie la manière dont est déterminée la culture pour le
 
 - financière La culture des nombres est la culture de la séquence de texte. Dans le balisage, il `xml:lang`s’agit de, `Language` ou de sa <xref:System.Windows.FrameworkContentElement.Language%2A>propriété alias (<xref:System.Windows.FrameworkElement.Language%2A> ou). Par ailleurs, il s’agit de la valeur par défaut <xref:System.Windows.FrameworkContentElement>pour les classes qui dérivent de. Ces classes incluent <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> et ainsi de suite.
 
-- Utilisateur : La culture des nombres est la culture du thread actuel. Cette propriété est la valeur par défaut pour toutes les sous <xref:System.Windows.FrameworkElement> -classes <xref:System.Windows.Controls.Page>de <xref:System.Windows.Window> telles <xref:System.Windows.Controls.TextBlock>que et.
+- Utilisateur : La culture des nombres est la culture du thread actuel. Cette propriété est la valeur par défaut pour toutes les sous <xref:System.Windows.FrameworkElement> -classes <xref:System.Windows.Controls.Page>de <xref:System.Windows.Window> telles <xref:System.Windows.Controls.TextBlock>que et.
 
 **CultureOverride** :
 
@@ -226,7 +226,7 @@ Si vous souhaitez apporter des modifications en fonction de l’état de l’app
 
 Tout d’abord, définissez le composant `NumberSubstitution.CultureSource="Text"`de l’application. L’utilisation de ce paramètre permet de s’assurer que les paramètres ne [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] proviennent pas du pour les éléments de texte qui ont « User » comme <xref:System.Windows.Controls.TextBlock>valeur par défaut, par exemple.
 
-Par exemple :
+Exemple :
 
 ```xaml
 <TextBlock

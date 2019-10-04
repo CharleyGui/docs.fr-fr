@@ -2,12 +2,12 @@
 title: Souveraineté des données par microservice
 description: La souveraineté des données par microservice est un des points clés des microservices. Chaque microservice doit être le seul propriétaire de sa base de données. Il ne doit la partager avec aucun autre. Bien entendu, toutes les instances d’un microservice se connectent à la même base de données à haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: cd7be23800394b231e15bdc503d15a960a25a20a
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: 3261446a84038b7b634242b0a0737472965168de
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566205"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834467"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Souveraineté des données par microservice
 
@@ -19,11 +19,11 @@ Ce principe est similaire dans la [Conception pilotée par le domaine (DDD, Doma
 
 D’un autre côté, l’approche traditionnelle (données monolithiques) utilisée dans de nombreuses applications consiste à avoir une seule base de données centralisée ou seulement quelques-unes. Il s’agit souvent d’une base de données SQL normalisée, utilisée pour l’ensemble de l’application et tous ses sous-systèmes internes (figure 4-7).
 
-![Dans l’approche classique, il existe une seule base de données partagée entre tous les services, généralement dans une architecture à plusieurs niveaux. Dans l’approche basée sur les microservices, chaque microservice comporte son modèle/ses données.](./media/image7.png)
+![Diagramme montrant les deux approches de base de données.](./media/data-sovereignty-per-microservice/data-sovereignty-comparison.png)
 
 **Figure 4-7**. Comparaison de la souveraineté des données : base de données monolithique et microservices
 
-À première vue, l’approche consistant à utiliser une base de données centralisée est plus simple et prend en charge la réutilisation des entités dans différents sous-systèmes à des fins de cohérence. Mais en réalité, vous vous retrouvez avec des tables énormes qui sont au service de différents sous-systèmes, et qui incluent des attributs et des colonnes superflus dans la plupart des cas. Tout se passe comme si vous utilisiez la même carte pour faire une petite promenade à pied, faire un trajet en voiture d’une journée et apprendre la géographie.
+Dans l’approche classique, il existe une seule base de données partagée entre tous les services, généralement dans une architecture à plusieurs niveaux. Dans l’approche de microservices, chaque microservice est propriétaire de son modèle/de ses données. À première vue, l’approche consistant à utiliser une base de données centralisée est plus simple et prend en charge la réutilisation des entités dans différents sous-systèmes à des fins de cohérence. Mais en réalité, vous vous retrouvez avec des tables énormes qui sont au service de différents sous-systèmes, et qui incluent des attributs et des colonnes superflus dans la plupart des cas. Tout se passe comme si vous utilisiez la même carte pour faire une petite promenade à pied, faire un trajet en voiture d’une journée et apprendre la géographie.
 
 Une application monolithique avec, en général, une seule base de données relationnelle présente deux avantages importants : Des [transactions ACID](https://en.wikipedia.org/wiki/ACID) et le langage SQL, les deux fonctionnant sur toutes les tables et les données relatives à votre application. Cette approche vous permet d’écrire facilement une requête qui combine les données de plusieurs tables.
 

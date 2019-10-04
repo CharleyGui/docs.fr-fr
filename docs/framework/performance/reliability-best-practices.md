@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8c47091d943aa0d710cec1af83e039bca9ee2d2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 40c1b98f82fe53819edc437bbac575c1df206496
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046254"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834540"
 ---
 # <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 
@@ -75,7 +75,7 @@ Les conditions de mémoire insuffisante ne sont pas rares dans SQL Server.
 
 Si les bibliothèques hébergées dans SQL Server ne mettent pas correctement à jour leur état partagé, il est fort probable que le code ne récupère pas tant que la base de données n’a pas été redémarrée.  Dans quelques cas extrêmes, il est également possible que cela provoque l’échec du processus SQL Server, et donc le redémarrage de la base de données.  Le redémarrage de la base de données peut entraîner la mise hors service d’un site web ou affecter les opérations de la société, et donc la disponibilité.  Dans le cas d’une fuite lente des ressources du système d’exploitation, telles que la mémoire ou les handles, il se peut que le serveur ne parvienne plus à allouer des handles, sans possibilité de récupération, ou que ses performances diminuent lentement et finissent par réduire la disponibilité de l’application d’un client.  Ce sont là des scénarios qu’il faut éviter à tout prix.
 
-## <a name="best-practice-rules"></a>Règles de bonnes pratiques
+## <a name="best-practice-rules"></a>Règles relatives aux meilleures pratiques
 
 L’introduction traitait des exceptions que la revue du code managé exécuté sur le serveur devait intercepter afin d’améliorer la stabilité et la fiabilité du framework. Toutes ces vérifications sont généralement conseillées à tous les niveaux, mais sont absolument obligatoires sur le serveur.
 
@@ -101,11 +101,11 @@ Les wrappers RCW (Runtime Callable Wrapper) peuvent être nettoyés par le CLR s
 
 Utilisez <xref:System.Runtime.InteropServices.SafeHandle> pour encapsuler des ressources de système d’exploitation. N’utilisez pas <xref:System.Runtime.InteropServices.HandleRef> ou des champs de type <xref:System.IntPtr>.
 
-### <a name="ensure-finalizers-do-not-have-to-run-to-prevent-leaking-operating-system-resources"></a>Assurez-vous que les finaliseurs ne doivent pas s’exécuter afin d’éviter une fuite des ressources du système d’exploitation
+### <a name="ensure-finalizers-do-not-have-to-run-to-prevent-leaking-operating-system-resources"></a>S’assurer que les finaliseurs n’ont pas à s’exécuter pour empêcher la fuite des ressources du système d’exploitation
 
 Vérifiez soigneusement vos finaliseurs pour éviter, même s’ils ne s’exécutent pas, une fuite d’une ressource du système d’exploitation critique.  Contrairement à un déchargement normal de <xref:System.AppDomain> quand l’application s’exécute dans un état stable ou qu’un serveur tel que SQL Server s’arrête, les objets ne sont pas finalisés durant un déchargement inattendu de <xref:System.AppDomain>.  Vérifiez l’absence de fuite de ressources dans le cas d’un déchargement soudain, puisque l’état correct d’une application ne peut plus être garanti, mais qu’il faut préserver l’intégrité du serveur en évitant une fuite des ressources.  Utilisez <xref:System.Runtime.InteropServices.SafeHandle> pour libérer les ressources du système d’exploitation.
 
-### <a name="ensure-that-finally-clauses-do-not-have-to-run-to-prevent-leaking-operating-system-resources"></a>Assurez-vous que les clauses finally ne doivent pas s’exécuter afin d’éviter une fuite des ressources du système d’exploitation
+### <a name="ensure-that-finally-clauses-do-not-have-to-run-to-prevent-leaking-operating-system-resources"></a>Assurez-vous que les clauses finally n’ont pas besoin de s’exécuter pour empêcher la fuite des ressources du système d’exploitation
 
 Comme rien ne garantit que les clauses `finally` puissent s’exécuter en dehors de régions d’exécution limitée, les développeurs de bibliothèque ne peuvent pas compter sur le code d’un bloc `finally` pour libérer des ressources non managées.  L’utilisation de <xref:System.Runtime.InteropServices.SafeHandle> est la solution recommandée.
 
@@ -113,7 +113,7 @@ Comme rien ne garantit que les clauses `finally` puissent s’exécuter en dehor
 
 Utilisez <xref:System.Runtime.InteropServices.SafeHandle> pour nettoyer des ressources de système d’exploitation au lieu de `Finalize`. N’utilisez pas <xref:System.IntPtr>, mais plutôt <xref:System.Runtime.InteropServices.SafeHandle> pour encapsuler des ressources. Si la clause finally doit être exécutée, placez-la dans une région d’exécution limitée.
 
-### <a name="all-locks-should-go-through-existing-managed-locking-code"></a>Tous les verrous doivent passer par du code de verrouillage managé existant
+### <a name="all-locks-should-go-through-existing-managed-locking-code"></a>Tous les verrous doivent traverser le code de verrouillage géré existant
 
 Le CLR doit pouvoir identifier du code placé dans un verrou afin de détruire <xref:System.AppDomain> au lien d’interrompre simplement le thread.  L’abandon du thread peut être dangereux dans la mesure où les données manipulées par le thread peuvent être laissées dans un état incohérent. Ainsi, <xref:System.AppDomain> doit être recyclé dans son intégralité.  L’impossibilité d’identifier un verrou peut se traduire par des interblocages ou des résultats incorrects. Utilisez les méthodes <xref:System.Threading.Thread.BeginCriticalRegion%2A> et <xref:System.Threading.Thread.EndCriticalRegion%2A> pour identifier des régions de verrouillage.  Il s’agit de méthodes statiques sur la classe <xref:System.Threading.Thread> qui s’appliquent uniquement au thread actif, permettant d’éviter qu’un thread modifie le nombre de verrous d’un autre thread.
 
@@ -125,23 +125,23 @@ D’autres mécanismes de verrouillage tels que les verrouillages spinlock et <x
 
 Marquez et identifiez tous les verrous à l’aide de <xref:System.Threading.Thread.BeginCriticalRegion%2A> et de <xref:System.Threading.Thread.EndCriticalRegion%2A>. N’utilisez pas <xref:System.Threading.Interlocked.CompareExchange%2A>, <xref:System.Threading.Interlocked.Increment%2A> et <xref:System.Threading.Interlocked.Decrement%2A> dans une boucle.  N’effectuez pas d’appel de code non managé des variantes Win32 de ces méthodes.  N’utilisez pas <xref:System.Threading.Thread.Sleep%2A> dans une boucle.  N’utilisez pas de champs volatils.
 
-### <a name="cleanup-code-must-be-in-a-finally-or-a-catch-block-not-following-a-catch"></a>Le code de nettoyage doit être dans un bloc finally ou catch, mais ne doit pas suivre un bloc catch
+### <a name="cleanup-code-must-be-in-a-finally-or-a-catch-block-not-following-a-catch"></a>Le code de nettoyage doit être dans un bloc finally ou catch, et non après une commande catch
 
-Le code de nettoyage ne doit jamais suivre un bloc `catch` ; il doit se trouver dans un bloc `finally` ou dans le bloc `catch` lui-même.  Il s’agit là d’une bonne pratique à respecter.  Le choix se porte généralement sur un bloc `finally` dans la mesure où il exécute le même code à la fois au moment de la levée d’une exception et à la fin escomptée du bloc `try`.  Dans le cas où une exception inattendue est levée, par exemple <xref:System.Threading.ThreadAbortException>, le code de nettoyage ne s’exécute pas.  Toutes les ressources non managées que vous nettoyez dans un bloc `finally` doivent idéalement être encapsulées dans un <xref:System.Runtime.InteropServices.SafeHandle> pour éviter des fuites.  Notez que le mot clé `using` C# permet de supprimer efficacement des objets, y compris les handles.
+Le code de nettoyage ne doit jamais suivre un bloc `catch` ; il doit se trouver dans un bloc `finally` ou dans le bloc `catch` lui-même. Il s’agit là d’une bonne pratique à respecter. Le choix se porte généralement sur un bloc `finally` dans la mesure où il exécute le même code à la fois au moment de la levée d’une exception et à la fin escomptée du bloc `try`.  Dans le cas où une exception inattendue est levée, par exemple <xref:System.Threading.ThreadAbortException>, le code de nettoyage ne s’exécute pas.  Toutes les ressources non managées que vous nettoyez dans un bloc `finally` doivent idéalement être encapsulées dans un <xref:System.Runtime.InteropServices.SafeHandle> pour éviter des fuites.  Notez que le mot clé `using` C# permet de supprimer efficacement des objets, y compris les handles.
 
-Bien que le recyclage de <xref:System.AppDomain> puisse nettoyer des ressources sur le thread finaliseur, il est néanmoins important de placer le code de nettoyage à l’emplacement adéquat.  Notez que si un thread reçoit une exception asynchrone sans détenir de verrou, le CLR tente de terminer le thread lui-même sans devoir recycler <xref:System.AppDomain>.  Un nettoyage précoce des ressources garantit la disponibilité d’un plus grand nombre de ressources et permet de mieux gérer la durée de vie.  Si vous ne fermez pas explicitement un handle d’un fichier dans un chemin de code d’erreur quelconque puis attendez que le finaliseur <xref:System.Runtime.InteropServices.SafeHandle> le nettoie, à la prochaine exécution de votre code, il est possible que sa tentative d’accès au même fichier échoue si le finaliseur ne s’est pas encore exécuté.  Pour cette raison, il est important de vérifier que le code de nettoyage existe et fonctionne correctement. Cela permet une récupération plus rapide et propre en cas de défaillance, même si ce n’est pas indispensable à proprement parler.
+Bien que le recyclage de <xref:System.AppDomain> puisse nettoyer des ressources sur le thread finaliseur, il est néanmoins important de placer le code de nettoyage à l’emplacement adéquat. Notez que si un thread reçoit une exception asynchrone sans détenir de verrou, le CLR tente de terminer le thread lui-même sans devoir recycler <xref:System.AppDomain>.  Un nettoyage précoce des ressources garantit la disponibilité d’un plus grand nombre de ressources et permet de mieux gérer la durée de vie. Si vous ne fermez pas explicitement un handle d’un fichier dans un chemin de code d’erreur quelconque puis attendez que le finaliseur <xref:System.Runtime.InteropServices.SafeHandle> le nettoie, à la prochaine exécution de votre code, il est possible que sa tentative d’accès au même fichier échoue si le finaliseur ne s’est pas encore exécuté.  Pour cette raison, il est important de vérifier que le code de nettoyage existe et fonctionne correctement. Cela permet une récupération plus rapide et propre en cas de défaillance, même si ce n’est pas indispensable à proprement parler.
 
 #### <a name="code-analysis-rule"></a>Règle d’analyse du code
 
-Le code de nettoyage après le bloc `catch` doit être dans un bloc `finally`. Placez les appels à supprimer dans un bloc finally.  Les blocs `catch` doivent se terminer dans une clause throw ou rethrow.  Même s’il y a des exceptions, par exemple du code qui détecte s’il est possible d’établir une connexion réseau là où un grand nombre d’exceptions peuvent se produire, tout code exigeant l’interception d’une série d’exceptions dans des circonstances normales doit indiquer si le code doit être testé pour s’assurer de son exécution correcte.
+Le code de nettoyage après le bloc `catch` doit être dans un bloc `finally`. Placez les appels à supprimer dans un bloc finally. Les blocs `catch` doivent se terminer dans une clause throw ou rethrow. Même s’il y a des exceptions, par exemple du code qui détecte s’il est possible d’établir une connexion réseau là où un grand nombre d’exceptions peuvent se produire, tout code exigeant l’interception d’une série d’exceptions dans des circonstances normales doit indiquer si le code doit être testé pour s’assurer de son exécution correcte.
 
-### <a name="process-wide-mutable-shared-state-between-application-domains-should-be-eliminated-or-use-a-constrained-execution-region"></a>Un état partagé mutable au niveau du processus entre des domaines d’application doit être éliminé ou une région d’exécution limitée doit être utilisée
+### <a name="process-wide-mutable-shared-state-between-application-domains-should-be-eliminated-or-use-a-constrained-execution-region"></a>L’état partagé mutable au niveau du processus entre des domaines d’application doit être éliminé ou utiliser une région d’exécution avec restriction
 
 Comme mentionné dans l’introduction, il peut être très difficile d’écrire du code managé fiable pour surveiller l’état partagé au niveau du processus entre des domaines d’application.  L’état partagé au niveau du processus représente une structure de données quelconque partagée entre des domaines d’application, dans du code Win32, à l’intérieur du CLR ou dans du code managé à l’aide de la communication à distance.  Il est très difficile d’écrire un état partagé mutable correctement dans du code managé et un état partagé statique ne peut être écrit qu’en prenant de grandes précautions.  Si vous avez un état partagé au niveau du processus ou de la machine, cherchez un moyen de l’éliminer ou de le protéger à l’aide d’une région d’exécution limitée.  Notez qu’une bibliothèque avec un état partagé qui n’est pas identifiée et corrigée peut provoquer la défaillance d’un hôte, tel que SQL Server, qui exige un déchargement propre de <xref:System.AppDomain>.
 
 Si le code utilise un objet COM, évitez de partager cet objet COM entre des domaines d’application.
 
-### <a name="locks-do-not-work-process-wide-or-between-application-domains"></a>Les verrous ne fonctionnent pas au niveau du processus ou entre domaines d’application.
+### <a name="locks-do-not-work-process-wide-or-between-application-domains"></a>Les verrous ne fonctionnent pas au niveau du processus ou entre des domaines d’application.
 
 Auparavant, on utilisait <xref:System.Threading.Monitor.Enter%2A> et l’[instruction lock](../../csharp/language-reference/keywords/lock-statement.md) pour créer des verrous de processus globaux.  Cela se produit, par exemple, au moment d’un verrouillage sur des classes agiles <xref:System.AppDomain>, telles que des instances de <xref:System.Type> provenant d’assemblys non partagés, des objets <xref:System.Threading.Thread>, des chaînes internées et certaines chaînes partagées entre des domaines d’application à l’aide de la communication à distance.  Ces verrous ne sont plus placés au niveau du processus.  Pour identifier la présence d’un verrou de niveau processus entre domaines d’application, déterminez si le code du verrou utilise une ressource persistante externe, telle qu’un fichier sur le disque ou éventuellement une base de données.
 
@@ -195,7 +195,7 @@ public static MyClass SingletonProperty
 }
 ```
 
-#### <a name="a-note-about-lockthis"></a>Remarque à propos de Lock(this)
+#### <a name="a-note-about-lockthis"></a>Note relative au verrouillage (this)
 
 L’acquisition d’un verrou sur un objet individuel publiquement accessible est généralement admise.  Toutefois, si l’objet est un objet singleton susceptible de provoquer l’interblocage de l’ensemble d’un sous-système, envisagez d’utiliser également le modèle de conception précité.  Par exemple, un verrou sur l’objet <xref:System.Security.SecurityManager> peut provoquer un interblocage dans le <xref:System.AppDomain> rendant l’ensemble du <xref:System.AppDomain> inutilisable. La bonne pratique consiste à ne pas acquérir de verrou sur un objet publiquement accessible de ce type.  En revanche, l’acquisition d’un verrou sur une collection ou un tableau individuel ne doit en principe pas poser de problème.
 
@@ -203,7 +203,7 @@ L’acquisition d’un verrou sur un objet individuel publiquement accessible es
 
 N’acquérez pas de verrous sur des types qui peuvent être utilisés entre domaines d’application ou qui ne possèdent pas une identité forte. N’appelez pas <xref:System.Threading.Monitor.Enter%2A> sur<xref:System.Type>, <xref:System.Reflection.MethodInfo>, <xref:System.Reflection.PropertyInfo>, <xref:System.String>, <xref:System.ValueType>, <xref:System.Threading.Thread> ou tout objet dérivant de <xref:System.MarshalByRefObject>.
 
-### <a name="remove-gckeepalive-calls"></a>Supprimez des appels GC.KeepAlive
+### <a name="remove-gckeepalive-calls"></a>Supprimez GC. Appels KeepAlive
 
 Une partie importante de code existant n’utilise pas <xref:System.GC.KeepAlive%2A> quand il le devrait ou l’utilise de façon inappropriée.  Après une conversion vers <xref:System.Runtime.InteropServices.SafeHandle>, les classes n’ont pas besoin d’appeler <xref:System.GC.KeepAlive%2A>, en supposant qu’elles n’ont pas de finaliseur, mais qu’elles se fondent sur <xref:System.Runtime.InteropServices.SafeHandle> pour finaliser les handles du système d’exploitation.  Si la conservation d’un appel à <xref:System.GC.KeepAlive%2A> a effectivement un impact négligeable sur les performances, il ne faut pas croire qu’un appel à <xref:System.GC.KeepAlive%2A> est nécessaire ou suffit à résoudre un problème de durée de vie qui n’existe peut-être plus. Le code n’en serait alors que plus difficile à gérer.  Toutefois, durant l’utilisation des wrappers RCW COM Interop, <xref:System.GC.KeepAlive%2A> est encore requis par le code.
 
@@ -211,7 +211,7 @@ Une partie importante de code existant n’utilise pas <xref:System.GC.KeepAlive
 
 Supprimez <xref:System.GC.KeepAlive%2A>.
 
-### <a name="use-the-host-protection-attribute"></a>Utilisez l’attribut de protection de l’hôte
+### <a name="use-the-hostprotection-attribute"></a>Utiliser l’attribut HostProtection
 
 <xref:System.Security.Permissions.HostProtectionAttribute> (HPA) autorise l’utilisation d’actions de sécurité déclarative pour déterminer les exigences de protection de l’hôte, ce qui permet à l’hôte d’empêcher du code, même d’un niveau de confiance totale, d’appeler certaines méthodes qui ne conviennent pas à l’hôte donné, par exemple <xref:System.Environment.Exit%2A> ou <xref:System.Windows.Forms.MessageBox.Show%2A> pour SQL Server.
 
@@ -239,7 +239,7 @@ Pour plus d’informations sur l’attribut HPA, consultez <xref:System.Security
 
 Pour SQL Server, toutes les méthodes utilisées pour introduire la synchronisation ou le threading doivent être identifiées avec l’attribut HPA. Il s’agit notamment de méthodes qui partagent l’état, qui sont synchronisées ou gèrent des processus externes. Les valeurs <xref:System.Security.Permissions.HostProtectionResource> qui concernent SQL Server sont <xref:System.Security.Permissions.HostProtectionResource.SharedState>, <xref:System.Security.Permissions.HostProtectionResource.Synchronization> et <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt>. Toutefois, toute méthode exposant <xref:System.Security.Permissions.HostProtectionResource> doit être identifiée par un attribut HPA, pas seulement celles utilisant des ressources affectant SQL.
 
-### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>Évitez des blocages indéfinis dans du code non managé
+### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>Ne pas bloquer indéfiniment dans du code non managé
 
 Le blocage d’un thread dans du code non managé au lieu du code managé peut provoquer une attaque par déni de service, car le CLR n’est pas en mesure d’interrompre le thread.  Un thread bloqué empêche le CLR de décharger le <xref:System.AppDomain>, ou alors en exécutant des opérations très peu sécurisées.  Le blocage de l’utilisation d’une primitive de synchronisation Windows est un exemple clair d’un point que nous ne pouvons pas autoriser.  Le blocage dans un appel `ReadFile` à sur un socket doit être évité si possible. dans l’idéal, l’API Windows doit fournir un mécanisme pour qu’une opération comme celle-ci expire.
 
@@ -251,11 +251,11 @@ Voici quelques exemples d’API problématiques.  Les canaux (à la fois anonyme
 
 Un blocage sans délai d’attente dans du code non managé constitue une attaque par déni de service. N’exécutez pas des appels de code non managé à `WaitForSingleObject`, `WaitForSingleObjectEx`, `WaitForMultipleObjects`, `MsgWaitForMultipleObjects` et `MsgWaitForMultipleObjectsEx`.  N’utilisez pas NMPWAIT_WAIT_FOREVER.
 
-### <a name="identify-any-sta-dependent-features"></a>Identifiez toutes les fonctionnalités de thread cloisonné (STA).
+### <a name="identify-any-sta-dependent-features"></a>Identifier les fonctionnalités dépendantes du STA
 
 Identifiez le code qui utilise les threads cloisonnés (STA) de COM.  Les threads cloisonnés sont désactivés dans le processus SQL Server.  Les fonctionnalités qui dépendent de `CoInitialize`, telles que les compteurs de performance ou le Presse-papiers, doivent être désactivées dans SQL Server.
 
-### <a name="ensure-finalizers-are-free-of-synchronization-problems"></a>Vérifiez que les finaliseurs ne connaissent pas des problèmes de synchronisation
+### <a name="ensure-finalizers-are-free-of-synchronization-problems"></a>Vérifier que les finaliseurs sont exempts de problèmes de synchronisation
 
 Il est possible qu’il existe plusieurs threads finaliseurs dans les futures versions du .NET Framework, ce qui peut donner lieu à l’exécution simultanée de finaliseurs d’instances différentes du même type.  Ils ne doivent pas être complètement thread-safe ; le récupérateur de mémoire garantit qu’un seul thread à la fois exécute le finaliseur pour une instance d’objet donnée.  Toutefois, les finaliseurs doivent être codés pour éviter des conditions de concurrence critique et des interblocages durant leur exécution simultanée sur différentes instances d’objet.  Pendant l’utilisation d’un état externe, par exemple l’écriture dans un fichier journal, dans un finaliseur, les problèmes de threading doivent être gérés.  Ne comptez pas sur la finalisation pour garantir la cohérence de thread. N’utilisez pas le stockage local des threads, managé ou natif, pour stocker l’état sur le thread finaliseur.
 
@@ -267,11 +267,11 @@ Les finaliseurs ne doivent pas avoir de problèmes de synchronisation. N’utili
 
 Il peut y avoir des fuites de mémoire non managée, comme pour un handle de système d’exploitation. Si possible, essayez d’utiliser la mémoire sur la pile à l’aide de [stackalloc](../../csharp/language-reference/operators/stackalloc.md) ou d’un objet managé épinglé (par exemple, avec l’[instruction fixed](../../csharp/language-reference/keywords/fixed-statement.md)) ou un <xref:System.Runtime.InteropServices.GCHandle> utilisant un tableau d’octets (byte[]). <xref:System.GC> finit par nettoyer ceux-ci. Toutefois, si vous devez allouer de la mémoire non managée, envisagez d’utiliser une classe qui dérive de <xref:System.Runtime.InteropServices.SafeHandle> pour inclure l’allocation de mémoire dans un wrapper.
 
-Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne convient pas dans un cas au moins.  Pour les appels de méthode COM qui allouent ou libèrent de la mémoire, il est fréquent qu’une DLL alloue de la mémoire via `CoTaskMemAlloc`, puis qu’une autre DLL libère cette mémoire avec `CoTaskMemFree`.  Utiliser <xref:System.Runtime.InteropServices.SafeHandle> dans ces emplacements n’est pas adapté puisqu’il tente alors d’attacher la durée de vie de la mémoire non managée à la durée de vie de <xref:System.Runtime.InteropServices.SafeHandle> au lieu de laisser l’autre DLL contrôler la durée de vie de la mémoire.
+Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne convient pas dans un cas au moins. Pour les appels de méthode COM qui allouent ou libèrent de la mémoire, il est fréquent qu’une DLL alloue de la mémoire via `CoTaskMemAlloc`, puis qu’une autre DLL libère cette mémoire avec `CoTaskMemFree`.  Utiliser <xref:System.Runtime.InteropServices.SafeHandle> dans ces emplacements n’est pas adapté puisqu’il tente alors d’attacher la durée de vie de la mémoire non managée à la durée de vie de <xref:System.Runtime.InteropServices.SafeHandle> au lieu de laisser l’autre DLL contrôler la durée de vie de la mémoire.
 
-### <a name="review-all-uses-of-catchexception"></a>Examinez toutes les utilisations de Catch(Exception)
+### <a name="review-all-uses-of-catchexception"></a>Passer en revue toutes les utilisations de catch (exception)
 
-Les blocs catch qui interceptent toutes les exceptions au lieu d’une exception spécifique interceptent désormais aussi les exceptions asynchrones.  Examinez chaque bloc catch(Exception), en recherchant une libération de ressource peu importante ou du code réécrit qui peut être ignoré, ainsi qu’un comportement éventuellement incorrect dans le bloc catch lui-même pour gérer un <xref:System.Threading.ThreadAbortException>, <xref:System.StackOverflowException> ou <xref:System.OutOfMemoryException>.  Notez qu’il est possible que ce code enregistre ou suppose qu’il ne peut consulter que certaines exceptions ou encore que chaque fois qu’une exception se produit, l’échec soit lié à une raison particulière.  Il se peut que ces hypothèses doivent être mises à jour pour inclure <xref:System.Threading.ThreadAbortException>.
+Les blocs catch qui interceptent toutes les exceptions au lieu d’une exception spécifique interceptent désormais aussi les exceptions asynchrones. Examinez chaque bloc catch(Exception), en recherchant une libération de ressource peu importante ou du code réécrit qui peut être ignoré, ainsi qu’un comportement éventuellement incorrect dans le bloc catch lui-même pour gérer un <xref:System.Threading.ThreadAbortException>, <xref:System.StackOverflowException> ou <xref:System.OutOfMemoryException>.  Notez qu’il est possible que ce code enregistre ou suppose qu’il ne peut consulter que certaines exceptions ou encore que chaque fois qu’une exception se produit, l’échec soit lié à une raison particulière.  Il se peut que ces hypothèses doivent être mises à jour pour inclure <xref:System.Threading.ThreadAbortException>.
 
 Envisagez de changer tous les emplacements qui interceptent toutes les exceptions pour qu’ils n’interceptent plus qu’un type spécifique d’exception dont vous prévoyez la levée, par exemple une exception <xref:System.FormatException> provenant des méthodes de mise en forme de chaînes.  Cela empêche le bloc catch de s’exécuter sur des exceptions inattendues et garantit que le code ne masque pas de bogues en interceptant des exceptions inattendues.  En règle générale, ne gérez jamais une exception dans du code de bibliothèque (du code exigeant que vous interceptiez une exception peut indiquer un défaut de conception dans le code que vous appelez).  Dans certains cas, vous pouvez souhaiter intercepter une exception et lever un type d’exception différent pour fournir plus de données.  Utilisez dans ce cas des exceptions imbriquées, en stockant la vraie cause de l’échec dans la propriété <xref:System.Exception.InnerException%2A> de la nouvelle exception.
 
@@ -279,11 +279,11 @@ Envisagez de changer tous les emplacements qui interceptent toutes les exception
 
 Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela signifie marquer à `catch` la `catch(Exception)` fois {} et {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
 
-### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>Ne supposez pas qu’un thread managé est un thread Win32 alors qu’il s’agit d’une fibre
+### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>Ne partez pas du principe qu’un thread managé est un thread Win32, car il s’agit d’une fibre
 
-L’utilisation du stockage local des threads managés fonctionne, mais vous ne pourrez peut-être pas utiliser le stockage local des threads non managés ou supposer que le code se réexécutera sur le thread du système d’exploitation actuel.  Ne changez pas des paramètres tels que les paramètres régionaux du thread.  N’appelez pas `InitializeCriticalSection` ou `CreateMutex` via un appel de code non managé, car ils exigent que le thread du système d’exploitation qui est verrouillé puisse aussi être déverrouillé.  Comme cela n’est pas le cas pendant l’utilisation de fibres, des mutex et des sections critiques Win32 ne peuvent pas être utilisés directement dans SQL.  Notez que la classe <xref:System.Threading.Mutex> managée ne gère pas ces problèmes d’affinité de thread.
+L’utilisation du stockage local des threads managés fonctionne, mais vous ne pourrez peut-être pas utiliser le stockage local des threads non managés ou supposer que le code se réexécutera sur le thread du système d’exploitation actuel. Ne changez pas des paramètres tels que les paramètres régionaux du thread. N’appelez pas `InitializeCriticalSection` ou `CreateMutex` via un appel de code non managé, car ils exigent que le thread du système d’exploitation qui est verrouillé puisse aussi être déverrouillé. Comme cela n’est pas le cas pendant l’utilisation de fibres, des mutex et des sections critiques Win32 ne peuvent pas être utilisés directement dans SQL.  Notez que la classe <xref:System.Threading.Mutex> managée ne gère pas ces problèmes d’affinité de thread.
 
-Vous pouvez utiliser sans risque la plupart des éléments d’état sur un objet <xref:System.Threading.Thread> managé, y compris le stockage local des threads managés et la culture actuelle de l’interface utilisateur du thread.  Vous pouvez également utiliser <xref:System.ThreadStaticAttribute>, qui permet uniquement au thread managé actif d’accéder à la valeur d’une variable statique existante (c’est là un autre moyen de procéder à un stockage local de fibres dans le CLR).  Pour des raisons liées au modèle de programmation, vous ne pouvez pas changer la culture actuelle d’un thread durant l’exécution dans SQL.
+Vous pouvez utiliser sans risque la plupart des éléments d’état sur un objet <xref:System.Threading.Thread> managé, y compris le stockage local des threads managés et la culture actuelle de l’interface utilisateur du thread. Vous pouvez également utiliser <xref:System.ThreadStaticAttribute>, qui permet uniquement au thread managé actif d’accéder à la valeur d’une variable statique existante (c’est là un autre moyen de procéder à un stockage local de fibres dans le CLR). Pour des raisons liées au modèle de programmation, vous ne pouvez pas changer la culture actuelle d’un thread durant l’exécution dans SQL.
 
 #### <a name="code-analysis-rule"></a>Règle d’analyse du code
 
@@ -297,7 +297,7 @@ Dans la mesure où l’emprunt d’identité fonctionne au niveau du thread et o
 
 Laissez SQL Server gérer l’emprunt d’identité. N’utilisez pas `RevertToSelf`, `ImpersonateAnonymousToken`, `DdeImpersonateClient`, `ImpersonateDdeClientWindow`, `ImpersonateLoggedOnUser`, `ImpersonateNamedPipeClient`, `ImpersonateSelf`, `RpcImpersonateClient`, `RpcRevertToSelf`, `RpcRevertToSelfEx` ou `SetThreadToken`.
 
-### <a name="do-not-call-threadsuspend"></a>N’appelez pas Thread::Suspend
+### <a name="do-not-call-threadsuspend"></a>Ne pas appeler Thread :: suspend
 
 Suspendre un thread peut sembler une opération simple, mais elle peut provoquer des interblocages.  Si un thread qui maintient un verrou est suspendu par un deuxième thread et que ce deuxième thread essaie de prendre le même verrou, un interblocage se produit.  <xref:System.Threading.Thread.Suspend%2A> peut interférer avec la sécurité, le chargement de classe, la communication à distance et la réflexion.
 
@@ -305,7 +305,7 @@ Suspendre un thread peut sembler une opération simple, mais elle peut provoquer
 
 N’appelez pas <xref:System.Threading.Thread.Suspend%2A>. Envisagez d’utiliser à la place une vraie primitive de synchronisation, telle que <xref:System.Threading.Semaphore> ou <xref:System.Threading.ManualResetEvent>.
 
-### <a name="protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts"></a>Protégez les opérations critiques avec des régions d’exécution limitée et des contrats de fiabilité
+### <a name="protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts"></a>Protéger les opérations critiques avec des régions d’exécution restreintes et des contrats de fiabilité
 
 Pendant l’exécution d’une opération complexe qui met à jour un état partagé ou qui doit échouer ou réussir pleinement de façon déterministe, vérifiez si elle est protégée par une région d’exécution limitée. Cela garantit l’exécution systématique du code, même dans le cas d’un abandon brusque de thread ou d’un déchargement soudain de <xref:System.AppDomain>.
 

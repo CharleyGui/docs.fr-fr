@@ -2,12 +2,12 @@
 title: Configuration de la découverte dans un fichier de configuration
 ms.date: 03/30/2017
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-ms.openlocfilehash: c282767e686ac8a6382268aee8b45eb2d1297f5a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ad44d0ad1f0d67d84cc42f6b9938d096c245417
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857517"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834764"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Configuration de la découverte dans un fichier de configuration
 Il existe quatre principaux groupes de paramètres de configuration utilisés dans la découverte. Cette rubrique décrit brièvement chaque groupe et montre des exemples de configuration. À la suite de chaque section, un lien vous permettra d'accéder à des informations détaillées sur chaque zone.  
@@ -28,7 +28,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
       </serviceBehaviors>  
 ```  
   
- Une fois que vous spécifiez le comportement, référencez-le à partir d’un <`service`> comme illustré dans l’exemple suivant.  
+ Une fois que vous avez spécifié le comportement, référencez-le à partir d’un élément < `service` > comme indiqué dans l’exemple suivant.  
   
 ```xml  
 <system.serviceModel>  
@@ -46,7 +46,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
   
  Pour qu'un service soit détectable, vous devez également ajouter un point de terminaison de découverte ; l'exemple ci-dessus ajoute un point de terminaison standard <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
   
- Lorsque vous ajoutez des points de terminaison annonce vous devez également ajouter un service d’écoute annonce à la <`services`> comme illustré dans l’exemple suivant.  
+ Lorsque vous ajoutez des points de terminaison d’annonce, vous devez également ajouter un service d’écoute de l’annonce à l’élément < `services` > comme indiqué dans l’exemple suivant.  
   
 ```xml  
 <services>  
@@ -137,7 +137,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
 </behavior>  
 ```  
   
- Pour plus d’informations sur <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> et <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> consultez [présentation de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
+ Pour plus d’informations sur <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> et <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>, consultez [vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
   
 ## <a name="binding-element-configuration"></a>Configuration d’élément de liaison.  
  La configuration d’élément de liaison est très intéressante sur le côté client. Vous pouvez utiliser la configuration pour spécifier les critères de recherche utilisés pour découvrir les services d'une application cliente WCF.  L’exemple suivant crée une liaison personnalisée avec le canal <xref:System.ServiceModel.Discovery.DiscoveryClient> et spécifie des critères de recherche qui incluent un type et une étendue. En outre, il spécifie les valeurs des propriétés <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> et <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A>.  
@@ -177,10 +177,10 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
     </client>  
 ```  
   
- Pour plus d’informations sur les critères de recherche, consultez [trouver de découverte et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Pour plus d’informations sur la découverte et les éléments de liaison, consultez [présentation de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ Pour plus d’informations sur les critères de recherche [, consultez recherche de découverte et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Pour plus d’informations sur la découverte et les éléments de liaison, consultez [vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
   
 ## <a name="standard-endpoint-configuration"></a>Configuration de point de terminaison standard  
- Les points de terminaison standard sont des points de terminaison prédéfinis qui ont des valeurs par défaut pour une ou plusieurs propriétés (adresse, liaison ou contrat) ou une ou plusieurs valeurs de propriété qui ne peuvent pas être modifiées. Le .NET 4 est fourni avec 3 points de terminaison standard liés à la découverte : <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> et <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> est un point de terminaison standard, préconfiguré pour les opérations de découverte sur une liaison de multidiffusion UDP. <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> est un point de terminaison standard, préconfiguré pour envoyer des messages d'annonce sur une liaison de multidiffusion UDP. <xref:System.ServiceModel.Discovery.DynamicEndpoint> est un point de terminaison standard qui utilise la découverte pour rechercher l'adresse du point de terminaison d'un service découvert de manière dynamique, au moment de l'exécution.  Les liaisons standards sont spécifiées avec un <`endpoint`> élément qui contienne un attribut kind spécifiant le type de point de terminaison standard à ajouter. L'exemple suivant montre comment ajouter un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> dans un <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
+ Les points de terminaison standard sont des points de terminaison prédéfinis qui ont des valeurs par défaut pour une ou plusieurs propriétés (adresse, liaison ou contrat) ou une ou plusieurs valeurs de propriété qui ne peuvent pas être modifiées. Le .NET 4 est fourni avec 3 points de terminaison standard liés à la découverte : <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> et <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> est un point de terminaison standard, préconfiguré pour les opérations de découverte sur une liaison de multidiffusion UDP. <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> est un point de terminaison standard, préconfiguré pour envoyer des messages d'annonce sur une liaison de multidiffusion UDP. <xref:System.ServiceModel.Discovery.DynamicEndpoint> est un point de terminaison standard qui utilise la découverte pour rechercher l'adresse du point de terminaison d'un service découvert de manière dynamique, au moment de l'exécution.  Les liaisons standard sont spécifiées avec un élément < `endpoint` > qui contient un attribut kind spécifiant le type de point de terminaison standard à ajouter. L'exemple suivant montre comment ajouter un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> dans un <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
   
 ```xml  
 <services>  
@@ -194,7 +194,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
 </services>  
 ```  
   
- Points de terminaison standard sont configurés dans un <`standardEndpoints`> élément. L'exemple suivant montre comment configurer les points de terminaison standard <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> et <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
+ Les points de terminaison standard sont configurés dans un élément < `standardEndpoints` >. L'exemple suivant montre comment configurer les points de terminaison standard <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> et <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
   
 ```xml  
 <standardEndpoints>  
@@ -226,7 +226,7 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
       </udpDiscoveryEndpoint>  
 ```  
   
- Une fois que vous avez ajouté la configuration de point de terminaison standard, référencez la configuration dans le <`endpoint`>, élément pour chaque point de terminaison comme illustré dans l’exemple suivant.  
+ Une fois que vous avez ajouté la configuration du point de terminaison standard, référencez la configuration dans l’élément < `endpoint` > pour chaque point de terminaison, comme indiqué dans l’exemple suivant.  
   
 ```xml  
 <services>  
@@ -269,4 +269,4 @@ Il existe quatre principaux groupes de paramètres de configuration utilisés da
 </system.ServiceModel>  
 ```  
   
- Pour plus d’informations sur les points de terminaison standard consultez [points de terminaison Standard](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+ Pour plus d’informations sur les points de terminaison standard, consultez [points de terminaison standard](standard-endpoints.md).

@@ -2,12 +2,12 @@
 title: Différences entre Entity SQL et Transact-SQL
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-ms.openlocfilehash: e809cea2f853eed51d28e55f81a411f7af2e5a33
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e0af0a415d812337d6abf449e9ee170526c3df0c
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854476"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833724"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Différences entre Entity SQL et Transact-SQL
 Cette rubrique décrit les différences entre [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et Transact-SQL.  
@@ -18,7 +18,7 @@ Cette rubrique décrit les différences entre [!INCLUDE[esql](../../../../../../
  Lors de l’utilisation de l’héritage, il est souvent utile de sélectionner des instances d’un sous-type à partir d’une collection d’instances de supertype. L’opérateur [OfType](oftype-entity-sql.md) dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] (comme `oftype` dans C# les séquences) fournit cette fonctionnalité.  
   
 ## <a name="support-for-collections"></a>Prise en charge des collections  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]traite les collections comme des entités de première classe. Par exemple :  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]traite les collections comme des entités de première classe. Exemple :  
   
 - Les expressions de collection sont valides dans une clause `from`.  
   
@@ -37,7 +37,7 @@ Cette rubrique décrit les différences entre [!INCLUDE[esql](../../../../../../
   
  Les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivantes sont toutes valides :  
   
-```  
+```sql  
 1+2 *3  
 "abc"  
 row(1 as a, 2 as b)  
@@ -72,33 +72,33 @@ set(e1)
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] impose également des restrictions supplémentaires sur les requêtes qui impliquent des clauses `group by`. Les expressions dans `select` la clause `having` et la clause de ces requêtes peuvent uniquement faire `group by` référence aux clés par le biais de leurs alias. La construction suivante est valide dans Transact-SQL, mais pas dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)]:  
   
-```  
-select t.x + t.y from T as t group by t.x + t.y  
+```sql  
+SELECT t.x + t.y FROM T AS t group BY t.x + t.y
 ```  
   
  Pour effectuer cette opération dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] :  
   
-```  
-select k from T as t group by (t.x + t.y) as k  
+```sql  
+SELET k FROM T AS t GROUP BY (t.x + t.y) AS k
 ```  
   
 ## <a name="referencing-columns-properties-of-tables-collections"></a>Référencement de colonnes (propriétés) de tables (collections)  
  Toutes les références de colonne dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] doivent être qualifiées avec l'alias de la table. La construction suivante (en supposant `a` que est une colonne valide de `T`la table) est valide dans Transact-SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)]mais pas dans.  
   
-```  
-select a from T  
+```sql  
+SELECT a FROM T
 ```  
   
  La forme [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est :  
   
-```  
-select t.a as A from T as t  
+```sql  
+SELECT t.a AS A FROM T AS t
 ```  
   
  Les alias de la table sont facultatifs dans la clause `from`. Le nom de la table est utilisé comme alias implicite. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] autorise également la forme suivante :  
   
-```  
-select Tab.a from Tab  
+```sql  
+SELET Tab.a FROM Tab
 ```  
   
 ## <a name="navigation-through-objects"></a>Navigation dans les objets  
@@ -106,7 +106,7 @@ select Tab.a from Tab
   
  Par exemple, si `p` est une expression de type Person, la syntaxe [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous référence la ville de l'adresse de cette personne.  
   
-```  
+```sql  
 p.Address.City   
 ```  
   
@@ -120,46 +120,46 @@ p.Address.City
 ## <a name="changes-to-group-by"></a>Modifications apportées à Group By  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge les alias des clés `group by`. Les expressions dans la clause `select` et la clause `having` doivent faire référence aux clés `group by` par le biais de ces alias. Par exemple, la syntaxe [!INCLUDE[esql](../../../../../../includes/esql-md.md)] :  
   
-```  
-select k1, count(t.a), sum(t.a)  
-from T as t  
-group by t.b + t.c as k1  
+```sql  
+SELECT k1, count(t.a), sum(t.a)
+FROM T AS t
+GROUP BY t.b + t.c AS k1
 ```  
   
  ... équivaut à l’instruction Transact-SQL suivante :  
   
-```  
-select b + c, count(*), sum(a)   
-from T  
-group by b + c  
+```sql  
+SELECT b + c, count(*), sum(a)
+FROM T
+GROUP BY b + c
 ```  
   
 ## <a name="collection-based-aggregates"></a>Agrégats basés sur des collections  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge deux types d'agrégats.  
   
- Les agrégats basés sur des collections opèrent sur des collections et produisent le résultat agrégé. Ils peuvent apparaître n'importe où dans la requête et ne requièrent pas de clause `group by`. Par exemple :  
+ Les agrégats basés sur des collections opèrent sur des collections et produisent le résultat agrégé. Ils peuvent apparaître n'importe où dans la requête et ne requièrent pas de clause `group by`. Exemple :  
   
-```  
-select t.a as a, count({1,2,3}) as b from T as t     
+```sql  
+SELECT t.a AS a, count({1,2,3}) AS b FROM T AS t
 ```  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend également en charge les agrégats de style SQL. Par exemple :  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend également en charge les agrégats de style SQL. Exemple :  
   
-```  
-select a, sum(t.b) from T as t group by t.a as a  
+```sql  
+SELECT a, sum(t.b) FROM T AS t GROUP BY t.a AS a
 ```  
   
 ## <a name="order-by-clause-usage"></a>Utilisation des clauses ORDER BY  
- Transact-SQL permet de spécifier des clauses ORDER BY uniquement dans la sélection. FROM . WHERE le plus élevé. Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], vous pouvez utiliser une expression ORDER BY imbriquée et elle peut être placée n'importe où dans la requête, mais le classement dans une requête imbriquée n'est pas conservé.  
+Transact-SQL permet de spécifier uniquement des clauses `ORDER BY` dans le bloc `SELECT .. FROM .. WHERE` le plus haut. Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], vous pouvez utiliser une expression `ORDER BY` imbriquée et elle peut être placée n’importe où dans la requête, mais l’ordre dans une requête imbriquée n’est pas conservé.  
   
-```  
+```sql  
 -- The following query will order the results by the last name  
 SELECT C1.FirstName, C1.LastName  
-        FROM AdventureWorks.Contact as C1  
+        FROM AdventureWorks.Contact AS C1
         ORDER BY C1.LastName  
 ```  
   
-```  
+```sql  
 -- In the following query ordering of the nested query is ignored.  
 SELECT C2.FirstName, C2.LastName  
     FROM (SELECT C1.FirstName, C1.LastName  
@@ -197,16 +197,16 @@ SELECT C2.FirstName, C2.LastName
  Résultats d'une requête de traitement par lot  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ne prend pas en charge les résultats d'une requête de traitement par lot. Par exemple, voici une instruction Transact-SQL valide (envoi en tant que lot) :  
   
-```  
-select * from products;  
-select * from catagories;  
+```sql  
+SELECT * FROM products;
+SELECT * FROM catagories;
 ```  
   
  Toutefois, l'équivalent [!INCLUDE[esql](../../../../../../includes/esql-md.md)] n'est pas pris en charge :  
   
-```  
-Select value p from Products as p;  
-Select value c from Categories as c;  
+```sql  
+SELECT value p FROM Products AS p;
+SELECT value c FROM Categories AS c;
 ```  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend uniquement en charge une seule instruction de requête générant un résultat par commande.  

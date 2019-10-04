@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 8b7c512a2f6bd67b07d8e344ad126026048be172
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 5327a9babdf080a535e292cdcefba6da9d0a725b
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736748"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834071"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -196,7 +196,7 @@ La dernière étape consiste à afficher les résultats de l’enquête, ce qui 
 
 [!code-csharp[ReportResponses](../../../samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#SurveyStatus)]
 
-`surveyResponses` étant un type référence non Nullable, aucun contrôle n’est nécessaire avant de le déréférencer. La méthode `Answer` retourne une chaîne non Nullable : choisissez la surcharge de `GetValueOrDefault` qui accepte un deuxième argument pour la valeur par défaut.
+Étant donné que `surveyResponses` est un type référence Nullable, les vérifications NULL sont nécessaires avant de le déréférencer. La méthode `Answer` retourne une chaîne qui n’accepte pas les valeurs NULL. nous devons donc aborder le cas d’une réponse manquante à l’aide de l’opérateur de fusion Null.
 
 Ensuite, ajoutez ces trois membres expression-bodied à la classe `SurveyRun` :
 

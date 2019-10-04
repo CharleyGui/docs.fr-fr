@@ -2,12 +2,12 @@
 title: Architecture logique et architecture physique
 description: Comprendre les différences entre l’architecture logique et l’architecture physique.
 ms.date: 09/20/2018
-ms.openlocfilehash: c269369e9b5391e8d25ece46e6b08e34a82fbbba
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 8d1bfca190eb9b18d46625fa4afdec963eb07054
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673056"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834398"
 ---
 # <a name="logical-architecture-versus-physical-architecture"></a>Architecture logique et architecture physique
 
@@ -25,7 +25,7 @@ Par conséquent, un microservice métier ou un contexte délimité est une archi
 
 Comme le montre la figure 4-8, le microservice métier du catalogue pourrait être composé de plusieurs services ou processus. Il pourrait s’agir de plusieurs services d’API web ASP.NET ou de tout autre type de service utilisant HTTP ou un autre protocole. Plus important encore, les services pourraient partager les mêmes données, dès lors que ces services sont cohésifs pour le même domaine métier.
 
-![Diagramme du microservice métier Catalog, qui contient un service API, un service de recherche et une base de données SQL Server.](./media/image8.png)
+![Diagramme du microservice du catalogue d’entreprise avec des serveurs physiques.](./media/logical-versus-physical-architecture/multiple-physical-services.png)
 
 **Figure 4-8**. Microservice métier avec plusieurs services physiques
 

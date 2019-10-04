@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Travailler avec des dictionnaires à l’aide de LINQ to XML (Visual Basic)'
+title: 'Procédure : Utiliser des dictionnaires à l’aide de LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: def00fcd356472825ebc4b9f5c306cf3547991e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9773b926d16b51ea912792b0f348a26a9a3c7a29
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614143"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835085"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Procédure : Travailler avec des dictionnaires à l’aide de LINQ to XML (Visual Basic)
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Procédure : Utiliser des dictionnaires à l’aide de LINQ to XML (Visual Basic)
 Il est souvent plus pratique de convertir différentes structures de données au format XML et du format XML en d’autres structures de données. Cette rubrique présente une implémentation spécifique de cette approche générale en convertissant un objet <xref:System.Collections.Generic.Dictionary%602> au format XML et inversement.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise des littéraux XML et une requête dans une expression incorporée. La requête projette de nouveaux <xref:System.Xml.Linq.XElement> d’objets, qui ensuite devenir le nouveau contenu pour le `Root` <xref:System.Xml.Linq.XElement> objet.  
+ Cet exemple utilise des littéraux XML et une requête dans une expression incorporée. La requête projette de nouveaux objets <xref:System.Xml.Linq.XElement>, qui deviennent ensuite le nouveau contenu pour l’objet `Root` <xref:System.Xml.Linq.XElement>.  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -63,7 +63,7 @@ Next
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 Child1:Value1  
 Child2:Value2  
 Child3:Value3  
@@ -72,4 +72,4 @@ Child4:Value4
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Projections et Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections et transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

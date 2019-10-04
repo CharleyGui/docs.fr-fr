@@ -2,18 +2,18 @@
 title: Workflow de développement de la boucle interne pour les applications Docker
 description: Découvrez le workflow de type « boucle interne » pour le développement des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 04e1b29e6a0cef89df05cc9124806c74a38b5249
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: c97cd9ba8d740f13c22caa45e344c4961e3b0600
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214354"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834493"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Workflow de développement de la boucle interne pour les applications Docker
 
 Avant de déclencher le workflow de boucle externe qui s’étend sur l’ensemble du cycle DevOps, chaque développeur doit, sur sa propre machine, coder l’application à l’aide de la plateforme et du langage de son choix, puis la tester localement (figure 4-21). Dans tous les cas, les développeurs auront tous un important point en commun, quels que soient le langage, le framework et la plateforme qu’ils auront choisis. Dans ce workflow, vous allez également développer et tester des conteneurs Docker, mais localement.
 
-![Étape 1 : Coder/Exécuter/Déboguer](./media/image18.png)
+![Diagramme montrant le concept d’un environnement de développement de boucles internes.](./media/docker-apps-inner-loop-workflow/inner-loop-development-context.png)
 
 **Figure 4-21**. Contexte du développement de boucle interne
 
@@ -35,7 +35,7 @@ Les applications se composent de vos propres services et de bibliothèques suppl
 
 La figure 4-22 montre les étapes de base que vous devez généralement effectuer lors de la création d’une application Docker, et fournit une description détaillée de chaque étape.
 
-![Vue d’ensemble du workflow : Étape 1 : Coder, Étape 2 : Écrire des fichiers Dockerfile, Étape 3 : Créer des images définies avec des fichiers Dockerfile, Étape 4 : Définir des services avec le fichier docker-compose, Étape 5 : Exécuter des conteneurs ou des applications composées, Étape 6 : Tester les applications, Étape 7 : Pousser (push) pour démarrer la boucle externe (pipelines CI/CD) ou continuer le développement](./media/image19.png)
+![Diagramme montrant les sept étapes nécessaires à la création d’une application en conteneur.](./media/docker-apps-inner-loop-workflow/life-cycle-containerized-apps-docker-cli.png)
 
 **Figure 4-22**. Workflow général du cycle de vie des applications Docker conteneurisées dans l’interface CLI Docker
 
@@ -81,7 +81,7 @@ L’extension Docker pour VS Code fournit les fonctionnalités suivantes :
 
 Pour installer l’extension Docker, appuyez sur Ctrl + Maj + P, tapez `ext install`, puis exécutez la commande Install Extension pour afficher la liste des extensions Marketplace. Ensuite, tapez **docker** pour filtrer les résultats et sélectionnez l’extension Docker Support, comme illustré dans la figure 4-23.
 
-![Vue de l’extension Docker pour VS Code.](./media/image20.png)
+![Vue de l’extension Docker pour VS Code.](./media/docker-apps-inner-loop-workflow/install-docker-extension-vs-code.png)
 
 **Figure 4-23**. Installation de l’extension Docker dans Visual Studio Code
 
@@ -96,7 +96,7 @@ Le `DockerFile` est généralement placé dans le dossier racine de votre applic
 
 Dans la figure 4-24, vous pouvez voir comment le fichier docker-compose est ajouté à l’aide de l’extension Docker pour VS Code.
 
-![Vue de l’extension Docker pour VS Code dans la console.](./media/image24.png)
+![Vue de l’extension Docker pour VS Code dans la console.](./media/docker-apps-inner-loop-workflow/add-docker-files-to-workspace-command.png)
 
 **Figure 4-24**. Fichiers Docker ajoutés à l’aide de la **commande Add Docker files to Workspace**
 
@@ -158,7 +158,7 @@ Vous devrez créer une image pour chaque service personnalisé qui compose votre
 
 Pour créer une image dans votre environnement local à l’aide du fichier DockerFile, vous pouvez utiliser la commande docker build, comme illustré dans la figure 4-25 (vous pouvez également exécuter `docker-compose up --build` pour les applications composées de plusieurs conteneurs ou services).
 
-![Sortie de console de la build docker-compose, montrant la progression du téléchargement des images.](./media/image25.png)
+![Capture d’écran montrant la sortie de la console de la commande dockr Build.](./media/docker-apps-inner-loop-workflow/run-docker-build-command.png)
 
 **Figure 4-25**. Exécuter docker build
 
@@ -168,7 +168,7 @@ Cet exemple crée une image Docker portant le nom `cesardl/netcore-webapi-micros
 
 Vous pouvez rechercher les images de votre dépôt local (votre machine de développement) à l’aide de la commande docker images (voir figure 4-26).
 
-![Sortie de console de la commande docker images, montrant les images existantes.](./media/image26.png)
+![Sortie de console de la commande docker images, montrant les images existantes.](./media/docker-apps-inner-loop-workflow/view-existing-images-with-docker-images.png)
 
 **Figure 4-26**. Affichage des images existantes à l’aide de la commande docker images
 
@@ -223,13 +223,13 @@ Pour ce déploiement, nous allons rediriger les requêtes envoyées au port 80 
 
 Dans la plupart des scénarios d’entreprise, une application Docker est composée de plusieurs services. Dans ce cas, vous pouvez exécuter la commande `docker-compose up` (figure 4-27), qui utilise le fichier docker-compose.yml que vous avez peut-être créé précédemment. L’exécution de cette commande déploie une application composée avec tous ses conteneurs.
 
-![Sortie de console de la commande docker-compose up.](./media/image27.png)
+![Sortie de console de la commande docker-compose up.](./media/docker-apps-inner-loop-workflow/results-docker-compose-up.png)
 
 **Figure 4-27**. Résultats de l’exécution de la commande docker-compose up
 
 Après avoir exécuté `docker-compose up`, déployez votre application et ses conteneurs sur votre hôte Docker (comme illustré à la figure 4-28) dans la représentation de machine virtuelle.
 
-![Machine virtuelle exécutant des applications à plusieurs conteneurs.](./media/image28.png)
+![Machine virtuelle exécutant des applications à plusieurs conteneurs.](./media/docker-apps-inner-loop-workflow/vm-with-docker-containers-deployed.png)
 
 **Figure 4-28**. Machine virtuelle avec des conteneurs Docker déployés
 
@@ -247,7 +247,7 @@ docker-machine {IP} {YOUR-CONTAINER-NAME}
 
 Sur l’hôte Docker, ouvrez un navigateur et accédez à ce site. Vous devez y voir votre application ou service s’exécuter, comme illustré à la figure 4-29.
 
-![Vue du navigateur montrant la réponse à localhost/API/values.](./media/image29.png)
+![Vue du navigateur montrant la réponse à localhost/API/values.](./media/docker-apps-inner-loop-workflow/test-docker-app-locally-localhost.png)
 
 **Figure 4-29**. Test de l’application Docker localement avec localhost
 
@@ -255,7 +255,7 @@ Notez que le port 80 est utilisé, mais qu’en interne,elle est redirigée ver
 
 Vous pouvez tester cela à l’aide de CURL dans le terminal. Dans une installation Docker sur Windows, l’adresse IP par défaut est 10.0.75.1, comme illustré à la figure 4-30.
 
-![Sortie de console après obtention de http://10.0.75.1/API/values avec CURL](./media/image30.png)
+![Sortie de console après obtention de http://10.0.75.1/API/values avec CURL](./media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
 
 **Figure 4-30**. Test de l’application Docker localement avec CURL
 

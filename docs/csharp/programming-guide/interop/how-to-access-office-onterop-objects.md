@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 8e99402752b3fafb486735d56d66737f03ceec30
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 3399d1aad8a2118775f7779727d4d03ee2002547
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972087"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834212"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Procédure : Accéder aux objets Office Interop à l’aide des fonctionnalités Visual C# (Guide de programmation C#)
 
@@ -49,15 +49,15 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet, puis cliquez sur **Ajouter une référence**. La boîte de dialogue **Ajouter une référence** s’affiche.
 
-2. Dans la page **Assemblys**, sélectionnez **Microsoft.Office.Interop.Word** dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Excel**.  Si les assemblys n'apparaissent pas, vous devez vous assurer qu'ils sont installés et s'affichent (voir [Guide pratique pour installer les assemblys PIA (Primary Interop Assembly) d’Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies))
+2. Dans la page **Assemblys**, sélectionnez **Microsoft.Office.Interop.Word** dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Excel**.  Si vous ne voyez pas les assemblys, vous devrez peut-être vous assurer qu’ils sont installés et affichés. Voir [Guide pratique pour Installez les assemblys PIA (Primary Interop Assembly) d’Office @ no__t-0.
 
 3. Cliquez sur **OK**.
 
 ## <a name="to-add-necessary-using-directives"></a>Pour ajouter les directives using nécessaires
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Program.cs**, puis cliquez sur **Afficher le code**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier *Program.cs*, puis cliquez sur **Afficher le code**.
 
-2. Ajoutez les directives `using` suivantes en début du fichier de code.
+2. Ajoutez les directives `using` suivantes en haut du fichier de code :
 
      [!code-csharp[csProgGuideOfficeHowTo#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#1)]
 

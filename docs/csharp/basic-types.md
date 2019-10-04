@@ -3,12 +3,12 @@ title: Types de base - Guide C#
 description: Découvrez les types de base (numérique, chaîne et objet) disponibles dans tous les programmes C#
 ms.date: 10/10/2016
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: c719177b6099104681f590b550014d9a67f3f3ba
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
-ms.translationtype: HT
+ms.openlocfilehash: b65e6ba61bd8886223403f869aa301703f89e8ba
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424458"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834250"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -73,7 +73,7 @@ Comme indiqué précédemment, vous pouvez assigner implicitement un type à une
   
 Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou passer hors de la portée de la méthode. Vous pouvez alors créer des *types anonymes*. Pour plus d’informations, consultez [Types anonymes](programming-guide/classes-and-structs/anonymous-types.md).
 
-Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, consultez [Tuples](tuples.md)
+Il est courant de vouloir retourner plusieurs valeurs d’une méthode. Vous pouvez créer des *types tuple* qui retournent plusieurs valeurs dans un seul appel de méthode. Pour plus d’informations, consultez [tuples](tuples.md).
 
 ## <a name="the-common-type-system"></a>Système de type commun (CTS)
 

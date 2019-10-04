@@ -1,20 +1,20 @@
 ---
-title: Introduction aux littéraux XML dans Visual Basic2
+title: Introduction aux littéraux XML dans Visual BASIC2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 68ba1e018d4ad9501532745a88090f0f756b5c17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5355a3c0f01bb247e38e52816693ee47d7d50556
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61834273"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834997"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Introduction aux littéraux XML en Visual Basic
-Cette section fournit des informations sur la création d’arborescences XML en Visual Basic.  
+Cette section fournit des informations sur la création d’arborescences XML dans Visual Basic.  
   
- Pour plus d’informations sur l’utilisation des résultats de requêtes LINQ comme contenu pour une arborescence XML, consultez [Construction fonctionnelle (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Pour plus d’informations sur l’utilisation des résultats de requêtes LINQ comme contenu pour une arborescence XML, consultez [construction fonctionnelle (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- Pour plus d’informations sur les littéraux XML en Visual Basic, consultez [vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Pour plus d’informations sur les littéraux XML dans Visual Basic, consultez [vue d’ensemble des LINQ to XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
 ## <a name="creating-xml-trees"></a>Création d'arborescences XML  
  L'exemple suivant montre comment créer un objet <xref:System.Xml.Linq.XElement>, dans le cas présent `contacts` :  
@@ -190,7 +190,7 @@ Console.WriteLine("Child2 was {0}", _
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 Child1 was cloned  
 Child2 was attached  
 ```  

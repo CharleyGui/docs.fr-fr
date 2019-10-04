@@ -4,12 +4,12 @@ description: Découvrez sans serveur une approche pratique en accédant à des e
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: cb761524976125c816aae925f0c369eb8c76e7de
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7024a33f8a7fccd6afa51c126454afedd87cceee
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926470"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834302"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Scénarios métier et cas d’usage serverless
 
@@ -33,7 +33,7 @@ Le référentiel complet et les instructions pour créer l’application logique
 
 Découvrez comment implémenter une fonction Azure simple sans serveur dans le portail Web Azure ou dans Visual Studio. Générez un client avec Xamarin. Forms qui s’exécute sur Android, iOS et Windows. L’application est ensuite affinée pour utiliser JavaScript Object Notation (JSON) comme un support de communication entre le serveur et les clients mobiles avec un back end sans serveur.
 
-Pour plus d’informations, consultez [implémentation d’une fonction Azure simple avec un client Xamarin. Forms.](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+Pour plus d’informations, consultez [implémentation d’une fonction Azure simple avec un client Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/).
 
 ## <a name="generate-a-photo-mosaic-with-serverless-image-recognition"></a>Générer une mosaïque de photos avec reconnaissance d’image sans serveur
 

@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: 519c55dbe8b55191b682067da558167f86199b7e
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: ace8c644fd5aa13e29961b7eb44e923556571c75
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116221"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834261"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -55,7 +55,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
    Remarquez l’option `--` qui précède l’option `--verbose`. Elle délimite les options passées directement à la commande `dotnet watch` à partir des arguments passés au processus enfant `dotnet`. Sans elle, l’option `--verbose` s’applique à la commande `dotnet watch`, et non à la commande `dotnet build`.
   
-   Pour plus d’informations, consultez [Développer des applications ASP.NET Core à l’aide de dotnet watch](/aspnet/core/tutorials/dotnet-watch)
+   Pour plus d’informations, consultez [développer des applications ASP.net core à l’aide de dotnet Watch](/aspnet/core/tutorials/dotnet-watch).
 
 - `dotnet dev-certs` génère et gère les certificats utilisés pendant le développement dans les applications ASP.NET Core.
 
@@ -69,7 +69,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
 .NET Core 2.1 prend en charge les *outils globaux*, autrement dit des outils personnalisés disponibles globalement à partir de la ligne de commande. Le modèle d’extensibilité des versions précédentes de .NET Core proposant des outils personnalisés par projet uniquement à l’aide de [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
-Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Par exemple :
+Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Exemple :
 
 ```dotnetcli
 dotnet tool install -g dotnetsay

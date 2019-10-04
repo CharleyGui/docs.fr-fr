@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 181d01f6e688b94876f77155bf598aba129e9fbf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a61f4eedde611cfb7598d55465103924516e06c6
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949912"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834607"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Événements liés à la souris dans les Windows Forms
 
@@ -48,7 +48,7 @@ Si vous souhaitez gérer les événements de clic de souris dans l'ordre appropr
 
 4. Événement<xref:System.Windows.Forms.Control.MouseUp> .
 
-Voici l'ordre des événements déclenchés pour un double clic sur un bouton de souris :
+Voici l’ordre des événements déclenchés pour un clic double-bouton de la souris :
 
 1. Événement<xref:System.Windows.Forms.Control.MouseDown> .
 
@@ -66,24 +66,27 @@ Voici l'ordre des événements déclenchés pour un double clic sur un bouton de
 
 8. Événement<xref:System.Windows.Forms.Control.MouseUp> .
 
-Pour obtenir un exemple de code illustrant l’ordre des événements de clic de [souris, consultez Procédure: Gérer les événements d’entrée d’utilisateur](how-to-handle-user-input-events-in-windows-forms-controls.md)dans les contrôles Windows Forms.
+Pour obtenir un exemple de code illustrant l’ordre des événements de clic de souris, voir [How à : Gérer les événements d’entrée d’utilisateur dans les contrôles de Windows Forms @ no__t-0.
 
 ### <a name="individual-controls"></a>Contrôles spécifiques
 
 Les contrôles suivants n'ont pas le comportement d'événement de clic de souris standard :
 
-- Contrôles <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.CheckBox>, <xref:System.Windows.Forms.ComboBox> et <xref:System.Windows.Forms.RadioButton>
+- <xref:System.Windows.Forms.Button>
+- <xref:System.Windows.Forms.CheckBox>
+- <xref:System.Windows.Forms.ComboBox>
+- <xref:System.Windows.Forms.RadioButton>
 
   > [!NOTE]
   > Pour le contrôle <xref:System.Windows.Forms.ComboBox>, le comportement d'événement détaillé plus loin se produit si l'utilisateur clique sur le champ d'édition, le bouton ou un élément dans la liste.
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Clic droit: Aucun événement Click n’est déclenché
+  - Clic droit : Aucun événement Click n’est déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick> ; <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Double-clic droit: Aucun événement Click n’est déclenché
+  - Double-clic droit : Aucun événement Click n’est déclenché
 
 - Contrôles <xref:System.Windows.Forms.TextBox>, <xref:System.Windows.Forms.RichTextBox>, <xref:System.Windows.Forms.ListBox>, <xref:System.Windows.Forms.MaskedTextBox> et <xref:System.Windows.Forms.CheckedListBox>
 
@@ -92,11 +95,11 @@ Les contrôles suivants n'ont pas le comportement d'événement de clic de souri
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Clic droit: Aucun événement Click n’est déclenché
+  - Clic droit : Aucun événement Click n’est déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>
 
-  - Double-clic droit: Aucun événement Click n’est déclenché
+  - Double-clic droit : Aucun événement Click n’est déclenché
 
 - Contrôle <xref:System.Windows.Forms.ListView>
 
@@ -124,7 +127,7 @@ Les contrôles suivants n'ont pas le comportement d'événement de clic de souri
 
   - Double-clic droit : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick> ; <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>
 
-### <a name="painting-behavior-of-toggle-controls"></a>Comportement de peinture des contrôles de basculement
+### <a name="painting-behavior-of-toggle-controls"></a>Comportement de peinture des contrôles Toggle
 
 Les contrôles de basculement, tels que ceux dérivant de la classe <xref:System.Windows.Forms.ButtonBase>, présentent le comportement de peinture distinctif suivant en cas de combinaison avec des événements de clic de souris :
 

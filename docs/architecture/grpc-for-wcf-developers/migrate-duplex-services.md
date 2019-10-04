@@ -3,12 +3,12 @@ title: Migrer les services duplex WCF vers gRPC-gRPC pour les développeurs WCF
 description: Découvrez comment migrer différentes formes de service duplex WCF vers des services de streaming gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 06ac784a31df43fd270f7ef0475bcdc282efad8f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 525dc3006c45f773242ab08b112dba72087a2e3f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184336"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834517"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>Migrer les services duplex WCF vers gRPC
 
@@ -244,7 +244,7 @@ static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, Can
 > [!TIP]
 > La section sur les [bibliothèques clientes](client-libraries.md#iobservable) à la fin de ce chapitre explique comment ajouter une méthode d’extension et des classes `IAsyncStreamReader<T>` pour encapsuler un `IObservable<T>` pour les développeurs qui utilisent des modèles de programmation réactifs.
 
-Là encore, veillez à intercepter les exceptions ici en <xref:System.OperationCanceledException> raison de la possibilité d’une défaillance du réseau, ainsi qu’à lever inévitablement, car le code utilise un <xref:System.Threading.CancellationToken> pour rompre la boucle. Le `RpcException` type contient de nombreuses informations utiles sur les erreurs d’exécution gRPC, y `StatusCode`compris le. Pour plus d’informations, consultez [ *gestion des erreurs* dans le chapitre 4.](error-handling.md)
+Là encore, veillez à intercepter les exceptions ici en <xref:System.OperationCanceledException> raison de la possibilité d’une défaillance du réseau, ainsi qu’à lever inévitablement, car le code utilise un <xref:System.Threading.CancellationToken> pour rompre la boucle. Le `RpcException` type contient de nombreuses informations utiles sur les erreurs d’exécution gRPC, y `StatusCode`compris le. Pour plus d’informations, consultez [ *gestion des erreurs* dans le chapitre 4](error-handling.md).
 
 ## <a name="bidirectional-streaming"></a>Diffusion bidirectionnelle
 

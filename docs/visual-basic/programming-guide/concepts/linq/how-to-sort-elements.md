@@ -2,17 +2,17 @@
 title: 'Procédure : Éléments de tri (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c2c09279-6c8a-482e-8e71-b1453a815052
-ms.openlocfilehash: f92d8ca36d1b322bb8d1538fd199e7256c982b85
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 1bd76ade02f8f891e98b048ac866b6b9de65062f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710486"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835098"
 ---
 # <a name="how-to-sort-elements-visual-basic"></a>Procédure : Éléments de tri (Visual Basic)
 Cet exemple montre comment écrire une requête qui trie ses résultats.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```vb  
@@ -29,7 +29,7 @@ Next
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 0.99  
 4.95  
 6.99  
@@ -64,7 +64,7 @@ End Module
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 0.99  
 4.95  
 6.99  

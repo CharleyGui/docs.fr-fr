@@ -2,12 +2,12 @@
 title: Architecture en microservices
 description: Architecture des microservices .NET pour applications .NET conteneurisées | Vue générale de l’architecture des microservices.
 ms.date: 09/20/2018
-ms.openlocfilehash: 3cf2a94140042d3cf76b5b63fe4e98638c56dbfe
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: d1c58d218be9e5f8c0ae8ae732f9bdd06674a2c2
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672986"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834382"
 ---
 # <a name="microservices-architecture"></a>Architecture en microservices
 
@@ -19,11 +19,11 @@ Pourquoi une architecture en microservices ? Pour faire court, disons qu’elle 
 
 Un autre avantage est que les microservices peuvent monter en charge (scale out) de façon indépendante. Au lieu d’avoir une seule application monolithique que vous devez faire monter en charge en totalité, vous pouvez faire monter en charge des microservices spécifiques. Ainsi, vous pouvez effectuer un scale-out ciblé de la zone fonctionnelle qui nécessite plus de puissance de traitement ou plus de bande passante réseau pour satisfaire la demande, au lieu d’effectuer un scale-out d’autres zones de l’application qui n’en ont pas besoin. Cela signifie des frais réduits, car vous avez besoin de moins de matériel.
 
-![Dans l’approche monolithique classique, la scalabilité de l’application passe par le clonage de l’ensemble de l’application sur plusieurs serveurs/machines virtuelles. Dans l’approche liée aux microservices, les fonctionnalités sont séparées en services plus petits, pour permettre à chaque service d’être scalable indépendamment.](./media/image6.png)
+![Diagramme des différences entre les deux méthodes de déploiement.](./media/microservices-architecture/monolith-deployment-vs-microservice-approach.png)
 
 **Figure 4-6**. Déploiement monolithique comparé à l’approche par microservices
 
-Comme le montre la figure 4-6, l’approche par microservices permet des modifications agiles et une itération rapide de chaque microservice, car vous pouvez changer de petites parties spécifiques de grandes applications complexes et scalables.
+Comme le montre la figure 4-6, dans l’approche monolithique traditionnelle, l’application se met à l’échelle en clonant l’application entière dans plusieurs serveurs/machines virtuelles. Dans l’approche liée aux microservices, les fonctionnalités sont séparées en services plus petits, pour permettre à chaque service d’être scalable indépendamment. L’approche de microservices permet des modifications agiles et une itération rapide de chaque microservice, car vous pouvez modifier des zones spécifiques et de petite taille d’applications complexes, volumineuses et évolutives.
 
 Le fait d’architecturer des applications basées sur des microservices à granularité fine permet des pratiques d’intégration continue et de livraison continue. Il accélère également l’ajout de nouvelles fonctions dans l’application. La composition d’applications avec une granularité fine vous permet également d’exécuter et de tester des microservices de façon isolée, et de les faire évoluer de façon autonome tout en maintenant des contrats clairs entre eux. Tant que vous ne changez pas les contrats ou les interfaces, vous pouvez changer l’implémentation interne de n’importe quel microservice ou ajouter de nouvelles fonctionnalités sans perturber le fonctionnement des autres microservices.
 

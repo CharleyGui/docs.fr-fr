@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: c54287ea3e99ff7fe9faf02898b8c322b756e26f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d895ae50e50ade2f8285117491733d5c9814b732
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914672"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834438"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -17,7 +17,7 @@ Dans une architecture de microservices, chaque microservice expose un ensemble d
 
 Une approche possible consiste à utiliser une architecture de communication directe de client à microservice. Dans cette approche, une application cliente peut envoyer des demandes directement à certains des microservices, comme le montre la figure 4-12.
 
-![Diagramme illustrant l’architecture de communication directe de client à microservice, où chaque application communique directement avec chacun des microservices.](./media/image12.png)
+![Diagramme montrant l’architecture de communication entre les clients et les microservices.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/direct-client-to-microservice-communication.png)
 
 **Figure 4-12**. Utilisation d’une architecture de communication directe de client à microservice
 
@@ -69,11 +69,11 @@ Par conséquent, la passerelle d’API se place entre les applications clientes 
 
 La figure 4-13 montre comment une passerelle d’API personnalisée peut s’intégrer dans une architecture simplifiée basée sur quelques microservices.
 
-![Diagramme illustrant une passerelle API implémentée comme un service personnalisé pour permettre aux applications de se connecter à un point de terminaison unique (la passerelle API), qui est configuré pour transférer les requêtes à chaque microservice.](./media/image13.png)
+![Diagramme montrant une passerelle d’API implémentée en tant que service personnalisé.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/custom-service-api-gateway.png)
 
 **Figure 4-13**. Utilisation d’une passerelle d’API implémentée comme service personnalisé
 
-Dans cet exemple, la passerelle d’API doit être implémentée comme un service ASP.NET Core WebHost personnalisé s’exécutant en tant que conteneur.
+Les applications se connectent à un point de terminaison unique, la passerelle d’API, qui est configurée pour transférer les demandes à des microservices individuels. Dans cet exemple, la passerelle d’API doit être implémentée comme un service ASP.NET Core WebHost personnalisé s’exécutant en tant que conteneur.
 
 Il est important de souligner que dans ce diagramme, vous utilisez un seul service de passerelle API personnalisée faisant face à plusieurs applications clientes différentes. Ceci peut présenter un risque important, car votre service de passerelle d’API va croître et évoluer en fonction des nombreuses exigences différentes des applications clientes. Au final, il deviendra trop étendu en raison de ces différents besoins et sera effectivement très similaire à une application monolithique ou à un service monolithique. C’est pourquoi il est vivement recommandé de diviser la passerelle API en plusieurs services ou en plusieurs passerelles API plus petites, par exemple, une par type de facteur de forme dans une application cliente.
 
@@ -83,11 +83,11 @@ Par conséquent, les passerelles d’API doivent être séparées en fonction de
 
 Quand vous divisez le niveau de la passerelle API en plusieurs passerelles API, si votre application a plusieurs applications clientes, cela peut être un pivot essentiel pour identifier les différents types de passerelles API, et pouvoir ainsi utiliser une façade différente selon les besoins de chaque application cliente. Ce cas est un modèle intitulé « Backend for Frontend » ([BFF](https://samnewman.io/patterns/architectural/bff/)), dans lequel chaque passerelle API peut fournir une API différente adaptée à chaque type d’application cliente, ou même personnalisée en fonction du facteur de forme de l’application cliente en implémentant un code d’adaptateur spécifique qui appelle plusieurs microservices internes de façon sous-jacente, comme le montre l’image suivante :
 
-![Diagramme illustrant plusieurs passerelles API personnalisées, divisées par type de client : une passerelle pour les clients mobiles et une passerelle pour les clients web. Une application web traditionnelle se connecte à un microservice MVC qui utilise la passerelle API web.](./media/image13.1.png)
+![Diagramme montrant plusieurs passerelles d’API personnalisées.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/multiple-custom-api-gateways.png)
 
 **Figure 4-13.1**. Utilisation de plusieurs passerelles d’API personnalisées
 
-L’image précédente montre une architecture simplifiée avec plusieurs passerelles d’API affinées. Dans ce cas, les limites identifiées pour chaque passerelle API reposant uniquement sur le modèle « Backend for Frontend » ([BFF](https://samnewman.io/patterns/architectural/bff/)), elles sont basées uniquement sur l’API nécessaire à l’application cliente. Mais dans les applications de grande taille, vous devez également aller plus loin et créer d’autres passerelles d’API basées sur les limites de l’entreprise sous forme d’un second tableau croisé dynamique de conception.
+Figure 4-13.1 affiche les passerelles d’API qui sont séparées par le type de client ; un pour les clients mobiles et un pour les clients Web. Une application web traditionnelle se connecte à un microservice MVC qui utilise la passerelle API web. L’exemple illustre une architecture simplifiée avec plusieurs passerelles d’API affinées. Dans ce cas, les limites identifiées pour chaque passerelle API reposant uniquement sur le modèle « Backend for Frontend » ([BFF](https://samnewman.io/patterns/architectural/bff/)), elles sont basées uniquement sur l’API nécessaire à l’application cliente. Mais dans les applications de grande taille, vous devez également aller plus loin et créer d’autres passerelles d’API basées sur les limites de l’entreprise sous forme d’un second tableau croisé dynamique de conception.
 
 ## <a name="main-features-in-the-api-gateway-pattern"></a>Principales fonctionnalités du modèle Passerelle d’API
 
@@ -128,11 +128,11 @@ Il peut y avoir plusieurs problèmes transversaux générés par les produits de
 
 En plus de répondre à vos besoins de passerelle API, le service [Gestion des API Azure](https://azure.microsoft.com/services/api-management/) (comme illustré à la figure 4-14) offre plusieurs fonctionnalités, telles que la collecte d’insights à partir de vos API. Si vous utilisez une solution de gestion des API globale, une passerelle API est simplement un composant de cette solution.
 
-![Le service Gestion des API Azure apporte des réponses à vos besoins de passerelle API et de gestion (journalisation, sécurité, contrôle, etc.).](./media/api-gateway-azure-api-management.png)
+![Diagramme montrant comment utiliser la gestion des API Azure comme passerelle d’API.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/api-gateway-azure-api-management.png)
 
 **Figure 4-14**. Utilisation de Gestion des API Azure pour votre passerelle d’API
 
-Dans ce cas, lors l’utilisation d’un produit comme Gestion des API Azure, le fait d’avoir une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins », ce qui veut dire que vous n’implémentez pas de code C# personnalisé susceptible d’évoluer vers un composant monolithique. 
+Le service Gestion des API Azure apporte des réponses à vos besoins de passerelle API et de gestion (journalisation, sécurité, contrôle, etc.). Dans ce cas, lors l’utilisation d’un produit comme Gestion des API Azure, le fait d’avoir une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins », ce qui veut dire que vous n’implémentez pas de code C# personnalisé susceptible d’évoluer vers un composant monolithique. 
 
 Les produits Passerelle d’API agissent généralement comme un proxy inversé pour la communication en entrée, où vous pouvez aussi filtrer les API des microservices internes et appliquer une autorisation aux API publiées dans ce niveau unique.
 

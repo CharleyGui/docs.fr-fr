@@ -2,12 +2,12 @@
 title: Étapes du workflow DevOps de la boucle externe pour une application Docker
 description: Découvrez les étapes de la « boucle externe » du workflow DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: e7a82d2e5a5d503e5efbe9ac8242b163baab1286
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 5687caff0c635e7add135654a8f564b2c509cbf8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673706"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834561"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Étapes du workflow DevOps de la boucle externe pour une application Docker
 
@@ -104,7 +104,7 @@ Ainsi, après avoir généré les conteneurs de l’application dans le pipeline
 
 Si vous utilisez un seul hôte, vous pouvez recourir à des commandes Docker telles que docker-compose pour générer et déployer des conteneurs associés afin de tester et valider l’environnement Docker dans une seule machine virtuelle. Toutefois, si vous utilisez un cluster orchestrateur tel que DC/OS, Kubernetes ou Docker Swarm, vous devez déployer vos conteneurs par le biais d’un mécanisme ou orchestrateur différent, en fonction du cluster/planificateur sélectionné.
 
-Voici plusieurs types de tests que vous pouvez exécuter sur des conteneurs Docker :
+Voici plusieurs types de tests que vous pouvez exécuter sur les conteneurs de l’ancrage :
 
 - Tests unitaires pour conteneurs Docker
 

@@ -11,15 +11,15 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - short-circuit evaluation
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
-ms.openlocfilehash: 1cb4d372d3ac228f29c6fa45f124796e5dfb6709
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: a52f598c8a7c7a79b0f2436f1add7b3eb5d5261b
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859884"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835229"
 ---
 # <a name="andalso-operator-visual-basic"></a>Opérateur AndAlso (Visual Basic)
-Effectue une conjonction logique sur deux expressions de court-circuit.  
+Effectue une conjonction logique de court-circuit sur deux expressions.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,14 +31,14 @@ result = expression1 AndAlso expression2
   
 |Terme|Définition|  
 |---|---|  
-|`result`|Requis. Toute expression `Boolean` . Le résultat est le `Boolean` résultat de la comparaison des deux expressions.|  
-|`expression1`|Requis. Toute expression `Boolean` .|  
-|`expression2`|Requis. Toute expression `Boolean` .|  
+|`result`|Obligatoire. Toute expression `Boolean` . Le résultat est le résultat `Boolean` de la comparaison des deux expressions.|  
+|`expression1`|Obligatoire. Toute expression `Boolean` .|  
+|`expression2`|Obligatoire. Toute expression `Boolean` .|  
   
 ## <a name="remarks"></a>Notes  
- Une opération logique est dite *court-circuit* si le code compilé peut ignorer l’évaluation d’une expression en fonction du résultat d’une autre expression. Si le résultat de la première expression évaluée détermine le résultat final de l’opération, il n’est pas nécessaire pour évaluer la deuxième expression, car elle ne peut pas changer le résultat final. Un court-circuit peut améliorer les performances si l’expression ignorée est complexe, ou si elle implique des appels de procédure.  
+ Une opération logique est dite *court-circuit* si le code compilé peut contourner l’évaluation d’une expression en fonction du résultat d’une autre expression. Si le résultat de la première expression évaluée détermine le résultat final de l’opération, il n’est pas nécessaire d’évaluer la deuxième expression, car elle ne peut pas modifier le résultat final. Le court-circuit peut améliorer les performances si l’expression ignorée est complexe ou si elle implique des appels de procédure.  
   
- Si les deux expressions ont `True`, `result` est `True`. Le tableau suivant illustre comment `result` est déterminée.  
+ Si les deux expressions ont la valeur `True`, `result` est `True`. Le tableau suivant illustre la façon dont `result` est déterminé.  
   
 |Si `expression1` est|Et `expression2` est|La valeur de `result` est|  
 |---|---|---|  
@@ -47,21 +47,21 @@ result = expression1 AndAlso expression2
 |`False`|(non évalué)|`False`|  
   
 ## <a name="data-types"></a>Types de données  
- Le `AndAlso` opérateur est défini uniquement pour le [Type de données booléen](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic convertit chaque opérande si nécessaire en `Boolean` avant d’évaluer l’expression. Si vous affectez le résultat à un type numérique, Visual Basic convertit à partir `Boolean` à ce type de telle sorte que `False` devient `0` et `True` devient `-1`.
-Pour plus d’informations, consultez [des Conversions de Type Boolean](../data-types/boolean-data-type.md#type-conversions)
+ L’opérateur `AndAlso` est défini uniquement pour le [type de données booléen](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic convertit chaque opérande si nécessaire pour `Boolean` avant d’évaluer l’expression. Si vous assignez le résultat à un type numérique, Visual Basic le convertit de `Boolean` en ce type de sorte que `False` devient `0` et `True` devient `-1`.
+Pour plus d’informations, consultez [conversions de types booléens](../data-types/boolean-data-type.md#type-conversions).
   
 ## <a name="overloading"></a>Surcharge  
- Le [opérateur et](../../../visual-basic/language-reference/operators/and-operator.md) et le [opérateur IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir leur comportement lorsqu’un opérande a le type de ce classe ou structure. La surcharge la `And` et `IsFalse` opérateurs affecte le comportement de la `AndAlso` opérateur. Si votre code utilise `AndAlso` sur une classe ou structure qui surcharge `And` et `IsFalse`, vérifiez que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur and](../../../visual-basic/language-reference/operators/and-operator.md) et l' [opérateur IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md) peuvent être *surchargés*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. La surcharge des opérateurs `And` et `IsFalse` affecte le comportement de l’opérateur `AndAlso`. Si votre code utilise `AndAlso` sur une classe ou une structure qui surcharge `And` et `IsFalse`, assurez-vous que vous comprenez le comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant utilise le `AndAlso` opérateur effectue une conjonction logique sur deux expressions. Le résultat est un `Boolean` valeur qui indique si l’ensemble unies expression a la valeur true. Si la première expression est `False`, la seconde n’est pas évaluée.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant utilise l’opérateur `AndAlso` pour effectuer une conjonction logique sur deux expressions. Le résultat est une valeur `Boolean` qui indique si l’intégralité de l’expression conjointe est vraie. Si la première expression est `False`, la seconde n’est pas évaluée.  
   
  [!code-vb[VbVbalrOperators#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#24)]  
   
- L’exemple précédent produit des résultats de `True`, `False`, et `False`, respectivement. Dans le calcul de `secondCheck`, la seconde expression n’est pas évaluée, car le premier est déjà `False`. Toutefois, la seconde expression est évaluée dans le calcul de `thirdCheck`.  
+ L’exemple précédent produit les résultats de `True`, `False` et `False`, respectivement. Dans le calcul de `secondCheck`, la deuxième expression n’est pas évaluée, car la première est déjà `False`. Toutefois, la deuxième expression est évaluée dans le calcul de `thirdCheck`.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre un `Function` procédure recherche une valeur donnée parmi les éléments d’un tableau. Si le tableau est vide ou si la longueur du tableau a été dépassée, le `While` instruction ne teste pas l’élément de tableau par rapport à la valeur de recherche.  
+ L’exemple suivant montre une procédure `Function` qui recherche une valeur donnée parmi les éléments d’un tableau. Si le tableau est vide ou si la longueur du tableau a été dépassée, l’instruction `While` ne teste pas l’élément de tableau par rapport à la valeur de recherche.  
   
  [!code-vb[VbVbalrOperators#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#25)]  
   
@@ -72,4 +72,4 @@ Pour plus d’informations, consultez [des Conversions de Type Boolean](../data-
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [And (opérateur)](../../../visual-basic/language-reference/operators/and-operator.md)
 - [IsFalse (opérateur)](../../../visual-basic/language-reference/operators/isfalse-operator.md)
-- [Opérateurs logiques et au niveau du bit en Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Opérateurs logiques et au niveau du bit dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

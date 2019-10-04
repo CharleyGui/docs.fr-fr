@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: f9e563cb87ee376e33442cdf718f70202d300f40
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 4fd8b679dcd4ac9efce5fa915118736b15206068
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895166"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834769"
 ---
 # <a name="duplex-services"></a>Services duplex
 
@@ -87,7 +87,7 @@ L'exemple de code suivant indique comment spécifier l'adresse de point de termi
 ```
 
 > [!WARNING]
-> Le modèle duplex ne détecte pas automatiquement quand un service ou un client ferme son canal. Par conséquent, si un client se termine de manière inattendue, par défaut, le service n’est pas notifié, ou si un service se termine de manière inattendue, le client n’est pas notifié. Si vous utilisez un service déconnecté, l' <xref:System.ServiceModel.CommunicationException> exception est levée. Les clients et les services peuvent implémenter leur propre protocole pour se notifier mutuellement s'ils le souhaitent. Pour plus d’informations sur la gestion des erreurs, consultez [gestion des erreurs WCF](../wcf-error-handling.md) .
+> Le modèle duplex ne détecte pas automatiquement quand un service ou un client ferme son canal. Par conséquent, si un client se termine de manière inattendue, par défaut, le service n’est pas notifié, ou si un service se termine de manière inattendue, le client n’est pas notifié. Si vous utilisez un service déconnecté, l' <xref:System.ServiceModel.CommunicationException> exception est levée. Les clients et les services peuvent implémenter leur propre protocole pour se notifier mutuellement s'ils le souhaitent. Pour plus d’informations sur la gestion des erreurs, consultez [gestion des erreurs WCF](../wcf-error-handling.md).
 
 ## <a name="see-also"></a>Voir aussi
 

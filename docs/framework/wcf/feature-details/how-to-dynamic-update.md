@@ -2,12 +2,12 @@
 title: 'Procédure : Mise à jour dynamique'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 0a103e980d0d1be08f3ae6850c6af64405582c7b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 95d99afd09daf4d9bf3937a71d7773332ff1bc14
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972074"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834720"
 ---
 # <a name="how-to-dynamic-update"></a>Procédure : Mise à jour dynamique
 Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
@@ -163,7 +163,8 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     > Dans la mesure où la méthode qui permet de fournir un nouvel objet RoutingConfiguration est contenue dans l’extension de service RoutingExtension, les nouveaux objets RoutingConfiguration peuvent être fournis n’importe où dans le modèle d’extensibilité WCF qui détient ou peut obtenir une référence à ServiceHost ou aux ServiceExtensions (comme dans une autre ServiceExtension).
   
 ## <a name="example"></a>Exemple  
- L'intégralité de l'application console utilisée dans cet exemple est présentée ci-dessous.  
+
+Voici une liste complète de l’application console utilisée dans cet exemple :
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -241,7 +242,8 @@ namespace Microsoft.Samples.AdvancedFilters
 ```  
   
 ## <a name="example"></a>Exemple  
- L'intégralité du fichier de configuration utilisé dans cet exemple est présentée ci-dessous.  
+ 
+Voici une liste complète du fichier de configuration utilisé dans cet exemple :
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -298,4 +300,4 @@ namespace Microsoft.Samples.AdvancedFilters
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Services de routage](../../../../docs/framework/wcf/samples/routing-services.md)
+- [Services de routage](../samples/routing-services.md)

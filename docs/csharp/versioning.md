@@ -3,12 +3,12 @@ title: Gestion de version C# - Guide C#
 description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 4c0d5b5c2ac40cb27c90b4908623dc75b26a80cc
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: dcfe373312b88c8ddd8587e27c566a90b25e3c13
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699923"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834056"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -110,5 +110,4 @@ Derived Method One: Derived Method One
 
 Le modificateur `override` est évalué au moment de la compilation et génère une erreur s’il ne trouve pas un membre virtuel à substituer.
 
-Votre connaissance des techniques présentées et des situations dans lesquelles les utiliser sera très utile pour passer en douceur d’une version de bibliothèque à une autre.
- 
+Votre connaissance des techniques présentées et de votre compréhension des situations dans lesquelles les utiliser, est un moyen de faciliter la transition entre les versions d’une bibliothèque.

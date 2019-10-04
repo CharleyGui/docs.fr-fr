@@ -2,12 +2,12 @@
 title: 'Procédure : Écrire des requêtes sur du code XML dans des espaces de noms (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-ms.openlocfilehash: 3b910e8b46632fbff2228baef44a45e8c22d731e
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 71e66791b41e26ea13f828ef6239a8db9a9365b0
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709874"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835005"
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Procédure : Écrire des requêtes sur du code XML dans des espaces de noms (Visual Basic)
 Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui ont l'espace de noms correct.  
@@ -16,7 +16,7 @@ Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous 
   
  Le premier ensemble d’exemples de cette rubrique montre comment créer une arborescence XML dans un espace de noms par défaut. Le second ensemble illustre la création d’une arborescence XML dans un espace de noms avec un préfixe.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant crée une arborescence XML qui est dans un espace de noms par défaut. Il récupère ensuite une collection d'éléments.  
   
 ```vb  
@@ -45,7 +45,7 @@ End Module
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 1  
 2  
 3  
@@ -82,7 +82,7 @@ End Module
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 1  
 2  
 3  

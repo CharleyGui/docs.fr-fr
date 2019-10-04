@@ -2,19 +2,19 @@
 title: GROUP BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-ms.openlocfilehash: 641231825ca00c6accd19039ba1ec403208a077e
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 711fbdc2d51177037cf349150c3431de14b11974
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250896"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833781"
 ---
 # <a name="group-by-entity-sql"></a>GROUP BY (Entity SQL)
 Indique les groupes dans lesquels doivent être placés les objets retournés par une expression de requête ([SELECT](select-entity-sql.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 [ GROUP BY aliasedExpression [ ,...n ] ]  
 ```  
   
@@ -23,7 +23,7 @@ Indique les groupes dans lesquels doivent être placés les objets retournés pa
  Toute expression de requête valide sur laquelle le regroupement est effectué. `expression` peut être une propriété ou une expression non agrégée qui référence une propriété retournée par la clause FROM. Chaque expression contenue dans une clause GROUP BY doit être évaluée à un type pouvant être comparé en égalité. Ces types sont généralement des primitives scalaires telles que des nombres, des chaînes et des dates. Vous ne pouvez pas effectuer de regroupement sur une collection.  
   
 ## <a name="remarks"></a>Notes  
- Si les fonctions d’agrégation sont incluses dans la \<clause SELECT, sélectionnez liste >, Group by calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
+ Si les fonctions d’agrégation sont incluses dans la clause SELECT @no__t la liste 0select >, GROUP BY calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
   
 > [!NOTE]
 > Si la clause ORDER BY n'est pas spécifiée, les groupes retournés par la clause GROUP BY ne sont pas triés dans un ordre particulier. Nous vous recommandons de toujours utiliser la clause ORDER BY pour définir un ordre de classement des données particulier.  
@@ -50,7 +50,7 @@ Indique les groupes dans lesquels doivent être placés les objets retournés pa
   
  Chaque expression clé GROUP BY doit comporter au moins une référence à l'étendue d'entrée :  
   
-```  
+```sql  
 SELECT FROM Persons as P  
 GROUP BY Q + P   -- GOOD  
 GROUP BY Q   -- BAD  
@@ -62,11 +62,11 @@ GROUP BY 1   -- BAD, a constant is not allowed
 ## <a name="example"></a>Exemple  
  La requête Entity SQL suivante utilise l'opérateur GROUP BY pour spécifier les groupes dans lesquels les objets sont retournés par une requête. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
+1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats PrimitiveType @ no__t-0.  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   
- [!code-csharp[DP EntityServices Concepts 2#GROUPBY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#groupby)]  
+ [!code-sql[DP EntityServices Concepts#GROUPBY](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#groupby)]  
   
 ## <a name="see-also"></a>Voir aussi
 

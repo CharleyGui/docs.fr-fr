@@ -3,12 +3,12 @@ title: Recommandations sur la migration d’une application générée à l’ai
 ms.date: 03/30/2017
 ms.assetid: 7a32fe6e-5f68-4693-9371-19411fa8063c
 author: BrucePerlerMS
-ms.openlocfilehash: 3ba99a061d060ebe7740fe61846c3684b5c3085d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 645fd09de91d8190384faea9df2ef18511162c2f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045484"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834523"
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>Recommandations sur la migration d’une application générée à l’aide de WIF 3.5 à WIF 4.5
 
@@ -16,7 +16,7 @@ ms.locfileid: "71045484"
 
 - Microsoft® Windows® Identity Foundation (WIF) 3.5 et 4.5.
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 WIF (Windows Identity Foundation) a été initialement mis en production au moment de .NET 3.5 SP1. Cette version de WIF est appelée WIF 3.5. Elle a été publiée sous la forme d’un runtime et d’un kit SDK distincts, ce qui signifiait que le runtime WIF devait être installé sur chaque ordinateur sur lequel une application WIF était exécutée et que les développeurs devaient télécharger et installer le kit SDK WIF pour obtenir les outils et les modèles Visual Studio qui permettaient le développement des applications WIF. À compter de .NET 4.5, WIF a été entièrement intégré dans le .NET Framework. Un runtime distinct n’est plus nécessaire et les outils WIF peuvent être installés dans Visual Studio 2012 à l’aide du Gestionnaire d’extensions Visual Studio. Cette version de WIF est appelée WIF 4.5.
 
@@ -110,7 +110,7 @@ Vous pouvez installer l’outil Identity and Access Tool à partir du gestionnai
 
 - L’utilitaire de fédération autonome (FedUtil) n’est pas disponible dans WIF 4.5. Vous pouvez utiliser l’outil Identity and Access Tool pour modifier vos fichiers de configuration afin d’externaliser la gestion des identités vers un service STS.
 
-Pour plus d’informations sur l’outil Identity and Access Tool, consultez [Identity and Access Tool pour Visual Studio 2012](identity-and-access-tool-for-vs.md)
+Pour plus d’informations sur l’outil Identity and Access Tool, consultez [Identity and Access Tool for Visual Studio 2012](identity-and-access-tool-for-vs.md).
 
 <a name="BKMK_ToolingChanges"></a>
 

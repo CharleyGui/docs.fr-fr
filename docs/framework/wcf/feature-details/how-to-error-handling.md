@@ -2,12 +2,12 @@
 title: 'Procédure : Gestion des erreurs'
 ms.date: 03/30/2017
 ms.assetid: de566e39-9358-44ff-8244-780f6b799966
-ms.openlocfilehash: 4958e7914d9feb32dc00d11a215cf8247e9baffc
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 3b8e48a74ff7671b942b5499fb3a0b5d0f389d61
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424602"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834710"
 ---
 # <a name="how-to-error-handling"></a>Procédure : Gestion des erreurs
 
@@ -79,7 +79,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
     </backupLists>
     ```
 
-4. Définissez la table de filtres, qui associe le filtre au point de terminaison deadDestination, et la liste de points de terminaison de sauvegarde.  Le service de routage essaie d'abord d'envoyer le message au point de terminaison de destination associé au filtre. Puisque deadDestination contient une adresse qui ne fait référence à aucun service en cours d'exécution, cela provoque une erreur réseau. Le Service de routage essaie ensuite d’envoyer le message au point de terminaison spécifié dans le backupEndpointList.
+4. Définissez la table de filtres, qui associe le filtre au point de terminaison deadDestination, et la liste de points de terminaison de sauvegarde.  Le service de routage essaie d'abord d'envoyer le message au point de terminaison de destination associé au filtre. Puisque deadDestination contient une adresse qui ne fait référence à aucun service en cours d'exécution, cela provoque une erreur réseau. Le service de routage tente ensuite d’envoyer le message au point de terminaison spécifié dans le backupEndpointList.
 
     ```xml
     <filterTables>
@@ -93,7 +93,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
           </filterTables>
     ```
 
-5. Pour évaluer les messages entrants en fonction du filtre contenu dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service, à l'aide du comportement de routage.  L’exemple suivant illustre l’association de « filterTable1 » aux points de terminaison de service.
+5. Pour évaluer les messages entrants en fonction du filtre contenu dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service, à l'aide du comportement de routage.  L’exemple suivant illustre l’Association de « filterTable1 » aux points de terminaison de service.
 
     ```xml
     <behaviors>
@@ -108,7 +108,7 @@ Cette rubrique décrit les étapes de base requises pour créer une configuratio
 
 ## <a name="example"></a>Exemple
 
-L'intégralité du fichier de configuration est présentée ci-dessous.
+Voici une liste complète du fichier de configuration :
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

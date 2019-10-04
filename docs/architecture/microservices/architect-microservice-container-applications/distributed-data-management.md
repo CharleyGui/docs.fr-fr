@@ -2,12 +2,12 @@
 title: Problématiques et solutions pour la gestion des données distribuées
 description: Découvrez les défis et les solutions spécifiques à la gestion des données distribuée dans le monde des microservices.
 ms.date: 09/20/2018
-ms.openlocfilehash: 7733a4523e147591151cd0dda26c43992dbe9a41
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: c30de24591d5a73fd34087f34a69e9c7ed54cd35
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673136"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834458"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problématiques et solutions pour la gestion des données distribuées
 
@@ -47,7 +47,7 @@ Dans une hypothétique version monolithique de cette application, quand le prix 
 
 Toutefois, dans une application basée sur les microservices, les tables Order (Commande) et Product (Produit) appartiennent à leurs microservices respectifs. Aucun microservice ne doit jamais inclure de tables/stockage appartenant à un autre microservice dans ses propres transactions, pas même dans les requêtes directes, comme indiqué sur la figure 4-9.
 
-![Un microservice ne peut pas accéder directement à une table d’un autre microservice. Vous devez utiliser une cohérence à terme pour synchroniser les données.](./media/image9.png)
+![Diagramme montrant que les données de la base de données des microservices ne peuvent pas être partagées.](./media/distributed-data-management/indepentent-microservice-databases.png)
 
 **Figure 4-9**. Un microservice ne peut pas accéder directement à une table dans un autre microservice
 

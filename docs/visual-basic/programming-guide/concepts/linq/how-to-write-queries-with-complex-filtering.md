@@ -2,12 +2,12 @@
 title: 'Procédure : Écrire des requêtes avec un filtrage complexe (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bf286ffc-7990-4b00-a4eb-ee3d70129950
-ms.openlocfilehash: 0459c9549238257c0a76276a1d10f6d370144214
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 41b967e2876be98016b48da5122478f63385c6a8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709866"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834968"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>Procédure : Écrire des requêtes avec un filtrage complexe (Visual Basic)
 Il peut arriver que vous souhaitiez écrire des requêtes LINQ to XML à l'aide de filtres complexes. Par exemple, il se peut que vous deviez rechercher tous les éléments qui ont un élément enfant avec un nom et une valeur spécifiques. Cette rubrique fournit un exemple d'écriture de requête avec un filtrage complexe.  
@@ -17,7 +17,7 @@ Il peut arriver que vous souhaitiez écrire des requêtes LINQ to XML à l'aide 
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
- Pour plus d’informations sur `Any` l’opérateur, consultez [opérations de quantificateur (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md).  
+ Pour plus d’informations sur l’opérateur `Any`, consultez [opérations de quantificateur (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md).  
   
 ```vb  
 Dim root As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -38,7 +38,7 @@ Next
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 99505  
 ```  
   
@@ -72,7 +72,7 @@ End Module
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 99505  
 ```  
   

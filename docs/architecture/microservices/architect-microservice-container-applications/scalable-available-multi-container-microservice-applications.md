@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Découvrez les options qui permettent d’orchestrer des microservices et des applications multiconteneurs pour fournir une scalabilité et une disponibilité élevées. Découvrez également les possibilités offertes par Azure Dev Spaces durant le développement du cycle de vie des applications Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: aef9dc2206c24d685610616a2a4d7850837b832d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f0efad0134ec95028ecd49ad8d294ae4813940e9
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71040087"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834321"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -15,11 +15,11 @@ L’utilisation d’orchestrateurs pour les applications prêtes pour la product
 
 La figure 4-23 illustre un déploiement dans un cluster d’une application composée de plusieurs microservices (conteneurs).
 
-![Applications Docker composées dans un cluster : vous utilisez un conteneur pour chaque instance de service. Les conteneurs d’ancrage sont des « unités de déploiement » et un conteneur est une instance d’un ancrage. Un hôte gère de nombreux conteneurs](./media/image23.png)
+![Diagramme montrant les applications d’ancrage composées dans un cluster.](./media/scalable-available-multi-container-microservice-applications/composed-docker-applications-cluster.png)
 
 **Figure 4-23**. Un cluster de conteneurs
 
-Ceci ressemble à une approche logique. Mais comment gérez-vous l’équilibrage de charge, le routage et l’orchestration de ces applications composées ?
+vous utilisez un conteneur pour chaque instance de service. Les conteneurs d’ancrage sont des « unités de déploiement » et un conteneur est une instance d’un ancrage. Un hôte gère de nombreux conteneurs. Ceci ressemble à une approche logique. Mais comment gérez-vous l’équilibrage de charge, le routage et l’orchestration de ces applications composées ?
 
 Le moteur Docker standard dans des hôtes Docker individuels répond aux besoins de la gestion des instances avec une seule image sur un seul hôte, mais il ne peut pas faire face quand il s’agit de gérer plusieurs conteneurs déployés sur plusieurs hôtes pour des applications distribuées plus complexes. Dans la plupart des cas, vous avez besoin d’une plateforme de gestion qui va démarrer automatiquement les conteneurs, monter en charge les conteneurs avec plusieurs instances par image, les suspendre ou les arrêter si nécessaire, et idéalement, contrôler comment ils accèdent à des ressources comme le réseau et le stockage de données.
 
@@ -37,8 +37,8 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 
 |     |   |
 |-----|---|
-| **Kubernetes** <br> ![Logo Kubernetes](./media/image24.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br><br> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br><br> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
-| **Service Azure Kubernetes (AKS)** <br> ![Logo du service Azure Kubernetes](./media/image41.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) est un service d’orchestration de conteneur Kubernetes géré dans Azure qui simplifie la gestion, le déploiement et les opérations d’un cluster Kubernetes. |
+| **Kubernetes** <br> image @no__t 0An du logo Kubernetes. ](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br><br> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br><br> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
+| **Service Azure Kubernetes (AKS)** <br> image @no__t 0An du logo du service Kubernetes Azure. ](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) est un service d’orchestration de conteneur Kubernetes géré dans Azure qui simplifie la gestion, le déploiement et les opérations d’un cluster Kubernetes. |
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Utilisation d’orchestrateurs basés sur des conteneurs dans Microsoft Azure
 
@@ -52,7 +52,7 @@ AKS offre un moyen de simplifier la création, la configuration et la gestion d�
 
 Azure Kubernetes Service optimise la configuration des technologies et outils open source courants de clustering Docker spécifiquement pour Azure. Vous obtenez une solution ouverte qui offre la portabilité à la fois pour vos conteneurs et pour la configuration de votre application. Il vous suffit de sélectionner la taille, le nombre d’hôtes et les outils de l’orchestrateur, AKS gère tout le reste.
 
-![Structure de cluster Kubernetes : il existe un nœud principal qui gère le système DNS, le planificateur, le proxy, etc., et plusieurs nœuds de travail, qui hébergent les conteneurs.](media/image36.png)
+![Diagramme montrant une structure de cluster Kubernetes.](./media/scalable-available-multi-container-microservice-applications/kubernetes-cluster-simplified-structure.png)
 
 **Figure 4-24**. Structure et topologie simplifiées du cluster Kubernetes
 
@@ -62,7 +62,7 @@ Sur la figure 4-24, vous pouvez voir la structure d’un cluster Kubernetes où
 
 Pour l’environnement de développement, [Docker a annoncé en juillet 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) que Kubernetes pouvait également s’exécuter sur une seule machine de développement (Windows 10 ou macOS) à condition simplement d’installer [Docker Desktop](https://docs.docker.com/install/). Vous pouvez ensuite effectuer un déploiement sur le cloud (AKS) pour d’autres tests d’intégration, comme indiqué sur la figure 4-25.
 
-![Docker a annoncé la prise en charge des machines de développement pour les clusters Kubernetes en juillet 2018 avec Docker Desktop.](media/image37.png) 
+![Diagramme montrant Kubernetes sur un ordinateur de développement déployé sur AKS](./media/scalable-available-multi-container-microservice-applications/kubernetes-development-environment.png) 
 
 **Figure 4-25**. Exécution de Kubernetes sur la machine de développement et dans le cloud
 
@@ -96,7 +96,7 @@ Azure Dev Spaces permet aux équipes de développement d’être plus productive
 
 Comme indiqué sur la figure 4-26, la fonctionnalité la plus différenciée dans Azure Dev Spaces est la création d’« espaces » pouvant être intégrés au reste du déploiement global dans le cluster.
 
-![Azure Dev Spaces peut mélanger et associer de manière transparente des microservices de production à une instance de conteneur de développement pour faciliter le test des nouvelles versions.](media/image38.png)
+![Diagramme montrant l’utilisation de plusieurs espaces dans Azure Dev Spaces.](./media/scalable-available-multi-container-microservice-applications/use-multiple-spaces-azure-dev.png)
 
 **Figure 4-26**. Utilisation de plusieurs espaces dans Azure Dev Spaces
 

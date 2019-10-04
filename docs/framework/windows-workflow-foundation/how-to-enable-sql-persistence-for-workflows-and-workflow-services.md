@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: 84a9220e39c0d79dc53bee576735d1062c1c037c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3ba21234af9555a4e40a0b587ac21473cff8761
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779208"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834840"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Procédure : activer la persistance SQL pour les workflow et les services de workflow
 
 Cette rubrique décrit comment configurer la fonctionnalité de magasin d’instances de workflow SQL pour activer la persistance pour vos workflows et services de workflow à la fois par programmation et en utilisant un fichier de configuration.
 
-Windows Server AppFabric simplifie le processus de configuration de la persistance. Pour plus d’informations, consultez [Configuration AppFabric persistance](https://go.microsoft.com/fwlink/?LinkId=201204)
+Windows Server AppFabric simplifie le processus de configuration de la persistance. Pour plus d’informations, consultez Configuration de la [persistance d’application Fabric](https://go.microsoft.com/fwlink/?LinkId=201204).
 
 Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, créez une base de données que la fonctionnalité utilise pour rendre les instances de workflow persistantes. Le programme d'installation de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] copie les fichiers de script SQL associés à la fonctionnalité de magasin d'instances de workflow SQL dans le dossier %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN. Exécutez ces fichiers de script sur une base de données SQL Server 2005 ou SQL Server 2008 que le magasin d'instances de workflow SQL doit utiliser pour rendre les instances de workflow persistantes. Exécutez d'abord le fichier SqlWorkflowInstanceStoreSchema.sql, puis le fichier SqlWorkflowInstanceStoreLogic.sql.
 
@@ -29,9 +29,9 @@ Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, 
 > [!IMPORTANT]
 > Si vous ne créez pas de base de données de persistance, la fonctionnalité de magasin d’instances de workflow SQL lève une exception semblable à la suivante lorsqu’un hôte essaie de rendre des workflows persistants.
 >
-> System.Data.SqlClient.SqlException: Impossible de trouver la procédure stockée « System.Activities.DurableInstancing.CreateLockOwner »
+> System. Data. SqlClient. SqlException : Impossible de trouver la procédure stockée System. Activities. DurableInstancing. CreateLockOwner
 
-Les sections suivantes décrivent comment activer la persistance pour les workflows et les services de workflow à l'aide du magasin d'instances de workflow SQL. Pour plus d’informations sur les propriétés de la Store d’Instance de Workflow SQL, consultez [propriétés de SQL Workflow Instance Store](properties-of-sql-workflow-instance-store.md).
+Les sections suivantes décrivent comment activer la persistance pour les workflows et les services de workflow à l'aide du magasin d'instances de workflow SQL. Pour plus d’informations sur les propriétés du magasin d’instances de workflow SQL, consultez [Propriétés du magasin d’instances de workflow SQL](properties-of-sql-workflow-instance-store.md).
 
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>Activation de la persistance pour les workflows auto-hébergés qui utilisent WorkflowApplication
 
@@ -39,7 +39,7 @@ Vous pouvez activer la persistance pour les workflows auto-hébergés qui utilis
 
 #### <a name="to-enable-persistence-for-self-hosted-workflows"></a>Pour activer la persistance pour les workflows auto-hébergés
 
-1. Ajoutez une référence à System.Activities.DurableInstancing.dll.
+1. Ajoutez une référence à System. Activities. DurableInstancing. dll.
 
 2. Ajoutez l'instruction suivante en haut du fichier source après les instructions « using » existantes.
 
@@ -72,7 +72,7 @@ Vous pouvez activer la persistance pour les workflows auto-hébergés qui utilis
    ```
 
 > [!NOTE]
-> Consultez le [Comment : Créer et exécuter un Workflow de longue durée](how-to-create-and-run-a-long-running-workflow.md) étape de la [Getting Started Tutorial](getting-started-tutorial.md) pour obtenir des instructions étape par étape.
+> Consultez le [How pour : Créez et exécutez un flux de travail de longue durée @ no__t-0 dans le [didacticiel prise en main](getting-started-tutorial.md) pour obtenir des instructions pas à pas.
 
 ## <a name="enabling-persistence-for-self-hosted-workflow-services-that-use-the-workflowservicehost"></a>Activation de la persistance pour les services de workflow auto-hébergés qui utilisent WorkflowServiceHost
 
@@ -129,7 +129,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 Vous pouvez activer la persistance pour les services de workflow auto-hébergés ou hébergés par le service d'activation des processus Windows (WAS) à l'aide d'un fichier de configuration. Un service de workflow hébergé par le service d'activation de processus Windows utilise WorkflowServiceHost de la même façon que les services de workflow auto-hébergés.
 
-Le `SqlWorkflowInstanceStoreBehavior`, un comportement de service qui vous permet de modifier aisément le [SQL Workflow Instance Store](sql-workflow-instance-store.md) propriétés via la configuration XML. Pour les services de workflow hébergés par le service d'activation de processus Windows, utilisez le fichier Web.config. L'exemple de configuration suivant indique comment configurer le magasin d'instances de workflow SQL en utilisant l'élément de comportement `sqlWorkflowInstanceStore` dans un fichier de configuration.
+Le `SqlWorkflowInstanceStoreBehavior`, un comportement de service qui vous permet de modifier facilement les propriétés du [magasin d’instances de workflow SQL](sql-workflow-instance-store.md) par le biais de la configuration XML. Pour les services de workflow hébergés par le service d'activation de processus Windows, utilisez le fichier Web.config. L'exemple de configuration suivant indique comment configurer le magasin d'instances de workflow SQL en utilisant l'élément de comportement `sqlWorkflowInstanceStore` dans un fichier de configuration.
 
 ```xml
 <serviceBehaviors>
@@ -156,13 +156,13 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 ```
 
 > [!IMPORTANT]
-> Il est recommandé de ne pas stocker d'informations sensibles, telles que les noms d'utilisateur et mots de passe, dans le fichier Web.config. Si vous stockez des informations sensibles dans le fichier Web.config, vous devez sécuriser l'accès au fichier Web.config à l'aide des listes de contrôle d'accès (ACL) du système de fichiers. En outre, vous pouvez également sécuriser les valeurs de configuration dans un fichier de configuration comme indiqué dans [chiffrement Configuration des informations à l’aide de la Configuration protégée](https://go.microsoft.com/fwlink/?LinkId=178419).
+> Il est recommandé de ne pas stocker d'informations sensibles, telles que les noms d'utilisateur et mots de passe, dans le fichier Web.config. Si vous stockez des informations sensibles dans le fichier Web.config, vous devez sécuriser l'accès au fichier Web.config à l'aide des listes de contrôle d'accès (ACL) du système de fichiers. En outre, vous pouvez également sécuriser les valeurs de configuration dans un fichier de configuration comme indiqué dans [chiffrement des informations de configuration à l’aide de la configuration protégée](https://go.microsoft.com/fwlink/?LinkId=178419).
 
 ### <a name="machineconfig-elements-related-to-the-sql-workflow-instance-store-feature"></a>Éléments Machine.config liés à la fonctionnalité de magasin d'instances de workflow SQL
 
 L'installation de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ajoute les éléments suivants liés à la fonctionnalité de magasin d'instances de workflow SQL au fichier Machine.config :
 
-- Ajoute l’élément d’extension de comportement suivant au fichier Machine.config afin que vous puissiez utiliser le \<sqlWorkflowInstanceStore > élément de comportement de service dans le fichier de configuration pour configurer la persistance pour vos services.
+- Ajoute l’élément d’extension de comportement suivant au fichier machine. config afin que vous puissiez utiliser l’élément de comportement de service \<sqlWorkflowInstanceStore > dans le fichier de configuration pour configurer la persistance pour vos services.
 
     ```xml
     <configuration>

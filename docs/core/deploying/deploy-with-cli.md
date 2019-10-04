@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: 00064b774145e7267fe26b31ef3bba4d5271a5c3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: c8b4c60eb4ea09c8b10bd0b2fffc803d0a5fb6e0
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181509"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834280"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publier des applications .NET Core avec l’interface CLI
 
@@ -23,7 +23,7 @@ Pour obtenir une vue d’ensemble de ces modes de publication, consultez [Déplo
 
 Vous recherchez une aide rapide sur l’utilisation de l’interface CLI ? Le tableau suivant présente quelques exemples illustrant comment publier votre application. Vous pouvez spécifier le framework cible avec le paramètre `-f <TFM>` ou en modifiant le fichier projet. Pour plus d’informations, consultez [Principes de base de la publication](#publishing-basics).
 
-| Mode de publication | Version du kit SDK | Commande |
+| Mode de publication | Version du kit SDK | Command |
 | ------------ | ----------- | ------- |
 | Déploiement dépendant du framework | 2.x | `dotnet publish -c Release` |
 | Exécutable dépendant du framework | 2.2 | `dotnet publish -c Release -r <RID> --self-contained false` |
@@ -137,7 +137,7 @@ Quand vous utilisez le commutateur `-r`, le chemin du dossier de sortie devient�
 Si vous utilisez l’[exemple d’application](#sample-app), exécutez `dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false`. Cette commande crée l’exécutable suivant : `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
 
 > [!NOTE]
-> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode invariant de globalisation** et sur la façon de l’activer, consultez [.NET Core Globalization Invariant Mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode de globalisation invariant** et sur la façon de l’activer, consultez [mode de globalisation de la globalisation .net Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
 
 ## <a name="self-contained-deployment"></a>Déploiement autonome
 
@@ -152,7 +152,7 @@ Vous devez utiliser les commutateurs suivants avec la commande `dotnet publish` 
 - `--self-contained true` Ce commutateur indique au kit SDK .NET Core qu’il doit créer un exécutable sous forme de déploiement autonome.
 
 > [!NOTE]
-> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode invariant de globalisation** et sur la façon de l’activer, consultez [.NET Core Globalization Invariant Mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode de globalisation invariant** et sur la façon de l’activer, consultez [mode de globalisation de la globalisation .net Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
 
 ## <a name="see-also"></a>Voir aussi
 

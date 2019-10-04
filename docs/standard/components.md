@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: baeb091f7c1757e62ba049afc7a92ae8e73d3925
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
-ms.translationtype: HT
+ms.openlocfilehash: f43cd61fbcb3c1c872961476449822c574f76cff
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70014944"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835279"
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
@@ -41,7 +41,7 @@ Il existe quatre implémentations de .NET principales que Microsoft développe e
 
 Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md) et [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md).
 
-### <a name="net-framework"></a>.NET Framework
+### <a name="net-framework"></a>.NET Framework
 
 .NET Framework est l’implémentation de .NET d’origine qui existe depuis 2002. Les développeurs .NET actuels l’ont toujours utilisé dans sa forme d’origine. Comme les versions 4.5 et ultérieures implémentent .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur ces versions de .NET Framework. Il contient des API supplémentaires spécifiques à Windows, notamment des API pour le développement bureautique Windows avec Windows Forms et WPF. .NET Framework est optimisé pour la génération d’applications de bureau Windows.
 
@@ -83,6 +83,26 @@ Vous avez accès à un ensemble complet d’outils et de composants d’infrastr
 - [MSBuild](/visualstudio/msbuild/msbuild), moteur de génération utilisé pour générer les projets
 - [NuGet](/nuget/), gestionnaire de package de Microsoft pour .NET
 - Outils d’orchestration de génération open source, tels que [CAKE](https://cakebuild.net/) et [FAKE](https://fake.build/)
+
+## <a name="applicable-standards"></a>Normes applicables
+
+Les C# spécifications de langage et de Common Language Infrastructure (CLI) sont standardisées par [ECMA International®](https://www.ecma-international.org/). Les premières éditions de ces normes ont été publiées par l’ECMA en décembre 2001.
+
+Les révisions ultérieures des normes ont été développées par les groupes de tâchesC#TC49-TG2 () et TC49-TG3 (CLI) au sein du Comité technique des langages de programmation ([TC49](https://www.ecma-international.org/memento/tc49.htm)) et adoptés par l’assembly général de l’ECMA et par la suite par la norme ISO/IEC JTC 1 via le processus ISO Fast-Track.
+
+### <a name="latest-standards"></a>Dernières normes
+
+Les documents ECMA officiels suivants sont disponibles pour [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) et l' [interface CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm)) :
+
+- **Norme C# du langage (version 5,0)** : [ECMA-334. pdf](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
+- **Common Language Infrastructure**: Elle est disponible au format [PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf) et au format [zip](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip) .
+- **Informations dérivées du fichier XML de partition IV**: Il est disponible au format [PDF](https://www.ecma-international.org/publications/files/ECMA-TR/ECMA%20TR-084.pdf) et [zip](https://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip) .
+ 
+Les documents ISO/CEI officiels sont disponibles à partir de la page normes ISO/CEI [disponibles publiquement](https://standards.iso.org/ittf/PubliclyAvailableStandards/) . Ces liens sont directement à partir de cette page :
+
+- **Technologies de l’information-Langages de programmation- C#** : [ISO/IEC 23270:2018](https://standards.iso.org/ittf/PubliclyAvailableStandards/c075178_ISO_IEC_23270_2018.zip)
+- **Technologies de l’information : partitions d’Common Language Infrastructure (CLI) I à VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
+- **Technologie de l’information : Common Language Infrastructure (CLI) : rapport technique sur les informations dérivées du fichier XML partition IV**: [ISO/IEC TR 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
 ## <a name="see-also"></a>Voir aussi
 

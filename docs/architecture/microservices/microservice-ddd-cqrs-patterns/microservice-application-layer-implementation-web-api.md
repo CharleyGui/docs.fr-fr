@@ -2,12 +2,12 @@
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre l’injection de dépendances et les modèles de médiateur, et leurs détails d’implémentation dans la couche Application de l’API web.
 ms.date: 10/08/2018
-ms.openlocfilehash: c8447cfcd3155a873d61ee9287f58774392c279d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 0f6f47dd5f67fb18695715e5cfc9179206ef6bcf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676576"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834362"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -203,7 +203,7 @@ Vous envoyez une commande à un seul récepteur ; vous ne publiez pas une comma
 
 Une commande est implémentée avec une classe qui contient des champs ou collections de données contenant toutes les informations nécessaires à son exécution. Une commande est un type spécial d’objet de transfert de données, particulièrement utilisé pour demander des modifications ou des transactions. La commande elle-même se base sur les informations exactes nécessaires à son traitement et rien de plus.
 
-L’exemple suivant montre la classe CreateOrderCommand simplifiée. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
+L’exemple suivant illustre la classe simplifiée `CreateOrderCommand`. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
 
 ```csharp
 // DDD and CQRS patterns comment
@@ -215,7 +215,7 @@ L’exemple suivant montre la classe CreateOrderCommand simplifiée. Il s’agit
 // http://cqrs.nu/Faq
 // https://docs.spine3.org/motivation/immutability.html
 // http://blog.gauffin.org/2012/06/griffin-container-introducing-command-support/
-// https://msdn.microsoft.com/library/bb383979.aspx
+// https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties
 [DataContract]
 public class CreateOrderCommand
     :IAsyncRequest<bool>
@@ -287,7 +287,7 @@ Autre caractéristique des commandes : elles sont immuables, car l’usage veut
 
 Gardez à l’esprit que si vous prévoyez ou que vous vous attendez à ce que les commandes subissent un processus de sérialisation/désérialisation, les propriétés doivent avoir une méthode setter privée et l’attribut `[DataMember]` (ou `[JsonProperty]`), sans quoi le désérialiseur ne peut pas reconstruire l’objet au niveau de la destination avec les valeurs nécessaires.
 
-Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, CreateOrderCommand n’a pas d’ID de commande, car la commande n’a pas encore été créée.
+Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, `CreateOrderCommand` n’a pas d’ID de commande, car la commande n’a pas encore été créée.
 
 De nombreuses classes de commande peuvent être simples, car elles n’ont besoin que de quelques champs sur un état qui doit être modifié. C’est le cas si vous passez simplement l’état d’une commande de « En cours » à « Payée » ou « Livrée » à l’aide d’une commande semblable à la suivante :
 
@@ -335,7 +335,7 @@ L’important ici est que, quand une commande est en cours de traitement, toute 
 
 Lorsque les gestionnaires de commandes deviennent complexes, avec trop de logique, un « code smell » peut se produire. Passez-les en revue et si vous trouvez la logique de domaine, refactorisez le code pour déplacer ce comportement de domaine vers les méthodes des objets de domaine (entité racine et enfant de l’agrégat).
 
-À titre d’exemple de classe de gestionnaire de commandes, le code suivant montre la même classe CreateOrderCommandHandler que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
+À titre d’exemple de classe de gestionnaire de commandes, le code suivant montre la même classe `CreateOrderCommandHandler` que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -473,14 +473,17 @@ Jimmy Bogard a précisé une autre bonne raison d’utiliser le modèle Médiate
 
 > Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande entrante, réponse sortante. Nous avons trouvé cet aspect très précieux pour générer des tests au comportement cohérent.
 
-Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez en fait l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements, entre autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
+Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez en fait l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements et d’autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
 
 ```csharp
 public class MyMicroserviceController : Controller
 {
     public MyMicroserviceController(IMediator mediator,
                                     IMyMicroserviceQueries microserviceQueries)
-    // ...
+    {
+        // ...
+    }
+}
 ```
 
 Vous pouvez voir que le médiateur fournit un constructeur de contrôleur d’API web propre et léger. De plus, dans les méthodes du contrôleur, le code permettant d’envoyer une commande à l’objet médiateur occupe quasiment une seule ligne :

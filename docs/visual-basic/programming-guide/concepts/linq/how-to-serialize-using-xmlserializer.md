@@ -2,12 +2,12 @@
 title: 'Procédure : Sérialiser à l’aide de XmlSerializer (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: cace24eb-0f43-4016-8e4b-199e5ef73a1c
-ms.openlocfilehash: 1799ef4a0d0f20cddc4514c9dc901047c631b158
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afde54ed7d0e8049f52468e17f4500fb090f3124
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614249"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835121"
 ---
 # <a name="how-to-serialize-using-xmlserializer-visual-basic"></a>Procédure : Sérialiser à l’aide de XmlSerializer (Visual Basic)
 Cette rubrique présente un exemple qui sérialise et désérialise à l'aide de <xref:System.Xml.Serialization.XmlSerializer>.  
@@ -71,7 +71,7 @@ End Class
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 Testing for type: XElementNullContainer  
   Deserialized type: XElementNullContainer  
 Testing for type: System.Xml.Linq.XElement  

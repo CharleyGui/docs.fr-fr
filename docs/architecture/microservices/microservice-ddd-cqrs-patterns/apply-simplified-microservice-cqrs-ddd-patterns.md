@@ -2,12 +2,12 @@
 title: Application de modèles CQRS et DDD simplifiés dans un microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la relation globale entre les modèles CQRS et DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 36bffce37176aed6c7d9daea7f2995952b58e895
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: f42b553fd30fdffdc6e325b11740fe9162aab7c8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674376"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834316"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Appliquer des modèles CQRS et DDD simplifiés dans un microservice
 
@@ -27,9 +27,11 @@ CQRS implique d’avoir deux objets pour une opération de lecture/écriture où
 
 Il peut s’agir, par exemple, du microservice de commandes de l’application de référence eShopOnContainers. Ce service implémente un microservice basé sur une approche CQRS simplifiée. Il utilise une seule source de données ou base de données, mais deux modèles logiques plus des modèles DDD pour le domaine transactionnel, comme illustré dans la figure 7-2.
 
-![Le microservice Ordering logique inclut sa base de données Ordering, qui peut ou non se trouver dans le même hôte Docker. Le fait d’avoir la base de données dans le même hôte Docker est parfait pour le développement, mais pas pour la production.](./media/image2.png)
+![Diagramme montrant un microservice global CQRS et DDD de haut niveau.](./media/apply-simplified-microservice-cqrs-ddd-patterns/simplified-cqrs-ddd-microservice.png)
 
 **Figure 7-2**. Microservice basé sur les modèles CQRS et DDD simplifiés
+
+Le microservice logique « ordonnancement » comprend sa base de données de tri, qui peut être, mais n’a pas besoin d’être, le même hôte d’ancrage. Le fait d’avoir la base de données dans le même hôte Docker est parfait pour le développement, mais pas pour la production.
 
 La couche Application peut être l’API web elle-même. Ici, l’aspect important de la conception est que le microservice a séparé les requêtes et les ViewModels (modèles de données spécialement créés pour les applications clientes) des commandes, du modèle de domaine et des transactions suivant le modèle CQRS. Avec cette approche, les requêtes restent indépendantes des restrictions et des contraintes provenant de modèles DDD qui conviennent uniquement pour les transactions et les mises à jour, comme expliqué dans des sections ultérieures.
 

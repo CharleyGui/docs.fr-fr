@@ -1,5 +1,5 @@
 ---
-title: Noms d’assemblys
+title: Noms d’assembly
 ms.date: 08/19/2019
 helpviewer_keywords:
 - names [.NET Framework], assemblies
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 207460bc66c7d19558a69828797408df4ad92d64
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 22e35450460436e164db922fce76a53c437f6bdf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973151"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835323"
 ---
-# <a name="assembly-names"></a>Noms d’assemblys
+# <a name="assembly-names"></a>Noms d’assembly
 Le nom d’un assembly est stocké dans des métadonnées, et il a un impact significatif sur l’étendue de l’assembly et sur son utilisation dans une application. Un assembly avec nom fort a un nom qualifié complet qui inclut le nom, la culture, la clé publique et le numéro de version de l’assembly. Ceci est fréquemment appelé le nom d’affichage et, pour les assemblys chargés, il peut être obtenu avec la propriété <xref:System.Reflection.Assembly.FullName%2A>.  
   
  Le runtime utilise ces informations pour localiser l’assembly et pour le différencier des autres assemblys portant le même nom. Par exemple, un assembly avec un nom fort appelé `myTypes` peut avoir le nom qualifié complet suivant :  
@@ -30,7 +30,7 @@ myTypes, Version=1.0.1234.0, Culture=en-US, PublicKeyToken=b77a5c561934e089c, Pr
   
  Le code qui demande des types dans un assembly doit utiliser un nom d’assembly qualifié complet. Ceci s’appelle une liaison qualifiée complète. Une liaison partielle, qui spécifie seulement un nom d’assembly, n’est pas autorisée lors du référencement d’assemblys dans le .NET Framework.  
   
- Toutes les références d’un assembly à des assemblys qui composent le .NET Framework doivent également contenir un nom qualifié complet de l’assembly. Par exemple, une référencer à l’assembly .NET Framework System.Data pour la version 1.0 va inclure :  
+ Toutes les références d’assembly aux assemblys qui composent le .NET Framework doivent également contenir le nom qualifié complet de l’assembly. Par exemple, une référence à l’assembly System. Data .NET Framework pour la version 1,0 inclut les éléments suivants :  
   
 ```  
 System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089  

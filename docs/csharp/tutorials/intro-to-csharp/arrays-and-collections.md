@@ -3,24 +3,24 @@ title: Utilisation des collections - Présentation du tutoriel C#
 description: Découvrez C# en explorant la collection de listes de ce guide de démarrage rapide.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 8db9f0acc69efdb89c276f9bee5e095c7920ffc6
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b80225cf1614a7c25ac9011acd39e74032465ca3
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850867"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834147"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Apprenez à gérer les collections de données en utilisant le type de liste générique
 
 Ce didacticiel propose une introduction au langage C# et présente les concepts de base de la classe <xref:System.Collections.Generic.List%601>.
 
-Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Mac, PC ou Linux. Vous trouverez une brève vue d’ensemble des commandes utilisées disponible dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées disponible dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="a-basic-list-example"></a>Exemple de liste de base
 
-Créez un répertoire nommé **list-tutorial**. Faites-en le répertoire actuel et exécutez `dotnet new console`.
+Créez un répertoire nommé *list-tutorial*. Faites-en le répertoire actuel et exécutez `dotnet new console`.
 
-Ouvrez **Program.cs** dans votre éditeur favori, puis remplacez le code existant par le suivant :
+Ouvrez *Program.cs* dans votre éditeur favori, puis remplacez le code existant par le suivant :
 
 ```csharp
 using System;
@@ -42,7 +42,7 @@ namespace list_tutorial
 }
 ```
 
-Remplacez `<name>` par votre nom. Enregistrez **Program.cs**. Tapez `dotnet run` dans votre fenêtre de console pour effectuer un essai.
+Remplacez `<name>` par votre nom. Enregistrez *Program.cs*. Tapez `dotnet run` dans votre fenêtre de console pour effectuer un essai.
 
 Vous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
 

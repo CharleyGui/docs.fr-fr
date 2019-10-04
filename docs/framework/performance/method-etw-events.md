@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 58249a0e080e045223bdaf170f2eaedb67fc0dea
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 48e1c2271d6d011296d347e7d74fb363cc4d8527
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046387"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834551"
 ---
 # <a name="method-etw-events"></a>Événements ETW de méthode
 
@@ -36,7 +36,7 @@ Les événements de méthode du CLR sont subdivisés comme suit :
 
 ## <a name="clr-method-events"></a>Événements de méthode du CLR
 
-Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)
+Le tableau suivant montre les mots clés et les niveaux. Pour plus d’informations, consultez [niveaux et Mots clés ETW du CLR](clr-etw-keywords-and-levels.md).
 
 |Mot clé pour déclencher l'événement|Niveau|
 |-----------------------------------|-----------|
@@ -54,7 +54,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 |`MethodDCStart_V1`|137|Énumère les méthodes lors d’un arrêt de début.|
 |`MethodDCEnd_V1`|138|Énumère les méthodes lors d'un arrêt de fin.|
 
-Le tableau ci-dessous montre les données liées aux événements.
+Le tableau ci-dessous montre les données d’événements.
 
 |Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
@@ -66,7 +66,7 @@ Le tableau ci-dessous montre les données liées aux événements.
 |MethodFlags|win:UInt32|0x1 Méthode dynamique.<br /><br /> 0X2 Méthode générique.<br /><br /> 0x4 Méthode de code compilé juste-à-temps (sinon, code d’image native NGEN).<br /><br /> 0x8 Méthode d’assistance.|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="clr_method_marker_events"></a>
 
@@ -91,13 +91,13 @@ Le tableau ci-dessous montre les informations liées aux événements.
 |`DCEndInit_V1`|148|Envoyé avant le démarrage de l'énumération pendant un arrêt de fin.|
 |`DCEndComplete_V1`|146|Envoyé à la fin de l'énumération pendant un arrêt de fin.|
 
-Le tableau ci-dessous montre les données liées aux événements.
+Le tableau ci-dessous montre les données d’événements.
 
 |Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="clr_method_verbose_events"></a>
 
@@ -121,7 +121,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 |`MethodDCStartVerbose_V1`|141|Énumère les méthodes lors d’un arrêt de début.|
 |`MethodDCEndVerbose_V1`|142|Énumère les méthodes lors d'un arrêt de fin.|
 
-Le tableau ci-dessous montre les données liées aux événements.
+Le tableau ci-dessous montre les données d’événements.
 
 |Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
@@ -136,7 +136,7 @@ Le tableau ci-dessous montre les données liées aux événements.
 |MethodSignature|win:UnicodeString|Signature de la méthode (liste de noms de types séparés par des virgules).|
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="methodjittingstarted_event"></a>
 
@@ -157,7 +157,7 @@ Le tableau ci-dessous montre les informations liées aux événements.
 |-----------|--------------|-----------------|
 |`MethodJittingStarted`|145|Déclenché quand une méthode est compilée juste-à-temps (JIT).|
 
-Le tableau ci-dessous montre les données liées aux événements.
+Le tableau ci-dessous montre les données d’événements.
 
 |Nom du champ|Type de données|Description|
 |----------------|---------------|-----------------|
