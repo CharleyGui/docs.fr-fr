@@ -4,18 +4,18 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f90d0fa4bdefe94dcf8390698e6445fad77a1bc2
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 035a3c36337413153ee0370aec154d48b84a4711
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117933"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957249"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Déployer une application .NET pour Apache Spark sur Databricks
 
 Ce tutoriel explique comment déployer une application .NET pour Apache Spark sur Databricks.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
 >
@@ -119,11 +119,11 @@ Vous pouvez utiliser `set JAR` ou `spark-submit` pour soumettre votre travail à
 
 3. Définissez les paramètres de façon appropriée.
 
-   ```
-   Main Class: org.apache.spark.deploy.dotnet.DotnetRunner
-   Arguments /dbfs/apps/<your-app-name>.zip <your-app-main-class>
-   ```
- 
+   | Paramètre   | Value                                                |
+   |-------------|------------------------------------------------------|
+   | Classe principale  | org. Apache. Spark. deploy. dotnet. DotnetRunner          |
+   | Arguments   | /dBFS/Apps/< votre-App-name >. zip < votre application-Class-main > |
+
 4. Configurez le **cluster** pour qu’il pointe vers le cluster existant pour lequel vous avez créé le **script d’initialisation** dans la section précédente.
 
 #### <a name="publish-and-run-your-app"></a>Publier et exécuter votre application
