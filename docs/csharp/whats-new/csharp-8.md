@@ -11,7 +11,7 @@ ms.locfileid: "71736697"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au langage C# :
+C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au langage C# :
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
@@ -40,7 +40,7 @@ La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des ar
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
-Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`. Examinons le struct mutable suivant :
+Vous pouvez appliquer le modificateur `readonly` à n’importe quel membre d’un struct. Il signifie que le membre ne modifie pas l’état. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct mutable suivant :
 
 ```csharp
 public struct Point
@@ -116,7 +116,7 @@ public enum Rainbow
 }
 ```
 
-Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RVB avec la méthode suivante, qui contient une expression switch :
+Si votre application a défini un type `RGBColor` construit à partir des composants `R`, `G` et `B`, vous pouvez convertir une valeur `Rainbow` en valeurs RVB avec la méthode suivante, qui contient une expression switch :
 
 ```csharp
 public static RGBColor FromRainbow(Rainbow colorBand) =>
@@ -167,7 +167,7 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 }
 ```
 
-### <a name="property-patterns"></a>Motifs de propriétés
+### <a name="property-patterns"></a>Modèles de propriétés
 
 Les **motifs de propriété** permettent de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. Ce calcul ne fait pas partie des attributions fondamentales d’une classe `Address`. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise les motifs de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
 
@@ -451,7 +451,7 @@ Pour explorer davantage les index et les plages, consultez le tutoriel sur [les 
 
 ## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
 
-C#8.0 introduit l’opérateur d’assignation de fusion Null `??=` . Vous pouvez utiliser l'opérateur `??=` pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande gauche prend la valeur `null`.
+C#8.0 introduit l’opérateur d’assignation de fusion Null `??=` . Vous pouvez utiliser l'opérateur `??=`  pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande gauche prend la valeur `null`.
 
 ```csharp
 List<int> numbers = null;
@@ -496,8 +496,7 @@ Pour plus d’informations, consultez [types non managés](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
 
-À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
-stackalloc` expression dans d’autres expressions :
+À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
@@ -507,5 +506,4 @@ Console.WriteLine(ind);  // output: 1
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
 
-L'ordre des unités lexicales `$` et `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) est indifférent : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les versions de C# antérieures, l'unité lexicale `$` doit apparaître avant `@`.
-
+L' `$` ordre des jetons `@` et dans les chaînes `$@"..."` textuelles [interpolées](../language-reference/tokens/interpolated.md) peut être any : et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.
