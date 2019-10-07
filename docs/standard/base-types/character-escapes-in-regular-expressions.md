@@ -19,10 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: 248d434f7aad56d84d952fa27cf49f3d370f4a1c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 10/04/2019
 ms.locfileid: "69934830"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Caractères d'échappement dans les expressions régulières
@@ -53,7 +53,7 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 |`\x` *nn*|Correspond à un caractère ASCII, où *nn* est un code hexadécimal à deux chiffres d’un caractère.|  
 |`\c` *X*|Correspond à un caractère de contrôle ASCII, où X est la lettre du caractère de contrôle. Par exemple, `\cC` est Ctrl-C.|  
 |`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :**  La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. La séquence d'échappement des caractères de Perl 5 a la forme `\x{` *####* `…}`, où *####* `…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn*.|  
-|`\`|Quand ce caractère d’échappement est suivi d’un caractère non reconnu comme caractère d’échappement, correspond à ce caractère. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
+|`\`|Quand ce caractère d'échappement est suivi d'un caractère non reconnu comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
   
 ## <a name="an-example"></a>Exemple  
  L'exemple suivant montre l'utilisation de caractères d'échappement dans une expression régulière. Il analyse une chaîne qui contient les noms des plus grandes villes du monde et leur population en 2009. Chaque nom de ville est séparé de sa population par une tabulation (`\t`) ou par une barre verticale (&#124; ou `\u007c`). Les villes individuelles et leur population sont séparées les unes des autres par un retour chariot et un saut de ligne.  
