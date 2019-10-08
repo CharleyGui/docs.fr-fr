@@ -16,13 +16,13 @@ ms.locfileid: "71216265"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
-Cet article décrit les nouveautés de .NET Core 3,0. Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
+Cet article décrit les nouveautés de .NET Core 3.0. Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
 
-.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pour Mac 8,3](/visualstudio/mac/install-preview)ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**.
+.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pour Mac 8.3](/visualstudio/mac/install-preview)ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**.
 
-[Téléchargez et commencez à utiliser .net Core 3,0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
+[Téléchargez et commencez à utiliser .NET Core 3.0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
 
-Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
+Pour plus d’informations sur la version, consultez l' [annonce de .NET Core 3.0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
 .NET Core RC1 a été considéré comme une production prête par Microsoft et a été entièrement pris en charge. Si vous utilisez une version préliminaire, vous devez passer à la version RTM pour une prise en charge continue.
 
@@ -34,11 +34,11 @@ Pour plus d’informations sur la gestion des versions, consultez [Vue d’ensem
 
 ## <a name="c-80"></a>C# 8.0
 
-C#8,0 fait également partie de cette version, qui comprend la fonctionnalité de types de référence Nullable, les flux asynchrones et plus de modèles. Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
+C#8.0 fait également partie de cette version, qui comprend la fonctionnalité de types de référence Nullable, les flux asynchrones et plus de modèles. Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
 
 ## <a name="net-standard-21"></a>.NET Standard 2.1
 
-Même si .net Core 3,0 prend en charge **.NET standard 2,1**, `dotnet new classlib` le modèle par défaut génère un projet qui cible toujours **.NET standard 2,0**. Pour cibler **.NET Standard 2.1**, modifiez votre fichier projet et définissez la propriété `TargetFramework` sur `netstandard2.1` :
+Même si .NET Core 3.0 prend en charge **.NET standard 2.1**, `dotnet new classlib` le modèle par défaut génère un projet qui cible toujours **.NET standard 2.0**. Pour cibler **.NET Standard 2.1**, modifiez votre fichier projet et définissez la propriété `TargetFramework` sur `netstandard2.1` :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

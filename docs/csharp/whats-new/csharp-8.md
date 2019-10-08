@@ -167,7 +167,7 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 }
 ```
 
-### <a name="property-patterns"></a>Modèles de propriétés
+### <a name="property-patterns"></a>Motifs de propriétés
 
 Les **motifs de propriété** permettent de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. Ce calcul ne fait pas partie des attributions fondamentales d’une classe `Address`. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise les motifs de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
 
