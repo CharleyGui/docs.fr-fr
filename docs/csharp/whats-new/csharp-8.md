@@ -506,4 +506,4 @@ Console.WriteLine(ind);  // output: 1
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
 
-L' `$` ordre des jetons `@` et dans les chaînes `$@"..."` textuelles [interpolées](../language-reference/tokens/interpolated.md) peut être any : et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.
+L'ordre des unités lexicales `$` et `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) est indifférent : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les versions de C# antérieures, l'unité lexicale `$` doit apparaître avant `@`.
