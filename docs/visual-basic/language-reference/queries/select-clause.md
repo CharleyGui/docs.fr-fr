@@ -8,46 +8,46 @@ helpviewer_keywords:
 - Select clause [Visual Basic]
 - queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
-ms.openlocfilehash: 367d810c2358963bfe2f092a390443eccdc66941
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 087472c51d203be083fea0d39ade6f12066cfcb4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945260"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004737"
 ---
 # <a name="select-clause-visual-basic"></a>Select, clause (Visual Basic)
 Définit le résultat d’une requête.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]  
 ```  
   
 ## <a name="parts"></a>Composants  
  `var1`  
- Optionnel. Un alias qui peut être utilisé pour référencer les résultats de l’expression de colonne.  
+ facultatif. Alias qui peut être utilisé pour référencer les résultats de l’expression de colonne.  
   
  `fieldName1`  
- Obligatoire. Le nom du champ à retourner dans le résultat de requête.  
+ Obligatoire. Nom du champ à retourner dans le résultat de la requête.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser le `Select` clause pour définir les résultats à retourner à partir d’une requête. Cela vous permet de définir les membres d’un nouveau type anonyme qui est créé par une requête ou de cibler les membres d’un type nommé qui est retourné par une requête. Le `Select` clause n’est pas obligatoire pour une requête. Si aucun `Select` clause est spécifiée, la requête retournera un type basé sur tous les membres des variables de plage identifiées pour l’étendue actuelle. Pour plus d’informations, consultez [Types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). Lorsqu’une requête crée un type nommé, elle retournera un résultat de type <xref:System.Collections.Generic.IEnumerable%601> où `T` est le type créé.  
+ Vous pouvez utiliser la clause `Select` pour définir les résultats à retourner à partir d’une requête. Cela vous permet de définir les membres d’un nouveau type anonyme créé par une requête, ou de cibler les membres d’un type nommé qui est retourné par une requête. La clause `Select` n’est pas requise pour une requête. Si aucune clause `Select` n’est spécifiée, la requête retourne un type en fonction de tous les membres des variables de plage identifiées pour l’étendue actuelle. Pour plus d’informations, consultez [Types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). Quand une requête crée un type nommé, elle retourne un résultat de type <xref:System.Collections.Generic.IEnumerable%601> où `T` est le type créé.  
   
- Le `Select` clause peut faire référence à toutes les variables dans la portée actuelle. Cela inclut des variables de portée identifiées dans le `From` clause (ou `From` clauses). Il inclut également toutes les nouvelles variables créées avec un alias par le `Aggregate`, `Let`, `Group By`, ou `Group Join` clauses ou variables à partir d’une précédente `Select` clause dans l’expression de requête. Le `Select` clause peut également inclure des valeurs statiques. Par exemple, l’exemple de code suivant montre une expression de requête dans lequel le `Select` clause définit le résultat de requête comme un nouveau type anonyme avec quatre membres : `ProductName`, `Price`, `Discount`, et `DiscountedPrice`. Le `ProductName` et `Price` les valeurs de membre sont extraites de la variable de portée du produit qui est définie dans le `From` clause. Le `DiscountedPrice` valeur de membre est calculée dans le `Let` clause. Le `Discount` membre est une valeur statique.  
+ La clause `Select` peut faire référence à toutes les variables dans l’étendue actuelle. Cela comprend les variables de plage identifiées dans la clause `From` (ou les clauses `From`). Il comprend également toutes les nouvelles variables créées avec un alias par les clauses `Aggregate`, `Let`, `Group By` ou `Group Join`, ou les variables d’une clause `Select` précédente dans l’expression de requête. La clause `Select` peut également inclure des valeurs statiques. Par exemple, l’exemple de code suivant affiche une expression de requête dans laquelle la clause `Select` définit le résultat de la requête en tant que nouveau type anonyme avec quatre membres : `ProductName`, `Price`, `Discount` et `DiscountedPrice`. Les valeurs des membres `ProductName` et `Price` sont extraites de la variable de plage de produits définie dans la clause `From`. La valeur du membre `DiscountedPrice` est calculée dans la clause `Let`. Le membre `Discount` est une valeur statique.  
   
  [!code-vb[VbSimpleQuerySamples#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#27)]  
   
- Le `Select` clause introduit un nouvel ensemble de variables de portée pour les clauses de requête suivantes, et les variables de portée précédente ne sont plus dans la portée. La dernière `Select` clause dans une expression de requête détermine la valeur de retour de la requête. Par exemple, la requête suivante retourne la société nom et l’ordre des ID pour chaque commande client dont le total est supérieure à 500. La première `Select` clause identifie les variables de plage pour le `Where` clause et la seconde `Select` clause. La seconde `Select` clause identifie les valeurs retournées par la requête sous un nouveau type anonyme.  
+ La clause `Select` introduit un nouvel ensemble de variables de plage pour les clauses de requête suivantes, et les variables de plage précédentes ne sont plus dans la portée. La dernière clause `Select` dans une expression de requête détermine la valeur de retour de la requête. Par exemple, la requête ci-dessous retourne le nom de la société et l’ID de commande pour chaque commande client dont le total dépasse 500. La première clause `Select` identifie les variables de plage pour la clause `Where` et la deuxième clause `Select`. La deuxième clause `Select` identifie les valeurs retournées par la requête sous la forme d’un nouveau type anonyme.  
   
  [!code-vb[VbSimpleQuerySamples#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#28)]  
   
- Si le `Select` clause identifie un élément unique à retourner, l’expression de requête retourne une collection du type de cet élément unique. Si le `Select` clause identifie plusieurs éléments à retourner, l’expression de requête retourne une collection d’un nouveau type anonyme, en fonction des éléments sélectionnés. Par exemple, les deux requêtes suivantes retournent des collections de deux types différents selon le `Select` clause. La première requête retourne une collection de noms de société sous forme de chaînes. La deuxième requête retourne une collection de `Customer` objets remplie avec les noms de société et les informations d’adresse.  
+ Si la clause `Select` identifie un élément unique à retourner, l’expression de requête retourne une collection du type de cet élément unique. Si la clause `Select` identifie plusieurs éléments à retourner, l’expression de requête retourne une collection d’un nouveau type anonyme, en fonction des éléments sélectionnés. Par exemple, les deux requêtes suivantes retournent des collections de deux types différents en fonction de la clause `Select`. La première requête retourne une collection de noms de société sous forme de chaînes. La deuxième requête retourne une collection d’objets `Customer` renseignés avec les noms et les informations d’adresse de la société.  
   
  [!code-vb[VbSimpleQuerySamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#29)]  
   
 ## <a name="example"></a>Exemple  
- La requête suivante expression utilise un `From` clause pour déclarer une variable de portée `cust` pour le `customers` collection. Le `Select` clause sélectionne le nom du client et la valeur d’ID et remplit la `CompanyName` et `CustomerID` colonnes de la nouvelle variable de plage. Le `For Each` instruction effectue une itération sur chaque objet retourné et affiche le `CompanyName` et `CustomerID` colonnes pour chaque enregistrement.  
+ L’expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour la collection `customers`. La clause `Select` sélectionne la valeur du nom et de l’ID du client et remplit les colonnes `CompanyName` et `CustomerID` de la nouvelle variable de portée. L’instruction `For Each` effectue une boucle sur chaque objet retourné et affiche les colonnes `CompanyName` et `CustomerID` pour chaque enregistrement.  
   
  [!code-vb[VbSimpleQuerySamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#30)]  
   

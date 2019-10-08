@@ -8,37 +8,37 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-ms.openlocfilehash: cb109eaf43fee19b77ac690492b85919c9d78301
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32a4c7fd7f1e2f6fe640f3f53f15579f014759d5
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054391"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004719"
 ---
 # <a name="take-clause-visual-basic"></a>Take, clause (Visual Basic)
 Retourne un nombre spécifié d'éléments contigus à partir du début d'une collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Take count  
 ```  
   
 ## <a name="parts"></a>Composants  
  `count`  
- Obligatoire. Une valeur ou une expression qui correspond au nombre d’éléments de la séquence à retourner.  
+ Obligatoire. Valeur ou expression qui prend la valeur du nombre d’éléments de la séquence à retourner.  
   
 ## <a name="remarks"></a>Notes  
- Le `Take` clause entraîne une requête inclure un nombre spécifié d’éléments contigus à partir du début d’une liste de résultats. Le nombre d’éléments à inclure est spécifié par le `count` paramètre.  
+ La clause `Take` fait en sorte qu’une requête inclue un nombre spécifié d’éléments contigus à partir du début d’une liste de résultats. Le nombre d’éléments à inclure est spécifié par le paramètre `count`.  
   
- Vous pouvez utiliser la `Take` clause avec le `Skip` clause pour retourner une plage de données à partir de n’importe quel segment d’une requête. Pour ce faire, passez à l’index du premier élément de la plage à la `Skip` clause et la taille de la plage à la `Take` clause. Dans ce cas, le `Take` clause doit être spécifiée après le `Skip` clause.  
+ Vous pouvez utiliser la clause `Take` avec la clause `Skip` pour retourner une plage de données à partir de n’importe quel segment d’une requête. Pour ce faire, transmettez l’index du premier élément de la plage à la clause `Skip` et la taille de la plage à la clause `Take`. Dans ce cas, la clause `Take` doit être spécifiée après la clause `Skip`.  
   
- Lorsque vous utilisez le `Take` clause dans une requête, vous devez également vous assurer que les résultats sont retournés dans un ordre qui permettra la `Take` clause pour inclure les résultats prévus. Pour plus d’informations sur le classement des résultats de la requête, consultez [Clause Order By](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Lorsque vous utilisez la clause `Take` dans une requête, vous devrez peut-être également vous assurer que les résultats sont retournés dans un ordre qui permet à la clause `Take` d’inclure les résultats prévus. Pour plus d’informations sur la façon de classer les résultats d’une requête, consultez [clause ORDER BY](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- Vous pouvez utiliser le `TakeWhile` clause pour spécifier que seuls certains éléments soient retournés, selon une condition fournie.  
+ Vous pouvez utiliser la clause `TakeWhile` pour spécifier que seuls certains éléments doivent être retournés, en fonction d’une condition fournie.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant exemple utilise le `Take` clause conjointement avec le `Skip` clause pour retourner des données à partir d’une requête dans les pages. La fonction GetCustomers utilise le `Skip` clause pour ignorer les clients dans la liste jusqu'à ce que le départ fournie valeur d’index et utilise le `Take` clause pour retourner une page de clients à partir de cette valeur d’index.  
+ L’exemple de code suivant utilise la clause `Take` conjointement avec la clause `Skip` pour retourner des données d’une requête dans des pages. La fonction GetCustomers utilise la clause `Skip` pour ignorer les clients de la liste jusqu’à la valeur d’index de départ fournie et utilise la clause `Take` pour retourner une page de clients à partir de cette valeur d’index.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   

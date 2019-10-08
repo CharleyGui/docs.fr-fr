@@ -5,21 +5,21 @@ helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-ms.openlocfilehash: eda34c71f5735ae7ea3fcedea3a400e92756243b
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: c1c26b49a33a58189f66e7b938333f362e467853
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972257"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002149"
 ---
 # <a name="wpf-host-presentationhostexe"></a>Hôte WPF (PresentationHost.exe)
-L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’application qui [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] permet aux applications d’être hébergées dans des navigateurs compatibles (y compris Microsoft Internet Explorer 6 et versions ultérieures). Par défaut, l’hôte Windows Presentation Foundation (WPF) est inscrit en tant qu’interpréteur de commandes et le [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] gestionnaire MIME pour le contenu hébergé par le navigateur, ce qui comprend les éléments suivants:  
+L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’application qui permet aux applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] d’être hébergées dans des navigateurs compatibles (y compris Microsoft Internet Explorer 6 et versions ultérieures). Par défaut, l’hôte Windows Presentation Foundation (WPF) est inscrit en tant que gestionnaire d’interpréteur de commandes et de gestionnaire MIME pour le contenu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergé par le navigateur, ce qui comprend :  
   
 - les fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (.xaml) libre (non compilés) ;  
   
 - l’application [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] (.xbap).  
   
- Pour les fichiers de ces types, Windows Presentation Foundation hôte (WPF):  
+ Pour les fichiers de ces types, Windows Presentation Foundation hôte (WPF) :  
   
 - Lance le gestionnaire HTML inscrit pour héberger le contenu Windows Presentation Foundation (WPF).  
   
@@ -38,7 +38,7 @@ L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’
 |---------------|-----------------|  
 |filename|Chemin du fichier à activer. Il peut également s’agir d’un [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].|  
 |-debug|Au moment d’activer une application, n’effectue pas sa validation ou son exécution à partir du magasin. Fonctionne uniquement quand un fichier local est activé.|  
-|-debugSecurityZoneURL \<url>|Utilisé avec une valeur [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] pour indiquer à PresentationHost.exe qu’une application doit être déboguée comme si elle était déployée à partir de la valeur [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] spécifiée. Cela permet de déterminer à la fois la zone de déploiement et le site d’origine.|  
+|-debugSecurityZoneURL \<url>|Utilisé avec une valeur d’URL pour indiquer à PresentationHost. exe qu’une application doit être déboguée comme si elle était déployée à partir de l’URL spécifiée. Cela permet de déterminer à la fois la zone de déploiement et le site d’origine.|  
 |-embedding|Imposé par OLE. Si le paramètre `-event` ou `-debug` est spécifié, il n’est pas nécessaire de spécifier le paramètre `-embedding`, car celui-ci est défini de façon interne.|  
 |-event \<eventname>|Ouvrez l’événement ayant ce nom, puis signalez-le quand PresentationHost.exe est initialisé et prêt à héberger le contenu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. PresentationHost.exe se termine si une erreur se produit à l’ouverture de l’événement, par exemple s’il n’a pas encore été créé.|  
 |-launchApplication \<url>|Lance une application ClickOnce autonome à partir de l’URL spécifiée. La stratégie de sécurité Internet Explorer et WinINet concernant les applications .NET sont appliquées.|  

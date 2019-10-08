@@ -1,5 +1,5 @@
 ---
-title: 'Optimisation des performances : Ressources d’application'
+title: "Optimisation des performances : Ressources d'application"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application resources [WPF], performance
@@ -9,36 +9,36 @@ helpviewer_keywords:
 - brushes [WPF], performance
 - sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-ms.openlocfilehash: 362d0f0fd3282365e5e05dcd43c49a9fd2ddc9a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 759d02afe1934d2ace4ed226d5d911db2d676d98
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62017941"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005041"
 ---
-# <a name="optimizing-performance-application-resources"></a>Optimisation des performances : Ressources d’application
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de partager des ressources d’application afin que vous pouvez prendre en charge une apparence cohérente ou un comportement à travers des éléments similaires type. Cette rubrique fournit quelques recommandations dans ce domaine qui peut vous aider à améliorent les performances de vos applications.  
+# <a name="optimizing-performance-application-resources"></a>Optimisation des performances : Ressources d'application
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de partager des ressources d’application afin de pouvoir prendre en charge une apparence ou un comportement cohérent sur les éléments de type similaire. Cette rubrique fournit quelques recommandations dans ce domaine qui peuvent vous aider à améliorer les performances de vos applications.  
   
  Pour plus d’informations sur les ressources, consultez la page [Ressources XAML](xaml-resources.md).  
   
-## <a name="sharing-resources"></a>Partage de ressources  
- Si votre application utilise des contrôles personnalisés et définit des ressources dans un <xref:System.Windows.ResourceDictionary> (ou nœud de ressources de XAML), il est recommandé que vous définissiez les ressources sur le <xref:System.Windows.Application> ou <xref:System.Windows.Window> au niveau de l’objet, ou les définir dans le thème par défaut pour le contrôles personnalisés. Définition des ressources dans un contrôle personnalisé <xref:System.Windows.ResourceDictionary> impose un impact sur les performances pour chaque instance de ce contrôle. Par exemple, si vous avez des opérations exigeantes en performances pinceau définies en tant que partie de la définition de ressource d’un contrôle personnalisé et le nombre d’instances du contrôle personnalisé, plage de travail de l’application augmente considérablement.  
+## <a name="sharing-resources"></a>Partager des ressources  
+ Si votre application utilise des contrôles personnalisés et définit des ressources dans un <xref:System.Windows.ResourceDictionary> (nœud ressources XAML), il est recommandé de définir les ressources au niveau de l’objet <xref:System.Windows.Application> ou <xref:System.Windows.Window>, ou de les définir dans le thème par défaut pour les contrôles personnalisés. La définition de ressources dans un contrôle personnalisé <xref:System.Windows.ResourceDictionary> impose un impact sur les performances pour chaque instance de ce contrôle. Par exemple, si vous avez défini des opérations de pinceau gourmandes en performances dans le cadre de la définition de ressource d’un contrôle personnalisé et de nombreuses instances du contrôle personnalisé, la plage de travail de l’application augmente considérablement.  
   
- Pour illustrer ce point, considérez les points suivants. Supposons que vous développez un jeu de carte à l’aide [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pour la plupart des jeux de cartes, vous avez besoin de 52 cartes avec 52 faces différentes. Vous décidez d’implémenter un contrôle personnalisé de carte et vous définissez 52 pinceaux (chacun représentant une face de carte) dans les ressources de votre carte de contrôle personnalisé. Dans votre application principale, vous créez initialement 52 instances de ce contrôle personnalisé de carte. Chaque instance de la carte de contrôle personnalisé génère 52 instances de <xref:System.Windows.Media.Brush> objets, ce qui vous donne un total de 52 * 52 <xref:System.Windows.Media.Brush> objets dans votre application. En déplaçant les pinceaux hors les ressources de contrôle personnalisé de carte à la <xref:System.Windows.Application> ou <xref:System.Windows.Window> au niveau objet, ou en les définissant dans le thème par défaut pour le contrôle personnalisé, vous réduisez la plage de travail de l’application, puisque vous partagez maintenant les 52 pinceaux parmi 52 d’instances de la carte de contrôle.  
+ Pour illustrer ce point, prenez en compte les points suivants. Supposons que vous développiez un jeu de cartes à l’aide de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pour la plupart des jeux de cartes, vous avez besoin de 52 cartes avec 52 de faces différentes. Vous décidez d’implémenter un contrôle personnalisé de carte et vous définissez 52 pinceaux (chacun représentant un visage de carte) dans les ressources de votre contrôle personnalisé de carte. Dans votre application principale, vous créez initialement 52 instances de ce contrôle personnalisé de carte. Chaque instance du contrôle personnalisé de carte génère 52 instances de <xref:System.Windows.Media.Brush> objets, ce qui vous donne un total de 52 * 52 <xref:System.Windows.Media.Brush> objets dans votre application. En déplaçant les pinceaux hors des ressources de contrôle personnalisé de la carte vers le niveau d’objet <xref:System.Windows.Application> ou <xref:System.Windows.Window>, ou en les définissant dans le thème par défaut pour le contrôle personnalisé, vous réduisez la plage de travail de l’application, car vous partagez maintenant les pinceaux 52 entre les 52 instances du contrôle de carte.  
   
-## <a name="sharing-a-brush-without-copying"></a>Partage d’un pinceau sans copier  
- Si vous avez plusieurs éléments en utilisant le même <xref:System.Windows.Media.Brush> de l’objet, définissez le pinceau en tant que ressource et référencer, plutôt que de définir le pinceau inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]. Cette méthode crée une instance et la réutiliser, tandis que la définition de pinceaux inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] crée une nouvelle instance pour chaque élément.  
+## <a name="sharing-a-brush-without-copying"></a>Partage d’un pinceau sans copie  
+ Si vous avez plusieurs éléments qui utilisent le même objet <xref:System.Windows.Media.Brush>, définissez le pinceau en tant que ressource et référencez-le, plutôt que de définir le pinceau Inline en XAML. Cette méthode crée une instance et la réutilise, tandis que la définition de pinceaux inline dans XAML crée une nouvelle instance pour chaque élément.  
   
  L’exemple de balisage suivant illustre ce point :  
   
  [!code-xaml[Performance#PerformanceSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
   
-## <a name="use-static-resources-when-possible"></a>Utiliser des ressources statiques lorsque cela est Possible  
+## <a name="use-static-resources-when-possible"></a>Utiliser des ressources statiques lorsque cela est possible  
  Une ressource statique fournit une valeur pour n’importe quel attribut de propriété XAML en recherchant une référence à une ressource déjà définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de la compilation.  
   
- Une ressource dynamique, quant à eux, crée une expression temporaire pendant la compilation initiale et donc diffèrera la recherche des ressources jusqu'à ce que la valeur de la ressource demandée est réellement nécessaire pour construire un objet. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l’exécution, qui impose un impact sur les performances. Utilisez les ressources statiques dès que possible dans votre application, à l’aide de ressources dynamiques uniquement lorsque cela est nécessaire.  
+ Une ressource dynamique, en revanche, crée une expression temporaire pendant la compilation initiale et, par conséquent, retarde la recherche des ressources jusqu’à ce que la valeur de ressource demandée soit réellement requise pour construire un objet. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l’exécution, ce qui impose un impact sur les performances. Utilisez des ressources statiques dans la mesure du possible dans votre application, à l’aide de ressources dynamiques uniquement lorsque cela est nécessaire.  
   
- L’exemple de balisage suivant illustre l’utilisation de ces deux types de ressources :  
+ L’exemple de balisage suivant montre l’utilisation des deux types de ressources :  
   
  [!code-xaml[Performance#PerformanceSnippet8](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   

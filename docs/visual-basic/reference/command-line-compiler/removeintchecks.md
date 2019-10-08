@@ -9,19 +9,19 @@ helpviewer_keywords:
 - /removeintchecks compiler option [Visual Basic]
 - -removeintchecks compiler option [Visual Basic]
 ms.assetid: c1835bd5-1e38-4fba-bd2f-6984774765d4
-ms.openlocfilehash: c086a031d5cef4563a6769e7683dcb1110b8fe49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bea6ca24ea6da9000267e754d52fe0ca152f7d7f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788763"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005231"
 ---
 # <a name="-removeintchecks"></a>-removeintchecks
-Active le dépassement de capacité de la vérification des erreurs pour les opérations sur les entiers ou désactiver.  
+Active ou désactive la vérification des erreurs de dépassement de capacité pour les opérations sur les entiers.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -removeintchecks[+ | -]  
 ```  
   
@@ -29,14 +29,14 @@ Active le dépassement de capacité de la vérification des erreurs pour les op�
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Optionnel. Le `-removeintchecks-` option indique au compilateur de vérifier tous les calculs d’entier pour les erreurs de dépassement de capacité. La valeur par défaut est `-removeintchecks-`.<br /><br /> Spécification `-removeintchecks` ou `-removeintchecks+` empêche la vérification des erreurs et peuvent effectuer des calculs d’entier plus rapides. Toutefois, sans vérification des erreurs, et si les capacités de type de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher une erreur.|  
+|`+` &#124; `-`|facultatif. L’option `-removeintchecks-` force le compilateur à vérifier tous les calculs d’entiers pour les erreurs de dépassement de capacité. La valeur par défaut est `-removeintchecks-`.<br /><br /> La spécification de `-removeintchecks` ou `-removeintchecks+` empêche la vérification des erreurs et peut accélérer le calcul des entiers. Toutefois, sans vérification des erreurs, et si les capacités des types de données sont dépassées, des résultats incorrects peuvent être stockés sans déclencher d’erreur.|  
   
-|Pour définir - removeintchecks dans l’environnement de développement intégré Visual Studio|  
+|Pour définir-removeintchecks (dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifier la valeur de la **supprimer les contrôles de dépassement de capacité d’entier** boîte.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifiez la valeur de la zone supprimer les contrôles de dépassement sur les **entiers** .|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `Test.vb` et désactive la vérification des erreurs de dépassement de capacité d’entier.  
+ Le code suivant compile `Test.vb` et désactive la vérification des erreurs de dépassement sur les entiers.  
   
 ```console
 vbc -removeintchecks+ test.vb  

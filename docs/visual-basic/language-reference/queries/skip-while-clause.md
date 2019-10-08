@@ -8,19 +8,19 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-ms.openlocfilehash: 3d6caeb1938e8e53e8ec2575f740cd5e49496f62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f37a6fa1c9ba7fdf7978ac6853e4c2985bf72e7
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054417"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004697"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While, clause (Visual Basic)
 Ignore les éléments d’une collection tant qu’une condition spécifiée a la valeur `true`, puis retourne les éléments restants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Skip While expression  
 ```  
   
@@ -28,17 +28,17 @@ Skip While expression
   
 |Terme|Définition|  
 |---|---|  
-|`expression`|Obligatoire. Une expression qui représente une condition pour tester des éléments. L’expression doit retourner un `Boolean` valeur ou un équivalent fonctionnel, comme un `Integer` soit évaluée comme un `Boolean`.|  
+|`expression`|Obligatoire. Expression qui représente une condition pour laquelle tester des éléments. L’expression doit retourner une valeur `Boolean` ou un équivalent fonctionnel, tel qu’une `Integer` à évaluer en tant que `Boolean`.|  
   
 ## <a name="remarks"></a>Notes  
- Le `Skip While` clause ignore des éléments à partir du début d’un résultat de requête jusqu'à ce que le texte fourni `expression` retourne `false`. Après avoir `expression` retourne `false`, la requête retourne tous les éléments restants. Le `expression` est ignoré pour les autres résultats.  
+ La clause `Skip While` ignore les éléments à partir du début d’un résultat de requête jusqu’à ce que le `expression` fourni retourne `false`. Après `expression` retourne `false`, la requête retourne tous les éléments restants. La `expression` est ignorée pour les résultats restants.  
   
- Le `Skip While` clause diffère la `Where` clause dans qui le `Where` clause peut être utilisée pour exclure tous les éléments à partir d’une requête qui ne répondent pas à une condition particulière. Le `Skip While` clause exclut des éléments uniquement jusqu'à la première fois que la condition n’est pas satisfaite. Le `Skip While` clause est particulièrement utile lorsque vous travaillez avec un résultat de requête ordonnée.  
+ La clause `Skip While` est différente de la clause `Where` dans la mesure où la clause `Where` peut être utilisée pour exclure tous les éléments d’une requête qui ne respectent pas une condition particulière. La clause `Skip While` exclut les éléments uniquement jusqu’à la première fois que la condition n’est pas satisfaite. La clause `Skip While` est particulièrement utile lorsque vous travaillez avec un résultat de requête ordonné.  
   
- Vous pouvez ignorer un nombre spécifique de résultats à partir du début d’un résultat de requête à l’aide de la `Skip` clause.  
+ Vous pouvez ignorer un nombre spécifique de résultats à partir du début d’un résultat de requête à l’aide de la clause `Skip`.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant exemple utilise le `Skip While` clause d’ignorer les résultats jusqu'à ce que le premier client à partir des États-Unis est trouvé.  
+ L’exemple de code suivant utilise la clause `Skip While` pour ignorer les résultats jusqu’à ce que le premier client du États-Unis soit trouvé.  
   
  [!code-vb[VbSimpleQuerySamples#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#3)]  
   

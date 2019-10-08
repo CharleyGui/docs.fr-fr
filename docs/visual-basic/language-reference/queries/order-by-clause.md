@@ -10,43 +10,43 @@ helpviewer_keywords:
 - Order By clause [Visual Basic]
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
-ms.openlocfilehash: 1c84a4cdb4a149154d459ca4d9c290ed360d1772
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8ee46b12e84f99629c3a92057fc3a7bb8a3c2e8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61712563"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004953"
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By, clause (Visual Basic)
-Spécifie l’ordre de tri pour un résultat de requête.  
+Spécifie l’ordre de tri des résultats d’une requête.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]  
 ```  
   
 ## <a name="parts"></a>Composants  
  `orderExp1`  
- Obligatoire. Un ou plusieurs champs à partir du résultat de requête en cours qui identifient de manière de classer les valeurs retournées. Les noms de champs doivent être séparés par des virgules (,). Vous pouvez identifier chaque champ comme étant trié dans l’ordre croissant ou décroissant à l’aide de la `Ascending` ou `Descending` mots clés. Si aucun `Ascending` ou `Descending` mot clé est spécifié, l’ordre de tri par défaut est croissant. Les champs d’ordre de tri prévalent de gauche à droite.  
+ Obligatoire. Un ou plusieurs champs du résultat de la requête actuelle qui identifient la façon dont les valeurs retournées doivent être triées. Les noms de champs doivent être séparés par des virgules (,). Vous pouvez identifier chaque champ comme trié dans l’ordre croissant ou décroissant à l’aide des mots clés `Ascending` ou `Descending`. Si aucun mot clé `Ascending` ou `Descending` n’est spécifié, l’ordre de tri par défaut est croissant. Les champs d’ordre de tri sont prioritaires de gauche à droite.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser le `Order By` clause pour trier les résultats d’une requête. Le `Order By` clause peut trier seulement un résultat basé sur la variable de portée pour la portée actuelle. Par exemple, le `Select` clause introduit une nouvelle étendue dans une expression de requête avec de nouvelles variables d’itération pour cette portée. Plage des variables définies avant une `Select` clause dans une requête ne sont pas disponibles après la `Select` clause. Par conséquent, si vous souhaitez classer vos résultats par un champ qui n’est pas disponible dans le `Select` clause, vous devez placer le `Order By` clause avant le `Select` clause. Un exemple de lorsque vous seriez obligé de le faire est lorsque vous souhaitez trier votre requête par champs qui ne sont pas retournées dans le cadre du résultat.  
+ Vous pouvez utiliser la clause `Order By` pour trier les résultats d’une requête. La clause `Order By` peut uniquement trier un résultat en fonction de la variable de portée de l’étendue actuelle. Par exemple, la clause `Select` introduit une nouvelle étendue dans une expression de requête avec de nouvelles variables d’itération pour cette étendue. Les variables de plage définies avant une clause `Select` dans une requête ne sont pas disponibles après la clause `Select`. Par conséquent, si vous souhaitez classer vos résultats par un champ qui n’est pas disponible dans la clause `Select`, vous devez placer la clause `Order By` avant la clause `Select`. C’est le cas, par exemple, lorsque vous souhaitez trier votre requête par champs qui ne sont pas retournés dans le cadre du résultat.  
   
- Ordre croissant ou décroissant pour un champ est déterminé par l’implémentation de la <xref:System.IComparable> interface pour le type de données du champ. Si le type de données n’implémente pas le <xref:System.IComparable> interface, l’ordre de tri est ignoré.  
+ L’ordre croissant et décroissant pour un champ est déterminé par l’implémentation de l’interface <xref:System.IComparable> pour le type de données du champ. Si le type de données n’implémente pas l’interface <xref:System.IComparable>, l’ordre de tri est ignoré.  
   
 ## <a name="example"></a>Exemple  
- La requête suivante expression utilise un `From` clause pour déclarer une variable de portée `book` pour le `books` collection. Le `Order By` clause trie les résultats de la requête par prix croissant (valeur par défaut). La documentation avec le même prix est triée par titre dans l’ordre croissant. Le `Select` clause sélectionne le `Title` et `Price` propriétés que les valeurs retournées par la requête.  
+ L’expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `book` pour la collection `books`. La clause `Order By` trie le résultat de la requête par prix dans l’ordre croissant (valeur par défaut). Les livres avec le même prix sont triés par titre dans l’ordre croissant. La clause `Select` sélectionne les propriétés `Title` et `Price` comme valeurs retournées par la requête.  
   
  [!code-vb[VbSimpleQuerySamples#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#24)]  
   
 ## <a name="example"></a>Exemple  
- La requête suivante expression utilise le `Order By` clause pour trier le résultat de la requête par prix dans l’ordre décroissant. La documentation avec le même prix est triée par titre dans l’ordre croissant.  
+ L’expression de requête suivante utilise la clause `Order By` pour trier le résultat de la requête par prix dans l’ordre décroissant. Les livres avec le même prix sont triés par titre dans l’ordre croissant.  
   
  [!code-vb[VbSimpleQuerySamples#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#25)]  
   
 ## <a name="example"></a>Exemple  
- La requête suivante expression utilise un `Select` clause pour sélectionner le titre du livre, prix, date de publication et l’auteur. Il remplit ensuite le `Title`, `Price`, `PublishDate`, et `Author` champs de la variable de portée de la nouvelle étendue. Le `Order By` clause trie la nouvelle variable de portée de nom de l’auteur, titre de livre et ensuite le prix. Chaque colonne est triée dans l’ordre par défaut (croissant).  
+ L’expression de requête suivante utilise une clause `Select` pour sélectionner le titre, le prix, la date de publication et l’auteur du livre. Il remplit ensuite les champs `Title`, `Price`, `PublishDate` et `Author` de la variable de portée pour la nouvelle portée. La clause `Order By` trie la nouvelle variable de portée par nom d’auteur, titre de livre, puis prix. Chaque colonne est triée dans l’ordre par défaut (croissant).  
   
  [!code-vb[VbSimpleQuerySamples#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#26)]  
   

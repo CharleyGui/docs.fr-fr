@@ -8,27 +8,27 @@ helpviewer_keywords:
 - Distinct statement [Visual Basic]
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
-ms.openlocfilehash: fbca9fa8aa227d8d5b6488bef179f4bda08bb38c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8d3e38261a04c4d29faab351d24d6710413b09a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945351"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004789"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct, clause (Visual Basic)
 Restreint les valeurs de la variable de portée actuelle pour éliminer les valeurs en double dans les clauses de requête suivantes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Distinct  
 ```  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser le `Distinct` clause pour retourner une liste d’éléments uniques. Le `Distinct` clause provoque la requête d’ignorer les résultats de requête en double. Le `Distinct` clause s’applique aux valeurs en double pour tous les champs spécifiés par de retour le `Select` clause. Si aucun `Select` clause est spécifiée, le `Distinct` clause est appliquée à la variable de portée pour la requête identifiée dans le `From` clause. Si la variable de portée n’est pas un type immuable, la requête ignore uniquement un résultat de requête si tous les membres du type correspond à un résultat de requête existant.  
+ Vous pouvez utiliser la clause `Distinct` pour retourner une liste d’éléments uniques. La clause `Distinct` fait en sorte que la requête ignore les résultats de la requête en double. La clause `Distinct` s’applique aux valeurs dupliquées pour tous les champs de retour spécifiés par la clause `Select`. Si aucune clause `Select` n’est spécifiée, la clause `Distinct` est appliquée à la variable de portée pour la requête identifiée dans la clause `From`. Si la variable de portée n’est pas un type immuable, la requête n’ignore un résultat de requête que si tous les membres du type correspondent à un résultat de requête existant.  
   
 ## <a name="example"></a>Exemple  
- L’expression de requête suivante joint une liste de clients et une liste de commandes du client. Le `Distinct` clause est incluse pour retourner une liste de noms de clients uniques et dates de commande.  
+ L’expression de requête suivante joint une liste de clients et une liste de commandes client. La clause `Distinct` est incluse pour retourner une liste de noms de clients uniques et de dates de commande.  
   
  [!code-vb[VbSimpleQuerySamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#20)]  
   

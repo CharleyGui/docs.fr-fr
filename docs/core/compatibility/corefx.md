@@ -4,12 +4,12 @@ description: Répertorie les dernières modifications apportées à .NET CoreFx,
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3838bcd7c127860a8307fe31bd85ed5addffb59e
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 7681dadbbbae737cb1cbc260613baea9d34527a8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272714"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002458"
 ---
 # <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
 
@@ -49,6 +49,10 @@ La liste suivante répertorie les modifications avec rupture CoreFx par version 
 ***
 
 [!INCLUDE[Floating point formatting and parsing behavior changes](~/includes/core-changes/corefx/floating-point-changes.md)]
+
+***
+
+[!INCLUDE[Floating-point parsing operations no longer fail or throw an OverflowException](~/includes/core-changes/corefx/floating-point-parsing-does-not-overflow.md)]
 
 ***
 

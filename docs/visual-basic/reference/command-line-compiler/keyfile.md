@@ -6,25 +6,25 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: 30b890cf3d523d1e33b433a1ff6109759bd9a5e3
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: b17df3cb803cfbef324b74a9dee4394fce70215b
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972329"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005544"
 ---
 # <a name="-keyfile"></a>-keyfile
 Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer un nom fort à un assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-``` 
+```console 
 -keyfile:file  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `file`  
- Requis. Fichier qui contient la clé. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
+ Obligatoire. Fichier qui contient la clé. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
   
 ## <a name="remarks"></a>Notes  
  Le compilateur insère la clé publique dans le manifeste de l’assembly, puis signe l’assembly final avec la clé privée. Pour générer un fichier de clé, tapez `sn -k file` à la ligne de commande. Pour plus d’informations, consultez [sn. exe (outil Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
@@ -35,17 +35,17 @@ Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer u
   
  Vous pouvez également spécifier cette option comme attribut personnalisé (<xref:System.Reflection.AssemblyKeyFileAttribute>) dans le code source de n’importe quel module de langage intermédiaire Microsoft.  
   
- Si `-keyfile` et [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) sont spécifiés (par option de ligne de commande ou par attribut personnalisé) dans la même compilation, le compilateur essaie d’abord le conteneur de clé. Si cette tentative réussit, l'assembly est signé avec les informations figurant dans le conteneur de clé. Si le compilateur ne trouve pas le conteneur de clé, il essaie le fichier spécifié `-keyfile`avec. Si cela se déroule correctement, l’assembly est signé avec les informations contenues dans le fichier de clé, et les informations sur la clé sont installées dans le conteneur de clé (semblable à `sn -i`). ainsi, lors de la compilation suivante, le conteneur de clé est valide.  
+ Si `-keyfile` et [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) sont spécifiés (par option de ligne de commande ou par attribut personnalisé) dans la même compilation, le compilateur essaie d’abord le conteneur de clé. Si cette tentative réussit, l'assembly est signé avec les informations figurant dans le conteneur de clé. Si le compilateur ne trouve pas le conteneur de clé, il essaie le fichier spécifié avec `-keyfile`. Si cela se déroule correctement, l’assembly est signé avec les informations contenues dans le fichier de clé, et les informations sur la clé sont installées dans le conteneur de clé (semblable à `sn -i`) afin que le conteneur de clé soit valide lors de la compilation suivante.  
   
  Notez qu’un fichier de clé peut contenir uniquement la clé publique.  
   
  Pour plus d’informations sur la signature d’un assembly [, consultez Création et utilisation d’assemblys avec nom fort](../../../standard/assembly/create-use-strong-named.md) .  
   
 > [!NOTE]
-> L' `-keyfile` option n’est pas disponible dans l’environnement de développement Visual Studio ; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L’option `-keyfile` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## <a name="example"></a>Exemples  
- Le code suivant compile le fichier `Input.vb` source et spécifie un fichier de clé.  
+## <a name="example"></a>Exemple  
+ Le code suivant compile le fichier source `Input.vb` et spécifie un fichier de clé.  
   
 ```console  
 vbc -keyfile:myfile.sn input.vb  

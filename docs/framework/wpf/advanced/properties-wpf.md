@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], properties
 - properties [WPF]
 ms.assetid: d6e0197f-f2c4-48ed-b45b-b9cdb64aab1c
-ms.openlocfilehash: d3d11950f919c13590a0212b8d03d394d59d3550
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7b394c4bbb294f9eb09666cf3e2223f897abd09b
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928433"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003146"
 ---
 # <a name="properties-wpf"></a>Propriétés (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]fournit un ensemble de services qui peuvent être utilisés pour étendre les fonctionnalités d’une propriété common language runtime (CLR). Ces services sont généralement regroupés sous le nom « système de propriétés WPF ». Une propriété stockée par le système de propriétés [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] est appelée « propriété de dépendance ».  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit un ensemble de services qui peuvent être utilisés pour étendre les fonctionnalités d’une propriété common language runtime (CLR). Ces services sont généralement regroupés sous le nom « système de propriétés WPF ». Une propriété qui repose sur le système de propriété WPF s’appelle une propriété de dépendance.  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
@@ -45,7 +45,7 @@ ms.locfileid: "70928433"
   
  <xref:System.Windows.DependencyObject>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Architecture de WPF](wpf-architecture.md)  
   [Intégration du format XAML au format WPF](xaml-in-wpf.md)  
   [Éléments de base](base-elements.md)  

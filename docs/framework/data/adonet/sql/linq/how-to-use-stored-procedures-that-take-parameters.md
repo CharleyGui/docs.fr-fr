@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-ms.openlocfilehash: c2b657f704d072b987578be5520a58d007ecac37
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: e9d77cd1dc82e1b103c5f0d9f3f447ed105acaec
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353021"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003244"
 ---
 # <a name="how-to-use-stored-procedures-that-take-parameters"></a>Procédure : Utiliser des procédures stockées qui prennent des paramètres
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mappe des paramètres de sortie à des paramètres de référence et, pour les types valeur, déclare le paramètre comme Nullable.  
@@ -20,7 +20,7 @@ ms.locfileid: "71353021"
 ## <a name="example"></a>Exemple  
  L'exemple suivant prend un paramètre d'entrée unique (ID client) et retourne un paramètre de sortie (total des ventes pour ce client).  
   
-```  
+```sql
 CREATE PROCEDURE [dbo].[CustOrderTotal]   
 @CustomerID nchar(5),  
 @TotalSales money OUTPUT  

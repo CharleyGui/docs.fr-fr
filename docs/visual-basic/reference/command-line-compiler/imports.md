@@ -1,24 +1,24 @@
 ---
-title: -importe (Visual Basic)
+title: -Imports (Visual Basic)
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /imports compiler option [Visual Basic]
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 075eeccc7d80943d2757a97b9a355bbea3ef9d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 929e24a1ffd02d4e21ab1b925ddd59050b5d3cc4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663243"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005563"
 ---
-# <a name="-imports-visual-basic"></a>-importe (Visual Basic)
+# <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
 Importe des espaces de noms à partir d’un assembly spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -imports:namespaceList  
 ```  
   
@@ -29,16 +29,16 @@ Importe des espaces de noms à partir d’un assembly spécifié.
 |`namespaceList`|Obligatoire. Liste délimitée par des virgules des espaces de noms à importer.|  
   
 ## <a name="remarks"></a>Notes  
- Le `-imports` option importe n’importe quel espace de noms défini dans l’ensemble des fichiers sources ou à partir de n’importe quel assembly référencé actuel.  
+ L’option `-imports` importe tout espace de noms défini dans l’ensemble actuel de fichiers sources ou à partir d’un assembly référencé.  
   
- Les membres dans un espace de noms spécifiés avec `-imports` sont disponibles pour tous les fichiers de code source dans la compilation. Utiliser le [instruction Imports (.NET Namespace et Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) à utiliser un espace de noms dans un fichier de code source unique.  
+ Les membres d’un espace de noms spécifié avec `-imports` sont disponibles pour tous les fichiers de code source de la compilation. Utilisez l' [instruction Imports (espace de noms et type .net)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour utiliser un espace de noms dans un fichier de code source unique.  
   
-|Pour définir /Imports dans l’environnement de développement intégré Visual Studio|  
+|Pour définir/Imports dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Références**.<br />3.  Entrez le nom de l’espace de noms dans la zone en regard de la **ajouter une importation utilisateur** bouton.<br />4.  Cliquez sur le **ajouter une importation utilisateur** bouton.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Références**.<br />3.  Entrez le nom de l’espace de noms dans la zone en regard du bouton **Ajouter une importation utilisateur** .<br />4.  Cliquez sur le bouton **Ajouter une importation d’utilisateur** .|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile si `/imports:system.globalization` est spécifié. Sans cela, de compilation réussie nécessite qu’un `Imports System.Globalization` instruction inclus au début du fichier de code source ou que la propriété être qualifié en tant que `System.Globalization.CultureInfo.CurrentCulture.Name`.
+ Le code suivant compile lorsque `/imports:system.globalization` est spécifié. Sans celui-ci, la réussite de la compilation nécessite soit qu’une instruction `Imports System.Globalization` soit incluse au début du fichier de code source, soit que la propriété soit entièrement qualifiée comme `System.Globalization.CultureInfo.CurrentCulture.Name`.
 
 ```vb
 Module Example

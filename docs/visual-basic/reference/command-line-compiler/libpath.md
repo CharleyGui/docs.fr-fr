@@ -6,19 +6,19 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: b7bfcb0f2034145822922126fe61efea8d8ef269
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8f4e415576562885c9edbd3d2dddbe2a271e9923
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793924"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005470"
 ---
 # <a name="-libpath"></a>-libpath
 Spécifie l’emplacement des assemblys référencés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -libpath:dirList  
 ```  
   
@@ -26,10 +26,10 @@ Spécifie l’emplacement des assemblys référencés.
   
 |Terme|Définition|  
 |---|---|  
-|`dirList`|Obligatoire. Délimitée par des points-virgules de liste de répertoires pour le compilateur doit vérifier si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire du système du common language runtime. Si le nom du répertoire contient un espace, placez le nom entre guillemets ( » «).|  
+|`dirList`|Obligatoire. Liste de répertoires délimités par des points-virgules pour le compilateur à examiner si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire système de l’common language runtime. Si le nom du répertoire contient un espace, mettez-le entre guillemets ("").|  
   
 ## <a name="remarks"></a>Notes  
- Le `-libpath` option spécifie l’emplacement des assemblys référencés par le [-référence](../../../visual-basic/reference/command-line-compiler/reference.md) option.  
+ L’option `-libpath` spécifie l’emplacement des assemblys référencés par l’option [-Reference](../../../visual-basic/reference/command-line-compiler/reference.md) .  
   
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
   
@@ -41,16 +41,16 @@ Spécifie l’emplacement des assemblys référencés.
   
 4. Répertoires spécifiés par la variable d’environnement LIB.  
   
- Le `-libpath` option est additif ; en spécifiant davantage qu’une seule fois ajoute aux valeurs précédentes.  
+ L’option `-libpath` est additive ; Si vous le spécifiez plusieurs fois, il est ajouté à toutes les valeurs précédentes.  
   
  Utilisez `-reference` pour spécifier une référence d’assembly.  
   
-|Pour définir /libpath dans Visual Studio un environnement de développement intégré|  
+|Pour définir/LIBPATH dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Références**.<br />3.  Cliquez sur le **référencer les chemins d’accès...**  bouton.<br />4.  Dans le **chemins d’accès de référence** boîte de dialogue, entrez le nom du répertoire dans le **dossier :** boîte.<br />5.  Cliquez sur **ajouter dossier**.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Références**.<br />3.  Cliquez sur le bouton **chemins d’accès des références..** ..<br />4.  Dans la boîte de dialogue **chemins d’accès des références** , entrez le nom du répertoire dans la zone **dossier :** .<br />5.  Cliquez sur **Ajouter un dossier**.|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` pour créer un fichier .exe. Le compilateur recherche dans le répertoire de travail, dans le répertoire racine du lecteur C: et dans le répertoire de nouveaux assemblys du lecteur C: pour références d’assembly.  
+ Le code suivant compile `T2.vb` pour créer un fichier. exe. Le compilateur recherche les références d’assembly dans le répertoire de travail, dans le répertoire racine du lecteur C : et dans le nouveau répertoire des assemblys du lecteur C :.  
   
 ```console  
 vbc -libpath:c:\;"c:\New Assemblies" -reference:t2.dll t2.vb  

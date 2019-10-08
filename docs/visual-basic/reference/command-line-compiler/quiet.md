@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /quiet compiler option [Visual Basic]
 - quiet compiler option [Visual Basic]
 ms.assetid: 5d77fa23-4c50-4708-8535-649912b098e8
-ms.openlocfilehash: a22773e2e37eb60ab6f1e88305266f41764311e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6e773c60469e8426956c92a5aa377741ba5af4d3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788841"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005278"
 ---
 # <a name="-quiet"></a>-quiet
 
@@ -22,15 +22,15 @@ Empêche le compilateur d'afficher le code pour les erreurs et les avertissement
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 -quiet
 ```
 
 ## <a name="remarks"></a>Notes
 
-Par défaut, l'option `-quiet` n'est pas activée. Lorsque le compilateur signale une erreur de syntaxe ou un avertissement, il génère également la ligne de code source. Pour les applications qui analysent la sortie du compilateur, il peut être plus pratique, le compilateur doit générer uniquement le texte de diagnostic.
+Par défaut, l'option `-quiet` n'est pas activée. Lorsque le compilateur signale une erreur ou un avertissement lié à la syntaxe, il renvoie également la ligne à partir du code source. Pour les applications qui analysent la sortie du compilateur, il peut être plus commode pour le compilateur de générer uniquement le texte du diagnostic.
 
-Dans l’exemple suivant, `Module1` génère une erreur qui inclut le code source compilé sans `-quiet`.
+Dans l’exemple suivant, `Module1` génère une erreur qui comprend le code source lorsqu’elle est compilée sans `-quiet`.
 
 ```vb
 Module Module1
@@ -40,7 +40,7 @@ Module Module1
 End Module
 ```
 
-Sortie :
+Sortie :
 
 ```console
 C:\projects\vb2.vb(3) : error BC30451: 'x' is not declared. It may be inaccessible due to its protection level.
@@ -51,18 +51,18 @@ C:\projects\vb2.vb(3) : error BC30451: 'x' is not declared. It may be inaccessib
 
 Compilé avec `-quiet`, le compilateur génère uniquement les éléments suivants :
 
-```
+```console
 E:\test\t2.vb(3) : error BC30451: Name 'x' is not declared.
 ```
 
 > [!NOTE]
-> Le `-quiet` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.
+> L’option `-quiet` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.
 
 ## <a name="example"></a>Exemple
 
 Le code suivant compile `T2.vb` et n’affiche pas de code pour les diagnostics du compilateur liés à la syntaxe :
 
-```
+```console
 vbc -quiet t2.vb
 ```
 

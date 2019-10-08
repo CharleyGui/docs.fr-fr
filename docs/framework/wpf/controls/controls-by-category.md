@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: b86684bab6c552102af7486b2c9ab49ea703a175
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 41cbe57f1e3711bb4e18b2b4da28c26ebbd2bc60
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627307"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005693"
 ---
 # <a name="controls-by-category"></a>Contrôles par catégorie
-Contrôles Windows Presentation Foundation (WPF) peuvent être regroupées logiquement en plusieurs catégories. Ces catégories peuvent vous aider à identifier les contrôles ayant des modèles d’utilisation ou une fonctionnalité similaires pour sélectionner le contrôle adapté à votre scénario.  
+Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés logiquement en plusieurs catégories. Ces catégories peuvent vous aider à identifier les contrôles ayant des modèles d’utilisation ou une fonctionnalité similaires pour sélectionner le contrôle adapté à votre scénario.  
   
 ## <a name="layout"></a>Mise en page  
  Les contrôles de disposition permettent de gérer la taille, les dimensions, la position et la disposition des éléments enfants.  
@@ -56,7 +56,7 @@ Contrôles Windows Presentation Foundation (WPF) peuvent être regroupées logiq
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>Boutons  
- Les boutons constituent l’un des contrôles d’interface utilisateur les plus élémentaires. Applications effectuent généralement une tâche dans le <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement lorsqu’un utilisateur clique dessus.  
+ Les boutons constituent l’un des contrôles d’interface utilisateur les plus élémentaires. En général, les applications exécutent une tâche dans l’événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click> lorsqu’un utilisateur clique dessus.  
   
 - <xref:System.Windows.Controls.Button>  
   
@@ -171,7 +171,7 @@ Contrôles Windows Presentation Foundation (WPF) peuvent être regroupées logiq
 - <xref:System.Windows.Controls.SoundPlayerAction>  
   
 ## <a name="digital-ink"></a>Encre numérique  
- Les contrôles d’encre numérique fournissent un support intégré pour les fonctionnalités [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)], notamment l’examen d’encre et l’entrée d’encre.  
+ Les contrôles d’encre numérique offrent une prise en charge intégrée des fonctionnalités Tablet PC, telles que l’affichage de l’encre et l’entrée d’encre.  
   
 - <xref:System.Windows.Controls.InkCanvas>  
   

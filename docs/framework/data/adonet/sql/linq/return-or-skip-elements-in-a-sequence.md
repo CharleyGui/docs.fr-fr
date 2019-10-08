@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
-ms.openlocfilehash: a5c32afc913443787ad8371f31f1fe330b126398
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7c98681493738b4e94ed14417fa1437efb6c12ac
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792751"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003312"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Comment : retourner ou ignorer des éléments d'une séquence
 Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nombre donné d'éléments dans une séquence et ignorer le reste.  
@@ -20,7 +20,7 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
 > [!NOTE]
 > <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont soumis à certaines limites lorsqu'ils sont utilisés dans des requêtes SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]traduit <xref:System.Linq.Queryable.Skip%2A> à l’aide d’une sous-requête avec la `NOT EXISTS` clause SQL. Cette traduction présente les limites suivantes :  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit <xref:System.Linq.Queryable.Skip%2A> en utilisant une sous-requête avec la clause SQL `NOT EXISTS`. Cette traduction présente les limites suivantes :  
   
 - L’argument doit être un jeu. Les multijeux ne sont pas pris en charge, même s'ils sont ordonnés.  
   
@@ -32,13 +32,13 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
  [!code-csharp[DLinqQueryExamples#16](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#16)]
  [!code-vb[DLinqQueryExamples#16](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#16)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise <xref:System.Linq.Queryable.Skip%2A> pour sélectionner tous les `Products` exceptés les dix produits les plus chers.  
   
  [!code-csharp[DLinqQueryExamples#17](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#17)]
  [!code-vb[DLinqQueryExamples#17](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#17)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant combine les méthodes <xref:System.Linq.Queryable.Skip%2A> et <xref:System.Linq.Queryable.Take%2A> pour ignorer les cinquante premiers enregistrements et retourner les dix suivants.  
   
  [!code-csharp[DLinqQueryExamples#18](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#18)]
@@ -49,16 +49,16 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
  Du fait des limitations de classement dans SQL, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] tente de déplacer le classement de l'argument de l'opérateur <xref:System.Linq.Queryable.Take%2A> ou <xref:System.Linq.Queryable.Skip%2A> vers le résultat de l'opérateur.  
   
 > [!NOTE]
-> La traduction est différente pour SQL Server 2000 et SQL Server 2005. Si vous envisagez <xref:System.Linq.Queryable.Skip%2A> d’utiliser avec une requête de toute complexité, utilisez SQL Server 2005.  
+> La traduction est différente pour SQL Server 2000 et SQL Server 2005. Si vous envisagez d’utiliser <xref:System.Linq.Queryable.Skip%2A> avec une requête de toute complexité, utilisez SQL Server 2005.  
   
- Examinez la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requête suivante pour SQL Server 2000 :  
+ Prenons la requête [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] suivante pour SQL Server 2000 :  
   
  [!code-csharp[DLinqQueryExamples#19](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#19)]
  [!code-vb[DLinqQueryExamples#19](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#19)]  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] déplace le classement à la fin du code SQL, comme suit :  
   
-```  
+```sql
 SELECT TOP 1 [t0].[CustomerID], [t0].[CompanyName],  
 FROM [Customers] AS [t0]  
 WHERE (NOT (EXISTS(  

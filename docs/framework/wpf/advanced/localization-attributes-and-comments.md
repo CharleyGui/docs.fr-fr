@@ -5,21 +5,21 @@ helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-ms.openlocfilehash: 1ef18802ab3568df00e29eb4ccaf717f4bdf4863
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 4f9c2700d8163988b7ea1e75bec1427778cf571c
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68330998"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004893"
 ---
 # <a name="localization-attributes-and-comments"></a>Attributs et commentaires de localisation
-Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont des propriétés, à l’intérieure du code source [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], fournies par les développeurs pour communiquer des règles et des conseils pour la localisation. Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contiennent deux ensembles d’informations : les attributs d’adaptabilité et les commentaires de localisation au format libre. Les attributs d’adaptabilité sont utilisés par l’API de localisation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour indiquer les ressources à localiser. Les commentaires au format libre sont des informations que l’auteur de l’application veut inclure.  
+Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont des propriétés, au sein du code source XAML, fournies par les développeurs pour fournir des règles et des conseils pour la localisation. Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contiennent deux ensembles d’informations : les attributs d’adaptabilité et les commentaires de localisation au format libre. Les attributs d’adaptabilité sont utilisés par l’API de localisation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour indiquer les ressources à localiser. Les commentaires au format libre sont des informations que l’auteur de l’application veut inclure.  
 
 <a name="Localizer_Comments_"></a>   
 ## <a name="localization-comments"></a>Commentaires de localisation  
- Si les auteurs d’applications de balisage ont des exigences concernant des éléments spécifiques [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], par exemple des contraintes sur la longueur de texte, la taille de police ou la famille de polices, ils peuvent communiquer ces informations aux localisateurs avec des commentaires dans le code [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]. Le processus permettant d’ajouter des commentaires au code source est le suivant :  
+ Si les créateurs d’applications de balisage ont des exigences pour des éléments spécifiques en XAML, tels que des contraintes sur la longueur du texte, la famille de polices ou la taille de police, ils peuvent transmettre ces informations aux localisateurs avec des commentaires dans le code XAML. Le processus permettant d’ajouter des commentaires au code source est le suivant :  
   
-1. Le développeur d’application ajoute des commentaires de localisation au code source [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].  
+1. Le développeur d’applications ajoute des commentaires de localisation au code source XAML.  
   
 2. Pendant le processus de génération, vous pouvez indiquer dans le fichier .proj si vous voulez laisser les commentaires de localisation au format libre dans l’assembly et retirer tout ou partie des commentaires. Les commentaires supprimés sont placés dans un fichier distinct. Pour spécifier votre choix, utilisez une balise `LocalizationDirectivesToLocFile`, par exemple :  
   
@@ -37,7 +37,7 @@ Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includ
   
 5. Les fichiers de commentaires de localisation, qui contiennent uniquement des commentaires au format libre, sont incorporés ultérieurement au processus de localisation.  
   
- L’exemple suivant montre comment ajouter des commentaires de localisation à un fichier [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].  
+ L’exemple suivant montre comment ajouter des commentaires de localisation à un fichier XAML.  
   
  `<TextBlock x:Id = "text01"`  
   
@@ -82,13 +82,13 @@ Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includ
   
  Ces attributs peuvent être spécifiés dans n’importe quel ordre et doivent être séparés par un espace. Si des attributs dupliqués sont spécifiés, le dernier attribut remplace les précédents. Par exemple, Localization.Attributes = "Unmodifiable Modifiable" indique que la valeur est Modifiable, car c’est le dernier attribut indiqué.  
   
- La signification des attributs Modifiabilité et Lisibilité est évidente. L’attribut Catégorie comprend des catégories prédéfinies qui aident le localisateur à traduire le texte. Certaines catégories, telles que Text, Label et Title, renseignent le localisateur sur la façon de traduire le texte. Il existe également des catégories spéciales: None, Inherit, ignore et NeverLocalize.  
+ La signification des attributs Modifiabilité et Lisibilité est évidente. L’attribut Catégorie comprend des catégories prédéfinies qui aident le localisateur à traduire le texte. Certaines catégories, telles que Text, Label et Title, renseignent le localisateur sur la façon de traduire le texte. Il existe également des catégories spéciales : None, Inherit, ignore et NeverLocalize.  
   
  Le tableau suivant indique la signification de ces catégories spéciales.  
   
 |Catégorie|Signification|  
 |--------------|-------------|  
-|Aucun|La valeur ciblée n’a pas de catégorie définie.|  
+|Aucun.|La valeur ciblée n’a pas de catégorie définie.|  
 |Inherit|La valeur ciblée hérite de la catégorie de son parent.|  
 |Ignore|La valeur ciblée est ignorée dans le processus de localisation. Cette catégorie affecte uniquement la valeur actuelle. Elle n’affecte pas les nœuds enfants.|  
 |NeverLocalize|La valeur actuelle ne peut pas être localisée. Cette catégorie est héritée par les enfants d’un élément.|  

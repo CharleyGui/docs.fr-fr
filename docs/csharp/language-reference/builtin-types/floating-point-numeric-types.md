@@ -12,17 +12,18 @@ f1_keywords:
 helpviewer_keywords:
 - floating-point numbers [C#]
 - ranges of floating-point types [C#]
+- size of floating-point types [C#]
 - types [C#], floating-point types
 - float keyword [C#]
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 0d97b3ffd587e8398e5572706a47937716a6e709
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
-ms.translationtype: HT
+ms.openlocfilehash: 17ae154780679dd1f42f43f1ec345cdc722815d3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68236058"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002192"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -32,11 +33,11 @@ Les **types numériques à virgule flottante** sont un sous-ensemble des **types
 
 C# prend en charge les types à virgule flottante prédéfinis suivants :
   
-|C# type/mot clé|Plage approximative|Precision|Type .NET|
-|----------|-----------------------|---------------|--------------|
-|`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|<xref:System.Single?displayProperty=nameWithType>|
-|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|<xref:System.Double?displayProperty=nameWithType>|
-|`decimal`|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|<xref:System.Decimal?displayProperty=nameWithType>|
+|C# type/mot clé|Plage approximative|Précision|Size|Type .NET|
+|----------|-----------------------|---------------|--------------|--------------|
+|`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|4 octets|<xref:System.Single?displayProperty=nameWithType>|
+|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|8 octets|<xref:System.Double?displayProperty=nameWithType>|
+|`decimal`|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|16 octets|<xref:System.Decimal?displayProperty=nameWithType>|
 
 Dans le tableau précédent, chaque mot clé de type C# de la colonne la plus à gauche est un alias pour le type .NET correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
 

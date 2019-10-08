@@ -1,55 +1,55 @@
 ---
-title: -target (Visual Basic)
+title: -cible (Visual Basic)
 ms.date: 03/13/2018
 helpviewer_keywords:
 - target compiler options [Visual Basic]
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: f4b9533adbcc6b8e656281a1dae2bb166df5d038
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 2d7ccfc6b033a9021e683a4a2501ca2ccc29956d
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586289"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004938"
 ---
-# <a name="-target-visual-basic"></a>-target (Visual Basic)
-Spécifie le format de sortie du compilateur.  
+# <a name="-target-visual-basic"></a>-cible (Visual Basic)
+Spécifie le format de la sortie du compilateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -target:{exe | library | module | winexe | appcontainerexe | winmdobj}  
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le tableau suivant résume l’effet de la `-target` option.  
+ Le tableau suivant résume l’effet de l’option `-target`.  
   
 |**Option**|**Behavior**|  
 |----------------|------------------|  
-|`-target:exe`|Indique au compilateur de créer une application console exécutable.<br /><br /> Cette option est la valeur par défaut quand aucun `-target` option est spécifiée. Le fichier exécutable est créé avec une extension .exe.<br /><br /> Sauf spécification contraire avec le `/out` option, le nom de fichier de sortie prend le nom du fichier d’entrée qui contient le `Sub Main` procédure.<br /><br /> Seul `Sub Main` procédure est requise dans les fichiers de code source qui sont compilés dans un fichier .exe. Utilisez le `-main` option du compilateur pour spécifier la classe contenant la `Sub Main` procédure.|  
-|`-target:library`|Indique au compilateur de créer une bibliothèque de liens dynamiques (DLL).<br /><br /> Le fichier de bibliothèque de liens dynamiques est créé avec l’extension .dll.<br /><br /> Sauf spécification contraire avec le `-out` option, le nom de fichier de sortie prend le nom du premier fichier d’entrée.<br /><br /> Lors de la création d’une DLL, un `Sub Main` procédure n’est pas nécessaire.|  
-|`-target:module`|Indique au compilateur de générer un module qui peut être ajouté à un assembly.<br /><br /> Le fichier de sortie est créé avec l’extension .netmodule.<br /><br /> Le common language runtime .NET ne peut pas charger un fichier qui n’a pas d’assembly. Toutefois, vous pouvez incorporer un fichier de ce type dans le manifeste d’assembly d’un assembly à l’aide de `-reference`.<br /><br /> Lorsque le code dans un module référence des types internes dans un autre module, les deux modules doivent être incorporés dans un manifeste d’assembly à l’aide de `-reference`.<br /><br /> Le [- addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option importe des métadonnées à partir d’un module.|  
-|`-target:winexe`|Indique au compilateur de créer une application Windows exécutable.<br /><br /> Le fichier exécutable est créé avec une extension .exe. Une application basée sur Windows est un programme qui fournit une interface utilisateur à partir de la bibliothèque de classes .NET Framework ou avec les API Windows.<br /><br /> Sauf spécification contraire avec le `-out` option, le nom de fichier de sortie prend le nom du fichier d’entrée qui contient le `Sub Main` procédure.<br /><br /> Seul `Sub Main` procédure est requise dans les fichiers de code source qui sont compilés dans un fichier .exe. Au cas où votre code possède plusieurs classes qui a un `Sub Main` procédure, utilisez le `-main` option du compilateur pour spécifier la classe contenant la `Sub Main` procédure|  
-|`-target:appcontainerexe`|Indique au compilateur de créer une application Windows exécutable qui doit être exécutée dans un conteneur d’application. Ce paramètre est conçu pour être utilisé pour [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] applications.<br /><br /> Le **appcontainerexe** paramètre définit un bit dans le champ des caractéristiques de la [exécutable Portable](/windows/desktop/Debug/pe-format) fichier. Ce bit indique que l’application doit être exécutée dans un conteneur d’application. Lorsque ce bit est défini, une erreur se produit si le `CreateProcess` méthode tente de lancer l’application en dehors d’un conteneur d’application. À part ce paramètre, bits **-target : appcontainerexe** équivaut à **-target : winexe**.<br /><br /> Le fichier exécutable est créé avec une extension .exe.<br /><br /> Sauf indication contraire à l’aide de la `-out` option, le nom de fichier de sortie prend le nom du fichier d’entrée qui contient le `Sub Main` procédure.<br /><br /> Seul `Sub Main` procédure est requise dans les fichiers de code source qui sont compilés dans un fichier .exe. Si votre code contient plus d’une classe qui a un `Sub Main` procédure, utilisez le `-main` option du compilateur pour spécifier la classe contenant la `Sub Main` procédure|  
-|`-target:winmdobj`|Indique au compilateur de créer un fichier intermédiaire que vous pouvez convertir en fichier binaire (.winmd) Windows Runtime. Le fichier .winmd peut être consommé par des programmes JavaScript et C++, en plus des programmes en langage managé.<br /><br /> Le fichier intermédiaire est créé avec une extension .winmdobj.<br /><br /> Sauf indication contraire à l’aide de la `-out` option, le nom de fichier de sortie prend le nom du premier fichier d’entrée. Un `Sub Main` procédure n’est pas nécessaire.<br /><br /> Le fichier .winmdobj est conçu pour être utilisé en tant qu’entrée pour le <xref:Microsoft.Build.Tasks.WinMDExp> exporter l’outil pour générer un fichier de métadonnées (WinMD) de Windows. Le fichier WinMD a une extension .winmd et contient à la fois le code à partir de la bibliothèque d’origine et les définitions de WinMD que JavaScript, C++ et l’utilisation de Windows Runtime.|  
+|`-target:exe`|Provoque la création d’une application console exécutable par le compilateur.<br /><br /> Il s’agit de l’option par défaut quand aucune option `-target` n’est spécifiée. Le fichier exécutable est créé avec une extension. exe.<br /><br /> Sauf spécification contraire avec l’option `/out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`.|  
+|`-target:library`|Fait en sorte que le compilateur crée une bibliothèque de liens dynamiques (DLL).<br /><br /> Le fichier de bibliothèque de liens dynamiques est créé avec une extension. dll.<br /><br /> Sauf spécification contraire avec l’option `-out`, le nom du fichier de sortie prend le nom du premier fichier d’entrée.<br /><br /> Lors de la génération d’une DLL, une procédure `Sub Main` n’est pas nécessaire.|  
+|`-target:module`|Force le compilateur à générer un module qui peut être ajouté à un assembly.<br /><br /> Le fichier de sortie est créé avec une extension. netmodule.<br /><br /> Le common language runtime .NET ne peut pas charger un fichier qui n’a pas d’assembly. Toutefois, vous pouvez incorporer ce type de fichier dans le manifeste d’assembly d’un assembly à l’aide de `-reference`.<br /><br /> Lorsque le code d’un module référence des types internes dans un autre module, les deux modules doivent être incorporés dans un manifeste d’assembly à l’aide de `-reference`.<br /><br /> L’option [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.|  
+|`-target:winexe`|Provoque la création d’une application Windows exécutable par le compilateur.<br /><br /> Le fichier exécutable est créé avec une extension. exe. Une application basée sur Windows est une application qui fournit une interface utilisateur à partir de la bibliothèque de classes .NET Framework ou avec les API Windows.<br /><br /> Sauf spécification contraire avec l’option `-out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Dans les cas où votre code possède plusieurs classes qui ont une procédure `Sub Main`, utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`.|  
+|`-target:appcontainerexe`|Fait en sorte que le compilateur crée une application Windows exécutable qui doit être exécutée dans un conteneur d’application. Ce paramètre est conçu pour être utilisé pour les applications [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)].<br /><br /> Le paramètre **appcontainerexe** définit un bit dans le champ caractéristiques du fichier [exécutable portable](/windows/desktop/Debug/pe-format) . Ce bit indique que l’application doit être exécutée dans un conteneur d’application. Lorsque ce bit est défini, une erreur se produit si la méthode `CreateProcess` tente de lancer l’application en dehors d’un conteneur d’application. Outre ce paramètre de bit, **-target : appcontainerexe** est équivalent à **-target : winexe**.<br /><br /> Le fichier exécutable est créé avec une extension. exe.<br /><br /> À moins que vous ne spécifiiez autrement à l’aide de l’option `-out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Si votre code contient plusieurs classes qui ont une procédure `Sub Main`, utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`.|  
+|`-target:winmdobj`|Fait en sorte que le compilateur crée un fichier intermédiaire que vous pouvez convertir en fichier Windows Runtime binaire (. winmd). Le fichier. winmd peut être utilisé par JavaScript et C++ les programmes, en plus des programmes en langage managé.<br /><br /> Le fichier intermédiaire est créé avec une extension. winmdobj.<br /><br /> À moins que vous ne spécifiiez autrement à l’aide de l’option `-out`, le nom du fichier de sortie prend le nom du premier fichier d’entrée. Une procédure `Sub Main` n’est pas obligatoire.<br /><br /> Le fichier. winmdobj est conçu pour être utilisé comme entrée pour l’outil d’exportation <xref:Microsoft.Build.Tasks.WinMDExp> afin de produire un fichier de métadonnées Windows (WinMD). Le fichier WinMD a une extension. WinMD et contient à la fois le code de la bibliothèque d’origine et les définitions WinMD C++que JavaScript,, et le Windows Runtime utilisent.|  
   
- Sauf si vous spécifiez `-target:module`, `-target` , un manifeste d’assembly .NET Framework à ajouter à un fichier de sortie.  
+ À moins que vous ne spécifiiez `-target:module`, `-target` provoque l’ajout d’un manifeste d’assembly .NET Framework à un fichier de sortie.  
   
- Chaque instance de Vbc.exe produit, au maximum, un fichier de sortie. Si vous spécifiez une option du compilateur, telles que `-out` ou `-target` plusieurs fois, le dernier signet, le compilateur traite est placé en vigueur. Informations sur tous les fichiers dans une compilation sont ajoutées au manifeste. Tous les fichiers de sortie sauf ceux créés avec `-target:module` contiennent les métadonnées d’assembly dans le manifeste. Utilisez [Ildasm.exe (désassembleur IL)](../../../framework/tools/ildasm-exe-il-disassembler.md) pour afficher les métadonnées dans un fichier de sortie.  
+ Chaque instance de vbc. exe produit, au plus, un fichier de sortie. Si vous spécifiez une option de compilateur telle que `-out` ou `-target` plusieurs fois, le dernier processus du compilateur est mis en vigueur. Des informations sur tous les fichiers d’une compilation sont ajoutées au manifeste. Tous les fichiers de sortie sauf ceux créés avec `-target:module` contiennent des métadonnées d’assembly dans le manifeste. Utilisez [Ildasm. exe (Désassembleur il)](../../../framework/tools/ildasm-exe-il-disassembler.md) pour afficher les métadonnées dans un fichier de sortie.  
   
  La forme abrégée de `-target` est `-t`.  
   
-### <a name="to-set--target-in-the-visual-studio-ide"></a>Pour définir - cibler dans l’IDE Visual Studio  
+### <a name="to-set--target-in-the-visual-studio-ide"></a>Pour définir-Target dans l’IDE de Visual Studio  
   
 1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.   
   
 2. Cliquez sur l’onglet **Application** .  
   
-3. Modifiez la valeur dans le **Type d’Application** boîte.  
+3. Modifiez la valeur dans la zone **type d’application** .  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `in.vb`, en créant `in.dll`:  
+ Le code suivant compile `in.vb`, en créant `in.dll` :  
   
 ```console
 vbc -target:library in.vb  
@@ -60,7 +60,7 @@ vbc -target:library in.vb
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
 - [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
-- [-référence (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)
 - [Assemblys dans .NET](../../../standard/assembly/index.md)

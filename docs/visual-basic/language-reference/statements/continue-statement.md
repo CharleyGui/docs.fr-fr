@@ -7,35 +7,35 @@ helpviewer_keywords:
 - Continue statement [Visual Basic]
 - loops, transferring to next iteration
 ms.assetid: 3ad00103-358b-4af3-a3a8-1b9ea0e995d3
-ms.openlocfilehash: 5523be69f2901851c86f6c0263548e3577507ff9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ee5fb19db6eafeb7e4bed12935d0b950d6368d6
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638244"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005107"
 ---
 # <a name="continue-statement-visual-basic"></a>Continue, instruction (Visual Basic)
-Transfère le contrôle immédiatement à l’itération suivante d’une boucle.  
+Transfère immédiatement le contrôle à l’itération suivante d’une boucle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Continue { Do | For | While }  
 ```  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez transférer à partir d’à l’intérieur d’un `Do`, `For`, ou `While` boucle à l’itération suivante de cette boucle. Le contrôle passe immédiatement pour le test de condition de boucle, qui équivaut à transférer à la `For` ou `While` instruction, ou vers le `Do` ou `Loop` instruction qui contient le `Until` ou `While` clause.  
+ Vous pouvez transférer de l’intérieur d’une boucle `Do`, `For` ou `While` vers l’itération suivante de cette boucle. Le contrôle est immédiatement passé au test de condition de boucle, ce qui équivaut à transférer vers l’instruction `For` ou `While`, ou à l’instruction `Do` ou `Loop` qui contient la clause `Until` ou `While`.  
   
- Vous pouvez utiliser `Continue` à n’importe quel emplacement dans la boucle qui autorise les transferts. Les règles autorisant le transfert de contrôle sont identiques à celles de la [instruction GoTo](../../../visual-basic/language-reference/statements/goto-statement.md).  
+ Vous pouvez utiliser `Continue` à n’importe quel emplacement de la boucle qui autorise les transferts. Les règles autorisant le transfert de contrôle sont les mêmes que celles de l' [instruction goto](../../../visual-basic/language-reference/statements/goto-statement.md).  
   
- Par exemple, si une boucle est entièrement contenue dans un `Try` bloc, un `Catch` bloc, ou un `Finally` bloc, vous pouvez utiliser `Continue` pour transférer en dehors de la boucle. If, d’autre part, le `Try`... `End Try` structure est contenue dans la boucle, vous ne pouvez pas utiliser `Continue` pour transférer le contrôle hors de la `Finally` bloc et vous pouvez l’utiliser pour transférer d’un `Try` ou `Catch` bloquer uniquement si vous transférez complètement hors le `Try`... `End Try` structure.  
+ Par exemple, si une boucle est entièrement contenue dans un bloc `Try`, un bloc `Catch` ou un bloc `Finally`, vous pouvez utiliser `Continue` pour transférer en dehors de la boucle. Si, en revanche, la structure `Try`... `End Try` est contenue dans la boucle, vous ne pouvez pas utiliser `Continue` pour transférer le contrôle en dehors du bloc `Finally`, et vous pouvez l’utiliser pour le transfert en dehors d’un bloc `Try` ou `Catch` uniquement si vous transférez complètement en dehors du @no_ _ t-6... `End Try`.  
   
- Si vous avez des boucles imbriquées du même type, par exemple un `Do` boucle dans une autre `Do` boucle, une `Continue Do` instruction passe à l’itération suivante de la plus intérieure `Do` boucle qui le contient. Vous ne pouvez pas utiliser `Continue` pour passer à l’itération suivante d’une boucle conteneur du même type.  
+ Si vous avez des boucles imbriquées du même type, par exemple une boucle `Do` dans une autre boucle `Do`, une instruction `Continue Do` passe à l’itération suivante de la boucle `Do` la plus profonde qui la contient. Vous ne pouvez pas utiliser `Continue` pour passer à l’itération suivante d’une boucle conteneur du même type.  
   
- Si vous avez des boucles imbriquées de types différents, par exemple un `Do` mises en boucle dans un `For` boucle, vous pouvez passer à l’itération suivante d’une boucle à l’aide `Continue Do` ou `Continue For`.  
+ Si vous avez des boucles imbriquées de types différents, par exemple une boucle `Do` dans une boucle `For`, vous pouvez passer à l’itération suivante de l’une ou l’autre boucle à l’aide de `Continue Do` ou de `Continue For`.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant exemple utilise le `Continue While` instruction pour passer à la colonne suivante d’un tableau si un diviseur est égale à zéro. Le `Continue While` se trouve dans un `For` boucle. Il transfère à la `While col < lastcol` instruction, qui est l’itération suivante de la plus intérieure `While` boucle qui contient le `For` boucle.  
+ L’exemple de code suivant utilise l’instruction `Continue While` pour passer à la colonne suivante d’un tableau si un diviseur est égal à zéro. La `Continue While` se trouve à l’intérieur d’une boucle `For`. Elle est transférée à l’instruction `While col < lastcol`, qui est l’itération suivante de la boucle `While` la plus profonde qui contient la boucle `For`.  
   
  [!code-vb[VbVbalrStatements#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#14)]  
   

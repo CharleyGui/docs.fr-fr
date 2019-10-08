@@ -2,12 +2,12 @@
 title: Introduction à l'intégration CLR SQL Server
 ms.date: 03/30/2017
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
-ms.openlocfilehash: fb812a8e524148c507d26ea32e0b4263a4998153
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 76c6fb4cb37807f286f1f1f2aeedbdea6c74fe38
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782265"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002148"
 ---
 # <a name="introduction-to-sql-server-clr-integration"></a>Introduction à l'intégration CLR SQL Server
 Le Common Language Runtime (CLR) est au cœur de Microsoft .NET Framework et fournit l'environnement d'exécution pour tout le code .NET Framework. Le code qui s'exécute dans le CLR est appelé code managé. Le CLR fournit divers services et fonctions requis pour l'exécution du programme, notamment la compilation juste-à-temps (JIT), l'allocation et la gestion de mémoire, l'application de sécurité de type, la gestion des exceptions, la gestion des threads et la sécurité.  
@@ -25,7 +25,7 @@ Le Common Language Runtime (CLR) est au cœur de Microsoft .NET Framework et fou
 ## <a name="enabling-clr-integration"></a>Activation de l'intégration de CLR  
  La fonctionnalité d’intégration de Common Language Runtime (CLR) est désactivée par défaut dans Microsoft SQL Server et doit être activée afin d’utiliser des objets implémentés à l’aide de l’intégration de CLR. Pour activer l'intégration de CLR à l'aide de Transact-SQL, utilisez l'option `clr enabled` de la procédure stockée `sp_configure` comme indiqué :  
   
-```  
+```sql  
 sp_configure 'clr enabled', 1  
 GO  
 RECONFIGURE  

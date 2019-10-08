@@ -6,19 +6,19 @@ helpviewer_keywords:
 - nowin32manifest compiler option [Visual Basic]
 - -nowin32manifest compiler option [Visual Basic]
 ms.assetid: c0528aae-83b3-4425-99f0-19448e9843e3
-ms.openlocfilehash: 2d14da2d0c24f3bd833503c73374d26ee73c5629
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: df05ff6caeae2fb2db6a8d7c8fec1b81774a9fa4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789001"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005390"
 ---
 # <a name="-nowin32manifest-visual-basic"></a>-nowin32manifest (Visual Basic)
 Indique au compilateur de ne pas incorporer de manifeste d'application dans le fichier exécutable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -nowin32manifest  
 ```  
   

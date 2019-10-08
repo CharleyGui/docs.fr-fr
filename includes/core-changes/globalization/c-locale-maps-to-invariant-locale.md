@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9e9e443be9ea51d214e95c676fc28f0d8790af8b
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: d2f24ab746c425199b5a3e0c79835da372fe8e14
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117265"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002893"
 ---
 ### <a name="c-locale-maps-to-the-invariant-locale"></a>Les paramètres régionaux « C » sont mappés aux paramètres régionaux invariants
 
@@ -18,13 +18,13 @@ Le mappage de « C » à la culture en_US_POSIX a provoqué la confusion chez 
 
 #### <a name="version-introduced"></a>Version introduite
 
-.NET Core 3.0
+3.0
 
 ### <a name="recommended-action"></a>Action recommandée
 
 Rien de plus spécifique que la connaissance de cette modification. Cette modification affecte uniquement les applications qui utilisent le mappage de paramètres régionaux « C ».
 
-### <a name="category"></a>Category
+### <a name="category"></a>Catégorie
 
 Globalisation 
 

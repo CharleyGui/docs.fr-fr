@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 8c3939e9bd5d79e91ce44146a8c36b28d4470406
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: bce61d7a1838753f6cc2397440208e0c02b8194a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956638"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002695"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -22,7 +22,7 @@ Les outils de build C# considèrent la dernière version majeure du langage comm
 - [C# 7.3](csharp-7-3.md) :
   - C# 7.3 est disponible à compter de [Visual Studio 2017 version 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.1](../../core/whats-new/dotnet-core-2-1.md).
 - [C# 7.2](csharp-7-2.md) :
-  - C# 7.2 est disponible à compter de [Visual Studio 2017 version 15.5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.0](../../core/whats-new/dotnet-core-2-0.md).
+  - C#7,2 est disponible à partir de [Visual Studio 2017 version 15,5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit de développement logiciel (SDK) .net Core 2,0](../../core/whats-new/dotnet-core-2-0.md).
 - [C# 7.1](csharp-7-1.md):
   - C# 7.1 est disponible à compter de [Visual Studio 2017 version 15.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) et du [Kit SDK .NET Core 2.0](../../core/whats-new/dotnet-core-2-0.md).
 

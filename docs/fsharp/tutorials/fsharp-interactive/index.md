@@ -2,14 +2,14 @@
 title: Informations de référence sur F# Interactive (fsi.exe)
 description: Découvrez comment F# interactive (FSI. exe) est utilisé pour exécuter F# le code de manière interactive sur la console ou pour F# exécuter des scripts.
 ms.date: 05/16/2016
-ms.openlocfilehash: 4e6ea1e42be180e88349acc9da7d5ef19a8ddedd
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 4e8521677cad5f4e62d2822837818292c55da96d
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214258"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002064"
 ---
-# <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
+# <a name="interactive-programming-with-f"></a>Programmation interactive avec F @ no__t-0
 
 > [!NOTE]
 > Cet article ne traite pour le moment que de l’expérience Windows.  Il va être réécrit.
@@ -22,10 +22,10 @@ F# Interactive (fsi.exe) est utilisé pour exécuter le code F# de manière inte
 Pour exécuter F# Interactive à partir de la console, exécutez fsi.exe.  Vous trouverez FSI. exe dans :
 
 ```console
-C:\Program Files (x86)\Microsoft Visual Studio\2017\<sku>\Common7\IDE\CommonExtensions\Microsoft\FSharp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\<sku>\Common7\IDE\CommonExtensions\Microsoft\FSharp
 ```
 
-où `sku` a la `Community`valeur `Professional`, ou `Enterprise`.
+où `sku` est soit `Community`, `Professional`, soit `Enterprise`.
 
 Pour plus d’informations sur les options de ligne de commande disponibles, consultez [Options de F# Interactive](../../language-reference/fsharp-interactive-options.md).
 
@@ -43,7 +43,7 @@ Si vous avez un projet ouvert qui fait référence à des bibliothèques, vous p
 
 Vous pouvez contrôler les arguments de ligne de commande F# Interactive (options) en réglant les paramètres. Dans le menu **Outils**, sélectionnez **Options**, puis développez **Outils F#** . Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits**, qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de fsi.exe ou fsianycpu.exe, qui utilise l'architecture de l'ordinateur pour déterminer s'il doit s'exécuter comme processus 32 bits ou 64 bits.
 
-## <a name="scripting-with-f"></a>Écriture de scripts avec F\#
+## <a name="scripting-with-f"></a>Écriture de scripts avec F @ no__t-0
 Les scripts utilisent l’extension de fichier **.fsx** ou **.fsscript**. Au lieu de compiler le code source et d’exécuter par la suite l’assembly compilé, vous pouvez simplement exécuter **fsi.exe** et spécifier le nom de fichier du script du code source F# ; F# Interactive lit alors le code et l’exécute en temps réel.
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Différences entre les environnements interactifs, les environnements de scripts et les environnements compilés

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
-ms.openlocfilehash: 95c9add0521208ef04ff47c071a2e04abc968f27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6a83b636dd83534788f3a38971e0fef2919314f5
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648735"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005634"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -18,7 +18,7 @@ Indique au compilateur de générer un assembly dont la sortie octet-pour-octet 
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 -deterministic
 ```
 

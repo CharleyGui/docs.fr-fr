@@ -6,21 +6,25 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: c3bff4e44ddee1c4dfb6ab366464ad54e991b595
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3da049b912d791f26814bb4b6cbb70998803726a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624279"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005652"
 ---
 # <a name="-doc"></a>-doc
 Traite les commentaires de documentation pour les diriger vers un fichier XML.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -doc[+ | -]  
-' -or-  
+```
+
+ou  
+
+```console
 -doc:file  
 ```  
   
@@ -28,7 +32,7 @@ Traite les commentaires de documentation pour les diriger vers un fichier XML.
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Facultatif. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
+|`+` &#124; `-`|facultatif. Si vous spécifiez +, ou simplement `-doc`, le compilateur génère des informations de documentation et les place dans un fichier XML. Si vous spécifiez `-`, ce qui équivaut à ne pas spécifier `-doc`, aucune information de documentation n’est créée.|  
 |`file`|Obligatoire si l'option `-doc:` est utilisée. Spécifie le fichier XML de sortie, qui est renseigné avec les commentaires des fichiers de code source de la compilation. Si le nom de fichier contient un espace, placez-le entre des guillemets (" ").|  
   
 ## <a name="remarks"></a>Notes  

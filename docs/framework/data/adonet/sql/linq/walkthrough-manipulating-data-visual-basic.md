@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: a74216c53c45790b974938c7155e0b5e1043ac13
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7acce3f8483fab3c2978de7cbd1b9d875900f1d3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792290"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003397"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Procédure pas à pas : Manipulation de données (Visual Basic)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] complet essentiel pour l'ajout, la modification et la suppression de données dans une base de données. Vous utiliserez une copie de l'exemple de base de données Northwind pour ajouter un client, modifier le nom d'un client et supprimer une commande.  
@@ -35,10 +35,10 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
-## <a name="overview"></a>Présentation  
+## <a name="overview"></a>Vue d'ensemble  
  Cette procédure pas à pas se compose de six tâches principales :  
   
-- Création de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] la solution dans Visual Studio.  
+- Création de la solution [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dans Visual Studio.  
   
 - Ajout du fichier de code de base de données au projet.  
   
@@ -51,7 +51,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 - Soumission de ces modifications à la base de données Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Création d'une solution LINQ to SQL  
- Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un projet.  
+ Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un projet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
   
@@ -168,7 +168,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      La fenêtre de console se présente comme suit :  
   
-    ```  
+    ```console
     Customers matching CA before update:  
     Customer ID: CACTU  
     Customer ID: RICAR  

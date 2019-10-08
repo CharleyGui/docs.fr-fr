@@ -8,40 +8,40 @@ helpviewer_keywords:
 - queries [Visual Basic], Where
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
-ms.openlocfilehash: 5632e69039baebb3d1f1fd90c04586d9e50fe40f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 404dd848058f7e5c9bc8a74b6d89df18c6c55fad
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945208"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005002"
 ---
 # <a name="where-clause-visual-basic"></a>Where, clause (Visual Basic)
 Spécifie la condition de filtrage pour une requête.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Where condition  
 ```  
   
 ## <a name="parts"></a>Composants  
  `condition`  
- Obligatoire. Une expression qui détermine si les valeurs de l’élément actuel dans la collection sont inclus dans la collection de sortie. L’expression doit correspondre à un `Boolean` valeur ou l’équivalent d’un `Boolean` valeur. Si la condition prend la valeur `True`, l’élément est inclus dans le résultat de la requête ; sinon, l’élément est exclu des résultats de la requête.  
+ Obligatoire. Expression qui détermine si les valeurs de l’élément actuel dans la collection sont incluses dans la collection de sortie. L’expression doit correspondre à une valeur `Boolean` ou l’équivalent d’une valeur `Boolean`. Si la condition prend la valeur `True`, l’élément est inclus dans le résultat de la requête ; dans le cas contraire, l’élément est exclu du résultat de la requête.  
   
 ## <a name="remarks"></a>Notes  
- Le `Where` clause vous permet de filtrer les données de requête en sélectionnant uniquement les éléments qui répondent à certains critères. Les éléments dont les valeurs font la `Where` clause soit évaluée comme `True` sont inclus dans le résultat de la requête ; autres éléments sont exclus. L’expression qui est utilisée dans un `Where` clause doit correspondre à un `Boolean` ou l’équivalent d’un `Boolean`, comme un entier qui prend la valeur `False` lorsque sa valeur est égale à zéro. Vous pouvez combiner plusieurs expressions dans un `Where` clause à l’aide des opérateurs logiques tels que `And`, `Or`, `AndAlso`, `OrElse`, `Is`, et `IsNot`.  
+ La clause `Where` vous permet de filtrer les données de requête en sélectionnant uniquement les éléments qui répondent à certains critères. Les éléments dont les valeurs provoquent l’évaluation de la clause `Where` à `True` sont incluses dans le résultat de la requête ; d’autres éléments sont exclus. L’expression utilisée dans une clause `Where` doit avoir pour valeur un `Boolean` ou l’équivalent d’un `Boolean`, tel qu’un entier qui prend la valeur `False` lorsque sa valeur est égale à zéro. Vous pouvez combiner plusieurs expressions dans une clause `Where` à l’aide d’opérateurs logiques tels que `And`, `Or`, `AndAlso`, `OrElse`, `Is` et `IsNot`.  
   
- Par défaut, les expressions de requête ne sont pas évaluées jusqu'à ce qu’ils sont accessibles, par exemple, lorsqu’ils sont liés aux données ou itérées via dans un `For` boucle. Par conséquent, le `Where` clause n’est pas évaluée jusqu'à ce que la requête est accessible. Si des valeurs externes à la requête sont utilisées dans le `Where` clause, vérifiez que la valeur appropriée est utilisée dans le `Where` clause au moment de la requête est exécutée. Pour plus d’informations sur l’exécution des requêtes, consultez [écrire votre première requête LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
+ Par défaut, les expressions de requête ne sont pas évaluées jusqu’à ce qu’elles soient accessibles, par exemple quand elles sont liées aux données ou parcourues dans une boucle `For`. Par conséquent, la clause `Where` n’est pas évaluée tant que la requête n’est pas accédée. Si vous avez des valeurs externes à la requête qui sont utilisées dans la clause `Where`, vérifiez que la valeur appropriée est utilisée dans la clause `Where` au moment de l’exécution de la requête. Pour plus d’informations sur l’exécution des requêtes, consultez [écriture de votre première requête LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
- Vous pouvez appeler des fonctions dans un `Where` clause pour effectuer un calcul ou une opération sur une valeur de l’élément actuel dans la collection. Appel d’une fonction un `Where` clause peut entraîner la requête doit être exécutée immédiatement lorsqu’il est défini à la place de lorsqu’il est accessible. Pour plus d’informations sur l’exécution des requêtes, consultez [écrire votre première requête LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
+ Vous pouvez appeler des fonctions au sein d’une clause `Where` pour effectuer un calcul ou une opération sur une valeur de l’élément actuel dans la collection. L’appel d’une fonction dans une clause `Where` peut entraîner l’exécution immédiate de la requête lorsqu’elle est définie au lieu de l’accès. Pour plus d’informations sur l’exécution des requêtes, consultez [écriture de votre première requête LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
 ## <a name="example"></a>Exemple  
- La requête suivante expression utilise un `From` clause pour déclarer une variable de portée `cust` pour chaque `Customer` de l’objet dans le `customers` collection. Le `Where` clause utilise la variable de portée pour restreindre la sortie aux clients à partir de la région spécifiée. Le `For Each` boucle affiche le nom de société pour chaque client dans le résultat de la requête.  
+ L’expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour chaque objet `Customer` dans la collection `customers`. La clause `Where` utilise la variable de portée pour limiter la sortie aux clients de la région spécifiée. La boucle `For Each` affiche le nom de la société pour chaque client dans le résultat de la requête.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise `And` et `Or` des opérateurs logiques dans le `Where` clause.  
+ L’exemple suivant utilise les opérateurs logiques `And` et `Or` dans la clause `Where`.  
   
  [!code-vb[VbSimpleQuerySamples#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#31)]  
   

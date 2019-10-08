@@ -11,21 +11,25 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: 7d68e55972336e304286e967d445f3589219b9a2
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: e131b39e05badf0bb90fbbb14761571003156f85
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972319"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005513"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -link:fileList  
-' -or-  
+```
+
+ou  
+
+```console
 -l:fileList  
 ```  
   
@@ -79,7 +83,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
  [!code-vb[VbLinkCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/module1.vb#5)]  
   
 ## <a name="example"></a>Exemples  
- La ligne de commande `OfficeApp.vb` suivante compile le fichier source et les assemblys de référence à partir de `COMData1.dll` et `COMData2.dll` à produire `OfficeApp.exe`.  
+ La ligne de commande suivante compile le fichier source `OfficeApp.vb` et les assemblys de référence à partir de `COMData1.dll` et `COMData2.dll` pour produire `OfficeApp.exe`.  
   
 ```console  
 vbc -link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.vb  

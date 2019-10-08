@@ -7,46 +7,50 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: 9bf7170cee31f92481b15fb1227f21895cd3734d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c2fbe5aa6f0b9ac8c99c9b9ec5cdf0a7d9764ab8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649736"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002406"
 ---
-# <a name="-debug-visual-basic"></a>-debug (Visual Basic)
-Indique au compilateur de générer des informations de débogage et les placer dans les fichiers de sortie.  
+# <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
+Fait en sorte que le compilateur génère des informations de débogage et les place dans le ou les fichiers de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console 
 -debug[+ | -]  
-' -or-  
+```
+
+ou
+
+```console  
 -debug:[full | pdbonly]  
-```  
+```
   
 ## <a name="arguments"></a>Arguments  
   
 |Terme|Définition|  
 |---|---|  
-|`+` &#124; `-`|Facultatif. Spécification `+` ou `/debug` indique au compilateur de générer des informations de débogage et les placer dans un fichier .pdb. Spécification `-` a le même effet que si vous définissiez ne pas `/debug`.|  
-|`full` &#124; `pdbonly`|Optionnel. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. Le `pdbonly` argument permet le débogage du code source lorsque le programme est démarré dans le débogueur, mais affiche du code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|  
+|`+` &#124; `-`|facultatif. Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `/debug`.|  
+|`full` &#124; `pdbonly`|facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `/debug`, `/debug+`, ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.  
+ Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `/debug`, `/debug+` ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.  
   
  Par défaut, les informations de débogage ne sont pas émises (`/debug-`). Pour émettre des informations de débogage, spécifiez `/debug` ou `/debug+`.  
   
  Pour plus d’informations sur la configuration des performances de débogage d’une application, consultez [Simplification du débogage d’une image](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   
-|Pour définir - déboguer dans l’environnement de développement intégré Visual Studio|  
+|Pour définir-Debug dans l’environnement de développement intégré de Visual Studio|  
 |---|  
-|1.  Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Options avancées de compilation**.<br />4.  Modifiez la valeur dans le **générer des infos de débogage** boîte.|  
+|1.  Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Options avancées de compilation**.<br />4.  Modifiez la valeur dans la zone **générer des informations de débogage** .|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant place les informations de débogage dans le fichier de sortie `App.exe`.  
+ L’exemple suivant place des informations de débogage dans le fichier de sortie `App.exe`.  
   
-```  
+```console  
 vbc -debug -out:app.exe test.vb  
 ```  
   

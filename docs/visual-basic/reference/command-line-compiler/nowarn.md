@@ -6,19 +6,19 @@ helpviewer_keywords:
 - /nowarn compiler option [Visual Basic]
 - -nowarn compiler option [Visual Basic]
 ms.assetid: 7ebf2106-0652-4fdc-bf60-70fc86465d83
-ms.openlocfilehash: 31f7a2b771cfa1bcc6581d720aa0de3505aec826
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 880fdf4931dadea547d64d0506bd3e978956468e
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788984"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005396"
 ---
 # <a name="-nowarn"></a>-nowarn
 Supprime la capacité du compilateur à générer des avertissements.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -nowarn[:numberList]  
 ```  
   
@@ -26,21 +26,21 @@ Supprime la capacité du compilateur à générer des avertissements.
   
 |Terme|Définition|  
 |---|---|  
-|`numberList`|Optionnel. Liste délimitée par des virgules des numéros d’identification avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifié, tous les avertissements sont supprimés.|  
+|`numberList`|facultatif. Liste délimitée par des virgules des numéros d’ID d’avertissement que le compilateur doit supprimer. Si les ID d’avertissement ne sont pas spécifiés, tous les avertissements sont supprimés.|  
   
 ## <a name="remarks"></a>Notes  
- La `-nowarn` option, le compilateur ne génère ne pas les avertissements. Pour supprimer un avertissement, fournissez l’ID d’avertissement pour le `-nowarn` option suit le signe deux-points. Séparez plusieurs numéros d’avertissement par des virgules.  
+ L’option `-nowarn` indique que le compilateur ne génère pas d’avertissements. Pour supprimer un avertissement individuel, fournissez l’ID d’avertissement à l’option `-nowarn` après le signe deux-points. Séparez les numéros d’avertissement par des virgules.  
   
  Vous devez spécifier uniquement la partie numérique de l’identificateur d’avertissement. Par exemple, si vous souhaitez supprimer BC42024, l’avertissement pour les variables locales inutilisées, spécifiez `-nowarn:42024`.  
   
- Pour plus d’informations sur les numéros d’avertissement, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Pour plus d’informations sur les numéros d’ID d’avertissement, consultez [Configuration des avertissements dans Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
-|Pour définir - nowarn dans l’environnement de développement intégré Visual Studio|  
+|Pour définir-nowarn dans l’environnement de développement intégré de Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Sélectionnez le **désactiver tous les avertissements** case à cocher pour désactiver tous les avertissements.<br />     ou<br />     Pour désactiver un avertissement particulier, cliquez sur **aucun** dans la liste déroulante adjacente à l’avertissement.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Activez la case à cocher **Désactiver tous les avertissements** pour désactiver tous les avertissements.<br />     ou<br />     Pour désactiver un avertissement spécifique, cliquez sur **aucun** dans la liste déroulante adjacente à l’avertissement.|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` et n’affiche pas tous les avertissements.  
+ Le code suivant compile `T2.vb` et n’affiche pas d’avertissements.  
   
 ```console
 vbc -nowarn t2.vb  
