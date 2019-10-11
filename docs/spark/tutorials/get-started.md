@@ -4,18 +4,18 @@ description: Découvrez comment exécuter une application .NET pour Apache Spark
 ms.date: 06/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 004256a2fe369b026b15151dfc72ae379da0be8e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: c4dbce74d0d8c0a682250a8021d983ef2990971f
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928484"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250326"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Tutoriel : Bien démarrer avec .NET pour Apache Spark
 
 Ce tutoriel vous explique comment exécuter une application .NET pour Apache Spark avec .NET Core sur Windows.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
 >
@@ -23,7 +23,7 @@ Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > * Télécharger **Microsoft.Spark.Worker**
 > * Générer et exécuter une application .NET pour Apache Spark simple
 
-## <a name="prepare-your-environment"></a>Préparation de votre environnement
+## <a name="prepare-your-environment"></a>Préparer votre environnement
 
 Avant de commencer, vérifiez que vous pouvez exécuter `dotnet`, `java`, `mvn` et `spark-shell` à partir de votre ligne de commande. Si votre environnement est déjà préparé, vous pouvez passer à la section suivante. Si vous ne pouvez pas exécuter tout ou partie des commandes, suivez les étapes ci-dessous.
 
@@ -67,7 +67,7 @@ Vérifiez bien que vous pouvez exécuter `dotnet`, `java`, `mvn` et `spark-shell
 
 1. Téléchargez la version de [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases) à partir de la page GitHub des versions de .NET pour Apache Spark sur votre machine locale. Par exemple, vous pouvez la télécharger dans le chemin `c:\bin\Microsoft.Spark.Worker\`.
 
-2. Créez une [variable d’environnement](https://www.java.com/en/download/help/path.xml) appelée `DotnetWorkerPath` et définissez-la sur le répertoire où vous avez téléchargé et extrait **Microsoft.Spark.Worker**. Par exemple, `c:\bin\Microsoft.Spark.Worker`.
+2. Créez une [variable d’environnement](https://www.java.com/en/download/help/path.xml) appelée `DOTNET_WORKER_DIR` et définissez-la sur le répertoire où vous avez téléchargé et extrait **Microsoft.Spark.Worker**. Par exemple, `c:\bin\Microsoft.Spark.Worker`.
 
 ## <a name="clone-the-net-for-apache-spark-github-repo"></a>Cloner le dépôt GitHub .NET pour Apache Spark
 
@@ -123,7 +123,7 @@ Félicitations ! Vous avez créé et exécuté une application .NET pour Apache
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > * Préparer votre environnement Windows pour .NET pour Apache Spark

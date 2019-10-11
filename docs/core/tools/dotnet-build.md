@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 08/08/2019
-ms.openlocfilehash: 0b353d60691fb4bb85536c68dc4ab248f45c3a76
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
-ms.translationtype: MT
+ms.openlocfilehash: 6194d70a8a14e63adbcad39c7dabbbd220ca329d
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117753"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179983"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -36,7 +36,7 @@ La commande `dotnet build` génère le projet et ses dépendances dans un ensemb
 
 Si le projet a des dépendances tierces, comme des bibliothèques NuGet, elles sont résolues à partir du cache NuGet et ne sont pas disponibles avec la sortie générée du projet. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Ce comportement contraste avec celui du .NET Framework dans lequel la génération d’un projet exécutable (une application) produit une sortie exécutable sur n’importe quel ordinateur où le .NET Framework est installé. Pour obtenir un résultat similaire dans .NET Core, vous devez utiliser la commande [dotnet publish](dotnet-publish.md). Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
 
-La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est créé quand la commande [`dotnet restore`](dotnet-restore.md) est exécutée. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec le SDK .NET Core 1.x, vous deviez explicitement exécuter `dotnet restore` avant d’exécuter `dotnet build`. À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
+La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est créé quand la commande [`dotnet restore`](dotnet-restore.md) est exécutée. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec le kit de développement logiciel (SDK) .NET Core 1. x, vous deviez exécuter explicitement `dotnet restore` avant d’exécuter `dotnet build`. À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 

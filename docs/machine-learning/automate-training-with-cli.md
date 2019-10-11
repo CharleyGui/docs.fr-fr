@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’outil CLI ML.NET pour entraîner au
 author: CESARDELATORRE
 ms.date: 04/17/2019
 ms.custom: how-to
-ms.openlocfilehash: e5f75dc70ea5a76951d8698ea9c0d07cb2d4ddec
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: c147464ff59563d336363eed73fc6337bdb12e85
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663924"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275850"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>Automatiser l’entraînement du modèle avec l’interface CLI ML.NET
 
@@ -42,7 +42,7 @@ Actuellement, l’interface CLI ML.NET prend en charge les tâches ML suivantes�
 Exemple d’utilisation :
 
 ```console
-> mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
+mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
 ```
 
 ![image](media/automate-training-with-cli/cli-model-generation.gif)

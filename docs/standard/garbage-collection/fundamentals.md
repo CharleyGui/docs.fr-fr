@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ba6c46116d809e2881eee37b080e1952e2eb6a0
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 0c0fa0e2c59856beda65ec5804b8896352db98b3
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895268"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180196"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -62,7 +62,7 @@ La liste suivante résume les concepts importants de la mémoire CLR.
 
 Votre fichier d'échange est utilisé, même si la sollicitation de la mémoire physique (c'est-à-dire, la demande de mémoire physique) est faible. La première fois que la sollicitation de la mémoire physique est élevée, le système d'exploitation doit libérer de la place dans la mémoire physique pour stocker des données et sauvegarde une partie des données qui sont dans la mémoire physique dans le fichier d'échange. Ces données ne sont pas paginées tant qu'elles ne sont pas nécessaires, il est donc possible de rencontrer la pagination dans les situations dans lesquelles la sollicitation de la mémoire physique est très faible.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="conditions_for_a_garbage_collection"></a>
 
@@ -76,7 +76,7 @@ Le garbage collection se produit lorsque l'une des conditions suivantes est vrai
 
 - La méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> est appelée. Dans presque tous les cas, vous n'avez pas à appeler cette méthode, car le garbage collector s'exécute continuellement. Cette méthode est principalement utilisée pour les situations uniques et les tests.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="the_managed_heap"></a>
 
@@ -101,7 +101,7 @@ Le tas peut être considéré comme l’accumulation de deux tas : le [tas de gr
 
 Le [tas de grands objets](large-object-heap.md) contient des objets d’au moins 85 000 octets. Ces objets du tas d'objets volumineux sont généralement des tableaux. Il est rare qu'un objet d'instance soit extrêmement grand.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="generations"></a>
 
@@ -138,7 +138,7 @@ La taille du segment éphémère peut varier selon que le système est 32 ou 64 
 ||32 bits|64 bits|
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 Mo|
-|Garbage collector pour serveur|64 Mo|4 Go|
+|Garbage collector pour serveur|64 Mo|4 Go|
 |Garbage collector pour serveur > 4 processeurs logiques|32 Mo|2 Go|
 |Garbage collector pour serveur > 8 processeurs logiques|16 Mo|1 Go|
 
@@ -146,7 +146,7 @@ Le segment éphémère peut inclure des objets de la génération 2. Les objets 
 
 La quantité de mémoire libérée à partir d'un garbage collection éphémère est limitée à la taille du segment éphémère. La quantité de mémoire libérée est proportionnelle à l'espace occupé par les objets morts.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="what_happens_during_a_garbage_collection"></a>
 
@@ -176,9 +176,9 @@ Avant qu'une opération garbage collection ne démarre, tous les threads managé
 
 L'illustration suivante montre un thread qui déclenche un garbage collection et entraîne l'interruption des autres threads.
 
-![Quand un thread déclenche un Garbage Collection](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC_Triggered") Thread qui déclenche un garbage collection
+![Lorsqu’un thread déclenche un garbage collection](../../../docs/standard/garbage-collection/media/gc-triggered.png "lorsqu’un thread déclenche un garbage collection")
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="manipulating_unmanaged_resources"></a>
 
@@ -190,7 +190,7 @@ Les utilisateurs de votre objet managé ne peuvent pas supprimer les ressources 
 
 Lorsqu'un objet finalisable est détecté comme étant mort, son finaliseur est placé dans une file d'attente afin que ses actions de nettoyage soient exécutées, mais l'objet lui-même est promu à la génération suivante. Par conséquent, vous devez attendre jusqu'au garbage collection suivant sur cette génération (qui n'est pas nécessairement le garbage collection suivant) pour déterminer si l'objet a été récupéré.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="workstation_and_server_garbage_collection"></a>
 
@@ -208,7 +208,7 @@ Le garbage collector s'ajuste automatiquement et peut travailler dans une large 
 
 Les illustrations suivantes montrent les threads dédiés qui exécutent un garbage collection sur un serveur.
 
-![Threads de garbage collection du serveur](../../../docs/standard/garbage-collection/media/gc-server.png "GC_Server") Garbage collection du serveur
+Threads de ![garbage collection du serveur],(../../../docs/standard/garbage-collection/media/gc-server.png "threads de garbage collection")
 
 ### <a name="configuring-garbage-collection"></a>Configuration du garbage collection
 
@@ -242,7 +242,7 @@ Voici les considérations liées aux threads et aux performances pour le garbage
 
 Si vous exécutez des centaines d'instances d'une application, envisagez d'utiliser le garbage collection de station de travail avec le garbage collection simultané désactivé. Cela provoquera moins de changements de contexte, ce qui peut améliorer les performances.
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="concurrent_garbage_collection"></a>
 
@@ -262,15 +262,15 @@ Le garbage collection simultané possède un jeu de travail légèrement plus gr
 
 L'illustration suivante montre le garbage collection simultané exécuté sur un thread dédié différent.
 
-![Threads de garbage collection simultané](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC_Concurrent") Garbage collection simultané
+Threads de ![garbage collection simultanés]threads de(../../../docs/standard/garbage-collection/media/gc-concurrent.png "garbage collection simultanés")
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="background_garbage_collection"></a>
 
 ## <a name="background-workstation-garbage-collection"></a>Nettoyage de la mémoire de la station de travail en arrière-plan
 
-L’garbage collection d’arrière-plan remplace garbage collection de station de travail simultanée à partir du .NET Framework 4, et elle remplace les garbage collection de serveur simultanés à partir de la .NET Framework 4,5.  Avec le garbage collection d'arrière-plan, les générations éphémères (0 et 1) sont collectées si nécessaire pendant la collecte de la génération 2. Il est exécuté sur un thread dédié et s’applique uniquement aux collections de génération 2. L’garbage collection d’arrière-plan est automatiquement activée par défaut et peut être activée ou [ \<](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) désactivée avec le paramètre de configuration gcConcurrent > dans .NET Framework applications. 
+L’garbage collection d’arrière-plan remplace garbage collection de station de travail simultanée à partir du .NET Framework 4, et elle remplace les garbage collection de serveur simultanés à partir de la .NET Framework 4,5.  Avec le garbage collection d'arrière-plan, les générations éphémères (0 et 1) sont collectées si nécessaire pendant la collecte de la génération 2. Il est exécuté sur un thread dédié et s’applique uniquement aux collections de génération 2. L’garbage collection d’arrière-plan est automatiquement activée par défaut et peut être activée ou désactivée avec le paramètre de configuration [\<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) dans .NET Framework applications. 
 
 > [!NOTE]
 > Le garbage collection d’arrière-plan est uniquement disponible dans .NET Framework 4 et versions ultérieures. Dans .NET Framework 4, il est pris en charge uniquement pour le garbage collection de station de travail. Depuis .NET Framework 4.5, le garbage collection en arrière-plan est disponible pour les deux opérations garbage collection de station de travail et de serveur.
@@ -283,9 +283,9 @@ Le garbage collection d'arrière-plan supprime les restrictions d'allocation imp
 
 L’illustration suivante montre le nettoyage de la mémoire en arrière-plan effectué sur un thread dédié distinct, sur une station de travail :
 
-![Diagramme illustrant le nettoyage de la mémoire d’une station de travail en arrière-plan.](./media/fundamentals/background-workstation-garbage-collection.png)
+![Diagramme qui affiche des garbage collection de station de travail en arrière-plan.](./media/fundamentals/background-workstation-garbage-collection.png "Diagramme qui affiche des garbage collection de station de travail en arrière-plan.")
 
-[Revenir en haut](#top)
+[Retour au début](#top)
 
 <a name="background_server_garbage_collection"></a>
 
@@ -295,7 +295,7 @@ Depuis .NET Framework 4.5, le garbage collection de serveur en arrière-plan est
 
 L’illustration suivante montre le nettoyage de la mémoire en arrière-plan effectué sur un thread dédié distinct, sur un serveur :
 
-![Diagramme illustrant le nettoyage de la mémoire d’un serveur en arrière-plan.](./media/fundamentals/background-server-garbage-collection.png)
+![Diagramme qui affiche les garbage collection du serveur d’arrière-plan.](./media/fundamentals/background-server-garbage-collection.png "Diagramme qui affiche les garbage collection du serveur d’arrière-plan.")
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher un seul descendant à l’aide de la méthode descendants (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0c03468c-efc8-4140-98f3-fb67acd9e8e1
-ms.openlocfilehash: 7e90e7e8c4a6cd4c91b15037be0fa422dd2108e3
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: dbde5686d1b7670290d434c0a04515cbc10622fd
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709077"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249959"
 ---
 # <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>Procédure : Rechercher un seul descendant à l’aide de la méthode descendants (Visual Basic)
 Vous pouvez utiliser la méthode d'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> pour écrire rapidement du code afin de rechercher un seul élément nommé de manière unique. Cette technique est particulièrement utile lorsque vous souhaitez rechercher un descendant particulier avec un nom spécifique. Vous pourriez écrire du code pour naviguer jusqu'à l'élément souhaité, mais il est souvent plus rapide et plus facile d'écrire le code à l'aide de l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
@@ -39,7 +39,7 @@ Console.WriteLine(grandChild3)
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 GC3 Value  
 ```  
   
@@ -76,7 +76,7 @@ End Module
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 GC3 Value  
 ```  
   

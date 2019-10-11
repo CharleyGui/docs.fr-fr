@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f7c13688236f3d66f3225ecf5d93b4c3284e2e71
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: e476039ff9c8d33f54a2f7e4371dc09a3be557c7
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002879"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237341"
 ---
 ### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft. VisualBasic. constants. vbNewLine est obsolète
 
@@ -14,7 +14,7 @@ La constante <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=ful
 
 3,0 Preview 8
 
-#### <a name="details"></a>Détails
+#### <a name="change-description"></a>Modifier la description
 
 À compter de .NET Core 3,0 Preview 8, l’attribut [Obsolete](xref:System.ObsoleteAttribute) a été appliqué à la constante <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName>. L’utilisation de la constante produit un avertissement du compilateur. Dans les versions précédentes de .NET Core et .NET Framework, il n’était pas marqué comme obsolète.
 
@@ -40,5 +40,4 @@ Visual Basic
 
 - `F:Microsoft.VisualBasic.Constants.vbNewLine`
 
--- >
-
+-->

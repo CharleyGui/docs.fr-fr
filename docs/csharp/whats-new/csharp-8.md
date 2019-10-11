@@ -2,19 +2,19 @@
 title: Nouveautés de C# 8.0- C# Guide
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 09/20/2019
-ms.openlocfilehash: d948db0523684c998425bc22ab6fd245d65a8045
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 6b5602db6ee61b1d9db4c906d6a14ea2f918ad0a
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736697"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275774"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
 C#8.0 ajoute les fonctionnalités suivantes et les améliorations apportées au langage C# :
 
 - [Membres ReadOnly](#readonly-members)
-- [Membres d’interface par défaut](#default-interface-members)
+- [Méthodes d’interface par défaut](#default-interface-methods)
 - [Amélioration du filtrage par motif](#more-patterns-in-more-places) :
   - [Expressions switch](#switch-expressions)
   - [Motifs de propriétés](#property-patterns)
@@ -85,11 +85,11 @@ public readonly void Translate(int xOffset, int yOffset)
 
 Cette fonctionnalité vous permet de spécifier votre intention de conception, afin que le compilateur puisse l’appliquer et procéder à des optimisations basées sur cette intention.
 
-## <a name="default-interface-members"></a>Membres d’interface par défaut
+## <a name="default-interface-methods"></a>Méthodes d’interface par défaut
 
-Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité de langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Les membres d’interface par défaut activent également des scénarios similaires à une fonctionnalité de langage « caractéristique ».
+Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité de langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Les méthodes d’interface par défaut permettent également des scénarios semblables à une fonctionnalité de langage « traits ».
 
-Les membres d’interface par défaut affectent de nombreux scénarios et éléments de langage. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-members-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
+Les méthodes d’interface par défaut affectent de nombreux scénarios et éléments de langage. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-methods-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
 
 ## <a name="more-patterns-in-more-places"></a>Ajout de filtrage par motif à différents endroits
 
@@ -382,7 +382,7 @@ Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouv
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
 - L’index de l’opérateur end `^`, qui spécifie qu’un index est relatif à la fin de la séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- Opérateur `..`de plage, qui spécifie le début et la fin d’une plage comme opérandes.
+- L’opérateur de plage `..`, qui spécifie le début et la fin d’une plage comme opérandes.
 
 Commençons par les règles concernant les index. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence.Length - n`.
 
@@ -481,7 +481,7 @@ public struct Coords<T>
 }
 ```
 
-le `Coords<int>` type est un type non managé dans C# 8,0 et versions ultérieures. Comme pour tout type non managé, vous pouvez créer un pointeur vers une variable de ce type ou [allouer un bloc de mémoire sur la pile](../language-reference/operators/stackalloc.md) pour les instances de ce type :
+le type `Coords<int>` est un type non managé dans C# 8,0 et versions ultérieures. Comme pour tout type non managé, vous pouvez créer un pointeur vers une variable de ce type ou [allouer un bloc de mémoire sur la pile](../language-reference/operators/stackalloc.md) pour les instances de ce type :
 
 ```csharp
 Span<Coords<int>> coordinates = stackalloc[]
@@ -496,7 +496,7 @@ Pour plus d’informations, consultez [types non managés](../language-reference
 
 ## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
 
-À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) <xref:System.Span%601?displayProperty=nameWithType> est du type ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , vous pouvez utiliser l' `stackalloc` expression dans d’autres expressions :
+À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) est du type <xref:System.Span%601?displayProperty=nameWithType> ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, vous pouvez utiliser l’expression `stackalloc` dans d’autres expressions :
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };

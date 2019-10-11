@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: e16f0c8ede5e1a24d4fc4606c3c25225ea72e750
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: f5b0064f9f01923c6353fd8e2b274bd7407ccbd8
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117088"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237348"
 ---
 ### <a name="jsonfactoryconvertercreateconverter-signature-changed"></a>Signature de JsonFactoryConverter. CreateConverter modifiée
 
-Pour faciliter la composition des <xref:System.Text.Json.Serialization.JsonConverterFactory> classes, la <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> méthode a été rendue publique et reçoit un deuxième argument de type <xref:System.Text.Json.JsonSerializerOptions>.
+Pour faciliter la composition des classes <xref:System.Text.Json.Serialization.JsonConverterFactory>, la méthode <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> a été rendue publique et reçoit un deuxième argument de type <xref:System.Text.Json.JsonSerializerOptions>.
 
-#### <a name="details"></a>Détails
+#### <a name="change-description"></a>Modifier la description
 
-La signature de la `CreateConverter` méthode dans .net Core antérieure à la version 3,0 Preview 8 était la suivante : 
+La signature de la méthode `CreateConverter` dans .NET Core antérieure à la version 3,0 Preview 8 était la suivante : 
 
 ```csharp
 namespace System.Text.Json.Serialization
@@ -36,7 +36,7 @@ namespace System.Text.Json.Serialization
 }
 ```
 
-Avant cette modification, il était difficile de composer des convertisseurs de fabrique scellés, car il n’existait pas de moyen <xref:System.Text.Json.Serialization.JsonConverter%601> simple de l’en faire. Rendre la méthode de fabrique publique et transmettre également l' <xref:System.Text.Json.JsonSerializerOptions> autorisation actuelle pour une composition bien plus flexible.
+Avant cette modification, il était difficile de composer des convertisseurs de fabrique scellés, car il n’existait pas de moyen facile d’en faire un <xref:System.Text.Json.Serialization.JsonConverter%601>. Rendre la méthode de fabrique publique et transmettre également le @no__t actuel-0 permet une composition bien plus flexible.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -48,7 +48,7 @@ Les classes dérivées doivent être mises à jour et recompilées.
 
 #### <a name="affected-apis"></a>API affectées
 
-<xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)?displayProperty=nameWithType>.
+<xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)?displayProperty=nameWithType> .
 
 <!-- For tool use only
 

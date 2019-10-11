@@ -4,12 +4,12 @@ description: Apprenez à créer des pages dans éblouissant, à travailler avec 
 author: danroth27
 ms.author: daroth
 ms.date: 09/19/2019
-ms.openlocfilehash: 3e0b9bc277c9b554083eec35646480fd08759080
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: c31544156250a9e97ff8c0b17338f418817b21d2
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183811"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275830"
 ---
 # <a name="pages-routing-and-layouts"></a>Pages, routage et dispositions
 
@@ -17,7 +17,7 @@ ms.locfileid: "71183811"
 
 ASP.NET Web Forms applications sont composées de pages définies dans des fichiers *. aspx* . L’adresse de chaque page est basée sur son chemin d’accès physique au projet. Quand un navigateur envoie une requête à la page, le contenu de la page est rendu dynamiquement sur le serveur. Les comptes de rendu pour le balisage HTML de la page et ses contrôles serveur.
 
-Dans éblouissant, chaque page de l’application est un composant, généralement défini dans un fichier *. Razor* , avec un ou plusieurs itinéraires spécifiés. Le routage s’effectue principalement côté client sans impliquer de demande de serveur spécifique. Le navigateur effectue d’abord une demande à l’adresse racine de l’application. Un composant `Router` racine de l’application éblouissante gère alors l’interception des demandes de navigation et celles-ci vers le composant approprié.
+Dans éblouissant, chaque page de l’application est un composant, généralement défini dans un fichier *. Razor* , avec un ou plusieurs itinéraires spécifiés. Le routage s’effectue principalement côté client sans impliquer de demande de serveur spécifique. Le navigateur effectue d’abord une demande à l’adresse racine de l’application. Un composant racine `Router` dans l’application éblouissante gère alors l’interception des demandes de navigation et le composant approprié.
 
 Éblouissant prend également en charge la *liaison profonde*. La liaison profonde se produit lorsque le navigateur envoie une requête à un itinéraire spécifique autre que la racine de l’application. Les demandes de liens ciblés envoyés vers le serveur sont acheminées vers l’application éblouissante, qui achemine ensuite la demande côté client vers le composant approprié.
 
@@ -66,9 +66,9 @@ La page équivalente dans une application éblouissante ressemble à ceci :
     <button @onclick="OnClick">Submit</button>
 </div>
 <div>
-    if (name != null)
+    @if (name != null)
     {
-        Hello @name
+        @:Hello @name
     }
 </div>
 
@@ -84,7 +84,7 @@ La page équivalente dans une application éblouissante ressemble à ceci :
 
 ## <a name="create-pages"></a>Créer des pages
 
-Pour créer une page dans éblouissant, créez un composant et ajoutez la `@page` directive Razor pour spécifier l’itinéraire du composant. La `@page` directive prend un seul paramètre, qui est le modèle de routage à ajouter à ce composant.
+Pour créer une page dans éblouissant, créez un composant et ajoutez la directive Razor `@page` pour spécifier l’itinéraire du composant. La directive `@page` accepte un seul paramètre, qui est le modèle de routage à ajouter à ce composant.
 
 ```razor
 @page "/counter"
@@ -105,7 +105,7 @@ La syntaxe de modèle de routage est identique à la syntaxe de base utilisée p
 }
 ```
 
-Vous pouvez également spécifier des contraintes sur la valeur du paramètre d’itinéraire. Par exemple, pour contraindre l’ID de produit en `int`tant que :
+Vous pouvez également spécifier des contraintes sur la valeur du paramètre d’itinéraire. Par exemple, pour contraindre l’ID de produit à être un `int` :
 
 ```razor
 @page "/product/{id:int}"
@@ -122,7 +122,7 @@ Pour obtenir la liste complète des contraintes d’itinéraire prises en charge
 
 ## <a name="router-component"></a>Composant routeur
 
-Le routage dans éblouissant est géré par le `Router` composant. Le `Router` composant est généralement utilisé dans le composant racine de l’application (*app. Razor*).
+Le routage dans éblouissant est géré par le composant `Router`. Le composant `Router` est généralement utilisé dans le composant racine de l’application (*app. Razor*).
 
 ```razor
 <Router AppAssembly="@typeof(Program).Assembly">
@@ -137,15 +137,15 @@ Le routage dans éblouissant est géré par le `Router` composant. Le `Router` c
 </Router>
 ```
 
-Le `Router` composant Découvre les composants routables dans le spécifié `AppAssembly` et dans le spécifié `AdditionalAssemblies`, éventuellement. Lorsque le navigateur navigue, le `Router` intercepte la navigation et restitue le contenu de son `Found` paramètre avec l’extrait `RouteData` si un itinéraire correspond à l’adresse ; sinon `Router` , le restitue son `NotFound` paramètre.
+Le composant `Router` Découvre les composants routables dans le `AppAssembly` spécifié et dans le éventuellement spécifié `AdditionalAssemblies`. Lorsque le navigateur navigue, le `Router` intercepte la navigation et restitue le contenu de son paramètre `Found` avec le @no__t extrait-2 Si un itinéraire correspond à l’adresse, sinon le `Router` affiche son paramètre `NotFound`.
 
-Le `RouteView` composant gère le rendu du composant correspondant spécifié par avec `RouteData` sa disposition, le cas échéant. Si le composant correspondant n’a pas de disposition, le cas échéant, l' `DefaultLayout` option spécifiée est utilisée.
+Le composant `RouteView` gère le rendu du composant correspondant spécifié par la `RouteData` avec sa disposition, le cas échéant. Si le composant correspondant n’a pas de disposition, la valeur éventuellement spécifiée `DefaultLayout` est utilisée.
 
-Le `LayoutView` composant affiche son contenu enfant dans la disposition spécifiée. Nous étudierons plus en détail les dispositions plus loin dans ce chapitre.
+Le composant `LayoutView` restitue son contenu enfant dans la disposition spécifiée. Nous étudierons plus en détail les dispositions plus loin dans ce chapitre.
 
 ## <a name="navigation"></a>Navigation
 
-Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Par exemple :
+Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Exemple :
 
 ```csharp
 protected void NavigateButton_Click(object sender, EventArgs e)
@@ -156,14 +156,14 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 
 Le retour d’une réponse de redirection n’est généralement pas possible dans éblouissant. Éblouissant n’utilise pas de modèle de demande-réponse. Toutefois, vous pouvez déclencher des navigations de navigateur directement, comme vous pouvez le faire avec JavaScript.
 
-Éblouissant fournit un `NavigationManager` service qui peut être utilisé pour :
+Éblouissant fournit un service `NavigationManager` qui peut être utilisé pour :
 
 * Récupérer l’adresse actuelle du navigateur
 * Obtient l’adresse de base
 * Navigations de déclencheur
 * Recevoir une notification lorsque l’adresse change
 
-Pour accéder à une autre adresse, utilisez la `NavigateTo` méthode :
+Pour accéder à une autre adresse, utilisez la méthode `NavigateTo` :
 
 ```razor
 @page "/"
@@ -178,11 +178,11 @@ Pour accéder à une autre adresse, utilisez la `NavigateTo` méthode :
 }
 ```
 
-Pour obtenir une description de `NavigationManager` tous les membres, consultez [URI et assistance de l’état de navigation](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers).
+Pour obtenir une description de tous les membres de `NavigationManager`, consultez [URI et assistance de l’état de navigation](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers).
 
 ## <a name="base-urls"></a>URL de base
 
-Si votre application éblouissant est déployée sous un chemin d’accès de base, vous devez spécifier l’URL de base dans les métadonnées `<base>` de la page à l’aide de la balise pour le routage vers la propriété de travail. Si la page hôte de l’application est affichée par le serveur à l’aide de Razor, vous `~/` pouvez utiliser la syntaxe pour spécifier l’adresse de base de l’application. Si la page hôte est du code HTML statique, vous devez spécifier l’URL de base explicitement.
+Si votre application éblouissant est déployée sous un chemin d’accès de base, vous devez spécifier l’URL de base dans les métadonnées de la page à l’aide de la balise `<base>` pour le routage vers la propriété de travail. Si la page hôte de l’application est affichée sur le serveur à l’aide de Razor, vous pouvez utiliser la syntaxe `~/` pour spécifier l’adresse de base de l’application. Si la page hôte est du code HTML statique, vous devez spécifier l’URL de base explicitement.
 
 ```html
 <base href="~/" />
@@ -190,7 +190,7 @@ Si votre application éblouissant est déployée sous un chemin d’accès de ba
 
 ## <a name="page-layout"></a>Mise en page
 
-La mise en page dans ASP.NET Web Forms est gérée par les pages maîtres. Les pages maîtres définissent un modèle avec un ou plusieurs espaces réservés de contenu qui peuvent ensuite être fournis par des pages individuelles. Les pages maîtres sont définies dans les fichiers *. Master* et commencent `<%@ Master %>` par la directive. Le contenu des fichiers *. Master* est codé comme s’il s’agissait d’une page *. aspx* , mais avec l' `<asp:ContentPlaceHolder>` ajout de contrôles pour marquer l’emplacement où les pages peuvent fournir du contenu.
+La mise en page dans ASP.NET Web Forms est gérée par les pages maîtres. Les pages maîtres définissent un modèle avec un ou plusieurs espaces réservés de contenu qui peuvent ensuite être fournis par des pages individuelles. Les pages maîtres sont définies dans les fichiers *. Master* et commencent par la directive `<%@ Master %>`. Le contenu des fichiers *. Master* est codé comme s’il s’agissait d’une page *. aspx* , mais avec l’ajout des contrôles `<asp:ContentPlaceHolder>` pour marquer l’emplacement où les pages peuvent fournir du contenu.
 
 *Site. Master*
 
@@ -220,7 +220,7 @@ La mise en page dans ASP.NET Web Forms est gérée par les pages maîtres. Les p
 </html>
 ```
 
-Dans éblouissant, vous gérez la mise en page à l’aide de composants de disposition. Les composants de disposition `LayoutComponentBase`héritent de, qui `Body` définit une seule `RenderFragment`propriété de type, qui peut être utilisée pour afficher le contenu de la page.
+Dans éblouissant, vous gérez la mise en page à l’aide de composants de disposition. Les composants de disposition héritent de `LayoutComponentBase`, qui définit une seule propriété `Body` de type `RenderFragment`, qui peut être utilisée pour afficher le contenu de la page.
 
 *MainLayout. Razor*
 
@@ -232,9 +232,9 @@ Dans éblouissant, vous gérez la mise en page à l’aide de composants de disp
 </div>
 ```
 
-Lors du rendu de la page avec une disposition, la page est rendue dans le contenu de la disposition spécifiée à l’emplacement où la disposition affiche sa `Body` propriété.
+Lors du rendu de la page avec une disposition, la page est rendue dans le contenu de la disposition spécifiée à l’emplacement où la disposition restitue sa propriété `Body`.
 
-Pour appliquer une disposition à une page, utilisez la `@layout` directive :
+Pour appliquer une disposition à une page, utilisez la directive `@layout` :
 
 ```razor
 @layout MainLayout
@@ -242,7 +242,7 @@ Pour appliquer une disposition à une page, utilisez la `@layout` directive :
 
 Vous pouvez spécifier la disposition de tous les composants d’un dossier et de ses sous-dossiers à l’aide d’un fichier *_Imports. Razor* . Vous pouvez également spécifier une disposition par défaut pour toutes vos pages à l’aide du [composant routeur](#router-component).
 
-Les pages maîtres peuvent définir plusieurs espaces réservés de contenu, mais les dispositions dans éblouissantes n’ont `Body` qu’une seule propriété. Cette limitation des composants de la disposition éblouissante sera prévue dans une prochaine version.
+Les pages maîtres peuvent définir plusieurs espaces réservés de contenu, mais les dispositions dans éblouissantes n’ont qu’une seule propriété `Body`. Cette limitation des composants de la disposition éblouissante sera prévue dans une prochaine version.
 
 Les pages maîtres dans ASP.NET Web Forms peuvent être imbriquées. Autrement dit, une page maître peut également utiliser une page maître. Les composants de disposition dans éblouissant peuvent également être imbriqués. Vous pouvez appliquer un composant de disposition à un composant de disposition. Le contenu de la disposition interne sera rendu dans la disposition externe.
 
@@ -276,9 +276,9 @@ La sortie rendue pour la page serait alors :
 </div>
 ```
 
-Dans éblouissant, les dispositions ne définissent généralement pas les éléments HTML racine d'`<html>`une `<body>`page `<head>`(,,, etc.). Les éléments HTML racine sont définis à la place dans la page hôte d’une application éblouissante, qui est utilisée pour afficher le contenu HTML initial de l’application (consultez [amorçage éblouissant](project-structure.md#bootstrap-blazor)). La page hôte peut afficher plusieurs composants racine pour l’application avec le balisage environnant.
+Dans éblouissant, les dispositions ne définissent généralement pas les éléments HTML racine d’une page (`<html>`, `<body>`, `<head>`, etc.). Les éléments HTML racine sont définis à la place dans la page hôte d’une application éblouissante, qui est utilisée pour afficher le contenu HTML initial de l’application (consultez [amorçage éblouissant](project-structure.md#bootstrap-blazor)). La page hôte peut afficher plusieurs composants racine pour l’application avec le balisage environnant.
 
-Les composants de éblouissant, y compris les pages, `<script>` ne peuvent pas afficher les balises. Cette restriction de rendu existe `<script>` , car les balises sont chargées une seule fois et ne peuvent pas être modifiées. Un comportement inattendu peut se produire si vous essayez d’afficher dynamiquement les balises à l’aide de syntaxe Razor. Au lieu de `<script>` cela, toutes les balises doivent être ajoutées à la page hôte de l’application.
+Les composants de éblouissant, y compris les pages, ne peuvent pas restituer les balises `<script>`. Cette restriction de rendu existe, car les balises `<script>` sont chargées une seule fois et ne peuvent pas être modifiées. Un comportement inattendu peut se produire si vous essayez d’afficher dynamiquement les balises à l’aide de syntaxe Razor. Au lieu de cela, toutes les balises `<script>` doivent être ajoutées à la page hôte de l’application.
 
 >[!div class="step-by-step"]
 >[Précédent](components.md)

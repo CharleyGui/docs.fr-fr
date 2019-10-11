@@ -1,5 +1,5 @@
 ---
-title: Sérialisation JSON dans .NET
+title: Sérialiser et désérialiser JSON à C# l’aide de-.net
 author: tdykstra
 ms.author: tdykstra
 ms.date: 09/16/2019
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-ms.openlocfilehash: 6cb45fded220b6123dbf4461f5f1cf1c3556ff69
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 5ce98a7908470a402779436db43333d46f5101fc
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083093"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180156"
 ---
-# <a name="json-serialization-in-net"></a>Sérialisation JSON dans .NET
+# <a name="json-serialization-in-net---overview"></a>Sérialisation JSON dans .NET-vue d’ensemble
 
-L' `System.Text.Json` espace de noms fournit des fonctionnalités pour sérialiser vers et à partir de JavaScript Object Notation (JSON).
+L’espace de noms `System.Text.Json` fournit des fonctionnalités pour sérialiser vers et désérialiser à partir de JavaScript Object Notation (JSON).
 
 La conception de la bibliothèque met l’accent sur des performances élevées et une allocation de mémoire faible sur un ensemble complet de fonctionnalités. La prise en charge UTF-8 intégrée optimise le processus de lecture et d’écriture du texte JSON encodé au format UTF-8, qui est l’encodage le plus courant pour les données sur le Web et les fichiers sur le disque.
 
@@ -29,8 +29,8 @@ La bibliothèque fournit également des classes pour l’utilisation d’un mod�
 * La bibliothèque est intégrée dans le cadre de l’infrastructure partagée [.net Core 3,0](https://aka.ms/netcore3download) .
 * Pour les autres frameworks cibles, installez le package NuGet [System. Text. JSON](https://www.nuget.org/packages/System.Text.Json) . Le package prend en charge :
   * .NET Standard 2,0 et versions ultérieures
-  * .NET Framework 4,61 et versions ultérieures
-  * .NET Core 2,0 et versions ultérieures
+  * .NET Framework 4.6.1 et versions ultérieures
+  * .NET Core 2,0, 2,1 et 2,2
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

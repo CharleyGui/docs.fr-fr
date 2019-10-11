@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: f791546e2fc00e276ab55302802a5534465ace58
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: c39a42b7f5200208a0f812665a2d1c87b4433ba9
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674336"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275789"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -118,7 +118,7 @@ public class OrderQueries : IOrderQueries
         using (var connection = new SqlConnection(_connectionString))
         {
             connection.Open();
-            var result = await connection.QueryAsync<OrderSummary>(
+            return await connection.QueryAsync<OrderSummary>(
                   @"SELECT o.[Id] as ordernumber, 
                   o.[OrderDate] as [date],os.[Name] as [status], 
                   SUM(oi.units*oi.unitprice) as total
@@ -185,13 +185,13 @@ L’image ci-dessus présente des exemples de valeurs basés sur les types ViewM
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Dapper** \
+- **Dapper**  
  <https://github.com/StackExchange/dapper-dot-net>
 
-- **Julie Lerman. Points de données : Dapper, Entity Framework et les applications hybrides (article du magazine MSDN)**  \
-  <https://msdn.microsoft.com/magazine/mt703432.aspx>
+- **Julie Lerman. Points de données-dapper, Entity Framework et applications hybrides (article MSDN Magazine)**  
+  <https://msdn.microsoft.com/magazine/mt703432>
 
-- **Pages d’aide d’API web ASP.NET Core avec Swagger** \
+- **Pages d’aide sur l’API web ASP.NET Core avec Swagger**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>
 
 >[!div class="step-by-step"]

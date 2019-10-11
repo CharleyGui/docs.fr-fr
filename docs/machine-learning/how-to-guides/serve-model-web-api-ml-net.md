@@ -5,12 +5,12 @@ ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 1173315bbc88797ce0c6d0fcc9597896f14889ac
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 42f8d51f2547cd6f3240a05420b2da10b7cf52e3
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332690"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179392"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Déployer un modèle dans une API web ASP.NET Core
 
@@ -138,7 +138,16 @@ Définissez le paramètre `watchForChanges` sur `true`, et le `PredictionEngineP
 
 Le modèle est identifié par le paramètre `modelName` afin que plusieurs modèles par application puissent être rechargés une fois la modification apportée. 
 
-Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application.
+> [!TIP]
+> Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application. Dans l’exemple de code ci-dessous, le `PredictionEnginePool` interroge le modèle stocké à l’URI spécifié toutes les minutes.
+>    
+>```csharp
+>builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
+>   .FromUri(
+>       modelName: "SentimentAnalysisModel", 
+>       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip", 
+>       period: TimeSpan.FromMinutes(1));
+>```
 
 ## <a name="create-predict-controller"></a>Créer un contrôleur de prédictions
 

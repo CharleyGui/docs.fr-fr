@@ -2,12 +2,12 @@
 title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 700cd9a00c30b0a5fc87f9ffcd63821bb578b0cc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: a5f78ea0e848ef14f6b37e2d97d7546df20096c2
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674826"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179409"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
 

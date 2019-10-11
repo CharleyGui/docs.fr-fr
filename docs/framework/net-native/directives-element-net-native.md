@@ -28,7 +28,7 @@ ms.locfileid: "71049879"
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`xmlns`|Espace de noms XML. Sa valeur est toujours **« http://schemas.microsoft.com/netfx/2013/01/metadata »** .|  
+|`xmlns`|Espace de noms XML. Sa valeur est toujours **"http://schemas.microsoft.com/netfx/2013/01/metadata"** .|  
   
 ## <a name="child-elements"></a>Éléments enfants  
   

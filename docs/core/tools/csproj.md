@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 89ab22f0c5e69f29ff31e13d46dce8ba278d08da
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 5cb8322fc50dc5759f8e546ae6b698c036c91fa4
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216203"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179999"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -130,8 +130,8 @@ L’élément `<Project>` racine du fichier *.csproj* a un nouvel attribut nomm�
 1. Le SDK .NET Core avec l’ID `Microsoft.NET.Sdk`
 2. Le SDK .NET Core avec l’ID `Microsoft.NET.Sdk.Web`
 3. Le Kit SDK de la bibliothèque de classes .NET Core Razor avec l’ID `Microsoft.NET.Sdk.Razor`
-4. Service Worker .net core avec l’ID de `Microsoft.NET.Sdk.Worker` (depuis .net Core 3,0)
-5. Le WinForms .net Core et WPF avec l’ID de `Microsoft.NET.Sdk.WindowsDesktop` (depuis .net Core 3,0)
+4. Service Worker .NET Core avec l’ID de `Microsoft.NET.Sdk.Worker` (depuis .NET Core 3,0)
+5. Le WinForms .NET Core et WPF avec l’ID de `Microsoft.NET.Sdk.WindowsDesktop` (depuis .NET Core 3,0)
 
 Vous devez définir l’attribut `Sdk` sur un de ces ID pour l’élément `<Project>` afin d’utiliser les outils .NET Core et générer votre code.
 
@@ -348,6 +348,12 @@ Spécifie l’URL du dépôt où réside le code source du package et/ou à part
 
 Spécifie le type de dépôt. La valeur par défaut est « git ».
 
+### <a name="repositorybranch"></a>RepositoryBranch
+Spécifie le nom de la branche source dans le référentiel. Lorsque le projet est empaqueté dans un package NuGet, il est ajouté aux métadonnées du package.
+
+### <a name="repositorycommit"></a>RepositoryCommit
+Validation ou ensemble de modifications de référentiel facultatif pour indiquer la source à partir de laquelle le package a été généré. `RepositoryUrl` doit également être spécifié pour que cette propriété soit incluse. Lorsque le projet est empaqueté dans un package NuGet, cette validation ou cet ensemble de modifications est ajouté aux métadonnées du package.
+
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis
 
 Spécifie que le pack ne doit pas exécuter d’analyse du package après sa génération.
@@ -395,7 +401,7 @@ Les [attributs d’assembly](../../standard/assembly/set-attributes.md) qui figu
 
 Chaque attribut a une propriété qui contrôle son contenu et une autre pour désactiver sa génération, comme indiqué dans le tableau suivant :
 
-| Attribut                                                      | Property               | Propriété permettant de désactiver                             |
+| Attribut                                                      | Propriété               | Propriété permettant de désactiver                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|
 | <xref:System.Reflection.AssemblyCompanyAttribute>              | `Company`              | `GenerateAssemblyCompanyAttribute`              |
 | <xref:System.Reflection.AssemblyConfigurationAttribute>        | `Configuration`        | `GenerateAssemblyConfigurationAttribute`        |

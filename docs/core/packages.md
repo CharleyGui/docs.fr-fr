@@ -4,12 +4,12 @@ description: Découvrez la terminologie des packages, des métapackages et des i
 author: richlander
 ms.date: 06/20/2016
 ms.custom: seodec18
-ms.openlocfilehash: a03a4961b116b05468ac6c6ce5e648c07a77b7f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7b019686df195a8cebdce126f7a0b2d22548dc0e
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59090496"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275765"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Packages, métapackages et frameworks
 
@@ -72,7 +72,7 @@ Le métapackage .NET Standard est le suivant :
 Les principaux métapackages .NET Core sont les suivants :
 
 - [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) : décrit les bibliothèques qui font partie de la distribution .NET Core. Établit le [`.NETCoreApp`framework](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj). Dépend de la bibliothèque `NETStandard.Library` (plus petite).
-- [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.App) : contient tous les packages pris en charge d’ASP.NET Core et d’Entity Framework Core, sauf ceux qui contiennent des dépendances tierces. Pour plus d’informations, voir [Métapackage Microsoft.AspNetCore.App pour ASP.NET Core](/aspnet/core/fundamentals/metapackage).
+- [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.App) : contient tous les packages pris en charge d’ASP.NET Core et d’Entity Framework Core, sauf ceux qui contiennent des dépendances tierces. Pour plus d’informations, voir [Métapackage Microsoft.AspNetCore.App pour ASP.NET Core](/aspnet/core/fundamentals/metapackage-app).
 - [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) : contient tous les packages pris en charge d’ASP.NET Core, d’Entity Framework Core, et des dépendances internes et tierces utilisées par ASP.NET Core et Entity Framework Core. Pour plus d’informations, consultez [Métapackage Microsoft.AspNetCore.All pour ASP.NET Core 2.x](/aspnet/core/fundamentals/metapackage).
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) : ensemble de façades de compatibilité qui permettent aux bibliothèques de classes portables (PCL) basées sur mscorlib de s’exécuter sur .NET Core.
 

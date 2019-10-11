@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 6dfbbbb6ef64b3dbb83d15ba66860acb7c5b3585
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: fb08cef284a016dd65c99a1efb0a661624a731f1
+  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850743"
+  ms.lasthandoff: 10/09/2019
+  ms.locfileid: "72179008"
 items:
 - durationInMinutes: 1
   content: >
@@ -36,6 +36,9 @@ items:
     }
 
     ```
+
+
+    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](arrays-and-collections.md) .
 
 
     Vous avez créé une liste de chaînes, ajouté trois noms à cette liste et affiché les noms en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.

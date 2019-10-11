@@ -1,17 +1,17 @@
 ---
 title: 'Tutoriel : Analyser le sentiment-classification binaire'
 description: Ce didacticiel vous montre comment créer une application Razor Pages qui classe les sentiments à partir de commentaires de site Web et prend les mesures appropriées. Le classifieur de sentiment binaire utilise le générateur de modèles dans Visual Studio.
-ms.date: 09/30/2019
+ms.date: 10/08/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: ce64f0d11b1da65e460235fdabc2b07e05ffcbe4
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 4a97fb70caafd7b0003830259ddbb0ec72a2ca8a
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700910"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180269"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Tutoriel : Analyser les sentiments des commentaires de site Web dans une application Web à l’aide du générateur de modèles ML.NET
 
@@ -70,12 +70,12 @@ Chaque ligne du jeu de données *Wikipédia-Detox-250-Line-Data. TSV* représent
 
 Pour entraîner votre modèle, vous devez sélectionner dans la liste des scénarios Machine Learning disponibles fournis par Model Builder.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet *SentimentRazor* , puis sélectionnez **Ajouter** > un**machine learning**.
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet *SentimentRazor* , puis sélectionnez **Ajouter** > **machine learning**.
 1. Pour cet exemple, le scénario est l’analyse de sentiments. Dans l’étape de *scénario* de l’outil générateur de modèles, sélectionnez le scénario **analyse des sentiments** .
 
 ## <a name="load-the-data"></a>Charger les données
 
-Le générateur de modèles accepte les données de deux sources, une base de données SQL Server `csv` ou `tsv` un fichier local au format ou.
+Le générateur de modèles accepte les données de deux sources, une base de données SQL Server ou un fichier local au format `csv` ou `tsv`.
 
 1. Dans l’étape des données de l’outil Model Builder, sélectionnez **Fichier** dans la liste déroulante des sources de données.
 1. Sélectionnez le bouton en regard de la zone de texte **Sélectionner un fichier** et utilisez l’Explorateur de fichiers pour parcourir et sélectionner le fichier *Wikipédia-Detox-250-Line-Data. TSV* .
@@ -85,7 +85,7 @@ Le générateur de modèles accepte les données de deux sources, une base de do
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
-La tâche de Machine Learning utilisée pour l’apprentissage du modèle de prédiction de prix dans ce didacticiel est la classification binaire. Pendant le processus d’apprentissage du modèle, le générateur de modèles forme des modèles distincts à l’aide de différents algorithmes et paramètres de classification binaire pour trouver le modèle le plus performant pour votre jeu de données.
+La tâche de Machine Learning utilisée pour l’apprentissage du modèle d’analyse des sentiments dans ce didacticiel est la classification binaire. Pendant le processus d’apprentissage du modèle, le générateur de modèles forme des modèles distincts à l’aide de différents algorithmes et paramètres de classification binaire pour trouver le modèle le plus performant pour votre jeu de données.
 
 Le temps nécessaire pour l’entraînement du modèle est proportionnel à la quantité de données. Le générateur de modèles sélectionne automatiquement une valeur par défaut pour le **temps de formation (en secondes)** en fonction de la taille de votre source de données.
 
@@ -150,7 +150,7 @@ Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`]
     private readonly string _modelPath;
     ```
 
-1. Le fichier de modèle est stocké dans le répertoire de build en même temps que les fichiers d’assembly de votre application. Pour faciliter l’accès à, créez une méthode d’assistance appelée `GetAbsolutePath` après la `Configure` méthode.
+1. Le fichier de modèle est stocké dans le répertoire de build en même temps que les fichiers d’assembly de votre application. Pour faciliter l’accès à, créez une méthode d’assistance appelée `GetAbsolutePath` après la méthode `Configure`
 
     ```csharp
     public static string GetAbsolutePath(string relativePath)
@@ -163,13 +163,13 @@ Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`]
     }    
     ```
 
-1. Utilisez la `GetAbsolutePath` méthode dans le `Startup` constructeur de `_modelPath`classe pour définir.
+1. Utilisez la méthode `GetAbsolutePath` dans le constructeur de classe `Startup` pour définir le `_modelPath`.
 
     ```csharp
     _modelPath = GetAbsolutePath("MLModel.zip");
     ```
 
-1. Configurez `ConfigureServices`pourvotre application dans la méthode : `PredictionEnginePool`
+1. Configurez la `PredictionEnginePool` pour votre application dans la méthode `ConfigureServices` :
 
     ```csharp
     services.AddPredictionEnginePool<ModelInput, ModelOutput>()
@@ -178,7 +178,7 @@ Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`]
 
 ### <a name="create-sentiment-analysis-handler"></a>Créer un gestionnaire d’analyse de sentiments
 
-Les prédictions sont effectuées à l’intérieur de la page principale de l’application. Par conséquent, une méthode qui prend l’entrée utilisateur et utilise `PredictionEnginePool` pour retourner une prédiction doit être ajoutée.
+Les prédictions sont effectuées à l’intérieur de la page principale de l’application. Par conséquent, une méthode qui prend l’entrée utilisateur et utilise le `PredictionEnginePool` pour retourner une prédiction doit être ajoutée.
 
 1. Ouvrez le fichier *index.cshtml.cs* situé dans le répertoire *pages* et ajoutez les instructions using suivantes :
 
@@ -187,15 +187,15 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
     using SentimentRazorML.Model;
     ```
 
-    Pour utiliser le `PredictionEnginePool` configuré dans la `Startup` classe, vous devez l’injecter dans le constructeur du modèle où vous souhaitez l’utiliser.
+    Pour utiliser le `PredictionEnginePool` configuré dans la classe `Startup`, vous devez l’injecter dans le constructeur du modèle où vous souhaitez l’utiliser.
 
-1. Ajoutez une variable pour référencer `PredictionEnginePool` à l' `IndexModel` intérieur de la classe.
+1. Ajoutez une variable pour référencer le `PredictionEnginePool` à l’intérieur de la classe `IndexModel`.
 
     ```csharp
     private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
     ```
 
-1. Créez un constructeur dans la `IndexModel` classe et injectez `PredictionEnginePool` le service dans celui-ci.
+1. Créez un constructeur dans la classe `IndexModel` et injectez le service `PredictionEnginePool` dans celui-ci.
 
     ```csharp
     public IndexModel(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
@@ -204,9 +204,9 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
     }    
     ```
 
-1. Créez un gestionnaire de méthode qui utilise `PredictionEnginePool` pour effectuer des prédictions à partir de l’entrée utilisateur reçue de la page Web.
+1. Créez un gestionnaire de méthode qui utilise le `PredictionEnginePool` pour faire des prédictions à partir de l’entrée utilisateur reçue de la page Web.
 
-    1. Sous la `OnGet` méthode, créez une nouvelle méthode appelée`OnGetAnalyzeSentiment`
+    1. Sous la méthode `OnGet`, créez une nouvelle méthode appelée `OnGetAnalyzeSentiment`
 
         ```csharp
         public IActionResult OnGetAnalyzeSentiment([FromQuery] string text)
@@ -215,25 +215,25 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
         }
         ```
 
-    1. À l' `OnGetAnalyzeSentiment` intérieur de la méthode, retournez un sentiment *neutre* si l’entrée de l’utilisateur est vide ou null.
+    1. À l’intérieur de la méthode `OnGetAnalyzeSentiment`, retournez un sentiment *neutre* si l’entrée de l’utilisateur est vide ou null.
 
         ```csharp
         if (String.IsNullOrEmpty(text)) return Content("Neutral");
         ```
 
-    1. En fonction d’une entrée valide, créez une nouvelle `ModelInput`instance de.
+    1. En fonction d’une entrée valide, créez une nouvelle instance de `ModelInput`.
 
         ```csharp
         var input = new ModelInput { SentimentText = text };
         ```
 
-    1. Utilisez pour `PredictionEnginePool` prédire le sentiment.
+    1. Utilisez la `PredictionEnginePool` pour prédire le sentiment.
 
         ```csharp
         var prediction = _predictionEnginePool.Predict(input);
         ```
 
-    1. Convertissez la `bool` valeur prédite en toxique ou non toxique avec le code suivant.
+    1. Convertissez la valeur prédites `bool` en toxique ou non toxique avec le code suivant.
 
         ```csharp
         var sentiment = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
@@ -247,7 +247,7 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
 
 ### <a name="configure-the-web-page"></a>Configurer la page Web
 
-Les résultats retournés `OnGetAnalyzeSentiment` par le s’affichent dynamiquement `Index` sur la page Web.
+Les résultats retournés par la `OnGetAnalyzeSentiment` seront affichés dynamiquement sur la page Web de `Index`.
 
 1. Ouvrez le fichier *index. cshtml* dans le répertoire *pages* et remplacez son contenu par le code suivant :
 
@@ -257,21 +257,21 @@ Les résultats retournés `OnGetAnalyzeSentiment` par le s’affichent dynamique
 
     [!code-css [CssStyling](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/css/site.css#L61-L105)]
 
-1. Après cela, ajoutez du code pour envoyer des entrées de la page Web `OnGetAnalyzeSentiment` au gestionnaire.
+1. Après cela, ajoutez du code pour envoyer des entrées de la page Web au gestionnaire `OnGetAnalyzeSentiment`.
 
-    1. Dans le fichier *site. js* situé dans le répertoire *wwwroot\js* , créez une fonction appelée `getSentiment` pour obtenir une requête HTTP `OnGetAnalyzeSentiment` avec l’entrée utilisateur du gestionnaire.
+    1. Dans le fichier *site. js* situé dans le répertoire *wwwroot\js* , créez une fonction appelée `getSentiment` pour obtenir une requête HTTP avec l’entrée utilisateur du gestionnaire `OnGetAnalyzeSentiment`.
 
         [!code-javascript [GetSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L5-L10)]
 
-    1. En dessous, ajoutez une autre fonction `updateMarker` appelée pour mettre à jour dynamiquement la position du marqueur sur la page Web à mesure que le sentiment est prédit.
+    1. En dessous, ajoutez une autre fonction appelée `updateMarker` pour mettre à jour dynamiquement la position du marqueur sur la page Web à mesure que le sentiment est prédit.
 
         [!code-javascript [UpdateMarkerMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L12-L15)]
 
-    1. Créez une fonction de gestionnaire d' `updateSentiment` événements appelée pour recevoir l’entrée de l’utilisateur, l’envoyer `OnGetAnalyzeSentiment` à la fonction `getSentiment` à l’aide de la fonction et `updateMarker` mettre à jour le marqueur avec la fonction.
+    1. Créez une fonction de gestionnaire d’événements appelée `updateSentiment` pour récupérer l’entrée de l’utilisateur, envoyez-la à la fonction `OnGetAnalyzeSentiment` à l’aide de la fonction `getSentiment` et mettez à jour le marqueur avec la fonction `updateMarker`.
 
         [!code-javascript [UpdateSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L17-L34)]
 
-    1. Enfin, enregistrez le gestionnaire d’événements et liez-le `textarea` à l’élément `id=Message` avec l’attribut.
+    1. Enfin, enregistrez le gestionnaire d’événements et liez-le à l’élément `textarea` avec l’attribut `id=Message`.
 
         [!code-javascript [UpdateSentimentEvtHandler](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L36)]
 
@@ -283,7 +283,7 @@ Lorsque l’application démarre, entrez le *Générateur de modèles est cool 
 
 ![Fenêtre en cours d’exécution avec la fenêtre de sentiment prédite](./media/sentiment-analysis-model-builder/web-app.png)
 
-Si vous devez référencer les projets générés par le générateur de modèles ultérieurement dans une autre solution, vous pouvez les Rechercher dans `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` le répertoire.
+Si vous devez référencer les projets générés par le générateur de modèles ultérieurement dans une autre solution, vous pouvez les Rechercher dans le répertoire `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

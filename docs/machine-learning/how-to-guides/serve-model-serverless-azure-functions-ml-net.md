@@ -5,12 +5,12 @@ ms.date: 09/12/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: ef028fee6cafcf4a775e061d9a5f91f0cf9a7e36
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 2abd8588aa314b630c995e0c78b5869ec00a89df
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332708"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179372"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Déployer un modèle sur Azure Functions
 
@@ -149,7 +149,16 @@ Définissez le paramètre `watchForChanges` sur `true`, et le `PredictionEngineP
 
 Le modèle est identifié par le paramètre `modelName` afin que plusieurs modèles par application puissent être rechargés une fois la modification apportée. 
 
-Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application.
+> [!TIP]
+> Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application. Dans l’exemple de code ci-dessous, le `PredictionEnginePool` interroge le modèle stocké à l’URI spécifié toutes les minutes.
+>    
+>```csharp
+>builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
+>   .FromUri(
+>       modelName: "SentimentAnalysisModel", 
+>       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip", 
+>       period: TimeSpan.FromMinutes(1));
+>```
 
 ## <a name="load-the-model-into-the-function"></a>Charger le modèle dans la fonction
 

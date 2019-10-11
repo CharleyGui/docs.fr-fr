@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 914a1eeee2d3d1843bf597f94761e39d16331b5c
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: beecab2be57367dc0a200ff4f6067549cf1e7c51
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956648"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179790"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -25,7 +25,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible avec [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou [.net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible avec [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou [.net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 Ce tutoriel suppose de connaître C# et .NET, y compris Visual Studio ou l’interface CLI .NET Core.
 
@@ -37,7 +37,7 @@ Le code que vous allez écrire pour cet exemple exprime cette intention, que le 
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Créer l’application et activer les types référence Nullable
 
-Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois que vous avez créé l’application, vous devez spécifier que l’ensemble du projet se compile dans un **contexte d’annotation**`enabled` Nullable. Ouvrez le fichier `csproj` et ajoutez un élément `Nullable` à l'élément `PropertyGroup`. Affectez-lui la valeur `enabled`. Vous devez cocher la fonctionnalité **Types référence Nullable**, même dans les projets C# 8. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision permette de détecter les problèmes dans lesquels le code existant peut ne pas avoir de contrôles nuls corrects, il risque de ne pas refléter précisément votre intention de conception d’origine :
+Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois que vous avez créé l’application, vous devez spécifier que l’intégralité du projet compile dans un contexte d' **annotation Nullable**activé. Ouvrez le fichier *. csproj* et ajoutez un élément `Nullable` à l’élément `PropertyGroup`. Affectez-lui la valeur `enable`. Vous devez opter pour la fonctionnalité des **types de référence Nullable** , C# même dans les projets 8,0. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision permette de détecter les problèmes dans lesquels le code existant peut ne pas avoir de contrôles nuls corrects, il risque de ne pas refléter précisément votre intention de conception d’origine :
 
 ```xml
 <Nullable>enable</Nullable>
@@ -84,7 +84,7 @@ namespace NullableIntroduction
 }
 ```
 
-Le compilateur interprète chaque déclaration de variable de type référence comme **non Nullable** pour le code dans un contexte nullable. Un premier avertissement apparaît lorsque l’on ajoute des propriétés pour le texte et le type de la question avec le code suivant :
+Le compilateur interprète chaque déclaration de variable de type référence comme un type de référence **non Nullable** pour le code dans un contexte d’annotation Nullable activé. Un premier avertissement apparaît lorsque l’on ajoute des propriétés pour le texte et le type de la question avec le code suivant :
 
 ```csharp
 namespace NullableIntroduction
@@ -134,7 +134,7 @@ Basculez vers *Program.cs* dans votre éditeur et remplacez le contenu de `Main`
 
 [!code-csharp[AddQuestions](~/samples/csharp/NullableIntroduction/NullableIntroduction/Program.cs#AddQuestions)]
 
-Étant donné que l’ensemble du projet se trouve dans un contexte nullable, vous obtiendrez des avertissements lorsque vous transmettez `null` à n’importe quelle méthode qui attend un type de référence non nullable. Regardez le résultat en ajoutant la ligne suivante à `Main` :
+Étant donné que le projet entier est dans un contexte d’annotation Nullable activé, vous obtenez des avertissements quand vous transmettez `null` à une méthode qui attend un type de référence non Nullable. Regardez le résultat en ajoutant la ligne suivante à `Main` :
 
 ```csharp
 surveyRun.AddQuestion(QuestionType.Text, default);

@@ -2,12 +2,12 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 0d138e31f8cd5b447c75bffda5164d92ce8eb5a2
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 055a4250755af02ad392877663985f86a647f892
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117598"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275751"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -137,11 +137,11 @@ Spécifie la source de package NuGet à utiliser pendant l’opération de resta
 
 `--verbosity <LEVEL>`
 
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
 
 `--interactive`
 
-Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (par exemple, s’identifier). Depuis .NET Core 2.1.400.
+Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (par exemple, s’authentifier). Depuis .NET Core 2.1.400.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
@@ -179,11 +179,11 @@ Spécifie un runtime pour la restauration du package. Cela permet de restaurer l
 
 `-s|--source <SOURCE>`
 
-Spécifie la source de package NuGet à utiliser pendant l’opération de restauration. Cela remplace toutes les sources spécifiées dans les fichiers *NuGet. config* , en lisant le fichier *NuGet. config* comme si l' `<packageSource>` élément était introuvable. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
+Spécifie la source de package NuGet à utiliser pendant l’opération de restauration. Cela remplace toutes les sources spécifiées dans les fichiers *NuGet. config* , en lisant le fichier *NuGet. config* comme si l’élément `<packageSource>` était introuvable. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
 
 `--verbosity <LEVEL>`
 
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
 
 ---
 
@@ -205,6 +205,6 @@ Restaurer les dépendances et les outils du projet se trouvant dans le répertoi
 
 `dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages`
 
-Restaurer les dépendances et les outils du projet se trouvant dans le répertoire actif et afficher uniquement une sortie minimale :
+Restaurez les dépendances et les outils pour le projet dans le répertoire actif et affichez la sortie détaillée :
 
-`dotnet restore --verbosity minimal`
+`dotnet restore --verbosity detailed`

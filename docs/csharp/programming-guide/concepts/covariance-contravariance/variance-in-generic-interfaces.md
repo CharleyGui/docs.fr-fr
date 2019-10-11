@@ -2,18 +2,18 @@
 title: Variance dans les interfaces génériques (C#)
 ms.date: 06/06/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
-ms.openlocfilehash: 12a8b58983256be0ca2b56ea6ed09e724e0814c8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 71225814a11074f52e4937dec88ca5e27114d6c7
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595162"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72179057"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Variance dans les interfaces génériques (C#)
 
 .NET Framework 4 a introduit la prise en charge de la variance pour plusieurs interfaces génériques existantes. La prise en charge de la variance permet la conversion implicite des classes qui implémentent ces interfaces. 
 
-À compter de .NET Framework 4, les interfaces suivantes sont des variants :
+À partir de .NET Framework 4, les interfaces suivantes sont des variantes :
 
 - <xref:System.Collections.Generic.IEnumerable%601> (T est covariant)
 

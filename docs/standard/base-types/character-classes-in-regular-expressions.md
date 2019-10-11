@@ -15,12 +15,12 @@ ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 53dcbcfdcc9a8d04840bc91a563b6514153b9577
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: f6d96d14a4d05178a8f90c15edecb1318e8c5a36
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963428"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957203"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -59,17 +59,13 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
   
  La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
 
-```  
-[*character_group*]  
-```
+`[*character_group*]`
 
  où *groupe_caractères* est la liste des différents caractères pouvant apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
   
-```  
-[firstCharacter-lastCharacter]  
-```  
+`[firstCharacter-lastCharacter]`  
   
  où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
 
@@ -119,17 +115,13 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
   
 La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
 
-```
-[*^character_group*]  
-```
+`[*^character_group*]`
 
  où *groupe_caractères* est la liste des différents caractères qui ne peuvent pas apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
 
-```
-[^*firstCharacter*-*lastCharacter*]  
-```
+`[^*firstCharacter*-*lastCharacter*]`
 
 où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
 
@@ -237,7 +229,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="word-character-w"></a>Caractère de mot : \w  
  `\w` correspond à n'importe quel caractère alphabétique. Un caractère de mot est un membre d'une des catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
@@ -267,13 +259,11 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="non-word-character-w"></a>Caractère autre qu’un mot : \W  
  `\W` correspond à tout caractère autre qu'un caractère alphabétique. L'élément de langage \W est équivalent à la classe de caractères suivante :  
   
-```  
-[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]  
-```  
+`[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`  
   
  En d’autres termes, il correspond à n’importe quel caractère à l’exception de ceux inclus dans les catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
@@ -306,7 +296,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="whitespace-character-s"></a>Espace : \s  
  `\s` correspond à n'importe quel espace. Il est équivalent aux séquences d'échappement et catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |`\f`|Saut de page, \u000C.|  
 |`\n`|Saut de ligne, \u000A.|  
@@ -393,7 +383,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="supported-unicode-general-categories"></a>Catégories générales Unicode prises en charge  
  La norme Unicode définit les catégories générales répertoriées dans le tableau suivant. Pour plus d’informations, consultez les sous-rubriques « Format de fichier UCD » et « Valeurs des catégories générales » dans la [Base de données de caractères Unicode](https://www.unicode.org/reports/tr44/).  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |`Lu`|Letter, Uppercase|  
 |`Ll`|Letter, Lowercase|  
@@ -452,7 +442,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |0250 - 02AF|`IsIPAExtensions`|  
 |02B0 - 02FF|`IsSpacingModifierLetters`|  
 |0300 - 036F|`IsCombiningDiacriticalMarks`|  
-|0370 - 03FF|`IsGreek`<br /><br /> -ou-<br /><br /> `IsGreekandCoptic`|  
+|0370 - 03FF|`IsGreek`<br /><br /> \- ou -<br /><br /> `IsGreekandCoptic`|  
 |0400 - 04FF|`IsCyrillic`|  
 |0500 - 052F|`IsCyrillicSupplement`|  
 |0530 - 058F|`IsArmenian`|  
@@ -496,7 +486,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |2000 - 206F|`IsGeneralPunctuation`|  
 |2070 - 209F|`IsSuperscriptsandSubscripts`|  
 |20A0 - 20CF|`IsCurrencySymbols`|  
-|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> -ou-<br /><br /> `IsCombiningMarksforSymbols`|  
+|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> \- ou -<br /><br /> `IsCombiningMarksforSymbols`|  
 |2100 - 214F|`IsLetterlikeSymbols`|  
 |2150 - 218F|`IsNumberForms`|  
 |2190 - 21FF|`IsArrows`|  

@@ -2,12 +2,12 @@
 title: 'Procédure : Filtrer sur un élément facultatif (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
-ms.openlocfilehash: 4de8c0b07eebc340a53785e6b932a66cb9d2fec9
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 01ab143dd48b0cb0ff74aa039fa292501654056a
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710421"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250006"
 ---
 # <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Procédure : Filtrer sur un élément facultatif (Visual Basic)
 Parfois, vous souhaitez appliquer un filtrage sur un élément sans être certain qu'il existe dans votre document XML. La recherche doit être exécutée de telle sorte que, si l'élément particulier ne possède pas l'élément enfant, aucune exception de référence Null ne soit déclenchée suite au filtrage. Dans l'exemple suivant, l'élément `Child5` ne possède pas d'élément enfant `Type`, mais la requête s'exécute tout de même correctement.  
@@ -50,7 +50,7 @@ Next
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 Child One Text  
 Child Two Text  
 Child Four Text  
@@ -100,7 +100,7 @@ End Module
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 Child One Text  
 Child Two Text  
 Child Four Text  

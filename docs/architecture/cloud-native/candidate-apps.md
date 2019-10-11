@@ -3,12 +3,12 @@ title: Applications candidates pour le Cloud Native
 description: Découvrez les types d’applications qui bénéficient d’une approche Cloud Native
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: a06ecdd9bfb3bd50757c484115eb123862a1bb9e
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 6da531397e6103e5c59accf321bc5ae82153dded
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214005"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275818"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Applications candidates pour le Cloud Native
 
@@ -36,8 +36,7 @@ Il existe alors des systèmes hérités. Bien que nous aimerions tout pour crée
 
 Le livre électronique gratuit de Microsoft, [moderniser les applications .NET existantes avec des conteneurs Cloud et Windows Azure](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) fournit des conseils pour la migration des charges de travail locales vers le Cloud. La figure 1-8 montre qu’il n’existe pas de stratégie unique, unique et adaptée à la modernisation des applications héritées.
 
-![Stratégies de migration des charges de](./media/strategies-for-migrating-legacy-workloads.png)
-travail héritées**figure 1-8**. Stratégies de migration des charges de travail héritées
+![Strategies pour la migration des charges de travail héritées @ no__t-1**Figure 1-8**. Stratégies de migration des charges de travail héritées
 
 Les applications monolithiques non critiques bénéficient en grande partie d’une migration rapide (prête à l'[emploi pour l’infrastructure cloud](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). Ici, la charge de travail locale est réhébergée sur une machine virtuelle basée sur le Cloud, sans modification. Cette approche utilise le [modèle IaaS (infrastructure as a service)](https://azure.microsoft.com/overview/what-is-iaas/). Azure comprend plusieurs outils tels que ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)et [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)) pour faciliter le déplacement. Bien que cette stratégie puisse entraîner des économies, ces applications n’ont généralement pas été conçues pour se déverrouiller et tirer parti des avantages de cloud computing. 
 
@@ -65,7 +64,7 @@ La stratégie de migration appropriée dépend des priorités organisationnelles
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans ce chapitre, nous avons introduit l’informatique Native Cloud. Nous avons fourni une définition avec les fonctionnalités clés qui pilotent une application Cloud native. Nous avons examiné les types d’applications susceptibles de justifier cet investissement et ce travail.
+Dans ce chapitre, nous avons introduit l’informatique Native Cloud. Nous avons fourni une définition avec les fonctionnalités clés qui pilotent une application Cloud native. Nous avons examiné les types d’applications qui peuvent justifier cet investissement et ce travail.
 
 Avec l’introduction de, nous nous penchons maintenant sur un examen bien plus détaillé du Cloud native.
 
@@ -73,7 +72,7 @@ Avec l’introduction de, nous nous penchons maintenant sur un examen bien plus 
 
 - [Base Cloud Native Computing](https://www.cncf.io/)
 
-- [Microservices .NET : Architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
+- [Microservices .NET : Architecture pour les applications .NET en conteneur @ no__t-0
 
 - [Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
 
@@ -83,7 +82,7 @@ Avec l’introduction de, nous nous penchons maintenant sur un examen bien plus 
 
 - [Qu’est-ce que l’infrastructure en tant que code ?](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)
 
-- [Micro deploy de l’ingénierie Uber : Déploiement quotidien en toute confiance](https://eng.uber.com/micro-deploy/)
+- Micro deploy de l’ingénierie @no__t 0Uber : Déploiement quotidien avec confiance @ no__t-0
 
 - [Comment Netflix déploie le code](https://www.infoq.com/news/2013/06/netflix/)
 

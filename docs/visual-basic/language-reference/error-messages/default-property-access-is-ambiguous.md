@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-ms.openlocfilehash: a36cfe8e5496bbfd1941afa8a46086491ae96a2a
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: f76163d58f3f11d3ca946525a1604abc3ebba68d
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512755"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250367"
 ---
-# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>L’accès à la propriété par défaut est ambigu entre les\<membres d’interface hérités'\<defaultpropertyname > 'de l'\<interface’interfacename1 > 'et\< 'defaultpropertyname > 'de l’interface' interfacename2 >»
+# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>L’accès à la propriété par défaut est ambigu entre les membres de l’interface héritée' \<defaultpropertyname > 'de l’interface' \<interfacename1 > 'et' \<defaultpropertyname > 'de l’interface' \<interfacename2 > '
 
 Une interface hérite de deux interfaces, chacune déclarant une propriété par défaut portant le même nom. Le compilateur ne peut pas résoudre un accès à cette propriété par défaut sans qualification. L'exemple suivant illustre ce comportement.
 
@@ -38,11 +38,11 @@ End Class
 
 Lorsque vous spécifiez `testObj(1)`, le compilateur essaie de le résoudre en propriété par défaut. Toutefois, il existe deux propriétés par défaut possibles en raison des interfaces héritées, de sorte que le compilateur signale cette erreur.
 
-**ID d’erreur:** BC30686
+**ID d’erreur :** BC30686
 
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur
 
-- Évitez d’hériter des membres portant le même nom. Dans l’exemple précédent, si `testObj` n’a pas besoin des membres de, par `Iface2`exemple,, déclarez-le comme suit:
+- Évitez d’hériter des membres portant le même nom. Dans l’exemple précédent, si `testObj` n’a pas besoin des membres de, disons, `Iface2`, déclarez-le comme suit :
 
   ```vb
   Dim testObj As Iface1
@@ -66,4 +66,4 @@ Lorsque vous spécifiez `testObj(1)`, le compilateur essaie de le résoudre en p
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [Interfaces](../../programming-guide/language-features/interfaces/index.md)

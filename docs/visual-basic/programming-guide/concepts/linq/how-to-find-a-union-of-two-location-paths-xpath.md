@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic)'
+title: 'Procédure : Rechercher une Union de deux chemins d’accès d’emplacement (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c82c09b4-cb0a-47ec-8cc3-a124144c2788
-ms.openlocfilehash: 662cad329f4837d26b25d56f15d323fe623b05c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6905e6a7bd0cba37006b1fc3077ad72de36bcf56
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021672"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249950"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher une Union de deux chemins d’accès d’emplacement (XPath-LINQ to XML) (Visual Basic)
 XPath vous permet de rechercher l’union des résultats de deux chemins d’emplacements XPath.  
   
  L'expression XPath est la suivante :  
@@ -47,7 +47,7 @@ Next
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console
 Results are identical  
 <Category>A</Category>  
 <Price>24.50</Price>  
@@ -67,4 +67,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

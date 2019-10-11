@@ -1,15 +1,15 @@
 ---
-title: Mappage de eShopOnContainers aux services Azure
+title: Mappage d’eShopOnContainers aux services Azure
 description: Mappage de eShopOnContainers à des services Azure comme Azure Kubernetes service, API Gateway et Azure Service Bus.
 ms.date: 06/30/2019
-ms.openlocfilehash: feb6d8f5ca05ab55ce4695d1200766a18b8f744a
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67430da18c0a12c694426214de33e85c2113e454
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182817"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275816"
 ---
-# <a name="mapping-eshoponcontainers-to-azure-services"></a>Mappage de eShopOnContainers aux services Azure
+# <a name="mapping-eshoponcontainers-to-azure-services"></a>Mappage d’eShopOnContainers aux services Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -17,8 +17,7 @@ Bien que cela ne soit pas obligatoire, Azure est bien adapté à la prise en cha
 
 L’architecture de l’application est illustrée dans la figure 2-5. À gauche, les applications clientes sont décomposées en versions mobiles, traditionnelles Web et d’application à page unique (SPA) Web. À droite se trouvent les composants côté serveur qui composent le système, qui peuvent chacun être hébergés dans des conteneurs et des clusters Kubernetes. L’application Web traditionnelle est alimentée par l’application ASP.NET Core MVC affichée en jaune. Cette application et les applications mobiles et Web SPA communiquent avec les microservices individuels par le biais d’une ou de plusieurs passerelles d’API. Les passerelles d’API suivent le modèle « principaux pour les serveurs frontaux » (BFF), ce qui signifie que chaque passerelle est conçue pour prendre en charge un client frontal donné. Les microservices individuels sont répertoriés à droite des passerelles d’API et incluent à la fois la logique métier et un magasin de persistance. Les différents services utilisent des bases de données SQL Server, des instances de cache Redims et des magasins MongoDB/CosmosDB. À l’extrême droite se trouve le bus d’événements du système, qui est utilisé pour la communication entre les microservices.
 
-![eShopOnContainers architecture](./media/eshoponcontainers-architecture.png)
-de la**figure 2-5**. L’architecture eShopOnContainers.
+![eShopOnContainers architecture @ no__t-1**Figure 2-5**. L’architecture eShopOnContainers.
 
 Les composants côté serveur de cette architecture sont tous mappés facilement aux services Azure.
 
@@ -26,7 +25,7 @@ Les composants côté serveur de cette architecture sont tous mappés facilement
 
 Les services hébergés dans les conteneurs de l’application, du ASP.NET Core des applications MVC aux microservices de catalogue et de tri individuels, peuvent être hébergés et gérés dans Azure Kubernetes service (AKS). L’application peut s’exécuter localement sur docker et Kubernetes, et les mêmes conteneurs peuvent ensuite être déployés dans des environnements intermédiaires et de production hébergés dans AKS. Ce processus peut être automatisé comme nous le verrons dans la section suivante.
 
-AKS fournit des services de gestion pour les clusters individuels de conteneurs. L’application déploie des clusters AKS distincts pour chaque microservice présenté dans le diagramme d’architecture ci-dessus. Cette approche permet à chaque service individuel d’être individuellement en fonction de ses besoins en ressources. Chaque microservice peut également être déployé indépendamment, et dans l’idéal, ces déploiements doivent entraîner un temps d’arrêt du système nul.
+AKS fournit des services de gestion pour les clusters individuels de conteneurs. L’application déploie des clusters AKS distincts pour chaque microservice présenté dans le diagramme d’architecture ci-dessus. Cette approche permet à chaque service individuel d’évoluer indépendamment en fonction de ses besoins en ressources. Chaque microservice peut également être déployé indépendamment, et dans l’idéal, ces déploiements doivent entraîner un temps d’arrêt du système nul.
 
 ## <a name="api-gateway"></a>Passerelle d’API
 

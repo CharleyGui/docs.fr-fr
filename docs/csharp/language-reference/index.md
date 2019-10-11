@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: fd5c39bfcb05296a36d94ea64946f8c29ed7e4d6
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: df56287d161f7760e136eb80aa1a9171966df794
+ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925338"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72275801"
 ---
 # <a name="c-reference"></a>Référence C#
 Cette section fournit des ressources de référence sur les mots clés, les opérateurs, les caractères spéciaux, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur du langage C#.  
@@ -55,9 +55,9 @@ Les fonctionnalités ayant été implémentées dans les versions C# ultérieure
  C#7.3 est une nouvelle version qui comprend plusieurs petites mises à jour. Vous pouvez utiliser de nouvelles contraintes sur les paramètres de type générique. D’autres modifications facilitent l’utilisation des champs `fixed`, dont l’utilisation des répartitions [`stackalloc`](./operators/stackalloc.md). Les variables locales déclarées avec le mot clé `ref` peuvent être réassignées pour faire référence à un nouveau stockage. Vous pouvez placer des attributs sur les propriétés implémentées automatiquement qui ciblent le champ de stockage généré par le compilateur. Les variables d’expression peuvent être utilisées dans les initialiseurs. Les tuples peuvent être comparés pour savoir s’ils sont égaux (ou inégaux). Il y a également eu des améliorations pour la résolution de surcharge.
   
  [C#8,0 propositions de spécification](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
- C#8,0 est disponible avec .NET Core 3,0. Les fonctionnalités incluent les types de référence Nullable, les critères spéciaux récursifs, les membres d’interface par défaut, les flux asynchrones, les plages et les index, les modèles basés sur les déclarations, l’affectation de la fusion Null et les membres d’instance en lecture seule.
+ C#8,0 est disponible avec .NET Core 3,0. Les fonctionnalités incluent les types de référence Nullable, les critères spéciaux récursifs, les méthodes d’interface par défaut, les flux asynchrones, les plages et les index, les modèles basés sur et les déclarations, l’affectation de fusion Null et les membres d’instance en lecture seule.
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Guide C#](../index.md)  
  Fournit un portail vers la documentation Visual C#.  

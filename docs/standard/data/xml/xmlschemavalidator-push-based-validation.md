@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b78430c03b0d62dcf0e84577cd337240d3729d0e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: a420a134eda6c62758b0d218e3c0a4a4922b048c
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046529"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250041"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Validation XmlSchemaValidator de type push
 
@@ -189,25 +189,25 @@ L'exemple de <xref:System.Xml.Schema.XmlValueGetter>`delegate` suivant est pris 
 ```vb
 Shared dateTimeGetterContent As Object
 
-Shared Function dateTimeGetterHandle() As Object
+Shared Function DateTimeGetterHandle() As Object
     Return dateTimeGetterContent
 End Function
 
-Shared Function dateTimeGetter(ByVal dateTime As DateTime) As XmlValueGetter
+Shared Function DateTimeGetter(dateTime As DateTime) As XmlValueGetter
     dateTimeGetterContent = dateTime
-    Return New XmlValueGetter(AddressOf dateTimeGetterHandle)
+    Return New XmlValueGetter(AddressOf DateTimeGetterHandle)
 End Function
 ```
 
 ```csharp
 static object dateTimeGetterContent;
 
-static object dateTimeGetterHandle()
+static object DateTimeGetterHandle()
 {
     return dateTimeGetterContent;
 }
 
-static XmlValueGetter dateTimeGetter(DateTime dateTime)
+static XmlValueGetter DateTimeGetter(DateTime dateTime)
 {
     dateTimeGetterContent = dateTime;
     return new XmlValueGetter(dateTimeGetterHandle);
@@ -260,11 +260,11 @@ Par exemple, dans le schéma de langage XSD (XML Schema Definition) et le docume
 ```vb
 Dim reader As XmlReader =  XmlReader.Create("input.xml")
 
-Dim schemaSet As XmlSchemaSet =  New XmlSchemaSet()
+Dim schemaSet As New XmlSchemaSet()
 schemaSet.Add(Nothing, "schema.xsd")
-Dim manager As XmlNamespaceManager =  New XmlNamespaceManager(reader.NameTable)
+Dim manager As New XmlNamespaceManager(reader.NameTable)
 
-Dim validator As XmlSchemaValidator =  New XmlSchemaValidator(reader.NameTable,schemaSet,manager,XmlSchemaValidationFlags.None)
+Dim validator As New XmlSchemaValidator(reader.NameTable,schemaSet,manager,XmlSchemaValidationFlags.None)
 validator.Initialize()
 
 validator.ValidateElement("book", "", Nothing)
@@ -303,11 +303,11 @@ validator.ValidateEndElement(Nothing)
 ```csharp
 XmlReader reader = XmlReader.Create("input.xml");
 
-XmlSchemaSet schemaSet = new XmlSchemaSet();
+var schemaSet = new XmlSchemaSet();
 schemaSet.Add(null, "schema.xsd");
-XmlNamespaceManager manager = new XmlNamespaceManager(reader.NameTable);
+var manager = new XmlNamespaceManager(reader.NameTable);
 
-XmlSchemaValidator validator = new XmlSchemaValidator(reader.NameTable, schemaSet, manager, XmlSchemaValidationFlags.None);
+var validator = new XmlSchemaValidator(reader.NameTable, schemaSet, manager, XmlSchemaValidationFlags.None);
 validator.Initialize();
 
 validator.ValidateElement("book", "", null);
@@ -347,7 +347,7 @@ validator.ValidateEndElement(null);
 validator.ValidateEndElement(null);
 ```
 
- L'exemple prend le code XML suivant comme entrée.
+ L’exemple prend le code XML suivant comme entrée :
 
 ```xml
 <xs:schema xmlns:xs="http://www.w3c.org/2001/XMLSchema">
@@ -361,7 +361,7 @@ validator.ValidateEndElement(null);
 </xs:schema>
 ```
 
-L'exemple prend le schéma XSD suivant comme entrée.
+L’exemple prend le schéma XSD suivant comme entrée :
 
 ```xml
 <book>
@@ -404,7 +404,7 @@ Les avertissements de validation de schéma ont une valeur <xref:System.Xml.Sche
 L'exemple suivant illustre un objet <xref:System.Xml.Schema.ValidationEventHandler> qui reçoit des avertissements et erreurs de validation de schéma pendant une validation de schéma, provenant de l'exemple donné dans l'introduction.
 
 ```vb
-Shared Sub SchemaValidationEventHandler(ByVal sender As Object, ByVal e As ValidationEventArgs)
+Shared Sub SchemaValidationEventHandler(sender As Object, e As ValidationEventArgs)
 
     Select Case e.Severity
         Case XmlSeverityType.Error

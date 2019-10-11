@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: af06d938f86841620784909b16e72d000452fc2a
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: 5ea939172b35e4380ed3f32d7d06b5749d2005a0
+  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850672"
+  ms.lasthandoff: 10/09/2019
+  ms.locfileid: "72179861"
 items:
 - durationInMinutes: 1
   content: >
@@ -38,6 +38,9 @@ items:
     Console.WriteLine(c);
 
     ```
+
+
+    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](numbers-in-csharp-local.md) .
 
 
     Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :

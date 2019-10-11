@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher des éléments enfants en fonction de la Position (XPath-LINQ to XML) (Visual Basic)'
+title: 'Procédure : Rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6831e1db-5e97-444f-a7a1-d0a87104b005
-ms.openlocfilehash: 57b9f3d7986bd85a65716c833165e7b073414ef0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11a9fdd7ed8565c38b0527d266af75b8fb611a20
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780612"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249695"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher des éléments enfants en fonction de la Position (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (Visual Basic)
 Parfois, vous souhaitez rechercher des éléments en fonction de leur position. Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.  
   
  L’expression XPath est la suivante :  
@@ -56,7 +56,7 @@ Next
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 Results are identical  
 <Test TestId="0002" TestType="CMD">  
   <Name>Find succeeding characters</Name>  
@@ -80,4 +80,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

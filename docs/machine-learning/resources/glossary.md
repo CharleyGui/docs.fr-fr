@@ -4,12 +4,12 @@ description: La liste suivante est une compilation des principaux termes Machine
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: 4d4bb80c6582facbcb11664309fde230bcfa4e7b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cb5681f1f72776ec9a8cbcfe45519befe02b8caf
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929266"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72180182"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -37,7 +37,7 @@ Dans ML.NET, un catalogue est une collection de fonctions d’extension, regroup
 
 Par exemple, chaque tâche de machine learning (classification binaire, régression, classement, etc.) dispose d’un catalogue d’algorithmes de machine learning (entraîneurs). Le catalogue des entraîneurs de classification binaire est : <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>classification ;
+## <a name="classification"></a>Classification
 
 Lorsque les données sont utilisées pour prédire une catégorie, la tâche [Apprentissage automatique supervisé](#supervised-machine-learning) est appelée classification. [Classification binaire](#binary-classification) fait référence à la prédiction de deux catégories uniquement (par exemple, la classification d’une image en tant qu’image de « chat » ou de « chien »). [Classification multiclasse](#multiclass-classification) fait référence à la prédiction de plusieurs catégories (par exemple, lors de la classification d’une image en tant qu’image d’une race spécifique de chien).
 
@@ -123,7 +123,7 @@ Un vecteur de [fonctionnalité](#feature) constitué uniquement de valeurs numé
 
 Toutes les opérations nécessaires pour adapter un modèle à un jeu de données. Un pipeline se compose des étapes d’importation, de transformation, de fonctionnalisation et d’apprentissage des données. Une fois son apprentissage terminé, le pipeline se transforme en modèle.
 
-## <a name="precision"></a>Precision
+## <a name="precision"></a>Précision
 
 Dans une [classification](#classification), la précision d’une classe correspond au nombre d’éléments correctement prévus comme appartenant à cette classe, divisé par le nombre total d’éléments prévus comme appartenant à la classe.
 
@@ -136,9 +136,9 @@ Dans une [classification](#classification), le rappel d’une classe correspond 
  La régularisation pénalise un modèle linéaire en raison de sa trop grande complexité. Il existe deux types de régularisation :
 
 - La régularisation $L_1$ attribue une pondération nulle aux caractéristiques non significatives. La taille du modèle enregistré peut être plus petite après ce type de régularisation.
-- La régularisation $L_2$ réduit la plage de pondérations des caractéristiques non significatives. Il s’agit d’un processus plus général et moins sensible aux valeurs hors norme.
+- $L _2 $ régularisation réduit la plage de poids pour les fonctionnalités non significatives. Il s’agit d’un processus plus général qui est moins sensible aux valeurs hors norme.
 
-## <a name="regression"></a>régression ;
+## <a name="regression"></a>Régression
 
 Une tâche [Apprentissage automatique supervisé](#supervised-machine-learning) où la sortie est une valeur réelle, par exemple, double. Exemple : prédiction de cours d’actions. Pour plus d’informations, consultez la section [Régression](tasks.md#regression) de la rubrique [Tâches d’apprentissage automatique](tasks.md).
 

@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher des éléments descendants (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: e7e2dc9e-bda9-420d-a5b1-4fabf1cca46b
-ms.openlocfilehash: 09f12dca7b6278327394126ffb0950682d285f88
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ee496c1a3e797a8edaf5878d9832583396a851f
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780560"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250123"
 ---
 # <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher des éléments descendants (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir les éléments descendants avec un nom particulier.  
@@ -41,7 +41,7 @@ Next
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console
 Results are identical  
 <Name>Ellen Adams</Name>  
 <Name>Tai Yee</Name>  
@@ -53,4 +53,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

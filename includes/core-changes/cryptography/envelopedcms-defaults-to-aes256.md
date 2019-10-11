@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: b965c3a975b0f2cadd906799fef1665261d96d6e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: f9000b19997201c2d3de0643669f9029ff1ca31c
+ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181974"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237344"
 ---
 ### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>La valeur par défaut de EnvelopedCms est le chiffrement AES-256
 
-L’algorithme de chiffrement symétrique `EnvelopedCms` par défaut utilisé par est passé de TripleDES à AES-256.
+L’algorithme de chiffrement symétrique par défaut utilisé par le `EnvelopedCms` est passé de TripleDES à AES-256.
 
-#### <a name="details"></a>Détails
+#### <a name="change-description"></a>Modifier la description
 
-Dans .net Core Preview 7 et les versions antérieures, <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> quand est utilisé pour chiffrer des données sans spécifier un algorithme de chiffrement symétrique via une surcharge de constructeur, les données ont été chiffrées avec l’algorithme TripleDES/3DES/3DEA/des3-EDE.
+Dans .NET Core Preview 7 et les versions antérieures, lorsque <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> est utilisé pour chiffrer des données sans spécifier un algorithme de chiffrement symétrique via une surcharge de constructeur, les données ont été chiffrées avec l’algorithme TripleDES/3DES/3DEA/DES3-EDE.
 
 À compter de .NET Core 3,0 Preview 8 (via la version 4.6.0 du package NuGet [System. Security. Cryptography. Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ), l’algorithme par défaut a été remplacé par AES-256 pour la modernisation des algorithmes et pour améliorer la sécurité des options par défaut. Si un certificat de destinataire de message a une clé publique Diffie-Hellman non-EC, l’opération de chiffrement peut échouer avec un <xref:System.Security.Cryptography.CryptographicException> en raison des limitations de la plateforme sous-jacente.
 
@@ -30,7 +30,7 @@ return cms.Encode();
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous avez un impact négatif sur la modification, vous pouvez restaurer le chiffrement TripleDes en spécifiant explicitement l’identificateur d’algorithme <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> de chiffrement dans un constructeur qui <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>comprend un paramètre de type, par exemple :
+Si vous avez un impact négatif sur la modification, vous pouvez restaurer le chiffrement TripleDES en spécifiant explicitement l’identificateur de l’algorithme de chiffrement dans un constructeur <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> qui comprend un paramètre de type <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>, par exemple :
 
 ```csharp
 Oid tripleDesOid = new Oid("1.2.840.113549.3.7", null);
@@ -41,7 +41,7 @@ cms.Encrypt(recipient);
 return cms.Encode()l
 ```
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 Chiffrement
 

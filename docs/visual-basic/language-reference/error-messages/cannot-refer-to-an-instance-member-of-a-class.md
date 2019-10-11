@@ -8,20 +8,21 @@ helpviewer_keywords:
 - Shared
 - BC30369
 ms.assetid: 39d9466b-c1f3-4406-91a5-3d6c52d23a3d
-ms.openlocfilehash: a2a5ab99ff68e6dce783a2fd986ee6e8c15ae858
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 9b388685299469d5865d57b698e3a66de912fa84
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701176"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72250206"
 ---
 # <a name="cannot-refer-to-an-instance-member-of-a-class-from-within-a-shared-method-or-shared-member-initializer-without-an-explicit-instance-of-the-class"></a>Impossible de faire référence à un membre instance d'une classe à partir d'une méthode partagée ou d'un initialiseur de membre partagé sans une instance explicite de la classe
-Vous avez tenté de faire référence à un membre non partagé d’une classe à partir d’une procédure partagée. L’exemple suivant illustre une telle situation.  
+
+Vous avez tenté de faire référence à un membre non partagé d’une classe à partir d’une procédure partagée. L’exemple suivant illustre une telle situation :
   
 ```vb  
-Class sample  
+Class Sample
     Public x as Integer  
-    Public Shared Sub setX()  
+    Public Shared Sub SetX()
         x = 10  
     End Sub  
 End Class  
@@ -29,20 +30,20 @@ End Class
   
  Dans l’exemple précédent, l’instruction d’assignation `x = 10` génère ce message d’erreur. Cela est dû au fait qu’une procédure partagée tente d’accéder à une variable d’instance.  
   
- La variable `x` est un membre d’instance parce qu’elle n’est pas déclarée comme [Shared](../../../visual-basic/language-reference/modifiers/shared.md). Chaque instance de la classe `sample` contient sa propre variable individuelle `x`. Lorsqu’une instance définit ou modifie la valeur de `x`, elle n’affecte pas la valeur de `x` dans une autre instance.  
+ La variable `x` est un membre d’instance parce qu’elle n’est pas déclarée comme [Shared](../modifiers/shared.md). Chaque instance de la classe `Sample` contient sa propre variable individuelle `x`. Lorsqu’une instance définit ou modifie la valeur de `x`, elle n’affecte pas la valeur de `x` dans une autre instance.
   
- Toutefois, la procédure `setX` est `Shared` parmi toutes les instances de la classe `sample`. Cela signifie qu’elle n’est pas associée à une instance de la classe, mais qu’elle fonctionne indépendamment des instances individuelles. Étant donné qu’elle n’a pas de connexion avec une instance particulière, `setX` ne peut pas accéder à une variable d’instance. Il doit fonctionner uniquement sur les variables `Shared`. Lorsque `setX` définit ou modifie la valeur d’une variable partagée, cette nouvelle valeur est disponible pour toutes les instances de la classe.  
+ Toutefois, la procédure `SetX` est `Shared` parmi toutes les instances de la classe `Sample`. Cela signifie qu’elle n’est pas associée à une instance de la classe, mais qu’elle fonctionne indépendamment des instances individuelles. Étant donné qu’elle n’a pas de connexion avec une instance particulière, `setX` ne peut pas accéder à une variable d’instance. Il doit fonctionner uniquement sur les variables `Shared`. Lorsque `SetX` définit ou modifie la valeur d’une variable partagée, cette nouvelle valeur est disponible pour toutes les instances de la classe.
   
- **ID d’erreur :** BC30369  
+ **ID d’erreur :** BC30369
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
   
-1. Décidez si vous souhaitez que le membre soit partagé entre toutes les instances de la classe, ou qu’il reste individuel pour chaque instance.  
-  
-2. Si vous souhaitez qu’une seule copie du membre soit partagée entre toutes les instances, ajoutez le mot clé `Shared` à la déclaration de membre. Conservez le mot clé `Shared` dans la déclaration de procédure.  
-  
-3. Si vous souhaitez que chaque instance ait sa propre copie individuelle du membre, ne spécifiez pas `Shared` pour la déclaration de membre. Supprimez le mot clé `Shared` de la déclaration de procédure.  
+1. Décidez si vous souhaitez que le membre soit partagé entre toutes les instances de la classe, ou qu’il reste individuel pour chaque instance.
+
+2. Si vous souhaitez qu’une seule copie du membre soit partagée entre toutes les instances, ajoutez le mot clé `Shared` à la déclaration de membre. Conservez le mot clé `Shared` dans la déclaration de procédure.
+
+3. Si vous souhaitez que chaque instance ait sa propre copie individuelle du membre, ne spécifiez pas `Shared` pour la déclaration de membre. Supprimez le mot clé `Shared` de la déclaration de procédure.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
+- [Shared](../modifiers/shared.md)

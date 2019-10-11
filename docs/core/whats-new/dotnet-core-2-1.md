@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: ace8c644fd5aa13e29961b7eb44e923556571c75
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 18c8d566c3b79c131a3d031e5bdf3b37996d9115
+ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834261"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72031851"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -213,7 +213,7 @@ Le comportement de <xref:System.IO.Compression.BrotliStream> est identique à <x
 
 - La méthode statique <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> remplit <xref:System.Span%601> de valeurs aléatoires.
 
-- <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> est maintenant pris en charge sous Linux et macOS.
+- Le <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> est désormais pris en charge sur Linux et macOS.
 
 - Diffie-Hellman à courbe elliptique (ECDH) est désormais disponible dans la famille de classe <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType>. La surface d’exposition est la même que dans le .NET Framework.
 
