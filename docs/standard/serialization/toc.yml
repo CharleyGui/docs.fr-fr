@@ -28,6 +28,8 @@
           href: how-to-chunk-serialized-data.md
         - name: "Procédure\_: déterminer si un objet .NET Standard est sérialisable"
           href: how-to-determine-if-netstandard-object-is-serializable.md
+        - name: Exemples
+          href: serialization-samples-binary.md
     - name: "Sérialisation\_XML et\_SOAP"
       href: xml-and-soap-serialization.md
       items:
@@ -73,23 +75,12 @@
           href: add-element-for-schemaimporterextensions.md
         - name: Élément <xmlSerializer>
           href: xmlserializer-element.md
-        - name: Outils de sérialisation
+        - name: Outils
           href: serialization-tools.md
           items:
             - name: Outil XML Serializer Generator (Sgen.exe)
               href: xml-serializer-generator-tool-sgen-exe.md
             - name: Outil XML Schema Definition (Xsd.exe)
               href: xml-schema-definition-tool-xsd-exe.md
-        - name: Exemples de sérialisation
-          href: serialization-samples.md
-          items:
-            - name: 'Sérialisation de base, exemple de technologie'
-              href: basic-serialization-technology-sample.md
-            - name: Ordre de sérialisation personnalisé avec XmlSerializer
-              href: custom-serialization-order-with-xmlserializer.md
-            - name: 'SchemaImporterExtension, exemple de technologie'
-              href: schemaimporterextension-technology-sample.md
-            - name: 'Sérialisation avec tolérance de version, exemple de technologie'
-              href: version-tolerant-serialization-technology-sample.md
-            - name: 'Sérialisation de génériques de services Web, exemple de technologie'
-              href: web-services-generics-serialization-technology-sample.md
+        - name: Exemples
+          href: serialization-samples-xml.md

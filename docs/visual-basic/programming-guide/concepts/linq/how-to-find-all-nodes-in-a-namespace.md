@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Rechercher tous les nœuds dans un Namespace (Visual Basic)'
+title: 'Procédure : Rechercher tous les nœuds dans un espace de noms (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: c04447df1d4a3e29558a3bad172715d2bdee340b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ccc996aa986c97fdffb3deeea36346da726a588
+ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855671"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249931"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a><span data-ttu-id="8c4d3-102">Procédure : Rechercher tous les nœuds dans un Namespace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8c4d3-102">How to: Find All Nodes in a Namespace (Visual Basic)</span></span>
-<span data-ttu-id="8c4d3-103">Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.</span><span class="sxs-lookup"><span data-stu-id="8c4d3-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
+# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a><span data-ttu-id="33f71-102">Procédure : Rechercher tous les nœuds dans un espace de noms (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="33f71-102">How to: Find All Nodes in a Namespace (Visual Basic)</span></span>
+<span data-ttu-id="33f71-103">Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.</span><span class="sxs-lookup"><span data-stu-id="33f71-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8c4d3-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="8c4d3-104">Example</span></span>  
- <span data-ttu-id="8c4d3-105">L’exemple suivant crée une arborescence XML avec deux espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="8c4d3-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="8c4d3-106">Il itère ensuite au sein de l'arborescence et imprime les noms de tous les éléments et attributs dans l'un de ces espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="8c4d3-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="33f71-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="33f71-104">Example</span></span>  
+ <span data-ttu-id="33f71-105">L’exemple suivant crée une arborescence XML avec deux espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="33f71-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="33f71-106">Il itère ensuite au sein de l'arborescence et imprime les noms de tous les éléments et attributs dans l'un de ces espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="33f71-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -43,18 +43,18 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="8c4d3-107">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="8c4d3-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="33f71-107">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="33f71-107">This code produces the following output:</span></span>  
   
-```  
+```console  
 Nodes in the http://www.adventure-works.com namespace  
 {http://www.adventure-works.com}Child3  
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
-## <a name="example"></a><span data-ttu-id="8c4d3-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="8c4d3-108">Example</span></span>  
- <span data-ttu-id="8c4d3-109">Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents.</span><span class="sxs-lookup"><span data-stu-id="8c4d3-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="8c4d3-110">La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="8c4d3-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="33f71-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="33f71-108">Example</span></span>  
+ <span data-ttu-id="33f71-109">Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents.</span><span class="sxs-lookup"><span data-stu-id="33f71-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="33f71-110">La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="33f71-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
   
- <span data-ttu-id="8c4d3-111">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commandes fournisseur consolidées](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="8c4d3-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
+ <span data-ttu-id="33f71-111">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commandes fournisseur consolidées](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="33f71-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -73,7 +73,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="8c4d3-112">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="8c4d3-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="33f71-112">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="33f71-112">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -109,6 +109,6 @@ End Module
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8c4d3-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c4d3-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="33f71-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="33f71-113">See also</span></span>
 
-- [<span data-ttu-id="8c4d3-114">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8c4d3-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="33f71-114">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="33f71-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
