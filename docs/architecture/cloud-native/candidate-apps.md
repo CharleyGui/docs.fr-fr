@@ -3,12 +3,12 @@ title: Applications candidates pour le Cloud Native
 description: Découvrez les types d’applications qui bénéficient d’une approche Cloud Native
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 6da531397e6103e5c59accf321bc5ae82153dded
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: e8d520e0a1ad5ab8854d0628daa56a390de523cd
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275818"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291224"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Applications candidates pour le Cloud Native
 
@@ -34,9 +34,11 @@ Il existe alors des systèmes hérités. Bien que nous aimerions tout pour crée
 
 ### <a name="modernizing-legacy-apps"></a>Moderniser des applications héritées
 
-Le livre électronique gratuit de Microsoft, [moderniser les applications .NET existantes avec des conteneurs Cloud et Windows Azure](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) fournit des conseils pour la migration des charges de travail locales vers le Cloud. La figure 1-8 montre qu’il n’existe pas de stratégie unique, unique et adaptée à la modernisation des applications héritées.
+Le livre électronique gratuit de Microsoft, [moderniser les applications .NET existantes avec des conteneurs Cloud et Windows Azure](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook) fournit des conseils pour la migration des charges de travail locales vers le Cloud. La figure 1-10 montre qu’il n’existe pas de stratégie unique, unique et adaptée à la modernisation des applications héritées.
 
-![Strategies pour la migration des charges de travail héritées @ no__t-1**Figure 1-8**. Stratégies de migration des charges de travail héritées
+![Stratégies de migration des charges de travail héritées](./media/strategies-for-migrating-legacy-workloads.png)
+
+**Figure 1-10**. Stratégies de migration des charges de travail héritées
 
 Les applications monolithiques non critiques bénéficient en grande partie d’une migration rapide (prête à l'[emploi pour l’infrastructure cloud](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). Ici, la charge de travail locale est réhébergée sur une machine virtuelle basée sur le Cloud, sans modification. Cette approche utilise le [modèle IaaS (infrastructure as a service)](https://azure.microsoft.com/overview/what-is-iaas/). Azure comprend plusieurs outils tels que ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)et [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)) pour faciliter le déplacement. Bien que cette stratégie puisse entraîner des économies, ces applications n’ont généralement pas été conçues pour se déverrouiller et tirer parti des avantages de cloud computing. 
 

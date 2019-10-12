@@ -3,12 +3,12 @@ title: REST et gRPC
 description: En savoir plus sur gRPC, son rôle dans les applications natives du Cloud et sa différence par rapport à HTTP REST
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: d888069168aee1fcfb13354f4b6f9ae2c8d1f233
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: fed8e7d86a8ddc268f1264728d9631a561c1b310
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214545"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291325"
 ---
 # <a name="rest-and-grpc"></a>REST et gRPC
 

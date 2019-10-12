@@ -2,12 +2,12 @@
 title: Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utilisation d’un serveur de base de données s’exécutant en tant que conteneur ? Uniquement pour le développement ! Comprendre pourquoi.
 ms.date: 10/02/2018
-ms.openlocfilehash: 3e655e26be2d6132577b0494db39d9c2e8b9aacd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a508ba734525b24e2f3f00408e2c59c8c00f1898
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039843"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291305"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 
@@ -32,7 +32,7 @@ Le conteneur SQL Server de l’exemple d’application est configuré avec le c
 De même, au lieu d’utiliser `docker-compose`, la commande `docker run` suivante peut exécuter ce conteneur :
 
 ```console
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
 ```
 
 Toutefois, si vous déployez une application à plusieurs conteneurs comme eShopOnContainers, il est plus pratique d’utiliser la commande `docker-compose up` afin de déployer tous les conteneurs nécessaires pour l’application.
@@ -167,7 +167,7 @@ Redis fournit une image Docker. Cette image est accessible à partir de Docker H
 Vous pouvez exécuter directement un conteneur Docker Redis en utilisant la commande Docker CLI suivante à l’invite de commandes :
 
 ```console
-  docker run --name some-redis -d redis
+docker run --name some-redis -d redis
 ```
 
 L’image Redis inclut expose:6379 (le port utilisé par Redis). Ainsi, la liaison de conteneur standard la rend automatiquement accessible aux conteneurs liés.
