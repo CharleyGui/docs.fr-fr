@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: cc25d4bfd444dc0acb30fc1c6e6c3c9918af537c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: f711bd04aeadb584eac1ecb0b644a36e2e496d08
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698684"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72290941"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Opérateurs logiques booléens (référence C#)
 
@@ -51,11 +51,11 @@ En ce qui concerne les opérandes de type [intégral](../builtin-types/integral-
 
 ## <a name="logical-negation-operator-"></a>L’opérateur de négation logique !
 
-L’opérateur `!` calcule la négation logique de son opérande. Autrement dit, il produit `true` si l’opérande donne `false` et `false` si l’opérande donne `true` :
+L’opérateur de préfixe unaire `!` calcule la négation logique de son opérande. Autrement dit, il produit `true` si l’opérande donne `false` et `false` si l’opérande donne `true` :
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
 
-À partir C# de 8,0, l’opérateur unaire postfixé `!` est un opérateur null-indulgent avec. Dans un contexte d’annotation Nullable activé, vous l’utilisez pour déclarer que l’expression `x` d’un type référence Nullable n’a pas la valeur NULL : `x!`. Pour plus d’informations, consultez [types de référence Nullable](../../nullable-references.md).
+À partir C# de 8,0, l’opérateur unaire postfixé `!` est un [opérateur null-indulgent avec](null-forgiving.md).
 
 ## <a name="logical-and-operator-"></a>Opérateur ET logique &amp;
 

@@ -2,14 +2,14 @@
 title: Mettre à niveau les API avec des attributs pour définir des attentes null
 description: Cet article explique les motivations et les techniques permettant d’ajouter des attributs descriptifs pour décrire l’État null des arguments et les valeurs de retour des API
 ms.date: 07/31/2019
-ms.openlocfilehash: b6c6be213cb920459e5f1adbe3ee822ff6ddbf33
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: fedd701fb7a3bcdff96fc1abc5451cc59c01f34f
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834196"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291320"
 ---
-# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour utiliser des types référence Nullable et communiquer des règles Nullable aux appelants.
+# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour utiliser des types référence Nullable et communiquer des règles Nullable aux appelants
 
 L’ajout de [types de référence Nullable](nullable-references.md) signifie que vous pouvez déclarer si une valeur `null` est autorisée ou non pour chaque variable. Cela offre une excellente expérience lorsque vous écrivez du code. Vous recevez des avertissements si une variable qui n’accepte pas les valeurs NULL peut avoir la valeur `null`. Vous recevez des avertissements si une variable Nullable n’est pas vérifiée par null avant d’être déréférencée. La mise à jour de vos bibliothèques peut prendre du temps, mais les avantages le justifient. Plus d’informations que vous fournissez au compilateur sur le *moment où* une valeur `null` est autorisée ou interdite, les meilleurs avertissements que les utilisateurs de votre API obtiendront. Commençons par un exemple familier. Imaginez que votre bibliothèque possède l’API suivante pour récupérer une chaîne de ressource :
 

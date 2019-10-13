@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 5cb8322fc50dc5759f8e546ae6b698c036c91fa4
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 2ec1aaff88754848d844a56b1744beb2efa4cd89
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179999"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291235"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -270,7 +270,7 @@ Voici la liste complète des [identificateurs de licence SPDX](https://spdx.org/
 
 La syntaxe exacte des expressions de licence est décrite ci-dessous dans [ABNF](https://tools.ietf.org/html/rfc5234).
 
-```cli
+```abnf
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
 
 license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>

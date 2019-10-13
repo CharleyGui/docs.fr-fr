@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 3c988a0151f57b67db19f41aeb88c6fb9b808cb3
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 22c2fd5fc5eaf7a5dc9b71a7335b0b844fa92b51
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179203"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291605"
 ---
 # <a name="how-to-serialize-and-deserialize-json-in-net"></a>Comment sérialiser et désérialiser JSON dans .NET
 
@@ -237,7 +237,7 @@ var options = new JsonSerializerOptions
     ReadCommentHandling = JsonCommentHandling.Skip,
     AllowTrailingCommas = true
 };
-var weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(json);
+var weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(json, options);
 ```
 
 Voici un exemple de code JSON avec des commentaires et une virgule de fin :

@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 5ea939172b35e4380ed3f32d7d06b5749d2005a0
-  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+  ms.openlocfilehash: 42d9784b9aa35fbb739e09dd79d72996b0f15950
+  ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/09/2019
-  ms.locfileid: "72179861"
+  ms.lasthandoff: 10/12/2019
+  ms.locfileid: "72291374"
 items:
 - durationInMinutes: 1
   content: >
@@ -174,7 +174,7 @@ items:
 
     int c = 3;
 
-    int d = (a  + b) / c;
+    int d = (a + b) / c;
 
     Console.WriteLine(d);
 
@@ -203,7 +203,7 @@ items:
 
     int c = 3;
 
-    int d = (a  + b) / c;
+    int d = (a + b) / c;
 
     int e = (a + b) % c;
 
@@ -269,7 +269,7 @@ items:
 
     double c = 2;
 
-    double d = (a  + b) / c;
+    double d = (a + b) / c;
 
     Console.WriteLine(d);
 
@@ -287,7 +287,7 @@ items:
 
     double c = 8;
 
-    double d = (a  + b) / c;
+    double d = (a + b) / c;
 
     Console.WriteLine(d);
 

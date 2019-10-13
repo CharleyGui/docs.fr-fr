@@ -2,19 +2,19 @@
 title: Détermination de la durée d'une opération de service
 ms.date: 03/30/2017
 ms.assetid: e8a93a2c-2c20-48b3-8986-57e90e9aa908
-ms.openlocfilehash: 9bc38f40b22eca8278905440ee69af9f38b81a0d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 06a4c2da7b702fa4fbc1469576c118b790803339
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798110"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291423"
 ---
 # <a name="determining-service-operation-duration"></a>Détermination de la durée d'une opération de service
 Si le traçage analytique est activé dans une application Windows Communication Foundation (WCF), la durée d’exécution d’une opération de service peut être facilement déterminée en examinant le journal des événements.  Cette rubrique montre comment déterminer la durée d'exécution d'une opération de service.  
   
 ### <a name="determining-service-operation-execution-duration"></a>Détermination de la durée d'exécution d'une opération de service  
   
-1. Ouvrez observateur d’événements en cliquant sur **Démarrer**, **exécuter**, puis `eventvwr.exe`en entrant.  
+1. Ouvrez observateur d’événements en cliquant sur **Démarrer**, **exécuter**, puis en entrant `eventvwr.exe`.  
   
 2. Si vous n’avez pas activé le traçage analytique, développez **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Sélectionnez **Afficher**, **afficher les journaux d’analyse et de débogage**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal**. Laissez l'Observateur d'événements ouvert afin que les traces soient visibles après l'exécution de l'opération de service.  
   
@@ -24,6 +24,6 @@ Si le traçage analytique est activé dans une application Windows Communication
   
 5. Dans l'Observateur d'événements, actualisez le journal Analyse et triez les événements par ID d'événement.  Recherchez les événements avec l’ID d’événement [214-OperationCompleted](214-operationcompleted.md).  Ces événements affichent les opérations terminées et leur durée.  L'événement suivant affiche la durée d'une opération d'ajout.  
   
-    ```Output  
+    ```output  
     An OperationInvoker completed the call to the 'Add' method.  The method call duration was '3' ms.  
     ```

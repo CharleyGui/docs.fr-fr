@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: acd8e14e1d000f55f03017a4fee43347f50df3a7
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
-ms.translationtype: HT
+ms.openlocfilehash: a83253e37d3afde9ed8266ec1195c9726f6462cc
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415921"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291593"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -55,7 +55,7 @@ Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException`
 
 Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET. Par exemple, un handle de fichier est une ressource non managée. Un objet <xref:System.IO.FileStream> est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas. Quand vous avez fini d’utiliser l’objet <xref:System.IO.FileStream>, vous devez libérer le handle de fichier.
 
-Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une syntaxe `using` pratique pour ces objets, comme le montre l’exemple suivant :
+Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une [instruction `using`](../csharp/language-reference/keywords/using.md) pratique pour ces objets, comme illustré dans l’exemple suivant :
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 

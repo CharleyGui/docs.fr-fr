@@ -2,22 +2,22 @@
 title: Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 1fa0548e2d63562ddcb85fc6392bf5c99d67d6c7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 926332ac1873db89ce9332075380effdfdc1fc37
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916817"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291509"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 Le composant logiciel enfichable MMC Configuration WS-AtomicTransaction est utilisé pour configurer une partie des paramètres WS-AtomicTransaction sur les ordinateurs locaux et distants.  
   
 ## <a name="remarks"></a>Notes  
- Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], le composant logiciel enfichable MMC est accessible en accédant à panneau de **configuration/outils d’administration/Services de composants/** , en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
+ Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], le composant logiciel enfichable MMC est accessible en accédant à **panneau de configuration/outils d’administration/Services de composants/** , en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
   
- Si vous exécutez Windows Vista [!INCLUDE[lserver](../../../includes/lserver-md.md)]ou, le composant logiciel enfichable MMC est accessible en cliquant sur le bouton **Démarrer** et en tapant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
+ Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], vous pouvez trouver le composant logiciel enfichable MMC en cliquant sur le bouton **Démarrer** et en tapant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
   
- Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local. Si vous souhaitez configurer un ordinateur distant, vous devez rechercher le nom de l’ordinateur distant dans **panneau de configuration/outils d’administration/Services de composants/** , et effectuer les mêmes étapes [!INCLUDE[wxp](../../../includes/wxp-md.md)] si [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]vous exécutez ou. Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], suivez les étapes précédentes pour Vista et [!INCLUDE[lserver](../../../includes/lserver-md.md)], mais utilisez le nœud **DTC Coordinator\Local Distributed Transaction** sous le nœud de l’ordinateur distant.  
+ Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local. Si vous souhaitez configurer un ordinateur distant, vous devez rechercher le nom de l’ordinateur distant dans **panneau de configuration/outils d’administration/Services de composants/** , et effectuer les mêmes étapes si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], suivez les étapes précédentes pour Vista et [!INCLUDE[lserver](../../../includes/lserver-md.md)], mais utilisez le nœud **DTC Coordinator\Local Distributed Transaction** sous le nœud de l’ordinateur distant.  
   
  Pour utiliser l'interface utilisateur fournie par l'outil, vous devez enregistrer le fichier WsatUI.dll, situé à l'emplacement suivant :  
   
@@ -25,7 +25,7 @@ Le composant logiciel enfichable MMC Configuration WS-AtomicTransaction est util
   
  L'inscription peut être faite par la commande suivante.  
   
-```Output  
+```console
 regasm.exe /codebase WsatUI.dll  
 ```  
   
@@ -77,12 +77,12 @@ regasm.exe /codebase WsatUI.dll
   
  Cliquez sur le bouton **options** pour appeler une page dans laquelle vous pouvez spécifier des paramètres supplémentaires.  
   
- La zone de combinaison **niveau de suivi** vous permet de choisir parmi toute valeur valide <xref:System.Diagnostics.TraceLevel> de l’énumération. Vous pouvez également utiliser les cases à cocher pour spécifier si vous souhaitez exécuter le suivi des activités, la propagation d'activité ou le rassemblement d'informations d'identification personnelles (PII).  
+ La zone de combinaison **niveau de suivi** vous permet de choisir parmi toute valeur valide de l’énumération <xref:System.Diagnostics.TraceLevel>. Vous pouvez également utiliser les cases à cocher pour spécifier si vous souhaitez exécuter le suivi des activités, la propagation d'activité ou le rassemblement d'informations d'identification personnelles (PII).  
   
- Vous pouvez également spécifier des sessions de journalisation dans la zone de groupe **session** de journalisation.  
+ Vous pouvez également spécifier des sessions de journalisation dans la zone de groupe **session de journalisation** .  
   
 > [!NOTE]
-> Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi. Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur. Code d’erreur: 1".  
+> Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi. Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur. Code d’erreur : 1".  
   
  Pour plus d’informations sur le suivi et la journalisation, consultez [administration et diagnostics](../../../docs/framework/wcf/diagnostics/index.md).  
   

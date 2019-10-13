@@ -5,16 +5,16 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: 0253c57f080705b648d9f416368d0fe974ac83ab
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 2fe473da3eeabef3852e3003e61b3b9604332855
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834667"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291272"
 ---
 # <a name="use-automatic-layout-overview"></a>Vue d'ensemble de l'utilisation de la disposition automatique
 
-Cette rubrique présente les instructions permettant aux développeurs d’écrire des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] avec localisable [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. Dans le passé, la localisation d’une interface utilisateur était un processus fastidieux. Chaque langue pour laquelle l’interface utilisateur a été adaptée a nécessité un réglage pixel par pixel. Aujourd’hui, avec la conception et les normes de codage appropriées, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] peut être construite afin que les localiseurs aient moins de redimensionnement et de repositionnement. L’approche consistant à écrire des applications qui peuvent être plus facilement redimensionnées et repositionnées est appelée disposition automatique et peut être obtenue à l’aide de la conception d’application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Cette rubrique présente les instructions permettant aux développeurs d’écrire des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] avec des interfaces utilisateur localisables. Dans le passé, la localisation d’une interface utilisateur était un processus fastidieux. Chaque langue pour laquelle l’interface utilisateur a été adaptée a nécessité un réglage pixel par pixel. Aujourd’hui, avec les normes de conception et de codage appropriées, les interfaces utilisateur peuvent être créées afin que les localiseurs aient moins de redimensionnement et de repositionnement. L’approche consistant à écrire des applications qui peuvent être plus facilement redimensionnées et repositionnées est appelée disposition automatique et peut être obtenue à l’aide de la conception d’application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 <a name="advantages_of_autolayout"></a>
 

@@ -12,17 +12,17 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: a770bcbbc8ac553c55e9dda5097abec8790182e5
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: be8dcfce44347e8099e8cfa693bcee341514de2b
+ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663735"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72291444"
 ---
 # <a name="graphics-and-multimedia"></a>Graphiques et multimédia
 
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prend en charge multimédia, les graphiques vectoriels, l’animation et composition de contenu, ce qui facilite aux développeurs de créer des interfaces utilisateur et contenu. À l’aide de [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vous pouvez créer des graphiques vectoriels ou des animations complexes et intégrer du contenu multimédia à vos applications.
+ @ no__t-2 assure la prise en charge des éléments multimédias, des graphiques vectoriels, de l’animation et de la composition du contenu, ce qui permet aux développeurs de créer facilement des interfaces utilisateur et du contenu intéressants. À l’aide de [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vous pouvez créer des graphiques vectoriels ou des animations complexes et intégrer du contenu multimédia à vos applications.
 
 Cette rubrique présente les fonctionnalités graphiques, d’animation et multimédia de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], qui vous permettent d’ajouter des graphiques, des effets de transition, du son et de la vidéo à vos applications.
 
@@ -37,33 +37,33 @@ Plusieurs modifications ont été apportées aux graphiques et aux animations.
 
 - Arrondi de disposition
 
-  Lorsque le bord d’un objet se trouve au milieu d’un dispositif de pixel, le système de graphiques indépendant des PPP peut créer des artefacts de rendu, tels que des bords flous ou semi-transparents. Les versions précédentes de WPF incluaient l’accrochage pixel pour aider à gérer ce cas. L’arrondi de position, introduit dans Silverlight 2, est une autre façon de déplacer des éléments afin que les bords tombent sur les limites de pixels entières. WPF prend désormais en charge l’arrondi de disposition avec la <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> propriété jointe sur <xref:System.Windows.FrameworkElement>.
+  Lorsque le bord d’un objet se trouve au milieu d’un dispositif de pixel, le système de graphiques indépendant des PPP peut créer des artefacts de rendu, tels que des bords flous ou semi-transparents. Les versions précédentes de WPF incluaient l’accrochage pixel pour aider à gérer ce cas. L’arrondi de position, introduit dans Silverlight 2, est une autre façon de déplacer des éléments afin que les bords tombent sur les limites de pixels entières. WPF prend désormais en charge l’arrondi de disposition avec la propriété attachée <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> sur <xref:System.Windows.FrameworkElement>.
 
 - Composition en cache
 
-  À l’aide de la nouvelle <xref:System.Windows.Media.BitmapCache> et <xref:System.Windows.Media.BitmapCacheBrush> classes, vous pouvez mettre en cache une partie complexe de l’arborescence visuelle sous forme de bitmap et améliorer considérablement le temps de rendu. L’image bitmap reste réactive aux actions de l’utilisateur, comme des clics de souris, et vous pouvez la peindre sur d’autres éléments comme n’importe quel pinceau.
+  En utilisant les nouvelles classes <xref:System.Windows.Media.BitmapCache> et <xref:System.Windows.Media.BitmapCacheBrush>, vous pouvez mettre en cache une partie complexe de l’arborescence d’éléments visuels en tant que bitmap et améliorer beaucoup le temps de rendu. L’image bitmap reste réactive aux actions de l’utilisateur, comme des clics de souris, et vous pouvez la peindre sur d’autres éléments comme n’importe quel pinceau.
 
 - Prise en charge du Nuanceur de pixels 3
 
-  WPF 4 s’appuie sur le <xref:System.Windows.Media.Effects.ShaderEffect> prise en charge introduite dans WPF 3.5 SP1 en permettant aux applications d’écrire des effets à l’aide de Pixel Shader (PS) version 3.0. Le modèle du nuanceur PS 3.0 est plus sophistiqué que le modèle PS 2.0, pour davantage d’effets sur le matériel pris en charge.
+  WPF 4 s’appuie sur la prise en charge <xref:System.Windows.Media.Effects.ShaderEffect> introduite dans WPF 3,5 SP1 en permettant aux applications d’écrire des effets à l’aide de nuanceur de pixels (PS) version 3,0. Le modèle du nuanceur PS 3.0 est plus sophistiqué que le modèle PS 2.0, pour davantage d’effets sur le matériel pris en charge.
 
 - Fonctions d'accélération
 
-  Vous pouvez améliorer les animations avec les fonctions d’accélération, qui vous donnent un contrôle supplémentaire sur le comportement des animations. Par exemple, vous pouvez appliquer un <xref:System.Windows.Media.Animation.ElasticEase> à une animation afin de donner l’animation un comportement élastique. Pour plus d’informations, consultez les types d’accélération dans le <xref:System.Windows.Media.Animation> espace de noms.
+  Vous pouvez améliorer les animations avec les fonctions d’accélération, qui vous donnent un contrôle supplémentaire sur le comportement des animations. Par exemple, vous pouvez appliquer une <xref:System.Windows.Media.Animation.ElasticEase> à une animation pour que l’animation soit un comportement élastique. Pour plus d’informations, consultez les types d’accélération dans l’espace de noms <xref:System.Windows.Media.Animation>.
 
 <a name="graphics_and_rendering"></a>
 
 ## <a name="graphics-and-rendering"></a>Graphiques et rendu
 
-WPF inclut la prise en charge des graphiques 2D de haute qualité. La fonctionnalité inclut des pinceaux, des géométries, des images, des formes et des transformations. Pour plus d’informations, consultez [Graphiques](graphics.md). Le rendu des éléments de graphiques est basé sur le <xref:System.Windows.Media.Visual> classe. La structure des objets visuels à l’écran est décrite par l’arborescence visuelle. Pour plus d’informations, consultez [Vue d’ensemble du rendu graphique WPF](wpf-graphics-rendering-overview.md).
+WPF inclut la prise en charge des graphiques 2D de haute qualité. La fonctionnalité inclut des pinceaux, des géométries, des images, des formes et des transformations. Pour plus d’informations, consultez [Graphiques](graphics.md). Le rendu des éléments graphiques est basé sur la classe <xref:System.Windows.Media.Visual>. La structure des objets visuels à l’écran est décrite par l’arborescence visuelle. Pour plus d’informations, consultez [Vue d’ensemble du rendu graphique WPF](wpf-graphics-rendering-overview.md).
 
 ### <a name="2-d-shapes"></a>Formes 2D
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Fournit une bibliothèque de couramment utilisés, vectorielles formes 2D, telles que les rectangles et ellipses présentés dans l’illustration suivante.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit une bibliothèque de formes 2D dessinées communément utilisées, telles que des rectangles et des ellipses, comme le montre l’illustration suivante.
 
-![Diagramme montrant ellipses et rectangles.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
+![Diagramme montrant des ellipses et des rectangles.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
-Ces formes [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] intrinsèques ne sont pas seulement des formes : ce sont des éléments programmables qui implémentent un grand nombre des fonctionnalités que vous attendez des contrôles les plus courants, notamment la saisie avec le clavier et la souris. L’exemple suivant montre comment gérer les <xref:System.Windows.UIElement.MouseUp> événement déclenché en cliquant sur un <xref:System.Windows.Shapes.Ellipse> élément.
+Ces formes [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] intrinsèques ne sont pas seulement des formes : ce sont des éléments programmables qui implémentent un grand nombre des fonctionnalités que vous attendez des contrôles les plus courants, notamment la saisie avec le clavier et la souris. L’exemple suivant montre comment gérer l’événement <xref:System.Windows.UIElement.MouseUp> déclenché en cliquant sur un élément <xref:System.Windows.Shapes.Ellipse>.
 
 ```xaml
 <Window
@@ -95,13 +95,13 @@ End Class
 
 L’illustration suivante montre la sortie de l’exemple de balisage et code-behind [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] précédent.
 
-![Une boîte de message indiquant « Vous avez cliqué sur l’ellipse ! »](./media/index/messagebox-text-output.png)
+![Une boîte de message indiquant « vous avez cliqué sur l’ellipse ! »](./media/index/messagebox-text-output.png)
 
 Pour plus d’informations, consultez [Vue d’ensemble des formes et dessins de base dans WPF](shapes-and-basic-drawing-in-wpf-overview.md). Pour obtenir un exemple d’introduction, consultez [Exemples d’éléments de forme](https://go.microsoft.com/fwlink/?LinkID=160037).
 
 ### <a name="2-d-geometries"></a>Géométries 2D
 
-Lorsque la 2D formes qui [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit ne sont pas suffisantes, vous pouvez utiliser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prennent en charge pour les géométries et les chemins d’accès pour créer les vôtres. L’illustration suivante montre comment vous pouvez utiliser les géométries pour créer des formes, comme un pinceau de dessin, et pour détourer d’autres éléments [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+Lorsque les formes 2D fournies par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ne sont pas suffisantes, vous pouvez utiliser la prise en charge [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour les géométries et les chemins d’accès pour créer les vôtres. L’illustration suivante montre comment vous pouvez utiliser les géométries pour créer des formes, comme un pinceau de dessin, et pour détourer d’autres éléments [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
 
 ![Capture d’écran montrant comment vous pouvez utiliser des géométries pour créer des formes.](./media/index/use-geometries-create-shapes.png)
 
@@ -109,9 +109,9 @@ Pour plus d’informations, consultez [Vue d’ensemble de Geometry](geometry-ov
 
 ### <a name="2-d-effects"></a>Effets 2D
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Fournit une bibliothèque de classes 2-D que vous pouvez utiliser pour créer une variété d’effets. La fonction de rendu de 2-D de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] permet de peindre [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments possédant des dégradés, des bitmaps, des dessins et des vidéos ; et pour les manipuler à l’aide de rotation, mise à l’échelle et l’inclinaison. L’illustration suivante donne un exemple des nombreux effets que vous pouvez obtenir en utilisant les pinceaux [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit une bibliothèque de classes 2D que vous pouvez utiliser pour créer un grand nombre d’effets. La fonctionnalité de rendu 2D de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] offre la possibilité de peindre des éléments [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] qui ont des dégradés, des bitmaps, des dessins et des vidéos. et les manipuler à l’aide de la rotation, de la mise à l’échelle et de l’inclinaison. L’illustration suivante donne un exemple des nombreux effets que vous pouvez obtenir en utilisant les pinceaux [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
 
-![Illustration montrant les différents pinceaux WPF et les éléments de la peinture.](./media/index/brushes-paint-elements.png)
+![Illustration montrant les différents pinceaux WPF et éléments de peinture.](./media/index/brushes-paint-elements.png)
 
 Pour plus d’informations, consultez [Vue d’ensemble des pinceaux WPF](wpf-brushes-overview.md). Pour obtenir un exemple d’introduction, consultez [Exemples de pinceaux](https://go.microsoft.com/fwlink/?LinkID=159973).
 
@@ -119,7 +119,7 @@ Pour plus d’informations, consultez [Vue d’ensemble des pinceaux WPF](wpf-br
 
 ## <a name="3-d-rendering"></a>Rendu 3D
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit un ensemble de fonctionnalités de rendu 3D qui s’intègrent à la prise en charge des graphiques 2D dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] afin que vous permettent de créer des dispositions plus intéressantes, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]et la visualisation de données. À une extrémité du spectre, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous permet de rendre des images 2D sur les surfaces des formes 3D, qui montre l’illustration suivante.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit un ensemble de fonctionnalités de rendu 3D qui s’intègrent à la prise en charge des graphiques 2D dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour vous permettre de créer une disposition plus passionnante, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] et une visualisation des données. À une extrémité du spectre, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous permet d’afficher des images 2D sur les surfaces de formes 3D, comme le montre l’illustration suivante.
 
 ![Capture d’écran d’un exemple montrant des formes 3D avec différentes textures.](./media/index/visual-three-dimensional-shape.png)
 
@@ -145,7 +145,7 @@ Les images, la vidéo et l’audio constituent des méthodes multimédia riches 
 
 Les images, comprenant les icônes, les arrière-plans et même des parties des animations, sont une composante essentielle de la plupart des applications. Étant donné que vous devez fréquemment utiliser des images, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] expose la possibilité de les utiliser de plusieurs façons. L’illustration suivante montre l’une de ces façons.
 
-![Capture d’écran exemple de style](../controls/./media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")
+![Exemple de capture d’écran de style](../controls/./media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")
 
 Pour plus d’informations, consultez [Vue d’ensemble de la création d’images](imaging-overview.md).
 
@@ -157,7 +157,7 @@ Une fonctionnalité principale des capacités graphiques de [!INCLUDE[TLA2#tla_w
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />
 ```
 
-<xref:System.Windows.Controls.MediaElement> est capable de lire la vidéo et audio et est suffisamment extensible pour autoriser la création facile de personnalisé [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)].
+<xref:System.Windows.Controls.MediaElement> est capable de visionner à la fois des données audio et vidéo, et est suffisamment extensible pour permettre la création facile d’interfaces utilisateur personnalisées.
 
 Pour plus d'informations, consultez [Vue d’ensemble du multimédia](multimedia-overview.md).
 
@@ -170,6 +170,6 @@ Pour plus d'informations, consultez [Vue d’ensemble du multimédia](multimedia
 - [Vue d’ensemble des formes et dessins de base dans WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Vue d’ensemble de la peinture avec des couleurs unies ou des dégradés](painting-with-solid-colors-and-gradients-overview.md)
 - [Peinture avec des images, des dessins et des objets visuels](painting-with-images-drawings-and-visuals.md)
-- [L’animation et minutage des rubriques de procédures](animation-and-timing-how-to-topics.md)
+- [Rubriques de procédures relatives à l’animation et au minutage](animation-and-timing-how-to-topics.md)
 - [Vue d’ensemble des graphiques 3D](3-d-graphics-overview.md)
 - [Vue d’ensemble multimédia](multimedia-overview.md)
