@@ -580,8 +580,8 @@
           href: csharp/tutorials/exploration/interpolated-strings-local.md
         - name: Scénarios avancés d’interpolation de chaîne
           href: csharp/tutorials/string-interpolation.md
-        - name: Mettre à jour de manière sécurisée des interfaces avec les membres d’interface par défaut
-          href: csharp/tutorials/default-interface-members-versions.md
+        - name: Mettre à jour de manière sécurisée des interfaces avec les méthodes d’interface par défaut
+          href: csharp/tutorials/default-interface-methods-versions.md
         - name: Explorer des index et des plages
           href: csharp/tutorials/ranges-indexes.md
         - name: Utiliser des types référence nullable
