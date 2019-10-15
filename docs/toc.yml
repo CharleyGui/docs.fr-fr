@@ -271,6 +271,14 @@
           href: core/diagnostics/managed-debuggers.md
         - name: Journalisation et suivi
           href: core/diagnostics/logging-tracing.md
+        - name: Outils .NET Core généraux
+          items:
+            - name: dotnet-counters
+              href: core/diagnostics/dotnet-counters.md
+            - name: dotnet-dump
+              href: core/diagnostics/dotnet-dump.md
+            - name: dotnet-trace
+              href: core/diagnostics/dotnet-trace.md
     - name: Test unitaire
       href: core/testing/index.md
       items:
@@ -582,6 +590,8 @@
           href: csharp/tutorials/string-interpolation.md
         - name: Mettre à jour de manière sécurisée des interfaces avec les méthodes d’interface par défaut
           href: csharp/tutorials/default-interface-methods-versions.md
+        - name: Créer une fonctionnalité mixin avec les méthodes d’interface par défaut
+          href: csharp/tutorials/mixins-with-default-interface-methods.md
         - name: Explorer des index et des plages
           href: csharp/tutorials/ranges-indexes.md
         - name: Utiliser des types référence nullable
