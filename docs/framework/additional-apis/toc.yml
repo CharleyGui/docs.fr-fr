@@ -1,4 +1,4 @@
-- name: API et bibliothèques de classes supplémentaires
+- name: API supplémentaires
   href: index.md
   items:
     - name: Microsoft.SqlServer.Server
@@ -7,6 +7,12 @@
           items:
             - name: SmiOrderProperty.Item
               href: microsoft.sqlserver.server.smiorderproperty.item.md
+    - name: Système
+      items:
+        - name: 'Exception, classe'
+          items:
+            - name: 'Exception.PrepForRemoting, méthode'
+              href: system.exception.prepforremoting.md
     - name: System.Data.SqlTypes
       items:
         - name: 'SqlChars, classe'
