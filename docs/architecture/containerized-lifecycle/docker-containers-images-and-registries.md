@@ -2,12 +2,12 @@
 title: Conteneurs, images et registres Docker
 description: Découvrez le rôle clé que jouent globalement les registres dans la façon dont Docker déploie les applications.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7becadc3de16d96f8d6f167cf49c6cdd3bcc0d32
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 32240ac4f6dec67531d8e618cff153d235c073c7
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673516"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394600"
 ---
 # <a name="docker-containers-images-and-registries"></a>Conteneurs, images et registres Docker
 
@@ -19,9 +19,11 @@ Vous stockez les images dans un registre, qui fait office de bibliothèque d’i
 
 La figure 1-4 montre les liens entre les images et registres Docker et les autres composants. Elle montre également les divers registres des autres fournisseurs.
 
-![Taxonomie de base dans Docker : le registre est semblable à une bibliothèque où les images sont stockées et peuvent être extraites pour générer des conteneurs afin d’exécuter les services ou les applications web. Il existe des registres Docker privés en local et sur le cloud public. Docker Hub est un registre public géré par Docker, tout comme Docker Trusted Registry, une solution de classe d’entreprise, Azure propose Azure Container Registry. AWS, Google et d’autres ont également des registres de conteneurs.](./media/image4.png)
+![Diagramme montrant la taxonomie de base dans l’ancrage.](./media/docker-containers-images-and-registries/taxonomy-docker-terms-concepts.png)
 
 **Figure 1-4**. Taxonomie des termes et concepts Docker
+
+le registre est semblable à une bibliothèque où les images sont stockées et peuvent être extraites pour générer des conteneurs afin d’exécuter les services ou les applications web. Il existe des registres Docker privés en local et sur le cloud public. Docker Hub est un registre public géré par Docker, tout comme Docker Trusted Registry, une solution de classe d’entreprise, Azure propose Azure Container Registry. AWS, Google et d’autres ont également des registres de conteneurs.
 
 En plaçant des images dans un registre, vous pouvez stocker les bits d’application statiques et immuables, y compris toutes les dépendances, au niveau du framework. Ensuite, vous pouvez versionner et déployer les images dans différents environnements, offrant ainsi une unité de déploiement cohérente.
 

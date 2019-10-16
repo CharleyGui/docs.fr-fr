@@ -2,12 +2,12 @@
 title: État et données dans les applications Docker
 description: Découvrez l’option disponible pour enregistrer l’état dans des applications conteneurisées.
 ms.date: 02/15/2019
-ms.openlocfilehash: bc171a419632f2ac61c7c9bf6b201b84e0691c3a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: b2368efb0eff2bdce48b77b2addcc4de89822c74
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673556"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394640"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
 
@@ -47,7 +47,7 @@ Les **montages `tmpfs`** sont des dossiers virtuels qui résident uniquement dan
 
 Comme le montre la figure 4-5, les volumes Docker standard peuvent être stockés en dehors des conteneurs eux-mêmes, mais dans les limites physiques du serveur ou de la machine virtuelle hôte. Les conteneurs Docker ne peuvent cependant pas accéder à un volume depuis un serveur ou une machine virtuelle hôte à un autre. En d’autres termes, avec ces volumes, il n’est pas possible de gérer les données partagées entre des conteneurs qui s’exécutent sur des hôtes Docker distincts. Toutefois, cela est possible avec un pilote de volume qui prend en charge les hôtes distants.
 
-![Les volumes peuvent être partagés entre les conteneurs, mais uniquement sur le même hôte, sauf si vous utilisez un pilote distant qui prend en charge les hôtes distants. ](./media/image5.png)
+![Diagramme montrant les volumes de l’ancrage stockés en dehors des conteneurs.](./media/state-and-data-in-docker-applications/container-based-application-external-data-sources.png)
 
 **Figure 4-5**. Volumes et sources de données externes pour applications conteneurisées
 
@@ -63,7 +63,7 @@ Des **sources de données distantes et des outils de mise en cache**, comme Azur
 
 - Stockage Table stocke les jeux de données structurés. Stockage Table est un magasin de données clé-attribut NoSQL, qui permet le développement rapide et un accès rapide à de grandes quantités de données.
 
-**Bases de données relationnelles et bases de données NoSQL.** De nombreux choix sont disponibles pour les bases de données externes, qui vont des bases de données relationnelles, comme SQL Server, PostgreSQL ou Oracle, aux bases de données NoSQL, comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne sont pas présentées dans ce guide, car il s’agit d’un tout autre sujet.
+**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreuses options pour les bases de données externes, à partir de bases de données relationnelles telles que SQL Server, PostgreSQL, Oracle ou des bases de données NoSQL comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide, car il s’agit d’une rubrique différente.
 
 >[!div class="step-by-step"]
 >[Précédent](monolithic-applications.md)

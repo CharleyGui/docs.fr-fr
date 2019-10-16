@@ -2,18 +2,18 @@
 title: Conteneurs comme fondement de la collaboration DevOps
 description: Découvrez le rôle clé des conteneurs pour rationaliser DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: 37faf00f270414df363f36894317f31f81a2937e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 16cccef0545f0da14128e31dc8f7ad78369cf23a
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672766"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394820"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Conteneurs comme fondement de la collaboration DevOps
 
 Compte tenu de la nature-même des conteneurs et de la technologie Docker, les développeurs peuvent facilement partager leurs logiciels et leurs dépendances avec le personnel informatique et des environnements de production tout en éliminant l’excuse classique « Ça fonctionne sur ma machine ». Les conteneurs résolvent les conflits d’applications entre les différents environnements. Indirectement, les conteneurs et Docker rapprochent les développeurs et le personnel informatique, en facilitant leur collaboration efficace. Adopter le workflow de conteneur offre à de nombreux clients la continuité DevOps qu’ils recherchaient mais qu’ils devaient auparavant implémenter par le biais d’une configuration plus complexe pour les pipelines de mise en production et de build. Les conteneurs simplifient les pipelines de build/test/déploiement dans DevOps.
 
-![Docker permet de créer des ponts entre le développeur et les architectes sur la charge de travail de développement/conception et les opérations informatiques dans la charge de travail d’exécution/de supervision/de gestion](./media/image1.png)
+![Diagramme montrant la propriété du cycle de vie d’une application de station d’accueil.](./media/containers-foundation-for-devops-collaboration/persona-workloads-docker-container-lifecycle.png)
 
 **Figure 2-1.** Charges de travail principales par « personne » dans le cycle de vie des applications Docker conteneurisées
 
@@ -57,7 +57,7 @@ Si vous pouvez répondre à toutes ces questions, vous serez mieux préparé pou
 
 La figure 2-2 présente un workflow plus détaillé d’un cycle de vie d’application Docker, en s’intéressant particulièrement, dans cet exemple, à des activités et ressources DevOps spécifiques.
 
-![Ce diagramme montre la « boucle externe » de DevOps. Quand du code est poussé (push) vers le dépôt, un pipeline d’intégration continue (CI) est démarré, puis il commence le pipeline de déploiement continu (CD), où l’application est déployée. Les métriques collectées à partir d’applications déployées sont renvoyées à la charge de travail de développement, où la « boucle interne » se produit. Les équipes de développement disposent ainsi de données réelles pour répondre aux besoins des utilisateurs et des entreprises.](./media/image2.png)
+![Diagramme montrant le cycle de vie générique de bout en bout d’une application Dockr.](./media/containers-foundation-for-devops-collaboration/generic-end-to-enddpcker-app-life-cycle.png)
 
 **Figure 2-2.** Workflow général du cycle de vie d’application conteneurisée Docker
 

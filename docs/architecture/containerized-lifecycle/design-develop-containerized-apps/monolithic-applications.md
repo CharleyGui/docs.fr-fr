@@ -2,12 +2,12 @@
 title: Applications monolithiques
 description: Comprenez les principes de base de la mise en conteneur des applications monolithiques.
 ms.date: 02/15/2019
-ms.openlocfilehash: a67015452fb1245ef4b24a8dc50a4b33d3f9f32e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 1d4b54017e431bd9775bf2aee8c88f56e0489367
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673596"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394728"
 ---
 # <a name="monolithic-applications"></a>Applications monolithiques
 
@@ -17,11 +17,11 @@ Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’a
 
 En suivant le principe selon lequel un conteneur fait une seule chose à la fois et dans un processus unique, le modèle monolithique est en conflit. Vous pouvez inclure plusieurs composants/bibliothèques ou couches internes dans chaque conteneur, comme illustré dans la figure 4-1.
 
-![La plupart sinon la totalité des fonctionnalités d’une application monolithique se trouvent dans un processus ou un conteneur unique et sont organisées en composants dans des couches ou des bibliothèques internes.](./media/image1.png)
+![Diagramme montrant une application monolithique qui se met à l’échelle en clonant l’application.](./media/monolithic-applications/monolithic-application-architecture-example.png)
 
 **Figure 4-1.** Exemple d’architecture d’application monolithique
 
-L’inconvénient de cette approche se manifeste si ou quand l’application grandit, ce qui nécessite une mise à l’échelle. Si l’application entière est mise à l’échelle, ce n’est pas vraiment un problème. Or, dans la plupart des cas, seules quelques parties de l’application formant les goulots d’étranglement ont besoin d’être mises à l’échelle, alors que les autres composants sont moins utilisés.
+La plupart sinon la totalité des fonctionnalités d’une application monolithique se trouvent dans un processus ou un conteneur unique et sont organisées en composants dans des couches ou des bibliothèques internes. L’inconvénient de cette approche se manifeste si ou quand l’application grandit, ce qui nécessite une mise à l’échelle. Si l’application entière est mise à l’échelle, ce n’est pas vraiment un problème. Or, dans la plupart des cas, seules quelques parties de l’application formant les goulots d’étranglement ont besoin d’être mises à l’échelle, alors que les autres composants sont moins utilisés.
 
 Dans l’exemple type du commerce électronique, c’est probablement le composant des informations produit qui aurait le plus besoin d’être mis à l’échelle. Les clients qui recherchent des produits sont beaucoup plus nombreux que ceux qui en achètent. Plus de clients utilisent leur panier d’achat que ceux qui utilisent le pipeline de paiement. Moins de clients ajoutent des commentaires ou consultent leur historique d’achat. De même, seule une poignée d’employés, dans une même région, doivent généralement gérer le contenu et les campagnes marketing. En mettant à l’échelle la conception monolithique, l’ensemble du code est déployé plusieurs fois.
 
@@ -31,7 +31,7 @@ L’approche monolithique est courante, et nombreuses sont les organisations qui
 
 Du point de vue de l’infrastructure, chaque serveur peut exécuter de nombreuses applications dans le même hôte et offrir un ratio d’efficacité acceptable dans l’utilisation des ressources, comme le montre la figure 4-2.
 
-![Un même hôte peut exécuter plusieurs applications dans des conteneurs distincts.](./media/image2.png)
+![Diagramme montrant un hôte avec plusieurs applications dans des conteneurs distincts.](./media/monolithic-applications/host-with-multiple-apps-containers.png)
 
 **Figure 4-2.** Hôte exécutant plusieurs applications/conteneurs
 
@@ -43,9 +43,9 @@ Vous pouvez aussi utiliser [Azure App Services](https://azure.microsoft.com/serv
 
 Vous pouvez déployer plusieurs machines virtuelles en tant qu’hôtes Docker et exécuter n’importe quel nombre de conteneurs par machine virtuelle. Ensuite, en utilisant Azure Load Balancer, comme illustré dans la Figure 4-3, vous pouvez gérer la mise à l’échelle.
 
-![Une application monolithique peut faire l’objet d’un scale-out sur différents hôtes, chacun exécutant l’application dans des conteneurs.](./media/image3.png)
+![Diagramme montrant une application monolithique montée en charge sur différents hôtes.](./media/monolithic-applications/multiple-hosts-from-single-docker-container.png)
 
-**Figure 4-3**. Plusieurs hôtes effectuant le scale-out d’une même application Docker
+**Figure 4-3**. Plusieurs hôtes montée en charge d’une seule application d’ancrage
 
 Vous pouvez gérer le déploiement des hôtes proprement dits via des techniques de déploiement classiques.
 
@@ -71,7 +71,7 @@ L’utilisation d’Azure App Service s’avère intuitive et vous permet d’ê
 
 Désormais, comme le montre la figure 4-4, quand vous utilisez Visual Studio 2017, la prise en charge des conteneurs dans Azure App Service vous offre la possibilité d’inclure tout ce que vous voulez dans l’environnement de votre application. Si vous avez ajouté une dépendance à votre application, parce que vous l’exécutez dans un conteneur, vous avez la possibilité d’inclure ces dépendances dans votre fichier Dockerfile ou image Docker.
 
-![Représentation de l’Assistant Visual Studio pour la publication dans Azure App Service, avec le registre de conteneurs sélectionné.](./media/image4.png)
+![Capture d’écran de la boîte de dialogue créer un App Service montrant une Container Registry.](./media/monolithic-applications/publish-azure-app-service-container.png)
 
 **Figure 4-4**. Publication d’un conteneur dans Azure App Service à partir d’applications/conteneurs Visual Studio
 

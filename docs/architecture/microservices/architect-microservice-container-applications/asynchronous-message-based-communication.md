@@ -2,12 +2,12 @@
 title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
 ms.date: 09/20/2018
-ms.openlocfilehash: 109737a04eac8cfc30c746d283ca71c697f5b29d
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 58fe387c6bc9e1dcca519a200d3f8988f327a39c
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834482"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72394576"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
 
@@ -73,7 +73,7 @@ L’implémentation d’une architecture pilotée par les événements sur plusi
 
 - Utilisation d’une file d’attente transactionnelle, basée sur DTC, comme MSMQ. (Toutefois, il s’agit d’une approche héritée.)
 
-- Utilisation de [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining).
+- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
 
 - Utilisation de la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
@@ -84,12 +84,12 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Event Driven Messaging** \
-  <http://soapatterns.org/design_patterns/event_driven_messaging>
+  <https://soapatterns.org/design_patterns/event_driven_messaging>
 
 - **Publish/Subscribe Channel** \
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **Udi Dahan. Clarified CQRS** \
+- **UDI Dahan. CQRS** \ clarifié
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 - **CQRS (séparation des responsabilités en matière de commande et de requête)**  \
@@ -101,7 +101,7 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 - **Cohérence à terme** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy Bogard. Refactorisation vers la résilience : évaluation du couplage** \
+- **Jimmy bogard. Refactorisation vers la résilience : évaluation**de l’association  \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]
