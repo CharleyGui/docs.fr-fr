@@ -2,12 +2,12 @@
 title: Mise en cache d'un plan de requête (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 90b0c685-5ef2-461b-98b4-c3c0a2b253c7
-ms.openlocfilehash: ca95f3aed5c092247a97bbfe5b0237a45b95ae16
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 020b2b3f08262fc15ace8603c26e2d6c059baafd
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249282"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319408"
 ---
 # <a name="query-plan-caching-entity-sql"></a>Mise en cache d'un plan de requête (Entity SQL)
 À chaque tentative d'exécution d'une requête, le pipeline de la requête recherche son cache de plan de requête pour voir si la requête exacte est déjà compilée et disponible. Si tel est le cas, il réutilise le plan mis en cache plutôt que d'en générer un nouveau. Si aucune correspondance n'est trouvée dans le cache du plan de requête, la requête est compilée et mise en cache. Une requête est identifiée par son texte [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et sa collection de paramètres (noms et types). Toutes les comparaisons de texte respectent la casse.  
@@ -22,14 +22,16 @@ ms.locfileid: "70249282"
 ## <a name="recommended-practice"></a>Pratique recommandée  
  Les requêtes dynamiques doivent être évitées, en général. L’exemple de requête dynamique suivant est vulnérable aux attaques par injection de code SQL, car il accepte directement l’entrée utilisateur sans aucune validation.  
   
- `"SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp WHERE sp.EmployeeID = " + employeeTextBox.Text;`  
-  
+ ```csharp
+ var query = "SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp WHERE sp.EmployeeID = " + employeeTextBox.Text;  
+ ```
+ 
  Si vous utilisez des requêtes générées dynamiquement, pensez à désactiver la mise en cache du plan de requête pour éviter une consommation inutile de mémoire pour les entrées de cache qui ne seront probablement pas réutilisées.  
   
  La mise en cache du plan de requête sur les requêtes statiques et les requêtes paramétrables peut fournir des avantages en matière de performances. L'exemple ci-dessous illustre une requête statique :  
   
-```  
-"SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp";  
+```csharp
+var query = "SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp";  
 ```  
   
  Pour que les requêtes soient mappées correctement par le cache du plan de requête, elles doivent satisfaire les exigences suivantes :  

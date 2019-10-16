@@ -4,37 +4,37 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF]
 ms.assetid: 845df323-be53-4848-92ef-ba67a406484d
-ms.openlocfilehash: c948c20788ae4e16e6b626a3f168cf9dcb94d718
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d2c27ad2b265a7feda5f013b5b0993a6cd83094
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608877"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320766"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Liaisons Windows Communication Foundation
-Les liaisons spécifient la façon dont un point de terminaison de service Windows Communication Foundation (WCF) communique avec les autres points de terminaison. Au minimum, une liaison doit spécifier le transport (par exemple HTTP ou TCP) à utiliser. Vous pouvez également définir d’autres caractéristiques, telles que la sécurité et la prise en charge des transactions, par le biais des liaisons.  
+Les liaisons spécifient la façon dont un point de terminaison de service (WCF) Windows Communication Foundation communique avec d’autres points de terminaison. Au minimum, une liaison doit spécifier le transport (par exemple HTTP ou TCP) à utiliser. Vous pouvez également définir d’autres caractéristiques, telles que la sécurité et la prise en charge des transactions, par le biais des liaisons.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble des liaisons WCF](../../../docs/framework/wcf/bindings-overview.md)  
- Vue d’ensemble de quelles liaisons WCF faire, quelles liaisons fournit le système et comment vous pouvez définir ou les modifier.  
+ [Vue d’ensemble des liaisons WCF](bindings-overview.md)  
+ Vue d’ensemble des liaisons WCF, des liaisons fournies par le système et de la façon dont vous pouvez les définir ou les modifier.  
   
- [Liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md)  
- Une liste des liaisons fournies avec WCF. Ces liaisons couvrent la plus grande partie des exigences de modèle de message et de sécurité.  
+ [Liaisons fournies par le système](system-provided-bindings.md)  
+ Liste des liaisons incluses avec WCF. Ces liaisons couvrent la plus grande partie des exigences de modèle de message et de sécurité.  
   
- [Utilisation de liaisons pour configurer des services et des clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+ [Utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md)  
  Une liaison WCF contient des informations importantes que les clients doivent utiliser pour se connecter aux points de terminaison de service.  
   
- [Configuration de liaisons pour les services](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
+ [Configuration de liaisons pour les services](configuring-bindings-for-wcf-services.md)  
  La configuration permet aux administrateurs et aux installateurs de personnaliser les liaisons pour des points de terminaison de service.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel.Channels>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Points de terminaison : Adresses, liaisons et contrats](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Points de terminaison : adresses, liaisons et contrats](./feature-details/endpoints-addresses-bindings-and-contracts.md)  
   
- [Liaisons](../../../docs/framework/wcf/feature-details/bindings.md)  
+ [Liaisons](./feature-details/bindings.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Liaisons personnalisées](../../../docs/framework/wcf/extending/custom-bindings.md)
+- [Liaisons personnalisées](./extending/custom-bindings.md)

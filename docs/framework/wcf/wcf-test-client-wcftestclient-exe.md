@@ -2,17 +2,17 @@
 title: Client test WCF (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: e637a2bb26bd0cc4bea653155c2a85ef5af19fd9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ac89b234dfafe3f87f1423a04ce8e4dd6b44b991
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038350"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321190"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>Client test WCF (WcfTestClient.exe)
 Le client de test Windows Communication Foundation (WCF) (WcfTestClient. exe) est un outil d’interface utilisateur graphique qui permet aux utilisateurs d’entrer des paramètres de test, d’envoyer cette entrée au service et d’afficher la réponse renvoyée par le service. Il fournit une expérience de test de service transparente lorsqu’il est associé à l’hôte de service WCF.
 
-Vous pouvez généralement trouver le client test WCF (WcfTestClient. exe) à l’emplacement suivant: `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` -Community peut être «Enterprise», «Professional» ou «Community», selon le niveau de Visual Studio installé.
+Vous pouvez généralement trouver le client test WCF (WcfTestClient. exe) à l’emplacement suivant : `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`-la Communauté peut être « entreprise », « professionnel » ou « communauté » selon le niveau de Visual Studio installé.
 
 ## <a name="scenarios-for-using-test-client"></a>Scénarios d'utilisation du client test
 
@@ -32,7 +32,7 @@ Vous pouvez également utiliser le client test WCF pour déboguer un projet de s
 
 Vous pouvez également appeler le client test WCF (WcfTestClient. exe) en dehors de Visual Studio pour tester un service arbitraire sur Internet. Pour localiser l'outil, allez à l'emplacement suivant :
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`(où Communauté peut être «entreprise», «professionnel» ou «communauté» selon le niveau de Visual Studio installé sur l’ordinateur)
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (où Community peut être « Enterprise », « Professional » ou « Community », selon le niveau de Visual Studio installé sur l’ordinateur)
 
 Pour utiliser l'outil, double-cliquez sur le nom de fichier afin de l'ouvrir à partir de cet emplacement ou lancez-le à partir d'une ligne de commandes.
 
@@ -60,7 +60,7 @@ Pour afficher les paramètres de test, double-cliquez sur une opération afin de
 
 Pour afficher le code XML du message, cliquez sur **XML**. Pour les envoyer au service, cliquez sur **appeler**.
 
-Pour un paramètre de DataSet, cliquez sur **...** bouton en regard de **modifier...** pour le modifier dans une nouvelle fenêtre qui montre le DataGrid. Notez l’apparence des boutons **copier le DataSet** et **coller le jeu de données** . Si le schéma de l'objet DataSet est inconnu lors de la première modification, DataGrid est vide. Vous devez coller un objet DataSet avec le même schéma dans l'objet actuel de DataGrid. (Notez que vous devez copier le schéma à partir d'un autre endroit avant l'opération de collage.) Vous pouvez également copier un objet DataSet pour une utilisation ultérieure en cliquant sur le bouton **copier le DataSet** .
+Pour un paramètre de DataSet, cliquez sur **...** bouton en regard de **modifier...** pour le modifier dans une nouvelle fenêtre qui montre le DataGrid. Notez l’apparence des boutons **copier le DataSet** et **coller le jeu de données** . Si le schéma de l'objet DataSet est inconnu lors de la première modification, DataGrid est vide. Vous devez coller un objet DataSet avec le même schéma dans l'objet actuel de DataGrid. (Notez que vous devez copier le schéma à partir d’un autre emplacement avant l’opération de collage.) Vous pouvez également copier un objet DataSet pour une utilisation ultérieure en cliquant sur le bouton **copier le DataSet** .
 
 La réponse du service apparaît au-dessous des paramètres de test.
 
@@ -87,32 +87,32 @@ Cliquez avec le bouton droit sur **fichier de configuration** dans le volet gauc
 
 Une fois le fichier enregistré dans l’éditeur de configuration de service, le client test WCF affiche un message d’avertissement pour vous informer que le fichier a été modifié en dehors de et vous demande si vous voulez le recharger.
 
-Si vous sélectionnez **Oui**, le contenu de configuration dans l’onglet «client. dll. config» reflète les modifications que vous avez apportées dans l’éditeur.
+Si vous sélectionnez **Oui**, le contenu de configuration dans l’onglet « client. dll. config » reflète les modifications que vous avez apportées dans l’éditeur.
 
-Si vous sélectionnez **non**, le contenu de configuration dans l’onglet «client. dll. config» reste inchangé et le contenu modifié est automatiquement enregistré dans le fichier source.
+Si vous sélectionnez **non**, le contenu de configuration dans l’onglet « client. dll. config » reste inchangé et le contenu modifié est automatiquement enregistré dans le fichier source.
 
 #### <a name="restore-to-default-configuration"></a>Restaurer la configuration par défaut
 
-Si vous souhaitez annuler toutes les modifications et restaurer la configuration du client par défaut, cliquez avec le bouton droit sur **fichier de configuration** dans le volet gauche, puis sélectionnez le menu contextuel restaurer la configuration **par défaut**. La valeur de configuration par défaut est chargée et le contenu de l’onglet «client. dll. config» est restauré.
+Si vous souhaitez annuler toutes les modifications et restaurer la configuration du client par défaut, cliquez avec le bouton droit sur **fichier de configuration** dans le volet gauche, puis sélectionnez le menu contextuel restaurer la configuration **par défaut**. La valeur de configuration par défaut est chargée et le contenu de l’onglet « client. dll. config » est restauré.
 
 #### <a name="validate-changes"></a>Valider des modifications
 
 Lorsque des modifications enregistrées sont chargées dans le client test WCF, la validité de la configuration est vérifiée par rapport au schéma WCF. Si les erreurs sont rencontrées, une boîte de dialogue est affichée pour afficher des détails d'erreur.
 
-Pendant la génération de proxy, la compilation binaire ou l’appel de service, les éléments de menu qui prennent en charge la modification (autrement dit, «Edit...», «Restore...», etc.) sont désactivés. L’appel de service est également désactivé lors du chargement de la configuration mise à jour vers le client test WCF.
+Pendant la génération de proxy, la compilation binaire ou l’appel de service, les éléments de menu qui prennent en charge la modification (autrement dit, « Edit... », « Restore... », etc.) sont désactivés. L’appel de service est également désactivé lors du chargement de la configuration mise à jour vers le client test WCF.
 
 #### <a name="persist-client-configuration"></a>Rendre la configuration client persistante
 
-L’onglet**configuration du client** **options**->des **Outils**->contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers fichiers de contrat de service et d’application de service. config.
+L’onglet **outils**@no__t-**1 @no__t**-3**client Configuration** contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers fichiers de contrat de service et d’application de service. config.
 
-Si vous avez modifié la configuration du client pour votre service WCF et que vous souhaitez toujours utiliser ce fichier mis à jour pour déboguer votre service , vous pouvez décocher l’option régénérer. En procédant ainsi, même lorsque vous mettez à jour le service et rouvrez le client test WCF, le fichier client. dll. config est celui que vous avez précédemment mis à jour au lieu d’un client regénéré en fonction du service mis à jour.
+Si vous avez modifié la configuration du client pour votre service WCF et que vous souhaitez toujours utiliser ce fichier mis à jour pour déboguer votre service, vous pouvez décocher l’option **régénérer** . En procédant ainsi, même lorsque vous mettez à jour le service et rouvrez le client test WCF, le fichier client. dll. config est celui que vous avez précédemment mis à jour au lieu d’un client regénéré en fonction du service mis à jour.
 
 Toutefois, il peut s'avérer nécessaire de modifier le fichier de configuration afin qu'il soit conforme au proxy régénéré. Si le proxy régénéré et fichier de configuration ne correspondent pas en raison de la mise à jour d'un service, des erreurs se produiront à l'appel du service.
 
 > [!CAUTION]
 > Si vous avez modifié le fichier de configuration client et décidez de le réutiliser ultérieurement, vous le trouverez à l'emplacement suivant :
 >
-> \Documents and Settings\\[User Account] \Mes Documents\test client Projects.
+> \Documents and Settings @ no__t-0 [User Account] \Mes Documents\Test client Projects.
 >
 > Toutes les informations d'identification mises à jour stockées dans le fichier de configuration client sont protégées par la Liste de contrôle d'Accès (ACL) de ce dossier.
 
@@ -136,25 +136,25 @@ Pendant la génération d'un proxy, une compilation binaire ou l'appel d'un serv
 
 #### <a name="refresh-service"></a>Actualiser un service
 
-Si une modification est apportée au service alors que le client test WCF est en cours d’exécution et que vous souhaitez vous assurer que l’implémentation du client test WCF pour ce service est à jour, cliquez avec le bouton droit sur la racine du service, puis sélectionnez actualiser le **service**. Notez qu'après avoir actualisé un service, son état est réinitialisé.
+Si une modification est apportée au service alors que le client test WCF est en cours d’exécution et que vous souhaitez vous assurer que l’implémentation du client test WCF pour ce service est à jour, cliquez avec le bouton droit sur la racine du service, puis sélectionnez **Actualiser le service**. Notez qu'après avoir actualisé un service, son état est réinitialisé.
 
 Pendant la génération d'un proxy, une compilation binaire ou l'appel d'un service, les éléments de menu qui prennent en charge l'actualisation d'un service sont désactivés. L'appel de service est également désactivé.
 
 ## <a name="location-of-files-generated-by-the-test-client"></a>Emplacement des fichiers générés par le client test
 
-Par défaut, le client test WCF stocke les fichiers de code client et de configuration générés dans le dossier «%appdata%\Local\temp\Test client Projects». Ce dossier est supprimé après la sortie du client test WCF. Si un fichier de configuration est modifié dans le client test WCF et que l’option **toujours régénérer la configuration au démarrage des services** est désactivée, le fichier modifié est copié dans le dossier «CachedConfig» sous «mes projets client Documents\test» avec un mappage ( fichier XML de métadonnées-adresse-à-fichier) en tant qu’index.
+Par défaut, le client test WCF stocke les fichiers de code client et de configuration générés dans le dossier « %appdata%\Local\temp\Test client Projects ». Ce dossier est supprimé après la sortie du client test WCF. Si un fichier de configuration est modifié dans le client test WCF et que l’option **toujours régénérer la configuration au démarrage des services** est désactivée, le fichier modifié est copié dans le dossier « CachedConfig » sous « mes projets client Documents\test » avec un mappage ( fichier XML de métadonnées-adresse-à-fichier) en tant qu’index.
 
-Vous pouvez également démarrer le client test WCF dans une ligne de commande, `/ProjectPath` utiliser le commutateur pour spécifier un nouveau chemin d’accès souhaité pour le stockage des `/RestoreProjectPath` fichiers générés ou utiliser le commutateur pour restaurer l’emplacement par défaut. La syntaxe est la suivante :
+Vous pouvez également démarrer le client test WCF dans une ligne de commande, utiliser le commutateur `/ProjectPath` pour spécifier un nouveau chemin d’accès souhaité pour le stockage des fichiers générés ou utiliser le commutateur `/RestoreProjectPath` pour restaurer l’emplacement par défaut. La syntaxe est la suivante :
 
 `wcfTestClient.exe /ProjectPath [desired location]`
 
-L’exécution de cette commande n’ouvre pas le client test WCF. Seul l’emplacement du dossier est changé. Vous pouvez exécuter cette commande si le client test WCF s’exécute ou non. Le nouvel emplacement est appliqué lorsque le client test WCF est redémarré. Les informations d’emplacement peuvent être enregistrées dans le registre ou dans le fichier WcfTestClient. exe. option dans le dossier «%appdata%\Local\temp\Test client Projects».
+L’exécution de cette commande n’ouvre pas le client test WCF. Seul l’emplacement du dossier est changé. Vous pouvez exécuter cette commande si le client test WCF s’exécute ou non. Le nouvel emplacement est appliqué lorsque le client test WCF est redémarré. Les informations d’emplacement peuvent être enregistrées dans le registre ou dans le fichier WcfTestClient. exe. option dans le dossier « %appdata%\Local\temp\Test client Projects ».
 
 ## <a name="features-supported-by-wcf-test-client"></a>Fonctionnalités prises en charge par le client test WCF
 
-Voici une liste des fonctionnalités prises en charge par le client test WCF:
+Voici une liste des fonctionnalités prises en charge par le client test WCF :
 
-- Appel de service: Message de demande/réponse et unidirectionnel.
+- Appel de service : message unidirectionnel et demande/réponse.
 
 - Liaisons : toutes les liaisons prises en charge par Svcutil.exe.
 
@@ -164,7 +164,7 @@ Voici une liste des fonctionnalités prises en charge par le client test WCF:
 
 - Sérialisation XML.
 
-La liste suivante répertorie les fonctionnalités non prises en charge par le client test WCF:
+La liste suivante répertorie les fonctionnalités non prises en charge par le client test WCF :
 
 - Types : <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, types qui implémentent l'interface <xref:System.Xml.Serialization.IXmlSerializable>, y compris l'attribut <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> associé et les types <xref:System.Xml.Linq.XDocument> et <xref:System.Xml.Linq.XElement>, ainsi que le type ADO.NET <xref:System.Data.DataTable>.
 
@@ -172,13 +172,13 @@ La liste suivante répertorie les fonctionnalités non prises en charge par le c
 
 - Transaction.
 
-- Sécurité : CardSpace, certificat et nom d’utilisateur/mot de passe.
+- Sécurité : CardSpace, Certificate et nom d’utilisateur/mot de passe.
 
-- Liaisons WSFederationbinding, toutes les liaisons de contexte et liaison https, WebHttpbinding (prise en charge des messages de réponse JSON).
+- Liaisons : WSFederationbinding, toute liaison de contexte et Https, WebHttpbinding (prise en charge des messages de réponse Json).
 
 ## <a name="closing-wcf-test-client"></a>Fermeture du client test WCF
 
-Vous pouvez fermer le client test WCF des manières suivantes:
+Vous pouvez fermer le client test WCF des manières suivantes :
 
 - Dans le menu **fichier** , cliquez sur **quitter**. Sinon, dans la fenêtre principale du client test WCF, cliquez sur **Fermer**. Ces deux actions ferment également l’hôte auto du service WCF et arrêtent le processus de débogage de Visual Studio si le client test WCF a été lancé par Visual Studio.
 
@@ -186,4 +186,4 @@ Vous pouvez fermer le client test WCF des manières suivantes:
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+- [WCF Service Host (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

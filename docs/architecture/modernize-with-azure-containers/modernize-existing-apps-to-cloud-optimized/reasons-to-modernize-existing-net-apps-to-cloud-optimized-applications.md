@@ -2,12 +2,12 @@
 title: Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: aabce73efaae520a3b59c70d53519b847f2c6a94
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: c86b9ec4d4a92b8daa0fceef0531ed955b9bb2bf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373930"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318537"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 
@@ -21,7 +21,7 @@ La ligne inférieure est que lorsqu’une organisation crée et gère des applic
 
 ## <a name="cloud-optimized-application-principles-and-tenets"></a>Principes et principes d’application optimisés pour le Cloud 
 
-Les améliorations du Cloud sont principalement axées sur la réalisation de deux objectifs : Réduisez les coûts et améliorez la croissance de l’entreprise en améliorant l’agilité. Ces objectifs sont atteints en simplifiant les processus et en réduisant les frottements lorsque vous publiez et expédiez des applications.
+Les améliorations du Cloud sont principalement axées sur la réalisation de deux objectifs : réduire les coûts et améliorer la croissance de l’entreprise en améliorant l’agilité. Ces objectifs sont atteints en simplifiant les processus et en réduisant les frottements lorsque vous publiez et expédiez des applications.
 
 Votre application est optimisée pour le Cloud si vous pouvez le faire de façon agile, développer votre application de manière autonome à partir d’autres applications locales, puis libérer, déployer, mettre à l’échelle automatiquement, surveiller et dépanner votre application dans le Cloud.
 
@@ -41,7 +41,7 @@ La liste suivante décrit les principales principes ou pratiques des application
 
 La figure 4-2 montre les principaux piliers facultatifs d’une application optimisée pour le Cloud. Plus vous implémentez de piliers, plus votre application sera prête à répondre aux attentes de vos clients.
 
-![Principaux piliers d’une application optimisée pour le Cloud](./media/image2.png)
+![Diagramme nommant les piliers principaux d’une application optimisée pour le Cloud.](./media/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications/main-pillars-cloud-optimized-application.png)
 
 **Figure 4-2.** Principaux piliers d’une application optimisée pour le Cloud
 

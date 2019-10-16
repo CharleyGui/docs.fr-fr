@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Récupérer la valeur superficielle d’un élément (Visual Basic)'
+title: 'Comment : récupérer la valeur superficielle d’un élément (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 730a6670-fb8c-41fc-8a1b-eb97a837e432
-ms.openlocfilehash: 69e85c3b87ef1052bbb3eab832f93774fa35066f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 184186a92865b022118b9989633a97c75274e7f4
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918084"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320432"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Procédure : Récupérer la valeur superficielle d’un élément (Visual Basic)
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Comment : récupérer la valeur superficielle d’un élément (Visual Basic)
 
 Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.
 
@@ -69,7 +69,7 @@ End Module
 
 Cet exemple génère la sortie suivante :
 
-```
+```console
 Column  Name="CustomerId"   =Customer.CustomerId.Heading
 Column  Name="Name"         =Customer.Name.Heading
 Column  Name="CustomerId"   =Customer.CustomerId

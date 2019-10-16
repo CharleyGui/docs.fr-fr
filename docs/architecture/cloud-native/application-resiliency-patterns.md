@@ -2,12 +2,12 @@
 title: Modèles de résilience d’application
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de résilience d’application
 ms.date: 06/30/2019
-ms.openlocfilehash: 8455584fe1d5b02f6d9543c3bad32cca7369c158
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 67ae20f14a67f3a96d6c74cad727afe680ff3178
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183720"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315945"
 ---
 # <a name="application-resiliency-patterns"></a>Modèles de résilience d’application
 
@@ -27,7 +27,7 @@ Notez comment, dans la figure précédente, les stratégies de résilience s’a
 
 **Figure 6-3.** Codes d’état HTTP à réessayer
 
-Question : J'utilise un certificat X.509 avec mon service et j'obtiens une System.Security.Cryptography.CryptographicException. Réessayez-vous un code d’état HTTP 403-interdit ? Non. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
+Question : voulez-vous réessayer un code d’état HTTP 403-interdit ? Non. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
 
 Comme nous l’avons recommandé dans le chapitre 1, les développeurs Microsoft qui créent des applications Cloud natives doivent cibler .NET Core. La version 2,1 a introduit la bibliothèque [HTTPClientFactory](https://www.stevejgordon.co.uk/introduction-to-httpclientfactory-aspnetcore) pour la création d’instances client http pour l’interaction avec les ressources basées sur une URL. En remplaçant la classe HTTPClient d’origine, la classe Factory prend en charge de nombreuses fonctionnalités améliorées, dont l’une est une [intégration étroite](../microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md) avec la bibliothèque de résilience Polly. Avec elle, vous pouvez facilement définir des stratégies de résilience dans la classe de démarrage de l’application pour gérer les défaillances partielles et les problèmes de connectivité.
 
@@ -45,7 +45,7 @@ Le [modèle de nouvelle tentative](https://docs.microsoft.com/azure/architecture
 
 Dans la figure précédente, un modèle de nouvelle tentative a été implémenté pour une opération de demande. Elle est configurée pour autoriser jusqu’à quatre tentatives avant d’échouer avec un intervalle d’attente (temps d’attente) à partir de deux secondes, ce qui double de façon exponentielle pour chaque tentative suivante.
 
-- La première invocation échoue et retourne le code d’état HTTP 500. L’application attend deux secondes et relient l’appel.
+- La première invocation échoue et retourne le code d’état HTTP 500. L’application attend deux secondes et réessaie l’appel.
 - Le deuxième appel échoue également et retourne le code d’état HTTP 500. L’application double maintenant l’intervalle d’interruption à quatre secondes et réessaie l’appel.
 - Enfin, le troisième appel aboutisse.
 - Dans ce scénario, l’opération de nouvelle tentative aurait tenté jusqu’à quatre tentatives tout en doublant la durée de l’interruption avant l’échec de l’appel.

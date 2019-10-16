@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés'
+title: Guide pratique pour déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés
 description: Découvrez comment déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur.
 ms.date: 11/27/2017
 dev_langs:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4c505c679c46494f7dc2534c2bbe9f50243a7dd
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1c69d4bb370087dddafbfed41cbfb1fef229677c
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790068"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318967"
 ---
-# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Procédure : déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Guide pratique pour déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés
 
 Cet article montre comment rechercher les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur.
 
@@ -29,7 +29,7 @@ Cet article montre comment rechercher les correctifs logiciels et mises à jour 
 
 Les correctifs logiciels et mises à jour de sécurité installés pour chaque version du .NET Framework installée sur un ordinateur sont répertoriés dans le Registre Windows. Vous pouvez utiliser le programme Éditeur du Registre (*regedit.exe*) pour afficher ces informations.
 
-1. Ouvrez le programme **regedit.exe**. Dans Windows 8 et ultérieur, cliquez avec le bouton droit sur **Démarrer** ![Logo Windows](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo"), puis sélectionnez **Exécuter**. Dans la zone **Ouvrir**, entrez **regedit** et sélectionnez **OK**.
+1. Ouvrez le programme **regedit.exe**. Dans Windows 8 et versions ultérieures, cliquez avec le bouton droit sur **Démarrer** ![la capture d’écran du logo de la touche Windows.](./media/how-to-determine-which-net-framework-updates-are-installed/windows-keyboard-logo.png "Windowskeyboardlogo"), puis sélectionnez **exécuter**. Dans la zone **Ouvrir**, entrez **regedit** et sélectionnez **OK**.
 
 2. Dans l'Éditeur du Registre, ouvrez la sous-clé suivante :
 

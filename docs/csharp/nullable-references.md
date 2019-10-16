@@ -1,13 +1,13 @@
 ---
 title: Types références Nullables
-description: Cet article fournit une vue d’ensemble des types référence nullables, ajoutés dans C# 8. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
+description: Cet article fournit une vue d’ensemble des types de référence Nullable C# , ajoutés dans 8,0. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.date: 02/19/2019
-ms.openlocfilehash: 213f0e3d9ad84628dab02a1dc483513783b2ad6e
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: a108c73064b40171a58df0796d4a0b75eddebbff
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699957"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319064"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -35,53 +35,51 @@ string? name;
 
 Toute variable où `?` n’est pas ajouté au nom de type est un **type référence non nullable**. Cela comprend toutes les variables de type référence du code existant si vous avez activé cette fonctionnalité.
 
-Le compilateur utilise l’analyse statique pour déterminer si une référence nullable est connue pour être non null. Le compilateur vous avertit si vous déréférencez une référence nullable quand elle est susceptible d’être null. Vous pouvez remplacer ce comportement à l’aide de l' `!` **opérateur null-indulgent avec** à la suite d’un nom de variable. Par exemple, si vous savez que la variable `name` n’est pas null alors que le compilateur génère un avertissement, vous pouvez écrire le code suivant pour remplacer l’analyse du compilateur :
+Le compilateur utilise l’analyse statique pour déterminer si une référence nullable est connue pour être non null. Le compilateur vous avertit si vous déréférencez une référence nullable quand elle est susceptible d’être null. Vous pouvez remplacer ce comportement à l’aide de l' [opérateur null-indulgent avec](language-reference/operators/null-forgiving.md) `!` à la suite d’un nom de variable. Par exemple, si vous savez que la variable `name` n’est pas null alors que le compilateur génère un avertissement, vous pouvez écrire le code suivant pour remplacer l’analyse du compilateur :
 
 ```csharp
 name!.Length;
 ```
 
-Vous trouverez plus d’informations sur cet opérateur dans la proposition de spécification [Nullable reference types](../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md#the-null-forgiving-operator) sur GitHub.
-
 ## <a name="nullability-of-types"></a>Nullabilité des types
 
 Tout type référence peut avoir l’une des quatre *nullabilités*, qui décrit quand des avertissements sont générés :
 
-- *Nonnullable* : La valeur null ne peut pas être assignée aux variables de ce type. Les variables de ce type n’ont pas besoin d’être vérifiées pour savoir si elles ont la valeur null avant d’être déréférencées.
-- *Nullable* : La valeur null peut être assignée aux variables de ce type. Le déréférencement des variables de ce type sans vérifier `null` au préalable génère un avertissement.
-- *Oblivious* : Il s’agit de l’état pré-C# 8. Les variables de ce type peuvent être déréférencées ou attribuées sans avertissement.
-- *Unknown* : Généralement pour les paramètres de type où les contraintes n’indiquent pas au compilateur que le type doit être *nullable* ou *nonnullable*.
+- Non *null*: aucune valeur NULL ne peut être assignée aux variables de ce type. Les variables de ce type n’ont pas besoin d’être vérifiées pour savoir si elles ont la valeur null avant d’être déréférencées.
+- *Nullable*: la valeur NULL peut être assignée aux variables de ce type. Le déréférencement des variables de ce type sans vérifier `null` au préalable génère un avertissement.
+- *Oublie*: il s’agit de l'C# état antérieur à 8,0. Les variables de ce type peuvent être déréférencées ou attribuées sans avertissement.
+- *Inconnu*: c’est généralement le cas pour les paramètres de type où les contraintes n’indiquent pas au compilateur que le type doit être *Nullable* ou ne peut pas être *null*.
 
 La nullabilité d’un type dans une déclaration de variable est contrôlée par le *contexte nullable* dans lequel la variable est déclarée.
 
 ## <a name="nullable-contexts"></a>Contextes nullables
 
-Les contextes nullables permettent de contrôler précisément comment le compilateur interprète les variables de type référence. Le **contexte d’annotation nullable** d’une ligne source donnée est `enabled` ou `disabled`. Vous pouvez penser que le compilateur pré-C# 8 compile tout votre code dans un contexte nullable `disabled` : N’importe quel type référence peut être null. Le **contexte** d' `enabled` avertissements Nullable peut avoir la valeur `disabled`ou. Le contexte d’avertissements nullable spécifie les avertissements générés par le compilateur à l’aide de son analyse de flux.
+Les contextes nullables permettent de contrôler précisément comment le compilateur interprète les variables de type référence. Le **contexte d’annotation Nullable** d’une ligne source donnée est activé ou désactivé. Vous pouvez considérer le compilateur antérieur àC# 8,0 comme en compilant tout votre code dans un contexte Nullable désactivé : tout type de référence peut avoir la valeur null. Le **contexte d’avertissements Nullable** peut également être activé ou désactivé. Le contexte d’avertissements nullable spécifie les avertissements générés par le compilateur à l’aide de son analyse de flux.
 
-Le contexte d’annotation Nullable et le contexte d’avertissement Nullable peuvent être définis pour un `Nullable` projet à l’aide de l’élément dans votre fichier *. csproj* . Cet élément configure comment le compilateur interprète la nullabilité des types et quels avertissements sont générés. Les paramètres valides sont :
+Le contexte d’annotation Nullable et le contexte d’avertissement Nullable peuvent être définis pour un projet à l’aide de l’élément `Nullable` dans votre fichier *. csproj* . Cet élément configure comment le compilateur interprète la nullabilité des types et quels avertissements sont générés. Les paramètres valides sont :
 
-- `enable`: Le contexte d’annotation nullable est **activé**. Le contexte d’avertissement nullable est **activé**.
+- `enable` : le contexte d’annotation Nullable est **activé**. Le contexte d’avertissement nullable est **activé**.
   - Les variables d’un type référence, `string` par exemple, sont non nullables.  Tous les avertissements de nullabilité sont activés.
-- `warnings`: Le contexte d’annotation nullable est **désactivé**. Le contexte d’avertissement nullable est **activé**.
+- `warnings` : le contexte d’annotation Nullable est **désactivé**. Le contexte d’avertissement nullable est **activé**.
   - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité sont activés.
-- `annotations`: Le contexte d’annotation nullable est **activé**. Le contexte d’avertissement nullable est **désactivé**.
+- `annotations` : le contexte d’annotation Nullable est **activé**. Le contexte d’avertissement nullable est **désactivé**.
   - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité sont désactivés.
-- `disable`: Le contexte d’annotation nullable est **désactivé**. Le contexte d’avertissement nullable est **désactivé**.
+- `disable` : le contexte d’annotation Nullable est **désactivé**. Le contexte d’avertissement nullable est **désactivé**.
   - Les variables d’un type référence sont oblivious, comme dans les versions antérieures de C#. Tous les avertissements de nullabilité sont désactivés.
 
 Vous pouvez aussi utiliser des directives pour définir ces mêmes contextes partout dans votre projet :
 
-- `#nullable enable`: Définit le contexte d’annotation nullable et le contexte d’avertissement nullable sur **activé**.
-- `#nullable disable`: Définit le contexte d’annotation nullable et le contexte d’avertissement nullable sur **désactivé**.
-- `#nullable restore`: Restaure le contexte d’annotation nullable et le contexte d’avertissement nullable avec les paramètres du projet.
-- `#nullable disable warnings`: Définit le contexte d’avertissement nullable sur **désactivé**.
-- `#nullable enable warnings`: Définit le contexte d’avertissement nullable sur **activé**.
-- `#nullable restore warnings`: Restaure le contexte d’avertissement nullable avec les paramètres du projet.
-- `#nullable disable annotations`: Affectez la valeur **désactivé**au contexte d’annotation Nullable.
-- `#nullable enable annotations`: Définissez le contexte d’annotation Nullable sur **activé**.
-- `#nullable restore annotations`: Restaure le contexte d’avertissement d’annotation sur les paramètres du projet.
+- `#nullable enable` : définit le contexte d’annotation Nullable et le contexte d’avertissement Nullable sur **activé**.
+- `#nullable disable` : définit le contexte d’annotation Nullable et le contexte d’avertissement Nullable sur **désactivé**.
+- `#nullable restore` : restaure le contexte d’annotation Nullable et le contexte d’avertissement Nullable aux paramètres du projet.
+- `#nullable disable warnings` : définissez le contexte d’avertissement Nullable sur **désactivé**.
+- `#nullable enable warnings` : définissez le contexte d’avertissement Nullable sur **activé**.
+- `#nullable restore warnings` : restaure le contexte d’avertissement Nullable aux paramètres du projet.
+- `#nullable disable annotations` : définissez le contexte d’annotation Nullable sur **désactivé**.
+- `#nullable enable annotations` : définissez le contexte d’annotation Nullable sur **activé**.
+- `#nullable restore annotations` : restaure le contexte d’avertissement d’annotation sur les paramètres du projet.
 
-Les contextes d’annotation et d’avertissement nullables par défaut sont `disabled`. Ce parti pris signifie que votre code existant compile sans rien changer et sans générer aucun nouvel avertissement.
+Par défaut, l’annotation Nullable et les contextes d’avertissement sont **désactivés**. Cela signifie que votre code existant est compilé sans modification et sans générer de nouveaux avertissements.
 
 ## <a name="nullable-annotation-context"></a>Contexte d’annotation nullable
 
@@ -101,7 +99,7 @@ Le compilateur utilise les règles suivantes dans un contexte d’annotation nul
 - Tout type référence nullable (indiqué par `?` après le type dans la déclaration de variable) peut être null. L’analyse statique détermine si la valeur est connue pour être non null quand elle est déréférencée. Si ce n’est pas le cas, le compilateur vous avertit.
 - Vous pouvez utiliser l’opérateur null-forgiving pour déclarer qu’une référence nullable n’est pas null.
 
-Dans un contexte d’annotation nullable activé, le caractère `?` ajouté à un type référence déclare un **type référence nullable**. `!` L' **opérateur null-indulgent avec** peut être ajouté à une expression pour déclarer que l’expression n’est pas null.
+Dans un contexte d’annotation nullable activé, le caractère `?` ajouté à un type référence déclare un **type référence nullable**. L' **opérateur null-indulgent avec** `!` peut être ajouté à une expression pour déclarer que l’expression n’a pas la valeur null.
 
 ## <a name="nullable-warning-context"></a>Contexte d’avertissement nullable
 
@@ -110,10 +108,10 @@ Le contexte d’avertissement nullable est différent du contexte d’annotation
 1. La variable s’est vu définitivement attribuer une valeur non null.
 1. La variable ou l’expression a été vérifiée pour savoir si sa valeur est null avant de la référencer.
 
-Le compilateur génère des avertissements chaque fois que vous déréférencez une variable ou une expression dans un état **peut-être null** lorsque le contexte d’avertissement Nullable est `enabled`. De plus, des avertissements sont générés lorsqu’une variable ou une expression **peut-être null** est attribuée à un type référence non nullable quand le contexte d’annotation nullable est `enabled`.
+Le compilateur génère des avertissements chaque fois que vous déréférencez une variable ou une expression dans un état **peut-être null** lorsque le contexte d’avertissement Nullable est activé. En outre, des avertissements sont générés quand une variable ou une expression **null peut être** assignée à un type référence non null dans un contexte d’annotation activé pour la valeur null.
 
-## <a name="learn-more"></a>En savoir plus
+## <a name="see-also"></a>Voir aussi
 
-- [Draft Nullable reference specification](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Spécification des types de référence Nullable Draft](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
 - [Tutoriel d’introduction aux références nullables](tutorials/nullable-reference-types.md)
 - [Migration d’une base de code existante vers des références nullables](tutorials/upgrade-to-nullable-references.md)

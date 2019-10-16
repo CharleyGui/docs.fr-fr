@@ -2,12 +2,12 @@
 title: TOP (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4a4a0954-82e2-4eae-bcaf-7c4552f3532d
-ms.openlocfilehash: 8b55519b7f95deb6463af4c0a6a2a53975e5b5a2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 16be25336bac386c993eae7527c9377be1073d1e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248970"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319276"
 ---
 # <a name="top-entity-sql"></a>TOP (Entity SQL)
 
@@ -15,13 +15,13 @@ La clause SELECT peut avoir une sous-clause TOP facultative après le modificate
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```sql
 [ TOP (n) ]
 ```
 
 ## <a name="arguments"></a>Arguments
 
-`n`Expression numérique qui spécifie le nombre de lignes à retourner. `n` peut être un littéral numérique unique ou un paramètre unique.
+`n` expression numérique qui spécifie le nombre de lignes à retourner. `n` peut être un littéral numérique unique ou un paramètre unique.
 
 ## <a name="remarks"></a>Notes
 
@@ -41,15 +41,15 @@ select distinct top(@topParam) c.a1, c.a2 from T as a
 
 TOP n'est pas déterministe, à moins que la requête soit triée. Si vous avez besoin d'un résultat déterministe, utilisez les sous-clauses [SKIP](skip-entity-sql.md) et [LIMIT](limit-entity-sql.md) dans la clause [ORDER BY](order-by-entity-sql.md) . TOP et SKIP/LIMIT s'excluent mutuellement.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivante utilise TOP pour spécifier la ligne supérieure à retourner à partir du résultat de la requête. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :
 
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).
 
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :
 
-    [!code-csharp[DP EntityServices Concepts 2#TOP](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#top)]
+    [!code-sql[DP EntityServices Concepts#TOP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#top)]
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,21 +2,21 @@
 title: MULTISET (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: eb90a377-e47a-43a5-b308-e993b6d611e6
-ms.openlocfilehash: 8e02d2d3171c9f08333ecef7ee22e65100bdf822
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 222be86db434b5d41c7b0536d271a3750b6afbe8
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250092"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319582"
 ---
 # <a name="multiset-entity-sql"></a>MULTISET (Entity SQL)
 Crée une instance d'un multiensemble à partir d'une liste de valeurs. Toutes les valeurs du constructeur MULTISET doivent être d'un type `T`compatible. Les constructeurs de multiensemble vides ne sont pas autorisés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 MULTISET ( expression [{, expression }] )  
-or  
+-- or  
 { expression [{, expression }] }  
 ```  
   
@@ -25,7 +25,7 @@ or
  Toute liste de valeurs valide.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Collection de type\<multiensemble T >.  
+ Collection de type multijeu @ no__t-0T >.  
   
 ## <a name="remarks"></a>Notes  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] propose trois types de constructeurs : constructeurs de ligne, constructeurs d'objets et constructeurs de multiensemble (ou de collection). Pour plus d’informations, consultez [construction de types](constructing-types-entity-sql.md).  
@@ -44,11 +44,11 @@ or
 ## <a name="example"></a>Exemple  
  La requête Entity SQL suivante utilise l'opérateur MULTISET pour créer une instance d'un multiensemble à partir d'une liste de valeurs. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
- [!code-csharp[DP EntityServices Concepts 2#MULTISET](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#multiset)]  
+ [!code-sql[DP EntityServices Concepts#MULTISET](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#multiset)]  
   
 ## <a name="see-also"></a>Voir aussi
 

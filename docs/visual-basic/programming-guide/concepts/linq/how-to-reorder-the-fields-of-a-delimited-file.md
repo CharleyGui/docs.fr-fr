@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (Visual Basic)'
+title: 'Comment : réorganiser les champs d’un fichier délimité (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: 25f860109275bdee1b980c68e71c2c65d44756a4
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: eaac777941e20dd93a5f352ec04c0c9843825791
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593098"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321001"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (Visual Basic)
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Comment : réorganiser les champs d’un fichier délimité (LINQ) (Visual Basic)
 Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. En utilisant la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
   
  Dans l’exemple suivant, supposons que les trois colonnes représentent le nom, le prénom et l’ID de l’étudiant. Les champs sont classés par ordre alphabétique, selon le nom des étudiants. La requête produit une séquence dans laquelle la colonne ID apparaît en premier, suivie d’une deuxième colonne qui comprend à la fois le prénom et le nom de l’étudiant. Les lignes sont réorganisées d’après le champ ID. Les résultats sont enregistrés dans un nouveau fichier et les données d’origine ne sont pas modifiées.  
@@ -18,7 +18,7 @@ Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui
   
 1. Copiez les lignes suivantes dans un fichier texte nommé spreadsheet1.csv. Enregistrez le fichier dans votre dossier de projet.  
   
-    ```  
+    ```csv  
     Adams,Terry,120  
     Fakhouri,Fadi,116  
     Feng,Hanying,117  
@@ -76,6 +76,6 @@ End Class
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
-- [Guide pratique pour générer du code XML à partir de fichiers CSV](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)
+- [Guide pratique : générer du code XML à partir de fichiers CSV](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)

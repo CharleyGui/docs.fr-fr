@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : spécifier le type d’informations d’identification de client'
+title: "Comment : spécifier le type d'informations d'identification du client"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - security credentials, adding to SOAP messages
 - WCF, security
 ms.assetid: 10f51bee-5f92-4c1a-9126-fa5418535d8f
-ms.openlocfilehash: 775c6a297047c7a0e16db091f9a22686fdb01efb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d62011728b6b03023ef4039480cea8dfa0ec8f02
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928880"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321285"
 ---
-# <a name="how-to-specify-the-client-credential-type"></a>Procédure : spécifier le type d’informations d’identification de client
-Après avoir défini un mode de sécurité (transport ou message), vous avez pouvez définir le type d'informations d'identification du client. Cette propriété spécifie le type d'informations d'identification que le client doit fournir au service dans le cadre de l'authentification. Pour plus d’informations sur la définition du mode de sécurité (étape nécessaire avant de définir le type d’informations d’identification du client), consultez [Comment : Définir le Mode de sécurité](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
+# <a name="how-to-specify-the-client-credential-type"></a>Comment : spécifier le type d'informations d'identification du client
+Après avoir défini un mode de sécurité (transport ou message), vous avez pouvez définir le type d'informations d'identification du client. Cette propriété spécifie le type d'informations d'identification que le client doit fournir au service dans le cadre de l'authentification. Pour plus d’informations sur la définition du mode de sécurité (étape nécessaire avant de définir le type d’informations d’identification du client), consultez [Comment : définir le mode de sécurité](how-to-set-the-security-mode.md).  
   
 ### <a name="to-set-the-client-credential-type-in-code"></a>Pour définir le type d'informations d'identification du client dans le code  
   
@@ -31,13 +31,13 @@ Après avoir défini un mode de sécurité (transport ou message), vous avez pou
   
 ### <a name="to-set-the-client-credential-type-in-configuration"></a>Pour définir le type d'informations d'identification du client dans la configuration  
   
-1. Ajouter un [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) élément au fichier de configuration.  
+1. Ajoutez un élément [\<Système. serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) au fichier de configuration.  
   
-2. Comme un élément enfant, ajoutez un [ \<liaisons >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) élément.  
+2. En tant qu’élément enfant, ajoutez un élément [@no__t 1bindings >](../configure-apps/file-schema/wcf/bindings.md) .  
   
-3. Ajoutez une liaison appropriée. Cet exemple utilise le [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) élément.  
+3. Ajoutez une liaison appropriée. Cet exemple utilise l’élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .  
   
-4. Ajouter un [ \<liaison >](../../../docs/framework/misc/binding.md) élément et définissez la `name` attribut une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
+4. Ajoutez un élément [\<binding >](../misc/binding.md) et affectez à l’attribut `name` une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
   
 5. Ajoutez une liaison `<security>`. Affectez la valeur appropriée à l'attribut `mode`. Cet exemple lui affecte la valeur `"Message"`.  
   
@@ -59,5 +59,5 @@ Après avoir défini un mode de sécurité (transport ou message), vous avez pou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation de services](../../../docs/framework/wcf/securing-services.md)
-- [Guide pratique pour Définir le Mode de sécurité](../../../docs/framework/wcf/how-to-set-the-security-mode.md)
+- [Sécurisation de services](securing-services.md)
+- [Guide pratique pour définir le mode de sécurité](how-to-set-the-security-mode.md)

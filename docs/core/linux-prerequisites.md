@@ -3,13 +3,13 @@ title: Prérequis pour .NET Core sur Linux
 description: Versions Linux et dépendances .NET Core prises en charge pour développer, déployer et exécuter des applications .NET Core sur des ordinateurs Linux.
 author: leecow
 ms.author: leecow
-ms.date: 09/25/2019
-ms.openlocfilehash: 4c5d79459c9d69111ca6452d9305f0deb37212b8
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.date: 10/11/2019
+ms.openlocfilehash: bb9049059de9d8208fc92234b28acdfb3d7f0cb3
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591699"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318325"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Prérequis pour .NET Core sur Linux
 
@@ -128,6 +128,13 @@ Pour les versions antérieures à .NET Core 2.1, les dépendances suivantes sont
 * libunwind8
 * libuuid1
 
+Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+
+* libgdiplus (version 6.0.1 ou ultérieure)
+
+> [!NOTE]
+> La plupart des versions d’Ubuntu incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+
 ### <a name="centos-and-fedora"></a>CentOS et Fedora
 
 Les distributions CentOS nécessitent l’installation des bibliothèques suivantes :
@@ -147,6 +154,13 @@ Pour les versions antérieures à .NET Core 2.1, les dépendances suivantes sont
 * libuuid
 
 Pour plus d’informations sur les dépendances, consultez [Applications Linux autonomes](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md) (en anglais).
+
+Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+
+* libgdiplus (version 6.0.1 ou ultérieure)
+
+> [!NOTE]
+> La plupart des versions de CentOS et Fedora incluent une version antérieure de libgdiplus. Vous pouvez installer une version récente de libgdiplus en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="installing-net-core-dependencies-with-the-native-installers"></a>Installation des dépendances .NET Core avec les programmes d’installation natifs
 
@@ -169,7 +183,7 @@ Le script installe par défaut la dernière version de « LTS », qui correspo
 
 Le script bash du programme d’installation est utilisé dans les scénarios d’automatisation et dans les installations non administratives. Comme ce script lit également les commutateurs PowerShell, ces derniers peuvent être utilisés avec le script sur les systèmes Linux/OS X.
 
-## <a name="troubleshoot"></a>Résolution des problèmes
+## <a name="troubleshoot"></a>Résoudre les problèmes
 
 En cas de problème avec une installation de .NET Core sur une distribution/version de Linux prise en charge, consultez les rubriques suivantes correspondant à vos distributions/versions installées :
 

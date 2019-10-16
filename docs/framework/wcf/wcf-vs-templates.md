@@ -2,12 +2,12 @@
 title: Modèles Visual Studio WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: 8f7eb9ef5175c41a3378201f2f25f1fd914aef55
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 507599549bd75fb454483378e044b6b7581cf4a6
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916793"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320489"
 ---
 # <a name="wcf-visual-studio-templates"></a>Modèles Visual Studio WCF
 Les modèles Visual Studio Windows Communication Foundation (WCF) sont des modèles de projet et d’élément prédéfinis que vous pouvez utiliser dans Visual Studio pour générer rapidement des services WCF et des applications environnantes.  
@@ -18,7 +18,7 @@ Les modèles Visual Studio Windows Communication Foundation (WCF) sont des modè
 ### <a name="wcf-service-library-project-template"></a>Modèle de projet Bibliothèque du service WCF  
  Le modèle de projet Bibliothèque du service WCF est disponible dans la boîte de dialogue Nouveau projet sous **Visual C#\WCF** et **Visual Basic\WCF**.  
   
- Lorsque vous créez un projet à l’aide du modèle de **service WCF** , le nouveau projet comprend automatiquement les trois fichiers suivants:  
+ Lorsque vous créez un projet à l’aide du modèle de **service WCF** , le nouveau projet comprend automatiquement les trois fichiers suivants :  
   
 - Fichier de contrat de service (IService1.cs ou IService1.vb). Le fichier de contrat de service est une interface à laquelle sont appliqués les attributs de service WCF. Ce fichier contient la définition d'un service simple destinée à vous aider à définir vos services et inclut des opérations basées des paramètres, ainsi qu'un exemple de contrat de données simple. Il s’agit du fichier par défaut affiché dans l’éditeur de code après la création d’un projet de service WCF.  
   
@@ -27,12 +27,12 @@ Les modèles Visual Studio Windows Communication Foundation (WCF) sont des modè
 - Fichier de configuration de l'application (App.config). Le fichier de configuration fournit les éléments de base d’un modèle de service WCF avec une liaison HTTP sécurisée. Il inclut également un point de terminaison applicable au service et active l'échange de métadonnées.  
   
 > [!NOTE]
-> Visual Studio est configuré pour reconnaître le fichier app. config comme fichier de configuration pour le projet lorsqu’il est exécuté à l’aide de l' [hôte de service WCF (WcfSvcHost. exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md), qui est la configuration par défaut. Si la bibliothèque de services se trouve dans un fichier exécutable, vous devez déplacer le code de configuration vers le fichier de configuration du fichier exécutable : en effet, les fichiers de configuration des DLL ne sont pas valides.  
+> Visual Studio est configuré pour reconnaître le fichier app. config comme fichier de configuration pour le projet lorsqu’il est exécuté à l’aide de l' [hôte de service WCF (WcfSvcHost. exe)](wcf-service-host-wcfsvchost-exe.md), qui est la configuration par défaut. Si la bibliothèque de services se trouve dans un fichier exécutable, vous devez déplacer le code de configuration vers le fichier de configuration du fichier exécutable : en effet, les fichiers de configuration des DLL ne sont pas valides.  
   
 ### <a name="wcf-service-application-template"></a>Modèle d'application de service WCF  
  Le modèle application de service WCF est disponible dans la boîte de dialogue Nouveau projet sous **Visual C#\WCF** et **Visual Basic\WCF**.  
   
- Lorsque vous créez un projet à l’aide du modèle de **service d’application Web WCF** , le projet comprend les quatre fichiers suivants:  
+ Lorsque vous créez un projet à l’aide du modèle de **service d’application Web WCF** , le projet comprend les quatre fichiers suivants :  
   
 - Fichier d'hôte de service (service1.svc).  
   
@@ -59,17 +59,17 @@ Les modèles Visual Studio Windows Communication Foundation (WCF) sont des modè
  Un fichier d'hôte de service (service1.svc) est également créé si le projet existant est un projet Web.  
   
 ### <a name="wcf-wf-service-project-and-item-template"></a>Modèles d'élément et de projet de service WF WCF.  
- Ces modèles créent des services WCF qui hébergent un service de flux de travail, qui est un flux de travail accessible comme un service Web. Différents modèles existent pour les XAML et les modèles de programmation impératifs. À l'aide des modèles, vous pouvez créer des workflows séquentiels ou des workflows de l'ordinateur d'état. Pour plus d’informations sur ces types de flux de [travail, consultez Procédure: Créer un flux](../windows-workflow-foundation/how-to-create-a-workflow.md)de travail. Pour plus d’informations sur la création de projets de workflow, consultez [création de projets de workflow hérités](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
+ Ces modèles créent des services WCF qui hébergent un service de flux de travail, qui est un flux de travail accessible comme un service Web. Différents modèles existent pour les XAML et les modèles de programmation impératifs. À l'aide des modèles, vous pouvez créer des workflows séquentiels ou des workflows de l'ordinateur d'état. Pour plus d’informations sur ces types de flux de travail, consultez [Comment : créer un flux de travail](../windows-workflow-foundation/how-to-create-a-workflow.md). Pour plus d’informations sur la création de projets de workflow, consultez [création de projets de workflow hérités](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
   
  Le concepteur Visual Studio est plus réactif lorsque les workflows de type XOML sont utilisés à la place de code basé sur du code. Le workflow XOML est le type de workflow par défaut à créer.  
   
 ### <a name="wcf-syndication-service-library-template"></a>Modèle de la bibliothèque du service de syndication WCF  
- Ce modèle vous permet d’exposer votre flux au format RSS ou ATOM en tant que service WCF. Pour plus d’informations, consultez [syndication WCF](../../../docs/framework/wcf/feature-details/wcf-syndication.md).  
+ Ce modèle vous permet d’exposer votre flux au format RSS ou ATOM en tant que service WCF. Pour plus d’informations, consultez [syndication WCF](./feature-details/wcf-syndication.md).  
   
 #### <a name="changing-the-address-of-the-feed"></a>Modification de l'adresse du flux  
- Le modèle de syndication utilise Internet Explorer au cours de l'exécution. Quand vous cliquez avec le bouton droit sur votre projet dans l' **Explorateur de solutions** dans Visual Studio, sélectionnez **Propriétés**, puis sélectionnez l’onglet Déboguer. vous pouvez voir l’adresse par défaut du modèle. Internet Explorer tente d'ouvrir le flux à cette adresse.  
+ Le modèle de syndication utilise Internet Explorer au cours de l'exécution. Quand vous cliquez avec le bouton droit sur votre projet dans l' **Explorateur de solutions** dans Visual Studio, sélectionnez **Propriétés**, puis sélectionnez l’onglet **Déboguer** . vous pouvez voir l’adresse par défaut du modèle. Internet Explorer tente d'ouvrir le flux à cette adresse.  
   
- Si vous modifiez l’adresse de votre flux, vous devez également modifier l’adresse dans l' onglet Déboguer. Sinon, Internet Explorer tente d'ouvrir le flux à l'adresse par défaut et échoue.  
+ Si vous modifiez l’adresse de votre flux, vous devez également modifier l’adresse dans l’onglet **Déboguer** . Si vous ne le faites pas, Internet Explorer tente d’ouvrir le flux à l’adresse par défaut et échoue.  
   
 ### <a name="ajax-enabled-wcf-service-item-template"></a>Modèle d'élément de service WCF AJAX  
  Ce modèle expose un contrôle AJAX en tant que service WCF. Pour plus d’informations sur les contrôles AJAX, consultez la [documentation relative au contrôle AJAX](https://go.microsoft.com/fwlink/?LinkId=96717).  
@@ -84,5 +84,5 @@ Les modèles Visual Studio Windows Communication Foundation (WCF) sont des modè
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
-- [Client test WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+- [WCF Service Host (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)
+- [Client test WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

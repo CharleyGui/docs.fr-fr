@@ -6,35 +6,35 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 6da9e2a91fe8156c0631aa77594e3ed47d32cb8b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 0b277728d2f2c224d5e45e3990ab2fd588bc81d3
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882188"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318696"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
-Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous créez une application à l’aide de Windows Communication Foundation (WCF), version 3.0, votre application peut avoir un impact sur confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas toutes les informations à Microsoft à partir de votre application, si vous ou l’utilisateur final ne nous l’envoyer.  
+Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
   
 ## <a name="wcf-in-brief"></a>WCF en bref  
- WCF est une infrastructure de messagerie distribuée à l’aide de Microsoft .NET Framework qui permet aux développeurs de créer des applications distribuées. Les messages transmis entre deux applications contiennent des informations d'en-tête et de corps.  
+ WCF est une infrastructure de messagerie distribuée utilisant l’infrastructure de Microsoft .NET qui permet aux développeurs de créer des applications distribuées. Les messages transmis entre deux applications contiennent des informations d'en-tête et de corps.  
   
- Les en-têtes peuvent contenir le routage des messages, des informations de sécurité, des transactions et d’autres éléments, en fonction des services utilisés par l’application. Les messages sont en général chiffrés par défaut. L'unique exception concerne l'utilisation du `BasicHttpBinding`, qui a été conçu pour une utilisation avec des services Web hérités non sécurisés. En tant que concepteur d'applications, vous êtes responsable de la conception finale. Messages dans le corps SOAP contiennent des données de spécifique à l’application ; Toutefois, ces données, telles que définies par l’application des informations personnelles, peuvent être sécurisées à l’aide des fonctionnalités de confidentialité ou de chiffrement de WCF. Les sections suivantes décrivent les fonctionnalités qui peuvent avoir un impact sur la confidentialité.  
+ Les en-têtes peuvent contenir le routage des messages, des informations de sécurité, des transactions et d’autres éléments, en fonction des services utilisés par l’application. Les messages sont en général chiffrés par défaut. L'unique exception concerne l'utilisation du `BasicHttpBinding`, qui a été conçu pour une utilisation avec des services Web hérités non sécurisés. En tant que concepteur d'applications, vous êtes responsable de la conception finale. Les messages dans le corps SOAP contiennent des données spécifiques à l’application ; Toutefois, ces données, telles que les informations personnelles définies par l’application, peuvent être sécurisées à l’aide des fonctionnalités de chiffrement ou de confidentialité WCF. Les sections suivantes décrivent les fonctionnalités qui peuvent avoir un impact sur la confidentialité.  
   
 ## <a name="messaging"></a>Messagerie  
- Chaque message WCF a un en-tête d’adresse qui spécifie la destination du message et où la réponse doit aller.  
+ Chaque message WCF possède un en-tête d’adresse qui spécifie la destination du message et l’emplacement où la réponse doit s’afficher.  
   
  Le composant adresse d'une adresse de point de terminaison est un URI (Uniform Resource Identifier) qui identifie le point de terminaison. L'adresse peut être une adresse réseau ou une adresse logique. L'adresse peut inclure le nom de l'ordinateur (nom d'hôte, nom de domaine complet) et une adresse IP. L’adresse de point de terminaison peut également contenir un identificateur global unique (GUID) ou une collection de GUID pour l’adressage temporaire utilisé pour distinguer chaque adresse. Chaque message contient un ID de message qui est un GUID. Cette fonctionnalité respecte la norme de référence WS-Addressing.  
   
- La couche de messagerie WCF n’écrit pas d’informations personnelles sur l’ordinateur local. Toutefois, elle peut propager des informations personnelles au niveau du réseau si un développeur de service a créé un service qui expose de telles informations (par exemple, en utilisant le nom d'une personne dans un nom de point de terminaison, ou en incluant des informations personnelles dans le Web Services Description Language du point de terminaison sans exiger que les clients utilisent https pour accéder au WSDL). En outre, si un développeur exécute la [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) outil par rapport à un point de terminaison qui expose des informations personnelles, sortie de l’outil peut contenir ces informations, et le fichier de sortie est écrite dans le disque dur local.  
+ La couche de messagerie WCF n’écrit aucune information personnelle sur l’ordinateur local. Toutefois, elle peut propager des informations personnelles au niveau du réseau si un développeur de service a créé un service qui expose de telles informations (par exemple, en utilisant le nom d'une personne dans un nom de point de terminaison, ou en incluant des informations personnelles dans le Web Services Description Language du point de terminaison sans exiger que les clients utilisent https pour accéder au WSDL). En outre, si un développeur exécute l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) sur un point de terminaison qui expose des informations personnelles, la sortie de l’outil peut contenir ces informations et le fichier de sortie est écrit sur le disque dur local.  
   
 ## <a name="hosting"></a>Hébergement  
- La fonctionnalité d’hébergement dans WCF permet aux applications pour démarrer à la demande ou pour activer le partage de port entre plusieurs applications. Une application WCF peut être hébergée dans Internet Information Services (IIS), similaire à ASP.NET.  
+ La fonctionnalité d’hébergement de WCF permet aux applications de démarrer à la demande ou d’activer le partage de port entre plusieurs applications. Une application WCF peut être hébergée dans Internet Information Services (IIS), similaire à ASP.NET.  
   
  L'hébergement n'expose aucune information spécifique sur le réseau et ne conserve aucune donnée sur l'ordinateur.  
   
 ## <a name="message-security"></a>Sécurité des messages  
- Sécurité WCF fournit les fonctionnalités de sécurité pour les applications de messagerie. Les fonctions de sécurité fournies incluent l'authentification et l'autorisation.  
+ La sécurité WCF offre des fonctionnalités de sécurité pour les applications de messagerie. Les fonctions de sécurité fournies incluent l'authentification et l'autorisation.  
   
  L'authentification est exécutée en passant des informations d'identification entre les clients et services. L'authentification peut s'effectuer par le biais de la sécurité de niveau transport ou par le biais de la sécurité de niveau message SOAP, comme suit :  
   
@@ -57,7 +57,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour [!INCLUDE[wv](../../../includes/wv-md.md)] et [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un enregistrement est entré dans le journal des événements de sécurité.  
   
 ## <a name="transactions"></a>Transactions  
- La fonctionnalité des transactions fournit des services transactionnels à une application WCF.  
+ La fonctionnalité transactions fournit des services transactionnels à une application WCF.  
   
  Les en-têtes de transaction utilisés dans la propagation de transaction peuvent contenir des ID de transaction ou des ID d'inscription, qui sont des GUID.  
   
@@ -66,36 +66,36 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  La fonctionnalité Transactions implémente les normes WS-Coordination et WS-Atomic Transaction.  
   
 ## <a name="reliable-sessions"></a>Sessions fiables  
- Les sessions fiables dans WCF assurent le transfert des messages en cas de transport ou défaillances intermédiaires. Elles fournissent un transfert de message « exactly-once » même lorsque le transport sous-jacent se déconnecte (par exemple, une connexion TCP sur un réseau sans fil) ou perd un message (un proxy HTTP qui rejette un message sortant ou entrant). Les sessions fiables récupèrent également la réorganisation des messages (comme il peut arriver dans le cas du routage multivoie), en conservant l'ordre dans lequel les messages ont été envoyés.  
+ Les sessions fiables dans WCF permettent de transférer des messages en cas de défaillances de transport ou d’intermédiaires. Elles fournissent un transfert de message « exactly-once » même lorsque le transport sous-jacent se déconnecte (par exemple, une connexion TCP sur un réseau sans fil) ou perd un message (un proxy HTTP qui rejette un message sortant ou entrant). Les sessions fiables récupèrent également la réorganisation des messages (comme il peut arriver dans le cas du routage multivoie), en conservant l'ordre dans lequel les messages ont été envoyés.  
   
  Les sessions fiables sont implémentées à l'aide du protocole WS-RM (WS-ReliableMessaging). Elles ajoutent des en-têtes WS-RM qui contiennent des informations de session, utilisées pour identifier tous les messages associés à une session fiable particulière. Chaque session WS-RM a un identificateur, qui est un GUID.  
   
  Aucune information personnelle n'est conservée sur l'ordinateur de l'utilisateur final.  
   
 ## <a name="queued-channels"></a>Canaux mis en file d'attente  
- Les files d'attente stockent des messages d'une application émettrice pour le compte d'une application réceptrice et envoient ultérieurement ces messages à l'application réceptrice. Elles aident à garantir le transfert des messages des applications émettrices aux applications réceptrices lorsque, par exemple, l'application réceptrice est transitoire. WCF prend en charge en file d’attente à l’aide de Microsoft Message Queuing (MSMQ) comme transport.  
+ Les files d'attente stockent des messages d'une application émettrice pour le compte d'une application réceptrice et envoient ultérieurement ces messages à l'application réceptrice. Elles aident à garantir le transfert des messages des applications émettrices aux applications réceptrices lorsque, par exemple, l'application réceptrice est transitoire. WCF prend en charge la mise en file d’attente à l’aide de Microsoft Message Queuing (MSMQ) en tant que transport.  
   
  La fonctionnalité de canaux en file d'attente n'ajoute pas d'en-tête à un message. Au lieu de cela, elle crée un message Message Queuing avec les propriétés de message Message Queuing appropriées définies et elle appelle des méthodes Message Queuing pour mettre le message dans la file d'attente Message Queuing. Message Queuing est un composant facultatif fourni avec Windows.  
   
  Aucune information n’est conservée sur l’ordinateur de l’utilisateur final par la fonctionnalité de canaux en file d’attente, car elle utilise Message Queuing comme infrastructure de mise en file d’attente.  
   
 ## <a name="com-integration"></a>Intégration COM+  
- Cette fonctionnalité encapsule les fonctionnalités COM et COM + existantes pour créer des services qui sont compatibles avec les services WCF. Cette fonctionnalité n’utilise pas d’en-tête spécifique et ne conserve pas de données sur l’ordinateur de l’utilisateur final.  
+ Cette fonctionnalité encapsule les fonctionnalités COM et COM+ existantes pour créer des services compatibles avec les services WCF. Cette fonctionnalité n’utilise pas d’en-tête spécifique et ne conserve pas de données sur l’ordinateur de l’utilisateur final.  
   
 ## <a name="com-service-moniker"></a>Moniker de service COM  
- Cela fournit un wrapper non managé vers un client WCF standard. Cette fonctionnalité n’a pas d’en-têtes spécifiques sur le câble et ne conserve pas de données sur l’ordinateur.  
+ Cela fournit un wrapper non managé à un client WCF standard. Cette fonctionnalité n’a pas d’en-têtes spécifiques sur le câble et ne conserve pas de données sur l’ordinateur.  
   
 ## <a name="peer-channel"></a>Canal homologue  
- Un canal homologue permet le développement d’applications pluripartites à l’aide de WCF. La messagerie pluripartite se produit dans le contexte d'une maille. Les mailles sont identifiées par un nom que les nœuds peuvent joindre. Chaque nœud du canal homologue crée un écouteur TCP à un port spécifié par l'utilisateur et établit des connexions avec d'autres nœuds dans la maille afin de garantir la résilience. Pour se connecter à d'autres nœuds de la maille, les nœuds échangent également certaines données, y compris l'adresse d'écouteur et les adresses IP de l'ordinateur, avec d'autres nœuds de la maille. Les messages envoyés dans la maille peuvent contenir des informations de sécurité relatives à l'expéditeur afin d'empêcher l'usurpation et la falsification de message.  
+ Un canal homologue permet le développement d’applications à parties égales à l’aide de WCF. La messagerie pluripartite se produit dans le contexte d'une maille. Les mailles sont identifiées par un nom que les nœuds peuvent joindre. Chaque nœud du canal homologue crée un écouteur TCP à un port spécifié par l'utilisateur et établit des connexions avec d'autres nœuds dans la maille afin de garantir la résilience. Pour se connecter à d'autres nœuds de la maille, les nœuds échangent également certaines données, y compris l'adresse d'écouteur et les adresses IP de l'ordinateur, avec d'autres nœuds de la maille. Les messages envoyés dans la maille peuvent contenir des informations de sécurité relatives à l'expéditeur afin d'empêcher l'usurpation et la falsification de message.  
   
  Aucune information personnelle n'est stockée sur l'ordinateur de l'utilisateur final.  
   
 ## <a name="it-professional-experience"></a>Expérience professionnelle en informatique  
   
 ### <a name="tracing"></a>Traçage  
- La fonctionnalité de diagnostic de l’infrastructure WCF journalise les messages qui transitent via le transport et les couches de modèle de service et les activités et les événements associés à ces messages. Cette fonctionnalité est désactivée par défaut. Il est activé à l’aide du fichier de configuration de l’application et le comportement de suivi peut être modifié à l’aide du fournisseur WMI WCF au moment de l’exécution. Lorsque cette fonctionnalité est activée, l'infrastructure de suivi émet un suivi de diagnostic qui contient des messages, des activités et des événements de traitement aux écouteurs configurés. Le format et l'emplacement de la sortie sont déterminés par les choix de configuration d'écouteur de l'administrateur, mais il s'agit en général d'un fichier au format XML. L'administrateur est chargé de définir la liste de contrôle d'accès (ACL) sur les fichiers de suivi. En particulier, en cas d'hébergement par le système WAS (Windows Activation System), l'administrateur doit s'assurer que les fichiers ne sont pas servis depuis le répertoire racine virtuel public si cela n'est pas souhaité.  
+ La fonctionnalité de diagnostic de l’infrastructure WCF journalise les messages qui passent par les couches de modèle de transport et de service, ainsi que les activités et événements associés à ces messages. Cette fonctionnalité est désactivée par défaut. Il est activé à l’aide du fichier de configuration de l’application et le comportement de suivi peut être modifié à l’aide du fournisseur WMI WCF au moment de l’exécution. Lorsque cette fonctionnalité est activée, l'infrastructure de suivi émet un suivi de diagnostic qui contient des messages, des activités et des événements de traitement aux écouteurs configurés. Le format et l'emplacement de la sortie sont déterminés par les choix de configuration d'écouteur de l'administrateur, mais il s'agit en général d'un fichier au format XML. L'administrateur est chargé de définir la liste de contrôle d'accès (ACL) sur les fichiers de suivi. En particulier, en cas d'hébergement par le système WAS (Windows Activation System), l'administrateur doit s'assurer que les fichiers ne sont pas servis depuis le répertoire racine virtuel public si cela n'est pas souhaité.  
   
- Il existe deux types de suivi : Journalisation des messages et diagnostic de modèle de Service de suivi, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
+ Il existe deux types de suivi : l'enregistrement des messages et le suivi du diagnostic de modèle de service, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
   
 ### <a name="message-logging"></a>Journalisation des messages  
  La source de suivi d'enregistrement des messages (<xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>) permet à un administrateur d'enregistrer les messages qui sont transmis sur le système. Par le biais de la configuration, l'utilisateur peut décider d'enregistrer uniquement des messages entiers ou des en-têtes de message, s'il faut enregistrer les couches de modèle de transport et/ou de service et s'il faut inclure les messages malformés. En outre, l'utilisateur peut configurer le filtrage de façon à limiter les messages enregistrés.  
@@ -116,24 +116,24 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  Les messages enregistrés à ce niveau sont déchiffrés même s'ils ont été sécurisés et chiffrés sur le câble.  
   
  Enregistrement des messages malformés  
- Journalise les messages que l’infrastructure WCF ne peut pas comprendre ou traiter.  
+ Journalise les messages que l’infrastructure WCF ne peut pas comprendre ni traiter.  
   
  Les messages sont enregistrés tels quels, autrement dit chiffrés ou non  
   
- Lorsque les messages sont enregistrés sous forme déchiffré ou non chiffré, par défaut WCF supprime clés de sécurité et les informations potentiellement personnelles à partir des messages avant de les enregistrer. Les sections suivantes décrivent quelles informations sont supprimées, et quand. L'administrateur de l'ordinateur et le responsable du déploiement d'applications doivent prendre certaines mesures de configuration pour modifier le comportement par défaut afin d'enregistrer les clés et les informations potentiellement personnelles.  
+ Lorsque les messages sont consignés sous une forme déchiffrée ou non chiffrée, WCF supprime par défaut les clés de sécurité et les informations potentiellement personnelles des messages avant de les enregistrer. Les sections suivantes décrivent quelles informations sont supprimées, et quand. L'administrateur de l'ordinateur et le responsable du déploiement d'applications doivent prendre certaines mesures de configuration pour modifier le comportement par défaut afin d'enregistrer les clés et les informations potentiellement personnelles.  
   
 #### <a name="information-removed-from-message-headers-when-logging-decryptedunencrypted-messages"></a>Informations supprimées des en-têtes de messages lors de l'enregistrement des messages déchiffrés/non chiffrés  
- Lorsque les messages sont enregistrés sous forme déchiffrés/non chiffrés, les clés de sécurité et les informations potentiellement personnelles sont supprimées par défaut des en-têtes de messages et des corps de message avant d'être enregistrées. La liste suivante montre ce que la WCF considère comme clés et les informations potentiellement personnelles.  
+ Lorsque les messages sont enregistrés sous forme déchiffrés/non chiffrés, les clés de sécurité et les informations potentiellement personnelles sont supprimées par défaut des en-têtes de messages et des corps de message avant d'être enregistrées. La liste suivante indique ce que WCF considère comme des clés et des informations potentiellement personnelles.  
   
  Clés qui sont supprimées :  
   
- \- Pour xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- pour xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
  wst:Entropy  
   
- \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -141,15 +141,15 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Informations potentiellement personnelles qui sont supprimées :  
   
- \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
  wsse:BinarySecurityToken  
   
- \- Pour xmlns : SAML = « urn : oasis : noms : tc : SAML:1.0:assertion » les éléments en gras (ci-dessous) sont supprimés :  
+ \- pour xmlns : SAML = "urn : Oasis : Names : TC : SAML : 1.0 : assertion" les éléments en gras (ci-dessous) sont supprimés :  
   
- \<Assertion  
+ @no__t 0Assertion  
   
  MajorVersion="1"  
   
@@ -163,41 +163,41 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  >  
   
- \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
+ \<Conditions NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition>  
+ @no__t 0AudienceRestrictionCondition >  
   
- \<Audience>[uri]\</Audience>+  
+ \<Audience > [URI] \</audience > +  
   
- \</AudienceRestrictionCondition>*  
+ \</AudienceRestrictionCondition > *  
   
- \<DoNotCacheCondition />*  
+ \<DoNotCacheCondition/> *  
   
- <\!--type de base abstrait  
+ < @ no__t-1--type de base abstrait  
   
- \<Condition />*  
+ \<Condition/> *  
   
  -->  
   
- \</Conditions>?  
+ \</conditions >?  
   
- \<Conseils >  
+ @no__t 0Advice >  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>*  
+ \<AssertionIDReference > [ID] \</AssertionIDReference > *  
   
- \<Assertion>[assertion]\</Assertion>*  
+ \<Assertion > [assertion] \</assertion > *  
   
  [indifférent]*  
   
- \</Advice>?  
+ \</> de conseils ?  
   
- <\!--Types de base abstrait  
+ < @ no__t-1--types de base abstraits  
   
- \<Instruction / > *  
+ \<Statement/> *  
   
- \<SubjectStatement>  
+ @no__t 0SubjectStatement >  
   
- \<Objet >  
+ @no__t 0Subject >  
   
  `<NameIdentifier`  
   
@@ -211,23 +211,23 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `</NameIdentifier>?`  
   
- \<SubjectConfirmation>  
+ @no__t 0SubjectConfirmation >  
   
- \<ConfirmationMethod>[anyUri]\</ConfirmationMethod>+  
+ \<ConfirmationMethod > [anyURI] \</ConfirmationMethod > +  
   
- \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
+ \<SubjectConfirmationData > [Any] \</SubjectConfirmationData >?  
   
- \<DS : KeyInfo >... \</ds:KeyInfo > ?  
+ \<DS : KeyInfo >... \</DS : KeyInfo >?  
   
- \</SubjectConfirmation>?  
+ \</SubjectConfirmation >?  
   
- \</Subject>  
+ \</objet >  
   
- \</SubjectStatement>*  
+ \</SubjectStatement > *  
   
  -->  
   
- \<AuthenticationStatement  
+ @no__t 0AuthenticationStatement  
   
  AuthenticationMethod="[uri]"  
   
@@ -255,13 +255,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  />*  
   
- \</AuthenticationStatement>*  
+ \</AuthenticationStatement > *  
   
- \<AttributeStatement>  
+ @no__t 0AttributeStatement >  
   
  [Objet]  
   
- \<Attribut  
+ @no__t 0Attribute  
   
  AttributeName="[chaîne]"  
   
@@ -271,40 +271,40 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</Attribute>+  
+ \</> d’attributs +  
   
- \</AttributeStatement>*  
+ \</AttributeStatement > *  
   
- \<AuthorizationDecisionStatement  
+ @no__t 0AuthorizationDecisionStatement  
   
  Resource="[uri]"  
   
- Decision="[Permit&#124;Deny&#124;Indeterminate]"  
+ Décision = "[autoriser&#124;refuser&#124;indéterminé]"  
   
  >  
   
  [Objet]  
   
- \<Action Namespace="[uri]">[string]\</Action>+  
+ \<Action espace de noms = "[URI]" > [chaîne] \</action > +  
   
- \<Preuve >  
+ @no__t 0Evidence >  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>+  
+ \<AssertionIDReference > [ID] \</AssertionIDReference > +  
   
- \<Assertion>[assertion]\</Assertion>+  
+ \<Assertion > [assertion] \</assertion > +  
   
- \</ Preuve > ?  
+ \</> de preuve ?  
   
- \</AuthorizationDecisionStatement>*  
+ \</AuthorizationDecisionStatement > *  
   
- \</Assertion>  
+ \</assertion >  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informations supprimées des corps de messages lors de l'enregistrement des messages déchiffrés/non chiffrés  
- Comme décrit précédemment, WCF supprime clés et des informations potentiellement personnelles connues des en-têtes de message pour les messages déchiffrés/non chiffrés enregistrés. En outre, WCF supprime les clés et les informations potentiellement personnelles connues des corps de message pour les éléments du corps et les actions dans la liste suivante, qui décrivent les messages de sécurité impliqués dans l’échange de clés.  
+ Comme décrit précédemment, WCF supprime les clés et les informations potentiellement personnelles connues des en-têtes de message pour les messages déchiffrés/non chiffrés. En outre, WCF supprime les clés et les informations potentiellement personnelles connues des corps de message pour les éléments et actions du corps de la liste suivante, qui décrivent les messages de sécurité impliqués dans l’échange de clés.  
   
  Pour les espaces de noms suivants :  
   
- xmlns:WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
+ xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
   
  Les informations sont supprimées pour ces éléments de corps, qui impliquent l'échange de clé :  
   
@@ -357,7 +357,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 - `http://schemas.xmlsoap.org/ws/2004/04/security/trust/RSTR/SCT-Amend`
   
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Aucune information n'est supprimé des données de corps et en-têtes spécifiques aux applications  
- WCF ne suit pas les informations personnelles dans les en-têtes spécifiques aux applications (par exemple, les chaînes de requête) ou les données du corps (par exemple, le numéro de carte de crédit).  
+ WCF n’effectue pas le suivi des informations personnelles dans les en-têtes spécifiques à l’application (par exemple, les chaînes de requête) ou les données de corps (par exemple, le numéro de carte de crédit).  
   
  Lorsque l'enregistrement des messages est activé, les informations personnelles contenues dans des en-têtes spécifiques aux application et les informations de corps peuvent être visibles dans les journaux. Là encore, le responsable du déploiement d'applications est chargé de définir les listes ACL sur les fichiers de configuration et les fichiers journaux. Il peut également désactiver l'enregistrement s'il ne souhaite pas que ces informations soient visibles, ou il peut éliminer ces informations des fichiers journaux par filtrage après leur enregistrement.  
   
@@ -372,26 +372,26 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  Pour l'enregistrement des messages et le suivi, un écouteur de suivi personnalisé peut être configuré de façon à envoyer des suivis et des messages sur le câble (par exemple à une base de données distante). Le responsable du déploiement d'applications est chargé de configurer les écouteurs personnalisés ou de déléguer cette opération aux utilisateurs. Il est également responsable des informations personnelles exposées à l'emplacement distant et de l'application correcte des listes ACL à cet emplacement.  
   
 ### <a name="other-features-for-it-professionals"></a>Autres fonctionnalités pour les professionnels de l'informatique  
- WCF propose un fournisseur WMI qui expose les informations de configuration d’infrastructure WCF via WMI (fourni avec Windows). Par défaut, l'interface WMI est accessible aux administrateurs.  
+ WCF dispose d’un fournisseur WMI qui expose les informations de configuration de l’infrastructure WCF par le biais de WMI (fourni avec Windows). Par défaut, l'interface WMI est accessible aux administrateurs.  
   
  La configuration WCF utilise le mécanisme de configuration .NET Framework. Les fichiers de configuration sont stockés sur l'ordinateur. Le développeur d’applications et l’administrateur créent les fichiers de configuration et la liste ACL pour chacune des exigences de l’application. Un fichier de configuration peut contenir des adresses de point de terminaison et des liens vers des certificats dans le magasin de certificats. Les certificats peuvent être utilisés pour fournir des données d’application afin de configurer différentes propriétés des fonctionnalités utilisées par l’application.  
   
- WCF utilise également la fonctionnalité de vidage de processus de .NET Framework en appelant le <xref:System.Environment.FailFast%2A> (méthode).  
+ WCF utilise également la fonctionnalité de vidage de processus .NET Framework en appelant la méthode <xref:System.Environment.FailFast%2A>.  
   
 ### <a name="it-pro-tools"></a>Outils pour professionnels de l'informatique  
- WCF fournit également les outils de professionnels informatiques suivants, fournis dans le SDK Windows.  
+ WCF fournit également les outils professionnels de l’informatique suivants, qui sont fournis dans le SDK Windows.  
   
 #### <a name="svctraceviewerexe"></a>SvcTraceViewer.exe  
  La visionneuse affiche les fichiers de trace WCF. La visionneuse affiche toutes les informations contenues dans les suivis.  
   
 #### <a name="svcconfigeditorexe"></a>SvcConfigEditor.exe  
- L’éditeur permet à l’utilisateur créer et modifier des fichiers de configuration WCF. L'éditeur affiche toutes les informations contenues dans les fichiers de configuration. La même tâche peut être accomplie avec un éditeur de texte.  
+ L’éditeur permet à l’utilisateur de créer et de modifier des fichiers de configuration WCF. L'éditeur affiche toutes les informations contenues dans les fichiers de configuration. La même tâche peut être accomplie avec un éditeur de texte.  
   
-#### <a name="servicemodelreg"></a>ServiceModel_Reg  
- Cet outil permet à l'utilisateur de gérer les installations de ServiceModel sur un ordinateur. L’outil affiche les messages d’état dans une fenêtre de console lorsqu’il s’exécute et, dans le processus, peut afficher des informations sur la configuration de l’installation de WCF.  
+#### <a name="servicemodel_reg"></a>ServiceModel_Reg  
+ Cet outil permet à l'utilisateur de gérer les installations de ServiceModel sur un ordinateur. L’outil affiche les messages d’État dans une fenêtre de console lorsqu’il s’exécute et, dans le processus, peut afficher des informations sur la configuration de l’installation WCF.  
   
 #### <a name="wsatconfigexe-and-wsatuidll"></a>WSATConfig.exe et WSATUI.dll  
- Ces outils permettent aux professionnels de l’informatique à configurer la prise en charge de réseau WS-AtomicTransaction interopérable dans WCF. Les outils affichent et permettent aux utilisateurs de modifier les valeurs des paramètres WS-AtomicTransaction le plus couramment utilisés stockés dans le Registre.  
+ Ces outils permettent aux professionnels de l’informatique de configurer la prise en charge du réseau WS-AtomicTransaction interopérable dans WCF. Les outils affichent et permettent aux utilisateurs de modifier les valeurs des paramètres WS-AtomicTransaction le plus couramment utilisés stockés dans le Registre.  
   
 ## <a name="cross-cutting-features"></a>Fonctionnalités composites  
  Les fonctionnalités suivantes sont composites. En d’autres termes, elles peuvent être composées de n’importe lesquelles des fonctionnalités précédentes.  
@@ -404,4 +404,4 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="see-also"></a>Voir aussi
 
 - [Windows Communication Foundation](index.md)
-- [Sécurité](../../../docs/framework/wcf/feature-details/security.md)
+- [Security](./feature-details/security.md)

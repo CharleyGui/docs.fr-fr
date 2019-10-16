@@ -1,17 +1,17 @@
 ---
-title: 'Tutoriel : Analyser les commentaires des sites web - classification binaire'
+title: 'Didacticiel : analyser les commentaires de site Web-classification binaire'
 description: Ce tutoriel vous montre comment créer une application console .NET Core qui classifie les sentiments analysés dans les commentaires des sites web et qui exécute l’action appropriée. Le classifieur de sentiments binaire utilise C# dans Visual Studio.
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c6b9d51a8ab91b4365c909993211f11ab3436808
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: e241ae8c0d39e6573b40c69611985f7095114629
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700856"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320142"
 ---
-# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Tutoriel : Analyser les sentiments dans les commentaires des sites web à l’aide d’une classification binaire dans ML.NET
+# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Didacticiel : analyser le sentiment de commentaires de site Web avec classification binaire dans ML.NET
 
 Ce tutoriel vous montre comment créer une application console .NET Core qui classifie les sentiments analysés dans les commentaires des sites web et qui exécute l’action appropriée. Le classifieur binaire de sentiments utilise C# dans Visual Studio 2017.
 
@@ -28,7 +28,7 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - [Visual Studio 2017 15.6 ou ultérieur](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), avec la charge de travail « Développement multiplateforme .Net Core » installée
 
@@ -42,12 +42,12 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 3. Installez le **package NuGet Microsoft.ML** :
 
-    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, puis sélectionnez l’onglet **Parcourir**. Recherchez **Microsoft.ML**, sélectionnez le package souhaité, puis sélectionnez le bouton **Installer**. Poursuivez l’installation en acceptant les termes du contrat de licence pour le package choisi. Faites de même pour le package NuGet **Microsoft.ML.FastTree**.
+    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, puis sélectionnez l’onglet **Parcourir** . recherchez **Microsoft.ml**, sélectionnez le package souhaité, puis cliquez sur le bouton **installer** . Poursuivez l’installation en acceptant les termes du contrat de licence pour le package choisi. Faites de même pour le package NuGet **Microsoft.ML.FastTree**.
 
 ## <a name="prepare-your-data"></a>Préparer vos données
 
 > [!NOTE]
-> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
+> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015 et hébergé dans le référentiel Machine Learning UCI-Dua, D. et karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine, Californie : Université de Californie, école d’informations et science des ordinateurs.
 
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), puis décompressez-le.
 
@@ -61,26 +61,21 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddUsings "Add necessary usings")]
 
-2. Créez deux champs globaux pour le chemin du fichier de jeu de données téléchargé et celui du fichier de modèle enregistré :
-
-    - `_dataPath` contient le chemin d’accès au jeu de données utilisé pour l’apprentissage du modèle.
-    - `_modelPath` contient le chemin d’accès où le modèle formé est enregistré.
-
-3. Ajoutez le code suivant à la ligne juste au-dessus de la méthode `Main` pour spécifier les chemins :
+1. Ajoutez le code suivant à la ligne située juste au-dessus de la méthode `Main`, pour créer un champ qui contiendra le chemin d’accès au fichier de jeu de données téléchargé récemment :
 
     [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
-4. Créez ensuite des classes pour les données d’entrée et les prédictions. Ajoutez une nouvelle classe à votre projet :
+1. Créez ensuite des classes pour les données d’entrée et les prédictions. Ajoutez une nouvelle classe à votre projet :
 
     - Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 
     - Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe**, puis remplacez la valeur du champ **Nom** par *SentimentData.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 
-5. Le fichier *SentimentData.cs* s’ouvre dans l’éditeur de code. Ajoutez l'instruction suivante `using` en haut du fichier *SentimentData.cs* :
+1. Le fichier *SentimentData.cs* s’ouvre dans l’éditeur de code. Ajoutez l'instruction suivante `using` en haut du fichier *SentimentData.cs* :
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#AddUsings "Add necessary usings")]
 
-6. Supprimez la définition de classe existante et ajoutez le code suivant, qui contient deux classes, `SentimentData` et `SentimentPrediction`, au fichier *SentimentData.cs* :
+1. Supprimez la définition de classe existante et ajoutez le code suivant, qui contient deux classes, `SentimentData` et `SentimentPrediction`, au fichier *SentimentData.cs* :
 
     [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#DeclareTypes "Declare data record types")]
 
@@ -91,7 +86,7 @@ La classe du jeu de données d’entrée, `SentimentData`, a une valeur `string`
 |--------------------------------------|----------|
 |La serveuse était un peu lente durant le service.|    0     |
 |La pâte n’est pas bonne.                    |    0     |
-|Super ! J’ai adoré cet endroit.              |    1     |
+|... J’ai aimé cet endroit.              |    1     |
 |Le service a été très rapide.              |    1     |
 
 `SentimentPrediction` est la classe de prédiction utilisée après l’entraînement du modèle. Elle hérite de `SentimentData` afin que l’entrée `SentimentText` puisse être affichée en même temps que la prédiction de sortie. La valeur booléenne `Prediction` est la valeur que le modèle prédit quand la nouvelle entrée `SentimentText` lui est fournie.
@@ -184,7 +179,7 @@ Quand vous préparez un modèle, vous utilisez une partie du jeu de données pou
     |--------------------------------------|----------|----------------------|
     |La serveuse était un peu lente durant le service.|    0     |[0.76, 0.65, 0.44, …] |
     |La pâte n’est pas bonne.                    |    0     |[0.98, 0.43, 0.54, …] |
-    |Super ! J’ai adoré cet endroit.              |    1     |[0.35, 0.73, 0.46, …] |
+    |... J’ai aimé cet endroit.              |    1     |[0.35, 0.73, 0.46, …] |
     |Le service a été très rapide.              |    1     |[0.39, 0, 0.75, …]    |
 
 ### <a name="add-a-learning-algorithm"></a>Ajouter un algorithme d’apprentissage

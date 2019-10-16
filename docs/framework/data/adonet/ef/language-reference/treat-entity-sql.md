@@ -2,19 +2,19 @@
 title: TREAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-ms.openlocfilehash: b7393bef32b3e057eca51eb516cb72cd2de126c2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 38099fa83ed78b40d46faeb5e617157f7aa7c1a1
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248966"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319263"
 ---
 # <a name="treat-entity-sql"></a>TREAT (Entity SQL)
 Traite un objet d'un type de base déterminé en tant qu'objet du type dérivé spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 TREAT ( expression as type)  
 ```  
   
@@ -39,7 +39,7 @@ TREAT ( expression as type)
   
  TREAT est utilisé dans des scénarios d'héritage dans lesquels vous pouvez exécuter une requête de ce type :  
   
-```  
+```sql  
 SELECT TREAT(p AS NamespaceName.Employee)  
 FROM ContainerName.Person AS p  
 WHERE p IS OF (NamespaceName.Employee)   
@@ -48,7 +48,7 @@ WHERE p IS OF (NamespaceName.Employee)
  Cette requête effectue un upcast d'entités `Person` vers le type `Employee` . S'il s'avère que la valeur de p n'est pas de type `Employee`, l'expression génère la valeur `null`.  
   
 > [!NOTE]
-> L’expression `Employee` spécifiée doit être un sous-type du type `Person`de données spécifié, ou le type de données doit être un sous-type de l’expression. Sinon, l'expression génère une erreur de compilation.  
+> L’expression spécifiée `Employee` doit être un sous-type du type de données spécifié `Person`, ou le type de données doit être un sous-type de l’expression. Sinon, l'expression génère une erreur de compilation.  
   
  Le tableau suivant indique le comportement de TREAT sur certains modèles communs et d'autres moins courants. Toutes les exceptions sont levées côté client avant que le fournisseur soit appelé :  
   
@@ -64,7 +64,7 @@ WHERE p IS OF (NamespaceName.Employee)
 ## <a name="example"></a>Exemple  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur TREAT pour convertir un objet du type Course en collection d'objets du type OnsiteCourse. Cette requête est basée sur le modèle [School](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
- [!code-csharp[DP EntityServices Concepts 2#TREAT_ISOF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#treat_isof)]  
+ [!code-sql[DP EntityServices Concepts#TREAT_ISOF](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#treat_isof)]  
   
 ## <a name="see-also"></a>Voir aussi
 

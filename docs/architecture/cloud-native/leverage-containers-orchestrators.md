@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 4008a14e4db28e07d5fda0a1f175aada9ffe6734
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 62aaa68b2ada0725f33df62e97f1ca3216b91ccf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182880"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315882"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -53,8 +53,8 @@ De plus, les conteneurs sont définis par des fichiers simples qui peuvent être
 
 Les conteneurs sont immuables. Une fois que vous avez la définition d’un conteneur, vous pouvez recréer ce conteneur pour qu’il s’exécute exactement de la même façon. Cette immuabilité se prête à la conception basée sur les composants. Si certaines parties d’une application ne changent pas aussi souvent que d’autres, pourquoi redéployer l’application entière quand vous pouvez simplement déployer les parties qui changent le plus fréquemment ? Des fonctionnalités différentes et des problèmes de coupe croisée d’une application peuvent être divisées en unités distinctes. La figure 3-2 montre comment une application monolithique peut tirer parti des conteneurs et des microservices en déléguant certaines fonctionnalités ou fonctionnalités. Les fonctionnalités restantes de l’application elle-même ont également été en conteneur.
 
-![Division d’une application monolithique pour utiliser des microservices dans le back end. **Figure 3-2**. ](./media/breaking-up-monolith-with-backend-microservices.png)
- Division d’une application monolithique pour utiliser des microservices dans le back end.
+![Breaking une application monolithique pour utiliser des microservices dans le back end. ](./media/breaking-up-monolith-with-backend-microservices.png)
+**figure 3-2**. Division d’une application monolithique pour utiliser des microservices dans le back end.
 
 Les applications Cloud natives créées à l’aide de conteneurs distincts tirent parti de la possibilité de déployer autant ou moins d’applications que nécessaire. Les services individuels peuvent être hébergés sur des nœuds avec des ressources appropriées pour chaque service. L’environnement dans lequel chaque service s’exécute est immuable, peut être partagé entre le développement, le test et la production, et peut facilement être associé à une version. Le couplage entre les différentes zones de l’application se produit explicitement comme des appels ou des messages entre les services, et non pour les dépendances au moment de la compilation dans le monolithe. Et une partie donnée de l’application globale peut choisir la technologie qui est la plus appropriée pour cette fonctionnalité ou cette fonctionnalité sans nécessiter de modifications du reste de l’application.
 
@@ -62,14 +62,14 @@ Les applications Cloud natives créées à l’aide de conteneurs distincts tire
 
 Les services basés sur des conteneurs peuvent tirer parti des avantages de la mise à l’échelle proposés par les outils d’orchestration tels que Kubernetes. Par conception, les conteneurs ne savent qu’eux-mêmes. Une fois que vous avez commencé à avoir plusieurs conteneurs qui doivent fonctionner ensemble, il peut être utile de les organiser à un niveau supérieur. L’organisation d’un grand nombre de conteneurs et de leurs dépendances partagées, telles que la configuration du réseau, est l’endroit où les outils d’orchestration entrent pour gagner le jour. Kubernetes est une plateforme d’orchestration de conteneur conçue pour automatiser le déploiement, la mise à l’échelle et la gestion des applications en conteneur. Il crée une couche d’abstraction par-dessus des groupes de conteneurs et les organise en *modules*. Les POD s’exécutent sur des ordinateurs de travail désignés sous le terme de *nœuds*. L’ensemble du groupe organisé est appelé *cluster*. La figure 3-3 montre les différents composants d’un cluster Kubernetes.
 
-![Composants de cluster Kubernetes. **Figure 3-3**. ](./media/kubernetes-cluster-components.png)
- Composants de cluster Kubernetes.
+composants de cluster @no__t 0Kubernetes. ](./media/kubernetes-cluster-components.png)
+**Figure 3-3**. Composants de cluster Kubernetes.
 
 Kubernetes offre une prise en charge intégrée de la mise à l’échelle des clusters pour répondre à la demande. Associé aux micro-services en conteneur, il offre aux applications Cloud natives la possibilité de répondre rapidement et efficacement aux pics de demande avec des ressources supplémentaires quand et où elles sont nécessaires.
 
 ### <a name="declarative-versus-imperative"></a>Déclaratifs et impératifs
 
-Kubernetes prend en charge la configuration d’objet déclarative et impérative. L’approche impérative implique l’exécution de diverses commandes qui indiquent à Kubernetes ce qu’il faut faire chaque étape. *Exécutez* cette image. *Supprimer* ce pod. *Exposez* ce port. Avec l’approche déclarative, vous utilisez un fichier de configuration qui décrit *ce que vous souhaitez* , au lieu de savoir ce qu’il *faut faire* et Kubernetes, ce qu’il faut faire pour atteindre l’état final souhaité. Si vous avez déjà configuré votre cluster à l’aide de commandes impératives, vous pouvez exporter un manifeste `kubectl get svc SERVICENAME -o yaml > service.yaml`déclaratif à l’aide de. Cela produira un fichier manifeste comme celui-ci :
+Kubernetes prend en charge la configuration d’objet déclarative et impérative. L’approche impérative implique l’exécution de diverses commandes qui indiquent à Kubernetes ce qu’il faut faire chaque étape. *Exécutez* cette image. *Supprimer* ce pod. *Exposez* ce port. Avec l’approche déclarative, vous utilisez un fichier de configuration qui décrit *ce que vous souhaitez* , au lieu de savoir ce qu’il *faut faire* et Kubernetes, ce qu’il faut faire pour atteindre l’état final souhaité. Si vous avez déjà configuré votre cluster à l’aide de commandes impératives, vous pouvez exporter un manifeste déclaratif à l’aide de `kubectl get svc SERVICENAME -o yaml > service.yaml`. Cela produira un fichier manifeste comme celui-ci :
 
 ```yaml
 apiVersion: v1
@@ -97,7 +97,7 @@ status:
   loadBalancer: {}
 ```
 
-Lorsque vous utilisez la configuration déclarative, vous pouvez afficher un aperçu des modifications qui seront apportées avant de `kubectl diff -f FOLDERNAME` les valider à l’aide de sur le dossier où se trouvent vos fichiers de configuration. Une fois que vous êtes sûr de vouloir appliquer les modifications, `kubectl apply -f FOLDERNAME`exécutez. Ajoutez `-R` pour traiter de manière récursive une hiérarchie de dossiers.
+Lorsque vous utilisez la configuration déclarative, vous pouvez afficher un aperçu des modifications qui seront apportées avant de les valider à l’aide de `kubectl diff -f FOLDERNAME` sur le dossier où se trouvent vos fichiers de configuration. Une fois que vous êtes sûr de vouloir appliquer les modifications, exécutez `kubectl apply -f FOLDERNAME`. Ajoutez `-R` pour traiter de manière récursive une hiérarchie de dossiers.
 
 En plus des services, vous pouvez utiliser la configuration déclarative pour d’autres fonctionnalités Kubernetes, telles que les *déploiements*. Les déploiements déclaratifs sont utilisés par les contrôleurs de déploiement pour mettre à jour les ressources de cluster. Les déploiements sont utilisés pour déployer de nouvelles modifications, monter en puissance pour prendre en charge davantage de charge ou revenir à une révision précédente. Si un cluster est instable, les déploiements déclaratifs fournissent un mécanisme pour ramener automatiquement le cluster à l’état souhaité.
 
@@ -121,7 +121,7 @@ Si vous n’êtes pas en mesure de créer votre application à l’aide des prin
 
 ## <a name="development-resources"></a>Ressources de développement
 
-Cette section présente une liste succincte de ressources de développement qui peuvent vous aider à commencer à utiliser des conteneurs et orchestrateurs pour votre prochaine application. Si vous recherchez des conseils sur la façon de concevoir votre application d’architecture de microservices Native Cloud, lisez le Guide de ce manuel [, microservices .net : Architecture pour les applications .NET en conteneurs](https://aka.ms/microservicesebook).
+Cette section présente une liste succincte de ressources de développement qui peuvent vous aider à commencer à utiliser des conteneurs et orchestrateurs pour votre prochaine application. Si vous recherchez des conseils sur la façon de concevoir votre application d’architecture de microservices Native Cloud, lisez le Guide de ce manuel, [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
 
 ### <a name="local-kubernetes-development"></a>Développement Kubernetes local
 
@@ -135,11 +135,11 @@ Qu’est-ce que Minikube ? Le projet Minikube indique « Minikube implémente 
 - Noexclusions
 - ConfigMaps et secrets
 - Tableaux de bord
-- Runtimes de conteneur : Docker, RKT, élément de rapport personnalisé-O et conteneur
+- Runtimes de conteneur : docker, RKT, élément de rapport personnalisé-O et conteneur
 - Activation de l’interface réseau du conteneur (CNI)
 - Pénètre
 
-Après avoir installé Minikube, vous pouvez commencer rapidement à l’utiliser en `minikube start` exécutant la commande, qui télécharge une image et démarre le cluster Kubernetes local. Une fois le cluster démarré, vous interagissez avec lui à l' `kubectl` aide des commandes Kubernetes standard.
+Après avoir installé Minikube, vous pouvez commencer rapidement à l’utiliser en exécutant la commande `minikube start`, qui télécharge une image et démarre le cluster Kubernetes local. Une fois le cluster démarré, vous interagissez avec lui à l’aide des commandes Kubernetes `kubectl` standard.
 
 ### <a name="docker-desktop"></a>Bureau de l’ancrage
 
@@ -159,7 +159,7 @@ Visual Studio prend en charge le développement de l’ancrage pour les applicat
 
 **Figure 3-5**. Visual Studio permet la prise en charge de l’ancrage
 
-Lorsque cette option est sélectionnée, le projet est créé avec un `Dockerfile` à sa racine, qui peut être utilisé pour générer et héberger l’application dans un conteneur d’ancrage. Un exemple de fichier dockerfile est illustré dans la figure 3-6.
+Lorsque cette option est sélectionnée, le projet est créé avec un `Dockerfile` dans sa racine, qui peut être utilisé pour générer et héberger l’application dans un conteneur Dockr. Un exemple de fichier dockerfile est illustré dans la figure 3-6.
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-stretch-slim AS base
@@ -192,15 +192,15 @@ Le comportement par défaut lors de l’exécution de l’application est égale
 
 **Figure 3-7**. Options d’exécution de l’Ancreur Visual Studio
 
-En plus du développement local, [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) offre un moyen pratique à plusieurs développeurs de travailler avec leurs propres configurations Kubernetes dans Azure. Comme vous pouvez le voir dans la figure 3-10, vous pouvez également exécuter l’application dans Azure Dev Spaces.
+En plus du développement local, [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) offre un moyen pratique à plusieurs développeurs de travailler avec leurs propres configurations Kubernetes dans Azure. Comme vous pouvez le voir dans la figure 3-7, vous pouvez également exécuter l’application dans Azure Dev Spaces.
 
-Si vous n’ajoutez pas la prise en charge de l’ancrage à votre application ASP.NET Core lorsque vous la créez, vous pouvez toujours l’ajouter ultérieurement. À partir de l’Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter** > la**prise en charge**de l’ancrage, comme illustré à la figure 3-8.
+Si vous n’ajoutez pas la prise en charge de l’ancrage à votre application ASP.NET Core lorsque vous la créez, vous pouvez toujours l’ajouter ultérieurement. Dans le Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter**la**prise en charge**de l’ancrage  > , comme illustré à la figure 3-8.
 
 ![Ajout de la prise en charge de l’ancrage à Visual Studio](./media/visual-studio-add-docker-support.png)
 
 **Figure 3-8**. Ajout de la prise en charge de l’ancrage à Visual Studio
 
-En plus de la prise en charge de l’ancrage, vous pouvez également ajouter la prise en charge de l’orchestration de conteneur, également illustrée dans la figure 3-11. Par défaut, l’orchestrateur utilise Kubernetes et Helm. Une fois que vous avez choisi l’orchestrateur, un `azds.yaml` fichier est ajouté à la racine du projet et un `charts` dossier contenant les graphiques Helm utilisés pour configurer et déployer l’application sur Kubernetes est ajouté. La figure 3-9 montre les fichiers résultants dans un nouveau projet.
+En plus de la prise en charge de l’ancrage, vous pouvez également ajouter la prise en charge de l’orchestration de conteneur, également illustrée dans la figure 3-8. Par défaut, l’orchestrateur utilise Kubernetes et Helm. Une fois que vous avez choisi l’orchestrateur, un fichier `azds.yaml` est ajouté à la racine du projet et un dossier `charts` est ajouté, contenant les graphiques Helm utilisés pour configurer et déployer l’application sur Kubernetes. La figure 3-9 montre les fichiers résultants dans un nouveau projet.
 
 ![Ajout de la prise en charge d’Orchestrator à Visual Studio](./media/visual-studio-add-orchestrator-support.png)
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-ms.openlocfilehash: 8123a504e83164f2ae842755da8ff4d8850141d2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3d482e2b03346c9443066c480575a1394324b9bf
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046032"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320703"
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Outil Éditeur de configuration (SvcConfigEditor.exe)
 
@@ -61,20 +61,20 @@ L'interface utilisateur de l'Éditeur de configuration de service est divisée d
 
 ### <a name="opening-a-configuration-file"></a>Ouverture d'un fichier de configuration
 
-1. Démarrez l’éditeur de configuration de service à l’aide d’une fenêtre de commande pour accéder à votre emplacement `SvcConfigEditor.exe`d’installation WCF, puis tapez.
+1. Démarrez l’éditeur de configuration de service à l’aide d’une fenêtre de commande pour accéder à votre emplacement d’installation WCF, puis tapez `SvcConfigEditor.exe`.
 
 2. Dans le menu **fichier** , sélectionnez **ouvrir** , puis cliquez sur le type de fichier que vous souhaitez gérer.
 
 3. Dans la boîte de dialogue **ouvrir** , accédez au fichier spécifique que vous souhaitez gérer, puis double-cliquez dessus.
 
-La visionneuse suit automatiquement le chemin d’accès de fusion de la configuration et crée une vue de la configuration fusionnée. Par exemple, la configuration réelle d'un service non hébergé est une combinaison de Machine.config et App.config. Toutes les modifications sont appliquées au fichier actif dans SvcConfigEditor. Si vous souhaitez modifier un fichier spécifique dans le chemin d’accès de fusion de la configuration, vous devez l’ouvrir directement.
+La visionneuse suit automatiquement le chemin d’accès de fusion de la configuration et crée une vue de la configuration fusionnée. Par exemple, la configuration réelle d’un service non hébergé est une combinaison de machine. config et App. config. Toutes les modifications sont appliquées au fichier actif dans SvcConfigEditor. Si vous souhaitez modifier un fichier spécifique dans le chemin d’accès de fusion de la configuration, vous devez l’ouvrir directement.
 
 > [!NOTE]
 > L'Éditeur de configuration recharge le fichier de configuration actuellement ouvert lorsque ce dernier a été modifié à l'extérieur de l'Éditeur. Lorsque cela se produit, toutes les modifications non enregistrées dans l'Éditeur sont perdues. Si les rechargements sont fréquents, la cause la plus probable est l‘accès constant d‘un service au fichier de configuration (par exemple, un logiciel antivirus exécuté en arrière-plan). Pour y remédier, vérifiez que l'éditeur de configuration est l'unique processus autorisé à accéder au fichier lorsque celui-ci est ouvert.
 
 ### <a name="services"></a>Services
 
-Le nœud **services** affiche tous les services actuellement attribués dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément`services`< > dans le fichier de configuration.
+Le nœud **services** affiche tous les services actuellement attribués dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément < `services` > dans le fichier de configuration.
 
 Lorsque vous cliquez sur le nœud **services** , vous pouvez afficher ou exécuter des tâches dans la page Résumé du service dans le volet d' **informations** .
 
@@ -82,17 +82,17 @@ Lorsque vous cliquez sur le nœud **services** , vous pouvez afficher ou exécut
 
 Vous pouvez créer une configuration de service de l'une des manières suivantes :
 
-- À l’aide d’un Assistant: Cliquez sur le lien **créer un nouveau service...** dans le volet de tâches ou la page Résumé pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**.
+- À l’aide d’un Assistant : cliquez sur le lien **créer un nouveau service...** dans le volet de tâches ou la page Résumé pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**.
 
-- Créer manuellement: Vous pouvez cliquer avec le bouton droit sur le nœud **services** et choisir **nouveau service**.
+- Créer manuellement : vous pouvez cliquer avec le bouton droit sur le nœud **services** et choisir **nouveau service**.
 
 #### <a name="creating-a-new-service-endpoint-configuration"></a>Création d'une configuration de point de terminaison de service
 
 Vous pouvez créer une nouvelle configuration de point de terminaison de service de l'une des manières suivantes :
 
-- Créer à l’aide d’un Assistant: cliquez sur le lien **créer un point de terminaison de service...** dans le volet de tâches ou la page Résumé pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**.
+- Créer à l’aide d’un Assistant : cliquez sur le lien **créer un point de terminaison de service...** dans le volet de tâches ou la page Résumé pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**.
 
-- Créer manuellement: Une fois que vous avez créé un service, vous pouvez cliquer avec le bouton droit sur le nœud **points de terminaison** et choisir «**nouveau point de terminaison de service**».
+- Créer manuellement : une fois que vous avez créé un service, vous pouvez cliquer avec le bouton droit sur le nœud **points de terminaison** et choisir «**nouveau point de terminaison de service**».
 
 #### <a name="editing-a-service-configuration"></a>Modification d'une configuration de service
 
@@ -117,11 +117,11 @@ Vous pouvez créer une nouvelle configuration de point de terminaison de service
 4. Cliquez sur **OK**.
 
 > [!NOTE]
-> Vous ne pouvez pas modifier la valeur de [ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) dans cet outil. Pour ajouter ou modifier cet élément, vous devez utiliser un éditeur de texte ou Visual Studio.
+> Vous ne pouvez pas modifier la valeur de [\<baseAddressPrefixFilters >](../configure-apps/file-schema/wcf/baseaddressprefixfilters.md) à l’intérieur de cet outil. Pour ajouter ou modifier cet élément, vous devez utiliser un éditeur de texte ou Visual Studio.
 
 ### <a name="client"></a>Client
 
-Le nœud **client** affiche tous les points de terminaison du client dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément`client`< > dans le fichier de configuration.
+Le nœud **client** affiche tous les points de terminaison du client dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément < `client` > dans le fichier de configuration.
 
 Lorsque vous cliquez sur le nœud **client** , vous pouvez afficher ou exécuter des tâches dans la **page Résumé** du client dans le **volet d’informations**.
 
@@ -129,9 +129,9 @@ Lorsque vous cliquez sur le nœud **client** , vous pouvez afficher ou exécuter
 
 Vous pouvez créer une configuration de point de terminaison client de l'une des manières suivantes :
 
-- Créer par l’Assistant: Cliquez sur le lien **créer un nouveau client...** dans le **volet de tâches** en bas à gauche de la fenêtre, ou **page Résumé** pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**. L'Assistant vous invite à désigner l'emplacement de la configuration du service, à partir duquel la configuration cliente est générée. Vous pouvez alors choisir le point de terminaison de service avec lequel établir une connexion.
+- Créer à l’aide d’un Assistant : cliquez sur le lien **créer un nouveau client...** dans le **volet de tâches** en bas à gauche de la fenêtre, ou **page Résumé** pour lancer l’Assistant. Vous pouvez également le faire dans le menu **fichier** -> **Ajouter un nouvel élément**. L'Assistant vous invite à désigner l'emplacement de la configuration du service, à partir duquel la configuration cliente est générée. Vous pouvez alors choisir le point de terminaison de service avec lequel établir une connexion.
 
-- Créer manuellement: Cliquez avec le bouton droit sur le nœud **points de terminaison** sous **client**et sélectionnez **nouveau point de terminaison de client**.
+- Créez manuellement : cliquez avec le bouton droit sur le nœud **points de terminaison** sous **client**, puis choisissez **nouveau point de terminaison client**.
 
 #### <a name="editing-a-client-endpoint-configuration"></a>Modification d'une configuration de point de terminaison client
 
@@ -143,7 +143,7 @@ Vous pouvez créer une configuration de point de terminaison client de l'une des
 
 Les points de terminaison standard sont des points de terminaison spécialisés possédant une ou plusieurs parties de l’adresse, contrat et liaison définies sur les valeurs par défaut.
 
-Ces paramètres de configuration sont stockés dans le nœud de **point de terminaison standard** . Le nœud **point de terminaison standard** affiche tous les paramètres de point de terminaison standard dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l' `<standardEndpoints>` élément dans le fichier de configuration.
+Ces paramètres de configuration sont stockés dans le nœud de **point de terminaison standard** . Le nœud **point de terminaison standard** affiche tous les paramètres de point de terminaison standard dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément `<standardEndpoints>` dans le fichier de configuration.
 
 Lorsque vous cliquez sur le nœud **point de terminaison standard** , vous pouvez afficher ou exécuter des tâches dans la **page Résumé** du point de terminaison standard du **volet détail**.
 
@@ -175,13 +175,13 @@ Vous pouvez supprimer une configuration de point de terminaison standard de l'un
 
 - Cliquez sur le nœud **point de terminaison standard** . Dans le volet des **tâches** , cliquez sur **Supprimer la configuration de point de terminaison standard**.
 
-Si le point de terminaison standard est utilisé, un message d’avertissement s’affiche lorsque vous tentez de le supprimer: **Le point de terminaison standard est en cours d’utilisation. Si vous le supprimez maintenant, veillez à supprimer toutes ses références dans d'autres parties de la configuration (par exemple, dans le point de terminaison de service ou le point de terminaison de client). Sinon, la configuration ne sera pas valide et ne pourra pas être ouverte la prochaine fois. Voulez-vous vraiment supprimer le point de terminaison standard?»**
+Si le point de terminaison standard est utilisé, un message d’avertissement s’affiche lorsque vous tentez de le supprimer : **le point de terminaison standard est en cours d’utilisation. Si vous la supprimez maintenant, veillez à supprimer toutes ses références dans d’autres parties de la configuration (par exemple, dans le point de terminaison de service ou le point de terminaison client). Dans le cas contraire, la configuration ne sera pas valide et ne pourra pas être ouverte la prochaine fois. Voulez-vous vraiment supprimer le point de terminaison standard ?»**
 
 ### <a name="binding"></a>Liaison
 
 Les configurations de liaison sont utilisées pour configurer des liaisons sur les points de terminaison. Ces paramètres de configuration sont stockés dans le nœud de **liaison** . Les points de terminaison référencent les configurations de liaison par nom et plusieurs points de terminaison peuvent référencer une configuration de liaison unique.
 
-Le nœud **liaisons** affiche tous les paramètres de liaison dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément`bindings`< > dans le fichier de configuration.
+Le nœud **liaisons** affiche tous les paramètres de liaison dans le fichier de configuration. Chaque sous-nœud de l’arborescence correspond à un sous-élément de l’élément < `bindings` > dans le fichier de configuration.
 
 Lorsque vous cliquez sur le nœud **liaisons** , vous pouvez afficher ou exécuter des tâches dans la **page Résumé** des liaisons du **volet d’informations**.
 
@@ -225,19 +225,19 @@ Une liaison personnalisée est une collection d’éléments de liaison qui form
 
 ### <a name="diagnostics"></a>Diagnostics
 
-Le nœud Diagnostics affiche tous les paramètres de diagnostic dans le fichier de configuration. Elle vous permet d’activer ou de désactiver les compteurs de performance, d’activer ou de désactiver les Windows Management Instrumentation (WMI), de configurer le suivi WCF et de configurer l’enregistrement des messages WCF. Les paramètres du nœud **Diagnostics** correspondent à la section <`system.diagnostics`> et `<diagnostics>` à la section de `<system.serviceModel>` dans le fichier de configuration.
+Le nœud **Diagnostics** affiche tous les paramètres de diagnostic dans le fichier de configuration. Elle vous permet d’activer ou de désactiver les compteurs de performance, d’activer ou de désactiver les Windows Management Instrumentation (WMI), de configurer le suivi WCF et de configurer l’enregistrement des messages WCF. Les paramètres du nœud **Diagnostics** correspondent à la section < `system.diagnostics` > et à la section `<diagnostics>` dans `<system.serviceModel>` dans le fichier de configuration.
 
-Lorsque vous cliquez sur le nœud Diagnostics, vous pouvez afficher ou exécuter des tâches dans la **page Résumé** des diagnostics du **volet détail**.
+Lorsque vous cliquez sur le nœud **Diagnostics** , vous pouvez afficher ou exécuter des tâches dans la **page Résumé** des diagnostics du **volet détail**.
 
 #### <a name="configuring-performance-counters-and-wmi"></a>Configuration des compteurs de performance et de WMI
 
-1. Cliquez sur le nœud Diagnostics.
+1. Cliquez sur le nœud **Diagnostics** .
 
-2. Cliquez sur **activer/désactiver les compteurs de performances**. Le compteur de performances a trois États: OFF (valeur par défaut), ServiceOnly et All. Il est possible de basculer entre les trois états en cliquant sur le lien.
+2. Cliquez sur **activer/désactiver les compteurs de performances**. Le compteur de performance peut avoir trois états : Off (valeur par défaut), ServiceOnly et All. Il est possible de basculer entre les trois états en cliquant sur le lien.
 
 #### <a name="configuring-wmi-provider"></a>Configuration d'un fournisseur WMI
 
-1. Cliquez sur le nœud Diagnostics.
+1. Cliquez sur le nœud **Diagnostics** .
 
 2. Pour activer le fournisseur WMI, cliquez sur le lien **activer le fournisseur WMI** .
 
@@ -245,11 +245,11 @@ Lorsque vous cliquez sur le nœud Diagnostics, vous pouvez afficher ou exécuter
 
 Vous pouvez créer un fichier de suivi WCF avec des propriétés standard ou configurer un fichier de suivi personnalisé.
 
-1. Cliquez sur le nœud Diagnostics.
+1. Cliquez sur le nœud **Diagnostics** .
 
 2. Cliquez sur **activer le suivi**.
 
-3. Cliquez sur le lien **niveau de suivi** pour ajuster le niveau de suivi. Il existe six niveaux de suivi: Désactivé, critique, erreur, avertissement, informations et commentaires. L’option **suivi d’activité** et propager l' **activité** vous permet d’utiliser la fonctionnalité de suivi d’activité WCF.
+3. Cliquez sur le lien **niveau de suivi** pour ajuster le niveau de suivi. Six niveaux de suivi sont disponibles : Fermé, Critique, Erreur, Avertissement, Information et Commentaires. L’option **suivi d’activité** et **propager l’activité** vous permet d’utiliser la fonctionnalité de suivi d’activité WCF.
 
 4. Cliquez sur le nom de l'écouteur de suivi pour spécifier le fichier et les options de suivi.
 
@@ -257,28 +257,28 @@ Vous pouvez créer un fichier de suivi WCF avec des propriétés standard ou con
 
 Vous pouvez créer un fichier de suivi WCF avec des propriétés standard ou configurer un fichier de suivi personnalisé.
 
-1. Cliquez sur le nœud Diagnostics.
+1. Cliquez sur le nœud **Diagnostics** .
 
-2. Cliquez sur Activer la journalisation des **messages**.
+2. Cliquez sur **activer la journalisation des messages**.
 
-3. Cliquez sur le lien **niveau** de journalisation pour ajuster le niveau de journalisation. Il existe trois niveaux de journal: Incorrect, service et transport.
+3. Cliquez sur le lien **niveau de journalisation** pour ajuster le niveau de journalisation. Il existe trois niveaux de journal : Messages malformés, Service et Transport.
 
 4. Cliquez sur le nom de l'écouteur pour spécifier le fichier journal et les options de suivi.
 
 > [!NOTE]
 > Si vous souhaitez que les journaux de suivi et de messages soient vidés automatiquement lorsque votre application est fermée, activez l’option de **vidage automatique** .
 
-La **page Résumé** des diagnostics vous permet d’accomplir les tâches les plus courantes de la configuration des Diagnostics. Toutefois, si vous souhaitez modifier manuellement les paramètres des écouteurs et des sources, vous devez développer le nœud Diagnostics et modifier les paramètres dans le nœud **enregistrement des messages**, **écouteurs** et **sources** .
+La **page Résumé** des **Diagnostics** vous permet d’accomplir les tâches les plus courantes de la configuration des Diagnostics. Toutefois, si vous souhaitez modifier manuellement les paramètres des écouteurs et des sources, vous devez développer le nœud **Diagnostics** et modifier les paramètres dans le nœud **enregistrement des messages**, **écouteurs** et **sources** .
 
 #### <a name="enabling-wcf-custom-tracing-or-message-logging"></a>Activation de la journalisation des messages ou le suivi personnalisé de WCF
 
-1. Cliquez sur le nœud Diagnostics, puis développez-le.
+1. Cliquez sur le nœud **Diagnostics** , puis développez-le.
 
 2. Cliquez avec le bouton droit sur le nœud **écouteurs** et sélectionnez **nouvel écouteur**.
 
-3. Tapez le nom du fichier de trace dans le champ **InitData** . Vous pouvez cliquer sur le «...» bouton pour accéder à un chemin d’accès.
+3. Tapez le nom du fichier de trace dans le champ **InitData** . Vous pouvez cliquer sur le « ... » bouton pour accéder à un chemin d’accès.
 
-4. Si vous cliquez sur la ligne **TypeName** , un «...» s’affiche. bouton. Cliquez sur ce bouton pour ouvrir l' **Explorateur de types**d’écouteur de suivi, que vous pouvez utiliser pour rechercher des écouteurs de suivi préconfigurés qui sont déjà installés.
+4. Si vous cliquez sur la ligne **TypeName** , un « ... » s’affiche. bouton. Cliquez sur ce bouton pour ouvrir l' **Explorateur de types d’écouteur de suivi**, que vous pouvez utiliser pour rechercher des écouteurs de suivi préconfigurés qui sont déjà installés.
 
 5. Notez la section **source** . Cliquez sur **Ajouter** dans cette section pour ouvrir une boîte de dialogue avec un menu déroulant qui répertorie les sources de suivi disponibles. Sélectionnez une source de suivi, puis cliquez sur **OK**.
 
@@ -342,13 +342,13 @@ Cette section permet de configurer des types de liaison par défaut pour différ
 
 Les nouvelles extensions de liaison, les extensions d’élément de liaison, les extensions de point de terminaison standard et les extensions de comportement peuvent être enregistrées pour une utilisation dans la configuration WCF. Les extensions sont des paires de nom/type. Le nom définit le nom de l’extension dans la configuration, alors que le type implémente l’extension. Il existe quatre types d’extension :
 
-- Les extensions de liaison définissent un type de liaison entier. Exemple : `basicHttpBinding`.
+- Les extensions de liaison définissent un type de liaison entier. Par exemple : `basicHttpBinding`
 
-- Les extensions d'élément de liaison définissent un élément d'une liaison. Exemple : `textMessageEncoding`.
+- Les extensions d'élément de liaison définissent un élément d'une liaison. Par exemple : `textMessageEncoding`
 
-- Les extensions de point de terminaison standard définissent un point de terminaison standard entier. Exemple : `discoveryEndpoint`.
+- Les extensions de point de terminaison standard définissent un point de terminaison standard entier. Par exemple : `discoveryEndpoint`
 
-- Les extensions d’élément de comportement définissent un élément d’un comportement. Exemple : `clientVia`.
+- Les extensions d’élément de comportement définissent un élément d’un comportement. Par exemple : `clientVia`
 
  Les extensions inscrites dans la configuration peuvent être utilisées comme tout autre composant WCF du même type.
 
@@ -374,7 +374,7 @@ Pour créer un fichier de configuration, vous pouvez notamment utiliser l'Assist
 
 #### <a name="creating-a-configuration-file"></a>Création d'un fichier de configuration
 
-1. Démarrez l’éditeur de configuration de service à l’aide d’une fenêtre de commande pour accéder à votre emplacement `SvcConfigEditor.exe`d’installation WCF, puis tapez.
+1. Démarrez l’éditeur de configuration de service à l’aide d’une fenêtre de commande pour accéder à votre emplacement d’installation WCF, puis tapez `SvcConfigEditor.exe`.
 
 2. Dans le menu **fichier** , sélectionnez **ouvrir** , puis cliquez sur **exécutable**, **service com+** ou **service hébergé**sur le serveur, selon le type de fichier de configuration que vous souhaitez créer.
 
@@ -389,13 +389,13 @@ Pour créer un fichier de configuration, vous pouvez notamment utiliser l'Assist
 
 ## <a name="configuring-com"></a>Configuration de COM+
 
-L'Éditeur de configuration de service vous permet de créer un fichier de configuration pour une application COM+ existante ou de modifier une configuration COM+ existante. Le nœud de **contrat com** est visible uniquement lorsque la`comContract`section < > existe dans le fichier de configuration.
+L'Éditeur de configuration de service vous permet de créer un fichier de configuration pour une application COM+ existante ou de modifier une configuration COM+ existante. Le nœud de **contrat com** est visible uniquement lorsque la section < `comContract` > existe dans le fichier de configuration.
 
 ### <a name="creating-a-new-com-configuration"></a>Création d'une nouvelle configuration COM+
 
 Avant de créer une configuration COM+, assurez-vous que votre application COM+ est installée dans les services de composants et enregistrée dans le Global Assembly Cache (GAC).
 
-1. Sélectionnez le menu **fichier** -> **intégrer** -> l'**application com+.** Cette opération ferme le fichier actuellement ouvert. Si des données ne sont pas enregistrées dans le fichier actif, une boîte de dialogue d'enregistrement apparaît. L' **Assistant intégration com+** est ensuite lancé.
+1. Sélectionnez le menu **fichier** -> **intégrer**l'**application com+**  -> . Cette opération ferme le fichier actuellement ouvert. Si des données ne sont pas enregistrées dans le fichier actif, une boîte de dialogue d'enregistrement apparaît. L' **Assistant intégration com+** est ensuite lancé.
 
 2. Dans la première page, sélectionnez l'application COM+ de l'arbre. Si vous ne trouvez pas votre application COM+ dans l’arbre, vérifiez qu’il est installé dans les services de composants et enregistré dans le Global Assembly Cache (GAC).
 
@@ -409,7 +409,7 @@ Avant de créer une configuration COM+, assurez-vous que votre application COM+ 
 
 ### <a name="editing-an-existing-com-configuration"></a>Modification d'une configuration COM+ existante
 
-1. Sélectionnez le menu **fichier** -> **ouvrir** -> le**service com+** ...
+1. Menu Sélectionner un **fichier** -> **ouvrir** -> **service com+** ...
 
 2. Sélectionnez le service COM+ que vous souhaitez modifier dans la liste.
 
@@ -420,6 +420,6 @@ Avant de créer une configuration COM+, assurez-vous que votre application COM+ 
 
 ## <a name="security"></a>Sécurité
 
-Le caractère sécurisé des fichiers de configuration de service générés par l'Éditeur de configuration n'est pas garanti. Reportez-vous à la documentation relative à la [sécurité](../../../docs/framework/wcf/feature-details/security.md) pour savoir comment sécuriser vos services WCF.
+Le caractère sécurisé des fichiers de configuration de service générés par l'Éditeur de configuration n'est pas garanti. Reportez-vous à la documentation relative à la [sécurité](./feature-details/security.md) pour savoir comment sécuriser vos services WCF.
 
 De plus, l'Éditeur de configuration peut être utilisé uniquement pour lire et écrire des éléments de configuration WCF valides. Cet outil ignore les éléments conformes à des schémas, définis par l'utilisateur. Il ne tente pas non plus de supprimer ces éléments du fichier de configuration ou de déterminer leurs effets sur les éléments WCF connus. Il incombe à l'utilisateur de déterminer si ces éléments font peser une menace à l'application ou au système.

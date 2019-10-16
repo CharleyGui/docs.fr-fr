@@ -2,12 +2,12 @@
 title: Contrôle des versions du service
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-ms.openlocfilehash: f3cb01531c594df5262963567438b47cbbed58a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 68c41f2c349dbceb318976ee26db58fd00dae872
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923013"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321485"
 ---
 # <a name="service-versioning"></a>Contrôle des versions du service
 Après leur déploiement initial, et potentiellement plusieurs fois pendant leur durée de vie, il peut s’avérer nécessaire de modifier les services (et les points de terminaison qu’ils exposent) pour diverses raisons, telles que l’évolution des besoins de l’entreprise, des exigences informatiques, ou pour résoudre d’autres problèmes. Chaque modification introduit une nouvelle version du service. Cette rubrique explique comment prendre en compte le contrôle de version dans Windows Communication Foundation (WCF).  
@@ -15,13 +15,13 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
 ## <a name="four-categories-of-service-changes"></a>Quatre catégories de modifications de service  
  Les modifications apportées aux services qui peuvent s'avérer nécessaires peuvent être classées en quatre catégories :  
   
-- Modifications du contrat: Par exemple, une opération peut être ajoutée ou un élément de données d’un message peut être ajouté ou modifié.  
+- Modifications de contrat : par exemple, une opération peut être ajoutée, ou un élément de données dans un message peut être ajouté ou modifié.  
   
-- Modifications de l’adresse: Par exemple, un service se déplace vers un autre emplacement où les points de terminaison ont de nouvelles adresses.  
+- Modifications d'adresse : par exemple, un service se déplace vers un autre emplacement où les points de terminaison ont de nouvelles adresses.  
   
-- Modifications de liaison: Par exemple, un mécanisme de sécurité change ou ses paramètres changent.  
+- Modifications de liaison : par exemple, un mécanisme de sécurité change ou ses paramètres changent.  
   
-- Modifications de l’implémentation: Par exemple, lorsqu’une implémentation de méthode interne change.  
+- Modifications d'implémentation : par exemple, lorsqu'une implémentation de méthode interne change.  
   
  Certaines de ces modifications sont dites « avec rupture » et d'autres « sans rupture ». Une modification est sans *rupture* si tous les messages qui auraient été traités avec succès dans la version précédente sont traités avec succès dans la nouvelle version. Toute modification qui ne répond pas à ce critère est une modification avec *rupture* .  
   
@@ -58,7 +58,7 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
   
  On peut facilement croire à tort que l'ajout d'un nouveau membre n'interrompra pas les clients existants. Si vous n'êtes pas certain que tous les clients peuvent gérer le contrôle de version souple, nous vous recommandons de vous conformer aux instructions sur le contrôle de version strict et de traiter les contrats de données comme immuables.  
   
- Pour obtenir des instructions détaillées sur le contrôle de version de type Lax et strict [des contrats de données, consultez meilleures pratiques: Contrôle de version](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)des contrats de données.  
+ Pour obtenir des instructions détaillées sur le contrôle de version de type Lax et strict des contrats de données, consultez [meilleures pratiques :](best-practices-data-contract-versioning.md)contrôle de version des contrats de données.  
   
 ### <a name="distinguishing-between-data-contract-and-net-types"></a>Distinction entre le contrat de données et les types .NET  
  Une structure ou classe .NET peut être projetée comme contrat de données en appliquant l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> à la classe. Le type .NET et ses projections de contrat de données sont deux aspects distincts. Il est possible d'avoir plusieurs types .NET avec la même projection de contrat de données. Cette distinction est particulièrement utile en ce sens qu'elle vous permet de modifier le type .NET tout en conservant le contrat de données projeté, et de conserver ainsi la compatibilité avec les clients existants, et ce même au sens strict du terme. Pour conserver cette distinction entre le type .NET et le contrat de données, vous devez systématiquement effectuer les deux procédures suivantes :  
@@ -99,7 +99,7 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
  À l'instar du contrôle de version des contrats de données, celui concernant les contrats de service implique également des opérations d'ajout, de modification et de suppression.  
   
 ### <a name="specifying-name-namespace-and-action"></a>Spécification du nom, de l'espace de noms et de l'action  
- Par défaut, le nom d'un contrat de service correspond à celui de l'interface. Son espace de noms par "http://tempuri.org" défaut est , et l’action de "http://tempuri.org/contractname/methodname" chaque opération est «». Il est recommandé de spécifier explicitement un nom et un espace de noms pour le contrat de service, ainsi qu’une action pour chaque opération "http://tempuri.org" afin d’éviter d’utiliser «» et d’empêcher l’exposition des noms d’interface et de méthode dans le contrat du service.  
+ Par défaut, le nom d'un contrat de service correspond à celui de l'interface. Son espace de noms par défaut est « http://tempuri.org  », et chaque action de l’opération est « http://tempuri.org/contractname/methodname  ». Il est recommandé de spécifier explicitement un nom et un espace de noms pour le contrat de service, et une action pour chaque opération afin d’éviter d’utiliser « http://tempuri.org  » et d’empêcher l’exposition des noms d’interface et de méthode dans le contrat du service.  
   
 ### <a name="adding-parameters-and-operations"></a>Ajout de paramètres et d'opérations  
  L'ajout des opérations de service exposées par le service est une modification sans rupture car les clients existants n'ont pas à se soucier de ces nouvelles opérations.  
@@ -125,7 +125,7 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
  Les modifications apportées à la liaison et à l'adresse de point de terminaison sont des modifications avec rupture, sauf si les clients sont capables de découvrir dynamiquement la nouvelle liaison ou adresse de point de terminaison. L’un des mécanismes permettant d’implémenter cette fonctionnalité consiste à utiliser un registre UDDI (Universal Discovery Description and Integration) et le modèle d’appel UDDI lorsqu’un client tente de communiquer avec un point de terminaison et, qu’après échec, il interroge un registre UDDI connu pour les métadonnées de point de terminaison actuelles. Le client utilise ensuite l'adresse et la liaison à partir de ces métadonnées pour communiquer avec le point de terminaison. Si cette communication réussit, le client met en cache les informations d'adresse et de liaison pour un usage ultérieur.  
   
 ## <a name="routing-service-and-versioning"></a>Contrôle de version et service de routage  
- Si les modifications apportées à un service sont des modifications avec rupture et vous n'avez pas besoin de plusieurs versions différentes d'un service exécutées simultanément, vous pouvez utiliser le Service de routage WCF pour acheminer les messages vers l'instance de service appropriée. Le Service de routage WCF utilise le routage basé sur le contenu, c'est-à-dire qu'il utilise les informations contenues dans le message pour déterminer la destination du message. Pour plus d’informations sur le service de routage WCF, consultez [service de routage](../../../docs/framework/wcf/feature-details/routing-service.md). Pour obtenir un exemple d’utilisation du service de routage WCF pour le contrôle de version [du service, consultez Procédure: Contrôle de version](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)du service.  
+ Si les modifications apportées à un service sont des modifications avec rupture et vous n'avez pas besoin de plusieurs versions différentes d'un service exécutées simultanément, vous pouvez utiliser le Service de routage WCF pour acheminer les messages vers l'instance de service appropriée. Le Service de routage WCF utilise le routage basé sur le contenu, c'est-à-dire qu'il utilise les informations contenues dans le message pour déterminer la destination du message. Pour plus d’informations sur le service de routage WCF, consultez [service de routage](./feature-details/routing-service.md). Pour obtenir un exemple d’utilisation du service de routage WCF pour le contrôle de version du service, consultez [procédure : gestion des versions de service](./feature-details/how-to-service-versioning.md).  
   
 ## <a name="appendix"></a>Annexe  
  Les instructions relatives au contrôle de version des contrats de données lorsque le contrôle de version strict est requis permettent de traiter des contrats de données comme immuables et d'en créer de nouveaux lorsque des modifications sont requises. Une nouvelle classe devant être créée pour chaque nouveau contrat de données, un mécanisme est donc nécessaire pour éviter d'avoir à utiliser le code existant qui a été écrit par rapport à l'ancienne classe de contrat de données et à le réécrire par rapport à la nouvelle.  
@@ -187,5 +187,5 @@ public class PurchaseOrderV2 : IPurchaseOrderV1, IPurchaseOrderV2
 - <xref:System.Runtime.Serialization.ExtensionDataObject>
 - <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Équivalence des contrats de données](../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [Rappels de sérialisation avec tolérance de version](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)
+- [Équivalence des contrats de données](./feature-details/data-contract-equivalence.md)
+- [Rappels de sérialisation avec tolérance de version](./feature-details/version-tolerant-serialization-callbacks.md)

@@ -1,21 +1,21 @@
 ---
-title: "Service : Nombre d'appels ayant échoué par seconde"
+title: "Service : nombre d'appels ayant échoué par seconde"
 ms.date: 03/30/2017
 ms.assetid: 5a2c7939-107d-4f0c-b43c-e02e079e8a9d
-ms.openlocfilehash: d87d5f06d0c9a3849ec80a3d1c7badefde7cf372
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5431144a4618b146a10dfaa3bbdaae34c519319e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61915679"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315787"
 ---
-# <a name="service-calls-failed-per-second"></a>Service : Nombre d'appels ayant échoué par seconde
-Nom du compteur : Appels ayant échoué par seconde.  
+# <a name="service-calls-failed-per-second"></a>Service : nombre d'appels ayant échoué par seconde
+Nom du compteur : appels ayant échoué par seconde.  
   
 ## <a name="description"></a>Description  
  Nombre d'appels qui ont des exceptions non prises en charge et qui sont reçus par ce service par seconde.  
   
- Ce compteur est de type de compteur de performances [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), dont la valeur est calculée à l’aide de la formule suivante.  
+ Ce compteur est du type de compteur de performance [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), dont la valeur est calculée à l’aide de la formule suivante.  
   
  (N 1 - N 0 ) / ( (D 1 -D 0 ) / F)  
   
@@ -27,4 +27,4 @@ Nom du compteur : Appels ayant échoué par seconde.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Spécification et gestion des erreurs dans les contrats et les services](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+- [Spécification et gestion des erreurs dans les contrats et les services](../../specifying-and-handling-faults-in-contracts-and-services.md)

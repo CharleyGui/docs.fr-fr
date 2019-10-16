@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 9e26fb36b77e38c81273ccda370a203dd3388e5c
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
-ms.translationtype: MT
+ms.openlocfilehash: 53d7bbf214a71daff9372efcd5978f34c066c657
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291738"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320002"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. pipelines dans .NET
 
@@ -55,13 +55,13 @@ Pour résoudre les problèmes précédents, les modifications suivantes sont req
 
 * Met en mémoire tampon les données entrantes jusqu’à ce qu’une nouvelle ligne soit trouvée.
 * Analyse toutes les lignes retournées dans la mémoire tampon.
-* Il est possible que la ligne dépasse 1 Ko (1024 octets). Le code doit redimensionner la mémoire tampon d’entrée. une ligne complète est trouvée.
+* Il est possible que la ligne dépasse 1 Ko (1024 octets). Le code doit redimensionner la mémoire tampon d’entrée jusqu’à ce que le délimiteur soit trouvé afin d’ajuster la ligne complète à l’intérieur de la mémoire tampon.
 
   * Si la mémoire tampon est redimensionnée, davantage de copies de mémoire tampon sont effectuées à mesure que des lignes plus longues apparaissent dans l’entrée.
   * Pour réduire l’espace gaspillé, compactez la mémoire tampon utilisée pour la lecture des lignes.
 
 * Envisagez d’utiliser le regroupement de mémoires tampons pour éviter d’allouer de la mémoire à plusieurs reprises.
-* Le code suivant présente certains de ces problèmes :
+* Le code suivant résout certains de ces problèmes :
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/ProcessLinesAsync.cs?name=snippet)]
 
@@ -122,8 +122,8 @@ Pour des performances optimales, il existe un équilibre entre les pauses fréqu
 
 Pour résoudre le problème précédent, le `Pipe` a deux paramètres pour contrôler le workflow de données :
 
-* <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold>: Détermine la quantité de données qui doit être mise en mémoire tampon avant les appels à <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> pause.
-* <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold>: Détermine la quantité de données que le lecteur doit observer avant les appels à `PipeWriter.FlushAsync` reprendre.
+* <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold> : détermine la quantité de données qui doit être mise en mémoire tampon avant les appels à <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> pause.
+* <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold> : détermine la quantité de données que le lecteur doit observer avant les appels à la reprise de `PipeWriter.FlushAsync`.
 
 ![Diagramme avec ResumeWriterThreshold et PauseWriterThreshold](./media/pipelines/resume-pause.png)
 

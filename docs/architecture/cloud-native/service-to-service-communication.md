@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: e9f27309fd6b03830ab3098d0fb08a7ecf5c0eaa
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 0917ae8bf38b117619cec63411ea8f4f084ae6f2
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214390"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315864"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -50,7 +50,7 @@ L’exécution d’une requête peu fréquente qui effectue un appel HTTP unique
 
 **Figure 4-9**. Chaînage des requêtes HTTP
 
-Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe- \#t-il si l’étape 3 échoue ? Ou l' \#étape 8 échoue-t-elle ? Comment voulez-vous récupérer ? Que se passe \#-t-il si l’étape 6 est lente parce que le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
+Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe-t-il si l’étape \#3 échoue ? Ou l’étape \#8 échoue ? Comment voulez-vous récupérer ? Que se passe-t-il si l’étape \#6 est lente parce que le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
 
 Le grand degré de couplage dans l’image précédente suggère que les services n’ont pas été modélisés de manière optimale. Il appartient l’équipe à revisiter sa conception.
 
@@ -90,7 +90,7 @@ Le plus souvent, le producteur ne nécessite pas de réponse et peut *déclenche
 
 Une file d’attente de messages est une construction intermédiaire par le biais de laquelle un producteur et un consommateur transmettent un message. Les files d’attente implémentent un modèle de messagerie point à point asynchrone. Le producteur sait à quel endroit une commande doit être envoyée et est acheminée de manière appropriée. La file d’attente garantit qu’un message est traité par une seule instance de consommateur qui lit à partir du canal. Dans ce scénario, le service producteur ou le service consommateur peut monter en charge sans affecter l’autre. De même, les technologies peuvent être disparates de chaque côté, ce qui signifie que le microservice Java peut appeler un microservice [Golang](https://golang.org) . 
 
-Dans le chapitre 1, nous avons parlé des *services de stockage*. Les services de stockage sont des ressources auxiliaires dont dépendent les systèmes natifs du Cloud. Les files d’attente de messages sont des services de stockage. Le Cloud Azure prend en charge deux types de files d’attente de messages que vos systèmes natifs du Cloud peuvent utiliser pour implémenter la messagerie des commandes : Files d’attente de stockage Azure et files d’attente de Azure Service Bus.
+Dans le chapitre 1, nous avons parlé des *services de stockage*. Les services de stockage sont des ressources auxiliaires dont dépendent les systèmes natifs du Cloud. Les files d’attente de messages sont des services de stockage. Le Cloud Azure prend en charge deux types de files d’attente de messages que vos systèmes natifs du Cloud peuvent utiliser pour implémenter la messagerie de commandes : les files d’attente de stockage Azure et les files d’attente de Azure Service Bus.
 
 ### <a name="azure-storage-queues"></a>Files d’attente de stockage Azure
 
@@ -134,7 +134,7 @@ Deux autres fonctionnalités d’entreprise sont le partitionnement et les sessi
 
 Les [Sessions service bus](https://codingcanvas.com/azure-service-bus-sessions/) offrent un moyen de regrouper les messages liés à. Imaginez un scénario de flux de travail dans lequel les messages doivent être traités ensemble et l’opération se termine à la fin. Pour tirer parti, les sessions doivent être activées explicitement pour la file d’attente et chaque message associé doit contenir le même ID de session.
 
-Toutefois, il existe des inconvénients importants : Service Bus la taille des files d’attente est limitée à 80 Go, ce qui est bien plus petit que ce qui est disponible dans les files d’attente du magasin. En outre, Service Bus files d’attente impliquent un coût de base et une facturation par opération.
+Toutefois, il existe quelques inconvénients importants : la taille de Service Bus files d’attente est limitée à 80 Go, ce qui est bien plus petit que ce qui est disponible dans les files d’attente du magasin. En outre, Service Bus files d’attente impliquent un coût de base et une facturation par opération.
 
 La figure 4-14 présente l’architecture de haut niveau d’une file d’attente de Service Bus.
 
@@ -144,7 +144,7 @@ La figure 4-14 présente l’architecture de haut niveau d’une file d’attent
 
 Dans l’illustration précédente, notez la relation point à point. Deux instances du même fournisseur empilent des messages dans une file d’attente de Service Bus unique. Chaque message est consommé par une seule des trois instances de consommateur à droite. Ensuite, nous expliquons comment implémenter la messagerie dans laquelle les différents consommateurs peuvent être intéressés par le même message.
 
-## <a name="events"></a>Événements
+## <a name="events"></a>événements
 
 Message Queuing est un moyen efficace d’implémenter une communication dans laquelle un producteur peut envoyer un message de manière asynchrone à un consommateur. Toutefois, que se passe-t-il lorsque de *nombreux consommateurs* sont intéressés par le même message ? Une file d’attente de messages dédiée pour chaque consommateur n’est pas bien adaptée et devient difficile à gérer. 
 
@@ -166,9 +166,9 @@ Avec l’événement, nous passons de la technologie de mise en file d’attente
 
 **Figure 4-16**. Architecture des rubriques
 
-Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \#1 et à \#l’abonnement 3, mais pas \#à l’abonnement 2. Un événement « OrderCompleted » est envoyé à l’abonnement \#2 et à \#l’abonnement 3.
+Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \#1 et l’abonnement \#3, mais pas à l’abonnement \#2. Un événement « OrderCompleted » est envoyé à l’abonnement \#2 et à l’abonnement \#3.
 
-Le Cloud Azure prend en charge deux services de rubrique différents : Rubriques Azure Service Bus et Azure EventGrid.
+Le Cloud Azure prend en charge deux services de rubrique différents : Azure Service Bus rubriques et Azure EventGrid.
 
 ### <a name="azure-service-bus-topics"></a>Rubriques Azure Service Bus
 
@@ -208,7 +208,7 @@ Event Grid est un service Cloud sans serveur entièrement géré. Elle est mise 
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Diffusion en continu de messages dans le Cloud Azure
 
-Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document inséré dans un Cosmos DB). Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](https://msdn.microsoft.com/magazine/dn904671.aspx?f=255&MSPPError=-2147217396) sont plus complexes. Ils sont généralement classés dans le temps, liés et doivent être traités en tant que groupe.
+Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document a été inséré dans un Cosmos DB. Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](https://msdn.microsoft.com/magazine/dn904671) sont plus complexes. Ils sont généralement classés dans le temps, interdépendants et doivent être traités en tant que groupe.
 
 [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) est une plateforme de diffusion de données et un service d’ingestion d’événements qui collecte, transforme et stocke des événements. Il est affiné pour capturer les données de streaming, telles que les notifications d’événements continus émises à partir d’un contexte de télémétrie. Le service est hautement évolutif et peut stocker et [traiter des millions d’événements par seconde](https://docs.microsoft.com/azure/event-hubs/event-hubs-about). Comme illustré à la figure 4-18, il s’agit souvent d’une porte d’entrée pour un pipeline d’événements, ce qui permet de découpler le flux de réception de la consommation d’événements.
 

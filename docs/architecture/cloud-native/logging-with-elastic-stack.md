@@ -1,23 +1,23 @@
 ---
-title: Journalisation avec la pile élastique
+title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
 ms.date: 09/23/2019
-ms.openlocfilehash: b3fd3ea30f46914e6513be79f7d949499142b381
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 62115edc3f64d87d2c3e84a7b5319ce42cbe729b
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182831"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315798"
 ---
-# <a name="logging-with-elastic-stack"></a>Journalisation avec la pile élastique 
+# <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack 
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : Recherche élastique, Logstash et Kibana. Ces outils sont appelés pile élastique ou pile ELK.
+Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : la recherche élastique, Logstash et Kibana. Ces outils sont appelés pile élastique ou pile ELK.
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Quels sont les avantages de la pile élastique ?
 
-La pile élastique fournit une journalisation centralisée dans une solution cloud conviviale et évolutive. Son interface utilisateur simplifie l’analyse des données, ce qui vous permet de consacrer du temps à la collecte d’informations à partir de vos données au lieu de combattre une interface plus sourde. Il prend en charge un large éventail d’entrées, de sorte que votre application distribuée s’étend sur de plus en plus de types de services différents, vous pouvez vous attendre à pouvoir continuer à alimenter le journal et les données de métriques dans le système. La pile élastique prend également en charge les recherches rapides, même dans les jeux de données volumineux, ce qui permet aux applications de grande taille de consigner des données détaillées tout en étant en mesure de les visualiser de manière performante.
+La pile élastique fournit une journalisation centralisée dans une solution cloud conviviale et évolutive. Son interface utilisateur simplifie l’analyse des données, ce qui vous permet de consacrer du temps à la collecte d’informations à partir de vos données au lieu de combattre une interface plus sourde. Il prend en charge un large éventail d’entrées, de sorte que votre application distribuée s’étend sur de plus en plus de types de services différents, vous pouvez vous attendre à pouvoir continuer à alimenter le journal et les données de métriques dans le système. La pile élastique prend également en charge les recherches rapides, même dans les jeux de données volumineux, ce qui permet de consigner les données détaillées dans des applications volumineuses, tout en étant en mesure de les visualiser de manière performante.
 
 ## <a name="logstash"></a>Logstash
 

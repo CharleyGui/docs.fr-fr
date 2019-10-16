@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Récupérer une Collection d’attributs (LINQ to XML) (Visual Basic)'
+title: 'Comment : récupérer une collection d’attributs (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a07e9645-b45b-403b-b698-f652f904c7d2
-ms.openlocfilehash: 2e99e561c1d479412c7c5cd2a19563446b872049
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c0f809c5a0707f2e6575cb8bca1b2a312f6daeb
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051297"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321326"
 ---
-# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>Procédure : Récupérer une Collection d’attributs (LINQ to XML) (Visual Basic)
+# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>Comment : récupérer une collection d’attributs (LINQ to XML) (Visual Basic)
 Cette rubrique présente la méthode <xref:System.Xml.Linq.XElement.Attributes%2A>. Cette méthode récupère les attributs d'un élément.  
   
 ## <a name="example"></a>Exemple  
@@ -28,7 +28,7 @@ Next
   
  Ce code génère la sortie suivante :  
   
-```  
+```console  
 ID="1243"  
 Type="int"  
 ConvertableTo="double"  

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Lire et écrire un Document encodé (Visual Basic)'
+title: 'Comment : lire et écrire un document encodé (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 159d868f-5ac8-40f2-95ca-07dd925f35c6
-ms.openlocfilehash: 7d558b8dea5f376b6ad77e2f4ac93a3f4663cbff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 96a490d6915201b4e1069ae0249dea09d761aea6
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008874"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321014"
 ---
-# <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>Procédure : Lire et écrire un Document encodé (Visual Basic)
+# <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>Comment : lire et écrire un document encodé (Visual Basic)
 Pour créer un document XML encodé, vous devez ajouter un objet <xref:System.Xml.Linq.XDeclaration> à l'arborescence XML et définir l'encodage au nom de la page de codes souhaitée.  
   
  Toute valeur retournée par <xref:System.Text.Encoding.WebName%2A> est une valeur valide.  
@@ -56,7 +56,7 @@ Console.WriteLine("Encoding of loaded document is:{0}", newDoc16.Declaration.Enc
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 Creating a document with utf-8 encoding  
 Encoding is:utf-8  
   
@@ -79,4 +79,4 @@ Encoding of loaded document is:utf-16
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>
-- [Avancées programmation LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

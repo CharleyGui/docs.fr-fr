@@ -1,23 +1,23 @@
 ---
-title: 'Procédure : spécifier une liaison de service dans le code'
+title: 'Comment : spécifier une liaison de service dans le code'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 67ab5dd8-79c1-4e62-aa75-828ea918a53a
-ms.openlocfilehash: 9f3320b031141246a394191a1924509204707dc1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c6cfd084055d59d3292b49897ff710f14f92737
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928802"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320875"
 ---
-# <a name="how-to-specify-a-service-binding-in-code"></a>Procédure : spécifier une liaison de service dans le code
+# <a name="how-to-specify-a-service-binding-in-code"></a>Comment : spécifier une liaison de service dans le code
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est défini dans du code, où il est spécifié que le service doit utiliser la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
   
- Pour obtenir une description de la configuration de ce service à l’aide des éléments de configuration au lieu de code, consultez [Comment : Spécifier une liaison de Service dans la Configuration](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+ Pour obtenir une description de la façon de configurer ce service à l’aide d’éléments de configuration au lieu de code, consultez [Comment : spécifier une liaison de service dans la configuration](how-to-specify-a-service-binding-in-configuration.md).  
   
 ### <a name="to-specify-in-code-to-use-the-basichttpbinding-for-the-service"></a>Pour spécifier l'utilisation de BasicHttpBinding dans du code pour le service  
   
@@ -50,5 +50,5 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de liaisons pour configurer des services et des clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [Spécification d’une adresse de point de terminaison](../../../docs/framework/wcf/specifying-an-endpoint-address.md)
+- [Utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md)
+- [Spécification d’une adresse de point de terminaison](specifying-an-endpoint-address.md)

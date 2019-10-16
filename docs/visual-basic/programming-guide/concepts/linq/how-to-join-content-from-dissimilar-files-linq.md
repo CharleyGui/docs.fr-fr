@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Joindre du contenu issu de fichiers (LINQ) (Visual Basic)'
+title: 'Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)'
 ms.date: 06/27/2018
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-ms.openlocfilehash: 0ac91ffaf914a8b799ad1124e9361595d482366b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f6fd9a1083cca941422eb89cd6bf23328fc8b5f6
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593486"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320565"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Procédure : Joindre du contenu issu de fichiers (LINQ) (Visual Basic)
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)
 
 Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.  
   
@@ -17,7 +17,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
   
 1. Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.  
   
-    ```  
+    ```csv  
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -34,7 +34,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
   
 2. Copiez les lignes suivantes dans un fichier nommé names.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente une feuille de calcul qui contient le nom, le prénom et l’ID de l’étudiant.  
   
-    ```  
+    ```csv  
     Omelchenko,Svetlana,111  
     O'Donnell,Claire,112  
     Mortensen,Sven,113  
@@ -122,5 +122,5 @@ End Class
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -8,42 +8,42 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: c4c8529eb477b31eba464c9b156569819ec22941
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4212ca0b86e1c4e4dc74e4b68767b2ce866c9ee
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000114"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320811"
 ---
 # <a name="basic-wcf-programming"></a>Programmation WCF de base
-Cette section présente les notions de base pour la création d’applications Windows Communication Foundation (WCF).  
+Cette section présente les notions de base de la création d’applications Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Cycle de vie de la programmation de base](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
- Décrit le cycle de vie de la conception, de création et de déploiement d’applications clientes et de service WCF.  
+ [Cycle de vie de la programmation de base](basic-programming-lifecycle.md)  
+ Décrit le cycle de vie de la conception, de la génération et du déploiement d’applications clientes et de services WCF.  
   
- [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md)  
+ [Conception et implémentation de services](designing-and-implementing-services.md)  
  Décrit comment concevoir et implémenter un contrat de service, choisir un modèle d’échange de messages, spécifier un contrat d’erreur, et d’autres aspects de base des services.  
   
- [Configuration des services](../../../docs/framework/wcf/configuring-services.md)  
- Décrit comment configurer un service WCF pour prendre en charge les exigences de contrat, personnaliser le comportement d’exécution locale et indiquer l’adresse pour publier le service.  
+ [Configuration des services](configuring-services.md)  
+ Décrit comment configurer un service WCF pour prendre en charge les spécifications de contrat, personnaliser le comportement d’exécution local et indiquer l’adresse pour publier le service.  
   
- [Hébergement de services](../../../docs/framework/wcf/hosting-services.md)  
+ [Hébergement de services](hosting-services.md)  
  Décrit les notions de base d'hébergement des services dans une application.  
   
- [Génération de clients](../../../docs/framework/wcf/building-clients.md)  
- Décrit comment obtenir les métadonnées à partir des services, convertir en code de client WCF, gérer les problèmes de sécurité, créer, configurer et héberger un client WCF.  
+ [Génération de clients](building-clients.md)  
+ Décrit comment obtenir des métadonnées à partir de services, les convertir en code client WCF, gérer les problèmes de sécurité, et générer, configurer et héberger un client WCF.  
   
- [Introduction à l’extensibilité](../../../docs/framework/wcf/introduction-to-extensibility.md)  
+ [Introduction à l’extensibilité](introduction-to-extensibility.md)  
  Décrit comment étendre WCF pour créer des solutions personnalisées.  
   
- [Démarrage rapide de la résolution des problèmes WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
+ [Démarrage rapide de la résolution des problèmes WCF](wcf-troubleshooting-quickstart.md)  
  Décrit quelques-uns des problèmes les plus courants, les actions possibles pour les résoudre et où trouver davantage d'informations sur le problème rencontré.  
   
- [WCF et API web ASP.NET](../../../docs/framework/wcf/wcf-and-aspnet-web-api.md)  
+ [WCF et API web ASP.NET](wcf-and-aspnet-web-api.md)  
  Traite des deux technologies, de la manière dont elles sont en rapport l'une avec l'autre et indique quand les utiliser.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -51,20 +51,20 @@ Cette section présente les notions de base pour la création d’applications W
  <xref:System.ServiceModel.Description>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Configuration système requise](../../../docs/framework/wcf/wcf-system-requirements.md)  
+ [Configuration système requise](wcf-system-requirements.md)  
   
- [Vue d’ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md)  
+ [Vue d’ensemble conceptuelle](conceptual-overview.md)  
   
- [Didacticiel Bien démarrer](../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [Didacticiel Bien démarrer](getting-started-tutorial.md)  
   
- [Conseils et bonnes pratiques](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [Conseils et bonnes pratiques](guidelines-and-best-practices.md)  
   
- [Outils Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
+ [Outils Windows Communication Foundation](tools.md)  
   
- [Exemples Windows Communication Foundation (WCF)](./samples/index.md)  
+ [Exemples de Windows Communication Foundation (WCF)](./samples/index.md)  
   
- [Prise en main](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [Bien démarrer](./samples/getting-started-sample.md)  
   
- [Hébergement IIS à l’aide de code en ligne](../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
+ [Hébergement IIS à l’aide de code en ligne](./samples/iis-hosting-using-inline-code.md)  
   
- [Auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)
+ [Auto-hébergement](./samples/self-host.md)

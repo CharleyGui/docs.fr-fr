@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)'
+title: 'Comment : Rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 72c3aed5-9522-4454-a876-2070aad13f2e
-ms.openlocfilehash: 0936300a51c697eaff5a1aeafff70e37b04a2a96
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d8ac28b698b0c61a4d9e3beea61ff8a8e1074b88
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780456"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320581"
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  L’expression XPath est la suivante :  
@@ -19,7 +19,7 @@ Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE
 ## <a name="example"></a>Exemple  
  Cet exemple recherche l'élément racine.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -40,11 +40,11 @@ Console.WriteLine(el1.Name)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console  
 Results are identical  
 PurchaseOrders  
 ```  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

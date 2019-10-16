@@ -1,19 +1,19 @@
 ---
-title: 'Tutoriel : Détecter des objets à l’aide du deep learning avec ONNX et ML.NET'
+title: 'Didacticiel : détecter des objets à l’aide de l’apprentissage profond avec ONNX et ML.NET'
 description: Ce tutoriel montre comment utiliser un modèle de deep learning ONNX préentraîné dans ML.NET pour détecter des objets dans des images.
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4856608e2c944c3a0fee65a328076bf1581f3d2a
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: f31c5155dd3ca59b1a370599b3ffabb2648791b1
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332626"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318528"
 ---
-# <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Tutoriel : Détecter des objets avec ONNX dans ML.NET
+# <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Didacticiel : détecter des objets à l’aide de ONNX dans ML.NET
 
 Découvrez comment utiliser un modèle ONNX préentraîné dans ML.NET pour détecter des objets dans des images.
 
@@ -34,7 +34,7 @@ Dans ce didacticiel, vous apprendrez à :
 - [Package NuGet Microsoft.ML](https://www.nuget.org/packages/Microsoft.ML/)
 - [Package NuGet Microsoft.ML.ImageAnalytics](https://www.nuget.org/packages/Microsoft.ML.ImageAnalytics/)
 - [Package NuGet Microsoft.ML.OnnxTransformer](https://www.nuget.org/packages/Microsoft.ML.OnnxTransformer/)
-- [Modèle préentraîné Tiny YOLOv2](https://github.com/onnx/models/tree/master/tiny_yolov2)
+- [Modèle préentraîné Tiny YOLOv2](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny_yolov2)
 - [Netron](https://github.com/lutzroeder/netron) (facultatif)
 
 ## <a name="onnx-object-detection-sample-overview"></a>Vue d’ensemble de l’exemple de détection d’objets ONNX
@@ -64,7 +64,7 @@ Il existe différents types de réseaux neuronaux, les plus courants étant les 
 
 ### <a name="understand-the-model"></a>Comprendre le modèle
 
-La détection d’objets est une tâche de traitement d’images. C’est pourquoi la plupart des modèles de deep learning préentraînés pour résoudre ce problème sont des réseaux CNN. Le modèle utilisé dans ce tutoriel est le modèle Tiny YOLOv2, une version plus compacte du modèle YOLOv2 décrite dans le livre blanc : ["YOLO9000: Better, Faster, Stronger" de Redmon et Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Tiny YOLOv2 est entraîné sur le jeu de données Pascal COV et est constitué de 15 couches qui peuvent prédire 20 classes différentes d’objets. Étant donné que Tiny YOLOv2 est une version condensée du modèle YOLOv2 d’origine, un compromis est établi entre la vitesse et la précision. Les différentes couches qui composent le modèle peuvent être visualisées à l’aide d’outils comme Netron. L’inspection du modèle produit un mappage des connexions entre toutes les couches qui composent le réseau neuronal, où chaque couche contient le nom de la couche ainsi que les dimensions des entrée/sortie respectives. Les structures de données utilisées pour décrire les entrées et les sorties du modèle sont appelées des tenseurs. Les tenseurs peuvent être considérés comme des conteneurs qui stockent des données dans N dimensions. Dans le cas de Tiny YOLOv2, le nom de la couche d’entrée est `image` et il attend un tenseur de dimensions `3 x 416 x 416`. Le nom de la couche de sortie est `grid` et génère un tenseur de sortie de dimensions `125 x 13 x 13`.
+La détection d’objets est une tâche de traitement d’images. C’est pourquoi la plupart des modèles de deep learning préentraînés pour résoudre ce problème sont des réseaux CNN. Le modèle utilisé dans ce didacticiel est le petit modèle YOLOv2, une version plus compacte du modèle YOLOv2 décrit dans le document : [« YOLO9000 : meilleur, plus rapide et plus puissant » par RedMon et Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Tiny YOLOv2 est entraîné sur le jeu de données Pascal COV et est constitué de 15 couches qui peuvent prédire 20 classes différentes d’objets. Étant donné que Tiny YOLOv2 est une version condensée du modèle YOLOv2 d’origine, un compromis est établi entre la vitesse et la précision. Les différentes couches qui composent le modèle peuvent être visualisées à l’aide d’outils comme Netron. L’inspection du modèle produit un mappage des connexions entre toutes les couches qui composent le réseau neuronal, où chaque couche contient le nom de la couche ainsi que les dimensions des entrée/sortie respectives. Les structures de données utilisées pour décrire les entrées et les sorties du modèle sont appelées des tenseurs. Les tenseurs peuvent être considérés comme des conteneurs qui stockent des données dans N dimensions. Dans le cas de Tiny YOLOv2, le nom de la couche d’entrée est `image` et il attend un tenseur de dimensions `3 x 416 x 416`. Le nom de la couche de sortie est `grid` et génère un tenseur de sortie de dimensions `125 x 13 x 13`.
 
 ![Couche d’entrée fractionnée en couches masquées, puis couche de sortie](./media/object-detection-onnx/netron-model-map.png)
 
@@ -707,7 +707,7 @@ Pour voir les images avec les rectangles englobants, accédez au répertoire `as
 
 Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
 
-Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx).
+Vous pouvez trouver le code source de ce didacticiel dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) .
 
 Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
@@ -720,4 +720,4 @@ Dans ce didacticiel, vous avez appris à :
 
 Consultez le dépôt d’exemples Machine Learning GitHub pour voir un exemple détaillé de détection d’objets.
 > [!div class="nextstepaction"]
-> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/DeepLearning_ObjectDetection_Onnx)
+> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx)

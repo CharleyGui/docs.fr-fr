@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-ms.openlocfilehash: 0996b7d864c5892e383cb98d4065e99b096206d1
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8eca2ee1afec5662e40d4f43347c469bd538c066
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854337"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319496"
 ---
 # <a name="null-comparisons"></a>Comparaisons null
-Une valeur `null` dans la source de données indique que la valeur est inconnue. Dans LINQ to Entities requêtes, vous pouvez rechercher les valeurs NULL afin que certains calculs ou comparaisons soient effectués uniquement sur les lignes qui contiennent des données valides ou non nulles. Toutefois, la sémantique Null CLR peut différer par rapport à la sémantique Null de la source de données. La plupart des bases de données utilisent une version de logique à trois valeurs pour gérer les comparaisons de valeurs Null. Autrement dit, une comparaison avec une valeur NULL n’est pas évaluée `false`à `true` ou `unknown`, elle prend la valeur. Il s'agit souvent d'une implémentation de valeurs ANSI Null, mais ce n'est pas toujours le cas.  
+Une valeur `null` dans la source de données indique que la valeur est inconnue. Dans LINQ to Entities requêtes, vous pouvez rechercher les valeurs NULL afin que certains calculs ou comparaisons soient effectués uniquement sur les lignes qui contiennent des données valides ou non nulles. Toutefois, la sémantique Null CLR peut différer par rapport à la sémantique Null de la source de données. La plupart des bases de données utilisent une version de logique à trois valeurs pour gérer les comparaisons de valeurs Null. Autrement dit, une comparaison avec une valeur NULL n’est pas évaluée à `true` ou à `false`, elle prend la valeur `unknown`. Il s'agit souvent d'une implémentation de valeurs ANSI Null, mais ce n'est pas toujours le cas.  
   
  Par défaut dans SQL Server, la comparaison Null-égale-Null retourne une valeur Null. Dans l’exemple suivant, les lignes où `ShipDate` a la valeur NULL sont exclues du jeu de résultats, et l’instruction Transact-SQL retourne 0 ligne.  
   
-```  
+```sql  
 -- Find order details and orders with no ship date.  
 SELECT h.SalesOrderID  
 FROM Sales.SalesOrderHeader h  
@@ -44,7 +44,7 @@ WHERE h.ShipDate IS Null
  [!code-vb[DP L2E Conceptual Examples#CastResultsIsNull](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#castresultsisnull)]  
   
 ## <a name="passing-null-collections-to-aggregate-functions"></a>Transmission de collections de valeurs Null aux fonctions d’agrégation  
- Dans LINQ to Entities, lorsque vous transmettez une collection qui `IQueryable` prend en charge à une fonction d’agrégation, les opérations d’agrégation sont effectuées au niveau de la base de données. Il peut y avoir des différences dans les résultats d’une requête qui a été exécutée en mémoire et une requête effectuée au niveau de la base de données. Avec une requête en mémoire, s’il n’y a aucune correspondance, la requête retourne la valeur zéro. Dans la base de données, la même requête retourne la valeur `null`. Si une `null` valeur est passée à une fonction d’agrégation LINQ, une exception est levée. Pour accepter les `null` valeurs possibles, effectuez un cast des types et des propriétés des types qui reçoivent les résultats de la requête en types Nullable.  
+ Dans LINQ to Entities, lorsque vous transmettez une collection qui prend en charge `IQueryable` à une fonction d’agrégation, les opérations d’agrégation sont effectuées au niveau de la base de données. Il peut y avoir des différences dans les résultats d’une requête qui a été exécutée en mémoire et une requête effectuée au niveau de la base de données. Avec une requête en mémoire, s’il n’y a aucune correspondance, la requête retourne la valeur zéro. Dans la base de données, la même requête retourne la valeur `null`. Si une valeur `null` est passée à une fonction d’agrégation LINQ, une exception est levée. Pour accepter les valeurs `null` possibles, effectuez un cast des types et des propriétés des types qui reçoivent les résultats de la requête en types Nullable.  
   
 ## <a name="see-also"></a>Voir aussi
 

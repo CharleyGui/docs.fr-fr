@@ -1,25 +1,25 @@
 ---
-title: 'Procédure : Interroger un ArrayList avec LINQ (Visual Basic)'
+title: 'Comment : interroger un ArrayList avec LINQ (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-ms.openlocfilehash: ed440a7970d0ef1a49af36fa56b1c7ca74715e5f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9cc86c6f74c8edc628050c911474bf515784180
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908165"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320310"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Procédure : Interroger un ArrayList avec LINQ (Visual Basic)
-Quand vous utilisez LINQ pour interroger des collections <xref:System.Collections.IEnumerable> non génériques telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour qu’il reflète le type spécifique des objets de la collection. Par exemple, si vous avez un <xref:System.Collections.ArrayList> de `Student` objets, votre [Clause From](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :  
+# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Comment : interroger un ArrayList avec LINQ (Visual Basic)
+Quand vous utilisez LINQ pour interroger des collections <xref:System.Collections.IEnumerable> non génériques telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour qu’il reflète le type spécifique des objets de la collection. Par exemple, si vous avez un <xref:System.Collections.ArrayList> d’objets `Student`, la [clause from](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :  
   
-```  
+```vb  
 Dim query = From student As Student In arrList   
-...  
+'...  
 ```  
   
  En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément du `Student` en <xref:System.Collections.ArrayList>.  
   
- L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler la méthode <xref:System.Linq.Enumerable.Cast%2A>. <xref:System.Linq.Enumerable.Cast%2A> lève une exception si le cast spécifié ne peut pas être effectué. <xref:System.Linq.Enumerable.Cast%2A> et <xref:System.Linq.Enumerable.OfType%2A> sont les deux méthodes d’opérateur de requête standard qui fonctionnent sur les types <xref:System.Collections.IEnumerable> non génériques. En Visual Basic, vous devez appeler explicitement la <xref:System.Linq.Enumerable.Cast%2A> méthode sur la source de données pour garantir un type de variable de plage spécifique. Pour plus d’informations, consultez [relations des types dans les opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler la méthode <xref:System.Linq.Enumerable.Cast%2A>. <xref:System.Linq.Enumerable.Cast%2A> lève une exception si le cast spécifié ne peut pas être effectué. <xref:System.Linq.Enumerable.Cast%2A> et <xref:System.Linq.Enumerable.OfType%2A> sont les deux méthodes d’opérateur de requête standard qui fonctionnent sur les types <xref:System.Collections.IEnumerable> non génériques. Dans Visual Basic, vous devez appeler explicitement la méthode <xref:System.Linq.Enumerable.Cast%2A> sur la source de données pour garantir un type de variable de portée spécifique. Pour plus d’informations, consultez [relations de types dans les opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre une requête simple sur un <xref:System.Collections.ArrayList>. Notez que cet exemple utilise des initialiseurs d’objets quand le code appelle la méthode <xref:System.Collections.ArrayList.Add%2A>, mais cela n’est pas une obligation.  

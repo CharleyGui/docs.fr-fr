@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: 738aadf93b726569eb59fc281cca2e482bace0bc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 075f62526ace1ac49d12e1bdec39d8df4b0a3ff1
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645181"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321407"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Spécification du comportement du client au moment de l'exécution
-Windows Communication Foundation (WCF) clients, tels que les services Windows Communication Foundation (WCF), peuvent être configurés pour modifier le comportement au moment de l’exécution en fonction de l’application cliente. Trois attributs sont disponibles pour spécifier le comportement du client au moment de l'exécution. Les objets de rappel de client duplex peuvent utiliser les attributs <xref:System.ServiceModel.CallbackBehaviorAttribute> et <xref:System.ServiceModel.Description.CallbackDebugBehavior> pour modifier leur comportement à l'exécution. L'autre attribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, peut être utilisé pour séparer la destination logique de la destination réseau immédiate. De plus, les types de rappel de client duplex peuvent utiliser certains des comportements du côté service. Pour plus d’informations, consultez [spécifiant le comportement de runtime du Service](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
+Les clients Windows Communication Foundation (WCF), comme les services Windows Communication Foundation (WCF), peuvent être configurés pour modifier le comportement au moment de l’exécution en fonction de l’application cliente. Trois attributs sont disponibles pour spécifier le comportement du client au moment de l'exécution. Les objets de rappel de client duplex peuvent utiliser les attributs <xref:System.ServiceModel.CallbackBehaviorAttribute> et <xref:System.ServiceModel.Description.CallbackDebugBehavior> pour modifier leur comportement à l'exécution. L'autre attribut, <xref:System.ServiceModel.Description.ClientViaBehavior>, peut être utilisé pour séparer la destination logique de la destination réseau immédiate. De plus, les types de rappel de client duplex peuvent utiliser certains des comportements du côté service. Pour plus d’informations, consultez [spécification du comportement du service au moment](specifying-service-run-time-behavior.md)de l’exécution.  
   
 ## <a name="using-the-callbackbehaviorattribute"></a>Utilisation de CallbackBehaviorAttribute  
  Vous pouvez configurer ou étendre le comportement d'exécution d'une implémentation de contrat de rappel dans une application cliente en utilisant la classe <xref:System.ServiceModel.CallbackBehaviorAttribute>. Cet attribut exécute pour la classe de rappel une fonction semblable à la classe <xref:System.ServiceModel.ServiceBehaviorAttribute>, à l'exception du comportement d'instanciation et des paramètres de transaction.  
@@ -36,7 +36,7 @@ Windows Communication Foundation (WCF) clients, tels que les services Windows Co
   
 - de ne procéder ainsi que dans des scénarios de débogage contrôlés.  
   
- L’exemple de code suivant montre un client de fichier de configuration qui indique à WCF pour retourner les informations d’exception gérées à partir d’un client objet de rappel dans les messages SOAP.  
+ L’exemple de code suivant montre un fichier de configuration client qui indique à WCF de retourner des informations sur les exceptions managées à partir d’un objet de rappel client dans les messages SOAP.  
   
  [!code-xml[SCA.CallbackContract#4](../../../samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]  
  
@@ -45,4 +45,4 @@ Windows Communication Foundation (WCF) clients, tels que les services Windows Co
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Spécification du comportement du service au moment de l’exécution](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
+- [Spécification du comportement du service au moment de l’exécution](specifying-service-run-time-behavior.md)

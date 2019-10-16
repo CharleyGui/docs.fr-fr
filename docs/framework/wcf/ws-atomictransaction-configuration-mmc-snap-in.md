@@ -2,12 +2,12 @@
 title: Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 926332ac1873db89ce9332075380effdfdc1fc37
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 04380a2a30aba85efb98ee8f9e24d0a6223a18a3
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291509"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320330"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 Le composant logiciel enfichable MMC Configuration WS-AtomicTransaction est utilisé pour configurer une partie des paramètres WS-AtomicTransaction sur les ordinateurs locaux et distants.  
@@ -31,9 +31,9 @@ regasm.exe /codebase WsatUI.dll
   
  Vous pouvez utiliser cet outil pour modifier les paramètres de base WS-AtomicTransaction. Par exemple, vous pouvez activer et désactiver le support de protocole de WS-AtomicTransaction, configurer les ports HTTP pour WS-AT, lier un certificat SSL au port HTTP, configurer des certificats en spécifiant les noms de sujet correspondants, sélectionner le mode de suivi et définir la valeur par défaut et les délais d'attente maximum.  
   
- Si vous devez configurer uniquement le support WS-AtomicTransaction sur l'ordinateur local, vous pouvez utiliser la version de ligne de commande de cet outil. Pour plus d’informations sur l’outil en ligne de commande, consultez la rubrique [utilitaire de configuration WS-AtomicTransaction (WsatConfig. exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) .  
+ Si vous devez configurer uniquement le support WS-AtomicTransaction sur l'ordinateur local, vous pouvez utiliser la version de ligne de commande de cet outil. Pour plus d’informations sur l’outil en ligne de commande, consultez la rubrique [utilitaire de configuration WS-AtomicTransaction (WsatConfig. exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md) .  
   
- Sachez que le composant logiciel enfichable MMC et l'outil de ligne de commande ne prennent pas en charge la configuration de tous les paramètres WS-AT. Ces paramètres ne peuvent être modifiés qu'en modifiant directement le registre. Pour plus d’informations sur ces paramètres de Registre, consultez Configuration de la [prise en charge des transactions WS-Atomic](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
+ Sachez que le composant logiciel enfichable MMC et l'outil de ligne de commande ne prennent pas en charge la configuration de tous les paramètres WS-AT. Ces paramètres ne peuvent être modifiés qu'en modifiant directement le registre. Pour plus d’informations sur ces paramètres de Registre, consultez Configuration de la [prise en charge des transactions WS-Atomic](./feature-details/configuring-ws-atomic-transaction-support.md).  
   
 ### <a name="user-interface-description"></a>Description de l'interface utilisateur  
  **Activer la prise en charge du réseau WS-Atomic Transaction**:  
@@ -82,12 +82,12 @@ regasm.exe /codebase WsatUI.dll
  Vous pouvez également spécifier des sessions de journalisation dans la zone de groupe **session de journalisation** .  
   
 > [!NOTE]
-> Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi. Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur. Code d’erreur : 1".  
+> Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi. Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur. Code d'erreur :1  
   
- Pour plus d’informations sur le suivi et la journalisation, consultez [administration et diagnostics](../../../docs/framework/wcf/diagnostics/index.md).  
+ Pour plus d’informations sur le suivi et la journalisation, consultez [administration et diagnostics](./diagnostics/index.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration de la prise en charge WS-Atomic Transaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
-- [Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
-- [Administration et diagnostics](../../../docs/framework/wcf/diagnostics/index.md)
+- [Configuration de la prise en charge WS-Atomic Transaction](./feature-details/configuring-ws-atomic-transaction-support.md)
+- [Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Administration et diagnostics](./diagnostics/index.md)

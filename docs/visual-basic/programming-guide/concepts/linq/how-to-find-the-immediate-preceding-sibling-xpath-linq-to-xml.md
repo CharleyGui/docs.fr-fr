@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher le frère précédent (XPath-LINQ to XML) (Visual Basic)'
+title: 'Comment : Rechercher le frère précédent (XPath-LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: ec046283-9fe2-4440-b295-860bf700099d
-ms.openlocfilehash: ca3602a24b80d9002a639d9a319a731541aeb2df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc54239d2ddaafcc46413ed13c274449daaba0c7
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61854995"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320601"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher le frère précédent (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher le frère précédent (XPath-LINQ to XML) (Visual Basic)
 Il peut arriver que vous souhaitiez rechercher le frère précédent d'un nœud. Étant donné la différence de sémantique des prédicats de position pour les axes enfants précédents dans XPath par opposition à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], il s'agit de l'une des comparaisons les plus intéressantes.  
   
 ## <a name="example"></a>Exemple  
@@ -43,11 +43,11 @@ Console.WriteLine(el1)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```console
 Results are identical  
 <Child3 />  
 ```  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

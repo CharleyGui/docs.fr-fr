@@ -5,38 +5,38 @@ helpviewer_keywords:
 - WCF [WCF], concepts
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 503fae4b-014c-44df-a9c7-c76ec4ed4229
-ms.openlocfilehash: 7a885bd4ff0d3c35e26fd0f37e82a41abf713b6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f396f5f9ccc683b3e7715e64301587c08c719f75
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608657"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320722"
 ---
 # <a name="conceptual-overview"></a>Vue d'ensemble conceptuelle
-Cette rubrique résume les informations sur le Windows Communication Foundation (WCF) de messagerie système et les classes qui prennent en charge son utilisation.  
+Cette rubrique résume les informations sur le système de messagerie Windows Communication Foundation (WCF) et les classes qui prennent en charge son utilisation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Présentation de Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  
+ [Présentation de Windows Communication Foundation](whats-wcf.md)  
  Une brève présentation de WCF.  
   
- [Concepts fondamentaux de Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)  
- Un plan des principaux concepts du modèle de programmation WCF.  
+ [Concepts fondamentaux de Windows Communication Foundation](fundamental-concepts.md)  
+ Schéma des principaux concepts du modèle de programmation WCF.  
   
- [Architecture Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)  
- Une représentation graphique de l’architecture WCF.  
+ [Architecture Windows Communication Foundation](architecture.md)  
+ Représentation graphique de l’architecture WCF.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Programmation WCF de base](basic-wcf-programming.md)  
   
- [Conseils et bonnes pratiques](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [Conseils et bonnes pratiques](guidelines-and-best-practices.md)  
   
- [Exemples Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)  
+ [Exemples Windows Communication Foundation](./samples/index.md)  
   
- [Outils](../../../docs/framework/wcf/diagnostics/exceptions-reference/tools.md)  
+ [Outils](./diagnostics/exceptions-reference/tools.md)  
   
- [Configuration système requise](../../../docs/framework/wcf/wcf-system-requirements.md)  
+ [Configuration système requise](wcf-system-requirements.md)  
   
- [Informations de référence générales](../../../docs/framework/wcf/general-reference.md)
+ [Informations de référence générales](general-reference.md)

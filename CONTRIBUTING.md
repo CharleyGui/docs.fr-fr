@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23501575fb34f0291b3a6b795c197f45a86fd512
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 624814e40c361c30e251a9388f1444734a276c0a
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955967"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315869"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -33,26 +33,26 @@ Ce référentiel contient la documentation conceptuelle de .NET. Le site de la d
 
 Vous devez avoir une connaissance élémentaire de [Git et GitHub.com](https://guides.github.com/activities/hello-world/).
 
-**Étape 1 :** Ignorez cette étape pour les petites modifications (par exemple si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une demande de tirage pour résoudre un problème que vous trouvez dans les documents). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
+**Étape 1 :** Ignorez cette étape pour les modifications mineures (par exemple, si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une requête de tirage pour résoudre un problème que vous trouvez dans la documentation). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
 Le contenu situé dans le dossier *docs* est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
 
-\- ou -
+ou
 
 Vous pouvez également choisir des problèmes existants pour lesquels les contributions de la communauté sont les bienvenus. [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) répertorie la plupart des éléments de travail disponibles aux contributeurs de la communauté. Selon vos centres d’intérêt et votre niveau de participation, vous pouvez choisir des problèmes dans les catégories suivantes :
 
 - **Maintenance**. Cette catégorie inclut des contributions relativement simples, telles que la résolution de liens rompus ou incorrects, l’ajout d’exemples de code manquant, ou des problèmes liés à un contenu limité. Parfois, ces problèmes peuvent concerner un grand nombre de fichiers. Dans ce cas, vous devriez nous indiquer le contenu sur lequel vous souhaitez travailler, avant de commencer.
 
-- **Mises à jour du contenu**. Étant donné l’énorme quantité de documents disponibles, le contenu devient facilement obsolète et nécessite une révision. Par ailleurs, pour diverses raisons, certains contenus ont été dupliqués voire triplés. La mise à jour du contenu consiste à s’assurer que des rubriques individuelles sont actualisées ou à réviser le contenu d’une zone de fonctionnalité afin d’éliminer les doublons et garantir que tout le contenu unique est conservé dans une documentation la plus restreinte possible.
+- **Mises à jour du contenu**. Étant donné l’énorme quantité de documents disponibles, le contenu devient facilement obsolète et nécessite une révision. En outre, pour diverses raisons, certains contenus ont été dupliqués, voire triples. La mise à jour du contenu consiste à s’assurer que des rubriques individuelles sont actualisées ou à réviser le contenu d’une zone de fonctionnalité afin d’éliminer les doublons et garantir que tout le contenu unique est conservé dans une documentation la plus restreinte possible.
 
 - **Création de nouveau contenu**. Si vous souhaitez créer votre propre rubrique, ces problèmes répertorient les rubriques que nous aimerions ajouter à notre documentation. Veuillez nous prévenir avant de commencer à travailler sur une rubrique. Si vous souhaitez écrire une rubrique qui n’est pas répertoriée ici, ouvrez un problème.
 
 Vous pouvez également consulter la liste de nos [problèmes ouverts](https://github.com/dotnet/docs/issues) et vous porter volontaire pour travailler sur ceux qui vous intéressent. Nous utilisons l’étiquette [up-for-grabs](https://github.com/dotnet/docs/labels/up-for-grabs) pour signaler les problèmes auxquels vous pouvez apporter votre contribution. 
 
-**Étape 2 :** dupliquez les référentiels `dotnet/docs`, `dotnet/samples` ou `dotnet/dotnet-api-docs` si nécessaire et créez une branche pour vos modifications.
+**Étape 2 :** dupliquez les référentiels `dotnet/docs`, `dotnet/samples` ou `dotnet/dotnet-api-docs` si nécessaire et créez une branche pour vos modifications.
 
 Pour les modifications mineures, vous pouvez utiliser l’interface web de GitHub. Cliquez simplement sur le bouton **Edit the file in your fork of this project** (Modifier le fichier dans la branche de ce projet) du fichier que vous souhaitez modifier. GitHub crée la nouvelle branche lorsque vous envoyez les modifications.
 
-**Étape 3 :** appliquez les modifications sur cette nouvelle branche.
+**Étape 3 :** appliquez les modifications sur cette nouvelle branche.
 
 S’il s’agit d’une nouvelle rubrique, vous pouvez utiliser ce [fichier de modèle](./styleguide/template.md) comme point de départ. Il contient les recommandations rédactionnelles et explique aussi les métadonnées nécessaires pour chaque article, comme les informations sur l’auteur.
 
@@ -77,7 +77,7 @@ docs
             portability_report.png
 ```
 
-**Étape 4 :** Soumettez une demande de tirage (PR) de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` ou `dotnet/samples/master`.
+**Étape 4 :** Soumettez une demande de tirage (PR) de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` ou `dotnet/samples/master`.
 
 Votre demande de tirage doit *toujours* cibler la branche principale. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche active.
 
@@ -120,7 +120,7 @@ Pour plus d’informations, consultez le [fichier readme des échantillons](http
 
 ## <a name="the-c-interactive-experience"></a>L’expérience interactive C#
 
-De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les échantillons de code inline utilisent la balise `csharp-interactive` ; pour les extraits de code inclus dans la source, utilisez le balise `code-csharp-interactive`.) Ces échantillons de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon. 
+De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les exemples de code inline utilisent la balise `csharp-interactive`, pour les extraits de code inclus dans la source, utilisez la balise `code-csharp-interactive`.) Ces exemples de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon. 
 
 Le C# expérience interactive modifie comment nous collaborons avec des exemples. Les visiteurs peuvent exécuter l’échantillon pour afficher les résultats. Un certain nombre de facteurs aident à déterminer si l’échantillon ou le texte correspondant doit inclure des informations sur la sortie.
 

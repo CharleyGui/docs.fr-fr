@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 6f62d0f712f7461ef8cd65f15f3ed2690446bae1
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 47a7bb42ea2441ffef2fd27f26a20beceb871173
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044457"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72321133"
 ---
 # <a name="specifying-an-endpoint-address"></a>Spécification d'une adresse de point de terminaison
 
@@ -22,33 +22,33 @@ Toutes les communications avec un service Windows Communication Foundation (WCF)
 
 Dans WCF, un <xref:System.ServiceModel.EndpointAddress> modélise une référence de point de terminaison (EPR) telle que définie dans la norme WS-Addressing.
 
-L'URI d'adresse de la plupart des transports se compose de quatre parties. Par exemple, cet URI `http://www.fabrikam.com:322/mathservice.svc/secureEndpoint` possède les quatre parties suivantes:
+L'URI d'adresse de la plupart des transports se compose de quatre parties. Par exemple, cet URI, `http://www.fabrikam.com:322/mathservice.svc/secureEndpoint`, contient les quatre parties suivantes :
 
 - Schéma : http:
 
-- Usinage`www.fabrikam.com`
+- Ordinateur : `www.fabrikam.com`
 
-- Facultatif Importer 322
+- (Facultatif) Port : 322
 
 - Chemin d’accès : /mathservice.svc/secureEndpoint
 
-Une partie du modèle ERP établit que chaque référence de point de terminaison peut contenir des paramètres de référence qui ajoutent des informations d'identification supplémentaires. Dans WCF, ces paramètres de référence sont modélisés en tant qu' <xref:System.ServiceModel.Channels.AddressHeader> instances de la classe.
+Une partie du modèle ERP établit que chaque référence de point de terminaison peut contenir des paramètres de référence qui ajoutent des informations d'identification supplémentaires. Dans WCF, ces paramètres de référence sont modélisés en tant qu’instances de la classe <xref:System.ServiceModel.Channels.AddressHeader>.
 
 L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. En général, il est plus pratique de définir des points de terminaison de service à l'aide de la configuration plutôt que du code. Le fait de conserver les informations de liaison et d'adressage hors du code leur permet de changer sans devoir recompiler ou de redéployer l'application. Si aucun point de terminaison n'est spécifié dans le code ou dans la configuration, le runtime ajoute un point de terminaison par défaut sur chaque adresse de base pour chaque contrat implémenté par le service.
 
 Il existe deux façons de spécifier des adresses de point de terminaison pour un service dans WCF. Vous pouvez spécifier une adresse absolue pour chaque point de terminaison associé au service ou vous pouvez fournir une adresse de base pour le <xref:System.ServiceModel.ServiceHost> d'un service puis spécifier une adresse pour chaque point de terminaison associé à ce service défini comme relatif à cette adresse de base. Vous pouvez utiliser chacune de ces procédures pour spécifier les adresses de point de terminaison pour un service dans la configuration ou le code. Si vous ne spécifiez pas d'adresse relative, le service utilise l'adresse de base. Vous pouvez également avoir plusieurs adresses de base pour un service, mais une seule adresse de base pour chaque transport est autorisée pour chaque service. Si vous avez plusieurs points de terminaison, chacun configuré avec une liaison différente, leurs adresses doivent être uniques. Les points de terminaison qui utilisent la même liaison mais des contrats différents peuvent utiliser la même adresse.
 
-Lorsque vous hébergez avec les services IIS, vous ne gérez pas l'instance <xref:System.ServiceModel.ServiceHost> vous-même. L'adresse de base est toujours l'adresse spécifiée dans le fichier .svc pour le service lors de l'hébergement dans IIS. Par conséquent, vous devez toujours utiliser des adresses de point de terminaison relatives pour les points de terminaison de service hébergés dans IIS. Fournir une adresse de point de terminaison qualifiée complète peut entraîner des erreurs lors du déploiement du service. Pour plus d’informations, consultez [déploiement d’un service WCF hébergé par Internet Information Services](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).
+Lorsque vous hébergez avec les services IIS, vous ne gérez pas l'instance <xref:System.ServiceModel.ServiceHost> vous-même. L'adresse de base est toujours l'adresse spécifiée dans le fichier .svc pour le service lors de l'hébergement dans IIS. Par conséquent, vous devez toujours utiliser des adresses de point de terminaison relatives pour les points de terminaison de service hébergés dans IIS. Fournir une adresse de point de terminaison qualifiée complète peut entraîner des erreurs lors du déploiement du service. Pour plus d’informations, consultez [déploiement d’un service WCF hébergé par Internet Information Services](./feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).
 
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Définition des adresses de point de terminaison dans la configuration
 
-Pour définir un point de terminaison dans un fichier de configuration [ \<](../configure-apps/file-schema/wcf/endpoint-element.md) , utilisez l’élément de point de terminaison >.
+Pour définir un point de terminaison dans un fichier de configuration, utilisez l’élément [\<endpoint >](../configure-apps/file-schema/wcf/endpoint-element.md) .
 
 [!code-xml[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]
 
-Lorsque la <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> méthode est appelée (autrement dit, lorsque l’application d’hébergement tente de démarrer le service), le système recherche un [ \<](../../../docs/framework/configure-apps/file-schema/wcf/service.md) élément de > de service avec un attribut de nom qui spécifie «UE. Samples. HelloService». Si l’élément de [ \<> du service](../../../docs/framework/configure-apps/file-schema/wcf/service.md) est trouvé, le système charge la classe spécifiée et crée des points de terminaison à l’aide des définitions de point de terminaison fournies dans le fichier de configuration. Ce mécanisme vous permet de charger et de démarrer un service avec deux lignes de code tout en laissant la liaison et les informations d’adressage hors de votre code. L'avantage de cette approche est que ces modifications peuvent être apportées sans devoir recompiler ou redéployer l'application.
+Lorsque la méthode <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> est appelée (autrement dit, lorsque l’application d’hébergement tente de démarrer le service), le système recherche un élément [> \<Service](../configure-apps/file-schema/wcf/service.md) avec un attribut Name spécifiant «UE. Samples. HelloService». Si l’élément [\<service >](../configure-apps/file-schema/wcf/service.md) est trouvé, le système charge la classe spécifiée et crée des points de terminaison à l’aide des définitions de point de terminaison fournies dans le fichier de configuration. Ce mécanisme vous permet de charger et de démarrer un service avec deux lignes de code tout en laissant la liaison et les informations d’adressage hors de votre code. L'avantage de cette approche est que ces modifications peuvent être apportées sans devoir recompiler ou redéployer l'application.
 
-Les en-têtes facultatifs sont déclarés dans [ \<les en-têtes >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md). Voici un exemple des éléments utilisés pour spécifier des points de terminaison pour un service dans un fichier de configuration qui fait la distinction entre deux en-têtes: Clients «Gold» de `http://tempuri1.org/` et clients «standard» de `http://tempuri2.org/`. Le client qui appelle ce service doit disposer des [ \<en-têtes appropriés >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md) dans son fichier de configuration.
+Les en-têtes facultatifs sont déclarés dans une [> @no__t 1headers](../configure-apps/file-schema/wcf/headers-element.md). Voici un exemple des éléments utilisés pour spécifier des points de terminaison pour un service dans un fichier de configuration qui distingue deux en-têtes : les clients « or » des clients `http://tempuri1.org/` et « standard » de `http://tempuri2.org/`. Le client appelant ce service doit disposer de la [> \<headers](../configure-apps/file-schema/wcf/headers-element.md) appropriée dans son fichier de configuration.
 
 [!code-xml[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]
 
@@ -84,11 +84,11 @@ L'exemple suivant montre comment ajouter une adresse relative ("MyService") à l
 
 Si aucun point de terminaison n'est spécifié dans le code ou dans la configuration, le runtime fournit les points de terminaison par défaut en ajoutant un point de terminaison par défaut sur chaque adresse de base pour chaque contrat de service implémenté par le service. L'adresse de base peut être spécifiée dans le code ou dans la configuration, et les points de terminaison par défaut sont ajoutés lors de l'appel de <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> sur le <xref:System.ServiceModel.ServiceHost>.
 
-Si des points de terminaison sont fournis explicitement, les points de terminaison par défaut peuvent toujours être ajoutés en appelant <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> sur le <xref:System.ServiceModel.ServiceHost> avant d'appeler <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).
+Si des points de terminaison sont fournis explicitement, les points de terminaison par défaut peuvent toujours être ajoutés en appelant <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> sur le <xref:System.ServiceModel.ServiceHost> avant d'appeler <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](simplified-configuration.md) et [Configuration simplifiée pour les services WCF](./samples/simplified-configuration-for-wcf-services.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.EndpointAddress>
-- [Identité du service et authentification](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Vue d’ensemble de la création de points de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md)
-- [Hébergement](../../../docs/framework/wcf/feature-details/hosting.md)
+- [Identité du service et authentification](./feature-details/service-identity-and-authentication.md)
+- [Vue d’ensemble de la création de points de terminaison](endpoint-creation-overview.md)
+- [Hébergement](./feature-details/hosting.md)

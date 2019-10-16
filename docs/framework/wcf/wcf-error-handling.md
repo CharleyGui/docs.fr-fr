@@ -2,12 +2,12 @@
 title: Gestion des erreurs WCF
 ms.date: 03/30/2017
 ms.assetid: 1e4b1e0f-9598-449d-9d73-90bda62305b8
-ms.openlocfilehash: eba0894d6352bc1aea3596ee9d196b386e1eafef
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7e5c65da3fa13a3640c7a6948f1284d0c6ffdfc4
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645434"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319935"
 ---
 # <a name="wcf-error-handling"></a>Gestion des erreurs WCF
 Les erreurs rencontrées par une application WCF appartiennent à l'un de ces trois groupes :  
@@ -35,13 +35,13 @@ Les erreurs rencontrées par une application WCF appartiennent à l'un de ces tr
 - Gestion des événements <xref:System.ServiceModel.ServiceHost>  
   
 ## <a name="fault-contracts"></a>Contrats d'erreur  
- Les contrats d'erreur vous permettent de définir les erreurs qui peuvent se produire au cours du fonctionnement du service de façon indépendante de la plate-forme. Par défaut, toutes les exceptions levées à partir d'une opération de service seront retournées au client en tant qu'objet <xref:System.ServiceModel.FaultException>. L'objet <xref:System.ServiceModel.FaultException> contiendra très peu d'informations. Vous pouvez contrôler les informations envoyées au client en définissant un contrat d'erreur et en retournant l'erreur en tant que <xref:System.ServiceModel.FaultException%601>. Pour plus d’informations, consultez [spécification et gestion des erreurs dans les contrats et Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+ Les contrats d'erreur vous permettent de définir les erreurs qui peuvent se produire au cours du fonctionnement du service de façon indépendante de la plate-forme. Par défaut, toutes les exceptions levées à partir d'une opération de service seront retournées au client en tant qu'objet <xref:System.ServiceModel.FaultException>. L'objet <xref:System.ServiceModel.FaultException> contiendra très peu d'informations. Vous pouvez contrôler les informations envoyées au client en définissant un contrat d'erreur et en retournant l'erreur en tant que <xref:System.ServiceModel.FaultException%601>. Pour plus d’informations, consultez [spécification et gestion des erreurs dans les contrats et les services](specifying-and-handling-faults-in-contracts-and-services.md).  
   
 ## <a name="ierrorhandler"></a>IErrorHandler  
- L'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler> vous permet de mieux contrôler la façon dont votre application WCF répond aux erreurs.  Elle vous donne le contrôle total sur les messages d'erreur retournés au client et vous permet un traitement d'erreur personnalisé tel que la journalisation.  Pour plus d’informations sur <xref:System.ServiceModel.Dispatcher.IErrorHandler> et [extension de contrôle sur la gestion d’erreur et de création de rapports](../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
+ L'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler> vous permet de mieux contrôler la façon dont votre application WCF répond aux erreurs.  Elle vous donne le contrôle total sur les messages d'erreur retournés au client et vous permet un traitement d'erreur personnalisé tel que la journalisation.  Pour plus d’informations sur la <xref:System.ServiceModel.Dispatcher.IErrorHandler> et l' [extension du contrôle sur la gestion des erreurs et les rapports](./samples/extending-control-over-error-handling-and-reporting.md)  
   
 ## <a name="servicehost-events"></a>Événements ServiceHost  
- La classe <xref:System.ServiceModel.ServiceHost> héberge les services et définit plusieurs événements qui peuvent être nécessaires au traitement des erreurs. Exemple :  
+ La classe <xref:System.ServiceModel.ServiceHost> héberge les services et définit plusieurs événements qui peuvent être nécessaires au traitement des erreurs. Exemple :  
   
 1. <xref:System.ServiceModel.Channels.CommunicationObject.Faulted>
   

@@ -2,12 +2,12 @@
 title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Déployer des applications .NET existantes en tant que conteneurs Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: d48acbb2e1c4858bf3146318f70dd7b8a7b62918
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 997b32e51272be2126bd824de1f8f026d77ca203
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926487"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318639"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -15,7 +15,7 @@ Les déploiements basés sur des conteneurs Windows s’appliquent aux applicati
 
 Toutefois, dans ce guide, et en particulier dans les sections suivantes, il se concentre principalement sur l’utilisation des conteneurs Windows pour les applications *optimisées* pour le Cloud où vous n’avez pas besoin de remanier votre application.
 
-## <a name="what-are-containers-linux-or-windows"></a>Que sont les conteneurs? (Linux ou Windows)
+## <a name="what-are-containers-linux-or-windows"></a>Que sont les conteneurs ? (Linux ou Windows)
 
 Les conteneurs sont un moyen d’encapsuler une application dans son propre package isolé. Dans son conteneur, l’application n’est pas affectée par les applications ou les processus qui existent en dehors du conteneur. Tout ce dont dépend l’application pour s’exécuter correctement en tant que processus se trouve à l’intérieur du conteneur. Partout où le conteneur peut se déplacer, les exigences de l’application sont toujours respectées, en termes de dépendances directes, car elles sont regroupées avec tout ce dont elles ont besoin pour s’exécuter (dépendances de bibliothèque, runtimes, etc.).
 
@@ -47,13 +47,13 @@ De nombreuses organisations déposent des applications monolithiques existantes 
 
 Des améliorations significatives de l’agilité, de la portabilité et du contrôle conduisent à des réductions de coûts significatives lorsque vous utilisez des conteneurs pour développer et gérer des applications.
 
-## <a name="what-is-docker"></a>Qu’est-ce que Docker ?
+## <a name="what-is-docker"></a>Présentation de Docker
 
-[Dockr](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) qui automatise le déploiement d’applications en tant que conteneurs portables et autonomes qui peuvent s’exécuter dans le Cloud ou localement. Docker est également une [société](https://www.docker.com/) qui promeut et fait évoluer cette technologie. L’entreprise travaille en collaboration avec des fournisseurs Cloud, Linux et Windows, y compris Microsoft.
+[Dockr](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) qui automatise le déploiement d’applications en tant que conteneurs portables et autonomes qui peuvent s’exécuter dans le Cloud ou localement. Docker est également le nom de la [société](https://www.docker.com/) qui développe et diffuse cette technologie. L’entreprise travaille en collaboration avec des fournisseurs Cloud, Linux et Windows, y compris Microsoft.
 
-![Docker déploie des conteneurs à toutes les couches du cloud hybride](./media/image6.png)
+![Diagramme montrant comment l’arrimeur déploie les conteneurs dans le Cloud hybride.](./media/deploy-existing-net-apps-as-windows-containers/docker-deploys-containers-all-layers.png)
 
-**Figure 4-6.** Docker déploie des conteneurs à toutes les couches du cloud hybride
+**Figure 4-6.** Docker déploie des conteneurs dans toutes les couches du cloud hybride
 
 Pour une personne connaissant les machines virtuelles, les conteneurs peuvent paraître remarquablement similaires. Un conteneur exécute un système d’exploitation, a un système de fichiers et est accessible sur un réseau, tout comme un système informatique physique ou virtuel. Toutefois, la technologie et les concepts qui sous-tendent les conteneurs sont très différents de ceux des machines virtuelles. Du point de vue du développeur, un conteneur doit être traité plus comme un processus unique. En fait, un conteneur a un seul point d’entrée pour un processus.
 
@@ -83,7 +83,7 @@ Pour Linux, plusieurs distributions sont disponibles et prises en charge dans le
 
 La figure 4-7 montre les versions de système d’exploitation que vous pouvez cibler, en fonction de la version de l’application du .NET Framework.
 
-![Systèmes d’exploitation à cibler en fonction de la version de .NET Framework](./media/image7.png)
+![Diagramme montrant le système d’exploitation à cibler en fonction de la version de .NET Framework.](./media/deploy-existing-net-apps-as-windows-containers/dotnet-framework-operating-systems.png)
 
 **Figure 4-7.** Systèmes d’exploitation à cibler en fonction de la version de .NET Framework
 
@@ -93,15 +93,15 @@ Lorsque vous ajoutez le nom de l’image à votre fichier fichier dockerfile, vo
 
 > | **Référence** | **Système et version** |
 > |---|---|
-> | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET Framework 4. x sur Windows Server Core |
-> | **microsoft/aspnet:4.x-windowsservercore** | .NET Framework 4. x avec personnalisation supplémentaire des ASP.NET, sur Windows Server Core |
+> | **Microsoft/DotNet-Framework : 4. x-windowsservercore** | .NET Framework 4. x sur Windows Server Core |
+> | **Microsoft/ASPNET : 4. x-windowsservercore** | .NET Framework 4. x avec personnalisation supplémentaire des ASP.NET, sur Windows Server Core |
 
 Pour .NET Core (multiplateforme pour Linux et Windows), les balises se présentent comme suit :
 
 > | **Référence** | **Système et version**
 > |---|---|
 > | **Microsoft/dotnet : 2.0.0-Runtime** | .NET Core 2,0 Runtime uniquement sur Linux |
-> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET Core 2,0 Runtime uniquement sur Windows nano Server |
+> | **Microsoft/dotnet : 2.0.0-Runtime-serveur** | .NET Core 2,0 Runtime uniquement sur Windows nano Server |
 
 ### <a name="multi-arch-images"></a>Images multi-arch
 
@@ -113,9 +113,9 @@ Pour les images .NET Framework, étant donné que le .NET Framework traditionnel
 
 Comme les conteneurs Linux, les conteneurs Windows Server sont gérés à l’aide du moteur de l’ancrage. À la différence des conteneurs Linux, les conteneurs Windows incluent deux types de conteneurs différents, ou des durées d’exécution : les conteneurs Windows Server et l’isolation Hyper-V.
 
-**Conteneurs Windows Server**: Fournit l’isolation des applications grâce à la technologie d’isolation des processus et des espaces de noms. Un conteneur Windows Server partage un noyau avec l’hôte de conteneur et tous les conteneurs en cours d’exécution sur l’ordinateur hôte. Ces conteneurs ne fournissent pas de limite de sécurité hostile et ne doivent pas être utilisés pour isoler le code non fiable. En raison de l’espace partagé du noyau, ces conteneurs requièrent la même version et la même configuration du noyau.
+**Conteneurs Windows Server**: permet d’isoler les applications grâce à la technologie d’isolation des processus et des espaces de noms. Un conteneur Windows Server partage un noyau avec l’hôte de conteneur et tous les conteneurs en cours d’exécution sur l’ordinateur hôte. Ces conteneurs ne fournissent pas de limite de sécurité hostile et ne doivent pas être utilisés pour isoler le code non fiable. En raison de l’espace partagé du noyau, ces conteneurs requièrent la même version et la même configuration du noyau.
 
-**Isolation Hyper-V**: Développe l’isolation fournie par les conteneurs Windows Server en exécutant chaque conteneur sur une machine virtuelle hautement optimisée. Dans cette configuration, le noyau de l’hôte de conteneur n’est pas partagé avec d’autres conteneurs sur le même hôte. Ces conteneurs sont conçus pour l’hébergement multi-locataire hostile, avec les mêmes garanties de sécurité qu’une machine virtuelle. Étant donné que ces conteneurs ne partagent pas le noyau avec l’hôte ou d’autres conteneurs sur l’hôte, ils peuvent exécuter des noyaux avec différentes versions et configurations (avec les versions prises en charge). Par exemple, tous les conteneurs Windows sur Windows 10 utilisent l’isolation Hyper-V pour utiliser la version et la configuration du noyau de Windows Server.
+**Isolation Hyper-V**: développe l’isolation fournie par les conteneurs Windows Server en exécutant chaque conteneur sur une machine virtuelle hautement optimisée. Dans cette configuration, le noyau de l’hôte de conteneur n’est pas partagé avec d’autres conteneurs sur le même hôte. Ces conteneurs sont conçus pour l’hébergement multi-locataire hostile, avec les mêmes garanties de sécurité qu’une machine virtuelle. Étant donné que ces conteneurs ne partagent pas le noyau avec l’hôte ou d’autres conteneurs sur l’hôte, ils peuvent exécuter des noyaux avec différentes versions et configurations (avec les versions prises en charge). Par exemple, tous les conteneurs Windows sur Windows 10 utilisent l’isolation Hyper-V pour utiliser la version et la configuration du noyau de Windows Server.
 
 L’exécution d’un conteneur sur Windows avec ou sans l’isolation Hyper-V est une décision au moment de l’exécution. Vous pouvez choisir de créer le conteneur avec l’isolation Hyper-V initialement et, au moment de l’exécution, choisir de l’exécuter en tant que conteneur Windows Server à la place.
 
@@ -129,7 +129,7 @@ L’exécution d’un conteneur sur Windows avec ou sans l’isolation Hyper-V e
 
     <https://docs.microsoft.com/virtualization/windowscontainers/about/>
 
-- **Infographie Microsoft et conteneurs**
+- **Infographie : Microsoft et conteneurs**
 
     <https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf>
 
@@ -138,15 +138,15 @@ L’exécution d’un conteneur sur Windows avec ou sans l’isolation Hyper-V e
 Dans les sections précédentes, nous avons expliqué les avantages des conteneurs de l’ancrage, ainsi que les détails sur les images de conteneur spécifiques pour les applications .NET. Toutes ces informations génériques sont fondamentales pour développer ou déconteneurr une application.
 Toutefois, quand vous réfléchissez à l’environnement de déploiement de production ou même aux environnements AQ et de développement/test, Microsoft Azure offre une vaste gamme de choix, un écosystème de conteneurs complet dans le Cloud (illustré dans le diagramme ci-dessous). En fonction des besoins spécifiques de votre application, vous devez choisir un ou un autre produit Azure.
 
-![L’écosystème de conteneurs dans Azure](./media/image7.5.png)
+![Diagramme de l’écosystème de conteneurs dans Azure.](./media/deploy-existing-net-apps-as-windows-containers/azure-container-ecosystem.png)
 
 **Figure 4-7.5.** L’écosystème de conteneurs dans Azure
 
 À partir de l’écosystème de conteneurs dans Azure, les produits suivants prennent en charge les conteneurs qui sont considérés comme des infrastructures :
 
 - **Azure Container Instances (ACI)**
-- **Machines virtuelles Azure** (Avec prise en charge du conteneur)
-- **Virtual Machine Scale sets Azure** (Avec prise en charge du conteneur)
+- **Machines virtuelles Azure** (avec prise en charge du conteneur)
+- **Azure Virtual Machine Scale sets** (avec prise en charge du conteneur)
 
 À partir de ces trois, ACI offre un excellent avantage, ce qui est que vous n’avez pas besoin de gérer le système d’exploitation sous-jacent, vous n’avez pas besoin de mettre à niveau/correctif, etc. mais ACI est toujours positionné au niveau de l’infrastructure, comme expliqué dans les prochaines sections de ce document.
 

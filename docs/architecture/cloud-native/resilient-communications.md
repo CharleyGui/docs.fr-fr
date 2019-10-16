@@ -2,12 +2,12 @@
 title: Communication résiliente
 description: Architecture des applications .NET natives Cloud pour Azure | Communication résiliente
 ms.date: 06/30/2019
-ms.openlocfilehash: d7fd4552059f527ad5166dcb6be04248bfad8e4a
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 324f5426af1c892db73aa6fc2336a19b7a8e499e
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214494"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72315802"
 ---
 # <a name="resilient-communications"></a>Communications résilientes
 
@@ -20,7 +20,7 @@ Tout au long de ce document, nous avons regroupé les mérites d’aller au-del�
 - *Résilience.* Comment gérer les défaillances de courte durée de vie et assurer la stabilité du système ?
 - *Équilibrage de charge.* Comment le trafic entrant est-il distribué entre plusieurs instances d’un service ?
 - *Sécurité* : Comment les problèmes de sécurité tels que le chiffrement au niveau du transport et la gestion des certificats sont-ils appliqués ?
-- \* Analyse distribuée. -Comment mettre en corrélation et capturer la traçabilité et la surveillance d’une seule requête sur plusieurs services de consommation ?
+- *Analyse distribuée.* -Comment mettre en corrélation et capturer la traçabilité et la surveillance d’une seule requête sur plusieurs services de consommation ?
 
 Bien que ces problèmes puissent être résolus avec différentes bibliothèques et frameworks, leur mise en œuvre dans votre base de code peut s’avérer coûteuse, complexe et fastidieuse. En outre, vous vous retrouvez avec une solution dans laquelle les problèmes d’infrastructure sont associés à la logique métier.
 
@@ -34,7 +34,7 @@ Une meilleure approche consiste à prendre en compte une technologie nouvelle et
 
 Dans la figure précédente, Notez comment le proxy intercepte et gère la communication entre les microservices et le cluster.
 
-Un maillage de service est logiquement divisé en deux composants disparates : [Plan de données](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc) et [plan de contrôle](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc). La figure 6-10 montre ces composants et leurs responsabilités.
+Un maillage de service est logiquement divisé en deux composants disparates : un [plan de données](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc) et un [plan de contrôle](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc). La figure 6-10 montre ces composants et leurs responsabilités.
 
 ![Contrôle de maillage de service et plan de données](./media/istio-control-and-data-plane.png)
 

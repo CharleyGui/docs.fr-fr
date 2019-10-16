@@ -7,16 +7,16 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: eb03a164ce0ff0140c32b3b56bcb502674e5fecd
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 9dcaa5f73dd8a4ec1943cb7fc840feee889563b8
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990294"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319849"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Concepts fondamentaux concernant Windows Communication Foundation
 
-Ce document fournit une vue d’ensemble de l’architecture de Windows Communication Foundation (WCF). Il vise à vous expliquer des concepts clés et la manière dont ils se combinent. Pour obtenir un didacticiel sur la création de la version la plus simple d’un client et d’un service WCF, consultez le [didacticiel prise en main](../../../docs/framework/wcf/getting-started-tutorial.md). Pour découvrir la programmation WCF, consultez la page [programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md).
+Ce document fournit une vue d’ensemble de l’architecture de Windows Communication Foundation (WCF). Il vise à vous expliquer des concepts clés et la manière dont ils se combinent. Pour obtenir un didacticiel sur la création de la version la plus simple d’un client et d’un service WCF, consultez le [didacticiel prise en main](getting-started-tutorial.md). Pour découvrir la programmation WCF, consultez la page [programmation WCF de base](basic-wcf-programming.md).
 
 ## <a name="wcf-fundamentals"></a>Principes de base de WCF
 
@@ -26,7 +26,7 @@ WCF est un Runtime et un ensemble d’API permettant de créer des systèmes qui
 
 WCF est basé sur la notion de communication basée sur les messages, et tout ce qui peut être modélisé en tant que message (par exemple, une requête HTTP ou un message Message Queuing (également appelé MSMQ)) peut être représenté de façon uniforme dans le modèle de programmation. Cela permet d'avoir une API unifiée à travers des mécanismes de transport différents.
 
-Le modèle fait la distinction entre les _clients_, qui sont des applications qui initient la communication, et les _services_, qui sont des applications qui attendent que les clients communiquent avec eux et répondent à cette communication. Une application peut agir à la fois comme un client et comme un service. Pour obtenir des exemples, consultez [services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md) et [réseau pair à pair](../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).
+Le modèle fait la distinction entre les _clients_, qui sont des applications qui initient la communication, et les _services_, qui sont des applications qui attendent que les clients communiquent avec eux et répondent à cette communication. Une application peut agir à la fois comme un client et comme un service. Pour obtenir des exemples, consultez [services duplex](./feature-details/duplex-services.md) et [réseau pair à pair](./feature-details/peer-to-peer-networking.md).
 
 Les messages sont envoyés d'un point de terminaison à un autre. Les _points de terminaison_ sont des emplacements où les messages sont envoyés ou reçus (ou les deux), et ils définissent toutes les informations requises pour l’échange de messages. Un service expose un ou plusieurs points de terminaison d'application (ainsi que zéro ou plusieurs points de terminaison d'infrastructure), et le client génère un point de terminaison compatible avec l'un des points de terminaison du service.
 
@@ -81,7 +81,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 ```
 
 **Liaison**  
- Définit la façon dont un point de terminaison communique avec le monde. Elle est construite à l'aide d'un ensemble de composants appelés éléments de liaison qui « s'empilent » les uns sur les autres pour créer l'infrastructure de communication. Au minimum, une liaison définit le transport (HTTP ou TCP par exemple) et l'encodage utilisés (tel que texte ou binaire). Une liaison peut contenir des éléments de liaison qui spécifient des informations détaillées comme les mécanismes de sécurité utilisés pour sécuriser les messages, ou le modèle de message utilisé par un point de terminaison. Pour plus d’informations, consultez [Configuration des services](../../../docs/framework/wcf/configuring-services.md).
+ Définit la façon dont un point de terminaison communique avec le monde. Elle est construite à l'aide d'un ensemble de composants appelés éléments de liaison qui « s'empilent » les uns sur les autres pour créer l'infrastructure de communication. Au minimum, une liaison définit le transport (HTTP ou TCP par exemple) et l'encodage utilisés (tel que texte ou binaire). Une liaison peut contenir des éléments de liaison qui spécifient des informations détaillées comme les mécanismes de sécurité utilisés pour sécuriser les messages, ou le modèle de message utilisé par un point de terminaison. Pour plus d’informations, consultez [Configuration des services](configuring-services.md).
 
 **Élément de liaison**  
  Représente un composant particulier de la liaison, tel qu’un transport, un encodage, une implémentation d’un protocole au niveau de l’infrastructure (comme WS-ReliableMessaging) ou tout autre composant de la pile de communication.
@@ -90,7 +90,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Composant qui contrôle plusieurs aspects de l'exécution d'un service, d'un point de terminaison, d'une opération particulière ou d'un client. Les comportements sont groupés en fonction de leur portée : les comportements courants affectent tous les points de terminaison globalement, les comportements de service affectent uniquement des aspects relatifs à un service, les comportements de point de terminaison affectent uniquement des propriétés connexes à un point de terminaison, et les comportements au niveau de l'opération affectent des opérations particulières. Par exemple, le comportement de service « limitation » spécifie comment un service réagit lorsqu'un trop grand nombre de messages menace de submerger ses fonctions de traitement. Un comportement de point de terminaison, en revanche, contrôle uniquement les aspects pertinents aux points de terminaison, par exemple comment et où rechercher une information d'identification de sécurité.
 
 **Liaisons fournies par le système**  
- WCF inclut plusieurs liaisons fournies par le système. Il s'agit de collections d'éléments de liaison optimisés pour des scénarios spécifiques. Par exemple, le <xref:System.ServiceModel.WSHttpBinding> est conçu pour l’interopérabilité avec les services qui implémentent\* différentes spécifications WS. Ces liaisons prédéfinies vous font gagner du temps en vous présentant uniquement les options qui peuvent être appliquées correctement au scénario spécifique. Si une liaison prédéfinie ne satisfait pas vos spécifications, vous pouvez créer votre propre liaison personnalisée.
+ WCF inclut plusieurs liaisons fournies par le système. Il s'agit de collections d'éléments de liaison optimisés pour des scénarios spécifiques. Par exemple, le <xref:System.ServiceModel.WSHttpBinding> est conçu pour l’interopérabilité avec les services qui implémentent différentes spécifications WS-\*. Ces liaisons prédéfinies vous font gagner du temps en vous présentant uniquement les options qui peuvent être appliquées correctement au scénario spécifique. Si une liaison prédéfinie ne satisfait pas vos spécifications, vous pouvez créer votre propre liaison personnalisée.
 
 **Configuration et codage**  
  Le contrôle d'une application peut être réalisé par l'encodage, par la configuration, ou par les deux. La configuration a l'avantage de permettre à quelqu'un d'autre que le développeur (par exemple, un administrateur réseau) de définir les paramètres de client et de service après que le code a été écrit et sans devoir le recompiler. La configuration vous permet non seulement de définir des valeurs comme des adresses de point de terminaison, mais aussi de procéder à un contrôle approfondi en vous permettant d'ajouter des points de terminaison, des liaisons et des comportements. L'encodage permet au développeur de conserver un contrôle étroit sur tous les composants du service ou client, et tous les paramètres définis par la configuration peuvent être inspectés et si besoin être remplacés par le code.
@@ -134,31 +134,31 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 **Client WCF**  
  Construction d’application cliente qui expose les opérations de service en tant que méthodes (dans le .NET Framework langage de programmation de votre choix, tel C#que Visual Basic ou visuel). N'importe quelle application peut accueillir un client WCF, y compris une application hébergeant un service. Par conséquent, il est possible de créer un service qui inclut des clients WCF d'autres services.
 
-Un client WCF peut être généré automatiquement à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) et en le faisant pointer sur un service en cours d’exécution qui publie des métadonnées.
+Un client WCF peut être généré automatiquement à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) et en le faisant pointer sur un service en cours d’exécution qui publie des métadonnées.
 
 **Métadonnées**  
- Dans un service, décrivent les caractéristiques du service qu'une entité externe doit comprendre pour communiquer avec ce service. Les métadonnées peuvent être consommées par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer un client WCF et la configuration associée qu’une application cliente peut utiliser pour interagir avec le service.
+ Dans un service, décrivent les caractéristiques du service qu'une entité externe doit comprendre pour communiquer avec ce service. Les métadonnées peuvent être consommées par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer un client WCF et la configuration associée qu’une application cliente peut utiliser pour interagir avec le service.
 
 Les métadonnées exposées par le service incluent des documents de schéma XML qui définissent le contrat de données du service, et des documents WSDL qui décrivent les méthodes du service.
 
 En cas d'activation, les métadonnées du service sont générées automatiquement par WCF par inspection du service et de ses points de terminaison. Pour publier les métadonnées d'un service, vous devez explicitement activer le comportement des métadonnées.
 
-**Sécurité**  
- Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès à ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur http (également appelé https), ou en implémentant une ou plusieurs des diverses spécifications WS\* -Security.
+**Security**  
+ Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès à ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur HTTP (également appelé HTTPs), ou en implémentant une ou plusieurs des diverses spécifications de sécurité de WS-\*.
 
 **Mode de sécurité du transport**  
  Spécifie que la confidentialité, l'intégrité et l'authentification sont assurées par les mécanismes de la couche de transport (tels que HTTPS). Lors de l'utilisation d'un transport comme le HTTPS, ce mode a l'avantage d'être efficace en termes de performances, et d'être bien compris grâce à sa prédominance sur Internet. L’inconvénient est que ce type de sécurité est appliqué séparément sur chaque saut dans la voie de communication, et rend la communication susceptible d’être victime d’une attaque de « l’homme du milieu ».
 
 **Mode de sécurité des messages**  
- Spécifie que la sécurité est fournie en implémentant une ou plusieurs des spécifications de sécurité, telles que [la spécification nommée Web Services Security : Sécurité](https://go.microsoft.com/fwlink/?LinkId=94684)des messages SOAP. Chaque message contient les mécanismes nécessaires pour assurer la sécurité pendant son transit et permettre aux récepteurs de détecter la falsification et de déchiffrer le message. En ce sens, la sécurité est encapsulée dans chaque message, en assurant la sécurité de bout en bout sur des sauts multiples. Étant donné que les informations de sécurité deviennent une partie du message, il est également possible d’inclure plusieurs types d’informations d’identification avec le message (ils sont appelés « _revendications_»). Cette approche a également l'avantage de permettre au message de voyager en toute sécurité sur n'importe quel transport, y compris les transports multiples, entre son origine et sa destination. L'inconvénient de cette approche réside dans la complexité des mécanismes de chiffrement employés, ce qui affecte les performances.
+ Spécifie que la sécurité est fournie en implémentant une ou plusieurs des spécifications de sécurité, telles que la spécification nommée [Web Services Security : sécurité des messages SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Chaque message contient les mécanismes nécessaires pour assurer la sécurité pendant son transit et permettre aux récepteurs de détecter la falsification et de déchiffrer le message. En ce sens, la sécurité est encapsulée dans chaque message, en assurant la sécurité de bout en bout sur des sauts multiples. Étant donné que les informations de sécurité deviennent une partie du message, il est également possible d’inclure plusieurs types d’informations d’identification avec le message (ils sont appelés « _revendications_»). Cette approche a également l'avantage de permettre au message de voyager en toute sécurité sur n'importe quel transport, y compris les transports multiples, entre son origine et sa destination. L'inconvénient de cette approche réside dans la complexité des mécanismes de chiffrement employés, ce qui affecte les performances.
 
 **Transport avec le mode de sécurité des informations d’identification de message**  
  Spécifie l'utilisation de la couche de transport pour assurer la confidentialité, l'authentification et l'intégrité des messages, tandis que chacun des messages peut contenir plusieurs informations d'identification (revendications) requises par les récepteurs du message.
 
-**WEB\***  
+**WS-\***  
  Abrégé pour l'ensemble croissant des spécifications de services Web (WS), telles que WS-Security, WS-ReliableMessaging et ainsi de suite, implémentées dans WCF.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Architecture Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)
+- [Présentation de Windows Communication Foundation](whats-wcf.md)
+- [Architecture Windows Communication Foundation](architecture.md)

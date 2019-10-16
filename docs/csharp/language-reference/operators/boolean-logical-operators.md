@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: f711bd04aeadb584eac1ecb0b644a36e2e496d08
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: e355a89e27ea5bd6e4335b39c4e669610c4b0553
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72290941"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319108"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Opérateurs logiques booléens (référence C#)
 
@@ -55,9 +55,9 @@ L’opérateur de préfixe unaire `!` calcule la négation logique de son opéra
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
 
-À partir C# de 8,0, l’opérateur unaire postfixé `!` est un [opérateur null-indulgent avec](null-forgiving.md).
+À partir C# de 8,0, l’opérateur unaire postfixé `!` est l' [opérateur null-indulgent avec](null-forgiving.md).
 
-## <a name="logical-and-operator-"></a>Opérateur ET logique &amp;
+## <a name="logical-and-operator-"></a> Opérateur AND logique &amp;
 
 L’opérateur `&` calcule le AND logique de ses opérandes. Le résultat de `x & y` est `true` si `x` et `y` prennent la valeur `true`. Sinon, le résultat est `false`.
 
@@ -120,14 +120,14 @@ Dans le cas des opérandes `bool?`, les opérateurs `&` et `|` prennent en charg
 |x|o|x&y|x&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  
-|true|false|false|true|  
-|true|Null|Null|true|  
-|false|true|false|true|  
-|false|false|false|false|  
-|false|Null|false|null|  
-|Null|true|Null|true|  
-|Null|false|false|null|  
-|Null|Null|Null|Null|  
+|true|False|False|true|  
+|true|null|null|true|  
+|False|true|False|true|  
+|False|False|False|False|  
+|False|null|False|null|  
+|null|true|null|true|  
+|null|False|False|null|  
+|null|null|null|null|  
 
 Le comportement de ces opérateurs diffère du comportement classique des opérateurs avec des types valeur Nullable. En règle générale, un opérateur défini pour les opérandes d’un type valeur peut être également utilisé avec des opérandes du type valeur Nullable correspondant. Il produit `null` si l’un de ses opérandes est `null`. Toutefois, les opérateurs `&` et `|` peuvent produire une valeur non Null même si l’un des opérandes est `null`. Pour plus d’informations sur le comportement de l’opérateur avec les types valeur Nullable, consultez la section [opérateurs](../../programming-guide/nullable-types/using-nullable-types.md#operators) de l’article [utilisation de types valeur Nullable](../../programming-guide/nullable-types/using-nullable-types.md) .
 
@@ -159,7 +159,7 @@ Les opérateurs `&`, `|` et `^` prennent en charge l’assignation composée, co
 
 Les opérateurs logiques conditionnels `&&` et `||` ne prennent pas en charge l’assignation composée.
 
-## <a name="operator-precedence"></a>Précédence des opérateurs
+## <a name="operator-precedence"></a>Priorité des opérateurs
 
 La liste suivante présente les opérateurs logiques par ordre de précédence, de la plus élevée à la plus basse :
 

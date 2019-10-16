@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f05f66af71b86ccaefe19c0ddce2bfe7572f1084
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d993042cbb435826b92bbcc62f1320a310a02627
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567573"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320021"
 ---
 # <a name="net-framework-application-essentials"></a>Application .NET Framework Essentials
 Cette section de la documentation .NET Framework fournit des informations sur des tâches de développement d’application de base dans le .NET Framework.  
@@ -54,8 +54,7 @@ Cette section de la documentation .NET Framework fournit des informations sur de
  [Globalisation et localisation](../../docs/standard/globalization-localization/index.md)  
  Fournit des informations qui vous aident à concevoir et à développer des applications mondialisables.  
   
- Accessibilité  
- Fournit des informations sur Microsoft UI Automation, infrastructure d'accessibilité qui répond aux besoins en technologies d'assistance et en infrastructures de test automatisées en fournissant un accès par programmation aux informations sur l'interface utilisateur (IU).  
+ [Accessibilité](../../docs/framework/ui-automation/index.md) Fournit des informations sur Microsoft UI Automation, qui est une infrastructure d’accessibilité qui répond aux besoins des produits de technologie d’assistance et des frameworks de tests automatisés en fournissant un accès par programmation aux informations sur l’interface utilisateur.  
   
  [Attributs](../../docs/standard/attributes/index.md)  
  Explique comment utiliser les attributs pour personnaliser les métadonnées.  
@@ -67,5 +66,5 @@ Cette section de la documentation .NET Framework fournit des informations sur de
  [Guide de développement](../../docs/framework/development-guide.md)  
  Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.  
   
- [Sécurité](../../docs/standard/security/index.md)  
+ [Security](../../docs/standard/security/index.md)  
  Fournit des informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.

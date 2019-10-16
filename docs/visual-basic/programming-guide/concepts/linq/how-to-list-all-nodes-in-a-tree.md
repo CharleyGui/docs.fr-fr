@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Répertorier tous les nœuds dans une arborescence (Visual Basic)'
+title: 'Comment : répertorier tous les nœuds d’une arborescence (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
-ms.openlocfilehash: 6576beaaed00905ce7a09f338251934ea375cb7e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c736f7e3a92e8aa92ac91ef4c32141128eff5db
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021620"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320547"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Procédure : Répertorier tous les nœuds dans une arborescence (Visual Basic)
+# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Comment : répertorier tous les nœuds d’une arborescence (Visual Basic)
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.  
   
  Il n'est pas particulièrement utile d'exécuter des expressions XPath à l'aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Les expressions XPath procurent des performances inférieures aux requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], et les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont beaucoup plus puissantes. Toutefois, XPath fonctionne bien comme méthode d’identification des nœuds de l’arborescence XML.  
@@ -39,7 +39,7 @@ Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela 
   
  Voici la liste des nœuds dans l'arborescence XML ci-dessus, exprimés en tant qu'expressions XPath :  
   
-```  
+```console
 /processing-instruction()  
 /Root  
 /Root/@AttName  
@@ -265,4 +265,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requête Techniques avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

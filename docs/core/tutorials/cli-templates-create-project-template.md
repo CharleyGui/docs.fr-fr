@@ -5,14 +5,14 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 3455720d729f813d9b6f32e433adffa4dc40dce4
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1f4e73287fca650b20ed5617c8dfd80e0bd8363c
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926133"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318280"
 ---
-# <a name="tutorial-create-a-project-template"></a>Tutoriel : Créer un modèle de projet
+# <a name="tutorial-create-a-project-template"></a>Didacticiel : créer un modèle de projet
 
 Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le deuxième d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
 
@@ -26,7 +26,7 @@ Dans cette partie de la série, vous découvrirez comment :
 > * Tester un modèle d’élément
 > * Désinstaller un modèle d'élément
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 * Complétez la [première partie](cli-templates-create-item-template.md) de cette série de tutoriels.
 * Ouvrez un terminal et accédez au dossier _working\templates\\_ .
@@ -83,7 +83,7 @@ Nous allons mettre à jour vers la version 8.0 la version de langage C# que le p
 </Project>
 ```
 
-## <a name="build-the-project"></a>Créer le projet
+## <a name="build-the-project"></a>Générer le projet
 
 Avant de terminer un modèle de projet, vous devez le tester pour vous assurer qu’il se compile et s’exécute correctement. Dans votre terminal, exécutez la commande `dotnet run`. La sortie suivante doit s’afficher :
 
@@ -159,7 +159,7 @@ Worker Service                                    worker                [C#]    
 
 ### <a name="test-the-project-template"></a>Tester le modèle de projet
 
-Maintenant que vous avez un modèle d’élément installé, testez-le. Accédez au dossier _test_ et créez une application console avec `dotnet new console`. Cela génère un projet fonctionnel que vous pouvez facilement tester à l’aide de la commande `dotnet run`.
+Maintenant que vous avez un modèle d’élément installé, testez-le. Accédez au dossier _test_ et créez une application console avec `dotnet new consoleasync`. Cela génère un projet fonctionnel que vous pouvez facilement tester à l’aide de la commande `dotnet run`.
 
 ```console
 C:\test> dotnet new consoleasync

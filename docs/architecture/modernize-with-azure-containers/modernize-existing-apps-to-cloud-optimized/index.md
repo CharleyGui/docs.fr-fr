@@ -2,22 +2,22 @@
 title: Moderniser les applications .NET existantes en applications optimisées pour le cloud
 description: Modernisez des applications .NET existantes avec le cloud Azure et des conteneurs Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: 92dc0cde11bb35797fe3c4e8442a2a6514a27e08
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: cd7e2886b135eb89c381965a327b6e62baa39736
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374063"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318606"
 ---
 # <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a>Moderniser les applications .NET existantes en applications optimisées pour le cloud
 
-> Vision : Modernisez vos applications .NET Framework existantes en applications optimisées pour le cloud afin d’améliorer considérablement votre agilité en déploiement et donc de livrer vos applications plus rapidement et à un coût moindre.
+> Vision : moderniser vos applications de .NET Framework existantes sur des applications optimisées pour le Cloud pour améliorer radicalement votre agilité de déploiement, de sorte que vous puissiez livrer des coûts de livraison d’application plus rapides et moins élevés.
 
 Pour bénéficier des avantages du cloud et de nouvelles technologies comme les conteneurs, vous devez moderniser au moins partiellement vos applications .NET existantes. Au final, la modernisation de vos applications d’entreprise permet de diminuer votre coût total de possession.
 
 La modernisation partielle d’une application ne signifie pas nécessairement une migration complète et une refonte totale de l’architecture. Vous pouvez commencer par moderniser vos applications existantes avec une modernisation importante mais facile à réaliser. Vous pouvez conserver votre base de code actuelle écrite dans les versions existantes du .NET Framework, avec n’importe quelle dépendance Windows et IIS. La figure 4-1 montre comment les applications optimisées pour le cloud sont positionnées dans les modèles de maturité de modernisation des applications Azure.
 
-![Positionnement des applications optimisées pour le cloud](./media/image1.png)
+![Diagramme montrant comment positionner des applications optimisées pour le Cloud.](./media/index/position-cloud-optimized-application.png)
 
 **Figure 4-1.** Positionnement des applications optimisées pour le cloud
 

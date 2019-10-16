@@ -8,45 +8,45 @@ helpviewer_keywords:
 - WCF, best practices
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
-ms.openlocfilehash: 1c16c0936f729636aaa56e6e50c33e18c2b0f788
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37e014aad44cf15e04ed3aa03a8367f5a44ceb96
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929335"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319810"
 ---
 # <a name="guidelines-and-best-practices"></a>Indications et meilleures pratiques
-Cette section contient des rubriques qui fournissent des indications pour la création d’applications Windows Communication Foundation (WCF).  
+Cette section contient des rubriques qui fournissent des instructions pour la création d’applications Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Meilleures pratiques : Concernant les contrats de données](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
+ [Bonnes pratiques : gestion des versions des contrats de données](best-practices-data-contract-versioning.md)  
  Explique comment et quand créer des contrats de données qui ne s'interrompent pas lorsque des futures versions sont créées.  
   
- [Gestion des versions des services](../../../docs/framework/wcf/service-versioning.md)  
- Explique comment tenir compte du contrôle de version dans WCF. Après le déploiement, il peut s'avérer nécessaire de modifier les services (et les points de terminaison qu'ils exposent) pour, par exemple, satisfaire les spécifications informatiques et commerciales en constante évolution, ou résoudre des problèmes. Chaque modification introduit une nouvelle version du service.  
+ [Gestion des versions des services](service-versioning.md)  
+ Explique comment prendre en compte le contrôle de version dans WCF. Après le déploiement, il peut s'avérer nécessaire de modifier les services (et les points de terminaison qu'ils exposent) pour, par exemple, satisfaire les spécifications informatiques et commerciales en constante évolution, ou résoudre des problèmes. Chaque modification introduit une nouvelle version du service.  
   
- [Équilibrage de charge](../../../docs/framework/wcf/load-balancing.md)  
+ [Équilibrage de charge](load-balancing.md)  
  Répertorie des indications sur l'équilibrage de charge avec une batterie de serveurs Web.  
   
- [Contrôle de la consommation des ressources et amélioration des performances](../../../docs/framework/wcf/controlling-resource-consumption-and-improving-performance.md)  
+ [Contrôle de la consommation des ressources et amélioration des performances](controlling-resource-consumption-and-improving-performance.md)  
  Décrit les propriétés conçues pour empêcher la consommation inutile de ressources et améliorer la sécurité, et pointe vers des informations plus complètes sur leur utilisation.  
   
- [Déploiement d’applications WCF à l’aide de ClickOnce](../../../docs/framework/wcf/deploying-wcf-applications-with-clickonce.md)  
+ [Déploiement d’applications WCF à l’aide de ClickOnce](deploying-wcf-applications-with-clickonce.md)  
  Décrit les considérations à observer lors de l’utilisation de la fonctionnalité ClickOnce.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel>  
   
  <xref:System.Runtime.Serialization>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Vue d’ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md)  
+ [Vue d’ensemble conceptuelle](conceptual-overview.md)  
   
- [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Programmation WCF de base](basic-wcf-programming.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Exemples Windows Communication Foundation (WCF)](./samples/index.md)
-- [Vue d’ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md)
-- [Génération de clients](../../../docs/framework/wcf/building-clients.md)
+- [Présentation de Windows Communication Foundation](whats-wcf.md)
+- [Exemples de Windows Communication Foundation (WCF)](./samples/index.md)
+- [Vue d’ensemble conceptuelle](conceptual-overview.md)
+- [Génération de clients](building-clients.md)

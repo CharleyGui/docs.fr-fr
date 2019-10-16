@@ -1,0 +1,198 @@
+- name: 'Guide C#'
+  href: index.md
+- name: Bien démarrer
+  href: getting-started/
+- name: Didacticiels
+  items:
+    - name: Vue d'ensemble
+      href: tutorials/index.md
+    - name: 'Introduction à la programmation avec C#'
+      items:
+        - name: Choisir votre première leçon
+          href: tutorials/intro-to-csharp/index.md
+        - name: Hello World
+          href: tutorials/intro-to-csharp/hello-world.yml
+        - name: 'Nombres en C#'
+          href: tutorials/intro-to-csharp/numbers-in-csharp.yml
+        - name: Branches et boucles
+          href: tutorials/intro-to-csharp/branches-and-loops.yml
+        - name: Lister les collections
+          href: tutorials/intro-to-csharp/list-collection.yml
+        - name: Travailler dans votre environnement local
+          items:
+            - name: Configurer votre environnement
+              href: tutorials/intro-to-csharp/local-environment.md
+            - name: 'Nombres en C#'
+              href: tutorials/intro-to-csharp/numbers-in-csharp-local.md
+            - name: Branches et boucles
+              href: tutorials/intro-to-csharp/branches-and-loops-local.md
+            - name: Lister les collections
+              href: tutorials/intro-to-csharp/arrays-and-collections.md
+            - name: Introduction aux classes
+              href: tutorials/intro-to-csharp/introduction-to-classes.md
+    - name: "Explorer C#\_6"
+      href: tutorials/exploration/csharp-6.yml
+    - name: Explorer l’interpolation de chaîne - interactif
+      href: tutorials/exploration/interpolated-strings.yml
+    - name: Explorer l’interpolation de chaîne - dans votre environnement
+      href: tutorials/exploration/interpolated-strings-local.md
+    - name: Scénarios avancés d’interpolation de chaîne
+      href: tutorials/string-interpolation.md
+    - name: Mettre à jour de manière sécurisée des interfaces avec les méthodes d’interface par défaut
+      href: tutorials/default-interface-methods-versions.md
+    - name: Créer une fonctionnalité mixin avec les méthodes d’interface par défaut
+      href: tutorials/mixins-with-default-interface-methods.md
+    - name: Explorer des index et des plages
+      href: tutorials/ranges-indexes.md
+    - name: Utiliser des types référence nullable
+      href: tutorials/nullable-reference-types.md
+    - name: Mettre à niveau une application avec des types référence nullable
+      href: tutorials/upgrade-to-nullable-references.md
+    - name: Générer et consommer des flux asynchrones
+      href: tutorials/generate-consume-asynchronous-stream.md
+    - name: Étendre les fonctionnalités de données à l’aide de critères spéciaux
+      href: tutorials/pattern-matching.md
+    - name: Application console
+      href: tutorials/console-teleprompter.md
+    - name: Client REST
+      href: tutorials/console-webapiclient.md
+    - name: 'Héritage dans C# et .NET'
+      href: tutorials/inheritance.md
+    - name: Utilisation de LINQ
+      href: tutorials/working-with-linq.md
+    - name: Utilisation d'attributs
+      href: tutorials/attributes.md
+- name: "Présentation de\_C#"
+  href: tour-of-csharp/
+- name: 'Nouveautés de C#'
+  items:
+    - name: 'C# 8.0'
+      href: whats-new/csharp-8.md
+    - name: "C#\_7.3"
+      href: whats-new/csharp-7-3.md
+    - name: "C#\_7.2"
+      href: whats-new/csharp-7-2.md
+    - name: "C#\_7.1"
+      href: whats-new/csharp-7-1.md
+    - name: 'C# 7.0'
+      href: whats-new/csharp-7.md
+    - name: "C#\_6"
+      href: whats-new/csharp-6.md
+    - name: 'Historique des versions de C#'
+      href: whats-new/csharp-version-history.md
+    - name: Relations entre le langage et le framework
+      href: whats-new/relationships-between-language-and-library.md
+    - name: Considérations relatives à la version et la mise à jour
+      href: whats-new/version-update-considerations.md
+- name: "Concepts du langage\_C#"
+  items:
+    - name: 'Système de type C#'
+      href: programming-guide/types/index.md
+    - name: Types références Nullables
+      href: nullable-references.md
+    - name: Décrire les API Nullables à l’aide d’attributs et de contraintes
+      href: nullable-attributes.md
+    - name: Espaces de noms
+      href: programming-guide/namespaces/index.md
+    - name: Types de base
+      href: basic-types.md
+    - name: Classes
+      href: programming-guide/classes-and-structs/classes.md
+    - name: Structs
+      href: structs.md
+    - name: Tuples
+      href: tuples.md
+    - name: Déconstruction de tuples et d’autres types
+      href: deconstruct.md
+    - name: Interfaces
+      href: programming-guide/interfaces/index.md
+    - name: Méthodes
+      href: methods.md
+    - name: Expressions lambda
+      href: programming-guide/statements-expressions-operators/lambda-expressions.md
+    - name: Propriétés
+      href: properties.md
+    - name: Indexeurs
+      href: indexers.md
+    - name: Éléments ignorés
+      href: discards.md
+    - name: Génériques
+      href: programming-guide/generics/index.md
+    - name: Iterators
+      href: iterators.md
+    - name: Délégués et événements
+      items:
+        - name: Présentation des délégués
+          href: delegates-overview.md
+        - name: System.Delegate et mot clé delegate
+          href: delegate-class.md
+        - name: Délégués fortement typés
+          href: delegates-strongly-typed.md
+        - name: Modèles courants pour les délégués
+          href: delegates-patterns.md
+        - name: Présentation des événements
+          href: events-overview.md
+        - name: Modèles d’événement .NET standard
+          href: event-pattern.md
+        - name: Modèle d’événement .NET mis à jour
+          href: modern-events.md
+        - name: Différenciation des délégués et des événements
+          href: distinguish-delegates-events.md
+    - name: LINQ (Language-Integrated Query)
+      href: linq/
+    - name: Programmation asynchrone
+      href: async.md
+    - name: Critères spéciaux
+      href: pattern-matching.md
+    - name: Écrire du code sécurisé et efficace
+      href: write-safe-efficient-code.md
+    - name: Arborescences de l’expression
+      items:
+        - name: Introduction aux arborescences d’expressions
+          href: expression-trees.md
+        - name: Explication des arborescences d’expressions
+          href: expression-trees-explained.md
+        - name: Types de frameworks prenant en charge les arborescences d’expressions
+          href: expression-classes.md
+        - name: Exécution des expressions
+          href: expression-trees-execution.md
+        - name: Interprétation des expressions
+          href: expression-trees-interpreting.md
+        - name: Création des expressions
+          href: expression-trees-building.md
+        - name: Traduction des expressions
+          href: expression-trees-translating.md
+        - name: Récapitulatif
+          href: expression-trees-summary.md
+    - name: Interopérabilité native
+      href: programming-guide/interop/index.md
+    - name: Documentation de votre code
+      href: codedoc.md
+    - name: Gestion de version
+      href: versioning.md
+- name: 'Rubriques de procédures C#'
+  items:
+    - name: Index de rubrique
+      href: how-to/index.md
+    - name: Analyser des chaînes à l’aide de `String.Split`
+      href: how-to/parse-strings-using-split.md
+    - name: Concaténer des chaînes
+      href: how-to/concatenate-multiple-strings.md
+    - name: Convertir une chaîne en DateTime
+      href: ../standard/base-types/parsing-datetime.md
+    - name: Rechercher des chaînes
+      href: how-to/search-strings.md
+    - name: Modifier le contenu des chaînes
+      href: how-to/modify-string-contents.md
+    - name: Comparer des chaînes
+      href: how-to/compare-strings.md
+    - name: 'Caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as'
+      href: how-to/safely-cast-using-pattern-matching-is-and-as-operators.md
+- name: Kit SDK .NET Compiler Platform (API Roslyn)
+  href: roslyn-sdk/
+- name: "Guide de programmation\_C#"
+  href: programming-guide/
+- name: Référence du langage
+  href: language-reference/
+- name: "Procédures pas\_à\_pas"
+  href: walkthroughs.md

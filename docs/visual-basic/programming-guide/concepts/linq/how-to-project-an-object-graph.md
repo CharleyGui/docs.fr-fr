@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Projeter un graphique d’objet (Visual Basic)'
+title: 'Comment : projeter un graphique d’objet (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-ms.openlocfilehash: 6403bb0aa63120b6ec82e4e94d483769f2cfe1aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6c4a040600b26e3e2d3d031c8eb991dd9c14fbac
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038232"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320258"
 ---
-# <a name="how-to-project-an-object-graph-visual-basic"></a>Procédure : Projeter un graphique d’objet (Visual Basic)
+# <a name="how-to-project-an-object-graph-visual-basic"></a>Comment : projeter un graphique d’objet (Visual Basic)
 Cette rubrique montre comment projeter, ou remplir, un graphique d'objet à partir de données XML.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant remplit un graphique d’objet avec les classes `Address`, `PurchaseOrder` et `PurchaseOrderItem` à partir du document XML [Exemple de fichier XML : Commande fournisseur standard (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
+ Le code suivant remplit un graphique d’objet avec les classes `Address`, `PurchaseOrder` et `PurchaseOrderItem` à partir du document XML [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Class Address  
@@ -300,7 +300,7 @@ End Sub
   
  L'exemple produit la sortie suivante :  
   
-```  
+```console  
 PurchaseOrderNumber: 99503  
 OrderDate: 10/20/1999  
   
@@ -341,4 +341,4 @@ ShipDate: 5/21/1999
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>
-- [Projections et Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections et transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

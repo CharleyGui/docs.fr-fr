@@ -3,12 +3,12 @@ title: Résoudre les problèmes d’utilisation de l’outil .NET Core
 description: Découvrez les problèmes courants liés à l’exécution des outils .NET Core et des solutions possibles.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: eb769550493e5a25d4380cd543a3bbec880b38e9
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: fc6c520ab57235c78148a6b77717cbd80a989451
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332976"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318286"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Résoudre les problèmes d’utilisation de l’outil .NET Core
 
@@ -19,7 +19,7 @@ Vous risquez de rencontrer des problèmes lors de la tentative d’installation 
 En cas d’échec de l’exécution d’un outil .NET Core, vous avez probablement rencontré l’un des problèmes suivants :
 
 * Le fichier exécutable de l’outil est introuvable.
-* La version correcte du Runtime .NET Core est introuvable. 
+* La version correcte du Runtime .NET Core est introuvable.
 
 ### <a name="executable-file-not-found"></a>Fichier exécutable introuvable
 
@@ -58,18 +58,18 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
   * Si vous utilisez macOS 10,14 « Mojave » ou des versions antérieures, et que vous avez installé le kit SDK .NET Core à l’aide des fichiers *. tar. gz* et non *. pkg*.
   * Si vous avez installé le kit de développement logiciel (SDK) .NET Core 3,0 et que vous avez défini la variable d’environnement `DOTNET_ADD_GLOBAL_TOOLS_TO_PATH` sur `false`.
   * Si vous avez installé le kit de développement logiciel (SDK) .NET Core 2,2 ou des versions antérieures, et que vous avez défini la variable d’environnement `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` sur `true`.
-  
+
   Pour plus d’informations sur les outils globaux, consultez [vue d’ensemble des outils globaux .net Core](global-tools.md).
 
 * Outils locaux
 
   Si vous essayez d’exécuter un outil local, vérifiez qu’il existe un fichier manifeste nommé *dotnet-Tools. JSON* dans le répertoire actif ou dans l’un de ses répertoires parents. Ce fichier peut également résider sous un dossier nommé *. config* n’importe où dans l’arborescence des dossiers du projet, et non dans le dossier racine. Si *dotnet-Tools. JSON* existe, ouvrez-le et recherchez l’outil que vous essayez d’exécuter. Si le fichier ne contient pas d’entrée pour `"isRoot": true`, consultez également la hiérarchie des fichiers pour obtenir des fichiers manifestes d’outils supplémentaires.
 
-    Si vous essayez d’exécuter un outil .NET Core qui a été installé avec un chemin d’accès spécifié, vous devez inclure ce chemin d’accès lors de l’utilisation de l’outil. Voici un exemple d’utilisation d’un outil d’installation de chemin d’accès d’outil :
+  Si vous essayez d’exécuter un outil .NET Core qui a été installé avec un chemin d’accès spécifié, vous devez inclure ce chemin d’accès lors de l’utilisation de l’outil. Voici un exemple d’utilisation d’un outil d’installation de chemin d’accès d’outil :
 
-   ```console
-   ..\<toolDirectory>\dotnet-<toolName>
-    ```
+  ```console
+  ..\<toolDirectory>\dotnet-<toolName>
+  ```
 
 ### <a name="runtime-not-found"></a>Runtime introuvable
 
@@ -146,7 +146,7 @@ dotnet tool install -g --version 1.1.0-pre <toolName>
 
 Si vous essayez d’installer un package NuGet qui est un package NuGet standard et non un outil .NET Core, une erreur semblable à la suivante s’affiche :
 
-`NU1212: Invalid project-package combination for `<ToolName>`. DotnetToolReference project style can only contain references of the DotnetTool type.`
+> NU1212 : combinaison projet-package non valide pour `<ToolName>`. Le style de projet DotnetToolReference peut uniquement contenir des références du type DotnetTool.
 
 ### <a name="nuget-feed-cant-be-accessed"></a>Impossible d’accéder au flux NuGet
 
@@ -161,4 +161,5 @@ L’installation de l’outil nécessite l’accès au flux NuGet qui contient l
 L’échec est généralement dû au fait que le nom de l’outil n’est pas correct. Cela peut se produire en raison d’une saisie incorrecte ou parce que l’outil a été déplacé ou déconseillé. Pour les outils sur NuGet.org, l’une des façons de s’assurer que le nom est correct consiste à Rechercher l’outil sur NuGet.org et à copier la commande d’installation.
 
 ## <a name="see-also"></a>Voir aussi
+
 * [Vue d’ensemble des outils globaux .NET Core](global-tools.md)

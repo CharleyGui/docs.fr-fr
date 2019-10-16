@@ -2,21 +2,21 @@
 title: '|| (OR) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 8e649648-eb9a-4380-9d74-36e62260628c
-ms.openlocfilehash: c88e041638fbe6f32717ce9c4f9c2ff6fb56d803
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6437b17fe1c1277701f06988ef6c02f4caf70e62
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249771"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319470"
 ---
 # <a name="-or-entity-sql"></a>|| (OR) (Entity SQL)
 Combine deux expressions `Boolean` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 boolean_expression OR boolean_expression  
-or   
+-- or   
 boolean_expression || boolean_expression  
 ```  
   
@@ -36,18 +36,18 @@ boolean_expression || boolean_expression
   
 ||`TRUE`|`FALSE`|`NULL`|  
 |-|------------|-------------|------------|  
-|`TRUE`|true|TRUE|TRUE|  
-|`FALSE`|TRUE|FALSE|NULL|  
-|`NULL`|TRUE|NULL|NULL|  
+|`TRUE`|true|true|true|  
+|`FALSE`|true|false|NULL|  
+|`NULL`|true|NULL|NULL|  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur OR pour combiner deux expressions `Boolean` . Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
- [!code-csharp[DP EntityServices Concepts 2#OR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#or)]  
+ [!code-sql[DP EntityServices Concepts 2#OR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#or)]  
   
 ## <a name="see-also"></a>Voir aussi
 

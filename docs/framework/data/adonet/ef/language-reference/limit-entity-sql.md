@@ -2,19 +2,19 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: 432dfe2c8b2b87daf885be6de4da9bbeaaa37638
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 275b22686c6c932b2a9e4b20973ac07e99d47e14
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250444"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319625"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
 Une pagination physique peut être effectuée par le biais de la sous-clause LIMIT de la clause ORDER BY. La sous-clause LIMIT ne peut pas être utilisée sans la clause ORDER BY.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 [ LIMIT n ]  
 ```  
   
@@ -27,18 +27,18 @@ Une pagination physique peut être effectuée par le biais de la sous-clause LIM
 > [!NOTE]
 > Une requête Entity SQL est considérée comme non valide si le modificateur TOP et la sous-clause SKIP se trouvent dans une même expression de requête. La requête doit être réécrite en remplaçant l'expression TOP par l'expression LIMIT.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  La requête Entity SQL suivante utilise l'opérateur ORDER BY avec LIMIT pour spécifier l'ordre de classement employé sur les objets retournés dans une instruction SELECT. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
- [!code-csharp[DP EntityServices Concepts 2#LIMIT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#limit)]  
+ [!code-sql[DP EntityServices Concepts#LIMIT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#limit)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [ORDER BY](order-by-entity-sql.md)
-- [Guide pratique pour Page des résultats de la requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
+- [Comment : paginer les résultats d’une requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
 - [Pagination](paging-entity-sql.md)
 - [TOP](top-entity-sql.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : examiner le contexte de sécurité'
+title: 'Comment : examiner le contexte de sécurité'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - WCF, security
 - Claimset class
 ms.assetid: 389b5a57-4175-4bc0-ada0-fc750d51149f
-ms.openlocfilehash: e67ac9c452337b6f490d99ea4430ec2a02b952a1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 328d47a583a4f047fd54589a82d339de2cb1a16f
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625803"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72320990"
 ---
-# <a name="how-to-examine-the-security-context"></a>Procédure : examiner le contexte de sécurité
-Lors de la programmation des services Windows Communication Foundation (WCF), le contexte de sécurité de service vous permet de déterminer les détails sur les informations d’identification du client et les revendications utilisées pour s’authentifier auprès du service. Pour ce faire, utilisez les propriétés de la classe <xref:System.ServiceModel.ServiceSecurityContext>.  
+# <a name="how-to-examine-the-security-context"></a>Comment : examiner le contexte de sécurité
+Lors de la programmation des services Windows Communication Foundation (WCF), le contexte de sécurité du service vous permet de déterminer les détails sur les informations d’identification du client et les revendications utilisées pour l’authentification auprès du service. Pour ce faire, utilisez les propriétés de la classe <xref:System.ServiceModel.ServiceSecurityContext>.  
   
  Par exemple, vous pouvez récupérer l'identité du client actuel en utilisant la propriété <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> ou <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A>. Pour déterminer si le client est ou non anonyme, utilisez la propriété <xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A>.  
   
@@ -56,5 +56,5 @@ Lors de la programmation des services Windows Communication Foundation (WCF), le
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation de services](../../../docs/framework/wcf/securing-services.md)
-- [Identité du service et authentification](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Sécurisation de services](securing-services.md)
+- [Identité du service et authentification](./feature-details/service-identity-and-authentication.md)

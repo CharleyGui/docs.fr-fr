@@ -2,12 +2,12 @@
 title: Choix des plateformes de calcul Azure pour les applications basées sur des conteneurs
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Choix de plateformes de calcul Azure pour les applications basées sur des conteneurs
 ms.date: 05/04/2018
-ms.openlocfilehash: 54c5945326fb8a50a39c50552a413580926da2c7
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 2262d2cf4e69e19e8b78c07c239602dd5dccc3cd
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331962"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72318666"
 ---
 # <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Choix des plateformes de calcul Azure pour les applications basées sur des conteneurs
 
@@ -16,8 +16,8 @@ Comme vous l’avez remarqué après avoir lu les sections précédentes, Azure 
 En guise de recommandation *par défaut* , les critères principaux recommandés dans ce guide sont les suivants :
 
 - **Application monolithique unique :** Choisir Azure App Service
-- **Application multiniveau :** Choisissez des orchestrateurs tels que le service Azure Kubernetes (AKS) ou App Service si vous disposez d’un seul ou de plusieurs services principaux
-- **Microservices** Choisir AKS ou Azure Web Apps pour les conteneurs
+- **Application multiniveau :** Choisissez des orchestrateurs tels que le service Azure Kubernetes (AKS) ou App Service si vous avez un ou plusieurs services principaux
+- **Microservices :** Choisir AKS ou Azure Web Apps pour les conteneurs
 - **Fonctions sans serveur & gestionnaires d’événements :** Choisir Azure Functions
 - **Lot à grande échelle :** Choisir Azure Batch
 

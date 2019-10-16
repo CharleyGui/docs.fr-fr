@@ -2,19 +2,19 @@
 title: + (Concaténation de chaînes) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 580130fa-6c7c-4f76-a47d-d22c27ccadf6
-ms.openlocfilehash: ef482a1206dea98cfb5a0ba5071acc130ef0cd18
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9c078e193eeecd4d331c5e3c04c66dee2c4a1daa
+ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249030"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72319315"
 ---
 # <a name="-string-concatenation-entity-sql"></a>+ (concaténation de chaînes) (Entity SQL)
 Concatène deux chaînes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 expression + expression  
 ```  
   
@@ -28,11 +28,11 @@ expression + expression
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur + pour concaténer deux chaînes. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
+1. Suivez la procédure décrite dans [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   
- [!code-csharp[DP EntityServices Concepts 2#CONCAT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#concat)]  
+ [!code-sql[DP EntityServices Concepts#CONCAT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#concat)]  
   
 ## <a name="see-also"></a>Voir aussi
 
