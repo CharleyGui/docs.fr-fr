@@ -1,0 +1,66 @@
+- name: Guide du .NET Framework
+  href: index.md
+- name: Nouveautés
+  href: whats-new/
+- name: Bien démarrer
+  href: get-started/
+- name: Guide d’installation
+  href: install/
+- name: Guide de migration
+  href: migration-guide/
+- name: Guide de développement
+  href: development-guide.md
+  items:
+    - name: Domaines d'application et assemblys
+      href: app-domains/
+    - name: Ressources dans des applications de bureau
+      href: resources/
+    - name: Accessibilité
+      href: ui-automation/
+    - name: Données et modélisation
+      href: data/
+    - name: Applications clientes
+      href: develop-client-apps.md
+      items:
+        - name: Windows Presentation Foundation
+          href: wpf/
+        - name: Windows Forms
+          href: winforms/
+    - name: Applications orientées service avec WCF
+      href: wcf/
+    - name: Windows Workflow Foundation
+      href: windows-workflow-foundation/
+    - name: Applications de service Windows
+      href: windows-services/
+    - name: "Applications 64\_bits"
+      href: 64-bit-apps.md
+    - name: Applications web avec ASP.NET
+      href: develop-web-apps-with-aspnet.md
+    - name: Programmation réseau dans le .NET Framework
+      href: network-programming/
+    - name: Configuration d'applications
+      href: configure-apps/
+    - name: Compilation d'applications avec .NET Native
+      href: net-native/
+    - name: Windows Identity Foundation
+      href: security/
+    - name: 'Débogage, traçage et profilage'
+      href: debug-trace-profile/
+    - name: Déploiement
+      href: deployment/
+    - name: Performances
+      href: performance/
+    - name: Programmation dynamique
+      href: reflection-and-codedom/
+    - name: Managed Extensibility Framework (MEF)
+      href: mef/
+    - name: Interopération avec du code non managé
+      href: interop/
+    - name: Informations de référence sur les API non managées
+      href: unmanaged-api/
+    - name: Services XAML
+      href: xaml-services/
+- name: Outils
+  href: tools/
+- name: API et bibliothèques de classes supplémentaires
+  href: additional-apis/
