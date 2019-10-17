@@ -1,9 +1,0 @@
-- name: Main() et arguments de ligne de commande
-  href: index.md
-  items:
-    - name: Arguments de ligne de commande
-      href: command-line-arguments.md
-    - name: "Procédure\_: Afficher les arguments de ligne de commande"
-      href: how-to-display-command-line-arguments.md
-    - name: Valeurs de retour Main()
-      href: main-return-values.md
