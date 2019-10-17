@@ -1,52 +1,55 @@
 ---
-title: 'Procédure : Convertir un tableau d’octets en valeur int - Guide de programmation C#'
+title: 'Comment : convertir un tableau d’octets en un guide de C# programmation int'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - conversions [C#], byte array to int
 - byte arrays [C#], converting to int
 ms.assetid: d6ac20e2-448e-4aea-99b9-faf04c6f1e79
-ms.openlocfilehash: ffb00325bc04aad79d61558925546e0aa8544551
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 96507f03a3d64b96ef6059a92459bfc7fa854372
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921751"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395686"
 ---
-# <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a><span data-ttu-id="d1cbd-102">Procédure : Convertir un tableau d’octets en valeur int (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="d1cbd-102">How to: Convert a byte Array to an int (C# Programming Guide)</span></span>
-<span data-ttu-id="d1cbd-103">Cet exemple montre comment utiliser la classe <xref:System.BitConverter> pour convertir un tableau d’octets en valeur [int](../../language-reference/builtin-types/integral-numeric-types.md), puis la reconvertir en tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-103">This example shows you how to use the <xref:System.BitConverter> class to convert an array of bytes to an [int](../../language-reference/builtin-types/integral-numeric-types.md) and back to an array of bytes.</span></span> <span data-ttu-id="d1cbd-104">Vous devrez peut-être convertir des octets en un type de données intégré après avoir lu les octets sur le réseau.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-104">You may have to convert from bytes to a built-in data type after you read bytes off the network, for example.</span></span> <span data-ttu-id="d1cbd-105">Outre la méthode [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) de l’exemple, le tableau suivant répertorie les méthodes dans la classe <xref:System.BitConverter> qui convertissent des octets (d’un tableau d’octets) en d’autres types intégrés.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-105">In addition to the [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) method in the example, the following table lists methods in the <xref:System.BitConverter> class that convert bytes (from an array of bytes) to other built-in types.</span></span>  
-  
-|<span data-ttu-id="d1cbd-106">Type retourné</span><span class="sxs-lookup"><span data-stu-id="d1cbd-106">Type returned</span></span>|<span data-ttu-id="d1cbd-107">Méthode</span><span class="sxs-lookup"><span data-stu-id="d1cbd-107">Method</span></span>|  
-|-------------------|------------|  
-|`bool`|<span data-ttu-id="d1cbd-108">[ToBoolean(Byte\[\], Int32)](xref:System.BitConverter.ToBoolean(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-108">[ToBoolean(Byte\[\], Int32)](xref:System.BitConverter.ToBoolean(System.Byte[],System.Int32))</span></span>|  
-|`char`|<span data-ttu-id="d1cbd-109">[ToChar(Byte\[\], Int32)](xref:System.BitConverter.ToChar(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-109">[ToChar(Byte\[\], Int32)](xref:System.BitConverter.ToChar(System.Byte[],System.Int32))</span></span>|  
-|`double`|<span data-ttu-id="d1cbd-110">[ToDouble(Byte\[\], Int32)](xref:System.BitConverter.ToDouble(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-110">[ToDouble(Byte\[\], Int32)](xref:System.BitConverter.ToDouble(System.Byte[],System.Int32))</span></span>|  
-|`short`|<span data-ttu-id="d1cbd-111">[ToInt16(Byte\[\], Int32)](xref:System.BitConverter.ToInt16(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-111">[ToInt16(Byte\[\], Int32)](xref:System.BitConverter.ToInt16(System.Byte[],System.Int32))</span></span>|  
-|`int`|<span data-ttu-id="d1cbd-112">[ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-112">[ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32))</span></span>|  
-|`long`|<span data-ttu-id="d1cbd-113">[ToInt64(Byte\[\], Int32)](xref:System.BitConverter.ToInt64(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-113">[ToInt64(Byte\[\], Int32)](xref:System.BitConverter.ToInt64(System.Byte[],System.Int32))</span></span>|  
-|`float`|<span data-ttu-id="d1cbd-114">[ToSingle(Byte\[\], Int32)](xref:System.BitConverter.ToSingle(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-114">[ToSingle(Byte\[\], Int32)](xref:System.BitConverter.ToSingle(System.Byte[],System.Int32))</span></span>|  
-|`ushort`|<span data-ttu-id="d1cbd-115">[ToUInt16(Byte\[\], Int32)](xref:System.BitConverter.ToUInt16(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-115">[ToUInt16(Byte\[\], Int32)](xref:System.BitConverter.ToUInt16(System.Byte[],System.Int32))</span></span>|  
-|`uint`|<span data-ttu-id="d1cbd-116">[ToUInt32(Byte\[\], Int32)](xref:System.BitConverter.ToUInt32(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-116">[ToUInt32(Byte\[\], Int32)](xref:System.BitConverter.ToUInt32(System.Byte[],System.Int32))</span></span>|  
-|`ulong`|<span data-ttu-id="d1cbd-117">[ToUInt64(Byte\[\], Int32)](xref:System.BitConverter.ToUInt64(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="d1cbd-117">[ToUInt64(Byte\[\], Int32)](xref:System.BitConverter.ToUInt64(System.Byte[],System.Int32))</span></span>|  
-  
-## <a name="example"></a><span data-ttu-id="d1cbd-118">Exemples</span><span class="sxs-lookup"><span data-stu-id="d1cbd-118">Example</span></span>  
- <span data-ttu-id="d1cbd-119">Cet exemple initialise un tableau d’octets, inverse le tableau si l’architecture de l’ordinateur est little-endian (autrement dit, l’octet le moins significatif est stocké en premier), puis appelle la méthode [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) pour convertir quatre octets du tableau en valeur `int`.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-119">This example initializes an array of bytes, reverses the array if the computer architecture is little-endian (that is, the least significant byte is stored first), and then calls the [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) method to convert four bytes in the array to an `int`.</span></span> <span data-ttu-id="d1cbd-120">Le deuxième argument de [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) spécifie l’index de départ du tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-120">The second argument to [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) specifies the start index of the array of bytes.</span></span>  
-  
+# <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a><span data-ttu-id="9d8b8-102">Guide pratique pour convertir un tableau d’octets en valeur int (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="9d8b8-102">How to: Convert a byte Array to an int (C# Programming Guide)</span></span>
+
+<span data-ttu-id="9d8b8-103">Cet exemple montre comment utiliser la classe <xref:System.BitConverter> pour convertir un tableau d’octets en valeur [int](../../language-reference/builtin-types/integral-numeric-types.md), puis la reconvertir en tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-103">This example shows you how to use the <xref:System.BitConverter> class to convert an array of bytes to an [int](../../language-reference/builtin-types/integral-numeric-types.md) and back to an array of bytes.</span></span> <span data-ttu-id="9d8b8-104">Vous devrez peut-être convertir des octets en un type de données intégré après avoir lu les octets sur le réseau.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-104">You may have to convert from bytes to a built-in data type after you read bytes off the network, for example.</span></span> <span data-ttu-id="9d8b8-105">En plus de la méthode [ToInt32 (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) dans l’exemple, le tableau suivant répertorie les méthodes de la classe <xref:System.BitConverter> qui convertissent des octets (d’un tableau d’octets) en d’autres types intégrés.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-105">In addition to the [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) method in the example, the following table lists methods in the <xref:System.BitConverter> class that convert bytes (from an array of bytes) to other built-in types.</span></span>
+
+|<span data-ttu-id="9d8b8-106">Type retourné</span><span class="sxs-lookup"><span data-stu-id="9d8b8-106">Type returned</span></span>|<span data-ttu-id="9d8b8-107">Méthode</span><span class="sxs-lookup"><span data-stu-id="9d8b8-107">Method</span></span>|
+|-------------------|------------|
+|`bool`|<span data-ttu-id="9d8b8-108">[ToBoolean (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToBoolean(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-108">[ToBoolean(Byte\[\], Int32)](xref:System.BitConverter.ToBoolean(System.Byte[],System.Int32))</span></span>|
+|`char`|<span data-ttu-id="9d8b8-109">[ToChar (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToChar(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-109">[ToChar(Byte\[\], Int32)](xref:System.BitConverter.ToChar(System.Byte[],System.Int32))</span></span>|
+|`double`|<span data-ttu-id="9d8b8-110">[ToDouble (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToDouble(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-110">[ToDouble(Byte\[\], Int32)](xref:System.BitConverter.ToDouble(System.Byte[],System.Int32))</span></span>|
+|`short`|<span data-ttu-id="9d8b8-111">[Toint16 ((Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt16(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-111">[ToInt16(Byte\[\], Int32)](xref:System.BitConverter.ToInt16(System.Byte[],System.Int32))</span></span>|
+|`int`|<span data-ttu-id="9d8b8-112">[ToInt32 (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-112">[ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32))</span></span>|
+|`long`|<span data-ttu-id="9d8b8-113">[Toint64 ((Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt64(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-113">[ToInt64(Byte\[\], Int32)](xref:System.BitConverter.ToInt64(System.Byte[],System.Int32))</span></span>|
+|`float`|<span data-ttu-id="9d8b8-114">[ToSingle (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToSingle(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-114">[ToSingle(Byte\[\], Int32)](xref:System.BitConverter.ToSingle(System.Byte[],System.Int32))</span></span>|
+|`ushort`|<span data-ttu-id="9d8b8-115">[Touint16 ((Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToUInt16(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-115">[ToUInt16(Byte\[\], Int32)](xref:System.BitConverter.ToUInt16(System.Byte[],System.Int32))</span></span>|
+|`uint`|<span data-ttu-id="9d8b8-116">[Touint32 ((Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToUInt32(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-116">[ToUInt32(Byte\[\], Int32)](xref:System.BitConverter.ToUInt32(System.Byte[],System.Int32))</span></span>|
+|`ulong`|<span data-ttu-id="9d8b8-117">[Touint64 ((Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToUInt64(System.Byte[],System.Int32))</span><span class="sxs-lookup"><span data-stu-id="9d8b8-117">[ToUInt64(Byte\[\], Int32)](xref:System.BitConverter.ToUInt64(System.Byte[],System.Int32))</span></span>|
+
+## <a name="example"></a><span data-ttu-id="9d8b8-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="9d8b8-118">Example</span></span>
+
+<span data-ttu-id="9d8b8-119">Cet exemple Initialise un tableau d’octets, inverse le tableau si l’architecture de l’ordinateur est Little-endian (autrement dit, l’octet le moins significatif est stocké en premier), puis appelle la méthode [ToInt32 (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) pour convertir quatre octets dans tableau à un `int`.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-119">This example initializes an array of bytes, reverses the array if the computer architecture is little-endian (that is, the least significant byte is stored first), and then calls the [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) method to convert four bytes in the array to an `int`.</span></span> <span data-ttu-id="9d8b8-120">Le deuxième argument de [ToInt32 (Byte @ no__t-1 @ no__t-2, Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) spécifie l’index de début du tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-120">The second argument to [ToInt32(Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) specifies the start index of the array of bytes.</span></span>
+
 > [!NOTE]
-> <span data-ttu-id="d1cbd-121">La sortie peut varier en fonction du caractère endian de l’architecture de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-121">The output may differ depending on the endianess of your computer's architecture.</span></span>  
-  
- [!code-csharp[csProgGuideTypes#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#22)]  
-  
-## <a name="example"></a><span data-ttu-id="d1cbd-122">Exemples</span><span class="sxs-lookup"><span data-stu-id="d1cbd-122">Example</span></span>  
- <span data-ttu-id="d1cbd-123">Dans cet exemple, la méthode <xref:System.BitConverter.GetBytes%28System.Int32%29> de la classe <xref:System.BitConverter> est appelée pour convertir une valeur `int` en tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-123">In this example, the <xref:System.BitConverter.GetBytes%28System.Int32%29> method of the <xref:System.BitConverter> class is called to convert an `int` to an array of bytes.</span></span>  
-  
+> <span data-ttu-id="9d8b8-121">La sortie peut varier en fonction du caractère endian de l’architecture de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-121">The output may differ depending on the endianess of your computer's architecture.</span></span>
+
+[!code-csharp[csProgGuideTypes#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#22)]
+
+## <a name="example"></a><span data-ttu-id="9d8b8-122">Exemple</span><span class="sxs-lookup"><span data-stu-id="9d8b8-122">Example</span></span>
+
+<span data-ttu-id="9d8b8-123">Dans cet exemple, la méthode <xref:System.BitConverter.GetBytes%28System.Int32%29> de la classe <xref:System.BitConverter> est appelée pour convertir une valeur `int` en tableau d’octets.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-123">In this example, the <xref:System.BitConverter.GetBytes%28System.Int32%29> method of the <xref:System.BitConverter> class is called to convert an `int` to an array of bytes.</span></span>
+
 > [!NOTE]
-> <span data-ttu-id="d1cbd-124">La sortie peut varier en fonction du caractère endian de l’architecture de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="d1cbd-124">The output may differ depending on the endianess of your computer's architecture.</span></span>  
-  
- [!code-csharp[csProgGuideTypes#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#23)]  
-  
-## <a name="see-also"></a><span data-ttu-id="d1cbd-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d1cbd-125">See also</span></span>
+> <span data-ttu-id="9d8b8-124">La sortie peut varier en fonction du caractère endian de l’architecture de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="9d8b8-124">The output may differ depending on the endianess of your computer's architecture.</span></span>
+
+[!code-csharp[csProgGuideTypes#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#23)]
+
+## <a name="see-also"></a><span data-ttu-id="9d8b8-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9d8b8-125">See also</span></span>
 
 - <xref:System.BitConverter>
 - <xref:System.BitConverter.IsLittleEndian>
-- [<span data-ttu-id="d1cbd-126">Types</span><span class="sxs-lookup"><span data-stu-id="d1cbd-126">Types</span></span>](./index.md)
+- [<span data-ttu-id="9d8b8-126">Types</span><span class="sxs-lookup"><span data-stu-id="9d8b8-126">Types</span></span>](./index.md)
