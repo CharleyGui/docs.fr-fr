@@ -1,5 +1,5 @@
 ---
-title: SqlStreamChars.Read (Char [], Int32, Int32), méthode (System.Data.SqlTypes)
+title: Méthode SqlStreamChars. Read (Char [], Int32, Int32) (System. Data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,16 +12,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: df715f622f874b3c9297c421eab9f4c7504e696b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9c8a1526e75fdc304022e74a7cc52506762489ea
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634316"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395752"
 ---
-# <a name="sqlstreamcharsreadchar-int32-int32-method"></a>Méthode de SqlStreamChars.Read (Char [], Int32, Int32)
+# <a name="sqlstreamcharsreadchar-int32-int32-method"></a>Méthode SqlStreamChars. Read (Char [], Int32, Int32)
 
-En cas de substitution dans une classe dérivée, lit le jeu de caractères suivant dans le flux d’entrée. L’assembly qui contient cette méthode a une relation de friend avec SQLAccess.dll. Il est prévu pour une utilisation par SQL Server. Pour les autres bases de données, utilisez le mécanisme d’hébergement fourni par cette base de données.
+En cas de substitution dans une classe dérivée, lit le jeu de caractères suivant dans le flux d’entrée. L’assembly qui contient cette méthode a une relation Friend avec SQLAccess. dll. Elle est destinée à être utilisée par SQL Server. Pour les autres bases de données, utilisez le mécanisme d’hébergement fourni par cette base de données.
 
 ```csharp
 public abstract int Read (char[] buffer, int offset, int count);
@@ -30,13 +30,13 @@ public abstract int Read (char[] buffer, int offset, int count);
 ## <a name="parameters"></a>Paramètres
 
 `buffer`\
-Un tableau de caractères à lire.
+Tableau de caractères à lire.
 
 `offset`\
-Un décalage relatif à l’origine.
+Décalage par rapport à Origin.
 
 `count`\
-Le nombre de caractères à lire à partir du flux actuel.
+Nombre de caractères à lire à partir du flux actuel.
 
 ## <a name="returns"></a>Returns (Retours)
 
@@ -46,14 +46,14 @@ Nombre total de caractères lus dans la mémoire tampon.
 ## <a name="remarks"></a>Notes
 
 > [!WARNING]
-> Le `SqlStreamChars.Read` méthode est privée et qu’il n’est pas destiné à être utilisé directement dans votre code.
+> La méthode `SqlStreamChars.Read` est privée et n’est pas destinée à être utilisée directement dans votre code.
 >
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de cette méthode dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Data.SqlTypes>
 
-**Assembly :** System.Data (dans System.Data.dll)
+**Assembly :** System. Data (dans System. Data. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

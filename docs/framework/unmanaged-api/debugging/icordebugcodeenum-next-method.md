@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 076b5d628dfe83decdbbe2f5e74c50e08262c580
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: ac3fc157543f2990c7c9f9917140b35f8948108e
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700692"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395475"
 ---
 # <a name="icordebugcodeenumnext-method"></a>ICorDebugCodeEnum::Next, méthode
 
@@ -41,22 +41,21 @@ HRESULT Next (
 
 ## <a name="parameters"></a>Paramètres
 
- `celt`  
- dans Nombre d’instances `ICorDebugCode` à récupérer.
+`celt`  
+dans Nombre d’instances `ICorDebugCode` à récupérer.
 
- `values`  
- à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugCode`.
+`values`  
+à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugCode`.
 
- `pceltFetched`  
- à Pointeur vers le nombre d’instances `ICorDebugCode` réellement retournées. Cette valeur peut être null si `celt` est un.
+`pceltFetched`  
+à Pointeur vers le nombre d’instances `ICorDebugCode` réellement retournées. Cette valeur peut être null si `celt` est un.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête :** CorDebug. idl, CorDebug. h
+**En-tête :** CorDebug.idl, CorDebug.h
 
- **Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
- 
+**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -2,15 +2,15 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 9ba8923d23140bb951a4993739ec267ad6f6a4c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1098057042c0842161258fd081d3ee63e82b4c5f
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911776"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395717"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
-Cette section traite de la sécurité des messages WCF <xref:System.ServiceModel.NetMsmqBinding>lors de l’utilisation de.  
+Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding>.  
   
 > [!NOTE]
 > Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
@@ -52,7 +52,7 @@ Cette section traite de la sécurité des messages WCF <xref:System.ServiceModel
   
  Notez que lors de l'utilisation de ce type d'informations d'identification, le service doit s'exécuter sous le compte SERVICE.  
   
- Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message. Pour plus d’informations, consultez [exploration de Kerberos, protocole pour la sécurité distribuée dans Windows 2000](https://go.microsoft.com/fwlink/?LinkId=87790).  
+ Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message.
   
 ### <a name="username-password"></a>Username Password  
  À l'aide de cette propriété, le client peut s'authentifier auprès du serveur en utilisant un mot de passe de nom d'utilisateur dans l'en-tête de sécurité du message.  

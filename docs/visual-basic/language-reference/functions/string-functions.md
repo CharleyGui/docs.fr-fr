@@ -4,23 +4,23 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
-ms.openlocfilehash: 917797700c3e403971ce6f48174a282b1102f127
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 32a31a881573cc9dc481fc07fc4067569a96a963
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799323"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395822"
 ---
 # <a name="string-functions-visual-basic"></a>Fonctions de chaîne (Visual Basic)
 
-Le tableau suivant répertorie les fonctions fournies par Visual Basic dans <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> la classe pour rechercher et manipuler des chaînes. Ils peuvent être considérés comme des fonctions intrinsèques Visual Basic ; autrement dit, il n’est pas nécessaire de les appeler comme des membres explicites d’une classe, comme le montrent les exemples. Des méthodes supplémentaires et, dans certains cas, des méthodes complémentaires, sont <xref:System.String?displayProperty=nameWithType> disponibles dans la classe. 
+Le tableau suivant répertorie les fonctions fournies par Visual Basic dans la classe <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> pour rechercher et manipuler des chaînes. Ils peuvent être considérés comme des fonctions intrinsèques Visual Basic ; autrement dit, il n’est pas nécessaire de les appeler comme des membres explicites d’une classe, comme le montrent les exemples. Des méthodes supplémentaires et, dans certains cas, des méthodes complémentaires, sont disponibles dans la classe <xref:System.String?displayProperty=nameWithType>. 
   
 |Méthode .NET Framework|Description|  
 |---------------------------|-----------------|  
-|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|Retourne une `Integer` valeur représentant le code de caractère correspondant à un caractère.|  
+|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|Retourne une valeur `Integer` représentant le code de caractère correspondant à un caractère.|  
 |<xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|Retourne le caractère associé au code de caractère spécifié.|  
-|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|Retourne un tableau de base zéro contenant un sous-ensemble `String` d’un tableau en fonction des critères de filtre spécifiés.|  
-|<xref:Microsoft.VisualBasic.Strings.Format%2A>|Retourne une chaîne mise en forme conformément aux instructions contenues `String` dans une expression de format.|  
+|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|Retourne un tableau de base zéro contenant un sous-ensemble d’un tableau `String` en fonction des critères de filtre spécifiés.|  
+|<xref:Microsoft.VisualBasic.Strings.Format%2A>|Retourne une chaîne mise en forme conformément aux instructions contenues dans un format @no__t expression-0.|  
 |<xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>|Retourne une expression sous forme de valeur monétaire en utilisant le symbole monétaire défini dans le panneau de configuration du système.|  
 |<xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>|Retourne une expression de chaîne représentant une valeur de date/heure.|  
 |<xref:Microsoft.VisualBasic.Strings.FormatNumber%2A>|Retourne une expression sous forme de nombre.|  
@@ -47,22 +47,22 @@ Le tableau suivant répertorie les fonctions fournies par Visual Basic dans <xre
 |<xref:Microsoft.VisualBasic.Strings.Trim%2A>|Retourne une chaîne contenant une copie d’une chaîne spécifiée sans espaces de début ou de fin.|  
 |<xref:Microsoft.VisualBasic.Strings.UCase%2A>|Retourne une chaîne ou un caractère contenant la chaîne spécifiée convertie en majuscules.|  
   
- Vous pouvez utiliser l’instruction [option compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) pour définir si les chaînes sont comparées à l’aide d’un ordre de tri de texte sans respect de la`Text`casse déterminé par les paramètres régionaux de votre système ()`Binary`ou par les représentations binaires internes des caractères (). La méthode de comparaison de texte par défaut est `Binary`.  
+ Vous pouvez utiliser l’instruction [option compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) pour définir si les chaînes sont comparées à l’aide d’un ordre de tri de texte sans respect de la casse déterminé par les paramètres régionaux de votre système (`Text`) ou par les représentations binaires internes des caractères (`Binary`). La méthode de comparaison de texte par défaut est `Binary`.  
   
 ## <a name="example-ucase"></a>Exemple : UCase
 
-Cet exemple utilise la `UCase` fonction pour retourner une version en majuscules d’une chaîne.  
+Cet exemple utilise la fonction `UCase` pour retourner une version en majuscules d’une chaîne.  
 [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
   
 ## <a name="example-ltrim"></a>Exemple : LTrim
 
-Cet exemple utilise la `LTrim` fonction pour supprimer les espaces de début `RTrim` et la fonction pour supprimer les espaces à droite d’une variable de chaîne. Elle utilise la `Trim` fonction pour supprimer les deux types d’espaces.  
+Cet exemple utilise la fonction `LTrim` pour supprimer les espaces de début et la fonction `RTrim` pour supprimer les espaces à droite d’une variable de chaîne. Elle utilise la fonction `Trim` pour supprimer les deux types d’espaces.  
   
 [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
   
-## <a name="example-mid"></a>Exemple : PMI
+## <a name="example-mid"></a>Exemple : Mid
 
-Cet exemple utilise la `Mid` fonction pour retourner un nombre spécifié de caractères à partir d’une chaîne.  
+Cet exemple utilise la fonction `Mid` pour retourner un nombre spécifié de caractères à partir d’une chaîne.  
 
 [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
 
@@ -74,16 +74,16 @@ Cet exemple utilise `Len` pour retourner le nombre de caractères d’une chaîn
   
 ## <a name="example-instr"></a>Exemple : InStr
 
-Cet exemple utilise la `InStr` fonction pour retourner la position de la première occurrence d’une chaîne dans une autre.  
+Cet exemple utilise la fonction `InStr` pour retourner la position de la première occurrence d’une chaîne dans une autre.  
   
 [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
   
-## <a name="example-format"></a>Exemple : Format
+## <a name="example-format"></a>Exemple : format
 
-Cet exemple montre différentes utilisations de la `Format` fonction pour mettre en forme les `String` valeurs à l’aide des formats et des formats définis par l’utilisateur. Pour le séparateur de date`/`(), le séparateur`:`d’heure () et les indicateurs am/`t` PM `tt`(et), la sortie mise en forme réelle affichée par votre système dépend des paramètres régionaux que le code utilise. Lorsque des heures et des dates sont affichées dans l’environnement de développement, le format d’heure abrégé et le format de date abrégée des paramètres régionaux du code sont utilisés.  
+Cet exemple illustre différentes utilisations de la fonction `Format` pour mettre en forme des valeurs à l’aide des formats `String` et des formats définis par l’utilisateur. Pour le séparateur de date (`/`), le séparateur d’heure (`:`) et les indicateurs AM/PM (`t` et `tt`), la sortie mise en forme réelle affichée par votre système dépend des paramètres régionaux que le code utilise. Lorsque des heures et des dates sont affichées dans l’environnement de développement, le format d’heure abrégé et le format de date abrégée des paramètres régionaux du code sont utilisés.  
   
 > [!NOTE]
-> Pour les paramètres régionaux qui utilisent une horloge de 24 heures, les indicateurs AM/PM`t` ( `tt`et) n’affichent rien.  
+> Pour les paramètres régionaux qui utilisent une horloge de 24 heures, les indicateurs AM/PM (`t` et `tt`) n’affichent rien.  
   
  [!code-vb[VbVbalrStrings#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#27)]  
   
@@ -92,4 +92,4 @@ Cet exemple montre différentes utilisations de la `Format` fonction pour mettre
 - [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
 - [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
 - [Liste des manipulations de chaînes](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)
-- [System. String, méthodes de classe]<xref:System.String#methods?displayProperty=nameWithType>
+- [System. String, méthodes de classe](xref:System.String#methods)

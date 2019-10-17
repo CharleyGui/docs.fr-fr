@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdf59ee3c7bf41a2bb0ff68db5e70dd5a519a0e9
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 62e2be44165472e2fbf368f61b865d39a5e9fc28
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700781"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395467"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue, méthode
 
@@ -38,8 +38,8 @@ HRESULT Continue (
 
 ## <a name="parameters"></a>Paramètres
 
- `fIsOutOfBand`  
- dans Affectez la valeur `true` si vous continuez à partir d’un événement hors bande ; Sinon, affectez la valeur `false`.
+`fIsOutOfBand`  
+dans Affectez la valeur `true` si vous continuez à partir d’un événement hors bande ; Sinon, affectez la valeur `false`.
 
 ## <a name="remarks"></a>Notes
 
@@ -48,16 +48,15 @@ HRESULT Continue (
 Lors du débogage en mode mixte, n’appelez pas `Continue` sur le thread d’événements Win32, à moins que vous ne continuiez à partir d’un événement hors bande.
 
 Un *événement intrabande* est un événement managé ou un événement non managé normal, pendant lequel le débogueur prend en charge l’interaction avec l’état managé du processus. Dans ce cas, le débogueur reçoit le rappel [ICorDebugUnmanagedCallback ::D ebugevent](icordebugunmanagedcallback-debugevent-method.md) avec son paramètre `fOutOfBand` défini sur `false`.
-  
+
 Un *événement hors bande* est un événement non managé pendant lequel l’interaction avec l’état managé du processus est impossible tant que le processus est arrêté en raison de l’événement. Dans ce cas, le débogueur reçoit le rappel `ICorDebugUnmanagedCallback::DebugEvent` avec son paramètre `fOutOfBand` défini sur `true`.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
- **En-tête :** CorDebug. idl, CorDebug. h
+**En-tête :** CorDebug.idl, CorDebug.h
 
- **Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
- 
+**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

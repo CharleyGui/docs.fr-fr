@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: a13cc98a88ff81afd478eaa3e40286169811233a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: HT
+ms.openlocfilehash: 73bb02379308fbfe507137e61ac8d84e6b9760b4
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320301"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395897"
 ---
 # <a name="wcf-performance-counters"></a>Compteurs de performance WCF
 Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de performances pour vous aider à évaluer les performances de votre application.  
@@ -118,19 +118,16 @@ config.Save();
 > Si vous avez des noms d'opération en double sur un contrat, vous recevez seulement une instance de compteur pour les deux opérations.  
   
 ## <a name="programming-the-wcf-performance-counters"></a>Programmation des compteurs de performance WCF  
- Plusieurs fichiers sont installés dans le dossier d’installation du kit de développement logiciel (SDK) pour vous permettre d’accéder par programme aux compteurs de performance WCF. Ces fichiers sont répertoriés comme suit.  
+
+Plusieurs fichiers sont installés dans le dossier d’installation du kit de développement logiciel (SDK) pour vous permettre d’accéder par programme aux compteurs de performance WCF. Ces fichiers sont répertoriés comme suit :
   
-- _ServiceModelEndpointPerfCounters.vrg  
+- *@no__t -1ServiceModelEndpointPerfCounters. VRG*
+- *@no__t -1ServiceModelOperationPerfCounters. VRG*
+- *@no__t -1ServiceModelServicePerfCounters. VRG*  
+- *@no__t -1SMSvcHostPerfCounters. VRG*
+- *@no__t -1TransactionBridgePerfCounters. VRG*
   
-- _ServiceModelOperationPerfCounters.vrg  
-  
-- _ServiceModelServicePerfCounters.vrg  
-  
-- _SMSvcHostPerfCounters.vrg  
-  
-- _TransactionBridgePerfCounters.vrg  
-  
- Pour plus d’informations sur l’accès par programme aux compteurs, consultez Architecture de [programmation des compteurs de performances](https://go.microsoft.com/fwlink/?LinkId=95179).  
+Pour plus d’informations sur l’accès par programme aux compteurs, consultez Architecture de [programmation des compteurs de performances](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90)).
   
 ## <a name="see-also"></a>Voir aussi
 

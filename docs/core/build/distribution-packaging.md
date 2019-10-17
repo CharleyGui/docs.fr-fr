@@ -4,12 +4,12 @@ description: Découvrez comment empaqueter, nommer et versionner .NET Core pour 
 author: tmds
 ms.date: 10/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c41ce8a4a9ac1a914de2535a9b2423a7ddfa2cf
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 715eb944c3e7626696f64e63b874e2f77595cf46
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250140"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72393579"
 ---
 # <a name="net-core-distribution-packaging"></a>Empaquetage de la distribution de .NET Core
 
@@ -72,7 +72,7 @@ Alors qu’il n’y a qu’un seul hôte, la plupart des autres composants sont 
 
 - (3) **sdk/\<version sdk>** Le SDK (également appelé « outils ») est un ensemble d’outils gérés servant à écrire et à générer des bibliothèques et des applications .NET Core. Le SDK inclut, entre autres, l’interface de ligne de commande de .NET Core (CLI), les compilateurs de langages managés, MSBuild, les cibles et les tâches de génération associées, NuGet et de nouveaux modèles de projet.
 
-- (4) **sdk/NuGetFallbackFolder** contient un cache de packages NuGet utilisés par un SDK pendant l’opération de restauration, comme lors de l’exécution de `dotnet restore` ou `dotnet build /t:Restore`. Ce dossier est utilisé uniquement avant .NET Core 3,0. Il ne peut pas être généré à partir de la source, car il contient des ressources binaires prégénérées à partir de `nuget.org`.
+- (4) **sdk/NuGetFallbackFolder** contient un cache de packages NuGet utilisés par un SDK pendant l’opération de restauration, comme lors de l’exécution de `dotnet restore` ou `dotnet build`. Ce dossier est utilisé uniquement avant .NET Core 3,0. Il ne peut pas être généré à partir de la source, car il contient des ressources binaires prégénérées à partir de `nuget.org`.
 
 Le dossier **shared** contient des frameworks. Un framework partagé fournit un ensemble de bibliothèques à un emplacement central, ce qui permet à différentes applications de les utiliser.
 
@@ -104,7 +104,7 @@ Les dossiers marqués avec `(*)` sont utilisés par plusieurs packages. Certains
 
 Le contrôle de version de .NET Core est basé sur les numéros de version `[major].[minor]` du composant runtime.
 La version du SDK utilise les mêmes numéros `[major].[minor]` et a un `[patch]` indépendant qui combine la sémantique des fonctionnalités et des correctifs pour le SDK.
-Exemple : SDK version 2.2.302 est la deuxième version du correctif de la troisième version des fonctionnalités du SDK qui prend en charge le runtime 2.2. Pour plus d’informations sur le fonctionnement de la gestion des versions, consultez [Vue d’ensemble de la gestion des versions .NET Core](../versions/index.md).
+Par exemple : SDK version 2.2.302 est la deuxième version de correctif de la troisième version du kit de développement logiciel (SDK) qui prend en charge le runtime 2,2. Pour plus d’informations sur le fonctionnement de la gestion des versions, consultez [Vue d’ensemble de la gestion des versions .NET Core](../versions/index.md).
 
 Le nom de certains packages inclut une partie du numéro de version. Cela vous permet d’installer une version spécifique.
 Le reste de la version n’est pas inclus dans le nom de version. Ceci permet au Gestionnaire de package du système d’exploitation de mettre à jour les packages (par exemple d’installer automatiquement des correctifs de sécurité). Les gestionnaires de packages pris en charge sont spécifiques de Linux.
@@ -114,13 +114,13 @@ La liste suivante répertorie les packages recommandés :
 - `dotnet-sdk-[major].[minor]`-installe le dernier Kit de développement logiciel (SDK) pour un Runtime spécifique
   - **Version :** \<runtime version >
   - **Exemple :** dotnet-sdk-2,1
-  - **Comprend** (3),(4)
+  - **Contient :** (3), (4)
   - **Dépendances :** `dotnet-runtime-[major].[minor]`, `aspnetcore-runtime-[major].[minor]`, `dotnet-targeting-pack-[major].[minor]`, `aspnetcore-targeting-pack-[major].[minor]`, `netstandard-targeting-pack-[netstandard_major].[netstandard_minor]`, `dotnet-apphost-pack-[major].[minor]`, `dotnet-templates-[major].[minor]`
 
 - `aspnetcore-runtime-[major].[minor]`-installe un Runtime de ASP.NET Core spécifique
   - **Version :** @no__t-version du runtime 1aspnetcore >
   - **Exemple :** aspnetcore-runtime-2,1
-  - **Comprend** (6)
+  - **Contient :** (6)
   - **Dépendances :** `dotnet-runtime-[major].[minor]`
 
 - `dotnet-runtime-deps-[major].[minor]` _(facultatif)_ -installe les dépendances pour l’exécution des applications autonomes
@@ -131,39 +131,39 @@ La liste suivante répertorie les packages recommandés :
 - `dotnet-runtime-[major].[minor]`-installe un Runtime spécifique
   - **Version :** \<runtime version >
   - **Exemple :** dotnet-runtime-2,1
-  - **Comprend** (5)
+  - **Contient :** (5)
   - **Dépendances :** `dotnet-hostfxr-[major].[minor]`, `dotnet-runtime-deps-[major].[minor]`
 
 - `dotnet-hostfxr-[major].[minor]`-dépendance
   - **Version :** \<runtime version >
   - **Exemple :** dotnet-hostfxr-3,0
-  - **Comprend** (2)
+  - **Contient :** (2)
   - **Dépendances :** `dotnet-host`
 
 - `dotnet-host`-dépendance
   - **Version :** \<runtime version >
   - **Exemple :** dotnet-Host
-  - **Comprend** (1), (8), (9), (10), (16)
+  - **Contient :** (1), (8), (9), (10), (16)
 
 - `dotnet-apphost-pack-[major].[minor]`-dépendance
   - **Version :** \<runtime version >
-  - **Comprend** 12
+  - **Contient :** (13)
 
 - `dotnet-targeting-pack-[major].[minor]`-permet de cibler un Runtime qui n’est pas le plus récent
   - **Version :** \<runtime version >
-  - **Comprend** douze
+  - **Contient :** (12)
 
 - `aspnetcore-targeting-pack-[major].[minor]`-permet de cibler un Runtime qui n’est pas le plus récent
   - **Version :** @no__t-version du runtime 1aspnetcore >
-  - **Comprend** 11
+  - **Contient :** (11)
 
 - `netstandard-targeting-pack-[netstandard_major].[netstandard_minor]`-permet de cibler une version netstandard
   - **Version :** \<sdk version >
-  - **Comprend** 4,5
+  - **Contient :** (15)
 
 - `dotnet-templates-[major].[minor]`
   - **Version :** \<sdk version >
-  - **Comprend** 4,5
+  - **Contient :** (15)
 
 La `dotnet-runtime-deps-[major].[minor]` nécessite de comprendre les _dépendances spécifiques à distribution_. Étant donné que le système de génération distribution peut être en mesure de le dériver automatiquement, le package est facultatif, auquel cas ces dépendances sont ajoutées directement au package `dotnet-runtime-[major].[minor]`.
 

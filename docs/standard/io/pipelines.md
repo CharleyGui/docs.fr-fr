@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 53d7bbf214a71daff9372efcd5978f34c066c657
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: HT
+ms.openlocfilehash: 9efd7a7581a1e8bd2cb5f544edd1b4c965aa1866
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320002"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395934"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. pipelines dans .NET
 
@@ -23,6 +23,7 @@ ms.locfileid: "72320002"
 <a name="solve"></a>
 
 ## <a name="what-problem-does-systemiopipelines-solve"></a>Quel est le problème résolu par System. IO. pipelines ?
+
 <!-- corner case doesn't MT (machine translate)   -->
 Les applications qui analysent les données de streaming sont composées de code réutilisable avec de nombreux flux de code spécialisés et inhabituels. Le code réutilisable et cas particulier est complexe et difficile à gérer.
 
@@ -38,7 +39,7 @@ async Task ProcessLinesAsync(NetworkStream stream)
 {
     var buffer = new byte[1024];
     await stream.ReadAsync(buffer, 0, buffer.Length);
-    
+
     // Process a single line from the buffer
     ProcessLine(buffer);
 }
@@ -97,7 +98,7 @@ Dans la deuxième boucle, le `PipeReader` consomme les tampons écrits par `Pipe
 * Retourne un <xref:System.IO.Pipelines.ReadResult> qui contient deux informations importantes :
 
   * Données lues sous la forme `ReadOnlySequence<byte>`.
-  * Valeur booléenne `IsCompleted` qui indique si la fin de données (EOF) a été atteinte. 
+  * Valeur booléenne `IsCompleted` qui indique si la fin de données (EOF) a été atteinte.
 
 Après avoir trouvé le délimiteur de fin de ligne (EOL) et l’analyse de la ligne :
 
@@ -304,7 +305,7 @@ Lors de l’écriture d’applications auxiliaires qui lisent la mémoire tampon
 
 ## <a name="pipewriter"></a>PipeWriter
 
-La <xref:System.IO.Pipelines.PipeWriter> gère les tampons pour l’écriture au nom de l’appelant. `PipeWriter` implémente [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter`1). `IBufferWriter<byte>` permet d’obtenir l’accès aux mémoires tampons pour effectuer des opérations d’écriture sans copie supplémentaire des mémoires tampons.
+La <xref:System.IO.Pipelines.PipeWriter> gère les tampons pour l’écriture au nom de l’appelant. `PipeWriter` implémente [`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter%601). `IBufferWriter<byte>` permet d’obtenir l’accès aux mémoires tampons pour effectuer des opérations d’écriture sans copie supplémentaire des mémoires tampons.
 
 [!code-csharp[MyPipeWriter](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet)]
 

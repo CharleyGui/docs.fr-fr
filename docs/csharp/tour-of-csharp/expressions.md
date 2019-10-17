@@ -3,12 +3,12 @@ title: Expressions C# - Visite guidée du langage C#
 description: Les expressions, opérandes et opérateurs sont des blocs de construction du langage C#
 ms.date: 04/25/2019
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 2553730d495942730c53d3646f35e80759a4d168
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
-ms.translationtype: HT
+ms.openlocfilehash: 4866d12118518827c1f7032ac09933927f0f3c52
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609315"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395676"
 ---
 # <a name="expressions"></a>Expressions
 
@@ -18,8 +18,8 @@ Quand une expression contient plusieurs opérateurs, la *priorité* des opérate
 
 Lorsqu’un opérande se produit entre deux opérateurs de même priorité, *l’associativité* des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
 
-* À l’exception des opérateurs d’assignation, tous les opérateurs binaires sont *associatifs sur leur gauche*, ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
-* Les opérateurs d’assignation et l’opérateur conditionnel (`?:`) sont *associatifs sur leur droite*, ce qui signifie que les opérations sont effectuées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche*, ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
+* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=`, et l’opérateur conditionnel `?:` sont *associatifs à droite*, ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
 
 La priorité et l’associativité peuvent être contrôlées à l’aide de parenthèses. Par exemple, `x + y * z` multiplie d’abord `y` par `z`, puis ajoute le résultat à `x`, mais `(x + y) * z` ajoute d’abord `x` et `y`, puis multiplie le résultat par `z`.
 

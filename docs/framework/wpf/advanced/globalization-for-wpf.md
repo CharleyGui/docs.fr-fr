@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 32caf87435e23008f9f300d231c2705e7894280f
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 7826bbfca09cce7508d7352c647bafae93504e58
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291461"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395841"
 ---
 # <a name="globalization-for-wpf"></a>Globalisation pour WPF
 Cette rubrique présente les problèmes que vous devez prendre en compte lors de l’écriture d’applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pour le marché mondial. Les éléments de programmation de la globalisation sont définis dans .NET dans l’espace de noms <xref:System.Globalization>.
@@ -23,7 +23,7 @@ Cette rubrique présente les problèmes que vous devez prendre en compte lors de
 
 <a name="char_reference"></a>
 ### <a name="character-references"></a>Références de caractères
-Une référence de caractère donne l’unité de code UTF16 du caractère [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] qu’elle représente, en notation décimale ou hexadécimale. L’exemple suivant montre une référence de caractère décimale pour la lettre majuscule du copte HORI, ou « Ϩ » :
+Une référence de caractère donne l’unité de code UTF16 du caractère Unicode particulier qu’elle représente, en notation décimale ou hexadécimale. L’exemple suivant montre une référence de caractère décimale pour la lettre majuscule du copte HORI, ou « Ϩ » :
 
 ```
 &#1000;
@@ -37,7 +37,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
 <a name="encoding"></a>
 ### <a name="encoding"></a>Encodage
- L’encodage pris en charge par [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est ASCII, [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] UTF-16 et UTF-8. L’instruction Encoding se trouve au début du document [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Si aucun attribut d’encodage ni ordre d’octets n’existe, la valeur UTF-8 est affectée par défaut à l’analyseur. UTF-8 et UTF-16 sont les encodages par défaut. UTF-7 n’est pas pris en charge. L’exemple suivant montre comment spécifier un encodage UTF-8 dans un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
+ L’encodage pris en charge par [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sont ASCII, Unicode UTF-16 et UTF-8. L’instruction Encoding se trouve au début du document [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Si aucun attribut d’encodage ni ordre d’octets n’existe, la valeur UTF-8 est affectée par défaut à l’analyseur. UTF-8 et UTF-16 sont les encodages par défaut. UTF-7 n’est pas pris en charge. L’exemple suivant montre comment spécifier un encodage UTF-8 dans un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 ```xaml
 ?xml encoding="UTF-8"?
@@ -47,7 +47,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 ### <a name="language-attribute"></a>Attribut de langue
  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilise [XML : lang](../../xaml-services/xml-lang-handling-in-xaml.md) pour représenter l’attribut de langage d’un élément.  Pour tirer parti de la classe <xref:System.Globalization.CultureInfo>, la valeur de l’attribut Language doit être l’un des noms de culture prédéfinis par <xref:System.Globalization.CultureInfo>. [xml:lang](../../xaml-services/xml-lang-handling-in-xaml.md) peut être hérité dans l’arborescence d’éléments (par les règles XML, pas nécessairement à cause de l’héritage de propriétés de dépendance) et sa valeur par défaut est une chaîne vide s’il n’est pas assigné explicitement.
 
- L’attribut de langue est très utile pour spécifier des dialectes. Par exemple, le français présente des différences orthographiques, lexicales et phonologiques en fonction de la zone géographique dans laquelle il est utilisé : en France, au Québec, en Belgique ou en Suisse. En outre, le chinois, le japonais et le coréen partagent des points de code dans [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], mais les formes idéographiques sont différentes et utilisent des polices totalement différentes.
+ L’attribut de langue est très utile pour spécifier des dialectes. Par exemple, le français présente des différences orthographiques, lexicales et phonologiques en fonction de la zone géographique dans laquelle il est utilisé : en France, au Québec, en Belgique ou en Suisse. En outre, le chinois, le japonais et le coréen partagent des points de code en Unicode, mais les formes idéographiques sont différentes et utilisent des polices totalement différentes.
 
  L’exemple de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] suivant utilise l’attribut de langage `fr-CA` pour spécifier le français canadien.
 
@@ -57,7 +57,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
 <a name="unicode"></a>
 ### <a name="unicode"></a>Unicode
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prend en charge toutes les fonctionnalités [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], y compris les substituts. Tant que le jeu de caractères peut être mappé à [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], il est pris en charge. Par exemple, le jeu de caractères GB18030 comprend quelques caractères mappés aux extensions A et B et aux paires de substitution du chinois, du japonais et du coréen (CFK) ; par conséquent, il est totalement pris en charge. Une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] peut utiliser <xref:System.Globalization.StringInfo> pour manipuler des chaînes sans savoir s’ils ont des paires de substitution ou des caractères d’association.
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prend en charge toutes les fonctionnalités Unicode, y compris les substituts. Tant que le jeu de caractères peut être mappé au format Unicode, il est pris en charge. Par exemple, le jeu de caractères GB18030 comprend quelques caractères mappés aux extensions A et B et aux paires de substitution du chinois, du japonais et du coréen (CFK) ; par conséquent, il est totalement pris en charge. Une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] peut utiliser <xref:System.Globalization.StringInfo> pour manipuler des chaînes sans savoir s’ils ont des paires de substitution ou des caractères d’association.
 
 <a name="design_intl_ui_with_xaml"></a>
 ## <a name="designing-an-international-user-interface-with-xaml"></a>Conception d’une interface utilisateur internationale avec le langage XAML
@@ -125,7 +125,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
  Tous les moteurs de système d’écriture prennent en charge les polices OpenType. Les polices OpenType peuvent inclure les tableaux de disposition OpenType qui permettent aux créateurs de polices de concevoir de meilleures polices typographiques internationales et haut de gamme. Les tableaux de disposition des polices OpenType contiennent des informations sur les substitutions de glyphe, le positionnement des glyphes, la justification et le positionnement de la ligne de base, ce qui permet aux applications de traitement de texte d’améliorer la disposition du texte.
 
- Les polices OpenType autorisent la gestion des jeux de glyphes volumineux à l’aide de l’encodage [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)]. Cet encodage est largement pris en charge au niveau international, comme les variantes de glyphes typographiques.
+ Les polices OpenType permettent de gérer des jeux de glyphes volumineux à l’aide de l’encodage Unicode. Cet encodage est largement pris en charge au niveau international, comme les variantes de glyphes typographiques.
 
  le rendu de texte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est alimenté par la technologie de sous-pixel ClearType de Microsoft qui prend en charge l’indépendance de résolution. La lisibilité est ainsi considérablement améliorée et les documents haute qualité de style magazine peuvent être pris en charge pour tous les scripts.
 

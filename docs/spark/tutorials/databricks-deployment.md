@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 035a3c36337413153ee0370aec154d48b84a4711
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 570f6bdb8eda462b815dfc7c45f6e9a3a515f0ad
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957249"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395880"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Déployer une application .NET pour Apache Spark sur Databricks
 
@@ -24,7 +24,7 @@ Dans ce didacticiel, vous apprendrez à :
 > - Déployer votre application sur Databricks
 > - Exécuter votre application
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Avant de commencer, procédez comme suit :
 
@@ -63,7 +63,7 @@ Avant de commencer, procédez comme suit :
 
 4. Chargez les éléments suivants sur un système de fichiers distribués (par exemple DBFS) auquel votre cluster a accès :
 
-   - `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Ce fichier jar est inclus dans le package NuGet [Microsoft.Spark](https://www.nuget.org/packages/Microsoft.Spark/) et est colocalisé dans le répertoire de sortie de la génération de votre application.
+   - `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar` : ce fichier jar est inclus dans le package NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) et colocalisé dans le répertoire de sortie de génération de votre application.
    - `<your app>.zip`
    - Les fichiers (comme les fichiers de dépendances ou les données communes accessibles à chaque worker) ou les assemblys (comme les DLL qui contiennent vos fonctions définies par l’utilisateur ou les bibliothèques dont dépend votre application) doivent être placés dans le répertoire de travail de chaque exécuteur.
 
@@ -71,7 +71,7 @@ Avant de commencer, procédez comme suit :
 
 [Databricks](https://databricks.com) est une plateforme qui fournit un traitement Big Data dans le cloud avec Apache Spark.
 
-> [!Note] 
+> [!NOTE]
 > [Azure Databricks](https://azure.microsoft.com/services/databricks/) et [AWS Databricks](https://databricks.com/aws) sont basés sur Linux. Par conséquent, si vous voulez déployer votre application sur Databricks, vérifiez que votre application est compatible avec .NET Standard et que vous utilisez le [compilateur .NET Core](https://dotnet.microsoft.com/download) pour compiler votre application.
 
 Databricks vous permet de soumettre des applications .NET pour Apache Spark à un cluster actif existant ou de créer un cluster chaque fois que vous lancez un travail. Pour ce faire, vous devez installer **Microsoft.Spark.Worker** avant de soumettre une application .NET pour Apache Spark.
@@ -103,7 +103,7 @@ Cette étape n’est nécessaire qu’une seule fois pour un cluster.
 
    ![Image d’action de script](./media/databricks-deployment/deployment-databricks-init-script.png)
 
-## <a name="run-your-app"></a>Exécuter votre application 
+## <a name="run-your-app"></a>Exécuter votre application
 
 Vous pouvez utiliser `set JAR` ou `spark-submit` pour soumettre votre travail à Databricks.
 
@@ -119,10 +119,10 @@ Vous pouvez utiliser `set JAR` ou `spark-submit` pour soumettre votre travail à
 
 3. Définissez les paramètres de façon appropriée.
 
-   | Paramètre   | Value                                                |
+   | Paramètre   | valeur                                                |
    |-------------|------------------------------------------------------|
    | Classe principale  | org. Apache. Spark. deploy. dotnet. DotnetRunner          |
-   | Arguments   | /dBFS/Apps/< votre-App-name >. zip < votre application-Class-main > |
+   | Arguments   | /dBFS/Apps/\<your-App-name >. zip \<your-App-main-Class > |
 
 4. Configurez le **cluster** pour qu’il pointe vers le cluster existant pour lequel vous avez créé le **script d’initialisation** dans la section précédente.
 
@@ -130,27 +130,27 @@ Vous pouvez utiliser `set JAR` ou `spark-submit` pour soumettre votre travail à
 
 1. Utilisez l’[interface CLI de Databricks](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html) pour charger votre application sur votre cluster Databricks.
 
-      ```bash
-      cd <path-to-your-app-publish-directory>
-      databricks fs cp <your-app-name>.zip dbfs:/apps/<your-app-name>.zip
-      ```
+    ```bash
+    cd <path-to-your-app-publish-directory>
+    databricks fs cp <your-app-name>.zip dbfs:/apps/<your-app-name>.zip
+    ```
 
 2. Cette étape est nécessaire seulement si les assemblys de votre application (par exemple des DLL contenant des fonctions définies par l’utilisateur ainsi que leurs dépendances) doivent être placés dans le répertoire de travail de chaque **Microsoft.Spark.Worker**.
 
    - Charger les assemblys de votre application sur votre cluster Databricks
-      
+
       ```bash
       cd <path-to-your-app-publish-directory>
       databricks fs cp <assembly>.dll dbfs:/apps/dependencies
       ```
 
    - Décommentez et modifiez la section des dépendances de l’application dans [db-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) pour la faire pointer vers le chemin des dépendances de votre application et la faire charger sur votre cluster Databricks.
-   
+
       ```bash
       cd <path-to-db-init-and-install-worker>
       databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
       ```
-   
+
    - Redémarrez votre cluster.
 
 3. Accédez à votre cluster Databricks dans votre espace de travail Databricks. Sous **Travaux**, sélectionnez votre travail, puis sélectionnez **Exécuter maintenant** pour exécuter votre travail.
@@ -163,9 +163,9 @@ La commande [spark-submit](https://spark.apache.org/docs/latest/submitting-appli
 
 2. Configurez `spark-submit` avec les paramètres suivants :
 
-      ```bash
-      ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
-      ```
+    ```bash
+    ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
+    ```
 
 3. Accédez à votre cluster Databricks dans votre espace de travail Databricks. Sous **Travaux**, sélectionnez votre travail, puis sélectionnez **Exécuter maintenant** pour exécuter votre travail.
 

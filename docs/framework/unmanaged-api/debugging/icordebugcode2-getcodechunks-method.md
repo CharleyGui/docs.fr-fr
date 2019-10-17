@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bdaf6391ca5c19f073708d6258ad5775bec9824
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d64773aa0d35f2e97232576d145dfcba624812ec
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700729"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395526"
 ---
 # <a name="icordebugcode2getcodechunks-method"></a>ICorDebugCode2::GetCodeChunks, méthode
 
@@ -41,26 +41,25 @@ HRESULT GetCodeChunks (
 
 ## <a name="parameters"></a>Paramètres
 
- `cbufSize`  
- dans Taille du tableau `chunks`.
+`cbufSize`  
+dans Taille du tableau `chunks`.
 
- `pcnumChunks`  
- à Nombre de segments retournés dans le tableau `chunks`.
+`pcnumChunks`  
+à Nombre de segments retournés dans le tableau `chunks`.
 
- `chunks`  
- à Tableau de structures « CodeChunkInfo », chacune représentant un segment de code unique. Si la valeur de `cbufSize` est égale à 0, ce paramètre peut avoir la valeur null.
+`chunks`  
+à Tableau de structures « CodeChunkInfo », chacune représentant un segment de code unique. Si la valeur de `cbufSize` est égale à 0, ce paramètre peut avoir la valeur null.
 
 ## <a name="remarks"></a>Notes
 
- Les segments de code ne se chevauchent jamais et suivent l’ordre dans lequel ils ont été concaténés par [ICorDebugCode :: GetCode](icordebugcode-getcode-method.md). Un objet de code MSIL (Microsoft Intermediate Language) dans le .NET Framework version 2,0 comprendra un seul segment de code.
+Les segments de code ne se chevauchent jamais et suivent l’ordre dans lequel ils ont été concaténés par [ICorDebugCode :: GetCode](icordebugcode-getcode-method.md). Un objet de code MSIL (Microsoft Intermediate Language) dans le .NET Framework version 2,0 comprendra un seul segment de code.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête :** CorDebug. idl, CorDebug. h
+**En-tête :** CorDebug.idl, CorDebug.h
 
- **Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
- 
+**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

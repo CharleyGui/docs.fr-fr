@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a81f4a53954c559ab12e27bcf039b7b1a1804cc
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 1b7cbadbd1494d5e4d1488dd12296f4f90890127
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700794"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395494"
 ---
 # <a name="icordebugcodeisil-method"></a>ICorDebugCode::IsIL, méthode
 
@@ -37,16 +37,16 @@ HRESULT IsIL (
 ```
 
 ## <a name="parameters"></a>Paramètres
- `pbIL`  
- [out] `true` si cet `ICorDebugCode` représente du code qui a été compilé en MSIL ; dans le cas contraire, `false`.
 
-## <a name="requirements"></a>Configuration requise
+`pbIL`  
+[out] `true` si cet `ICorDebugCode` représente du code qui a été compilé en MSIL ; dans le cas contraire, `false`.
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications
 
- **En-tête :** CorDebug. idl, CorDebug. h  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **Bibliothèque** CorGuids.lib  
+**En-tête :** CorDebug.idl, CorDebug.h
 
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
- 
+**Bibliothèque :** CorGuids.lib
+
+**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

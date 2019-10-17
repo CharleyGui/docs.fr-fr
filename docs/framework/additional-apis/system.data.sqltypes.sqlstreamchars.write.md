@@ -1,5 +1,5 @@
 ---
-title: SqlStreamChars.Write (Char [], Int32, Int32), méthode (System.Data.SqlTypes)
+title: Méthode SqlStreamChars. Write (Char [], Int32, Int32) (System. Data. SqlTypes)
 author: stevestein
 ms.author: sstein
 ms.date: 12/20/2018
@@ -12,16 +12,16 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 4084c7161eaa91d78eab32f1c14624e0032cdfcf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d952041122ceb3824712bd81cab7ce4789c9db8
+ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705907"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72395587"
 ---
-# <a name="sqlstreamcharswritechar-int32-int32-method"></a>Méthode de SqlStreamChars.Write (Char [], Int32, Int32)
+# <a name="sqlstreamcharswritechar-int32-int32-method"></a>SqlStreamChars. Write (Char [], Int32, Int32), méthode
 
-En cas de substitution dans une classe dérivée, écrit une séquence de caractères dans le flux actuel et avance la position actuelle dans ce flux du nombre de caractères écrits. L’assembly qui contient cette méthode a une relation de friend avec SQLAccess.dll. Il est prévu pour une utilisation par SQL Server. Pour les autres bases de données, utilisez le mécanisme d’hébergement fourni par cette base de données.
+En cas de substitution dans une classe dérivée, écrit une séquence de caractères dans le flux actuel et avance la position actuelle dans ce flux du nombre de caractères écrits. L’assembly qui contient cette méthode a une relation Friend avec SQLAccess. dll. Elle est destinée à être utilisée par SQL Server. Pour les autres bases de données, utilisez le mécanisme d’hébergement fourni par cette base de données.
 
 ```csharp
 public abstract void Write (char[] buffer, int offset, int count);
@@ -30,25 +30,25 @@ public abstract void Write (char[] buffer, int offset, int count);
 ## <a name="parameters"></a>Paramètres
 
 `buffer`  
-Un tableau de caractères à écrire.
+Tableau de caractères à écrire.
 
 `offset`  
-Un décalage relatif à l’origine.
+Décalage par rapport à Origin.
 
 `count`  
-Le nombre de caractères à écrire dans le flux actuel.
+Nombre de caractères à écrire dans le flux actuel.
 
 ## <a name="remarks"></a>Notes
 
 > [!WARNING]
-> Le `SqlStreamChars.Write` méthode est privée et qu’il n’est pas destiné à être utilisé directement dans votre code.
+> La méthode `SqlStreamChars.Write` est privée et n’est pas destinée à être utilisée directement dans votre code.
 >
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de cette méthode en cas d’écriture dans une application de production.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Data.SqlTypes>
 
-**Assembly :** System.Data (dans System.Data.dll)
+**Assembly :** System. Data (dans System. Data. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.
