@@ -1,5 +1,0 @@
-- name: Chaînes
-  href: index.md
-  items:
-    - name: "Procédure\_: Déterminer si une chaîne représente une valeur numérique"
-      href: how-to-determine-whether-a-string-represents-a-numeric-value.md

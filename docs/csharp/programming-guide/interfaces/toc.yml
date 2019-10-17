@@ -1,9 +1,0 @@
-- name: Interfaces
-  href: index.md
-  items:
-    - name: Implémentation d’interface explicite
-      href: explicit-interface-implementation.md
-    - name: "Procédure\_: Implémenter de manière explicite des membres d’interface"
-      href: how-to-explicitly-implement-interface-members.md
-    - name: "Procédure\_: Implémenter de manière explicite des membres de deux interfaces"
-      href: how-to-explicitly-implement-members-of-two-interfaces.md

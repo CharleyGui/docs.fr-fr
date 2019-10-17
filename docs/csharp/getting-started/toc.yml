@@ -1,6 +1,0 @@
-- name: Prise en main
-  items:
-    - name: Comment utiliser ce guide
-      href: index.md
-    - name: 'Introduction au langage C# et au .NET Framework'
-      href: introduction-to-the-csharp-language-and-the-net-framework.md
