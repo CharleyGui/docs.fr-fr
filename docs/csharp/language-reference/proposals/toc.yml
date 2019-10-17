@@ -1,0 +1,80 @@
+- name: Dernières spécifications de fonctionnalités
+  items:
+    - name: 'Propositions de spécification C# 7.0'
+      items:
+        - name: Critères spéciaux
+          href: ../../../../_csharplang/proposals/csharp-7.0/pattern-matching.md
+        - name: Fonctions locales
+          href: ../../../../_csharplang/proposals/csharp-7.0/local-functions.md
+        - name: Déclarations de variables out
+          href: ../../../../_csharplang/proposals/csharp-7.0/out-var.md
+        - name: Expressions throw
+          href: ../../../../_csharplang/proposals/csharp-7.0/throw-expression.md
+        - name: Littéraux binaires
+          href: ../../../../_csharplang/proposals/csharp-7.0/binary-literals.md
+        - name: Séparateurs de chiffres
+          href: ../../../../_csharplang/proposals/csharp-7.0/digit-separators.md
+    - name: 'Propositions de spécification C# 7.1'
+      items:
+        - name: Méthode main asynchrone
+          href: ../../../../_csharplang/proposals/csharp-7.1/async-main.md
+        - name: Expressions par défaut
+          href: ../../../../_csharplang/proposals/csharp-7.1/target-typed-default.md
+        - name: Inférence des noms de tuples
+          href: ../../../../_csharplang/proposals/csharp-7.1/infer-tuple-names.md
+        - name: Critères spéciaux avec génériques
+          href: ../../../../_csharplang/proposals/csharp-7.1/generics-pattern-match.md
+    - name: 'Propositions de spécification C# 7.2'
+      items:
+        - name: Références en lecture seule
+          href: ../../../../_csharplang/proposals/csharp-7.2/readonly-ref.md
+        - name: Sécurité au moment de la compilation pour les types référence
+          href: ../../../../_csharplang/proposals/csharp-7.2/span-safety.md
+        - name: Arguments nommés non placés en position de fin
+          href: ../../../../_csharplang/proposals/csharp-7.2/non-trailing-named-arguments.md
+        - name: Privé protégé
+          href: ../../../../_csharplang/proposals/csharp-7.2/private-protected.md
+        - name: Référence conditionnelle
+          href: ../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
+        - name: Séparateur numérique de début
+          href: ../../../../_csharplang/proposals/csharp-7.2/leading-separator.md
+    - name: "Propositions de spécification C#\_7.3"
+      items:
+        - name: Contraintes de type générique non managées
+          href: ../../../../_csharplang/proposals/csharp-7.3/blittable.md
+        - name: 'L’indexation des champs `fixed` ne doit pas nécessiter d’épinglage, que le contexte soit déplaçable ou non'
+          href: ../../../../_csharplang/proposals/csharp-7.3/indexing-movable-fixed-fields.md
+        - name: Instruction `fixed` basée sur un modèle
+          href: ../../../../_csharplang/proposals/csharp-7.3/pattern-based-fixed.md
+        - name: Réattribution locale de référence
+          href: ../../../../_csharplang/proposals/csharp-7.3/ref-local-reassignment.md
+        - name: Initialiseurs de tableaux stackalloc
+          href: ../../../../_csharplang/proposals/csharp-7.3/stackalloc-array-initializers.md
+        - name: Attributs ciblés par des champs de propriétés implémentées automatiquement
+          href: ../../../../_csharplang/proposals/csharp-7.3/auto-prop-field-attrs.md
+        - name: Variables d’expression dans les initialiseurs
+          href: ../../../../_csharplang/proposals/csharp-7.3/expression-variables-in-initializers.md
+        - name: Égalité (==) et inégalité (!=) de tuples
+          href: ../../../../_csharplang/proposals/csharp-7.3/tuple-equality.md
+        - name: Candidats de surcharge améliorés
+          href: ../../../../_csharplang/proposals/csharp-7.3/improved-overload-candidates.md
+    - name: 'Propositions de spécification C# 8.0'
+      items:
+        - name: Types références Nullables - Proposition
+          href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
+        - name: Types référence Nullable - Spécification
+          href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
+        - name: Critères spéciaux récursifs
+          href: ../../../../_csharplang/proposals/csharp-8.0/patterns.md
+        - name: Méthodes d’interface par défaut
+          href: ../../../../_csharplang/proposals/csharp-8.0/default-interface-methods.md
+        - name: Flux asynchrones
+          href: ../../../../_csharplang/proposals/csharp-8.0/async-streams.md
+        - name: Plages
+          href: ../../../../_csharplang/proposals/csharp-8.0/ranges.md
+        - name: Déclarations using et using basées sur un modèle
+          href: ../../../../_csharplang/proposals/csharp-8.0/using.md
+        - name: Attribution de fusion Null
+          href: ../../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
+        - name: Membres d'instance en lecture seule
+          href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
