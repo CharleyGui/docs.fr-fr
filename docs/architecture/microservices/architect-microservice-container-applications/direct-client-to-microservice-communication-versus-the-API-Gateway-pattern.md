@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: d895ae50e50ade2f8285117491733d5c9814b732
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 6b42650b2dbce093f12fe02b1605c95076dc8592
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834438"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522947"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -17,7 +17,7 @@ Dans une architecture de microservices, chaque microservice expose un ensemble d
 
 Une approche possible consiste à utiliser une architecture de communication directe de client à microservice. Dans cette approche, une application cliente peut envoyer des demandes directement à certains des microservices, comme le montre la figure 4-12.
 
-![Diagramme montrant l’architecture de communication entre les clients et les microservices.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/direct-client-to-microservice-communication.png)
+![Diagramme montrant l’architecture de communication entre les clients et les microservices.](./media/direct-client-to-microservice-communication.png)
 
 **Figure 4-12**. Utilisation d’une architecture de communication directe de client à microservice
 
@@ -53,13 +53,13 @@ Dans une architecture microservices, les applications clientes doivent général
 
 Par conséquent, avoir un niveau ou une couche intermédiaire d’indirection (passerelle) peut être très pratique pour les applications basées sur des microservices. Si vous n’avez pas de passerelles d’API, les applications clientes doivent envoyer des requêtes directement aux microservices, ce qui entraîne les problèmes suivants :
 
-- **Couplage** : Sans le modèle de passerelle d’API, les applications clientes sont couplées aux microservices internes. Les applications clientes doivent savoir comment les différentes zones de l’application sont décomposées en microservices. Lors du développement ou de la refactorisation des microservices internes, ces actions ont un impact négatif sur la maintenance car elles entraînent des modifications avec rupture dans les applications clientes en raison de la référence directe aux microservices internes à partir des applications clientes. Les applications clientes doivent être fréquemment mises à jour, ce qui perturbe le développement de la solution.
+- **Couplage** : sans le modèle de passerelle d’API, les applications clientes sont couplées aux microservices internes. Les applications clientes doivent savoir comment les différentes zones de l’application sont décomposées en microservices. Lors du développement ou de la refactorisation des microservices internes, ces actions ont un impact négatif sur la maintenance car elles entraînent des modifications avec rupture dans les applications clientes en raison de la référence directe aux microservices internes à partir des applications clientes. Les applications clientes doivent être fréquemment mises à jour, ce qui perturbe le développement de la solution.
 
-- **Trop d’allers-retours** : Un seul écran ou une seule page dans l’application cliente peut nécessiter plusieurs appels à différents services. Cela peut entraîner plusieurs allers-retours sur le réseau entre le client et le serveur, augmentant considérablement la latence. L’agrégation gérée dans un niveau intermédiaire peut améliorer les performances et l’expérience utilisateur pour l’application cliente.
+- **Trop d’allers-retours**: un seul écran ou une seule page dans l’application cliente peut nécessiter plusieurs appels à différents services. Cela peut entraîner plusieurs allers-retours sur le réseau entre le client et le serveur, augmentant considérablement la latence. L’agrégation gérée dans un niveau intermédiaire peut améliorer les performances et l’expérience utilisateur pour l’application cliente.
 
-- **Problèmes de sécurité** : Sans passerelle, tous les microservices doivent être exposés au « monde externe », augmentant ainsi la surface d’attaque même si vous masquez les microservices internes qui ne sont pas directement utilisés par les applications clientes. Plus la surface d’attaque est réduite, plus votre application peut être sécurisée.
+- **Problèmes de sécurité** : sans passerelle, tous les microservices doivent être exposés au « monde externe », augmentant ainsi la surface d’attaque même si vous masquez les microservices internes qui ne sont pas directement utilisés par les applications clientes. Plus la surface d’attaque est réduite, plus votre application peut être sécurisée.
 
-- **Problèmes transversaux** : Chaque microservice publié doit gérer des problèmes comme une autorisation, SSL, etc. Dans de nombreux cas, ces problèmes pourraient être traités dans un même niveau afin de simplifier les microservices internes.
+- **Problèmes croisés**: chaque microservice publié publiquement doit gérer des problèmes tels que l’autorisation, le protocole SSL, etc. Dans de nombreux cas, ces problèmes peuvent être traités dans un seul niveau afin que les microservices internes soient simplifiés.
 
 ## <a name="what-is-the-api-gateway-pattern"></a>Présentation du modèle Passerelle d’API
 
@@ -132,7 +132,7 @@ En plus de répondre à vos besoins de passerelle API, le service [Gestion des A
 
 **Figure 4-14**. Utilisation de Gestion des API Azure pour votre passerelle d’API
 
-Le service Gestion des API Azure apporte des réponses à vos besoins de passerelle API et de gestion (journalisation, sécurité, contrôle, etc.). Dans ce cas, lors l’utilisation d’un produit comme Gestion des API Azure, le fait d’avoir une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins », ce qui veut dire que vous n’implémentez pas de code C# personnalisé susceptible d’évoluer vers un composant monolithique. 
+La gestion des API Azure résout vos besoins en matière de passerelle API et de gestion, comme la journalisation, la sécurité, le contrôle, etc. Dans ce cas, lors de l’utilisation d’un produit comme gestion des API Azure, le fait que vous ayez une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins » C# , ce qui signifie que vous n’implémentez pas de code personnalisé qui pourrait évoluer vers un composant monolithique. 
 
 Les produits Passerelle d’API agissent généralement comme un proxy inversé pour la communication en entrée, où vous pouvez aussi filtrer les API des microservices internes et appliquer une autorisation aux API publiées dans ce niveau unique.
 
@@ -146,7 +146,7 @@ Dans ce guide et dans l’exemple d’application de référence (eShopOnContain
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle API .NET Core open source conçue spécifiquement pour une architecture de microservices qui nécessite des points d’entrée unifiés dans son système. Elle est légère, rapide, évolutive et fournit le routage et l’authentification, parmi de nombreuses autres fonctionnalités.
 
-La principale raison de choisir Ocelot pour l’[application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) vient du fait qu’Ocelot est une passerelle API .NET Core légère que vous pouvez déployer dans le même environnement de déploiement d’application où vous déployez vos microservices/conteneurs (hôte Docker, Kubernetes et ainsi de suite). Et comme elle s’appuie sur .NET Core, elle est multiplateforme et peut donc être déployée sur Windows ou Linux.
+La principale raison de choisir Ocelot pour l' [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est que Ocelot est une passerelle d’API légère .net Core que vous pouvez déployer dans le même environnement de déploiement d’application que celui dans lequel vous déployez vos microservices/ conteneurs, tels qu’un hôte de station d’accueil, Kubernetes, etc. Et étant donné qu’il est basé sur .NET Core, il s’agit d’une plateforme multiplateforme qui vous permet de déployer sur Linux ou Windows.
 
 Les diagrammes précédents montrant des passerelles d’API personnalisée en cours d’exécution dans les conteneurs expliquent précisément comment vous pouvez également exécuter Ocelot dans un conteneur et dans une application basée sur un microservice.
 
@@ -170,7 +170,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Chris Richardson. Modèle : Passerelle API / Backend for Frontend (BFF)**  \
+- **Chris Richardson. Modèle : passerelle API/backend pour les  \ frontaux**
   <https://microservices.io/patterns/apigateway.html>
 
 - **Modèle de passerelle API** \
@@ -182,10 +182,10 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 - **Gestion des API Azure** \
   <https://azure.microsoft.com/services/api-management/>
 
-- **Udi Dahan. Service Oriented Composition** \
+- **UDI Dahan. @No__t_1 de la composition orientée services**
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
-- **Clemens Vasters. Vidéo « Messaging and Microservices » de la conférence GOTO 2016** \
+- **Clemens. Messagerie et microservices à GOTO 2016 (vidéo)**  \
   <https://www.youtube.com/watch?v=rXi5CLjIQ9k>
 
 - **API Gateway in a Nutshell** (série de tutoriels sur la passerelle API ASP.Net Core) \

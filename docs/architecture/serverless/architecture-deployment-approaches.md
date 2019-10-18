@@ -4,12 +4,12 @@ description: Guide sur les différentes façons dont les architectures d’entre
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 4cc8442509fc8a0e2cc0eb797365423458e77684
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: c745a4eb1c6f4a00bf139100b02f31cf3327d01e
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834336"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522731"
 ---
 # <a name="architecture-deployment-approaches"></a>Approches du déploiement de l’architecture
 
@@ -19,38 +19,38 @@ Quelle que soit l’approche d’architecture utilisée pour concevoir une appli
 
 Le [modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) est une architecture mature qui fait simplement référence aux applications qui séparent les différentes couches logiques en niveaux physiques distincts. L’architecture multiniveau est une implémentation physique de l’architecture à N couches. L’implémentation la plus courante de cette architecture comprend les éléments suivants :
 
-* Une couche de présentation, par exemple une application Web.
-* Une API ou une couche d’accès aux données, telle qu’une API REST.
-* Une couche de données, telle qu’une base de données SQL.
+- Une couche de présentation, par exemple une application Web.
+- Une API ou une couche d’accès aux données, telle qu’une API REST.
+- Une couche de données, telle qu’une base de données SQL.
 
 ![Architecture multiniveau](./media/n-tier-architecture.png)
 
 Les solutions multiniveaux présentent les caractéristiques suivantes :
 
-* Les projets sont généralement alignés sur des niveaux.
-* Les tests peuvent être approchés différemment par niveau.
-* Les niveaux fournissent des couches d’abstraction, par exemple la couche présentation ignore généralement les détails d’implémentation de la couche données.
-* En règle générale, les couches interagissent uniquement avec les couches adjacentes.
-* Les mises en production sont souvent gérées au niveau du projet et, par conséquent, de niveau. Une modification d’API simple peut nécessiter une nouvelle version d’une couche intermédiaire entière.
+- Les projets sont généralement alignés sur des niveaux.
+- Les tests peuvent être approchés différemment par niveau.
+- Les niveaux fournissent des couches d’abstraction, par exemple la couche présentation ignore généralement les détails d’implémentation de la couche données.
+- En règle générale, les couches interagissent uniquement avec les couches adjacentes.
+- Les mises en production sont souvent gérées au niveau du projet et, par conséquent, de niveau. Une modification d’API simple peut nécessiter une nouvelle version d’une couche intermédiaire entière.
 
 Cette approche offre plusieurs avantages, notamment :
 
-* Isolation de la base de données (souvent, le serveur frontal ne dispose pas d’un accès direct à la base de données back end).
-* La réutilisation de l’API (par exemple, les clients mobiles, de bureau et d’applications Web peuvent réutiliser les mêmes API).
-* Possibilité de mettre à l’échelle les niveaux indépendamment les uns des autres.
-* Isolation de la refactorisation : un niveau peut être refactorisé sans affecter les autres niveaux.
+- Isolation de la base de données (souvent, le serveur frontal ne dispose pas d’un accès direct à la base de données back end).
+- La réutilisation de l’API (par exemple, les clients mobiles, de bureau et d’applications Web peuvent réutiliser les mêmes API).
+- Possibilité de mettre à l’échelle les niveaux indépendamment les uns des autres.
+- Isolation de la refactorisation : un niveau peut être refactorisé sans affecter les autres niveaux.
 
 ## <a name="on-premises-and-infrastructure-as-a-service-iaas"></a>En local et infrastructure en tant que service (IaaS)
 
 L’approche traditionnelle pour héberger des applications requiert l’achat de matériel et la gestion de toutes les installations logicielles, y compris le système d’exploitation. À l’origine, cela impliquait des centres de données et du matériel physiques coûteux. Les défis liés au fonctionnement du matériel physique sont nombreux, y compris :
 
-* Le besoin d’acheter de l’excédent pour les scénarios « juste au cas » ou pics de demande.
-* Sécurisation de l’accès physique au matériel.
-* Responsabilité en cas de défaillance matérielle (défaillance de disque, par exemple).
-* Température.
-* Configuration des routeurs et des équilibreurs de charge.
-* Redondance de l’alimentation.
-* Sécurisation de l’accès aux logiciels.
+- Le besoin d’acheter de l’excédent pour les scénarios « juste au cas » ou pics de demande.
+- Sécurisation de l’accès physique au matériel.
+- Responsabilité en cas de défaillance matérielle (défaillance de disque, par exemple).
+- Température.
+- Configuration des routeurs et des équilibreurs de charge.
+- Redondance de l’alimentation.
+- Sécurisation de l’accès aux logiciels.
 
 ![Approche IaaS](./media/iaas-approach.png)
 
@@ -68,10 +68,10 @@ PaaS (Platform as a service) offre des solutions configurées que les développe
 
 PaaS répond aux défis communs à IaaS. PaaS permet au développeur de se concentrer sur le code ou le schéma de base de données plutôt que sur la façon dont il est déployé. Les avantages de PaaS sont les suivants :
 
-* Payez pour les modèles d’utilisation qui éliminent la surcharge liée à l’investissement sur des machines inactives.
-* Le déploiement direct et les pipelines d’intégration continue, d’intégration continue (CI) et de livraison continue (CD) améliorés.
-* Mises à niveau automatiques, mises à jour et correctifs de sécurité.
-* Montée en puissance et montée en puissance du bouton de commande (mise à l’échelle élastique).
+- Payez pour les modèles d’utilisation qui éliminent la surcharge liée à l’investissement sur des machines inactives.
+- Le déploiement direct et les pipelines d’intégration continue, d’intégration continue (CI) et de livraison continue (CD) améliorés.
+- Mises à niveau automatiques, mises à jour et correctifs de sécurité.
+- Montée en puissance et montée en puissance du bouton de commande (mise à l’échelle élastique).
 
 Le principal inconvénient de PaaS traditionnellement est le verrouillage des fournisseurs. Par exemple, certains fournisseurs PaaS prennent uniquement en charge ASP.NET, node. js, ou d’autres langages et plateformes spécifiques. Des produits tels que Azure App Service ont évolué pour prendre en charge plusieurs plateformes et prennent en charge une variété de langages et d’infrastructures pour l’hébergement d’applications Web.
 
@@ -89,11 +89,11 @@ Les conteneurs sont une solution intéressante qui offre des avantages de type P
 
 Les conteneurs présentent les avantages suivants :
 
-* Légère et portable
-* Autonome, il n’est donc pas nécessaire d’installer les dépendances
-* Fournir un environnement cohérent indépendamment de l’hôte (s’exécute exactement comme sur un ordinateur portable comme sur un serveur Cloud)
-* Peut être approvisionné rapidement pour la montée en puissance parallèle
-* Peut être redémarré rapidement pour récupérer suite à une défaillance
+- Légère et portable
+- Autonome, il n’est donc pas nécessaire d’installer les dépendances
+- Fournir un environnement cohérent indépendamment de l’hôte (s’exécute exactement comme sur un ordinateur portable comme sur un serveur Cloud)
+- Peut être approvisionné rapidement pour la montée en puissance parallèle
+- Peut être redémarré rapidement pour récupérer suite à une défaillance
 
 Un conteneur s’exécute sur un hôte de conteneur (qui peut à son tour s’exécuter sur un ordinateur nu ou un ordinateur virtuel). Plusieurs conteneurs ou instances des mêmes conteneurs peuvent s’exécuter sur un seul hôte. Pour le basculement et la résilience véritables, les conteneurs doivent être mis à l’échelle entre les ordinateurs hôtes.
 
@@ -125,10 +125,10 @@ L’illustration suivante montre les quatre composants sans serveur. Une requêt
 
 Les avantages des serveurs sans serveur sont les suivants :
 
-* **Haute densité.** De nombreuses instances du même code sans serveur peuvent s’exécuter sur le même hôte par rapport aux conteneurs ou aux machines virtuelles. Les instances sont mises à l’échelle sur plusieurs hôtes montée en puissance et en résilience.
-* **Micro-facturation**. La plupart des fournisseurs sans serveur facturent en fonction des exécutions sans serveur, ce qui permet de réaliser des économies considérables dans certains scénarios.
-* Mise à l' **échelle instantanée**. Sans serveur peut être mis à l’échelle pour faire correspondre automatiquement et rapidement les charges de travail.
-* **Délai de commercialisation plus rapide** Les développeurs se concentrent sur le code et le déploient directement sur la plateforme sans serveur. Les composants peuvent être libérés indépendamment l’un de l’autre.
+- **Haute densité.** De nombreuses instances du même code sans serveur peuvent s’exécuter sur le même hôte par rapport aux conteneurs ou aux machines virtuelles. Les instances sont mises à l’échelle sur plusieurs hôtes montée en puissance et en résilience.
+- **Micro-facturation.** La plupart des fournisseurs sans serveur facturent en fonction des exécutions sans serveur, ce qui permet de réaliser des économies considérables dans certains scénarios.
+- **Mise à l’échelle instantanée.** Sans serveur peut être mis à l’échelle pour faire correspondre automatiquement et rapidement les charges de travail.
+- **Délai de commercialisation plus rapide.** Les développeurs se concentrent sur le code et le déploient directement sur la plateforme sans serveur. Les composants peuvent être libérés indépendamment l’un de l’autre.
 
 Le plus souvent, sans serveur, il est abordé dans le contexte de Compute, mais il peut également s’appliquer aux données. Par exemple, [Azure SQL](https://docs.microsoft.com/azure/sql-database) et [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db) fournissent des bases de données Cloud qui ne nécessitent pas la configuration d’ordinateurs hôtes ou de clusters. Ce guide se concentre sur le calcul sans serveur.
 
@@ -139,31 +139,31 @@ Il existe un large éventail de choix disponibles pour l’architecture, y compr
 |         |IaaS     |PaaS     |Conteneur|Sans serveur|
 |---------|---------|---------|---------|----------|
 |**Échelle**|MACHINES       |Instance |Application      |Fonction  |
-|**Extrait**|Matériel|Plateforme|Hôte de système d’exploitation|Runtime   |
+|**Extrait**|Matériel|Plate-forme|Hôte de système d’exploitation|Exécution   |
 |**Unités** |MACHINES       |Projet  |Image    |Code      |
-|**Durée de vie**|suivent|Jours à mois|Minutes et jours|Millisecondes en minutes|
+|**Durée de vie**|Suivent|Jours à mois|Minutes et jours|Millisecondes en minutes|
 |**Entière**|Applications, dépendances, Runtime et système d’exploitation|Applications et dépendances|Applications, dépendances et Runtime|Fonction
 
-* L' **échelle** fait référence à l’unité utilisée pour mettre à l’échelle l’application
-* **Abstracts** fait référence à la couche qui est abstraite par l’implémentation
-* **Unit** fait référence à l’étendue de ce qui est déployé
-* La **durée de vie** fait référence au runtime classique d’une instance spécifique
-* La **responsabilité** fait référence à la surcharge liée à la création, au déploiement et à la maintenance de l’application.
+- L' **échelle** fait référence à l’unité utilisée pour mettre à l’échelle l’application
+- **Abstracts** fait référence à la couche qui est abstraite par l’implémentation
+- **Unit** fait référence à l’étendue de ce qui est déployé
+- La **durée de vie** fait référence au runtime classique d’une instance spécifique
+- La **responsabilité** fait référence à la surcharge liée à la création, au déploiement et à la maintenance de l’application.
 
 Le chapitre suivant se concentre sur l’architecture sans serveur, les cas d’utilisation et les modèles de conception.
 
 ## <a name="recommended-resources"></a>Ressources recommandées
 
-* [Guide d’architecture des applications Azure](https://docs.microsoft.com/azure/architecture/guide/)
-* [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
-* [Azure SQL](https://docs.microsoft.com/azure/sql-database)
-* [Modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
-* [Kubernetes sur Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-* [Microservices](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
-* [Architecture de référence multiniveau d’ordinateur virtuel](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
-* [Machines virtuelles](https://docs.microsoft.com/azure/virtual-machines/)
-* [Qu’est-ce que Docker ?](../microservices/container-docker-introduction/docker-defined.md)
-* [Application SaaS Wingtip tickets](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
+- [Guide d’architecture des applications Azure](https://docs.microsoft.com/azure/architecture/guide/)
+- [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
+- [SQL Azure](https://docs.microsoft.com/azure/sql-database)
+- [Modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
+- [Kubernetes sur Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+- [Microservices](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
+- [Architecture de référence multiniveau d’ordinateur virtuel](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
+- [Machines virtuelles](https://docs.microsoft.com/azure/virtual-machines/)
+- [Qu’est-ce que Docker ?](../microservices/container-docker-introduction/docker-defined.md)
+- [Application SaaS Wingtip tickets](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
 >[!div class="step-by-step"]
 >[Précédent](architecture-approaches.md)

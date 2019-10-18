@@ -4,12 +4,12 @@ description: Application Insights est une plateforme de diagnostic sans serveur 
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 1f5b99fba448c2c1c12139524ffdcd3708b3c956
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7c1013ac029645a2da44aaf1c3b6ba74ca3f3dde
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577722"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522743"
 ---
 # <a name="telemetry-with-application-insights"></a>Télémétrie avec Application Insights
 
@@ -17,18 +17,18 @@ ms.locfileid: "69577722"
 
 ![Logo Application Insights](./media/application-insights-logo.png)
 
-L’ajout d’Application Insights à des applications existantes est aussi simple que l’ajout d’une clé d’instrumentation aux paramètres de votre application. Avec Application Insights vous pouvez:
+L’ajout d’Application Insights à des applications existantes est aussi simple que l’ajout d’une clé d’instrumentation aux paramètres de votre application. Avec Application Insights vous pouvez :
 
-* Créer des graphiques et des alertes personnalisés en fonction de métriques telles que le nombre d’appels de fonction, le temps nécessaire pour exécuter une fonction et les exceptions
-* Analyser les échecs et les exceptions de serveur
-* Explorez les performances par fonctionnement et mesurez le temps nécessaire pour appeler des dépendances tierces
-* Surveiller l’utilisation du processeur, la mémoire et les débits sur tous les serveurs qui hébergent vos applications de fonction
-* Afficher un flux Live de métriques, notamment le nombre de demandes et la latence de vos applications de fonction
-* Utilisez [Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) pour rechercher, interroger et créer des graphiques personnalisés sur vos données de fonction
+- Créer des graphiques et des alertes personnalisés en fonction de métriques telles que le nombre d’appels de fonction, le temps nécessaire pour exécuter une fonction et les exceptions
+- Analyser les échecs et les exceptions de serveur
+- Explorez les performances par fonctionnement et mesurez le temps nécessaire pour appeler des dépendances tierces
+- Surveiller l’utilisation du processeur, la mémoire et les débits sur tous les serveurs qui hébergent vos applications de fonction
+- Afficher un flux Live de métriques, notamment le nombre de demandes et la latence de vos applications de fonction
+- Utilisez [Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) pour rechercher, interroger et créer des graphiques personnalisés sur vos données de fonction
 
 ![Metrics Explorer](./media/metrics-explorer.png)
 
-En plus des données de télémétrie intégrées, il est également possible de générer des données de télémétrie personnalisées. L’extrait de code suivant crée un client de télémétrie personnalisé à l’aide de la clé d’instrumentation définie pour l’application de fonction:
+En plus des données de télémétrie intégrées, il est également possible de générer des données de télémétrie personnalisées. L’extrait de code suivant crée un client de télémétrie personnalisé à l’aide de la clé d’instrumentation définie pour l’application de fonction :
 
 ```csharp
 public static TelemetryClient telemetry = new TelemetryClient()
@@ -47,7 +47,7 @@ await table.ExecuteAsync(operation);
 telemetry.TrackDependency("AzureTableStorageInsert", "Insert", startTime, timer.Elapsed, true);
 ```
 
-Le graphique de performances qui en résulte est affiché:
+Le graphique de performances qui en résulte est affiché :
 
 ![Télémétrie personnalisée](./media/custom-telemetry.png)
 
@@ -55,7 +55,7 @@ La télémétrie personnalisée révèle que la durée moyenne d’insertion d�
 
 Application Insights offre un moyen puissant et pratique de consigner des données de télémétrie détaillées sur vos applications sans serveur. Vous disposez d’un contrôle total sur le niveau de suivi et de journalisation fourni. Vous pouvez suivre des statistiques personnalisées telles que les événements, les dépendances et le mode page. Enfin, les analyses puissantes vous permettent d’écrire des requêtes qui posent des questions importantes et génèrent des graphiques et des Insights avancés.
 
-Pour plus d’informations, consultez [Surveiller l’exécution des fonctions Azure](https://docs.microsoft.com/azure/azure-functions/functions-monitoring).
+Pour plus d’informations, consultez [surveiller Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-monitoring).
 
 >[!div class="step-by-step"]
 >[Précédent](azure-functions.md)

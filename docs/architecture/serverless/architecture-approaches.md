@@ -4,12 +4,12 @@ description: Présentation des approches d’architecture permettant de créer d
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: ee529abd1f6955d4f542464dd9a2380dd663571f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 74de96bef48f16ced4adf82855a740aa0afcdf1d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577802"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522895"
 ---
 # <a name="architecture-approaches"></a>Approches de l’architecture
 
@@ -33,13 +33,13 @@ L’approche monolithique présente plusieurs avantages. Il est souvent facile d
 
 Malheureusement, le modèle monolithique a tendance à s’arrêter à l’échelle. Les inconvénients majeurs de l’approche monolithique sont les suivants :
 
-* Il est difficile de travailler en parallèle dans la même base de code.
-* Toute modification, quel que soit son degré de simplicité, requiert le déploiement d’une nouvelle version de l’application entière.
-* La refactorisation peut avoir un impact sur l’ensemble de l’application.
-* Souvent, la seule solution à mettre à l’échelle consiste à créer plusieurs copies gourmandes en ressources du monolithique.
-* À mesure que les systèmes sont développés ou que d’autres systèmes sont acquis, l’intégration peut être difficile.
-* Il peut être difficile de tester en raison de la nécessité de configurer l’ensemble du monolithique.
-* La réutilisation du code est délicate et souvent d’autres applications finissent par avoir leurs propres copies du code.
+- Il est difficile de travailler en parallèle dans la même base de code.
+- Toute modification, quel que soit son degré de simplicité, requiert le déploiement d’une nouvelle version de l’application entière.
+- La refactorisation peut avoir un impact sur l’ensemble de l’application.
+- Souvent, la seule solution à mettre à l’échelle consiste à créer plusieurs copies gourmandes en ressources du monolithique.
+- À mesure que les systèmes sont développés ou que d’autres systèmes sont acquis, l’intégration peut être difficile.
+- Il peut être difficile de tester en raison de la nécessité de configurer l’ensemble du monolithique.
+- La réutilisation du code est délicate et souvent d’autres applications finissent par avoir leurs propres copies du code.
 
 De nombreuses entreprises considèrent le cloud comme une opportunité de migrer des applications monolithiques et de les Refactoriser à des modèles plus utilisables. Il est courant de décomposer les applications et les composants individuels pour leur permettre d’être gérés, déployés et mis à l’échelle séparément.
 
@@ -47,9 +47,9 @@ De nombreuses entreprises considèrent le cloud comme une opportunité de migrer
 
 Logique d’application de partition d’application à N couches dans des couches spécifiques. Les couches les plus courantes sont les suivantes :
 
-* Interface utilisateur
-* Logique métier
-* Accès aux données
+- Interface utilisateur
+- Logique métier
+- Accès aux données
 
 D’autres couches peuvent inclure des intergiciels (middleware), le traitement par lots et l’API. Il est important de noter que les couches sont logiques. Bien qu’elles soient développées de manière isolée, elles peuvent toutes être déployées sur la même plateforme cible.
 
@@ -57,9 +57,9 @@ D’autres couches peuvent inclure des intergiciels (middleware), le traitement 
 
 L’approche multicouche présente plusieurs avantages, notamment :
 
-* La refactorisation est isolée dans une couche.
-* Les équipes peuvent créer, tester, déployer et gérer indépendamment des couches distinctes.
-* Les couches peuvent être échangées, par exemple la couche de données peut accéder à plusieurs bases de données sans nécessiter de modifications de la couche d’interface utilisateur.
+- La refactorisation est isolée dans une couche.
+- Les équipes peuvent créer, tester, déployer et gérer indépendamment des couches distinctes.
+- Les couches peuvent être échangées, par exemple la couche de données peut accéder à plusieurs bases de données sans nécessiter de modifications de la couche d’interface utilisateur.
 
 Sans serveur peut être utilisé pour implémenter une ou plusieurs couches.
 
@@ -67,13 +67,13 @@ Sans serveur peut être utilisé pour implémenter une ou plusieurs couches.
 
 Les architectures de **[microservices](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)** contiennent des caractéristiques communes qui incluent :
 
-* Les applications sont composées de plusieurs petits services.
-* Chaque service s’exécute dans son propre processus.
-* Les services sont alignés autour des domaines d’entreprise.
-* Les services communiquent via des API légères, en utilisant généralement HTTP comme transport.
-* Les services peuvent être déployés et mis à niveau indépendamment.
-* Les services ne sont pas dépendants d’un seul magasin de données.
-* Le système est conçu en cas d’échec, et l’application peut toujours s’exécuter même lorsque certains services échouent.
+- Les applications sont composées de plusieurs petits services.
+- Chaque service s’exécute dans son propre processus.
+- Les services sont alignés autour des domaines d’entreprise.
+- Les services communiquent via des API légères, en utilisant généralement HTTP comme transport.
+- Les services peuvent être déployés et mis à niveau indépendamment.
+- Les services ne sont pas dépendants d’un seul magasin de données.
+- Le système est conçu en cas d’échec, et l’application peut toujours s’exécuter même lorsque certains services échouent.
 
 Il n’est pas nécessaire que les microservices soient mutuellement exclusifs à d’autres approches d’architecture. Par exemple, une architecture multiniveau peut utiliser des microservices pour la couche intermédiaire. Il est également possible d’implémenter des microservices de différentes façons, des répertoires virtuels sur les hôtes IIS aux conteneurs. Les caractéristiques des microservices les rendent particulièrement idéales pour les implémentations sans serveur.
 
@@ -81,18 +81,18 @@ Il n’est pas nécessaire que les microservices soient mutuellement exclusifs �
 
 Les avantages des architectures de microservices sont les suivants :
 
-* La refactorisation est souvent isolée dans un service unique.
-* Les services peuvent être mis à niveau indépendamment l’un de l’autre.
-* La résilience et l’élasticité peuvent être réglées sur les demandes des services individuels.
-* Le développement peut se faire en parallèle sur des plateformes et des équipes disparates.
-* Il est plus facile d’écrire des tests complets pour les services isolés.
+- La refactorisation est souvent isolée dans un service unique.
+- Les services peuvent être mis à niveau indépendamment l’un de l’autre.
+- La résilience et l’élasticité peuvent être réglées sur les demandes des services individuels.
+- Le développement peut se faire en parallèle sur des plateformes et des équipes disparates.
+- Il est plus facile d’écrire des tests complets pour les services isolés.
 
 Les microservices sont accompagnés de leurs propres défis, notamment :
 
-* Déterminer quels services sont disponibles et comment les appeler.
-* Gestion du cycle de vie des services.
-* Comprendre comment les services s’intègrent à l’ensemble de l’application.
-* Test complet du système des appels effectués sur des services disparates.
+- Déterminer quels services sont disponibles et comment les appeler.
+- Gestion du cycle de vie des services.
+- Comprendre comment les services s’intègrent à l’ensemble de l’application.
+- Test complet du système des appels effectués sur des services disparates.
 
 En fin de compte, il existe des solutions pour répondre à tous ces défis, y compris pour tirer parti des avantages des services sans serveur décrits plus loin.
 

@@ -2,12 +2,12 @@
 title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
 ms.date: 09/20/2018
-ms.openlocfilehash: 58fe387c6bc9e1dcca519a200d3f8988f327a39c
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: c362bdaf41fee5ee20516b89b8bec12d6c0557cf
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394576"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522761"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
 
@@ -77,7 +77,7 @@ L’implémentation d’une architecture pilotée par les événements sur plusi
 
 - Utilisation de la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
-- Utilisation du [modèle Outbox](http://gistlabs.com/2014/05/the-outbox/) : table de base de données transactionnelle définie comme file d’attente de messages qui sert de base à un composant créateur d’événement qui crée l’événement et le publie.
+- Utilisation du [modèle Outbox](http://www.kamilgrzybek.com/design/the-outbox-pattern/) : table de base de données transactionnelle définie comme file d’attente de messages qui sert de base à un composant créateur d’événement qui crée l’événement et le publie.
 
 Si vous envisagez d’utiliser la communication asynchrone, veillez également à tenir compte de l’idempotence et de la déduplication des messages. Ces rubriques sont traitées dans la section [Implémentation de la communication basée sur les événements entre les microservices (événements d’intégration)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) plus loin dans ce guide.
 

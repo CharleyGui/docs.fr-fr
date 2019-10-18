@@ -4,12 +4,12 @@ description: Azure Functions offre des fonctionnalités sans serveur dans plusie
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 4febcc01eebf3efce3fc1eb42e19c2ec6c0baa52
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5e8187b3752a0f0d0bcf8e15f2ce440dc5a64e45
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577602"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522869"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -23,11 +23,11 @@ Pour plus d’informations, consultez [la documentation Azure Functions](https:/
 
 ## <a name="functions-v1-vs-v2"></a>Fonctions v1 et v2
 
-Il existe deux versions du Azure Functions Runtime: 1. x et 2. x. La version 1. x est généralement disponible (GA). Il prend en charge le développement .NET à partir du portail ou des ordinateurs Windows et utilise le .NET Framework. 1. x prend C#en charge, JavaScript F#et, avec prise en charge expérimentale de Python, php, machine à écrire, batch, bash et PowerShell.
+Il existe deux versions du Azure Functions Runtime : 1. x et 2. x. La version 1. x est généralement disponible (GA). Il prend en charge le développement .NET à partir du portail ou des ordinateurs Windows et utilise le .NET Framework. 1. x prend C#en charge, JavaScript F#et, avec prise en charge expérimentale de Python, php, machine à écrire, batch, bash et PowerShell.
 
 La [version 2. x est également mis à la disposition générale dès maintenant](https://azure.microsoft.com/blog/introducing-azure-functions-2-0/). Il s’appuie sur .NET Core et prend en charge le développement multiplateforme sur des ordinateurs Windows, macOS et Linux. 2. x ajoute une prise en charge de première classe pour Java, mais ne prend pas encore en charge directement les langages expérimentaux. La version 2. x utilise un nouveau modèle d’extensibilité de liaison qui active des extensions tierces à la plateforme, un contrôle de version indépendant des liaisons et un environnement d’exécution plus rationalisé.
 
-> **Il existe un problème connu dans 1. x avec [la prise en charge de la redirection de liaison](https://github.com/Azure/azure-functions-host/issues/992).** Le problème est spécifique au développement .NET. Les projets avec des dépendances sur des bibliothèques qui sont une version différente des bibliothèques incluses dans le runtime sont affectés. L’équipe Functions s’est engagée à créer une progression concrète sur le problème. L’équipe traitera les redirections de liaison dans 2. x avant de passer à la mise à la disposition générale. La déclaration officielle de l’équipe avec les corrections suggérées et les solutions de contournement est disponible ici: [Résolution d’assembly dans Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).
+> **Il existe un problème connu dans 1. x avec [la prise en charge de la redirection de liaison](https://github.com/Azure/azure-functions-host/issues/992).** Le problème est spécifique au développement .NET. Les projets avec des dépendances sur des bibliothèques qui sont une version différente des bibliothèques incluses dans le runtime sont affectés. L’équipe Functions s’est engagée à créer une progression concrète sur le problème. L’équipe traitera les redirections de liaison dans 2. x avant de passer à la mise à la disposition générale. La déclaration officielle de l’équipe avec des correctifs suggérés et des solutions de contournement est disponible ici : [résolution de l’assembly dans Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).
 
 Pour plus d’informations, consultez [comparer 1. x et 2. x](https://docs.microsoft.com/azure/azure-functions/functions-versions).
 
@@ -37,10 +37,10 @@ Les langues suivantes sont prises en charge dans General Availability (GA), prev
 
 |Langue      |1.x         |2.x      |
 |--------------|------------|---------|
-|**C#**        |GA          |Preview  |
-|**JavaScript**|GA          |Preview  |
-|**F#**        |GA          |         |
-|**Java**      |            |Preview  |
+|**C#**        |DISPONIBLE          |Aperçu  |
+|**JavaScript**|DISPONIBLE          |Aperçu  |
+|**F#**        |DISPONIBLE          |         |
+|**Java**      |            |Aperçu  |
 |**Python**    |Expérimental|         |
 |**PHP**       |Expérimental|         |
 |**TypeScript**|Expérimental|         |
@@ -60,9 +60,9 @@ Pour plus d’informations, consultez [plans App service](https://docs.microsoft
 
 Il existe trois méthodes courantes pour créer des applications de fonction.
 
-* Fonctions de script dans le portail.
-* Créez les ressources nécessaires à l’aide de l’interface de ligne de commande (CLI) Azure.
-* Créez des fonctions localement à l’aide de votre IDE favori et publiez-les sur Azure.
+- Fonctions de script dans le portail.
+- Créez les ressources nécessaires à l’aide de l’interface de ligne de commande (CLI) Azure.
+- Créez des fonctions localement à l’aide de votre IDE favori et publiez-les sur Azure.
 
 Pour plus d’informations sur la création d’une fonction de script dans le portail, consultez [créer votre première fonction dans la portail Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).
 
@@ -72,22 +72,22 @@ Pour créer une fonction à partir de Visual Studio, consultez [créer votre pre
 
 ## <a name="understand-triggers-and-bindings"></a>Comprendre les déclencheurs et les liaisons
 
-Les fonctions sont appelées par un déclencheur et ne peuvent en avoir qu’une seule. Outre l’appel de la fonction, certains déclencheurs servent également de liaisons. Vous pouvez également définir plusieurs liaisons en plus du déclencheur. Les *liaisons* offrent un moyen déclaratif de connecter des données à votre code. Ils peuvent être transmis (entrée) ou recevoir des données (sortie). Les déclencheurs et les liaisons rendent les fonctions faciles à utiliser. Les liaisons suppriment la surcharge liée à la création manuelle de connexions de base de données ou de système de fichiers. Toutes les informations nécessaires pour les liaisons sont contenues dans un fichier *functions. JSON* spécial pour les scripts ou déclarés avec des attributs dans le code.
+Les fonctions sont appelées par un *déclencheur* et ne peuvent en avoir qu’une seule. Outre l’appel de la fonction, certains déclencheurs servent également de liaisons. Vous pouvez également définir plusieurs liaisons en plus du déclencheur. Les *liaisons* offrent un moyen déclaratif de connecter des données à votre code. Ils peuvent être transmis (entrée) ou recevoir des données (sortie). Les déclencheurs et les liaisons rendent les fonctions faciles à utiliser. Les liaisons suppriment la surcharge liée à la création manuelle de connexions de base de données ou de système de fichiers. Toutes les informations nécessaires pour les liaisons sont contenues dans un fichier *functions. JSON* spécial pour les scripts ou déclarés avec des attributs dans le code.
 
-Parmi les déclencheurs les plus courants, citons:
+Parmi les déclencheurs les plus courants, citons :
 
-* Stockage d’objets BLOB: appelez votre fonction lorsqu’un fichier ou un dossier est téléchargé ou modifié dans le stockage.
-* HTTP: appelez votre fonction comme une API REST.
-* Queue: appelez votre fonction lorsque des éléments existent dans une file d’attente.
-* Timer: appelez votre fonction sur une cadence régulière.
+- Stockage d’objets BLOB : appelez votre fonction lorsqu’un fichier ou un dossier est téléchargé ou modifié dans le stockage.
+- HTTP : appelez votre fonction comme une API REST.
+- Queue : appelez votre fonction lorsque des éléments existent dans une file d’attente.
+- Timer : appelez votre fonction sur une cadence régulière.
 
-Voici quelques exemples de liaisons:
+Voici quelques exemples de liaisons :
 
-* CosmosDB: Connectez-vous facilement à la base de données pour charger ou enregistrer des fichiers.
-* Stockage table: travaillez avec le stockage clé/valeur à partir de votre application de fonction.
-* Stockage file d’attente: récupérer facilement des éléments d’une file d’attente ou placer de nouveaux éléments dans la file d’attente.
+- CosmosDB : Connectez-vous facilement à la base de données pour charger ou enregistrer des fichiers.
+- Stockage table : travaillez avec le stockage clé/valeur à partir de votre application de fonction.
+- Stockage file d’attente : récupérer facilement des éléments d’une file d’attente ou placer de nouveaux éléments dans la file d’attente.
 
-L’exemple de fichier *functions. JSON* suivant définit un déclencheur et une liaison:
+L’exemple de fichier *functions. JSON* suivant définit un déclencheur et une liaison :
 
 ```json
 {
@@ -111,9 +111,9 @@ L’exemple de fichier *functions. JSON* suivant définit un déclencheur et une
 }
 ```
 
-Dans cet exemple, la fonction est déclenchée par une modification du stockage d’objets BLOB `images` dans le conteneur. Les informations relatives au fichier étant transmises, le déclencheur joue également le rôle de liaison. Il existe une autre liaison pour placer des informations dans `images`une file d’attente nommée.
+Dans cet exemple, la fonction est déclenchée par une modification du stockage d’objets BLOB dans le conteneur `images`. Les informations relatives au fichier étant transmises, le déclencheur joue également le rôle de liaison. Il existe une autre liaison pour placer des informations dans une file d’attente nommée `images`.
 
-Voici le C# script de la fonction:
+Voici le C# script de la fonction :
 
 ```csharp
 public static string Run(Stream myBlob, string name, TraceWriter log)
@@ -129,19 +129,19 @@ Pour obtenir la liste complète des déclencheurs et des liaisons, consultez [Az
 
 ## <a name="proxies"></a>Serveurs proxy
 
-Les proxies fournissent des fonctionnalités de redirection pour votre application. Les proxies exposent un point de terminaison et mappent ce point de terminaison à une autre ressource. Avec les proxies, vous pouvez:
+Les proxies fournissent des fonctionnalités de redirection pour votre application. Les proxies exposent un point de terminaison et mappent ce point de terminaison à une autre ressource. Avec les proxies, vous pouvez :
 
-* Rediriger une demande entrante vers un autre point de terminaison.
-* Modifiez la requête entrante avant de la transmettre.
-* Modifiez ou fournissez une réponse.
+- Rediriger une demande entrante vers un autre point de terminaison.
+- Modifiez la requête entrante avant de la transmettre.
+- Modifiez ou fournissez une réponse.
 
-Les proxies sont utilisés dans des scénarios tels que:
+Les proxies sont utilisés dans des scénarios tels que :
 
-* Simplification, raccourcissement ou modification de l’URL.
-* Fournir un préfixe d’API cohérent à plusieurs services principaux.
-* Simulation d’une réponse à un point de terminaison en cours de développement.
-* Fournir une réponse statique à un point de terminaison connu.
-* Maintien de la cohérence d’un point de terminaison d’API pendant le déplacement ou la migration du back end.
+- Simplification, raccourcissement ou modification de l’URL.
+- Fournir un préfixe d’API cohérent à plusieurs services principaux.
+- Simulation d’une réponse à un point de terminaison en cours de développement.
+- Fournir une réponse statique à un point de terminaison connu.
+- Maintien de la cohérence d’un point de terminaison d’API pendant le déplacement ou la migration du back end.
 
 Les proxies sont stockés sous forme de définitions JSON. Voici un exemple :
 
@@ -169,13 +169,13 @@ Les proxies sont stockés sous forme de définitions JSON. Voici un exemple :
 }
 ```
 
-Le `Domain Redirect` proxy prend un itinéraire abrégé et le mappe à la ressource de fonction plus longue. La transformation ressemble à ceci:
+Le proxy `Domain Redirect` prend un itinéraire abrégé et le mappe à la ressource de fonction plus longue. La transformation ressemble à ceci :
 
 `https://--shorturl--/123` -> `https://--longurl--.azurewebsites.net/api/UrlRedirect/123`
 
-Le `Root` proxy envoie tout ce qui est envoyé à l'`https://--shorturl--/`URL racine () et le redirige vers le site de documentation.
+Le proxy `Root` prend tout ce qui est envoyé à l’URL racine (`https://--shorturl--/`) et le redirige vers le site de documentation.
 
-Un exemple d’utilisation de proxys s’affiche dans la [vidéo Azure: Mettez votre application dans le Cloud avec des Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102)sans serveur. En temps réel, une application ASP.NET Core s’exécutant sur SQL Server local est migrée vers le Cloud Azure. Les proxies sont utilisés pour aider à refactoriser un projet d’API Web traditionnel afin d’utiliser des fonctions.
+Un exemple d’utilisation de proxys est présenté dans la vidéo [Azure : mettez votre application dans le Cloud avec des Azure Functions sans serveur](https://channel9.msdn.com/events/Connect/2017/E102). En temps réel, une application ASP.NET Core s’exécutant sur SQL Server local est migrée vers le Cloud Azure. Les proxies sont utilisés pour aider à refactoriser un projet d’API Web traditionnel afin d’utiliser des fonctions.
 
 Pour plus d’informations sur les proxies, consultez [utiliser Azure Functions proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies).
 

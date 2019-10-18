@@ -4,12 +4,12 @@ description: Azure durable Functions PR
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
-ms.openlocfilehash: 18e13c5355490ef4a019ceda459114bdb6bfd539
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2bd81c29e727254af6c8ecf39ee4bfef1f39d009
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577402"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522636"
 ---
 # <a name="orchestration-patterns"></a>Modèles d’orchestration
 
@@ -37,9 +37,9 @@ public static async Task<string> PlaceOrder([OrchestrationTrigger] DurableOrches
 }
 ```
 
-Dans l’exemple de code précédent, `CallActivityAsync` la fonction est chargée d’exécuter une activité donnée sur une machine virtuelle dans le centre de données. Lorsque await retourne et que la tâche sous-jacente se termine, l’exécution est enregistrée dans la table d’historique. Le code de la fonction d’orchestrateur peut utiliser l’une des constructions familières de la bibliothèque parallèle de tâches et des mots clés Async/await.
+Dans l’exemple de code précédent, la fonction `CallActivityAsync` est chargée d’exécuter une activité donnée sur une machine virtuelle dans le centre de données. Lorsque await retourne et que la tâche sous-jacente se termine, l’exécution est enregistrée dans la table d’historique. Le code de la fonction d’orchestrateur peut utiliser l’une des constructions familières de la bibliothèque parallèle de tâches et des mots clés Async/await.
 
-Le code suivant est un exemple simplifié de ce à `ProcessPayment` quoi la méthode peut ressembler:
+Le code suivant est un exemple simplifié de ce à quoi peut ressembler la méthode `ProcessPayment` :
 
 ```csharp
 [FunctionName("ProcessPayment")]
@@ -60,7 +60,7 @@ public static bool ProcessPayment([ActivityTrigger] DurableActivityContext conte
 
 Dans certains cas, les flux de travail peuvent contenir des activités qui prennent une durée relativement longue. Imaginez un processus qui lance la sauvegarde des fichiers multimédias dans le stockage d’objets BLOB. Selon la taille et la quantité des fichiers multimédias, le processus de sauvegarde peut prendre plusieurs heures.
 
-Dans ce scénario, la `DurableOrchestrationClient`capacité de vérifier l’état d’un workflow en cours d’exécution devient utile. Lorsque vous utilisez `HttpTrigger` un pour démarrer un flux de `CreateCheckStatusResponse` travail, la méthode peut être utilisée pour retourner `HttpResponseMessage`une instance de. Cette réponse fournit au client un URI dans la charge utile qui peut être utilisé pour vérifier l’état du processus en cours d’exécution.
+Dans ce scénario, la capacité de `DurableOrchestrationClient` de vérifier l’état d’un workflow en cours d’exécution devient utile. Lorsque vous utilisez un `HttpTrigger` pour démarrer un flux de travail, la méthode `CreateCheckStatusResponse` peut être utilisée pour retourner une instance de `HttpResponseMessage`. Cette réponse fournit au client un URI dans la charge utile qui peut être utilisé pour vérifier l’état du processus en cours d’exécution.
 
 ```csharp
 [FunctionName("OrderWorkflow")]
@@ -103,9 +103,9 @@ L’exemple de résultat ci-dessous montre la structure de la charge utile de la
 
 À mesure que le processus se poursuit, la réponse d’état passe à **échec** ou **terminé**. En cas de réussite, la propriété de **sortie** de la charge utile contient toutes les données retournées.
 
-## <a name="monitoring"></a>Surveillance
+## <a name="monitoring"></a>Analyse
 
-Pour les tâches répétitives simples, Azure Functions fournit le `TimerTrigger` qui peut être planifié en fonction d’une expression cron. La minuterie fonctionne bien pour les tâches simples à courte durée de vie, mais il peut y avoir des scénarios dans lesquels une planification plus flexible est nécessaire. Ce scénario se présente lorsque le modèle de surveillance et le Durable Functions peuvent vous aider.
+Pour les tâches répétitives simples, Azure Functions fournit les `TimerTrigger` qui peuvent être planifiées en fonction d’une expression CRON. La minuterie fonctionne bien pour les tâches simples à courte durée de vie, mais il peut y avoir des scénarios dans lesquels une planification plus flexible est nécessaire. Ce scénario se présente lorsque le modèle de surveillance et le Durable Functions peuvent vous aider.
 
 Durable Functions permet des intervalles de planification flexibles, la gestion de la durée de vie et la création de plusieurs processus d’analyse à partir d’une seule fonction d’orchestration. Un cas d’utilisation de cette fonctionnalité peut consister à créer des observateurs pour les modifications de cours d’action qui se terminent une fois qu’un certain seuil est atteint.
 
@@ -149,12 +149,12 @@ public static async Task CheckStockPrice([OrchestrationTrigger] DurableOrchestra
 }
 ```
 
-`DurableOrchestrationContext`la `CreateTimer` méthode de définit la planification de l’appel suivant de la boucle pour vérifier les modifications du cours de l’action. `DurableOrchestrationContext`a également une `CurrentUtcDateTime` propriété pour obtenir la valeur DateTime actuelle en heure UTC. Il est préférable d’utiliser cette propriété au lieu `DateTime.UtcNow` de, car elle est facilement factice pour le test.
+la méthode de `CreateTimer` de `DurableOrchestrationContext` définit la planification de l’appel suivant de la boucle afin de vérifier les modifications du cours de l’action. `DurableOrchestrationContext` a également une propriété `CurrentUtcDateTime` pour obtenir la valeur DateTime actuelle en heure UTC. Il est préférable d’utiliser cette propriété au lieu de `DateTime.UtcNow`, car elle est facilement factice pour le test.
 
 ## <a name="recommended-resources"></a>Ressources recommandées
 
-* [Durable Functions Azure](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
-* [Tests unitaires dans .NET Core et .NET Standard](../../core/testing/index.md)
+- [Durable Functions Azure](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
+- [Tests unitaires dans .NET Core et .NET Standard](../../core/testing/index.md)
 
 >[!div class="step-by-step"]
 >[Précédent](durable-azure-functions.md)

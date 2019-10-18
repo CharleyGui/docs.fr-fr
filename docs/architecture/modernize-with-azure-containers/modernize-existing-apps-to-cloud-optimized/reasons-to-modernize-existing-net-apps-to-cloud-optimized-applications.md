@@ -2,12 +2,12 @@
 title: Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: c86b9ec4d4a92b8daa0fceef0531ed955b9bb2bf
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3154f9a9e11b42330fcc753ffd961316e4ada335
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318537"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522938"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 
@@ -41,7 +41,7 @@ La liste suivante décrit les principales principes ou pratiques des application
 
 La figure 4-2 montre les principaux piliers facultatifs d’une application optimisée pour le Cloud. Plus vous implémentez de piliers, plus votre application sera prête à répondre aux attentes de vos clients.
 
-![Diagramme nommant les piliers principaux d’une application optimisée pour le Cloud.](./media/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications/main-pillars-cloud-optimized-application.png)
+![Diagramme nommant les piliers principaux d’une application optimisée pour le Cloud.](./media/main-pillars-cloud-optimized-application.png)
 
 **Figure 4-2.** Principaux piliers d’une application optimisée pour le Cloud
 

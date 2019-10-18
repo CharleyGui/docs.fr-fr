@@ -1,17 +1,17 @@
 ---
-title: 'Applications serverless : architecture, modèles et implémentation Azure'
+title: 'Applications serverless : Architecture, modèles et implémentation Azure'
 description: Guide sur l’architecture serverless. Découvrez quand, pourquoi et comment implémenter une architecture serverless (par opposition à une infrastructure IaaS ou une plateforme PaaS) pour les applications de votre entreprise.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 148a79e39c047897719e4f97efd84676b1b92636
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: HT
+ms.openlocfilehash: af930ba3d704e9bbf22f03ad6a4a547c5fbff4d3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70222831"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522846"
 ---
-# <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : architecture, modèles et implémentation Azure
+# <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : Architecture, modèles et implémentation Azure
 
 ![Capture d’écran montrant la couverture du livre électronique Applications serverless.](./media/index/serverless-apps-cover.jpg)
 
@@ -19,7 +19,7 @@ ms.locfileid: "70222831"
 
 PUBLIÉ PAR
 
-Division Développeurs Microsoft, équipes produit .NET et Visual Studio
+Division Développeur Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -63,10 +63,10 @@ Participants et réviseurs :
 
 Le modèle [serverless](https://azure.microsoft.com/solutions/serverless/) incarne l’évolution des plateformes cloud vers du code natif cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
 
-* Quels sont les avantages et les inconvénients du modèle serverless ?
-* Pourquoi devriez-vous envisager le modèle serverless pour vos propres applications ?
-* Comment générer, tester, déployer et gérer votre code serverless ?
-* Où est-il judicieux de migrer du code vers un modèle serverless dans les applications existantes, et quel est le meilleur moyen d’accomplir cette transformation ?
+- Quels sont les avantages et les inconvénients du modèle serverless ?
+- Pourquoi devriez-vous envisager le modèle serverless pour vos propres applications ?
+- Comment générer, tester, déployer et gérer votre code serverless ?
+- Où est-il judicieux de migrer du code vers un modèle serverless dans les applications existantes, et quel est le meilleur moyen d’accomplir cette transformation ?
 
 ## <a name="about-this-guide"></a>À propos de ce guide
 
@@ -82,31 +82,31 @@ Le modèle serverless est le point culminant de plusieurs itérations de platefo
 
 Avant le cloud, une délimitation perceptible existait entre le développement et les opérations. Le déploiement d’une application supposait de répondre à une multitude de questions comme :
 
-* Quel matériel doit être installé ?
-* Comment l’accès physique à l’ordinateur est sécurisé ?
-* Faut-il un onduleur pour le centre de données ?
-* Où sont envoyées les sauvegardes de stockage ?
-* Un système d’alimentation redondant doit-il être envisagé ?
+- Quel matériel doit être installé ?
+- Comment l’accès physique à l’ordinateur est sécurisé ?
+- Faut-il un onduleur pour le centre de données ?
+- Où sont envoyées les sauvegardes de stockage ?
+- Un système d’alimentation redondant doit-il être envisagé ?
 
-La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. En effet, le gaspillage provenait d’une surutilisation de serveurs, comme les ordinateurs de sauvegarde pour la reprise d’activité après sinistre et les serveurs de veille pour la montée en puissance (scale-out). Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné naissance aux infrastructures IaaS. Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
+La liste s’allongeait et la surcharge était énorme. Dans de nombreux cas, les services informatiques étaient obligés de gaspiller considérablement. Le gaspillage était dû à une allocation excessive de serveurs en tant qu’ordinateurs de sauvegarde pour la récupération d’urgence et les serveurs de secours pour permettre la montée en puissance parallèle. Heureusement, l’introduction de la technologie de virtualisation (comme [Hyper-V](/virtualization/hyper-v-on-windows/about/)) avec des machines virtuelles (VM) a donné lieu à l’infrastructure en tant que service (IaaS). Avec une infrastructure virtualisée, des opérations permettaient de définir un ensemble standard de serveurs comme épine dorsale, donnant ainsi un environnement flexible capable de provisionner des serveurs uniques « à la demande ». Plus important, la virtualisation préparait le terrain pour utiliser le cloud afin de fournir des machines virtuelles « en tant que service ». Les entreprises pouvaient alors aisément arrêter de se préoccuper du système d’alimentation redondant ou des ordinateurs physiques. Elles se concentraient plutôt sur l’environnement virtuel.
 
 IaaS implique quand même une surcharge conséquente parce que les opérations sont encore responsables de différentes tâches. Ces tâches sont les suivantes :
 
-* Correction et sauvegarde des serveurs.
-* Installation de packages.
-* Mise à jour du système d’exploitation.
-* Supervision de l’application.
+- Correction et sauvegarde des serveurs.
+- Installation de packages.
+- Mise à jour du système d’exploitation.
+- Supervision de l’application.
 
 L’évolution d’après a réduit la surcharge avec l’introduction des plateformes PaaS. Avec PaaS, le fournisseur de cloud gère les systèmes d’exploitation, les correctifs de sécurité et même les packages nécessaires à la prise en charge d’une plateforme spécifique. Au lieu de créer une machine virtuelle, de configurer le .NET Framework et de mettre sur pied des serveurs IIS (Internet Information Services), les développeurs choisissent simplement une « cible de plateforme », comme une « application web » ou un « point de terminaison d’API », puis déploient le code directement. Les questions d’infrastructure se réduisent à :
 
-* Quels services de taille sont nécessaires ?
-* Comment les services montent en charge (ajout d’autres serveurs ou nœuds) ?
-* Comment les services montent en puissance (augmentation de la capacité des serveurs ou des nœuds d’hébergement) ?
+- Quels services de taille sont nécessaires ?
+- Comment les services montent en charge (ajout d’autres serveurs ou nœuds) ?
+- Comment les services montent en puissance (augmentation de la capacité des serveurs ou des nœuds d’hébergement) ?
 
 Le modèle serverless réduit davantage la place des serveurs en se concentrant sur du code basé sur les événements. Au lieu d’une plateforme, les développeurs peuvent se concentrer sur un microservice qui fait une seule chose. Les deux questions clés pour générer le code serverless se résument à :
 
-* Qu’est-ce qui déclenche le code ?
-* Que fait le code ?
+- Qu’est-ce qui déclenche le code ?
+- Que fait le code ?
 
 Avec le modèle serverless, l’infrastructure est réduite. Dans certains cas, le développeur n’a plus à se préoccuper de l’hôte du tout. Qu’une instance IIS, Kestrel, Apache ou autre serveur web s’exécute ou pas pour gérer les demandes web, le développeur se concentre sur un déclencheur HTTP. Le déclencheur fournit la charge utile multiplateforme standard de la requête. La charge utile non seulement simplifie le processus de développement, mais facilite aussi les tests et rend parfois le code facilement portable sur plusieurs plateformes.
 
@@ -118,16 +118,16 @@ Ce guide met avant tout l’accent sur les approches d’architecture et les mod
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Centre des architectures Azure](https://docs.microsoft.com/azure/architecture/)
-* [Bonnes pratiques pour les applications cloud](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Centre des architectures Azure](https://docs.microsoft.com/azure/architecture/)
+- [Bonnes pratiques pour les applications cloud](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 
 ## <a name="who-should-use-the-guide"></a>Public visé par ce guide
 
 Ce guide a été écrit pour les développeurs et les architectes de solutions qui veulent générer des applications d’entreprise avec .NET qui sont susceptibles d’utiliser des composants serverless localement ou dans le cloud. Il est utile pour les développeurs, architectes et décideurs informatiques qui souhaitent :
 
-* Comprendre les avantages et les inconvénients du développement serverless
-* Découvrir comment approcher l’architecture serverless
-* Exemples d’implémentation d’applications serverless
+- Comprendre les avantages et les inconvénients du développement serverless
+- Découvrir comment approcher l’architecture serverless
+- Exemples d’implémentation d’applications serverless
 
 ## <a name="how-to-use-the-guide"></a>Comment utiliser ce guide
 
@@ -138,4 +138,4 @@ La première partie de ce guide examine pourquoi le modèle serverless est une o
 Le guide et les exemples associés sont en constante évolution, donc votre feedback est le bienvenu ! Si vous avez des commentaires sur la façon dont ce guide peut être amélioré, utilisez la section de feedback au bas des pages reposant sur [GitHub issues](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
->[Next](architecture-approaches.md)
+>[Suivant](architecture-approaches.md)
