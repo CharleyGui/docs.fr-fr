@@ -5,15 +5,15 @@ helpviewer_keywords:
 - <exception> XML tag
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
-ms.openlocfilehash: 4e2f441863d6a8677593a257cdb2cc841634d47c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16ffb4f6b57dabb3650376c913a7d7608a00646d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940918"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523920"
 ---
-# <a name="exception-visual-basic"></a>\<exception > (Visual Basic)
-Spécifie quelles exceptions peuvent être levées.  
+# <a name="exception-visual-basic"></a>> \<exception (Visual Basic)
+Spécifie les exceptions qui peuvent être levées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,12 +29,12 @@ Spécifie quelles exceptions peuvent être levées.
  Description.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le `<exception>` balise pour spécifier quelles exceptions peuvent être levées. Cette balise est appliquée à une définition de méthode.  
+ Utilisez la balise `<exception>` pour spécifier les exceptions qui peuvent être levées. Cette balise est appliquée à une définition de méthode.  
   
- Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le `<exception>` balises pour décrire une exception qui le `IntDivide` fonction peut lever.  
+ Cet exemple utilise la balise `<exception>` pour décrire une exception que la fonction `IntDivide` peut lever.  
   
  [!code-vb[VbVbcnXmlDocComments#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#3)]  
   

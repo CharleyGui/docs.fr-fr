@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : Programmation Office (C# et Visual Basic)'
+title: 'Procédure pas à pas : programmation Office (C# et Visual Basic)'
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,22 +9,22 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 0f14cc6486e53cad8c3cbadc404d22d7e5458e84
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 11e48c54ba82b51268b34d6db01d2f9d4ae61ad7
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991274"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523571"
 ---
-# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : Programmation Office (C# et Visual Basic)
+# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : programmation Office (C# et Visual Basic)
 
 Visual Studio offre des fonctionnalités dans C# et Visual Basic qui améliorent la programmation Microsoft Office. Les fonctionnalités utiles de C# incluent des arguments nommés et facultatifs ainsi que des valeurs de retour de type `dynamic`. Dans la programmation COM, vous pouvez omettre le mot clé `ref` et accéder aux propriétés indexées. Les fonctionnalités de Visual Basic incluent les propriétés implémentées automatiquement, les instructions dans les expressions lambda et les initialiseurs de collection.
 
-Les deux langages autorisent l'incorporation d'informations de type, qui permet de déployer des assemblys interagissant avec les composants COM sans déployer les assemblys PIA (Primary Interop Assemblies) sur l'ordinateur de l'utilisateur. Pour plus d’informations, consultez [Procédure pas à pas : Incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md).
+Les deux langages autorisent l'incorporation d'informations de type, qui permet de déployer des assemblys interagissant avec les composants COM sans déployer les assemblys PIA (Primary Interop Assemblies) sur l'ordinateur de l'utilisateur. Pour plus d’informations, consultez [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md).
 
 Cette procédure pas à pas illustre ces fonctionnalités dans le contexte de la programmation Office, mais beaucoup d’entre elles sont aussi utiles en programmation générale. Dans la procédure pas à pas, vous allez utiliser une application de complément Excel pour créer un classeur Excel. Vous créerez ensuite un document Word contenant un lien vers le classeur. Enfin, vous apprendrez à activer et désactiver la dépendance d’assembly PIA.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft Office Word doivent être installés sur votre ordinateur.
 
@@ -52,7 +52,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom de votre projet, puis cliquez sur **Ajouter une référence**. La boîte de dialogue **Ajouter une référence** s’affiche.
 
-2. Sous l’onglet **Assemblys**, sélectionnez **Microsoft.Office.Interop.Excel**, version `<version>.0.0.0` (pour plus d’informations sur les numéros de version des produits Office, consultez [Versions Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)),dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Word**, `version <version>.0.0.0`. Si les assemblys n'apparaissent pas, vous devez vous assurer qu'ils sont installés et s'affichent (voir [Guide pratique pour installer les assemblys PIA d’Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).
+2. Sous l’onglet **Assemblys**, sélectionnez **Microsoft.Office.Interop.Excel**, version `<version>.0.0.0` (pour plus d’informations sur les numéros de version des produits Office, consultez [Versions Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)),dans la liste **Nom du composant**, puis maintenez la touche CTRL enfoncée et sélectionnez **Microsoft.Office.Interop.Word**, `version <version>.0.0.0`. Si les assemblys n’apparaissent pas, vous devez vérifier qu’ils sont installés et s’affichent (consultez [Guide pratique pour installer les assemblys PIA (Primary Interop Assembly) d’Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).
 
 3. Cliquez sur **OK**.
 
@@ -114,7 +114,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]
 
-     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/keywords/dynamic.md). Cela se produit automatiquement quand la propriété **Incorporer les types d’interopérabilité** est définie sur sa valeur par défaut, `True`, ou, de façon équivalente, quand l’assembly est référencé par l’option du compilateur [/link](../../language-reference/compiler-options/link-compiler-option.md). Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
+     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/keywords/dynamic.md). Cela se produit automatiquement lorsque l’option **incorporer les types d’interopérabilité** est définie sur sa valeur par défaut, `True` ou, de manière équivalente, lorsque l’assembly est référencé par l’option du compilateur [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
 
      Par exemple, `excelApp.Columns[1]` retourne un `Object` et `AutoFit` est une méthode [Range](<xref:Microsoft.Office.Interop.Excel.Range>) Excel. Sans `dynamic`, vous devez effectuer un cast de l'objet retourné par `excelApp.Columns[1]` sous la forme d'une instance de `Range` avant d'appeler la méthode `AutoFit`.
 
@@ -124,7 +124,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 ### <a name="to-invoke-displayinexcel"></a>Pour appeler DisplayInExcel
 
-1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, consultez [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, voir [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
      [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
@@ -203,8 +203,8 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Expressions lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Expressions lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
-- [Guide pratique pour utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
-- [Procédure pas à pas : Incorporer des informations de type à partir d’assemblys Microsoft Office dans Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
+- [Comment : utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
+- [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md)
 - [Procédure pas à pas : création de votre premier complément VSTO pour Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
 - [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)

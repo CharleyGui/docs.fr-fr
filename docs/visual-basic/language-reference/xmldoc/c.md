@@ -5,15 +5,15 @@ helpviewer_keywords:
 - c XML tag
 - <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-ms.openlocfilehash: 9be9f9e96fc1b79ea97d54c54352da63b93ef264
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ea19ed5330dcbb8fcd84708d1546a81d909b04e
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938591"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523944"
 ---
-# <a name="c-visual-basic"></a>\<c > (Visual Basic)
-Indique que le texte d’une description est code.  
+# <a name="c-visual-basic"></a>> \<c (Visual Basic)
+Indique que le texte d’une description est du code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,12 +28,12 @@ Indique que le texte d’une description est code.
 |`text`|Texte que vous souhaitez indiquer comme étant du code.|  
   
 ## <a name="remarks"></a>Notes  
- Le `<c>` balise vous donne un moyen d’indiquer que le texte d’une description doit être marqué en tant que code. Utilisez [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) pour indiquer plusieurs lignes comme étant du code.  
+ La balise `<c>` vous donne un moyen d’indiquer que le texte d’une description doit être marqué comme étant du code. Utilisez [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) pour indiquer plusieurs lignes comme étant du code.  
   
- Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le `<c>` balise dans la section Résumé pour indiquer que `Counter` est le code.  
+ Cet exemple utilise la balise `<c>` dans la section Summary pour indiquer que `Counter` est du code.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

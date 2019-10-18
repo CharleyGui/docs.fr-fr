@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 4141c64ff6dbbec60b53a41862a4273df6ef51ab
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: aef64f538aecb0fc5dadec850020d7c01d02ccbd
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588351"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523552"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Utilisation du type dynamic (Guide de programmation C#)
 
@@ -66,7 +66,7 @@ Le composant Dynamic Language Runtime (DLR) est une nouvelle API de .NET Framewo
 
 C# 4 inclut plusieurs fonctionnalités qui améliorent l’interopérabilité avec les API COM telles que les API Office Automation. L’utilisation du type `dynamic` et des [arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md) fait partie des améliorations offertes.
 
-De nombreuses méthodes COM autorisent une variation des types d’arguments et du type de retour en désignant les types comme `object`. Cela a nécessité un cast explicite des valeurs pour la coordination avec les variables fortement typées en C#. Si vous effectuez la compilation à l’aide de l’option [/link (Options du compilateur C#)](../../language-reference/compiler-options/link-compiler-option.md), l’introduction du type `dynamic` vous permet de traiter les occurrences d’`object` dans les signatures COM comme si elles étaient de type `dynamic`, vous évitant ainsi une grande partie des opérations de cast. Par exemple, les instructions suivantes permettent de comparer la façon dont vous accédez à une cellule d’une feuille de calcul Microsoft Office Excel avec le type `dynamic` et sans le type `dynamic`.
+De nombreuses méthodes COM autorisent une variation des types d’arguments et du type de retour en désignant les types comme `object`. Cela a nécessité un cast explicite des valeurs pour la coordination avec les variables fortement typées en C#. Si vous compilez à l’aide de l’option [-Link (C# options du compilateur)](../../language-reference/compiler-options/link-compiler-option.md) , l’introduction du type de `dynamic` vous permet de traiter les occurrences de `object` dans les signatures com comme si elles étaient de type `dynamic`, et donc d’éviter une grande partie du cast. Par exemple, les instructions suivantes permettent de comparer la façon dont vous accédez à une cellule d’une feuille de calcul Microsoft Office Excel avec le type `dynamic` et sans le type `dynamic`.
 
 [!code-csharp[csOfficeWalkthrough#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#12)]
 
@@ -78,5 +78,5 @@ De nombreuses méthodes COM autorisent une variation des types d’arguments et 
 |-----------|-----------------|
 |[dynamic](../../language-reference/keywords/dynamic.md)|Décrit l’utilisation du mot clé `dynamic`.|
 |[Vue d’ensemble du Dynamic Language Runtime](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Fournit une vue d’ensemble du DLR, qui est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques.|
-|[Procédure pas à pas : Création et utilisation d’objets dynamiques](walkthrough-creating-and-using-dynamic-objects.md)|Fournit des instructions pas à pas pour la création d’un objet dynamique personnalisé et pour la création d’un projet qui accède à une bibliothèque `IronPython`.|
+|[Procédure pas à pas : création et utilisation d’objets dynamiques](walkthrough-creating-and-using-dynamic-objects.md)|Fournit des instructions pas à pas pour la création d’un objet dynamique personnalisé et pour la création d’un projet qui accède à une bibliothèque `IronPython`.|
 |[Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](../interop/how-to-access-office-onterop-objects.md)|Montre comment créer un projet qui utilise les arguments nommés et facultatifs, le type `dynamic` et d’autres améliorations qui simplifient l’accès aux objets d’API Office.|

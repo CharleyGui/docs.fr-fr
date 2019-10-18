@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, XML code comments
 - XML documentation comments [C#]
 ms.assetid: 803b7f7b-7428-4725-b5db-9a6cff273199
-ms.openlocfilehash: 8f75783f004f3667644a126930fbfbca4acb0787
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6405b094ccc50499bfeb4db4522f0ec9b01f68ad
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921690"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523483"
 ---
 # <a name="xml-documentation-comments-c-programming-guide"></a>Commentaires de documentation XML (Guide de programmation C#)
 Dans Visual C #, vous pouvez créer de la documentation de votre code en incluant des éléments XML dans des champs de commentaire spéciaux (indiqués par trois barres obliques) dans le code source, juste avant le bloc de code auquel les commentaires font référence, par exemple :  
@@ -29,7 +29,7 @@ Dans Visual C #, vous pouvez créer de la documentation de votre code en inclua
 public class MyClass {}  
 ```  
   
- Quand vous utilisez l’option [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour compiler, le compilateur recherche toutes les balises XML dans le code source et crée un fichier de documentation XML. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [DocFX](https://dotnet.github.io/docfx/) ou [Sandcastle](https://github.com/EWSoftware/SHFB).  
+ Quand vous compilez avec l’option [-doc](../../language-reference/compiler-options/doc-compiler-option.md) , le compilateur recherche toutes les balises XML dans le code source et crée un fichier de documentation XML. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [DocFX](https://dotnet.github.io/docfx/) ou [Sandcastle](https://github.com/EWSoftware/SHFB).  
   
  Pour faire référence à des éléments XML (par exemple, votre fonction traite des éléments XML spécifiques que vous souhaitez décrire dans un commentaire de documentation XML), vous pouvez utiliser le mécanisme de citation standard (`<` et `>`).  Pour faire référence aux identificateurs génériques dans les éléments de référence de code (`cref`), vous pouvez utiliser des caractères d’échappement (par exemple, `cref="List&lt;T&gt;"`) ou des accolades (`cref="List{T}"`).  En tant que cas particulier, le compilateur analyse les accolades comme des crochets pointus pour rendre le commentaire de documentation moins fastidieux à créer lorsqu'il s'agit de faire référence aux identificateurs génériques.  
   
@@ -44,12 +44,12 @@ public class MyClass {}
   
 - [Délimiteurs pour les balises de documentation](./delimiters-for-documentation-tags.md)  
   
-- [Guide pratique pour utiliser les fonctionnalités de la documentation XML](./how-to-use-the-xml-documentation-features.md)  
+- [Procédure : utiliser les fonctionnalités de la documentation XML](./how-to-use-the-xml-documentation-features.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d'informations, voir :  
   
-- [/doc (Traiter les commentaires de documentation)](../../language-reference/compiler-options/doc-compiler-option.md)  
+- [-doc (traiter les commentaires de documentation)](../../language-reference/compiler-options/doc-compiler-option.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

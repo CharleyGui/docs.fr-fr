@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <permission> C# XML tag
 - permission C# XML tag
 ms.assetid: 769e93fe-8404-443f-bf99-577aa42b6a49
-ms.openlocfilehash: e9eb50394f01072a194d3f746577707f89ba65dd
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 454928d5dfd023639bc68f194f2f5ec9e2d7dc22
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587879"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523398"
 ---
 # <a name="permission-c-programming-guide"></a>\<permission> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -25,19 +25,19 @@ ms.locfileid: "69587879"
   
 ## <a name="parameters"></a>Paramètres  
  cref = " `member`"  
- Référence à un membre ou un champ qu’il est possible d’appeler à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe et traduit `member` en nom d’élément canonique dans le fichier XML de sortie. Le *membre* doit apparaître entre guillemets doubles (" ").  
+ Référence à un membre ou à un champ qui peut être appelé à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe et traduit `member` en nom d’élément canonique dans le fichier XML de sortie. Le *membre* doit apparaître entre guillemets doubles (" ").  
   
- Pour plus d’informations sur la création d’une référence cref à un type générique, consultez [\<see>](./see.md).  
+ Pour plus d’informations sur la façon de créer une référence cref à un type générique, consultez [\<see>](./see.md).  
   
  `description`  
  Description de l’accès au membre.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La balise \<permission> vous permet de documenter l’accès d’un membre. La classe <xref:System.Security.PermissionSet> vous permet de spécifier l’accès à un membre.  
   
- Compilez avec [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideDocComments#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#8)]  
   
 ## <a name="see-also"></a>Voir aussi

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: c8d20284b7ef2e06fb987f94f05cbe1dde1dc431
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 17594e557df922c1c512b4d643cd85ac76ea5a81
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928067"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523491"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Délimiteurs pour les balises de documentation (Guide de programmation C#)
 L’utilisation de commentaires de documentation XML exige des délimiteurs, qui indiquent au compilateur où un commentaire de documentation commence et se termine. Vous pouvez utiliser les genres de délimiteurs ci-dessous avec les balises de documentation XML :  
@@ -82,5 +82,5 @@ L’utilisation de commentaires de documentation XML exige des délimiteurs, qui
 
 - [Guide de programmation C#](../index.md)
 - [Commentaires sur la documentation XML](./index.md)
-- [/doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [-doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Commentaires sur la documentation XML](./index.md)

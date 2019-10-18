@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <exception> C# XML tag
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
-ms.openlocfilehash: 639e3a345fc8ed3d348461718f73ead6167158db
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: HT
+ms.openlocfilehash: 4e4204996c006ce6e943c9a09661001b0e0c2a14
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610910"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523475"
 ---
 # <a name="exception-c-programming-guide"></a>\<exception> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +32,10 @@ ms.locfileid: "59610910"
  `description`  
  Description de l'exception.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La balise \<exception> vous permet de spécifier quelles exceptions peuvent être levées. Cette balise peut être appliquée à des définitions de méthodes, de propriétés, d’événements et d’indexeurs.  
   
- Compilez avec [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation dans un fichier.  
+ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
  Pour plus d’informations sur la gestion des exceptions, consultez [Exceptions et gestion des exceptions](../exceptions/index.md).  
   

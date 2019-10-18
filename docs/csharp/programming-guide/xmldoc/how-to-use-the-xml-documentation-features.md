@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Utiliser les fonctionnalités de la documentation XML - Guide de programmation C#'
+title: 'Comment : utiliser les fonctionnalités de la documentation XML C# -Guide de programmation'
 ms.custom: seodec18
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 06b0c3b7877337d8a5703403af98dbacdf3ea93c
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3e59783a7f306d3d2a510fe3337a4c6490dcb3e8
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834174"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523455"
 ---
-# <a name="how-to-use-the-xml-documentation-features"></a>Procédure : Utiliser les fonctionnalités de la documentation XML
+# <a name="how-to-use-the-xml-documentation-features"></a>Guide pratique pour utiliser les fonctionnalités de la documentation XML
 
 L’exemple suivant montre un type qui a été documenté.
 
@@ -135,7 +135,7 @@ Le début de la documentation XML est symbolisé par trois barres obliques (//
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [/doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [-doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Commentaires sur la documentation XML](./index.md)
 - [Processeur de documentation DocFX](https://dotnet.github.io/docfx/)
 - [Processeur de documentation Sandcastle](https://github.com/EWSoftware/SHFB)

@@ -6,17 +6,17 @@ helpviewer_keywords:
 - My.Computer object [Visual Basic], tasks
 - computer resources [Visual Basic], accessing
 ms.assetid: 75b81c88-f7c0-46e0-95c8-0c006d2120f9
-ms.openlocfilehash: 2c53358d483868317887258c92b1aad2d9dcba00
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 5eb240b23d255987e96c58fefc7007c8030c6502
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662689"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524401"
 ---
 # <a name="accessing-computer-resources-visual-basic"></a>Accès aux ressources de l’ordinateur (Visual Basic)
 
-L’objet `My.Computer` est l’un des trois objets centraux dans `My`, permettant d’accéder aux informations et aux fonctionnalités couramment utilisées. `My.Computer` fournit des méthodes, des propriétés et des événements pour l’accès à l’ordinateur sur lequel l’application s’exécute. Il inclut les objets suivants :  
-  
+L’objet `My.Computer` est l’un des trois objets centraux dans `My`, permettant d’accéder aux informations et aux fonctionnalités couramment utilisées. `My.Computer` fournit des méthodes, des propriétés et des événements pour l’accès à l’ordinateur sur lequel l’application s’exécute. Il inclut les objets suivants :
+
 - <xref:Microsoft.VisualBasic.Devices.Audio>
 - Presse-papiers (<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>)
 - <xref:Microsoft.VisualBasic.Devices.Clock>
@@ -27,29 +27,29 @@ L’objet `My.Computer` est l’un des trois objets centraux dans `My`, permetta
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - Registre (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)
-  
+
 ## <a name="in-this-section"></a>Dans cette section
 
-[Lecture de sons](../../../../visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)   
+[Lecture de sons](../../../../visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)  
 Répertorie les tâches associées à `My.Computer.Audio`, telles que la lecture d’un son en arrière-plan.
 
-[Stockage de données dans le Presse-papiers et lecture du Presse-papiers](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)   
+[Stockage de données dans le Presse-papiers et lecture du Presse-papiers](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
 Répertorie les tâches associées à `My.Computer.Clipboard`, telles que la lecture ou l’écriture de données dans le Presse-papiers.
 
-[Obtention d’informations sur l’ordinateur](../../../../visual-basic/developing-apps/programming/computer-resources/getting-information-about-the-computer.md)   
+[Obtention d’informations sur l’ordinateur](../../../../visual-basic/developing-apps/programming/computer-resources/getting-information-about-the-computer.md)  
 Répertorie les tâches associées à `My.Computer.Info`, par exemple déterminer le nom complet ou les adresses IP d’un ordinateur.
 
-[Accès au clavier](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)   
+[Accès au clavier](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)  
 Répertorie les tâches associées à `My.Computer.Keyboard`, par exemple déterminer si la touche VERR. MAJ est activée.
 
-[Accès à la souris](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md)   
+[Accès à la souris](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md)  
 Répertorie les tâches associées à `My.Computer.Mouse`, par exemple déterminer si une souris est présente.
 
-[Exécution d’opérations de réseau](../../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md)   
+[Exécution d’opérations de réseau](../../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md)  
 Répertorie les tâches associées à `My.Computer.Network`, telles que le chargement ou le téléchargement de fichiers.
 
-[Accès aux ports de l’ordinateur](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)   
+[Accès aux ports de l’ordinateur](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)  
 Répertorie les tâches associées à `My.Computer.Ports`, telles que l’affichage des ports série disponibles ou l’envoi de chaînes aux ports série.
 
-[Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)   
+[Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)  
 Répertorie les tâches associées à `My.Computer.Registry`, telles que la lecture ou l’écriture de données dans les clés de Registre.

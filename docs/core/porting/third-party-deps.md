@@ -4,12 +4,12 @@ description: Découvrez comment analyser les dépendances externes afin de porte
 author: cartermp
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6c0f55150a4a1c4d0fb8b3125565c9ab8ade3117
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
-ms.translationtype: HT
+ms.openlocfilehash: 36d1c1d2090a0fb9e6f48fe519d15897579df2d5
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904335"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521473"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analyser vos dépendances pour porter le code sur .NET Core
 
@@ -20,8 +20,8 @@ Pour porter votre code sur .NET Core ou .NET Standard, vous devez comprendre vos
 Si vous référencez des packages NuGet dans votre projet, vous devez vérifier s’ils sont compatibles avec .NET Core.
 Pour cela, vous avez le choix entre :
 
-* [Utilisation de l’application NuGet Package Explorer](#analyze-nuget-packages-using-nuget-package-explorer)
-* [Utiliser le site nuget.org](#analyze-nuget-packages-using-nugetorg)
+- [Utilisation de l’application NuGet Package Explorer](#analyze-nuget-packages-using-nuget-package-explorer)
+- [Utiliser le site nuget.org](#analyze-nuget-packages-using-nugetorg)
 
 Après avoir analysé les packages, s’il s’avère qu’ils ne sont pas compatibles avec .NET Core et ne ciblent que le .NET Framework, vous pouvez vérifier si le [mode de compatibilité du .NET Framework](#net-framework-compatibility-mode) peut vous être utile pour le processus de portage.
 
@@ -104,7 +104,7 @@ Pour en savoir plus, consultez [Migrer de packages.config vers PackageReference]
 Voici quelques actions possibles si un package NuGet dont vous dépendez ne s’exécute pas sur .NET Core :
 
 1. Si le projet est open source et hébergé à un endroit comme GitHub, vous pouvez demander aux développeurs de le modifier.
-2. Vous pouvez contacter l’auteur directement sur [nuget.org](https://www.nuget.org/). Recherchez le package, puis cliquez sur **Contact Owners** sur le côté gauche de la page du package.
+2. Vous pouvez contacter l’auteur directement sur [NuGet.org](https://www.nuget.org/). Recherchez le package, puis cliquez sur **contacter les propriétaires** sur le côté gauche de la page du package.
 3. Vous pouvez rechercher un autre package qui s’exécute sur .NET Core et qui réalise la même tâche que le package que vous utilisez.
 4. Vous pouvez essayer d’écrire vous-même le code qui était exécuté par le package.
 5. Vous pouvez éliminer la dépendance du package en modifiant les fonctionnalités de votre application, au moins jusqu’à ce qu’une version compatible du package soit disponible.
@@ -120,4 +120,4 @@ L’équipe .NET aimerait savoir quelles bibliothèques doivent être prioritair
 Vous avez peut-être une dépendance qui n’est pas un package NuGet, comme une DLL dans le système de fichiers. La seule façon de déterminer la portabilité de cette dépendance est d’exécuter l’outil [.NET Portability Analyzer](https://github.com/Microsoft/dotnet-apiport). Cet outil peut analyser les assemblys qui ciblent le .NET Framework et identifier les API qui ne sont pas portables sur d’autres plateformes .NET telles que .NET Core. Vous pouvez exécuter cet outil en tant qu’application console ou qu’[extension Visual Studio](../../standard/analyzers/portability-analyzer.md).
 
 >[!div class="step-by-step"]
->[Next](libraries.md)
+>[Suivant](libraries.md)

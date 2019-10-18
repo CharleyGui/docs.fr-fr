@@ -7,12 +7,12 @@ ms.date: 09/23/2019
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 026224ca2941e7694fc1b80939e6d283d75db32e
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
-ms.translationtype: MT
+ms.openlocfilehash: bb07df382974bdbb185ce7d52117729eaa638869
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214441"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523879"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -58,7 +58,7 @@ Le ciblage de versions inférieures de .NET Standard génère cependant un certa
 Il existe deux règles principales de contrôle de version :
 
 - Additive : les versions de .NET Standard sont des cercles logiquement concentriques : les versions plus élevées intègrent toutes les API des versions précédentes. Il n’y a pas de ruptures entre les versions.
-- Immuable : Une fois livrées, les versions de .NET Standard sont figées. Les nouvelles API sont disponibles d’abord dans les implémentations de .NET spécifiques, comme .NET Core. Si le comité de révision de .NET Standard estime que les nouvelles API doivent être disponibles pour les implémentations de .NET, elles sont ajoutées dans une nouvelle version de .NET Standard.
+- Immuable : une fois livrées, les versions de .NET Standard sont figées. Les nouvelles API sont disponibles d’abord dans les implémentations de .NET spécifiques, comme .NET Core. Si le comité de révision de .NET Standard estime que les nouvelles API doivent être disponibles pour les implémentations de .NET, elles sont ajoutées dans une nouvelle version de .NET Standard.
 
 ## <a name="specification"></a>Spécification
 
@@ -164,3 +164,4 @@ Voici l’ensemble des profils de bibliothèques de classes portables qui sont c
 ## <a name="see-also"></a>Voir aussi
 
 - [Versions de .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md)
+- [Créer une bibliothèque de .NET Standard](../core/tutorials/library-with-visual-studio.md)

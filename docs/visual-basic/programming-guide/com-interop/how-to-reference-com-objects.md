@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Référencer des objets COM à partir de Visual Basic'
+title: 'Comment : référencer les objets COM à partir de Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop [Visual Basic], referencing COM objects
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - COM objects, referencing
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
-ms.openlocfilehash: 8e502dc9a279d9271a61fd2cf7a6afb564f09125
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: ea0e1d9b0ae9f151d901c425512508ba7bc05343
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351998"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524355"
 ---
-# <a name="how-to-reference-com-objects-from-visual-basic"></a>Procédure : Référencer des objets COM à partir de Visual Basic
+# <a name="how-to-reference-com-objects-from-visual-basic"></a>Comment : référencer les objets COM à partir de Visual Basic
 Dans Visual Basic, l’ajout de références à des objets COM qui ont des bibliothèques de types requiert la création d’un assembly d’interopérabilité pour la bibliothèque COM. Les références aux membres de l’objet COM sont routées vers l’assembly d’interopérabilité, puis transmises à l’objet COM réel. Les réponses de l’objet COM sont routées vers l’assembly d’interopérabilité et transmises à votre application .NET Framework.  
   
- Vous pouvez référencer un objet COM sans utiliser d’assembly d’interopérabilité en incorporant les informations de type de l’objet COM dans un assembly .NET. Pour incorporer des informations de type, affectez à la propriété `Embed Interop Types` la valeur `True` pour la référence à l’objet COM. Si vous compilez à l’aide du compilateur de ligne de commande, utilisez l’option `/link` pour référencer la bibliothèque COM. Pour plus d’informations, consultez [/Link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md).  
+ Vous pouvez référencer un objet COM sans utiliser d’assembly d’interopérabilité en incorporant les informations de type de l’objet COM dans un assembly .NET. Pour incorporer des informations de type, affectez à la propriété `Embed Interop Types` la valeur `True` pour la référence à l’objet COM. Si vous compilez à l’aide du compilateur de ligne de commande, utilisez l’option `/link` pour référencer la bibliothèque COM. Pour plus d’informations, consultez [-Link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md).  
   
  Visual Basic crée automatiquement des assemblys d’interopérabilité lorsque vous ajoutez une référence à une bibliothèque de types à partir de l’environnement de développement intégré (IDE). Lorsque vous travaillez à partir de la ligne de commande, vous pouvez utiliser l’utilitaire Tlbimp pour créer manuellement des assemblys d’interopérabilité.  
   
@@ -28,7 +28,7 @@ Dans Visual Basic, l’ajout de références à des objets COM qui ont des bibli
   
 2. Sélectionnez le composant que vous souhaitez utiliser dans la liste des objets COM.  
   
-3. Pour simplifier l’accès à l’assembly d’interopérabilité, ajoutez une instruction `Imports` au début de la classe ou du module dans lequel vous allez utiliser l’objet COM. Par exemple, l’exemple de code suivant importe l’espace de noms `INKEDLib` pour les objets référencés dans la bibliothèque `Microsoft InkEdit Control 1.0`.  
+3. Pour simplifier l’accès à l’assembly d’interopérabilité, ajoutez une instruction `Imports` en haut de la classe ou du module dans lequel vous allez utiliser l’objet COM. Par exemple, l’exemple de code suivant importe l’espace de noms `INKEDLib` pour les objets référencés dans la bibliothèque de `Microsoft InkEdit Control 1.0`.  
   
      [!code-vb[VbVbalrInterop#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#40)]  
   
@@ -57,6 +57,6 @@ Dans Visual Basic, l’ajout de références à des objets COM qui ont des bibli
 - [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 - [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
 - [Imports (instruction) (espace de noms et type .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)

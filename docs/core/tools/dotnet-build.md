@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 10/07/2019
-ms.openlocfilehash: db353feebab920dc8f63b9854d14f050adeb0b79
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 0a3e2c0e441cfdd1cb8266bc77dc1aba08af84d6
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250193"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522776"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -66,85 +66,85 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 ## <a name="options"></a>Options
 
-* **`-c|--configuration {CONFIGURATION}`**
+- **`-c|--configuration {Debug|Release}`**
 
   Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
 
-* **`-f|--framework <FRAMEWORK>`**
+- **`-f|--framework <FRAMEWORK>`**
 
   Compile pour un [framework](../../standard/frameworks.md) spécifique. Le framework doit être défini dans le [fichier projet](csproj.md).
 
-* **`--force`**
+- **`--force`**
 
   Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*. Disponible à partir du kit SDK .NET Core 2.0.
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Affiche une aide brève pour la commande.
 
-* **`--interactive`**
+- **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
-* **`--no-dependencies`**
+- **`--no-dependencies`**
 
   Ignore les références entre projets (P2P) et génère uniquement le projet racine spécifié.
 
-* **`--no-incremental`**
+- **`--no-incremental`**
 
   Marque la build comme unsafe pour la génération incrémentielle. Cet indicateur désactive la compilation incrémentielle et force une regénération du graphique de dépendance du projet.
 
-* **`--no-restore`**
+- **`--no-restore`**
 
   N’exécute pas de restauration implicite pendant la génération. Disponible à partir du kit SDK .NET Core 2.0.
 
-* **`--nologo`**
+- **`--nologo`**
 
   N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
-* **`-o|--output <OUTPUT_DIRECTORY>`**
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
   Répertoire dans lequel placer les fichiers binaires générés. Vous devez également définir `--framework` lorsque vous spécifiez cette option. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.
 
-* **`-r|--runtime <RUNTIME_IDENTIFIER>`**
+- **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
   Spécifie le runtime cible. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).
 
-* **`-v|--verbosity <LEVEL>`**
+- **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`,
 
-* **`--version-suffix <VERSION_SUFFIX>`**
+- **`--version-suffix <VERSION_SUFFIX>`**
 
   Définit la valeur de la propriété `$(VersionSuffix)` à utiliser lors de la génération du projet. Cela fonctionne uniquement si la propriété `$(Version)` n’est pas définie. Ensuite, `$(Version)` est défini sur `$(VersionPrefix)` combiné avec `$(VersionSuffix)`, séparés par un tiret.
 
 ## <a name="examples"></a>Exemples
 
-* Générer un projet et ses dépendances :
+- Générer un projet et ses dépendances :
 
   ```dotnetcli
   dotnet build
   ```
 
-* Générer un projet et ses dépendances à l’aide de la configuration Release :
+- Générer un projet et ses dépendances à l’aide de la configuration Release :
 
   ```dotnetcli
   dotnet build --configuration Release
   ```
 
-* Générer un projet et ses dépendances pour un runtime spécifique (dans cet exemple, Ubuntu 18.04) :
+- Générer un projet et ses dépendances pour un runtime spécifique (dans cet exemple, Ubuntu 18.04) :
 
   ```dotnetcli
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
-* Générer le projet et utiliser la source de package NuGet spécifiée pendant l’opération de restauration (SDK .NET Core 2.0 et versions ultérieures) :
+- Générer le projet et utiliser la source de package NuGet spécifiée pendant l’opération de restauration (SDK .NET Core 2.0 et versions ultérieures) :
 
   ```dotnetcli
   dotnet build --source c:\packages\mypackages
   ```
 
-* Générer le projet et définissez la version 1.2.3.4 comme un paramètre de build à l’aide de l’`-p` [option MSBuild](#msbuild) :
+- Générer le projet et définissez la version 1.2.3.4 comme un paramètre de build à l’aide de l’`-p` [option MSBuild](#msbuild) :
 
   ```dotnetcli
   dotnet build -p:Version=1.2.3.4

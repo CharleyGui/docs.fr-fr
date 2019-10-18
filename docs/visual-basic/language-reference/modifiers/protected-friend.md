@@ -1,26 +1,26 @@
 ---
-title: Protected Friend (Visual Basic)
+title: Ami protégé (Visual Basic)
 ms.date: 05/10/2018
 helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
 - Protected Friend keyword [Visual Basic], syntax
-ms.openlocfilehash: 331c63dc290d4096e8158f265ee869b47743a273
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3592feaece1d5ce85ee6e2657d8a2715c4097a3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053884"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524772"
 ---
-# <a name="protected-friend-visual-basic"></a>Protected Friend (Visual Basic)
+# <a name="protected-friend-visual-basic"></a>Ami protégé (Visual Basic)
 
-La combinaison de mots clés `Protected Friend` est un modificateur d’accès de membre. Elle confère à la fois [Friend](friend.md) accès et [protégé](protected.md) accès sur les éléments déclarés, afin qu’ils soient accessibles à partir de n’importe où dans le même assembly, de leur propre classe et de classes dérivées. Vous pouvez spécifier `Protected Friend` uniquement sur les membres de classes ; vous ne pouvez pas appliquer `Protected Friend` aux membres d’une structure, car les structures ne peuvent pas être héritées.
+La combinaison de mots clés `Protected Friend` est un modificateur d’accès de membre. Il confère à l’accès [Friend](friend.md) et à l’accès [protégé](protected.md) sur les éléments déclarés, de sorte qu’ils sont accessibles depuis n’importe où dans le même assembly, à partir de leur propre classe et à partir de classes dérivées. Vous pouvez spécifier `Protected Friend` uniquement sur les membres de classes ; vous ne pouvez pas appliquer de `Protected Friend` aux membres d’une structure, car les structures ne peuvent pas être héritées.
 
 > [!NOTE]
-> Dans Visual Studio, en sélectionnant la touche F1 sur `protected friend` fournit une aide pour soit [protégé](protected.md) ou [friend](friend.md). L’IDE choisit le jeton unique sous le curseur plutôt que le mot composé.
+> Dans Visual Studio, la sélection de l’aide F1 sur `protected friend` fournit de l’aide pour [protected](protected.md) ou [Friend](friend.md). L’IDE sélectionne le jeton unique sous le curseur plutôt que le mot composé.
 
 ## <a name="rules"></a>Règles
 
-- **Contexte de déclaration.** Vous pouvez utiliser `Protected Friend` uniquement au niveau de la classe. Cela signifie que le contexte de déclaration pour un `Protected` élément doit être une classe et ne peut pas être une fichier source, un espace de noms, un module, une structure ou une procédure. 
+**Contexte de déclaration.** Vous pouvez utiliser `Protected Friend` uniquement au niveau de la classe. Cela signifie que le contexte de déclaration pour un élément de `Protected` doit être une classe et ne peut pas être un fichier source, un espace de noms, une interface, un module, une structure ou une procédure.
 
 ## <a name="see-also"></a>Voir aussi
 

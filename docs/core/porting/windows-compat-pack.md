@@ -4,12 +4,12 @@ description: Découvrez le pack de compatibilité Windows et comment l’utilise
 author: terrajobst
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 71e390881d4e9c7836622abeed49c0ea2e5f7526
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: adf2aaab27b5a8afcc89fceac67184d3b1974037
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202562"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521279"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Utiliser le pack de compatibilité Windows pour porter du code vers .NET Core
 
@@ -25,23 +25,23 @@ Le *pack de compatibilité Windows* est fourni via le package NuGet [Microsoft.W
 
 Il fournit environ 20 000 API, dont des API Windows uniquement ainsi des API multiplateformes des domaines technologiques suivants :
 
-* Pages de codes
-* CodeDom
-* Configuration
-* Services d'annuaire
-* Dessin
-* ODBC
-* Autorisations
-* Ports
-* Listes de contrôle d’accès Windows
-* Windows Communication Foundation (WCF)
-* Chiffrement Windows
-* Journal des événements Windows
-* WMI (Windows Management Instrumentation)
-* Compteurs de performances Windows
-* Registre Windows
-* Mise en cache Windows Runtime
-* services Windows
+- Pages de codes
+- CodeDom
+- Configuration
+- Services d'annuaire
+- Dessin
+- ODBC
+- Autorisations
+- Ports
+- Listes de contrôle d’accès Windows
+- Windows Communication Foundation (WCF)
+- Chiffrement Windows
+- Journal des événements Windows
+- WMI (Windows Management Instrumentation)
+- Compteurs de performances Windows
+- Registre Windows
+- Mise en cache Windows Runtime
+- services Windows
 
 Pour plus d’informations, consultez la [spécification du pack de compatibilité](https://github.com/dotnet/designs/blob/master/accepted/compat-pack/compat-pack.md).
 

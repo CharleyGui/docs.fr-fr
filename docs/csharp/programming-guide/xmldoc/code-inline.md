@@ -11,12 +11,12 @@ helpviewer_keywords:
 - c C# XML tag
 - <c> C# XML tag
 ms.assetid: aad5b16e-a29e-445e-bd0d-eea0b138d7b2
-ms.openlocfilehash: c881b9ec577fb04381f9e10c7df8f9d0da44cd66
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 9454ef8cc4b72d1d6bdcac26faf76eb17080328c
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588184"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523536"
 ---
 # <a name="c-c-programming-guide"></a>\<c> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -29,12 +29,12 @@ ms.locfileid: "69588184"
  `text`  
  Texte que vous souhaitez indiquer comme étant du code.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La balise \<c> vous permet d’indiquer que le texte d’une description doit être marqué comme étant du code. Utilisez [\<code>](./code.md) pour indiquer plusieurs lignes comme étant du code.  
   
- Compilez avec [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideDocComments#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#2)]  
   
 ## <a name="see-also"></a>Voir aussi

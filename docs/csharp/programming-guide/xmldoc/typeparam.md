@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: ea48cf0cdfc2dc48ad29ab6219449f801739bc8f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e5e0d7be46e02bd30799b54246db729ae63ca300
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587592"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523285"
 ---
 # <a name="typeparam-c-programming-guide"></a>\<typeparam> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -36,13 +36,13 @@ ms.locfileid: "69587592"
   
  Le texte de la balise `<typeparam>` s’affiche dans IntelliSense, dans la [fenêtre Explorateur d’objets](/visualstudio/ide/viewing-the-structure-of-code#BKMK_ObjectBrowser) et dans le rapport web de commentaire de code.  
   
- Compilez avec [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideDocComments#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#13)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Informations de référence sur C#](../../language-reference/index.md)
 - [Guide de programmation C#](../index.md)
 - [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md)

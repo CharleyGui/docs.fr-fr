@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: e81a95102100d3b0f3fdc84cf2113abf6ae35351
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 17956838c20a4342873478869c07c6382f037fcb
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588126"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523513"
 ---
 # <a name="example-c-programming-guide"></a>\<example> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -27,12 +27,12 @@ ms.locfileid: "69588126"
  `description`  
  Description de l’exemple de code.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La balise \<example> vous permet de spécifier un exemple d’utilisation d’une méthode ou de tout autre membre de bibliothèque. Cela implique généralement l’utilisation de la balise [\<code>](./code.md).  
   
- Compilez avec [/doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  
   
 ## <a name="see-also"></a>Voir aussi

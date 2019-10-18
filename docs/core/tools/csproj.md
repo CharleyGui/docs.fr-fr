@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 2ec1aaff88754848d844a56b1744beb2efa4cd89
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: d7fca40caaeb83152b8ae5260bf918981362d2c3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291235"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522792"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -33,11 +33,11 @@ Les métapackages sont référencés implicitement en fonction du ou des framewo
 
 Comme les métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` sont implicitement référencés, voici les bonnes pratiques que nous recommandons :
 
-* Quand vous ciblez .NET Core ou .NET Standard, n’incluez jamais de référence explicite aux métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` via un élément `<PackageReference>` dans votre fichier projet.
-* Si vous avez besoin d’une version spécifique du runtime quand vous ciblez .NET Core, vous devez utiliser la propriété `<RuntimeFrameworkVersion>` dans votre projet (par exemple, `1.0.4`) au lieu de référencer le métapackage.
-  * Cela peut se produire si vous utilisez des [déploiements autonomes](../deploying/index.md#self-contained-deployments-scd) et que vous devez utiliser une version de correctif spécifique du runtime 1.0.0 LTS, par exemple.
-* Si vous avez besoin d’une version spécifique du métapackage `NETStandard.Library` quand vous ciblez .NET Standard, vous pouvez utiliser la propriété `<NetStandardImplicitPackageVersion>` et définir la version dont vous avez besoin.
-* Vous ne devez pas ajouter ni mettre à jour explicitement les références au métapackage `Microsoft.NETCore.App` ou `NETStandard.Library` dans les projets .NET Framework. Si une version de `NETStandard.Library` est nécessaire lors de l’utilisation d’un package NuGet basé sur .NET Standard, NuGet installe automatiquement cette version.
+- Quand vous ciblez .NET Core ou .NET Standard, n’incluez jamais de référence explicite aux métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` via un élément `<PackageReference>` dans votre fichier projet.
+- Si vous avez besoin d’une version spécifique du runtime quand vous ciblez .NET Core, vous devez utiliser la propriété `<RuntimeFrameworkVersion>` dans votre projet (par exemple, `1.0.4`) au lieu de référencer le métapackage.
+  - Cela peut se produire si vous utilisez des [déploiements autonomes](../deploying/index.md#self-contained-deployments-scd) et que vous devez utiliser une version de correctif spécifique du runtime 1.0.0 LTS, par exemple.
+- Si vous avez besoin d’une version spécifique du métapackage `NETStandard.Library` quand vous ciblez .NET Standard, vous pouvez utiliser la propriété `<NetStandardImplicitPackageVersion>` et définir la version dont vous avez besoin.
+- Vous ne devez pas ajouter ni mettre à jour explicitement les références au métapackage `Microsoft.NETCore.App` ou `NETStandard.Library` dans les projets .NET Framework. Si une version de `NETStandard.Library` est nécessaire lors de l’utilisation d’un package NuGet basé sur .NET Standard, NuGet installe automatiquement cette version.
 
 ## <a name="implicit-version-for-some-package-references"></a>Version implicite pour certaines références de packages
 
@@ -59,8 +59,8 @@ Ces références aux métapackages ASP.NET Core ont un comportement légèrement
 
 Si une version *est* spécifiée, elle est traitée comme la version *minimale* du framework partagé ASP.NET Core pour les déploiements dépendant du framework, et comme une version *exacte* pour les déploiements autonomes. Cela peut avoir les conséquences suivantes :
 
-* Si la version d’ASP.NET Core installée sur le serveur est inférieure à la version spécifiée sur PackageReference, le processus .NET Core n’est pas lancé. Les mises à jour du métapackage sont souvent disponibles sur NuGet.org avant que des mises à jour soient publiées dans les environnements d’hébergement comme Azure. La mise à jour de la version sur PackageReference avec ASP.NET Core peut entraîner l’échec d’une application déployée.
-* Si l’application est déployée comme un [déploiement autonome](../deploying/index.md#self-contained-deployments-scd), cette application ne peut pas contenir les dernières mises à jour de sécurité pour .NET Core. Quand une version n’est pas spécifiée, le Kit SDK peut inclure automatiquement la dernière version ASP.NET Core dans le déploiement autonome.
+- Si la version d’ASP.NET Core installée sur le serveur est inférieure à la version spécifiée sur PackageReference, le processus .NET Core n’est pas lancé. Les mises à jour du métapackage sont souvent disponibles sur NuGet.org avant que des mises à jour soient publiées dans les environnements d’hébergement comme Azure. La mise à jour de la version sur PackageReference avec ASP.NET Core peut entraîner l’échec d’une application déployée.
+- Si l’application est déployée comme un [déploiement autonome](../deploying/index.md#self-contained-deployments-scd), cette application ne peut pas contenir les dernières mises à jour de sécurité pour .NET Core. Quand une version n’est pas spécifiée, le Kit SDK peut inclure automatiquement la dernière version ASP.NET Core dans le déploiement autonome.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Inclusions de compilation par défaut dans les projets .NET Core
 
@@ -74,7 +74,7 @@ Le tableau suivant montre les éléments et les modèles [Glob](https://en.wikip
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
 | Compile           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| Aucun.              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
+| aucune.              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
 
 > [!NOTE]
 > **Exclure Glob** exclut toujours les dossiers `./bin` et `./obj`, respectivement représentés par les propriétés MSBuild `$(BaseOutputPath)` et `$(BaseIntermediateOutputPath)`. Dans l’ensemble, toutes les exclusions sont représentées par `$(DefaultItemExcludes)`.
@@ -160,19 +160,20 @@ L’attribut `PrivateAssets` spécifie quelles ressources appartenant au package
 
 Ces attributs peuvent contenir un ou plusieurs éléments de la liste suivante, séparés par le caractère point-virgule `;` le cas échéant :
 
-* `Compile` : Le contenu du dossier lib est disponible pour la compilation.
-* `Runtime` : Le contenu du dossier runtime est distribué.
-* `ContentFiles` : Le contenu du dossier *contentfiles* est utilisé.
-* `Build` : Les propriétés/cibles du dossier de génération sont utilisées.
-* `Native` : Le contenu des ressources natives est copié dans le dossier de sortie de l’exécution.
-* `Analyzers` : Les analyseurs sont utilisés.
+- `Compile` : le contenu du dossier *lib* est disponible pour la compilation.
+- `Runtime` : le contenu du dossier *Runtime* est distribué.
+- `ContentFiles` : Le contenu du dossier *contentfiles* est utilisé.
+- `Build` : les propriétés/cibles du dossier de *génération* sont utilisées.
+- `Native` : le contenu des ressources natives est copié dans le dossier de *sortie* pour l’exécution.
+- `Analyzers` : Les analyseurs sont utilisés.
 
 Sinon, l’attribut peut contenir :
 
-* `None` : Aucune ressource n’est utilisée.
-* `All` : Toutes les ressources sont utilisées.
+- `None` : Aucune ressource n’est utilisée.
+- `All` : Toutes les ressources sont utilisées.
 
 ### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
+
 Un élément `<DotNetCliToolReference>` spécifie l’outil CLI que l’utilisateur souhaite restaurer dans le contexte du projet. Il constitue une alternative au nœud `tools` dans *project.json*.
 
 ```xml
@@ -224,7 +225,7 @@ L’exemple suivant spécifie les solutions de secours uniquement pour la cible 
 
 ## <a name="nuget-metadata-properties"></a>Propriétés de métadonnées NuGet
 
-Avec le passage à MSBuild, nous avons transféré les métadonnées d’entrée utilisées lors de la compression d’un package NuGet des fichiers *project.json* vers les fichiers *csproj*. Les entrées sont des propriétés MSBuild qui doivent donc être placées dans un groupe `<PropertyGroup>`. Voici la liste des propriétés qui sont utilisées comme entrées dans le processus de compression lors de l’utilisation de la commande `dotnet pack` ou de la cible MSBuild `Pack` qui fait partie du SDK.
+Avec le passage à MSBuild, nous avons transféré les métadonnées d’entrée utilisées lors de la compression d’un package NuGet des fichiers *project.json* vers les fichiers *csproj*. Les entrées sont des propriétés MSBuild qui doivent donc être placées dans un groupe `<PropertyGroup>`. Voici la liste des propriétés utilisées comme entrées dans le processus de compression lors de l’utilisation de la commande `dotnet pack` ou de la cible `Pack` MSBuild qui fait partie du kit de développement logiciel (SDK) :
 
 ### <a name="ispackable"></a>IsPackable
 
@@ -244,7 +245,7 @@ Titre convivial du package, généralement utilisé dans les affichages de l’i
 
 ### <a name="authors"></a>Auteurs
 
-Liste séparée par des points-virgules des auteurs de packages, qui correspondent aux noms de profil sur nuget.org. Ceux-ci sont affichés dans la galerie NuGet sur nuget.org et servent à croiser les références des packages de mêmes auteurs.
+Liste délimitée par des points-virgules des auteurs de packages, qui correspondent aux noms de profil sur nuget.org. Ceux-ci sont affichés dans la galerie NuGet sur nuget.org et sont utilisés pour faire référence croisée aux packages par les mêmes auteurs.
 
 ### <a name="packagedescription"></a>PackageDescription
 
@@ -260,7 +261,7 @@ Détails de copyright pour le package.
 
 ### <a name="packagerequirelicenseacceptance"></a>PackageRequireLicenseAcceptance
 
-Valeur booléenne qui spécifie si le client doit inviter l’utilisateur à accepter la licence du package avant d’installer le package. La valeur par défaut est `false`.
+Valeur booléenne qui spécifie si le client doit inviter l’utilisateur à accepter la licence du package avant d’installer le package. La valeur par défaut est `false`,
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
@@ -368,7 +369,7 @@ Ces valeurs booléennes spécifient si les assemblys de sortie de génération d
 
 ### <a name="includecontentinpack"></a>IncludeContentInPack
 
-Cette valeur booléenne indique si tous les éléments qui ont un type `Content` sont automatiquement inclus dans le package obtenu. La valeur par défaut est `true`.
+Cette valeur booléenne indique si tous les éléments qui ont un type `Content` sont automatiquement inclus dans le package obtenu. La valeur par défaut est `true`,
 
 ### <a name="buildoutputtargetfolder"></a>BuildOutputTargetFolder
 
@@ -401,7 +402,7 @@ Les [attributs d’assembly](../../standard/assembly/set-attributes.md) qui figu
 
 Chaque attribut a une propriété qui contrôle son contenu et une autre pour désactiver sa génération, comme indiqué dans le tableau suivant :
 
-| Attribut                                                      | Propriété               | Propriété permettant de désactiver                             |
+| Attribut                                                      | Property               | Propriété permettant de désactiver                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|
 | <xref:System.Reflection.AssemblyCompanyAttribute>              | `Company`              | `GenerateAssemblyCompanyAttribute`              |
 | <xref:System.Reflection.AssemblyConfigurationAttribute>        | `Configuration`        | `GenerateAssemblyConfigurationAttribute`        |
@@ -416,11 +417,11 @@ Chaque attribut a une propriété qui contrôle son contenu et une autre pour d�
 
 Remarques :
 
-* Le comportement par défaut de `AssemblyVersion` et `FileVersion` consiste à prendre la valeur de `$(Version)` sans suffixe. Par exemple, si `$(Version)` est `1.2.3-beta.4`, alors la valeur serait `1.2.3`.
-* `InformationalVersion` utilise par défaut la valeur de `$(Version)`.
-* `$(SourceRevisionId)` est ajouté à `InformationalVersion` si la propriété est présente. Cela peut être désactivé à l’aide de `IncludeSourceRevisionInInformationalVersion`.
-* Les propriétés `Copyright` et `Description` sont également utilisées pour les métadonnées NuGet.
-* `Configuration` est partagé avec le processus de génération et défini par le biais du paramètre `--configuration` des commandes `dotnet`.
+- Le comportement par défaut de `AssemblyVersion` et `FileVersion` consiste à prendre la valeur de `$(Version)` sans suffixe. Par exemple, si `$(Version)` est `1.2.3-beta.4`, alors la valeur serait `1.2.3`.
+- `InformationalVersion` utilise par défaut la valeur de `$(Version)`.
+- `$(SourceRevisionId)` est ajouté à `InformationalVersion` si la propriété est présente. Cela peut être désactivé à l’aide de `IncludeSourceRevisionInInformationalVersion`.
+- Les propriétés `Copyright` et `Description` sont également utilisées pour les métadonnées NuGet.
+- `Configuration` est partagé avec le processus de génération et défini par le biais du paramètre `--configuration` des commandes `dotnet`.
 
 ### <a name="generateassemblyinfo"></a>GenerateAssemblyInfo
 

@@ -4,19 +4,19 @@ description: Découvrez certains des outils que vous pouvez utiliser pour effect
 author: cartermp
 ms.author: mairaw
 ms.date: 12/07/2018
-ms.openlocfilehash: d0b74b5708f31922b72fa0e236c8bbe69ae06217
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 0478719617741946768cfe8e220a1dd402667998
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632255"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521351"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Outils facilitant le portage vers .NET Core
 
 Les outils présentés dans cet article peuvent vous être utiles dans le cadre d’un portage :
 
-* [.NET Portability Analyzer](../../standard/analyzers/portability-analyzer.md) : chaîne d’outils capable de générer un rapport sur la portabilité de votre code entre .NET Framework et .NET Core :  En tant qu’[outil en ligne de commande](https://github.com/Microsoft/dotnet-apiport/releases) En tant qu’[extension Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)
-* [.NET API Analyzer](../../standard/analyzers/api-analyzer.md) : analyseur Roslyn qui découvre les risques potentiels liés à la compatibilité des API C# sur différentes plateformes et détecte les appels aux API dépréciées.
+- [Analyseur de portabilité .net](../../standard/analyzers/portability-analyzer.md) -chaîne d’outils qui peut générer un rapport sur la portabilité de votre code entre .NET Framework et .net Core : en tant qu' [outil en ligne de commande](https://github.com/Microsoft/dotnet-apiport/releases) en tant qu' [extension Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)
+- [.NET API Analyzer](../../standard/analyzers/api-analyzer.md) : analyseur Roslyn qui découvre les risques potentiels liés à la compatibilité des API C# sur différentes plateformes et détecte les appels aux API dépréciées.
 
 En outre, vous pouvez essayer de porter des solutions plus petites ou des projets individuels au format de fichier de projet .NET Core avec l’outil [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017).
 

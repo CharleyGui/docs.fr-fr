@@ -6,12 +6,12 @@ helpviewer_keywords:
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-ms.openlocfilehash: fbe3634d1fbc03acd56ef7276d65fd54493b9806
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: dd98b45d75ff421dc81666ed47695132a49bfa3a
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002417"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524481"
 ---
 # <a name="-addmodule"></a>-addmodule
 Entraîne la mise à disposition par le compilateur de toutes les informations de type à partir du ou des fichiers spécifiés, pour le projet en cours de compilation.  
@@ -24,16 +24,16 @@ Entraîne la mise à disposition par le compilateur de toutes les informations d
   
 ## <a name="arguments"></a>Arguments  
  `fileList`  
- Obligatoire. Liste de fichiers délimités par des virgules qui contiennent des métadonnées, mais qui ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être placés entre guillemets ("").  
+ Requis. Liste de fichiers délimités par des virgules qui contiennent des métadonnées, mais qui ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être placés entre guillemets ("").  
   
 ## <a name="remarks"></a>Notes  
  Les fichiers figurant dans le paramètre `fileList` doivent être créés avec l’option `-target:module`, ou avec un autre compilateur équivalent à `-target:module`.  
   
- Tous les modules ajoutés avec `-addmodule` doivent se trouver dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l’application au moment de l’exécution. Si ce n’est pas le cas, vous recevez une erreur <xref:System.TypeLoadException>.  
+ Tous les modules ajoutés avec `-addmodule` doivent se trouver dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l’application au moment de l’exécution. Si ce n’est pas le cas, vous recevez une erreur de <xref:System.TypeLoadException>.  
   
- Si vous spécifiez (implicitement ou explicitement) une option[-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) autre que `-target:module` avec `-addmodule`, les fichiers que vous transmettez à `-addmodule` font partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui a un ou plusieurs fichiers ajoutés avec `-addmodule`.  
+ Si vous spécifiez (implicitement ou explicitement) une option[-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) autre que `-target:module` avec `-addmodule`, les fichiers que vous transmettez à `-addmodule` feront partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui a un ou plusieurs fichiers ajoutés avec `-addmodule`.  
   
- Utilisez [/Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées d’un fichier qui contient un assembly.  
+ Utilisez [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées d’un fichier qui contient un assembly.  
   
 > [!NOTE]
 > L’option `-addmodule` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  

@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 4e8fbfa14c241c79f8708dfc2b288eeff2899891
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: e905d48da31bb5a2e16a645620f2c4f57dda4413
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216238"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522807"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -146,7 +146,7 @@ Pour publier votre application à partir de Visual Studio, effectuez les étapes
 
       1. Sous l’onglet **Publier**, sélectionnez **Publier**. Visual Studio écrit les fichiers qui composent votre application dans le système de fichiers local.
 
-      1. L’onglet **Publier** affiche maintenant un seul profil, **FolderProfile**. Les paramètres de configuration du profil sont affichés dans la section **Résumé** de l’onglet. **Runtime cible** identifie le runtime qui a été publié, et **Emplacement cible** l’endroit où les fichiers du déploiement autonome ont été écrits.
+      1. L’onglet **Publier** affiche maintenant un seul profil, **FolderProfile**. Les paramètres de configuration du profil s’affichent dans la section **Résumé** de l’onglet. le **Runtime cible** identifie le runtime qui a été publié, et l' **emplacement cible** identifie l’emplacement des fichiers pour le déploiement autonome. EFFAC.
 
       1. Par défaut, Visual Studio écrit tous les fichiers publiés dans un répertoire unique. Pour des raisons pratiques, il est préférable de créer des profils séparés pour chaque runtime cible et de placer les fichiers publiés dans un répertoire spécifique à la plateforme. Vous devez donc créer un profil de publication distinct pour chaque plateforme cible. À présent, effectuez les étapes suivantes pour regénérer l’application pour chaque plateforme :
 
@@ -194,7 +194,7 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
   
 1. Sélectionnez l’emplacement où Visual Studio publie votre application.
 
-   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut de la zone de texte **Choisir un dossier**. Cela vous permet de publier le déploiement dépendant du framework de votre application sur le répertoire *\<répertoire-projet>\bin\Release\netcoreapp2.1\publish\*.
+   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant de l’infrastructure de votre application dans le répertoire *\<project-directory > \bin\Release\netcoreapp2.1\publish* .
 
    Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « linux » au chemin de fichier, Visual Studio publie le déploiement dépendant du framework de votre application sur *\<répertoire-projet>\bin\Release\netcoreapp2.1\publish\linux*.
 
@@ -218,7 +218,7 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
 
 Répétez ces étapes pour définir les plateformes cibles supplémentaires ciblées par votre application.
 
-Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour ce faire :
+Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour cela :
 
    1. Si la fenêtre **Publier** n’est pas ouverte, cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Publier**.
 

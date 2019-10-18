@@ -13,14 +13,14 @@ helpviewer_keywords:
 - item XML tag
 - <term> XML tag
 ms.assetid: ec35fced-d58e-4520-a764-0691256e014b
-ms.openlocfilehash: 7d7b85867f4c701322c5e6c31f2d89ab38fad05d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d4295d485611e75e8b6c8d8f95e079654f0cfa3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940872"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524753"
 ---
-# <a name="list-visual-basic"></a>\<liste > (Visual Basic)
+# <a name="list-visual-basic"></a>> \<list (Visual Basic)
 Définit une liste ou une table.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,25 +40,25 @@ Définit une liste ou une table.
   
 ## <a name="parameters"></a>Paramètres  
  `type`  
- Le type de la liste. Doit être un « bullet » pour une liste à puces, le « nombre » pour une liste numérotée, ou « table » pour une table de deux colonnes.  
+ Type de la liste. Doit être une « puce » pour une liste à puces, « nombre » pour une liste numérotée ou « table » pour une table à deux colonnes.  
   
  `term`  
  Utilisé uniquement lorsque `type` est « table ». Terme à définir, qui est défini dans la balise de description.  
   
  `description`  
- Lorsque `type` est « puce » ou « numéro », `description` est un élément dans la liste lorsque `type` est « table », `description` est la définition de `term`.  
+ Lorsque `type` est « Bullet » ou « Number », `description` est un élément de la liste lorsque `type` est « table », `description` est la définition de `term`.  
   
 ## <a name="remarks"></a>Notes  
- Le `<listheader>` bloc définit le titre d’une table ou une définition de liste. Lorsque vous définissez une table, il vous suffit de fournir une entrée pour `term` dans l’en-tête.  
+ Le bloc `<listheader>` définit le titre d’une table ou d’une liste de définitions. Lors de la définition d’une table, il vous suffit de fournir une entrée pour `term` dans l’en-tête.  
   
- Chaque élément dans la liste est spécifié avec un `<item>` bloc. Lorsque vous créez une liste de définitions, vous devez spécifier les `term` et `description`. Toutefois, pour une table, une liste à puces ou une liste numérotée, il vous suffit de fournir une entrée pour `description`.  
+ Chaque élément de la liste est spécifié avec un bloc `<item>`. Lorsque vous créez une liste de définitions, vous devez spécifier à la fois `term` et `description`. Toutefois, pour une table, une liste à puces ou une liste numérotée, il vous suffit de fournir une entrée pour `description`.  
   
- Une liste ou une table peut avoir autant `<item>` bloque en fonction des besoins.  
+ Une liste ou une table peut avoir autant de blocs `<item>` que nécessaire.  
   
- Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le `<list>` balise pour définir une liste à puces dans la section Notes.  
+ Cet exemple utilise la balise `<list>` pour définir une liste à puces dans la section Notes.  
   
  [!code-vb[VbVbcnXmlDocComments#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#5)]  
   

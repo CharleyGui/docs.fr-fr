@@ -5,14 +5,14 @@ helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: 014623be84f9d7eb8a25ac4aadcce450f158c154
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dbd99997fed33c192a2160fb45a739addbae254a
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940749"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72524625"
 ---
-# <a name="typeparam-visual-basic"></a>\<typeparam > (Visual Basic)
+# <a name="typeparam-visual-basic"></a>> \<typeparam (Visual Basic)
 Définit un nom de paramètre de type et une description.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,12 +29,12 @@ Définit un nom de paramètre de type et une description.
  Description du paramètre de type.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le `<typeparam>` balise dans le commentaire pour un type générique ou une déclaration de membre générique décrire l’un des paramètres de type.  
+ Utilisez la balise `<typeparam>` dans le commentaire pour un type générique ou une déclaration de membre générique pour décrire l’un des paramètres de type.  
   
- Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
+ Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le `<typeparam>` balises pour décrire le `id` paramètre.  
+ Cet exemple utilise la balise `<typeparam>` pour décrire le paramètre `id`.  
   
  [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  
   

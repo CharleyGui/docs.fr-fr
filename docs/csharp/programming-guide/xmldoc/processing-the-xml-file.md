@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: 4592fa9350ff9b03620a0739388f59652062235f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: bb713fbc5ddd3737cb629c5c09c25ff2980c73dc
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587851"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523377"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (Guide de programmation C#)
 
@@ -71,7 +71,7 @@ Le compilateur génère une chaîne d’ID pour chaque construction de votre cod
 
 - Pour les opérateurs de conversion uniquement (op_Implicit et op_Explicit), la valeur de retour de la méthode est encodée en tant que « ~ » suivi du type de retour, conformément à l’encodage ci-dessus.
 
-- Pour les types génériques, le nom du type est suivi d’un accent grave, puis d’un chiffre qui indique le nombre de paramètres de type générique. Par exemple :
+- Pour les types génériques, le nom du type est suivi d’un accent grave, puis d’un chiffre qui indique le nombre de paramètres de type générique. Exemple :
 
      ``<member name="T:SampleClass`2">`` est l’étiquette pour un type qui est défini en tant que `public class SampleClass<T, U>`.
 
@@ -86,5 +86,5 @@ Les exemples suivants montrent comment les chaînes d’ID pour une classe et se
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [/doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [-doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Commentaires sur la documentation XML](./index.md)

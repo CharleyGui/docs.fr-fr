@@ -3,12 +3,12 @@ title: Documentation de votre code avec des commentaires XML
 description: Découvrez comment documenter votre code avec des commentaires de documentation XML et générer un fichier de documentation XML au moment de la compilation.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: b6744921f4703f53a16b6bdadcfbf375c2fb3332
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 048546407dbf94f274dd8c9c39e83c103efd75e1
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104769"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521160"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Documentation de votre code avec des commentaires XML
 
@@ -34,9 +34,9 @@ Vous pouvez générer le fichier XML au moment de la compilation en procédant c
 
 - Si vous développez une application à l’aide de Visual Studio, cliquez avec le bouton droit sur le projet, puis sélectionnez **Propriétés**. Dans la boîte de dialogue des propriétés, sélectionnez l’onglet **Générer**, puis cochez **Fichier de documentation XML**. Vous pouvez également changer l’emplacement dans lequel le compilateur écrit le fichier.
 
-- Si vous compilez une application .NET Framework à partir de la ligne de commande, ajoutez l’[option du compilateur /doc](language-reference/compiler-options/doc-compiler-option.md) lors de la compilation.  
+- Si vous compilez une application .NET Framework à partir de la ligne de commande, ajoutez l' [option de compilateur-doc](language-reference/compiler-options/doc-compiler-option.md) lors de la compilation.  
 
-Les commentaires de documentation XML utilisent des barres obliques triples (`///`) et le corps d’un commentaire au format XML. Par exemple :
+Les commentaires de documentation XML utilisent des barres obliques triples (`///`) et le corps d’un commentaire au format XML. Exemple :
 
 [!code-csharp[XML Documentation Comment](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
 
