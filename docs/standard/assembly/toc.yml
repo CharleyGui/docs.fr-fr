@@ -17,6 +17,8 @@
       href: file-format.md
     - name: "Procédure\_: Utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core"
       href: unloadability.md
+    - name: Assemblys de référence
+      href: reference-assemblies.md
     - name: Résoudre les chargements d’assembly
       href: resolve-loads.md
     - name: Programmer avec des assemblys
