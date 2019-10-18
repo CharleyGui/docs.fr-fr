@@ -1,11 +1,10 @@
 ---
-ms.openlocfilehash: ad6526311fce09e49fd42707ff568745188df221
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 349801b5c6d501566855120ce881818697fef9d4
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703580"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72523794"
 ---
-
-> [!NOTE] 
-> <span data-ttu-id="6db21-101">Cette API est destinée à un usage interne uniquement.</span><span class="sxs-lookup"><span data-stu-id="6db21-101">This API is for internal use only.</span></span> <span data-ttu-id="6db21-102">Elle n’est pas destinée à être utilisée dans le code du développeur.</span><span class="sxs-lookup"><span data-stu-id="6db21-102">It's not intended for use from developer code.</span></span>
+> [!NOTE]
+> <span data-ttu-id="38d25-101">Cette API est destinée à un usage interne uniquement.</span><span class="sxs-lookup"><span data-stu-id="38d25-101">This API is for internal use only.</span></span> <span data-ttu-id="38d25-102">Elle n’est pas destinée à être utilisée dans le code du développeur.</span><span class="sxs-lookup"><span data-stu-id="38d25-102">It's not intended for use from developer code.</span></span>
