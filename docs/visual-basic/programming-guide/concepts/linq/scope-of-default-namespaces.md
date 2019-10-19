@@ -2,12 +2,12 @@
 title: Portée des espaces de noms par défaut dans Visual Basic
 ms.date: 07/20/2015
 ms.assetid: d4cce80c-342f-4097-be8b-40ab0bfa90ba
-ms.openlocfilehash: af868454c9d1dce7d8bf5a1902f64eff8db8780c
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: a08d140cfc68c36c26487ab47fc82dd3bf522fa8
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710355"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581880"
 ---
 # <a name="scope-of-default-namespaces-in-visual-basic"></a>Portée des espaces de noms par défaut dans Visual Basic
 Les espaces de noms tels que représentés dans l'arborescence XML par défaut ne sont pas dans la portée pour les requêtes. Si vous avez du code XML qui est dans un espace de noms par défaut, vous devez déclarer une variable <xref:System.Xml.Linq.XNamespace> et la combiner avec le nom local afin de créer un nom complet utilisable dans la requête.  
@@ -47,10 +47,10 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Commentaires  
+### <a name="comments"></a>Comments  
  Cet exemple génère le résultat suivant :  
   
-```  
+```console  
 Result set follows:  
 End of result set  
 ```  
@@ -88,10 +88,10 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Commentaires  
+### <a name="comments"></a>Comments  
  Cet exemple génère le résultat suivant :  
   
-```  
+```console  
 Result set follows:  
 1  
 2  

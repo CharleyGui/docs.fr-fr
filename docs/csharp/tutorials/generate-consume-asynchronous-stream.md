@@ -3,14 +3,14 @@ title: Générer et consommer des flux asynchrones
 description: Ce tutoriel avancé illustre des scénarios où la génération et la consommation de flux asynchrones permet de travailler plus naturellement avec des séquences de données pouvant être générées de façon asynchrone.
 ms.date: 02/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 04c4fe1c7e33138273c5b49c6985efc60767a724
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 6c013d1b589367b77c6f77f88334317a6f3bc657
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216555"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579220"
 ---
-# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Tutoriel : Générer et consommer des flux asynchrones à l’aide de C# 8.0 et de .NET Core 3.0
+# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Didacticiel : générer et utiliser des flux asynchrones à l’aide C# de 8,0 et .net Core 3,0
 
 C# 8.0 introduit des **flux asynchrones**, ce qui permet de modéliser une source de données en diffusion en continu lorsque les éléments du flux de données peuvent être récupérés ou générés de façon asynchrone. Les flux asynchrones sont basés sur de nouvelles interfaces introduites dans .NET Standard 2.1 et implémentées dans .NET Core 3.0 afin de fournir un modèle de programmation naturel pour les sources de données asynchrones en diffusion en continu.
 
@@ -22,7 +22,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - consommer cette source de données de façon asynchrone ;
 > - reconnaître quand l’interface et la source de données nouvelles sont préférables aux séquences de données synchrones précédentes.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -58,7 +58,7 @@ L’implémentation révèle pourquoi vous avez observé le comportement décrit
 
 [!code-csharp[RunPagedQueryStarter](~/samples/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#RunPagedQuery)]
 
-Concentrons-nous sur l’algorithme de pagination et sur la structure asynchrone du code précédent. (Vous pouvez consulter la [documentation GitHub GraphQL](https://developer.github.com/v4/guides/) pour en savoir plus sur l’API GraphQL GitHub.) La méthode `runPagedQueryAsync` énumère les problèmes du plus récent au plus ancien. Elle a besoin de 25 problèmes par page et examine la structure `pageInfo` de la réponse pour continuer avec la page précédente. Cela suit la prise en charge standard de la pagination de GraphQL pour les réponses multipages. La réponse inclut un objet `pageInfo` qui contient une valeur `hasPreviousPages` et une valeur `startCursor` utilisées pour demander la page précédente. Les problèmes se trouvent dans le tableau `nodes`. La méthode `runPagedQueryAsync` ajoute ces nœuds à un tableau qui contient tous les résultats de toutes les pages.
+Concentrons-nous sur l’algorithme de pagination et sur la structure asynchrone du code précédent. (Vous pouvez consulter la [documentation de GitHub GraphQL](https://developer.github.com/v4/guides/) pour plus d’informations sur l’API GraphQL github.) La méthode `runPagedQueryAsync` énumère les problèmes de la plus récente à la plus ancienne. Elle a besoin de 25 problèmes par page et examine la structure `pageInfo` de la réponse pour continuer avec la page précédente. Cela suit la prise en charge standard de la pagination de GraphQL pour les réponses multipages. La réponse inclut un objet `pageInfo` qui contient une valeur `hasPreviousPages` et une valeur `startCursor` utilisées pour demander la page précédente. Les problèmes se trouvent dans le tableau `nodes`. La méthode `runPagedQueryAsync` ajoute ces nœuds à un tableau qui contient tous les résultats de toutes les pages.
 
 Après la récupération et la restauration d’une page de résultats, `runPagedQueryAsync` signale la progression et vérifie l’annulation. Si l’annulation a été demandée, `runPagedQueryAsync` lève une <xref:System.OperationCanceledException>.
 
@@ -135,7 +135,7 @@ Vous pouvez obtenir le code du tutoriel terminé dans le référentiel [dotnet/s
 
 ## <a name="run-the-finished-application"></a>Exécutez l'application terminée
 
-Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée.
+Exécutez de nouveau l'application. Comparez son comportement avec le comportement de l’application de démarrage. La première page de résultats est énumérée dès qu’elle est disponible. Une pause peut être observée lorsque chaque nouvelle page est demandée et récupérée, puis les résultats de la page suivante sont rapidement énumérés. Le bloc `try` / `catch` n’est pas nécessaire pour gérer l’annulation : l’appelant peut arrêter l’énumération de la collection. Le rapport de progression est clair, car le flux asynchrone génère des résultats à mesure que chaque page est téléchargée. L’état de chaque problème renvoyé est inclus en toute transparence dans la boucle `await foreach`. Vous n’avez pas besoin d’un objet de rappel pour suivre la progression.
 
 Vous pouvez voir des améliorations lors de l’utilisation de mémoire en examinant le code. Vous n’avez plus besoin d’allouer une collection pour stocker tous les résultats avant qu’ils ne soient énumérés. L’appelant peut déterminer comment utiliser les résultats et si une collection de stockage est nécessaire.
 

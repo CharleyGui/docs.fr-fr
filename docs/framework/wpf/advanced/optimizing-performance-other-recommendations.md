@@ -1,5 +1,5 @@
 ---
-title: 'Optimisation des performances : Autres recommandations'
+title: 'Optimisation des performances : autres recommandations'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: 9757a8c8327feb40018387473b479e467149f0ed
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cf621ab5f423e2465999b26f32489af1132bece0
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611917"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582453"
 ---
-# <a name="optimizing-performance-other-recommendations"></a>Optimisation des performances : Autres recommandations
+# <a name="optimizing-performance-other-recommendations"></a>Optimisation des performances : autres recommandations
 <a name="introduction"></a> Cette rubrique fournit des recommandations pour améliorer les performances en plus de celles abordées dans les rubriques de la section [Optimisation des performances des applications WPF](optimizing-wpf-application-performance.md).  
   
  Cette rubrique contient les sections suivantes :  
@@ -37,40 +37,40 @@ ms.locfileid: "64611917"
   
 <a name="Opacity"></a>   
 ## <a name="opacity-on-brushes-versus-opacity-on-elements"></a>Opacité au niveau des pinceaux et opacité au niveau des éléments  
- Lorsque vous utilisez un <xref:System.Windows.Media.Brush> pour définir le <xref:System.Windows.Shapes.Shape.Fill%2A> ou <xref:System.Windows.Shapes.Shape.Stroke%2A> d’un élément, il est préférable de définir la <xref:System.Windows.Media.Brush.Opacity%2A?displayProperty=nameWithType> valeur plutôt que le paramètre de l’élément <xref:System.Windows.UIElement.Opacity%2A> propriété. Modification d’un élément <xref:System.Windows.UIElement.Opacity%2A> propriété peut provoquer une [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour créer une surface temporaire.  
+ Quand vous utilisez un <xref:System.Windows.Media.Brush> pour définir la <xref:System.Windows.Shapes.Shape.Fill%2A> ou la <xref:System.Windows.Shapes.Shape.Stroke%2A> d’un élément, il est préférable de définir la valeur <xref:System.Windows.Media.Brush.Opacity%2A?displayProperty=nameWithType> plutôt que la valeur de la propriété <xref:System.Windows.UIElement.Opacity%2A> de l’élément. La modification de la propriété <xref:System.Windows.UIElement.Opacity%2A> d’un élément peut entraîner la création d’une surface temporaire par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 <a name="Navigation_Objects"></a>   
 ## <a name="navigation-to-object"></a>Navigation vers un objet  
- Le <xref:System.Windows.Navigation.NavigationWindow> objet dérive <xref:System.Windows.Window> et l’étend avec prise en charge de la navigation de contenu, principalement en combinant <xref:System.Windows.Navigation.NavigationService> et le journal. Vous pouvez mettre à jour la zone cliente de <xref:System.Windows.Navigation.NavigationWindow> en spécifiant un [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] ou un objet. L'exemple suivant illustre les deux méthodes :  
+ L’objet <xref:System.Windows.Navigation.NavigationWindow> dérive de <xref:System.Windows.Window> et l’étend avec la prise en charge de la navigation dans le contenu, principalement en regroupant <xref:System.Windows.Navigation.NavigationService> et le journal. Vous pouvez mettre à jour la zone cliente de <xref:System.Windows.Navigation.NavigationWindow> en spécifiant un URI (Uniform Resource Identifier) ou un objet. L'exemple suivant illustre les deux méthodes :  
   
  [!code-csharp[Performance#PerformanceSnippet14](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/TestNavigation.xaml.cs#performancesnippet14)]
  [!code-vb[Performance#PerformanceSnippet14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/testnavigation.xaml.vb#performancesnippet14)]  
   
- Chaque <xref:System.Windows.Navigation.NavigationWindow> objet possède un journal qui enregistre l’historique de navigation de l’utilisateur dans cette fenêtre. Un des objectifs du journal est de permettre aux utilisateurs de retracer leurs étapes.  
+ Chaque objet <xref:System.Windows.Navigation.NavigationWindow> possède un journal qui enregistre l’historique de navigation de l’utilisateur dans cette fenêtre. Un des objectifs du journal est de permettre aux utilisateurs de retracer leurs étapes.  
   
- Quand vous naviguez à l’aide d’un [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], le journal stocke uniquement la référence de l’[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]. Cela signifie que chaque fois que vous revisitez la page, elle est reconstruite dynamiquement, ce qui peut prendre beaucoup de temps selon la complexité de la page. Dans ce cas, le coût de stockage du journal est faible, mais le temps de reconstitution de la page est élevé.  
+ Lorsque vous naviguez à l’aide d’un URI (Uniform Resource Identifier), le journal stocke uniquement la référence URI (Uniform Resource Identifier). Cela signifie que chaque fois que vous revisitez la page, elle est reconstruite dynamiquement, ce qui peut prendre beaucoup de temps selon la complexité de la page. Dans ce cas, le coût de stockage du journal est faible, mais le temps de reconstitution de la page est élevé.  
   
  Quand vous naviguez à l’aide d’un objet, le journal stocke intégralement l’arborescence de visuels de l’objet. Cela signifie que chaque fois que vous visitez la page, elle s’affiche immédiatement sans avoir à être reconstruite. Dans ce cas, le coût de stockage du journal est élevé, mais le temps de reconstitution de la page est faible.  
   
- Lorsque vous utilisez la <xref:System.Windows.Navigation.NavigationWindow> de l’objet, vous devez garder à l’esprit l’impact de la journalisation sur les performances de votre application. Pour plus d’informations, consultez [Vue d’ensemble de la navigation](../app-development/navigation-overview.md).  
+ Lorsque vous utilisez l’objet <xref:System.Windows.Navigation.NavigationWindow>, vous devez garder à l’esprit la façon dont la prise en charge de la journalisation a un impact sur les performances de votre application. Pour plus d’informations, consultez [Vue d’ensemble de la navigation](../app-development/navigation-overview.md).  
   
 <a name="Hit_Testing"></a>   
 ## <a name="hit-testing-on-large-3d-surfaces"></a>Test de positionnement sur les grandes surfaces 3D  
- Le test de positionnement sur les grandes surfaces 3D est une opération qui affecte considérablement les performances en utilisant une grande part du processeur. Cela est particulièrement vrai quand la surface 3D est animée. Si vous n’avez pas besoin de tester le positionnement sur ces surfaces, désactivez le test de positionnement. Objets qui sont dérivés de <xref:System.Windows.UIElement> peut désactiver le test de positionnement en définissant le <xref:System.Windows.UIElement.IsHitTestVisible%2A> propriété `false`.  
+ Le test de positionnement sur les grandes surfaces 3D est une opération qui affecte considérablement les performances en utilisant une grande part du processeur. Cela est particulièrement vrai quand la surface 3D est animée. Si vous n’avez pas besoin de tester le positionnement sur ces surfaces, désactivez le test de positionnement. Les objets dérivés de <xref:System.Windows.UIElement> peuvent désactiver le test de positionnement en affectant à la propriété <xref:System.Windows.UIElement.IsHitTestVisible%2A> la valeur `false`.  
   
 <a name="CompositionTarget_Rendering_Event"></a>   
 ## <a name="compositiontargetrendering-event"></a>Événement CompositionTarget.Rendering  
- Le <xref:System.Windows.Media.CompositionTarget.Rendering?displayProperty=nameWithType> événement entraîne [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour animer en permanence. Si vous utilisez cet événement, détacher-le dès que possible.  
+ L’événement <xref:System.Windows.Media.CompositionTarget.Rendering?displayProperty=nameWithType> entraîne l’animation continue [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Si vous utilisez cet événement, détacher-le dès que possible.  
   
 <a name="Avoid_Using_ScrollBarVisibility"></a>   
 ## <a name="avoid-using-scrollbarvisibilityauto"></a>Éviter l’utilisation de ScrollBarVisibility=Auto  
- Si possible, évitez d’utiliser le <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> valeur pour le `HorizontalScrollBarVisibility` et `VerticalScrollBarVisibility` propriétés. Ces propriétés sont définies pour <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer>, et <xref:System.Windows.Controls.TextBox> objets et en tant que propriété jointe pour le <xref:System.Windows.Controls.ListBox> objet. Au lieu de cela, définissez <xref:System.Windows.Controls.ScrollBarVisibility> à <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden>, ou <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
+ Dans la mesure du possible, évitez d’utiliser la valeur <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> pour les propriétés `HorizontalScrollBarVisibility` et `VerticalScrollBarVisibility`. Ces propriétés sont définies pour les objets <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer> et <xref:System.Windows.Controls.TextBox>, et en tant que propriété jointe pour l’objet <xref:System.Windows.Controls.ListBox>. Au lieu de cela, définissez <xref:System.Windows.Controls.ScrollBarVisibility> sur <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden> ou <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
   
- Le <xref:System.Windows.Controls.ScrollBarVisibility.Auto> valeur est destinée aux cas lorsque l’espace est limité et barres de défilement doivent être affichées uniquement lorsque cela est nécessaire. Par exemple, il peut être utile d’utiliser cette <xref:System.Windows.Controls.ScrollBarVisibility> valeur avec un <xref:System.Windows.Controls.ListBox> de 30 éléments par opposition à un <xref:System.Windows.Controls.TextBox> avec des centaines de lignes de texte.  
+ La valeur <xref:System.Windows.Controls.ScrollBarVisibility.Auto> est prévue dans le cas où l’espace est limité et que les barres de défilement doivent être affichées uniquement si nécessaire. Par exemple, il peut être utile d’utiliser cette valeur <xref:System.Windows.Controls.ScrollBarVisibility> avec un <xref:System.Windows.Controls.ListBox> de 30 éléments, par opposition à un <xref:System.Windows.Controls.TextBox> contenant des centaines de lignes de texte.  
   
 <a name="FontCache"></a>   
 ## <a name="configure-font-cache-service-to-reduce-start-up-time"></a>Configurer le service de mise en cache de polices pour réduire le temps de démarrage  
- Le service de mise en cache de polices [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] partage les données de police entre les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. La première application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] que vous exécutez démarre ce service s’il n’est pas déjà en cours d’exécution. Si vous utilisez [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], vous pouvez définir le service « Windows Presentation Foundation (WPF) Font Cache 3.0.0.0 » à partir de « Manuel » (la valeur par défaut) sur « Automatique (début différé) » afin de réduire le temps de démarrage initial [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications.  
+ Le service de mise en cache de polices [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] partage les données de police entre les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. La première application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] que vous exécutez démarre ce service s’il n’est pas déjà en cours d’exécution. Si vous utilisez [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], vous pouvez définir le service « Windows Presentation Foundation (WPF) de cache de police 3.0.0.0 » à partir de « manuel » (valeur par défaut) sur « automatique (début différé) » pour réduire le délai de démarrage initial des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -80,6 +80,6 @@ ms.locfileid: "64611917"
 - [Graphiques 2D et acquisition d'images](optimizing-performance-2d-graphics-and-imaging.md)
 - [Comportement de l’objet](optimizing-performance-object-behavior.md)
 - [Ressources d'application](optimizing-performance-application-resources.md)
-- [Text](optimizing-performance-text.md)
+- [Texte](optimizing-performance-text.md)
 - [Liaison de données](optimizing-performance-data-binding.md)
 - [Conseils et astuces sur les animations](../graphics-multimedia/animation-tips-and-tricks.md)

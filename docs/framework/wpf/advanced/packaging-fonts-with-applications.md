@@ -10,12 +10,12 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: 18a8037b6b4433a4a83860eae205174f3036d6e8
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: c90d554338da21a55f058fdf1ce27b8ee28e682b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005016"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72580934"
 ---
 # <a name="packaging-fonts-with-applications"></a>Empaquetage de polices avec des applications
 Cette rubrique fournit une vue d’ensemble de l’empaquetage des polices avec votre application [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -25,7 +25,7 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage des polices avec 
 
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Présentation de l’empaquetage de polices  
- Vous pouvez facilement empaqueter des polices en tant que ressources au sein de vos applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour afficher le texte de l’interface utilisateur et d’autres types de contenu textuel. Les polices peuvent être séparées des fichiers d’assembly de l’application ou y être incorporées. Vous pouvez également créer une bibliothèque de polices de ressources uniquement, que votre application peut référencer.  
+ Vous pouvez facilement empaqueter des polices en tant que ressources dans vos applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour afficher le texte de l’interface utilisateur et d’autres types de contenu textuel. Les polices peuvent être séparées des fichiers d’assembly de l’application ou y être incorporées. Vous pouvez également créer une bibliothèque de polices de ressources uniquement, que votre application peut référencer.  
   
  Les polices OpenType et TrueType® contiennent un indicateur de type, fsType, qui indique les droits de licence d’incorporation de polices pour la police. Toutefois, cet indicateur de type concerne uniquement les polices incorporées stockées dans un document. Il ne concerne pas les polices incorporées dans une application. Vous pouvez récupérer les droits d’incorporation de police pour une police en créant un objet <xref:System.Windows.Media.GlyphTypeface> et en référençant sa propriété <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A>. Pour plus d’informations sur l’indicateur fsType, reportez-vous à la section « OS/2 et métriques Windows » de la [spécification OpenType](https://www.microsoft.com/typography/otspec/os2.htm) .  
   
@@ -81,19 +81,19 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage des polices avec 
 ```  
   
 > [!NOTE]
-> Lorsque vous ajoutez des polices en tant que ressources à votre application, assurez-vous que vous définissez l’élément `<Resource>`, et non l’élément `<EmbeddedResource>` dans le fichier projet de votre application. L’élément `<EmbeddedResource>` pour l’action de génération n’est pas pris en charge.  
+> Lorsque vous ajoutez des polices en tant que ressources à votre application, assurez-vous que vous définissez l’élément `<Resource>`, et non l’élément `<EmbeddedResource>` dans le fichier projet de votre application. L’élément `<EmbeddedResource>` de l’action de génération n’est pas pris en charge.  
   
  L’exemple de balisage suivant indique comment référencer les ressources de police de l’application.  
   
  [!code-xaml[FontSnippets#FontPackageSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
   
 ### <a name="referencing-font-resource-items-from-code"></a>Référencement d’éléments de ressource de police à partir du code  
- Pour référencer des éléments de ressource de police à partir du code, vous devez fournir une référence de ressource de police en deux parties : la @no__t de base-0 ; et la référence d’emplacement de la police. Ces valeurs sont utilisées comme paramètres pour la méthode <xref:System.Windows.Media.FontFamily.%23ctor%2A>. L’exemple de code suivant montre comment référencer les ressources de police de l’application dans le sous-répertoire de projet appelé `resources`.  
+ Pour référencer des éléments de ressource de police à partir du code, vous devez fournir une référence de ressource de police en deux parties : l’URI (Uniform Resource Identifier) de base ; et la référence d’emplacement de la police. Ces valeurs sont utilisées comme paramètres pour la méthode <xref:System.Windows.Media.FontFamily.%23ctor%2A>. L’exemple de code suivant montre comment référencer les ressources de police de l’application dans le sous-répertoire de projet appelé `resources`.  
   
  [!code-csharp[FontSnippets#FontPackageSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
  [!code-vb[FontSnippets#FontPackageSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
   
- Le @no__t de base-0 peut inclure le sous-répertoire d’application où se trouve la ressource de police. Dans ce cas, la référence de l’emplacement de la police n’a pas besoin de spécifier un répertoire, mais doit inclure un « `./` » de début, ce qui indique que la ressource de police se trouve dans le même répertoire que celui spécifié par le @no__t de base-1. L’exemple de code suivant montre une autre façon de référencer l’élément de ressource de police. Il est équivalent à l’exemple de code précédent.  
+ L’URI (Uniform Resource Identifier) de base peut inclure le sous-répertoire d’application où se trouve la ressource de police. Dans ce cas, la référence de l’emplacement de la police n’a pas besoin de spécifier un répertoire, mais doit inclure un « `./` » de début, ce qui indique que la ressource de police se trouve dans le même répertoire que celui spécifié par l’URI (Uniform Resource Identifier) de base. L’exemple de code suivant montre une autre façon de référencer l’élément de ressource de police. Il est équivalent à l’exemple de code précédent.  
   
  [!code-csharp[FontSnippets#FontPackageSnippet5](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet5)]
  [!code-vb[FontSnippets#FontPackageSnippet5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet5)]  
@@ -156,15 +156,15 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage des polices avec 
   
 <a name="limitations_on_font_usage"></a>   
 ## <a name="limitations-on-font-usage"></a>Limitations de l’utilisation des polices  
- La liste suivante décrit plusieurs limitations sur l’empaquetage et l’utilisation des polices dans des applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] :  
+ La liste suivante décrit plusieurs limitations sur l’empaquetage et l’utilisation des polices dans les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] :  
   
 - **Bits d’autorisation d’incorporation de police :** Les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne vérifient ni n’appliquent les bits d’autorisation d’incorporation de police. Pour plus d’informations, consultez la section [polices Introduction_to_Packing](#introduction_to_packaging_fonts) .  
   
-- **Polices du site d’origine :** les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] n’autorisent pas de référence de police à un [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] http ou FTP.  
+- **Polices du site d’origine :** les applications de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] n’autorisent pas une référence de police à un URI (Uniform Resource Identifier) http ou FTP.  
   
-- **URI absolu avec Pack : notation : les** applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne vous permettent pas de créer un objet <xref:System.Windows.Media.FontFamily> par programmation en utilisant "Pack :" dans le cadre de la référence [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] absolue à une police. Par exemple, `"pack://application:,,,/resources/#Pericles Light"` est une référence de police non valide.  
+- **URI absolu avec Pack : notation :** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] les applications ne vous permettent pas de créer par programme un objet <xref:System.Windows.Media.FontFamily> à l’aide de « Pack : » dans le cadre de la référence URI (Uniform Resource Identifier) absolue à une police. Par exemple, `"pack://application:,,,/resources/#Pericles Light"` est une référence de police non valide.  
   
-- **Incorporation automatique des polices :** Au moment de la conception, il n’existe aucune prise en charge pour la recherche des polices utilisées par une application et l’incorporation automatique des polices dans les ressources de l’application.  
+- **Incorporation de police automatique :** Au moment de la conception, il n’est pas possible de rechercher les polices utilisées par une application et de les incorporer automatiquement dans les ressources de l’application.  
   
 - **Sous-ensembles de polices :** Les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne prennent pas en charge la création de sous-ensembles de polices pour les documents non fixes.  
   
@@ -174,7 +174,7 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage des polices avec 
 
 - <xref:System.Windows.Documents.Typography>
 - <xref:System.Windows.Media.FontFamily>
-- Typographie @no__t 0Microsoft : Liens, Actualités et contacts @ no__t-0
+- [Typographie Microsoft : liens, Actualités et contacts](https://docs.microsoft.com/typography/)
 - [Spécification OpenType](https://www.microsoft.com/typography/otspec/)
 - [Fonctionnalités des polices OpenType](opentype-font-features.md)
 - [Exemple de pack de polices OpenType](sample-opentype-font-pack.md)

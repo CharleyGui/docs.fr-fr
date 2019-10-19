@@ -2,12 +2,12 @@
 title: 'Comment : utiliser des annotations pour transformer des arbres LINQ to XML dans un style XSLT (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: b950f823b65299689f4ed829138a6689f6789c18
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: b8f15c4dc6016e48619d26e7cc8717a2a3c5acd5
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395962"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581978"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>Comment : utiliser des annotations pour transformer des arbres LINQ to XML dans un style XSLT (Visual Basic)
 
@@ -85,7 +85,7 @@ End Module
 
 ## <a name="a-more-complicated-transform"></a>Transformation plus complexe
 
- L'exemple suivant interroge l'arborescence et calcule la moyenne et la somme des éléments `Data`, puis les ajoute à l'arborescence en tant que nouveaux éléments.
+L'exemple suivant interroge l'arborescence et calcule la moyenne et la somme des éléments `Data`, puis les ajoute à l'arborescence en tant que nouveaux éléments.
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -133,10 +133,10 @@ Module Module1
         Console.WriteLine("----------------")
         Console.WriteLine(newData)
     End Sub
-End Module 
+End Module
 ```
 
- Cet exemple génère la sortie suivante :
+Cet exemple génère la sortie suivante :
 
 ```console
 Before Transform
@@ -165,7 +165,7 @@ Une petite fonction, `XForm`, crée une nouvelle arborescence transformée à pa
 Le pseudo code de la fonction est assez simple :
 
 > La fonction prend un XElement comme argument et retourne un XElement.
-> 
+>
 > Si un élément a une annotation XElement, retourne un nouveau XElement :
 >
 > - Le nom du nouveau XElement est le nom de l’élément d’annotation.
@@ -338,7 +338,7 @@ Module Module1
         Console.WriteLine("----------------")
         Console.WriteLine(newRoot)
     End Sub
-End Module 
+End Module
 ```
 
 Cet exemple génère la sortie suivante :

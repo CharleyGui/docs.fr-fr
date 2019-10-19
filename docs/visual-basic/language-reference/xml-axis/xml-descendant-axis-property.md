@@ -10,20 +10,20 @@ helpviewer_keywords:
 - XML axis [Visual Basic], descendant
 - XML [Visual Basic], accessing
 ms.assetid: a178f85b-5d54-438f-8479-40b62af6fe76
-ms.openlocfilehash: bc1dff6dc3b580079087f370212b7d3acd30e4fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e2c3e01808d3eeb18f6753a5fc79b8627e7f323b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938669"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582230"
 ---
 # <a name="xml-descendant-axis-property-visual-basic"></a>Propriété d'axe descendant XML (Visual Basic)
 
-Fournit l’accès aux descendants des éléments suivants : un <xref:System.Xml.Linq.XElement> objet, un <xref:System.Xml.Linq.XDocument> objet, une collection de <xref:System.Xml.Linq.XElement> objets, ou une collection de <xref:System.Xml.Linq.XDocument> objets.
+Permet d’accéder aux descendants des éléments suivants : un objet <xref:System.Xml.Linq.XElement>, un objet <xref:System.Xml.Linq.XDocument>, une collection d’objets <xref:System.Xml.Linq.XElement> ou une collection d’objets <xref:System.Xml.Linq.XDocument>.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 object...<descendant>
 ```
 
@@ -33,12 +33,12 @@ object...<descendant>
 
 `...<` Obligatoire. Indique le début d’une propriété d’axe descendant.
 
-`descendant` Obligatoire. Nom des nœuds descendants d’accès, sous la forme [`prefix:]name`.
+`descendant` Obligatoire. Nom des nœuds descendants auxquels accéder, sous la forme [`prefix:]name`.
 
 |Élément|Description|
 |----------|-----------------|
-|`prefix`|Optionnel. Préfixe d’espace de noms XML pour le nœud descendant. Doit être un espace de noms XML global qui est défini à l’aide un `Imports` instruction.|
-|`name`|Obligatoire. Nom local du nœud descendant. Consultez [nom des attributs et éléments XML déclarés](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|
+|`prefix`|Optionnel. Préfixe d’espace de noms XML pour le nœud descendant. Doit être un espace de noms XML global défini à l’aide d’une instruction `Imports`.|
+|`name`|Requis. Nom local du nœud descendant. Consultez [les noms des éléments et attributs XML déclarés](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|
 
 `>` Obligatoire. Indique la fin d’une propriété d’axe descendant.
 
@@ -48,17 +48,17 @@ Collection d'objets <xref:System.Xml.Linq.XElement>.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser une propriété d’axe descendant XML pour accéder aux nœuds descendants par nom à partir d’un <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument> objet, ou à partir d’une collection de <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument> objets. Utilisez le code XML `Value` propriété pour accéder à la valeur du premier nœud descendant dans la collection retournée. Pour plus d’informations, consultez [propriété de valeur XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).
+Vous pouvez utiliser une propriété d’axe descendant XML pour accéder aux nœuds descendants par nom à partir d’un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>, ou à partir d’une collection d’objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>. Utilisez la propriété `Value` XML pour accéder à la valeur du premier nœud descendant dans la collection retournée. Pour plus d’informations, consultez [propriété de valeur XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).
 
-Le compilateur Visual Basic convertit des propriétés d’axes descendants en appels à la <xref:System.Xml.Linq.XContainer.Descendants%2A> (méthode).
+Le compilateur de Visual Basic convertit les propriétés de l’axe descendant en appels à la méthode <xref:System.Xml.Linq.XContainer.Descendants%2A>.
 
 ## <a name="xml-namespaces"></a>Espaces de noms XML
 
-Le nom dans une propriété d’axe descendant peut utiliser uniquement les espaces de noms XML déclarés globalement avec le `Imports` instruction. Il ne peut pas utiliser les espaces de noms XML déclarés localement dans les littéraux d’élément XML. Pour plus d’informations, consultez [instruction Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
+Le nom dans une propriété d’axe descendante ne peut utiliser que des espaces de noms XML déclarés globalement avec l’instruction `Imports`. Elle ne peut pas utiliser les espaces de noms XML déclarés localement dans des littéraux d’élément XML. Pour plus d’informations, consultez [instructions Imports (espace de noms XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment accéder à la valeur du premier nœud descendant nommé `name` et les valeurs de tous les nœuds descendants nommés `phone` à partir de la `contacts` objet.
+L’exemple suivant montre comment accéder à la valeur du premier nœud descendant nommé `name` et aux valeurs de tous les nœuds descendants nommés `phone` à partir de l’objet `contacts`.
 
 [!code-vb[VbXMLSamples#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#25)]
 

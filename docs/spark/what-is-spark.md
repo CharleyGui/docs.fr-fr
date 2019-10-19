@@ -4,12 +4,12 @@ description: En savoir plus sur les scénarios de Apache Spark et de Big Data.
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: ccf41f08df3c68a039210320f14219e6b6229a64
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 187a37897c23809d91820bd79b476e775fb5b99b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72396235"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583478"
 ---
 # <a name="what-is-apache-spark"></a>Qu’est-ce que Apache Spark ?
 
@@ -69,30 +69,30 @@ Chaque exécuteur, ou nœud de travail, reçoit une tâche du pilote et exécute
 
 Le gestionnaire de cluster communique avec le pilote et les exécuteurs pour :
 
-- Gérer l’allocation des ressources
-- Gérer la Division du programme
-- Gérer l’exécution du programme
+* Gérer l’allocation des ressources
+* Gérer la Division du programme
+* Gérer l’exécution du programme
 
 ## <a name="language-support"></a>Langages pris en charge
 
 Apache Spark prend en charge les langages de programmation suivants :
 
-- Scala
-- Python
-- Java
-- SQL
-- R
-- .NET
+* Scala
+* Python
+* Java
+* SQL
+* R
+* .NET
 
 ## <a name="spark-apis"></a>API Spark
 
 Apache Spark prend en charge les API suivantes :
 
-- [API Scala Spark](https://spark.apache.org/docs/2.2.0/api/scala/index.html)
-- [API Java Spark](https://spark.apache.org/docs/2.2.0/api/java/index.html)
-- [API Python Spark](https://spark.apache.org/docs/2.2.0/api/python/index.html)
-- [API R Spark](https://spark.apache.org/docs/2.2.0/api/R/index.html)
-- [Spark SQL](https://spark.apache.org/docs/latest/api/sql/index.html), fonctions intégrées
+* [API Scala Spark](https://spark.apache.org/docs/2.2.0/api/scala/index.html)
+* [API Java Spark](https://spark.apache.org/docs/2.2.0/api/java/index.html)
+* [API Python Spark](https://spark.apache.org/docs/2.2.0/api/python/index.html)
+* [API R Spark](https://spark.apache.org/docs/2.2.0/api/R/index.html)
+* [Spark SQL](https://spark.apache.org/docs/latest/api/sql/index.html), fonctions intégrées
 
 ## <a name="next-steps"></a>Étapes suivantes
 

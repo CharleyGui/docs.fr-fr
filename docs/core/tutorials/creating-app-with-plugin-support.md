@@ -4,12 +4,12 @@ description: Découvrez comment créer une application .NET Core qui prend en ch
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 92c219817ad27fbc906ee3778d3f5372d61151ac
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: HT
+ms.openlocfilehash: 5267a56d0742d8e1cae4a81c058bc4ee05e83b4e
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523195"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579501"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Créer une application .NET Core avec des plug-ins
 
@@ -22,7 +22,7 @@ Ce didacticiel vous montre comment créer un <xref:System.Runtime.Loader.Assembl
 
 ## <a name="prerequisites"></a>Configuration requise
 
-- Installez [.net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
+- Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
 ## <a name="create-the-application"></a>Créer l’application
 

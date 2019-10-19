@@ -10,19 +10,19 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-ms.openlocfilehash: fb51dfbae4d9c4ef205e67ac15c5027e62a9a938
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb0dc76d110f3e6a3ea3e74cc0bfb5a669b35396
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663194"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583238"
 ---
 # <a name="set-statement-visual-basic"></a>Set, instruction (Visual Basic)
-Déclare un `Set` procédure de propriété utilisée pour affecter une valeur à une propriété.  
+Déclare une procédure de propriété `Set` utilisée pour assigner une valeur à une propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] Set (ByVal value [ As datatype ])  
     [ statements ]  
 End Set  
@@ -30,10 +30,10 @@ End Set
   
 ## <a name="parts"></a>Composants  
  `attributelist`  
- Facultatif. Consultez [liste d’attributs](../../../visual-basic/language-reference/statements/attribute-list.md).  
+ Optionnel. Consultez la [liste des attributs](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
  `accessmodifier`  
- Facultatif sur un de la `Get` et `Set` instructions dans cette propriété. Il peut s'agir d'une des valeurs suivantes :  
+ Facultatif sur au plus une des instructions `Get` et `Set` de cette propriété. Il peut s'agir d'une des valeurs suivantes :  
   
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
@@ -46,44 +46,44 @@ End Set
  Consultez [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `value`  
- Obligatoire. Paramètre qui contient la nouvelle valeur pour la propriété.  
+ Requis. Paramètre contenant la nouvelle valeur de la propriété.  
   
  `datatype`  
- Obligatoire si `Option Strict` est `On`. Type de données de la `value` paramètre. Le type de données spécifié doit être le même que le type de données de la propriété où cette `Set` instruction est déclarée.  
+ Obligatoire si `Option Strict` est `On`. Type de données du paramètre `value`. Le type de données spécifié doit être le même que le type de données de la propriété où cette `Set` instruction est déclarée.  
   
  `statements`  
- Facultatif. Une ou plusieurs instructions qui s’exécutent lorsque le `Set` procédure de propriété est appelée.  
+ Optionnel. Une ou plusieurs instructions qui s’exécutent lorsque la procédure de propriété `Set` est appelée.  
   
  `End Set`  
- Obligatoire. Termine la définition de la `Set` procédure de propriété.  
+ Requis. Met fin à la définition de la procédure de propriété `Set`.  
   
 ## <a name="remarks"></a>Notes  
- Chaque propriété doit avoir un `Set` procédure de propriété, sauf si la propriété est marquée `ReadOnly`. Le `Set` procédure est utilisée pour définir la valeur de la propriété.  
+ Chaque propriété doit avoir une procédure de propriété `Set`, sauf si la propriété est marquée comme `ReadOnly`. La procédure `Set` est utilisée pour définir la valeur de la propriété.  
   
- Visual Basic appelle automatiquement d’une propriété `Set` procédure lors d’une instruction d’assignation fournit une valeur à stocker dans la propriété.  
+ Visual Basic appelle automatiquement la procédure `Set` d’une propriété lorsqu’une instruction d’assignation fournit une valeur à stocker dans la propriété.  
   
- Visual Basic passe un paramètre à la `Set` procédure pendant les assignations de propriété. Si vous ne fournissez pas un paramètre pour `Set`, l’environnement de développement intégré (IDE) utilise un paramètre implicit nommé `value`. Le paramètre conserve la valeur à assigner à la propriété. Vous en général de stocker cette valeur dans une variable locale privée et renvoyez-le à chaque fois que le `Get` procédure est appelée.  
+ Visual Basic passe un paramètre à la procédure `Set` au cours des assignations de propriété. Si vous ne fournissez pas de paramètre pour `Set`, l’environnement de développement intégré (IDE) utilise un paramètre implicite nommé `value`. Le paramètre contient la valeur à assigner à la propriété. En général, cette valeur est stockée dans une variable locale privée et elle est retournée à chaque appel de la procédure `Get`.  
   
- Le corps de la déclaration de propriété peut contenir uniquement de la propriété `Get` et `Set` procédures entre le [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) et `End Property` instruction. Il ne peut pas stocker quoi que ce soit d’autre que ces procédures. En particulier, il ne peut pas stocker la valeur actuelle de la propriété. Vous devez stocker cette valeur en dehors de la propriété, car si vous le stockez à l’intérieur d’une des procédures de propriété, les autres procédures de propriété ne peut pas y accéder. L’approche habituelle consiste à stocker la valeur dans un [privé](../../../visual-basic/language-reference/modifiers/private.md) variable déclarée au même niveau que la propriété. Vous devez définir un `Set` procédure à l’intérieur de la propriété à laquelle elle s’applique.  
+ Le corps de la déclaration de propriété peut contenir uniquement les procédures `Get` et `Set` de la propriété entre l' [instruction Property](../../../visual-basic/language-reference/statements/property-statement.md) et l’instruction `End Property`. Elle ne peut pas stocker d’autres éléments que ces procédures. En particulier, il ne peut pas stocker la valeur actuelle de la propriété. Vous devez stocker cette valeur en dehors de la propriété, car si vous la stockez à l’intérieur de l’une des procédures de propriété, l’autre procédure de propriété ne peut pas y accéder. L’approche habituelle consiste à stocker la valeur dans une variable [privée](../../../visual-basic/language-reference/modifiers/private.md) déclarée au même niveau que la propriété. Vous devez définir une procédure `Set` à l’intérieur de la propriété à laquelle elle s’applique.  
   
- Le `Set` procédure par défaut est le niveau d’accès de sa propriété conteneur, sauf si vous utilisez `accessmodifier` dans le `Set` instruction.  
+ La procédure `Set` a comme valeur par défaut le niveau d’accès de sa propriété conteneur, sauf si vous utilisez `accessmodifier` dans l’instruction `Set`.  
   
 ## <a name="rules"></a>Règles  
   
-- **Niveaux d’accès mixtes.** Si vous définissez une propriété en lecture-écriture, vous pouvez éventuellement spécifier un niveau d’accès différent pour un le `Get` ou `Set` procédure, mais pas les deux. Si vous procédez ainsi, le niveau d’accès de la procédure doit être plus restrictif que le niveau d’accès de la propriété. Par exemple, si la propriété est déclarée `Friend`, vous pouvez déclarer le `Set` procédure `Private`, mais pas `Public`.  
+- **Niveaux d’accès mixtes.** Si vous définissez une propriété en lecture-écriture, vous pouvez éventuellement spécifier un niveau d’accès différent pour la `Get` ou la procédure `Set`, mais pas les deux. Dans ce cas, le niveau d’accès de la procédure doit être plus restrictif que le niveau d’accès de la propriété. Par exemple, si la propriété est déclarée `Friend`, vous pouvez déclarer la procédure `Set` `Private`, mais pas `Public`.  
   
-     Si vous définissez un `WriteOnly` propriété, le `Set` procédure représente la propriété entière. Vous ne pouvez pas déclarer un accès différents au niveau de `Set`, parce que seront définis à deux niveaux d’accès pour la propriété.  
+     Si vous définissez une propriété `WriteOnly`, la procédure `Set` représente la propriété entière. Vous ne pouvez pas déclarer un niveau d’accès différent pour `Set`, car cela aurait pour effet de définir deux niveaux d’accès pour la propriété.  
   
 ## <a name="behavior"></a>Comportement  
   
-- **Retour d’une procédure de propriété.** Lorsque le `Set` procédure retourne au code appelant, l’exécution se poursuit après l’instruction qui a fourni la valeur à stocker.  
+- **Retour d’une procédure de propriété.** Lorsque la procédure `Set` retourne au code appelant, l’exécution continue à suivre l’instruction qui a fourni la valeur à stocker.  
   
-     `Set` procédures de propriété peuvent retourner à l’aide du [instruction Return](../../../visual-basic/language-reference/statements/return-statement.md) ou [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md).  
+     les procédures de propriété `Set` peuvent être renvoyées à l’aide de l' [instruction return](../../../visual-basic/language-reference/statements/return-statement.md) ou de l' [instruction Exit](../../../visual-basic/language-reference/statements/exit-statement.md).  
   
-     Le `Exit Property` et `Return` instructions provoquent la sortie immédiate d’une procédure de propriété. Un nombre quelconque de `Exit Property` et `Return` instructions peuvent apparaître n’importe où dans la procédure, et vous pouvez combiner `Exit Property` et `Return` instructions.  
+     Les instructions `Exit Property` et `Return` provoquent une sortie immédiate d’une procédure de propriété. Un nombre quelconque d’instructions `Exit Property` et `Return` peuvent apparaître n’importe où dans la procédure, et vous pouvez mélanger des instructions `Exit Property` et `Return`.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la `Set` instruction pour définir la valeur d’une propriété.  
+ L’exemple suivant utilise l’instruction `Set` pour définir la valeur d’une propriété.  
   
  [!code-vb[VbVbalrStatements#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#55)]  
   

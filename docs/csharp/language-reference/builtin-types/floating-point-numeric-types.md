@@ -1,7 +1,7 @@
 ---
 title: Types numériques à virgule flottante - Référence C#
 description: Vue d’ensemble des types virgule flottante C# intégrés
-ms.date: 06/30/2019
+ms.date: 10/18/2019
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,16 +18,16 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 17ae154780679dd1f42f43f1ec345cdc722815d3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fa6cbb869d90113414cc6f8ffe231386c3596b1d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002192"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579370"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
-Les **types numériques à virgule flottante** sont un sous-ensemble des **types simples** et peuvent être initialisés avec des [*littéraux*](#floating-point-literals). Tous les types virgule flottante sont également des types valeur. Tous les types numériques à virgule flottante prennent en charge les opérateurs [arithmétiques](../operators/arithmetic-operators.md) et les opérateurs de [comparaison et d’égalité](../operators/equality-operators.md).
+Les **types numériques à virgule flottante** sont un sous-ensemble des **types simples** et peuvent être initialisés avec des [*littéraux*](#real-literals). Tous les types virgule flottante sont également des types valeur. Tous les types numériques à virgule flottante prennent en charge les opérateurs [arithmétiques](../operators/arithmetic-operators.md), de [comparaison](../operators/comparison-operators.md)et d' [égalité](../operators/equality-operators.md) .
 
 ## <a name="characteristics-of-the-floating-point-types"></a>Caractéristiques des types à virgule flottante
 
@@ -52,8 +52,8 @@ Le type `decimal` fournit une plus grande précision et une plage de valeurs plu
 
 Vous pouvez combiner des types [intégraux](integral-numeric-types.md) et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :
 
-- Si l’un des types virgule flottante est `double`, l’expression prend la valeur `double` ou [bool](../keywords/bool.md) dans les comparaisons relationnelles ou les comparaisons d’égalité.
-- S’il n’y a aucun type `double` dans l’expression, celle-ci prend la valeur `float` ou [bool](../keywords/bool.md) dans les comparaisons relationnelles ou les comparaisons d’égalité.
+- Si l’un des types à virgule flottante est `double`, l’expression prend la valeur `double`, ou la valeur [bool](../keywords/bool.md) dans les comparaisons d’égalité et relationnelles.
+- S’il n’existe aucun type de `double` dans l’expression, l’expression prend la valeur `float`, ou la valeur [bool](../keywords/bool.md) dans les comparaisons d’égalité et relationnelles.
 
 Une expression à virgule flottante peut contenir les ensembles de valeurs suivants :
 
@@ -66,23 +66,41 @@ Pour plus d’informations sur ces valeurs, consultez IEEE Standard for Binary F
 
 Vous pouvez utiliser des [chaînes au format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md) ou des [chaînes au format numérique personnalisées](../../../standard/base-types/custom-numeric-format-strings.md) pour mettre en forme une valeur à virgule flottante.
 
-## <a name="floating-point-literals"></a>Littéraux à virgule flottante
+## <a name="real-literals"></a>Littéraux réels
 
-Par défaut, un littéral numérique à virgule flottante sur le côté droit de l’opérateur d’assignation est traité comme `double`. Vous pouvez utiliser des suffixes pour convertir un littéral à virgule flottante ou intégral en un type spécifique :
+Le type d’un littéral réel est déterminé par son suffixe comme suit :
 
-- Le suffixe `d` ou `D` convertit un littéral en `double`.
-- Le suffixe `f` ou `F` convertit un littéral en `float`.
-- Le suffixe `m` ou `M` convertit un littéral en `decimal`.
+- Le littéral sans suffixe ou avec le suffixe `d` ou `D` est de type `double`
+- Le littéral avec le suffixe `f` ou `F` est de type `float`
+- Le littéral avec le suffixe `m` ou `M` est de type `decimal`
 
-Les exemples suivants montrent chaque suffixe :
+Le code suivant illustre un exemple de chaque :
 
 ```csharp
 double d = 3D;
 d = 4d;
-float f = 3.5F;
+d = 3.934_001;
+
+float f = 3_000.5F;
 f = 5.4f;
-decimal myMoney = 300.5m;
+
+decimal myMoney = 3_000.5m;
 myMoney = 400.75M;
+```
+
+L’exemple précédent illustre également l’utilisation de `_` comme *séparateur de chiffres*, pris en charge à C# partir de 7,0. Vous pouvez utiliser le séparateur de chiffres avec tous les types de littéraux numériques.
+
+Vous pouvez également utiliser la notation scientifique, c’est-à-dire spécifier une partie exposant d’un littéral réel, comme le montre l’exemple suivant :
+
+```csharp-interactive
+double d = 0.42e2;
+Console.WriteLine(d);  // output 42;
+
+float f = 134.45E-2f;
+Console.WriteLine(f);  // output: 1.3445
+
+decimal m = 1.5E6m;
+Console.WriteLine(m);  // output: 1500000
 ```
 
 ## <a name="conversions"></a>Conversions
@@ -95,15 +113,21 @@ Pour plus d’informations sur les conversions numériques implicites, consultez
 
 Pour plus d’informations sur les conversions numériques explicites, consultez [Tableau des conversions numériques explicites](../keywords/explicit-numeric-conversions-table.md).
 
+## <a name="c-language-specification"></a>spécification du langage C#
+
+Pour plus d’informations, consultez les sections suivantes de la [spécification du langage C#](~/_csharplang/spec/introduction.md) :
+
+- [Types virgule flottante](~/_csharplang/spec/types.md#floating-point-types)
+- [Type décimal](~/_csharplang/spec/types.md#the-decimal-type)
+- [Littéraux réels](~/_csharplang/spec/lexical-structure.md#real-literals)
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Types intégraux](integral-numeric-types.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
 - [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
-- [Tableau des conversions numériques implicites](../keywords/implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](../keywords/explicit-numeric-conversions-table.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>
 - [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
-- [Standard Numeric Format Strings](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)

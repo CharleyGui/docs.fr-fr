@@ -14,18 +14,18 @@ helpviewer_keywords:
 - type boundaries
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 903a553b5383620f15cce274c61a440b7bbb1d7d
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5fb809b564df17d6320b7ffce3d757fa0fee7639
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970013"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583013"
 ---
 # <a name="assemblies-in-net"></a>Assemblys dans .NET
 
 Les assemblys constituent les unités fondamentales de déploiement, de contrôle de version, de réutilisation, de portée d’activation et d’autorisations de sécurité pour. Applications basées sur le réseau. Un assembly est une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Les assemblys prennent la forme de fichiers exécutables ( *. exe*) ou de bibliothèques de liens dynamiques ( *. dll*), et sont les blocs de construction des applications .net. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.
 
-Dans .NET Core et .NET Framework, vous pouvez créer un assembly à partir d’un ou de plusieurs fichiers de code source. Dans .NET Framework, les assemblys peuvent contenir un ou plusieurs modules. Cela permet de planifier des projets plus volumineux de manière à ce que plusieurs développeurs puissent travailler sur des modules ou des fichiers de code source distincts, qui sont combinés pour créer un assembly unique. Pour plus d’informations sur les modules, consultez [Guide pratique pour Créer un assembly](../../framework/app-domains/build-multifile-assembly.md)multifichier.
+Dans .NET Core et .NET Framework, vous pouvez créer un assembly à partir d’un ou de plusieurs fichiers de code source. Dans .NET Framework, les assemblys peuvent contenir un ou plusieurs modules. Cela permet de planifier des projets plus volumineux de manière à ce que plusieurs développeurs puissent travailler sur des modules ou des fichiers de code source distincts, qui sont combinés pour créer un assembly unique. Pour plus d’informations sur les modules, consultez [Comment : générer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md).
 
 Les assemblys ont les propriétés suivantes :
 
@@ -37,7 +37,7 @@ Les assemblys ont les propriétés suivantes :
 
 - Vous pouvez obtenir par programme des informations sur un assembly à l’aide de la réflexion. Pour plus d’informations, consultez [Réflexion (C#)](../../csharp/programming-guide/concepts/reflection.md) ou [Réflexion (Visual Basic)](../../visual-basic/programming-guide/concepts/reflection.md).
 
-- Vous pouvez charger un assembly juste pour l’inspecter à <xref:System.Reflection.MetadataLoadContext> l’aide de la classe dans <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> .NET <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> Core et la méthode ou dans .net Core et .NET Framework.
+- Vous pouvez charger un assembly simplement pour l’inspecter à l’aide de la classe <xref:System.Reflection.MetadataLoadContext> dans .NET Core et de la méthode <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> dans .NET Core et .NET Framework.
 
 ## <a name="assemblies-in-the-common-language-runtime"></a>Assemblys dans le common language runtime
 
@@ -45,7 +45,7 @@ Les assemblys fournissent le common language runtime avec les informations dont 
 
 Un assembly définit les informations suivantes :  
   
-- Code que l’common language runtime exécute. Notez que chaque assembly ne peut avoir qu’un seul `DllMain`point `WinMain`d’entrée `Main`:, ou.
+- Code que l’common language runtime exécute. Notez que chaque assembly ne peut avoir qu’un seul point d’entrée : `DllMain`, `WinMain` ou `Main`.
   
 - Limite de sécurité. Un assembly est l'unité au niveau de laquelle les autorisations sont demandées et octroyées. Pour plus d’informations sur les limites de sécurité dans les assemblys, consultez Considérations sur la [sécurité](security-considerations.md)des assemblys.  
   
@@ -87,7 +87,7 @@ Chaque assembly possède un fichier manifeste de l' *assembly* . À l’instar d
 Pour utiliser un assembly dans une application, vous devez lui ajouter une référence. Une fois qu’un assembly est référencé, tous les types, propriétés, méthodes et autres membres accessibles de ses espaces de noms sont disponibles pour votre application comme si leur code faisaient partie de votre fichier source.
 
 > [!NOTE]
-> La plupart des assemblys à partir de la bibliothèque de classes .NET sont référencés automatiquement. Si un assembly système n’est pas automatiquement référencé, pour .NET Core, vous pouvez ajouter une référence au package NuGet qui contient l’assembly. Utilisez le gestionnaire de package NuGet dans Visual Studio ou ajoutez un [ \<élément PackageReference >](../../core/tools/dependencies.md#the-new-packagereference-element) pour l’assembly au projet *. csproj* ou *. vbproj* . Dans .NET Framework, vous pouvez ajouter une référence à l’assembly à l’aide de la boîte de dialogue **Ajouter une référence** dans Visual `-reference` Studio ou à l’aide [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) de l’option de ligne de commande pour les compilateurs ou [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
+> La plupart des assemblys à partir de la bibliothèque de classes .NET sont référencés automatiquement. Si un assembly système n’est pas automatiquement référencé, pour .NET Core, vous pouvez ajouter une référence au package NuGet qui contient l’assembly. Utilisez le gestionnaire de package NuGet dans Visual Studio ou ajoutez un [\<PackageReference >](../../core/tools/dependencies.md#the-new-packagereference-element) élément de l’assembly au projet *. csproj* ou *. vbproj* . Dans .NET Framework, vous pouvez ajouter une référence à l’assembly à l’aide de la boîte de dialogue **Ajouter une référence** dans Visual Studio, ou en utilisant l' [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) option de ligne de commande `-reference` pour les compilateurs ou [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
 
 Dans C#, vous pouvez utiliser deux versions du même assembly dans une même application. Pour plus d’informations, consultez [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
 
@@ -107,7 +107,7 @@ Dans C#, vous pouvez utiliser deux versions du même assembly dans une même app
 |[Émettre des méthodes et des assemblys dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Comment créer des assemblys dynamiques.|  
 |[Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Comment le .NET Framework résout les références d’assembly au moment de l’exécution.|  
 
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 
 ## <a name="see-also"></a>Voir aussi
@@ -115,6 +115,7 @@ Dans C#, vous pouvez utiliser deux versions du même assembly dans une même app
 - [Format de fichier d’assembly .NET](file-format.md)
 - [Assemblys dans .NET](index.md)
 - [Assemblys friend](friend.md)
-- [Guide pratique pour Charger et décharger des assemblys](load-unload.md)
-- [Guide pratique pour Utilisation et débogage d’un déchargement d’assembly dans .NET Core](unloadability.md)
-- [Guide pratique pour Déterminer si un fichier est un assembly](identify.md)
+- [Assemblys de référence](reference-assemblies.md)
+- [Comment : charger et décharger des assemblys](load-unload.md)
+- [Comment : utiliser et déboguer l’inchargement d’assembly dans .NET Core](unloadability.md)
+- [Comment : déterminer si un fichier est un assembly](identify.md)

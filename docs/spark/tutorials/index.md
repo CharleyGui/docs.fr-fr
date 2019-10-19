@@ -2,21 +2,21 @@
 title: Tutoriels .NET pour Apache Spark
 description: Explorez les tutoriels .NET pour Apache Spark pour découvrir comment intégrer Apache Spark dans vos applications .NET.
 ms.date: 05/17/2019
-ms.openlocfilehash: 856de5086f63e163dff6a510a4e804a5176c91b0
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: HT
+ms.openlocfilehash: fde70dfbe5d8c09c4af63ecae5608ff0f3bb2b9b
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "69620061"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583499"
 ---
 # <a name="net-for-apache-spark-tutorials"></a>Tutoriels .NET pour Apache Spark
 
 Les tutoriels suivants vous permettent de comprendre comment utiliser [.NET pour Apache Spark](../index.yml) pour créer des solutions Big Data personnalisées avec Apache Spark et les intégrer dans vos applications .NET :
 
-- [Bien démarrer](get-started.md) : montre comment créer et exécuter une application .NET pour Apache Spark simple.
-- [Déployer une application .NET pour Apache Spark sur Azure HDInsight](hdinsight-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Azure HDInsight.
-- [Déployer une application .NET pour Apache Spark sur Amazon EMR Spark](amazon-emr-spark-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Amazon EMR Spark.
-- [Déployer une application .NET pour Apache Spark sur Databricks](databricks-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Databricks.
+* [Bien démarrer](get-started.md) : montre comment créer et exécuter une application .NET pour Apache Spark simple.
+* [Déployer une application .NET pour Apache Spark sur Azure HDInsight](hdinsight-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Azure HDInsight.
+* [Déployer une application .NET pour Apache Spark sur Amazon EMR Spark](amazon-emr-spark-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Amazon EMR Spark.
+* [Déployer une application .NET pour Apache Spark sur Databricks](databricks-deployment.md) : montre comment déployer votre application .NET pour Apache Spark sur Databricks.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

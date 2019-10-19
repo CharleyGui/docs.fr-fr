@@ -26,19 +26,19 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-ms.openlocfilehash: e8689820d13db173950f8df45431011968899bed
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a9384ba118df2a84fbd2581e6a8bacb58e41ddcc
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64582896"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582085"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim, instruction (Visual Basic)
 Réalloue l'espace de stockage d'une variable tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]  
 ```  
   
@@ -46,9 +46,9 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |Terme|Définition|  
 |----------|----------------|  
-|`Preserve`|Facultatif. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
-|`name`|Obligatoire. Nom de la variable de tableau. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`boundlist`|Obligatoire. Liste des limites de chaque dimension du tableau redéfini.|  
+|`Preserve`|Optionnel. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
+|`name`|Requis. Nom de la variable de tableau. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`boundlist`|Requis. Liste des limites de chaque dimension du tableau redéfini.|  
   
 ## <a name="remarks"></a>Notes  
  Vous pouvez utiliser l'instruction `ReDim` pour modifier la taille d'une ou plusieurs dimensions d'un tableau qui a déjà été déclaré. Si vous possédez un grand tableau et que vous n'avez plus besoin de certains de ses éléments, `ReDim` peut libérer de la mémoire en réduisant la taille du tableau. En revanche, si votre tableau a besoin d'éléments supplémentaires, `ReDim` peut les ajouter.  
@@ -59,29 +59,29 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="rules"></a>Règles  
   
-- **Plusieurs Variables.** Vous pouvez redimensionner plusieurs variables tableau dans la même instruction de déclaration et spécifier les parties `name` et `boundlist` pour chaque variable. Les variables multiples sont séparées par des virgules.  
+- **Plusieurs variables.** Vous pouvez redimensionner plusieurs variables de tableau dans la même instruction de déclaration et spécifier les parties `name` et `boundlist` pour chaque variable. Les variables multiples sont séparées par des virgules.  
   
-- **Limites du tableau.** Chaque entrée dans `boundlist` peut spécifier les limites inférieures et supérieures de cette dimension. La limite inférieure est toujours 0 (zéro). La limite supérieure est la valeur d'index la plus élevée possible pour cette dimension, pas la longueur de la dimension (qui est la limite supérieure plus un). L'index pour chaque dimension varie de 0 à sa valeur liée supérieure.  
+- **Limites du tableau.** Chaque entrée de `boundlist` peut spécifier les limites inférieure et supérieure de cette dimension. La limite inférieure est toujours 0 (zéro). La limite supérieure est la valeur d'index la plus élevée possible pour cette dimension, pas la longueur de la dimension (qui est la limite supérieure plus un). L'index pour chaque dimension varie de 0 à sa valeur liée supérieure.  
   
      Le nombre de dimensions dans `boundlist` doit correspondre au nombre de dimensions (rang) d'origine du tableau.  
   
-- **Types de données.** L'instruction `ReDim` ne peut pas modifier le type de données d'une variable tableau ou de ses éléments.  
+- **Types de données.** L’instruction `ReDim` ne peut pas modifier le type de données d’une variable tableau ou de ses éléments.  
   
-- **Initialisation.** L'instruction `ReDim` ne peut pas fournir de nouvelles valeurs d'initialisation pour les éléments du tableau.  
+- **D’initialisation.** L’instruction `ReDim` ne peut pas fournir de nouvelles valeurs d’initialisation pour les éléments du tableau.  
   
-- **Rang.** L'instruction `ReDim` ne peut pas modifier le rang (nombre de dimensions) du tableau.  
+- **Moteurs.** L’instruction `ReDim` ne peut pas modifier le rang (nombre de dimensions) du tableau.  
   
-- **Redimensionnement avec Preserve.** Si vous utilisez `Preserve`, vous pouvez uniquement redimensionner la dernière dimension du tableau. Pour chaque autre dimension, vous devez spécifier la limite du tableau existant.  
+- **Redimensionnement avec Preserve.** Si vous utilisez `Preserve`, vous pouvez redimensionner uniquement la dernière dimension du tableau. Pour chaque autre dimension, vous devez spécifier la limite du tableau existant.  
   
      Par exemple, si votre tableau ne comporte qu'une seule dimension, vous pouvez la redimensionner tout en conservant le contenu du tableau, car vous modifiez la dernière et seule dimension. Toutefois, si votre tableau comporte deux dimensions ou plus, vous pouvez modifier la taille de la dernière dimension seulement si vous utilisez `Preserve`.  
   
-- **Propriétés.** Vous pouvez utiliser `ReDim` sur une propriété qui contient un tableau de valeurs.  
+- **Sous.** Vous pouvez utiliser `ReDim` sur une propriété qui contient un tableau de valeurs.  
   
 ## <a name="behavior"></a>Comportement  
   
-- **Remplacement de tableau.** `ReDim` Libère le tableau existant et crée un nouveau tableau avec le même rang. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
+- **Remplacement de tableau.** `ReDim` libère le tableau existant et crée un nouveau tableau avec le même rang. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
   
-- **Initialisation sans Preserve.** Si vous ne spécifiez pas `Preserve`, `ReDim` initialise les éléments du nouveau tableau à l'aide de la valeur par défaut de leur type de données.  
+- **Initialisation sans Preserve.** Si vous ne spécifiez pas `Preserve`, `ReDim` initialise les éléments du nouveau tableau en utilisant la valeur par défaut pour leur type de données.  
   
 - **Initialisation avec Preserve.** Si vous spécifiez `Preserve`, Visual Basic copie les éléments du tableau existant dans le nouveau tableau.  
   

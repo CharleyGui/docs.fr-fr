@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: d286cc811c87f2d45d5a9e6d4e8acd9c430ff346
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 64f8d536212cd379337ad437c1e15ae356890ddb
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835251"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581962"
 ---
 # <a name="whats-new-for-visual-basic"></a>Nouveautés de Visual Basic
 
@@ -26,34 +26,49 @@ Pour les nouvelles fonctionnalités, consultez [Visual Basic 16,0](#visual-basic
 
 ## <a name="previous-versions"></a>Versions antérieures
 
-Visual Basic 15,8/Visual Studio 2017 version 15,8 pour de nouvelles fonctionnalités, consultez [Visual Basic 15,8](#visual-basic-158).
+Visual Basic 15.8/Visual Studio 2017 version 15.8  
+Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,8](#visual-basic-158).
 
-Visual Basic 15,5/Visual Studio 2017 version 15,5 pour de nouvelles fonctionnalités, consultez [Visual Basic 15,5](#visual-basic-155).
+Visual Basic 15.5 / Visual Studio 2017 Version 15.5  
+Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,5](#visual-basic-155).
 
-Visual Basic 15,3/Visual Studio 2017 version 15,3 pour de nouvelles fonctionnalités, consultez [Visual Basic 15,3](#visual-basic-153).
+Visual Basic 15.3 / Visual Studio 2017 Version 15.3  
+Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,3](#visual-basic-153).
 
-Visual Basic 2017/Visual Studio 2017 pour les nouvelles fonctionnalités, consultez [Visual Basic 2017](#visual-basic-2017).
+Visual Basic 2017 / Visual Studio 2017  
+Pour les nouvelles fonctionnalités, consultez [Visual Basic 2017](#visual-basic-2017).
 
-Visual Basic/Visual Studio 2015 pour les nouvelles fonctionnalités, consultez [Visual Basic 14](#visual-basic-14).
+Visual Basic / Visual Studio 2015  
+Pour les nouvelles fonctionnalités, consultez [Visual Basic 14](#visual-basic-14).
 
-Visual Basic / Visual Studio 2013. Aperçus des technologies de la plateforme de compilateur .NET (« Roslyn »)
+Visual Basic / Visual Studio 2013  
+Aperçus des technologies de la plateforme des compilateurs .NET (« Roslyn »)
 
-Visual Basic / Visual Studio 2012. Mots clés `Async` et `await`, itérateurs, attributs des informations de l’appelant
+Visual Basic / Visual Studio 2012  
+Mots clés `Async` et `await`, itérateurs, attributs des informations de l’appelant
 
-Visual Basic, Visual Studio 2010. Propriétés implémentées automatiquement, initialiseurs de collection, continuation de ligne implicite, variance co/contra générique, dynamique, accès à l’espace de noms global
+Visual Basic, Visual Studio 2010  
+Propriétés implémentées automatiquement, initialiseurs de collection, continuation de ligne implicite, variance co/contra générique, dynamique, accès de l’espace de noms global
 
-Visual Basic / Visual Studio 2008. LINQ (Language Integrated Query), littéraux XML, inférence de type local, initialiseurs d’objet, types anonymes, méthodes d’extension, inférence de type `var` local, expressions lambda, opérateur `if`, méthodes partielles, types de valeur nullable
+Visual Basic / Visual Studio 2008  
+LINQ (Language Integrated Query), littéraux XML, inférence de type local, initialiseurs d’objet, types anonymes, méthodes d’extension, inférence de type `var` local, expressions lambda, opérateur `if`, méthodes partielles, types de valeur nullable
 
-Visual Basic / Visual Studio 2005. Type `My` et types helper (accès à l’application, ordinateur, système de fichiers, réseau)
+Visual Basic / Visual Studio 2005  
+Type `My` et types d’assistance (accès à l’application, ordinateur, système de fichiers, réseau)
 
-Visual Basic / Visual Studio .NET 2003. Opérateurs de décalage de bits, déclaration de variable de boucle
+Visual Basic / Visual Studio .NET 2003  
+Opérateurs de décalage de bits, déclaration de variable de boucle
 
-Visual Basic / Visual Studio .NET 2002. Première version de Visual Basic .NET
+Visual Basic / Visual Studio .NET 2002  
+Première version de Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
-Visual Basic 16,0 est axé sur la fourniture de plus de fonctionnalités de l’Visual Basic Runtime (Microsoft. VisualBasic. dll) à .NET Core et est la première version de Visual Basic axée sur .NET Core. De nombreuses parties du runtime Visual Basic dépendent de WinForms et sont ajoutées dans une version plus récente de Visual Basic. 
 
-**Commentaires autorisés dans d’autres emplacements dans les instructions** Dans Visual Basic 15,8 et versions antérieures, les commentaires sont uniquement autorisés sur les lignes vides, à la fin d’une instruction ou à des emplacements spécifiques dans une instruction où une continuation de ligne implicite est autorisée. À compter de Visual Basic 16,0, les commentaires sont également autorisés après des continuations de ligne explicites et dans une instruction sur une ligne commençant par un espace suivi d’un trait de soulignement.
+Visual Basic 16,0 est axé sur la fourniture de plus de fonctionnalités de l’Visual Basic Runtime (Microsoft. VisualBasic. dll) à .NET Core et est la première version de Visual Basic axée sur .NET Core. De nombreuses parties du runtime Visual Basic dépendent de WinForms et sont ajoutées dans une version plus récente de Visual Basic.
+
+**Commentaires autorisés dans d’autres emplacements dans les instructions**
+
+Dans Visual Basic 15,8 et versions antérieures, les commentaires sont uniquement autorisés sur les lignes vides, à la fin d’une instruction ou à des emplacements spécifiques dans une instruction où une continuation de ligne implicite est autorisée. À compter de Visual Basic 16,0, les commentaires sont également autorisés après des continuations de ligne explicites et dans une instruction sur une ligne commençant par un espace suivi d’un trait de soulignement.
 
 ```vb
 Public Sub Main()
@@ -202,7 +217,7 @@ Vous pouvez utiliser des expressions d’interpolation de chaîne pour construir
 
 [Indexation et accès aux membres conditionnels Null](../language-reference/operators/null-conditional-operators.md)
 
-Vous pouvez rechercher les valeurs Null à l’aide d’une syntaxe très légère avant d’effectuer une opération d’accès aux membres (`?.`) ou d’indexation (`?[]`).  Ces opérateurs permettent d’écrire moins de code pour gérer les vérifications Null, notamment pour l’exploration des structures de données.  Si la référence objet ou l’opérande gauche est Null, l’opération retourne la valeur Null.
+Vous pouvez rechercher les valeurs Null à l’aide d’une syntaxe très légère avant d’effectuer une opération d’accès aux membres (`?.`) ou d’indexation (`?[]`).  Ils permettent d'écrire moins de code pour gérer les vérifications Null, notamment pour l'exploration des structures de données.  Si la référence objet ou l’opérande gauche est Null, l’opération retourne la valeur Null.
 
 [Littéraux de chaîne multiligne](../../visual-basic/programming-guide/language-features/strings/string-basics.md)
 

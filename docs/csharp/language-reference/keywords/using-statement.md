@@ -1,16 +1,16 @@
 ---
 title: using, instruction - Référence C#
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 10/15/2019
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: e1a1a960fa69be593ea01cab51be576b0055fd5e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 7e6d1b663007d430f71f81923f343f1c43f5dd2d
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632900"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579181"
 ---
 # <a name="using-statement-c-reference"></a>using, instruction (référence C#)
 
@@ -22,7 +22,11 @@ L’exemple suivant montre comment utiliser l’instruction `using`.
 
 [!code-csharp[csrefKeywordsNamespace#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#4)]
 
-## <a name="remarks"></a>Remarques
+À partir C# de 8,0, vous pouvez utiliser la syntaxe alternative suivante pour l’instruction `using` qui ne requiert pas d’accolades :
+
+[!code-csharp[csrefKeywordsNamespace#New](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#ModernUsing)]
+
+## <a name="remarks"></a>Notes
 
 <xref:System.IO.File> et <xref:System.Drawing.Font> sont des exemples de types managés qui accèdent à des ressources non managées (dans le cas présent, des handles de fichiers et des contextes d’appareil). Beaucoup d’autres types de ressources non managées et de bibliothèques de classes peuvent les encapsuler. Tous les types de cette sorte doivent implémentent l’interface <xref:System.IDisposable>.
 
@@ -32,11 +36,17 @@ L’instruction `using` garantit que <xref:System.IDisposable.Dispose%2A> est ap
 
 [!code-csharp[csrefKeywordsNamespace#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#5)]
 
+La plus récente syntaxe d’instruction `using` se traduit par un code très similaire. Le bloc `try` s’ouvre à l’emplacement où la variable est déclarée. Le bloc `finally` est ajouté à la fermeture du bloc englobant, en général à la fin d’une méthode.
+
 Pour plus d’informations sur l’instruction `try`-`finally`, consultez la rubrique [try-finally](try-finally.md).
 
 Vous pouvez déclarer plusieurs instances d’un type dans l’instruction `using`, comme indiqué dans l’exemple suivant :
 
 [!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#6)]
+
+Vous pouvez combiner plusieurs déclarations du même type à l’aide de la nouvelle syntaxe C# introduite avec 8 également. Ceci est illustré dans l'exemple suivant :
+
+[!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#MultipleUsing)]
 
 Il n’est pas recommandé d’instancier l’objet de ressource, puis de passer la variable à l’instruction `using`. Dans ce cas, une fois que le contrôle a quitté le bloc `using`, l’objet reste dans la portée mais n’a probablement pas accès à ses ressources non managées. En d’autres termes, il n’est plus complètement initialisé. Si vous essayez d’utiliser l’objet à l’extérieur du bloc `using`, vous risquez de provoquer la levée d’une exception. C’est pourquoi il est généralement préférable d’instancier l’objet dans l’instruction `using` et de limiter sa portée au bloc `using`.
 
@@ -50,10 +60,11 @@ Pour plus d’informations, consultez [Instruction using](~/_csharplang/spec/sta
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [using, directive](using-directive.md)
 - [Nettoyage de la mémoire](../../../standard/garbage-collection/index.md)
 - [Utilisation d’objets implémentant IDisposable](../../../standard/garbage-collection/using-objects.md)
 - [Interface IDisposable](xref:System.IDisposable)
+- [instruction using dans C# 8,0](~/_csharplang/proposals/csharp-8.0/using.md)

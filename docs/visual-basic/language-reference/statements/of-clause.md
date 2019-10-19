@@ -17,20 +17,20 @@ helpviewer_keywords:
 - type parameters
 - data type arguments
 ms.assetid: 0db8f65c-65af-4089-ab7f-6fcfecb60444
-ms.openlocfilehash: 880570c714292b0c11eef4e2cd4c4b410bb075f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0cfbb5109d5b49f995028944e735c96440c9ab2
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784148"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72583505"
 ---
 # <a name="of-clause-visual-basic"></a>Of, clause (Visual Basic)
-Introduit un `Of` clause qui identifie un *le paramètre de type* sur un *générique* classe, structure, interface, délégué ou procédure. Pour plus d’informations sur les types génériques, consultez [des Types génériques en Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
+Introduit une clause `Of`, qui identifie un *paramètre de type* sur une classe, une structure, une interface, un délégué ou une procédure *générique* . Pour plus d’informations sur les types génériques, consultez [types génériques dans Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
   
-## <a name="using-the-of-keyword"></a>À l’aide du mot clé  
- Le code suivant exemple utilise le `Of` mot clé pour définir le contour d’une classe qui accepte deux paramètres de type. Il *contraint* le `keyType` paramètre par le <xref:System.IComparable> interface, ce qui signifie que le code utilisateur doit fournir un argument de type qui implémente <xref:System.IComparable>. Cela est nécessaire afin que le `add` procédure peut en appeler le <xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType> (méthode). Pour plus d’informations sur les contraintes, consultez [Type List](../../../visual-basic/language-reference/statements/type-list.md).  
+## <a name="using-the-of-keyword"></a>Utilisation du mot clé of  
+ L’exemple de code suivant utilise le mot clé `Of` pour définir le plan d’une classe qui accepte deux paramètres de type. Il *limite* le paramètre `keyType` par l’interface <xref:System.IComparable>, ce qui signifie que le code de consommation doit fournir un argument de type qui implémente <xref:System.IComparable>. Cela est nécessaire pour que la procédure `add` puisse appeler la méthode <xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType>. Pour plus d’informations sur les contraintes, consultez [Type List](../../../visual-basic/language-reference/statements/type-list.md).  
   
-```  
+```vb  
 Public Class Dictionary(Of entryType, keyType As IComparable)  
     Public Sub add(ByVal e As entryType, ByVal k As keyType)  
         Dim dk As keyType  
@@ -42,11 +42,11 @@ Public Class Dictionary(Of entryType, keyType As IComparable)
 End Class  
 ```  
   
- Si vous terminez la définition de classe précédentes, vous pouvez construire une variété de `dictionary` classes à partir de celui-ci. Les types que vous fournissez à `entryType` et `keyType` déterminer quel type d’entrée de la classe contient et le type de clé associe à chaque entrée. En raison de la contrainte, vous devez fournir au `keyType` un type qui implémente <xref:System.IComparable>.  
+ Si vous terminez la définition de classe précédente, vous pouvez construire une variété de `dictionary` classes à partir de celle-ci. Les types que vous fournissez à `entryType` et `keyType` déterminent le type d’entrée que contient la classe et le type de clé qu’elle associe à chaque entrée. En raison de la contrainte, vous devez fournir à `keyType` un type qui implémente <xref:System.IComparable>.  
   
- L’exemple de code suivant crée un objet qui contient `String` entrées et associe un `Integer` clé avec chacun d’eux. `Integer` implémente <xref:System.IComparable> et par conséquent satisfait la contrainte sur `keyType`.  
+ L’exemple de code suivant crée un objet qui contient des entrées `String` et associe une clé `Integer` à chacune d’entre elles. `Integer` implémente <xref:System.IComparable> et, par conséquent, satisfait la contrainte sur `keyType`.  
   
-```  
+```vb  
 Dim d As New dictionary(Of String, Integer)  
 ```  
   

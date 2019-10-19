@@ -15,12 +15,12 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-ms.openlocfilehash: 3c6766d9084962d006fe5e5d7d5cc723c2aad441
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3da04b85865389a2b4466b78091ff28529346269
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046641"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582258"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With, instruction (Visual Basic)
 
@@ -28,7 +28,7 @@ Exécute une série d'instructions qui font référence à plusieurs reprises à
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 With objectExpression
     [ statements ]
 End With
@@ -39,7 +39,7 @@ End With
 |Terme|Définition|
 |---|---|
 |`objectExpression`|Requis. Expression qui correspond à un objet. L'expression peut être arbitrairement complexe et n'est évaluée qu'une seule fois. L'expression peut correspondre à tout type de données, y compris des types élémentaires.|
-|`statements`|facultatif. Une ou plusieurs instructions entre `With` et `End With` qui peuvent faire référence aux membres d'un objet produit par l'évaluation de `objectExpression`.|
+|`statements`|Optionnel. Une ou plusieurs instructions entre `With` et `End With` qui peuvent faire référence aux membres d'un objet produit par l'évaluation de `objectExpression`.|
 |`End With`|Requis. Met fin à la définition du bloc `With`.|
 
 ## <a name="remarks"></a>Notes
@@ -67,7 +67,7 @@ Vous ne pouvez pas créer de branche dans un bloc d’instructions `With` à par
 À moins que le bloc ne contienne une boucle, les instructions ne sont exécutées qu'une seule fois. Vous pouvez imbriquer différentes sortes de structures de contrôle. Pour plus d’informations, consultez [structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).
 
 > [!NOTE]
-> Vous pouvez également utiliser le mot clé `With` dans les initialiseurs d'objets. Pour plus d’informations et d’exemples [, consultez Initialiseurs d’objets: Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) nommés et anonymes et [types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+> Vous pouvez également utiliser le mot clé `With` dans les initialiseurs d'objets. Pour plus d’informations et d’exemples, consultez [initialiseurs d’objets : types nommés et anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) et [types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 >
 > Si vous utilisez un bloc `With` uniquement pour initialiser les propriétés ou les champs d'un objet que vous venez d'instancier, utilisez plutôt un initialiseur d'objet à la place.
 
@@ -87,5 +87,5 @@ L'exemple suivant imbrique les instructions `With…End With`. Dans l'instructio
 
 - <xref:System.Collections.Generic.List%601>
 - [Structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [Initialiseurs d’objets: Types nommés et anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Initialiseurs d’objets : types nommés et anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

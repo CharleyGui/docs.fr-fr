@@ -9,19 +9,19 @@ helpviewer_keywords:
 - glyphs [WPF]
 - typography [WPF], GlyphRun object
 ms.assetid: 746ca769-a331-4435-9b95-f72a883b67c1
-ms.openlocfilehash: 5b1fd9c6e12a3dbea6de939ee90c48df716bd265
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 2f7bb3fb4f28b063c78dde9f9f354b38a5e707f3
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395813"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72581894"
 ---
 # <a name="introduction-to-the-glyphrun-object-and-glyphs-element"></a>Introduction à l'objet GlyphRun et à l'élément Glyphs
 Cette rubrique décrit l’objet <xref:System.Windows.Media.GlyphRun> et l’élément <xref:System.Windows.Documents.Glyphs>.  
 
 <a name="text_glyphrunovw_intro"></a>   
 ## <a name="introduction-to-glyphrun"></a>Introduction à GlyphRun  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre une prise en charge de texte avancée, notamment le balisage au niveau du glyphe avec un accès direct à <xref:System.Windows.Documents.Glyphs> pour les clients qui souhaitent intercepter et conserver du texte après la mise en forme. Ces fonctionnalités offrent une prise en charge critique pour les différentes spécifications de rendu de texte propres à chacun des scénarios suivants.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit une prise en charge de texte avancée, notamment le balisage au niveau du glyphe avec un accès direct aux <xref:System.Windows.Documents.Glyphs> pour les clients qui souhaitent intercepter et conserver du texte après la mise en forme. Ces fonctionnalités offrent une prise en charge critique pour les différentes spécifications de rendu de texte propres à chacun des scénarios suivants.  
   
 1. Affichage à l’écran de documents de format fixe.  
   
@@ -38,15 +38,15 @@ Cette rubrique décrit l’objet <xref:System.Windows.Media.GlyphRun> et l’él
 3. Représentation de document de format fixe, y compris les clients des versions antérieures de Windows et d’autres appareils informatiques.  
   
 > [!NOTE]
-> <xref:System.Windows.Documents.Glyphs> et <xref:System.Windows.Media.GlyphRun> sont conçus pour les scénarios de présentation et d’impression de documents de format fixe. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit plusieurs éléments pour les scénarios de mise en page générale et de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], tels que <xref:System.Windows.Controls.Label> et <xref:System.Windows.Controls.TextBlock>. Pour plus d’informations sur les scénarios de disposition et d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], consultez [Typographie dans WPF](typography-in-wpf.md).  
+> <xref:System.Windows.Documents.Glyphs> et <xref:System.Windows.Media.GlyphRun> sont conçus pour les scénarios de présentation et d’impression de documents de format fixe. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit plusieurs éléments pour la mise en page générale et les scénarios de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], tels que <xref:System.Windows.Controls.Label> et <xref:System.Windows.Controls.TextBlock>. Pour plus d’informations sur les scénarios de disposition et d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], consultez [Typographie dans WPF](typography-in-wpf.md).  
   
 <a name="text_glyphrunovw_glyphrunobject"></a>   
 ## <a name="the-glyphrun-object"></a>Objet GlyphRun  
  L’objet <xref:System.Windows.Media.GlyphRun> représente une séquence de glyphes d’une seule face d’une police unique à une seule taille, avec un style de rendu unique.  
   
- <xref:System.Windows.Media.GlyphRun> comprend les détails de la police, tels que le glyphe <xref:System.Windows.Documents.Glyphs.Indices%2A> et les positions des glyphes individuels. Il comprend également les points de code Unicode d’origine à partir desquels la série a été générée, les informations de mappage de décalage de la mémoire tampon de caractère à glyphe et les indicateurs par caractère et par glyphe.  
+ <xref:System.Windows.Media.GlyphRun> comprend les détails de la police, tels que les <xref:System.Windows.Documents.Glyphs.Indices%2A> de glyphes et les positions des glyphes individuels. Il comprend également les points de code Unicode d’origine à partir desquels la série a été générée, les informations de mappage de décalage de la mémoire tampon de caractère à glyphe et les indicateurs par caractère et par glyphe.  
   
- <xref:System.Windows.Media.GlyphRun> a un <xref:System.Windows.FrameworkElement> de haut niveau correspondant <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs> peut être utilisé dans l’arborescence d’éléments et dans le balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour représenter la sortie de <xref:System.Windows.Media.GlyphRun>.  
+ <xref:System.Windows.Media.GlyphRun> a un <xref:System.Windows.FrameworkElement> de haut niveau correspondant <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs> peut être utilisé dans l’arborescence d’éléments et dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage pour représenter <xref:System.Windows.Media.GlyphRun> sortie.  
   
 <a name="text_glyphrunovw_glyphselement"></a>   
 ## <a name="the-glyphs-element"></a>Élément Glyphs  
@@ -58,7 +58,7 @@ Cette rubrique décrit l’objet <xref:System.Windows.Media.GlyphRun> et l’él
   
 |Property|Description|  
 |--------------|-----------------|  
-|<xref:System.Windows.Documents.Glyphs.FontUri%2A>|Spécifie un identificateur de ressource : nom de fichier, @no__t Web-0 ou référence de ressource dans l’application. exe ou le conteneur.|  
+|<xref:System.Windows.Documents.Glyphs.FontUri%2A>|Spécifie un identificateur de ressource : nom de fichier, URI (Uniform Resource Identifier) Web ou référence de ressource dans l’application. exe ou le conteneur.|  
 |<xref:System.Windows.Documents.Glyphs.FontRenderingEmSize%2A>|Spécifie la taille de police en unités de surface de dessin (la valeur par défaut est 0,96 pouce).|  
 |<xref:System.Windows.Documents.Glyphs.StyleSimulations%2A>|Spécifie les indicateurs des styles gras et italique.|  
 |<xref:System.Windows.Documents.Glyphs.BidiLevel%2A>|Spécifie le niveau de disposition bidirectionnelle. Les valeurs paires et nulles impliquent une disposition de gauche à droite ; les valeurs impaires impliquent une disposition de droite à gauche.|  

@@ -10,83 +10,88 @@ helpviewer_keywords:
 - Join statement [Visual Basic]
 - Join clause [Visual Basic]
 ms.assetid: 6dd37936-b27c-4e00-98ad-154b23f4de64
-ms.openlocfilehash: 8eab7db00515f55b086b5e1beddd149f966cb27a
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: b5211d0ed3f618013dc9fe764a6d7b2db8177c26
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001940"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582292"
 ---
 # <a name="join-clause-visual-basic"></a>Join, clause (Visual Basic)
-Combine deux collections en une collection unique. L’opération de jointure est basée sur les clés correspondantes et utilise l’opérateur `Equals`.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```vb  
-Join element In collection _  
-  [ joinClause _ ]   
-  [ groupJoinClause ... _ ]   
-On key1 Equals key2 [ And key3 Equals key4 [... ]  
-```  
-  
-## <a name="parts"></a>Composants  
- `element`  
- Obligatoire. Variable de contrôle pour la collection qui est jointe.  
-  
- `collection`  
- Obligatoire. Collection à combiner à la collection identifiée sur le côté gauche de l’opérateur `Join`. Une clause `Join` peut être imbriquée dans une autre clause `Join` ou dans une clause `Group Join`.  
-  
- `joinClause`  
- facultatif. Une ou plusieurs clauses `Join` supplémentaires pour affiner la requête.  
-  
- `groupJoinClause`  
- facultatif. Une ou plusieurs clauses `Group Join` supplémentaires pour affiner la requête.  
-  
- `key1` `Equals` `key2`  
- Obligatoire. Identifie les clés pour les collections qui sont jointes. Vous devez utiliser l’opérateur `Equals` pour comparer les clés des collections qui sont jointes. Vous pouvez combiner des conditions de jointure à l’aide de l’opérateur `And` pour identifier plusieurs clés. `key1` doit provenir de la collection sur le côté gauche de l’opérateur `Join`. `key2` doit provenir de la collection sur le côté droit de l’opérateur `Join`.  
-  
- Les clés utilisées dans la condition de jointure peuvent être des expressions qui incluent plus d’un élément de la collection. Toutefois, chaque expression de clé peut contenir uniquement des éléments de sa collection respective.  
-  
-## <a name="remarks"></a>Notes  
- La clause `Join` combine deux collections en fonction des valeurs de clé correspondantes des collections qui sont jointes. La collection résultante peut contenir n’importe quelle combinaison de valeurs de la collection identifiée sur le côté gauche de l’opérateur `Join` et la collection identifiée dans la clause `Join`. La requête retourne uniquement les résultats pour lesquels la condition spécifiée par l’opérateur `Equals` est remplie. Cela équivaut à une `INNER JOIN` dans SQL.  
-  
- Vous pouvez utiliser plusieurs clauses `Join` dans une requête pour joindre deux collections ou plus dans une collection unique.  
-  
- Vous pouvez effectuer une jointure implicite pour combiner des collections sans la clause `Join`. Pour ce faire, incluez plusieurs clauses `In` dans votre clause `From` et spécifiez une clause `Where` qui identifie les clés que vous souhaitez utiliser pour la jointure.  
-  
- Vous pouvez utiliser la clause `Group Join` pour combiner des collections dans une collection hiérarchique unique. C’est comme un `LEFT OUTER JOIN` dans SQL.  
-  
-## <a name="example"></a>Exemple  
- L’exemple de code suivant effectue une jointure implicite pour combiner une liste de clients avec leurs commandes.  
-  
- [!code-vb[VbSimpleQuerySamples#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#13)]  
-  
-## <a name="example"></a>Exemple  
- L’exemple de code suivant joint deux collections à l’aide de la clause `Join`.  
-  
- [!code-vb[VbSimpleQuerySamples#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples2.vb#12)]  
-  
- Cet exemple produira une sortie similaire à ce qui suit :  
-  
- `winlogon (968), Windows Logon`  
-  
- `explorer (2424), File Explorer`  
-  
- `cmd (5136), Command Window`  
-  
-## <a name="example"></a>Exemple  
- L’exemple de code suivant joint deux collections à l’aide de la clause `Join` avec deux colonnes clés.  
-  
- [!code-vb[VbSimpleQuerySamples#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples3.vb#17)]  
-  
- L’exemple produira une sortie similaire à ce qui suit :  
-  
- `winlogon (968), Windows Logon, Priority = 13`  
-  
- `cmd (700), Command Window, Priority = 8`  
-  
- `explorer (2424), File Explorer, Priority = 8`  
-  
+
+Combine deux collections en une collection unique. L’opération de jointure est basée sur les clés correspondantes et utilise l’opérateur `Equals`.
+
+## <a name="syntax"></a>Syntaxe
+
+```vb
+Join element In collection _
+  [ joinClause _ ]
+  [ groupJoinClause ... _ ]
+On key1 Equals key2 [ And key3 Equals key4 [... ]
+```
+
+## <a name="parts"></a>Composants
+
+`element` Obligatoire. Variable de contrôle pour la collection qui est jointe.
+
+`collection`  
+Requis. Collection à combiner à la collection identifiée sur le côté gauche de l’opérateur `Join`. Une clause `Join` peut être imbriquée dans une autre clause `Join` ou dans une clause `Group Join`.
+
+`joinClause`  
+Optionnel. Une ou plusieurs clauses de `Join` supplémentaires pour affiner la requête.
+
+`groupJoinClause`  
+Optionnel. Une ou plusieurs clauses de `Group Join` supplémentaires pour affiner la requête.
+
+`key1` `Equals` `key2`  
+Requis. Identifie les clés pour les collections qui sont jointes. Vous devez utiliser l’opérateur `Equals` pour comparer les clés des collections qui sont jointes. Vous pouvez combiner des conditions de jointure à l’aide de l’opérateur `And` pour identifier plusieurs clés. `key1` doit provenir de la collection sur le côté gauche de l’opérateur `Join`. `key2` doit provenir de la collection sur le côté droit de l’opérateur `Join`.
+
+Les clés utilisées dans la condition de jointure peuvent être des expressions qui incluent plus d’un élément de la collection. Toutefois, chaque expression de clé peut contenir uniquement des éléments de sa collection respective.
+
+## <a name="remarks"></a>Notes
+
+La clause `Join` combine deux collections en fonction des valeurs de clé correspondantes des collections qui sont jointes. La collection résultante peut contenir n’importe quelle combinaison de valeurs de la collection identifiée sur le côté gauche de l’opérateur `Join` et la collection identifiée dans la clause `Join`. La requête retourne uniquement les résultats pour lesquels la condition spécifiée par l’opérateur `Equals` est remplie. Cela équivaut à une `INNER JOIN` dans SQL.
+
+Vous pouvez utiliser plusieurs clauses `Join` dans une requête pour joindre deux collections ou plus dans une collection unique.
+
+Vous pouvez effectuer une jointure implicite pour combiner des collections sans la clause `Join`. Pour ce faire, incluez plusieurs clauses `In` dans votre clause `From` et spécifiez une clause `Where` qui identifie les clés que vous souhaitez utiliser pour la jointure.
+
+Vous pouvez utiliser la clause `Group Join` pour combiner des collections dans une collection hiérarchique unique. C’est comme un `LEFT OUTER JOIN` dans SQL.
+
+## <a name="example"></a>Exemple
+
+L’exemple de code suivant effectue une jointure implicite pour combiner une liste de clients avec leurs commandes.
+
+[!code-vb[VbSimpleQuerySamples#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#13)]
+
+## <a name="example"></a>Exemple
+
+L’exemple de code suivant joint deux collections à l’aide de la clause `Join`.
+
+[!code-vb[VbSimpleQuerySamples#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples2.vb#12)]
+
+Cet exemple produira une sortie similaire à ce qui suit :
+
+`winlogon (968), Windows Logon`
+
+`explorer (2424), File Explorer`
+
+`cmd (5136), Command Window`
+
+## <a name="example"></a>Exemple
+
+L’exemple de code suivant joint deux collections à l’aide de la clause `Join` avec deux colonnes clés.
+
+[!code-vb[VbSimpleQuerySamples#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples3.vb#17)]
+
+L’exemple produira une sortie similaire à ce qui suit :
+
+`winlogon (968), Windows Logon, Priority = 13`
+
+`cmd (700), Command Window, Priority = 8`
+
+`explorer (2424), File Explorer, Priority = 8`
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction à LINQ en Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

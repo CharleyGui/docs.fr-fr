@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Contrôler la portée d’une Variable (Visual Basic)'
+title: "Comment : contrôler la portée d'une variable (Visual Basic)"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - variables [Visual Basic], scope
@@ -12,55 +12,55 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 7f1d671f6657c7810ec605533493a340baac39c9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 23a10bd2d6c0c9f3a13bff864559460c48927e01
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610339"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72582598"
 ---
-# <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Procédure : Contrôler la portée d’une Variable (Visual Basic)
-Normalement, une variable est dans *étendue*, ou est visible par référence, tout au long de la région dans laquelle vous la déclarez. Dans de certains cas, la variable *niveau d’accès* peut influencer sa portée.  
+# <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Comment : contrôler la portée d'une variable (Visual Basic)
+Normalement, une variable est dans la *portée*, ou visible à des fins de référence, dans toute la région dans laquelle vous la déclarez. Dans certains cas, le niveau d' *accès* de la variable peut influencer son étendue.  
   
  Pour plus d'informations, consultez [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
-## <a name="scope-at-block-or-procedure-level"></a>Portée au niveau de la procédure ou de bloc  
+## <a name="scope-at-block-or-procedure-level"></a>Portée au niveau du bloc ou de la procédure  
   
 #### <a name="to-make-a-variable-visible-only-within-a-block"></a>Pour rendre une variable visible uniquement dans un bloc  
   
-- Place le [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pour la variable entre le début et de fin des instructions de déclaration de ce bloc, par exemple entre les `For` et `Next` instructions d’un `For` boucle.  
+- Placez l' [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pour la variable entre les instructions de déclaration de début et de fin de ce bloc, par exemple entre les instructions `For` et `Next` d’une boucle `For`.  
   
-     Vous pouvez faire référence à la variable uniquement à partir du bloc.  
+     Vous ne pouvez faire référence à la variable qu’à partir du bloc.  
   
 #### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Pour rendre une variable visible uniquement dans une procédure  
   
-- Place le `Dim` instruction pour la variable à l’intérieur de la procédure mais en dehors de tout bloc (comme un `With`... `End With` bloc).  
+- Placez l’instruction `Dim` pour la variable à l’intérieur de la procédure, mais en dehors de tout bloc (par exemple, un bloc `With`... `End With`).  
   
-     Vous pouvez faire référence à la variable uniquement à partir de la procédure, y compris à l’intérieur de n’importe quel bloc contenue dans la procédure.  
+     Vous ne pouvez faire référence à la variable qu’à partir de la procédure, y compris à l’intérieur de n’importe quel bloc contenu dans la procédure.  
   
-## <a name="scope-at-module-or-namespace-level"></a>Portée au niveau du Module ou Namespace  
- Pour plus de commodité, le terme unique *au niveau du module* s’appliquent également aux modules, les classes et structures. Le niveau d’accès d’une variable de niveau module détermine sa portée. L’espace de noms qui contient le module, une classe ou une structure influence également la portée.  
+## <a name="scope-at-module-or-namespace-level"></a>Portée au niveau du module ou de l’espace de noms  
+ Pour plus de commodité, le *niveau de module* à simple terme s’applique de la même manière aux modules, aux classes et aux structures. Le niveau d’accès d’une variable de niveau module détermine sa portée. L’espace de noms qui contient le module, la classe ou la structure influence également la portée.  
   
-#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Pour rendre une variable visible dans l’ensemble d’un module, une classe ou une structure  
+#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Pour rendre une variable visible dans l’ensemble d’un module, d’une classe ou d’une structure  
   
-1. Place le `Dim` instruction pour la variable à l’intérieur du module, une classe ou une structure, mais en dehors de toute procédure.  
+1. Placez l’instruction `Dim` pour la variable à l’intérieur du module, de la classe ou de la structure, mais en dehors de toute procédure.  
   
-2. Inclure le [privé](../../../../visual-basic/language-reference/modifiers/private.md) mot clé dans la `Dim` instruction.  
+2. Incluez le mot clé [Private](../../../../visual-basic/language-reference/modifiers/private.md) dans l’instruction `Dim`.  
   
-3. Vous pouvez faire référence à la variable à partir de n’importe où dans le module, une classe ou une structure, mais pas d’à l’extérieur.  
+3. Vous pouvez faire référence à la variable depuis n’importe quel endroit du module, de la classe ou de la structure, mais pas à l’extérieur.  
   
 #### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Pour rendre une variable visible dans l’ensemble d’un espace de noms  
   
-1. Place le `Dim` instruction pour la variable à l’intérieur du module, une classe ou une structure, mais en dehors de toute procédure.  
+1. Placez l’instruction `Dim` pour la variable à l’intérieur du module, de la classe ou de la structure, mais en dehors de toute procédure.  
   
-2. Inclure le [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) ou [Public](../../../../visual-basic/language-reference/modifiers/public.md) mot clé dans la `Dim` instruction.  
+2. Incluez le mot clé [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) ou [public](../../../../visual-basic/language-reference/modifiers/public.md) dans l’instruction `Dim`.  
   
-3. Vous pouvez faire référence à la variable à partir de n’importe où dans l’espace de noms contenant le module, une classe ou une structure.  
+3. Vous pouvez faire référence à la variable depuis n’importe quel emplacement de l’espace de noms contenant le module, la classe ou la structure.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant déclare une variable au niveau du module et limite sa visibilité au code dans le module.  
   
-```  
+```vb  
 Module demonstrateScope  
     Private strMsg As String  
     Sub initializePrivateVariable()  
@@ -72,24 +72,24 @@ Module demonstrateScope
 End Module  
 ```  
   
- Dans l’exemple précédent, toutes les procédures définies dans le module `demonstrateScope` peuvent faire référence à la `String` variable `strMsg`. Lorsque le `usePrivateVariable` procédure est appelée, elle affiche le contenu de la variable chaîne `strMsg` dans une boîte de dialogue.  
+ Dans l’exemple précédent, toutes les procédures définies dans le module `demonstrateScope` peuvent faire référence à la variable `String` `strMsg`. Lorsque la procédure `usePrivateVariable` est appelée, elle affiche le contenu de la variable de chaîne `strMsg` dans une boîte de dialogue.  
   
- Avec la modification suivante apportée à l’exemple précédent, la variable de chaîne `strMsg` peuvent être référencés par le code n’importe où dans l’espace de noms de sa déclaration.  
+ Avec la modification suivante apporte à l’exemple précédent, la variable de chaîne `strMsg` peut être référencée par du code n’importe où dans l’espace de noms de sa déclaration.  
   
-```  
+```vb  
 Public strMsg As String  
 ```  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- La portée est limitée d’une variable, les opportunités de moins que vous disposez pour accidentellement qui fait référence à la place d’une autre variable portant le même nom. Vous pouvez également réduire les problèmes de correspondance de référence.  
+ Plus la portée d’une variable est restreinte, moins vous avez d’opportunités pour y faire référence par mégarde à la place d’une autre variable portant le même nom. Vous pouvez également réduire les problèmes de correspondance de référence.  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- La portée est limitée d’une variable, plus le risque qu’un code malveillant peut rendre incorrect l’utiliser.  
+ Plus la portée d’une variable est restreinte, plus les probabilités de code malveillant peuvent être utilisées de manière incorrecte.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Portée dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Durée de vie en Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Étendue dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Durée de vie dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Niveaux d’accès dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
