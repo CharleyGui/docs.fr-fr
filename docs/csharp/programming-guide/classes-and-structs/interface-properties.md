@@ -6,56 +6,58 @@ helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: cdd425970442e284d6fd6488bbb13394c12e939a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: fad674c6d56011afcccbe9ce2a88e7af411fe0a2
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596455"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72579151"
 ---
-# <a name="interface-properties-c-programming-guide"></a><span data-ttu-id="64af5-102">Propriétés d'interface (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="64af5-102">Interface Properties (C# Programming Guide)</span></span>
-<span data-ttu-id="64af5-103">Des propriétés peuvent être déclarées dans une [interface](../../language-reference/keywords/interface.md).</span><span class="sxs-lookup"><span data-stu-id="64af5-103">Properties can be declared on an [interface](../../language-reference/keywords/interface.md).</span></span> <span data-ttu-id="64af5-104">L’exemple ci-dessous porte sur un accesseur de propriété d’interface :</span><span class="sxs-lookup"><span data-stu-id="64af5-104">The following is an example of an interface property accessor:</span></span>  
-  
- [!code-csharp[csProgGuideProperties#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#14)]  
-  
- <span data-ttu-id="64af5-105">L’accesseur d’une propriété d’interface n’a pas de corps.</span><span class="sxs-lookup"><span data-stu-id="64af5-105">The accessor of an interface property does not have a body.</span></span> <span data-ttu-id="64af5-106">Par conséquent, les accesseurs visent à indiquer si la propriété est en lecture-écriture, en lecture seule ou en écriture seule.</span><span class="sxs-lookup"><span data-stu-id="64af5-106">Thus, the purpose of the accessors is to indicate whether the property is read-write, read-only, or write-only.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="64af5-107">Exemples</span><span class="sxs-lookup"><span data-stu-id="64af5-107">Example</span></span>  
- <span data-ttu-id="64af5-108">Dans cet exemple, l’interface `IEmployee` a une propriété en lecture-écriture, `Name`, et une propriété en lecture seule, `Counter`.</span><span class="sxs-lookup"><span data-stu-id="64af5-108">In this example, the interface `IEmployee` has a read-write property, `Name`, and a read-only property, `Counter`.</span></span> <span data-ttu-id="64af5-109">La classe `Employee` implémente l’interface `IEmployee` et utilise ces deux propriétés.</span><span class="sxs-lookup"><span data-stu-id="64af5-109">The class `Employee` implements the `IEmployee` interface and uses these two properties.</span></span> <span data-ttu-id="64af5-110">Le programme lit le nom d’un nouvel employé et le nombre actuel d’employés et affiche le nom de l’employé et le nombre d’employés calculé.</span><span class="sxs-lookup"><span data-stu-id="64af5-110">The program reads the name of a new employee and the current number of employees and displays the employee name and the computed employee number.</span></span>  
-  
- <span data-ttu-id="64af5-111">Vous pouvez utiliser le nom qualifié complet de la propriété, qui fait référence à l’interface dans laquelle le membre est déclaré.</span><span class="sxs-lookup"><span data-stu-id="64af5-111">You could use the fully qualified name of the property, which references the interface in which the member is declared.</span></span> <span data-ttu-id="64af5-112">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="64af5-112">For example:</span></span>  
-  
- [!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]  
-  
- <span data-ttu-id="64af5-113">Ceci s’appelle une [implémentation d’interface explicite](../interfaces/explicit-interface-implementation.md).</span><span class="sxs-lookup"><span data-stu-id="64af5-113">This is called [Explicit Interface Implementation](../interfaces/explicit-interface-implementation.md).</span></span> <span data-ttu-id="64af5-114">Par exemple, si la classe `Employee` implémente deux interfaces, `ICitizen` et `IEmployee`, et que les deux interfaces ont la même propriété `Name`, l’implémentation de membre d’interface explicite est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="64af5-114">For example, if the class `Employee` is implementing two interfaces `ICitizen` and `IEmployee` and both interfaces have the `Name` property, the explicit interface member implementation will be necessary.</span></span> <span data-ttu-id="64af5-115">Autrement dit, la déclaration de propriété suivante :</span><span class="sxs-lookup"><span data-stu-id="64af5-115">That is, the following property declaration:</span></span>  
-  
- [!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]  
-  
- <span data-ttu-id="64af5-116">implémente la propriété `Name` dans l’interface `IEmployee`, alors que la déclaration suivante :</span><span class="sxs-lookup"><span data-stu-id="64af5-116">implements the `Name` property on the `IEmployee` interface, while the following declaration:</span></span>  
-  
- [!code-csharp[csProgGuideProperties#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#17)]  
-  
- <span data-ttu-id="64af5-117">implémente la propriété `Name` dans l’interface `ICitizen`.</span><span class="sxs-lookup"><span data-stu-id="64af5-117">implements the `Name` property on the `ICitizen` interface.</span></span>  
-  
- [!code-csharp[csProgGuideProperties#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#15)]  
-  
-  **`210 Hazem Abolrous`**    
-## <a name="sample-output"></a><span data-ttu-id="64af5-118">Résultat de l'exemple</span><span class="sxs-lookup"><span data-stu-id="64af5-118">Sample Output</span></span>  
- `Enter number of employees: 210`  
-  
- `Enter the name of the new employee: Hazem Abolrous`  
-  
- `The employee information:`  
-  
- `Employee number: 211`  
-  
- `Employee name: Hazem Abolrous`  
-  
-## <a name="see-also"></a><span data-ttu-id="64af5-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="64af5-119">See also</span></span>
+# <a name="interface-properties-c-programming-guide"></a><span data-ttu-id="23e92-102">Propriétés d'interface (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="23e92-102">Interface Properties (C# Programming Guide)</span></span>
 
-- [<span data-ttu-id="64af5-120">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="64af5-120">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="64af5-121">Propriétés</span><span class="sxs-lookup"><span data-stu-id="64af5-121">Properties</span></span>](./properties.md)
-- [<span data-ttu-id="64af5-122">Utilisation de propriétés</span><span class="sxs-lookup"><span data-stu-id="64af5-122">Using Properties</span></span>](./using-properties.md)
-- [<span data-ttu-id="64af5-123">Comparaison entre propriétés et indexeurs</span><span class="sxs-lookup"><span data-stu-id="64af5-123">Comparison Between Properties and Indexers</span></span>](../indexers/comparison-between-properties-and-indexers.md)
-- [<span data-ttu-id="64af5-124">Indexeurs</span><span class="sxs-lookup"><span data-stu-id="64af5-124">Indexers</span></span>](../indexers/index.md)
-- [<span data-ttu-id="64af5-125">Interfaces</span><span class="sxs-lookup"><span data-stu-id="64af5-125">Interfaces</span></span>](../interfaces/index.md)
+<span data-ttu-id="23e92-103">Des propriétés peuvent être déclarées dans une [interface](../../language-reference/keywords/interface.md).</span><span class="sxs-lookup"><span data-stu-id="23e92-103">Properties can be declared on an [interface](../../language-reference/keywords/interface.md).</span></span> <span data-ttu-id="23e92-104">L’exemple ci-dessous porte sur un accesseur de propriété d’interface :</span><span class="sxs-lookup"><span data-stu-id="23e92-104">The following is an example of an interface property accessor:</span></span>
+
+[!code-csharp[csProgGuideProperties#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#14)]
+
+<span data-ttu-id="23e92-105">L’accesseur d’une propriété d’interface n’a pas de corps.</span><span class="sxs-lookup"><span data-stu-id="23e92-105">The accessor of an interface property does not have a body.</span></span> <span data-ttu-id="23e92-106">Par conséquent, les accesseurs visent à indiquer si la propriété est en lecture-écriture, en lecture seule ou en écriture seule.</span><span class="sxs-lookup"><span data-stu-id="23e92-106">Thus, the purpose of the accessors is to indicate whether the property is read-write, read-only, or write-only.</span></span>
+
+## <a name="example"></a><span data-ttu-id="23e92-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="23e92-107">Example</span></span>
+
+<span data-ttu-id="23e92-108">Dans cet exemple, l’interface `IEmployee` a une propriété en lecture-écriture, `Name`, et une propriété en lecture seule, `Counter`.</span><span class="sxs-lookup"><span data-stu-id="23e92-108">In this example, the interface `IEmployee` has a read-write property, `Name`, and a read-only property, `Counter`.</span></span> <span data-ttu-id="23e92-109">La classe `Employee` implémente l’interface `IEmployee` et utilise ces deux propriétés.</span><span class="sxs-lookup"><span data-stu-id="23e92-109">The class `Employee` implements the `IEmployee` interface and uses these two properties.</span></span> <span data-ttu-id="23e92-110">Le programme lit le nom d’un nouvel employé et le nombre actuel d’employés et affiche le nom de l’employé et le nombre d’employés calculé.</span><span class="sxs-lookup"><span data-stu-id="23e92-110">The program reads the name of a new employee and the current number of employees and displays the employee name and the computed employee number.</span></span>
+
+<span data-ttu-id="23e92-111">Vous pouvez utiliser le nom qualifié complet de la propriété, qui fait référence à l’interface dans laquelle le membre est déclaré.</span><span class="sxs-lookup"><span data-stu-id="23e92-111">You could use the fully qualified name of the property, which references the interface in which the member is declared.</span></span> <span data-ttu-id="23e92-112">Exemple :</span><span class="sxs-lookup"><span data-stu-id="23e92-112">For example:</span></span>
+
+[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+
+<span data-ttu-id="23e92-113">Ceci s’appelle une [implémentation d’interface explicite](../interfaces/explicit-interface-implementation.md).</span><span class="sxs-lookup"><span data-stu-id="23e92-113">This is called [Explicit Interface Implementation](../interfaces/explicit-interface-implementation.md).</span></span> <span data-ttu-id="23e92-114">Par exemple, si la classe `Employee` implémente deux interfaces, `ICitizen` et `IEmployee`, et que les deux interfaces ont la même propriété `Name`, l’implémentation de membre d’interface explicite est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="23e92-114">For example, if the class `Employee` is implementing two interfaces `ICitizen` and `IEmployee` and both interfaces have the `Name` property, the explicit interface member implementation will be necessary.</span></span> <span data-ttu-id="23e92-115">Autrement dit, la déclaration de propriété suivante :</span><span class="sxs-lookup"><span data-stu-id="23e92-115">That is, the following property declaration:</span></span>
+
+[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+
+<span data-ttu-id="23e92-116">implémente la propriété `Name` dans l’interface `IEmployee`, alors que la déclaration suivante :</span><span class="sxs-lookup"><span data-stu-id="23e92-116">implements the `Name` property on the `IEmployee` interface, while the following declaration:</span></span>
+
+[!code-csharp[csProgGuideProperties#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#17)]
+
+<span data-ttu-id="23e92-117">implémente la propriété `Name` dans l’interface `ICitizen`.</span><span class="sxs-lookup"><span data-stu-id="23e92-117">implements the `Name` property on the `ICitizen` interface.</span></span>
+
+[!code-csharp[csProgGuideProperties#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#15)]
+
+**`210 Hazem Abolrous`**
+
+## <a name="sample-output"></a><span data-ttu-id="23e92-118">Résultat de l'exemple</span><span class="sxs-lookup"><span data-stu-id="23e92-118">Sample output</span></span>
+
+```console
+Enter number of employees: 210
+Enter the name of the new employee: Hazem Abolrous
+The employee information:
+Employee number: 211
+Employee name: Hazem Abolrous
+```
+
+## <a name="see-also"></a><span data-ttu-id="23e92-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="23e92-119">See also</span></span>
+
+- [<span data-ttu-id="23e92-120">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="23e92-120">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="23e92-121">Propriétés</span><span class="sxs-lookup"><span data-stu-id="23e92-121">Properties</span></span>](./properties.md)
+- [<span data-ttu-id="23e92-122">Utilisation de propriétés</span><span class="sxs-lookup"><span data-stu-id="23e92-122">Using Properties</span></span>](./using-properties.md)
+- [<span data-ttu-id="23e92-123">Comparaison entre propriétés et indexeurs</span><span class="sxs-lookup"><span data-stu-id="23e92-123">Comparison Between Properties and Indexers</span></span>](../indexers/comparison-between-properties-and-indexers.md)
+- [<span data-ttu-id="23e92-124">Indexeurs</span><span class="sxs-lookup"><span data-stu-id="23e92-124">Indexers</span></span>](../indexers/index.md)
+- [<span data-ttu-id="23e92-125">Interfaces</span><span class="sxs-lookup"><span data-stu-id="23e92-125">Interfaces</span></span>](../interfaces/index.md)
