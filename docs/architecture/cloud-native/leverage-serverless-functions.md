@@ -1,25 +1,25 @@
 ---
-title: Exploitation des fonctions sans serveur
+title: Exploitation des fonctions serverless
 description: Tirer parti des Azure Functions sans serveur dans les applications natives du Cloud
 ms.date: 06/30/2019
-ms.openlocfilehash: 61bf4db6d61160c7ec11ffa3f178cc3917ae6cf9
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: c79f611b83f63079634fb2bac037c99f851f18ab
+ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182824"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72578922"
 ---
-# <a name="leveraging-serverless-functions"></a>Exploitation des fonctions sans serveur
+# <a name="leveraging-serverless-functions"></a>Exploitation des fonctions serverless
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Dans le spectre de la gestion des ordinateurs complets et des systèmes d’exploitation pour tirer parti des fonctionnalités du Cloud, la vie sans serveur se fait à l’extrême extrémité où la seule chose dont vous êtes responsable est votre code, et vous payez uniquement pour votre code lors de son exécution. Azure Functions offre un moyen de créer des fonctionnalités sans serveur dans vos applications. 
+Dans le spectre de la gestion des ordinateurs complets et des systèmes d’exploitation pour tirer parti des fonctionnalités du Cloud, la vie sans serveur se fait à l’extrême extrémité où la seule chose dont vous êtes responsable est votre code, et vous payez uniquement quand votre code s’exécute. Azure Functions offre un moyen de créer des fonctionnalités sans serveur dans vos applications. 
 
 ## <a name="what-is-serverless"></a>Qu’est-ce que sans serveur ?
 
 L’informatique sans serveur ne signifie pas qu’aucun serveur n’est impliqué dans l’exécution de votre application. le code s’exécute toujours sur un serveur quelque part. La distinction est que l’équipe de développement d’applications n’a plus à se préoccuper de la gestion de l’infrastructure de serveur. Les solutions informatiques sans serveur comme Azure Functions aident les équipes à augmenter leur productivité et à permettre aux organisations d’optimiser leurs ressources et de se concentrer sur la diffusion de solutions.
 
-L’informatique sans serveur utilise des conteneurs sans état déclenchés par des événements pour héberger votre application ou une partie de votre application. Les plateformes sans serveur peuvent être mises à l’échelle pour répondre à la demande en fonction des besoins. Les plateformes telles que Azure Functions ont un accès direct facile à d’autres services Azure tels que les files d’attente, les événements et le stockage.
+L’informatique sans serveur utilise des conteneurs sans état déclenchés par des événements pour héberger votre application ou une partie de votre application. Les plateformes sans serveur peuvent monter en puissance et dans pour répondre à la demande en fonction des besoins. Les plateformes telles que Azure Functions ont un accès direct facile à d’autres services Azure tels que les files d’attente, les événements et le stockage.
 
 ## <a name="what-challenges-are-solved-by-serverless"></a>Quels sont les défis résolus sans serveur ?
 
@@ -45,10 +45,10 @@ De nombreuses applications ont des processus de longue durée dans le cadre de l
 
 ## <a name="when-should-you-avoid-serverless"></a>Quand faut-il éviter les sans serveur ?
 
-L’informatique sans serveur est mieux utilisée pour les tâches qui ne bloquent pas l’interface utilisateur. Cela signifie qu’elles ne sont pas idéales pour héberger des applications Web ou des API Web directement. La raison principale est que les solutions sans serveur sont approvisionnées et mises à l’échelle à la demande. Lorsqu’une nouvelle instance d’une fonction est nécessaire, désignée sous le terme de *démarrage à froid*, son approvisionnement prend du temps. Cette durée est généralement de quelques secondes, mais elle peut être plus longue en fonction d’un grand nombre de facteurs. Une instance unique peut souvent être conservée indéfiniment (par exemple, en effectuant périodiquement une demande), mais le problème de démarrage à froid subsiste si le nombre d’instances doit être mis à l’échelle.
+L’informatique sans serveur est mieux utilisée pour les tâches qui ne bloquent pas l’interface utilisateur. Cela signifie qu’elles ne sont pas idéales pour héberger des applications Web ou des API Web directement. La raison principale est que les solutions sans serveur sont approvisionnées et mises à l’échelle à la demande. Lorsqu’une nouvelle instance d’une fonction est nécessaire, désignée sous le terme de *démarrage à froid*, son approvisionnement prend du temps. Cette durée est généralement de quelques secondes, mais elle peut être plus longue en fonction d’un grand nombre de facteurs. Une instance unique peut souvent rester active indéfiniment (par exemple, en effectuant régulièrement une demande), mais le problème de démarrage à froid subsiste si le nombre d’instances doit être mis à l’échelle.
 
-![Le démarrage](./media/cold-start-warm-start.png)
-à froid et à chaud**figure 3-10**. Démarrage à froid et démarrage à chaud.
+![Cold par rapport au démarrage à chaud ](./media/cold-start-warm-start.png)
+ la**Figure 3-10**. Démarrage à froid et démarrage à chaud.
 
 Si vous devez éviter que le démarrage à froid ne démarre entièrement, vous pouvez choisir de passer d’un [plan de consommation à un plan dédié](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Vous pouvez également [configurer une ou plusieurs instances prédéfinies](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) avec le plan Premium. ainsi, lorsque vous devez ajouter une autre instance, celle-ci est déjà opérationnelle et prête à l’emploi. Ces options peuvent atténuer l’un des problèmes clés associés à l’informatique sans serveur.
 
