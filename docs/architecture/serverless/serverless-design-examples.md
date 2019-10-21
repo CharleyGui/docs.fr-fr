@@ -4,12 +4,12 @@ description: Comprenez les différents scénarios pris en charge par les archite
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 096dce6ef23bde5ef9c6ca65769f4dcc7e08a904
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f7d3ec50608848b725d813ae2a9ee59ae9532ef3
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577192"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72522353"
 ---
 # <a name="serverless-design-examples"></a>Exemples de conceptions serverless
 
@@ -25,7 +25,7 @@ La planification de tâches est une fonction courante. Le diagramme suivant mont
 
 Séparation des responsabilités en matière de commande et de requête (CQRS) est un modèle qui fournit des interfaces différentes pour la lecture (ou l’interrogation) des données et des opérations qui modifient les données. Elle résout plusieurs problèmes courants. Dans les systèmes CRUD (Read Update Update) traditionnels, les conflits peuvent provenir d’un grand nombre de lectures et d’écritures dans le même magasin de données. Le verrouillage peut se produire fréquemment et ralentir considérablement les lectures. Souvent, les données sont présentées sous la forme d’un composite de plusieurs objets de domaine et les opérations de lecture doivent combiner des données provenant de différentes entités.
 
-À l’aide de CQRS, une lecture peut impliquer une entité «aplatie» spéciale qui modélise les données de la manière dont elles sont consommées. La lecture est gérée différemment de la façon dont il est stocké. Par exemple, bien que la base de données puisse stocker un contact comme un enregistrement d’en-tête avec un enregistrement d’adresse enfant, la lecture peut impliquer une entité avec les propriétés d’en-tête et d’adresse. Il existe de nombreuses approches pour créer le modèle de lecture. Elle peut être matérialisée à partir de vues. Les opérations de mise à jour peuvent être encapsulées en tant qu’événements isolés qui déclenchent ensuite des mises à jour vers deux modèles différents. Des modèles distincts existent pour la lecture et l’écriture.
+À l’aide de CQRS, une lecture peut impliquer une entité « aplatie » spéciale qui modélise les données de la manière dont elles sont consommées. La lecture est gérée différemment de la façon dont il est stocké. Par exemple, bien que la base de données puisse stocker un contact comme un enregistrement d’en-tête avec un enregistrement d’adresse enfant, la lecture peut impliquer une entité avec les propriétés d’en-tête et d’adresse. Il existe de nombreuses approches pour créer le modèle de lecture. Elle peut être matérialisée à partir de vues. Les opérations de mise à jour peuvent être encapsulées en tant qu’événements isolés qui déclenchent ensuite des mises à jour vers deux modèles différents. Des modèles distincts existent pour la lecture et l’écriture.
 
 ![CQRS, exemple](./media/cqrs-example.png)
 
@@ -33,7 +33,7 @@ Sans serveur peut prendre en charge le modèle CQRS en fournissant les points de
 
 ## <a name="event-based-processing"></a>Traitement basé sur les événements
 
-Dans les systèmes basés sur des messages, les événements sont souvent collectés dans les files d’attente ou dans les rubriques sur les éditeurs/abonnés à utiliser. Ces événements peuvent déclencher des fonctions sans serveur pour exécuter une partie de la logique métier. Les systèmes à base d’événements sont un exemple de traitement basé sur les événements. Un «événement» est déclenché pour marquer une tâche comme terminée. Une fonction sans serveur déclenchée par l’événement met à jour le document de base de données approprié. Une deuxième fonction sans serveur peut utiliser l’événement pour mettre à jour le modèle de lecture pour le système. [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) permet d’intégrer des événements avec les fonctions en tant qu’abonnés.
+Dans les systèmes basés sur des messages, les événements sont souvent collectés dans les files d’attente ou dans les rubriques sur les éditeurs/abonnés à utiliser. Ces événements peuvent déclencher des fonctions sans serveur pour exécuter une partie de la logique métier. Les systèmes à base d’événements sont un exemple de traitement basé sur les événements. Un « événement » est déclenché pour marquer une tâche comme terminée. Une fonction sans serveur déclenchée par l’événement met à jour le document de base de données approprié. Une deuxième fonction sans serveur peut utiliser l’événement pour mettre à jour le modèle de lecture pour le système. [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) permet d’intégrer des événements avec les fonctions en tant qu’abonnés.
 
 > Les événements sont des messages d’information. Pour plus d’informations, consultez [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
@@ -43,7 +43,7 @@ L’extraction, la transformation et le chargement (ETL) est une fonction métie
 
 ![Transformations et déclencheurs de fichiers sans serveur](./media/serverless-file-triggers.png)
 
-Dans le diagramme, «stockage froid» fournit des données qui sont analysées dans [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics). Tout problème rencontré dans le flux de données déclenche une fonction Azure pour traiter l’anomalie.
+Dans le diagramme, « stockage froid » fournit des données qui sont analysées dans [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics). Tout problème rencontré dans le flux de données déclenche une fonction Azure pour traiter l’anomalie.
 
 ## <a name="asynchronous-background-processing-and-messaging"></a>Traitement et messagerie en arrière-plan asynchrone
 
@@ -63,7 +63,7 @@ Les fonctions sans serveur peuvent être utilisées pour faciliter un pipeline d
 
 ![Pipeline de données sans serveur](./media/serverless-data-pipeline.png)
 
-## <a name="stream-processing"></a>Traitement des flux de données
+## <a name="stream-processing"></a>Traitement de flux
 
 Les appareils et les capteurs génèrent souvent des flux de données qui doivent être traités en temps réel. Il existe un certain nombre de technologies qui peuvent capturer des messages et des flux de [Event hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) et [IOT Hub](https://docs.microsoft.com/azure/iot-hub) à [service bus](https://docs.microsoft.com/azure/service-bus). Quel que soit le transport, sans serveur est un mécanisme idéal pour le traitement des messages et des flux de données au fur et à mesure de leur arrivée. Sans serveur peut évoluer rapidement pour répondre à la demande de grands volumes de données. Le code sans serveur peut appliquer la logique métier pour analyser les données et les sorties dans un format structuré pour l’action et l’analyse.
 
@@ -77,16 +77,16 @@ Une passerelle d’API fournit un point unique d’entrée pour les clients, pui
 
 ## <a name="recommended-resources"></a>Ressources recommandées
 
-* [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-* [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub)
-* [Défis et solutions pour la gestion des données distribuée](../microservices/architect-microservice-container-applications/distributed-data-management.md)
-* [Conception de microservices: identification des limites de microservice](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
-* [Hubs d'événements](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
-* [Modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
-* [Implémentation du modèle de disjoncteur](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
-* [IoT Hub](https://docs.microsoft.com/azure/iot-hub)
-* [Service Bus](https://docs.microsoft.com/azure/service-bus)
-* [Utilisation du support de flux de modification dans Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
+- [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
+- [IoT Hub Azure](https://docs.microsoft.com/azure/iot-hub)
+- [Défis et solutions pour la gestion des données distribuée](../microservices/architect-microservice-container-applications/distributed-data-management.md)
+- [Conception de microservices : identification des limites de microservice](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
+- [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
+- [Modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [Implémentation du modèle de disjoncteur](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
+- [IoT Hub](https://docs.microsoft.com/azure/iot-hub)
+- [Service Bus](https://docs.microsoft.com/azure/service-bus)
+- [Utilisation du support de flux de modification dans Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
 
 >[!div class="step-by-step"]
 >[Précédent](serverless-architecture-considerations.md)

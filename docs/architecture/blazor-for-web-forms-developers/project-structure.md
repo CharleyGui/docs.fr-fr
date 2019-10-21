@@ -4,12 +4,12 @@ description: Découvrez comment les structures de projet des ASP.NET Web Forms e
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: f9af8f88008ef45438a9104374d766cdbf8cc9a0
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: aa9157bd8627e7a03e33872c3023f91ba3d66951
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183818"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520224"
 ---
 # <a name="project-structure-for-blazor-apps"></a>Structure de projet pour les applications éblouissantes
 
@@ -59,9 +59,9 @@ Le fichier projet pour une application de webassembly éblouissant est légèrem
 
 Les projets de webassembly éblouissant ciblent .NET Standard au lieu de .NET Core, car ils s’exécutent dans le navigateur sur un Runtime .NET basé sur webassembly. Vous ne pouvez pas installer .NET dans un navigateur Web comme vous le pouvez sur un serveur ou un ordinateur de développement. Par conséquent, le projet fait référence au Framework éblouissant à l’aide de références de package individuelles.
 
-Par comparaison, un projet ASP.NET Web Forms par défaut comprend près de 300 lignes de code XML dans son fichier *. csproj* , dont la plupart répertorient explicitement les différents fichiers de code et de contenu du projet. Un grand nombre des simplifications dans les projets .net Core et .NET standard proviennent des cibles et des propriétés par défaut importées en référençant le `Microsoft.NET.Sdk.Web` Kit de développement logiciel (SDK), souvent appelé simplement Kit de développement logiciel (SDK) Web. Le kit de développement logiciel (SDK) Web comprend des caractères génériques et d’autres pratiques qui simplifient l’inclusion de code et de fichiers de contenu dans le projet. Vous n’avez pas besoin de répertorier les fichiers explicitement. Quand vous ciblez .NET Core, le kit de développement logiciel (SDK) Web ajoute également des références d’infrastructure aux frameworks partagés .NET Core et ASP.NET Core. Les frameworks sont visibles à partir du nœud**infrastructures** de **dépendances** > dans la fenêtre **Explorateur de solutions** . Les frameworks partagés sont des collections d’assemblys qui ont été installés sur l’ordinateur lors de l’installation de .NET Core.
+Par comparaison, un projet ASP.NET Web Forms par défaut comprend près de 300 lignes de code XML dans son fichier *. csproj* , dont la plupart répertorient explicitement les différents fichiers de code et de contenu du projet. La plupart des simplifications dans les projets .NET Core et .NET Standard proviennent des cibles et des propriétés par défaut importées en référençant le kit de développement logiciel (SDK) `Microsoft.NET.Sdk.Web`, souvent appelé simplement le kit de développement logiciel (SDK) Web. Le kit de développement logiciel (SDK) Web comprend des caractères génériques et d’autres pratiques qui simplifient l’inclusion de code et de fichiers de contenu dans le projet. Vous n’avez pas besoin de répertorier les fichiers explicitement. Quand vous ciblez .NET Core, le kit de développement logiciel (SDK) Web ajoute également des références d’infrastructure aux frameworks partagés .NET Core et ASP.NET Core. Les frameworks sont visibles à partir du nœud **dépendances**  > **infrastructures** dans la fenêtre **Explorateur de solutions** . Les frameworks partagés sont des collections d’assemblys qui ont été installés sur l’ordinateur lors de l’installation de .NET Core.
 
-Bien qu’elles soient prises en charge, les références d’assembly individuelles sont moins fréquentes dans les projets .NET Core. La plupart des dépendances de projet sont gérées en tant que références de package NuGet. Il vous suffit de référencer les dépendances de package de niveau supérieur dans les projets .NET Core. Les dépendances transitives sont incluses automatiquement. Au lieu d’utiliser le fichier *packages. config* qui se trouve généralement dans ASP.NET Web Forms projets pour référencer des packages, des références de package sont `<PackageReference>` ajoutées au fichier projet à l’aide de l’élément.
+Bien qu’elles soient prises en charge, les références d’assembly individuelles sont moins fréquentes dans les projets .NET Core. La plupart des dépendances de projet sont gérées en tant que références de package NuGet. Il vous suffit de référencer les dépendances de package de niveau supérieur dans les projets .NET Core. Les dépendances transitives sont incluses automatiquement. Au lieu d’utiliser le fichier *packages. config* couramment trouvé dans les projets ASP.NET Web Forms pour référencer des packages, des références de package sont ajoutées au fichier projet à l’aide de l’élément `<PackageReference>`.
 
 ```xml
 <ItemGroup>
@@ -92,7 +92,7 @@ public class Program
 
 Les applications de webassembly éblouissantes définissent également un point d’entrée dans *Program.cs*. Le code semble légèrement différent. Le code est similaire en ce qu’il configure l’hôte d’application pour fournir les mêmes services de niveau hôte à l’application. Toutefois, l’hôte d’application webassembly ne configure pas un serveur HTTP, car il s’exécute directement dans le navigateur.
 
-Les applications éblouissantes ont `Startup` une classe au lieu d’un fichier *global. asax* pour définir la logique de démarrage de l’application. La `Startup` classe est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l’application de serveur éblouissant, la `Startup` classe est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par éblouissant entre les navigateurs clients et le serveur. Dans l’application de webassembly éblouissant, `Startup` la classe définit les composants racine de l’application et l’emplacement où elles doivent être rendues. Nous examinerons plus en détail la `Startup` classe dans la section démarrage de l' [application](./app-startup.md) .
+Les applications éblouissantes ont une classe `Startup` au lieu d’un fichier *global. asax* pour définir la logique de démarrage de l’application. La classe `Startup` est utilisée pour configurer l’application et tous les services spécifiques à l’application. Dans l’application de serveur éblouissant, la classe `Startup` est utilisée pour configurer le point de terminaison de la connexion en temps réel utilisée par éblouissant entre les navigateurs clients et le serveur. Dans l’application de webassembly éblouissant, la classe `Startup` définit les composants racine de l’application et l’emplacement où elles doivent être rendues. Nous examinerons plus en détail la classe `Startup` dans la section démarrage de l' [application](./app-startup.md) .
 
 ## <a name="static-files"></a>Fichiers statiques
 
@@ -123,7 +123,7 @@ La plupart des fichiers dans les projets éblouissants sont des fichiers *. Razo
 
 Chaque fichier de composant Razor est compilé dans une classe .NET lorsque le projet est généré. La classe générée capture l’état du composant, la logique de rendu, les méthodes de cycle de vie, les gestionnaires d’événements et d’autres logiques. Nous examinerons la création de composants dans la section [création de composants d’interface utilisateur réutilisables avec éblouissant](./components.md) .
 
-Les fichiers *_Imports. Razor* ne sont pas des fichiers de composants Razor. Au lieu de cela, ils définissent un ensemble de directives Razor à importer dans d’autres fichiers *. Razor* dans le même dossier et dans ses sous-dossiers. Par exemple, un fichier *_Imports. Razor* est un moyen conventionnel d’ajouter `using` des instructions pour les espaces de noms couramment utilisés :
+Les fichiers *_Imports. Razor* ne sont pas des fichiers de composants Razor. Au lieu de cela, ils définissent un ensemble de directives Razor à importer dans d’autres fichiers *. Razor* dans le même dossier et dans ses sous-dossiers. Par exemple, un fichier *_Imports. Razor* est un moyen conventionnel d’ajouter des instructions `using` pour les espaces de noms couramment utilisés :
 
 ```razor
 @using System.Net.Http
@@ -139,7 +139,7 @@ Les fichiers *_Imports. Razor* ne sont pas des fichiers de composants Razor. Au 
 
 ## <a name="pages"></a>Pages
 
-Où se trouvent les pages des applications éblouissantes ? Éblouissant ne définit pas d’extension de fichier distincte pour les pages adressables, comme les fichiers *. aspx* dans ASP.NET Web Forms apps. Au lieu de cela, les pages sont définies en affectant des itinéraires aux composants. Un itinéraire est généralement affecté à l' `@page` aide de la directive Razor. Par exemple, le `Counter` composant créé dans le fichier *pages/Counter. Razor* définit l’itinéraire suivant :
+Où se trouvent les pages des applications éblouissantes ? Éblouissant ne définit pas d’extension de fichier distincte pour les pages adressables, comme les fichiers *. aspx* dans ASP.NET Web Forms apps. Au lieu de cela, les pages sont définies en affectant des itinéraires aux composants. Un itinéraire est généralement affecté à l’aide de la directive `@page` Razor. Par exemple, le composant `Counter` créé dans le fichier *pages/Counter. Razor* définit l’itinéraire suivant :
 
 ```razor
 @page "/counter"
@@ -159,10 +159,10 @@ Dans ASP.NET Web Forms Apps, la disposition de page courante est gérée à l’
 
 Pour démarrer éblouissant, l’application doit :
 
-* Spécifiez l’emplacement de la page où le composant racine (*app. Razor*) doit être rendu.
-* Ajoutez le script de Framework éblouissant correspondant.
+- Spécifiez l’emplacement de la page où le composant racine (*app. Razor*) doit être rendu.
+- Ajoutez le script de Framework éblouissant correspondant.
 
-Dans l’application de serveur éblouissant, la page hôte du composant racine est définie dans le fichier *_Host. cshtml* . Ce fichier définit une page Razor, et non un composant. Razor Pages utiliser syntaxe Razor pour définir une page adressable par le serveur, à l’instar d’une page *. aspx* . La `Html.RenderComponentAsync<TComponent>(RenderMode)` méthode est utilisée pour définir l’emplacement où un composant de niveau racine doit être restitué. L' `RenderMode` option indique la manière dont le composant doit être rendu. Le tableau suivant présente les options prises en `RenderMode` charge.
+Dans l’application de serveur éblouissant, la page hôte du composant racine est définie dans le fichier *_Host. cshtml* . Ce fichier définit une page Razor, et non un composant. Razor Pages utiliser syntaxe Razor pour définir une page adressable par le serveur, à l’instar d’une page *. aspx* . La méthode `Html.RenderComponentAsync<TComponent>(RenderMode)` est utilisée pour définir l’emplacement de rendu d’un composant de niveau racine. L’option `RenderMode` indique la manière dont le composant doit être rendu. Le tableau suivant présente les options de `RenderMode` prises en charge.
 
 |Option                        |Description       |
 |------------------------------|------------------|
@@ -197,7 +197,7 @@ La référence de script à *_framework/éblouissant. Server. js* établit la co
 </html>
 ```
 
-Dans l’application de webassembly éblouissant, la page hôte est un simple fichier HTML statique sous *wwwroot/index.html*. L' `<app>` élément est utilisé pour indiquer l’emplacement où le composant racine doit être restitué.
+Dans l’application de webassembly éblouissant, la page hôte est un simple fichier HTML statique sous *wwwroot/index.html*. L’élément `<app>` est utilisé pour indiquer l’emplacement où le composant racine doit être restitué.
 
 ```html
 <!DOCTYPE html>
@@ -218,7 +218,7 @@ Dans l’application de webassembly éblouissant, la page hôte est un simple fi
 </html>
 ```
 
-Le composant spécifique à restituer est configuré dans la `Startup.Configure` méthode de l’application avec un sélecteur CSS correspondant indiquant où le composant doit être rendu.
+Le composant spécifique à restituer est configuré dans la méthode `Startup.Configure` de l’application avec un sélecteur CSS correspondant indiquant où le composant doit être rendu.
 
 ```csharp
 public class Startup
@@ -240,14 +240,14 @@ Lorsqu’un projet éblouissant est généré, tous les fichiers de code et de c
 
 ## <a name="run-the-app"></a>Exécuter l'application
 
-Pour exécuter l’application de serveur éblouissante, `F5` Appuyez sur dans Visual Studio. Les applications éblouissantes ne prennent pas en charge la compilation au moment de l’exécution. Pour afficher les résultats des modifications du balisage du code et des composants, régénérez et redémarrez l’application avec le débogueur attaché. Si vous exécutez sans le débogueur attaché (`Ctrl+F5`), Visual Studio surveille les modifications apportées aux fichiers et redémarre l’application à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur à mesure que des modifications sont apportées.
+Pour exécuter l’application de serveur éblouissante, appuyez sur `F5` dans Visual Studio. Les applications éblouissantes ne prennent pas en charge la compilation au moment de l’exécution. Pour afficher les résultats des modifications du balisage du code et des composants, régénérez et redémarrez l’application avec le débogueur attaché. Si vous exécutez sans le débogueur attaché (`Ctrl+F5`), Visual Studio surveille les modifications apportées aux fichiers et redémarre l’application à mesure que des modifications sont apportées. Vous actualisez manuellement le navigateur à mesure que des modifications sont apportées.
 
 Pour exécuter l’application éblouissant webassembly, choisissez l’une des approches suivantes :
 
-* Exécutez le projet client directement à l’aide du serveur de développement.
-* Exécutez le projet serveur lors de l’hébergement de l’application avec ASP.NET Core.
+- Exécutez le projet client directement à l’aide du serveur de développement.
+- Exécutez le projet serveur lors de l’hébergement de l’application avec ASP.NET Core.
 
-Les applications webassembly éblouissantes ne prennent pas en charge le débogage à l’aide de Visual Studio. Pour exécuter l’application, utilisez `Ctrl+F5` au lieu `F5`de. Au lieu de cela, vous pouvez déboguer des applications webassembly éblouissantes directement dans le navigateur. Pour plus d’informations, consultez [Déboguer ASP.net Core éblouissant](/aspnet/core/blazor/debug) .
+Les applications webassembly éblouissantes ne prennent pas en charge le débogage à l’aide de Visual Studio. Pour exécuter l’application, utilisez `Ctrl+F5` au lieu de `F5`. Au lieu de cela, vous pouvez déboguer des applications webassembly éblouissantes directement dans le navigateur. Pour plus d’informations, consultez [Déboguer ASP.net Core éblouissant](/aspnet/core/blazor/debug) .
 
 >[!div class="step-by-step"]
 >[Précédent](hosting-models.md)

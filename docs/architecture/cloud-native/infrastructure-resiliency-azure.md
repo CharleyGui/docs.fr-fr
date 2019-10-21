@@ -2,12 +2,12 @@
 title: Résilience de la plateforme Azure
 description: Architecture des applications .NET natives Cloud pour Azure | Résilience de l’infrastructure cloud avec Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 7f148588be97fa6bf8a055f5f5bed8e23908277f
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 02d661952c860da25442b0fa9fed0d5f93abe023
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214200"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520771"
 ---
 # <a name="azure-platform-resiliency"></a>Résilience de la plateforme Azure
 
@@ -56,7 +56,7 @@ Le Cloud est très prospère en matière de mise à l’échelle. La possibilit�
 
 - *Partitionner les charges de travail*. La décomposition de domaines en microservices indépendants et autonomes permet à chaque service de se mettre à l’échelle indépendamment des autres. En règle générale, les services ont des besoins et des exigences d’évolutivité différents. Le partitionnement vous permet de mettre à l’échelle uniquement ce qui doit être mis à l’échelle sans le coût inutile de mise à l’échelle d’une application entière.
 
-- *Privilégiez la montée en puissance parallèle.* Les applications basées sur le Cloud favorisent la montée en charge des ressources par opposition à la montée en puissance. La montée en charge (également appelée mise à l’échelle horizontale) implique l’ajout de ressources de service supplémentaires à un système existant pour atteindre et partager un niveau de performances souhaité. La montée en puissance (également appelée mise à l’échelle verticale) implique de remplacer les ressources existantes par du matériel plus puissant (plus de disques, de mémoire et de cœurs de traitement). La montée en charge peut être automatiquement appelée avec les fonctionnalités de mise à l’échelle automatique disponibles dans certaines ressources de Cloud Azure. La montée en charge sur plusieurs ressources ajoute également une redondance à l’ensemble du système. Enfin, la mise à l’échelle d’une ressource unique est généralement plus coûteuse que la montée en charge sur de nombreuses ressources plus petites. La figure 6-8 illustre les deux approches :
+- *Privilégiez la montée en* puissance parallèle. Les applications basées sur le Cloud favorisent la montée en charge des ressources par opposition à la montée en puissance. La montée en charge (également appelée mise à l’échelle horizontale) implique l’ajout de ressources de service supplémentaires à un système existant pour atteindre et partager un niveau de performances souhaité. La montée en puissance (également appelée mise à l’échelle verticale) implique de remplacer les ressources existantes par du matériel plus puissant (plus de disques, de mémoire et de cœurs de traitement). La montée en charge peut être automatiquement appelée avec les fonctionnalités de mise à l’échelle automatique disponibles dans certaines ressources de Cloud Azure. La montée en charge sur plusieurs ressources ajoute également une redondance à l’ensemble du système. Enfin, la mise à l’échelle d’une ressource unique est généralement plus coûteuse que la montée en charge sur de nombreuses ressources plus petites. La figure 6-8 illustre les deux approches :
 
 ![Évolution verticale et montée en puissance parallèle](./media/scale-up-scale-out.png)
 
@@ -68,17 +68,17 @@ Le Cloud est très prospère en matière de mise à l’échelle. La possibilit�
 
 - *Tirez parti des fonctionnalités de mise à l’échelle automatique de la plateforme.* Utilisez les fonctionnalités de mise à l’échelle automatique dans la mesure du possible, au lieu de mécanismes personnalisés ou tiers. Dans la mesure du possible, utilisez des règles de mise à l’échelle planifiées pour vous assurer que les ressources sont disponibles sans délai de démarrage, mais ajoutez la mise à l’échelle automatique réactive aux règles, le cas échéant, afin de faire face aux modifications inattendues de la demande. Pour plus d’informations, consultez [Guide de mise à l’échelle](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)automatique.
 
-- *Montée en puissance de façon agressive.* Une dernière pratique serait de monter en puissance de façon agressive afin que vous puissiez répondre rapidement aux pics immédiats du trafic sans perdre votre activité. Et, réduisez la taille des ressources (en d’autres, supprimez les ressources inutiles) de manière conservatrice pour garantir la stabilité du système. Un moyen simple d’implémenter cela consiste à définir la période de refroidissement, qui est le temps d’attente entre les opérations de mise à l’échelle, à cinq minutes pour l’ajout de ressources et jusqu’à 15 minutes pour la suppression des instances.
+- *Montée en charge de manière agressive.* Une dernière pratique serait de monter en puissance de façon agressive afin que vous puissiez répondre rapidement aux pics immédiats du trafic sans perdre votre activité. Et, puis mettre à l’échelle dans (autrement dit, supprimer les instances inutiles) de manière conservatrice pour garantir la stabilité du système. Un moyen simple d’implémenter cela consiste à définir la période de refroidissement, qui est le temps d’attente entre les opérations de mise à l’échelle, à cinq minutes pour l’ajout de ressources et jusqu’à 15 minutes pour la suppression des instances.
 
 ## <a name="built-in-retry-in-services"></a>Nouvelle tentative intégrée dans les services
 
 Nous avons encouragé la meilleure pratique qui consiste à implémenter des opérations de nouvelle tentative par programmation dans une section précédente. Gardez à l’esprit que de nombreux services Azure et leurs kits de développement logiciel (SDK) clients correspondants incluent également des mécanismes de nouvelle tentative. La liste suivante récapitule les fonctionnalités des nouvelles tentatives dans les nombreux services Azure qui sont abordés dans ce document :
 
-- *Azure Cosmos DB.* La <xref:Microsoft.Azure.Documents.Client.DocumentClient> classe de l’API client retire automatiquement les tentatives ayant échoué. Le nombre de nouvelles tentatives et le délai d’attente maximal peuvent être configurés. Les exceptions levées par l’API client sont soit des demandes qui dépassent la stratégie de nouvelle tentative, soit des erreurs non temporaires.
+- *Azure Cosmos DB.* La classe <xref:Microsoft.Azure.Documents.Client.DocumentClient> de l’API client retire automatiquement les tentatives ayant échoué. Le nombre de nouvelles tentatives et le délai d’attente maximal peuvent être configurés. Les exceptions levées par l’API client sont soit des demandes qui dépassent la stratégie de nouvelle tentative, soit des erreurs non temporaires.
 
 - *Cache Redims Azure.* Le client StackExchanges ReDim utilise une classe de gestionnaire de connexions qui comprend les nouvelles tentatives en cas d’échec. Le nombre de nouvelles tentatives, la stratégie de nouvelle tentative spécifique et le temps d’attente sont tous configurables.
 
-- *Azure Service Bus.* Le client service bus expose une [classe RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) qui peut être configurée avec un intervalle d’interruption, le nombre de tentatives <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, et, qui spécifie la durée maximale qu’une opération peut prendre. La stratégie par défaut est de neuf tentatives de nouvelle tentative au maximum, avec une période d’interruption de 30 secondes entre chaque tentative.
+- *Azure Service Bus.* Le client Service Bus expose une [classe RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) qui peut être configurée avec un intervalle de temporisation, un nombre de tentatives et un <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, qui spécifie la durée maximale pendant laquelle une opération peut prendre. La stratégie par défaut est de neuf tentatives de nouvelle tentative au maximum, avec une période d’interruption de 30 secondes entre chaque tentative.
 
 - *Azure SQL Database.* La prise en charge des nouvelles tentatives est fournie lors de l’utilisation de la bibliothèque de [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) .
 

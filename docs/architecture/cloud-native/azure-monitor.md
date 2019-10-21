@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: L’utilisation de Azure Monitor pour obtenir une visibilité de votre système est en cours d’exécution.
 ms.date: 09/23/2019
-ms.openlocfilehash: 20048792e95ef1f6e75551cdd0d3571f972f6c14
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 4d7d556f030500ea6e0f608e3bdfd16d22d9eb1d
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214095"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72521028"
 ---
 # <a name="azure-monitor"></a>Azure Monitor 
 
@@ -15,8 +15,8 @@ ms.locfileid: "71214095"
 
 Aucun autre fournisseur de Cloud n’a été aussi mature qu’une solution de surveillance des applications Cloud telle qu’elle a été trouvée dans Azure. Azure Monitor est un nom de parapluie pour un ensemble d’outils conçus pour offrir une visibilité de l’état de votre système, ainsi que des informations sur les problèmes et l’optimisation de votre application. 
 
-![Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native. **Figure 7-9**. ](./media/azure-monitor.png)
- Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.
+![Azure moniteur, une collection d’outils permettant de mieux comprendre le fonctionnement d’une application Cloud native. ](./media/azure-monitor.png)
+**Figure 7-9**. Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.
 
 ## <a name="gathering-logs-and-metrics"></a>Collecte des journaux et des métriques
 
@@ -42,8 +42,8 @@ StormEvents
 | render piechart 
 ```
 
-![Résultat de la application Insights de la](./media/azure-monitor.png)
-requête de la**figure 7-10**. Résultat de la requête de Application Insights.
+![The résultat de la requête Application Insights ](./media/azure-monitor.png)
+**Figure 7-10**. Résultat de la requête de Application Insights.
 
 Il existe un [terrain pour expérimenter](https://dataexplorer.azure.com/clusters/help/databases/Samples) les requêtes Kusto, ce qui constitue un excellent point de départ pour passer une heure ou deux. La lecture des [exemples de requêtes](https://docs.microsoft.com/azure/kusto/query/samples) peut également être instructive.
 
@@ -51,23 +51,23 @@ Il existe un [terrain pour expérimenter](https://dataexplorer.azure.com/cluster
 
 Il existe plusieurs technologies de tableau de bord différentes qui peuvent être utilisées pour mettre en surface les informations de Azure Monitor. Le plus simple consiste peut-être simplement à exécuter des requêtes dans Application Insights et à [tracer les données dans un graphique](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards). 
 
-![Voici un exemple de application Insights graphiques incorporés dans le tableau](./media/azure-monitor.png)
-de bord principal Azure**figure 7-11**. Voici un exemple de Application Insights graphiques incorporés dans le tableau de bord principal Azure.
+![An exemple de Application Insights graphiques incorporés dans le tableau de bord Azure principal ](./media/azure-monitor.png)
+**Figure 7-11**. Voici un exemple de Application Insights graphiques incorporés dans le tableau de bord principal Azure.
 
 Ces graphiques peuvent ensuite être incorporés dans le Portail Azure correctement à l’aide de la fonctionnalité de tableau de bord. Pour les utilisateurs ayant des exigences plus précises, telles que la possibilité d’accéder à plusieurs niveaux de données Azure Monitor données sont disponibles pour les [Power bi](https://powerbi.microsoft.com/). Power BI est un outil d’analyse décisionnelle à la pointe du secteur, qui peut agréger des données à partir de nombreuses sources de données différentes.
 
-![Exemple Power bi](./media/azure-monitor.png)
-la**figure 7-12**. Exemple Power BI tableau de bord.
+![An exemple Power BI tableau de bord ](./media/azure-monitor.png)
+**Figure 7-12**. Exemple Power BI tableau de bord.
 
 ## <a name="alerts"></a>Alertes
 
 Parfois, le fait d’avoir des tableaux de bord de données est insuffisant. Si personne n’est en éveil pour regarder les tableaux de bord, il peut toujours y avoir plusieurs heures avant que le problème soit résolu, voire détecté. À cette fin, Azure Monitor fournit également une solution d' [alerte](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)de pointe. Les alertes peuvent être déclenchées par un large éventail de conditions, notamment :
 
-* Valeurs de métriques
-* Requêtes de recherche dans les journaux
-* Événements du journal d’activité
-* Intégrité de la plateforme Azure sous-jacente
-* Tests de disponibilité des sites Web
+- Valeurs de métriques
+- Requêtes de recherche dans les journaux
+- Événements du journal d’activité
+- Intégrité de la plateforme Azure sous-jacente
+- Tests de disponibilité des sites Web
 
 Lorsqu’elles sont déclenchées, les alertes peuvent effectuer une grande variété de tâches. Du côté simple, les alertes peuvent simplement envoyer une notification par courrier électronique à une liste de diffusion ou un message texte à une personne. Des alertes plus impliquées peuvent déclencher un flux de travail dans un outil tel que PagerDuty, qui est à l’origine de l’appel d’une application particulière. Les alertes peuvent déclencher des actions dans [Microsoft Flow](https://flow.microsoft.com/) le déverrouillage des possibilités presque illimitées pour les flux de travail.
 

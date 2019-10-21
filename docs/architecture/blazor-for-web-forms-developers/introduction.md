@@ -4,12 +4,12 @@ description: Introduction à éblouissant et écriture d’applications Web à p
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 922e72514f0283b66de971d679fab0af436f1c75
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 66b6d57b718c19b0f271c6b3a62a9d4a22d77ae0
+ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183846"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72520302"
 ---
 # <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Introduction à éblouissant pour les développeurs ASP.NET Web Forms
 
@@ -62,25 +62,25 @@ En soi, la possibilité d’exécuter du code .NET dans un navigateur ne fournit
 
 Éblouissant offre une excellente prise en charge des outils dans Visual Studio et Visual Studio Code. Le Framework inclut également un modèle de composant d’interface utilisateur complet et des fonctionnalités intégrées pour :
 
-* Formulaires et validation
-* Injection de dépendances
-* Routage côté client
-* Dispositions
-* Débogage dans le navigateur
-* Interopérabilité JavaScript
+- Formulaires et validation
+- Injection de dépendances
+- Routage côté client
+- Dispositions
+- Débogage dans le navigateur
+- Interopérabilité JavaScript
 
 Avec ASP.NET Web Forms, éblouissant est beaucoup plus courant. Les deux infrastructures offrent des modèles de programmation d’interface utilisateur basés sur des composants et pilotés par les événements. La principale différence architecturale est que ASP.NET Web Forms s’exécute uniquement sur le serveur. Éblouissant peut s’exécuter sur le client dans le navigateur. Mais si vous êtes à la base d’un ASP.NET Web Forms, il y a beaucoup de choses à paraître familières. Éblouissant est une solution naturelle pour ASP.NET Web Forms les développeurs qui cherchent un moyen de tirer parti du développement côté client et du futur .NET interplateforme Open source.
 
 Ce livre fournit une introduction à éblouissant qui est réservée aux développeurs ASP.NET Web Forms. Chaque concept éblouissant est présenté dans le contexte de ASP.NET et de pratiques Web Forms analogues. À la fin de ce livre, vous aurez compris les éléments suivants :
 
-* Comment générer des applications éblouissantes.
-* Fonctionnement de l’éblouissant.
-* Comment éblouissant est associé à .NET Core.
-* Stratégies raisonnables pour la migration de ASP.NET Web Forms applications existantes vers éblouissant, le cas échéant.
+- Comment générer des applications éblouissantes.
+- Fonctionnement de l’éblouissant.
+- Comment éblouissant est associé à .NET Core.
+- Stratégies raisonnables pour la migration de ASP.NET Web Forms applications existantes vers éblouissant, le cas échéant.
 
 ## <a name="get-started-with-blazor"></a>Prise en main de éblouissant
 
-La prise en main de éblouissant est simple. Accédez à <https://blazor.net> et suivez les liens pour installer les modèles de projet kit SDK .net Core et éblouissant appropriés. Vous trouverez également des instructions sur la configuration des outils éblouissants dans Visual Studio ou Visual Studio Code.
+La prise en main de éblouissant est simple. Accédez à <https://blazor.net> et suivez les liens pour installer les modèles de projet kit SDK .NET Core et éblouissant appropriés. Vous trouverez également des instructions sur la configuration des outils éblouissants dans Visual Studio ou Visual Studio Code.
 
 >[!div class="step-by-step"]
 >[Précédent](index.md)
