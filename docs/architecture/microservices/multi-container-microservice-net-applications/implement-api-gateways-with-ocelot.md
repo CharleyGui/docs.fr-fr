@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 10/02/2018
-ms.openlocfilehash: 2a1c7b0f4baa979864ac32d555f65397531884b8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: cb452c330712ecf536cdf09f41fdbf828a4e9314
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676186"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771184"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
@@ -30,7 +30,7 @@ Ce diagramme montre comment l’application entière est déployée sur un PC de
 
 De plus, les ressources de l’infrastructure telles que les bases de données, le cache et les répartiteurs de messages doivent être déchargées à partir de l’orchestrateur et déployées dans des systèmes hautement disponibles pour l’infrastructure, tels qu’Azure SQL Database, Azure Cosmos DB, Azure Redis, Azure Service Bus ou toute solution de clustering à haute disponibilité en local.
 
-Comme vous pouvez le constater dans le diagramme, la présence de plusieurs passerelles d’API permet à plusieurs équipes de développement d’être autonomes (dans ce cas, les fonctionnalités Marketing et les fonctionnalités d’achat [Shopping]) lors du développement et du déploiement de leurs microservices et de leurs propres passerelles d’API associées.
+Comme vous pouvez le constater dans le diagramme, l’utilisation de plusieurs passerelles d’API permet à plusieurs équipes de développement d’être autonomes (dans ce cas, les fonctionnalités de marketing et les fonctionnalités d’achat) lors du développement et du déploiement de leurs microservices, ainsi que de leurs passerelles d’API associées.
 
 Si vous aviez une passerelle d’API monolithique unique, cela signifierait qu’un point unique serait mis à jour par plusieurs équipes de développement, ce qui associerait tous les microservices à une seule partie de l’application.
 
@@ -390,7 +390,7 @@ Dans le diagramme suivant, vous pouvez également voir les services d’agrégat
 
 En faisant un zoom avant sur le secteur d’activité « Shopping » (Achat) dans l’image suivante, vous pouvez voir que les échanges entre les applications clientes et les microservices sont réduits quand vous utilisez les services d’agrégation dans les passerelles API.
 
-![Zoom avant sur l’architecture d’eShopOnContainers qui montre les services d’agrégation et qui « assemble » une réponse « joignant » la réponse de plusieurs microservices pour réduire les échanges avec le client final.](./media/image38.png)
+![eShopOnContainers architecture zoom in, qui montre les services d’agrégation, qui « assemble » une réponse « joignant » la réponse de plusieurs microservices pour réduire les échanges excessifs avec le client final.](./media/image38.png)
 
 **Figure 6-38.** Vision agrandie des services d’agrégation
 
@@ -410,7 +410,7 @@ Comme eShopOnContainers utilise plusieurs passerelles d’API avec des limites b
 
 Toutefois, Ocelot prend également en charge le placement du microservice d’identité/d’authentification dans les limites de la passerelle API, comme dans cet autre diagramme.
 
-![Authentification avec le microservice d’identité sous la passerelle API (AG) : 1) AG demande un jeton d’authentification au microservice d’identité. 2) Le microservice d’identité retourne le jeton à AG. 3-4) AG émet des demandes auprès des microservices à l’aide du jeton d’authentification.](./media/image40.png)
+![L’authentification avec le microservice Identity sous la passerelle API (AG) : 1) AG demande un jeton d’authentification au microservice d’identité. 2) Le microservice Identity retourne le jeton à AG. 3-4) AG émet des requêtes aux microservices à l’aide du jeton d’authentification.](./media/image40.png)
 
 **Figure 6-40.** Authentification dans Ocelot
 

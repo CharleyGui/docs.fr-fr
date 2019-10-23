@@ -3,22 +3,22 @@ title: Migrer un service de demande-réponse WCF vers gRPC-gRPC pour les dévelo
 description: Découvrez comment migrer un service de requête-réponse simple de WCF vers gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: ac9eecf66a7ac37a1df9714e6383f7eaebae4781
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 183e3b0ab1ce5c63714ced064f0d0901f59819c7
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184308"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770401"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>Migrer un service de requête-réponse WCF vers un RPC unaire gRPC
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Cette section explique comment migrer un service de requête-réponse de base dans WCF vers un service RPC unaire dans ASP.NET Core gRPC. Ces services sont les types de service les plus simples dans Windows Communication Foundation (WCF) et gRPC. il s’agit donc d’un excellent point de départ. Après la migration du service, vous apprendrez à générer une bibliothèque cliente à `.proto` partir du même fichier afin de consommer le service à partir d’une application cliente .net.
+Cette section explique comment migrer un service de requête-réponse de base dans WCF vers un service RPC unaire dans ASP.NET Core gRPC. Ces services sont les types de service les plus simples dans Windows Communication Foundation (WCF) et gRPC. il s’agit donc d’un excellent point de départ. Après la migration du service, vous apprendrez à générer une bibliothèque cliente à partir du même fichier de `.proto` pour utiliser le service à partir d’une application cliente .NET.
 
 ## <a name="the-wcf-solution"></a>La solution WCF
 
-La [solution PortfoliosSample](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/wcf/TraderSys) comprend un service de portefeuille demande-réponse simple pour télécharger un seul portefeuille, ou tous les portefeuilles pour un commerçant donné. Le service est défini dans l’interface `IPortfolioService` avec un `ServiceContract` attribut :
+La [solution PortfoliosSample](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/wcf/TraderSys) comprend un service de portefeuille demande-réponse simple pour télécharger un seul portefeuille, ou tous les portefeuilles pour un commerçant donné. Le service est défini dans l’interface `IPortfolioService` avec un attribut `ServiceContract` :
 
 ```csharp
 [ServiceContract]
@@ -32,7 +32,7 @@ public interface IPortfolioService
 }
 ```
 
-Le `Portfolio` modèle est une classe C# simple marquée avec [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), y compris une liste `PortfolioItem` d’objets. Ces modèles sont définis dans le `TraderSys.PortfolioData` projet, ainsi qu’une classe de référentiel représentant une abstraction d’accès aux données.
+Le modèle de `Portfolio` est une C# classe simple marquée avec [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), y compris une liste d’objets `PortfolioItem`. Ces modèles sont définis dans le projet `TraderSys.PortfolioData`, ainsi qu’une classe de référentiel représentant une abstraction d’accès aux données.
 
 ```csharp
 [DataContract]
@@ -65,7 +65,7 @@ public class PortfolioItem
 }
 ```
 
-L' `ServiceContract` implémentation utilise une classe `DataContract` de référentiel fournie via l’injection de dépendances qui retourne des instances des types.
+L’implémentation de `ServiceContract` utilise une classe de référentiel fournie via l’injection de dépendances qui retourne des instances des types de `DataContract`.
 
 ```csharp
 public class PortfolioService : IPortfolioService
@@ -91,7 +91,7 @@ public class PortfolioService : IPortfolioService
 
 ## <a name="the-portfoliosproto-file"></a>Le fichier portefeuilles. proto
 
-Si vous avez suivi les instructions de la section précédente, vous devez avoir un projet gRPC avec `portfolios.proto` un fichier similaire à celui-ci.
+Si vous avez suivi les instructions de la section précédente, vous devez avoir un projet gRPC avec un fichier `portfolios.proto` qui ressemble à ce qui suit.
 
 ```protobuf
 syntax = "proto3";
@@ -105,30 +105,30 @@ service Portfolios {
 }
 ```
 
-La première étape consiste à migrer `DataContract` les classes vers leurs équivalents Protobuf.
+La première étape consiste à migrer les classes `DataContract` vers leurs équivalents Protobuf.
 
 ## <a name="convert-the-datacontracts-to-grpc-messages"></a>Convertir le DataContracts en messages gRPC
 
-La `PortfolioItem` classe sera tout d’abord convertie en un message Protobuf `Portfolio` , car la classe en dépend. La classe est très simple, et trois des propriétés sont mappées directement aux types de données gRPC. La `Cost` propriété, qui représente le prix payé pour les partages à l’achat `decimal` , est un champ, et `float` gRPC `double` prend uniquement en charge ou pour les nombres réels, ce qui n’est pas adapté à la devise. Étant donné que les prix de partage varient d’un cent au minimum, le coût peut être `int32` exprimé en cents.
+La classe `PortfolioItem` sera d’abord convertie en message Protobuf, car la classe `Portfolio` en dépend. La classe est très simple, et trois des propriétés sont mappées directement aux types de données gRPC. La propriété `Cost`, qui représente le prix payé pour les partages à l’achat, est un champ `decimal` et gRPC prend uniquement en charge les `float` ou `double` pour les nombres réels, ce qui n’est pas adapté à la devise. Étant donné que les prix de partage varient d’un cent au minimum, le coût peut être exprimé sous la forme d’un `int32` de centimes.
 
 > [!NOTE]
-> N’oubliez pas `camelCase` d’utiliser pour les noms `.proto` de champ dans C# votre fichier ; le générateur de `PascalCase` code les convertira en pour vous, et les utilisateurs d’autres langages vous remercieront pour respecter leurs différentes normes de codage.
+> N’oubliez pas d’utiliser `camelCase` pour les noms de champ dans votre fichier `.proto` ; le C# générateur de code les convertira en `PascalCase` pour vous, et les utilisateurs d’autres langages vous remercient de respecter leurs différentes normes de codage.
 
 ```protobuf
 message PortfolioItem {
     int32 id = 1;
-    int32 shareId = 2;
+    int32 share_id = 2;
     int32 holding = 3;
-    int32 costCents = 4;
+    int32 cost_cents = 4;
 }
 ```
 
-La `Portfolio` classe est un peu plus compliquée. Dans le code WCF, le développeur a utilisé `Guid` un pour `TraderId` la propriété et contient un `List<PortfolioItem>`. Dans Protobuf, qui n’a pas de type de `UUID` première classe, vous devez utiliser `string` un pour `traderId` le champ et l’analyser dans votre propre code. Pour obtenir la liste des éléments, utilisez `repeated` le mot clé sur le champ.
+La classe `Portfolio` est un peu plus compliquée. Dans le code WCF, le développeur a utilisé une `Guid` pour la propriété `TraderId` et contient un `List<PortfolioItem>`. Dans Protobuf, qui n’a pas de type de `UUID` de première classe, vous devez utiliser une `string` pour le champ `traderId` et l’analyser dans votre propre code. Pour la liste des éléments, utilisez le mot clé `repeated` sur le champ.
 
 ```protobuf
 message Portfolio {
     int32 id = 1;
-    string traderId = 2;
+    string trader_id = 2;
     repeated PortfolioItem items = 3;
 }
 ```
@@ -137,16 +137,16 @@ Maintenant que nous avons nos messages de données, nous pouvons déclarer les p
 
 ## <a name="convert-the-servicecontract-to-a-grpc-service"></a>Convertir le ServiceContract en service gRPC
 
-La méthode `Get` WCF accepte deux paramètres : `Guid traderId` et `int portfolioId`. les méthodes de service gRPC peuvent uniquement accepter un seul paramètre, de sorte qu’un message doit être créé pour contenir les deux valeurs. Il est courant de nommer ces objets de requête avec le même nom que la méthode et le suffixe `Request`. Là encore `string` , est utilisé pour le `traderId` champ à la `Guid`place de.
+La méthode de `Get` WCF accepte deux paramètres : `Guid traderId` et `int portfolioId`. les méthodes de service gRPC peuvent uniquement accepter un seul paramètre, de sorte qu’un message doit être créé pour contenir les deux valeurs. Il est courant de nommer ces objets de requête avec le même nom que la méthode et le suffixe `Request`. Là encore, `string` est utilisé pour le champ `traderId` au lieu de `Guid`.
 
-Le service peut simplement retourner un `Portfolio` message directement, mais là encore, cela peut avoir un impact sur la compatibilité descendante à l’avenir. Il est conseillé de définir des messages distincts `Request` et `Response` pour chaque méthode dans un service, même si beaucoup d’entre eux sont les mêmes pour le moment, il est `GetResponse` donc préférable de déclarer `Portfolio` un message avec un seul champ.
+Le service peut simplement retourner un message `Portfolio`, mais là encore, cela peut avoir un impact sur la compatibilité descendante à l’avenir. Nous vous conseillons de définir des `Request` et des messages `Response` distincts pour chaque méthode dans un service, même si beaucoup d’entre eux sont identiques pour l’instant, déclarez un message `GetResponse` avec un seul champ de `Portfolio`.
 
-L’exemple suivant illustre la déclaration de la méthode de service gRPC à `GetRequest` l’aide du message :
+L’exemple suivant illustre la déclaration de la méthode de service gRPC à l’aide du message `GetRequest` :
 
 ```protobuf
 message GetRequest {
-    string traderId = 1;
-    int32 portfolioId = 2;
+    string trader_id = 1;
+    int32 portfolio_id = 2;
 }
 
 message GetResponse {
@@ -158,16 +158,16 @@ service Portfolios {
 }
 ```
 
-La méthode `GetAll` WCF n’accepte qu’un seul paramètre `traderId`,. il peut donc sembler que l’un `string` d’eux peut être spécifié comme type de paramètre, mais gRPC nécessite un type de message défini. Cette exigence permet de mettre en œuvre la pratique consistant à utiliser des messages personnalisés pour toutes les entrées et sorties, en vue d’une compatibilité descendante future.
+La méthode de `GetAll` WCF n’accepte qu’un seul paramètre, `traderId`. il est donc possible que vous puissiez spécifier `string` comme type de paramètre, mais gRPC nécessite un type de message défini. Cette exigence permet de mettre en œuvre la pratique consistant à utiliser des messages personnalisés pour toutes les entrées et sorties, en vue d’une compatibilité descendante future.
 
-La méthode WCF a également retourné `List<Portfolio>`un, mais pour la même raison, elle n’autorise pas les types de paramètres `repeated Portfolio` simples, gRPC n’autorise pas comme type de retour. Au lieu de cela `GetAllResponse` , créez un type pour encapsuler la liste.
+La méthode WCF a également retourné une `List<Portfolio>`, mais pour la même raison, elle n’autorise pas les types de paramètres simples, gRPC n’autorise pas `repeated Portfolio` comme type de retour. Au lieu de cela, créez un type de `GetAllResponse` pour encapsuler la liste.
 
 > [!WARNING]
 > Vous pouvez être tenté de créer un `PortfolioList` message ou similaire et de l’utiliser dans plusieurs méthodes de service, mais vous devez résister à cette tentation. Il est impossible de savoir comment les différentes méthodes d’un service peuvent évoluer à l’avenir, afin de conserver les messages spécifiques et séparés.
 
 ```protobuf
 message GetAllRequest {
-    string traderId = 1;
+    string trader_id = 1;
 }
 
 message PortfolioList {
@@ -182,7 +182,7 @@ service Portfolios {
 
 Si vous enregistrez votre projet avec ces modifications, la cible de génération gRPC s’exécute en arrière-plan et génère tous les types de messages Protobuf et une classe de base que vous pouvez hériter pour implémenter le service.
 
-Ouvrez la `Services/GreeterService.cs` classe et supprimez l’exemple de code. Vous pouvez maintenant ajouter l’implémentation du service de portefeuille. La classe de base générée se trouve dans `Protos` l’espace de noms et est générée comme une classe imbriquée. gRPC crée une classe statique portant le même nom que le service dans le `.proto` fichier, puis une classe de base avec le suffixe `Base` à l’intérieur de cette classe statique. ainsi, l’identificateur complet du `TraderSys.Portfolios.Protos.Portfolios.PortfoliosBase`type de base est.
+Ouvrez la classe `Services/GreeterService.cs` et supprimez l’exemple de code. Vous pouvez maintenant ajouter l’implémentation du service de portefeuille. La classe de base générée se trouve dans l’espace de noms `Protos` et est générée comme une classe imbriquée. gRPC crée une classe statique portant le même nom que le service dans le fichier `.proto`, puis une classe de base avec le suffixe `Base` à l’intérieur de cette classe statique, de sorte que l’identificateur complet du type de base est `TraderSys.Portfolios.Protos.Portfolios.PortfoliosBase`.
 
 ```csharp
 namespace TraderSys.Portfolios.Services
@@ -193,22 +193,22 @@ namespace TraderSys.Portfolios.Services
 }
 ```
 
-La classe de base déclare `virtual` des méthodes `Get` pour `GetAll` et qui peuvent être substituées pour implémenter le service. Les méthodes sont `virtual` `abstract` plutôt que si vous ne les implémentez pas, le service peut retourner un code d' `Unimplemented` État gRPC explicite, comme vous pouvez lever une `NotImplementedException` dans du C# code normal.
+La classe de base déclare `virtual` méthodes pour `Get` et `GetAll` qui peuvent être substituées pour implémenter le service. Les méthodes sont `virtual` plutôt que `abstract`. ainsi, si vous ne les implémentez pas, le service peut retourner un code d’État `Unimplemented` gRPC explicite, comme vous pouvez lever une C# `NotImplementedException` dans du code normal.
 
-La signature de toutes les méthodes de service unaires gRPC dans ASP.NET Core est cohérente. Il existe deux paramètres : le premier est le type de message déclaré dans `.proto` le fichier, et le second est `ServerCallContext` un qui fonctionne de la même `HttpContext` façon que le de ASP.net core. En fait, il existe une méthode d’extension `GetHttpContext` appelée sur `ServerCallContext` la classe que vous pouvez utiliser pour accéder au `HttpContext`sous-jacent, même si vous n’avez pas besoin de l’utiliser souvent. Nous examinerons `ServerCallContext` plus loin dans ce chapitre et également dans le chapitre traitant de l’authentification.
+La signature de toutes les méthodes de service unaires gRPC dans ASP.NET Core est cohérente. Il y a deux paramètres : le premier est le type de message déclaré dans le fichier `.proto`, tandis que le second est un `ServerCallContext` qui fonctionne de la même façon que le `HttpContext` de ASP.NET Core. En fait, il existe une méthode d’extension appelée `GetHttpContext` sur la classe `ServerCallContext` que vous pouvez utiliser pour récupérer les `HttpContext` sous-jacentes, bien que vous n’ayez pas besoin de l’utiliser souvent. Nous examinerons `ServerCallContext` plus loin dans ce chapitre et également dans le chapitre traitant de l’authentification.
 
-Le type de retour de la méthode `Task<T>` est `T` un où est le type de message de réponse. Toutes les méthodes de service gRPC sont asynchrones.
+Le type de retour de la méthode est un `Task<T>` où `T` est le type de message de réponse. Toutes les méthodes de service gRPC sont asynchrones.
 
 ## <a name="migrate-the-portfoliodata-library-to-net-core"></a>Migrer la bibliothèque PortfolioData vers .NET Core
 
-À ce stade, le projet a besoin du référentiel de portefeuille et des modèles contenus dans `TraderSys.PortfolioData` la bibliothèque de classes de la solution WCF. Le moyen le plus simple de les placer consiste à créer une bibliothèque de classes à l’aide de la boîte de dialogue **nouveau projet** de Visual Studio avec le modèle *bibliothèque de classes (.NET standard)* , ou à partir de la ligne de commande à l’aide de l’CLI .net Core, en exécutant les commandes suivantes : à partir du répertoire contenant `TraderSys.sln` le fichier.
+À ce stade, le projet a besoin du référentiel de portefeuille et des modèles contenus dans la bibliothèque de classes `TraderSys.PortfolioData` de la solution WCF. Le moyen le plus simple de les placer consiste à créer une bibliothèque de classes à l’aide de la boîte de dialogue **nouveau projet** de Visual Studio avec le modèle *bibliothèque de classes (.NET standard)* , ou à partir de la ligne de commande à l’aide de l’CLI .net Core, en exécutant les commandes suivantes : à partir du répertoire contenant le fichier `TraderSys.sln`.
 
 ```dotnetcli
 dotnet new classlib -o src/TraderSys.PortfolioData
 dotnet sln add src/TraderSys.PortfolioData
 ```
 
-Une fois la bibliothèque créée et ajoutée à la solution, supprimez le fichier `Class1.cs` généré et copiez les fichiers de la bibliothèque de la solution WCF dans le dossier de la nouvelle bibliothèque de classes, en conservant la structure des dossiers.
+Une fois la bibliothèque créée et ajoutée à la solution, supprimez le fichier de `Class1.cs` généré et copiez les fichiers de la bibliothèque de la solution WCF dans le dossier de la nouvelle bibliothèque de classes, en conservant la structure des dossiers.
 
 ```
 Models
@@ -218,7 +218,7 @@ IPortfolioRepository.cs
 PortfolioRepository.cs
 ```
 
-Les fichiers de projet .net modernes incluent `.cs` automatiquement tous les fichiers dans ou sous leur propre répertoire. il n’est donc pas nécessaire de les ajouter explicitement au projet. La seule étape restante consiste à `DataContract` supprimer `DataMember` les attributs et `Portfolio` des `PortfolioItem` classes et afin qu’ils soient C# des classes anciennes.
+Les projets .NET de type SDK incluent automatiquement tous les fichiers de `.cs` dans ou sous leur propre répertoire. il n’est donc pas nécessaire de les ajouter explicitement au projet. La seule étape restante consiste à supprimer les attributs `DataContract` et `DataMember` des classes `Portfolio` et `PortfolioItem` afin qu’elles soient C# de simples classes.
 
 ```csharp
 public class Portfolio
@@ -239,7 +239,7 @@ public class PortfolioItem
 
 ## <a name="use-aspnet-core-dependency-injection"></a>Utiliser ASP.NET Core l’injection de dépendances
 
-Vous pouvez maintenant ajouter une référence à cette bibliothèque au projet d’application gRPC et utiliser la `PortfolioRepository` classe à l’aide de l’injection de dépendances dans l’implémentation du service gRPC. Dans l’application WCF, l’injection de dépendances a été fournie par le conteneur IoC Autofac. ASP.NET Core a une injection de dépendances intégrée ; le référentiel peut être enregistré dans la `ConfigureServices` méthode de la `Startup` classe.
+Vous pouvez maintenant ajouter une référence à cette bibliothèque au projet d’application gRPC et utiliser la classe `PortfolioRepository` à l’aide de l’injection de dépendances dans l’implémentation du service gRPC. Dans l’application WCF, l’injection de dépendances a été fournie par le conteneur IoC Autofac. ASP.NET Core a une injection de dépendances intégrée ; le référentiel peut être enregistré dans la méthode `ConfigureServices` de la classe `Startup`.
 
 ```csharp
 public class Startup
@@ -256,7 +256,7 @@ public class Startup
 }
 ```
 
-L' `IPortfolioRepository` implémentation peut maintenant être spécifiée en tant que paramètre de constructeur `PortfolioService` dans la classe, comme suit :
+L’implémentation de `IPortfolioRepository` peut maintenant être spécifiée en tant que paramètre de constructeur dans la classe `PortfolioService`, comme suit :
 
 ```csharp
 public class PortfolioService : Protos.Portfolios.PortfoliosBase
@@ -272,9 +272,9 @@ public class PortfolioService : Protos.Portfolios.PortfoliosBase
 
 ## <a name="implement-the-grpc-service"></a>Implémenter le service gRPC
 
-Maintenant que vous avez déclaré vos messages et votre service dans le `portfolios.proto` fichier, vous devez implémenter les méthodes de service dans `PortfolioService` la classe qui hérite de la classe générée `Portfolios.PortfoliosBase` par gRPC. Les méthodes sont déclarées `virtual` comme dans la classe de base. Si vous ne les remplacez pas, ils retournent un code d’État gRPC « non implémenté » par défaut.
+Maintenant que vous avez déclaré vos messages et votre service dans le fichier `portfolios.proto`, vous devez implémenter les méthodes de service dans la classe `PortfolioService` qui hérite de la classe `Portfolios.PortfoliosBase` générée par gRPC. Les méthodes sont déclarées en tant que `virtual` dans la classe de base. Si vous ne les remplacez pas, ils retournent un code d’État gRPC « non implémenté » par défaut.
 
-Commencez par implémenter `Get` la méthode. La substitution par défaut se présente comme dans l’exemple suivant :
+Commencez par implémenter la méthode `Get`. La substitution par défaut se présente comme dans l’exemple suivant :
 
 ```csharp
 public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -283,7 +283,7 @@ public override Task<GetResponse> Get(GetRequest request, ServerCallContext cont
 }
 ```
 
-Le premier problème est qu' `request.TraderId` il s’agit d’une chaîne, et le `Guid`service requiert un. Bien que le format attendu pour la chaîne soit un `UUID`, le code doit gérer la possibilité qu’un appelant ait envoyé une valeur non valide et réponde de manière appropriée. Le service peut répondre avec des erreurs en levant `RpcException`un et utiliser le code `InvalidArgument` d’état standard pour exprimer le problème.
+Le premier problème est que `request.TraderId` est une chaîne et que le service requiert un `Guid`. Bien que le format attendu pour la chaîne soit un `UUID`, le code doit gérer la possibilité qu’un appelant ait envoyé une valeur non valide et réponde de manière appropriée. Le service peut répondre avec des erreurs en levant une `RpcException` et utiliser le code d’État `InvalidArgument` standard pour exprimer le problème.
 
 ```csharp
 public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -297,7 +297,7 @@ public override Task<GetResponse> Get(GetRequest request, ServerCallContext cont
 }
 ```
 
-Une fois que la valeur `Guid` est correcte `traderId`pour, le référentiel peut être utilisé pour récupérer le portefeuille et le renvoyer au client.
+Une fois qu’il y a une valeur de `Guid` correcte pour `traderId`, le référentiel peut être utilisé pour récupérer le portefeuille et le renvoyer au client.
 
 ```csharp
     var response = new GetResponse
@@ -308,7 +308,7 @@ Une fois que la valeur `Guid` est correcte `traderId`pour, le référentiel peut
 
 ### <a name="map-internal-models-to-grpc-messages"></a>Mapper les modèles internes aux messages gRPC
 
-Le code précédent ne fonctionne pas réellement, car le référentiel retourne son propre modèle `Portfolio`poco, mais gRPC a besoin de *son* propre message `Portfolio`Protobuf. À l’instar du mappage des types de Entity Framework aux types de transfert de données, la meilleure solution consiste à fournir une conversion entre les deux. Pour ce faire, il convient de placer le code dans la classe générée par Protobuf, qui est déclarée en `partial` tant que classe afin de pouvoir être étendue.
+Le code précédent ne fonctionne pas réellement, car le référentiel retourne son propre modèle POCO `Portfolio`, mais gRPC a besoin de *son* propre `Portfolio` de message Protobuf. À l’instar du mappage des types de Entity Framework aux types de transfert de données, la meilleure solution consiste à fournir une conversion entre les deux. Pour ce faire, il convient de placer le code dans la classe générée par Protobuf, qui est déclarée en tant que classe `partial` pour pouvoir être étendue.
 
 ```csharp
 namespace TraderSys.Portfolios.Protos
@@ -350,9 +350,9 @@ namespace TraderSys.Portfolios.Protos
 ```
 
 > [!NOTE]
-> Vous pouvez utiliser une bibliothèque comme [AutoMapper](https://automapper.org/) pour gérer cette conversion des classes de modèle internes en types Protobuf, à condition de `string` configurer les conversions / `Guid` de type de niveau inférieur comme ou `decimal` /et le mappage de liste. `double`
+> Vous pouvez utiliser une bibliothèque comme [AutoMapper](https://automapper.org/) pour gérer cette conversion des classes de modèle internes en types Protobuf, à condition de configurer les conversions de type de niveau inférieur comme `string` / `Guid` ou `decimal` / `double` et le mappage de liste.
 
-Une fois le code de conversion en place `Get` , l’implémentation de la méthode peut être terminée.
+Une fois le code de conversion en place, l’implémentation de la méthode `Get` peut être terminée.
 
 ```csharp
 public override async Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -372,7 +372,7 @@ public override async Task<GetResponse> Get(GetRequest request, ServerCallContex
 
 ```
 
-L’implémentation de la `GetAll` méthode est similaire. Notez que les `repeated` champs des messages Protobuf sont générés `readonly` en tant que `RepeatedField<T>`propriétés de type. vous devez donc leur ajouter des éléments `AddRange` à l’aide de la méthode, comme dans l’exemple suivant :
+L’implémentation de la méthode `GetAll` est similaire. Notez que les champs `repeated` sur les messages Protobuf sont générés comme des propriétés de `readonly` de type `RepeatedField<T>`, donc vous devez leur ajouter des éléments à l’aide de la méthode `AddRange`, comme dans l’exemple suivant :
 
 ```csharp
 public override async Task<GetAllResponse> GetAll(GetAllRequest request, ServerCallContext context)
@@ -391,33 +391,36 @@ public override async Task<GetAllResponse> GetAll(GetAllRequest request, ServerC
 }
 ```
 
-Après avoir migré le service WCF Request-Reply vers gRPC, nous allons maintenant créer un client à partir du `.proto` fichier.
+Après avoir migré le service WCF Request-Reply vers gRPC, nous allons maintenant créer un client à partir du fichier `.proto`.
 
 ## <a name="generate-client-code"></a>Générer le code client
 
-Créez une bibliothèque de classes .NET Standard dans la même solution pour contenir le client. Il s’agit principalement d’un exemple de création de code client, mais vous pouvez empaqueter une telle bibliothèque à l’aide de NuGet et la distribuer sur un référentiel interne pour que d’autres équipes .NET puissent les utiliser. Continuez et ajoutez une nouvelle bibliothèque de classes .NET standard appelée `TraderSys.Portfolios.Client` à la solution et supprimez `Class1.cs` le fichier.
+Créez une bibliothèque de classes .NET Standard dans la même solution pour contenir le client. Il s’agit principalement d’un exemple de création de code client, mais vous pouvez empaqueter une telle bibliothèque à l’aide de NuGet et la distribuer sur un référentiel interne pour que d’autres équipes .NET puissent les utiliser. Continuez et ajoutez une nouvelle bibliothèque de classes .NET Standard appelée `TraderSys.Portfolios.Client` à la solution et supprimez le fichier `Class1.cs`.
 
 > [!CAUTION]
 > Le package NuGet [.net. client GRPC](https://www.nuget.org/packages/Grpc.Net.Client) nécessite .net Core 3,0 (ou un .NET standard autre Runtime conforme à 2,1). Les versions antérieures de .NET Framework et .NET Core sont prises en charge par le package NuGet [GRPC. Core](https://www.nuget.org/packages/Grpc.Core) .
 
-Dans Visual Studio 2019, vous pouvez ajouter des références aux services gRPC de la même façon que vous ajoutez des références de service aux projets WCF dans les versions antérieures de Visual Studio. Les références de service et les services connectés sont tous gérés sous la même interface utilisateur maintenant, auxquels vous pouvez accéder en cliquant avec le bouton `TraderSys.Portfolios.Client` droit sur le nœud **dépendances** dans le projet dans Explorateur de solutions et en sélectionnant **Ajouter un service connecté**. Dans la fenêtre outil qui s’affiche, sélectionnez la section **références de service** , puis cliquez sur **Ajouter une nouvelle référence de service gRPC**.
+Dans Visual Studio 2019, vous pouvez ajouter des références aux services gRPC de la même façon que vous ajoutez des références de service aux projets WCF dans les versions antérieures de Visual Studio. Les références de service et les Services connectés sont tous gérés sous la même interface utilisateur maintenant, auxquels vous pouvez accéder en cliquant avec le bouton droit sur le nœud **dépendances** dans le projet `TraderSys.Portfolios.Client` dans Explorateur de solutions et en sélectionnant **Ajouter un service connecté**. Dans la fenêtre outil qui s’affiche, sélectionnez la section **références de service** , puis cliquez sur **Ajouter une nouvelle référence de service gRPC**.
 
 ![Interface utilisateur Services connectés dans Visual Studio 2019](media/migrate-request-reply/add-connected-service.png)
 
-Accédez au `portfolios.proto` fichier dans le `TraderSys.Portfolios` projet, laissez le **type de classe à générer** comme **client**, puis cliquez sur **OK**.
+Accédez au fichier `portfolios.proto` dans le projet `TraderSys.Portfolios`, laissez le **type de classe à générer** en tant que **client**, puis cliquez sur **OK**.
 
 ![Boîte de dialogue Ajouter une nouvelle référence de service gRPC dans Visual Studio 2019](media/migrate-request-reply/add-new-grpc-service-reference.png)
 
 > [!TIP]
-> Notez que cette boîte de dialogue fournit également un champ d’URL. Si votre organisation gère un répertoire Web de fichiers, `.proto` vous pouvez créer des clients simplement en définissant cette adresse URL.
+> Notez que cette boîte de dialogue fournit également un champ d’URL. Si votre organisation gère un répertoire accessible via le Web de fichiers `.proto`, vous pouvez créer des clients simplement en définissant cette adresse URL.
 
-Lorsque vous utilisez la fonctionnalité **Ajouter un service connecté** de Visual `portfolios.proto` Studio, le fichier est ajouté au projet de bibliothèque de classes en tant que *fichier lié*, au lieu d’être copié, si bien que les modifications apportées au fichier dans le projet de service sont automatiquement appliquées dans le projet client. L' `<Protobuf>` élément dans le `csproj` fichier se présente comme suit :
+Lorsque vous utilisez la fonctionnalité **Ajouter un service connecté** de Visual Studio, le fichier `portfolios.proto` est ajouté au projet de bibliothèque de classes en tant que *fichier lié*, au lieu d’être copié, de sorte que les modifications apportées au fichier dans le projet de service s’appliquent automatiquement au client. projection. L’élément `<Protobuf>` dans le fichier `csproj` se présente comme suit :
 
 ```xml
 <Protobuf Include="..\TraderSys.Portfolios\Protos\portfolios.proto" GrpcServices="Client">
   <Link>Protos\portfolios.proto</Link>
 </Protobuf>
 ```
+
+> [!TIP]
+> Si vous n’utilisez pas Visual Studio ou si vous préférez travailler à partir de la ligne de commande, vous pouvez utiliser l’outil Global **dotnet-GRPC** pour gérer les références Protobuf dans un projet .net GRPC. [Pour plus d’informations, reportez-vous à la documentation **dotnet-GRPC** ](https://docs.microsoft.com/aspnet/core/grpc/dotnet-grpc).
 
 ### <a name="use-the-portfolios-service-from-a-client-application"></a>Utiliser le service portefeuilles à partir d’une application cliente
 

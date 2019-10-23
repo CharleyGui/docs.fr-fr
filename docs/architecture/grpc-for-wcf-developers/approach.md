@@ -3,12 +3,12 @@ title: Comment gRPC approche RPC-gRPC pour les développeurs WCF
 description: Comparaison des principales fonctionnalités de WCF à gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 65d61c8246569d81dfec3aeb8e3df4bea26258dc
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 36d51b96796f274811bfeea64c159afcc9bce301
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184602"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770683"
 ---
 # <a name="how-grpc-approaches-rpc"></a>Comment gRPC approche RPC
 
@@ -25,7 +25,7 @@ Le tableau suivant montre comment les fonctionnalités clés de WCF sont liées 
 | Langue (chapitre 3-5) | Contrats écrits en C# Visual Basic | Langue de la mémoire tampon du protocole |
 | Format câble (chapitre 3) | Configurable, y compris SOAP/XML, XML brut, JSON, .NET Binary, etc. | Format binaire du tampon de protocole (bien qu’il soit possible d’utiliser d’autres formats).
 | Interopérabilité (chapitre 4) | Lors de l’utilisation de SOAP sur HTTP | Support officiel : .NET, Java, Python, JavaScript, C/C++, Go, rouille, Ruby, SWIFT, DART, php. Support non officiel pour d’autres langages de la communauté. |
-| Mise en réseau (chapitre 4) | Configuré au moment de l’exécution. Basculez entre TCP, HTTP, MSMQ, et ainsi de suite. | Toujours HTTP/2 |
+| Mise en réseau (chapitre 4) | Configuré au moment de l’exécution. Basculez entre NetTCP, HTTP, MSMQ, et ainsi de suite. | HTTP/2, actuellement sur TCP uniquement avec ASP.NET Core gRPC. |
 | Approche (chapitre 4) | Génération de la sérialisation/Deserialization et du code de mise en réseau dans les classes de base | Génération au moment de la génération du/Deserialization de sérialisation et du code réseau dans les classes de base |
 | Sécurité (chapitre 6) | Authentification, WS-Security, chiffrement des messages | Informations d’identification, sécurité de la ASP.NET Core, mise en réseau TLS |
 

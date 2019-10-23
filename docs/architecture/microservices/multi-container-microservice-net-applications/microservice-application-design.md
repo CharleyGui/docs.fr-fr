@@ -2,12 +2,12 @@
 title: Conception d’une application orientée microservices
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les avantages et les inconvénients d’une application orientée microservices pour vous permettre de prendre une décision éclairée.
 ms.date: 10/02/2018
-ms.openlocfilehash: dc3c8ccd95505cb828383f499b9bf950e7c12a30
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1c2fe341c62111e915df35aab818b8a980004834
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039815"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72772057"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Conception d’une application orientée microservices
 
@@ -59,13 +59,13 @@ Les microservices sont développés et déployés en tant que conteneurs indépe
 
 Chaque microservice dispose de sa propre base de données, ce qui le découple entièrement des autres microservices. Quand elle est nécessaire, la cohérence entre les bases de données des différents microservices est obtenue à travers l’utilisation d’événements d’intégration au niveau de l’application (via un bus d’événements logiques), à l’instar de la séparation des responsabilités dans les commandes et les requêtes (CQRS, Command and Query Responsibility Segregation). Compte tenu de cela, les contraintes métier doivent accepter la cohérence à terme entre les différents microservices et les bases de données associées.
 
-### <a name="eshoponcontainers-a-reference-application-for-net-core-and-microservices-deployed-using-containers"></a>eShopOnContainers : une application de référence pour .NET Core et des microservices déployés à l’aide de conteneurs
+### <a name="eshoponcontainers-a-reference-application-for-net-core-and-microservices-deployed-using-containers"></a>eShopOnContainers : une application de référence pour .NET Core et des microservices déployés à l’aide de conteneurs
 
 Pour vous éviter d’avoir à réfléchir sur un domaine d’activité hypothétique que vous ne connaissez peut-être pas et ainsi vous permettre de vous concentrer sur l’architecture et les technologies, nous avons sélectionné un domaine d’activité bien connu, à savoir une application d’e-commerce simplifiée (boutique en ligne) qui présente un catalogue de produits, accepte les commandes des clients, vérifie les stocks et effectue d’autres fonctions opérationnelles. Le code source de cette application basée sur des conteneurs est disponible sur le dépôt GitHub [eShopOnContainers](https://aka.ms/MicroservicesArchitecture).
 
 L’application est constituée de divers sous-systèmes, notamment de plusieurs front-ends d’interface utilisateur de magasin (une application web et une application mobile native), ainsi que des microservices et des conteneurs back-end pour toutes les opérations côté serveur nécessaires avec plusieurs passerelles d’API comme points d’entrée consolidés dans les microservices internes. La figure 6-1 illustre l’architecture de l’application de référence.
 
-![Les clients mobiles et SPA communiquent avec les points de terminaison de passerelles d’API uniques, lesquels communiquent ensuite avec les microservices. Les clients web traditionnels communiquent avec le microservice MVC, lequel communique avec des microservices.](./media/image1.png)
+![Les clients mobile et SPA communiquent avec des points de terminaison de passerelle d’API uniques qui communiquent ensuite avec les microservices. Les clients Web traditionnels communiquent avec le microservice MVC, qui communique avec les microservices](./media/image1.png)
 
 **Figure 6-1** : Architecture d’application de référence eShopOnContainers pour l’environnement de développement
 
@@ -89,7 +89,7 @@ Par conséquent, les unités de déploiement pour les microservices (et même po
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Code source de l’application de référence eShopOnContainers Code source de l’application de référence** \
+- **EShopOnContainers GitHub référentiel. Code source de l’application de référence**  \
   <https://aka.ms/eShopOnContainers/>
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Avantages d’une solution basée sur des microservices

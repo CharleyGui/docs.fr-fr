@@ -2,12 +2,12 @@
 title: Mise en conteneur d’applications monolithiques
 description: Même si la conteneurisation d’applications monolithiques ne bénéficie pas de tous les avantages de l’architecture des microservices, elle présente des avantages importants relatifs au déploiement et disponibles immédiatement.
 ms.date: 09/20/2018
-ms.openlocfilehash: 9e457fba56c8fdf946618fca10285f4c0a343af4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 5b38ba1c2954f4fd4064723b1316afbf09d25bf2
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673216"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771480"
 ---
 # <a name="containerizing-monolithic-applications"></a>Mise en conteneur d’applications monolithiques
 
@@ -23,7 +23,7 @@ Vous pouvez inclure plusieurs composants, bibliothèques ou couches internes dan
 
 L’inconvénient de cette approche devient évident si l’application grandit, nécessitant sa mise à l’échelle. Si la scalabilité de l’ensemble de l’application est possible, cela n’est pas réellement un problème. Cependant, dans la plupart des cas, seules quelques parties de l’application sont des goulots d’étranglement qui nécessitent une mise à l’échelle, tandis que d’autres composants sont moins utilisés.
 
-Par exemple, dans une application de e-commerce classique, il est probablement nécessaire de mettre à l’échelle le sous-système des informations sur les produits, car bien plus de clients les parcourent que ceux qui les achètent. Plus de clients utilisent leur panier d’achat que ceux qui utilisent le pipeline de paiement. Moins de clients ajoutent des commentaires ou consultent leur historique d’achat. De même, seule une poignée d’employés doivent gérer le contenu et les campagnes marketing. Si vous mettez à l’échelle la conception monolithique, tout le code pour ces différentes tâches est déployé plusieurs fois et est mis à l’échelle au même niveau.
+Par exemple, dans une application de e-commerce classique, il est probablement nécessaire de mettre à l’échelle le sous-système des informations sur les produits, car bien plus de clients les parcourent que ceux qui les achètent. Plus de clients utilisent leur panier d’achat que ceux qui utilisent le pipeline de paiement. Moins de clients ajoutent des commentaires ou consultent leur historique d’achat. Et vous n’avez peut-être que quelques employés qui doivent gérer le contenu et les campagnes marketing. Si vous mettez à l’échelle la conception monolithique, tout le code pour ces différentes tâches est déployé plusieurs fois et est mis à l’échelle au même niveau.
 
 La scalabilité d’une application est possible de plusieurs façons : déduplication horizontale, division des différentes zones de l’application et partitionnement des concepts ou des données métier similaires. Toutefois, en plus du problème de mise à l’échelle de tous les composants, les modifications apportées à un seul composant nécessitent un nouveau test complet de l’application entière, ainsi qu’un redéploiement complet de toutes les instances.
 
@@ -33,7 +33,7 @@ Du point de vue de l’infrastructure, chaque serveur peut exécuter de nombreus
 
 ![Un hôte peut exécuter plusieurs applications monolithiques, chacune sur un conteneur distinct.](./media/image2.png)
 
-**Figure 4-2**. Approche monolithique : hôte exécutant plusieurs applications, chaque application s’exécutant en tant que conteneur
+**Figure 4-2**. Approche monolithique : hôte exécutant plusieurs applications, chaque application s’exécutant en tant que conteneur
 
 Les applications monolithiques dans Microsoft Azure peuvent être déployées en utilisant des machines virtuelles dédiées pour chaque instance. De plus, à l’aide des [groupes de machines virtuelles identiques Azure](https://azure.microsoft.com/documentation/services/virtual-machine-scale-sets/), vous pouvez facilement effectuer un scale-out des machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter la gestion des machines virtuelles. Depuis 2016, Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement.
 

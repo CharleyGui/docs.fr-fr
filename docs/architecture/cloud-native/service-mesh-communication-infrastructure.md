@@ -3,12 +3,12 @@ title: Infrastructure de communication Service Mesh
 description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: 884b3bf9afd80144a36d3328af916f1c1f12bf4f
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: a9192bf9f5827d05b2453c796c72e11782f9f911
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214347"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771028"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
@@ -26,9 +26,9 @@ Un composant clé d’une maille de service est un proxy. Dans une application C
 
 **Figure 4-23**. Maille de service avec une voiture latérale
 
-Notez dans la figure précédente Comment les messages sont interceptés par un proxy qui s’exécute parallèlement à chaque microservice. Chaque proxy peut être configuré avec des règles de trafic spécifiques au microservice. Il comprend les messages et peut les acheminer entre vos services et le monde extérieur. 
+Notez dans la figure précédente Comment les messages sont interceptés par un proxy qui s’exécute parallèlement à chaque microservice. Chaque proxy peut être configuré avec des règles de trafic spécifiques au microservice. Il comprend les messages et peut les acheminer entre vos services et le monde extérieur.
 
-En plus de la gestion de la communication de service à service, la maille de service prend en charge la découverte de service et l’équilibrage de charge. 
+En plus de la gestion de la communication de service à service, la maille de service prend en charge la découverte de service et l’équilibrage de charge.
 
 Une fois configuré, un maillage de service est très fonctionnel. La maille récupère un pool d’instances correspondant à partir d’un point de terminaison de découverte de service. Il envoie une demande à une instance de service spécifique, en enregistrant la latence et le type de réponse du résultat. Il choisit l’instance la plus susceptible de retourner une réponse rapide en fonction de différents facteurs, y compris la latence observée pour les demandes récentes.
 
@@ -38,7 +38,7 @@ Dans le chapitre 6, nous explorons en profondeur les technologies de maille de s
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans ce chapitre, nous avons abordé les modèles de communication natifs dans le Cloud. Nous avons commencé par examiner comment les clients frontaux communiquent avec les microservices back-end. En cours de route, nous avons parlé des plateformes de passerelle d’API et de la communication en temps réel. Nous avons ensuite vu comment les microservices communiquent avec d’autres services principaux. Nous avons examiné la communication HTTP synchrone et la messagerie asynchrone entre les services. Nous avons abordé gRPC, une technologie à venir dans le monde Cloud-native. Enfin, nous avons introduit une nouvelle technologie en constante évolution, intitulée Service Mesh, qui permet de rationaliser la communication des microservices. 
+Dans ce chapitre, nous avons abordé les modèles de communication natifs dans le Cloud. Nous avons commencé par examiner comment les clients frontaux communiquent avec les microservices back-end. En cours de route, nous avons parlé des plateformes de passerelle d’API et de la communication en temps réel. Nous avons ensuite vu comment les microservices communiquent avec d’autres services principaux. Nous avons examiné la communication HTTP synchrone et la messagerie asynchrone entre les services. Nous avons abordé gRPC, une technologie à venir dans le monde Cloud-native. Enfin, nous avons introduit une nouvelle technologie en constante évolution, intitulée Service Mesh, qui permet de rationaliser la communication des microservices.
 
 Une mise en évidence spéciale s’est produite sur les services Azure gérés qui peuvent aider à implémenter la communication dans les systèmes natifs du Cloud :
 
@@ -52,25 +52,25 @@ Une mise en évidence spéciale s’est produite sur les services Azure gérés 
 
 Nous allons ensuite passer aux données distribuées dans les systèmes natifs du Cloud et aux avantages et défis qu’il présente.
 
-### <a name="references"></a>Références 
+### <a name="references"></a>Références
 
-- [Microservices .NET : Architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
-  
+- [Microservices .NET : architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
+
 - [Conception de la communication interservice pour les microservices](https://docs.microsoft.com/azure/architecture/microservices/design/interservice-communication)
 
 - [Service Azure Signalr, service entièrement géré pour l’ajout de fonctionnalités en temps réel](https://azure.microsoft.com/blog/azure-signalr-service-a-fully-managed-service-to-add-real-time-functionality/)
-  
+
 - [Contrôleur d’entrée de la passerelle API Azure](https://azure.github.io/application-gateway-kubernetes-ingress/)
-  
+
 - [À propos de l’entrée dans Azure Kubernetes service (AKS)](https://vincentlauzon.com/2018/10/10/about-ingress-in-azure-kubernetes-service-aks/)
- 
+
 - [GRPC pratique](https://www.worldcat.org/title/practical-grpc/oclc/1042342319)
 
 - [Documentation gRPC](https://grpc.io/docs/guides/)
 
-- [gRPC pour les développeurs WCF](https://bing.com) [Livre gRPC de Mark]
-  
-- [Comparaison des services gRPC avec les API HTTP](https://docs.microsoft.com/en-us/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
+- [gRPC pour les développeurs WCF](https://bing.com) [Mark gRPC]
+
+- [Comparaison des services gRPC avec les API HTTP](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
 >[!div class="step-by-step"]
 >[Précédent](rest-grpc.md)

@@ -2,18 +2,18 @@
 title: État et données dans les applications Docker
 description: Gestion des états et des données dans les applications Docker. Les instances de microservice sont extensibles, mais PAS LES DONNÉES. Comment prendre cela en charge à l’aide des microservices ?
 ms.date: 09/20/2018
-ms.openlocfilehash: 193ac143ca0cc42c248f449b1e1a1339af6f69d1
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1157ea3c4ca8fc389769308cc0a1141b5f92bb88
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834427"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771437"
 ---
 # <a name="state-and-data-in-docker-applications"></a>État et données dans les applications Docker
 
 Dans la plupart des cas, vous pouvez considérer qu’un conteneur est une instance d’un processus. Un processus ne conserve pas un état persistant. Si un conteneur peut écrire dans son stockage local, supposer qu’une instance sera présente indéfiniment revient à supposer qu’un seul emplacement en mémoire pourra perdurer. Vous devez partir de l’hypothèse que les images conteneur, par exemple les processus, ont plusieurs instances ou qu’elles vont finir par être tuées. Si elles sont managées à l’aide d’un orchestrateur de conteneurs, vous devez supposer qu’elles peuvent être déplacés d’un nœud (ou d’une machine virtuelle) vers un autre.
 
-Les solutions suivantes sont utilisées pour gérer les données persistantes dans les applications Docker :
+Les solutions suivantes sont utilisées pour gérer les données dans les applications de l’ancrage :
 
 À partir de l’hôte Docker, sous forme de [volumes Docker](https://docs.docker.com/engine/admin/volumes/) :
 
@@ -31,9 +31,9 @@ Les solutions suivantes sont utilisées pour gérer les données persistantes da
 
 À partir du conteneur Docker :
 
-> Docker fournit une fonctionnalité appelée *système de fichiers par superposition*. Elle implémente une tâche de copie sur écriture qui stocke les informations mises à jour dans le système de fichiers racine du conteneur. Ces informations s’ajoutent à l’image d’origine sur laquelle le conteneur est basé. Si le conteneur est supprimé du système, ces modifications sont perdues. Ainsi, bien qu’il soit possible d’enregistrer l’état d’un conteneur dans son stockage local, la conception d’un système selon cette solution est en conflit avec le principe de conception des conteneurs, lesquels sont par défaut sans état.
->
-> Toutefois, les volumes Docker présentés constituent désormais le mode privilégié de gestion des données Docker locales. Pour plus d’informations sur le stockage dans les conteneurs, consultez [Pilotes de stockage Docker](https://docs.docker.com/storage/storagedriver/select-storage-driver/) et [À propos des pilotes de stockage](https://docs.docker.com/storage/storagedriver/).
+- **Système de fichiers de superposition**. Cette fonctionnalité d’ancrage implémente une tâche de copie sur écriture qui stocke les informations mises à jour dans le système de fichiers racine du conteneur. Ces informations sont « en haut » de l’image d’origine sur laquelle le conteneur est basé. Si le conteneur est supprimé du système, ces modifications sont perdues. Ainsi, bien qu’il soit possible d’enregistrer l’état d’un conteneur dans son stockage local, la conception d’un système selon cette solution est en conflit avec le principe de conception des conteneurs, lesquels sont par défaut sans état.
+
+Toutefois, l’utilisation des volumes de l’arrimeur est désormais la meilleure façon de gérer les données locales dans l’outil d’ancrage. Pour plus d’informations sur le stockage dans les conteneurs, consultez [Pilotes de stockage Docker](https://docs.docker.com/storage/storagedriver/select-storage-driver/) et [À propos des pilotes de stockage](https://docs.docker.com/storage/storagedriver/).
 
 Ces options sont détaillées ci-dessous :
 
@@ -43,7 +43,7 @@ Les volumes peuvent être nommés ou anonymes (par défaut). Les volumes nommés
 
 Les **montages de liaison** existent depuis longtemps. Ils permettent de mapper des dossiers à un point de montage d’un conteneur. Les montages de liaison ont plus de limitations que les volumes et présentent certains problèmes de sécurité importants. Les volumes sont donc l’option recommandée.
 
-Les **montages tmpfs** sont essentiellement des dossiers virtuels qui résident uniquement dans la mémoire de l’hôte et qui ne sont jamais écrits dans le système de fichiers. Ils sont rapides et sécurisés, mais ils consomment de la mémoire et sont conçus uniquement pour des données non persistantes.
+Les **montages tmpfs** sont essentiellement des dossiers virtuels qui résident uniquement dans la mémoire de l’hôte et qui ne sont jamais écrits dans le système de fichiers. Elles sont rapides et sécurisées, mais utilisent la mémoire et sont uniquement destinées aux données temporaires et non persistantes.
 
 Comme le montre la figure 4-5, les volumes Docker standard peuvent être stockés en dehors des conteneurs eux-mêmes, mais dans les limites physiques du serveur ou de la machine virtuelle hôte. Toutefois, les conteneurs Docker ne peuvent pas accéder à un volume d’un serveur hôte ou d’une machine virtuelle depuis un autre serveur hôte ou une autre machine virtuelle. En d’autres termes, avec ces volumes, il n’est pas possible de gérer les données partagées entre des conteneurs qui s’exécutent sur des hôtes Docker distincts. Toutefois, cela est possible avec un pilote de volume qui prend en charge les hôtes distants.
 
@@ -63,7 +63,7 @@ Des **sources de données distantes et des outils de mise en cache**, comme Azur
 
 - Stockage Table stocke les jeux de données structurés. Stockage Table est un magasin de données clé-attribut NoSQL, qui permet le développement rapide et un accès rapide à de grandes quantités de données.
 
-**Bases de données relationnelles et bases de données NoSQL.** De nombreux choix sont disponibles pour les bases de données externes, qui vont des bases de données relationnelles, comme SQL Server, PostgreSQL ou Oracle, aux bases de données NoSQL, comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne sont pas présentées dans ce guide, car il s’agit d’un tout autre sujet.
+**Bases de données relationnelles et bases de données NoSQL.** Il existe de nombreuses options pour les bases de données externes, à partir de bases de données relationnelles telles que SQL Server, PostgreSQL, Oracle ou des bases de données NoSQL comme Azure Cosmos DB, MongoDB, etc. Ces bases de données ne seront pas expliquées dans le cadre de ce guide, car elles se trouvent dans un objet complètement différent.
 
 >[!div class="step-by-step"]
 >[Précédent](containerize-monolithic-applications.md)
