@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 64f8d536212cd379337ad437c1e15ae356890ddb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: f5630f7947125dd5eb8a5b58e79add1aec4c689b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581962"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774920"
 ---
 # <a name="whats-new-for-visual-basic"></a>Nouveautés de Visual Basic
 
@@ -21,45 +21,45 @@ Cette rubrique liste les noms des principales fonctionnalités de chaque version
 
 ## <a name="current-version"></a>Version actuelle
 
-Visual Basic 16,0/Visual Studio 2019 version 16,0  
+Visual Basic 16,0/Visual Studio 2019 version 16,0 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 16,0](#visual-basic-160).
 
 ## <a name="previous-versions"></a>Versions antérieures
 
-Visual Basic 15.8/Visual Studio 2017 version 15.8  
+Visual Basic 15,8/Visual Studio 2017 version 15,8 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,8](#visual-basic-158).
 
-Visual Basic 15.5 / Visual Studio 2017 Version 15.5  
+Visual Basic 15,5/Visual Studio 2017 version 15,5 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,5](#visual-basic-155).
 
-Visual Basic 15.3 / Visual Studio 2017 Version 15.3  
+Visual Basic 15,3/Visual Studio 2017 version 15,3 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 15,3](#visual-basic-153).
 
-Visual Basic 2017 / Visual Studio 2017  
+Visual Basic 2017/Visual Studio 2017 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 2017](#visual-basic-2017).
 
-Visual Basic / Visual Studio 2015  
+Visual Basic/Visual Studio 2015 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 14](#visual-basic-14).
 
-Visual Basic / Visual Studio 2013  
+Visual Basic/Visual Studio 2013 \
 Aperçus des technologies de la plateforme des compilateurs .NET (« Roslyn »)
 
-Visual Basic / Visual Studio 2012  
+Visual Basic/Visual Studio 2012 \
 Mots clés `Async` et `await`, itérateurs, attributs des informations de l’appelant
 
-Visual Basic, Visual Studio 2010  
+Visual Basic, Visual Studio 2010 \
 Propriétés implémentées automatiquement, initialiseurs de collection, continuation de ligne implicite, variance co/contra générique, dynamique, accès de l’espace de noms global
 
-Visual Basic / Visual Studio 2008  
+Visual Basic/Visual Studio 2008 \
 LINQ (Language Integrated Query), littéraux XML, inférence de type local, initialiseurs d’objet, types anonymes, méthodes d’extension, inférence de type `var` local, expressions lambda, opérateur `if`, méthodes partielles, types de valeur nullable
 
-Visual Basic / Visual Studio 2005  
+Visual Basic/Visual Studio 2005 \
 Type `My` et types d’assistance (accès à l’application, ordinateur, système de fichiers, réseau)
 
-Visual Basic / Visual Studio .NET 2003  
+Visual Basic/Visual Studio .NET 2003 \
 Opérateurs de décalage de bits, déclaration de variable de boucle
 
-Visual Basic / Visual Studio .NET 2002  
+Visual Basic/Visual Studio .NET 2002 \
 Première version de Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
@@ -108,7 +108,6 @@ Dim b1 As Byte = CByte(Int(d))                 ' Result: 173
 Dim s1 AS Short = CShort(Math.Truncate(s))     ' Result: 173
 Dim i2 As Integer = CInt(Math.Ceiling(d))      ' Result: 174
 Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
-
 ```
 
 Notez que cette opération tronque les valeurs à virgule flottante au lieu de les arrondir.
@@ -237,7 +236,7 @@ Vous pouvez avoir des littéraux de date au format aaaa-mm-jj, `#2015-03-17 16:1
 
 **Propriétés d’interface en lecture seule**
 
-Vous pouvez implémenter des propriétés d’interface en lecture seule à l’aide d’une propriété readwrite.  L’interface garantit les fonctionnalités minimales et n’empêche pas une classe d’implémentation d’autoriser la définition de la propriété.
+Vous pouvez implémenter des propriétés d’interface en lecture seule à l’aide d’une propriété readwrite. L’interface garantit les fonctionnalités minimales et n’empêche pas une classe d’implémentation d’autoriser la définition de la propriété.
 
 [TypeOf \<expr> IsNot \<type>](../../visual-basic/language-reference/operators/typeof-operator.md)
 

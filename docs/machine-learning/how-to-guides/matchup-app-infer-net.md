@@ -3,12 +3,12 @@ title: Créer une application de tableau de matchs avec Infer.NET et la programm
 description: Découvrez comment utiliser la programmation probabiliste avec Infer.NET pour créer une application de tableau de matchs basée sur une version simplifiée de TrueSkill.
 ms.date: 05/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: f6f91aecfe7fdeffb7e8913309046c7942ecbab7
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 69515c7b3518c35bf84335c453408b1466f93f34
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957213"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774545"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Créer une application de tableau de matchs avec Infer.NET et la programmation probabiliste
 
@@ -18,7 +18,7 @@ Ce guide pratique porte sur la programmation probabiliste avec Infer.NET. La pro
 
 La programmation probabiliste permet de créer des modèles statistiques de processus réels.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - Configuration d’un environnement de développement local
 
@@ -45,7 +45,7 @@ dotnet add package Microsoft.ML.Probabilistic.Compiler
 
 ## <a name="design-your-model"></a>Concevoir le modèle
 
-L’exemple s’appuie sur des matchs de tennis de table ou de babyfoot disputés au bureau. Nous connaissons les participants et le résultat de chaque match.  Nous souhaitons déduire de ces données les compétences des joueurs. Supposons que les compétences latentes de chaque joueur suivent une distribution normale, et que leurs performances dans un match donné représentent une version bruitée de cette compétence. Les données contraignent les performances du gagnant à être supérieures à celles du perdant. Il s’agit d’une version simplifiée du célèbre modèle [TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/), qui gère également les équipes, les égalités et d’autres extensions. Une [version avancée](https://www.microsoft.com/en-us/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) de ce modèle est utilisée pour le matchmaking des jeux à succès Halo et Gears of War.
+L’exemple s’appuie sur des matchs de tennis de table ou de babyfoot disputés au bureau. Nous connaissons les participants et le résultat de chaque match.  Nous souhaitons déduire de ces données les compétences des joueurs. Supposons que les compétences latentes de chaque joueur suivent une distribution normale, et que leurs performances dans un match donné représentent une version bruitée de cette compétence. Les données contraignent les performances du gagnant à être supérieures à celles du perdant. Il s’agit d’une version simplifiée du célèbre modèle [TrueSkill](https://www.microsoft.com/research/project/trueskill-ranking-system/), qui gère également les équipes, les égalités et d’autres extensions. Une [version avancée](https://www.microsoft.com/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) de ce modèle est utilisée pour le matchmaking des jeux à succès Halo et Gears of War.
 
 Listons les compétences déduites des joueurs, ainsi que leur écart, qui mesure l’incertitude relative aux compétences.
 

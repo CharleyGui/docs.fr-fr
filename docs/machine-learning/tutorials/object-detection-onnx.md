@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f31c5155dd3ca59b1a370599b3ffabb2648791b1
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 6d13e7e4788dfd2bad6fd26015d76342b38f1142
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318528"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774451"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Didacticiel : détecter des objets à l’aide de ONNX dans ML.NET
 
@@ -30,7 +30,7 @@ Dans ce didacticiel, vous apprendrez à :
 
 ## <a name="pre-requisites"></a>Conditions préalables
 
-- [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+- [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
 - [Package NuGet Microsoft.ML](https://www.nuget.org/packages/Microsoft.ML/)
 - [Package NuGet Microsoft.ML.ImageAnalytics](https://www.nuget.org/packages/Microsoft.ML.ImageAnalytics/)
 - [Package NuGet Microsoft.ML.OnnxTransformer](https://www.nuget.org/packages/Microsoft.ML.OnnxTransformer/)

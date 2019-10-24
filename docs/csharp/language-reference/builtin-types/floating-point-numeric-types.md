@@ -1,7 +1,7 @@
 ---
 title: Types numériques à virgule flottante - Référence C#
 description: Vue d’ensemble des types virgule flottante C# intégrés
-ms.date: 10/18/2019
+ms.date: 10/22/2019
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: fa6cbb869d90113414cc6f8ffe231386c3596b1d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 4d71f7eea3f574e483dc4250f5c87e1ffd551f2f
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579370"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771906"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -105,13 +105,7 @@ Console.WriteLine(m);  // output: 1500000
 
 ## <a name="conversions"></a>Conversions
 
-Il existe une conversion implicite (appelée *conversion étendue*) de `float` en `double` parce que la plage de valeurs `float` est un sous-ensemble de `double` et qu’aucune perte de précision ne se produit de `float` en `double`.
-
-Vous devez utiliser un cast explicite pour convertir un type virgule flottante en un autre type virgule flottante, lorsqu’une conversion implicite n’est pas définie entre le type source et le type de destination. C’est ce qu’on appelle une *conversion restrictive*. Un scénario explicite est nécessaire, car la conversion peut entraîner une perte de données. Il n’existe aucune conversion implicite entre les autres types virgule flottante et le type `decimal` parce que le type `decimal` a une plus grande précision que celle de `float` ou `double`.
-
-Pour plus d’informations sur les conversions numériques implicites, consultez [Tableau des conversions numériques implicites](../keywords/implicit-numeric-conversions-table.md).
-
-Pour plus d’informations sur les conversions numériques explicites, consultez [Tableau des conversions numériques explicites](../keywords/explicit-numeric-conversions-table.md).
+Il n’existe qu’une seule conversion implicite entre les types numériques à virgule flottante : de `float` à `double`. Toutefois, vous pouvez convertir n’importe quel type à virgule flottante en tout autre type à virgule flottante avec le [cast explicite](../operators/type-testing-and-cast.md#cast-operator-). Pour plus d’informations, consultez [conversions numériques intégrées](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -124,10 +118,9 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Types intégraux](integral-numeric-types.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
-- [Valeurs numériques dans .NET](../../../standard/numerics.md)
-- [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
-- <xref:System.Numerics.Complex?displayProperty=nameWithType>
+- [Types intégraux](integral-numeric-types.md)
 - [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Valeurs numériques dans .NET](../../../standard/numerics.md)
+- <xref:System.Numerics.Complex?displayProperty=nameWithType>

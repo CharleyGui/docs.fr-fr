@@ -5,21 +5,22 @@ helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: bb1ce118bd46b2db840138a7ca13e9d1f5d75231
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
-ms.translationtype: HT
+ms.openlocfilehash: e07ded52d76e027127ad41c14c39730648c0ca12
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053651"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775184"
 ---
 # <a name="get-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
-Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
-  
+
+Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.
+
 ## <a name="get-started-with-visual-basic-and-net-core"></a>Bien démarrer avec Visual Basic et .NET Core
 
 [Générer une application Visual Basic Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
 
-[Génération d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md)  
+[Génération d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md)
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
@@ -34,11 +35,8 @@ Fournit une liste de sites web et de newsgroups susceptibles de vous aider à tr
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Obtenir Visual Basic](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)\
+- [Obtention de Visual Basic](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)  
 Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, notamment les versions gratuites.
-
-- [Notions de base de Visual Basic pour les débutants](https://mva.microsoft.com/en-us/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)\
-Cours Microsoft Virtual Academy qui présente les notions de base de la programmation en Visual Basic.
 
 - [Programmation orientée objet](../programming-guide/concepts/object-oriented-programming.md)\
 Fournit des liens vers les pages qui présentent la programmation orientée objet et décrivent comment créer vos propres objets et comment utiliser des objets pour simplifier votre codage.
@@ -49,7 +47,7 @@ Fournit des liens vers un exemple de code en Visual Basic.
 - [Procédures pas à pas](../../visual-basic/walkthroughs.md)\
 Fournit une liste de pages d’aide qui illustrent les aspects du langage Visual Basic.
 
-- [Nous contacter](/visualstudio/ide/talk-to-us)\
+- [Options de commentaires pour Visual Studio](/visualstudio/ide/feedback-options) \
 Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.
 
 - [Visual Studio](/visualstudio/)\

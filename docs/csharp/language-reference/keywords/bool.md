@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 3e4e83b52cd6b275e68039693c774f6490f2b88f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 880e8c0b733afbf5c09f543e06a5a4a858d2b456
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606057"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771846"
 ---
 # <a name="bool-c-reference"></a>bool (référence C#)
 
@@ -40,7 +40,7 @@ Pour tester une variable du type `int`, vous devez la comparer explicitement à 
 
 [!code-csharp[csrefKeywordsTypes#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#3)]
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans cet exemple, vous tapez un caractère, et le programme vérifie si le caractère entré est une lettre. Si c’est une lettre, le programme vérifie s’il s’agit d’une minuscule ou d’une majuscule. Ces vérifications sont effectuées avec les méthodes <xref:System.Char.IsLetter%2A>, et <xref:System.Char.IsLower%2A>, qui retournent toutes les deux le type `bool` :
 
@@ -52,10 +52,8 @@ Dans cet exemple, vous tapez un caractère, et le programme vérifie si le carac
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Types intégraux](../builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](./built-in-types-table.md)
-- [Tableau des conversions numériques implicites](./implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](./explicit-numeric-conversions-table.md)

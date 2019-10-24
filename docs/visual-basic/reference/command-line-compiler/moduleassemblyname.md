@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: 5b26e36346858d95526f5d5ce7d4645bea1dbe05
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: a612a68cffd927f3e360406cca6d9daae4f66c86
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005483"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775632"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
 Spécifie le nom de l’assembly dont ce module doit faire partie.  
@@ -33,11 +33,11 @@ Spécifie le nom de l’assembly dont ce module doit faire partie.
   
  L’option `-moduleassemblyname` est nécessaire uniquement lorsque les conditions suivantes sont remplies :  
   
-- Un type de données dans le module a besoin d’accéder à un type `Friend` dans un assembly référencé.  
+- Un type de données dans le module a besoin d’accéder à un type de `Friend` dans un assembly référencé.  
   
 - L’assembly référencé a accordé un accès d’assembly friend à l’assembly dans lequel le module sera généré.  
   
- Pour plus d’informations sur la création d’un module, consultez [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Pour plus d’informations sur les assemblys friend, consultez [assemblys friend](../../../standard/assembly/friend.md).  
+ Pour plus d’informations sur la création d’un module, consultez [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Pour plus d’informations sur les assemblys friend, consultez [assemblys friend](../../../standard/assembly/friend.md).  
   
 > [!NOTE]
 > L’option `-moduleassemblyname` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir d’une invite de commandes.  

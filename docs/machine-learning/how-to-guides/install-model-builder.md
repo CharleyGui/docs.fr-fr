@@ -5,12 +5,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 06/21/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: b0d45ab7807bf84b98c58e85580d5aa04d0c5f7d
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: a1034d294012b8df5ec778fc40602fe52223961d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306326"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774569"
 ---
 # <a name="how-to-install-mlnet-model-builder"></a>Guide pratique pour installer Model Builder ML.NET
 
@@ -21,7 +21,7 @@ Découvrez comment installer Model Builder ML.NET pour ajouter le machine learni
 
 ## <a name="pre-requisites"></a>Conditions préalables
 
-- Visual Studio 2017 15.9.12 ou ultérieur / Visual Studio 2019
+- Visual Studio 2017 version 15.9.12 ou ultérieure/Visual Studio 2019
 - SDK .NET Core 2.1 ou ultérieur
 
 ## <a name="limitations"></a>Limitations
@@ -31,9 +31,9 @@ Découvrez comment installer Model Builder ML.NET pour ajouter le machine learni
 - SQL Server a une limite de 100 000 lignes pour l’entraînement
 - Microsoft SQL Server Data Tools pour Visual Studio 2017 n’est pas pris en charge
 
-## <a name="install"></a>Installation
+## <a name="install"></a>Installez
 
-Model Builder ML.NET peut être installé via Visual Studio Marketplace ou depuis Visual Studio. 
+Model Builder ML.NET peut être installé via Visual Studio Marketplace ou depuis Visual Studio.
 
 ### <a name="visual-studio-marketplace"></a>Visual Studio Marketplace
 
@@ -66,7 +66,7 @@ Model Builder ML.NET peut être installé via Visual Studio Marketplace ou depui
 
 1. Suivez les invites pour effectuer l’installation
 
-## <a name="uninstall"></a>Désinstaller l’interface
+## <a name="uninstall"></a>Désinstaller
 
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
@@ -94,6 +94,6 @@ Model Builder ML.NET peut être installé via Visual Studio Marketplace ou depui
 
 1. Suivez les invites pour effectuer la désinstallation.
 
-## <a name="upgrade"></a>Mise à niveau
+## <a name="upgrade"></a>Mettre à niveau
 
 Le processus de mise à niveau est similaire au processus d’installation. Téléchargez la dernière version à partir de Visual Studio Marketplace ou utilisez le Gestionnaire d’extensions dans Visual Studio.
