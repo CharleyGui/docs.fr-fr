@@ -55,6 +55,10 @@
           items:
             - name: 'm_ConnectionList, champ'
               href: m_connectionlist.md
+        - name: 'ConnectStream, classe'
+          items:
+            - name: 'Connection, propriété'
+              href: system.net.connectstream.connection.md
         - name: 'CoreResponseData, classe'
           href: coreresponsedata.md
           items:
@@ -70,12 +74,26 @@
               href: httpwebrequest__coreresponse.md
             - name: '_HttpResponse, champ'
               href: _httpresponse.md
+        - name: 'PooledStream, classe'
+          items:
+            - name: 'NetworkStream, propriété'
+              href: system.net.pooledstream.networkstream.md
         - name: 'ServicePoint, classe'
           items:
             - name: 'm_ConnectionGroupList, champ'
               href: m_connectiongrouplist.md
             - name: 's_ServicePointTable, champ'
               href: s_servicepointtable.md
+        - name: 'TlsStream, classe'
+          items:
+            - name: 'm_Worker, champ'
+              href: system.net.tlsstream.m_worker.md
+    - name: System.Net.Security
+      items:
+        - name: 'SslState, classe'
+          items:
+            - name: 'SslProtocol, propriété'
+              href: system.net.security.sslstate.sslprotocol.md
     - name: System.Windows.Diagnostics
       items:
         - name: 'VisualDiagnostics, classe'
