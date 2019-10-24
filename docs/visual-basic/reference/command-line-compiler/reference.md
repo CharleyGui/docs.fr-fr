@@ -9,62 +9,62 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 552fbcf920be609de83708a995a87761f6080220
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 8f144dbd9376f15ac92e283472dac786a6972045
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005275"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775602"
 ---
-# <a name="-reference-visual-basic"></a><span data-ttu-id="01e03-102">-Reference (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01e03-102">-reference (Visual Basic)</span></span>
-<span data-ttu-id="01e03-103">Fait en sorte que le compilateur rende les informations de type dans les assemblys spécifiés disponibles pour le projet en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="01e03-103">Causes the compiler to make type information in the specified assemblies available to the project you are currently compiling.</span></span>  
+# <a name="-reference-visual-basic"></a><span data-ttu-id="f8f93-102">-Reference (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f8f93-102">-reference (Visual Basic)</span></span>
+<span data-ttu-id="f8f93-103">Fait en sorte que le compilateur rende les informations de type dans les assemblys spécifiés disponibles pour le projet en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="f8f93-103">Causes the compiler to make type information in the specified assemblies available to the project you are currently compiling.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="01e03-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="01e03-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f8f93-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f8f93-104">Syntax</span></span>  
   
 ```console  
 -reference:fileList  
 ```
 
-<span data-ttu-id="01e03-105">ou</span><span class="sxs-lookup"><span data-stu-id="01e03-105">or</span></span>
+<span data-ttu-id="f8f93-105">or</span><span class="sxs-lookup"><span data-stu-id="f8f93-105">or</span></span>
 
 ```console
 -r:fileList  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="01e03-106">Arguments</span><span class="sxs-lookup"><span data-stu-id="01e03-106">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="f8f93-106">Arguments</span><span class="sxs-lookup"><span data-stu-id="f8f93-106">Arguments</span></span>  
   
-|<span data-ttu-id="01e03-107">Terme</span><span class="sxs-lookup"><span data-stu-id="01e03-107">Term</span></span>|<span data-ttu-id="01e03-108">Définition</span><span class="sxs-lookup"><span data-stu-id="01e03-108">Definition</span></span>|  
+|<span data-ttu-id="f8f93-107">Terme</span><span class="sxs-lookup"><span data-stu-id="f8f93-107">Term</span></span>|<span data-ttu-id="f8f93-108">Définition</span><span class="sxs-lookup"><span data-stu-id="f8f93-108">Definition</span></span>|  
 |---|---|  
-|`fileList`|<span data-ttu-id="01e03-109">Requis.</span><span class="sxs-lookup"><span data-stu-id="01e03-109">Required.</span></span> <span data-ttu-id="01e03-110">Liste délimitée par des virgules des noms de fichiers d’assembly.</span><span class="sxs-lookup"><span data-stu-id="01e03-110">Comma-delimited list of assembly file names.</span></span> <span data-ttu-id="01e03-111">Si le nom de fichier contient un espace, placez-le entre des guillemets.</span><span class="sxs-lookup"><span data-stu-id="01e03-111">If the file name contains a space, enclose the name in quotation marks.</span></span>|  
+|`fileList`|<span data-ttu-id="f8f93-109">Requis.</span><span class="sxs-lookup"><span data-stu-id="f8f93-109">Required.</span></span> <span data-ttu-id="f8f93-110">Liste délimitée par des virgules des noms de fichiers d’assembly.</span><span class="sxs-lookup"><span data-stu-id="f8f93-110">Comma-delimited list of assembly file names.</span></span> <span data-ttu-id="f8f93-111">Si le nom de fichier contient un espace, placez-le entre des guillemets.</span><span class="sxs-lookup"><span data-stu-id="f8f93-111">If the file name contains a space, enclose the name in quotation marks.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="01e03-112">Notes</span><span class="sxs-lookup"><span data-stu-id="01e03-112">Remarks</span></span>  
- <span data-ttu-id="01e03-113">Le ou les fichiers que vous importez doivent contenir des métadonnées d’assembly.</span><span class="sxs-lookup"><span data-stu-id="01e03-113">The file(s) you import must contain assembly metadata.</span></span> <span data-ttu-id="01e03-114">Seuls les types publics sont visibles à l’extérieur de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="01e03-114">Only public types are visible outside the assembly.</span></span> <span data-ttu-id="01e03-115">L’option [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.</span><span class="sxs-lookup"><span data-stu-id="01e03-115">The [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f8f93-112">Notes</span><span class="sxs-lookup"><span data-stu-id="f8f93-112">Remarks</span></span>  
+ <span data-ttu-id="f8f93-113">Le ou les fichiers que vous importez doivent contenir des métadonnées d’assembly.</span><span class="sxs-lookup"><span data-stu-id="f8f93-113">The file(s) you import must contain assembly metadata.</span></span> <span data-ttu-id="f8f93-114">Seuls les types publics sont visibles à l’extérieur de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="f8f93-114">Only public types are visible outside the assembly.</span></span> <span data-ttu-id="f8f93-115">L’option [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.</span><span class="sxs-lookup"><span data-stu-id="f8f93-115">The [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.</span></span>  
   
- <span data-ttu-id="01e03-116">Si vous référencez un assembly (assembly A) qui référence lui-même un autre assembly (assembly B), vous devez référencer l’assembly B si :</span><span class="sxs-lookup"><span data-stu-id="01e03-116">If you reference an assembly (Assembly A) which itself references another assembly (Assembly B), you need to reference Assembly B if:</span></span>  
+ <span data-ttu-id="f8f93-116">Si vous référencez un assembly (assembly A) qui référence lui-même un autre assembly (assembly B), vous devez référencer l’assembly B si :</span><span class="sxs-lookup"><span data-stu-id="f8f93-116">If you reference an assembly (Assembly A) which itself references another assembly (Assembly B), you need to reference Assembly B if:</span></span>  
   
-- <span data-ttu-id="01e03-117">Un type de l’Assembly A hérite d’un type ou implémente une interface de l’Assembly B.</span><span class="sxs-lookup"><span data-stu-id="01e03-117">A type from Assembly A inherits from a type or implements an interface from Assembly B.</span></span>  
+- <span data-ttu-id="f8f93-117">Un type de l’Assembly A hérite d’un type ou implémente une interface de l’Assembly B.</span><span class="sxs-lookup"><span data-stu-id="f8f93-117">A type from Assembly A inherits from a type or implements an interface from Assembly B.</span></span>  
   
-- <span data-ttu-id="01e03-118">Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.</span><span class="sxs-lookup"><span data-stu-id="01e03-118">A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.</span></span>  
+- <span data-ttu-id="f8f93-118">Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.</span><span class="sxs-lookup"><span data-stu-id="f8f93-118">A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.</span></span>  
   
- <span data-ttu-id="01e03-119">Utilisez [-LIBPATH](../../../visual-basic/reference/command-line-compiler/libpath.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly.</span><span class="sxs-lookup"><span data-stu-id="01e03-119">Use [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) to specify the directory in which one or more of your assembly references is located.</span></span>  
+ <span data-ttu-id="f8f93-119">Utilisez [-LIBPATH](../../../visual-basic/reference/command-line-compiler/libpath.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly.</span><span class="sxs-lookup"><span data-stu-id="f8f93-119">Use [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) to specify the directory in which one or more of your assembly references is located.</span></span>  
   
- <span data-ttu-id="01e03-120">Pour que le compilateur reconnaisse un type dans un assembly (et non un module), il doit être forcé de résoudre le type.</span><span class="sxs-lookup"><span data-stu-id="01e03-120">For the compiler to recognize a type in an assembly (not a module), it must be forced to resolve the type.</span></span> <span data-ttu-id="01e03-121">Vous pouvez, par exemple, définir une instance du type.</span><span class="sxs-lookup"><span data-stu-id="01e03-121">One example of how you can do this is to define an instance of the type.</span></span> <span data-ttu-id="01e03-122">D’autres méthodes sont disponibles pour résoudre les noms de types dans un assembly pour le compilateur.</span><span class="sxs-lookup"><span data-stu-id="01e03-122">Other ways are available to resolve type names in an assembly for the compiler.</span></span> <span data-ttu-id="01e03-123">Par exemple, si vous héritez d’un type dans un assembly, le nom de type devient alors connu du compilateur.</span><span class="sxs-lookup"><span data-stu-id="01e03-123">For example, if you inherit from a type in an assembly, the type name then becomes known to the compiler.</span></span>  
+ <span data-ttu-id="f8f93-120">Pour que le compilateur reconnaisse un type dans un assembly (et non un module), il doit être forcé de résoudre le type.</span><span class="sxs-lookup"><span data-stu-id="f8f93-120">For the compiler to recognize a type in an assembly (not a module), it must be forced to resolve the type.</span></span> <span data-ttu-id="f8f93-121">Vous pouvez, par exemple, définir une instance du type.</span><span class="sxs-lookup"><span data-stu-id="f8f93-121">One example of how you can do this is to define an instance of the type.</span></span> <span data-ttu-id="f8f93-122">D’autres méthodes sont disponibles pour résoudre les noms de types dans un assembly pour le compilateur.</span><span class="sxs-lookup"><span data-stu-id="f8f93-122">Other ways are available to resolve type names in an assembly for the compiler.</span></span> <span data-ttu-id="f8f93-123">Par exemple, si vous héritez d’un type dans un assembly, le nom de type devient alors connu du compilateur.</span><span class="sxs-lookup"><span data-stu-id="f8f93-123">For example, if you inherit from a type in an assembly, the type name then becomes known to the compiler.</span></span>  
   
- <span data-ttu-id="01e03-124">Le fichier réponse Vbc. rsp, qui référence les assemblys couramment utilisés .NET Framework, est utilisé par défaut.</span><span class="sxs-lookup"><span data-stu-id="01e03-124">The Vbc.rsp response file, which references commonly used .NET Framework assemblies, is used by default.</span></span> <span data-ttu-id="01e03-125">Utilisez `-noconfig` si vous ne souhaitez pas que le compilateur utilise vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="01e03-125">Use `-noconfig` if you do not want the compiler to use Vbc.rsp.</span></span>  
+ <span data-ttu-id="f8f93-124">Le fichier réponse Vbc. rsp, qui référence les assemblys couramment utilisés .NET Framework, est utilisé par défaut.</span><span class="sxs-lookup"><span data-stu-id="f8f93-124">The Vbc.rsp response file, which references commonly used .NET Framework assemblies, is used by default.</span></span> <span data-ttu-id="f8f93-125">Utilisez `-noconfig` si vous ne souhaitez pas que le compilateur utilise vbc. rsp.</span><span class="sxs-lookup"><span data-stu-id="f8f93-125">Use `-noconfig` if you do not want the compiler to use Vbc.rsp.</span></span>  
   
- <span data-ttu-id="01e03-126">La forme abrégée de `-reference` est `/r`.</span><span class="sxs-lookup"><span data-stu-id="01e03-126">The short form of `-reference` is `/r`.</span></span>  
+ <span data-ttu-id="f8f93-126">La forme abrégée de `-reference` est `/r`.</span><span class="sxs-lookup"><span data-stu-id="f8f93-126">The short form of `-reference` is `/r`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="01e03-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="01e03-127">Example</span></span>  
- <span data-ttu-id="01e03-128">La commande suivante compile le fichier source `Input.vb` et les assemblys de référence à partir de `Metad1.dll` et `Metad2.dll` pour produire `Out.exe`.</span><span class="sxs-lookup"><span data-stu-id="01e03-128">The following command compiles source file `Input.vb` and reference assemblies from `Metad1.dll` and `Metad2.dll` to produce `Out.exe`.</span></span>  
+## <a name="example"></a><span data-ttu-id="f8f93-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="f8f93-127">Example</span></span>  
+ <span data-ttu-id="f8f93-128">La commande suivante compile le fichier source `Input.vb` et les assemblys de référence à partir de `Metad1.dll` et `Metad2.dll` pour produire des `Out.exe`.</span><span class="sxs-lookup"><span data-stu-id="f8f93-128">The following command compiles source file `Input.vb` and reference assemblies from `Metad1.dll` and `Metad2.dll` to produce `Out.exe`.</span></span>  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="01e03-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="01e03-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f8f93-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f8f93-129">See also</span></span>
 
-- [<span data-ttu-id="01e03-130">Compilateur de ligne de commande de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="01e03-130">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="01e03-131">-noconfig</span><span class="sxs-lookup"><span data-stu-id="01e03-131">-noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [<span data-ttu-id="01e03-132">-cible (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01e03-132">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)
-- [<span data-ttu-id="01e03-133">Public</span><span class="sxs-lookup"><span data-stu-id="01e03-133">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
-- [<span data-ttu-id="01e03-134">Exemples de lignes de commande de compilation</span><span class="sxs-lookup"><span data-stu-id="01e03-134">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="f8f93-130">Compilateur de ligne de commande de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f8f93-130">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="f8f93-131">-noconfig</span><span class="sxs-lookup"><span data-stu-id="f8f93-131">-noconfig</span></span>](../../../visual-basic/reference/command-line-compiler/noconfig.md)
+- [<span data-ttu-id="f8f93-132">-cible (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f8f93-132">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)
+- [<span data-ttu-id="f8f93-133">Public</span><span class="sxs-lookup"><span data-stu-id="f8f93-133">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
+- [<span data-ttu-id="f8f93-134">Exemples de lignes de commande de compilation</span><span class="sxs-lookup"><span data-stu-id="f8f93-134">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
