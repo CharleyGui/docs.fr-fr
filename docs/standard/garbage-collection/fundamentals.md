@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c0fa0e2c59856beda65ec5804b8896352db98b3
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 2c1b73108227160aaff28525beeca7f3bd4cb5f8
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180196"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775321"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -125,7 +125,7 @@ Les opérations garbage collection se produisent sur des générations spécifiq
 
 Les objets qui ne sont pas libérés dans un garbage collection sont appelé survivants et sont promus à la génération suivante. Les objets qui survivent à un garbage collection de génération 0 sont promus à la génération 1, les objets qui survivent à un garbage collection de génération 1 sont promus à la génération 2 et les objets qui survivent à un garbage collection de génération 2 restent dans la génération 2.
 
-Lorsque le garbage collector détecte que le taux de survie est élevé dans une génération, il augmente le seuil des allocations de cette génération. La collecte suivante récupère donc une taille substantielle de mémoire libérée. Le CLR équilibre continuellement deux priorités : ne pas permettre au jeu de travail d'une application de devenir trop grand et ne pas permettre pas au garbage collection d'être trop long.
+Lorsque le garbage collector détecte que le taux de survie est élevé dans une génération, il augmente le seuil des allocations de cette génération. La collecte suivante récupère donc une taille substantielle de mémoire libérée. Le CLR équilibre continuellement deux priorités : ne pas permettre à la plage de travail d’une application d’être trop volumineuse en retardant garbage collection et en empêchant l’exécution trop fréquente du garbage collection.
 
 ### <a name="ephemeral-generations-and-segments"></a>Segments et générations éphémères
 
@@ -135,7 +135,7 @@ Les générations éphémères doivent être allouées dans le segment de mémoi
 
 La taille du segment éphémère peut varier selon que le système est 32 ou 64 bits. Elle peut également varier en fonction du type de garbage collector exécuté. Le tableau ci-dessous répertorie les valeurs par défaut.
 
-||32 bits|64 bits|
+||32 bits|64 bits|
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 Mo|
 |Garbage collector pour serveur|64 Mo|4 Go|
@@ -164,7 +164,7 @@ Une opération garbage collection présente les phases suivantes :
 
   Normalement, le tas d'objets volumineux n'est pas compacté, car la copie d'objets volumineux implique une diminution des performances. Toutefois, à partir de .NET Framework 4.5.1, vous pouvez utiliser la propriété <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> pour compacter le tas d’objets volumineux à la demande.
 
-Le garbage collector utilise les informations suivantes pour déterminer si les objets sont vivants :
+Le garbage collector utilise les informations suivantes pour déterminer si les objets sont vivants :
 
 - **Racines de pile**. Variables de pile fournies par le compilateur juste-à-temps (JIT) et l'explorateur de pile. Notez que les optimisations JIT peuvent allonger ou raccourcir les régions de code dans lesquelles les variables de pile sont signalées au garbage collector.
 
@@ -176,7 +176,7 @@ Avant qu'une opération garbage collection ne démarre, tous les threads managé
 
 L'illustration suivante montre un thread qui déclenche un garbage collection et entraîne l'interruption des autres threads.
 
-![Lorsqu’un thread déclenche un garbage collection](../../../docs/standard/garbage-collection/media/gc-triggered.png "lorsqu’un thread déclenche un garbage collection")
+![Quand un thread déclenche un garbage collection](../../../docs/standard/garbage-collection/media/gc-triggered.png "Lorsqu'un thread déclenche un nettoyage de la mémoire")
 
 [Retour au début](#top)
 
@@ -208,7 +208,7 @@ Le garbage collector s'ajuste automatiquement et peut travailler dans une large 
 
 Les illustrations suivantes montrent les threads dédiés qui exécutent un garbage collection sur un serveur.
 
-Threads de ![garbage collection du serveur],(../../../docs/standard/garbage-collection/media/gc-server.png "threads de garbage collection")
+![Threads de garbage collection de serveur](../../../docs/standard/garbage-collection/media/gc-server.png "Threads de nettoyage de la mémoire du serveur")
 
 ### <a name="configuring-garbage-collection"></a>Configuration du garbage collection
 
@@ -262,7 +262,7 @@ Le garbage collection simultané possède un jeu de travail légèrement plus gr
 
 L'illustration suivante montre le garbage collection simultané exécuté sur un thread dédié différent.
 
-Threads de ![garbage collection simultanés]threads de(../../../docs/standard/garbage-collection/media/gc-concurrent.png "garbage collection simultanés")
+![Threads de garbage collection simultanés](../../../docs/standard/garbage-collection/media/gc-concurrent.png "Threads de nettoyage de la mémoire simultanés")
 
 [Retour au début](#top)
 
@@ -283,7 +283,7 @@ Le garbage collection d'arrière-plan supprime les restrictions d'allocation imp
 
 L’illustration suivante montre le nettoyage de la mémoire en arrière-plan effectué sur un thread dédié distinct, sur une station de travail :
 
-![Diagramme qui affiche des garbage collection de station de travail en arrière-plan.](./media/fundamentals/background-workstation-garbage-collection.png "Diagramme qui affiche des garbage collection de station de travail en arrière-plan.")
+![Diagramme qui affiche des garbage collection de station de travail en arrière-plan.](./media/fundamentals/background-workstation-garbage-collection.png "Diagramme illustrant le nettoyage de la mémoire d’une station de travail en arrière-plan.")
 
 [Retour au début](#top)
 
@@ -295,7 +295,7 @@ Depuis .NET Framework 4.5, le garbage collection de serveur en arrière-plan est
 
 L’illustration suivante montre le nettoyage de la mémoire en arrière-plan effectué sur un thread dédié distinct, sur un serveur :
 
-![Diagramme qui affiche les garbage collection du serveur d’arrière-plan.](./media/fundamentals/background-server-garbage-collection.png "Diagramme qui affiche les garbage collection du serveur d’arrière-plan.")
+![Diagramme qui affiche les garbage collection du serveur d’arrière-plan.](./media/fundamentals/background-server-garbage-collection.png "Diagramme illustrant le nettoyage de la mémoire d’un serveur en arrière-plan.")
 
 ## <a name="see-also"></a>Voir aussi
 

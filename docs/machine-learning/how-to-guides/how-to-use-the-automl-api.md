@@ -3,12 +3,12 @@ title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: a7057337fb6ff19a1e402d7bf74a766b246ea3c1
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: bb1cd66e7341f2ada57d533d8b2dcbb48f08f726
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332720"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774548"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -21,7 +21,7 @@ Le machine learning automatisé (AutoML) automatise le processus d’application
 
 Le machine learning automatisé prend en charge le chargement d’un jeu de données dans un [IDataView](xref:Microsoft.ML.IDataView). Les données peuvent se présenter sous la forme de fichiers de valeurs séparées par une tabulation (TSV) et de fichiers de valeurs séparées par une virgule (CSV).
 
-Exemple :
+Exemple :
 
 ```csharp
 using Microsoft.ML;
@@ -89,7 +89,7 @@ Voici quelques exemples :
     ```
 
 1. Le paramètre `CacheDirectory` est un pointeur vers un répertoire dans lequel tous les modèles entraînés au cours de la tâche AutoML sont enregistrés. Si `CacheDirectory` a la valeur Null, les modèles sont conservés dans la mémoire au lieu d’être écrits sur le disque.
- 
+
     ```csharp
     experimentSettings.CacheDirectory = null;
     ```
@@ -128,7 +128,7 @@ La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, déte
 ## <a name="data-pre-processing-and-featurization"></a>Prétraitement et caractérisation des données
 
 > [!NOTE]
-> La colonne de fonctionnalité ne prenait en charge que les types de [`Boolean`](https://docs.microsoft.com/en-us/dotnet/api/system.boolean), [`Single`](https://docs.microsoft.com/en-us/dotnet/api/system.single)et [`String`](https://docs.microsoft.com/en-us/dotnet/api/system.string).
+> La colonne de fonctionnalité ne prend en charge que les types de <xref:System.Boolean>, <xref:System.Single> et <xref:System.String>.
 
 Le prétraitement des données a lieu par défaut et les étapes suivantes sont effectuées automatiquement :
 
@@ -141,10 +141,10 @@ Le prétraitement des données a lieu par défaut et les étapes suivantes sont 
     Remplir les cellules de valeur manquante avec la valeur par défaut pour le type de données. Ajouter des caractéristiques d’indicateur avec le même nombre d’emplacements que la colonne d’entrée. La valeur dans les caractéristiques d’indicateur ajoutées est `1` si la valeur dans la colonne d’entrée est manquante, `0` dans le cas contraire.
 
 1. Générer des caractéristiques supplémentaires
-    
-    Pour les caractéristiques de texte : Caractéristiques de type sac de mots utilisant des unigrammes et des trigrammes.
-    
-    Pour les caractéristiques de catégorie : Encodage one-hot des caractéristiques à faible cardinalité et encodage one-hot-hash des caractéristiques de catégorie à cardinalité élevée.
+
+    Pour les fonctionnalités de texte : fonctionnalités de conteneur de mots utilisant unigrammes et trois caractères-grammes.
+
+    Pour les fonctionnalités catégoriques : l’encodage à chaud pour les fonctionnalités de cardinalité faible et l’encodage à hachage à chaud pour les fonctionnalités catégoriques de cardinalité élevée.
 
 1. Transformations et encodages
 
@@ -191,7 +191,7 @@ Explorez d’autres surcharges pour `Execute()` si vous souhaitez passer des don
 AutoML met à votre disposition une méthode d’exécution d’expérience surchargée qui vous permet de fournir des données d’entraînement. En interne, le ML automatisé divise les données en fractionnements entraînement/validation.
 
 ```csharp
-experiment.Execute(trainDataView);   
+experiment.Execute(trainDataView);
 ```
 
 ### <a name="custom-validation-dataset"></a>Jeu de données de validation personnalisé
@@ -199,7 +199,7 @@ experiment.Execute(trainDataView);
 Utilisez un jeu de données de validation personnalisé si un fractionnement aléatoire ne convient pas, comme c’est généralement le cas avec les données de série chronologique. Vous pouvez spécifier votre propre jeu de données de validation. Le modèle est évalué par rapport au jeu de données de validation spécifié, plutôt que par rapport à un ou plusieurs jeux de données aléatoires.
 
 ```csharp
-experiment.Execute(trainDataView, validationDataView);   
+experiment.Execute(trainDataView, validationDataView);
 ```
 
 ## <a name="explore-model-metrics"></a>Explorer les métriques de modèle

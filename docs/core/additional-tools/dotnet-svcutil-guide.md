@@ -4,12 +4,12 @@ description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajo
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 49b0579c284af74d270cac04d302ce231dcb9357
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 89fe72c8116498ff60d439ce17ef2e857edf621e
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522833"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771979"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
@@ -17,7 +17,7 @@ L’outil **dotnet-svcutil** Windows Communication Foundation (WCF) est un outil
 
 Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour les projets .NET Framework, **dotnet-svcutil** est un outil en ligne de commande pour générer une référence de service web compatible avec les projets .NET Core et .NET Standard.
 
-L’outil **dotnet-svcutil** est une option alternative au fournisseur de services connectés Visual Studio [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) inclus dans Visual Studio 2017 v15.5. L’outil **dotnet-svcutil**, en tant qu’outil CLI .NET Core, est disponible sur les plateformes Linux, macOS et Windows.
+L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio qui a été livré avec visual studio 2017 version 15,5. L’outil **dotnet-svcutil**, en tant qu’outil CLI .NET Core, est disponible sur les plateformes Linux, macOS et Windows.
 
 > [!IMPORTANT]
 > Vous devez référencer des services uniquement à partir d’une source approuvée. L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.

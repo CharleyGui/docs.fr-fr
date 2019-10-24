@@ -5,12 +5,12 @@ ms.date: 09/12/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 31169116abdda7308ed216902b335a6b77fbcfc4
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 4f805c638df9e60160c27fa08995ce393e59d007
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321275"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774525"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Déployer un modèle sur Azure Functions
 
@@ -21,7 +21,7 @@ Découvrez comment déployer un modèle Machine Learning ML.NET préentraîné p
 
 ## <a name="prerequisites"></a>Configuration requise
 
-- [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .NET Core » et « Développement Azure » ;
+- [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » et « développement Azure ».
 - Package NuGet version 1.0.28+ de Microsoft.NET.Sdk.Functions.
 - [Azure Functions Tools](/azure/azure-functions/functions-develop-vs#check-your-tools-version) ;
 - PowerShell ;
@@ -151,12 +151,12 @@ Le modèle est identifié par le paramètre `modelName` afin que plusieurs modè
 
 > [!TIP]
 > Vous pouvez également utiliser la méthode `FromUri` lorsque vous travaillez avec des modèles stockés à distance. Au lieu d’observer les événements de modification de fichier, `FromUri` interroge l’emplacement distant pour les modifications. La valeur par défaut de l’intervalle d’interrogation est de 5 minutes. Vous pouvez augmenter ou diminuer l’intervalle d’interrogation en fonction des exigences de votre application. Dans l’exemple de code ci-dessous, le `PredictionEnginePool` interroge le modèle stocké à l’URI spécifié toutes les minutes.
->    
+>
 >```csharp
 >builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
 >   .FromUri(
->       modelName: "SentimentAnalysisModel", 
->       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip", 
+>       modelName: "SentimentAnalysisModel",
+>       uri:"https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip",
 >       period: TimeSpan.FromMinutes(1));
 >```
 

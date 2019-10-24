@@ -1,7 +1,7 @@
 ---
 title: Types numériques intégraux - Référence C#
 description: Découvrez la plage, la taille de stockage et les différentes utilisations associés à chacun des types numériques intégraux.
-ms.date: 10/18/2019
+ms.date: 10/22/2019
 f1_keywords:
 - byte
 - byte_CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 3d4f3164d67a000123417619f3be6be455d5ab87
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c255711e4b165fdca27d50c6bd0f2debfe15ae25
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579197"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773869"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Types numériques intégraux (référence C#)
 
@@ -100,7 +100,7 @@ Le type d’un littéral entier est déterminé par son suffixe comme suit :
 
 Si la valeur représentée par un littéral entier dépasse <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, une erreur de compilation [CS1021](../../misc/cs1021.md) se produit.
 
-La valeur représentée par un littéral entier peut être implicitement convertie en un type avec une plage plus petite que le type déterminé du littéral. Cela est possible lorsque la valeur est comprise dans la plage du type de destination :
+Si le type déterminé d’un littéral d’entier est `int` et que la valeur est comprise dans la plage du type de destination, la valeur représentée par le littéral peut être convertie implicitement en `sbyte`, `byte`, `short`, `ushort` , `uint` ou `ulong` :
 
 ```csharp
 byte a = 17;
@@ -118,9 +118,7 @@ var longVariable = (long)42;
 
 ## <a name="conversions"></a>Conversions
 
-Entre deux types intégraux, il existe une conversion implicite (appelée *conversion étendue*) où le type de destination peut stocker toutes les valeurs du type source. Par exemple, il existe une conversion implicite de `int` vers `long`, car la plage de valeurs `int` est un sous-ensemble de `long`. Il existe des conversions implicites entre un type intégral non signé plus petit et un type intégral signé plus grand. Il existe également une conversion implicite entre un type intégral et n’importe quel type à virgule flottante.  Il existe une conversion implicite entre un type intégral signé et n’importe quel type intégral non signé.
-
-Vous devez utiliser un cast explicite pour convertir un type intégral en un autre type intégral, lorsqu’une conversion implicite n’est pas définie entre le type source et le type de destination. C’est ce qu’on appelle une *conversion restrictive*. Un scénario explicite est nécessaire, car la conversion peut entraîner une perte de données.
+Vous pouvez convertir n’importe quel type numérique intégral en tout autre type numérique intégral. Si le type de destination peut stocker toutes les valeurs du type source, la conversion est implicite. Dans le cas contraire, vous devez utiliser l' [opérateur de cast `()`](../operators/type-testing-and-cast.md#cast-operator-) pour appeler une conversion explicite. Pour plus d’informations, consultez [conversions numériques intégrées](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -132,8 +130,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Types virgule flottante](floating-point-numeric-types.md)
-- [Tableau des valeurs par défaut](../keywords/default-values-table.md)
-- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
+- [Types virgule flottante](floating-point-numeric-types.md)
+- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)

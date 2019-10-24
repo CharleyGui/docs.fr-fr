@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 42d9784b9aa35fbb739e09dd79d72996b0f15950
-  ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+  ms.openlocfilehash: 31647906dd3e1286220077831d2ce90b65a5b73c
+  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/12/2019
-  ms.locfileid: "72291374"
+  ms.lasthandoff: 10/22/2019
+  ms.locfileid: "72774010"
 items:
 - durationInMinutes: 1
   content: >
@@ -421,12 +421,8 @@ items:
     Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
 
 
-    - [Types intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
+    - [Types numériques intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
 
-    - [Tableau des types virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md)
+    - [Types numériques à virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md)
 
-    - [Tableau des types intégrés](../../language-reference/keywords/built-in-types-table.md)
-
-    - [Tableau des conversions numériques implicites](../../language-reference/keywords/implicit-numeric-conversions-table.md)
-
-    - [Tableau des conversions numériques explicites](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+    - [Conversions numériques intégrées](../../language-reference/builtin-types/numeric-conversions.md)

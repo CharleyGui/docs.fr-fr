@@ -9,12 +9,12 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 552fbcf920be609de83708a995a87761f6080220
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 8f144dbd9376f15ac92e283472dac786a6972045
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005275"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775602"
 ---
 # <a name="-reference-visual-basic"></a>-Reference (Visual Basic)
 Fait en sorte que le compilateur rende les informations de type dans les assemblys spécifiés disponibles pour le projet en cours de compilation.  
@@ -25,7 +25,7 @@ Fait en sorte que le compilateur rende les informations de type dans les assembl
 -reference:fileList  
 ```
 
-ou
+or
 
 ```console
 -r:fileList  
@@ -38,7 +38,7 @@ ou
 |`fileList`|Requis. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.|  
   
 ## <a name="remarks"></a>Notes  
- Le ou les fichiers que vous importez doivent contenir des métadonnées d’assembly. Seuls les types publics sont visibles à l’extérieur de l’assembly. L’option [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.  
+ Le ou les fichiers que vous importez doivent contenir des métadonnées d’assembly. Seuls les types publics sont visibles à l’extérieur de l’assembly. L’option [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.  
   
  Si vous référencez un assembly (assembly A) qui référence lui-même un autre assembly (assembly B), vous devez référencer l’assembly B si :  
   
@@ -55,7 +55,7 @@ ou
  La forme abrégée de `-reference` est `/r`.  
   
 ## <a name="example"></a>Exemple  
- La commande suivante compile le fichier source `Input.vb` et les assemblys de référence à partir de `Metad1.dll` et `Metad2.dll` pour produire `Out.exe`.  
+ La commande suivante compile le fichier source `Input.vb` et les assemblys de référence à partir de `Metad1.dll` et `Metad2.dll` pour produire des `Out.exe`.  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  

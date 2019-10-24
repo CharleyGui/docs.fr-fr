@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: ac04ba72ed0c25aa576bf10150fc80410890eda0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 9760be0fcfe29d2c11cbb1f4d4d81c5a79261a0d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608366"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771735"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
@@ -115,7 +115,7 @@ Pour les types `float`, `double` et `decimal`, le résultat de l’opérateur `/
 
 [!code-csharp-interactive[floating-point division](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#FloatingPointDivision)]
 
-Si l’un des opérandes est `decimal`, un autre opérande ne peut être `float` ni `double`, car ni `float` ni `double` ne sont implicitement convertibles en `decimal`. Vous devez convertir explicitement l’opérande `float` ou `double` en type `decimal`. Pour plus d’informations sur les conversions implicites entre des types numériques, consultez [Tableau des conversions numériques implicites](../keywords/implicit-numeric-conversions-table.md).
+Si l’un des opérandes est `decimal`, un autre opérande ne peut être `float` ni `double`, car ni `float` ni `double` ne sont implicitement convertibles en `decimal`. Vous devez convertir explicitement l’opérande `float` ou `double` en type `decimal`. Pour plus d’informations sur les conversions entre les types numériques, consultez [conversions numériques intégrées](../builtin-types/numeric-conversions.md).
 
 ## <a name="remainder-operator-"></a>Opérateur de reste %
 
