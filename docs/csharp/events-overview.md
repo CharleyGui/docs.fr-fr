@@ -3,12 +3,12 @@ title: Présentation des événements
 description: En savoir plus sur les événements dans .NET Core et nos objectifs de conception de langage pour les événements dans cette vue d’ensemble.
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: e2944100d648d90e7aa5ea5798a351b8fd382cf7
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
-ms.translationtype: HT
+ms.openlocfilehash: b1fd2ebe2ae91b55c9179f280d8894f6b40ced9b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051940"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771915"
 ---
 # <a name="introduction-to-events"></a>Présentation des événements
 
@@ -49,7 +49,7 @@ public event EventHandler<FileListArgs> Progress;
 
 Le type de l’événement (`EventHandler<FileListArgs>` dans cet exemple) doit être un type délégué. Vous devez respecter plusieurs conventions lors de la déclaration d’un événement. En général, le type délégué d’événement a un retour void.
 Les déclarations d’événements doivent être un verbe ou une phrase verbale.
-Utilisez le passé (comme dans cet exemple) quand l’événement signale quelque chose qui s’est produit. Utilisez un verbe au présent (par exemple, `Closing`) pour signaler quelque chose qui est sur le point de se produire. Souvent, le présent indique que votre classe prend en charge un type de comportement de personnalisation. L’un des scénarios les plus courants consiste à prendre en charge l’annulation. Par exemple, un événement `Closing` peut inclure un argument qui indique si l’opération de fermeture doit continuer ou non.  D’autres scénarios peuvent permettre aux appelants de modifier le comportement en mettant à jour les propriétés des arguments de l’événement. Vous pouvez déclencher un événement pour indiquer une action suivante qu’un algorithme effectuera. Le gestionnaire d’événements peut imposer une action différente en modifiant les propriétés de l’argument d’événement.
+Utilisez des dizaines lorsque l’événement signale une action qui s’est produite. Utilisez un verbe au présent (par exemple, `Closing`) pour signaler quelque chose qui est sur le point de se produire. Souvent, le présent indique que votre classe prend en charge un type de comportement de personnalisation. L’un des scénarios les plus courants consiste à prendre en charge l’annulation. Par exemple, un événement `Closing` peut inclure un argument qui indique si l’opération de fermeture doit continuer ou non.  D’autres scénarios peuvent permettre aux appelants de modifier le comportement en mettant à jour les propriétés des arguments de l’événement. Vous pouvez déclencher un événement pour indiquer une action suivante qu’un algorithme effectuera. Le gestionnaire d’événements peut imposer une action différente en modifiant les propriétés de l’argument d’événement.
 
 Quand vous souhaitez déclencher l’événement, vous appelez les gestionnaires d’événements à l’aide de la syntaxe d’appel de délégué :
 
@@ -82,4 +82,4 @@ Si au lieu de cela vous utilisez le corps de l’expression lambda, vous essayez
 
 Dans l’article suivant, vous en apprendrez davantage sur les modèles d’événements les plus courants et sur les différentes variantes de cet exemple.
 
-[Next](event-pattern.md)
+[Suivant](event-pattern.md)

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: fb11fb1a81b8407e2585e32d4217e08a75ea19b0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 417f02ce9e8ee88edeb2a4dab88111cae39a8a4b
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605821"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771868"
 ---
 # <a name="enum-c-reference"></a>enum (référence C#)
 
@@ -35,7 +35,7 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 
 Dans cette énumération, le début de la séquence des éléments est forcé à `1` au lieu de `0`. Il est cependant recommandé d’inclure une constante qui a la valeur 0. Pour plus d’informations, consultez [Types énumération](../../programming-guide/enumeration-types.md).
 
-Chaque type énumération a un type sous-jacent qui peut correspondre à n’importe quel [type numérique intégral](../builtin-types/integral-numeric-types.md). Le type [char](char.md) ne peut pas être un type sous-jacent d’une énumération. Le type sous-jacent par défaut des éléments de l’énumération est [int](../builtin-types/integral-numeric-types.md). Pour déclarer une énumération d’un autre type intégral, comme [byte](../builtin-types/integral-numeric-types.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme illustré dans l’exemple suivant.
+Chaque type énumération a un type sous-jacent qui peut correspondre à n’importe quel [type numérique intégral](../builtin-types/integral-numeric-types.md). Le type [char](char.md) ne peut pas être un type sous-jacent d’une énumération. Le type sous-jacent par défaut des éléments d’énumération est [int](../builtin-types/integral-numeric-types.md). Pour déclarer une énumération d’un autre type intégral, comme [Byte](../builtin-types/integral-numeric-types.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme indiqué dans l’exemple suivant.
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
@@ -64,25 +64,25 @@ L’affectation de valeurs supplémentaires à de nouvelles versions d’énumé
 
 Si d’autres développeurs utilisent votre code, vous devez fournir des instructions sur la manière dont leur code doit réagir si de nouveaux éléments sont ajoutés à des types `enum` .
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans l’exemple suivant, une énumération, `Day`, est déclarée. Deux énumérateurs sont explicitement convertis en entiers et affectés à des variables entières.
 
 [!code-csharp[csrefKeywordsTypes#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#10)]
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans l’exemple suivant, l’option de type de base est utilisée pour déclarer une `enum` dont les membres sont de type `long`. Notez que même si le type sous-jacent de l’énumération est `long`, les membres de l’énumération doivent toujours être explicitement convertis en type `long` en utilisant un cast.
 
 [!code-csharp[csrefKeywordsTypes#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#11)]
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant montre l’utilisation et l’effet de l’attribut <xref:System.FlagsAttribute?displayProperty=nameWithType> sur une déclaration `enum` .
 
 [!code-csharp[csrefKeywordsTypes#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#12)]
 
-## <a name="comments"></a>Commentaires
+## <a name="comments"></a>Comments
 
 Si vous supprimez `Flags`, l’exemple affiche les valeurs suivantes :
 
@@ -96,11 +96,9 @@ Si vous supprimez `Flags`, l’exemple affiche les valeurs suivantes :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Types d’énumération](../../programming-guide/enumeration-types.md)
 - [Mots clés C#](index.md)
 - [Types intégraux](../builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](built-in-types-table.md)
-- [Tableau des conversions numériques implicites](implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)
 - [Conventions de nommage des énumérations](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)

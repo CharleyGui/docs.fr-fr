@@ -1,5 +1,5 @@
 ---
-title: Référence C#
+title: C#faire
 ms.date: 02/14/2017
 helpviewer_keywords:
 - Visual C#, language reference
@@ -8,17 +8,19 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: df56287d161f7760e136eb80aa1a9171966df794
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 4fed33272dbed50100a37aa9fcd30befc46435f9
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275801"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771838"
 ---
-# <a name="c-reference"></a>Référence C#
+# <a name="c-reference"></a>C#faire
+
 Cette section fournit des ressources de référence sur les mots clés, les opérateurs, les caractères spéciaux, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur du langage C#.  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a>Dans cette section
+
  [Mots clés C#](./keywords/index.md)  
  Fournit des liens vers des informations sur la syntaxe et les mots clés C#.  
   
@@ -57,7 +59,7 @@ Les fonctionnalités ayant été implémentées dans les versions C# ultérieure
  [C#8,0 propositions de spécification](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
  C#8,0 est disponible avec .NET Core 3,0. Les fonctionnalités incluent les types de référence Nullable, les critères spéciaux récursifs, les méthodes d’interface par défaut, les flux asynchrones, les plages et les index, les modèles basés sur et les déclarations, l’affectation de fusion Null et les membres d’instance en lecture seule.
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
 
  [Guide C#](../index.md)  
  Fournit un portail vers la documentation Visual C#.  

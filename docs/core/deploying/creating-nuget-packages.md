@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: d36a6ee7d524933577928daa9993fba8ce62f6c7
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 2d876f921d079972e2a638788195aa69a2423c49
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116697"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771946"
 ---
 # <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Guide pratique pour créer un package NuGet avec des outils de l’interface de ligne de commande (CLI) de .NET Core
 
@@ -37,11 +37,10 @@ Il s’agit d’une seule commande à partir de la ligne de commande :
 dotnet pack
 ```
 
-Votre dossier `/bin/Debug` doit maintenant ressembler à ceci :
+Votre dossier */bin/debug* ressemble maintenant à ce qui suit :
 
 ```console
 $ ls bin/Debug
-
 netstandard1.0/
 SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg
@@ -53,11 +52,10 @@ Notez que ceci génère un package qui peut être débogué. Pour générer un p
 dotnet pack --configuration release
 ```
 
-Votre dossier `/bin` a désormais un dossier `release` contenant votre package NuGet avec les fichiers binaires compilés :
+Votre dossier */bin* dispose désormais d’un dossier *Release* contenant votre package NuGet avec les fichiers binaires de mise en version :
 
 ```console
 $ ls bin/release
-
 netstandard1.0/
 SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg

@@ -1,24 +1,24 @@
 ---
-title: 'Tutoriel : Détecter les anomalies dans les ventes de produits'
+title: 'Didacticiel : détecter les anomalies dans les ventes de produits'
 description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
 ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ed75f1ba0b102ba73eb5671667b5731519c12eb0
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: ed4c24fac2348c021982ad593417b33d50347dd1
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929054"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774438"
 ---
-# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Tutoriel : Détecter les anomalies dans les ventes de produits avec ML.NET
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : détecter les anomalies dans les ventes de produits avec ML.NET
 
 Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 >
-> * Chargement des données
+> * Charger les données
 > * Créer une transformation pour la détection d’anomalie de pics
 > * Détecter des anomalies de pics avec la transformation
 > * Créer une transformation pour la détection d’anomalie de points de changement
@@ -26,9 +26,9 @@ Ce tutoriel vous montre comment effectuer les opérations suivantes :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
-* [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+* [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail « développement multiplateforme .net Core » installée.
 
 * [Jeu de données product-sales.csv](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)
 
@@ -40,7 +40,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 1. Créez une **application console .NET Core** appelée « ProductSalesAnomalyDetection ».
 
-2. Créez un répertoire nommé *Data* dans votre projet pour enregistrer les fichiers du jeu de données.
+2. Créez un répertoire nommé *Données* dans votre projet pour y enregistrer les fichiers du jeu de données.
 
 3. Installez le **package NuGet Microsoft.ML** :
 
@@ -113,7 +113,7 @@ Ajoutez une nouvelle classe à votre projet :
 
     La [classe MLContext](xref:Microsoft.ML.MLContext) est un point de départ pour toutes les opérations ML.NET, et l’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets de flux de travail de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
 
-### <a name="load-the-data"></a>Chargement des données
+### <a name="load-the-data"></a>Charger les données
 
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou d’autres sources (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
@@ -133,8 +133,8 @@ La détection d’anomalie est le processus d’identification des valeurs hors 
 
 La détection d’anomalie peut se révéler utile dans de nombreux cas. Par exemple :
 
-Si vous avez une voiture, il est bon de savoir si l’indicateur de niveau d’huile est normal ou si vous avez une fuite.
-Si vous analysez la consommation d’énergie, il est important de connaître l’existence d’une panne.
+Si vous disposez d’une voiture, vous souhaiterez peut-être en savoir : cette jauge d’huile est-elle normale ou est-ce que j’ai une fuite ?
+Si vous surveillez la consommation d’énergie, voulez-vous en savoir : existe-t-il une panne ?
 
 Vous pouvez détecter deux types d’anomalies dans les séries chronologiques :
 
@@ -371,10 +371,10 @@ Félicitations ! Vous venez de générer des modèles de machine learning pour 
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
-> * Chargement des données
+> * Charger les données
 > * Entraîner le modèle pour détecter des pics
 > * Détecter des pics avec le modèle entraîné
 > * Entraîner le modèle pour détecter des points de changement
