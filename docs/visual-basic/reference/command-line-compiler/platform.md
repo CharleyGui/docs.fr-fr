@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /platform compiler option [Visual Basic]
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
-ms.openlocfilehash: 21526484b8423f9b366da64307bc44f8fb061fe9
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 741c36473d80b2581718d969a7037f6c81ff4bf5
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005298"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775584"
 ---
 # <a name="-platform-visual-basic"></a>-plateforme (Visual Basic)
 Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut exécuter le fichier de sortie.  
@@ -83,6 +83,6 @@ vbc -platform:x86 myFile.vb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [/Target (Visual Basic)](target.md)
+- [-cible (Visual Basic)](target.md)
 - [Compilateur de ligne de commande de Visual Basic](index.md)
 - [Exemples de lignes de commande de compilation](sample-compilation-command-lines.md)

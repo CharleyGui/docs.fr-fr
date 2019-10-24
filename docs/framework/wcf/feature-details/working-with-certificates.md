@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: bbe9341b1fb50985c235bd7f34961f1718f46bc0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ac69b38df3439932be7f65d871c64700585538cb
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045224"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774297"
 ---
 # <a name="working-with-certificates"></a>Utilisation des certificats
 
@@ -26,7 +26,7 @@ Les certificats doivent être émis par une autorité de certification, c'est-à
 
 ## <a name="viewing-certificates"></a>Affichage des certificats
 
-Si vous souhaitez utiliser des certificats, vous devrez souvent les afficher et examiner leurs propriétés au préalable. Pour ce faire, il vous suffit d'utiliser l'outil enfichable MMC (Microsoft Management Console). Pour plus d'informations, voir [Procédure : Affichez les certificats avec le composant logiciel](how-to-view-certificates-with-the-mmc-snap-in.md)enfichable MMC.
+Si vous souhaitez utiliser des certificats, vous devrez souvent les afficher et examiner leurs propriétés au préalable. Pour ce faire, il vous suffit d'utiliser l'outil enfichable MMC (Microsoft Management Console). Pour plus d’informations, consultez [Guide pratique pour afficher des certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
 
 ## <a name="certificate-stores"></a>Magasin de certificats
 
@@ -57,13 +57,13 @@ La sélection d'un magasin pour y stocker un certificat dépend de la manière d
 
 ### <a name="accessing-stores"></a>Accès aux magasins
 
-Les magasins sont protégés par des listes de contrôle d’accès à l’instar des dossiers figurant sur un ordinateur. Lorsque vous créez un service hébergé par Internet Information Services (IIS), le processus ASP.NET s’exécute sous le compte ASP.NET. Ce compte doit avoir accès au magasin contenant les certificats utilisés par le service considéré. Chacun des principaux magasins est protégé par une liste d'accès par défaut, mais cette liste peut être modifiée. Si vous créez un rôle distinct pour l'accès à un magasin donné, vous devez accorder à ce rôle des droits d'accès. Pour savoir comment modifier la liste d’accès à l’aide de l’outil WinHttpCertConfig. [exe, consultez Procédure: Créer des certificats temporaires à utiliser pendant](how-to-create-temporary-certificates-for-use-during-development.md)le développement. Pour plus d’informations sur l’utilisation de certificats clients avec IIS, consultez [Guide pratique pour appeler un service web à l’aide d’un certificat client permettant l’authentification dans une application web ASP.NET](https://support.microsoft.com/en-us/help/901183/how-to-call-a-web-service-by-using-a-client-certificate-for-authentica).
+Les magasins sont protégés par des listes de contrôle d’accès à l’instar des dossiers figurant sur un ordinateur. Lorsque vous créez un service hébergé par Internet Information Services (IIS), le processus ASP.NET s’exécute sous le compte ASP.NET. Ce compte doit avoir accès au magasin contenant les certificats utilisés par le service considéré. Chacun des principaux magasins est protégé par une liste d'accès par défaut, mais cette liste peut être modifiée. Si vous créez un rôle distinct pour l'accès à un magasin donné, vous devez accorder à ce rôle des droits d'accès. Pour apprendre à modifier la liste d’accès à l’aide de l’outil WinHttpCertConfig.exe, consultez [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](how-to-create-temporary-certificates-for-use-during-development.md).
 
 ## <a name="chain-trust-and-certificate-authorities"></a>Chaîne d'approbation et autorités de certification
 
 Les certificats sont créés selone une hiérarchie où chaque certificat individuel est lié à l'autorité de certification qui l'a émis. Ce lien renvoie au certificat de l'autorité de certification. Le certificat de l’autorité de certification est ensuite lié à l’autorité de certification qui a émis le certificat de l’autorité de certification d’origine. Ce processus se répète jusqu'à ce que le certificat de l'autorité de certification racine soit atteint. Le certificat de l'autorité de certification racine est approuvé de manière inhérente.
 
-Les certificats numériques sont utilisés pour authentifier une entité en s’appuyant sur cette hiérarchie, également appelée *chaîne de confiance*. Vous pouvez afficher une chaîne de certificat à l’aide du composant logiciel enfichable MMC en double-cliquant sur le certificat de votre choix, puis en cliquant sur l’onglet **Chemin de certificat**. Pour plus d’informations sur l’importation de chaînes de certificats pour une [autorité de certification, consultez Procédure: Spécifiez la chaîne de certificats d’autorité de certification](specify-the-certificate-authority-chain-verify-signatures-wcf.md)utilisée pour vérifier les signatures.
+Les certificats numériques sont utilisés pour authentifier une entité en s’appuyant sur cette hiérarchie, également appelée *chaîne de confiance*. Vous pouvez afficher n’importe quelle chaîne de certificat à l’aide du composant logiciel enfichable MMC en double-cliquant sur un certificat, puis en cliquant sur l’onglet **chemin d’accès du certificat** . Pour plus d’informations sur l’importation de chaînes de certificats pour une autorité de certification, consultez Guide pratique [pour spécifier la chaîne de certificats d’autorité de certification utilisée pour vérifier les signatures](specify-the-certificate-authority-chain-verify-signatures-wcf.md).
 
 > [!NOTE]
 > Le statut d'autorité racine approuvée peut être attribué à tout émetteur. Il suffit pour ce faire de placer le certificat de cet émetteur dans le magasin Autorités de certification racine approuvées.
@@ -72,7 +72,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Classe|Propriété|
+|Class|Property|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -105,7 +105,7 @@ L’applet de commande PowerShell New-SelfSignedCertificate crée des certificat
 
 3. Importez le certificat d'autorité racine dans le magasin Autorités de certification racine approuvées.
 
-4. Pour obtenir des instructions pas à pas, consultez [procédure: Créer des certificats temporaires à utiliser pendant](how-to-create-temporary-certificates-for-use-during-development.md)le développement.
+4. Pour obtenir des instructions pas à pas, consultez [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](how-to-create-temporary-certificates-for-use-during-development.md).
 
 ## <a name="which-certificate-to-use"></a>Quel certificat utiliser ?
 
@@ -113,9 +113,9 @@ Parmi les questions les plus fréquemment posées concernant les certificats fig
 
 ### <a name="service-certificates"></a>Certificats de service
 
-La principale tâche des certificats de service consiste à authentifier le serveur auprès des clients. Quand un client authentifie un serveur, il compare d’abord la valeur du champ **Sujet** à celle de l’URI (Uniform Resource Identifier) utilisé pour contacter le service : les DNS respectifs doivent correspondre. Par exemple, si l’URI du service est `http://www.contoso.com/endpoint/` , le champ **objet** doit également contenir la valeur. `www.contoso.com`
+La principale tâche des certificats de service consiste à authentifier le serveur auprès des clients. Quand un client authentifie un serveur, il compare d’abord la valeur du champ **Sujet** à celle de l’URI (Uniform Resource Identifier) utilisé pour contacter le service : les DNS respectifs doivent correspondre. Par exemple, si l’URI du service est `http://www.contoso.com/endpoint/`, le champ **objet** doit également contenir la valeur `www.contoso.com`.
 
-Remarque : ce champ peut contenir plusieurs valeurs, chacune préfixée par une initialisation spécifiant la valeur. Le plus souvent, l’initialisation est «CN» pour le nom commun, par exemple `CN = www.contoso.com`,. Il est également possible que le champ **Sujet** soit vide. Dans ce cas, le champ **Autre nom de l’objet** peut contenir la valeur **Nom DNS**.
+Remarque : ce champ peut contenir plusieurs valeurs, chacune préfixée par une initialisation spécifiant la valeur. Le plus souvent, l’initialisation est « CN » pour le nom commun, par exemple, `CN = www.contoso.com`. Il est également possible que le champ **Sujet** soit vide. Dans ce cas, le champ **Autre nom de l’objet** peut contenir la valeur **Nom DNS**.
 
 Notez également que le champ **Rôles prévus** du certificat doit contenir une valeur appropriée, par exemple « Authentification du serveur » ou « Authentification du client ».
 
@@ -141,7 +141,7 @@ Vous pouvez également définir le mode dans la configuration à l’aide de l�
 
 Dans WCF, vous devez souvent spécifier un certificat ou un ensemble de certificats qu’un service ou un client doit utiliser pour authentifier, chiffrer ou signer numériquement un message. Pour ce faire, il vous suffit de rédiger un programme à l'aide de la méthode `SetCertificate` des diverses classes représentant les certificats X.509. Les classes suivantes utilisent la méthode `SetCertificate` pour spécifier un certificat.
 
-|Classe|Méthode|
+|Class|Méthode|
 |-----------|------------|
 |<xref:System.ServiceModel.Security.PeerCredential>|<xref:System.ServiceModel.Security.PeerCredential.SetCertificate%2A>|
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>|<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>|

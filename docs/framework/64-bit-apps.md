@@ -8,17 +8,17 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d1d7e6e098b6ce497dfe74f0afe2322b33a787c6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8aaa74eee5372dd7ba1ed145632f718d9ecce8ed
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053254"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773988"
 ---
 # <a name="64-bit-applications"></a>Applications 64 bits
 Lorsque vous compilez une application, vous pouvez spécifier si elle doit être exécutée sur un système d'exploitation Windows 64 bits comme une application native ou sous WOW64 (Windows 32 bits sur Windows 64 bits). WOW64 est un environnement de compatibilité qui permet à une application 32 bits de s'exécuter sur un système 64 bits. WOW64 est inclus dans toutes les versions 64 bits du système d'exploitation Windows.  
   
-## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Comparaison de l'exécution d'applications 32 bits et d'applications 64 bits sur Windows  
+## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Exécution des applications 32 bits Vs 64 bits sur Windows  
  Toutes les applications basées sur les versions 1.0 ou 1.1 de .NET Framework sont traitées comme des applications 32 bits sous un système d'exploitation 64 bits et toujours exécutées sous WOW64 et le Common Language Runtime (CLR) 32 bits. Les applications 32 bits basées sur .NET Framework 4 ou versions ultérieures s’exécutent également sous WOW64 sur les systèmes 64 bits.  
   
  Visual Studio installe la version 32 bits du CLR sur un ordinateur x86, ainsi que la version 32 bits et la version 64 bits appropriée du CLR sur un ordinateur Windows 64 bits. (Dans la mesure où Visual Studio est une application 32 bits, lorsque celle-ci est installée sur un système 64 bits, elle s'exécute sous WOW64.)  
@@ -56,9 +56,9 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
   
 |Compilateur|Option du compilateur|  
 |--------------|---------------------|  
-|Visual Basic|[/platform (Visual Basic)](../visual-basic/reference/command-line-compiler/platform.md)|  
-|Visual C#|[/platform (Options du compilateur C#)](../csharp/language-reference/compiler-options/platform-compiler-option.md)|  
-|Visual C++|Vous pouvez créer des applications MSIL (Microsoft Intermediate Language) indépendantes des plateformes en utilisant **/clr:safe**. Pour plus d’informations, consultez l’article [/clr (Compilation pour le Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ inclut un compilateur distinct pour chaque système d'exploitation 64 bits. Pour plus d'informations sur l'utilisation de Visual C++ pour créer des applications natives qui s'exécutent sur un système d'exploitation Windows 64 bits, consultez [Programmation 64 bits](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
+|Visual Basic|[-plateforme (Visual Basic)](../visual-basic/reference/command-line-compiler/platform.md)|  
+|Visual C#|[-platform (Options du compilateur C#)](../csharp/language-reference/compiler-options/platform-compiler-option.md)|  
+|Visual C++|Vous pouvez créer des applications MSIL (Microsoft Intermediate Language) indépendantes des plateformes en utilisant **/clr:safe**. Pour plus d’informations, consultez [-clr (compilation pour le Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ inclut un compilateur distinct pour chaque système d'exploitation 64 bits. Pour plus d'informations sur l'utilisation de Visual C++ pour créer des applications natives qui s'exécutent sur un système d'exploitation Windows 64 bits, consultez [Programmation 64 bits](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
   
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Détermination de l'état d'un fichier .exe ou .dll  
  Pour déterminer si un fichier .exe ou .dll est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez [CorFlags.exe (Outil de conversion CorFlags)](./tools/corflags-exe-corflags-conversion-tool.md) sans options. Vous pouvez également utiliser CorFlags.exe pour modifier l'état de plateforme d'un fichier .exe ou .dll. L'en-tête CLR (ou en-tête COM+ Runtime) d'un assembly Visual Studio possède un numéro de version de runtime majeur ayant 2 pour valeur et un numéro de version de runtime mineur ayant 5 pour valeur. Les applications dont la version de runtime mineure est définie à 0 sont traitées comme des applications héritées et sont toujours exécutées sous WOW64.  

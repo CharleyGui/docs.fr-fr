@@ -2,12 +2,12 @@
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre l’injection de dépendances et les modèles de médiateur, et leurs détails d’implémentation dans la couche Application de l’API web.
 ms.date: 10/08/2018
-ms.openlocfilehash: df304ffbe2406323e3dcf42b9eb989b02a62b28b
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 38c0bdb32666ab727c573d466d3e30d739bdd3b3
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249744"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771118"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -17,7 +17,7 @@ Comme mentionné précédemment, la couche Application peut être implémentée 
 
 Par exemple, le code de la couche Application du microservice Ordering est directement implémenté dans le cadre du projet **Ordering.API** (un projet d’API web ASP.NET Core), comme le montre la figure 7-23.
 
-![Vue de l’Explorateur de solutions du microservice Ordering.API, montrant les sous-dossiers sous le dossier Application : Behaviors, Commands, DomainEventHandlers, IntegrationEvents, Models, Queries et Validations.](./media/image20.png)
+![La vue Explorateur de solutions du microservice Ordering.API, montrant les sous-dossiers sous le dossier Application : Comportements, Commandes, DomainEventHandlers, IntegrationEvents, Modèles, Requêtes et Validations.](./media/image20.png)
 
 **Figure 7-23**. Couche Application dans le projet d’API web ASP.NET Core Ordering.API
 
@@ -109,7 +109,7 @@ Quand vous utilisez l’injection de dépendances dans .NET Core, vous pouvez av
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Matthew King. Registering services with Scrutor** \
+- **Matthew King. Inscription de services avec scrutor**  \
   <https://www.mking.net/blog/registering-services-with-scrutor>
 
 - **Kristian Hellang. Scrutor.** Dépôt GitHub. \
@@ -181,7 +181,7 @@ Le modèle Commande est intrinsèquement lié au modèle CQRS présenté précé
 
 Comme le montre la figure 7-24, le modèle se base sur l’acceptation des commandes du côté client, leur traitement en fonction des règles du modèle de domaine et enfin, sur la persistance des états avec les transactions.
 
-![Vue globale du côté des écritures dans CQRS : L’application d’interface utilisateur envoie une commande par le biais de l’API qui arrive à un CommandHandler, lequel dépend du modèle Domaine et de l’infrastructure pour mettre à jour la base de données.](./media/image21.png)
+![L’affichage de haut niveau des écritures côté CQRS : application d’interface utilisateur envoie une commande via l’API qui obtient un CommandHandler, qui dépend du modèle de domaine et de l’infrastructure pour mettre à jour la base de données.](./media/image21.png)
 
 **Figure 7-24**. Vue générale des commandes ou du « côté transactionnel » d’un modèle CQRS
 
@@ -203,7 +203,7 @@ Vous envoyez une commande à un seul récepteur ; vous ne publiez pas une comma
 
 Une commande est implémentée avec une classe qui contient des champs ou collections de données contenant toutes les informations nécessaires à son exécution. Une commande est un type spécial d’objet de transfert de données, particulièrement utilisé pour demander des modifications ou des transactions. La commande elle-même se base sur les informations exactes nécessaires à son traitement et rien de plus.
 
-L’exemple suivant illustre la classe simplifiée `CreateOrderCommand`. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
+L’exemple suivant illustre la classe `CreateOrderCommand` simplifiée. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
 
 ```csharp
 // DDD and CQRS patterns comment
@@ -335,7 +335,7 @@ L’important ici est que, quand une commande est en cours de traitement, toute 
 
 Lorsque les gestionnaires de commandes deviennent complexes, avec trop de logique, un « code smell » peut se produire. Passez-les en revue et si vous trouvez la logique de domaine, refactorisez le code pour déplacer ce comportement de domaine vers les méthodes des objets de domaine (entité racine et enfant de l’agrégat).
 
-À titre d’exemple de classe de gestionnaire de commandes, le code suivant montre la même classe `CreateOrderCommandHandler` que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
+En guise d’exemple de classe de gestionnaire de commandes, le code suivant montre la même `CreateOrderCommandHandler` classe que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -394,7 +394,7 @@ Il s’agit des étapes supplémentaires que doit suivre un gestionnaire de comm
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Mark Seemann. At the Boundaries, Applications are Not Object-Oriented** \
+- **Mark Seemann. Au niveau des limites, les applications ne sont pas orientées objet**  \
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
 
 - **Commands and events** \
@@ -403,10 +403,10 @@ Il s’agit des étapes supplémentaires que doit suivre un gestionnaire de comm
 - **What does a command handler do?** \
   <http://cqrs.nu/Faq/command-handlers>
 
-- **Jimmy Bogard. Domain Command Patterns – Handlers** \
+- **Jimmy bogard. Modèles de commande de domaine : gestionnaires**  \
   <https://jimmybogard.com/domain-command-patterns-handlers/>
 
-- **Jimmy Bogard. Domain Command Patterns – Validation** \
+- **Jimmy bogard. Modèles de commande de domaine-**  \ de validation
   <https://jimmybogard.com/domain-command-patterns-validation/>
 
 ## <a name="the-command-process-pipeline-how-to-trigger-a-command-handler"></a>Pipeline du processus de commande : comment déclencher un gestionnaire de commandes
@@ -471,7 +471,7 @@ L’utilisation du modèle Médiateur vous aide à réduire le couplage et à is
 
 Jimmy Bogard a précisé une autre bonne raison d’utiliser le modèle Médiateur quand il a révisé ce guide :
 
-> Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande entrante, réponse sortante. Nous avons trouvé cet aspect très précieux pour générer des tests au comportement cohérent.
+> Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande, réponse. Nous avons constaté que cet aspect est très utile pour créer des tests qui se comportent de manière cohérente.
 
 Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez en fait l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements et d’autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
 

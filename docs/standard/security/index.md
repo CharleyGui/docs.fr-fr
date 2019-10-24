@@ -11,38 +11,32 @@ helpviewer_keywords:
 ms.assetid: 9a9621d7-8883-4a4f-a874-65e8e09e20a6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0e60f463d5a691cb84a30c169e471aa905b2db17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c3c7eb20bb3368205dab4c7e03b6b80d09a2121
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860553"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775277"
 ---
 # <a name="security-in-net"></a>Sécurité dans .NET
-Le common language runtime et le .NET fournissent de nombreux services qui permettent aux développeurs d’écrire du code sécurisé et activer le système aux administrateurs de personnaliser les autorisations accordées au code afin qu’il puisse accéder facilement et les classes de ressources protégées. En outre, le runtime et le .NET fournissent des classes et des services qui facilitent l’utilisation du chiffrement et de sécurité en fonction du rôle.  
-  
-## <a name="in-this-section"></a>Dans cette section  
 
- [Concepts fondamentaux sur la sécurité](../../../docs/standard/security/key-security-concepts.md)  
- Offre une vue d’ensemble des fonctionnalités de sécurité du Common Language Runtime. Cette section s'adresse aux développeurs et aux administrateurs système.  
-  
- [Sécurité basée sur les rôles](../../../docs/standard/security/role-based-security.md)  
- Explique comment interagir avec la sécurité basée sur les rôles dans votre code. Cette section s'adresse aux développeurs.  
-  
- [Modèle de chiffrement](../../../docs/standard/security/cryptography-model.md)  
- Fournit une vue d’ensemble des services de chiffrement fournis par .NET. Cette section s'adresse aux développeurs.  
-  
- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)  
- Décrit certaines des meilleures pratiques pour la création d’applications .NET fiables. Cette section s'adresse aux développeurs.  
-  
- [Instructions de codage sécurisé pour le code non managé](../../../docs/framework/security/secure-coding-guidelines-for-unmanaged-code.md)  
- Aborde certaines meilleures pratiques, ainsi que les problèmes de sécurité rencontrés pendant l'appel de code non managé.  
-  
- [Windows Identity Foundation](../../../docs/framework/security/index.md)  
- Explique comment vous pouvez implémenter l'identité basée sur des demandes dans vos applications.  
+Les common language runtime et .NET fournissent de nombreux services et classes utiles qui permettent aux développeurs d’écrire facilement du code sécurisé et permettent aux administrateurs système de personnaliser les autorisations accordées au code afin qu’il puisse accéder aux ressources protégées. En outre, le runtime et le .NET fournissent des classes et des services utiles qui facilitent l’utilisation du chiffrement et de la sécurité basée sur les rôles.
 
-[Modifications de sécurité](../../../docs/framework/security/security-changes.md) décrit les modifications importantes apportées au système de sécurité .NET Framework.
+## <a name="in-this-section"></a>Dans cette section
 
-## <a name="related-sections"></a>Rubriques connexes  
- [Guide de développement](../../../docs/framework/development-guide.md)  
- Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.
+- [Concepts fondamentaux sur la sécurité](key-security-concepts.md)  
+Offre une vue d’ensemble des fonctionnalités de sécurité du Common Language Runtime. Cette section s'adresse aux développeurs et aux administrateurs système.
+
+- [Sécurité basée sur les rôles](role-based-security.md)  
+Explique comment interagir avec la sécurité basée sur les rôles dans votre code. Cette section s'adresse aux développeurs.
+
+- [Modèle de chiffrement](cryptography-model.md)  
+Fournit une vue d’ensemble des services de chiffrement fournis par .NET. Cette section s'adresse aux développeurs.
+
+- [Instructions de codage sécurisé](secure-coding-guidelines.md)  
+Décrit quelques-unes des meilleures pratiques pour la création d’applications .NET fiables. Cette section s'adresse aux développeurs.
+
+## <a name="related-sections"></a>Rubriques connexes
+
+[Guide de développement](../../framework/development-guide.md)  
+Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.

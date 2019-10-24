@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27d1a8cc80db9e17000880c006ac1d7c1bd12fec
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 5c0b3c9d13267abe50ee187bce0c56485be29613
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631493"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775280"
 ---
 # <a name="applying-interop-attributes"></a>Application d'attributs d'interopérabilité
 L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégories d’attributs spécifiques à l’interopérabilité : ceux que vous appliquez au moment du design, ceux que les interfaces API et les outils de COM Interop appliquent au cours du processus de conversion et ceux que vous appliquez ou que COM Interop applique.  
@@ -40,7 +40,8 @@ L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégori
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|Identifie les interfaces qui sont des sources d’événements pour la classe.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|Indique qu’une méthode doit être appelée quand l’inscription de l’assembly dans COM est annulée, de sorte que le code écrit par l’utilisateur puisse s’exécuter au cours du processus.|  
 |<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Rend les types invisibles à COM quand l’attribut a la valeur **false**. Cet attribut peut être appliqué à un type individuel ou à l’intégralité de l’assembly pour contrôler la visibilité COM. Par défaut, tous les types publics managés sont visibles ; l’attribut n’est pas nécessaire pour les rendre visibles.|  
-|<xref:System.Runtime.InteropServices.DispIdAttribute>|Spécifie l’identificateur de répartition COM (DISPID) d’une méthode ou d’un champ. Cet attribut contient le DISPID de la méthode, du champ ou de la propriété qu’il décrit.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
+|<xref:System.Runtime.InteropServices.DispIdAttribute>|Spécifie l’identificateur de répartition COM (DISPID) d’une méthode ou d’un champ. Cet attribut contient le DISPID de la méthode, du champ ou de la propriété qu’il décrit.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.| 
+|<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|Indique l’interface par défaut pour une classe COM implémentée dans .NET.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|
 |<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Indique la position physique de chaque champ dans une classe en cas d’utilisation avec **StructLayoutAttribute** et d’affectation d’Explicit à **LayoutKind**.|  
 |<xref:System.Runtime.InteropServices.GuidAttribute>|Spécifie l’identificateur global unique (GUID) d’une classe, d’une interface ou d’une bibliothèque de types toute entière. La chaîne doit être passée à l’attribut sous la forme d’un argument de constructeur acceptable pour le type **System.Guid**.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute>|Indique l’implémentation d’interface **IDispatch** utilisée par le common language runtime lors de l’exposition d’interfaces Dual et de dispinterfaces à COM.|  

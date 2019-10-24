@@ -2,12 +2,12 @@
 title: Processus de développement des applications basées sur Docker
 description: Obtenez une vue d’ensemble détaillée des options pour le développement d’applications basées sur Docker. Utilisation de votre choix de Visual Studio pour Windows, Visual Studio pour Mac ou Visual Studio Code pour la prise en charge multiplateforme (Windows, Mac et Linux).
 ms.date: 09/27/2018
-ms.openlocfilehash: a32b27f3d98ed7ebf63b637ec0c979c22ee8e1e8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 6299d67299948dce1081a211b350e657b2c1b951
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296133"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770138"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Processus de développement des applications basées sur Docker
 
@@ -19,7 +19,7 @@ ms.locfileid: "70296133"
 
 Que vous préfériez un IDE complet et puissant ou un éditeur léger et agile, Microsoft propose des outils que vous pouvez utiliser pour développer des applications Docker.
 
-**Visual Studio (pour Windows)** . Lorsque vous développez des applications basées sur Docker avec Visual Studio, il est recommandé d’utiliser Visual Studio 2017 version 15.7 ou ultérieure, qui est fourni avec les outils intégrés pour Docker. Les outils pour Docker vous permettent de développer, exécuter et valider vos applications directement dans l’environnement Docker cible. Vous pouvez appuyer sur F5 pour exécuter et déboguer votre application (conteneur unique ou plusieurs conteneurs) directement dans un hôte Docker, ou appuyer sur Ctrl+F5 pour modifier et actualiser votre application sans avoir à régénérer le conteneur. Ceci est le meilleur choix pour le développement d’applications basées sur Docker.
+**Visual Studio (pour Windows)** . Lors du développement d’applications basées sur un ancrage avec Visual Studio, il est recommandé d’utiliser Visual Studio 2017 version 15,7 ou ultérieure, qui est fourni avec les outils pour l’outil d’intégration intégré. Les outils pour Docker vous permettent de développer, exécuter et valider vos applications directement dans l’environnement Docker cible. Vous pouvez appuyer sur F5 pour exécuter et déboguer votre application (conteneur unique ou plusieurs conteneurs) directement dans un hôte Docker, ou appuyer sur Ctrl+F5 pour modifier et actualiser votre application sans avoir à régénérer le conteneur. Ceci est le meilleur choix pour le développement d’applications basées sur Docker.
 
 **Visual Studio pour Mac.** C’est un IDE (évolution de Xamarin Studio) qui s’exécute dans macOS et qui prend en charge Docker depuis la mi-année 2017. Ce choix est recommandé pour les développeurs qui travaillent sur des ordinateurs Mac et qui veulent utiliser un IDE puissant.
 
@@ -37,7 +37,7 @@ En installant [Docker Desktop Community Edition (CE)](https://hub.docker.com/sea
 
 - **Docker Desktop pour Windows Community Edition (CE)**  \
   [https://hub.docker.com/editions/community/docker-ce-desktop-windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
-  
+
 - **Docker Desktop pour Mac Community Edition (CE)**  \
   [https://hub.docker.com/editions/community/docker-ce-desktop-mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 

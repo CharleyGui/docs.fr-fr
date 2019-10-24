@@ -11,12 +11,12 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
-ms.openlocfilehash: afe2181e031a651767e6a6eec0397300b03fce50
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 8b7dfcfa394ed2c45adec9661ee1ea5823435223
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582569"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775440"
 ---
 # <a name="option-strict-statement"></a>Option Strict Statement
 Restreint les conversions de types de données implicites aux conversions étendues, interdit la liaison tardive et interdit le typage implicite qui produit un type de `Object`.  
@@ -104,7 +104,7 @@ Option Strict { On | Off }
 ## <a name="when-an-option-strict-statement-is-not-present"></a>Quand une instruction option strict n’est pas présente  
  Si le code source ne contient pas d’instruction `Option Strict`, le paramètre **option strict** sur la [page compiler, concepteur de projets (Visual Basic),](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) est utilisé. La **page de compilation** contient des paramètres qui offrent un contrôle supplémentaire sur les conditions qui génèrent une erreur.  
   
- Si vous utilisez le compilateur de ligne de commande, vous pouvez utiliser l’option du compilateur [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) pour spécifier un paramètre pour `Option Strict`.  
+ Si vous utilisez le compilateur de ligne de commande, vous pouvez utiliser l’option [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) du compilateur pour spécifier un paramètre pour `Option Strict`.  
   
 ### <a name="to-set-option-strict-in-the-ide"></a>Pour définir option strict dans l’IDE  
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
@@ -132,7 +132,7 @@ Option Strict { On | Off }
  Pour définir `Option Strict` dans cette boîte de dialogue, dans le menu **Outils** , cliquez sur **options**. Dans la boîte de dialogue **Options**, développez **Projets et solutions**, puis cliquez sur **Valeurs par défaut VB**. Le paramètre par défaut initial dans les **valeurs par défaut VB** est `Off`.  
   
 ### <a name="to-set-option-strict-on-the-command-line"></a>Pour définir option strict sur la ligne de commande  
- Incluez l’option de compilateur [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) dans la commande **vbc** .  
+ Incluez l’option [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md) du compilateur dans la commande **vbc** .  
   
 ## <a name="example"></a>Exemple  
  Les exemples suivants illustrent des erreurs de compilation provoquées par des conversions de types implicites qui sont des conversions restrictives. Cette catégorie d’erreurs correspond à la condition de **conversion implicite** sur la **page compiler**.  
@@ -162,5 +162,5 @@ Option Strict { On | Off }
 - [Expressions incorporées en XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
 - [Conversion simplifiée des délégués](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
 - [Liaison tardive dans les solutions Office](/visualstudio/vsto/late-binding-in-office-solutions)
-- [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [Valeurs par défaut VB, Projets, boîte de dialogue Options](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

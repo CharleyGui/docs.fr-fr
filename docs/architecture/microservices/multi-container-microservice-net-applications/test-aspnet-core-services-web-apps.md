@@ -2,12 +2,12 @@
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
 ms.date: 10/02/2018
-ms.openlocfilehash: 042f7a6171a88025d3d4a8e37c4deceb416e5711
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 278d12b8215195351673a41149db5af6fcecddfb
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291285"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72772017"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -101,10 +101,10 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Steve Smith. Test des contrôleurs** (ASP.NET Core) \
+- **Steve Smith. Contrôleurs de test** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
 
-- **Steve Smith. Tests d’intégration**  (ASP.NET Core) \
+- **Steve Smith. Test d’intégration** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/test/integration-tests](/aspnet/core/test/integration-tests)
 
 - **Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test** \
@@ -138,9 +138,9 @@ Les tests de l’application de référence (eShopOnContainers) ont été récem
 
 2. **Tests fonctionnels/d’intégration de microservices** : avec les cas de test impliquant l’infrastructure de chaque microservice, mais pris isolément des autres et contenus dans les projets **{NomMicroservice}.FunctionalTests**.
 
-3. **Tests fonctionnels/d’intégration d’applications** : se concentrent sur l’intégration de microservices, avec des cas de test qui emploient plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
+3. Les **tests fonctionnels et d’intégration des applications**, qui se concentrent sur l’intégration des microservices, avec des cas de test qui exercent plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
 
-4. **Tests de charge** : se concentrent sur les temps de réponse pour chaque microservice. Ces tests se trouvent dans le projet **LoadTest** et nécessite Visual Studio 2017 Enterprise Edition.
+4. Les **tests de charge**, qui se concentrent sur les temps de réponse pour chaque microservice. Ces tests se trouvent dans le projet **LoadTest** et nécessite Visual Studio 2017 Enterprise Edition.
 
 Les tests unitaires et les tests d’intégration par microservice se trouvent dans le dossier de test de chaque microservice, et les tests d’application et de charge sont contenus sous le dossier de test du dossier de solution, comme l’illustre la figure 6-25.
 

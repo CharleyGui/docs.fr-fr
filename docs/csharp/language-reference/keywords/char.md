@@ -1,54 +1,48 @@
 ---
-title: char, mot clé - Référence C#
+title: Char, mot C# clé-référence
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 10/22/2019
 f1_keywords:
 - char
 - char_CSharpKeyword
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 63f8871926e8c279678c59a2256bef46b2ff514e
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 1b9f8d1bb205a6cbfe521830a11bd8878ccde991
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698774"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771797"
 ---
-# <a name="char-c-reference"></a>char (référence C#)
+# <a name="char-c-reference"></a>Char (C# référence)
 
-Le mot clé `char` permet de déclarer une instance de la structure <xref:System.Char?displayProperty=nameWithType> utilisée par le .NET Framework pour représenter un caractère Unicode. La valeur d’un objet `Char` est une valeur numérique 16 bits (ordinale).
+Le mot clé `char` type est un alias pour le type de structure .NET <xref:System.Char?displayProperty=nameWithType> qui représente un caractère Unicode UTF-16 :
 
- Les caractères Unicode sont utilisés pour représenter la plupart des langues écrites dans le monde.
-
-|Type|Plage|Size|Type .NET|
+|Tapez|Range|Size|Type .NET|
 |----------|-----------|----------|-------------------------|
-|`char`|U+0000 à U+FFFF|Caractère Unicode 16 bits|<xref:System.Char?displayProperty=nameWithType>|
+|`char`|U+0000 à U+FFFF|16 bits|<xref:System.Char?displayProperty=nameWithType>|
 
 ## <a name="literals"></a>Littéraux
 
-Les constantes de type `char` peuvent être représentées sous la forme de littéraux de caractères, d’une séquence d’échappement hexadécimale ou d’une représentation Unicode. Vous pouvez également effectuer un cast des codes de caractères de type intégral. Dans l’exemple suivant, les quatre éléments d’un tableau de `char` sont initialisés avec le même caractère `X` :
+Les constantes de type `char` peuvent être représentées sous la forme de littéraux de caractères, d’une séquence d’échappement hexadécimale ou d’une représentation Unicode. Vous pouvez également convertir un code de caractère intégral en valeur `char` correspondante. Dans l’exemple suivant, les quatre éléments d’un tableau de `char` sont initialisés avec le même `X` de caractères :
 
 [!code-csharp[csrefKeywordsTypes#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#19)]
 
 ## <a name="conversions"></a>Conversions
 
-Vous pouvez convertir implicitement un `char` en [ushort](../builtin-types/integral-numeric-types.md), [int](../builtin-types/integral-numeric-types.md), [uint](../builtin-types/integral-numeric-types.md), [double](../builtin-types/floating-point-numeric-types.md) ou [decimal](../builtin-types/floating-point-numeric-types.md). Par contre, vous ne pouvez pas convertir implicitement d’autres types en type `char`.
+Le type de `char` est implicitement convertible en types [intégraux](../builtin-types/integral-numeric-types.md) suivants : `ushort`, `int`, `uint`, `long` et `ulong`. Il est également implicitement convertible en types numériques à [virgule flottante](../builtin-types/floating-point-numeric-types.md) intégrés : `float`, `double` et `decimal`. Elle est explicitement convertible en `sbyte`, `byte` et `short` types intégraux.
 
-Le type <xref:System.Char?displayProperty=nameWithType> fournit plusieurs méthodes statiques à utiliser avec des valeurs `char`.
+Il n’existe pas de conversion implicite d’autres types en type `char`. Toutefois, tout type numérique [intégral](../builtin-types/integral-numeric-types.md) ou à [virgule flottante](../builtin-types/floating-point-numeric-types.md) est explicitement convertible en `char`.
 
-## <a name="c-language-specification"></a>spécification du langage C#  
+## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez [Types intégraux](~/_csharplang/spec/types.md#integral-types) dans la [spécification du langage C#](../language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez la section [types intégraux](~/_csharplang/spec/types.md#integral-types) de la [ C# spécification du langage](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- <xref:System.Char>
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](./index.md)
-- [Types intégraux](../builtin-types/integral-numeric-types.md)
-- [Tableau des types intégrés](./built-in-types-table.md)
-- [Tableau des conversions numériques implicites](./implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](./explicit-numeric-conversions-table.md)
+- [Tableaux des types intégrés](./built-in-types-table.md)
 - [Chaînes](../../programming-guide/strings/index.md)
+- <xref:System.Char?displayProperty=nameWithType>

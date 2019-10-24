@@ -2,12 +2,12 @@
 title: Présentation de Docker
 description: Approfondissez un peu votre connaissance de Docker ; une analogie simple peut vous y aider.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7747c4985af27be0a073fad2f22622f697f4ce27
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 7fd3c599afda2d59e0d56756bd61495f2d0370a0
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673426"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72770718"
 ---
 # <a name="what-is-docker"></a>Présentation de Docker
 
@@ -19,7 +19,7 @@ ms.locfileid: "68673426"
 
 Les conteneurs d’images Docker peuvent s’exécuter en mode natif sur Linux et Windows. Toutefois, les images Windows peuvent s’exécuter uniquement sur des hôtes Windows et les images Linux peuvent s’exécuter sur des hôtes Linux et des hôtes Windows (à l’aide d’une machine virtuelle Linux Hyper-V, jusqu’à présent), où le terme « hôte » désigne un serveur ou une machine virtuelle.
 
-Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux et peuvent créer des images seulement pour les conteneurs Linux. (Les développeurs qui travaillent sur Mac peuvent modifier le code ou exécuter l’interface de ligne de commande (CLI) Docker à partir de macOS, mais au moment de la rédaction de ce document, les conteneurs ne s’exécutent pas directement sur macOS.) Les développeurs qui travaillent sur Windows peuvent créer des images pour des conteneurs Windows ou Linux.
+Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux et peuvent créer des images seulement pour les conteneurs Linux. (Les développeurs qui travaillent sur le Mac peuvent modifier le code ou exécuter l’interface de ligne de commande (CLI) de l’Ancreur à partir de macOS, mais au cours de cet article, les conteneurs ne s’exécutent pas directement sur macOS). Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
 
 Pour héberger des conteneurs dans un environnement de développement et fournir des outils de développement supplémentaires, Docker fournit [Docker Community Edition (CE)](https://www.docker.com/community-edition) pour Windows ou macOS. Ces produits installent la machine virtuelle nécessaire (l’hôte Docker) pour héberger les conteneurs. Docker fournit aussi [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), conçu pour le développement en entreprise et utilisé par les équipes informatiques qui génèrent, livrent et exécutent des applications métier stratégiques volumineuses en production.
 
@@ -35,7 +35,7 @@ Les images de ces deux types de conteneurs sont créées et fonctionnent exactem
 
 La figure 1-3 compare les machines virtuelles et les conteneurs Docker.
 
-![Pour les machines virtuelles, il existe trois couches de base dans le serveur hôte, de bas en haut : infrastructure, système d’exploitation hôte et un hyperviseur, et par-dessus chaque machine virtuelle a son propre système d’exploitation et toutes les bibliothèques nécessaires. Par contre, pour Docker, le serveur hôte comprend uniquement l’infrastructure et le système d’exploitation, et par-dessus, le moteur de conteneur, qui conserve le conteneur isolé tout en partageant les services de système d’exploitation de base.](./media/image3.png)
+![Pour les machines virtuelles, il existe trois couches de base dans le serveur hôte, de bas en haut : infrastructure, système d’exploitation hôte et un hyperviseur, et par-dessus chaque machine virtuelle a son propre système d’exploitation et toutes les bibliothèques nécessaires. D’un autre côté, pour l’arrimeur, le serveur hôte n’a que l’infrastructure et le système d’exploitation et, en plus de cela, le moteur de conteneur, qui garde le conteneur isolé mais partage les services du système d’exploitation de base.](./media/image3.png)
 
 **Figure 1-3**. Comparaison entre les machines virtuelles traditionnelles et les conteneurs Docker
 

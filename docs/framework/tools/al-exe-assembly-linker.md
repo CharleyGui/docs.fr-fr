@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e46934d9156bf3adebc010fb99ade10a1a35e09
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 746abee0861b32900e757f030ab6165f297b83ed
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523808"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774210"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (Assembly Linker)
 
 Assembly Linker génère un fichier doté d'un manifeste d'assembly provenant d'un ou de plusieurs fichiers qui sont soit des modules, soit des fichiers de ressources. Un module est un fichier IL (Intermediate Language) sans manifeste d'assembly.
 
 > [!NOTE]
-> Dans Visual Studio 2008, les deux compilateurs C# et Visual Basic incorporent automatiquement un manifeste Win32 dans l'assembly. Pour plus d’informations, consultez [/win32manifest (Options du compilateur C#)](../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).
+> Dans Visual Studio 2008, les deux compilateurs C# et Visual Basic incorporent automatiquement un manifeste Win32 dans l'assembly. Pour plus d’informations, consultez [-win32manifestC# (options du compilateur)](../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 

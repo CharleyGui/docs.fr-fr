@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: c18a06971887049a443f0bd1af7c77610a787a27
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
-ms.translationtype: HT
+ms.openlocfilehash: 0a251e8d04f31a736ee6acbf4b8e913cfb8ca6df
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609953"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72771718"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
@@ -92,7 +92,7 @@ Les positions de bits vides d’ordre supérieur sont définies en fonction du t
 
 Pour plus d’informations sur la façon dont l’opérande de partie droite de l’opérateur `>>` définit la valeur de décalage, consultez la section [Valeur de décalage des opérateurs de décalage](#shift-count-of-the-shift-operators).
 
-## <a name="logical-and-operator-"></a>Opérateur ET logique &amp;
+## <a name="logical-and-operator-"></a> Opérateur AND logique &amp;
 
 L’opérateur `&` calcule le AND logique au niveau du bit de ses opérandes :
 
@@ -140,7 +140,7 @@ En raison des [promotions numériques](~/_csharplang/spec/expressions.md#numeric
 
 [!code-csharp-interactive[compound assignment with cast](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
 
-## <a name="operator-precedence"></a>Précédence des opérateurs
+## <a name="operator-precedence"></a>Priorité des opérateurs
 
 La liste suivante présente les opérateurs au niveau du bit et les opérateurs de décalage par ordre de précédence, de la plus élevée à la plus basse :
 
@@ -158,7 +158,7 @@ Pour obtenir la liste complète des opérateurs C# classés par niveau de priori
 
 ## <a name="shift-count-of-the-shift-operators"></a>Valeur de décalage des opérateurs de décalage
 
-Pour les opérateurs de décalage `<<` et `>>`, l’opérande de partie droite doit être de type [int](../builtin-types/integral-numeric-types.md) ou d’un type pour lequel une [conversion numérique implicite prédéfinie](../keywords/implicit-numeric-conversions-table.md) sur `int`.
+Pour les opérateurs de décalage `<<` et `>>`, l’opérande de partie droite doit être de type [int](../builtin-types/integral-numeric-types.md) ou d’un type pour lequel une [conversion numérique implicite prédéfinie](../builtin-types/numeric-conversions.md#implicit-numeric-conversions) sur `int`.
 
 Pour les expressions `x << count` et `x >> count`, la valeur réelle du décalage varie selon le type de `x` :
 
