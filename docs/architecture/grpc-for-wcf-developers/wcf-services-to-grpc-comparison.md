@@ -3,29 +3,27 @@ title: Comparaison de WCF à gRPC-gRPC pour les développeurs WCF
 description: Comparaison des frameworks WCF et gRPC pour la création d’applications distribuées.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: c763048d09e7ed5ca0a3d5240f6b3cf5262f897c
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 5ab1380d4ded52abff08c35c430adf2f3ed7c58b
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184042"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846066"
 ---
-# <a name="comparing-wcf-to-grpc"></a><span data-ttu-id="0f0f0-103">Comparaison de WCF et de gRPC</span><span class="sxs-lookup"><span data-stu-id="0f0f0-103">Comparing WCF to gRPC</span></span>
+# <a name="comparing-wcf-to-grpc"></a><span data-ttu-id="838aa-103">Comparaison de WCF et de gRPC</span><span class="sxs-lookup"><span data-stu-id="838aa-103">Comparing WCF to gRPC</span></span>
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+<span data-ttu-id="838aa-104">Le chapitre précédent doit vous avoir donné un aperçu de Protobuf et de la façon dont gRPC gère les messages.</span><span class="sxs-lookup"><span data-stu-id="838aa-104">The previous chapter should have given you a good look at Protobuf and how gRPC handles messages.</span></span> <span data-ttu-id="838aa-105">Avant de procéder à une conversion détaillée de WCF en gRPC, il est important de savoir comment la gamme de fonctionnalités actuellement disponibles dans WCF est gérée dans gRPC, ainsi que les solutions de contournement que vous pouvez utiliser lorsqu’il n’apparaît pas comme équivalent à gRPC.</span><span class="sxs-lookup"><span data-stu-id="838aa-105">Before working through a detailed conversion from WCF to gRPC, it's important to look at how the range of features currently available in WCF are handled in gRPC and what workarounds you can use when there doesn't appear to be a gRPC equivalent.</span></span> <span data-ttu-id="838aa-106">En particulier, ce chapitre aborde les sujets suivants :</span><span class="sxs-lookup"><span data-stu-id="838aa-106">In particular, this chapter will cover the following subjects:</span></span>
 
-<span data-ttu-id="0f0f0-104">Le chapitre précédent doit vous avoir donné un aperçu de Protobuf et de la façon dont gRPC gère les messages.</span><span class="sxs-lookup"><span data-stu-id="0f0f0-104">The previous chapter should have given you a good look at Protobuf and how gRPC handles messages.</span></span> <span data-ttu-id="0f0f0-105">Avant de procéder à une conversion détaillée de WCF en gRPC, il est important de savoir comment la gamme de fonctionnalités actuellement disponibles dans WCF est gérée dans gRPC, ainsi que les solutions de contournement que vous pouvez utiliser lorsqu’il n’apparaît pas comme équivalent à gRPC.</span><span class="sxs-lookup"><span data-stu-id="0f0f0-105">Before working through a detailed conversion from WCF to gRPC, it's important to look at how the range of features currently available in WCF are handled in gRPC and what workarounds you can use when there doesn't appear to be a gRPC equivalent.</span></span> <span data-ttu-id="0f0f0-106">En particulier, ce chapitre aborde les sujets suivants :</span><span class="sxs-lookup"><span data-stu-id="0f0f0-106">In particular, this chapter will cover the following subjects:</span></span>
+- <span data-ttu-id="838aa-107">Opérations et méthodes</span><span class="sxs-lookup"><span data-stu-id="838aa-107">Operations and methods</span></span>
+- <span data-ttu-id="838aa-108">Liaisons et transports</span><span class="sxs-lookup"><span data-stu-id="838aa-108">Bindings and transports</span></span>
+- <span data-ttu-id="838aa-109">Types RPC</span><span class="sxs-lookup"><span data-stu-id="838aa-109">RPC types</span></span>
+- <span data-ttu-id="838aa-110">Métadonnées</span><span class="sxs-lookup"><span data-stu-id="838aa-110">Metadata</span></span>
+- <span data-ttu-id="838aa-111">Gestion des erreurs</span><span class="sxs-lookup"><span data-stu-id="838aa-111">Error handling</span></span>
+- <span data-ttu-id="838aa-112">Protocoles WS-\*</span><span class="sxs-lookup"><span data-stu-id="838aa-112">WS-\* protocols</span></span>
 
-- <span data-ttu-id="0f0f0-107">Opérations et méthodes</span><span class="sxs-lookup"><span data-stu-id="0f0f0-107">Operations and methods</span></span>
-- <span data-ttu-id="0f0f0-108">Liaisons et transports</span><span class="sxs-lookup"><span data-stu-id="0f0f0-108">Bindings and transports</span></span>
-- <span data-ttu-id="0f0f0-109">Types RPC</span><span class="sxs-lookup"><span data-stu-id="0f0f0-109">RPC types</span></span>
-- <span data-ttu-id="0f0f0-110">Métadonnées</span><span class="sxs-lookup"><span data-stu-id="0f0f0-110">Metadata</span></span>
-- <span data-ttu-id="0f0f0-111">Gestion des erreurs</span><span class="sxs-lookup"><span data-stu-id="0f0f0-111">Error handling</span></span>
-- <span data-ttu-id="0f0f0-112">WS-\* protocoles</span><span class="sxs-lookup"><span data-stu-id="0f0f0-112">WS-\* protocols</span></span>
+## <a name="grpc-example"></a><span data-ttu-id="838aa-113">exemple gRPC</span><span class="sxs-lookup"><span data-stu-id="838aa-113">gRPC example</span></span>
 
-## <a name="grpc-example"></a><span data-ttu-id="0f0f0-113">exemple gRPC</span><span class="sxs-lookup"><span data-stu-id="0f0f0-113">gRPC example</span></span>
-
-<span data-ttu-id="0f0f0-114">Lorsque vous créez un projet ASP.NET Core 3,0 gRPC à partir de Visual Studio 2019 ou de la ligne de commande, l’équivalent gRPC de « Hello World » est généré pour vous.</span><span class="sxs-lookup"><span data-stu-id="0f0f0-114">When you create a new ASP.NET Core 3.0 gRPC project from Visual Studio 2019 or the command line, the gRPC equivalent of "Hello World" is generated for you.</span></span> <span data-ttu-id="0f0f0-115">Il se compose d' `greeter.proto` un fichier qui définit le service et de ses messages, `GreeterService.cs` et d’un fichier avec une implémentation du service.</span><span class="sxs-lookup"><span data-stu-id="0f0f0-115">It consists of a `greeter.proto` file that defines the service and its messages, and a `GreeterService.cs` file with an implementation of the service.</span></span>
+<span data-ttu-id="838aa-114">Lorsque vous créez un projet ASP.NET Core 3,0 gRPC à partir de Visual Studio 2019 ou de la ligne de commande, l’équivalent gRPC de « Hello World » est généré pour vous.</span><span class="sxs-lookup"><span data-stu-id="838aa-114">When you create a new ASP.NET Core 3.0 gRPC project from Visual Studio 2019 or the command line, the gRPC equivalent of "Hello World" is generated for you.</span></span> <span data-ttu-id="838aa-115">Il se compose d’un fichier `greeter.proto` qui définit le service et de ses messages, et d’un fichier `GreeterService.cs` avec une implémentation du service.</span><span class="sxs-lookup"><span data-stu-id="838aa-115">It consists of a `greeter.proto` file that defines the service and its messages, and a `GreeterService.cs` file with an implementation of the service.</span></span>
 
 ```protobuf
 syntax = "proto3";
@@ -77,9 +75,9 @@ namespace HelloGrpc
 }
 ```
 
-<span data-ttu-id="0f0f0-116">Ce chapitre fait référence à cet exemple de code lors de l’explication des différents concepts et fonctionnalités de gRPC.</span><span class="sxs-lookup"><span data-stu-id="0f0f0-116">This chapter will refer to this example code when explaining various concepts and features of gRPC.</span></span>
+<span data-ttu-id="838aa-116">Ce chapitre fait référence à cet exemple de code lors de l’explication des différents concepts et fonctionnalités de gRPC.</span><span class="sxs-lookup"><span data-stu-id="838aa-116">This chapter will refer to this example code when explaining various concepts and features of gRPC.</span></span>
 
 >[!div class="step-by-step"]
-><span data-ttu-id="0f0f0-117">[Précédent](protobuf-maps.md)
->[Suivant](wcf-endpoints-grpc-methods.md)</span><span class="sxs-lookup"><span data-stu-id="0f0f0-117">[Previous](protobuf-maps.md)
+><span data-ttu-id="838aa-117">[Précédent](protobuf-maps.md)
+>[Suivant](wcf-endpoints-grpc-methods.md)</span><span class="sxs-lookup"><span data-stu-id="838aa-117">[Previous](protobuf-maps.md)
 [Next](wcf-endpoints-grpc-methods.md)</span></span>
