@@ -1,17 +1,17 @@
 ---
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
-ms.date: 10/07/2019
-ms.openlocfilehash: 0a3e2c0e441cfdd1cb8266bc77dc1aba08af84d6
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.date: 10/14/2019
+ms.openlocfilehash: fe2135c150be46997699f756f7f0c9bc18bbb529
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522776"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846826"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
-**Cet article s’applique à : ✓** SDK .NET Core 1.x et versions ultérieures
+**Cet article s’applique à : ✓** SDK .NET Core 1.x et ultérieur
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -32,9 +32,17 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les fichiers binaires incluent le code du projet dans des fichiers en langage intermédiaire (IL) avec une extension *.dll* et les fichiers de symboles utilisés pour le débogage avec une extension *.pdb*. Un fichier JSON de dépendances ( *.deps.json*) est généré. Il répertorie les dépendances de l’application. Un fichier *.runtimeconfig.json* est généré. Il spécifie le runtime partagé et sa version pour l’application.
+La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les binaires incluent le code du projet dans des fichiers de langage intermédiaire (IL) avec une extension *. dll* .  En fonction du type de projet et des paramètres, d’autres fichiers peuvent être inclus, par exemple :
 
-Si le projet a des dépendances tierces, comme des bibliothèques NuGet, elles sont résolues à partir du cache NuGet et ne sont pas disponibles avec la sortie générée du projet. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Ce comportement contraste avec celui du .NET Framework dans lequel la génération d’un projet exécutable (une application) produit une sortie exécutable sur n’importe quel ordinateur où le .NET Framework est installé. Pour obtenir un résultat similaire dans .NET Core, vous devez utiliser la commande [dotnet publish](dotnet-publish.md). Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+- Exécutable qui peut être utilisé pour exécuter l’application, si le type de projet est un exécutable ciblant .NET Core 3,0 ou une version ultérieure.
+- Fichiers de symboles utilisés pour le débogage avec une extension *. pdb* .
+- Un fichier *. DEPS. JSON* , qui répertorie les dépendances de l’application ou de la bibliothèque.
+- Un fichier *. runtimeconfig. JSON* , qui spécifie le runtime partagé et sa version pour une application.
+- Les autres bibliothèques dont le projet dépend (par le biais de références de projet ou de références de package NuGet).
+
+Pour les projets exécutables ciblant des versions antérieures à .NET Core 3,0, les dépendances de bibliothèque de NuGet ne sont généralement pas copiées dans le dossier de sortie.  Ils sont résolus à partir du dossier des packages globaux NuGet au moment de l’exécution. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Pour créer une version de l’application qui peut être déployée, vous devez la publier (par exemple, à l’aide de la commande [dotnet Publish](dotnet-publish.md) ). Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+
+Pour les projets exécutables ciblant .NET Core 3,0 et versions ultérieures, les dépendances de bibliothèque sont copiées dans le dossier de sortie. Cela signifie que s’il n’existe aucune autre logique spécifique à la publication (telle que les projets Web), la sortie de la génération doit être déployée.
 
 La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est créé quand la commande [`dotnet restore`](dotnet-restore.md) est exécutée. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec le kit de développement logiciel (SDK) .NET Core 1. x, vous deviez exécuter explicitement `dotnet restore` avant d’exécuter `dotnet build`. À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
 
@@ -48,7 +56,7 @@ La possibilité d’exécuter le projet ou non est déterminée par la propriét
 </PropertyGroup>
 ```
 
-Pour générer une bibliothèque, omettez la propriété `<OutputType>`. La principale différence dans la sortie générée est que la DLL de langage intermédiaire pour une bibliothèque ne contient pas de points d’entrée et ne peut pas être exécutée.
+Pour produire une bibliothèque, omettez la propriété `<OutputType>` ou remplacez sa valeur par `Library`. La DLL IL d’une bibliothèque ne contient pas de points d’entrée et ne peut pas être exécutée.
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -56,7 +64,7 @@ La commande `dotnet build` utilise MSBuild pour générer le projet. Elle prend 
 
 En plus de ses options, la commande `dotnet build` accepte des options MSBuild, comme `-p` pour définir des propriétés ou `-l` pour définir un enregistreur d’événements. Pour plus d’informations sur ces options, consultez [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). Ou vous pouvez également utiliser la commande [dotnet msbuild](dotnet-msbuild.md).
 
-L’exécution de `dotnet msbuild -restore -target:Build` équivaut à `dotnet build`.
+L’exécution de `dotnet build` est équivalente à l’exécution de `dotnet msbuild -restore`; Toutefois, le niveau de détail par défaut de la sortie est différent.
 
 ## <a name="arguments"></a>Arguments
 
@@ -104,7 +112,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Répertoire dans lequel placer les fichiers binaires générés. Vous devez également définir `--framework` lorsque vous spécifiez cette option. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.
+  Répertoire dans lequel placer les fichiers binaires générés. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via la propriété `TargetFrameworks`), vous devez également définir des `--framework` lorsque vous spécifiez cette option.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 

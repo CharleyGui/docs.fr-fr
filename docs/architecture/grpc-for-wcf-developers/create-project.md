@@ -3,29 +3,27 @@ title: Créer un nouveau ASP.NET Core projet gRPC-gRPC pour les développeurs WC
 description: Découvrez comment créer un projet gRPC à l’aide de Visual Studio ou à partir de la ligne de commande.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: a0fcc3f9c4e32e87260a6bc79205c909ea3800e0
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: a30d19e1e48692ad68a648406d4bf369937744d7
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184567"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846712"
 ---
-# <a name="create-a-new-aspnet-core-grpc-project"></a>Créer un projet de gRPC ASP.NET Core
+# <a name="create-a-new-aspnet-core-grpc-project"></a>Créer un projet gRPC ASP.NET Core
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-.Net Core est fourni avec un puissant outil CLI `dotnet`,, qui vous permet de créer et de gérer des projets et des solutions à partir de la ligne de commande. L’outil est étroitement intégré à Visual Studio, de sorte que tout est également disponible par le biais de l’interface graphique familière. Ce chapitre présente les deux façons de créer un projet de ASP.NET Core gRPC : tout d’abord avec Visual Studio, puis avec le CLI .NET Core.
+.NET Core est fourni avec un puissant outil CLI, `dotnet`, qui vous permet de créer et de gérer des projets et des solutions à partir de la ligne de commande. L’outil est étroitement intégré à Visual Studio, de sorte que tout est également disponible par le biais de l’interface graphique familière. Ce chapitre présente les deux façons de créer un projet de ASP.NET Core gRPC : tout d’abord avec Visual Studio, puis avec le CLI .NET Core.
 
 ## <a name="create-the-project-using-visual-studio"></a>Créer le projet à l’aide de Visual Studio
 
 > [!IMPORTANT]
 > Pour développer une application ASP.NET Core 3,0, vous avez besoin de Visual Studio 2019,3 ou version ultérieure avec la charge de travail **ASP.net et développement Web** installée.
 
-Créez une solution vide appelée **Traders** à partir du modèle de *solution vide* . Ajoutez un dossier de solution `src`appelé, puis cliquez avec le bouton droit sur le dossier et choisissez **Ajouter** > un**nouveau projet** dans le menu contextuel. Entrez `grpc` dans la zone de recherche de modèle et vous devriez voir un modèle `gRPC Service`de projet appelé.
+Créez une solution vide appelée **Traders** à partir du modèle de *solution vide* . Ajoutez un dossier de solution appelé `src`, cliquez avec le bouton droit sur le dossier et choisissez **ajouter** > **nouveau projet** dans le menu contextuel. Entrez `grpc` dans la zone de recherche du modèle et un modèle de projet appelé `gRPC Service`doit s’afficher.
 
 ![Boîte de dialogue Ajouter un nouveau projet avec le modèle de projet de service gRPC](media/create-project/new-grpc-project.png)
 
-Cliquez **sur suivant** pour passer à la boîte de dialogue **configurer** le projet `TraderSys.Portfolios`et nommez le `src` projet, puis ajoutez un sous-répertoire à l' **emplacement**.
+Cliquez sur **suivant** pour passer à la boîte de dialogue **configurer le projet** et nommez le projet `TraderSys.Portfolios`, puis ajoutez un sous-répertoire `src` à l' **emplacement**.
 
 ![Boîte de dialogue Configurer le projet](media/create-project/configure-project.png)
 
@@ -39,27 +37,27 @@ Cliquez sur **suivant** pour accéder à la boîte de dialogue **nouveau projet 
 
 Cette section décrit la création de solutions et de projets à partir de la ligne de commande.
 
-Créez la solution comme indiqué ci-dessous. L' `-o` indicateur ( `--output`ou) spécifie le répertoire de sortie, qui sera créé dans le répertoire actif s’il n’existe pas. La solution se verra attribuer le même nom que le répertoire, c.-à-d. `TraderSys.sln`. Vous pouvez fournir un autre nom à l' `-n` aide de `--name`l’indicateur (ou).
+Créez la solution comme indiqué ci-dessous. L’indicateur `-o` (ou `--output`) spécifie le répertoire de sortie, qui sera créé dans le répertoire actif s’il n’existe pas. La solution se verra attribuer le même nom que le répertoire, c.-à-d. `TraderSys.sln`. Vous pouvez fournir un autre nom à l’aide de l’indicateur `-n` (ou `--name`).
 
 ```dotnetcli
 dotnet new sln -o TraderSys
 cd TraderSys
 ```
 
-ASP.NET Core 3,0 est fourni avec un modèle CLI pour les services gRPC. Créez le projet à l’aide de ce modèle, en le `src` plaçant dans un sous-répertoire, comme la Convention pour les projets ASP.net core. Le projet est nommé d’après le répertoire (c’est-à-dire `TraderSys.Portfolios.csproj`), sauf si vous spécifiez un nom différent avec l' `-n` indicateur.
+ASP.NET Core 3,0 est fourni avec un modèle CLI pour les services gRPC. Créez le projet à l’aide de ce modèle, en le plaçant dans un sous-répertoire `src` en tant que Convention pour les projets ASP.NET Core. Le projet est nommé d’après le répertoire (c.-à-d. `TraderSys.Portfolios.csproj`), sauf si vous spécifiez un nom différent avec l’indicateur `-n`.
 
 ```dotnetcli
 dotnet new grpc -o src/TraderSys.Portfolios
 ```
 
-Enfin, ajoutez le projet à la solution à l' `dotnet sln` aide de la commande.
+Enfin, ajoutez le projet à la solution à l’aide de la commande `dotnet sln`.
 
 ```dotnetcli
 dotnet sln add src/TraderSys.Portfolios
 ```
 
 > [!TIP]
-> Étant donné que le répertoire donné ne contient `.csproj` qu’un seul fichier, vous pouvez vous contenter de spécifier uniquement le répertoire pour enregistrer la frappe.
+> Étant donné que le répertoire donné ne contient qu’un seul `.csproj` fichier, vous pouvez vous contenter de spécifier simplement le répertoire pour enregistrer la frappe.
 
 Vous pouvez maintenant ouvrir cette solution dans Visual Studio 2019, Visual Studio Code ou dans l’éditeur de votre choix.
 
@@ -69,7 +67,7 @@ Vous avez maintenant créé un exemple de service à l’aide du modèle gRPC, q
 
 ### <a name="rename-and-edit-the-proto-file"></a>Renommer et modifier le fichier proto
 
-Continuez et renommez le `Protos/greet.proto` `Protos/portfolios.proto` fichier et ouvrez-le dans votre éditeur. Tout supprimer après la `package` ligne, modifier les `option csharp_namespace`noms, `package` et `service` , et supprimer le service par `SayHello` défaut, de sorte que le code ressemble à ceci.
+Continuez et renommez le fichier `Protos/greet.proto` en `Protos/portfolios.proto` et ouvrez-le dans votre éditeur. Supprimez tous les éléments après la ligne de `package`, modifiez les noms des `option csharp_namespace`, des `package` et des `service`, et supprimez le service `SayHello` par défaut, afin que le code ressemble à ceci.
 
 ```protobuf
 syntax = "proto3";
@@ -84,11 +82,11 @@ service Portfolios {
 ```
 
 > [!TIP]
-> Le modèle n’ajoute pas `Protos` la partie espace de noms par défaut, mais il facilite la conservation des classes générées par gRPC et de vos propres classes clairement séparées dans votre code.
+> Le modèle n’ajoute pas la partie `Protos` de l’espace de noms par défaut, mais il facilite la conservation des classes générées par gRPC et de vos propres classes clairement séparées dans votre code.
 
-Si vous renommez `greet.proto` le fichier dans un environnement de développement intégré (IDE) tel que Visual Studio, une référence à ce fichier est automatiquement `.csproj` mise à jour dans le fichier. Mais dans d’autres éditeurs, tels que Visual Studio Code, cette référence n’est pas mise à jour automatiquement. vous devez donc modifier le fichier projet manuellement.
+Si vous renommez le fichier `greet.proto` dans un environnement de développement intégré (IDE) tel que Visual Studio, une référence à ce fichier est automatiquement mise à jour dans le fichier `.csproj`. Mais dans d’autres éditeurs, tels que Visual Studio Code, cette référence n’est pas mise à jour automatiquement. vous devez donc modifier le fichier projet manuellement.
 
-Dans les cibles de génération gRPC, il existe `Protobuf` un élément item qui vous permet de `.proto` spécifier les fichiers qui doivent être compilés et la forme de génération de code requise (c’est-à-dire « Server » ou « client »).
+Dans les cibles de génération gRPC, il existe un élément `Protobuf` Item qui vous permet de spécifier les fichiers de `.proto` à compiler et la forme de génération de code requise (c’est-à-dire « Server » ou « client »).
 
 ```xml
 <ItemGroup>
@@ -98,7 +96,7 @@ Dans les cibles de génération gRPC, il existe `Protobuf` un élément item qui
 
 ### <a name="rename-the-greeterservice-class"></a>Renommer la classe GreeterService
 
-La `GreeterService` classe se trouve dans `Services` le dossier et hérite `Greeter.GreeterBase`de. Renommez- `PortfolioService` le et remplacez la classe de `Portfolios.PortfoliosBase`base par. Supprimez `override` les méthodes.
+La classe `GreeterService` se trouve dans le dossier `Services` et hérite de `Greeter.GreeterBase`. Renommez-le en `PortfolioService` et remplacez la classe de base par `Portfolios.PortfoliosBase`. Supprimez les méthodes de `override`.
 
 ```csharp
 public class PortfolioService : Portfolios.PortfoliosBase
@@ -106,7 +104,7 @@ public class PortfolioService : Portfolios.PortfoliosBase
 }
 ```
 
-Il y a eu une référence `GreeterService` à la classe `Configure` dans la méthode `Startup` de la classe. Si vous avez utilisé la refactorisation pour renommer la classe, cette référence doit avoir été mise à jour automatiquement. Toutefois, si vous ne l’avez pas fait, vous devez le modifier manuellement.
+Il y a eu une référence à la classe `GreeterService` dans la méthode `Configure` de la classe `Startup`. Si vous avez utilisé la refactorisation pour renommer la classe, cette référence doit avoir été mise à jour automatiquement. Toutefois, si vous ne l’avez pas fait, vous devez le modifier manuellement.
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

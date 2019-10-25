@@ -3,16 +3,14 @@ title: Vue d’ensemble de gRPC-gRPC pour les développeurs WCF
 description: En savoir plus sur l’ensemble de principes guidant le développement de gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 489b91f6aa279d9c457e2e8fccd4438885076779
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: HT
+ms.openlocfilehash: 6980b473a6f9852a4e4f396355e98e2d3300cabe
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846653"
 ---
 # <a name="grpc-overview"></a>présentation de gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Après avoir examiné les Genesis de WCF et gRPC dans le dernier chapitre, ce chapitre traite des principales fonctionnalités de gRPC et de la façon dont elles sont comparées à WCF.
 

@@ -3,18 +3,16 @@ title: Gestion des erreurs-gRPC pour les développeurs WCF
 description: À ÉCRIRE
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 3535a00aad49f532eb5f5f778116454a12bfd639
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 2ef1a0b38d9b63af7244c6e0428c9adbcb1d6527
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846667"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-WCF utilise `FaultException<T>` et `FaultContract` pour fournir des informations détaillées sur l’erreur, notamment la prise en charge de la norme SOAP Fault.
+WCF utilise `FaultException<T>` et `FaultContract` pour fournir des informations d’erreur détaillées, notamment la prise en charge de la norme SOAP Fault.
 
 Malheureusement, la version actuelle de gRPC ne dispose pas de la sophistication trouvée avec WCF et ne dispose que d’une gestion des erreurs intégrée limitée basée sur des codes d’État et des métadonnées simples. Le tableau suivant est un guide rapide sur les codes d’état les plus couramment utilisés :
 
@@ -30,7 +28,7 @@ Malheureusement, la version actuelle de gRPC ne dispose pas de la sophistication
 
 ## <a name="raising-errors-in-aspnet-core-grpc"></a>Déclenchement d’erreurs dans ASP.NET Core gRPC
 
-Un service ASP.net Core gRPC peut envoyer une réponse d’erreur en levant `RpcException`un, qui peut être intercepté par le client comme s’il se trouvait dans le même processus. Le `RpcException` doit inclure un code d’État et une description, et peut éventuellement inclure des métadonnées et un message d’exception plus long. Les métadonnées peuvent être utilisées pour envoyer des données de prise en `FaultContract` charge, de la même façon que les objets peuvent contenir des données supplémentaires pour les erreurs WCF.
+Un service ASP.NET Core gRPC peut envoyer une réponse d’erreur en levant une `RpcException`, qui peut être interceptée par le client comme si elle était dans le même processus. Le `RpcException` doit inclure un code d’État et une description, et peut éventuellement inclure des métadonnées et un message d’exception plus long. Les métadonnées peuvent être utilisées pour envoyer des données de prise en charge, de la même façon que `FaultContract` objets peuvent contenir des données supplémentaires pour les erreurs WCF.
 
 ```csharp
 public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request, ServerCallContext context)
@@ -49,7 +47,7 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 
 ## <a name="catching-errors-in-grpc-clients"></a>Interception des erreurs dans les clients gRPC
 
-Tout comme les clients WCF peuvent <xref:System.ServiceModel.FaultException%601> intercepter les erreurs, un client gRPC `RpcException` peut intercepter un pour gérer les erreurs. Étant `RpcException` donné qu’il ne s’agit pas d’un type générique, vous ne pouvez pas intercepter différents C#types d’erreur dans différents blocs, mais vous pouvez utiliser la fonctionnalité de *filtres d’exception* de pour déclarer des blocs distincts `catch` pour différents codes d’État, comme indiqué dans l’exemple suivant : tels
+Tout comme les clients WCF peuvent intercepter les erreurs de <xref:System.ServiceModel.FaultException%601>, un client gRPC peut intercepter une `RpcException` pour gérer les erreurs. Étant donné que `RpcException` n’est pas un type générique, vous ne pouvez pas intercepter différents types d’erreur C#dans différents blocs, mais vous pouvez utiliser la fonctionnalité des *filtres d’exception* de pour déclarer des blocs`catch`distincts pour différents codes d’État, comme indiqué dans l’exemple suivant :
 
 ```csharp
 try
@@ -68,7 +66,7 @@ catch (RpcException)
 ```
 
 > [!IMPORTANT]
-> Lorsque vous fournissez des métadonnées supplémentaires pour les erreurs, veillez à documenter les clés et les valeurs pertinentes dans la documentation de `.proto` votre API ou dans les commentaires de votre fichier.
+> Lorsque vous fournissez des métadonnées supplémentaires pour les erreurs, veillez à documenter les clés et les valeurs pertinentes dans la documentation de votre API ou dans les commentaires de votre fichier `.proto`.
 
 ## <a name="grpc-richer-error-model"></a>Modèle d’erreur plus riche gRPC
 

@@ -3,16 +3,14 @@ title: Kubernetes-gRPC pour les développeurs WCF
 description: Exécution des services ASP.NET Core gRPC dans un cluster Kubernetes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 8a04e59bb23b802af6907a369e2c278f64f3fa9d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 819c761a7a55485612b7fb0c8b392971751d8724
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770502"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846638"
 ---
 # <a name="kubernetes"></a>Kubernetes
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Bien qu’il soit possible d’exécuter des conteneurs manuellement sur les hôtes de l’ordinateur de production, il est préférable d’utiliser un moteur d’orchestration de conteneur pour gérer plusieurs instances exécutées sur plusieurs serveurs d’un cluster. Plusieurs moteurs d’orchestration de conteneur sont disponibles, y compris Kubernetes, Dockr essaim et Apache méson. Mais de ces moteurs, Kubernetes est loin et éloigné le plus couramment utilisé. il sera donc axé sur ce chapitre.
 

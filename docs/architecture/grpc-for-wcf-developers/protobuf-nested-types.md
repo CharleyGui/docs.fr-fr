@@ -3,16 +3,14 @@ title: Types imbriqués Protobuf-gRPC pour les développeurs WCF
 description: Découvrez les types de messages imbriqués dans Protobuf et gRPC, ainsi que la façon C#dont ils sont générés dans.
 author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 39bc52b37cc9e57cfe0ed5a5118c348de5f014d8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: ec9fc522619230c1201bfef1e8128f7356936212
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184189"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846313"
 ---
 # <a name="protobuf-nested-types"></a>Types imbriqués Protobuf
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Tout comme C# vous permet de déclarer des classes dans d’autres classes, Protobuf vous permet d’imbriquer des définitions de message dans d’autres messages. L’exemple suivant montre comment créer des types de messages imbriqués :
 
@@ -25,7 +23,7 @@ message Outer {
 }
 ```
 
-Dans le code C# généré, le `Inner` type sera déclaré dans une classe statique `Types` imbriquée dans la `HelloRequest` classe :
+Dans le code C# généré, le type de`Inner`est déclaré dans une classe statique`Types`imbriquée dans la classe`HelloRequest`:
 
 ```csharp
 var inner = new Outer.Types.Inner { Text = "Hello" };

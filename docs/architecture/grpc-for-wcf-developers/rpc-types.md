@@ -3,16 +3,14 @@ title: Types de RPC-gRPC pour les développeurs WCF
 description: Examen des types d’appel de procédure distante pris en charge par WCF et de leurs équivalents dans gRPC
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 4fed4ca7fa4ae6a0f861185719917ff0ed5929fd
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: ce5bf03b01dff3f7bb201ff08c9065abc2e58360
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846229"
 ---
 # <a name="types-of-rpc"></a>Types de RPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 En tant que développeur Windows Communication Foundation (WCF), vous êtes probablement employé pour traiter les types d’appel de procédure distante (RPC) suivants :
 
@@ -64,7 +62,7 @@ Comme vous pouvez le voir, l’implémentation d’une méthode de service RPC u
 
 ## <a name="wcf-duplex-one-way-to-client"></a>Duplex WCF, unidirectionnel pour le client
 
-Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur, et le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> l’aide d’une interface de *rappel* spécifiée dans la propriété.
+Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur, et le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à l’aide d’une *interface de rappel* spécifiée dans le <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> propriété.
 
 les services gRPC offrent des fonctionnalités similaires à celles des flux de messages. Les flux ne sont pas mappés *exactement* aux services duplex WCF en termes d’implémentation, mais les mêmes résultats peuvent être obtenus.
 
@@ -116,7 +114,7 @@ public async Task TellTheTimeAsync(CancellationToken token)
 ```
 
 > [!NOTE]
-> Les RPC de streaming de serveur sont utiles pour les services de type abonnement, ainsi que pour l’envoi de jeux de données très volumineux lorsqu’il est inefficace ou impossible de générer l’ensemble du jeu de données en mémoire. Toutefois, les réponses de diffusion en continu ne `repeated` sont pas aussi rapides que l’envoi de champs dans un seul message, donc la diffusion en continu des règles ne doit pas être utilisée pour les petits jeux de données.
+> Les RPC de streaming de serveur sont utiles pour les services de type abonnement, ainsi que pour l’envoi de jeux de données très volumineux lorsqu’il est inefficace ou impossible de générer l’ensemble du jeu de données en mémoire. Toutefois, les réponses de diffusion en continu ne sont pas aussi rapides que l’envoi de `repeated` champs dans un message unique, de sorte que la diffusion en continu des règles ne doit pas être utilisée pour les petits jeux de données.
 
 ### <a name="differences-to-wcf"></a>Différences avec WCF
 
@@ -190,11 +188,11 @@ public class ThingLogger : IAsyncDisposable
 }
 ```
 
-Là encore, les RPC de la diffusion en continu des clients peuvent être utilisés pour la messagerie de déclenchement et d’oubli, comme indiqué dans l’exemple précédent, mais également pour l’envoi de jeux de données très volumineux au serveur. Le même avertissement sur les performances s’applique : pour les jeux de `repeated` données plus petits, utilisez des champs dans les messages ordinaires.
+Là encore, les RPC de la diffusion en continu des clients peuvent être utilisés pour la messagerie de déclenchement et d’oubli, comme indiqué dans l’exemple précédent, mais également pour l’envoi de jeux de données très volumineux au serveur. Le même avertissement sur les performances s’applique : pour les jeux de données plus petits, utilisez `repeated` champs dans des messages ordinaires.
 
 ## <a name="wcf-full-duplex-services"></a>Services duplex intégral WCF
 
-La liaison duplex WCF prend en charge plusieurs opérations unidirectionnelles sur l’interface de service et l’interface de rappel client, ce qui permet des conversations continues entre le client et le serveur. gRPC prend en charge des appels de manière similaire avec les RPC de diffusion bidirectionnelle, `stream` où les deux paramètres sont marqués avec le modificateur.
+La liaison duplex WCF prend en charge plusieurs opérations unidirectionnelles sur l’interface de service et l’interface de rappel client, ce qui permet des conversations continues entre le client et le serveur. gRPC prend en charge des appels de manière similaire avec les RPC de diffusion bidirectionnelle, où les deux paramètres sont marqués avec le modificateur `stream`.
 
 ### <a name="chatproto"></a>conversation. proto
 
@@ -229,7 +227,7 @@ public class ChatterService : Chatter.ChatterBase
 }
 ```
 
-Dans l’exemple précédent, vous pouvez voir que la méthode d’implémentation reçoit à la fois un`IAsyncStreamReader<MessageRequest>`flux de demande () et`IServerStreamWriter<MessageResponse>`un flux de réponse (), et peut lire et écrire des messages jusqu’à ce que la connexion soit fermée.
+Dans l’exemple précédent, vous pouvez voir que la méthode d’implémentation reçoit à la fois un flux de demande (`IAsyncStreamReader<MessageRequest>`) et un flux de réponse (`IServerStreamWriter<MessageResponse>`), et peut lire et écrire des messages jusqu’à ce que la connexion soit fermée.
 
 ### <a name="chatter-client"></a>Client chatter
 

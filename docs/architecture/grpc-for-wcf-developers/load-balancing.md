@@ -3,16 +3,14 @@ title: Équilibrage de charge gRPC-gRPC pour les développeurs WCF
 description: Choix d’un équilibreur de charge pour fonctionner avec les services gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 5d4a9be9b8f4e511a72af6b68d8a005604fd984d
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 18965b9c4765ac693c6ba36ad3ea9848ce858a5c
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184392"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846622"
 ---
 # <a name="load-balancing-grpc"></a>Équilibrage de charge gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Un déploiement classique d’une application gRPC comprend un certain nombre d’instances identiques du service, offrant ainsi une résilience et une évolutivité horizontale. Équilibrage de charge des demandes entrantes distribuées sur ces instances pour fournir une utilisation complète de toutes les ressources disponibles. Pour rendre cet équilibrage de charge invisible au client, il est courant d’utiliser un serveur d’équilibrage de charge de proxy pour gérer les demandes des clients et les acheminer vers les instances de serveur principal.
 

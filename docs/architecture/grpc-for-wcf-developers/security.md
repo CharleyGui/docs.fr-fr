@@ -3,16 +3,14 @@ title: Sécurité dans les applications gRPC-gRPC pour les développeurs WCF
 description: Vue d’ensemble de l’authentification et de l’autorisation de l’appel et du canal dans gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 5f3d32817ccb5d9f278d256c0ee135f0e2a17cf2
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d0b7ff5bef755c5eeb9b3c419dcda1cb75ac4031
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184140"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846231"
 ---
 # <a name="security-in-grpc-applications"></a>Sécurité dans les applications gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Dans tout scénario réel, il est essentiel de sécuriser les applications et les services. La sécurité couvre trois domaines clés : le chiffrement du trafic réseau pour empêcher son interception par des acteurs incorrects ; authentification des clients et des serveurs pour établir l’identité et l’approbation ; et d’autoriser les clients à contrôler l’accès aux systèmes et à appliquer des autorisations en fonction de leur identité.
 
@@ -23,7 +21,7 @@ Ce chapitre couvre les fonctionnalités d’authentification et d’autorisation
 
 ## <a name="wcf-authentication-and-authorization"></a>Authentification et autorisation WCF
 
-Dans WCF, l’authentification et l’autorisation ont été gérées de différentes façons en fonction des transports et des liaisons utilisés. WCF prenait en charge différentes\* normes WS-Security, ainsi que l’authentification Windows pour les services http qui s’exécutent dans les services IIS ou NetTcp entre les systèmes Windows.
+Dans WCF, l’authentification et l’autorisation ont été gérées de différentes façons en fonction des transports et des liaisons utilisés. WCF prenait en charge différentes normes de sécurité WS-\*, ainsi que l’authentification Windows pour les services HTTP qui s’exécutent dans les services IIS ou NetTCP entre les systèmes Windows.
 
 ## <a name="grpc-authentication-and-authorization"></a>authentification et autorisation gRPC
 

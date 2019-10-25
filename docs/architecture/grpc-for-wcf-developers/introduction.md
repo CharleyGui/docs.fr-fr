@@ -3,16 +3,14 @@ title: Introduction-gRPC pour les développeurs WCF
 description: Introduction
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 2782f28e8a99fa7c0bde69f757d14e96e91f5cd4
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 9eb12d5060ddf4f345ebe095738c98238c6caab7
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184420"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846627"
 ---
 # <a name="introduction"></a>Introduction
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aider les machines à communiquer entre elles a été l’une des principales préoccupations de l’ère numérique. En particulier, il existe un effort permanent pour déterminer le mécanisme optimal de communication à distance qui répondra aux demandes d’interopérabilité de l’infrastructure actuelle. Comme vous pouvez l’imaginer, ce mécanisme change au fur et à mesure que les demandes ou l’infrastructure évoluent.
 

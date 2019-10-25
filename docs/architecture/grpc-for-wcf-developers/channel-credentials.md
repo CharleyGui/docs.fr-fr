@@ -3,16 +3,14 @@ title: Informations d’identification de canal-gRPC pour les développeurs WCF
 description: Comment implémenter et utiliser les informations d’identification du canal gRPC dans ASP.NET Core 3,0.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 61305ee47a2c09a0b2a0fd866beb9b7c102ffeaa
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 61141dc4143f36f9ac511c3369c3fde668c9d703
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184581"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846709"
 ---
-# <a name="channel-credentials"></a>Informations d’identification du canal
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="channel-credentials"></a>Informations d’identification de la chaîne
 
 Comme son nom l’indique, les informations d’identification du canal sont attachées au canal gRPC sous-jacent. La forme standard des informations d’identification de canal utilise l’authentification par certificat client, où le client fournit un certificat TLS lorsqu’il effectue la connexion, qui est vérifiée par le serveur avant d’autoriser les appels à effectuer.
 
@@ -28,7 +26,7 @@ Vous devez configurer l’authentification par certificat au niveau de l’hôte
 
 ### <a name="configuring-certificate-validation-on-kestrel"></a>Configuration de la validation de certificat sur Kestrel
 
-Vous pouvez configurer Kestrel (serveur HTTP ASP.NET Core) pour exiger un certificat client et éventuellement effectuer une validation du certificat fourni avant d’accepter les connexions entrantes. Cette configuration s’effectue dans la `CreateWebHostBuilder` méthode de la `Program` classe, plutôt que dans `Startup`.
+Vous pouvez configurer Kestrel (serveur HTTP ASP.NET Core) pour exiger un certificat client et éventuellement effectuer une validation du certificat fourni avant d’accepter les connexions entrantes. Cette configuration s’effectue dans la méthode `CreateWebHostBuilder` de la classe `Program`, plutôt que dans `Startup`.
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -51,13 +49,13 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ```
 
-Le `ClientCertificateMode.RequireCertificate` paramètre force Kestrel à rejeter immédiatement toute demande de connexion qui ne fournit pas de certificat client, mais ne valide pas le certificat. L’ajout `ClientCertificateValidation` du rappel permet à Kestrel de valider le certificat client (dans ce cas, de s’assurer qu’il a été émis par la même *autorité de certification* que le certificat de serveur) au point où la connexion est établie, avant le ASP.net Core le pipeline est engagé.
+Le paramètre `ClientCertificateMode.RequireCertificate` fait en sorte que Kestrel rejette immédiatement toute demande de connexion qui ne fournit pas de certificat client, mais ne valide pas le certificat. L’ajout du rappel `ClientCertificateValidation` permet à Kestrel de valider le certificat client (dans ce cas, de s’assurer qu’il a été émis par la même *autorité de certification* que le certificat de serveur) au point où la connexion est établie, avant le pipeline ASP.net Core est engagé.
 
 ### <a name="adding-aspnet-core-certificate-authentication"></a>Ajout d’ASP.NET Core l’authentification par certificat
 
 L’authentification par certificat est fournie par le package NuGet [Microsoft. AspNetCore. Authentication. Certificate](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Certificate) .
 
-Ajoutez le service d’authentification de certificat `ConfigureServices` dans la méthode et ajoutez l’authentification et l’autorisation au pipeline `Configure` ASP.net core dans la méthode.
+Ajoutez le service d’authentification de certificat dans la méthode `ConfigureServices` et ajoutez l’authentification et l’autorisation au pipeline ASP.NET Core dans la méthode `Configure`.
 
 ```csharp
 public class Startup
@@ -98,7 +96,7 @@ public class Startup
 
 ## <a name="providing-channel-credentials-in-the-client-application"></a>Fournir des informations d’identification de canal dans l’application cliente
 
-Avec le `Grpc.Net.Client` package, les certificats sont configurés <xref:System.Net.Http.HttpClient> sur une instance de `GrpcChannel` qui est fournie au utilisé pour la connexion.
+Avec le package `Grpc.Net.Client`, les certificats sont configurés sur une instance de <xref:System.Net.Http.HttpClient> fournie au `GrpcChannel` utilisé pour la connexion.
 
 ```csharp
 class Program
@@ -129,7 +127,7 @@ class Program
 
 Vous pouvez configurer votre serveur pour utiliser l’authentification par certificat et par jeton en appliquant les modifications de certificat au serveur Kestrel et en utilisant l’intergiciel de support JWT dans ASP.NET Core.
 
-Pour fournir à la fois ChannelCredentials et CallCredentials sur le client, `ChannelCredentials.Create` utilisez la méthode pour appliquer les informations d’identification d’appel. L’authentification par certificat doit encore être appliquée à <xref:System.Net.Http.HttpClient> l’aide de l’instance : Si vous transmettez des arguments `SslCredentials` au constructeur, le code client interne lève une exception. Le `SslCredentials` paramètre est inclus uniquement dans la `Grpc.Net.Client` méthode du `Create` package pour assurer la compatibilité avec `Grpc.Core` le package.
+Pour fournir à la fois ChannelCredentials et CallCredentials sur le client, utilisez la méthode `ChannelCredentials.Create` pour appliquer les informations d’identification d’appel. L’authentification par certificat doit encore être appliquée à l’aide de l’instance de <xref:System.Net.Http.HttpClient> : Si vous transmettez des arguments au constructeur `SslCredentials`, le code client interne lève une exception. Le paramètre `SslCredentials` est inclus uniquement dans la méthode `Create` du package `Grpc.Net.Client` pour assurer la compatibilité avec le package `Grpc.Core`.
 
 ```csharp
 var handler = new HttpClientHandler();
@@ -154,7 +152,7 @@ var grpc = new Portfolios.PortfoliosClient(channel);
 ```
 
 > [!TIP]
-> Vous pouvez utiliser la `ChannelCredentials.Create` méthode pour un client sans authentification par certificat, afin de passer des informations d’identification de jeton à chaque appel effectué sur le canal.
+> Vous pouvez utiliser la méthode `ChannelCredentials.Create` pour un client sans authentification par certificat, afin de passer des informations d’identification de jeton à chaque appel effectué sur le canal.
 
 Une version de l' [exemple d’application GRPC FullStockTicker avec l’authentification par certificat ajoutée](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTickerAuth/FullStockTicker) est sur GitHub.
 

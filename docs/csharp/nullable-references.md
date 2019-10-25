@@ -2,12 +2,12 @@
 title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types de référence Nullable C# , ajoutés dans 8,0. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.date: 02/19/2019
-ms.openlocfilehash: a108c73064b40171a58df0796d4a0b75eddebbff
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 2c2148b3ae50ce6c00e523390ea02686d9106b8b
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319064"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846761"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -63,7 +63,7 @@ Le contexte d’annotation Nullable et le contexte d’avertissement Nullable pe
 - `warnings` : le contexte d’annotation Nullable est **désactivé**. Le contexte d’avertissement nullable est **activé**.
   - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité sont activés.
 - `annotations` : le contexte d’annotation Nullable est **activé**. Le contexte d’avertissement nullable est **désactivé**.
-  - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité sont désactivés.
+  - Les variables d’un type référence, String par exemple, ne sont pas nullables. Tous les avertissements de nullabilité sont désactivés.
 - `disable` : le contexte d’annotation Nullable est **désactivé**. Le contexte d’avertissement nullable est **désactivé**.
   - Les variables d’un type référence sont oblivious, comme dans les versions antérieures de C#. Tous les avertissements de nullabilité sont désactivés.
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b420fb451bf1bb2078a4419a648a1407c39ad178
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 63e70ae8cd110786ad7d2069088dbfdfde736a28
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044739"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846746"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (outil de conversion CorFlags)
 L’outil de conversion CorFlags vous permet de configurer la section CorFlags de l’en-tête d’une image exécutable portable.  
@@ -35,19 +35,19 @@ CorFlags.exe assembly [options]
 |`assembly`|Nom de l'assembly pour lequel CorFlags doit être configuré.|  
   
 |Option|Description|  
-|------------|-----------------|  
-|**/32BIT[REQ]+**|Définit l'indicateur 32BITREQUIRED.|  
-|**/32BIT[REQ]-**|Efface l'indicateur 32BITREQUIRED.|  
-|**/32BITPREF+**|Définit l'indicateur 32BITPREFERRED. L'application s'exécute comme un processus 32 bits même sur les plateformes 64 bits. Affectez cet indicateur uniquement sur les fichiers EXE. Si l'indicateur est défini sur une DLL, la DLL ne charge pas dans les processus 64 bits, et une exception <xref:System.BadImageFormatException> est levée. Un fichier EXE avec cet indicateur peut être chargé dans un processus 64 bits.<br /><br /> Nouveautés de .NET Framework 4.5.|  
-|**/32BITPREF-**|Efface l'indicateur 32BITPREFERRED.<br /><br /> Nouveautés de .NET Framework 4.5.|  
-|**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/Force**|Force une mise à jour même si l'assembly est associé à un nom fort. **Important :**  si vous mettez à jour un assembly à nom fort, vous devez le signer à nouveau avant d’exécuter son code.|  
-|**/help**|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/ILONLY+**|Définit l'indicateur ILONLY.|  
-|**/ILONLY-**|Efface l'indicateur ILONLY.|  
-|**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|  
-|**/RevertCLRHeader**|Rétablit l'en-tête du CLR à la version 2.0.|  
-|**/UpgradeCLRHeader**|Met à niveau l'en-tête du CLR à la version 2.5. **Remarque :**  les assemblys doivent avoir la version 2.5 ou une version ultérieure de l’en-tête du CLR pour s’exécuter en mode natif.|  
+|:------------|-----------------|  
+|`-32BIT[REQ]+`|Définit l'indicateur 32BITREQUIRED.|  
+|`-32BIT[REQ]-`|Efface l'indicateur 32BITREQUIRED.|  
+|`-32BITPREF+`|Définit l'indicateur 32BITPREFERRED. L'application s'exécute comme un processus 32 bits même sur les plateformes 64 bits. Affectez cet indicateur uniquement sur les fichiers EXE. Si l'indicateur est défini sur une DLL, la DLL ne charge pas dans les processus 64 bits, et une exception <xref:System.BadImageFormatException> est levée. Un fichier EXE avec cet indicateur peut être chargé dans un processus 64 bits.<br /><br /> Nouveautés de .NET Framework 4.5.|  
+|`-32BITPREF-`|Efface l'indicateur 32BITPREFERRED.<br /><br /> Nouveautés de .NET Framework 4.5.|  
+|`-?`|Affiche la syntaxe et les options de commande de l'outil.|  
+|`-Force`|Force une mise à jour même si l'assembly est associé à un nom fort. **Important :** Si vous mettez à jour un assembly avec un nom fort, vous devez le resigner avant d’exécuter son code.|  
+|`-help`|Affiche la syntaxe et les options de commande de l'outil.|  
+|`-ILONLY+`|Définit l'indicateur ILONLY.|  
+|`-ILONLY-`|Efface l'indicateur ILONLY.|  
+|`-nologo`|Supprime l'affichage de la bannière de démarrage Microsoft.|  
+|`-RevertCLRHeader`|Rétablit l'en-tête du CLR à la version 2.0.|  
+|`-UpgradeCLRHeader`|Met à niveau l'en-tête du CLR à la version 2.5. **Remarque :** Les assemblys doivent avoir la version 2.5 ou ultérieure dans l’en-tête du CLR pour être exécutés en mode natif.|  
   
 ## <a name="remarks"></a>Notes  
  Si aucune option n'est spécifiée, l'outil de conversion CorFlags affiche les indicateurs pour l'assembly spécifié.  

@@ -3,16 +3,14 @@ title: Migrer un service de demande-réponse WCF vers gRPC-gRPC pour les dévelo
 description: Découvrez comment migrer un service de requête-réponse simple de WCF vers gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 183e3b0ab1ce5c63714ced064f0d0901f59819c7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 12e042e8e7e3683cc4da1fedce2482e7199b04a7
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770401"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846610"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>Migrer un service de requête-réponse WCF vers un RPC unaire gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Cette section explique comment migrer un service de requête-réponse de base dans WCF vers un service RPC unaire dans ASP.NET Core gRPC. Ces services sont les types de service les plus simples dans Windows Communication Foundation (WCF) et gRPC. il s’agit donc d’un excellent point de départ. Après la migration du service, vous apprendrez à générer une bibliothèque cliente à partir du même fichier de `.proto` pour utiliser le service à partir d’une application cliente .NET.
 

@@ -3,16 +3,14 @@ title: Liaisons et transports WCF-gRPC pour les développeurs WCF
 description: Découvrez comment les différents transports et liaisons WCF sont comparés à gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: f1866fe379dd307ede8128b43cf8f70c8b4caf69
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 34321395ddd7059ac7e3c268e313a03251662911
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771606"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846051"
 ---
 # <a name="wcf-bindings-and-transports"></a>Liaisons WCF et transports
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 WCF possède un grand nombre de *liaisons* intégrées différentes qui spécifient des protocoles réseau, des formats de transmission et d’autres détails d’implémentation. gRPC possède un seul protocole réseau et un seul format de câble (techniquement, le format de câble *peut* être personnalisé, mais cela n’entre pas dans le cadre de cet ouvrage). Vous découvrirez probablement que gRPC offre la meilleure solution dans la plupart des cas. Ce qui suit est une brève discussion sur les liaisons WCF les plus pertinentes et sur leur comparaison avec leur équivalent dans gRPC.
 

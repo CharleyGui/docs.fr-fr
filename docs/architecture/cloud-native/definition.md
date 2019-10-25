@@ -3,12 +3,12 @@ title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: c99a99ec2cd7a8c4263ae3321d5a836bc40da087
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: aec199aee52a4ab3202c3ec0ceb769fecd168cfe
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315944"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846737"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -95,7 +95,7 @@ Dans le livre, [au-delà de l’application à douze facteurs](https://content.
 
 |    |  Nouveau facteur | Explication  |
 | :-------- | :-------- | :-------- |
-| 13 | Première API | Faites de tout un service. Supposons que votre code sera consommé par un client frontal. passerelle ou un autre service. |
+| 13 | Première API | Faites de tout un service. Supposons que votre code sera consommé par un client frontal, une passerelle ou un autre service. |
 | 14 | Télémétrie | Sur une station de travail, vous bénéficiez d’une visibilité détaillée de votre application et de son comportement. Dans le Cloud, vous ne le pouvez pas. Assurez-vous que votre conception comprend la collecte des données de surveillance, spécifiques à un domaine et à l’intégrité/au système. |
 | 15 | Authentification/autorisation  | Implémentez l’identité à partir du début. Envisagez [les fonctionnalités RBAC (contrôle d’accès en fonction du rôle)](https://docs.microsoft.com/azure/role-based-access-control/overview) disponibles dans les clouds publics.  |
 

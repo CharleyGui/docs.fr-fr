@@ -3,16 +3,14 @@ title: Metadata-gRPC pour les développeurs WCF
 description: Utilisation des métadonnées dans gRPC pour passer un contexte supplémentaire entre les clients et les serveurs
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 71ac60cd4c389277675dd452430735fb698fd342
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 32559b3404b12f366fc1624299d04cff9faad9d6
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770481"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846617"
 ---
 # <a name="metadata"></a>Métadonnées
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Les « métadonnées » font référence à des données supplémentaires qui peuvent être utiles lors du traitement des demandes et des réponses, mais qui ne font pas partie des données d’application réelles. Les métadonnées peuvent inclure des jetons d’authentification, des identificateurs de demande et des balises à des fins d’analyse, ou des informations sur les données telles que le nombre d’enregistrements dans un DataSet.
 

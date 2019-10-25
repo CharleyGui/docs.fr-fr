@@ -3,16 +3,14 @@ title: Annexe-gRPC pour les développeurs WCF
 description: Présentation des transactions distribuées et de leur implémentation dans les architectures de microservices modernes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 10c4e77794c5ffe1aa6d5a629ce0b6cdf92f4ada
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d181eb07dd50ed338d02edb1908626e6ca3fb56c
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184616"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846731"
 ---
 # <a name="appendix-a---transactions"></a>Annexe A-transactions
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Les transactions distribuées prises en charge par Windows Communication Foundation (WCF) permettent d’effectuer des opérations atomiques sur plusieurs services. Cette fonctionnalité était basée sur le [Distributed Transaction Coordinator Microsoft](https://docs.microsoft.com/previous-versions/windows/desktop/ms684146(v=vs.85)).
 
@@ -24,7 +22,7 @@ Si possible, il est préférable d’éviter totalement les transactions distrib
 
 Si ce n’est pas possible, une alternative consiste à utiliser le [modèle saga](https://microservices.io/patterns/data/saga.html). Dans un saga, les mises à jour sont traitées de manière séquentielle. à mesure que chaque mise à jour est réussie, le suivant est déclenché. Ces déclencheurs peuvent être propagés du service au service, ou gérés par un coordinateur saga ou « Orchestrator ». Si une mise à jour échoue à tout moment pendant le processus, les services qui ont déjà effectué leurs mises à jour appliquent une logique spécifique pour les inverser.
 
-Une autre option consiste à utiliser la conception pilotée par domaine (DDD) et la séparation des responsabilités de commande/requête (CQRS), comme décrit dans le [livre électronique sur les microservices .net](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/). En particulier, l’utilisation d’événements de domaine ou d’une [source d’événements](https://martinfowler.com/eaaDev/EventSourcing.html) peut aider à garantir&mdash;que les mises à jour sont cohérentes si elles ne sont pas appliquées immédiatement.&mdash;
+Une autre option consiste à utiliser la conception pilotée par domaine (DDD) et la séparation des responsabilités de commande/requête (CQRS), comme décrit dans le [livre électronique sur les microservices .net](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/). En particulier, l’utilisation d’événements de domaine ou d’une [source d’événements](https://martinfowler.com/eaaDev/EventSourcing.html) peut aider à garantir que les mises à jour sont toujours&mdash;es si elles ne sont pas immédiatement&mdash;appliquées.
 
 >[!div class="step-by-step"]
 >[Précédent](application-performance-management.md)

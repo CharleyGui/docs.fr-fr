@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer une stratégie d’éditeur'
+title: "Comment : créer une stratégie d'éditeur"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - publisher policy assembly
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 5484dfeb8cf5292fb43393bb39b9878114119d29
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 608918828bf72369a1bd48e2391e2423078e9df0
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991193"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846838"
 ---
-# <a name="how-to-create-a-publisher-policy"></a>Procédure : Créer une stratégie d’éditeur
+# <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
 
 Les fournisseurs d’assemblys peuvent indiquer que les applications doivent utiliser une version plus récente d’un assembly en incluant un fichier de stratégie d’éditeur avec l’assembly mis à niveau. Le fichier de stratégie d’éditeur spécifie la redirection d’assembly et les paramètres de base de code, et utilise le même format qu’un fichier de configuration d’application. Le fichier de stratégie d’éditeur est compilé dans un assembly et placé dans le Global Assembly Cache.
 
@@ -26,7 +26,7 @@ La création d’une stratégie d’éditeur implique trois étapes :
 
 3. Ajoutez l’assembly de stratégie d’éditeur au Global Assembly Cache.
 
-Le schéma de la stratégie d’éditeur est décrit dans [redirection des versions d’assembly](redirect-assembly-versions.md). L’exemple suivant montre un fichier de stratégie d’éditeur qui redirige une version `myAssembly` de vers une autre.
+Le schéma de la stratégie d’éditeur est décrit dans [redirection des versions d’assembly](redirect-assembly-versions.md). L’exemple suivant montre un fichier de stratégie d’éditeur qui redirige une version de `myAssembly` vers une autre.
 
 ```xml
 <configuration>
@@ -63,7 +63,7 @@ Dans cette commande :
 
 - L’argument *publisherPolicyAssemblyFile* est le nom de l’assembly de stratégie d’éditeur qui résulte de cette commande. Le nom du fichier de l’assembly doit respecter le format suivant :
 
-  **renvoi.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**
+  **renvoi.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **. dll**
 
 - L’argument *keyPairFile* est le nom du fichier contenant la paire de clés. Vous devez signer l’assembly et l’assembly de stratégie d’éditeur avec la même paire de clés.
 
@@ -72,13 +72,13 @@ Dans cette commande :
   > [!NOTE]
   > La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0.
 
-La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2.0. la commande suivante crée un assembly `policy.1.0.myAssembly` de stratégie d’éditeur appelé à `pub.config`partir d’un fichier de stratégie d’éditeur appelé, assigne un nom fort à assembly utilisant la paire de clés dans `sgKey.snk` le fichier et spécifie que l’assembly cible l’architecture du processeur x86.
+La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0. La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur nommé `pub.config`, attribue un nom fort à l’assembly à l’aide de la paire de clés dans le fichier `sgKey.snk` et spécifie que l’assembly cible le processeur x86. SOA.
 
 ```
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
 ```
 
-L’assembly de stratégie d’éditeur doit correspondre à l’architecture de processeur de l’assembly auquel il s’applique. Ainsi, si votre assembly a <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> la <xref:System.Reflection.ProcessorArchitecture.MSIL>valeur, l’assembly de stratégie d’éditeur de cet assembly `/platform:anycpu`doit être créé avec. Vous devez fournir un assembly de stratégie d’éditeur distinct pour chaque assembly spécifique au processeur.
+L’assembly de stratégie d’éditeur doit correspondre à l’architecture de processeur de l’assembly auquel il s’applique. Ainsi, si votre assembly a une valeur <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> de <xref:System.Reflection.ProcessorArchitecture.MSIL>, l’assembly de stratégie d’éditeur de cet assembly doit être créé avec `/platform:anycpu`. Vous devez fournir un assembly de stratégie d’éditeur distinct pour chaque assembly spécifique au processeur.
 
 Une conséquence de cette règle est que pour modifier l’architecture de processeur d’un assembly, vous devez modifier le composant principal ou mineur du numéro de version, afin de pouvoir fournir un nouvel assembly de stratégie d’éditeur avec l’architecture de processeur correcte. L’ancien assembly de stratégie d’éditeur ne peut pas traiter votre assembly une fois que votre assembly a une architecture de processeur différente.
 
@@ -92,9 +92,9 @@ Utilisez l' [outil global assembly cache (Gacutil. exe)](../tools/gacutil-exe-ga
 
 À l’invite de commandes, tapez la commande suivante :
 
-**gacutil /i**  *publisherPolicyAssemblyFile*
+**gacutil/I**  *publisherPolicyAssemblyFile*
 
-La commande suivante ajoute `policy.1.0.myAssembly.dll` à la global assembly cache.
+La commande suivante ajoute `policy.1.0.myAssembly.dll` à l’Global Assembly Cache.
 
 ```
 gacutil /i policy.1.0.myAssembly.dll

@@ -3,16 +3,14 @@ title: Comparaison de WCF à gRPC-gRPC pour les développeurs WCF
 description: Comparaison des frameworks WCF et gRPC pour la création d’applications distribuées.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: c763048d09e7ed5ca0a3d5240f6b3cf5262f897c
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 5ab1380d4ded52abff08c35c430adf2f3ed7c58b
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184042"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846066"
 ---
 # <a name="comparing-wcf-to-grpc"></a>Comparaison de WCF et de gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Le chapitre précédent doit vous avoir donné un aperçu de Protobuf et de la façon dont gRPC gère les messages. Avant de procéder à une conversion détaillée de WCF en gRPC, il est important de savoir comment la gamme de fonctionnalités actuellement disponibles dans WCF est gérée dans gRPC, ainsi que les solutions de contournement que vous pouvez utiliser lorsqu’il n’apparaît pas comme équivalent à gRPC. En particulier, ce chapitre aborde les sujets suivants :
 
@@ -21,11 +19,11 @@ Le chapitre précédent doit vous avoir donné un aperçu de Protobuf et de la f
 - Types RPC
 - Métadonnées
 - Gestion des erreurs
-- WS-\* protocoles
+- Protocoles WS-\*
 
 ## <a name="grpc-example"></a>exemple gRPC
 
-Lorsque vous créez un projet ASP.NET Core 3,0 gRPC à partir de Visual Studio 2019 ou de la ligne de commande, l’équivalent gRPC de « Hello World » est généré pour vous. Il se compose d' `greeter.proto` un fichier qui définit le service et de ses messages, `GreeterService.cs` et d’un fichier avec une implémentation du service.
+Lorsque vous créez un projet ASP.NET Core 3,0 gRPC à partir de Visual Studio 2019 ou de la ligne de commande, l’équivalent gRPC de « Hello World » est généré pour vous. Il se compose d’un fichier `greeter.proto` qui définit le service et de ses messages, et d’un fichier `GreeterService.cs` avec une implémentation du service.
 
 ```protobuf
 syntax = "proto3";

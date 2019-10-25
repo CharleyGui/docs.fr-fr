@@ -3,16 +3,14 @@ title: Appeler les informations d’identification-gRPC pour les développeurs W
 description: Comment implémenter et utiliser les informations d’identification d’appel gRPC dans ASP.NET Core 3,0.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 483f540a0ed3849883c07cc70f0e3d45a6b121ad
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 5f29d69ec37fe60bcd7ca01391001ea9eb71e7e4
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184595"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846685"
 ---
 # <a name="call-credentials"></a>Informations d’identification de l’appel
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Les informations d’identification d’appel sont toutes basées sur un type de jeton passé dans les métadonnées avec chaque demande.
 
@@ -60,7 +58,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-La `IssuerSigningKey` propriété requiert une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Ce jeton doit être stocké en toute sécurité dans un *serveur de secrets* comme Azure Key Vault.
+La propriété `IssuerSigningKey` nécessite une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Ce jeton doit être stocké en toute sécurité dans un *serveur de secrets* comme Azure Key Vault.
 
 Ajoutez ensuite le service d’autorisation, qui contrôle l’accès au système.
 
@@ -79,7 +77,7 @@ Ajoutez ensuite le service d’autorisation, qui contrôle l’accès au systèm
 > [!TIP]
 > L’authentification et l’autorisation sont deux étapes distinctes. L’authentification est utilisée pour déterminer l’identité de l’utilisateur. L’autorisation décide si cet utilisateur est autorisé à accéder aux différentes parties du système.
 
-Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.net core dans `Configure` la méthode.
+Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.NET Core dans la méthode `Configure`.
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -102,7 +100,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-Enfin, appliquez l' `[Authorize]` attribut à tous les services ou méthodes à sécuriser et utilisez la `User` propriété du sous- `HttpContext` jacent pour vérifier les autorisations.
+Enfin, appliquez l’attribut `[Authorize]` à tous les services ou méthodes à sécuriser, et utilisez la propriété `User` à partir du `HttpContext` sous-jacent pour vérifier les autorisations.
 
 ```csharp
 [Authorize]

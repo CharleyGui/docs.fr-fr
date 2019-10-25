@@ -3,16 +3,14 @@ title: Comment gRPC approche RPC-gRPC pour les développeurs WCF
 description: Comparaison des principales fonctionnalités de WCF à gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 36d51b96796f274811bfeea64c159afcc9bce301
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 3da28968f8c8bd6c4fdba7432ffc8458d8340457
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770683"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846695"
 ---
 # <a name="how-grpc-approaches-rpc"></a>Comment gRPC approche RPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Windows Communication Foundation (WCF) et gRPC sont des implémentations du modèle d' *appel de procédure distante* (RPC), qui vise à faire des appels aux services s’exécutant sur un autre ordinateur, ou dans un processus différent, à fonctionner en toute transparence comme s’ils étaient appels de méthode dans l’application cliente. Alors que les objectifs de WCF et de gRPC sont les mêmes, les détails de l’implémentation sont très différents.
 

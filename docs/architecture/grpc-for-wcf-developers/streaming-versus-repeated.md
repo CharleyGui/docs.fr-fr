@@ -3,28 +3,26 @@ title: services de streaming gRPC et champs répétés-gRPC pour les développeu
 description: Comparaison entre les champs répétés et les services de streaming pour passer des collections de données avec gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 7dc3c8f5bf2efc304da7d50661ba47db500e67a0
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: e48fe4882139e029dbf5b52451a2e68cb4316677
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184070"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846083"
 ---
 # <a name="grpc-streaming-services-versus-repeated-fields"></a>services de streaming gRPC et champs répétés
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-les services gRPC offrent deux moyens de retourner des jeux de données ou des listes d’objets. La spécification de message de mémoires tampons `repeated` de protocole utilise le mot clé pour déclarer des listes ou des tableaux de messages dans un autre message. La spécification du service gRPC utilise `stream` le mot clé pour déclarer une connexion permanente longue sur laquelle plusieurs messages sont envoyés et peut être traitée individuellement. La `stream` fonctionnalité peut également être utilisée pour des données temporelles de longue durée, telles que des notifications ou des messages de journal, mais ce chapitre prend en compte son utilisation pour retourner un jeu de données unique.
+les services gRPC offrent deux moyens de retourner des jeux de données ou des listes d’objets. La spécification de message de mémoires tampons de protocole utilise le mot clé `repeated` pour déclarer des listes ou des tableaux de messages dans un autre message. La spécification du service gRPC utilise le mot clé `stream` pour déclarer une connexion permanente longue sur laquelle plusieurs messages sont envoyés et peut être traitée individuellement. La fonctionnalité `stream` peut également être utilisée pour des données temporelles de longue durée, telles que des notifications ou des messages de journal, mais ce chapitre prend en compte son utilisation pour retourner un jeu de données unique.
 
 Ce que vous devez utiliser dépend de divers facteurs, tels que la taille globale du jeu de données, le temps nécessaire pour créer le jeu de données à la fin du client ou du serveur, et si l’utilisateur du DataSet peut commencer à agir dessus dès que le premier élément est disponible , ou a besoin du jeu de données complet pour faire quelque chose d’utile.
 
-## <a name="when-to-use-repeated-fields"></a>Quand utiliser `repeated` des champs
+## <a name="when-to-use-repeated-fields"></a>Quand utiliser les champs de `repeated`
 
-Pour tout jeu de données limité en taille et pouvant être généré dans son intégralité dans un laps de temps donné (par exemple, sous une seconde), vous devez utiliser `repeated` un champ dans un message Protobuf normal. Par exemple, dans un système de commerce électronique, la création d’une liste d’éléments dans une commande est probablement rapide et la liste n’est pas très volumineuse. Le retour d’un seul message `repeated` avec un champ est un ordre de grandeur plus rapide `stream` que l’utilisation d’un et entraîne moins de surcharge du réseau.
+Pour tout jeu de données limité en taille et pouvant être généré dans son intégralité dans un laps de temps donné (par exemple, sous une seconde), vous devez utiliser un champ `repeated` dans un message Protobuf normal. Par exemple, dans un système de commerce électronique, la création d’une liste d’éléments dans une commande est probablement rapide et la liste n’est pas très volumineuse. Le retour d’un seul message avec un champ `repeated` est un ordre de grandeur plus rapide que l’utilisation d’une `stream` et entraîne moins de surcharge du réseau.
 
-Si le client a besoin de toutes les données avant de commencer à le traiter et que le jeu de données est suffisamment petit pour être construit `repeated` en mémoire, envisagez d’utiliser un champ même si la création réelle du jeu de données en mémoire sur le serveur est plus lente.
+Si le client a besoin de toutes les données avant de commencer à le traiter et que le jeu de données est suffisamment petit pour être construit en mémoire, envisagez d’utiliser un champ `repeated` même si la création réelle du jeu de données en mémoire sur le serveur est plus lente.
 
-## <a name="when-to-use-stream-methods"></a>Quand utiliser `stream` des méthodes
+## <a name="when-to-use-stream-methods"></a>Quand utiliser des méthodes `stream`
 
 Les jeux de données où les objets de message sont potentiellement très volumineux sont transférés le mieux à l’aide de demandes de streaming ou de réponses. Il est plus efficace de construire un objet volumineux en mémoire, de l’écrire sur le réseau, puis de libérer les ressources. Cette approche permet d’améliorer l’évolutivité de votre service.
 

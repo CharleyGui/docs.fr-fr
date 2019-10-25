@@ -3,16 +3,14 @@ title: Maillages de service-gRPC pour les développeurs WCF
 description: Utilisation d’une maille de service pour acheminer et équilibrer les demandes vers les services gRPC dans un cluster Kubernetes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 7fc80b95937dab9153b72aa6bc8da90f6453779f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 18c12af787f32988bbf17b1561d4ba1fb4deaf41
+ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184091"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72846046"
 ---
 # <a name="service-meshes"></a>Maillages de service
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Une maille de service est un composant d’infrastructure qui prend le contrôle des demandes de service de routage au sein d’un réseau. Les maillages de service peuvent gérer tous les types de problèmes au niveau du réseau au sein d’un cluster Kubernetes, notamment :
 
@@ -24,7 +22,7 @@ Une maille de service est un composant d’infrastructure qui prend le contrôle
 
 Les maillages de service Kubernetes fonctionnent en ajoutant un conteneur supplémentaire, appelé *proxy de side-car*, à chaque Pod inclus dans la maille. Le proxy prend en charge la gestion de toutes les demandes réseau entrantes et sortantes, ce qui permet à la configuration et à la gestion de la mise en réseau de rester séparées des conteneurs d’applications et, dans de nombreux cas, sans nécessiter de modification du code de l’application.
 
-Prenons l' [exemple du chapitre précédent](kubernetes.md#testing-the-application), où les requêtes gRPC de l’application Web ont toutes été routées vers une seule instance du service gRPC. Cela se produit parce que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache `HttpClientHandler` pendant la durée de vie de l’instance. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients, mais cela complique considérablement le code de l’application sans ajouter de valeur commerciale ou client.
+Prenons l' [exemple du chapitre précédent](kubernetes.md#testing-the-application), où les requêtes gRPC de l’application Web ont toutes été routées vers une seule instance du service gRPC. Cela est dû au fait que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache pendant la durée de vie de l’instance `HttpClientHandler`. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients, mais cela complique considérablement le code de l’application sans ajouter de valeur commerciale ou client.
 
 À l’aide d’un maillage de service, les demandes du conteneur d’application sont envoyées au proxy side-car, qui peut les distribuer intelligemment sur toutes les instances de l’autre service. La maille peut également :
 
@@ -32,11 +30,11 @@ Prenons l' [exemple du chapitre précédent](kubernetes.md#testing-the-applicati
 - Gérer la sémantique des nouvelles tentatives pour les échecs d’appels ou de délais d’attente
 - Rediriger les demandes ayant échoué vers une autre instance sans revenir à l’application cliente.
 
-La capture d’écran suivante montre l’application StockWeb en cours d’exécution avec la maille du service Linkerd, sans aucune modification du code de l’application, ou même l’image de l’arrimeur utilisée. La seule modification requise était l’ajout d’une annotation au déploiement dans les fichiers YAML pour les `stockdata` services et. `stockweb`
+La capture d’écran suivante montre l’application StockWeb en cours d’exécution avec la maille du service Linkerd, sans aucune modification du code de l’application, ou même l’image de l’arrimeur utilisée. La seule modification requise était l’ajout d’une annotation au déploiement dans les fichiers YAML pour les services `stockdata` et `stockweb`.
 
 ![StockWeb avec maillage de service](media/service-mesh/stockweb-servicemesh-screenshot.png)
 
-Vous pouvez voir à partir de la colonne serveur que les demandes de l’application StockWeb ont été routées vers les deux réplicas du service stockdata, bien qu' `HttpClient` elles proviennent d’une instance unique dans le code de l’application. En fait, si vous examinez le code, vous verrez que toutes les demandes 100 au service stockdata sont effectuées simultanément à l' `HttpClient` aide de la même instance, mais avec la maille de service, ces demandes sont équilibrées entre plusieurs instances de service disponibles.
+Vous pouvez voir à partir de la colonne de serveur que les demandes de l’application StockWeb ont été routées vers les deux réplicas du service StockData, bien qu’elles proviennent d’une instance de `HttpClient` unique dans le code de l’application. En fait, si vous examinez le code, vous verrez que toutes les demandes 100 au service StockData sont effectuées simultanément à l’aide de la même instance de `HttpClient`, mais avec la maille de service, ces demandes sont équilibrées entre plusieurs instances de service disponibles.
 
 Les maillages de service s’appliquent uniquement au trafic au sein d’un cluster. Pour les clients externes, consultez [le chapitre suivant, équilibrage de charge](load-balancing.md).
 
@@ -65,7 +63,7 @@ Une fois l’interface CLI Linkerd installée, suivez les instructions [*prise e
 
 ### <a name="add-linkerd-to-kubernetes-deployments"></a>Ajouter Linkerd à des déploiements Kubernetes
 
-L’interface CLI Linkerd fournit `inject` une commande pour ajouter les sections et les propriétés nécessaires aux fichiers Kubernetes. Vous pouvez exécuter la commande et écrire la sortie dans un nouveau fichier.
+L’interface CLI Linkerd fournit une commande `inject` pour ajouter les sections et les propriétés nécessaires aux fichiers Kubernetes. Vous pouvez exécuter la commande et écrire la sortie dans un nouveau fichier.
 
 ```console
 linkerd inject stockdata.yml > stockdata-with-mesh.yml
@@ -74,7 +72,7 @@ linkerd inject stockweb.yml > stockweb-with-mesh.yml
 
 Vous pouvez inspecter les nouveaux fichiers pour voir les modifications apportées. Pour les objets de déploiement, une annotation de métadonnées est ajoutée pour indiquer à Linkerd d’injecter un conteneur de proxy side-car dans le pod lorsqu’il est créé.
 
-Il est également possible de diriger `linkerd inject` `kubectl` directement la sortie de la commande. Les commandes suivantes fonctionnent dans PowerShell ou dans n’importe quel shell Linux.
+Il est également possible de diriger la sortie de la commande `linkerd inject` vers `kubectl` directement. Les commandes suivantes fonctionnent dans PowerShell ou dans n’importe quel shell Linux.
 
 ```console
 linkerd inject stockdata.yml | kubectl apply -f -
@@ -83,7 +81,7 @@ linkerd inject stockweb.yml | kubectl apply -f -
 
 ### <a name="inspect-services-in-the-linkerd-dashboard"></a>Inspecter les services dans le tableau de bord Linkerd
 
-Lancez le tableau de bord Linkerd `linkerd` à l’aide de l’interface CLI.
+Lancez le tableau de bord Linkerd à l’aide de l’interface de commande `linkerd`.
 
 ```console
 linkerd dashboard
