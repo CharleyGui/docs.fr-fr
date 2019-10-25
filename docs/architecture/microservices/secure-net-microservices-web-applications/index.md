@@ -4,12 +4,12 @@ description: 'Sécurité dans les microservices .NET et les applications web : 
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 0894465858e3503e2eddb5299b404f7ba95fdd6a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: f405b4199e8239e86c4799a649c3d87811d99828
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296474"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798859"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
@@ -25,9 +25,9 @@ Dans les scénarios de microservice, l’authentification est généralement gé
 
 **Figure 9-1**. authentification centralisée avec une passerelle d’API
 
-Si les services sont directement accessibles, il est possible d’authentifier les utilisateurs à l’aide d’un service d’authentification comme Azure Active Directory ou un microservice d’authentification dédié faisant office de service d’émission jeton de sécurité (STS). Les décisions d’approbation sont partagées entre les services au moyen de jetons de sécurité ou de cookies. (Ces jetons peuvent être partagés entre des applications ASP.NET Core, si nécessaire, via l’implémentation du [partage de cookie](/aspnet/core/security/cookie-sharing).) Ce modèle est illustré dans la figure 9-2.
+Si les services sont directement accessibles, il est possible d’authentifier les utilisateurs à l’aide d’un service d’authentification comme Azure Active Directory ou un microservice d’authentification dédié faisant office de service d’émission jeton de sécurité (STS). Les décisions d’approbation sont partagées entre les services au moyen de jetons de sécurité ou de cookies. (Ces jetons peuvent être partagés entre ASP.NET Core applications, si nécessaire, en implémentant le [partage de cookies](/aspnet/core/security/cookie-sharing).) Ce modèle est illustré dans la figure 9-2.
 
-![Quand les microservices sont accessibles directement, l’approbation, qui comprend l’authentification et l’autorisation, est gérée par un jeton de sécurité émis par un microservice dédié et partagé entre les microservices.](./media/image2.png)
+![Lorsque les microservices sont accessibles directement, l’approbation, qui comprend l’authentification et l’autorisation, est gérée par un jeton de sécurité émis par un microservice dédié, partagé entre les microservices.](./media/image2.png)
 
 **Figure 9-2**. authentification par un microservice d’identité ; l’approbation est partagée à l’aide d’un jeton d’autorisation
 
@@ -282,20 +282,17 @@ L’intergiciel d’authentification du porteur JWT peut aussi prendre en charge
 - **Présentation d’Identity** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)
 
-- **Rick Anderson. Authentification à 2 facteurs avec SMS** \
+- **Rick Anderson. Authentification à deux facteurs avec SMS** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/2fa](/aspnet/core/security/authentication/2fa)
 
 - **Activation de l’authentification à l’aide de Facebook, de Google et d’autres fournisseurs externes** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/social/](/aspnet/core/security/authentication/social/)
 
-- **Michell Anicas. Présentation d’OAuth 2** \
+- **Michell Anicas. Présentation d’OAuth 2** \
   <https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2>
 
 - **AspNet.Security.OAuth.Providers** (référentiel GitHub pour fournisseurs d’autorisation OAuth ASP.NET) \
   <https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src>
-
-- **Danny Strockis. Intégration d’Azure AD dans une application web ASP.NET Core** \
-  <https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/>
 
 - **IdentityServer4. Documentation officielle** \
   <https://identityserver4.readthedocs.io/en/latest/>

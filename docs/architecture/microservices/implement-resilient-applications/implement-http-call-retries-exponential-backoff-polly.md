@@ -2,12 +2,12 @@
 title: Implémenter de nouvelles tentatives d’appel HTTP avec interruption exponentielle avec Polly
 description: Découvrez comment gérer les échecs HTTP avec Polly et HttpClientFactory.
 ms.date: 01/07/2019
-ms.openlocfilehash: 82b3b0d37815e2f16ed3be1b1e7de37019b08ee8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9988f70513959c099c771fcc0221bba7e2e70200
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318411"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798816"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implémenter de nouvelles tentatives d’appel HTTP avec interruption exponentielle avec des stratégies Polly et HttpClientFactory
 
@@ -53,17 +53,20 @@ Avec Polly, vous pouvez définir une stratégie Retry en spécifiant le nombre d
 
 ## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Ajouter une stratégie d’instabilité à la stratégie de nouvelle tentative
 
-Une stratégie Nouvelle tentative standard peut avoir un impact sur votre système en cas de fort accès concurrentiel, de haute scalabilité et de contention élevée. Pour surmonter les pointes de nouvelles tentatives similaires provenant de nombreux clients en cas de pannes partielles, une solution de contournement efficace consiste à ajouter une stratégie d’instabilité à la stratégie/l’algorithme de nouvelle tentative. Cela peut améliorer les performances globales du système de bout en bout en ajoutant le caractère aléatoire à l’interruption exponentielle. Les pointes sont alors réparties quand des problèmes surviennent. Quand vous utilisez une stratégie Polly brute, le code permettant d’implémenter l’instabilité peut ressembler à l’exemple suivant :
+Une stratégie Nouvelle tentative standard peut avoir un impact sur votre système en cas de fort accès concurrentiel, de haute scalabilité et de contention élevée. Pour surmonter les pointes de nouvelles tentatives similaires provenant de nombreux clients en cas de pannes partielles, une solution de contournement efficace consiste à ajouter une stratégie d’instabilité à la stratégie/l’algorithme de nouvelle tentative. Cela peut améliorer les performances globales du système de bout en bout en ajoutant le caractère aléatoire à l’interruption exponentielle. Les pointes sont alors réparties quand des problèmes surviennent. Le principe est illustré dans l’exemple suivant :
 
 ```csharp
 Random jitterer = new Random(); 
-Policy
-  .Handle<HttpResponseException>() // etc
-  .WaitAndRetry(5,    // exponential back-off plus some jitter
-      retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))  
-                    + TimeSpan.FromMilliseconds(jitterer.Next(0, 100)) 
-  );
+var retryWithJitterPolicy = HttpPolicyExtensions
+    .HandleTransientHttpError()
+    .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+    .WaitAndRetryAsync(6,    // exponential back-off plus some jitter
+        retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))  
+                      + TimeSpan.FromMilliseconds(jitterer.Next(0, 100)) 
+    );
 ```
+
+Polly fournit des algorithmes d’instabilité prêts pour la production via le site Web du projet.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -75,6 +78,9 @@ Policy
 
 - **Polly (Résilience .NET et bibliothèque de gestion des erreurs temporaires)**  
   <https://github.com/App-vNext/Polly>
+
+- **Polly : réessayer avec un bougé**  
+  <https://github.com/App-vNext/Polly/wiki/Retry-with-jitter>
 
 - **Marc Brooker. Gigue : améliorer les choses avec le caractère aléatoire**  
   <https://brooker.co.za/blog/2015/03/21/backoff.html>
