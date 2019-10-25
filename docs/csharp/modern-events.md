@@ -3,12 +3,12 @@ title: Modèle d’événement .NET Core mis à jour
 description: Découvrez toute la souplesse apportée par le modèle d’événement .NET Core et la compatibilité descendante et apprenez à implémenter un traitement sécurisé des événements grâce aux abonnés asynchrones.
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: 158295215932f54c75afdf1e96d48453434129fe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 85fa4fd111a9eab01c1d32949d9fcc5f6300e33c
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751786"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798877"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Modèle d’événement .NET Core mis à jour
 
@@ -51,7 +51,7 @@ Selon une logique similaire, aucun type d’argument d’événement créé main
 
 ## <a name="events-with-async-subscribers"></a>Événements avec des abonnés asynchrones
 
-Vous avez un dernier modèle à découvrir : comment écrire correctement des abonnés à l’événement qui appellent du code asynchrone. La difficulté est décrite dans l’article consacré à [async et await](async.md). Les méthodes asynchrones peuvent avoir un type de retour void, mais ceci est fortement déconseillé. Quand votre code pour l’abonné à l’événement appelle une méthode asynchrone, vous n’avez d’autre choix que de créer une méthode `async void`. La signature de gestionnaire d’événements en a besoin.
+Vous avez un modèle final à découvrir : comment écrire correctement des abonnés à l’événement qui appellent du code asynchrone. La difficulté est décrite dans l’article consacré à [async et await](async.md). Les méthodes asynchrones peuvent avoir un type de retour void, mais ceci est fortement déconseillé. Quand votre code pour l’abonné à l’événement appelle une méthode asynchrone, vous n’avez d’autre choix que de créer une méthode `async void`. La signature de gestionnaire d’événements en a besoin.
 
 Vous devez rapprocher ces deux nécessités opposées. D’une façon ou d’une autre, vous devez créer une méthode `async void` sécurisée. Les principes de base du modèle que vous devez implémenter sont les suivants :
 
@@ -71,7 +71,7 @@ worker.StartWorking += async (sender, eventArgs) =>
 };
 ```
 
-Notez d’abord que le gestionnaire est marqué en tant que gestionnaire asynchrone. Comme il est affecté à un type délégué de gestionnaire d’événements, il a un type de retour void. Cela signifie que vous devez suivre le modèle indiqué dans le gestionnaire et interdire la levée d’exceptions en dehors du contexte du gestionnaire asynchrone. Comme il ne retourne pas une tâche, aucune tâche ne peut signaler l’erreur en passant à l’état d’erreur. Comme la méthode est asynchrone, elle ne peut tout simplement pas lever l’exception. (La méthode appelante a continué l’exécution, car elle est `async`.) Le comportement réel à l’exécution doit être défini différemment pour les différents environnements. Il peut mettre fin au thread, mettre fin au programme ou laisser le programme dans un état indéterminé. Aucune de ces possibilités ne constitue un résultat satisfaisant.
+Notez d’abord que le gestionnaire est marqué en tant que gestionnaire asynchrone. Comme il est affecté à un type délégué de gestionnaire d’événements, il a un type de retour void. Cela signifie que vous devez suivre le modèle indiqué dans le gestionnaire et interdire la levée d’exceptions en dehors du contexte du gestionnaire asynchrone. Comme il ne retourne pas une tâche, aucune tâche ne peut signaler l’erreur en passant à l’état d’erreur. Comme la méthode est asynchrone, elle ne peut tout simplement pas lever l’exception. (La méthode d’appel a continué à s’exécuter, car elle est `async`.) Le comportement réel du runtime sera défini différemment pour différents environnements. Elle peut arrêter le thread ou le processus qui possède le thread, ou conserver le processus dans un état indéterminé. Tous ces résultats potentiels sont très indésirables.
 
 C’est pourquoi vous devez encapsuler l’instruction await pour la tâche asynchrone dans votre propre bloc try. Si elle entraîne une erreur dans une tâche, vous pouvez consigner cette erreur. Si c’est une erreur dont votre application ne peut pas récupérer, vous pouvez quitter le programme rapidement et normalement.
 
@@ -79,4 +79,4 @@ Ce sont les principales mises à jour du modèle d’événement .NET. Vous pouv
 
 Le prochain article de cette série vous permet de faire la distinction entre l’utilisation de `delegates` et de `events` dans vos conceptions. Ces sont des concepts similaires : cet article vous aide à prendre la bonne décision pour vos programmes.
 
-[Next](distinguish-delegates-events.md)
+[Suivant](distinguish-delegates-events.md)

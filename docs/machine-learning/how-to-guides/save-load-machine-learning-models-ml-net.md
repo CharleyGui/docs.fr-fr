@@ -5,12 +5,12 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: e3d4a51ceaf707d30c5072b91d7baf7fe02ef433
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: f1a3131126f9f3af0bab0b1592430fbf7dddf78a
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065582"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799093"
 ---
 # <a name="save-and-load-trained-models"></a>Enregistrer et charger des modèles entraînés
 
@@ -24,7 +24,7 @@ HousingData[] housingData = new HousingData[]
     new HousingData
     {
         Size = 600f,
-        HistoricalPrices = new float[] { 100000f ,125000f ,122000f },
+        HistoricalPrices = new float[] { 100000f, 125000f, 122000f },
         CurrentPrice = 170000f
     },
     new HousingData

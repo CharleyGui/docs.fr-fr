@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 6340bc3fb2291601ba2a9812e0a438839f0718bc
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 41a0885f828e45e1216805533a977fc3d5eaf5cb
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971822"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798893"
 ---
 # <a name="code-access-security-and-adonet"></a>Sécurité d'accès du code et ADO.NET
 Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécurité d'accès du code (CAS, Code Access Security) implémentées à l'aide d'une infrastructure commune fournie par le Common Language Runtime (CLR). Dans l'univers du code non managé, la plupart des applications s'exécutent avec les autorisations de l'utilisateur ou d'une principal de sécurité. C'est pourquoi les systèmes informatiques peuvent être endommagés et des données privées compromises lorsqu'un utilisateur bénéficiant de privilèges élevés exécute des logiciels malveillants ou remplis d'erreurs.  
@@ -71,9 +71,9 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 |-----------------------------------|-----------------|  
 |`Action`|Obtient ou définit une action de sécurité. Hérité de l'objet <xref:System.Security.Permissions.SecurityAttribute>.|  
 |`AllowBlankPassword`|Active ou désactive l'utilisation d'un mot de passe vide dans une chaîne de connexion. Les valeurs valides sont `true` (pour activer l'utilisation des mots de passe vides) et `false` (pour la désactiver). Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`ConnectionString`|Identifie une chaîne de connexion autorisée. Plusieurs chaînes de connexion peuvent être identifiées. **Remarque :**  N'incluez pas d'ID utilisateur ni de mot de passe dans votre chaîne de connexion. Dans cette version, vous ne pouvez pas modifier les restrictions liées à la chaîne de connexion à l'aide de l'outil de configuration .NET Framework. <br /><br /> Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`KeyRestrictions`|Identifie les paramètres de chaîne de connexion autorisés et non autorisés. Les paramètres de chaîne de connexion sont identifiés dans le nom de paramètre de formulaire  *\<> =* . Il est possible de spécifier plusieurs paramètres, délimités par un point-virgule (;). **Remarque :**  Si aucun `KeyRestrictions` n'est spécifié et que la propriété `KeyRestrictionBehavior` a la valeur `AllowOnly` ou `PreventUsage`, aucun paramètre de chaîne de connexion supplémentaire n'est autorisé. Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`KeyRestrictionBehavior`|Identifie les paramètres de chaîne de connexion comme étant les seuls paramètres supplémentaires autorisés (`AllowOnly`) ou identifie les paramètres supplémentaires qui ne sont pas autorisés (`PreventUsage`). `AllowOnly`est la valeur par défaut. Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`ConnectionString`|Identifie une chaîne de connexion autorisée. Plusieurs chaînes de connexion peuvent être identifiées. **Remarque :**  N’incluez pas d’ID utilisateur ou de mot de passe dans votre chaîne de connexion. Dans cette version, vous ne pouvez pas modifier les restrictions liées à la chaîne de connexion à l'aide de l'outil de configuration .NET Framework. <br /><br /> Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`KeyRestrictions`|Identifie les paramètres de chaîne de connexion autorisés et non autorisés. Les paramètres de chaîne de connexion sont identifiés sous la forme *\<nom de paramètre > =* . Il est possible de spécifier plusieurs paramètres, délimités par un point-virgule (;). **Remarque :**  Si vous ne spécifiez pas `KeyRestrictions`, mais que vous affectez à `KeyRestrictionBehavior` propriété la valeur `AllowOnly` ou `PreventUsage`, aucun paramètre de chaîne de connexion supplémentaire n’est autorisé. Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`KeyRestrictionBehavior`|Identifie les paramètres de chaîne de connexion comme étant les seuls paramètres supplémentaires autorisés (`AllowOnly`) ou identifie les paramètres supplémentaires qui ne sont pas autorisés (`PreventUsage`). `AllowOnly` est la valeur par défaut. Hérité de l'objet <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`TypeID`|Obtient un identificateur unique pour cet attribut lors de l'implémentation dans une classe dérivée. Hérité de l'objet <xref:System.Attribute>.|  
 |`Unrestricted`|Indique si une autorisation illimitée à la ressource est déclarée. Hérité de l'objet <xref:System.Security.Permissions.SecurityAttribute>.|  
   
@@ -89,7 +89,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 #### <a name="keyrestrictions-syntax"></a>Syntaxe de KeyRestrictions  
- L’exemple suivant active la même chaîne de connexion, active l’utilisation des `Encrypt` options `Packet Size` de chaîne de connexion et, mais restreint l’utilisation de toute autre option de chaîne de connexion.  
+ L’exemple suivant active la même chaîne de connexion, active l’utilisation des options de chaîne de connexion `Encrypt` et `Packet Size`, mais restreint l’utilisation de toute autre option de chaîne de connexion.  
   
 ```xml  
 <connectionStrings>  
@@ -136,7 +136,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 ### <a name="enabling-partial-trust-with-a-custom-permission-set"></a>Activation de confiance partielle avec un jeu d'autorisations personnalisé  
- Pour activer l'utilisation d'autorisations <xref:System.Data.SqlClient> pour une zone particulière, un administrateur système doit créer un jeu d'autorisations personnalisé et le définir comme jeu d'autorisations pour une zone particulière. Les jeux d'autorisations par défaut, tels que `LocalIntranet`, ne peuvent pas être modifiés. Par exemple, pour inclure <xref:System.Data.SqlClient> des autorisations pour du code qui <xref:System.Security.Policy.Zone> a `LocalIntranet`un de, un administrateur système peut copier le jeu `LocalIntranet`d’autorisations pour, le renommer en « CustomLocalIntranet » <xref:System.Data.SqlClient> , ajouter les autorisations, importer le jeu d’autorisations CustomLocalIntranet à l’aide de [Caspol. exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md)et `LocalIntranet_Zone` définissez le jeu d’autorisations sur CustomLocalIntranet.  
+ Pour activer l'utilisation d'autorisations <xref:System.Data.SqlClient> pour une zone particulière, un administrateur système doit créer un jeu d'autorisations personnalisé et le définir comme jeu d'autorisations pour une zone particulière. Les jeux d'autorisations par défaut, tels que `LocalIntranet`, ne peuvent pas être modifiés. Par exemple, pour inclure des autorisations de <xref:System.Data.SqlClient> pour du code qui a un <xref:System.Security.Policy.Zone> de `LocalIntranet`, un administrateur système peut copier le jeu d’autorisations pour `LocalIntranet`, le renommer en « CustomLocalIntranet », ajouter les autorisations <xref:System.Data.SqlClient>, importer le CustomLocalIntranet jeu d’autorisations à l’aide de [Caspol. exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md)et définir le jeu d’autorisations de `LocalIntranet_Zone` sur CustomLocalIntranet.  
   
 ### <a name="sample-permission-set"></a>Exemple de jeu d'autorisations  
  Voici un exemple de jeu d'autorisations destiné au fournisseur de données .NET Framework pour SQL Serveur dans un scénario à confiance partielle. Pour plus d’informations sur la création de jeux d’autorisations personnalisés, consultez [Configuration des jeux d’autorisations à l’aide de Caspol. exe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4ybs46y6(v=vs.100)).  
@@ -192,7 +192,7 @@ Failed, as expected: Request failed.
 ## <a name="interoperability-with-unmanaged-code"></a>Interopérabilité avec du code non managé  
  Le code qui s'exécute en dehors du CLR est appelé code non managé. Par conséquent, les mécanismes de sécurité, tels que la sécurité d'accès du code, ne peuvent pas être appliqués à du code non managé. Les composants COM, les interfaces ActiveX et les fonctions API Windows sont des exemples de code non managé. Des considérations de sécurité particulières s'appliquent lors de l'exécution de code non managé pour éviter de compromettre la sécurité globale des applications. Pour plus d’informations, consultez [Interopération avec du code non managé](../../interop/index.md).  
   
- Le .NET Framework prend également en charge la compatibilité descendante avec des composants COM existants en offrant un accès via COM Interop. Vous pouvez incorporer des composants COM dans une application .NET Framework en utilisant des outils de COM Interop pour importer les types COM pertinents. Une fois importés, les types COM sont prêts à être utilisés. COM Interop permet également aux clients COM d'accéder à du code managé en exportant des métadonnées d'assembly dans une bibliothèque de types et en inscrivant le composant managé en tant que composant COM. Pour plus d’informations, consultez [interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx).  
+ Le .NET Framework prend également en charge la compatibilité descendante avec des composants COM existants en offrant un accès via COM Interop. Vous pouvez incorporer des composants COM dans une application .NET Framework en utilisant des outils de COM Interop pour importer les types COM pertinents. Une fois importés, les types COM sont prêts à être utilisés. COM Interop permet également aux clients COM d'accéder à du code managé en exportant des métadonnées d'assembly dans une bibliothèque de types et en inscrivant le composant managé en tant que composant COM. Pour plus d’informations, consultez [interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100)).  
   
 ## <a name="see-also"></a>Voir aussi
 

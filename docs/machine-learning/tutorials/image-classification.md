@@ -1,19 +1,19 @@
 ---
-title: 'Tutoriel : Générer un modèle de classification d’image ML.NET à partir d’un modèle TensorFlow pré-formé'
+title: 'Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé'
 description: Découvrez comment transférer les connaissances d’un modèle TensorFlow existant dans un nouveau modèle de classification d’image ML.NET. Le modèle TensorFlow a été formé pour classifier les images en milliers de catégories. Le modèle ML.NET utilise l’apprentissage de transfert pour classer les images en moins de catégories plus larges.
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
 author: natke
 ms.author: nakersha
-ms.openlocfilehash: 8ae966330ca85722c72c92e26363d99c7d9de3e7
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 399e9ce3288d53049e968688736f5b953d7e5b80
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698651"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799077"
 ---
-# <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Tutoriel : Générer un modèle de classification d’image ML.NET à partir d’un modèle TensorFlow pré-formé
+# <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé
 
 Découvrez comment transférer les connaissances d’un modèle TensorFlow existant dans un nouveau modèle de classification d’image ML.NET.
 
@@ -37,15 +37,15 @@ Le transfert d’apprentissage est le processus qui consiste à utiliser les con
 
 Pour ce didacticiel, vous utilisez une partie d’un modèle TensorFlow, formé pour classifier les images en mille catégories, dans un modèle ML.NET qui classe les images en trois catégories.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
-* [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+* [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
 
 * Package NuGet Microsoft.ML 1.3.1
 * Package NuGet Microsoft. ML. ImageAnalytics 1.3.1
 * Package NuGet Microsoft. ML. TensorFlow 1.3.1
 
-* [Le fichier .zip du répertoire de ressources du tutoriel](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)
+* [Le fichier .zip du répertoire de ressources du tutoriel](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)
 
 * [Le modèle Machine Learning InceptionV1](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)
 
@@ -84,11 +84,11 @@ Le `Inception model` est formé pour classer les images en milliers de catégori
 * Jouet
 * Appareil
 
-Ce didacticiel utilise [le modèle d’apprentissage profond TensorFlow](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip) , un modèle de reconnaissance d’image populaire formé sur le jeu de données `ImageNet`. Le modèle TensorFlow classifie les images entières en mille classes, telles que « parapluie », « Jersey » et « lave-vaisselle ».
+Ce didacticiel utilise le modèle d’apprentissage profond du [modèle](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip) TensorFlow, un modèle de reconnaissance d’image populaire formé sur le jeu de données `ImageNet`. Le modèle TensorFlow classifie les images entières en mille classes, telles que « parapluie », « Jersey » et « lave-vaisselle ».
 
 Étant donné que le `Inception model` a déjà été formé sur des milliers d’images différentes, en interne, il contient les [fonctionnalités d’image](https://en.wikipedia.org/wiki/Feature_(computer_vision)) nécessaires à l’identification de l’image. Nous pouvons utiliser ces fonctionnalités d’image interne dans le modèle pour effectuer l’apprentissage d’un nouveau modèle avec beaucoup moins de classes.
 
-Comme le montre le diagramme suivant, vous ajoutez une référence aux packages NuGet ML.NET dans vos applications .NET Core ou .NET Framework. En coulisses, ML.NET inclut et référence la bibliothèque `TensorFlow` native qui vous permet d’écrire du code qui charge un fichier de modèle `TensorFlow` formé existant.
+Comme le montre le diagramme suivant, vous ajoutez une référence aux packages NuGet ML.NET dans vos applications .NET Core ou .NET Framework. En coulisses, ML.NET inclut et référence la bibliothèque `TensorFlow` native qui vous permet d’écrire du code qui charge un fichier de modèle de `TensorFlow` formé existant.
 
 ![Diagramme ML.NET de transformation TensorFlow](./media/image-classification/tensorflow-mlnet.png)
 
@@ -118,7 +118,7 @@ toaster2.png    appliance
 <!-- markdownlint-enable MD010 -->
 
 Les images d’apprentissage et de test se trouvent dans les dossiers de ressources que vous allez télécharger dans un fichier zip. Elles appartiennent à Wikimedia Commons.
-> *[Wikimedia Commons](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208), le dépôt de fichiers multimédias sous licence libre.* Extrait 10:48, 17 octobre 2018 à partir de : https://commons.wikimedia.org/wiki/Pizza https://commons.wikimedia.org/wiki/Toaster https://commons.wikimedia.org/wiki/Teddy_bear
+> *[Wikimedia Commons](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208), le dépôt de fichiers multimédias sous licence libre.* Extrait le 10:48, le 17 octobre 2018 de : https://commons.wikimedia.org/wiki/Pizza https://commons.wikimedia.org/wiki/Toaster https://commons.wikimedia.org/wiki/Teddy_bear
 
 ## <a name="setup"></a>Installation
 
@@ -137,7 +137,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 ### <a name="download-assets"></a>Télécharger les ressources
 
-1. Téléchargez le [fichier zip du répertoire de ressources du projet ](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip) et décompressez-le.
+1. Téléchargez le [fichier zip du répertoire de ressources du projet ](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip) et décompressez-le.
 
 1. Copiez le répertoire `assets` dans votre répertoire de projet *TransferLearningTF*. Ce répertoire et ses sous-répertoires contiennent les fichiers de données et d’aide nécessaires à ce tutoriel (sauf pour le modèle Inception, que vous allez télécharger et ajouter à l’étape suivante).
 
@@ -177,7 +177,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
     * `Score` contient le pourcentage de confiance d’une classification d’image donnée.
     * `PredictedLabelValue` contient la valeur de l’étiquette de classification d’image prédite.
 
-    `ImagePrediction` représente la classe utilisée pour la prédiction, une fois le modèle formé. Elle comporte une `string` (`ImagePath`) correspondant au chemin de l’image. Le `Label` est utilisé pour la réutilisation et l’apprentissage du modèle. L’attribut `PredictedLabelValue` est utilisé pendant la prédiction et l’évaluation. L’évaluation utilise une entrée avec les données d’apprentissage, les valeurs prédites et le modèle.
+    `ImagePrediction` représente la classe utilisée pour la prédiction, une fois le modèle formé. Elle comporte une `string` (`ImagePath`) correspondant au chemin de l’image. Le `Label` permet de réutiliser et d’effectuer l’apprentissage du modèle. L’attribut `PredictedLabelValue` est utilisé pendant la prédiction et l’évaluation. L’évaluation utilise une entrée avec les données d’apprentissage, les valeurs prédites et le modèle.
 
 ### <a name="initialize-variables-in-main"></a>Initialiser les variables dans Principal
 
@@ -225,7 +225,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
     [!code-csharp[ReadFromTsv](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReadFromTsv)]
 
-    Le code analyse le fichier `tags.tsv` pour ajouter le chemin d’accès au fichier image pour la propriété `ImagePath` et le charger, ainsi que le `Label` dans un objet `ImageData`.
+    Le code analyse le fichier `tags.tsv` pour ajouter le chemin d’accès au fichier image pour la propriété `ImagePath` et le charger et le `Label` dans un objet `ImageData`.
 
 ### <a name="create-a-method-to-make-a-prediction"></a>Créer une méthode pour effectuer une prédiction
 
@@ -238,7 +238,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
     }
     ```
 
-1. Créez un objet `ImageData` qui contient le chemin d’accès qualifié complet et le nom du fichier image pour la seule `ImagePath`. Ajoutez le code suivant à la fin de la méthode `ClassifySingleImage()` :
+1. Créez un objet `ImageData` qui contient le chemin d’accès qualifié complet et le nom du fichier image pour le `ImagePath`unique. Ajoutez le code suivant à la fin de la méthode `ClassifySingleImage()` :
 
     [!code-csharp[LoadImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadImageData)]
 
@@ -246,7 +246,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
     [!code-csharp[PredictSingle](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#PredictSingle)]
 
-    Pour récupérer la prédiction, utilisez la méthode [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) . Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application)
+    Pour récupérer la prédiction, utilisez la méthode [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) . Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
     > [!NOTE]
     > L’extension de service `PredictionEnginePool` est disponible en préversion.
@@ -282,7 +282,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
     [!code-csharp[ScoreTensorFlowModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ScoreTensorFlowModel)]
 
-    Cette étape du pipeline charge le modèle TensorFlow en mémoire, puis traite le vecteur de valeurs de pixel via le réseau de modèles TensorFlow. L’application d’entrées à un modèle d’apprentissage profond et la génération d’une sortie à l’aide du modèle sont appelées **notation**. Lorsque vous utilisez le modèle dans son intégralité, la notation effectue une inférence ou une prédiction. 
+    Cette étape du pipeline charge le modèle TensorFlow en mémoire, puis traite le vecteur de valeurs de pixel via le réseau de modèles TensorFlow. L’application d’entrées à un modèle d’apprentissage profond et la génération d’une sortie à l’aide du modèle sont appelées **notation**. Lorsque vous utilisez le modèle dans son intégralité, la notation effectue une inférence ou une prédiction.
 
     Dans ce cas, vous utilisez tout le modèle TensorFlow, à l’exception de la dernière couche, qui est la couche qui effectue l’inférence. La sortie de la couche avant est étiquetée `softmax_2_preactivation`. La sortie de cette couche est effectivement un vecteur de fonctionnalités qui caractérisent les images d’entrée d’origine.
 
@@ -322,8 +322,8 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
     [!code-csharp[LoadAndTransformTestData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadAndTransformTestData "Load and transform test data")]
 
-    Voici quelques exemples d’images que vous pouvez utiliser pour évaluer le modèle. Comme les données d’apprentissage, celles-ci doivent être chargées dans un `IDataView`, afin qu’elles puissent être transformées par le modèle.
-   
+    Voici quelques exemples d’images que vous pouvez utiliser pour évaluer le modèle. Comme les données d’apprentissage, celles-ci doivent être chargées dans un `IDataView`, afin de pouvoir être transformées par le modèle.
+
 1. Ajoutez le code suivant à la méthode `GenerateModel()` pour évaluer le modèle :
 
     [!code-csharp[Evaluate](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#Evaluate)]
@@ -342,7 +342,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
     Les indicateurs suivants sont évalués pour la classification d’images :
 
     * `Log-loss` (voir [Perte logarithmique](../resources/glossary.md#log-loss)). Vous voulez que la perte logarithmique soit aussi proche de zéro que possible.
-    * `Per class Log-loss` . La perte logarithmique doit être aussi proche de zéro que possible.
+    * `Per class Log-loss`., La perte logarithmique doit être aussi proche de zéro que possible.
 
 1. Ajoutez le code suivant pour retourner le modèle entraîné à la ligne suivante :
 
@@ -354,7 +354,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
     [!code-csharp[CallGenerateModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallGenerateModel)]
 
-1. Ajoutez l’appel à la méthode `ClassifySingleImage()` comme ligne de code suivante dans la méthode `Main` :
+1. Ajoutez l’appel à la méthode `ClassifySingleImage()` en tant que ligne de code suivante dans la méthode `Main` :
 
     [!code-csharp[CallClassifySingleImage](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallClassifySingleImage)]
 
@@ -380,7 +380,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
     Press any key to close this window . . .
     ```
 
-Félicitations ! Vous avez maintenant correctement créé un modèle de Machine Learning pour la classification d’images en appliquant l’apprentissage de transfert à un modèle `TensorFlow` dans ML.NET.
+Félicitations ! Vous avez maintenant correctement créé un modèle de Machine Learning pour la classification d’images en appliquant l’apprentissage de transfert à un modèle de `TensorFlow` dans ML.NET.
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF).
 

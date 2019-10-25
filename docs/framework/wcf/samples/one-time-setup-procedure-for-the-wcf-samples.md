@@ -2,12 +2,12 @@
 title: Procédure d'installation unique pour les exemples Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 4fe77455c26393455c66c24c74691a335ad8cb1b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 7c07f39ebff0caf97a9561f08826a0c95ac81140
+ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039174"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799031"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Procédure d'installation unique pour les exemples Windows Communication Foundation
 
@@ -22,7 +22,7 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
 
 1. Vérifiez que ASP.NET est configuré. Pour plus d’informations sur la configuration de ASP.NET, consultez [instructions d’hébergement d’Internet Information Service](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).
 
-2. Vérifiez que [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] est installé. Recherchez v 4.0 (ou version ultérieure) dans le répertoire suivant: **\Windows\Microsoft.NET\Framework**
+2. Vérifiez que [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] est installé. Recherchez v 4.0 (ou version ultérieure) dans le répertoire suivant : **\Windows\Microsoft.NET\Framework**
 
 3. Si Visual Studio 2012 n’est pas installé et que votre système d’exploitation n’est pas Windows Server 2008 SP2 ou version ultérieure, installez le [correctif logiciel 251798](https://go.microsoft.com/fwlink/?LinkId=184693).
 
@@ -37,15 +37,15 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
     ```
 
     > [!WARNING]
-    > L’exécution de `aspnet_regiis –i –enable` la commande permet d’exécuter le pool d' [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]applications par défaut à l’aide de, ce qui peut entraîner des problèmes d’incompatibilité pour d’autres applications sur le même ordinateur.
+    > Si vous exécutez la commande `aspnet_regiis –i –enable`, le pool d’applications par défaut est exécuté à l’aide de [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], ce qui peut entraîner des problèmes d’incompatibilité pour d’autres applications sur le même ordinateur.
 
 5. Suivez les [instructions du pare-feu](../../../../docs/framework/wcf/samples/firewall-instructions.md) pour activer les ports utilisés par les exemples.
 
-6. Recherchez le répertoire par défaut suivant: \<Lecteurinstall >: **\WF_WCF_Samples**. Si les exemples ont été installés précédemment, il s'agit du répertoire par défaut.
+6. Recherchez le répertoire par défaut suivant : \<Lecteurinstall >: **\WF_WCF_Samples**. Si les exemples ont été installés précédemment, il s'agit du répertoire par défaut.
 
-7. Si les exemples ne sont pas installés, installez-les à partir de l’emplacement de téléchargement des exemples pour [Visual C# ](https://go.microsoft.com/fwlink/?LinkId=190939) ou [Visual Basic](https://go.microsoft.com/fwlink/?LinkID=193373).
+7. Si les exemples ne sont pas installés, installez-les à partir de l' [C#](https://go.microsoft.com/fwlink/?LinkId=190939)emplacement de téléchargement des exemples pour.
 
-8. Après avoir installé les exemples, accédez à: \<Lecteurinstall >: **\WF_WCF_Samples\WCF\Setup\\**
+8. Après avoir installé les exemples, accédez à : \<Lecteurinstall >: **\WF_WCF_Samples\WCF\Setup\\**
 
 9. Exécutez le fichier de commandes **Setupvroot. bat** . Les étapes suivantes sont exécutées :
 
