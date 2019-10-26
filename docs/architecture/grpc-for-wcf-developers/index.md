@@ -3,22 +3,20 @@ title: ASP.NET Core gRPC pour les développeurs WCF-gRPC pour les développeurs 
 description: À ÉCRIRE
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: dc39fc96e7154fb50acd0b65a58586b3fa12ab50
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 6a5b4f6d0b47a272f7a753e22bfd61b06202944a
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696918"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919375"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pour les développeurs WCF
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![image de couverture](./media/cover.png)
 
 PUBLIÉ PAR
 
-Division Développeurs Microsoft, équipes produit .NET et Visual Studio
+Division Développeur Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -36,7 +34,7 @@ Certains exemples décrits dans ce document ne sont fournis qu’à titre d’il
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » à l’adresse https://www.microsoft.com sont des marques du groupe de sociétés Microsoft.
 
-Le logo de Docker représentant une baleine est une marque déposée de Docker, Inc. Utilisé sous autorisation.
+Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
@@ -50,11 +48,11 @@ Rédacteurs :
 
 > Développeur de contenu **Maira Wenzel** -SR-Microsoft
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 TODO
 
-## <a name="purpose"></a>Objectif
+## <a name="purpose"></a>Fonction
 
 TODO
 
@@ -62,7 +60,7 @@ TODO
 
 **METTRE À JOUR**
 
-Ce guide est destiné aux développeurs WCF, aux responsables du développement et aux architectes qui souhaitent migrer des solutions WCF sur .NET 4 et versions antérieures vers ASP.NET Core 3,0 à l’aide des services gRPC.
+Ce guide est destiné aux développeurs WCF, aux responsables du développement et aux architectes qui souhaitent migrer des solutions WCF sur .NET Framework 4 et versions antérieures vers ASP.NET Core 3,0 à l’aide des services gRPC.
 
 ## <a name="how-you-can-use-this-guide"></a>Utilisation de ce guide
 
@@ -80,4 +78,4 @@ N’hésitez pas à faire connaître ce guide pour favoriser une compréhension 
   <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
 
 >[!div class="step-by-step"]
->[Next](introduction.md)
+>[Suivant](introduction.md)
