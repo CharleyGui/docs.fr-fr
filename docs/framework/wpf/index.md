@@ -14,18 +14,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 35a936cbc34bf10219099090e1af8c145d7fb23d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764541"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72919369"
 ---
-# <a name="windows-presentation-foundation"></a><span data-ttu-id="b9980-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="b9980-102">Windows Presentation Foundation</span></span>
-<span data-ttu-id="b9980-103">Windows Presentation Foundation (WPF) dans Visual Studio fournit aux développeurs un modèle de programmation unifié pour créer des applications de bureau line of business sur Windows.</span><span class="sxs-lookup"><span data-stu-id="b9980-103">Windows Presentation Foundation (WPF) in Visual Studio provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>  
-  
- [<span data-ttu-id="b9980-104">Créer des Applications de bureau avec Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="b9980-104">Create Desktop Applications with Windows Presentation Foundation</span></span>](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+# <a name="windows-presentation-foundation"></a><span data-ttu-id="c8c69-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="c8c69-102">Windows Presentation Foundation</span></span>
 
- [<span data-ttu-id="b9980-105">Conception XAML dans Visual Studio et Blend pour Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b9980-105">Designing XAML in Visual Studio and Blend for Visual Studio</span></span>](/visualstudio/designers/designing-xaml-in-visual-studio)  
-  
- [<span data-ttu-id="b9980-106">Obtenir Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b9980-106">Get Visual Studio</span></span>](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+<span data-ttu-id="c8c69-103">Windows Presentation Foundation (WPF) fournit aux développeurs un modèle de programmation unifié pour créer des applications de bureau sur Windows.</span><span class="sxs-lookup"><span data-stu-id="c8c69-103">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
+
+- [<span data-ttu-id="c8c69-104">Présentation de WPF</span><span class="sxs-lookup"><span data-stu-id="c8c69-104">Introduction to WPF</span></span>](introduction-to-wpf.md)
+- [<span data-ttu-id="c8c69-105">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="c8c69-105">Getting Started</span></span>](getting-started/index.md)
+- [<span data-ttu-id="c8c69-106">Développement de l’application</span><span class="sxs-lookup"><span data-stu-id="c8c69-106">Application Development</span></span>](app-development/index.md)
+- [<span data-ttu-id="c8c69-107">Avancé</span><span class="sxs-lookup"><span data-stu-id="c8c69-107">Advanced</span></span>](advanced/index.md)
+- [<span data-ttu-id="c8c69-108">Contrôles</span><span class="sxs-lookup"><span data-stu-id="c8c69-108">Controls</span></span>](controls/index.md)
+- [<span data-ttu-id="c8c69-109">Data</span><span class="sxs-lookup"><span data-stu-id="c8c69-109">Data</span></span>](data/index.md)
+- [<span data-ttu-id="c8c69-110">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="c8c69-110">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
+- [<span data-ttu-id="c8c69-111">Security</span><span class="sxs-lookup"><span data-stu-id="c8c69-111">Security</span></span>](security-wpf.md)
+- [<span data-ttu-id="c8c69-112">Exemples WPF</span><span class="sxs-lookup"><span data-stu-id="c8c69-112">WPF Samples</span></span>](wpf-samples.md)
+- [<span data-ttu-id="c8c69-113">Bibliothèque de classes</span><span class="sxs-lookup"><span data-stu-id="c8c69-113">Class Library</span></span>](class-library-wpf.md)
