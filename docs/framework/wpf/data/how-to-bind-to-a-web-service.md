@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Effectuer une liaison à un service Web'
+title: 'Comment : effectuer une liaison à un service Web'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,41 +9,41 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 2c3bc1f2142f07aba3df2da6c46117d3907443a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 72638101b73e6b43fa225885b2e1f27d87b22826
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954282"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920147"
 ---
-# <a name="how-to-bind-to-a-web-service"></a>Procédure : Effectuer une liaison à un service Web
-Cet exemple montre comment lier des objets retournés par les appels de méthode de service Web.  
+# <a name="how-to-bind-to-a-web-service"></a>Comment : effectuer une liaison à un service Web
+Cet exemple montre comment effectuer une liaison à des objets retournés par les appels de méthode de service Web.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le [MSDN/TechNet Publishing System (MTPS) Content Service](https://go.microsoft.com/fwlink/?LinkId=95677) pour récupérer la liste des langues prises en charge par un document spécifié.  
+ Cet exemple utilise le [service de contenu MSDN/TechNet Publishing System (MTPS)](https://go.microsoft.com/fwlink/?LinkId=95677) pour récupérer la liste des langues prises en charge par un document spécifié.  
   
- Avant d’appeler un service Web, vous devez créer une référence à celui-ci. Pour créer une référence Web au service MTPS en utilisant [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], suivez les étapes suivantes :  
+ Avant d’appeler un service Web, vous devez créer une référence à celui-ci. Pour créer une référence Web au service MTPS à l’aide de Visual Studio, procédez comme suit :  
   
-1. Ouvrez votre projet dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)].  
+1. Ouvrez votre projet dans Visual Studio.  
   
-2. À partir de la **projet** menu, cliquez sur **ajouter une référence Web**.  
+2. Dans le menu **projet** , cliquez sur **Ajouter une référence Web**.  
   
-3. Dans la boîte de dialogue, définissez la **URL** à [ http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl ](https://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
+3. Dans la boîte de dialogue, définissez l' **URL** sur [http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl](https://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
   
-4. Appuyez sur **accédez** , puis **ajouter une référence**.  
+4. Appuyez sur **Go** , puis sur **Ajouter une référence**.  
   
- Ensuite, vous appelez la méthode de service Web et définir le <xref:System.Windows.FrameworkElement.DataContext%2A> de la fenêtre à l’objet retourné ou le contrôle approprié. Le **GetContent** méthode du service MTPS accepte une référence à la **getContentRequest** objet. Par conséquent, l’exemple suivant définit tout d’abord un objet de demande :  
+ Ensuite, vous appelez la méthode de service Web et définissez la <xref:System.Windows.FrameworkElement.DataContext%2A> du contrôle ou de la fenêtre approprié (e) sur l’objet retourné. La méthode **GetContent** du service MTPS utilise une référence à l’objet **getContentRequest** . Par conséquent, l’exemple suivant configure d’abord un objet de requête :  
   
  [!code-csharp[BindToWebService#Namespace](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#namespace)]
  [!code-vb[BindToWebService#Namespace](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#namespace)]  
 [!code-csharp[BindToWebService#WebServiceCall](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#webservicecall)]
 [!code-vb[BindToWebService#WebServiceCall](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#webservicecall)]  
   
- Après le <xref:System.Windows.FrameworkElement.DataContext%2A> a été défini, vous pouvez créer des liaisons pour les propriétés de l’objet qui le <xref:System.Windows.FrameworkElement.DataContext%2A> a été défini sur. Dans cet exemple, le <xref:System.Windows.FrameworkElement.DataContext%2A> est défini sur le **getContentResponse** objet retourné par la **GetContent** (méthode). Dans l’exemple suivant, le <xref:System.Windows.Controls.ItemsControl> et les affiche le **paramètres régionaux** les valeurs de **availableVersionsAndLocales** de **getContentResponse**.  
+ Une fois la <xref:System.Windows.FrameworkElement.DataContext%2A> définie, vous pouvez créer des liaisons aux propriétés de l’objet sur lequel la <xref:System.Windows.FrameworkElement.DataContext%2A> a été définie. Dans cet exemple, le <xref:System.Windows.FrameworkElement.DataContext%2A> est défini sur l’objet **getContentResponse** retourné par la méthode **GetContent** . Dans l’exemple suivant, le <xref:System.Windows.Controls.ItemsControl> se lie à et affiche les valeurs de **paramètres régionaux** de **availableVersionsAndLocales** de **getContentResponse**.  
   
  [!code-xaml[BindToWebService#Binding](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml#binding)]  
   
- Pour plus d’informations sur la structure des **getContentResponse**, consultez [Content Service documentation](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
+ Pour plus d’informations sur la structure de **getContentResponse**, consultez la [documentation relative au service de contenu](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
 ## <a name="see-also"></a>Voir aussi
 

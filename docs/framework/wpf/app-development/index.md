@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 405a8d3c8b922d0f74e522e85ea3096d989c478e
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 85218bd4b6e900bd4508a5c90132419a07846f2c
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582499"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920210"
 ---
 # <a name="application-development"></a>Développement de l'application
 <a name="introduction"></a>Windows Presentation Foundation (WPF) est une infrastructure de présentation qui peut être utilisée pour développer les types d’applications suivants :  
@@ -74,7 +74,7 @@ ms.locfileid: "72582499"
   
  <xref:System.Windows.Window> prend en charge la capacité à créer un type spécial de fenêtre appelé « boîte de dialogue ». Deux types de boîtes de dialogue, modales et non modales, peuvent être créés.  
   
- Pour des raisons pratiques, ainsi que des avantages de la réutilisation et d’une expérience utilisateur cohérente entre les applications, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] expose trois boîtes de dialogue Windows communes : <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog> et <xref:System.Windows.Controls.PrintDialog>.  
+ Pour des raisons pratiques, ainsi que des avantages de la réutilisation et d’une expérience utilisateur cohérente entre les applications, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] expose trois boîtes de dialogue Windows communes : <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog>et <xref:System.Windows.Controls.PrintDialog>.  
   
  Une boîte de message est un type spécial de boîte de dialogue qui permet d’afficher des informations textuelles importantes aux utilisateurs et de poser des questions simples du type Oui/Non/OK/Annuler. Vous utilisez la classe <xref:System.Windows.MessageBox> pour créer et afficher des boîtes de message.  
   
@@ -112,7 +112,7 @@ ms.locfileid: "72582499"
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Génération et déploiement  
- Bien que des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] simples puissent être générées à partir d’une invite de commandes utilisant des compilateurs de ligne de commande, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] s’intègre à [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] pour assurer une prise en charge supplémentaire qui simplifie le développement et le processus de génération. Pour plus d’informations, consultez [Génération d’une application WPF](building-a-wpf-application-wpf.md).  
+ Bien que les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] simples puissent être générées à partir d’une invite de commandes à l’aide de compilateurs de ligne de commande, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] s’intègre à Visual Studio pour fournir une prise en charge supplémentaire qui simplifie le développement et le processus de génération. Pour plus d’informations, consultez [Génération d’une application WPF](building-a-wpf-application-wpf.md).  
   
  Selon le type d’application que vous générez, vous avez le choix entre une ou plusieurs options de déploiement. Pour plus d’informations, consultez [Déploiement d’une application WPF](deploying-a-wpf-application-wpf.md).  
   

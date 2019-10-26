@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 925250a2284a47d0f9caf93158e2e23d9283aef3
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: fdeb40f1e092f8c7e96e9d59e1b07673201fbe9d
+ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774744"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72920377"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Stratégie de sécurité de WPF - sécurité de la plateforme
 Bien que Windows Presentation Foundation (WPF) fournisse divers services de sécurité, il tire également parti des fonctionnalités de sécurité de la plateforme sous-jacente, qui inclut le système d’exploitation, le CLR et Internet Explorer. Ces couches se combinent pour fournir à [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] un modèle de sécurité de défense en profondeur renforcé qui essaie d'éviter le moindre point de défaillance, comme cela est illustré dans l'image suivante :  
@@ -165,7 +165,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>déploiement ClickOnce  
- ClickOnce est une technologie de déploiement complète qui est incluse dans .NET Framework et s’intègre à [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (pour plus d’informations, consultez [sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Les applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] autonomes peuvent être déployées à l’aide de ClickOnce, tandis que les applications hébergées par un navigateur doivent être déployées avec ClickOnce.  
+ ClickOnce est une technologie de déploiement complète qui est incluse dans .NET Framework et s’intègre à Visual Studio (pour plus d’informations, consultez [sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Les applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] autonomes peuvent être déployées à l’aide de ClickOnce, tandis que les applications hébergées par un navigateur doivent être déployées avec ClickOnce.  
   
  Les applications déployées à l’aide de ClickOnce reçoivent une couche de sécurité supplémentaire par rapport à la sécurité d’accès du code (CAS). Fondamentalement, les applications déployées par ClickOnce demandent les autorisations dont elles ont besoin. Seules ces autorisations leur sont accordées si elles ne dépassent pas le jeu d'autorisations pour la zone à partir de laquelle l'application est déployée. En réduisant le jeu d’autorisations à celles qui sont nécessaires, même si elles sont inférieures à celles fournies par le jeu d’autorisations de la zone de lancement, le nombre de ressources auxquelles l’application a accès est réduit au minimum. Par conséquent, si l'application est détournée, les risques de dommages sur l'ordinateur client sont réduits.  
   
