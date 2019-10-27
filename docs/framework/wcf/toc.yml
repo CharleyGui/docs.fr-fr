@@ -50,7 +50,7 @@
                     - name: Définition et spécification des erreurs
                       href: defining-and-specifying-faults.md
                       items:
-                        - name: "Procédure\_: Déclarer des erreurs dans les contrats de service"
+                        - name: Activation Déclarer des erreurs dans les contrats de service
                           href: how-to-declare-faults-in-service-contracts.md
                     - name: Envoi et réception des erreurs
                       href: sending-and-receiving-faults.md
@@ -59,9 +59,9 @@
                 - name: Opérations synchrones et asynchrones
                   href: synchronous-and-asynchronous-operations.md
                   items:
-                    - name: "Procédure\_: implémenter une opération de service asynchrone"
+                    - name: Activation implémenter une opération de service asynchrone
                       href: how-to-implement-an-asynchronous-service-operation.md
-                - name: Services fiables
+                - name: Services fiables (Reliable Services)
                   href: reliable-services.md
                 - name: Services et transactions
                   href: services-and-transactions.md
@@ -89,13 +89,13 @@
                 - name: Utilisation de liaisons pour configurer des services et des clients
                   href: using-bindings-to-configure-services-and-clients.md
                   items:
-                    - name: "Procédure\_: spécifier une liaison de client dans le code"
+                    - name: Activation spécifier une liaison de client dans le code
                       href: how-to-specify-a-client-binding-in-code.md
-                    - name: "Procédure\_: spécifier une liaison de client dans la configuration"
+                    - name: Activation spécifier une liaison de client dans la configuration
                       href: how-to-specify-a-client-binding-in-configuration.md
-                    - name: "Procédure\_: spécifier une liaison de service dans le code"
+                    - name: Activation spécifier une liaison de service dans le code
                       href: how-to-specify-a-service-binding-in-code.md
-                    - name: "Procédure\_: spécifier une liaison de service dans la configuration"
+                    - name: Activation spécifier une liaison de service dans la configuration
                       href: how-to-specify-a-service-binding-in-configuration.md
                 - name: Configuration de liaisons pour les services
                   href: configuring-bindings-for-wcf-services.md
@@ -111,30 +111,30 @@
             - name: Sécurisation de services
               href: securing-services.md
               items:
-                - name: "Procédure\_: sécuriser un service avec des informations d’identification Windows"
+                - name: Activation sécuriser un service avec des informations d’identification Windows
                   href: how-to-secure-a-service-with-windows-credentials.md
-                - name: "Procédure\_: définir le mode de sécurité"
+                - name: Activation définir le mode de sécurité
                   href: how-to-set-the-security-mode.md
-                - name: "Procédure\_: spécifier le type d’informations d’identification de client"
+                - name: Activation spécifier le type d’informations d’identification de client
                   href: how-to-specify-the-client-credential-type.md
-                - name: "Procédure\_: restreindre l’accès à la classe PrincipalPermissionAttribute"
+                - name: Activation restreindre l’accès à la classe PrincipalPermissionAttribute
                   href: how-to-restrict-access-with-the-principalpermissionattribute-class.md
-                - name: "Procédure\_: emprunter l’identité d’un client sur un service"
+                - name: Activation emprunter l’identité d’un client sur un service
                   href: how-to-impersonate-a-client-on-a-service.md
-                - name: "Procédure\_: examiner le contexte de sécurité"
+                - name: Activation examiner le contexte de sécurité
                   href: how-to-examine-the-security-context.md
                 - name: Fonctionnement des niveaux de protection
                   href: understanding-protection-level.md
-                - name: "Procédure\_: définir la propriété ProtectionLevel"
+                - name: Activation définir la propriété ProtectionLevel
                   href: how-to-set-the-protectionlevel-property.md
             - name: Création de services pouvant interagir avec le profil Basic Profile 1.1 de WS-I
               href: creating-ws-i-basic-profile-1-1-interoperable-services.md
         - name: Hébergement de services
           href: hosting-services.md
           items:
-            - name: "Procédure\_: héberger un service WCF dans une application managée"
+            - name: Activation héberger un service WCF dans une application managée
               href: how-to-host-a-wcf-service-in-a-managed-application.md
-            - name: "Procédure\_: héberger un service WCF écrit avec .NET Framework\_3.5 dans IIS exécuté sous .NET Framework\_4"
+            - name: "Activation héberger un service WCF écrit avec .NET Framework\_3.5 dans IIS exécuté sous .NET Framework\_4"
               href: host-a-wcf-service-net-framework-3-5-iis--net-framework-4.md
         - name: Génération de clients
           href: building-clients.md
@@ -153,7 +153,7 @@
             - name: Sécurisation des clients
               href: securing-clients.md
               items:
-                - name: "Procédure\_: spécifier des informations d’identification de client"
+                - name: Activation spécifier des informations d’identification de client
                   href: how-to-specify-client-credential-values.md
         - name: Introduction à l'extensibilité
           href: introduction-to-extensibility.md
@@ -176,7 +176,7 @@
           href: best-practices-intermediaries.md
         - name: Contrôle des versions du service
           href: service-versioning.md
-        - name: Équilibrage de charge
+        - name: Équilibrage de la charge.
           href: load-balancing.md
         - name: Contrôle de la consommation des ressources et amélioration des performances
           href: controlling-resource-consumption-and-improving-performance.md
@@ -184,8 +184,6 @@
           href: deploying-wcf-applications-with-clickonce.md
     - name: Administration et diagnostics
       href: diagnostics/
-    - name: Configuration système requise
-      href: wcf-system-requirements.md
     - name: Ressources de système d'exploitation requises par WCF
       href: operating-system-resources-required-by-wcf.md
     - name: Résolution des problèmes d’installation
