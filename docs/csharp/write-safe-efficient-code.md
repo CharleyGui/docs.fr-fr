@@ -3,12 +3,12 @@ title: Écrire du code C# sécurisé et efficace
 description: Les améliorations récentes apportées au langage C# vous permettent d’écrire du code sécurisé vérifiable que les performances associaient précédemment à du code non sécurisé.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 73ad7a84d2ad47f0e0242825d250247ffb39928e
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
-ms.translationtype: HT
+ms.openlocfilehash: 89a0bcf28c3c398865082e120ca9c16fe2c00651
+ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832941"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72960839"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Écrire du code C# sécurisé et efficace
 
@@ -21,9 +21,10 @@ Cet article met l’accent sur les techniques de gestion efficace des ressources
 Cet article met l’accent sur les techniques de gestion des ressources suivantes :
 
 - Déclarez un [`readonly struct`](language-reference/keywords/readonly.md#readonly-struct-example) pour exprimer qu’un type est **immuable** et qu’il permet au compilateur d’enregistrer des copies lors de l’utilisation de paramètres [`in`](language-reference/keywords/in-parameter-modifier.md).
+- Si un type ne peut pas être immuable, déclarez `struct` membres `readonly` pour indiquer que le membre ne modifie pas l’État.
 - Utilisez un retour de [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) quand la valeur de retour est un `struct` plus grand que <xref:System.IntPtr.Size?displayProperty=nameWithType> et que la durée de vie du stockage est supérieure à celle de la méthode retournant la valeur.
 - Quand la taille d’une `readonly struct` plus grande que <xref:System.IntPtr.Size?displayProperty=nameWithType>, vous devez la passer comme paramètre `in` pour des raisons de performances.
-- Ne passez jamais un `struct` comme paramètre `in`, sauf s’il est déclaré avec le modificateur `readonly`, car il peut affecter négativement les performances et conduire à un comportement obscur.
+- Ne transmettez jamais un `struct` en tant que paramètre `in`, sauf s’il est déclaré avec le modificateur `readonly` ou si la méthode appelle uniquement `readonly` membres du struct. La violation de ce guide peut avoir un impact négatif sur les performances et peut entraîner un comportement obscur.
 - Utilisez un [ `ref struct` ](language-reference/keywords/ref.md#ref-struct-types), ou un `readonly ref struct` comme <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601> pour utiliser la mémoire comme une séquence d’octets.
 
 Ces techniques vous forcent à trouver un équilibre entre deux objectifs concurrents concernant les **références** et les **valeurs**. Les variables qui sont des [types référence](programming-guide/types/index.md#reference-types) contiennent une référence à l’emplacement en mémoire. Les variables qui sont des [types valeur](programming-guide/types/index.md#value-types) contiennent directement leur valeur. Ces différences mettent en évidence les différences importantes pour la gestion des ressources mémoire. Les **types valeur** sont généralement copiés quand ils sont passés à une méthode ou retournés depuis une méthode. Ce comportement comprend la copie de la valeur de `this` lors de l’appel de membres d’un type valeur. Le coût de la copie est lié à la taille du type. Les **types référence** sont alloués sur le tas managé. Chaque nouvel objet nécessite une nouvelle allocation et doit par conséquent être récupéré par la suite. Ces deux opérations prennent du temps. La référence est copiée quand un type référence est passé comme argument à une méthode ou retourné depuis une méthode.
@@ -67,6 +68,51 @@ readonly public struct ReadonlyPoint3D
 ```
 
 Suivez cette recommandation quand l’intention de votre conception est de créer un type immuable. Toute amélioration des performances est un avantage supplémentaire. Le `readonly struct` exprime clairement l’intention de votre conception.
+
+## <a name="declare-readonly-members-when-a-struct-cant-be-immutable"></a>Déclarer des membres ReadOnly lorsqu’un struct ne peut pas être immuable
+
+Dans C# 8,0 et versions ultérieures, quand un type struct est mutable, vous devez déclarer les membres qui n’entraînent pas la`readonly`de la mutation. Par exemple, voici une variation mutable de la structure de points 3D :
+
+```csharp
+public struct Point3D
+{
+    public Point3D(double x, double y, double z)
+    {
+        this.X = x;
+        this.Y = y;
+        this.Z = z;
+    }
+
+    private double _x;
+    public double X 
+    { 
+        readonly get { return _x;}; 
+        set { _x = value; }
+    }
+    
+    private double _y;
+    public double Y 
+    { 
+        readonly get { return _y;}; 
+        set { _y = value; }
+    }
+
+    private double _z;
+    public double Z 
+    { 
+        readonly get { return _z;}; 
+        set { _z = value; }
+    }
+
+    public readonly double Distance => Math.Sqrt(X * X + Y * Y + Z * Z);
+
+    public readonly override string ToString() => $"{X, Y, Z }";
+}
+```
+
+L’exemple précédent montre un grand nombre d’emplacements où vous pouvez appliquer le modificateur de `readonly` : les méthodes, les propriétés et les accesseurs de propriété. Si vous utilisez des propriétés implémentées automatiquement, le compilateur ajoute le modificateur `readonly` à l’accesseur `get` pour les propriétés en lecture-écriture. Le compilateur ajoute le modificateur `readonly` aux déclarations de propriété implémentées automatiquement pour les propriétés avec un seul accesseur `get`.
+
+L’ajout du modificateur `readonly` aux membres qui n’ont pas de mutation d’État fournit deux avantages connexes. Tout d’abord, le compilateur applique votre intention. Ce membre ne peut pas muter l’état de la structure, ni accéder à un membre qui n’est pas également marqué `readonly`. Deuxièmement, le compilateur ne crée pas de copies défensives de `in` paramètres lors de l’accès à un membre `readonly`. Le compilateur peut effectuer cette optimisation en toute sécurité car elle garantit que le `struct` n’est pas modifié par un membre `readonly`.
 
 ## <a name="use-ref-readonly-return-statements-for-large-structures-when-possible"></a>Quand c’est possible, utilisez des instructions `ref readonly return` pour les grandes structures.
 
@@ -123,9 +169,9 @@ Le mot clé `in` vient en complément des mots clés `ref` et `out` existants po
 Vous disposez ainsi d’un vocabulaire complet pour exprimer votre intention de conception.
 Les types valeur sont copiés s’ils sont passés à une méthode appelée et que vous ne spécifiez pas l’un des modificateurs suivants dans la signature de la méthode. Chacun de ces modificateurs spécifie qu’une variable est passée par référence, ce qui évite la copie. Chaque modificateur exprime une intention différente :
 
-- `out`: Cette méthode définit la valeur de l’argument utilisé comme paramètre.
-- `ref`: Cette méthode peut définir la valeur de l’argument utilisé comme paramètre.
-- `in`: Cette méthode ne modifie pas la valeur de l’argument utilisé comme paramètre.
+- `out` : Cette méthode définit la valeur de l’argument utilisé comme paramètre.
+- `ref` : Cette méthode peut définir la valeur de l’argument utilisé comme paramètre.
+- `in`: cette méthode ne modifie pas la valeur de l’argument utilisé comme paramètre.
 
 Ajoutez le modificateur `in` pour passer un argument par référence et déclarez que votre intention de conception est de passer des arguments par référence afin d’éviter toute copie inutile. Vous n’avez pas l’intention de modifier l’objet utilisé comme argument.
 
@@ -175,13 +221,13 @@ Les techniques décrites ci-dessus expliquent comment éviter les copies en reto
 
 La structure `Point3D` n’est *pas* un struct en lecture seule. Il y a six appels différents d’accès aux propriétés dans le corps de cette méthode. En première approche, vous pouvez penser que ces accès sont sécurisés. Après tout, un accesseur `get` ne devrait pas modifier l’état de l’objet. Mais il n’existe aucune règle du langage qui le garantisse. Il s’agit seulement d’une convention courante. N’importe quel type peut implémenter un accesseur `get` qui a modifié l’état interne. Sans garantie fournie par le langage, le compilateur doit créer une copie temporaire de l’argument avant d’appeler un membre. Le stockage temporaire est créé sur la pile, les valeurs de l’argument sont copiées dans le stockage temporaire et la valeur est copiée sur la pile pour chaque accès au membre en tant qu’argument `this`. Dans de nombreux cas, ces copies nuisent suffisamment aux performances pour que ce passage par valeur soit plus rapide qu’un passage par référence en lecture seule quand le type d’argument n’est pas un `readonly struct`.
 
-Au lieu de cela, si le calcul de distance utilise le struct immuable, `ReadonlyPoint3D`, des objets temporaires ne sont pas nécessaires :
+Au lieu de cela, si le calcul de la distance utilise le struct immuable, `ReadonlyPoint3D`, les objets temporaires ne sont pas nécessaires :
 
 [!code-csharp[readonlyInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ReadOnlyInArgument "Specifying a readonly in argument")]
 
-Le compilateur génère un code plus efficace quand vous appelez des membres d’un `readonly struct` : La référence `this`, au lieu d’une copie du récepteur, est toujours un paramètre `in` passé par référence à la méthode de membre. Cette optimisation évite la copie quand vous utilisez un `readonly struct` comme argument `in`.
+Le compilateur génère du code plus efficace lorsque vous appelez les membres d’un `readonly struct`: la référence `this`, au lieu d’une copie du récepteur, est toujours un paramètre `in` passé par référence à la méthode membre. Cette optimisation évite la copie quand vous utilisez un `readonly struct` comme argument `in`.
 
-Vous ne devez pas passer un type valeur nullable comme argument `in`. Le type <xref:System.Nullable%601> n’est pas déclaré en tant que struct en lecture seule. Cela signifie que le compilateur doit générer des copies défensives pour tout argument de type valeur nullable passé à une méthode à l’aide du modificateur `in` sur la déclaration de paramètre.
+Vous ne devez pas passer un type valeur Nullable en tant qu’argument `in`. Le type de <xref:System.Nullable%601> n’est pas déclaré en tant que struct en lecture seule. Cela signifie que le compilateur doit générer des copies défensives pour tout argument de type valeur nullable passé à une méthode à l’aide du modificateur `in` sur la déclaration de paramètre.
 
 Vous pouvez voir un exemple de programme qui montre les différences de performances avec [Benchmark.net](https://www.nuget.org/packages/BenchmarkDotNet/) dans notre [dépôt d’exemples](https://github.com/dotnet/samples/tree/master/csharp/safe-efficient-code/benchmark) sur GitHub. Il compare le passage d’un struct mutable par valeur et par référence au passage d’un struct immuable par valeur et par référence. L’utilisation du struct immuable et le passage par référence est le plus rapide.
 

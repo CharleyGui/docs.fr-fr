@@ -8,35 +8,36 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 4a51bb0e854de127c632c28f613a7602bf09f432
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
-ms.translationtype: HT
+ms.openlocfilehash: 6c48806e54f11bce930d03a53b010c337e6658f8
+ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348008"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72960854"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
-Le mot clé `readonly` est un modificateur qui peut être utilisé dans trois contextes :
+Le mot clé `readonly` est un modificateur qui peut être utilisé dans quatre contextes :
 
 - Dans une [déclaration de champ](#readonly-field-example), `readonly` indique qu’une affectation à destination d’un champ peut survenir uniquement dans le cadre de la déclaration ou dans un constructeur de la même classe. Un champ en lecture seule peut être affecté et réaffecté plusieurs fois dans la déclaration de champ et le constructeur. 
   
-  Un champ `readonly` ne peut pas être affecté après l’arrêt du constructeur. Cela a des implications différentes selon les types de valeur et les types de référence :
+  Un champ `readonly` ne peut pas être assigné après la sortie du constructeur. Cette règle a des implications différentes pour les types valeur et les types référence :
   
   - Étant donné que les types de valeur contiennent directement leurs données, un champ qui est un type de valeur `readonly` est immuable. 
-  - Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le champ en lecture seule.
+  - Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le biais du champ en lecture seule.
 
   > [!WARNING]
-  > Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type de référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « Ne déclarez pas les types référence mutables en lecture seule »
+  > Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « ne déclarez pas les types référence mutables en lecture seule ».
 
 - Dans une définition [`readonly struct`](#readonly-struct-example), `readonly` indique que le `struct` est immuable.
-- Dans un [`ref readonly`retour de la méthode](#ref-readonly-return-example), le modificateur `readonly` indique que la méthode retourne une référence et que les écritures ne sont pas autorisés pour cette référence.
+- Dans une [définition de membre`readonly`](#readonly-member-examples), `readonly` indique qu’un membre d’un `struct` ne fait pas muter l’état interne de la structure.
+- Dans une [`ref readonly` méthode retournée](#ref-readonly-return-example), le modificateur `readonly` indique que la méthode retourne une référence et que les écritures ne sont pas autorisées dans cette référence.
 
-Les deux contextes finaux ont été ajoutés dans C# 7.2.
+Les contextes `readonly sturct` et `ref readonly` ont été ajoutés C# dans 7,2. `readonly` membres de struct ont été C# ajoutés dans 8,0
 
 ## <a name="readonly-field-example"></a>Exemple de champ en lecture seule
 
-Dans cet exemple, la valeur du champ `year` ne peut pas être modifiée dans la méthode `ChangeYear`, même si une valeur lui est affectée dans le constructeur de classe :
+Dans cet exemple, la valeur du champ `year` ne peut pas être modifiée dans la `ChangeYear`de la méthode, même si une valeur lui est assignée dans le constructeur de classe :
 
 [!code-csharp[Readonly Field example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyField)]
 
@@ -51,7 +52,7 @@ Vous pouvez affecter une valeur à un champ `readonly` uniquement dans les conte
 - Dans un constructeur d’instance de la classe qui contient la déclaration de champ d’instance.
 - Dans le constructeur statique de la classe qui contient la déclaration de champ statique.
 
-Ces contextes de constructeur sont aussi les seuls contextes dans lesquels il est possible de passer un champ `readonly` comme paramètre [out](out-parameter-modifier.md) ou [ref](ref.md).
+Ces contextes de constructeur sont également les seuls contextes dans lesquels il est possible de passer un champ `readonly` en tant que paramètre [out](out-parameter-modifier.md) ou [ref](ref.md) .
 
 > [!NOTE]
 > Le mot clé `readonly` est différent du mot clé [const](const.md). Un champ `const` ne peut être initialisé qu'au moment de la déclaration du champ. Un champ `readonly` peut être assigné plusieurs fois dans la déclaration de champ et dans un constructeur. C'est pourquoi, les champs `readonly` peuvent avoir des valeurs différentes en fonction du constructeur utilisé. De même, alors qu’un champ `const` est une constante au moment de la compilation, le champ `readonly` peut être utilisé pour des constantes au moment de l’exécution, comme dans l’exemple suivant :
@@ -68,7 +69,7 @@ Dans l’exemple précédent, si vous utilisez une instruction telle que dans l�
 p2.y = 66;        // Error
 ```
 
-vous obtenez le message d’erreur du compilateur :
+vous obtiendrez le message d’erreur du compilateur :
 
 `A readonly field cannot be assigned to (except in a constructor or a variable initializer)`
 
@@ -92,11 +93,56 @@ public readonly struct Point
 }
 ```
 
-L’ajout d’un champ non marqué `readonly` génère l’erreur du compilateur `CS8340` : « Les champs d’instance de structs en lecture seule doivent être en lecture seule. »
+L’ajout d’un champ non marqué `readonly` génère l’erreur `CS8340` du compilateur : « Les champs d’instance de structs readonly doivent être en lecture seule ».
+
+## <a name="readonly-member-examples"></a>Exemples de membres ReadOnly
+
+Dans d’autres cas, vous pouvez créer un struct qui prend en charge la mutation. Dans ces cas, plusieurs membres d’instance ne modifieront probablement pas l’état interne de la structure. Vous pouvez déclarer ces membres d’instance avec le modificateur `readonly`. Le compilateur applique votre intention. Si ce membre modifie l’État directement ou accède à un membre qui n’est pas également déclaré avec le modificateur `readonly`, le résultat est une erreur au moment de la compilation. Le modificateur de `readonly` est valide sur `struct` membres, et non sur les déclarations de membres `class` ou `interface`.
+
+Vous bénéficiez de deux avantages en appliquant le modificateur `readonly` aux méthodes `struct` applicables. Plus important encore, le compilateur applique votre intention. Le code qui modifie l’État n’est pas valide dans une méthode `readonly`. Le compilateur peut également utiliser le modificateur `readonly` pour activer les optimisations de performances. Quand des types de `struct` volumineux sont passés par `in` référence, le compilateur doit générer une copie défensive si l’état de la structure peut être modifié. Si vous accédez uniquement à `readonly` membres, le compilateur ne peut pas créer la copie défensive.
+
+Le modificateur de `readonly` est valide sur la plupart des membres d’un `struct`, y compris les méthodes qui substituent les méthodes déclarées dans <xref:System.Object?displayProperty=nameWithType>. Certaines restrictions s’appliquent :
+
+- Vous ne pouvez pas déclarer des membres `readonly` statiques.
+- Vous ne pouvez pas déclarer des constructeurs `readonly`.
+
+Vous pouvez ajouter le modificateur `readonly` à une déclaration de propriété ou d’indexeur :
+
+```csharp
+readonly public int Counter
+{
+  get { return 0; }
+  set {} // not useful, but legal
+}
+```
+
+Vous pouvez également ajouter le modificateur `readonly` aux accesseurs individuels `get` ou `set` d’une propriété ou d’un indexeur :
+
+```csharp
+public int Counter
+{
+  readonly get { return _counter; }
+  set { _counter = value; }
+}
+int _counter;
+```
+
+Vous ne pouvez pas ajouter le modificateur `readonly` à la fois à une propriété et à un ou plusieurs des accesseurs de cette même propriété. Cette même restriction s’applique aux indexeurs.
+
+Le compilateur applique implicitement le modificateur `readonly` aux propriétés implémentées automatiquement où le code implémenté par le compilateur ne modifie pas l’État. Elle est équivalente aux déclarations suivantes :
+
+```csharp
+public readonly int Index { get; }
+// Or:
+public int Number { readonly get; }
+public string Message { readonly get; set; }
+``` 
+
+Vous pouvez ajouter le modificateur `readonly` dans ces emplacements, mais il n’aura aucun effet significatif. Vous ne pouvez pas ajouter le modificateur `readonly` à un accesseur Set de propriété implémentée automatiquement ou à une propriété implémentée automatiquement en lecture/écriture.
 
 ## <a name="ref-readonly-return-example"></a>Exemple de retour ref readonly
 
-Le modificateur `readonly` au niveau d’un `ref return` indique que la référence retournée ne peut pas être modifiée. L’exemple suivant retourne une référence à l’origine. Il utilise le modificateur `readonly` pour indiquer que les appelants ne peuvent pas modifier l’origine :
+Le modificateur `readonly` sur une `ref return` indique que la référence retournée ne peut pas être modifiée. L’exemple suivant retourne une référence à l’origine. Elle utilise le modificateur `readonly` pour indiquer que les appelants ne peuvent pas modifier l’origine :
 
 [!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
 Le type retourné ne doit pas nécessairement être un `readonly struct`. Tout type pouvant être retourné par `ref` peut être retourné par `ref readonly`.
@@ -105,9 +151,14 @@ Le type retourné ne doit pas nécessairement être un `readonly struct`. Tout t
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
+Vous pouvez également consulter les propositions de spécification de langage :
+
+- [ReadOnly et struct ReadOnly](~/_csharplang/proposals/csharp-7.2/readonly-ref.md)
+- [membres de struct ReadOnly](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](modifiers.md)
