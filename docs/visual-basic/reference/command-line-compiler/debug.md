@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: 0bcb4d3693d7a688cbf5c75212c3d409ea73a482
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 27485cda9bb2af980b300180134fd7e99ffceeba
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581468"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72775685"
 ---
 # <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
 
@@ -24,7 +24,7 @@ Fait en sorte que le compilateur génère des informations de débogage et les p
 -debug[+ | -]
 ```
 
-or
+ou
 
 ```console
 -debug:[full | pdbonly]
@@ -34,8 +34,8 @@ or
 
 |Terme|Définition|
 |---|---|
-|`+` &#124; `-`|Optionnel. Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `/debug`.|
-|`full` &#124; `pdbonly`|Optionnel. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
+|`+` &#124; `-`|Ce paramètre est facultatif. Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `/debug`.|
+|`full` &#124; `pdbonly`|Ce paramètre est facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
 
 ## <a name="remarks"></a>Notes
 
@@ -47,7 +47,7 @@ Pour plus d’informations sur la configuration des performances de débogage d�
 
 |Pour définir-Debug dans l’environnement de développement intégré de Visual Studio|
 |---|
-|1. quand un projet est sélectionné dans **Explorateur de solutions**, dans le menu **projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur **Options avancées de compilation**.<br />4. modifiez la valeur dans la zone **générer des informations de débogage** .|
+|1.  Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Options avancées de compilation**.<br />4.  Modifiez la valeur dans la zone **générer des informations de débogage** .|
 
 ## <a name="example"></a>Exemple
 
@@ -60,5 +60,5 @@ vbc -debug -out:app.exe test.vb
 ## <a name="see-also"></a>Voir aussi
 
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
+- [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

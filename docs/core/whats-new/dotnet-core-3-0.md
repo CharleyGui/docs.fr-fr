@@ -7,22 +7,22 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 09/22/2019
-ms.openlocfilehash: c10023cf8cee358db41a3b90a9a0a1020c5462eb
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 758c8fd30fbd2e5ce8ace997005b91d6872a06d1
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395436"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773892"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
-Cet article décrit les nouveautés de .NET Core 3,0. Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
+Cet article décrit les nouveautés de .NET Core 3.0. Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
 
-.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pour Mac 8,3](/visualstudio/mac/install-preview)ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**.
+.NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou ultérieure, [Visual Studio pour Mac 8,3](/visualstudio/mac/install-preview) ou version ultérieure, ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**la plus récente.
 
-[Téléchargez et commencez à utiliser .net Core 3,0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
+[Téléchargez et commencez à utiliser .NET Core 3.0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
 
-Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
+Pour plus d’informations sur la version, consultez l' [annonce de .NET Core 3.0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
 .NET Core RC1 a été considéré comme une production prête par Microsoft et a été entièrement pris en charge. Si vous utilisez une version préliminaire, vous devez passer à la version RTM pour une prise en charge continue.
 
@@ -34,11 +34,11 @@ Pour plus d’informations sur la gestion des versions, consultez [Vue d’ensem
 
 ## <a name="c-80"></a>C# 8.0
 
-C#8,0 fait également partie de cette version, qui comprend la fonctionnalité de types de référence Nullable, les flux asynchrones et plus de modèles. Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
+C#8.0 fait également partie de cette version, qui comprend la fonctionnalité de types de référence Nullable, les flux asynchrones et plus de modèles. Pour plus d’informations sur les fonctionnalités de C# 8.0, consultez [Nouveautés de C# 8.0](../../csharp/whats-new/csharp-8.md).
 
 ## <a name="net-standard-21"></a>.NET Standard 2.1
 
-Même si .NET Core 3,0 prend en charge **.NET Standard 2,1**, le modèle `dotnet new classlib` par défaut génère un projet qui cible toujours **.NET standard 2,0**. Pour cibler **.NET Standard 2.1**, modifiez votre fichier projet et définissez la propriété `TargetFramework` sur `netstandard2.1` :
+Même si .NET Core 3.0 prend en charge **.NET standard 2.1**, `dotnet new classlib` le modèle par défaut génère un projet qui cible toujours **.NET standard 2.0**. Pour cibler **.NET Standard 2.1**, modifiez votre fichier projet et définissez la propriété `TargetFramework` sur `netstandard2.1` :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -54,7 +54,7 @@ Si vous utilisez Visual Studio, vous avez besoin de [Visual Studio 2019](https:
 
 ## <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -109,7 +109,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
-ou
+-ou-
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -123,7 +123,7 @@ Le SDK .NET Core 3.0 est fourni avec un outil qui peut réduire la taille des ap
 
 Les applications autonomes incluent tous les éléments nécessaires pour exécuter votre code, sans nécessiter que .NET soit installé sur la machine hôte. Toutefois, il arrive souvent que l’application nécessite seulement un petit sous-ensemble de l’infrastructure pour fonctionner, et que les autres bibliothèques inutilisées puissent être supprimées.
 
-.NET Core inclut désormais un paramètre qui utilisera l’outil [Éditeur de liens de langage intermédiaire](https://github.com/mono/linker) analyser le langage intermédiaire de votre application. Cet outil détecte ce que le code nécessite et supprime les bibliothèques inutilisées. Cet outil peut réduire considérablement la taille de déploiement de certaines applications.
+.NET Core inclut désormais un paramètre qui utilisera l’outil [Éditeur de liens de langage intermédiaire](https://github.com/mono/linker) analyser le langage intermédiaire de votre application. Cet outil détecte le code requis, puis supprime les bibliothèques inutilisées. Cet outil peut réduire considérablement la taille de déploiement de certaines applications.
 
 Pour activer cet outil, ajoutez le paramètre `<PublishTrimmed>` dans votre projet et publiez une application autonome :
 
@@ -336,7 +336,7 @@ Pour plus d’informations, consultez le [tutoriel sur les flux asynchrones](../
 
 ## <a name="ieee-floating-point-improvements"></a>Améliorations apportées à la virgule flottante IEEE
 
-Les API de virgule flottante sont en cours de mise à jour pour devenir conformes à la [révision 754-2008 d’IEEE](https://en.wikipedia.org/wiki/IEEE_754-2008_revision). L’objectif de ces modifications est d’exposer toutes les opérations **requises** et de s’assurer qu’elles sont conformes au comportement des spécifications IEEE. Pour plus d’informations sur les améliorations de la virgule flottante, consultez le billet [de blog améliorations de la mise en forme et de l’analyse de la virgule flottante dans .net Core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) .
+Les API de virgule flottante sont en cours de mise à jour pour devenir conformes à la [révision 754-2008 d’IEEE](https://en.wikipedia.org/wiki/IEEE_754-2008_revision). L’objectif de ces modifications est d’exposer toutes les opérations **obligatoires** et de garantir que leur comportement est conforme à la spécification IEEE. Pour plus d’informations sur les améliorations apportées aux opérations à virgule flottante, consultez le billet de blog [Floating-Point Parsing and Formatting improvements in .NET Core 3.0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/).
 
 Les correctifs de l’analyse et de la mise en forme comprennent :
 
@@ -415,7 +415,7 @@ Voici un exemple de désérialisation d’une chaîne JSON en un objet. Vous pou
 
 .NET Core 3.0 améliore l’interopérabilité des API natives.
 
-### <a name="type-nativelibrary"></a>Type : NativeLibrary
+### <a name="type-nativelibrary"></a>Type : NativeLibrary
 
 <xref:System.Runtime.InteropServices.NativeLibrary?displayProperty=nameWithType> fournit une encapsulation pour le chargement d’une bibliothèque native (à l’aide de la même logique de chargement que .NET Core P/Invoke) et la fourniture des fonctions d’assistance pertinentes telles que `getSymbol`. Pour obtenir un exemple de code, consultez la [démonstration DLLMap](https://github.com/dotnet/samples/tree/master/core/extensions/DllMapDemo).
 

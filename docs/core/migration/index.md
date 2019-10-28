@@ -3,12 +3,12 @@ title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
 ms.custom: seodec18
-ms.openlocfilehash: 167f0707bbaf34ce12a1c56ee2320e7cc4f48bd3
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 2912262d1191114d2314fed89e31c91c114f1935
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698919"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72773902"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
@@ -40,7 +40,7 @@ Visual Studio migre automatiquement les projets sélectionnés. Lors de la migra
 Les fichiers qui ont été migrés (*Project. JSON*, *global. JSON*, *. xproj*et le fichier solution) sont déplacés vers un dossier de *sauvegarde* . Le fichier solution migrée est mis à niveau vers Visual Studio 2017 ou Visual Studio 2019 et vous ne pouvez pas ouvrir ce fichier solution dans Visual Studio 2015 ou versions antérieures. Un fichier nommé *UpgradeLog. htm* qui contient un rapport de migration est également enregistré et ouvert automatiquement.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas migrer vos projets à l’aide de Visual Studio 2015.
+> Dans Visual Studio 2019 version 16,3 et versions ultérieures, vous ne pouvez pas charger ou migrer un fichier *. xproj* . En outre, Visual Studio 2015 ne permet pas de migrer un fichier *. xproj* . Si vous utilisez l’une de ces versions de Visual Studio, installez une version appropriée de Visual Studio ou utilisez l’outil de migration en ligne de commande décrit ci-après.
 
 ### <a name="dotnet-migrate"></a>dotnet migrate
 
@@ -49,17 +49,17 @@ Dans le scénario de ligne de commande, vous pouvez utiliser la commande [`dotne
 Les fichiers qui ont été migrés (*Project. JSON*, *global. JSON*et *. xproj*) sont déplacés vers un dossier de *sauvegarde* .
 
 > [!NOTE]
-> Si vous utilisez Visual Studio Code, la commande `dotnet migrate` ne modifie pas les fichiers spécifiques à la Visual Studio Code, tels que `tasks.json`. Ces fichiers doivent être modifiés manuellement.
-> Cela s’applique également si vous utilisez Project Ryder ou un éditeur ou environnement de développement intégré (IDE) autre que Visual Studio.
+> Si vous utilisez Visual Studio Code, la commande `dotnet migrate` ne modifie pas les fichiers spécifiques à la Visual Studio Code, tels que *Tasks. JSON*. Ces fichiers doivent être modifiés manuellement.
+> Cela est également vrai si vous utilisez un éditeur ou un environnement de développement intégré (IDE) autre que Visual Studio.
 
-Consultez la page [Mappage entre propriétés project.json et csproj](../tools/project-json-to-csproj.md) pour afficher une comparaison des formats project.json et csproj.
+Consultez [un mappage entre les propriétés Project. JSON et csproj](../tools/project-json-to-csproj.md) pour une comparaison des formats *Project. JSON* et *. csproj* .
 
-### <a name="common-issues"></a>Problèmes courants
+Si vous obtenez une erreur :
 
-- Si vous obtenez une erreur : « Aucun fichier exécutable correspondant à la commande dotnet migrate n’a été trouvé » :
+> Aucun fichier exécutable correspondant à la commande dotnet-Migrate n’a été trouvé
 
-Exécutez `dotnet --version` pour afficher la version que vous utilisez. [`dotnet migrate`](../tools/dotnet-migrate.md) nécessite la CLI .NET Core RC3 ou version ultérieure.
-Cette erreur s’affiche si un fichier *global.json* figure dans le répertoire actif ou parent et que la version `sdk` est une version antérieure.
+Exécutez `dotnet --version` pour afficher la version que vous utilisez. [`dotnet migrate`](../tools/dotnet-migrate.md) a été introduite dans kit SDK .net Core 1.0.0 et supprimée dans la version 3.0.100.
+Vous obtiendrez cette erreur si vous avez un fichier *global. JSON* dans le répertoire actif ou parent, et que la version de `sdk` qu’il spécifie est en dehors de cette plage.
 
 ## <a name="migration-from-dnx-to-csproj"></a>Migration à partir de DNX vers csproj
 

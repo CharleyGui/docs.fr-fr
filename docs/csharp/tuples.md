@@ -3,12 +3,12 @@ title: Types tuple - Guide C#
 description: En savoir plus sur les types tuple nommés et sans nom en C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 7e5df8c20dbbddbe84a56883a6d2a027f32d8ff7
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 3c8d4acfe231be63e1d70d467cbb72ecfa4f767d
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319757"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774056"
 ---
 # <a name="c-tuple-types"></a>Types tuple C#
 
@@ -77,7 +77,7 @@ Pour tous les champs où un nom explicite n’est pas spécifié, un nom implici
 
 Il existe deux conditions où les noms de champ de candidat ne sont pas projetés sur le champ de tuple :
 
-1. Lorsque le nom du candidat est un nom de tuple réservé. Par exemple `Item3`, `ToString` ou `Rest`.
+1. Lorsque le nom du candidat est un nom de tuple réservé. `Item3`, `ToString`ou `Rest`sont des exemples.
 1. Lorsque le nom du candidat est un doublon d’un autre nom de champ de tuple, explicite ou implicite.
 
 Ces conditions évitent toute ambiguïté. Ces noms provoqueraient une ambiguïté s’ils étaient utilisés comme noms de champ pour un champ dans un tuple. Aucune de ces conditions n’entraîne d’erreur au moment de la compilation. Au lieu de cela, les éléments sans noms projetés n’ont pas de noms sémantiques projetés.  Les exemples suivants illustrent ces conditions :
@@ -148,7 +148,7 @@ L’une des utilisations les plus courantes des tuples est en tant que valeur de
 > Ces exemples calculent l’écart-type empirique non corrigé.
 > La formule de l’écart-type empirique corrigé diviserait la somme des écarts au carré par rapport à la moyenne par (N-1) au lieu de N, comme avec la méthode d’extension `Average`. Pour plus d’informations sur les différences entre ces formules de calcul d’écart-type, consultez un texte de statistiques.
 
-Le code précédent utilise la formule classique de calcul de l’écart-type. Elle génère la réponse correcte, mais constitue une implémentation peu efficace. Cette méthode énumère deux fois la suite : une fois pour générer la moyenne et une fois pour générer la moyenne quadratique des écarts par rapport à la moyenne.
+Le code précédent utilise la formule classique de calcul de l’écart-type. Elle génère la réponse correcte, mais constitue une implémentation peu efficace. Cette méthode énumère deux fois la séquence : une fois pour générer la moyenne et une fois pour générer la moyenne quadratique des écarts par rapport à la moyenne.
 (Souvenez-vous que les requêtes LINQ sont évaluées de manière différée, de sorte que le calcul des écarts par rapport à la moyenne et de la moyenne de ces écarts effectue une seule énumération.)
 
 Il existe une formule alternative qui calcule l’écart-type à l’aide d’une seule énumération de la suite.  Ce calcul génère deux valeurs en énumérant la suite : la somme de tous les éléments de la suite et la somme de chaque valeur au carré :
@@ -289,7 +289,7 @@ Les tuples peuvent être utilisés en tant *que paramètres de*sortie. À ne pas
 
 [!code-csharp[TuplesAsOutParameters](~/samples/snippets/csharp/tuples/program.cs#01_TupleAsOutVariable "Tuples as out parameters")]
 
-Vous pouvez également utiliser un Tuple [_sans nom_](#named-and-unnamed-tuples) et faire référence à ses champs comme `Item1` et `Item2` :
+Vous pouvez également utiliser un Tuple [_sans nom_](#named-and-unnamed-tuples) et faire référence à ses champs comme `Item1` et `Item2`:
 
 ```csharp
 dict.TryGetValue(2, out (int, string) pair);

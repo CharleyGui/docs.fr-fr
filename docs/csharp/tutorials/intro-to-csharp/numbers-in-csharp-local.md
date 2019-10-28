@@ -3,12 +3,12 @@ title: Nombres en C# – Tutoriel d’introduction à C#
 description: Découvrez C# en explorant les types numériques, leurs propriétés et méthodes.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 731824fefcf4966a885c53be8f71e77140541383
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: e9d8b09bde6e87edf9f483c0c296dbb256343f58
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834099"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774026"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipuler les nombres intégraux et à virgule flottante en C\#
 
@@ -31,7 +31,7 @@ Console.WriteLine(c);
 
 Exécutez ce code en tapant `dotnet run` dans votre fenêtre de commande.
 
-Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, un zéro, un nombre entier positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
+Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type de `int` représente un **entier**, un zéro, un nombre entier positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
 
 - `-` pour la soustraction
 - `*` pour la multiplication
@@ -320,8 +320,6 @@ Vous avez terminé le guide de démarrage rapide « Nombres en C# ». Vous pouve
 
 Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
 
-- [Types intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
-- [Tableau des types virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md)
-- [Tableau des types intégrés](../../language-reference/keywords/built-in-types-table.md)
-- [Tableau des conversions numériques implicites](../../language-reference/keywords/implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+- [Types numériques intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
+- [Types numériques à virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md)
+- [Conversions numériques intégrées](../../language-reference/builtin-types/numeric-conversions.md)

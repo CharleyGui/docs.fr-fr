@@ -4,12 +4,12 @@ description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpol
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/23/2018
-ms.openlocfilehash: e142c48cd944fd6119c697a299308dc9ce1203ca
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 813623f4036813d7c1af440a60387f5d8e889354
+ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834133"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72774051"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
@@ -68,9 +68,9 @@ using System;
 public class Vegetable
 {
    public Vegetable(string name) => Name = name;
-   
+
    public string Name { get; }
-   
+
    public override string ToString() => Name;
 }
 
@@ -107,7 +107,7 @@ Console.WriteLine($"On {date:d}, the price of {item} was {price:C2} per {unit}."
 
 Vous spécifiez une chaîne de format en plaçant après l’expression d’interpolation un signe deux-points (« : ») et la chaîne de format. « d » est une [chaîne de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) qui représente le format de date courte. « C2 » est une [chaîne de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) qui représente un nombre sous forme de valeur monétaire avec deux chiffres après la virgule.
 
-Plusieurs types dans les bibliothèques .NET prennent en charge un ensemble prédéfini de chaînes de format. Il s’agit notamment de tous les types numériques et des types de date et d’heure. Pour obtenir une liste complète des types qui prennent en charge les chaînes de format, consultez [Chaînes de format et types de bibliothèque de classes .NET](../../../standard/base-types/formatting-types.md#stringRef) dans l’article [Mise en forme des types dans .NET](../../../standard/base-types/formatting-types.md).
+Plusieurs types dans les bibliothèques .NET prennent en charge un ensemble prédéfini de chaînes de format. Il s’agit notamment de tous les types numériques et des types de date et d’heure. Pour obtenir une liste complète des types qui prennent en charge les chaînes de format, consultez [Chaînes de format et types de bibliothèque de classes .NET](../../../standard/base-types/formatting-types.md#format-strings-and-net-types) dans l’article [Mise en forme des types dans .NET](../../../standard/base-types/formatting-types.md).
 
 Essayez de modifier les chaînes de format dans votre éditeur de texte et, à chaque modification, relancez le programme pour voir comment celles-ci affectent la mise en forme de la date et de l’heure et la valeur numérique. Remplacez le « d » dans `{date:d}` par « t » (pour afficher le format d’heure courte), « y » (pour afficher l’année et mois) et « yyyy » (pour afficher l’année sous forme de nombre à quatre chiffres). Remplacez le « C2 » dans `{price:C2}` par « e » (pour la notation exponentielle) et « F3 » (pour une valeur numérique avec trois chiffres après la virgule).
 
