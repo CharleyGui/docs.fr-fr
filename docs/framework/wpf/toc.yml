@@ -1,28 +1,29 @@
 - name: Windows Presentation Foundation
   href: index.md
+- name: Présentation de WPF
+  href: introduction-to-wpf.md
+- name: Prise en main
+  href: getting-started/
+- name: Développement d’applications
+  href: app-development/
+- name: Avancé
+  href: advanced/
+- name: Contrôles
+  href: controls/
+- name: Données
+  href: data/
+- name: Graphisme et multimédia
+  href: graphics-multimedia/
+- name: Sécurité
+  href: security-wpf.md
   items:
-    - name: Prise en main
-      href: getting-started/
-    - name: Développement de l'application
-      href: app-development/
-    - name: Avancé
-      href: advanced/
-    - name: Contrôles
-      href: controls/
-    - name: Données
-      href: data/
-    - name: Graphiques et multimédia
-      href: graphics-multimedia/
-    - name: Sécurité
-      href: security-wpf.md
-      items:
-        - name: Sécurité de confiance partielle de WPF
-          href: wpf-partial-trust-security.md
-        - name: "Stratégie de sécurité de WPF\_- sécurité de la plateforme"
-          href: wpf-security-strategy-platform-security.md
-        - name: "Stratégie de sécurité de WPF\_- ingénierie de sécurité"
-          href: wpf-security-strategy-security-engineering.md
-    - name: Exemples WPF
-      href: wpf-samples.md
-    - name: Bibliothèque de classes
-      href: class-library-wpf.md
+    - name: Sécurité à confiance partielle WPF
+      href: wpf-partial-trust-security.md
+    - name: Sécurité des plateformes
+      href: wpf-security-strategy-platform-security.md
+    - name: Ingénierie de sécurité
+      href: wpf-security-strategy-security-engineering.md
+- name: Exemples WPF
+  href: wpf-samples.md
+- name: Bibliothèque de classes
+  href: class-library-wpf.md
