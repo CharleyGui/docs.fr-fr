@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 10/02/2018
-ms.openlocfilehash: ac9715c7c282be845e1e47516d06945c31f70209
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 208b0f27aa1e6ceb6686e9e846b6e31d9f1c74df
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039779"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035640"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -32,7 +32,7 @@ Lorsque ce code est exécuté, le microservice abonné écoute via les canaux Ra
 
 ## <a name="publishing-events-through-the-event-bus"></a>Publication d’événements via le bus d’événements
 
-Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. Il s’agit d’un exemple simplifié qui ne prend pas en compte l’atomicité. Vous devez implémenter un code similaire à celui-ci chaque fois qu’un événement doit être propagé sur plusieurs microservices, en général, juste après la validation de données ou de transactions du microservice d’origine.
+Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. (Il s’agit d’un exemple simplifié qui ne prend pas en compte l’atomicité.) Vous devez implémenter un code similaire chaque fois qu’un événement doit être propagé sur plusieurs microservices, généralement juste après la validation des données ou des transactions du microservice d’origine.
 
 Tout d’abord, l’objet d’implémentation du bus d’événements (basé sur RabbitMQ ou sur un bus de services) est injecté dans le constructeur du contrôleur, comme dans le code suivant :
 
@@ -105,7 +105,7 @@ Comme déjà mentionné dans la section relative à l’architecture, plusieurs 
 
 - Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
 
-- Utiliser le [modèle de boîte d’envoi](http://gistlabs.com/2014/05/the-outbox/) Il s’agit d’une table transactionnelle permettant de stocker les événements d’intégration (en étendant la transaction locale).
+- Utiliser le [modèle de boîte d’envoi](https://www.kamilgrzybek.com/design/the-outbox-pattern/) Il s’agit d’une table transactionnelle permettant de stocker les événements d’intégration (en étendant la transaction locale).
 
 Pour ce scénario, l’utilisation du modèle d’approvisionnement en événements est l’une des meilleures approches, sinon *la* meilleure. Toutefois, dans de nombreux scénarios d’application, vous ne pourrez pas implémenter un système d’approvisionnement en événements complet. Avec l’approvisionnement en événements, vous stockez uniquement des événements de domaine dans votre base de données transactionnelle, au lieu de stocker les données de l’état actuel. Le fait de stocker uniquement les événements de domaine comporte des avantages, tels que la disponibilité de l’historique de votre système et la capacité à déterminer l’état antérieur de votre système. Toutefois, l’implémentation d’un système d’approvisionnement en événements complet nécessite la modification d’une grande partie de l’architecture de votre système, et ajoute de nombreuses exigences et davantage de complexité. Par exemple, vous pouvez utiliser une base de données créée spécialement pour l’approvisionnement en événements, telle qu’un [magasin d’événements](https://eventstore.org/), ou une base de données orientée documents, telle qu’Azure Cosmos DB, MongoDB, Cassandra, CouchDB ou RavenDB. L’approvisionnement en événements est une excellente approche pour ce problème, mais ce n’est pas la plus simple, sauf si vous êtes déjà familiarisé avec l’approvisionnement en événements.
 
@@ -147,7 +147,7 @@ Il manque à l’approche illustrée à la figure 6-22 un microservice de worke
 
 Pour la deuxième approche, vous devez utiliser la table EventLog comme une file d’attente et toujours utiliser un microservice de worker pour publier les messages. Dans ce cas, le processus est similaire à celui illustré dans la figure 6-23. On y voit un microservice supplémentaire, ainsi que la table qui est la seule source lors de la publication d’événements.
 
-![Une autre approche pour gérer l’atomicité : publier dans une table de journal des événements, puis faire publier l’événement par un autre microservice (un Worker en arrière-plan).](./media/image24.png)
+![Une autre approche pour gérer l’atomicité : publier dans une table de journal des événements, puis faire publier l’événement par un autre microservice (un worker en arrière plan).](./media/image24.png)
 
 **Figure 6-23.** Atomicité lors de la publication d’événements dans le bus d’événements avec un microservice de worker
 
@@ -326,9 +326,9 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
     <https://go.particular.net/eShopOnContainers>
 
 - **Event Driven Messaging** \
-    [http://soapatterns.org/design\_patterns/event\_driven\_messaging](http://soapatterns.org/design_patterns/event_driven_messaging)
+    <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
-- **Jimmy Bogard. Refactorisation vers la résilience : évaluation du couplage** \
+- **Jimmy bogard. Refactorisation vers la résilience : évaluation**de l’association  \
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 - **Publish-Subscribe channel** \
@@ -340,13 +340,13 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 - **Eventual Consistency** \
     [https://en.wikipedia.org/wiki/Eventual\_consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
-- **Philip Brown. Strategies for Integrating Bounded Contexts** \
+- **Philip Brown. Stratégies d’intégration des contextes délimités** \
     <https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/>
 
-- **Chris Richardson. Developing Transactional Microservices Using Aggregates, Event Sourcing and CQRS - Part 2** \
+- **Chris Richardson. Développement de microservices transactionnels à l’aide d’agrégats, de l’approvisionnement en événements et de CQRS-partie 2** \
     <https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson>
 
-- **Chris Richardson. Event Sourcing pattern** \
+- **Chris Richardson.**  \ du modèle d’approvisionnement en événements
     <https://microservices.io/patterns/data/event-sourcing.html>
 
 - **Introducing Event Sourcing** \
@@ -355,7 +355,7 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 - **Base de données du magasin d’événements**. Site officiel. \
     <https://geteventstore.com/>
 
-- **Patrick Nommensen. Event-Driven Data Management for Microservices** \
+- **Patrick Nommensen. Gestion des données pilotée par les événements pour les microservices** \
     <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
 - **The CAP Theorem** \
@@ -367,13 +367,13 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 - **Data Consistency Primer** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Rick Saling. The CAP Theorem: Why “Everything is Different” with the Cloud and Internet** \
+- **Rick salingue. CAP CAP : pourquoi « tout est différent » avec le Cloud et Internet** \
     <https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
-- **Eric Brewer. CAP Twelve Years Later: How the "Rules" Have Changed** \
+- **Eric brasser. CAP 12 ans plus tard : comment les « règles » ont changé** \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>
 
-- **Azure Service Bus. Brokered Messaging: Duplicate Detection**  \
+- **Azure Service bus. Messagerie** répartie :  \ de détection des doublons
     <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
 
 - **Reliability Guide** (RabbitMQ documentation) \
