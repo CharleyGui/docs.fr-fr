@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 460accc4f0877265a5a3d72ad3272502da9e5119
-  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+  ms.openlocfilehash: c3c4927a4afbf69f2101aa2596389e6f94cea243
+  ms.sourcegitcommit: 4aeac5d588ded58246f58030919e56b70a7674e4
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72774032"
+  ms.lasthandoff: 10/27/2019
+  ms.locfileid: "72966978"
 items:
 - durationInMinutes: 2
   content: >
@@ -156,8 +156,8 @@ items:
     > [!NOTE]
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-- content: >
-    Vous avez terminé le tutoriel interactif sur l’interpolation de chaînes. Vous pouvez cliquer sur le lien **Collections en C#** ci-dessous pour commencer le tutoriel interactif suivant, ou consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
+- content: >-
+    Vous avez terminé le tutoriel interactif sur l’interpolation de chaînes. Vous pouvez consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder.
 
 
     Pour plus d’informations, voir [Interpolation de chaînes](../../language-reference/tokens/interpolated.md).
