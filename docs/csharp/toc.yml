@@ -1560,15 +1560,16 @@
       items:
         - name: Vue d'ensemble
           href: language-reference/operators/index.md
+          displayName: 'operator precedence, operator associativity'
         - name: Opérateurs arithmétiques
           href: language-reference/operators/arithmetic-operators.md
           displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'
         - name: Opérateurs logiques booléens
           href: language-reference/operators/boolean-logical-operators.md
-          displayName: '!, &&, ||, &, |, ^, &=, |=, ^='
+          displayName: '!, &&, ||, &, |, ^, &=, |=, ^=, AND, XOR, OR'
         - name: Opérateurs de bits et de décalage
           href: language-reference/operators/bitwise-and-shift-operators.md
-          displayName: '~, &, |, ^, <<, >>, &=, |=, ^=, <<=, >>='
+          displayName: '~, &, |, ^, <<, >>, &=, |=, ^=, <<=, >>=, AND, XOR, OR'
         - name: Opérateurs d'égalité
           href: language-reference/operators/equality-operators.md
           displayName: '==, !='
@@ -1580,16 +1581,16 @@
           displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
         - name: Opérateurs de conversion et de test de type
           href: language-reference/operators/type-testing-and-cast.md
-          displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
+          displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), explicit, conversion'
         - name: Opérateurs de conversion définie par l’utilisateur
           href: language-reference/operators/user-defined-conversion-operators.md
           displayName: 'implicit, explicit'
         - name: Opérateurs associés au pointeur
           href: language-reference/operators/pointer-related-operators.md
           displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
-        - name: = (opérateur)
+        - name: Opérateurs d'assignation
           href: language-reference/operators/assignment-operator.md
-          displayName: 'assignment, ref'
+          displayName: '=, ref, compound'
         - name: '+ et +=, opérateurs'
           href: language-reference/operators/addition-operator.md
           displayName: 'string concatenation, delegate combination, event subscription'
@@ -1607,7 +1608,7 @@
           displayName: 'null-coalescing, assignment'
         - name: '=>, opérateur'
           href: language-reference/operators/lambda-operator.md
-          displayName: lambda
+          displayName: 'lambda, expression body definition'
         - name: ':: (opérateur)'
           href: language-reference/operators/namespace-alias-qualifier.md
           displayName: 'namespace alias qualifier, global namespace'
@@ -1624,6 +1625,7 @@
           href: language-reference/operators/nameof.md
         - name: Opérateur new
           href: language-reference/operators/new-operator.md
+          displayName: constructor
         - name: Opérateur sizeof
           href: language-reference/operators/sizeof.md
         - name: Opérateur stackalloc
