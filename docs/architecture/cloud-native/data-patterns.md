@@ -1,15 +1,15 @@
 ---
-title: Modèles de données natifs du Cloud
+title: Modèles de données cloud natifs
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de données natifs du Cloud
 ms.date: 06/30/2019
-ms.openlocfilehash: 8fc5a09dca61e6644fdcaa692ff1a21f40ebf179
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0d251f3046fcd3f3a2f5d856a123a35d3f7ecff2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183412"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087698"
 ---
-# <a name="cloud-native-data-patterns"></a>Modèles de données natifs du Cloud
+# <a name="cloud-native-data-patterns"></a>Modèles de données cloud natifs
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -127,13 +127,13 @@ Les bases de données NoSQL sont distribuées et généralement mises à l’éc
 
 Il s’agit d’une [cohérence éventuelle](https://www.cloudcomputingpatterns.org/eventual_consistency/), caractéristique des systèmes de données distribués où les transactions ACID ne sont pas prises en charge. Il s’agit d’un bref délai entre la mise à jour d’un élément de données et le temps nécessaire à la propagation de cette mise à jour à chacun des nœuds de réplica. Si vous mettez à jour un élément de produit dans une base de données NoSQL dans le États-Unis, mais en même temps interrogez ce même élément de données à partir d’un nœud de réplica en Europe, vous pouvez récupérer les informations de produit antérieures, jusqu’à ce que le nœud européen ait été mis à jour avec la modification du produit. Le compromis est qu’en donnant une [cohérence forte](https://en.wikipedia.org/wiki/Strong_consistency), en attendant que tous les nœuds de réplica soient mis à jour avant de retourner un résultat de requête, vous pouvez prendre en charge une grande échelle et un volume de trafic énorme, mais avec la possibilité de présenter des données plus anciennes.
 
-Les bases de données NoSQL peuvent être classées selon les quatre modèles suivants : 
+Les bases de données NoSQL peuvent être classées selon les quatre modèles suivants :
 
 - *Magasin de documents* (MongoDB, CouchDB, Couchbase) : les données (et les métadonnées correspondantes) sont stockées de façon non relationnelle dans des documents JSON dénormalisés à l’intérieur de la base de données.
 
-- *Magasin de clés/valeurs* (Redims, Riak, Memcached) : les données sont stockées dans des paires clé-valeur simples avec des opérations système effectuées sur une clé d’accès unique qui est mappée à une valeur de données utilisateur.
+- *Stockage de clé/valeur* (redims, Riak, Memcached) : les données sont stockées dans des paires clé-valeur simples avec des opérations système effectuées par rapport à une clé d’accès unique qui est mappée à une valeur de données utilisateur.
 
-- *Magasin de colonnes larges* (HBase, Cassandra) : les données associées sont stockées dans un format de colonne sous la forme d’un ensemble de paires clé/valeur imbriquées au sein d’une même colonne avec des données généralement récupérées en tant qu’unité unique sans avoir à joindre plusieurs tables ensemble.
+- *Stockage à colonnes larges* (HBase, Cassandra) : les données associées sont stockées dans un format de colonne sous la forme d’un ensemble de paires clé/valeur imbriquées au sein d’une même colonne avec des données généralement récupérées en tant qu’unité unique sans devoir joindre plusieurs tables.
 
 - *Magasins de graphiques* (neo4j, Titan) : les données sont stockées sous la forme d’une représentation graphique au sein d’un nœud avec les bords qui spécifient la relation entre les nœuds.
 

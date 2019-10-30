@@ -2,12 +2,12 @@
 title: IdentityServer pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: b2f162cd4e09ead520438f664a51bee7d6dacaf4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 3797214685d20109b2c5dc4440ae5fc64dfddce6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035680"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087255"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pour les applications Cloud natives
 
@@ -55,10 +55,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddMvc();
-        
+
         // some details omitted
         services.AddIdentityServer();
-        
+
           services.AddAuthentication()
             .AddGoogle("Google", options =>
             {

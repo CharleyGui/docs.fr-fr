@@ -3,12 +3,12 @@ title: Maillages de service-gRPC pour les développeurs WCF
 description: Utilisation d’une maille de service pour acheminer et équilibrer les demandes vers les services gRPC dans un cluster Kubernetes.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 18c12af787f32988bbf17b1561d4ba1fb4deaf41
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 6bdfa57ba47ba0105092d1c140705599b7023c78
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846046"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090175"
 ---
 # <a name="service-meshes"></a>Maillages de service
 
@@ -42,9 +42,9 @@ Les maillages de service s’appliquent uniquement au trafic au sein d’un clus
 
 Trois implémentations de maille de service à usage général peuvent actuellement être utilisées avec Kubernetes : Istio, Linkerd et consulaire Connect. Les trois fournissent le routage/proxy des demandes, le chiffrement du trafic, la résilience, l’authentification hôte à hôte et le contrôle du trafic.
 
-Le choix d’un maillage de service dépend de plusieurs facteurs : 
+Le choix d’un maillage de service dépend de plusieurs facteurs :
 
-- Exigences spécifiques de l’Organisation concernant les coûts, la conformité, les plans de support payants, etc. 
+- Exigences spécifiques de l’Organisation concernant les coûts, la conformité, les plans de support payants, etc.
 - La nature du cluster, sa taille, le nombre de services déployés et le volume de trafic au sein du réseau du cluster.
 - Facilité de déploiement et de gestion de la maille et de son utilisation avec les services.
 

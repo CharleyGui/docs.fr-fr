@@ -2,12 +2,12 @@
 title: Présentation de l’application de référence eShopOnContainers
 description: Présentation de l’application de référence eShopOnContainers Cloud Native microservices pour ASP.NET Core et Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 20f9175ada2e5439be363781a2b187c10ba86d37
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0d55f248acbc34bcc76d38987d7e1d537cf6065a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182859"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087254"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Présentation de l’application de référence eShopOnContainers
 
@@ -38,10 +38,10 @@ Commençons par une revue des fonctionnalités et des exigences de l’applicati
 
 L’application présente également les exigences non fonctionnelles suivantes :
 
-- Elle doit être hautement disponible et doit être mise à l’échelle automatiquement pour répondre à l’augmentation du trafic (et à la mise à l’échelle une fois le trafic). 
-- Il doit fournir une surveillance facile à utiliser de ses journaux d’intégrité et de diagnostic pour aider à résoudre les problèmes qu’il rencontre. 
-- Il doit prendre en charge un processus de développement Agile, y compris la prise en charge de l’intégration et du déploiement continus (CI/CD). 
-- Outre les deux serveurs Web frontaux (application traditionnelle et à page unique), l’application doit également prendre en charge les applications clientes mobiles exécutant différents types de systèmes d’exploitation. 
+- Elle doit être hautement disponible et doit être mise à l’échelle automatiquement pour répondre à l’augmentation du trafic (et à la mise à l’échelle une fois le trafic).
+- Il doit fournir une surveillance facile à utiliser de ses journaux d’intégrité et de diagnostic pour aider à résoudre les problèmes qu’il rencontre.
+- Il doit prendre en charge un processus de développement Agile, y compris la prise en charge de l’intégration et du déploiement continus (CI/CD).
+- Outre les deux serveurs Web frontaux (application traditionnelle et à page unique), l’application doit également prendre en charge les applications clientes mobiles exécutant différents types de systèmes d’exploitation.
 - Il doit prendre en charge l’hébergement multiplateforme et le développement interplateforme.
 
 ![eShopOnContainers référence de l’architecture de développement d’applications.](./media/eshoponcontainers-development-architecture.png)
@@ -70,7 +70,7 @@ Le code est organisé pour prendre en charge les différents microservices, et a
 
 ## <a name="understanding-microservices"></a>Fonctionnement des microservices
 
-Ce document se concentre sur les applications Cloud natives créées à l’aide de la technologie Azure. Pour en savoir plus sur les meilleures pratiques relatives aux microservices et sur l’architecture des applications basées sur des microservices, [consultez la documentation complémentaire sur les microservices .net : Architecture pour les applications .NET en conteneurs](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture). Le livre est disponible en ligne, au format PDF ou eReader.
+Ce document se concentre sur les applications Cloud natives créées à l’aide de la technologie Azure. Pour en savoir plus sur les meilleures pratiques relatives aux microservices et sur l’architecture des applications basées sur des microservices, consultez la documentation complémentaire sur les microservices [.net : architecture pour les applications .net en conteneur](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture). Le livre est disponible en ligne, au format PDF ou eReader.
 
 >[!div class="step-by-step"]
 >[Précédent](candidate-apps.md)

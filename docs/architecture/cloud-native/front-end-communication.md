@@ -1,16 +1,16 @@
 ---
-title: Communication des clients frontaux
+title: Communication client et front-end
 description: Découvrez comment les clients frontaux communiquent avec les systèmes natifs du Cloud
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: 67410bf9b5c76acc472018197bb64aa7662dc439
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: a488337b48e30b99bfcc9894a780350f32af864f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183125"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087455"
 ---
-# <a name="front-end-client-communication"></a>Communication des clients frontaux
+# <a name="front-end-client-communication"></a>Communication client et front-end
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -39,7 +39,7 @@ Au lieu de cela, un modèle de conception de Cloud largement accepté consiste �
 
 **Figure 4-3.** Modèle de passerelle d’API
 
-Dans la figure précédente, notez la manière dont le service de passerelle d’API soustrait les microservices principaux principaux. Implémenté comme une API Web, il agit comme un *proxy inverse*, acheminant le trafic entrant vers les microservices internes. 
+Dans la figure précédente, notez la manière dont le service de passerelle d’API soustrait les microservices principaux principaux. Implémenté comme une API Web, il agit comme un *proxy inverse*, acheminant le trafic entrant vers les microservices internes.
 
 La passerelle isole le client du partitionnement de service interne et de la refactorisation. Si vous modifiez un service principal, vous pouvez l’inclure dans la passerelle sans rompre le client. C’est également votre première ligne de défense pour les problèmes transversaux, tels que l’identité, la mise en cache, la résilience, le contrôle et la limitation. La plupart de ces problèmes de coupe croisée peuvent être déchargés à partir des services principaux de la passerelle, ce qui simplifie les services principaux.
 
@@ -55,7 +55,7 @@ Pour commencer, vous pouvez créer votre propre service de passerelle d’API. U
 
 ## <a name="ocelot-gateway"></a>Passerelle Ocelot
 
-Pour les applications simples en mode Cloud .NET, vous pouvez envisager la [passerelle Ocelot](https://github.com/ThreeMammals/Ocelot). Ocelot est une passerelle d’API Open source créée pour les microservices .NET qui requièrent un point d’entrée unifié dans leur système. Elle est légère, rapide et évolutive. 
+Pour les applications simples en mode Cloud .NET, vous pouvez envisager la [passerelle Ocelot](https://github.com/ThreeMammals/Ocelot). Ocelot est une passerelle d’API Open source créée pour les microservices .NET qui requièrent un point d’entrée unifié dans leur système. Elle est légère, rapide et évolutive.
 
 Comme toute passerelle d’API, ses principales fonctionnalités sont de transférer les requêtes HTTP entrantes vers les services en aval. En outre, il prend en charge un large éventail de fonctionnalités configurables dans un pipeline d’intergiciel (middleware) .NET Core. Son ensemble de fonctionnalités est présenté dans le tableau suivant.
 
@@ -71,13 +71,13 @@ Comme toute passerelle d’API, ses principales fonctionnalités sont de transf�
 
 Chaque passerelle Ocelot spécifie les adresses en amont et en aval et les fonctionnalités configurables dans un fichier de configuration JSON. Le client envoie une requête HTTP à la passerelle ocelot. Une fois reçu, Ocelot passe l’objet HttpRequest via son pipeline en le manipulant dans l’état spécifié par sa configuration. À la fin du pipeline, Ocelot crée un nouveau HTTPResponseObject et le transmet au service en aval. Pour la réponse, Ocelot inverse le pipeline, en renvoyant la réponse au client.
 
-Ocelot est disponible sous forme de package NuGet. Il cible le .NET standard 2,0, ce qui le rend compatible avec les runtimes .NET Core 2.0 + et .NET Framework 4.6.1 +. Ocelot s’intègre à tout ce qui parle HTTP et s’exécute sur les plateformes prises en charge par .NET Core : Linux, macOS et Windows. Ocelot est extensible et prend en charge de nombreuses plateformes modernes, y compris les conteneurs d’ancrage, les services Kubernetes Azure ou d’autres clouds publics.  Ocelot s’intègre aux packages Open source, tels que les [Eureka](https://github.com/Netflix/eureka) [consulaire](https://www.consul.io), [GraphQL](https://graphql.org)et Netflix. 
+Ocelot est disponible sous forme de package NuGet. Il cible le .NET standard 2,0, ce qui le rend compatible avec les runtimes .NET Core 2.0 + et .NET Framework 4.6.1 +. Ocelot s’intègre à tout ce qui parle HTTP et s’exécute sur les plateformes prises en charge par .NET Core : Linux, macOS et Windows. Ocelot est extensible et prend en charge de nombreuses plateformes modernes, y compris les conteneurs d’ancrage, les services Kubernetes Azure ou d’autres clouds publics.  Ocelot s’intègre aux packages Open source, tels que les [Eureka](https://github.com/Netflix/eureka) [consulaire](https://www.consul.io), [GraphQL](https://graphql.org)et Netflix.
 
 Envisagez Ocelot pour les applications Cloud natives simples qui ne nécessitent pas l’ensemble complet de fonctionnalités d’une passerelle d’API commerciale.
 
 ## <a name="azure-application-gateway"></a>Passerelle Azure Application
 
-Pour les exigences de passerelle simples, vous pouvez envisager [Azure application passerelle](https://docs.microsoft.com/azure/application-gateway/overview). Disponible en tant que [service PaaS](https://azure.microsoft.com/overview/what-is-paas/)Azure, il comprend des fonctionnalités de passerelle de base telles que le routage d’URL, la terminaison SSL et un pare-feu d’applications Web. Le service prend en charge les fonctionnalités d' [équilibrage de charge de couche 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Avec la couche 7, vous pouvez acheminer les demandes en fonction du contenu réel d’un message HTTP, pas seulement des paquets réseau TCP de bas niveau. 
+Pour les exigences de passerelle simples, vous pouvez envisager [Azure application passerelle](https://docs.microsoft.com/azure/application-gateway/overview). Disponible en tant que [service PaaS](https://azure.microsoft.com/overview/what-is-paas/)Azure, il comprend des fonctionnalités de passerelle de base telles que le routage d’URL, la terminaison SSL et un pare-feu d’applications Web. Le service prend en charge les fonctionnalités d' [équilibrage de charge de couche 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . Avec la couche 7, vous pouvez acheminer les demandes en fonction du contenu réel d’un message HTTP, pas seulement des paquets réseau TCP de bas niveau.
 
 Tout au long de ce document, nous nous contribuons à l’hébergement des systèmes Cloud natifs dans [Kubernetes](https://www.infoworld.com/article/3268073/what-is-kubernetes-your-next-application-platform.html). Un Orchestrator de conteneur, Kubernetes automatise le déploiement, la mise à l’échelle et les problèmes opérationnels des charges de travail en conteneur. Azure Application passerelle peut être configurée en tant que passerelle d’API pour le cluster de [service Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/) .
 
@@ -91,17 +91,17 @@ Kubernetes comprend une fonctionnalité intégrée qui prend en charge l’équi
 
 ## <a name="azure-api-management"></a>Gestion des API Azure
 
-Pour les systèmes Cloud natifs modérés à grande échelle, vous pouvez envisager la [gestion des API Azure](https://azure.microsoft.com/services/api-management/). Il s’agit d’un service basé sur le Cloud qui ne résout pas uniquement vos besoins en matière de passerelle d’API, mais fournit un environnement de développement et d’administration complet. La gestion des API est illustrée dans la figure 4-6. 
+Pour les systèmes Cloud natifs modérés à grande échelle, vous pouvez envisager la [gestion des API Azure](https://azure.microsoft.com/services/api-management/). Il s’agit d’un service basé sur le Cloud qui ne résout pas uniquement vos besoins en matière de passerelle d’API, mais fournit un environnement de développement et d’administration complet. La gestion des API est illustrée dans la figure 4-6.
 
 ![Gestion des API Azure](./media/azure-api-management.png)
 
 **Figure 4-6.** Gestion des API Azure
 
-Pour commencer, la gestion des API expose un serveur de passerelle qui permet un accès contrôlé aux services principaux en fonction de règles et de stratégies configurables. Ces services peuvent se trouver dans le Cloud Azure, dans votre centre de données local ou dans d’autres clouds publics. Les clés API et les jetons JWT déterminent qui peut faire quoi. Tout le trafic est journalisé à des fins analytiques. 
+Pour commencer, la gestion des API expose un serveur de passerelle qui permet un accès contrôlé aux services principaux en fonction de règles et de stratégies configurables. Ces services peuvent se trouver dans le Cloud Azure, dans votre centre de données local ou dans d’autres clouds publics. Les clés API et les jetons JWT déterminent qui peut faire quoi. Tout le trafic est journalisé à des fins analytiques.
 
-Pour les développeurs, la gestion des API offre un portail des développeurs qui permet d’accéder aux services, à la documentation et à des exemples de code pour les appeler. Les développeurs peuvent utiliser l’API Swagger/Open pour inspecter les points de terminaison de service et analyser leur utilisation. Le service fonctionne sur les principales plateformes de développement : .NET, Java, Golang et bien plus encore. 
+Pour les développeurs, la gestion des API offre un portail des développeurs qui permet d’accéder aux services, à la documentation et à des exemples de code pour les appeler. Les développeurs peuvent utiliser l’API Swagger/Open pour inspecter les points de terminaison de service et analyser leur utilisation. Le service fonctionne sur les principales plateformes de développement : .NET, Java, Golang et bien plus encore.
 
-Le portail des éditeurs expose un tableau de bord de gestion dans lequel les administrateurs exposent les API et gèrent leur comportement. L’accès au service peut être accordé, surveillé par l’intégrité du service et les télémétries de service collectées. Les administrateurs appliquent des *stratégies* à chaque point de terminaison pour affecter le comportement. Les [stratégies](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) sont des instructions prégénérées qui s’exécutent de façon séquentielle pour chaque appel de service.  Les stratégies sont configurées pour un appel entrant, sortant, ou appelées en cas d’erreur. Les stratégies peuvent être appliquées à différentes étendues de service pour activer l’ordonnancement déterministe lors de la combinaison de stratégies. Le produit est fourni avec un grand nombre de [stratégies](https://docs.microsoft.com/azure/api-management/api-management-policies)prédéfinies. 
+Le portail des éditeurs expose un tableau de bord de gestion dans lequel les administrateurs exposent les API et gèrent leur comportement. L’accès au service peut être accordé, surveillé par l’intégrité du service et les télémétries de service collectées. Les administrateurs appliquent des *stratégies* à chaque point de terminaison pour affecter le comportement. Les [stratégies](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) sont des instructions prégénérées qui s’exécutent de façon séquentielle pour chaque appel de service.  Les stratégies sont configurées pour un appel entrant, sortant, ou appelées en cas d’erreur. Les stratégies peuvent être appliquées à différentes étendues de service pour activer l’ordonnancement déterministe lors de la combinaison de stratégies. Le produit est fourni avec un grand nombre de [stratégies](https://docs.microsoft.com/azure/api-management/api-management-policies)prédéfinies.
 
 Voici des exemples de la façon dont les stratégies peuvent affecter le comportement de vos services Cloud natifs :  
 
@@ -122,7 +122,7 @@ La gestion des API Azure est disponible sur [quatre niveaux différents](https:/
 - Standard
 - Multiplicateur
 
-Le niveau développeur est conçu pour les charges de travail de non-production et l’évaluation. Les autres niveaux offrent progressivement plus de puissance, de fonctionnalités et de contrats de niveau de service (SLA) plus élevés. Le niveau Premium offre une [prise en charge de plusieurs régions](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region)et d’un [réseau virtuel Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) . Tous les niveaux ont un prix fixe par heure. 
+Le niveau développeur est conçu pour les charges de travail de non-production et l’évaluation. Les autres niveaux offrent progressivement plus de puissance, de fonctionnalités et de contrats de niveau de service (SLA) plus élevés. Le niveau Premium offre une [prise en charge de plusieurs régions](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region)et d’un [réseau virtuel Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) . Tous les niveaux ont un prix fixe par heure.
 
 Récemment, Microsoft a annoncé un [niveau sans serveur de gestion](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) des API pour la gestion des API Azure. Appelé « niveau de *tarification*de la consommation », le service est une variante de la gestion des API conçue autour du modèle de calcul sans serveur. Contrairement aux niveaux tarifaires « pré-alloués » précédemment affichés, le niveau de consommation fournit un approvisionnement instantané et une tarification par action.
 
@@ -130,7 +130,7 @@ Il active les fonctionnalités de la passerelle API pour les cas d’utilisation
 
 - Microservices implémentés à l’aide de technologies sans serveur telles que [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) et [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 - Les ressources du service de sauvegarde Azure, telles que les Service Bus files d’attente et les rubriques, le stockage Azure et d’autres.
-- Les microservices où le trafic a des pics de grande ampleur, mais qui reste peu la plupart du temps. 
+- Les microservices où le trafic a des pics de grande ampleur, mais qui reste peu la plupart du temps.
 
 Le niveau de consommation utilise les mêmes composants de gestion des API de service sous-jacents, mais utilise une architecture entièrement différente basée sur des ressources allouées dynamiquement. Il s’aligne parfaitement avec le modèle de calcul sans serveur :
 
@@ -138,19 +138,19 @@ Le niveau de consommation utilise les mêmes composants de gestion des API de se
 - Aucune capacité inactive.
 - Haute disponibilité.
 - Mise à l’échelle automatique.
-- Le coût est basé sur l’utilisation réelle. 
+- Le coût est basé sur l’utilisation réelle.
   
-Le nouveau niveau de consommation est un bon choix pour les systèmes Cloud natifs qui exposent des ressources sans serveur en tant qu’API. 
+Le nouveau niveau de consommation est un bon choix pour les systèmes Cloud natifs qui exposent des ressources sans serveur en tant qu’API.
 
 > Au moment de la rédaction du présent article, le niveau de consommation est en version préliminaire dans le Cloud Azure.
 
 ## <a name="real-time-communication"></a>Communication en temps réel
 
-La communication en temps réel, ou Push, est une autre option pour les applications frontales qui communiquent avec les systèmes back-end Cloud natifs via HTTP. Les applications, telles que les cotations financières, les formations en ligne, les jeux et les mises à jour de la progression des travaux, requièrent des réponses instantanées et en temps réel du serveur principal. Avec la communication HTTP normale, le client n’a aucun moyen de savoir quand de nouvelles données sont disponibles. Le client doit continuellement *interroger* ou envoyer des demandes au serveur. Avec la communication *en temps réel* , le serveur peut envoyer de nouvelles données au client à tout moment. 
+La communication en temps réel, ou Push, est une autre option pour les applications frontales qui communiquent avec les systèmes back-end Cloud natifs via HTTP. Les applications, telles que les cotations financières, les formations en ligne, les jeux et les mises à jour de la progression des travaux, requièrent des réponses instantanées et en temps réel du serveur principal. Avec la communication HTTP normale, le client n’a aucun moyen de savoir quand de nouvelles données sont disponibles. Le client doit continuellement *interroger* ou envoyer des demandes au serveur. Avec la communication *en temps réel* , le serveur peut envoyer de nouvelles données au client à tout moment.
 
-Les systèmes en temps réel sont souvent caractérisés par des flux de données à fréquence élevée et un grand nombre de connexions clientes simultanées. La mise en œuvre manuelle de la connectivité en temps réel peut rapidement devenir complexe, nécessitant une infrastructure non triviale pour garantir l’évolutivité et la fiabilité de la messagerie aux clients connectés. Vous pouvez gérer une instance du cache Redims Azure et un ensemble d’équilibrages de charge configurés avec des sessions rémanentes pour l’affinité du client. 
+Les systèmes en temps réel sont souvent caractérisés par des flux de données à fréquence élevée et un grand nombre de connexions clientes simultanées. La mise en œuvre manuelle de la connectivité en temps réel peut rapidement devenir complexe, nécessitant une infrastructure non triviale pour garantir l’évolutivité et la fiabilité de la messagerie aux clients connectés. Vous pouvez gérer une instance du cache Redims Azure et un ensemble d’équilibrages de charge configurés avec des sessions rémanentes pour l’affinité du client.
 
-Le [service Azure signalr](https://azure.microsoft.com/services/signalr-service/) est un service Azure entièrement géré qui simplifie la communication en temps réel pour vos applications Cloud natives. Les détails de l’implémentation technique, tels que la configuration de la capacité, la mise à l’échelle et les connexions persistantes, sont extraits. Ils sont gérés pour vous avec un contrat de niveau de service de 99,9%. Vous vous concentrez sur les fonctionnalités de l’application, et non sur l’infrastructure. 
+Le [service Azure signalr](https://azure.microsoft.com/services/signalr-service/) est un service Azure entièrement géré qui simplifie la communication en temps réel pour vos applications Cloud natives. Les détails de l’implémentation technique, tels que la configuration de la capacité, la mise à l’échelle et les connexions persistantes, sont extraits. Ils sont gérés pour vous avec un contrat de niveau de service de 99,9%. Vous vous concentrez sur les fonctionnalités de l’application, et non sur l’infrastructure.
 
 Une fois activé, un service HTTP basé sur le Cloud peut envoyer des mises à jour de contenu directement à des clients connectés, y compris des applications de navigateur, mobiles et de bureau. Les clients sont mis à jour sans qu’il soit nécessaire d’interroger le serveur. Azure Signalr extrait les technologies de transport qui créent une connectivité en temps réel, notamment les WebSockets, les événements côté serveur et l’interrogation longue. Les développeurs se concentrent sur l’envoi de messages à tous ou à des sous-ensembles spécifiques de clients connectés.
 

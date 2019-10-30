@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: c39a42b7f5200208a0f812665a2d1c87b4433ba9
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 6541a0cb7ce8ac3946e119483308d91158bdb522
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275789"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094067"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -35,7 +35,7 @@ Les données retournées (ViewModel) peuvent être le résultat de données de p
 
 Les ViewModels peuvent être des types statiques définis dans des classes. Ils peuvent également être créés de manière dynamique en fonction des requêtes exécutées (tel qu’implémenté dans le microservice de commandes), ce qui représente une méthode très agile pour les développeurs.
 
-## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Utiliser Dapper comme micro-ORM pour effectuer des requêtes 
+## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Utiliser Dapper comme micro-ORM pour effectuer des requêtes
 
 Vous pouvez utiliser n’importe quel micro-ORM, Entity Framework Core ou même ADO.NET standard pour exécuter des requêtes. Dans l’exemple d’application, Dapper a été sélectionné pour le microservice de commandes dans eShopOnContainers comme un bon exemple de micro-ORM courant. Vous pouvez exécuter des requêtes SQL standard avec de hautes performances, car il s’agit d’un framework très léger. Dapper vous permet d’écrire une requête SQL qui peut accéder à plusieurs tables et les joindre.
 
@@ -87,19 +87,19 @@ public class OrderQueries : IOrderQueries
 
 Le point important à retenir est qu’en utilisant un type dynamique, la collection de données retournée est assemblée de manière dynamique sous la forme du ViewModel.
 
-**Avantages :** cette approche de conception évite d’avoir à modifier les classes ViewModel statiques pour mettre à jour la phrase SQL d’une requête, ce qui la rend assez agile en matière de codage, simple et facilement adaptable aux évolutions à venir.
+**Avantages :** Cette approche réduit la nécessité de modifier les classes ViewModel statiques quand vous mettez à jour la phrase SQL d’une requête. De ce fait, cette approche de conception est assez souple lors du codage, simple et peut évoluer rapidement en cas de changements futurs.
 
-**Inconvénients :** à long terme, les types dynamiques peuvent nuire à la clarté et à la compatibilité d’un service comportant des applications clientes. De plus, les middlewares (intergiciels) comme Swagger ne peuvent pas fournir le même niveau de documentation sur les types retournés si vous utilisez des types dynamiques.
+**Inconvénients :** à long terme, les types dynamiques peuvent nuire à la clarté et à la compatibilité d’un service avec les applications clientes. De plus, les middlewares (intergiciels) comme Swagger ne peuvent pas fournir le même niveau de documentation sur les types retournés si vous utilisez des types dynamiques.
 
 ### <a name="viewmodel-as-predefined-dto-classes"></a>ViewModel sous la forme de classes DTO prédéfinies
 
-**Avantages :** il est largement préférable d’avoir des classes ViewModel prédéfinies statiques, comme des « contrats » basés sur des classes DTO explicites, pour les API publiques mais aussi pour les microservices à long terme, même s’ils sont seulement utilisés par la même application.
+**Avantages :** le fait d’avoir des classes ViewModel prédéfinies statiques, comme des « contrats » basés sur des classes DTO explicites, est définitivement meilleur pour les API publiques, mais également pour les microservices à long terme, même s’ils sont utilisés uniquement par la même application.
 
 Si vous voulez spécifier des types de réponse pour Swagger, vous devez utiliser des classes DTO explicites comme type de retour. Par conséquent, les classes DTO prédéfinies vous permettent de fournir des informations plus détaillées à partir de Swagger. Cela améliore la documentation et la compatibilité d’une API lors de son utilisation.
 
-**Inconvénients :** comme nous l’avons mentionné, certaines étapes supplémentaires sont nécessaires lors de la mise à jour du code pour mettre à jour les classes DTO.
+**Inconvénient :** comme indiqué précédemment, lors de la mise à jour du code, certaines étapes supplémentaires sont nécessaires pour mettre à jour les classes DTO.
 
-*Conseil d’après notre expérience :* dans les requêtes implémentées au niveau du microservice Ordering dans eShopOnContainers, nous avons commencé par utiliser des ViewModels, très simples et agiles aux premières étapes du développement. Toutefois, une fois le développement stabilisé, nous avons choisi de refactoriser les API et d’utiliser des DTO statiques ou prédéfinis pour les ViewModels, car il est plus clair pour les consommateurs du microservice de connaître les types de DTO explicites, utilisés comme « contrats ».
+*Conseil basés sur notre expérience :* Dans les requêtes implémentées au niveau du microservice Ordering dans eShopOnContainers, nous avons commencé le développement en utilisant des ViewModels, car c’était très simple et agile pour les premières étapes du développement. Toutefois, une fois le développement stabilisé, nous avons choisi de refactoriser les API et d’utiliser des DTO statiques ou prédéfinis pour les ViewModels, car il est plus clair pour les consommateurs du microservice de connaître les types de DTO explicites, utilisés comme « contrats ».
 
 Dans l’exemple suivant, vous pouvez voir comment la requête retourne des données en utilisant une classe DTO de ViewModel explicite : la classe OrderSummary.
 
@@ -119,16 +119,16 @@ public class OrderQueries : IOrderQueries
         {
             connection.Open();
             return await connection.QueryAsync<OrderSummary>(
-                  @"SELECT o.[Id] as ordernumber, 
-                  o.[OrderDate] as [date],os.[Name] as [status], 
+                  @"SELECT o.[Id] as ordernumber,
+                  o.[OrderDate] as [date],os.[Name] as [status],
                   SUM(oi.units*oi.unitprice) as total
                   FROM [ordering].[Orders] o
-                  LEFT JOIN[ordering].[orderitems] oi ON  o.Id = oi.orderid 
+                  LEFT JOIN[ordering].[orderitems] oi ON  o.Id = oi.orderid
                   LEFT JOIN[ordering].[orderstatus] os on o.OrderStatusId = os.Id
                   GROUP BY o.[Id], o.[OrderDate], os.[Name]
                   ORDER BY o.[Id]");
         }
-    } 
+    }
 }
 ```
 

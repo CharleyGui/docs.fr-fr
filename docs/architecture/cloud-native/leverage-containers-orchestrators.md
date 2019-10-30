@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 62aaa68b2ada0725f33df62e97f1ca3216b91ccf
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7b136ed2760ea471f42ff82d20298ff8714c6dee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315882"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087232"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -53,8 +53,8 @@ De plus, les conteneurs sont définis par des fichiers simples qui peuvent être
 
 Les conteneurs sont immuables. Une fois que vous avez la définition d’un conteneur, vous pouvez recréer ce conteneur pour qu’il s’exécute exactement de la même façon. Cette immuabilité se prête à la conception basée sur les composants. Si certaines parties d’une application ne changent pas aussi souvent que d’autres, pourquoi redéployer l’application entière quand vous pouvez simplement déployer les parties qui changent le plus fréquemment ? Des fonctionnalités différentes et des problèmes de coupe croisée d’une application peuvent être divisées en unités distinctes. La figure 3-2 montre comment une application monolithique peut tirer parti des conteneurs et des microservices en déléguant certaines fonctionnalités ou fonctionnalités. Les fonctionnalités restantes de l’application elle-même ont également été en conteneur.
 
-![Breaking une application monolithique pour utiliser des microservices dans le back end. ](./media/breaking-up-monolith-with-backend-microservices.png)
-**figure 3-2**. Division d’une application monolithique pour utiliser des microservices dans le back end.
+![le fractionnement d’une application monolithique pour utiliser des microservices dans le back end.](./media/breaking-up-monolith-with-backend-microservices.png)
+**Figure 3-2**. Division d’une application monolithique pour utiliser des microservices dans le back end.
 
 Les applications Cloud natives créées à l’aide de conteneurs distincts tirent parti de la possibilité de déployer autant ou moins d’applications que nécessaire. Les services individuels peuvent être hébergés sur des nœuds avec des ressources appropriées pour chaque service. L’environnement dans lequel chaque service s’exécute est immuable, peut être partagé entre le développement, le test et la production, et peut facilement être associé à une version. Le couplage entre les différentes zones de l’application se produit explicitement comme des appels ou des messages entre les services, et non pour les dépendances au moment de la compilation dans le monolithe. Et une partie donnée de l’application globale peut choisir la technologie qui est la plus appropriée pour cette fonctionnalité ou cette fonctionnalité sans nécessiter de modifications du reste de l’application.
 
@@ -62,7 +62,7 @@ Les applications Cloud natives créées à l’aide de conteneurs distincts tire
 
 Les services basés sur des conteneurs peuvent tirer parti des avantages de la mise à l’échelle proposés par les outils d’orchestration tels que Kubernetes. Par conception, les conteneurs ne savent qu’eux-mêmes. Une fois que vous avez commencé à avoir plusieurs conteneurs qui doivent fonctionner ensemble, il peut être utile de les organiser à un niveau supérieur. L’organisation d’un grand nombre de conteneurs et de leurs dépendances partagées, telles que la configuration du réseau, est l’endroit où les outils d’orchestration entrent pour gagner le jour. Kubernetes est une plateforme d’orchestration de conteneur conçue pour automatiser le déploiement, la mise à l’échelle et la gestion des applications en conteneur. Il crée une couche d’abstraction par-dessus des groupes de conteneurs et les organise en *modules*. Les POD s’exécutent sur des ordinateurs de travail désignés sous le terme de *nœuds*. L’ensemble du groupe organisé est appelé *cluster*. La figure 3-3 montre les différents composants d’un cluster Kubernetes.
 
-composants de cluster @no__t 0Kubernetes. ](./media/kubernetes-cluster-components.png)
+![composants de cluster Kubernetes.](./media/kubernetes-cluster-components.png)
 **Figure 3-3**. Composants de cluster Kubernetes.
 
 Kubernetes offre une prise en charge intégrée de la mise à l’échelle des clusters pour répondre à la demande. Associé aux micro-services en conteneur, il offre aux applications Cloud natives la possibilité de répondre rapidement et efficacement aux pics de demande avec des ressources supplémentaires quand et où elles sont nécessaires.
@@ -117,7 +117,7 @@ Les organisations qui déploient et doivent gérer par la suite un grand nombre 
 
 ## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Quand devez-vous éviter d’utiliser des conteneurs et des orchestrateurs ?
 
-Si vous n’êtes pas en mesure de créer votre application à l’aide des principes d’application à douze facteurs, vous aurez probablement intérêt à éviter les conteneurs et orchestrateurs. Dans ce cas, il peut être préférable d’utiliser une plateforme d’hébergement basée sur une machine virtuelle, voire un système hybride dans lequel vous pouvez faire tourner certains éléments de fonctionnalité dans des conteneurs distincts ou même des fonctions sans serveur. 
+Si vous n’êtes pas en mesure de créer votre application à l’aide des principes d’application à douze facteurs, vous aurez probablement intérêt à éviter les conteneurs et orchestrateurs. Dans ce cas, il peut être préférable d’utiliser une plateforme d’hébergement basée sur une machine virtuelle, voire un système hybride dans lequel vous pouvez faire tourner certains éléments de fonctionnalité dans des conteneurs distincts ou même des fonctions sans serveur.
 
 ## <a name="development-resources"></a>Ressources de développement
 

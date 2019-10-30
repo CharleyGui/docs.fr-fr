@@ -4,24 +4,24 @@ description: Découvrez comment créer des applications Web à pile complète av
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 936f85d4fda9c5396a6586810735877488226157
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 394d11038b59f4cbe9e9955df43b6198eb5daaf8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696932"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088132"
 ---
 # <a name="blazor-for-aspnet-web-forms-developers"></a>Blazor pour les développeurs ASP.NET Web Forms
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-![Capture d’écran montrant la couverture du livre électronique Applications serverless.](./media/index/blazor-for-web-forms-developers-cover.png)
+![Capture d’écran montrant la couverture de livre électronique applications sans serveur.](./media/index/blazor-for-web-forms-developers-cover.png)
 
 > TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/blazor-ebook>
 
 PUBLIÉ PAR
 
-Division Développeurs Microsoft, équipes produit .NET et Visual Studio
+Division Développeur Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -53,7 +53,7 @@ Extrait
 
 > **[Scott Addie](https://github.com/scottaddie)** , développeur de contenu senior, Microsoft Corp.
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 .NET offre un développement d’applications Web long pris en charge via ASP.NET, un ensemble complet d’infrastructures et d’outils permettant de créer n’importe quel type d’application Web. ASP.NET a son propre lignage de frameworks et de technologies Web en commençant par les pages ASP (Classic Active Server Pages). Les infrastructures comme ASP.NET Web Forms, ASP.NET MVC, pages Web ASP.NET et les ASP.NET Core plus récentes offrent un moyen productif et puissant de créer des applications Web de *type serveur* , où le contenu de l’interface utilisateur est généré dynamiquement sur le serveur en réponse à http obtenteur. Chaque Framework ASP.NET répond à un public et une philosophie de construction d’applications différents. ASP.NET Web Forms fourni avec la version d’origine du .NET Framework et du développement Web activé à l’aide de nombreux modèles familiers pour les développeurs de bureau, comme les contrôles d’interface utilisateur réutilisables avec une gestion des événements simple. Toutefois, aucune des offres ASP.NET ne permet d’exécuter du code qui s’exécute dans le navigateur de l’utilisateur. Pour ce faire, il est nécessaire d’écrire du code JavaScript et d’utiliser l’un des nombreux frameworks et outils JavaScript qui ont été mis en avant et non en popularité au fil des années : jQuery, Knockout, angulaire, REACT, etc.
 
@@ -75,11 +75,11 @@ Ce livre est une introduction à éblouissant, pas un guide de migration complet
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-Vous trouverez la page d’hébergement et la documentation de éblouissants <https://blazor.net>sur le.
+Pour plus d’informations, consultez la page d’hébergement et la documentation sur éblouissant, sur <https://blazor.net>.
 
 ## <a name="send-your-feedback"></a>Envoyez votre feedback
 
 Ce livre et les exemples associés sont en constante évolution. vos commentaires sont donc accueillis ! Si vous avez des commentaires sur la façon dont ce livre peut être amélioré, utilisez la section commentaires au bas de toute page reposant sur les [problèmes GitHub](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
->[Next](introduction.md)
+>[Suivant](introduction.md)

@@ -3,12 +3,12 @@ title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: aec199aee52a4ab3202c3ec0ceb769fecd168cfe
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 27191a67b2964ac2e1636a4d7dc55d5314b78439
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846737"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087541"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -18,7 +18,7 @@ Arrêtez ce que vous effectuez et le texte 10 de vos collègues. Demandez-lui de
 
 Cloud Native concerne la modification de la façon dont nous pensons à la construction de systèmes d’entreprise essentiels.
 
-Les systèmes Cloud natifs sont conçus pour adopter un changement rapide, une grande échelle et une résilience. 
+Les systèmes Cloud natifs sont conçus pour adopter un changement rapide, une grande échelle et une résilience.
 
 La Fondation Cloud Native Computing fournit une [définition officielle](https://github.com/cncf/foundation/blob/master/charter.md):
 
@@ -28,14 +28,14 @@ La Fondation Cloud Native Computing fournit une [définition officielle](https:/
 
 Les applications sont devenues de plus en plus complexes avec les utilisateurs qui demandent de plus en plus. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. Les problèmes de performances, les erreurs récurrentes et l’incapacité à se déplacer rapidement ne sont plus acceptables. Ils seront facilement déplacés vers votre concurrent.
 
-Cloud native est une grande partie de la *Vitesse* et de l' *agilité*. Les systèmes d’entreprise évoluent de l’activation des fonctionnalités métier aux armes de transformation stratégique, accélérant ainsi la rapidité et la croissance de l’entreprise. Il est impératif de mettre les idées sur le marché immédiatement. 
+Cloud native est une grande partie de la *Vitesse* et de l' *agilité*. Les systèmes d’entreprise évoluent de l’activation des fonctionnalités métier aux armes de transformation stratégique, accélérant ainsi la rapidité et la croissance de l’entreprise. Il est impératif de mettre les idées sur le marché immédiatement.
 
 Voici quelques sociétés qui ont implémenté ces techniques. Réfléchissez à la vitesse, à l’agilité et à l’évolutivité qu’ils ont atteints.
 
-| Société | Final | 
+| Société | Final |
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | A plus de 600 services en production. Déploie une centaine de fois par jour. |
-| [Uber](https://eng.uber.com/micro-deploy/) | A plus de 1 000 services stockés en production. Déploie plusieurs milliers de générations chaque semaine. | 
+| [Uber](https://eng.uber.com/micro-deploy/) | A plus de 1 000 services stockés en production. Déploie plusieurs milliers de générations chaque semaine. |
 | [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Compte plus de 300 services en production. Effectue presque 1 000 modifications par jour. |
 
 Comme vous pouvez le voir, Netflix, uber et WeChat exposent des systèmes qui se composent de centaines de microservices indépendants. Ce style architectural leur permet de répondre rapidement aux conditions du marché. Ils peuvent mettre à jour instantanément de petites zones d’une application en temps réel et complexes, et mettre à l’échelle individuellement ces zones en fonction des besoins.
@@ -132,6 +132,7 @@ Comment votre service identifie-t-il les personnes qui y accèdent et les autori
 L’identité est traitée en détail dans le chapitre 8, *identité*.
 
 ## <a name="microservices"></a>Microservices
+
 Les systèmes Cloud natifs intègrent des microservices, un style architectural populaire pour la construction d’applications modernes.
 
 Créé comme un ensemble distribué de petits services indépendants qui interagissent via une infrastructure partagée, les microservices partagent les caractéristiques suivantes :
@@ -160,7 +161,7 @@ Notez comment les microservices favorisent le principe « une base de code, une
 
 Les microservices offrent de l’agilité.
 
-Plus haut dans ce chapitre, nous avons comparé une application de commerce électronique créée comme un monolithe à celle-ci avec des microservices. Dans l’exemple, nous avons vu des avantages clairs : 
+Plus haut dans ce chapitre, nous avons comparé une application de commerce électronique créée comme un monolithe à celle-ci avec des microservices. Dans l’exemple, nous avons vu des avantages clairs :
 
 - Chaque microservice a un cycle de vie autonome et peut évoluer indépendamment et le déployer fréquemment. Vous n’avez pas besoin d’attendre une version trimestrielle pour déployer une nouvelle fonctionnalité ou une mise à jour. Vous pouvez mettre à jour une petite zone d’une application complexe avec moins de risques de perturber l’ensemble du système.
 
@@ -174,9 +175,9 @@ Les microservices peuvent être créés avec n’importe quelle plateforme de d�
 
 La plateforme Microsoft .NET Core est un excellent choix. Gratuit et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement de microservices. .NET Core est multiplateforme. Les applications peuvent être générées et exécutées sur Windows, macOS et la plupart des versions de Linux.
 
-.NET Core est très performant et a bien été évalué par rapport à node. js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans le Top 10, bien au-dessus de node. js et d’autres plates-formes concurrentes. 
+.NET Core est très performant et a bien été évalué par rapport à node. js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans le Top 10, bien au-dessus de node. js et d’autres plates-formes concurrentes.
 
-.NET Core est géré par Microsoft et la communauté .NET sur GitHub. 
+.NET Core est géré par Microsoft et la communauté .NET sur GitHub.
 
 ## <a name="containers"></a>Conteneurs
 
@@ -188,11 +189,11 @@ Si nécessaire, vous transformez l’image en instance de conteneur en cours d�
 
 La figure 1-5 montre trois microservices différents, chacun dans son propre conteneur, s’exécutant sur un seul hôte.
 
-![plusieurs conteneurs s’exécutant sur un hôte de conteneurs](./media/hosting-mulitple-containers.png)  
+![plusieurs conteneurs s’exécutant sur un hôte de conteneurs](./media/hosting-mulitple-containers.png)
 
 **Figure 1-5**. plusieurs conteneurs s’exécutant sur un hôte de conteneurs
 
-Notez que chaque conteneur gère son propre ensemble de dépendances et d’exécution, ce qui peut être différent. Ici, nous voyons différentes versions du microservice du produit qui s’exécutent sur le même hôte. Chaque conteneur partage une partie du système d’exploitation, de la mémoire et du processeur de l’hôte sous-jacent, mais est isolée les unes des autres. 
+Notez que chaque conteneur gère son propre ensemble de dépendances et d’exécution, ce qui peut être différent. Ici, nous voyons différentes versions du microservice du produit qui s’exécutent sur le même hôte. Chaque conteneur partage une partie du système d’exploitation, de la mémoire et du processeur de l’hôte sous-jacent, mais est isolée les unes des autres.
 
 Notez la manière dont le modèle de conteneur adopte le principe de « dépendances » de l' [application à douze facteurs](https://12factor.net/).
 
@@ -204,7 +205,7 @@ Bien qu’il existe plusieurs fournisseurs de conteneurs, l’arrimeur a captur�
 
 ### <a name="why-containers"></a>Pourquoi les conteneurs ?
 
-Les conteneurs assurent la portabilité et garantissent la cohérence entre les environnements. En encapsulant tout dans un package unique, vous *isolez* le microservice et ses dépendances de l’infrastructure sous-jacente. 
+Les conteneurs assurent la portabilité et garantissent la cohérence entre les environnements. En encapsulant tout dans un package unique, vous *isolez* le microservice et ses dépendances de l’infrastructure sous-jacente.
 
 Vous pouvez déployer ce même conteneur dans n’importe quel environnement ayant le moteur d’exécution de l’ancrage. Les charges de travail en conteneur éliminent également les dépenses liées à la préconfiguration de chaque environnement avec des infrastructures, des bibliothèques logicielles et des moteurs d’exécution.
 
@@ -212,7 +213,7 @@ En partageant le système d’exploitation sous-jacent et les ressources de l’
 
 ### <a name="container-orchestration"></a>Orchestration de conteneur
 
-Tandis que les outils tels que l’amarrage créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs s’effectue à l’aide d’un programme logiciel spécial appelé Orchestrator de conteneur. En cas de fonctionnement à l’échelle, l’orchestration de conteneur est essentielle. 
+Tandis que les outils tels que l’amarrage créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs s’effectue à l’aide d’un programme logiciel spécial appelé Orchestrator de conteneur. En cas de fonctionnement à l’échelle, l’orchestration de conteneur est essentielle.
 
 La figure 1-6 montre les tâches de gestion fournies par les orchestrateurs de conteneurs.
 
@@ -239,7 +240,7 @@ Notez comment les orchestrateurs adoptent les principes de disposability et d’
 
 > *Facteur \#8 spécifie que les services sont mis à l’échelle sur un grand nombre de processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
 
-Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde Cloud-native. Il s’agit d’une plate-forme portable, extensible et open source pour la gestion des charges de travail en conteneur. 
+Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde Cloud-native. Il s’agit d’une plate-forme portable, extensible et open source pour la gestion des charges de travail en conteneur.
 
 Vous pouvez héberger votre propre instance de Kubernetes, mais vous serez alors responsable de l’approvisionnement et de la gestion de ses ressources, ce qui peut être complexe. Le Cloud Azure offre Kubernetes en tant que service managé, [service Kubernetes Azure (AKS)](https://azure.microsoft.com/services/kubernetes-service/). Un service géré vous permet de tirer pleinement parti de ses fonctionnalités, sans avoir à l’installer ni à le maintenir à jour.
 
@@ -287,7 +288,7 @@ Avec IaC, vous automatisez l’approvisionnement de la plateforme et le déploie
 
 ### <a name="automating-infrastructure"></a>Automatisation de l’infrastructure
 
-Des outils comme [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform et [Azure CLI](https://docs.microsoft.com/cli/azure/), vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrables et dynamiques. Le script est géré et archivé dans le contrôle de code source en tant qu’artefact de votre projet. Vous appelez le script pour approvisionner une infrastructure cohérente et reproductible dans des environnements système, comme l’assurance qualité, la mise en lots et la production. 
+Des outils comme [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform et [Azure CLI](https://docs.microsoft.com/cli/azure/), vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrables et dynamiques. Le script est géré et archivé dans le contrôle de code source en tant qu’artefact de votre projet. Vous appelez le script pour approvisionner une infrastructure cohérente et reproductible dans des environnements système, comme l’assurance qualité, la mise en lots et la production.
 
 En coulisses, IaC est idempotent, ce qui signifie que vous pouvez exécuter le même script sur et sans effets secondaires. Si l’équipe doit apporter une modification, elle modifie et réexécute le script. Seules les ressources mises à jour sont affectées.
 
@@ -299,7 +300,7 @@ L' [application à 12 facteurs](https://12factor.net/), abordée précédemment,
 
 > *Le facteur \#5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
 
-Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. Ils fournissent des étapes de déploiement distinctes et permettent de garantir un code cohérent et de qualité accessible aux utilisateurs. 
+Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. Ils fournissent des étapes de déploiement distinctes et permettent de garantir un code cohérent et de qualité accessible aux utilisateurs.
 
 La figure 1-8 illustre la séparation au sein du processus de déploiement.
 
@@ -307,17 +308,17 @@ La figure 1-8 illustre la séparation au sein du processus de déploiement.
 
 **Figure 1-8**. Étapes de déploiement dans un pipeline CI/CD
 
-Dans l’illustration précédente, portez une attention particulière à la séparation des tâches. 
+Dans l’illustration précédente, portez une attention particulière à la séparation des tâches.
 
-Le développeur construit une fonctionnalité dans son environnement de développement, en itérant au sein de ce que l’on appelle la « boucle interne » de code, d’exécution et de débogage. Une fois terminé, ce code fait l’objet d’un *Push* dans un référentiel de code, tel que GitHub, Azure DevOps ou bitbucket. 
+Le développeur construit une fonctionnalité dans son environnement de développement, en itérant au sein de ce que l’on appelle la « boucle interne » de code, d’exécution et de débogage. Une fois terminé, ce code fait l’objet d’un *Push* dans un référentiel de code, tel que GitHub, Azure DevOps ou bitbucket.
 
-L’envoi (push) déclenche une étape de génération qui transforme le code en artefact binaire. Le travail est implémenté avec un pipeline d' [intégration continue (ci)](https://martinfowler.com/articles/continuousIntegration.html) . Il génère, teste et empaquette automatiquement l’application. 
+L’envoi (push) déclenche une étape de génération qui transforme le code en artefact binaire. Le travail est implémenté avec un pipeline d' [intégration continue (ci)](https://martinfowler.com/articles/continuousIntegration.html) . Il génère, teste et empaquette automatiquement l’application.
 
 L’étape de mise en production récupère l’artefact binaire, applique les informations de configuration de l’environnement et de l’application externes et produit une version immuable. La version est déployée dans un environnement spécifié. Le travail est implémenté avec un pipeline de [livraison continue (CD)](https://martinfowler.com/bliki/ContinuousDelivery.html) . Chaque version doit être identifiable. Vous pouvez indiquer « ce déploiement exécute la version 2.1.1 de l’application ».
 
-Enfin, la fonctionnalité publiée est exécutée dans l’environnement d’exécution cible. Les mises en production sont immuables, ce qui signifie que toute modification doit créer une nouvelle mise en production. 
+Enfin, la fonctionnalité publiée est exécutée dans l’environnement d’exécution cible. Les mises en production sont immuables, ce qui signifie que toute modification doit créer une nouvelle mise en production.
 
-En appliquant ces pratiques, les organisations ont radicalement évolué la manière dont elles accompagnent les logiciels. De nombreuses versions trimestrielles ont été déplacées vers des mises à jour à la demande. L’objectif est de détecter les problèmes au début du cycle de développement lorsqu’ils sont moins coûteux à résoudre. Plus la durée entre les intégrations est longue, plus les problèmes de résolution sont élevés.  Avec la cohérence dans le processus d’intégration, les équipes peuvent valider les modifications de code plus fréquemment, ce qui permet une meilleure collaboration et une meilleure qualité des logiciels.  
+En appliquant ces pratiques, les organisations ont radicalement évolué la manière dont elles accompagnent les logiciels. De nombreuses versions trimestrielles ont été déplacées vers des mises à jour à la demande. L’objectif est de détecter les problèmes au début du cycle de développement lorsqu’ils sont moins coûteux à résoudre. Plus la durée entre les intégrations est longue, plus les problèmes de résolution sont élevés.  Avec la cohérence dans le processus d’intégration, les équipes peuvent valider les modifications de code plus fréquemment, ce qui permet une meilleure collaboration et une meilleure qualité des logiciels.
 
 ### <a name="azure-pipelines"></a>Azure Pipelines
 

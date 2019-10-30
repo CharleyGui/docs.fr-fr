@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Découvrez les options qui permettent d’orchestrer des microservices et des applications multiconteneurs pour fournir une scalabilité et une disponibilité élevées. Découvrez également les possibilités offertes par Azure Dev Spaces durant le développement du cycle de vie des applications Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: f0efad0134ec95028ecd49ad8d294ae4813940e9
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3915e6386e66d40bedc92368bfbcda81790c6923
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834321"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090142"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -37,8 +37,8 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 
 |     |   |
 |-----|---|
-| **Kubernetes** <br> image @no__t 0An du logo Kubernetes. ](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br><br> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br><br> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
-| **Service Azure Kubernetes (AKS)** <br> image @no__t 0An du logo du service Kubernetes Azure. ](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) est un service d’orchestration de conteneur Kubernetes géré dans Azure qui simplifie la gestion, le déploiement et les opérations d’un cluster Kubernetes. |
+| **Kubernetes** <br> ![une image du logo Kubernetes.](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br><br> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br><br> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
+| **Service Azure Kubernetes (AKS)** <br> ![une image du logo du service Azure Kubernetes.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) est un service d’orchestration de conteneur Kubernetes géré dans Azure qui simplifie la gestion, le déploiement et les opérations d’un cluster Kubernetes. |
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Utilisation d’orchestrateurs basés sur des conteneurs dans Microsoft Azure
 
@@ -62,11 +62,11 @@ Sur la figure 4-24, vous pouvez voir la structure d’un cluster Kubernetes où
 
 Pour l’environnement de développement, [Docker a annoncé en juillet 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) que Kubernetes pouvait également s’exécuter sur une seule machine de développement (Windows 10 ou macOS) à condition simplement d’installer [Docker Desktop](https://docs.docker.com/install/). Vous pouvez ensuite effectuer un déploiement sur le cloud (AKS) pour d’autres tests d’intégration, comme indiqué sur la figure 4-25.
 
-![Diagramme montrant Kubernetes sur un ordinateur de développement déployé sur AKS](./media/scalable-available-multi-container-microservice-applications/kubernetes-development-environment.png) 
+![Diagramme montrant Kubernetes sur un ordinateur de développement déployé sur AKS](./media/scalable-available-multi-container-microservice-applications/kubernetes-development-environment.png)
 
 **Figure 4-25**. Exécution de Kubernetes sur la machine de développement et dans le cloud
 
-## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Bien démarrer avec AKS (Azure Kubernetes Service) 
+## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Bien démarrer avec AKS (Azure Kubernetes Service)
 
 Pour commencer à utiliser AKS, vous devez déployer un cluster AKS à partir du Portail Azure ou à l’aide de l’interface de ligne de commande. Pour plus d’informations sur le déploiement d’un cluster Kubernetes dans Azure, consultez [Déployer un cluster AKS (Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 

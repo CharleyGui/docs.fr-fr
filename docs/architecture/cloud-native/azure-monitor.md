@@ -2,20 +2,20 @@
 title: Azure Monitor
 description: L’utilisation de Azure Monitor pour obtenir une visibilité de votre système est en cours d’exécution.
 ms.date: 09/23/2019
-ms.openlocfilehash: 4d7d556f030500ea6e0f608e3bdfd16d22d9eb1d
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: fa7b4e103f4d1245710f88319271a9e8b7a24b04
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521028"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087692"
 ---
-# <a name="azure-monitor"></a>Azure Monitor 
+# <a name="azure-monitor"></a>Azure Monitor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Aucun autre fournisseur de Cloud n’a été aussi mature qu’une solution de surveillance des applications Cloud telle qu’elle a été trouvée dans Azure. Azure Monitor est un nom de parapluie pour un ensemble d’outils conçus pour offrir une visibilité de l’état de votre système, ainsi que des informations sur les problèmes et l’optimisation de votre application. 
+Aucun autre fournisseur de Cloud n’a été aussi mature qu’une solution de surveillance des applications Cloud telle qu’elle a été trouvée dans Azure. Azure Monitor est un nom de parapluie pour un ensemble d’outils conçus pour offrir une visibilité de l’état de votre système, ainsi que des informations sur les problèmes et l’optimisation de votre application.
 
-![Azure moniteur, une collection d’outils permettant de mieux comprendre le fonctionnement d’une application Cloud native. ](./media/azure-monitor.png)
+![Azure Monitor, collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.](./media/azure-monitor.png)
 **Figure 7-9**. Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.
 
 ## <a name="gathering-logs-and-metrics"></a>Collecte des journaux et des métriques
@@ -35,28 +35,28 @@ Aucune application moderne n’est complète sans intelligence artificielle ni M
 Application Insights fournit un puissant langage de requête appelé Kusto qui peut être utilisé pour rechercher des enregistrements, les résumer et même tracer des graphiques. Par exemple, cette requête localise tous les enregistrements pour le mois de novembre 2007, les regroupe par État et les 10 premiers sous forme de graphique à secteurs.
 
 ```
-StormEvents 
+StormEvents
 | where StartTime >= datetime(2007-11-01) and StartTime < datetime(2007-12-01)
 | summarize count() by State
 | top 10 by count_
-| render piechart 
+| render piechart
 ```
 
-![The résultat de la requête Application Insights ](./media/azure-monitor.png)
-**Figure 7-10**. Résultat de la requête de Application Insights.
+![le résultat de la requête Application Insights](./media/azure-monitor.png)
+la **Figure 7-10**. Résultat de la requête de Application Insights.
 
 Il existe un [terrain pour expérimenter](https://dataexplorer.azure.com/clusters/help/databases/Samples) les requêtes Kusto, ce qui constitue un excellent point de départ pour passer une heure ou deux. La lecture des [exemples de requêtes](https://docs.microsoft.com/azure/kusto/query/samples) peut également être instructive.
 
 ## <a name="dashboards"></a>Tableaux de bord
 
-Il existe plusieurs technologies de tableau de bord différentes qui peuvent être utilisées pour mettre en surface les informations de Azure Monitor. Le plus simple consiste peut-être simplement à exécuter des requêtes dans Application Insights et à [tracer les données dans un graphique](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards). 
+Il existe plusieurs technologies de tableau de bord différentes qui peuvent être utilisées pour mettre en surface les informations de Azure Monitor. Le plus simple consiste peut-être simplement à exécuter des requêtes dans Application Insights et à [tracer les données dans un graphique](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards).
 
-![An exemple de Application Insights graphiques incorporés dans le tableau de bord Azure principal ](./media/azure-monitor.png)
+![un exemple de Application Insights graphiques incorporés dans le tableau de bord Azure principal](./media/azure-monitor.png)
 **Figure 7-11**. Voici un exemple de Application Insights graphiques incorporés dans le tableau de bord principal Azure.
 
 Ces graphiques peuvent ensuite être incorporés dans le Portail Azure correctement à l’aide de la fonctionnalité de tableau de bord. Pour les utilisateurs ayant des exigences plus précises, telles que la possibilité d’accéder à plusieurs niveaux de données Azure Monitor données sont disponibles pour les [Power bi](https://powerbi.microsoft.com/). Power BI est un outil d’analyse décisionnelle à la pointe du secteur, qui peut agréger des données à partir de nombreuses sources de données différentes.
 
-![An exemple Power BI tableau de bord ](./media/azure-monitor.png)
+![un exemple Power BI tableau de bord](./media/azure-monitor.png)
 **Figure 7-12**. Exemple Power BI tableau de bord.
 
 ## <a name="alerts"></a>Alertes
@@ -71,9 +71,9 @@ Parfois, le fait d’avoir des tableaux de bord de données est insuffisant. Si 
 
 Lorsqu’elles sont déclenchées, les alertes peuvent effectuer une grande variété de tâches. Du côté simple, les alertes peuvent simplement envoyer une notification par courrier électronique à une liste de diffusion ou un message texte à une personne. Des alertes plus impliquées peuvent déclencher un flux de travail dans un outil tel que PagerDuty, qui est à l’origine de l’appel d’une application particulière. Les alertes peuvent déclencher des actions dans [Microsoft Flow](https://flow.microsoft.com/) le déverrouillage des possibilités presque illimitées pour les flux de travail.
 
-Comme les causes courantes des alertes sont identifiées, les alertes peuvent être améliorées avec des détails sur les causes courantes des alertes et les étapes à suivre pour les résoudre. Les déploiements d’applications natives dans le Cloud extrêmement éprouvés peuvent choisir de déclencher des tâches d’auto-réparation, qui effectuent des actions telles que la suppression de nœuds défaillants d’un groupe identique ou le déclenchement d’une activité de mise à l’échelle automatique. Il se peut qu’il ne soit plus nécessaire de réveiller le personnel sur 2AM pour résoudre un problème de site actif, car le système sera en mesure de s’adapter pour compenser ou au moins LIMP, jusqu’à ce que quelqu’un arrive au travail le lendemain matin. 
+Comme les causes courantes des alertes sont identifiées, les alertes peuvent être améliorées avec des détails sur les causes courantes des alertes et les étapes à suivre pour les résoudre. Les déploiements d’applications natives dans le Cloud extrêmement éprouvés peuvent choisir de déclencher des tâches d’auto-réparation, qui effectuent des actions telles que la suppression de nœuds défaillants d’un groupe identique ou le déclenchement d’une activité de mise à l’échelle automatique. Il se peut qu’il ne soit plus nécessaire de réveiller le personnel sur 2AM pour résoudre un problème de site actif, car le système sera en mesure de s’adapter pour compenser ou au moins LIMP, jusqu’à ce que quelqu’un arrive au travail le lendemain matin.
 
-Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre les paramètres de fonctionnement normaux des applications déployées. Cela lui permet de détecter les services qui fonctionnent en dehors de leurs paramètres normaux. Par exemple, le trafic de jour de la semaine classique sur le site peut être de 10 000 demandes par minute. Puis, pour une semaine donnée, soudain, le nombre de demandes atteint un nombre de demandes 20 000 très inhabituelles par minute. La [détection intelligente](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) remarquera cet écart par rapport à la norme et déclenchera une alerte. En même temps, l’analyse des tendances est suffisamment intelligente pour éviter de déclencher des faux positifs lorsque la charge du trafic est attendue.  
+Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre les paramètres de fonctionnement normaux des applications déployées. Cela lui permet de détecter les services qui fonctionnent en dehors de leurs paramètres normaux. Par exemple, le trafic de jour de la semaine classique sur le site peut être de 10 000 demandes par minute. Puis, pour une semaine donnée, soudain, le nombre de demandes atteint un nombre de demandes 20 000 très inhabituelles par minute. La [détection intelligente](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) remarquera cet écart par rapport à la norme et déclenchera une alerte. En même temps, l’analyse des tendances est suffisamment intelligente pour éviter de déclencher des faux positifs lorsque la charge du trafic est attendue.
 
 >[!div class="step-by-step"]
 >[Précédent](monitoring-azure-kubernetes.md)

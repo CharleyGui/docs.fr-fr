@@ -2,12 +2,12 @@
 title: Infrastructure en tant que code
 description: Architecture des applications .NET natives Cloud pour Azure | Infrastructure en tant que code
 ms.date: 06/30/2019
-ms.openlocfilehash: e395db28bdeff785251b91ed643f9920873d26e8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 3957da68ac28774f899f49fb181a29c2435902f8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183013"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087246"
 ---
 # <a name="infrastructure-as-code"></a>Infrastructure en tant que code
 
@@ -37,7 +37,7 @@ Les modèles Azure Resource Manager sont un langage JSON qui vous aide à défin
 **Figure 11-10** -schéma d’un modèle de gestionnaire des ressources
 
 Dans ce modèle, il est possible de définir un conteneur de stockage à l’intérieur de la section des ressources, comme suit :
- 
+
 ```json
 "resources": [
     {
@@ -66,7 +66,7 @@ Gestionnaire des ressources modèles peuvent être exécutés de différentes fa
 
 L’un des inconvénients des modèles Gestionnaire des ressources est qu’ils sont spécifiques au Cloud Azure. Il est rare de créer des applications qui incluent des ressources provenant de plusieurs Clouds, mais dans les cas où l’entreprise s’appuie sur une disponibilité spectaculaire, le coût de la prise en charge de plusieurs Clouds peut être utile. Si un langage de création de modèles pouvait être utilisé dans tous les Clouds, cela permettrait également aux développeurs d’être plus portables.
 
-Il existe plusieurs technologies qui font cela ! L’offre la plus mature dans cet espace est appelée [Terraform](https://www.terraform.io/). Terraform prend en charge tous les principaux lecteurs Cloud tels qu’Azure, Google Cloud Platform, AWS et AliCloud, et prend également en charge des dizaines de joueurs mineurs tels que Heroku et DigitalOcean. Au lieu d’utiliser JSON comme langage de définition de modèle, il utilise le YAML légèrement plus succinct. 
+Il existe plusieurs technologies qui font cela ! L’offre la plus mature dans cet espace est appelée [Terraform](https://www.terraform.io/). Terraform prend en charge tous les principaux lecteurs Cloud tels qu’Azure, Google Cloud Platform, AWS et AliCloud, et prend également en charge des dizaines de joueurs mineurs tels que Heroku et DigitalOcean. Au lieu d’utiliser JSON comme langage de définition de modèle, il utilise le YAML légèrement plus succinct.
 
 Un exemple de fichier Terraform qui fait la même chose que le précédent Gestionnaire des ressources modèle (figure 11-11) est illustré dans la figure 11-12 :
 

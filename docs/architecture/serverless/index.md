@@ -4,16 +4,16 @@ description: Guide sur l’architecture serverless. Découvrez quand, pourquoi e
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: af930ba3d704e9bbf22f03ad6a4a547c5fbff4d3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9dea7dbccb5c9e125f792e6a7287a7dd2fad26f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093548"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : Architecture, modèles et implémentation Azure
 
-![Capture d’écran montrant la couverture du livre électronique Applications serverless.](./media/index/serverless-apps-cover.jpg)
+![Capture d’écran montrant la couverture de livre électronique applications sans serveur.](./media/index/serverless-apps-cover.jpg)
 
 > TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/serverless-ebook>
 
@@ -43,17 +43,17 @@ Toutes les autres marques et tous les autres logos sont la propriété de leurs 
 
 Auteur :
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)** , Cloud Developer Advocate senior, APEX, Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)** , avocat du Cloud senior, Microsoft Corp.
 
 Contributeur :
 
-> **[Cecil Phillip](https://twitter.com/cecilphillip)** , Cloud Developer Advocate II, APEX, Microsoft Corp.
+> **[Cecil Phillip](https://twitter.com/cecilphillip)** , avocat du Cloud senior, Microsoft Corp.
 
 Rédacteurs :
 
-> **[Bill Wagner](https://twitter.com/billwagner)** , Développeur de contenu senior, APEX, Microsoft Corp.
+> **[Bill Wagner](https://twitter.com/billwagner)** , développeur de contenu senior, Microsoft Corp.
 
-> **[Maira Wenzel](https://twitter.com/mairacw)** , Développeur de contenu senior, APEX, Microsoft Corp.
+> **[Maira Wenzel](https://twitter.com/mairacw)** , développeur de contenu senior, Microsoft Corp.
 
 Participants et réviseurs :
 

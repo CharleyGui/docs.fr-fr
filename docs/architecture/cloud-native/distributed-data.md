@@ -2,12 +2,12 @@
 title: Données distribuées
 description: Architecture des applications .NET natives Cloud pour Azure | Données distribuées pour les applications Cloud natives
 ms.date: 06/30/2019
-ms.openlocfilehash: 92086c52b02360e90461aea9ad23a2068224e187
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: b715ae5203264a023bc9f911aa74ee222afe3d68
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183132"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087447"
 ---
 # <a name="distributed-data-for-cloud-native-apps"></a>Données distribuées pour les applications Cloud natives
 
@@ -15,7 +15,7 @@ ms.locfileid: "71183132"
 
 Lors de la construction d’un système Cloud natif qui se compose de nombreux microservices indépendants, la façon dont vous pensez aux modifications du stockage de données.
 
-Les applications monolithiques traditionnelles favorisent une banque de données centralisée illustrée dans la figure 5-1. 
+Les applications monolithiques traditionnelles favorisent une banque de données centralisée illustrée dans la figure 5-1.
 
 ![Base de données monolithique unique](./media/single-monolithic-database.png)
 
@@ -32,7 +32,7 @@ Les systèmes natifs du Cloud favorisent une architecture de données illustrée
 **Figure 5-2**. Plusieurs bases de données entre les microservices
 
 Notez comment, dans la figure précédente, chaque microservice possède et encapsule le magasin de données informatique et expose uniquement des données au monde extérieur à partir de son API publique.
- 
+
 Ce modèle permet à chaque microservice d’évoluer indépendamment sans avoir à coordonner les modifications du schéma de données avec d’autres microservices. Chaque microservice est libre d’implémenter le type de magasin de données (base de données relationnelle, base de données de documents, magasin clé-valeur) qui correspond le mieux à ses besoins. Lors de l’exécution, chaque microservice peut mettre à l’échelle ses données en conséquence. Cela est illustré dans la figure 5-3 :
 
 ![Persistance des données polyglotte](./media/polyglot-data-persistence.png)

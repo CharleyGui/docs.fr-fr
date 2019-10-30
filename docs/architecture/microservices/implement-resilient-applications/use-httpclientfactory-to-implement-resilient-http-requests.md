@@ -2,12 +2,12 @@
 title: Utilisez HttpClientFactory pour implémenter des requêtes HTTP résilientes
 description: Découvrez comment utiliser HttpClientFactory, disponible à partir de .NET Core 2.1, pour créer des instances `HttpClient`, ce qui facilite son utilisation dans vos applications.
 ms.date: 08/08/2019
-ms.openlocfilehash: 3f9b3b18cede07e4c5c56600634ae230c0e251bb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: e32ffdd43ce8968ef9a0694873870b61510d7300
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578914"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094001"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Utilisez HttpClientFactory pour implémenter des requêtes HTTP résilientes
 
@@ -21,7 +21,7 @@ Le premier problème, quand cette classe peut être supprimée, tient au fait qu
 
 Par conséquent, `HttpClient` est destiné à être instancié une seule fois et réutilisé tout au long de la durée de vie d’une application. L’instanciation d’une classe `HttpClient` pour chaque demande épuise le nombre de sockets disponibles sous des charges élevées. Ce problème entraîne des erreurs `SocketException`. Les approches possibles pour résoudre ce problème sont basées sur la création de l’objet `HttpClient` singleton ou statique, comme expliqué dans cet [article Microsoft sur l’utilisation de HttpClient](../../../csharp/tutorials/console-webapiclient.md).
 
-Toutefois, il existe un deuxième problème avec `HttpClient`, qui peut se poser lorsque vous l’utilisez en tant qu’objet singleton ou statique. Dans ce cas, un singleton ou un `HttpClient` statique ne respecte pas les modifications DNS, comme expliqué dans ce [numéro](https://github.com/dotnet/corefx/issues/11224) dans le référentiel GitHub dotnet/corefx. 
+Toutefois, il existe un deuxième problème avec `HttpClient`, qui peut se poser lorsque vous l’utilisez en tant qu’objet singleton ou statique. Dans ce cas, un singleton ou un `HttpClient` statique ne respecte pas les modifications DNS, comme expliqué dans ce [numéro](https://github.com/dotnet/corefx/issues/11224) dans le référentiel GitHub dotnet/corefx.
 
 Pour résoudre les problèmes précités et faciliter la gestion des instances `HttpClient`, .NET Core 2.1 introduit un nouveau `HttpClientFactory` qui peut également être utilisé pour implémenter des appels HTTP résilients en y intégrant Polly.
 
@@ -35,6 +35,9 @@ Pour résoudre les problèmes précités et faciliter la gestion des instances `
 - Codifier le concept d’intergiciel (middleware) sortant via la délégation de gestionnaires dans `HttpClient` et l’implémentation d’un middleware basé sur Polly pour tirer parti des stratégies de Polly pour la résilience.
 - `HttpClient` intègre déjà le concept de délégation des gestionnaires qui pourraient être liés ensemble pour les requêtes HTTP sortantes. Vous enregistrez des clients HTTP dans la fabrique et vous pouvez utiliser un gestionnaire Polly pour utiliser des stratégies Polly pour les nouvelles tentatives, CircuitBreakers, etc.
 - Gérez la durée de vie des `HttpClientMessageHandlers` pour éviter les problèmes/problèmes mentionnés qui peuvent se produire lors de la gestion des durées de vie des `HttpClient`.
+
+> [!NOTE]
+> `HttpClientFactory` est étroitement lié à l’implémentation de l’injection de dépendances dans le package NuGet `Microsoft.Extensions.DependencyInjection`. Pour plus d’informations sur l’utilisation d’autres conteneurs d’injection de dépendances, consultez cette [discussion GitHub](https://github.com/aspnet/Extensions/issues/1345).
 
 ## <a name="multiple-ways-to-use-httpclientfactory"></a>Plusieurs façons d’utiliser HttpClientFactory
 
@@ -63,7 +66,7 @@ Dans le code suivant, vous pouvez voir comment utiliser `AddHttpClient()` pour e
 
 ```csharp
 // Startup.cs
-//Add http client services at ConfigureServices(IServiceCollection services) 
+//Add http client services at ConfigureServices(IServiceCollection services)
 services.AddHttpClient<ICatalogService, CatalogService>();
 services.AddHttpClient<IBasketService, BasketService>();
 services.AddHttpClient<IOrderingService, OrderingService>();
@@ -105,7 +108,7 @@ Le regroupement de gestionnaires est souhaitable, car chaque gestionnaire gère 
 Les objets `HttpMessageHandler` du pool ont une durée de vie qui correspond à la durée pendant laquelle une instance `HttpMessageHandler` du pool peut être réutilisée. La valeur par défaut est de deux minutes, mais elle peut être remplacée pour chaque client typé. Pour la remplacer, appelez `SetHandlerLifetime()` sur le `IHttpClientBuilder` qui est retourné lors de la création du client, comme indiqué dans le code suivant :
 
 ```csharp
-//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Catalog Typed Client 
+//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Catalog Typed Client
 services.AddHttpClient<ICatalogService, CatalogService>()
     .SetHandlerLifetime(TimeSpan.FromMinutes(5));
 ```
@@ -127,10 +130,10 @@ public class CatalogService : ICatalogService
         _httpClient = httpClient;
     }
 
-    public async Task<Catalog> GetCatalogItems(int page, int take, 
+    public async Task<Catalog> GetCatalogItems(int page, int take,
                                                int? brand, int? type)
     {
-        var uri = API.Catalog.GetAllCatalogItems(_remoteServiceBaseUrl, 
+        var uri = API.Catalog.GetAllCatalogItems(_remoteServiceBaseUrl,
                                                  page, take, brand, type);
 
         var responseString = await _httpClient.GetStringAsync(uri);
@@ -180,14 +183,17 @@ Jusqu’à ce stade, le code indiqué effectue simplement des requêtes Http nor
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Utilisation de HttpClientFactory dans .NET Core** \
+- **Utilisation de HttpClientFactory dans .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
 
-- **Dépôt GitHub de HttpClientFactory** \
+- **Code source HttpClientFactory dans le référentiel GitHub `aspnet/Extensions`**  
   <https://github.com/aspnet/Extensions/tree/master/src/HttpClientFactory>
 
-- **Polly (Résilience .NET et bibliothèque de gestion des erreurs temporaires)**  \
+- **Polly (Résilience .NET et bibliothèque de gestion des erreurs temporaires)**  
   <http://www.thepollyproject.org/>
+  
+- **Utilisation de HttpClientFactory sans injection de dépendance (problème GitHub)**  
+  <https://github.com/aspnet/Extensions/issues/1345>
 
 >[!div class="step-by-step"]
 >[Précédent](explore-custom-http-call-retries-exponential-backoff.md)

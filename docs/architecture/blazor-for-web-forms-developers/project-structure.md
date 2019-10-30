@@ -4,12 +4,12 @@ description: Découvrez comment les structures de projet des ASP.NET Web Forms e
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: aa9157bd8627e7a03e33872c3023f91ba3d66951
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 2c383e86ff22f5a3460476998992b66e9417cc11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520224"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087862"
 ---
 # <a name="project-structure-for-blazor-apps"></a>Structure de projet pour les applications éblouissantes
 
@@ -145,7 +145,7 @@ Où se trouvent les pages des applications éblouissantes ? Éblouissant ne dé
 @page "/counter"
 ```
 
-Le routage dans éblouissant est géré côté client et non sur le serveur. Lorsque l’utilisateur navigue dans le navigateur, éblouissant intercepte la navigation, puis restitue le composant avec l’itinéraire correspondant. 
+Le routage dans éblouissant est géré côté client et non sur le serveur. Lorsque l’utilisateur navigue dans le navigateur, éblouissant intercepte la navigation, puis restitue le composant avec l’itinéraire correspondant.
 
 Les itinéraires des composants ne sont pas actuellement déduits par l’emplacement des fichiers du composant, comme par exemple avec les pages *. aspx* . Cette fonctionnalité peut être ajoutée à l’avenir. Chaque itinéraire doit être spécifié explicitement sur le composant. Le stockage de composants routables dans un dossier *pages* n’a aucune signification particulière et constitue purement une convention.
 

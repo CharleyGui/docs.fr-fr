@@ -4,12 +4,12 @@ description: Découvrez comment créer des composants d’interface utilisateur 
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: ab9697bcb12ec17528415b3ad4d850803f472b36
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 79919b183a4eb759f0b27c97500ee71c9378770b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520333"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088101"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Créer des composants d’interface utilisateur réutilisables avec éblouissant
 
@@ -237,7 +237,7 @@ Les gestionnaires d’événements peuvent accepter un argument facultatif spéc
 <button @onclick="OnClick">Click me!</button>
 
 @code {
-    void OnClick(MouseEventArgs e) 
+    void OnClick(MouseEventArgs e)
     {
         Console.WriteLine($"Mouse clicked at {e.ScreenX}, {e.ScreenY}.");
     }
@@ -259,7 +259,7 @@ Les gestionnaires d’événements peuvent s’exécuter de façon synchrone ou 
 <button @onclick="OnClick">Click me!</button>
 
 @code {
-    async Task OnClick() 
+    async Task OnClick()
     {
         var result = await Http.GetAsync("api/values");
     }
@@ -283,7 +283,7 @@ Une fois qu’un événement est géré, le composant est rendu pour tenir compt
     }
 }
 
-@code 
+@code
 {
     bool showMessage = false;
     string message;
@@ -343,9 +343,9 @@ Les composants peuvent également prendre en charge la liaison de données à le
 *PasswordBox. Razor*
 
 ```razor
-Password: <input 
-    value="@Password" 
-    @oninput="OnPasswordChanged" 
+Password: <input
+    value="@Password"
+    @oninput="OnPasswordChanged"
     type="@(showPassword ? "text" : "password")" />
 
 <label><input type="checkbox" @bind="showPassword" />Show password</label>
@@ -431,7 +431,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Les composants éblouissants disposent également d’un cycle de vie bien défini. Le cycle de vie d’un composant peut être utilisé pour initialiser l’état d’un composant et implémenter des comportements de composant avancés. 
+Les composants éblouissants disposent également d’un cycle de vie bien défini. Le cycle de vie d’un composant peut être utilisé pour initialiser l’état d’un composant et implémenter des comportements de composant avancés.
 
 Toutes les méthodes de cycle de vie des composants de éblouissant ont des versions synchrones et asynchrones. Le rendu des composants est synchrone. Vous ne pouvez pas exécuter une logique asynchrone dans le cadre du rendu des composants. Toute la logique asynchrone doit s’exécuter dans le cadre d’une méthode de cycle de vie `async`.
 
@@ -455,7 +455,7 @@ protected override async Task OnParametersSetAsync() { await ... }
 
 ### <a name="onafterrender"></a>OnAfterRender
 
-Les méthodes `OnAfterRender` et `OnAfterRenderAsync` sont appelées après la fin du rendu d’un composant. Les références à un élément et à un composant sont remplies à ce stade (en savoir plus sur ces concepts ci-dessous). L’interactivité avec le navigateur est activée à ce stade. Les interactions avec l’exécution DOM et JavaScript peuvent être effectuées en toute sécurité. 
+Les méthodes `OnAfterRender` et `OnAfterRenderAsync` sont appelées après la fin du rendu d’un composant. Les références à un élément et à un composant sont remplies à ce stade (en savoir plus sur ces concepts ci-dessous). L’interactivité avec le navigateur est activée à ce stade. Les interactions avec l’exécution DOM et JavaScript peuvent être effectuées en toute sécurité.
 
 ```csharp
 protected override void OnAfterRender(bool firstRender)
@@ -525,7 +525,7 @@ Les composants éblouissant peuvent capturer des références à un élément. C
 
 ## <a name="templated-components"></a>Composants basés sur un modèle
 
-Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés*sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. @No__t_0 et `DataList` sont des exemples de contrôles basés sur un modèle. 
+Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés*sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. `Repeater` et `DataList`sont des exemples de contrôles basés sur un modèle.
 
 Les composants éblouissants peuvent également être basés sur un modèle en définissant des paramètres de composant de type `RenderFragment` ou `RenderFragment<T>`. Un `RenderFragment` représente un segment de balisage Razor qui peut ensuite être rendu par le composant. Un `RenderFragment<T>` est un segment de balisage Razor qui prend un paramètre qui peut être spécifié lors du rendu du fragment de rendu.
 
@@ -626,7 +626,7 @@ Un composant éblouissant est généralement créé dans un seul fichier *. Razo
 *Counter.razor.cs*
 
 ```csharp
-public class CounterBase : ComponentBase 
+public class CounterBase : ComponentBase
 {
     protected int currentCount = 0;
 

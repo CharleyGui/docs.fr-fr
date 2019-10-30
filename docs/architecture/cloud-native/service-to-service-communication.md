@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 0917ae8bf38b117619cec63411ea8f4f084ae6f2
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 6a7e72491cb56d925e684b94109b1aaa98e24df3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315864"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094623"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -60,13 +60,13 @@ Une option courante pour supprimer le couplage de microservices est le [modèle 
 
 ### <a name="service-aggregator-pattern"></a>Modèle d’agrégateur de service
 
-Une autre option permettant d’éliminer le couplage microservice à microservice est un [microservice d’agrégation](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), illustré en violet dans la figure 4-10. 
+Une autre option permettant d’éliminer le couplage microservice à microservice est un [microservice d’agrégation](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), illustré en violet dans la figure 4-10.
 
 ![Service d’agrégation](./media/aggregator-service.png)
 
 **Figure 4-10**. Microservice de l’agrégateur
 
-Le modèle isole une opération qui effectue des appels à plusieurs microservices back-end, en centralisant sa logique dans un microservice spécialisé.  Le microservice de l’agrégateur de l’extraction violette dans la figure précédente orchestre le flux de travail pour l’opération d’extraction. Il comprend des appels à plusieurs microservices principaux dans un ordre séquencé. Les données du workflow sont agrégées et retournées à l’appelant. Bien qu’elle implémente toujours des appels HTTP directs, le microservice de l’agrégateur réduit les dépendances directes entre les microservices back-end. 
+Le modèle isole une opération qui effectue des appels à plusieurs microservices back-end, en centralisant sa logique dans un microservice spécialisé.  Le microservice de l’agrégateur de l’extraction violette dans la figure précédente orchestre le flux de travail pour l’opération d’extraction. Il comprend des appels à plusieurs microservices principaux dans un ordre séquencé. Les données du workflow sont agrégées et retournées à l’appelant. Bien qu’elle implémente toujours des appels HTTP directs, le microservice de l’agrégateur réduit les dépendances directes entre les microservices back-end.
 
 ### <a name="requestreply-pattern"></a>Modèle de demande/réponse
 
@@ -80,7 +80,7 @@ Ici, le producteur de message crée un message basé sur une requête qui contie
 
 ## <a name="commands"></a>Commandes
 
-Un autre type d’interaction de communication est une *commande*. Un microservice peut avoir besoin d’un autre microservice pour effectuer une action. Le microservice de commande peut avoir besoin du microservice d’expédition pour créer une livraison pour un ordre approuvé. Dans la figure 4-12, un microservice, appelé producteur, envoie un message à un autre microservice, le consommateur, en le commandant pour effectuer une opération. 
+Un autre type d’interaction de communication est une *commande*. Un microservice peut avoir besoin d’un autre microservice pour effectuer une action. Le microservice de commande peut avoir besoin du microservice d’expédition pour créer une livraison pour un ordre approuvé. Dans la figure 4-12, un microservice, appelé producteur, envoie un message à un autre microservice, le consommateur, en le commandant pour effectuer une opération.
 
 ![Interaction de commande avec une file d’attente](./media/command-interaction-with-queue.png)
 
@@ -88,7 +88,7 @@ Un autre type d’interaction de communication est une *commande*. Un microservi
 
 Le plus souvent, le producteur ne nécessite pas de réponse et peut *déclencher et oublier* le message. Si une réponse est nécessaire, le consommateur envoie un message séparé au producteur sur un autre canal. Un message de commande est le mieux envoyé de façon asynchrone avec une file d’attente de messages. pris en charge par un courtier de messages léger. Dans le diagramme précédent, Notez comment une file d’attente sépare et découple les deux services.
 
-Une file d’attente de messages est une construction intermédiaire par le biais de laquelle un producteur et un consommateur transmettent un message. Les files d’attente implémentent un modèle de messagerie point à point asynchrone. Le producteur sait à quel endroit une commande doit être envoyée et est acheminée de manière appropriée. La file d’attente garantit qu’un message est traité par une seule instance de consommateur qui lit à partir du canal. Dans ce scénario, le service producteur ou le service consommateur peut monter en charge sans affecter l’autre. De même, les technologies peuvent être disparates de chaque côté, ce qui signifie que le microservice Java peut appeler un microservice [Golang](https://golang.org) . 
+Une file d’attente de messages est une construction intermédiaire par le biais de laquelle un producteur et un consommateur transmettent un message. Les files d’attente implémentent un modèle de messagerie point à point asynchrone. Le producteur sait à quel endroit une commande doit être envoyée et est acheminée de manière appropriée. La file d’attente garantit qu’un message est traité par une seule instance de consommateur qui lit à partir du canal. Dans ce scénario, le service producteur ou le service consommateur peut monter en charge sans affecter l’autre. De même, les technologies peuvent être disparates de chaque côté, ce qui signifie que le microservice Java peut appeler un microservice [Golang](https://golang.org) .
 
 Dans le chapitre 1, nous avons parlé des *services de stockage*. Les services de stockage sont des ressources auxiliaires dont dépendent les systèmes natifs du Cloud. Les files d’attente de messages sont des services de stockage. Le Cloud Azure prend en charge deux types de files d’attente de messages que vos systèmes natifs du Cloud peuvent utiliser pour implémenter la messagerie de commandes : les files d’attente de stockage Azure et les files d’attente de Azure Service Bus.
 
@@ -116,7 +116,7 @@ La figure 4-13 illustre la hiérarchie d’une file d’attente de stockage Azur
 
 Dans la figure précédente, notez la manière dont les files d’attente de stockage stockent leurs messages dans le compte de stockage Azure sous-jacent.
 
-Pour les développeurs, Microsoft fournit plusieurs bibliothèques côté client et côté serveur pour le traitement de la file d’attente de stockage. La plupart des principales plateformes sont prises en charge, y compris .NET, Java, JavaScript, Ruby, Python et Go. Les développeurs ne doivent jamais communiquer directement avec ces bibliothèques. Cela a pour effet de coupler étroitement votre code de microservice à la service de File d’attente de stockage Azure. Il est recommandé d’isoler les détails d’implémentation de l’API. Introduisez une couche d’intermédiation, ou API intermédiaire, qui expose des opérations génériques et encapsule la bibliothèque concrète. Ce couplage faible vous permet de permuter un service de mise en file d’attente pour un autre sans avoir à apporter de modifications au code du service de la principale. 
+Pour les développeurs, Microsoft fournit plusieurs bibliothèques côté client et côté serveur pour le traitement de la file d’attente de stockage. La plupart des principales plateformes sont prises en charge, y compris .NET, Java, JavaScript, Ruby, Python et Go. Les développeurs ne doivent jamais communiquer directement avec ces bibliothèques. Cela a pour effet de coupler étroitement votre code de microservice à la service de File d’attente de stockage Azure. Il est recommandé d’isoler les détails d’implémentation de l’API. Introduisez une couche d’intermédiation, ou API intermédiaire, qui expose des opérations génériques et encapsule la bibliothèque concrète. Ce couplage faible vous permet de permuter un service de mise en file d’attente pour un autre sans avoir à apporter de modifications au code du service de la principale.
 
 Les files d’attente de stockage Azure sont une option économique pour implémenter la messagerie de commandes dans vos applications Cloud natives. En particulier, lorsqu’une taille de file d’attente dépasse 80 Go, ou un ensemble de fonctionnalités simple est acceptable. Vous payez uniquement pour le stockage des messages ; Il n’y a pas de frais fixes à l’heure fixe.
 
@@ -146,9 +146,9 @@ Dans l’illustration précédente, notez la relation point à point. Deux insta
 
 ## <a name="events"></a>événements
 
-Message Queuing est un moyen efficace d’implémenter une communication dans laquelle un producteur peut envoyer un message de manière asynchrone à un consommateur. Toutefois, que se passe-t-il lorsque de *nombreux consommateurs* sont intéressés par le même message ? Une file d’attente de messages dédiée pour chaque consommateur n’est pas bien adaptée et devient difficile à gérer. 
+Message Queuing est un moyen efficace d’implémenter une communication dans laquelle un producteur peut envoyer un message de manière asynchrone à un consommateur. Toutefois, que se passe-t-il lorsque de *nombreux consommateurs* sont intéressés par le même message ? Une file d’attente de messages dédiée pour chaque consommateur n’est pas bien adaptée et devient difficile à gérer.
 
-Pour traiter ce scénario, nous allons passer au troisième type d’interaction de message, l' *événement*. Un microservice annonce qu’une action s’est produite. D’autres microservices, s’ils le souhaitent, réagissent à l’action ou à l’événement. 
+Pour traiter ce scénario, nous allons passer au troisième type d’interaction de message, l' *événement*. Un microservice annonce qu’une action s’est produite. D’autres microservices, s’ils le souhaitent, réagissent à l’action ou à l’événement.
 
 L’événement est un processus en deux étapes. Pour un changement d’État donné, un microservice publie un événement dans un courtier de messages, ce qui le rend disponible pour tout autre microservice intéressé. Le microservice intéressé est averti en s’abonnant à l’événement dans le courtier de messages. Vous utilisez le modèle de [publication/abonnement](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) pour implémenter la [communication basée sur les événements](https://docs.microsoft.com/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications).
 
@@ -226,7 +226,7 @@ Event Hubs implémente la diffusion de messages via un [modèle de consommateur 
 
 **Figure 4-19**. Partitionnement de hub d’événements
 
-Au lieu de lire à partir de la même ressource, chaque groupe de consommateurs lit sur un sous-ensemble, ou sur une partition, du flux de message. 
+Au lieu de lire à partir de la même ressource, chaque groupe de consommateurs lit sur un sous-ensemble, ou sur une partition, du flux de message.
 
 Pour les applications Cloud natives qui doivent diffuser en continu un grand nombre d’événements, Azure Event Hub peut être une solution robuste et abordable.
 

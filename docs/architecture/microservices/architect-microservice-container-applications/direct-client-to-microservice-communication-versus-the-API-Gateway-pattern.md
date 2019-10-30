@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 6b42650b2dbce093f12fe02b1605c95076dc8592
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 47e9a383c1fcb6c9fec38cb376b60a4ab839077d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522947"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090135"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -132,7 +132,7 @@ En plus de répondre à vos besoins de passerelle API, le service [Gestion des A
 
 **Figure 4-14**. Utilisation de Gestion des API Azure pour votre passerelle d’API
 
-La gestion des API Azure résout vos besoins en matière de passerelle API et de gestion, comme la journalisation, la sécurité, le contrôle, etc. Dans ce cas, lors de l’utilisation d’un produit comme gestion des API Azure, le fait que vous ayez une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins » C# , ce qui signifie que vous n’implémentez pas de code personnalisé qui pourrait évoluer vers un composant monolithique. 
+La gestion des API Azure résout vos besoins en matière de passerelle API et de gestion, comme la journalisation, la sécurité, le contrôle, etc. Dans ce cas, lors de l’utilisation d’un produit comme gestion des API Azure, le fait que vous ayez une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins » C# , ce qui signifie que vous n’implémentez pas de code personnalisé qui pourrait évoluer vers un composant monolithique.
 
 Les produits Passerelle d’API agissent généralement comme un proxy inversé pour la communication en entrée, où vous pouvez aussi filtrer les API des microservices internes et appliquer une autorisation aux API publiées dans ce niveau unique.
 
@@ -182,7 +182,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 - **Gestion des API Azure** \
   <https://azure.microsoft.com/services/api-management/>
 
-- **UDI Dahan. @No__t_1 de la composition orientée services**
+- **UDI Dahan. \ de la composition orientée services**
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 - **Clemens. Messagerie et microservices à GOTO 2016 (vidéo)**  \

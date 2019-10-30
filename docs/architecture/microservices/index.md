@@ -2,29 +2,29 @@
 title: Microservices .NET. Architecture pour les applications .NET en conteneur
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Les microservices sont des services modulables qui peuvent se déployer indépendamment. Les conteneurs Docker (pour Linux et Windows) simplifient le déploiement et les tests en regroupant un service et ses dépendances dans une seule unité, laquelle est ensuite exécutée dans un environnement isolé.
 ms.date: 01/07/2019
-ms.openlocfilehash: dcfff8b06dc77b47e6586ea82c82acc30a5cf3df
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7fa4935fe56ca873a5311812637964083e34170e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70848868"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089907"
 ---
-# <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET : Architecture pour les applications .NET en conteneur
+# <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET : architecture pour les applications .NET en conteneurs
 
 ![Couverture de livre](./media/cover-small.png)
 
 **ÉDITION v2.2** - Mise à jour vers ASP.NET Core 2.2
 
-Ce guide est une introduction au développement d’applications basées sur les microservices et à la gestion de celles-ci au moyen de conteneurs. Il traite de la conception architecturale et des approches d’implémentation utilisant .NET Core et les conteneurs Docker. 
+Ce guide est une introduction au développement d’applications basées sur les microservices et à la gestion de celles-ci au moyen de conteneurs. Il traite de la conception architecturale et des approches d’implémentation utilisant .NET Core et les conteneurs Docker.
 
 Pour faciliter la prise en main, ce guide met en lumière une application de référence en conteneur basée sur des microservices que vous pouvez explorer. L’application de référence est disponible sur le dépôt GitHub [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).
 
 ## <a name="action-links"></a>Liens d'action
 
-- Téléchargez ce livre électronique au format de votre choix : | [PDF](https://aka.ms/microservicesebook) | [MOBI](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-mobi) | [EPUB](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-epub) |
+- Téléchargez ce livre électronique dans le format de votre choix (version anglaise uniquement) : | [PDF](https://aka.ms/microservicesebook) | [MOBI](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-mobi) | [EPUB](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-epub) |
 
 - Clonez/dupliquez (fork) l’application de référence [eShopOnContainers sur GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
- 
+
 - Regardez la [vidéo d’introduction sur Channel 9](https://aka.ms/microservices-video)
 
 - Familiarisez-vous avec [l’architecture de microservices](https://aka.ms/MicroservicesArchitecture) immédiatement
@@ -33,7 +33,7 @@ Pour faciliter la prise en main, ce guide met en lumière une application de ré
 
 Les entreprises cherchent de plus en plus à réaliser des économies, à résoudre les problèmes de déploiement et à améliorer les opérations DevOps et de production en utilisant des conteneurs. Microsoft a fait preuve d’innovation dans le domaine des conteneurs pour Windows et Linux en créant des produits comme Azure Kubernetes Service et Azure Service Fabric et en formant des partenariats avec des acteurs phares du secteur tels que Docker, Mesosphere et Kubernetes. Ces produits offrent aux entreprises des solutions de conteneur qui leur permettent de créer et déployer des applications à la vitesse et à l’échelle du cloud, indépendamment de la plateforme ou des outils qu’elles ont choisi d’utiliser.
 
-Docker est en passe de devenir de facto le standard dans le domaine du conteneur, recueillant l’adhésion des éditeurs les plus en vue dans les écosystèmes Windows et Linux. (Microsoft est l’un des principaux fournisseurs de cloud à se ranger du côté de Docker.) Dans l’avenir, Docker sera probablement omniprésent dans les centres de données cloud ou locaux.
+Docker est en passe de devenir de facto le standard dans le domaine du conteneur, recueillant l’adhésion des éditeurs les plus en vue dans les écosystèmes Windows et Linux. (Microsoft est l’un des principaux fournisseurs de Cloud qui prennent en charge l’arrimeur.) À l’avenir, l’arrimeur sera probablement omniprésent dans n’importe quel centre de l’environnement Cloud ou local.
 
 Par ailleurs, l’architecture de [microservices](https://martinfowler.com/articles/microservices.html) est une approche qui devient importante pour les applications stratégiques distribuées. Dans une architecture basée sur les microservices, l’application repose sur un ensemble de services qui peuvent être développés, testés, déployés et versionnés de manière indépendante.
 
@@ -47,7 +47,7 @@ Après avoir examiné ce guide, votre prochaine étape consistera à vous famili
 
 ## <a name="version"></a>Version
 
-Ce guide a été modifié afin de couvrir la version **.NET Core 2.2** ainsi que les nombreuses mises à jour supplémentaires liées à la même « vague » technologique (c’est-à-dire Azure et autres technologies tierces) qui coïncident d’un point de vue chronologique avec .NET Core 2.2. C’est pourquoi la version du livre a également été mise à jour avec la version **2.2**. 
+Ce guide a été modifié afin de couvrir la version **.NET Core 2.2** ainsi que les nombreuses mises à jour supplémentaires liées à la même « vague » technologique (c’est-à-dire Azure et autres technologies tierces) qui coïncident d’un point de vue chronologique avec .NET Core 2.2. C’est pourquoi la version du livre a également été mise à jour avec la version **2.2**.
 
 ## <a name="what-this-guide-does-not-cover"></a>Sujets non abordés dans ce guide
 
@@ -72,7 +72,7 @@ La deuxième partie du guide commence par la section [Processus de développemen
 
 ## <a name="related-microservice-and-container-based-reference-application-eshoponcontainers"></a>Application de référence basée sur des conteneurs et des microservices : eShopOnContainers
 
-L’application eShopOnContainers est une application de référence open source pour .NET Core et les microservices qui a été conçue pour être déployée en utilisant des conteneurs Docker. L’application est constituée de divers sous-systèmes, notamment de plusieurs frontends d’interface utilisateur d’e-store (une application MVC web, une application SPA web et une application mobile native). Elle inclut aussi les microservices et les conteneurs backend pour toutes les opérations côté serveur nécessaires. 
+L’application eShopOnContainers est une application de référence open source pour .NET Core et les microservices qui a été conçue pour être déployée en utilisant des conteneurs Docker. L’application est constituée de divers sous-systèmes, notamment de plusieurs frontends d’interface utilisateur d’e-store (une application MVC web, une application SPA web et une application mobile native). Elle inclut aussi les microservices et les conteneurs backend pour toutes les opérations côté serveur nécessaires.
 
 L’objectif de l’application est de présenter des modèles architecturaux. **IL NE S’AGIT PAS D’UN MODÈLE PRÊT POUR LA PRODUCTION** permettant de démarrer des applications réelles. En fait, l’application est dans un état bêta permanent, car elle est également utilisée pour tester les nouvelles technologies potentiellement intéressantes.
 
@@ -174,9 +174,9 @@ Microsoft et les marques commerciales mentionnées dans la page web « Marques�
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
-Le logo de Docker représentant une baleine est une marque déposée de Docker, Inc. Utilisé sous autorisation.
+Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
 >[!div class="step-by-step"]
->[Next](container-docker-introduction/index.md)
+>[Suivant](container-docker-introduction/index.md)

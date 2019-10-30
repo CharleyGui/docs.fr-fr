@@ -2,12 +2,12 @@
 title: DevOps Cloud Native
 description: Architecture des applications .NET natives Cloud pour Azure | DevOps Cloud Native
 ms.date: 06/30/2019
-ms.openlocfilehash: 84d37d14af8a68a51088568ded05ceef2e5e11fb
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 2b3dd47eeeb69d63f5ae39705abb9d1d51295645
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393727"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087549"
 ---
 # <a name="cloud-native-devops"></a>DevOps Cloud Native
 
@@ -25,7 +25,7 @@ Il est maintenant assez bien établi que le fait de pouvoir libérer rapidement 
 
 Les modèles et pratiques qui permettent d’obtenir des versions plus rapides et plus fiables pour fournir de la valeur à l’entreprise sont collectivement appelés DevOps. Ils se composent d’un large éventail d’idées couvrant l’ensemble du cycle de vie du développement de logiciels, de la spécification d’une application jusqu’à la mise en œuvre et au fonctionnement de cette application.
 
-Les DevOps sont apparus avant les microservices et il est probable que le mouvement vers le plus petit, plus adapté aux services à but n’aurait pas été possible sans DevOps pour rendre la libération et le fonctionnement non seulement une, mais plusieurs applications en production plus simples. 
+Les DevOps sont apparus avant les microservices et il est probable que le mouvement vers le plus petit, plus adapté aux services à but n’aurait pas été possible sans DevOps pour rendre la libération et le fonctionnement non seulement une, mais plusieurs applications en production plus simples.
 
 ![La figure 11-0 les tendances de recherche montrent que la croissance dans les microservices ne démarre pas tant que DevOps n’est pas une idée bien établie.](./media/microservices-vs-devops.png)
 
@@ -41,7 +41,7 @@ Azure DevOps est divisé en cinq composants principaux :
 
 ![Figure 11-1 les cinq principales zones d’Azure DevOps](./media/devops-components.png)
 
-**Azure Boards** : fournit un outil de suivi des problèmes et des éléments de travail qui s’efforce d’autoriser les utilisateurs à choisir les workflows qui leur conviennent le mieux. Il est fourni avec un certain nombre de modèles préconfigurés, notamment ceux pour prendre en charge SCRUM et les styles de kanban de développement. 
+**Azure Boards** : fournit un outil de suivi des problèmes et des éléments de travail qui s’efforce d’autoriser les utilisateurs à choisir les workflows qui leur conviennent le mieux. Il est fourni avec un certain nombre de modèles préconfigurés, notamment ceux pour prendre en charge SCRUM et les styles de kanban de développement.
 
 **Azure repos** -gestion du code source qui prend en charge vénérable Team Foundation version Control (TFVC) et le git préféré du secteur. Les demandes de tirage (pull requests) offrent un moyen d’activer le codage social en encourageant la discussion des modifications à mesure qu’elles sont effectuées.
 
@@ -78,9 +78,9 @@ Le fractionnement du code pour les microservices dans le projet Azure DevOps peu
 
 L’une des idées clés derrière les microservices est que les services doivent être siloés et séparés les uns des autres. Lorsque vous utilisez la conception pilotée par domaine pour décider des limites des services, les services jouent le rôle de limites transactionnelles. Les mises à jour de base de données ne doivent pas s’étendre sur plusieurs services. Cette collection de données associées est appelée contexte limité.  Cette idée est reflétée par l’isolation des données de microservice dans une base de données séparée et autonome des autres services. L’objectif est de vous faire un grand sens pour suivre cette idée jusqu’au code source.
 
-Toutefois, cette approche ne présente aucun problème. L’un des problèmes de développement gnarlys de notre temps est la gestion des dépendances. Prenez en compte le nombre de fichiers qui composent le répertoire moyen `node_modules`. Une nouvelle installation de, comme `create-react-app`, est susceptible de créer des milliers de packages. La question de la gestion de ces dépendances est difficile. 
+Toutefois, cette approche ne présente aucun problème. L’un des problèmes de développement gnarlys de notre temps est la gestion des dépendances. Prenez en compte le nombre de fichiers qui composent le répertoire moyen `node_modules`. Une nouvelle installation de, comme `create-react-app`, est susceptible de créer des milliers de packages. La question de la gestion de ces dépendances est difficile.
 
-Si une dépendance est mise à jour, les packages en aval doivent également mettre à jour cette dépendance. Malheureusement, cela prend du travail de développement, de manière invariable, le répertoire `node_modules` finit par plusieurs versions d’un package unique, chacune d’entre elles étant une dépendance d’un autre package dont la version est différente selon une cadence légèrement différente. Lors du déploiement d’une application, quelle version d’une dépendance doit être utilisée ? La version actuellement en production ? La version qui est actuellement en version bêta, mais qui est susceptible d’être en production au moment où le consommateur la met en production ? Problèmes difficiles qui ne sont pas résolus en utilisant uniquement des microservices.
+Si une dépendance est mise à jour, les packages en aval doivent également mettre à jour cette dépendance. Malheureusement, cela prend du travail de développement, de manière invariable, le répertoire `node_modules` se termine avec plusieurs versions d’un package unique, chacune d’entre elles étant une dépendance d’un autre package dont la version est différente selon une cadence légèrement différente. Lors du déploiement d’une application, quelle version d’une dépendance doit être utilisée ? La version actuellement en production ? La version qui est actuellement en version bêta, mais qui est susceptible d’être en production au moment où le consommateur la met en production ? Problèmes difficiles qui ne sont pas résolus en utilisant uniquement des microservices.
 
 Il existe des bibliothèques qui dépendent d’un large éventail de projets. En répartissant les microservices avec un dans chaque référentiel, les dépendances internes peuvent être résolues le mieux à l’aide du référentiel interne, Azure Artifacts. Les builds pour les bibliothèques poussent leurs versions les plus récentes dans Azure Artifacts à des fins de consommation interne. Le projet en aval doit toujours être mis à jour manuellement pour dépendre des packages récemment mis à jour.
 
@@ -195,7 +195,7 @@ steps:
   displayName: 'NuGet restore'
   inputs:
     restoreSolution: '$(solution)'
-    
+
 - task: VSBuild@1
   displayName: 'Build solution'
   inputs:

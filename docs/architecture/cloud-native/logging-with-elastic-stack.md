@@ -2,18 +2,19 @@
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
 ms.date: 09/23/2019
-ms.openlocfilehash: 62115edc3f64d87d2c3e84a7b5319ce42cbe729b
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 989834925bc08541bf484e1a4567a56ac324872f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315798"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087067"
 ---
-# <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack 
+# <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : la recherche élastique, Logstash et Kibana. Ces outils sont appelés pile élastique ou pile ELK.
+Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : la recherche élastique, Logstash et Kibana.
+Ces outils sont appelés pile élastique ou pile ELK.
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Quels sont les avantages de la pile élastique ?
 
@@ -21,19 +22,19 @@ La pile élastique fournit une journalisation centralisée dans une solution clo
 
 ## <a name="logstash"></a>Logstash
 
-Le premier composant est [Logstash](https://www.elastic.co/products/logstash). Cet outil est utilisé pour collecter des informations de journalisation à partir d’une grande variété de sources différentes. Par exemple, Logstash peut lire les journaux à partir du disque et recevoir également des messages des bibliothèques de journalisation telles que [Serilog](https://serilog.net/). Logstash peut effectuer un filtrage et une expansion de base sur les journaux au fur et à mesure de leur arrivée. Par exemple, si vos journaux contiennent des adresses IP, Logstash peut être configuré pour effectuer une recherche géographique et obtenir un pays ou même une ville d’origine pour ce message. 
+Le premier composant est [Logstash](https://www.elastic.co/products/logstash). Cet outil est utilisé pour collecter des informations de journalisation à partir d’une grande variété de sources différentes. Par exemple, Logstash peut lire les journaux à partir du disque et recevoir également des messages des bibliothèques de journalisation telles que [Serilog](https://serilog.net/). Logstash peut effectuer un filtrage et une expansion de base sur les journaux au fur et à mesure de leur arrivée. Par exemple, si vos journaux contiennent des adresses IP, Logstash peut être configuré pour effectuer une recherche géographique et obtenir un pays ou même une ville d’origine pour ce message.
 
 Serilog est une bibliothèque de journalisation pour les langages .NET, qui permet la journalisation paramétrée. Au lieu de générer un message de journalisation qui incorpore des champs, les paramètres sont conservés séparément. Cela permet un filtrage et une recherche plus intelligents. Un exemple de configuration Serilog pour l’écriture dans Logstash apparaît dans la figure 7-2.
 
 ```csharp
-var log = new LoggerConfiguration()   
+var log = new LoggerConfiguration()
          .WriteTo.Http("http://localhost:8080")
          .CreateLogger();
 ```
 
 **Figure 7-2** Configuration de Serilog pour écrire des informations de journal directement dans logstash sur HTTP
 
-Logstash utilise une configuration telle que celle illustrée dans la figure 7-3. 
+Logstash utilise une configuration telle que celle illustrée dans la figure 7-3.
 
 ```
 input {
@@ -59,7 +60,7 @@ Une fois les journaux collectés par Logstash, il faut les placer. Bien que Logs
 
 ## <a name="elastic-search"></a>Recherche élastique
 
-La recherche élastique est un moteur de recherche puissant qui peut indexer les journaux à mesure qu’ils arrivent. Elle accélère l’exécution des requêtes sur les journaux. La recherche élastique peut gérer de grandes quantités de journaux et, dans des cas extrêmes, peut être montée en charge sur plusieurs nœuds. 
+La recherche élastique est un moteur de recherche puissant qui peut indexer les journaux à mesure qu’ils arrivent. Elle accélère l’exécution des requêtes sur les journaux. La recherche élastique peut gérer de grandes quantités de journaux et, dans des cas extrêmes, peut être montée en charge sur plusieurs nœuds.
 
 Les messages de journal qui ont été conçus pour contenir des paramètres ou dont les paramètres ont été fractionnés à l’aide du traitement Logstash peuvent être interrogés directement, car Elasticsearch conserve ces informations.
 
@@ -85,11 +86,11 @@ Une requête qui recherche les 10 premières pages visitées par `jill@example.c
 
 ## <a name="visualizing-information-with-kibana-web-dashboards"></a>Visualisation des informations avec les tableaux de bord Web Kibana
 
-Le composant final de la pile est Kibana. Cet outil est utilisé pour fournir des visualisations interactives dans un tableau de bord Web. Les tableaux de bord peuvent être créés même par des utilisateurs non techniques. La plupart des données qui résident dans l’index Elasticsearch peuvent être incluses dans les tableaux de bord Kibana. Les utilisateurs individuels peuvent avoir différents tableaux de bord, et Kibana permet cette personnalisation en autorisant des tableaux de bord spécifiques à l’utilisateur. 
+Le composant final de la pile est Kibana. Cet outil est utilisé pour fournir des visualisations interactives dans un tableau de bord Web. Les tableaux de bord peuvent être créés même par des utilisateurs non techniques. La plupart des données qui résident dans l’index Elasticsearch peuvent être incluses dans les tableaux de bord Kibana. Les utilisateurs individuels peuvent avoir différents tableaux de bord, et Kibana permet cette personnalisation en autorisant des tableaux de bord spécifiques à l’utilisateur.
 
 ## <a name="installing-elastic-stack-on-azure"></a>Installation de la pile élastique sur Azure
 
-La pile élastique peut être installée sur Azure de plusieurs façons. Comme toujours, il est possible d' [approvisionner des machines virtuelles et d’y installer directement la pile élastique](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch). Cette option est recommandée par certains utilisateurs expérimentés, car elle offre le degré de personnalisation le plus élevé. Le déploiement sur infrastructure as a service introduit une surcharge de gestion importante qui oblige les personnes qui utilisent ce chemin d’accès à prendre possession de toutes les tâches associées à infrastructure as a service telles que la sécurisation des ordinateurs et la mise à jour des correctifs. 
+La pile élastique peut être installée sur Azure de plusieurs façons. Comme toujours, il est possible d' [approvisionner des machines virtuelles et d’y installer directement la pile élastique](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch). Cette option est recommandée par certains utilisateurs expérimentés, car elle offre le degré de personnalisation le plus élevé. Le déploiement sur infrastructure as a service introduit une surcharge de gestion importante qui oblige les personnes qui utilisent ce chemin d’accès à prendre possession de toutes les tâches associées à infrastructure as a service telles que la sécurisation des ordinateurs et la mise à jour des correctifs.
 
 Une option avec moins de surcharge consiste à utiliser l’un des nombreux conteneurs d’ancrage sur lesquels la pile élastique a déjà été configurée. Ces conteneurs peuvent être déposés dans un cluster Kubernetes existant et exécutés avec le code d’application. Le conteneur [sebp/Elk](https://elk-docker.readthedocs.io/) est un conteneur de pile élastique bien documenté et testé.
 

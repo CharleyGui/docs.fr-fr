@@ -4,12 +4,12 @@ description: Introduction à éblouissant et écriture d’applications Web à p
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 66b6d57b718c19b0f271c6b3a62a9d4a22d77ae0
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 6c045cd9c4378bd19f97dd722db054c969491d0b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520302"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087925"
 ---
 # <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>Introduction à éblouissant pour les développeurs ASP.NET Web Forms
 
@@ -21,7 +21,7 @@ Au fil des années, Microsoft a introduit de nouvelles infrastructures Web basé
 
 Au moment de la rédaction du présent article, presque deux millions de développeurs Web utilisent ASP.NET Web Forms chaque mois. Le ASP.NET Web Forms Framework est stable jusqu’à ce que les documents, les exemples, les livres et les billets de blog de plus de dix ans restent utiles et pertinents. Pour de nombreux développeurs Web .NET, « ASP.NET » est toujours synonyme de « ASP.NET Web Forms » comme c’était le cas lors de la première création de .NET. Les arguments sur les avantages et les inconvénients de ASP.NET Web Forms comparés aux autres nouveaux frameworks web .NET peuvent se faire sur. ASP.NET Web Forms reste un Framework populaire pour la création d’applications Web.
 
-Même dans ce cas, les innovations en matière de développement de logiciels ne ralentissent pas. Tous les développeurs de logiciels doivent rester au courant des nouvelles technologies et tendances. Deux tendances en particulier méritent d’être envisagées : 
+Même dans ce cas, les innovations en matière de développement de logiciels ne ralentissent pas. Tous les développeurs de logiciels doivent rester au courant des nouvelles technologies et tendances. Deux tendances en particulier méritent d’être envisagées :
 
 1. Passage à open source et multiplateforme
 2. Déplacement de la logique de l’application vers le client
@@ -67,7 +67,7 @@ En soi, la possibilité d’exécuter du code .NET dans un navigateur ne fournit
 - Routage côté client
 - Dispositions
 - Débogage dans le navigateur
-- Interopérabilité JavaScript
+- Interopérabilité de JavaScript
 
 Avec ASP.NET Web Forms, éblouissant est beaucoup plus courant. Les deux infrastructures offrent des modèles de programmation d’interface utilisateur basés sur des composants et pilotés par les événements. La principale différence architecturale est que ASP.NET Web Forms s’exécute uniquement sur le serveur. Éblouissant peut s’exécuter sur le client dans le navigateur. Mais si vous êtes à la base d’un ASP.NET Web Forms, il y a beaucoup de choses à paraître familières. Éblouissant est une solution naturelle pour ASP.NET Web Forms les développeurs qui cherchent un moyen de tirer parti du développement côté client et du futur .NET interplateforme Open source.
 

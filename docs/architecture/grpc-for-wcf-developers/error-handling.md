@@ -3,12 +3,12 @@ title: Gestion des erreurs-gRPC pour les développeurs WCF
 description: À ÉCRIRE
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 2ef1a0b38d9b63af7244c6e0428c9adbcb1d6527
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 91f5789d8ed0f01f3ce2f3f9a6c6ccf14f245290
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846667"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094230"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
@@ -59,7 +59,7 @@ catch (RpcException ex) when (ex.StatusCode == StatusCode.PermissionDenied)
     var userEntry = ex.Trailers.FirstOrDefault(e => e.Key == "User");
     Console.WriteLine($"User '{userEntry.Value}' does not have permission to view this portfolio.");
 }
-catch (RpcException) 
+catch (RpcException)
 {
     // Handle any other error type ...
 }

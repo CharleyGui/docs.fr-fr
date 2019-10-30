@@ -2,12 +2,12 @@
 title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Déployer des applications .NET existantes en tant que conteneurs Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 997b32e51272be2126bd824de1f8f026d77ca203
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 28568ca363bfc8100f78b100f8a7f0242c4f04c9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318639"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089557"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -154,11 +154,11 @@ Les produits dans Azure prenant en charge les conteneurs qui sont en même temps
 
 - **Azure App Service**
 - **Service Azure Kubernetes (AKS et ACS)**
-- **Azure Batch** 
+- **Azure Batch**
 
 Azure Container Registry est ensuite un registre de conteneurs hautement évolutif, hébergé dans Azure, que vous pouvez utiliser à partir de tous les produits précédents lors de l’inscription et du déploiement de vos images de conteneur personnalisées.
 
-En outre, à partir de vos conteneurs, vous pouvez utiliser d’autres services gérés dans Azure comme Azure SQL Database, le cache Redims Azure, les Azure Cosmos DB, etc. de plus, il existe des solutions/plateformes tierces disponibles dans la place de marché Azure, comme Cloud Foundry et OpenShift, où vous pouvez également utiliser des conteneurs dans Azure. 
+En outre, à partir de vos conteneurs, vous pouvez utiliser d’autres services gérés dans Azure comme Azure SQL Database, le cache Redims Azure, les Azure Cosmos DB, etc. de plus, il existe des solutions/plateformes tierces disponibles dans la place de marché Azure, comme Cloud Foundry et OpenShift, où vous pouvez également utiliser des conteneurs dans Azure.
 
 Dans les sections suivantes, vous pouvez explorer les recommandations de Microsoft concernant l’utilisation de chacun de ces produits et solutions Azure, spécifiquement lors du ciblage de conteneurs Windows.
 

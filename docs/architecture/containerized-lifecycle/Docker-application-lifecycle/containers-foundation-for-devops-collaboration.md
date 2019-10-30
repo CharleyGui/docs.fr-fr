@@ -2,12 +2,12 @@
 title: Conteneurs comme fondement de la collaboration DevOps
 description: Découvrez le rôle clé des conteneurs pour rationaliser DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: 16cccef0545f0da14128e31dc8f7ad78369cf23a
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8258f4331212d92376d64fef318adcdff492f61f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394820"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094501"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Conteneurs comme fondement de la collaboration DevOps
 
@@ -51,7 +51,7 @@ Ces défis créent de nouvelles demandes lors de l’utilisation d’outils DevO
 
 - Comment utiliser des outils/plateformes open source pour les conteneurs dans Microsoft Azure ?
 
-Si vous pouvez répondre à toutes ces questions, vous serez mieux préparé pour déplacer vos applications (existantes ou nouvelles) vers des conteneurs Docker. 
+Si vous pouvez répondre à toutes ces questions, vous serez mieux préparé pour déplacer vos applications (existantes ou nouvelles) vers des conteneurs Docker.
 
 ## <a name="introduction-to-a-generic-end-to-end-docker-application-life-cycle-workflow"></a>Introduction à un workflow de cycle de vie d’application Docker de bout en bout générique
 

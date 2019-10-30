@@ -2,16 +2,16 @@
 title: Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure.
 ms.date: 04/28/2018
-ms.openlocfilehash: ae181784e7de5f66b34d2dc38c6e9ec2e004a0c3
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: c7638a034dbb27baea1b097bdb66175bfb5a71f2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373981"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089638"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 
-> Vision : Dans un premier temps, pour réduire votre investissement local et le coût total de maintenance du matériel et de la mise en réseau, il vous suffit de réhéberger vos applications existantes dans le Cloud.
+> Vision : dans un premier temps, pour réduire votre investissement local et le coût total de maintenance du matériel et de la mise en réseau, il vous suffit de réhéberger vos applications existantes dans le Cloud.
 
 Avant d' *apprendre* à migrer vos applications existantes vers la plateforme Azure infrastructure as a service (IaaS), il est important d’analyser les raisons pour *lesquelles* vous souhaiteriez migrer directement vers IaaS dans Azure. Le scénario à ce niveau de maturité de modernisation consiste essentiellement à commencer à utiliser des machines virtuelles dans le Cloud, au lieu de continuer à utiliser votre infrastructure locale actuelle.
 
@@ -35,11 +35,11 @@ Il est également évident que les applications sont plus faciles à moderniser 
 
 ## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Quand migrer vers IaaS au lieu de PaaS
 
-Les sections suivantes traitent des applications optimisées pour le Cloud qui sont principalement basées sur les plateformes et les services PaaS. Ces applications vous offrent les avantages de la migration vers le Cloud. 
+Les sections suivantes traitent des applications optimisées pour le Cloud qui sont principalement basées sur les plateformes et les services PaaS. Ces applications vous offrent les avantages de la migration vers le Cloud.
 
-Si votre objectif est simplement de déplacer des applications existantes vers le Cloud, identifiez d’abord les applications existantes qui ne nécessitent pas de modifications substantielles pour s’exécuter dans Azure App Service. Ces applications doivent être les premiers candidats à l’optimisation du Cloud. 
+Si votre objectif est simplement de déplacer des applications existantes vers le Cloud, identifiez d’abord les applications existantes qui ne nécessitent pas de modifications substantielles pour s’exécuter dans Azure App Service. Ces applications doivent être les premiers candidats à l’optimisation du Cloud.
 
-Ensuite, pour les applications qui ne peuvent toujours pas être migrées vers des conteneurs Windows et PaaS, comme des App Service ou des orchestrateurs tels que le service Azure Kubernetes, migrez-les vers des machines virtuelles simples (IaaS) simples. 
+Ensuite, pour les applications qui ne peuvent toujours pas être migrées vers des conteneurs Windows et PaaS, comme des App Service ou des orchestrateurs tels que le service Azure Kubernetes, migrez-les vers des machines virtuelles simples (IaaS) simples.
 
 Toutefois, gardez à l’esprit que la configuration, la sécurisation et la maintenance des machines virtuelles nécessitent bien plus de temps et d’expertise informatique par rapport à l’utilisation des services PaaS dans Azure. Si vous envisagez d’utiliser des machines virtuelles Azure, veillez à prendre en compte l’effort de maintenance en cours requis pour corriger, mettre à jour et gérer votre environnement de machine virtuelle. Machines virtuelles Azure est IaaS.
 

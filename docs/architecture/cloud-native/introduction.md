@@ -1,16 +1,16 @@
 ---
-title: Présentation des applications Cloud natives
+title: Présentation des applications cloud natives
 description: En savoir plus sur l’informatique Cloud Native
 author: robvet
 ms.date: 08/26/2019
-ms.openlocfilehash: a99e4b5599efee8b171c48a5b17e75b9e6cd63ca
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1d3679c7f1ab940d7ab3e194c200483b63276883
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182852"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087237"
 ---
-# <a name="introduction-to-cloud-native-applications"></a>Présentation des applications Cloud natives
+# <a name="introduction-to-cloud-native-applications"></a>Présentation des applications cloud natives
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -18,7 +18,7 @@ Un autre jour, au bureau, en travaillant sur « la prochaine belle chose ».
 
 Vos sonneries cellulaires. Il s’agit de votre recruteur amical, celui qui vous appelle deux fois par jour sur les nouveaux travaux.
 
-Mais cette fois-ci, elle est différente : Le démarrage, les capitaux propres et le financement.
+Mais cette fois-ci, elle est différente : le démarrage, les capitaux propres et de nombreux financements.
 
 La mention du Cloud et de la technologie de pointe vous pousse à la périphérie.
 
@@ -38,9 +38,9 @@ Félicitations !  Vous venez de créer une application monolithique.
 
 Tout est incorrect. Les monolithiques offrent des avantages distincts. Par exemple, ils sont simples à...
 
-- build 
+- build
 - test
-- déployer
+- Déployer
 - Résolution
 - mise à l'échelle
 
@@ -76,7 +76,7 @@ Dans un bref laps de temps, Cloud native est devenu une tendance à la hausse da
 
 Contrairement à la bande continue qui pilote notre secteur, le Cloud native est «*pour le réel*». Prenons l’exemple de CNCF ( [Cloud Native Computing Foundation](https://www.cncf.io/) ), un consortium de plus de 300 entreprises majeures disposant d’une Charte pour rendre l’informatique Cloud Native omniprésente sur la technologie et les piles de clouds. En tant qu’un des groupes Open source les plus influents, il héberge de nombreux projets open source à croissance rapide dans GitHub. Il s’agit notamment de projets tels que [Kubernetes](https://kubernetes.io/), [Prometheus](https://prometheus.io/), [Helm](https://helm.sh/), [Envoy](https://www.envoyproxy.io/)et [gRPC](https://grpc.io/).
 
-Le CNCF favorise un écosystème de la langue Open source et de la neutralité du fournisseur. À la suite de cela, nous présentons les principes, les modèles et les meilleures pratiques Cloud natifs qui sont indépendants des technologies. En même temps, nous aborderons les services et l’infrastructure disponibles dans le Cloud Microsoft Azure pour la création de systèmes Cloud natifs. 
+Le CNCF favorise un écosystème de la langue Open source et de la neutralité du fournisseur. À la suite de cela, nous présentons les principes, les modèles et les meilleures pratiques Cloud natifs qui sont indépendants des technologies. En même temps, nous aborderons les services et l’infrastructure disponibles dans le Cloud Microsoft Azure pour la création de systèmes Cloud natifs.
 
 Alors, qu’est-ce que Cloud Native ? Asseyez-vous, détendez-vous et laissez-nous vous aider à explorer ce nouveau monde.
 

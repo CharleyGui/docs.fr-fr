@@ -2,12 +2,12 @@
 title: Stockage de données dans Azure
 description: Architecture des applications .NET natives Cloud pour Azure | Stockage de données dans Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 6834e47e11c4941735343e3f6bfbfe4cb642e0dd
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 1a86cecf005c6dbdfda5cf4cacfafaad4711c076
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521112"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73087766"
 ---
 # <a name="data-storage-in-azure"></a>Stockage de données dans Azure
 
@@ -15,7 +15,7 @@ ms.locfileid: "72521112"
 
 Comme nous l’avons vu dans ce livre, le Cloud change la façon dont les applications sont conçues, déployées et gérées. Lors de la migration vers le Cloud, il est important de savoir comment déplacer vos données ? Heureusement, le Cloud Azure offre de nombreuses options.
 
-Vous pouvez simplement approvisionner une machine virtuelle Azure et installer votre base de données de votre choix. C’est ce que l’on appelle [infrastructure en tant que service (IaaS)](https://www.techopedia.com/definition/141/infrastructure-as-a-service-iaas). Cette approche simplifie le déplacement d’une base de données locale vers le Cloud, en l’évolution, tout en décalant la charge de la gestion de la machine virtuelle et de la base de données.  
+Vous pouvez simplement approvisionner une machine virtuelle Azure et installer votre base de données de votre choix. C’est ce que l’on appelle [infrastructure en tant que service (IaaS)](https://www.techopedia.com/definition/141/infrastructure-as-a-service-iaas). Cette approche simplifie le déplacement d’une base de données locale vers le Cloud, en l’évolution, tout en décalant la charge de la gestion de la machine virtuelle et de la base de données.
 
 Au lieu de cela, une [base de données en tant que service (DBaaS)](https://www.stratoscale.com/blog/dbaas/what-is-database-as-a-service/) entièrement managée est une meilleure option. Vous bénéficiez de nombreuses fonctionnalités intégrées lorsque l’hébergement, la maintenance et la gestion des licences sont gérés par Microsoft. Azure propose différents types d’options de stockage de données entièrement gérées, chacune avec des avantages spécifiques. Ils prennent tous en charge la capacité juste-à-temps et un modèle de paiement à l’accès.
 
@@ -23,7 +23,7 @@ Nous allons ensuite examiner les options DBaaS disponibles dans Azure. Vous verr
 
 ## <a name="azure-sql-database"></a>Azure SQL Database
 
-[Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) est une base de données relationnelle en tant que service (DBaaS) riche en fonctionnalités, basée sur les moteur de base de données Microsoft SQL Server. Elle est entièrement gérée par Microsoft et est une base de données Cloud haute performance, fiable et sécurisée. Le service partage un grand nombre des fonctionnalités présentes dans la version locale de SQL Server. 
+[Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) est une base de données relationnelle en tant que service (DBaaS) riche en fonctionnalités, basée sur les moteur de base de données Microsoft SQL Server. Elle est entièrement gérée par Microsoft et est une base de données Cloud haute performance, fiable et sécurisée. Le service partage un grand nombre des fonctionnalités présentes dans la version locale de SQL Server.
 
 Vous pouvez approvisionner un serveur et une base de données SQL Database en quelques minutes. Lorsque la demande de votre application passe de quelques clients à des millions, Azure SQL Database évolue à la volée avec un temps d’arrêt minimal. Vous pouvez ajouter ou supprimer dynamiquement des ressources, notamment la puissance de l’UC, la mémoire, le débit d’e/s et le stockage alloué à vos bases de données.
 
@@ -47,7 +47,7 @@ Azure SQL Database intègre des fonctionnalités [intégrées de surveillance et
 
 [Azure SQL Database sans serveur](https://docs.microsoft.com/azure/sql-database/sql-database-serverless) (disponible en version préliminaire lors de la rédaction de ce livre) est un niveau de calcul pour les bases de données uniques qui évolue automatiquement en fonction de la demande de la charge de travail et des factures pour la quantité de calcul utilisée par seconde. Le niveau de calcul sans serveur suspend également automatiquement les bases de données pendant les périodes inactives afin que seuls les frais de stockage soient facturés. Il reprend automatiquement lorsque l’activité est retournée.
 
-Enfin, il existe la nouvelle [Azure SQL Database niveau tarifaire hyperscale](https://azure.microsoft.com/services/sql-database/) . Elle est optimisée par une architecture de stockage hautement évolutive et permet à votre base de données de croître en fonction des besoins, ce qui évite d’avoir à préconfigurer les ressources de stockage. Vous pouvez mettre à l’échelle des ressources de calcul et de stockage indépendamment, ce qui offre la flexibilité nécessaire pour optimiser les performances de chaque charge de travail. Azure SQL Database hyperscale est optimisé pour le traitement [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) et les charges de travail analytiques à débit élevé avec un stockage allant jusqu’à 100 to.  Avec les charges de travail nécessitant beaucoup de ressources de lecture, hyperscale fournit une montée en charge rapide en approvisionnant des réplicas de lecture supplémentaires en fonction des besoins pour le déchargement des charges de travail de lecture. 
+Enfin, il existe la nouvelle [Azure SQL Database niveau tarifaire hyperscale](https://azure.microsoft.com/services/sql-database/) . Elle est optimisée par une architecture de stockage hautement évolutive et permet à votre base de données de croître en fonction des besoins, ce qui évite d’avoir à préconfigurer les ressources de stockage. Vous pouvez mettre à l’échelle des ressources de calcul et de stockage indépendamment, ce qui offre la flexibilité nécessaire pour optimiser les performances de chaque charge de travail. Azure SQL Database hyperscale est optimisé pour le traitement [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) et les charges de travail analytiques à débit élevé avec un stockage allant jusqu’à 100 to.  Avec les charges de travail nécessitant beaucoup de ressources de lecture, hyperscale fournit une montée en charge rapide en approvisionnant des réplicas de lecture supplémentaires en fonction des besoins pour le déchargement des charges de travail de lecture.
 
 Outre la pile de Microsoft SQL Server traditionnelle, Azure propose également des versions gérées de plusieurs bases de données Open source populaires.
 
@@ -59,7 +59,7 @@ Outre la pile de Microsoft SQL Server traditionnelle, Azure propose également d
 
 - [Haute disponibilité](https://docs.microsoft.com/azure/mysql/concepts-high-availability)intégrée.
 
-- Des performances prévisibles, à l’aide de la tarification inclusive de [paiement à l'](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers)utilisation. 
+- Des performances prévisibles, à l’aide de la tarification inclusive de [paiement à l'](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers)utilisation.
 
 - Mise à l' [échelle](https://docs.microsoft.com/azure/mysql/concepts-high-availability) en quelques secondes.
 
@@ -69,7 +69,7 @@ Outre la pile de Microsoft SQL Server traditionnelle, Azure propose également d
 
 - Sécurité et conformité à l’échelle de l’entreprise.
 
-Ces fonctionnalités PaaS intégrées sont importantes pour les organisations qui ont des centaines de bases de données « tactiques » (non stratégiques) dans leurs centres de données, mais qui n’ont pas les ressources nécessaires pour effectuer les mises à jour correctives, la sauvegarde, la sécurité et la surveillance des performances. 
+Ces fonctionnalités PaaS intégrées sont importantes pour les organisations qui ont des centaines de bases de données « tactiques » (non stratégiques) dans leurs centres de données, mais qui n’ont pas les ressources nécessaires pour effectuer les mises à jour correctives, la sauvegarde, la sécurité et la surveillance des performances.
 
 En outre, [Azure Data Migration Service](https://azure.microsoft.com/services/database-migration/) peut migrer des données de plusieurs sources de base de données vers des plateformes de données Azure avec un temps d’arrêt minimal. Le service génère des rapports d’évaluation et fournit des recommandations pour vous guider à travers les modifications requises pour effectuer une migration, à la fois petite ou grande.
 
@@ -87,8 +87,8 @@ MariaDB a une bonne suite et est utilisée par de nombreuses grandes entreprises
 
 - [Haute disponibilité](https://docs.microsoft.com/azure/mariadb/concepts-high-availability)intégrée.
 
-- Des performances prévisibles, à l’aide de la tarification inclusive de [paiement à l'](https://docs.microsoft.com/azure/mariadb/concepts-pricing-tiers)utilisation. 
- 
+- Des performances prévisibles, à l’aide de la tarification inclusive de [paiement à l'](https://docs.microsoft.com/azure/mariadb/concepts-pricing-tiers)utilisation.
+
 - [Mise à l’échelle](https://docs.microsoft.com/azure/mariadb/concepts-high-availability) en quelques secondes.
 
 - Protection sécurisée des données sensibles au repos et en mouvement.
@@ -97,7 +97,7 @@ MariaDB a une bonne suite et est utilisée par de nombreuses grandes entreprises
 
 - Sécurité et conformité à l’échelle de l’entreprise.
 
-## <a name="azure-database-for-postgresql"></a>Base de données Azure pour PostgreSQL 
+## <a name="azure-database-for-postgresql"></a>Base de données Azure pour PostgreSQL
 
 [PostgreSQL](https://www.postgresql.org/) est une autre base de données relationnelle Open source populaire avec plus de 30 ans de développement actif. Il s’agit d’un système de gestion de base de données à usage général et relationnel objet. Ses licences sont considérées comme « libérales » et le produit est libre d’utiliser, de modifier et de distribuer dans n’importe quel format. De nombreuses grandes entreprises, dont Apple, Red Hat et Fujitsu, ont créé des produits à l’aide de PostgreSQL.
 
@@ -163,7 +163,7 @@ Plus haut dans la section *relationnel et NoSQL* , nous avons abordé l’objet 
 
 La plupart des bases de données distribuées permettent aux développeurs de choisir entre deux modèles de cohérence : une [cohérence forte](https://en.wikipedia.org/wiki/Strong_consistency) et une [cohérence éventuelle](https://en.wikipedia.org/wiki/Eventual_consistency). Une *cohérence forte* est la norme Gold de la programmabilité des données. Elle garantit qu’un résultat de requête renverra toujours les données les plus récentes, même si le système doit subir une latence en attendant qu’une mise à jour soit répliquée sur toutes les copies de base de données. En revanche, un système configuré pour la *cohérence éventuelle* renverra des données immédiatement, même si ces données ne sont pas la copie la plus récente. Cette option permet une disponibilité plus élevée, une mise à l’échelle supérieure et des performances accrues.
 
-Azure Cosmos DB offre un large éventail de [cinq modèles de cohérence bien définis](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) illustrés dans la figure 5-16. Ces options vous permettent d’effectuer des choix précis et des compromis précis en ce qui concerne la disponibilité et les performances en fonction des besoins de votre application. Ces modèles sont bien définis, intuitifs et sauvegardés par les contrats de niveau de service (SLA). 
+Azure Cosmos DB offre un large éventail de [cinq modèles de cohérence bien définis](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) illustrés dans la figure 5-16. Ces options vous permettent d’effectuer des choix précis et des compromis précis en ce qui concerne la disponibilité et les performances en fonction des besoins de votre application. Ces modèles sont bien définis, intuitifs et sauvegardés par les contrats de niveau de service (SLA).
 
 ![Cosmos DB niveaux de cohérence](./media/cosmos-db-consistency-levels.png)
 
@@ -171,7 +171,7 @@ Azure Cosmos DB offre un large éventail de [cinq modèles de cohérence bien d�
 
 ### <a name="partitioning"></a>Partitionnement
 
-Azure Cosmos DB utilise le [partitionnement](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) automatique pour mettre à l’échelle la base de données afin de répondre aux besoins de performances de votre application. 
+Azure Cosmos DB utilise le [partitionnement](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) automatique pour mettre à l’échelle la base de données afin de répondre aux besoins de performances de votre application.
 
 Vous gérez les données de Cosmos DB données en créant des [bases de données, des conteneurs et des éléments](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items), comme illustré dans la figure 5-17.
 
@@ -193,7 +193,7 @@ En interne, Cosmos DB gère automatiquement le placement des [partitions logique
 
 ## <a name="azure-redis-cache"></a>Cache Redims Azure
 
-Les avantages de la mise en cache pour améliorer les performances et l’évolutivité sont bien compris. 
+Les avantages de la mise en cache pour améliorer les performances et l’évolutivité sont bien compris.
 
 Pour une application Cloud native, un emplacement commun pour ajouter la mise en cache est à l’intérieur de la passerelle d’API. La passerelle sert de serveur frontal pour toutes les demandes entrantes. En ajoutant la mise en cache, vous pouvez augmenter les performances et la réactivité en retournant les données mises en cache et en évitant les allers-retours vers une base de données locale ou un service en aval. La figure 5-19 illustre une architecture de mise en cache pour une application Cloud native.
 

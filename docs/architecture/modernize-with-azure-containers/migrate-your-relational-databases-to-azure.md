@@ -2,12 +2,12 @@
 title: Migrer vos bases de données relationnelles vers Azure
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | migrer vos bases de données relationnelles vers Azure
 ms.date: 04/28/2018
-ms.openlocfilehash: b2153e65a12706b97fae11c5f23846c83bcd6642
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: efd1548c3f74fc27450f4949d71a1c4d61907ba5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374097"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093614"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrer vos bases de données relationnelles vers Azure
 
@@ -90,7 +90,7 @@ Actuellement, Microsoft Azure prend en charge jusqu’à [331 serveurs de base d
 
 Il peut arriver que vous deviez migrer vers SQL Server en tant que machine virtuelle standard. C’est le cas, par exemple, si vous devez utiliser SQL Server Reporting Services. Toutefois, dans la plupart des cas, Azure SQL Database Managed Instance pouvez fournir tout ce dont vous avez besoin pour migrer à partir de serveurs SQL Server locaux. par conséquent, la migration vers une machine virtuelle SQL Server doit être votre dernier recours.
 
-## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Utiliser Azure Database Migration Service pour migrer vos bases de données relationnelles vers Azure 
+## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Utiliser Azure Database Migration Service pour migrer vos bases de données relationnelles vers Azure
 
 Vous pouvez utiliser Azure Database Migration Service pour migrer des bases de données relationnelles comme SQL Server, Oracle et MySQL vers Azure, que votre base de données cible soit Azure SQL Database, Azure SQL Database Managed Instance ou SQL Server sur une machine virtuelle Azure.
 
@@ -104,7 +104,7 @@ Pour savoir comment migrer des bases de données à l’aide de Azure Database M
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Choisissez une option de SQL Server Cloud : Azure SQL Database (PaaS) ou SQL Server sur une machine virtuelle Azure (IaaS)**
+- **Choisir une option Cloud SQL Server : Azure SQL Database (PaaS) ou SQL Server sur une machine virtuelle Azure (IaaS)**
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas>
 
@@ -116,7 +116,7 @@ Pour savoir comment migrer des bases de données à l’aide de Azure Database M
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate>
 
-- **Base de données SQL Azure**
+- **Azure SQL Database**
 
     <https://azure.microsoft.com/services/sql-database/?v=16.50>
 

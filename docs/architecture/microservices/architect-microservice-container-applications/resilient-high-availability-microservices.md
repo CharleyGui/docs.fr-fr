@@ -2,12 +2,12 @@
 title: Résilience et haute disponibilité dans les microservices
 description: Les microservices doivent être conçus pour gérer les pannes de dépendances et de réseau temporaires auxquelles ils doivent être résilients pour assurer une haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: 6c110b0fe7a80842f12779494e5b0bdd29c5fb64
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1c0f75a8c68d1f84ba24c550e854edc5372cf7f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834348"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094212"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Résilience et haute disponibilité dans les microservices
 
@@ -31,8 +31,8 @@ Dans la section [Implémentation de vérifications d’intégrité dans les serv
 
 Vous avez aussi la possibilité d’utiliser une excellente bibliothèque open source appelée Beat Pulse, disponible sur [GitHub](https://github.com/Xabaril/BeatPulse) et comme [package NuGet](https://www.nuget.org/packages/BeatPulse/). Cette bibliothèque effectue également des vérifications d’intégrité et gère étonnamment deux types de vérifications :
 
-- **Fonctionnement** : vérifie si le microservice fonctionne, c’est-à-dire s’il est capable d’accepter des requêtes et d’y répondre. 
-- **Préparation** : vérifie si les dépendances du microservice (base de données, services de file d’attente, etc.) sont elles-mêmes prêtes pour que le microservice puisse faire ce qu’il est supposé faire. 
+- **Fonctionnement** : Vérifie si le microservice fonctionne, c’est-à-dire s’il est capable d’accepter des demandes et d’y répondre.
+- **Préparation** : Vérifie si les dépendances du microservice (base de données, services de file d’attente, etc.) sont elles-mêmes prêtes pour que le microservice puisse faire ce qu’il est supposé faire.
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Utilisation des diagnostics et des flux d’événements des journaux
 
@@ -56,7 +56,7 @@ Les différents orchestrateurs peuvent sembler similaires, mais les diagnostics 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **The Twelve-Factor App. XI. Journaux : traiter les journaux sous forme de flux d’événements** \
+- **App. XI à 12 facteurs. Journaux : traiter les journaux comme des flux d’événements** \
   <https://12factor.net/logs>
 
 - Dépôt GitHub **Microsoft Diagnostic EventFlow Library**. \
@@ -68,7 +68,7 @@ Les différents orchestrateurs peuvent sembler similaires, mais les diagnostics 
 - **Connecter des ordinateurs Windows au service Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows>
 
-- **Journalisation sémantique : utilisation du bloc applicatif de journalisation sémantique** \
+- **Journalisation de ce que vous voulez dire : utilisation du bloc d’application de journalisation sémantique** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn440729(v=pandp.60)>
 
 - Site officiel de **Splunk**. \

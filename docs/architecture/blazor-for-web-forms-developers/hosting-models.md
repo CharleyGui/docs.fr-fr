@@ -4,12 +4,12 @@ description: Découvrez les différentes manières d’héberger une application
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 82628976bcb1f1cee3089aa25488396af44d0f1a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 5bf55fa686691acc25508d3d9a6dfaf8aca321ca
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520299"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088053"
 ---
 # <a name="blazor-app-hosting-models"></a>Modèles d’hébergement d’applications éblouissantes
 
@@ -18,13 +18,13 @@ ms.locfileid: "72520299"
 Les applications éblouissantes peuvent être hébergées dans IIS comme ASP.NET Web Forms apps. Les applications éblouissantes peuvent également être hébergées de l’une des manières suivantes :
 
 - Côté client dans le navigateur sur webassembly.
-- Côté serveur dans une application ASP.NET Core. 
+- Côté serveur dans une application ASP.NET Core.
 
 ## <a name="blazor-webassembly-apps"></a>Applications webassembly éblouissantes
 
-Les applications de webassembly éblouissant s’exécutent directement dans le navigateur sur un Runtime .NET basé sur webassembly. Les applications webassembly éblouissantes fonctionnent de la même façon que les infrastructures JavaScript frontales telles que l’angle ou la réaction. Toutefois, au lieu d’écrire du code C#JavaScript, vous écrivez. Le Runtime .NET est téléchargé avec l’application, ainsi que l’assembly d’application et toutes les dépendances requises. Aucun plug-in ou extension de navigateur n’est requis. 
+Les applications de webassembly éblouissant s’exécutent directement dans le navigateur sur un Runtime .NET basé sur webassembly. Les applications webassembly éblouissantes fonctionnent de la même façon que les infrastructures JavaScript frontales telles que l’angle ou la réaction. Toutefois, au lieu d’écrire du code C#JavaScript, vous écrivez. Le Runtime .NET est téléchargé avec l’application, ainsi que l’assembly d’application et toutes les dépendances requises. Aucun plug-in ou extension de navigateur n’est requis.
 
-Les assemblys téléchargés sont des assemblys .NET normaux, comme vous le feriez dans n’importe quelle autre application .NET. Étant donné que le runtime prend en charge .NET Standard, vous pouvez utiliser des bibliothèques de .NET Standard existantes avec votre application de webassembly éblouissant. Toutefois, ces assemblys continuent de s’exécuter dans le bac à sable (sandbox) de sécurité du navigateur. Certaines fonctionnalités peuvent lever une <xref:System.PlatformNotSupportedException>, comme essayer d’accéder au système de fichiers ou d’ouvrir des connexions réseau arbitraires. 
+Les assemblys téléchargés sont des assemblys .NET normaux, comme vous le feriez dans n’importe quelle autre application .NET. Étant donné que le runtime prend en charge .NET Standard, vous pouvez utiliser des bibliothèques de .NET Standard existantes avec votre application de webassembly éblouissant. Toutefois, ces assemblys continuent de s’exécuter dans le bac à sable (sandbox) de sécurité du navigateur. Certaines fonctionnalités peuvent lever une <xref:System.PlatformNotSupportedException>, comme essayer d’accéder au système de fichiers ou d’ouvrir des connexions réseau arbitraires.
 
 Lorsque l’application se charge, le Runtime .NET est démarré et pointe vers l’assembly de l’application. La logique de démarrage de l’application s’exécute et les composants racine sont rendus. Éblouissant calcule les mises à jour de l’interface utilisateur en fonction de la sortie rendue des composants. Les mises à jour du modèle DOM sont ensuite appliquées.
 

@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4fe0c1fa04bbecb64783e070838ab796de4f90d6
-ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
+ms.openlocfilehash: eea72633d3460f51821e8a939b14acff2f17965c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72031839"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093953"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -71,7 +71,7 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 2. Recevez la commande dans un gestionnaire de commandes.
    - Exécutez la transaction d’un seul agrégat.
    - (Facultatif) Déclenchez des événements de domaine pour les effets secondaires (par exemple, OrderStartedDomainEvent).
-3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Exemple :
+3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Exemple :
    - Vérifiez ou créez l’acheteur et la méthode de paiement.
    - Créez et envoyez un événement d’intégration associé au bus d’événements pour propager les états sur les microservices ou déclencher des actions externes, comme l’envoi d’un e-mail à l’acheteur.
    - Gérez les autres effets secondaires.
@@ -145,9 +145,9 @@ L’approche différée est celle utilisée par l’aplication eShopOnContainers
 ```csharp
 public abstract class Entity
 {
-     //... 
+     //...
      private List<INotification> _domainEvents;
-     public List<INotification> DomainEvents => _domainEvents; 
+     public List<INotification> DomainEvents => _domainEvents;
 
      public void AddDomainEvent(INotification eventItem)
      {
@@ -194,7 +194,7 @@ public class OrderingContext : DbContext, IUnitOfWork
         // handlers that are using the same DbContext with Scope lifetime
         // B) Right AFTER committing data (EF SaveChanges) into the DB. This makes
         // multiple transactions. You will need to handle eventual consistency and
-        // compensatory actions in case of failures.        
+        // compensatory actions in case of failures.
         await _mediator.DispatchDomainEventsAsync(this);
 
         // After this line runs, all the changes (from the Command Handler and Domain
@@ -208,7 +208,7 @@ Avec ce code, vous distribuez les événements des entités à leurs gestionnair
 
 Le résultat global est que vous avez découplé le déclenchement d’un événement de domaine (un simple ajout à une liste en mémoire) de sa distribution à un gestionnaire d’événements. En outre, selon le type de répartiteur que vous utilisez, vous pouvez distribuer les événements de façon synchrone ou asynchrone.
 
-N’oubliez pas qu’ici, les limites transactionnelles jouent un rôle important. Si votre unité de travail et votre transaction peuvent s’étendre sur plusieurs agrégats (comme lorsque vous utilisez EF Core et une base de données relationnelle), cela peut bien fonctionner. Cependant, si la transaction ne peut pas s’étendre sur plusieurs agrégats, par exemple quand vous utilisez une base de données NoSQL comme Azure CosmosDB, vous devez implémenter des étapes supplémentaires pour obtenir la cohérence. C’est une des raisons pour lesquelles l’ignorance de la persistance n’est pas universelle. Elle dépend du système de stockage que vous utilisez. 
+N’oubliez pas qu’ici, les limites transactionnelles jouent un rôle important. Si votre unité de travail et votre transaction peuvent s’étendre sur plusieurs agrégats (comme lorsque vous utilisez EF Core et une base de données relationnelle), cela peut bien fonctionner. Cependant, si la transaction ne peut pas s’étendre sur plusieurs agrégats, par exemple quand vous utilisez une base de données NoSQL comme Azure CosmosDB, vous devez implémenter des étapes supplémentaires pour obtenir la cohérence. C’est une des raisons pour lesquelles l’ignorance de la persistance n’est pas universelle. Elle dépend du système de stockage que vous utilisez.
 
 ### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>Méthode de la transaction unique sur plusieurs agrégats versus méthode de la cohérence à terme
 
@@ -216,15 +216,15 @@ Effectuer une même transaction sur plusieurs agrégats ou compter sur la cohér
 
 > Une règle qui s’étend sur plusieurs agrégats ne peut pas être constamment à jour. Grâce au traitement des événements, au traitement par lots et autres mécanismes de mise à jour, les autres dépendances peuvent être résolues dans un temps donné. (page 128)
 
-Vaughn Vernon dit ce qui suit dans [Effective Aggregate Design. Part II: Making Aggregates Work Together](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf) :
+Vaughn Vernon déclare ce qui suit dans la [conception d’agrégats effectifs. Partie 2 : création d’agrégats](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
 
-> Par conséquent, si l’exécution d’une commande sur une instance d’agrégat nécessite que d’autres règles métier soient exécutées sur un ou plusieurs agrégats, utilisez la cohérence à terme \[...\] Il existe un moyen pratique de prendre en charge la cohérence à terme dans un modèle DDD. Une méthode d’agrégation publie un événement de domaine qui est remis à un ou plusieurs abonnés asynchrones.
+> Ainsi, si l’exécution d’une commande sur une instance d’agrégat nécessite que d’autres règles d’entreprise s’exécutent sur un ou plusieurs agrégats, utilisez la cohérence éventuelle \[...\] il existe un moyen pratique de prendre en charge la cohérence éventuelle dans un modèle DDD. Une méthode d’agrégation publie un événement de domaine qui est remis à un ou plusieurs abonnés asynchrones.
 
 Cette logique est basée sur l’exécution de transactions affinées plutôt que de transactions s’étendant sur un grand nombre d’agrégats ou d’entités. L’idée est que, dans le deuxième cas, le nombre de verrous de base de données sera important dans les applications à grande échelle nécessitant une haute scalabilité. Le fait de reconnaître que les applications à haute scalabilité n’ont pas besoin d’une cohérence transactionnelle instantanée entre les différents agrégats aide à accepter le concept de cohérence à terme. Les modifications atomiques ne sont généralement pas nécessaires à l’entreprise, et il revient aux experts en domaines de décider si certaines opérations ont besoin de transactions atomiques. Si une opération nécessite toujours une transaction atomique entre plusieurs agrégats, vous pouvez vous demander si la taille de votre agrégat doit être augmentée ou si vous l’avez conçu correctement.
 
 Toutefois, les autres développeurs et architectes comme Jimmy Bogard sont d’accord pour utiliser une même transaction sur plusieurs agrégats, mais uniquement si les agrégats supplémentaires sont associés à des effets secondaires de la même commande d’origine. Par exemple, dans [A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/), Bogard dit ceci :
 
-> En règle générale, je veux que les effets secondaires d’un événement de domaine se produisent dans la même transaction logique, mais pas nécessairement dans la même étendue de déclenchement de l’événement domaine \[...\] Juste avant de valider notre transaction, nous distribuons nos événements à leurs gestionnaires respectifs.
+> En règle générale, je souhaite que les effets secondaires d’un événement de domaine se produisent dans la même transaction logique, mais pas nécessairement dans la même étendue de déclenchement de l’événement de domaine \[...\] juste avant de valider notre transaction, nous distribuerons nos événements à leur gestionnaires respectifs.
 
 Si vous distribuez les événements de domaine juste *avant* de valider la transaction d’origine, c’est parce que les effets secondaires doivent être inclus dans la même transaction. Par exemple, si la méthode SaveChanges du DbContext EF échoue, la transaction annule toutes les modifications, y compris le résultat de toutes les opérations d’effet secondaire implémentées par les gestionnaires d’événements de domaine associés. Cela est dû au fait que la durée de vie de DbContext est configurée par défaut comme étant limitée. Par conséquent, l’objet DbContext est partagé par plusieurs objets de dépôt qui sont instanciés dans la même étendue ou le même graphe d’objet. Cela coïncide avec l’étendue HttpRequest lors du développement d’API web ou d’applications MVC.
 
@@ -303,7 +303,7 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 
     public async Task Handle(OrderStartedDomainEvent orderStartedEvent)
     {
-        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;        
+        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;
         var userGuid = _identityService.GetUserIdentity();
         var buyer = await _buyerRepository.FindAsync(userGuid);
         bool buyerOriginallyExisted = (buyer == null) ? false : true;
@@ -321,7 +321,7 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
                                        orderStartedEvent.CardExpiration,
                                        orderStartedEvent.Order.Id);
 
-        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) 
+        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer)
                                                                       : _buyerRepository.Add(buyer);
 
         await _buyerRepository.UnitOfWork
@@ -344,37 +344,37 @@ Comme nous l’avons vu, les événements de domaine permettent d’implémenter
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Greg Young. What is a Domain Event?** \
+- **Greg Young. Qu’est-ce qu’un événement de domaine ?** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf#page=25>
 
-- **Jan Stenberg. Domain Events and Eventual Consistency** \
+- **Jan Stenberg. Événements de domaine et cohérence éventuelle** \
   <https://www.infoq.com/news/2015/09/domain-events-consistency>
 
-- **Jimmy Bogard. A better domain events pattern** \
+- **Jimmy bogard. Un meilleur modèle d’événements de domaine** \
   <https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/>
 
-- **Vaughn Vernon. Effective Aggregate Design Part II: Making Aggregates Work Together** \
+- **Vaughn Vernon. Conception d’agrégats efficace, partie II : faire fonctionner ensemble des agrégats** \
   [https://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
-- **Jimmy Bogard. Strengthening your domain: Domain Events** \
+- **Jimmy bogard. Renforcement de votre domaine : événements de domaine** \
   <https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/>
 
-- **Tony Truong. Domain Events Pattern Example** \
+- **Tony Truong. Exemple de modèle d’événements de domaine** \
   <https://www.tonytruong.net/domain-events-pattern-example/>
 
-- **Udi Dahan. How to create fully encapsulated Domain Models** \
+- **UDI Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
-- **Udi Dahan. Domain Events – Take 2** \
+- **UDI Dahan. Événements de domaine : Prenez 2** \
   <http://udidahan.com/2008/08/25/domain-events-take-2/>
 
-- **Udi Dahan. Domain Events – Salvation** \
+- **UDI Dahan. Événements de domaine – Salvation** \
   <http://udidahan.com/2009/06/14/domain-events-salvation/>
 
-- **Jan Kronquist. Don’t publish Domain Events, return them!** \
+- **Jan Kronquist. Ne publiez pas les événements de domaine, renvoyez-les !** \
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>
 
-- **Cesar de la Torre. Domain Events vs. Integration Events in DDD and microservices architectures** \
+- **Cesar de la Torre. Événements de domaine et événements d’intégration dans les architectures de DDD et de microservices** \
   <https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
 
 >[!div class="step-by-step"]
