@@ -2,12 +2,12 @@
 title: Syntaxe des chaînes de connexion
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: 00b8dc4c7592daa200f1a2a6c3c7fa9a3c587087
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9e9e330b7195e5c04b6e9e2d086a04209e1c0e13
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784915"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040156"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe des chaînes de connexion
 Chaque fournisseur de données .NET Framework a un objet `Connection` qui hérite de <xref:System.Data.Common.DbConnection> et d'une propriété <xref:System.Data.Common.DbConnection.ConnectionString%2A> spécifique au fournisseur. La syntaxe de chaîne de connexion spécifique à chaque fournisseur est documentée dans sa propriété `ConnectionString`. Le tableau suivant répertorie les quatre fournisseurs de données inclus dans le .NET Framework.  
@@ -49,12 +49,12 @@ Chaque fournisseur de données .NET Framework a un objet `Connection` qui hérit
 La syntaxe pour une chaîne de connexion <xref:System.Data.SqlClient.SqlConnection> est documentée dans la propriété <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>. La propriété <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> vous permet d'obtenir ou de définir une chaîne de connexion pour une base de données SQL Server. Si vous devez vous connecter à une version antérieure de SQL Server, utilisez le fournisseur de données .NET Framework pour OleDb (<xref:System.Data.OleDb>). La plupart des mots clés de chaîne connexion sont aussi mappés à des propriétés dans le <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.  
 
 > [!IMPORTANT]
-> La valeur par défaut `Persist Security Info` du mot clé est. `false` L'attribution au mot clé de la valeur `true` ou `yes` permet d'obtenir de la connexion des informations sensibles pour la sécurité, par exemple l'ID utilisateur et le mot de passe, une fois la connexion ouverte. Conservez `Persist Security Info` la `false` valeur pour vous assurer qu’une source non approuvée n’a pas accès aux informations de chaîne de connexion sensibles.  
+> Le paramètre par défaut du mot clé `Persist Security Info` est `false`. L'attribution au mot clé de la valeur `true` ou `yes` permet d'obtenir de la connexion des informations sensibles pour la sécurité, par exemple l'ID utilisateur et le mot de passe, une fois la connexion ouverte. Conservez `Persist Security Info` défini sur `false` pour vous assurer qu’une source non approuvée n’a pas accès aux informations de chaîne de connexion sensibles.  
 
 ### <a name="windows-authentication-with-sqlclient"></a>Authentification Windows avec SqlClient 
  Chacune des formes de syntaxe suivantes utilise l’authentification Windows pour se connecter à la base de données **AdventureWorks** sur un serveur local.  
   
-```  
+```csharp  
 "Persist Security Info=False;Integrated Security=true;  
     Initial Catalog=AdventureWorks;Server=MSSQL1"  
 "Persist Security Info=False;Integrated Security=SSPI;  
@@ -66,11 +66,11 @@ La syntaxe pour une chaîne de connexion <xref:System.Data.SqlClient.SqlConnecti
 ### <a name="sql-server-authentication-with-sqlclient"></a>Authentification SQL Server avec SqlClient   
  L'authentification Windows est la solution préférée pour se connecter à SQL Server. Cependant, si l'authentification SQL Server est requise, utilisez la syntaxe suivante pour spécifier un nom d'utilisateur et un mot de passe. Dans cet exemple, des astérisques servent à représenter un nom d'utilisateur et un mot de passe valides.  
   
-```  
+```csharp  
 "Persist Security Info=False;User ID=*****;Password=*****;Initial Catalog=AdventureWorks;Server=MySqlServer"  
 ```  
 
-Lorsque vous vous connectez à Azure SQL Database ou à Azure SQL Data Warehouse et fournissez une connexion au `user@servername`format, assurez- `servername` vous que la valeur de la connexion correspond à `Server=`la valeur fournie pour.
+Lorsque vous vous connectez à Azure SQL Database ou à Azure SQL Data Warehouse et fournissez une connexion au format `user@servername`, assurez-vous que la valeur `servername` de la connexion correspond à la valeur fournie pour `Server=`.
 
 > [!NOTE]
 > L'authentification Windows est prioritaire sur les comptes de connexion SQL Server. Si vous spécifiez Integrated Security=true ainsi qu'un nom d'utilisateur et un mot de passe, ces derniers seront ignorés pour utiliser l'authentification Windows.  
@@ -78,14 +78,14 @@ Lorsque vous vous connectez à Azure SQL Database ou à Azure SQL Data Warehouse
 ### <a name="connect-to-a-named-instance-of-sql-server"></a>Se connecter à une instance nommée de SQL Server
 Pour vous connecter à une instance nommée de SQL Server, utilisez la syntaxe *Server serveur\instance Name* .  
   
+```csharp  
+"Data Source=MySqlServer\MSSQL1;"  
 ```  
-Data Source=MySqlServer\MSSQL1;"  
-```  
- 
+
 Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> du `SqlConnectionStringBuilder` sur le nom d'instance lors de la création d'une chaîne de connexion. La propriété <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> d'un objet <xref:System.Data.SqlClient.SqlConnection> est en lecture seule.  
   
 ### <a name="type-system-version-changes"></a>Modifications de la version de système de type  
- Le `Type System Version` mot clé dans <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> un spécifie la représentation côté client des types de SQL Server. Pour plus d'informations sur le mot clé <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>, consultez `Type System Version`.  
+ Le mot clé `Type System Version` dans un <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> spécifie la représentation côté client des types de SQL Server. Pour plus d'informations sur le mot clé <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>, consultez `Type System Version`.  
   
 ## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Connexion et attachement aux instances utilisateur de SQL Server Express  
  Les instances utilisateur sont une fonctionnalité de SQL Server Express. Elles permettent à un utilisateur qui s'exécute sur un compte Windows local disposant de privilèges minimum de se connecter à une base de données SQL Server et de l'exécuter sans nécessiter de privilèges d'administrateur. Une instance utilisateur s'exécute avec les informations d'identification Windows de l'utilisateur, pas en tant que service.  
@@ -93,10 +93,10 @@ Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlCo
  Pour plus d’informations sur l’utilisation des instances utilisateur, consultez [SQL Server Express des instances utilisateur](./sql/sql-server-express-user-instances.md).  
   
 ## <a name="using-trustservercertificate"></a>Utilisation de TrustServerCertificate  
- Le `TrustServerCertificate` mot clé est valide uniquement lors de la connexion à une instance de SQL Server avec un certificat valide. Lorsque `TrustServerCertificate` a la valeur `true`, la couche de transport fait appel au protocole SSL pour chiffrer le canal et ignore la chaîne du certificat pour valider la confiance.  
+ Le mot clé `TrustServerCertificate` est valide uniquement lors de la connexion à une instance SQL Server avec un certificat valide. Lorsque `TrustServerCertificate` a la valeur `true`, la couche de transport fait appel au protocole SSL pour chiffrer le canal et ignore la chaîne du certificat pour valider la confiance.  
   
-```  
-"TrustServerCertificate=true;"   
+```csharp  
+"TrustServerCertificate=true;"
 ```  
   
 > [!NOTE]
@@ -105,19 +105,19 @@ Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlCo
 ### <a name="enabling-encryption"></a>Activation du chiffrement  
  Pour activer le chiffrement lorsqu’un certificat n’a pas été configuré sur le serveur, les options **forcer le chiffrement du protocole** et **faire confiance au certificat de serveur** doivent être définies dans Gestionnaire de configuration SQL Server. Dans ce cas, le chiffrement fait appel à un certificat de serveur auto-signé sans validation en l’absence de tout certificat vérifiable sur le serveur.  
   
- Les paramètres d'application ne peuvent pas réduire le niveau de la sécurité configurée dans SQL Server, mais peuvent éventuellement la renforcer. Une application peut demander le chiffrement en `TrustServerCertificate` définissant les `true`Mots clés et `Encrypt` sur, garantissant que le chiffrement a lieu, même lorsqu’un certificat de serveur n’a pas été configuré et que le **chiffrement du protocole** n’a pas été appliqué. configuré pour le client. Toutefois, si `TrustServerCertificate` n'est pas activé dans la configuration cliente, un certificat de serveur fourni est toujours nécessaire.  
+ Les paramètres d'application ne peuvent pas réduire le niveau de la sécurité configurée dans SQL Server, mais peuvent éventuellement la renforcer. Une application peut demander le chiffrement en définissant les mots clés `TrustServerCertificate` et `Encrypt` sur `true`, garantissant ainsi que le chiffrement a lieu, même lorsqu’un certificat de serveur n’a pas été configuré et que le **chiffrement du protocole** n’a pas été configuré. pour le client. Toutefois, si `TrustServerCertificate` n'est pas activé dans la configuration cliente, un certificat de serveur fourni est toujours nécessaire.  
   
  Le tableau ci-dessous décrit tous les cas.  
   
 |Paramètre client Forcer le chiffrement du protocole|Paramètre client Faire confiance au certificat de serveur|Attribut/chaîne de connexion Chiffrer/Utiliser le chiffrement pour les données|Attribut/chaîne de connexion Faire confiance au certificat de serveur|Résultat|  
 |----------------------------------------------|---------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|------------|  
 |Non|N/A|Non (valeur par défaut)|Ignoré|Aucun chiffrement ne se produit.|  
-|Non|S.O.|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement en présence d'un certificat de serveur vérifiable, sinon la tentative de connexion échoue.|  
+|Non|N/A|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement en présence d'un certificat de serveur vérifiable, sinon la tentative de connexion échoue.|  
 |Non|N/A|Oui|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
 |Oui|Non|Ignoré|Ignoré|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable ; dans le cas contraire, la tentative de connexion échoue.|  
 |Oui|Oui|Non (valeur par défaut)|Ignoré|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
-|Oui|OUI|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable ; dans le cas contraire, la tentative de connexion échoue.|  
-|Oui|OUI|OUI|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
+|Oui|Oui|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable ; dans le cas contraire, la tentative de connexion échoue.|  
+|Oui|Oui|Oui|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
   
  Pour plus d’informations, consultez [utilisation du chiffrement sans validation](/sql/relational-databases/native-client/features/using-encryption-without-validation).
   
@@ -127,13 +127,13 @@ Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlCo
 ### <a name="oledb-connection-string-syntax"></a>Syntaxe de chaîne de connexion OleDb  
  Vous devez spécifier un nom de fournisseur pour une chaîne de connexion <xref:System.Data.OleDb.OleDbConnection>. La chaîne de connexion suivante se connecte à une base de données Microsoft Access à l'aide du fournisseur Jet. Notez que les mots clés `User ID` et `Password` sont facultatifs si la base de données n'est pas sécurisée (par défaut).  
   
-```   
-Provider=Microsoft.Jet.OLEDB.4.0; Data Source=d:\Northwind.mdb;User ID=Admin;Password=;   
+```csharp
+Provider=Microsoft.Jet.OLEDB.4.0; Data Source=d:\Northwind.mdb;User ID=Admin;Password=;
 ```  
   
  Si la base de données Jet est sécurisée à l'aide d'une sécurité au niveau utilisateur, vous devez fournir l'emplacement du fichier d'informations de groupe de travail (.mdw). Le fichier d'informations de groupe de travail permet de valider les informations d'identification présentées dans la chaîne de connexion.  
   
-```  
+```csharp
 Provider=Microsoft.Jet.OLEDB.4.0;Data Source=d:\Northwind.mdb;Jet OLEDB:System Database=d:\NorthwindSystem.mdw;User ID=*****;Password=*****;  
 ```  
   
@@ -143,7 +143,7 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=d:\Northwind.mdb;Jet OLEDB:System D
 ### <a name="using-datadirectory-to-connect-to-accessjet"></a>Utilisation de DataDirectory pour se connecter à Access/Jet  
  `DataDirectory` n'est pas exclusif à `SqlClient`. Il peut être aussi utilisé avec les fournisseurs de données .NET <xref:System.Data.OleDb> et <xref:System.Data.Odbc>. L’exemple de chaîne <xref:System.Data.OleDb.OleDbConnection> suivant illustre la syntaxe nécessaire pour se connecter au fichier Northwind.mdb situé dans le dossier app_data de l’application. La base de données système (System.mdw) est également stockée à cet emplacement.  
   
-```  
+```csharp  
 "Provider=Microsoft.Jet.OLEDB.4.0;  
 Data Source=|DataDirectory|\Northwind.mdb;  
 Jet OLEDB:System Database=|DataDirectory|\System.mdw;"  
@@ -155,7 +155,7 @@ Jet OLEDB:System Database=|DataDirectory|\System.mdw;"
 ### <a name="connecting-to-excel"></a>Connexion à Excel  
  Le fournisseur Microsoft Jet permet de se connecter à un classeur Excel. Dans la chaîne de connexion suivante, le mot clé `Extended Properties` définit des propriétés spécifiques à Excel. « HDR=Yes; » indique que la première ligne contient des noms de colonne, pas des données, et « IMEX=1; » indique au pilote de toujours lire les colonnes de données « intermixed » comme du texte.  
   
-```  
+```csharp 
 Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\MyExcel.xls;Extended Properties=""Excel 8.0;HDR=Yes;IMEX=1""  
 ```  
   
@@ -164,7 +164,7 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\MyExcel.xls;Extended Properties=
 ### <a name="data-shape-provider-connection-string-syntax"></a>Syntaxe de chaîne de connexion au fournisseur Data Shape  
  Utilisez les mots clés `Provider` et `Data Provider` lorsque vous utilisez le fournisseur Microsoft Data Shape. L'exemple suivant utilise le fournisseur Shape pour se connecter à une instance locale de SQL Server.  
   
-```  
+```csharp  
 "Provider=MSDataShape;Data Provider=SQLOLEDB;Data Source=(local);Initial Catalog=pubs;Integrated Security=SSPI;"   
 ```  
   
@@ -173,14 +173,14 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\MyExcel.xls;Extended Properties=
   
  La chaîne de connexion suivante utilise le pilote Microsoft Text.  
   
-```  
+```csharp  
 Driver={Microsoft Text Driver (*.txt; *.csv)};DBQ=d:\bin  
 ```  
   
 ### <a name="using-datadirectory-to-connect-to-visual-foxpro"></a>Utilisation de DataDirectory pour se connecter à Visual FoxPro  
  L'exemple de chaîne de connexion <xref:System.Data.Odbc.OdbcConnection> suivant illustre l'utilisation de `DataDirectory` pour se connecter à un fichier Microsoft Visual FoxPro.  
   
-```  
+```csharp  
 "Driver={Microsoft Visual FoxPro Driver};  
 SourceDB=|DataDirectory|\MyData.DBC;SourceType=DBC;"  
 ```  
@@ -188,7 +188,7 @@ SourceDB=|DataDirectory|\MyData.DBC;SourceType=DBC;"
 ## <a name="oracle-connection-strings"></a>Chaînes de connexion Oracle  
  La propriété <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> d'un <xref:System.Data.OracleClient.OracleConnection> vous permet d'obtenir ou de définir une chaîne de connexion pour une source de données OLE DB. Les chaînes de connexion Oracle sont également prises en charge par le <xref:System.Data.OracleClient.OracleConnectionStringBuilder>.  
   
-```  
+```csharp 
 Data Source=Oracle9i;User ID=*****;Password=*****;  
 ```  
   
