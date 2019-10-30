@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 130eb4be66d13b43e5605ef98a647fa9f4223014
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 04c8731867e32ce1000a511c9ab36db554664a97
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116090"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038951"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
-Un type défini par l’utilisateur peut surcharger un opérateur C# prédéfini. Autrement dit, un type peut fournir l’implémentation personnalisée d’une opération quand un des opérandes, ou les deux, sont de ce type. La section [Opérateurs surchargeables](#overloadable-operators) indique les opérateurs C# qui peuvent être surchargés.
+Un type défini par l’utilisateur peut surcharger un opérateur C# prédéfini. Autrement dit, un type peut fournir l’implémentation personnalisée d’une opération dans le cas où un ou les deux opérandes sont de ce type. La section [Opérateurs surchargeables](#overloadable-operators) indique les opérateurs C# qui peuvent être surchargés.
 
 Utilisez le mot clé `operator` pour déclarer un opérateur. Une déclaration d’opérateur doit respecter les règles suivantes :
 
 - Elle contient un modificateur `public` et un modificateur `static`.
-- Un opérateur unaire accepte un paramètre. Un opérateur binaire accepte deux paramètres. Dans chaque cas, au moins un paramètre doit avoir le type `T` ou `T?`, où `T` est le type qui contient la déclaration d’opérateur.
+- Un opérateur unaire possède un paramètre d’entrée. Un opérateur binaire a deux paramètres d’entrée. Dans chaque cas, au moins un paramètre doit avoir le type `T` ou `T?`, où `T` est le type qui contient la déclaration d’opérateur.
 
 L’exemple suivant définit une structure simplifiée pour représenter un nombre rationnel. La structure surcharge certains des [opérateurs arithmétiques](arithmetic-operators.md) :
 
 [!code-csharp[fraction example](~/samples/csharp/language-reference/operators/OperatorOverloading.cs)]
 
-Vous pouvez étendre l’exemple précédent en définissant une conversion implicite en passant de `int` à `Fraction`. Les opérateurs surchargés devraient alors prendre en charge les arguments de ces deux types. Autrement dit, il deviendrait possible d’ajouter un entier à une fraction et d’obtenir une fraction en conséquence.
+Vous pouvez étendre l’exemple précédent en [définissant une conversion implicite](user-defined-conversion-operators.md) de `int` en `Fraction`. Les opérateurs surchargés devraient alors prendre en charge les arguments de ces deux types. Autrement dit, il deviendrait possible d’ajouter un entier à une fraction et d’obtenir une fraction en conséquence.
 
 Vous utilisez également le mot clé `operator` pour définir une conversion de type personnalisée. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).
 
