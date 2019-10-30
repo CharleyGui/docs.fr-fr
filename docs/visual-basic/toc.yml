@@ -961,10 +961,10 @@
           href: language-reference/error-messages/bad-file-name-or-number.md
         - name: Longueur d'enregistrement incorrecte
           href: language-reference/error-messages/bad-record-length.md
-        - name: 'Dans la mesure où cet appel n''est pas attendu, la méthode actuelle continue de s''exécuter avant la fin de l''appel.'
-          href: language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md
-        - name: 'Impossible de convertir le type anonyme en arborescence de l''expression, car elle contient un champ qui sert à initialiser un autre champ'
-          href: language-reference/error-messages/cannot-convert-anonymous-type-to-expression-tree.md
+        - name: 'Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continue avant la fin de l’appel'
+          href: language-reference/error-messages/bc42358.md
+        - name: 'Impossible de convertir le type anonyme en arborescence de l''expression, car une propriété de ce type sert à initialiser une autre propriété'
+          href: language-reference/error-messages/bc36548.md
         - name: Impossible de créer le composant ActiveX
           href: language-reference/error-messages/cannot-create-activex-component.md
         - name: 'Impossible de faire référence à ''<name>'', car il est membre du champ de valeurs ''<name>'' de la classe ''<classname>'', qui a ''System.MarshalByRefObject'' comme classe de base'

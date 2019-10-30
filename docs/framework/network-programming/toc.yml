@@ -145,7 +145,7 @@
               href: how-to-set-a-location-based-cache-policy-for-an-application.md
             - name: "Procédure\_: définir la stratégie de cache basée sur la durée par défaut pour une application"
               href: how-to-set-the-default-time-based-cache-policy-for-an-application.md
-            - name: "Procédure\_: personnaliser une stratégie de cache basée sur la durée"
+            - name: "Guide pratique\_: personnaliser une stratégie de cache basée sur la durée"
               href: how-to-customize-a-time-based-cache-policy.md
             - name: "Procédure\_: définir une stratégie de cache pour une demande"
               href: how-to-set-cache-policy-for-a-request.md
