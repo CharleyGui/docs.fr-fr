@@ -30,6 +30,8 @@
         - name: Suggérer des films (factorisation de matrice)
           href: tutorials/movie-recommendation.md
         - name: Classification d’images (apprentissage par transfert)
+          href: tutorials/image-classification-api-transfer-learning.md
+        - name: Classifier des images (composition de modèles)
           href: tutorials/image-classification.md
         - name: Analyse des ventes de produits (détection d’anomalie)
           href: tutorials/sales-anomaly-detection.md
@@ -93,6 +95,8 @@
               href: how-to-guides/serve-model-web-api-ml-net.md
     - name: Outils
       items:
+        - name: Charger des données dans le générateur d’images
+          href: how-to-guides/load-data-model-builder.md
         - name: Installer le Générateur de modèles
           href: how-to-guides/install-model-builder.md
         - name: Installer CLI
