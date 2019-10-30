@@ -2,12 +2,12 @@
 title: Mapper les relations spécifiées pour les éléments imbriqués
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
-ms.openlocfilehash: e8cdf73b6277abdaab1256ca87e615a5e25e7336
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 138fbbc3ccaa90096a15fa87544e5c29f66beb08
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786089"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040061"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>Mapper les relations spécifiées pour les éléments imbriqués
 Un schéma peut inclure une annotation **msdata : Relationship** pour spécifier explicitement le mappage entre deux éléments quelconques dans le schéma. Les deux éléments spécifiés dans **msdata : Relationship** peuvent être imbriqués dans le schéma, mais n’ont pas besoin d’être. Le processus de mappage utilise l' **Annotation msdata : Relationship** dans le schéma pour générer la relation clé primaire/clé étrangère entre les deux colonnes.  
@@ -56,14 +56,14 @@ Un schéma peut inclure une annotation **msdata : Relationship** pour spécifie
   
 - Une **commande Order** et une table **OrderDetail** .  
   
-    ```  
+    ```text  
     Order(OrderNumber, EmpNumber)  
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
 - Relation entre les tables **Order** et **OrderDetail** . La propriété **Nested** de cette relation a la valeur **true** , car les éléments **Order** et **OrderDetail** sont imbriqués dans le schéma.  
   
-    ```  
+    ```text  
     ParentTable: Order  
     ParentColumns: OrderNumber   
     ChildTable: OrderDetail  

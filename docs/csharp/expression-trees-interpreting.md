@@ -2,13 +2,14 @@
 title: Interprétation des expressions
 description: Découvrez comment écrire du code pour analyser la structure d’une arborescence d’expressions.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: c9d80ca234e298df2f2e7ce48fbf92cb817fc8a7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 34434a633d866b82da3da713aaecc218c7d35124
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925687"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036908"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 

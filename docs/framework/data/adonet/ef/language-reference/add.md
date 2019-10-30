@@ -2,19 +2,19 @@
 title: + (ajouter)
 ms.date: 03/30/2017
 ms.assetid: 51769b02-a8f7-4177-9e99-bbd10e77092c
-ms.openlocfilehash: 8c9a6b2c8168e4677c37cfdb0b401a93ee0040cf
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 62bb4782f135309eed8efa7e182fd8b75f92e126
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251372"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040294"
 ---
 # <a name="-add"></a>+ (Ajouter)
 Additionne deux nombres.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 expression + expression  
 ```  
   
@@ -31,7 +31,7 @@ expression + expression
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur arithmétique + pour additionner deux nombres. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

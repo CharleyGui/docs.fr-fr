@@ -2,13 +2,14 @@
 title: Critères spéciaux - Guide C#
 description: En savoir plus sur les expressions de critères spéciaux en langage C#
 ms.date: 04/10/2019
+ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 5ace3c4552184b848b90dee3516d549ca8fd5806
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: ff84ddd4f07fb77dc9fe648a495a441ed8f9198b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61652024"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039364"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -36,7 +37,7 @@ Avant C# 7.0, vous deviez tester chaque type dans une série d’instructions `
 
 [!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
-Le code ci-dessus est une expression classique du *modèle de type* : vous testez une variable pour déterminer son type et effectuez une certaine action en fonction de ce type.
+Le code ci-dessus est une expression standard du *modèle de type* : vous testez une variable pour déterminer son type et vous effectuez une action différente en fonction de ce type.
 
 Vous pouvez simplifier ce code en ajoutant des extensions à l’expression `is` pour assigner une variable si le test réussit :
 
@@ -46,7 +47,7 @@ Dans cette version mise à jour, l’expression `is` teste la variable et l’as
 
 Les règles de langage des expressions de critères spéciaux vous aident à éviter une utilisation incorrecte des résultats d’une expression de correspondance. Dans l’exemple ci-dessus, les variables `s`, `c` et `r` sont uniquement dans la portée et assignées de manière définitive quand les expressions de critères spéciaux respectives retournent le résultat `true`. Si vous essayez d’utiliser l’une de ces variables à un autre emplacement, votre code génère des erreurs de compilateur.
 
-Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que les variables déclarées dans l’instruction `if` sont dans la même portée que l’instruction `if` (la méthode, dans le cas présent). Ce comportement n’est pas propre aux critères spéciaux. C’est le comportement défini pour les portées de variables et pour les instructions `if` et `else`.
+Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeAreaModernIs`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que les variables déclarées dans l’instruction `if` se trouvent dans la même portée que l’instruction `if` (dans ce cas, la méthode). Ce comportement n’est pas spécifique aux critères spéciaux, mais il s’agit du comportement défini pour les étendues de variables et les instructions `if` et `else`.
 
 Les variables `c` et `s` sont assignées quand les instructions `if` respectives ont la valeur true, selon la règle d’assignation définitive quand le résultat est true.
 
@@ -111,7 +112,7 @@ Le comportement spécial du modèle `null` est intéressant, car sa constante `n
 
 L’introduction de `var` comme l’une des expressions de correspondance fournit de nouvelles règles pour les critères spéciaux.
 
-La première règle est que la déclaration `var` doit suivre les règles d’inférence de type normales : le type est considéré comme le type statique de l’expression switch. Avec cette règle, il y a toujours correspondance du type.
+La première règle est que la déclaration `var` suit les règles standard d’inférence de type, à savoir que le type est supposé être le type statique de l’expression switch. Avec cette règle, il y a toujours correspondance du type.
 
 La deuxième règle est qu’une déclaration `var` n’a pas le contrôle de valeur Null que comportent d’autres expressions de modèle de type. La variable peut donc être Null, et une vérification de valeur Null est alors nécessaire.
 

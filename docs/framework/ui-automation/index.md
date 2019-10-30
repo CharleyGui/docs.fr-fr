@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - UI Automation
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
-ms.openlocfilehash: 667f0ded506305f3d7eb1ac5c43d3f65aab2cca9
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: cdcffef1699efb03258de0f29a51bebd2fc15461
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043039"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039477"
 ---
 # <a name="accessibility"></a>Accessibilité
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] est la nouvelle infrastructure d’accessibilité pour [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. Elle répond aux besoins des produits de technologie d’assistance et des frameworks de tests automatisés en fournissant un accès par programmation aux informations sur l’[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. En outre, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] permet aux développeurs de contrôles et d’applications de rendre leurs produits accessibles.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] est la nouvelle infrastructure d’accessibilité pour Microsoft Windows. Elle répond aux besoins des produits de technologie d’assistance et des frameworks de tests automatisés en fournissant un accès par programmation aux informations sur l’[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. En outre, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] permet aux développeurs de contrôles et d’applications de rendre leurs produits accessibles.  
   
- Cette documentation décrit l' [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] API pour le code managé. Pour plus d’informations sur la programmation de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en C++, consultez [UI Automation pour les applications Win32](/windows/desktop/winauto/windows-automation-api-portal).  
+ Cette documentation décrit l’API [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour le code managé. Pour plus d’informations sur la programmation de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en C++, consultez [UI Automation pour les applications Win32](/windows/desktop/winauto/windows-automation-api-portal).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Bonnes pratiques en matière d’accessibilité](accessibility-best-practices.md)  

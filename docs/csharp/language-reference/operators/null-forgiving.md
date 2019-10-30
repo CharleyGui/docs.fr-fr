@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 865e55a28e2f3db85d50a81f6ab29c354ee3c62a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 21bbf8e1253641317750b911e052ee5ff0a0d063
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319093"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036170"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-indulgent avec), opérateurC# (référence)
 
-Disponible dans C# 8,0 et versions ultérieures, l’opérateur postfix unaire `!` est l’opérateur null-indulgent avec. Dans un [contexte d’annotation Nullable](../../nullable-references.md#nullable-annotation-context)activé, vous utilisez l’opérateur null-indulgent avec pour déclarer que l’expression `x` d’un type référence n’est pas null : `x!`. Le préfixe unaire @no__t opérateur-0 est l' [opérateur de négation logique](boolean-logical-operators.md#logical-negation-operator-).
+Disponible dans C# 8,0 et versions ultérieures, l’opérateur postfix unaire `!` est l’opérateur null-indulgent avec. Dans un [contexte d’annotation Nullable](../../nullable-references.md#nullable-annotation-context)activé, vous utilisez l’opérateur null-indulgent avec pour déclarer que l’expression `x` d’un type référence n’est pas `null`: `x!`. Le préfixe unaire `!` opérateur est l' [opérateur de négation logique](boolean-logical-operators.md#logical-negation-operator-).
 
 L’opérateur null-indulgent avec n’a aucun effet au moment de l’exécution. Elle affecte uniquement l’analyse du déroulement statique du compilateur en modifiant l’État null de l’expression. Au moment de l’exécution, l’expression `x!` correspond au résultat de l’expression sous-jacente `x`.
 
@@ -31,7 +31,7 @@ L’un des cas d’usage de l’opérateur null-indulgent avec consiste à teste
 
 [!code-csharp[Person test](~/samples/csharp/language-reference/operators/NullForgivingOperator.cs#TestPerson)]
 
-Sans l’opérateur null-indulgent avec, le compilateur génère l’avertissement suivant pour le code précédent : `Warning CS8625: Cannot convert null literal to non-nullable reference type`. Avec l’utilisation de l’opérateur null-indulgent avec, vous laissez le compilateur savoir que le passage de `null` est attendu et ne doit pas être averti de.
+Sans l’opérateur null-indulgent avec, le compilateur génère l’avertissement suivant pour le code précédent : `Warning CS8625: Cannot convert null literal to non-nullable reference type`. En utilisant l’opérateur null-indulgent avec, vous informez le compilateur qui passe `null` est attendu et ne doit pas être averti de.
 
 Vous pouvez également utiliser l’opérateur null-indulgent avec lorsque vous savez absolument qu’une expression ne peut pas être `null`, mais que le compilateur ne gère pas. Dans l’exemple suivant, si la méthode `IsValid` retourne `true`, son argument n’est pas `null` et vous pouvez le déréférencer en toute sécurité :
 
@@ -39,11 +39,11 @@ Vous pouvez également utiliser l’opérateur null-indulgent avec lorsque vous 
 
 Sans l’opérateur null-indulgent avec, le compilateur génère l’avertissement suivant pour le code `p.Name` : `Warning CS8602: Dereference of a possibly null reference`.
 
-Si vous pouvez modifier la méthode `IsValid`, vous pouvez utiliser l’attribut [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute) pour informer le compilateur qu’un argument de la méthode `IsValid` ne peut pas être `null` lorsque la méthode retourne `true` :
+Si vous pouvez modifier la méthode `IsValid`, vous pouvez utiliser l’attribut [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute) pour indiquer au compilateur qu’un argument de la méthode `IsValid` ne peut pas être `null` lorsque la méthode retourne `true`:
 
 [!code-csharp[Use an attribute](~/samples/csharp/language-reference/operators/NullForgivingOperator.cs#UseAttribute)]
 
-Dans l’exemple précédent, vous n’avez pas besoin d’utiliser l’opérateur null-indulgent avec, car le compilateur dispose de suffisamment d’informations pour déterminer que `p` ne peut pas être `null` à l’intérieur de l’instruction `if`. Pour plus d’informations sur les attributs qui vous permettent de spécifier des informations supplémentaires sur l’État null d’une variable, consultez [mettre à niveau les API avec des attributs pour définir des attentes null](../../nullable-attributes.md).
+Dans l’exemple précédent, vous n’avez pas besoin d’utiliser l’opérateur null-indulgent avec, car le compilateur dispose de suffisamment d’informations pour déterminer que `p` ne peut pas être `null` à l’intérieur de l’instruction `if`. Pour plus d’informations sur les attributs qui vous permettent de fournir des informations supplémentaires sur l’État null d’une variable, consultez [mettre à niveau les API avec des attributs pour définir des attentes null](../../nullable-attributes.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

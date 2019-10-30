@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 830aef8546191df3df4a70e350ba561367a9e474
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
-ms.translationtype: HT
+ms.openlocfilehash: 9851fcd056eeee33b8f3d7e9d541f9fa43b36d29
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512354"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036152"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -48,7 +48,7 @@ L’opérateur unaire `&` retourne l’adresse de son opérande :
 
 [!code-csharp[address of local](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
 
-L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable déplaçable en la fixant (ou en l’épinglant) à l’aide de l’instruction [fixed](../keywords/fixed-statement.md). L’adresse obtenue est valide uniquement pendant la durée du bloc d’instructions `fixed`. L’exemple suivant montre comment utiliser l’instruction `fixed` et l’opérateur `&` :
+L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable déplaçable si vous « corrigez », ou « épinglez », avec une [instruction`fixed`](../keywords/fixed-statement.md). L’adresse obtenue est valide uniquement à l’intérieur du bloc d’une instruction `fixed`. L’exemple suivant montre comment utiliser une instruction `fixed` et l’opérateur `&` :
 
 [!code-csharp[address of fixed](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
 
@@ -70,7 +70,7 @@ L’opérateur binaire `*` calcule le [produit](arithmetic-operators.md#multipli
 
 ## <a name="pointer-member-access-operator--"></a>Opérateur d’accès aux membres de pointeur ->
 
-L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-operator-). C’est-à-dire que si `x` est un pointeur de type `T*` et `y` un membre accessible de `T`, une expression au format
+L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-operator-). Autrement dit, si `x` est un pointeur de type `T*` et `y` est un membre accessible de type `T`, une expression de la forme
 
 ```csharp
 x->y
@@ -154,7 +154,7 @@ Vous pouvez utiliser les opérateurs `==`, `!=`, `<`, `>`, `<=` et `>=` pour com
 
 Pour plus d’informations sur le comportement de ces opérateurs pour les opérandes d’autres types, consultez les articles [Opérateurs d’égalité](equality-operators.md) et [Opérateurs de comparaison](comparison-operators.md).
 
-## <a name="operator-precedence"></a>Précédence des opérateurs
+## <a name="operator-precedence"></a>Priorité des opérateurs
 
 La liste suivante présente les opérateurs relatifs aux pointeurs par ordre de précédence, de la plus élevée à la plus basse :
 
@@ -166,7 +166,7 @@ La liste suivante présente les opérateurs relatifs aux pointeurs par ordre de 
 
 Utilisez des parenthèses (`()`) pour modifier l’ordre d’évaluation imposé par la précédence des opérateurs.
 
-Pour obtenir la liste complète des opérateurs C# classés par niveau de priorité, consultez [Opérateurs C#](index.md).
+Pour obtenir la liste complète C# des opérateurs classés par niveau de priorité, consultez la section priorité d' [ C# ](index.md) [opérateur](index.md#operator-precedence) de l’article opérateurs.
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

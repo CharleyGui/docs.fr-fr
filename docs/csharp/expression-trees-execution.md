@@ -2,13 +2,14 @@
 title: Exécution d’arborescences d’expressions
 description: En savoir plus sur l’exécution des arborescences d’expressions en les convertissant en instructions de langage intermédiaire exécutables.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: f6dca5a3965924e8eb6e1c04fe7ffc3c78c7df93
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: HT
+ms.openlocfilehash: 9af4b346962cb743daddf774e8b3c1f8fa722ae4
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201844"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037110"
 ---
 # <a name="executing-expression-trees"></a>Exécution d’arborescences d’expressions
 
@@ -19,7 +20,7 @@ Il ne s’agit pas de code compilé et exécutable. Si vous souhaitez exécuter 
 
 ## <a name="lambda-expressions-to-functions"></a>Des expressions lambda aux fonctions
 
-Vous pouvez convertir n’importe quelle LambdaExpression ou n’importe quel type dérivé de LambdaExpression en langage intermédiaire exécutable. Les autres types d’expressions ne peuvent pas être convertis directement en code. Cette restriction a peu d’effet dans la pratique. Les expressions lambda sont les seuls types d’expressions que vous pourriez souhaiter exécuter par l’intermédiaire d’une conversion en langage intermédiaire exécutable. (Pensez à ce que cela signifierait d’exécuter directement une `ConstantExpression`. Serait-ce utile ?) Toute arborescence d’expressions qui est une `LambdaExpression` ou un type dérivé de `LambdaExpression` peut être convertie en langage intermédiaire.
+Vous pouvez convertir n’importe quelle LambdaExpression ou n’importe quel type dérivé de LambdaExpression en langage intermédiaire exécutable. Les autres types d’expressions ne peuvent pas être convertis directement en code. Cette restriction a peu d’effet dans la pratique. Les expressions lambda sont les seuls types d’expressions que vous pourriez souhaiter exécuter par l’intermédiaire d’une conversion en langage intermédiaire exécutable. (Pensez à ce que cela signifierait d’exécuter directement une `ConstantExpression`. Cela signifie-t-il quelque chose d’utile ?) Toute arborescence d’expressions qui est un `LambdaExpression`ou un type dérivé de `LambdaExpression` peut être converti en IL.
 Le type d’expression `Expression<TDelegate>` est le seul exemple concret dans les bibliothèques .NET Core. Il sert à représenter une expression mappée à un type délégué quelconque. Ce type étant mappé à un type délégué, .NET peut examiner l’expression et générer le langage intermédiaire pour un délégué approprié qui correspond à la signature de l’expression lambda. 
 
 Dans la plupart des cas, cela crée un mappage simple entre une expression et son délégué correspondant. Par exemple, une arborescence d’expressions représentée par `Expression<Func<int>>` serait convertie en un délégué du type `Func<int>`. Pour une expression lambda avec tout type de retour et liste d’arguments, il existe un type délégué qui est le type cible pour le code exécutable représenté par cette expression lambda.

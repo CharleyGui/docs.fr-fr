@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 7d69528804cf0cee1302fd62fa2301e06076897a
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 78233b9a18f4369ebb086f2016af3f945b6a654a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579202"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039015"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -57,7 +57,7 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | [x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | OR conditionnel |
 | [x ?? y](null-coalescing-operator.md) | Opérateur de fusion de Null |
 | [c ? t : f](conditional-operator.md) | Opérateur conditionnel |
-| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), x [% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x ?? = y](null-coalescing-operator.md), [4](lambda-operator.md) | Affectation et déclaration lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), x [% = y](arithmetic-operators.md#compound-assignment), [x & = y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x < < = y](bitwise-and-shift-operators.md#compound-assignment), [x > > = y](bitwise-and-shift-operators.md#compound-assignment), [x ?? = y](null-coalescing-operator.md), [=>](lambda-operator.md) | Affectation et déclaration lambda |
 
 ## <a name="operator-associativity"></a>Associativité des opérateurs
 
@@ -85,7 +85,7 @@ Sans rapport avec la priorité et l’associativité des opérateurs, les opéra
 |`a / b + c * d`|a, b, /, c, d, *, +|
 |`a / (b + c) * d`|a, b, c, +, /, d, *|
 
-En règle générale, tous les opérandes d’opérateur sont évalués. Certains opérateurs évaluent les opérandes de manière conditionnelle. Autrement dit, la valeur du premier opérande d’un opérateur définit si d’autres (ou quels autres) opérandes doivent être évalués. Ces opérateurs sont les opérateurs logiques [et (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) et [or (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) conditionnels, les [opérateurs de fusion Null `??` et `??=`](null-coalescing-operator.md), les [opérateurs conditionnels null `?.` et `?[]`](member-access-operators.md#null-conditional-operators--and-), et le [ 1 d’opérateur conditionnel](conditional-operator.md). Reportez-vous à la description de chaque opérateur pour plus de détails.
+En règle générale, tous les opérandes d’opérateur sont évalués. Toutefois, certains opérateurs évaluent les opérandes de manière conditionnelle. Autrement dit, la valeur de l’opérande le plus à gauche d’un opérateur de ce type définit si les autres opérandes doivent être évalués. Ces opérateurs sont les opérateurs logiques [et (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) et [or (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) conditionnels, les [opérateurs de fusion Null `??` et `??=`](null-coalescing-operator.md), les [opérateurs conditionnels null `?.` et `?[]`](member-access-operators.md#null-conditional-operators--and-), et le [ `?:`d’opérateur conditionnel ](conditional-operator.md). Pour plus d’informations, consultez la description de chaque opérateur.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

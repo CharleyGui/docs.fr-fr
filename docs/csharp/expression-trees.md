@@ -2,17 +2,18 @@
 title: Arborescences de l’expression
 description: En savoir plus sur les arborescences d’expressions dans .NET Core et comment les utiliser pour représenter le code en tant que structures que vous pouvez examiner, modifier et exécuter.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: db6e23d1ad0014a7dbb58a0cd473e67d6bd9acc0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: b7d039ea4585953473dc88cebcc516ea240cdc3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096613"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036324"
 ---
 # <a name="expression-trees"></a>Arborescences de l’expression
 
-Si vous avez déjà utilisé LINQ, vous connaissez une bibliothèque enrichie où les types `Func` font partie de l’ensemble d’API. (Si vous ne connaissez pas LINQ, nous vous conseillons de lire le [tutoriel LINQ](linq/index.md) et l’article sur les [expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) avant celui-ci.) Les *arborescences d’expressions* fournissent une interaction plus complète avec les arguments qui sont des fonctions.
+Si vous avez déjà utilisé LINQ, vous connaissez une bibliothèque enrichie où les types `Func` font partie de l’ensemble d’API. (Si vous n’êtes pas familiarisé avec LINQ, vous souhaiterez probablement lire [le didacticiel LINQ](linq/index.md) et l’article sur les [expressions lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) avant celui-ci.) Les *arborescences d’expressions* fournissent une interaction plus riche avec les arguments qui sont des fonctions.
 
 Vous écrivez des arguments de fonction, généralement à l’aide d’expressions lambda, quand vous créez des requêtes LINQ. Dans une requête LINQ classique, ces arguments de fonction sont transformés en un délégué créé par le compilateur. 
 

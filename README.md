@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 246dbeed69fbd54c2c52bce2414363ddc9c62204
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: d384aa2daea17581402dc45dc3104a0d97f77f3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658442"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035451"
 ---
 # <a name="net-docs"></a>Documentation de .NET
 
@@ -16,7 +16,9 @@ Ce référentiel contient la documentation conceptuelle de .NET. Le [site de la 
 
 Les problèmes et les tâches pour tout, sauf le dépôt de référence des API, sont suivis ici. Nous avons une grande communauté qui utilise ces ressources. Nous nous efforçons de répondre aux problèmes dans les meilleurs délais. Vous pouvez en savoir plus sur nos procédures de classification et de résolution des problèmes dans notre rubrique [Politique des problèmes](issues-policy.md).
 
-Nous portons un grand intérêt aux contributions qui nous aident à améliorer et à compléter la documentation de .NET. Pour contribuer, consultez les [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) et partagez vos idées. Le [Guide de contribution](CONTRIBUTING.md) contient des instructions sur les procédures que nous utilisons. Vous pouvez aussi consulter la [liste des problèmes](https://github.com/dotnet/docs/issues) pour les tâches qui vous intéressent. 
+Nous accueillons les contributions pour nous aider à améliorer et à compléter les documents .NET. Il s’agit d’une très grande référentiel, couvrant une vaste zone. S’il s’agit de votre première visite, consultez notre feuille de [route étiquettes et projets](styleguide/labels-projects.md) pour obtenir de l’aide sur la navigation dans les problèmes et les projets de ce référentiel.
+
+Pour contribuer, consultez les [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) et partagez vos idées. Le [Guide de contribution](CONTRIBUTING.md) contient des instructions sur les procédures que nous utilisons. 
 
 Si vous souhaitez aider à migrer le code existant qui cible le .NET Framework à partir de la [Galerie de code](https://code.msdn.microsoft.com) vers les applications .NET Core stockées dans notre [dépôt d’exemples](https://github.com/dotnet/samples) et les éléments téléchargeables à partir du [navigateur d’exemples](https://docs.microsoft.com/samples/browse), consultez le projet [Code Gallery migration](https://github.com/dotnet/docs/projects/88). 
 

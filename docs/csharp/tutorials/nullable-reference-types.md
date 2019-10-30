@@ -2,13 +2,14 @@
 title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
+ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: e58f2bac23fabf734df93aa2a643106f1c1bd5f3
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 3ee5e50cf889dd0e02bf58f1e3471fc709b729cd
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291391"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039714"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -23,7 +24,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - écrire du code permettant au compilateur d’appliquer ces décisions de conception ;
 > - utiliser la fonctionnalité de référence Nullable dans vos propres conceptions.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible avec [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou [.net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
@@ -37,7 +38,7 @@ Le code que vous allez écrire pour cet exemple exprime cette intention, que le 
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Créer l’application et activer les types référence Nullable
 
-Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois que vous avez créé l’application, vous devez spécifier que l’intégralité du projet compile dans un contexte d' **annotation Nullable**activé. Ouvrez le fichier *. csproj* et ajoutez un élément `Nullable` à l’élément `PropertyGroup`. Affectez-lui la valeur `enable`. Vous devez opter pour la fonctionnalité des **types de référence Nullable** , C# même dans les projets 8,0. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision permette de détecter les problèmes dans lesquels le code existant peut ne pas avoir de contrôles nuls corrects, il risque de ne pas refléter précisément votre intention de conception d’origine :
+Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois que vous avez créé l’application, vous devez spécifier que l’intégralité du projet compile dans un contexte d' **annotation Nullable**activé. Ouvrez le fichier *. csproj* et ajoutez un élément `Nullable` à l’élément `PropertyGroup`. Définissez sa valeur sur `enable`. Vous devez opter pour la fonctionnalité des **types de référence Nullable** , C# même dans les projets 8,0. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision permette de détecter les problèmes dans lesquels le code existant peut ne pas avoir de contrôles nuls corrects, il risque de ne pas refléter précisément votre intention de conception d’origine :
 
 ```xml
 <Nullable>enable</Nullable>
@@ -57,12 +58,12 @@ Ces types utilisent des types référence Nullable et non Nullable pour indiquer
 - Les personnes interrogées ne peuvent jamais être Null. Vous souhaitez faire un suivi des personnes que vous avez contactées, même de celles qui ont refusé de participer.
 - La réponse à une question peut être Null. Les personnes interrogées peuvent refuser de répondre à certaines questions ou à la totalité d’entre elles.
 
-Si vous avez programmé dans C#, vous serez peut-être habitué à référencer des types qui autorisent des valeurs `null` que vous pourriez avoir manqué d’autres possibilités pour déclarer des instances non Nullable :
+Si vous avez programmé dans C#, vous serez peut-être habitué à référencer des types qui autorisent des valeurs de`null`que vous avez peut-être oublié d’autres possibilités de déclarer des instances non Nullable :
 
 - La collection de questions doit être non Nullable.
 - La collection de personnes interrogées doit être non Nullable.
 
-À mesure que vous écrivez le code, vous verrez qu’un type de référence qui n’accepte pas les valeurs NULL comme valeur par défaut pour les références évite les erreurs courantes qui pourraient aboutir à <xref:System.NullReferenceException>. L’une des leçons de ce didacticiel est que vous avez pris des décisions concernant les variables qui pouvaient ou ne pouvaient pas être `null`. Avant, le langage ne fournissait pas de syntaxe permettant d’exprimer ces décisions ; maintenant, si.
+À mesure que vous écrivez le code, vous verrez qu’un type de référence qui n’accepte pas les valeurs NULL comme valeur par défaut pour les références évite les erreurs courantes susceptibles d’aboutir à <xref:System.NullReferenceException>s. L’une des leçons de ce didacticiel est que vous avez pris des décisions concernant les variables qui pouvaient ou non être `null`. Avant, le langage ne fournissait pas de syntaxe permettant d’exprimer ces décisions ; maintenant, si.
 
 L’application que vous allez générer effectue les étapes suivantes :
 
@@ -175,7 +176,7 @@ Ajoutez le code suivant à la classe `SurveyResponse` :
 
 [!code-csharp[AnswerSurvey](~/samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#AnswerSurvey)]
 
-Les réponses à l’enquête sont stockées dans un `Dictionary<int, string>?`, qui peut donc être Null. Vous utilisez la nouvelle fonctionnalité du langage pour déclarer votre intention de conception, à la fois au compilateur et à toute personne qui lira votre code. Si vous déréférencez `surveyResponses` sans vérifier la valeur de `null` en premier, vous obtenez un avertissement du compilateur. La méthode `AnswerSurvey` ne génère pas d’avertissement, car le compilateur peut déterminer que la variable `surveyResponses` a été définie avant sur une valeur non Null.
+Les réponses à l’enquête sont stockées dans un `Dictionary<int, string>?`, qui peut donc être Null. Vous utilisez la nouvelle fonctionnalité du langage pour déclarer votre intention de conception, à la fois au compilateur et à toute personne qui lira votre code. Si vous déréférencez `surveyResponses` sans vérifier la valeur `null` en premier, vous obtenez un avertissement du compilateur. La méthode `AnswerSurvey` ne génère pas d’avertissement, car le compilateur peut déterminer que la variable `surveyResponses` a été définie avant sur une valeur non Null.
 
 L’utilisation de `null` pour les réponses manquantes met en évidence un point important pour travailler avec les types référence nullable : votre objectif n’est pas de supprimer toutes les valeurs `null` à partir de votre programme. Au lieu de cela, votre objectif est de vous assurer que le code que vous écrivez exprime l’intention de votre conception. Les valeurs manquantes sont un concept nécessaire à exprimer dans votre code. La valeur `null` est une méthode évidente pour exprimer les valeurs manquantes. Essayer de supprimer toutes les valeurs `null` mène uniquement à la définition d’une autre façon d’exprimer ces valeurs manquantes sans `null`.
 
@@ -195,7 +196,7 @@ La dernière étape consiste à afficher les résultats de l’enquête, ce qui 
 
 [!code-csharp[ReportResponses](~/samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#SurveyStatus)]
 
-Étant donné que `surveyResponses` est un type de référence Nullable, les vérifications de valeur NULL sont nécessaires avant de le déréférencer. La méthode `Answer` retourne une chaîne qui n’accepte pas les valeurs NULL. nous devons donc aborder le cas d’une réponse manquante à l’aide de l’opérateur de fusion Null.
+Étant donné que `surveyResponses` est un type référence Nullable, les vérifications de valeur NULL sont nécessaires avant de le déréférencer. La méthode `Answer` retourne une chaîne qui n’accepte pas les valeurs NULL. nous devons donc aborder le cas d’une réponse manquante à l’aide de l’opérateur de fusion Null.
 
 Ensuite, ajoutez ces trois membres expression-bodied à la classe `SurveyRun` :
 

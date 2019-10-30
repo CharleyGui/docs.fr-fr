@@ -2,15 +2,15 @@
 title: Méthodes - Guide du C#
 description: Vue d’ensemble des méthodes, des paramètres de méthode et des valeurs de retour des méthodes
 author: rpetrusha
-ms.author: ronpet
+ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: b95818e06d37b0e98bf55428ff97dd476f92fac7
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: b25fad09b530967c9bbfc83412632fc876842dcc
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168517"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035811"
 ---
 # <a name="methods"></a>Méthodes
 
@@ -19,29 +19,13 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 > [!NOTE]
 > Cette rubrique décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](programming-guide/statements-expressions-operators/anonymous-functions.md).
 
-Cette rubrique contient les sections suivantes :
-
-- [Signatures de méthode](#signatures)
-- [Appel de méthode](#invocation)
-- [Méthodes héritées et remplacées](#inherited)
-- [Passage de paramètres](#passing)
-  - [Passage de paramètres par valeur](#byval)
-  - [Passage de paramètres par référence](#byref)
-  - [Tableaux de paramètres](#paramarray)
-- [Paramètres et arguments facultatifs](#optional)
-- [Valeurs de retour](#return)
-- [Méthodes d’extension](#extension)
-- [Méthodes asynchrones](#async)
-- [Membres expression-bodied](#expr)
-- [Itérateurs](#iterators)
-
 <a name="signatures"></a>
 
 ## <a name="method-signatures"></a>Signatures de méthode
 
 Les méthodes sont déclarées dans une `class` ou une `struct` en spécifiant :
 
-- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`.
+- Un niveau d’accès facultatif, comme `public` ou `private`. La valeur par défaut est `private`,
 - Des modificateurs facultatifs, comme `abstract` ou `sealed`.
 - La valeur de retour, ou `void` si la méthode n’en a pas.
 - Nom de la méthode.
@@ -157,7 +141,7 @@ Une définition de méthode peut spécifier que ses paramètres sont obligatoire
 La valeur par défaut du paramètre doit être affectée par un des types d’expressions suivants :
 
 - Une constante, comme une chaîne littérale ou un nombre.
-- Une expression de la forme `new ValType`, où `ValType` est un type valeur. Notez que ceci appelle le constructeur sans paramètre implicite du type valeur, qui n’est pas un membre réel du type.
+- Une expression de la forme `new ValType()`, où `ValType` est un type valeur. Notez que ceci appelle le constructeur sans paramètre implicite du type valeur, qui n’est pas un membre réel du type.
 - Une expression de la forme `default(ValType)`, où `ValType` est un type valeur.
 
 Si une méthode comprend à la fois des paramètres obligatoires et des paramètres facultatifs, les paramètres facultatifs sont définis à la fin de la liste des paramètres, après tous les paramètres obligatoires.
@@ -295,9 +279,9 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 
 Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
 
-Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.
+Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-Pour plus d'informations, consultez [Itérateurs](programming-guide/concepts/iterators.md).
+Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/iterators.md).
 
 ## <a name="see-also"></a>Voir aussi
 

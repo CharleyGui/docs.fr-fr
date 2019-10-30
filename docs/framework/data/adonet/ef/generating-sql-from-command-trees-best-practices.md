@@ -2,12 +2,12 @@
 title: Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 9859c7df941ae6681c991001e0d1e5a50c7ffc60
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 869722b91550855a184a74e706271c3e2d417b84
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039996"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 
@@ -31,7 +31,7 @@ Une éventuelle traduction d’une arborescence de commandes de requête en inst
 
 Prenons comme exemple l’arborescence de commandes de requête suivante.
 
-```
+```csharp
 Project (
 a.x,
    a = Filter(
@@ -68,7 +68,7 @@ Un cas d'agrégation de plusieurs nœuds en une instruction SQL SELECT unique co
 
 Les jointures externes à gauche (jointures qui apparaissent en tant qu'enfant gauche d'une autre jointure) peuvent être aplanies plus facilement dans une instruction SQL SELECT unique. Prenons comme exemple l’arborescence de commandes de requête suivante :
 
-```
+```csharp
 InnerJoin(
    a = LeftOuterJoin(
    b = Extent("TableA")
@@ -90,7 +90,7 @@ INNER JOIN TableC as d ON b.y = d.z
 
 Toutefois, les jointures externes qui ne sont pas à gauche ne sont pas faciles à aplanir et vous ne devez pas essayer de le faire. Par exemple, les jointures dans l'arborescence de commandes de requête suivante :
 
-```
+```csharp
 InnerJoin(
    a = Extent("TableA")
    b = LeftOuterJoin(
@@ -145,7 +145,7 @@ Les expressions peuvent être réutilisées dans l’arborescence de commandes d
 
 ## <a name="mapping-primitive-types"></a>Mappage de types primitifs
 
-Lorsque vous mappez des types conceptuels (EDM) à des types de fournisseur, vous devez mapper au type le plus large (Int32) afin que toutes les valeurs possibles puissent correspondre. Évitez également de mapper aux types qui ne peuvent pas être utilisés pour de nombreuses opérations, comme les types d' `ntext` objets BLOB (par exemple, dans SQL Server).
+Lorsque vous mappez des types conceptuels (EDM) à des types de fournisseur, vous devez mapper au type le plus large (Int32) afin que toutes les valeurs possibles puissent correspondre. Évitez également de mapper aux types qui ne peuvent pas être utilisés pour de nombreuses opérations, comme les types d’objets BLOB (par exemple, `ntext` dans SQL Server).
 
 ## <a name="see-also"></a>Voir aussi
 

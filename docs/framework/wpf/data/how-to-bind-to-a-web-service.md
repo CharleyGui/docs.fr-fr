@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 72638101b73e6b43fa225885b2e1f27d87b22826
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: d752f4815de16daa466302881116e80aceec6edf
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920147"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040904"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Comment : effectuer une liaison à un service Web
 Cet exemple montre comment effectuer une liaison à des objets retournés par les appels de méthode de service Web.  
@@ -32,18 +32,18 @@ Cet exemple montre comment effectuer une liaison à des objets retournés par le
   
 4. Appuyez sur **Go** , puis sur **Ajouter une référence**.  
   
- Ensuite, vous appelez la méthode de service Web et définissez la <xref:System.Windows.FrameworkElement.DataContext%2A> du contrôle ou de la fenêtre approprié (e) sur l’objet retourné. La méthode **GetContent** du service MTPS utilise une référence à l’objet **getContentRequest** . Par conséquent, l’exemple suivant configure d’abord un objet de requête :  
+ Ensuite, vous appelez la méthode de service Web et définissez la <xref:System.Windows.FrameworkElement.DataContext%2A> du contrôle ou de la fenêtre approprié (e) sur l’objet retourné. La méthode `GetContent` du service MTPS utilise une référence à l’objet `getContentRequest`. Par conséquent, l’exemple suivant configure d’abord un objet de requête :  
   
  [!code-csharp[BindToWebService#Namespace](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#namespace)]
  [!code-vb[BindToWebService#Namespace](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#namespace)]  
 [!code-csharp[BindToWebService#WebServiceCall](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#webservicecall)]
 [!code-vb[BindToWebService#WebServiceCall](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#webservicecall)]  
   
- Une fois la <xref:System.Windows.FrameworkElement.DataContext%2A> définie, vous pouvez créer des liaisons aux propriétés de l’objet sur lequel la <xref:System.Windows.FrameworkElement.DataContext%2A> a été définie. Dans cet exemple, le <xref:System.Windows.FrameworkElement.DataContext%2A> est défini sur l’objet **getContentResponse** retourné par la méthode **GetContent** . Dans l’exemple suivant, le <xref:System.Windows.Controls.ItemsControl> se lie à et affiche les valeurs de **paramètres régionaux** de **availableVersionsAndLocales** de **getContentResponse**.  
+ Une fois la <xref:System.Windows.FrameworkElement.DataContext%2A> définie, vous pouvez créer des liaisons aux propriétés de l’objet sur lequel la <xref:System.Windows.FrameworkElement.DataContext%2A> a été définie. Dans cet exemple, le <xref:System.Windows.FrameworkElement.DataContext%2A> est défini sur l’objet `getContentResponse` retourné par la méthode `GetContent`. Dans l’exemple suivant, le <xref:System.Windows.Controls.ItemsControl> se lie à et affiche les valeurs de `locale` de `availableVersionsAndLocales` de `getContentResponse`.  
   
  [!code-xaml[BindToWebService#Binding](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml#binding)]  
   
- Pour plus d’informations sur la structure de **getContentResponse**, consultez la [documentation relative au service de contenu](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
+ Pour plus d’informations sur la structure des `getContentResponse`, consultez la [documentation relative au service de contenu](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 89befaff-bb46-4290-8382-e67cdb0e3de9
-ms.openlocfilehash: 81e8bd5ba9274c84ffe18f617978b61238ebeff2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b18c67f5573d375fe0872d76d69a1f0aafa7e7f6
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782429"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040441"
 ---
 # <a name="database-mirroring-in-sql-server"></a>Mise en miroir de bases de données dans SQL Server
 La mise en miroir des bases de données dans SQL Server vous permet de conserver une copie, ou miroir, d'une base de données SQL Server sur un serveur en veille. La mise en miroir garantit que deux copies distinctes des données existent en permanence, en offrant une haute disponibilité et une redondance complète des données. Le fournisseur de données .NET pour SQL Server offre une prise en charge implicite de la mise en miroir de base de données, de façon à ce que le développeur ne doive pas exécuter d'action ni écrire de code une fois qu'il a été configuré pour une base de données SQL Server. En outre, l'objet <xref:System.Data.SqlClient.SqlConnection> prend en charge un mode de connexion explicite qui permet la fourniture du nom d'un serveur partenaire de basculement dans la propriété <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
@@ -26,7 +26,7 @@ La mise en miroir des bases de données dans SQL Server vous permet de conserver
 ## <a name="specifying-the-failover-partner-in-the-connection-string"></a>Spécification du partenaire de basculement dans la chaîne de connexion  
  Si vous fournissez le nom d'un serveur partenaire de basculement dans la chaîne de connexion, le client essaie d'établir de façon transparente une connexion avec ce partenaire si la base de données principale est indisponible lors de la première connexion de l'application cliente.  
   
-```  
+```csharp
 ";Failover Partner=PartnerServerName"  
 ```  
   

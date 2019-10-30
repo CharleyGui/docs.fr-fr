@@ -32,23 +32,23 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 45af31d10d77f4c63b27b34595b97fdd11ef95a1
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: ba2a8cd4995b9baab2071d3fb3c7980e45565692
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116129"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038995"
 ---
 # <a name="member-access-operators-c-reference"></a>Opérateurs d’accès aux membres (référence C#)
 
-Vous pouvez utiliser les opérateurs suivants quand vous accédez à un membre de type :
+Vous pouvez utiliser les opérateurs suivants lorsque vous accédez à un membre de type :
 
 - [`.` (accès aux membres)](#member-access-operator-) : accédez à un membre d’un espace de noms ou d’un type
 - [`[]` (accès à un indexeur ou à un élément de tableau)](#indexer-operator-) : pour accéder à un élément de tableau ou à un indexeur de type
 - [`?.` et `?[]` (opérateurs conditionnels Null)](#null-conditional-operators--and-) : pour effectuer une opération d’accès à un membre ou élément uniquement si un opérande est non Null
 - [`()` (appel) ](#invocation-operator-) : pour appeler une méthode sollicitée ou appeler un délégué
-- [(index à partir de la fin) : pour indiquer que la position de l’élément est à partir de la fin d’une séquence `^` ](#index-from-end-operator-)
-- (plage) : pour spécifier une plage d’index que vous pouvez utiliser pour obtenir une plage d’éléments de séquence [ `..` ](#range-operator-)
+- [`^` (index à partir de la fin)](#index-from-end-operator-): pour indiquer que la position de l’élément est à partir de la fin d’une séquence
+- [`..` (plage)](#range-operator-): pour spécifier une plage d’index que vous pouvez utiliser pour obtenir une plage d’éléments de séquence
 
 ## <a name="member-access-operator-"></a>Opérateur d’accès aux membres .
 
@@ -88,11 +88,11 @@ Pour plus d’informations sur les tableaux, consultez [Tableaux](../../programm
 
 ### <a name="indexer-access"></a>Accès aux indexeurs
 
-L’exemple suivant utilise le type .NET <xref:System.Collections.Generic.Dictionary%602> afin d’illustrer l’accès aux indexeurs :
+L’exemple suivant utilise le type de <xref:System.Collections.Generic.Dictionary%602> .NET pour illustrer l’accès à l’indexeur :
 
 [!code-csharp-interactive[indexer access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Indexers)]
 
-Les indexeurs vous permettent d’indexer des instances d’un type défini par l’utilisateur en procédant de la même façon que pour l’indexation de tableau. Contrairement aux index de tableau, qui doivent être des entiers, les arguments d’indexeur peuvent être déclarés comme étant de n’importe quel type.
+Les indexeurs vous permettent d’indexer des instances d’un type défini par l’utilisateur en procédant de la même façon que pour l’indexation de tableau. Contrairement aux index de tableau, qui doivent être des entiers, les paramètres de l’indexeur peuvent être déclarés comme n’importe quel type.
 
 Pour plus d’informations sur les indexeurs, consultez [Indexeurs](../../programming-guide/indexers/index.md).
 
@@ -122,7 +122,7 @@ L’exemple suivant illustre l’utilisation des opérateurs `?.` et `?[]` :
 
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
-L’exemple précédent illustre également l’utilisation de l’[opérateur de fusion Null](null-coalescing-operator.md). Vous pouvez utiliser l’opérateur de fusion Null pour fournir une autre expression à évaluer au cas où le résultat de l’opération conditionnelle Null serait `null`.
+L’exemple précédent utilise également l' [opérateur de fusion null `??`](null-coalescing-operator.md) pour spécifier une autre expression à évaluer si le résultat d’une opération conditionnelle null est `null`.
 
 ### <a name="thread-safe-delegate-invocation"></a>Appel de délégué thread-safe
 
@@ -160,27 +160,27 @@ Vous utilisez également des parenthèses pour ajuster l’ordre dans lequel év
 
 ## <a name="index-from-end-operator-"></a>Index de fin d’opérateur ^
 
-Disponible dans C# 8,0 et versions ultérieures `^` , l’opérateur indique la position de l’élément à partir de la fin d’une séquence. Pour une séquence de longueur `length`, `^n` pointe vers l’élément avec décalage `length - n` à partir du début d’une séquence. Par exemple, `^1` pointe vers le dernier élément d’une séquence et `^length` pointe vers le premier élément d’une séquence.
+Disponible dans C# 8,0 et versions ultérieures, l’opérateur`^`indique la position de l’élément à partir de la fin d’une séquence. Pour une séquence de longueur `length`, `^n` pointe sur l’élément avec des `length - n` de décalage à partir du début d’une séquence. Par exemple, `^1` pointe vers le dernier élément d’une séquence et `^length` pointe vers le premier élément d’une séquence.
 
 [!code-csharp[index from end](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#IndexFromEnd)]
 
-Comme le montre l’exemple précédent, `^e` expression est <xref:System.Index?displayProperty=nameWithType> du type. Dans Expression `^e`, le résultat de `e` doit être implicitement convertible en `int`.
+Comme le montre l’exemple précédent, expression `^e` est du type <xref:System.Index?displayProperty=nameWithType>. Dans expression `^e`, le résultat de `e` doit être implicitement convertible en `int`.
 
-Vous pouvez également utiliser l' `^` opérateur avec l' [opérateur Range](#range-operator-) pour créer une plage d’index. Pour plus d’informations, consultez [index et plages](../../tutorials/ranges-indexes.md).
+Vous pouvez également utiliser l’opérateur `^` avec l' [opérateur Range](#range-operator-) pour créer une plage d’index. Pour plus d’informations, consultez [index et plages](../../tutorials/ranges-indexes.md).
 
 ## <a name="range-operator-"></a>Opérateur de plage..
 
-Disponible dans C# 8,0 et versions ultérieures `..` , l’opérateur spécifie le début et la fin d’une plage d’index comme opérandes. L’opérande de gauche est un début *inclusif* d’une plage. L’opérande de droite est une extrémité *exclusive* d’une plage. L’un ou l’autre des opérandes peut être un index à partir du début ou de la fin d’une séquence, comme le montre l’exemple suivant :
+Disponible dans C# 8,0 et versions ultérieures, l’opérateur`..`spécifie le début et la fin d’une plage d’index comme opérandes. L’opérande de gauche est un début *inclusif* d’une plage. L’opérande de droite est une extrémité *exclusive* d’une plage. L’un ou l’autre des opérandes peut être un index à partir du début ou de la fin d’une séquence, comme le montre l’exemple suivant :
 
 [!code-csharp[range examples](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Ranges)]
 
-Comme le montre l’exemple précédent, `a..b` expression est <xref:System.Range?displayProperty=nameWithType> du type. Dans Expression `a..b`, les résultats de `a` et `b` doivent être implicitement convertibles `int` en <xref:System.Index>ou.
+Comme le montre l’exemple précédent, expression `a..b` est du type <xref:System.Range?displayProperty=nameWithType>. Dans expression `a..b`, les résultats de `a` et `b` doivent être implicitement convertibles en `int` ou <xref:System.Index>.
 
-Vous pouvez omettre l’un des opérandes de l' `..` opérateur pour obtenir une plage ouverte :
+Vous pouvez omettre l’un des opérandes de l’opérateur `..` pour obtenir une plage ouverte :
 
-- `a..`équivaut à`a..^0`
-- `..b`équivaut à`0..b`
-- `..`équivaut à`0..^0`
+- `a..` équivaut à `a..^0`
+- `..b` équivaut à `0..b`
+- `..` équivaut à `0..^0`
 
 [!code-csharp[ranges with omitted operands](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#RangesOptional)]
 
@@ -188,7 +188,7 @@ Pour plus d’informations, consultez [index et plages](../../tutorials/ranges-i
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
-Les `.`opérateurs `()` ,,et`..` ne peuvent pas être surchargés. `^` L’opérateur `[]` est également considéré comme un opérateur non surchargeable. Utilisez des [indexeurs](../../programming-guide/indexers/index.md) pour prendre en charge l’indexation avec des types définis par l’utilisateur.
+Les opérateurs `.`, `()`, `^`et `..` ne peuvent pas être surchargés. L’opérateur `[]` est également considéré comme un opérateur non surchargeable. Utilisez des [indexeurs](../../programming-guide/indexers/index.md) pour prendre en charge l’indexation avec des types définis par l’utilisateur.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -198,6 +198,8 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Accès aux éléments](~/_csharplang/spec/expressions.md#element-access)
 - [Opérateur conditionnel Null](~/_csharplang/spec/expressions.md#null-conditional-operator)
 - [Expressions d’appels](~/_csharplang/spec/expressions.md#invocation-expressions)
+
+Pour plus d’informations sur les index et les plages, consultez la [Remarque relative](~/_csharplang/proposals/csharp-8.0/ranges.md)à la proposition de fonctionnalité.
 
 ## <a name="see-also"></a>Voir aussi
 

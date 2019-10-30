@@ -8,15 +8,15 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: 395081640815f00ce4ae8e83f25b37de567adc01
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 959bc7942eaae91c0a7a72124f6ab1ab92a3553f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920201"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040822"
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Procédure pas à pas : hébergement d'un contrôle ActiveX dans WPF
-Pour permettre une meilleure interaction avec les navigateurs, vous pouvez utiliser les contrôles Microsoft ActiveX dans votre application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette procédure pas à pas montre comment vous pouvez héberger le [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] en tant que contrôle sur une page de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Pour permettre une meilleure interaction avec les navigateurs, vous pouvez utiliser les contrôles Microsoft ActiveX dans votre application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette procédure pas à pas montre comment vous pouvez héberger le lecteur Microsoft Windows Media comme un contrôle sur une page de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
  Cette procédure pas à pas décrit notamment les tâches suivantes :
 
@@ -31,7 +31,7 @@ Pour permettre une meilleure interaction avec les navigateurs, vous pouvez utili
 ## <a name="prerequisites"></a>Configuration requise
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
 
-- [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] installé sur l’ordinateur sur lequel Visual Studio est installé.
+- Lecteur Microsoft Windows Media installé sur l’ordinateur sur lequel Visual Studio est installé.
 
 - Visual Studio 2010.
 

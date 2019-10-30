@@ -2,14 +2,14 @@
 title: Éléments ignorés - Guide C#
 description: Décrit la prise en charge par C# des éléments ignorés, qui sont des variables qui peuvent être ignorées, et les différentes façons dont les éléments ignorés peuvent être utilisés.
 author: rpetrusha
-ms.author: ronpet
+ms.technology: csharp-fundamentals
 ms.date: 07/21/2017
-ms.openlocfilehash: 761fb69d3bc774975caf63b8aa665f8c19c0430a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: HT
+ms.openlocfilehash: 783266b6893a597d790af82db50b4f52a00ad0bf
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143596"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037348"
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
 
@@ -68,15 +68,15 @@ Vous pouvez utiliser un élément ignoré autonome pour indiquer une variable qu
 
 Notez que `_` est aussi un identificateur valide. Quand il est utilisé en dehors d’un contexte pris en charge, `_` est traité non pas comme élément ignoré, mais comme variable valide. Si un identificateur nommé `_` est déjà dans l’étendue, l’utilisation de `_` comme élément ignoré autonome peut provoquer :
 
-- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Par exemple :
+- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Une erreur de compilateur pour violation de sécurité du type. Par exemple :
+- Une erreur de compilateur pour violation de sécurité du type. Exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 
-- Erreur du compilateur CS0136 : « Impossible de déclarer une variable locale ou un paramètre nommé ‘\_’ dans cette portée, car ce nom est utilisé dans une portée locale englobante pour définir une variable locale ou un paramètre. » Par exemple :
+- Erreur du compilateur CS0136 : « Impossible de déclarer une variable locale ou un paramètre nommé ‘\_’ dans cette portée, car ce nom est utilisé dans une portée locale englobante pour définir une variable locale ou un paramètre. » Exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 

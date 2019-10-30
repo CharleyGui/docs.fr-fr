@@ -1,13 +1,14 @@
 ---
 title: Mettre à niveau les API avec des attributs pour définir des attentes null
 description: Cet article explique les motivations et les techniques permettant d’ajouter des attributs descriptifs pour décrire l’État null des arguments et les valeurs de retour des API
+ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: c51ec81f77bb1d31168848d8d51e68a08965d42c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 102598843b091ea25e6456aeedcccf43f056250d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039378"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour utiliser des types référence Nullable et communiquer des règles Nullable aux appelants
 
@@ -284,7 +285,7 @@ Vous spécifiez des post-conditions conditionnelles à l’aide des attributs su
 
 La communication correcte de l’État null des types génériques et des méthodes génériques requiert une attention particulière. Cela découle du fait qu’un type valeur Nullable et un type référence Nullable sont fondamentalement différents. Un `int?` est un synonyme de `Nullable<int>`, tandis que `string?` est `string` avec un attribut ajouté par le compilateur. Le résultat est que le compilateur ne peut pas générer de code correct pour `T?` sans savoir si `T` est un `class` ou un `struct`. 
 
-Cela ne signifie pas que vous ne pouvez pas utiliser un type Nullable (type valeur ou type référence) comme argument de type pour un type générique fermé. @No__t-0 et `List<int?>` sont des instanciations valides de `List<T>`. 
+Cela ne signifie pas que vous ne pouvez pas utiliser un type Nullable (type valeur ou type référence) comme argument de type pour un type générique fermé. `List<string?>` et `List<int?>` sont des instanciations valides de `List<T>`. 
 
 Cela signifie que vous ne pouvez pas utiliser `T?` dans une déclaration de classe ou de méthode générique sans contraintes. Par exemple, <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> ne sera pas modifié pour retourner `T?`. Vous pouvez contourner cette limitation en ajoutant la contrainte `struct` ou `class`. Avec l’une de ces contraintes, le compilateur sait comment générer du code pour `T` et `T?`.
 

@@ -2,12 +2,12 @@
 title: Regroupement de connexions OLE DB, ODBC et Oracle Connection
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: b83b53550964b3149f3bc711eaf119e749d1834b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4b801032e67d1c4c51fed8556ff1fea05c214aff
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794695"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039846"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Regroupement de connexions OLE DB, ODBC et Oracle Connection
 Le regroupement de connexions peut considérablement améliorer les performances et l'évolutivité de votre application. Cette section traite du regroupement de connexions pour les fournisseurs de données .NET Framework pour OLE DB, ODBC et Oracle.  
@@ -15,7 +15,7 @@ Le regroupement de connexions peut considérablement améliorer les performances
 ## <a name="connection-pooling-for-oledb"></a>Regroupement de connexions pour OleDb  
  Le fournisseur de données .NET Framework pour OLE DB regroupe automatiquement les connexions utilisant le regroupement de sessions OLE DB. Les arguments string de connexion peuvent être utilisés pour activer ou désactiver les services OLE DB et notamment le regroupement. La chaîne de connexion suivante, par exemple, désactive le regroupement de sessions OLE DB et l'inscription automatique des transactions.  
   
-```  
+```csharp
 Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=SSPI;  
 ```  
   
@@ -37,7 +37,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
  Une fois créés, les pools de connexions ne sont détruits qu’à la fin du processus actif. La maintenance des pools inactifs ou vides requiert très peu de ressources système.  
   
 ### <a name="connection-addition"></a>Ajout de connexions  
- Un pool de connexions est créé pour chaque chaîne de connexion unique. Lorsqu'un pool est créé, plusieurs objets de connexion sont créés et ajoutés au pool de sorte que l'exigence de taille minimale du pool soit remplie. Les connexions sont ajoutées au pool jusqu'à ce que sa taille maximale soit atteinte.  
+ Un pool de connexions est créé pour chaque chaîne de connexion unique. Lorsqu’un pool est créé, plusieurs objets de connexion sont créés et ajoutés au pool de sorte que l’exigence de taille minimale du pool soit remplie. Les connexions sont ajoutées au pool jusqu'à ce que sa taille maximale soit atteinte.  
   
  Quand un objet <xref:System.Data.OracleClient.OracleConnection> est demandé, il est obtenu du pool si une connexion utilisable est disponible. Pour être utilisable, la connexion ne doit pas être en cours d’utilisation, avoir un contexte de transaction correspondant ou ne pas être associée à un contexte de transaction et avoir un lien valide vers le serveur.  
   
@@ -60,7 +60,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
   
  Le tableau suivant décrit les valeurs <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> que vous pouvez utiliser pour ajuster le comportement de regroupement des connexions.  
   
-|Nom|Default|Description|  
+|Name|Valeur par défaut|Description|  
 |----------|-------------|-----------------|  
 |`Connection Lifetime`|0|Lorsqu’une connexion est retournée au pool, l’heure de sa création est comparée à l’heure actuelle et la connexion est détruite si cet intervalle de temps (en secondes) excède la valeur spécifiée par `Connection Lifetime`. Cela est utile dans les configurations en clusters pour forcer l'équilibrage de la charge entre un serveur en cours d'exécution et un serveur qui vient d'être mis en ligne.<br /><br /> La valeur zéro (0) aura pour conséquence un délai d'attente maximal pour les connexions regroupées.|  
 |`Enlist`|'true'|Si la valeur est `true`, le dispositif de regroupement inscrit automatiquement la connexion dans le contexte de transaction en cours du thread de création si un contexte de transaction existe.|  

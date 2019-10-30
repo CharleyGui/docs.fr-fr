@@ -2,12 +2,12 @@
 title: Personnalisation des autorisations avec l'emprunt d'identité dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: b5dcef80afffa7bb3722a09020c5445dbc47f16a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0d5e62019ae8806a7a182919fa06819a08d01301
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782470"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040450"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Personnalisation des autorisations avec l'emprunt d'identité dans SQL Server
 De nombreuses applications utilisent des procédures stockées pour accéder aux données, en se basant sur le chaînage des propriétés de manière à limiter l'accès aux tables de base. Vous pouvez accorder des autorisations EXECUTE sur les procédures stockées, en révoquant ou refusant des autorisations sur les tables de base. SQL Server ne vérifie pas les autorisations de l'appelant si la procédure stockée et les tables ont le même propriétaire. Toutefois, le chaînage des propriétés ne fonctionne pas si les objets ont des propriétaires différents ou dans le cas d'instructions SQL dynamiques.  
@@ -17,7 +17,7 @@ De nombreuses applications utilisent des procédures stockées pour accéder aux
 ## <a name="context-switching-with-the-execute-as-statement"></a>Changement de contexte avec l'instruction EXECUTE AS  
  L'instruction  Transact-SQL EXECUTE AS vous permet de basculer le contexte d'exécution d'une instruction en empruntant l'identité d'un autre utilisateur de connexion ou de base de données. Cette technique est utile pour tester des requêtes et des procédures en tant qu'un autre utilisateur.  
   
-```  
+```sql  
 EXECUTE AS LOGIN = 'loginName';  
 EXECUTE AS USER = 'userName';  
 ```  
@@ -36,7 +36,7 @@ EXECUTE AS USER = 'userName';
   
 1. Dans la base de données, créez un utilisateur proxy qui n'est pas mappé à une connexion. Cette étape n'est pas obligatoire, mais elle s'avère utile lors de la gestion des autorisations.  
   
-```  
+```sql
 CREATE USER proxyUser WITHOUT LOGIN  
 ```  
   
@@ -44,7 +44,7 @@ CREATE USER proxyUser WITHOUT LOGIN
   
 2. Ajoutez la clause EXECUTE AS à la procédure stockée ou à la fonction définie par l'utilisateur.  
   
-```  
+```sql
 CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...  
 ```  
   
@@ -54,7 +54,7 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 ### <a name="using-execute-as-with-revert"></a>Utilisation de la clause EXECUTE AS avec l'instruction REVERT  
  Vous pouvez utiliser l'instruction Transact-SQL REVERT pour rétablir le contexte d'exécution d'origine.  
   
- La clause facultative, with No Revert cookie = @variableName, vous permet de rebasculer le contexte d’exécution vers l' @variableName appelant si la variable contient la valeur correcte. Vous pouvez ainsi rétablir le contexte d'exécution de l'appelant dans les environnements utilisant le regroupement de connexions. Étant donné que la @variableName valeur de est connue uniquement de l’appelant de l’instruction EXECUTE AS, l’appelant peut garantir que le contexte d’exécution ne peut pas être modifié par l’utilisateur final qui appelle l’application. Une fois fermée, la connexion retourne dans le regroupement de connexions. Pour plus d’informations sur le regroupement de connexions dans ADO.NET, consultez [SQL Server le regroupement de connexions (ADO.net)](../sql-server-connection-pooling.md).  
+ La clause facultative, WITH NO Revert COOKIE = @variableName, vous permet de rebasculer le contexte d’exécution vers l’appelant si la variable @variableName contient la valeur correcte. Vous pouvez ainsi rétablir le contexte d'exécution de l'appelant dans les environnements utilisant le regroupement de connexions. Étant donné que la valeur de @variableName est connue uniquement de l’appelant de l’instruction EXECUTe AS, l’appelant peut garantir que le contexte d’exécution ne peut pas être modifié par l’utilisateur final qui appelle l’application. Une fois fermée, la connexion retourne dans le regroupement de connexions. Pour plus d’informations sur le regroupement de connexions dans ADO.NET, consultez [SQL Server le regroupement de connexions (ADO.net)](../sql-server-connection-pooling.md).  
   
 ### <a name="specifying-the-execution-context"></a>Spécification du contexte d'exécution  
  Parallèlement à la spécification d'un utilisateur, vous pouvez utiliser la clause EXECUTE AS avec chacun des mots clés suivants.  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: 988e868b1a1698d00a6d77fd715b2a76b1790132
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: f8fe5c5e0afac071ce7e036ceccd0b66351b0e1d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321267"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040879"
 ---
 # <a name="securing-clients"></a>Sécurisation des clients
 Dans Windows Communication Foundation (WCF), le service dicte les exigences de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d'identification, vous devez obtenir une information d'identification qui correspond à la spécification. Cette rubrique décrit en détail le processus. Pour plus d’informations sur la création d’un service sécurisé, consultez [sécurisation des services](securing-services.md).  
@@ -76,7 +76,7 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
  En ajoutant une section [\<behaviors >](../configure-apps/file-schema/wcf/behaviors.md) du fichier de configuration pour le client et en utilisant l’élément `clientCredentials` (illustré ci-dessous).  
   
 #### <a name="setting-a-clientcredentials-value-in-code"></a>Définition d’une valeur de > \<clientCredentials dans le code  
- Pour définir une valeur de [> \<clientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) dans le code, vous devez accéder à la propriété <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> de la classe <xref:System.ServiceModel.ClientBase%601>. La propriété retourne un objet <xref:System.ServiceModel.Description.ClientCredentials> qui autorise l'accès à différents types d'informations d'identification, comme le montre le tableau suivant.  
+ Pour définir une valeur de [\<ClientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) dans le code, vous devez accéder à la propriété <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> de la classe <xref:System.ServiceModel.ClientBase%601>. La propriété retourne un objet <xref:System.ServiceModel.Description.ClientCredentials> qui autorise l'accès à différents types d'informations d'identification, comme le montre le tableau suivant.  
   
 |Propriété ClientCredential|Description|Notes|  
 |-------------------------------|-----------------|-----------|  
@@ -88,21 +88,22 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 |<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>|Retourne un <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>.|Représente une paire nom d'utilisateur/mot de passe.|  
 |<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>|Retourne un <xref:System.ServiceModel.Security.WindowsClientCredential>.|Représente une information d'identification du client Windows (une information d'identification Kerberos). Les propriétés de la classe sont en lecture seule.|  
   
-#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Définition d’une valeur de > @no__t 0clientCredentials dans la configuration  
+#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Définition d’une valeur de > \<clientCredentials dans la configuration  
  Les valeurs d’informations d’identification sont spécifiées à l’aide d’un comportement de point de terminaison en tant qu’éléments enfants de l’élément [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) . L'élément utilisé dépend du type d'information d'identification du client. Par exemple, l’exemple suivant illustre la configuration pour définir un certificat X. 509 à l’aide de l' <[\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
   
 ```xml  
 <configuration>  
   <system.serviceModel>  
     <behaviors>  
-      <endpointBehaviors>  
+      <endpointBehaviors>
         <behavior name="myEndpointBehavior">  
           <clientCredentials>  
             <clientCertificate findvalue="myMachineName"   
             storeLocation="Current" X509FindType="FindBySubjectName" />  
           </clientCredentials>  
-        </behavior>              
-    </behaviors>  
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
   </system.serviceModel>  
 </configuration>  
 ```  
@@ -151,7 +152,7 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [@no__t 1bindings >](../configure-apps/file-schema/wcf/bindings.md)
+- [liaisons de\<](../configure-apps/file-schema/wcf/bindings.md)
 - [Outil Éditeur de configuration (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)
 - [Sécurisation de services](securing-services.md)
 - [Accès aux services à l’aide d’un client WCF](accessing-services-using-a-wcf-client.md)

@@ -2,13 +2,14 @@
 title: Modèles d’événement .NET standard
 description: En savoir plus sur les modèles d’événement .NET et comment créer des sources d’événements standard, vous abonner à des événements standard dans votre code et traiter ces événements.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: cd1ead318529d1afc5b27ff8710cebcaae9b7bc3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: a050dc9a11470ff3b71488ce2ab4b92e607aa9b0
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65062964"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037172"
 ---
 # <a name="standard-net-event-patterns"></a>Modèles d’événement .NET standard
 
@@ -30,7 +31,7 @@ Le type de retour est void. Les événements sont basés sur des délégués et 
 
 La liste d’arguments contient deux arguments : l’expéditeur et les arguments de l’événement. Le type au moment de compilation de `sender` est `System.Object`, même si vous connaissez probablement un type plus dérivé qui serait toujours correct. Par convention, utilisez `object`.
 
-Le deuxième argument était traditionnellement un type dérivé de `System.EventArgs`. (Vous verrez dans la [section suivante](modern-events.md) que cette convention n’est plus appliquée.) Si votre type d’événement n’a pas besoin d’autres arguments, vous fournirez quand même ces deux arguments.
+Le deuxième argument était traditionnellement un type dérivé de `System.EventArgs`. (Vous verrez dans la [section suivante](modern-events.md) que cette Convention n’est plus appliquée.) Si votre type d’événement n’a pas besoin d’arguments supplémentaires, vous devez toujours fournir les deux arguments.
 Il existe une valeur spéciale, `EventArgs.Empty`, que vous devez utiliser pour indiquer que votre événement ne contient pas d’informations supplémentaires.
 
 Commençons par créer une classe qui répertorie les fichiers contenus dans un répertoire ou dans l’un de ses sous-répertoires qui suivent un modèle. Ce composant déclenche un événement pour chaque fichier détecté qui correspond au modèle.
@@ -148,4 +149,4 @@ En apprenant ces modèles et ces conventions, vous écrirez rapidement du code C
 
 Dans le prochain article, nous allons voir quelques changements apportés à ces modèles dans la version la plus récente de .NET.
 
-[Next](modern-events.md)
+[Suivant](modern-events.md)

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: b9aa3f4e386ca5de79fe028b10d0d68343aba06b
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: e62825a88858a63984860cbc8a1c570f784f663f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920031"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040866"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] autonomes fournissent leur propre Windows en utilisant la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  
@@ -442,7 +442,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  [!code-xaml[WindowsOverviewSnippets#WindowStyleWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStyleWindow.xaml#windowstylewindowmarkup1)]  
   
 #### <a name="non-rectangular-window-style"></a>Style de fenêtre non rectangulaire  
- Il existe également des situations dans lesquelles les styles de bordure qui <xref:System.Windows.Window.WindowStyle%2A> vous permettent d’avoir n’est pas suffisant. Par exemple, vous souhaiterez peut-être créer une application avec une bordure non rectangulaire, comme [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] utilise.  
+ Il existe également des situations dans lesquelles les styles de bordure qui <xref:System.Windows.Window.WindowStyle%2A> vous permettent d’avoir n’est pas suffisant. Par exemple, vous souhaiterez peut-être créer une application avec une bordure non rectangulaire, comme Microsoft Windows Media Player.  
   
  Par exemple, considérez la fenêtre de bulle de parole présentée dans la figure suivante :  
   

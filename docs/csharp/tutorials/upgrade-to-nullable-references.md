@@ -2,15 +2,16 @@
 title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
+ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 842b1bb6e0d3032c6181cccf77934541754ff8ec
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 9cb9ac1b292e61d6a8a5f84be29a6a6c323725fc
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332330"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039687"
 ---
-# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutoriel : Migrer du code existant avec des types de référence nullable
+# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
 
 C# 8 introduit les **types référence Nullable**, qui viennent compléter les types référence de la même façon que les types valeur Nullable complètent les types valeur. Pour déclarer une variable comme étant un **type référence Nullable**, on ajoute `?` au type. Par exemple, `string?` représente une `string` Nullable. Vous pouvez utiliser ces nouveaux types pour exprimer plus clairement votre intention de conception : certaines variables *doivent toujours avoir une valeur*, d’autres *peuvent ne pas en avoir*. Toutes les variables existantes d’un type de référence sont interprétées comme un type de référence non nullable. 
 
@@ -23,7 +24,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
 > - Contrôler les contextes d’annotation nullable.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -93,7 +94,7 @@ public class NewsStoryViewModel
 }
 ```
 
-L’attribution de `Title` et `Uri` à `default` qui est `null` pour le type `string` ne change pas le comportement d’exécution du programme. `NewsStoryViewModel` est toujours construit avec des valeurs null, mais maintenant le compilateur ne signale aucun avertissement. **L’opérateur indulgent en null**, le caractère `!` qui suit l’expression `default` indique au compilateur que l’expression précédente n’est pas null. Cette technique peut être utile lorsque d’autres modifications forcent des modifications plus importantes sur une base de code, mais dans cette application, il existe une solution relativement rapide et mieux adaptée : Faites de `NewsStoryViewModel` un type immuable où toutes les propriétés sont définies dans le constructeur. Dans `NewsStoryViewModel`, effectuez les changements suivants :
+L’attribution de `Title` et `Uri` à `default` qui est `null` pour le type `string` ne change pas le comportement d’exécution du programme. `NewsStoryViewModel` est toujours construit avec des valeurs null, mais maintenant le compilateur ne signale aucun avertissement. **L’opérateur indulgent en null**, le caractère `!` qui suit l’expression `default` indique au compilateur que l’expression précédente n’est pas null. Cette technique peut être utile lorsque d’autres modifications forcent beaucoup plus les modifications apportées à une base de code, mais dans cette application, il existe une solution relativement rapide et plus performante : faire de la `NewsStoryViewModel` un type immuable dans lequel toutes les propriétés sont définies dans le constructeur. Dans `NewsStoryViewModel`, effectuez les changements suivants :
 
 [!code-csharp[FinishedViewModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
 
@@ -125,7 +126,7 @@ Fréquemment, le correctif pour un ensemble d’avertissements crée de nouveaux
 
 [!code-csharp[StarterIndexModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
 
-Ajoutez la directive `#nullable enable` et vous verrez deux avertissements. Ni la propriété `ErrorText` ni la propriété `NewsItems` ne sont initialisées. Un examen de cette classe pourrait vous faire croire que les deux propriétés doivent être des types de référence nullable : Les deux ont des méthodes setter privées. Une seule exactement est attribuée dans la méthode `OnGet`. Avant d’apporter des modifications, examinez les consommateurs de ces deux propriétés. Dans la page elle-même, `ErrorText` est comparé à la valeur null avant de générer le balisage d’éventuelles erreurs. La collection `NewsItems` est vérifiée par rapport à `null` et afin de garantir que la collection comporte des éléments. Un correctif rapide serait d’attribuer le type de référence nullable aux deux propriétés. Un meilleur correctif consisterait à attribuer un type de référence non nullable à la collection et d’ajouter des éléments à la collection existante lors de la récupération des articles de presse. Le premier correctif consiste à ajouter `?` au type `string` pour `ErrorText` :
+Ajoutez la directive `#nullable enable` et vous verrez deux avertissements. Ni la propriété `ErrorText` ni la propriété `NewsItems` ne sont initialisées. Un examen de cette classe vous permettra de croire que les deux propriétés doivent être des types de référence Nullable : les deux ont des méthodes setter privées. Une seule exactement est attribuée dans la méthode `OnGet`. Avant d’apporter des modifications, examinez les consommateurs de ces deux propriétés. Dans la page elle-même, `ErrorText` est comparé à la valeur null avant de générer le balisage d’éventuelles erreurs. La collection `NewsItems` est vérifiée par rapport à `null` et afin de garantir que la collection comporte des éléments. Un correctif rapide serait d’attribuer le type de référence nullable aux deux propriétés. Un meilleur correctif consisterait à attribuer un type de référence non nullable à la collection et d’ajouter des éléments à la collection existante lors de la récupération des articles de presse. Le premier correctif consiste à ajouter `?` au type `string` pour `ErrorText` :
 
 [!code-csharp[UpdateErrorText](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
 

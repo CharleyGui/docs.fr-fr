@@ -1,17 +1,17 @@
 ---
-title: 'Procédure : Migrer du code DCOM managé vers WCF'
+title: 'Comment : migrer DCOM de code managé vers WCF'
 ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 42edce63856b629511faeb165362da18ea3cecad
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 6fdd5c9b285bdc948af876c72e85590500dd41c8
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833633"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039591"
 ---
-# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Procédure : Migrer du code DCOM managé vers WCF
+# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Comment : migrer DCOM de code managé vers WCF
 Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
   
 - Le service distant retourne un objet par valeur au client  
@@ -60,7 +60,7 @@ public interface IRemoteService
   
  Dans ce scénario, le client reçoit une copie désérialisée d'un objet à partir du service distant. Le client peut interagir avec cette copie locale sans effectuer de rappel au service.  En d'autres termes, le client a la garantie que le service ne sera impliqué en aucune façon quand les méthodes de la copie locale seront appelées. WCF retourne toujours les objets à partir du service par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.  
   
-### <a name="step-1-define-the-wcf-service-interface"></a>Étape 1 : Définir l’interface du service WCF  
+### <a name="step-1-define-the-wcf-service-interface"></a>Étape 1 : Définir l'interface du service WCF  
  Définissez une interface publique pour le service WCF et marquez-la avec l'attribut [<xref:System.ServiceModel.ServiceContractAttribute>].  Marquez les méthodes que vous souhaitez exposer aux clients avec l'attribut [<xref:System.ServiceModel.OperationContractAttribute>]. L'exemple suivant illustre l'utilisation de ces attributs pour identifier l'interface côté serveur et les méthodes d'interface qu'un client peut appeler. La méthode utilisée pour ce scénario est affichée en gras.  
   
 ```csharp  
@@ -165,6 +165,7 @@ public class CustomerService: ICustomerManager
                 address="http://localhost:8083/CustomerManager"   
                 binding="basicHttpBinding"   
                 contract="Shared.ICustomerManager"/>  
+    </client>  
   </system.serviceModel>  
 </configuration>  
 ```  
@@ -250,7 +251,7 @@ public interface IRemoteService
 }  
 ```  
   
-### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Étape 1 : Définir l’interface et l’implémentation du service de session WCF  
+### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Étape 1: Définir l'interface et l'implémentation du service de session WCF  
  Tout d'abord, définissez une interface de service WCF contenant l'objet de session.  
   
  Dans ce code, l'objet de session est marqué avec l'attribut `ServiceContract`, qui l'identifie comme une interface de service WCF standard.  De plus, la propriété <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> est définie pour indiquer qu'il s'agira d'un service de session.  
@@ -290,7 +291,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
-### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>Étape 2 : Définir le service de fabrique WCF pour l’objet de session  
+### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>Étape 2 : Définir le service de fabrique WCF pour l'objet de session  
  Le service qui crée l'objet de session doit être défini et implémenté. Le code suivant montre comment procéder. Ce code crée un autre service WCF qui retourne un objet <xref:System.ServiceModel.EndpointAddress10>.  Il s'agit d'une forme sérialisable d'un point de terminaison qui peut être utilisée pour créer l'objet de session.  
   
 ```csharp  

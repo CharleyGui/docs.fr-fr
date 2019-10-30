@@ -7,20 +7,20 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: e577b9d221760544e95b1d6098d0becbf5d776b0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: ba4df55c3359e2a81eef0b4947a744d80ed49497
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042678"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040600"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>Vue d'ensemble de TextPattern et des objets incorporés
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette vue d'ensemble décrit comment [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] expose des objets incorporés ou des éléments enfants dans un document texte ou un conteneur.  
   
- Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , un objet incorporé est un élément qui a des limites non textuelles ; par exemple, une image, un lien hypertexte, un tableau ou un type de document tel qu'une feuille de calcul [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] ou un fichier [!INCLUDE[TLA#tla_winmedia](../../../includes/tlasharptla-winmedia-md.md)] . Cette notion est différente de la définition standard, où un élément est créé dans une application et incorporé, ou lié, dans une autre. La modification de l'objet dans son application d'origine est sans importance dans le contexte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] un objet incorporé est un élément qui a des limites non textuelles ; par exemple, une image, un lien hypertexte, un tableau ou un type de document tel qu’une feuille de calcul [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] ou un fichier Microsoft Windows Media. Cette notion est différente de la définition standard, où un élément est créé dans une application et incorporé, ou lié, dans une autre. La modification de l'objet dans son application d'origine est sans importance dans le contexte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Embedded_Objects_and_the_UI_Automation_Tree"></a>   
 ## <a name="embedded-objects-and-the-ui-automation-tree"></a>Objets incorporés et arborescence UI Automation  
@@ -43,7 +43,7 @@ Exemple de flux de texte avec des objets incorporés et leurs amplitudes
   
  Quand il est nécessaire de parcourir le contenu d'une plage de texte, il faut effectuer une série d'étapes en arrière-plan pour assurer la bonne exécution de la méthode <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> .  
   
-1. La plage de texte est normalisée : elle est réduite en une plage dégénérée au niveau du point de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> , rendant le point de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> superflu. Cette étape est nécessaire pour supprimer toute ambiguïté dans les situations où une plage de texte <xref:System.Windows.Automation.Text.TextUnit> s’étend sur les limites `{The URL https://www.microsoft.com is embedded in text` : par exemple, où « { » et « } » sont les points de terminaison de plage de texte.  
+1. La plage de texte est normalisée : elle est réduite en une plage dégénérée au niveau du point de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> , rendant le point de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> superflu. Cette étape est nécessaire pour supprimer toute ambiguïté dans les situations où une plage de texte s’étend <xref:System.Windows.Automation.Text.TextUnit> limites : par exemple, `{The URL https://www.microsoft.com is embedded in text` où « { » et « } » sont les points de terminaison de plage de texte.  
   
 2. La plage obtenue est déplacée vers l'arrière dans <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> au début de la limite <xref:System.Windows.Automation.Text.TextUnit> demandée.  
   
@@ -112,7 +112,7 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
   
  **Exemple 2-plage de texte couvrant partiellement le contenu d’un conteneur de texte. Le conteneur de texte a une image incorporée qui ne fait pas partie de la plage de texte.**  
   
- {Image} ![Exemple d’image incorporée](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") est incorporé dans le texte.  
+ {Image} ![Exemple d’image incorporée](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") est incorporé dans du texte.  
   
 |Méthode appelée|Résultat|  
 |-------------------|------------|  
@@ -127,8 +127,8 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
   
 |Cellule avec l'image|Cellule avec le texte|  
 |---------------------|--------------------|  
-|![Exemple d’image incorporée](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
-|![Exemple d’image incorporée 2](./media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Y|  
+|![Exemple d’image incorporée](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|x|  
+|![Exemple d’image incorporée 2](./media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|0|  
 |![Exemple d’image incorporée 3](./media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Image pour Z|Z|  
   
  **Exemple 1 - Obtenir le conteneur de texte à partir du contenu d'une cellule.**  
@@ -136,7 +136,7 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
 |Méthode appelée|Résultat|  
 |-------------------|------------|  
 |<xref:System.Windows.Automation.GridPattern.GetItem%2A> avec des paramètres (0,0)|Retourne l' <xref:System.Windows.Automation.AutomationElement> représentant le contenu de la cellule du tableau ; dans ce cas, l'élément est un contrôle de texte.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> où <xref:System.Windows.Automation.AutomationElement> est l'objet retourné par la méthode `GetItem` précédente.|Retourne la plage qui couvre l’exemple d' ![image incorporée]image(./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample").|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> où <xref:System.Windows.Automation.AutomationElement> est l'objet retourné par la méthode `GetItem` précédente.|Retourne la plage qui couvre l’exemple d' ![image incorporée](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")image.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pour l'objet retourné par la méthode `RangeFromChild` précédente.|Retourne l' <xref:System.Windows.Automation.AutomationElement> représentant la cellule du tableau ; dans ce cas, l'élément est un contrôle de texte qui prend en charge TableItemPattern.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pour l'objet retourné par la méthode `GetEnclosingElement` précédente.|Retourne l' <xref:System.Windows.Automation.AutomationElement> représentant le tableau.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> pour l'objet retourné par la méthode `GetEnclosingElement` précédente.|Retourne l' <xref:System.Windows.Automation.AutomationElement> représentant le fournisseur de texte lui-même.|  

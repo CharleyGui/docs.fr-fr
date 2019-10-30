@@ -1,17 +1,17 @@
 ---
-title: <ImpliesType>, Élément (.NET Native)
+title: Élément <ImpliesType> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10fa3a0ac04038bb686311a4d86c99442c0fcf26
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 38bdfc974a6942596e9778cabb87b275f1e51db8
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039532"
 ---
-# <a name="impliestype-element-net-native"></a>\<ImpliesType >, élément (.NET Native)
+# <a name="impliestype-element-net-native"></a>\<élément ImpliesType > (.NET Native)
 Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode ou au type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,7 +37,7 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Généralités|Attribut requis. Spécifie le nom du type.|  
+|`Name`|Général|Attribut requis. Spécifie le nom du type.|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,18 +51,18 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |*type_name*|Nom du type. Si le type représenté par cet élément `<ImpliesType>` se trouve dans le même espace de noms que son élément `<Type>` conteneur, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -99,13 +99,13 @@ Applique la stratégie à un type, si cette stratégie a été appliquée à la 
 </Type>  
 ```  
   
- L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, Imaginez une méthode `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` générique à laquelle une bibliothèque donnée accède dynamiquement avec les types et <xref:System.Collections.Generic.List%601> <xref:System.Array> associés. Cela peut être exprimé sous la forme :  
+ L'élément `<ImpliesType>` peut également apparaître dans un élément `<Method>`, car dans certains cas l'instanciation d'une méthode générique implique la réflexion d'une instanciation de type. Par exemple, Imaginez une méthode générique `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` qu’une bibliothèque donnée accède dynamiquement aux types d' <xref:System.Collections.Generic.List%601> et de <xref:System.Array> associés. Cela peut être exprimé sous la forme :  
   
 ```xml  
 <Type Name="MyType">  
     <Method Name="MakeEnumerable{T}" Signature="(System.String, T)" Dynamic="Included">  
         <ImpliesType Name="T[]" Dynamic="Public" />  
-        <ImpliesType Name="System.Collections.Generic.List{T}" Dynamic="Public">  
+        <ImpliesType Name="System.Collections.Generic.List{T}" Dynamic="Public" />  
     </Method>  
 </Type>  
 ```  

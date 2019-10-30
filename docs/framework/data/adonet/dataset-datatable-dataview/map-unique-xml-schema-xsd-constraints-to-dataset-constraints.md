@@ -2,12 +2,12 @@
 title: Mapper les contraintes uniques de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
-ms.openlocfilehash: 4aa94dfaf088a2a934c8901e2720f166d3a38dae
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6b847aba31aa75f7be3bd6a11b6bcb8231c06bc4
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784405"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040360"
 ---
 # <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes uniques de schéma XML (XSD) aux contraintes de DataSet
 Dans un schéma en langage XSD (XML Schema Definition), l’élément **unique** spécifie la contrainte d’unicité sur un élément ou un attribut. Dans le processus de conversion d'un schéma XML en schéma relationnel, la contrainte unique spécifiée sur un élément ou un attribut du schéma XML est mappée à une contrainte unique dans l'objet <xref:System.Data.DataTable> de l'objet <xref:System.Data.DataSet> correspondant qui est généré.  
@@ -16,8 +16,8 @@ Dans un schéma en langage XSD (XML Schema Definition), l’élément **unique**
   
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
-|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent dans l’élément **unique** , une contrainte unique est créée avec la valeur **true**affectée à la propriété **IsPrimaryKey** .|  
+|**msdata : ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
+|**msdata : PrimaryKey**|Si `PrimaryKey="true"` est présent dans l’élément **unique** , une contrainte unique est créée avec la valeur **true**affectée à la propriété **IsPrimaryKey** .|  
   
  L’exemple suivant illustre un schéma XML qui utilise l’élément **unique** pour spécifier une contrainte d’unicité.  
   
@@ -50,13 +50,13 @@ Dans un schéma en langage XSD (XML Schema Definition), l’élément **unique**
   
  L’élément **unique** dans le schéma spécifie que pour tous les éléments **Customers** dans une instance de document, la valeur de l’élément enfant **CustomerID** doit être unique. Lors de la génération du **jeu de données**, le processus de mappage lit ce schéma et génère la table suivante :  
   
-```  
+```text  
 Customers (CustomerID, CompanyName, Phone)  
 ```  
   
  Le processus de mappage crée également une contrainte unique sur la colonne **CustomerID** , comme indiqué dans le **jeu de données**suivant. (Par souci de simplicité, seules les propriétés pertinentes sont représentées.)  
   
-```  
+```text  
       DataSetName: MyDataSet  
 TableName: Customers  
   ColumnName: CustomerID  
@@ -64,7 +64,7 @@ TableName: Customers
       Unique: True  
   ConstraintName: UcustID       Type: UniqueConstraint  
       Table: Customers  
-      Columns: CustomerID   
+      Columns: CustomerID
       IsPrimaryKey: False  
 ```  
   
@@ -86,10 +86,10 @@ TableName: Customers
   
  Il s’agit de la contrainte créée dans le **jeu de données**résultant.  
   
-```  
+```text  
 ConstraintName: SomeName  
   Table: Customers  
-  Columns: CustomerID CompanyName   
+  Columns: CustomerID CompanyName
   IsPrimaryKey: False  
 ```  
   

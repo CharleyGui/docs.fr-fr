@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: afafe5d1eaddaef3b9f0069908b365e40ea4ed29
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e1f8d636e793b2d8b984fe1aa0b823fa58a4981d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785680"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040182"
 ---
 # <a name="connection-string-builders"></a>Builders de chaînes de connexion
-Dans les versions antérieures de ADO.NET, la vérification au moment de la compilation des chaînes de connexion avec des valeurs de chaîne concaténées ne s’est pas produite, de sorte <xref:System.ArgumentException>qu’au moment de l’exécution, un mot clé incorrect a généré un. Chacun des fournisseurs de données .NET Framework prenait en charge une syntaxe différente pour les mots clés de chaîne de connexion, ce qui rendait la construction de chaînes de connexion valides difficile si elle est effectuée manuellement. Pour résoudre ce problème, ADO.NET 2,0 a introduit de nouveaux générateurs de chaînes de connexion pour chaque .NET Framework fournisseur de données. Chaque fournisseur de données inclut une classe de générateur de chaînes de connexion fortement typée qui hérite de <xref:System.Data.Common.DbConnectionStringBuilder>. Le tableau suivant répertorie les fournisseurs de données .NET Framework et les classes de générateur de chaînes de connexion qui leur sont associées.  
+Dans les versions antérieures de ADO.NET, la vérification au moment de la compilation des chaînes de connexion avec des valeurs de chaîne concaténées ne s’est pas produite, de sorte qu’au moment de l’exécution, un mot clé incorrect générait un <xref:System.ArgumentException>. Chacun des fournisseurs de données .NET Framework prenait en charge une syntaxe différente pour les mots clés de chaîne de connexion, ce qui rendait la construction de chaînes de connexion valides difficile si elle est effectuée manuellement. Pour résoudre ce problème, ADO.NET 2,0 a introduit de nouveaux générateurs de chaînes de connexion pour chaque .NET Framework fournisseur de données. Chaque fournisseur de données inclut une classe de générateur de chaînes de connexion fortement typée qui hérite de <xref:System.Data.Common.DbConnectionStringBuilder>. Le tableau suivant répertorie les fournisseurs de données .NET Framework et les classes de générateur de chaînes de connexion qui leur sont associées.  
   
 |Fournisseur|Classe ConnectionStringBuilder|  
 |--------------|-----------------------------------|  
@@ -48,7 +48,7 @@ Console.WriteLine(builder.ConnectionString);
   
  La sortie montre que <xref:System.Data.SqlClient.SqlConnectionStringBuilder> a agi correctement en plaçant dans une séquence d'échappement, entre des guillemets doubles, la valeur supplémentaire au lieu de l'ajouter à la chaîne de connexion en tant que nouvelle paire clé/valeur.  
   
-```  
+```output  
 data source=(local);Integrated Security=True;  
 initial catalog="AdventureWorks;NewValue=Bad"  
 ```  

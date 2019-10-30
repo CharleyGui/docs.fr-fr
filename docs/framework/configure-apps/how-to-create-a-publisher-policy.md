@@ -7,12 +7,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 608918828bf72369a1bd48e2391e2423078e9df0
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 346671d4febd5f3999f1f4fbf2fe4b7e475ae5fa
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846838"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040194"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
 
@@ -55,26 +55,28 @@ Utilisez [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md) pour cr
 
 À l’invite de commandes, tapez la commande suivante :
 
-**al/Link :** *publisherPolicyFile* **/out :** *publisherPolicyAssemblyFile* **/keyfile :** *keyPairFile* **/Platform :** *ProcessorArchitecture*
+```console
+al /link:publisherPolicyFile /out:publisherPolicyAssemblyFile /keyfile:keyPairFile /platform:processorArchitecture
+```
 
 Dans cette commande :
 
-- L’argument *publisherPolicyFile* est le nom du fichier de stratégie d’éditeur.
+- L’argument `publisherPolicyFile` est le nom du fichier de stratégie d’éditeur.
 
-- L’argument *publisherPolicyAssemblyFile* est le nom de l’assembly de stratégie d’éditeur qui résulte de cette commande. Le nom du fichier de l’assembly doit respecter le format suivant :
+- L’argument `publisherPolicyAssemblyFile` est le nom de l’assembly de stratégie d’éditeur qui résulte de cette commande. Le nom du fichier de l’assembly doit respecter le format suivant :
 
-  **renvoi.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **. dll**
+  'Policy. majorNumber. minorNumber. mainAssemblyName. dll'
 
-- L’argument *keyPairFile* est le nom du fichier contenant la paire de clés. Vous devez signer l’assembly et l’assembly de stratégie d’éditeur avec la même paire de clés.
+- L’argument `keyPairFile` est le nom du fichier contenant la paire de clés. Vous devez signer l’assembly et l’assembly de stratégie d’éditeur avec la même paire de clés.
 
-- L’argument *ProcessorArchitecture* identifie la plateforme ciblée par un assembly spécifique au processeur.
+- L’argument `processorArchitecture` identifie la plateforme ciblée par un assembly spécifique au processeur.
 
   > [!NOTE]
   > La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0.
 
 La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0. La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur nommé `pub.config`, attribue un nom fort à l’assembly à l’aide de la paire de clés dans le fichier `sgKey.snk` et spécifie que l’assembly cible le processeur x86. SOA.
 
-```
+```console
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
 ```
 
@@ -92,11 +94,13 @@ Utilisez l' [outil global assembly cache (Gacutil. exe)](../tools/gacutil-exe-ga
 
 À l’invite de commandes, tapez la commande suivante :
 
-**gacutil/I**  *publisherPolicyAssemblyFile*
+```console
+gacutil /i publisherPolicyAssemblyFile
+```
 
 La commande suivante ajoute `policy.1.0.myAssembly.dll` à l’Global Assembly Cache.
 
-```
+```console
 gacutil /i policy.1.0.myAssembly.dll
 ```
 

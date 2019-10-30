@@ -2,13 +2,14 @@
 title: Indexeurs
 description: Découvrez les indexeurs C# et la façon d’implémenter des propriétés indexées, qui sont des propriétés référencées à l’aide d’un ou plusieurs arguments.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: a13163cb6bd835dfdd16c83c905c134eb8a86e7d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: HT
+ms.openlocfilehash: 86e646b341cf098d8621f095d4bfc9ea2191940d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197598"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039120"
 ---
 # <a name="indexers"></a>Indexeurs
 
@@ -326,4 +327,4 @@ Les développeurs utilisent le type `DateTime`, mais utilisent la propriété `D
 ## <a name="summing-up"></a>Récapitulatif
 
 Vous devez créer des indexeurs chaque fois que vous avez un élément de type propriété dans votre classe, où cette propriété ne représente pas une valeur unique, mais une collection de valeurs dans laquelle chaque élément est identifié par un ensemble d’arguments. Ces arguments peuvent identifier quel élément de la collection doit être référencé.
-Les indexeurs étendent le concept de [propriété](properties.md), où un membre est considéré comme un élément de données extérieur à la classe, mais aussi comme une méthode supplémentaire. Les indexeurs autorisent les arguments à rechercher un élément d’une propriété qui représente un ensemble d’éléments.
+Les indexeurs étendent le concept de [Propriétés](properties.md), où un membre est traité comme un élément de données provenant de l’extérieur de la classe, mais comme une méthode à l’intérieur. Les indexeurs autorisent les arguments à rechercher un élément d’une propriété qui représente un ensemble d’éléments.

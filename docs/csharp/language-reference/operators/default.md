@@ -1,16 +1,16 @@
 ---
 title: opérateur par défaut - référence C#
 ms.custom: seodec18
-description: Utiliser un opérateur par défaut pour produire la valeur par défaut d’un type
+description: Utiliser l’opérateur par défaut pour produire la valeur par défaut d’un type
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 5623cb9dc3790b5bb99635c41cb3f122f4c71d8e
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
-ms.translationtype: HT
+ms.openlocfilehash: 6503e82a42f116a7ba8461ae060592377579f255
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796938"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039050"
 ---
 # <a name="default-operator-c-reference"></a>opérateur par défaut (référence C#)
 
@@ -20,16 +20,16 @@ L’exemple suivant illustre l’utilisation de l’opérateur `default` :
 
 [!code-csharp-interactive[default of T](~/samples/csharp/language-reference/operators/DefaultOperator.cs#WithOperand)]
 
-Vous utilisez également le mot-clé `default` comme étiquette case par défaut dans l'[instruction `switch`](../keywords/switch.md).
+Vous utilisez également le mot clé `default` comme étiquette de cas par défaut dans une [instruction`switch`](../keywords/switch.md).
 
 ## <a name="default-literal"></a>littéral par défaut
 
 À partir de C# 7.1, vous pouvez utiliser le littéral `default` pour produire la valeur par défaut d'un type lorsque le compilateur peut déduire le type d'expression. L’expression littérale `default` génère la même valeur que l’expression `default(T)`, où `T` est le type déduit. Vous pouvez utiliser le littéral `default` dans les cas suivants :
 
 - Dans l'affectation ou l'initialisation d'une variable.
-- Dans la déclaration de la valeur par défaut d'un paramètre de méthode facultatif.
+- Dans la déclaration de la valeur par défaut d’un [paramètre de méthode facultatif](../../methods.md#optional-parameters-and-arguments).
 - Dans un appel de méthode pour fournir une valeur d'argument.
-- Dans une instruction `return` ou en tant qu’expression d’un membre expression-bodied.
+- Dans une [instruction`return`](../keywords/return.md) ou en tant qu’expression dans un [membre d’expression](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
 
 L’exemple suivant illustre l’utilisation du littéral `default` :
 
@@ -46,3 +46,4 @@ Pour plus d’informations sur le littéral `default`, voir la [proposition de f
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Tableau des valeurs par défaut](../keywords/default-values-table.md)
+- [Génériques en .NET](../../../standard/generics/index.md)

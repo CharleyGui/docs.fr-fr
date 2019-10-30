@@ -2,12 +2,12 @@
 title: Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: 8543f5b34ee2a80ff0154897cf7678b244a8d357
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 670c07dd83e880b79c1ccf0c5af00d253b83f827
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786105"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040076"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément ou un attribut à l’aide de l’élément **Key** . L'élément ou attribut sur lequel une contrainte de clé est spécifiée doit avoir des valeurs uniques dans toute instance du schéma et ne peut pas avoir de valeurs null.  
@@ -18,10 +18,10 @@ Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément 
   
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
-|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent, la propriété de contrainte **IsPrimaryKey** a la valeur **true**, ce qui en fait une clé primaire. La propriété de la colonne **AllowDBNull** a la valeur **false**, car les clés primaires ne peuvent pas avoir de valeurs NULL.|  
+|**msdata : ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
+|**msdata : PrimaryKey**|Si `PrimaryKey="true"` est présent, la propriété de contrainte **IsPrimaryKey** a la valeur **true**, ce qui en fait une clé primaire. La propriété de la colonne **AllowDBNull** a la valeur **false**, car les clés primaires ne peuvent pas avoir de valeurs NULL.|  
   
- Lors de la conversion d’un schéma dans lequel une contrainte de clé est spécifiée, le processus de mappage crée une contrainte unique sur la table avec la propriété de colonne **AllowDBNull** définie sur **false** pour chaque colonne de la contrainte. La propriété **IsPrimaryKey** de la contrainte unique a également la valeur **false** , sauf si `msdata:PrimaryKey="true"` vous avez spécifié sur l’élément **Key** . Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
+ Lors de la conversion d’un schéma dans lequel une contrainte de clé est spécifiée, le processus de mappage crée une contrainte unique sur la table avec la propriété de colonne **AllowDBNull** définie sur **false** pour chaque colonne de la contrainte. La propriété **IsPrimaryKey** de la contrainte unique a également la valeur **false** , sauf si vous avez spécifié `msdata:PrimaryKey="true"` sur l’élément **Key** . Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
   
  Dans l’exemple de schéma suivant, l’élément **Key** spécifie la contrainte de clé sur l’élément **CustomerID** .  
   
@@ -56,13 +56,13 @@ Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément 
   
  L’élément **Key** spécifie que les valeurs de l’élément enfant **CustomerID** de l’élément **Customers** doivent avoir des valeurs uniques et ne peuvent pas avoir de valeurs NULL. En convertissant le schéma en langage XSD (XML Schema Definition), le processus de mappage crée la table suivante :  
   
-```  
+```text  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- Le mappage de schéma XML crée également un **UniqueConstraint** sur la colonne **CustomerID** , comme indiqué dans le <xref:System.Data.DataSet>code suivant. (Par souci de simplicité, seules les propriétés pertinentes sont représentées.)  
+ Le mappage de schéma XML crée également un **UniqueConstraint** sur la colonne **CustomerID** , comme le montre l' <xref:System.Data.DataSet>suivante. (Par souci de simplicité, seules les propriétés pertinentes sont représentées.)  
   
-```  
+```text  
       DataSetName: MyDataSet  
 TableName: customers  
   ColumnName: CustomerID  

@@ -27,21 +27,21 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 9760be0fcfe29d2c11cbb1f4d4d81c5a79261a0d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: ca2513a0f865fd7da728f7d3247bdb7b50a2f48a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771735"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036428"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
-Les opérateurs suivants effectuent des opérations arithmétiques avec des types numériques :
+Les opérateurs suivants effectuent des opérations arithmétiques avec des opérandes de types numériques :
 
 - Opérateurs unaires [`++` (incrément)](#increment-operator-), [`--` (décrément)](#decrement-operator---), [`+` (plus)](#unary-plus-and-minus-operators) et [`-` (moins)](#unary-plus-and-minus-operators)
 - Opérateurs binaires [`*` (multiplication)](#multiplication-operator-), [`/` (division)](#division-operator-), [`%` (reste)](#remainder-operator-), [`+` (addition)](#addition-operator-) et [`-` (soustraction)](#subtraction-operator--)
 
-Ces opérateurs prennent en charge tous les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et [à virgule flottante](../builtin-types/floating-point-numeric-types.md).
+Ces opérateurs sont pris en charge par tous les types numériques [intégraux](../builtin-types/integral-numeric-types.md) et [à virgule flottante](../builtin-types/floating-point-numeric-types.md) .
 
 ## <a name="increment-operator-"></a>Opérateur d’incrémentation ++
 
@@ -85,7 +85,7 @@ L’opérateur unaire `+` retourne la valeur de son opérande. L’opérateur un
 
 [!code-csharp-interactive[unary plus and minus](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#UnaryPlusAndMinus)]
 
-L’opérateur unaire `-` ne prend pas en charge le type [ulong](../builtin-types/integral-numeric-types.md).
+Le type [ULong](../builtin-types/integral-numeric-types.md) ne prend pas en charge l’opérateur unaire `-`.
 
 ## <a name="multiplication-operator-"></a>Opérateur de multiplication *
 
@@ -122,7 +122,7 @@ Si l’un des opérandes est `decimal`, un autre opérande ne peut être `float`
 L’opérateur restant `%` calcule le reste après la division de son opérande de partie gauche par son opérande de partie droite.
 
 ### <a name="integer-remainder"></a>Reste entier
-  
+
 Pour les opérandes des types entiers, le résultat de `a % b` est la valeur produite par `a - (a / b) * b`. Le signe du reste non zéro est le même que celui de l’opérande de partie gauche, comme l’indique l’exemple suivant :
 
 [!code-csharp-interactive[integer remainder](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#IntegerRemainder)]
@@ -137,7 +137,7 @@ En ce qui concerne les opérandes `float` et `double`, le résultat de `x % y` p
 - La valeur absolue de `z` soit la valeur produite par `|x| - n * |y|`, où `n` représente le plus grand entier possible inférieur ou égal à `|x| / |y|`, et où `|x|` et `|y|` sont les valeurs absolues de `x` et `y`, respectivement.
 
 > [!NOTE]
-> Cette méthode de calcul du reste est analogue à celle utilisée pour les opérandes entiers. Toutefois, elle ne suit pas la norme IEEE 754. Si l’opération de reste doit être conforme à la norme IEEE 754, utilisez la méthode <xref:System.Math.IEEERemainder%2A?displayProperty=nameWithType>.
+> Cette méthode de calcul du reste est analogue à celle utilisée pour les opérandes entiers, mais différente de la spécification IEEE 754. Si vous avez besoin de l’opération de reste qui est conforme à la spécification IEEE 754, utilisez la méthode <xref:System.Math.IEEERemainder%2A?displayProperty=nameWithType>.
 
 Pour plus d’informations sur le comportement de l’opérateur `%` avec des opérandes non finis, consultez la section [Opérateur de reste](~/_csharplang/spec/expressions.md#remainder-operator) dans la [Spécification du langage C#](~/_csharplang/spec/introduction.md).
 
@@ -161,7 +161,7 @@ L’opérateur de soustraction `-` soustrait son opérande de partie droite de s
 
 [!code-csharp-interactive[subtraction operator](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#Subtraction)]
 
-Vous pouvez également utiliser l’opérateur `-` pour la suppression de délégués. Pour plus d’informations, consultez l’article sur l’[opérateur `-`](subtraction-operator.md).
+Vous pouvez également utiliser l’opérateur `-` pour la suppression de délégués. Pour plus d’informations, consultez l’article [`-` et `-=`, opérateurs](subtraction-operator.md).
 
 ## <a name="compound-assignment"></a>Assignation composée
 
@@ -187,7 +187,7 @@ En raison des [promotions numériques](~/_csharplang/spec/expressions.md#numeric
 
 [!code-csharp-interactive[compound assignment with cast](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
 
-Vous utilisez également les opérateurs `+=` et `-=` pour vous abonner et annuler l’abonnement à des [événements](../keywords/event.md). Pour plus d’informations, consultez [Guide pratique pour s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Vous utilisez également les opérateurs `+=` et `-=` pour vous abonner et vous désabonner d’un [événement](../keywords/event.md), respectivement. Pour plus d’informations, consultez [Guide pratique pour s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="operator-precedence-and-associativity"></a>Priorité des opérateurs et associativité
 
@@ -204,7 +204,7 @@ Utilisez des parenthèses, `()`, pour modifier l’ordre d’évaluation imposé
 
 [!code-csharp-interactive[precedence and associativity](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
 
-Pour obtenir la liste complète des opérateurs C# classés par niveau de priorité, consultez [Opérateurs C#](index.md).
+Pour obtenir la liste complète C# des opérateurs classés par niveau de priorité, consultez la section priorité d' [ C# ](index.md) [opérateur](index.md#operator-precedence) de l’article opérateurs.
 
 ## <a name="arithmetic-overflow-and-division-by-zero"></a>Débordement arithmétique et division par zéro
 
@@ -235,11 +235,11 @@ Pour les opérandes du type `decimal`, le débordement arithmétique lève toujo
 
 ## <a name="round-off-errors"></a>Erreurs d’arrondi
 
-En raison des limitations générales de la représentation à virgule flottante des nombres réels et de l’arithmétique à virgule flottante, des erreurs d’arrondi peuvent se produire dans les calculs avec les types à virgule flottante. Autrement dit, le résultat d’une expression peut différer du résultat mathématique attendu. L’exemple suivant illustre plusieurs cas de ce genre :
+En raison des limitations générales de la représentation à virgule flottante des nombres réels et de l’arithmétique à virgule flottante, des erreurs d’arrondi peuvent se produire dans les calculs avec des types à virgule flottante. Autrement dit, le résultat d’une expression peut différer du résultat mathématique attendu. L’exemple suivant illustre plusieurs cas de ce genre :
 
 [!code-csharp-interactive[round-off errors](~/samples/csharp/language-reference/operators/ArithmeticOperators.cs#RoundOffErrors)]
 
-Pour plus d’informations, consultez les remarques dans les pages de référence [System.Double](/dotnet/api/system.double#remarks), [System.Single](/dotnet/api/system.single#remarks) ou [System.Decimal](/dotnet/api/system.decimal#remarks).
+Pour plus d’informations, consultez la section Notes sur les pages de référence System. [double](/dotnet/api/system.double#remarks), [System. Single](/dotnet/api/system.single#remarks)ou [System. Decimal](/dotnet/api/system.decimal#remarks) .
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

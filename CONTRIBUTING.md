@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 624814e40c361c30e251a9388f1444734a276c0a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 0783c6ab80f3a07bd7b7e5a005444218c17e85fb
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315869"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73035459"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -79,7 +79,7 @@ docs
 
 **Étape 4 :** Soumettez une demande de tirage (PR) de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` ou `dotnet/samples/master`.
 
-Votre demande de tirage doit *toujours* cibler la branche principale. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche active.
+Votre demande de tirage doit *toujours* cibler la branche par défaut du dépôt (à moins que vous ne travailliez sur une branche de version). Pour dotnet/docs, Master Branch est la branche par défaut. Pour les référentiels localisés, la branche active est celle par défaut. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche Live sur dotnet/docs.
 
 Chaque demande de tirage devrait généralement résoudre un problème à la fois. La demande de tirage peut modifier un ou plusieurs fichiers. Si vous gérez plusieurs correctifs sur des fichiers différents, il est préférable d’utiliser des demandes de tirage distinctes.
 
@@ -140,14 +140,14 @@ Le C# expérience interactive modifie comment nous collaborons avec des exemples
 
 La liste suivante montre quelques règles directrices que vous devez garder à l’esprit quand vous contribuez à la documentation .NET :
 
-- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps.
+- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps. Pour les modifications en bloc, décomposer le travail en un nombre de fichiers de plus petite taille (jusqu’à 100 fichiers).
 - **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md).
 - **À faire** : Utiliser le fichier de [modèle](./styleguide/template.md) comme point de départ de votre travail.
 - **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
 - **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
 - **À faire** : Bloguer et tweeter (ou autre) régulièrement à propos de vos contributions.
 
-> Note : vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./styleguide/template.md). Nous travaillons actuellement à une cohérence globale du site. Consultez la liste des [dossiers ouverts](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) que nous voulons amener vers cet objectif.
+> Note : vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./styleguide/template.md). Nous travaillons actuellement à une cohérence globale du site.
 
 ## <a name="contributor-license-agreement"></a>Contrat de licence du contributeur
 

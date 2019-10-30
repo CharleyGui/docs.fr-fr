@@ -2,13 +2,14 @@
 title: Générer et consommer des flux asynchrones
 description: Ce tutoriel avancé illustre des scénarios où la génération et la consommation de flux asynchrones permet de travailler plus naturellement avec des séquences de données pouvant être générées de façon asynchrone.
 ms.date: 02/10/2019
+ms.technology: csharp-async
 ms.custom: mvc
-ms.openlocfilehash: 6c013d1b589367b77c6f77f88334317a6f3bc657
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 412e5de5d9d73846fe2af36e3def383364389c75
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579220"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039220"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Didacticiel : générer et utiliser des flux asynchrones à l’aide C# de 8,0 et .net Core 3,0
 

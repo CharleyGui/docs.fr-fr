@@ -2,13 +2,14 @@
 title: Gestion de version C# - Guide C#
 description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
+ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: dcfe373312b88c8ddd8587e27c566a90b25e3c13
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3fadbc1257ae758fc220685fa074a4fa68b20ba1
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834056"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039654"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -18,7 +19,7 @@ Dans ce didacticiel, vous allez apprendre la signification de la gestion de vers
 
 En tant que développeur ayant créé des bibliothèques .NET pour une utilisation publique, vous avez probablement été confronté à des situations où vous deviez déployer de nouvelles mises à jour. Votre manière de procéder est très importante, car vous devez assurer une transition fluide du code existant vers la nouvelle version de votre bibliothèque. Voici quelques points à prendre en compte lors de la création d’une version :
 
-### <a name="semantic-versioning"></a>Gestion sémantique de version
+### <a name="semantic-versioning"></a>Gestion sémantique des versions
 
 La [gestion sémantique de version](https://semver.org/) (SemVer en abrégé) est une convention d’affectation de noms appliquée à des versions de votre bibliothèque pour indiquer des événements jalons spécifiques.
 Dans l’idéal, les informations de version ajoutées à votre bibliothèque doivent aider les développeurs à déterminer la compatibilité avec les projets qui utilisent des versions antérieures de cette même bibliothèque.
@@ -39,7 +40,7 @@ Une nouvelle version de la bibliothèque est compatible au format source avec un
 Voici quelques éléments à prendre en compte quand vous tentez de maintenir la compatibilité descendante avec d’anciennes versions de votre bibliothèque  :
 
 - Méthodes virtuelles : quand vous rendez une méthode virtuelle non virtuelle dans la nouvelle version, cela signifie que les projets qui substituent cette méthode doivent être mis à jour. Il s’agit là d’une modification avec rupture importante qui est vivement déconseillée.
-- Signatures de méthode : Lors de la mise à jour d’un comportement de méthode, vous devez également modifier sa signature. vous devez plutôt créer une surcharge afin que le code qui appelle cette méthode continue à fonctionner.
+- Signatures de méthode : lorsque la mise à jour d’un comportement de méthode requiert la modification de sa signature, vous devez plutôt créer une surcharge afin que le code qui appelle cette méthode continue à fonctionner.
 Vous pouvez toujours manipuler l’ancienne signature de méthode pour appeler la nouvelle signature de méthode afin que l’implémentation reste cohérente.
 - [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
 - Arguments de méthode facultatifs : quand vous rendez obligatoires des arguments de méthode auparavant facultatifs ou modifiez leur valeur par défaut, tout le code qui ne fournit pas ces arguments doit être mis à jour.
@@ -52,7 +53,7 @@ Plus il est facile pour vos utilisateurs d’effectuer la mise à niveau vers la
 ### <a name="application-configuration-file"></a>Fichier de configuration de l'application
 
 En tant que développeur .NET, il est très probable que vous ayez rencontré [le fichier `app.config`](../framework/configure-apps/file-schema/index.md), présent dans la plupart des types de projets.
-Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. En général, vous devez concevoir vos bibliothèques de sorte que les informations qui sont susceptibles d’être modifiées régulièrement sont stockées dans le fichier `app.config`. ainsi, lorsque ces informations sont mises à jour, le fichier de configuration des versions antérieures doit simplement être remplacé par le nouveau sans le la recompilation de la bibliothèque est nécessaire.
+Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. Vous devez généralement concevoir vos bibliothèques de manière à ce que les informations susceptibles d’être modifiées régulièrement soient stockées dans le fichier `app.config`. ainsi, lorsque ces informations sont mises à jour, le fichier de configuration des versions antérieures doit simplement être remplacé par le nouveau sans la nécessité de recompiler la bibliothèque.
 
 ## <a name="consuming-libraries"></a>Utilisation des bibliothèques
 
@@ -62,7 +63,7 @@ Heureusement, C# et l’écosystème .net est fourni avec des fonctionnalités e
 
 ### <a name="assembly-binding-redirection"></a>Redirection des liaisons d'assembly
 
-Vous pouvez utiliser le fichier *app. config* pour mettre à jour la version d’une bibliothèque que votre application utilise. En ajoutant ce que l’on appelle une [*redirection de liaison*](../framework/configure-apps/redirect-assembly-versions.md), vous pouvez utiliser la nouvelle version de la bibliothèque sans avoir à recompiler votre application. L’exemple suivant montre comment mettre à jour le fichier *app. config* de votre application pour utiliser la version de correctif `1.0.1` de `ReferencedLibrary` au lieu de la version de `1.0.0` avec laquelle il a été compilé à l’origine.
+Vous pouvez utiliser le fichier *app. config* pour mettre à jour la version d’une bibliothèque que votre application utilise. En ajoutant ce que l’on appelle une [*redirection de liaison*](../framework/configure-apps/redirect-assembly-versions.md), vous pouvez utiliser la nouvelle version de la bibliothèque sans avoir à recompiler votre application. L’exemple suivant montre comment mettre à jour le fichier *app. config* de votre application pour utiliser la version `1.0.1` patch de `ReferencedLibrary` au lieu de la version de `1.0.0` à laquelle il a été compilé à l’origine.
 
 ```xml
 <dependentAssembly>

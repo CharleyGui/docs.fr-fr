@@ -2,12 +2,12 @@
 title: Exemple de configuration de copie en bloc
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
-ms.openlocfilehash: ac09ed85315aee7c6b29952916088ebe6e301eb9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 28fa5cde1dcbaf9f38450116a56fc11d904edc1c
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794420"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040252"
 ---
 # <a name="bulk-copy-example-setup"></a>Exemple de configuration de copie en bloc
 La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données uniquement dans des tables SQL Server. Les exemples de code présentés dans cette rubrique utilisent l’exemple de base de données SQL Server, **AdventureWorks**. Pour éviter de modifier les exemples de code des tables existantes, créez des tables et écrivez des données dans celles-ci.  
@@ -22,7 +22,7 @@ La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données
 ## <a name="table-setup"></a>Configuration de table  
  Pour créer les tables nécessaires pour que les exemples de code s'exécutent correctement, vous devez exécuter les instructions Transact-SQL suivantes dans une base de données SQL Server.  
   
-```  
+```sql
 USE AdventureWorks  
   
 IF EXISTS (SELECT * FROM dbo.sysobjects   

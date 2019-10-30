@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: 357812aa95ea731fe86fbe49b2cb1b2806e3915a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a9c81c8554c0fb393c10ed69f84c8b2d936ec1e6
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784864"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040130"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mappages de DataAdapter DataTable et DataColumn
-Un **DataAdapter** contient une collection de zéro ou plusieurs <xref:System.Data.Common.DataTableMapping> objets dans sa propriété **TableMappings** . Un **DataTableMapping** fournit un mappage principal entre les données retournées par une requête sur une source de données <xref:System.Data.DataTable>et un. Le nom **DataTableMapping** peut être passé à la place du nom du **DataTable** à la méthode **Fill** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table **Authors** .  
+Un **DataAdapter** contient une collection de zéro ou plusieurs objets <xref:System.Data.Common.DataTableMapping> dans sa propriété **TableMappings** . Un **DataTableMapping** fournit un mappage principal entre les données retournées par une requête sur une source de données et un <xref:System.Data.DataTable>. Le nom **DataTableMapping** peut être passé à la place du nom du **DataTable** à la méthode **Fill** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table **Authors** .  
   
 ```vb  
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors")  
@@ -27,7 +27,7 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors");
   
  Si vous ne spécifiez pas de nom **TableName** ou **DataTableMapping** lors de l’appel de la méthode **Fill** ou **Update** du **DataAdapter**, le **DataAdapter** recherche un **DataTableMapping** nommé « table ». Si ce **DataTableMapping** n’existe pas, le **TableName** du **DataTable** est « table ». Vous pouvez spécifier un **DataTableMapping** par défaut en créant un **DataTableMapping** portant le nom « table ».  
   
- L’exemple de code suivant crée un **DataTableMapping** (à <xref:System.Data.Common> partir de l’espace de noms) et en fait le mappage par défaut pour le **DataAdapter** spécifié en le nommant « table ». L’exemple mappe ensuite les colonnes de la première table du résultat de la requête (la table **Customers** de la base de données **Northwind** ) à un ensemble de noms plus conviviaux dans la table **Customers de Northwind** dans le <xref:System.Data.DataSet>. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
+ L’exemple de code suivant crée un **DataTableMapping** (à partir de l’espace de noms <xref:System.Data.Common>) et en fait le mappage par défaut pour le **DataAdapter** spécifié en le nommant « table ». L’exemple mappe ensuite les colonnes de la première table du résultat de la requête (la table **Customers** de la base de données **Northwind** ) à un ensemble de noms plus conviviaux dans la table **Customers** de la <xref:System.Data.DataSet>. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -86,16 +86,25 @@ adapter.Fill(custDS, "Customers");
 ## <a name="handling-multiple-result-sets"></a>Gestion de jeux de résultats multiples  
  Si votre **SelectCommand** retourne plusieurs tables, **Fill** génère automatiquement des noms de table avec des valeurs incrémentielles pour les tables du **DataSet**, en commençant par le nom de table spécifié et en continuant sous la forme **TableName** *N*, commençant par **TableName1**. Vous pouvez utiliser des mappages de table pour mapper le nom de table généré automatiquement à un nom que vous souhaitez spécifier pour la table dans le **jeu de données**. Par exemple, pour un **SelectCommand** qui retourne deux tables, **Customers** et **Orders**, émettez l’appel suivant à **Fill**.  
   
-```  
+```vb  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
-  
- Deux tables sont créées dans le **jeu de données**: **Clients** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
-  
+
+```csharp  
+adapter.Fill(customersDataSet, "Customers");  
 ```  
+
+ Deux tables sont créées dans le **jeu de données**: **Customers** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
+  
+```vb  
 adapter.TableMappings.Add("Customers1", "Orders")  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
+
+```csharp  
+adapter.TableMappings.Add("Customers1", "Orders");  
+adapter.Fill(customersDataSet, "Customers");  
+```
   
 ## <a name="see-also"></a>Voir aussi
 

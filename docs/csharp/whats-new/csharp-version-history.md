@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: bce61d7a1838753f6cc2397440208e0c02b8194a
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 11463f7d47c5fb5b71bd16d73039b22e4a6ca43e
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002695"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039650"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -37,7 +37,7 @@ C# version 1.0 semblait dénué de fonctionnalités, par rapport à aujourd’h
 Les principales fonctionnalités du langage C# 1.0 étaient les suivantes :
 
 - [Classes](../programming-guide/classes-and-structs/classes.md)
-- [Structs](../programming-guide/classes-and-structs/structs.md)
+- [Structures](../programming-guide/classes-and-structs/structs.md)
 - [Interfaces](../programming-guide/interfaces/index.md)
 - [Événements](../events-overview.md)
 - [Propriétés](../properties.md)
@@ -124,7 +124,7 @@ C#la version 5,0, publiée avec Visual Studio 2012, était une version ciblée d
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Code Project : Attributs d’informations de l’appelant dans C# 5.0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
+- [Projet de code : Attributs des informations de l’appelant en C# 5.0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
 
 L’attribut d’informations de l’appelant vous permet de récupérer facilement des informations sur le contexte d’exécution sans avoir recours à une multitude de code de réflexion réutilisable. Nombre de ses usages ont trait aux diagnostics et aux tâches de journalisation.
 
@@ -132,7 +132,7 @@ Mais `async` et `await` sont les véritables vedettes de cette version. Quand ce
 
 ## <a name="c-version-60"></a>C# version 6.0
 
-Avec les versions 3.0 et 5.0, C# avait ajouté d’importantes nouvelles fonctionnalités à un langage orienté objet. Avec la version 6,0, publiée avec Visual Studio 2013, il ne s’agissait pas d’une fonctionnalité de déploiement dominant et de libérer à la place C# de nombreuses fonctionnalités plus petites qui rendaient la programmation plus productive. En voici quelques-unes :
+Avec les versions 3.0 et 5.0, C# avait ajouté d’importantes nouvelles fonctionnalités à un langage orienté objet. Avec la version 6,0, publiée avec Visual Studio 2015, il ne s’agissait pas d’une fonctionnalité de déploiement dominant et de libérer à la place C# de nombreuses fonctionnalités plus petites qui rendaient la programmation plus productive. En voici quelques-unes :
 
 - [Importations statiques](./csharp-6.md#using-static)
 - [Filtres d’exceptions](./csharp-6.md#exception-filters)

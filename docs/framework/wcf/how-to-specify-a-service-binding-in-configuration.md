@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: b9790d3fb5fc20b3d2c6ce776070274ef0403732
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: ef41514a57d08d66fcba2dbaeb8c8d88cdcf3875
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319867"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040708"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>Comment : spécifier une liaison de service dans la configuration
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice de base, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est configuré dans le fichier Web.config, où il est spécifié que le service utilise <xref:System.ServiceModel.BasicHttpBinding>. Pour obtenir une description de la façon de configurer ce service à l’aide de code au lieu d’une configuration, consultez [Comment : spécifier une liaison de service dans le code](how-to-specify-a-service-binding-in-code.md).  
@@ -44,19 +44,20 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
       <system.serviceModel>  
         <services>  
           <service name=" CalculatorService" >  
+            
+            <!-- Leave the address blank to be populated by default -->
+            <!-- from the hosting environment,in this case IIS, so -->
+            <!-- the address will just be that of the IIS Virtual -->
+            <!-- Directory. -->
+
+            <!-- Specify the binding configuration name for that -->
+            <!-- binding type. This is optional but useful if you -->
+            <!-- want to modify the properties of the binding. -->
+            <!-- The bindingConfiguration name Binding1 is defined -->
+            <!-- below in the bindings element. -->
             <endpoint   
-            <!-- Leave the address blank to be populated by default -->  
-            <!-- from the hosting environment,in this case IIS, so -->  
-            <!-- the address will just be that of the IIS Virtual -->  
-            <!-- Directory. -->  
                 address=""   
-            <!-- Specify the binding type -->  
                 binding="wsHttpBinding"  
-            <!-- Specify the binding configuration name for that -->  
-            <!-- binding type. This is optional but useful if you -->  
-            <!-- want to modify the properties of the binding. -->  
-            <!-- The bindingConfiguration name Binding1 is defined -->  
-            <!-- below in the bindings element. -->  
                 bindingConfiguration="Binding1"  
                 contract="ICalculator" />  
           </service>  

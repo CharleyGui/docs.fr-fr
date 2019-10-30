@@ -2,13 +2,14 @@
 title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
 ms.date: 09/20/2019
+ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: 1be144560d2b20bafc66cd68de0735e6dc7f0124
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: bbf3f257db9079c4f69f25c9ea08e7711b5ea04b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699934"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039670"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
@@ -27,11 +28,11 @@ Dans ce tutoriel, vous allez apprendre à :
 Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
 
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
-- Index de l’opérateur `^`end, qui spécifie qu’un index est relatif à la fin d’une séquence.
+- L’index de l’opérateur end `^`, qui spécifie qu’un index est relatif à la fin d’une séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- Opérateur `..`de plage, qui spécifie le début et la fin d’une plage comme opérandes.
+- L’opérateur de plage `..`, qui spécifie le début et la fin d’une plage comme opérandes.
 
-Commençons par les règles concernant les indices. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est le même que l’index `sequence[sequence.Length - n]`.
+Commençons par les règles concernant les indices. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence[sequence.Length - n]`.
 
 ```csharp
 string[] words = new string[]
@@ -77,11 +78,11 @@ L’exemple suivant montre un grand nombre des raisons de ces choix. Modifiez `x
 
 ## <a name="type-support-for-indices-and-ranges"></a>Prise en charge des types d’index et de plages
 
-Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages respectivement.
+Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages, respectivement.
 
 Un type est **compté** s’il a une propriété nommée `Length` ou `Count` avec un accesseur Get accessible et un type de retour `int`. Un type pouvant être compté qui ne prend pas explicitement en charge les index ou les plages peut fournir une prise en charge implicite pour eux. Pour plus d’informations, consultez les sections prise en charge d' [index implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et [prise en charge de plage implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la [proposition](~/_csharplang/proposals/csharp-8.0/ranges.md).
 
-Par exemple, les types .NET suivants prennent en charge les index et les plages : <xref:System.Array>, <xref:System.String>, <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>. Le <xref:System.Collections.Generic.List%601> prend en charge les index, mais ne prend pas en charge les plages.
+Par exemple, les types .NET suivants prennent en charge les index et les plages : <xref:System.Array>, <xref:System.String>, <xref:System.Span%601>et <xref:System.ReadOnlySpan%601>. Le <xref:System.Collections.Generic.List%601> prend en charge les index mais ne prend pas en charge les plages.
 
 ## <a name="scenarios-for-indices-and-ranges"></a>Scénarios pour les index et les plages
 

@@ -2,13 +2,14 @@
 title: Interpolation de chaîne en C#
 description: Découvrez comment inclure des résultats d’expressions mises en forme dans une chaîne de résultat en C# avec une interpolation de chaîne.
 author: pkulikov
+ms.technology: csharp-fundamentals
 ms.date: 09/02/2019
-ms.openlocfilehash: d3a3a08d5911b5323aa61c571f05318d10380339
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b901ae661ebd4af625d9f3c999b0eb50dda1990d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252925"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039210"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolation de chaîne en C\#
 
@@ -16,7 +17,7 @@ Ce tutoriel vous montre comment utiliser une [interpolation de chaîne](../langu
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 La fonctionnalité [Interpolation de chaîne](../language-reference/tokens/interpolated.md) s’appuie sur la fonctionnalité [Mise en forme composite](../../standard/base-types/composite-formatting.md) et fournit une syntaxe plus lisible et plus pratique pour inclure des résultats d’expressions mises en forme dans une chaîne de résultat.
 
@@ -74,7 +75,7 @@ Pour plus d’informations, consultez la section [Composant d’alignement](../.
 
 Les chaînes interpolées prennent en charge toutes les séquences d’échappement qui peuvent être utilisés dans les littéraux de chaîne ordinaires. Pour plus d’informations, consultez [Séquences d’échappement de chaîne](../programming-guide/strings/index.md#string-escape-sequences).
 
-Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne textuelle interpolée commence par le `$` caractère suivi du `@` caractère. À C# partir de 8,0, vous pouvez utiliser `$` les `@` `$@"..."` jetons et dans n’importe quel ordre : `@$"..."` et sont des chaînes textuelles interpolées valides.
+Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne textuelle interpolée commence par le caractère `$` suivi du caractère `@`. À C# partir de 8,0, vous pouvez utiliser les jetons`$`et`@`dans n’importe quel ordre : `$@"..."`et`@$"..."`sont des chaînes textuelles interpolées valides.
 
 Pour inclure une accolade, « { » ou «} », dans une chaîne de résultat, utilisez deux accolades, « {{ » ou «}} ». Pour plus d’informations, consultez la section [Échappement des accolades](../../standard/base-types/composite-formatting.md#escaping-braces) de la rubrique [Mise en forme composite](../../standard/base-types/composite-formatting.md).
 

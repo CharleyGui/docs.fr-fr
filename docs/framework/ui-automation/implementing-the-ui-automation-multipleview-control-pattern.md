@@ -6,25 +6,25 @@ helpviewer_keywords:
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: 699644b98fbf818c71553775f4dff8dfb0726977
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: edef213c0f4d43a15b7c6842ef6c62e95544da66
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043426"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039500"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implémentation du modèle de contrôle MultipleView d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IMultipleViewProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.MultipleViewPattern> permet de prendre en charge des contrôles qui fournissent plusieurs représentations du même ensemble d’informations ou de contrôles enfants, et permettent de basculer entre elles.  
   
- Les exemples de contrôles qui peuvent présenter plusieurs affichages incluent le mode liste (qui peut afficher son contenu sous forme de miniatures, de vignettes, [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] d’icônes ou de détails), des graphiques (secteurs, courbes, barres [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] , valeurs de cellule avec une formule), des documents (normal, disposition Web, mise en page, lecture, disposition, plan), calendrier Microsoft Outlook (année, mois, semaine, jour) [!INCLUDE[TLA#tla_wmp](../../../includes/tlasharptla-wmp-md.md)] et habillages. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
+ Les exemples de contrôles qui peuvent présenter plusieurs affichages sont le mode liste (qui peut afficher son contenu sous forme de miniatures, de vignettes, d’icônes ou de détails), [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] des graphiques (secteurs, courbes, barres, valeurs de cellule avec une formule), [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] des documents (normal, disposition Web, mise en page, lecture, mode plan), calendrier Microsoft Outlook (année, mois, semaine, jour) et apparences du lecteur Microsoft Windows Media. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle Multiple View, notez les conventions et recommandations suivantes :  
   
 - <xref:System.Windows.Automation.Provider.IMultipleViewProvider> doit également être implémenté sur un conteneur qui gère la vue actuelle s’il est différent d’un contrôle qui fournit la vue actuelle. Par exemple, l’Explorateur Windows contient un contrôle List pour le contenu du dossier actuel, tandis que la vue du contrôle est gérée à partir de l’application de l’Explorateur Windows.  
@@ -41,10 +41,10 @@ ms.locfileid: "71043426"
   
 |Membres nécessaires|Type de membre|Notes|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Méthode|Aucun|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Méthode|Aucun|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Méthode|Aucun|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Property|aucune.|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Méthode|aucune.|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Méthode|aucune.|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Méthode|aucune.|  
   
  Aucun événement n’est associé à ce modèle de contrôle.  
   

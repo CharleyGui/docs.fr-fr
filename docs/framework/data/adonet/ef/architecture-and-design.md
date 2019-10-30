@@ -2,24 +2,24 @@
 title: Architecture et conception
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-ms.openlocfilehash: 50fc643fecf4b188123c556d754b3cbfa529e5e9
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 35fbc39db23a2b08ab926e122d2f1eb1806a369b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251718"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040025"
 ---
 # <a name="architecture-and-design"></a>Architecture et conception
 
 Le module de génération SQL de l' [exemple de fournisseur](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) est implémenté en tant que visiteur de l’arborescence d’expressions qui représente l’arborescence de commandes. La génération est effectuée par un unique passage sur l'arborescence de l'expression.
 
-Les nœuds de l’arborescence sont traités de bas en haut. Tout d’abord, une structure intermédiaire est produite : SqlSelectStatement ou SqlBuilder, qui implémentent tous deux ISqlFragment. Ensuite, l'instruction SQL de chaîne est issue de cette structure. Il y a deux raisons pour la structure intermédiaire :
+Les nœuds de l’arborescence sont traités de bas en haut. En premier lieu, une structure intermédiaire est produite : SqlSelectStatement ou SqlBuilder, tous deux implémentant ISqlFragment. Ensuite, l'instruction SQL de chaîne est issue de cette structure. Il y a deux raisons pour la structure intermédiaire :
 
 - Logiquement, une instruction SQL SELECT est remplie de manière désordonnée. Les nœuds qui participent à la clause FROM sont visités avant les nœuds qui participent aux clauses WHERE, GROUP BY et ORDER BY.
 
 - Pour renommer des alias, vous devez identifier tous les alias utilisés afin d'éviter des conflits pendant le changement de nom. Pour différer les choix de changement de nom dans SqlBuilder, utilisez des objets Symbol afin de représenter les colonnes candidates pour le changement de nom.
 
-![Diagram](./media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")
+![Diagramme](./media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")
 
 Dans la première phase, lors de la visite de l’arborescence de l’expression, les expressions sont groupées dans SqlSelectStatements, les jointures sont aplanies de même que les alias de jointure. Pendant ce passage, les objets Symbol représentent des colonnes ou des alias d'entrée qui peuvent être renommés.
 
@@ -57,7 +57,7 @@ internal sealed class SqlBuilder : ISqlFragment {
 
 #### <a name="sqlselectstatement"></a>SqlSelectStatement
 
-SqlSelectStatement représente une instruction SQL SELECT canonique de la forme «SELECT... DE.. OÙ... REGROUPER PAR... TRIER PAR.
+SqlSelectStatement représente une instruction SQL SELECT canonique de la forme «SELECT... De.. OÙ... REGROUPER PAR... TRIER PAR.
 
 Chacune des clauses SQL est représentée par un StringBuilder. De plus, il vérifie si Distinct a été spécifié et si l'instruction est au premier plan. Si l'instruction n'est pas au premier plan, la clause ORDER BY est omise à moins que l'instruction ait également une clause TOP.
 
@@ -97,7 +97,7 @@ class TopClause : ISqlFragment {
 }
 ```
 
-### <a name="symbols"></a>Symbols
+### <a name="symbols"></a>Symboles
 
 Les classes associées au symbole et la table de symboles effectuent le changement de nom de l'alias de l'entrée, l'aplanissement de l'alias de jointure et le changement de nom de l'alias de colonne.
 
@@ -229,11 +229,11 @@ La redirection d'alias d'entrée est accomplie avec la table de symboles.
 
 Pour expliquer la redirection d’alias d’entrée, reportez-vous au premier exemple de la rubrique [génération de SQL à partir d’arborescences de commandes-meilleures pratiques](generating-sql-from-command-trees-best-practices.md).  Dans cet exemple « a » doit être redirigé vers « b » dans la projection.
 
-Lorsqu'un objet SqlSelectStatement est créé, l'étendue qui est l'entrée du nœud est mise dans la propriété FROM du SqlSelectStatement. Un symbole (\<symbol_b >) est créé en fonction du nom de liaison d’entrée (« b ») pour représenter cette étendue et « As \<» + symbol_b > est ajouté à la clause from.  Le symbole est également ajouté à la propriété FromExtents.
+Lorsqu'un objet SqlSelectStatement est créé, l'étendue qui est l'entrée du nœud est mise dans la propriété FROM du SqlSelectStatement. Un symbole (\<symbol_b >) est créé en fonction du nom de liaison d’entrée (« b ») pour représenter cette étendue et « AS » + \<symbol_b > est ajouté à la clause from.  Le symbole est également ajouté à la propriété FromExtents.
 
-Le symbole est également ajouté à la table de symboles pour lier le nom de liaison d’entrée à celui-ci \<(« b », symbol_b >).
+Le symbole est également ajouté à la table de symboles pour lier le nom de liaison d’entrée à celui-ci (« b », \<symbol_b >).
 
-Si un nœud suivant réutilise ce SqlSelectStatement, il ajoute une entrée à la table de symboles pour lier son nom de liaison d’entrée à ce symbole. Dans notre exemple, le DbProjectExpression avec le nom de liaison d’entrée « a » réutiliserait le SqlSelectStatement et ajoutera (« \< a », symbol_b >) à la table.
+Si un nœud suivant réutilise ce SqlSelectStatement, il ajoute une entrée à la table de symboles pour lier son nom de liaison d’entrée à ce symbole. Dans notre exemple, le DbProjectExpression avec le nom de liaison d’entrée « a » réutiliserait le SqlSelectStatement et ajoutera (« a », \< symbol_b >) à la table.
 
 Lorsque les expressions référencent le nom de liaison d’entrée du nœud qui réutilise le SqlSelectStatement, cette référence est résolue à l’aide de la table de symboles en symbole correct redirigé. Lorsque « a » de « a. x » est résolu lors de la visite du DbVariableReferenceExpression représentant « a », il se résout en symbole \<symbol_b >.
 
@@ -243,9 +243,9 @@ L'aplanissement d'alias de jointure est accompli lors de la visite d'un DbProper
 
 ### <a name="column-name-and-extent-alias-renaming"></a>Changement du nom de colonne et du nom d'alias d'étendue
 
-Le problème de l’attribution d’un nom de colonne et d’un alias d’extension est résolu à l’aide de symboles qui se substituent uniquement par des alias dans la deuxième phase de la génération décrite dans la section intitulée deuxième phase de la génération SQL : Génération de la commande de chaîne.
+Le problème du changement du nom de colonne et du nom d'alias d'étendue est résolu à l'aide de symboles qui sont uniquement remplacés par des alias dans la deuxième phase de la génération décrite dans la section intitulée Deuxième phase de la génération SQL : génération de la commande de chaîne.
 
-## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>Première phase de la génération SQL : Visite de l’arborescence de l’expression
+## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>Première phase de la génération SQL : visite de l’arborescence de l’expression
 
 Cette section décrit la première phase de génération SQL, lorsque l'expression qui représente la requête est visitée et qu'une structure intermédiaire est produite, telle qu'un SqlSelectStatement ou un SqlBuilder.
 
@@ -345,7 +345,7 @@ Les opérations Set DbUnionAllExpression, DbExceptExpression et DbIntersectExpre
 <leftSqlSelectStatement> <setOp> <rightSqlSelectStatement>
 ```
 
-Où \<leftSqlSelectStatement > et \<rightSqlSelectStatement > sont SqlSelectStatements obtenus en visitant chacune des entrées, et \<setOp > est l’opération correspondante (Union All par exemple).
+Lorsque \<leftSqlSelectStatement > et \<rightSqlSelectStatement > sont SqlSelectStatements obtenus en visitant chacune des entrées, et \<setOp > est l’opération correspondante (UNION ALL par exemple).
 
 ### <a name="dbscanexpression"></a>DbScanExpression
 
@@ -375,9 +375,9 @@ Lorsque DbNewInstanceExpression possède un type de retour de collection et déf
 
 - Si DbNewInstanceExpression possède DbElementExpression en tant que seul argument, il est traduit comme suit :
 
-    ```
-    NewInstance(Element(X)) =>  SELECT TOP 1 …FROM X
-    ```
+```sql
+NewInstance(Element(X)) =>  SELECT TOP 1 …FROM X
+```
 
 Si DbNewInstanceExpression n'a pas d'argument (représente une table vide), DbNewInstanceExpression est traduit par :
 
@@ -409,18 +409,18 @@ La méthode qui visite DbElementExpression est appelée uniquement pour visiter 
 
 ### <a name="dbquantifierexpression"></a>DbQuantifierExpression
 
-Selon le type de l'expression (Any ou All), DbQuantifierExpression est traduit par :
+Selon le type d’expression (any ou All), DbQuantifierExpression est traduit comme suit :
 
-```
+```sql
 Any(input, x) => Exists(Filter(input,x))
 All(input, x) => Not Exists(Filter(input, not(x))
 ```
 
 ### <a name="dbnotexpression"></a>DbNotExpression
 
-Dans certains cas, il est possible de réduire la traduction de DbNotExpression par son expression d‘entrée. Par exemple :
+Dans certains cas, il est possible de réduire la traduction de DbNotExpression par son expression d‘entrée. Exemple :
 
-```
+```sql
 Not(IsNull(a)) =>  "a IS NOT NULL"
 Not(All(input, x) => Not (Not Exists(Filter(input, not(x))) => Exists(Filter(input, not(x))
 ```
@@ -431,11 +431,11 @@ La raison pour laquelle la deuxième réduction est effectuée est que des ineff
 
 DbIsEmptyExpression est traduit par :
 
-```
+```sql
 IsEmpty(input) = Not Exists(input)
 ```
 
-## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Deuxième phase de la génération SQL : Génération de la commande de chaîne
+## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Deuxième phase de la génération SQL : génération de la commande de chaîne
 
 Lors de la génération d'une commande SQL de chaîne, le SqlSelectStatement produit des alias réels pour les symboles, ce qui résout le problème du changement de nom de colonne et d'alias de l'étendue.
 
@@ -443,7 +443,7 @@ Le changement de nom de l'alias de l'étendue se produit lors de l'écriture de 
 
 Le changement de nom des colonnes se produit lors de l'écriture d'un objet Symbol dans une chaîne. AddDefaultColumns dans la première phase a déterminé si un certain symbole de colonne doit être renommé. Dans la deuxième phase le changement de nom se produit en s'assurant que le nom généré n'entre en conflit avec aucun des noms utilisés dans AllColumnNames
 
-Pour produire des noms uniques pour les alias d’étendue et pour les colonnes \<, utilisez existing_name > _n, où n est le plus petit alias qui n’a pas encore été utilisé. La liste globale de tous les alias augmente le besoin d'un changement de nom en cascade.
+Pour produire des noms uniques pour les alias d’étendue et pour les colonnes, utilisez \<existing_name > _n, où n est le plus petit alias qui n’a pas encore été utilisé. La liste globale de tous les alias augmente le besoin d'un changement de nom en cascade.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,13 +1,14 @@
 ---
 title: Créer des types mixin à l’aide de méthodes d’interface par défaut
 description: À l’aide des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
+ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: 4dee97226420139d9cd09ad75d7c8caf4967273d
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 798413f0071159893de39f3e190a9b2693571bb7
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321623"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039276"
 ---
 # <a name="tutorial-mix-in-functionality-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : mélanger les fonctionnalités lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
 

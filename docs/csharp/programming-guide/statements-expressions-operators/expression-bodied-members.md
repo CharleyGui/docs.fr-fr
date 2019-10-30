@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7c282157639a6a60270ce8dbebbc91dd0e0a3f3
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: HT
+ms.openlocfilehash: b336834dcc021b986d79f09d2a9440de0b102f78
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826614"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039760"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Membres expression-bodied (Guide de programmation C#)
 
@@ -89,9 +89,9 @@ Pour plus d’informations, consultez [Finaliseurs (Guide de programmation C#)](
 
 ## <a name="indexers"></a>Indexeurs
 
-Comme les propriétés, les accesseurs get et set d’un indexeur sont composés de définitions de corps d’expression si l’accesseur get est constitué d’une seule instruction qui retourne une valeur ou si l’accesseur set effectue une assignation simple.
+Comme avec les propriétés, les accesseurs `get` et `set` sont constitués de définitions de corps d’expression si l’accesseur `get` se compose d’une expression unique qui retourne une valeur ou l’accesseur `set` effectue une assignation simple.
 
-L’exemple suivant définit une classe nommée `Sports` qui inclut un tableau <xref:System.String> interne contenant les noms de plusieurs sports. Les accesseurs get et set de l’indexeur sont implémentés en tant que définitions de corps d’expression.
+L’exemple suivant définit une classe nommée `Sports` qui inclut un tableau <xref:System.String> interne contenant les noms de plusieurs sports. Les accesseurs `get` et `set` sont implémentés en tant que définitions de corps d’expression.
 
 [!code-csharp[expression-bodied-indexer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-indexers.cs#1)]
 

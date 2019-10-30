@@ -2,21 +2,21 @@
 title: Héritage dans C#
 description: Apprenez à utiliser l’héritage dans les bibliothèques et applications C#.
 author: rpetrusha
-ms.author: ronpet
 ms.date: 07/05/2018
+ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 41377cb47836624160a5b402e0a85270b68eba4f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f09eaaf397d148955a151d178566f2b5a0d935fd
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850986"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039241"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Ce didacticiel part du principe que vous avez installé le kit SDK .NET Core. Visitez la page des [téléchargements .net Core](https://dotnet.microsoft.com/download) pour le télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
@@ -33,7 +33,7 @@ Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utili
 
 1. Entrez la commande [dotnet run](../../core/tools/dotnet-run.md) pour compiler et exécuter l’exemple.
 
-## <a name="background-what-is-inheritance"></a>Présentation : Qu’est-ce que l’héritage ?
+## <a name="background-what-is-inheritance"></a>Présentation : Qu’est-ce que l’héritage ?
 
 *L’héritage* est un des attributs fondamentaux de la programmation orientée objet. Il vous permet de définir une classe enfant qui réutilise (hérite), étend ou modifie le comportement d’une classe parente. La classe dont les membres sont hérités s’appelle la *classe de base*. La classe qui hérite des membres de la classe de base est appelée la *classe dérivée*.
 
@@ -98,7 +98,7 @@ public class B : A // Generates CS0534.
 }
 ```
 
-L’héritage s’applique uniquement aux classes et interfaces. Les autres catégories de type (structures, délégués et énumérations) ne permettent pas l’héritage. En raison de ces règles, la tentative de compilation de code comme l’exemple suivant génère l’erreur de compilateur CS0527 : « Le type 'ValueType' dans la liste des interfaces n’est pas une interface. » Le message d’erreur indique que, même si vous pouvez définir les interfaces qu’implémente un struct, l’héritage n'est pas pris en charge.
+L’héritage s’applique uniquement aux classes et interfaces. Les autres catégories de type (structures, délégués et énumérations) ne permettent pas l’héritage. En raison de ces règles, la tentative de compilation de code comme l’exemple suivant génère l’erreur de compilateur CS0527 : « Le type 'ValueType' dans la liste des interfaces n’est pas une interface ». Le message d’erreur indique que, même si vous pouvez définir les interfaces qu’implémente un struct, l’héritage n'est pas pris en charge.
 
 ```csharp
 using System;
@@ -142,7 +142,7 @@ Le tableau suivant répertorie les catégories de types que vous pouvez créer e
 
 | Catégorie de type | Hérite implicitement de                                                      |
 | ------------- | ----------------------------------------------------------------------------- |
-| class         | <xref:System.Object>                                                          |
+| classe         | <xref:System.Object>                                                          |
 | struct        | <xref:System.ValueType>, <xref:System.Object>                                 |
 | enum          | <xref:System.Enum>, <xref:System.ValueType>, <xref:System.Object>             |
 | délégué      | <xref:System.MulticastDelegate>, <xref:System.Delegate>, <xref:System.Object> |
@@ -166,7 +166,7 @@ Une relation « est un » basée sur l’héritage est préférablement appliqu�
 
 ## <a name="designing-the-base-class-and-derived-classes"></a>Conception de la classe de base et des classes dérivées
 
-Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous allez définir une classe de base, `Publication`, qui représente une publication de tout type, comme un livre, un magazine, un journal, une revue, un article, etc. Vous définirez aussi une classe `Book` qui dérive de `Publication`. Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
+Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous allez définir une classe de base, `Publication`, qui représente une publication de tout type, tel qu’un livre, un magazine, un journal, un journal, un article, etc. Vous définirez également une classe `Book` qui dérive de `Publication`. Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
 
 ### <a name="the-base-publication-class"></a>Classe Publication de base
 

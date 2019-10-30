@@ -1,19 +1,19 @@
 ---
-title: Versions cibles de .NET Framework
+title: Frameworks cibles dans des projets de type SDK-.NET
 description: Découvrez les frameworks cibles pour les applications et bibliothèques .NET Core.
 author: mairaw
 ms.author: mairaw
-ms.date: 09/23/2019
+ms.date: 10/27/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: b05923b293b1a5bb94a69ddd0154f8701b9326b0
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: d528201d1420b171e3a75919269e1c7a714f86e8
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216658"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73041000"
 ---
-# <a name="target-frameworks"></a>Versions cibles de .NET Framework
+# <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
 Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez le framework cible dans votre fichier projet à l’aide des monikers du framework cible (TFM).
 
@@ -32,8 +32,8 @@ Le tableau ci-dessous définit les frameworks cibles les plus courants, la faço
 | Framework cible      | Dernière <br/> Version stable | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
 | .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |
-| .NET Core             | 3.0                         | netcoreapp 3.0                  | 2.1                                     |
-| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
+| .NET Core             | 3,0                         | netcoreapp 3.0                  | 2.1                                     |
+| .NET Framework        | 4.8                         | net48                          | 2,0                                     |
 
 ## <a name="supported-target-framework-versions"></a>Versions de framework cible prises en charge
 
@@ -108,7 +108,7 @@ public class MyClass
 }
 ```
 
-Le système de génération tient compte des symboles de préprocesseur qui représentent les frameworks cibles indiqués dans le tableau [Versions de framework cible prises en charge](#supported-target-framework-versions). Quand vous utilisez un symbole représentant un TFM .NET Standard ou .NET Core, remplacez le point par un trait de soulignement et remplacez les lettres minuscules par des lettres majuscules (par exemple, le symbole pour `netstandard1.4` est `NETSTANDARD1_4`).
+Le système de génération tient compte des symboles de préprocesseur représentant les frameworks cibles affichés dans le tableau [versions de Framework cible prises en charge](#supported-target-framework-versions) lorsque vous utilisez des projets de type SDK. Quand vous utilisez un symbole représentant un TFM .NET Standard ou .NET Core, remplacez le point par un trait de soulignement et remplacez les lettres minuscules par des lettres majuscules (par exemple, le symbole pour `netstandard1.4` est `NETSTANDARD1_4`).
 
 La liste complète des symboles de préprocesseur pour les frameworks cibles de .NET Core est la suivante :
 

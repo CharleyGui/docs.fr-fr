@@ -2,15 +2,16 @@
 title: Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
+ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: 036a6bcda04771eb8cf3699af8756e83bb144389
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: ca7ae63a038fce0b2569e7a4bd1805765bc23d44
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332349"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039191"
 ---
-# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
+# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données
 
 C# 7 a introduit des fonctionnalités de critères spéciaux de base. Elles ont été étendues dans C# 8 par de nouvelles expressions et de nouveaux modèles. Il est possible d’écrire des fonctionnalités qui se comportent comme si des types provenant potentiellement d’autres bibliothèques avaient été étendus. Une autre utilisation des modèles consiste à créer des fonctionnalités requises par une application qui ne sont pas essentielles pour le type étendu.
 
@@ -22,7 +23,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
 > - Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -137,7 +138,7 @@ namespace toll_calculator
 }
 ```
 
-Ce code est inclus dans le projet de démarrage, mais en commentaire. Supprimez les commentaires pour tester ce que vous avez écrit.
+Ce code est inclus dans le projet de démarrage, mais il est commenté. Supprimez les commentaires et vous pouvez tester ce que vous avez écrit.
 
 On commence à voir comment les modèles peuvent nous aider à créer des algorithmes dans lesquels le code et les données sont séparés. L’ expression `switch` teste le type et produit différentes valeurs en fonction des résultats. Ce n’est que le début.
 
@@ -297,7 +298,7 @@ Pour cette fonctionnalité, nous allons utiliser les critères spéciaux, mais e
 
 Le tableau suivant montre les combinaisons de valeurs d’entrée et le multiplicateur tarifaire :
 
-| Jour        | Time         | Sens | Multiplicateur |
+| Jour        | Heure         | Sens | Multiplicateur |
 | ---------- | ------------ | --------- |--------:|
 | Semaine    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 2,00  |
 | Semaine    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |

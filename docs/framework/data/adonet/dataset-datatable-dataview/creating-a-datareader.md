@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49d4422a-7464-4ab8-8ec7-90185fde3ecf
-ms.openlocfilehash: 79cb2ce7ffae81aeba9aaca557e37ba566a8370c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 696eb4dfc334390e1968dd317d441f3c987a1f77
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784765"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040108"
 ---
 # <a name="creating-a-datareader"></a>Création d'un DataReader
 Les classes <xref:System.Data.DataTable> et <xref:System.Data.DataSet> ont une méthode <xref:System.Data.DataTable.CreateDataReader%2A> qui retourne le contenu de la collection <xref:System.Data.DataTable> de l'objet <xref:System.Data.DataSet> ou de l'objet <xref:System.Data.DataSet.Tables%2A> sous la forme d'un ou plusieurs jeux de résultats en lecture seule et en avant uniquement.  
   
 ## <a name="example"></a>Exemple  
- L'application console suivante crée une instance de l'objet <xref:System.Data.DataTable>. L’exemple passe ensuite le rempli <xref:System.Data.DataTable> à une procédure qui appelle la <xref:System.Data.DataTable.CreateDataReader%2A> méthode, qui itère au sein des résultats contenus dans le <xref:System.Data.DataTableReader>.  
+ L'application console suivante crée une instance de l'objet <xref:System.Data.DataTable>. L’exemple passe ensuite le <xref:System.Data.DataTable> rempli à une procédure qui appelle la méthode <xref:System.Data.DataTable.CreateDataReader%2A>, qui itère au sein des résultats contenus dans le <xref:System.Data.DataTableReader>.  
   
  [!code-csharp[DataWorks DataTable.CreateDataReader#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTable.CreateDataReader/CS/source.cs#1)]
  [!code-vb[DataWorks DataTable.CreateDataReader#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTable.CreateDataReader/VB/source.vb#1)]  
   
  L'exemple affiche la sortie suivante dans la fenêtre de console :  
   
-```  
+```output  
 1 Mary  
 2 Andy  
 3 Peter  

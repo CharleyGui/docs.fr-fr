@@ -1,17 +1,17 @@
 ---
-title: <GenericParameter>, Élément (.NET Native)
+title: Élément <GenericParameter> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cbd49732-3615-49a5-a900-f96947cdc3e6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2898d804f7a351045b2fbce42042f9fd322ebb0a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: cf2b06b14252f152c1eece6f9c0d317482a24b27
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049747"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039516"
 ---
-# <a name="genericparameter-element-net-native"></a>\<GenericParameter >, élément (.NET Native)
+# <a name="genericparameter-element-net-native"></a>\<élément GenericParameter > (.NET Native)
 Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,7 +27,7 @@ Applique la stratégie au type de paramètre d'un type ou d'une méthode génér
                   XmlSerializer="policy_type"  
                   MarshalObject="policy_type"  
                   MarshalDelegate="policy_type"  
-                  MarshalStructure="policy_type"  
+                  MarshalStructure="policy_type" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
@@ -37,7 +37,7 @@ Applique la stratégie au type de paramètre d'un type ou d'une méthode génér
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Généralités|Attribut requis. Nom du paramètre générique. Par exemple, pour le délégué générique <xref:System.Func%603>, la valeur de l'attribut `Name` est « TResult » pour appliquer la stratégie runtime à la valeur de retour du délégué.|  
+|`Name`|Général|Attribut requis. Nom du paramètre générique. Par exemple, pour le délégué générique <xref:System.Func%603>, la valeur de l'attribut `Name` est « TResult » pour appliquer la stratégie runtime à la valeur de retour du délégué.|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,18 +51,18 @@ Applique la stratégie au type de paramètre d'un type ou d'une méthode génér
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |*nom_paramètre_générique*|Attribut requis. Nom du paramètre de type générique. Par exemple, pour le délégué générique <xref:System.Func%603>, la valeur *nom_paramètre_générique* « TResult » applique la stratégie runtime à la valeur de retour du délégué.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -89,7 +89,7 @@ Applique la stratégie au type de paramètre d'un type ou d'une méthode génér
 ## <a name="see-also"></a>Voir aussi
 
 - [\<Method>, élément](method-element-net-native.md)
-- [\<Type >, élément](type-element-net-native.md)
+- [\<> type, élément](type-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

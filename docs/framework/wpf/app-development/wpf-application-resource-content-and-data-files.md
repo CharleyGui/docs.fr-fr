@@ -17,15 +17,15 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: e50f542086aadc2f61412fe409d7df0f49422718
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 77f3c519308f39f83dac399aef395d5d36a7195e
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920361"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040924"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] applications dépendent souvent de fichiers qui contiennent des données non exécutables, telles que des [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des images, des vidéos et de l’audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
+Les applications Microsoft Windows dépendent souvent de fichiers qui contiennent des données non exécutables, telles que des [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des images, des vidéos et de l’audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
   
 - **Fichiers de ressources**: fichiers de données compilés dans un fichier exécutable ou un assembly [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
   

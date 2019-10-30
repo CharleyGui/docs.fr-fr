@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: c255711e4b165fdca27d50c6bd0f2debfe15ae25
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 058e75c81c18f0ec73140f6fc13a91f4e0012a61
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773869"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036360"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Types numériques intégraux (référence C#)
 
@@ -100,7 +100,7 @@ Le type d’un littéral entier est déterminé par son suffixe comme suit :
 
 Si la valeur représentée par un littéral entier dépasse <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, une erreur de compilation [CS1021](../../misc/cs1021.md) se produit.
 
-Si le type déterminé d’un littéral d’entier est `int` et que la valeur est comprise dans la plage du type de destination, la valeur représentée par le littéral peut être convertie implicitement en `sbyte`, `byte`, `short`, `ushort` , `uint` ou `ulong` :
+Si le type déterminé d’un littéral d’entier est `int` et que la valeur représentée par le littéral est comprise dans la plage du type de destination, la valeur peut être convertie implicitement en `sbyte`, `byte`, `short`, `ushort`, `uint`ou `ulong`:
 
 ```csharp
 byte a = 17;

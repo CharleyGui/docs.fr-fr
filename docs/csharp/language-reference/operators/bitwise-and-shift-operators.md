@@ -29,16 +29,16 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 0a251e8d04f31a736ee6acbf4b8e913cfb8ca6df
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 9336ff57722e575d3ecfdb3db2b99bf7bbb6b433
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771718"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039100"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
-Les opérateurs suivants effectuent des opérations logiques de décalage ou au niveau du bit avec des opérandes de [types intégraux](../builtin-types/integral-numeric-types.md) :
+Les opérateurs suivants effectuent des opérations de bits ou de décalage avec les opérandes des [types numériques intégraux](../builtin-types/integral-numeric-types.md) ou le type [char](../keywords/char.md) :
 
 - Opérateur unaire [`~` (complément de bits)](#bitwise-complement-operator-)
 - Opérateurs de décalage binaires [`<<` (décalage gauche)](#left-shift-operator-) et [`>>` (décalage droite)](#right-shift-operator-)
@@ -46,7 +46,7 @@ Les opérateurs suivants effectuent des opérations logiques de décalage ou au 
 
 Ces opérateurs sont définis pour les types `int`, `uint`, `long` et `ulong`. Lorsque les deux opérandes sont d’autres types intégraux (`sbyte`, `byte`, `short`, `ushort` ou `char`), leurs valeurs sont converties en valeurs de type `int`, qui est également le type de résultat d’une opération. Lorsque les opérandes sont de différents types intégraux, leurs valeurs sont converties vers le type intégral le plus proche. Pour plus d’informations, consultez la section [Promotions numériques](~/_csharplang/spec/expressions.md#numeric-promotions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
-Les opérateurs `&`, `|` et `^` sont également définis pour les opérandes de type `bool`. Pour plus d’informations, consultez [Opérateurs logiques booléens](boolean-logical-operators.md).
+Les opérateurs `&`, `|`et `^` sont également définis pour les opérandes du type de `bool`. Pour plus d’informations, consultez [Opérateurs logiques booléens](boolean-logical-operators.md).
 
 Les opérations de décalage et au niveau du bit ne provoquent jamais de dépassements de capacité et donnent les mêmes résultats dans des contextes [checked et unchecked](../keywords/checked-and-unchecked.md).
 
@@ -82,11 +82,11 @@ L’opération de décalage vers la droite ignore les bits d’ordre inférieur,
 
 Les positions de bits vides d’ordre supérieur sont définies en fonction du type de l’opérande de partie gauche comme suit :
 
-- Si l’opérande de partie gauche est de type [int](../builtin-types/integral-numeric-types.md) ou [long](../builtin-types/integral-numeric-types.md), l’opérateur de décalage vers la droite effectue un décalage *arithmétique* : la valeur du bit le plus significatif (le bit de signe) de l’opérande de partie gauche est propagée vers les positions des bits vides d’ordre supérieur. Autrement dit, les positions de bits vides d’ordre supérieur sont définies sur zéro si l’opérande de partir gauche n’est pas négatif et sur un s’il est négatif.
+- Si l’opérande de gauche est de type `int` ou `long`, l’opérateur de décalage vers la droite effectue un décalage *arithmétique* : la valeur du bit le plus significatif (le bit de signe) de l’opérande de gauche est propagée aux positions de bits vides de poids fort. Autrement dit, les positions de bits vides d’ordre supérieur sont définies sur zéro si l’opérande de partir gauche n’est pas négatif et sur un s’il est négatif.
 
   [!code-csharp-interactive[arithmetic right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
-- Si l’opérande de partie gauche est de type [uint](../builtin-types/integral-numeric-types.md) ou [ulong](../builtin-types/integral-numeric-types.md), l’opérateur de décalage vers la droite effectue un décalage *logique* : les positions des bits vides d’ordre supérieur sont toujours définies sur zéro.
+- Si l’opérande de gauche est de type `uint` ou `ulong`, l’opérateur de décalage vers la droite effectue un décalage *logique* : les positions de bits vides de poids fort ont toujours la valeur zéro.
 
   [!code-csharp-interactive[logical right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
@@ -98,7 +98,7 @@ L’opérateur `&` calcule le AND logique au niveau du bit de ses opérandes :
 
 [!code-csharp-interactive[bitwise AND](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
-Pour les opérandes de type `bool`, l’opérateur `&` calcule le [AND logique](boolean-logical-operators.md#logical-and-operator-) de ses opérandes. L’opérateur unaire `&` est [l’opérateur address-of](pointer-related-operators.md#address-of-operator-).
+Pour les opérandes `bool`, l’opérateur `&` calcule le [and logique](boolean-logical-operators.md#logical-and-operator-) de ses opérandes. L’opérateur unaire `&` est [l’opérateur address-of](pointer-related-operators.md#address-of-operator-).
 
 ## <a name="logical-exclusive-or-operator-"></a>L’opérateur OR exclusif logique ^
 
@@ -106,7 +106,7 @@ L’opérateur `^` calcule le OR exclusif logique au niveau du bit (également a
 
 [!code-csharp-interactive[bitwise XOR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
-Pour les opérandes de type `bool`, l’opérateur `^` calcule le [OR exclusif logique](boolean-logical-operators.md#logical-exclusive-or-operator-) de ses opérandes.
+Pour les opérandes de `bool`, l’opérateur `^` calcule le [ou exclusif logique](boolean-logical-operators.md#logical-exclusive-or-operator-) de ses opérandes.
 
 ## <a name="logical-or-operator-"></a>L’opérateur OU logique |
 
@@ -114,7 +114,7 @@ L’opérateur `|` calcule le OR logique au niveau du bit de ses opérandes :
 
 [!code-csharp-interactive[bitwise OR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseOr)]
 
-Pour les opérandes de type `bool`, l’opérateur `|` calcule le [OR logique](boolean-logical-operators.md#logical-or-operator-) de ses opérandes.
+Pour les opérandes `bool`, l’opérateur `|` calcule le [or logique](boolean-logical-operators.md#logical-or-operator-) de ses opérandes.
 
 ## <a name="compound-assignment"></a>Assignation composée
 
@@ -154,17 +154,17 @@ Utilisez des parenthèses, `()`, pour modifier l’ordre d’évaluation imposé
 
 [!code-csharp-interactive[operator precedence](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#Precedence)]
 
-Pour obtenir la liste complète des opérateurs C# classés par niveau de priorité, consultez [Opérateurs C#](index.md).
+Pour obtenir la liste complète C# des opérateurs classés par niveau de priorité, consultez la section priorité d' [ C# ](index.md) [opérateur](index.md#operator-precedence) de l’article opérateurs.
 
 ## <a name="shift-count-of-the-shift-operators"></a>Valeur de décalage des opérateurs de décalage
 
-Pour les opérateurs de décalage `<<` et `>>`, l’opérande de partie droite doit être de type [int](../builtin-types/integral-numeric-types.md) ou d’un type pour lequel une [conversion numérique implicite prédéfinie](../builtin-types/numeric-conversions.md#implicit-numeric-conversions) sur `int`.
+Pour les opérateurs de décalage `<<` et `>>`, le type de l’opérande de droite doit être `int` ou un type qui a une [conversion numérique implicite prédéfinie](../builtin-types/numeric-conversions.md#implicit-numeric-conversions) en `int`.
 
 Pour les expressions `x << count` et `x >> count`, la valeur réelle du décalage varie selon le type de `x` :
 
-- Si le type `x` est [int](../builtin-types/integral-numeric-types.md) ou [uint](../builtin-types/integral-numeric-types.md), la valeur du décalage est définie par les *cinq* bits d’ordre inférieur de l’opérande de partie droite. La valeur de décalage est donc calculée à partir de `count & 0x1F` (ou de `count & 0b_1_1111`).
+- Si le type de `x` est `int` ou `uint`, le nombre de décalages est défini par les *cinq* bits de poids faible de l’opérande de droite. La valeur de décalage est donc calculée à partir de `count & 0x1F` (ou de `count & 0b_1_1111`).
 
-- Si le type `x` est [long](../builtin-types/integral-numeric-types.md) ou [ulong](../builtin-types/integral-numeric-types.md), la valeur du décalage est définie par les *six* bits d’ordre inférieur de l’opérande de partie droite. La valeur de décalage est donc calculée à partir de `count & 0x3F` (ou de `count & 0b_11_1111`).
+- Si le type de `x` est `long` ou `ulong`, le nombre de décalages est défini par les *six* bits de poids faible de l’opérande de droite. La valeur de décalage est donc calculée à partir de `count & 0x3F` (ou de `count & 0b_11_1111`).
 
 L’exemple suivant illustre ce comportement :
 
@@ -172,7 +172,7 @@ L’exemple suivant illustre ce comportement :
 
 ## <a name="enumeration-logical-operators"></a>Opérateurs logiques d’énumération
 
-Les opérateurs `~`, `&`, `|` et `^` sont également définis pour tous les types d’[énumération](../keywords/enum.md). Pour les opérandes du même type énumération, une opération logique est effectuée sur les valeurs correspondantes du type intégral sous-jacent. Par exemple, pour tout `x` et `y` d’un type énumération `T` avec un type sous-jacent `U`, l’expression `x & y` produit le même résultat que l’expression `(T)((U)x & (U)y)`.
+Les opérateurs `~`, `&`, `|`et `^` sont également pris en charge par n’importe quel type [énumération](../keywords/enum.md) . Pour les opérandes du même type d’énumération, une opération logique est effectuée sur les valeurs correspondantes du type intégral sous-jacent. Par exemple, pour tout `x` et `y` d’un type énumération `T` avec un type sous-jacent `U`, l’expression `x & y` produit le même résultat que l’expression `(T)((U)x & (U)y)`.
 
 Vous utilisez généralement des opérateurs logiques au niveau du bit avec un type énumération qui est défini à l’aide de l’attribut [Flags](xref:System.FlagsAttribute). Pour plus d’informations, consultez la section [Types énumération comme indicateurs binaires](../../programming-guide/enumeration-types.md#enumeration-types-as-bit-flags) de l’article[Types énumération](../../programming-guide/enumeration-types.md).
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 561655f1d3de6efcac79c89907602cbf51bd3ff8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8784d6980d3edb1bbdd7b39a81e7e33bfec81242
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052233"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039604"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall (MDA)
 L’Assistant Débogage managé `virtualCERCall` est activé comme un avertissement indiquant qu’un site d’appel dans un graphique des appels d’une région d’exécution limitée fait référence à une cible virtuelle, c’est-à-dire un appel virtuel à une méthode virtuelle non finale ou un appel à l’aide d’une interface. Le CLR (Common Language Runtime) ne peut pas prédire la méthode de destination de ces appels uniquement à partir du langage intermédiaire et de l’analyse des métadonnées. En conséquence, l’arborescence des appels ne peut pas être préparée dans le cadre du graphique d’une région d’exécution limitée et les interruptions de threads dans cette sous-arborescence ne peuvent pas être automatiquement bloquées. Cet Assistant Débogage managé vous avertit des cas où il peut s’avérer nécessaire d’étendre une région d’exécution limitée en utilisant des appels explicites à la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> dès que les informations supplémentaires requises pour calculer la cible de l’appel sont connues au moment de l’exécution.  
@@ -27,7 +27,7 @@ L’Assistant Débogage managé `virtualCERCall` est activé comme un avertissem
 ## <a name="cause"></a>Cause  
  Une région d’exécution limitée contient un appel à une méthode virtuelle qui ne peut pas être préparée automatiquement.  
   
-## <a name="resolution"></a>Résolution :  
+## <a name="resolution"></a>Résolution  
  Appelez <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> pour la méthode virtuelle.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -51,7 +51,7 @@ declaringType name="VirtualCERCall+MyClass"
 ```xml  
 <mdaConfig>  
   <assistants>  
-    < VirtualCERCall />  
+    <VirtualCERCall />  
   </assistants>  
 </mdaConfig>  
 ```  

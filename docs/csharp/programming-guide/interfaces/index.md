@@ -6,16 +6,16 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: a2cc7cb1b6da860a2c27bc8d2fe74e0ffde5f5e1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 950a74dd663249b2a59bf746d02b5992733d0ce9
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053276"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039339"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
-Une interface contient des définitions pour un groupe de fonctionnalités connexes qu'une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/keywords/struct.md) peuvent implémenter.
+Une interface contient des définitions pour un groupe de fonctionnalités connexes qu’une [classe](../../language-reference/keywords/class.md) non abstraite ou un [struct](../../language-reference/keywords/struct.md) doit implémenter.
   
 En utilisant des interfaces, vous pouvez, par exemple, inclure le comportement de plusieurs sources dans une classe. Cette fonctionnalité est importante en C#, car le langage ne prend pas en charge l'héritage multiple de classes. De plus, vous devez utiliser une interface si vous voulez simuler l'héritage pour des structs, car ils ne peuvent en fait pas hériter d'un autre struct ou d'une autre classe.  
   
@@ -29,7 +29,7 @@ Toute classe ou tout struct qui implémentent l'interface <xref:System.IEquatabl
   
 La définition de `IEquatable<T>` ne fournit pas d'implémentation pour `Equals`. Une classe ou un struct peut implémenter plusieurs interfaces, mais une classe peut uniquement hériter d’une classe unique.
   
-Pour plus d’informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+Pour plus d'informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 Les interfaces peuvent contenir des méthodes, propriétés, événements, indexeurs ou toute combinaison de ces quatre types de membres. Pour obtenir des liens vers des exemples, consultez les [Sections connexes](./index.md#BKMK_RelatedSections). Une interface ne peut pas contenir de constantes, champs, opérateurs, constructeurs d'instance, finaliseurs ou types. Les membres d’interface sont automatiquement publics et ils ne peuvent pas inclure de modificateurs d’accès. Les membres ne peuvent pas non plus être [statiques](../../language-reference/keywords/static.md).  
   
@@ -62,17 +62,17 @@ Une interface possède les propriétés suivantes :
 [Implémentation d’interface explicite](explicit-interface-implementation.md)  
  Explique comment créer un membre de classe spécifique à une interface.  
   
- [Guide pratique pour implémenter de manière explicite des membres d’interface](how-to-explicitly-implement-interface-members.md)  
+ [Comment : implémenter de manière explicite des membres d’interface](how-to-explicitly-implement-interface-members.md)  
  Fournit un exemple montrant comment implémenter explicitement des membres d'interface.  
   
- [Guide pratique pour implémenter de manière explicite des membres de deux interfaces](how-to-explicitly-implement-members-of-two-interfaces.md)  
+ [Comment : implémenter de manière explicite des membres de deux interfaces](how-to-explicitly-implement-members-of-two-interfaces.md)  
  Fournit un exemple montrant comment implémenter explicitement des membres d'interface avec héritage.  
   
 ## <a name="BKMK_RelatedSections"></a> Sections connexes
 
 - [Propriétés de l’interface](../classes-and-structs/interface-properties.md)  
 - [Indexeurs dans les interfaces](../indexers/indexers-in-interfaces.md)  
-- [Guide pratique pour  implémenter des événements d’interface](../events/how-to-implement-interface-events.md)  
+- [Guide pratique d’implémentation d’événements d’interface](../events/how-to-implement-interface-events.md)  
 - [Classes et structs](../classes-and-structs/index.md)  
 - [Héritage](../classes-and-structs/inheritance.md)  
 - [Méthodes](../classes-and-structs/methods.md)  

@@ -2,15 +2,16 @@
 title: Structs - Guide C#
 description: En savoir plus sur le type struct et la manière de le créer
 ms.date: 10/12/2016
+ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: e0974b7dcf3c0888cb52bea81b07a58e3a98640b
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a7cdd84677cb84038aae89da9774c6e365275963
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396123"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039741"
 ---
-# <a name="structs"></a>Structs
+# <a name="structs"></a>Structures
 
 Un *struct* est un type valeur. Lorsqu'un struct est créé, la variable à laquelle le struct est assigné contient les données réelles du struct. Lorsque le struct est affecté à une nouvelle variable, il est copié. La nouvelle variable et la variable d’origine contiennent par conséquent deux copies distinctes des mêmes données. Les modifications apportées à une copie n’affectent pas l’autre copie.
 
@@ -54,7 +55,7 @@ Les structs partagent presque tous la même syntaxe que les classes, bien qu'ils
 
 ## <a name="literal-values"></a>Valeurs littérales
 
-En C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit le type `double` pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](./language-reference/keywords/value-types.md).  
+Dans C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit le type `double` pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](./language-reference/keywords/value-types.md).  
   
 Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object>, vous pouvez écrire et compiler du code, tel que le suivant :  
   

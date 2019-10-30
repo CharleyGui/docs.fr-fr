@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: a8cca707f8fa82e97e988fcbe015b55e35b93499
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ddb53c9224d56803c3528d79c5ccdf5534b9ab03
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794682"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039813"
 ---
 # <a name="optimistic-concurrency"></a>Accès concurrentiel optimiste
 Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à jour de données dans une base de données : l'accès simultané optimiste et l'accès simultané pessimiste. L'objet <xref:System.Data.DataSet> est conçu pour privilégier l'utilisation de l'accès simultané optimiste pour les activités longues, comme lors de la communication à distance de données ou de l'interaction avec ces dernières.  
@@ -67,13 +67,13 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  Une autre technique de recherche des violations d'accès simultané optimiste consiste à vérifier que toutes les valeurs de colonne d'origine d'une ligne correspondent toujours à celles qui figurent dans la base de données. Examinons, par exemple, la requête suivante :  
   
-```  
+```sql
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
  Pour tester une violation de l’accès concurrentiel optimiste lors de la mise à jour d’une ligne dans **table1**, vous devez émettre l’instruction UPDATE suivante :  
   
-```  
+```sql
 UPDATE Table1 Set Col1 = @NewCol1Value,  
               Set Col2 = @NewCol2Value,  
               Set Col3 = @NewCol3Value  
@@ -88,7 +88,7 @@ WHERE Col1 = @OldCol1Value AND
   
  Si une colonne de votre source de données accepte les valeurs null, vous devrez peut-être étendre votre clause WHERE pour vérifier s'il existe une référence null dans votre table locale et sa correspondance dans votre source de données. Par exemple, l'instruction UPDATE suivante vérifie qu'une référence null dans la ligne locale correspond toujours à une référence null dans la source de données, ou si la valeur dans la ligne locale correspond toujours à celle de la source de données.  
   
-```  
+```sql
 UPDATE Table1 Set Col1 = @NewVal1  
   WHERE (@OldVal1 IS NULL AND Col1 IS NULL) OR Col1 = @OldVal1  
 ```  
@@ -96,7 +96,7 @@ UPDATE Table1 Set Col1 = @NewVal1
  Vous pouvez aussi choisir d'appliquer des critères moins restrictifs lorsque vous utilisez un modèle d'accès simultané optimiste. Par exemple, utiliser uniquement les colonnes de clé primaire dans la clause WHERE aboutit au remplacement des données, que les autres colonnes aient ou non subi une mise à jour depuis la dernière requête. Vous pouvez aussi appliquer une clause WHERE à certaines colonnes uniquement, ce qui aura pour effet de remplacer les données, sauf si des champs spécifiques ont été mis à jour depuis la dernière requête les concernant.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Événement DataAdapter.RowUpdated  
- L’événement **RowUpdated** de l' <xref:System.Data.Common.DataAdapter> objet peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L' <xref:System.Data.Common.RowUpdatedEventArgs> objet retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](handling-dataadapter-events.md).  
+ L’événement **RowUpdated** de l’objet <xref:System.Data.Common.DataAdapter> peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L’objet <xref:System.Data.Common.RowUpdatedEventArgs> retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](handling-dataadapter-events.md).  
   
  Si vous le souhaitez, vous pouvez affecter à **DataAdapter. ContinueUpdateOnError** la **valeur true**, avant d’appeler **Update**, et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une ligne particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, consultez [informations sur les erreurs de ligne](./dataset-datatable-dataview/row-error-information.md).  
   

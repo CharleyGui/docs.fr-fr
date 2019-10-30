@@ -2,12 +2,12 @@
 title: Mapper les relations implicites entre éléments de schéma imbriqués
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-ms.openlocfilehash: f4b1b9e45f0cda976719b991c336463e0af05f12
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 25fc2c427727273038f7b4267376d6ba6446b811
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784433"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040390"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapper les relations implicites entre éléments de schéma imbriqués
 Un schéma en langage XSD (XML Schema Definition) peut présenter des types complexes imbriqués les uns dans les autres. Dans ce cas, le processus de mappage applique le mappage par défaut et crée les différents éléments suivants dans l'objet <xref:System.Data.DataSet> :  
@@ -58,14 +58,14 @@ Un schéma en langage XSD (XML Schema Definition) peut présenter des types comp
   
 - Une **commande Order** et une table **OrderDetail** .  
   
-    ```  
+    ```text  
     Order(OrderNumber, EmpNumber, Order_Id)  
     OrderDetail(OrderNo, ItemNo, Order_Id)  
     ```  
   
 - Contrainte unique sur la table **Order** . Notez que la propriété **IsPrimaryKey** a la valeur **true**.  
   
-    ```  
+    ```text  
     ConstraintName: Constraint1  
     Type: UniqueConstraint  
     Table: Order  
@@ -75,7 +75,7 @@ Un schéma en langage XSD (XML Schema Definition) peut présenter des types comp
   
 - Contrainte de clé étrangère sur la table **OrderDetail** .  
   
-    ```  
+    ```text  
     ConstraintName: Order_OrderDetail  
     Type: ForeignKeyConstraint  
     Table: OrderDetail  
@@ -86,7 +86,7 @@ Un schéma en langage XSD (XML Schema Definition) peut présenter des types comp
   
 - Relation entre les tables **Order** et **OrderDetail** . La propriété **Nested** de cette relation a la valeur **true** , car les éléments **Order** et **OrderDetail** sont imbriqués dans le schéma.  
   
-    ```  
+    ```text  
     ParentTable: Order  
     ParentColumns: Order_Id   
     ChildTable: OrderDetail  

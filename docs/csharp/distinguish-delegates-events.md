@@ -2,12 +2,14 @@
 title: Différenciation des délégués et des événements
 description: Découvrez la différence entre les délégués et les événements, et quand utiliser chacune de ces fonctionnalités de .NET Core.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 2f9c26519d93314f4991829191723df5426b23b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ff90af1d2b1a92f06eed58228f8e8ca5ff6b93ca
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037316"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Différenciation des délégués et des événements
 

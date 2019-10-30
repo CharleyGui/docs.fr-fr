@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2150351c97f6deae18177be642e6c3009422960
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8c9bdb3149834cd3dd04c7627bca440925f5273f
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393719"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040765"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -310,7 +310,7 @@ End Function
 
 **Prise en charge des clés éphémères**
 
-L’importation PFX peut éventuellement charger des clés privées directement à partir de la mémoire, en ignorant le disque dur. Quand le nouvel indicateur <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> est spécifié dans un constructeur <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> ou l’une des surcharges de la méthode <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType>, les clés privées sont chargées en tant que clés éphémères. Cela empêche que les clés soient visibles sur le disque. Cependant :
+L’importation PFX peut éventuellement charger des clés privées directement à partir de la mémoire, en ignorant le disque dur. Quand le nouvel indicateur de <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> est spécifié dans un constructeur <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> ou l’une des surcharges de la méthode <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType>, les clés privées sont chargées en tant que clés éphémères. Cela empêche que les clés soient visibles sur le disque. Cependant :
 
 - Étant donné que les clés ne sont pas conservées sur le disque, les certificats chargés avec cet indicateur ne sont pas de bons candidats pour être ajoutés à un X509Store.
 
@@ -430,7 +430,7 @@ Vous pouvez ajouter SameSite pour des cookies <xref:System.Web.Security.FormsAut
          <!-- ...   -->
       </forms>
    <authentication />
-   <sessionSate cookieSameSite="Lax"></sessionState>
+   <sessionState cookieSameSite="Lax"></sessionState>
 </system.web>
 ```
 
@@ -545,7 +545,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md). Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) et le @ no__t-2 et la clé utilisée pour la résolution :
+Cet événement est déclenché chaque fois que le runtime résout une référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md). Les arguments <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> décrivent la résolution et indiquent l’objet et la propriété qui hébergent la référence [StaticResource](../wpf/advanced/staticresource-markup-extension.md) et les <xref:Windows.UI.Xaml.ResourceDictionary> et clés utilisés pour la résolution :
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs

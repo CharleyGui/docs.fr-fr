@@ -2,12 +2,12 @@
 title: Génération SQL de modification
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: 94b6c3c97e8255db2dc4d72bae6c6c12905d9710
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b6c1b71effba17d33c035d0f1df386bf56d405b5
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854291"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039896"
 ---
 # <a name="modification-sql-generation"></a>Génération SQL de modification
 
@@ -62,9 +62,7 @@ La valeur du renvoi spécifie une projection de résultats à retourner selon la
 
 SetClauses spécifie la liste des clauses set d'insertion ou de mise à jour qui définissent l'opération d'insertion ou de mise à jour.
 
-```
-The elements of the list are specified as type DbModificationClause, which specifies a single clause in an insert or update modification operation. DbSetClause inherits from DbModificationClause and specifies the clause in a modification operation that sets the value of a property. Beginning in version 3.5 of the .NET Framework, all elements in SetClauses are of type SetClause.
-```
+Les éléments de la liste sont spécifiés en tant que type DbModificationClause, qui spécifie une clause unique dans une opération de modification d’insertion ou de mise à jour. DbSetClause hérite de DbModificationClause et spécifie la clause dans une opération de modification qui définit la valeur d’une propriété. À compter de la version 3,5 du .NET Framework, tous les éléments de SetClauses sont de type SetClause.
 
 Property spécifie la propriété à mettre à jour. Il s'agit toujours d'un DbPropertyExpression sur un DbVariableReferenceExpression, qui représente une référence à la cible du DbModificationCommandTree correspondant.
 
@@ -94,7 +92,7 @@ L' [exemple de fournisseur Entity Framework](https://code.msdn.microsoft.com/win
 
 Le module de génération SQL de modification du fournisseur d'exemples (situé dans le fichier SQL Generation\DmlSqlGenerator.cs) prend un DbModificationCommandTree d'entrée et produit une instruction SQL de modification unique pouvant être suivie par une instruction SELECT pour retourner un lecteur, si spécifié par le DbModificationCommandTree. Notez que la forme des commandes générées est affectée par la base de données SQL Server cible.
 
-### <a name="helper-classes-expressiontranslator"></a>Classes d’assistance : ExpressionTranslator
+### <a name="helper-classes-expressiontranslator"></a>Classes d'assistance : ExpressionTranslator
 
 ExpressionTranslator fait office de traducteur commun léger pour toutes les propriétés de l’arborescence de commandes de modification de type DbExpression. Il prend uniquement en charge la traduction des types de l’expression auxquels les propriétés de l’arborescence de commandes de modification sont contraintes et est construit en fonction de ces contraintes particulières.
 
@@ -116,7 +114,7 @@ Pour chaque constante visitée un paramètre est créé.
 
 Pour un DbInsertCommandTree donné dans le fournisseur d'exemples, la commande d'insertion générée suit l'un des deux modèles d'insertion ci-dessous.
 
-Le premier modèle possède une commande pour effectuer l'insertion selon les valeurs de la liste de SetClauses et une instruction SELECT pour retourner les propriétés spécifiées dans la propriété Returning pour la ligne insérée, si la propriété Returning n'a pas la valeur null. L’élément de prédicat «\@ @ROWCOUNT > 0 » a la valeur true si une ligne a été insérée. L’élément de prédicat « keyMemberI = keyValueI &#124; SCOPE_IDENTITY () » prend la forme « keyMemberI = SCOPE_IDENTITY () » uniquement si keyMemberI est une clé générée par le magasin, car SCOPE_IDENTITY () retourne la dernière valeur d’identité insérée dans une identité ( colonne générée par le magasin).
+Le premier modèle possède une commande pour effectuer l'insertion selon les valeurs de la liste de SetClauses et une instruction SELECT pour retourner les propriétés spécifiées dans la propriété Returning pour la ligne insérée, si la propriété Returning n'a pas la valeur null. L’élément de prédicat «\@@ROWCOUNT > 0 » a la valeur true si une ligne a été insérée. L’élément de prédicat « keyMemberI = keyValueI &#124; SCOPE_IDENTITY () » prend la forme « keyMemberI = SCOPE_IDENTITY () » uniquement si keyMemberI est une clé générée par le magasin, car SCOPE_IDENTITY () retourne la dernière valeur d’identité insérée dans une identité ( colonne générée par le magasin).
 
 ```sql
 -- first insert Template
@@ -160,7 +158,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Ce code produit l’arborescence de commandes suivante, passée au fournisseur :
 
-```
+```output
 DbInsertCommandTree
 |_Parameters
 |_Target : 'target'
@@ -212,7 +210,7 @@ WHERE <predicate>
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]
 ```
 
-La clause SET contient la clause d’ensemble factice (@i « = 0 ») uniquement si aucune clause SET n’est spécifiée. Ceci permet de vérifier que toutes les colonnes calculées par la banque sont recalculées.
+La clause SET contient la clause d’ensemble factice («@i = 0 ») uniquement si aucune clause SET n’est spécifiée. Ceci permet de vérifier que toutes les colonnes calculées par la banque sont recalculées.
 
 Uniquement si la propriété Returning n'a pas la valeur null, une instruction SELECT est générée pour retourner les propriétés spécifiées dans la propriété Returning.
 
@@ -230,7 +228,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Ce code utilisateur produit l’arborescence de commandes suivante, passée au fournisseur :
 
-```
+```output
 DbUpdateCommandTree
 |_Parameters
 |_Target : 'target'
@@ -281,7 +279,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 
 Ce code utilisateur produit l’arborescence de commandes suivante, passée au fournisseur.
 
-```
+```output
 DbDeleteCommandTree
 |_Parameters
 |_Target : 'target'

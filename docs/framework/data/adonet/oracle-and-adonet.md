@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: ccfe40f218e3f09de53d6cb596a31b2520d9ff9b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a49634f712e32f873df8e47fbcb0c91dbe33fa94
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783475"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039825"
 ---
 # <a name="oracle-and-adonet"></a>Oracle et ADO.NET
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "70783475"
   
  La .NET Framework Fournisseur de données pour Oracle permet d’accéder à une base de données Oracle à l’aide de l’interface OCI (Oracle Call Interface) fournie par le logiciel client Oracle. La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données .NET Framework pour SQL Server, OLE DB et ODBC.  
   
- Pour utiliser le fournisseur de données .NET Framework pour Oracle, une application doit faire référence <xref:System.Data.OracleClient> à l’espace de noms comme suit :  
+ Pour utiliser le Fournisseur de données .NET Framework pour Oracle, une application doit référencer l’espace de noms <xref:System.Data.OracleClient> comme suit :  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -32,7 +32,7 @@ using System.Data.OracleClient;
   
  Vous devez également inclure une référence à la DLL lorsque vous compilez votre code. Par exemple, si vous compilez un programme C#, votre ligne de commande doit inclure :  
   
-```  
+```console
 csc /r:System.Data.OracleClient.dll  
 ```  
   

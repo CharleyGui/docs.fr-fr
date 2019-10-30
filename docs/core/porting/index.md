@@ -4,12 +4,12 @@ description: Présentation du processus de portage et d’outils qui peuvent s�
 author: cartermp
 ms.date: 10/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0684be25cee6ae3f778e7134b4c3a29ac87caf25
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 89f00e5c6ce7f3cea7a3135c9b2856c54a70da40
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798805"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038531"
 ---
 # <a name="overview-of-the-porting-process-from-net-framework-to-net-core"></a>Vue d’ensemble du processus de portage de .NET Framework à .NET Core
 
@@ -46,7 +46,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
    Le portage vers .NET Core représentant un important changement pour votre code base, il est fortement recommandé de porter vos tests, pour pouvoir exécuter des tests au fil du portage de votre code. MSTest, xUnit et NUnit fonctionnent tous sur .NET Core.
 
-En outre, vous pouvez tenter de porter des solutions plus petites ou des projets individuels au format de fichier projet .NET Core avec l’outil [dotnet try-Convert](https://github.com/dotnet/try-convert) en une seule opération. `dotnet try-convert` n’est pas guaranteedto pour tous vos projets et peut entraîner des modifications subtiles du comportement que vous pouvez constater. Elle doit être utilisée comme _point de départ_ pour automatiser les éléments de base qui peuvent être automatisés. Il ne s’agit pas d’une solution garantie pour la migration d’un projet.
+En outre, vous pouvez tenter de porter des solutions plus petites ou des projets individuels au format de fichier projet .NET Core avec l’outil [dotnet try-Convert](https://github.com/dotnet/try-convert) en une seule opération. Il n’est pas garanti que les `dotnet try-convert` fonctionnent pour tous vos projets, et cela peut entraîner des modifications subtiles du comportement que vous pouvez constater. Elle doit être utilisée comme _point de départ_ pour automatiser les éléments de base qui peuvent être automatisés. Il ne s’agit pas d’une solution garantie pour la migration d’un projet.
 
 >[!div class="step-by-step"]
 >[Suivant](net-framework-tech-unavailable.md)

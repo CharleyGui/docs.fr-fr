@@ -1,22 +1,26 @@
 ---
-title: '&amp;&amp;LES (Entity SQL)'
+title: '&amp;&amp; (et) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
-ms.openlocfilehash: 02e404b73e5a9a9c3963e2d2b58ab7592afabc13
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: be6e7120e6c19714f151aa38a8b9a1355de29d1a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251315"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039953"
 ---
-# <a name="ampamp-and-entity-sql"></a>&amp;&amp;LES (Entity SQL)
+# <a name="ampamp-and-entity-sql"></a>&amp;&amp; (et) (Entity SQL)
 Retourne `true` si les deux expressions ont pour valeur `true`; sinon, `false` ou la valeur `NULL`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
-boolean_expression AND boolean_expression  
+```csharp  
+boolean_expression AND boolean_expression
+```
+ 
 or  
+
+```csharp
 boolean_expression && boolean_expression  
 ```  
   
@@ -31,14 +35,14 @@ boolean_expression && boolean_expression
   
 ||`TRUE`|`FALSE`|`NULL`|  
 |-|------------|-------------|------------|  
-|`TRUE`|TRUE|FALSE|NULL|  
-|`FALSE`|FALSE|FALSE|FALSE|  
+|`TRUE`|true|false|NULL|  
+|`FALSE`|false|false|false|  
 |`NULL`|NULL|false|NULL|  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous montre comment utiliser l'opérateur AND. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

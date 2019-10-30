@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 26b7e3a287c00f103129632ae8b0db882d468ef3
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a634667ec8d963ef52abbdbe517a57d10e4a60fa
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71352976"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040216"
 ---
 # <a name="handling-null-values"></a>Gestion des valeurs null
 Une valeur null dans une base de données relationnelle est utilisée lorsque la valeur d'une colonne est inconnue ou manquante. Une valeur null n'est ni une chaîne vide (pour les types de données caractère ou datetime) ni une valeur zéro (pour les types de données numériques). La spécification ANSI SQL-92 stipule qu'une valeur null doit être la même pour tous les types de données afin que toutes les valeurs null soient traitées de manière cohérente. L'espace de noms <xref:System.Data.SqlTypes> fournit des sémantiques de valeurs null en implémentant l'interface <xref:System.Data.SqlTypes.INullable>. Chacun des types de données de l'espace de noms <xref:System.Data.SqlTypes> possède sa propre propriété `IsNull` et une valeur `Null` qui peut être assignée à une instance de ce type de données.  
@@ -39,19 +39,19 @@ Une valeur null dans une base de données relationnelle est utilisée lorsque la
   
  La norme ANSI SQL-92 ne prend pas en charge *ColumnName* = null dans une clause WHERE. Dans SQL Server, l'option ANSI_NULLS contrôle la possibilité de nullité par défaut dans la base de données et l'évaluation des comparaisons par rapport à des valeurs null. Si ANSI_NULLS est activée (par défaut), l'opérateur IS NULL doit être utilisé dans des expressions lors du test des valeurs null. Par exemple, la comparaison suivante entraîne toujours une valeur inconnue si ANSI_NULLS est activée :  
   
-```  
+```sql
 colname > NULL  
 ```  
   
  La comparaison avec une variable contenant une valeur null entraîne également une valeur inconnue :  
   
-```  
+```sql
 colname > @MyVariable  
 ```  
   
  Utilisez le prédicat IS NULL ou IS NOT NULL pour tester une valeur null. Cela peut compliquer la clause WHERE. Par exemple, la colonne TerritoryID de la table AdventureWorks Customer autorise les valeurs null. Si une instruction SELECT doit tester des valeurs null en plus des autres, elle doit inclure un prédicat IS NULL :  
   
-```  
+```sql
 SELECT CustomerID, AccountNumber, TerritoryID  
 FROM AdventureWorks.Sales.Customer  
 WHERE TerritoryID IN (1, 2, 3)  
@@ -112,7 +112,7 @@ WHERE TerritoryID IN (1, 2, 3)
   
  Cet exemple affiche les résultats suivants :  
   
-```  
+```output
 isColumnNull=False, ID=123, Description=Side Mirror  
 isColumnNull=True, ID=Null, Description=Null  
 ```  
@@ -127,7 +127,7 @@ isColumnNull=True, ID=Null, Description=Null
   
  Le code génère la sortie suivante :  
   
-```  
+```output
 SqlString.Equals shared/static method:  
   Two nulls=Null  
   

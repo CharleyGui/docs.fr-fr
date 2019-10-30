@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Async [Visual Basic]
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
-ms.openlocfilehash: fc0ae67c0ebc11a0428ffc18c8db103b619e27ec
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: aaf5a95edb9cba9726163be3925b006a7641597c
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524806"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040858"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)
 
@@ -43,7 +43,7 @@ Public Async Function ExampleMethodAsync() As Task(Of Integer)
 End Function
 ```
 
-En règle générale, une méthode modifiée par le mot clé `Async` contient au moins une expression ou une instruction [await](../../../visual-basic/language-reference/modifiers/async.md) . La méthode s’exécute de façon synchrone jusqu’à ce qu’elle atteigne le premier `Await`, point où elle s’interrompt jusqu’à ce que la tâche attendue se termine. Dans le même temps, le contrôle est retourné à l’appelant de la méthode. Si la méthode ne contient pas d’expression ou d’instruction `Await`, la méthode n’est pas suspendue et s’exécute comme une méthode synchrone. Un avertissement du compilateur vous signale toutes les méthodes Async qui ne contiennent pas de `Await`, car cette situation peut indiquer une erreur. Pour plus d’informations, consultez l' [Erreur du compilateur](../../../visual-basic/language-reference/error-messages/because-this-call-is-not-awaited-the-current-method-continues-to-run.md).
+En règle générale, une méthode modifiée par le mot clé `Async` contient au moins une expression ou une instruction [await](../../../visual-basic/language-reference/modifiers/async.md) . La méthode s’exécute de façon synchrone jusqu’à ce qu’elle atteigne le premier `Await`, point où elle s’interrompt jusqu’à ce que la tâche attendue se termine. Dans le même temps, le contrôle est retourné à l’appelant de la méthode. Si la méthode ne contient pas d’expression ou d’instruction `Await`, la méthode n’est pas suspendue et s’exécute comme une méthode synchrone. Un avertissement du compilateur vous signale toutes les méthodes Async qui ne contiennent pas de `Await`, car cette situation peut indiquer une erreur. Pour plus d’informations, consultez l' [Erreur du compilateur](../error-messages/bc42358.md).
 
 Le mot clé `Async` est un mot clé non réservé. Il s’agit d’un mot clé lorsqu’il modifie une méthode ou une expression lambda. Dans tous les autres contextes, il est interprété comme un identificateur.
 

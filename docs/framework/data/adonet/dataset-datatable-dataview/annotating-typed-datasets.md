@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: 351175b96d354a264a9280018ce21de8870beda2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: df6da84dfc120e3f6c3cb0e46729ca2cecc9fe3a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784807"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040398"
 ---
 # <a name="annotating-typed-datasets"></a>Annotation de DataSet typés
 Les annotations vous permettent de modifier le nom des éléments de votre objet <xref:System.Data.DataSet> typé sans pour autant modifier le schéma sous-jacent. Si vous modifiez les noms des éléments dans votre schéma sous-jacent, le **DataSet** typé fait référence aux objets qui n’existent pas dans la source de données, ainsi qu’à la perte d’une référence aux objets qui existent dans la source de données.  
   
- À l’aide des annotations, vous pouvez personnaliser les noms des objets de votre **DataSet** typé avec des noms plus explicites, ce qui rend le code plus lisible et le **jeu de données** typé plus facile à utiliser par les clients, tout en laissant intact le schéma sous-jacent. Par exemple, l’élément de schéma suivant pour la table **Customers** de la base de données **Northwind** entraînerait un nom d’objet **DataRow** **CustomersRow** et un <xref:System.Data.DataRowCollection> nommé **Customers**.  
+ À l’aide des annotations, vous pouvez personnaliser les noms des objets de votre **DataSet** typé avec des noms plus explicites, ce qui rend le code plus lisible et le **jeu de données** typé plus facile à utiliser par les clients, tout en laissant intact le schéma sous-jacent. Par exemple, l’élément de schéma suivant pour la table **Customers** de la base de données **Northwind** se traduirait par un nom d’objet **DataRow** **CustomersRow** et un <xref:System.Data.DataRowCollection> nommé **Customers**.  
   
 ```xml  
 <xs:element name="Customers">  
@@ -62,21 +62,21 @@ Les annotations vous permettent de modifier le nom des éléments de votre objet
   
  Le tableau suivant présente les valeurs par défaut pour les objets d’un **DataSet** typé et les annotations disponibles.  
   
-|Objet/méthode/événement|Default|Annotation|  
+|Objet/méthode/événement|Valeur par défaut|Annotation|  
 |---------------------------|-------------|----------------|  
-|**DataTable**|TableNameDataTable|typedPlural|  
+|**Tables**|TableNameDataTable|typedPlural|  
 |**DataTable** Leurs|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
 |**DataRowCollection**|TableName|typedPlural|  
 |**DataRow**|TableNameRow|typedName|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
-|**Propriété**|PropertyName|typedName|  
+|**Property**|PropertyName|typedName|  
 |**Enfant** Accesseur|GetChildTableNameRows|typedChildren|  
 |**Parent** Accesseur|TableNameRow|typedParent|  
 |**Jeu de données** Événements|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
   
- Pour utiliser des annotations de **DataSet** typé, vous devez inclure la référence **xmlns** suivante dans votre schéma en langage XSD (XML Schema Definition). Pour créer un XSD à partir de tables de <xref:System.Data.DataSet.WriteXmlSchema%2A> base de données, consultez ou [utilisation de datasets dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
+ Pour utiliser des annotations de **DataSet** typé, vous devez inclure la référence **xmlns** suivante dans votre schéma en langage XSD (XML Schema Definition). Pour créer un XSD à partir de tables de base de données, consultez <xref:System.Data.DataSet.WriteXmlSchema%2A> ou [utilisation de datasets dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
   
-```  
+```xml  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
@@ -134,7 +134,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- L’exemple de code suivant utilise un **DataSet** fortement typé créé à partir de l’exemple de schéma. Elle en utilise <xref:System.Data.SqlClient.SqlDataAdapter> une pour remplir la table **Customers** et une autre <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table **Orders** . Le **DataSet** fortement typé définit le **DataRelations**.  
+ L’exemple de code suivant utilise un **DataSet** fortement typé créé à partir de l’exemple de schéma. Il utilise une <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table **Customers** et une autre <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir la table **Orders** . Le **DataSet** fortement typé définit le **DataRelations**.  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  

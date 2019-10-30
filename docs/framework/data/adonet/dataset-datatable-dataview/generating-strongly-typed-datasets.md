@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: ce7e5ad53f7aa5dad457ca1aa6ab76716086c0c3
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 25419f8a810b52103e6b862cfe2fe6ab5a1fd981
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833991"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040089"
 ---
 # <a name="generating-strongly-typed-datasets"></a>Génération de datasets fortement typés
-À partir d’un schéma XML conforme à la norme XSD (XML Schema Definition Language), vous pouvez générer un @no__t fortement typé à l’aide de l’outil XSD. exe fourni avec le kit de développement logiciel (SDK) Windows.  
+À partir d’un schéma XML conforme à la norme XSD (XML Schema Definition Language), vous pouvez générer une <xref:System.Data.DataSet> fortement typée à l’aide de l’outil XSD. exe fourni avec le kit de développement logiciel (SDK) Windows.  
   
  (Pour créer un XSD à partir de tables de base de données, consultez <xref:System.Data.DataSet.WriteXmlSchema%2A> ou [utilisation de datasets dans Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).  
   
  Le code suivant montre la syntaxe permettant de générer un **DataSet** à l’aide de cet outil.  
   
-```  
+```console  
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- Dans cette syntaxe, la directive `/d` indique à l’outil de générer un **jeu de données**, et la `/l:` indique à l’outil le langage à utiliser C# (par exemple, ou Visual Basic .net). La directive `/eld` facultative spécifie que vous pouvez utiliser LINQ to DataSet pour effectuer une requête sur le **jeu de données généré.** Cette option est utilisée lorsque l'option `/d` est également spécifiée. Pour plus d’informations, consultez [interrogation de datasets typés](../querying-typed-datasets.md). La directive `/n:` facultative indique à l’outil de générer également un espace de noms pour le **DataSet** appelé **xsdschema. Namespace**. La commande donne en sortie un fichier XSDSchemaFileName.cs, qui peut être compilé et utilisé dans une application ADO.NET. Le code généré peut être compilé sous la forme d'une bibliothèque ou d'un module.  
+ Dans cette syntaxe, la directive `/d` indique à l’outil de générer un **DataSet**, et le `/l:` indique à l’outil le langage à utiliser (par C# exemple, ou Visual Basic .net). La directive `/eld` facultative spécifie que vous pouvez utiliser LINQ to DataSet pour effectuer une requête sur le **jeu de données généré.** Cette option est utilisée lorsque l'option `/d` est également spécifiée. Pour plus d’informations, consultez [interrogation de datasets typés](../querying-typed-datasets.md). La directive `/n:` facultative indique à l’outil de générer également un espace de noms pour le **DataSet** appelé **xsdschema. Namespace**. La commande donne en sortie un fichier XSDSchemaFileName.cs, qui peut être compilé et utilisé dans une application ADO.NET. Le code généré peut être compilé sous la forme d'une bibliothèque ou d'un module.  
   
  Le code suivant montre la syntaxe permettant de compiler le code généré sous la forme d'une bibliothèque à l'aide du compilateur C# (csc.exe).  
   
-```  
+```console  
 csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll  
 ```  
   

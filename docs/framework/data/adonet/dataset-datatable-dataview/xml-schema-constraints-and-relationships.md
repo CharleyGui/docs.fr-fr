@@ -2,12 +2,12 @@
 title: Contraintes et relations du schéma XML
 ms.date: 03/30/2017
 ms.assetid: 165bc2bc-60a1-40e0-9b89-7c68ef979079
-ms.openlocfilehash: 76af1c2e9d85d18a68b8c0a947dfba3b3291326c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 47b1a3e81cfbc4eb58531b1633dd29becbe497a2
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784186"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73040030"
 ---
 # <a name="xml-schema-constraints-and-relationships"></a>Contraintes et relations du schéma XML
 Dans un schéma en langage XSD (XML Schema Definition), vous pouvez spécifier des contraintes (unique, Key et keyref) et des relations (à l’aide de l’annotation **msdata : Relationship** ). Cette rubrique explique comment les contraintes et relations spécifiées dans un schéma XML sont interprétées pour générer l'objet <xref:System.Data.DataSet>.  
@@ -15,7 +15,7 @@ Dans un schéma en langage XSD (XML Schema Definition), vous pouvez spécifier d
  En général, dans un schéma XML, vous spécifiez l’annotation **msdata : Relationship** si vous souhaitez générer uniquement des relations dans le **DataSet**. Pour plus d’informations, consultez [génération de relations de DataSet à partir d’un schéma XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md). Vous spécifiez des contraintes (unique, Key et keyref) si vous souhaitez générer des contraintes dans le **DataSet**. Notez que les contraintes key et keyref peuvent aussi servir à générer des relations, comme expliqué plus loin dans cette rubrique.  
   
 ## <a name="generating-a-relationship-from-key-and-keyref-constraints"></a>Génération d'une relation à partir des contraintes key et keyref  
- Au lieu de spécifier l’annotation **msdata : Relationship** , vous pouvez spécifier des contraintes Key et keyref, qui sont utilisées pendant le processus de mappage du schéma XML pour générer non seulement les contraintes, mais également la relation dans le **DataSet**. Toutefois, si vous spécifiez `msdata:ConstraintOnly="true"` dans l’élément **keyref** , le **DataSet** inclut uniquement les contraintes et n’inclut pas la relation.  
+ Au lieu de spécifier l’annotation **msdata : Relationship** , vous pouvez spécifier des contraintes Key et keyref, qui sont utilisées pendant le processus de mappage du schéma XML pour générer non seulement les contraintes, mais également la relation dans le **DataSet**. Toutefois, si vous spécifiez `msdata:ConstraintOnly="true"` dans l’élément **keyref** , le **DataSet** inclura uniquement les contraintes et n’inclura pas la relation.  
   
  L’exemple suivant illustre un schéma XML qui comprend des éléments **Order** et **OrderDetail** , qui ne sont pas imbriqués. Le schéma spécifie également des contraintes key et keyref.  
   
@@ -61,7 +61,7 @@ Dans un schéma en langage XSD (XML Schema Definition), vous pouvez spécifier d
   
  Le **DataSet** généré pendant le processus de mappage du schéma XML comprend les tables **Order** et **OrderDetail** . En outre, le **DataSet** comprend des relations et des contraintes. L'exemple suivant illustre ces relations et contraintes. Notez que le schéma ne spécifie pas l’annotation **msdata : Relationship** ; au lieu de cela, les contraintes Key et keyref sont utilisées pour générer la relation.  
   
-```  
+```text
 ....ConstraintName: OrderNumberKey  
 ....Type: UniqueConstraint  
 ....Table: Order  
@@ -131,14 +131,14 @@ Dans un schéma en langage XSD (XML Schema Definition), vous pouvez spécifier d
   
  Le **jeu de données** résultant du processus de mappage du schéma XML comprend deux tables :  
   
-```  
+```text  
 Order(OrderNumber, EmpNumber, Order_Id)  
 OrderDetail(OrderNumber, ItemNumber, Order_Id)  
 ```  
   
  Le **DataSet** comprend également les deux relations (une basée sur l’annotation **msdata : Relationship** et l’autre basée sur les contraintes Key et keyref) et diverses contraintes. L'exemple suivant illustre ces relations et contraintes.  
   
-```  
+```text
 ..RelationName: Order_OrderDetail  
 ..ParentTable: Order  
 ..ParentColumns: Order_Id  

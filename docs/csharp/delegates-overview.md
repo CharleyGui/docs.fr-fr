@@ -2,13 +2,14 @@
 title: Présentation des délégués
 description: Explorez les délégués dans cette rubrique de vue d’ensemble qui présente les concepts de base et décrit les objectifs de conception de langage pour les délégués.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-ms.openlocfilehash: 43cdf9345f0bae9d5c4d0e6a31d80bc269c37fec
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: HT
+ms.openlocfilehash: deff297ccce6cd14a7cd21c49638a9c6030a9996
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879029"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037414"
 ---
 # <a name="introduction-to-delegates"></a>Présentation des délégués
 
@@ -44,4 +45,4 @@ Globalement, vous verrez comment les délégués forment une partie intégrante 
 
 Allons-y.
 
-[Next](delegate-class.md)
+[Suivant](delegate-class.md)

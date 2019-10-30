@@ -2,17 +2,18 @@
 title: Utilisation de LINQ
 description: Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
 ms.date: 10/29/2018
+ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 72bb7475fc6b18650e0870bf99c4b8ddbac3ec9f
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: b25cd1763511f460537bccaf6011a3d23390ea72
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926616"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039173"
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 Ce tutoriel vous présente les fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
 
@@ -28,7 +29,7 @@ Dans notre cas, c’est une façon plaisante d’envisager la manipulation de s�
 
 Ce didacticiel comporte plusieurs étapes. Après chaque étape, vous pourrez exécuter l’application et voir la progression. Vous pouvez également voir l’[exemple terminé](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) dans le dépôt GitHub dotnet/samples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page de [téléchargement de .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sous Windows, Ubuntu Linux, OS X ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 

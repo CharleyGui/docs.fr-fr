@@ -2,15 +2,16 @@
 title: Mettre à jour les interfaces en toute sécurité à l’aide des méthodes d’interface par défaut dansC#
 description: Ce tutoriel avancé explore comment vous pouvez ajouter de manière sécurisée de nouvelles fonctionnalités aux définitions d’une interface existante sans rompre toutes les classes et tous les structs qui implémentent cette interface.
 ms.date: 05/06/2019
+ms.technlogy: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 71fce2594dbf5ef3175a6b9bdf4e6edba754bb84
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: b9194b769a3ba6d2906d6177c2363d6093b85188
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72276000"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039250"
 ---
-# <a name="tutorial-update-interfaces-with-default-interface-methods-in-c-80"></a>Tutoriel : Mettre à jour les interfaces avec les C# méthodes d’interface par défaut dans 8,0
+# <a name="tutorial-update-interfaces-with-default-interface-methods-in-c-80"></a>Didacticiel : mettre à jour les interfaces avec les C# méthodes d’interface par défaut dans 8,0
 
 Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Le scénario le plus courant consiste à ajouter de manière sécurisée des membres à une interface déjà publiée et utilisée par de nombreux clients.
 
@@ -22,7 +23,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Créer des implémentations paramétrables pour fournir une plus grande flexibilité
 > * Permettre aux implémenteurs de fournir une implémentation plus spécifique sous la forme d’un remplacement
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -40,7 +41,7 @@ Elle a défini une deuxième interface qui représente une commande :
 
 À présent, il est temps de mettre à niveau la bibliothèque pour la prochaine version. L’une des fonctionnalités demandées permet une remise de fidélité pour les clients qui ont un grand nombre de commandes. Cette nouvelle remise de fidélité est appliquée chaque fois qu’un client passe une commande. La remise spécifique est une propriété de chaque client. Chaque implémentation de `ICustomer` peut définir des règles différentes pour la remise de fidélité. 
 
-La façon la plus naturelle d’ajouter cette fonctionnalité consiste à améliorer l’interface `ICustomer` avec une méthode pour appliquer une remise de fidélité. La suggestion de cette conception a suscité l’inquiétude des développeurs expérimentés : « Les interfaces sont immuables une fois lancées ! Il s’agit d’une modification avec rupture ! » C# 8.0 ajoute des *implémentations d’interface par défaut* pour la mise à niveau des interfaces. Les auteurs de bibliothèque peuvent ajouter de nouveaux membres à l’interface et fournir une implémentation par défaut pour ces membres.
+La façon la plus naturelle d’ajouter cette fonctionnalité consiste à améliorer l’interface `ICustomer` avec une méthode pour appliquer une remise de fidélité. Cette suggestion de conception a posé problème aux développeurs expérimentés : «les interfaces sont immuables une fois qu’elles ont été publiées ! Il s’agit d’une modification avec rupture ! » C# 8.0 ajoute des *implémentations d’interface par défaut* pour la mise à niveau des interfaces. Les auteurs de bibliothèque peuvent ajouter de nouveaux membres à l’interface et fournir une implémentation par défaut pour ces membres.
 
 Les implémentations d’interface par défaut permettent aux développeurs de mettre à niveau une interface tout en laissant la possibilité aux implémenteurs de substituer cette implémentation. Les utilisateurs de la bibliothèque peuvent accepter l’implémentation par défaut en tant que modification sans rupture. Si leurs règles métier sont différentes, ils peuvent opérer un remplacement.
 

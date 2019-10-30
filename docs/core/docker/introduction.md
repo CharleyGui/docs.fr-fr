@@ -3,12 +3,12 @@ title: Présentation de Docker
 description: Cet article présente Docker et en brosse une vue d’ensemble dans le contexte d’une application .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 3f40d2723feb5a31066115ae11cafba11981f1b4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: af1213eefb013f8911a865e7e2e318a8beadc9a5
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522999"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038460"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
@@ -40,7 +40,7 @@ Microsoft Container Registry (MCR) est la source officielle d’images conteneur
 
 ### <a name="dockerfile"></a>Dockerfile
 
-Un **Dockerfile** est un fichier définissant un ensemble d’instructions qui créent une image. Chaque instruction du **Dockerfile** produit une couche de l’image. La plupart du temps, la reconstruction d’une image ne concerne que les couches modifiées. Le **Dockerfile** peut être distribué auprès d’autres personnes, qui peuvent ainsi créer une image de la même manière que la première. Si cette solution permet de diffuser les *instructions* sur la création de l’image, le principal moyen d’en distribuer une consiste à la publier dans un registre.
+Un **Dockerfile** est un fichier définissant un ensemble d’instructions qui créent une image. Chaque instruction du **Dockerfile** produit une couche de l’image. Pour l’essentiel, lorsque vous reconstruisez l’image, seules les couches qui ont changé sont reconstruites. Les **fichier dockerfile** peuvent être distribués à d’autres utilisateurs et leur permettre de recréer une nouvelle image de la même façon que vous l’avez créée. Si cette solution permet de diffuser les *instructions* sur la création de l’image, le principal moyen d’en distribuer une consiste à la publier dans un registre.
 
 ## <a name="net-core-images"></a>Images .NET Core
 

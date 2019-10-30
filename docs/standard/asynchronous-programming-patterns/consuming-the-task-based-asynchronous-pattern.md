@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e89545b5fa29f6e5bf99bb9b85322d7ee14422a4
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 73cf0c09ab41fa7b1e4ee974d62ff8cbee59653b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929012"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038128"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
@@ -247,13 +247,13 @@ catch(Exception exc)
 ### <a name="taskwhenany"></a>Task.WhenAny
  Vous pouvez utiliser la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour attendre de façon asynchrone qu’une seule des multiples opérations asynchrones représentées en tant que tâches soit effectuée.  Cette méthode couvre quatre principaux cas d’utilisation :
 
-- Redondance :  exécution d’une opération plusieurs fois et sélection de celle qui se termine en premier (par exemple, en contactant plusieurs services web de cotation boursière qui produiront un résultat unique et en sélectionnant celui qui se terminera le plus rapidement).
+- Redondance : Exécution d’une opération plusieurs fois et sélection de celle qui se termine en premier (par exemple, en contactant plusieurs services web de cotation boursière qui produiront un résultat unique et en sélectionnant celui qui se terminera le plus rapidement).
 
-- Entrelacement :  lancement de plusieurs opérations, en attendant que toutes se terminent, mais en traitant chacune lors de leur achèvement.
+- Entrelacement : Lancement de plusieurs opérations, en attendant que toutes se terminent, mais en traitant chacune lors de leur achèvement.
 
-- Limitation :  autorisation du lancement de nouvelles opérations lorsque d’autres se terminent.  Il s’agit d’une extension de l’entrelacement.
+- Limitation : Autorisation du lancement de nouvelles opérations lorsque d’autres se terminent.  Il s’agit d’une extension de l’entrelacement.
 
-- Interruption anticipée :  par exemple, une opération représentée par la tâche t1 peut être regroupée dans une tâche <xref:System.Threading.Tasks.Task.WhenAny%2A> avec une autre tâche t2, et vous pouvez attendre la tâche <xref:System.Threading.Tasks.Task.WhenAny%2A>. La tâche t2 peut représenter un délai d’attente, une annulation ou un autre signal qui provoque l’achèvement de la tâche <xref:System.Threading.Tasks.Task.WhenAny%2A> avant la fin de t1.
+- Interruption anticipée : par exemple, une opération représentée par la tâche t1 peut être regroupée dans une tâche <xref:System.Threading.Tasks.Task.WhenAny%2A> avec une autre tâche t2, et vous pouvez attendre la tâche <xref:System.Threading.Tasks.Task.WhenAny%2A>. La tâche t2 peut représenter un délai d’attente, une annulation ou un autre signal qui provoque l’achèvement de la tâche <xref:System.Threading.Tasks.Task.WhenAny%2A> avant la fin de t1.
 
 #### <a name="redundancy"></a>Redondance
  Prenons un cas où vous souhaitez prendre une décision sur la nécessité d’acheter une action.  Il existe plusieurs services de recommandation de cotation boursière auxquels vous faites confiance, mais selon la charge quotidienne, chaque service peut avoir des lenteurs à des moments différents.  Vous pouvez utiliser la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour recevoir une notification quand une opération est terminée :
@@ -290,7 +290,7 @@ while(recommendations.Count > 0)
 }
 ```
 
- En outre, même si une première tâche se termine avec succès, les tâches suivantes peuvent échouer.  À ce stade, vous avez plusieurs options pour la gestion des exceptions :  vous pouvez attendre que toutes les tâches lancées soient terminées, auquel cas vous utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAll%2A>, ou choisir de journaliser toutes les exceptions importantes.  Dans ce cas, vous pouvez utiliser les continuations de recevoir une notification lorsque des tâches se sont terminées de manière asynchrone :
+ En outre, même si une première tâche se termine avec succès, les tâches suivantes peuvent échouer.  À ce stade, vous disposez de plusieurs options pour la gestion des exceptions : vous pouvez attendre que toutes les tâches lancées soient terminées, auquel cas vous pouvez utiliser la méthode <xref:System.Threading.Tasks.Task.WhenAll%2A>, ou vous pouvez décider que toutes les exceptions sont importantes et doivent être journalisées.  Dans ce cas, vous pouvez utiliser les continuations de recevoir une notification lorsque des tâches se sont terminées de manière asynchrone :
 
 ```csharp
 foreach(Task recommendation in recommendations)
@@ -300,7 +300,7 @@ foreach(Task recommendation in recommendations)
 }
 ```
 
- ou :
+ ou :
 
 ```csharp
 foreach(Task recommendation in recommendations)
@@ -381,7 +381,7 @@ while(imageTasks.Count > 0)
 }
 ```
 
-#### <a name="throttling"></a>Limitation
+#### <a name="throttling"></a>Throttling
  Prenons l’exemple de l’entrelacement, sauf qu’ici l’utilisateur télécharge tant d’images que les téléchargements doivent être limités. Par exemple, vous ne souhaitez qu’un certain nombre de téléchargements simultanés. Pour ce faire, vous pouvez démarrer un sous-ensemble d’opérations asynchrones.  Lorsque les opérations sont terminées, vous pouvez démarrer des opérations supplémentaires pour prendre leur place :
 
 ```csharp
@@ -633,7 +633,7 @@ double currentPrice = await NeedOnlyOne(
 ```
 
 ### <a name="interleaved-operations"></a>Opérations entrelacées
- Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches.  Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour un nombre N de tâches, cela entraîne des continuations O(N2) créées sur la durée de vie de l’opération d’entrelacement.  Si vous travaillez avec un large éventail de tâches, vous pouvez utiliser un combinateur (`Interleaved` dans l’exemple suivant) pour résoudre le problème de performances :
+ Il existe un problème potentiel de performances avec l’utilisation de la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A> pour prendre en charge un scénario d’entrelacement quand vous travaillez avec de très grands ensembles de tâches. Chaque appel à <xref:System.Threading.Tasks.Task.WhenAny%2A> entraîne une continuation enregistrée avec chaque tâche. Pour N nombre de tâches, cela entraîne la création de continuations O (N<sup>2</sup>) au cours de la durée de vie de l’opération d’entrelacement. Si vous utilisez un grand nombre de tâches, vous pouvez utiliser un combinateur (`Interleaved` dans l’exemple suivant) pour résoudre le problème de performances :
 
 ```csharp
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)

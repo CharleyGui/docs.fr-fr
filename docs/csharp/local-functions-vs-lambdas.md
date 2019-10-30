@@ -2,13 +2,14 @@
 title: Fonctions locales et expressions lambda
 description: Découvrez pourquoi des fonctions locales peuvent être un meilleur choix que les expressions lambda.
 ms.date: 06/27/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
-ms.openlocfilehash: 7577950314f8c57fba635db8b2bcd69e8d427dc3
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: HT
+ms.openlocfilehash: a644b6868a37b3d6231a514dc37030cae062785a
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611443"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038801"
 ---
 # <a name="local-functions-compared-to-lambda-expressions"></a>Fonctions locales comparées aux expressions lambda
 
@@ -24,7 +25,7 @@ Comparez cette implémentation avec une version qui utilise des expressions lamb
 
 Les fonctions locales ont des noms. Les expressions lambda sont des méthodes anonymes qui sont affectées aux variables de type `Func` ou `Action`. Lorsque vous déclarez une fonction locale, les types d’arguments et le type de retour font partie de la déclaration de fonction. Au lieu de faire partie du corps de l’expression lambda, les types d’arguments et le type de retour font partie de la déclaration de type de variable de l’expression lambda. Ces deux différences peuvent rendre le code plus clair.
 
-Les fonctions locales ont des règles différentes pour l’affectation définie par rapport aux expressions lambda. Une déclaration de fonction locale peut être référencée à partir de n’importe quel emplacement de code où elle est dans la portée. Une expression lambda doit être affectée à une variable de délégué avant de pouvoir être accessible (ou appelée par le biais du délégué référençant l’expression lambda). Notez que la version utilisant l’expression lambda doit déclarer et initialiser l’expression lambda `nthFactorial` avant de la définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur.
+Les fonctions locales ont des règles différentes pour l’affectation définie par rapport aux expressions lambda. Une déclaration de fonction locale peut être référencée à partir de n’importe quel emplacement de code où elle est dans la portée. Une expression lambda doit être assignée à une variable déléguée avant d’être accessible (ou appelée via le délégué référençant l’expression lambda). Notez que la version qui utilise l’expression lambda doit déclarer et initialiser l’expression lambda, `nthFactorial` avant de la définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur.
 Ces différences font que les algorithmes récursifs sont plus faciles à créer en utilisant des fonctions locales. Vous pouvez déclarer et définir une fonction locale qui s’appelle elle-même. Les expressions lambda doivent être déclarées et une valeur par défaut doit leur être affectée avant qu’elles puissent être réaffectées à un corps référençant la même expression lambda.
 
 Les règles d’affectation définies s’appliquent également à toutes les variables qui sont capturées par la fonction locale ou l’expression lambda. Les règles des fonctions locales comme celles des expression lambda exigent que toutes les variables capturées soient définitivement affectées au point marquant le moment où la fonction locale ou l’expression lambda est convertie en délégué. La différence est que les expressions lambda sont converties en délégués au moment où elles sont déclarées. Les fonctions locales sont converties en délégués uniquement lorsqu’elles sont utilisées en tant que délégué. Si vous déclarez une fonction locale et la référencez uniquement en l’appelant comme une méthode, elle ne sera pas convertie en délégué. Cette règle vous permet de déclarer une fonction locale à n’importe quel emplacement qui vous convient dans sa portée englobante. Il est courant de déclarer des fonctions locales à la fin de la méthode parente, après des instructions return.

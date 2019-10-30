@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 62186409fdc1abb2275af535be3ae939a1e63323
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d2fd43644949c842ff883731d3c7f00228cabfd7
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922280"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038868"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>Opérateurs de test et de cast de type (Référence C#)
 
@@ -36,7 +36,7 @@ Vous pouvez utiliser les opérateurs suivants pour effectuer la vérification du
 
 ## <a name="is-operator"></a>Opérateur is
 
-L’opérateur `is` vérifie si le type de runtime du résultat d’une expression est compatible avec un type donné. À compter de C# 7.0, l’opérateur `is` teste également un résultat d’expression par rapport à un modèle.
+L’opérateur `is` vérifie si le type de runtime du résultat d’une expression est compatible avec un type donné. À partir C# de 7,0, l’opérateur`is`teste également un résultat d’expression par rapport à un modèle.
 
 L’expression avec l’opérateur de test de type `is` a la forme suivante
 
@@ -52,7 +52,7 @@ L’exemple suivant montre que l’opérateur `is` retourne `true` si le type de
 
 [!code-csharp[is with reference conversion](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
 
-L’exemple suivant montre que l’opérateur `is` tient compte des conversions boxing et unboxing mais ne considère pas les conversions numériques :
+L’exemple suivant montre que l’opérateur de `is` prend en compte les conversions boxing et unboxing, mais ne prend pas en compte les [conversions numériques](../builtin-types/numeric-conversions.md):
 
 [!code-csharp-interactive[is with int](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithInt)]
 
@@ -60,7 +60,7 @@ Pour plus d’informations sur les conversions C#, consultez le chapitre [Conver
 
 ### <a name="type-testing-with-pattern-matching"></a>Test de type avec des critères spéciaux
 
-À compter de C# 7.0, l’opérateur `is` teste également un résultat d’expression par rapport à un modèle. En particulier, il prend en charge le modèle de type sous la forme suivante :
+À partir C# de 7,0, l’opérateur`is`teste également un résultat d’expression par rapport à un modèle. En particulier, il prend en charge le modèle de type sous la forme suivante :
 
 ```csharp
 E is T v
@@ -99,9 +99,9 @@ L’exemple suivant illustre l’utilisation de l’opérateur `as` :
 [!code-csharp-interactive[as operator](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#AsOperator)]
 
 > [!NOTE]
-> Comme le montre l’exemple précédent, vous devez comparer le résultat de l’expression `as` avec `null` pour vérifier si la conversion a réussi. À compter de C# 7.0, vous pouvez utiliser [l’opérateur is](#type-testing-with-pattern-matching) pour tester si la conversion réussit et, le cas échéant, affecter son résultat à une nouvelle variable.
+> Comme le montre l’exemple précédent, vous devez comparer le résultat de l’expression `as` avec `null` pour vérifier si la conversion a réussi. À partir C# de 7,0, vous pouvez utiliser l' [opérateur is](#type-testing-with-pattern-matching) pour tester si la conversion aboutit et, si elle aboutit, assigner son résultat à une nouvelle variable.
 
-## <a name="cast-operator-"></a>Opérateur de cast ()
+## <a name="cast-operator-"></a>Opérateur de cast ()
 
 Une expression cast de la forme `(T)E` effectue une conversion explicite du résultat de l’expression `E` en type `T`. S’il n’existe aucune conversion explicite du type de `E` en type `T`, une erreur de compilation se produit. Au moment de l’exécution, une conversion explicite peut ne pas réussir, et une expression cast peut lever une exception.
 
@@ -117,7 +117,7 @@ Vous pouvez aussi utiliser des parenthèses pour [appeler une méthode ou un dé
 
 Une autre utilisation des parenthèses est d’ajuster l’ordre dans lequel évaluer les opérations dans une expression. Pour plus d’informations, consultez [Opérateurs C#](index.md).
 
-## <a name="typeof-operator"></a>Opérateur typeof
+## <a name="typeof-operator"></a>TypeOf (opérateur)
 
 L’opérateur `typeof` obtient l’instance <xref:System.Type?displayProperty=nameWithType> pour un type. L’argument de l’opérateur `typeof` doit avoir le nom d’un type ou d’un paramètre de type, comme le montre l’exemple suivant :
 
@@ -127,7 +127,7 @@ Vous pouvez également utiliser l’opérateur `typeof` avec les types génériq
 
 [!code-csharp-interactive[typeof unbound generic](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
 
-Une expression ne peut pas être un argument de l’opérateur `typeof`. Pour obtenir l’instance <xref:System.Type?displayProperty=nameWithType> pour le type de runtime du résultat de l’expression, utilisez la méthode <xref:System.Object.GetType%2A?displayProperty=nameWithType>.
+Une expression ne peut pas être un argument de l’opérateur `typeof`. Pour obtenir l’instance <xref:System.Type?displayProperty=nameWithType> pour le type au moment de l’exécution d’un résultat d’expression, utilisez la méthode <xref:System.Object.GetType%2A?displayProperty=nameWithType>.
 
 ### <a name="type-testing-with-the-typeof-operator"></a>Test de type avec l’opérateur `typeof`
 
@@ -137,7 +137,7 @@ Utilisez l’opérateur `typeof` pour vérifier si le type de runtime du résult
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
-Les opérateurs `is`, `as` et `typeof` ne sont pas surchargeables.
+Les opérateurs `is`, `as`et `typeof` ne peuvent pas être surchargés.
 
 Un type défini par l’utilisateur ne peut pas surcharger l’opérateur `()`, mais vous pouvez définir des conversions de type personnalisées qui peuvent être effectuées par une expression cast. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).
 
@@ -155,3 +155,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Guide pratique pour caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Génériques en .NET](../../../standard/generics/index.md)

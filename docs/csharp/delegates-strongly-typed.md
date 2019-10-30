@@ -2,13 +2,14 @@
 title: Délégués fortement typés
 description: Découvrez comment utiliser des types délégués génériques pour déclarer des types personnalisés lors de la création d’une fonctionnalité nécessitant des délégués.
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
-ms.openlocfilehash: 2e4cc1c7bfa0aaa90f3aaefa0da64c5486a9d10f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: efdbef39d0e6bf2f07cde2c9621cec173e921752
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037361"
 ---
 # <a name="strongly-typed-delegates"></a>Délégués fortement typés
 
@@ -54,7 +55,8 @@ Par convention, le type du résultat est toujours le dernier paramètre de type 
 
 Utilisez l’un des types `Func` pour tout type délégué qui retourne une valeur.
 
-Il existe aussi un type <xref:System.Predicate%601> spécialisé pour un délégué qui retourne un test sur une seule valeur :
+Il y a également une <xref:System.Predicate%601> spécialisée 
+type pour un délégué qui retourne un test sur une valeur unique :
 
 ```csharp
 public delegate bool Predicate<in T>(T obj);
@@ -76,4 +78,4 @@ Cela devrait vous procurer un gain de temps et réduire le nombre de nouveaux ty
 
 Dans l’article suivant, vous verrez plusieurs schémas d’utilisation courants des délégués.
 
-[Next](delegates-patterns.md)
+[Suivant](delegates-patterns.md)
