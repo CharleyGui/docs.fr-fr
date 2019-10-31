@@ -2,13 +2,14 @@
 title: Explication des arborescences d’expressions
 description: En savoir plus sur les arborescences d’expressions et leur utilité dans la conversion d’algorithmes pour une exécution externe et une inspection du code avant son exécution.
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
-ms.openlocfilehash: c5d4b2ad54fab547567d430f11a31542a11d03f3
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 12093e9c9246c87cc5ea3aedaca6ba34acacce4d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104805"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036991"
 ---
 # <a name="expression-trees-explained"></a>Explication des arborescences d’expressions
 
