@@ -7,30 +7,30 @@ f1_keywords:
 helpviewer_keywords:
 - BC31098
 ms.assetid: 72528d02-77b7-4b4c-8b9e-d12f666f92ef
-ms.openlocfilehash: e1a33a56d196b2a8731f2ddb5c632b0de147db3e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec7ce5ddcfe647088393042dd2ada52d283535f7
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649918"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197545"
 ---
-# <a name="class-classname-cannot-be-found"></a><span data-ttu-id="b78d8-102">La classe\<nom_classe >' est introuvable</span><span class="sxs-lookup"><span data-stu-id="b78d8-102">Class '\<classname>' cannot be found</span></span>
-<span data-ttu-id="b78d8-103">La classe\<nom_classe >' est introuvable.</span><span class="sxs-lookup"><span data-stu-id="b78d8-103">Class '\<classname>' cannot be found.</span></span> <span data-ttu-id="b78d8-104">Cette condition est généralement le résultat d'un 'Microsoft.VisualBasic.dll' incompatible.</span><span class="sxs-lookup"><span data-stu-id="b78d8-104">This condition is usually the result of a mismatched 'Microsoft.VisualBasic.dll'.</span></span>  
+# <a name="class-classname-cannot-be-found"></a><span data-ttu-id="e7227-102">La classe'\<ClassName > 'est introuvable</span><span class="sxs-lookup"><span data-stu-id="e7227-102">Class '\<classname>' cannot be found</span></span>
+<span data-ttu-id="e7227-103">La classe'\<ClassName > 'est introuvable.</span><span class="sxs-lookup"><span data-stu-id="e7227-103">Class '\<classname>' cannot be found.</span></span> <span data-ttu-id="e7227-104">Cette condition est généralement le résultat d'un 'Microsoft.VisualBasic.dll' incompatible.</span><span class="sxs-lookup"><span data-stu-id="e7227-104">This condition is usually the result of a mismatched 'Microsoft.VisualBasic.dll'.</span></span>  
   
- <span data-ttu-id="b78d8-105">Un membre défini est introuvable.</span><span class="sxs-lookup"><span data-stu-id="b78d8-105">A defined member could not be located.</span></span>  
+ <span data-ttu-id="e7227-105">Un membre défini est introuvable.</span><span class="sxs-lookup"><span data-stu-id="e7227-105">A defined member could not be located.</span></span>  
   
- <span data-ttu-id="b78d8-106">**ID d’erreur :** BC31098</span><span class="sxs-lookup"><span data-stu-id="b78d8-106">**Error ID:** BC31098</span></span>  
+ <span data-ttu-id="e7227-106">**ID d’erreur :** BC31098</span><span class="sxs-lookup"><span data-stu-id="e7227-106">**Error ID:** BC31098</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="b78d8-107">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="b78d8-107">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="e7227-107">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="e7227-107">To correct this error</span></span>  
   
-1. <span data-ttu-id="b78d8-108">Recompilez le programme pour voir si l'erreur se produit à nouveau.</span><span class="sxs-lookup"><span data-stu-id="b78d8-108">Compile the program again to see if the error recurs.</span></span>  
+1. <span data-ttu-id="e7227-108">Recompilez le programme pour voir si l'erreur se produit à nouveau.</span><span class="sxs-lookup"><span data-stu-id="e7227-108">Compile the program again to see if the error recurs.</span></span>  
   
-2. <span data-ttu-id="b78d8-109">Si l’erreur se reproduit, enregistrez votre travail et redémarrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="b78d8-109">If the error recurs, save your work and restart Visual Studio.</span></span>  
+2. <span data-ttu-id="e7227-109">Si l’erreur se reproduit, enregistrez votre travail et redémarrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="e7227-109">If the error recurs, save your work and restart Visual Studio.</span></span>  
   
-3. <span data-ttu-id="b78d8-110">Si l’erreur persiste, réinstallez Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="b78d8-110">If the error persists, reinstall Visual Basic.</span></span>  
+3. <span data-ttu-id="e7227-110">Si l’erreur persiste, réinstallez Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="e7227-110">If the error persists, reinstall Visual Basic.</span></span>  
   
-4. <span data-ttu-id="b78d8-111">Si l'erreur persiste après la réinstallation, avertissez les services de support technique Microsoft.</span><span class="sxs-lookup"><span data-stu-id="b78d8-111">If the error persists after reinstallation, notify Microsoft Product Support Services.</span></span>  
+4. <span data-ttu-id="e7227-111">Si l'erreur persiste après la réinstallation, avertissez les services de support technique Microsoft.</span><span class="sxs-lookup"><span data-stu-id="e7227-111">If the error persists after reinstallation, notify Microsoft Product Support Services.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b78d8-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b78d8-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7227-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e7227-112">See also</span></span>
 
-- [<span data-ttu-id="b78d8-113">Nous contacter</span><span class="sxs-lookup"><span data-stu-id="b78d8-113">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
+- [<span data-ttu-id="e7227-113">Nous contacter</span><span class="sxs-lookup"><span data-stu-id="e7227-113">Talk to Us</span></span>](/visualstudio/ide/feedback-options)

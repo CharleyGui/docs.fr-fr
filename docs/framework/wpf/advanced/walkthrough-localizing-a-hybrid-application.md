@@ -1,181 +1,181 @@
 ---
-title: 'Procédure pas à pas : localisation d’une application hybride'
+title: "Procédure pas à pas : localisation d'une application hybride"
 ms.date: 08/18/2018
 helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: b98bf7b3f0aa4e7698a5c0ca7c8ae16051ce6300
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: bef296d5de4735780c839af312b5d4fe7eeeb960
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991778"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197856"
 ---
-# <a name="walkthrough-localizing-a-hybrid-application"></a><span data-ttu-id="33904-102">Procédure pas à pas : localisation d’une application hybride</span><span class="sxs-lookup"><span data-stu-id="33904-102">Walkthrough: Localizing a Hybrid Application</span></span>
+# <a name="walkthrough-localizing-a-hybrid-application"></a><span data-ttu-id="800b6-102">Procédure pas à pas : localisation d'une application hybride</span><span class="sxs-lookup"><span data-stu-id="800b6-102">Walkthrough: Localizing a Hybrid Application</span></span>
 
-<span data-ttu-id="33904-103">Cette procédure pas à pas vous montre comment [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] localiser des éléments [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]dans une application hybride basée sur.</span><span class="sxs-lookup"><span data-stu-id="33904-103">This walkthrough shows you how to localize [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elements in a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]-based hybrid application.</span></span>
+<span data-ttu-id="800b6-103">Cette procédure pas à pas vous montre comment localiser des éléments de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans une application hybride basée sur [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].</span><span class="sxs-lookup"><span data-stu-id="800b6-103">This walkthrough shows you how to localize [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elements in a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]-based hybrid application.</span></span>
 
-<span data-ttu-id="33904-104">Cette procédure pas à pas décrit notamment les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="33904-104">Tasks illustrated in this walkthrough include:</span></span>
+<span data-ttu-id="800b6-104">Cette procédure pas à pas décrit notamment les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="800b6-104">Tasks illustrated in this walkthrough include:</span></span>
 
-- <span data-ttu-id="33904-105">Création du [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] projet hôte.</span><span class="sxs-lookup"><span data-stu-id="33904-105">Creating the [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] host project.</span></span>
+- <span data-ttu-id="800b6-105">Création du projet [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Host.</span><span class="sxs-lookup"><span data-stu-id="800b6-105">Creating the [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] host project.</span></span>
 
-- <span data-ttu-id="33904-106">Ajout de contenu localisable</span><span class="sxs-lookup"><span data-stu-id="33904-106">Adding localizable content.</span></span>
+- <span data-ttu-id="800b6-106">Ajout de contenu localisable</span><span class="sxs-lookup"><span data-stu-id="800b6-106">Adding localizable content.</span></span>
 
-- <span data-ttu-id="33904-107">Activation de la localisation</span><span class="sxs-lookup"><span data-stu-id="33904-107">Enabling localization.</span></span>
+- <span data-ttu-id="800b6-107">Activation de la localisation</span><span class="sxs-lookup"><span data-stu-id="800b6-107">Enabling localization.</span></span>
 
-- <span data-ttu-id="33904-108">Assignation d’identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="33904-108">Assigning resource identifiers.</span></span>
+- <span data-ttu-id="800b6-108">Assignation d’identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="800b6-108">Assigning resource identifiers.</span></span>
 
-- <span data-ttu-id="33904-109">Utilisation de l’outil LocBaml pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="33904-109">Using the LocBaml tool to produce a satellite assembly.</span></span>
+- <span data-ttu-id="800b6-109">Utilisation de l’outil LocBaml pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="800b6-109">Using the LocBaml tool to produce a satellite assembly.</span></span>
 
-<span data-ttu-id="33904-110">Pour obtenir le code complet des tâches illustrées dans cette procédure pas à pas, consultez [localisation d’un exemple d’application hybride](https://go.microsoft.com/fwlink/?LinkID=160015).</span><span class="sxs-lookup"><span data-stu-id="33904-110">For a complete code listing of the tasks illustrated in this walkthrough, see [Localizing a Hybrid Application Sample](https://go.microsoft.com/fwlink/?LinkID=160015).</span></span>
+<span data-ttu-id="800b6-110">Pour obtenir le code complet des tâches illustrées dans cette procédure pas à pas, consultez [localisation d’un exemple d’application hybride](https://go.microsoft.com/fwlink/?LinkID=160015).</span><span class="sxs-lookup"><span data-stu-id="800b6-110">For a complete code listing of the tasks illustrated in this walkthrough, see [Localizing a Hybrid Application Sample](https://go.microsoft.com/fwlink/?LinkID=160015).</span></span>
 
-<span data-ttu-id="33904-111">Quand vous aurez terminé, vous disposerez d’une application hybride localisée.</span><span class="sxs-lookup"><span data-stu-id="33904-111">When you are finished, you will have a localized hybrid application.</span></span>
+<span data-ttu-id="800b6-111">Quand vous aurez terminé, vous disposerez d’une application hybride localisée.</span><span class="sxs-lookup"><span data-stu-id="800b6-111">When you are finished, you will have a localized hybrid application.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="33904-112">Prérequis</span><span class="sxs-lookup"><span data-stu-id="33904-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="800b6-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="800b6-112">Prerequisites</span></span>
 
-<span data-ttu-id="33904-113">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="33904-113">You need the following components to complete this walkthrough:</span></span>
+<span data-ttu-id="800b6-113">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="800b6-113">You need the following components to complete this walkthrough:</span></span>
 
-- <span data-ttu-id="33904-114">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="33904-114">Visual Studio 2017</span></span>
+- <span data-ttu-id="800b6-114">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="800b6-114">Visual Studio 2017</span></span>
 
-## <a name="creating-the-windows-forms-host-project"></a><span data-ttu-id="33904-115">Création du projet hôte Windows Forms</span><span class="sxs-lookup"><span data-stu-id="33904-115">Creating the Windows Forms Host Project</span></span>
+## <a name="creating-the-windows-forms-host-project"></a><span data-ttu-id="800b6-115">Création du projet hôte Windows Forms</span><span class="sxs-lookup"><span data-stu-id="800b6-115">Creating the Windows Forms Host Project</span></span>
 
-<span data-ttu-id="33904-116">La première étape consiste à créer le [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] projet d’application et à [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ajouter un élément avec le contenu que vous allez localiser.</span><span class="sxs-lookup"><span data-stu-id="33904-116">The first step is to create the [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] application project and add a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element with content that you will localize.</span></span>
+<span data-ttu-id="800b6-116">La première étape consiste à créer le [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] projet d’application et à ajouter un élément [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] avec le contenu que vous allez localiser.</span><span class="sxs-lookup"><span data-stu-id="800b6-116">The first step is to create the [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] application project and add a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element with content that you will localize.</span></span>
 
-### <a name="to-create-the-host-project"></a><span data-ttu-id="33904-117">Pour créer le projet hôte</span><span class="sxs-lookup"><span data-stu-id="33904-117">To create the host project</span></span>
+### <a name="to-create-the-host-project"></a><span data-ttu-id="800b6-117">Pour créer le projet hôte</span><span class="sxs-lookup"><span data-stu-id="800b6-117">To create the host project</span></span>
 
-1. <span data-ttu-id="33904-118">Créez un projet d' **application WPF** nommé `LocalizingWpfInWf`.</span><span class="sxs-lookup"><span data-stu-id="33904-118">Create a **WPF App** project named `LocalizingWpfInWf`.</span></span>  <span data-ttu-id="33904-119">(**Fichier** > **nouveau** > **projet**visuelouVisualBasic > **application WPF**de**Bureau classique)** .**C#**  >  > </span><span class="sxs-lookup"><span data-stu-id="33904-119">(**File** > **New** > **Project** > **Visual C#** or **Visual Basic** > **Classic Desktop** > **WPF Application**).</span></span>
+1. <span data-ttu-id="800b6-118">Créez un projet d' **application WPF** nommé `LocalizingWpfInWf`.</span><span class="sxs-lookup"><span data-stu-id="800b6-118">Create a **WPF App** project named `LocalizingWpfInWf`.</span></span>  <span data-ttu-id="800b6-119">(**Fichier** > **nouveau** **projet** >  > **Visual C#**  ou **Visual Basic** > **application WPF**de **Bureau classique** > ).</span><span class="sxs-lookup"><span data-stu-id="800b6-119">(**File** > **New** > **Project** > **Visual C#** or **Visual Basic** > **Classic Desktop** > **WPF Application**).</span></span>
 
-2. <span data-ttu-id="33904-120">Ajoutez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> élément appelé`SimpleControl` au projet.</span><span class="sxs-lookup"><span data-stu-id="33904-120">Add a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.UserControl> element called `SimpleControl` to the project.</span></span>
+2. <span data-ttu-id="800b6-120">Ajoutez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]élément <xref:System.Windows.Controls.UserControl> appelé `SimpleControl` au projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-120">Add a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.UserControl> element called `SimpleControl` to the project.</span></span>
 
-3. <span data-ttu-id="33904-121">Utilisez le <xref:System.Windows.Forms.Integration.ElementHost> contrôle pour placer un `SimpleControl` élément sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="33904-121">Use the <xref:System.Windows.Forms.Integration.ElementHost> control to place a `SimpleControl` element on the form.</span></span> <span data-ttu-id="33904-122">Pour plus d’informations, consultez [Procédure pas à pas : Hébergement d’un contrôle composite 3D WPF dans Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="33904-122">For more information, see [Walkthrough: Hosting a 3-D WPF Composite Control in Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).</span></span>
+3. <span data-ttu-id="800b6-121">Utilisez le contrôle <xref:System.Windows.Forms.Integration.ElementHost> pour placer un élément `SimpleControl` sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="800b6-121">Use the <xref:System.Windows.Forms.Integration.ElementHost> control to place a `SimpleControl` element on the form.</span></span> <span data-ttu-id="800b6-122">Pour plus d’informations, consultez [procédure pas à pas : Hébergement d’un contrôle composite 3D WPF dans Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="800b6-122">For more information, see [Walkthrough: Hosting a 3-D WPF Composite Control in Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).</span></span>
 
-## <a name="adding-localizable-content"></a><span data-ttu-id="33904-123">Ajout de contenu localisable</span><span class="sxs-lookup"><span data-stu-id="33904-123">Adding Localizable Content</span></span>
+## <a name="adding-localizable-content"></a><span data-ttu-id="800b6-123">Ajout de contenu localisable</span><span class="sxs-lookup"><span data-stu-id="800b6-123">Adding Localizable Content</span></span>
 
-<span data-ttu-id="33904-124">Ensuite, vous allez ajouter un [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle Label et définir le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu de l’élément sur une chaîne localisable.</span><span class="sxs-lookup"><span data-stu-id="33904-124">Next, you will add a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] label control and set the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element's content to a localizable string.</span></span>
+<span data-ttu-id="800b6-124">Ensuite, vous allez ajouter un contrôle d’étiquette [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et définir le contenu de l’élément [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sur une chaîne localisable.</span><span class="sxs-lookup"><span data-stu-id="800b6-124">Next, you will add a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] label control and set the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element's content to a localizable string.</span></span>
 
-### <a name="to-add-localizable-content"></a><span data-ttu-id="33904-125">Pour ajouter du contenu localisable</span><span class="sxs-lookup"><span data-stu-id="33904-125">To add localizable content</span></span>
+### <a name="to-add-localizable-content"></a><span data-ttu-id="800b6-125">Pour ajouter du contenu localisable</span><span class="sxs-lookup"><span data-stu-id="800b6-125">To add localizable content</span></span>
 
-1. <span data-ttu-id="33904-126">Dans **Explorateur de solutions**, double-cliquez sur **SimpleControl. Xaml** pour l’ouvrir dans [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]le.</span><span class="sxs-lookup"><span data-stu-id="33904-126">In **Solution Explorer**, double-click **SimpleControl.xaml** to open it in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>
+1. <span data-ttu-id="800b6-126">Dans **Explorateur de solutions**, double-cliquez sur **SimpleControl. Xaml** pour l’ouvrir dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="800b6-126">In **Solution Explorer**, double-click **SimpleControl.xaml** to open it in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>
 
-2. <span data-ttu-id="33904-127">Définissez le contenu du <xref:System.Windows.Controls.Button> contrôle à l’aide du code suivant.</span><span class="sxs-lookup"><span data-stu-id="33904-127">Set the content of the <xref:System.Windows.Controls.Button> control using the following code.</span></span>
+2. <span data-ttu-id="800b6-127">Définissez le contenu du contrôle <xref:System.Windows.Controls.Button> à l’aide du code suivant.</span><span class="sxs-lookup"><span data-stu-id="800b6-127">Set the content of the <xref:System.Windows.Controls.Button> control using the following code.</span></span>
 
      [!code-xaml[LocalizingWpfInWf#10](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/SimpleControl0.xaml#10)]
 
-3. <span data-ttu-id="33904-128">Dans **Explorateur de solutions**, double-cliquez sur **Form1** pour l’ouvrir dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="33904-128">In **Solution Explorer**, double-click **Form1** to open it in the Windows Forms Designer.</span></span>
+3. <span data-ttu-id="800b6-128">Dans **Explorateur de solutions**, double-cliquez sur **Form1** pour l’ouvrir dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="800b6-128">In **Solution Explorer**, double-click **Form1** to open it in the Windows Forms Designer.</span></span>
 
-4. <span data-ttu-id="33904-129">Ouvrez la **boîte à outils** et double-cliquez sur **étiquette** pour ajouter un contrôle Label au formulaire.</span><span class="sxs-lookup"><span data-stu-id="33904-129">Open the **Toolbox** and double-click **Label** to add a label control to the form.</span></span> <span data-ttu-id="33904-130">Affectez à sa propriété <xref:System.Windows.Forms.Control.Text%2A> la valeur `"Hello"`.</span><span class="sxs-lookup"><span data-stu-id="33904-130">Set the value of its <xref:System.Windows.Forms.Control.Text%2A> property to `"Hello"`.</span></span>
+4. <span data-ttu-id="800b6-129">Ouvrez la **boîte à outils** et double-cliquez sur **étiquette** pour ajouter un contrôle Label au formulaire.</span><span class="sxs-lookup"><span data-stu-id="800b6-129">Open the **Toolbox** and double-click **Label** to add a label control to the form.</span></span> <span data-ttu-id="800b6-130">Affectez à sa propriété <xref:System.Windows.Forms.Control.Text%2A> la valeur `"Hello"`.</span><span class="sxs-lookup"><span data-stu-id="800b6-130">Set the value of its <xref:System.Windows.Forms.Control.Text%2A> property to `"Hello"`.</span></span>
 
-5. <span data-ttu-id="33904-131">Appuyez sur **F5** pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="33904-131">Press **F5** to build and run the application.</span></span>
+5. <span data-ttu-id="800b6-131">Appuyez sur **F5** pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="800b6-131">Press **F5** to build and run the application.</span></span>
 
-     <span data-ttu-id="33904-132">L' `SimpleControl` élément et le contrôle Label affichent le texte **« Hello »** .</span><span class="sxs-lookup"><span data-stu-id="33904-132">Both the `SimpleControl` element and the label control display the text **"Hello"**.</span></span>
+     <span data-ttu-id="800b6-132">L’élément `SimpleControl` et le contrôle Label affichent le texte **« Hello »** .</span><span class="sxs-lookup"><span data-stu-id="800b6-132">Both the `SimpleControl` element and the label control display the text **"Hello"**.</span></span>
 
-## <a name="enabling-localization"></a><span data-ttu-id="33904-133">Activation de la localisation</span><span class="sxs-lookup"><span data-stu-id="33904-133">Enabling Localization</span></span>
+## <a name="enabling-localization"></a><span data-ttu-id="800b6-133">Activation de la localisation</span><span class="sxs-lookup"><span data-stu-id="800b6-133">Enabling Localization</span></span>
 
-<span data-ttu-id="33904-134">Le Concepteur Windows Forms comprend des paramètres permettant d’activer la localisation dans un assembly satellite.</span><span class="sxs-lookup"><span data-stu-id="33904-134">The Windows Forms Designer provides settings for enabling localization in a satellite assembly.</span></span>
+<span data-ttu-id="800b6-134">Le Concepteur Windows Forms comprend des paramètres permettant d’activer la localisation dans un assembly satellite.</span><span class="sxs-lookup"><span data-stu-id="800b6-134">The Windows Forms Designer provides settings for enabling localization in a satellite assembly.</span></span>
 
-### <a name="to-enable-localization"></a><span data-ttu-id="33904-135">Pour activer la localisation</span><span class="sxs-lookup"><span data-stu-id="33904-135">To enable localization</span></span>
+### <a name="to-enable-localization"></a><span data-ttu-id="800b6-135">Pour activer la localisation</span><span class="sxs-lookup"><span data-stu-id="800b6-135">To enable localization</span></span>
 
-1. <span data-ttu-id="33904-136">Dans **Explorateur de solutions**, double-cliquez sur **Form1.cs** pour l’ouvrir dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="33904-136">In **Solution Explorer**, double-click **Form1.cs** to open it in the Windows Forms Designer.</span></span>
+1. <span data-ttu-id="800b6-136">Dans **Explorateur de solutions**, double-cliquez sur **Form1.cs** pour l’ouvrir dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="800b6-136">In **Solution Explorer**, double-click **Form1.cs** to open it in the Windows Forms Designer.</span></span>
 
-2. <span data-ttu-id="33904-137">Dans la fenêtre **Propriétés** , définissez la valeur de la propriété **localisable** du formulaire sur `true`.</span><span class="sxs-lookup"><span data-stu-id="33904-137">In the **Properties** window, set the value of the form's **Localizable** property to `true`.</span></span>
+2. <span data-ttu-id="800b6-137">Dans la fenêtre **Propriétés** , définissez la valeur de la propriété **localisable** du formulaire sur `true`.</span><span class="sxs-lookup"><span data-stu-id="800b6-137">In the **Properties** window, set the value of the form's **Localizable** property to `true`.</span></span>
 
-3. <span data-ttu-id="33904-138">Dans la fenêtre **Propriétés** , définissez la valeur de la propriété **Language** sur **espagnol (Espagne)** .</span><span class="sxs-lookup"><span data-stu-id="33904-138">In the **Properties** window, set the value of the **Language** property to **Spanish (Spain)**.</span></span>
+3. <span data-ttu-id="800b6-138">Dans la fenêtre **Propriétés** , définissez la valeur de la propriété **Language** sur **espagnol (Espagne)** .</span><span class="sxs-lookup"><span data-stu-id="800b6-138">In the **Properties** window, set the value of the **Language** property to **Spanish (Spain)**.</span></span>
 
-4. <span data-ttu-id="33904-139">Dans le Concepteur Windows Forms, sélectionnez le contrôle d’étiquette.</span><span class="sxs-lookup"><span data-stu-id="33904-139">In the Windows Forms Designer, select the label control.</span></span>
+4. <span data-ttu-id="800b6-139">Dans le Concepteur Windows Forms, sélectionnez le contrôle d’étiquette.</span><span class="sxs-lookup"><span data-stu-id="800b6-139">In the Windows Forms Designer, select the label control.</span></span>
 
-5. <span data-ttu-id="33904-140">Dans la fenêtre **Propriétés** , affectez à <xref:System.Windows.Forms.Control.Text%2A> `"Hola"`la propriété la valeur.</span><span class="sxs-lookup"><span data-stu-id="33904-140">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Text%2A> property to `"Hola"`.</span></span>
+5. <span data-ttu-id="800b6-140">Dans la fenêtre **Propriétés** , définissez la valeur de la propriété <xref:System.Windows.Forms.Control.Text%2A> sur `"Hola"`.</span><span class="sxs-lookup"><span data-stu-id="800b6-140">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Text%2A> property to `"Hola"`.</span></span>
 
-     <span data-ttu-id="33904-141">Un nouveau fichier de ressources nommé Form1.es-ES.resx est ajouté au projet.</span><span class="sxs-lookup"><span data-stu-id="33904-141">A new resource file named Form1.es-ES.resx is added to the project.</span></span>
+     <span data-ttu-id="800b6-141">Un nouveau fichier de ressources nommé Form1.es-ES.resx est ajouté au projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-141">A new resource file named Form1.es-ES.resx is added to the project.</span></span>
 
-6. <span data-ttu-id="33904-142">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **Form1.cs** , puis cliquez sur **afficher le code** pour l’ouvrir dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="33904-142">In **Solution Explorer**, right-click **Form1.cs** and click **View Code** to open it in the Code Editor.</span></span>
+6. <span data-ttu-id="800b6-142">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **Form1.cs** , puis cliquez sur **afficher le code** pour l’ouvrir dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="800b6-142">In **Solution Explorer**, right-click **Form1.cs** and click **View Code** to open it in the Code Editor.</span></span>
 
-7. <span data-ttu-id="33904-143">Copiez le code suivant dans `Form1` le constructeur, avant l’appel `InitializeComponent`à.</span><span class="sxs-lookup"><span data-stu-id="33904-143">Copy the following code into the `Form1` constructor, preceding the call to `InitializeComponent`.</span></span>
+7. <span data-ttu-id="800b6-143">Copiez le code suivant dans le constructeur `Form1`, avant l’appel à `InitializeComponent`.</span><span class="sxs-lookup"><span data-stu-id="800b6-143">Copy the following code into the `Form1` constructor, preceding the call to `InitializeComponent`.</span></span>
 
      [!code-csharp[LocalizingWpfInWf#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/Form1.cs#2)]
 
-8. <span data-ttu-id="33904-144">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **LocalizingWpfInWf** , puis cliquez sur **décharger le projet**.</span><span class="sxs-lookup"><span data-stu-id="33904-144">In **Solution Explorer**, right-click **LocalizingWpfInWf** and click **Unload Project**.</span></span>
+8. <span data-ttu-id="800b6-144">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **LocalizingWpfInWf** , puis cliquez sur **décharger le projet**.</span><span class="sxs-lookup"><span data-stu-id="800b6-144">In **Solution Explorer**, right-click **LocalizingWpfInWf** and click **Unload Project**.</span></span>
 
-     <span data-ttu-id="33904-145">Le nom du projet est étiqueté **(non disponible)** .</span><span class="sxs-lookup"><span data-stu-id="33904-145">The project name is labeled **(unavailable)**.</span></span>
+     <span data-ttu-id="800b6-145">Le nom du projet est étiqueté **(non disponible)** .</span><span class="sxs-lookup"><span data-stu-id="800b6-145">The project name is labeled **(unavailable)**.</span></span>
 
-9. <span data-ttu-id="33904-146">Cliquez avec le bouton droit sur **LocalizingWpfInWf**, puis cliquez sur **modifier LocalizingWpfInWf. csproj**.</span><span class="sxs-lookup"><span data-stu-id="33904-146">Right-click **LocalizingWpfInWf**, and click **Edit LocalizingWpfInWf.csproj**.</span></span>
+9. <span data-ttu-id="800b6-146">Cliquez avec le bouton droit sur **LocalizingWpfInWf**, puis cliquez sur **modifier LocalizingWpfInWf. csproj**.</span><span class="sxs-lookup"><span data-stu-id="800b6-146">Right-click **LocalizingWpfInWf**, and click **Edit LocalizingWpfInWf.csproj**.</span></span>
 
-     <span data-ttu-id="33904-147">Le fichier projet s’ouvre dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="33904-147">The project file opens in the Code Editor.</span></span>
+     <span data-ttu-id="800b6-147">Le fichier projet s’ouvre dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="800b6-147">The project file opens in the Code Editor.</span></span>
 
-10. <span data-ttu-id="33904-148">Copiez la ligne suivante dans le `PropertyGroup` premier dans le fichier projet.</span><span class="sxs-lookup"><span data-stu-id="33904-148">Copy the following line into the first `PropertyGroup` in the project file.</span></span>
+10. <span data-ttu-id="800b6-148">Copiez la ligne suivante dans le premier `PropertyGroup` du fichier projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-148">Copy the following line into the first `PropertyGroup` in the project file.</span></span>
 
     ```xml
     <UICulture>en-US</UICulture>
     ```
 
-11. <span data-ttu-id="33904-149">Enregistrez, puis fermez le fichier projet.</span><span class="sxs-lookup"><span data-stu-id="33904-149">Save the project file and close it.</span></span>
+11. <span data-ttu-id="800b6-149">Enregistrez, puis fermez le fichier projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-149">Save the project file and close it.</span></span>
 
-12. <span data-ttu-id="33904-150">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **LocalizingWpfInWf** , puis cliquez sur **recharger le projet**.</span><span class="sxs-lookup"><span data-stu-id="33904-150">In **Solution Explorer**, right-click **LocalizingWpfInWf** and click **Reload Project**.</span></span>
+12. <span data-ttu-id="800b6-150">Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **LocalizingWpfInWf** , puis cliquez sur **recharger le projet**.</span><span class="sxs-lookup"><span data-stu-id="800b6-150">In **Solution Explorer**, right-click **LocalizingWpfInWf** and click **Reload Project**.</span></span>
 
-## <a name="assigning-resource-identifiers"></a><span data-ttu-id="33904-151">Assignation d’identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="33904-151">Assigning Resource Identifiers</span></span>
+## <a name="assigning-resource-identifiers"></a><span data-ttu-id="800b6-151">Assignation d’identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="800b6-151">Assigning Resource Identifiers</span></span>
 
-<span data-ttu-id="33904-152">Vous pouvez mapper votre contenu localisable à des assemblys de ressources en utilisant des identificateurs de ressource.</span><span class="sxs-lookup"><span data-stu-id="33904-152">You can map your localizable content to resource assemblies by using resource identifiers.</span></span> <span data-ttu-id="33904-153">L’application MSBuild. exe assigne automatiquement des identificateurs de ressource lorsque vous `updateuid` spécifiez l’option.</span><span class="sxs-lookup"><span data-stu-id="33904-153">The MsBuild.exe application automatically assigns resource identifiers when you specify the `updateuid` option.</span></span>
+<span data-ttu-id="800b6-152">Vous pouvez mapper votre contenu localisable à des assemblys de ressources en utilisant des identificateurs de ressource.</span><span class="sxs-lookup"><span data-stu-id="800b6-152">You can map your localizable content to resource assemblies by using resource identifiers.</span></span> <span data-ttu-id="800b6-153">L’application MsBuild. exe assigne automatiquement des identificateurs de ressource lorsque vous spécifiez l’option `updateuid`.</span><span class="sxs-lookup"><span data-stu-id="800b6-153">The MsBuild.exe application automatically assigns resource identifiers when you specify the `updateuid` option.</span></span>
 
-### <a name="to-assign-resource-identifiers"></a><span data-ttu-id="33904-154">Pour assigner des identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="33904-154">To assign resource identifiers</span></span>
+### <a name="to-assign-resource-identifiers"></a><span data-ttu-id="800b6-154">Pour assigner des identificateurs de ressource</span><span class="sxs-lookup"><span data-stu-id="800b6-154">To assign resource identifiers</span></span>
 
-1. <span data-ttu-id="33904-155">Dans le menu Démarrer, ouvrez le Invite de commandes développeur pour Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="33904-155">From the Start Menu, open the Developer Command Prompt for Visual Studio.</span></span>
+1. <span data-ttu-id="800b6-155">Dans le menu Démarrer, ouvrez le Invite de commandes développeur pour Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="800b6-155">From the Start Menu, open the Developer Command Prompt for Visual Studio.</span></span>
 
-2. <span data-ttu-id="33904-156">Utilisez la commande suivante pour assigner des identificateurs de ressource à votre contenu localisable.</span><span class="sxs-lookup"><span data-stu-id="33904-156">Use the following command to assign resource identifiers to your localizable content.</span></span>
+2. <span data-ttu-id="800b6-156">Utilisez la commande suivante pour assigner des identificateurs de ressource à votre contenu localisable.</span><span class="sxs-lookup"><span data-stu-id="800b6-156">Use the following command to assign resource identifiers to your localizable content.</span></span>
 
     ```console
     msbuild -t:updateuid LocalizingWpfInWf.csproj
     ```
 
-3. <span data-ttu-id="33904-157">Dans **Explorateur de solutions**, double-cliquez sur **SimpleControl. Xaml** pour l’ouvrir dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="33904-157">In **Solution Explorer**, double-click **SimpleControl.xaml** to open it in the Code Editor.</span></span> <span data-ttu-id="33904-158">Vous verrez que la `msbuild` commande a ajouté l' `Uid` attribut à tous les éléments.</span><span class="sxs-lookup"><span data-stu-id="33904-158">You will see that the `msbuild` command has added the `Uid` attribute to all the elements.</span></span> <span data-ttu-id="33904-159">Cela facilite la localisation par l’assignation des identificateurs de ressource.</span><span class="sxs-lookup"><span data-stu-id="33904-159">This facilitates localization through the assignment of resource identifiers.</span></span>
+3. <span data-ttu-id="800b6-157">Dans **Explorateur de solutions**, double-cliquez sur **SimpleControl. Xaml** pour l’ouvrir dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="800b6-157">In **Solution Explorer**, double-click **SimpleControl.xaml** to open it in the Code Editor.</span></span> <span data-ttu-id="800b6-158">Vous verrez que la commande `msbuild` a ajouté l’attribut `Uid` à tous les éléments.</span><span class="sxs-lookup"><span data-stu-id="800b6-158">You will see that the `msbuild` command has added the `Uid` attribute to all the elements.</span></span> <span data-ttu-id="800b6-159">Cela facilite la localisation par l’assignation des identificateurs de ressource.</span><span class="sxs-lookup"><span data-stu-id="800b6-159">This facilitates localization through the assignment of resource identifiers.</span></span>
 
      [!code-xaml[LocalizingWpfInWf#20](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/SimpleControl.xaml#20)]
 
-4. <span data-ttu-id="33904-160">Appuyez sur **F6** pour générer la solution.</span><span class="sxs-lookup"><span data-stu-id="33904-160">Press **F6** to build the solution.</span></span>
+4. <span data-ttu-id="800b6-160">Appuyez sur **F6** pour générer la solution.</span><span class="sxs-lookup"><span data-stu-id="800b6-160">Press **F6** to build the solution.</span></span>
 
-## <a name="using-locbaml-to-produce-a-satellite-assembly"></a><span data-ttu-id="33904-161">Utilisation de LocBaml pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="33904-161">Using LocBaml to Produce a Satellite Assembly</span></span>
+## <a name="using-locbaml-to-produce-a-satellite-assembly"></a><span data-ttu-id="800b6-161">Utilisation de LocBaml pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="800b6-161">Using LocBaml to Produce a Satellite Assembly</span></span>
 
-<span data-ttu-id="33904-162">Votre contenu localisé est stocké dans un *assembly satellite*de ressources uniquement.</span><span class="sxs-lookup"><span data-stu-id="33904-162">Your localized content is stored in a resource-only *satellite assembly*.</span></span> <span data-ttu-id="33904-163">Utilisez l’outil en ligne de commande LocBaml. exe pour générer un assembly localisé pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] votre contenu.</span><span class="sxs-lookup"><span data-stu-id="33904-163">Use the command-line tool LocBaml.exe to produce a localized assembly for your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] content.</span></span>
+<span data-ttu-id="800b6-162">Votre contenu localisé est stocké dans un *assembly satellite*de ressources uniquement.</span><span class="sxs-lookup"><span data-stu-id="800b6-162">Your localized content is stored in a resource-only *satellite assembly*.</span></span> <span data-ttu-id="800b6-163">Utilisez l’outil en ligne de commande LocBaml. exe pour produire un assembly localisé pour votre contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="800b6-163">Use the command-line tool LocBaml.exe to produce a localized assembly for your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] content.</span></span>
 
-### <a name="to-produce-a-satellite-assembly"></a><span data-ttu-id="33904-164">Pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="33904-164">To produce a satellite assembly</span></span>
+### <a name="to-produce-a-satellite-assembly"></a><span data-ttu-id="800b6-164">Pour produire un assembly satellite</span><span class="sxs-lookup"><span data-stu-id="800b6-164">To produce a satellite assembly</span></span>
 
-1. <span data-ttu-id="33904-165">Copiez LocBaml.exe dans le dossier obj\Debug de votre projet.</span><span class="sxs-lookup"><span data-stu-id="33904-165">Copy LocBaml.exe to your project's obj\Debug folder.</span></span> <span data-ttu-id="33904-166">Pour plus d’informations, consultez [localiser une application](how-to-localize-an-application.md).</span><span class="sxs-lookup"><span data-stu-id="33904-166">For more information, see [Localize an Application](how-to-localize-an-application.md).</span></span>
+1. <span data-ttu-id="800b6-165">Copiez LocBaml.exe dans le dossier obj\Debug de votre projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-165">Copy LocBaml.exe to your project's obj\Debug folder.</span></span> <span data-ttu-id="800b6-166">Pour plus d’informations, consultez [localiser une application](how-to-localize-an-application.md).</span><span class="sxs-lookup"><span data-stu-id="800b6-166">For more information, see [Localize an Application](how-to-localize-an-application.md).</span></span>
 
-2. <span data-ttu-id="33904-167">Dans la fenêtre d’invite de commandes, utilisez la commande suivante pour extraire les chaînes de ressources dans un fichier temporaire.</span><span class="sxs-lookup"><span data-stu-id="33904-167">In the Command Prompt window, use the following command to extract resource strings into a temporary file.</span></span>
+2. <span data-ttu-id="800b6-167">Dans la fenêtre d’invite de commandes, utilisez la commande suivante pour extraire les chaînes de ressources dans un fichier temporaire.</span><span class="sxs-lookup"><span data-stu-id="800b6-167">In the Command Prompt window, use the following command to extract resource strings into a temporary file.</span></span>
 
     ```console
     LocBaml /parse LocalizingWpfInWf.g.en-US.resources /out:temp.csv
     ```
 
-3. <span data-ttu-id="33904-168">Ouvrez le fichier Temp. csv avec Visual Studio ou un autre éditeur de texte.</span><span class="sxs-lookup"><span data-stu-id="33904-168">Open the temp.csv file with Visual Studio or another text editor.</span></span> <span data-ttu-id="33904-169">Remplacez la chaîne `"Hello"` par sa traduction espagnole, `"Hola"`.</span><span class="sxs-lookup"><span data-stu-id="33904-169">Replace the string `"Hello"` with its Spanish translation, `"Hola"`.</span></span>
+3. <span data-ttu-id="800b6-168">Ouvrez le fichier Temp. csv avec Visual Studio ou un autre éditeur de texte.</span><span class="sxs-lookup"><span data-stu-id="800b6-168">Open the temp.csv file with Visual Studio or another text editor.</span></span> <span data-ttu-id="800b6-169">Remplacez la chaîne `"Hello"` par sa traduction espagnole, `"Hola"`.</span><span class="sxs-lookup"><span data-stu-id="800b6-169">Replace the string `"Hello"` with its Spanish translation, `"Hola"`.</span></span>
 
-4. <span data-ttu-id="33904-170">Enregistrez le fichier temp.csv.</span><span class="sxs-lookup"><span data-stu-id="33904-170">Save the temp.csv file.</span></span>
+4. <span data-ttu-id="800b6-170">Enregistrez le fichier temp.csv.</span><span class="sxs-lookup"><span data-stu-id="800b6-170">Save the temp.csv file.</span></span>
 
-5. <span data-ttu-id="33904-171">Utilisez la commande suivante pour générer le fichier de ressources localisé.</span><span class="sxs-lookup"><span data-stu-id="33904-171">Use the following command to generate the localized resource file.</span></span>
+5. <span data-ttu-id="800b6-171">Utilisez la commande suivante pour générer le fichier de ressources localisé.</span><span class="sxs-lookup"><span data-stu-id="800b6-171">Use the following command to generate the localized resource file.</span></span>
 
     ```console
     LocBaml /generate /trans:temp.csv LocalizingWpfInWf.g.en-US.resources /out:. /cul:es-ES
     ```
 
-     <span data-ttu-id="33904-172">Le fichier LocalizingWpfInWf.g.es-ES.resources est créé dans le dossier obj\Debug.</span><span class="sxs-lookup"><span data-stu-id="33904-172">The LocalizingWpfInWf.g.es-ES.resources file is created in the obj\Debug folder.</span></span>
+     <span data-ttu-id="800b6-172">Le fichier LocalizingWpfInWf.g.es-ES.resources est créé dans le dossier obj\Debug.</span><span class="sxs-lookup"><span data-stu-id="800b6-172">The LocalizingWpfInWf.g.es-ES.resources file is created in the obj\Debug folder.</span></span>
 
-6. <span data-ttu-id="33904-173">Utilisez la commande suivante pour générer l’assembly satellite localisé.</span><span class="sxs-lookup"><span data-stu-id="33904-173">Use the following command to build the localized satellite assembly.</span></span>
+6. <span data-ttu-id="800b6-173">Utilisez la commande suivante pour générer l’assembly satellite localisé.</span><span class="sxs-lookup"><span data-stu-id="800b6-173">Use the following command to build the localized satellite assembly.</span></span>
 
     ```console
     Al.exe /out:LocalizingWpfInWf.resources.dll /culture:es-ES /embed:LocalizingWpfInWf.Form1.es-ES.resources /embed:LocalizingWpfInWf.g.es-ES.resources
     ```
 
-     <span data-ttu-id="33904-174">Le fichier LocalizingWpfInWf.resources.dll est créé dans le dossier obj\Debug.</span><span class="sxs-lookup"><span data-stu-id="33904-174">The LocalizingWpfInWf.resources.dll file is created in the obj\Debug folder.</span></span>
+     <span data-ttu-id="800b6-174">Le fichier LocalizingWpfInWf.resources.dll est créé dans le dossier obj\Debug.</span><span class="sxs-lookup"><span data-stu-id="800b6-174">The LocalizingWpfInWf.resources.dll file is created in the obj\Debug folder.</span></span>
 
-7. <span data-ttu-id="33904-175">Copiez le fichier LocalizingWpfInWf.resources.dll dans le dossier du projet bin\Debug\es-ES.</span><span class="sxs-lookup"><span data-stu-id="33904-175">Copy the LocalizingWpfInWf.resources.dll file to the project's bin\Debug\es-ES folder.</span></span> <span data-ttu-id="33904-176">Remplacez le fichier existant.</span><span class="sxs-lookup"><span data-stu-id="33904-176">Replace the existing file.</span></span>
+7. <span data-ttu-id="800b6-175">Copiez le fichier LocalizingWpfInWf.resources.dll dans le dossier du projet bin\Debug\es-ES.</span><span class="sxs-lookup"><span data-stu-id="800b6-175">Copy the LocalizingWpfInWf.resources.dll file to the project's bin\Debug\es-ES folder.</span></span> <span data-ttu-id="800b6-176">Remplacez le fichier existant.</span><span class="sxs-lookup"><span data-stu-id="800b6-176">Replace the existing file.</span></span>
 
-8. <span data-ttu-id="33904-177">Exécutez LocalizingWpfInWf.exe, qui se trouve dans le dossier bin\Debug de votre projet.</span><span class="sxs-lookup"><span data-stu-id="33904-177">Run LocalizingWpfInWf.exe, which is located in your project's bin\Debug folder.</span></span> <span data-ttu-id="33904-178">Ne regénérez pas l’application, car cela aura pour effet de remplacer l’assembly satellite.</span><span class="sxs-lookup"><span data-stu-id="33904-178">Do not rebuild the application or the satellite assembly will be overwritten.</span></span>
+8. <span data-ttu-id="800b6-177">Exécutez LocalizingWpfInWf.exe, qui se trouve dans le dossier bin\Debug de votre projet.</span><span class="sxs-lookup"><span data-stu-id="800b6-177">Run LocalizingWpfInWf.exe, which is located in your project's bin\Debug folder.</span></span> <span data-ttu-id="800b6-178">Ne regénérez pas l’application, car cela aura pour effet de remplacer l’assembly satellite.</span><span class="sxs-lookup"><span data-stu-id="800b6-178">Do not rebuild the application or the satellite assembly will be overwritten.</span></span>
 
-     <span data-ttu-id="33904-179">L’application affiche les chaînes localisées au lieu des chaînes en anglais.</span><span class="sxs-lookup"><span data-stu-id="33904-179">The application shows the localized strings instead of the English strings.</span></span>
+     <span data-ttu-id="800b6-179">L’application affiche les chaînes localisées au lieu des chaînes en anglais.</span><span class="sxs-lookup"><span data-stu-id="800b6-179">The application shows the localized strings instead of the English strings.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="33904-180">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="33904-180">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="800b6-180">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="800b6-180">See also</span></span>
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [<span data-ttu-id="33904-181">Localiser une application</span><span class="sxs-lookup"><span data-stu-id="33904-181">Localize an Application</span></span>](how-to-localize-an-application.md)
-- <span data-ttu-id="33904-182">[Procédure pas à pas : Localisation de Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="33904-182">[Walkthrough: Localizing Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))</span></span>
-- [<span data-ttu-id="33904-183">Concevoir en XAML dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="33904-183">Design XAML in Visual Studio</span></span>](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [<span data-ttu-id="800b6-181">Localiser une application</span><span class="sxs-lookup"><span data-stu-id="800b6-181">Localize an Application</span></span>](how-to-localize-an-application.md)
+- <span data-ttu-id="800b6-182">[Procédure pas à pas : localisation de Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="800b6-182">[Walkthrough: Localizing Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))</span></span>
+- [<span data-ttu-id="800b6-183">Concevoir en XAML dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="800b6-183">Design XAML in Visual Studio</span></span>](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)

@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC30722
 ms.assetid: 6f452da8-6ef8-41fd-9ab8-6f681cf7d433
-ms.openlocfilehash: 7a3b460e7abb0e673457ca6abee2a195912715ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0600c7acdb138e363dcbece392bf4b8122cb250
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61803374"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191927"
 ---
-# <a name="evaluation-of-expression-or-statement-timed-out"></a><span data-ttu-id="4c633-102">Délai d'attente dépassé pour l'évaluation de l'expression ou de l'instruction</span><span class="sxs-lookup"><span data-stu-id="4c633-102">Evaluation of expression or statement timed out</span></span>
-<span data-ttu-id="4c633-103">Impossible d’effectuer l’évaluation d’une expression en temps voulu.</span><span class="sxs-lookup"><span data-stu-id="4c633-103">The evaluation of an expression did not complete in a timely manner.</span></span>  
+# <a name="evaluation-of-expression-or-statement-timed-out"></a><span data-ttu-id="30f35-102">Délai d'attente dépassé pour l'évaluation de l'expression ou de l'instruction</span><span class="sxs-lookup"><span data-stu-id="30f35-102">Evaluation of expression or statement timed out</span></span>
+<span data-ttu-id="30f35-103">L’évaluation d’une expression ne s’est pas terminée en temps opportun.</span><span class="sxs-lookup"><span data-stu-id="30f35-103">The evaluation of an expression did not complete in a timely manner.</span></span>  
   
- <span data-ttu-id="4c633-104">**ID d’erreur :** BC30722</span><span class="sxs-lookup"><span data-stu-id="4c633-104">**Error ID:** BC30722</span></span>  
+ <span data-ttu-id="30f35-104">**ID d’erreur :** BC30722</span><span class="sxs-lookup"><span data-stu-id="30f35-104">**Error ID:** BC30722</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="4c633-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="4c633-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="30f35-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="30f35-105">To correct this error</span></span>  
   
-1. <span data-ttu-id="4c633-106">Vérifiez que le code entré est correct.</span><span class="sxs-lookup"><span data-stu-id="4c633-106">Verify that the entered code is correct.</span></span>  
+1. <span data-ttu-id="30f35-106">Vérifiez que le code entré est correct.</span><span class="sxs-lookup"><span data-stu-id="30f35-106">Verify that the entered code is correct.</span></span>  
   
-2. <span data-ttu-id="4c633-107">Simplifiez votre expression afin qu’elle prend moins de temps à exécuter.</span><span class="sxs-lookup"><span data-stu-id="4c633-107">Simplify your expression so that it takes less time to execute.</span></span>  
+2. <span data-ttu-id="30f35-107">Simplifiez votre expression pour qu’elle prenne moins de temps à s’exécuter.</span><span class="sxs-lookup"><span data-stu-id="30f35-107">Simplify your expression so that it takes less time to execute.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4c633-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4c633-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="30f35-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="30f35-108">See also</span></span>
 
-- [<span data-ttu-id="4c633-109">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4c633-109">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugging-in-visual-studio)
+- [<span data-ttu-id="30f35-109">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="30f35-109">Debugging in Visual Studio</span></span>](/visualstudio/debugger/debugger-feature-tour)
