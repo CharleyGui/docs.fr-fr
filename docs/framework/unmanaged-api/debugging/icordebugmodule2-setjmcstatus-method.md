@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 8c6d2089-4dbb-4715-b9e9-2a4491c8c9ce
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d438123dcefb901098954845596c210e5b76cea6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a0b70078dee88b270d8361aa9bddcb7d80df1db1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764105"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129472"
 ---
-# <a name="icordebugmodule2setjmcstatus-method"></a><span data-ttu-id="17cf1-102">ICorDebugModule2::SetJMCStatus, méthode</span><span class="sxs-lookup"><span data-stu-id="17cf1-102">ICorDebugModule2::SetJMCStatus Method</span></span>
-<span data-ttu-id="17cf1-103">Définit l’état d’uniquement mon Code (JMC) de toutes les méthodes de toutes les classes dans ce ICorDebugModule2 à la valeur spécifiée, à l’exception de celles figurant dans le `pTokens` tableau, il définit la valeur opposée.</span><span class="sxs-lookup"><span data-stu-id="17cf1-103">Sets the Just My Code (JMC) status of all methods of all the classes in this ICorDebugModule2 to the specified value, except those in the `pTokens` array, which it sets to the opposite value.</span></span>  
+# <a name="icordebugmodule2setjmcstatus-method"></a><span data-ttu-id="f7f67-102">ICorDebugModule2::SetJMCStatus, méthode</span><span class="sxs-lookup"><span data-stu-id="f7f67-102">ICorDebugModule2::SetJMCStatus Method</span></span>
+<span data-ttu-id="f7f67-103">Affecte la valeur spécifiée à l’état Uniquement mon code (uniquement mon code) de toutes les méthodes de toutes les classes de ce ICorDebugModule2, à l’exception de celles du tableau `pTokens`, qu’il affecte à la valeur opposée.</span><span class="sxs-lookup"><span data-stu-id="f7f67-103">Sets the Just My Code (JMC) status of all methods of all the classes in this ICorDebugModule2 to the specified value, except those in the `pTokens` array, which it sets to the opposite value.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17cf1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17cf1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f7f67-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7f67-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetJMCStatus (  
@@ -37,28 +35,28 @@ HRESULT SetJMCStatus (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="17cf1-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="17cf1-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f7f67-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="f7f67-105">Parameters</span></span>  
  `bIsJustMycode`  
- <span data-ttu-id="17cf1-106">[in] La valeur `true` si le code doit être débogué ; sinon, la valeur est `false`.</span><span class="sxs-lookup"><span data-stu-id="17cf1-106">[in] Set to `true` if the code is to be debugged; otherwise, set to `false`.</span></span>  
+ <span data-ttu-id="f7f67-106">dans A la valeur `true` si le code doit être débogué ; Sinon, affectez la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="f7f67-106">[in] Set to `true` if the code is to be debugged; otherwise, set to `false`.</span></span>  
   
  `cTokens`  
- <span data-ttu-id="17cf1-107">[in] Taille du tableau `pTokens`.</span><span class="sxs-lookup"><span data-stu-id="17cf1-107">[in] The size of the `pTokens` array.</span></span>  
+ <span data-ttu-id="f7f67-107">[in] Taille du tableau `pTokens`.</span><span class="sxs-lookup"><span data-stu-id="f7f67-107">[in] The size of the `pTokens` array.</span></span>  
   
  `pTokens`  
- <span data-ttu-id="17cf1-108">[in] Un tableau de `mdToken` valeurs, chacune d’elles fait référence à une méthode qui auront leur état JMC défini sur !`bIsJustMycode`.</span><span class="sxs-lookup"><span data-stu-id="17cf1-108">[in] An array of `mdToken` values, each of which refers to a method that will have its JMC status set to !`bIsJustMycode`.</span></span>  
+ <span data-ttu-id="f7f67-108">dans Tableau de valeurs `mdToken`, dont chacune fait référence à une méthode dont l’état uniquement mon code a la valeur !`bIsJustMycode`.</span><span class="sxs-lookup"><span data-stu-id="f7f67-108">[in] An array of `mdToken` values, each of which refers to a method that will have its JMC status set to !`bIsJustMycode`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="17cf1-109">Notes</span><span class="sxs-lookup"><span data-stu-id="17cf1-109">Remarks</span></span>  
- <span data-ttu-id="17cf1-110">L’état JMC de chaque méthode qui est spécifiée dans le `pTokens` tableau est défini à l’opposé de la `bIsJustMycode` valeur.</span><span class="sxs-lookup"><span data-stu-id="17cf1-110">The JMC status of each method that is specified in the `pTokens` array is set to the opposite of the `bIsJustMycode` value.</span></span> <span data-ttu-id="17cf1-111">L’état de toutes les autres méthodes dans ce module est défini sur le `bIsJustMycode` valeur.</span><span class="sxs-lookup"><span data-stu-id="17cf1-111">The status of all other methods in this module is set to the `bIsJustMycode` value.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f7f67-109">Notes</span><span class="sxs-lookup"><span data-stu-id="f7f67-109">Remarks</span></span>  
+ <span data-ttu-id="f7f67-110">L’état uniquement mon code de chaque méthode spécifiée dans le tableau de `pTokens` est défini sur le contraire de la valeur `bIsJustMycode`.</span><span class="sxs-lookup"><span data-stu-id="f7f67-110">The JMC status of each method that is specified in the `pTokens` array is set to the opposite of the `bIsJustMycode` value.</span></span> <span data-ttu-id="f7f67-111">L’état de toutes les autres méthodes de ce module est défini sur la valeur `bIsJustMycode`.</span><span class="sxs-lookup"><span data-stu-id="f7f67-111">The status of all other methods in this module is set to the `bIsJustMycode` value.</span></span>  
   
- <span data-ttu-id="17cf1-112">Le `SetJMCStatus` méthode efface tous les paramètres JMC précédents dans ce module.</span><span class="sxs-lookup"><span data-stu-id="17cf1-112">The `SetJMCStatus` method erases all previous JMC settings in this module.</span></span>  
+ <span data-ttu-id="f7f67-112">La méthode `SetJMCStatus` efface tous les paramètres uniquement mon code précédents de ce module.</span><span class="sxs-lookup"><span data-stu-id="f7f67-112">The `SetJMCStatus` method erases all previous JMC settings in this module.</span></span>  
   
- <span data-ttu-id="17cf1-113">Le `SetJMCStatus` méthode retourne une valeur S_OK HRESULT si toutes les fonctions ont été définies correctement.</span><span class="sxs-lookup"><span data-stu-id="17cf1-113">The `SetJMCStatus` method returns an S_OK HRESULT if all functions were set successfully.</span></span> <span data-ttu-id="17cf1-114">Elle retourne un HRESULT CORDBG_E_FUNCTION_NOT_DEBUGGABLE si certaines fonctions sont marquées `true` ne sont pas pouvant être débogué.</span><span class="sxs-lookup"><span data-stu-id="17cf1-114">It returns a CORDBG_E_FUNCTION_NOT_DEBUGGABLE HRESULT if some functions that are marked `true` are not debuggable.</span></span>  
+ <span data-ttu-id="f7f67-113">La méthode `SetJMCStatus` retourne un HRESULT S_OK si toutes les fonctions ont été correctement définies.</span><span class="sxs-lookup"><span data-stu-id="f7f67-113">The `SetJMCStatus` method returns an S_OK HRESULT if all functions were set successfully.</span></span> <span data-ttu-id="f7f67-114">Elle retourne un HRESULT CORDBG_E_FUNCTION_NOT_DEBUGGABLE si certaines fonctions qui sont marquées `true` ne peuvent pas être déboguées.</span><span class="sxs-lookup"><span data-stu-id="f7f67-114">It returns a CORDBG_E_FUNCTION_NOT_DEBUGGABLE HRESULT if some functions that are marked `true` are not debuggable.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17cf1-115">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="17cf1-115">Requirements</span></span>  
- <span data-ttu-id="17cf1-116">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17cf1-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f7f67-115">spécifications</span><span class="sxs-lookup"><span data-stu-id="f7f67-115">Requirements</span></span>  
+ <span data-ttu-id="f7f67-116">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7f67-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17cf1-117">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="17cf1-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f7f67-117">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f7f67-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="17cf1-118">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17cf1-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f7f67-118">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f7f67-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="17cf1-119">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17cf1-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="f7f67-119">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7f67-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

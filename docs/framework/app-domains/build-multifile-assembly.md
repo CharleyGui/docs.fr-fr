@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer un assembly multifichier'
+title: 'Comment : générer un assembly multifichier'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
@@ -17,27 +17,25 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 261c5583-8a76-412d-bda7-9b8ee3b131e5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b95d686529da83a5a52edb80219874530212dcc
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 150c0f63d52590ea9cf80a3e991375f10ce1a124
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991258"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119937"
 ---
-# <a name="how-to-build-a-multifile-assembly"></a><span data-ttu-id="c9e85-102">Procédure : Créer un assembly multifichier</span><span class="sxs-lookup"><span data-stu-id="c9e85-102">How to: Build a multifile assembly</span></span>
+# <a name="how-to-build-a-multifile-assembly"></a><span data-ttu-id="52d78-102">Comment : générer un assembly multifichier</span><span class="sxs-lookup"><span data-stu-id="52d78-102">How to: Build a multifile assembly</span></span>
 
-<span data-ttu-id="c9e85-103">Cet article explique comment créer un assembly multifichier et fournit le code illustrant chaque étape de la procédure.</span><span class="sxs-lookup"><span data-stu-id="c9e85-103">This article explains how to create a multifile assembly and provides code that illustrates each step in the procedure.</span></span>
+<span data-ttu-id="52d78-103">Cet article explique comment créer un assembly multifichier et fournit le code illustrant chaque étape de la procédure.</span><span class="sxs-lookup"><span data-stu-id="52d78-103">This article explains how to create a multifile assembly and provides code that illustrates each step in the procedure.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c9e85-104">L'IDE de Visual Studio pour C# et Visual Basic ne peut être utilisé que pour créer des assemblys à fichier unique.</span><span class="sxs-lookup"><span data-stu-id="c9e85-104">The Visual Studio IDE for C# and Visual Basic can only be used to create single-file assemblies.</span></span> <span data-ttu-id="c9e85-105">Si vous souhaitez créer des assemblys multifichiers, vous devez utiliser les compilateurs de ligne de commande ou Visual Studio avec Visual C++.</span><span class="sxs-lookup"><span data-stu-id="c9e85-105">If you want to create multifile assemblies, you must use the command-line compilers or Visual Studio with Visual C++.</span></span> <span data-ttu-id="c9e85-106">Les assemblys multifichiers sont pris en charge par .NET Framework uniquement.</span><span class="sxs-lookup"><span data-stu-id="c9e85-106">Multifile assemblies are supported by .NET Framework only.</span></span>
+> <span data-ttu-id="52d78-104">L'IDE de Visual Studio pour C# et Visual Basic ne peut être utilisé que pour créer des assemblys à fichier unique.</span><span class="sxs-lookup"><span data-stu-id="52d78-104">The Visual Studio IDE for C# and Visual Basic can only be used to create single-file assemblies.</span></span> <span data-ttu-id="52d78-105">Si vous souhaitez créer des assemblys multifichiers, vous devez utiliser les compilateurs de ligne de commande ou Visual Studio avec Visual C++.</span><span class="sxs-lookup"><span data-stu-id="52d78-105">If you want to create multifile assemblies, you must use the command-line compilers or Visual Studio with Visual C++.</span></span> <span data-ttu-id="52d78-106">Les assemblys multifichiers sont pris en charge par .NET Framework uniquement.</span><span class="sxs-lookup"><span data-stu-id="52d78-106">Multifile assemblies are supported by .NET Framework only.</span></span>
 
-## <a name="create-a-multifile-assembly"></a><span data-ttu-id="c9e85-107">Créer un assembly multifichier</span><span class="sxs-lookup"><span data-stu-id="c9e85-107">Create a multifile assembly</span></span>
+## <a name="create-a-multifile-assembly"></a><span data-ttu-id="52d78-107">Créer un assembly multifichier</span><span class="sxs-lookup"><span data-stu-id="52d78-107">Create a multifile assembly</span></span>
 
-1. <span data-ttu-id="c9e85-108">Compilez tous les fichiers contenant des espaces de noms référencés par d'autres modules de l'assembly dans des modules de code.</span><span class="sxs-lookup"><span data-stu-id="c9e85-108">Compile all files that contain namespaces referenced by other modules in the assembly into code modules.</span></span> <span data-ttu-id="c9e85-109">L’extension par défaut pour les modules de code est *. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="c9e85-109">The default extension for code modules is *.netmodule*.</span></span>
+1. <span data-ttu-id="52d78-108">Compilez tous les fichiers contenant des espaces de noms référencés par d'autres modules de l'assembly dans des modules de code.</span><span class="sxs-lookup"><span data-stu-id="52d78-108">Compile all files that contain namespaces referenced by other modules in the assembly into code modules.</span></span> <span data-ttu-id="52d78-109">L’extension par défaut pour les modules de code est *. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="52d78-109">The default extension for code modules is *.netmodule*.</span></span>
 
-   <span data-ttu-id="c9e85-110">Par exemple, supposons que le fichier `Stringer` a un espace de noms appelé `myStringer`, qui inclut une classe appelée `Stringer`.</span><span class="sxs-lookup"><span data-stu-id="c9e85-110">For example, let's say the `Stringer` file has a namespace called `myStringer`, which includes a class called `Stringer`.</span></span> <span data-ttu-id="c9e85-111">La classe `Stringer` contient une méthode appelée `StringerMethod` qui écrit une seule ligne dans la console.</span><span class="sxs-lookup"><span data-stu-id="c9e85-111">The `Stringer` class contains a method called `StringerMethod` that writes a single line to the console.</span></span>
+   <span data-ttu-id="52d78-110">Par exemple, supposons que le fichier `Stringer` a un espace de noms appelé `myStringer`, qui inclut une classe appelée `Stringer`.</span><span class="sxs-lookup"><span data-stu-id="52d78-110">For example, let's say the `Stringer` file has a namespace called `myStringer`, which includes a class called `Stringer`.</span></span> <span data-ttu-id="52d78-111">La classe `Stringer` contient une méthode appelée `StringerMethod` qui écrit une seule ligne dans la console.</span><span class="sxs-lookup"><span data-stu-id="52d78-111">The `Stringer` class contains a method called `StringerMethod` that writes a single line to the console.</span></span>
 
    ```cpp
    // Assembly building example in the .NET Framework.
@@ -85,7 +83,7 @@ ms.locfileid: "70991258"
    End Namespace
    ```
 
-2. <span data-ttu-id="c9e85-112">Utilisez la commande suivante pour compiler ce code :</span><span class="sxs-lookup"><span data-stu-id="c9e85-112">Use the following command to compile this code:</span></span>
+2. <span data-ttu-id="52d78-112">Utilisez la commande suivante pour compiler ce code :</span><span class="sxs-lookup"><span data-stu-id="52d78-112">Use the following command to compile this code:</span></span>
 
    ```cpp
    cl /clr:pure /LN Stringer.cpp
@@ -99,11 +97,11 @@ ms.locfileid: "70991258"
    vbc /t:module Stringer.vb
    ```
 
-   <span data-ttu-id="c9e85-113">La spécification du paramètre *module* à l’aide de l’option du compilateur **/t:** indique que le fichier doit être compilé comme module et non comme assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-113">Specifying the *module* parameter with the **/t:** compiler option indicates that the file should be compiled as a module rather than as an assembly.</span></span> <span data-ttu-id="c9e85-114">Le compilateur produit un module appelé *Stringer. netmodule*, qui peut être ajouté à un assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-114">The compiler produces a module called *Stringer.netmodule*, which can be added to an assembly.</span></span>
+   <span data-ttu-id="52d78-113">La spécification du paramètre *module* à l’aide de l’option du compilateur **/t:** indique que le fichier doit être compilé comme module et non comme assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-113">Specifying the *module* parameter with the **/t:** compiler option indicates that the file should be compiled as a module rather than as an assembly.</span></span> <span data-ttu-id="52d78-114">Le compilateur produit un module appelé *Stringer. netmodule*, qui peut être ajouté à un assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-114">The compiler produces a module called *Stringer.netmodule*, which can be added to an assembly.</span></span>
 
-3. <span data-ttu-id="c9e85-115">Compilez tous les autres modules à l'aide des options du compilateur nécessaires pour indiquer les autres modules référencés dans le code.</span><span class="sxs-lookup"><span data-stu-id="c9e85-115">Compile all other modules, using the necessary compiler options to indicate the other modules that are referenced in the code.</span></span> <span data-ttu-id="c9e85-116">Cette étape utilise l’option du compilateur **/addmodule**.</span><span class="sxs-lookup"><span data-stu-id="c9e85-116">This step uses the **/addmodule** compiler option.</span></span>
+3. <span data-ttu-id="52d78-115">Compilez tous les autres modules à l'aide des options du compilateur nécessaires pour indiquer les autres modules référencés dans le code.</span><span class="sxs-lookup"><span data-stu-id="52d78-115">Compile all other modules, using the necessary compiler options to indicate the other modules that are referenced in the code.</span></span> <span data-ttu-id="52d78-116">Cette étape utilise l’option du compilateur **/addmodule**.</span><span class="sxs-lookup"><span data-stu-id="52d78-116">This step uses the **/addmodule** compiler option.</span></span>
 
-   <span data-ttu-id="c9e85-117">Dans l’exemple suivant, un module de code appelé *client* a une méthode `Main` de point d’entrée qui fait référence à une méthode dans le module *Stringer. dll* créé à l’étape 1.</span><span class="sxs-lookup"><span data-stu-id="c9e85-117">In the following example, a code module called *Client* has an entry point `Main` method that references a method in the *Stringer.dll* module created in step 1.</span></span>
+   <span data-ttu-id="52d78-117">Dans l’exemple suivant, un module de code appelé *client* a un point d’entrée `Main` méthode qui référence une méthode dans le module *Stringer. dll* créé à l’étape 1.</span><span class="sxs-lookup"><span data-stu-id="52d78-117">In the following example, a code module called *Client* has an entry point `Main` method that references a method in the *Stringer.dll* module created in step 1.</span></span>
 
    ```cpp
    #using "Stringer.netmodule"
@@ -159,7 +157,7 @@ ms.locfileid: "70991258"
    End Class
    ```
 
-4. <span data-ttu-id="c9e85-118">Utilisez la commande suivante pour compiler ce code :</span><span class="sxs-lookup"><span data-stu-id="c9e85-118">Use the following command to compile this code:</span></span>
+4. <span data-ttu-id="52d78-118">Utilisez la commande suivante pour compiler ce code :</span><span class="sxs-lookup"><span data-stu-id="52d78-118">Use the following command to compile this code:</span></span>
 
    ```cpp
    cl /clr:pure /FUStringer.netmodule /LN Client.cpp
@@ -173,12 +171,12 @@ ms.locfileid: "70991258"
    vbc /addmodule:Stringer.netmodule /t:module Client.vb
    ```
 
-   <span data-ttu-id="c9e85-119">Spécifiez l’option **/t:module**, car ce module sera ajouté à un assembly lors d’une étape ultérieure.</span><span class="sxs-lookup"><span data-stu-id="c9e85-119">Specify the **/t:module** option because this module will be added to an assembly in a future step.</span></span> <span data-ttu-id="c9e85-120">Spécifiez l’option **/addmodule** , car le code du *client* référence un espace de noms créé par le code dans *Stringer. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="c9e85-120">Specify the **/addmodule** option because the code in *Client* references a namespace created by the code in *Stringer.netmodule*.</span></span> <span data-ttu-id="c9e85-121">Le compilateur produit un module appelé *client. netmodule* qui contient une référence à un autre module, *Stringer. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="c9e85-121">The compiler produces a module called *Client.netmodule* that contains a reference to another module, *Stringer.netmodule*.</span></span>
+   <span data-ttu-id="52d78-119">Spécifiez l’option **/t:module**, car ce module sera ajouté à un assembly lors d’une étape ultérieure.</span><span class="sxs-lookup"><span data-stu-id="52d78-119">Specify the **/t:module** option because this module will be added to an assembly in a future step.</span></span> <span data-ttu-id="52d78-120">Spécifiez l’option **/addmodule** , car le code du *client* référence un espace de noms créé par le code dans *Stringer. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="52d78-120">Specify the **/addmodule** option because the code in *Client* references a namespace created by the code in *Stringer.netmodule*.</span></span> <span data-ttu-id="52d78-121">Le compilateur produit un module appelé *client. netmodule* qui contient une référence à un autre module, *Stringer. netmodule*.</span><span class="sxs-lookup"><span data-stu-id="52d78-121">The compiler produces a module called *Client.netmodule* that contains a reference to another module, *Stringer.netmodule*.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="c9e85-122">Les compilateurs C# et Visual Basic prennent en charge la création directe d'assemblys multifichiers à l'aide de deux syntaxes différentes.</span><span class="sxs-lookup"><span data-stu-id="c9e85-122">The C# and Visual Basic compilers support directly creating multifile assemblies using the following two different syntaxes.</span></span>
+   > <span data-ttu-id="52d78-122">Les compilateurs C# et Visual Basic prennent en charge la création directe d'assemblys multifichiers à l'aide de deux syntaxes différentes.</span><span class="sxs-lookup"><span data-stu-id="52d78-122">The C# and Visual Basic compilers support directly creating multifile assemblies using the following two different syntaxes.</span></span>
    >
-   > <span data-ttu-id="c9e85-123">Deux compilations créent un assembly à deux fichiers :</span><span class="sxs-lookup"><span data-stu-id="c9e85-123">Two compilations create a two-file assembly:</span></span>
+   > <span data-ttu-id="52d78-123">Deux compilations créent un assembly à deux fichiers :</span><span class="sxs-lookup"><span data-stu-id="52d78-123">Two compilations create a two-file assembly:</span></span>
    >
    >   ```cpp
    >   cl /clr:pure /LN Stringer.cpp
@@ -195,7 +193,7 @@ ms.locfileid: "70991258"
    >   vbc Client.vb /addmodule:Stringer.netmodule
    >   ```
    >
-   > <span data-ttu-id="c9e85-124">Une compilation crée un assembly à deux fichiers :</span><span class="sxs-lookup"><span data-stu-id="c9e85-124">One compilation creates a two-file assembly:</span></span>
+   > <span data-ttu-id="52d78-124">Une compilation crée un assembly à deux fichiers :</span><span class="sxs-lookup"><span data-stu-id="52d78-124">One compilation creates a two-file assembly:</span></span>
    >
    >   ```cpp
    >   cl /clr:pure /LN Stringer.cpp
@@ -210,25 +208,25 @@ ms.locfileid: "70991258"
    >   vbc /out:Client.exe Client.vb /out:Stringer.netmodule Stringer.vb
    >   ```
 
-5. <span data-ttu-id="c9e85-125">Utilisez l’utilitaire [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) pour créer le fichier de sortie qui contient le manifeste d’assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-125">Use the [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) to create the output file that contains the assembly manifest.</span></span> <span data-ttu-id="c9e85-126">Ce fichier contient des informations sur les références de tous les modules ou ressources faisant partie de l'assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-126">This file contains reference information for all modules or resources that are part of the assembly.</span></span>
+5. <span data-ttu-id="52d78-125">Utilisez l’utilitaire [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) pour créer le fichier de sortie qui contient le manifeste d’assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-125">Use the [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) to create the output file that contains the assembly manifest.</span></span> <span data-ttu-id="52d78-126">Ce fichier contient des informations sur les références de tous les modules ou ressources faisant partie de l'assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-126">This file contains reference information for all modules or resources that are part of the assembly.</span></span>
 
-    <span data-ttu-id="c9e85-127">À l'invite de commandes, tapez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="c9e85-127">At the command prompt, type the following command:</span></span>
+    <span data-ttu-id="52d78-127">À l'invite de commandes, tapez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="52d78-127">At the command prompt, type the following command:</span></span>
 
-    <span data-ttu-id="c9e85-128">**al** \<*nom_module*> \<*nom_module*> …</span><span class="sxs-lookup"><span data-stu-id="c9e85-128">**al** \<*module name*> \<*module name*> …</span></span> <span data-ttu-id="c9e85-129">**/main:** \<*nom_méthode*>  **/out:** \<*nom_fichier*>  **/target:** \<*type_fichier_assembly*></span><span class="sxs-lookup"><span data-stu-id="c9e85-129">**/main:**\<*method name*> **/out:**\<*file name*> **/target:**\<*assembly file type*></span></span>
+    <span data-ttu-id="52d78-128">**al** \<*nom_module*> \<*nom_module*> …</span><span class="sxs-lookup"><span data-stu-id="52d78-128">**al** \<*module name*> \<*module name*> …</span></span> <span data-ttu-id="52d78-129">**/main:** \<*nom_méthode*>  **/out:** \<*nom_fichier*>  **/target:** \<*type_fichier_assembly*></span><span class="sxs-lookup"><span data-stu-id="52d78-129">**/main:**\<*method name*> **/out:**\<*file name*> **/target:**\<*assembly file type*></span></span>
 
-    <span data-ttu-id="c9e85-130">Dans cette commande, les arguments *nom_module* spécifient le nom de chaque module à inclure dans l’assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-130">In this command, the *module name* arguments specify the name of each module to include in the assembly.</span></span> <span data-ttu-id="c9e85-131">L’option **/main:** spécifie le nom de la méthode représentant le point d’entrée de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-131">The **/main:** option specifies the method name that is the assembly's entry point.</span></span> <span data-ttu-id="c9e85-132">L’option **/out:** spécifie le nom du fichier de sortie, qui contient les métadonnées de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-132">The **/out:** option specifies the name of the output file, which contains assembly metadata.</span></span> <span data-ttu-id="c9e85-133">L’option **/target :** spécifie que l’assembly est un fichier exécutable ( *. exe*) d’application console, un fichier exécutable Windows ( *. Win*) ou un fichier de bibliothèque ( *. lib*).</span><span class="sxs-lookup"><span data-stu-id="c9e85-133">The **/target:** option specifies that the assembly is a console application executable (*.exe*) file, a Windows executable (*.win*) file, or a library (*.lib*) file.</span></span>
+    <span data-ttu-id="52d78-130">Dans cette commande, les arguments *nom_module* spécifient le nom de chaque module à inclure dans l’assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-130">In this command, the *module name* arguments specify the name of each module to include in the assembly.</span></span> <span data-ttu-id="52d78-131">L’option **/main:** spécifie le nom de la méthode représentant le point d’entrée de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-131">The **/main:** option specifies the method name that is the assembly's entry point.</span></span> <span data-ttu-id="52d78-132">L’option **/out:** spécifie le nom du fichier de sortie, qui contient les métadonnées de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-132">The **/out:** option specifies the name of the output file, which contains assembly metadata.</span></span> <span data-ttu-id="52d78-133">L’option **/target :** spécifie que l’assembly est un fichier exécutable ( *. exe*) d’application console, un fichier exécutable Windows ( *. Win*) ou un fichier de bibliothèque ( *. lib*).</span><span class="sxs-lookup"><span data-stu-id="52d78-133">The **/target:** option specifies that the assembly is a console application executable (*.exe*) file, a Windows executable (*.win*) file, or a library (*.lib*) file.</span></span>
 
-    <span data-ttu-id="c9e85-134">Dans l’exemple suivant, *al. exe* crée un assembly qui est un exécutable d’application console appelé *myAssembly. exe*.</span><span class="sxs-lookup"><span data-stu-id="c9e85-134">In the following example, *Al.exe* creates an assembly that is a console application executable called *myAssembly.exe*.</span></span> <span data-ttu-id="c9e85-135">L’application se compose de deux modules appelés *client. netmodule* et *Stringer. netmodule*, et du fichier exécutable appelé *myAssembly. exe*, qui contient uniquement les métadonnées de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="c9e85-135">The application consists of two modules called *Client.netmodule* and *Stringer.netmodule*, and the executable file called *myAssembly.exe*, which contains only assembly metadata.</span></span> <span data-ttu-id="c9e85-136">Le point d’entrée de l’assembly `Main` est la méthode de `MainClientApp`la classe, qui se trouve dans *client. dll*.</span><span class="sxs-lookup"><span data-stu-id="c9e85-136">The entry point of the assembly is the `Main` method in the class `MainClientApp`, which is located in *Client.dll*.</span></span>
+    <span data-ttu-id="52d78-134">Dans l’exemple suivant, *al. exe* crée un assembly qui est un exécutable d’application console appelé *myAssembly. exe*.</span><span class="sxs-lookup"><span data-stu-id="52d78-134">In the following example, *Al.exe* creates an assembly that is a console application executable called *myAssembly.exe*.</span></span> <span data-ttu-id="52d78-135">L’application se compose de deux modules appelés *client. netmodule* et *Stringer. netmodule*, et du fichier exécutable appelé *myAssembly. exe*, qui contient uniquement les métadonnées de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="52d78-135">The application consists of two modules called *Client.netmodule* and *Stringer.netmodule*, and the executable file called *myAssembly.exe*, which contains only assembly metadata.</span></span> <span data-ttu-id="52d78-136">Le point d’entrée de l’assembly est la méthode `Main` dans la classe `MainClientApp`, qui se trouve dans *client. dll*.</span><span class="sxs-lookup"><span data-stu-id="52d78-136">The entry point of the assembly is the `Main` method in the class `MainClientApp`, which is located in *Client.dll*.</span></span>
 
     ```cmd
     al Client.netmodule Stringer.netmodule /main:MainClientApp.Main /out:myAssembly.exe /target:exe
     ```
 
-    <span data-ttu-id="c9e85-137">Vous pouvez utiliser le [Désassembleur MSIL (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) pour examiner le contenu d’un assembly ou déterminer si un fichier est un assembly ou un module.</span><span class="sxs-lookup"><span data-stu-id="c9e85-137">You can use the [MSIL Disassembler (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) to examine the contents of an assembly, or determine whether a file is an assembly or a module.</span></span>
+    <span data-ttu-id="52d78-137">Vous pouvez utiliser le [Désassembleur MSIL (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) pour examiner le contenu d’un assembly ou déterminer si un fichier est un assembly ou un module.</span><span class="sxs-lookup"><span data-stu-id="52d78-137">You can use the [MSIL Disassembler (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) to examine the contents of an assembly, or determine whether a file is an assembly or a module.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c9e85-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c9e85-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="52d78-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="52d78-138">See also</span></span>
 
-- [<span data-ttu-id="c9e85-139">Créer des assemblys</span><span class="sxs-lookup"><span data-stu-id="c9e85-139">Create assemblies</span></span>](../../standard/assembly/create.md)
-- [<span data-ttu-id="c9e85-140">Guide pratique : Afficher le contenu de l’assembly</span><span class="sxs-lookup"><span data-stu-id="c9e85-140">How to: View assembly contents</span></span>](../../standard/assembly/view-contents.md)
-- [<span data-ttu-id="c9e85-141">Méthode de localisation des assemblys par le runtime</span><span class="sxs-lookup"><span data-stu-id="c9e85-141">How the runtime locates assemblies</span></span>](../deployment/how-the-runtime-locates-assemblies.md)
-- [<span data-ttu-id="c9e85-142">Assemblys multifichiers</span><span class="sxs-lookup"><span data-stu-id="c9e85-142">Multifile assemblies</span></span>](multifile-assemblies.md)
+- [<span data-ttu-id="52d78-139">Créer des assemblys</span><span class="sxs-lookup"><span data-stu-id="52d78-139">Create assemblies</span></span>](../../standard/assembly/create.md)
+- [<span data-ttu-id="52d78-140">Comment : afficher le contenu d’un assembly</span><span class="sxs-lookup"><span data-stu-id="52d78-140">How to: View assembly contents</span></span>](../../standard/assembly/view-contents.md)
+- [<span data-ttu-id="52d78-141">Méthode de localisation des assemblys par le runtime</span><span class="sxs-lookup"><span data-stu-id="52d78-141">How the runtime locates assemblies</span></span>](../deployment/how-the-runtime-locates-assemblies.md)
+- [<span data-ttu-id="52d78-142">Assemblys multifichiers</span><span class="sxs-lookup"><span data-stu-id="52d78-142">Multifile assemblies</span></span>](multifile-assemblies.md)

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 10a40ba0-1b65-4721-bd11-cf12d57b280d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e77046745381d3ecc35c24d5af3f9181b9132e9e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 64ed875059730e91e28ff0903ab93fb25c68910b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738161"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134113"
 ---
-# <a name="icordebuggetprocess-method"></a><span data-ttu-id="d541a-102">ICorDebug::GetProcess, méthode</span><span class="sxs-lookup"><span data-stu-id="d541a-102">ICorDebug::GetProcess Method</span></span>
-<span data-ttu-id="d541a-103">Obtient un pointeur vers l’instance « ICorDebugProcess » pour le processus spécifié.</span><span class="sxs-lookup"><span data-stu-id="d541a-103">Gets a pointer to the "ICorDebugProcess" instance for the specified process.</span></span>  
+# <a name="icordebuggetprocess-method"></a><span data-ttu-id="c51a8-102">ICorDebug::GetProcess, méthode</span><span class="sxs-lookup"><span data-stu-id="c51a8-102">ICorDebug::GetProcess Method</span></span>
+<span data-ttu-id="c51a8-103">Obtient un pointeur vers l’instance « ICorDebugProcess » pour le processus spécifié.</span><span class="sxs-lookup"><span data-stu-id="c51a8-103">Gets a pointer to the "ICorDebugProcess" instance for the specified process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d541a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d541a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c51a8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c51a8-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetProcess (  
@@ -36,22 +34,22 @@ HRESULT GetProcess (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d541a-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d541a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c51a8-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c51a8-105">Parameters</span></span>  
  `dwProcessId`  
- <span data-ttu-id="d541a-106">[in] ID du processus.</span><span class="sxs-lookup"><span data-stu-id="d541a-106">[in] The ID of the process.</span></span>  
+ <span data-ttu-id="c51a8-106">dans ID du processus.</span><span class="sxs-lookup"><span data-stu-id="c51a8-106">[in] The ID of the process.</span></span>  
   
  `ppProcess`  
- <span data-ttu-id="d541a-107">[out] Un pointeur vers l’adresse d’un `ICorDebugProcess` instance pour le processus spécifié.</span><span class="sxs-lookup"><span data-stu-id="d541a-107">[out] A pointer to the address of a `ICorDebugProcess` instance for the specified process.</span></span>  
+ <span data-ttu-id="c51a8-107">à Pointeur vers l’adresse d’une instance de `ICorDebugProcess` pour le processus spécifié.</span><span class="sxs-lookup"><span data-stu-id="c51a8-107">[out] A pointer to the address of a `ICorDebugProcess` instance for the specified process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d541a-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d541a-108">Requirements</span></span>  
- <span data-ttu-id="d541a-109">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d541a-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c51a8-108">spécifications</span><span class="sxs-lookup"><span data-stu-id="c51a8-108">Requirements</span></span>  
+ <span data-ttu-id="c51a8-109">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c51a8-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d541a-110">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d541a-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c51a8-110">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c51a8-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d541a-111">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d541a-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c51a8-111">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c51a8-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d541a-112">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d541a-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c51a8-112">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c51a8-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d541a-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d541a-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c51a8-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c51a8-113">See also</span></span>
 
-- [<span data-ttu-id="d541a-114">ICorDebug, interface</span><span class="sxs-lookup"><span data-stu-id="d541a-114">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [<span data-ttu-id="c51a8-114">ICorDebug, interface</span><span class="sxs-lookup"><span data-stu-id="c51a8-114">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
