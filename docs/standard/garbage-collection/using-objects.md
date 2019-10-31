@@ -10,14 +10,12 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9f165ab5b79abbc2b5464f40a27a580d26af163a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 979cd782e5ab094b6dea010fc7a0b27caa390e67
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106950"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141343"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Utilisation d’objets implémentant IDisposable
 

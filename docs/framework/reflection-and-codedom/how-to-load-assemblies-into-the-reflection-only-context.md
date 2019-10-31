@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : charger des assemblys dans le contexte de réflexion uniquement'
+title: Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,16 +12,14 @@ helpviewer_keywords:
 - assemblies [.NET Framework], reflection-only loader context
 - reflection-only loader context
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8e22dcf7db5ec2c78a79e574604e0b39b4962727
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
-ms.translationtype: HT
+ms.openlocfilehash: cac6b3b3adf070ad6070e5c5941653f20dedd907
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971856"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130105"
 ---
-# <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Procédure : charger des assemblys dans le contexte de réflexion uniquement
+# <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement
 
 Le contexte de chargement de réflexion uniquement permet d’examiner des assemblys compilés pour d’autres plateformes ou d’autres versions du .NET Framework. Le code chargé dans ce contexte peut uniquement être examiné. Il ne peut pas être exécuté. Cela signifie que les objets ne peuvent pas être créés, car les constructeurs ne peut pas être exécutés. Le code ne pouvant pas être exécuté, les dépendances ne sont pas chargées automatiquement. Si vous devez les examiner, vous devez les charger vous-même.
 
@@ -41,7 +39,7 @@ Le contexte de chargement de réflexion uniquement permet d’examiner des assem
     > [!NOTE]
     > Les attributs appliqués à l’assembly ou à son contenu peuvent être définis dans l’assembly, ou ils peuvent être définis dans un autre assembly chargé dans le contexte de réflexion uniquement. Il n’existe aucun moyen de savoir à l’avance où les attributs sont définis.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant montre comment examiner les attributs appliqués à un assembly chargé dans le contexte de réflexion uniquement.
 

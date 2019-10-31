@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 61f4e057a487462feb385ca0e3ca977fdd165f56
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9bcc03cc97a62b4c1cadacd7c0b2bc46b9fec470
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739094"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134140"
 ---
-# <a name="efngetmanagedexcepstack-function"></a>\_EFN\_GetManagedExcepStack (fonction)
+# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_fonction GetManagedExcepStack
 Retourne une version de chaîne de la trace de pile contenue dans une adresse d'objet exception managée donnée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,26 +37,26 @@ HRESULT _EFN_GetManagedExcepStack(
   
 ## <a name="parameters"></a>Paramètres  
  `Client`  
- [in] Le client en cours de débogage.  
+ dans Client en cours de débogage.  
   
  `StackObjAddr`  
- [in] Un pointeur d’objet managé, dérivé <xref:System.Exception>.  
+ dans Pointeur d’objet managé, dérivé de <xref:System.Exception>.  
   
  szStackString  
- [out] La chaîne retournée.  
+ à Chaîne retournée.  
   
  `cbString`  
- [out] Le nombre de caractères disponibles dans la mémoire tampon de chaîne.  
+ à Nombre de caractères disponibles dans la mémoire tampon de chaîne.  
   
 ## <a name="remarks"></a>Notes  
- S’il n’existe aucun code managé sur le thread actuellement dans le contexte, la fonction retourne les HRESULT SOS_E_NOMANAGEDCODE avec une valeur de 0xa0 et un code d’erreur de 0 x 1000.  
+ S’il n’existe pas de code managé sur le thread actuellement en contexte, la fonction retourne HRESULT SOS_E_NOMANAGEDCODE avec la valeur d’installation 0xa0 et le code d’erreur 0x1000.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** SOS_Stacktrace.h  
+ **En-tête :** SOS_Stacktrace. h  
   
- **Version du .NET framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Version de .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

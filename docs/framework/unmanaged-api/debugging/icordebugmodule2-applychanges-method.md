@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 96fa3406-6a6f-41a1-88c6-d9bc5d1a16d1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 860b87b09ee487f893a1bba2aaa34292c50ffcb7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c324019e1e62701f4f2aaba1c00948b292ba6847
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764343"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127909"
 ---
 # <a name="icordebugmodule2applychanges-method"></a>ICorDebugModule2::ApplyChanges, méthode
-Applique les modifications dans les métadonnées et les modifications dans le code de Microsoft intermediate language (MSIL) pour le processus en cours d’exécution.  
+Applique les modifications apportées aux métadonnées et les modifications apportées au code MSIL (Microsoft Intermediate Language) au processus en cours d’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +38,31 @@ HRESULT ApplyChanges (
   
 ## <a name="parameters"></a>Paramètres  
  `cbMetadata`  
- [in] Taille, en octets, des métadonnées delta.  
+ dans Taille, en octets, des métadonnées Delta.  
   
  `pbMetadata`  
- [in] Mémoire tampon qui contient les métadonnées de delta. L’adresse de la mémoire tampon est retournée à partir de la [IMetaDataEmit2::SaveDeltaToMemory](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md) (méthode).  
+ dans Mémoire tampon qui contient les métadonnées Delta. L’adresse de la mémoire tampon est retournée à partir de la méthode [IMetaDataEmit2 :: SaveDeltaToMemory,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md) .  
   
- Les adresses virtuelles relatives (RVA) dans les métadonnées doivent être par rapport au début du code MSIL.  
+ Les adresses virtuelles relatives (RVA) dans les métadonnées doivent être relatives au début du code MSIL.  
   
  `cbIL`  
- [in] Taille, en octets, du code MSIL delta.  
+ dans Taille, en octets, du code MSIL Delta.  
   
  `pbIL`  
- [in] Mémoire tampon qui contient le code MSIL mis à jour.  
+ dans Mémoire tampon qui contient le code MSIL mis à jour.  
   
 ## <a name="remarks"></a>Notes  
- Le `pbMetadata` paramètre est dans un format de métadonnées delta spécial (comme sortie par [IMetaDataEmit2::SaveDeltaToMemory](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` utilise les métadonnées précédentes comme base et décrit les différentes modifications à appliquer à cette base.  
+ Le paramètre `pbMetadata` est dans un format de métadonnées Delta spécial (comme sortie par [IMetaDataEmit2 :: SaveDeltaToMemory,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` prend les métadonnées précédentes comme base et décrit les modifications individuelles à appliquer à cette base.  
   
- En revanche, le `pbIL[`] paramètre contient le nouveau code MSIL pour la méthode de mise à jour et est conçu pour remplacer complètement le code MSIL précédent de cette méthode  
+ En revanche, le paramètre `pbIL[`] contient le nouveau MSIL pour la méthode mise à jour et est destiné à remplacer complètement le code MSIL précédent pour cette méthode.  
   
- Lorsque le delta MSIL et les métadonnées ont été créés dans la mémoire du débogueur, le débogueur appelle `ApplyChanges` pour envoyer les modifications dans le common language runtime (CLR). Le runtime met à jour ses tables de métadonnées, place le nouveau MSIL dans le processus et configure une compilation de (JIT) juste-à-temps du nouveau MSIL. Lorsque les modifications ont été appliquées, le débogueur doit appeler [IMetaDataEmit2::ResetENCLog](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md) pour vous préparer à la session d’édition suivante. Le débogueur peut ensuite continuer le processus.  
+ Lorsque le MSIL Delta et les métadonnées ont été créés dans la mémoire du débogueur, le débogueur appelle `ApplyChanges` pour envoyer les modifications dans le common language runtime (CLR). Le Runtime met à jour ses tables de métadonnées, place le nouveau MSIL dans le processus et configure une compilation juste-à-temps (JIT) du nouveau MSIL. Lorsque les modifications ont été appliquées, le débogueur doit appeler [IMetaDataEmit2 :: ResetENCLog,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md) pour préparer la session d’édition suivante. Le débogueur peut ensuite poursuivre le processus.  
   
- Chaque fois que le débogueur appelle `ApplyChanges` sur un module qui a des métadonnées delta, il doit également appeler [IMetaDataEmit::ApplyEditAndContinue](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-applyeditandcontinue-method.md) avec les mêmes métadonnées delta sur tous ses copies des métadonnées de ce module à l’exception de la copie utilisé pour émettre les modifications. Si une copie des métadonnées devient d’une certaine manière hors de synchronisation avec les métadonnées réelles, le débogueur peut toujours supprimer cette copie et obtenir une nouvelle copie.  
+ Chaque fois que le débogueur appelle `ApplyChanges` sur un module qui a des métadonnées Delta, il doit également appeler [IMetaDataEmit :: ApplyEditAndContinue,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-applyeditandcontinue-method.md) avec les mêmes métadonnées Delta sur toutes ses copies des métadonnées de ce module, à l’exception de la copie utilisée pour émettre les modifications. Si une copie des métadonnées n’est pas synchronisée avec les métadonnées réelles, le débogueur peut toujours lever cette copie et obtenir une nouvelle copie.  
   
- Si le `ApplyChanges` méthode échoue, le débogage session est dans un état non valide et doit être redémarrée.  
+ Si la méthode `ApplyChanges` échoue, la session de débogage est dans un État non valide et doit être redémarrée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -6,14 +6,12 @@ helpviewer_keywords:
 - .NET Framework, migrating applications to
 - migration, .NET Framework
 ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b1cda82125a2d4a6eb3102b01bea639a4f3e3df
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 7401d7fed89d18aa0b05e1c95871e4a025705627
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636089"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126302"
 ---
 # <a name="migration-guide-to-the-net-framework-48-47-46-and-45"></a>Guide de migration vers le .NET Framework 4.8, 4.7, 4.6 et 4.5
 
@@ -39,7 +37,7 @@ Consultez les documents suivants avant de migrer votre application à partir des
 - [Migration à partir du .NET Framework 1.1](migrating-from-the-net-framework-1-1.md)
 - [Compatibilité des versions](version-compatibility.md)
 - [Versions et dépendances](versions-and-dependencies.md)
-- [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou versions ultérieures](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
 - [Nouveautés](../whats-new/index.md)
 - [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)
 - [Version du .NET Framework et informations de l’assembly](https://go.microsoft.com/fwlink/?LinkId=201701)

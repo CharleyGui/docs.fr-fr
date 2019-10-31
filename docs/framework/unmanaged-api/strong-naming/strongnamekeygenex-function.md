@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 36bd10b9-9857-45f3-8d3b-0da091d6169e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f9ab908866402bd7a883114466f32921321a5ee6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 63ddd90f3a8090853d10f03052915d10e1503ea6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799010"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125217"
 ---
 # <a name="strongnamekeygenex-function"></a>StrongNameKeyGenEx, fonction
 Génère une nouvelle paire de clés publique/privée avec la taille de clé spécifiée, pour une utilisation avec un nom fort.  
@@ -42,7 +40,7 @@ BOOLEAN StrongNameKeyGenEx (
   
 ## <a name="parameters"></a>Paramètres  
  `wszKeyContainer`  
- dans Nom du conteneur de clé demandé. `wszKeyContainer`doit être une chaîne non vide, ou null pour générer un nom temporaire.  
+ dans Nom du conteneur de clé demandé. `wszKeyContainer` doit être une chaîne non vide, ou null pour générer un nom temporaire.  
   
  `dwFlags`  
  dans Spécifie s’il faut conserver la clé inscrite. Les valeurs suivantes sont prises en charge :  
@@ -61,21 +59,21 @@ BOOLEAN StrongNameKeyGenEx (
  à Taille, en octets, de `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true`en cas de réussite de l’opération ; Sinon, `false`.  
+ `true` en cas de réussite de l’opération ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Les versions de .NET Framework 1,0 et 1,1 requièrent un `dwKeySize` de 1024 bits pour signer un assembly avec un nom fort ; la version 2,0 ajoute des prises en charge pour les clés 2048 bits.  
+ Les versions 1,0 et 1,1 de .NET Framework requièrent un `dwKeySize` de 1024 bits pour signer un assembly avec un nom fort ; la version 2,0 ajoute prend en charge les clés 2048 bits.  
   
  Une fois la clé Récupérée, vous devez appeler la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) pour libérer la mémoire allouée.  
   
- Si la `StrongNameKeyGenEx` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si la fonction `StrongNameKeyGenEx` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

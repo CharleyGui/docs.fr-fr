@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e06fc19d-2cf4-4cad-81a3-137a68af8969
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4322a7e23c7085dadb3b2df6c1f72125aa685cef
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ec265525d01dab0669939569501fce91b500a900
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756604"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127492"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock, méthode
-Retourne le thread managé qui possède le verrou du moniteur sur cet objet.  
+Retourne le thread managé qui détient le verrou du moniteur sur cet objet.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,10 +36,10 @@ HRESULT GetThreadOwningMonitorLock (
   
 ## <a name="parameters"></a>Paramètres  
  `ppThread`  
- [out] Le thread managé qui possède le verrou du moniteur sur cet objet.  
+ à Thread managé qui possède le verrou du moniteur sur cet objet.  
   
  `pAcquisitionCount`  
- [out] Le nombre de fois où que ce thread aurait pour libérer le verrou avant qu’il redevienne sans propriétaire.  
+ à Nombre de fois que ce thread doit libérer le verrou avant qu’il ne soit plus propriétaire.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -49,7 +47,7 @@ HRESULT GetThreadOwningMonitorLock (
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|S_FALSE|Aucun thread managé possède le verrou du moniteur sur cet objet.|  
+|S_FALSE|Aucun thread managé ne possède le verrou du moniteur sur cet objet.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
@@ -58,15 +56,15 @@ HRESULT GetThreadOwningMonitorLock (
   
 - La méthode retourne S_OK.  
   
-- L’objet thread est valide jusqu'à ce que le thread se termine.  
+- L’objet thread est valide jusqu’à ce que le thread se termine.  
   
- Si aucun thread managé ne possède le verrou du moniteur sur cet objet, `ppThread` et `pAcquisitionCount` sont identiques, et la méthode retourne S_FALSE.  
+ Si aucun thread managé ne possède le verrou du moniteur sur cet objet, les `ppThread` et les `pAcquisitionCount` sont inchangés, et la méthode retourne S_FALSE.  
   
- Si `ppThread` ou `pAcquisitionCount` n’est pas un pointeur valide, le résultat est indéfini.  
+ Si `ppThread` ou `pAcquisitionCount` n’est pas un pointeur valide, le résultat n’est pas défini.  
   
- Si une erreur se produit et il est impossible de déterminer qui, le cas échéant, le thread possède le verrou du moniteur sur cet objet, la méthode retourne un HRESULT qui indique un échec.  
+ Si une erreur se produit et qu’il est impossible de déterminer le thread qui, le cas échéant, détient le verrou du moniteur sur cet objet, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

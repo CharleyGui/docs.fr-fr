@@ -10,14 +10,12 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0ae92232b1d50d1381b6873e21a4c185db6efd25
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f73bb2ac9e1b942c08f83507589b534d7e67748d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051646"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124962"
 ---
 # <a name="registration-free-com-interop"></a>COM Interop sans inscription
 COM Interop sans inscription active un composant sans utiliser le Registre Windows pour stocker les informations d'assembly. Au lieu d’inscrire un composant sur un ordinateur pendant le déploiement, vous créez des fichiers manifeste de type Win32 au moment du design qui contiennent des informations sur la liaison et l’activation. Ces fichiers manifeste, plutôt que les clés de Registre, dirigent l'activation d'un objet.  
@@ -56,4 +54,4 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : configurer les composants COM .NET Framework pour l’activation sans inscription](configure-net-framework-based-com-components-for-reg.md)
+- [Comment : configurer les composants COM .NET Framework pour l'activation sans inscription](configure-net-framework-based-com-components-for-reg.md)

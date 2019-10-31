@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3d705463-e640-4249-8036-4e8206d03cfe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aae5f4c79acd6f92d42c2890ba64fa66e1b4bfbe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d01ab0b6b5d489b2181056129e22661a50108a3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753585"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084844"
 ---
 # <a name="icordebugeval2newparameterizedobject-method"></a>ICorDebugEval2::NewParameterizedObject, méthode
 Instancie un nouvel objet de type paramétré et appelle la méthode de constructeur de l’objet.  
@@ -41,24 +39,24 @@ HRESULT NewParameterizedObject (
   
 ## <a name="parameters"></a>Paramètres  
  `pConstructor`  
- [in] Pointeur vers un objet ICorDebugFunction qui représente le constructeur de l’objet à instancier.  
+ dans Pointeur vers un objet ICorDebugFunction qui représente le constructeur de l’objet à instancier.  
   
  `nTypeArgs`  
- [in] Nombre d’arguments de type passés.  
+ dans Nombre d’arguments de type passés.  
   
  `ppTypeArgs`  
- [in] Tableau de pointeurs, chacun pointant vers un objet de ICorDebugType qui représente un argument de type pour l’objet qui est en cours d’instanciation.  
+ dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugType qui représente un argument de type pour l’objet en cours d’instanciation.  
   
  `nArgs`  
- [in] Le nombre d’arguments passés au constructeur.  
+ dans Nombre d’arguments passés au constructeur.  
   
  `ppArgs`  
- [in] Tableau de pointeurs, chacun d’eux pointe vers un objet ICorDebugValue qui représente une valeur d’argument est passée au constructeur.  
+ dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui représente une valeur d’argument passée au constructeur.  
   
 ## <a name="remarks"></a>Notes  
- Constructeur de l’objet peut prendre <xref:System.Type> paramètres.  
+ Le constructeur de l’objet peut prendre <xref:System.Type> paramètres.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

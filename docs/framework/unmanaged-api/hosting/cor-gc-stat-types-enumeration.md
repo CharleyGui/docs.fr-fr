@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6fdfe33c5b488d8f464001a86233124d4e7df0ed
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b0fbc462283ef1577de8100e60fd09caa53db539
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779064"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131915"
 ---
-# <a name="corgcstattypes-enumeration"></a>COR_GC_STAT_TYPES (énumération)
+# <a name="cor_gc_stat_types-enumeration"></a>COR_GC_STAT_TYPES (énumération)
 Spécifie les statistiques à enregistrer pour un garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,19 +34,19 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Notes  
- Cette énumération spécifie les statistiques de la [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) structure doivent être définis [ICLRGCManager::GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) (méthode).  
+ Cette énumération spécifie les statistiques de la structure [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) qui doivent être définies par la méthode [ICLRGCManager :: GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) .  
   
 ## <a name="members"></a>Membres  
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_GC_COUNTS`|Enregistre le nombre de garbage collections effectué pour chaque génération.|  
-|`COR_GC_MEMORYUSAGE`|Enregistre l’utilisation et le garbage collection taille statistiques de la mémoire.|  
+|`COR_GC_COUNTS`|Enregistre le nombre de garbage collection effectués pour chaque génération.|  
+|`COR_GC_MEMORYUSAGE`|Enregistre l’utilisation de la mémoire et les statistiques de taille de garbage collection.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** GCHost.idl, GCHost.h  
+ **En-tête :** GCHost. idl, GCHost. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

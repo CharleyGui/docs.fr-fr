@@ -6,14 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d23a12ff92202ace69cb80ff59d6afcb5d8f8243
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
-ms.translationtype: HT
+ms.openlocfilehash: 863fa565f7c107214273912a6d110b7664bffe6b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960381"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131498"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
 
@@ -24,11 +22,11 @@ Les applications qui utilisent le multithreading sont plus réactives aux entré
 > [!NOTE]
 > Si vous avez besoin de plus de contrôle sur le comportement des threads de l’application, vous pouvez gérer vous-même les threads. Toutefois, à compter de .NET Framework 4, la programmation multithread est considérablement simplifiée avec les classes <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Parallel LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md), de nouvelles classes de collections simultanées dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, et un nouveau modèle de programmation basé sur le concept de tâches plutôt que de threads. Pour plus d’informations, consultez [Programmation parallèle](../parallel-programming/index.md) et [Bibliothèque parallèle de tâches (TPL)](../parallel-programming/task-parallel-library-tpl.md).
 
-## <a name="how-to-create-and-start-a-new-thread"></a>Procédure : créer et démarrer un nouveau thread
+## <a name="how-to-create-and-start-a-new-thread"></a>Comment créer et démarrer un nouveau thread
 
 Pour créer un thread, vous devez créer une instance de la classe <xref:System.Threading.Thread?displayProperty=nameWithType> et fournir au constructeur le nom de la méthode que vous souhaitez exécuter sur un nouveau thread. Pour démarrer un thread créé, appelez la méthode <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>. Pour plus d’informations et pour obtenir des exemples, consultez l’article [Création de threads et passage de données au démarrage](creating-threads-and-passing-data-at-start-time.md) et la référence de l’API <xref:System.Threading.Thread>.
 
-## <a name="how-to-stop-a-thread"></a>Procédure : arrêter un thread
+## <a name="how-to-stop-a-thread"></a>Comment arrêter un thread
 
 Pour mettre fin à l’exécution d’un thread, utilisez la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md).
 
@@ -36,7 +34,7 @@ Pour mettre fin à l’exécution d’un thread, utilisez la méthode <xref:Syst
 
 Utilisez la méthode <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pour faire en sorte que le thread appelant attende l’arrêt du thread sur lequel la méthode est appelée.
 
-## <a name="how-to-pause-or-interrupt-a-thread"></a>Procédure : suspendre ou interrompre un thread
+## <a name="how-to-pause-or-interrupt-a-thread"></a>Comment suspendre ou interrompre un thread
 
 Vous utilisez la méthode <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> pour suspendre le thread actif pendant un certain laps de temps. Vous pouvez interrompre un thread bloqué en appelant la méthode <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Suspension et interruption de threads](pausing-and-resuming-threads.md).
 

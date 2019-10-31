@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d231044e-2b53-4836-93f9-8117ff0e5c3a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ba0c2ea7733f098b7fac95f51b5eb16d083174e8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 302db0d029b3811d151473323a7a60bd16a00ec1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779363"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131233"
 ---
 # <a name="eclrunhandledexception-enumeration"></a>EClrUnhandledException, énumération
-Décrit les options disponibles pour la gestion des exceptions qui ne sont pas gérées dans le code utilisateur.  
+Décrit les options disponibles pour gérer les exceptions qui ne sont pas gérées dans le code utilisateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,17 +38,17 @@ typedef enum {
 |Membre|Description|  
 |------------|-----------------|  
 |`eRuntimeDeterminedPolicy`|Spécifie que le comportement par défaut se produit. Le processus est détruit.|  
-|`eHostDeterminedPolicy`|Spécifie que le common language runtime (CLR) ignore les exceptions non gérées et permet à l’hôte de déterminer toute action supplémentaire.|  
+|`eHostDeterminedPolicy`|Spécifie que le common language runtime (CLR) ignore les exceptions non gérées et laisse l’hôte déterminer toute action supplémentaire.|  
   
 ## <a name="remarks"></a>Notes  
- Pour spécifier que le CLR se comportent comme les versions antérieures, utilisez le `eHostDeterminedPolicy` membre.  
+ Pour spécifier que le CLR se comporte comme des versions antérieures, utilisez le membre `eHostDeterminedPolicy`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

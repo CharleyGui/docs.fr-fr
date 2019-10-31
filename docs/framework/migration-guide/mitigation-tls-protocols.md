@@ -5,17 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 33f97d13-3022-43da-8b18-cdb5c88df9c2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e98b447028ef9fa96233a71133aa82184d83cec8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2a2f95be92ec08185f627e862b0f62e40a1d764b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779155"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126137"
 ---
 # <a name="mitigation-tls-protocols"></a>Atténuation : protocoles TLS
-À compter de .NET Framework 4.6, les classes <xref:System.Net.ServicePointManager?displayProperty=nameWithType> et <xref:System.Net.Security.SslStream?displayProperty=nameWithType> peuvent utiliser l’un des trois protocoles suivants : Tls1.0, Tls1.1 ou Tls 1.2. Le protocole SSL 3.0 et le chiffrement RC4 ne sont pas pris en charge.  
+Depuis le .NET Framework 4.6, les classes <xref:System.Net.ServicePointManager?displayProperty=nameWithType> et <xref:System.Net.Security.SslStream?displayProperty=nameWithType> peuvent utiliser l'un des trois protocoles suivants : Tls1.0, Tls1.1 ou Tls 1.2. Le protocole SSL 3.0 et le chiffrement RC4 ne sont pas pris en charge.  
   
 ## <a name="impact"></a>Impact  
  Cette modification affecte :  

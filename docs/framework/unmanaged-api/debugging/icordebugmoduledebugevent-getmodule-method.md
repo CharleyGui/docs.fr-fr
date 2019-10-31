@@ -1,17 +1,15 @@
 ---
-title: ICorDebugModuleDebugEvent::GetModule, méthode
+title: 'Icordebugmoduledebugevent, :: GetModule, méthode'
 ms.date: 03/30/2017
 ms.assetid: b1141c35-4253-4e34-b3e4-ed406a9dea4f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e68fab11a881854ae4c3fe073f73150694d31ae5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5dc26d0367d01bc8da957c3ce648c3e529dddb08
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965108"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73096941"
 ---
-# <a name="icordebugmoduledebugeventgetmodule-method"></a>ICorDebugModuleDebugEvent::GetModule, méthode
+# <a name="icordebugmoduledebugeventgetmodule-method"></a>Icordebugmoduledebugevent, :: GetModule, méthode
 Obtient le module fusionné qui vient d’être chargé ou déchargé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,12 +30,12 @@ HRESULT GetModule(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

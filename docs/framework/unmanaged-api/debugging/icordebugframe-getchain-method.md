@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e28e51d3-8f73-494f-bcd4-48bac239fbe1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 64de770676cdd02375e854acb8af7feecb28dfeb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9677fd14f50cf93eac7eeaef784082d45e8884c7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754114"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137685"
 ---
 # <a name="icordebugframegetchain-method"></a>ICorDebugFrame::GetChain, méthode
-Obtient un pointeur vers la chaîne de de que ce frame est une partie.  
+Obtient un pointeur vers la chaîne dont ce frame fait partie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetChain (
   
 ## <a name="parameters"></a>Paramètres  
  `ppChain`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne qui contient ce frame.  
+ à Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne contenant ce frame.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

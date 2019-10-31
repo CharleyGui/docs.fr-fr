@@ -37,14 +37,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b890ac02d54a9092bf2ad24e31367ef1d487c01f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 596c0fd8fec8f59d977f1db445f9000df23ad5ce
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593510"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132852"
 ---
 # <a name="net-class-library-overview"></a>Présentation des bibliothèques de classes .NET
 
@@ -89,15 +87,15 @@ Les implémentations .NET incluent des classes, des interfaces, des délégués 
 |Category|Nom de classe|Description|Type de données Visual Basic|Type de données C#|Type de données C++/CLI|Type de données F#|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |Entier|<xref:System.Byte>|Entier non signé 8 bits.|**Byte**|**byte**|**unsigned char**|**byte**|  
-||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**sbyte**|**char**<br /> - ou -<br /> **signed** **char**|**sbyte**|  
+||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**sbyte**|**char**<br /> ou<br /> **signed** **char**|**sbyte**|  
 ||<xref:System.Int16>|Entier signé 16 bits.|**short**|**short**|**short**|**int16**|  
-||<xref:System.Int32>|Entier signé 32 bits.|**Integer**|**int**|**int**<br /><br /> - ou -<br /><br /> **long**|**int**|  
+||<xref:System.Int32>|Entier signé 32 bits.|**Integer**|**int**|**int**<br /><br /> ou<br /><br /> **long**|**int**|  
 ||<xref:System.Int64>|Entier signé 64 bits.|**Long**|**long**|**__int64**|**int64**|  
 ||<xref:System.UInt16>|Entier non signé 16 bits.<br /><br /> Non conforme CLS.|**UShort**|**ushort**|**unsigned short**|**uint16**|  
-||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**unsigned int**<br /> - ou -<br /> **unsigned long**|**uint32**|  
+||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**unsigned int**<br /> ou<br /> **unsigned long**|**uint32**|  
 ||<xref:System.UInt64>|Entier 64 bits non signé.<br /><br /> Non conforme CLS.|**ULong**|**ulong**|**unsigned __int64**|**uint64**|  
-|Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Single**|**float**|**float**|**float32**<br> ou<br>**single**|  
-||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Double**|**double**|**double**|**float**<br> ou <br> **double**|  
+|Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Single**|**float**|**float**|**float32**<br> or<br>**single**|  
+||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Double**|**double**|**double**|**float**<br> or <br> **double**|  
 |Logique|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Boolean**|**bool**|**bool**|**bool**|  
 |Autre|<xref:System.Char>|Caractère Unicode (16 bits).|**Char**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Valeur décimale (128 bits).|**Decimal**|**decimal**|**Decimal**|**decimal**|  

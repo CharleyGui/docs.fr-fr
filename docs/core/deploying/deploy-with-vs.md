@@ -1,19 +1,17 @@
 ---
 title: Déployer des applications .NET Core avec Visual Studio
 description: Apprenez à déployer des applications .NET Core avec Visual Studio.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: e905d48da31bb5a2e16a645620f2c4f57dda4413
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: fd6861a71bdaac2d3500be52ae29c9fdb383a574
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522807"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092713"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 

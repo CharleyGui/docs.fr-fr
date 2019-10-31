@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 205ca53b-e78e-49b2-9a46-2a7823e96b8c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4937c86be434ef5e97ec72763b7c53d5435bcaf4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9339bb974c261e62502c760dfaf45651573cbe1a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774020"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136376"
 ---
 # <a name="iclrruntimeinfoisloadable-method"></a>ICLRRuntimeInfo::IsLoadable, méthode
-Indique si le runtime associé à cette interface peut être chargé dans le processus actuel, en tenant compte autres runtimes qui peuvent déjà être chargées dans le processus.  
+Indique si le runtime associé à cette interface peut être chargé dans le processus en cours, en tenant compte d’autres runtimes qui peuvent déjà être chargés dans le processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +34,7 @@ HRESULT IsLoadable(
   
 ## <a name="parameters"></a>Paramètres  
  `pbLoadable`  
- [out] `true` si ce runtime a pu être chargé dans le processus en cours ; sinon, `false`.  
+ [out] `true` si ce runtime a pu être chargé dans le processus en cours ; Sinon, `false`.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -47,16 +45,16 @@ HRESULT IsLoadable(
 |E_POINTER|`pbLoadable` a la valeur null.|  
   
 ## <a name="remarks"></a>Notes  
- Si un autre runtime est déjà chargé dans le processus et le runtime associé à cette interface peut être chargé pour l’exécution de côte à côte in-process, `pbLoadable` retourne `true`. Si les deux runtimes ne peut pas exécuter côte à côte in-process, `pbLoadable` retourne `false`. Par exemple, le common language runtime (CLR) version 4 peut s’exécuter côte à côte dans le même processus avec le CLR version 2.0 ou version 1.1 du CLR. Toutefois, les version 1.1 et CLR version 2.0 ne peut pas exécuter côte à côte in-process.  
+ Si un autre Runtime est déjà chargé dans le processus et que le runtime associé à cette interface peut être chargé pour l’exécution côte à côte in-process, `pbLoadable` retourne `true`. Si les deux runtimes ne peuvent pas s’exécuter côte à côte in-process, `pbLoadable` retourne `false`. Par exemple, le common language runtime (CLR) version 4 peut s’exécuter côte à côte dans le même processus avec CLR version 2,0 ou CLR version 1,1. Toutefois, CLR version 1,1 et CLR version 2,0 ne peuvent pas s’exécuter côte à côte in-process.  
   
- Si aucun runtime n’est chargées dans le processus, cette méthode retourne toujours `true`.  
+ Si aucun Runtime n’est chargé dans le processus, cette méthode retourne toujours `true`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

@@ -2,14 +2,12 @@
 title: ICorDebugSymbolProvider, interface
 ms.date: 03/30/2017
 ms.assetid: 85b24196-b6c6-4bda-9de3-47180bd6ff96
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fa30391f10a5f9540090e90500c1cb0a9a410b1e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fb947fec8f17fe13374251b4429be798a335eed6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955532"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133659"
 ---
 # <a name="icordebugsymbolprovider-interface"></a>ICorDebugSymbolProvider, interface
 Fournit des méthodes pouvant être utilisées pour récupérer des informations sur les symboles de débogage.  
@@ -35,12 +33,12 @@ Fournit des méthodes pouvant être utilisées pour récupérer des informations
 > [!NOTE]
 > Cette interface est uniquement disponible avec .NET Native. Si vous implémentez cette interface pour des scénarios ICorDebug en dehors de .NET Native, le Common Language Runtime ignore cette interface.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

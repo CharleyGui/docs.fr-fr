@@ -8,14 +8,12 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5993cfdb0f50d8e474a4f18280d181d9ec2fdfa4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049653"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128373"
 ---
 # <a name="compiling-apps-with-net-native"></a>Compilation d'applications avec .NET Native
 
@@ -57,7 +55,7 @@ Mais .NET Native implique plus qu’une compilation en code natif. Il transforme
 |Bibliothèques|.NET Framework + Windows Runtime|Win32 + Windows Runtime|
 |Compilateur|Compilateur d'optimisation UTC|Compilateur d'optimisation UTC|
 |Déployé|Fichiers binaires prêts à être exécutés|Fichiers binaires prêts à être exécutés (ASM)|
-|Runtime|MRT.dll (Runtime CLR minimal)|CRT.dll (Runtime C)|
+|Exécution|MRT.dll (Runtime CLR minimal)|CRT.dll (Runtime C)|
 
 Pour les applications Windows pour Windows 10, vous devez charger les binaires de compilation de code .NET Native contenus dans les packages d’application (fichiers .aspx) vers le Windows Store.
 
@@ -65,9 +63,9 @@ Pour les applications Windows pour Windows 10, vous devez charger les binaires d
 
 Pour plus d'informations sur le développement d'applications avec la compilation de code .NET Native, consultez les rubriques suivantes :
 
-- [Prise en main avec la compilation de code .NET Native : Procédure pas à pas pour les développeurs](getting-started-with-net-native.md)
+- [Prise en main de la compilation de code .NET Native : procédure détaillée pour les développeurs](getting-started-with-net-native.md)
 
-- [.NET Native et compilation :](net-native-and-compilation.md) Comment .NET Native compile votre projet en code natif.
+- [.NET Native et compilation :](net-native-and-compilation.md) Comment .NET Native compile votre projet en code natif.
 
 - [Réflexion et .NET Native](reflection-and-net-native.md)
 

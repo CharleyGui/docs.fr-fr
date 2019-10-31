@@ -8,19 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e536e61a8d812e442e1e54188c99d6a1d4586757
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4516c8f9673052b521c1f0f594978236fef1e0ec
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049724"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136451"
 ---
 # <a name="icorprofilercallback8-interface"></a>ICorProfilerCallback8, interface
-[Pris en charge dans le .NET Framework 4.7 et versions ultérieures]  
+[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
 
- Une sous-classe de [ICorProfilerCallback7](icorprofilercallback7-interface.md) qui fournit des méthodes de rappel utilisés par le common language runtime pour informer le profileur de la compilation JIT d’une méthode dynamique a démarré et s’est terminé. 
+ Sous-classe de [ICorProfilerCallback7](icorprofilercallback7-interface.md) qui fournit des méthodes de rappel utilisées par le Common Language Runtime pour notifier au profileur que la compilation JIT d’une méthode dynamique a démarré et se termine. 
   
 ## <a name="methods"></a>Méthodes  
   
@@ -29,10 +27,10 @@ ms.locfileid: "62049724"
 |[DynamicMethodJITCompilationStarted, méthode](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)|Notifie le profileur que la compilation JIT d’une méthode dynamique a démarré.|  
 |[DynamicMethodJITCompilationFinished, méthode](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)|Notifie le profileur que la compilation JIT d’une méthode dynamique est terminée.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 

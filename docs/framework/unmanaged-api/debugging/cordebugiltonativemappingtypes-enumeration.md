@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: c35e2919-42c3-4ba0-ae28-443c35f66f93
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c7d9f5373f2b4ea216ca517813b1334b9f5c38a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 949d04fe8d9ce492fb320fb4732677ffb35302ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739973"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132827"
 ---
 # <a name="cordebugiltonativemappingtypes-enumeration"></a>CorDebugIlToNativeMappingTypes, énumération
 Indique si une plage particulière d’instructions natives, représentée par une instance de la structure COR_DEBUG_IL_TO_NATIVE_MAP, correspond à une région de code spéciale.  
@@ -40,11 +38,11 @@ typedef enum CorDebugIlToNativeMappingTypes {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`NO_MAPPING`|La plage d’instructions natives ne correspond pas à n’importe quelle région de code spéciale.|  
+|`NO_MAPPING`|La plage d’instructions natives ne correspond à aucune région de code spéciale.|  
 |`PROLOG`|La plage d’instructions natives correspond au prologue.|  
 |`EPILOG`|La plage d’instructions natives correspond à l’épilogue.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

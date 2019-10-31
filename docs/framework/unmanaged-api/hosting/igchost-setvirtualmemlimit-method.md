@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7e7c2d0-e58c-4650-b40c-47b2be2cda45
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c43c2259d5b899f05e42437aa121dde57ce4b0c8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c060e4883335a8318970b5fbd74bf72c9e13f5bf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766483"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134863"
 ---
 # <a name="igchostsetvirtualmemlimit-method"></a>IGCHost::SetVirtualMemLimit, méthode
-Définit la taille maximale de mémoire virtuelle du runtime.  
+Définit la taille maximale de la mémoire virtuelle du Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +35,17 @@ HRESULT SetVirtualMemLimit (
   
 ## <a name="parameters"></a>Paramètres  
  `sztMaxVirtualMemMB`  
- [in] La taille maximale, en mégaoctets, de mémoire virtuelle du runtime.  
+ dans Taille maximale, en mégaoctets, de la mémoire virtuelle du Runtime.  
   
 ## <a name="remarks"></a>Notes  
- La taille maximale de mémoire virtuelle du runtime peut être modifiée dynamiquement.  
+ La taille maximale de la mémoire virtuelle du runtime peut être modifiée dynamiquement.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** GCHost.idl, GCHost.h  
+ **En-tête :** GCHost. idl, GCHost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

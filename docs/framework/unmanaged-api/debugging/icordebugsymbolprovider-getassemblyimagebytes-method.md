@@ -1,17 +1,15 @@
 ---
-title: ICorDebugSymbolProvider::GetAssemblyImageBytes, méthode
+title: 'ICorDebugSymbolProvider :: Getassemblyimagebytes,, méthode'
 ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bf6e707b6176ccd205785aafa6c5a1adf0a3fc78
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3184ba116704df8945b53766e62435a4252eaa11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964664"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138933"
 ---
-# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider::GetAssemblyImageBytes, méthode
+# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider :: Getassemblyimagebytes,, méthode
 Lit les données d’un assembly fusionné pour une adresse virtuelle relative (RVA) donnée dans l’assembly fusionné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,12 +37,12 @@ HRESULT GetAssemblyImageBytes(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 8b96e1e8f882ee69bcf7db58ca7a5eeab89fb4fd
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 51e4f3784db58e23ab4293c2d9f4e52e0d6617b5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395183"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093442"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -113,7 +113,7 @@ Bien que .NET Core soit unique et présente des différences significatives au .
 
 ### <a name="comparison-with-mono"></a>Comparaison avec Mono
 
-[Mono](https://www.mono-project.com/) est la plateforme multiplateforme d’origine de .net. Il a démarré en tant que solution [Open source](https://github.com/mono/mono)) pour .NET Framework et pour cibler des appareils mobiles, car les appareils iOS et Android sont devenus populaires. Elle peut être considérée comme un clone communautaire du .NET Framework. L’équipe de projet mono s’est appuyée sur les [normes .net](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) ouvertes (notamment ECMA 335) publiées par Microsoft pour fournir une implémentation compatible.
+[Mono](https://www.mono-project.com/) est l’implémentation multiplateforme d’origine de .net. Il a commencé comme une alternative [Open source](https://github.com/mono/mono) à .NET Framework et a migré vers le ciblage des appareils mobiles, car les appareils iOS et Android sont devenus populaires. Elle peut être considérée comme un clone communautaire du .NET Framework. L’équipe de projet mono s’est appuyée sur les [normes .net](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) ouvertes (notamment ECMA 335) publiées par Microsoft pour fournir une implémentation compatible.
 
 Les principales différences entre .NET Core et Mono sont les suivantes :
 

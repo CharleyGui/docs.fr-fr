@@ -1,17 +1,15 @@
 ---
-title: ICorDebugExceptionDebugEvent::GetStackPointer, méthode
+title: 'Icordebugexceptiondebugevent, :: Getstackpointer,, méthode'
 ms.date: 03/30/2017
 ms.assetid: d8f66a1c-16be-4264-afc5-bc2dfbb4a682
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 47f60b151166804d612292fb32b7ff154e417342
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 688f5aec457298a43d95a35fdbc6e04e29a306a4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928202"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084675"
 ---
-# <a name="icordebugexceptiondebugeventgetstackpointer-method"></a>ICorDebugExceptionDebugEvent::GetStackPointer, méthode
+# <a name="icordebugexceptiondebugeventgetstackpointer-method"></a>Icordebugexceptiondebugevent, :: Getstackpointer,, méthode
 Obtient le pointeur de pile de cet événement de débogage d'exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,14 +37,14 @@ HRESULT GetStackPointer(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
- Le type d’événement est disponible à partir de la méthode [ICorDebugDebugEvent:: GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) .  
+ Le type d’événement est disponible à partir de la méthode [ICorDebugDebugEvent :: GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

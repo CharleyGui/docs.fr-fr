@@ -12,14 +12,12 @@ api_type:
 ms.assetid: 17665b77-1342-4115-94fd-9f45b0ecfb0f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9810a8a55fc9c5296bffa5106551f9734dcd61bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 243000a2399b4938a3ad7f732c64e2f79b664f51
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199906"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131061"
 ---
 # <a name="icordebugilcode2getlocalvarsigtoken-method"></a>ICorDebugILCode2::GetLocalVarSigToken, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -40,7 +38,7 @@ HRESULT GetLocalVarSigToken(
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

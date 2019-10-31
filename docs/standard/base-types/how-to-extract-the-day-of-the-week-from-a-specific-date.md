@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : extraire le jour de la semaine d’une date spécifique'
+title: "Comment : extraire le jour de la semaine à partir d'une date spécifique"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -22,16 +22,14 @@ helpviewer_keywords:
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 55bdf4cf589bd912dbfc85777542150696aaa436
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 771bd0276310eecb534fb80836faadb1a8aa10bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589779"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084199"
 ---
-# <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Procédure : extraire le jour de la semaine d’une date spécifique
+# <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Comment : extraire le jour de la semaine à partir d'une date spécifique
 Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine pour une date particulière, et d'afficher le nom du jour de la semaine localisé pour une date particulière. Le jour de la semaine correspondant à une date particulière est indiqué par une valeur énumérée contenue dans la propriété <xref:System.DateTime.DayOfWeek%2A> ou <xref:System.DateTimeOffset.DayOfWeek%2A>. Par contre, la récupération du nom du jour de la semaine est une opération de mise en forme qui peut être effectuée en appelant une méthode de mise en forme, comme la méthode `ToString` d'une valeur de date et d'heure ou la méthode <xref:System.String.Format%2A?displayProperty=nameWithType>. Cette rubrique montre comment effectuer ces opérations de mise en forme.  
   
 ### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a>Pour extraire un nombre indiquant le jour de la semaine d'une date spécifique  
@@ -103,5 +101,5 @@ Le .NET Framework permet de déterminer facilement le jour ordinal de la semaine
 ## <a name="see-also"></a>Voir aussi
 
 - [Exécution d’opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)
-- [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

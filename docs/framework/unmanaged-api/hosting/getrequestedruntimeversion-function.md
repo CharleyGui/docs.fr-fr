@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 82f596a4-483d-4509-b0c5-a84c53c3da1b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4083440903e6147ae645f2d6420f19160471841c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: be7d6ce29a9c9c4e3e530df40432b1a4c3b2d389
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779574"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136343"
 ---
 # <a name="getrequestedruntimeversion-function"></a>GetRequestedRuntimeVersion, fonction
-Obtient le numéro de version du common language runtime (CLR) demandé par l’application spécifiée. Si cette version n’est pas installée, obtient la version la plus récente est installée avant la version demandée.  
+Obtient le numéro de version du common language runtime (CLR) demandé par l’application spécifiée. Si cette version n’est pas installée, obtient la version la plus récente installée avant la version demandée.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,32 +40,32 @@ HRESULT GetRequestedRuntimeVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `pExe`  
- [in] Le nom de l’application.  
+ dans Nom de l’application.  
   
  `pVersion`  
- [out] Une mémoire tampon qui contient la chaîne de numéro de version en cas de réussite.  
+ à Mémoire tampon qui contient la chaîne de numéro de version en cas de réussite.  
   
  `cchBuffer`  
- [in] La longueur de la mémoire tampon de version.  
+ dans Longueur de la mémoire tampon de version.  
   
  `pdwLength`  
- [out] Pointeur vers la longueur de la chaîne de numéro de version.  
+ à Pointeur vers la longueur de la chaîne de numéro de version.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur de composant COM (Object Model) standard, tel que défini dans WinError.h, en plus des valeurs suivantes.  
+ Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|ERROR_INSUFFICIENT_BUFFER|Le tampon de version n’est pas suffisamment grand pour stocker la chaîne de version.|  
+|ERROR_INSUFFICIENT_BUFFER|La mémoire tampon de version n’est pas assez grande pour stocker la chaîne de version.|  
 |E_POINTER|`pdwLength` a la valeur null.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

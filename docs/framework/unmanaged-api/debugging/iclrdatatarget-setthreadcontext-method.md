@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 103c8502-81fe-40d7-9c1e-9008d8fb19e1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: edd70dd4cfc2e26b30ee0deec79b7d126d1f76a1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cceafc8358ce2b0eafa62a3855c4eb1e96adae11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738591"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73113315"
 ---
 # <a name="iclrdatatargetsetthreadcontext-method"></a>ICLRDataTarget::SetThreadContext, méthode
-Définit le contexte actuel du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès de données common language runtime (CLR).  
+Définit le contexte actuel du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT SetThreadContext (
   
 ## <a name="parameters"></a>Paramètres  
  `threadID`  
- [in] L’identificateur de système d’exploitation d’un thread dans le processus cible.  
+ dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
   
  `contextSize`  
- [in] La taille du contexte.  
+ dans Taille du contexte.  
   
  `context`  
- [in] Pointeur vers une mémoire tampon contenant le contexte.  
+ dans Pointeur vers une mémoire tampon contenant le contexte.  
   
- Les données dans le `context` tampon sera au format Win32 `CONTEXT` structure. Le contexte spécifie des données de Registre spécifiques au processeur, la définition de Win32 `CONTEXT` structure varie selon l’architecture du processeur. Consultez le fichier d’en-tête WinNT.h pour la définition de Win32 `CONTEXT` structure.  
+ Les données de la mémoire tampon de `context` seront au format de la structure de `CONTEXT` Win32. Le contexte spécifie des données de Registre spécifiques au processeur, donc la définition de la structure de `CONTEXT` Win32 dépend de l’architecture du processeur. Reportez-vous au fichier d’en-tête Winnt. h pour la définition de la structure de `CONTEXT` Win32.  
   
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

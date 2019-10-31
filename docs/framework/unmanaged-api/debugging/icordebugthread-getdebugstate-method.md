@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9be27b0c-1d99-4722-b0d4-40cf6753ce5c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0baabbb736365b138d1754e68070207b4310bf57
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f054f8f2bd7c322e722a1e17290ba6fbad9e37b0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762459"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133511"
 ---
 # <a name="icordebugthreadgetdebugstate-method"></a>ICorDebugThread::GetDebugState, méthode
 Obtient l’état de débogage actuel de cet objet ICorDebugThread.  
@@ -37,12 +35,12 @@ HRESULT GetDebugState (
   
 ## <a name="parameters"></a>Paramètres  
  `pState`  
- [out] Pointeur vers une combinaison au niveau du bit des valeurs d’énumération CorDebugThreadState qui décrit l’état de débogage actuel de ce thread.  
+ à Pointeur vers une combinaison d’opérations de bits de valeurs d’énumération CorDebugThreadState qui décrit l’état de débogage actuel de ce thread.  
   
 ## <a name="remarks"></a>Notes  
- Si le processus est actuellement arrêté, `pState` représente l’état de débogage qui existerait pour ce thread si le processus de se poursuivre, pas l’état en cours réel de ce thread.  
+ Si le processus est actuellement arrêté, `pState` représente l’état de débogage qui existe pour ce thread si le processus devait être poursuivi, et non l’état actuel réel de ce thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

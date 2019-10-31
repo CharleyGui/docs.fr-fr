@@ -14,14 +14,12 @@ helpviewer_keywords:
 - Delete function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a1bf9bd5d93d1affee649588138456269411d280
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6b8f287be831702dd31a8335f9b2f6447bcee540
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798671"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127663"
 ---
 # <a name="delete-function"></a>Delete, fonction
 
@@ -48,13 +46,13 @@ dans Ce paramètre n’est pas utilisé.
 dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`\
-dans Nom de la propriété à supprimer. `wszName`doit être un pointeur vers un valide `LPCWSTR`.
+dans Nom de la propriété à supprimer. `wszName` doit être un pointeur désignant un `LPCWSTR`valide.
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | La propriété ne peut pas être supprimée. |
@@ -70,11 +68,11 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemClassObject ::D supprim](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

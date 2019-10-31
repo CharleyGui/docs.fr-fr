@@ -9,14 +9,12 @@ helpviewer_keywords:
 - data marshaling, Callback sample
 - marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0e2289b3c12c7c83a39f1ad8d5a1365349ca6442
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: c71c89e5797745144a2baed2d4846e3d9f9f26be
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151796"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114015"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Marshaling d'un délégué comme méthode de rappel
 Cet exemple montre comment passer des délégués à une fonction non managée qui attend des pointeurs de fonction. Un délégué est une classe qui peut contenir une référence à une méthode, et qui équivaut à un pointeur de fonction de type sécurisé ou à une fonction de rappel.

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cdeda721-b214-4503-a291-c70b68b5f36b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38542ec28cce9687dc3ed824f9d449f3070976da
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5e3619d12b9377a8482254703d3d97d0348a013b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737299"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127171"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName, méthode
-Obtient le nom de l’assembly que cela `ICorDebugAssembly` représente l’instance.  
+Obtient le nom de l’assembly que cette `ICorDebugAssembly` instance représente.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,15 +40,15 @@ HRESULT GetName (
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] Pointeur vers un entier qui spécifie la longueur réelle du nom.  
+ à Pointeur vers un entier qui spécifie la longueur réelle du nom.  
   
  `szName`  
- [out] Tableau qui stocke le nom.  
+ à Tableau qui stocke le nom.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetName` méthode retourne le chemin d’accès et le nom complet de l’assembly.  
+ La méthode `GetName` retourne le chemin d’accès complet et le nom de fichier de l’assembly.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

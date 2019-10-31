@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1ded7639-dacb-4db1-961c-d1ceaec01959
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ebbc076f52c661a394eff51954fceefe8e439ded
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0f6a369691ab2e4e9fd2e5d9731fb1dc0a42ba11
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779890"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127795"
 ---
 # <a name="icorconfigurationsetdebuggerthreadcontrol-method"></a>ICorConfiguration::SetDebuggerThreadControl, méthode
-Définit l’interface de rappel qui appellent les services de débogage comme threads CLR runtime (CLR) sont bloqués et débloqués pour le débogage.  
+Définit l’interface de rappel que les services de débogage appellera en tant que threads common language runtime (CLR) sont bloqués et débloqués pour le débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT SetDebuggerThreadControl (
   
 ## <a name="parameters"></a>Paramètres  
  `pDebuggerThreadControl`  
- [in] Un pointeur vers un [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md) objet qui avertit l’hôte du blocage et déblocage des threads par les services de débogage.  
+ dans Pointeur vers un objet [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md) qui avertit l’hôte du blocage et du déblocage des threads par les services de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

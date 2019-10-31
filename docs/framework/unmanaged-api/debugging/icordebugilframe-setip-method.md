@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 23f38dc1-85e4-4263-9235-2d05bbb6a833
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2af3f58fa7714b3c2b0ba387b1da650f0638dd6c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 60273d7cf91be04c5fc3041260e4bb146ce9a45e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758775"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095428"
 ---
 # <a name="icordebugilframesetip-method"></a>ICorDebugILFrame::SetIP, méthode
-Définit le pointeur d’instruction à l’emplacement de décalage spécifié dans le code de Microsoft intermediate language (MSIL).  
+Définit le pointeur d’instruction à l’emplacement de décalage spécifié dans le code MSIL (Microsoft Intermediate Language).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +38,13 @@ HRESULT SetIP (
  Emplacement de décalage dans le code MSIL.  
   
 ## <a name="remarks"></a>Notes  
- Les appels à `SetIP` invalider immédiatement tous les frames et des chaînes pour le thread actuel. Si le débogueur a besoin des informations de frame après un appel à `SetIP`, il doit effectuer une nouvelle trace de pile.  
+ Les appels à `SetIP` invalident immédiatement tous les frames et chaînes pour le thread actuel. Si le débogueur a besoin d’informations de frame après un appel à `SetIP`, il doit effectuer une nouvelle trace de la pile.  
   
- [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) essaiera de conserver le frame de pile dans un état valide. Toutefois, même si le frame est dans un état valide, il reste peut-être des problèmes tels que des variables locales non initialisées. L’appelant est responsable de la cohérence du programme en cours d’exécution.  
+ [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) tente de conserver le frame de pile dans un état valide. Toutefois, même si le frame est dans un état valide, il peut y avoir des problèmes tels que les variables locales non initialisées. L’appelant est chargé de garantir la cohérence du programme en cours d’exécution.  
   
- Sur les plateformes 64 bits, le pointeur d’instruction ne peut pas être déplacé hors d’un `catch` ou `finally` bloc. Si `SetIP` est appelée pour effectuer ce déplacement sur une plateforme 64 bits, il retourne un HRESULT indiquant un échec.  
+ Sur les plateformes 64 bits, le pointeur d’instruction ne peut pas être déplacé hors d’un bloc `catch` ou `finally`. Si `SetIP` est appelé pour effectuer ce déplacement sur une plateforme 64 bits, un HRESULT indiquant un échec est retourné.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

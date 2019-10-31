@@ -18,21 +18,19 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a53c8b7b88bd25a6611c33218c7a386de55889e9
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 669e147f9c7b4ba901ade38f1ab8b41163c4f125
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151765"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114027"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Marshaling de classes, de structures, et d'unions
 Les classes et les structures sont similaires dans .NET Framework. Elles peuvent toutes deux posséder des champs, des propriétés et des événements. Elles peuvent également posséder des méthodes statiques et non statiques. Une différence notable existe toutefois : les structures sont des types valeur et les classes sont des types référence.  
   
  Le tableau suivant répertorie les options de marshaling pour les classes, les structures et les unions. Il décrit leur utilisation et fournit un lien vers l'exemple d'appel de code non managé correspondant.  
   
-|Type|Description|Exemple|  
+|Tapez|Description|Exemple|  
 |----------|-----------------|------------|  
 |Classe par valeur.|Passe une classe avec des membres entiers en tant que paramètre In/Out, comme le cas managé.|SysTime (exemple)|  
 |Structure par valeur.|Passe des structures en tant que paramètres In.|Exemple de structures|  
@@ -68,7 +66,7 @@ Les classes et les structures sont similaires dans .NET Framework. Elles peuvent
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
     ```  
   
- [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) est une bibliothèque non managée personnalisée qui contient des implémentations des fonctions précédemment listées et quatre structures : **MYPERSON**, **MYPERSON2**, **MYPERSON3** et **MYARRAYSTRUCT**. Ces structures contiennent les éléments suivants :  
+ [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) est une bibliothèque non managée personnalisée qui contient des implémentations des fonctions précédemment répertoriées, ainsi que quatre structures : **MYPERSON**, **MYPERSON2**, **MYPERSON3** et **MYARRAYSTRUCT**. Ces structures contiennent les éléments suivants :  
   
 ```cpp  
 typedef struct _MYPERSON  

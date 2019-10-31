@@ -11,14 +11,12 @@ helpviewer_keywords:
 - enumerations [.NET Framework], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8903d0443594885b3b0e8cca716eda8177c60cca
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
-ms.translationtype: HT
+ms.openlocfilehash: ac44282a06b2b3710d3a9e5390c7a514c1632c3a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988801"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127599"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analyse de chaînes numériques dans .NET
 Tous les types numériques disposent de deux méthodes d’analyse statiques, `Parse` et `TryParse`, que vous pouvez utiliser pour convertir la représentation sous forme de chaîne d’un nombre en type numérique. Ces méthodes vous permettent d’analyser les chaînes qui ont été générées à l’aide de chaînes de format documentées dans [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md) et [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md). Par défaut, les méthodes `Parse` et `TryParse` peuvent convertir correctement les chaînes qui contiennent uniquement des chiffres décimaux intégraux en valeurs entières. Ils peuvent convertir correctement les chaînes qui contiennent des chiffres décimaux intégraux et fractionnaires, des séparateurs de groupe et un séparateur décimal en valeurs à virgule flottante. La méthode `Parse` lève une exception si l’opération échoue, tandis que la méthode `TryParse` retourne `false`.  
@@ -86,5 +84,5 @@ Tous les types numériques disposent de deux méthodes d’analyse statiques, `P
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.NumberStyles>
-- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
+- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)

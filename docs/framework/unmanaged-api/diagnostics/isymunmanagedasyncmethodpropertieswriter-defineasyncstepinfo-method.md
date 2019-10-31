@@ -2,19 +2,17 @@
 title: ISymUnmanagedAsyncMethodPropertiesWriter::DefineAsyncStepInfo, méthode
 ms.date: 03/30/2017
 ms.assetid: f738a6ed-7cd9-4106-a5cd-355481e5771c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a8305d0a562fd90e3fae32e372b663ca3942d2a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 59e3a95a4d2573263600da60b4f852caa361138e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940138"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129200"
 ---
 # <a name="isymunmanagedasyncmethodpropertieswriterdefineasyncstepinfo-method"></a>ISymUnmanagedAsyncMethodPropertiesWriter::DefineAsyncStepInfo, méthode
-Définir un groupe d’async await des opérations dans la méthode actuelle.  
+Définissez un groupe d’opérations await Async dans la méthode actuelle.  
   
- Chaque décalage yield correspond à l’instruction de retour d’une expression await, identifiant un rendement potentiel. Chaque `breakpointMethod` / `breakpointOffset` paire nous indique où l’opération asynchrone reprendra qui pourrait être dans une méthode différente.  
+ Chaque décalage de rendement correspond à l’instruction de retour d’une instruction await, identifiant un rendement potentiel. Chaque `breakpointMethod`/paire de `breakpointOffset` indique où l’opération asynchrone reprend, qui peut se trouver dans une méthode différente.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,8 +32,8 @@ HRESULT DefineAsyncStepInfo(    [in] ULONG32 count,    [in, size_is(count)] ULON
 ## <a name="return-value"></a>Valeur de retour  
  Retourne `HRESULT`.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

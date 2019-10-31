@@ -2,17 +2,15 @@
 title: ISymUnmanagedWriter4, interface
 ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e5732cc08512df25a14cc8ea9dcaa03c56207dde
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a656777461c50b5a1593917278eb54abda982dc2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962330"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134568"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4, interface
-Isymunmanagedwriter4, interface.  
+Interface Isymunmanagedwriter4,.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,10 +23,10 @@ Isymunmanagedwriter4, interface.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetDebugInfoWithPadding, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Fonctionne comme [GetDebugInfo, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) , à ceci près que la chaîne de chemin d’accès est remplie avec des zéros qui suivent le caractère null de fin pour rendre les données de chaîne de taille fixe de `MAX_PATH`. Marge intérieure est obtenu uniquement si la longueur de chaîne de chemin d’accès lui-même est inférieure à `MAX_PATH`.<br /><br /> Cela rend plus facile à écrire des outils que les fichiers PE de différence.|  
+|[GetDebugInfoWithPadding, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Fonctionne de la même façon que la [méthode GetDebugInfo](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) , sauf que la chaîne de chemin d’accès est remplie de zéros après le caractère null de fin pour que les données de chaîne aient une taille fixe de `MAX_PATH`. Le remplissage n’est fourni que si la longueur de la chaîne du chemin d’accès est inférieure à `MAX_PATH`.<br /><br /> Cela facilite l’écriture d’outils qui différencient les fichiers PE.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 97e493f5-3a62-4ec7-b42f-4af57bf71f57
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd8f71ca75a795ab86c61140eacbbcfb0a18b590
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 166f6bb50849df8550871958d7034fdf2a841abb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737804"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089117"
 ---
 # <a name="icordebugappdomain2getarrayorpointertype-method"></a>ICorDebugAppDomain2::GetArrayOrPointerType, méthode
-Obtient un tableau du type spécifié, ou un pointeur ou une référence vers le type spécifié.  
+Obtient un tableau du type spécifié, ou un pointeur ou une référence au type spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT GetArrayOrPointerType (
   
 ## <a name="parameters"></a>Paramètres  
  `elementType`  
- [in] Une valeur de l’énumération CorElementType qui spécifie le type natif sous-jacent (tableau, pointeur ou référence) doit être créé.  
+ dans Valeur de l’énumération CorElementType qui spécifie le type natif sous-jacent (un tableau, un pointeur ou une référence) à créer.  
   
  `nRank`  
- [in] Le rang (autrement dit, le nombre de dimensions) du tableau. Cette valeur doit être 0 si `elementType` spécifie un pointeur ou type référence.  
+ dans Classement (autrement dit, le nombre de dimensions) du tableau. Cette valeur doit être égale à 0 si `elementType` spécifie un type de pointeur ou de référence.  
   
  `pTypeArg`  
- [in] Un pointeur vers un objet de ICorDebugType qui représente le type de tableau, pointeur ou référence à créer.  
+ dans Pointeur vers un objet ICorDebugType qui représente le type de tableau, pointeur ou référence à créer.  
   
  `ppType`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugType` type d’objet qui représente le tableau construit, type pointeur ou référence.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugType` qui représente le tableau construit, le type pointeur ou le type référence.  
   
 ## <a name="remarks"></a>Notes  
- La valeur de *elementType* doit être une des opérations suivantes :  
+ La valeur de *ElementType* doit être l’une des suivantes :  
   
 - ELEMENT_TYPE_PTR  
   
@@ -60,9 +58,9 @@ HRESULT GetArrayOrPointerType (
   
 - ELEMENT_TYPE_ARRAY ou ELEMENT_TYPE_SZARRAY  
   
- Si la valeur de *elementType* est ELEMENT_TYPE_PTR ou ELEMENT_TYPE_BYREF, *nRank* doit être égal à zéro.  
+ Si la valeur de *ElementType* est ELEMENT_TYPE_PTR ou ELEMENT_TYPE_BYREF, *nRank* doit être égal à zéro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

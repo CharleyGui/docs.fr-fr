@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : afficher des informations de date et d’heure localisées pour les utilisateurs du web'
+title: "Comment : afficher des informations de date et d'heure localisées pour les utilisateurs du Web"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -13,16 +13,14 @@ ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
 dev_langs:
 - csharp
 - vb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4c50cdf93d8cfcefeffd35290d26dfa432a241e1
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: HT
+ms.openlocfilehash: 51142a168aba4408e6ce550a032960c4df6c3ae7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882486"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138744"
 ---
-# <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Procédure : afficher des informations de date et d’heure localisées pour les utilisateurs du web
+# <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Comment : afficher des informations de date et d'heure localisées pour les utilisateurs du Web
 Une page Web pouvant être affichée n’importe où dans le monde, les opérations qui analysent et mettent en forme les valeurs de date et d’heure ne doivent pas s’appuyer sur un format par défaut (généralement le format de la culture locale du serveur Web) lors de l’interaction avec l’utilisateur. Au lieu de cela, les formulaires Web qui gèrent les chaînes de date et d’heure saisies par l’utilisateur doivent analyser les chaînes en utilisant la culture préférée de l’utilisateur. De même, les données de date et d’heure doivent être affichées à l’utilisateur dans un format conforme à sa culture. Cette rubrique montre comment procéder.  
   
 ## <a name="to-parse-date-and-time-strings-input-by-the-user"></a>Pour analyser les chaînes de date et d’heure saisies par l’utilisateur  
@@ -33,7 +31,7 @@ Une page Web pouvant être affichée n’importe où dans le monde, les opérati
   
 3. Instanciez un objet <xref:System.Globalization.CultureInfo> représentant la culture préférée de l’utilisateur en appelant le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>.  
   
-4. Appelez la méthode `TryParse` ou `Parse` de type <xref:System.DateTime> ou <xref:System.DateTimeOffset> pour tester la conversion. Utilisez une surcharge de la méthode `TryParse` ou `Parse` avec un paramètre `provider` et transférez-y un des éléments suivants :  
+4. Appelez la méthode `TryParse` ou `Parse` de type <xref:System.DateTime> ou <xref:System.DateTimeOffset> pour tester la conversion. Utilisez une surcharge de la méthode `TryParse` ou `Parse` avec un paramètre `provider` et transférez-y l’un des éléments suivants :  
   
     - L’objet <xref:System.Globalization.CultureInfo> créé à l’étape 3  
   
@@ -87,7 +85,7 @@ Une page Web pouvant être affichée n’importe où dans le monde, les opérati
   
  Le script côté client appelle la méthode JavaScript `toLocaleString`. Il génère une chaîne qui suit les conventions de mise en forme des paramètres régionaux de l’utilisateur, les plus susceptibles d’être correctement analysés sur le serveur.  
   
- La propriété <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> est remplie par les noms de la culture qui figurent dans les en-têtes `Accept-Language` inclus dans une requête HTTP. Toutefois, certains navigateurs n’incluent pas les en-têtes `Accept-Language` dans leurs demandes, et les utilisateurs peuvent également supprimer totalement ces en-têtes. Il est donc important de disposer d’une culture de secours lorsque vous analysez l’entrée de l’utilisateur. En général, la culture de secours est la culture invariante retournée par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Les utilisateurs peuvent également fournir à Internet Explorer des noms de cultures qu’ils entrent dans une zone de texte, avec la possibilité que ces noms de cultures ne sont pas valides. Il est donc important d’utiliser la gestion des exceptions quand vous instanciez un objet <xref:System.Globalization.CultureInfo>.  
+ La propriété <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> est remplie par les noms de la culture qui figurent dans les en-têtes `Accept-Language` inclus dans une requête HTTP. Toutefois, certains navigateurs n’incluent pas les en-têtes `Accept-Language` dans leurs demandes, et les utilisateurs peuvent également supprimer totalement ces en-têtes. Il est donc important de disposer d’une culture de secours quand vous analysez l’entrée de l’utilisateur. En général, la culture de secours est la culture invariante retournée par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Les utilisateurs peuvent également fournir à Internet Explorer des noms de cultures qu’ils entrent dans une zone de texte, avec la possibilité que ces noms de cultures ne soient pas valides. Il est donc important d’utiliser la gestion des exceptions quand vous instanciez un objet <xref:System.Globalization.CultureInfo>.  
   
  Quand il est extrait d’une requête HTTP soumise par Internet Explorer, le tableau <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> est rempli selon l’ordre de préférence de l’utilisateur. Le premier élément du tableau contient le nom de la culture/région principale de l’utilisateur. Si le tableau contient d’autres éléments, Internet Explorer leur assigne arbitrairement un spécificateur de qualité, séparé du nom de culture par un point virgule. Par exemple, une entrée pour la culture fr-FR peut prendre la forme `fr-FR;q=0.7`.  
   
@@ -114,6 +112,6 @@ Une page Web pouvant être affichée n’importe où dans le monde, les opérati
 ## <a name="see-also"></a>Voir aussi
 
 - [Exécution d’opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)
-- [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Analyse de chaînes de date et d’heure](../../../docs/standard/base-types/parsing-datetime.md)

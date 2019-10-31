@@ -1,21 +1,19 @@
 ---
-title: 'Procédure : Désactiver la fonctionnalité de contournement des noms forts'
+title: 'Comment : désactiver la fonctionnalité de contournement de nom fort'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-name bypass feature
 - strong-named assemblies, loading into trusted application domains
 ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 35bf61ffd2a85221cdf33a0304765d94770c1eab
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a4c4ae7ea61a659d3bede532da3c1bdaea448873
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053992"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141102"
 ---
-# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Procédure : Désactiver la fonctionnalité de contournement des noms forts
-À partir du .NET Framework version 3.5 Service Pack 1 (SP1), les signatures de noms forts ne sont pas validées quand un assembly est chargé dans un objet <xref:System.AppDomain> de confiance totale, tel que le <xref:System.AppDomain> par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d’ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La seule restriction est que l’assembly doit être entièrement fiable, car sa zone est entièrement fiable. Le nom fort n’étant pas un facteur déterminant dans ces conditions, il n’y a aucune raison pour qu’il soit validé. Ignorer la validation des signatures de noms forts fournit une amélioration significative des performances.  
+# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Comment : désactiver la fonctionnalité de contournement de nom fort
+À partir du .NET Framework version 3.5 Service Pack 1 (SP1), les signatures de noms forts ne sont pas validées quand un assembly est chargé dans un objet <xref:System.AppDomain> de confiance totale, tel que le <xref:System.AppDomain> par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d'ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La seule restriction est que l’assembly doit être entièrement fiable, car sa zone est entièrement fiable. Le nom fort n’étant pas un facteur déterminant dans ces conditions, il n’y a aucune raison pour qu’il soit validé. Ignorer la validation des signatures de noms forts fournit une amélioration significative des performances.  
   
  Cette fonctionnalité consistant à ignorer la validation s’applique à tout assembly de confiance totale qui n’est pas à signature différée et qui est chargé dans n’importe quel <xref:System.AppDomain> de confiance totale à partir du répertoire spécifié par sa propriété <xref:System.AppDomainSetup.ApplicationBase%2A>.  
   
@@ -48,7 +46,7 @@ ms.locfileid: "71053992"
     </configuration>  
     ```  
   
- Vous pouvez restaurer la fonctionnalité de contournement pour l’application en supprimant le paramètre du fichier de configuration ou en `true`affectant à l’attribut la valeur.  
+ Vous pouvez restaurer la fonctionnalité de contournement pour l’application en supprimant le paramètre du fichier de configuration ou en affectant à l’attribut la valeur `true`.  
   
 > [!NOTE]
 > Vous pouvez activer et désactiver la validation des noms forts pour une application uniquement si la fonctionnalité consistant à ignorer la validation est activée pour l’ordinateur. Si cette fonctionnalité a été désactivée pour l’ordinateur, les noms forts sont validés pour toutes les applications et vous ne pouvez pas ignorer la validation pour une application unique.  
@@ -56,5 +54,5 @@ ms.locfileid: "71053992"
 ## <a name="see-also"></a>Voir aussi
 
 - [Sn.exe (outil Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md)
-- [\<bypassTrustedAppStrongNames >, élément](../../framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)
+- [\<élément bypassTrustedAppStrongNames >](../../framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer un fichier de documentation XML à l’aide de CodeDOM'
+title: Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +9,14 @@ helpviewer_keywords:
 - XML documentation, creating using CodeDOM
 - Code Document Object Model, generating XML documentation
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 283fc91762bc4065bd9bd09efaa2bc0061451ef9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: cdd1f173274b6bd33c4a67ed8eb0974c4c8e8e70
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962724"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130185"
 ---
-# <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Procédure : créer un fichier de documentation XML à l’aide de CodeDOM
+# <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM
 Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentation XML. Le processus implique la création du graphique CodeDOM qui contient les commentaires de documentation XML, la génération du code et la compilation du code généré avec l’option du compilateur qui crée la sortie de documentation XML.  
   
 ### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a>Pour créer un graphique CodeDOM qui contient des commentaires de documentation XML  
@@ -44,7 +42,7 @@ Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentatio
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant crée un graphique CodeDOM avec des commentaires de documentation, génère un fichier de code à partir du graphique, compile le fichier et crée un fichier de documentation XML associé.  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]

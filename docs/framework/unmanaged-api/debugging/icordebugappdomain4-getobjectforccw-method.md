@@ -2,14 +2,12 @@
 title: ICorDebugAppDomain4::GetObjectForCCW, méthode
 ms.date: 03/30/2017
 ms.assetid: 2cacdb85-e7b8-42e7-b310-c3e8c22e5d33
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7ab4905c55a1395e9ae5cba8343e6b832622005d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8b046eb5926bb9aa4738e8fff8e61b0b7c23a3aa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737645"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088827"
 ---
 # <a name="icordebugappdomain4getobjectforccw-method"></a>ICorDebugAppDomain4::GetObjectForCCW, méthode
 Obtient un objet managé à partir d'un pointeur de wrapper CCW (COM Callable Wrapper).  
@@ -28,11 +26,11 @@ HRESULT GetObjectForCCW(
  [in] Pointeur vers un wrapper CCW (COM Callable Wrapper)  
   
  `ppManagedObject`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugValue » qui représente l’objet managé qui correspond au pointeur CCW donné.  
+ à Pointeur vers l’adresse d’un objet « ICorDebugValue » qui représente l’objet managé qui correspond au pointeur CCW donné.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

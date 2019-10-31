@@ -17,17 +17,15 @@ helpviewer_keywords:
 ms.assetid: 898f76e2-16f4-4a63-b7d9-dad2d3824d8a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f97e90e3953a01f07d77e604628fbdb79eb9efa0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8541e7761e2f8e1839d028fdaea3eb71307ba615
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779180"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131197"
 ---
-# <a name="corexemain-function"></a>_CorExeMain, fonction
-Initialise le common language runtime (CLR), recherche le point d’entrée managé dans l’en-tête CLR de l’assembly exécutable et commence l’exécution.  
+# <a name="_corexemain-function"></a>_CorExeMain, fonction
+Initialise le common language runtime (CLR), localise le point d’entrée managé dans l’en-tête CLR de l’assembly exécutable et commence l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +34,20 @@ __int32 STDMETHODCALLTYPE _CorExeMain ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Cette fonction est appelée par le chargeur de processus créés à partir d’assemblys exécutables managés. Pour les assemblys DLL, le chargeur appelle le [_CorDllMain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) fonctionner à la place.  
+ Cette fonction est appelée par le chargeur dans les processus créés à partir d’assemblys exécutables managés. Pour les assemblys DLL, le chargeur appelle la fonction _ [cordllmain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) à la place.  
   
- Le chargeur du système d’exploitation appelle cette méthode, quel que soit le point d’entrée spécifié dans le fichier image.  
+ Le chargeur du système d’exploitation appelle cette méthode quel que soit le point d’entrée spécifié dans le fichier image.  
   
- Dans Windows 98, Windows ME, Windows NT et Windows 2000, le `_CorExeMain` fonction est appelée indirectement via une correction dans le chargeur du système d’exploitation. Dans tous les autres versions de Windows, elle est appelée directement par le chargeur du système d’exploitation.  
+ Dans Windows 98, Windows ME, Windows NT et Windows 2000, la fonction `_CorExeMain` est appelée indirectement par le biais d’une correction dans le chargeur du système d’exploitation. Dans toutes les autres versions de Windows, il est appelé directement par le chargeur du système d’exploitation.  
   
- Pour plus d’informations, consultez la section Remarques dans le [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) rubrique.  
+ Pour plus d’informations, consultez la section Notes de la rubrique _ [CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

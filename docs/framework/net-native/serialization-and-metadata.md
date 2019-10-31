@@ -2,14 +2,12 @@
 title: Sérialisation et métadonnées
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ec8180da9637ec2b2c4e1b432773b4f9f1ac908b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1805b6ca06d584237303d1366222419da3e8b9ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049171"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128121"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
 
@@ -47,7 +45,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 ### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et que vous C# utilisez l’opérateur [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie <xref:System.Type> au paramètre du constructeur, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type :  
+ Si vous appelez un constructeur de ces classes de sérialisation et que vous C# utilisez l’opérateur [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie au paramètre <xref:System.Type> du constructeur, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type :  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -57,7 +55,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- De même, si vous appelez un constructeur tel que <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> et que vous fournissez un <xref:System.Type> tableau d’objets supplémentaires à sérialiser, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre ces types.  
+ De même, si vous appelez un constructeur tel que <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> et fournissez un tableau d’objets <xref:System.Type> supplémentaires à sérialiser, comme dans le code suivant, le compilateur .NET Native ne peut pas résoudre ces types.  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
@@ -73,5 +71,5 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
-- [\<Type >, élément](type-element-net-native.md)
+- [\<> type, élément](type-element-net-native.md)
 - [\<Namespace>, élément](namespace-element-net-native.md)

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0fdeba3-c195-4ece-8caf-79b1f40025d2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5efc83152763c5ef8b65a1fad33460c5354c0dc5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fc205e347fc39fd486d9b8a3fb256a5d29a980a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772429"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110067"
 ---
 # <a name="icordebugtypeenumnext-method"></a>ICorDebugTypeEnum::Next, méthode
-Obtient le nombre d’instances de « ICorDebugType » spécifiée par `celt` à partir de l’énumération, en commençant à la position actuelle.  
+Obtient le nombre d’instances « ICorDebugType » spécifiées par `celt` à partir de l’énumération, en démarrant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +38,15 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre de `ICorDebugType` instances à récupérer.  
+ dans Nombre d’instances de `ICorDebugType` à récupérer.  
   
  `values`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un `ICorDebugType` objet.  
+ à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugType`.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre de `ICorDebugType` instances réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre d’instances `ICorDebugType` réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

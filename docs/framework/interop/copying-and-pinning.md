@@ -7,14 +7,12 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 90ed12862c4cadc45777150deb1b9f91f111bf41
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: f6db7d37293015911c1285d39e19bf7542a7ac59
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750509"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123638"
 ---
 # <a name="copying-and-pinning"></a>copie et épinglage
 
@@ -33,7 +31,7 @@ L’épinglage verrouille temporairement les données dans leur emplacement de m
 Les classes [blittables](blittable-and-non-blittable-types.md) mises en forme ont une disposition fixe (mise en forme) et une représentation commune des données en mémoire managée et non managée. Quand ces types nécessitent d’être marshalés, un pointeur vers l’objet dans le tas est passé directement à l’appelé. L’appelé peut changer le contenu de l’emplacement de mémoire référencé par le pointeur.
 
 > [!NOTE]
-> L’appelé peut changer le contenu de la mémoire si le paramètre est marqué en sortie ou en entrée/sortie. En revanche, l’appelé doit éviter de changer le contenu quand le paramètre est défini pour marshaler en entrée, qui est le paramètre par défaut pour les types blittables mis en forme. La modification d’un objet en entrée génère des problèmes quand la même classe est exportée vers une bibliothèque de types et utilisée pour effectuer des appels entre cloisonnements.
+> L’appelé peut changer le contenu de la mémoire si le paramètre est marqué ou en sortie/sortie. En revanche, l’appelé doit éviter de modifier le contenu lorsque le paramètre a la valeur marshaler comme dans, ce qui correspond à la valeur par défaut pour les types blittables mis en forme. La modification d’un objet en entrée génère des problèmes quand la même classe est exportée vers une bibliothèque de types et utilisée pour effectuer des appels entre cloisonnements.
 
 ## <a name="formatted-non-blittable-classes"></a>Classes non blittables mises en forme
 

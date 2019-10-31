@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: 1c8d9959-95b5-4131-be4a-556d97774014
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 29311f00f5ac4b61380b57cdd9fda07ec7de1b23
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f9d6c4f01b01944c885190f90e2195c3a308490a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966198"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141209"
 ---
 # <a name="iclrgcmanagersetgcstartuplimits-method"></a>ICLRGCManager::SetGCStartupLimits, méthode
 Définit la taille d’un segment de garbage collection et la taille maximale de la génération 0 du système garbage collection.  
   
 > [!IMPORTANT]
-> À partir de la .NET Framework 4,5, vous pouvez définir la taille du segment et la taille maximale de la `DWORD` génération 0 sur des valeurs supérieures à à l’aide de la méthode [ICLRGCManager2:: setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) .  
+> À partir de la .NET Framework 4,5, vous pouvez définir la taille du segment et la taille maximale de la génération 0 sur des valeurs supérieures à `DWORD` à l’aide de la méthode [ICLRGCManager2 :: setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +52,7 @@ HRESULT SetGCStartupLimits (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimits`retourné avec succès.|  
+|S_OK|`SetGCStartupLimits` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -62,14 +60,14 @@ HRESULT SetGCStartupLimits (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- Les valeurs définies `SetGCStartupLimits` par ne peuvent être spécifiées qu’une seule fois. Les appels ultérieurs à `SetGCStartupLimits` sont ignorés.  
+ Les valeurs que `SetGCStartupLimits` définit ne peuvent être spécifiées qu’une seule fois. Les appels ultérieurs à `SetGCStartupLimits` sont ignorés.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -5,14 +5,12 @@ ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4fa8dc3c043665ca2f56facf516cb03e5c6bb9d7
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
-ms.translationtype: HT
+ms.openlocfilehash: 1a0e26d8b0a14e0c77b724fc492588e08762e47f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66421754"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099997"
 ---
 # <a name="using-static-directive-c-reference"></a>using static, directive (référence C#)
 
@@ -22,13 +20,13 @@ La directive `using static` désigne un type dont vous pouvez accéder aux membr
 using static <fully-qualified-type-name>;
 ```
 
-où *fully-qualified-type-name* est le nom du type dont les membres statiques et les types imbriqués peuvent être référencés sans spécifier de nom de type. Si vous ne fournissez pas de nom de type complet (le nom de l’espace de noms complet avec le nom du type), C# génère l’erreur du compilateur [CS0246](../compiler-messages/cs0246.md) : « Le type ou le nom d’espace de noms 'type/espace de noms' est introuvable (une directive using ou une référence d’assembly est-elle manquante ?) ».
+où *fully-qualified-type-name* est le nom du type dont les membres statiques et les types imbriqués peuvent être référencés sans spécifier de nom de type. Si vous ne fournissez pas de nom de type complet (le nom de l’espace de noms complet avec le nom du type), C# génère l’erreur du compilateur [CS0246](../compiler-messages/cs0246.md) : "Le nom du type ou de l’espace de noms 'type/espace_de_nom' est introuvable (il manque peut-être une directive using ou une référence d’assembly).
 
 La directive `using static` s’applique à tout type ayant des membres statiques (ou des types imbriqués), même s’il a également des membres d’instance. Toutefois, les membres d’instance ne peuvent être appelés que par l’instance du type.
 
 La directive `using static` a été introduite avec C# 6.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 En général, quand vous appelez un membre statique, vous indiquez le nom du type, ainsi que le nom du membre. Entrer plusieurs fois le même nom de type pour appeler des membres du type peut produire du code détaillé et peu clair. Par exemple, la définition suivante d’une classe `Circle` référence un certain nombre de membres de la classe <xref:System.Math>.
 
@@ -55,7 +53,7 @@ Dans cet exemple, la directive `using static` aurait également pu être appliqu
 ## <a name="see-also"></a>Voir aussi
 
 - [Directive using](using-directive.md)
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
 - [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)

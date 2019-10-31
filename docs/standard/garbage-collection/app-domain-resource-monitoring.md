@@ -8,14 +8,12 @@ helpviewer_keywords:
 - memory use, monitoring
 - application domains, resource monitoring
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8c7b9d7c2297fe30b02dc9782002413e9f38dc98
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 54e300bef1818fd08f27d7920eec68ee1f2c45bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751539"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141381"
 ---
 # <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application
 
@@ -43,35 +41,35 @@ Dès que ARM est activé, il commence à collecter des données sur tous les dom
 
 ARM fournit le temps processeur total utilisé par un domaine d’application ainsi que trois types d’informations concernant l’utilisation de la mémoire.
 
-- **Temps processeur total pour un domaine d’application, en secondes** : calculé en additionnant les temps de thread signalés par le système d’exploitation pour tous les threads qui ont passé du temps à s’exécuter dans le domaine d’application pendant leur durée de vie. Les threads bloqués ou en veille n'utilisent pas de temps processeur. Lorsqu'un thread appelle en code natif, le temps que le thread passe en code natif est inclus dans le nombre pour le domaine d'application où l'appel a été passé.
+- **Temps processeur total pour un domaine d'application, en secondes** : calculé en additionnant les temps de thread signalés par le système d'exploitation pour tous les threads qui ont passé du temps à s'exécuter dans le domaine d'application pendant leur durée de vie. Les threads bloqués ou en veille n'utilisent pas de temps processeur. Lorsqu'un thread appelle en code natif, le temps que le thread passe en code natif est inclus dans le nombre pour le domaine d'application où l'appel a été passé.
 
   - API managée : propriété <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType>.
 
-  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md).
+  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md).
 
   - Événements ETW : événements `ThreadCreated`, `ThreadAppDomainEnter` et `ThreadTerminated`. Pour plus d’informations sur les fournisseurs et les mots clés, consultez « Événements de contrôle des ressources AppDomain » dans [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md).
 
-- **Allocations managées totales faites par un domaine d’application pendant sa durée de vie, en octets** : les allocations totales ne reflètent pas toujours l’utilisation de la mémoire par un domaine d’application, car les objets alloués peuvent être éphémères. Toutefois, si une application alloue et libère de grandes quantités d'objets, le coût des allocations peut être significatif.
+- **Allocations managées totales faites par un domaine d'application pendant sa durée de vie, en octets** : les allocations totales ne reflètent pas toujours l'utilisation de la mémoire par un domaine d'application, car les objets alloués peuvent être éphémères. Toutefois, si une application alloue et libère de grandes quantités d'objets, le coût des allocations peut être significatif.
 
   - API managée : propriété <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType>.
 
-  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md).
+  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md).
 
   - Événements ETW : événement `AppDomainMemAllocated`, champ `Allocated`.
 
-- **Mémoire managée, en octets, qui est référencée par un domaine d’application et qui a survécu à la collecte bloquante complète la plus récente** : ce nombre est exact uniquement après une collecte bloquante complète. (Les collectes simultanées, au contraire, se produisent en arrière-plan et ne bloquent pas l'application.) Par exemple, la surcharge de méthode <xref:System.GC.Collect?displayProperty=nameWithType> entraîne une collecte bloquante complète.
+- **Mémoire managée, en octets, qui est référencée par un domaine d'application et qui a survécu à la collecte bloquante complète la plus récente** : ce nombre est exact uniquement après une collecte bloquante complète. (Contrairement aux collections simultanées, qui se produisent en arrière-plan et ne bloquent pas l’application.) Par exemple, la surcharge de la méthode <xref:System.GC.Collect?displayProperty=nameWithType> provoque une collection bloquante complète.
 
   - API managée : propriété <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>.
 
-  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md), paramètre `pAppDomainBytesSurvived`.
+  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md), paramètre `pAppDomainBytesSurvived`.
 
   - Événements ETW : événement `AppDomainMemSurvived`, champ `Survived`.
 
-- **Mémoire managée totale, en octets, qui est référencée par le processus et qui a survécu à la collecte bloquante complète la plus récente** : la mémoire ayant survécu des domaines d’application individuels peut être comparée à ce nombre.
+- **Mémoire managée totale, en octets, qui est référencée par le processus et qui a survécu à la collecte bloquante complète la plus récente** : la mémoire ayant survécu des domaines d'application individuels peut être comparée à ce nombre.
 
   - API managée : propriété <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType>.
 
-  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md), paramètre `pTotalBytesSurvived`.
+  - API d’hébergement : méthode [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md), paramètre `pTotalBytesSurvived`.
 
   - Événements ETW : événement `AppDomainMemSurvived`, champ `ProcessSurvived`.
 

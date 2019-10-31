@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 46842618-0fe4-480b-871c-82fba82d23d9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1ec7d615b99ac301948d7ea25318115713ce06ea
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: b02fb0a18bfbc2e93ec204706ca1f17dde5d8c8a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700841"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125710"
 ---
 # <a name="icordebugcodecreatebreakpoint-method"></a>ICorDebugCode::CreateBreakpoint, méthode
 Crée un point d’arrêt dans ce segment de code à l’offset spécifié.  
@@ -48,11 +46,11 @@ HRESULT CreateBreakpoint (
   
  Si ce code est du code MSIL (Microsoft Intermediate Language), et qu’il existe une version native, compilée juste-à-temps (JIT), du code, le point d’arrêt est également appliqué dans le code compilé juste-à-temps. (C’est également le cas si le code est compilé juste-à-temps ultérieurement.)  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

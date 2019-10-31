@@ -7,14 +7,12 @@ helpviewer_keywords:
 - base types
 - type system, base types
 ms.assetid: 028d0ce8-ebc2-4a88-a16f-17508f6d0bd6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e78da65eb8ef7db6dd01c1c1d3d313ac8946431a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 8fa22ce749dc7d117a4a37de5d09abd9892eeab7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051193"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103547"
 ---
 # <a name="working-with-base-types-in-net"></a>Utilisation des types de base dans .NET
 Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.  
@@ -29,7 +27,7 @@ Cette section décrit les opérations de type de base .NET, y compris la mise en
  [Manipulation de chaînes](../../../docs/standard/base-types/manipulating-strings.md)  
  Explique comment manipuler et mettre en forme des chaînes.  
   
- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)  
+ [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
  Explique comment convertir des chaînes en types .NET Framework.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

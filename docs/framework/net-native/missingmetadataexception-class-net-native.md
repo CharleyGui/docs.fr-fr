@@ -2,14 +2,12 @@
 title: MissingMetadataException, classe (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 251d63fe8e025fe73b148c7deb368ab95ca3b1f7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d73d66529bc30358c946eb0a7072f0cb8910b19a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049480"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128286"
 ---
 # <a name="missingmetadataexception-class-net-native"></a>MissingMetadataException, classe (.NET Native)
 
@@ -20,7 +18,7 @@ Exception levée quand la réflexion est utilisée pour récupérer des métadon
 **Espace de noms :** System.Reflection
 
 > [!IMPORTANT]
-> La `MissingMetadataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.
+> La classe `MissingMetadataException` est destinée exclusivement à un usage interne par la chaîne d’outils .NET Native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,9 +35,9 @@ La classe `MissingMetadataException` possède les membres suivants :
 |`public MissingMetadataException()`|Initialise une nouvelle instance de la classe `MissingMetadataException` à l'aide d'un message système qui décrit l'erreur.<br /><br /> Ce constructeur est destiné à un usage interne par la chaîne d’outils .NET Native uniquement.|
 |`public MissingMetadataException(String message)`|Initialise une nouvelle instance de la classe `MissingMetadataException` avec un message d'erreur spécifié.<br /><br /> Ce constructeur est destiné à un usage interne par la chaîne d’outils .NET Native uniquement.|
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Propriétés
 
-|Propriété|Description|
+|Property|Description|
 |--------------|-----------------|
 |`public IDictionary Data { get; }`|Obtient une collection de paires clé/valeur qui fournissent des informations supplémentaires définies par l’utilisateur sur l’exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|
 |`public string HelpLink { get; set; }`|Obtient ou définit un lien vers le fichier d'aide associé à cette exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|
@@ -64,9 +62,9 @@ La classe `MissingMetadataException` possède les membres suivants :
 |`protected Object MemberwiseClone()`|Crée une copie superficielle de l'objet actuel. (Hérité de <xref:System.Object>.)|
 |`public string ToString()`|Retourne la représentation sous forme de chaîne de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|
 
-## <a name="events"></a>Events
+## <a name="events"></a>événements
 
-|Événement|Description|
+|événement|Description|
 |-----------|-----------------|
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Se produit quand une exception est sérialisée pour créer un objet d'état d'exception qui contient des données sérialisées concernant l'exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|
 
@@ -74,7 +72,7 @@ La classe `MissingMetadataException` possède les membres suivants :
 
 L'exception `MissingMetadataException` est levée quand la réflexion est utilisée pour accéder à des métadonnées qui ne sont pas disponibles dans un assembly.
 
-Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML \*),. rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de manière à définir les métadonnées qui doivent être présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).
+Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML), \*. rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de manière à définir les métadonnées qui doivent être présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).
 
 > [!IMPORTANT]
 > Comme cette exception indique que les métadonnées nécessaires à votre application ne sont pas disponibles au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer à l'aide d'un fichier de directives runtime. Pour obtenir l'entrée que vous pouvez ajouter à votre fichier de directives de runtime qui élimine l'exception, vous pouvez utiliser un des deux utilitaires de résolution des problèmes :

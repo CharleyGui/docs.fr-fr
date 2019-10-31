@@ -1,15 +1,13 @@
 ---
 title: Nouveautés de .NET Core 2.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: c208f565bebedc06e244de1f6554129f21c77b8c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: fcac4255e7370f31ea6c26771fdd7d341bafe38b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849936"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100838"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
@@ -56,7 +54,7 @@ Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, 
 
 ## <a name="language-support"></a>Langages pris en charge
 
-En plus de la prise en charge de c# et F#, .NET Core 2.0 prend également en charge Visual Basic.
+En plus de la prise en charge de C# et F#, .NET Core 2.0 prend également en charge Visual Basic.
 
 ### <a name="visual-basic"></a>Visual Basic
 
@@ -112,7 +110,7 @@ Vous pouvez également développer des applications qui ciblent Linux en tant qu
 
 Les bibliothèques de classes .NET Standard 2.0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API présents dans .NET Standard 2.0. Aucune recompilation des bibliothèques .NET Framework n’est requise.
 
-Pour obtenir la liste des API ajoutés à .NET Standard depuis sa dernière version, la version 1.6 .NET Standard, consultez [.NET Standard 2.0 vs. 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
+Pour obtenir la liste des API qui ont été ajoutées au .NET Standard depuis sa dernière version, la .NET Standard 1,6, consultez [.NET Standard 2,0 et 1,6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
 ### <a name="expanded-surface-area"></a>Surface d’exposition étendue
 

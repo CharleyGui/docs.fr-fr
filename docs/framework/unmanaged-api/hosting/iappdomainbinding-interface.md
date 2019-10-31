@@ -14,30 +14,28 @@ helpviewer_keywords:
 ms.assetid: 368881ab-c4ea-4731-bf22-c596aac7c66c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e2c3a3057003d0035bfcb096a94c84d610e3056f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf4fa9c5ec35391a0e772e25112f305bfa6e1564
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985507"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126902"
 ---
 # <a name="iappdomainbinding-interface"></a>IAppDomainBinding, interface
-Fournit une méthode qui est appelée par le common language runtime (CLR) pour notifier l’application hôte qu’un domaine d’application a été créé.  
+Fournit une méthode appelée par le common language runtime (CLR) pour notifier l’application hôte qu’un domaine d’application a été créé.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnAppDomain, méthode](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Appelé par le common language runtime (CLR) pour notifier l’hôte qu’un domaine d’application a été créé.|  
+|[OnAppDomain, méthode](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Appelée par le common language runtime (CLR) pour notifier l’hôte qu’un domaine d’application a été créé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 89940711-98e7-4aa6-bffc-5e39e91e1b7d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 223989d883c421be228fb3d6a608643a5246c060
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1384acff4ea3d1aa820b065cd2c56f649f0cbdbb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763700"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127922"
 ---
 # <a name="icordebugmoduleisinmemory-method"></a>ICorDebugModule::IsInMemory, méthode
 Obtient une valeur qui indique si ce module existe uniquement en mémoire.  
@@ -37,12 +35,12 @@ HRESULT IsInMemory(
   
 ## <a name="parameters"></a>Paramètres  
  `pInMemory`  
- [out] `true` si ce module existe uniquement en mémoire ; sinon, `false`.  
+ [out] `true` si ce module existe uniquement en mémoire ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Le common language runtime (CLR) prend en charge le chargement des modules à partir de flux bruts d’octets. Ces modules sont appelés *en mémoire modules* et n’existent pas sur le disque.  
+ Le common language runtime (CLR) prend en charge le chargement de modules à partir de flux bruts d’octets. Ces modules sont appelés *modules en mémoire* et n’existent pas sur le disque.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

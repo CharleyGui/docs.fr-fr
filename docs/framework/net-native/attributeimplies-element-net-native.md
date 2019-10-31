@@ -1,17 +1,15 @@
 ---
-title: <AttributeImplies>, Élément (.NET Native)
+title: Élément <AttributeImplies> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d15d572ee70e9c7a8cb29010d6debbd1874e5ae2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 94f7813938e2179a2355e6ab2eff22479122d4b1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049903"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128483"
 ---
-# <a name="attributeimplies-element-net-native"></a>\<AttributeImplies >, élément (.NET Native)
+# <a name="attributeimplies-element-net-native"></a>\<élément AttributeImplies > (.NET Native)
 Définit la stratégie pour les éléments de code auxquels l'attribut conteneur est appliqué.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,12 +47,12 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
   
 ## <a name="all-attributes"></a>Tous les attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -69,7 +67,7 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type >, élément](type-element-net-native.md)
+- [\<> type, élément](type-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

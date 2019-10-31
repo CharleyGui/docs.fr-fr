@@ -8,14 +8,12 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET Framework], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 053726b200b73956099ff9274cc8f63f21d8fc64
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: f1913f8c41ba4a7b54f7abcdfb97400503da8ac5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973172"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107153"
 ---
 # <a name="assembly-manifest"></a>Manifeste d'assembly
 Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de données qui décrit comment les éléments de l'assembly sont reliés les uns aux autres. Le manifeste d'assembly contient les métadonnées de l'assembly. Un manifeste d'assembly comprend toutes les métadonnées nécessaires pour spécifier la version requise et l'identité de sécurité de l'assembly, ainsi que toutes les métadonnées nécessaires pour définir la portée de l'assembly et résoudre les références aux ressources et aux classes. Le manifeste d’assembly peut être stocké dans un fichier PE ( *. exe* ou *. dll*) avec le code MSIL (Microsoft Intermediate Language) ou dans un fichier PE autonome qui contient uniquement des informations de manifeste d’assembly.  
@@ -41,7 +39,7 @@ Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de do
 ## <a name="assembly-manifest-contents"></a>Contenu du manifeste de l’assembly  
  Le tableau suivant indique les informations qui figurent dans le manifeste d'assembly. Les quatre premiers éléments suivants : le nom de l’assembly, le numéro de version, la culture et les informations de nom fort constituent l’identité de l’assembly.  
   
-|Information|Description|  
+|Informations|Description|  
 |-----------------|-----------------|  
 |Nom de l'assembly|Chaîne de texte spécifiant le nom de l'assembly.|  
 |Numéro de version|Numéro de version principale et secondaire et numéro de révision et de build. Le Common Language Runtime utilise ces numéros pour appliquer la stratégie de version.|  

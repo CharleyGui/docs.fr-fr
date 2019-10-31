@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fad94e1e-78be-440f-aa43-e0c66e0b102e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb57f6e1f87b9baf61de781033d7d8bfe1639684
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7f9b3e32467a99371f54449128994d990030dbfb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762635"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109623"
 ---
 # <a name="icordebugmodulegeteditandcontinuesnapshot-method"></a>ICorDebugModule::GetEditAndContinueSnapshot, méthode
-Action déconseillée.  
+Obsolète.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +33,7 @@ HRESULT GetEditAndContinueSnapshot(
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

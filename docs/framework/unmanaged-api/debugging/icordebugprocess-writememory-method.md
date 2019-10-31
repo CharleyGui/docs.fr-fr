@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d5c07d86-045d-4391-893b-0bcd2959f90e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4599bf310a0b819bc662b90a5a86e87ac27c37b1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eaf5b9980d55b0efb473b4631a8c052b013d0796
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737019"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137256"
 ---
 # <a name="icordebugprocesswritememory-method"></a>ICorDebugProcess::WriteMemory, méthode
 Écrit des données dans une zone de mémoire dans ce processus.  
@@ -39,23 +37,23 @@ HRESULT WriteMemory(
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] Un `CORDB_ADDRESS` valeur qui est l’adresse de base de la zone de mémoire dans lequel des données est écrites. Avant le transfert de données se produit, le système vérifie que la zone de mémoire de la taille spécifiée, en commençant à l’adresse de base, est accessible en écriture. Si elle n’est pas accessible, la méthode échoue.  
+ dans Valeur `CORDB_ADDRESS` qui est l’adresse de base de la zone mémoire dans laquelle les données sont écrites. Avant le transfert de données, le système vérifie que la zone mémoire de la taille spécifiée, en commençant à l’adresse de base, est accessible en écriture. S’il n’est pas accessible, la méthode échoue.  
   
  `size`  
- [in] Le nombre d’octets à écrire dans la zone de mémoire.  
+ dans Nombre d’octets à écrire dans la zone mémoire.  
   
  `buffer`  
- [in] Une mémoire tampon qui contient les données à écrire.  
+ dans Mémoire tampon qui contient les données à écrire.  
   
  `written`  
- [out] Pointeur vers une variable qui reçoit le nombre d’octets écrits dans la zone de mémoire dans ce processus. Si `written` est NULL, ce paramètre est ignoré.  
+ à Pointeur vers une variable qui reçoit le nombre d’octets écrits dans la zone mémoire de ce processus. Si `written` a la valeur NULL, ce paramètre est ignoré.  
   
 ## <a name="remarks"></a>Notes  
- Données sont automatiquement écrites derrière les points d’arrêt. Dans le .NET Framework version 2.0, les débogueurs natifs n’employez pas cette méthode pour injecter des points d’arrêt dans le flux d’instructions. Utilisez [ICorDebugProcess2::SetUnmanagedBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) à la place.  
+ Les données sont écrites automatiquement derrière des points d’arrêt. Dans la version .NET Framework 2,0, les débogueurs natifs ne doivent pas utiliser cette méthode pour injecter des points d’arrêt dans le flux d’instructions. Utilisez [ICorDebugProcess2 :: SetUnmanagedBreakpoint,](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) à la place.  
   
- Le `WriteMemory` méthode doit être utilisée uniquement en dehors du code managé. Cette méthode peut endommager le runtime pour une utilisation incorrecte.  
+ La méthode `WriteMemory` doit être utilisée uniquement en dehors du code managé. Cette méthode peut endommager le runtime si elle est utilisée de manière incorrecte.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

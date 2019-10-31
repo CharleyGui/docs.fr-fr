@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: b297e3b0-20f9-478f-b707-5e2eecb2b5b2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2f516bf1f19e4d4a77e2d6af834a1c3d4e34c327
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1a732e59d539c330f91e8665e81dc4771b40e2d0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765347"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123287"
 ---
 # <a name="ivalidator-interface"></a>IValidator, interface
-Fournit des méthodes pour la validation des images (PE) exécutables portables et de signalement des erreurs de validation.  
+Fournit des méthodes pour valider des images exécutables portables (PE) et des erreurs de validation de rapport.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|Valider|Valide le fichier de langage intermédiaire (MSIL) PE ou Microsoft spécifié.|  
-|FormatEventInfo|Obtient le message d’erreur correspondant à l’erreur de validation spécifié.|  
+|Valider|Valide le fichier PE ou MSIL (Microsoft Intermediate Language) spécifié.|  
+|FormatEventInfo (|Obtient le message d’erreur correspondant à l’erreur de validation spécifiée.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator.idl, IValidator.h  
+ **En-tête :** IValidator. idl, IValidator. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

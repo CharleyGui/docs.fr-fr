@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0f63400b-dc1c-48d6-b51a-75c3f7f28e03
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ef7619316cae46df350bd75a2c6838828f7e9c82
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: db4f9bc6277015055cbcdb509628f2862a71dbc4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747184"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127155"
 ---
 # <a name="icordebugregistersetgetthreadcontext-method"></a>ICorDebugRegisterSet::GetThreadContext, méthode
 Obtient le contexte du thread actuel.  
@@ -39,17 +37,17 @@ HRESULT GetThreadContext(
   
 ## <a name="parameters"></a>Paramètres  
  `contextSize`  
- [in] La taille, en octets, de la `context` tableau.  
+ dans Taille, en octets, du tableau de `context`.  
   
  `context`  
- [in, out] Un tableau d’octets qui composent le Win32 `CONTEXT` structure pour la plateforme actuelle.  
+ [in, out] Tableau d’octets qui composent la structure de `CONTEXT` Win32 pour la plateforme actuelle.  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur doit appeler cette fonction au lieu de Win32 `GetThreadContext` fonctionner, car le thread peut être dans un état « infiltré » où son contexte a été changé temporairement. Les données retournées sont un Win32 `CONTEXT` structure pour la plateforme actuelle.  
+ Le débogueur doit appeler cette fonction au lieu de la fonction `GetThreadContext` Win32, car le thread peut être dans un État « détourné » dans lequel son contexte a été modifié temporairement. Les données retournées sont une structure de `CONTEXT` Win32 pour la plateforme actuelle.  
   
- Pour les frames, les clients doivent vérifier les registres qui sont valides à l’aide de [ICorDebugRegisterSet::GetRegistersAvailable](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregistersavailable-method.md).  
+ Pour les frames non-feuilles, les clients doivent vérifier quels registres sont valides à l’aide de [ICorDebugRegisterSet :: GetRegistersAvailable,](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregistersavailable-method.md).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

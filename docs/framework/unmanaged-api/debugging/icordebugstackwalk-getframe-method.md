@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4083b505-5b59-44fb-8c5d-129db6a96c10
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 81c3eec9b33f51bd30cf8724eaf010d7cd0b6cd4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 77210edfdc954f38ff06bc43a8b41a6abe8dc3d6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760922"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131835"
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame, méthode
-Obtient le frame actuel le [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objet.  
+Obtient le frame actuel dans l’objet [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,25 +33,25 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
 ## <a name="parameters"></a>Paramètres  
  `pFrame`  
- [in] Pointeur vers l’adresse de l’objet de frame créée qui représente le frame actuel dans la pile.  
+ dans Pointeur vers l’adresse de l’objet Frame créé qui représente le frame actuel dans la pile.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|Le runtime retournée avec succès le frame actuel.|  
+|S_OK|Le runtime a correctement retourné le frame actuel.|  
 |E_FAIL|Le frame actuel n’a pas été retourné.|  
-|S_FALSE|Le frame actuel est un frame de pile native.|  
+|S_FALSE|Le frame actuel est un frame de pile natif.|  
 |E_INVALIDARG|`pFrame` a la valeur null.|  
-|CORDBG_E_PAST_END_OF_STACK|Le pointeur de frame est déjà à la fin de la pile ; Par conséquent, aucun frame supplémentaires ne sont accessibles.|  
+|CORDBG_E_PAST_END_OF_STACK|Le pointeur de frame est déjà à la fin de la pile ; par conséquent, il n’est pas possible d’accéder à des frames supplémentaires.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
 ## <a name="remarks"></a>Notes  
- `ICorDebugStackWalk` retourne uniquement les frames de pile réels. Utilisez le [ICorDebugThread3::GetActiveInternalFrames](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) méthode pour retourner des frames internes. (Les frames internes sont des structures de données envoyées à la pile par le runtime pour stocker des données temporaires).  
+ `ICorDebugStackWalk` retourne uniquement les frames de pile réels. Utilisez la méthode [ICorDebugThread3 :: GetActiveInternalFrames,](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) pour retourner des frames internes. (Les frames internes sont des structures de données faisant l’objet d’un push dans la pile par le runtime pour stocker des données temporaires.)  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

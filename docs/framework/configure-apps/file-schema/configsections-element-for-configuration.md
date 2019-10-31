@@ -7,25 +7,25 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31b53837e24029fc7ff0b576d95c0213041a434e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6024144b6f12df22369366f04c3cbad02c5011d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927672"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119013"
 ---
-# <a name="configsections-element-for-configuration"></a>\<élément > configSections pour \<la configuration >
+# <a name="configsections-element-for-configuration"></a>\<configSections > élément de configuration de \<
 
 Contient la section de configuration et les déclarations d’espace de noms.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections>**
+&nbsp;&nbsp; **\<configSections >**
 
 ## <a name="attributes"></a>Attributs
 
-Aucun
+aucune.
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -37,18 +37,18 @@ Aucun
 
 |     | Description |
 | --- | ----------- |
-| [ **\<section>** ](section-element.md) | Contient une déclaration de section de configuration. |
-| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [ **\<section >** ](section-element.md) | Contient une déclaration de section de configuration. |
+| [ **\<de sectionGroup >** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
 | [ **\<remove>** ](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
 | [ **\<clear>** ](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
 ## <a name="remarks"></a>Notes
 
-Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément  **\<** enfant de l’élément de configuration >.
+Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément enfant de l’élément de **> de configuration\<** .
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment définir une section de configuration et définir les paramètres de cette section:
+L’exemple suivant montre comment définir une section de configuration et définir les paramètres de cette section :
 
 ```xml
 <configuration>

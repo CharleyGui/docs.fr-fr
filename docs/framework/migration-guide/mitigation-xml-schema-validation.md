@@ -1,20 +1,18 @@
 ---
-title: 'Atténuation : validation du schéma XML'
+title: 'Atténuation : Validation du schéma XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d7f53a2e8684029c0d1329d29a88bd1788e62d43
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7feed7de4a6c76f5f2ba0e2ea1c532aad6bde4de
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789679"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126073"
 ---
-# <a name="mitigation-xml-schema-validation"></a>Atténuation : validation du schéma XML
+# <a name="mitigation-xml-schema-validation"></a>Atténuation : Validation du schéma XML
 Dans .NET Framework 4.6, la validation de schéma XSD détecte une violation de contrainte unique si une clé composée est utilisée et qu’une clé est vide.  
   
 ## <a name="impact"></a>Impact  

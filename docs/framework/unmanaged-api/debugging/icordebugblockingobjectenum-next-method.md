@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0121753f-ebea-48d0-aeb2-ed7fda76dc60
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1e94e4da0eea06ce9cc0110002b1def9e4dd4989
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3a1c4a931a61186c4737aada47ceb861e7848e7b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939141"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122828"
 ---
 # <a name="icordebugblockingobjectenumnext-method"></a>ICorDebugBlockingObjectEnum::Next, méthode
 Obtient le nombre spécifié d’objets [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) à partir de l’énumération, en commençant à la position actuelle.  
@@ -57,17 +55,17 @@ HRESULT Next([in] ULONG  celt,
 ## <a name="remarks"></a>Notes  
  Cette méthode fonctionne comme un énumérateur COM classique.  
   
- Les valeurs du tableau d’entrée doivent être au moins `celt`de la taille. Le tableau sera rempli avec les valeurs suivantes `celt` dans l’énumération ou avec toutes les valeurs restantes si elles sont inférieures à. `celt` Lorsque cette méthode est retournée, `pceltFetched` est rempli avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon `celt`inférieure à, `pceltFetched` ou si est un pointeur non valide, le résultat n’est pas défini.  
+ Les valeurs du tableau d’entrée doivent être au moins de la taille `celt`. Le tableau sera rempli avec les valeurs de `celt` suivantes dans l’énumération ou avec toutes les valeurs restantes si moins de `celt` sont conservées. Lorsque cette méthode est retournée, `pceltFetched` est rempli avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon inférieure à `celt`, ou si `pceltFetched` est un pointeur non valide, le résultat n’est pas défini.  
   
 > [!NOTE]
-> Bien que la structure [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) n’ait pas besoin d’être libérée, l’interface «ICorDebugValue» à l’intérieur de celle-ci doit être libérée.  
+> Bien que la structure [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) n’ait pas besoin d’être libérée, l’interface « ICorDebugValue » à l’intérieur de celle-ci doit être libérée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

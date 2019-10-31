@@ -14,14 +14,12 @@ helpviewer_keywords:
 - BlessIWbemServices function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e00197b72ca7fc8941475ae51159351d53da12d3
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 946d29892052ea69c2a8a3bf11e7be7a1b2d7068
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855971"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138781"
 ---
 # <a name="blessiwbemservices-function"></a>BlessIWbemServices, fonction
 Indique si les informations d’identification de l’utilisateur autorisent l’accès à la classe [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) spécifiée.   
@@ -50,7 +48,7 @@ dans Pointeur vers l’objet [IWbemServices](/windows/desktop/api/wbemcli/nn-wbe
 dans Nom d’utilisateur.
 
 `strPassword`\
-dans Mot de passe associé `strUser`à.
+dans Mot de passe associé à `strUser`.
 
 `strAuthority`\
 dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la fonction [ConnectServerWmi](connectserverwmi.md) .
@@ -65,7 +63,7 @@ dans Niveau d’autorisation.
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *winerror. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | Un ou plusieurs arguments ne sont pas valides. |
 | `E_POINTER` | 0x80004003 | `pIWbemServices` a la valeur `null`. | 
@@ -73,11 +71,11 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 | `E_OUTOFMEMORY` | 0x80000002 | La mémoire disponible est insuffisante pour effectuer l’opération. | 
 | `S_OK` | 0 | L’appel de la fonction a réussi. | 
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

@@ -4,16 +4,14 @@ description: Vous trouverez ici de petits didacticiels simples qui vous permettr
 helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
-author: rpetrusha
-ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: b921db9abb65a1d470ada86784ecba1b649c9f09
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 7ea84f9bb815b7080625508bd28364bc75255afe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182440"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099951"
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C\#
 
@@ -47,7 +45,7 @@ Les rubriques suivantes sont disponibles :
 
     Fournit des informations sur les concepts de la programmation C# et explique comment effectuer différentes tâches en C#.
 
-- [Référence C#](../language-reference/index.md)
+- [Informations de référence sur C#](../language-reference/index.md)
 
     Fournit des informations de référence détaillées sur les mots clés C#, les opérateurs, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur.
 

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4d946ad4-3c19-42cb-bec9-8633325ba769
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b712ee0bb8e67f448b7ea2bee3c092367181abad
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c927dcde99f5217ee7c160359385e0b953034380
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740208"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132239"
 ---
 # <a name="cordebugexceptioncallbacktype-enumeration"></a>CorDebugExceptionCallbackType, énumération
-Indique le type de rappel effectué à partir d’un [ICorDebugManagedCallback2::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) événement.  
+Indique le type de rappel effectué à partir d’un événement [ICorDebugManagedCallback2 :: exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,11 +40,11 @@ typedef enum CorDebugExceptionCallbackType {
 |Membre|Description|  
 |------------|-----------------|  
 |`DEBUG_EXCEPTION_FIRST_CHANCE`|Une exception a été levée.|  
-|`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|Le processus de clôture d’exception entré le code utilisateur.|  
-|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Le processus de clôture d’exception trouvé un `catch` bloquer dans le code utilisateur.|  
+|`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|L’exception Windup processus a entré le code utilisateur.|  
+|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Le processus Windup de l’exception a trouvé un bloc `catch` dans le code utilisateur.|  
 |`DEBUG_EXCEPTION_UNHANDLED`|L’exception n’a pas été gérée.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

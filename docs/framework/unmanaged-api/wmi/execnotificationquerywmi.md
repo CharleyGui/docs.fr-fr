@@ -14,14 +14,12 @@ helpviewer_keywords:
 - ExecNotificationQueryWmi function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5cfe54c7c9b7ae707b2d3591afbd830bac171f0b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 3d8a7683eef52a5e91bf7aa84d5aa7db7dbdac8d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798644"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130448"
 ---
 # <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi, fonction
 
@@ -58,13 +56,13 @@ dans Texte de la requête. Ce paramètre ne peut pas être `null`.
 `lFlags`\
 dans Combinaison des deux indicateurs suivants qui affectent le comportement de cette fonction. Ces valeurs sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code.
 
-| Constante | Valeur  | Description  |
+| Constante | valeur  | Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | L’indicateur provoque un appel semi-synchrone. Si cet indicateur n’est pas défini, l’appel échoue. Cela est dû au fait que les événements sont reçus en continu, ce qui signifie que l’utilisateur doit interroger l’énumérateur retourné. Le blocage de cet appel rend indéfiniment impossible. |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | La fonction retourne un énumérateur avant uniquement. En général, les énumérateurs avant uniquement sont plus rapides et utilisent moins de mémoire que les énumérateurs conventionnels, mais ils n’autorisent pas les appels à [cloner](clone.md). |
 
 `pCtx`\
-dans En général, cette valeur `null`est. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les événements demandés.
+dans En général, cette valeur est `null`. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les événements demandés.
 
 `ppEnum`\
 à Si aucune erreur ne se produit, reçoit le pointeur vers l’énumérateur qui permet à l’appelant de récupérer les instances dans le jeu de résultats de la requête. Pour plus d’informations, consultez la section [Notes](#remarks) .
@@ -91,14 +89,14 @@ dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | L’utilisateur n’a pas l’autorisation d’afficher une ou plusieurs des classes que la fonction peut retourner. |
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 | `WBEM_E_INVALID_CLASS` | 0x80041010 | La requête spécifie une classe qui n’existe pas. |
 | `WBEMESS_E_REGISTRATION_TOO_PRECISE` | 0x80042002 | Une précision trop importante a été demandée pour la remise des événements. Une plus grande tolérance d’interrogation doit être spécifiée. |
-| `WBEMESS_E_REGISTRATION_TOO_BROAD` | 0x80042001 | La requête demande plus d’informations que la gestion de Windows. Cette `HRESULT` valeur est retournée lorsqu’une requête d’événement entraîne une demande d’interrogation de tous les objets d’un espace de noms. |
+| `WBEMESS_E_REGISTRATION_TOO_BROAD` | 0x80042001 | La requête demande plus d’informations que la gestion de Windows. Cette `HRESULT` est retournée lorsqu’une requête d’événement entraîne une demande d’interrogation de tous les objets d’un espace de noms. |
 | `WBEM_E_INVALID_QUERY` | 0x80041017 | La requête comportait une erreur de syntaxe. |
 | `WBEM_E_INVALID_QUERY_TYPE` | 0x80041018 | Le langage de requête demandé n’est pas pris en charge. |
 | `WBEM_E_QUOTA_VIOLATION` | 0x8004106c | La requête est trop complexe. |
@@ -112,17 +110,17 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemServices :: ExecNotificationQuery](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-execnotificationquery) .
 
-Une fois que la fonction a retourné une valeur, l' `ppEnum` appelant passe régulièrement l’objet retourné à la fonction [suivante](next.md) pour voir si des événements sont disponibles.
+Une fois que la fonction a retourné une valeur, l’appelant passe régulièrement l’objet `ppEnum` retourné à la fonction [suivante](next.md) pour voir si des événements sont disponibles.
 
-Il existe des limites concernant le nombre `AND` de `OR` Mots clés et qui peuvent être utilisés dans les requêtes WQL. Un grand nombre de mots clés WQL utilisés dans une requête complexe peut faire en sorte `WBEM_E_QUOTA_VIOLATION` `HRESULT` que WMI retourne le code d’erreur (ou 0x8004106c) en tant que valeur. La limite des mots clés WQL dépend de la complexité de la requête.
+Il existe des limites quant au nombre de mots clés `AND` et `OR` qui peuvent être utilisés dans les requêtes WQL. Un grand nombre de mots clés WQL utilisés dans une requête complexe peut faire en sorte que WMI retourne le code d’erreur `WBEM_E_QUOTA_VIOLATION` (ou 0x8004106c) sous la forme d’une valeur `HRESULT`. La limite des mots clés WQL dépend de la complexité de la requête.
 
 Si l’appel de fonction échoue, vous pouvez obtenir des informations supplémentaires sur l’erreur en appelant la fonction [GetErrorInfo](geterrorinfo.md) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

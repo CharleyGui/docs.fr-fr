@@ -11,18 +11,16 @@ helpviewer_keywords:
 - Ilasm.exe
 - verifying MSIL performance
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b8d1ad081c8d783cd18054078a6eeb82428faa4d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: cb995e78e534048043886070536ef0dd0a45c057
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044632"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105091"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
-L'Assembleur IL génère un fichier PE (Portable Executable) en langage IL (Intermediate Language). (Pour plus d’informations sur le langage IL, consultez [Processus d’exécution managée](../../standard/managed-execution-process.md).) Vous pouvez exécuter le fichier exécutable obtenu, qui comporte le langage IL et les métadonnées nécessaires, pour déterminer si le langage IL fonctionne comme prévu.
+L'Assembleur IL génère un fichier PE (Portable Executable) en langage IL (Intermediate Language). (Pour plus d’informations sur IL, consultez [processus d’exécution managée](../../standard/managed-execution-process.md).) Vous pouvez exécuter le fichier exécutable obtenu, qui contient le langage IL et les métadonnées requises, pour déterminer si le langage IL fonctionne comme prévu.
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
@@ -38,7 +36,7 @@ ilasm [options] filename [[options]filename...]
 
 | Argument | Description |
 | -------- | ----------- |
-|`filename`|Nom du fichier source .il. Ce fichier est composé de directives de déclaration de métadonnées et d'instructions IL symboliques. Plusieurs arguments du fichier source peuvent être fournis pour générer un seul fichier exécutable portable avec *Ilasm.exe*. **Remarque :** vérifiez que la dernière ligne de code du fichier source .il comporte un espace blanc de fin ou un caractère de fin de ligne.|
+|`filename`|Nom du fichier source .il. Ce fichier est composé de directives de déclaration de métadonnées et d'instructions IL symboliques. Plusieurs arguments du fichier source peuvent être fournis pour générer un seul fichier exécutable portable avec *Ilasm.exe*. **Remarque :** Vérifiez que la dernière ligne de code du fichier source .il comporte un espace blanc de fin ou un caractère de fin de ligne.|
 
 | Option | Description |
 | ------ | ----------- |
@@ -47,7 +45,7 @@ ilasm [options] filename [[options]filename...]
 |**/appcontainer**|Produit un fichier *.dll* ou *.exe* qui s'exécute dans le conteneur d’application Windows comme sortie.|
 |**/arm**|Spécifie l'ordinateur (ARM) Advanced RISC comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/32bitpreferred**.|
 |**/base:** `integer`|Assigne à ImageBase la valeur spécifiée par `integer` dans l'en-tête Optional NT. Lorsque la directive IL .imagebase est spécifiée dans le fichier, cette option se substitue à elle.|
-|**/clock**|Calcule et indique la durée des compilations suivantes, en millisecondes, pour le fichier source .il :<br /><br /> **Total Run** : Durée totale d’exécution de toutes les opérations spécifiques qui suivent.<br /><br /> **Startup** : Chargement et ouverture du fichier.<br /><br /> **Emitting MD** : Envoi des métadonnées.<br /><br /> **Ref to Def Resolution** : Résolution des références aux définitions dans le fichier.<br /><br /> **CEE File Generation** : Génération de l’image du fichier en mémoire.<br /><br /> **Écriture du fichier PE** : Écriture de l’image dans un fichier PE.|
+|**/clock**|Calcule et indique la durée des compilations suivantes, en millisecondes, pour le fichier source .il :<br /><br /> **Total Run**: Durée totale de l'exécution de toutes les opérations spécifiques qui suivent.<br /><br /> **Startup**: Chargement et ouverture du fichier.<br /><br /> **Emitting MD**: Émission de métadonnées.<br /><br /> **Ref to Def Resolution**: Résolution des références aux définitions dans le fichier.<br /><br /> **CEE File Generation**: Génération de l'image du fichier en mémoire.<br /><br /> **PE File Writing**: Écriture de l'image dans un fichier PE.|
 |**/debug**[:**IMPL**&#124;**OPT**]|Inclut des informations de débogage (noms des variables locales et des arguments et numéros de ligne). Crée un fichier PDB.<br /><br /> **/debug** sans valeur supplémentaire désactive l'optimisation JIT et utilise des points de séquence du fichier PDB.<br /><br /> **IMPL** désactive l'optimisation JIT et utilise des points de séquence implicites.<br /><br /> **OPT** active l'optimisation JIT et utilise des points de séquence implicites.|
 |**/dll**|Génère un fichier *.dll* en tant que sortie.|
 |**/enc:** `file`|Crée des deltas Modifier && Continuer à partir du fichier source spécifié.<br /><br /> Cet argument est utilisé uniquement à titre d'information et n'est pas pris en charge pour une utilisation commerciale.|
@@ -65,7 +63,7 @@ ilasm [options] filename [[options]filename...]
 |**/noautoinherit**|Désactive l'héritage par défaut de <xref:System.Object> lorsque aucune classe de base n'est spécifiée.|
 |**/nocorstub**|Supprime la génération du stub CORExeMain.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|
-|**/output:** `file.ext`|Spécifie le nom du fichier de sortie et son extension. Le nom du fichier de sortie est, par défaut, le même que le nom du premier fichier source. L’extension par défaut est *.exe*. Si vous spécifiez l'option **/dll**, l'extension par défaut est *.dll*. **Remarque :** La spécification de **/output**:myfile.dll ne définit pas l’option **/dll**. Si vous ne spécifiez pas l’option **/dll**, il en résultera un fichier exécutable nommé *myfile.dll*.|
+|**/output:** `file.ext`|Spécifie le nom du fichier de sortie et son extension. Le nom du fichier de sortie est, par défaut, le même que le nom du premier fichier source. L’extension par défaut est *.exe*. Si vous spécifiez l'option **/dll**, l'extension par défaut est *.dll*. **Remarque :** La spécification de **/output:** myfile.dll ne définit pas l’option **/dll**. Si vous ne spécifiez pas l’option **/dll**, il en résultera un fichier exécutable nommé *myfile.dll*.|
 |**/optimize**|Optimise les instructions allongées en instructions abrégées. Par exemple, `br` en `br.s`.|
 |**/pe64**|Crée une image 64 bits (PE32+).<br /><br /> Si aucun processeur cible n'est spécifié, la valeur par défaut est `/itanium`.|
 |**/pdb**|Crée un fichier PDB sans activer le suivi des informations de débogage.|
@@ -79,7 +77,7 @@ ilasm [options] filename [[options]filename...]
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
 > [!NOTE]
-> Aucune option d’*Ilasm.exe* ne respecte la casse et toutes se reconnaissent à leurs trois premières lettres. Par exemple, **/lis** équivaut à **/listing** et **/res:** myresfile.res équivaut à **/resource:** myresfile.res. Les options spécifiant des arguments prennent en charge les deux-points (:) ou le signe égal (=) en tant que séparateur entre l'option et l'argument. Par exemple, **/output**:*file.ext* équivaut à **/output**=*file.ext*.
+> Aucune option d’*Ilasm.exe* ne respecte la casse et toutes se reconnaissent à leurs trois premières lettres. Par exemple, **/lis** est équivalent à **/Listing** et **/res**: myresfile. res équivaut à **/Resource**: myresfile. res. Les options qui spécifient des arguments acceptent un signe deux-points ( :) ou un signe égal (=) comme séparateur entre l’option et l’argument. Par exemple, **/output**:*file.ext* équivaut à **/output**=*file.ext*.
 
 ## <a name="remarks"></a>Notes
 

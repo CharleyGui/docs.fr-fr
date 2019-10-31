@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5f6c2bcd-8102-4e3b-abc5-86ab0bd62def
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 76fbbb3f924f610b604586dca78cab344217b544
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d0394d511197c8d0aaa366ce7b791216a3d226bc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739461"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120193"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState, énumération
 Indique l'état de l'utilisateur d'un thread.  
@@ -44,24 +42,24 @@ typedef enum CorDebugUserState {
   
 ## <a name="members"></a>Membres  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |`USER_STOP_REQUESTED`|Un arrêt du thread a été demandé.|  
 |`USER_SUSPEND_REQUESTED`|Une suspension du thread a été demandée.|  
 |`USER_BACKGROUND`|Le thread s’exécute en arrière-plan.|  
-|`USER_UNSTARTED`|Le thread n’a pas démarré l’exécution.|  
+|`USER_UNSTARTED`|Le thread n’a pas commencé à s’exécuter.|  
 |`USER_STOPPED`|Le thread a été arrêté.|  
-|`USER_WAIT_SLEEP_JOIN`|Le thread est en attente d’un autre thread effectuer une tâche.|  
+|`USER_WAIT_SLEEP_JOIN`|Le thread attend qu’un autre thread termine une tâche.|  
 |`USER_SUSPENDED`|Le thread a été suspendu.|  
-|`USER_UNSAFE_POINT`|Le thread est à un point non sécurisé. Autrement dit, le thread est à un point d’exécution où il peut bloquer le garbage collection.<br /><br /> Déboguer des événements peuvent être distribués à partir de points non sécurisés, mais la suspension d’un thread à un point non sécurisé est très susceptible de provoquer un blocage jusqu'à ce que le thread est repris. Les points sécurisés et sont déterminés par le juste-à-temps (JIT) et l’implémentation de garbage collection.|  
-|`USER_THREADPOOL`|Le thread est le pool de threads.|  
+|`USER_UNSAFE_POINT`|Le thread se trouve à un point non sécurisé. Autrement dit, le thread est à un point d’exécution où il peut bloquer garbage collection.<br /><br /> Les événements de débogage peuvent être distribués à partir de points non sécurisés, mais l’interruption d’un thread à un point non sécurisé entraîne très probablement un blocage jusqu’à la reprise du thread. Les points sécurisés et non sécurisés sont déterminés par l’implémentation juste-à-temps (JIT, Just-in-Time) et garbage collection.|  
+|`USER_THREADPOOL`|Le thread provient du pool de threads.|  
   
 ## <a name="remarks"></a>Notes  
- L’état utilisateur d’un thread est l’état que le thread a lorsque le débogueur l’examine. Un thread peut avoir une combinaison des États de l’utilisateur.  
+ L’état utilisateur d’un thread est l’état que le thread a lorsque le débogueur l’examine. Un thread peut avoir une combinaison d’États utilisateur.  
   
- Utilisez le [ICorDebugThread::GetUserState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) méthode pour récupérer l’état utilisateur d’un thread.  
+ Utilisez la méthode [ICorDebugThread :: GetUserState,](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) pour récupérer l’état utilisateur d’un thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

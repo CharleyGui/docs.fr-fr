@@ -2,14 +2,12 @@
 title: Exceptions du runtime dans les applications natives .NET
 ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 27a2e0906343d115c47230c726efb74cd51d4c93
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3132e2c9502c91cbfa0b120f664fd0c6f99a2663
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049162"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128141"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Exceptions du runtime dans les applications natives .NET
 Il est important de tester les versions release de votre application de plateforme Windows universelle sur leurs plateformes cibles, car les configurations debug et release sont totalement différentes. Par défaut, la configuration debug utilise le runtime .NET Core pour compiler votre application, mais la configuration release utilise .NET Native pour compiler votre application en code natif.  
@@ -28,7 +26,7 @@ Il est important de tester les versions release de votre application de platefor
   
 - La taille de votre fichier exécutable est réduite autant que possible. L’une des façons employées par .NET Native pour réduire la taille d’un fichier exécutable est en filtrant considérablement les messages d’exception d’exécution, un sujet abordé de façon plus détaillée dans la section [Runtime exception messages](#Messages) .  
   
-- Votre code est largement optimisé. Cela signifie que cette incorporation est utilisée dès que possible. (L’incorporation déplace le code depuis les routines externes vers la routine d’appel.)   Le fait que .NET Native fournisse un runtime spécialisé et implémente une incorporation agressive affecte la pile des appels qui s’affiche lors du débogage.  Pour plus d’informations, consultez la section [Runtime call stack](#CallStack) .  
+- Votre code est largement optimisé. Cela signifie que cette incorporation est utilisée dès que possible. (L’incorporation déplace le code des routines externes dans la routine d’appel.)   Le fait que .NET Native fournit un Runtime spécialisé et implémente une incorporation agressive affecte la pile des appels qui s’affiche lors du débogage.  Pour plus d’informations, consultez la section [Runtime call stack](#CallStack) .  
   
 > [!NOTE]
 > Vous pouvez déterminer si les versions debug et release sont compilées avec la chaîne d’outils .NET Native en cochant ou non la case **Compiler avec la chaîne de l’outil du code natif .NET** .   Notez quand même que le Windows Store compile toujours la version de production de votre application avec la chaîne d’outils .NET Native.  
@@ -62,4 +60,4 @@ Additional information: Value does not fall within the expected range.
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage .NET Native des applications universelles Windows](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
-- [Prise en main](getting-started-with-net-native.md)
+- [Bien démarrer](getting-started-with-net-native.md)

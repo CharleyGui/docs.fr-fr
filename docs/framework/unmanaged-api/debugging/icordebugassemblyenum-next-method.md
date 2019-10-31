@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b3e7d0c2-3baa-4ef8-8e3f-b865cf252940
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 00adc852a0940766cdd4188ffa5d6be2b472e51f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86fa44b609b4b89cfaa28f0bfa7bbdce6217623f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744879"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122857"
 ---
 # <a name="icordebugassemblyenumnext-method"></a>ICorDebugAssemblyEnum::Next, méthode
 Obtient le nombre spécifié d’assemblys à partir de la collection, en commençant à la position actuelle du curseur.  
@@ -40,15 +38,15 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’assemblys à récupérer.  
+ dans Nombre d’assemblys à récupérer.  
   
  `values`  
- [out] Tableau de pointeurs, chacun pointant vers un objet ICorDebugAssembly qui représente un assembly.  
+ à Tableau de pointeurs, chacun pointant vers un objet ICorDebugAssembly qui représente un assembly.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre d’assemblys réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre d’assemblys réellement retournés. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

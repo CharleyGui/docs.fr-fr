@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Référencer un assembly avec nom fort'
+title: 'Comment : référencer un assembly avec nom fort'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, compile-time references
@@ -7,20 +7,18 @@ helpviewer_keywords:
 - assemblies [.NET Framework], strong-named
 - assembly binding, strong-named
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 324cd42a2781202f19e7e1cb5055d571f0c58cf5
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 427550e1fbeb38cefbb4afe97d80e198ac2d6cb0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973130"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127631"
 ---
-# <a name="how-to-reference-a-strong-named-assembly"></a>Procédure : Référencer un assembly avec nom fort
+# <a name="how-to-reference-a-strong-named-assembly"></a>Comment : référencer un assembly avec nom fort
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
   
 Une référence au moment de la compilation se produit lorsque vous indiquez au compilateur que l’assembly à compiler fait explicitement référence à un autre assembly. Quand vous utilisez le référencement au moment de la compilation, le compilateur obtient automatiquement la clé publique de l’assembly avec nom fort ciblé et la place dans la référence d’assembly de l’assembly compilé.
@@ -44,11 +42,11 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
 
 ## <a name="make-a-run-time-reference-to-a-strong-named-assembly"></a>Effectuer une référence au moment de l’exécution à un assembly avec nom fort  
   
-Quand vous faites référence à un assembly avec nom fort, par exemple à l’aide de la <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> méthode ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> , vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
+Quand vous effectuez une référence au moment de l’exécution à un assembly avec nom fort, par exemple à l’aide de la méthode <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>, vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
 
 \<*nom_assembly*> **,** \<*numéro_version*> **,** \<*culture*> **,** \<*jeton_clé_publique*>  
 
-Par exemple :  
+Exemple :  
 
 ```console
 myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33   

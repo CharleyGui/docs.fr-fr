@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir et exécuter des méthodes dynamiques'
+title: Guide pratique pour définir et exécuter des méthodes dynamiques
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +9,14 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b5c6de2bde111ae459dbcfa1c0a7363d406f5f80
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 7da9d0bea755b90f73077fcd56558ed66a80e2eb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928259"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130149"
 ---
-# <a name="how-to-define-and-execute-dynamic-methods"></a>Procédure : définir et exécuter des méthodes dynamiques
+# <a name="how-to-define-and-execute-dynamic-methods"></a>Guide pratique pour définir et exécuter des méthodes dynamiques
 Les procédures suivantes montrent comment définir et exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe. Pour plus d’informations sur les méthodes dynamiques, consultez la classe <xref:System.Reflection.Emit.DynamicMethod> et [Scénarios de méthodes dynamiques avec Émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
   
 ### <a name="to-define-and-execute-a-dynamic-method"></a>Pour définir et exécuter une méthode dynamique  
@@ -101,7 +99,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]
      [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple de code suivant montre une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe.  
   
  La méthode dynamique simple prend un argument, un entier 32 bits, et retourne le carré 64 bits de cet entier. Un délégué générique est utilisé pour appeler la méthode.  

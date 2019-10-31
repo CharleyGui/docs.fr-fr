@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 22d2e339-f174-40b5-a478-0b744501566f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 489ea22e17178398f53e103da04a47e8fe15a936
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 693ec07176f80711709cd9b85c6886bea8be74b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738922"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122968"
 ---
 # <a name="iclrdataenummemoryregionsenummemoryregions-method"></a>ICLRDataEnumMemoryRegions::EnumMemoryRegions, méthode
 Énumère les zones de mémoire spécifiées.  
@@ -39,23 +37,23 @@ HRESULT EnumMemoryRegions (
   
 ## <a name="parameters"></a>Paramètres  
  `callback`  
- [in] Un pointeur vers un [ICLRDataEnumMemoryRegionsCallback](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md) instance qui est appelée par cette méthode pour chaque région de mémoire énumérée, afin d’informer le débogueur du résultat.  
+ dans Pointeur vers une instance [ICLRDataEnumMemoryRegionsCallback](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md) qui est appelée par cette méthode pour chaque région de mémoire qui est énumérée pour notifier le débogueur du résultat.  
   
- L’énumération des régions de la mémoire continue même si le rappel indique un échec.  
+ L’énumération des régions de la mémoire se poursuit même si le rappel indique un échec.  
   
  `miniDumpFlags`  
- [in] Non utilisé.  
+ dans Non utilisé.  
   
  `clrFlags`  
- [in] Une valeur de la [CLRDataEnumMemoryFlags](../../../../docs/framework/unmanaged-api/debugging/clrdataenummemoryflags-enumeration.md) énumération qui spécifie les régions de mémoire à énumérer.  
+ dans Valeur de l’énumération [CLRDataEnumMemoryFlags,](../../../../docs/framework/unmanaged-api/debugging/clrdataenummemoryflags-enumeration.md) qui spécifie les régions de mémoire à énumérer.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode utilise spécifié [ICLRDataEnumMemoryRegionsCallback](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md) instance pour informer l’appelant des résultats.  
+ Cette méthode utilise l’instance [ICLRDataEnumMemoryRegionsCallback](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md) spécifiée pour notifier les résultats à l’appelant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

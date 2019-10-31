@@ -9,14 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: af9b87e83def5578ea38e94a4f69c657ac5f7c99
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: d647a8cd73fa714e86454687a25501259f894f6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631433"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120711"
 ---
 # <a name="com-wrappers"></a>Wrappers COM
 COM diffère du modèle objet de runtime .NET sur plusieurs points importants :  
@@ -39,4 +37,4 @@ COM diffère du modèle objet de runtime .NET sur plusieurs points importants 
 - [Wrapper pouvant être appelé par le runtime](runtime-callable-wrapper.md)
 - [Wrapper CCW (COM Callable Wrapper)](com-callable-wrapper.md)
 - [Personnalisation de wrappers standard dans .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [Guide pratique pour personnaliser des wrappers RCW dans .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))
+- [Comment : personnaliser des wrappers pouvant être appelés par le runtime dans .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))

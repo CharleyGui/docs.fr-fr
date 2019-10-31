@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7070b6d0-f2e0-44ff-b124-0944cd807e69
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 052c467f5570119cd08b4719c768d178dd52aba2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 78402e5e099815fe309618e692285de91b8b29f7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752211"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124238"
 ---
 # <a name="icordebugevalabort-method"></a>ICorDebugEval::Abort, méthode
-Abandonne le calcul que cet objet ICorDebugEval exécute actuellement.  
+Abandonne le calcul actuellement effectué par cet objet ICorDebugEval.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,9 +32,9 @@ HRESULT Abort ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Si l’évaluation est imbriquée et qu’il n’est pas la plus récente, la `Abort` méthode peut échouer.  
+ Si l’évaluation est imbriquée et qu’elle n’est pas la plus récente, la méthode `Abort` peut échouer.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

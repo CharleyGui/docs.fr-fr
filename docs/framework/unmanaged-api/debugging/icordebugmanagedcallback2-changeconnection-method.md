@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7263f9a9-4c0b-4d82-a181-288873fb2b18
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f8a8f84d3dfd8f1e64197078d7e20d2aebef2323
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4558074bc23334bd697461a00ccb31db3e3fe397
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761224"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130598"
 ---
 # <a name="icordebugmanagedcallback2changeconnection-method"></a>ICorDebugManagedCallback2::ChangeConnection, méthode
 Notifie le débogueur que l’ensemble des tâches associées à la connexion spécifiée a changé.  
@@ -38,21 +36,21 @@ HRESULT ChangeConnection (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet « ICorDebugProcess » qui représente le processus contenant la connexion qui a changé.  
+ dans Pointeur vers un objet « ICorDebugProcess » qui représente le processus contenant la connexion qui a changé.  
   
  `dwConnectionId`  
- [in] ID de la connexion qui a changé.  
+ dans ID de la connexion qui a changé.  
   
 ## <a name="remarks"></a>Notes  
- Un `ChangeConnection` rappel est déclenché dans les cas suivants :  
+ Un rappel de `ChangeConnection` est déclenché dans l’un des cas suivants :  
   
-- Quand un débogueur est attaché à un processus qui contient les connexions. Dans ce cas, le runtime générer et distribuer un [ICorDebugManagedCallback2::CreateConnection](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-createconnection-method.md) événement et un `ChangeConnection` événement pour chaque connexion dans le processus. Un `ChangeConnection` événement est généré pour chaque connexion existante, quel que soit le qu’ensemble de la connexion de tâches a été modifié depuis sa création.  
+- Quand un débogueur est attaché à un processus qui contient des connexions. Dans ce cas, le runtime génère et distribue un événement [ICorDebugManagedCallback2 :: CreateConnection](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-createconnection-method.md) et un événement `ChangeConnection` pour chaque connexion dans le processus. Un événement `ChangeConnection` est généré pour chaque connexion existante, que l’ensemble de tâches de cette connexion ait été modifié ou non depuis sa création.  
   
-- Lorsqu’un hôte appelle [ICLRDebugManager::SetConnectionTasks](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md) dans le [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md).  
+- Lorsqu’un hôte appelle [ICLRDebugManager :: SetConnectionTasks](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md) dans l' [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
- Le débogueur doit analyser tous les threads dans le processus pour récupérer les nouvelles modifications.  
+ Le débogueur doit analyser tous les threads du processus pour récupérer les nouvelles modifications.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 84296b55-c2c5-424c-ac9c-8e28e2895945
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f6f5cd47abd4c17021bc324898a096ff70a3db2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5a957a042875b546a18a17422f355b712756e91c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739993"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098168"
 ---
 # <a name="cordebughandletype-enumeration"></a>CorDebugHandleType, énumération
 Indique le type de handle.  
@@ -39,10 +37,10 @@ typedef enum CorDebugHandleType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`HANDLE_STRONG`|Le handle est fort, ce qui empêche un objet d’être récupéré par le garbage collection.|  
-|`HANDLE_WEAK_TRACK_RESURRECTION`|Le handle est faible, ce qui n’empêche pas un objet d’être récupéré par le garbage collection.<br /><br /> Le handle n’est plus valide lorsque l’objet est collecté.|  
+|`HANDLE_STRONG`|Le handle est fort, ce qui empêche la récupération d’un objet par garbage collection.|  
+|`HANDLE_WEAK_TRACK_RESURRECTION`|Le descripteur est faible, ce qui n’empêche pas un objet d’être récupéré par garbage collection.<br /><br /> Le descripteur devient non valide lors de la collecte de l’objet.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

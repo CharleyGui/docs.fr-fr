@@ -14,14 +14,12 @@ helpviewer_keywords:
 - SetSecurity function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 94c76213acb66116105d181e9961a33976047ee7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6d27779bcfc97e1c4156b8782896e83d4754491b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798237"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120224"
 ---
 # <a name="setsecurity-function"></a>SetSecurity fonction)
 
@@ -41,22 +39,22 @@ HRESULT SetSecurity (
 ## <a name="parameters"></a>Paramètres
 
 `pNeedToReset`\
-à Quand la fonction retourne une valeur, contient un pointeur `boolean` vers une valeur qui indique si le jeton doit être réinitialisé en appelant la fonction [ResetSecurity](resetsecurity.md) .
+à Quand la fonction retourne une valeur, contient un pointeur vers une `boolean` qui indique si le jeton doit être réinitialisé en appelant la fonction [ResetSecurity](resetsecurity.md) .
 
 `token`\
-à Quand la fonction retourne une valeur, contient un pointeur vers le handle du jeton d’emprunt d’identité associé au thread actuel. Sa valeur peut être `null` si aucun jeton n’est associé au thread actuel. 
+à Quand la fonction retourne une valeur, contient un pointeur vers le handle du jeton d’emprunt d’identité associé au thread actuel. Sa valeur peut être `null` s’il n’y a aucun jeton associé au thread actuel. 
 
 ## <a name="return-value"></a>Valeur de retour
 
-Si la fonction est réussie, la valeur de retour `S_OK` est (0).
+Si la fonction est réussie, la valeur de retour est `S_OK` (0).
 
 Si la fonction échoue, la valeur de retour est un code d’erreur différent de zéro. Pour afficher les informations d’erreur étendues, appelez la fonction [GetErrorInfo](geterrorinfo.md) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête :** WMINet_Utils.idl
+ **En-tête :** WMINet_Utils. idl
 
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

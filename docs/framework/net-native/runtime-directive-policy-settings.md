@@ -2,14 +2,12 @@
 title: Paramètres de stratégie de directive runtime
 ms.date: 03/30/2017
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 33253c249842824a529f4e8b24d4ca4228733041
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6001e3855610e7da5262c46413b775da3bea305c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049215"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128163"
 ---
 # <a name="runtime-directive-policy-settings"></a>Paramètres de stratégie de directive runtime
 
@@ -34,7 +32,7 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de réflexion et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Activate|Parcourir|Dynamique|
+  |Élément|Activate|Parcourir|dynamique|
   |-------------|--------------|------------|-------------|
   |[\<Application>](application-element-net-native.md)|✓|✓|✓|
   |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|

@@ -5,14 +5,12 @@ helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 739f0efdb50f8eba4875a42d5173f741b6ee94b3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 816b854120f09efef69bd8ceb2d3650e5a8e7af0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051898"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123733"
 ---
 # <a name="blittable-and-non-blittable-types"></a>types blittable et non blittable
 La plupart des types de données ont une représentation commune à la fois dans la mémoire managée et non managée, et ne nécessitent pas de traitement particulier par le marshaleur d’interopérabilité. Ces types sont appelés *types blittables*, car ils ne nécessitent pas de conversion quand ils transitent entre le code managé et le code non managé.  

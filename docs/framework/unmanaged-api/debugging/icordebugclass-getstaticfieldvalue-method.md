@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 56e718b4-fabd-418b-a5b3-3cc33c745683
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7649d91ca2b654952d1d5ab0d45f7903d3c46a32
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 867db3325f9b18b31f66429d01ea02be3603c0f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745539"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125763"
 ---
 # <a name="icordebugclassgetstaticfieldvalue-method"></a>ICorDebugClass::GetStaticFieldValue, méthode
 Obtient la valeur du champ statique spécifié.  
@@ -39,20 +37,20 @@ HRESULT GetStaticFieldValue (
   
 ## <a name="parameters"></a>Paramètres  
  `fieldDef`  
- [in] Un champ `Def` jeton qui fait référence au champ à récupérer.  
+ dans Champ `Def` jeton qui fait référence au champ à récupérer.  
   
  `pFrame`  
- [in] Pointeur vers un objet ICorDebugFrame qui représente l’image à utiliser pour lever l’ambiguïté entre les threads, contexte ou statiques de domaine d’application.  
+ dans Pointeur vers un objet ICorDebugFrame qui représente le frame à utiliser pour lever l’ambiguïté entre les threads, le contexte ou les statiques de domaine d’application.  
   
- Si le champ statique est relatif à un thread, un contexte ou un domaine d’application, le frame déterminera la valeur appropriée.  
+ Si le champ statique est relatif à un thread, à un contexte ou à un domaine d’application, le frame détermine la valeur appropriée.  
   
  `ppValue`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur du champ statique.  
+ à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur du champ statique.  
   
 ## <a name="remarks"></a>Notes  
- Pour des types paramétrables, la valeur d’un champ statique est relatif à l’instanciation spécifique. Par conséquent, si le constructeur de classe accepte des paramètres de type <xref:System.Type>, appelez [ICorDebugType::GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md) au lieu de `ICorDebugClass::GetStaticFieldValue`.  
+ Pour les types paramétrables, la valeur d’un champ statique est relative à l’instanciation particulière. Par conséquent, si le constructeur de classe accepte des paramètres de type <xref:System.Type>, appelez [ICorDebugType :: GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md) au lieu de `ICorDebugClass::GetStaticFieldValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

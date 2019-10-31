@@ -7,14 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dc8381f8059e37c6c520c2402289124a506188e8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ecc1e234b03cb45075c40ff6698f71f8ce18d0de
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968411"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128981"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -35,7 +33,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 |Category|Champs globaux|Champs statiques|Méthodes statiques|Champs d’instance|Méthodes d’instance|Blocs de code spécifiques|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
 |Aucune synchronisation|Non|Non|Non|Non|Non|Non|  
-|Contexte synchronisé|Non|Non|Non|OUI|Oui|Non|  
+|Contexte synchronisé|Non|Non|Non|Oui|Oui|Non|  
 |Régions de code synchronisées|Non|Non|Seulement en cas de marquage|Non|Seulement en cas de marquage|Seulement en cas de marquage|  
 |Synchronisation manuelle|Manuel|Manuel|Manuel|Manuel|Manuel|Manuel|  
   

@@ -12,14 +12,12 @@ helpviewer_keywords:
 - strong-named assemblies, loading into trusted application domains
 - assembly binding, strong-named
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 55869c107d245738df3af5ca9bb1b22195e90024
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 700eca16e7755823456c3e3ace17eb5e6b3526ac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973319"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122511"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
 
@@ -66,17 +64,17 @@ Cette fonctionnalité s'applique à tout assembly signé avec un nom fort qui pr
 
 - Sans signature différée.
 
-Cette fonctionnalité peut être désactivée pour des applications individuelles ou pour un ordinateur. Voir [Guide pratique pour Désactivez la fonctionnalité](disable-strong-name-bypass-feature.md)de contournement de nom fort.
+Cette fonctionnalité peut être désactivée pour des applications individuelles ou pour un ordinateur. Consultez [Comment : désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 |Titre|Description|
 |-----------|-----------------|
-|[Guide pratique : créer une paire de clés publique/privée](create-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
-|[Guide pratique pour signer un assembly avec un nom fort](sign-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
+|[Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
+|[Comment : signer un assembly avec un nom fort](sign-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
 |[Amélioration des noms forts](enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans .NET Framework 4.5.|
-|[Guide pratique pour Référencer un assembly avec nom fort](reference-strong-named.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
-|[Guide pratique pour Désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
+|[Comment : référencer un assembly avec nom fort](reference-strong-named.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
+|[Comment : désactiver la fonctionnalité de contournement de nom fort](disable-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
 |[Créer des assemblys](create.md)|Fournit une vue d'ensemble des assemblys multifichiers et à fichier unique.|
 |[Comment différer la signature d’un assembly dans Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Explique comment signer un assembly avec un nom fort après la création de l'assembly.|
 |[SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)|Décrit l'outil inclus dans le .NET Framework qui facilite la création d'assemblys avec des noms forts. Cet outil fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.|

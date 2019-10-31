@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: e58dac7b-85c3-41ca-b9aa-3a7fc9ae6680
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5619dea17b9a7140238fd559d2f6b1a5d190ac33
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d23b695550c8444264934f7aca4fa185064e89c5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761895"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130729"
 ---
 # <a name="icordebugmanagedcallbackloadclass-method"></a>ICorDebugManagedCallback::LoadClass, méthode
 Notifie le débogueur qu’une classe a été chargée.  
@@ -38,17 +36,17 @@ HRESULT LoadClass (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel la classe a été chargée.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel la classe a été chargée.  
   
  `c`  
- [in] Pointeur vers un objet ICorDebugClass qui représente la classe.  
+ dans Pointeur vers un objet ICorDebugClass qui représente la classe.  
   
 ## <a name="remarks"></a>Notes  
- Ce rappel se produit uniquement si le chargement de classe a été activé pour le module qui contient la classe. Le chargement de classe est toujours activé pour les modules dynamiques.  
+ Ce rappel se produit uniquement si le chargement de la classe a été activé pour le module qui contient la classe. Le chargement de classe est toujours activé pour les modules dynamiques.  
   
- Le `LoadClass` rappel fournit un bon moment pour lier des points d’arrêt pour les classes qui vient d’être générées dans les modules dynamiques.  
+ Le rappel `LoadClass` fournit un moment approprié pour lier des points d’arrêt à des classes nouvellement générées dans des modules dynamiques.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

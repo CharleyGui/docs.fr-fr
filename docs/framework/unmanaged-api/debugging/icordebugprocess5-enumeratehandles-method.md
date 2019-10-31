@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7d7fa796-0dc6-4ee8-9d56-40166246d91d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 229717ba1d7f004dc1ed020eddb2929079aa9285
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0e68dba1f4d9ac5fa618aa842b823dcc046e70e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767573"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129677"
 ---
 # <a name="icordebugprocess5enumeratehandles-method"></a>ICorDebugProcess5::EnumerateHandles, méthode
 Obtient un énumérateur pour les handles d’objet dans un processus.  
@@ -36,23 +34,23 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
   
 ## <a name="parameters"></a>Paramètres  
  `types`  
- [in] Une combinaison au niveau du bit de [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) valeurs qui spécifie le type de handles à inclure dans la collection.  
+ dans Combinaison d’opérations de bits de valeurs [corgcreferencetype,](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) qui spécifient le type de handles à inclure dans la collection.  
   
  `ppENum`  
- [out] Un pointeur vers l’adresse d’un [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) qui est un énumérateur pour les objets d’être le garbage collector.  
+ à Pointeur vers l’adresse d’un [icordebuggcreferenceenum,](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) qui est un énumérateur pour les objets qui doivent être récupérés par le garbage collector.  
   
 ## <a name="remarks"></a>Notes  
- `EnumerateHandles` est une fonction d’assistance qui prend en charge d’inspection de la table de handles. Elle est similaire à la [ICorDebugProcess5::EnumerateGCReferences](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) (méthode), à ceci près qu’au lieu de remplir un [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) collection avec tous les objets d’être le garbage collector, il inclut uniquement les objets qui ont des handles à partir de la table de handles.  
+ `EnumerateHandles` est une fonction d’assistance qui prend en charge l’inspection de la table de handles. Elle est similaire à la méthode [ICorDebugProcess5 :: enumerategcreferences,](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) , à ceci près qu’au lieu de remplir une collection [icordebuggcreferenceenum,](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) avec tous les objets qui doivent être récupérés par le garbage collector, elle comprend uniquement les objets qui ont des handles de table de handles.  
   
- Le `types` paramètre spécifie les types de handle à inclure dans la collection. `types` peut être une des trois membres suivants de la [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) énumération :  
+ Le paramètre `types` spécifie les types de handles à inclure dans la collection. `types` peut être l’un des trois membres suivants de l’énumération [corgcreferencetype,](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) :  
   
-- `CorHandleStrongOnly` (descripteurs pour les références fortes uniquement).  
+- `CorHandleStrongOnly` (Handles vers des références fortes uniquement).  
   
-- `CorHandleWeakOnly` (descripteurs pour les références faibles uniquement).  
+- `CorHandleWeakOnly` (Handles vers des références faibles uniquement).  
   
-- `CorHandleAll` (tous les handles).  
+- `CorHandleAll` (tous les descripteurs).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

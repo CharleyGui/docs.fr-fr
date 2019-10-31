@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9bb93fab-57e8-4f9a-9ef3-1794504fa896
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c5c03b7010418f75aff984102d7fa4fb089c4d59
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ebe7ef37fb072e3688cc4dcfa5ed89832e886e9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738824"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122935"
 ---
 # <a name="iclrdataenummemoryregionscallbackenummemoryregion-method"></a>ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion, méthode
-Appelé par [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) pour signaler au débogueur le résultat d’une tentative d’énumération d’une région spécifiée de mémoire.  
+Appelé par [ICLRDataEnumMemoryRegions :: EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) pour signaler au débogueur le résultat d’une tentative d’énumération d’une région de mémoire spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +36,20 @@ HRESULT EnumMemoryRegion (
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] Adresse de départ de la région de mémoire qui était à énumérer.  
+ dans Adresse de début de la région de mémoire qui doit être énumérée.  
   
  `size`  
- [in] La taille, en octets, de la région de mémoire.  
+ dans Taille, en octets, de la région de la mémoire.  
   
 ## <a name="remarks"></a>Notes  
- Le `ICLRDataEnumMemoryRegions::EnumMemoryRegions` méthode appellera cette méthode de rappel après chaque tentative d’énumération d’une région de mémoire. L’énumération continuera même si cette méthode retourne un HRESULT indiquant un échec.  
+ La méthode `ICLRDataEnumMemoryRegions::EnumMemoryRegions` appellera cette méthode de rappel après chaque tentative d’énumération d’une région de mémoire. L’énumération continue même si cette méthode retourne un HRESULT indiquant un échec.  
   
- Régions signalées par ce rappel peuvent être des doublons ou des régions qui se chevauchent.  
+ Les régions signalées par ce rappel peuvent être des doublons ou des régions qui se chevauchent.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

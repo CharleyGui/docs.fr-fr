@@ -23,14 +23,12 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17465b07172788f18a432784653afadda18467fe
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2ab4fc990e0c524e0c77fa0bdedd7c263edb21b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045697"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129959"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Création d'assemblys satellites pour les applications bureautiques
 
@@ -88,7 +86,7 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
   
  Pour obtenir une liste complète des options disponibles avec Al.exe, consultez [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md).
   
-## <a name="satellite-assemblies-an-example"></a>Assemblys satellites : Exemple  
+## <a name="satellite-assemblies-an-example"></a>Assemblys satellites : un exemple  
  Voici un exemple « Hello world » simple qui affiche une boîte de message contenant un message d’accueil localisé. L’exemple contient des ressources pour les cultures Anglais (États-Unis), Français (France) et Russe (Russie), et sa culture de secours est Anglais. Pour créer l’exemple, effectuez les étapes suivantes :  
   
 1. Créez un fichier de ressources nommé Greeting.resx ou Greeting.txt pour contenir la ressource de la culture par défaut. Stockez une chaîne unique nommée `HelloString` dont la valeur est « Hello world! » dans ce fichier.
@@ -198,7 +196,7 @@ sn –R StringLibrary.resources.dll RealKeyPair.snk
 
 ### <a name="installing-a-satellite-assembly-in-the-global-assembly-cache"></a>Installation d’un assembly satellite dans le Global Assembly Cache
 
-Quand le runtime recherche des ressources dans le processus de secours pour les ressources, il cherche d’abord dans le [Global Assembly Cache](../app-domains/gac.md). (Pour plus d’informations, consultez la section « Processus de secours pour les ressources » de la rubrique [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md).) Dès qu’un assembly satellite est signé avec un nom fort, il peut être installé dans le Global Assembly Cache à l’aide de [Global Assembly Cache Tool (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md).
+Quand le runtime recherche des ressources dans le processus de secours pour les ressources, il cherche d’abord dans le [Global Assembly Cache](../app-domains/gac.md). (Pour plus d’informations, consultez la section « processus de secours pour les ressources » de la rubrique [empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md) .) Dès qu’un assembly satellite est signé avec un nom fort, il peut être installé dans le Global Assembly Cache à l’aide de l' [outil global assembly cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md).
 
 La commande Gacutil.exe suivante installe StringLibrary.resources.dll dans le Global Assembly Cache :
 
@@ -208,7 +206,7 @@ gacutil -i:StringLibrary.resources.dll
 
 L’option **/i** spécifie que Gacutil.exe doit installer l’assembly spécifié dans le Global Assembly Cache. Une fois l’assembly satellite installé dans le cache, les ressources qu’il contient deviennent disponibles pour toutes les applications conçues pour utiliser l’assembly satellite.
 
-### <a name="resources-in-the-global-assembly-cache-an-example"></a>Ressources dans le Global Assembly Cache : Exemple
+### <a name="resources-in-the-global-assembly-cache-an-example"></a>Ressources dans le Global Assembly Cache : un exemple
 
 L’exemple suivant utilise une méthode dans une bibliothèque de classes .NET Framework pour extraire et retourner un message d’accueil localisé à partir d’un fichier de ressources. La bibliothèque et ses ressources sont inscrites dans le Global Assembly Cache. L’exemple contient des ressources pour les cultures Anglais (États-Unis), Français (France) et Russe (Russie). L’anglais est la culture par défaut ; ses ressources sont stockées dans l’assembly principal. L’exemple diffère initialement la signature de la bibliothèque et ses assemblys satellites avec une clé publique, puis les signe à nouveau avec une paire de clés publique/privée. Pour créer l’exemple, effectuez les étapes suivantes :
 

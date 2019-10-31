@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e30c29f7-3f19-4081-b572-a731aa14cd44
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0f056e4ae233e70223755c1961cd3ee5da68ec90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 50794e96484432c8b7c203f6b8caa60130068a8c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745181"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122789"
 ---
 # <a name="icordebugbreakpointactivate-method"></a>ICorDebugBreakpoint::Activate, méthode
-Définit l’état actif de ce `ICorDebugBreakpoint`.  
+Définit l’état actif de cette `ICorDebugBreakpoint`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT Activate (
   
 ## <a name="parameters"></a>Paramètres  
  `bActive`  
- [in] Définissez cette valeur sur `true` pour spécifier l’état actif ; sinon, définissez cette valeur sur `false`.  
+ dans Définissez cette valeur sur `true` pour spécifier l’état actif ; Sinon, définissez cette valeur sur `false`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

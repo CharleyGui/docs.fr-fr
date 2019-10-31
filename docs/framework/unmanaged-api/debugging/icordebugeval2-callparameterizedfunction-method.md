@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 72f54a45-dbe6-4bb4-8c99-e879a27368e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2779cfaecfdd241b5317ac8b467222e045d48049
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b521c96d26202119dad6fedb61cbd9da8b3c2e52
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753320"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137636"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction, méthode
-Définit un appel à ICorDebugFunction spécifié, qui peut être imbriquée dans une classe dont le constructeur prend <xref:System.Type> paramètres, ou peut lui-même prendre <xref:System.Type> paramètres.  
+Configure un appel au ICorDebugFunction spécifié, qui peut être imbriqué à l’intérieur d’une classe dont le constructeur prend <xref:System.Type> paramètres, ou peut prendre lui-même des paramètres <xref:System.Type>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT CallParameterizedFunction (
   
 ## <a name="parameters"></a>Paramètres  
  `pFunction`  
- [in] Un pointeur vers un `ICorDebugFunction` objet qui représente la fonction à appeler.  
+ dans Pointeur vers un objet `ICorDebugFunction` qui représente la fonction à appeler.  
   
  `nTypeArgs`  
- [in] Le nombre d’arguments qui prend la fonction.  
+ dans Nombre d’arguments que prend la fonction.  
   
  `ppTypeArgs`  
- [in] Tableau de pointeurs, chacun pointant vers un objet de ICorDebugType qui représente un argument de fonction.  
+ dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugType qui représente un argument de fonction.  
   
  `nArgs`  
- [in] Le nombre de valeurs passées dans la fonction.  
+ dans Nombre de valeurs passées dans la fonction.  
   
  `ppArgs`  
- [in] Un tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui représente une valeur passée dans un argument de fonction.  
+ dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui représente une valeur passée dans un argument de fonction.  
   
 ## <a name="remarks"></a>Notes  
- `CallParameterizedFunction` est semblable à [ICorDebugEval::CallFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) , à ceci près que la fonction peut être à l’intérieur d’une classe avec des paramètres de type, peut prendre elle-même les paramètres de type, ou les deux. Les arguments de type convient tout d’abord pour la classe, puis pour la fonction.  
+ `CallParameterizedFunction` est semblable à [ICorDebugEval :: CallFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) , sauf que la fonction peut être à l’intérieur d’une classe avec des paramètres de type, peut lui-même prendre des paramètres de type, ou les deux. Les arguments de type doivent être fournis en premier pour la classe, puis pour la fonction.  
   
- Si la fonction est dans un domaine d’application différent, une transition se produit. Toutefois, tous les arguments de type et la valeur doivent être dans le domaine d’application cible.  
+ Si la fonction se trouve dans un domaine d’application différent, une transition est effectuée. Toutefois, tous les arguments de type et de valeur doivent être dans le domaine d’application cible.  
   
- Évaluation de fonction peut être effectuée uniquement dans des scénarios limités. Si `CallParameterizedFunction` ou `ICorDebugEval::CallFunction` échoue, le HRESULT retourné indiquera la raison possible la plus générale de l’échec.  
+ L’évaluation de fonction ne peut être effectuée que dans des scénarios limités. Si `CallParameterizedFunction` ou `ICorDebugEval::CallFunction` échoue, le HRESULT retourné indique la raison la plus générale possible de l’échec.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

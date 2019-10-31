@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 76f2bf3b-759f-4eed-bce7-119415b25915
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 339a0f502b7e47f7bee82a0da92185481d909e64
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 306a07450b8ae6d29875ca0cc4679390472e4d1d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768867"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121041"
 ---
 # <a name="icordebugvariablehome-interface"></a>ICorDebugVariableHome, interface
 Représente une variable locale ou un argument d’une fonction.  
@@ -33,15 +31,15 @@ Représente une variable locale ou un argument d’une fonction.
 |Méthode|Description|  
 |------------|-----------------|  
 |[GetArgumentIndex, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getargumentindex-method.md)|Obtient l’index d’un argument de fonction.|  
-|[GetCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getcode-method.md)|Obtient l’instance « ICorDebugCode » qui contient ce `ICorDebugVariableHome` objet.|  
-|[GetLiveRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getliverange-method.md)|Obtient la plage native sur laquelle cette variable est en ligne.|  
-|[GetLocationType, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getlocationtype-method.md)|Obtient le type d’emplacement native de la variable.|  
-|[GetOffset, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getoffset-method.md)|Obtient le décalage à partir du Registre de base pour une variable.|  
-|[GetRegister, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getregister-method.md)|Obtient le Registre qui contient une variable avec un type d’emplacement de `VLT_REGISTER`, le Registre de base et d’une variable avec un type d’emplacement de `VLT_REGISTER_RELATIVE`.|  
-|[GetSlotIndex, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getslotindex-method.md)|Obtient l’index emplacement managé d’une variable locale.|  
+|[GetCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getcode-method.md)|Obtient l’instance « ICorDebugCode » qui contient cet objet `ICorDebugVariableHome`.|  
+|[GetLiveRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getliverange-method.md)|Obtient la plage native sur laquelle cette variable est active.|  
+|[GetLocationType, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getlocationtype-method.md)|Obtient le type de l’emplacement natif de la variable.|  
+|[GetOffset, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getoffset-method.md)|Obtient le décalage à partir du registre de base pour une variable.|  
+|[GetRegister, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getregister-method.md)|Obtient le Registre qui contient une variable avec un type d’emplacement `VLT_REGISTER`et le registre de base pour une variable avec un type d’emplacement de `VLT_REGISTER_RELATIVE`.|  
+|[GetSlotIndex, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getslotindex-method.md)|Obtient l’index d’emplacement managé d’une variable locale.|  
   
 ## <a name="example"></a>Exemple  
- Le fragment de code suivant utilise la [ICorDebugCode4](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md) objet nommé `pCode4`.  
+ Le fragment de code suivant utilise l’objet [ICorDebugCode4](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md) nommé `pCode4`.  
   
 ```cpp  
 ICorDebugCode4 *pCode4 = NULL;  
@@ -82,7 +80,7 @@ for (int i = 0; i < celtFetched; i++)
 }  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

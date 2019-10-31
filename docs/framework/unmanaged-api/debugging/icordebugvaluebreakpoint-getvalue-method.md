@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 52a73654-bc47-48b6-b2b1-a4456b10140c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 639b34093e79933b4daaa0e3ae5223f1a1a51bf6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5924a3914c7fe04413b4a6744bce263b56165d78
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773776"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140214"
 ---
 # <a name="icordebugvaluebreakpointgetvalue-method"></a>ICorDebugValueBreakpoint::GetValue, méthode
 Obtient un pointeur d’interface vers un objet « ICorDebugValue » qui représente la valeur de l’objet sur lequel le point d’arrêt est défini.  
@@ -37,9 +35,9 @@ HRESULT GetValue (
   
 ## <a name="parameters"></a>Paramètres  
  `ppValue`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugValue` objet.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

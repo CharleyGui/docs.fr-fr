@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 172ef8c4-2ead-4cfc-bd2e-dee4fb7191cd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 54981be7104eb04ac6347ad13b61a69f40d4377c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 33219d9a67379244e23da49c13617a4c4a2fa66d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770624"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133462"
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle, méthode
-Obtient le handle actuel pour la partie active du ICorDebugThread.  
+Obtient le handle actuel pour la partie active de ce ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT GetHandle (
   
 ## <a name="parameters"></a>Paramètres  
  `phThreadHandle`  
- [out] Pointeur vers un HTHREAD qui est le handle de la partie active de ce thread.  
+ à Pointeur vers un HTHREAD qui est le handle de la partie active de ce thread.  
   
 ## <a name="remarks"></a>Notes  
- Le handle peut changer car le processus s’exécute et peut être différent pour les différentes parties du thread.  
+ Le handle peut changer à mesure que le processus s’exécute et peut être différent pour différentes parties du thread.  
   
- Ce handle est détenu par l’API de débogage. Le débogueur doit dupliquer avant de l’utiliser.  
+ Ce descripteur appartient à l’API de débogage. Le débogueur doit le dupliquer avant de l’utiliser.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

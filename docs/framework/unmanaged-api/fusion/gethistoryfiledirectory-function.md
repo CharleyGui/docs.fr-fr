@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 93232222-926e-42ac-b85d-8a6d33977672
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: adbbf94dc36c6d82360ed532b283cd666a1a52ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1aabfad14ee2eb35916bbf115631602276cd1fc3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109895"
 ---
 # <a name="gethistoryfiledirectory-function"></a>GetHistoryFileDirectory, fonction
 Récupère le chemin d’accès du répertoire de l’historique de l’application.  
@@ -48,17 +46,17 @@ HRESULT GetHistoryFileDirectory (
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`wzDir`ou `pdwSize` est null, ou la chaîne de version est incorrecte.|  
+|E_INVALIDARG|`wzDir` ou `pdwSize` a la valeur null, ou la chaîne de version est incorrecte.|  
   
 ## <a name="remarks"></a>Notes  
- Une fois l’opération terminée `pdwSize` , l’argument est défini sur la longueur de la chaîne de chemin d’accès.  
+ Une fois l’opération terminée, l’argument `pdwSize` est défini à la longueur de la chaîne de chemin d’accès.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque** Fusion. dll et mscorwks. dll. Utilisez fusion. dll au lieu de Mscorwks. dll pour vous assurer que vous ciblez la version correcte du .NET Framework.  
+ **Bibliothèque :** Fusion. dll et mscorwks. dll. Utilisez fusion. dll au lieu de Mscorwks. dll pour vous assurer que vous ciblez la version correcte du .NET Framework.  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

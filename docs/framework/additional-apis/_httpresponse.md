@@ -1,5 +1,5 @@
 ---
-title: Champ de HttpWebRequest._HttpResponse
+title: HttpWebRequest. _HttpResponse, champ
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: db56bce0832d3439309d58f85e455f63f339816e
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: d993021ccb87ccafb5f6f2fc4c6c7c288288adae
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301021"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120076"
 ---
-# <a name="httpwebrequesthttpresponse-field"></a>HttpWebRequest. \_HttpResponse champ
+# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest.\_le champ HttpResponse
 
-`HttpWebRequest._HttpResponse` est un <xref:System.Net.HttpWebResponse> contenant les détails de la réponse HTTP à partir d’une requête HTTP. Il peut être `null` jusqu'à la réception d’une réponse HTTP.
+`HttpWebRequest._HttpResponse` est un <xref:System.Net.HttpWebResponse> contenant les détails de la réponse HTTP à partir d’une requête HTTP. Il peut être `null` jusqu’à la réception d’une réponse HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ internal HttpWebResponse _HttpResponse
 ```
 
 > [!WARNING]
-> Le `HttpWebRequest._HttpResponse` champ est interne et non destiné à être utilisé directement dans votre code.
+> Le champ `HttpWebRequest._HttpResponse` est interne et n’est pas destiné à être utilisé directement dans votre code.
 > 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Net>
 
-**Assembly :** Système (dans System.dll)
+**Assembly :** Système (dans System. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

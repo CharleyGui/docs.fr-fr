@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: 7f470c5c-e1c0-4d8d-aad8-830f113ae751
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 65225281fe3abaa20e69e96f4cd4d2a4b03a87ce
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4ac26ef4449dc02230f26b1247616b4587d217b7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629943"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085160"
 ---
 # <a name="icordebugevalcallfunction-method"></a>ICorDebugEval::CallFunction, méthode
 
-Définit un appel à la fonction spécifiée.
+Configure un appel à la fonction spécifiée.
 
-Cette méthode est obsolète dans le .NET Framework version 2.0. Utilisez [ICorDebugEval2::CallParameterizedFunction](icordebugeval2-callparameterizedfunction-method.md) à la place.
+Cette méthode est obsolète dans la version 2,0 de .NET Framework. Utilisez [ICorDebugEval2 :: CallParameterizedFunction,](icordebugeval2-callparameterizedfunction-method.md) à la place.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,19 +41,19 @@ HRESULT CallFunction (
 ## <a name="parameters"></a>Paramètres
 
 `pFunction`\
-[in] Pointeur vers un objet ICorDebugFunction qui spécifie la fonction à appeler.
+dans Pointeur vers un objet ICorDebugFunction qui spécifie la fonction à appeler.
 
 `nArgs`\
-[in] Le nombre d’arguments pour la fonction.
+dans Nombre d’arguments pour la fonction.
 
 `ppArgs`\
-[in] Tableau de pointeurs, chacun d’eux pointe vers un objet ICorDebugValue qui spécifie un argument à passer à la fonction.
+dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui spécifie un argument à passer à la fonction.
 
 ## <a name="remarks"></a>Notes
 
-Si la fonction est virtuelle, `CallFunction` effectuera dispatch virtuel. Si la fonction est dans un domaine d’application différent, une transition se produit tant que tous les arguments sont également dans ce domaine d’application.
+Si la fonction est virtuelle, `CallFunction` effectue une répartition virtuelle. Si la fonction se trouve dans un domaine d’application différent, une transition est effectuée tant que tous les arguments sont également dans ce domaine d’application.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -63,7 +61,7 @@ Si la fonction est virtuelle, `CallFunction` effectuera dispatch virtuel. Si la 
 
 **Bibliothèque :** CorGuids.lib
 
-**Versions du .NET framework :** 1.1, 1.0
+**Versions de .NET Framework :** 1,1, 1,0
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,5 +1,5 @@
 ---
-title: 'Atténuation : sérialisation des caractères de contrôle avec DataContractJsonSerializer'
+title: 'Atténuation : Sérialisation des caractères de contrôle avec DataContractJsonSerializer'
 ms.date: 04/07/2017
 helpviewer_keywords:
 - .NET Framework 4.7 retargeting changes
@@ -7,16 +7,14 @@ helpviewer_keywords:
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 12b26c8cc01b7af1c3b345d2f274a1d25a19d689
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5f8218d0f369f25b1add501fdc975d6dccfe90fa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789843"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126149"
 ---
-# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Atténuation : sérialisation des caractères de contrôle avec DataContractJsonSerializer
+# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Atténuation : Sérialisation des caractères de contrôle avec DataContractJsonSerializer
 
 À compter du .NET Framework 4.7, la manière dont les caractères de contrôle sont sérialisés avec le <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a changé pour être conforme à ECMAScript V6 et V8. 
  

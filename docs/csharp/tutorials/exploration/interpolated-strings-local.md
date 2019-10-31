@@ -1,15 +1,13 @@
 ---
 title: Interpolation de chaîne - Tutoriel C#
 description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpolation de chaîne en C# pour insérer les résultats d’expressions mises en forme dans une chaîne plus grande.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 10/23/2018
-ms.openlocfilehash: 813623f4036813d7c1af440a60387f5d8e889354
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 53b9afa4c5ccdcb1f18d2947981aee6571b73134
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774051"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120121"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
@@ -34,11 +32,11 @@ var name = "<name>";
 Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 ```
 
-Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, celui-ci affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *expression de chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
+Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, il affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *expression de chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
 
 Cet exemple simple contient les deux éléments que chaque chaîne interpolée doit avoir :
 
-- Un littéral de chaîne qui commence par le caractère `$` avant ses guillemets ouvrants. Il ne peut pas y avoir d’espace entre le symbole `$` et les guillemets. (Si vous voulez voir ce qui se passe si vous en incluez un, insérez un espace après le caractère `$`, enregistrez le fichier et réexécutez le programme en tapant `dotnet run` dans la fenêtre de console. Le compilateur C# affiche un message d’erreur « Erreur CS1056 : caractère inattendu ’$’ ».
+- Un littéral de chaîne qui commence par le caractère `$` avant ses guillemets ouvrants. Il ne peut pas y avoir d’espace entre le symbole `$` et les guillemets. (Si vous voulez voir ce qui se passe si vous en incluez un, insérez un espace après le caractère `$`, enregistrez le fichier et réexécutez le programme en tapant `dotnet run` dans la fenêtre de console. Le compilateur C# affiche un message d’erreur « Erreur CS1056 : caractère inattendu ’$’ ».)
 
 - Une ou plusieurs *expressions d’interpolation*. Une expression d’interpolation est indiquée par des accolades ouvrantes et fermantes (`{` et `}`). Vous pouvez placer n’importe quelle expression C# qui retourne une valeur (notamment `null`) à l’intérieur des accolades.
 

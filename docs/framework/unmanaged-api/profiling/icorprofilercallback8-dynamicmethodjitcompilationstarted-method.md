@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationStarted (méthode)
+title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationStarted
@@ -8,17 +8,15 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5a60f074ce0081df07a61d0b832d542c8873776f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1eaf29e1c93f352facde4af2ee57910783d82e5d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757985"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136462"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationStarted (méthode)
-[Pris en charge dans le .NET Framework 4.7 et versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
+[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
   
 Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique a démarré.  
   
@@ -35,30 +33,30 @@ HRESULT DynamicMethodJITCompilationStarted(
   
 ## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-L’identificateur de la fonction en mémoire pour le JIT démarrage de la compilation.   
+Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
 
 [in] `fIsSafeToBlock`   
-`true` pour indiquer que le blocage peut entraîner l’exécution pour attendre que le thread appelant retourner à partir de ce rappel ; `false` pour indiquer que le blocage n’affecte pas l’opération du runtime.  
+`true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
 
 [in] `pILHeader`    
-Pointeur vers le premier octet d’en-tête de langage intermédiaire de la méthode.   
+Pointeur vers le premier octet de l’en-tête IL de la méthode.   
 
 [in] `cbILHeader`    
-Le nombre d’octets dans l’en-tête de langage intermédiaire. 
+Nombre d’octets dans l’en-tête IL. 
 
 ## <a name="remarks"></a>Notes  
 
-Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilé par JIT. Cela inclut diverses de stubs de langage intermédiaire et de méthodes LCG. Son objectif est de fournir les enregistreurs de profileur avec suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
+Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée juste-à-temps. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
-> `functionId` les valeurs ne peut pas être permet de résoudre à leurs jetons de métadonnées, car les méthodes dynamiques ont pas de métadonnées.
+> les valeurs `functionId` ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
-Le `pILHeader` pointeur est uniquement valid pendant le rappel.
+Le pointeur de `pILHeader` est valide uniquement pendant le rappel.
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d5f54a34-6335-4708-b407-a756ec70fab4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a90f0a0319d88654d0310530749ef35b7095e0fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3836b6c08098d38516c8a25260fb28998a2317fe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754427"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084783"
 ---
 # <a name="icordebugeval2newstringwithlength-method"></a>ICorDebugEval2::NewStringWithLength, méthode
 Crée une chaîne de la longueur spécifiée, avec le contenu spécifié.  
@@ -38,17 +36,17 @@ HRESULT NewStringWithLength (
   
 ## <a name="parameters"></a>Paramètres  
  `string`  
- [in] Pointeur vers la valeur de chaîne.  
+ dans Pointeur vers la valeur de chaîne.  
   
  `uiLength`  
- [in] Longueur de la chaîne.  
+ dans Longueur de la chaîne.  
   
 ## <a name="remarks"></a>Notes  
- Si à la fin de la chaîne de caractère null est censé être dans la chaîne managée, l’appelant de la `NewStringWithLength` méthode doit vérifier que la longueur de chaîne inclut le caractère null de fin.  
+ Si le caractère null de fin de la chaîne est supposé être dans la chaîne managée, l’appelant de la méthode `NewStringWithLength` doit s’assurer que la longueur de la chaîne comprend le caractère null de fin.  
   
  La chaîne est toujours créée dans le domaine d’application dans lequel le thread est en cours d’exécution.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

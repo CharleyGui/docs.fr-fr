@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9afd0e04-a403-41e2-9528-a6dcbcdcbd4d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4ba981d86f90af449820ce13aa847169ca877429
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 89f45208550d49f214e763728ddc9eb1bfcd9800
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737773"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088976"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypes-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypes, méthode
-Obtient un énumérateur pour tous les types Windows Runtime mis en cache.  
+Obtient un énumérateur pour tous les types de Windows Runtime mis en cache.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetCachedWinRTTypes (
   
 ## <a name="parameters"></a>Paramètres  
  `ppGuidToTypeEnum`  
- [out] Un pointeur vers un [ICorDebugGuidToTypeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md) objet d’interface qui peut énumérer les représentations sous forme managées des types Windows Runtime actuellement chargé dans le domaine d’application.  
+ à Pointeur vers un objet d’interface [icordebugguidtotypeenum,](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md) qui peut énumérer les représentations managées des types de Windows Runtime actuellement chargés dans le domaine d’application.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Windows Runtime  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

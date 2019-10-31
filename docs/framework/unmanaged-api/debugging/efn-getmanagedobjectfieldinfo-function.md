@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 3b93bcff-62a4-47b2-babc-6bcf4216119a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c1de0b3b05d38c1fec38b9436c653973dfaa4136
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b68f24908a5b214d507da8e8a4636a7c55259604
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739002"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123020"
 ---
-# <a name="efngetmanagedobjectfieldinfo-function"></a>\_EFN\_GetManagedObjectFieldInfo Function
+# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_EFN\_fonction GetManagedObjectFieldInfo
 Obtient l'offset du début d'un objet jusqu'à un champ, ainsi que la valeur du champ, à l'aide du pointeur d'objet et du nom de champ fournis.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,31 +38,31 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `Client`  
- [in] Pointeur vers le client de débogage.  
+ dans Pointeur vers le client de débogage.  
   
  `objAddr`  
- [in] Un pointeur d’objet managé.  
+ dans Pointeur d’objet managé.  
   
  szFieldName  
- [in] Un pointeur d’objet managé pour le nom du champ.  
+ dans Pointeur d’objet managé vers le nom de champ.  
   
  `pValue`  
- [out] La valeur du champ. Ce paramètre peut avoir la valeur Null.  
+ à Valeur de champ. Ce paramètre peut avoir la valeur Null.  
   
  `pOffset`  
- [out] Le décalage à partir de `objAddr` au champ. Ce paramètre peut avoir la valeur Null.  
+ à Offset de `objAddr` au champ. Ce paramètre peut avoir la valeur Null.  
   
 ## <a name="remarks"></a>Notes  
- Si le décalage est 0, aucun offset n’est écrit.  
+ Si le décalage est égal à 0, aucun décalage n’est écrit.  
   
- S’il n’existe aucun code managé sur le thread actuellement dans le contexte, la fonction retourne les HRESULT SOS_E_NOMANAGEDCODE avec une valeur de 0xa0 et un code d’erreur de 0 x 1000.  
+ S’il n’existe pas de code managé sur le thread actuellement en contexte, la fonction retourne HRESULT SOS_E_NOMANAGEDCODE avec la valeur d’installation 0xa0 et le code d’erreur 0x1000.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** SOS_Stacktrace.h  
+ **En-tête :** SOS_Stacktrace. h  
   
- **Version du .NET framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Version de .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

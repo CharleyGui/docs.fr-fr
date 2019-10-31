@@ -5,21 +5,19 @@ helpviewer_keywords:
 - UseSmallInternalThreadStacks element
 - <UseSmallInternalThreadStacks> element
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 515ea076c5eaead50b41e45e415725d0439914bc
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 2fd776ce8605e6dcf288dcb3852ded16638a1873
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252206"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114924"
 ---
-# <a name="usesmallinternalthreadstacks-element"></a>\<UseSmallInternalThreadStacks >, élément
+# <a name="usesmallinternalthreadstacks-element"></a>\<élément UseSmallInternalThreadStacks >
 Demande que le common language runtime (CLR) réduit l’utilisation de la mémoire en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +36,13 @@ Demande que le common language runtime (CLR) réduit l’utilisation de la mémo
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |true|Demander des tailles de pile explicites.|  
-|false|Utilisez la taille de pile par défaut. Il s’agit de la valeur par défaut pour le .NET Framework 4.|  
+|False|Utilisez la taille de pile par défaut. Il s’agit de la valeur par défaut pour le .NET Framework 4.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

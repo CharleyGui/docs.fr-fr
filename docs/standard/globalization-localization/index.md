@@ -11,14 +11,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 501e23656b3a31dc14e0b2213252ef52c598140f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: eae1c38c2383d13bfb4dab83f2fe9551970b39f4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622644"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120885"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Internationalisation et localisation d’applications .NET
 
@@ -68,7 +66,7 @@ Explique comment utiliser les méthodes et les classes .NET dépendantes de la c
 
 Décrit les meilleures pratiques en matière de globalisation, de localisation et de développement d'applications ASP.NET mondialisables.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
 - Espace de noms <xref:System.Globalization?displayProperty=nameWithType>
 

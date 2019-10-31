@@ -1,17 +1,15 @@
 ---
-title: Méthode ICorDebugVariableSymbol::SetValue
+title: 'Méthode icordebugvariablesymbol :: SetValue, méthode'
 ms.date: 03/30/2017
 ms.assetid: 4609418d-71fa-44bc-9618-4d529d25cabb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5436f56d3dcad7de3df2296485b0a36e5b3cfd79
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbd3d617e3448730241ccfda7bd26b65d17b694d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967966"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121891"
 ---
-# <a name="icordebugvariablesymbolsetvalue-method"></a>Méthode ICorDebugVariableSymbol::SetValue
+# <a name="icordebugvariablesymbolsetvalue-method"></a>Méthode icordebugvariablesymbol :: SetValue, méthode
 Affecte la valeur d'un tableau d'octets à une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -51,12 +49,12 @@ HRESULT SetValue(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b5e49e9d575ae2ec9b48b18f839d469632ffa769
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 67cba143957b50e8e8d7fa68e62b52775ca2f144
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770407"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131633"
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 
@@ -29,7 +27,7 @@ Les événements dans .NET Framework sont basés sur le modèle délégué. Le m
   
  Pour plus d’informations sur la gestion des événements dans les applications Windows 8.x Store, consultez [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).  
   
-## <a name="events"></a>Événements
+## <a name="events"></a>événements
 
 Un événement est un message envoyé par un objet pour signaler la présence d’une action. L'action peut être provoquée par l'intervention de l'utilisateur, telle qu'un clic de bouton, ou être déclenchée par une autre logique de programme, comme la modification d’une valeur de propriété. L’objet qui déclenche l’événement est appelé *l’émetteur d’événements*. L'émetteur d'événements ne connaît pas l'objet, ni la méthode qui recevront (géreront) les événements qu'il déclenche. L'événement est généralement un membre de l'émetteur d'événements ; par exemple, l'événement <xref:System.Web.UI.WebControls.Button.Click> est membre de la classe <xref:System.Web.UI.WebControls.Button>, et l'événement <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> est membre de la classe qui implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
@@ -86,16 +84,16 @@ L'exemple suivant présente une méthode de gestionnaire d'événements nommée 
 ## <a name="raising-multiple-events"></a>Déclenchement de plusieurs événements  
  Si votre classe déclenche plusieurs événements, le compilateur génère un champ par instance de délégué d'événement. Si le nombre d’événements est important, le coût de stockage d’un champ par délégué peut ne pas convenir. Dans ce cas, .NET fournit les propriétés de l’événement que vous pouvez utiliser avec une autre structure de données de votre choix pour stocker les délégués d’événements.  
   
- Les propriétés de l’événement se composent de déclarations d’événement accompagnées d’accesseurs d’événement. Les accesseurs d'événement sont des méthodes que vous définissez pour que des instances de délégué d'événement puissent être ajoutées ou supprimées de la structure des données de stockage. Notez que les propriétés d'événement sont plus lentes que les champs d'événement, car chaque délégué d'événement doit être récupéré avant de pouvoir être appelé. Le compromis réside entre la mémoire et la vitesse. Si votre classe définit de nombreux événements qui sont déclenchés peu fréquemment, vous souhaiterez implémenter les propriétés de l’événement. Pour plus d'informations, voir [Procédure : Gérer plusieurs événements à l'aide de propriétés d'événements](how-to-handle-multiple-events-using-event-properties.md).  
+ Les propriétés de l’événement se composent de déclarations d’événement accompagnées d’accesseurs d’événement. Les accesseurs d'événement sont des méthodes que vous définissez pour que des instances de délégué d'événement puissent être ajoutées ou supprimées de la structure des données de stockage. Notez que les propriétés d'événement sont plus lentes que les champs d'événement, car chaque délégué d'événement doit être récupéré avant de pouvoir être appelé. Le compromis réside entre la mémoire et la vitesse. Si votre classe définit de nombreux événements qui sont déclenchés peu fréquemment, vous souhaiterez implémenter les propriétés de l’événement. Pour plus d’informations, consultez [Comment : gérer plusieurs événements à l’aide des propriétés d’événements](how-to-handle-multiple-events-using-event-properties.md).  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Guide pratique pour déclencher et utiliser des événements](how-to-raise-and-consume-events.md)|Contient des exemples de déclenchement et de consommation d'événements.|  
-|[Guide pratique pour gérer plusieurs événements à l'aide de propriétés d'événements](how-to-handle-multiple-events-using-event-properties.md)|Montre comment utiliser des propriétés d'événement pour gérer plusieurs événements.|  
+|[Comment : déclencher et utiliser des événements](how-to-raise-and-consume-events.md)|Contient des exemples de déclenchement et de consommation d'événements.|  
+|[Comment : gérer plusieurs événements à l’aide des propriétés d’événements](how-to-handle-multiple-events-using-event-properties.md)|Montre comment utiliser des propriétés d'événement pour gérer plusieurs événements.|  
 |[Modèle de conception Observateur](observer-design-pattern.md)|Décrit le modèle de conception qui permet à un abonné de s’inscrire pour recevoir des notifications d’un fournisseur.|  
-|[Guide pratique pour consommer des événements dans une application Web Forms](how-to-consume-events-in-a-web-forms-application.md)|Montre comment gérer un événement déclenché par un contrôle Web Forms.|  
+|[Comment : consommer des événements dans une application Web Forms](how-to-consume-events-in-a-web-forms-application.md)|Montre comment gérer un événement déclenché par un contrôle Web Forms.|  
   
 ## <a name="see-also"></a>Voir aussi
 

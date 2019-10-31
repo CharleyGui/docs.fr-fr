@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5eefe716-5025-4a4c-970c-c823cdc7bb87
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: db5d07d2b9a295a5cd21b4d4af954503b8bd7a8b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5774b40178ce0d7c2ef5d063a37b9011fc2630df
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763662"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127947"
 ---
 # <a name="icordebugmoduleisdynamic-method"></a>ICorDebugModule::IsDynamic, méthode
 Obtient une valeur qui indique si ce module est dynamique.  
@@ -37,12 +35,12 @@ HRESULT IsDynamic(
   
 ## <a name="parameters"></a>Paramètres  
  `pDynamic`  
- [out] `true` si ce module est dynamique ; sinon, `false`.  
+ [out] `true` si ce module est dynamique ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Un module dynamique peut ajouter de nouvelles classes et supprimer des classes existantes même après que le module a été chargé. Le [ICorDebugManagedCallback::LoadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) et [ICorDebugManagedCallback::UnloadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) informent le débogueur lorsqu’une classe a été ajoutée ou supprimée.  
+ Un module dynamique peut ajouter de nouvelles classes et supprimer des classes existantes même après le chargement du module. Les rappels [ICorDebugManagedCallback :: LoadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) et [ICorDebugManagedCallback :: UnloadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) informent le débogueur lorsqu’une classe a été ajoutée ou supprimée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d218554a-bf42-4d88-833d-ede30de67a53
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 14b10b94f66a6b5434befeac1cd9562cb8a0f27f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d95662167dbc8fcda049fb6a7b3e6ff1dfb6e736
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761554"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130706"
 ---
 # <a name="icordebugmanagedcallbacklogmessage-method"></a>ICorDebugManagedCallback::LogMessage, méthode
-Notifie le débogueur qu’un thread du common language runtime (CLR) géré a appelé une méthode la <xref:System.Diagnostics.EventLog> classe journaliser un événement.  
+Notifie le débogueur qu’un thread managé common language runtime (CLR) a appelé une méthode dans la classe <xref:System.Diagnostics.EventLog> pour enregistrer un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,21 +39,21 @@ HRESULT LogMessage (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread managé qui a consigné l’événement.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread managé qui a enregistré l’événement.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread managé.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread managé.  
   
  `lLevel`  
- [in] Une valeur de la [LoggingLevelEnum](../../../../docs/framework/unmanaged-api/debugging/logginglevelenum-enumeration.md) énumération qui indique le niveau de gravité du message descriptif qui a été écrite dans le journal des événements.  
+ dans Valeur de l’énumération [LoggingLevelEnum,](../../../../docs/framework/unmanaged-api/debugging/logginglevelenum-enumeration.md) qui indique le niveau de gravité du message descriptif écrit dans le journal des événements.  
   
  `pLogSwitchName`  
- [in] Un pointeur vers le nom du commutateur de suivi.  
+ dans Pointeur vers le nom du commutateur de traçage.  
   
  `pMessage`  
- [in] Pointeur vers le message qui a été écrite dans le journal des événements.  
+ dans Pointeur vers le message qui a été écrit dans le journal des événements.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

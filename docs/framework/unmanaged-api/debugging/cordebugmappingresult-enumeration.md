@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c2042d0936359a85d203375c42be0d8a096f004e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fc3f77adf33502bfbc3d65ff5131420093fbbec8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739764"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097936"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult, énumération
 Fournit les détails sur la façon dont la valeur du pointeur d'instruction a été obtenue.  
@@ -43,17 +41,17 @@ typedef enum CorDebugMappingResult {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`MAPPING_PROLOG`|Le code natif est dans le prologue, la valeur de l’adresse IP est 0.|  
-|`MAPPING_EPILOG`|Le code natif est dans un épilogue, la valeur de l’adresse IP est l’adresse de la dernière instruction de la méthode.|  
-|`MAPPING_NO_INFO`|Aucune information de mappage est disponible pour la méthode, donc la valeur de l’adresse IP est 0.|  
-|`MAPPING_UNMAPPED_ADDRESS`|Bien qu’il existe des informations de mappage pour la méthode, l’adresse actuelle ne peut pas être mappé au code Microsoft intermediate language (MSIL). La valeur de l’adresse IP est 0.|  
-|`MAPPING_EXACT`|Soit la méthode correspond exactement au code MSIL ou le frame a été interprété, donc la valeur de l’adresse IP est précise.|  
+|`MAPPING_PROLOG`|Le code natif est dans le prologue, donc la valeur de l’adresse IP est 0.|  
+|`MAPPING_EPILOG`|Le code natif se trouve dans un épilogue, donc la valeur de l’adresse IP est l’adresse de la dernière instruction de la méthode.|  
+|`MAPPING_NO_INFO`|Aucune information de mappage n’étant disponible pour la méthode, la valeur de l’adresse IP est 0.|  
+|`MAPPING_UNMAPPED_ADDRESS`|Bien qu’il existe des informations de mappage pour la méthode, l’adresse actuelle ne peut pas être mappée au code MSIL (Microsoft Intermediate Language). La valeur de l’adresse IP est 0.|  
+|`MAPPING_EXACT`|Soit la méthode est mappée exactement au code MSIL, soit le frame a été interprété, donc la valeur de l’adresse IP est exacte.|  
 |`MAPPING_APPROXIMATE`|La méthode a été correctement mappée, mais la valeur de l’adresse IP peut être approximative.|  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser la [ICorDebugILFrame::GetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) méthode pour obtenir la valeur du pointeur d’instruction.  
+ Vous pouvez utiliser la méthode [ICorDebugILFrame :: GetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) pour obtenir la valeur du pointeur d’instruction.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

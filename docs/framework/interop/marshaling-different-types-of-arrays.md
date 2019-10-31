@@ -8,17 +8,15 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8cbc904b56237d3c875566ee1276c121dae70c4c
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 1490171c4dd423baa3b6c5f5e00cf133c2584cae
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151741"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124396"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Marshaling de différents types de tableaux
-Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus d'informations, voir [Copie et épinglage](copying-and-pinning.md).  
+Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus de détails, consultez [Copie et épinglage](copying-and-pinning.md).  
   
  Le tableau suivant répertorie les options de marshaling des tableaux et décrit leur utilisation.  
   

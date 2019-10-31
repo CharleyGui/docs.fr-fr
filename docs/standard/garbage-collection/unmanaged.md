@@ -12,14 +12,12 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6be45a3d03d8cff580653260081a20d518448237
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: 04bed819b472abe23ae6a9e89de149e715272505
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662734"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141352"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Nettoyage de ressources non managées
 
@@ -29,7 +27,7 @@ Si vos types utilisent les ressources non managées, procédez comme suit :
 
 - Implémentez le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md). Pour ce faire, vous devez fournir une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour activer la version déterministe des ressources non managées. Un consommateur de votre type appelle la méthode <xref:System.IDisposable.Dispose%2A> lorsque l'objet (et les ressources qu'il utilise) n'est plus nécessaire. La méthode <xref:System.IDisposable.Dispose%2A> libère immédiatement les ressources non managées.
 
-- Prévoyez que vos ressources non managées soient libérées si un consommateur de votre type oublie d'appeler la méthode <xref:System.IDisposable.Dispose%2A>. Il existe deux façons d'effectuer cette opération :
+- Prévoyez que vos ressources non managées soient libérées si un consommateur de votre type oublie d'appeler la méthode <xref:System.IDisposable.Dispose%2A>. Il existe deux façons d'effectuer cette opération :
 
   - Utilisez un handle sécurisé pour encapsuler votre ressource non managée. Il s'agit de la technique recommandée. Les handles sécurisés sont dérivés de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> et incluent une méthode <xref:System.Object.Finalize%2A> fiable. Lorsque vous utilisez un handle sécurisé, implémentez simplement l'interface <xref:System.IDisposable> et appelez la méthode <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> de votre handle sécurisé dans l'implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>. Le finaliseur du handle sécurisé est appelé automatiquement par le récupérateur de mémoire si sa méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelé.
 
@@ -45,7 +43,7 @@ Les consommateurs de votre type peuvent ensuite appeler directement votre implé
 
 [Utilisation d’objets implémentant IDisposable](../../../docs/standard/garbage-collection/using-objects.md) Décrit comment les consommateurs d’un type vérifient que son implémentation <xref:System.IDisposable.Dispose%2A> est appelée. Pour ce faire, nous vous recommandons d'utiliser l'instruction `using` en C# ou l'instruction `Using` en Visual Basic.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
 <xref:System.IDisposable?displayProperty=nameWithType>\
 Définit la méthode <xref:System.IDisposable.Dispose%2A> pour libérer des ressources non managées.

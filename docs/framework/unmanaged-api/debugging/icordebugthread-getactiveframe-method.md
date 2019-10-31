@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8d6d3a1a-fef6-4f2f-a22c-3bdd30d70e07
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 390a2c64508bf407296d318a47bfd2972b7ef9d9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d623893bd77e46832b0bd823ed60c23e4eee29ba
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762563"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133536"
 ---
 # <a name="icordebugthreadgetactiveframe-method"></a>ICorDebugThread::GetActiveFrame, méthode
-Obtient un pointeur d’interface vers le frame actif (la plus récent) sur cet objet ICorDebugThread.  
+Obtient un pointeur d’interface vers le frame actif (le plus récent) sur cet objet ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT GetActiveFrame (
   
 ## <a name="parameters"></a>Paramètres  
  `ppFrame`  
- [out] Pointeur vers l’adresse d’un objet d’interface ICorDebugFrame qui représente un frame.  
+ à Pointeur vers l’adresse d’un objet d’interface ICorDebugFrame qui représente un frame.  
   
 ## <a name="remarks"></a>Notes  
- Le `ppFrame` paramètre a la valeur null si aucune image n’est actuellement actif.  
+ Le paramètre `ppFrame` a la valeur null si aucun frame n’est actuellement actif.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

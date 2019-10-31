@@ -9,14 +9,12 @@ helpviewer_keywords:
 - threading [.NET], thread pool
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f921f40bbc5a7b72341c3fb778dd69fcc7b918c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665264"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127538"
 ---
 # <a name="the-managed-thread-pool"></a>Le pool de threads managés
 
@@ -73,7 +71,7 @@ Pour obtenir des exemples, consultez les pages des API référencées.
   
 ## <a name="skipping-security-checks"></a>Ignorer les vérifications de sécurité
 
-Le pool de threads fournit également les méthodes <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType>. Ces méthodes ne doivent être utilisées que si vous êtes certain que la pile de l’appelant n’a pas fait l’objet de vérifications de sécurité effectuées pendant l’exécution de la tâche mise en file d’attente. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> capturent la pile de l'appelant, qui est fusionnée avec la pile du thread de pool quand le thread commence à exécuter une tâche. Si une vérification de sécurité est requise, la pile entière doit être vérifiée. Même si elle garantit une sécurité, cette vérification a un impact sur les performances.  
+Le pool de threads fournit également les méthodes <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType>. Ces méthodes ne doivent être utilisées que si vous êtes certain que la pile de l'appelant n'a pas fait l'objet de vérifications de sécurité effectuées pendant l'exécution de la tâche mise en file d'attente. <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> capturent la pile de l'appelant, qui est fusionnée avec la pile du thread de pool quand le thread commence à exécuter une tâche. Si une vérification de sécurité est requise, la pile entière doit être vérifiée. Même si elle garantit une sécurité, cette vérification a un impact sur les performances.  
 
 ## <a name="when-not-to-use-thread-pool-threads"></a>Quand ne pas utiliser les threads de pool
 
@@ -83,7 +81,7 @@ Il existe plusieurs scénarios dans lesquels il est préférable de créer et de
 - Si un thread doit avoir une priorité particulière.  
 - Si vous avez des tâches qui entraînent le blocage du thread pendant une longue durée. Le pool de threads possède un nombre maximal de threads. Un grand nombre de threads de pool bloqués pourrait donc empêcher le démarrage des tâches.  
 - Vous devez placer les threads dans un thread unique cloisonné. Tous les threads <xref:System.Threading.ThreadPool> se trouvent dans le multithread cloisonné.  
-- Vous avez besoin d’une identité stable associée au thread ou avez besoin de dédier un thread à une tâche.  
+- Vous avez besoin d'une identité stable associée au thread ou avez besoin de dédier un thread à une tâche.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -91,7 +89,7 @@ Il existe plusieurs scénarios dans lesquels il est préférable de créer et de
 - <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>
 - <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>
 - [La bibliothèque parallèle de tâches](../parallel-programming/task-parallel-library-tpl.md)
-- [Guide pratique pour retourner une valeur à partir d’une tâche](../parallel-programming/how-to-return-a-value-from-a-task.md)
+- [Comment : retourner une valeur à partir d’une tâche](../parallel-programming/how-to-return-a-value-from-a-task.md)
 - [Fonctionnalités et objets de threading](threading-objects-and-features.md)
 - [Threads et threading](threads-and-threading.md)
 - [Asynchronous File I/O](../io/asynchronous-file-i-o.md)

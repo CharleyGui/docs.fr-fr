@@ -14,29 +14,27 @@ helpviewer_keywords:
 ms.assetid: a17b3155-7216-4e16-8c9f-abce21f549e7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4c5d4bc1fa82f7623168050f4ee36f0ea3cd171e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1305b9ebe3cd87ba002ee87610ff309d015a44e6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796432"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131749"
 ---
 # <a name="ienumreferenceidentity-interface"></a>IEnumReferenceIdentity, interface
-Sert d’énumérateur pour une collection d' `IReferenceIdentity` objets.  
+Sert d’énumérateur pour une collection d’objets `IReferenceIdentity`.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`IEnumReferenceIdentity::Clone`|Obtient un pointeur d’interface vers un `IEnumReferenceIdentity` nouveau qui contient les mêmes membres que `IEnumReferenceIdentity`ce.|  
-|`IEnumReferenceIdentity::Next`|Obtient le nombre spécifié d' `IReferenceIdentity` objets, en commençant à la position actuelle.|  
-|`IEnumReferenceIdentity::Reset`|Déplace le pointeur d’instruction au début de ce `IEnumReferenceIdentity`.|  
+|`IEnumReferenceIdentity::Clone`|Obtient un pointeur d’interface vers un nouveau `IEnumReferenceIdentity` qui contient les mêmes membres que ce `IEnumReferenceIdentity`.|  
+|`IEnumReferenceIdentity::Next`|Obtient le nombre spécifié d’objets `IReferenceIdentity`, en commençant à la position actuelle.|  
+|`IEnumReferenceIdentity::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumReferenceIdentity`.|  
 |`IEnumReferenceIdentity::Skip`|Déplace le pointeur d’instruction vers l’avant par le nombre d’éléments spécifié, en commençant à la position actuelle.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0863f644-58e8-45a0-b0c3-a28e99b20938
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7a15e3ab0d50763ad53b1caa921035239868fec1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f5b413ffbbc8fccbea38f23d8c87d40e010dd37
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761229"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130618"
 ---
 # <a name="icordebugmanagedcallbackupdatemodulesymbols-method"></a>ICorDebugManagedCallback::UpdateModuleSymbols, méthode
-Notifie le débogueur que les symboles pour un module du common language runtime ont été modifiés.  
+Notifie le débogueur que les symboles d’un module common language runtime ont changé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT UpdateModuleSymbols (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le module dans lequel les symboles ont été modifiés.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le module dans lequel les symboles ont été modifiés.  
   
  `pModule`  
- [in] Pointeur vers un objet ICorDebugModule qui représente le module dans lequel les symboles ont été modifiés.  
+ dans Pointeur vers un objet ICorDebugModule qui représente le module dans lequel les symboles ont été modifiés.  
   
  `pSymbolStream`  
- [in] Un pointeur vers un COM Win32 `IStream` objet qui contient les symboles modifiés.  
+ dans Pointeur vers un objet COM Win32 `IStream` qui contient les symboles modifiés.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode offre la possibilité de mettre à jour l’affichage du débogueur des symboles d’un module en appelant [ISymUnmanagedReader::UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) ou [ISymUnmanagedReader::ReplaceSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).  
+ Cette méthode offre la possibilité de mettre à jour la vue du débogueur des symboles d’un module en appelant [ISymUnmanagedReader :: UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) ou [ISymUnmanagedReader :: ReplaceSymbolStore,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).  
   
  Ce rappel peut se produire plusieurs fois pour le même module.  
   
- Un débogueur doit tenter de lier indépendants des points d’arrêt au niveau de la source.  
+ Un débogueur doit tenter de lier des points d’arrêt de niveau source non liés.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

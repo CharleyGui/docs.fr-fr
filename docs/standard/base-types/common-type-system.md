@@ -16,15 +16,13 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 050b2c2b8b55bc79cf388ce7a8c197b14f3437d7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 5590bb07c3927ba50000d7f9d99f11e30373343d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934763"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105705"
 ---
 # <a name="common-type-system"></a>Système de type commun
 Le système de type commun (CTS, Common Type System) définit la façon dont les types sont déclarés, utilisés et managés dans le Common Language Runtime ; il constitue également une partie importante de la prise en charge, par le runtime, de l'intégration interlangage. Le système de type commun met en œuvre les fonctions suivantes :  
@@ -218,7 +216,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
  Toutefois, la plupart des langages imposent des restrictions supplémentaires sur les noms de types. Toutes les comparaisons sont effectuées octet par octet ; elles respectent donc la casse et sont indépendantes des paramètres régionaux.  
   
- Bien qu’un type puisse référencer des types d’autres modules et assemblys, il doit être entièrement défini à l’intérieur d’un seul module .NET. (Cependant, en fonction de la prise en charge du compilateur, il peut être divisé en plusieurs fichiers de code source.) Les noms de types doivent être uniques seulement à l'intérieur d'un espace de noms. Pour identifier complètement un type, le nom du type doit être qualifié par l'espace de noms qui contient l'implémentation du type.  
+ Bien qu’un type puisse référencer des types d’autres modules et assemblys, il doit être entièrement défini à l’intérieur d’un seul module .NET. (En fonction de la prise en charge du compilateur, toutefois, il peut être divisé en plusieurs fichiers de code source.) Les noms de types doivent être uniques uniquement dans un espace de noms. Pour identifier complètement un type, le nom du type doit être qualifié par l'espace de noms qui contient l'implémentation du type.  
   
 ### <a name="base-types-and-interfaces"></a>Types de base et interfaces  
  Un type peut hériter des valeurs et des comportements d'un autre type. Le système de type commun (CTS, Common Type System) ne permet pas à des types d'hériter de plusieurs types de base.  
@@ -278,7 +276,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
  Si le code source d’une structure définit des constructeurs, ceux-ci doivent être paramétrés ; une structure ne peut pas définir un constructeur sans paramètre et les compilateurs ne génèrent pas de constructeur sans paramètre pour les structures ou autres types valeur. Tous les types valeurs disposent d’un constructeur sans paramètre implicite. Ce constructeur est implémenté par le Common Language Runtime et initialise tous les champs de la structure avec leurs valeurs par défaut.  
   
 <a name="Events"></a>   
-### <a name="events"></a>Événements  
+### <a name="events"></a>événements  
  Un événement définit un incident auquel il est possible de répondre, et définit les méthodes permettant de s'abonner à l'événement, d'annuler cet abonnement et de déclencher l'événement. Les événements sont souvent utilisés pour signaler d'autres types de changements d'état. Pour plus d’informations, consultez [Événements](../../../docs/standard/events/index.md).  
   
 <a name="NestedTypes"></a>   
@@ -294,13 +292,13 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 |Caractéristique|Applicable à|Description|  
 |--------------------|------------------|-----------------|  
 |abstract|Méthodes, propriétés et événements|Le type n'assure pas l'implémentation de la méthode. Les types qui héritent de méthodes abstraites ou qui en implémentent doivent fournir une implémentation pour la méthode. Une exception : le type dérivé est lui-même un type abstrait. Toutes les méthodes abstraites sont virtuelles.|  
-|private, family, assembly, family et assembly, family ou assembly, ou public|Tous|Définit l'accessibilité du membre :<br /><br /> private<br /> Accessible uniquement à partir du même type que le membre ou à l'intérieur d'un type imbriqué.<br /><br /> family<br /> Accessible à partir du même type que le membre et à partir des types dérivés qui en héritent.<br /><br /> assembly<br /> Accessible uniquement dans l'assembly dans lequel le type est défini.<br /><br /> family et assembly<br /> Accessible uniquement à partir des types qui se qualifient pour un accès family et assembly.<br /><br /> family ou assembly<br /> Accessible uniquement à partir des types qui se qualifient pour un accès family ou assembly.<br /><br /> public<br /> Accessible à partir de n'importe quel type.|  
+|private, family, assembly, family et assembly, family ou assembly, ou public|Tout|Définit l'accessibilité du membre :<br /><br /> private<br /> Accessible uniquement à partir du même type que le membre ou à l'intérieur d'un type imbriqué.<br /><br /> family<br /> Accessible à partir du même type que le membre et à partir des types dérivés qui en héritent.<br /><br /> assembly<br /> Accessible uniquement dans l'assembly dans lequel le type est défini.<br /><br /> family et assembly<br /> Accessible uniquement à partir des types qui se qualifient pour un accès family et assembly.<br /><br /> family ou assembly<br /> Accessible uniquement à partir des types qui se qualifient pour un accès family ou assembly.<br /><br /> public<br /> Accessible à partir de n'importe quel type.|  
 |final|Méthodes, propriétés et événements|La méthode virtuelle ne peut pas être substituée dans un type dérivé.|  
 |initialize-only|Champs|La valeur peut seulement être initialisée et ne peut pas être écrite après initialisation.|  
 |instance|Champs, méthodes, propriétés et événements|Si un membre n'est pas marqué comme `static` (C# et C++), `Shared` (Visual Basic), `virtual` (C# et C++) ou `Overridable` (Visual Basic), il est membre d'instance (il n'y a pas de mot clé d'instance). La mémoire comptera autant de copies de tels membres que d'objets qui les utilisent.|  
-|littéral|Champs|La valeur assignée au champ est une valeur fixe, connue au moment de la compilation, d'un type valeur intégré. Les champs de type Literal sont parfois qualifiés de constantes.|  
-|newslot ou override|Tous|Définit la façon dont le membre interagit avec des membres hérités ayant la même signature :<br /><br /> newslot<br /> Masque les membres hérités ayant la même signature.<br /><br /> override<br /> Remplace la définition d'une méthode virtuelle héritée.<br /><br /> La valeur par défaut est newslot.|  
-|statique|Champs, méthodes, propriétés et événements|Le membre appartient au type sur lequel il est défini, et non à une instance particulière du type ; le membre existe même si une instance du type n'est pas créée, et il est partagé entre toutes les instances du type.|  
+|literal|Champs|La valeur assignée au champ est une valeur fixe, connue au moment de la compilation, d'un type valeur intégré. Les champs de type Literal sont parfois qualifiés de constantes.|  
+|newslot ou override|Tout|Définit la façon dont le membre interagit avec des membres hérités ayant la même signature :<br /><br /> newslot<br /> Masque les membres hérités ayant la même signature.<br /><br /> override<br /> Remplace la définition d'une méthode virtuelle héritée.<br /><br /> La valeur par défaut est newslot.|  
+|static|Champs, méthodes, propriétés et événements|Le membre appartient au type sur lequel il est défini, et non à une instance particulière du type ; le membre existe même si une instance du type n'est pas créée, et il est partagé entre toutes les instances du type.|  
 |virtual|Méthodes, propriétés et événements|La méthode peut être implémentée par un type dérivé et peut être appelée de manière statique ou dynamique. Si un appel dynamique est utilisé, le type de l'instance qui effectue l'appel au moment de l'exécution détermine quelle implémentation de la méthode est appelée (plutôt que le type connu au moment de la compilation). Pour appeler une méthode virtuelle de manière statique, un cast en un type qui utilise la version désirée de la méthode devra éventuellement être effectué sur la variable.|  
   
 ### <a name="overloading"></a>Surcharge  

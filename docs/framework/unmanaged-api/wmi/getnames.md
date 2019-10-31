@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetNames function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 748767596a8f4680a2d7b63cb0579acaed5f53f8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5b03ed6a68fbe288e93dedb4f425f1511563dfeb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798510"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102522"
 ---
 # <a name="getnames-function"></a>GetNames, fonction
 Récupère une partie ou l’ensemble des noms des propriétés d’un objet. 
@@ -50,22 +48,22 @@ dans Ce paramètre n’est pas utilisé.
 dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszQualifierName`  
-dans Pointeur vers un valide `LPCWSTR` qui spécifie un nom de qualificateur qui opère dans le cadre d’un filtre. Pour plus d’informations, consultez la section [Notes](#remarks) . Ce paramètre peut être `null`. 
+dans Pointeur vers un `LPCWSTR` valide qui spécifie un nom de qualificateur qui opère dans le cadre d’un filtre. Pour plus d’informations, consultez la section [Notes](#remarks) . Ce paramètre peut être `null`. 
 
 `lFlags`  
 dans Combinaison de champs de bits. Pour plus d’informations, consultez la section [Notes](#remarks) .
 
 `pQualifierValue`   
-dans Pointeur vers une structure valide `VARIANT` initialisée à une valeur de filtre. Ce paramètre peut être `null`. 
+dans Pointeur vers une structure de `VARIANT` valide initialisée à une valeur de filtre. Ce paramètre peut être `null`. 
 
 `pstrNames`  
-à `SAFEARRAY` Structure qui contient des noms de propriété. Dans l’entrée, ce paramètre doit toujours être un pointeur `null`vers. Pour plus d’informations, consultez la section [Notes](#remarks) . 
+à Structure `SAFEARRAY` qui contient des noms de propriété. Dans l’entrée, ce paramètre doit toujours être un pointeur vers `null`. Pour plus d’informations, consultez la section [Notes](#remarks) . 
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides ou une combinaison incorrecte d’indicateurs et de paramètres a été spécifiée. |
@@ -76,37 +74,37 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetNames](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getnames) .
 
-Le nommé retourné est contrôlé par une combinaison d’indicateurs et de paramètres. Par exemple, la fonction peut retourner les noms de toutes les propriétés ou uniquement les noms des propriétés de clé.  Le filtre principal est spécifié dans le `lFlags` paramètre, et les autres paramètres varient en fonction de celui-ci.
+Le nommé retourné est contrôlé par une combinaison d’indicateurs et de paramètres. Par exemple, la fonction peut retourner les noms de toutes les propriétés ou uniquement les noms des propriétés de clé.  Le filtre principal est spécifié dans le paramètre `lFlags`, et les autres paramètres varient en fonction de celui-ci.
 
-Les valeurs d’indicateur `lFlags` dans sont des champs de bits
+Les valeurs d’indicateur dans `lFlags` sont des champs de bits
 
-Les indicateurs qui peuvent être passés en tant `lEnumFlags` qu’argument sont des champs de bits définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code.  Vous pouvez associer un indicateur de chaque groupe à n’importe quel indicateur de n’importe quel autre groupe. Toutefois, les indicateurs du même groupe s’excluent mutuellement. 
+Les indicateurs qui peuvent être passés en tant qu’argument `lEnumFlags` sont des champs de bits qui sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code.  Vous pouvez associer un indicateur de chaque groupe à n’importe quel indicateur de n’importe quel autre groupe. Toutefois, les indicateurs du même groupe s’excluent mutuellement. 
 
-| Indicateurs du groupe 1 |`Value`  |Description  |
+| Indicateurs du groupe 1 |valeur  |Description  |
 |---------|---------|---------|
-| `WBEM_FLAG_ALWAYS` | 0 | Retourne tous les noms de propriété. `strQualifierName`et `pQualifierVal` sont inutilisés. |
-| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Retourne uniquement les propriétés qui ont un qualificateur du nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
-|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Retourne uniquement les propriétés qui n’ont pas de qualificateur du nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
-|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Retourne uniquement les propriétés qui ont un qualificateur du nom spécifié par le `wszQualifierName` paramètre et ont également une valeur identique à celle spécifiée par la `pQualifierVal` structure. Si cet indicateur est utilisé, vous devez spécifier à la `wszQualifierName` fois un `pQualifierValue`et un. |
+| `WBEM_FLAG_ALWAYS` | 0 | Retourne tous les noms de propriété. les `strQualifierName` et les `pQualifierVal` ne sont pas utilisés. |
+| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Retourne uniquement les propriétés qui ont un qualificateur du nom spécifié par le paramètre `strQualifierName`. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
+|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Retourne uniquement les propriétés qui n’ont pas de qualificateur du nom spécifié par le paramètre `strQualifierName`. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
+|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Retourne uniquement les propriétés qui ont un qualificateur du nom spécifié par le paramètre `wszQualifierName` et ont également une valeur identique à celle spécifiée par la structure `pQualifierVal`. Si cet indicateur est utilisé, vous devez spécifier à la fois un `wszQualifierName` et un `pQualifierValue`. |
 
-| Indicateurs du groupe 2 |Valeur  |Description  |
+| Indicateurs du groupe 2 |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Retourne uniquement les noms des propriétés qui définissent les clés. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Retourne uniquement les noms de propriété qui sont des références d’objet. |
 
-| Indicateurs du groupe 3 |Valeur  |Description  |
+| Indicateurs du groupe 3 |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Retourne uniquement les noms de propriété qui appartiennent à la classe la plus dérivée. Excluez les propriétés des classes parentes. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Retourne uniquement les noms de propriété qui appartiennent aux classes parentes. |
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Retourne uniquement les noms des propriétés système. |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Retourne uniquement les noms des propriétés non-système. |
 
-La fonction alloue toujours un nouveau `SAFEARRAY` si elle retourne `WBEM_S_NO_ERROR`, et `pstrNames` est toujours définie pour pointer sur elle. Le tableau retourné peut avoir 0 élément si aucune propriété ne correspond aux filtres spécifiés. Si la fonction retourne une valeur autre que `WBM_S_NO_ERROR`, une nouvelle `SAFEARRAY` structure n’est pas retournée.
+La fonction alloue toujours une nouvelle `SAFEARRAY` si elle retourne `WBEM_S_NO_ERROR`, et `pstrNames` est toujours définie pour pointer sur elle. Le tableau retourné peut avoir 0 élément si aucune propriété ne correspond aux filtres spécifiés. Si la fonction retourne une valeur autre que `WBM_S_NO_ERROR`, une nouvelle structure de `SAFEARRAY` n’est pas retournée.
  
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

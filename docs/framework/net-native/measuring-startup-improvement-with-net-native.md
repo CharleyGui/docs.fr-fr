@@ -2,14 +2,12 @@
 title: Mesure de l'amélioration du démarrage avec .NET Native
 ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 74011a4c70cc8f7da3973698a43b1e97cffb9f9b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 771bf8deba8e851eadf356c647169a21428ddcff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927068"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128354"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Mesure de l'amélioration du démarrage avec .NET Native
 .NET Native améliore considérablement le temps de lancement des applications. Cette amélioration est particulièrement visible sur les appareils portables à basse consommation d'énergie hébergeant des applications complexes. Cette rubrique facilite la prise en main de l'instrumentation de base servant à mesurer cette amélioration du démarrage.  
@@ -47,7 +45,7 @@ ms.locfileid: "70927068"
   
 - Quand votre application a terminé la synchronisation des nouveaux articles  
   
- L’instrumentation d’une application est simple : Il vous suffit d’appeler la méthode appropriée sur la classe dérivée. À l'aide de la syntaxe `AppEventSource` utilisée dans l'exemple précédent, vous pouvez instrumenter une application comme suit :  
+ L'instrumentation d'une application est simple : il vous suffit d'appeler la méthode appropriée sur la classe dérivée. À l'aide de la syntaxe `AppEventSource` utilisée dans l'exemple précédent, vous pouvez instrumenter une application comme suit :  
   
  [!code-csharp[ProjectN_ETW#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw2.cs#2)]  
   

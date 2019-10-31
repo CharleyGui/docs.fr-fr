@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: 2edd0a10-77fb-4173-91eb-f2970cc364d0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05287d3674e55a87cfe359fc08f74fa46000d79f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 483d647028d1a05ea20ab836730099afe3e09374
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763298"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127849"
 ---
 # <a name="iclrvalidator-interface"></a>ICLRValidator, interface
-Fournit des méthodes pour la validation des images (PE) exécutables portables et de signalement des erreurs de validation.  
+Fournit des méthodes pour valider des images exécutables portables (PE) et des erreurs de validation de rapport.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[FormatEventInfo, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Obtient un message détaillé sur l’erreur de validation spécifié.|  
-|[Validate, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)|Valide le fichier exécutable portable ou le Microsoft intermediate language (MSIL) dans le fichier spécifié.|  
+|[FormatEventInfo, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-formateventinfo-method.md)|Obtient un message détaillé sur l’erreur de validation spécifiée.|  
+|[Validate, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)|Valide l’exécutable portable ou le langage MSIL (Microsoft Intermediate Language) dans le fichier spécifié.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator.idl, IValidator.h  
+ **En-tête :** IValidator. idl, IValidator. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

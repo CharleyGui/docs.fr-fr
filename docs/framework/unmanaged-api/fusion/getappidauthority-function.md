@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9f968dad-0d09-47fb-bebc-94c39a0d16ad
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8471610008bee02c7cc4e7654b21d6aca5dcf53a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 22a6af61251942f068676daaee2bdfa868e32a97
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796274"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134557"
 ---
 # <a name="getappidauthority-function"></a>GetAppIdAuthority, fonction
 Obtient un pointeur vers une instance [IAppIdAuthority](iappidauthority-interface.md) qui gère les clés pour les identités et les références de l’application.  
@@ -37,10 +35,10 @@ HRESULT GetAppIdAuthority (
   
 ## <a name="parameters"></a>Paramètres  
  `ppIAppIdAuthority`  
- à Pointeur retourné `IAppIdAuthority` .  
+ à Pointeur de `IAppIdAuthority` retourné.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

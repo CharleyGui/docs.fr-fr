@@ -15,14 +15,12 @@ helpviewer_keywords:
 - types, generic
 - type parameters
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ce40a54e82e95f41247db525110c510e3d83031e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: b4d36cb04494b01f8864ec36639ab33339d4b087
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045916"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130080"
 ---
 # <a name="reflection-and-generic-types"></a>Réflexion et types génériques
 <a name="top"></a> Du point de vue de la réflexion, la différence entre un type générique et un type ordinaire est qu'un type générique est associé à un ensemble de paramètres de type (s'il s'agit d'une définition de type générique) ou d'arguments de type (s'il s'agit d'un type construit). Une méthode générique diffère d'une méthode ordinaire de la même façon.  
@@ -38,7 +36,7 @@ ms.locfileid: "71045916"
   
  La réflexion fournit des méthodes de <xref:System.Type> et <xref:System.Reflection.MethodInfo> qui permettent d'accéder au tableau des paramètres de type et de déterminer si une instance de <xref:System.Type> représente un paramètre de type ou un type réel.  
   
- Pour obtenir un exemple de code illustrant les méthodes présentées ici, consultez [Procédure : examiner et instancier des types génériques avec la réflexion](how-to-examine-and-instantiate-generic-types-with-reflection.md).  
+ Pour obtenir un exemple de code illustrant les méthodes présentées ici, consultez [Guide pratique pour examiner et instancier des types génériques avec la réflexion](how-to-examine-and-instantiate-generic-types-with-reflection.md).  
   
  La discussion suivante suppose que vous connaissez la terminologie des génériques, par exemple, la différence entre les paramètres et les arguments de type et entre les types construits ouverts ou fermés. Pour plus d’informations, consultez la page [Génériques](../../standard/generics/index.md).  
   
@@ -66,7 +64,7 @@ ms.locfileid: "71045916"
 ### <a name="is-the-type-or-method-open-or-closed"></a>Le type ou la méthode est-il ouvert ou fermé ?  
  Un type ou une méthode générique est fermé si des types instanciables ont été substitués à tous ses paramètres de type, y compris tous les paramètres de type de tous les types englobants. Vous pouvez uniquement créer une instance d'un type générique s'il est fermé. La propriété <xref:System.Type.ContainsGenericParameters%2A?displayProperty=nameWithType> renvoie `true` si un type est ouvert. Pour les méthodes, la méthode <xref:System.Reflection.MethodBase.ContainsGenericParameters%2A?displayProperty=nameWithType> a la même fonction.  
   
- [Revenir en haut](#top)  
+ [Retour au début](#top)  
   
 <a name="generating_closed_generic_types"></a>   
 ## <a name="generating-closed-generic-types"></a>Génération de types génériques fermés  
@@ -79,7 +77,7 @@ ms.locfileid: "71045916"
   
  Pour obtenir un exemple de type générique ouvert qui n'est pas un type générique, consultez « Paramètre de type ou argument de type » plus loin dans cette rubrique.  
   
- [Revenir en haut](#top)  
+ [Retour au début](#top)  
   
 <a name="examining_type_arguments"></a>   
 ## <a name="examining-type-arguments-and-type-parameters"></a>Examen des arguments de type et des paramètres de type  
@@ -136,13 +134,13 @@ generic<typename V, typename W> ref class D : B<int, V> {};
 #### <a name="special-constraints"></a>Contraintes spéciales  
  Pour déterminer les contraintes spéciales d'un paramètre de type, appliquez le masque <xref:System.Reflection.GenericParameterAttributes.SpecialConstraintMask?displayProperty=nameWithType> à la valeur <xref:System.Reflection.GenericParameterAttributes> retournée par la propriété <xref:System.Type.GenericParameterAttributes%2A> . Si le résultat est <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>, il n'y a aucune contrainte spéciale. Un paramètre de type peut être contraint à être un type de référence, un type de valeur qui n'autorise pas les valeurs null et à avoir un constructeur sans paramètre.  
   
- [Revenir en haut](#top)  
+ [Retour au début](#top)  
   
 <a name="invariants"></a>   
 ## <a name="invariants"></a>Invariants  
  Pour obtenir un tableau des conditions invariantes pour les termes courants dans la réflexion pour les types génériques, consultez <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>. Pour obtenir des termes supplémentaires relatifs aux méthodes génériques, consultez <xref:System.Reflection.MethodBase.IsGenericMethod%2A?displayProperty=nameWithType>.  
   
- [Revenir en haut](#top)  
+ [Retour au début](#top)  
   
 <a name="related_topics"></a>   
 ## <a name="related-topics"></a>Rubriques connexes  
@@ -151,5 +149,5 @@ generic<typename V, typename W> ref class D : B<int, V> {};
 |-----------|-----------------|  
 |[Guide pratique pour examiner et instancier des types génériques avec la réflexion](how-to-examine-and-instantiate-generic-types-with-reflection.md)|Montre comment utiliser les propriétés et méthodes de <xref:System.Type> et <xref:System.Reflection.MethodInfo> pour examiner des types génériques.|  
 |[Génériques](../../standard/generics/index.md)|Décrit la fonctionnalité des génériques et sa prise en charge dans le .NET Framework.|  
-|[Guide pratique : définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)|Montre comment utiliser l'émission de réflexion pour générer des types génériques dans des assemblys dynamiques.|  
+|[Guide pratique pour définir un type générique avec l'émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)|Montre comment utiliser l'émission de réflexion pour générer des types génériques dans des assemblys dynamiques.|  
 |[Affichage des informations de type](viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec diverses classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|

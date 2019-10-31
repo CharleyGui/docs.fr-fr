@@ -11,14 +11,12 @@ helpviewer_keywords:
 - raising events
 - events [.NET Framework], samples
 ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aa933e0fc589d0dbfec741e9db7fb11222cfdf38
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: HT
+ms.openlocfilehash: 256b5ae9ac2145e339136985872dfa5423aca730
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44193215"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131587"
 ---
 # <a name="how-to-raise-and-consume-events"></a>Comment : déclencher et utiliser des événements
 Les exemples de cette rubrique montrent comment utiliser des événements. Ils incluent des exemples du délégué <xref:System.EventHandler>, le délégué <xref:System.EventHandler%601> et un délégué personnalisé, pour illustrer les événements avec et sans données.  

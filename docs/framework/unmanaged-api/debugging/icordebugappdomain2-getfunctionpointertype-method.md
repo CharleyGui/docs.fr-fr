@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8f0643ba9e750e7c64d2dae8eb5744df7bc26931
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5a6e0b009674ff52595aaa0ae4a060f1cdfd1398
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737800"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089047"
 ---
 # <a name="icordebugappdomain2getfunctionpointertype-method"></a>ICorDebugAppDomain2::GetFunctionPointerType, méthode
 Obtient un pointeur vers une fonction qui a une signature donnée.  
@@ -39,15 +37,15 @@ HRESULT GetFunctionPointerType (
   
 ## <a name="parameters"></a>Paramètres  
  `nTypeArgs`  
- [in] Le nombre d’arguments de type pour la fonction.  
+ dans Nombre d’arguments de type pour la fonction.  
   
  `ppTypeArgs`  
- [in] Tableau de pointeurs, chacun pointant vers un objet de ICorDebugType qui représente un argument de type de la fonction. Le premier élément est le type de retour ; chacun des autres éléments est un type de paramètre.  
+ dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugType qui représente un argument de type de la fonction. Le premier élément est le type de retour ; chacun des autres éléments est un type de paramètre.  
   
  `ppType`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugType` objet qui représente le pointeur vers la fonction.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugType` qui représente le pointeur vers la fonction.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

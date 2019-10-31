@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06fae364-f2c6-4a50-aa7e-3da9f2684dc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f687e48413cb227ad715720e24bd645065309553
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b98077914d680c908587649fdd517aca9c8dcd40
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748846"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125429"
 ---
 # <a name="icordebugcontrollerdetach-method"></a>ICorDebugController::Detach, méthode
-Détache le débogueur du processus ou domaine d’application.  
+Détache le débogueur du processus ou du domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,11 +32,11 @@ HRESULT Detach ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le processus ou domaine d’application exécution poursuit normalement, mais l’objet « ICorDebugProcess » ou « ICorDebugAppDomain » n’est plus valide et aucun autre rappel ne se produit.  
+ Le processus ou le domaine d’application continue l’exécution normalement, mais l’objet « ICorDebugProcess » ou « ICorDebugAppDomain » n’est plus valide et aucun autre rappel ne se produit.  
   
- Dans le .NET Framework version 2.0, si le débogage non managé est activé, cette méthode échoue en raison des limitations du système d’exploitation.  
+ Dans la version de .NET Framework 2,0, si le débogage non managé est activé, cette méthode échouera en raison des limitations du système d’exploitation.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

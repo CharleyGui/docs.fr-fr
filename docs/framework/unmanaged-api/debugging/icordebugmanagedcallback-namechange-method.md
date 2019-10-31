@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: a7018a0e-880e-4b68-b52a-1cd22c7aad62
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: abbfd21736d220f1cba029235c71a85bf3048ff0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 456a79ec290964df8e9f74fc6ca19ef9aabe1230
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761613"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130677"
 ---
 # <a name="icordebugmanagedcallbacknamechange-method"></a>ICorDebugManagedCallback::NameChange, méthode
 Notifie le débogueur que le nom d’un domaine d’application ou d’un thread a changé.  
@@ -38,12 +36,12 @@ HRESULT NameChange (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Un pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui avait un changement de nom ou qui contient le thread qui avait un changement de nom.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dont le nom a été modifié ou qui contient le thread qui a subi un changement de nom.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread qui avait un changement de nom.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread dont le nom a été modifié.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

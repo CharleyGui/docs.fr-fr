@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58ee2764d2e2c4c4e21effa3e0c3551a2e145f40
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 212a9f46dd33f98abd31e7a78c7a830cb3386cb6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796504"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108011"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB, structure
-Contient des informations sur un attribut unique dans un assembly et se compose `DWORD`de trois s. Chaque `DWORD` est un offset dans une mémoire tampon de caractères produite `CurrentIntoBuffer` par la méthode de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
+Contient des informations sur un attribut unique dans un assembly et se compose de trois `DWORD`s. Chaque `DWORD` est un offset dans une mémoire tampon de caractères produite par la méthode `CurrentIntoBuffer` de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,15 +45,15 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
 |`ofsValue`|Troisième offset dans la mémoire tampon de caractères. Cet emplacement marque le début de la valeur de l’attribut.|  
   
 ## <a name="sample"></a>Exemple  
- L’exemple suivant illustre plusieurs étapes de base, ce qui finit par aboutir `IDENTITY_ATTRIBUTE_BLOB` à une structure remplie :  
+ L’exemple suivant illustre plusieurs étapes de base, ce qui finit par aboutir à une structure de `IDENTITY_ATTRIBUTE_BLOB` remplie :  
   
 1. Obtenez un [IReferenceIdentity](ireferenceidentity-interface.md) pour l’assembly.  
   
-2. Appelez la `IReferenceIdentity::EnumAttributes` méthode et obtenez un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
+2. Appelez la méthode `IReferenceIdentity::EnumAttributes` et obtenez un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Créez une mémoire tampon de caractères et effectuez un cast `IDENTITY_ATTRIBUTE_BLOB` de celle-ci en structure.  
+3. Créez une mémoire tampon de caractères et effectuez un cast de celle-ci en structure `IDENTITY_ATTRIBUTE_BLOB`.  
   
-4. Appelez la `CurrentIntoBuffer` méthode de l' `IEnumIDENTITY_ATTRIBUTE` interface. Cette méthode copie les attributs `Namespace`, `Name`et `Value` dans la mémoire tampon de caractères. Les trois décalages de ces chaînes deviennent disponibles dans la `IDENTITY_ATTRIBUTE_BLOB` structure.  
+4. Appelez la méthode `CurrentIntoBuffer` de l’interface `IEnumIDENTITY_ATTRIBUTE`. Cette méthode copie les attributs `Namespace`, `Name`et `Value` dans la mémoire tampon de caractères. Les trois décalages de ces chaînes deviennent disponibles dans la structure `IDENTITY_ATTRIBUTE_BLOB`.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -222,7 +220,7 @@ Exit:
 ```  
   
 ### <a name="to-run-the-sample"></a>Pour exécuter l'exemple  
- C :\\> EnumAssemblyAttributes. exe C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll  
+ C :\\> EnumAssemblyAttributes. exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Résultat de l'exemple  
  Culture = neutral  
@@ -235,8 +233,8 @@ Exit:
   
  Version = 2.0.0.0  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 27fae01a-ecec-423a-973e-24f8de55826c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fdf3998d7430348cb71af8e7dd75cf2203d380ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9b9a301714ea60b4e3220eb75721e56e39bd9659
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769034"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139934"
 ---
 # <a name="icordebugthread2getactivefunctions-method"></a>ICorDebugThread2::GetActiveFunctions, méthode
 Obtient des informations sur la fonction active dans chacun des frames de ce thread.  
@@ -43,19 +41,19 @@ HRESULT GetActiveFunctions (
  [in] Taille du tableau `pFunctions`.  
   
  `pcFunctions`  
- [out] Un pointeur vers le nombre d’objets retournés dans le `pFunctions` tableau. Le nombre d’objets retourné sera égal au nombre de frames managés sur la pile.  
+ à Pointeur vers le nombre d’objets retournés dans le tableau de `pFunctions`. Le nombre d’objets retournés sera égal au nombre de frames managés sur la pile.  
   
  `pFunctions`  
- [in, out] Tableau d’objets COR_ACTIVE_FUNCTION, chacun d’eux contient des informations sur les fonctions actives dans les frames de ce thread.  
+ [in, out] Tableau d’objets COR_ACTIVE_FUNCTION, chacun contenant des informations sur les fonctions actives dans les frames de ce thread.  
   
- Le premier élément sera utilisé pour le frame terminal et ainsi de suite jusqu’à la racine de la pile.  
+ Le premier élément sera utilisé pour le frame de feuille, et ainsi de suite jusqu’à la racine de la pile.  
   
 ## <a name="remarks"></a>Notes  
  Si `pFunctions` a la valeur null en entrée, `GetActiveFunctions` retourne uniquement le nombre de fonctions qui se trouvent sur la pile. Autrement dit, si `pFunctions` a la valeur null en entrée, `GetActiveFunctions` retourne une valeur uniquement dans `pcFunctions`.  
   
- Le `GetActiveFunctions` méthode constitue une optimisation sur obtenir les mêmes informations à partir des frames dans une trace de pile et inclut uniquement les frames qui auraient eu un objet ICorDebugILFrame pour eux dans la trace de pile complète.  
+ La méthode `GetActiveFunctions` est conçue comme une optimisation pour obtenir les mêmes informations à partir de frames dans une trace de la pile et n’intègre que les frames qui auraient eu un objet ICorDebugILFrame pour eux dans la trace de la pile complète.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

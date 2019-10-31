@@ -7,14 +7,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], creating
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2dda45cca182d75bc77916cdf862ada9faead9ec
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 8a00784e6aa2d663c738339367b4076e79ed9c95
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973305"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122497"
 ---
 # <a name="create-assemblies"></a>Créer des assemblys
 
@@ -50,7 +48,7 @@ Des considérations particulières sont à prendre en compte lors de la mise à 
 
 - [Programmer avec des assemblys](program.md)
 - [Contrôle de version des assemblys](versioning.md)
-- [Guide pratique pour Créer un assembly à fichier unique](../../framework/app-domains/build-single-file-assembly.md)
-- [Guide pratique pour Créer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md)
+- [Comment : générer un assembly à fichier unique](../../framework/app-domains/build-single-file-assembly.md)
+- [Comment : générer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md)
 - [Méthode de localisation des assemblys par le runtime](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Assemblys multifichiers](../../framework/app-domains/multifile-assemblies.md)

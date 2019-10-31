@@ -2,14 +2,12 @@
 title: Guide de référence de l'API de réflexion .NET Native
 ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9c1fbef46231fed3af0d335e9396b301fe503254
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 01678ea6230a53416f213730ae6bb66e6bc057f8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049384"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128217"
 ---
 # <a name="net-native-reflection-api-reference"></a>Guide de référence de l'API de réflexion .NET Native
 .NET Native comprend trois nouveaux types d’exception : [System. Runtime. CompilerServices. MissingInteropDataException](missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](missingmetadataexception-class-net-native.md)et [System. Reflection. MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md). Notez les éléments suivants concernant ces trois types d'exception :  
@@ -25,12 +23,12 @@ ms.locfileid: "71049384"
 - l’ [utilitaire de résolution des problèmes MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pour les méthodes.  
   
 > [!NOTE]
-> Cette référence décrit trois types d’exception propres à .NET Native. Pour obtenir une documentation de référence sur l’API de réflexion .NET Framework <xref:System.Reflection>Core <xref:System.Reflection.Context> , <xref:System.Reflection.Emit> consultez les espaces de noms et. Pour la documentation de référence sur l'API d'interopérabilité principale du .NET Framework, consultez <xref:System.Runtime.InteropServices>.  
+> Cette référence décrit trois types d’exception propres à .NET Native. Pour obtenir une documentation de référence sur l’API de réflexion .NET Framework Core, consultez les espaces de noms <xref:System.Reflection>, <xref:System.Reflection.Context> et <xref:System.Reflection.Emit>. Pour la documentation de référence sur l'API d'interopérabilité principale du .NET Framework, consultez <xref:System.Runtime.InteropServices>.  
   
 ## <a name="systemreflection-namespace"></a>Espace de noms System.Reflection  
  L'espace de noms <xref:System.Reflection> contient les types principaux utilisés pour la réflexion dans le .NET Framework. Par .NET Native, il comprend également deux nouveaux types d’exception :  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |[MissingMetadataException](missingmetadataexception-class-net-native.md)|Exception levée quand la réflexion est utilisée pour récupérer des métadonnées qui ne sont pas présentes.|  
 |[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)|Exception levée quand les métadonnées d'un type ou d'un membre de type sont disponibles, mais que leur implémentation a été supprimée.|  
@@ -40,7 +38,7 @@ ms.locfileid: "71049384"
 ## <a name="systemruntimecompilerservices-namespace"></a>Espace de noms System.Runtime.CompilerServices  
  L'espace de noms <xref:System.Runtime.CompilerServices> comprend des types qui ont été conçus pour être utilisés par des compilateurs de langage. Par .NET Native, il comprend également un nouveau type d’exception :  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |[MissingInteropDataException](missinginteropdataexception-class-net-native.md)|Exception levée quand une méthode de marshaling manuel est appelée, mais que les métadonnées d'un type sont introuvables par analyse statique ou dans un fichier de directives runtime.|  
   
@@ -51,4 +49,4 @@ ms.locfileid: "71049384"
 - [MissingInteropDataException, classe](missinginteropdataexception-class-net-native.md)
 - [MissingMetadataException, classe](missingmetadataexception-class-net-native.md)
 - [MissingRuntimeArtifactException, classe](missingruntimeartifactexception-class-net-native.md)
-- [Prise en main](getting-started-with-net-native.md)
+- [Bien démarrer](getting-started-with-net-native.md)

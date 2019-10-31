@@ -2,14 +2,12 @@
 title: 'Atténuation : Services WCF et authentification par certificat'
 ms.date: 03/30/2017
 ms.assetid: ef19c91a-b9df-4bf0-a28e-eb1e99c4bc95
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 14fafa68e55ae7c1f3b6672b150cd0b149a3ffcd
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: cc8afaf0592a26f7bab15ab94b04ba4a9bfac930
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039552"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126118"
 ---
 # <a name="mitigation-wcf-services-and-certificate-authentication"></a>Atténuation : Services WCF et authentification par certificat
 

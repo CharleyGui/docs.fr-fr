@@ -13,14 +13,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8d0574c7e0910a658f1dc80d8394f55b472c31a3
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
-ms.translationtype: HT
+ms.openlocfilehash: 12666ca5ad8f223f2fba4a63a7cc7525601367a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "64634559"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091569"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
@@ -67,7 +65,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- Plusieurs éléments de format peuvent faire référence au même élément de la liste d'objets en indiquant le même spécificateur de paramètre. Par exemple, vous pouvez mettre en forme la même valeur numérique au format hexadécimal, scientifique et numérique en spécifiant une chaîne de format composite telle que : « 0x{0:X} {0:E} {0:N} », comme le montre l’exemple suivant.  
+ Plusieurs éléments de format peuvent faire référence au même élément de la liste d'objets en indiquant le même spécificateur de paramètre. Par exemple, vous pouvez mettre en forme la même valeur numérique au format hexadécimal, scientifique et numérique en spécifiant une chaîne de format composite comme « 0x{0:X} {0:E} {0:N} », comme dans l'exemple suivant.  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
@@ -89,9 +87,9 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 |Type ou catégorie de type|Voir|  
 |---------------------------|---------|  
-|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
+|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
 |Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
@@ -142,7 +140,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
  [!code-csharp[Formatting.Composite#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#3)]
  [!code-vb[Formatting.Composite#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#3)]  
   
- En supposant que le jour actuel soit un jeudi du mois de mai, la valeur des deux chaînes de l'exemple précédent est `Thursday May` dans la culture Anglais (États-Unis).  
+ En supposant que le jour actuel soit un jeudi du mois de mai, la valeur des deux chaînes de l'exemple précédent est `Thursday May` dans la culture américaine.  
   
  <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> présente les mêmes fonctionnalités que <xref:System.String.Format%2A?displayProperty=nameWithType>. La seule différence entre les deux méthodes est que <xref:System.String.Format%2A?displayProperty=nameWithType> retourne son résultat sous la forme d'une chaîne, alors que <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> écrit le résultat dans le flux de sortie associé à l'objet <xref:System.Console>. L'exemple suivant utilise la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour mettre en forme la valeur de `MyInt` en une valeur monétaire.  
   

@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest._AutoRedirects Field
+title: HttpWebRequest. _AutoRedirects, champ
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2dde9cdeeca1cc8cca13322747d625b505e7f453
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 82acb409f09826d70f8f050c932ab4aebc4fd172
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301054"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120094"
 ---
-# <a name="httpwebrequestautoredirects-field"></a>HttpWebRequest. \_AutoRedirects champ
+# <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest.\_champ AutoRedirects
 
-`HttpWebRequest._AutoRedirects` est un <xref:System.Int32> qui reflète le nombre de redirections effectuées pour ce <xref:System.Net.HttpWebRequest>.
+`HttpWebRequest._AutoRedirects` est une <xref:System.Int32> qui reflète le nombre de redirections effectuées pour cette <xref:System.Net.HttpWebRequest>.
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,14 +30,14 @@ private int _AutoRedirects
 ```
 
 > [!WARNING]
-> Le `HttpWebRequest._AutoRedirects` champ est interne et n’est pas destiné à être utilisé directement dans votre code.
+> Le champ `HttpWebRequest._AutoRedirects` est interne et n’est pas destiné à être utilisé directement dans votre code.
 > 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Net>
 
-**Assembly :** Système (dans System.dll)
+**Assembly :** Système (dans System. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

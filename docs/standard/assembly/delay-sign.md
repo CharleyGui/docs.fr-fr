@@ -8,18 +8,16 @@ helpviewer_keywords:
 - strong-named assemblies, delaying assembly signing
 - partial assembly signing
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e7679520e246ab3eda03e6f0e0d092c7d09f1845
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 75c86c49f4d471452a7e8f56856d5437e84df307
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991318"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084340"
 ---
 # <a name="delay-sign-an-assembly"></a>Temporiser la signature d’un assembly
 
@@ -37,7 +35,7 @@ Pour différer la signature d’un assembly :
 
    - <xref:System.Reflection.AssemblyDelaySignAttribute>, qui indique l’utilisation de la temporisation de signature en passant **true** comme paramètre à son constructeur.
 
-   Par exemple :
+   Exemple :
 
    ```cpp
    [assembly:AssemblyKeyFileAttribute("myKey.snk")];
@@ -76,7 +74,7 @@ Pour différer la signature d’un assembly :
    > Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.
 
    > [!NOTE]
-   > Si vous utilisez la temporisation de signature lors du développement avec Visual Studio sur un ordinateur 64 bits, et que vous compilez un assembly pour **Any CPU**, vous devrez peut-être appliquer deux fois l’option **-Vr**. (Dans Visual Studio, **Any CPU** est une valeur de la propriété de build **Plateforme cible** ; quand vous compilez à partir de la ligne de commande, il s’agit de la valeur par défaut.) Pour exécuter votre application à partir de la ligne de commande ou de l’Explorateur de fichiers, utilisez la version 64 bits de [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md) pour appliquer l’option **-VR** à l’assembly. Pour charger l’assembly dans Visual Studio au moment du design (par exemple, si l’assembly contient des composants utilisés par d’autres assemblys dans votre application), utilisez la version 32 bits de l’outil Strong Name. Ceci s’explique par le fait que le compilateur juste-à-temps (JIT) compile l’assembly en code natif 64 bits quand l’assembly est exécuté à partir de la ligne de commande, et en code natif 32 bits quand l’assembly est chargé dans l’environnement au moment du design.
+   > Si vous utilisez la temporisation de signature lors du développement avec Visual Studio sur un ordinateur 64 bits, et que vous compilez un assembly pour **Any CPU**, vous devrez peut-être appliquer deux fois l’option **-Vr**. (Dans Visual Studio, **toute UC** est une valeur de la propriété de build cible de la **plateforme** ; quand vous compilez à partir de la ligne de commande, il s’agit de la valeur par défaut.) Pour exécuter votre application à partir de la ligne de commande ou de l’Explorateur de fichiers, utilisez la version 64 bits de [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md) pour appliquer l’option **-VR** à l’assembly. Pour charger l’assembly dans Visual Studio au moment du design (par exemple, si l’assembly contient des composants utilisés par d’autres assemblys dans votre application), utilisez la version 32 bits de l’outil Strong Name. Ceci s’explique par le fait que le compilateur juste-à-temps (JIT) compile l’assembly en code natif 64 bits quand l’assembly est exécuté à partir de la ligne de commande, et en code natif 32 bits quand l’assembly est chargé dans l’environnement au moment du design.
 
 5. Vous soumettez l’assembly ultérieurement, généralement juste avant sa livraison, à l’Autorité de signature de votre organisation pour la signature réelle de nom fort en utilisant l’option **–R** avec l’outil Strong Name.
 
@@ -89,6 +87,6 @@ Pour différer la signature d’un assembly :
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer des assemblys](create.md)
-- [Guide pratique : créer une paire de clés publique/privée](create-public-private-key-pair.md)
+- [Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md)
 - [SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Programmer avec des assemblys](program.md)

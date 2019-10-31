@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5143805-2eb7-45b8-85ed-c8fb34df1084
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2b2dcdaed34044122dd2a61c9e0b5bb02f8cc0d9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a9d28243e9907fcc6320b2e09a49312bf35a70b4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774274"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121787"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess, méthode
-Obtient un [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instance qui représente le processus avec l’identificateur spécifié.  
+Obtient une instance de [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) qui représente le processus avec l’identificateur spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +36,18 @@ HRESULT GetProcess(
   
 ## <a name="parameters"></a>Paramètres  
  `pid`  
- [in] L’identificateur du processus.  
+ dans Identificateur du processus.  
   
  `ppProcess`  
- [out] Un pointeur vers l’adresse d’un `ICorPublishProcess` instance qui représente le processus.  
+ à Pointeur vers l’adresse d’une instance de `ICorPublishProcess` qui représente le processus.  
   
 ## <a name="remarks"></a>Notes  
- `GetProcess` échoue si le processus n’existe pas ou n’est pas un processus géré qui peuvent être débogué à l’utilisateur actuel.  
+ `GetProcess` échoue si le processus n’existe pas ou s’il ne s’agit pas d’un processus géré pouvant être débogué par l’utilisateur actuel.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

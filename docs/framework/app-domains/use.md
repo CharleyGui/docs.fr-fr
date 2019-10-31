@@ -6,14 +6,12 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 11774620dba03cc980ec3e2e2d3bd1a855dc6295
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d6bbc2648608e9542158e0f281984174447633a4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053056"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119721"
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 
@@ -38,7 +36,7 @@ Décrit comment récupérer les informations de configuration d’un domaine d�
 [Guide pratique pour charger des assemblys dans un domaine d’application](how-to-load-assemblies-into-an-application-domain.md)  
 Décrit comment charger un assembly dans un domaine d’application.  
   
-[Guide pratique pour obtenir des informations relatives au type et aux membres à partir d’un assembly](../reflection-and-codedom/get-type-member-information.md)  
+[Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../reflection-and-codedom/get-type-member-information.md)  
 Décrit comment récupérer des informations sur un assembly.  
   
 [Clichés instantanés d'assemblys](shadow-copy-assemblies.md)  
@@ -50,7 +48,7 @@ Explique comment recevoir une notification indiquant qu’une exception a été 
 [Résoudre les chargements d'assemblys](../../standard/assembly/resolve-loads.md)  
 Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour résoudre les échecs de chargement de l’assembly.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
 
 <xref:System.AppDomain>  
 Représente un domaine d’application. Fournit des méthodes pour la création et le contrôle des domaines d’application.  

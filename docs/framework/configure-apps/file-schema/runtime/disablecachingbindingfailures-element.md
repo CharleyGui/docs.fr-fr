@@ -10,21 +10,19 @@ helpviewer_keywords:
 - <disableCachingBindingFailures> element
 - disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d5b45ea4b30677d17e72685b16c19f9192c8c144
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 23633cb282b8e59b4df4bcc2cd38717d805a207e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252680"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117499"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures >, élément
+# <a name="disablecachingbindingfailures-element"></a>\<élément disableCachingBindingFailures >
 Spécifie s’il faut désactiver la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +41,13 @@ Spécifie s’il faut désactiver la mise en cache des échecs de liaison qui se
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |0|Ne désactivez pas la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection. Il s’agit du comportement de liaison par défaut à partir de la version 2,0 de .NET Framework.|  
 |1|Désactivez la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection. Ce paramètre revient au comportement de liaison du .NET Framework version 1,1.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -61,7 +59,7 @@ Spécifie s’il faut désactiver la mise en cache des échecs de liaison qui se
 ## <a name="remarks"></a>Notes  
  À partir de la version 2,0 de .NET Framework, le comportement par défaut pour le chargement des assemblys consiste à mettre en cache toutes les erreurs de liaison et de chargement. Autrement dit, si une tentative de chargement d’un assembly échoue, les demandes suivantes de chargement du même assembly échouent immédiatement, sans aucune tentative de localisation de l’assembly. Cet élément désactive le comportement par défaut pour les échecs de liaison qui se produisent parce que l’assembly est introuvable dans le chemin d’accès de détection. Ces échecs lèvent <xref:System.IO.FileNotFoundException>.  
   
- Certains échecs de liaison et de chargement ne sont pas affectés par cet élément et sont toujours mis en cache. Ces échecs se produisent parce que l’assembly a été trouvé mais n’a pas pu être chargé. Elles <xref:System.BadImageFormatException> lèvent <xref:System.IO.FileLoadException>ou. La liste suivante présente quelques exemples de tels échecs.  
+ Certains échecs de liaison et de chargement ne sont pas affectés par cet élément et sont toujours mis en cache. Ces échecs se produisent parce que l’assembly a été trouvé mais n’a pas pu être chargé. Elles lèvent <xref:System.BadImageFormatException> ou <xref:System.IO.FileLoadException>. La liste suivante présente quelques exemples de tels échecs.  
   
 - Si vous essayez de charger un fichier qui n’est pas un assembly valide, les tentatives suivantes de chargement de l’assembly échouent même si le fichier incorrect est remplacé par l’assembly approprié.  
   

@@ -8,20 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3e602057bfd2dea15887daee9058b12f26992f2
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 12777a5f34b8aadcc80977b8796fc2cd53c626a8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639043"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134249"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Gestion des exceptions (bibliothèque parallèle de tâches)
 
 Les exceptions non gérées levées par le code utilisateur s’exécutant à l’intérieur d’une tâche sont propagées vers le thread appelant, sauf dans certains scénarios décrits plus loin dans cette rubrique. Les exceptions sont propagées quand vous utilisez l’une des méthodes statiques ou d’instance <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> et que vous les gérez en incluant l’appel dans une instruction `try`/`catch`. Si une tâche est le parent de tâches enfants attachées ou si vous attendez plusieurs tâches, plusieurs exceptions peuvent être levées.
 
-Pour propager toutes les exceptions vers le thread appelant, l’infrastructure de la tâche les encapsule dans une instance <xref:System.AggregateException> . L’exception <xref:System.AggregateException> possède une propriété <xref:System.AggregateException.InnerExceptions%2A> qu’il est possible d’énumérer pour examiner toutes les exceptions d’origine levées et gérer (ou non) individuellement chacune d’elles. Vous pouvez également gérer les exceptions d’origine à l’aide de la méthode <xref:System.AggregateException.Handle%2A?displayProperty=nameWithType> .
+Pour propager toutes les exceptions vers le thread appelant, l’infrastructure de la tâche les encapsule dans une instance <xref:System.AggregateException> . L’exception <xref:System.AggregateException> possède une propriété <xref:System.AggregateException.InnerExceptions%2A> qu’il est possible d’énumérer pour examiner toutes les exceptions d’origine levées et gérer (ou non) individuellement chacune d’elles. Vous pouvez également gérer les exceptions d’origine à l’aide de la méthode <xref:System.AggregateException.Handle%2A?displayProperty=nameWithType>.
 
 Même si une seule exception est levée, elle est encapsulée dans une exception <xref:System.AggregateException> , comme le montre l’exemple suivant.
 
@@ -95,7 +93,7 @@ Dans une application réelle, le délégué de continuation peut consigner des i
 
 ## <a name="unobservedtaskexception-event"></a>Événement UnobservedTaskException
 
-Dans certains scénarios, tels que l’hébergement de plug-ins non approuvés, des exceptions sans gravité sont courantes. Il peut s’avérer trop difficile de toutes les observer manuellement. Dans de tels cas, vous pouvez gérer l’événement <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException?displayProperty=nameWithType> . Il est possible d’utiliser l’instance <xref:System.Threading.Tasks.UnobservedTaskExceptionEventArgs?displayProperty=nameWithType> passée à votre gestionnaire pour empêcher la propagation de l’exception non prise en charge vers le thread joint.
+Dans certains scénarios, tels que l’hébergement de plug-ins non approuvés, des exceptions sans gravité sont courantes. Il peut s’avérer trop difficile de toutes les observer manuellement. Dans de tels cas, vous pouvez gérer l’événement <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException?displayProperty=nameWithType>. Il est possible d’utiliser l’instance <xref:System.Threading.Tasks.UnobservedTaskExceptionEventArgs?displayProperty=nameWithType> passée à votre gestionnaire pour empêcher la propagation de l’exception non prise en charge vers le thread joint.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ffd0f708-0d21-4fae-a395-63b6c45828fa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6eb93b84baf9dcd82d89bb1a4711a91d97c52779
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 64304b671532325bdc2f8841a2702d537d143330
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754790"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124041"
 ---
 # <a name="icordebugfunctioncreatebreakpoint-method"></a>ICorDebugFunction::CreateBreakpoint, méthode
 Crée un point d’arrêt au début de cette fonction.  
@@ -37,9 +35,9 @@ HRESULT CreateBreakpoint (
   
 ## <a name="parameters"></a>Paramètres  
  `ppBreakpoint`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugFunctionBreakpoint qui représente le nouveau point d’arrêt pour la fonction.  
+ à Pointeur vers l’adresse d’un objet ICorDebugFunctionBreakpoint qui représente le nouveau point d’arrêt pour la fonction.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

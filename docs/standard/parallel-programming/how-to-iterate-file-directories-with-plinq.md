@@ -1,20 +1,18 @@
 ---
-title: 'Procédure : itérer les répertoires de fichiers avec PLINQ'
+title: 'Comment : itérer les répertoires de fichiers avec PLINQ'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5da70cdca16c83b33e525aea588c02c696702ac7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 90afc767e422515c6122b8a6ef0e63ffc07caf3a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929155"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091367"
 ---
-# <a name="how-to-iterate-file-directories-with-plinq"></a>Procédure : itérer les répertoires de fichiers avec PLINQ
+# <a name="how-to-iterate-file-directories-with-plinq"></a>Comment : itérer les répertoires de fichiers avec PLINQ
 Cet exemple montre comment paralléliser des opérations sur des répertoires de fichiers de deux manières différentes. La première requête utilise la méthode <xref:System.IO.Directory.GetFiles%2A> pour renseigner un tableau de noms de fichiers dans un répertoire et tous ses sous-répertoires. Cette méthode ne retourne de résultats qu’une fois le tableau entièrement renseigné. Par conséquent, elle peut introduire une latence au début de l’opération. Mais une fois le tableau renseigné, PLINQ est capable de le traiter en parallèle très rapidement.  
   
  La seconde requête utilise les méthodes statiques <xref:System.IO.Directory.EnumerateDirectories%2A> et <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> qui commencent à retourner des résultats immédiatement. Cette approche peut être plus rapide quand vous itérez au sein d’arborescences de répertoires importantes, bien que le temps de traitement par rapport au premier exemple puisse varier en fonction de nombreux facteurs.  
@@ -32,7 +30,7 @@ Cet exemple montre comment paralléliser des opérations sur des répertoires de
   
  [!code-csharp[PLINQ#34](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#34)]  
   
- Si vous utilisez <xref:System.IO.Directory.GetFiles%2A>, assurez-vous de disposer des autorisations suffisantes sur tous les répertoires de l’arborescence. Dans le cas contraire, une exception sera levée et aucun résultat ne sera retourné. Quand vous utilisez la méthode <xref:System.IO.Directory.EnumerateDirectories%2A> dans une requête PLINQ, la gestion des exceptions d’E/S de façon normale permettant de poursuivre l’itération devient problématique. Si votre code doit gérer les E/S ou les exceptions d’accès non autorisé, vous devez envisager l’approche décrite dans [Guide pratique pour itérer les répertoires de fichiers avec la classe Parallel](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
+ Si vous utilisez <xref:System.IO.Directory.GetFiles%2A>, assurez-vous de disposer des autorisations suffisantes sur tous les répertoires de l’arborescence. Dans le cas contraire, une exception sera levée et aucun résultat ne sera retourné. Quand vous utilisez la méthode <xref:System.IO.Directory.EnumerateDirectories%2A> dans une requête PLINQ, la gestion des exceptions d’E/S de façon normale permettant de poursuivre l’itération devient problématique. Si votre code doit gérer les E/S ou les exceptions d’accès non autorisé, vous devez envisager l’approche décrite dans [Comment : itérer les répertoires de fichiers avec la classe parallèle](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
   
  Si la latence des E/S s’avère un problème, par exemple avec des E/S de fichiers sur un réseau, optez plutôt pour l’une des techniques d’E/S asynchrones décrites dans [Bibliothèque parallèle de tâches et programmation asynchrone .NET traditionnelle](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md) et dans ce [billet de blog](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
   

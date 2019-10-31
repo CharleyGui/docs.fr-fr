@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8c9bdb3149834cd3dd04c7627bca440925f5273f
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 0e1248cc7fd29324810f164b4f0623c141439df2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040765"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091945"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 

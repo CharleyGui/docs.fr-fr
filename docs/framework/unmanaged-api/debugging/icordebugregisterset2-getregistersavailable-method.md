@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f3ed344b-0d3a-44e8-8000-2a97e0805a2c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5d4ab49aaccd77fac497bd86413915e82c99ed3e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d0b6960a24e246c7a538e8ffc59fa380a4b8e2a7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744909"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131370"
 ---
 # <a name="icordebugregisterset2getregistersavailable-method"></a>ICorDebugRegisterSet2::GetRegistersAvailable, méthode
-Obtient un tableau d’octets qui fournit une image bitmap des registres disponibles.  
+Obtient un tableau d’octets qui fournit une bitmap des registres disponibles.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +39,20 @@ HRESULT GetRegistersAvailable (
  [in] Taille du tableau `availableRegChunks`.  
   
  `availableRegChunks`  
- [out] Tableau d’octets, dont chaque bit correspond à un Registre. Si un Registre est disponible, le bit correspondant au Registre est défini.  
+ à Tableau d’octets, chacun d’eux correspondant à un registre. Si un registre est disponible, le bit correspondant du Registre est défini.  
   
 ## <a name="remarks"></a>Notes  
- Les valeurs de l’énumération CorDebugRegister spécifient les registres de différents microprocesseurs. Les cinq bits de chaque valeur supérieures sont l’index dans le `availableRegChunks` tableau d’octets. Les trois derniers bits de chaque valeur identifier la position de bit dans l’octet indexé. Étant donné un `CorDebugRegister` valeur qui spécifie un registre particulier, la position du Registre dans le masque est déterminée comme suit :  
+ Les valeurs de l’énumération CorDebugRegister spécifient les registres de différents microprocesseurs. Les cinq bits supérieurs de chaque valeur sont l’index dans le tableau `availableRegChunks` d’octets. Les trois bits de poids faible de chaque valeur identifient la position du bit dans l’octet indexé. Étant donné une valeur `CorDebugRegister` qui spécifie un registre particulier, la position du Registre dans le masque est déterminée comme suit :  
   
-1. Extrayez l’index nécessaire pour accéder à l’octet correct dans le `availableRegChunks` tableau :  
+1. Extrayez l’index nécessaire pour accéder à l’octet correct dans le tableau `availableRegChunks` :  
   
-     `CorDebugRegister` valeur >> 3  
+     valeur `CorDebugRegister` > > 3  
   
-2. Extrayez la position de bit dans l’octet indexé, où le bit zéro est le bit le moins significatif :  
+2. Extrayez la position du bit dans l’octet indexé, où le bit zéro est le bit le moins significatif :  
   
-     `CorDebugRegister` valeur & 7  
+     valeur `CorDebugRegister` & 7  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

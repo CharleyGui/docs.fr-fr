@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f1de4584-92df-42f3-9da4-fca03a1c6821
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 11e21e913e4749705ba6c7f91016be21b4de1712
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 48d2af96b50bf77347256b3d5860405e460a09d3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769969"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133448"
 ---
 # <a name="icordebugthreadgetid-method"></a>ICorDebugThread::GetID, méthode
-Obtient l’identificateur de système d’exploitation actuel de la partie active du ICorDebugThread.  
+Obtient l’identificateur de système d’exploitation actuel de la partie active de ce ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT GetID (
   
 ## <a name="parameters"></a>Paramètres  
  `pdwThreadId`  
- [out] L’identificateur du thread.  
+ à Identificateur du thread.  
   
 ## <a name="remarks"></a>Notes  
- L’identificateur de système d’exploitation peut changer pendant l’exécution d’un processus et peut être une valeur différente pour différentes parties du thread.  
+ L’identificateur de système d’exploitation peut changer potentiellement lors de l’exécution d’un processus et peut être une valeur différente pour différentes parties du thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

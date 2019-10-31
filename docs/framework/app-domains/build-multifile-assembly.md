@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer un assembly multifichier'
+title: 'Comment : générer un assembly multifichier'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
@@ -17,16 +17,14 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 261c5583-8a76-412d-bda7-9b8ee3b131e5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9b95d686529da83a5a52edb80219874530212dcc
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 150c0f63d52590ea9cf80a3e991375f10ce1a124
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991258"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119937"
 ---
-# <a name="how-to-build-a-multifile-assembly"></a>Procédure : Créer un assembly multifichier
+# <a name="how-to-build-a-multifile-assembly"></a>Comment : générer un assembly multifichier
 
 Cet article explique comment créer un assembly multifichier et fournit le code illustrant chaque étape de la procédure.
 
@@ -103,7 +101,7 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
 
 3. Compilez tous les autres modules à l'aide des options du compilateur nécessaires pour indiquer les autres modules référencés dans le code. Cette étape utilise l’option du compilateur **/addmodule**.
 
-   Dans l’exemple suivant, un module de code appelé *client* a une méthode `Main` de point d’entrée qui fait référence à une méthode dans le module *Stringer. dll* créé à l’étape 1.
+   Dans l’exemple suivant, un module de code appelé *client* a un point d’entrée `Main` méthode qui référence une méthode dans le module *Stringer. dll* créé à l’étape 1.
 
    ```cpp
    #using "Stringer.netmodule"
@@ -218,7 +216,7 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
 
     Dans cette commande, les arguments *nom_module* spécifient le nom de chaque module à inclure dans l’assembly. L’option **/main:** spécifie le nom de la méthode représentant le point d’entrée de l’assembly. L’option **/out:** spécifie le nom du fichier de sortie, qui contient les métadonnées de l’assembly. L’option **/target :** spécifie que l’assembly est un fichier exécutable ( *. exe*) d’application console, un fichier exécutable Windows ( *. Win*) ou un fichier de bibliothèque ( *. lib*).
 
-    Dans l’exemple suivant, *al. exe* crée un assembly qui est un exécutable d’application console appelé *myAssembly. exe*. L’application se compose de deux modules appelés *client. netmodule* et *Stringer. netmodule*, et du fichier exécutable appelé *myAssembly. exe*, qui contient uniquement les métadonnées de l’assembly. Le point d’entrée de l’assembly `Main` est la méthode de `MainClientApp`la classe, qui se trouve dans *client. dll*.
+    Dans l’exemple suivant, *al. exe* crée un assembly qui est un exécutable d’application console appelé *myAssembly. exe*. L’application se compose de deux modules appelés *client. netmodule* et *Stringer. netmodule*, et du fichier exécutable appelé *myAssembly. exe*, qui contient uniquement les métadonnées de l’assembly. Le point d’entrée de l’assembly est la méthode `Main` dans la classe `MainClientApp`, qui se trouve dans *client. dll*.
 
     ```cmd
     al Client.netmodule Stringer.netmodule /main:MainClientApp.Main /out:myAssembly.exe /target:exe
@@ -229,6 +227,6 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer des assemblys](../../standard/assembly/create.md)
-- [Guide pratique : Afficher le contenu de l’assembly](../../standard/assembly/view-contents.md)
+- [Comment : afficher le contenu d’un assembly](../../standard/assembly/view-contents.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Assemblys multifichiers](multifile-assemblies.md)

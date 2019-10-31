@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5aef6808-5aac-4b2f-a2c7-fee1575c55ed
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 01b000ed3d75ddb6a7882cb8f03ff2cec64fb9fe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6becc44b061ff2baac63437b6a72375d1c3735b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767877"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131163"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation, énumération
 Décrit l’ensemble des opérations pour lesquelles un hôte peut appliquer des actions de stratégie.  
@@ -44,29 +42,29 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`OPR_AppDomainRudeUnload`|L’hôte peut spécifier des actions de stratégie à prendre lorsqu’un <xref:System.AppDomain> est déchargé de façon non appropriée (non applicables).|  
-|`OPR_AppDomainUnload`|L’hôte peut spécifier des actions de stratégie à prendre lorsqu’un <xref:System.AppDomain> est déchargé.|  
-|`OPR_FinalizerRun`|L’hôte peut spécifier des actions de stratégie à prendre lors de l’exécuteront des finaliseurs.|  
+|`OPR_AppDomainRudeUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’un <xref:System.AppDomain> est déchargé en mode non normal (impropre).|  
+|`OPR_AppDomainUnload`|L’hôte peut spécifier des actions de stratégie à entreprendre lors du déchargement d’un <xref:System.AppDomain>.|  
+|`OPR_FinalizerRun`|L’hôte peut spécifier des actions de stratégie à effectuer lors de l’exécution des finaliseurs.|  
 |`OPR_ProcessExit`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsque le processus se termine.|  
 |`OPR_ThreadAbort`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’un thread est abandonné.|  
-|`OPR_ThreadRudeAbortInCriticalRegion`|L’hôte peut spécifier des actions à entreprendre lorsqu’un abandon de thread brutal se produit dans une région de code critique de stratégie.|  
-|`OPR_ThreadRudeAbortInNonCriticalRegion`|L’hôte peut spécifier des actions de stratégie à prendre lorsqu’un abandon de thread brutal se produit dans une région de code non critique.|  
+|`OPR_ThreadRudeAbortInCriticalRegion`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’une interruption de thread impropre se produit dans une zone critique de code.|  
+|`OPR_ThreadRudeAbortInNonCriticalRegion`|L’hôte peut spécifier des actions de stratégie à entreprendre lorsqu’une interruption de thread impropre se produit dans une région de code non critique.|  
   
 ## <a name="remarks"></a>Notes  
- L’infrastructure de fiabilité du common language runtime (CLR) fait la distinction entre les ressources et les abandons échecs d’allocation qui se produisent dans des zones critiques du code et ceux qui se produisent dans les régions non critiques de code. Cette distinction est conçue pour permettre aux hôtes de définir différentes stratégies en fonction de l’endroit où une défaillance se produit dans le code.  
+ L’infrastructure de fiabilité du common language runtime (CLR) distingue les abandons et les échecs d’allocation de ressources qui se produisent dans les régions de code critiques et ceux qui se produisent dans les régions de code non critiques. Cette distinction est conçue pour permettre aux hôtes de définir différentes stratégies en fonction de l’endroit où une défaillance se produit dans le code.  
   
- Un *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou ne parvient pas à terminer une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche maintient un verrou et reçoit un HRESULT qui indique un échec lors d’une demande d’allocation de mémoire, il est insuffisant simplement pour abandonner cette tâche pour garantir la stabilité de la <xref:System.AppDomain>, car le <xref:System.AppDomain> peut contenir d’autres tâches en attente pour le même verrou. Pour abandonner actuel tâche peut entraîner des autres tâches de cesser de répondre. Dans ce cas, l’hôte doit pouvoir décharger l’intégralité de <xref:System.AppDomain> plutôt que d’instabilité du risque.  
+ Une *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou l’échec de la réalisation d’une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche détient un verrou et reçoit un HRESULT qui indique un échec lors de l’exécution d’une demande d’allocation de mémoire, il est insuffisant simplement d’abandonner cette tâche pour garantir la stabilité du <xref:System.AppDomain>, car le <xref:System.AppDomain> peut contenir d’autres tâches en attente du même verrou. L’abandon de la tâche en cours peut entraîner le blocage de ces autres tâches. Dans ce cas, l’hôte a besoin de pouvoir décharger l’ensemble du <xref:System.AppDomain> plutôt que de risquer une instabilité potentielle.  
   
- Un *région non critique de code*, quant à eux, est une région où le CLR peut garantir qu’un abandon ou un échec affectera uniquement la tâche sur laquelle l’erreur se produit.  
+ Une *région de code non critique*, en revanche, est une région dans laquelle le CLR peut garantir qu’un abandon ou un échec affectera uniquement la tâche sur laquelle l’erreur se produit.  
   
- Le CLR fait également la distinction entre les abandons (non applicables) sans perte de données et non-sans perte de données. En général, un abandon normal ou correct fait en sorte d’exécuter des routines de gestion des exceptions et des finaliseurs avant d’abandonner une tâche, alors qu’un abandon brutal ne garantit pas ce type.  
+ Le CLR distingue également les abandons normaux et non normaux (brutal). En général, un abandon normal ou normal fait tout son possible pour exécuter des routines de gestion des exceptions et des finaliseurs avant d’abandonner une tâche, tandis qu’un abandon impropre n’apporte aucune garantie de ce type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

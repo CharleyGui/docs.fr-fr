@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 43c944f4-406a-4df6-981e-0eabb33dd5d0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ddc0429a6fa921e8e6ba3c55f3efe5373bea9576
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec92214e33cd1acda8b2702d93deba1f0fb2aaa2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697847"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111029"
 ---
 # <a name="iclrmetadatalocator-interface"></a>ICLRMetadataLocator, interface
-Utilisé par la couche de services d’accès aux données pour localiser les métadonnées des assemblys dans un processus cible.  
+Utilisé par la couche des services d’accès aux données pour localiser les métadonnées des assemblys dans un processus cible.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -33,12 +31,12 @@ Utilisé par la couche de services d’accès aux données pour localiser les m�
 |[GetMetadata, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-getmetadata-method.md)|Récupère les métadonnées d’une image à partir du processus cible.|  
   
 ## <a name="remarks"></a>Notes  
- Le client API (c'est-à-dire le débogueur) doit implémenter cette interface comme il convient pour le processus cible particulier. Par exemple, l’implémentation pour un processus actif serait différente de celui d’un vidage de mémoire.  
+ Le client API (c'est-à-dire le débogueur) doit implémenter cette interface comme il convient pour le processus cible particulier. Par exemple, l’implémentation d’un processus actif est différente de celle d’une image mémoire.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

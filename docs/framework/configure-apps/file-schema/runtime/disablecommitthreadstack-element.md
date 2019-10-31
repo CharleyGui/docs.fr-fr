@@ -8,21 +8,19 @@ helpviewer_keywords:
 - <disableCommitThreadStack> element
 - disableCommitThreadStack element
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2fa32d64f3ce440981c5f26d731051a118ed9254
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8aefb8a20d6a95c5b8062d0c03dcb28a3557ca3d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252666"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117475"
 ---
-# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack >, élément
+# <a name="disablecommitthreadstack-element"></a>\<élément disableCommitThreadStack >
 Spécifie si la pile des threads complète est validée quand un thread est démarré.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCommitThreadStack>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCommitThreadStack** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +39,13 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |0|Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
 |1|Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

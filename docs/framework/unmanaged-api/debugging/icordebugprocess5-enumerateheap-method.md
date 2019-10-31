@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0192104-6073-4089-a4df-dc29ee033074
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3d080145ac63882e04412b44c34d040a75746243
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c8cfc9cdf6580a002f6ac15080012a9e8c63be20
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767529"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129649"
 ---
 # <a name="icordebugprocess5enumerateheap-method"></a>ICorDebugProcess5::EnumerateHeap, méthode
 Obtient un énumérateur pour les objets sur le tas managé.  
@@ -37,14 +35,14 @@ HRESULT EnumerateHeap(
   
 ## <a name="parameters"></a>Paramètres  
  `ppObject`  
- [out] Un pointeur vers l’adresse d’un [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objet d’interface qui est un énumérateur pour les objets qui résident sur le tas managé.  
+ à Pointeur vers l’adresse d’un objet d’interface [icordebugheapenum,](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) qui est un énumérateur pour les objets qui résident sur le tas managé.  
   
 ## <a name="remarks"></a>Notes  
- Avant d’appeler le `ICorDebugProcess5::EnumerateHeap` (méthode), vous devez appeler la [ICorDebugProcess5::GetGCHeapInformation](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) (méthode) et examinez la valeur de la `areGCStructuresValid` champ retourné [COR_HEAPINFO](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) objet pour vous assurer que le tas de garbage collection dans son état actuel est énumérable. En outre, le `ICorDebugProcess5::EnumerateHeap` retourne `E_FAIL` si vous attachez trop tôt dans la durée de vie du processus, avant de mémoire pour le tas managé est alloué.  
+ Avant d’appeler la méthode `ICorDebugProcess5::EnumerateHeap`, vous devez appeler la méthode [ICorDebugProcess5 :: getgcheapinformation,](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) et examiner la valeur du champ `areGCStructuresValid` de l’objet [COR_HEAPINFO](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) retourné pour vous assurer que le segment de mémoire garbage collection dans son l’état actuel est énumérable. En outre, le `ICorDebugProcess5::EnumerateHeap` retourne `E_FAIL` si vous attachez trop tôt au cours de la durée de vie du processus, avant d’allouer de la mémoire pour le tas managé.  
   
- Le [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objet d’interface est un énumérateur standard dérivé de l’interface ICorDebugEnum qui vous permet d’énumérer les [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objets. Cette méthode remplit le [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objet de collection [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances qui fournissent des informations sur tous les objets. La collection peut également inclure [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances qui fournissent des informations sur les objets qui ne sont pas inclus par un objet, mais n’ont pas encore été collectés par le garbage collector.  
+ L’objet d’interface [icordebugheapenum,](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) est un énumérateur standard dérivé de l’interface ICorDebugEnum qui vous permet d’énumérer des objets [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) . Cette méthode remplit l’objet de collection [icordebugheapenum,](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) avec des instances [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) qui fournissent des informations sur tous les objets. La collection peut également inclure des instances [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) qui fournissent des informations sur les objets qui ne sont enracinés par aucun objet, mais qui n’ont pas encore été collectés par le garbage collector.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

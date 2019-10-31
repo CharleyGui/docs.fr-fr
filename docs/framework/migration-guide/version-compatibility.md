@@ -7,18 +7,16 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8db23f8e670406faff01644e751a948096f5fc7c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 1a3c23a70bc7dc519c824426f8939cb15e87a7fb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592882"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128054"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
 
-La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. Le .NET Framework essaie d’optimiser la compatibilité descendante : le code source écrit pour une version du .NET Framework doit se compiler sur les versions ultérieures du .NET Framework, et les fichiers binaires qui s’exécutent sur une version du .NET Framework doivent se comporter de la même manière sur les versions ultérieures du .NET Framework.
+La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. Le .NET Framework essaie d'optimiser la compatibilité descendante : le code source écrit pour une version du .NET Framework doit se compiler sur les versions ultérieures du .NET Framework, et les fichiers binaires qui s'exécutent sur une version du .NET Framework doivent se comporter de la même manière sur les versions ultérieures du .NET Framework.
 
 ## <a name="Apps"></a> Compatibilité des versions pour les applications
 
@@ -35,7 +33,7 @@ Pour définir les versions spécifiques sur lesquelles votre application s’ex�
 </configuration>
 ```
 
-Pour plus d'informations, voir [Procédure : configurer une application en vue de prendre en charge .NET Framework 4 ou 4.x](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).
+Pour plus d’informations, consultez [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.x](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).
 
 ## <a name="version-compatibility-for-components"></a>Compatibilité des versions pour les composants
 

@@ -9,14 +9,12 @@ api_location:
 api_type:
 - COM
 ms.assetid: a0be019e-aaa1-4036-990f-565f114d4b5c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 81477010b22edee71098edfc1b8557db08b6038f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8c2fb544cf9fd6642bd0581211e0e4e49633221
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049698"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139760"
 ---
 # <a name="icorprofilercallback7-interface"></a>Interface ICorProfilerCallback7
 [Prise en charge dans le .NET Framework 4.6.1 et versions ultérieures]  
@@ -29,10 +27,10 @@ ms.locfileid: "62049698"
 |------------|-----------------|  
 |[ModuleInMemorySymbolsUpdated, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-moduleinmemorysymbolsupdated-method.md)|Notifie le profileur de la mise à jour du flux de symbole associé à un module en mémoire.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4c0c7477-05ba-461b-b21b-cbfba95f1db1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31329a8674a9991a3f306eeff44ee3437ad64a5c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9b3a6bab8672f3ef3fca5f89c60b03a43477cce5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779437"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123298"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo, méthode
-Obtient le message d’erreur correspondant à l’erreur de validation spécifié.  
+Obtient le message d’erreur correspondant à l’erreur de validation spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT FormatEventInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `hVECode`  
- [in] La valeur HRESULT qui a été passée au gestionnaire d’erreurs de validation.  
+ dans Valeur HRESULT qui a été passée au gestionnaire d’erreurs de validation.  
   
  `Context`  
- [in] Un `VEContext` instance qui contient des informations de contexte sur l’erreur de validation.  
+ dans Instance `VEContext` qui contient des informations de contexte sur l’erreur de validation.  
   
  `msg`  
  [in, out] Chaîne qui contient le message d’erreur retourné.  
   
  `ulMaxLength`  
- [in] La longueur maximale du message d’erreur.  
+ dans Longueur maximale du message d’erreur.  
   
  `psa`  
- [in] Un tableau sécurisé qui contient des paramètres supplémentaires décrivant l’erreur.  
+ dans Tableau sécurisé qui contient des paramètres supplémentaires qui décrivent l’erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator.idl, IValidator.h  
+ **En-tête :** IValidator. idl, IValidator. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

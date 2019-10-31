@@ -5,21 +5,19 @@ helpviewer_keywords:
 - appDomainResourceMonitoring element
 - <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1395ee64d94e33693344b678c7a949665f994079
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 991833500cae4d96e9c28f7e94ca366e9b976a9d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252821"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118251"
 ---
-# <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring >, élément
+# <a name="appdomainresourcemonitoring-element"></a>\<élément appDomainResourceMonitoring >
 Demande au runtime de collecter des statistiques sur tous les domaines d’application du processus sur toute sa durée.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainResourceMonitoring>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainResourceMonitoring** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,13 +37,13 @@ Demande au runtime de collecter des statistiques sur tous les domaines d’appli
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |`true`|Les statistiques relatives à l’analyse des ressources de domaine d’application sont collectées.|  
 |`false`|Les statistiques pour l’analyse des ressources de domaine d’application ne sont pas collectées.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -57,7 +55,7 @@ Demande au runtime de collecter des statistiques sur tous les domaines d’appli
 ## <a name="remarks"></a>Notes  
  L’analyse des ressources de domaine d’application est disponible via la classe de domaine d’application managée, l’interface [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) d’hébergement et le suivi d’événements pour Windows (ETW). Lorsque l’analyse est activée, les statistiques sont collectées pour tous les domaines d’application du processus pendant toute la durée de vie du processus.  
   
- Pour activer l’analyse à partir du code managé <xref:System.AppDomain.MonitoringIsEnabled%2A> , utilisez la propriété.  
+ Pour activer l’analyse à partir du code managé, utilisez la propriété <xref:System.AppDomain.MonitoringIsEnabled%2A>.  
   
  Cet élément de configuration n’est disponible que dans le .NET Framework 4 et versions ultérieures.  
   

@@ -12,14 +12,12 @@ api_type:
 ms.assetid: 0e350a1b-6997-46d0-bfc5-962a5011ef43
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 839e698c8921f916fad174bae4f4cc8bb4d02994
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f35e979a5107064d2987a385a989075ef71283ff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609072"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098859"
 ---
 # <a name="cordebugehclause-structure"></a>CorDebugEHClause, structure
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -53,20 +51,20 @@ typedef struct _CorDebugEHClause {
 |`FilterOffset`|Le décalage en octets depuis le début du corps de la méthode pour un gestionnaire d'exceptions basé sur les filtres.|  
   
 ## <a name="remarks"></a>Notes  
- Un tableau de `CoreDebugEHClause` valeurs est retourné par la [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) (méthode).  
+ Un tableau de valeurs de `CoreDebugEHClause` est retourné par la méthode [getehclauses,](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) .  
   
- Les informations de la clause du gestionnaire d'exceptions sont définies par la spécification CLI. Pour plus d’informations, consultez [Standard ECMA-355 : Common Language Infrastructure (CLI), 6th Edition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+ Les informations de la clause du gestionnaire d'exceptions sont définies par la spécification CLI. Pour plus d’informations, consultez [Standard ECMA-355 : Common Language Infrastructure (CLI), sixième édition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
  Le champ `flags` peut contenir les indicateurs suivants. Notez qu'ils ne sont pas définis dans CorDebug.idl ou CorDebug.h.  
   
-|Indicateur|Value|Description|  
+|Indicateur|valeur|Description|  
 |----------|-----------|-----------------|  
 |`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Une clause d'exception typée.|  
 |`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Une clause de filtre et de gestionnaire d'exceptions.|  
 |`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|Une clause `finally`.|  
 |`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Une clause fault (une clause `finally` qui est appelée seulement quand une exception est levée).|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

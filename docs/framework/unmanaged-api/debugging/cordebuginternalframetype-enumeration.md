@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: e4412dc2-c338-4cfb-94d8-f682095dd2b1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1dcbd8bb566331a6a2d4217eeec0441fbd3e6ff6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e76800316885c27c697421d454341d5f0789c611
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739858"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097950"
 ---
 # <a name="cordebuginternalframetype-enumeration"></a>CorDebugInternalFrameType, énumération
-Identifie le type de frame de pile. Cette énumération est utilisée par le [ICorDebugInternalFrame::GetFrameType](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md) (méthode).  
+Identifie le type de frame de pile. Cette énumération est utilisée par la méthode [ICorDebugInternalFrame :: GetFrameType,](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,19 +47,19 @@ typedef enum CorDebugInternalFrameType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`STUBFRAME_NONE`|Valeur null. Le `ICorDebugInternalFrame::GetFrameType` méthode ne retourne jamais cette valeur.|  
-|`STUBFRAME_M2U`|Un frame de stub non managés.|  
-|`STUBFRAME_U2M`|Un frame de stub managé à managé.|  
-|`STUBFRAME_APPDOMAIN_TRANSITION`|Une transition entre des domaines d’application.|  
-|`STUBFRAME_LIGHTWEIGHT_FUNCTION`|Un appel de méthode léger.|  
-|`STUBFRAME_FUNC_EVAL`|Début de l’évaluation de fonction.|  
-|`STUBFRAME_INTERNALCALL`|Un appel interne dans le common language runtime.|  
-|`STUBFRAME_CLASS_INIT`|Le début d’une initialisation de classe.|  
-|`STUBFRAME_EXCEPTION`|Une exception est levée.|  
+|`STUBFRAME_NONE`|Valeur null. La méthode `ICorDebugInternalFrame::GetFrameType` ne retourne jamais cette valeur.|  
+|`STUBFRAME_M2U`|Frame stub managé vers non managé.|  
+|`STUBFRAME_U2M`|Frame stub non managé vers managé.|  
+|`STUBFRAME_APPDOMAIN_TRANSITION`|Transition entre des domaines d’application.|  
+|`STUBFRAME_LIGHTWEIGHT_FUNCTION`|Appel de méthode allégé.|  
+|`STUBFRAME_FUNC_EVAL`|Début de l’évaluation de la fonction.|  
+|`STUBFRAME_INTERNALCALL`|Appel interne dans le common language runtime.|  
+|`STUBFRAME_CLASS_INIT`|Début d’une initialisation de classe.|  
+|`STUBFRAME_EXCEPTION`|Exception levée.|  
 |`STUBFRAME_SECURITY`|Frame utilisé pour la sécurité d’accès du code.|  
-|`STUBFRAME_JIT_COMPILATION`|Le runtime est une méthode de compilation JIT.|  
+|`STUBFRAME_JIT_COMPILATION`|Le runtime fait la compilation juste-à-temps d’une méthode.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

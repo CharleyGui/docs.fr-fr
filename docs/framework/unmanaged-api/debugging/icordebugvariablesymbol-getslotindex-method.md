@@ -1,17 +1,15 @@
 ---
-title: Méthode ICorDebugVariableSymbol::GetSlotIndex
+title: 'Méthode icordebugvariablesymbol :: GetSlotIndex, méthode'
 ms.date: 03/30/2017
 ms.assetid: 09c19f5f-afc4-4e0c-bffe-cd7147bc7a43
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58bb2cc63f2336ca9cfbed8ebeac0d607c18b2c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a7a7ecf7d3e3d0d2125b03d3604c44138a2be0cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968155"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120969"
 ---
-# <a name="icordebugvariablesymbolgetslotindex-method"></a>Méthode ICorDebugVariableSymbol::GetSlotIndex
+# <a name="icordebugvariablesymbolgetslotindex-method"></a>Méthode icordebugvariablesymbol :: GetSlotIndex, méthode
 Obtient l'index d'emplacement géré d'une variable locale.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,12 +33,12 @@ HRESULT GetSlotIndex(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

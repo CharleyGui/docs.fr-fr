@@ -2,14 +2,12 @@
 title: Modifications avec rupture CoreFx-.NET Core
 description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
 ms.date: 09/20/2019
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7681dadbbbae737cb1cbc260613baea9d34527a8
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 04ae857b5f46748ad57c742b6ccf421f57bc3138
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002458"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73093430"
 ---
 # <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
 

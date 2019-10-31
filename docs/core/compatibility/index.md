@@ -1,15 +1,13 @@
 ---
 title: Évaluer les changements cassants - .NET Core
 description: Pour en savoir plus sur les façons dont .NET Core tente de maintenir la compatibilité pour les développeurs entre les versions de .NET.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 06/10/2019
-ms.openlocfilehash: c68a19b8b98a98bb9c64f5b9fa60b378935e6e93
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 4c3f051bf37ea4753d916ee22fedf97a9bad5892
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "67736560"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089345"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Évaluer les changements cassants dans .NET Core
 
@@ -26,7 +24,7 @@ Cet article décrit les catégories de modifications de compatibilité (ou chang
 > [!NOTE]
 > Pour une définition des catégories de compatibilité, comme la compatibilité binaire et la compatibilité descendante, consultez [Catégories de changements cassants](categories.md).
 
-Les sections suivantes décrivent les catégories de modifications apportées aux API .NET Core et leur impact sur la compatibilité des applications. L’icône ✔️ indique qu’un type particulier de modification est autorisé, ❌ indique qu’il n’est pas autorisé et ❓ indique que la modification peut être autorisée ou non autorisée. Les modifications de cette dernière catégorie nécessitent un jugement et une évaluation de la prévisibilité et de la cohérence du comportement.
+Les sections suivantes décrivent les catégories de modifications apportées aux API .NET Core et leur impact sur la compatibilité des applications. L’icône ✔️ indique qu’un type particulier de modification est autorisé, ❌ indique qu’elle n’est pas autorisée et ❓ indique une modification qui peut ou non être autorisée. Les modifications de cette dernière catégorie nécessitent un jugement et une évaluation de la prévisibilité et de la cohérence du comportement.
 
 > [!NOTE]
 > En plus de servir de guide pour l’évaluation des modifications apportées aux bibliothèques .NET Core, les développeurs de bibliothèques peuvent également utiliser ces critères pour évaluer les modifications apportées à leurs bibliothèques qui ciblent plusieurs implémentations et versions de .NET.
@@ -59,19 +57,19 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
 - **✔️ Extension de la visibilité d’un type**
 
-- **❌ Changement de l’espace de noms ou du nom d’un type**
+- **❌ modification de l’espace de noms ou du nom d’un type**
 
-- **❌ Changement du nom ou suppression d’un type public**
+- **❌ renommer ou supprimer un type public**
 
    Cela empêche tout code qui utilise le type renommé ou supprimé de fonctionner.
 
-- **❌ Modification du type sous-jacent d’une énumération**
+- **❌ modification du type sous-jacent d’une énumération**
 
    Il s’agit d’un changement cassant au niveau de la compilation et du comportement ainsi qu’un changement cassant binaire qui peut rendre les arguments d’attribut non analysables.
 
-- **❌ Scellement d’un type qui était précédemment non scellé**
+- **❌ sceller un type qui a été précédemment non scellé**
 
-- **❌ Ajout d’une interface à l’ensemble des types de base d’une interface**
+- **❌ ajout d’une interface à l’ensemble des types de base d’une interface**
 
    Si une interface implémente une interface qu’elle n’implémentait pas précédemment, tous les types implémentant la version d’origine de l’interface cessent de fonctionner.
 
@@ -79,13 +77,13 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Il existe une exception à la règle pour la suppression de l’interface : vous pouvez ajouter l’implémentation d’une interface qui dérive de l’interface supprimée. Par exemple, vous pouvez supprimer <xref:System.IDisposable> si le type ou l’interface implémente désormais <xref:System.ComponentModel.IComponent>, qui implémente <xref:System.IDisposable>.
 
-- **❌️ Changement d’un type `readonly struct` en type [struct](../../csharp/language-reference/keywords/struct.md)**
+- **❌ la modification d’un type de `readonly struct` en type [struct](../../csharp/language-reference/keywords/struct.md)**
 
   Notez que le changement d’un type `struct` en type `readonly struct` est autorisé.
 
-- **❌ Changement d’un type [struct](../../csharp/language-reference/keywords/struct.md) en type `ref struct` et vice versa**
+- **❌ la modification d’un type [struct](../../csharp/language-reference/keywords/struct.md) en type `ref struct`, et vice versa**
 
-- **❌ Réduction de la visibilité d’un type**
+- **❌ réduire la visibilité d’un type**
 
    Toutefois, l’augmentation de la visibilité d’un type est autorisée.
 
@@ -121,23 +119,23 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
    Cette modification a un impact sur la sérialisation.
 
-- **❌ Changement de nom ou suppression d’un paramètre ou membre public**
+- **❌ renommer ou supprimer un membre ou un paramètre public**
 
    Cela empêche tout code qui utilise le membre ou paramètre renommé ou supprimé de fonctionner.
 
    Notez que cela inclut la suppression et le changement de nom d’un accesseur Get ou Set à partir d’une propriété, ou de membres d’une énumération.
 
-- **❌ Ajout d’un membre à une interface**
+- **❌ ajout d’un membre à une interface**
 
-- **❌ Modification de la valeur d’un membre d’énumération ou d’une constante publique**
+- **❌ modification de la valeur d’une constante publique ou d’un membre d’énumération**
 
-- **❌ Modification du type d’une propriété, un champ, d’un paramètre ou d’une valeur renvoyée**
+- **❌ la modification du type d’une propriété, d’un champ, d’un paramètre ou d’une valeur de retour**
 
-- **❌ Ajout, suppression ou modification de l’ordre des paramètres**
+- **❌ de l’ajout, de la suppression ou de la modification de l’ordre des paramètres**
 
-- **❌ Ajout ou suppression des mots clés [in](../../csharp/language-reference/keywords/in.md), [out](../../csharp/language-reference/keywords/out.md) ou [ref](../../csharp/language-reference/keywords/ref.md) d’un paramètre**
+- **❌ de l’ajout ou de la suppression du mot clé [in](../../csharp/language-reference/keywords/in.md), [out](../../csharp/language-reference/keywords/out.md) ou [ref](../../csharp/language-reference/keywords/ref.md) d’un paramètre**
 
-- **❌ Changement de nom d’un paramètre (y compris changement de casse)**
+- **❌ le changement de nom d’un paramètre (y compris la modification de sa casse)**
 
   Cela est considéré comme un changement cassant pour deux raisons :
   
@@ -145,13 +143,13 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
   
   - Cela annule la [compatibilité de la source](categories.md#source-compatibility) lorsque les développeurs utilisent des [arguments nommés](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments).
 
-- **❌ Changement d’une valeur renvoyée `ref` à `ref readonly`**
+- **❌ de la modification d’une valeur de retour de `ref` en une valeur de retour `ref readonly`**
 
-- **❌️ Changement d’une valeur renvoyée `ref readonly` à `ref` sur une méthode virtuelle ou une interface**
+- **❌️ la modification d’un `ref readonly` en valeur de retour `ref` sur une méthode ou une interface virtuelle**
 
-- **❌ Ajout ou suppression de [abstract](../../csharp/language-reference/keywords/abstract.md) sur un membre**
+- **❌ de l’ajout ou de la suppression d’une [abstraite](../../csharp/language-reference/keywords/abstract.md) d’un membre**
 
-- **❌ Suppression du mot clé [virtual](../../csharp/language-reference/keywords/virtual.md) d’un membre**
+- **❌ de la suppression du mot clé [Virtual](../../csharp/language-reference/keywords/virtual.md) d’un membre**
 
   Bien que cela n’est souvent pas un changement cassant, car le compilateur C# a tendance à émettre des instructions [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) en langage intermédiaire pour appeler des méthodes non virtuelles (`callvirt` effectue une vérification de valeur null, alors qu’un appel normal ne le fait pas), ce comportement n’est pas invariable pour plusieurs raisons :
   - C# n’est pas le seul langage que .NET cible.
@@ -160,39 +158,39 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
   
   Rendre une méthode virtuelle signifie que le code consommateur finirait souvent par l’appeler de façon non virtuelle.
 
-- **❌ Ajout du mot clé [virtual](../../csharp/language-reference/keywords/virtual.md) à un membre**
+- **❌ l’ajout du mot clé [Virtual](../../csharp/language-reference/keywords/virtual.md) à un membre**
 
-- **❌ Changement d’un membre virtuel en abstrait**
+- **❌ la création d’un membre virtuel abstract**
 
   Un [membre virtuel](../../csharp/language-reference/keywords/virtual.md) fournit une implémentation de méthode qui *peut être* substituée par une classe dérivée. Un [membre abstrait](../../csharp/language-reference/keywords/abstract.md) ne fournit aucune implémentation et *doit être* substitué.
 
-- **❌ Ajout d’un membre abstrait à un type public qui a des constructeurs (publics ou protégés) accessibles et qui n’est pas [sealed](../../csharp/language-reference/keywords/sealed.md)**
+- **❌ l’ajout d’un membre abstrait à un type public qui a des constructeurs accessibles (publics ou protégés) et qui n’est pas [sealed](../../csharp/language-reference/keywords/sealed.md)**
 
-- **❌ Ajout ou suppression du mot clé [static](../../csharp/language-reference/keywords/static.md) d’un membre**
+- **❌ de l’ajout ou de la suppression du mot clé [static](../../csharp/language-reference/keywords/static.md) d’un membre**
 
-- **❌ Ajout d’une surcharge qui exclut une surcharge existante et définit un comportement différent**
+- **❌ ajout d’une surcharge qui exclut une surcharge existante et définit un comportement différent**
 
   Cela empêche de fonctionner les clients existants qui étaient liés à la surcharge précédente. Par exemple, si une classe a une seule version d’une méthode qui accepte un <xref:System.UInt32>, un consommateur existant est correctement lié à cette surcharge lors du passage d’une valeur <xref:System.Int32>. Toutefois, si vous ajoutez une surcharge qui accepte un <xref:System.Int32> lors de la recompilation ou à l’aide d’une liaison tardive, le compilateur est maintenant lié à la nouvelle surcharge. Si un comportement différent se produit, il s’agit d’un changement cassant.
 
-- **❌ Ajout d’un constructeur à une classe qui n’avait auparavant pas de constructeur sans ajout du constructeur sans paramètre**
+- **❌ ajout d’un constructeur à une classe qui n’avait précédemment aucun constructeur sans ajouter le constructeur sans paramètre**
 
-- **❌️ Ajout de [readonly](../../csharp/language-reference/keywords/readonly.md) à un champ**
+- **❌️ l’ajout de [ReadOnly](../../csharp/language-reference/keywords/readonly.md) à un champ**
 
-- **❌ Réduction de la visibilité d’un membre**
+- **❌ réduire la visibilité d’un membre**
 
    Cela inclut la réduction de la visibilité d’un membre [protected](../../csharp/language-reference/keywords/protected.md) lorsqu’il y a des constructeurs *accessibles* (publics ou protégés) et que le type n’est *pas* [sealed](../../csharp/language-reference/keywords/sealed.md). Si ce n’est pas le cas, la réduction de la visibilité d’un membre protégé est autorisée.
 
    Notez que l’augmentation de la visibilité d’un membre est autorisée.
 
-- **❌ Modification du type d’un membre**
+- **❌ modification du type d’un membre**
 
    La valeur renvoyée d’une méthode ou le type d’une propriété ou d’un champ ne peut pas être modifiée. Par exemple, la signature d’une méthode qui retourne un <xref:System.Object> ne peut pas être modifiée afin de retourner un <xref:System.String>, ou vice versa.
 
-- **❌ Ajout d’un champ à une un struct qui n’avait précédemment aucun état**
+- **❌ l’ajout d’un champ à un struct qui n’avait précédemment aucun État**
 
   Les règles d’affectation autorisent l’utilisation de variables non initialisées tant que le type de variable est un struct sans état. Si le struct est avec état, le code pourrait se retrouver avec des données non initialisées. Il s’agit potentiellement d’un changement cassant binaire et d’un changement cassant source.
 
-- **❌ Déclenchement d’un événement existant alors qu’il n’a jamais été déclenché avant**
+- **❌ déclenchant un événement existant lorsqu’il n’a jamais été déclenché avant**
 
 ## <a name="behavioral-changes"></a>Changements de comportement
 
@@ -200,8 +198,8 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
 - **✔️ Rendre un assembly portable lorsque les mêmes plateformes sont toujours prises en charge**
 
-- **❌ Modification du nom d’un assembly**
-- **❌ Modification de la clé publique d’un assembly**
+- **❌ modification du nom d’un assembly**
+- **❌ modification de la clé publique d’un assembly**
 
 ### <a name="properties-fields-parameters-and-return-values"></a>Propriétés, champs, paramètres et valeurs renvoyées
 
@@ -213,19 +211,19 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Notez que bien que la plage de valeurs qui peuvent être passées à la méthode ou sont retournées par le membre peut être étendue, le type de membre ou paramètre ne peut pas l’être. Par exemple, tandis que les valeurs passées à une méthode peuvent s’étendre de 0-124 à 0-255, le type de paramètre ne peut pas être changé de <xref:System.Byte> à <xref:System.Int32>.
 
-- **❌ Augmentation de l’intervalle accepté de valeurs pour une propriété ou un paramètre si le membre est [virtual](../../csharp/language-reference/keywords/virtual.md)**
+- **❌ l’extension de la plage de valeurs acceptées pour une propriété ou un paramètre si le membre est [virtuel](../../csharp/language-reference/keywords/virtual.md)**
 
    Ce changement empêche le fonctionnement des membres substitués existants, qui ne fonctionneront pas correctement pour la plage de valeurs étendue.
 
-- **❌ Diminution de la plage des valeurs acceptées pour une propriété ou un paramètre**
+- **❌ diminuant la plage de valeurs acceptées pour une propriété ou un paramètre**
 
-- **❌ Augmentation de l’intervalle de valeurs renvoyées pour une propriété, un champ, une valeur de retour ou un paramètre [out](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
+- **❌ l’extension de la plage de valeurs retournées pour une propriété, un champ, une valeur de retour ou un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
 
-- **❌ Modification des valeurs renvoyées pour une propriété, un champ, une valeur de retour de méthode ou un paramètre [out](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
+- **❌ la modification des valeurs retournées d’une propriété, d’un champ, d’une valeur de retour de méthode ou d’un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
 
-- **❌ Modification de la valeur par défaut d’une propriété, d’un champ ou d’un paramètre**
+- **❌ modification de la valeur par défaut d’une propriété, d’un champ ou d’un paramètre**
 
-- **Modification de la précision d’une valeur de retournée numérique de ❌**
+- **❌ modification de la précision d’une valeur de retour numérique**
 
 - **❓ Changement dans l’analyse de l’entrée et levée de nouvelles exceptions (même si le comportement d’analyse n’est pas spécifié dans la documentation)**
 
@@ -258,15 +256,15 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Les développeurs ne doivent pas compter sur le texte des messages d’erreur, qui changent également selon la culture de l’utilisateur.
 
-- **❌ Levée d’une exception dans tous les autres cas non répertoriés ci-dessus**
+- **❌ levant une exception dans tout autre cas non listé ci-dessus**
 
-- **❌ Suppression d’une exception dans tous les autres cas non répertoriés ci-dessus**
+- **❌ de la suppression d’une exception dans tout autre cas non listé ci-dessus**
 
 ### <a name="attributes"></a>Attributs
 
 - **✔️ Modification de la valeur d’un attribut qui n’est *pas* observable**
 
-- **❌ Modification de la valeur d’un attribut qui *est* observable**
+- **❌ modification de la valeur d’un attribut *observable***
 
 - **❓ Suppression d’un attribut**
 
@@ -276,7 +274,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
 - **✔️ Prise en charge d’une opération sur une plateforme qui n’était précédemment pas prise en charge**
 
-- **❌ Cesser la prise en charge ou commencer à requérir un service pack spécifique pour une opération qui était précédemment prise en charge sur une plateforme**
+- **❌ ne prend pas en charge ou ne nécessite pas une Service Pack spécifique pour une opération précédemment prise en charge sur une plateforme**
 
 ## <a name="internal-implementation-changes"></a>Modifications de l’implémentation interne
 
@@ -296,26 +294,26 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Si la modification en question n’est pas considérée comme un changement cassant pour une raison quelconque, cela est acceptable. Souvent, des mesures doivent être prises, ce qui peut inclure des opérations supplémentaires ou l’ajout de nouvelles fonctionnalités. Cela affectera presque toujours les performances, mais peut s’avérer essentiel pour que l’API en question fonctionne comme prévu.
 
-- **❌ Modification d’une API synchrone en asynchrone (et vice versa)**
+- **❌ la modification d’une API synchrone en asynchrone (et inversement)**
 
 ## <a name="code-changes"></a>Modifications du code
 
 - **✔️ Ajout de [params](../../csharp/language-reference/keywords/params.md) à un paramètre**
 
-- **❌ Changement d’un [struct](../../csharp/language-reference/keywords/struct.md) en [classe](../../csharp/language-reference/keywords/class.md) et vice versa**
+- **❌ la modification d’un [struct](../../csharp/language-reference/keywords/struct.md) en [classe](../../csharp/language-reference/keywords/class.md) et vice versa**
 
-- **❌ Ajout du mot clé [checked](../../csharp/language-reference/keywords/virtual.md) à un bloc de code**
+- **❌ l’ajout du mot clé [checked](../../csharp/language-reference/keywords/virtual.md) à un bloc de code**
 
    Cette modification peut pousser le code précédemment exécuté à lever <xref:System.OverflowException>, ce qui n’est pas acceptable.
 
-- **❌ Suppression de [params](../../csharp/language-reference/keywords/params.md) à partir d’un paramètre**
+- **❌ la suppression des [paramètres](../../csharp/language-reference/keywords/params.md) d’un paramètre**
 
-- **❌ Modification de l’ordre dans lequel les événements sont déclenchés**
+- **❌ modification de l’ordre dans lequel les événements sont déclenchés**
 
   Les développeurs peuvent raisonnablement s’attendre à ce que les événements se déclenchent dans le même ordre, et le code développeur dépend souvent de l’ordre dans lequel les événements sont déclenchés.
 
-- **❌ Suppression du déclenchement d’un événement sur une action donnée**
+- **❌ de la suppression du déclenchement d’un événement sur une action donnée**
 
-- **❌ Modification du nombre de fois que des événements donnés sont appelés**
+- **❌ la modification du nombre de fois où les événements sont appelés**
 
-- **❌ Ajout de <xref:System.FlagsAttribute> à un type d’énumération**
+- **❌ l’ajout du <xref:System.FlagsAttribute> à un type énumération**

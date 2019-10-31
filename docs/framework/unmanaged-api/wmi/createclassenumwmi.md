@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CreateClassEnumWmi function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a696a6f02f6d3a5afbcb45e5566e4b667739e2c5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1d637479bd140e635ee647a1e30d03343d8b0dcd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798742"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107529"
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi fonction)
 Retourne un énumérateur pour toutes les classes qui remplissent les critères de sélection spécifiés.
@@ -48,12 +46,12 @@ HRESULT CreateClassEnumWmi (
 ## <a name="parameters"></a>Paramètres
 
 `strSuperclass`\
-dans Si la `null` valeur n’est pas ou vide, spécifie le nom d’une classe parente ; l’énumérateur retourne uniquement les sous-classes de cette classe. Si elle est `null` ou vide et `lFlags` est WBEM_FLAG_SHALLOW, retourne uniquement les classes de niveau supérieur (classes sans classe parente). Si la valeur `null` est ou est `lFlags` vide `WBEM_FLAG_DEEP`et si a la valeur, retourne toutes les classes de l’espace de noms.
+dans S’il n’est pas `null` ou vide, spécifie le nom d’une classe parente ; l’énumérateur retourne uniquement les sous-classes de cette classe. S’il est `null` ou vide et `lFlags` est WBEM_FLAG_SHALLOW, retourne uniquement les classes de niveau supérieur (classes sans classe parente). S’il est `null` ou vide et que `lFlags` est `WBEM_FLAG_DEEP`, retourne toutes les classes de l’espace de noms.
 
 `lFlags`\
 dans Combinaison d’indicateurs qui affectent le comportement de cette fonction. Les valeurs suivantes sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Si cette valeur est définie, la fonction récupère les qualificateurs modifiés stockés dans l’espace de noms localisé des paramètres régionaux de la connexion actuelle. <br/> Si la valeur n’est pas définie, la fonction récupère uniquement les qualificateurs stockés dans l’espace de noms immédiat. |
 | `WBEM_FLAG_DEEP` | 0 | L’énumération comprend toutes les sous-classes de la hiérarchie, mais pas cette classe. |
@@ -65,7 +63,7 @@ dans Combinaison d’indicateurs qui affectent le comportement de cette fonction
 Les indicateurs recommandés sont `WBEM_FLAG_RETURN_IMMEDIATELY` et `WBEM_FLAG_FORWARD_ONLY` pour des performances optimales.
 
 `pCtx`\
-dans En général, cette valeur `null`est. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les classes demandées.
+dans En général, cette valeur est `null`. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les classes demandées.
 
 `ppEnum`\
 à Reçoit le pointeur vers l’énumérateur.
@@ -92,7 +90,7 @@ dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | L’utilisateur n’a pas l’autorisation d’afficher une ou plusieurs des classes que la fonction peut retourner. |
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
@@ -109,11 +107,11 @@ Cette fonction encapsule un appel à la méthode [IWbemServices :: CreateClassE
 
 Si l’appel de fonction échoue, vous pouvez obtenir des informations supplémentaires sur l’erreur en appelant la fonction [GetErrorInfo](geterrorinfo.md) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: ICorDebugVariableHome::GetSlotIndex (méthode)
+title: 'ICorDebugVariableHome :: GetSlotIndex, méthode'
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHome.GetSlotIndex
@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 966da50d-5665-4fff-bf7b-1c72bbadd9a4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 199c3ba5d5b9588db4c665070b4dec6266cefc2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dfc2e91599e7f05d90d56af07b71313e9eecaa51
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760344"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121053"
 ---
-# <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome::GetSlotIndex (méthode)
-Obtient l’index emplacement managé d’une variable locale.  
+# <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome :: GetSlotIndex, méthode
+Obtient l’index d’emplacement managé d’une variable locale.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT GetSlotIndex(
   
 ## <a name="parameters"></a>Paramètres  
  `pSlotIndex`  
- [out] Pointeur vers l’index d’emplacement d’une variable locale.  
+ à Pointeur vers l’index d’emplacement d’une variable locale.  
   
 ## <a name="return-value"></a>Valeur de retour  
  La méthode retourne les valeurs suivantes.  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|`S_OK`|L’appel de méthode a retourné une valeur d’index de l’emplacement dans `pSlotIndex`.|  
-|`E_FAIL`|Actuel [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance représente un argument de fonction.|  
+|`S_OK`|L’appel de méthode a retourné une valeur d’index d’emplacement dans `pSlotIndex`.|  
+|`E_FAIL`|L’instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) actuelle représente un argument de fonction.|  
   
 ## <a name="remarks"></a>Notes  
- L’index de l’emplacement peut être utilisé pour récupérer les métadonnées pour cette variable locale.  
+ L’index d’emplacement peut être utilisé pour récupérer les métadonnées de cette variable locale.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

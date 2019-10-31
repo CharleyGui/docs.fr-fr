@@ -2,29 +2,27 @@
 title: ICorDebugProcess8 (interface)
 ms.date: 03/30/2017
 ms.assetid: 7ab1a70f-ec11-46ff-8869-cd8ca679cc51
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a6db1bc7e87750a36415439707777fed99e358ea
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: dc7de361386b9ee21d6cf05c36a7f63c3e1c25f7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300528"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123371"
 ---
 # <a name="icordebugprocess8-interface"></a>ICorDebugProcess8 (interface)
-[Pris en charge dans le .NET Framework 4.6 et versions ultérieures]  
+[Pris en charge dans le .NET Framework 4,6 et versions ultérieures]  
   
- Étend logiquement l’interface ICorDebugProcess pour activer ou désactiver certains types de [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) rappels d’exception.  
+ Étend logiquement l’interface ICorDebugProcess pour activer ou désactiver certains types de rappels d’exception [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[EnableExceptionCallbacksOutsideOfMyCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md)|Active ou désactive certains types de [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) rappels d’exception.|  
+|[EnableExceptionCallbacksOutsideOfMyCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md)|Active ou désactive certains types de rappels d’exception [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6dcc4a4b-3a78-4369-bcc7-c0be6dde57d4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 62e78ca9b842d4554e933d3f09f008f68559b0c5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d76fbb727386c84f2419ceaeecc6756514c2f124
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749381"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132968"
 ---
 # <a name="ihosttaskmanagersetstackguarantee-method"></a>IHostTaskManager::SetStackGuarantee, méthode
 Réservé à un usage interne uniquement.  
@@ -35,12 +33,12 @@ HRESULT SetStackGuarantee(
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

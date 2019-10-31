@@ -14,38 +14,36 @@ helpviewer_keywords:
 ms.assetid: 76a136b5-e444-417a-8ade-f1596d597dc7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a5509dd07bbb6c812a7ea2797c46002aaa161c46
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7d083655326333f18ee98f8e84fff2ed182dde6d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619965"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103460"
 ---
 # <a name="icorpublishenum-interface"></a>ICorPublishEnum, interface
-Sert de l’interface de base abstraite pour les énumérateurs qui sont utilisés dans la publication d’informations sur les processus et domaines d’application.  
+Sert d’interface de base abstraite pour les énumérateurs utilisés dans la publication d’informations sur les processus et les domaines d’application.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Clone, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-clone-method.md)|Crée une copie de cet `ICorPublishEnum` objet.|  
+|[Clone, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-clone-method.md)|Crée une copie de cet objet `ICorPublishEnum`.|  
 |[GetCount, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-getcount-method.md)|Obtient le nombre d’éléments dans l’énumération.|  
-|[Reset, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-reset-method.md)|Place le curseur au début de l’énumération.|  
-|[Skip, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération par le nombre spécifié d’éléments.|  
+|[Reset, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-reset-method.md)|Déplace le curseur de au début de l’énumération.|  
+|[Skip, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.|  
   
 ## <a name="remarks"></a>Notes  
- Les énumérateurs suivants dérivent `ICorPublishEnum`:  
+ Les énumérateurs suivants dérivent de `ICorPublishEnum`:  
   
 - [ICorPublishAppDomainEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)  
   
 - [ICorPublishProcessEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

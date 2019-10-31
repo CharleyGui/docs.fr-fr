@@ -1,20 +1,18 @@
 ---
-title: 'Procédure : enregistrer des assemblys PIA'
+title: 'Comment : enregistrer des assemblys PIA'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - registering primary interop assemblies
 - primary interop assemblies, registering
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e0eeaee969eda5e4d0ea1a119991456668c7d44f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c799e4ead2932f1c376a57488df30390ad48b90f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051740"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107678"
 ---
-# <a name="how-to-register-primary-interop-assemblies"></a>Procédure : enregistrer des assemblys PIA
+# <a name="how-to-register-primary-interop-assemblies"></a>Comment : enregistrer des assemblys PIA
 
 Les classes ne peuvent être marshalées que par COM Interop et sont toujours marshalées en tant qu’interfaces. Dans certains cas, l’interface utilisée pour marshaler la classe est appelée interface de classe. Pour plus d’informations sur la substitution de l’interface de classe par une interface de votre choix, consultez [Wrapper CCW (COM Callable Wrapper)](../../standard/native-interop/com-callable-wrapper.md).
 

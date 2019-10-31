@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55cb673a-e240-43a6-a406-6912e7c0fe66
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d3aa76b88d89e83c400b3f372d846c1a31add255
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c6d77ff1393bc0ba4884dfa34810fee5316e33ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761479"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130746"
 ---
 # <a name="icordebugmanagedcallbackloadassembly-method"></a>ICorDebugManagedCallback::LoadAssembly, méthode
-Notifie le débogueur qu’un assembly du common language runtime (CLR) a été chargé.  
+Notifie le débogueur qu’un assembly common language runtime (CLR) a été chargé avec succès.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,12 +36,12 @@ HRESULT LoadAssembly (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’assembly a été chargé.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’assembly a été chargé.  
   
  `pAssembly`  
- [in] Pointeur vers un objet ICorDebugAssembly qui représente l’assembly.  
+ dans Pointeur vers un objet ICorDebugAssembly qui représente l’assembly.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

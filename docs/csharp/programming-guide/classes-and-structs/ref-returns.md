@@ -1,15 +1,13 @@
 ---
 title: Les valeurs de retour de référence et variables locales ref (Guide C#)
 description: Découvrir comment définir et utiliser des valeurs de retour de référence et des variables locales ref
-author: rpetrusha
-ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: e23007deffea0f542d623be918cd1c61496d1362
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 99e0f9d995cf3bf5c0486415b6f2d578147d3c7f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353887"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114486"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
 
@@ -124,4 +122,4 @@ Cette deuxième version est plus efficace avec des séquences plus longues dans 
 ## <a name="see-also"></a>Voir aussi
 
 - [ref, mot clé](../../language-reference/keywords/ref.md)
-- [Écrire du code sécurisé et efficace](../../write-safe-efficient-code.md)
+- [Écrire du code safe et efficace](../../write-safe-efficient-code.md)

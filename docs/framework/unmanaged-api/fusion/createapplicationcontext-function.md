@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7bf8a141-b2c0-4058-9885-1cef7dcaa811
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 25364330dafdf858c4b41e9a05731c37e97fbb57
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e188fe80e770481aac02244a2c105639e4da19e2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795430"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108895"
 ---
 # <a name="createapplicationcontext-function"></a>CreateApplicationContext, fonction
 Cette fonction prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement à partir de votre code.  
@@ -42,12 +40,12 @@ HRESULT CreateApplicationContext (
  `ppCtx`  
  à Pointeur vers un contexte d’application.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque** Inclus en tant que ressource dans fusion. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans fusion. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

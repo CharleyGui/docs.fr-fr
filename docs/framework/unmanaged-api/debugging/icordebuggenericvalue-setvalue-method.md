@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ed4c6458-0435-44fc-8e78-8ba00be362f2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0b6907cdf78fc70c75ddd711cd8593427857b172
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4cd03895b4e33c3e42c71acca12eaf950fc9a145
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756895"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138560"
 ---
 # <a name="icordebuggenericvaluesetvalue-method"></a>ICorDebugGenericValue::SetValue, méthode
 Copie une nouvelle valeur à partir de la mémoire tampon spécifiée.  
@@ -37,12 +35,12 @@ HRESULT SetValue (
   
 ## <a name="parameters"></a>Paramètres  
  `pFrom`  
- [in] Pointeur vers la mémoire tampon à partir duquel copier la valeur.  
+ dans Pointeur vers la mémoire tampon à partir de laquelle la valeur doit être copiée.  
   
 ## <a name="remarks"></a>Notes  
- Pour les types référence, la valeur est la référence, pas le contenu.  
+ Pour les types de référence, la valeur est la référence, et non le contenu.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

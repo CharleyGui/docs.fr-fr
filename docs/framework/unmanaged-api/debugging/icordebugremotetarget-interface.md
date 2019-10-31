@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: bd9936a6-cc24-4869-8761-0988664464e6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4e2e6a4624403dcab30bdb7b6d3af0226204cac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 97c4e6d3c9de7dcb8d399a956a4a58c49ca6e3b9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744648"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131872"
 ---
 # <a name="icordebugremotetarget-interface"></a>ICorDebugRemoteTarget, interface
-Fournit des méthodes qui permettent aux développeurs de déboguer les applications Silverlight dans l’environnement du common language runtime (CLR).  
+Fournit des méthodes qui permettent aux développeurs de déboguer des applications Silverlight dans l’environnement common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,16 +46,16 @@ interface ICorDebugRemoteTarget  : IUnknown
 |[ICorDebugRemoteTarget::GetHostName, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-gethostname-method.md)|Retourne le nom d’hôte ou l’adresse IP d’un ordinateur distant.|  
   
 ## <a name="remarks"></a>Notes  
- Le débogage en mode mixte (autrement dit, code managé et natif) n’est pas pris en charge sur Windows 95, Windows 98 ou Windows ME, ou sur les plateformes non x86 (par exemple, IA-64 et AMD64).  
+ Le débogage en mode mixte (autrement dit, le code managé et le code natif) n’est pas pris en charge sur Windows 95, Windows 98 ou Windows ME, ni sur les plateformes autres que x86 (comme IA-64 et AMD64).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl  
+ **En-tête :** CorDebug. idl  
   
- **Bibliothèque :** : CorGuids.lib  
+ **Bibliothèque :** : CorGuids. lib  
   
- **Versions du .NET framework :** 3.5 SP1  
+ **Versions de .NET Framework :** 3,5 SP1  
   
 ## <a name="see-also"></a>Voir aussi
 

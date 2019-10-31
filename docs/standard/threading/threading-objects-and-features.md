@@ -6,14 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], features
 - managed threading
 ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f25609bc3c4dd829c66a1a4514b7f1121f9c0909
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
-ms.translationtype: HT
+ms.openlocfilehash: dd9b7b8cb194353d0a1c285af10d54dc7366896e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759026"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128961"
 ---
 # <a name="threading-objects-and-features"></a>Fonctionnalités et objets de threading
 

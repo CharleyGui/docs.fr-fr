@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1d3d1eb-8370-4f25-8297-3bd262b4740a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c0e72d15ab4ca9b4468efb2a671022f30bfb3cc6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8b9ec94184945c19b77247175e51bd5e8dc1ceee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759946"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122668"
 ---
 # <a name="icordebuginternalframe2isclosertoleaf-method"></a>ICorDebugInternalFrame2::IsCloserToLeaf, méthode
-Vérifie si le `this` frame interne est la plus proche de la feuille que l’objet ICorDebugFrame spécifié.  
+Vérifie si le `this` Frame interne est plus proche de la feuille que l’objet ICorDebugFrame spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +34,10 @@ HRESULT IsCloserToLeaf([in] ICorDebugFrame * pFrameToCompare,
   
 ## <a name="parameters"></a>Paramètres  
  `pFrameToCompare`  
- [in] Un pointeur vers la comparaison `ICorDebugFrame` objet.  
+ dans Pointeur vers l’objet de comparaison `ICorDebugFrame`.  
   
  `pIsCloser`  
- [out] `true` si le `this` frame interne est la plus proche de la feuille que le frame spécifié par `pFrameToCompare`; sinon, `false`.  
+ [out] `true` si le `this` Frame interne est plus proche de la feuille que le frame spécifié par `pFrameToCompare`; Sinon, `false`.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -51,9 +49,9 @@ HRESULT IsCloserToLeaf([in] ICorDebugFrame * pFrameToCompare,
 |E_INVALIDARG|`pFrameToCompare` ou `pIsCloser` est null.|  
   
 ## <a name="remarks"></a>Notes  
- `IsCloserToLeaf` peut être utilisé pour implémenter une stratégie pour entrelacer les frames internes avec d’autres images sur la pile.  
+ `IsCloserToLeaf` peut être utilisé pour implémenter une stratégie pour entrelacer des frames internes avec d’autres frames sur la pile.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

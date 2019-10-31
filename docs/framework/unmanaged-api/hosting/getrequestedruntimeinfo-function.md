@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0dfd7cdc-c116-4e25-b56a-ac7b0378c942
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 62a6f6d6e73ce42c8c86d4e458322e5bd361f412
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cd1d9e768698115bee22e35699b044e0c3526d2d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778136"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136325"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo, fonction
-Obtient des informations de version et au répertoire sur le common language runtime (CLR) demandée par une application.  
+Obtient les informations de version et de répertoire relatives au common language runtime (CLR) demandé par une application.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,64 +47,64 @@ HRESULT GetRequestedRuntimeInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `pExe`  
- [in] Le nom de l’application.  
+ dans Nom de l’application.  
   
  `pwszVersion`  
- [in] Chaîne spécifiant le numéro de version du runtime.  
+ dans Chaîne spécifiant le numéro de version du Runtime.  
   
  `pConfigurationFile`  
- [in] Le nom du fichier de configuration qui est associé avec `pExe`.  
+ dans Nom du fichier de configuration associé à `pExe`.  
   
  `startupFlags`  
- [in] Une ou plusieurs de la [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) valeurs d’énumération.  
+ dans Une ou plusieurs des valeurs de l’énumération [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) .  
   
  `runtimeInfoFlags`  
- [in] Une ou plusieurs de la [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) valeurs d’énumération.  
+ dans Une ou plusieurs des valeurs d’énumération [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) .  
   
  `pDirectory`  
- [out] Une mémoire tampon qui contient le chemin d’accès du répertoire à l’exécution en cas de réussite.  
+ à Mémoire tampon qui contient le chemin d’accès au répertoire du runtime une fois l’opération terminée.  
   
  `dwDirectory`  
- [in] La longueur de la mémoire tampon du répertoire.  
+ dans Longueur de la mémoire tampon de répertoire.  
   
  `dwDirectoryLength`  
- [out] Pointeur vers la longueur de la chaîne de chemin d’accès de répertoire.  
+ à Pointeur vers la longueur de la chaîne du chemin d’accès du répertoire.  
   
  `pVersion`  
- [out] Une mémoire tampon qui contient le numéro de version du runtime en cas de réussite.  
+ à Mémoire tampon qui contient le numéro de version du runtime en cas de réussite.  
   
  `cchBuffer`  
- [in] La longueur du tampon de chaîne de version.  
+ dans Longueur de la mémoire tampon de la chaîne de version.  
   
  `dwlength`  
- [out] Pointeur vers la longueur de la chaîne de version.  
+ à Pointeur vers la longueur de la chaîne de version.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur de composant COM (Object Model) standard, tel que défini dans WinError.h, en plus des valeurs suivantes.  
+ Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|ERROR_INSUFFICIENT_BUFFER|Le tampon de répertoire n’est pas suffisamment grand pour stocker le chemin d’accès de répertoire.<br /><br /> ou<br /><br /> Le tampon de version n’est pas suffisamment grand pour stocker la chaîne de version.|  
+|ERROR_INSUFFICIENT_BUFFER|La mémoire tampon du répertoire n’est pas assez grande pour stocker le chemin d’accès au répertoire.<br /><br /> ou<br /><br /> La mémoire tampon de version n’est pas assez grande pour stocker la chaîne de version.|  
   
 ## <a name="remarks"></a>Notes  
- Le `GetRequestedRuntimeInfo` méthode retourne des informations d’exécution sur la version chargée dans le processus, ce qui n’est pas nécessairement la dernière version installée sur l’ordinateur.  
+ La méthode `GetRequestedRuntimeInfo` retourne des informations d’exécution sur la version chargée dans le processus, qui n’est pas nécessairement la version la plus récente installée sur l’ordinateur.  
   
- Dans le .NET Framework version 2.0, vous pouvez obtenir des informations sur la dernière version installée à l’aide de la `GetRequestedRuntimeInfo` méthode comme suit :  
+ Dans la version 2,0 de .NET Framework, vous pouvez obtenir des informations sur la dernière version installée à l’aide de la méthode `GetRequestedRuntimeInfo` comme suit :  
   
-- Spécifiez le `pExe`, `pwszVersion`, et `pConfigurationFile` paramètres comme null.  
+- Spécifiez les paramètres `pExe`, `pwszVersion`et `pConfigurationFile` comme null.  
   
-- Spécifiez l’indicateur RUNTIME_INFO_UPGRADE_VERSION dans le `RUNTIME_INFO_FLAGS` énumérations pour le `runtimeInfoFlags` paramètre.  
+- Spécifiez l’indicateur RUNTIME_INFO_UPGRADE_VERSION dans les énumérations `RUNTIME_INFO_FLAGS` pour le paramètre `runtimeInfoFlags`.  
   
- Le `GetRequestedRuntimeInfo` méthode ne retourne pas la dernière version CLR dans les circonstances suivantes :  
+ La méthode `GetRequestedRuntimeInfo` ne retourne pas la dernière version du CLR dans les circonstances suivantes :  
   
-- Il existe un fichier de configuration qui spécifie le chargement d’une version particulière du CLR. Notez que le .NET Framework utilisera le fichier de configuration même si vous spécifiez null pour le `pConfigurationFile` paramètre.  
+- Un fichier de configuration d’application qui spécifie le chargement d’une version particulière du CLR existe. Notez que le .NET Framework utilisera le fichier de configuration, même si vous spécifiez NULL pour le paramètre `pConfigurationFile`.  
   
-- Le [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) méthode a été appelée en spécifiant une version antérieure du CLR.  
+- La méthode [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) était appelée en spécifiant une version antérieure du CLR.  
   
 - Une application qui a été compilée pour une version antérieure du CLR est en cours d’exécution.  
   
- Pour le `runtimeInfoFlags` paramètre, vous pouvez spécifier uniquement une des constantes d’architecture de la `RUNTIME_INFO_FLAGS` énumération à la fois :  
+ Pour le paramètre `runtimeInfoFlags`, vous ne pouvez spécifier qu’une seule des constantes d’architecture de l’énumération `RUNTIME_INFO_FLAGS` à la fois :  
   
 - RUNTIME_INFO_REQUEST_IA64  
   
@@ -114,12 +112,12 @@ HRESULT GetRequestedRuntimeInfo (
   
 - RUNTIME_INFO_REQUEST_X86  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

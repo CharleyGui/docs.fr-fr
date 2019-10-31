@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ba08ffa-55a2-4662-9d6d-4738f1db60c9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d600b4687b86f5872f94a60ad3422be764cf5307
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d8bd6ab13fa408fd7390aaeb76baee274742f48
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747205"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137702"
 ---
 # <a name="icordebugregistersetgetregistersavailable-method"></a>ICorDebugRegisterSet::GetRegistersAvailable, méthode
-Obtient un masque de bits indiquant les registres dans ce [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) sont actuellement disponibles.  
+Obtient un masque de bits indiquant les registres actuellement disponibles dans ce [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT GetRegistersAvailable (
   
 ## <a name="parameters"></a>Paramètres  
  `pAvailable`  
- [out] Un masque de bits qui indique quels registres sont actuellement disponibles.  
+ à Masque de bits qui indique les registres actuellement disponibles.  
   
 ## <a name="remarks"></a>Notes  
- Un Registre est peut-être indisponible si sa valeur ne peut pas être déterminée pour la situation donnée.  
+ Un registre peut ne pas être disponible si sa valeur ne peut pas être déterminée pour la situation donnée.  
   
- Le masque retourné contient un bit pour chaque registre (1 << l’index du Registre). La valeur de bit est 1 si le Registre est disponible, ou 0 s’il n’est pas disponible.  
+ Le masque retourné contient un bit pour chaque registre (1 < < l’index du registre). La valeur de bit est 1 si le Registre est disponible, ou 0 s’il n’est pas disponible.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -7,22 +7,22 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ff9bb537a31e28dbd4b878c1bc04c96262f85ac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3f57dc9279c107ce751f71c2998670ab992db162
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927458"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118436"
 ---
-# <a name="remove-element-for-configsections"></a>\<supprimer > élément pour \<configSections >
+# <a name="remove-element-for-configsections"></a>\<supprimer > élément de \<configSections >
 
 Supprime un groupe de sections ou de sections prédéfini.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,21 +40,21 @@ Supprime un groupe de sections ou de sections prédéfini.
 
 |     | Description |
 | --- | ----------- |
-| [élément  **>\<configSections**](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
+| [ **\<configSections >** Appartient](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser l'  **\<élément remove >** pour supprimer de votre application des sections et des groupes de sections qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
+Vous pouvez utiliser l’élément **\<supprimer >** pour supprimer de votre application des sections et des groupes de sections qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment utiliser l'  **\<élément remove >** dans un fichier de configuration de l’application pour supprimer une section précédemment définie dans le fichier de configuration de l’ordinateur.
+L’exemple suivant montre comment utiliser l' **\<supprimer >** élément dans un fichier de configuration d’application pour supprimer une section précédemment définie dans le fichier de configuration de l’ordinateur.
 
-Le code de fichier de configuration d’ordinateur suivant déclare la section  **\<sampleSection >** :
+Le code de fichier de configuration d’ordinateur suivant déclare la section **\<> sampleSection**:
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Le code de fichier de configuration d’ordinateur suivant déclare la section  
 </configuration>
 ```
 
-Le code de fichier de configuration d’application suivant supprime la  **\<section > sampleSection** . Après la suppression, l’application ne peut pas récupérer les paramètres dans  **\<sampleSection >** .
+Le code de fichier de configuration d’application suivant supprime la section **\<sampleSection >** . Après la suppression, l’application ne peut pas récupérer les paramètres dans **\<> sampleSection**.
 
 ```xml
 <!-- Application configuration file -->

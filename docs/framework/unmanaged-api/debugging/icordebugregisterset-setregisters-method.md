@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: ac6244b9-54ba-475f-b72a-abed6afc46ec
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 200ea1b9c046b8743699a549c07c0baaf285be39
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7af3109c822dfe945a60c16d4bd3b764f7550492
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965033"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131346"
 ---
 # <a name="icordebugregistersetsetregisters-method"></a>ICorDebugRegisterSet::SetRegisters, méthode
-`SetRegisters`n’est pas implémenté dans la version 2,0 de .NET Framework. N'appelez pas cette méthode.  
+`SetRegisters` n’est pas implémenté dans la version .NET Framework 2,0. N'appelez pas cette méthode.  
   
 > [!NOTE]
-> Utilisez les opérations de niveau supérieur telles que [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) ou [ICorDebugNativeFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
+> Utilisez les opérations de niveau supérieur telles que [ICorDebugILFrame :: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) ou [ICorDebugNativeFrame :: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,14 +38,14 @@ HRESULT SetRegisters (
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
- **Versions de .NET Framework:** 1.1, 1.0  
+ **Versions de .NET Framework :** 1,1, 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 

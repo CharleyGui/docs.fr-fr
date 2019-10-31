@@ -8,14 +8,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6fc66837dc31dc1697bcb4ad6dddfb57bfb99bd4
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
-ms.translationtype: HT
+ms.openlocfilehash: da73200513d451ee391fb6dd9c214a5b8ca771c6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68434094"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126346"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -205,7 +203,7 @@ class MySimpleCalculator : ICalculator
 
  La couche d'interface utilisateur (`Program`) n'a besoin d'aucune autre information. Vous pouvez donc remplir le reste de la logique d'interface utilisateur dans la méthode `Main`.
 
- Ajoutez le code suivant à la méthode `Main` :
+ Ajoutez le code suivant à la méthode `Main` :
 
 ```vb
 Sub Main()
@@ -432,7 +430,7 @@ class Subtract : IOperation
 
  Ajoutez un nouveau répertoire nommé `Extensions` au projet SimpleCalculator. Assurez-vous de l'ajouter au niveau du projet et pas au niveau de la solution. Ajoutez ensuite un nouveau projet de bibliothèque de classes, appelé `ExtendedOperations`, à la solution. Le nouveau projet sera compilé dans un assembly distinct.
 
- Ouvrez le concepteur des propriétés de projet pour le projet ExtendedOperations, puis cliquez sur l’onglet **Compiler** ou **Générer**. Modifiez la valeur **Chemin de sortie de la génération** ou la valeur **Chemin de sortie** pour pointer vers le répertoire Extensions dans le répertoire du projet SimpleCalculator (..\SimpleCalculator\Extensions\\).
+ Ouvrez le concepteur de propriétés du projet pour le projet ExtendedOperations, puis cliquez sur l’onglet **compiler** ou **générer** . modifiez le chemin de sortie de la **génération** ou le **chemin de sortie** pour qu’il pointe vers le répertoire extensions dans le projet SimpleCalculator. Répertoire (.. \SimpleCalculator\Extensions\\).
 
  Dans Module1.vb ou Program.cs, ajoutez la ligne suivante au constructeur `Program` :
 
@@ -444,7 +442,7 @@ catalog.Catalogs.Add(New DirectoryCatalog("C:\SimpleCalculator\SimpleCalculator\
 catalog.Catalogs.Add(new DirectoryCatalog("C:\\SimpleCalculator\\SimpleCalculator\\Extensions"));
 ```
 
- Remplacez le chemin d’accès de l’exemple par le chemin d’accès à votre répertoire Extensions. (Ce chemin d'accès absolu sert uniquement au débogage. Dans une application de production, vous devez utiliser un chemin d'accès relatif.) <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> ajoutera maintenant au conteneur de composition toutes les parties découvertes dans les assemblys du répertoire Extensions.
+ Remplacez le chemin d’accès de l’exemple par le chemin d’accès à votre répertoire Extensions. (Ce chemin d'accès absolu sert uniquement au débogage. Dans une application de production, vous utiliseriez un chemin d’accès relatif.) Le <xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> ajoutera à présent les composants trouvés dans les assemblys du répertoire extensions au conteneur de composition.
 
  Dans le projet ExtendedOperations, ajoutez des références à SimpleCalculator et à System.ComponentModel.Composition. Dans le fichier de classe ExtendedOperations, ajoutez une instruction `Imports` ou `using` pour System.ComponentModel.Composition. Dans Visual Basic, ajoutez également une instruction `Imports` pour SimpleCalculator. Ajoutez ensuite la classe suivante au fichier de classe ExtendedOperations :
 

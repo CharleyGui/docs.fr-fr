@@ -14,28 +14,26 @@ helpviewer_keywords:
 ms.assetid: 43416dd5-8892-4106-9f59-f9143b19ddb4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b5328442ceaee05b3f81466b785f04a361d456a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a5762079861f04e1869b206c3200c3a024c1b77a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995915"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091007"
 ---
 # <a name="icordebugexceptionobjectvalue-interface"></a>ICorDebugExceptionObjectValue, interface
-Étend l’interface « ICorDebugObjectValue » pour fournir des informations de trace de pile à partir d’un objet d’exception géré.  
+Étend l’interface « ICorDebugObjectValue » pour fournir des informations de trace de la pile à partir d’un objet exception managée.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[EnumerateExceptionCallStack, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Obtient un énumérateur pour la pile des appels incorporée dans un objet d’exception.|  
+|[EnumerateExceptionCallStack, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Obtient un énumérateur de la pile des appels incorporée dans un objet exception.|  
   
 ## <a name="remarks"></a>Notes  
- L’appel à `QueryInterface` réussit pour des objets managés qui dérivent <xref:System.Exception?displayProperty=nameWithType>.  
+ L’appel à `QueryInterface` réussit pour les objets managés qui dérivent de <xref:System.Exception?displayProperty=nameWithType>.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

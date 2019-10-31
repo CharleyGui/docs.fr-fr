@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d627e8b7-a605-40ac-b9bb-da9a3f1b66d9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a0ad4b7e907412aced911d7869ffce81eb867448
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c6b4303163140c9c5553d02855c64dd2a3f5b134
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738509"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73112737"
 ---
 # <a name="iclrdatatargetwritevirtual-method"></a>ICLRDataTarget::WriteVirtual, méthode
-Écrit des données à partir de la mémoire tampon spécifiée à l’adresse de mémoire virtuelle spécifiée.  
+Écrit des données à partir de la mémoire tampon spécifiée dans l’adresse mémoire virtuelle spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,21 +39,21 @@ HRESULT WriteVirtual (
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] CLRDATA_ADDRESS qui stocke l’adresse de mémoire virtuelle.  
+ dans CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
   
  `buffer`  
- [in] Pointeur vers une mémoire tampon qui stocke les données à écrire.  
+ dans Pointeur vers une mémoire tampon qui stocke les données à écrire.  
   
  `bytesRequested`  
- [in] Le nombre d’octets à écrire.  
+ dans Nombre d’octets à écrire.  
   
  `bytesWritten`  
- [out] Pointeur vers le nombre réel d’octets qui ont été écrits.  
+ à Pointeur vers le nombre réel d’octets qui ont été écrits.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

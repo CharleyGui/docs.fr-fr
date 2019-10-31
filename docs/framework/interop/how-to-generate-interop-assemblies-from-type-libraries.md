@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types'
+title: "Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - importing type library
@@ -8,16 +8,14 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 4afd40c3-68f2-41c5-8ec1-4951bc148b9c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fcdff732afce90f725f4730f0054296e389ada1b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 7cca21630bd1dbd6896f882d058f288f603e95df
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051786"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123905"
 ---
-# <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types
+# <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types
 L’outil en ligne de commande [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md) permet de convertir les coclasses et les interfaces figurant dans une bibliothèque de types COM en métadonnées. Cet outil crée automatiquement un assembly d’interopérabilité et un espace de noms pour les informations sur les types. Une fois les métadonnées d’une classe disponibles, les clients managés peuvent créer des instances du type COM et appeler ses méthodes, comme s’il s’agissait d’une instance .NET. Tlbimp.exe convertit en une seule opération l’intégralité d’une bibliothèque de types en métadonnées et ne peut pas générer d’informations sur les types pour un sous-ensemble de types définis dans une bibliothèque de types.  
   
 ### <a name="to-generate-an-interop-assembly-from-a-type-library"></a>Pour générer un assembly d’interopérabilité à partir d’une bibliothèque de types  

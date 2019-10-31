@@ -6,14 +6,12 @@ helpviewer_keywords:
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fce84d6f84b26b59634e624089ba874c4bbdc877
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 70514811a9d236dc485f64fc34297cdb057a1512
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039585"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124273"
 ---
 # <a name="interop-marshaling"></a>Marshaling d’interopérabilité
 

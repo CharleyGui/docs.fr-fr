@@ -1,17 +1,15 @@
 ---
-title: <Application>, Élément (.NET Native)
+title: Élément <Application> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2183a64f4e30a5188940abd5108a7ca1bddfe120
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e26826b3d8674b536ab0897182da58bc02cfd00b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049930"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128515"
 ---
-# <a name="application-element-net-native"></a>\<Élément > de l’application (.NET Native)
+# <a name="application-element-net-native"></a>\<, élément d' > d’application (.NET Native)
 Sert de conteneur pour les types à l'échelle de l'application et pour les membres de type dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution, et applique la stratégie de réflexion runtime à tous les éléments de programme dans une application.  
   
  \<Directives>, élément  
@@ -52,9 +50,9 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
   
 ## <a name="all-attributes"></a>Tous les attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre de cette stratégie à appliquer aux types dans l'application. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre de cette stratégie à appliquer aux types dans l'application. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -87,7 +85,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Élément > de la bibliothèque](library-element-net-native.md)
-- [\<Directive, élément >](directives-element-net-native.md)
+- [Élément > de la bibliothèque \<](library-element-net-native.md)
+- [\<, directives >, élément](directives-element-net-native.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

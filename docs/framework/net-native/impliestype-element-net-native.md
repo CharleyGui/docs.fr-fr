@@ -2,14 +2,12 @@
 title: Élément <ImpliesType> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38bdfc974a6942596e9778cabb87b275f1e51db8
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2f0ce1a1587e190627212cba07db298c12f4b30e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039532"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128391"
 ---
 # <a name="impliestype-element-net-native"></a>\<élément ImpliesType > (.NET Native)
 Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode ou au type conteneur.  

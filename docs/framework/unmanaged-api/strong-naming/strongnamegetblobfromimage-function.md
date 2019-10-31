@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1de658e6-da32-4d01-9097-6f43c92222e1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 86b99b29a85f498a6bfa0363a446bf589876bff9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 41226cd909900bd2da7bdcf9b9a49567d3042b01
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799084"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094879"
 ---
 # <a name="strongnamegetblobfromimage-function"></a>StrongNameGetBlobFromImage, fonction
 Obtient une représentation binaire de l’image de l’assembly à l’adresse mémoire spécifiée.  
@@ -53,17 +51,17 @@ BOOLEAN StrongNameGetBlobFromImage (
  [in, out] Taille maximale demandée, en octets, de `pbBlob`. Lors du retour, taille réelle, en octets, de `pbBlob`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true`en cas de réussite de l’opération ; Sinon, `false`.  
+ `true` en cas de réussite de l’opération ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Si la `StrongNameGetBlobFromImage` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si la fonction `StrongNameGetBlobFromImage` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 534ebc17-963d-4b26-8375-8cd940281db3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5ae4c5743b01c4a9087323678d315473631cb32f
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: c37f039d9636854c464e7981693c573bd60deab9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274051"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132344"
 ---
 # <a name="cor_il_map-structure"></a>COR_IL_MAP, structure
 Spécifie des modifications dans le décalage relatif d'une fonction.  
@@ -42,10 +40,10 @@ typedef struct _COR_IL_MAP {
 |------------|-----------------|  
 |`oldOffset`|Ancien offset MSIL (Microsoft Intermediate Language) par rapport au début de la fonction.|  
 |`newOffset`|Nouveau décalage MSIL par rapport au début de la fonction.|  
-|`fAccurate`|`true`Si le mappage est connu pour être précis ; Sinon, `false`.|  
+|`fAccurate`|`true` si le mappage est reconnu comme étant exact ; Sinon, `false`.|  
   
 ## <a name="remarks"></a>Notes  
- Le format de la carte est le suivant : Le débogueur suppose que `oldOffset` fait référence à un offset MSIL dans le code MSIL non modifié d’origine. Le `newOffset` paramètre fait référence à l’offset MSIL correspondant dans le nouveau code instrumenté.  
+ Le format du mappage est le suivant : le débogueur suppose que `oldOffset` fait référence à un décalage MSIL dans le code MSIL non modifié d’origine. Le paramètre `newOffset` fait référence à l’offset MSIL correspondant dans le nouveau code instrumenté.  
   
  Pour que l’exécution pas à pas fonctionne correctement, les conditions suivantes doivent être remplies :  
   
@@ -81,12 +79,12 @@ typedef struct _COR_IL_MAP {
   
 - Un nouveau décalage de 20 ou plus sera mappé à l’ancien décalage 9.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorProf.idl  
+ **En-tête :** CorDebug. idl, CorProf. idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

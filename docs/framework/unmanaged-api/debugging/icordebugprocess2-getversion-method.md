@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: e11d5a75-61d9-4548-aedf-79c26079bd17
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 07f3be81431201a4bb6011ea9b8f973061d3d101
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5f618f6779f6931785bba18f70fb1ac9baf46753
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948866"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137193"
 ---
 # <a name="icordebugprocess2getversion-method"></a>ICorDebugProcess2::GetVersion, méthode
 
@@ -39,13 +37,13 @@ HRESULT GetVersion (
 ## <a name="parameters"></a>Paramètres
 
 `version`\
-[out] Pointeur vers une structure COR_VERSION qui stocke le numéro de version du runtime.
+à Pointeur vers une structure COR_VERSION qui stocke le numéro de version du Runtime.
 
 ## <a name="remarks"></a>Notes
 
-Le `GetVersion` méthode retourne un code d’erreur si aucune exécution n’a été chargée dans le processus.
+La méthode `GetVersion` retourne un code d’erreur si aucun Runtime n’a été chargé dans le processus.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 

@@ -4,15 +4,13 @@ description: Découvrez les nouvelles fonctionnalités de .NET Core 2.1.
 dev_langs:
 - csharp
 - vb
-author: rpetrusha
-ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: 18c8d566c3b79c131a3d031e5bdf3b37996d9115
-ms.sourcegitcommit: 10db6551ea3c971470cf5d2cc21ba1cbcefe5c55
+ms.openlocfilehash: 603e7ae4ffb9e6a4bb477af9597d6948bd63f55e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72031851"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100750"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -69,7 +67,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
 .NET Core 2.1 prend en charge les *outils globaux*, autrement dit des outils personnalisés disponibles globalement à partir de la ligne de commande. Le modèle d’extensibilité des versions précédentes de .NET Core proposant des outils personnalisés par projet uniquement à l’aide de [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
-Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Exemple :
+Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Exemple :
 
 ```dotnetcli
 dotnet tool install -g dotnetsay
@@ -128,7 +126,7 @@ L’extrapolation de version de correctif logiciel est indépendante de ce param
 
 `dotnet publish` publie désormais des applications autonomes avec une version de runtime révisée. Lorsque vous publiez une application autonome avec le Kit de développement .NET Core 2.1 (2.1.300), votre application inclut la dernière version du runtime révisée et identifiée par ce SDK. Lorsque vous effectuez une mise à niveau avec la dernière version du SDK, vous publiez la dernière version du runtime .NET Core. Cela s’applique aux runtimes .NET Core 1.0 et versions ultérieures.
 
-La publication autonome s’appuie sur les versions de runtime de NuGet.org. Vous n’avez pas besoin du runtime révisé sur votre ordinateur.
+La publication autonome s’appuie sur les versions du Runtime sur NuGet.org. Vous n’avez pas besoin du runtime desservi sur votre ordinateur.
 
 À l’aide du Kit de développement logiciel .NET Core 2.0, les applications autonomes sont publiées avec le runtime .NET Core 2.0.0, sauf si une version différente est spécifiée via la propriété `RuntimeFrameworkVersion`. Avec ce nouveau comportement, vous n’aurez plus besoin de définir cette propriété afin de sélectionner une version de runtime ultérieure pour une application autonome. Dorénavant, l’approche la plus simple consiste à toujours publier avec le Kit de développement .NET Core 2.1 (2.1.300).
 

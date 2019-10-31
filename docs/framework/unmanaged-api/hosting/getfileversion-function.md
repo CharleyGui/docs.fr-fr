@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1f5508e9ee41d8670b43d5b219846237e11fc8f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f197c8802bd9e55391b3e3e20c64398736070a16
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778148"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136333"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion, fonction
-Obtient les informations de version common language runtime (CLR) du fichier spécifié, à l’aide de la mémoire tampon spécifiée.  
+Obtient les informations de version du common language runtime (CLR) du fichier spécifié, à l’aide de la mémoire tampon spécifiée.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,21 +39,21 @@ HRESULT GetFileVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `szFilename`  
- [in] Le chemin d’accès du fichier doit être examinée.  
+ dans Chemin d’accès du fichier à examiner.  
   
  `szBuffer`  
- [in, out] La mémoire tampon allouée pour les informations de version qui sont retournées.  
+ [in, out] Mémoire tampon allouée pour les informations de version retournées.  
   
  `cchBuffer`  
- [in] La taille, en caractères larges, de `szBuffer`.  
+ dans Taille, en caractères larges, de `szBuffer`.  
   
  `dwLength`  
- [out] La taille, en octets, de retourné `szBuffer`.  
+ à Taille, en octets, de la `szBuffer`retournée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

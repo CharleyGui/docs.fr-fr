@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: 73afa930-32cb-4c40-81f8-83e8e6fbe213
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ff1365ddb46ca28cbcaa4f1383b293681e6ec214
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8731b57206f7987efc2498a5abe62295cd1cfae5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956770"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131326"
 ---
 # <a name="icordebugregistersetsetthreadcontext-method"></a>ICorDebugRegisterSet::SetThreadContext, méthode
-`SetThreadContext`n’est pas implémenté dans la version 2,0 de .NET Framework. N'appelez pas cette méthode.  
+`SetThreadContext` n’est pas implémenté dans la version .NET Framework 2,0. N'appelez pas cette méthode.  
   
 > [!NOTE]
-> Utilisez l’opération de niveau supérieur [ICorDebugNativeFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md) pour définir le contexte d’un thread.  
+> Utilisez l’opération de niveau supérieur [ICorDebugNativeFrame :: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md) pour définir le contexte d’un thread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,14 +38,14 @@ HRESULT SetThreadContext (
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
- **Versions de .NET Framework:** 1.1, 1.0  
+ **Versions de .NET Framework :** 1,1, 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 

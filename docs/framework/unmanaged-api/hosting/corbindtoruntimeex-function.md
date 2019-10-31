@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: aae9fb17-5d01-41da-9773-1b5b5b642d81
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 88f31ae29efee9b353c2dcc679724db73da5444e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 794a39f1e2c4a93a34ae39641519c79fd4c4e79e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969412"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131229"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx, fonction
 Permet aux hôtes non managés de charger le common language runtime (CLR) dans un processus. Les fonctions [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) et `CorBindToRuntimeEx` effectuent la même opération, mais la fonction `CorBindToRuntimeEx` vous permet de définir des indicateurs pour spécifier le comportement du CLR.  
@@ -61,19 +59,19 @@ HRESULT CorBindToRuntimeEx (
  `pwszVersion`  
  dans Chaîne décrivant la version du CLR que vous souhaitez charger.  
   
- Un numéro de version dans le .NET Framework se compose de quatre parties séparées par des points : *major. minor. Build. Revision*. La chaîne transmise `pwszVersion` comme doit commencer par le caractère « v » suivi des trois premières parties du numéro de version (par exemple, « v 1.0.1529 »).  
+ Un numéro de version dans le .NET Framework se compose de quatre parties séparées par des points : *major. minor. Build. Revision*. La chaîne transmise en tant que `pwszVersion` doit commencer par le caractère « v » suivi des trois premières parties du numéro de version (par exemple, « v 1.0.1529 »).  
   
- Certaines versions du CLR sont installées avec une instruction de stratégie qui spécifie la compatibilité avec les versions précédentes du CLR. Par défaut, le shim de démarrage est `pwszVersion` évalué par rapport aux instructions de stratégie et charge la version la plus récente du runtime qui est compatible avec la version demandée. Un hôte peut forcer le shim à ignorer l’évaluation de la stratégie et à charger la `pwszVersion` version exacte spécifiée dans en `STARTUP_LOADER_SAFEMODE` passant une `startupFlags` valeur pour le paramètre, comme décrit ci-dessous.  
+ Certaines versions du CLR sont installées avec une instruction de stratégie qui spécifie la compatibilité avec les versions précédentes du CLR. Par défaut, le shim de démarrage évalue `pwszVersion` par rapport aux instructions de stratégie et charge la version la plus récente du runtime qui est compatible avec la version demandée. Un hôte peut forcer le shim à ignorer l’évaluation de la stratégie et charger la version exacte spécifiée dans `pwszVersion` en passant la valeur `STARTUP_LOADER_SAFEMODE` pour le paramètre `startupFlags`, comme décrit ci-dessous.  
   
- Si l’appelant spécifie null `pwszVersion`pour `CorBindToRuntimeEx` , identifie le jeu de runtimes installés dont les numéros de version sont inférieurs au Runtime .NET Framework 4 et charge la version la plus récente du runtime à partir de ce jeu. Il ne chargera pas le .NET Framework 4 ou version ultérieure et échouera si aucune version antérieure n’est installée. Notez que le passage de la valeur null donne à l’hôte aucun contrôle sur la version du runtime qui est chargée. Bien que cette approche puisse être appropriée dans certains scénarios, il est fortement recommandé que l’hôte fournisse une version spécifique à charger.  
+ Si l’appelant spécifie null pour `pwszVersion`, `CorBindToRuntimeEx` identifie le jeu de runtimes installés dont les numéros de version sont inférieurs au Runtime .NET Framework 4 et charge la version la plus récente du runtime à partir de ce jeu. Il ne chargera pas le .NET Framework 4 ou version ultérieure et échouera si aucune version antérieure n’est installée. Notez que le passage de la valeur null donne à l’hôte aucun contrôle sur la version du runtime qui est chargée. Bien que cette approche puisse être appropriée dans certains scénarios, il est fortement recommandé que l’hôte fournisse une version spécifique à charger.  
   
  `pwszBuildFlavor`  
  dans Chaîne qui spécifie s’il faut charger le serveur ou la build de station de travail du CLR. Les valeurs valides sont `svr` et `wks`. La build du serveur est optimisée pour tirer parti de plusieurs processeurs pour les nettoyages de la mémoire, et la build de la station de travail est optimisée pour les applications clientes exécutées sur un ordinateur à un seul processeur.  
   
- Si `pwszBuildFlavor` a la valeur null, la build de station de travail est chargée. Lors de l’exécution sur un ordinateur à un seul processeur, la build de station de travail `pwszBuildFlavor` est toujours chargée `svr`, même si a la valeur. Toutefois, si `pwszBuildFlavor` a la `svr` valeur et que garbage collection simultané est spécifié ( `startupFlags` Voir la description du paramètre), la build du serveur est chargée.  
+ Si `pwszBuildFlavor` a la valeur null, la build de station de travail est chargée. Lors de l’exécution sur un ordinateur à un seul processeur, la build de station de travail est toujours chargée, même si `pwszBuildFlavor` est défini sur `svr`. Toutefois, si `pwszBuildFlavor` est défini sur `svr` et que garbage collection simultané est spécifié (voir la description du paramètre `startupFlags`), la build du serveur est chargée.  
   
  `startupFlags`  
- dans Combinaison de valeurs de l’énumération [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) . Ces indicateurs contrôlent les garbage collection simultanés, le code indépendant du domaine et le `pwszVersion` comportement du paramètre. La valeur par défaut est un domaine unique si aucun indicateur n’est défini. Les valeurs suivantes sont valides :  
+ dans Combinaison de valeurs de l’énumération [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) . Ces indicateurs contrôlent le garbage collection simultané, le code indépendant du domaine et le comportement du paramètre `pwszVersion`. La valeur par défaut est un domaine unique si aucun indicateur n’est défini. Les valeurs suivantes sont valides :  
   
 - `STARTUP_CONCURRENT_GC`  
   
@@ -104,38 +102,38 @@ HRESULT CorBindToRuntimeEx (
  Pour obtenir une description de ces indicateurs, consultez l’énumération [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) .  
   
  `rclsid`  
- [in] `CLSID` de la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md). Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
+ dans `CLSID` de la coclasse qui implémente l’interface [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) ou [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) . Les valeurs prises en charge sont CLSID_CorRuntimeHost ou CLSID_CLRRuntimeHost.  
   
  `riid`  
- dans De l’interface demandée à partir `rclsid`de. `IID` Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
+ dans `IID` de l’interface demandée à partir de `rclsid`. Les valeurs prises en charge sont IID_ICorRuntimeHost ou IID_ICLRRuntimeHost.  
   
  `ppv`  
  à Pointeur d’interface retourné à `riid`.  
   
 ## <a name="remarks"></a>Notes  
- Si `pwszVersion` spécifie une version du runtime qui n’existe `CorBindToRuntimeEx` pas, retourne une valeur HRESULT de CLR_E_SHIM_RUNTIMELOAD.  
+ Si `pwszVersion` spécifie une version du runtime qui n’existe pas, `CorBindToRuntimeEx` retourne une valeur HRESULT de CLR_E_SHIM_RUNTIMELOAD.  
   
 ## <a name="execution-context-and-flow-of-windows-identity"></a>Contexte d’exécution et le workflow de l’identité Windows  
- Dans la version 1 du CLR, l' <xref:System.Security.Principal.WindowsIdentity> objet n’est pas transmis entre des points asynchrones tels que les nouveaux threads, les pools de threads ou les rappels de minuterie. Dans la version 2,0 du CLR, un <xref:System.Threading.ExecutionContext> objet encapsule des informations sur le thread en cours d’exécution et le transmet sur n’importe quel point asynchrone, mais pas au-delà des limites du domaine d’application. De même, l' <xref:System.Security.Principal.WindowsIdentity> objet circule également sur n’importe quel point asynchrone. Par conséquent, l’emprunt d’identité actuel sur le thread, le cas échéant, est également transmis.  
+ Dans la version 1 du CLR, l’objet <xref:System.Security.Principal.WindowsIdentity> n’est pas transmis entre des points asynchrones tels que les nouveaux threads, les pools de threads ou les rappels de minuterie. Dans la version 2,0 du CLR, un objet <xref:System.Threading.ExecutionContext> encapsule des informations sur le thread en cours d’exécution et le transmet sur n’importe quel point asynchrone, mais pas au-delà des limites du domaine d’application. De même, l’objet <xref:System.Security.Principal.WindowsIdentity> circule également sur n’importe quel point asynchrone. Par conséquent, l’emprunt d’identité actuel sur le thread, le cas échéant, est également transmis.  
   
  Vous pouvez modifier le Flow de deux manières :  
   
-1. En modifiant les <xref:System.Threading.ExecutionContext> paramètres pour supprimer le workflow pour chaque thread (consultez les <xref:System.Threading.ExecutionContext.SuppressFlow%2A>méthodes, <xref:System.Security.SecurityContext.SuppressFlow%2A>et <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A> ).  
+1. En modifiant les paramètres de <xref:System.Threading.ExecutionContext> pour supprimer le workflow par thread (voir les méthodes <xref:System.Threading.ExecutionContext.SuppressFlow%2A>, <xref:System.Security.SecurityContext.SuppressFlow%2A>et <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A>).  
   
-2. En remplaçant le mode de traitement par défaut par le mode de compatibilité de la <xref:System.Security.Principal.WindowsIdentity> version 1, où l’objet n’est pas transmis sur un <xref:System.Threading.ExecutionContext> point asynchrone, quels que soient les paramètres du thread en cours. La façon dont vous modifiez le mode par défaut varie selon que vous utilisez un exécutable managé ou une interface d’hébergement non managée pour charger le CLR :  
+2. En remplaçant le mode de traitement par défaut par le mode de compatibilité version 1, où l’objet <xref:System.Security.Principal.WindowsIdentity> n’est pas transmis sur un point asynchrone, quels que soient les paramètres <xref:System.Threading.ExecutionContext> sur le thread actuel. La façon dont vous modifiez le mode par défaut varie selon que vous utilisez un exécutable managé ou une interface d’hébergement non managée pour charger le CLR :  
   
-    1. Pour les exécutables managés, vous `enabled` devez affecter la valeur à `true`l’attribut de l' [ \<élément legacyImpersonationPolicy >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) .  
+    1. Pour les exécutables managés, vous devez définir l’attribut `enabled` de l’élément [\<legacyImpersonationPolicy](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) sur `true`.  
   
-    2. Pour les interfaces d’hébergement non managées, `STARTUP_LEGACY_IMPERSONATION` définissez l’indicateur `startupFlags` dans le paramètre lors `CorBindToRuntimeEx` de l’appel de la fonction.  
+    2. Pour les interfaces d’hébergement non managées, définissez l’indicateur `STARTUP_LEGACY_IMPERSONATION` dans le paramètre `startupFlags` lors de l’appel de la fonction `CorBindToRuntimeEx`.  
   
      Le mode de compatibilité de la version 1 s’applique à l’ensemble du processus et à tous les domaines d’application du processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

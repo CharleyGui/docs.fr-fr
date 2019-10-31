@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6dfc220f-d0d4-45b3-bfce-5829f817766f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 926bdcee3a3c3974c8546f3a6dfe98f0b62c93c8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 23bc251053dd27a7c5accb48ab4759ecdb79fe09
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796570"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134307"
 ---
 # <a name="iassemblynameisequal-method"></a>IAssemblyName::IsEqual, méthode
-Détermine si un objet [IAssemblyName](iassemblyname-interface.md) spécifié est égal à ce `IAssemblyName`, en fonction des indicateurs de comparaison spécifiés.  
+Détermine si un objet [IAssemblyName](iassemblyname-interface.md) spécifié est égal à cet `IAssemblyName`, en fonction des indicateurs de comparaison spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +36,13 @@ HRESULT IsEqual (
   
 ## <a name="parameters"></a>Paramètres  
  `pName`  
- dans Objet auquel comparer ce `IAssemblyName`. `IAssemblyName`  
+ dans Objet `IAssemblyName` auquel comparer ce `IAssemblyName`.  
   
  `dwCmpFlags`  
  dans Combinaison d’opérations de bits de valeurs [ASM_CMP_FLAGS](asm-cmp-flags-enumeration.md) qui influencent la comparaison.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

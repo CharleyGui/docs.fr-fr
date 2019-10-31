@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1fbbf572-6d28-41a5-82fb-579ac90bfcf5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c90df6a8b6f25a93835981b1593a4b3d123cd168
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5dc1ad5bd98899f82e0b52345710c5ea3da864b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61943393"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103044"
 ---
 # <a name="imanagedobject-interface"></a>IManagedObject, interface
-Fournit des méthodes permettant de contrôler un objet managé.  
+Fournit des méthodes pour contrôler un objet managé.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -33,12 +31,12 @@ Fournit des méthodes permettant de contrôler un objet managé.
 |[GetObjectIdentity, méthode](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getobjectidentity-method.md)|Obtient l’identité de cet objet managé.|  
 |[GetSerializedBuffer, méthode](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getserializedbuffer-method.md)|Obtient la représentation sous forme de chaîne de cet objet managé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

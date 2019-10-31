@@ -9,14 +9,12 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6077acab533ecb755ae42b7c4359a6c77ff33449
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2f0018dca6e5add2c5bc531103a4078307a8c8c6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044681"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129847"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)
 
@@ -27,7 +25,7 @@ La Visionneuse du journal de liaison d’assembly affiche des détails sur les l
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec des informations d’identification d’administrateur. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
-À l'invite de commandes, tapez le texte suivant :
+À l'invite de commandes, tapez le texte suivant :
 
 ```console
 fuslogvw
@@ -42,7 +40,7 @@ La visionneuse affiche une entrée pour chaque liaison d'assembly ayant échoué
 2. Sélectionnez la case d’option **Personnalisé** pour afficher les échecs de liaison dans un répertoire personnalisé que vous spécifiez. Vous devez spécifier l’emplacement personnalisé dans lequel vous souhaitez que l’exécution stocke les journaux en affectant un nom de répertoire valide comme emplacement du journal personnalisé dans la boîte de dialogue **Paramètres du journal**. Ce répertoire doit être propre et contenir uniquement les fichiers générés par le runtime. S'il contient un exécutable qui génère un échec devant être enregistré dans le journal, ce dernier ne sera pas enregistré, car l'outil tente de créer un répertoire portant le même nom que l'exécutable. En outre, toute tentative d'exécution d'un exécutable à partir de l'emplacement du journal échouera.
 
     > [!NOTE]
-    > L'emplacement des liaisons par défaut est préférable à l'emplacement des liaisons personnalisé. Le runtime stocke l'emplacement des liaisons par défaut dans le cache WinInet et le vide par conséquent automatiquement. Si vous spécifiez un emplacement des liaisons personnalisé, vous devez vous-même le vider.
+    > L'emplacement des liaisons par défaut est préférable à l'emplacement des liaisons personnalisé. Le runtime stocke l’emplacement de liaison par défaut dans le cache WinInet et le nettoie par conséquent automatiquement. Si vous spécifiez un emplacement de liaison personnalisé, vous êtes chargé de le nettoyer.
 
 ### <a name="to-view-details-about-a-specific-failure"></a>Pour afficher des détails sur un échec spécifique
 
@@ -218,7 +216,7 @@ Vous pouvez utiliser la boîte de dialogue **Paramètres du journal** pour effec
 2. Entrez le chemin dans la zone de texte **Chemin du journal personnalisé**.
 
 > [!NOTE]
-> La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se pose pas si vous utilisez un chemin d'accès de journal personnalisé.)  Pour résoudre le problème de perte d'intégrité et permettre à la fusion d'afficher à nouveau les journaux de liaison, videz le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d'Internet Explorer.
+> La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se produit pas si vous utilisez un chemin d’accès de journal personnalisé.)  Pour résoudre le problème et permettre à la fusion d’afficher à nouveau les journaux de liaison, effacez le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d’Internet Explorer.
 >
 > Si votre application non managée héberge le Common Language Runtime en implémentant les interfaces `IHostAssemblyManager` et `IHostAssemblyStore`, les entrées de journal ne peuvent pas être stockées dans le cache de WinInet.  Pour consulter les entrées de journal correspondant aux hôtes personnalisés qui implémentent ces interfaces, vous devez spécifier un autre chemin d'accès au journal.
 

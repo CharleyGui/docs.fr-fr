@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 43a7addd-f25a-4049-9907-abec3eb17af2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6bd274b1eb14532629580e777288317186544912
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 12c594f157c803d5fc179e09a8ca6c0ef40f3f44
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274162"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099022"
 ---
 # <a name="cor_type_layout-structure"></a>COR_TYPE_LAYOUT, structure
 Fournit des informations sur la disposition d'un objet en mémoire.  
@@ -42,21 +40,21 @@ typedef struct COR_TYPE_LAYOUT {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`parentID`|Identificateur du type parent à ce type. Il s’agit de l’ID de type NULL (TOKEN1 = 0, Token2 = 0) si l’ID de <xref:System.Object?displayProperty=nameWithType>type correspond à.|  
+|`parentID`|Identificateur du type parent à ce type. Il s’agit de l’ID de type NULL (TOKEN1 = 0, Token2 = 0) si l’ID de type correspond à <xref:System.Object?displayProperty=nameWithType>.|  
 |`objectSize`|Taille de base d’un objet de ce type. Il s’agit de la taille totale des objets de taille non variable.|  
 |`numFields`|Nombre de champs inclus dans les objets de ce type.|  
 |`boxOffset`|Si ce type est boxed, il s’agit du décalage de début des champs d’un objet. Ce champ est valide uniquement pour les types de valeur tels que les primitives et les structures.|  
 |`type`|CorElementType auquel ce type appartient.|  
   
 ## <a name="remarks"></a>Notes  
- Si `numFields` est supérieur à zéro, vous pouvez appeler la méthode [ICorDebugProcess5 :: gettypefields,](icordebugprocess5-gettypefields-method.md) pour obtenir des informations sur les champs de ce type. Si `type` est `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY` ou `ELEMENT_TYPE_SZARRAY`, la taille des objets de ce type est variable, et vous pouvez passer la structure [COR_TYPEID](cor-typeid-structure.md) à la méthode [ICorDebugProcess5 :: getarraylayout](icordebugprocess5-getarraylayout-method.md).  
+ Si `numFields` est supérieur à zéro, vous pouvez appeler la méthode [ICorDebugProcess5 :: gettypefields,](icordebugprocess5-gettypefields-method.md) pour obtenir des informations sur les champs de ce type. Si `type` est `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`ou `ELEMENT_TYPE_SZARRAY`, la taille des objets de ce type est variable, et vous pouvez passer la structure [COR_TYPEID](cor-typeid-structure.md) à la méthode [ICorDebugProcess5 :: getarraylayout,](icordebugprocess5-getarraylayout-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

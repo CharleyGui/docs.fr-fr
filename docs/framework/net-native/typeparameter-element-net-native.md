@@ -1,17 +1,15 @@
 ---
-title: <TypeParameter>, Élément (.NET Native)
+title: Élément <TypeParameter> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0de00b9313b60b3a527dd0380ae90d82731a8c02
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c69b535f3a01c287d30189138130066fc10a77e2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049060"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128926"
 ---
-# <a name="typeparameter-element-net-native"></a>\<TypeParameter >, élément (.NET Native)
+# <a name="typeparameter-element-net-native"></a>\<élément TypeParameter > (.NET Native)
 Applique la stratégie au type représenté par un argument Type passé à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,7 +35,7 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Généralités|Attribut requis. Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
+|`Name`|Général|Attribut requis. Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -51,18 +49,18 @@ Applique la stratégie au type représenté par un argument Type passé à une m
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |*nom_paramètre*|Nom du paramètre de type <xref:System.Type>. Par exemple, pour la signature de méthode `Type.GetInterfaceMap(Type interfaceType)`, la valeur de l'attribut `Name` est « interfaceType ».|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a1ebfc69-46a6-4225-8788-b7cfb2f15e1d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b13fe65f892a222abb126aa9237b802507738b7f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a6f2f536d360ffe41caf2a96c8b051f9167343c2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771608"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138954"
 ---
 # <a name="icordebugstringvaluegetlength-method"></a>ICorDebugStringValue::GetLength, méthode
-Obtient le nombre de caractères dans la chaîne référencée par ICorDebugStringValue.  
+Obtient le nombre de caractères de la chaîne référencés par cet ICorDebugStringValue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetLength (
   
 ## <a name="parameters"></a>Paramètres  
  `pcchString`  
- [out] Un pointeur vers une valeur qui spécifie la longueur de la chaîne référencée par ce `ICorDebugStringValue` objet.  
+ à Pointeur vers une valeur qui spécifie la longueur de la chaîne référencée par cet objet `ICorDebugStringValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

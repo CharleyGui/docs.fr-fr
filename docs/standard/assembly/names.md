@@ -5,14 +5,12 @@ helpviewer_keywords:
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 22e35450460436e164db922fce76a53c437f6bdf
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a35be7c2a2cb4b499496f526d263bb1825a3614b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835323"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107129"
 ---
 # <a name="assembly-names"></a>Noms d’assembly
 Le nom d’un assembly est stocké dans des métadonnées, et il a un impact significatif sur l’étendue de l’assembly et sur son utilisation dans une application. Un assembly avec nom fort a un nom qualifié complet qui inclut le nom, la culture, la clé publique et le numéro de version de l’assembly. Ceci est fréquemment appelé le nom d’affichage et, pour les assemblys chargés, il peut être obtenu avec la propriété <xref:System.Reflection.Assembly.FullName%2A>.  
@@ -50,16 +48,16 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ## <a name="name-application-components"></a>Nommer les composants de l’application  
  Le runtime ne prend pas en compte pas le nom de fichier pour déterminer l’identité d’un assembly. L’identité de l’assembly, qui est constituée du nom, de la version, de la culture et du nom fort de l’assembly, doit être claire pour le runtime.  
   
- Par exemple, si vous avez un assembly appelé *myAssembly. exe* qui référence un assembly appelé *myAssembly. dll*, la liaison se produit correctement si vous exécutez *myAssembly. exe*. Toutefois, si une autre application exécute *myAssembly. exe* à l’aide <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>de la méthode, le `myAssembly` Runtime détermine que est déjà chargé lorsque *myAssembly. exe* demande une liaison à `myAssembly`. Dans ce cas, *myAssembly. dll* n’est jamais chargé. Étant donné que *myAssembly. exe* ne contient pas le type demandé <xref:System.TypeLoadException> , une se produit.  
+ Par exemple, si vous avez un assembly appelé *myAssembly. exe* qui référence un assembly appelé *myAssembly. dll*, la liaison se produit correctement si vous exécutez *myAssembly. exe*. Toutefois, si une autre application exécute *myAssembly. exe* à l’aide de la méthode <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, le runtime détermine que `myAssembly` est déjà chargé lorsque *myAssembly. exe* demande la liaison à `myAssembly`. Dans ce cas, *myAssembly. dll* n’est jamais chargé. Étant donné que *myAssembly. exe* ne contient pas le type demandé, une <xref:System.TypeLoadException> se produit.  
   
  Pour éviter ce problème, vérifiez que les assemblys qui composent votre application n’ont pas le même nom d’assembly ou que vous placez les assemblys portant le même nom dans des répertoires différents.  
   
 > [!NOTE]
-> Dans le .NET Framework, si vous placez un assembly avec nom fort dans le Global Assembly Cache, le nom de fichier de l’assembly doit correspondre au nom de l’assembly, sans l’extension de nom de fichier, par exemple *. exe* ou *. dll*. Par exemple, si le nom de fichier d’un assembly est *myAssembly. dll*, le nom de `myAssembly`l’assembly doit être. Les assemblys privés déployés uniquement dans le répertoire racine de l’application peuvent avoir un nom d’assembly différent du nom du fichier.  
+> Dans le .NET Framework, si vous placez un assembly avec nom fort dans le Global Assembly Cache, le nom de fichier de l’assembly doit correspondre au nom de l’assembly, sans l’extension de nom de fichier, par exemple *. exe* ou *. dll*. Par exemple, si le nom de fichier d’un assembly est *myAssembly. dll*, le nom de l’assembly doit être `myAssembly`. Les assemblys privés déployés uniquement dans le répertoire racine de l’application peuvent avoir un nom d’assembly différent du nom du fichier.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Déterminer le nom qualifié complet d’un assembly](find-fully-qualified-name.md)
+- [Comment : déterminer le nom qualifié complet d’un assembly](find-fully-qualified-name.md)
 - [Créer des assemblys](create.md)
 - [Assemblys avec nom fort](strong-named.md)
 - [Global assembly cache](../../framework/app-domains/gac.md)

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 868b339b-acdb-4fe0-91c7-b85f4fba99eb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4f4ecb700a19a4e06f9f0056881fe3cdb9753aae
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e103401b85626e53db53e1894c22b161774e5163
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737595"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088691"
 ---
 # <a name="icordebugarrayvaluegetbaseindicies-method"></a>ICorDebugArrayValue::GetBaseIndicies, méthode
-Obtient l’index de base de chaque dimension dans le tableau.  
+Obtient l’index de base de chaque dimension du tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,12 +37,12 @@ HRESULT GetBaseIndicies (
   
 ## <a name="parameters"></a>Paramètres  
  `cdim`  
- [in] Le nombre de dimensions de ce `ICorDebugArrayValue` objet. Cette valeur est également la taille de la `indicies` tableau car sa taille est égale au nombre de dimensions de la `ICorDebugArrayValue` objet.  
+ dans Nombre de dimensions de cet objet `ICorDebugArrayValue`. Cette valeur est également la taille du tableau de `indicies`, car sa taille est égale au nombre de dimensions de l’objet `ICorDebugArrayValue`.  
   
  `indicies`  
- [out] Tableau d’entiers, chacun d’eux est l’index de base (autrement dit, l’index de départ) d’une dimension de ce `ICorDebugArrayValue` objet.  
+ à Tableau d’entiers, chacun d’eux étant l’index de base (autrement dit, l’index de départ) d’une dimension de cet objet `ICorDebugArrayValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

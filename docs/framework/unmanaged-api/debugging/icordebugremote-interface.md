@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 53d073c6-fa02-40d2-82e1-b9452bb6abaa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fbed34f53ff43ca7887a58b3c879eaa74703da3e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a7eb2796de060b3a5dc8e8c08d07e6aeeb3daecb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744751"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131264"
 ---
 # <a name="icordebugremote-interface"></a>ICorDebugRemote, interface
 Fournit la possibilité de lancer ou de joindre un débogueur managé à un processus distant cible.  
@@ -66,16 +64,16 @@ interface ICorDebugRemote : IUnknown
 |[ICorDebugRemote::DebugActiveProcessEx, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|Lance un processus sur un ordinateur distant sous le débogueur.|  
   
 ## <a name="remarks"></a>Notes  
- Actuellement, cette fonctionnalité est prise en charge uniquement pour le débogage d’une cible de l’application basée sur Silverlight qui s’exécute sur un ordinateur Macintosh distant.  
+ Actuellement, cette fonctionnalité est prise en charge uniquement pour le débogage d’une cible d’application Silverlight qui s’exécute sur un ordinateur Macintosh distant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET framework :** 4.5, 4, 3.5 SP1  
+ **Versions de .NET Framework :** 4,5, 4, 3,5 SP1  
   
 ## <a name="see-also"></a>Voir aussi
 

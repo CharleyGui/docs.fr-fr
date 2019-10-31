@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fae3b23-5c9f-47c0-85d8-6bb75e050786
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 80465c8d1f1f9e09c0675de1667b999b332b9f6b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a5cda98cac0bc3fc6fb101fd0404b062224cb578
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738145"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134082"
 ---
 # <a name="icordebuginitialize-method"></a>ICorDebug::Initialize, méthode
-Initialise le `ICorDebug` objet.  
+Initialise l’objet `ICorDebug`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,9 +32,9 @@ HRESULT Initialize ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur doit appeler `Initialize` lors de la création de temps pour s’initialiser le débogage de services. Cette méthode doit être appelée avant toute autre méthode sur `ICorDebug` est appelée.  
+ Le débogueur doit appeler `Initialize` au moment de la création pour initialiser les services de débogage. Cette méthode doit être appelée avant que toute autre méthode sur `ICorDebug` soit appelée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

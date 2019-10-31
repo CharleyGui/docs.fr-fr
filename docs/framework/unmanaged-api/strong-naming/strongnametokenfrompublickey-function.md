@@ -18,14 +18,12 @@ helpviewer_keywords:
 ms.assetid: 997e9e57-abb2-4217-bf20-1df621a75add
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 197504cbb0dd66c0cf43dee718026fc63e918d60
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b95c96efeb666f25d04118aa8cb9b0da3a2e7924
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798848"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104162"
 ---
 # <a name="strongnametokenfrompublickey-function"></a>StrongNameTokenFromPublicKey, fonction
 Obtient un jeton représentant une clé publique. Un jeton de nom fort est la forme raccourcie d’une clé publique.  
@@ -51,25 +49,25 @@ BOOLEANStrongNameTokenFromPublicKey (
  dans Taille, en octets, de `pbPublicKeyBlob`.  
   
  `ppbStrongNameToken`  
- à Jeton de nom fort correspondant à la clé passée `pbPublicKeyBlob`. Le common language runtime alloue la mémoire dans laquelle le jeton doit être retourné. L’appelant doit libérer cette mémoire à l’aide de la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) .  
+ à Jeton de nom fort correspondant à la clé passée dans `pbPublicKeyBlob`. Le common language runtime alloue la mémoire dans laquelle le jeton doit être retourné. L’appelant doit libérer cette mémoire à l’aide de la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) .  
   
  `pcbStrongNameToken`  
  à Taille, en octets, du jeton de nom fort retourné.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true`en cas de réussite de l’opération ; Sinon, `false`.  
+ `true` en cas de réussite de l’opération ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
  Un jeton de nom fort est la forme raccourcie d’une clé publique utilisée pour économiser de l’espace lors du stockage des informations de clé dans les métadonnées. Plus précisément, les jetons de nom fort sont utilisés dans les références d’assembly pour faire référence à l’assembly dépendant.  
   
- Si la `StrongNameTokenFromPublicKey` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si la fonction `StrongNameTokenFromPublicKey` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans Mscoree. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans Mscoree. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

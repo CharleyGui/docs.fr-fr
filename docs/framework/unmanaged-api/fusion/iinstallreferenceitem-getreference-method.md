@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8960332f-c98a-405a-ba92-7003de0c1187
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9395fcc6d896114c25770edbc17761323285099f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 014bd4f2b12c84790065f76a67765aaf35e8b2d8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796392"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131679"
 ---
 # <a name="iinstallreferenceitemgetreference-method"></a>IInstallReferenceItem::GetReference, méthode
 Obtient un pointeur vers la structure [FUSION_INSTALL_REFERENCE](fusion-install-reference-structure.md) représentée par cet objet [IInstallReferenceItem](iinstallreferenceitem-interface.md) .  
@@ -39,16 +37,16 @@ HRESULT GetReference (
   
 ## <a name="parameters"></a>Paramètres  
  `ppRefData`  
- à Pointeur retourné `FUSION_INSTALL_REFERENCE` .  
+ à Pointeur de `FUSION_INSTALL_REFERENCE` retourné.  
   
  `dwFlags`  
- dans Réservé pour une future extensibilité. `dwFlags`doit avoir la valeur 0 (zéro).  
+ dans Réservé pour une future extensibilité. `dwFlags` doit avoir la valeur 0 (zéro).  
   
  `pvReserved`  
- dans Réservé pour une future extensibilité. `pvReserved`doit être une référence null.  
+ dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

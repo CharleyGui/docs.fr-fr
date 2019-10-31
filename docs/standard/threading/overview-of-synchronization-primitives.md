@@ -8,14 +8,12 @@ helpviewer_keywords:
 - threading [.NET],synchronizing threads
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31d5df6521b7c420943a7d3d0efcf6e4bee2d3a2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: 43f78c914b7cb01f9b0de4c258d5882548e52790
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666279"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73106592"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Vue d’ensemble des primitives de synchronisation
 
@@ -54,7 +52,7 @@ Certains de ces types sont des alternatives aux types dérivés de <xref:System.
 
 ### <a name="monitor-class"></a>Monitor (classe)
 
-La classe <xref:System.Threading.Monitor?displayProperty=nameWithType> accorde l’accès mutuellement exclusif à une ressource partagée par l’acquisition ou la libération d’un verrou sur l’objet qui identifie la ressource. Tant qu’un verrou est maintenu, le thread qui contient le verrou peut à nouveau acquérir et libérer le verrou. Tout autre thread se voit bloquer l’acquisition du verrou et la méthode <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> attend que ce dernier soit libéré. La méthode <xref:System.Threading.Monitor.Enter%2A> acquiert un verrou libéré. Vous pouvez également utiliser la méthode <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> pour spécifier la quantité de temps pendant lequel un thread tente d’acquérir un verrou. Étant donné que la classe <xref:System.Threading.Monitor> possède l’affinité de thread, le thread qui a acquis un verrou doit le libérer en appelant la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>.
+La classe <xref:System.Threading.Monitor?displayProperty=nameWithType> accorde l’accès mutuellement exclusif à une ressource partagée par l’acquisition ou la libération d’un verrou sur l’objet qui identifie la ressource. Tant qu’un verrou est maintenu, le thread qui contient le verrou peut à nouveau obtenir et libérer le verrou. Tout autre thread se voit bloquer l’acquisition du verrou et la méthode <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> attend que ce dernier soit libéré. La méthode <xref:System.Threading.Monitor.Enter%2A> acquiert un verrou libéré. Vous pouvez également utiliser la méthode <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> pour spécifier la quantité de temps pendant lequel un thread tente d’acquérir un verrou. Étant donné que la classe <xref:System.Threading.Monitor> possède l’affinité de thread, le thread qui a acquis un verrou doit le libérer en appelant la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>.
 
 Vous pouvez coordonner l’interaction des threads qui acquièrent un verrou sur le même objet à l’aide des méthodes <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.Pulse%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>.
 

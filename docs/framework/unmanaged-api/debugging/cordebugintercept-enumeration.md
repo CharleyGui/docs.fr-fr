@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3d5b642e-7ef2-428b-a5ae-509c35ed461a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 148bc423a9497962ebfbc73faefcc799c6db6499
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 144bdb1b4e479c1e75f89911ad5002e2650e405d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739903"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098124"
 ---
 # <a name="cordebugintercept-enumeration"></a>CorDebugIntercept, énumération
 Indique les types de code qui peuvent être interceptés (c'est-à-dire pouvant faire l'objet d'un pas à pas détaillé).  
@@ -53,9 +51,9 @@ typedef enum CorDebugIntercept {
 |`INTERCEPT_ALL`|Aucun code ne peut être intercepté.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le [ICorDebugStepper::SetInterceptMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) méthode pour définir les types de code qui peut être intercepté.  
+ Utilisez la méthode [ICorDebugStepper :: SetInterceptMask,](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) pour établir les types de code qui peuvent être interceptés.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - metadata, emit interfaces
 - reflection emit, overview
 - assemblies [.NET Framework], emitting dynamic assemblies
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d8e2b9aeb8c632efcbf8c506da4da7c6e7b408e1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4578b708b10e93a7f5def5b9dc040eeb646bdc8f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046083"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130232"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Émission d'assemblys et de méthodes dynamiques
 
@@ -36,26 +34,26 @@ L'émission de réflexion offre les possibilités suivantes :
   
 En plus des types managés dans l’espace de noms <xref:System.Reflection.Emit>, il existe des interfaces de métadonnées non managées qui sont décrites dans la documentation de référence [Interfaces de métadonnées](../unmanaged-api/metadata/metadata-interfaces.md). L'émission de réflexion managée offre une vérification des erreurs sémantiques plus puissante et un niveau d'abstraction des métadonnées plus élevé que les interfaces de métadonnées non managées.  
   
-Une autre ressource utile pour exploiter les métadonnées et MSIL est la documentation de la Common Language Infrastructure (CLI), en particulier « Partition II : Metadata Definition and Semantics » et « Partition III: CIL Instruction Set ». La documentation est disponible en ligne sur [MSDN](https://go.microsoft.com/fwlink/?LinkID=65555) et sur le [site web Ecma](https://go.microsoft.com/fwlink/?LinkId=116487).  
+Une autre ressource utile pour travailler avec les métadonnées et MSIL est la documentation de la Common Language Infrastructure (CLI), en particulier "Partie II : définition et sémantique des métadonnées" et "Partie III : jeu d'instructions de CIL". La documentation est disponible en ligne sur [MSDN](https://go.microsoft.com/fwlink/?LinkID=65555) et sur le [site web Ecma](https://go.microsoft.com/fwlink/?LinkId=116487).  
   
 ## <a name="in-this-section"></a>Dans cette section
   
 [Problèmes de sécurité dans l’émission de réflexion](security-issues-in-reflection-emit.md)  
 Décrit les problèmes de sécurité liés à la création d'assemblys dynamiques en utilisant l'émission de réflexion.  
 
-[Guide pratique : définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)   
+[Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)   
 Montre comment exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe.
 
 [Guide pratique pour définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)   
 Montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.
 
-[Guide pratique : définir une méthode générique avec l’émission de réflexion](how-to-define-a-generic-method-with-reflection-emit.md)   
+[Guide pratique pour définir une méthode générique avec l’émission de réflexion](how-to-define-a-generic-method-with-reflection-emit.md)   
 Montre comment créer, émettre et appeler une méthode générique simple.
 
 [Assemblys pouvant être collectés pour la génération de type dynamique](collectible-assemblies.md)   
 Introduit les assemblys pouvant être collectés, qui sont des assemblys dynamiques qui peuvent être déchargés sans décharger le domaine d’application dans lequel ils ont été créés.
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
 
 <xref:System.Reflection.Emit.OpCodes>  
 Répertorie les codes des instructions MSIL que vous pouvez utiliser pour créer des corps de méthode.  

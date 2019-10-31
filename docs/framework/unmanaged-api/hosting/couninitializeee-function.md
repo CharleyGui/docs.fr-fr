@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5f5a311a-839a-465f-89d9-ff1c74da9736
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d05bc472711838236ed18b00ce808d022d9581dc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3531cfc0815c3f8a9479e35b2df60b2825801b39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758204"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136852"
 ---
 # <a name="couninitializeee-function"></a>CoUninitializeEE, fonction
-`CoUninitializeEE` est obsolète et n’offre aucune fonctionnalité.  
+`CoUninitializeEE` est obsolète et ne fournit aucune fonctionnalité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +34,7 @@ void CoUninitializeEE (
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le moteur d’exécution du common language runtime ne peut pas être déchargé d’un processus. Pour arrêter le moteur d’exécution, appelez [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).  
+ Le moteur d’exécution de common language runtime ne peut pas être déchargé d’un processus. Pour arrêter l’appel du moteur d’exécution [CorExitProcess,](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

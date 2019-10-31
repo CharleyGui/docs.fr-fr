@@ -7,14 +7,12 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e6b6de8f0a178914c46ba5a65dfb56795cf23c71
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f0bd28823c5b8efc0b773ad588f2f232f8a41502
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046126"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130279"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Vue d'ensemble du Dynamic Language Runtime
 
@@ -76,7 +74,7 @@ Voici quelques exemples de langages développés à l’aide du DLR :
 ## <a name="dlr-architecture"></a>Architecture du DLR
  L’illustration suivante montre l’architecture du Dynamic Language Runtime.
 
- ![Vue d’ensemble de l’architecture DLR (Dynamic Language Runtime)](./media/dlr-archoverview.png "DLR_ArchOverview") Architecture DLR
+ ![Vue d’ensemble de l’architecture Dynamic Language Runtime](./media/dlr-archoverview.png "DLR_ArchOverview") Architecture du DLR
 
  Le DLR ajoute un ensemble de services au CLR pour une meilleure prise en charge des langages dynamiques. Il s’agit des services suivants :
 
@@ -98,4 +96,4 @@ Le DLR utilise des classeurs dans les sites d’appel pour communiquer non seule
 - [Common Language Runtime](../../standard/clr.md)
 - [Arborescences d’expressions (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md)
 - [Arborescences d’expressions (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Procédure pas à pas : Création et utilisation d’objets dynamiques](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+- [Procédure pas à pas : création et utilisation d’objets dynamiques](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

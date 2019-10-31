@@ -2,17 +2,15 @@
 title: ISymUnmanagedWriter5, interface
 ms.date: 03/30/2017
 ms.assetid: 15b8526e-4f5d-475c-a1e3-d8b2d145c879
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a6ed8c6e61c558a4bc9e3f92d559615ac93ecff8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18371b6aefb002f5adf27d43f85194c6c35f6ef5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962337"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121641"
 ---
 # <a name="isymunmanagedwriter5-interface"></a>ISymUnmanagedWriter5, interface
-Isymunmanagedwriter5, interface.  
+Interface ISymUnmanagedWriter5.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,12 +23,12 @@ Isymunmanagedwriter5, interface.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[CloseMapTokensToSourceSpans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md)|Fermez la section de données personnalisé spécial pour l’étendue de jeton pour source des informations de mappage. Après sa fermeture, aucune information de mappage plus ne peut être ajoutée.|  
-|[MapTokenToSourceSpan, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-maptokentosourcespan-method.md)|Cartes s’étendent sur le jeton de métadonnées donné à la ligne source donné dans le fichier source spécifié.<br /><br /> Doit être appelée entre les appels à [openmaptokenstosourcespans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) et [closemaptokenstosourcespans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
-|[OpenMapTokensToSourceSpans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Ouvrez une section spéciale de données personnalisées pour émettre des informations de mappage de l’étendue de source de jeton dans. Ouverture de cette section quand une méthode est déjà ouverte, ou vice versa, est une erreur.|  
+|[CloseMapTokensToSourceSpans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md)|Fermez la section de données personnalisées spéciale pour les informations de mappage de l’étendue Token-to-source. Une fois fermé, aucune autre information de mappage ne peut être ajoutée.|  
+|[MapTokenToSourceSpan, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-maptokentosourcespan-method.md)|Mappe le jeton de métadonnées donné à l’étendue de ligne source donnée dans le fichier source spécifié.<br /><br /> Doit être appelé entre les appels à la [méthode openmaptokenstosourcespans,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) et à la [méthode closemaptokenstosourcespans,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
+|[OpenMapTokensToSourceSpans, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Ouvrez une section de données personnalisées spéciale pour émettre des informations de mappage de jeton-à-source dans. L’ouverture de cette section quand une méthode est déjà ouverte, ou vice versa, est une erreur.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

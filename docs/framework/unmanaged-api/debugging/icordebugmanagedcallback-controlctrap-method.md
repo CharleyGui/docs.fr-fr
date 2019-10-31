@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0500854e-2121-43d9-a028-64312da35258
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1e0217019aa9b8ff85716c62c27c0f4d5547074a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da35db8a943fda5fb3fbf4126684bb9cb7243001
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759795"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137426"
 ---
 # <a name="icordebugmanagedcallbackcontrolctrap-method"></a>ICorDebugManagedCallback::ControlCTrap, méthode
-Notifie le débogueur que CTRL + C est intercepté dans le processus en cours de débogage.  
+Notifie le débogueur qu’un CTRL + C est intercepté dans le processus en cours de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +35,7 @@ HRESULT ControlCTrap (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet ICorDebugProcess qui représente le processus dans lequel CTRL + C est intercepté.  
+ dans Pointeur vers un objet ICorDebugProcess qui représente le processus dans lequel CTRL + C est intercepté.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
@@ -49,7 +47,7 @@ HRESULT ControlCTrap (
 ## <a name="remarks"></a>Notes  
  Tous les domaines d’application au sein du processus sont arrêtés pour ce rappel.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

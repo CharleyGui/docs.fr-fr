@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 077e6c7f-f857-480c-bebb-76ee1de4e8fc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 23f248625753c15a4798ea69a1eb3b377b79f95d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a862dd3f6a9c10c6b3a5a0bb41208d351c4ca9f1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747755"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125688"
 ---
 # <a name="icordebugclass2setjmcstatus-method"></a>ICorDebugClass2::SetJMCStatus, méthode
-Pour chaque méthode de la classe, définit une valeur qui indique si la méthode est un code défini par l’utilisateur.  
+Pour chaque méthode de la classe, définit une valeur qui indique si la méthode est du code défini par l’utilisateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Paramètres  
  `bIsJustMyCode`  
- [in] La valeur `true` pour indiquer que la méthode est défini par l’utilisateur de code ; sinon, la valeur est `false`.  
+ dans Affectez la valeur `true` pour indiquer que la méthode est du code défini par l’utilisateur ; Sinon, affectez la valeur `false`.  
   
 ## <a name="remarks"></a>Notes  
- Un juste mon code (JMC) ignorera le code non défini par l’utilisateur. Code défini par l’utilisateur doit être un sous-ensemble de code pouvant être débogué.  
+ Une exécution pas à pas juste-à-pas-code (uniquement mon code) ignore le code non défini par l’utilisateur. Le code défini par l’utilisateur doit être un sous-ensemble du code pouvant être débogué.  
   
- `SetJMCStatus` Retourne une valeur HRESULT de S_FALSE si elle ne parvient pas à définir la valeur de n’importe quelle méthode, même si la valeur pour toutes les autres méthodes.  
+ `SetJMCStatus` retourne une valeur HRESULT de S_FALSE si elle ne parvient pas à définir la valeur d’une méthode, même si elle définit correctement la valeur pour toutes les autres méthodes.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

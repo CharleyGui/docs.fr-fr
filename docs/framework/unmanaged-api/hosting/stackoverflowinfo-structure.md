@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 519389f2-0217-436c-99d4-93a76ebce5b5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7de5a6d38d43c20ce52f609ef6514a1f28022416
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1072026f92edbc646653c6dd74ec8e22d5b887e5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781137"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105921"
 ---
 # <a name="stackoverflowinfo-structure"></a>StackOverflowInfo, structure
-Stocke le type de dépassement de capacité s’est produite et des informations sur l’exception qui a été levée en raison du dépassement de capacité.  
+Stocke le type de dépassement qui s’est produit et les informations sur l’exception levée en raison du dépassement de capacité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +37,18 @@ typedef struct _StackOverflowInfo {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`soType`|Une valeur de la [StackOverflowType](../../../../docs/framework/unmanaged-api/hosting/stackoverflowtype-enumeration.md) énumération qui spécifie le type de dépassement de capacité.|  
-|`pExceptionInfo`|Un pointeur vers un Win32 `EXCEPTION_POINTERS` objet qui contient un enregistrement d’exception avec une description indépendante de l’ordinateur d’une exception et un enregistrement de contexte avec une description dépendantes de l’ordinateur du contexte du processeur au moment de l’exception.|  
+|`soType`|Valeur de l’énumération [StackOverflowType,](../../../../docs/framework/unmanaged-api/hosting/stackoverflowtype-enumeration.md) qui spécifie le type de dépassement de capacité.|  
+|`pExceptionInfo`|Pointeur vers un objet `EXCEPTION_POINTERS` Win32, qui contient un enregistrement d’exception avec une description indépendante de l’ordinateur d’une exception et un enregistrement de contexte avec une description dépendante de l’ordinateur du contexte du processeur au moment de l’exception.|  
   
 ## <a name="remarks"></a>Notes  
- Un `StackOverflowInfo` objet est passé à la [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) méthode pour `Event_StackOverflow` événements.  
+ Un objet `StackOverflowInfo` est passé à la méthode [IActionOnCLREvent :: OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) pour les événements `Event_StackOverflow`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.idl  
+ **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 70f07c9e-0614-4bee-ac34-09fe6c51c5a9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4efcf6d477ab006e179e283ca4ce7b62c27018a6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3ae25f7d16600a1b09f30f96a191d7ecf76713e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960767"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121061"
 ---
 # <a name="icordebugcode3-interface"></a>ICorDebugCode3, interface
-Fournit une méthode qui étend «ICorDebugCode» et «ICorDebugCode2» pour fournir des informations sur une valeur de retour managée.  
+Fournit une méthode qui étend « ICorDebugCode » et « ICorDebugCode2 » pour fournir des informations sur une valeur de retour managée.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -37,12 +35,12 @@ Fournit une méthode qui étend «ICorDebugCode» et «ICorDebugCode2» pour fou
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   

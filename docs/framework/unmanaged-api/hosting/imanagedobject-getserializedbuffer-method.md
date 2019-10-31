@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: c17105bb-b49f-434e-8f9b-77f8c85b9220
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 65ac35e254368b53ac2751e84be7dfe052fa0b53
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4a55ae265230c4da3cc0a19b06a7597be8661beb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749086"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103248"
 ---
 # <a name="imanagedobjectgetserializedbuffer-method"></a>IManagedObject::GetSerializedBuffer, méthode
 Obtient la représentation sous forme de chaîne de cet objet managé.  
@@ -37,17 +35,17 @@ HRESULT GetSerializedBuffer (
   
 ## <a name="parameters"></a>Paramètres  
  `pBSTR`  
- [out] Un pointeur vers une chaîne qui est l’objet sérialisé.  
+ à Pointeur vers une chaîne qui est l’objet sérialisé.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetSerializedBuffer` méthode sérialise l’objet afin qu’elle peut être marshalée au client.  
+ La méthode `GetSerializedBuffer` sérialise l’objet afin qu’il puisse être marshalé vers le client.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

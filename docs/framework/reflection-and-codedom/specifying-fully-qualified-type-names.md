@@ -14,14 +14,12 @@ helpviewer_keywords:
 - special characters
 - IDENTIFIER
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 656b82daffc62824ed663ea7080bd6d20cd0dadc
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 707c71482196d789ed9a88db34af048ec57734fb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045813"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130031"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Spécification des noms de types complets
 
@@ -122,13 +120,13 @@ Utilisez la barre oblique inverse (\\) comme caractère d’échappement pour s
 
 |Token|Signification|
 |-----------|-------------|
-|\\|Séparateur d’assembly.|
+|\\,|Séparateur d’assembly.|
 |\\+|Séparateur de type imbriqué.|
 |\\&|Type référence.|
 |\\*|Type pointeur.|
 |\\[|Délimiteur de dimension du tableau.|
 |\\]|Délimiteur de dimension du tableau.|
-|\\.|Utilisez la barre oblique inverse avant un point uniquement si celui-ci est utilisé dans une spécification de tableau. Les points de NamespaceSpec ne sont pas précédés d’une barre oblique inverse.|
+|\\.,|Utilisez la barre oblique inverse avant un point uniquement si celui-ci est utilisé dans une spécification de tableau. Les points de NamespaceSpec ne sont pas précédés d’une barre oblique inverse.|
 |\\\|Barre oblique inverse nécessaire comme littéral de chaîne.|
 
 Notez que des espaces peuvent être utilisés dans tous les composants TypeSpec, sauf AssemblyNameSpec. Dans AssemblyNameSpec, les espaces précédant le séparateur « , » peuvent être utilisés, mais ceux situés après le séparateur « , » sont ignorés.
@@ -149,7 +147,7 @@ Au minimum, vous devez fournir le nom textuel (IDENTIFIER) de l’assembly comme
 |**PublicKey**|Clé publique complète|Valeur de chaîne de la clé publique complète au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
 |**PublicKeyToken**|Jeton de clé publique (hachage de 8 octets de la clé publique complète)|Valeur de chaîne du jeton de clé publique au format hexadécimal. Spécifiez une référence Null (**Nothing** en Visual Basic) pour indiquer explicitement un assembly privé.|
 |**Culture**|Culture de l’assembly|Culture de l’assembly au format RFC-1766 ou « neutre » pour les assemblys indépendants du langage (non-satellites).|
-|**Personnalisé**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
+|**Custom**|Objet binaire volumineux (BLOB) personnalisé. Utilisé uniquement dans les assemblys générés par le [générateur d’images natives (Ngen)](../tools/ngen-exe-native-image-generator.md).|Chaîne personnalisée utilisée par le générateur d’images natives (Ngen) pour informer le cache d’assembly que l’assembly installé est une image native, et qu’il doit donc être installé dans le cache des images natives. Également appelée chaîne zap.|
 
 L’exemple suivant illustre un **AssemblyName** pour un assembly nommé simplement avec une culture par défaut.
 

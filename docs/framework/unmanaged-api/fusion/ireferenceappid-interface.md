@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8eb9e565-f358-43ce-900e-a8f8a5aa6cfb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 522ed80f161f114af25e1fa7ad041c8238073d6f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6f20fb2e9e026253fb02b47dfcd63cf655acc4ee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796367"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131660"
 ---
 # <a name="ireferenceappid-interface"></a>IReferenceAppId, interface
 Représente une référence à l’identificateur unique de l’application dans l’étendue actuelle.  
@@ -30,14 +28,14 @@ Représente une référence à l’identificateur unique de l’application dans
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`IReferenceAppId::get_CodeBase`|Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de code pour l’application référencée par ce `IReferenceAppId`.|  
-|`IReferenceAppId::put_CodeBase`|Définit l’identificateur de code pour l’application référencée par ce `IReferenceAppId`.|  
-|`IReferenceAppId::EnumAppPath`|Obtient un pointeur d’interface vers `IEnumReferenceIdentity` une instance de `IReferenceIdentity` contenant les instances qui représentent les `IReferenceAppId`membres de ce.|  
-|`IReferenceAppId::get_SubscriptionId`|Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de jeton pour un `IReferenceAppId`abonnement à ce.|  
-|`IReferenceAppId::put_SubscriptionId`|Définit l’identificateur de jeton pour un abonnement à ce `IReferenceAppId` à la valeur de chaîne spécifiée.|  
+|`IReferenceAppId::get_CodeBase`|Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de code pour l’application référencée par cet `IReferenceAppId`.|  
+|`IReferenceAppId::put_CodeBase`|Définit l’identificateur de code pour l’application référencée par cette `IReferenceAppId`.|  
+|`IReferenceAppId::EnumAppPath`|Obtient un pointeur d’interface vers une instance de `IEnumReferenceIdentity` contenant les instances `IReferenceIdentity` qui représentent les membres de ce `IReferenceAppId`.|  
+|`IReferenceAppId::get_SubscriptionId`|Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de jeton pour un abonnement à cette `IReferenceAppId`.|  
+|`IReferenceAppId::put_SubscriptionId`|Définit l’identificateur de jeton pour un abonnement à cet `IReferenceAppId` à la valeur de chaîne spécifiée.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

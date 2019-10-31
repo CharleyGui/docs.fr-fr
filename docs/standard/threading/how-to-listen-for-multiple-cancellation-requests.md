@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Écouter plusieurs demandes d’annulation'
+title: "Comment : écouter plusieurs demandes d'annulation"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,22 +9,20 @@ helpviewer_keywords:
 - cancellation tokens, joining
 - LinkedTokenSource, how to
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2684f0fd43f84573933fc0a7107ce4f9035bc092
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: e35472040b6ee1263ebc4c4968fa1822045a2064
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913305"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138011"
 ---
-# <a name="how-to-listen-for-multiple-cancellation-requests"></a>Procédure : Écouter plusieurs demandes d’annulation
+# <a name="how-to-listen-for-multiple-cancellation-requests"></a>Comment : écouter plusieurs demandes d'annulation
 Cet exemple montre comment écouter simultanément deux jetons d’annulation afin de pouvoir annuler une opération si un des jetons le demande.  
   
 > [!NOTE]
-> Quand l'option Uniquement mon code est activée, Visual Studio, dans certains cas, peut s'arrêter sur la ligne qui lève l'exception et afficher un message d'erreur indiquant que l'exception n'est pas gérée par le code utilisateur. Cette erreur est sans gravité. Vous pouvez appuyer sur F5 pour continuer et voir le comportement de gestion des exceptions qui est illustré dans les exemples ci-dessous. Pour empêcher Visual Studio de s'arrêter sur la première erreur, il suffit de désactiver la case à cocher « Uniquement mon code » sous **Outils, Options, Débogage, Général**.  
+> Quand l'option Uniquement mon code est activée, Visual Studio, dans certains cas, peut s'arrêter sur la ligne qui lève l'exception et afficher un message d'erreur indiquant que l'exception n'est pas gérée par le code utilisateur. Cette erreur est sans gravité. Vous pouvez appuyer sur F5 pour continuer et voir le comportement de gestion des exceptions qui est illustré dans les exemples ci-dessous. Pour empêcher Visual Studio de s'arrêter sur la première erreur, il suffit de désactiver la case à cocher Uniquement mon code sous **Outils, Options, Débogage, Général**.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Dans l'exemple suivant, la méthode <xref:System.Threading.CancellationTokenSource.CreateLinkedTokenSource%2A> permet de fusionner deux jetons en un seul. Cela permet de transmettre le jeton à des méthodes qui n’acceptent qu’un seul jeton d’annulation comme argument. L’exemple illustre un scénario courant dans lequel une méthode doit observer à la fois un jeton reçu depuis l’extérieur de la classe et un jeton généré à l’intérieur de la classe.  
   
  [!code-csharp[Cancellation#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#13)]

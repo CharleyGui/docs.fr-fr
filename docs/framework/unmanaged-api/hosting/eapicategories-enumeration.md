@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3c4a8a5a-8a46-4ac9-947f-4959bc9d6ac6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 41513d9b6f98743bfad95e4d9606cfb4927369e6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fd9409a5157e1013365c94f01631f130a76f54b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769790"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131211"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories, énumération
-Décrit les catégories de fonctionnalités que l’hôte peut bloquer l’exécution dans du code partiellement fiable.  
+Décrit les catégories de fonctionnalités que l’hôte peut empêcher de s’exécuter dans du code de confiance partielle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,29 +46,29 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`eAll`|Spécifie que tous les gérés classes et membres qui sont couverts par d’autres `EApiCategories` champs pas s’exécuter dans du code partiellement fiable.|  
-|`eExternalProcessMgmt`|Spécifie que les classes managées et membres qui permettent la création, la manipulation et la destruction de processus externes doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eExternalThreading`|Spécifie que les classes managées et les membres qui permettent la création, la manipulation et la destruction de threads externes doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eMayLeakOnAbort`|Spécifie que les types managés et les membres qui pourraient provoquer potentiellement une fuite de mémoire sur abandon doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eNoCategory`|Spécifie qu’aucune catégorie de code managé doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eSecurityInfrastructure`|Spécifie que l’infrastructure de sécurité du common language runtime (CLR) doit être bloquée utilisé par du code partiellement fiable.|  
-|`eSelfAffectingProcessMgmt`|Spécifie que les classes managées et membres dont les fonctionnalités peuvent affecter le processus hébergé doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eSelfAffectingThreading`|Spécifie que les classes managées et les membres dont les fonctionnalités peuvent affecter des threads dans le processus hébergé doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eSharedState`|Spécifie que les classes managées et les membres qui exposent l’état partagé doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
-|`eSynchronization`|Spécifie que le common language runtime classes et membres qui donner au code utilisateur à maintenir les verrous doit être bloquée à partir de l’exécution dans du code partiellement approuvé.|  
-|`eUI`|Spécifie que les classes managées et les membres qui autorisent ou nécessitent une interaction humaine doit être bloquée en cours d’exécution dans du code partiellement fiable.|  
+|`eAll`|Spécifie que l’exécution de toutes les classes et membres managés couverts par d’autres `EApiCategories` champs est bloquée dans du code d’un code d’approbation partiel.|  
+|`eExternalProcessMgmt`|Spécifie que les classes et les membres managés qui autorisent la création, la manipulation et la destruction de processus externes ne sont pas exécutés dans du code d’un code d’approbation partiel.|  
+|`eExternalThreading`|Spécifie que les classes et les membres managés qui autorisent la création, la manipulation et la destruction de threads externes ne sont pas exécutés dans du code d’un code d’approbation partiel.|  
+|`eMayLeakOnAbort`|Spécifie que les types et membres managés susceptibles d’entraîner une fuite de mémoire lors de l’abandon ne peuvent pas s’exécuter dans du code d’un niveau de confiance partiel.|  
+|`eNoCategory`|Spécifie qu’il n’est pas possible de bloquer l’exécution des catégories de code managé dans du code de confiance partielle.|  
+|`eSecurityInfrastructure`|Spécifie que l’utilisation de l’infrastructure de sécurité common language runtime (CLR) par le code d’un point de confiance partiel est bloquée.|  
+|`eSelfAffectingProcessMgmt`|Spécifie que les classes et les membres managés dont les fonctionnalités peuvent affecter le processus hébergé ne peuvent pas s’exécuter dans du code partiellement fiable.|  
+|`eSelfAffectingThreading`|Spécifie que les classes et les membres managés dont les fonctionnalités peuvent affecter les threads dans le processus hébergé ne peuvent pas s’exécuter dans du code de confiance partielle.|  
+|`eSharedState`|Spécifie que les classes et les membres managés qui exposent l’état partagé ne sont pas en cours d’exécution dans du code de confiance partielle.|  
+|`eSynchronization`|Spécifie que les classes et les membres de common language runtime qui autorisent le code utilisateur à contenir des verrous ne pourront pas s’exécuter dans du code partiellement fiable.|  
+|`eUI`|Spécifie que les classes et les membres managés qui autorisent ou nécessitent une interaction humaine ne sont pas en cours d’exécution dans du code partiellement fiable.|  
   
 ## <a name="remarks"></a>Notes  
- Le [ICLRHostProtectionManager::SetProtectedCategories](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) méthode prend un paramètre de type `EApiCategories`.  
+ La méthode [ICLRHostProtectionManager :: SetProtectedCategories](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) prend un paramètre de type `EApiCategories`.  
   
- Le `EApiCategories` énumération et la `SetProtectedCategories` méthode sont directement liés à managé <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> classe. La classe managée est utilisée avec le <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> énumération, dont les valeurs correspondent directement à la `EApiCategories` pour marquer des types managés et les membres qui exposent des fonctions correspondant aux catégories décrites par les valeurs `EApiCategories`.  
+ L’énumération `EApiCategories` et la méthode `SetProtectedCategories` sont directement liées à la classe <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> managée. La classe managée est utilisée avec l’énumération <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>, dont les valeurs correspondent directement aux valeurs de `EApiCategories`, pour marquer les membres et les types managés qui exposent les fonctionnalités correspondant aux catégories décrites par `EApiCategories`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

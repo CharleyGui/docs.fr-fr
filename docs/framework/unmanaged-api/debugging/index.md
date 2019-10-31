@@ -6,14 +6,12 @@ helpviewer_keywords:
 - debugging [.NET Framework], using the unmanaged API
 - native API reference [.NET Framework], debugging
 ms.assetid: f0bf70be-42ef-4c46-8709-1694b5f99018
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 86be3e7edb7149ed42dd053156de0f649f1480b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f6e6f011bf3970dac280f2fed2f3e84c9bae132a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763683"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103296"
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Débogage (Informations de référence sur les API non managées)
 L'API de débogage permet à un débogueur de déboguer du code qui s'exécute dans l'environnement du Common Language Runtime (CLR). Le type de code à déboguer doit être pris en charge par le CLR.  

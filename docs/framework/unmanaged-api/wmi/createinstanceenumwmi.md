@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CreateInstanceEnumWmi function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b7709d9c50a494013ece2f91b3acc213278f0e57
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9ffa718be0e8b67471fdf8cb277df201388d2840
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798905"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130402"
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi fonction)
 
@@ -54,7 +52,7 @@ dans Nom de la classe pour laquelle les instances sont souhaitées. Ce paramètr
 `lFlags`\
 dans Combinaison d’indicateurs qui affectent le comportement de cette fonction. Les valeurs suivantes sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Si cette valeur est définie, la fonction récupère les qualificateurs modifiés stockés dans l’espace de noms localisé des paramètres régionaux de la connexion actuelle. <br/> Si la valeur n’est pas définie, la fonction récupère uniquement les qualificateurs stockés dans l’espace de noms immédiat. |
 | `WBEM_FLAG_DEEP` | 0 | L’énumération comprend cette et toutes les sous-classes de la hiérarchie. |
@@ -66,7 +64,7 @@ dans Combinaison d’indicateurs qui affectent le comportement de cette fonction
 Les indicateurs recommandés sont `WBEM_FLAG_RETURN_IMMEDIATELY` et `WBEM_FLAG_FORWARD_ONLY` pour des performances optimales.
 
 `pCtx`\
-dans En général, cette valeur `null`est. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les instances demandées.
+dans En général, cette valeur est `null`. Dans le cas contraire, il s’agit d’un pointeur vers une instance [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) qui peut être utilisée par le fournisseur qui fournit les instances demandées.
 
 `ppEnum`\
 à Reçoit le pointeur vers l’énumérateur.
@@ -93,7 +91,7 @@ dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | L’utilisateur n’a pas l’autorisation d’afficher les instances de la classe spécifiée. |
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
@@ -112,11 +110,11 @@ Notez que l’énumérateur retourné peut avoir zéro élément.
 
 Si l’appel de fonction échoue, vous pouvez obtenir des informations supplémentaires sur l’erreur en appelant la fonction [GetErrorInfo](geterrorinfo.md) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

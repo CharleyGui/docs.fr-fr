@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : décharger un domaine d’application'
+title: "Comment : décharger un domaine d'application"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,16 +10,14 @@ helpviewer_keywords:
 - application domains, unloading
 - unloading application domains
 ms.assetid: f356116d-e415-4f7c-a332-6e6a60227192
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f7419725f3822622a8e4210d4f3f5d8e9e59dbdd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4d5f98229c3a9da69a350ae325cd42e8deb6b7bc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053134"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119843"
 ---
-# <a name="how-to-unload-an-application-domain"></a>Procédure : décharger un domaine d’application
+# <a name="how-to-unload-an-application-domain"></a>Comment : décharger un domaine d'application
 Quand vous avez fini d’utiliser un domaine d’application, déchargez-le à l’aide de la méthode <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType>. La méthode **Unload** arrête de façon correcte le domaine d’application spécifié. Au cours du processus de déchargement, aucun nouveau thread ne peut accéder au domaine d’application, et toutes les structures de données spécifiques au domaine d’application sont libérées.  
   
  Les assemblys chargés dans le domaine d’application sont supprimés et ne sont plus disponibles. Si un assembly dans le domaine d’application est indépendant du domaine, les données de l’assembly restent en mémoire jusqu’à ce que l’ensemble du processus soit arrêté. Pour décharger un assembly indépendant du domaine, il n’existe pas d’autre mécanisme que l’arrêt de l’ensemble du processus. Il existe des cas où la demande de déchargement d’un domaine d’application ne fonctionne pas et provoque une exception <xref:System.CannotUnloadAppDomainException>.  
@@ -34,5 +32,5 @@ Quand vous avez fini d’utiliser un domaine d’application, déchargez-le à l
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation avec des domaines d’application](application-domains.md#programming-with-application-domains)
-- [Guide pratique : créer un domaine d’application](how-to-create-an-application-domain.md)
+- [Guide pratique pour créer un domaine d’application](how-to-create-an-application-domain.md)
 - [Utilisation des domaines d’application](use.md)

@@ -1,16 +1,15 @@
 ---
 title: Déconstruction de tuples et d’autres types
 description: Découvrez comment déconstruire des tuples et d’autres types.
-author: rpetrusha
 ms.technology: csharp-fundamentals
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: af1e41c1851ee63d53fe4b9338cd4bdec311e5c0
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 23d193faf9702628698fe558f6667aeb130e8916
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037524"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100668"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types
 

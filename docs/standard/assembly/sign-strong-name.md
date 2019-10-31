@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Signer un assembly avec un nom fort'
+title: 'Comment : signer un assembly avec un nom fort'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, signing with strong names
@@ -7,20 +7,18 @@ helpviewer_keywords:
 - assemblies [.NET Framework], signing
 - assemblies [.NET Framework], strong-named
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 527fd68ef40e152b57a1fc98113094d3b41fbaae
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: c9ddbcf8f7b6307ab2d89b819aee4809f753a0fe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973060"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138614"
 ---
-# <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Procédure : Signer un assembly avec un nom fort
+# <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
 
 > [!NOTE]
 > Bien que .NET Core prenne en charge les assemblys avec nom fort et que tous les assemblys de la bibliothèque .NET Core soient signés, la majorité des assemblys tiers n’ont pas besoin de noms forts. Pour plus d’informations, consultez [signature avec nom fort](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/strong-name-signing.md) sur GitHub.
@@ -35,7 +33,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 - À l'aide des options du compilateur.  
   
- Pour signer un assembly avec un nom fort, vous devez avoir une paire de clés de chiffrement. Pour plus d’informations sur la création d’une paire de clés, consultez [Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md).  
+ Pour signer un assembly avec un nom fort, vous devez avoir une paire de clés de chiffrement. Pour plus d’informations sur la création d’une paire de clés, consultez [Comment : créer une paire de clés publique/privée](create-public-private-key-pair.md).  
   
 ## <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-visual-studio"></a>Créer et signer un assembly avec un nom fort à l’aide de Visual Studio  
   
@@ -43,7 +41,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 2. Choisissez l'onglet **Signature** .  
   
-3. Sélectionnez la zone **Signer l'assembly** .  
+3. Sélectionnez la zone **Signer l’assembly**.  
   
 4. Dans la zone **choisir un fichier de clé de nom fort** , choisissez **Parcourir**, puis naviguez jusqu’au fichier de clé. Pour créer un nouveau fichier de clé, choisissez **nouveau** et entrez son nom dans la boîte de dialogue **créer une clé de nom fort** .  
   
@@ -60,7 +58,7 @@ Où :
 
 - *AssemblyName* est le nom de l’assembly fortement signé (un fichier *. dll* ou *. exe* ) que l’éditeur de liens d’assembly enverra.  
   
-- *modulename* est le nom d’un module de code .NET Framework (un fichier *. netmodule* ) qui comprend un ou plusieurs types. Vous pouvez créer un fichier *. netmodule* en compilant votre code `/target:module` avec le C# commutateur ou en Visual Basic.
+- *modulename* est le nom d’un module de code .NET Framework (un fichier *. netmodule* ) qui comprend un ou plusieurs types. Vous pouvez créer un fichier *. netmodule* en compilant votre code avec le commutateur C# `/target:module` ou Visual Basic.
   
 - *keyfilename* est le nom du conteneur ou du fichier qui contient la paire de clés. Assembly Linker interprète un chemin d’accès relatif par rapport au répertoire actif.  
 
@@ -81,7 +79,7 @@ Pour plus d'informations sur l'utilisation de cet outil, consultez [Assembly Lin
    > [!NOTE]
    > Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
 
-L’exemple suivant utilise l' <xref:System.Reflection.AssemblyKeyFileAttribute> attribut avec un fichier de clé appelé *keyfile. snk*, qui se trouve dans le répertoire où l’assembly est compilé.  
+L’exemple suivant utilise l’attribut <xref:System.Reflection.AssemblyKeyFileAttribute> avec un fichier de clé appelé *keyfile. snk*, qui se trouve dans le répertoire où l’assembly est compilé.  
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("keyfile.snk")];

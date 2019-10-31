@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 48d410d7-6749-4125-a8fd-f9562c7088e9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3958e62f23615d4c9038713bb973a6d16424f348
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fa829d0a08846287835d2ac66a461b4b9b27a09a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759725"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090241"
 ---
 # <a name="icordebugmanagedcallbackcreateappdomain-method"></a>ICorDebugManagedCallback::CreateAppDomain, méthode
 Notifie le débogueur qu’un domaine d’application a été créé.  
@@ -38,12 +36,12 @@ HRESULT CreateAppDomain (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet ICorDebugProcess qui représente le processus dans lequel le domaine d’application a été créé.  
+ dans Pointeur vers un objet ICorDebugProcess qui représente le processus dans lequel le domaine d’application a été créé.  
   
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui a été créé.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui a été créé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

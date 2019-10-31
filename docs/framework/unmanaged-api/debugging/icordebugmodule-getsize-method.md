@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5c68375d-145d-46ef-a7c8-2dc4257472de
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 46ee21a9fd7b9267672a14107c1706af5d5cdcc5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 402a0e8808b51fd4c09b254114292d4c851b2760
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763568"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129512"
 ---
 # <a name="icordebugmodulegetsize-method"></a>ICorDebugModule::GetSize, méthode
 Obtient la taille, en octets, du module.  
@@ -37,11 +35,11 @@ HRESULT GetSize(
   
 ## <a name="parameters"></a>Paramètres  
  `pcBytes`  
- [out] La taille du module en octets.  
+ à Taille du module en octets.  
   
- Si le module a été créé à partir du Générateur d’images natives (NGen.exe), la taille du module sera égal à zéro.  
+ Si le module a été généré à partir du générateur d’images natives (NGen. exe), la taille du module sera égale à zéro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

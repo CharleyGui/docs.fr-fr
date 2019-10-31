@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e3226230-964b-47fb-9f53-d6fdbeda1e9e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 92eff65078f05557f542c64c1be7d4f6eca43eb5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7640f7fafd0bf52a302ac0da1e5df39b5da22d68
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738470"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091149"
 ---
 # <a name="iclrdatatarget2allocvirtual-method"></a>ICLRDataTarget2::AllocVirtual, méthode
-Appelé par les services d’accès aux données du common language runtime (CLR) d’allocation de mémoire dans l’espace d’adressage de ce processus cible.  
+Appelée par les services d’accès aux données common language runtime (CLR) pour allouer de la mémoire dans l’espace d’adressage de ce processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,29 +39,29 @@ HRESULT AllocVirtual(
   
 ## <a name="parameters"></a>Paramètres  
  `addr`  
- [in] Un `CLRDATA_ADDRESS` valeur qui spécifie l’adresse de départ demandée de la mémoire à allouer.  
+ dans Valeur `CLRDATA_ADDRESS` qui spécifie l’adresse de départ demandée de la mémoire à allouer.  
   
  `size`  
- [in] La taille, en octets, de la mémoire à allouer.  
+ dans Taille, en octets, de la mémoire à allouer.  
   
  `typeFlags`  
- [in] Indicateurs qui contrôlent l’allocation de mémoire. Consultez Win32 `VirtualAlloc` (fonction).  
+ dans Indicateurs qui contrôlent l’allocation de mémoire. Consultez la fonction de `VirtualAlloc` Win32.  
   
  `protectFlags`  
- [in] Attributs de protection de la mémoire allouée. Consultez Win32 `VirtualAlloc` (fonction).  
+ dans Attributs de protection pour la mémoire allouée. Consultez la fonction de `VirtualAlloc` Win32.  
   
  `virt`  
- [out] Un pointeur vers un `CLRDATA_ADDRESS` valeur qui spécifie l’adresse de départ réelle de la mémoire allouée.  
+ à Pointeur vers une valeur `CLRDATA_ADDRESS` qui spécifie l’adresse de départ réelle de la mémoire allouée.  
   
 ## <a name="remarks"></a>Notes  
- Le `AllocVirtual` méthode sert de wrapper logique pour Win32 `VirtualAlloc` (fonction).  
+ La méthode `AllocVirtual` sert de wrapper logique pour la fonction `VirtualAlloc` Win32.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

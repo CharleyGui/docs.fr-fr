@@ -1,17 +1,15 @@
 ---
-title: ICorDebugMergedAssemblyRecord::GetIndex, méthode
+title: 'ICorDebugMergedAssemblyRecord :: GetIndex, méthode'
 ms.date: 03/30/2017
 ms.assetid: 98701444-b9bc-4978-9548-89ac3394147d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ca304b90cee291ef86e225c2b0691631833e53a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 236bd8b22d6c3ec783d787f6c906ede3193cfc1a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917950"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131405"
 ---
-# <a name="icordebugmergedassemblyrecordgetindex-method"></a>ICorDebugMergedAssemblyRecord::GetIndex, méthode
+# <a name="icordebugmergedassemblyrecordgetindex-method"></a>ICorDebugMergedAssemblyRecord :: GetIndex, méthode
 Obtient l'index de préfixe de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,12 +30,12 @@ HRESULT GetIndex(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

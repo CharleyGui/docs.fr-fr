@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1876601-6ab9-48e1-8ebd-184af1d0cd76
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5096eb1064485c02b599659cc9ae889e7151581c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 46082ddcee0163d5e61b3e468eb32c71e9f242ce
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767700"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128627"
 ---
 # <a name="ihostmemorymanagerreleasedvirtualaddressspace-method"></a>IHostMemoryManager::ReleasedVirtualAddressSpace, méthode
 Avertit l’hôte que le common language runtime (CLR) a fini d’utiliser la mémoire spécifiée.  
@@ -37,17 +35,17 @@ HRESULT ReleasedVirtualAddressSpace(
   
 ## <a name="parameters"></a>Paramètres  
  `startAddress`  
- [in] Pointeur vers l’adresse de départ de la mémoire à libérer.  
+ dans Pointeur vers l’adresse de début de la mémoire à libérer.  
   
 ## <a name="remarks"></a>Notes  
- Le `ReleasedVirtualAddressSpace` méthode est une méthode de rappel et doit être implémentée par le writer de l’application d’hébergement. Elle est appelée par le CLR.  
+ La méthode `ReleasedVirtualAddressSpace` est une méthode de rappel qui doit être implémentée par le writer de l’application d’hébergement. Elle est appelée par le CLR.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

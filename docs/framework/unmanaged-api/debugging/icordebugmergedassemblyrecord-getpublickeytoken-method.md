@@ -1,17 +1,15 @@
 ---
-title: ICorDebugMergedAssemblyRecord::GetPublicKeyToken, méthode
+title: 'ICorDebugMergedAssemblyRecord :: GetPublicKeyToken,, méthode'
 ms.date: 03/30/2017
 ms.assetid: 72020b72-9611-4bc3-b1e7-5a16b023bfa3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 626aa53740839df0b47a876b3e82814a63ffd82d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 95ed1303b33b328d1f14ecea6cc318e14991cd54
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936858"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129786"
 ---
-# <a name="icordebugmergedassemblyrecordgetpublickeytoken-method"></a>ICorDebugMergedAssemblyRecord::GetPublicKeyToken, méthode
+# <a name="icordebugmergedassemblyrecordgetpublickeytoken-method"></a>ICorDebugMergedAssemblyRecord :: GetPublicKeyToken,, méthode
 Obtient le jeton de clé publique de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,12 +38,12 @@ HRESULT GetPublicKeyToken(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

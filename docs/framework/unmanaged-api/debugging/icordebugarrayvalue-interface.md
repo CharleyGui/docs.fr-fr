@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc437751-7093-44e2-bfdc-191d9ce3c192
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 99bd3e9ae1faec1b71933681fadf4816b4789c98
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e41bb5ca0fdd999692395239304f50a6f745a4f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952210"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088265"
 ---
 # <a name="icordebugarrayvalue-interface"></a>ICorDebugArrayValue, interface
 
@@ -41,17 +39,17 @@ Sous-classe de ICorDebugHeapValue qui représente un tableau unidimensionnel ou 
 |[HasBaseIndicies, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-hasbaseindicies-method.md)|Détermine si le tableau a des index de base.|  
   
 ## <a name="remarks"></a>Notes  
- `ICorDebugArrayValue`prend en charge les tableaux unidimensionnels et multidimensionnels.  
+ `ICorDebugArrayValue` prend en charge les tableaux unidimensionnels et multidimensionnels.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

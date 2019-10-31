@@ -14,14 +14,12 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b4217221cc5199b9d8904be1ca3073878378b4e9
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
-ms.translationtype: HT
+ms.openlocfilehash: 9957c38ad625a27395a3bcc3ddd9ce0b4797b93d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268183"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127614"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analyse des chaînes de date et d’heure dans .NET
 
@@ -88,7 +86,7 @@ Chaque surcharge des méthodes <xref:System.DateTime.Parse%2A> et <xref:System.D
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Parsing Strings](parsing-strings.md)
+- [Analyse de chaînes](parsing-strings.md)
 - [Mise en forme des types](formatting-types.md)
 - [Conversion de type dans .NET](type-conversion.md)
 - [Formats de date et d’heure standard](standard-date-and-time-format-strings.md)

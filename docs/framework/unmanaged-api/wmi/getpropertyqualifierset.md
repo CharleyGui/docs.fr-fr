@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetPropertyQualifierSet function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b7bce241d10051e4c6be94cdfa40de23773fb0bb
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4133145c7bea1fb3c018d809b9fea3de38270619
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798475"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127457"
 ---
 # <a name="getpropertyqualifierset-function"></a>GetPropertyQualifierSet fonction)
 
@@ -49,7 +47,7 @@ dans Ce paramètre n’est pas utilisé.
 dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszMethod`\
-dans Nom de la propriété. `wszProperty`doit pointer vers un `LPCWSTR`valide.
+dans Nom de la propriété. `wszProperty` doit pointer vers un `LPCWSTR`valide.
 
 `ppQualSet`\
 à Reçoit le pointeur d’interface qui autorise l’accès aux qualificateurs de la propriété. `ppQualSet` ne peut pas avoir la valeur `null`. Si une erreur se produit, un nouvel objet n’est pas retourné et le pointeur est défini pour pointer vers `null`.
@@ -58,7 +56,7 @@ dans Nom de la propriété. `wszProperty`doit pointer vers un `LPCWSTR`valide.
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 | `WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
@@ -77,11 +75,11 @@ Un appel à cette fonction est pris en charge uniquement si l’objet actuel est
 
 Étant donné que les propriétés système n’ont pas de qualificateurs, la fonction retourne `WBEM_E_SYSTEM_PROPERTY` si vous tentez d’obtenir un pointeur [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) pour une propriété système.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

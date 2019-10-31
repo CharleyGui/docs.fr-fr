@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 189c36be-028c-4fba-a002-5edfb8fcd07f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 82f6c96e64b1197b5762c0ad7dbed5458b5d71a3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8cebb66ecf298eaaca0e7af23a9b8c6a2932c23f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760893"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131824"
 ---
 # <a name="icordebugstackwalknext-method"></a>ICorDebugStackWalk::Next, méthode
-Déplace le [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objet vers le frame suivant.  
+Déplace l’objet [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) vers le frame suivant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +36,17 @@ HRESULT Next();
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|Le runtime s’est correctement déroulé le frame suivant (voir Remarques).|  
-|E_FAIL|Le `ICorDebugStackWalk` objet n’a pas pu être avancé.|  
+|S_OK|Le runtime a été correctement déroulé au frame suivant (consultez la section Notes).|  
+|E_FAIL|L’objet `ICorDebugStackWalk` n’a pas pu être avancé.|  
 |CORDBG_S_AT_END_OF_STACK|La fin de la pile a été atteinte à la suite de ce déroulement.|  
-|CORDBG_E_PAST_END_OF_STACK|Le pointeur de frame est déjà à la fin de la pile ; Par conséquent, aucun frame supplémentaires ne sont accessibles.|  
+|CORDBG_E_PAST_END_OF_STACK|Le pointeur de frame est déjà à la fin de la pile ; par conséquent, il n’est pas possible d’accéder à des frames supplémentaires.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
 ## <a name="remarks"></a>Notes  
- Le `Next` méthode avances le `ICorDebugStackWalk` de l’objet vers le frame appelant seulement si le runtime peut dérouler le frame actuel. Sinon, l’objet avance le frame suivant que le runtime est en mesure de déroulement.  
+ La méthode `Next` fait avancer l’objet `ICorDebugStackWalk` au frame appelant uniquement si le runtime peut dérouler le frame actuel. Dans le cas contraire, l’objet passe au frame suivant que le runtime est en mesure de dérouler.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

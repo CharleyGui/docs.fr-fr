@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 542cdd81-5ae7-4361-b0ef-1ae4775df258
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5cd2add7e96a8edaff8509563ae1846e80132001
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: faa2082d31c5fa47b87e2238017066b477fdc191
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740101"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132177"
 ---
 # <a name="cordebugexceptionobjectstackframe-structure"></a>CorDebugExceptionObjectStackFrame, structure
 Représente les informations de frame de pile provenant d'un objet Exception.  
@@ -42,14 +40,14 @@ typedef struct CorDebugExceptionObjectStackFrame {
 |Membre|Description|  
 |------------|-----------------|  
 |`pModule`|Pointeur vers l’objet ICorDebugModule pour le frame actuel.|  
-|`ip`|La valeur de pointeur d’instruction (EIP/RIP) pour le frame actuel.|  
-|`methodDef`|Le jeton de méthode pour le frame actuel.|  
-|`isLastForeignExceptionFrame`|Une valeur qui indique si le frame est la dernière image étrangère d’une exception.|  
+|`ip`|Valeur du pointeur d’instruction (EIP/RIP) du frame actuel.|  
+|`methodDef`|Jeton de méthode pour le frame actuel.|  
+|`isLastForeignExceptionFrame`|Valeur qui indique si le frame est le dernier frame dans une exception étrangère.|  
   
 ## <a name="remarks"></a>Notes  
- L’appelant doit libérer le pointeur vers l’objet ICorDebugModule une fois qu’il n’est plus en cours d’utilisation.  
+ L’appelant doit libérer le pointeur vers l’objet ICorDebugModule une fois qu’il n’est plus utilisé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -1,5 +1,5 @@
 ---
-title: ICorDebugVariableHomeEnum Interface
+title: ICorDebugVariableHomeEnum, interface
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHomeEnum
@@ -14,30 +14,28 @@ helpviewer_keywords:
 ms.assetid: c312ae6d-c8dc-48d6-9f1e-ead515c88fdf
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4e67e4685320f56a4a6a8be2e3eb2e6c8065ce59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a9b65449747fde42f9cd770e33741ef34d33fbb8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769003"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121023"
 ---
-# <a name="icordebugvariablehomeenum-interface"></a>ICorDebugVariableHomeEnum Interface
-Fournit un énumérateur pour les variables locales et les arguments dans une fonction.  
+# <a name="icordebugvariablehomeenum-interface"></a>ICorDebugVariableHomeEnum, interface
+Fournit un énumérateur aux variables locales et aux arguments dans une fonction.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md)|Obtient le nombre spécifié de [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instances qui contiennent des informations sur les variables locales et les arguments dans une fonction.|  
+|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md)|Obtient le nombre spécifié d’instances [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) qui contiennent des informations sur les variables locales et les arguments d’une fonction.|  
   
 ## <a name="remarks"></a>Notes  
- Le `ICorDebugVariableHomeEnum` interface implémente l’interface ICorDebugEnum.  
+ L’interface `ICorDebugVariableHomeEnum` implémente l’interface ICorDebugEnum.  
   
- Un `ICorDebugVariableHomeEnum` instance est remplie avec [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instances en appelant le [ICorDebugCode4::EnumerateVariableHomes](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md) (méthode). Chaque [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance dans la collection représente une variable locale ou un argument dans une fonction. Le [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) objets dans la collection peuvent être énumérés en appelant le [ICorDebugVariableHomeEnum::Next](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md) (méthode).  
+ Une instance de `ICorDebugVariableHomeEnum` est remplie avec des instances [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) en appelant la méthode [ICorDebugCode4 :: EnumerateVariableHomes](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md) . Chaque instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) de la collection représente une variable locale ou un argument dans une fonction. Les objets [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) de la collection peuvent être énumérés en appelant la méthode [ICorDebugVariableHomeEnum :: Next](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

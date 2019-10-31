@@ -12,14 +12,12 @@ helpviewer_keywords:
 - tables [.NET Framework], type conversions
 - data types [.NET Framework], converting
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f018ed182e6354bbc6e6873f0df1b35e023c9c17
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: aa1ef8397338af949bd147fd3252b2d9ecaf53ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512344"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103887"
 ---
 # <a name="type-conversion-tables-in-net"></a>Table de conversion de type dans .NET
 Une conversion étendue se produit quand une valeur d’un type est convertie en un autre type de taille égale ou supérieure. Une conversion restrictive se produit quand une valeur d’un type est convertie en une valeur d’un autre type de taille inférieure. Les tableaux de cette rubrique illustrent les comportements propres aux deux types de conversion.  
@@ -27,7 +25,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
 ## <a name="widening-conversions"></a>conversions étendues  
  Le tableau suivant décrit les conversions étendues qui peuvent être effectuées sans perte d’informations.  
   
-|Type|Peut être converti sans perte de données en|  
+|Tapez|Peut être converti sans perte de données en|  
 |----------|-------------------------------------------|  
 |<xref:System.Byte>|<xref:System.UInt16>, <xref:System.Int16>, <xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
 |<xref:System.SByte>|<xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
@@ -42,7 +40,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
   
  Certaines conversions étendues à <xref:System.Single> ou <xref:System.Double> peuvent entraîner une perte de précision. Le tableau suivant décrit les conversions étendues qui entraînent parfois une perte d’informations.  
   
-|Type|Peut être converti en|  
+|Tapez|Peut être converti en|  
 |----------|-------------------------|  
 |<xref:System.Int32>|<xref:System.Single>|  
 |<xref:System.UInt32>|<xref:System.Single>|  
@@ -57,7 +55,7 @@ Une conversion étendue se produit quand une valeur d’un type est convertie en
   
  Le tableau suivant répertorie les conversions qui lèvent une <xref:System.OverflowException> à l’aide de <xref:System.Convert?displayProperty=nameWithType> ou de toute conversion contrôlée si la valeur du type converti se situe en dehors de la plage définie du type résultant.  
   
-|Type|Peut être converti en|  
+|Tapez|Peut être converti en|  
 |----------|-------------------------|  
 |<xref:System.Byte>|<xref:System.SByte>|  
 |<xref:System.SByte>|<xref:System.Byte>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>|  

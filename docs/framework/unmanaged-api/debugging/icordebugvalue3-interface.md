@@ -14,28 +14,26 @@ helpviewer_keywords:
 ms.assetid: 7d5385d3-f4a5-47c4-8478-a3513b5e9406
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e4bf3605331e6900fd890e49bb3f71f4ca4409c7
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 1f46866a1b975455acd294221e38ef3b4c358660
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377591"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140201"
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3, interface
-Étend les interfaces de « ICorDebugValue » et « ICorDebugValue2 » pour prendre en charge pour les tableaux qui sont supérieures à 2 Go.  
+Étend les interfaces « ICorDebugValue » et « ICorDebugValue2 » pour assurer la prise en charge des tableaux d’une taille supérieure à 2 Go.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetSize64, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de ce `ICorDebugValue3` objet.|  
+|[GetSize64, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de cet objet `ICorDebugValue3`.|  
   
 ## <a name="remarks"></a>Notes  
- Le [ICorDebugValue::GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) méthode retourne une taille de l’objet qui est compris entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4.5, la taille des tableaux peut dépasser 2 Go. Le `ICorDebugValue3` interface vous permet de déterminer la taille de ces tableaux.  
+ La méthode [ICorDebugValue ::](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) Desize retourne une taille d’objet comprise entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4,5, la taille des tableaux peut dépasser 2 Go. L’interface `ICorDebugValue3` vous permet de déterminer la taille de ces tableaux.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

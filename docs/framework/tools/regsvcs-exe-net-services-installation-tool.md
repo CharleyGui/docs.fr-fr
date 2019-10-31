@@ -9,14 +9,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 032f43aa16dbca0f4ab0477d586e7568230b7381
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1af93ae89d027bccdd52b9cd9c49f8e620303677
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044265"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73104943"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (outil .NET Services Installation)
 L'outil .NET Services Installation (Installation des services .NET) effectue les actions suivantes :  
@@ -89,5 +87,5 @@ regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll
 ## <a name="see-also"></a>Voir aussi
 
 - [Outils](index.md)
-- [Guide pratique pour signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md)
+- [Comment : signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b1b432a-d234-4002-839b-81366c3a8bdc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d5fbf83690f616556774e8f279e1077fccdb8baf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 497a115b980bb58a3906fda68d7ff564efe78089
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779913"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127828"
 ---
 # <a name="iclrvalidatorvalidate-method"></a>ICLRValidator::Validate, méthode
-Valide le fichier exécutable portable (PE) ou Microsoft intermediate language (MSIL) dans le fichier spécifié.  
+Valide l’exécutable portable (PE) ou le langage MSIL (Microsoft Intermediate Language) dans le fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,46 +42,46 @@ HRESULT Validate (
   
 ## <a name="parameters"></a>Paramètres  
  `veh`  
- [in] Un pointeur vers un `IVEHandler` instance qui gère les erreurs de validation.  
+ dans Pointeur vers une instance de `IVEHandler` qui gère les erreurs de validation.  
   
  `ulAppDomainId`  
- [in] L’identificateur actuel <xref:System.AppDomain>.  
+ dans Identificateur du <xref:System.AppDomain>actuel.  
   
  `ulFlags`  
- [in] Une combinaison de [ValidatorFlags](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) valeurs indiquant le genre de validation doit être effectuée.  
+ dans Combinaison de valeurs [ValidatorFlags,](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) indiquant le type de validation à effectuer.  
   
  `ulMaxError`  
- [in] Le nombre maximal d’erreurs autorisées avant de quitter la validation.  
+ dans Nombre maximal d’erreurs à autoriser avant de quitter la validation.  
   
  `token`  
- [in] Inutilisé.  
+ dans Inutilisé.  
   
  `fileName`  
- [in] Le nom du fichier à valider.  
+ dans Nom du fichier à valider.  
   
  `pe`  
- [in] Pointeur vers la mémoire tampon de fichier.  
+ dans Pointeur vers la mémoire tampon de fichier.  
   
  `ulSize`  
- [in] La taille, en octets, du fichier à valider.  
+ dans Taille, en octets, du fichier à valider.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Validate` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator.idl, IValidator.h  
+ **En-tête :** IValidator. idl, IValidator. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

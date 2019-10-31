@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : mapper des HRESULT et des exceptions'
+title: 'Comment : mapper des HRESULT et des exceptions'
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -11,16 +11,14 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 60173739842835a705a72da4e7ab442cacfc08d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 13dcca5f35750ad3e8bd6ea4f6dd443fe9a8ee94
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306545"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123879"
 ---
-# <a name="how-to-map-hresults-and-exceptions"></a>Procédure : mapper des HRESULT et des exceptions
+# <a name="how-to-map-hresults-and-exceptions"></a>Comment : mapper des HRESULT et des exceptions
 Les méthodes COM signalent les erreurs en retournant des HRESULT ; les méthodes .NET les signalent en levant des exceptions. Le runtime gère la transition entre les deux. Chaque classe d’exception dans le .NET Framework est mappée à une valeur HRESULT.  
   
  Les classes d’exceptions définies par l’utilisateur peuvent spécifier la valeur HRESULT appropriée. Ces classes d’exceptions peuvent modifier dynamiquement la valeur HRESULT à retourner quand l’exception est générée par la définition du champ **HResult** sur l’objet exception. Des informations supplémentaires relatives à l’exception sont fournies au client par le biais de l’interface **IErrorInfo**, qui est implémentée sur l’objet .NET dans le processus non managé.  

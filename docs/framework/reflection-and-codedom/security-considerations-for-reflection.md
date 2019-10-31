@@ -10,14 +10,12 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 852490c57a2954e9d56799ef8deebbef31d5f665
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1d5289ce15c213024af576c99fe039f5d6c1a247
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045883"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130066"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 
@@ -59,7 +57,7 @@ Un membre est critique du point de vue de la sécurité s'il a l'attribut <xref:
 
 Ces règles sont les mêmes si l'accès à un membre critique du point de vue de la sécurité se fait directement par du code compilé ou en utilisant la réflexion.
 
-Le code d'application qui est exécuté à partir de la ligne de commande s'exécute avec une confiance totale. Tant qu'il n'est pas marqué comme transparent, il peut utiliser la réflexion pour accéder aux membres critiques de sécurité. Quand le même code est exécuté avec un niveau de confiance partiel (par exemple dans un domaine d’application sandbox), le niveau de confiance de l’assembly détermine s’il peut accéder au code critique du point de vue de la sécurité. Si l’assembly a un nom fort et qu’il est installé dans le Global Assembly Cache, c’est un assembly de confiance et il peut appeler des membres critiques de sécurité. Si elle n'est pas de confiance, il devient transparent même s'il n'était pas marqué comme tel, et il ne peut pas accéder aux membres critiques de sécurité.
+Le code d'application qui est exécuté à partir de la ligne de commande s'exécute avec une confiance totale. Tant qu'il n'est pas marqué comme transparent, il peut utiliser la réflexion pour accéder aux membres critiques de sécurité. Quand le même code est exécuté avec un niveau de confiance partiel (par exemple dans un domaine d'application sandbox), le niveau de confiance de l'assembly détermine s'il peut accéder au code critique du point de vue de la sécurité. Si l'assembly a un nom fort et qu'il est installé dans le Global Assembly Cache, c'est un assembly de confiance et il peut appeler des membres critiques de sécurité. Si elle n'est pas de confiance, il devient transparent même s'il n'était pas marqué comme tel, et il ne peut pas accéder aux membres critiques de sécurité.
 
 Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](../security/security-changes.md).
 
@@ -69,7 +67,7 @@ Depuis .NET Framework 4, le common language runtime détermine le niveau de tra
 
 |Niveau de sécurité|EstCritiqueDeSécurité|EstCritiqueSécurisé|EstTransparentDeSécurité|
 |--------------------|------------------------|----------------------------|---------------------------|
-|Critique|`true`|`false`|`false`|
+|Critical|`true`|`false`|`false`|
 |Critique sécurisé|`true`|`true`|`false`|
 |Transparent|`false`|`false`|`true`|
 
@@ -88,7 +86,7 @@ Pour utiliser la réflexion pour appeler des membres inaccessibles en fonction d
   > [!NOTE]
   > Par défaut, la stratégie de sécurité refuse cette autorisation à du code provenant d'Internet. Cette autorisation ne doit jamais être accordée à du code provenant d'Internet.
 
-- Pour permettre au code d’appeler un membre non public, pour autant que le jeu d’autorisations de l’assembly qui contient le membre appelé soit l’équivalent ou un sous-ensemble du jeu d’autorisations de l’assembly qui contient l’appel de code : votre code doit disposer de l’autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.
+- Pour permettre au code d'appeler un membre non public, pour autant que le jeu d'autorisations de l'assembly qui contient le membre appelé soit l'équivalent ou un sous-ensemble du jeu d'autorisations de l'assembly qui contient l'appel de code : votre code doit disposer de l'autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.
 
 Par exemple, supposons que vous accordez des autorisations Internet à un domaine d'application, plus l'autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>, puis que vous exécutez une application Internet avec deux assemblys, A et B.
 

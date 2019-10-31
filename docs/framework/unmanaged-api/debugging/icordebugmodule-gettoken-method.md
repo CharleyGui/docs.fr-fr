@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: f759f87a-18ae-4c1a-8300-29b803432d0a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 30097ff0cd92253897a366a5a18f305eddb06b5b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 683c2853ea2ed43e61eb666ec56619cb58cde273
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763516"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129496"
 ---
 # <a name="icordebugmodulegettoken-method"></a>ICorDebugModule::GetToken, méthode
 Obtient le jeton pour l’entrée de table pour ce module.  
@@ -37,12 +35,12 @@ HRESULT GetToken(
   
 ## <a name="parameters"></a>Paramètres  
  `pToken`  
- [out] Un pointeur vers le `mdModule` jeton qui référence les métadonnées du module.  
+ à Pointeur vers le jeton de `mdModule` qui référence les métadonnées du module.  
   
 ## <a name="remarks"></a>Notes  
- Le jeton peut être passé à la [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md), et [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interfaces d’importation de métadonnées.  
+ Le jeton peut être passé aux interfaces d’importation de métadonnées [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)et [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

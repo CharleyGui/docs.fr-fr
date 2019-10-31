@@ -1,16 +1,15 @@
 ---
 title: Héritage dans C#
 description: Apprenez à utiliser l’héritage dans les bibliothèques et applications C#.
-author: rpetrusha
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: f09eaaf397d148955a151d178566f2b5a0d935fd
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b69da841c7c7a2e518191ad34f2ff5b368899728
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039241"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120130"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 

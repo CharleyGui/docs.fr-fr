@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : classer les problèmes de support technique-Classification multiclasse'
 description: Découvrez comment utiliser ML.NET dans un scénario de classification multiclasse pour classer des problèmes GitHub et les affecter à une zone donnée.
-ms.date: 09/30/2019
+ms.date: 10/30/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 7507463cfc5504182f028ab2ced9a03733c61f6d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1cd213653c23c4d713e03d53394885f1f3ebb6f5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774483"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73094589"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Didacticiel : classer les problèmes de prise en charge à l’aide de la classification multiclasse avec ML .NET
 
@@ -272,13 +272,13 @@ Notez l’utilisation de la méthode [Transform()](xref:Microsoft.ML.ITransforme
 
 Les métriques suivantes sont évaluées pour la classification multiclasse :
 
-* Micro-précision : chaque paire exemple-classe contribue de manière égale à la métrique de précision.  Vous voulez que la micro-précision soit aussi proche de 1 que possible.
+* Micro-précision : chaque paire exemple-classe contribue de manière égale à la métrique de précision.  Vous souhaitez que la micro-précision soit aussi proche que possible.
 
-* Macro-précision : chaque classe contribue de manière égale à la métrique de précision. Les classes minoritaires sont aussi importantes que les classes plus grandes. Vous voulez que la macro-précision soit aussi proche de 1 que possible.
+* Macro-précision : chaque classe contribue de manière égale à la métrique de précision. Les classes minoritaires sont aussi importantes que les classes plus grandes. Vous souhaitez que la précision de la macro soit aussi proche que possible.
 
 * Perte logarithmique : consultez [Perte logarithmique](../resources/glossary.md#log-loss). Vous voulez que la perte logarithmique soit aussi proche de zéro que possible.
 
-* Réduction de la perte logarithmique : comprise entre [-inf, 100], où 100 correspond à des prédictions parfaites et 0 à des prédictions moyennes. Vous voulez que la réduction de la perte logarithmique soit aussi proche de zéro que possible.
+* Réduction de la perte de journal-plages de [-inf, 1,00], où 1,00 est une prédiction parfaite et 0 indique des prédictions moyennes. Vous souhaitez que la réduction de la perte de journal soit aussi proche que possible.
 
 ### <a name="displaying-the-metrics-for-model-validation"></a>Affichage des métriques pour la validation du modèle
 

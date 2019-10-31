@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e925d88a-67a5-4f76-88b8-09cedeed0232
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 53b892cddbf716afbd137ead36a69aa42f22d331
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2c5cd7435ec34e852b80031cfe0310ee517b7bc5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752229"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103475"
 ---
 # <a name="icordebugenumskip-method"></a>ICorDebugEnum::Skip, méthode
-Déplace le curseur vers l’avant dans l’énumération par le nombre spécifié d’éléments.  
+Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT Skip (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’éléments par lequel déplacer le curseur vers l’avant.  
+ dans Nombre d’éléments par lequel déplacer le curseur vers l’avant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -50,4 +48,4 @@ HRESULT Skip (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugEnum (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)
+- [ICorDebugEnum, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)

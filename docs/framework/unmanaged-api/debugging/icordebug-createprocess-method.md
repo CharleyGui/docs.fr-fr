@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5d6220270634dd8e2d15787d717020b8f6f86bb9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8812a98b0f28dd1336903dc34682f638a291f53b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738328"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73110997"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess, méthode
 Lance un processus et son thread principal sous le contrôle du débogueur.  
@@ -48,51 +46,51 @@ HRESULT CreateProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `lpApplicationName`  
- [in] Pointeur vers une chaîne se terminant par null qui spécifie le module doit être exécuté par le processus lancé. Le module est exécuté dans le contexte de sécurité du processus appelant.  
+ dans Pointeur vers une chaîne se terminant par un caractère null qui spécifie le module à exécuter par le processus lancé. Le module est exécuté dans le contexte de sécurité du processus appelant.  
   
  `lpCommandLine`  
- [in] Pointeur vers une chaîne se terminant par null qui spécifie la ligne de commande doit être exécuté par le processus lancé. Le nom de l’application (par exemple, « SomeApp.exe ») doit être le premier argument.  
+ dans Pointeur vers une chaîne se terminant par un caractère null qui spécifie la ligne de commande devant être exécutée par le processus lancé. Le nom de l’application (par exemple, « SomeApp. exe ») doit être le premier argument.  
   
  `lpProcessAttributes`  
- [in] Pointeur vers un Win32 `SECURITY_ATTRIBUTES` structure qui spécifie le descripteur de sécurité pour le processus. Si `lpProcessAttributes` est null, le processus obtient un descripteur de sécurité par défaut.  
+ dans Pointeur vers une structure de `SECURITY_ATTRIBUTES` Win32 qui spécifie le descripteur de sécurité pour le processus. Si `lpProcessAttributes` a la valeur null, le processus obtient un descripteur de sécurité par défaut.  
   
  `lpThreadAttributes`  
- [in] Pointeur vers un Win32 `SECURITY_ATTRIBUTES` structure qui spécifie le descripteur de sécurité pour le thread principal du processus. Si `lpThreadAttributes` est null, le thread obtient un descripteur de sécurité par défaut.  
+ dans Pointeur vers une structure de `SECURITY_ATTRIBUTES` Win32 qui spécifie le descripteur de sécurité pour le thread principal du processus. Si `lpThreadAttributes` a la valeur null, le thread obtient un descripteur de sécurité par défaut.  
   
  `bInheritHandles`  
- [in] La valeur `true` pour indiquer que chaque handle pouvant être héritée dans le processus appelant est hérité par le processus lancé, ou `false` pour indiquer que les handles ne sont pas hérités. Les handles hérités ont les mêmes droits d’accès et la valeur en tant que les handles d’origine.  
+ dans Affectez la valeur `true` pour indiquer que chaque handle pouvant être hérité dans le processus appelant est hérité par le processus lancé, ou `false` pour indiquer que les handles ne sont pas hérités. Les handles hérités ont la même valeur et les mêmes droits d’accès que les handles d’origine.  
   
  `dwCreationFlags`  
- [in] Une combinaison au niveau du bit de la [indicateurs de création de processus Win32](https://go.microsoft.com/fwlink/?linkid=69981) qui contrôlent la classe de priorité et le comportement du processus lancé.  
+ dans Combinaison d’opérations de bits des [indicateurs de création de processus Win32](https://go.microsoft.com/fwlink/?linkid=69981) qui contrôlent la classe de priorité et le comportement du processus lancé.  
   
  `lpEnvironment`  
- [in] Pointeur vers un bloc d’environnement pour le nouveau processus.  
+ dans Pointeur vers un bloc d’environnement pour le nouveau processus.  
   
  `lpCurrentDirectory`  
- [in] Pointeur vers une chaîne se terminant par null qui spécifie le chemin complet vers le répertoire actif pour le processus. Si ce paramètre est null, le nouveau processus aura le même lecteur actuel et le répertoire en tant que le processus appelant.  
+ dans Pointeur vers une chaîne se terminant par un caractère null qui spécifie le chemin d’accès complet au répertoire actif du processus. Si ce paramètre a la valeur null, le nouveau processus aura le même lecteur et le même répertoire en cours que le processus appelant.  
   
  `lpStartupInfo`  
- [in] Pointeur vers un Win32 `STARTUPINFOW` structure qui spécifie la station Windows, bureau, les handles standards et l’apparence de la fenêtre principale pour le processus lancé.  
+ dans Pointeur vers une structure de `STARTUPINFOW` Win32 qui spécifie la station Windows, le bureau, les handles standard et l’apparence de la fenêtre principale pour le processus lancé.  
   
  `lpProcessInformation`  
- [in] Pointeur vers un Win32 `PROCESS_INFORMATION` structure qui spécifie les informations d’identification sur le processus de lancement.  
+ dans Pointeur vers une structure de `PROCESS_INFORMATION` Win32 qui spécifie les informations d’identification sur le processus à lancer.  
   
  `debuggingFlags`  
- [in] Une valeur de l’énumération CorDebugCreateProcessFlags qui spécifie les options de débogage.  
+ dans Valeur de l’énumération CorDebugCreateProcessFlags, qui spécifie les options de débogage.  
   
  `ppProcess`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugProcess qui représente le processus.  
+ à Pointeur vers l’adresse d’un objet ICorDebugProcess qui représente le processus.  
   
 ## <a name="remarks"></a>Notes  
- Les paramètres de cette méthode sont les mêmes que celles de Win32 `CreateProcess` (méthode).  
+ Les paramètres de cette méthode sont les mêmes que ceux de la méthode de `CreateProcess` Win32.  
   
- Pour activer le débogage en mode mixte non managé, définissez `dwCreationFlags` à DEBUG_PROCESS &#124; DEBUG_ONLY_THIS_PROCESS. Si vous souhaitez utiliser uniquement le débogage managé, ne définissez pas ces indicateurs.  
+ Pour activer le débogage en mode mixte non managé, définissez `dwCreationFlags` sur DEBUG_PROCESS &#124; DEBUG_ONLY_THIS_PROCESS. Si vous souhaitez utiliser uniquement le débogage managé, ne définissez pas ces indicateurs.  
   
- Si le débogueur et le processus de débogage (le processus attaché) partagent une même console, et si le débogage d’interopérabilité est utilisé, il est possible pour le processus attaché à maintenir les verrous de console et l’arrêter à un événement de débogage. Le débogueur bloquera ensuite toute tentative d’utilisation de la console. Pour éviter ce problème, définissez l’indicateur CREATE_NEW_CONSOLE le `dwCreationFlags` paramètre.  
+ Si le débogueur et le processus à déboguer (le processus attaché) partagent une console unique, et si le débogage d’interopérabilité est utilisé, il est possible que le processus attaché contienne des verrous de console et s’arrête à un événement de débogage. Le débogueur bloquera alors toute tentative d’utilisation de la console. Pour éviter ce problème, définissez l’indicateur CREATE_NEW_CONSOLE dans le paramètre `dwCreationFlags`.  
   
- Débogage d’interopérabilité n’est pas pris en charge sur les plateformes Win9x et non x86 plateformes basés sur IA-64 et AMD64.  
+ Le débogage d’interopérabilité n’est pas pris en charge sur les plateformes Win9x et non-x86, telles que les plateformes basées sur IA-64 et AMD64.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

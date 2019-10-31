@@ -2,14 +2,12 @@
 title: 'Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées'
 ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2af81468c5c4c4caf2f09725d6c7c4723084e35c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5174c67e4204c2e20e5730ab7c092ccbb0aeda1a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779431"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126260"
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées
 

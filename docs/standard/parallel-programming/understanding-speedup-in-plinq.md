@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, performance tuning
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 014adfbf6f9afab0eaacd574cfb181c0eec07b5b
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
-ms.translationtype: HT
+ms.openlocfilehash: 07b5027d560a4caccc6c0a516c3f70c11df6be83
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960315"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139904"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Fonctionnement de l'accélération dans PLINQ
 Le principal objectif de PLINQ est d’accélérer l’exécution de requêtes LINQ to Objects en exécutant parallèlement les délégués de requête sur des ordinateurs multicœurs. PLINQ accomplit les meilleures performances lorsque le traitement de chaque élément dans une collection source est indépendant, sans aucun état partagé parmi les délégués individuels. Ces opérations sont courantes dans LINQ to Objects et PLINQ et sont souvent appelées « *délicieusement parallèles* », car elles se prêtent facilement à la planification sur plusieurs threads. Toutefois, toutes les requêtes ne sont pas entièrement constituées d’opérations délicieusement parallèles ; dans la plupart des cas, une requête concerne certains opérateurs qui ne peuvent pas être parallélisés, ou qui ralentissent l’exécution parallèle. Et même dans le cas de requêtes qui sont entièrement délicieusement parallèles, PLINQ doit encore partitionner la source de données et planifier le travail sur les threads et, généralement, fusionner les résultats lorsque la requête est terminée. Toutes ces opérations ajoutent au coût de calcul de la parallélisation ; ces coûts d’ajout de parallélisation sont appelés *surcharge*. Pour optimiser les performances dans une requête PLINQ, l’objectif est d’augmenter les parties délicieusement parallèles et de réduire au minimum les parties qui nécessitent une surcharge. Cet article fournit des informations qui vous aideront à écrire des requêtes PLINQ aussi efficaces que possible, tout en produisant des résultats corrects.  
@@ -70,7 +68,7 @@ Le principal objectif de PLINQ est d’accélérer l’exécution de requêtes L
 ## <a name="when-plinq-chooses-sequential-mode"></a>Lorsque PLINQ choisit le mode séquentiel  
  PLINQ essaiera toujours exécuter une requête au moins aussi rapidement que si elle était exécutée de manière séquentielle. Bien que PLINQ ne tienne compte ni du coût de calcul des délégués de l’utilisateur, ni de la taille la source d’entrée, il recherche certaines « formes » de requêtes. Plus précisément, il recherche des opérateurs de requêtes ou des combinaisons d’opérateurs qui font qu’une requête s’exécute plus lentement en mode parallèle. Lorsqu’il trouve de telles formes, par défaut PLINQ revient au mode séquentiel.  
   
- Toutefois, après avoir mesuré les performances d’une requête spécifique, vous pouvez déterminer qu’elle s’exécute plus rapidement en mode parallèle. Dans ce cas, vous pouvez utiliser l’indicateur <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> via la méthode <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> pour indiquer à PLINQ de paralléliser la requête. Pour plus d'informations, voir [Procédure : spécifier le mode d’exécution avec PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).  
+ Toutefois, après avoir mesuré les performances d’une requête spécifique, vous pouvez déterminer qu’elle s’exécute plus rapidement en mode parallèle. Dans ce cas, vous pouvez utiliser l’indicateur <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> via la méthode <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> pour indiquer à PLINQ de paralléliser la requête. Pour plus d’informations, consultez [How to: Specify the Execution Mode in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md) (Guide pratique pour spécifier le mode d’exécution dans PLINQ).  
   
  La liste suivante décrit les formes de requêtes que PLINQ exécutera en mode séquentiel par défaut :  
   

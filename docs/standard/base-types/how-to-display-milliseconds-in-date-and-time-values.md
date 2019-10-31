@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : afficher les millisecondes dans les valeurs de date et d’heure'
+title: "Comment : afficher les millisecondes dans les valeurs de date et d'heure"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,16 +12,14 @@ helpviewer_keywords:
 - dates [.NET Framework], milliseconds
 - milliseconds [.NET Framework]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 135459f84cee0a3c356882b193ff561befb43145
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 01a34289b4845048438a3d3fd9263d1dcd1028c1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963361"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138857"
 ---
-# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Procédure : afficher les millisecondes dans les valeurs de date et d’heure
+# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Comment : afficher les millisecondes dans les valeurs de date et d'heure
 Les méthodes de mise en forme de date et d’heure par défaut, telles que <xref:System.DateTime.ToString?displayProperty=nameWithType>, incluent les heures, les minutes et les secondes d’une valeur d’heure, mais excluent son composant « millisecondes ». Cette rubrique montre comment inclure le composant « millisecondes » d’une date et d’une heure dans des chaînes de date et d’heure mises en forme.  
   
 ### <a name="to-display-the-millisecond-component-of-a-datetime-value"></a>Pour afficher le composant « millisecondes » d’une valeur DateTime  
@@ -30,7 +28,7 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
   
 2. Pour extraire la représentation sous forme de chaîne du composant « millisecondes » d’une heure, appelez la méthode <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> ou <xref:System.DateTimeOffset.ToString%2A> de la valeur de date et d’heure, puis transmettez le modèle de format personnalisé `fff` ou `FFF` seul ou avec d’autres spécificateurs de format personnalisé comme paramètre de `format`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple affiche le composant « milliseconde » d’une valeur <xref:System.DateTime> et d’une valeur <xref:System.DateTimeOffset> sur la console, à la fois seul et inclus dans une chaîne de date et d’heure plus longue.  
   
  [!code-csharp[Formatting.HowTo.Millisecond#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Millisecond/cs/Millisecond.cs#1)]
@@ -54,4 +52,4 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

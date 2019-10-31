@@ -13,17 +13,15 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4b079809fa76097cd575d96c70d17d1c6c85e3a1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 5934a342f653f294c07e00d38d51dae6b159dab9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968537"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122479"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
-<a name="Top"></a> Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d'une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
+<a name="Top"></a> Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d’une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
   
  Le .NET Framework définit les éléments de substitution répertoriés dans le tableau suivant.  
   
@@ -104,7 +102,7 @@ ms.locfileid: "69968537"
 ## <a name="substituting-a--character"></a>Substitution d'un caractère « $ »  
  La substitution `$$` insère un caractère « $ » littéral dans la chaîne remplacée.  
   
- L'exemple suivant utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le symbole monétaire de la culture actuelle et son positionnement dans une chaîne monétaire. Il génère alors à la fois dynamiquement un modèle d'expression régulière et un modèle de remplacement. Si l'exemple est exécuté sur un ordinateur dont la culture actuelle est en-US, il génère le modèle d'expression régulière `\b(\d+)(\.(\d+))?` et le modèle de remplacement `$$ $1$2`. Le modèle de remplacement remplace le texte correspondant par un symbole monétaire et un espace suivi par les premier et second groupes capturés.  
+ L'exemple suivant utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le symbole monétaire de la culture actuelle et son positionnement dans une chaîne monétaire. Il génère alors à la fois dynamiquement un modèle d’expression régulière et un modèle de remplacement. Si l'exemple est exécuté sur un ordinateur dont la culture actuelle est en-US, il génère le modèle d'expression régulière `\b(\d+)(\.(\d+))?` et le modèle de remplacement `$$ $1$2`. Le modèle de remplacement remplace le texte correspondant par un symbole monétaire et un espace suivi par les premier et second groupes capturés.  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/dollarsign1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/dollarsign1.vb#8)]  
@@ -142,7 +140,7 @@ ms.locfileid: "69968537"
   
 <a name="BeforeMatch"></a>   
 ## <a name="substituting-the-text-before-the-match"></a>Substitution du texte avant la correspondance  
- La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(Cet exemple en fournit une illustration.\) S'il n'y a pas de correspondance, la substitution ``$` `` n'a aucun effet.  
+ La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(l’exemple fournit une illustration.\) s’il n’y a aucune correspondance, la substitution de ``$` `` n’a aucun effet.  
   
  L'exemple suivant utilise le modèle d'expression régulière `\d+` pour faire correspondre une séquence d'un ou de plusieurs chiffres décimaux dans la chaîne d'entrée. La chaîne de remplacement ``$` `` remplace ces chiffres par le texte qui précède la correspondance.  
   

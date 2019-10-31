@@ -1,5 +1,5 @@
 ---
-title: Champ de ConnectionGroup.m_ConnectionList
+title: Champ ConnectionGroup. m_ConnectionList
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 186083cf-8dff-4600-a2ab-6fed4b4de6af
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d06968c844dc9187b973af156a29ded9ba7cde66
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: a06e535c554f765161d619d97f2e70072fbd0d5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301406"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120017"
 ---
-# <a name="connectiongroupmconnectionlist-field"></a>ConnectionGroup.m\_ConnectionList champ
+# <a name="connectiongroupm_connectionlist-field"></a>ConnectionGroup. m\_champ ConnectionList
 
-`ConnectionGroup.m_ConnectionList` est un <xref:System.Collections.ArrayList> des objets de connexion qui sert le même URI et le partage les mêmes valeurs pour d’autres propriétés comme expiration et l’authentification.
+`ConnectionGroup.m_ConnectionList` est un <xref:System.Collections.ArrayList> d’objets de connexion qui sert le même URI et qui partagent les mêmes valeurs pour d’autres propriétés telles que l’expiration et l’authentification.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ private ArrayList m_ConnectionList
 ```
 
 > [!WARNING]
-> Le `ConnectionGroup.m_ConnectionList` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
+> Le champ `ConnectionGroup.m_ConnectionList` est privé et n’est pas destiné à être utilisé directement dans votre code.
 > 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Net>
 
-**Assembly :** Système (dans System.dll)
+**Assembly :** Système (dans System. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

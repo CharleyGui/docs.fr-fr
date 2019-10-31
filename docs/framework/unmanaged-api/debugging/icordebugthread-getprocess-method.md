@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 163816e7-0739-4566-b3df-cd256be8b8a4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad87b6552df25926b5b4184b7884c1d444c4f1be
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8928e22b70af0360660c30289ee999a3e4c5e99e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769074"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133476"
 ---
 # <a name="icordebugthreadgetprocess-method"></a>ICorDebugThread::GetProcess, méthode
-Obtient un pointeur d’interface vers le processus qui ICorDebugThread fait partie.  
+Obtient un pointeur d’interface vers le processus dont ce ICorDebugThread forme un composant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `ppProcess`  
- [out] Pointeur vers l’adresse d’un objet d’interface ICorDebugProcess qui représente le processus.  
+ à Pointeur vers l’adresse d’un objet d’interface ICorDebugProcess qui représente le processus.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

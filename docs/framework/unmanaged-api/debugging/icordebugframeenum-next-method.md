@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0bc96acb-6179-4328-a447-cda562ce9e98
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9be126e45d8428d8786e9aadf2195133d1957440
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ff74a9849b74b8a8e6b8c03f1fc4e7c7eee1ec14
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754836"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124060"
 ---
 # <a name="icordebugframeenumnext-method"></a>ICorDebugFrameEnum::Next, méthode
-Obtient le nombre spécifié d’instances ICorDebugFrame, en commençant à la position actuelle.  
+Obtient le nombre spécifié d’instances de ICorDebugFrame, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +38,15 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre de `ICorDebugFrame` instances à récupérer.  
+ dans Nombre d’instances de `ICorDebugFrame` à récupérer.  
   
  `frames`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un `ICorDebugFrame` objet.  
+ à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugFrame`.  
   
  `pceltFetched`  
- [out] Un pointeur vers le nombre de `ICorDebugFrame` instances réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre d’instances `ICorDebugFrame` réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

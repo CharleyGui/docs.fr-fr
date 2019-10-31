@@ -6,14 +6,12 @@ helpviewer_keywords:
 - fusion global static functions [.NET Framework]
 - global static functions [.NET Framework fusion]
 ms.assetid: 229b2188-9168-4b44-a987-e1f515494688
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6a8f15bc862c0486311960f7567c49424859846e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ff94ed23f3e39888b4f7e255feece99898f8aa74
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795317"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108268"
 ---
 # <a name="fusion-global-static-functions"></a>Fonctions statiques globales de la fusion
 Cette section décrit les fonctions statiques globales non managées utilisées par l’API de fusion.  
@@ -47,7 +45,7 @@ Cette section décrit les fonctions statiques globales non managées utilisées 
  Obtient un pointeur vers une instance [IAppIdAuthority](iappidauthority-interface.md) qui gère les clés pour les identités et les références de l’application.  
   
  [GetAssemblyIdentityFromFile, fonction](getassemblyidentityfromfile-function.md)  
- Obtient un pointeur vers un `IUnknown` objet avec le spécifié `IID` dans l’assembly dans le chemin d’accès au fichier spécifié.  
+ Obtient un pointeur vers un objet `IUnknown` avec la `IID` spécifiée dans l’assembly au chemin d’accès au fichier spécifié.  
   
  [GetCachePath, fonction](getcachepath-function.md)  
  Obtient le chemin d’accès à l’assembly mis en cache, à l’aide des indicateurs spécifiés.  

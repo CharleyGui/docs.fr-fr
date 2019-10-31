@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationFinished (méthode)
+title: ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationFinished
@@ -8,17 +8,15 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ba9f9d4ee5f95def3dcd2d757517e225c826cb9e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0e04459614ca697908fb9b71ecc3931ac305a838
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757992"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136582"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationFinished (méthode)
-[Pris en charge dans le .NET Framework 4.7 et versions ultérieures]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationFinished
+[Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
   
 Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique est terminée.  
   
@@ -34,25 +32,25 @@ HRESULT DynamicMethodJITCompilationFinished(
   
 ## <a name="parameters"></a>Paramètres  
 [in] `functionId`  
-L’identificateur de la fonction en mémoire pour le JIT démarrage de la compilation.   
+Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
 
 [in] `hrStatus`   
-Une valeur qui indique si la compilation JIT a réussi.
+Valeur qui indique si la compilation JIT a réussi.
 
 [in] `fIsSafeToBlock`   
-`true` pour indiquer que le blocage peut entraîner l’exécution pour attendre que le thread appelant retourner à partir de ce rappel ; `false` pour indiquer que le blocage n’affecte pas l’opération du runtime.  
+`true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
 
 ## <a name="remarks"></a>Notes  
 
-Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela inclut diverses de stubs de langage intermédiaire et de méthodes LCG. Son objectif est de fournir les enregistreurs de profileur avec suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
+Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
-> `functionId` les valeurs ne peut pas être permet de résoudre à leurs jetons de métadonnées, car les méthodes dynamiques ont pas de métadonnées.
+> les valeurs `functionId` ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26cbd27d-12bf-444a-8197-ccd14d37dda3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d231595ab2c7b41d1a24f654e9785b90b34ac780
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bef51fe9df0f85659603c637f11ed4e856c8e01a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744502"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133954"
 ---
 # <a name="icordebugassembly2isfullytrusted-method"></a>ICorDebugAssembly2::IsFullyTrusted, méthode
-Obtient une valeur qui indique si l’assembly a été accordé une confiance totale par le système de sécurité du runtime.  
+Obtient une valeur qui indique si le système de sécurité du runtime a accordé un niveau de confiance totale à l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT IsFullyTrusted(
   
 ## <a name="parameters"></a>Paramètres  
  `pbFullyTrusted`  
- [out] `true` si l’assembly a été accordé une confiance totale par le système de sécurité du runtime ; sinon, `false`.  
+ [out] `true` si le système de sécurité du runtime dispose d’un niveau de confiance totale accordé à l’assembly ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode retourne un HRESULT de CORDBG_E_NOTREADY si la stratégie de sécurité pour l’assembly n'a pas encore été résolue, autrement dit, si aucun code dans l’assembly a encore été exécuté.  
+ Cette méthode retourne un HRESULT de CORDBG_E_NOTREADY si la stratégie de sécurité de l’assembly n’a pas encore été résolue, autrement dit, si aucun code de l’assembly n’a encore été exécuté.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

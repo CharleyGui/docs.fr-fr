@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetPropertyOrigin function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0c2d0f23f3dd2d52f73f09c32d4e3118a9ed5ea3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6cab3765f0359f5dd18831acaaa1aefce3fe1081
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798490"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101853"
 ---
 # <a name="getpropertyorigin-function"></a>GetPropertyOrigin, fonction
 
@@ -58,7 +56,7 @@ dans Nom de la propriété pour l’objet dont la classe propriétaire est deman
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
@@ -72,13 +70,13 @@ Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetProper
 
 Étant donné qu’une classe peut hériter des propriétés d’une ou de plusieurs classes de base, les développeurs veulent souvent déterminer la propriété dans laquelle une méthode donnée est définie.
 
-Le `pstrClassName` paramètre ne doit pas pointer vers `BSTR` un valide avant que la fonction soit appelée, `out` car il s’agit d’un paramètre ; ce pointeur n’est pas libéré après le retour de la fonction.
+Le paramètre `pstrClassName` ne doit pas pointer vers un `BSTR` valide avant que la fonction soit appelée, car il s’agit d’un paramètre `out` ; ce pointeur n’est pas libéré après le retour de la fonction.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

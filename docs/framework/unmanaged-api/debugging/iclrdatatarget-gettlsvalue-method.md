@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0d8a7730-edc9-4728-898f-41b219cf5a28
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7de415b998ef97e7500c289a1bca4402d203b152
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 205ad3af81fb6fabda5cbe291536f8858999f831
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738691"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73113703"
 ---
 # <a name="iclrdatatargetgettlsvalue-method"></a>ICLRDataTarget::GetTLSValue, méthode
-Obtient une valeur à partir du stockage local des threads (TLS) du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès de données common language runtime (CLR).  
+Obtient une valeur à partir du stockage local des threads (TLS) du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,21 +37,21 @@ HRESULT GetTLSValue (
   
 ## <a name="parameters"></a>Paramètres  
  `threadID`  
- [in] L’identificateur de système d’exploitation d’un thread dans le processus cible.  
+ dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
   
  `index`  
- [in] Index de l’emplacement. Cette valeur doit être un index valide dans le magasin local du thread spécifié.  
+ dans Index de l’emplacement. Cette valeur doit être un index valide dans le magasin local du thread spécifié.  
   
  `value`  
- [out] Un pointeur vers un `CLRDATA_ADDRESS` valeur qui spécifie la valeur retournée à partir de l’emplacement TLS donné.  
+ à Pointeur vers une valeur `CLRDATA_ADDRESS` qui spécifie la valeur retournée à partir de l’emplacement TLS donné.  
   
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

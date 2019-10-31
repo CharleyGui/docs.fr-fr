@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir une méthode générique avec l’émission de réflexion'
+title: Guide pratique pour définir une méthode générique avec l’émission de réflexion
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +9,14 @@ helpviewer_keywords:
 - reflection emit, generic methods
 - generics [.NET Framework], dynamic types
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 857bad224d1a88c7011a42d0595b17b1810381aa
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d16f6728b01583fe3ffb8d892522f3892444c537
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046060"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130177"
 ---
-# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Procédure : définir une méthode générique avec l’émission de réflexion
+# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Guide pratique pour définir une méthode générique avec l’émission de réflexion
 
 La première procédure montre comment créer une méthode générique simple avec deux paramètres de type et comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type.
 
@@ -169,4 +167,4 @@ L’exemple de code inclut du code source équivalent à la méthode émise. La 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection.Emit.MethodBuilder>
-- [Guide pratique : définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)
+- [Guide pratique pour définir un type générique avec l'émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)

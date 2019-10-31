@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5efaee1c-a001-4c73-9525-4160f4c71567
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ffbe571ebc3d14c12e57b1f805d77e56e97d12e1
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: cc9a67e16635209c3bf303e97dc3e5938943a653
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274170"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099089"
 ---
 # <a name="cor_version-structure"></a>COR_VERSION, structure
 Stocke le numéro de version en quatre parties du CLR (Common Language Runtime).  
@@ -49,12 +47,12 @@ typedef struct _COR_VERSION {
 ## <a name="remarks"></a>Notes  
  Si le numéro de version est 1.0.3705.288, 1 est le numéro de version principale, 0 est le numéro de version mineure, 3705 est le numéro de build et 288 est le numéro de sous-Build.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl  
+ **En-tête :** CorDebug. idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

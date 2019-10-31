@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 30d906f2-cf35-4fa9-9d4c-0c31b58c9f3a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 398c48bfd30020efdb57861991c9541d412d3e0d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fb96949e22b4edfc0e64780a54bb38da44eb8369
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763434"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129551"
 ---
 # <a name="icordebugmodulegetmetadatainterface-method"></a>ICorDebugModule::GetMetaDataInterface, méthode
-Obtient un objet d’interface de métadonnées qui peut être utilisé pour examiner les métadonnées pour le module.  
+Obtient un objet d’interface de métadonnées qui peut être utilisé pour examiner les métadonnées du module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +36,15 @@ HRESULT GetMetaDataInterface (
   
 ## <a name="parameters"></a>Paramètres  
  `riid`  
- [in] L’ID de référence qui spécifie l’interface de métadonnées.  
+ dans ID de référence qui spécifie l’interface de métadonnées.  
   
  `ppObj`  
- [out] Un pointeur vers l’adresse d’un `T:IUnknown` objet qui est un de la [interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md).  
+ à Pointeur vers l’adresse d’un objet `T:IUnknown` qui est l’une des [interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md).  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur peut utiliser le `GetMetaDataInterface` méthode pour effectuer une copie des métadonnées d’origine pour un module, il doit faire pour modifier ce module. Le débogueur appelle `GetMetaDataInterface` pour obtenir un [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) objet d’interface pour le module, puis appelle [IMetaDataEmit::SaveToMemory](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetomemory-method.md) pour enregistrer une copie des métadonnées du module dans la mémoire.  
+ Le débogueur peut utiliser la méthode `GetMetaDataInterface` pour effectuer une copie des métadonnées d’origine d’un module, ce qu’il doit faire pour modifier ce module. Le débogueur appelle `GetMetaDataInterface` pour obtenir un objet d’interface [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) pour le module, puis appelle [IMetaDataEmit :: SaveToMemory,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetomemory-method.md) pour enregistrer une copie des métadonnées du module dans la mémoire.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

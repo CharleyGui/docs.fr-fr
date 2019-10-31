@@ -1,17 +1,15 @@
 ---
-title: <Type>, Élément (.NET Native)
+title: Élément <Type> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7ffe37540fe089bfd1e0eca1958498e725eb9b5b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4e88b49b82513079ddcf6f0bafe02d44235a406a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049150"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091852"
 ---
-# <a name="type-element-net-native"></a>\<Type >, élément (.NET Native)
+# <a name="type-element-net-native"></a>\<> type, élément (.NET Native)
 
 Applique la stratégie runtime à un type particulier, tel qu'une classe ou une structure.
 
@@ -39,7 +37,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Type d'attribut|Description|
 |---------------|--------------------|-----------------|
-|`Name`|Généralités|Attribut requis. Spécifie le nom du type.|
+|`Name`|Général|Attribut requis. Spécifie le nom du type.|
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|
@@ -53,15 +51,15 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="name-attribute"></a>Name (attribut)
 
-|Valeur|Description|
+|valeur|Description|
 |-----------|-----------------|
 |*type_name*|Nom du type. Si cet élément `<Type>` est l’enfant d’un élément [\<Namespace>](namespace-element-net-native.md) ou d’un autre élément `<Type>`, *type_name* peut inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|
 
 ## <a name="all-other-attributes"></a>Tous les autres attributs
 
-|Valeur|Description|
+|valeur|Description|
 |-----------|-----------------|
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -102,11 +100,11 @@ Si le type est un type générique, son nom est décoré par un accent grave (\`
 
 ## <a name="example"></a>Exemple
 
-L'exemple suivant utilise la réflexion pour afficher des informations sur les champs, les propriétés et les méthodes de la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle. Comme l'exemple récupère simplement les informations de type, la disponibilité des métadonnées est contrôlée par le paramètre de stratégie `Browse`.
+L'exemple suivant utilise la réflexion pour afficher des informations sur les champs, les propriétés et les méthodes de la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La variable `b` dans l’exemple est un contrôle <xref:Windows.UI.Xaml.Controls.TextBlock>. Comme l'exemple récupère simplement les informations de type, la disponibilité des métadonnées est contrôlée par le paramètre de stratégie `Browse`.
 
  [!code-csharp[ProjectN_Reflection#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/browsegenerictype1.cs#3)]
 
- Étant donné que les <xref:System.Collections.Generic.List%601> métadonnées de la classe ne sont pas automatiquement incluses dans la chaîne d’outils .net native, l’exemple ne parvient pas à afficher les informations de membre demandées au moment de l’exécution. Pour fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime. Comme nous avons déjà fourni un élément [<Namespace\>](namespace-element-net-native.md) parent, nous n’avons pas à fournir un nom de type complet dans l’élément `<Type>`.
+ Étant donné que les métadonnées de la classe <xref:System.Collections.Generic.List%601> ne sont pas automatiquement incluses par la chaîne d’outils .NET Native, l’exemple ne parvient pas à afficher les informations de membre demandées au moment de l’exécution. Pour fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime. Comme nous avons déjà fourni un élément [<Namespace\>](namespace-element-net-native.md) parent, nous n’avons pas à fournir un nom de type complet dans l’élément `<Type>`.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -120,11 +118,11 @@ L'exemple suivant utilise la réflexion pour afficher des informations sur les c
 ```
 
 ## <a name="example"></a>Exemple
- L'exemple suivant utilise la réflexion pour récupérer un objet <xref:System.Reflection.PropertyInfo> qui représente la propriété <xref:System.String.Chars%2A?displayProperty=nameWithType>. Il utilise ensuite la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> pour récupérer la valeur du septième caractère d'une chaîne et afficher tous les caractères de la chaîne. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.
+ L'exemple suivant utilise la réflexion pour récupérer un objet <xref:System.Reflection.PropertyInfo> qui représente la propriété <xref:System.String.Chars%2A?displayProperty=nameWithType>. Il utilise ensuite la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> pour récupérer la valeur du septième caractère d'une chaîne et afficher tous les caractères de la chaîne. La variable `b` dans l’exemple est un contrôle <xref:Windows.UI.Xaml.Controls.TextBlock>.
 
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]
 
- Étant donné que les <xref:System.String> métadonnées de l’objet ne sont pas <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> disponibles, l’appel <xref:System.NullReferenceException> à la méthode lève une exception au moment de l’exécution lorsqu’elle est compilée avec la chaîne d’outils .net native. Pour éliminer l'exception et fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime :
+ Étant donné que les métadonnées de l’objet <xref:System.String> ne sont pas disponibles, l’appel à la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> lève une exception <xref:System.NullReferenceException> au moment de l’exécution lorsqu’elle est compilée avec la chaîne d’outils .NET Native. Pour éliminer l'exception et fournir les métadonnées nécessaires, ajoutez l'élément `<Type>` suivant au fichier de directives runtime :
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">

@@ -7,18 +7,16 @@ helpviewer_keywords:
 - Span<T>
 - buffers"
 - pipeline processing
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fbfd091c821f59febfc8c7a203334454e7b59c12
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: b61b1dbbedf4658fe113986fbb4a792a2f574534
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666423"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121983"
 ---
 # <a name="memory--and-span-related-types"></a>Types liés à la mémoire et l’étendue
 
-À partir de .NET Core 2.1, .NET inclut plusieurs types reliés entre eux qui représentent une région contiguë et fortement typée de mémoire arbitraire. Elles incluent notamment :
+À partir de .NET Core 2.1, .NET inclut plusieurs types reliés entre eux qui représentent une région contiguë et fortement typée de mémoire arbitraire. Elles incluent notamment les suivantes :
 
 - <xref:System.Span%601?displayProperty=nameWithType>, un type utilisé pour accéder à une zone contiguë de mémoire. Une instance <xref:System.Span%601> peut être sauvegardée par un tableau de type `T`, un objet <xref:System.String>, une mémoire tampon allouée avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), ou un pointeur vers une mémoire non managée. Comme elle doit être allouée sur la pile, elle comporte plusieurs restrictions. Par exemple, un champ dans une classe ne peut pas être de type <xref:System.Span%601>, et l’étendue ne peut pas être utilisée dans des opérations asynchrones.
 

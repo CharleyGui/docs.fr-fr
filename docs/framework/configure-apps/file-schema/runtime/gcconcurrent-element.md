@@ -9,22 +9,20 @@ helpviewer_keywords:
 - gcConcurrent element
 - <gcConcurrent> element
 ms.assetid: 503f55ba-26ed-45ac-a2ea-caf994da04cd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2b2774c32b4ee3e67772f84d599ecc5dbeb6598b
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 4897462e20b193496c44d26923d0d0e2a13f7dd6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252592"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116809"
 ---
-# <a name="gcconcurrent-element"></a>\<gcConcurrent >, élément
+# <a name="gcconcurrent-element"></a>\<élément gcConcurrent >
 
 Spécifie si le common language runtime exécute l'opération garbage collection sur un thread distinct.
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<gcConcurrent>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcConcurrent** >  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,14 +43,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>attribut activé
 
-|Valeur|Description|
+|valeur|Description|
 |-----------|-----------------|
 |`false`|Ne s’exécute pas garbage collection simultanément.|
 |`true`|Exécute l'opération garbage collection simultanément. Il s'agit de la valeur par défaut.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucun(e).
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -63,7 +61,7 @@ Aucun.
 
 ## <a name="remarks"></a>Notes
 
-Dans les versions antérieures à .NET Framework 4, le garbage collection de station de travail prenait en charge le garbage collection simultané, qui exécutait l'opération garbage collection en arrière-plan sur un thread distinct. Dans .NET Framework 4, le garbage collection simultané a été remplacé par le garbage collection d'arrière-plan pour effectuer l'opération de la même manière. Depuis .NET Framework 4.5, le garbage collection d'arrière-plan est disponible dans le garbage collection de serveur. L' `<gcConcurrent>` élément contrôle si le runtime effectue une garbage collection simultanée ou d’arrière-plan, s’il est disponible, ou s’il effectue des garbage collection au premier plan.
+Dans les versions antérieures à .NET Framework 4, le garbage collection de station de travail prenait en charge le garbage collection simultané, qui exécutait l'opération garbage collection en arrière-plan sur un thread distinct. Dans .NET Framework 4, le garbage collection simultané a été remplacé par le garbage collection d'arrière-plan pour effectuer l'opération de la même manière. Depuis .NET Framework 4.5, le garbage collection d'arrière-plan est disponible dans le garbage collection de serveur. L’élément `<gcConcurrent>` contrôle si le runtime exécute des garbage collection simultanées ou d’arrière-plan, s’il est disponible, ou s’il effectue garbage collection au premier plan.
 
 ### <a name="to-disable-background-garbage-collection"></a>Pour désactiver les garbage collection d’arrière-plan
 
@@ -80,7 +78,7 @@ Par défaut, le runtime utilise le garbage collection simultané ou d’arrière
 </configuration>
 ```
 
- S’il existe un `<gcConcurrentSetting>` paramètre dans le fichier de configuration de l’ordinateur, il définit la valeur par défaut pour toutes les applications .NET Framework. Ce paramètre se substitue au paramètre du fichier de configuration de l'application.
+ S’il existe un paramètre `<gcConcurrentSetting>` dans le fichier de configuration de l’ordinateur, il définit la valeur par défaut pour toutes les applications .NET Framework. Ce paramètre se substitue au paramètre du fichier de configuration de l'application.
 
  Pour plus d’informations sur les garbage collection simultanés et d’arrière-plan, consultez la section [garbage collection simultanées](../../../../standard/garbage-collection/fundamentals.md#concurrent-garbage-collection) dans l’article [notions de base du garbage collection](../../../../standard/garbage-collection/fundamentals.md) .
 

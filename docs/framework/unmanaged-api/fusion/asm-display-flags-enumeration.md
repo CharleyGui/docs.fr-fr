@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: dbade6c9-9d26-4a79-9fd2-46108edd12d7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8befdb454a564ec834532653dd44cf230fa43d79
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a34648bece3b14d6175168f45916ca04aeeef71d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795215"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109240"
 ---
 # <a name="asm_display_flags-enumeration"></a>ASM_DISPLAY_FLAGS, énumération
 Indique la version, la build, la culture, la signature, etc. de l’assembly dont le nom d’affichage sera récupéré par la méthode [IAssemblyName :: GetDisplayName](iassemblyname-getdisplayname-method.md) .  
@@ -52,14 +50,14 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Notes  
- `ASM_DISPLAYF_FULL`reflète toutes les modifications apportées à la version de l’objet [IAssemblyName](iassemblyname-interface.md) . Ne partez pas du principe que la valeur retournée est immuable.  
+ `ASM_DISPLAYF_FULL` reflète toutes les modifications apportées à la version de l’objet [IAssemblyName](iassemblyname-interface.md) . Ne partez pas du principe que la valeur retournée est immuable.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

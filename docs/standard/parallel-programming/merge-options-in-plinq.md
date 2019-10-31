@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7255ef11bfdf74afa6ae2032b0c86c8c44dbfe7d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: f88f2035fb27567e56792cae8289140129e9c557
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647724"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129021"
 ---
 # <a name="merge-options-in-plinq"></a>Options de fusion en PLINQ
 Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence source pour que plusieurs threads puissent fonctionner simultanément sur différentes parties, généralement sur des threads distincts. Si les résultats doivent être utilisés sur un thread, par exemple, dans une boucle `foreach` (`For Each` en Visual Basic), les résultats de chaque thread doivent être fusionnés de nouveau en une séquence. Le type de fusion que PLINQ exécute dépend des opérateurs présents dans la requête. Par exemple, les opérateurs qui imposent un nouvel ordre des résultats doivent mettre en mémoire tampon tous les éléments de tous les threads. Du point de vue du thread utilisateur (qui est également celui de l’utilisateur de l’application), une requête entièrement mise en mémoire tampon peut s’exécuter pendant un certain temps avant qu’elle ne génère son premier résultat. D’autres opérateurs, par défaut, sont partiellement mis en mémoire tampon. Ils transmettent leurs résultats par lots. L’opérateur <xref:System.Linq.ParallelEnumerable.ForAll%2A> n’est pas mis en mémoire tampon par défaut. Il transmet immédiatement tous les éléments à partir de tous les threads.  
@@ -25,7 +23,7 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
  [!code-csharp[PLINQ#26](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#26)]
  [!code-vb[PLINQ#26](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#26)]  
   
- Pour obtenir un exemple complet, consultez [Comment : spécifier des options de fusion avec PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
+ Pour obtenir un exemple complet, consultez [Comment : spécifier des options de fusion en PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
   
  Si la requête ne peut pas prendre en charge l’option demandée, cette dernière sera simplement ignorée. Dans la plupart des cas, il n’est pas nécessaire de spécifier une option de fusion pour une requête PLINQ. Toutefois, dans certains cas, après avoir effectué des tests et des mesures, vous pouvez trouver qu’une requête s’exécute mieux dans un mode non défini par défaut. Cette option est souvent utilisée pour forcer un opérateur de fusion de blocs à diffuser ses résultats en continu afin de fournir une interface utilisateur plus réactive.  
   
@@ -47,19 +45,19 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
 ## <a name="query-operators-that-support-merge-options"></a>Opérateurs de requête prenant en charge les options de fusion  
  Le tableau suivant répertorie les opérateurs qui prennent en charge tous les modes d’options de fusion, qui sont soumis aux restrictions spécifiées.  
   
-|Opérateur|Restrictions|  
+|opérateur|Restrictions|  
 |--------------|------------------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.Cast%2A>|Aucun.|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.Cast%2A>|aucune.|  
 |<xref:System.Linq.ParallelEnumerable.Concat%2A>|Requêtes non ordonnées qui ont uniquement une source de type Tableau ou Liste.|  
-|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Aucun.|  
+|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|aucune.|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Requêtes non ordonnées qui ont uniquement une source de type Tableau ou Liste.|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.Take%2A>|Aucun.|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>|Aucun.|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.Take%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A>|aucune.|  
   
  Tous les autres opérateurs de requête PLINQ peuvent ignorer les options de fusion fournis par l’utilisateur. Certains opérateurs de requête, tels que <xref:System.Linq.ParallelEnumerable.Reverse%2A> et <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, ne peuvent pas transmettre d’éléments tant qu’ils n’ont pas tous été générés et réorganisés. Par conséquent, si vous utilisez <xref:System.Linq.ParallelMergeOptions> dans une requête qui contient également un opérateur tel que <xref:System.Linq.ParallelEnumerable.Reverse%2A>, le comportement de fusion ne sera appliqué dans la requête qu’une fois que l’opérateur aura généré ses résultats.  
   
@@ -68,4 +66,4 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
 ## <a name="see-also"></a>Voir aussi
 
 - [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
-- [Guide pratique pour spécifier des options de fusion avec PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)
+- [Comment : spécifier des options de fusion en PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

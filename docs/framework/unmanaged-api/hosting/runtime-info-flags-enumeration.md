@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: adba37be-f775-4cdb-8919-5746ce694f33
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4bf3a0507f9f7d4d622163a55fc9c45b4a4dd0a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 80643187045e7e96b9c18169c5e71287713d711f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781144"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73106239"
 ---
-# <a name="runtimeinfoflags-enumeration"></a>RUNTIME_INFO_FLAGS, énumération
-Contient des valeurs qui indiquent les informations sur le common language runtime (CLR) doivent être retournées.  
+# <a name="runtime_info_flags-enumeration"></a>RUNTIME_INFO_FLAGS, énumération
+Contient des valeurs qui indiquent les informations relatives au common language runtime (CLR) qui doivent être retournées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,17 +45,17 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Indique que les informations d’annuaire ne doivent pas être incluses.|  
+|`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Indique que les informations de répertoire ne doivent pas être incluses.|  
 |`RUNTIME_INFO_DONT_RETURN_VERSION`|Indique que les informations de version ne doivent pas être incluses.|  
 |`RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG`|Indique qu’une boîte de dialogue d’erreur ne doit pas s’afficher en cas d’échec.|  
-|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Indique que les effets de l’appel le [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkId=255242) fonction avec l’indicateur SEM_FAILCRITICALERRORS doit être substituée. Autrement dit, une boîte de dialogue d’installation doit s’afficher en cas d’échec, au lieu d’en cours de suppression.|  
-|`RUNTIME_INFO_REQUEST_AMD64`|Indique une demande d’informations sur une version compatible AMD-64 du runtime.|  
-|`RUNTIME_INFO_REQUEST_IA64`|Indique une demande d’informations sur une version compatible IA-64 du runtime.|  
-|`RUNTIME_INFO_REQUEST_X86`|Indique une demande d’informations sur une version compatible avec x86 du runtime.|  
+|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Indique que les effets de l’appel de la fonction [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkId=255242) avec l’indicateur SEM_FAILCRITICALERRORS doivent être substitués. Autrement dit, une boîte de dialogue d’installation doit s’afficher en cas d’échec, au lieu d’être supprimée.|  
+|`RUNTIME_INFO_REQUEST_AMD64`|Indique une demande d’informations sur une version compatible AMD-64 du Runtime.|  
+|`RUNTIME_INFO_REQUEST_IA64`|Indique une demande d’informations sur une version compatible IA-64 du Runtime.|  
+|`RUNTIME_INFO_REQUEST_X86`|Indique une demande d’informations sur une version compatible x86 du Runtime.|  
 |`RUNTIME_INFO_UPGRADE_VERSION`|Indique que les informations de mise à niveau de version doivent être incluses.|  
   
 ## <a name="remarks"></a>Notes  
- Les indicateurs d’architecture de plateforme suivants peuvent uniquement être spécifiés un à la fois et ne peuvent pas être combinés :  
+ Les indicateurs d’architecture de la plateforme suivants ne peuvent être spécifiés qu’une seule fois et ne peuvent pas être combinés :  
   
 - RUNTIME_INFO_REQUEST_IA64  
   
@@ -65,12 +63,12 @@ typedef enum {
   
 - RUNTIME_INFO_REQUEST_X86  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

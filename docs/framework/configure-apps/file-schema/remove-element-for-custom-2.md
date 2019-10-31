@@ -1,5 +1,5 @@
 ---
-title: <remove>, élément de NameValueSectionHandler et DictionarySectionHandler
+title: élément <remove> pour NameValueSectionHandler et DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd338ff2d613be31ab1524f6baed6107f803a688
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dc1519a794e24e04074dd2a674ecc2c0f3666521
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920946"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118565"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<supprimer > élément pour NameValueSectionHandler et DictionarySectionHandler
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<supprimer > élément de NameValueSectionHandler et DictionarySectionHandler
 
 Supprime un paramètre défini précédemment.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la  >.  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,21 +40,21 @@ Supprime un paramètre défini précédemment.
 
 | Élément | Description |
 | ------- | ------------|
-| [élément de >y  **\<** ](custom-element-2.md) | Définit des paramètres pour les sections de configuration personnalisées <xref:System.Configuration.DictionarySectionHandler> qui utilisent les <xref:System.Configuration.NameValueSectionHandler> classes et. |
+| [ **\<** de la > Appartient](custom-element-2.md) | Définit les paramètres des sections de configuration personnalisées qui utilisent les classes <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser l'  **\<élément remove >** pour supprimer de votre application les paramètres qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
+Vous pouvez utiliser l’élément **\<supprimer >** pour supprimer de votre application les paramètres qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment utiliser l'  **\<élément remove >** dans un fichier de configuration de l’application pour supprimer des paramètres précédemment définis dans le fichier de configuration de l’ordinateur.
+L’exemple suivant montre comment utiliser la **\<supprimer >** élément dans un fichier de configuration d’application pour supprimer les paramètres précédemment définis dans le fichier de configuration de l’ordinateur.
 
-Le code de fichier de configuration de l’ordinateur suivant déclare la section  **\<mySection >** et y `key1` ajoute `key2`deux paramètres:
+Le code de fichier de configuration d’ordinateur suivant déclare la section **\<> mySection** et y ajoute deux paramètres, `key1` et `key2`:
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Le code de fichier de configuration de l’ordinateur suivant déclare la sectio
 </configuration>
 ```
 
-Le code de fichier de configuration de l' `key2` application suivant supprime le paramètre de  **\<mySection >** :
+Le code de fichier de configuration d’application suivant supprime le paramètre `key2` de **\<> mySection**:
 
 ```xml
 <!--Application configuration file -->

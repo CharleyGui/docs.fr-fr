@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26fb69f8-1467-4711-bd24-cb117c63938f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6d51c445d6f375f805253b9f640ab61ab3dccc58
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c084a3fcbbc02504124a511c6e136be32f408d21
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738489"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73112326"
 ---
 # <a name="iclrdatatarget2freevirtual-method"></a>ICLRDataTarget2::FreeVirtual, méthode
-Appelé par les services d’accès aux données du common language runtime (CLR) à la mémoire précédemment allouée dans l’espace d’adressage du processus cible.  
+Appelée par les services d’accès aux données common language runtime (CLR) pour libérer de la mémoire qui a été précédemment allouée dans l’espace d’adressage du processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +37,23 @@ HRESULT FreeVirtual(
   
 ## <a name="parameters"></a>Paramètres  
  `addr`  
- [in] Un `CLRDATA_ADDRESS` valeur qui spécifie l’adresse de départ de la mémoire à libérer.  
+ dans Valeur `CLRDATA_ADDRESS` qui spécifie l’adresse de départ de la mémoire à libérer.  
   
  `size`  
- [in] La taille, en octets, de la mémoire à libérer.  
+ dans Taille, en octets, de la mémoire à libérer.  
   
  `typeFlags`  
- [in] Indicateurs qui contrôlent la libération de mémoire. Consultez Win32 `VirtualFree` (fonction).  
+ dans Indicateurs qui contrôlent la libération de la mémoire. Consultez la fonction de `VirtualFree` Win32.  
   
 ## <a name="remarks"></a>Notes  
- Le `FreeVirtual` méthode sert de wrapper logique pour Win32 `VirtualFree` (fonction).  
+ La méthode `FreeVirtual` sert de wrapper logique pour la fonction `VirtualFree` Win32.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

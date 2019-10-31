@@ -15,18 +15,16 @@ helpviewer_keywords:
 ms.assetid: 57e0f2d2-5f0e-4e2d-99ec-3f26632eb693
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f626ff6e562bd9bc94440f31e9470a45cc32cfbd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba4375511fe7f5aaee032c4e132de54808041111
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902770"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122447"
 ---
 # <a name="icordebugthread4getcurrentcustomdebuggernotification-method"></a>ICorDebugThread4::GetCurrentCustomDebuggerNotification, méthode
 
-Obtient les valeurs combinées [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) objet sur le thread actuel.
+Obtient l’objet [ICorDebugManagedCallback3 :: CustomNotification,](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) actuel sur le thread actuel.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,13 +37,13 @@ HRESULT GetCurrentCustomDebuggerNotification(
 ## <a name="parameters"></a>Paramètres
 
 `ppNotificationObject`\
-[out] Un pointeur vers l’actuel `ICorDebugManagedCallback3::CustomNotification` objet sur le thread actuel.
+à Pointeur vers l’objet de `ICorDebugManagedCallback3::CustomNotification` actuel sur le thread actuel.
 
 ## <a name="remarks"></a>Notes
 
-La valeur de `ppNotificationObject` a la valeur null si la méthode n’est pas appelée depuis un `ICorDebugManagedCallback3::CustomNotification` rappel, ou si aucun objet de notification en cours n’existe.
+La valeur de `ppNotificationObject` est null si la méthode n’est pas appelée à partir d’un rappel `ICorDebugManagedCallback3::CustomNotification`, ou si aucun objet de notification en cours n’existe.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 

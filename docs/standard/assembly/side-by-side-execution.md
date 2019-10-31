@@ -5,14 +5,12 @@ helpviewer_keywords:
 - side-by-side execution [.NET Framework]
 - assemblies [.NET Framework], side-by-side execution
 ms.assetid: e42036ee-7590-47d1-b884-cc856e39bd5d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d4f246108768dcebf51348f67c4523cb83df4f9d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 234efba66d87b520b54d6d113afcc4bba0bfe06a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053977"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138663"
 ---
 # <a name="assemblies-and-side-by-side-execution"></a>Assemblys et exécution côte à côte
 

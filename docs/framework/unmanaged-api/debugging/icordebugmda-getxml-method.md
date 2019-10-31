@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 003a6546b3316f2a2a65bce4537c60dcf62b3197
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f80bdffbf5c0ba39980bd27c6e89a368547340c0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752848"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129810"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML, méthode
-Obtient le flux XML complet associé à l’assistant débogage managé (MDA) représenté par [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Obtient le flux de données XML complet associé à l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,15 +41,15 @@ HRESULT GetXML (
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] Pointeur vers la longueur du flux XML.  
+ à Pointeur vers la longueur du flux XML.  
   
  `szName`  
- [out] Tableau dans lequel stocker le flux XML. Le tableau peut être vide.  
+ à Tableau dans lequel stocker le flux XML. Le tableau peut être vide.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetXML` méthode peut affecter potentiellement les performances, selon la taille du flux XML associé.  
+ La méthode `GetXML` peut potentiellement affecter les performances, en fonction de la taille du flux XML associé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

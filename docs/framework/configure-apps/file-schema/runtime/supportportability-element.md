@@ -5,14 +5,12 @@ helpviewer_keywords:
 - supportPortability element
 - <supportPortability> element
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7a76c378038a19d3edb9fe0c5e61012cc854c1b7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 63c309a8a93c1d31ed8f73a495cf5154c3590d56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773931"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73115656"
 ---
 # <a name="supportportability-element"></a>\<élément supportPortability >
 Spécifie qu’une application peut référencer le même assembly dans deux implémentations différentes du .NET Framework, en désactivant le comportement par défaut qui traite les assemblys de façon équivalente à des fins de portabilité des applications.  
@@ -41,14 +39,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |true|Active la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Il s'agit de la valeur par défaut.|  
-|false|Désactive la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
+|False|Désactive la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
 
-Aucun.  
+Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

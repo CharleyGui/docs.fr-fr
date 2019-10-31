@@ -1,5 +1,5 @@
 ---
-title: 'Atténuation : prise en charge du pointeur tactile et du stylet'
+title: 'Atténuation : Prise en charge du pointeur tactile et du stylet'
 ms.date: 04/07/2017
 helpviewer_keywords:
 - retargeting changes
@@ -7,16 +7,14 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 67e41450ed69d73a4b27b0aa37974ae01be69687
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 41a587b343e4774a27e9ddc39080de6939839d93
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779243"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126202"
 ---
-# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Atténuation : prise en charge du pointeur tactile et du stylet
+# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Atténuation : Prise en charge du pointeur tactile et du stylet
 
 Les applications WPF qui ciblent .NET Framework 4.7 et sont en cours d’exécution sur des systèmes Windows à compter de la mise à jour Windows 10 Creators Update peuvent activer une pile facultative tactile/de stylet WPF basée sur `WM_POINTER`.
 

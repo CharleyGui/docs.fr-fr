@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 39ca7ca02c2bb1050653daf1b53450533cc950dd
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 938bae09eab4e95c0ec875a8681cc276325b976b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490973"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129038"
 ---
 # <a name="introduction-to-plinq"></a>Introduction à PLINQ
 
@@ -28,7 +26,7 @@ Parallel LINQ (PLINQ) est une implémentation parallèle du modèle de requête 
 L’exécution parallèle permet à PLINQ d’améliorer de manière significative les performances du code hérité pour certains types de requêtes, souvent par le simple ajout de l’opération de requête <xref:System.Linq.ParallelEnumerable.AsParallel%2A> à la source de données. Toutefois, le parallélisme peut présenter ses propres complexités et toutes les opérations de requête ne s’exécutent pas plus rapidement dans PLINQ. En fait, la parallélisation ralentit réellement certaines requêtes. Par conséquent, vous devez comprendre comment des problèmes, tels que ceux liés à l’ordre, affectent les requêtes parallèles. Pour plus d’informations, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
 > [!NOTE]
-> Cette documentation utilise des expressions lambda pour définir les délégués en PLINQ. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Cette documentation utilise des expressions lambda pour définir les délégués en PLINQ. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
 Le reste de cet article donne une vue d’ensemble des principales classes PLINQ et explique comment créer des requêtes PLINQ. Chaque section contient des liens vers des exemples de code et des informations plus détaillées.
 
@@ -64,7 +62,7 @@ La méthode d’extension <xref:System.Linq.ParallelEnumerable.AsParallel%2A> li
 
 ## <a name="execution-modes"></a>Modes d’exécution
 
-Par défaut, PLINQ est conservateur. Au moment de l’exécution, l’infrastructure PLINQ analyse la structure globale de la requête. Si la requête est susceptible de produire des accélérations par parallélisation, PLINQ partitionne la séquence source en tâches pouvant être exécutées simultanément. Si la parallélisation d’une requête présente un risque, PLINQ exécute uniquement la requête de manière séquentielle. Si PLINQ a le choix entre un algorithme parallèle potentiellement coûteux ou un algorithme séquentiel abordable, il choisit l’algorithme séquentiel par défaut. Vous pouvez utiliser la méthode <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> et l’énumération <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> pour indiquer à PLINQ de sélectionner l’algorithme parallèle. Cela est utile lorsque vous savez suite à des tests ou des mesures qu’une requête spécifique s’exécute plus rapidement en parallèle. Pour plus d'informations, voir [Procédure : spécifier le mode d’exécution avec PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).
+Par défaut, PLINQ est conservateur. Au moment de l’exécution, l’infrastructure PLINQ analyse la structure globale de la requête. Si la requête est susceptible de produire des accélérations par parallélisation, PLINQ partitionne la séquence source en tâches pouvant être exécutées simultanément. Si la parallélisation d’une requête présente un risque, PLINQ exécute uniquement la requête de manière séquentielle. Si PLINQ a le choix entre un algorithme parallèle potentiellement coûteux ou un algorithme séquentiel abordable, il choisit l’algorithme séquentiel par défaut. Vous pouvez utiliser la méthode <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> et l’énumération <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> pour indiquer à PLINQ de sélectionner l’algorithme parallèle. Cela est utile lorsque vous savez suite à des tests ou des mesures qu’une requête spécifique s’exécute plus rapidement en parallèle. Pour plus d’informations, consultez [How to: Specify the Execution Mode in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md) (Guide pratique pour spécifier le mode d’exécution dans PLINQ).
 
 ## <a name="degree-of-parallelism"></a>Degré de parallélisme
 
@@ -86,9 +84,9 @@ L’exemple de code suivant montre comment utiliser la conservation de l’ordre
 
 Pour plus d’informations, consultez [Order Preservation in PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md) (Conservation de l’ordre dans PLINQ).
 
-## <a name="parallel-vs-sequential-queries"></a>Les requêtes parallèles comparées aux requêtes séquentielles
+## <a name="parallel-vs-sequential-queries"></a>Requêtes parallèles et requêtes séquentielles
 
-Certaines opérations requièrent que la source de données soit proposée de manière séquentielle. Les opérateurs de requête <xref:System.Linq.ParallelEnumerable> basculent automatiquement en mode séquentiel lorsque cela est nécessaire. Pour les opérateurs de requête et les délégués d’utilisateurs définis par l’utilisateur qui nécessitent une exécution séquentielle, PLINQ fournit la méthode <xref:System.Linq.ParallelEnumerable.AsSequential%2A>. Lorsque vous utilisez <xref:System.Linq.ParallelEnumerable.AsSequential%2A>, tous les opérateurs suivants dans la requête sont exécutés séquentiellement jusqu'à ce que <xref:System.Linq.ParallelEnumerable.AsParallel%2A> soit à nouveau appelé. Pour plus d'informations, voir [Procédure : combiner des requêtes LINQ parallèles et séquentielles](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md).
+Certaines opérations requièrent que la source de données soit proposée de manière séquentielle. Les opérateurs de requête <xref:System.Linq.ParallelEnumerable> basculent automatiquement en mode séquentiel lorsque cela est nécessaire. Pour les opérateurs de requête et les délégués d’utilisateurs définis par l’utilisateur qui nécessitent une exécution séquentielle, PLINQ fournit la méthode <xref:System.Linq.ParallelEnumerable.AsSequential%2A>. Lorsque vous utilisez <xref:System.Linq.ParallelEnumerable.AsSequential%2A>, tous les opérateurs suivants dans la requête sont exécutés séquentiellement jusqu'à ce que <xref:System.Linq.ParallelEnumerable.AsParallel%2A> soit à nouveau appelé. Pour plus d’informations, voir [Comment : combiner des requêtes LINQ parallèles et séquentielles](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md).
 
 ## <a name="options-for-merging-query-results"></a>Options de fusion des résultats de requête
 
@@ -103,15 +101,15 @@ Dans les requêtes [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] séq
 
 L’illustration suivante montre la différence entre `foreach` et <xref:System.Linq.ParallelEnumerable.ForAll%2A> en ce qui concerne l’exécution des requêtes.
 
-![ForAll par rapport à ForEach](../../../docs/standard/parallel-programming/media/vs-isvnt-allvseach.png "VS_ISVNT_ALLvsEACH")
+![ForAll et ForEach](../../../docs/standard/parallel-programming/media/vs-isvnt-allvseach.png "VS_ISVNT_ALLvsEACH")
 
 ## <a name="cancellation"></a>Annulation
 
-PLINQ est intégré aux types d’annulation dans .NET Framework 4. Pour plus d’informations, consultez [Cancellation in Managed Threads](../../../docs/standard/threading/cancellation-in-managed-threads.md) (Annulation dans les threads managés). Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
+PLINQ est intégré aux types d’annulation dans .NET Framework 4. (Pour plus d’informations, consultez [annulation dans les threads managés](../../../docs/standard/threading/cancellation-in-managed-threads.md).) Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
 
 Il est possible qu’une requête PLINQ continue de traiter certains éléments après la définition du jeton d’annulation.
 
-Pour une plus grande réactivité, vous pouvez également répondre aux demandes d’annulation dans les délégués d’utilisateur de longue durée. Pour plus d'informations, voir [Procédure : annuler une requête PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).
+Pour une plus grande réactivité, vous pouvez également répondre aux demandes d’annulation dans les délégués d’utilisateur de longue durée. Pour plus d’informations, consultez [How to: Cancel a PLINQ Query](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md) (Guide pratique pour annuler une requête PLINQ).
 
 ## <a name="exceptions"></a>Exceptions
 
@@ -119,7 +117,7 @@ Lorsqu’une requête PLINQ s’exécute, plusieurs exceptions peuvent être gé
 
 Lorsque les exceptions sont autorisées à se propager vers le thread lié, il est possible qu'une requête puisse continuer à traiter des éléments après que l'exception ait été levée.
 
-Pour plus d'informations, voir [Procédure : gérer des exceptions dans une requête PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).
+Pour plus d’informations, consultez [How to: Handle Exceptions in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md) (Comment : traiter des exceptions dans une requête PLINQ).
 
 ## <a name="custom-partitioners"></a>Partitionneurs personnalisés
 
@@ -132,7 +130,7 @@ PLINQ prend en charge un nombre fixe de partitions (bien que les données puisse
 
 ## <a name="measuring-plinq-performance"></a>Mesure des performances de PLINQ
 
-Dans de nombreux cas, une requête peut être parallélisée, mais la surcharge liée à la configuration de la requête parallèle annule le gain obtenu en termes de performances. Si une requête n’effectue pas beaucoup de calculs ou si la source de données est petite, une requête PLINQ peut être plus lente qu’une requête LINQ to Objects séquentielle. Vous pouvez utiliser l’outil d’analyse des performances parallèles de Visual Studio Team Server pour comparer les performances de diverses requêtes, localiser des goulots d’étranglement et déterminer si votre requête s’exécute en parallèle ou de manière séquentielle. Pour plus d’informations, consultez [Visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) et [Comment : mesurer les performances de requêtes PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
+Dans de nombreux cas, une requête peut être parallélisée, mais la surcharge liée à la configuration de la requête parallèle annule le gain obtenu en termes de performances. Si une requête n’effectue pas beaucoup de calculs ou si la source de données est petite, une requête PLINQ peut être plus lente qu’une requête LINQ to Objects séquentielle. Vous pouvez utiliser l’outil d’analyse des performances parallèles de Visual Studio Team Server pour comparer les performances de diverses requêtes, localiser des goulots d’étranglement et déterminer si votre requête s’exécute en parallèle ou de manière séquentielle. Pour plus d’informations, consultez [Visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) et [How to: Measure PLINQ Query Performance](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md) (Comment : mesurer les performances des requêtes PLINQ).
 
 ## <a name="see-also"></a>Voir aussi
 

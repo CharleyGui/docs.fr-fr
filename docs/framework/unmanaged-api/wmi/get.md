@@ -14,14 +14,12 @@ helpviewer_keywords:
 - Get function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17304dc8330e4f8571f25b8544f1049dff229f2b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 60f29b91000fd3c07efea88dcc319eb283a4af78
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798596"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120326"
 ---
 # <a name="get-function"></a>Get, fonction
 
@@ -58,7 +56,7 @@ dans Nom de la propriété.
 [in] Réservée. Ce paramètre doit avoir la valeur 0.
 
 `pVal`\
-à Si la fonction est correctement retournée, contient la valeur `wszName` de la propriété. Le `pval` type et la valeur corrects pour le qualificateur sont assignés à l’argument.
+à Si la fonction est correctement retournée, contient la valeur de la propriété `wszName`. Le type et la valeur corrects du qualificateur sont attribués à l’argument `pval`.
 
 `pvtType`\
 à Si la fonction est correctement retournée, contient une [constante de type CIM](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) qui indique le type de propriété. Sa valeur peut également être `null`. 
@@ -66,17 +64,17 @@ dans Nom de la propriété.
 `plFlavor`\
 à Si la fonction est correctement retournée, reçoit des informations sur l’origine de la propriété. Sa valeur peut être `null`, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le fichier d’en-tête *WbemCli. h* : 
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | La propriété est une propriété système standard. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : La propriété est héritée de la classe parente. <br> Pour une instance : La propriété, bien qu’héritée de la classe parente, n’a pas été modifiée par l’instance de.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe : La propriété appartient à la classe dérivée. <br> Pour une instance : La propriété est modifiée par l’instance ; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : la propriété est héritée de la classe parente. <br> Pour une instance : la propriété, alors qu’elle est héritée de la classe parente, n’a pas été modifiée par l’instance.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe : la propriété appartient à la classe dérivée. <br> Pour une instance : la propriété est modifiée par l’instance ; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides. |
@@ -88,15 +86,15 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemClassObject :: obtenir](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
 
-La `Get` fonction peut également retourner des propriétés système.
+La fonction `Get` peut également retourner des propriétés système.
 
-Le `pVal` type et la valeur corrects pour le qualificateur et la fonction com [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) sont assignés à l’argument
+Le type et la valeur corrects pour le qualificateur et la fonction [VARIANTINIT](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) com sont assignés à l’argument `pVal`
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête :** WMINet_Utils.idl
+ **En-tête :** WMINet_Utils. idl
 
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

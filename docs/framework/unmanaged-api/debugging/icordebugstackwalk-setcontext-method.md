@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bac0b156-31a3-4e7f-be4d-ab21789c81f1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d6eb97fc70fec25f4b225c3fd5bad1e780091f7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 90156152a2c133446dedbe22426785ab63f8dfb9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771039"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131810"
 ---
 # <a name="icordebugstackwalksetcontext-method"></a>ICorDebugStackWalk::SetContext, méthode
-Définit le [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) contexte actuel de l’objet à un contexte valid pour le thread.  
+Affecte au contexte actuel de l’objet [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) un contexte valide pour le thread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +35,34 @@ HRESULT SetContext([in] CorDebugSetContextFlag flag,
   
 ## <a name="parameters"></a>Paramètres  
  `flag`  
- [in] Un [CorDebugSetContextFlag](../../../../docs/framework/unmanaged-api/debugging/cordebugsetcontextflag-enumeration.md) indicateur qui indique si le contexte provient du frame actif sur la pile, ou un contexte obtenu par le déroulement de la pile.  
+ dans Indicateur [CorDebugSetContextFlag,](../../../../docs/framework/unmanaged-api/debugging/cordebugsetcontextflag-enumeration.md) qui indique si le contexte provient du frame actif sur la pile ou d’un contexte obtenu en déroulant la pile.  
   
  `contextSize`  
- [in] La taille allouée de la `CONTEXT` mémoire tampon.  
+ dans Taille allouée de la mémoire tampon de `CONTEXT`.  
   
  `context`  
- [in] Le `CONTEXT` mémoire tampon.  
+ dans Mémoire tampon de `CONTEXT`.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|Le `ICorDebugStackWalk` contexte de l’objet a été défini correctement.|  
-|E_FAIL|Le `ICorDebugStackWalk` contexte de l’objet n’a pas été défini.|  
-|E_INVALIDARG|Le contexte est null.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|Mémoire tampon de contexte est trop petite.|  
+|S_OK|Le contexte de l’objet `ICorDebugStackWalk` a été correctement défini.|  
+|E_FAIL|Le contexte de l’objet `ICorDebugStackWalk` n’a pas été défini.|  
+|E_INVALIDARG|Le contexte a la valeur null.|  
+|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|La mémoire tampon de contexte est trop petite.|  
   
 ## <a name="exceptions"></a>Exceptions  
   
 ## <a name="remarks"></a>Notes  
  Cette méthode ne modifie pas le contexte actuel du thread.  
   
- Définition du contexte actuel à un contexte non valide peut provoquer des résultats imprévisibles à partir de l’Explorateur de pile.  
+ L’activation d’un contexte non valide dans le contexte actuel peut entraîner des résultats imprévisibles de l’Explorateur de pile.  
   
- Vous pouvez récupérer une copie au niveau du bit exacte de ce contexte en appelant immédiatement la [ICorDebugStackWalk::GetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) (méthode).  
+ Vous pouvez récupérer une copie au niveau du bit exacte de ce contexte en appelant immédiatement la méthode [ICorDebugStackWalk :: GetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

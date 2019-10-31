@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8bdd7f4c-19f2-4ede-875e-603773e8c128
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 21da325ee58df65ac449464f8292f2ba94d99338
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 47647bf0460507b4c88b47bf87bfcc3bf620aecc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943293"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137220"
 ---
 # <a name="icordebugprocess2getreferencevaluefromgchandle-method"></a>ICorDebugProcess2::GetReferenceValueFromGCHandle, méthode
 Obtient un pointeur de référence vers l’objet managé spécifié qui a un handle de garbage collection.  
@@ -38,7 +36,7 @@ HRESULT GetReferenceValueFromGCHandle (
   
 ## <a name="parameters"></a>Paramètres  
  `handle`  
- dans Pointeur vers un objet managé qui a un handle de garbage collection. Cette valeur est un <xref:System.IntPtr> objet et peut être récupérée <xref:System.Runtime.InteropServices.GCHandle> à partir de pour l’objet managé.  
+ dans Pointeur vers un objet managé qui a un handle de garbage collection. Cette valeur est un objet <xref:System.IntPtr> et peut être récupérée à partir de la <xref:System.Runtime.InteropServices.GCHandle> pour l’objet managé.  
   
  `pOutValue`  
  à Pointeur vers l’adresse d’un objet ICorDebugReferenceValue qui représente une référence à l’objet managé spécifié.  
@@ -49,13 +47,13 @@ HRESULT GetReferenceValueFromGCHandle (
  La référence retournée se comporte comme une référence normale. Elle est désactivée lorsque l’exécution du code se poursuit après un point d’arrêt. La durée de vie de l’objet cible n’est pas affectée par la durée de vie de la valeur de référence.  
   
 > [!NOTE]
-> La `GetReferenceValueFromGCHandle` méthode ne valide pas le handle. Par conséquent, `GetReferenceValueFromGCHandle` la méthode peut potentiellement endommager le débogueur et le code en cours de débogage si un handle non valide est passé.  
+> La méthode `GetReferenceValueFromGCHandle` ne valide pas le handle. Par conséquent, la méthode `GetReferenceValueFromGCHandle` peut potentiellement endommager le débogueur et le code en cours de débogage si un handle non valide est passé.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

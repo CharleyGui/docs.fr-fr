@@ -8,14 +8,12 @@ helpviewer_keywords:
 - strings, interop marshaling
 - interop marshaling, strings
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d39d4dfd5413b95300b70f27437bd27ca2d67a20
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
-ms.translationtype: HT
+ms.openlocfilehash: 49f2d871a42db484e20f0bfc35634a0e8b959c2e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452385"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123549"
 ---
 # <a name="default-marshaling-for-strings"></a>Marshaling par défaut pour les chaînes
 
@@ -29,7 +27,7 @@ Le tableau suivant montre les options de marshaling pour le type de données Str
 
 |Type d'énumération|Description du format non managé|
 |----------------------|-------------------------------------|
-|`UnmanagedType.BStr` (valeur par défaut)|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
+|`UnmanagedType.BStr` (par défaut)|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
 |`UnmanagedType.LPStr`|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|
 
@@ -90,7 +88,7 @@ Le tableau suivant répertorie les options de marshaling pour les chaînes quand
 |----------------------|-------------------------------------|
 |`UnmanagedType.AnsiBStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères ANSI.|
 |`UnmanagedType.BStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
-|`UnmanagedType.LPStr` (valeur par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
+|`UnmanagedType.LPStr` (par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPTStr`|Pointeur vers un tableau de caractères dépendant de la plateforme se terminant par un caractère Null.|
 |`UnmanagedType.LPUTF8Str`|Pointeur vers un tableau de caractères encodés UTF-8 terminé par un caractère null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|
@@ -147,7 +145,7 @@ Les chaînes sont des membres valides de structures. Toutefois, les mémoires ta
 |Type d'énumération|Description du format non managé|
 |----------------------|-------------------------------------|
 |`UnmanagedType.BStr`|`BSTR` de style COM avec une longueur prédéfinie et des caractères Unicode.|
-|`UnmanagedType.LPStr` (valeur par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
+|`UnmanagedType.LPStr` (par défaut)|Pointeur vers un tableau de caractères ANSI terminé par un caractère Null.|
 |`UnmanagedType.LPTStr`|Pointeur vers un tableau de caractères dépendant de la plateforme se terminant par un caractère Null.|
 |`UnmanagedType.LPUTF8Str`|Pointeur vers un tableau de caractères encodés UTF-8 terminé par un caractère null.|
 |`UnmanagedType.LPWStr`|Pointeur vers un tableau de caractères Unicode terminé par un caractère null.|

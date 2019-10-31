@@ -11,17 +11,15 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 64f3f2bb54bd454ef037da2f7e10dd9067bf2217
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: ede34231bd7fb3ffbd735a06fd4eec4a56657a9f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045597"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129954"
 ---
 # <a name="resources-in-net-apps"></a>Ressources dans les applications .NET
-Presque toutes les applications d'une qualité de niveau "production" doivent utiliser des ressources. Une ressource est une donnée non exécutable qui est déployée logiquement avec une application. Une ressource peut être affichée dans une application sous la forme de messages d'erreur ou comme faisant partie de l'interface utilisateur. Les ressources peuvent contenir des données sous plusieurs formes, telles que des chaînes, des images et des objets rendus persistants. (Pour écrire des objets persistants dans un fichier de ressources, les objets doivent être sérialisables.) Le stockage de vos données dans un fichier de ressources vous permet de changer les données sans avoir à recompiler l'intégralité de votre application. Il vous permet également de stocker des données dans un emplacement unique, et élimine la nécessité d'avoir recours à des données codées en dur stockées dans plusieurs emplacements.  
+Presque toutes les applications d'une qualité de niveau "production" doivent utiliser des ressources. Une ressource est une donnée non exécutable qui est déployée logiquement avec une application. Une ressource peut être affichée dans une application sous la forme de messages d'erreur ou comme faisant partie de l'interface utilisateur. Les ressources peuvent contenir des données sous plusieurs formes, telles que des chaînes, des images et des objets rendus persistants. (Pour écrire des objets persistants dans un fichier de ressources, les objets doivent être sérialisables.) Le stockage de vos données dans un fichier de ressources vous permet de modifier les données sans avoir à recompiler l’intégralité de votre application. Il vous permet également de stocker des données dans un emplacement unique, et élimine la nécessité d'avoir recours à des données codées en dur stockées dans plusieurs emplacements.  
   
  Le .NET Framework et .NET Core fournissent une prise en charge complète de la création et de la localisation des ressources. De plus, .NET prend en charge un modèle simple pour la compression et le déploiement de ressources localisées.  
   
@@ -51,7 +49,7 @@ Vous pouvez également localiser les ressources de votre application pour des cu
   
  Pour plus d'informations sur la façon dont la culture d'interface utilisateur actuelle est définie, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>.  
   
- Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. Elles incluent notamment :  
+ Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources, l’espace de noms <xref:System.Resources?displayProperty=nameWithType> contient des types supplémentaires que vous pouvez utiliser pour récupérer des ressources. Elles incluent notamment les suivantes :  
   
 - La classe <xref:System.Resources.ResourceReader>, qui vous permet d'énumérer des ressources incorporées dans un assembly ou stockées dans un fichier .resources binaire. C'est utile lorsque vous ne connaissez pas les noms exacts des ressources disponibles au moment de l'exécution.  
   

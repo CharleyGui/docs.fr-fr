@@ -15,14 +15,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: db9571a2d07bcdf9830ef93cd07a5dae912f4677
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e1a21175bcabc72b86a328d4f73ecec37140c304
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051706"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107598"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Importation d'une bibliothèque de types sous la forme d'un assembly
 
@@ -30,9 +28,9 @@ Les définitions des types COM résident généralement dans une bibliothèque d
 
 Il existe deux façons de mettre ces informations de type à la disposition de votre application :
 
-- En utilisant des assemblys d’interopérabilité au moment du design : à compter de .NET Framework 4, vous pouvez demander au compilateur d’incorporer les informations de type à partir de l’assembly d’interopérabilité dans votre fichier exécutable. Le compilateur incorpore uniquement les informations de type que votre application utilise. Vous n’avez pas à déployer l’assembly d’interopérabilité avec votre application. Il s'agit de la technique recommandée.
+- À l’aide des assemblys d’interopérabilité au moment du design : à partir du .NET Framework 4, vous pouvez indiquer au compilateur d’incorporer les informations de type de l’assembly d’interopérabilité dans votre fichier exécutable. Le compilateur incorpore uniquement les informations de type que votre application utilise. Vous n’avez pas à déployer l’assembly d’interopérabilité avec votre application. Il s'agit de la technique recommandée.
 
-- En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA (Primary Interop Assembly), consultez [Assemblys PIA (Primary Interop Assembly)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
+- En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA, consultez [Assemblys PIA (Primary Interop Assembly)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).
 
 Quand vous utilisez des assemblys d’interopérabilité au moment du design, vous pouvez incorporer les informations de type de l’assembly PIA publié par l’auteur du composant COM. Toutefois, vous n’avez pas à déployer l’assembly PIA avec votre application.
 
@@ -46,7 +44,7 @@ Une fois que vous avez trouvé la bibliothèque de types qui contient l’implé
 
 - Visual Studio
 
-  Visual Studio convertit automatiquement des types COM dans une bibliothèque de types en métadonnées dans un assembly. Pour obtenir des instructions, consultez [Guide pratique pour ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md).
+  Visual Studio convertit automatiquement des types COM dans une bibliothèque de types en métadonnées dans un assembly. Pour obtenir des instructions, consultez [Comment : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md).
 
 - [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
 
@@ -82,5 +80,5 @@ Une fois que vous avez trouvé la bibliothèque de types qui contient l’implé
 - [Utilisation de types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Compilation d'un projet d'interopérabilité](compiling-an-interop-project.md)
 - [Déploiement d'une application d'interopérabilité](deploying-an-interop-application.md)
-- [Guide pratique : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md)
-- [Guide pratique pour générer des assemblys d’interopérabilité à partir de bibliothèques de types](how-to-generate-interop-assemblies-from-type-libraries.md)
+- [Comment : ajouter des références aux bibliothèques de types](how-to-add-references-to-type-libraries.md)
+- [Comment : générer des assemblys d'interopérabilité à partir de bibliothèques de types](how-to-generate-interop-assemblies-from-type-libraries.md)

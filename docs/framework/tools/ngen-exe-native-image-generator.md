@@ -18,14 +18,12 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5079f0243faefaab6ada23cc98f5214a616c1d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e6c4baae854e5997b153e1363ca8ed4204e10e2b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044361"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73085206"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -80,7 +78,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |Action|Description|
 |------------|-----------------|
 |`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|Générer des images natives pour un assembly et ses dépendances et installer les images dans le cache des images natives.<br /><br /> Si `/queue` est spécifié, l'action est mise en file d'attente pour le service d'images natives. La priorité par défaut est 3. Consultez le tableau [Niveaux de priorité](#PriorityTable).|
-|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À compter de .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
+|`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À partir du .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
 |`update` [`/queue`]|Mettre à jour des images natives qui sont devenues non valides.<br /><br /> Si `/queue` est spécifié, les mises à jour sont mises en file d'attente pour le service d'images natives. Les mises à jour sont toujours planifiées à la priorité 3, de sorte qu'elles s'exécutent lorsque l'ordinateur est inactif.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Afficher l'état des images natives pour un assembly et ses dépendances.<br /><br /> Si aucun argument n’est fourni, tout dans le cache des images natives est affiché.|
 |`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> ou<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
@@ -92,7 +90,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 
 |Argument|Description|
 |--------------|-----------------|
-|`assemblyName`|Nom complet de l'assembly. Par exemple, `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`. **Remarque :**  Vous pouvez fournir un nom d'assembly partiel, tel que `myAssembly`, pour les actions `display` et `uninstall`. <br /><br /> Un seul assembly peut être spécifié par la ligne de commande Ngen.exe.|
+|`assemblyName`|Nom complet de l'assembly. Par exemple, `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`. **Remarque :** Vous pouvez fournir un nom d'assembly partiel, comme `myAssembly`, pour les actions `display` et `uninstall`. <br /><br /> Un seul assembly peut être spécifié par la ligne de commande Ngen.exe.|
 |`assemblyPath`|Chemin d’accès explicite de l’assembly. Vous pouvez spécifier un chemin d'accès complet ou relatif.<br /><br /> Si vous spécifiez un nom de fichier sans chemin d'accès, l'assembly doit se trouver dans le répertoire actif.<br /><br /> Un seul assembly peut être spécifié par la ligne de commande Ngen.exe.|
 
 <a name="PriorityTable"></a>
@@ -132,7 +130,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |------------|-----------------|
 |`/nologo`|Supprimer l'affichage de la bannière de démarrage Microsoft.|
 |`/silent`|Supprimer l'affichage des messages d'opération réussie.|
-|`/verbose`|Afficher des informations détaillées sur le débogage. **Remarque :**  En raison des limitations du système d’exploitation, cette option n’affiche pas autant d’informations supplémentaires sur Windows 98 et sur Windows Millennium.|
+|`/verbose`|Afficher des informations détaillées sur le débogage. **Remarque :** En raison des limitations du système d'exploitation, cette option n'affiche pas autant d'informations supplémentaires sur Windows 98 et Windows Millennium.|
 |`/help`, `/?`|Afficher la syntaxe de commande et les options de la version actuelle.|
 
 ## <a name="remarks"></a>Notes
@@ -190,7 +188,7 @@ Dans cette section Notes :
 
   - [Images non valides](#InvalidImages)
 
-- [Dépannage](#Troubleshooting)
+- [Résolution des problèmes](#Troubleshooting)
 
   - [Visionneuse du journal de liaison d’assembly](#Fusion)
 
@@ -463,7 +461,7 @@ Pour désinstaller une dépendance, utilisez les mêmes options de ligne de comm
 ngen uninstall c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe
 ```
 
-Pour créer une image native d'un assembly dans le Global Assembly Cache, utilisez le nom complet de l'assembly. Par exemple :
+Pour créer une image native d'un assembly dans le Global Assembly Cache, utilisez le nom complet de l'assembly. Exemple :
 
 ```console
 ngen install "ClientApp, Version=1.0.0.0, Culture=neutral,
@@ -562,7 +560,7 @@ Pour obtenir des exemples liés au service d'images natives, consultez [Service 
 
 ## <a name="native-image-task"></a>Tâche d’image native
 
-La tâche d'image native est une tâche Windows qui génère et conserve des images natives. La tâche d’image native génère et libère les images natives automatiquement pour les scénarios pris en charge. Elle permet aussi aux programmes d'installation d'utiliser [Ngen.exe (Générateur d'images natives)](ngen-exe-native-image-generator.md) pour créer et mettre à jour des images natives à un moment différé.
+La tâche d'image native est une tâche Windows qui génère et conserve des images natives. La tâche d’image native génère et libère les images natives automatiquement pour les scénarios pris en charge. Il permet également aux programmes d’installation d’utiliser [Ngen. exe (générateur d’images natives)](ngen-exe-native-image-generator.md) pour créer et mettre à jour des images natives à un moment différé.
 
 La tâche d’image native est enregistrée une seule fois pour chaque architecture de processeur prise en charge sur un ordinateur, pour permettre la compilation des applications qui ciblent chaque architecture :
 

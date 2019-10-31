@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9c0f4836a3dc848b52ee7fe6947f350e6fab787f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c5199794098e4d83588728eeb165aee5f81fe4c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737563"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088503"
 ---
 # <a name="icordebugarrayvaluegetdimensions-method"></a>ICorDebugArrayValue::GetDimensions, méthode
 Obtient le nombre d’éléments dans chaque dimension de ce tableau.  
@@ -39,14 +37,14 @@ HRESULT GetDimensions (
   
 ## <a name="parameters"></a>Paramètres  
  `cdim`  
- [in] Le nombre de dimensions de cet objet ICorDebugArrayValue.  
+ dans Nombre de dimensions de cet objet ICorDebugArrayValue.  
   
- Cette valeur est également la taille de la `dims` tableau car sa taille est égale au nombre de dimensions de la `ICorDebugArrayValue` objet.  
+ Cette valeur est également la taille du tableau de `dims`, car sa taille est égale au nombre de dimensions de l’objet `ICorDebugArrayValue`.  
   
  `dims`  
- [out] Tableau d’entiers, chacun d’eux spécifie le nombre d’éléments dans une dimension dans ce `ICorDebugArrayValue` objet.  
+ à Tableau d’entiers, chacun spécifiant le nombre d’éléments d’une dimension dans cet objet `ICorDebugArrayValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

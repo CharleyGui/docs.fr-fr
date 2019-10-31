@@ -12,14 +12,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ca2dfcfbb5407be2727343a5b3a5b429af83ae20
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 3e1dfe8373145286b03e503f038e267ff0d4c4f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634585"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091732"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Compilation et réutilisation dans les expressions régulières
 Vous pouvez optimiser les performances des applications qui utilisent très souvent des expressions régulières en comprenant comment le moteur d’expression régulière compile les expressions et comment les expressions régulières sont mises en cache. Cette rubrique décrit la compilation et la mise en cache.  
@@ -34,7 +32,7 @@ Toutefois, le MSIL généré ne peut pas être déchargé. La seule façon de d�
  Vous devez veiller à limiter le nombre d’expressions régulières différentes que vous compilez avec l’option <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> pour éviter de consommer trop de ressources. Si une application doit utiliser un nombre important ou illimité d’expressions régulières, chaque expression doit être interprétée, et non compilée. Toutefois, si un petit nombre d’expressions régulières est utilisé à plusieurs reprises, elles doivent être compilées avec l’option <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> pour de meilleures performances. Une alternative serait d’utiliser des expressions régulières précompilées. Vous pouvez compiler l’ensemble de vos expressions dans une DLL réutilisable à l’aide de la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A>. Cela évite d’avoir à compiler au moment de l’exécution tout en continuant à tirer parti de la rapidité des expressions régulières compilées.  
   
 ## <a name="the-regular-expressions-cache"></a>Cache des expressions régulières  
- Pour améliorer les performances, le moteur d’expression régulière gère un cache à l’échelle de l’application des expressions régulières compilées. Ce cache stocke les modèles d’expression régulière utilisés uniquement dans les appels de méthode statique. (Les modèles d’expression régulière fournis aux méthodes d’instance ne sont pas mis en cache.) Ainsi, la nécessité de réanalyser une expression en code d’octet principal à chacune de ses utilisations est évité.  
+ Pour améliorer les performances, le moteur d’expression régulière gère un cache à l’échelle de l’application des expressions régulières compilées. Ce cache stocke les modèles d’expression régulière utilisés uniquement dans les appels de méthode statique. (Les modèles d’expression régulière fournis aux méthodes d’instance ne sont pas mis en cache.) Cela évite de devoir réanalyser une expression en code d’octet de haut niveau chaque fois qu’elle est utilisée.  
   
  Le nombre maximal d’expressions régulières mises en cache est déterminé par la valeur de la propriété <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType> `static` (`Shared` en Visual Basic). Par défaut, le moteur d’expression régulière met en cache jusqu’à 15 expressions régulières compilées. Si le nombre d’expressions régulières compilées dépasse la taille du cache, l’expression régulière la plus anciennement utilisée est ignorée et la nouvelle expression régulière est mise en cache.  
   

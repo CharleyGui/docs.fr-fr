@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e50480a-8ada-4044-b2a5-97bb14ed3525
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 87cdf61cfcd0aee661edf9e7d0c053c858f9d854
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 798bb0585bfe4cc29afba2fbefae818301704613
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748182"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135193"
 ---
 # <a name="iclrstrongnamegethashfromfile-method"></a>Méthode ICLRStrongName::GetHashFromFile
 Génère un hachage sur le contenu du fichier spécifié.  
@@ -41,32 +39,32 @@ HRESULT GetHashFromFile (
   
 ## <a name="parameters"></a>Paramètres  
  `szFilePath`  
- [in] Le nom du fichier à hacher.  
+ dans Nom du fichier à hacher.  
   
  `piHashAlg`  
- [in, out] L’algorithme à utiliser lors de la génération du hachage. Les algorithmes valides sont ceux définis par l’interface CryptoAPI Win32. Si `piHashAlg` est définie sur 0, l’algorithme par défaut CALG_SHA-1 est utilisé.  
+ [in, out] Algorithme à utiliser lors de la génération du hachage. Les algorithmes valides sont ceux définis par l’CryptoAPI Win32. Si `piHashAlg` a la valeur 0, l’algorithme par défaut CALG_SHA-1 est utilisé.  
   
  `pbHash`  
- [out] Tableau d’octets contenant le hachage généré.  
+ à Tableau d’octets contenant le hachage généré.  
   
  `cchHash`  
- [in] La taille maximale de la mémoire tampon qui `pbHash` pointe vers.  
+ dans Taille maximale de la mémoire tampon vers laquelle `pbHash` pointe.  
   
  `pchHash`  
- [out] La taille, en octets, de retourné `pbHash`.  
+ à Taille, en octets, de la `pbHash`retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` Si la méthode a réussi ; Sinon, une valeur HRESULT qui indique un échec (consultez [valeurs HRESULT courantes](https://go.microsoft.com/fwlink/?LinkId=213878) pour obtenir la liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est identique à la [ICLRStrongName::GetHashFromFileW](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md) , à ceci près que le nom du fichier spécification est ANSI au lieu d’Unicode.  
+ Cette méthode est la même que la méthode [ICLRStrongName :: GetHashFromFileW (](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md) , à ceci près que la spécification de nom de fichier est ANSI au lieu de Unicode.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

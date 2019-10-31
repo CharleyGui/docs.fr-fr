@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b1fb356c-72cf-4aa4-8376-f291a6d97c01
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 266e2d92ea3c21a9df28bda18a5d0f32e5a32090
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fdca03b781e07b709cbc54e673dbaa2a1130fbe3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748091"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135148"
 ---
 # <a name="iclrstrongnamestrongnamecompareassemblies-method"></a>Méthode ICLRStrongName::StrongNameCompareAssemblies
 Détermine si deux assemblys diffèrent uniquement par leurs signatures avec nom fort.  
@@ -39,34 +37,34 @@ HRESULT StrongNameCompareAssemblies (
   
 ## <a name="parameters"></a>Paramètres  
  `wszAssembly1`  
- [in] Le chemin d’accès à l’assembly en premier.  
+ dans Chemin d’accès au premier assembly.  
   
  `wszAssembly2`  
- [in] Le chemin d’accès au deuxième assembly.  
+ dans Chemin d’accès au deuxième assembly.  
   
  `pdwResult`  
- [out] Une des valeurs suivantes :  
+ à L’une des valeurs suivantes :  
   
-- `SN_CMP_DIFFERENT` (0) : Spécifie que les assemblys contiennent des données différentes.  
+- `SN_CMP_DIFFERENT` (0) : spécifie que les assemblys contiennent des données différentes.  
   
-- `SN_CMP_IDENTICAL` (1) - Spécifie que les assemblys sont exactement identiques, y compris leurs signatures et la somme de contrôle.  
+- `SN_CMP_IDENTICAL` (1) : spécifie que les assemblys sont exactement les mêmes, y compris leurs signatures et leur somme de contrôle.  
   
-- `SN_CMP_SIGONLY` (2) : Spécifie que les assemblys diffèrent uniquement par la signature et la somme de contrôle.  
+- `SN_CMP_SIGONLY` (2) : spécifie que les assemblys diffèrent uniquement par la signature et la somme de contrôle.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` Si la méthode a réussi ; Sinon, une valeur HRESULT qui indique un échec (consultez [valeurs HRESULT courantes](https://go.microsoft.com/fwlink/?LinkId=213878) pour obtenir la liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="remarks"></a>Notes  
- La signature de nom fort d’un assembly se compose du nom de texte, version, culture et jeton de clé publique de l’assembly.  
+ La signature de nom fort d’un assembly se compose du nom de texte, de la version, de la culture et du jeton de clé publique de l’assembly.  
   
 ## <a name="see-also"></a>Voir aussi
 

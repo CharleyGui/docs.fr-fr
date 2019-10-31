@@ -1,16 +1,14 @@
 ---
 title: Déploiement d’applications .NET Core
 description: Découvrez les différentes façons de déployer une application .NET Core.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6f88659fcef49eba9344d3c4b2f0245b4072d7ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: fd15d41065b0a6ecb1a0bf04a0f0ab292a0a5fb7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613369"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73089193"
 ---
 # <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
 
@@ -48,7 +46,7 @@ Il existe également quelques inconvénients :
 
 Pour un déploiement autonome, vous déployez votre application et les dépendances tierces requises, ainsi que la version de .NET Core utilisée pour générer l’application. La création d’un déploiement autonome n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) sur les différentes plateformes. Ces services doivent donc être présents avant l’exécution de l’application. Pour plus d’informations sur la liaison de version lors de l’exécution, consultez l’article sur la [liaison de version dans .NET Core](../versions/selection.md).
 
-À compter du SDK (version 2.1.300) de NET Core 2.1, .NET Core prend en charge la *restauration par progression d’une version de correctif*. Lorsque vous créez un déploiement autonome, les outils .NET Core incluent automatiquement le dernier runtime pris en charge de la version .NET Core que votre application cible. (Le dernier runtime pris en charge inclut des correctifs de sécurité et d’autres correctifs de bogues.) Le runtime pris en charge ne doit pas nécessairement être présent sur votre système de génération. Il est automatiquement téléchargé à partir de NuGet.org. Pour plus d’informations, notamment des instructions sur la façon de refuser la restauration par progression d’une version de correctif, consultez [Restaurer par progression un runtime à déploiement autonome](runtime-patch-selection.md).
+À compter du SDK (version 2.1.300) de NET Core 2.1, .NET Core prend en charge la *restauration par progression d’une version de correctif*. Lorsque vous créez un déploiement autonome, les outils .NET Core incluent automatiquement le dernier runtime pris en charge de la version .NET Core que votre application cible. (Le dernier Runtime desservi comprend des correctifs de sécurité et d’autres correctifs de bogues.) Le runtime desservi n’a pas besoin d’être présent sur votre système de génération ; elle est téléchargée automatiquement à partir de NuGet.org. Pour plus d’informations, notamment des instructions sur la façon de refuser la restauration par progression de la version corrective, consultez [restauration par progression du runtime de déploiement autonome](runtime-patch-selection.md).
 
 Les déploiements dépendant de l’infrastructure (FDD) et les déploiements autonomes (SCD) utilisent des exécutables d’hôte distincts : vous pouvez donc signer un exécutable d’hôte pour un déploiement SCD avec votre signature de publieur.
 

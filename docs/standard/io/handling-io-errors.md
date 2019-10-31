@@ -8,29 +8,27 @@ dev_langs:
 helpviewer_keywords:
 - I/O, exception handling
 - I/O, errors
-author: rpetrusha
-ms.author: ronpet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d2ff4e69596e721f485d107317f261231615c5a6
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: HT
+ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126873"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120739"
 ---
 # <a name="handling-io-errors-in-net"></a>Gestion des erreurs E/S dans .NET
 
 Outre les exceptions qui peuvent être levées dans n’importe quel appel de méthode (comme <xref:System.OutOfMemoryException> lorsqu’un système est sous contrainte ou <xref:System.NullReferenceException> en raison d’erreurs de programmation), les méthodes du système de fichiers .NET peuvent lever les exceptions suivantes :
 
 - <xref:System.IO.IOException?displayProperty=nameWithType>, la classe de base de tous les types d’exceptions <xref:System.IO>. Elle est levée pour les erreurs dont les codes d’erreur à partir du système d’exploitation ne sont pas directement mappés vers un autre type d’exception.
-- <xref:System.IO.FileNotFoundException?displayProperty=nameWithType>.
-- <xref:System.IO.DirectoryNotFoundException?displayProperty=nameWithType>.
-- <xref:System.IO.DriveNotFoundException??displayProperty=nameWithType>.
-- <xref:System.IO.PathTooLongException?displayProperty=nameWithType>.
-- <xref:System.OperationCanceledException?displayProperty=nameWithType>.
-- <xref:System.UnauthorizedAccessException?displayProperty=nameWithType>.
+- <xref:System.IO.FileNotFoundException?displayProperty=nameWithType>.,
+- <xref:System.IO.DirectoryNotFoundException?displayProperty=nameWithType>.,
+- <xref:System.IO.DriveNotFoundException??displayProperty=nameWithType>.,
+- <xref:System.IO.PathTooLongException?displayProperty=nameWithType>.,
+- <xref:System.OperationCanceledException?displayProperty=nameWithType>.,
+- <xref:System.UnauthorizedAccessException?displayProperty=nameWithType>.,
 - <xref:System.ArgumentException?displayProperty=nameWithType>, qui est levée pour les caractères de chemin non valides sur le .NET Framework et .NET Core 2.0 et les versions précédentes.
 - <xref:System.NotSupportedException?displayProperty=nameWithType>, qui est levée pour les deux-points non valides dans le .NET Framework.
 - <xref:System.Security.SecurityException?displayProperty=nameWithType>, qui est levée pour les applications exécutées en mode de confiance limitée et qui ne disposent pas des autorisations nécessaires sur le .NET Framework uniquement. (La confiance totale est la valeur par défaut sur le .NET Framework.)

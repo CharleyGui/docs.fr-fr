@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 436683ef-9849-4b24-89a9-28c06d148dce
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fcdcb8d70e04430ac09c78f0ef0ce1d95358db53
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 954043414b7cdbbf701f34375372f91dd68a359c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922003"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102719"
 ---
 # <a name="iobjecthandle-interface"></a>IObjectHandle, interface
 Fournit une méthode pour désencapsuler les objets marshalés par valeur à partir de l’indirection.  
@@ -30,14 +28,14 @@ Fournit une méthode pour désencapsuler les objets marshalés par valeur à par
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Unwrap, méthode](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|Désencapsule un objet marshalé par valeur à partir de l’indirection.|  
+|[Unwrap, méthode](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|Désencapsule un objet marshalé-par-valeur à partir de l’indirection.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

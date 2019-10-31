@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 440bad90-5a88-45e7-9157-4596801d8d19
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a5d44f9b5dc42147959d3f1d127a64d39258f515
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 71836108dbd0ce01a64b4d9ac773c28d385dfd7c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274261"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099688"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance, fonction
 Crée un objet d’interface pour l’élément cible spécifié.  
@@ -48,14 +46,14 @@ HRESULT CLRDataCreateInstance (
  à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
 ## <a name="remarks"></a>Notes  
- L' `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
+ L’objet `ICLRDataTarget` est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl  
+ **En-tête :** ClrData. idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

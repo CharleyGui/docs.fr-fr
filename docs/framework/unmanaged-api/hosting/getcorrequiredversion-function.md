@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 1588fe7b-c378-4f4b-9c4b-48647f1119cc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8597b68b75d2b5f77f68fc13c3fb78bfdae46178
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 661eb758e1651901bb56810640a68f0de0b4e851
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736291"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136478"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion, fonction
-Obtient le numéro de version de runtime (CLR) de langage commun requis.  
+Obtient le numéro de version du common language runtime (CLR) requis.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +38,20 @@ HRESULT GetCORRequiredVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `pbuffer`  
- [out] Une mémoire tampon qui contient une chaîne qui spécifie le numéro de version.  
+ à Mémoire tampon contenant une chaîne qui spécifie le numéro de version.  
   
  `cchBuffer`  
- [in] La taille, en octets, de la mémoire tampon.  
+ dans Taille, en octets, de la mémoire tampon.  
   
  `dwLength`  
- [out] Le nombre d’octets retournés dans la mémoire tampon.  
+ à Nombre d’octets retournés dans la mémoire tampon.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
