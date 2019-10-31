@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 235b93f4176858372a83331730ddea8b97179cc8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f28a4b4acd9d6050d33b9824aa49a9b9041b59b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738370"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73111246"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata, méthode
-Appelé par les services d’accès aux données du common language runtime (CLR) pour récupérer les métadonnées d’une image.  
+Appelée par les services d’accès aux données common language runtime (CLR) pour récupérer les métadonnées d’une image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,39 +44,39 @@ HRESULT GetMetadata(
   
 ## <a name="parameters"></a>Paramètres  
  `imagePath`  
- [in] Chaîne qui spécifie le chemin d’accès du fichier image.  
+ dans Chaîne qui spécifie le chemin d’accès du fichier image.  
   
  `imageTimestamp`  
- [in] L’horodatage du fichier image.  
+ dans Horodatage du fichier image.  
   
  `imageSize`  
- [in] La taille du fichier image.  
+ dans Taille du fichier image.  
   
  `mvid`  
- [in] L’identificateur global unique de l’image.  
+ dans Identificateur global unique de l’image.  
   
  `mdRva`  
- [in] L’adresse virtuelle relative (RVA) des métadonnées. L’adresse est par rapport à l’adresse de base d’image.  
+ dans Adresse virtuelle relative (RVA) des métadonnées. L’adresse est relative à l’adresse de base de l’image.  
   
  `flags`  
- [in] Réservé pour une utilisation ultérieure.  
+ dans Réservé pour une utilisation ultérieure.  
   
  `bufferSize`  
- [in] La taille de la mémoire tampon dans lequel placer les métadonnées.  
+ dans Taille de la mémoire tampon dans laquelle placer les métadonnées.  
   
  `buffer`  
- [out] La mémoire tampon dans lequel placer les métadonnées.  
+ à Mémoire tampon dans laquelle placer les métadonnées.  
   
  `dataSize`  
- [out] La taille des métadonnées qui sont retournée.  
+ à Taille des métadonnées retournées.  
   
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

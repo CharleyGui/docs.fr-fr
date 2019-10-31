@@ -9,14 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, platform invoke
 - DLL functions
 ms.assetid: 113646de-7ea0-4f0e-8df0-c46dab3e8733
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b842f44711d38a996b9d710dbe8bd369d30c5443
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 14589544e05f6c59f4f58f7723fef40e75af9823
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051881"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123717"
 ---
 # <a name="calling-a-dll-function"></a>Appel à une fonction DLL
 Même si l’appel à des fonctions DLL non managées est quasiment identique à l’appel à un autre code managé, certaines différences peuvent rendre les fonctions DLL déconcertantes au départ. Cette section présente des rubriques qui décrivent certaines questions relatives à des appels peu courants.  
@@ -30,7 +28,7 @@ Même si l’appel à des fonctions DLL non managées est quasiment identique à
  [Fonctions de rappel](callback-functions.md)  
  Fournit des informations de base sur les fonctions de rappel.  
   
- [Guide pratique pour implémenter des fonctions de rappel](how-to-implement-callback-functions.md)  
+ [Comment : implémenter des fonctions de rappel](how-to-implement-callback-functions.md)  
  Décrit comment implémenter des fonctions de rappel dans du code managé.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

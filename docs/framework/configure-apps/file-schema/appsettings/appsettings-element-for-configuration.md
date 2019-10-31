@@ -7,21 +7,21 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a64db49b521651ccff8b928720fe3273f8600b68
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6112d87afcca8b2f54508d03d3ea4c0781d7e475
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921322"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119267"
 ---
-# <a name="appsettings-element-for-configuration"></a>\<appSettings > élément pour \<la configuration >
+# <a name="appsettings-element-for-configuration"></a>\<élément > appSettings pour la configuration de \<
 
 Contient des paramètres d’application personnalisés. Il s’agit d’une section de configuration prédéfinie fournie par le .NET Framework.
 
 [ **\<configuration>** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings>**
+&nbsp;&nbsp; **\<appSettings >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,13 +35,13 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 
 |           | Description |
 | --------- | ----------- |
-| **fichier**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans les  **\<éléments Add >** ,  **\<Remove >** et  **\<Clear >** et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Notez que le runtime ignore l’attribut si le fichier spécifié est introuvable. |
+| **fichier**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans la **\<ajouter des >** , **\<supprimer >** , et **\<effacer** les éléments de > et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Notez que le runtime ignore l’attribut si le fichier spécifié est introuvable. |
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [élément de > de configuration  **\<** ](../configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [ **\<> de configuration** Appartient](../configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -53,11 +53,11 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 
 ## <a name="remarks"></a>Notes
 
-L’élément > appSettings stocke des informations de configuration d’application personnalisées, telles que des chaînes de connexion de base de données, des chemins de fichier, des URL de service Web XML ou d’autres informations de configuration personnalisée pour une application.  **\<** Les paires clé/valeur spécifiées dans l' <xref:System.Configuration.ConfigurationSettings>  **\<élément > appSettings** sont accessibles dans le code à l’aide de la classe.
+L’élément **\<appSettings >** stocke des informations de configuration d’application personnalisées, telles que des chaînes de connexion de base de données, des chemins d’accès aux fichiers, des URL de service Web XML ou d’autres informations de configuration personnalisée pour une application. Les paires clé/valeur spécifiées dans l’élément **\<appSettings >** sont accessibles dans le code à l’aide de la classe <xref:System.Configuration.ConfigurationSettings>.
 
-Vous pouvez utiliser l’attribut de **fichier** dans l'  **\<élément de > appSettings** des fichiers *Web. config* et de configuration de l’application. Cet attribut spécifie un fichier de configuration qui fournit des paramètres supplémentaires ou substitue les paramètres spécifiés dans l'  **\<élément > appSettings** . L’attribut de **fichier** peut être utilisé dans les scénarios de développement de l’équipe de contrôle de code source, par exemple lorsqu’un utilisateur souhaite remplacer les paramètres de projet spécifiés dans un fichier de configuration de l’application.
+Vous pouvez utiliser l’attribut **file** dans l’élément **\<appSettings >** des fichiers *Web. config* et de configuration de l’application. Cet attribut spécifie un fichier de configuration qui fournit des paramètres supplémentaires ou substitue les paramètres spécifiés dans l’élément **\<appSettings >** . L’attribut de **fichier** peut être utilisé dans les scénarios de développement de l’équipe de contrôle de code source, par exemple lorsqu’un utilisateur souhaite remplacer les paramètres de projet spécifiés dans un fichier de configuration de l’application.
 
-Les fichiers de configuration spécifiés par l’attribut **file** doivent avoir un nœud racine de  **\<appSettings >** plutôt que des  **\<> de configuration**.
+Les fichiers de configuration spécifiés par l’attribut **file** doivent avoir un nœud racine de **\<appSettings >** plutôt que **\<configuration >** .
 
 ## <a name="example"></a>Exemple
 

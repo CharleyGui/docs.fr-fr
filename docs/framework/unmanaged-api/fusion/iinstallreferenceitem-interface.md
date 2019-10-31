@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66df494d-1a2f-4441-8ee6-cfed0217b4e6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5187c20aaa4bd37401db3990e0f8a96a61e75418
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 016ded7b1393d6e03faa029ab5be661bf4ff4efd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796380"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131669"
 ---
 # <a name="iinstallreferenceitem-interface"></a>IInstallReferenceItem, interface
 Représente un élément installé dans le Global Assembly Cache.  
@@ -30,10 +28,10 @@ Représente un élément installé dans le Global Assembly Cache.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetReference, méthode](iinstallreferenceitem-getreference-method.md)|Obtient un pointeur vers la `FUSION_INSTALL_REFERENCE` structure représentée par ce `IInstallReferenceItem`.|  
+|[GetReference, méthode](iinstallreferenceitem-getreference-method.md)|Obtient un pointeur vers la structure `FUSION_INSTALL_REFERENCE` représentée par ce `IInstallReferenceItem`.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2b996b09ed3973125d4d848d5e00c18ab02a6967
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: 85098a0d10b4c05de52cd33d30ec5c4f4bbc594d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673741"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140004"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Pièges potentiels avec PLINQ
 
@@ -46,7 +44,7 @@ Dans ce cas, il est préférable de paralléliser uniquement la source de donné
 
 - Le système cible est connu pour avoir suffisamment de processeurs pour gérer le nombre de threads produits en parallélisant la requête sur `cust.Orders`.
 
-Dans tous les cas, le test et la mesure sont la meilleure façon de déterminer la forme de requête optimale. Pour plus d'informations, voir [Procédure : mesurer les performances de requêtes PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
+Dans tous les cas, le test et la mesure sont la meilleure façon de déterminer la forme de requête optimale. Pour plus d’informations, consultez [Comment : mesurer les performances des requêtes PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
 
 ## <a name="avoid-calls-to-non-thread-safe-methods"></a>Éviter de faire appel aux méthodes qui ne sont pas thread-safe
 
@@ -79,15 +77,15 @@ Bien que PLINQ exécute une requête sur plusieurs threads, si vous consommez le
 
 Le même problème s’applique à <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>. En d’autres termes, `source.AsParallel().Where().ForAll(...)` doit être privilégié par rapport à
 
-`Parallel.ForEach(source.AsParallel().Where(), ...)`.
+`Parallel.ForEach(source.AsParallel().Where(), ...)`.,
 
 ## <a name="be-aware-of-thread-affinity-issues"></a>Tenir compte des problèmes d’affinité de thread
 
-Certaines technologies, par exemple, les composants STA (Single-Threaded Apartment), Windows Forms et Windows Presentation Foundation (WPF) imposent des restrictions d’affinité de thread qui requièrent l’exécution de code sur un thread spécifique. Par exemple, dans Windows Forms et WPF, un contrôle est uniquement accessible sur le thread sur lequel il a été créé. Si vous essayez d’accéder à l’état partagé d’un contrôle Windows Forms dans une requête PLINQ, une exception est levée si vous exécutez dans le débogueur. (Ce paramètre peut être désactivé.) Cependant, si votre requête est consommée sur le thread d’interface utilisateur, vous pouvez accéder au contrôle à partir de la boucle `foreach` qui énumère les résultats de la requête, parce que ce code ne s’exécute que sur un thread.
+Certaines technologies, par exemple, les composants STA (Single-Threaded Apartment), Windows Forms et Windows Presentation Foundation (WPF) imposent des restrictions d’affinité de thread qui requièrent l’exécution de code sur un thread spécifique. Par exemple, dans Windows Forms et WPF, un contrôle est uniquement accessible sur le thread sur lequel il a été créé. Si vous essayez d’accéder à l’état partagé d’un contrôle Windows Forms dans une requête PLINQ, une exception est levée si vous exécutez dans le débogueur. (Ce paramètre peut être désactivé.) Toutefois, si votre requête est consommée sur le thread d’interface utilisateur, vous pouvez accéder au contrôle à partir de la `foreach` boucle qui énumère les résultats de la requête, car ce code s’exécute sur un seul thread.
 
 ## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Ne pas supposer que les itérations de ForEach, For et ForAll s’exécutent toujours en parallèle
 
-Il est important de garder à l’esprit que les itérations individuelles dans une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ou <xref:System.Linq.ParallelEnumerable.ForAll%2A> peuvent, mais ne doivent pas forcément, s’exécuter en parallèle. Par conséquent, vous devez éviter d’écrire du code dont l’exactitude dépend de l’exécution parallèle d’itérations ou de l’exécution d’itérations dans un ordre particulier.
+Il est important de garder à l’esprit que les itérations individuelles dans une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ou <xref:System.Linq.ParallelEnumerable.ForAll%2A> peuvent, mais ne doivent pas forcément s’exécuter en parallèle. Par conséquent, vous devez éviter d’écrire du code dont l’exactitude dépend de l’exécution parallèle d’itérations ou de l’exécution d’itérations dans un ordre particulier.
 
 Par exemple, ce code est susceptible d’interbloquer :
 

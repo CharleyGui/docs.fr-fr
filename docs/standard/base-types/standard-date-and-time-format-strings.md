@@ -14,14 +14,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c8a4c1c9450d624b6c4903f9f7978e931e74551c
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
-ms.translationtype: HT
+ms.openlocfilehash: b67b00fdb4a5c484c112cc2f3321ce2268d4dad7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133823"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121719"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d'heure standard
 
@@ -44,19 +42,19 @@ Les chaînes de format de date et d'heure standard peuvent être utilisées avec
 |----------------------|-----------------|--------------|
 |"d"|Modèle de date courte.<br /><br /> Informations supplémentaires :[Spécificateur de format de date courte ("d")](#ShortDate).|2009-06-15T13:45:30 -> 6/15/2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> 2009/06/15 (ja-JP)|
 |"D"|Modèle de date longue.<br /><br /> Informations supplémentaires :[Spécificateur de format de date longue ("D")](#LongDate).|2009-06-15T13:45:30 -> Monday, June 15, 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15 июня 2009 г. (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> Montag, 15. Juni 2009 (de-DE)|
-|"f"|Modèle de date/heure complet (heure courte).<br /><br /> Informations complémentaires : [Spécificateur de format de date complet et d’heure courte ("f")](#FullDateShortTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)|
-|"F"|Modèle de date/heure complet (heure longue).<br /><br /> Informations complémentaires : [Spécificateur de format de date complet et d’heure longue ("F")](#FullDateLongTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)|
-|"g"|Modèle de date/heure général (heure courte).<br /><br /> Informations complémentaires : [Spécificateur de format de date général et d’heure courte ("g")](#GeneralDateShortTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)|
-|"G"|Modèle de date/heure général (heure longue).<br /><br /> Informations complémentaires : [Spécificateur de format de date général et d’heure longue ("G")](#GeneralDateLongTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)|
-|"M", "m"|Modèle de mois/jour.<br /><br /> Informations complémentaires : [Spécificateur de format de mois ("M", "m")](#MonthDay).|2009-06-15T13:45:30 -> June 15 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> 15 Juni (id-ID)|
-|"O", "o"|Modèle de date/heure aller-retour.<br /><br /> Informations complémentaires : [Spécificateur de format aller-retour ("O", "o")](#Roundtrip).|Valeurs <xref:System.DateTime> :<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local) --> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) --> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified) --> 2009-06-15T13:45:30.0000000<br /><br /> Valeurs <xref:System.DateTimeOffset> :<br /><br /> 2009-06-15T13:45:30-07:00 --> 2009-06-15T13:45:30.0000000-07:00|
-|"R", "r"|Modèle RFC1123.<br /><br /> Informations complémentaires : [Spécificateur de format RFC1123 ("R", "r")](#RFC1123).|2009-06-15T13:45:30 -> Mon, 15 Jun 2009 20:45:30 GMT|
-|"s"|Modèle de date/heure pouvant être trié.<br /><br /> Informations complémentaires : [Spécificateur de format pouvant être trié ("s")](#Sortable).|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|
-|"t"|Modèle d’heure courte.<br /><br /> Informations complémentaires : [Spécificateur de format d’heure courte ("t")](#ShortTime).|2009-06-15T13:45:30 -> 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45 م (ar-EG)|
-|"T"|Modèle d’heure longue.<br /><br /> Informations complémentaires : [Spécificateur de format d’heure longue ("T")](#LongTime).|2009-06-15T13:45:30 -> 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)|
-|"u"|Modèle de date/heure universel pouvant être trié.<br /><br /> Informations complémentaires : [Spécificateur de format universel pouvant être trié ("u")](#UniversalSortable).|Avec une valeur <xref:System.DateTime> : 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z<br /><br /> Avec une valeur <xref:System.DateTimeOffset> : 2009-06-15T13:45:30 -> 2009-06-15 20:45:30Z|
-|"U"|Modèle de date/heure complet universel.<br /><br /> Informations complémentaires : [Spécificateur de format complet universel ("U")](#UniversalFull).|2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|
-|"Y", "y"|Modèle d’année/mois.<br /><br /> Informations complémentaires : [Spécificateur de format Année Mois ("Y")](#YearMonth).|2009-06-15T13:45:30 -> June, 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|
+|"f"|Modèle de date/heure complet (heure courte).<br /><br /> Informations supplémentaires : [Spécificateur de format de date complet et d’heure courte ("f")](#FullDateShortTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)|
+|"F"|Modèle de date/heure complet (heure longue).<br /><br /> Informations supplémentaires : [Spécificateur de format de date complet et d’heure longue ("F")](#FullDateLongTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)|
+|"g"|Modèle de date/heure général (heure courte).<br /><br /> Informations supplémentaires : [Spécificateur de format de date général et d'heure courte ("g")](#GeneralDateShortTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)|
+|"G"|Modèle de date/heure général (heure longue).<br /><br /> Informations supplémentaires : [Spécificateur de format de date général et d’heure longue ("G")](#GeneralDateLongTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)|
+|"M", "m"|Modèle de mois/jour.<br /><br /> Informations supplémentaires : [Spécificateur de format de mois ("M", "m)](#MonthDay).|2009-06-15T13:45:30 -> June 15 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> 15 Juni (id-ID)|
+|"O", "o"|Modèle de date/heure aller-retour.<br /><br /> Informations supplémentaires : [Spécificateur de format aller-retour ("O", "o"»)](#Roundtrip).|Valeurs <xref:System.DateTime> :<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local) --> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) --> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified) --> 2009-06-15T13:45:30.0000000<br /><br /> Valeurs <xref:System.DateTimeOffset> :<br /><br /> 2009-06-15T13:45:30-07:00 --> 2009-06-15T13:45:30.0000000-07:00|
+|"R", "r"|Modèle RFC1123.<br /><br /> Informations supplémentaires : [Spécificateur de format RFC1123 ("R", "r")](#RFC1123).|2009-06-15T13:45:30 -> Mon, 15 Jun 2009 20:45:30 GMT|
+|"s"|Modèle de date/heure pouvant être trié.<br /><br /> Informations supplémentaires : [Spécificateur de format pouvant être trié ("s")](#Sortable).|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|
+|"t"|Modèle d’heure courte.<br /><br /> Informations supplémentaires : [Spécificateur de format d’heure courte ("t")](#ShortTime).|2009-06-15T13:45:30 -> 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45 م (ar-EG)|
+|"T"|Modèle d’heure longue.<br /><br /> Informations supplémentaires : [Spécificateur de format d’heure longue ("T")](#LongTime).|2009-06-15T13:45:30 -> 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)|
+|"u"|Modèle de date/heure universel pouvant être trié.<br /><br /> Informations supplémentaires : [Spécificateur de format universel pouvant être trié ("u")](#UniversalSortable).|Avec une valeur <xref:System.DateTime> : 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z<br /><br /> Avec une valeur <xref:System.DateTimeOffset> : 2009-06-15T13:45:30 -> 2009-06-15 20:45:30Z|
+|"U"|Modèle de date/heure complet universel.<br /><br /> Informations supplémentaires : [Spécificateur de format complet universel ("U")](#UniversalFull).|2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|
+|"Y", "y"|Modèle d’année/mois.<br /><br /> Informations supplémentaires : [Spécificateur de format Année Mois ("Y")](#YearMonth).|2009-06-15T13:45:30 -> June, 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|
 |N'importe quel caractère|Spécificateur inconnu.|Lève un <xref:System.FormatException> runtime.|
 
 ## <a name="how-standard-format-strings-work"></a>Fonctionnement des chaînes de format standard
@@ -87,7 +85,7 @@ Dans certains cas, il est pratique d'utiliser la chaîne de format standard comm
 
 |Chaîne de format standard|Défini par la propriété DateTimeFormatInfo.InvariantInfo|Chaîne de format personnalisée|
 |----------------------------|----------------------------------------------------------|--------------------------|
-|"O" ou "o"|Aucun.|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
+|"O" ou "o"|aucune.|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
 |"R" ou "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|
@@ -277,7 +275,7 @@ Comme le spécificateur de format standard « O » ou « o » est conforme �
 
 Les chaînes transmises aux méthodes `Parse`, `TryParse`, `ParseExact`, et `TryParseExact` de <xref:System.DateTime> et <xref:System.DateTimeOffset> peuvent être analysées à l'aide du spécificateur de format "O" ou "o" si elles sont définies dans l'un de ces formats. Dans le cas des objets <xref:System.DateTime>, la surcharge d'analyse que vous appelez doit également inclure un paramètre `styles` avec une valeur de <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType>. Notez que si vous appelez une méthode d'analyse avec la chaîne de format personnalisée qui correspond au spécificateur de format "O" ou "o", vous n'obtenez pas les mêmes résultats que "O" ou "o". En effet, les méthodes d'analyse qui utilisent une chaîne de format personnalisée ne peuvent pas analyser la représentation sous forme de chaîne des valeurs de date et d'heure auxquelles fait défaut un composant de fuseau horaire ou qui recourent à "Z" pour indiquer l'heure UTC.
 
-L’exemple suivant utilise le spécificateur de format « o » pour afficher une série de valeurs <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
+L’exemple suivant utilise le spécificateur de format "o" pour afficher une série de valeurs de <xref:System.DateTime> et une valeur de <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
 
 [!code-csharp[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Standard#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/o1.vb#8)]
@@ -305,7 +303,7 @@ La chaîne de résultat est affectée par les propriétés suivantes de l'objet 
 
 Bien que la norme RFC 1123 exprime une heure au format de temps universel coordonné (UTC, Coordinated Universal Time), l'opération de mise en forme ne modifie pas la valeur de l'objet <xref:System.DateTime> qui est mis en forme. Par conséquent, vous devez convertir la valeur <xref:System.DateTime> en temps UTC en appelant la méthode <xref:System.DateTime.ToUniversalTime%2A?displayProperty=nameWithType> avant d'exécuter l'opération de mise en forme. En revanche, les valeurs <xref:System.DateTimeOffset> exécutent cette conversion automatiquement ; il n'est pas nécessaire d'appeler la méthode <xref:System.DateTimeOffset.ToUniversalTime%2A?displayProperty=nameWithType> avant l'opération de mise en forme.
 
-L’exemple suivant utilise le spécificateur de format « r » pour afficher une valeur <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
+L'exemple suivant utilise le spécificateur de format "r" pour afficher une valeur <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
 
 [!code-csharp-interactive[Formatting.DateAndTime.Standard#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#9)]
 [!code-vb[Formatting.DateAndTime.Standard#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#9)]
@@ -322,7 +320,7 @@ L'objectif du spécificateur de format "s" est de produire des chaînes de résu
 
 Lorsque ce spécificateur de format standard est utilisé, l'opération de mise en forme ou d'analyse utilise toujours la culture dite indifférente.
 
-L’exemple suivant utilise le spécificateur de format « s » pour afficher une valeur <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
+L'exemple suivant utilise le spécificateur de format "s" pour afficher une valeur <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).
 
 [!code-csharp-interactive[Formatting.DateAndTime.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/Standard1.cs#10)]
 [!code-vb[Formatting.DateAndTime.Standard#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/Standard1.vb#10)]
@@ -442,7 +440,7 @@ L'exemple suivant utilise le spécificateur de format "y" pour afficher une val
 
 Les paramètres de l'élément **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne résultante produite par une opération de mise en forme. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.DateTimeFormatInfo> associé à la culture du thread en cours qui fournit des valeurs utilisées pour indiquer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
+De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo>. Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
 
 ### <a name="datetimeformatinfo-properties"></a>Propriétés DateTimeFormatInfo
 
@@ -453,6 +451,6 @@ La mise en forme dépend des propriétés de l'objet <xref:System.Globalization.
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 42230928-2c33-41fd-9519-d96efef6c7af
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 58919936bdc62d52437f429146f04c66d49294b2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c0a43dc1640bdaa0ae104832eb4d1f8eb15b0392
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796584"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134332"
 ---
 # <a name="iassemblynamegetversion-method"></a>IAssemblyName::GetVersion, méthode
 Obtient les informations de version de l’assembly référencé par cet objet [IAssemblyName](iassemblyname-interface.md) .  
@@ -43,8 +41,8 @@ HRESULT GetVersion (
  `pdwVersionLow`  
  à Les 32 bits de version basse de la version.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

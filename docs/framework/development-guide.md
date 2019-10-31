@@ -4,14 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ebbf0b28da04e2e70dd2d0a9689b80fcdbeee4be
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: abc392116aec8ffd8aa94f46ef97887c48516ca0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779540"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122465"
 ---
 # <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
@@ -26,7 +24,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Applications clientes](develop-client-apps.md)  
  Explique comment créer des applications Windows à l'aide de WPF (Windows Presentation Foundation) ou de Windows Forms.  
   
- [Applications Web avec ASP.NET](develop-web-apps-with-aspnet.md)  
+ [Applications web avec ASP.NET](develop-web-apps-with-aspnet.md)  
  Fournit des liens vers les informations relatives à l'utilisation d'ASP.NET afin de générer des applications Web d'entreprise avec un minimum de codage.  
   
  [Applications orientées service avec WCF](./wcf/index.md)  
@@ -50,7 +48,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Compilation d'applications avec .NET Native](./net-native/index.md)  
  Explique comment utiliser la technologie de précompilation .NET Native pour générer et déployer des applications de Windows Store. .NET Native compile des applications qui sont écrites en code managé (C#) et qui ciblent .NET Framework sur le code natif.  
   
- [Sécurité](../standard/security/index.md)  
+ [Security](../standard/security/index.md)  
  Fournit des informations sur les classes et les services dans le .NET Framework qui facilitent le développement d'applications sécurisées.  
   
  [Débogage, traçage et profilage](./debug-trace-profile/index.md)  
@@ -62,15 +60,15 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Déploiement](./deployment/index.md)  
  Explique comment empaqueter et distribuer votre application .NET Framework, et inclut des guides de déploiement pour les développeurs et les administrateurs.  
   
- [Performances](./performance/index.md)  
+ [Performancess](./performance/index.md)  
  Fournit des informations sur la mise en cache, l'initialisation tardive, la fiabilité et les événements ETW (suivi d'événements Windows).  
  
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  [Bibliothèque de classes .NET Framework](/dotnet/api/?view=netframework-4.7)  
  Fournit la syntaxe, des exemples de code et les informations d’utilisation associées à chaque classe qui figure dans les espaces de noms .NET Framework.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Prise en main](./get-started/index.md)  
+ [Bien démarrer](./get-started/index.md)  
  Fournit une vue d'ensemble complète du .NET Framework et des liens vers des ressources supplémentaires.  
   
  [Nouveautés](./whats-new/index.md)  

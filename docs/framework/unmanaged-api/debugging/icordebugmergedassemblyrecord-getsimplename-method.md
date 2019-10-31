@@ -1,17 +1,15 @@
 ---
-title: ICorDebugMergedAssemblyRecord::GetSimpleName, méthode
+title: 'ICorDebugMergedAssemblyRecord :: getSimpleName,, méthode'
 ms.date: 03/30/2017
 ms.assetid: bc3410f6-ebca-4bca-9b45-fc38c74fa9cb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f3256a1a50b66be74561bfc992380669a4495dde
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 565e27b47f2454dec1e4c2b89ee46ac5279b08b7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939986"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130547"
 ---
-# <a name="icordebugmergedassemblyrecordgetsimplename-method"></a>ICorDebugMergedAssemblyRecord::GetSimpleName, méthode
+# <a name="icordebugmergedassemblyrecordgetsimplename-method"></a>ICorDebugMergedAssemblyRecord :: getSimpleName,, méthode
 Obtient le nom simple de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,12 +38,12 @@ HRESULT GetSimpleName(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

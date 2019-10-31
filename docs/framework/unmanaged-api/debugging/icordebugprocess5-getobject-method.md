@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8111502-5a20-447f-9dc2-76e8acd7ed5a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ec3dc37984228565b4a3fcc560d3857a1c1e46d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4d297023d96de83965c3d04ca9efe2613fd54d0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767333"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084445"
 ---
 # <a name="icordebugprocess5getobject-method"></a>ICorDebugProcess5::GetObject, méthode
-Convertit une adresse de l’objet à un objet « ICorDebugObjectValue ».  
+Convertit une adresse d’objet en objet « ICorDebugObjectValue ».  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +36,15 @@ HRESULT GetObject(
   
 ## <a name="parameters"></a>Paramètres  
  `addr`  
- [in] L’adresse de l’objet.  
+ dans Adresse de l’objet.  
   
  `ppObject`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugObjectValue ».  
+ à Pointeur vers l’adresse d’un objet « ICorDebugObjectValue ».  
   
 ## <a name="remarks"></a>Notes  
- Si `addr` ne pointe pas vers un objet managé valid, le `GetObject` retourne de la méthode `E_FAIL`.  
+ Si `addr` ne pointe pas vers un objet managé valide, la méthode `GetObject` retourne `E_FAIL`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

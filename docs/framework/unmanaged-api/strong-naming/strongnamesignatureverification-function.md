@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 933758dd-231e-4382-8819-242c0a13a4b7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8943df861b1bff2b28c68d0233fc336d1b5d4579
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7dd61be008ba08ca2b28ae3e7e8ff6326f8a41d9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798951"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129231"
 ---
 # <a name="strongnamesignatureverification-function"></a>StrongNameSignatureVerification, fonction
 Obtient une valeur indiquant si le manifeste d’assembly au chemin fourni contient une signature de nom fort, qui est vérifiée en fonction des indicateurs spécifiés.  
@@ -45,32 +43,32 @@ BOOLEAN StrongNameSignatureVerification (
  `dwInFlags`  
  dans Indicateurs permettant de modifier le comportement de vérification. Les valeurs suivantes sont prises en charge :  
   
-- `SN_INFLAG_FORCE_VER`(0x00000001) : force la vérification même s’il est nécessaire de remplacer les paramètres du Registre.  
+- `SN_INFLAG_FORCE_VER` (0x00000001) : force la vérification même s’il est nécessaire de remplacer les paramètres du Registre.  
   
-- `SN_INFLAG_INSTALL`(0x00000002) : spécifie qu’il s’agit de la première fois que le manifeste est vérifié.  
+- `SN_INFLAG_INSTALL` (0x00000002) : spécifie qu’il s’agit de la première fois que le manifeste est vérifié.  
   
-- `SN_INFLAG_ADMIN_ACCESS`(0x00000004) : spécifie que le cache autorise uniquement l’accès aux utilisateurs disposant de privilèges d’administrateur.  
+- `SN_INFLAG_ADMIN_ACCESS` (0x00000004) : spécifie que le cache autorise l’accès uniquement aux utilisateurs disposant de privilèges d’administrateur.  
   
-- `SN_INFLAG_USER_ACCESS`(0x00000008) : spécifie que l’assembly sera uniquement accessible à l’utilisateur actuel.  
+- `SN_INFLAG_USER_ACCESS` (0x00000008) : spécifie que l’assembly sera uniquement accessible à l’utilisateur actuel.  
   
-- `SN_INFLAG_ALL_ACCESS`(0x00000010) : spécifie que le cache ne fournit aucune garantie de restriction d’accès.  
+- `SN_INFLAG_ALL_ACCESS` (0x00000010) : spécifie que le cache ne fournit aucune garantie de restriction d’accès.  
   
-- `SN_INFLAG_RUNTIME`(0x80000000)-réservé au débogage interne.  
+- `SN_INFLAG_RUNTIME` (0x80000000)-réservé au débogage interne.  
   
  `pdwOutFlags`  
  à Indicateurs indiquant si la signature de nom fort a été vérifiée. La valeur suivante est prise en charge :  
   
-- `SN_OUTFLAG_WAS_VERIFIED`(0x00000001)-cette valeur est définie sur `false` pour spécifier que la vérification a réussi en raison des paramètres du Registre.  
+- `SN_OUTFLAG_WAS_VERIFIED` (0x00000001)-cette valeur est définie sur `false` pour spécifier que la vérification a réussi en raison des paramètres du Registre.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true`Si la vérification a réussi ; Sinon, `false`.  
+ `true` si la vérification a réussi ; Sinon, `false`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

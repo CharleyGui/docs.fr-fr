@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 57f274d55ba5723ce8e0b51a7a39e98e95855e28
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 27766c10d0624b5eda8256a3211662036a1b16b3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64653927"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139949"
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>Bibliothèque parallèle de tâches (TPL) et programmation asynchrone .NET Framework
 Le .NET Framework fournit les deux modèles standard suivants pour l’exécution d’opérations asynchrones liées aux E/S et orientées calculs :  
@@ -104,7 +102,7 @@ Le .NET Framework fournit les deux modèles standard suivants pour l’exécutio
  [!code-csharp[FromAsync#10](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/snippet10.cs#10)]
  [!code-vb[FromAsync#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/snippet10.vb#10)]  
   
- Pour obtenir un exemple plus complet incluant une gestion supplémentaire des exceptions et indiquant comment appeler la méthode depuis le code client, consultez [Guide pratique : Inclure dans un wrapper des modèles EAP dans une tâche](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md).  
+ Pour obtenir un exemple plus complet incluant une gestion supplémentaire des exceptions et indiquant comment appeler la méthode depuis le code client, consultez [Guide pratique pour exposer des modèles EAP dans une tâche](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md).  
   
  Souvenez-vous que toute tâche créée par un <xref:System.Threading.Tasks.TaskCompletionSource%601> sera lancée par ce TaskCompletionSource et que le code utilisateur ne doit donc pas appeler la méthode Start dans cette tâche.  
   

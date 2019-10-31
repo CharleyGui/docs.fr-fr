@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_EndEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2c5a817174ec4c4e4407c19bb1d6d2d852d86dd2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 82627fa416f71e123ed2c03bae4584e4433310eb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798320"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127292"
 ---
 # <a name="qualifierset_endenumeration-function"></a>QualifierSet_EndEnumeration fonction)
 Termine l’énumération commencée par un appel à la fonction [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) .  
@@ -49,7 +47,7 @@ dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli
 
 La valeur suivante retournée par cette fonction est définie dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez la définir en tant que constante dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
@@ -59,11 +57,11 @@ Cette fonction encapsule un appel à la méthode [IWbemQualifierSet :: EndEnume
 
 Cet appel est recommandé, mais pas obligatoire. Il libère immédiatement les ressources associées à l’énumération.
 
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
-**En-tête :** WMINet_Utils.idl  
+**En-tête :** WMINet_Utils. idl  
   
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

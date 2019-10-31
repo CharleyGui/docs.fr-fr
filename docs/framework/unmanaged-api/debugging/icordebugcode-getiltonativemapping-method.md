@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8ecd8c8-9627-4356-9c6f-bd05e24637c0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7c9e2bb9ef97326c3d11553b6cabd0de0fd6e495
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 011da6aacbf4c40420329952f47b1fabdfc2c1a3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747506"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125630"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping, méthode
-Obtient un tableau d’instances de « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent les mappages à partir de Microsoft intermediate language (MSIL) aux offsets natifs.  
+Obtient un tableau d’instances « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent des mappages de décalages MSIL (Microsoft Intermediate Language) aux offsets natifs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,17 +41,17 @@ HRESULT GetILToNativeMapping (
  [in] Taille du tableau `map`.  
   
  `pcMap`  
- [out] Un pointeur vers le nombre réel d’éléments retournés dans le `map` tableau.  
+ à Pointeur vers le nombre réel d’éléments retournés dans le tableau de `map`.  
   
  `map`  
- [out] Un tableau de `COR_DEBUG_IL_TO_NATIVE_MAP` structures, chacun d’eux représente un mappage d’un offset MSIL à un offset natif.  
+ à Tableau de `COR_DEBUG_IL_TO_NATIVE_MAP` structures, chacune représentant un mappage d’un offset MSIL à un offset natif.  
   
- Il n’existe aucun classement dans le tableau d’éléments retournés.  
+ Il n’y a aucun classement pour le tableau d’éléments retournés.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetILToNativeMapping` méthode retourne des résultats significatifs uniquement si cette instance de « ICorDebugCode » représente le code natif qui a été compilé à partir du code MSIL juste-à-temps (JIT).  
+ La méthode `GetILToNativeMapping` retourne des résultats significatifs uniquement si cette instance « ICorDebugCode » représente du code natif qui était compilé juste-à-temps (JIT) à partir du code MSIL.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -64,4 +62,4 @@ HRESULT GetILToNativeMapping (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugCode (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+- [ICorDebugCode, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)

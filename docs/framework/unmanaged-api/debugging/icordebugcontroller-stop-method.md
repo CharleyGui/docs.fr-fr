@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: c34e79be-a7fb-479e-8dec-d126a4c330e5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 363d8f7d8cf960fb23210225c4545f73d597d663
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c8c6b40f7a9c63a577140209eed65436040addcb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912845"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125387"
 ---
 # <a name="icordebugcontrollerstop-method"></a>ICorDebugController::Stop, méthode
 Exécute un arrêt coopératif sur tous les threads qui exécutent du code managé dans le processus.  
@@ -40,19 +38,19 @@ HRESULT Stop (
  Non utilisé.  
   
 ## <a name="remarks"></a>Notes  
- `Stop`exécute un arrêt coopératif sur tous les threads exécutant du code managé dans le processus. Pendant une session de débogage managée uniquement, les threads non managés peuvent continuer à s’exécuter (mais ils seront bloqués lors de la tentative d’appel de code managé). Pendant une session de débogage d’interopérabilité, les threads non managés sont également arrêtés. La `dwTimeoutIgnored` valeur est actuellement ignorée et traitée comme infinie (-1). Si l’arrêt coopératif échoue en raison d’un blocage, tous les threads sont suspendus et E_TIMEOUT est retourné.  
+ `Stop` effectue un arrêt coopératif sur tous les threads exécutant du code managé dans le processus. Pendant une session de débogage managée uniquement, les threads non managés peuvent continuer à s’exécuter (mais ils seront bloqués lors de la tentative d’appel de code managé). Pendant une session de débogage d’interopérabilité, les threads non managés sont également arrêtés. La valeur `dwTimeoutIgnored` est actuellement ignorée et traitée comme infinie (-1). Si l’arrêt coopératif échoue en raison d’un blocage, tous les threads sont suspendus et E_TIMEOUT est retourné.  
   
 > [!NOTE]
-> `Stop`est la seule méthode synchrone de l’API de débogage. Lorsque `Stop` retourne S_OK, le processus est arrêté. Aucun rappel n’est fourni pour notifier les écouteurs de l’arrêt. Le débogueur doit appeler [ICorDebugController:: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pour permettre au processus de reprendre.  
+> `Stop` est la seule méthode synchrone de l’API de débogage. Lorsque `Stop` retourne S_OK, le processus est arrêté. Aucun rappel n’est fourni pour notifier les écouteurs de l’arrêt. Le débogueur doit appeler [ICorDebugController :: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pour permettre au processus de reprendre.  
   
  Le débogueur gère un compteur d’arrêt. Lorsque le compteur atteint zéro, le contrôleur reprend. Chaque appel à `Stop` ou à chaque rappel distribué incrémente le compteur. Chaque appel à `ICorDebugController::Continue` décrémente le compteur.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

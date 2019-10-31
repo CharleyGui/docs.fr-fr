@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : empêcher une tâche enfant de s’attacher à son parent'
+title: 'Comment : empêcher une tâche enfant de s’attacher à son parent'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - tasks, preventing attachments
 ms.assetid: c0fb85d4-9e80-4905-9f65-29acc54201c4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 55b9c6c7175d8c7c33d8bfa03330c8e4b8816531
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 265b6d06f17a1dfbee3f009feff1ee1645e62a46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592024"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139262"
 ---
-# <a name="how-to-prevent-a-child-task-from-attaching-to-its-parent"></a>Procédure : empêcher une tâche enfant de s’attacher à son parent
+# <a name="how-to-prevent-a-child-task-from-attaching-to-its-parent"></a>Comment : empêcher une tâche enfant de s’attacher à son parent
 Ce document explique comment empêcher une tâche enfant de s’attacher à la tâche parente. Empêcher une tâche enfant de s’attacher à son parent est utile quand vous appelez un composant écrit par un tiers, qui utilise également des tâches. Par exemple, un composant tiers qui utilise l’option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> pour créer un objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> peut causer des problèmes dans votre code s’il est long ou s’il lève une exception non gérée.  
   
 ## <a name="example"></a>Exemple  

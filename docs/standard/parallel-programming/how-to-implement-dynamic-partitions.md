@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : implémenter des partitions dynamiques'
+title: 'Comment : implémenter des partitions dynamiques'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to create a dynamic partitioner
 ms.assetid: c875ad12-a161-43e6-ad1c-3d6927c536a7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5719c6afc1c5efc6138f0a4931d1725a6f20909a
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
-ms.translationtype: HT
+ms.openlocfilehash: 3970566b4e3f51ce538c328d4e69b20ec22ec09b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66424050"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091418"
 ---
-# <a name="how-to-implement-dynamic-partitions"></a>Procédure : implémenter des partitions dynamiques
+# <a name="how-to-implement-dynamic-partitions"></a>Comment : implémenter des partitions dynamiques
 
 L’exemple suivant montre comment implémenter un <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> personnalisé qui implémente le partitionnement dynamique et peut être utilisée à partir de certaines surcharges <xref:System.Threading.Tasks.Parallel.ForEach%2A> et à partir de PLINQ.  
   

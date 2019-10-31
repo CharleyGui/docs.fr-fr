@@ -13,18 +13,16 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f51ac96105f6d6ae0ea5fbd57a0dc50735e470a3
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 5425d94daf8ab023bef4a1a68f06d5c276499825
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835311"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132576"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 
-Les applications .NET qui utilisent des informations de date et d’heure sont très diverses et peuvent utiliser ces informations de plusieurs façons. Les utilisations les plus courantes des informations de date et d'heure sont une ou plusieurs parmi les suivantes :
+Les applications .NET qui utilisent des informations de date et d’heure sont très diverses et peuvent utiliser ces informations de plusieurs façons. Les utilisations les plus courantes des informations de date et d'heure sont une ou plusieurs parmi les suivantes :
 
 - Pour refléter seulement une date, les informations d'heure n'étant pas importantes.
 
@@ -40,10 +38,10 @@ Les applications .NET qui utilisent des informations de date et d’heure sont t
 
 - Pour effectuer des calculs de date et d'heure, éventuellement avec un résultat qui identifie de façon univoque et non ambiguë un point unique dans le temps.
 
-.NET comprend les types <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan> et <xref:System.TimeZoneInfo>, qui peuvent tous être utilisés pour créer des applications qui fonctionnent avec des dates et des heures.
+.NET comprend les types <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan>et <xref:System.TimeZoneInfo>, qui peuvent tous être utilisés pour créer des applications qui fonctionnent avec des dates et des heures.
 
 > [!NOTE]
-> Cette rubrique n’aborde pas <xref:System.TimeZone>, car ses fonctionnalités sont presque entièrement incorporées dans la classe <xref:System.TimeZoneInfo>. Dans la mesure du possible, utilisez la classe <xref:System.TimeZoneInfo> au lieu de la classe <xref:System.TimeZone>.
+> Cette rubrique n’aborde pas <xref:System.TimeZone>, car ses fonctionnalités sont presque entièrement incorporées dans la classe <xref:System.TimeZoneInfo>. Dans la mesure du possible, utilisez la classe <xref:System.TimeZoneInfo> à la place de la classe <xref:System.TimeZone>.
 
 ## <a name="the-datetime-structure"></a>La structure DateTime
 
@@ -94,13 +92,13 @@ La sortie montre que chaque valeur de date et d'heure de cet exemple peut appart
 
 ## <a name="the-timespan-structure"></a>La structure TimeSpan
 
-La structure <xref:System.TimeSpan> représente un intervalle de temps. Ses deux utilisations courantes sont :
+La structure <xref:System.TimeSpan> représente un intervalle de temps. Ses deux utilisations courantes sont :
 
 - Refléter un intervalle de temps entre deux valeurs de date/heure. Par exemple, la soustraction d'une valeur <xref:System.DateTime> d'une autre retourne une valeur <xref:System.TimeSpan> .
 
-- Mesurer un temps écoulé. Par exemple, la propriété <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> retourne une valeur <xref:System.TimeSpan> qui reflète l’intervalle de temps écoulé depuis l’appel à l’une des méthodes <xref:System.Diagnostics.Stopwatch> qui commence à mesurer le temps écoulé.
+- Mesurer un temps écoulé. Par exemple, la propriété <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> retourne une valeur <xref:System.TimeSpan> qui reflète l’intervalle de temps qui s’est écoulé depuis l’appel à l’une des méthodes <xref:System.Diagnostics.Stopwatch> qui commence à mesurer le temps écoulé.
 
-Une valeur <xref:System.TimeSpan> peut également être utilisée en remplacement d’une valeur de <xref:System.DateTime> lorsque cette valeur reflète une heure sans référence à un jour particulier. Cette utilisation est similaire aux propriétés <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType>, qui retournent une valeur <xref:System.TimeSpan> qui représente l’heure sans référence à une date. Par exemple, la structure <xref:System.TimeSpan> peut être utilisée pour refléter les heures d'ouverture ou de fermeture quotidiennes d'un magasin, ou elle peut être utilisée pour représenter l'heure où se produit un événement régulier.
+Une valeur de <xref:System.TimeSpan> peut également être utilisée en remplacement d’une valeur de <xref:System.DateTime> lorsque cette valeur reflète une heure sans référence à un jour particulier. Cette utilisation est similaire aux propriétés <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType>, qui retournent une valeur <xref:System.TimeSpan> qui représente l’heure sans référence à une date. Par exemple, la structure <xref:System.TimeSpan> peut être utilisée pour refléter les heures d'ouverture ou de fermeture quotidiennes d'un magasin, ou elle peut être utilisée pour représenter l'heure où se produit un événement régulier.
 
 L'exemple suivant définit une structure `StoreInfo` qui inclut des objets <xref:System.TimeSpan> pour les heures d'ouverture et de fermeture d'un magasin, ainsi qu'un objet <xref:System.TimeZoneInfo> qui représente le fuseau horaire du magasin. La structure comprend également deux méthodes, `IsOpenNow` et `IsOpenAt`, qui indiquent si le magasin est ouvert à une heure spécifiée par l'utilisateur, qui est supposé être dans le fuseau horaire local.
 

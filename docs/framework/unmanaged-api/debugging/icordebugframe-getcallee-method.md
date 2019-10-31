@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 92d8136d-0436-4c7e-a6b2-80765f892a0d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 10a5247632f242a4b4e0d33cf7fa7233d1b1e13b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b83dec65e1dd4fc610be3190e8126e6d9d38a6e8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754200"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121223"
 ---
 # <a name="icordebugframegetcallee-method"></a>ICorDebugFrame::GetCallee, méthode
-Obtient un pointeur vers l’objet ICorDebugFrame dans la chaîne actuelle qui a appelé ce frame.  
+Obtient un pointeur vers l’objet ICorDebugFrame dans la chaîne actuelle appelée par ce frame.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetCallee (
   
 ## <a name="parameters"></a>Paramètres  
  `ppFrame`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugFrame` objet qui représente le frame appelé. Cette valeur est null si le frame appelant est le plus profond frame dans la chaîne actuelle.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugFrame` qui représente le frame appelé. Cette valeur est null si le frame appelant est le frame le plus profond dans la chaîne actuelle.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

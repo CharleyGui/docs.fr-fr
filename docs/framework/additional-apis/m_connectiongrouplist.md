@@ -1,5 +1,5 @@
 ---
-title: Champ de ServicePoint.m_ConnectionGroupList
+title: ServicePoint. m_ConnectionGroupList, champ
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +10,18 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: df8afb59-f0f6-4ddc-b3c1-839b9fc601d8
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 85359492fbf06942a57c51142620cab015999b31
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 1991dae4d03f617857b860f920077531f7937bf1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300862"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120049"
 ---
-# <a name="servicepointmconnectiongrouplist-field"></a>ServicePoint.m\_ConnectionGroupList champ
+# <a name="servicepointm_connectiongrouplist-field"></a>ServicePoint. m\_champ ConnectionGroupList
 
-`ServicePoint.m_ConnectionGroupList` est un <xref:System.Collections.Hashtable> de groupes de connexions, chacune contenant une connexion pour le <xref:System.Net.ServicePoint>d’URI.
+`ServicePoint.m_ConnectionGroupList` est un <xref:System.Collections.Hashtable> de groupes de connexions, chacun disposant d’une connexion pour l’URI de l' <xref:System.Net.ServicePoint>.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ private Hashtable m_ConnectionGroupList
 ```
 
 > [!WARNING]
-> Le `ServicePoint.m_ConnectionGroupList` champ est privé et n’est pas destiné à être utilisé directement dans votre code.
+> Le champ `ServicePoint.m_ConnectionGroupList` est privé et n’est pas destiné à être utilisé directement dans votre code.
 > 
-> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Espace de noms :** <xref:System.Net>
 
-**Assembly :** Système (dans System.dll)
+**Assembly :** Système (dans System. dll)
 
-**Versions du .NET framework :** Disponible à partir de 2.0.
+**Versions de .NET Framework :** Disponible depuis 2,0.

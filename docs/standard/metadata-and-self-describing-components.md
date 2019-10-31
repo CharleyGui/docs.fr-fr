@@ -15,14 +15,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1a35f4ffa88211d914dbf84c87da49fafa89a929
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a4f4c0e1af379d31c5b478472780d5c7de813bf6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353898"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121935"
 ---
 # <a name="metadata-and-self-describing-components"></a>Métadonnées et composants autodescriptifs
 
@@ -162,8 +160,8 @@ Le tableau suivant montre une partie de la table **MethodDef** référencée par
 |Ligne|Adresse RVA (Relative Virtual Address)|ImplFlags|Indicateurs|Name<br /><br /> (pointe vers le tas de chaîne)|Signature (pointe vers le tas de blob)|
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|
 |1|0x00002050|IL<br /><br /> Managé|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (constructeur)||
-|2|0x00002058|IL<br /><br /> Managé|Public<br /><br /> statique<br /><br /> ReuseSlot|Main|Chaîne|
-|3|0x0000208c|IL<br /><br /> Managé|Public<br /><br /> statique<br /><br /> ReuseSlot|Ajouter|int, int, int|
+|2|0x00002058|IL<br /><br /> Managé|Public<br /><br /> Static<br /><br /> ReuseSlot|Main|Chaîne|
+|3|0x0000208c|IL<br /><br /> Managé|Public<br /><br /> Static<br /><br /> ReuseSlot|Ajouter|int, int, int|
 
 Chaque colonne de la table contient des informations importantes concernant votre code. La colonne **RVA** permet au runtime de calculer l’adresse mémoire de départ du code MSIL qui définit la méthode. Les colonnes **ImplFlags** et **Flags** contiennent des masques de bits qui décrivent la méthode (par exemple, ils indiquent si la méthode est publique ou privée). La colonne **Name** indexe le nom de la méthode à partir du tas de chaîne. La colonne **Signature** indexe la définition de la signature de la méthode dans le tas de blob.
 

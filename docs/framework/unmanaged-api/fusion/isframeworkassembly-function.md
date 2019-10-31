@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b0c6f19b-d4fd-4971-88f0-12ffb5793da3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 269e3702c21532f377735ba6087abb1603dde4f7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e30b6f2d2254d2d107c4c82a2c5664850ce6ec23
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796317"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123069"
 ---
 # <a name="isframeworkassembly-function"></a>IsFrameworkAssembly, fonction
 Obtient une valeur qui indique si l’assembly spécifié est managé.  
@@ -51,14 +49,14 @@ HRESULT IsFrameworkAssembly (
  [in] Taille de `pwzFrameworkAssemblyIdentity`.  
   
 ## <a name="remarks"></a>Notes  
- Le `pwzAssemblyReference` paramètre est un pointeur vers une chaîne de caractères qui contient le nom d’un assembly.  
+ Le paramètre `pwzAssemblyReference` est un pointeur vers une chaîne de caractères qui contient le nom d’un assembly.  
   
- Si cet assembly fait partie du .NET Framework, le `pbIsFrameworkAssembly` paramètre contient une `true`valeur booléenne.  
+ Si cet assembly fait partie de la .NET Framework, le paramètre `pbIsFrameworkAssembly` contient une valeur booléenne de `true`.  
   
- Si l’assembly nommé ne fait pas partie de la .NET Framework, ou `pwzAssemblyReference` si le paramètre ne nomme pas d' `pbIsFrameworkAssembly` assembly, `false`contient une valeur booléenne.  
+ Si l’assembly nommé ne fait pas partie de la .NET Framework, ou si le paramètre `pwzAssemblyReference` ne nomme pas un assembly, `pbIsFrameworkAssembly` contient une valeur booléenne de `false`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 890269857aaa00ce62195ccb2f4cb184b363b61e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d73c07d58bb226346cb99a1fe50b12bb0e7e746e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921040"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118544"
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Élément personnalisé pour NameValueSectionHandler et DictionarySectionHandler
 
-Définit des paramètres pour les sections de configuration personnalisées <xref:System.Configuration.DictionarySectionHandler> qui utilisent les <xref:System.Configuration.NameValueSectionHandler> classes et.
+Définit les paramètres des sections de configuration personnalisées qui utilisent les classes <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>.
 
 [ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp; **\<sectionName>**
+&nbsp;&nbsp; **\<** de la >
 
 ## <a name="attributes"></a>Attributs
 
-Aucun
+aucune.
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -36,26 +36,26 @@ Aucun
 
 |     | Description |
 | --- | ----------- |
-| Ajouter > pour et [ **\<** ](add-element-for-custom-2.md) <xref:System.Configuration.NameValueSectionHandler><xref:System.Configuration.DictionarySectionHandler>  | Ajoute des paramètres d’application personnalisés. |
-| supprimer > pour et [ **\<** ](remove-element-for-custom-2.md) <xref:System.Configuration.NameValueSectionHandler><xref:System.Configuration.DictionarySectionHandler> | Supprime un paramètre défini précédemment. |
-| désactivez <xref:System.Configuration.NameValueSectionHandler> > pour et [ **\<** ](clear-element-for-custom-2.md)<xref:System.Configuration.DictionarySectionHandler> | Efface tous les paramètres précédemment définis dans une section. |
+| [ **\<ajouter des >** ](add-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>  | Ajoute des paramètres d’application personnalisés. |
+| [ **\<supprimer >** ](remove-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> | Supprime un paramètre défini précédemment. |
+| [ **\<> Clear**](clear-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> | Efface tous les paramètres précédemment définis dans une section. |
 
 ## <a name="remarks"></a>Notes
 
-L'  **\<** élément de >y est un élément personnalisé défini par  **\<** une balise de > de section dans l'  **\<élément configSections >** .
+L’élément\<de l’élément de **>** est un élément personnalisé défini par un **\<section >** balise dans l’élément **\<configSections >** .
 
-Le tableau suivant indique le type d’objet retourné par la méthode ConfigurationSettings. GetConfig pour chaque gestionnaire de section de configuration:
+Le tableau suivant indique le type d’objet retourné par la méthode ConfigurationSettings. GetConfig pour chaque gestionnaire de section de configuration :
 
 | Gestionnaire de section de configuration                        | Type de retour                                                |
 | ---------------------------------------------------- | ---------------------------------------------------------- |
 | <xref:System.Configuration.NameValueSectionHandler>  | <xref:System.Collections.Specialized.NameValueCollection>  |
 | <xref:System.Configuration.DictionarySectionHandler> | <xref:System.Collections.IDictionary>                      |
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment déclarer des sections qui utilisent les <xref:System.Configuration.DictionarySectionHandler> classes <xref:System.Configuration.NameValueSectionHandler> et.
+L’exemple suivant montre comment déclarer des sections qui utilisent les classes <xref:System.Configuration.DictionarySectionHandler> et <xref:System.Configuration.NameValueSectionHandler>.
 
-Le premier élément personnalisé est  **\<dictionarySample >** , qui contient les paramètres lus par <xref:System.Configuration.DictionarySectionHandler> la classe dans `System.dll` l’assembly. Le deuxième élément personnalisé est  **\<mySection >** , qui contient les paramètres lus par <xref:System.Configuration.NameValueSectionHandler> la classe dans `System.dll` l’assembly.
+Le premier élément personnalisé est **\<dictionarySample >** , qui contient les paramètres lus par la classe <xref:System.Configuration.DictionarySectionHandler> de l’assembly `System.dll`. Le deuxième élément personnalisé est **\<mySection >** , qui contient les paramètres lus par la classe <xref:System.Configuration.NameValueSectionHandler> de l’assembly `System.dll`.
 
 ```xml
 <configuration>

@@ -13,17 +13,15 @@ helpviewer_keywords:
 ms.assetid: 08dbd558-bd39-4263-94c2-71e70687aaf0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bdbec0101de269b3d5b09e750d552c993a0198ab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c1e2b557a5e5794c50986b1af8ec39faba845cc9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748484"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125516"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacepointers-method"></a>ICorDebugComObjectValue::GetCachedInterfacePointers, méthode
-Obtient les pointeurs d’interface brut mis en cache sur le cours callable wrapper RCW (runtime).  
+Obtient les pointeurs d’interface bruts mis en cache sur le wrapper RCW (Runtime Callable Wrapper) actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT GetCachedInterfacePointers(
   
 ## <a name="parameters"></a>Paramètres  
  `bIInspectableOnly`  
- [in] Une valeur qui indique si la méthode retourne uniquement les interfaces Windows Runtime (`IInspectable` interfaces) ou des interfaces COM qui sont mis en cache par le runtime callable wrapper RCW ().  
+ dans Valeur qui indique si la méthode retourne uniquement des interfaces Windows Runtime (interfaces`IInspectable`) ou toutes les interfaces COM mises en cache par le wrapper RCW (Runtime Callable Wrapper).  
   
  `celt`  
- [in] Le nombre d’objets dont les adresses doivent être récupérés.  
+ dans Nombre d’objets dont les adresses doivent être récupérées.  
   
  `pceltFetched`  
- [out] Un pointeur vers le nombre de `CORDB_ADDRESS` valeurs réellement retournés dans `ptrs`.  
+ à Pointeur vers le nombre de valeurs de `CORDB_ADDRESS` réellement retournées dans `ptrs`.  
   
  `ptrs`  
- Un pointeur vers l’adresse de départ d’un tableau de `CORDB_ADDRESS` les valeurs qui contiennent les adresses de mises en cache les objets d’interface.  
+ Pointeur vers l’adresse de début d’un tableau de valeurs `CORDB_ADDRESS` qui contiennent les adresses d’objets d’interface mis en cache.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

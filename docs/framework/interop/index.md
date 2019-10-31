@@ -10,14 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, about interoperation
 - components [.NET Framework], interoperation with unmanaged code
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: edec95ea729fdf26e384b6658c241ca307e60851
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: cdd8d2781331956289d2b74162e653ba1ee8fad6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643112"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73114241"
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Interopération avec du code non managé
 
@@ -48,14 +46,14 @@ Décrit les wrappers fournis par COM Interop.
 [Équivalence de type et types interop incorporés](type-equivalence-and-embedded-interop-types.md)  
 Décrit comment les informations de type pour les types COM sont incorporées dans les assemblys, et comment le common language runtime détermine l’équivalence des types COM incorporés.
 
-[Guide pratique pour générer des assemblys PIA à l’aide de Tlbimp.exe](how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md)  
+[Comment : générer des assemblys PIA à l'aide de Tlbimp.exe](how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md)  
 Décrit comment produire des assemblys PIA à l’aide de *Tlbimp.exe* (importateur de bibliothèques de types).
 
-[Guide pratique pour enregistrer des assemblys PIA](how-to-register-primary-interop-assemblies.md)  
+[Comment : enregistrer des assemblys PIA](how-to-register-primary-interop-assemblies.md)  
 Décrit comment inscrire les assemblys PIA avant de les référencer dans vos projets.
 
 [COM Interop sans inscription](registration-free-com-interop.md)  
 Décrit comment COM Interop peut activer des composants sans utiliser le Registre Windows.
 
-[Guide pratique pour configurer les composants COM .NET Framework pour l’activation sans inscription](configure-net-framework-based-com-components-for-reg.md)  
+[Comment : configurer les composants COM .NET Framework pour l'activation sans inscription](configure-net-framework-based-com-components-for-reg.md)  
 Décrit comment créer un manifeste d’application, puis explique comment créer et incorporer un manifeste de composant.

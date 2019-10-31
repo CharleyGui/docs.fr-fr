@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9f25b64f-eedd-4ae5-8b0e-cfdfb9b6c5d8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 193f5ffe96e89a00bed8a3c88ee346ba3ea9f2b4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 362e917e1684c91bde80a8b5c2e6a27a18a99190
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740020"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098198"
 ---
 # <a name="cordebuggenerationtypes-enumeration"></a>CorDebugGenerationTypes, énumération
 Spécifie la génération d’une région de la mémoire sur le tas managé.  
@@ -44,11 +42,11 @@ typedef enum CorDebugGenerationTypes {
 |`CorDebug_Gen0`|Génération 0.|  
 |`CorDebug_Gen1`|Génération 1.|  
 |`CorDebug_Gen2`|Génération 2.|  
-|`CorDebug_LOH`|Le tas d’objets volumineux.|  
+|`CorDebug_LOH`|Tas d’objets volumineux.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

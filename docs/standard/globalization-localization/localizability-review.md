@@ -16,14 +16,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8645f77c8d03a475fe0fcc49f3e6d5e28829f9e9
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
-ms.translationtype: HT
+ms.openlocfilehash: b286bdd2c5d7b03a0a2b5f94478e252da6cd0ae2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442956"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120865"
 ---
 # <a name="localizability-review"></a>Révision de l’adaptabilité
 

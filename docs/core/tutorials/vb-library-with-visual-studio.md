@@ -1,18 +1,16 @@
 ---
 title: Générer une bibliothèque de classes Visual Basic .NET Standard dans Visual Studio 2017
 description: Découvrez comment générer une bibliothèque de classes .NET Standard écrite en Visual Basic à l’aide de Visual Studio 2017
-author: rpetrusha
-ms.author: ronpet
 ms.date: 08/07/2017
 dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f14e4ffbebfe0d7e01d548a6d4f2dc8924633682
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1daab377abe3b6b89f73ed48eafadeae4d7eee77
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59157298"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73100866"
 ---
 # <a name="build-a-net-standard-library-with-visual-basic-and-the-net-core-sdk-in-visual-studio-2017"></a>Générer une bibliothèque .NET Standard avec Visual Basic et le kit SDK .NET Core dans Visual Studio 2017
 
@@ -39,7 +37,7 @@ Créez votre projet de bibliothèque de classes :
 
 1. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur la solution **ClassLibraryProjects** et, dans le menu contextuel, sélectionnez **Ajouter** > **Nouveau projet**.
 
-1. Dans la boîte de dialogue **Ajouter un nouveau projet**, développez le nœud **Visual Basic**, puis sélectionnez le nœud **.NET Standard** et choisissez le modèle de projet **Bibliothèque de classes (.NET Standard)**. Dans la zone de texte **Nom**, entrez « StringLibrary » comme nom de projet. Sélectionnez **OK** pour créer le projet de bibliothèque de classes.
+1. Dans la boîte de dialogue **Ajouter un nouveau projet**, développez le nœud **Visual Basic**, puis sélectionnez le nœud **.NET Standard** et choisissez le modèle de projet **Bibliothèque de classes (.NET Standard)** . Dans la zone de texte **Nom**, entrez « StringLibrary » comme nom de projet. Sélectionnez **OK** pour créer le projet de bibliothèque de classes.
 
    ![Boîte de dialogue Ajouter un nouveau projet de test dans Visual Studio](./media/vb-library-with-visual-studio/create-new-library-project.png)
 

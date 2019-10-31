@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f74ab4eb-cd1b-407c-a66d-8ec0d85647f3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a874646a6746a9b2fc8ce597e6c1ca47340c199a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d52c19f8663a776215241ddb16f3aa9ba00c0d36
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759645"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137350"
 ---
 # <a name="icordebugmanagedcallbackevalcomplete-method"></a>ICorDebugManagedCallback::EvalComplete, méthode
-Notifie le débogueur qu’une évaluation a été effectuée.  
+Notifie le débogueur qu’une évaluation est terminée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +37,15 @@ HRESULT EvalComplete (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’évaluation a été effectuée.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’évaluation a été effectuée.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’évaluation a été effectuée.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’évaluation a été effectuée.  
   
  `pEval`  
- [in] Pointeur vers un objet ICorDebugEval qui représente le code qui a effectué l’évaluation.  
+ dans Pointeur vers un objet ICorDebugEval qui représente le code qui a effectué l’évaluation.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

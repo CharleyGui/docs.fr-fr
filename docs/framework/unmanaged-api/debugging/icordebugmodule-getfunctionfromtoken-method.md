@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fe12194-4ef7-43c1-9570-ade35ccf127a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 547986633172d6f5e6549ad2048833dc9fb0cef3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cb966a918c63b4fbc00dcf52819b9384427dfdaa
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763466"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129585"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a>ICorDebugModule::GetFunctionFromToken, méthode
-Obtient la fonction qui est spécifiée par le jeton de métadonnées.  
+Obtient la fonction spécifiée par le jeton de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +36,15 @@ HRESULT GetFunctionFromToken(
   
 ## <a name="parameters"></a>Paramètres  
  `methodDef`  
- [in] Un `mdMethodDef` jeton de métadonnées qui référence les métadonnées de la fonction.  
+ dans `mdMethodDef` jeton de métadonnées qui référence les métadonnées de la fonction.  
   
  `ppFunction`  
- [out] Pointeur vers l’adresse d’un objet d’interface ICorDebugFunction qui représente la fonction.  
+ à Pointeur vers l’adresse d’un objet d’interface ICorDebugFunction qui représente la fonction.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetFunctionFromToken` méthode retourne une valeur HRESULT CORDBG_E_FUNCTION_NOT_IL si la valeur passée dans `methodDef` ne fait pas référence à une méthode MSIL (intermediate language).  
+ La méthode `GetFunctionFromToken` retourne un HRESULT CORDBG_E_FUNCTION_NOT_IL si la valeur passée dans `methodDef` ne fait pas référence à une méthode MSIL (Microsoft Intermediate Language).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

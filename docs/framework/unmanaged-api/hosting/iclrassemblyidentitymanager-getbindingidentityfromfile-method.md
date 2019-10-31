@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7797562d-7b4c-4bd9-8b93-f35e0e2869e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1aabc5783e66893d13aed60e04d7ea5f6547c68
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 19d6a76d62680be91a7b9721912ca528edde7511
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773572"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126756"
 ---
 # <a name="iclrassemblyidentitymanagergetbindingidentityfromfile-method"></a>ICLRAssemblyIdentityManager::GetBindingIdentityFromFile, méthode
-Obtient l’identité d’assembly une liaison de données pour l’assembly dans le chemin d’accès de fichier spécifié.  
+Obtient les données de liaison de l’identité de l’assembly pour l’assembly dans le chemin d’accès au fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,39 +38,39 @@ HRESULT GetBindingIdentityFromFile(
   
 ## <a name="parameters"></a>Paramètres  
  `pwzFilePath`  
- [in] Le chemin d’accès au fichier à évaluer.  
+ dans Chemin d’accès au fichier à évaluer.  
   
  `dwFlags`  
- [in] Une valeur de la [ECLRAssemblyIdentityFlags](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md) énumération qui indique le type d’identité d’un assembly. Fourni pour des extensibilités futures. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT est la seule valeur qui prend en charge par le common language runtime (CLR) version 2.0.  
+ dans Valeur de l’énumération [ECLRAssemblyIdentityFlags,](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md) qui indique le type d’identité d’un assembly. Fourni pour une extensibilité future. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT est la seule valeur prise en charge par la version 2,0 de common language runtime (CLR).  
   
  `pwzBuffer`  
- [out] Une mémoire tampon contenant les données d’identité assembly opaque.  
+ à Mémoire tampon contenant les données d’identité de l’assembly opaque.  
   
  `pcchBufferSize`  
- [in, out] Un pointeur vers la taille de `pwzBuffer`.  
+ [in, out] Pointeur vers la taille de `pwzBuffer`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La méthode a été retourné avec succès.|  
-|E_INVALIDARG|Fourni `pwzFilePath` a la valeur null.|  
+|S_OK|La méthode a été retournée avec succès.|  
+|E_INVALIDARG|Le `pwzFilePath` fourni a la valeur null.|  
 |ERROR_INSUFFICIENT_BUFFER|La taille de `pwzBuffer` est trop petite.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- `GetBindingIdentityFromFile` est généralement appelée deux fois. Le premier appel fournit une valeur null pour `pwzBuffer`, et la méthode retourne la taille appropriée dans `pcchBufferSize`. Le deuxième appel fournit une mémoire tampon allouée de manière appropriée, et la méthode est retournée avec les données de la mémoire tampon à l’achèvement.  
+ `GetBindingIdentityFromFile` est généralement appelée deux fois. Le premier appel fournit une valeur null pour `pwzBuffer`, et la méthode retourne la taille appropriée dans `pcchBufferSize`. Le deuxième appel fournit une mémoire tampon allouée de manière appropriée, et la méthode retourne avec les données de mémoire tampon en cours à l’achèvement.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

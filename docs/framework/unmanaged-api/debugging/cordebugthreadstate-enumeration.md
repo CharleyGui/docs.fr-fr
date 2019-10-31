@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a3ccdf18-4ec6-494d-9024-48e5c8c724f5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ce252f5a4b5fbcdbbc7b70c8b1c829490f8f63e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1ff36e8ef6b7c02eea5b02bc22587bc3889df093
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739531"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133691"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState, énumération
 Spécifie l'état d'un thread pour le débogage.  
@@ -39,15 +37,15 @@ typedef enum CorDebugThreadState {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`THREAD_RUN`|Le thread exécute librement, sauf si un événement de débogage se produit.|  
+|`THREAD_RUN`|Le thread s’exécute librement, à moins qu’un événement de débogage se produise.|  
 |`THREAD_SUSPEND`|Le thread ne peut pas s’exécuter.|  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur utilise la `CorDebugThreadState` énumération pour contrôler l’exécution d’un thread. L’état d’un thread peut être défini à l’aide de la [ICorDebugThread::SetDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md) ou [ICorDebugController::SetAllThreadsDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) (méthode).  
+ Le débogueur utilise l’énumération `CorDebugThreadState` pour contrôler l’exécution d’un thread. L’état d’un thread peut être défini à l’aide de la méthode [ICorDebugThread :: SetDebugState,](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md) ou [ICorDebugController :: SetAllThreadsDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) .  
   
- Un rappel fourni à la [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md) permet le pompage de messages, un état interrompu est donc pas nécessaire.  
+ Un rappel fourni à l' [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md) active le pompage de messages, ce qui signifie qu’il n’est pas nécessaire d’interrompre l’État.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

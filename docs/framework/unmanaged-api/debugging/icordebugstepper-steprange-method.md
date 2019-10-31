@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b9776112-6e6d-4708-892a-8873db02e16f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7e1ace501bf5de741ea110fe4d3bb4bc44843bf8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ca4542fe42fab0b5ff54b23b9492d3906698c10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760534"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120623"
 ---
 # <a name="icordebugsteppersteprange-method"></a>ICorDebugStepper::StepRange, méthode
-Provoque ICorDebugStepper pas à pas son thread conteneur et à retourner lorsqu’il atteint le code au-delà de la dernière des plages spécifiées.  
+Fait en sorte que ces ICorDebugStepper effectuent un pas à pas détaillé dans son thread conteneur et le retournent lorsqu’il atteint le code au-delà de la dernière des plages spécifiées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT StepRange (
   
 ## <a name="parameters"></a>Paramètres  
  `bStepIn`  
- [in] La valeur `true` à l’étape dans une fonction qui est appelée dans le thread. La valeur `false` pour ignorer la fonction.  
+ dans Affectez la valeur `true` pour effectuer un pas à pas détaillé dans une fonction appelée dans le thread. Affectez la valeur `false` pour effectuer un pas à pas principal dans la fonction.  
   
  `ranges`  
- [in] Tableau de structures COR_DEBUG_STEP_RANGE, dont chacun spécifie une plage.  
+ dans Tableau de structures COR_DEBUG_STEP_RANGE, chacune spécifiant une plage.  
   
  `cRangeCount`  
  [in] Taille du tableau `ranges`.  
   
 ## <a name="remarks"></a>Notes  
- Le `StepRange` méthode fonctionne comme le [ICorDebugStepper::Step](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) (méthode), sauf qu’elle ne se termine pas tant que le code en dehors de la plage donnée est atteinte.  
+ La méthode `StepRange` fonctionne comme la méthode [ICorDebugStepper :: Step](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) , sauf qu’elle ne se termine pas tant que le code en dehors de la plage donnée n’est pas atteint.  
   
- Cela peut être plus efficace que l’exécution pas à pas d’une instruction à la fois. Les plages sont spécifiées comme une liste de paires d’offsets à partir du début du frame de d’exécution pas à pas.  
+ Cela peut être plus efficace que l’exécution pas-à-pas d’une instruction à la fois. Les plages sont spécifiées sous la forme d’une liste de paires d’offsets à partir du début de la trame de l’exécution pas à pas.  
   
- Les plages sont relatives au code Microsoft intermediate language (MSIL) d’une méthode. Appelez [ICorDebugStepper::SetRangeIL](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) avec `false` pour que les plages par rapport au code natif d’une méthode.  
+ Les plages sont relatives au code MSIL (Microsoft Intermediate Language) d’une méthode. Appelez [ICorDebugStepper :: SetRangeIL,](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) avec `false` pour rendre les plages relatives au code natif d’une méthode.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

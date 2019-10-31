@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetQualifierSet function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 845d5ea93a06859840c87c65b415ead0f846d538
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 489e240af3f26e82f2459ac4b4dbd944639f78fc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798464"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127439"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet fonction)
 Récupère le jeu de qualificateurs pour une instance de classe ou une définition de classe.
@@ -53,7 +51,7 @@ dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
@@ -67,10 +65,10 @@ Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetQualif
 
 Le [pointeur IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) permet à l’appelant d’ajouter, de modifier ou de supprimer ces qualificateurs. Les qualificateurs ajoutés, modifiés ou supprimés s’appliquent à l’ensemble de la définition de la classe ou de l’instance.
 
-## <a name="requirements"></a>Configuration requise  
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

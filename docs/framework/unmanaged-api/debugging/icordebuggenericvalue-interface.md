@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: bc14f408-b359-4c8c-ade2-888ccdf7261b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36c2ed5529151a7ea18ccaffc2202ad6c69bcbd9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 312b8b005998da44feb5ae24ab4a0a17bb948a3f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910228"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138568"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue, interface
 
-Sous-classe de «ICorDebugValue» qui s’applique à toutes les valeurs. Cette interface fournit les méthodes Get et Set pour la valeur.  
+Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Cette interface fournit les méthodes Get et Set pour la valeur.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -35,7 +33,7 @@ Sous-classe de «ICorDebugValue» qui s’applique à toutes les valeurs. Cette 
 |[SetValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Copie une nouvelle valeur à partir de la mémoire tampon spécifiée.|  
   
 ## <a name="remarks"></a>Notes  
- `ICorDebugGenericValue`est une sous-interface, car elle n’est pas accessible à distance.  
+ `ICorDebugGenericValue` est une sous-interface, car elle n’est pas accessible à distance.  
   
  Pour les types référence, la valeur est la référence plutôt que le contenu de la référence.  
   
@@ -44,12 +42,12 @@ Sous-classe de «ICorDebugValue» qui s’applique à toutes les valeurs. Cette 
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

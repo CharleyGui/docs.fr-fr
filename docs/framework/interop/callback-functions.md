@@ -5,14 +5,12 @@ helpviewer_keywords:
 - callback function
 - platform invoke, calling unmanaged functions
 ms.assetid: c0aa8533-3b3b-42e8-9f60-84919793098c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eb30e7daed938b14bd0d936352c7455db6975e73
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0fbf6df93e3ef9ee6380ed35f98018d157599e2a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051907"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123743"
 ---
 # <a name="callback-functions"></a>Fonctions de rappel
 Une fonction de rappel désigne du code figurant dans une application managée qui permet à une fonction DLL non managée d’effectuer une tâche. Les appels à une fonction de rappel sont indirectement passés depuis une application managée via une fonction DLL avant de revenir à l’implémentation managée. Certaines des nombreuses fonctions DLL appelées à l’aide de l’appel de code non managé nécessitent une fonction de rappel dans du code managé pour fonctionner correctement.  
@@ -29,5 +27,5 @@ Une fonction de rappel désigne du code figurant dans une application managée q
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour implémenter des fonctions de rappel](how-to-implement-callback-functions.md)
+- [Comment : implémenter des fonctions de rappel](how-to-implement-callback-functions.md)
 - [Appel à une fonction DLL](calling-a-dll-function.md)

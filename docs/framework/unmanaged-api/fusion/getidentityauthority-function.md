@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 843cd5ab-d2b7-4ff6-86bd-e68c7a91c098
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f29246bdb929c8eaf1ebce726164d5cd2269b9f1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: acb80f3cc199d4d9f774cb3898335d26fe44b807
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796860"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127146"
 ---
 # <a name="getidentityauthority-function"></a>GetIdentityAuthority, fonction
 Obtient un pointeur vers une instance [IIdentityAuthority](iidentityauthority-interface.md) qui gère les clés pour les objets de code.  
@@ -37,10 +35,10 @@ HRESULT GetIdentityAuthority (
   
 ## <a name="parameters"></a>Paramètres  
  `ppIIdentityAuthority`  
- à Pointeur retourné `IIdentityAuthority` .  
+ à Pointeur de `IIdentityAuthority` retourné.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

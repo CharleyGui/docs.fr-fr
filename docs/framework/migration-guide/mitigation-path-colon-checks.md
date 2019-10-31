@@ -1,17 +1,15 @@
 ---
-title: 'Atténuation : vérifications des signes deux-points dans les chemins d’accès'
+title: 'Atténuation : Vérifications des signes deux-points dans les chemins d’accès'
 ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a74c25a9bf4dd8b9ab86bd280881fe1a7999e1d5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ee71f6ef1e70509e772aee2cc75d00c33122a92e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789993"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126233"
 ---
-# <a name="mitigation-path-colon-checks"></a>Atténuation : vérifications des signes deux-points dans les chemins d’accès
+# <a name="mitigation-path-colon-checks"></a>Atténuation : Vérifications des signes deux-points dans les chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, plusieurs modifications ont été apportées pour prendre en charge les chemins d’accès non pris en charge précédemment (à la fois en termes de longueur et de format). En particulier, les vérifications de bonne syntaxe de séparateur de lecteur (le signe deux-points) ont été rendues plus correctes.  
   
 ## <a name="impact"></a>Impact  

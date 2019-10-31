@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Utiliser JoinBlock pour lire des données de plusieurs sources'
+title: 'Comment : utiliser JoinBlock pour lire des données issues de plusieurs sources'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +10,14 @@ helpviewer_keywords:
 - TPL dataflow library, joining blocks in
 - dataflow blocks, joining in TPL
 ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a7becba9c7626e79f9d001a6a21ed92a336e9d11
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 66fd7ed7a98b8be8f88f65ecb52710a1e40af778
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591982"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139739"
 ---
-# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Procédure : Utiliser JoinBlock pour lire des données de plusieurs sources
+# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Comment : utiliser JoinBlock pour lire des données issues de plusieurs sources
 Ce document explique comment utiliser la classe <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> pour effectuer une opération lorsque des données sont disponibles à partir de plusieurs sources. Il présente aussi comment utiliser le mode non gourmand pour permettre à plusieurs blocs de jointure de partager plus efficacement une source de données.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]

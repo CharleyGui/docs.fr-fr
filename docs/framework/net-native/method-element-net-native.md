@@ -1,17 +1,15 @@
 ---
-title: <Method>, Élément (.NET Native)
+title: Élément <Method> (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d741f51abf02f4bfda2b007efd4c859027e54d9b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 7b0e77e6dea29cbd5218ab3f6f992002efd51656
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71049582"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128337"
 ---
-# <a name="method-element-net-native"></a>\<>, Élément de méthode (.NET Native)
+# <a name="method-element-net-native"></a>\<, méthode >, élément (.NET Native)
 Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,28 +28,28 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Généralités|Attribut requis. Spécifie le nom de la méthode.|  
-|`Signature`|Généralités|Attribut facultatif. Spécifie la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple, l'élément `<Method>` suivant définit la stratégie pour la méthode <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29>.<br /><br /> `<Type Name="System.DateTime">    <Method Name="ToString" Signature="System.String,System.IFormatProvider"            Dynamic="Required" /> </Type>`<br /><br /> Si l'attribut est absent, la directive runtime s'applique à toutes les surcharges de la méthode.|  
+|`Name`|Général|Attribut requis. Spécifie le nom de la méthode.|  
+|`Signature`|Général|Attribut facultatif. Spécifie la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple, l'élément `<Method>` suivant définit la stratégie pour la méthode <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29>.<br /><br /> `<Type Name="System.DateTime">    <Method Name="ToString" Signature="System.String,System.IFormatProvider"            Dynamic="Required" /> </Type>`<br /><br /> Si l'attribut est absent, la directive runtime s'applique à toutes les surcharges de la méthode.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur une méthode ou l'énumération de celle-ci, mais ne permet pas d'effectuer un appel dynamique au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à un constructeur ou à une méthode au moment de l'exécution pour activer la programmation dynamique. Cette stratégie garantit que le membre peut être appelé dynamiquement au moment de l'exécution.|  
   
 ## <a name="name-attribute"></a>Name (attribut)  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |*nom_méthode*|Nom de la méthode. Le type de la méthode est défini par le [\<Type>](type-element-net-native.md) parent ou l’élément [\<TypeInstantiation>](typeinstantiation-element-net-native.md).|  
   
 ## <a name="signature-attribute"></a>Attribut de signature  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |*signature_méthode*|Types de paramètre qui constituent la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple : `"System.String,System.Int32,System.Int32)"`. Les noms de type de paramètre doivent être qualifiés complets.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
+|*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -76,7 +74,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
  Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l’attribut `Activate` de l’élément [\<Assembly>](assembly-element-net-native.md), [\<Namespace>](namespace-element-net-native.md), [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=nameWithType> qui convertit un nombre au format binaire, hexadécimale ou octale.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  

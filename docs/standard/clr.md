@@ -15,15 +15,13 @@ helpviewer_keywords:
 - source code execution
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
-author: rpetrusha
-ms.author: ronpet
 ms.custom: updateeachrelease
-ms.openlocfilehash: a1e1fd2b7843299fdd8fbd62dbfba6c62a7be50f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: c866e3d1a4de31361843f5c071510fd18247cb39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645008"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132813"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Vue d’ensemble du Common Language Runtime (CLR)
 
@@ -70,13 +68,13 @@ Le numéro de version du .NET Framework ne correspond pas nécessairement au num
 |----------------------------|--------------------------|
 |1.0|1.0|
 |1.1|1.1|
-|2.0|2.0|
-|3.0|2.0|
-|3.5|2.0|
+|2,0|2,0|
+|3,0|2,0|
+|3.5|2,0|
 |4|4|
 |4.5 (y compris 4.5.1 et 4.5.2)|4|
 |4.6 (y compris 4.6.1 et 4.6.2)|4|
-|4.7 (y compris 4.7.1 et 4.7.2)|4|
+|4.7 (y compris 4.7.1 et 4.7.2)|4|
 |4.8|4|
 
 ## <a name="related-topics"></a>Rubriques connexes

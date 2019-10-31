@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f2b773a4-c4d0-429c-9717-51d6e2ed86af
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3ef4b284676608363281e04087f6435dcb1ef74
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dae04e1809c1bb3260461086a4953b8b4e5cce52
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759842"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122571"
 ---
 # <a name="icordebugmanagedcallbackbreakpointseterror-method"></a>ICorDebugManagedCallback::BreakpointSetError, méthode
-Notifie le débogueur que le common language runtime n’a pas pu lier correctement un point d’arrêt a été défini avant une fonction compilée juste-à-temps (JIT).  
+Notifie le débogueur que le common language runtime n’a pas pu lier avec précision un point d’arrêt qui a été défini avant qu’une fonction ait été compilée juste-à-temps (JIT).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT BreakpointSetError (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui contient le point d’arrêt indépendant.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui contient le point d’arrêt non lié.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread qui contient le point d’arrêt indépendant.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread qui contient le point d’arrêt non lié.  
   
  `pBreakpoint`  
- [in] Pointeur vers un objet ICorDebugBreakpoint qui représente le point d’arrêt indépendant.  
+ dans Pointeur vers un objet ICorDebugBreakpoint qui représente le point d’arrêt non lié.  
   
  `dwError`  
- [in] Entier qui indique l’erreur.  
+ dans Entier qui indique l’erreur.  
   
 ## <a name="remarks"></a>Notes  
- Le point d’arrêt donné ne sera jamais atteint. Le débogueur doit désactiver et reconnectez-la.  
+ Le point d’arrêt donné ne sera jamais atteint. Le débogueur doit le désactiver et le lier de nouveau.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

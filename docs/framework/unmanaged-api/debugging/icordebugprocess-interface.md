@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: be86f4b5-418a-4c5c-a67c-97148c65ed8c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b99630ba60cd84254024b91dba9ef9922fd7e041
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 393ac8c119f111b645e7ccdb6ea94efee7207fa4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943303"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128795"
 ---
 # <a name="icordebugprocess-interface"></a>ICorDebugProcess, interface
 Représente un processus qui exécute le code managé. Cette interface est une sous-classe de ICorDebugController.  
@@ -45,7 +43,7 @@ Représente un processus qui exécute le code managé. Cette interface est une s
 |[ModifyLogSwitch, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-modifylogswitch-method.md)|Définit le niveau de gravité du commutateur de journalisation spécifié.|  
 |[ReadMemory, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-readmemory-method.md)|Lit la mémoire à partir du processus.|  
 |[SetThreadContext, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-setthreadcontext-method.md)|Définit le contexte du thread donné.|  
-|[ThreadForFiberCookie, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-threadforfibercookie-method.md)|Action déconseillée.|  
+|[ThreadForFiberCookie, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-threadforfibercookie-method.md)|Obsolète.|  
 |[WriteMemory, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-writememory-method.md)|Écrit des données dans une zone de mémoire dans le processus.|  
   
 ## <a name="remarks"></a>Notes  
@@ -53,12 +51,12 @@ Représente un processus qui exécute le code managé. Cette interface est une s
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

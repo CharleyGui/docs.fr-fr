@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a13ec8a6-8e18-4acb-8054-77f5b1a0e0b9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 276a69deecccc91b3c511403c2bd0d5c0baabd9d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b24f8ed4f5e2c6e0022f5599f2ab8c44a30a561a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772802"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129277"
 ---
 # <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a>ICLRErrorReportingManager::GetBucketParametersForCurrentException, méthode
 Obtient le compartiment Watson pour l’exception actuelle sur le thread appelant.  
   
- Un *compartiment* est une collection de données d’erreur sont liées à la même erreur de code. *Watson* fait référence à un ensemble de technologies de collecte et analyse des données qui sont associées à une exception.  
+ Un *compartiment* est une collection de données d’erreur qui est liée à la même erreur de code. *Watson* fait référence à un ensemble de technologies permettant de collecter et d’analyser les données associées à une exception.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +37,14 @@ HRESULT GetBucketParametersForCurrentException(
   
 ## <a name="parameters"></a>Paramètres  
  `pParams`  
- [out] Un pointeur vers un [BucketParameters](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) structure qui contient les données d’erreur pour l’exception.  
+ à Pointeur vers une structure [BucketParameters](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) qui contient les données d’erreur pour l’exception.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

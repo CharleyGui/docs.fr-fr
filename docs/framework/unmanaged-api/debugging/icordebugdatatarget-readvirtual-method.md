@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55e57640-b3d2-413d-b4f4-fbc27fb8e37c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c9d42c85502c12d4d77694626a533c69af97da67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87316b20c5835d9b887355a1f9374fa5f2156e5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750265"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122169"
 ---
 # <a name="icordebugdatatargetreadvirtual-method"></a>ICorDebugDataTarget::ReadVirtual, méthode
-Obtient un bloc de mémoire contiguë en commençant à l’adresse spécifiée et le retourne dans la mémoire tampon fournie.  
+Obtient un bloc de mémoire contiguë commençant à l’adresse spécifiée et le retourne dans la mémoire tampon fournie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT ReadVirtual(
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] L’adresse de début de la mémoire demandée.  
+ dans Adresse de début de la mémoire demandée.  
   
  `pbuffer`  
- [out] La mémoire tampon où la mémoire sera stockée.  
+ à Mémoire tampon dans laquelle la mémoire sera stockée.  
   
  `bytesRequested`  
- [in] Le nombre d’octets à obtenir à partir de l’adresse cible.  
+ dans Nombre d’octets à récupérer à partir de l’adresse cible.  
   
  `pBytesRead`  
- [out] Le nombre d’octets réellement lus à partir de l’adresse cible. Cela peut être inférieur à `bytesRequested`.  
+ à Nombre d’octets lus réellement à partir de l’adresse cible. Ce nombre peut être inférieur à `bytesRequested`.  
   
 ## <a name="remarks"></a>Notes  
- Si le premier octet (à l’adresse de début spécifiée) peut être lu, l’appel doit retourner un succès (pour prendre en charge la lecture efficace des structures de données avec une longueur autodescriptive, telles que des chaînes se terminant par null).  
+ Si le premier octet (à l’adresse de début spécifiée) peut être lu, l’appel doit retourner Success (pour prendre en charge la lecture efficace des structures de données avec une longueur autodescriptive, comme les chaînes terminées par le caractère null).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

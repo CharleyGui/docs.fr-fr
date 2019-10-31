@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2863b33b-a541-462c-bbe8-702a2832898e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d29b9e2a9b9022f682065816a62734d6c5b2d62
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d3f7c24b4bd373924c44dbc0490c890e7f1322bd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796409"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131734"
 ---
 # <a name="iinstallreferenceenum-interface"></a>IInstallReferenceEnum, interface
 Représente un énumérateur pour les assemblys référencés installés dans le Global Assembly Cache.  
@@ -42,10 +40,10 @@ interface IInstallReferenceEnum : IUnknown {
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetNextInstallReferenceItem, méthode](iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Obtient un pointeur vers le suivant `IInstallReferenceItem` contenu dans ce `IInstallReferenceEnum`.|  
+|[GetNextInstallReferenceItem, méthode](iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Obtient un pointeur vers le `IInstallReferenceItem` suivant contenu dans ce `IInstallReferenceEnum`.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: cc7b0e5b-48c3-4509-8ebb-611ddb1f7ec2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4244ef04d6789b7c17ccc8330cb0c26a6c9f3866
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 295deeec2e8eb42ccaa4d0cfb8b08b32438d047c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765545"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120253"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface, méthode
-Charge le CLR dans le processus actuel et retourne des pointeurs d’interface, runtime comme [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md), et [IMetaDataDispenserEx](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md).  
+Charge le CLR dans le processus en cours et retourne des pointeurs d’interface de Runtime, tels que [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)et [IMetaDataDispenserEx](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md).  
   
- Cette méthode remplace toutes les `CorBindTo`* des fonctions dans le [déconseillé fonctions d’hébergement CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) section.  
+ Cette méthode remplace toutes les fonctions `CorBindTo`* dans la section [fonctions d’hébergement CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +38,13 @@ HRESULT GetInterface(
   
 ## <a name="parameters"></a>Paramètres  
  `rclsid`  
- [in] L’interface CLSID pour la coclasse.  
+ dans Interface CLSID de la coclasse.  
   
  `riid`  
- [in] IID de demandé `rclsid` interface.  
+ dans IID de l’interface de `rclsid` demandée.  
   
  `ppUnk`  
- [out] Pointeur vers l’interface interrogée.  
+ à Pointeur vers l’interface interrogée.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -55,13 +53,13 @@ HRESULT GetInterface(
 |-------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
 |E_POINTER|`ppUnk` a la valeur null.|  
-|E_OUTOFMEMORY|Pas assez de mémoire est disponible pour traiter la demande.|  
-|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Un runtime différent était déjà lié à la stratégie d’activation 2 de version CLR héritée.|  
+|E_OUTOFMEMORY|Mémoire disponible insuffisante pour traiter la demande.|  
+|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Un Runtime différent était déjà lié à la stratégie d’activation héritée du CLR version 2.|  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode provoque le CLR être chargé, mais non initialisé.  
+ Cette méthode provoque le chargement du CLR mais pas son initialisation.  
   
- Le tableau suivant montre les combinaisons prises en charge pour `rclsid` et `riid`.  
+ Le tableau suivant indique les combinaisons prises en charge pour les `rclsid` et les `riid`.  
   
 |`rclsid`|`riid`|  
 |--------------|------------|  
@@ -74,12 +72,12 @@ HRESULT GetInterface(
 |||  
 |CLSID_CLRStrongName|IID_ICLRStrongName|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

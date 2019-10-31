@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 5fb645d9-b818-401c-8c2c-c30d86de58ba
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dcf63000de549b42d92ba157a7e550ac605bbfcd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 103ac75e7c3eaf9739c3a448ff1c052c158621db
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768382"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090901"
 ---
-# <a name="lpoverlappedcompletionroutine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE (pointeur fonction)
-Pointe vers une fonction qui avertit l’hôte lorsqu’un chevauchement (autrement dit, asynchrone) e/s sur un appareil est terminée.  
+# <a name="lpoverlapped_completion_routine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE (pointeur fonction)
+Pointe vers une fonction qui avertit l’hôte lorsqu’une e/s avec chevauchement (c’est-à-dire, asynchrone) sur un appareil est terminée.  
   
- Ce pointeur de fonction a été déconseillé dans le .NET Framework 4.  
+ Ce pointeur de fonction est déconseillé dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
   
 ## <a name="parameters"></a>Paramètres  
  `dwErrorCode`  
- [in] Une valeur qui est un code d’erreur si l’appareil a été fermée ; Sinon, cette valeur est zéro.  
+ dans Valeur qui est un code d’erreur si l’appareil a été fermé ; Sinon, cette valeur est égale à zéro.  
   
- Fermeture d’un périphérique entraîne tout en attente d’e/s à l’appareil pour être achevée immédiatement.  
+ La fermeture d’un appareil entraîne la fin immédiate de toutes les e/s en attente sur l’appareil.  
   
  `dwNumberOfBytesTransfered`  
- [in] Le nombre d’octets transférés par l’opération d’e/s.  
+ dans Nombre d’octets transférés par l’opération d’e/s.  
   
  `lpOverlapped`  
- [in] Un pointeur vers une structure qui contient des informations à utiliser pour terminer la demande d’e/s.  
+ dans Pointeur vers une structure qui contient des informations à utiliser pour terminer la requête d’e/s.  
   
 ## <a name="remarks"></a>Notes  
- La fonction à laquelle `LPOVERLAPPED_COMPLETION_ROUTINE` points est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement. La fonction de rappel permet à l’hôte traiter la demande d’e/s terminée.  
+ La fonction vers laquelle `LPOVERLAPPED_COMPLETION_ROUTINE` points est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement. La fonction de rappel permet à l’hôte de traiter la requête d’e/s terminée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorWks.dll  
+ **Bibliothèque :** MSCorWks. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

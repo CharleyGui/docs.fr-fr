@@ -7,22 +7,22 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 121b1c4b124ba07ff3bd312fd3832d3da592f486
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0695d5638589d1afe48553fe32b8d070e3938353
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921283"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119201"
 ---
-# <a name="remove-element-for-appsettings"></a>\<supprimer > élément pour \<appSettings >
+# <a name="remove-element-for-appsettings"></a>\<supprimer > élément de \<appSettings >
 
 Supprime les paramètres d’application personnalisés.
 
 [ **\<configuration>** ](../configuration-element.md)   
 &nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+&nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,7 +46,7 @@ Supprime les paramètres d’application personnalisés.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="example"></a>Exemple
 

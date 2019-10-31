@@ -8,21 +8,19 @@ helpviewer_keywords:
 - <CompatSortNLSVersion> element
 - CompatSortNLSVersion element
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 575d44ad9ecf445ba5d4b7fbe47032127ccb33ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f13265e2056c8eca62cd510154dd7c096eeabb00
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252734"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73117681"
 ---
-# <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion >, élément
+# <a name="compatsortnlsversion-element"></a>\<élément CompatSortNLSVersion >
 Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'exécution de comparaisons de chaînes.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<CompatSortNLSVersion>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<CompatSortNLSVersion** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,12 +40,12 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |4096|ID de paramètres régionaux qui représente un ordre de tri secondaire. Dans ce cas, 4096 représente l’ordre de tri des .NET Framework 3,5 et des versions antérieures.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -57,7 +55,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- Étant donné que les opérations de comparaison de chaînes, de tri <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> et de respect de la casse effectuées par la classe dans le .NET Framework 4 sont conformes à la norme Unicode <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> 5,1 <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> , les résultats des méthodes de comparaison de chaînes telles que et peuvent différer de versions précédentes du .NET Framework. Si votre application dépend d’un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans le .NET Framework 3,5 et les `<CompatSortNLSVersion>` versions antérieures en incluant l’élément dans le fichier de configuration de votre application.  
+ Étant donné que les opérations de comparaison de chaînes, de tri et de casse effectuées par la classe <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> dans le .NET Framework 4 sont conformes à la norme Unicode 5,1, les résultats des méthodes de comparaison de chaînes telles que <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> et <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> peuvent différer des versions précédentes du .NET Framework. Si votre application dépend d’un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans le .NET Framework 3,5 et les versions antérieures en incluant l’élément `<CompatSortNLSVersion>` dans le fichier de configuration de votre application.  
   
 > [!IMPORTANT]
 > La restauration de la comparaison de chaînes héritées et des règles de tri requiert également que la bibliothèque de liens dynamiques sort00001000.dll soit disponible sur le système local.  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ac7077c-8d88-49c4-b360-b3af0c541c63
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 59efdb76c000a78007ec0321202793ed0dd50cfb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0666becb5a34688d3f4cf5bddd1e2fa71785b38a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768274"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139792"
 ---
 # <a name="icordebugprocessenumnext-method"></a>ICorDebugProcessEnum::Next, méthode
-Obtient le nombre spécifié d’instances de ICorDebugProcess à partir de l’énumération, en commençant à la position actuelle.  
+Obtient le nombre spécifié d’instances ICorDebugProcess de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +38,15 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre de `ICorDebugProcess` instances à récupérer.  
+ dans Nombre d’instances de `ICorDebugProcess` à récupérer.  
   
  `processes`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un `ICorDebugProcess` objet qui représente un processus.  
+ à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugProcess` qui représente un processus.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre de `ICorDebugProcess` instances réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre d’instances `ICorDebugProcess` réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

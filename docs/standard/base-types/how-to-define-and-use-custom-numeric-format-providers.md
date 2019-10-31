@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés'
+title: 'Comment : définir et utiliser des fournisseurs de format numérique personnalisés'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,16 +15,14 @@ helpviewer_keywords:
 - format providers [.NET Framework]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b3898caa90c695ae681c2d9b20abbba57a2a9f61
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 151bf40cf042517b7441b89688122373259dc7dc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590472"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140065"
 ---
-# <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés
+# <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Comment : définir et utiliser des fournisseurs de format numérique personnalisés
 Le .NET Framework vous donne un contrôle étendu sur la représentation sous forme de chaîne de valeurs numériques. Il prend en charge les fonctionnalités suivantes pour personnaliser le format des valeurs numériques :  
   
 - Chaînes de format numériques standard, qui fournissent un ensemble prédéfini de formats pour convertir des nombres dans leur représentation sous forme de chaîne. Vous pouvez les utiliser avec toute méthode de mise en forme numérique, telle que <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, qui est dotée d’un paramètre `format`. Pour plus d’informations, consultez [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
@@ -51,7 +49,7 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
     1. Le cas échéant, vérifiez que la méthode est légitimement destinée à fournir des services de mise en forme en examinant le paramètre `provider`. Pour les objets de mise en forme qui implémentent à la fois <xref:System.IFormatProvider> et <xref:System.ICustomFormatter>, vous devez déterminer si le paramètre `provider` correspond à l’objet de mise en forme actuel.  
   
-    2. Déterminez si l’objet de mise en forme doit prendre en charge les spécificateurs de format personnalisés. (Par exemple, un spécificateur de format « N » peut indiquer qu’un numéro de téléphone américain doit être au format NANP, tandis qu’un spécificateur de format « I » peut indiquer une sortie au format ITU-T Recommandation E.123.) Si des spécificateurs de format sont utilisés, la méthode doit gérer le spécificateur de format spécifique. Ill est passé à la méthode dans le paramètre `format`. Si aucun spécificateur n’est présent, la valeur du paramètre `format` est <xref:System.String.Empty?displayProperty=nameWithType>.  
+    2. Déterminez si l’objet de mise en forme doit prendre en charge les spécificateurs de format personnalisés. (Par exemple, un spécificateur de format « N » peut indiquer qu’un numéro de téléphone américain doit être généré au format NANP, et un « I » peut indiquer une sortie au format E. 123 de la recommandation ITU-T.) Si les spécificateurs de format sont utilisés, la méthode doit gérer le spécificateur de format spécifique. Ill est passé à la méthode dans le paramètre `format`. Si aucun spécificateur n’est présent, la valeur du paramètre `format` est <xref:System.String.Empty?displayProperty=nameWithType>.  
   
     3. Récupérez la valeur numérique passée à la méthode comme paramètre `arg`. Effectuez toute opération requise pour le convertir en sa représentation sous forme de chaîne.  
   

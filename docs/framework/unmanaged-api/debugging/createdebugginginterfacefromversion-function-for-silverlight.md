@@ -8,17 +8,15 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 35c7a18f-133a-4584-bd25-bb338568b0c6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96968956b513e1ae80a25f5fb4afea48bf888876
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 438af9f191f48a86207c3b343ba428eef2c1fabc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739268"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132204"
 ---
 # <a name="createdebugginginterfacefromversion-function-for-silverlight"></a>Fonction CreateDebuggingInterfaceFromVersion Function pour Silverlight
-Accepte une chaîne de version de runtime (CLR) langage commun qui est retournée à partir de la [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)et retourne une interface de débogueur correspondante (en règle générale, [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)).  
+Accepte une chaîne de version common language runtime (CLR) retournée par la [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)et retourne une interface de débogueur correspondante (en général, [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,14 +29,14 @@ HRESULT CreateDebuggingInterfaceFromVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `szDebuggeeVersion`  
- [in] Chaîne de version du CLR dans le programme débogué cible, qui est retourné par la [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md).  
+ dans Chaîne de version du CLR dans le programme débogué cible, qui est retournée par la [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md).  
   
  `ppCordb`  
- [out] Pointeur vers un autre pointeur vers un objet COM (`IUnknown`). Cet objet sera être casté en un [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) de l’objet avant d’être retournée.  
+ [out] Pointeur vers un autre pointeur vers un objet COM (`IUnknown`). Cet objet est casté en objet [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) avant d’être retourné.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
- `ppCordb` fait référence à un objet valide qui implémente le [interface ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface.  
+ `ppCordb` fait référence à un objet valide qui implémente l’interface d' [interface ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) .  
   
  E_INVALIDARG  
  `szDebuggeeVersion` ou `ppCordb` a la valeur null.  
@@ -50,16 +48,16 @@ HRESULT CreateDebuggingInterfaceFromVersion (
  La version de mscordbi.dll ou de mscordaccore.dll n'est pas la même que celle du fichier CoreCLR.dll cible.  
   
  E_FAIL (ou autres codes de retour E_)  
- Impossible de retourner un [interface ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md).  
+ Impossible de retourner une [interface ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md).  
   
 ## <a name="remarks"></a>Notes  
  L'interface retournée fournit les fonctionnalités permettant l'attachement à un CLR dans un processus cible et le débogage du code managé exécuté par le CLR.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** dbgshim.h  
+ **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim.dll  
+ **Bibliothèque :** dbgshim. dll  
   
- **Versions du .NET framework :** 3.5 SP1
+ **Versions de .NET Framework :** 3,5 SP1

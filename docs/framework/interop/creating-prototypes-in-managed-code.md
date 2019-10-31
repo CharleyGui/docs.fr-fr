@@ -17,14 +17,12 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f32924c8c104f37fdb98a2a9ff104b6f6c19e478
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 712040c3482b51c4dafe0ee87fdda8cd848fb7fc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853833"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123619"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
@@ -93,7 +91,7 @@ extern "C" int MessageBox(
 |-----------|-----------------|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|Active ou désactive le mappage ajusté.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Spécifie la convention d'appel à utiliser lors du passage des arguments de méthode. La valeur par défaut est `WinAPI`, ce qui correspond à `__stdcall` pour les plateformes 32 bits Intel.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Contrôle le troncage des noms et la façon dont les arguments de chaîne doivent être marshalés vers la fonction. Par défaut, il s’agit de `CharSet.Ansi`.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Contrôle le troncage des noms et la façon dont les arguments de chaîne doivent être marshalés vers la fonction. La valeur par défaut est `CharSet.Ansi`,|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|Spécifie le point d'entrée de DLL à appeler.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|Détermine si un point d'entrée doit être modifié pour correspondre au jeu de caractères. La valeur par défaut varie en fonction du langage de programmation.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|Contrôle si la signature de méthode managée doit être transformée en signature non managée qui retourne un HRESULT et possède un argument supplémentaire [out, retval] pour la valeur de retour.<br /><br /> La valeur par défaut est `true` (la signature ne doit pas être transformée).|  

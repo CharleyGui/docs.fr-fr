@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetCurrentApartmentType function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ff64be47802a46979818ab54cc3efb4112dd05e0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6ecd2b49d6850a8fae25ddca54f855fdda2ccabb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798614"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120357"
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType fonction)
 Récupère le type de cloisonnement dans lequel l’appelant s’exécute.   
@@ -51,7 +49,7 @@ dans Pointeur vers une instance [IComThreadingInfo](/windows/desktop/api/objidlb
 
 ## <a name="return-value"></a>Valeur de retour
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `S_OK` | 0 | La fonction s’est terminée avec succès. |
 | `E_FAIL` | 0x80000008 | L’appelant ne s’exécute pas dans un cloisonnement. |
@@ -60,10 +58,10 @@ dans Pointeur vers une instance [IComThreadingInfo](/windows/desktop/api/objidlb
 
 Cette fonction encapsule un appel à la méthode [IComThreadingInfo :: GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

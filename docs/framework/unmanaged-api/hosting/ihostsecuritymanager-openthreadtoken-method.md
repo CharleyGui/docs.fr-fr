@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d5999052-8bf0-4a9e-8621-da6284406b18
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c1beeb0ff6b2e3493f0814fc3371f189bd4d485d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ced153798355aff882f0244f3dd946c39dea2bd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778021"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121471"
 ---
 # <a name="ihostsecuritymanageropenthreadtoken-method"></a>IHostSecurityManager::OpenThreadToken, méthode
 Ouvre le jeton d’accès discrétionnaire associé au thread en cours d’exécution.  
@@ -39,36 +37,36 @@ HRESULT OpenThreadToken (
   
 ## <a name="parameters"></a>Paramètres  
  `dwDesiredAccess`  
- [in] Masque des valeurs d’accès qui spécifient les types demandés d’accès au jeton de thread. Ces valeurs sont définies dans Win32 `OpenThreadToken` (fonction). Les types d’accès demandés sont rapprochées par rapport à la liste de contrôle d’accès discrétionnaire (DACL) pour déterminer quels types d’accès à accorder ou refuser du jeton.  
+ dans Masque des valeurs d’accès qui spécifient les types d’accès demandés au jeton de thread. Ces valeurs sont définies dans la fonction de `OpenThreadToken` Win32. Les types d’accès demandés sont conciliés par rapport à la liste de contrôle d’accès discrétionnaire (DACL) du jeton pour déterminer les types d’accès à accorder ou refuser.  
   
  `bOpenAsSelf`  
- [in] `true` pour spécifier que la vérification d’accès doit être effectuée à l’aide du contexte de sécurité du processus pour le thread appelant ; `false` pour spécifier que la vérification d’accès doit être effectuée à l’aide du contexte de sécurité pour le thread appelant lui-même. Si le thread emprunte un client, le contexte de sécurité peut être celui d’un processus client.  
+ [in] `true` pour spécifier que le contrôle d’accès doit être effectué à l’aide du contexte de sécurité du processus pour le thread appelant ; `false` pour spécifier que le contrôle d’accès doit être effectué à l’aide du contexte de sécurité du thread appelant lui-même. Si le thread emprunte l’identité d’un client, le contexte de sécurité peut être celui d’un processus client.  
   
  `phThreadToken`  
- [out] Pointeur vers le jeton d’accès qui vient d’être ouvert.  
+ à Pointeur vers le jeton d’accès récemment ouvert.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`OpenThreadToken` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- `IHostSecurityManager::OpenThreadToken` se comporte de la même façon pour la fonction Win32 correspondante du même nom, sauf que la fonction Win32 permet à l’appelant de passer un handle à un thread arbitraire, alors que `IHostSecurityManager::OpenThreadToken` s’ouvre uniquement le jeton associé au thread appelant.  
+ `IHostSecurityManager::OpenThreadToken` se comporte de la même façon que la fonction Win32 correspondante du même nom, sauf que la fonction Win32 permet à l’appelant de passer un handle à un thread arbitraire, tandis que `IHostSecurityManager::OpenThreadToken` ouvre uniquement le jeton associé au thread appelant.  
   
- Le `HANDLE` type n’est pas conforme à COM, autrement dit, sa taille est spécifique au système d’exploitation et il requiert le marshaling personnalisé. Par conséquent, ce jeton est utilisé que dans le processus, entre le CLR et l’hôte.  
+ Le type de `HANDLE` n’est pas conforme à COM, c’est-à-dire que sa taille est spécifique au système d’exploitation et qu’il nécessite un marshaling personnalisé. Ainsi, ce jeton est destiné à être utilisé uniquement dans le processus, entre le CLR et l’hôte.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

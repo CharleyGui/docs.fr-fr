@@ -11,14 +11,12 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f2bdaef52bbc4cac0abfcbf8724f3c5c602bc8f0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f04b40edde0755315f3b4fd4284fc7c804a54313
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045800"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130045"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -36,7 +34,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Assemblys dynamiques  
- Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Consultez [Changements en matière de sécurité](../security/security-changes.md).) Les surcharges restantes peuvent être exécutées par n'importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
+ Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Voir [modifications de sécurité](../security/security-changes.md).) Les surcharges restantes peuvent être exécutées par n’importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
   
 > [!NOTE]
 > Les attributs que vous appliquez à l'assembly dynamique après sa création, en utilisant la méthode <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A>, ne prennent pas effet tant que l'assembly n'a pas été enregistré sur le disque et rechargé en mémoire.  
@@ -68,7 +66,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 > [!NOTE]
 > Conceptuellement, les demandes sont effectuées pendant la construction de la méthode. Autrement dit, les demandes peuvent être faites à l'émission de chaque instruction MSIL. Dans l'implémentation actuelle, toutes les demandes sont faites quand la méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A?displayProperty=nameWithType> est appelée ou quand le compilateur juste-à-temps (JIT) est appelé, si la méthode est appelée sans appel de <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>.  
   
- Si le domaine d’application le permet, les méthodes dynamiques hébergées anonymement peuvent ignorer les contrôles de visibilité JIT, avec la restriction suivante : les types et les membres non publics auxquels accède une méthode dynamique hébergée anonymement doivent être dans des assemblys dont les jeux d’autorisations doivent être équivalents à ou être des sous-ensembles du jeu d’autorisations de la pile des appels émettrice. Cette possibilité restreinte d'ignorer les contrôles de visibilité JIT est activée si le domaine d'application accorde l'autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
+ Si le domaine d'application le permet, les méthodes dynamiques hébergées anonymement peuvent ignorer les contrôles de visibilité JIT, avec la restriction suivante : les types et les membres non publics auxquels accède une méthode dynamique hébergée anonymement doivent être dans des assemblys dont les jeux d'autorisations doivent être équivalents à ou être des sous-ensembles du jeu d'autorisations de la pile des appels émettrice. Cette possibilité restreinte d'ignorer les contrôles de visibilité JIT est activée si le domaine d'application accorde l'autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
   
 - Si votre méthode utilise seulement des types et des membres publics, aucune autorisation n'est requise pendant la construction.  
   

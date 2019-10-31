@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8b35e7a9-b40e-40a9-8d8e-b82e823fc575
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9dde27f74ac59d033b6e25fba1dbb8e52c4b91af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a242764710d92e81e8089bc2919734bfac4bcdb2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760678"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137563"
 ---
 # <a name="icordebugstepperisactive-method"></a>ICorDebugStepper::IsActive, méthode
-Obtient une valeur qui indique si cet ICorDebugStepper exécute actuellement une étape.  
+Obtient une valeur qui indique si ces ICorDebugStepper exécutent actuellement une étape.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT IsActive (
   
 ## <a name="parameters"></a>Paramètres  
  `pbActive`  
- [out] Retourne `true` si l’exécution pas à pas exécute actuellement une étape ; sinon, retourne `false`.  
+ à Retourne `true` si le pas à pas exécute actuellement une étape ; Sinon, retourne `false`.  
   
 ## <a name="remarks"></a>Notes  
- Toute étape reste active jusqu'à ce que le débogueur reçoive un [ICorDebugManagedCallback::StepComplete](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md) appeler, ce qui désactive automatiquement l’exécution pas à pas. Une exécution pas à pas peut également être désactivée prématurément en appelant [ICorDebugStepper::Deactivate](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md) avant le rappel condition est atteinte.  
+ Toute action d’étape reste active jusqu’à ce que le débogueur reçoive un appel [ICorDebugManagedCallback :: StepComplete](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md) , qui désactive automatiquement le pas à pas. Une exécution pas à pas peut également être désactivée prématurément en appelant [ICorDebugStepper ::D eactivate](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md) avant que la condition de rappel soit atteinte.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

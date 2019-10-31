@@ -4,19 +4,17 @@ ms.date: 03/30/2017
 dev_langs:
 - cpp
 ms.assetid: b3af44ec-7d41-425b-aed9-0c4379e5cbe9
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 52a58f75ca7abd1bd1f871bcf4637bfd7eb7bdcd
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: b6bfd258f35f19719be5e5169a1edc22a358371c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300540"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123374"
 ---
 # <a name="icordebugprocess8enableexceptioncallbacksoutsideofmycode-method"></a>ICorDebugProcess8::EnableExceptionCallbacksOutsideOfMyCode (méthode)
-[Pris en charge dans le .NET Framework 4.6 et versions ultérieures]  
+[Pris en charge dans le .NET Framework 4,6 et versions ultérieures]  
   
- Active ou désactive certains types de [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) rappels d’exception.  
+ Active ou désactive certains types de rappels d’exception [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,13 +31,13 @@ HRESULT EnableExceptionCallbacksOutsideOfMyCode(
 ## <a name="remarks"></a>Notes  
  Si la valeur de `enableExceptionsOutsideOfJMC` est `false` :  
   
-- Une exception DEBUG_EXCEPTION_FIRST_CHANCE pas entraîne un rappel au débogueur.  
+- Une exception DEBUG_EXCEPTION_FIRST_CHANCE n’entraîne pas de rappel au débogueur.  
   
-- Une exception DEBUG_EXCEPTION_CATCH_HANDLER_FOUND pas entraîne un rappel au débogueur si l’exception s’échappe jamais dans le code utilisateur (autrement dit, le chemin d’origine vers un gestionnaire d’exceptions n’a aucune méthode marquée JustMyCode ou JMC).  
+- Une exception DEBUG_EXCEPTION_CATCH_HANDLER_FOUND n’entraîne pas de rappel au débogueur si l’exception n’échappe jamais dans le code utilisateur (autrement dit, le chemin d’accès d’une exception d’origine à un gestionnaire d’exceptions n’a aucune méthode marquée comme JustMyCode ou uniquement mon code).  
   
  La valeur par défaut de `enableExceptionsOutsideOfJMC` est `true`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

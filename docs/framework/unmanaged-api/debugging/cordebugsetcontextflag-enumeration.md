@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b30280bb-fe75-44ed-8589-bcff081fae44
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e959ce7a77ad6ceb7f2fc848193cbd9fff028279
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 251c96042e8e56112015fb869176c708322267f6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739622"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097267"
 ---
 # <a name="cordebugsetcontextflag-enumeration"></a>CorDebugSetContextFlag, énumération
 Indique si le contexte provient du frame (ou feuille) actif ou s'il a été calculé par déroulement à partir d'un autre frame.  
@@ -40,13 +38,13 @@ typedef enum CorDebugSetContextFlag
   
 |Membre|Description|  
 |------------|-----------------|  
-|SET_CONTEXT_FLAG_ACTIVE_FRAME|Le contexte est le contexte du thread actif.|  
-|SET_CONTEXT_FLAG_UNWIND_FRAME|Le contexte a été calculé par déroulement à partir d’un autre frame.|  
+|SET_CONTEXT_FLAG_ACTIVE_FRAME|Le contexte est le contexte actif du thread.|  
+|SET_CONTEXT_FLAG_UNWIND_FRAME|Le contexte a été calculé en déroulant d’un autre Frame.|  
   
 ## <a name="remarks"></a>Notes  
- `CorDebugSetContextFlag` Fournit des valeurs qui sont utilisées par le [ICorDebugStackWalk::SetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) (méthode).  
+ `CorDebugSetContextFlag` fournit des valeurs qui sont utilisées par la méthode [ICorDebugStackWalk :: SetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - GetObjectText function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d47fcd59204a4d114fc9f0dc5bc4550ba1681f33
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 412e1ad503fa0e0b4f813298c0ac96ae80098c06
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798506"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102452"
 ---
 # <a name="getobjecttext-function"></a>GetObjectText, fonction
 Retourne un rendu textuel de l’objet dans la syntaxe du format MOF (MOF).
@@ -51,13 +49,13 @@ dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/
 dans Normalement 0. Si `WBEM_FLAG_NO_FLAVORS` (ou 0x1) est spécifié, les qualificateurs sont inclus sans propagation ni informations de version.
 
 `pstrObjectText`   
-à Pointeur vers un `null` à l’entrée. Au retour, un qui vient `BSTR` d’être alloué contient un rendu de syntaxe MOF de l’objet.  
+à Pointeur vers une `null` à l’entrée. Au retour, `BSTR` qui vient d’être allouée, contient un rendu de syntaxe MOF de l’objet.  
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
@@ -73,14 +71,14 @@ Le texte MOF retourné ne contient pas toutes les informations relatives à l’
 L’algorithme suivant est utilisé pour reconstruire le texte des paramètres d’une méthode :
 
 1. Les paramètres sont reséquencés dans l’ordre de leurs valeurs d’identificateur.
-1. Les paramètres spécifiés en `[in]` tant `[out]` que et sont combinés en un seul paramètre.
+1. Les paramètres spécifiés en tant que `[in]` et `[out]` sont combinés en un seul paramètre.
  
-`pstrObjectText`doit être un pointeur vers un `null` lorsque la fonction est appelée ; elle ne doit pas pointer vers une chaîne valide avant l’appel de la méthode, car le pointeur n’est pas libéré.
+`pstrObjectText` doit être un pointeur vers un `null` lorsque la fonction est appelée ; elle ne doit pas pointer vers une chaîne valide avant l’appel de la méthode, car le pointeur n’est pas libéré.
 
-## <a name="requirements"></a>Configuration requise  
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

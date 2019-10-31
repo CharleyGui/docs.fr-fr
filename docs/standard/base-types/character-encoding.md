@@ -11,15 +11,13 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 248628d9907a3984b2c06e5f2f3a1e5c2faa2a67
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 3ac5602c32ce0dcfe21e913868faa7ab356e4194
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040546"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120603"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
@@ -29,14 +27,14 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
 
 - Un décodeur, qui convertit une séquence d'octets en une séquence de caractères.
 
-L'encodage de caractères décrit les règles selon lesquelles un encodeur et un décodeur fonctionnent. Par exemple, la classe <xref:System.Text.UTF8Encoding> décrit les règles d'encodage et de décodage d'UTF-8, qui utilise de un à quatre octets pour représenter un caractère Unicode. L'encodage et le décodage peuvent également inclure une validation. Par exemple, la classe <xref:System.Text.UnicodeEncoding> vérifie tous les substituts afin de vérifier qu'ils constituent des paires de substitution valide. (Une paire de substitution se compose d'un caractère avec un point de code allant de U+D800 à U+DBFF, suivi d'un caractère avec un point de code allant de U+DC00 à U+DFFF.)  Une stratégie de secours détermine comment un encodeur traite les caractères non valides ou comment un décodeur gère les octets non valides.
+L'encodage de caractères décrit les règles selon lesquelles un encodeur et un décodeur fonctionnent. Par exemple, la classe <xref:System.Text.UTF8Encoding> décrit les règles d'encodage et de décodage d'UTF-8, qui utilise de un à quatre octets pour représenter un caractère Unicode. L'encodage et le décodage peuvent également inclure une validation. Par exemple, la classe <xref:System.Text.UnicodeEncoding> vérifie tous les substituts afin de vérifier qu'ils constituent des paires de substitution valide. (Une paire de substitution se compose d’un caractère avec un point de code compris entre U + D800 et U + DBFF, suivi d’un caractère avec un point de code compris entre U + DC00 et et U + DFFF.)  Une stratégie de secours détermine comment un encodeur gère les caractères non valides ou comment un décodeur gère les octets non valides.
 
 > [!WARNING]
 > Les classes d’encodage .NET permettent de stocker et de convertir les données caractères. Elles ne doivent pas utilisées pour stocker des données binaires sous forme de chaîne. En fonction de l'encodage utilisé, la conversion de données binaires en un format chaîne avec les classes d'encodage peut entraîner un comportement inattendu et produire des données incorrectes ou endommagées. Pour convertir des données binaires en chaîne, utilisez la méthode <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> .
 
 .NET utilise l’encodage UTF-16 (représenté par la classe <xref:System.Text.UnicodeEncoding>) pour représenter des caractères et des chaînes. Les applications qui ciblent le common language runtime utilisent des encodeurs pour mapper les représentations de caractères Unicode prises en charge par le common language runtime à d'autres schémas de codage. Elles utilisent des décodeurs pour mapper les caractères des encodages non-Unicode à Unicode.
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes :
 
 - [Encodages dans .NET](../../../docs/standard/base-types/character-encoding.md#Encodings)
 
@@ -69,7 +67,7 @@ Toutes les classes d'encodage de caractères de .NET héritent de la classe <xre
 
 Vous pouvez récupérer des informations sur les encodages disponibles dans .NET en appelant la méthode <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType>. .NET prend en charge les systèmes d’encodage de caractères répertoriés dans le tableau suivant.
 
-|Encodage|Classe|Description|Avantages et inconvénients|
+|Encodage|Class|Description|Avantages et inconvénients|
 |--------------|-----------|-----------------|-------------------------------|
 |non|<xref:System.Text.ASCIIEncoding>|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet.|Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
 |UTF-7|<xref:System.Text.UTF7Encoding>|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII.|UTF-7 prend en charge les protocoles de messagerie et les protocoles de groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
@@ -153,7 +151,7 @@ Quand une méthode tente d'encoder ou de décoder un caractère, mais qu'il n'ex
 
 ### <a name="best-fit-fallback"></a>Best-Fit Fallback
 
-Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il existe très peu de pages de codes contenant des caractères qui ne peuvent pas être mappés à Unicode.) La stratégie de secours la mieux adaptée est la stratégie par défaut des encodages de pages de codes et de jeux de caractères codés sur deux octets qui sont récupérés par les surcharges de <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> et de <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType>.
+Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il y a très peu de pages de codes qui contiennent des caractères qui ne peuvent pas être correctement mappés au format Unicode.) L’option de secours la mieux adaptée est la valeur par défaut pour les encodages de pages de codes et de jeux de caractères codés sur deux octets, qui sont récupérés par le <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> et <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType> surcharges.
 
 > [!NOTE]
 > En théorie, les classes d'encodage Unicode fournies dans .NET (<xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding> et <xref:System.Text.UTF32Encoding>) prennent en charge tous les caractères de tous les jeux de caractères : elles peuvent donc être utilisées pour éliminer les problèmes de la stratégie de secours la mieux adaptée.

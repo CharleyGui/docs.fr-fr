@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9fcefa98-750d-4168-8915-8173a43accf2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fc647805fcb7d8354a2540ac9424dc7155853444
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0b024d3396dfe1796fcb18afa122d4aee39c4ccc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745038"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132725"
 ---
 # <a name="icordebugchainenumerateframes-method"></a>ICorDebugChain::EnumerateFrames, méthode
 Obtient un énumérateur qui contient tous les frames de pile managés dans la chaîne, en commençant par le frame le plus récent.  
@@ -37,14 +35,14 @@ HRESULT EnumerateFrames (
   
 ## <a name="parameters"></a>Paramètres  
  `ppFrames`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugFrameEnum qui est l’énumérateur pour les frames de pile.  
+ à Pointeur vers l’adresse d’un objet ICorDebugFrameEnum qui est l’énumérateur des frames de pile.  
   
 ## <a name="remarks"></a>Notes  
- La chaîne représente la pile des appels physique pour le thread.  
+ La chaîne représente la pile d’appels physique du thread.  
   
- Le `EnumerateFrames` méthode doit être appelée uniquement pour les chaînes managées. L’API de débogage ne fournit pas de méthodes pour obtenir des images contenues dans les chaînes non managées. Le débogueur doit utiliser d’autres moyens d’obtenir ces informations.  
+ La méthode `EnumerateFrames` doit être appelée uniquement pour les chaînes managées. L’API de débogage ne fournit pas de méthodes permettant d’obtenir des frames contenus dans des chaînes non managées. Le débogueur doit utiliser d’autres moyens pour obtenir ces informations.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

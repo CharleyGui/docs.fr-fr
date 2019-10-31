@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5e7b12d-835a-4e86-ae2f-d658d4f1c67c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0bc65cdeada059f6e9b41dc8eb4d7589a232143d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc7d99d0ddb443cba227b7bad0cd53edb94c9101
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756826"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138541"
 ---
 # <a name="icordebughandlevaluegethandletype-method"></a>ICorDebugHandleValue::GetHandleType, méthode
-Obtient une valeur qui indique le type de handle référencé par cet objet ICorDebugHandleValue.  
+Obtient une valeur qui indique le genre de handle référencé par cet objet ICorDebugHandleValue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetHandleType (
   
 ## <a name="parameters"></a>Paramètres  
  `pType`  
- [out] Pointeur vers une valeur de l’énumération CorDebugHandleType qui indique le type de ce handle.  
+ à Pointeur vers une valeur de l’énumération CorDebugHandleType, qui indique le type de ce handle.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

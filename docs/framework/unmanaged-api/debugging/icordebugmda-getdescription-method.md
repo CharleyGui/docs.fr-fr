@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01d1b481-ca67-4712-8744-d342ec0df639
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: da57ecf0c153d902322798e1927c995a34cb93d2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bfe77982b88b2fc96dc2846b9db04df28bfc0c38
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761990"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131450"
 ---
 # <a name="icordebugmdagetdescription-method"></a>ICorDebugMDA::GetDescription, méthode
-Obtient une chaîne qui contient la description de l’assistant débogage managé (MDA) représenté par [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Obtient une chaîne contenant la description de l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,18 +38,18 @@ HRESULT GetDescription (
   
 ## <a name="parameters"></a>Paramètres  
  `cchName`  
- [in] La taille de la mémoire tampon de chaîne qui stockera la description.  
+ dans Taille de la mémoire tampon de chaîne qui stocke la description.  
   
  `pcchName`  
- [out] Pointeur vers le nombre d’octets retournés dans la mémoire tampon de chaîne.  
+ à Pointeur vers le nombre d’octets retournés dans la mémoire tampon de chaîne.  
   
  `szName`  
- [out] Un mémoire tampon de chaîne qui contient la description de l’Assistant Débogage MANAGÉ.  
+ à Mémoire tampon de chaîne contenant la description de l’Assistant Débogage managé.  
   
 ## <a name="remarks"></a>Notes  
- La chaîne peut être de longueur zéro.  
+ La longueur de la chaîne peut être égale à zéro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

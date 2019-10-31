@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: bc789636-ca14-4f07-8f77-9305874d7495
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4a0cac77d7bf7611acf6042298bfe6814d8f4352
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 68332aee895f012bcf6ab6a72936c8dddc7f28a0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768452"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122045"
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx, fonction
-Traduit une valeur HRESULT à un message d’erreur approprié pour la culture spécifiée.  
+Convertit une valeur HRESULT en un message d’erreur approprié pour la culture spécifiée.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,40 +41,40 @@ HRESULT LoadStringRCEx (
   
 ## <a name="parameters"></a>Paramètres  
  `lcid`  
- [in] Identificateur de culture. Passez -1 `lcid` pour utiliser la culture par défaut.  
+ dans Identificateur de culture. Pass-1 pour `lcid` pour utiliser la culture par défaut.  
   
  `iResourceID`  
- [in] Une valeur HRESULT.  
+ dans HRESULT.  
   
  `szBuffer`  
- [out] Une mémoire tampon qui contient le message d’erreur en cas de réussite.  
+ à Mémoire tampon qui contient le message d’erreur une fois l’opération terminée.  
   
  `iMax`  
- [in] La taille de la mémoire tampon de message.  
+ dans Taille de la mémoire tampon du message d’erreur.  
   
  `bQuiet`  
- [in] Ignoré.  
+ dans Pas.  
   
  `pcwchUsed`  
- [out] Pointeur vers la longueur du message d’erreur.  
+ à Pointeur vers la longueur du message d’erreur.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur COM standards, tel que défini dans WinError.h, en plus des valeurs suivantes.  
+ Cette méthode retourne des codes d’erreur COM standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`szBuffer` a la valeur null, ou `iMax` est zéro (0).|  
+|E_INVALIDARG|`szBuffer` a la valeur null, ou `iMax` est égal à zéro (0).|  
   
 ## <a name="remarks"></a>Notes  
  Si la méthode ne se termine pas correctement, `szBuffer` contient une chaîne vide.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

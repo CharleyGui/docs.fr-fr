@@ -1,5 +1,5 @@
 ---
-title: <clear>, élément de NameValueSectionHandler et DictionarySectionHandler
+title: élément <clear> pour NameValueSectionHandler et DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fbb689db4abc5d59729d9a4d9807a02a0983d40b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3e27bb7e21baf2eb4990d0107db4aae1b5f9a7d1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927712"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119076"
 ---
-# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Clear >, élément de NameValueSectionHandler et DictionarySectionHandler
+# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<> élément Clear pour NameValueSectionHandler et DictionarySectionHandler
 
 Efface tous les paramètres précédemment définis dans une section.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
+&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la  >.  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,27 +32,27 @@ Efface tous les paramètres précédemment définis dans une section.
 
 ## <a name="attributes"></a>Attributs
 
-Aucun
+aucune.
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ------------|
-| [élément de >y  **\<** ](custom-element-2.md) | Définit des paramètres pour les sections de configuration personnalisées <xref:System.Configuration.DictionarySectionHandler> qui utilisent les <xref:System.Configuration.NameValueSectionHandler> classes et. |
+| [ **\<** de la > Appartient](custom-element-2.md) | Définit les paramètres des sections de configuration personnalisées qui utilisent les classes <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser l'  **\<élément clear >** pour supprimer de votre application tous les paramètres qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
+Vous pouvez utiliser l’élément **\<clear >** pour supprimer de votre application tous les paramètres qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser l'  **\<élément clear >** dans un fichier de configuration d’application pour effacer les sections précédemment définies dans la configuration de l’ordinateur. txt.
+Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser l’élément **\<clear >** dans un fichier de configuration d’application pour effacer les sections précédemment définies dans le fichier de configuration de l’ordinateur.
 
-Le code de fichier de configuration d’ordinateur suivant déclare la section  **\<mySection >** :
+Le code de fichier de configuration d’ordinateur suivant déclare la section **\<> mySection**:
 
 ```xml
 <!-- Machine.config file -->
@@ -67,7 +67,7 @@ Le code de fichier de configuration d’ordinateur suivant déclare la section  
 </configuration>
 ```
 
-Le code de fichier de configuration d’application suivant supprime tous les paramètres de  **\<mySection >** . L’application ne peut pas récupérer les paramètres qui ont été déclarés dans la  **\<section de > mySection** du fichier de configuration de l’ordinateur.
+Le code de fichier de configuration d’application suivant supprime tous les paramètres de **\<> mySection**. L’application ne peut pas récupérer les paramètres qui ont été déclarés dans le dans la section **\<mySection >** du fichier de configuration de l’ordinateur.
 
 ```xml
 <!-- Application configuration file -->

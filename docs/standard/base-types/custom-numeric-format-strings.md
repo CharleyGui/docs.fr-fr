@@ -16,18 +16,16 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5cacccc182b3361ffd635f2b5f32ce8c17100d08
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
-ms.translationtype: HT
+ms.openlocfilehash: 72b60d0a91fda3e89448a19b506a6f8457835304
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133632"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124409"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
-Vous pouvez créer une chaîne de format numérique personnalisée, qui est composée d'un ou de plusieurs spécificateurs de format numériques personnalisés, pour définir la mise en forme des données numériques. Une chaîne de format numérique personnalisée est toute chaîne autre qu'une [chaîne de format numérique standard](../../../docs/standard/base-types/standard-numeric-format-strings.md).
+Vous pouvez créer une chaîne de format numérique personnalisée, qui est composée d'un ou de plusieurs spécificateurs de format numériques personnalisés, pour définir la mise en forme des données numériques. Une chaîne de format numérique personnalisée est toute chaîne de format autre qu’une [chaîne de format numérique standard](../../../docs/standard/base-types/standard-numeric-format-strings.md).
 
 Les chaînes de format numérique personnalisées sont prises en charge par certaines surcharges de la méthode `ToString` de tous les types numériques. Par exemple, vous pouvez fournir une chaîne de format numérique aux méthodes <xref:System.Int32.ToString%28System.String%29> et <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> du type <xref:System.Int32> . Les chaînes de format numérique personnalisées sont également prises en charge par la fonctionnalité de [mise en forme composite](../../../docs/standard/base-types/composite-formatting.md) .NET, utilisée par certaines méthodes `Write` et `WriteLine` des classes <xref:System.Console> et <xref:System.IO.StreamWriter>, la méthode <xref:System.String.Format%2A?displayProperty=nameWithType> et la méthode <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. La fonctionnalité [Interpolation de chaîne](../../csharp/language-reference/tokens/interpolated.md) prend également en charge les chaînes de format numérique personnalisées.
 
@@ -38,17 +36,17 @@ Les chaînes de format numérique personnalisées sont prises en charge par cert
 
 |Spécificateur de format|Name|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
-|"0"|Espace réservé du zéro|Remplace le zéro par le chiffre correspondant, le cas échéant ; sinon, le zéro s'affiche dans la chaîne de résultat.<br /><br /> Informations complémentaires : [Spécificateur personnalisé "0"](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
-|"#"|Espace réservé de chiffre|Remplace le symbole « # » par le chiffre correspondant, le cas échéant ; sinon, aucun chiffre ne s'affiche dans la chaîne de résultat.<br /><br /> Notez qu’aucun chiffre n’apparaît dans la chaîne de résultat si le chiffre correspondant dans la chaîne d’entrée est un 0 non significatif. Exemple : 0003 ("####") -> 3.<br /><br /> Informations complémentaires : [Spécificateur personnalisé "#"](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|
-|"."|Virgule décimale|Détermine l'emplacement du séparateur décimal dans la chaîne de résultat.<br /><br /> Informations complémentaires : [ Spécificateur personnalisé "."](#SpecifierPt).|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
-|","|Séparateur de groupes et mise à l'échelle des nombres|Sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres. En tant que séparateur de groupes, il insère un caractère de séparation des groupes localisé entre chaque groupe. En tant que spécificateur de mise à l'échelle des nombres, il divise un nombre par 1000 pour chaque virgule spécifiée.<br /><br /> Informations complémentaires : [Spécificateur personnalisé ","](#SpecifierTh).|Spécificateur de séparateur de groupes :<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> Spécificateur de mise à l'échelle :<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
-|"%"|Espace réservé de pourcentage|Multiplie un nombre par 100 et insère un symbole de pourcentage localisé dans la chaîne de résultat.<br /><br /> Informations complémentaires : [Spécificateur personnalisé "%"](#SpecifierPct).|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
-|"‰"|Espace réservé « pour mille »|Multiplie un nombre par 1000 et insère un symbole « pour mille » localisé dans la chaîne de résultat.<br /><br /> Informations complémentaires : [Spécificateur personnalisé "‰"](#SpecifierPerMille).|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
-|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "E0"<br /><br /> "E+0"<br /><br /> "E-0"|Notation exponentielle|Si le spécificateur est suivi d'au moins un zéro (0), met en forme le résultat à l'aide de la notation exponentielle. La casse de « E » ou « e » indique la casse du symbole d'exposant dans la chaîne de résultat. Le nombre des zéros qui suivent le caractère « E » ou « e » détermine le nombre minimal de chiffres dans l'exposant. Un signe plus (+) indique qu'un caractère de signe précède toujours l'exposant. Un signe moins (-) indique qu'un caractère de signe précède uniquement les exposants négatifs.<br /><br /> Informations complémentaires : [Spécificateurs personnalisés "E" et "e"](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|
-|"\\"|Caractère d'échappement|Entraîne l'interprétation du caractère suivant comme un littéral plutôt que comme un spécificateur de format personnalisé.<br /><br /> Informations complémentaires : [Caractère d’échappement "\\"](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|
-|'*chaîne*'<br /><br /> "*chaîne*"|Délimiteur de chaîne littérale|Indique que les caractères encadrés doivent être copiés inchangés dans la chaîne de résultat.<br/><br/>Informations complémentaires : [Littéraux de caractère](#character-literals).|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|
-|;|Séparateur de section|Définit des sections avec des chaînes de format distinctes pour les nombres positifs, négatifs et nuls.<br /><br /> Informations complémentaires : [Séparateur de section ";"](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
-|Autre|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Informations complémentaires : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
+|"0"|Espace réservé du zéro|Remplace le zéro par le chiffre correspondant, le cas échéant ; sinon, le zéro s'affiche dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « 0 »](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
+|"#"|Espace réservé de chiffre|Remplace le symbole « # » par le chiffre correspondant, le cas échéant ; sinon, aucun chiffre ne s'affiche dans la chaîne de résultat.<br /><br /> Notez qu’aucun chiffre n’apparaît dans la chaîne de résultat si le chiffre correspondant dans la chaîne d’entrée est un 0 non significatif. Exemple : 0003 ("####") -> 3.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « # »](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|
+|"."|Virgule décimale|Détermine l'emplacement du séparateur décimal dans la chaîne de résultat.<br /><br /> Pour plus d’informations : [Le spécificateur personnalisé "."](#SpecifierPt)|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
+|","|Séparateur de groupes et mise à l'échelle des nombres|Sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres. En tant que séparateur de groupes, il insère un caractère de séparation des groupes localisé entre chaque groupe. En tant que spécificateur de mise à l'échelle des nombres, il divise un nombre par 1000 pour chaque virgule spécifiée.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « , »](#SpecifierTh).|Spécificateur de séparateur de groupes :<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> Spécificateur de mise à l'échelle :<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
+|"%"|Espace réservé de pourcentage|Multiplie un nombre par 100 et insère un symbole de pourcentage localisé dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé « % »](#SpecifierPct).|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
+|"‰"|Espace réservé « pour mille »|Multiplie un nombre par 1000 et insère un symbole « pour mille » localisé dans la chaîne de résultat.<br /><br /> Informations supplémentaires : [Spécificateur personnalisé« ‰ »](#SpecifierPerMille).|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
+|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "E0"<br /><br /> "E+0"<br /><br /> "E-0"|Notation exponentielle|Si le spécificateur est suivi d'au moins un zéro (0), met en forme le résultat à l'aide de la notation exponentielle. La casse de « E » ou « e » indique la casse du symbole d'exposant dans la chaîne de résultat. Le nombre des zéros qui suivent le caractère « E » ou « e » détermine le nombre minimal de chiffres dans l'exposant. Un signe plus (+) indique qu'un caractère de signe précède toujours l'exposant. Un signe moins (-) indique qu'un caractère de signe précède uniquement les exposants négatifs.<br /><br /> Informations supplémentaires : [Spécificateurs personnalisés « E » et « e »](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|
+|"\\"|Caractère d'échappement|Entraîne l'interprétation du caractère suivant comme un littéral plutôt que comme un spécificateur de format personnalisé.<br /><br /> Informations supplémentaires : [Caractère d'échappement « \\ »](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|
+|'*chaîne*'<br /><br /> "*chaîne*"|Délimiteur de chaîne littérale|Indique que les caractères encadrés doivent être copiés inchangés dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|
+|;|Séparateur de section|Définit des sections avec des chaînes de format distinctes pour les nombres positifs, négatifs et nuls.<br /><br /> Informations supplémentaires : [Séparateur de section « ; »](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
+|Autre|Tous les autres caractères|Le caractère est copié inchangé dans la chaîne de résultat.<br/><br/>Plus d’informations : [Littéraux de caractère](#character-literals).|68 ("# °") -> 68 °|
 
 Les sections suivantes fournissent des informations détaillées sur chacun des spécificateurs de format numériques personnalisés.
 
@@ -116,11 +114,11 @@ L'exemple suivant utilise le spécificateur de format "." pour définir l'emplac
 
 Le caractère "," sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres.
 
-- Séparateur de groupes : si une ou plusieurs virgules sont spécifiées entre deux espaces réservés de chiffres (0 ou #) qui mettent en forme les chiffres intégraux d’un nombre, un caractère de séparation des groupes est inséré entre chaque groupe de nombres dans la partie intégrale de la sortie.
+- Séparateur de groupes : si une ou plusieurs virgules sont spécifiées entre deux espaces réservés de chiffres (0 ou #) qui mettent en forme les chiffres intégraux d'un nombre, un caractère de séparation des groupes est inséré entre chaque groupe de nombres dans la partie intégrale de la sortie.
 
   Les propriétés <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> et <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> de l'objet <xref:System.Globalization.NumberFormatInfo> en cours déterminent le caractère utilisé comme séparateur de groupes de nombres et la taille de chaque groupe de nombres. Par exemple, si la chaîne « #,# » et la culture indifférente sont utilisées pour mettre en forme le nombre 1000, la sortie est « 1,000 ».
 
-- Spécificateur de mise à l’échelle des nombres : si une ou plusieurs virgules sont spécifiées immédiatement à gauche du séparateur décimal explicite ou implicite, le nombre à mettre en forme est divisé par 1000 pour chaque virgule. Par exemple, si la chaîne « 0,, » est utilisée pour mettre en forme le nombre 100 millions, la sortie est « 100 ».
+- Spécificateur de mise à l'échelle des nombres : si une ou plusieurs virgules sont spécifiées immédiatement à gauche du séparateur décimal explicite ou implicite, le nombre à mettre en forme est divisé par 1000 pour chaque virgule. Par exemple, si la chaîne « 0,, » est utilisée pour mettre en forme le nombre 100 millions, la sortie est « 100 ».
 
 Vous pouvez utiliser des spécificateurs de séparateur de groupes et de mise à l'échelle des nombres dans la même chaîne de format. Par exemple, si la chaîne « #,0,, » et la culture indifférente sont utilisées pour mettre en forme le nombre 1 milliard, la sortie est « 1,000 ».
 
@@ -144,7 +142,7 @@ L'exemple suivant illustre l'utilisation de la virgule comme spécificateur pour
 
 Un signe de pourcentage (%) dans une chaîne de format entraîne la multiplication d'un nombre par 100 avant sa mise en forme. Le symbole de pourcentage localisé est inséré dans le nombre à l'emplacement où le caractère % apparaît dans la chaîne de format. Le caractère de pourcentage utilisé est défini par la propriété <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> de l'objet <xref:System.Globalization.NumberFormatInfo> actif.
 
-L'exemple suivant définit plusieurs chaînes de format personnalisées qui incluent le spécificateur personnalisé "%".
+L'exemple suivant définit plusieurs chaînes de format personnalisées qui incluent le spécificateur personnalisé "%".
 
 [!code-cpp[Formatting.Numeric.Custom#6](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#6)]
 [!code-csharp[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
@@ -156,9 +154,9 @@ L'exemple suivant définit plusieurs chaînes de format personnalisées qui incl
 
 ## <a name="the--custom-specifier"></a>Spécificateur personnalisé « ‰ »
 
-Un caractère « pour mille » (‰ ou \u2030) dans une chaîne de format entraîne la multiplication d'un nombre par 1 000 avant sa mise en forme. Le symbole « pour mille » approprié est inséré dans la chaîne retournée, à l'emplacement où le symbole ‰ apparaît dans la chaîne de format. Le caractère « pour mille » utilisé est défini par la propriété <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> de l'objet qui fournit les informations de mise en forme spécifique à la culture.
+Un caractère « pour mille » (‰ ou \u2030) dans une chaîne de format entraîne la multiplication d'un nombre par 1 000 avant sa mise en forme. Le symbole « pour mille » approprié est inséré dans la chaîne retournée, à l'emplacement où le symbole ‰ apparaît dans la chaîne de format. Le caractère « pour mille » utilisé est défini par la propriété <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> de l'objet qui fournit les informations de mise en forme spécifique à la culture.
 
-L'exemple suivant définit une chaîne de format personnalisée qui inclut le spécificateur personnalisé "‰".
+L'exemple suivant définit une chaîne de format personnalisée qui inclut le spécificateur personnalisé "‰".
 
 [!code-cpp[Formatting.Numeric.Custom#9](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#9)]
 [!code-csharp[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
@@ -191,7 +189,7 @@ Pour éviter qu'un caractère soit interprété comme un spécificateur de forma
 Pour inclure une barre oblique inverse dans une chaîne de résultat, vous devez la placer dans une séquence d'échappement avec une autre barre oblique inverse (`\\`).
 
 > [!NOTE]
-> Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.
+> Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.
 
 L’exemple suivant utilise le caractère d’échappement pour empêcher l’opération de mise en forme d’interpréter les caractères « # », « 0 » et « \\ » comme des caractères d’échappement ou des spécificateurs de format. L'exemple C# utilise une barre oblique inverse supplémentaire pour garantir qu'une barre oblique inverse est interprétée comme un caractère littéral.
 
@@ -267,7 +265,7 @@ Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottant
 
 Les paramètres de l'élément **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne résultante produite par une opération de mise en forme. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.NumberFormatInfo> associé à la culture du thread en cours et la culture du thread en cours fournit des valeurs utilisées pour indiquer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
+De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo>. Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d'un système.
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>Arrondi et chaînes de format à virgule fixe
 
@@ -277,7 +275,7 @@ Pour les chaînes de format à virgule fixe (c'est-à-dire les chaînes de forma
 
 <a name="example"></a>
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L'exemple suivant présente deux chaînes de format numériques personnalisées. Dans les deux cas, l'espace réservé de chiffre (`#`) affiche les données numériques, et tous les autres caractères sont copiés dans la chaîne de résultat.
 
@@ -291,7 +289,7 @@ L'exemple suivant présente deux chaînes de format numériques personnalisées.
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Guide pratique pour remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1ee7c434-9681-4fa8-badd-652cb1a9742b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e0bcabb32d50b236d42a555c073b50ba3a234dde
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8b7edf1cc642228c4a79c855b51727264f31741c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796482"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107980"
 ---
 # <a name="identity_attribute-structure"></a>IDENTITY_ATTRIBUTE, structure
 Contient des informations sur les attributs de métadonnées concernant une instance de [IDefinitionIdentity](idefinitionidentity-interface.md) .  
@@ -45,12 +43,12 @@ typedef struct _IDENTITY_ATTRIBUTE {
 |`pszValue`|Pointeur vers une chaîne de caractères se terminant par un caractère null qui contient la valeur de l’attribut.|  
   
 ## <a name="remarks"></a>Notes  
- La `IDENTITY_ATTRIBUTE` structure contient trois pointeurs vers des chaînes de caractères se terminant par un caractère null. Ces trois chaînes décrivent un attribut.  
+ La structure `IDENTITY_ATTRIBUTE` contient trois pointeurs vers des chaînes de caractères se terminant par un caractère null. Ces trois chaînes décrivent un attribut.  
   
- Une instance d’une `IDENTITY_ATTRIBUTE` structure est associée à une instance d’une structure [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . La `IDENTITY_ATTRIBUTE` structure contient les chaînes réelles et la structure correspondante `IDENTITY_ATTRIBUTE_BLOB` répertorie les offsets aux trois chaînes répertoriées dans la `IDENTITY_ATTRIBUTE` structure.  
+ Une instance d’une structure `IDENTITY_ATTRIBUTE` est associée à une instance d’une structure [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . La structure `IDENTITY_ATTRIBUTE` contient les chaînes réelles, et la structure de `IDENTITY_ATTRIBUTE_BLOB` correspondante répertorie les offsets aux trois chaînes répertoriées dans la structure `IDENTITY_ATTRIBUTE`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   

@@ -1,5 +1,5 @@
 ---
-title: ICorDebugVariableHome::GetArgumentIndex (méthode)
+title: 'ICorDebugVariableHome :: GetArgumentIndex, méthode'
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHome.GetArgumentIndex
@@ -15,16 +15,14 @@ helpviewer_keywords:
 ms.assetid: e86fcc72-388d-4009-ab21-8f9c3323e9a3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2457dff3063e47f1fb9d040caac1bc08441e1739
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86b2815c6f95c674c49bba7455e8497192bd8bac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986789"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125150"
 ---
-# <a name="icordebugvariablehomegetargumentindex-method"></a>ICorDebugVariableHome::GetArgumentIndex (méthode)
+# <a name="icordebugvariablehomegetargumentindex-method"></a>ICorDebugVariableHome :: GetArgumentIndex, méthode
 
 Obtient l’index d’un argument de fonction.
 
@@ -39,22 +37,22 @@ HRESULT GetArgumentIndex(
 ## <a name="parameters"></a>Paramètres
 
 `pArgumentIndex`\
-[out] Pointeur vers l’index de l’argument.
+à Pointeur vers l’index de l’argument.
 
 ## <a name="return-value"></a>Valeur de retour
 
 La méthode retourne les valeurs suivantes.
 
-|Value|Description|
+|valeur|Description|
 |-----------|-----------------|
 |`S_OK`|L’appel de méthode a retourné un index d’argument valide.|
-|`E_FAIL`|Actuel [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance représente une variable locale.|
+|`E_FAIL`|L’instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) actuelle représente une variable locale.|
 
 ## <a name="remarks"></a>Notes
 
-L’index de l’argument peut être utilisé pour récupérer des métadonnées pour cet argument.
+L’index de l’argument peut être utilisé pour récupérer les métadonnées de cet argument.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 

@@ -11,14 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7f180e459764d6e8e4484072218f01c8bab8a3b5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: HT
+ms.openlocfilehash: e5815058898cac165e7a47d761ee86bb9c4cb940
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50191147"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73091591"
 ---
 # <a name="numerics-in-net"></a>Valeurs numériques dans .NET
 
@@ -28,7 +26,7 @@ ms.locfileid: "50191147"
 
 .NET prend en charge à la fois les types d’entier signés et non signés 8, 16, 32 et 64 bits, répertoriés dans le tableau suivant :
   
-|Type|Signé/Non signé|Taille (en octets)|Valeur minimale|Valeur maximale|  
+|Tapez|Signé/Non signé|Taille (en octets)|Valeur minimale|Valeur maximale|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
 |<xref:System.Byte?displayProperty=nameWithType>|Non signé|1|0|255|  
 |<xref:System.Int16?displayProperty=nameWithType>|Signé|2|-32,768|32,767|  
@@ -54,7 +52,7 @@ La structure <xref:System.Numerics.BigInteger?displayProperty=nameWithType> est 
 
 .NET comprend trois types à virgule flottante primitifs, qui sont répertoriés dans le tableau suivant :
   
-|Type|Taille (en octets)|Plage approximative|Précision|  
+|Tapez|Taille (en octets)|Plage approximative|Précision|  
 |----------|--------|---------------------|--------------------|  
 |<xref:System.Single?displayProperty=nameWithType>|4|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|  
 |<xref:System.Double?displayProperty=nameWithType>|8|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|  
@@ -98,4 +96,4 @@ Les types compatibles SIMD sont implémentés de telle sorte qu’ils peuvent ê
 ## <a name="see-also"></a>Voir aussi
 
 - [Application Essentials](application-essentials.md)
-- [Standard Numeric Format Strings](base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques standard](base-types/standard-numeric-format-strings.md)

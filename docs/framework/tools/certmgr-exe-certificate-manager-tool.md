@@ -13,14 +13,12 @@ helpviewer_keywords:
 - CTLs
 - certificate revocation lists
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 716513bdcf3ac1b8a2b2b29b23a8dc25a86a0d1c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 06fe3a78d0b19720d4f83111980b88806312205f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044809"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129875"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (outil de gestionnaire de certificats)
 L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de certificats de confiance (CTL) et les listes de révocation de certificats (CRL).  
@@ -54,12 +52,12 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 |Option|Description|  
 |------------|-----------------|  
 |**/add**|Ajoute des certificats, listes de certificats de confiance et listes de révocation de certificats à un magasin de certificats.|  
-|**/all**|Ajoute toutes les entrées si utilisée avec **/add**. Supprime toutes les entrées si utilisée avec **/del**. Affiche toutes les entrées si utilisée sans les options **/add**, ni **/del**. L'option **/all** ne peut pas être utilisée avec **/put**.|  
-|**/c**|Ajoute des certificats si utilisée avec **/add**. Supprime des certificats si utilisée avec **/del**. Enregistre des certificats si utilisée avec **/put**. Affiche des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
-|**/CRL**|Ajoute des listes de révocation de certificats si utilisée avec **/add**. Supprime des listes de révocation de certificats si utilisée avec **/del**. Enregistre des listes de révocation de certificats si utilisée avec **/put**. Affiche les listes de révocation des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
-|**/CTL**|Ajoute des listes de certificats de confiance si utilisée avec **/add**. Supprime des listes de certificats de confiance si utilisée avec **/del**. Enregistre des listes de certificats de confiance si utilisée avec **/put**. Affiche des listes de certificats de confiance si utilisée sans l'option **/add**, **/del** ou **/put**.|  
+|**/all**|Ajoute toutes les entrées si utilisée avec **/add**. Supprime toutes les entrées si utilisée avec **/del**. Affiche toutes les entrées quand elles sont utilisées sans les options **/Add** ou **/del** . L'option **/all** ne peut pas être utilisée avec **/put**.|  
+|**/c**|Ajoute des certificats si utilisée avec **/add**. Supprime des certificats lorsqu’il est utilisé avec **/del**. Enregistre les certificats lorsqu’ils sont utilisés avec **/put**. Affiche des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
+|**/CRL**|Ajoute des listes de révocation de certificats si utilisée avec **/add**. Supprime les listes de révocation de certificats lorsqu’elles sont utilisées avec **/del**. Enregistre les listes de révocation de certificats lorsqu’elles sont utilisées avec **/put**. Affiche les listes de révocation des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
+|**/CTL**|Ajoute des listes de certificats de confiance si utilisée avec **/add**. Supprime des listes CTL en cas d’utilisation avec **/del**. Enregistre les listes CTL en cas d’utilisation avec **/put**. Affiche des listes de certificats de confiance si utilisée sans l'option **/add**, **/del** ou **/put**.|  
 |**/del**|Supprime des certificats, listes de certificats de confiance et listes de révocation de certificats dans un magasin de certificats.|  
-|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. Par défaut, il s’agit de `X509_ASN_ENCODING`.|  
+|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. La valeur par défaut est `X509_ASN_ENCODING`,|  
 |**/f** *dwFlags*|Spécifie l'indicateur d'ouverture du magasin. Il s'agit du paramètre *dwFlags* passé à **CertOpenStore**. Sa valeur par défaut est CERT_SYSTEM_STORE_CURRENT_USER. Cette option n'est prise en compte que si l'option **/y** est utilisée.|  
 |**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/n** *nam*|Spécifie le nom commun du certificat à ajouter, à supprimer ou à enregistrer. Cette option ne peut être utilisée qu'avec des certificats ; elle n'est pas compatible avec les listes de certificats de confiance, ni avec les listes de révocation de certificats.|  
@@ -83,7 +81,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
   
 - Enregistre dans un fichier un certificat X.509, une liste de certificats de confiance ou une liste de révocation de certificats en provenance d'un magasin de certificats.  
   
- Certmgr.exe fonctionne avec deux types de magasins de certificats : **StoreFile** et le magasin système. Il n'est pas nécessaire de spécifier le type de magasin de certificats ; Certmgr.exe est capable de l'identifier et d'effectuer les opérations appropriées.  
+ Certmgr.exe fonctionne avec deux types de magasins de certificats : **StoreFile** et magasin système. Il n'est pas nécessaire de spécifier le type de magasin de certificats ; Certmgr.exe est capable de l'identifier et d'effectuer les opérations appropriées.  
   
  L'exécution de Certmgr.exe sans aucune option lance le composant logiciel enfichable certmgr.msc, qui dispose d'une interface utilisateur graphique (GUI) qui facilite les tâches de gestion des certificats qui sont également disponibles à partir de la ligne de commande. Cette interface utilisateur graphique fournit un Assistant d'importation qui copie les certificats, les listes de certificats de confiance et les listes de révocation de certificats depuis votre disque vers un magasin de certificats.  
   

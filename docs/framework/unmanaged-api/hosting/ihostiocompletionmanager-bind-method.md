@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: acd74cb5-7e22-4a07-83c3-82288e1abd9f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: de39de96cd7c7ba0be2dc1bea78f79cfe996575c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84fc99f6a5feb7ec73ee16942ba2794fc082dc89
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937567"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133899"
 ---
 # <a name="ihostiocompletionmanagerbind-method"></a>IHostIoCompletionManager::Bind, méthode
 Lie le handle spécifié à un port de terminaison d’e/s qui a été créé par un appel antérieur à [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
@@ -38,16 +36,16 @@ HRESULT Bind (
   
 ## <a name="parameters"></a>Paramètres  
  `hPort`  
- dans Le port de terminaison d’e/s auquel effectuer `hHandle`la liaison. Si la valeur de `hPort` est null, `hHandle` est lié au port de terminaison d’e/s par défaut.  
+ dans Le port de terminaison d’e/s auquel lier `hHandle`. Si la valeur de `hPort` est null, `hHandle` est lié au port de terminaison d’e/s par défaut.  
   
  `hHandle`  
- dans Handle du système d’exploitation auquel effectuer `hPort`la liaison.  
+ dans Handle du système d’exploitation à lier à `hPort`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Bind`retourné avec succès.|  
+|S_OK|`Bind` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -55,17 +53,17 @@ HRESULT Bind (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- Un port de terminaison d’e/s est créé à l’aide `CreateIoCompletionPort`d’un appel à. Le CLR appelle `Bind` pour lier un handle à ce port.  
+ Un port de terminaison d’e/s est créé à l’aide d’un appel à `CreateIoCompletionPort`. Le CLR appelle `Bind` pour lier un handle à ce port.  
   
 > [!NOTE]
-> Quand une demande d’e/s se termine, l’hôte doit appeler la méthode [ICLRIoCompletionManager:: OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) .  
+> Quand une demande d’e/s se termine, l’hôte doit appeler la méthode [ICLRIoCompletionManager :: OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -17,14 +17,12 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 301e6cc153f905bc5c15e1b526e6fb1a492a76d6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4d1404e3f7565ee26edd94e059b7f01f8edd4dd6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774439"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121842"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>Méthode ICoreClrDebugTarget::EnumProcesses
 Énumère les processus en cours d'exécution sur un ordinateur distant.  
@@ -43,7 +41,7 @@ HRESULT EnumProcesses (
  [out] Nombre de processus retournés dans `ppProcs`. Cette valeur peut être égale à 0 (zéro).  
   
  `ppProcs`  
- [out] Un tableau de [CoreClrDebugProcInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md) structures représentant les processus en cours d’exécution sur l’ordinateur distant.  
+ à Tableau de structures [CoreClrDebugProcInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md) qui représentent les processus en cours d’exécution sur l’ordinateur distant.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
@@ -56,16 +54,16 @@ HRESULT EnumProcesses (
  Autres échecs.  
   
 ## <a name="remarks"></a>Notes  
- Pour libérer la mémoire allouée par cette méthode, appelez le [ICoreClrDebugTarget::FreeMemory](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) (méthode).  
+ Pour libérer la mémoire allouée par cette méthode, appelez la méthode [ICoreClrDebugTarget :: FreeMemory](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CoreClrRemoteDebuggingInterfaces.h  
+ **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
- **Bibliothèque :** mscordbi_macx86.dll  
+ **Bibliothèque :** mscordbi_macx86. dll  
   
- **Versions du .NET framework :** 3.5 SP1  
+ **Versions de .NET Framework :** 3,5 SP1  
   
 ## <a name="see-also"></a>Voir aussi
 

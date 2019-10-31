@@ -6,14 +6,12 @@ helpviewer_keywords:
 - structures [.NET Framework fusion]
 - unmanaged structures [.NET Framework], fusion
 ms.assetid: 3feb4fc5-a1e9-445d-929c-0a7490244114
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb66e0d518abc2d337362affbd2aa951303128f3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d20a2eab2c7a9798c87a4431174d6f70f32149e7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795293"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108140"
 ---
 # <a name="fusion-structures"></a>Structures de fusion
 Cette section décrit les structures non managées utilisées par l’API de fusion.  

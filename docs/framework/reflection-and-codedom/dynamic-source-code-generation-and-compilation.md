@@ -10,14 +10,12 @@ helpviewer_keywords:
 - source code in multiple languages
 - languages, multiple language support by CodeDOM
 ms.assetid: d077a3e8-bd81-4bdf-b6a3-323857ea30fb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5fb95ab7ff4fcac7169238d90637d7b83078d6dd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a7e341bb5bfb5b4648a222409951275169a29b79
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046104"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130253"
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Génération et compilation de code source dynamique
 Le .NET Framework inclut un mécanisme appelé CodeDOM (Code Document Object Model) qui permet aux développeurs d’émettre du code source pour générer du code source dans plusieurs langages de programmation au moment de l’exécution, en fonction d’un modèle unique qui représente le code à restituer.  
@@ -40,10 +38,10 @@ Le .NET Framework inclut un mécanisme appelé CodeDOM (Code Document Object Mod
  [Guide pratique pour créer un fichier de documentation XML à l’aide de CodeDOM](how-to-create-an-xml-documentation-file-using-codedom.md)  
  Décrit comment utiliser CodeDOM pour générer du code avec des commentaires de documentation XML, et compiler le code généré afin qu’il crée la sortie de documentation XML.  
   
- [Guide pratique : créer une classe à l’aide de CodeDOM](how-to-create-a-class-using-codedom.md)  
+ [Guide pratique pour créer une classe à l’aide de CodeDOM](how-to-create-a-class-using-codedom.md)  
  Décrit comment utiliser CodeDOM pour générer une classe contenant des champs, des propriétés, une méthode, un constructeur et un point d’entrée.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.CodeDom>  
  Définit les éléments qui représentent des éléments de code dans les langages de programmation qui ciblent le Common Language Runtime.  
   

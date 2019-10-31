@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1f1e3239-438e-4be9-a3bb-7d0722d3a76d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a73232fb9327880f0038097d71698ddf8bf005e3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c5d6cfa3826667514eb70f9bb0df118d9ba0d07c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779906"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127820"
 ---
 # <a name="icorconfigurationadddebuggerspecialthread-method"></a>ICorConfiguration::AddDebuggerSpecialThread, méthode
-Pour les services de débogage, indique qu’un thread particulier doit être autorisé à continuer à s’exécuter pendant que le débogueur arrête les scénarios de débogage managées ou une application.  
+Indique aux services de débogage qu’un thread particulier doit pouvoir continuer à s’exécuter pendant que le débogueur a une application arrêtée pendant des scénarios de débogage managés ou non managés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +35,17 @@ HRESULT AddDebuggerSpecialThread (
   
 ## <a name="parameters"></a>Paramètres  
  `dwSpecialThreadId`  
- [in] L’ID du thread qui doit être autorisée à se poursuivre l’exécution.  
+ dans ID du thread qui doit être autorisé à continuer l’exécution.  
   
 ## <a name="remarks"></a>Notes  
- Le thread spécifié ne pas exécuter du code managé ou entrez le runtime en aucune façon. Un exemple d’un tel thread serait un thread de processus pour prendre en charge les débogueurs de script hérité.  
+ Le thread spécifié n’est pas autorisé à exécuter du code managé ou à entrer le runtime de quelque manière que ce soit. Par exemple, un thread de ce type serait un thread in-process pour prendre en charge les débogueurs de script hérités.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

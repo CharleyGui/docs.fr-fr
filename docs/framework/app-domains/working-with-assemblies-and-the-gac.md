@@ -8,14 +8,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0331e0ad30743d5f0bba125e8e61e636e1c2a5be
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 330555f907a5ee2ef9cfc11b0b5659a392c0dec7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053024"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119717"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Utilisation d'assemblys et du Global Assembly Cache
 
@@ -50,10 +48,10 @@ Vous pouvez souhaiter installer un assembly dans le Global Assembly Cache pour p
 [Guide pratique pour installer un assembly dans le Global Assembly Cache](install-assembly-into-gac.md)  
 Décrit les façons d’installer un assembly dans le Global Assembly Cache.  
   
-[Guide pratique pour visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md).  
+[Guide pratique pour visualiser le contenu du Global Assembly Cache](how-to-view-the-contents-of-the-gac.md)  
 Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour visualiser le contenu du Global Assembly Cache.  
   
-[Guide pratique : supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)  
+[Guide pratique pour supprimer un assembly du Global Assembly Cache](how-to-remove-an-assembly-from-the-gac.md)  
 Explique comment utiliser [Gacutil.exe (outil Global Assembly Cache](../tools/gacutil-exe-gac-tool.md) pour supprimer un assembly du Global Assembly Cache.  
   
 [Utilisation de composants de service avec le Global Assembly Cache](use-serviced-components-with-the-gac.md)  

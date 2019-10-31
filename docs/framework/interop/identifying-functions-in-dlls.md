@@ -11,14 +11,12 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: deae99f5bdc7c187997d4bad4957b2fcdccdc166
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1a94bb2020b07ba8405d901f46ec4a0687e79700
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051728"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121977"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identification des fonctions des DLL
 L’identité d’une fonction DLL est composée des éléments suivants :  

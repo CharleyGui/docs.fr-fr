@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6e7c6bee-7ced-495f-bf6c-2a5f0c716f7e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d3490477f30cd1c0badaa9cfd71433a5bf9d7a99
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c7333f8f7b95655ac821e9a2977d5db3794486a2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738993"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123009"
 ---
-# <a name="efngetmanagedobjectname-function"></a>\_EFN\_GetManagedObjectName (fonction)
-Obtient le nom d’un type en utilisant le pointeur d’objet managé fourni.  
+# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_fonction GetManagedObjectName
+Obtient le nom d’un type à l’aide du pointeur d’objet managé fourni.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +37,24 @@ HRESULT _EFN_GetManagedObjectName(
   
 ## <a name="parameters"></a>Paramètres  
  `Client`  
- [in] Pointeur vers le client de débogage.  
+ dans Pointeur vers le client de débogage.  
   
  `objAddr`  
- [in] Un pointeur d’objet managé.  
+ dans Pointeur d’objet managé.  
   
  szName  
- [out] Le nom du type.  
+ à Nom du type.  
   
  `cbName`  
- [out] Le nombre de caractères disponibles dans la mémoire tampon de chaîne.  
+ à Nombre de caractères disponibles dans la mémoire tampon de chaîne.  
   
 ## <a name="remarks"></a>Notes  
- S’il n’existe aucun code managé sur le thread actuellement dans le contexte, la fonction retourne les HRESULT SOS_E_NOMANAGEDCODE avec une valeur de 0xa0 et un code d’erreur de 0 x 1000.  
+ S’il n’existe pas de code managé sur le thread actuellement en contexte, la fonction retourne HRESULT SOS_E_NOMANAGEDCODE avec la valeur d’installation 0xa0 et le code d’erreur 0x1000.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** SOS_Stacktrace.h  
+ **En-tête :** SOS_Stacktrace. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

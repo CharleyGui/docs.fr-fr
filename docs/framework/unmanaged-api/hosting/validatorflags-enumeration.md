@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3f5c266-3fcc-4ad1-aaf5-4cdbe26304ad
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c5f38231eb6a5911527c21ee3304fc77cfcf8e90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 61aafb8dc99bb908fc603945ff6ea74054f812c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776518"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141418"
 ---
 # <a name="validatorflags-enumeration"></a>ValidatorFlags, énumération
-Contient des valeurs qui indiquent le type de validation doit être effectuée dans un appel à la [ICLRValidator::Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) (méthode).  
+Contient des valeurs qui indiquent le type de validation qui doit être effectuée dans un appel à la méthode [ICLRValidator :: Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,18 +40,18 @@ enum ValidatorFlags {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`VALIDATOR_CHECK_ILONLY`|Spécifie que seuls le Microsoft intermediate language (MSIL) dans le fichier exécutable doit être validé.|  
+|`VALIDATOR_CHECK_ILONLY`|Spécifie que seul le langage MSIL (Microsoft Intermediate Language) dans le fichier exécutable doit être validé.|  
 |`VALIDATOR_CHECK_PEFORMAT_ONLY`|Spécifie que seul le format du fichier exécutable doit être validé.|  
-|`VALIDATOR_EXTRA_VERBOSE`|Spécifie que tous les types de validation doivent être effectuées et signalés sur.|  
+|`VALIDATOR_EXTRA_VERBOSE`|Spécifie que tous les types de validation doivent être effectués et signalés sur.|  
 |`VALIDATOR_NOCHECK_PEFORMAT`|Spécifie que le format du fichier exécutable ne doit pas être validé.|  
-|`VALIDATOR_SHOW_SOURCE_LINES`|Spécifie que les messages d’erreur de validation doivent inclure les lignes de code source qui déclenchent des erreurs de validation. Valeur de ce champ n’est pas valide dans le .NET Framework version 2.0.|  
+|`VALIDATOR_SHOW_SOURCE_LINES`|Spécifie que les messages d’erreur de validation doivent inclure les lignes de code source qui génèrent des erreurs de validation. La valeur de ce champ n’est pas valide dans la version 2,0 de .NET Framework.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** IValidator.idl, IValidator.h  
+ **En-tête :** IValidator. idl, IValidator. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

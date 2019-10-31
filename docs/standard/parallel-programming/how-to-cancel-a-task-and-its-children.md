@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : annuler une tâche et ses enfants'
+title: 'Comment : annuler une tâche et ses enfants'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to cancel
 ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 08e5712db60fb09b48d6be9f35737c9a884d1ce8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 4e0e783a4dfe3bf3a55795d7baef461369d7405a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324472"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134202"
 ---
-# <a name="how-to-cancel-a-task-and-its-children"></a>Procédure : annuler une tâche et ses enfants
+# <a name="how-to-cancel-a-task-and-its-children"></a>Comment : annuler une tâche et ses enfants
 Ces exemples montrent comment effectuer les tâches suivantes :  
   
 1. Créer et lancer une tâche annulable  

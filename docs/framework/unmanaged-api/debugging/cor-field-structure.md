@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: c0822423-a9df-4961-950d-50dcc152f863
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f857f773f02da25fe6650000be777b8290f5af91
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 78e34d9d33d34047e3ebd2effb4894bc7b709585
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274059"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132354"
 ---
 # <a name="cor_field-structure"></a>COR_FIELD, structure
 Fournit des informations sur un champ dans un objet.  
@@ -41,19 +39,19 @@ typedef struct COR_FIELD{
   
 |Membre|Description|  
 |------------|-----------------|  
-|`token`|`mdFieldDef` Jeton qui peut être utilisé pour récupérer des informations de champ.|  
+|`token`|Jeton `mdFieldDef` qui peut être utilisé pour récupérer des informations de champ.|  
 |`offset`|Offset, en octets, des données de champ dans l’objet.|  
 |`id`|Valeur [COR_TYPEID](cor-typeid-structure.md) qui identifie le type de ce champ.|  
 |`fieldType`|Valeur d’énumération CorElementType qui indique le type du champ.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

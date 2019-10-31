@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ebad4f40-d9f1-4dc6-9b27-a89c9eb3926f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ea09b9d66a288b0616870d971e5063bab83cda0a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7a16c141d9d07af82bd984955e06199e66ce3bbf
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780788"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133761"
 ---
 # <a name="ihostiocompletionmanagersetmaxthreads-method"></a>IHostIoCompletionManager::SetMaxThreads, méthode
-Définit le nombre maximal de threads plus alloue de l’hôte pour traiter les demandes d’e/s.  
+Définit le nombre maximal de threads que l’hôte alloue aux demandes d’e/s de service.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +35,29 @@ HRESULT SetMaxThreads (
   
 ## <a name="parameters"></a>Paramètres  
  `dwMaxIoCompletionThreads`  
- [in] Le nombre maximal de threads à allouer pour les demandes d’e/s.  
+ dans Nombre maximal de threads à allouer pour les demandes d’e/s.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetMaxThreads` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_NOTIMPL|L’hôte ne fournit pas une implémentation de `SetMaxThreads`.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_NOTIMPL|L’hôte ne fournit pas d’implémentation de `SetMaxThreads`.|  
   
 ## <a name="remarks"></a>Notes  
- `SetMaxThreads` fournit au CLR avec possibilité de définir le nombre maximal de threads qui sont disponibles pour traiter les demandes sur les ports d’e/s. Un hôte peut souhaiter le contrôle exclusif sur la taille du pool de threads, pour des raisons telles que l’implémentation, de performances ou d’évolutivité. Pour cette raison, l’hôte n’est pas nécessaire d’implémenter `SetMaxThreads`. Dans ce cas, un hôte doit retourner E_NOTIMPL à partir de cette méthode.  
+ `SetMaxThreads` fournit au CLR la possibilité de définir le nombre maximal de threads disponibles pour les demandes de service sur les ports d’e/s. Un hôte peut avoir besoin d’un contrôle exclusif sur la taille du pool de threads, pour des raisons telles que l’implémentation, les performances ou l’évolutivité. Pour cette raison, l’hôte n’est pas tenu d’implémenter `SetMaxThreads`. Dans ce cas, un hôte doit retourner E_NOTIMPL à partir de cette méthode.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

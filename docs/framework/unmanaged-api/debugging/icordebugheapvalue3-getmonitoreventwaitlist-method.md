@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: db34d56fd4d074551ca4823681bc5d94e76df758
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fbff178efd4d0dff3593907b3d40e946be2ff6e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756619"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121302"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList, méthode
-Fournit une liste ordonnée de threads qui sont en attente sur l’événement qui est associé à un verrou du moniteur.  
+Fournit une liste triée des threads mis en file d’attente sur l’événement associé à un verrou d’analyse.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +35,7 @@ HRESULT GetMonitorEventWaitList (
   
 ## <a name="parameters"></a>Paramètres  
  `ppThreadEnum`  
- [out] L’énumérateur ICorDebugThreadEnum qui fournit la liste ordonnée des threads.  
+ à Énumérateur ICorDebugThreadEnum qui fournit la liste ordonnée de threads.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -50,17 +48,17 @@ HRESULT GetMonitorEventWaitList (
 ## <a name="exceptions"></a>Exceptions  
   
 ## <a name="remarks"></a>Notes  
- Le premier thread dans la liste est le premier thread est libéré par l’appel suivant à <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Le thread suivant dans la liste est publié sur l’appel suivant et ainsi de suite.  
+ Le premier thread de la liste est le premier thread libéré par l’appel suivant à <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Le thread suivant de la liste est libéré sur l’appel suivant, et ainsi de suite.  
   
- Si la liste n’est pas vide, cette méthode retourne S_OK. Si la liste est vide, la méthode retourne S_FALSE ; Dans ce cas, l’énumération est toujours valide, bien qu’il soit vide.  
+ Si la liste n’est pas vide, cette méthode retourne S_OK. Si la liste est vide, la méthode retourne S_FALSE ; dans ce cas, l’énumération est toujours valide, bien qu’elle soit vide.  
   
- Dans les deux cas, l’interface d’énumération est utilisable uniquement pour la durée de l’état synchronisé actuel. Toutefois, les interfaces du thread distribuées à partir de celui-ci sont valides jusqu'à ce que le thread se termine.  
+ Dans les deux cas, l’interface d’énumération est utilisable uniquement pour la durée de l’état synchronisé actuel. Toutefois, les interfaces du thread distantes sont valides jusqu’à ce que le thread se termine.  
   
- Si `ppThreadEnum` n’est pas un pointeur valide, le résultat est indéfini.  
+ Si `ppThreadEnum` n’est pas un pointeur valide, le résultat n’est pas défini.  
   
- Si une erreur se produit et il est impossible de déterminer qui, le cas échéant, les threads sont en attente pour l’analyse, la méthode retourne un HRESULT qui indique un échec.  
+ Si une erreur se produit et qu’il n’est pas possible de déterminer laquelle, le cas échéant, les threads attendent le moniteur, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

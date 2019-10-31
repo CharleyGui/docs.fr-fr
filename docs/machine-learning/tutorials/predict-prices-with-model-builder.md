@@ -1,19 +1,19 @@
 ---
-title: 'Tutoriel : Prédire des prix en utilisant la régression avec Model Builder'
+title: 'Didacticiel : prédire les prix à l’aide de la régression avec le générateur de modèles'
 description: Ce tutoriel montre comment créer un modèle de régression Model Builder ML.NET pour prédire des prix, plus précisément celui des courses de taxi à New York.
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 10/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a851bf3c405d15243bc1457b8c3dff815d072ebe
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 314b637b4a43725f6daeefa6097544567dcaabc2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180281"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124287"
 ---
-# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Tutoriel : Prédire des prix en utilisant la régression avec Model Builder
+# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Didacticiel : prédire les prix à l’aide de la régression avec le générateur de modèles
 
 Découvrez comment utiliser le générateur de modèles ML.NET pour créer un modèle de régression pour prédire les prix.  L’application console .NET que vous développez dans ce tutoriel prédit les prix des taxis en fonction de l’historique des prix des courses de taxi à New York.
 
@@ -83,8 +83,8 @@ Model Builder accepte des données de deux sources : une base de données SQL S
 
 1. Dans l’étape des données de l’outil Model Builder, sélectionnez *Fichier* dans la liste déroulante des sources de données.
 1. Sélectionnez le bouton en regard de la zone de texte *Sélectionner un fichier* et utilisez l’Explorateur de fichiers pour parcourir et sélectionner *taxi-fare-test.csv* dans le répertoire *Data*.
-1. Choisissez *fare_amount* dans la liste déroulante *colonne à prédire (étiquette)* et accédez à l’étape de formation de l’outil générateur de modèles.
-1. Développez la liste déroulante *colonnes d’entrée (fonctionnalités)* et décochez la colonne *trip_time_in_secs* pour l’exclure en tant que fonctionnalité pendant l’apprentissage.
+1. Choisissez *fare_amount* dans la liste déroulante *colonne à prédire (étiquette)* .
+1. Développez la liste déroulante *colonnes d’entrée (fonctionnalités)* et décochez la colonne *trip_time_in_secs* pour l’exclure en tant que fonctionnalité pendant l’apprentissage.  Accédez à l’étape de formation de l’outil générateur de modèles.
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
@@ -114,8 +114,8 @@ Si vous n’êtes pas satisfait de vos métriques de précision, un moyen facile
 
 Deux projets sont créés à la suite du processus d’entraînement.
 
-- TaxiFarePredictionML.ConsoleApp : Application console .NET Core qui contient l’apprentissage du modèle et le code de consommation des exemples.
-- TaxiFarePredictionML.Model : Bibliothèque de classes .NET Standard contenant les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie, la version enregistrée du modèle le plus performant au cours de l’apprentissage et une classe d’assistance appelée `ConsumeModel` pour effectuer des prédictions.
+- TaxiFarePredictionML. ConsoleApp : application console .NET Core qui contient l’apprentissage du modèle et le code de consommation des exemples.
+- TaxiFarePredictionML. Model : une bibliothèque de classes .NET Standard contenant les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie, la version enregistrée du modèle le plus performant au cours de l’apprentissage et une classe d’assistance appelée `ConsumeModel` pour effectuer des prédictions.
 
 1. Dans l’étape du code de l’outil Model Builder, sélectionnez **Ajouter des projets** pour ajouter les projets générés automatiquement à la solution.
 1. Ouvrez le fichier *Program.cs* dans le projet *TaxiFarePrediction*.

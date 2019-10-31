@@ -1,17 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider:: Getinstancefieldsymbols,, méthode'
+title: 'ICorDebugSymbolProvider :: Getinstancefieldsymbols,, méthode'
 ms.date: 03/30/2017
 ms.assetid: a29b9233-ee67-4b53-b8bc-c00b281e7edb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b6bba47500b024bc1f2a2be21d461a6f5933f0ca
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0ad8ddd78d963681c0b2f69bf0f211ad464dc7b7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964610"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138871"
 ---
-# <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider:: Getinstancefieldsymbols,, méthode
+# <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider :: Getinstancefieldsymbols,, méthode
 Obtient les symboles de champ d'instance qui correspondent à une signature typespec.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,12 +45,12 @@ HRESULT GetInstanceFieldSymbols(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

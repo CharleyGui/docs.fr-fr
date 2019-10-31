@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c06fca8b83638fb47bedb21863cb9b200cd211f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a45572d0dcb2737558e11f5c38ac2ccc338c754a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927727"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119084"
 ---
-# <a name="clear-element-for-configsections"></a>\<Clear > élément pour \<configSections >
+# <a name="clear-element-for-configsections"></a>\<> élément Clear pour \<configSections >
 
 Efface toutes les sections et tous les groupes de sections précédemment définis.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,21 +40,21 @@ Efface toutes les sections et tous les groupes de sections précédemment défin
 
 |     | Description |
 | --- | ----------- |
-| [élément  **>\<configSections**](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
+| [ **\<configSections >** Appartient](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="remarks"></a>Notes
 
-L’élément clear > supprime tous les sections et groupes de section de votre application qui ont été définis précédemment dans le fichier de configuration actuel ou à un niveau supérieur dans la hiérarchie des fichiers de configuration.  **\<**
+L’élément **\<clear >** supprime tous les sections et groupes de sections de votre application qui ont été définis précédemment dans le fichier de configuration actuel ou à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser l'  **\<élément clear >** dans un fichier de configuration d’application pour effacer les sections précédemment définies dans la configuration de l’ordinateur. txt.
+Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser l’élément **\<clear >** dans un fichier de configuration d’application pour effacer les sections précédemment définies dans le fichier de configuration de l’ordinateur.
 
-Le code de fichier de configuration d’ordinateur suivant déclare deux sections,  **\<sampleSection >** et  **\<anotherSampleSection >** , qui sont lues avant le fichier de configuration de l’application:
+Le code de fichier de configuration d’ordinateur suivant déclare deux sections, **\<sampleSection >** et **\<anotherSampleSection >** , qui sont lues avant le fichier de configuration de l’application :
 
 ```xml
 <!-- Machine.config file -->
@@ -71,7 +71,7 @@ Le code de fichier de configuration d’ordinateur suivant déclare deux section
 </configuration>
 ```
 
-Le code de fichier de configuration d’application suivant efface toutes les sections déclarées précédemment. L’application ne peut pas utiliser ou récupérer les paramètres de l’une des sections qui ont été déclarées dans le fichier de configuration de l’ordinateur. Toutefois, il peut utiliser les paramètres de  **\<anotherSection >** , car il vient après l'  **\<élément clear >** .
+Le code de fichier de configuration d’application suivant efface toutes les sections déclarées précédemment. L’application ne peut pas utiliser ou récupérer les paramètres de l’une des sections qui ont été déclarées dans le fichier de configuration de l’ordinateur. Toutefois, il peut utiliser les paramètres de **\<anotherSection >** , car il vient après l' **\<Effacer >** élément.
 
 ```xml
 <!-- Application configuration file -->

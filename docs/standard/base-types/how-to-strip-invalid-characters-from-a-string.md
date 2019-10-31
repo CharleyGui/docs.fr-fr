@@ -16,14 +16,12 @@ helpviewer_keywords:
 - Replace method
 - validating user input
 ms.assetid: b4319c8a-9032-4129-a9d5-6f6fc28e7f32
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3bbd25e40607bd316f1bbab974174fe5433770f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
-ms.translationtype: HT
+ms.openlocfilehash: cc90e6609f9335b7e2f08271e5540b182901e8c9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47074857"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73127654"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>Comment : supprimer des caractères non valides d'une chaîne
 L’exemple suivant utilise la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> statique pour supprimer des caractères non valides d’une chaîne.  

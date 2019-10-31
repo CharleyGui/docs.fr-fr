@@ -9,14 +9,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 75261bc44b938432c9c22b90dc4db30ca00d630b
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
-ms.translationtype: HT
+ms.openlocfilehash: 808c92e906a0bf6f8fdc368396d6d240573de501
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170732"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120778"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -58,7 +56,7 @@ Les chemins respectant la convention d’affectation de noms (UNC), qui sont uti
 - Un nom de serveur ou d’hôte, précédé de \\\\. Le nom du serveur peut être un nom d’ordinateur NetBIOS ou une adresse IP/FQDN (IPv4 et IPv6 sont pris en charge).
 - Un nom de partage, séparé du nom d’hôte par \\. Ensemble, le serveur et le partage forment le volume.
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
-- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
+- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin de fichier et le nom de fichier.
 
 Voici quelques exemples de chemins UNC :
 
@@ -95,7 +93,7 @@ Le chemin de périphérique DOS comprend les composants suivants :
 
    Le premier segment du chemin de périphérique DOS après le spécificateur de chemin de périphérique identifie le volume ou le lecteur. (Par exemple, `\\?\C:\` et `\\.\BootPartition\`.)
 
-   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Par exemple :
+   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Exemple :
 
   `\\.\UNC\Server\Share\Test\Foo.txt`  
   `\\?\UNC\Server\Share\Test\Foo.txt`

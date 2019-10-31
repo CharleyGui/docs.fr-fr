@@ -10,14 +10,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 893b6e6e61e23bdc0da1902407017a836bc6cbe8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 92e52fb130adecd6acdbeb8eac8d624d3c291094
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045685"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129978"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Créer des fichiers de ressources pour les applications .NET
 
@@ -60,7 +58,7 @@ name2=value2
 
  Le format de fichier de ressources des fichiers .txt et .restext est identique. L’extension de fichier .restext sert uniquement à rendre des fichiers texte immédiatement identifiables comme fichiers de ressources textuelles.
 
- Les ressources de type chaîne s’affichent sous forme de paires *nom/valeur*, où *nom* est une chaîne qui identifie la ressource, et *valeur* est la chaîne de ressource retournée quand vous passez *nom* à une méthode de récupération de la ressource telle que <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>. *nom* et *valeur* doivent être séparés par un signe égal (=). Par exemple :
+ Les ressources de type chaîne s’affichent sous forme de paires *nom/valeur*, où *nom* est une chaîne qui identifie la ressource, et *valeur* est la chaîne de ressource retournée quand vous passez *nom* à une méthode de récupération de la ressource telle que <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>. *nom* et *valeur* doivent être séparés par un signe égal (=). Exemple :
 
 ```text
 FileMenuName=File
@@ -72,7 +70,7 @@ HelpMenuName=Help
 > [!CAUTION]
 > N’utilisez pas de fichier de ressources pour stocker des mots de passe, des informations sensibles ou des données privées.
 
- Les chaînes vides (autrement dit, une ressource dont la valeur est <xref:System.String.Empty?displayProperty=nameWithType>) sont autorisées dans les fichiers texte. Par exemple :
+ Les chaînes vides (autrement dit, une ressource dont la valeur est <xref:System.String.Empty?displayProperty=nameWithType>) sont autorisées dans les fichiers texte. Exemple :
 
 ```text
 EmptyString=
@@ -94,7 +92,7 @@ CancelButton=Cancel
 
  Si le fichier texte contient des occurrences en double de *nom*, le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) affiche un avertissement et ignore le deuxième nom.
 
- *valeur* ne peut pas contenir des caractères de nouvelle ligne, mais vous pouvez utiliser des caractères d’échappement dans le style du langage C tels que `\n` pour représenter une nouvelle ligne et `\t` pour représenter une tabulation. Vous pouvez également inclure une barre oblique inverse si elle est placée dans une séquence d’échappement (par exemple, « \\\\ »). En outre, une chaîne vide est autorisée.
+ la *valeur* ne peut pas contenir de caractères de nouvelle ligne, mais vous pouvez utiliser des caractères d’échappement de style langage C tels que `\n` pour représenter une nouvelle ligne et `\t` pour représenter une tabulation. Vous pouvez également inclure une barre oblique inverse si elle est placée dans une séquence d’échappement (par exemple, «\\\\»). En outre, une chaîne vide est autorisée.
 
  Vous devez enregistrer des ressources au format de fichier texte en utilisant l'encodage UTF-8 ou UTF-16 dans un ordre d'octet avec primauté des octets de poids faible (little-endian) ou un ordre d'octet avec primauté des octets de poids fort (big-endian). Toutefois, le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md), qui convertit un fichier .txt en fichier .resources, traite les fichiers au format UTF-8 par défaut. Si vous souhaitez que Resgen.exe reconnaisse un fichier encodé à l’aide d’UTF-16, vous devez inclure une marque d’ordre d’octet Unicode (U+FEFF) au début du fichier.
 

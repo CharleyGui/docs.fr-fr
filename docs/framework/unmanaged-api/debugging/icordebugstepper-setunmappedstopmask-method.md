@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b1211981-e90c-4e05-8def-fa18d85ad9ab
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c0a273c54559e8e297e09740ba9c770ce12d72d1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ff393b119c349e34898b781c3185cc82f2dba11f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760584"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137553"
 ---
 # <a name="icordebugsteppersetunmappedstopmask-method"></a>ICorDebugStepper::SetUnmappedStopMask, méthode
 Définit une valeur qui spécifie le type de code non mappé dans lequel l’exécution s’arrêtera.  
@@ -37,16 +35,16 @@ HRESULT SetUnmappedStopMask (
   
 ## <a name="parameters"></a>Paramètres  
  `mask`  
- [in] Une valeur de l’énumération CorDebugUnmappedStop qui spécifie le type de code non mappé dans lequel le débogueur arrêtera l’exécution.  
+ dans Valeur de l’énumération CorDebugUnmappedStop, qui spécifie le type de code non mappé dans lequel le débogueur arrêtera l’exécution.  
   
- La valeur par défaut est STOP_OTHER_UNMAPPED. La valeur STOP_UNMANAGED est uniquement valide avec le débogage d’interopérabilité.  
+ La valeur par défaut est STOP_OTHER_UNMAPPED. La valeur STOP_UNMANAGED est valide uniquement avec le débogage d’interopérabilité.  
   
 ## <a name="remarks"></a>Notes  
- Lorsque le débogueur trouve une compilation juste-à-temps (JIT) n’a aucun mappage correspondant à Microsoft intermediate language (MSIL), il arrête l’exécution si l’indicateur qui spécifie ce type de code non mappé a été défini ; le cas contraire, pas à pas détaillé en toute transparence continue.  
+ Quand le débogueur trouve une compilation juste-à-temps (JIT) qui n’a pas de mappage correspondant au langage MSIL (Microsoft Intermediate Language), il interrompt l’exécution si l’indicateur spécifiant ce type de code non mappé a été défini ; dans le cas contraire, l’exécution pas à pas se poursuit en toute transparence.  
   
- Si le débogueur n’utilise pas une exécution pas à pas pour une méthode d’entrée, puis il ne sont pas nécessairement effectuer un survol code non mappé.  
+ Si le débogueur n’utilise pas de pas à pas pour entrer dans une méthode, il n’effectuera pas nécessairement un pas à pas principal dans le code non mappé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

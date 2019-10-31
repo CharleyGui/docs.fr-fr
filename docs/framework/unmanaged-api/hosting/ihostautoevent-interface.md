@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: 6c1d15c1-a80a-4ee9-b1e4-6e859db6575a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fb5fea403f8210ea93d240aa3aabd4325524b987
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b191243ea03adcfecaadbd3a5871e1773b28bb1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599453"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124464"
 ---
 # <a name="ihostautoevent-interface"></a>IHostAutoEvent, interface
-Fournit une représentation de l’implémentation de l’hôte d’un événement d’auto-réinitialisation.  
+Fournit une représentation de l’implémentation de l’hôte d’un événement de réinitialisation automatique.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Set, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Définit l’actuel `IHostAutoEvent` instance à un état signalé.|  
-|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Fait en `IHostAutoEvent` instance attendre que l’événement est détenu ou un certain laps de temps.|  
+|[Set, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Définit l’instance de `IHostAutoEvent` actuelle à un état signalé.|  
+|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Entraîne l’attente de l’instance de `IHostAutoEvent` actuelle jusqu’à ce que l’événement soit détenu ou qu’un laps de temps spécifié se soit écoulé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

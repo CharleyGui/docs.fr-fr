@@ -1,17 +1,15 @@
 ---
-title: 'Atténuation : normalisation des chemins d’accès'
+title: 'Atténuation : Normalisation des chemins d’accès'
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bc5ea69d80a225adfc2f409e8303ee1c241398db
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9ec34d8215c88329066b1cb86da018db82e16c5c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779347"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126209"
 ---
-# <a name="mitigation-path-normalization"></a>Atténuation : normalisation des chemins d’accès
+# <a name="mitigation-path-normalization"></a>Atténuation : Normalisation des chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, la normalisation des chemins d’accès dans le .NET Framework a été modifiée.  
   
 ## <a name="what-is-path-normalization"></a>Qu’est-ce que la normalisation des chemins d’accès ?  

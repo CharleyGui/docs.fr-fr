@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms'
+title: 'Procédure pas à pas : utilisation de flux de données dans une application Windows Forms'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,21 +7,19 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dbe5b5db580e06bfd3e5723addd404eae7950e6c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: b6f4b933f76834f48d522d9c97fb0c9b5c24e13d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946349"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139921"
 ---
-# <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms
+# <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation de flux de données dans une application Windows Forms
 Ce document montre comment créer un réseau de blocs de flux de données qui effectuent un traitement des images dans une application Windows Forms.  
   
  Dans cet exemple, on charge des fichiers image à partir du dossier spécifié, on crée une image composite, et on affiche le résultat. L’exemple utilise le modèle de flux de données pour acheminer les images via le réseau. Dans le modèle de flux de données, les composants indépendants d’un programme communiquent entre eux en envoyant des messages. Lorsqu’un composant reçoit un message, il effectue une action, puis transmet le résultat à un autre composant. Comparez cela avec le modèle de flux de contrôle, dans lequel une application utilise des structures de contrôle (par exemple, des instructions conditionnelles, des boucles, etc.) pour contrôler l’ordre des opérations dans un programme.  
   
-## <a name="prerequisites"></a>Prérequis  
+## <a name="prerequisites"></a>Configuration requise  
  Lisez la rubrique [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -86,7 +84,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  Le tableau ci-dessous décrit les membres du réseau.  
   
-|Membre|Type|Description|  
+|Membre|Tapez|Description|  
 |------------|----------|-----------------|  
 |`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Prend un chemin d’accès à un dossier en entrée, et produit une collection d’objets <xref:System.Drawing.Bitmap> en sortie.|  
 |`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Prend une collection d’objets <xref:System.Drawing.Bitmap> en entrée, et produit une bitmap composite en sortie.|  
@@ -101,7 +99,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  Étant donné que les blocs de flux de données `displayCompositeBitmap` et `operationCancelled` agissent sur l’interface utilisateur, il est important que ces actions se produisent sur le thread de l’interface utilisateur. Pour cela, lors de la construction, chacun de ces objets fournit un objet <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> dont la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> est définie sur <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. La méthode <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> crée un objet <xref:System.Threading.Tasks.TaskScheduler> qui effectue le travail dans le contexte actuel de synchronisation. Étant donné que la méthode `CreateImageProcessingNetwork` est appelée à partir du gestionnaire du bouton **Choisir le dossier**, qui est exécuté sur le thread de l’interface utilisateur, les actions des blocs de flux de données `displayCompositeBitmap` et `operationCancelled` sont également exécutées sur le thread de l’interface utilisateur.  
   
- Cet exemple utilise un jeton d’annulation partagé au lieu de définir la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>, car cette dernière annule définitivement l’exécution du bloc de flux de données<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>. Cet exemple explique comment un jeton d’annulation permet de réutiliser un réseau de flux de données plusieurs fois, même lorsque l’utilisateur annule une ou plusieurs opérations. Pour obtenir un exemple qui utilise <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> afin d’annuler définitivement l’exécution d’un bloc de dataflow, consultez [Guide pratique pour annuler un bloc de dataflow](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
+ Cet exemple utilise un jeton d’annulation partagé au lieu de définir la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>, car cette dernière annule définitivement l’exécution du bloc de flux de données<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>. Cet exemple explique comment un jeton d’annulation permet de réutiliser un réseau de flux de données plusieurs fois, même lorsque l’utilisateur annule une ou plusieurs opérations. Vous trouverez un exemple utilisant <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> pour annuler définitivement l’exécution d’un bloc de flux de données sur la page [Guide pratique : annuler un bloc de flux de données](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
   
 <a name="ui"></a>   
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Connexion du réseau de flux de données à l’interface utilisateur  
@@ -129,7 +127,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  L’illustration suivante montre une sortie type du dossier \Échantillons d'images\.  
   
- ![L’application Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
+ ![Application Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
 
 ## <a name="see-also"></a>Voir aussi
 

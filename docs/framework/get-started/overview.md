@@ -7,14 +7,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c7a3548cb0d7e841f32824eda52565e64279536e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: b5dacad4511df0476dded6ac3784014665234077
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052003"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123235"
 ---
 # <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
 
@@ -81,7 +79,7 @@ Comme pour toute bibliothèque de classes orientée objet, les types .NET Framew
 
 - Applications Windows Presentation Foundation (WPF). Consultez [Windows Presentation Foundation](../wpf/index.md).
 
-- Applications ASP.NET. Consultez [Applications web avec ASP.NET](../develop-web-apps-with-aspnet.md).
+- Applications ASP.NET. Consultez [Applications Web avec ASP.NET](../develop-web-apps-with-aspnet.md).
 
 - Les services Windows. Consultez [Introduction aux applications de service Windows](../windows-services/introduction-to-windows-service-applications.md).
 

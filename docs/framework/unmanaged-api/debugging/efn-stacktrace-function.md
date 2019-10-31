@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: caea7754-867c-4360-a65c-5ced4408fd9d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9035d9a53c4b0c8822b79e641aef092b4a48c418
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 272856c7eedbdc577158edcc463535a7946bb060
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895036"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122988"
 ---
 # <a name="_efn_stacktrace-function"></a>\_EFN\_fonction StackTrace
 Fournit une représentation textuelle d'une trace de pile managée et un tableau d'enregistrements `CONTEXT` pour chaque transition entre du code non managé et du code managé.  
@@ -60,22 +58,22 @@ HRESULT CALLBACK _EFN_StackTrace(
  dans Taille de la structure de contexte.  
   
  `Flags`  
- dans Définissez sur 0 ou SOS_STACKTRACE_SHOWADDRESSES (0x01) pour afficher le registre EBP et le pointeur de pile Enter (ESP) devant chaque `module!functionname` ligne.  
+ dans Définissez sur 0 ou SOS_STACKTRACE_SHOWADDRESSES (0x01) pour afficher le registre EBP et le pointeur de pile Enter (ESP) devant chaque ligne de `module!functionname`.  
   
 ## <a name="remarks"></a>Notes  
- La `_EFN_StackTrace` structure peut être appelée à partir d’une interface de programmation WinDbg. Les paramètres sont utilisés comme suit :  
+ La structure `_EFN_StackTrace` peut être appelée à partir d’une interface de programmation WinDbg. Les paramètres sont utilisés comme suit :  
   
-- Si `wszTextOut` a la valeur `puiTextLength` null et que n’est pas null, la fonction retourne `puiTextLength`la longueur de la chaîne dans.  
+- Si `wszTextOut` a la valeur null et que `puiTextLength` n’a pas la valeur null, la fonction retourne la longueur de la chaîne dans `puiTextLength`.  
   
-- Si `wszTextOut` n’a pas la valeur null, la fonction `wszTextOut` stocke le texte dans l' `puiTextLength`emplacement indiqué par. Elle retourne avec succès si la mémoire tampon a suffisamment d’espace, ou retourne E_OUTOFMEMORY si la mémoire tampon n’était pas suffisamment longue.  
+- Si `wszTextOut` n’a pas la valeur null, la fonction stocke le texte dans `wszTextOut` jusqu’à l’emplacement indiqué par `puiTextLength`. Elle retourne avec succès si la mémoire tampon a suffisamment d’espace, ou retourne E_OUTOFMEMORY si la mémoire tampon n’était pas suffisamment longue.  
   
-- La partie transition de la fonction est ignorée `pTransitionContexts` si `puiTransitionContextCount` et sont tous deux null. Dans ce cas, la fonction fournit aux appelants une sortie texte uniquement des noms de fonctions.  
+- La partie transition de la fonction est ignorée si `pTransitionContexts` et `puiTransitionContextCount` ont tous les deux la valeur null. Dans ce cas, la fonction fournit aux appelants une sortie texte uniquement des noms de fonctions.  
   
-- Si `pTransitionContexts` a la valeur `puiTransitionContextCount` null et que n’est pas null, la fonction retourne le nombre nécessaire `puiTransitionContextCount`d’entrées de contexte dans.  
+- Si `pTransitionContexts` a la valeur null et que `puiTransitionContextCount` n’a pas la valeur null, la fonction retourne le nombre nécessaire d’entrées de contexte dans `puiTransitionContextCount`.  
   
-- Si `pTransitionContexts` n’a pas la valeur null, la fonction la traite comme un tableau de `puiTransitionContextCount`structures de longueur. La taille de la structure est `uiSizeOfContext`donnée par, et doit être la taille de `CONTEXT` [SimpleContext](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) ou de l’architecture.  
+- Si `pTransitionContexts` n’a pas la valeur null, la fonction la traite comme un tableau de structures de longueur `puiTransitionContextCount`. La taille de la structure est donnée par `uiSizeOfContext`et doit être la taille de [SimpleContext](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) ou `CONTEXT` pour l’architecture.  
   
-- `wszTextOut`est écrit au format suivant :  
+- `wszTextOut` est écrit dans le format suivant :  
   
     ```output  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
@@ -88,14 +86,14 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 - S’il n’existe aucun code managé sur le thread actuellement en contexte, la fonction retourne SOS_E_NOMANAGEDCODE.  
   
-- Le `Flags` paramètre est 0 ou SOS_STACKTRACE_SHOWADDRESSES pour voir EBP et ESP devant chaque `module!functionname` ligne. Par défaut, il est égal à 0.  
+- Le paramètre `Flags` est égal à 0 ou à SOS_STACKTRACE_SHOWADDRESSES pour voir EBP et ESP devant chaque ligne de `module!functionname`. Par défaut, il est égal à 0.  
   
     ```cpp  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
     ```  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** SOS_Stacktrace. h  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6c399f37-1e38-4ca1-b70d-8ae41f7228b7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 40a6376d4f4ffd09743441df1965d0a0f0d969b9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d79b642735543ff84f6211fe5ca2e5b424be1f2e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764842"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73103446"
 ---
 # <a name="icorpublishprocessenumnext-method"></a>ICorPublishProcessEnum::Next, méthode
 Obtient le nombre spécifié de processus à partir de la collection, en commençant à la position actuelle du curseur.  
@@ -40,18 +38,18 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre de processus à récupérer.  
+ dans Nombre de processus à récupérer.  
   
  `objects`  
- [out] Extrait un pointeur vers le tableau de [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objets, chacun d’eux représente un processus.  
+ à Pointeur vers le tableau d’objets [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) récupérés, chacun représentant un processus.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre de processus réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre de processus réellement retournés. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

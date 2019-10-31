@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d5da531bff3a0e9e198ba9b5ab6cf2b52bf36b5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c3e1c3a3cfd61a9fa8e7abdae9a25ec1bc674492
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921315"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119227"
 ---
-# <a name="clear-element-for-appsettings"></a>\<Clear >, élément \<de appSettings >
+# <a name="clear-element-for-appsettings"></a>\<> élément Clear pour \<appSettings >
 
 Efface les paramètres d’application personnalisés.
 
 [ **\<configuration>** ](../configuration-element.md)   
 &nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,7 +34,7 @@ Efface les paramètres d’application personnalisés.
 
 ## <a name="attributes"></a>Attributs
 
-Aucun
+aucune.
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -44,11 +44,11 @@ Aucun
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment effacer les paramètres de configuration personnalisés:
+L’exemple suivant montre comment effacer les paramètres de configuration personnalisés :
 
 ```xml
 <appSettings>

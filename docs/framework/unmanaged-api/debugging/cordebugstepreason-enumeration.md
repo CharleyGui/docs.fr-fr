@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: fe248069-b33c-48e1-a777-06ac9b239c54
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3d9dc94689083d79858319387747eb9dafe8b2f6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6c73afb00cbd104cff3d310d1369097b459c131e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739559"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133688"
 ---
 # <a name="cordebugstepreason-enumeration"></a>CorDebugStepReason, énumération
 Indique le résultat d'une étape individuelle.  
@@ -44,15 +42,15 @@ typedef enum CorDebugStepReason {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`STEP_NORMAL`|Exécution pas à pas s’est terminée normalement, dans la même fonction.|  
-|`STEP_RETURN`|Exécution pas à pas a continué normalement, une fois que la fonction est renvoyé.|  
-|`STEP_CALL`|Exécution pas à pas a continué normalement, au début d’une fonction qui vient d’être appelée.|  
+|`STEP_NORMAL`|Exécution pas à pas terminée normalement, au sein de la même fonction.|  
+|`STEP_RETURN`|L’exécution pas à pas a continué normalement, après le retour de la fonction.|  
+|`STEP_CALL`|L’exécution pas à pas a continué normalement, au début d’une fonction récemment appelée.|  
 |`STEP_EXCEPTION_FILTER`|Une exception a été générée et le contrôle a été passé à un filtre d’exception.|  
 |`STEP_EXCEPTION_HANDLER`|Une exception a été générée et le contrôle a été passé à un gestionnaire d’exceptions.|  
-|`STEP_INTERCEPT`|Contrôle a été passé à un intercepteur.|  
-|`STEP_EXIT`|Le thread est arrêté avant la fin de l’étape.|  
+|`STEP_INTERCEPT`|Le contrôle a été passé à un intercepteur.|  
+|`STEP_EXIT`|Le thread s’est arrêté avant la fin de l’étape.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

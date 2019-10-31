@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 36605067-33d3-4579-9c72-fb0e551ab0f1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 41bd4c0bb4e84b6d6f267e24808baafa57f71882
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c622e0eba27f501446d2b7d9d264ee0834e869c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771110"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133617"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval, méthode
-Crée un objet ICorDebugEval qui recueille et expose les fonctionnalités de ICorDebugThread.  
+Crée un objet ICorDebugEval qui collecte et expose les fonctionnalités de ce ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT CreateEval (
   
 ## <a name="parameters"></a>Paramètres  
  `ppEval`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugEval` objet qui recueille et expose les fonctionnalités de ce thread.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugEval` qui collecte et expose les fonctionnalités de ce thread.  
   
 ## <a name="remarks"></a>Notes  
- L’objet d’évaluation envoie une nouvelle chaîne sur le thread avant de procéder à son calcul. Cela interrompt le calcul en cours d’exécution sur le thread jusqu'à ce que la version d’évaluation se termine.  
+ L’objet d’évaluation envoie une nouvelle chaîne sur le thread avant de procéder à son calcul. Cela interrompt le calcul en cours d’exécution sur le thread jusqu’à ce que l’évaluation soit terminée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

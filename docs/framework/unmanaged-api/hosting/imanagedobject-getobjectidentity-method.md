@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b862ff3e-e480-4cdf-84e2-e1013334a467
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 291246169a5cc2c95b117bc55bc269791885b2ea
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8c884569a452fb2985713956f942205cda6ea1ff
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749102"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141244"
 ---
 # <a name="imanagedobjectgetobjectidentity-method"></a>IManagedObject::GetObjectIdentity, méthode
 Obtient l’identité de cet objet managé.  
@@ -39,23 +37,23 @@ HRESULT GetObjectIdentity (
   
 ## <a name="parameters"></a>Paramètres  
  `pBSTRGUID`  
- [out] Un pointeur vers le GUID du processus dans lequel réside l’objet.  
+ à Pointeur vers le GUID du processus dans lequel l’objet réside.  
   
  `AppDomainID`  
- [out] Pointeur vers l’ID de l’objet domaine d’application.  
+ à Pointeur vers l’ID du domaine d’application de l’objet.  
   
  `pCCW`  
- [out] Pointeur vers l’index de l’objet dans la v-table classique COM.  
+ à Pointeur vers l’index de l’objet dans la table v classique COM.  
   
 ## <a name="remarks"></a>Notes  
- L’identité d’un objet managé inclut les GUID du processus, les ID de domaine d’application et les index de l’objet dans la v-table classique COM.  
+ L’identité d’un objet géré comprend le GUID du processus, l’ID de domaine d’application et l’index de l’objet dans la table v Classic COM.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

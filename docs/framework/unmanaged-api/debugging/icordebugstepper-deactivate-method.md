@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 855f4199-b62d-40ce-998e-1eb4a1772142
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b577e915422814fbd0060fdda53b9e2bf7cd091a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1d75897e00c36bd5c484e837ee68e54443168e77
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760726"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131752"
 ---
 # <a name="icordebugstepperdeactivate-method"></a>ICorDebugStepper::Deactivate, méthode
-Entraîne ce ICorDebugStepper annuler la dernière commande reçue.  
+Fait en sorte que ces ICorDebugStepper annulent la dernière commande d’étape qu’il a reçue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,9 +32,9 @@ HRESULT Deactivate ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Une nouvelle commande de pas à pas peut-être être émise après que la commande d’étape la plus récemment reçue a été annulée.  
+ Une nouvelle commande pas à pas peut être émise après l’annulation de la dernière commande de l’étape reçue.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

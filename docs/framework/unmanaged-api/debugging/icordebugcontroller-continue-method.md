@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8684cd06-ad3e-48ef-832e-15320e1f43a2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 62e2be44165472e2fbf368f61b865d39a5e9fc28
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 14356a12c944ef93dba5e7b818d3ee5cf5adc607
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395467"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125424"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue, méthode
 
@@ -39,7 +37,7 @@ HRESULT Continue (
 ## <a name="parameters"></a>Paramètres
 
 `fIsOutOfBand`  
-dans Affectez la valeur `true` si vous continuez à partir d’un événement hors bande ; Sinon, affectez la valeur `false`.
+dans Défini sur `true` en cas de continuation à partir d’un événement hors bande ; Sinon, affectez la valeur `false`.
 
 ## <a name="remarks"></a>Notes
 

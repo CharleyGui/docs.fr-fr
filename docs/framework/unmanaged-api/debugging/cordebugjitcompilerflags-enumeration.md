@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: c0774f70-5bed-45e8-9922-fdad778c4c33
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 39bc1316bb7d8e2aba3390499437aadf263dac07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 739b491d343c0eba76160c15719069ffae385f46
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739848"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097973"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags, énumération
 Contient des valeurs qui influencent le comportement du compilateur juste-à-temps managé.  
@@ -42,11 +40,11 @@ typedef enum CorDebugJITCompilerFlags {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`CORDEBUG_JIT_DEFAULT`|Spécifie que le compilateur doit suivre des données de compilation et permet des optimisations.|  
-|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Spécifie que le compilateur doit suivre des données de compilation, mais désactive les optimisations.|  
-|`CORDEBUG_JIT_ENABLE_ENC`|Spécifie que le compilateur doit suivre des données de compilation, désactive les optimisations, et permet aux technologies Modifier & Continue.|  
+|`CORDEBUG_JIT_DEFAULT`|Spécifie que le compilateur doit suivre les données de compilation et autorise les optimisations.|  
+|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Spécifie que le compilateur doit suivre les données de compilation, mais désactive les optimisations.|  
+|`CORDEBUG_JIT_ENABLE_ENC`|Spécifie que le compilateur doit suivre les données de compilation, désactive les optimisations et active les technologies de modification et de continuation.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

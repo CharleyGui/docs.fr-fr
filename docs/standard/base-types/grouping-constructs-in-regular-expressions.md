@@ -13,14 +13,12 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ee06454575afc16c904b60a2301feeb05debdcdf
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 8bf6870e3eb3ef65b498f431cb2b8805eee7ec3c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957177"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140116"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Constructions de regroupement dans les expressions régulières
 Les constructions de regroupement délimitent les sous-expressions d'une expression régulière et capturent les sous-chaînes d'une chaîne d'entrée. Utilisez les constructions de regroupement pour effectuer les opérations suivantes :  
@@ -54,12 +52,12 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="matched-subexpressions"></a>Sous-expressions mises en correspondance  
  La construction de regroupement suivante capture une sous-expression mise en correspondance :  
   
- `(` *subexpression* `)`  
+ `(` *sous-expression* `)`  
   
  où *subexpression* représente un modèle d'expression régulière valide. Les captures qui utilisent des parenthèses sont numérotées automatiquement de la gauche vers la droite en fonction de l'ordre des parenthèses ouvrantes dans l'expression régulière, à partir de 1. La capture numérotée 0 représente le texte mis en correspondance par le modèle d'expression régulière entier.  
   
 > [!NOTE]
-> Par défaut, l'élément de langage `(`*subexpression*`)` capture la sous-expression mise en correspondance. Toutefois, si le paramètre <xref:System.Text.RegularExpressions.RegexOptions> d'une méthode de mise en correspondance de modèle d'expression régulière comprend l'indicateur <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> ou que l'option `n` est appliquée à cette sous-expression (voir [Options de groupe](#group_options) plus loin dans cette rubrique), la sous-expression mise en correspondance n'est pas capturée.  
+> Par défaut, l'élément de langage `(`*subexpression*`)` capture la sous-expression mise en correspondance. Toutefois, si le paramètre <xref:System.Text.RegularExpressions.RegexOptions> d'une méthode de mise en correspondance de modèle d'expression régulière comprend l'indicateur <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> ou que l'option `n` soit appliquée à cette sous-expression (voir [Options de groupe](#group_options) plus loin dans cette rubrique), la sous-expression mise en correspondance n'est pas capturée.  
   
  Vous pouvez accéder aux groupes capturés de quatre façons :  
   
@@ -67,9 +65,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
 - En utilisant la construction de référence arrière nommée dans l'expression régulière. La sous-expression mise en correspondance est référencée dans la même expression régulière en utilisant la syntaxe `\k<`*nom*`>`, où *nom* est le nom d'un groupe de capture, ou la syntaxe `\k<`*nombre*`>`, où *nombre* est le nombre ordinal d'un groupe de capture. Un groupe de capture possède un nom par défaut qui est identique à son nombre ordinal. Pour plus d'informations, voir [Sous-expressions mises en correspondance nommées](#named_matched_subexpression) plus loin dans cette rubrique.  
   
-- En utilisant la séquence de remplacement `$`*nombre* dans un appel de méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> , où *nombre* est le nombre ordinal de la sous-expression capturée.  
+- En utilisant la séquence de remplacement `$`*nombre* dans un appel de méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, où *nombre* est le nombre ordinal de la sous-expression capturée.  
   
-- Par programmation, en utilisant l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> . Le membre situé à la position zéro dans la collection représente la correspondance de l'expression régulière entière. Chaque membre suivant représente une sous-expression mise en correspondance. Pour plus d'informations, voir la section [Grouping Constructs and Regular Expression Objects](#Objects) .  
+- Par programmation, en utilisant l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> . Le membre situé à la position zéro dans la collection représente la correspondance de l'expression régulière entière. Chaque membre suivant représente une sous-expression mise en correspondance. Pour plus d’informations, consultez la section [Constructions de regroupement et objets d’expression régulière](#Objects).  
   
  L'exemple suivant illustre une expression régulière qui identifie des mots en double dans le texte. Les deux groupes de capture du modèle d'expression régulière représentent les deux instances du mot en double. La capture de la seconde instance permet d'indiquer la position de départ du mot dans la chaîne d'entrée.  
   
@@ -102,7 +100,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
  où *name* est un nom de groupe valide, et *subexpression* représente un modèle d'expression régulière valide. *name* ne doit pas contenir de caractères de ponctuation et ne peut pas commencer par un nombre.  
   
 > [!NOTE]
-> Si le paramètre <xref:System.Text.RegularExpressions.RegexOptions> d'une méthode de mise en correspondance de modèle d'expression régulière comprend l'indicateur <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> ou que l'option `n` est appliquée à cette sous-expression (voir [Options de groupe](#group_options) plus loin dans cette rubrique), la seule façon de capturer une sous-expression consiste à nommer explicitement des groupes de capture.  
+> Si le paramètre <xref:System.Text.RegularExpressions.RegexOptions> d'une méthode de mise en correspondance de modèle d'expression régulière comprend l'indicateur <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> ou que l'option `n` soit appliquée à cette sous-expression (voir [Options de groupe](#group_options) plus loin dans cette rubrique), la seule façon de capturer une sous-expression consiste à nommer explicitement des groupes de capture.  
   
  Vous pouvez accéder aux groupes capturés nommés comme suit :  
   
@@ -110,7 +108,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
 - En utilisant la construction de référence arrière dans l'expression régulière. La sous-expression mise en correspondance est référencée dans la même expression régulière en utilisant la syntaxe `\`*nombre*, où *nombre* est le nombre ordinal de la sous-expression capturée. Les sous-expressions mises en correspondance nommées sont numérotées de manière consécutive de la gauche vers la droite après les sous-expressions mises en correspondance.  
   
-- En utilisant la séquence de remplacement `${`*nom*`}` dans un appel de méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> , où *nom* est le nom de la sous-expression capturée.  
+- En utilisant la séquence de remplacement `${`*nom*`}` dans un appel de méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, où *nom* est le nom de la sous-expression capturée.  
   
 - En utilisant la séquence de remplacement `$`*nombre* dans un appel de méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, où *nombre* est le nombre ordinal de la sous-expression capturée.  
   
@@ -120,7 +118,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
  Un modèle d'expression régulière simple permet d'illustrer comment les groupes numérotés (sans nom) et nommés peuvent être référencés par programmation ou à l'aide d'une syntaxe de langage d'expression régulière. L'expression régulière `((?<One>abc)\d+)?(?<Two>xyz)(.*)` génère les groupes de capture suivants en fonction du nombre et du nom. Le premier groupe de capture (nombre 0) fait toujours référence au modèle entier.  
   
-|nombre|nom|Motif|  
+|nombre|Name|Motif|  
 |------------|----------|-------------|  
 |0|0 (nom par défaut)|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
 |1|1 (nom par défaut)|`((?<One>abc)\d+)`|  
@@ -159,7 +157,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |Motif|Description|  
 |-------------|-----------------|  
 |`\D+`|Mettre en correspondance un ou plusieurs caractères non décimaux.|  
-|`(?<digit>\d+)`|Mettre en correspondance un ou plusieurs caractères décimaux. Affecter la correspondance au groupe nommé `digit`.|  
+|`(?<digit>\d+)`|Mettre en correspondance un ou plusieurs caractères décimaux. Affecter la correspondance au groupe nommé `digit` .|  
 |`\D+`|Mettre en correspondance un ou plusieurs caractères non décimaux.|  
 |`(?<digit>\d+)?`|Mettre en correspondance zéro ou une occurrence d'un ou plusieurs caractères numériques décimaux. Affecter la correspondance au groupe nommé `digit` .|  
   
@@ -169,7 +167,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
 `(?<name1-name2>subexpression)`  
   
- ou :  
+ ou :  
   
 `(?'name1-name2' subexpression)`
   
@@ -216,7 +214,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |3|`(((?'Open'<)`|Met en correspondance le chevron gauche dans « \<abc> » et l'affecte au groupe `Open`.|  
 |4|`[^<>]*`|Met en correspondance « abc ».|  
 |5|`)+`|« <abc » est la valeur du deuxième groupe capturé.<br /><br /> Le caractère suivant dans la chaîne d'entrée n'étant pas un chevron gauche, le moteur d'expression régulière ne repasse pas par le sous-modèle `(?'Open'<)[^<>]*)` .|  
-|6\.|`((?'Close-Open'>)`|Met en correspondance le chevron droit dans «\<abc> », affecte « abc », qui est la sous-chaîne entre le groupe `Open` et le chevron droit, au groupe `Close`, puis supprime la valeur actuelle (« < ») du groupe `Open`, qui se trouve alors vide.|  
+|6|`((?'Close-Open'>)`|Met en correspondance le chevron droit dans «\<abc> », affecte « abc », qui est la sous-chaîne entre le groupe `Open` et le chevron droit, au groupe `Close`, puis supprime la valeur actuelle (« < ») du groupe `Open`, qui se trouve alors vide.|  
 |7|`[^<>]*`|Recherche des caractères autres que des chevrons après le chevron droit ; ne trouve aucune correspondance.|  
 |8|`)+`|La valeur du troisième groupe capturé est « > ».<br /><br /> Le caractère suivant dans la chaîne d'entrée n'étant pas un chevron droit, le moteur d'expression régulière ne repasse pas par le sous-modèle `((?'Close-Open'>)[^<>]*)` .|  
 |9|`)*`|La valeur du premier groupe capturé est « \<abc> ».<br /><br /> Le caractère suivant dans la chaîne d'entrée étant un chevron gauche, le moteur d'expression régulière repasse par le sous-modèle `(((?'Open'<)` .|  
@@ -266,7 +264,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="group-options"></a>Options de groupe  
  La construction de regroupement suivante applique ou désactive les options spécifiées dans une sous-expression :  
   
- `(?imnsx-imnsx:` *subexpression* `)`  
+ `(?imnsx-imnsx:` *sous-expression* `)`  
   
  où *subexpression* représente un modèle d'expression régulière valide. Par exemple, `(?i-s:)` désactive la prise en compte des majuscules et des minuscules, ainsi que le mode à ligne simple. Pour plus d'informations sur les options inline que vous pouvez spécifier, voir [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
@@ -290,7 +288,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="zero-width-positive-lookahead-assertions"></a>Assertions de préanalyse positive de largeur nulle  
  La construction de regroupement suivante définit une assertion de préanalyse positive de largeur nulle :  
   
- `(?=` *subexpression* `)`  
+ `(?=` *sous-expression* `)`  
   
  où *sous-expression* représente un modèle d'expression régulière. Pour qu'une recherche de correspondance réussisse, la chaîne d'entrée doit correspondre au modèle d'expression régulière dans *sous-expression*, bien que la sous-chaîne mise en correspondance ne soit pas incluse dans le résultat de la recherche de correspondance. Une assertion de préanalyse positive de largeur nulle n'est pas rétroactive.  
   
@@ -313,7 +311,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="zero-width-negative-lookahead-assertions"></a>Assertions de préanalyse négative de largeur nulle  
  La construction de regroupement suivante définit une assertion de préanalyse négative de largeur nulle :  
   
- `(?!` *subexpression* `)`  
+ `(?!` *sous-expression* `)`  
   
  où *sous-expression* représente un modèle d'expression régulière. Pour que la recherche de correspondance réussisse, la chaîne d'entrée ne doit pas correspondre au modèle d'expression régulière dans *sous-expression*, bien que la chaîne mise en correspondance ne soit pas incluse dans le résultat de la recherche de correspondance.  
   
@@ -351,7 +349,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Assertions de postanalyse positive de largeur nulle  
  La construction de regroupement suivante définit une assertion de postanalyse positive de largeur nulle :  
   
- `(?<=` *subexpression* `)`  
+ `(?<=` *sous-expression* `)`  
   
  où *sous-expression* représente un modèle d'expression régulière. Pour qu'une recherche de correspondance réussisse, *sous-expression* doit se trouver dans la chaîne d'entrée à gauche de la position actuelle, bien que la sous-expression ( `subexpression` ) ne soit pas incluse dans le résultat de la recherche de correspondance. Une assertion de postanalyse positive de largeur nulle n'est pas rétroactive.  
   
@@ -376,7 +374,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Assertions de postanalyse négative de largeur nulle  
  La construction de regroupement suivante définit une assertion de postanalyse négative de largeur nulle :  
   
- `(?<!` *subexpression* `)`  
+ `(?<!` *sous-expression* `)`  
   
  où *sous-expression* représente un modèle d'expression régulière. Pour qu'une recherche de correspondance réussisse, *sous-expression* ne doit pas se trouver dans la chaîne d'entrée à gauche de la position actuelle. Toutefois, toute sous-chaîne qui ne correspond pas à `subexpression` est exclue du résultat de la recherche de correspondance.  
   
@@ -401,7 +399,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 ## <a name="nonbacktracking-subexpressions"></a>Sous-expressions non rétroactives  
  La construction de regroupement suivante représente une sous-expression non rétroactive (ou « gourmande ») :  
   
- `(?>` *subexpression* `)`  
+ `(?>` *sous-expression* `)`  
   
  où *sous-expression* représente un modèle d'expression régulière.  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e89d5ee-e4e3-4738-8302-0b7d1cf4846e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0eacb4b0a06fbe086935b59eba7d33135b6bef19
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d773368c85fd42fd169109cf1c7e6635705ebb7e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759708"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090228"
 ---
 # <a name="icordebugmanagedcallbackcreateprocess-method"></a>ICorDebugManagedCallback::CreateProcess, méthode
-Notifie le débogueur lorsqu’un processus a été joint ou démarré pour la première fois.  
+Notifie le débogueur lorsqu’un processus a été attaché ou démarré pour la première fois.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT CreateProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet ICorDebugProcess qui représente le processus qui a été joint ou démarré.  
+ dans Pointeur vers un objet ICorDebugProcess qui représente le processus qui a été attaché ou démarré.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode n’est pas appelée jusqu'à ce que le common language runtime est initialisé. La plupart de la [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) méthodes retourneront CORDBG_E_NOTREADY avant le `CreateProcess` rappel.  
+ Cette méthode n’est pas appelée tant que le common language runtime n’est pas initialisé. La plupart des méthodes [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) retournent CORDBG_E_NOTREADY avant le rappel `CreateProcess`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

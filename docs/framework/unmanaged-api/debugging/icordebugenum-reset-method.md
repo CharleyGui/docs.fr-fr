@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ab03dcb8-ceed-4f7a-abf8-9d31604bf90c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4e809cad8098ccb80685545c9e7f9deea2f73540
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fdf7ce97d45dc54d711389af822f2ca7d1ea67a5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752242"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73090635"
 ---
 # <a name="icordebugenumreset-method"></a>ICorDebugEnum::Reset, méthode
 Déplace le curseur au début de l’énumération.  
@@ -33,7 +31,7 @@ Déplace le curseur au début de l’énumération.
 HRESULT Reset ();  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -44,4 +42,4 @@ HRESULT Reset ();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugEnum (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)
+- [ICorDebugEnum, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)

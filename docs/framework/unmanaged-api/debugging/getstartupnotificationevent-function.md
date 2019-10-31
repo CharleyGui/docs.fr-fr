@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: c94b1b61-045a-4695-bacd-0f18c5acc246
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f67f3ef57b4996eb4a956c596b76fb94b1bdfd7a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fb158b35165fb229fc78169e2508679b6749752e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738889"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122949"
 ---
 # <a name="getstartupnotificationevent-function"></a>Fonction GetStartupNotificationEvent
 Crée ou ouvre un gestionnaire d'événements qui sera signalé par un Common Language Runtime (CLR) qui est chargé dans le processus cible spécifié.  
@@ -60,11 +58,11 @@ HRESULT GetStartupNotificationEvent
   
  L'événement est signalé avant l'exécution de code managé par le CLR ayant signalé l'événement.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** dbgshim.h  
+ **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim.dll  
+ **Bibliothèque :** dbgshim. dll  
   
- **Versions du .NET framework :** 3.5 SP1
+ **Versions de .NET Framework :** 3,5 SP1

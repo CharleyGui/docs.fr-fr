@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 397a4d72-6a87-4f0b-8813-af31af91d68f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5bcc70fd048a2eb90ff9e0a98f3c7b08126dd633
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cb2d6b03af6e7f0b05c595640710850fd446142f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758491"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095125"
 ---
 # <a name="icordebugilframegetstackvalue-method"></a>ICorDebugILFrame::GetStackValue, méthode
 Cette méthode n’a pas encore été implémentée.  
@@ -36,5 +34,5 @@ HRESULT GetStackValue (
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **En-tête :** CorDebug.idl, CorDebug.h

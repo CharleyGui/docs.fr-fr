@@ -12,14 +12,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 06dbc4b7124aa873fd8471794fa25b0f47f8ce3d
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: 817337cec604a431f9f7d4eacb04378ee0d3c227
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663578"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131577"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 
@@ -97,4 +95,4 @@ L'exemple suivant contient le point d'entrée de l'application qui instancie la 
 |-----------|-----------------|
 |[Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Décrit les meilleures pratiques à adopter lors du développement d'applications qui implémentent le modèle de design Observateur.|
 |[Guide pratique pour implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)|Fournit une implémentation pas à pas d'un fournisseur pour une application de surveillance de la température.|
-|[Guide pratique pour implémenter un observateur](../../../docs/standard/events/how-to-implement-an-observer.md)|Fournit une implémentation pas à pas d'un observateur pour une application de surveillance de la température.|
+|[Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)|Fournit une implémentation pas à pas d'un observateur pour une application de surveillance de la température.|

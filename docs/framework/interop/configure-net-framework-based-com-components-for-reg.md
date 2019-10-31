@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : configurer les composants COM .NET Framework pour l’activation sans inscription'
+title: "Comment : configurer les composants COM .NET Framework pour l'activation sans inscription"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -8,16 +8,14 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: baabff187fb8a22aea37c4fb4c1dc11a680d3bb8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 61f5f0f3ec9a4386fa12e7511b4a518f2b56a21c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853854"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123667"
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Procédure : configurer les composants COM .NET Framework pour l’activation sans inscription
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Comment : configurer les composants COM .NET Framework pour l'activation sans inscription
 L’activation sans inscription des composants .NET Framework n’est que légèrement plus compliquée que pour les composants COM. L’installation requiert deux manifestes :  
   
 - Les applications COM doivent avoir un manifeste d’application de style Win32 pour identifier le composant managé.  
@@ -168,7 +166,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
     `/win32res:myresource.res`  
   
-     Là encore `myresource.res` , est le nom du fichier de ressources contenant des ressources incorporées.  
+     Là encore, `myresource.res` est le nom du fichier de ressources contenant des ressources incorporées.  
   
 ## <a name="see-also"></a>Voir aussi
 

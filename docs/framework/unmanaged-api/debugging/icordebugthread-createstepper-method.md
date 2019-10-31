@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4657443f-dd12-431b-a648-175c23f13c83
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 95a00e8646589e7897636c1698b7c2647cd233fd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d1b058aef66ed32c2cadcc3cfd72320dd8eb7729
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771803"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133590"
 ---
 # <a name="icordebugthreadcreatestepper-method"></a>ICorDebugThread::CreateStepper, méthode
-Crée un objet ICorDebugStepper qui permet l’exécution pas à pas via le frame actif de ICorDebugThread.  
+Crée un objet ICorDebugStepper qui permet d’effectuer un pas à pas détaillé dans le frame actif de ce ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT CreateStepper (
   
 ## <a name="parameters"></a>Paramètres  
  `ppStepper`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugStepper` objet qui permet l’exécution pas à pas via le frame actif de ce thread.  
+ à Pointeur vers l’adresse d’un objet `ICorDebugStepper` qui permet d’exécuter pas à pas le frame actif de ce thread.  
   
 ## <a name="remarks"></a>Notes  
- Le frame actif peut être le code non managé.  
+ Le frame actif peut être du code non managé.  
   
- Le `ICorDebugStepper` interface doit être utilisée pour effectuer l’exécution pas à pas réelle.  
+ L’interface de `ICorDebugStepper` doit être utilisée pour exécuter le pas à pas réel.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

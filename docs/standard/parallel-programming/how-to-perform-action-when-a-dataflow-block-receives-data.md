@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Exécuter des actions quand un bloc de flux de données reçoit des données'
+title: "Comment : exécuter des actions lorsqu'un bloc de flux de données reçoit des données"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,21 +9,19 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17167467f52ab9afb8d7500f4f0eb744d8f60a6e
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 89ab2bb18e5fe00a4d1b79d911bb0f7524b83104
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169032"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73124215"
 ---
-# <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Procédure : Exécuter des actions quand un bloc de flux de données reçoit des données
+# <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Comment : exécuter des actions lorsqu'un bloc de flux de données reçoit des données
 Les types de *Bloc de flux de données d’exécution* appellent un délégué fourni par l’utilisateur lorsqu’ils reçoivent des données. Les classes <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>, et <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> sont des types de bloc de flux de données d'exécution. Vous pouvez utiliser le mot clé `delegate` (`Sub` en Visual Basic), <xref:System.Action%601>, <xref:System.Func%602> ou une expression lambda quand vous fournissez une fonction de travail dans un bloc de flux de données d’exécution. Ce document explique comment utiliser <xref:System.Func%602> et les expressions lambda pour effectuer l’action dans des blocs d’exécution.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise le flux de données pour lire un fichier de disque et calcule le nombre d'octets qui sont égaux à zéro dans ce fichier. Il utilise <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> pour lire le fichier et calculer le nombre d'octets nuls, et <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> pour imprimer le nombre d'octets nuls sur la console. L'objet <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> spécifie un objet <xref:System.Func%602> pour effectuer le travail lorsque les blocs reçoivent les données. L'objet <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> utilise une expression lambda pour afficher sur la console le nombre d'octets nuls qui sont lus.  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#1)]

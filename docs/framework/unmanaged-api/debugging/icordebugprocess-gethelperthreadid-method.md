@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 84e1e605-37c1-49a5-8e12-35db85654622
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad62b267eb0c49ff8fbefeb45b523c21edc705fe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d38a59b23d47cbaf57dc21e121d56530a514d354
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766039"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128859"
 ---
 # <a name="icordebugprocessgethelperthreadid-method"></a>ICorDebugProcess::GetHelperThreadID, méthode
-Obtient l’ID de thread de système d’exploitation (se) du thread d’assistance interne du débogueur.  
+Obtient l’ID de thread (se) du système d’exploitation du thread d’assistance interne du débogueur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetHelperThreadID (
   
 ## <a name="parameters"></a>Paramètres  
  `pThreadID`  
- [out] Un pointeur vers le système d’exploitation ID de thread du thread d’assistance interne du débogueur.  
+ à Pointeur vers l’ID de thread de système d’exploitation du thread d’assistance interne du débogueur.  
   
 ## <a name="remarks"></a>Notes  
- Pendant le débogage managé et, il incombe du débogueur pour vous assurer que le thread avec l’ID spécifié continue de s’exécuter s’il rencontre un point d’arrêt placé par le débogueur. Un débogueur peut souhaiter également masquer ce thread à partir de l’utilisateur. Si aucun thread d’assistance n’existe encore, dans le processus le `GetHelperThreadID` méthode retourne la valeur zéro dans *`pThreadID`.  
+ Lors du débogage managé et non managé, il incombe au débogueur de s’assurer que le thread avec l’ID spécifié reste en cours d’exécution s’il atteint un point d’arrêt placé par le débogueur. Un débogueur peut également souhaiter masquer ce thread à l’utilisateur. Si aucun thread d’assistance n’existe encore dans le processus, la méthode `GetHelperThreadID` retourne zéro dans *`pThreadID`.  
   
- Vous ne pouvez pas mettre en cache l’ID de thread du thread d’assistance, car il peut changer au fil du temps. Vous devez redemander l’ID de thread à chaque événement d’arrêt.  
+ Vous ne pouvez pas mettre en cache l’ID de thread du thread d’assistance, car il peut changer au fil du temps. Vous devez relancer l’interrogation de l’ID de thread à chaque événement d’arrêt.  
   
- L’ID du thread d’assistance du débogueur est correct sur chaque non managé [ICorDebugManagedCallback::CreateThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) événement, ce qui permet un débogueur de déterminer l’ID de son thread d’assistance et masquez-la par rapport à l’utilisateur. Un thread qui est identifié comme un thread d’assistance pendant une fonction non managée `ICorDebugManagedCallback::CreateThread` événement n’est jamais exécuté le code utilisateur managé.  
+ L’ID de thread du thread d’assistance du débogueur est correct sur chaque événement [ICorDebugManagedCallback :: CreateThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) non managé, ce qui permet à un débogueur de déterminer l’ID de thread de son thread d’assistance et de le masquer à l’utilisateur. Un thread identifié comme un thread d’assistance pendant un événement `ICorDebugManagedCallback::CreateThread` non managé n’exécutera jamais le code utilisateur managé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl. CorDebug.h  
+ **En-tête :** CorDebug. idl. CorDebug. h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 052773c615bcc4ddb5b735ae8164d44ed70bd935
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: ee8c90d63478e444b7d25cb7cbb5c969963d7c63
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513488"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130939"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Modèle asynchrone basé sur les événements (EAP)
 
@@ -31,7 +29,7 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Implémentation du modèle asynchrone basé sur les événements](implementing-the-event-based-asynchronous-pattern.md)  
  Décrit la façon standardisée de placer dans un package une classe qui possède des fonctionnalités asynchrones.  
   
- [Meilleures pratiques pour implémenter le modèle asynchrone basé sur les événements](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
+ [Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
  Décrit les exigences liées à l’exposition de fonctionnalités asynchrones conformément au modèle asynchrone basé sur les événements.  
   
  [Choix du moment auquel implémenter le modèle asynchrone basé sur les événements](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)  
@@ -43,10 +41,10 @@ Il existe plusieurs façons d’exposer des fonctionnalités asynchrones à du c
  [Guide pratique pour implémenter un client du modèle asynchrone basé sur des événements](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)  
  Décrit comment créer un client qui utilise un composant implémentant le modèle asynchrone basé sur les événements.
   
- [Guide pratique pour utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
+ [Guide pratique : utiliser des composants qui prennent en charge le modèle asynchrone basé sur les événements](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Explique comment créer un composant qui prend en charge le modèle asynchrone basé sur les événements.  
   
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
  <xref:System.ComponentModel.AsyncOperation>  
  Décrit la classe <xref:System.ComponentModel.AsyncOperation> et propose des liens vers tous ses membres.  

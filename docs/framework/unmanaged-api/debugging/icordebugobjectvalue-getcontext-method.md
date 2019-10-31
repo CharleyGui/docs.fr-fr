@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 40594774-5105-4187-a06b-4e7f50bada3c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4ad5ce0296dde073b58b3ea9986cae05c6699dc9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e855d9ec4105559bb72f48ecb594707f0a0ec4c4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756938"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73095916"
 ---
 # <a name="icordebugobjectvaluegetcontext-method"></a>ICorDebugObjectValue::GetContext, méthode
-`GetContext` n’est pas implémentée dans cette version du .NET Framework.  
+`GetContext` n’est pas implémenté dans cette version du .NET Framework.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +33,7 @@ HRESULT GetContext (
 );  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **En-tête :** CorDebug.idl, CorDebug.h  
   
 ## <a name="see-also"></a>Voir aussi

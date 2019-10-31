@@ -8,14 +8,12 @@ helpviewer_keywords:
 - MEF, attributed programming model
 - attributed programming model [MEF]
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bed67019fdd3bb81585d08349715a895dfe5a681
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
-ms.translationtype: HT
+ms.openlocfilehash: 63fb3d627364810fac5ddb0bfd3adc3c0421c9cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363959"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126382"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Vue d'ensemble du modèle de programmation par attributs (MEF)
 
@@ -201,7 +199,7 @@ public class MyClass
 }
 ```
 
-Quand le type de contrat est déduit du mot clé `dynamic` , il correspond à tout type de contrat. Dans ce cas, une importation doit **toujours** spécifier un nom de contrat à respecter. (Si aucun nom de contrat n’est spécifié, l’importation est considérée comme ne correspondant à aucune exportation.) Les deux exportations suivantes correspondent à l’importation précédente.
+Quand le type de contrat est déduit du mot clé `dynamic` , il correspond à tout type de contrat. Dans ce cas, une importation doit **toujours** spécifier un nom de contrat à respecter. (Si aucun nom de contrat n’est spécifié, l’importation sera considérée comme ne correspondant à aucune exportation.) Les deux exportations suivantes correspondent à l’importation précédente.
 
 ```vb
 <Export("TheString", GetType(IMyAddin))>
@@ -343,7 +341,7 @@ Quand une valeur importée est requise par le constructeur d'un composant, cet o
 
 L'attribut `Import` spécifie une exigence pour que le composant fonctionne. Si une importation ne peut pas être satisfaite, la composition de ce composant échouera et le composant ne sera pas disponible.
 
-Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition réussira même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur son type de propriété par défaut (`null` pour les propriétés d’objet, `false` pour les booléens ou zéro pour les propriétés numériques). La classe suivante utilise une importation facultative.
+Vous pouvez définir une importation comme *facultative* en utilisant la propriété `AllowDefault` . Dans ce cas, la composition fonctionnera même si l’importation ne correspond à aucune exportation disponible, et la propriété d’importation sera définie sur la valeur par défaut pour son type de propriété (`null` pour les propriétés d’objet, `false` pour les valeurs booléennes ou zéro pour les propriétés numériques.) La classe suivante utilise une importation facultative.
 
 ```vb
 Public Class MyClass1
@@ -687,7 +685,7 @@ public class NumFour : NumThree
 }
 ```
 
-Si des métadonnées sont associées à un attribut `InheritedExport` , elles seront également héritées. (Pour plus d’informations, voir la section précédente « Métadonnées et vues de métadonnées ».) La sous-classe ne peut pas modifier les métadonnées héritées. Toutefois, en redéclarant l'attribut `InheritedExport` avec les mêmes nom de contrat et type de contrat, mais avec de nouvelles métadonnées, la sous-classe peut remplacer les métadonnées héritées par de nouvelles métadonnées. La classe suivante illustre ce principe. Le composant `MegaLogger` hérite de `Logger` et inclut l'attribut `InheritedExport` . Comme `MegaLogger` redéclare de nouvelles métadonnées nommées Status, il n'hérite pas les métadonnées Name et Version de `Logger`.
+Si des métadonnées sont associées à un attribut `InheritedExport` , elles seront également héritées. (Pour plus d’informations, consultez la section « métadonnées et vues de métadonnées » précédentes.) Les métadonnées héritées ne peuvent pas être modifiées par la sous-classe. Toutefois, en redéclarant l'attribut `InheritedExport` avec les mêmes nom de contrat et type de contrat, mais avec de nouvelles métadonnées, la sous-classe peut remplacer les métadonnées héritées par de nouvelles métadonnées. La classe suivante illustre ce principe. Le composant `MegaLogger` hérite de `Logger` et inclut l'attribut `InheritedExport` . Comme `MegaLogger` redéclare de nouvelles métadonnées nommées Status, il n'hérite pas les métadonnées Name et Version de `Logger`.
 
 ```vb
 <InheritedExport(GetType(IPlugin))>
@@ -747,7 +745,7 @@ public class MegaLogger : Logger        {
 }
 ```
 
-Lors de la redéclaration de l'attribut `InheritedExport` pour remplacer les métadonnées, assurez-vous que les types de contrat sont les mêmes. (Dans l’exemple précédent, `IPlugin` est le type de contrat.) S’ils sont différents, le second attribut créera une deuxième exportation indépendante à partir du composant au lieu de remplacer les métadonnées. En règle générale, cela signifie que vous devez spécifier explicitement le type de contrat quand vous remplacez un attribut `InheritedExport` , comme illustré dans l'exemple précédent.
+Lors de la redéclaration de l'attribut `InheritedExport` pour remplacer les métadonnées, assurez-vous que les types de contrat sont les mêmes. (Dans l’exemple précédent, `IPlugin` est le type de contrat.) Si elles diffèrent, au lieu de se substituer, le deuxième attribut crée une deuxième exportation indépendante à partir de la partie. En règle générale, cela signifie que vous devez spécifier explicitement le type de contrat quand vous remplacez un attribut `InheritedExport` , comme illustré dans l'exemple précédent.
 
 Comme les interfaces ne peuvent pas être instanciées directement, elles ne peuvent généralement pas être décorées avec des attributs `Export` ou `Import` . Toutefois, une interface peut être décorée avec un attribut `InheritedExport` au niveau de l'interface et cette exportation, ainsi que toutes les métadonnées associées, sera héritée par toutes les classes d'implémentation. Toutefois, l'interface elle-même ne sera pas disponible en tant que composant.
 
@@ -984,5 +982,5 @@ Pour les conteneurs de composition durables, la consommation de mémoire par les
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vidéo Channel 9 : ouvrir vos applications avec Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)
-- [Vidéo Channel 9 : Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)
+- [Vidéo Channel 9 : Ouvrir vos applications avec Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)
+- [Vidéo Channel 9 : Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)

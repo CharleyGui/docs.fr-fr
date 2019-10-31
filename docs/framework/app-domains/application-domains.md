@@ -12,14 +12,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0ce9d5f706a473d64e97fb02e0426060878d9c75
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834030"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73119968"
 ---
 # <a name="application-domains"></a>Domaines d'application
 

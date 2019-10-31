@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2644f48b-db3c-429f-ae62-76f1c98a1af5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bd68df77adafb8b21e7684b28fe978722ca37e16
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3a895f432ed640cc35a492df0c91cece34893062
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736790"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122367"
 ---
 # <a name="icordebugtypegetclass-method"></a>ICorDebugType::GetClass, méthode
-Obtient un pointeur d’interface ICorDebugClass qui représente le type générique non instancié.  
+Obtient un pointeur d’interface vers une ICorDebugClass qui représente le type générique non instancié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT GetClass (
   
 ## <a name="parameters"></a>Paramètres  
  `ppClass`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugClass` interface qui représente le type générique non instancié.  
+ à Pointeur vers l’adresse d’une interface `ICorDebugClass` qui représente le type générique non instancié.  
   
 ## <a name="remarks"></a>Notes  
- `GetClass` peut être appelée uniquement sous certaines conditions. Appelez [ICorDebugType::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) avant d’appeler `GetClass`. Si `ICorDebugType::GetType` retourne une valeur CorElementType ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, `GetClass` peut être appelée pour obtenir le type non instancié pour un type générique.  
+ les `GetClass` peuvent être appelées uniquement sous certaines conditions. Appelez [ICorDebugType :: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) avant d’appeler `GetClass`. Si `ICorDebugType::GetType` retourne une valeur CorElementType qui est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, `GetClass` peut être appelée pour obtenir le type non instancié d’un type générique.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

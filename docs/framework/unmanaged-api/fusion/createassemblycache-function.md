@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 348c7c8c-8578-46ae-97cf-480d6015c3c6
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c855d6f85c3cbfa6d81a1fbce3ef5b83abb3f583
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5ef100680328e9ad6261bb9188d7509efa9ab479
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795407"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108868"
 ---
 # <a name="createassemblycache-function"></a>CreateAssemblyCache, fonction
 Obtient un pointeur vers une nouvelle instance [IAssemblyCache](iassemblycache-interface.md) qui représente le global assembly cache.  
@@ -39,17 +37,17 @@ HRESULT CreateAssemblyCache (
   
 ## <a name="parameters"></a>Paramètres  
  `ppAsmCache`  
- à Pointeur retourné `IAssemblyCache` .  
+ à Pointeur de `IAssemblyCache` retourné.  
   
  `dwReserved`  
- dans Réservé pour une future extensibilité. `dwReserved`doit avoir la valeur 0 (zéro).  
+ dans Réservé pour une future extensibilité. `dwReserved` doit avoir la valeur 0 (zéro).  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b22687a8-e9cf-4e65-a1b0-f92a81bc524e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 352a45a33a109570f100e91a24cd44dc4f6780e7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 198de0aed4e229d7ed8bb1679afc3a0102bd5368
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740151"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098468"
 ---
 # <a name="cordebugexceptionflags-enumeration"></a>CorDebugExceptionFlags, énumération
 Fournit des informations supplémentaires sur une exception.  
@@ -45,7 +43,7 @@ typedef enum CorDebugExceptionFlags {
 ## <a name="remarks"></a>Notes  
  De nouvelles valeurs sont susceptibles d'être ajoutées dans les versions ultérieures : il est donc recommandé de préparer du code qui utilise `CorDebugExceptionFlags` pour les valeurs inattendues.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

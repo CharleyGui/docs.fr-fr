@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 45efb8ba-c4de-4109-945f-e734d376b43c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 973f975885bbbf5cbed74adef7b9f4f423c42583
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9476bcc9706e89fd3d7e0abc14031f70a0aa0ad0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753650"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73084836"
 ---
 # <a name="icordebugeval2newparameterizedarray-method"></a>ICorDebugEval2::NewParameterizedArray, méthode
-Alloue un nouveau tableau du type d’élément spécifié et des dimensions.  
+Alloue un nouveau tableau du type d’élément et des dimensions spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT NewParameterizedArray(
   
 ## <a name="parameters"></a>Paramètres  
  `pElementType`  
- [in] Pointeur vers un objet de ICorDebugType qui représente le type d’élément stocké dans le tableau.  
+ dans Pointeur vers un objet ICorDebugType qui représente le type d’élément stocké dans le tableau.  
   
  `rank`  
- [in] Le nombre de dimensions du tableau. Dans le .NET Framework version 2.0, cette valeur doit être 1.  
+ dans Nombre de dimensions du tableau. Dans le .NET Framework version 2,0, cette valeur doit être 1.  
   
  `dims`  
- [in] La taille, en octets, de chaque dimension du tableau.  
+ dans Taille, en octets, de chaque dimension du tableau.  
   
  `lowBounds`  
- [in] Facultatif. La limite inférieure de chaque dimension du tableau. Si cette valeur est omise, une limite inférieure de zéro est prise en compte pour chaque dimension.  
+ [in] Facultatif. Limite inférieure de chaque dimension du tableau. Si cette valeur est omise, une limite inférieure de zéro est utilisée pour chaque dimension.  
   
 ## <a name="remarks"></a>Notes  
- Les éléments du tableau peuvent être des instances d’un type générique. Le tableau est toujours créé dans le domaine d’application dans lequel le thread est en cours d’exécution. Dans le .NET Framework 2.0, la valeur de `rank` doit être 1.  
+ Les éléments du tableau peuvent être des instances d’un type générique. Le tableau est toujours créé dans le domaine d’application dans lequel le thread est en cours d’exécution. Dans la .NET Framework 2,0, la valeur de `rank` doit être 1.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

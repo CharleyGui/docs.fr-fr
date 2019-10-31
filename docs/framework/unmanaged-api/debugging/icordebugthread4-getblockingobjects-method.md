@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7e6c54e-7be9-4e52-bbb4-95f52458e8e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d83f9c0b187ad8b2955bc12ff168e0c4f26b909
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4d5582b7a3df16db58ea0ed001dcbffcdcaab79
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765231"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122461"
 ---
 # <a name="icordebugthread4getblockingobjects-method"></a>ICorDebugThread4::GetBlockingObjects, méthode
-Fournit une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures qui fournissent des informations de blocage de thread.  
+Fournit une énumération ordonnée des structures [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) qui fournissent des informations sur le blocage des threads.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +34,20 @@ HRESULT GetBlockingObjects (
   
 ## <a name="parameters"></a>Paramètres  
  `ppBlockingObjectEnum`  
- [out] Un pointeur vers une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.  
+ à Pointeur vers une énumération ordonnée de structures [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) .  
   
 ## <a name="remarks"></a>Notes  
- Le premier élément dans l’énumération retournée correspond à la première structure qui bloque le thread. Le deuxième élément correspond à un élément de blocage rencontré lors de l’exécution d’un appel de procédure asynchrone (APC) lorsque bloquée sur le premier et ainsi de suite.  
+ Le premier élément de l’énumération retournée correspond à la première structure qui bloque le thread. Le deuxième élément correspond à un élément bloquant qui est rencontré lors de l’exécution d’un appel de procédure asynchrone (APC) lorsqu’il est bloqué sur le premier, et ainsi de suite.  
   
  L’énumération est valide uniquement pour la durée de l’état synchronisé actuel.  
   
- Cette méthode doit être appelée pendant que le programme débogué est dans un état synchronisé.  
+ Cette méthode doit être appelée lorsque l’élément débogué est dans un état synchronisé.  
   
- Si `ppBlockingObjectEnum` n’est pas un pointeur valide, le résultat est indéfini.  
+ Si `ppBlockingObjectEnum` n’est pas un pointeur valide, le résultat n’est pas défini.  
   
- Si un thread est bloqué et l’erreur ne peut pas être déterminée, la méthode retourne un HRESULT qui indique un échec ; Sinon, elle retourne S_OK.  
+ Si un thread est bloqué et que l’erreur ne peut pas être déterminée, la méthode retourne un HRESULT qui indique un échec ; Sinon, elle retourne S_OK.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

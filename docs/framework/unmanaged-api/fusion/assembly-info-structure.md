@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b3cbb47c-457f-4083-8895-49562ca99ab8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 390ab4881396bbc01337d087f05b6066153bfed1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a43d5e15c02a97ff10a6a5afd439cadebb6b33d2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795490"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73109212"
 ---
 # <a name="assembly_info-structure"></a>ASSEMBLY_INFO, structure
 Contient des informations sur un assembly qui est inscrit dans le Global Assembly Cache.  
@@ -43,13 +41,13 @@ typedef struct _ASSEMBLY_INFO {
 |Membre|Description|  
 |------------|-----------------|  
 |`cbAssemblyInfo`|Taille, en octets, de la structure. Ce champ est réservé à une future extensibilité.|  
-|`dwAssemblyFlags`|Indicateurs qui indiquent les détails de l’installation de l’assembly. Les valeurs suivantes sont prises en charge :<br /><br /> -La valeur ASSEMBLYINFO_FLAG_INSTALLED, qui indique que l’assembly est installé. La version actuelle de la .NET Framework affecte `dwAssemblyFlags` toujours cette valeur à.<br />-La valeur ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, qui indique que l’assembly est un résident de charge utile. La version actuelle de la .NET Framework ne définit `dwAssemblyFlags` jamais cette valeur.|  
+|`dwAssemblyFlags`|Indicateurs qui indiquent les détails de l’installation de l’assembly. Les valeurs suivantes sont prises en charge :<br /><br /> -La valeur ASSEMBLYINFO_FLAG_INSTALLED, qui indique que l’assembly est installé. La version actuelle du .NET Framework affecte toujours la valeur à `dwAssemblyFlags`.<br />-La valeur ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, qui indique que l’assembly est un résident de charge utile. La version actuelle de la .NET Framework ne définit jamais `dwAssemblyFlags` à cette valeur.|  
 |`uliAssemblySizeInKB`|Taille totale, en kilo-octets, des fichiers que l’assembly contient.|  
 |`pszCurrentAssemblyPathBuf`|Pointeur vers une mémoire tampon de chaîne qui contient le chemin d’accès actuel au fichier manifeste. Le chemin d’accès doit se terminer par un caractère null.|  
-|`cchBuf`|Nombre de caractères larges, y compris la marque de fin null `pszCurrentAssemblyPathBuf` , qui contient.|  
+|`cchBuf`|Nombre de caractères larges, y compris la marque de fin null, que `pszCurrentAssemblyPathBuf` contient.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

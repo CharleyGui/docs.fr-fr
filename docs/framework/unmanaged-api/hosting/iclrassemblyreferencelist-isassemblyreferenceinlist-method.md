@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8a570813-21be-407e-92a6-7ae8de3bc728
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6aeda4901551b7e79becff132e44382ed11b0d31
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4e75b8553ff33946654a6a3b6184f98049c6a6cb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773352"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126679"
 ---
 # <a name="iclrassemblyreferencelistisassemblyreferenceinlist-method"></a>ICLRAssemblyReferenceList::IsAssemblyReferenceInList, méthode
 Obtient une valeur qui indique si le pointeur fourni fait référence à un assembly dans la liste.  
@@ -37,7 +35,7 @@ HRESULT IsAssemblyReferenceInList (
   
 ## <a name="parameters"></a>Paramètres  
  `pName`  
- [in] Un pointeur d’interface à l’assembly à rechercher. Les valeurs valides sont de type `IAssemblyName` ou `IReferenceIdentity`.  
+ dans Pointeur d’interface vers l’assembly pour lequel effectuer la recherche. Les valeurs valides sont de type `IAssemblyName` ou `IReferenceIdentity`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
@@ -45,14 +43,14 @@ HRESULT IsAssemblyReferenceInList (
 |-------------|-----------------|  
 |S_OK|La chaîne apparaît dans la liste.|  
 |S_FALSE|La chaîne n’apparaît pas dans la liste.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois une méthode retourne E_FAIL, le common language runtime n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode a retourné E_FAIL, le common language runtime n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

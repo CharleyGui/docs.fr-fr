@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c2ea0bf215c0d2abfe9beb29d736f893073d3be8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc02f63808b1929b93777c8bbc67c47000b0b424
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739509"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132744"
 ---
 # <a name="cordebugunmappedstop-enumeration"></a>CorDebugUnmappedStop, énumération
 Spécifie le type de code non mappé qui peut déclencher un arrêt dans l'exécution du code par l'exécution pas à pas.  
@@ -44,18 +42,18 @@ typedef enum CorDebugUnmappedStop {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`STOP_NONE`|N’arrêtez pas dans n’importe quel type de code non mappé.|  
-|`STOP_PROLOG`|Arrêter dans le code de prologue.|  
-|`STOP_EPILOG`|Arrêter dans le code d’épilogue.|  
-|`STOP_NO_MAPPING_INFO`|Arrêter dans le code qui ne possède aucune information de mappage.|  
-|`STOP_OTHER_UNMAPPED`|Arrêter dans le code non mappé qui ne tient pas dans le prologue, épilogue, aucune information de mappage ou catégorie non managé.|  
-|`STOP_UNMANAGED`|Arrêter en code non managé. Cette valeur est valide uniquement avec le débogage d’interopérabilité.|  
-|`STOP_ALL`|Arrêter dans tous les types de code non mappé.|  
+|`STOP_NONE`|Ne pas arrêter dans un type de code non mappé.|  
+|`STOP_PROLOG`|Arrêtez dans le code de prologue.|  
+|`STOP_EPILOG`|Arrêtez dans le code d’épilogue.|  
+|`STOP_NO_MAPPING_INFO`|Arrêter dans le code qui n’a pas d’informations de mappage.|  
+|`STOP_OTHER_UNMAPPED`|Arrêtez dans du code non mappé qui ne tient pas dans la catégorie prologue, épilogue, no-Mapping-information ou non managé.|  
+|`STOP_UNMANAGED`|Arrêtez dans le code non managé. Cette valeur est valide uniquement avec le débogage d’interopérabilité.|  
+|`STOP_ALL`|Arrêtez dans tous les types de code non mappé.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) méthode pour définir les indicateurs qui spécifient le code non mappé dans lequel l’exécution pas à pas s’arrête.  
+ Utilisez la méthode [ICorDebugStepper :: SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) pour définir les indicateurs qui spécifient le code non mappé dans lequel le pas à pas s’arrêtera.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

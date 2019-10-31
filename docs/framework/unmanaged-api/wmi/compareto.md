@@ -14,14 +14,12 @@ helpviewer_keywords:
 - CompareTo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ec42dff333422e247a11b4a3a5b9aed9bd316fa
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0d210795016cd2e0179b902a224ca0c62f4ac01f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798772"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128702"
 ---
 # <a name="compareto-function"></a>CompareTo, fonction
 
@@ -52,17 +50,17 @@ dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/
 dans Combinaison d’opérations de bits des indicateurs qui spécifient les caractéristiques d’objet à prendre en compte pour la comparaison. Pour plus d’informations, consultez la section [Notes](#remarks) .
 
 `pCompareTo`\
-dans Objet à comparer. `pCompareTo`doit être une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) valide ; elle ne peut `null`pas être.
+dans Objet à comparer. `pCompareTo` doit être une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) valide ; il ne peut pas être `null`.
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
-| `WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectué sans appel à. [`EndEnumeration`](endenumeration.md) |
+| `WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectué sans appel intermédiaire à [`EndEnumeration`](endenumeration.md). |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | Les objets sont différents. |
 | `WBEM_S_SAME` | 0 | Les objets sont les mêmes en fonction des indicateurs de comparaison. |
@@ -71,9 +69,9 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemClassObject :: CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) .
 
-Les indicateurs qui peuvent être passés en tant `lEnumFlags` qu’argument sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code. Vous pouvez spécifier les caractéristiques individuelles impliquées dans la comparaison en spécifiant une combinaison d’opérations de bits des indicateurs suivants :
+Les indicateurs qui peuvent être passés en tant qu’argument `lEnumFlags` sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code. Vous pouvez spécifier les caractéristiques individuelles impliquées dans la comparaison en spécifiant une combinaison d’opérations de bits des indicateurs suivants :
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorez la source (le serveur et l’espace de noms à partir desquels ils proviennent). |
 | `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorer tous les qualificateurs (y compris les **clés** et **dynamiques**) |
@@ -84,15 +82,15 @@ Les indicateurs qui peuvent être passés en tant `lEnumFlags` qu’argument son
 
 Vous pouvez aussi spécifier un seul indicateur composite comme suit :
 
-|Constante  |`Value`  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Examinez toutes les fonctionnalités de la comparaison. |
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

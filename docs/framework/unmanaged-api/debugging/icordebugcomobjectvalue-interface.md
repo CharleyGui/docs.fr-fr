@@ -14,29 +14,27 @@ helpviewer_keywords:
 ms.assetid: 505a7f6c-d92b-42b4-b539-433f5102ea9b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3387985ebf6027b9cd9dee372190da65939dbae3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ff5c0d470e6eb84eb8b526f5e8f74e5e1a8118a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749694"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125489"
 ---
 # <a name="icordebugcomobjectvalue-interface"></a>Interface ICorDebugComObjectValue
-Fournit des méthodes pour récupérer les informations associées à un runtime callable wrapper RCW ().  
+Fournit des méthodes pour récupérer des informations associées à un wrapper RCW (Runtime Callable Wrapper).  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetCachedInterfacePointers, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Obtient les pointeurs d’interface brut mis en cache sur le wrapper RCW actuel.|  
-|[GetCachedInterfaceTypes, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Fournit un énumérateur pour les types d’interface que l’objet actuel a été à la casse ou utilisé en tant que.|  
+|[GetCachedInterfacePointers, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Obtient les pointeurs d’interface bruts mis en cache sur le wrapper RCW actuel.|  
+|[GetCachedInterfaceTypes, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Fournit un énumérateur pour les types d’interface dont la casse de l’objet actuel a été ou utilisée.|  
   
 ## <a name="remarks"></a>Notes  
- Pour vérifier si une instance d’une interface « ICorDebugValue » représente un wrapper RCW, appelle un débogueur `QueryInterface` sur « ICorDebugValue » avec `IID_ICorDebugComObjectValue`.  
+ Pour vérifier si une instance d’une interface « ICorDebugValue » représente un wrapper RCW, un débogueur appelle `QueryInterface` sur « ICorDebugValue » avec `IID_ICorDebugComObjectValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

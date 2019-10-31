@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5f6926d66a438cfc4fd97d7120e359b737212dde
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e5d7a6b9826a734363d6beeb2e3fab8422964558
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738629"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73113354"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request, méthode
-Appelé par les services d’accès aux données du common language runtime (CLR) pour demander une opération, tel que défini par l’implémentation.  
+Appelée par les services d’accès aux données common language runtime (CLR) pour demander une opération, comme défini par l’implémentation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,29 +41,29 @@ HRESULT Request (
   
 ## <a name="parameters"></a>Paramètres  
  `reqCode`  
- [in] Défini par l’utilisateur.  
+ dans Défini par l’utilisateur.  
   
  `inBufferSize`  
- [in] La taille de la mémoire tampon d’entrée, qui est utilisé pour la demande entrante.  
+ dans Taille de la mémoire tampon d’entrée utilisée pour la demande entrante.  
   
  `inBuffer`  
- [in] Une mémoire tampon contenant la demande.  
+ dans Mémoire tampon contenant la demande.  
   
  `outBufferSize`  
- [in] La taille de la mémoire tampon de sortie, qui est utilisé pour la réponse.  
+ dans Taille de la mémoire tampon de sortie, qui est utilisée pour la réponse.  
   
  `outBuffer`  
- [out] Une mémoire tampon contenant la réponse.  
+ à Mémoire tampon contenant la réponse.  
   
 ## <a name="remarks"></a>Notes  
- Le `Request` méthode facilite l’ajout d’opérations personnalisées non spécifiées. Autrement dit, cette méthode fournit une extensibilité sans nécessiter une révision de la définition d’interface.  
+ La méthode `Request` facilite l’ajout d’opérations personnalisées non spécifiées. Autrement dit, cette méthode fournit l’extensibilité sans nécessiter de révision de la définition de l’interface.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

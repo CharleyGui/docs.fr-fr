@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: 57dbccd9-b16d-4da3-ae25-7a2cf9adf679
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38e1b19d6340f559e6f8b7e0f7bc042a10df16c3
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 313f6649448653ad630d616c7dbf739653e352dc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025989"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132839"
 ---
 # <a name="cordebugguidtotypemapping-structure"></a>CorDebugGuidToTypeMapping, structure
-Mappe un GUID d’exécution de Windows à son objet ICorDebugType correspondant.  
+Mappe un GUID Windows Runtime à son objet ICorDebugType correspondant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,10 +39,10 @@ typedef struct CorDebugGuidToTypeMapping {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`iid`|Le GUID du type Windows Runtime mis en cache.|  
+|`iid`|GUID du type de Windows Runtime mis en cache.|  
 |`pType`|Pointeur vers un objet ICorDebugType qui fournit des informations sur le type mis en cache.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Windows Runtime.  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

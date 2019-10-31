@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 496c3add-f60b-4073-943f-d1bcf33330cb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 17e96f56c57d896397489e27bcc072d8e7df05ec
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ffa1fa2f5e141728a56f1b598a1aae9602b2ac86
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796540"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73108221"
 ---
 # <a name="iassemblynamesetproperty-method"></a>IAssemblyName::SetProperty, méthode
 Définit la valeur de la propriété référencée par l’identificateur de propriété spécifié.  
@@ -47,8 +45,8 @@ HRESULT SetProperty (
  `cbProperty`  
  dans Taille, en octets, de `pvProperty`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0df5c5d-9a2e-47bf-894c-6f8a9fe24a1f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 13371d15c8b29f9ef93cc4af87acf85029404644
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 83cc4eadca7c337c06c5fbf9f0e74306c2b9cb99
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744769"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131273"
 ---
 # <a name="icordebugremotedebugactiveprocessex-method"></a>ICorDebugRemote::DebugActiveProcessEx, méthode
 Lance un processus sur un ordinateur distant sous le débogueur.  
@@ -40,35 +38,35 @@ HRESULT DebugActiveProcessEx (
   
 ## <a name="parameters"></a>Paramètres  
  `pRemoteTarget`  
- [in] Pointeur vers un [icordebugremotetarget, Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Ce paramètre est utilisé pour déterminer l’ordinateur sur lequel le processus est en cours d’exécution.  
+ dans Pointeur vers une [interface ICorDebugRemoteTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Ce paramètre est utilisé pour déterminer l’ordinateur sur lequel le processus est en cours d’exécution.  
   
  `id`  
- [in] ID du processus auquel le débogueur doit être attaché.  
+ dans ID du processus auquel le débogueur doit être attaché.  
   
  `win32Attach`  
- [in] `true` si le débogueur doit se comporter comme le débogueur Win32 pour le processus et distribuer les rappels non managés ; sinon, `false`.  
+ [in] `true` si le débogueur doit se comporter comme le débogueur Win32 pour le processus et pour distribuer les rappels non managés ; Sinon, `false`.  
   
  `ppProcess`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugProcess » qui représente le processus auquel le débogueur est attaché.  
+ à Pointeur vers l’adresse d’un objet « ICorDebugProcess » qui représente le processus auquel le débogueur a été attaché.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
- Correctement attaché au processus sur l’ordinateur distant.  
+ Attachement réussi au processus sur l’ordinateur distant.  
   
  E_FAIL (ou autres codes de retour E_)  
- Impossible de s’attacher au processus sur l’ordinateur distant.  
+ Impossible d’attacher au processus sur l’ordinateur distant.  
   
 ## <a name="remarks"></a>Notes  
  Le débogage en mode mixte n’est pas pris en charge dans Silverlight.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET framework :** 4.5, 4, 3.5 SP1  
+ **Versions de .NET Framework :** 4,5, 4, 3,5 SP1  
   
 ## <a name="see-also"></a>Voir aussi
 

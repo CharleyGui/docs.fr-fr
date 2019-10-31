@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5e83c82c-593d-4691-90b0-383d218b415e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: abf24b81bae4d16c3a03aa668d4e1f5e8117cc93
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9a4cf1f9ea1ccb174b5fb9336040d5e168653fb1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737460"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73088289"
 ---
 # <a name="icordebugarrayvaluegetrank-method"></a>ICorDebugArrayValue::GetRank, méthode
 Obtient le nombre de dimensions dans le tableau.  
@@ -37,9 +35,9 @@ HRESULT GetRank (
   
 ## <a name="parameters"></a>Paramètres  
  `pnRank`  
- [out] Un pointeur vers le nombre de dimensions dans ce `ICorDebugArrayValue` objet.  
+ à Pointeur vers le nombre de dimensions dans cet objet `ICorDebugArrayValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

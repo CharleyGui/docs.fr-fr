@@ -1,17 +1,15 @@
 ---
-title: 'Atténuation : gestion de versions de produit'
+title: 'Atténuation : Gestion de versions de produit'
 ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 91db9d8c6fccf75bc9025a9487517e8c55d016cc
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 63075136b7de4aeaa4f94c092996ae1829b449a7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779209"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126166"
 ---
-# <a name="mitigation-product-versioning"></a>Atténuation : gestion de versions de produit
+# <a name="mitigation-product-versioning"></a>Atténuation : Gestion de versions de produit
 
 Dans .NET Framework 4.6 et ultérieur, la gestion des versions de produit a changé par rapport aux versions précédentes du .NET Framework (.NET Framework 4, 4.5, 4.5.1 et 4.5.2).
 
@@ -31,7 +29,7 @@ Voici le détail des modifications :
 
 En général, les applications doivent s'appuyer sur les techniques recommandées pour la détection d'éléments tels que la version de runtime du .NET Framework et le répertoire d'installation :
 
-- Pour détecter la version du runtime du .NET Framework, consultez [Guide pratique pour déterminer les versions du .NET Framework installées](how-to-determine-which-versions-are-installed.md).
+- Pour détecter la version de runtime du .NET Framework, consultez [Guide pratique pour déterminer les versions .NET Framework installées](how-to-determine-which-versions-are-installed.md).
 
 - Pour déterminer le chemin d'installation du .NET Framework, utilisez la valeur de l'entrée `InstallPath` dans la clé `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full`.
 

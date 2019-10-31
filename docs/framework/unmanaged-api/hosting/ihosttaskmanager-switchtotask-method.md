@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 35d0c27e-4b14-49ce-810d-7ab2120177e8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4af3d73a4c45654d1d40ef2fbf44a0e2b3e1bf32
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a55b43f3629cebb0ba1d3a7ac1802126874418d8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913711"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122116"
 ---
 # <a name="ihosttaskmanagerswitchtotask-method"></a>IHostTaskManager::SwitchToTask, méthode
 Indique à l’hôte qu’il doit extraire la tâche actuelle.  
@@ -43,7 +41,7 @@ HRESULT SwitchToTask (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SwitchToTask`retourné avec succès.|  
+|S_OK|`SwitchToTask` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -54,14 +52,14 @@ HRESULT SwitchToTask (
  L’hôte peut basculer vers une autre tâche comme souhaité ou nécessaire.  
   
 > [!NOTE]
-> `SwitchToTask`ne spécifie pas la tâche vers laquelle l’hôte doit basculer; Il spécifie uniquement la tâche à partir de laquelle il doit basculer.  
+> `SwitchToTask` ne spécifie pas la tâche sur laquelle l’hôte doit basculer ; Il spécifie uniquement la tâche à partir de laquelle il doit basculer.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

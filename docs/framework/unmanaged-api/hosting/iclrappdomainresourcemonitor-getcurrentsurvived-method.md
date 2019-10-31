@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 392e9009-40ef-40e3-ad4d-7ce93a989e78
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bf285b6e1f703c8776937fa33c7ab5801f04f80f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 62fcdb60b83c88738ebe2e39455b8eae60fb705e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950161"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126781"
 ---
 # <a name="iclrappdomainresourcemonitorgetcurrentsurvived-method"></a>ICLRAppDomainResourceMonitor::GetCurrentSurvived, méthode
 Obtient le nombre d’octets qui ont survécu au dernier garbage collection de blocage complet et qui sont référencés par le domaine d’application actuel.  
@@ -55,16 +53,16 @@ HRESULT STDMETHODCALLTYPE GetCurrentSurvived(
 |COR_E_APPDOMAINUNLOADED|Le domaine d’application a été déchargé ou n’existe pas.|  
   
 ## <a name="remarks"></a>Notes  
- Les statistiques sont mises à jour uniquement après un garbage collection de blocage complet; autrement dit, une collection qui comprend toutes les générations et qui arrête l’application pendant que la collection se produit. Par exemple, la <xref:System.GC.Collect?displayProperty=nameWithType> surcharge de méthode effectue une collection bloquante complète. Garbage collection simultanée se produit en arrière-plan et ne bloque pas l’application.  
+ Les statistiques sont mises à jour uniquement après un garbage collection de blocage complet ; autrement dit, une collection qui comprend toutes les générations et qui arrête l’application pendant que la collection se produit. Par exemple, la surcharge de méthode <xref:System.GC.Collect?displayProperty=nameWithType> effectue une collection bloquante complète. Garbage collection simultanée se produit en arrière-plan et ne bloque pas l’application.  
   
- La `GetCurrentSurvived` méthode est l’équivalent non managé de la propriété managée <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> .  
+ La méthode `GetCurrentSurvived` est l’équivalent non managé de la propriété <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> managée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

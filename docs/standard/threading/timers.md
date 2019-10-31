@@ -12,13 +12,12 @@ helpviewer_keywords:
 - timers, about timers
 ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
-ms.author: ronpet
-ms.openlocfilehash: 644ccf5951e9d2556fc697d2fd763f026fd0ebdb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: d7d1fa13b02fe7425fa9b4cb81ba20297a23fe4b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617224"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128951"
 ---
 # <a name="timers"></a>Minuteries
 
@@ -46,7 +45,7 @@ L’exemple suivant crée un minuteur qui appelle le délégué fourni au bout d
 [!code-csharp[System.Threading.Timer#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source2.cs#2)]
 [!code-vb[System.Threading.Timer#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source2.vb#2)]
 
-Pour plus d'informations et d'exemples, consultez <xref:System.Threading.Timer?displayProperty=nameWithType>.
+Pour plus d’informations et d’exemples, consultez <xref:System.Threading.Timer?displayProperty=nameWithType>.
 
 ## <a name="the-systemtimerstimer-class"></a>Classe System.Timers.Timer
 
@@ -54,7 +53,7 @@ L’autre minuteur qui peut être utilisé dans un environnement multithread est
 
 Au moment de créer un objet <xref:System.Timers.Timer?displayProperty=nameWithType>, vous pouvez spécifier l’intervalle de temps au cours duquel un événement <xref:System.Timers.Timer.Elapsed> est déclenché. Utilisez la propriété <xref:System.Timers.Timer.Enabled%2A> pour indiquer si un minuteur doit déclencher un événement <xref:System.Timers.Timer.Elapsed>. Si vous avez besoin qu’un événement <xref:System.Timers.Timer.Elapsed> soit déclenché une seule fois à l’issue de l’intervalle spécifié, définissez le <xref:System.Timers.Timer.AutoReset%2A> sur `false`. La valeur par défaut de la propriété <xref:System.Timers.Timer.AutoReset%2A> est `true`, ce qui signifie qu’un événement <xref:System.Timers.Timer.Elapsed> est déclenché régulièrement selon l’intervalle défini par la propriété <xref:System.Timers.Timer.Interval%2A>.
 
-Pour plus d'informations et d'exemples, consultez <xref:System.Timers.Timer?displayProperty=nameWithType>.
+Pour plus d’informations et d’exemples, consultez <xref:System.Timers.Timer?displayProperty=nameWithType>.
   
 ## <a name="see-also"></a>Voir aussi
 

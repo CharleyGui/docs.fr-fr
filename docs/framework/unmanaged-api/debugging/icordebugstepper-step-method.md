@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 38c1940b-ada1-40ba-8295-4c0833744e1e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9d0f601c4b454b55edc5fa25eb2ee33d491009b9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 43f86e704e4a52a702b8f563e3c613806eb061b5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760566"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137532"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step, méthode
-Provoque ICorDebugStepper à pas son thread conteneur et éventuellement, continuez le pas à pas via des fonctions appelées dans le thread.  
+Fait en sorte que ces ICorDebugStepper effectuent un pas à pas détaillé dans son thread conteneur et, éventuellement, continue à exécuter des fonctions pas à pas dans les fonctions appelées dans le thread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT Step (
   
 ## <a name="parameters"></a>Paramètres  
  `bStepIn`  
- [in] La valeur `true` à l’étape dans une fonction qui est appelée dans le thread. La valeur `false` pour ignorer la fonction.  
+ dans Affectez la valeur `true` pour effectuer un pas à pas détaillé dans une fonction appelée dans le thread. Affectez la valeur `false` pour effectuer un pas à pas principal dans la fonction.  
   
 ## <a name="remarks"></a>Notes  
- L’étape se termine lorsque le common language runtime exécute l’instruction managée suivante dans le frame de cette exécution pas à pas. Si `Step` est appelée sur une exécution pas à pas, ce qui n’est pas dans le code managé, l’étape se termine lorsque l’instruction de code managé suivante est exécutée par le thread.  
+ L’étape se termine lorsque l’common language runtime exécute l’instruction managée suivante dans le frame de ce pas à pas. Si `Step` est appelé sur une exécution pas à pas, qui n’est pas en code managé, l’étape se termine lorsque l’instruction de code managé suivante est exécutée par le thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

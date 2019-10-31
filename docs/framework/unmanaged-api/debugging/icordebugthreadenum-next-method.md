@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f967c93d-9a7f-4aaf-99a1-a1317899ff3f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5e9e33e65b1cdeabe203c67ee4d4f259e2f7ac99
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c455706b0d644d2444e9fbdf49c5a5d4f5295a9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770070"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122391"
 ---
 # <a name="icordebugthreadenumnext-method"></a>ICorDebugThreadEnum::Next, méthode
-Obtient le nombre d’instances de ICorDebugThread spécifiés à partir de l’énumération, en commençant à la position actuelle.  
+Obtient le nombre d’instances ICorDebugThread spécifiées à partir de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +38,15 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre de `ICorDebugThread` instances à récupérer.  
+ dans Nombre d’instances de `ICorDebugThread` à récupérer.  
   
  `threads`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un `ICorDebugThread` objet qui représente un thread.  
+ à Tableau de pointeurs, chacun pointant vers un objet `ICorDebugThread` qui représente un thread.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre de `ICorDebugThread` instances réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre d’instances `ICorDebugThread` réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

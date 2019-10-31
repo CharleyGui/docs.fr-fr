@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 3dcd16a7-dafc-4ca8-b5cd-20ffb37db91d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d30384ea8b9ff4eee41abd43ae39486f770039e7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 63fb505a92683fda21b6e71a6ca891ca35afba1d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041421"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136409"
 ---
 # <a name="getcorsystemdirectory-function"></a>GetCORSystemDirectory, fonction
-Retourne le répertoire d’installation du common language runtime (CLR) qui est chargé dans le processus. Le répertoire d’installation est complet, par exemple, «c:\Windows\Microsoft.NET\Framework\v1.0.3705».  
+Retourne le répertoire d’installation du common language runtime (CLR) qui est chargé dans le processus. Le répertoire d’installation est complet, par exemple, « c:\Windows\Microsoft.NET\Framework\v1.0.3705 ».  
   
- Cette fonction est déconseillée. Elle est remplacée par la méthode [ICLRRuntimeInfo:: GetRuntimeDirectory,](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getruntimedirectory-method.md) fournie dans le .NET Framework 4.  
+ Cette fonction est déconseillée. Elle est remplacée par la méthode [ICLRRuntimeInfo :: GetRuntimeDirectory,](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getruntimedirectory-method.md) fournie dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,19 +45,19 @@ HRESULT GetCORSystemDirectory (
  dans Taille, en octets, de `pbuffer`.  
   
  `dwLength`  
- à Nombre de caractères retournés `pbuffer`dans.  
+ à Nombre de caractères retournés dans `pbuffer`.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!CAUTION]
 > N’utilisez pas cette fonction dans les processus qui exécutent la version 4 du CLR. Si une version antérieure du CLR est installée sur l’ordinateur, cette fonction retourne le répertoire d’installation de cette version.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

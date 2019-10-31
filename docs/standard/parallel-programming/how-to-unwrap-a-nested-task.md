@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : désencapsuler une tâche imbriquée'
+title: 'Comment : désencapsuler une tâche imbriquée'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3cc468da70d3c62c139a98a6637e7a3c7990c378
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: c72654a2bc21035fe706d76018bb163d8ba01ee8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54602050"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73106908"
 ---
-# <a name="how-to-unwrap-a-nested-task"></a>Procédure : désencapsuler une tâche imbriquée
+# <a name="how-to-unwrap-a-nested-task"></a>Comment : désencapsuler une tâche imbriquée
 Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou poursuivre à partir de cette tâche, comme indiqué dans l’exemple suivant :  
   
  [!code-csharp[TPL_Unwrap#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#01)]

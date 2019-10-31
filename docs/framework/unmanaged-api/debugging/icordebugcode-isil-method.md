@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 132ef8cc-d938-43f3-b8f2-e3b97c0ceb33
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1b7cbadbd1494d5e4d1488dd12296f4f90890127
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 77e55c4c3644ac4bd76f5c92152f4ee86cf5fa9a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395494"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125562"
 ---
 # <a name="icordebugcodeisil-method"></a>ICorDebugCode::IsIL, méthode
 
@@ -39,7 +37,7 @@ HRESULT IsIL (
 ## <a name="parameters"></a>Paramètres
 
 `pbIL`  
-[out] `true` si cet `ICorDebugCode` représente du code qui a été compilé en MSIL ; dans le cas contraire, `false`.
+[out] `true` si ce `ICorDebugCode` représente du code qui a été compilé en MSIL ; Sinon, `false`.
 
 ## <a name="requirements"></a>spécifications
 

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Voir le contenu d’un assembly'
+title: 'Comment : afficher le contenu d’un assembly'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -10,20 +10,18 @@ helpviewer_keywords:
 - MSIL
 - viewing MSIL information
 ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 40ed31bb2231775bb2b6eb24586e07c8b07a85bb
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0b5e306d55bf38c28e2a68172c2a035b56e8d0af
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053943"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140168"
 ---
-# <a name="how-to-view-assembly-contents"></a>Procédure : Voir le contenu d’un assembly
+# <a name="how-to-view-assembly-contents"></a>Comment : afficher le contenu d’un assembly
 
 Vous pouvez utiliser [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) pour visualiser les informations de langage MSIL (Microsoft Intermediate Language) dans un fichier. Si le fichier examiné est un assembly, ces informations peuvent inclure les attributs de l’assembly, ainsi que des références à d’autres modules et assemblys. Ces informations peuvent être utiles pour déterminer si un fichier est un assembly ou fait partie d’un assembly, et s’il a des références à d’autres modules ou assemblys.  
   
@@ -120,7 +118,7 @@ L’exécution de la commande *Ildasm. exe* sur l’assembly *Hello. exe* et le 
 |**.subsystem \<** *valeur* **>**|Spécifie l’environnement d’application nécessaire pour le programme. Dans cet exemple, la valeur 3 indique que cet exécutable est exécuté à partir d’une console.|  
 |**.corflags**|Actuellement un champ réservé dans les métadonnées.|  
   
- Un manifeste d’assembly peut contenir plusieurs directives différentes, en fonction du contenu de l’assembly. Pour obtenir une liste complète des directives dans le manifeste d’assembly, consultez la documentation ECMA, en particulier « Partition II: Metadata Definition and Semantics » et « Partition III: Ensemble d’instructions CIL.» La documentation est disponible en ligne. Consultez [les C# normes ECMA et Common Language Infrastructure](https://go.microsoft.com/fwlink/?LinkID=99212) sur MSDN et [norme ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) sur le site Web ECMA International.  
+ Un manifeste d’assembly peut contenir plusieurs directives différentes, en fonction du contenu de l’assembly. Pour obtenir une liste complète des directives du manifeste de l’assembly, consultez la documentation ECMA, en particulier « Partition II : Metadata Definition and Semantics » et « Partition III : CIL Instruction Set ». La documentation est disponible en ligne. Consultez [les C# normes ECMA et Common Language Infrastructure](https://go.microsoft.com/fwlink/?LinkID=99212) sur MSDN et [norme ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) sur le site Web ECMA International.  
   
 ## <a name="see-also"></a>Voir aussi
 

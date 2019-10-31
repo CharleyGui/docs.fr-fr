@@ -6,14 +6,12 @@ helpviewer_keywords:
 - strings [.NET Framework], manipulating
 - manipulating strings
 ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ca4e24cb882daf7efd14da83011d50d05a85232b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5188c4f1099aad486e921dfba0c6c4216613ba4e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567586"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73135232"
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulation de chaînes dans .NET
 .NET offre un ensemble complet de routines qui vous permettent de créer, comparer et modifier des chaînes efficacement, ainsi que d’analyser rapidement de grandes quantités de texte et de données pour rechercher, supprimer et remplacer des modèles de texte.  
@@ -35,5 +33,5 @@ ms.locfileid: "33567586"
  [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)  
  Décrit comment utiliser la bibliothèque de classes de base pour implémenter la mise en forme, comment mettre en forme des types numériques et des types de chaîne, et comment effectuer la mise en forme pour une culture spécifique.  
   
- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)  
+ [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
  Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.

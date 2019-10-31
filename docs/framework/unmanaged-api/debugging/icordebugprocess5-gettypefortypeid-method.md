@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0eed5a8-fa6d-4818-bd00-7babcea30325
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f37fab4d877ae804996f46290e3576cecc5a25ca
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 39f5c1813b08f4d72c610820b1434e29eb4aec8e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767614"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121276"
 ---
 # <a name="icordebugprocess5gettypefortypeid-method"></a>ICorDebugProcess5::GetTypeForTypeID, méthode
-Convertit un identificateur de type valeur ICorDebugType.  
+Convertit un identificateur de type en valeur ICorDebugType.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +36,15 @@ HRESULT GetTypeForTypeID(
   
 ## <a name="parameters"></a>Paramètres  
  `id`  
- [in] L’identificateur de type.  
+ dans Identificateur de type.  
   
  `ppType`  
- [out] Pointeur vers l’adresse d’un objet de ICorDebugType.  
+ à Pointeur vers l’adresse d’un objet ICorDebugType.  
   
 ## <a name="remarks"></a>Notes  
- Dans certains cas, les méthodes qui retournent un identificateur de type peuvent retourner une valeur null `COR_TYPEID` valeur. Si cette valeur est passée en tant que le `id` argument, le `GetTypeForTypeID` méthode échouent et retournent `E_FAIL`.  
+ Dans certains cas, les méthodes qui retournent un identificateur de type peuvent retourner une valeur de `COR_TYPEID` null. Si cette valeur est passée comme argument `id`, la méthode `GetTypeForTypeID` échoue et retourne `E_FAIL`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: da3769eb-1828-4aa1-b9ed-db4842136a43
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f7911d09c97c5401bff827ca5fb0a8766933778f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c26a2df3f73af5ebd1f8b735d7662bb23ba4228
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738673"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134160"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual, méthode
-Lit les données à partir de l’adresse de mémoire virtuelle spécifiée dans la mémoire tampon spécifiée.  
+Lit les données à partir de l’adresse mémoire virtuelle spécifiée dans la mémoire tampon spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,21 +39,21 @@ HRESULT ReadVirtual (
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] CLRDATA_ADDRESS qui stocke l’adresse de mémoire virtuelle.  
+ dans CLRDATA_ADDRESS qui stocke l’adresse mémoire virtuelle.  
   
  `buffer`  
- [out] Un pointeur vers une mémoire tampon qui reçoit les données.  
+ à Pointeur vers une mémoire tampon qui reçoit les données.  
   
  `bytesRequested`  
- [in] La longueur de la mémoire tampon.  
+ dans Longueur de la mémoire tampon.  
   
  `bytesRead`  
- [out] Pointeur vers le nombre d’octets retournés.  
+ à Pointeur vers le nombre d’octets retournés.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

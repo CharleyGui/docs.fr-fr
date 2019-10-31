@@ -11,13 +11,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.author: ronpet
-ms.openlocfilehash: 53a8938a373136df65e23c162b94c4d8dc1f30b4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5f0388d90119455833eb6dba6ac808cdc8517865
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253868"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101654"
 ---
 # <a name="---string-interpolation-c-reference"></a>$-interpolation de chaîne (C# référence)
 
@@ -41,7 +40,7 @@ Les éléments entre crochets sont facultatifs. Le tableau suivant décrit chaqu
 
 |Élément|Description|
 |-------------|-----------------|
-|`interpolationExpression`|Expression qui produit un résultat à mettre en forme. La représentation sous `null` forme <xref:System.String.Empty?displayProperty=nameWithType>de chaîne de est.|
+|`interpolationExpression`|Expression qui produit un résultat à mettre en forme. La représentation sous forme de chaîne de `null` est <xref:System.String.Empty?displayProperty=nameWithType>.|
 |`alignment`|Expression constante dont la valeur définit le nombre minimal de caractères dans la représentation sous forme de chaîne du résultat de l’expression. Si le nombre est positif, la représentation sous forme de chaîne est alignée à droite ; s’il est négatif, elle est alignée à gauche. Pour plus d'informations, consultez [Composant d’alignement](../../../standard/base-types/composite-formatting.md#alignment-component).|
 |`formatString`|Chaîne de format qui est prise en charge par le type de résultat de l’expression. Pour plus d'informations, consultez [Composant de chaîne de format](../../../standard/base-types/composite-formatting.md#format-string-component).|
 
@@ -59,16 +58,16 @@ L’exemple suivant montre comment ajouter une accolade dans une chaîne de rés
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Une chaîne textuelle interpolée commence par le `$` caractère suivi du `@` caractère. Pour plus d’informations sur les chaînes textuelles, consultez les rubriques [string](../keywords/string.md) et [Identificateur textuel](verbatim.md).
+Une chaîne textuelle interpolée commence par le caractère `$` suivi du caractère `@`. Pour plus d’informations sur les chaînes textuelles, consultez les rubriques [string](../keywords/string.md) et [Identificateur textuel](verbatim.md).
 
 > [!NOTE]
-> À C# partir de 8,0, vous pouvez utiliser `$` les `@` `$@"..."` jetons et dans n’importe quel ordre : `@$"..."` et sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.
+> À C# partir de 8,0, vous pouvez utiliser les jetons`$`et`@`dans n’importe quel ordre : `$@"..."`et`@$"..."`sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, le jeton `$` doit apparaître avant le jeton `@`.
 
-## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Conversions implicites et comment spécifier `IFormatProvider` l’implémentation
+## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Conversions implicites et comment spécifier `IFormatProvider` implémentation
 
 Trois conversions implicites sont possibles à partir d’une chaîne interpolée :
 
-1. Conversion d’une chaîne interpolée en instance de <xref:System.String> qui est le résultat de la résolution d’une chaîne interpolée avec des éléments d’expression d’interpolation remplacés par la représentation sous forme de chaîne correctement mise en forme de leurs résultats. Cette conversion utilise pour <xref:System.Globalization.CultureInfo.CurrentCulture> mettre en forme les résultats de l’expression.
+1. Conversion d’une chaîne interpolée en instance de <xref:System.String> qui est le résultat de la résolution d’une chaîne interpolée avec des éléments d’expression d’interpolation remplacés par la représentation sous forme de chaîne correctement mise en forme de leurs résultats. Cette conversion utilise le <xref:System.Globalization.CultureInfo.CurrentCulture> pour mettre en forme les résultats des expressions.
 
 1. Conversion d’une chaîne interpolée en instance <xref:System.FormattableString> qui représente une chaîne de format composite avec les résultats d’expression à mettre en forme. Cette conversion vous permet de créer plusieurs chaînes de résultat avec du contenu propre à la culture à partir d’une seule instance de <xref:System.FormattableString>. Pour ce faire, appelez l’une des méthodes suivantes :
 

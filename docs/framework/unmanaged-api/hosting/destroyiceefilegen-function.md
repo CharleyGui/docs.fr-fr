@@ -16,19 +16,17 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ab4560774edce49341c86dd9446e38701db7fa62
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4eb878b61b72378bc6870af7f2cd09f0b6943b13
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769821"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136502"
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen, fonction
-Détruit un [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objet.  
+Détruit un objet [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) .  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +38,20 @@ HRESULT DestroyICeeFileGen (
   
 ## <a name="parameters"></a>Paramètres  
  `ceeFileGen`  
- [in] Le `ICeeFileGen` objet à détruire.  
+ dans Objet `ICeeFileGen` à détruire.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne des codes d’erreur COM standard.  
   
 ## <a name="remarks"></a>Notes  
- `DestroyICeeFileGen` détruit le `ICeeFileGen` objet créé par le [CreateICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) (fonction).  
+ `DestroyICeeFileGen` détruit l’objet `ICeeFileGen` créé par la fonction [CreateICeeFileGen,](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ICeeFileGen.h  
+ **En-tête :** ICeeFileGen. h  
   
- **Bibliothèque :** MSCorPE.dll  
+ **Bibliothèque :** MSCorPE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

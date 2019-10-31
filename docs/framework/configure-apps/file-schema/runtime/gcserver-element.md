@@ -8,21 +8,19 @@ helpviewer_keywords:
 - gcServer element
 - <gcServer> element
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: aa03179df1cd2595b4be428106dd3ec10b309317
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 98ecc7069df20a92492e9a6276a0d88331ccc0bb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252549"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116671"
 ---
-# <a name="gcserver-element"></a>\<gcServer >, élément
+# <a name="gcserver-element"></a>\<élément gcServer >
 Spécifie si le common language runtime exécute le garbage collection côté serveur.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,13 +40,13 @@ Spécifie si le common language runtime exécute le garbage collection côté se
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |`false`|N'exécute pas le garbage collection côté serveur. Il s'agit de la valeur par défaut.|  
 |`true`|Exécute le garbage collection côté serveur.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -65,9 +63,9 @@ Spécifie si le common language runtime exécute le garbage collection côté se
  Cet élément peut être défini uniquement dans le fichier de configuration de l'application (il est ignoré s'il est défini dans le fichier de configuration de l'ordinateur).  
   
 > [!NOTE]
-> Dans .NET Framework 4 et les versions antérieures, le garbage collection simultané n'est pas disponible si le garbage collection côté serveur est activé. À partir de la .NET Framework 4,5, le garbage collection du serveur est simultané. Pour utiliser des garbage collection de serveur non simultanées, `<gcServer>` affectez `true` à l’élément la valeur et `false`à l' [ \<élément gcConcurrent >](gcconcurrent-element.md) la valeur.  
+> Dans .NET Framework 4 et les versions antérieures, le garbage collection simultané n'est pas disponible si le garbage collection côté serveur est activé. À partir de la .NET Framework 4,5, le garbage collection du serveur est simultané. Pour utiliser des garbage collection de serveur non simultanées, affectez à l’élément `<gcServer>` la valeur `true` et à l' [élément\<gcConcurrent >](gcconcurrent-element.md) la valeur `false`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant active le garbage collection côté serveur.  
   
 ```xml  

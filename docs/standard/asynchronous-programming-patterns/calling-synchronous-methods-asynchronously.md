@@ -20,21 +20,19 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 342af20b78ae996bb61c6b563ecf42137ee51022
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 06df584f0120fbd4978e18647854a3ee844a2095
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629100"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105127"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Appel de méthodes synchrones de façon asynchrone
 
 Le .NET Framework vous permet d’appeler n’importe quelle méthode de façon asynchrone. Pour ce faire, vous définissez un délégué avec la même signature que la méthode à appeler. Le Common Language Runtime définit automatiquement les méthodes `BeginInvoke` et `EndInvoke` pour ce délégué, avec les signatures appropriées.
 
 > [!NOTE]
-> Les appels de délégués asynchrones, en particulier les méthodes `BeginInvoke` et `EndInvoke` , ne sont pas pris en charge dans le .NET Compact Framework.
+> Les appels de délégués asynchrones, en particulier les méthodes `BeginInvoke` et `EndInvoke`, ne sont pas pris en charge dans le .NET Compact Framework.
 
 La méthode `BeginInvoke` lance l’appel asynchrone. Elle possède les mêmes paramètres que la méthode que vous voulez exécuter de façon asynchrone, plus deux paramètres facultatifs supplémentaires. Le premier paramètre est un délégué <xref:System.AsyncCallback> qui fait référence à une méthode appelée à la fin de l’appel asynchrone. Le deuxième paramètre est un objet défini par l’utilisateur qui transmet les informations dans la méthode de rappel. `BeginInvoke` retourne immédiatement et n’attend pas la fin de l’appel asynchrone. `BeginInvoke` retourne un <xref:System.IAsyncResult>, qui peut être utilisé pour surveiller la progression de l’appel asynchrone.
 
@@ -43,11 +41,11 @@ La méthode `EndInvoke` récupère les résultats de l’appel asynchrone. Elle 
 > [!NOTE]
 > La fonctionnalité IntelliSense dans Visual Studio affiche les paramètres de `BeginInvoke` et `EndInvoke`. Si vous n’utilisez pas Visual Studio ou un outil similaire, ou si vous utilisez C# avec Visual Studio, consultez [Modèle de programmation asynchrone](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) pour une description des paramètres définis pour ces méthodes.
 
-Les exemples de code de cette rubrique illustrent quatre façons courantes d’utiliser `BeginInvoke` et `EndInvoke` pour effectuer des appels asynchrones. Vous pouvez effectuer les opérations suivantes après l’appel de `BeginInvoke` :
+Les exemples de code de cette rubrique illustrent quatre façons courantes d’utiliser `BeginInvoke` et `EndInvoke` pour effectuer des appels asynchrones. Vous pouvez effectuer les opérations suivantes après l’appel de `BeginInvoke` :
 
 - Effectuez quelques tâches, puis appelez `EndInvoke` pour bloquer l’exécution jusqu’à la fin de l’appel.
 
-- Obtenez un <xref:System.Threading.WaitHandle> à l’aide de la propriété <xref:System.IAsyncResult.AsyncWaitHandle%2A?displayProperty=nameWithType> , utilisez sa méthode <xref:System.Threading.WaitHandle.WaitOne%2A> pour bloquer l’exécution jusqu’à ce que <xref:System.Threading.WaitHandle> soit signalé, puis appelez `EndInvoke`.
+- Obtenez un <xref:System.Threading.WaitHandle> à l’aide de la propriété <xref:System.IAsyncResult.AsyncWaitHandle%2A?displayProperty=nameWithType>, utilisez sa méthode <xref:System.Threading.WaitHandle.WaitOne%2A> pour bloquer l’exécution jusqu’à ce que <xref:System.Threading.WaitHandle> soit signalé, puis appelez `EndInvoke`.
 
 - Interrogez le <xref:System.IAsyncResult> retourné par `BeginInvoke` pour déterminer quand l’appel asynchrone s’est terminé, puis appelez `EndInvoke`.
 
@@ -81,7 +79,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
  Si vous utilisez un <xref:System.Threading.WaitHandle>, vous pouvez effectuer un traitement supplémentaire avant ou après la fin de l’appel asynchrone, mais avant d’appeler `EndInvoke` pour récupérer les résultats.
 
 > [!NOTE]
-> Le handle d’attente n’est pas fermé automatiquement quand vous appelez `EndInvoke`. Si vous libérez toutes les références au handle d’attente, les ressources système sont libérées quand le garbage collection récupère le handle d’attente. Pour libérer les ressources système dès que vous avez terminé d’utiliser le handle d’attente, supprimez-le en appelant la méthode <xref:System.Threading.WaitHandle.Close%2A?displayProperty=nameWithType> . Le garbage collection fonctionne plus efficacement quand les objets à supprimer le sont explicitement.
+> Le handle d’attente n’est pas fermé automatiquement quand vous appelez `EndInvoke`. Si vous libérez toutes les références au handle d’attente, les ressources système sont libérées quand le garbage collection récupère le handle d’attente. Pour libérer les ressources système dès que vous avez terminé d’utiliser le handle d’attente, supprimez-le en appelant la méthode <xref:System.Threading.WaitHandle.Close%2A?displayProperty=nameWithType>. Le garbage collection fonctionne plus efficacement quand les objets à supprimer le sont explicitement.
 
  [!code-cpp[AsyncDelegateExamples#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/waithandle.cpp#3)]
  [!code-csharp[AsyncDelegateExamples#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/waithandle.cs#3)]

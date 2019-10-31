@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ec00bc21-117e-4acd-9301-2cfafd5be8d3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a6f0ed843f72d3f1e1575da15776a94a9097fd02
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38fe50f5a6608bb27d7a7818dee4784a7f8113ef
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771101"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133606"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains, méthode
-Obtient un pointeur d’interface vers un énumérateur ICorDebugChainEnum qui contient toutes les chaînes de pile dans cet objet ICorDebugThread.  
+Obtient un pointeur d’interface vers un énumérateur ICorDebugChainEnum qui contient toutes les chaînes de pile de cet objet ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +35,22 @@ HRESULT EnumerateChains (
   
 ## <a name="parameters"></a>Paramètres  
  `ppChains`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugChainEnum` objet qui permet l’énumération de la pile de toutes les chaînes dans ce thread, en commençant par la chaîne active (autrement dit, la plus récente).  
+ à Pointeur vers l’adresse d’un objet `ICorDebugChainEnum` qui autorise l’énumération de toutes les chaînes de pile dans ce thread, en commençant à la chaîne active (autrement dit, la plus récente).  
   
 ## <a name="remarks"></a>Notes  
- La chaîne de pile représente la pile des appels physique pour le thread. Les circonstances suivantes créer une limite de chaîne de pile :  
+ La chaîne de pile représente la pile d’appels physique du thread. Les circonstances suivantes créent une limite de chaîne de pile :  
   
-- Une transition managé à managé ou non managé à managé.  
+- Transition managée vers non managée ou non managée vers managée.  
   
-- Un changement de contexte.  
+- Commutateur de contexte.  
   
-- Un blocage d’un thread de l’utilisateur du débogueur.  
+- Détournement d’un thread utilisateur par le débogueur.  
   
- Dans le cas simple pour un thread qui est en cours d’exécution du code purement managé dans un contexte unique, une correspondance exacte existe entre les threads et les chaînes de pile.  
+ Dans le cas simple d’un thread qui exécute du code purement managé dans un contexte unique, une correspondance un-à-un existe entre les threads et les chaînes de pile.  
   
- Un débogueur peut être amené à réorganiser les piles des appels physique de tous les threads dans les piles des appels logiques. Il serait nécessaire de trier des chaînes de tous les threads en fonction de leurs relations appelant/appelé et le regroupement.  
+ Un débogueur peut réorganiser les piles des appels physiques de tous les threads en piles d’appels logiques. Cela implique de trier toutes les chaînes des threads en fonction de leurs relations appelant/appelé, puis de les regrouper.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

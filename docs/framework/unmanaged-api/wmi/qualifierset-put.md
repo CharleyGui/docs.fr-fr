@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_Put function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 40688a0e4273233245d00fcd927f95945a43f712
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a35025c6d16455a51b7b22d822ba77337ddd894a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798270"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120231"
 ---
 # <a name="qualifierset_put-function"></a>QualifierSet_Put fonction)
 
@@ -53,12 +51,12 @@ dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli
 dans Nom du qualificateur à écrire.
 
 `pVal`\
-dans Pointeur vers un valide `VARIANT` qui contient le qualificateur à écrire. Ce paramètre ne peut pas être `null`.
+dans Pointeur vers un `VARIANT` valide qui contient le qualificateur à écrire. Ce paramètre ne peut pas être `null`.
 
 `lFlavor`\
-dans L’une des constantes suivantes qui définit les versions de qualificateur souhaitées pour ce qualificateur. La valeur par défaut `WBEM_FLAVOR_OVERRIDABLE` est (0).
+dans L’une des constantes suivantes qui définit les versions de qualificateur souhaitées pour ce qualificateur. La valeur par défaut est `WBEM_FLAVOR_OVERRIDABLE` (0).
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | Le qualificateur peut être substitué dans une classe ou une instance dérivée. **Il s’agit de la valeur par défaut.** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Le qualificateur est propagé aux instances. |
@@ -70,23 +68,23 @@ dans L’une des constantes suivantes qui définit les versions de qualificateur
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Tentative non autorisée de spécifier le qualificateur de **clé** sur une propriété qui ne peut pas être une clé. Les clés sont spécifiées dans la définition de classe pour un objet et ne peuvent pas être modifiées pour chaque instance. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
-| `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | Le `pVal` paramètre n’est pas d’un type de qualificateur légal. |
-| `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Il n’est pas possible d’appeler `QualifierSet_Put` la méthode sur le qualificateur, car l’objet propriétaire n’autorise pas les substitutions. |
+| `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | Le paramètre `pVal` n’est pas un type de qualificateur légal. |
+| `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Il n’est pas possible d’appeler la méthode `QualifierSet_Put` sur le qualificateur, car l’objet propriétaire n’autorise pas les substitutions. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
 ## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la méthode [IWbemQualifierSet ::P ut](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-put) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

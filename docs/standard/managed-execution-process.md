@@ -10,14 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d11567b3a5abca6e81ff0358295aa8516ef6443f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5ead3d1ac37b3c7ee50f18a81530720205678de2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969030"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122003"
 ---
 # <a name="managed-execution-process"></a>processus d'exécution managée
 <a name="introduction"></a> Le processus d'exécution managé inclut les étapes suivantes,qui sont décrites en détail plus loin dans cette rubrique :  
@@ -44,7 +42,7 @@ ms.locfileid: "70969030"
   
  Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d'informations, consultez [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md).  
   
- [Revenir en haut](#introduction)  
+ [Retour au début](#introduction)  
   
 <a name="compiling_to_msil"></a>   
 ## <a name="compiling-to-msil"></a>Compilation en MSIL  
@@ -52,7 +50,7 @@ ms.locfileid: "70969030"
   
  Quand un compilateur produit du code MSIL, il génère aussi des métadonnées. Les métadonnées décrivent les types contenus dans votre code, y compris la définition de chaque type, les signatures des membres de chaque type, les membres référencés par votre code, et d'autres données que le runtime utilise au moment de l'exécution. Le MSIL et les métadonnées sont stockés dans un fichier exécutable portable (PE) qui est basé sur le fichier Microsoft PE publié qu'il prolonge et sur le format COFF (Common Object File Format) utilisé traditionnellement pour le contenu exécutable. Ce format de fichier, qui accepte le code MSIL ou le code natif ainsi que les métadonnées, permet au système d'exploitation de reconnaître les images du Common Language Runtime. La présence de métadonnées dans le fichier en même temps que le jeu d'instructions MSIL permet à votre code de se décrire lui-même, ce qui signifie que les bibliothèques de types et IDL (Interface Definition Language) ne sont pas nécessaires. Le runtime recherche les métadonnées dans le fichier et les extrait selon les besoins, au moment de l'exécution.  
   
- [Revenir en haut](#introduction)  
+ [Retour au début](#introduction)  
   
 <a name="compiling_msil_to_native_code"></a>   
 ## <a name="compiling-msil-to-native-code"></a>Compilation du MSIL en code natif  
@@ -89,7 +87,7 @@ ms.locfileid: "70969030"
   
  Pendant le processus de vérification, le code MSIL est examiné en vue d'essayer de confirmer qu'il peut accéder aux emplacements de mémoire et appeler des méthodes uniquement par le biais de types correctement définis. Par exemple, le code n'autorise pas l'accès aux champs d'un objet d'une manière qui accepte le débordement de capacité des emplacements de mémoire. Par ailleurs, le processus de vérification inspecte le code MSIL afin de déterminer s'il a été généré correctement, car un code MSIL incorrect peut donner lieu à une violation des règles de sécurité des types. Le processus de vérification passe un jeu de code de type sécurisé et correctement défini, et ne passe que du code de ce type. Cependant, une partie du code de type sécurisé peut ne pas passer le test de vérification avec succès en raison de certaines limitations du processus de vérification, et certains langages, de par leur design, ne produisent pas un code de type sécurisé vérifié. Si le code de type sécurisé est requis par la stratégie de sécurité, mais qu'il ne passe pas le test de vérification avec succès, une exception est levée quand le code est exécuté.  
   
- [Revenir en haut](#introduction)  
+ [Retour au début](#introduction)  
   
 <a name="running_code"></a>   
 ## <a name="running-code"></a>Exécution de code  
@@ -105,7 +103,7 @@ ms.locfileid: "70969030"
   
  Sous Windows 64 bits, `_CorValidateImage` modifie l'image en mémoire en la transformant du format PE32 au format PE32+.  
   
- [Revenir en haut](#introduction)  
+ [Retour au début](#introduction)  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -113,7 +111,7 @@ ms.locfileid: "70969030"
 - [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md)
 - [Métadonnées et composants autodescriptifs](../../docs/standard/metadata-and-self-describing-components.md)
 - [Ilasm.exe (assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)
-- [Sécurité](../../docs/standard/security/index.md)
+- [Security](../../docs/standard/security/index.md)
 - [Interopération avec du code non managé](../../docs/framework/interop/index.md)
 - [Déploiement](../../docs/framework/deployment/net-framework-applications.md)
 - [Assemblys dans .NET](assembly/index.md)

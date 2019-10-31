@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b94bda7-09ee-435d-91b9-c4e31af1896c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 77c88786befb92960f4cfa4a960cbfc624318b26
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c4b01b2c346d3173b2a5ecc144474d7fb1e6dce5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771592"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138974"
 ---
 # <a name="icordebugstringvaluegetstring-method"></a>ICorDebugStringValue::GetString, méthode
-Obtient la chaîne référencée par ICorDebugStringValue.  
+Obtient la chaîne référencée par cet ICorDebugStringValue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,12 +41,12 @@ HRESULT GetString (
  [in] Taille du tableau `szString`.  
   
  `pcchString`  
- [out] Un pointeur vers le nombre de caractères retournés dans le `szString` tableau.  
+ à Pointeur vers le nombre de caractères retournés dans le tableau de `szString`.  
   
  `szString`  
- [out] Tableau qui stocke la chaîne récupérée.  
+ à Tableau qui stocke la chaîne récupérée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

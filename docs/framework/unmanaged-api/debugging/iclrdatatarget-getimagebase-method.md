@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 091c5f32-c160-49e3-a75f-4692e084c8e4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9dbb655d6ed0b9bd88c5eedf61a191401a805fb3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fed643ae52f50b1b8cd134880c644c8941da6f56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738758"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122876"
 ---
 # <a name="iclrdatatargetgetimagebase-method"></a>ICLRDataTarget::GetImageBase, méthode
 Obtient l’adresse mémoire de base de l’image spécifiée.  
@@ -38,18 +36,18 @@ HRESULT GetImageBase (
   
 ## <a name="parameters"></a>Paramètres  
  `imagePath`  
- [in] Le nom de fichier de l’image, y compris son chemin d’accès.  
+ dans Nom de fichier de l’image, y compris son chemin d’accès.  
   
  `baseAddress`  
- [out] Pointeur vers un CLRDATA_ADDRESS qui stocke l’adresse de base de l’image.  
+ à Pointeur vers un CLRDATA_ADDRESS qui stocke l’adresse de base de l’image.  
   
 ## <a name="remarks"></a>Notes  
- Le nom du fichier image peut ou ne peut pas avoir un chemin d’accès. Si un chemin d’accès est spécifié, le filtrage s’effectue sur le chemin d’accès complet ; Sinon, la correspondance s’effectue uniquement sur le nom de fichier.  
+ Le nom du fichier image peut ou non avoir un chemin d’accès. Si un chemin d’accès est spécifié, la correspondance est effectuée sur le chemin d’accès entier ; dans le cas contraire, la correspondance est effectuée uniquement sur le nom de fichier.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

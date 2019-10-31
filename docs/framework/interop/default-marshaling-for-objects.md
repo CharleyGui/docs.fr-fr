@@ -8,14 +8,12 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b2c6e8a013d6486ec55723b91d6bfb6b838c9be5
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: e0de715a3ed33eedf212fc3e0e9930c9cbaa0a38
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044164"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73123587"
 ---
 # <a name="default-marshaling-for-objects"></a>Marshaling par défaut pour les objets
 
@@ -237,12 +235,12 @@ Le tableau suivant montre les valeurs possibles pour l’énumération **TypeCod
 |**TypeCode.Decimal**|**VT_DECIMAL**|
 |**TypeCode.DateTime**|**VT_DATE**|
 |**TypeCode.String**|**VT_BSTR**|
-|Non pris en charge.|**VT_INT**|
-|Non pris en charge.|**VT_UINT**|
-|Non pris en charge.|**VT_ARRAY**|
-|Non pris en charge.|**VT_RECORD**|
-|Non pris en charge.|**VT_CY**|
-|Non pris en charge.|**VT_VARIANT**|
+|Non prise en charge.|**VT_INT**|
+|Non prise en charge.|**VT_UINT**|
+|Non prise en charge.|**VT_ARRAY**|
+|Non prise en charge.|**VT_RECORD**|
+|Non prise en charge.|**VT_CY**|
+|Non prise en charge.|**VT_VARIANT**|
 
 La valeur du variant COM est déterminée en appelant l’interface **IConvertible.To** *Type*, où **To** *Type* est la routine de conversion qui correspond au type retourné par **IConvertible.GetTypeCode**. Par exemple, un objet qui retourne **TypeCode.Double** depuis **IConvertible.GetTypeCode** est marshalé en tant que variant COM de type **VT_R8**. Vous pouvez obtenir la valeur du variant (stockée dans le champ **dblVal** du variant COM) en effectuant un cast en une interface **IConvertible** et en appelant la méthode <xref:System.IConvertible.ToDouble%2A>.
 
@@ -276,7 +274,7 @@ Lors du marshaling d’un variant vers un objet, le type, et parfois la valeur, 
 |**VT_ARRAY** &#124; **VT_** \*|<xref:System.Array?displayProperty=nameWithType>|
 |**VT_CY**|<xref:System.Decimal?displayProperty=nameWithType>|
 |**VT_RECORD**|Type valeur boxed correspondant.|
-|**VT_VARIANT**|Non pris en charge.|
+|**VT_VARIANT**|Non prise en charge.|
 
 Les types variant passés à partir de COM vers le code managé, puis repassés à COM peuvent ne pas conserver le même type variant durant la durée de l’appel. Envisagez ce qui se passe quand un variant de type **VT_DISPATCH** est passé à partir de COM vers le .NET Framework. Lors du marshaling, le variant est converti en <xref:System.Object?displayProperty=nameWithType>. Si **Object** est ensuite repassé à COM, il est remarshalé vers un variant de type **VT_UNKNOWN**. Rien ne garantit que le variant produit quand un objet est marshalé à partir de code managé vers COM sera du même type que le variant utilisé à l’origine pour produire l’objet.
 
@@ -312,7 +310,7 @@ Pour retourner des changements à l’appelant, les paramètres doivent être pa
 
 Le tableau suivant résume les règles de propagation pour les variants et les objets.
 
-|From|À|Changements retournés|
+|De|Vers|Changements retournés|
 |----------|--------|-----------------------------|
 |**Variant**  *v*|**Object**  *o*|Never|
 |**Object**  *o*|**Variant**  *v*|Never|

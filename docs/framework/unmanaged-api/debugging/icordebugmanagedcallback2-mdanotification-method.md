@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93f79627-bd31-4f4f-b95d-46a032a52fe4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4011932af6f4b058906c19566e4c1abe96b409db
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ab3819d5c33f090fda1ca9c3dccb5d08ab8f84cc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762097"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131461"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification, méthode
-Fournit une notification que l’exécution de code a rencontré un assistant débogage managé (MDA) dans l’application est en cours de débogage.  
+Fournit une notification indiquant que l’exécution du code a rencontré un Assistant Débogage managé (MDA) dans l’application en cours de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +37,30 @@ HRESULT MDANotification(
   
 ## <a name="parameters"></a>Paramètres  
  `pController`  
- [in] Pointeur vers une interface ICorDebugController qui expose le processus ou d’un domaine d’application dans lequel le MDA s’est produite.  
+ dans Pointeur vers une interface ICorDebugController qui expose le processus ou le domaine d’application dans lequel l’Assistant Débogage managé s’est produit.  
   
- Un débogueur ne doit pas faire d’hypothèses si le contrôleur est un processus ou un domaine d’application, bien qu’il puisse toujours interroger l’interface pour effectuer une détermination.  
+ Un débogueur ne doit pas faire d’hypothèses indiquant si le contrôleur est un processus ou un domaine d’application, bien qu’il puisse toujours interroger l’interface pour effectuer une détermination.  
   
  `pThread`  
- [in] Pointeur vers une interface ICorDebugThread qui expose le thread géré sur lequel l’événement de débogage s’est produite.  
+ dans Pointeur vers une interface ICorDebugThread qui expose le thread managé sur lequel l’événement de débogage s’est produit.  
   
- Si le MDA s’est produite sur une fonction non managée de thread, la valeur de `pThread` sera null.  
+ Si l’Assistant Débogage managé s’est produit sur un thread non managé, la valeur de `pThread` sera null.  
   
- Vous devez obtenir l’ID de thread de système d’exploitation (se) à partir de l’objet MDA lui-même.  
+ Vous devez récupérer l’ID de thread du système d’exploitation à partir de l’objet MDA lui-même.  
   
  `pMDA`  
- [in] Un pointeur vers un [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) interface qui expose les informations de l’Assistant Débogage MANAGÉ.  
+ dans Pointeur vers une interface [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) qui expose les informations de l’Assistant Débogage managé.  
   
 ## <a name="remarks"></a>Notes  
- Un MDA est un avertissement heuristique et ne nécessitent aucune action de débogueur explicite à l’exception d’appel [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pour reprendre l’exécution de l’application est en cours de débogage.  
+ Un Assistant Débogage managé est un avertissement heuristique et ne nécessite aucune action explicite du débogueur, à l’exception de l’appel de [ICorDebugController :: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pour reprendre l’exécution de l’application en cours de débogage.  
   
- Le common language runtime (CLR) peut déterminer quels MDA sont déclenchés et les données se trouvent dans n’importe quel MDA donné à tout moment. Par conséquent, les débogueurs ne doivent pas générer de fonctionnalités nécessitant des modèles MDA spécifiques.  
+ Le common language runtime (CLR) peut déterminer les MDA déclenchés et les données qui se trouvent dans un MDA donné à tout moment. Par conséquent, les débogueurs ne doivent pas générer de fonctionnalités nécessitant des modèles d’Assistant Débogage managé spécifiques.  
   
- Assistants Débogage managé peuvent être en file d’attente et déclenchés juste après que l’Assistant Débogage MANAGÉ est rencontré. Cela peut se produire si le runtime doit attendre jusqu'à ce qu’il atteigne un point sans risque pour déclencher le MDA, au lieu de déclencher lorsqu’il le rencontre. Cela signifie également que le runtime peut déclencher plusieurs Assistants Débogage managé dans un seul ensemble de rappels en file d’attente (semblables à une opération d’événement « joindre »).  
+ Les MDA peuvent être mis en file d’attente et déclenchés peu après que l’Assistant Débogage managé a été rencontré. Cela peut se produire si le runtime doit attendre qu’il atteigne un point de sécurité pour déclencher l’Assistant Débogage managé, au lieu de déclencher l’Assistant Débogage managé lorsqu’il le rencontre. Cela signifie également que le runtime peut déclencher plusieurs MDA dans un ensemble unique de rappels mis en file d’attente (semblable à une opération d’événement d’attachement).  
   
- Un débogueur doit libérer la référence à un `ICorDebugMDA` instance immédiatement après le retour à partir de la `MDANotification` rappel, pour permettre au CLR de recycler la mémoire consommée par un Assistant Débogage MANAGÉ. Libérer l’instance peut améliorer les performances si de nombreux Assistants Débogage managé sont déclenchent.  
+ Un débogueur doit libérer la référence à une instance de `ICorDebugMDA` immédiatement après avoir retourné le rappel `MDANotification`, afin de permettre au CLR de recycler la mémoire consommée par un Assistant Débogage managé. La libération de l’instance peut améliorer les performances si de nombreux MDA sont déclenchés.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

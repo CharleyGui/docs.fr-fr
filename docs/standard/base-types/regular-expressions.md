@@ -20,14 +20,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 89b527d4febb677512b3cdcf7cd47344d182ae26
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: ac034ff37b0b39f41d6f58381286706f9a9ac602
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736865"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73121701"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
 Les expressions régulières permettent de traiter un texte de façon puissante, souple et efficace. Grâce à la syntaxe complète des expressions régulières pour la recherche de correspondance avec un modèle, vous pouvez rapidement analyser des volumes importants de texte pour rechercher des modèles de caractères spécifiques, valider le texte pour vous assurer qu'il correspond à un modèle prédéfini (tel qu'une adresse e-mail), extraire, modifier, remplacer ou supprimer des sous-chaînes de texte et ajouter les chaînes extraites à une collection afin de générer un rapport. Pour de nombreuses applications qui traitent des chaînes ou qui analysent de grands blocs de texte, les expressions régulières constituent un outil indispensable.  
@@ -43,11 +41,11 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
  Les méthodes de la classe <xref:System.Text.RegularExpressions.Regex> vous permettent d'effectuer les opérations suivantes :  
   
-- Déterminer si le modèle d’expression régulière est présent dans le texte d’entrée en appelant la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>. Pour obtenir un exemple de validation d’un texte à l’aide de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A>, consultez [Guide pratique : Vérifier que des chaînes sont dans un format d’adresse e-mail valide](how-to-verify-that-strings-are-in-valid-email-format.md).  
+- Déterminer si le modèle d’expression régulière est présent dans le texte d’entrée en appelant la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>. Pour obtenir un exemple d'utilisation de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> pour valider un texte, consultez [Comment : vérifier que des chaînes sont dans un format d'adresse de messagerie valide](how-to-verify-that-strings-are-in-valid-email-format.md).  
   
 - Récupérer une occurrence, ou toutes les occurrences, de texte qui correspondent au modèle d’expression régulière en appelant la méthode <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>. La première méthode retourne un objet <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> qui fournit des informations sur le texte correspondant. La seconde retourne un objet <xref:System.Text.RegularExpressions.MatchCollection> qui contient un objet <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> pour chaque correspondance trouvée dans le texte analysé.  
   
-- Remplacer le texte qui correspond au modèle d’expression régulière en appelant la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>. Pour obtenir des exemples d’utilisation de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A> afin de modifier des formats de date et supprimer des caractères non valides dans une chaîne, consultez [Guide pratique : Supprimer des caractères non valides dans une chaîne](how-to-strip-invalid-characters-from-a-string.md) et [Exemple : Modification des formats de date](regular-expression-example-changing-date-formats.md).  
+- Remplacer le texte qui correspond au modèle d’expression régulière en appelant la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>. Pour obtenir des exemples d'utilisation de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A> pour modifier des formats de date et supprimer des caractères non valides d'une chaîne, consultez [Comment : supprimer des caractères non valides d'une chaîne](how-to-strip-invalid-characters-from-a-string.md) et [Exemple : modification des formats de date](regular-expression-example-changing-date-formats.md).  
   
  Pour obtenir une vue d’ensemble du modèle objet d’expression régulière, consultez [Modèle objet d’expression régulière](the-regular-expression-object-model.md).  
   
@@ -59,7 +57,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
 ## <a name="regular-expression-examples"></a>Exemples d'expressions régulières  
  La classe <xref:System.String> comprend de nombreuses méthodes de recherche et de remplacement de chaîne qui vous permettent de trouver des chaînes littérales dans une chaîne plus grande. Les expressions régulières sont particulièrement utiles quand vous souhaitez trouver une sous-chaîne spécifique dans une chaîne plus grande ou identifier des modèles dans une chaîne, comme le montrent les exemples suivants.  
   
-### <a name="example-1-replacing-substrings"></a>Exemple 1 : remplacement de sous-chaînes  
+### <a name="example-1-replacing-substrings"></a>Exemple 1 : remplacement de sous-chaînes  
  Supposons qu'une liste de diffusion contient des noms complets, constitués d'un prénom, d'un nom et, parfois, d'un titre (Mr, Mme ou Mlle). Si vous ne souhaitez pas inclure les titres quand vous générez les étiquettes des enveloppes à partir de la liste, vous pouvez utiliser une expression régulière pour supprimer les titres, comme le montre l'exemple suivant.  
   
  [!code-csharp[Conceptual.Regex#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example1.cs#2)]
@@ -67,7 +65,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
  Le modèle d’expression régulière `(Mr\.? |Mrs\.? |Miss |Ms\.? )` trouve toute occurrence de « Mr  », « Mr.  », « Mrs  », « Mrs.  », « Miss  », « Ms  » ou « Ms.  ». L'appel de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace la chaîne mise en correspondance par <xref:System.String.Empty?displayProperty=nameWithType> ; en d'autres termes, il la supprime de la chaîne d'origine.  
   
-### <a name="example-2-identifying-duplicated-words"></a>Exemple 2 : identification des mots en double  
+### <a name="example-2-identifying-duplicated-words"></a>Exemple 2 : identification des mots en double  
  La répétition d'un mot est une erreur de rédaction courante. Vous pouvez utiliser une expression régulière pour identifier les mots en double, comme le montre l'exemple suivant.  
   
  [!code-csharp[Conceptual.Regex#3](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example2.cs#3)]
@@ -87,7 +85,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
  Notez que la chaîne d'entrée comprend la sous-chaîne « this? This ». Toutefois, en raison du signe de ponctuation intermédiaire, cette sous-chaîne n'est pas identifiée comme étant une duplication.  
   
-### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>Exemple 3 : création dynamique d’une expression régulière dépendante de la culture  
+### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>Exemple 3 : création dynamique d'une expression régulière dépendante de la culture  
  L’exemple suivant illustre la puissance des expressions régulières combinée à la souplesse offerte par les fonctionnalités de globalisation de .NET. Il utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le format de la devise dans la culture actuelle du système. Ensuite, à partir de cette information, il construit dynamiquement une expression régulière qui extrait du texte les valeurs en devise. Pour chaque correspondance, il extrait le sous-groupe qui contient uniquement la chaîne numérique, le convertit en une valeur <xref:System.Decimal>, puis calcule un total cumulé.  
   
  [!code-csharp[Conceptual.Regex#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example.cs#1)]
@@ -97,7 +95,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
 |||  
 |-|-|  
-|`\$`|Rechercher une occurrence unique du symbole dollar (`$`) dans la chaîne d’entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le symbole `$` seul indiquerait au moteur d’expression régulière de débuter la recherche de correspondance à la fin d’une chaîne.) Pour que le symbole de devise de la culture actuelle ne soit pas interprété à tort comme un symbole d’expression régulière, l’exemple appelle la méthode <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType> pour placer le caractère dans une séquence d’échappement.|  
+|`\$`|Rechercher une occurrence unique du symbole dollar (`$`) dans la chaîne d’entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le symbole `$` seul indiquerait que le moteur des expressions régulières doit essayer de commencer sa correspondance à la fin d’une chaîne.) Pour faire en sorte que le symbole monétaire de la culture actuelle ne soit pas interprété à tort comme un symbole d’expression régulière, l’exemple appelle la méthode <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType> pour échapper le caractère.|  
 |`\s*`|Rechercher zéro occurrence, ou plus, d'un espace blanc.|  
 |`[-+]?`|Rechercher zéro ou une occurrence d'un signe positif ou d'un signe négatif.|  
 |`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|Les parenthèses externes de cette expression définissent celle-ci en tant que groupe de capture ou que sous-expression. Si une correspondance est trouvée, les informations sur cette partie de la chaîne correspondante peuvent être récupérées du deuxième objet <xref:System.Text.RegularExpressions.Group> dans l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. (Le premier élément de la collection représente la correspondance entière.)|  
@@ -118,7 +116,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
 |[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Fournit des informations sur les fonctionnalités et le comportement des expressions régulières .NET.|  
 |[Exemples d’expressions régulières](regular-expression-examples.md)|Fournit des exemples de code illustrant des utilisations courantes des expressions régulières.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  
  [Expressions régulières - Aide-mémoire (téléchargement au format Word)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  

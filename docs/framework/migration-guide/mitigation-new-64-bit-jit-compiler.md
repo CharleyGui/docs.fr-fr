@@ -1,21 +1,19 @@
 ---
-title: 'Atténuation : nouveau compilateur JIT 64 bits'
+title: 'Atténuation : Nouveau compilateur JIT 64 bits'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compiler, 64-bit
 - JIT compilation, 64-bit
 - RyuJIT compiler
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 07f9ae01fae5e4badbc13670ee56a2f05e303c0c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cad61bd86080fc21f0a47ef92b1908d6e7588a23
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779351"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126246"
 ---
-# <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : nouveau compilateur JIT 64 bits
+# <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : Nouveau compilateur JIT 64 bits
 À compter du .NET Framework 4.6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Ce changement n’affecte pas la compilation avec le compilateur JIT 32 bits.  
   
 ## <a name="unexpected-behavior-or-exceptions"></a>Comportement inattendu ou exceptions  

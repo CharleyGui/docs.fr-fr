@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-author: rpetrusha
+author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fae3673fe72d036802cb1a8366aaa2430c38884
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ac2d01121e81b545556fb082fa7b82c31cccf9da
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927498"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73118833"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Élément personnalisé pour SingleTagSectionHandler
 
-Définit des paramètres dans une section de configuration personnalisée définie par une \<section > élément et utilise la <xref:System.Configuration.SingleTagSectionHandler> classe.
+Définit des paramètres dans une section de configuration personnalisée définie par une \<section > élément et utilise la classe <xref:System.Configuration.SingleTagSectionHandler>.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; *\<sectionName>*
+&nbsp;&nbsp; *\<* de la >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,15 +40,15 @@ Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+aucune.
 
 ## <a name="remarks"></a>Notes
 
-L'  **\<** élément de >y est un élément personnalisé défini par [ **\<** ](section-element.md) une balise de > de section dans l' [ **\<élément configSections >** ](configsections-element-for-configuration.md) . Le système de configuration retourne <xref:System.Collections.IDictionary> un objet lorsque vous <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>appelez.
+L’élément\<de l’élément de **>** est un élément personnalisé défini par un [ **\<section >** ](section-element.md) balise dans l’élément [ **\<configSections >** ](configsections-element-for-configuration.md) . Le système de configuration retourne un objet <xref:System.Collections.IDictionary> lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant déclare un élément personnalisé appelé  **\<sampleSection >** qui contient les paramètres lus par la <xref:System.Configuration.SingleTagSectionHandler> classe:
+L’exemple suivant déclare un élément personnalisé appelé **\<sampleSection >** contenant les paramètres lus par la classe <xref:System.Configuration.SingleTagSectionHandler> :
 
 ```xml
 <configuration>
