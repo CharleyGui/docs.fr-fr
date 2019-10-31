@@ -1,17 +1,21 @@
 ---
 title: Commande dotnet sln
-description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
-ms.date: 06/13/2018
-ms.openlocfilehash: 84508aaefff61b31e2965576ebc2daaae7331951
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et répertorier des projets dans un fichier solution.
+ms.date: 10/29/2019
+ms.openlocfilehash: 18702c7638798117bd04d5c6a829d64cc6bf18a8
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117580"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191827"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
+**Cet article s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,12 +24,7 @@ ms.locfileid: "71117580"
 ## <a name="synopsis"></a>Résumé
 
 ```dotnetcli
-dotnet sln [<SOLUTION_NAME>] add <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] add <GLOBBING_PATTERN>
-dotnet sln [<SOLUTION_NAME>] remove <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] remove <GLOBBING_PATTERN>
-dotnet sln [<SOLUTION_NAME>] list
-dotnet sln [-h|--help]
+dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
 ```
 
 ## <a name="description"></a>Description
@@ -38,61 +37,138 @@ Pour que la commande `dotnet sln` puisse être utilisée, le fichier solution do
 dotnet new sln
 ```
 
-## <a name="commands"></a>Commandes
-
-`add <PROJECT> ...`
-
-`add <GLOBBING_PATTERN>`
-
-Ajoute un ou plusieurs projets au fichier solution. Les [modèles Globbing](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.
-
-`remove <PROJECT> ...`
-
-`remove <GLOBBING_PATTERN>`
-
-Supprime un ou plusieurs projets du fichier solution. Les [modèles Globbing](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.
-
-`list`
-
-Liste tous les projets dans un fichier solution.
-
 ## <a name="arguments"></a>Arguments
 
-`SOLUTION_NAME`
+- **`SOLUTION_FILE`**
 
-Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel. S’il existe plusieurs fichiers solution dans le répertoire, l’un d’eux doit être spécifié.
+  Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel. S’il existe plusieurs fichiers solution dans le répertoire, l’un d’eux doit être spécifié.
 
 ## <a name="options"></a>Options
 
-`-h|--help`
+- **`-h|--help`**
 
-Affiche une aide brève pour la commande.
+  Affiche une aide brève pour la commande.
+
+## <a name="commands"></a>Commandes
+
+### `add`
+
+Ajoute un ou plusieurs projets au fichier solution.
+
+#### <a name="synopsis"></a>Résumé
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH>
+dotnet sln add [-h|--help]
+```
+
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel. S’il existe plusieurs fichiers solution dans le répertoire, l’un d’eux doit être spécifié.
+
+- **`PROJECT_PATH`**
+
+  Chemin d’accès au projet à ajouter à la solution. Ajoutez plusieurs projets en en ajoutant un après l’autre en les séparant par des espaces. Les extensions de [modèle de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) de shell UNIX/Linux sont traitées correctement par la commande `dotnet sln`.
+
+#### <a name="options"></a>Options
+
+- **`-h|--help`**
+
+  Affiche une aide brève pour la commande.
+
+- **`--in-root`**
+
+  Place les projets à la racine de la solution, plutôt que de créer un dossier de solution. Option disponible à partir du kit SDK .NET Core 3.0.
+
+- **`-s|--solution-folder`**
+
+  Chemin d’accès du dossier de solution de destination auquel ajouter les projets. Option disponible à partir du kit SDK .NET Core 3.0.
+
+### `remove`
+
+Supprime un ou plusieurs projets du fichier solution.
+
+#### <a name="synopsis"></a>Résumé
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH>
+dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
+```
+
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel. S’il existe plusieurs fichiers solution dans le répertoire, l’un d’eux doit être spécifié.
+
+- **`PROJECT_PATH`**
+
+  Chemin d’accès au projet à supprimer de la solution. Pour supprimer plusieurs projets, ajoutez-en un après l’autre, en les séparant par des espaces. Les extensions de [modèle de globbing](https://en.wikipedia.org/wiki/Glob_(programming)) de shell UNIX/Linux sont traitées correctement par la commande `dotnet sln`.
+
+#### <a name="options"></a>Options
+
+- **`-h|--help`**
+
+  Affiche une aide brève pour la commande.
+
+### `list`
+
+Liste tous les projets dans un fichier solution.
+
+#### <a name="synopsis"></a>Résumé
+
+```dotnetcli
+dotnet sln list [-h|--help]
+```
+  
+#### <a name="arguments"></a>Arguments
+
+- **`SOLUTION_FILE`**
+
+  Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel. S’il existe plusieurs fichiers solution dans le répertoire, l’un d’eux doit être spécifié.
+
+#### <a name="options"></a>Options
+
+- **`-h|--help`**
+
+  Affiche une aide brève pour la commande.
 
 ## <a name="examples"></a>Exemples
 
 Ajouter un projet C# à une solution :
 
-`dotnet sln todo.sln add todo-app/todo-app.csproj`
+```dotnetcli
+dotnet sln todo.sln add todo-app/todo-app.csproj
+```
 
 Supprimer un projet C# d’une solution :
 
-`dotnet sln todo.sln remove todo-app/todo-app.csproj`
+```dotnetcli
+dotnet sln todo.sln remove todo-app/todo-app.csproj
+```
 
 Ajouter plusieurs projets C# à une solution :
 
-`dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj`
+```dotnetcli
+dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+```
 
 Supprimer plusieurs projets C# d’une solution :
 
-`dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj`
+```dotnetcli
+dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
+```
 
-Ajouter plusieurs projets C# à une solution avec un modèle d’utilisation des caractères génériques :
+Ajouter plusieurs C# projets à une solution à l’aide d’un modèle globbing (UNIX/Linux uniquement) :
 
-`dotnet sln todo.sln add **/*.csproj`
+```dotnetcli
+dotnet sln todo.sln add **/*.csproj
+```
 
-Supprimer plusieurs projets C# d’une solution avec un modèle d’utilisation des caractères génériques :
+Supprimer plusieurs C# projets d’une solution à l’aide d’un modèle globbing (UNIX/Linux uniquement) :
 
-`dotnet sln todo.sln remove **/*.csproj`
-
-> [!NOTE]
-> L’utilisation des caractères génériques n’est pas une fonctionnalité de l’interface CLI, mais une fonctionnalité de l’interpréteur de commandes. Pour pouvoir développer les fichiers, vous devez utiliser un interpréteur de commandes qui prend en charge l’utilisation des caractères génériques. Pour plus d’informations sur l’utilisation des caractères génériques, voir [Wikipédia](https://en.wikipedia.org/wiki/Glob_(programming)).
+```dotnetcli
+dotnet sln todo.sln remove **/*.csproj
+```

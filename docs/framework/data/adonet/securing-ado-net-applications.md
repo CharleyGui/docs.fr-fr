@@ -2,12 +2,12 @@
 title: Sécurisation des applications ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 725ba568f3cd482991359237f4fc42b7da99bc0a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c99c56afca475caafe32cca3f50d074fb82e0e00
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795056"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196726"
 ---
 # <a name="securing-adonet-applications"></a>Sécurisation des applications ADO.NET
 L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur. Une application qui accède à des données présente de nombreux points de défaillance possibles qu’un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles. Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.  
@@ -39,7 +39,7 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Considérations relatives à la sécurité](./ef/security-considerations.md)  
  Décrit la sécurité des applications reposant sur Entity Framework.  
   
- [Sécurité](../../../standard/security/index.md)  
+ [Security](../../../standard/security/index.md)  
  Contient des liens vers des rubriques qui décrivent tous les aspects de la sécurité dans .NET.  
   
  [Outils de sécurité](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  
@@ -48,7 +48,7 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Ressources de création des applications sécurisées](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
  Fournit des liens vers des rubriques pour la création d'applications sécurisées.  
   
- [Bibliographie relative à la sécurité](/visualstudio/ide/security-bibliography)  
+ [Bibliographie relative à la sécurité](/visualstudio/ide/securing-applications)  
  Fournit des liens vers des ressources externes disponibles en ligne et sous forme de documentation.  
   
 ## <a name="see-also"></a>Voir aussi

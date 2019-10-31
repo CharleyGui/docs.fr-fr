@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID385
 ms.assetid: 69ec6d59-ffc4-48ac-8a28-fe6853389843
-ms.openlocfilehash: e8534066317748055a0eaf544d5c8c9d0a5b355d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 142d54f7d330b32706713e1cd41ef4c423d7127c
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591995"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196958"
 ---
 # <a name="need-property-array-index"></a>Index de tableau de propriétés requis
 Cette valeur de propriété se compose d'un tableau plutôt que d'une simple valeur. Vous n'avez pas spécifié l'index de tableau de propriétés auquel vous avez essayé d'accéder.  
@@ -21,4 +21,4 @@ Cette valeur de propriété se compose d'un tableau plutôt que d'une simple val
 ## <a name="see-also"></a>Voir aussi
 
 - [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

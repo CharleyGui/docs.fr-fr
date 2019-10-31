@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0fa34bca-ed18-4626-9e78-d33684d18edb
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b6187da564a62b8c30abdc6a150f0df45d565615
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c23773dce448c8c98d4926dff3fa51100e683fd0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763874"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192050"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a>IHostControl::GetHostManager, méthode
-Obtient un pointeur d’interface vers l’implémentation de l’hôte de l’interface avec la valeur `IID`.  
+Obtient un pointeur d’interface vers l’implémentation de l’hôte de l’interface avec le `IID`spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,26 +36,26 @@ HRESULT GetHostManager (
   
 ## <a name="parameters"></a>Paramètres  
  `riid`  
- [in] Le `IID` de l’interface que le common language runtime (CLR) effectue une requête.  
+ dans `IID` de l’interface pour laquelle le common language runtime (CLR) interroge.  
   
  `ppObject`  
- [out] Un pointeur vers l’interface implémentée par l’hôte, ou null si l’hôte ne prend pas en charge cette interface.  
+ à Pointeur vers l’interface implémentée par l’hôte, ou null si l’hôte ne prend pas en charge cette interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetHostManager` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_INVALIDARG|Demandé `IID` n’est pas valide.|  
-|E_NOINTERFACE|L’interface demandée n’est pas pris en charge.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_INVALIDARG|La `IID` demandée n’est pas valide.|  
+|E_NOINTERFACE|L’interface demandée n’est pas prise en charge.|  
   
 ## <a name="remarks"></a>Notes  
- Le CLR interroge l’hôte pour déterminer si elle prend en charge un ou plusieurs des interfaces suivantes :  
+ Le CLR interroge l’hôte pour déterminer s’il prend en charge une ou plusieurs des interfaces suivantes :  
   
 - [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
   
@@ -77,16 +75,16 @@ HRESULT GetHostManager (
   
 - [IHostSecurityManager](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
   
- Si l’hôte prend en charge l’interface spécifiée, il définit `ppObject` à son implémentation de cette interface. Sinon, il définit `ppObject` avec la valeur null.  
+ Si l’hôte prend en charge l’interface spécifiée, il définit `ppObject` à son implémentation de cette interface. Dans le cas contraire, elle définit `ppObject` sur la valeur null.  
   
- Le CLR n’appelle pas `Release` sur les gestionnaires d’hôte, même lorsque vous arrêtez.  
+ Le CLR n’appelle pas `Release` sur les gestionnaires d’ordinateurs hôtes, même lorsque vous l’arrêtez.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

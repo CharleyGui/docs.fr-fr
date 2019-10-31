@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: e70d2b708eefa9762bef15403a63b2a908f7a149
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 757cbce98c73821a19ee162b7828fa4ad952de3c
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168971"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195485"
 ---
 # <a name="c-walkthroughs"></a>procédures pas à pas C#
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.  
@@ -72,4 +72,4 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](./programming-guide/index.md)
-- [Exemples Visual Studio](/visualstudio/ide/visual-studio-samples)
+- [Exemples Visual Studio](/visualstudio/ide/visual-studio-ide)

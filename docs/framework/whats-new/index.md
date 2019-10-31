@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 0e1248cc7fd29324810f164b4f0623c141439df2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 2f9d1c7835c95c904104a165a556b8d527343c30
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091945"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197775"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -2128,6 +2128,6 @@ Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les vers
 
 - [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Nouveautés de l’accessibilité dans le .NET Framework](whats-new-in-accessibility.md)
-- [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
+- [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [ASP.NET](/aspnet)
 - [Nouveautés de Visual C++](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

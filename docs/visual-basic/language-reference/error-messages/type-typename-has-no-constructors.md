@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: 8564499b9ff55514179314217b7d40d8d3cdf6a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 506b69f1db12a51217d10ad261b1f1a44bfb2008
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62031146"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198161"
 ---
-# <a name="type-typename-has-no-constructors"></a>Type '\<nom_type >' n’a aucun constructeur
+# <a name="type-typename-has-no-constructors"></a>Le type'\<TypeName > 'n’a pas de constructeurs
 Un type ne prend pas en charge un appel à `Sub New()`. L'une des causes probables est un fichier compilateur ou binaire endommagé.  
   
  **ID d’erreur :** BC30251  
@@ -32,4 +32,4 @@ Un type ne prend pas en charge un appel à `Sub New()`. L'une des causes probabl
 ## <a name="see-also"></a>Voir aussi
 
 - [Objets et classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

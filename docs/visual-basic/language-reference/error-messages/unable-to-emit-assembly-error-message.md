@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30145
 ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
-ms.openlocfilehash: 530aaee40be92bf72ee4b83b4141108e9b81c8a1
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5776755a57fbc2b0086b1c9b6cfbb2f2b7eb03fa
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968855"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197276"
 ---
 # <a name="unable-to-emit-assembly-error-message"></a>Impossible d’émettre l’assembly : \<message d’erreur >
 
@@ -42,7 +42,7 @@ Le compilateur Visual Basic appelle Assembly Linker (*al. exe*, également appel
 
 4. Remplacez le répertoire par le répertoire dans lequel vous souhaitez placer votre wrapper d’assembly.
 
-5. Entrez la commande suivante :
+5. Entrez la commande suivante :
 
     ```cmd
     tlbimp <path to COM reference file> /out:<output assembly name> /keyfile:<path to .snk file>
@@ -61,7 +61,7 @@ Le compilateur Visual Basic appelle Assembly Linker (*al. exe*, également appel
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)
+- [Al. exe](../../../framework/tools/al-exe-assembly-linker.md)
 - [Sn.exe (outil Strong Name)](../../../framework/tools/sn-exe-strong-name-tool.md)
-- [Guide pratique : créer une paire de clés publique/privée](../../../standard/assembly/create-public-private-key-pair.md)
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Guide pratique pour créer une paire de clés publique/privée](../../../standard/assembly/create-public-private-key-pair.md)
+- [Nous contacter](/visualstudio/ide/feedback-options)

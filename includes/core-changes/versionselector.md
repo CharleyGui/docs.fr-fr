@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fe00cb30703f649f59c3a1625fb73afe6dba3539
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: b366c44fdf1a4b2e908b41aeff2037be63bdf7e1
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72023097"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198426"
 ---
 > [!div class="op_multi_selector" title1="À partir de la version cible" title2="Vers la version migrée"]
 >
@@ -14,7 +14,7 @@ ms.locfileid: "72023097"
 > - [(3,0 Preview 7 | 3,0 Preview 8)](~/docs/core/compatibility/3.0.7-3.0.8.md)
 > - [(3,0 Preview 8 | 3,0 Preview 9)](~/docs/core/compatibility/3.0.8-3.0.9.md)
 > - [(3,0 Preview 9 | 3,0 RC1)](~/docs/core/compatibility/3.0.9-3.0rc1.md)
-> 
+
 <!--
 
 > - [(2.2 | 3.0 Preview 7)](~/docs/core/compatibility/2.2-3.0.7.md)

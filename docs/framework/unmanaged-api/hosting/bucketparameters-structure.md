@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96fee259b31938ddec5820bc1b8d72a96b50c8d8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 80623bdec939b0ae5fc13008c1c4001c613ac435
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773881"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73195957"
 ---
 # <a name="bucketparameters-structure"></a>BucketParameters, structure
-Stocke le nom de type d’un événement et les paramètres de l’exception actuelle est associé à l’événement.  
+Stocke le nom de type d’un événement et les paramètres de l’exception actuelle qui est associée à l’événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,12 +40,12 @@ typedef struct _BucketParameters {
 |------------|-----------------|  
 |`fInited`|`true`, si le reste de cette structure est valide ; Sinon, `false`.|  
 |`pszEventTypeName`|Nom du type d’événement.|  
-|`pszParams`|Tableau de chaînes, dont chacun spécifie un paramètre pour l’exception actuelle associée à l’événement.|  
+|`pszParams`|Tableau de chaînes, chacune spécifiant un paramètre pour l’exception actuelle associée à l’événement.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.idl  
+ **En-tête :** MSCorEE. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

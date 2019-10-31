@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC31019
 ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
-ms.openlocfilehash: e0a00c4f57e45d65ff46fb9487a603a67d5a9e5c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 087735722fcd4dd789e25aacf6eeefffb490dac5
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620595"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198193"
 ---
-# <a name="unable-to-write-to-output-file-filename-error"></a>Impossible d’écrire dans le fichier de sortie '\<nom_fichier >': \<erreur >
+# <a name="unable-to-write-to-output-file-filename-error"></a>Impossible d’écrire dans le fichier de sortie'\<filename > ' : \<erreur >
 Un problème s'est produit pendant la création du fichier.  
   
  Vous ne pouvez pas ouvrir un fichier de sortie pour écriture. Le fichier (ou le dossier qui le contient) est peut être ouvert pour un usage exclusif par un autre processus, ou a son attribut de lecture seule défini.  
@@ -45,18 +45,18 @@ Un problème s'est produit pendant la création du fichier.
   
 1. Ouvrez le dossier qui vous intéresse.  
   
-2. Cliquez sur le **vues** icône et choisissez **détails**.  
+2. Cliquez sur l’icône **vues** et choisissez **Détails**.  
   
-3. Cliquez sur l’en-tête de colonne, puis choisissez **attributs** dans la liste déroulante.  
+3. Cliquez avec le bouton droit sur l’en-tête de colonne, puis choisissez **attributs** dans la liste déroulante.  
   
 ### <a name="to-change-the-attributes-of-a-file-or-folder"></a>Pour modifier les attributs d’un fichier ou d’un dossier  
   
-1. Dans **Explorateur de fichiers**, cliquez sur le fichier ou dossier et choisissez **propriétés**.  
+1. Dans l' **Explorateur de fichiers**, cliquez avec le bouton droit sur le fichier ou le dossier, puis choisissez **Propriétés**.  
   
-2. Dans le **attributs** section de la **général** onglet, désactivez le **en lecture seule** boîte.  
+2. Dans la section **attributs** de l’onglet **général** , décochez la case **lecture seule** .  
   
-3. Appuyez sur **OK**.  
+3. Cliquez sur **OK**.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

@@ -1,79 +1,69 @@
 ---
-title: Compatibilité des applications dans le .NET Framework
-ms.date: 05/19/2017
+title: Modifications du runtime et du reciblage-.NET Framework
+ms.date: 10/29/2019
 helpviewer_keywords:
 - application compatibility
 - .NET Framework application compatibility
 - .NET Framework changes
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
-ms.openlocfilehash: cf0d556dd5df773958e24ff1efcefbc3d8a8d3a9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: c46f781d495b87a4f24e77935df7c4814c8567ae
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126331"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196698"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Compatibilité des applications dans le .NET Framework
 
-## <a name="introduction"></a>Introduction
-La compatibilité est un objectif très important de chaque version de .NET. La compatibilité garantit que chaque version est additive et que les versions précédentes fonctionnent donc toujours. En revanche, les modifications apportées aux fonctionnalités précédentes (pour améliorer les performances, résoudre des problèmes de sécurité ou corriger des bogues) peuvent provoquer des problèmes de compatibilité dans le code ou des applications qui s’exécutent sous une version ultérieure. Le .NET Framework reconnaît les modifications de reciblage et du runtime. Les modifications de reciblage concernent les applications qui ciblent une version spécifique du .NET Framework, mais sont exécutées sur une version ultérieure. Les modifications du runtime concernent toutes les applications qui s’exécutent sur une version particulière.
+La compatibilité est un objectif important de chaque version de .NET. La compatibilité garantit que chaque version est additive, de sorte que les versions précédentes continuent de fonctionner. En revanche, les modifications apportées à la fonctionnalité précédente (par exemple, pour améliorer les performances, résoudre les problèmes de sécurité ou corriger les bogues) peuvent entraîner des problèmes de compatibilité dans le code existant ou dans des applications existantes qui s’exécutent sous une version ultérieure.
 
-Chaque application cible une version spécifique du .NET Framework, qui peut être indiquée par :
+Chaque application cible une version spécifique du .NET Framework par :
 
 - La définition d’une version cible de .NET Framework dans Visual Studio.
 - La spécification de la version cible de .NET Framework dans un fichier projet.
 - L’application d’un <xref:System.Runtime.Versioning.TargetFrameworkAttribute> au code source.
 
-Lors de l’exécution sur une version plus récente que celle qui était ciblée, le .NET Framework utilise un subterfuge afin de simuler l’ancienne version ciblée. En d’autres termes, l’application s’exécute sur la version la plus récente du .NET Framework, mais agit comme si elle était exécutée sur la version antérieure. La plupart des problèmes de compatibilité entre les versions du .NET Framework sont atténués via ce modèle de subterfuge. La version du .NET Framework que cible une application est déterminée par la version cible de l’assembly d’entrée pour le domaine d’application dans lequel le code s’exécute. Tous les autres assemblys chargés dans ce domaine d’application ciblent cette version du .NET Framework. Par exemple, dans le cas d’un exécutable, le framework que cible l’exécutable correspond au mode de compatibilité sous lequel tous les assemblys inclus dans ce domaine d’application s’exécutent.
+Lors de la migration d’une version de la .NET Framework vers une autre, il existe deux types de modifications à prendre en compte :
+
+- [Modifications du runtime](#runtime-changes)
+- [Modifications de reciblage](#retargeting-changes)
 
 ## <a name="runtime-changes"></a>Modifications du runtime
 
-Les problèmes de runtime sont ceux qui surviennent quand un nouveau runtime est placé sur un ordinateur, que les mêmes fichiers binaires sont exécutés, mais qu’un comportement différent est détecté. Si un fichier binaire a été compilé pour .NET Framework 4.0, il est exécuté en mode de compatibilité .NET Framework 4.0 sur les versions 4.5 ou ultérieures. La plupart des modifications qui affectent 4.5 n’affectent pas un fichier binaire compilé pour la version 4.0. Cela est spécifique au domaine d’application et dépend des paramètres de l’assembly d’entrée.
+Les problèmes d’exécution sont ceux qui surviennent lorsqu’un nouveau Runtime est placé sur un ordinateur et que le comportement d’une application change. En cas d’exécution sur une version plus récente que celle ciblée, le .NET Framework utilise un comportement *excentrique* pour imiter l’ancienne version ciblée. L’application s’exécute sur la version plus récente, mais agit comme si elle s’exécutait sur l’ancienne version. La plupart des problèmes de compatibilité entre les versions du .NET Framework sont atténués via ce modèle de subterfuge. Par exemple, si un fichier binaire a été compilé pour .NET Framework 4,0, mais qu’il s’exécute sur un ordinateur avec .NET Framework 4,5 ou version ultérieure, il s’exécute en mode de compatibilité .NET Framework 4,0. Cela signifie que la plupart des modifications apportées à la version ultérieure n’affectent pas le binaire.
+
+La version de la .NET Framework qu’une application cible est déterminée par la version cible de l’assembly d’entrée pour le domaine d’application dans lequel le code s’exécute. Tous les assemblys supplémentaires chargés dans ce domaine d’application ciblent cette version. Par exemple, dans le cas d’un exécutable, la version ciblée par l’exécutable est le mode de compatibilité dans lequel tous les assemblys de ce domaine d’application s’exécutent.
+
+Pour afficher la liste des modifications à l’exécution qui s’appliquent à votre environnement, sélectionnez la version de .NET Framework que vous ciblez actuellement, puis la version vers laquelle vous souhaitez effectuer la migration :
+
+[!INCLUDE[versionselector](../../../includes/migration-guide/runtime/versionselector.md)]
 
 ## <a name="retargeting-changes"></a>Modifications de reciblage
 
-Les problèmes de reciblage sont ceux qui surviennent quand un assembly qui ciblait 4.0 est maintenant défini pour cibler 4.5. Maintenant, l’assembly accepte les nouvelles fonctionnalités ainsi que les éventuels problèmes de compatibilité des anciennes fonctionnalités. Là encore, cela dépend de l’assembly d’entrée, comme l’application console qui utilise l’assembly ou le site web qui fait référence à l’assembly.
+Les modifications de reciblage sont celles qui surviennent lorsqu’un assembly est recompilé pour cibler une version plus récente. Le ciblage d’une version plus récente signifie que l’assembly choisit les nouvelles fonctionnalités, ainsi que les problèmes de compatibilité potentiels pour les anciennes fonctionnalités.
 
-## <a name="net-compatibility-diagnostics"></a>Diagnostics de compatibilité .NET
+Pour afficher la liste des modifications de reciblage qui s’appliquent à votre environnement, sélectionnez la version de .NET Framework que vous ciblez actuellement, puis la version vers laquelle vous souhaitez effectuer la migration :
 
-Les diagnostics de compatibilité .NET sont des analyseurs issus de la technologie Roslyn qui permettent d’identifier les problèmes de compatibilité entre les différentes versions du .NET Framework. Cette liste contient tous les analyseurs disponibles, même si chaque migration ne nécessite qu’une partie de ces analyseurs. Les analyseurs permettent de déterminer les problèmes liés à la migration planifiée et signalent uniquement ce type de problèmes.
+[!INCLUDE[versionselector](../../../includes/migration-guide/retargeting/versionselector.md)]
 
-Chaque problème comprend les informations suivantes :
+## <a name="impact-classification"></a>Classification d’impact
 
-- La description de ce qui a changé par rapport à la version précédente.
+Dans les rubriques qui décrivent les modifications du runtime et du reciblage, par exemple, les [modifications de reciblage pour la migration de 4.7.2 vers 4,8](retargeting/4.7.2-4.8.md), les éléments individuels sont classés en fonction de leur impact attendu comme suit :
 
-- La façon dont ce changement affecte les clients et si d’éventuelles solutions de contournement sont disponibles pour préserver la compatibilité entre les versions.
+**Major**\
+Modification importante qui affecte un grand nombre d'applications ou qui nécessite de modifier significativement le code.
 
-- Une évaluation de l’importance du changement. Les problèmes de compatibilité entre applications sont classés de la façon suivante :
+**Minor**\
+Modification qui affecte un petit nombre d’applications ou qui nécessite peu de modifications du code.
 
-    |   |   |
-    |---|---|
-    |Majeur|Modification importante qui affecte un grand nombre d’applications ou qui nécessite de modifier significativement le code.|
-    |Mineur|Modification qui affecte un petit nombre d’applications ou qui nécessite peu de modifications du code.|
-    |Cas limite|Modification qui affecte des applications dans des scénarios très spécifiques et peu courants.|
-    |Transparent|Modification qui n’a pas d’effet visible pour le développeur ou l’utilisateur de l’application.|
+\ de **cas limite**
+Modification qui affecte des applications dans des scénarios très spécifiques qui ne sont pas courants.
 
-- La version indique à quel moment cette modification est apparue pour la première fois dans le .NET Framework. Certaines modifications sont introduites dans une version particulière et annulées dans une version ultérieure ; cela est également indiqué.
-
-- Type de modification :
-
-    |   |   |
-    |---|---|
-    |Reciblage|La modification affecte les applications qui sont recompilées pour cibler une nouvelle version du .NET Framework.|
-    |Exécution|La modification affecte une application existante qui cible une version antérieure du .NET Framework, mais s’exécute sur une version ultérieure.|
-
-- Les API affectées, le cas échéant.
-
-- Les ID des diagnostics disponibles
-
-## <a name="usage"></a>Utilisation
-Pour commencer, sélectionnez le type de modification de la compatibilité ci-dessous :
-
-- [Modifications de reciblage](./retargeting/index.md)
-- [Modifications du runtime](./runtime/index.md)
+\ **transparent**
+Modification qui n'a pas d'effet visible pour le développeur ou l'utilisateur de l'application. L'application n'a pas besoin d'être modifiée en raison de cette modification.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Versions et dépendances](versions-and-dependencies.md)
 - [Nouveautés](../whats-new/index.md)
-- [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)
+- [Éléments obsolètes](../whats-new/whats-obsolete.md)

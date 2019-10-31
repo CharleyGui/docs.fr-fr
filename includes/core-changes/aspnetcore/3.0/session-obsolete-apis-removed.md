@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: bbf8a02096a4a654a041cfe17c760939fc17f2f5
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 4dcb357570cb6597fde86c9e8f2acb74364cfaa3
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394057"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198422"
 ---
-### <a name="session-state-obsolete-apis-removed"></a>État de session : API obsolètes supprimées 
+### <a name="session-state-obsolete-apis-removed"></a>État de session : API obsolètes supprimées
 
 Les API obsolètes pour la configuration des cookies de session ont été supprimées. Pour plus d’informations, consultez [ASPNET/announcements # 257](https://github.com/aspnet/Announcements/issues/257).
 

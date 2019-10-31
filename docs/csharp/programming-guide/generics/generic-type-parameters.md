@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-ms.openlocfilehash: 27cd89c8e82036bf6353030b4f235c2ebe738e6d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 992b71fa2afa6b511d09c69ade26e3b5bc13acd2
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589687"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195474"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Paramètres de type générique (Guide de programmation C#)
 
@@ -37,7 +37,7 @@ Dans chacune de ces instances de `GenericList<T>`, chaque occurrence de `T` dans
   
 - **Pensez** à indiquer les contraintes placées sur un paramètre de type dans le nom de paramètre. Par exemple, un paramètre limité à `ISession` peut être appelé `TSession`.
 
-La règle d’analyse du code [CA1715](/visualstudio/code-quality/ca1715-identifiers-should-have-correct-prefix) vérifie que les paramètres de type sont correctement nommés.
+La règle d’analyse du code [CA1715](/visualstudio/code-quality/ca1715) vérifie que les paramètres de type sont correctement nommés.
   
 ## <a name="see-also"></a>Voir aussi
 

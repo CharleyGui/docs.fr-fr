@@ -23,12 +23,12 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
-ms.openlocfilehash: 8a1b4869588c8dd030cf6276969063ec99b79e33
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0ace2b13473db30a4500648a67f6ce34edf3e587
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046583"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197560"
 ---
 # <a name="declared-element-names-visual-basic"></a>Noms d'éléments déclarés (Visual Basic)
 Chaque élément déclaré a un nom, également appelé *identificateur*, qui est utilisé par le code pour y faire référence.  
@@ -36,7 +36,7 @@ Chaque élément déclaré a un nom, également appelé *identificateur*, qui es
 ## <a name="rules"></a>Règles  
  Un nom d’élément dans Visual Basic doit respecter les règles suivantes :  
   
-- Elle doit commencer par un caractère alphabétique ou un trait de soulignement (`_`).  
+- Il doit commencer par un caractère alphabétique ou un trait de soulignement (`_`).  
   
 - Il doit contenir uniquement des caractères alphabétiques, des chiffres décimaux et des traits de soulignement.  
   
@@ -44,7 +44,7 @@ Chaque élément déclaré a un nom, également appelé *identificateur*, qui es
   
 - Sa longueur ne doit pas dépasser 1023 caractères.  
   
- La limite de longueur de 1023 caractères s’applique également à la chaîne entière d’un nom qualifié complet, `outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`par exemple.  
+ La limite de longueur de 1023 caractères s’applique également à la chaîne entière d’un nom qualifié complet, par exemple `outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`.  
   
  L’exemple suivant montre des noms d’éléments valides.  
   
@@ -63,7 +63,7 @@ Chaque élément déclaré a un nom, également appelé *identificateur*, qui es
  `xyz$wv`  
   
 > [!CAUTION]
-> Les noms d’éléments commençant par un trait`_`de soulignement () ne font pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../../standard/language-independence-and-language-independent-components.md) (CLS), de sorte que le code conforme CLS ne peut pas utiliser un composant qui définit ces noms. Toutefois, un trait de soulignement à toute autre position dans un nom d’élément est conforme CLS.  
+> Les noms d’éléments commençant par un trait de soulignement (`_`) ne font pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../../standard/language-independence-and-language-independent-components.md) (CLS), de sorte que le code conforme CLS ne peut pas utiliser un composant qui définit ces noms. Toutefois, un trait de soulignement à toute autre position dans un nom d’élément est conforme CLS.  
   
 ### <a name="name-length-guidelines"></a>Instructions relatives à la longueur de nom  
  En pratique, votre nom doit être le plus bref possible tout en identifiant clairement la nature de l’élément. Cela permet d’améliorer la lisibilité de votre code et de réduire la longueur de ligne et la taille du fichier source.  
@@ -71,7 +71,7 @@ Chaque élément déclaré a un nom, également appelé *identificateur*, qui es
  En revanche, votre nom ne doit pas être tellement bref qu’il ne décrit pas correctement ce que l’élément représente et comment votre code l’utilise. Cela est important pour la lisibilité de votre code. Si quelqu’un d’autre essaie de le comprendre, ou si vous en examinez un peu plus longtemps après l’avoir écrit, les noms d’éléments appropriés peuvent gagner beaucoup de temps.  
   
 ## <a name="escaped-names"></a>Noms placés dans une séquence d’échappement  
- En règle générale, un nom d’élément ne doit pas correspondre à un mot clé réservé par `Case` Visual Basic `Friend`, tel que ou. Toutefois, vous pouvez définir un *nom*placé dans une séquence d’échappement, placé entre`[ ]`crochets (). Un nom échappé peut correspondre à n’importe quel mot clé Visual Basic, étant donné que les crochets suppriment toute ambiguïté. Vous utilisez également les crochets lorsque vous faites référence au nom plus loin dans votre code.  
+ En règle générale, un nom d’élément ne doit pas correspondre à un mot clé réservé par Visual Basic, tel que `Case` ou `Friend`. Toutefois, vous pouvez définir un *nom échappé*, qui est placé entre crochets (`[ ]`). Un nom échappé peut correspondre à n’importe quel mot clé Visual Basic, étant donné que les crochets suppriment toute ambiguïté. Vous utilisez également les crochets lorsque vous faites référence au nom plus loin dans votre code.  
   
  En général, vous devez utiliser des noms échappés uniquement lorsque :  
   
@@ -79,12 +79,12 @@ Chaque élément déclaré a un nom, également appelé *identificateur*, qui es
   
 - Vous travaillez avec du code écrit dans un autre langage dans lequel le mot clé donné n’est pas réservé.  
   
- Dans le cas contraire, vous devez envisager de renommer l’élément si son nom est en conflit avec un mot clé. L’environnement de développement intégré (IDE) offre un moyen simple de le faire. Pour plus d’informations, consultez [refactorisation](/visualstudio/vb-ide/refactoring-vb).  
+ Dans le cas contraire, vous devez envisager de renommer l’élément si son nom est en conflit avec un mot clé. L’environnement de développement intégré (IDE) offre un moyen simple de le faire. Pour plus d’informations, consultez [refactorisation](/visualstudio/ide/refactoring-in-visual-studio).  
   
 ## <a name="case-sensitivity-in-names"></a>Respect de la casse dans les noms  
  Les noms d’éléments dans Visual Basic ne respectent pas la casse. Cela signifie que lorsque le compilateur compare deux noms qui diffèrent uniquement par la casse, il les interprète comme étant le même nom. Par exemple, il considère que `ABC` et `abc` font référence au même élément déclaré.  
   
- Toutefois, le common language runtime (CLR) utilise la liaison qui respecte la casse. Ainsi, quand vous générez un assembly ou une DLL et que vous le mettez à disposition d’autres assemblys, la casse de vos noms est respectée. Par exemple, si vous définissez une classe avec un élément nommé `ABC`et que d’autres assemblys utilisent votre classe par le biais du Common Language Runtime, ils doivent faire référence à l’élément en tant que `ABC`. Si, par la suite, vous recompilez votre classe et que `abc`vous changez le nom de l’élément en, les autres assemblys qui utilisent votre classe ne peuvent plus accéder à cet élément. Ainsi, quand vous publiez une version mise à jour d’un assembly, vous ne devez pas modifier la casse des éléments publics.  
+ Toutefois, le common language runtime (CLR) utilise la liaison qui respecte la casse. Ainsi, quand vous générez un assembly ou une DLL et que vous le mettez à disposition d’autres assemblys, la casse de vos noms est respectée. Par exemple, si vous définissez une classe avec un élément nommé `ABC`et que d’autres assemblys utilisent votre classe par le biais du Common Language Runtime, ils doivent faire référence à l’élément en tant que `ABC`. Si, par la suite, vous recompilez votre classe et que vous changez le nom de l’élément en `abc`, les autres assemblys qui utilisent votre classe ne peuvent plus accéder à cet élément. Ainsi, quand vous publiez une version mise à jour d’un assembly, vous ne devez pas modifier la casse des éléments publics.  
   
 ## <a name="names-and-locales"></a>Noms et paramètres régionaux  
  Les comparaisons de noms sont indépendantes des paramètres régionaux. Si deux noms correspondent à un paramètre régional, il est garanti qu’ils correspondent dans tous les paramètres régionaux.  

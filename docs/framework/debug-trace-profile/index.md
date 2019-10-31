@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 43927be83b8b2a9163656f8d6d54c2cf83a23e28
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 43e9438ed2c1cd82bb4d89ff082545021b2d543e
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052653"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195341"
 ---
 # <a name="debugging-tracing-and-profiling"></a>Débogage, traçage et profilage
 Pour déboguer une application .NET Framework, le compilateur et l'environnement d'exécution doivent être configurés pour permettre l'attachement d'un débogueur à l'application et la génération de cartes à la fois de symboles et de lignes, si possible, pour l'application et son langage MSIL (Microsoft Intermediate Language) correspondant. Une fois déboguée, une application managée peut être profilée en vue d'améliorer ses performances. Le profilage évalue et décrit les lignes de code source qui génèrent le code le plus fréquemment exécuté, et le temps que demande leur exécution.  
@@ -47,7 +47,7 @@ Pour déboguer une application .NET Framework, le compilateur et l'environnement
  Décrit les compteurs que vous pouvez utiliser pour suivre les performances d'une application.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Déboguer des applications ASP.NET ou ASP.NET Core dans Visual Studio](/visualstudio/debugger/debugging-aspnet-and-ajax-applications)  
+ [Déboguer des applications ASP.NET ou ASP.NET Core dans Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
  Indique la configuration requise et fournit des instructions pour déboguer une application ASP.NET pendant le développement ou après le déploiement.  
   
  [Guide de développement](../development-guide.md)  

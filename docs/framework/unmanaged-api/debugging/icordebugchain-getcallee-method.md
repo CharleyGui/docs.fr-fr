@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 19560c79-abdc-4bdf-a5fe-eb362a59edc0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 79743b78ea3d19bab4756b580d2feddd07e0a23b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d28af09faae84b0482d438ae33f593f250490c1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744980"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73196338"
 ---
 # <a name="icordebugchaingetcallee-method"></a>ICorDebugChain::GetCallee, méthode
 Obtient la chaîne qui a été appelée par cette chaîne.  
@@ -37,12 +35,12 @@ HRESULT GetCallee (
   
 ## <a name="parameters"></a>Paramètres  
  `ppChain`  
- [out] Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne appelée. Si cette chaîne est en cours d’exécution (autrement dit, si cette chaîne n’est pas en attente pour un retour de chaîne appelée), `ppChain` sera null.  
+ à Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne appelée. Si cette chaîne est en cours d’exécution (autrement dit, si cette chaîne n’attend pas le retour d’une chaîne appelée), `ppChain` a la valeur null.  
   
 ## <a name="remarks"></a>Notes  
- Cette chaîne attendra la chaîne appelée retourner avant de reprendre l’exécution. La chaîne appelée peut être sur un autre thread dans le cas d’appels marshalés inter-threads.  
+ Cette chaîne attend que la chaîne appelée retourne avant de reprendre l’exécution. La chaîne appelée peut se trouver sur un autre thread dans le cas d’appels marshalés inter-threads.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

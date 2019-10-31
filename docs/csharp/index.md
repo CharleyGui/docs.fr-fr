@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 78a9bd2cf657376bbc324cdefd423b14a283f842
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 77db5201ab21dff1f04f76da5dd10d07aa377813
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104728"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191807"
 ---
 # <a name="c-guide"></a>Guide C#
 
@@ -58,7 +58,7 @@ Il y a plusieurs sections dans le Guide de C#. Vous pouvez les lire dans l’ord
 - [Procédures pas à pas](./walkthroughs.md)
   - Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.
 
-- [Informations de référence sur le langage](language-reference/index.md)
+- [Référence du langage](language-reference/index.md)
   - Cette section contient la documentation de référence sur le langage C#. Ce document vous aide à comprendre la syntaxe et la sémantique du langage C#. Il comprend également des informations de référence sur les types, les opérateurs, les attributs, les directives de préprocesseur, les commutateurs de compilation ainsi que les erreurs et avertissements du compilateur.
 
 - [Spécification du langage C#](./language-reference/language-specification/index.md)
@@ -66,6 +66,6 @@ Il y a plusieurs sections dans le Guide de C#. Vous pouvez les lire dans l’ord
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Mises en route de Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Prise en main avec VisualC#](/visualstudio/ide/quickstart-csharp-console)
 - [Guide de .NET](../standard/index.md)
 - [Exemples C#](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)

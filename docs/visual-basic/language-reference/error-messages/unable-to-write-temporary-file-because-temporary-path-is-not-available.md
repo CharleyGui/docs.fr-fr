@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30698
 ms.assetid: 3b77b7e3-8b17-40de-b4e1-05e4b9b325ad
-ms.openlocfilehash: e6e7590c10c2234e2bbe2f39a00428494105caae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88f97e9314d5bc77b86dad22f1a7e794cf0caa3b
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766920"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197009"
 ---
 # <a name="unable-to-write-temporary-file-because-temporary-path-is-not-available"></a>Impossible d'écrire dans un fichier temporaire, car le chemin d'accès temporaire n'est pas disponible
-Visual Basic n’a pas pu déterminer le chemin d’accès où sont stockés les fichiers temporaires.  
+Visual Basic n’a pas pu déterminer le chemin d’accès de stockage des fichiers temporaires.  
   
  **ID d’erreur :** BC30698  
   
@@ -27,4 +27,4 @@ Visual Basic n’a pas pu déterminer le chemin d’accès où sont stockés les
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

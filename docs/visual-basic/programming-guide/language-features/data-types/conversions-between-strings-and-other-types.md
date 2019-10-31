@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type conversion [Visual Basic], string
 - regional options
 ms.assetid: c3a99596-f09a-44a5-81dd-1b89a094f1df
-ms.openlocfilehash: e1530c1772808249546b453294fc848c31c1e581
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 06dabbb5d5dfbfb545f01afb157fd532ca0551df
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582939"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197335"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Conversion entre des chaînes et d'autres types (Visual Basic)
 Vous pouvez convertir une valeur numérique, `Boolean` ou de date/heure en `String`. Vous pouvez également convertir le sens inverse, d’une valeur de chaîne en numeric, `Boolean` ou `Date`, à condition que le contenu de la chaîne puisse être interprété comme une valeur valide du type de données de destination. Si ce n’est pas le cas, une erreur d’exécution se produit.  
@@ -49,4 +49,4 @@ Str = "The total count is " & count
 - [Conversions de tableau](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
 - [Types de données](../../../../visual-basic/language-reference/data-types/index.md)
 - [Fonctions de conversion de types](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Introduction aux applications internationales basées sur le .NET Framework](/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+- [Développer des applications mondialisées et localisées](/visualstudio/ide/globalizing-and-localizing-applications)

@@ -4,12 +4,12 @@ ms.date: 03/28/2018
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-ms.openlocfilehash: d874788830ad15325ad93858e48c16cce20056cb
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: cb186e1c893e1c97c96f641edbdf1537a135bfcb
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581959"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191973"
 ---
 # <a name="visual-basic-guide"></a>Guide Visual Basic
 
@@ -50,7 +50,7 @@ Si vous n’avez pas encore Visual Basic, vous pouvez télécharger une version 
 
 ## <a name="related-sections"></a>Rubriques connexes
 
-- [Bien démarrer avec le développement dans Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)  
+- [Bien démarrer avec le développement dans Visual Studio](/visualstudio/ide/visual-studio-ide)  
   Fournit des liens vers des rubriques qui vous permettent d’en savoir plus sur les principes fondamentaux de Visual Studio.
 
 - [Navigateur d’API .NET](../../api/index.md)  

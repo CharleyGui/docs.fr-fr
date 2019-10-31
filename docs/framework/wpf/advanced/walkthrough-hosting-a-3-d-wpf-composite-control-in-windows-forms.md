@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : hébergement d’un contrôle composite WPF 3D dans Windows Forms'
+title: "Procédure pas à pas : hébergement d'un contrôle composite 3-D WPF dans les Windows Forms"
 ms.date: 08/18/2018
 dev_langs:
 - csharp
@@ -8,28 +8,28 @@ helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 - composite controls [WPF], hosting WPF in
 ms.assetid: 486369a9-606a-4a3b-b086-a06f2119c7b0
-ms.openlocfilehash: a35f2b4062edb18914c55046a69dcd9b8825d778
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 748ab027fa8206c163578c89b94460665563cbce
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353843"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197870"
 ---
-# <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d’un contrôle composite WPF 3D dans Windows Forms
+# <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d'un contrôle composite 3-D WPF dans les Windows Forms
 
-Cette procédure pas à pas montre comment vous pouvez créer un contrôle composite [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et l’héberger dans des contrôles et des formulaires [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] à l’aide du contrôle <xref:System.Windows.Forms.Integration.ElementHost>.
+Cette procédure pas à pas montre comment vous pouvez créer un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôle composite et l’héberger dans des contrôles et des formulaires [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] à l’aide du contrôle <xref:System.Windows.Forms.Integration.ElementHost>.
 
-Dans cette procédure pas à pas, vous allez implémenter une [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> qui contient deux contrôles enfants. La <xref:System.Windows.Controls.UserControl> affiche un cône tridimensionnel (3d). Le rendu des objets 3D est beaucoup plus facile avec le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qu’avec [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Par conséquent, il est logique d’héberger une classe [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> pour créer des graphiques 3D dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+Dans cette procédure pas à pas, vous allez implémenter une [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> qui contient deux contrôles enfants. Le <xref:System.Windows.Controls.UserControl> affiche un cône tridimensionnel (3d). Le rendu des objets 3D est beaucoup plus facile avec le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] que avec [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Par conséquent, il est logique d’héberger une classe [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> pour créer des graphiques 3D dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
 
 Cette procédure pas à pas décrit notamment les tâches suivantes :
 
-- Création du [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
+- Création du <xref:System.Windows.Controls.UserControl>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 - Création du projet Windows Forms Host.
 
-- Hébergement du [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl>.
+- Hébergement du <xref:System.Windows.Controls.UserControl>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
 
@@ -40,22 +40,22 @@ Pour exécuter cette procédure pas à pas, vous devez disposer des composants s
 
 1. Créez un projet de **bibliothèque de contrôles utilisateur WPF** nommé `HostingWpfUserControlInWf`.
 
-2. Ouvrez UserControl1. xaml dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+2. Ouvrez UserControl1. xaml dans la [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
 
 3. Remplacez le code généré par le code suivant :
 
      [!code-xaml[HostingWpfUserControlInWf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]
 
-     Ce code définit un <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType> qui contient deux contrôles enfants. Le premier contrôle enfant est un contrôle <xref:System.Windows.Controls.Label?displayProperty=nameWithType> ; le deuxième est un contrôle <xref:System.Windows.Controls.Viewport3D> qui affiche un cône 3D.
+     Ce code définit une <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType> qui contient deux contrôles enfants. Le premier contrôle enfant est un contrôle de <xref:System.Windows.Controls.Label?displayProperty=nameWithType> ; le deuxième est un contrôle de <xref:System.Windows.Controls.Viewport3D> qui affiche un cône 3D.
 
 <a name="To_Create_the_Windows_Forms_Host_Project"></a>
 ## <a name="create-the-host-project"></a>Créer le projet hôte
 
-1. Ajoutez un projet **Windows Forms App (.NET Framework)** nommé `WpfUserControlHost` à la solution.
+1. Ajoutez un projet **Windows Forms application (.NET Framework)** nommé `WpfUserControlHost` à la solution.
 
 2. Dans **Explorateur de solutions**, ajoutez une référence à l’assembly windowsformsintegration, nommé windowsformsintegration. dll.
 
-3. Ajoutez des références aux assemblys [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] suivants :
+3. Ajoutez des références aux assemblys de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] suivants :
 
     - PresentationCore
 
@@ -74,7 +74,7 @@ Pour exécuter cette procédure pas à pas, vous devez disposer des composants s
 
 2. Dans l’Fenêtre Propriétés, cliquez sur **événements**, puis double-cliquez sur l’événement <xref:System.Windows.Forms.Form.Load> pour créer un gestionnaire d’événements.
 
-     L’éditeur de code s’ouvre sur le gestionnaire d’événements `Form1_Load` qui vient d’être généré.
+     L’éditeur de code s’ouvre au gestionnaire d’événements de `Form1_Load` qui vient d’être généré.
 
 3. Remplacez le code dans Form1.cs par le code suivant.
 
@@ -89,7 +89,7 @@ Pour exécuter cette procédure pas à pas, vous devez disposer des composants s
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Concevoir en XAML dans Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Procédure pas à pas : Hébergement d’un contrôle composite WPF dans Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
-- [Procédure pas à pas : Hébergement d’un contrôle composite Windows Forms dans WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Concevoir en XAML dans Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
+- [Procédure pas à pas : Hébergement d'un contrôle composite WPF dans Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Hébergement d’un contrôle composite WPF dans Windows Forms exemple](https://go.microsoft.com/fwlink/?LinkID=160001)

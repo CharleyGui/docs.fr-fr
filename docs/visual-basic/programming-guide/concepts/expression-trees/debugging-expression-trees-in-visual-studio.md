@@ -2,12 +2,12 @@
 title: Débogage d’arborescences d’expressions dans Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 51579c74ecbebbfb7da8bf20bef7592980ec437c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: b27ab41f3c3d9bd488fd0f7aaa5010f2997946de
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320355"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73198275"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Débogage d’arborescences d’expressions dans Visual Studio (Visual Basic)
 Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir un rapide aperçu de l’arborescence d’expression, vous pouvez utiliser la propriété `DebugView`, qui représente des arborescences d’expression [en utilisant une syntaxe spéciale](debugview-syntax.md). (Notez que `DebugView` est disponible uniquement en mode débogage.)  
@@ -41,6 +41,6 @@ Vous pouvez également installer et utiliser [un visualiseur personnalisé](http
 ## <a name="see-also"></a>Voir aussi
 
 - [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
+- [Débogage dans Visual Studio](/visualstudio/debugger/debugger-feature-tour)
 - [Créer des visualiseurs personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data)
 - [`DebugView` syntaxe](debugview-syntax.md)

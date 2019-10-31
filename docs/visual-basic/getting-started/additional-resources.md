@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: dc7653b1d792c66b40c0ab1d55a1614c7a69b7d1
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
-ms.translationtype: HT
+ms.openlocfilehash: 9e55910573b3aa3aecf9082f1b77659a45f883a1
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869062"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196983"
 ---
 # <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -46,7 +46,7 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |----------|----------------|
 |[Channel9](https://channel9.msdn.com/)|Propose des vidéos, des Wikis et des forums à une communauté permanente.|
 
-### <a name="support"></a>Support
+### <a name="support"></a>Assistance
 
 |URL|Description|
 |----------|----------------|
@@ -64,4 +64,4 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 ## <a name="see-also"></a>Voir aussi
 
 - [Bien démarrer avec Visual Basic](../../visual-basic/getting-started/index.md)
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

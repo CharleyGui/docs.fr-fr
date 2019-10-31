@@ -9,16 +9,16 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 0807e46d36a4cf031bc44ae0dc4efab79dd51d03
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: edab64bf02a2b60cce21af536d2da98193dea9a1
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991340"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196219"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World--votre premier programme
 
-Dans cet article, vous allez utiliser Visual Studio pour créer le « Hello World ! » traditionnel . Visual Studio est un environnement de développement intégré (IDE) professionnel avec de nombreuses fonctionnalités conçues pour le développement .NET. Vous n’utiliserez que quelques-unes des fonctionnalités de Visual Studio pour créer ce programme. Pour en savoir plus sur Visual Studio, consultez [prise en main avec C# Visual et Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).
+Dans cet article, vous allez utiliser Visual Studio pour créer le « Hello World ! » traditionnel . Visual Studio est un environnement de développement intégré (IDE) professionnel avec de nombreuses fonctionnalités conçues pour le développement .NET. Vous n’utiliserez que quelques-unes des fonctionnalités de Visual Studio pour créer ce programme. Pour en savoir plus sur Visual Studio, consultez [prise en main avec C#Visual ](/visualstudio/ide/quickstart-csharp-console).
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
@@ -26,7 +26,7 @@ Dans cet article, vous allez utiliser Visual Studio pour créer le « Hello Wor
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
 Démarrez Visual Studio. L’image suivante s’affiche sur Windows :
 
@@ -41,7 +41,7 @@ Sélectionnez **créer un nouveau projet** dans le coin inférieur droit de l’
 
 Dans la boîte de dialogue Nouveau projet, choisissez application console (.NET Core), puis cliquez sur **suivant**. Donnez un nom à votre projet, tel que « HelloWorld », puis appuyez sur **créer**.
 
-Visual Studio ouvre votre projet. Il s’agit déjà d’un « Hello World ! » de base. « Hello, World! ». Appuyez `Ctrl`  +  sur pour exécuter votreprojet.`F5` Visual Studio génère votre projet et convertit le code source en un fichier exécutable. Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application. Vous devez voir le texte suivant dans la fenêtre :
+Visual Studio ouvre votre projet. Il s’agit déjà d’un « Hello World ! » de base. « Hello, World! ». Appuyez sur `Ctrl` + `F5` pour exécuter votre projet. Visual Studio génère votre projet et convertit le code source en un fichier exécutable. Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application. Vous devez voir le texte suivant dans la fenêtre :
 
 ```console
 Hello World!
@@ -67,7 +67,7 @@ Sélectionnez **nouveau** dans le coin supérieur droit de l’image. Visual Stu
 
 Dans la boîte de dialogue Nouveau projet, choisissez « .NET Core » et « application console », puis appuyez sur **suivant**. Vous devez sélectionner la version cible de .NET Framework. La valeur par défaut est correcte. Appuyez sur suivant. Donnez un nom à votre projet, tel que « HelloWorld », puis appuyez sur **créer**. Vous pouvez utiliser l’emplacement de projet par défaut. N’ajoutez pas ce projet au contrôle de code source.
 
-Visual Studio pour Mac ouvre votre projet. Il s’agit déjà d’un « Hello World ! » de base. « Hello, World! ». Appuyez `Ctrl` surpour + exécuter votreprojet. +  `Fn` `F5` Visual Studio pour Mac génère votre projet et convertit le code source en un fichier exécutable. Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application. Vous devez voir le texte suivant dans la fenêtre :
+Visual Studio pour Mac ouvre votre projet. Il s’agit déjà d’un « Hello World ! » de base. « Hello, World! ». Appuyez sur `Ctrl` + `Fn` + `F5` pour exécuter votre projet. Visual Studio pour Mac génère votre projet et convertit le code source en un fichier exécutable. Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application. Vous devez voir le texte suivant dans la fenêtre :
 
 ```console
 Hello World!
@@ -128,4 +128,4 @@ Pour plus d’informations sur les méthodes d’entrée/sortie, consultez <xref
 - [Guide de programmation C#](../index.md)
 - [Exemples et tutoriels](../../../samples-and-tutorials/index.md)
 - [Main() et arguments de ligne de commande](../main-and-command-args/index.md)
-- [Mises en route de Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Prise en main avec VisualC#](/visualstudio/ide/quickstart-csharp-console)

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure pas à pas : Accéder au web avec async et await (C#)'
+title: 'Procédure pas à pas : accès au web avec Async et Await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 0c80bb079e66a56d6bbc30ba43269aee7ac4ab5b
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 30677be2299dfa4411263dc5c61093fc0ca0f442
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168358"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73195648"
 ---
-# <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : Accéder au web avec async et await (C#)
+# <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : accès au web avec Async et Await (C#)
 
 Vous pouvez écrire des programmes asynchrones plus facilement et intuitivement en utilisant les fonctionnalités async/await. Vous pouvez écrire du code asynchrone qui ressemble au code synchrone et laisser le compilateur gérer les difficiles fonctions de rappel et continuations qu’implique généralement le code asynchrone.
 
@@ -17,10 +17,10 @@ Pour plus d’informations sur la fonctionnalité Async, consultez [Programmatio
 
 Cette procédure pas à pas commence avec une application Windows Presentation Foundation (WPF) synchrone qui additionne le nombre d’octets figurant dans une liste de sites web. La procédure pas à pas convertit ensuite l’application en solution asynchrone en utilisant les nouvelles fonctionnalités.
 
-Si vous ne souhaitez pas créer les applications vous-même, vous pouvez télécharger [Async Sample: Accessing the Web Walkthrough (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) (Exemple Async : Procédure pas à pas pour accéder au web (C# et Visual Basic)).
+Si vous ne souhaitez pas générer les applications vous-même, vous pouvez télécharger [Exemple Async : accès à la procédure web (C# et Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 
 > [!NOTE]
-> Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
+> Pour exécuter les exemples, Visual Studio 2012 ou ultérieur et le .NET Framework 4.5 ou ultérieur doivent être installés sur votre ordinateur.
 
 ## <a name="create-a-wpf-application"></a>Créer une application WPF
 
@@ -62,7 +62,7 @@ Si vous ne souhaitez pas créer les applications vous-même, vous pouvez téléc
 
 6. Placez la zone de texte et le bouton de manière à ce qu’ils apparaissent tous les deux dans la fenêtre **MainWindow**.
 
-     Pour plus d’informations sur le concepteur XAML WPF, consultez [Création d’une interface utilisateur à l’aide du concepteur XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+     Pour plus d’informations sur le concepteur XAML WPF, consultez [Création d’une interface utilisateur à l’aide du concepteur XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
 
 ## <a name="add-a-reference"></a>Ajouter une référence
 
@@ -254,7 +254,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
      L'appel à `webReq.GetResponseAsync` retourne un `Task(Of WebResponse)` ou `Task<WebResponse>`. Un opérateur await est alors appliqué à la tâche pour récupérer la valeur `WebResponse`.
 
-     Si votre méthode async a un travail à effectuer qui ne dépend pas de la complétion de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l’appel à la méthode async et avant l’application de l’opérateur `await`. Pour obtenir des exemples, consultez [Guide pratique pour effectuer plusieurs requêtes web en parallèle avec async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+     Si votre méthode async a un travail à effectuer qui ne dépend pas de la complétion de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l’appel à la méthode async et avant l’application de l’opérateur `await`. Pour obtenir des exemples, consultez [Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
 3. Comme vous avez ajouté l’opérateur `await` à l’étape précédente, une erreur de compilation se produit. L’opérateur peut être utilisé uniquement dans les méthodes marquées avec le modificateur [async](../../../language-reference/keywords/async.md). Ignorez l'erreur quand que vous répétez les étapes de conversion pour remplacer l'appel à `CopyTo` par un appel à `CopyToAsync`.
 
@@ -330,7 +330,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
     - Ajoutez « Async » au nom de la méthode.
 
-    - Il n'existe aucune variable de retour de tâche, T, cette fois, car `SumPageSizesAsync` ne retourne pas de valeur pour T. (La méthode ne comporte pas d’instruction `return`.) Toutefois, la méthode doit retourner un `Task` pour pouvoir être attendue. Par conséquent, remplacez le type de retour de la méthode `void` par `Task`.
+    - Il n’existe aucune variable de retour de tâche, T, cette fois, car `SumPageSizesAsync` ne retourne pas de valeur pour T. (la méthode n’a aucune instruction `return`.) Toutefois, la méthode doit retourner une `Task` pour pouvoir être attendue. Par conséquent, remplacez le type de retour de la méthode `void` par `Task`.
 
     Le code suivant illustre ces modifications.
 
@@ -690,11 +690,11 @@ namespace AsyncExampleWPF
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple Async : Accessing the Web Walkthrough (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Exemple Async : accès à la procédure web (C# et Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [async](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
 - [Types de retour async (C#)](./async-return-types.md)
 - [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957)
-- [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Guide pratique : effectuer plusieurs requêtes web en parallèle avec async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

@@ -1,15 +1,15 @@
 ---
 title: Ajouter WCF Web Service Reference
 description: Vue d’ensemble de l’outil Microsoft WCF Web Service Reference Provider, qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, de manière similaire à la fonctionnalité Ajouter une référence de service pour les projets .NET Framework.
-author: mlacouture
-ms.date: 04/19/2018
+author: dasetser
+ms.date: 10/29/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 28eaae4a83d918f8a9e5376eb3c8d42843ffa027
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: feecf374e1af48f349495c13ea91b810c6b0a1c3
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773955"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191895"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Utiliser l’outil WCF Web Service Reference Provider
 
@@ -76,12 +76,16 @@ Lors de l’affichage de la progression, l’outil :
 
 Une fois ces processus terminés, vous pouvez créer une instance du type de client WCF généré et appeler les opérations de service.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="see-also"></a>Voir aussi
 
-### <a name="feedback--questions"></a>Commentaires et questions
+- [Prise en main des applications Windows Communication Foundation](../../framework/wcf/getting-started-tutorial.md)
+- [Services de Windows Communication Foundation et services de données WCF dans Visual Studio](/visualstudio/data-tools/windows-communication-foundation-services-and-wcf-data-services-in-visual-studio)
+- [Fonctionnalités prises en charge par WCF sur .NET Core](https://github.com/dotnet/wcf/blob/master/release-notes/SupportedFeatures-v2.1.0.md)
 
-Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub](https://github.com/dotnet/wcf/issues/new). Vous pouvez également consulter les questions ou problèmes existants dans le [dépôt WCF sur GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).
+## <a name="feedback--questions"></a>Commentaires et questions
 
-### <a name="release-notes"></a>Notes de publication
+Si vous avez des questions ou des commentaires, signalez-le auprès de la [communauté des développeurs](https://developercommunity.visualstudio.com/) à l’aide de l’outil [signaler un problème](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) .
+
+## <a name="release-notes"></a>Notes de publication
 
 - Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md).

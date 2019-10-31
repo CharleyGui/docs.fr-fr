@@ -15,23 +15,21 @@ helpviewer_keywords:
 ms.assetid: 52c543ab-9ef5-4ee7-b836-c0ffc35cd45b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9e6638f731b335ba7552379cdc77fa912a1def4d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20f2041599e85b8df20a7a9cf44680da9f17244e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748375"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73195930"
 ---
 # <a name="iclrruntimeinfoloaderrorstring-method"></a>ICLRRuntimeInfo::LoadErrorString, méthode
-Traduit une valeur HRESULT dans un message d’erreur approprié pour la culture spécifiée.  
+Convertit une valeur HRESULT en un message d’erreur approprié pour la culture spécifiée.  
   
  Cette méthode remplace les fonctions suivantes :  
   
-- [LoadStringRC](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
+- [LoadStringRC,](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
   
-- [LoadStringRCEx](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
+- [LoadStringRCEx,](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,16 +43,16 @@ HRESULT LoadErrorString(
   
 ## <a name="parameters"></a>Paramètres  
  `iResourceID`  
- [in] HRESULT à traduire.  
+ dans HRESULT à traduire.  
   
  `pwzBuffer`  
- [out] La chaîne de message associée à la valeur HRESULT donné.  
+ à Chaîne de message associée au HRESULT donné.  
   
  `pcchBuffer`  
- [in, out] La taille de `pwzbuffer` pour éviter les dépassements de mémoire tampon. Si `pwzbuffer` a la valeur null, `pcchBuffer` fournit la taille attendue de `pwzbuffer` pour autoriser la pré-allocation.  
+ [in, out] Taille de `pwzbuffer` pour éviter les dépassements de mémoire tampon. Si `pwzbuffer` a la valeur null, `pcchBuffer` fournit la taille attendue de `pwzbuffer` pour autoriser la préallocation.  
   
  `iLocaleID`  
- [in] L’identificateur de culture. Pour utiliser la culture par défaut, vous devez spécifier -1.  
+ dans Identificateur de culture. Pour utiliser la culture par défaut, vous devez spécifier-1.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -65,12 +63,12 @@ HRESULT LoadErrorString(
 |E_POINTER|`pcchBuffer` a la valeur null.|  
 |E_INVALIDARG|`pwzBuffer` a la valeur null.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

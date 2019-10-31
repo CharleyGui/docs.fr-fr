@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 891ceb43-5161-421e-a0bf-299962fd7efd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6c557df3c69b9d18b95ebf33815b92dcb9097f4e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: aa0bc34c3cb3ac330582cee0843022e913376fc2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69987541"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192158"
 ---
 # <a name="icordebugassemblyenum-interface"></a>ICorDebugAssemblyEnum, interface
 
@@ -31,19 +29,19 @@ Implémente les méthodes ICorDebugEnum et énumère les tableaux ICorDebugAssem
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugassemblyenum-next-method.md)|Obtient le nombre spécifié d' `ICorDebugAssembly` instances dans l’énumération, en démarrant à partir de la position actuelle.|  
+|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugassemblyenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorDebugAssembly` dans l’énumération, en démarrant à partir de la position actuelle.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

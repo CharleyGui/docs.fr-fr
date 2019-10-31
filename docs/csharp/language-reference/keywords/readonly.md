@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 6c48806e54f11bce930d03a53b010c337e6658f8
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 8ecf399e48da12a9dee19bb217b8668c6a53d3ad
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960854"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191857"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -27,7 +27,7 @@ Le mot clé `readonly` est un modificateur qui peut être utilisé dans quatre c
   - Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le biais du champ en lecture seule.
 
   > [!WARNING]
-  > Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « ne déclarez pas les types référence mutables en lecture seule ».
+  > Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104) : « ne déclarez pas les types référence mutables en lecture seule ».
 
 - Dans une définition [`readonly struct`](#readonly-struct-example), `readonly` indique que le `struct` est immuable.
 - Dans une [définition de membre`readonly`](#readonly-member-examples), `readonly` indique qu’un membre d’un `struct` ne fait pas muter l’état interne de la structure.

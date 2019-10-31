@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 36887017-670b-4f21-b406-8fab956f84a3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c79f3b3b976b83eb99f8aa26d38a1fe316de471a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 03cb1556ee971124ed4c591f38d9f892fc7df7b0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745000"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73192154"
 ---
 # <a name="icordebugchaingetactiveframe-method"></a>ICorDebugChain::GetActiveFrame, méthode
-Obtient l’actif (autrement dit, plus récente) frame sur la chaîne.  
+Obtient le frame actif (c’est-à-dire le plus récent) de la chaîne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT GetActiveFrame (
   
 ## <a name="parameters"></a>Paramètres  
  `ppFrame`  
- [out] Un pointeur vers l’adresse d’un objet ICorDebugFrame qui représente l’actif (autrement dit, plus récente) frame sur la chaîne.  
+ à Pointeur vers l’adresse d’un objet ICorDebugFrame qui représente le frame actif (autrement dit, le plus récent) de la chaîne.  
   
 ## <a name="remarks"></a>Notes  
- Si aucun frame de pile managée est disponible, `ppFrame` a la valeur null.  
+ Si aucun frame de pile managé n’est disponible, `ppFrame` a la valeur null.  
   
- Si le frame actif n’est pas disponible, l’appel réussira et `ppFrame` sera null. Cadres active ne sera pas disponibles pour les chaînes lancées en raison de CHAIN_ENTER_UNMANAGED et pour certaines chaînes lancées en raison de CHAIN_CLASS_INIT. Consultez l’énumération CorDebugChainReason.  
+ Si le frame actif n’est pas disponible, l’appel s’effectue correctement et `ppFrame` a la valeur null. Les frames actifs ne sont pas disponibles pour les chaînes lancées en raison de CHAIN_ENTER_UNMANAGED, et pour certaines chaînes lancées en raison de CHAIN_CLASS_INIT. Consultez l’énumération CorDebugChainReason,.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42033
 ms.assetid: 4575554d-3615-46e4-9c6a-18e9c338e4ed
-ms.openlocfilehash: 81156fd7b1c9957486bcdd898c90a2bad2945829
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1ae4113505ca63df9b20e6e71aa0b418da4ef924
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61935263"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197346"
 ---
 # <a name="bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits"></a>Valeur de checksum erronée, pas de chiffre hexadécimal ou de nombre impair de chiffres hexadécimaux
 Une valeur de checksum contient des chiffres hexadécimaux non valides ou comporte un nombre impair de chiffres.  
@@ -34,4 +34,4 @@ Une valeur de checksum contient des chiffres hexadécimaux non valides ou compor
 ## <a name="see-also"></a>Voir aussi
 
 - [ASP.NET Overview](/aspnet/overview) (Vue d’ensemble d’ASP.NET)
-- [Nous contacter](/visualstudio/ide/talk-to-us)
+- [Nous contacter](/visualstudio/ide/feedback-options)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : Attribution de contenu WPF dans Windows Forms au moment du design'
+title: 'Procédure pas à pas : assignation du contenu WPF sur les Windows Forms au moment du design'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF content [Windows Forms], assigning at design time
@@ -11,24 +11,24 @@ ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: bc5f5e2d8808c0a60df721bf2c0ed76b45ef49a0
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 0fc7cf40acb141d698f59a1b7fbe6c32269ea61d
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666258"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197440"
 ---
-# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : Assigner du contenu WPF sur Windows Forms au moment du design
+# <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : assigner du contenu WPF sur Windows Forms au moment du design
 
 Cet article vous montre comment sélectionner les types de contrôle Windows Presentation Foundation (WPF) que vous souhaitez afficher dans votre formulaire. Vous pouvez sélectionner tout type de contrôle WPF inclus dans votre projet.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Cette procédure pas à pas nécessite Visual Studio.
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Ouvrez Visual Studio et créez un projet d’application Windows Forms dans Visual Basic ou un C# visuel `SelectingWpfContent`nommé.
+Ouvrez Visual Studio et créez un projet d’application Windows Forms dans Visual Basic ou un C# visuel nommé `SelectingWpfContent`.
 
 > [!NOTE]
 > Lors de l'hébergement de contenu WPF, seuls les projets Visual Basic et C# sont pris en charge.
@@ -37,19 +37,19 @@ Ouvrez Visual Studio et créez un projet d’application Windows Forms dans Visu
 
 Après avoir ajouté des types de contrôles WPF au projet, vous pouvez les héberger dans différents contrôles <xref:System.Windows.Forms.Integration.ElementHost>.
 
-1. Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution. Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`. Pour plus d’informations, consultez [Procédure pas à pas : Création d’un contenu WPF sur Windows Forms au moment](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)de la conception.
+1. Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution. Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`. Pour plus d’informations, consultez [procédure pas à pas : création de contenu WPF sur Windows Forms au moment du design](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
 
 2. En mode Design, assurez-vous que `UserControl1` est sélectionné.
 
-3. Dans la fenêtre **Propriétés** , affectez à la valeur <xref:System.Windows.FrameworkElement.Width%2A> des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur **200**.
+3. Dans la fenêtre **Propriétés** , affectez la valeur **200**aux propriétés <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A>.
 
-4. Ajoutez un <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> <xref:System.Windows.Controls.UserControl> contrôle au et <xref:System.Windows.Controls.TextBox.Text%2A> affectez la valeur **contenu hébergé**à la propriété.
+4. Ajoutez un contrôle de <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> au <xref:System.Windows.Controls.UserControl> et définissez la valeur de la propriété <xref:System.Windows.Controls.TextBox.Text%2A> sur le **contenu hébergé**.
 
 5. Ajoutez un deuxième <xref:System.Windows.Controls.UserControl> WPF au projet. Utilisez le nom par défaut pour le type de contrôle, `UserControl2.xaml`.
 
-6. Dans la fenêtre **Propriétés** , affectez à la valeur <xref:System.Windows.FrameworkElement.Width%2A> des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur **200**.
+6. Dans la fenêtre **Propriétés** , affectez la valeur **200**aux propriétés <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A>.
 
-7. Ajoutez un <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> <xref:System.Windows.Controls.UserControl> contrôle au et <xref:System.Windows.Controls.TextBox.Text%2A> affectez la valeur **contenu hébergé 2**à la propriété.
+7. Ajoutez un contrôle de <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> au <xref:System.Windows.Controls.UserControl> et définissez la valeur de la propriété <xref:System.Windows.Controls.TextBox.Text%2A> sur le **contenu hébergé 2**.
 
    > [!NOTE]
    > En général, vous devez héberger du contenu WPF plus sophistiqué. Le contrôle <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> est utilisé ici uniquement à titre d'illustration.
@@ -62,23 +62,23 @@ Vous pouvez assigner du contenu WPF différent à un contrôle <xref:System.Wind
 
 1. Ouvrez `Form1` dans le Concepteur Windows Forms.
 
-2. Dans la **boîte à outils**, double `UserControl1` -cliquez sur pour créer `UserControl1` une instance de sur le formulaire.
+2. Dans la **boîte à outils**, double-cliquez sur `UserControl1` pour créer une instance de `UserControl1` sur le formulaire.
 
    Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.
 
-3. Dans le panneau des balises `elementHost1`actives de, ouvrez la liste déroulante **Sélectionner le contenu hébergé** .
+3. Dans le panneau des balises actives pour `elementHost1`, ouvrez la liste déroulante **Sélectionner le contenu hébergé** .
 
 4. Sélectionnez **UserControl2** dans la zone de liste déroulante.
 
    Le contrôle `elementHost1` héberge maintenant une instance du type `UserControl2`.
 
-5. Dans la fenêtre **Propriétés** , vérifiez que la <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> propriété a la valeur **UserControl2**.
+5. Dans la fenêtre **Propriétés** , vérifiez que la propriété <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> a la valeur **UserControl2**.
 
-6. À partir de la **boîte à outils**, dans le groupe interopérabilité <xref:System.Windows.Forms.Integration.ElementHost> **WPF** , faites glisser un contrôle sur le formulaire.
+6. À partir de la **boîte à outils**, dans le groupe **interopérabilité WPF** , faites glisser un contrôle <xref:System.Windows.Forms.Integration.ElementHost> sur le formulaire.
 
    Le nom par défaut du nouveau contrôle est `elementHost2`.
 
-7. Dans le panneau des balises `elementHost2`actives de, ouvrez la liste déroulante **Sélectionner le contenu hébergé** .
+7. Dans le panneau des balises actives pour `elementHost2`, ouvrez la liste déroulante **Sélectionner le contenu hébergé** .
 
 8. Sélectionnez **UserControl1** dans la liste déroulante.
 
@@ -90,4 +90,4 @@ Vous pouvez assigner du contenu WPF différent à un contrôle <xref:System.Wind
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Migration et interopérabilité](../../wpf/advanced/migration-and-interoperability.md)
 - [Utilisation de contrôles WPF](using-wpf-controls.md)
-- [Concevoir en XAML dans Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Concevoir en XAML dans Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)

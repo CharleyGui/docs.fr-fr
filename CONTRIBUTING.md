@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0783c6ab80f3a07bd7b7e5a005444218c17e85fb
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 25615dd43f1ae4f56c7bced7f79a0612093a21fb
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035459"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191698"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -15,9 +15,9 @@ Nous vous remercions de l’intérêt que vous portez à la documentation .NET �
 
 Le document aborde le processus de contribution aux articles et exemples de code qui sont hébergés sur le [site de la documentation .NET](https://docs.microsoft.com/dotnet). Les contributions peuvent aller de la simple correction de fautes de frappe à la rédaction complexe de nouveaux articles.
 
+- [À faire et à ne pas faire](#dos-and-donts)
 - [Processus de contribution](#process-for-contributing)
 - [L’expérience interactive C#](#the-c-interactive-experience)
-- [À faire et à ne pas faire](#dos-and-donts)
 - [Contrat de licence de contribution (CLA)](#contributor-license-agreement)
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le site de la documentation de .NET repose sur plusieurs référentiels en plus de celui-ci :
@@ -28,6 +28,24 @@ Ce référentiel contient la documentation conceptuelle de .NET. Le site de la d
     Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/dotnet-API-docs/Problems](https://github.com/dotnet/dotnet-api-docs/issues).
 - [Informations de référence sur le kit SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)  
     Les problèmes et Taks pour ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
+
+## <a name="dos-and-donts"></a>À faire et à ne pas faire
+
+La liste suivante montre quelques règles directrices que vous devez garder à l’esprit quand vous contribuez à la documentation .NET :
+
+- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps. Pour les modifications en bloc, décomposer le travail en un nombre de fichiers de plus petite taille (jusqu’à 100 fichiers). Cette recommandation est fortement recommandée si votre demande de tirage ne respecte pas les instructions suivantes.
+- **Examinez** [les problèmes de recherche de suggestions](https://github.com/dotnet/docs/labels/up-for-grabs) sur les tâches.
+- **Créez un** PR pour chaque tâche. Les demandes de tirage qui incluent plusieurs modifications non liées sont beaucoup plus difficiles à examiner. Cela retarde les révisions et la fusion de PRs. Cette règle s’applique également aux révisions : nous essayons de ne pas suggérer de modifications non liées dans les révisions. Nous demandons aux révisions de la communauté d’adhérer à cette instruction.
+- **Fournissez** une description claire du travail dans votre demande de tirage. Dites-nous ce qui a changé et pourquoi. La description par défaut de « Update article.md » n’est pas utile pour les réviseurs.
+- **N’envoyez pas** PRs pour les modifications de style uniquement sans discussion préalable. Ces demandes de précision prennent plus de temps pour vérifier la précision, et la fusion peut souvent entraîner des conflits de fusion avec d’autres mises à jour importantes. Nous travaillons à la suite d’un style cohérent, mais nous équilibrerons ce travail avec d’autres tâches. Les articles sont mis en conformité du style lorsque nous faisons des mises à jour majeures pour d’autres raisons. 
+- **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md). Les nouveaux ajouts doivent suivre ces instructions.
+- **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
+- **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
+- **À faire** : Bloguer et tweeter (ou autre) régulièrement à propos de vos contributions.
+
+Ces instructions nous aident à respecter l’heure de chacun. De nombreuses personnes contribuent à ces dépôts. En suivant ces instructions, il est plus facile d’examiner et de fusionner votre demande de tirage en temps opportun. Ces pratiques réduisent les conflits avec la fonction PRs des autres membres de la communauté et de notre équipe. Étant donné que le fichier PRs qui ne suit pas ces instructions entraîne souvent un travail supplémentaire pour les membres de la communauté et des États-Unis, ceux-ci peuvent être rejetés. Si vous souhaitez une exception, commencez par créer un problème.
+
+> Note : vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./styleguide/template.md). Nous travaillons actuellement à une cohérence globale du site.
 
 ## <a name="process-for-contributing"></a>Processus de contribution
 
@@ -135,19 +153,6 @@ Le C# expérience interactive modifie comment nous collaborons avec des exemples
 
 - Les articles dans lesquels l’échantillon génère une sortie plus volumineuse ne doivent pas inclure ces informations dans les commentaires. Le code est masqué une fois l’échantillon exécuté.
 - Articles dans lesquels l’échantillon montre une rubrique, mais la sortie ne fait pas partie intégrante pour être comprise. Par exemple, le code exécute une requête LINQ pour expliquer la syntaxe de la requête et affiche chaque élément dans la collection en sortie.
-
-## <a name="dos-and-donts"></a>À faire et à ne pas faire
-
-La liste suivante montre quelques règles directrices que vous devez garder à l’esprit quand vous contribuez à la documentation .NET :
-
-- **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps. Pour les modifications en bloc, décomposer le travail en un nombre de fichiers de plus petite taille (jusqu’à 100 fichiers).
-- **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md).
-- **À faire** : Utiliser le fichier de [modèle](./styleguide/template.md) comme point de départ de votre travail.
-- **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
-- **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
-- **À faire** : Bloguer et tweeter (ou autre) régulièrement à propos de vos contributions.
-
-> Note : vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./styleguide/template.md). Nous travaillons actuellement à une cohérence globale du site.
 
 ## <a name="contributor-license-agreement"></a>Contrat de licence du contributeur
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 21605b30867d7be0b906b431253c183e655bea82
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 7b22bbf75b29fdffd9927110ebe5b4e5309cd778
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922482"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191839"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (Options du compilateur C#)
 L’option **-doc** vous permet de placer des commentaires de documentation dans un fichier XML.  
@@ -32,7 +32,7 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
  `file`  
  Fichier de sortie XML, qui est rempli avec les commentaires des fichiers de code source de la compilation.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans les fichiers de code source, les commentaires de documentation qui précèdent les éléments suivants peuvent être traités et ajoutés au fichier XML :  
   
 - Types définis par l’utilisateur, tels qu’une [classe](../keywords/class.md), un [délégué](../keywords/delegate.md) ou une [interface](../keywords/interface.md)  
@@ -41,7 +41,7 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
   
  Le fichier de code source qui contient Main est sorti en premier dans le document XML.  
   
- Pour utiliser le fichier .xml généré avec la fonctionnalité [IntelliSense](/visualstudio/ide/using-intellisense), faites en sorte que le nom du fichier .xml soit identique à l’assembly que vous souhaitez prendre en charge, puis vérifiez que le fichier .xml est dans le même répertoire que l’assembly. Ainsi, quand l’assembly est référencé dans le projet Visual Studio, le fichier .xml est également trouvé. Pour plus d’informations, consultez [Insertion de commentaires dans le code XML](/visualstudio/ide/supplying-xml-code-comments).  
+ Pour utiliser le fichier .xml généré avec la fonctionnalité [IntelliSense](/visualstudio/ide/using-intellisense), faites en sorte que le nom du fichier .xml soit identique à l’assembly que vous souhaitez prendre en charge, puis vérifiez que le fichier .xml est dans le même répertoire que l’assembly. Ainsi, quand l’assembly est référencé dans le projet Visual Studio, le fichier .xml est également trouvé. Pour plus d’informations, consultez [Insertion de commentaires dans le code XML](/visualstudio/ide/reference/generate-xml-documentation-comments).  
   
  Sauf si vous compilez avec [-target:module](./target-module-compiler-option.md), `file` contiendra des balises \<assembly>\<-assembly> spécifiant le nom du fichier qui contient le manifeste d’assembly pour le fichier de sortie de la compilation.  
   
@@ -58,7 +58,7 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
   
 3. Modifiez la propriété **Fichier de documentation XML**.  
   
- Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
   
 ## <a name="see-also"></a>Voir aussi
 
