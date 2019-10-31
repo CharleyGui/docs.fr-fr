@@ -2,12 +2,12 @@
 title: Souveraineté des données par microservice
 description: La souveraineté des données par microservice est un des points clés des microservices. Chaque microservice doit être le seul propriétaire de sa base de données. Il ne doit la partager avec aucun autre. Bien entendu, toutes les instances d’un microservice se connectent à la même base de données à haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: 3261446a84038b7b634242b0a0737472965168de
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: f606d6314f38bf3e2c163871af432806dddc7446
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834467"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191911"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Souveraineté des données par microservice
 
@@ -25,9 +25,11 @@ D’un autre côté, l’approche traditionnelle (données monolithiques) utilis
 
 Dans l’approche classique, il existe une seule base de données partagée entre tous les services, généralement dans une architecture à plusieurs niveaux. Dans l’approche de microservices, chaque microservice est propriétaire de son modèle/de ses données. À première vue, l’approche consistant à utiliser une base de données centralisée est plus simple et prend en charge la réutilisation des entités dans différents sous-systèmes à des fins de cohérence. Mais en réalité, vous vous retrouvez avec des tables énormes qui sont au service de différents sous-systèmes, et qui incluent des attributs et des colonnes superflus dans la plupart des cas. Tout se passe comme si vous utilisiez la même carte pour faire une petite promenade à pied, faire un trajet en voiture d’une journée et apprendre la géographie.
 
-Une application monolithique avec, en général, une seule base de données relationnelle présente deux avantages importants : Des [transactions ACID](https://en.wikipedia.org/wiki/ACID) et le langage SQL, les deux fonctionnant sur toutes les tables et les données relatives à votre application. Cette approche vous permet d’écrire facilement une requête qui combine les données de plusieurs tables.
+Une application monolithique, qui comprend généralement une seule base de données relationnelle, offre deux avantages importants : les [transactions ACID](https://en.wikipedia.org/wiki/ACID) et le langage SQL, ces deux éléments fonctionnant sur toutes les tables et toutes les données relatives à votre application. Cette approche vous permet d’écrire facilement une requête qui combine les données de plusieurs tables.
 
-Cependant, l’accès aux données devient beaucoup plus complexe quand vous passez à une architecture en microservices. Même quand des transactions ACID peuvent ou doivent être utilisées dans un microservice ou un contexte délimité, les données détenues par chaque microservice sont privées et ne sont accessibles que par le biais de l’API du microservice. L’encapsulation des données garantit que les microservices sont faiblement couplés et qu’ils peuvent évoluer indépendamment les uns des autres. Si plusieurs services accèdent aux mêmes données, les mises à jour du schéma nécessitent l’application de mises à jour coordonnées à tous les services, ce qui peut compromettre l’autonomie du cycle de vie des microservices. Toutefois, les structures de données distribuées ne vous permettent pas d’effectuer une même transaction ACID sur plusieurs microservices. Vous devez donc recourir à la cohérence à terme quand un processus d’entreprise s’étend sur plusieurs microservices. Cela est beaucoup plus difficile à implémenter que de simples jointures SQL, car vous ne pouvez pas créer de contraintes d’intégrité ni utiliser de transactions distribuées entre des bases de données distinctes, comme nous l’allons l’expliquer plus tard. De même, de nombreuses autres fonctionnalités propres aux bases de données relationnelles ne sont pas disponibles à l’échelle de plusieurs microservices.
+Toutefois, l’accès aux données devient bien plus compliqué lorsque vous passez à une architecture de microservices. Même en cas d’utilisation de transactions ACID au sein d’un microservice ou d’un contexte limité, il est essentiel de considérer que les données détenues par chaque microservice sont privées pour ce microservice et qu’elles doivent être accessibles de manière synchrone via ses points de terminaison d’API (REST, gRPC, SOAP, etc.) ou de façon asynchrone via la messagerie (AMQP ou similaire).
+
+L’encapsulation des données garantit que les microservices sont faiblement couplés et qu’ils peuvent évoluer indépendamment les uns des autres. Si plusieurs services accèdent aux mêmes données, les mises à jour du schéma nécessitent l’application de mises à jour coordonnées à tous les services, ce qui peut compromettre l’autonomie du cycle de vie des microservices. Toutefois, les structures de données distribuées ne vous permettent pas d’effectuer une même transaction ACID sur plusieurs microservices. Vous devez donc recourir à la cohérence à terme quand un processus d’entreprise s’étend sur plusieurs microservices. Cela est beaucoup plus difficile à implémenter que de simples jointures SQL, car vous ne pouvez pas créer de contraintes d’intégrité ni utiliser de transactions distribuées entre des bases de données distinctes, comme nous l’allons l’expliquer plus tard. De même, de nombreuses autres fonctionnalités propres aux bases de données relationnelles ne sont pas disponibles à l’échelle de plusieurs microservices.
 
 Pour aller encore plus loin, des microservices différents utilisent souvent différents *genres* de bases de données. Les applications modernes stockent et traitent différents genres de données. Une base de données relationnelle ne constitue pas toujours le meilleur choix. Pour certains cas d’usage, une base de données NoSQL comme Azure CosmosDB ou MongoDB peut offrir un modèle de données plus pratique ainsi qu’un meilleur niveau de performance et de scalabilité qu’une base de données SQL comme SQL Server ou Azure SQL Database. Dans d’autres cas, une base de données relationnelle reste la meilleure approche. Les applications basées sur des microservices utilisent donc souvent un mélange de bases de données SQL et NoSQL, une approche parfois appelée « [persistance polyglotte](https://martinfowler.com/bliki/PolyglotPersistence.html) ».
 
@@ -47,7 +49,7 @@ La conception DDD tire parti des microservices en obtenant les limites réelles 
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Chris Richardson. Modèle : Base de données par service** \
+- **Chris Richardson. Modèle : base de données par service** \
   <https://microservices.io/patterns/data/database-per-service.html>
 
 - **Martin Fowler. BoundedContext** \
@@ -56,7 +58,7 @@ La conception DDD tire parti des microservices en obtenant les limites réelles 
 - **Martin Fowler. PolyglotPersistence** \
   <https://martinfowler.com/bliki/PolyglotPersistence.html>
 
-- **Alberto Brandolini. Strategic Domain Driven Design with Context Mapping** \
+- **Alberto Brandolini. Conception pilotée par le domaine stratégique avec mappage de contexte** \
   <https://www.infoq.com/articles/ddd-contextmapping>
 
 >[!div class="step-by-step"]

@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 1fec4aef-0a06-4df0-bae7-d31a9ef9603d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 65af5303468904ee40da4d567381782af70bfb38
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: db6a20dee21b6c8bbd55fa9b52a159a00fe310d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776498"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092034"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK (pointeur fonction)
 Pointe vers une fonction qui avertit l’hôte qu’un handle d’attente (<xref:System.Threading.WaitHandle>) a été signalé ou a expiré.  
   
- Ce pointeur de fonction a été déconseillé dans le .NET Framework 4.  
+ Ce pointeur de fonction est déconseillé dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
   
 ## <a name="parameters"></a>Paramètres  
  `lpParameter`  
- [in] Pointeur vers un objet qui contient les informations définies par l’hôte.  
+ dans Pointeur vers un objet qui contient les informations définies par l’hôte.  
   
  `TimerOrWaitFired`  
- [in] `true` si le handle d’attente a expiré, ou `false` si elle a été signalée.  
+ [in] `true` si le handle d’attente a dépassé le délai d’attente, ou `false` s’il a été signalé.  
   
 ## <a name="remarks"></a>Notes  
- La fonction à laquelle `WAITORTIMERCALLBACK` points est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement.  
+ La fonction vers laquelle `WAITORTIMERCALLBACK` points est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorWks.dll  
+ **Bibliothèque :** MSCorWks. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

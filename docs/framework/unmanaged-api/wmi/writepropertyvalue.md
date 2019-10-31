@@ -14,14 +14,12 @@ helpviewer_keywords:
 - WritePropertyValue function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a3c42129835f9b30bed493a0992d49d7e2a458e2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f02fb3877d55e9f47384b281573202712c29c606
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798176"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107288"
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue fonction)
 Écrit un nombre spécifié d’octets dans une propriété identifiée par un descripteur de propriété.
@@ -61,7 +59,7 @@ dans Nombre d’octets écrits dans la propriété. Pour plus d’informations, 
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Une incompatibilité de type s’est produite. |
@@ -71,14 +69,14 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemClassObject :: WritePropertyValue](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-writepropertyvalue) .
 
-Utilisez cette fonction pour définir la chaîne et toutes les autres`DWORD` `QWORD` données non ou non.
+Utilisez cette fonction pour définir la chaîne et toutes les autres données non`DWORD` ou non`QWORD`.
 
-Pour les valeurs de propriété qui `lNumBytes` ne sont pas de type chaîne, doit être la bonne taille de données du type de propriété spécifié. Pour les valeurs de propriété `lNumBytes` de type chaîne, doit correspondre à la longueur de la chaîne spécifiée en octets, et la chaîne elle-même doit être de longueur égale en octets et être suivie d’un caractère de fin null.
+Pour les valeurs de propriété qui ne sont pas des chaînes, `lNumBytes` doit être la bonne taille de données du type de propriété spécifié. Pour les valeurs de propriété de type chaîne, `lNumBytes` doit correspondre à la longueur de la chaîne spécifiée en octets, et la chaîne elle-même doit être de longueur égale en octets et être suivie d’un caractère de fin null.
 
-## <a name="requirements"></a>Configuration requise  
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

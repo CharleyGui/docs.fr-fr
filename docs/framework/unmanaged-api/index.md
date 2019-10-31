@@ -7,14 +7,12 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 677bee7319a80e405098f0dd5c8684765806c5f7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f7dd78b889129998dee31a22f5dd23325613b8ea
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796874"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73092027"
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
