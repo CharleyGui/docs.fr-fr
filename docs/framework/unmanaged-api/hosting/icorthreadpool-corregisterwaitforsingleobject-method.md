@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: cade1feb-71d2-43ed-85ca-7b2e9da12994
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d2da8f5326bcd7f2c25c79027bb8a980e7d17e72
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 52492c3fb5e2393bd0258280f238fd245df6cb89
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751186"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133238"
 ---
-# <a name="icorthreadpoolcorregisterwaitforsingleobject-method"></a><span data-ttu-id="2ad40-102">ICorThreadpool::CorRegisterWaitForSingleObject, méthode</span><span class="sxs-lookup"><span data-stu-id="2ad40-102">ICorThreadpool::CorRegisterWaitForSingleObject Method</span></span>
-<span data-ttu-id="2ad40-103">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="2ad40-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icorthreadpoolcorregisterwaitforsingleobject-method"></a><span data-ttu-id="cae5f-102">ICorThreadpool::CorRegisterWaitForSingleObject, méthode</span><span class="sxs-lookup"><span data-stu-id="cae5f-102">ICorThreadpool::CorRegisterWaitForSingleObject Method</span></span>
+<span data-ttu-id="cae5f-103">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="cae5f-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2ad40-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2ad40-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cae5f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cae5f-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CorRegisterWaitForSingleObject (  
@@ -41,15 +39,15 @@ HRESULT CorRegisterWaitForSingleObject (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="2ad40-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="2ad40-105">Requirements</span></span>  
- <span data-ttu-id="2ad40-106">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2ad40-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cae5f-105">spécifications</span><span class="sxs-lookup"><span data-stu-id="cae5f-105">Requirements</span></span>  
+ <span data-ttu-id="cae5f-106">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cae5f-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2ad40-107">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2ad40-107">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="cae5f-107">**En-tête :** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="cae5f-107">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="2ad40-108">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2ad40-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="cae5f-108">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="cae5f-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="2ad40-109">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2ad40-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="cae5f-109">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cae5f-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2ad40-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2ad40-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cae5f-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cae5f-110">See also</span></span>
 
-- [<span data-ttu-id="2ad40-111">ICorThreadpool, interface</span><span class="sxs-lookup"><span data-stu-id="2ad40-111">ICorThreadpool Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)
+- [<span data-ttu-id="cae5f-111">ICorThreadpool, interface</span><span class="sxs-lookup"><span data-stu-id="cae5f-111">ICorThreadpool Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)

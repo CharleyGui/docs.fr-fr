@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0014bb66-590c-486c-9ade-f2133905cd99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 141e6e303933c46a85adf08339856f8964b21f4e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 34b5f3bd5908d3833a2223b078f8d796234641be
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796694"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134452"
 ---
-# <a name="iassemblyenumclone-method"></a><span data-ttu-id="b1c5d-102">IAssemblyEnum::Clone, méthode</span><span class="sxs-lookup"><span data-stu-id="b1c5d-102">IAssemblyEnum::Clone Method</span></span>
-<span data-ttu-id="b1c5d-103">Crée une copie superficielle de cet objet [IAssemblyEnum](iassemblyenum-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="b1c5d-103">Creates a shallow copy of this [IAssemblyEnum](iassemblyenum-interface.md) object.</span></span>  
+# <a name="iassemblyenumclone-method"></a><span data-ttu-id="9c47b-102">IAssemblyEnum::Clone, méthode</span><span class="sxs-lookup"><span data-stu-id="9c47b-102">IAssemblyEnum::Clone Method</span></span>
+<span data-ttu-id="9c47b-103">Crée une copie superficielle de cet objet [IAssemblyEnum](iassemblyenum-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="9c47b-103">Creates a shallow copy of this [IAssemblyEnum](iassemblyenum-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b1c5d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b1c5d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9c47b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c47b-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Clone (  
@@ -35,17 +33,17 @@ HRESULT Clone (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b1c5d-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="b1c5d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9c47b-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="9c47b-105">Parameters</span></span>  
  `ppEnum`  
- <span data-ttu-id="b1c5d-106">à Pointeur vers la copie.</span><span class="sxs-lookup"><span data-stu-id="b1c5d-106">[out] A pointer to the copy.</span></span>  
+ <span data-ttu-id="9c47b-106">à Pointeur vers la copie.</span><span class="sxs-lookup"><span data-stu-id="9c47b-106">[out] A pointer to the copy.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b1c5d-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="b1c5d-107">Requirements</span></span>  
- <span data-ttu-id="b1c5d-108">**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b1c5d-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9c47b-107">spécifications</span><span class="sxs-lookup"><span data-stu-id="9c47b-107">Requirements</span></span>  
+ <span data-ttu-id="9c47b-108">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9c47b-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b1c5d-109">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="b1c5d-109">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="9c47b-109">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="9c47b-109">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="b1c5d-110">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b1c5d-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="9c47b-110">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9c47b-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b1c5d-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b1c5d-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c47b-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c47b-111">See also</span></span>
 
-- [<span data-ttu-id="b1c5d-112">IAssemblyEnum, interface</span><span class="sxs-lookup"><span data-stu-id="b1c5d-112">IAssemblyEnum Interface</span></span>](iassemblyenum-interface.md)
+- [<span data-ttu-id="9c47b-112">IAssemblyEnum, interface</span><span class="sxs-lookup"><span data-stu-id="9c47b-112">IAssemblyEnum Interface</span></span>](iassemblyenum-interface.md)

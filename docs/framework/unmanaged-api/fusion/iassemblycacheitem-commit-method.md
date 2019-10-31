@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: c2321f17-f46f-4815-ae41-b28678753613
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 380181d8e309ba4b51d49aae9159f0bbf7e0250f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5de522c00da76e7c01369c706cb7f9e2bdad4b3b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796724"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134515"
 ---
-# <a name="iassemblycacheitemcommit-method"></a><span data-ttu-id="3967e-102">IAssemblyCacheItem::Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="3967e-102">IAssemblyCacheItem::Commit Method</span></span>
-<span data-ttu-id="3967e-103">Valide la référence de l’assembly mis en cache dans la mémoire.</span><span class="sxs-lookup"><span data-stu-id="3967e-103">Commits the cached assembly reference to memory.</span></span>  
+# <a name="iassemblycacheitemcommit-method"></a><span data-ttu-id="b7c22-102">IAssemblyCacheItem::Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="b7c22-102">IAssemblyCacheItem::Commit Method</span></span>
+<span data-ttu-id="b7c22-103">Commits the cached assembly reference to memory.</span><span class="sxs-lookup"><span data-stu-id="b7c22-103">Commits the cached assembly reference to memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3967e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3967e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b7c22-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7c22-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Commit (  
@@ -36,20 +34,20 @@ HRESULT Commit (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3967e-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="3967e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b7c22-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="b7c22-105">Parameters</span></span>  
  `dwFlags`  
- <span data-ttu-id="3967e-106">dans Indicateurs définis dans fusion. idl.</span><span class="sxs-lookup"><span data-stu-id="3967e-106">[in] Flags defined in Fusion.idl.</span></span>  
+ <span data-ttu-id="b7c22-106">[in] Flags defined in Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="b7c22-106">[in] Flags defined in Fusion.idl.</span></span>  
   
  `pulDisposition`  
- <span data-ttu-id="3967e-107">[out, optional] Valeur qui indique le résultat de l’opération.</span><span class="sxs-lookup"><span data-stu-id="3967e-107">[out, optional] A value that indicates the result of the operation.</span></span>  
+ <span data-ttu-id="b7c22-107">[out, optional] A value that indicates the result of the operation.</span><span class="sxs-lookup"><span data-stu-id="b7c22-107">[out, optional] A value that indicates the result of the operation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3967e-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="3967e-108">Requirements</span></span>  
- <span data-ttu-id="3967e-109">**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3967e-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b7c22-108">spécifications</span><span class="sxs-lookup"><span data-stu-id="b7c22-108">Requirements</span></span>  
+ <span data-ttu-id="b7c22-109">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b7c22-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3967e-110">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="3967e-110">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="b7c22-110">**Header:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="b7c22-110">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="3967e-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3967e-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="b7c22-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7c22-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3967e-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3967e-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b7c22-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b7c22-112">See also</span></span>
 
-- [<span data-ttu-id="3967e-113">IAssemblyCacheItem, interface</span><span class="sxs-lookup"><span data-stu-id="3967e-113">IAssemblyCacheItem Interface</span></span>](iassemblycacheitem-interface.md)
+- [<span data-ttu-id="b7c22-113">IAssemblyCacheItem, interface</span><span class="sxs-lookup"><span data-stu-id="b7c22-113">IAssemblyCacheItem Interface</span></span>](iassemblycacheitem-interface.md)
