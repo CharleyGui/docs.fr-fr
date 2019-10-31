@@ -15,20 +15,18 @@ helpviewer_keywords:
 ms.assetid: 8463a98a-de4a-418e-beb0-9611885ae6b0
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 65218eb6b5ba26bfb1cbee4f1f276c39e8623c5d
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 83801f7133df6ffb4bdf4a816142849f40baeb53
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700701"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73125660"
 ---
-# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="61d50-102">ICorDebugCode::GetEnCRemapSequencePoints, méthode</span><span class="sxs-lookup"><span data-stu-id="61d50-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
+# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="b55ca-102">ICorDebugCode::GetEnCRemapSequencePoints, méthode</span><span class="sxs-lookup"><span data-stu-id="b55ca-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
 
-<span data-ttu-id="61d50-103">Cette méthode n’est pas implémentée dans la version actuelle du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="61d50-103">This method is not implemented in the current version of the .NET Framework.</span></span>
+<span data-ttu-id="b55ca-103">Cette méthode n’est pas implémentée dans la version actuelle du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="b55ca-103">This method is not implemented in the current version of the .NET Framework.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="61d50-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="61d50-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b55ca-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b55ca-104">Syntax</span></span>
 
 ```cpp
 HRESULT GetEnCRemapSequencePoints(
