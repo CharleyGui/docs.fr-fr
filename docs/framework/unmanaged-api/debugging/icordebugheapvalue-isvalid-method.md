@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3ca3b86e90dcb76c1fece44cf2c5ed68e073d8e7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7edf0065fa7eb39dada167a682f2b634a438f1f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757223"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138402"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid, méthode
-Obtient une valeur qui indique si l’objet représenté par ICorDebugHeapValue est valide.  
+Obtient une valeur qui indique si l’objet représenté par cet ICorDebugHeapValue est valide.  
   
- Cette méthode a été déconseillée dans le .NET Framework version 2.0.  
+ Cette méthode est déconseillée dans la version 2,0 de .NET Framework.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +37,14 @@ HRESULT IsValid (
   
 ## <a name="parameters"></a>Paramètres  
  `pbValid`  
- [out] Pointeur vers une valeur booléenne qui indique si cette valeur sur le tas est valide.  
+ à Pointeur vers une valeur booléenne qui indique si cette valeur sur le tas est valide.  
   
 ## <a name="remarks"></a>Notes  
  La valeur n’est pas valide si elle a été récupérée par le garbage collector.  
   
- Cette méthode est dépréciée. Dans le .NET Framework 2.0, toutes les valeurs sont valides jusqu'à ce que [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) est appelée, à quel moment les valeurs sont invalidés.  
+ Cette méthode est dépréciée. Dans la .NET Framework 2,0, toutes les valeurs sont valides jusqu’à ce que [ICorDebugController :: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) soit appelé, auquel les valeurs sont invalidées.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

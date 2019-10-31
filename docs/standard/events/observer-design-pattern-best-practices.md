@@ -6,14 +6,12 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], best practices
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c37480f18c100d66e78e851439bd15e2ecfdd381
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 2da29e0baf429142707d0ddd39b1a11c13a17a90
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615195"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141541"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Meilleures pratiques du modèle de design observateur
 Dans le .NET Framework, le modèle de conception observateur est implémenté comme un ensemble d’interfaces. L'interface <xref:System.IObservable%601?displayProperty=nameWithType> représente le fournisseur de données, qui est également chargé de fournir une implémentation <xref:System.IDisposable> permettant aux observateurs d'annuler leur abonnement aux notifications. L'interface <xref:System.IObserver%601?displayProperty=nameWithType> représente l'observateur. Cette rubrique décrit les meilleures pratiques que les développeurs doivent suivre quand ils implémentent le modèle de conception observateur à l'aide de ces interfaces.  
@@ -56,5 +54,5 @@ Dans le .NET Framework, le modèle de conception observateur est implémenté co
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Guide pratique pour implémenter un observateur](../../../docs/standard/events/how-to-implement-an-observer.md)
+- [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
 - [Guide pratique pour implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md)

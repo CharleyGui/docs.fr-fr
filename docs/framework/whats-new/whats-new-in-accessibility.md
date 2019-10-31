@@ -7,14 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cfea1d5ee19d9fb61094b60e0175ddfd2f120494
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 150b8458828b1c0f42fc4cb0980a8ff090a89e2a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774280"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140651"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 

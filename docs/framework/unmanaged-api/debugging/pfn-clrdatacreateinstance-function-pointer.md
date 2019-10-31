@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 5c66ac57-d751-4de5-af9f-26ceb949af8b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 81fcc99a739d5e673d1d01d5efb801ba4930bdee
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 426a8acf2e9319725cf592db00dc97c8960bca4f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752546"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139169"
 ---
-# <a name="pfnclrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance (pointeur fonction)
+# <a name="pfn_clrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance (pointeur fonction)
 Pointe vers une fonction qui crée un objet d’interface pour l’élément cible spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,21 +36,21 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
   
 ## <a name="parameters"></a>Paramètres  
  `iid`  
- [in] L’identificateur de l’interface à instancier.  
+ dans Identificateur de l’interface à instancier.  
   
  `target`  
- [in] Un pointeur vers un implémenté par l’utilisateur [ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objet qui représente l’élément cible pour lequel créer l’objet d’interface.  
+ dans Pointeur vers un objet [ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) implémenté par l’utilisateur qui représente l’élément cible pour lequel créer l’objet d’interface.  
   
  `iface`  
- [out] Pointeur vers l’adresse de l’objet de l’interface retournée.  
+ à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
 ## <a name="remarks"></a>Notes  
- Le `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation varie selon le type d’élément cible qui est représenté. L’élément cible peut être un processus, vidage de mémoire, ordinateur distant et ainsi de suite.  
+ L’objet `ICLRDataTarget` est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl  
+ **En-tête :** ClrData. idl  
   
  **Bibliothèque :** CorGuids.lib  
   

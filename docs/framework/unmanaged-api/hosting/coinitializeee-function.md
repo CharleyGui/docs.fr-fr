@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7e42a928-5068-4ba6-b8c3-806551a01fa8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 72b95b634ffc352b7fad006e0ccd68e6e159dee9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9e90772ae8c3e6be5744fcccc9901123df871831
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779107"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131939"
 ---
 # <a name="coinitializeee-function"></a>CoInitializeEE, fonction
-Garantit que le moteur d’exécution du common language runtime est chargé dans un processus. Cette fonction est déconseillée dans le .NET Framework 4. Utilisez le [ICLRRuntimeHost::Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) méthode à la place.  
+Garantit que le moteur d’exécution de common language runtime est chargé dans un processus. Cette fonction est déconseillée dans le .NET Framework 4. Utilisez à la place la méthode [ICLRRuntimeHost :: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +35,10 @@ HRESULT CoInitializeEE (
   
 ## <a name="parameters"></a>Paramètres  
  `fFlags`  
- [in] Parmi les [COINITIEE](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md) constantes d’énumération.  
+ dans Une des constantes d’énumération [COINITIEE,](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md) .  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur COM standard, tel que défini dans Winerror.h et les valeurs dans le tableau suivant.  
+ Cette méthode retourne les codes d’erreur COM standard tels qu’ils sont définis dans Winerror. h, ainsi que les valeurs du tableau suivant.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
@@ -51,12 +49,12 @@ HRESULT CoInitializeEE (
 ## <a name="remarks"></a>Notes  
  Cette méthode charge le moteur d’exécution s’il n’a pas été chargé précédemment.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

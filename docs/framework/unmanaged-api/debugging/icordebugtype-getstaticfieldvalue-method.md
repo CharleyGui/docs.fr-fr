@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 62eb5d55-53ee-4fb3-8d47-7b6c96808f9e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1054c7c977a487bb5a4bbf464322a65bcc039608
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 95183701987d3ddec3835a17c5d256c25c2c4c64
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755737"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132065"
 ---
 # <a name="icordebugtypegetstaticfieldvalue-method"></a>ICorDebugType::GetStaticFieldValue, méthode
-Obtient un pointeur d’interface vers un objet ICorDebugValue qui contient la valeur du champ statique référencé par le champ spécifié de jetons dans le frame de pile spécifié.  
+Obtient un pointeur d’interface vers un objet ICorDebugValue qui contient la valeur du champ statique référencé par le jeton de champ spécifié dans le frame de pile spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +37,25 @@ HRESULT GetStaticFieldValue (
   
 ## <a name="parameters"></a>Paramètres  
  `fieldDef`  
- [in] Un `mdFieldDef` jeton qui spécifie le champ statique.  
+ dans Jeton `mdFieldDef` qui spécifie le champ statique.  
   
  `pFrame`  
- [in] Pointeur vers un ICorDebugFrame qui représente le frame de pile.  
+ dans Pointeur vers un ICorDebugFrame qui représente le frame de pile.  
   
  `ppValue`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugValue` qui contient la valeur du champ statique.  
+ à Pointeur vers l’adresse d’un `ICorDebugValue` qui contient la valeur du champ statique.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetStaticFieldValue` méthode peut être utilisée uniquement si le type est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, comme indiqué par le [ICorDebugType::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) (méthode).  
+ La méthode `GetStaticFieldValue` peut être utilisée uniquement si le type est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, comme indiqué par la méthode [ICorDebugType :: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) .  
   
- Pour les types non génériques, l’opération effectuée par `GetStaticFieldValue` est identique à l’appel [ICorDebugClass::GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md) sur l’objet ICorDebugClass qui est retourné par [ICorDebugType::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md).  
+ Pour les types non génériques, l’opération effectuée par `GetStaticFieldValue` est identique à l’appel de [ICorDebugClass :: GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md) sur l’objet ICorDebugClass retourné par [ICorDebugType :: GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md).  
   
- Pour les types génériques, une valeur de champ statique sera par rapport à une instanciation particulière. En outre, si le champ statique ne peut être relatif à un thread, un contexte ou un domaine d’application, puis le frame de pile aidera le débogueur déterminer la valeur appropriée.  
+ Pour les types génériques, une valeur de champ statique sera relative à une instanciation particulière. En outre, si le champ statique peut être relatif à un thread, à un contexte ou à un domaine d’application, le frame de pile aide le débogueur à déterminer la valeur appropriée.  
   
 ## <a name="remarks"></a>Notes  
- `GetStaticFieldValue` peut être utilisé uniquement lorsqu’un appel à `ICorDebugType::GetType` retourne la valeur ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE.  
+ `GetStaticFieldValue` peut être utilisé uniquement quand un appel à `ICorDebugType::GetType` retourne la valeur ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

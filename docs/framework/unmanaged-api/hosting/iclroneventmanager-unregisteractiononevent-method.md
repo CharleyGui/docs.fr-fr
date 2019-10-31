@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 00ad48dfe57d388653a9151393dd7b91a28a9615
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0f952978a2591c82b2ad3f5059070124b7873c94
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770026"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140812"
 ---
 # <a name="iclroneventmanagerunregisteractiononevent-method"></a>ICLROnEventManager::UnregisterActionOnEvent, méthode
-Annule l’inscription d’un pointeur de rappel précédemment enregistré pour l’événement spécifié.  
+Annule l’inscription d’un pointeur de rappel précédemment inscrit pour l’événement spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +36,28 @@ HRESULT UnregisterActionOnEvent (
   
 ## <a name="parameters"></a>Paramètres  
  `event`  
- [in] Parmi les [EClrEvent](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) valeurs indiquant l’événement pour lequel annuler l’enregistrement du pointeur de rappel décrit par `pAction`.  
+ dans L’une des valeurs [EClrEvent](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) , indiquant l’événement pour lequel annuler l’inscription du pointeur de rappel décrit par `pAction`.  
   
  `pAction`  
- [in] Un pointeur vers un [IActionOnCLREvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) objet passé en tant que paramètre à la [RegisterActionOnEvent](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) (méthode).  
+ dans Pointeur vers un objet [IActionOnCLREvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) qui a été passé en tant que paramètre à la méthode [RegisterActionOnEvent](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) .  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`UnregisterActionOnEvent` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

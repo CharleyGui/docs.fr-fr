@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b944cf49-918d-4c4e-993b-77d097a52550
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36d4b0692b112a66fea3dd878c7054a083fb68ff
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4068166438c524ad1c0ed4efe455b1f66b6641d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951145"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140830"
 ---
 # <a name="iclroneventmanagerregisteractiononevent-method"></a>ICLROnEventManager::RegisterActionOnEvent, méthode
 Inscrit un pointeur de rappel pour l’événement spécifié.  
@@ -47,7 +45,7 @@ HRESULT RegisterActionOnEvent (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`RegisterActionOnEvent`retourné avec succès.|  
+|S_OK|`RegisterActionOnEvent` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -55,17 +53,17 @@ HRESULT RegisterActionOnEvent (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- L’hôte peut inscrire des rappels pour l’un des deux types d’événements, ou `EClrEvent`les deux, décrits par. L’hôte obtient l' `ICLROnEventManager` interface en appelant la méthode [ICLRControl:: GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) .  
+ L’hôte peut inscrire des rappels pour l’un des deux types d’événements, ou les deux, décrits par `EClrEvent`. L’hôte obtient l’interface `ICLROnEventManager` en appelant la méthode [ICLRControl :: GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) .  
   
 > [!NOTE]
-> Les événements `RegisterActionOnEvent` enregistrés peuvent être déclenchés plusieurs fois et à partir de différents threads pour signaler un déchargement ou la désactivation du CLR.  
+> Les événements que `RegisterActionOnEvent` registres peuvent être déclenchés plusieurs fois et à partir de différents threads pour signaler un déchargement ou la désactivation du CLR.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

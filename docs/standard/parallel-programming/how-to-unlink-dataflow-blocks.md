@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Dissocier des blocs de flux de données'
+title: 'Comment : dissocier des blocs de flux de données'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +10,14 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, unlinking dataflow blocks
 ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 989220141e4af5d64c3994479949547136843ff5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: b49cfc9730ba154202baf15093a54ba3ce0e2a8a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591996"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139293"
 ---
-# <a name="how-to-unlink-dataflow-blocks"></a>Procédure : Dissocier des blocs de flux de données
+# <a name="how-to-unlink-dataflow-blocks"></a>Comment : dissocier des blocs de flux de données
 Ce document explique comment dissocier un bloc de flux de données cible de sa source.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]

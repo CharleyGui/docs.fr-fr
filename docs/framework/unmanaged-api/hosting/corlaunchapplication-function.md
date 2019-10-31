@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 71f362a9-8fe2-47ce-9302-05a645cf3d7d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9861de733a9acb43c7e2a4b4941f9945fc5f0ba7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e01698d2d8491b2496bb664c13dca97964cd1481
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758373"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136945"
 ---
 # <a name="corlaunchapplication-function"></a>CorLaunchApplication, fonction
-Démarre l’application sur le chemin d’accès réseau spécifié, à l’aide des manifestes spécifiés et autres données d’application.  
+Démarre l’application au chemin d’accès réseau spécifié, à l’aide des manifestes spécifiés et d’autres données d’application.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,32 +43,32 @@ HRESULT CorLaunchApplication (
   
 ## <a name="parameters"></a>Paramètres  
  `dwClickOnceHost`  
- [in] Une valeur de la [HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) énumération qui spécifie le type d’hôte qui lance l’application.  
+ dans Valeur de l’énumération [HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) qui spécifie le type d’hôte qui lance l’application.  
   
  `pwzAppFullName`  
- [in] Le nom complet de l’application qui est lancée.  
+ dans Nom complet de l’application en cours de lancement.  
   
  `dwManifestPaths`  
- [in] Le nombre de chemins d’accès de manifestes pour l’application.  
+ dans Nombre de chemins d’accès de manifeste pour l’application.  
   
  `ppwzManifestPaths`  
- [in] Tableau de chaînes, dont chacun spécifie un chemin d’accès à un manifeste d’application qui est lancée.  
+ dans Tableau de chaînes, chacune spécifiant un chemin d’accès à un manifeste pour l’application en cours de lancement.  
   
  `dwActivationData`  
- [in] Le nombre d’éléments de données d’activation pour l’application qui est lancée.  
+ dans Nombre d’éléments de données d’activation pour l’application en cours de lancement.  
   
  `ppwzActivationData`  
- [in] Tableau de chaînes, chacune d’elles étant un élément de données d’activation pour l’application qui est lancée.  
+ dans Tableau de chaînes, chacune d’entre elles étant un élément de données d’activation pour l’application en cours de lancement.  
   
  `lpProcessInformation`  
- [out] Pointeur vers les informations sur le processus dans lequel l’application a été chargée.  
+ à Pointeur vers des informations sur le processus dans lequel l’application a été chargée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

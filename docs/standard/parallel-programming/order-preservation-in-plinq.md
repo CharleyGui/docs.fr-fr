@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1ddb6a5534eb7ef2dc823ac05e03d3b2d3d0cee7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 5b067fa277816e6105d37047c6c4996a4cbb9b5a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623968"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138220"
 ---
 # <a name="order-preservation-in-plinq"></a>Conservation de l'ordre en PLINQ
 Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant l’exactitude. Une requête doit s’exécuter aussi rapidement que possible, mais toujours générer des résultats corrects. Dans certains cas, l’exactitude requiert que l’ordre de la séquence source soit conservé ; toutefois, le classement peut coûter cher en calcul. Par conséquent, par défaut, PLINQ ne conserve pas l’ordre de la séquence source. À cet égard, PLINQ est similaire à [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], mais pas à LINQ to Objects, qui conserve le classement.  
@@ -66,7 +64,7 @@ Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant 
   
  certains opérateurs de requête PLINQ se comportent différemment, selon que leur séquence source est classée ou non classée. Le tableau suivant répertorie ces opérateurs.  
   
-|Opérateur|Résultat lorsque la séquence source est classée|Résultat de la séquence source n’est pas classée|  
+|opérateur|Résultat lorsque la séquence source est classée|Résultat de la séquence source n’est pas classée|  
 |--------------|------------------------------------------------|--------------------------------------------------|  
 |<xref:System.Linq.ParallelEnumerable.Aggregate%2A>|Sortie non déterministe pour les opérations non associatives ou non commutatives|Sortie non déterministe pour les opérations non associatives ou non commutatives|  
 |<xref:System.Linq.ParallelEnumerable.All%2A>|Non applicable|Non applicable|  

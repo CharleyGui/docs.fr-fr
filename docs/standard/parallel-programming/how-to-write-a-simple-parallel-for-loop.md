@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : écrire une boucle Parallel.For simple'
+title: 'Comment : écrire une boucle Parallel.For simple'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,21 +10,19 @@ helpviewer_keywords:
 - for loop, parallel construction in .NET
 - parallel for loops, how to use
 ms.assetid: 9029ba7f-a9d1-4526-8c84-c88716dba5d4
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f2070562ba0910b5cac951e925bd9c5f0e7f68fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 78f07a4f0118c6bce7a043f111988281ddd6add0
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574922"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139656"
 ---
-# <a name="how-to-write-a-simple-parallelfor-loop"></a>Procédure : écrire une boucle Parallel.For simple
+# <a name="how-to-write-a-simple-parallelfor-loop"></a>Comment : écrire une boucle Parallel.For simple
 
 Cette rubrique contient deux exemples qui illustrent la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Le premier utilise la surcharge de méthode <xref:System.Threading.Tasks.Parallel.For%28System.Int64%2CSystem.Int64%2CSystem.Action%7BSystem.Int64%7D%29?displayProperty=nameWithType> et le second utilise la surcharge <xref:System.Threading.Tasks.Parallel.For%28System.Int32%2CSystem.Int32%2CSystem.Action%7BSystem.Int32%7D%29?displayProperty=nameWithType>, les deux surcharges les plus simples de la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Vous pouvez utiliser ces deux surcharges de la méthode <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> quand vous n'avez pas besoin d'annuler la boucle, de sortir des itérations de boucle ou de maintenir un état de thread local.
 
 > [!NOTE]
-> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Cette documentation utilise les expressions lambda pour définir les délégués de la bibliothèque parallèle de tâches. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
 Le premier exemple calcule la taille des fichiers dans un répertoire unique. Le deuxième calcule le produit de deux matrices.
 
@@ -64,7 +62,7 @@ Dans le code de cet exemple, la valeur de retour de <xref:System.Threading.Tasks
 
 Vous pouvez utiliser l'Assistant Performance pour afficher l'utilisation du processeur sur votre ordinateur. À des fins de test, augmentez le nombre de colonnes et de lignes des matrices. Plus les matrices sont grandes, plus la différence de performances est élevée entre les versions parallèles et séquentielles du calcul. Quand la matrice est petite, la version séquentielle s'exécute plus rapidement en raison de la surcharge liée au paramétrage de la boucle parallèle.
 
-Les appels synchrones aux ressources partagées, telles que la console ou le système de fichiers, entraînent une dégradation sensible des performances d'une boucle parallèle. Quand vous mesurez les performances, essayez d'éviter les appels tels que <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> dans la boucle.
+Les appels synchrones aux ressources partagées, telles que la console ou le système de fichiers, entraînent une dégradation sensible des performances d’une boucle parallèle. Quand vous mesurez les performances, essayez d'éviter les appels tels que <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> dans la boucle.
 
 ## <a name="compile-the-code"></a>Compiler le code
 

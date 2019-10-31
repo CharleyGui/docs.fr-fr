@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 45ae0502-0a31-4342-b7e3-f36e1cf738f3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b58da58897edbf3ec9492c1f9f1b2f3d7b83e07a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bcf1b49f0576f5dbd73c001f8edff7a9ab29af22
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780083"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139500"
 ---
 # <a name="icorruntimehostmapfile-method"></a>ICorRuntimeHost::MapFile, méthode
-Mappe le fichier spécifié dans la mémoire. Cette méthode est obsolète.  
+Mappe le fichier spécifié en mémoire. Cette méthode est obsolète.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT MapFile(
   
 ## <a name="parameters"></a>Paramètres  
  `hFile`  
- [in] Le handle du fichier à mapper.  
+ dans Handle du fichier à mapper.  
   
  `hMapAddress`  
- [out] L’adresse mémoire de départ à partir duquel commencer le fichier de mappage.  
+ à Adresse de départ de la mémoire à laquelle commencer le mappage du fichier.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Version du .NET framework :** 1.0, 1.1  
+ **Version de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

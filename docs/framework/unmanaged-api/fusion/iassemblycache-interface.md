@@ -14,32 +14,30 @@ helpviewer_keywords:
 ms.assetid: 71ea170f-872d-4fc5-81b6-27da1dec9b19
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6dab5fe941fce3c23ba718906b29c80c6d257c2f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5ed0075da1429c70900750f3f28e8ce36a41fb28
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796769"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134541"
 ---
 # <a name="iassemblycache-interface"></a>IAssemblyCache, interface
-Représente le Global Assembly Cache pour une utilisation par la technologie de fusion.  
+Represents the global assembly cache for use by the fusion technology.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[CreateAssemblyCacheItem, méthode](iassemblycache-createassemblycacheitem-method.md)|Obtient une référence à un nouvel [IAssemblyCacheItem](iassemblycacheitem-interface.md).|  
-|[CreateAssemblyScavenger, méthode](iassemblycache-createassemblyscavenger-method.md)|Réservé à un usage interne par la technologie de fusion.|  
-|[InstallAssembly, méthode](iassemblycache-installassembly-method.md)|Installe l’assembly spécifié dans la Global Assembly Cache.|  
-|[QueryAssemblyInfo, méthode](iassemblycache-queryassemblyinfo-method.md)|Obtient les données demandées relatives à l’assembly spécifié.|  
-|[UninstallAssembly, méthode](iassemblycache-uninstallassembly-method.md)|Désinstalle l’assembly spécifié du Global Assembly Cache.|  
+|[CreateAssemblyCacheItem, méthode](iassemblycache-createassemblycacheitem-method.md)|Gets a reference to a new [IAssemblyCacheItem](iassemblycacheitem-interface.md).|  
+|[CreateAssemblyScavenger, méthode](iassemblycache-createassemblyscavenger-method.md)|Reserved for internal use by the fusion technology.|  
+|[InstallAssembly, méthode](iassemblycache-installassembly-method.md)|Installs the specified assembly in the global assembly cache.|  
+|[QueryAssemblyInfo, méthode](iassemblycache-queryassemblyinfo-method.md)|Gets the requested data about the specified assembly.|  
+|[UninstallAssembly, méthode](iassemblycache-uninstallassembly-method.md)|Uninstalls the specified assembly from the global assembly cache.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion. h  
+ **Header:** Fusion.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

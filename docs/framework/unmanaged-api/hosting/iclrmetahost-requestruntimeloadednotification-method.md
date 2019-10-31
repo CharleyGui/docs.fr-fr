@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0d5ccc4d-0193-41f5-af54-45d7b70d5321
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 539f69c33b67ad1a8a514062c5d777deaced1599
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 23f868bba2dc058d99f1c5c09e9b311b1ff3634a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965007"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140893"
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification, méthode
 Fournit une fonction de rappel dont l’appel est garanti quand une version de common language runtime (CLR) est chargée pour la première fois, mais qu’elle n’a pas encore démarré. Cette méthode remplace la fonction [LockClrVersion](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) .  
@@ -47,7 +45,7 @@ HRESULT RequestRuntimeLoadedNotification (
 |E_POINTER|`pCallbackFunction` a la valeur null.|  
   
 ## <a name="remarks"></a>Notes  
- Le rappel fonctionne de la façon suivante:  
+ Le rappel fonctionne de la façon suivante :  
   
 - Le rappel est appelé uniquement lorsqu’un Runtime est chargé pour la première fois.  
   
@@ -55,7 +53,7 @@ HRESULT RequestRuntimeLoadedNotification (
   
 - Pour les chargements de Runtime non réentrants, les appels à la fonction de rappel sont sérialisés.  
   
- La fonction de rappel a le prototype suivant:  
+ La fonction de rappel a le prototype suivant :  
   
 ```cpp  
 typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(  
@@ -64,7 +62,7 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
                      CallbackThreadUnsetFnPtr pfnCallbackThreadUnset);  
 ```  
   
- Les prototypes de fonction de rappel sont les suivants:  
+ Les prototypes de fonction de rappel sont les suivants :  
   
 - `pfnCallbackThreadSet`:  
   
@@ -78,23 +76,23 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
     typedef HRESULT (__stdcall *CallbackThreadUnsetFnPtr)();  
     ```  
   
- Si l’hôte envisage de charger ou de faire en sorte qu’un autre Runtime soit chargé de manière réentrante, les `pfnCallbackThreadSet` paramètres et `pfnCallbackThreadUnset` fournis dans la fonction de rappel doivent être utilisés de la façon suivante:  
+ Si l’hôte envisage de charger ou de faire en sorte qu’un autre Runtime soit chargé de manière réentrante, les paramètres `pfnCallbackThreadSet` et `pfnCallbackThreadUnset` fournis dans la fonction de rappel doivent être utilisés de la façon suivante :  
   
-- `pfnCallbackThreadSet`doit être appelé par le thread qui peut provoquer un chargement du runtime avant une tentative de chargement.  
+- `pfnCallbackThreadSet` doit être appelé par le thread qui peut provoquer un chargement du runtime avant une tentative de chargement.  
   
-- `pfnCallbackThreadUnset`doit être appelé lorsque le thread n’entraîne plus de charge d’exécution de ce type (et avant de retourner le rappel initial).  
+- `pfnCallbackThreadUnset` doit être appelée lorsque le thread n’entraîne plus de charge d’exécution de ce type (et avant de retourner le rappel initial).  
   
-- `pfnCallbackThreadSet`et `pfnCallbackThreadUnset` sont tous deux non réentrants.  
+- les `pfnCallbackThreadSet` et les `pfnCallbackThreadUnset` ne sont pas réentrants.  
   
 > [!NOTE]
-> Les `pfnCallbackThreadUnset` `pfnCallbackThreadSet` applicationshôtesnedoiventpasappeleretendehorsdelaportéeduparamètre.`pCallbackFunction`  
+> Les applications hôtes ne doivent pas appeler `pfnCallbackThreadSet` et `pfnCallbackThreadUnset` en dehors de la portée du paramètre `pCallbackFunction`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

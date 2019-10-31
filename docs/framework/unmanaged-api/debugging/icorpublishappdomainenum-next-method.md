@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ad37cd10-0339-4d08-9b0e-4b3428bb4dc3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 38e4bd55a52cdbb3c242b8c3e5ff21f970b93ac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0553d8b07e3a16dc31474b5470ba2dd8ba365cb2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765024"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140501"
 ---
 # <a name="icorpublishappdomainenumnext-method"></a>ICorPublishAppDomainEnum::Next, méthode
 Obtient le nombre spécifié de domaines d’application qui existent actuellement dans le processus, en commençant à la position actuelle.  
@@ -40,18 +38,18 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’éléments à récupérer.  
+ dans Nombre d’éléments à récupérer.  
   
  `objects`  
- [out] Extrait un pointeur vers le tableau de [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) objets, chacun d’eux représente un domaine d’application.  
+ à Pointeur vers le tableau d’objets [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) récupérés, chacun représentant un domaine d’application.  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre de domaines d’application réellement retournés. Cette valeur peut être null si `celt` fait partie.  
+ à Pointeur vers le nombre de domaines d’application réellement retournés. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

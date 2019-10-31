@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d815486e-b3bd-4fe8-ba28-02abdb4d67ba
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1e045c475b57f863071eb81194868b7db3c5a3c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5ba6ce4e59057442a9f17338ec7bfff787bd5d05
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755803"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130792"
 ---
 # <a name="icordebugmanagedcallbackexitappdomain-method"></a>ICorDebugManagedCallback::ExitAppDomain, méthode
 Notifie le débogueur qu’un domaine d’application s’est arrêté.  
@@ -38,12 +36,12 @@ HRESULT ExitAppDomain (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet ICorDebugProcess qui représente le processus qui contient le domaine d’application donné.  
+ dans Pointeur vers un objet ICorDebugProcess qui représente le processus qui contient le domaine d’application donné.  
   
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui s’est arrêté.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui s’est arrêté.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: dd2afb38-675b-4c3c-a9f3-8ab3b133eb02
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d3aa6bc844d2c6629085b0596127c0b51b99357d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f2249d10159b1ff0be7ead0783efb8a2742d26b2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766357"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139606"
 ---
 # <a name="icorruntimehostcurrentdomain-method"></a>ICorRuntimeHost::CurrentDomain, méthode
 Obtient un pointeur d’interface de type <xref:System.AppDomain?displayProperty=nameWithType> qui représente le domaine chargé sur le thread actuel.  
@@ -37,25 +35,25 @@ HRESULT CurrentDomain (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [out] Un pointeur de type <xref:System.AppDomain?displayProperty=nameWithType> qui représente le domaine d’application actuel du thread. Ce pointeur est tapé `IUnknown`, de sorte que les appelants doivent généralement appeler `QueryInterface` pour obtenir un pointeur de type <xref:System._AppDomain>.  
+ à Pointeur de type <xref:System.AppDomain?displayProperty=nameWithType> qui représente le domaine d’application actuel du thread. Ce pointeur est typé `IUnknown`, de sorte que les appelants doivent généralement appeler `QueryInterface` pour obtenir un pointeur de type <xref:System._AppDomain>.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|L’opération a réussi.|  
-|S_FALSE|L’opération a échoué.|  
-|E_FAIL|Une défaillance grave et inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à toute API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
+|S_FALSE|L’opération n’a pas pu se terminer.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à des API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET framework :** 1.0, 1.1  
+ **Versions de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

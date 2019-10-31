@@ -1,20 +1,18 @@
 ---
-title: Emplacement de l’assembly
+title: Emplacement d’assembly
 ms.date: 08/20/2019
 helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6427f7d005c43ef9e83387e865f71009b683a7c4
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: d44fb44db35b60f99583c20432c5998573298044
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973179"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107218"
 ---
-# <a name="assembly-location"></a>Emplacement de l’assembly
+# <a name="assembly-location"></a>Emplacement d’assembly
 L’emplacement d’un assembly détermine si le common language runtime peut le localiser quand il est référencé, et il peut aussi déterminer si l’assembly peut être partagé avec d’autres assemblys. Vous pouvez déployer un assembly dans les emplacements suivants :  
   
 - Répertoire ou sous-répertoires de l’application.  

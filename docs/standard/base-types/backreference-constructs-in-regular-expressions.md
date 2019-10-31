@@ -12,15 +12,13 @@ helpviewer_keywords:
 - .NET Framework regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 11df25617a618cdc835ca6555c671a187ce09f8d
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: e41c333dc088c8f712866cb7a130c4f8e1c9722f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991643"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140538"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Constructions de backreference dans les expressions régulières
 
@@ -65,11 +63,11 @@ L’exemple suivant recherche des caractères de mot doubles dans une chaîne. I
 
 Une référence arrière nommée est définie avec la syntaxe suivante :
 
-`\k<` *name* `>`
+`\k<` *nom* `>`
 
-ou :
+ou :
 
-`\k'` *name* `'`
+`\k'` *nom* `'`
 
 où *nom* est le nom d’un groupe de capture défini dans le modèle d’expression régulière. Si *nom* n’est pas défini dans le modèle d’expression régulière, une erreur d’analyse se produit et le moteur d’expression régulière lève une exception <xref:System.ArgumentException>.
 
@@ -95,7 +93,7 @@ Si *nom* est la représentation d’un nombre sous forme de chaîne et qu’aucu
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]
 
-Cependant, si *nom* est la représentation sous forme de chaîne d’un nombre et qu’un nom numérique a été affecté explicitement à ce groupe de capture dans cette position, l’analyseur d’expression régulière ne peut pas identifier le groupe de capture par sa position ordinale. Au lieu de cela, elle <xref:System.ArgumentException>lève une exception. Le seul groupe de capture dans l’exemple suivant est nommé « 2 ». Comme la construction `\k` est utilisée pour définir une référence arrière nommée « 1 », l’analyseur d’expression régulière ne peut pas identifier le premier groupe de capture et lève une exception.
+Cependant, si *nom* est la représentation sous forme de chaîne d’un nombre et qu’un nom numérique a été affecté explicitement à ce groupe de capture dans cette position, l’analyseur d’expression régulière ne peut pas identifier le groupe de capture par sa position ordinale. Au lieu de cela, il lève une <xref:System.ArgumentException>. Le seul groupe de capture dans l’exemple suivant est nommé « 2 ». Comme la construction `\k` est utilisée pour définir une référence arrière nommée « 1 », l’analyseur d’expression régulière ne peut pas identifier le premier groupe de capture et lève une exception.
 
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference7.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference7.vb)]

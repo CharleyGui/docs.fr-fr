@@ -7,14 +7,12 @@ helpviewer_keywords:
 - memory management [.NET Framework]
 - garbage collection [.NET Framework profiling]
 ms.assetid: fd0462f7-57ad-4858-bf62-958378873602
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f43f21fc5ac626eacb7778cce2926973d812852c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e4b8d7fc0882e16643a7b46aafe3e00c70ca67ca
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569906"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140281"
 ---
 # <a name="memory-management-and-garbage-collection-in-net"></a>Gestion de la mémoire et garbage collection dans .NET
 Cette section de la documentation fournit des informations sur la gestion de la mémoire dans .NET.  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fe07a05b-f6d6-44b5-ab01-b9a6eb15c350
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: bf19d322d8e4d0d05993d22b2aa7e46bda7b5a1d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36eacedfb83c1248fc252091872bcfeecdbcd874
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780074"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139516"
 ---
 # <a name="icorruntimehostnextdomain-method"></a>ICorRuntimeHost::NextDomain, méthode
-Obtient un pointeur d’interface au domaine suivant dans l’énumération.  
+Obtient un pointeur d’interface vers le domaine suivant dans l’énumération.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +36,28 @@ HRESULT NextDomain (
   
 ## <a name="parameters"></a>Paramètres  
  `hEnum`  
- [in] L’énumérateur a été obtenu via un appel à [EnumDomains](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-enumdomains-method.md).  
+ dans Énumérateur obtenu via un appel à [EnumDomains,](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-enumdomains-method.md).  
   
  `pAppDomain`  
- [out] Un pointeur d’interface vers le <xref:System._AppDomain?displayProperty=nameWithType> type qui représente le domaine suivant dans l’énumération, ou null, s’il n’existe aucun domaine plus.  
+ à Pointeur d’interface vers le type de <xref:System._AppDomain?displayProperty=nameWithType> qui représente le domaine suivant dans l’énumération, ou null, s’il n’existe plus de domaines.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|L’opération a réussi.|  
-|S_FALSE|L’opération a échoué, ou il n’existe aucune davantage de domaines dans l’énumération.|  
-|E_FAIL|Une défaillance grave et inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à toute API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
+|S_FALSE|L’opération n’a pas pu se terminer ou il n’y a plus de domaines dans l’énumération.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à des API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET framework :** 1.0, 1.1  
+ **Versions de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

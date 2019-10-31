@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4dc6c80d-b694-480b-a378-d5b18420ce17
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 45b6b8593331801dd237d0a730afbd5a6a714bbf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 786ff6895383fc18dcfedb26fab344f80f04c1df
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774182"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138204"
 ---
 # <a name="esymbolreadingpolicy-enumeration"></a>ESymbolReadingPolicy, énumération
-Contient des valeurs qui définissent la stratégie pour la lecture des fichiers de programme (PDB) de la base de données.  
+Contient des valeurs qui définissent la stratégie de lecture des fichiers de base de données du programme (PDB).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`eSymbolReadingAlways`|Spécifie que le débogueur doit toujours lire des fichiers PDB.|  
-|`eSymbolReadingFullTrustOnly`|Spécifie que le débogueur doit lire uniquement les fichiers PDB qui sont associés à des assemblys de confiance totale.|  
-|`eSymbolReadingNever`|Spécifie que le débogueur doit lire jamais les fichiers PDB.|  
+|`eSymbolReadingAlways`|Spécifie que le débogueur doit toujours lire les fichiers PDB.|  
+|`eSymbolReadingFullTrustOnly`|Spécifie que le débogueur doit lire uniquement les fichiers PDB associés à des assemblys de confiance totale.|  
+|`eSymbolReadingNever`|Spécifie que le débogueur ne doit jamais lire les fichiers PDB.|  
   
 ## <a name="remarks"></a>Notes  
- Le `ESymbolReadingPolicy` énumération est utilisée avec la [ICLRDebugManager::SetSymbolReadingPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) (méthode).  
+ L’énumération `ESymbolReadingPolicy` est utilisée avec la méthode [ICLRDebugManager :: SetSymbolReadingPolicy (](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

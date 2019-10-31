@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: b4367214-6dac-4280-aa11-fd487ff30bc4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b488b6a887b0c66d8c17f8ea78f48f7d2ea31011
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 30e3a88140c8a438001e8428df4c5ee879c83376
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758398"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136920"
 ---
-# <a name="corimageunloading-function"></a>_CorImageUnloading, fonction
+# <a name="_corimageunloading-function"></a>_CorImageUnloading, fonction
 Notifie le chargeur lorsque les images de modules managés sont déchargées.  
   
  Cette fonction n’est pas implémentée. Si elle est appelée, elle retourne E_NOTIMPL.  
@@ -38,14 +36,14 @@ STDAPI (VOID) _CorImageUnloading(
   
 ## <a name="parameters"></a>Paramètres  
  `ImageBase`  
- [in] Pointeur vers l’emplacement de départ de l’image à décharger.  
+ dans Pointeur vers l’emplacement de départ de l’image à décharger.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

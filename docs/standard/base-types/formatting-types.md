@@ -25,14 +25,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e9d53e7a75463e481b667a7ad84b68cb225e7f7c
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: e362ad75fd9989cc87751286f83918d340a58820
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774320"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141487"
 ---
 # <a name="format-types-in-net"></a>Types de format dans .NET
 

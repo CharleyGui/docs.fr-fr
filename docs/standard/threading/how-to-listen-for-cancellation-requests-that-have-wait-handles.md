@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : écouter les requêtes d’annulation qui ont des handles d’attente'
+title: "Comment : écouter les demandes d'annulation avec des handles d'attente"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,28 +8,26 @@ dev_langs:
 helpviewer_keywords:
 - cancellation, waiting with wait handles
 ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 67cf434737257a942e094fcb38ed18d597645d46
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 43ca52359a48d3ac5a27933fcc8ce56c07159cac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913328"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137987"
 ---
-# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Procédure : écouter les requêtes d’annulation qui ont des handles d’attente
+# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Comment : écouter les demandes d'annulation avec des handles d'attente
 Si une méthode est bloquée pendant qu’elle attend qu’un événement soit signalé, elle ne peut pas vérifier la valeur du jeton d’annulation ni répondre en temps voulu. Le premier exemple montre comment résoudre ce problème quand vous travaillez avec des événements tels que <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> qui ne prennent pas en charge l’infrastructure d’annulation unifiée. Le deuxième exemple montre une approche plus simple qui utilise <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, qui prend en charge l’annulation unifiée.  
   
 > [!NOTE]
-> Quand l'option Uniquement mon code est activée, Visual Studio, dans certains cas, peut s'arrêter sur la ligne qui lève l'exception et afficher un message d'erreur indiquant que l'exception n'est pas gérée par le code utilisateur. Cette erreur est sans gravité. Vous pouvez appuyer sur F5 pour continuer et voir le comportement de gestion des exceptions qui est illustré dans les exemples ci-dessous. Pour empêcher Visual Studio de s'arrêter sur la première erreur, il suffit de désactiver la case à cocher « Uniquement mon code » sous **Outils, Options, Débogage, Général**.  
+> Quand l'option Uniquement mon code est activée, Visual Studio, dans certains cas, peut s'arrêter sur la ligne qui lève l'exception et afficher un message d'erreur indiquant que l'exception n'est pas gérée par le code utilisateur. Cette erreur est sans gravité. Vous pouvez appuyer sur F5 pour continuer et voir le comportement de gestion des exceptions qui est illustré dans les exemples ci-dessous. Pour empêcher Visual Studio de s'arrêter sur la première erreur, il suffit de désactiver la case à cocher Uniquement mon code sous **Outils, Options, Débogage, Général**.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant utilise un <xref:System.Threading.ManualResetEvent> pour montrer comment débloquer des handles d’attente qui ne prennent pas en charge l’annulation unifiée.  
   
  [!code-csharp[Cancellation#9](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#9)]
  [!code-vb[Cancellation#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#9)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant utilise un <xref:System.Threading.ManualResetEventSlim> pour montrer comment débloquer des primitives de coordination qui ne prennent pas en charge l’annulation unifiée. La même approche peut être utilisée avec d’autres primitives de coordination légères, telles que <xref:System.Threading.Semaphore>`Slim` et <xref:System.Threading.CountdownEvent>.  
   
  [!code-csharp[Cancellation#10](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#10)]

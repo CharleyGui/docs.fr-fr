@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8e9aae1b-d1b7-4b6e-b577-6faf36dcec85
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c28ff84b08802246d587bfa130ae5915177932ac
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 441d225dadbbca09ab27c8ccd70debe32f4c12da
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764305"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140253"
 ---
 # <a name="icordebugvalue2getexacttype-method"></a>ICorDebugValue2::GetExactType, méthode
 Obtient un pointeur d’interface vers un objet « ICorDebugType » qui représente le <xref:System.Type> de cette valeur.  
@@ -37,12 +35,12 @@ HRESULT GetExactType (
   
 ## <a name="parameters"></a>Paramètres  
  `ppType`  
- [out] Un pointeur vers l’adresse d’un `ICorDebugType` objet qui représente le <xref:System.Type> de la valeur représentée par cet objet « ICorDebugValue2 ».  
+ à Pointeur vers l’adresse d’un objet `ICorDebugType` qui représente le <xref:System.Type> de la valeur représentée par cet objet « ICorDebugValue2 ».  
   
 ## <a name="remarks"></a>Notes  
- Les génériques prenant en charge les `GetExactType` méthode remplace à la fois le [ICorDebugObjectValue::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) et le [ICorDebugValue::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) méthodes, chacune retournant des informations sur le type d’une valeur .  
+ La méthode `GetExactType` qui prend en charge les génériques remplace les méthodes [ICorDebugObjectValue :: GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) et [ICorDebugValue :: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) , chacune d’elles retournant des informations sur le type d’une valeur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

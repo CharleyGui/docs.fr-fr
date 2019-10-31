@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 300c2661-b7d1-4c39-b080-9ebdef0fd523
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ad580f7cab81323e09a24dc12db39f223be3aeb4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8eba189d6dfca3781c28631a72a9af3c037efeda
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973062"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136794"
 ---
 # <a name="ihostmanualevent-interface"></a>IHostManualEvent, interface
 Fournit l’implémentation de l’hôte d’une représentation d’un événement de réinitialisation manuelle.  
@@ -30,16 +28,16 @@ Fournit l’implémentation de l’hôte d’une représentation d’un événem
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Reset, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-reset-method.md)|Réinitialise l’actuel `IHostManualEvent` instance à un état non signalé.|  
-|[Set, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-set-method.md)|Définit l’actuel `IHostManualEvent` instance à un état signalé.|  
-|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-wait-method.md)|Fait en `IHostManualEvent` instance à attendre jusqu'à ce qu’il appartient, ou un certain laps de temps.|  
+|[Reset, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-reset-method.md)|Réinitialise l’instance de `IHostManualEvent` actuelle à un État non signalé.|  
+|[Set, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-set-method.md)|Définit l’instance de `IHostManualEvent` actuelle à un état signalé.|  
+|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-wait-method.md)|Entraîne l’attente de l’instance de `IHostManualEvent` actuelle jusqu’à ce qu’elle appartienne ou qu’un laps de temps spécifié se soit écoulé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

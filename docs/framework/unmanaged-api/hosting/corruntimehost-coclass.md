@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5833740b-7d67-44b4-865c-b5bf45e291e3
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 942c9544a6ce868c3b6296569d4a16a44281cdba
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 512009e053605e2018f1fcbafa422c1a36ddecc1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758320"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136907"
 ---
 # <a name="corruntimehost-coclass"></a>CorRuntimeHost, coclasse
-Fournit des interfaces pour la gestion des applications qui sont en cours d’exécution par le common language runtime.  
+Fournit des interfaces pour la gestion des applications exécutées par l’common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,17 +41,17 @@ coclass CorRuntimeHost {
 |Interface|Description|  
 |---------------|-----------------|  
 |[ICorConfiguration, interface](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)|Fournit des méthodes pour configurer le common language runtime (CLR).|  
-|[ICorRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)|Fournit des méthodes qui permettent à l’hôte démarrer et arrêter le common language runtime explicitement, pour créer et configurer des domaines d’application, pour accéder au domaine par défaut et d’énumérer tous les domaines en cours d’exécution dans le processus.|  
+|[ICorRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)|Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter le common language runtime explicitement, de créer et configurer des domaines d’application, d’accéder au domaine par défaut et d’énumérer tous les domaines qui s’exécutent dans le processus.|  
 |[IDebuggerInfo, interface](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-interface.md)|Fournit des méthodes pour obtenir des informations sur l’état des services de débogage.|  
-|[IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)|Fournit des méthodes pour obtenir des informations sur le système de garbage collection et contrôler certains aspects du garbage collection.|  
-|« IValidator »|Fournit des méthodes pour la validation d’images exécutables portables et des rapports détaillés d’erreurs de validation.|  
+|[IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)|Fournit des méthodes pour obtenir des informations sur le système de garbage collection et pour contrôler certains aspects de garbage collection.|  
+|IValidator|Fournit des méthodes pour la validation des images exécutables portables et un rapport détaillé des erreurs de validation.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.idl  
+ **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0da962a3-ce55-44dd-ab7a-14ad7105af4a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c1d578fa0f8e80ae2c8fbada9e383bcd849ff2f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bf09f7bc6c3e3aabfc16f9cad277c46be024b01d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753611"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139456"
 ---
 # <a name="ihostsemaphorewait-method"></a>IHostSemaphore::Wait, méthode
-Fait en [IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md) instance attendre jusqu'à ce qu’il appartient ou la quantité de temps s’écoule spécifiée.  
+Entraîne l’attente de l’instance [IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md) actuelle jusqu’à ce qu’elle appartienne ou que la durée spécifiée soit écoulée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,29 +36,29 @@ HRESULT Wait (
   
 ## <a name="parameters"></a>Paramètres  
  `dwMilliseconds`  
- [in] Le nombre de millisecondes à attendre avant de retourner, si actuel `IHostSemaphore` instance n’appartient pas.  
+ dans Nombre de millisecondes à attendre avant de retourner, si l’instance de `IHostSemaphore` actuelle n’appartient pas.  
   
  `option`  
- [in] Parmi les [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) valeurs, qui spécifient quelle action l’hôte doit effectuer si cette opération bloque.  
+ dans L’une des valeurs [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) , en spécifiant l’action que l’hôte doit effectuer si cette opération bloque.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Wait` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_DEADLOCK|L’hôte a détecté un interblocage pendant l’intervalle d’attente et a choisi actuel `IHostSemaphore` instance comme victime du blocage.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_DEADLOCK|L’hôte a détecté un blocage pendant l’intervalle d’attente et a choisi l’instance de `IHostSemaphore` actuelle comme victime de blocage.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

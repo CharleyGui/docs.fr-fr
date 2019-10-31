@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : écrire une boucle Parallel.ForEach avec des variables locales de partition'
+title: Guide pratique pour écrire une boucle Parallel.ForEach avec des variables locales de partition
 ms.date: 06/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,24 +8,22 @@ dev_langs:
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 98abed0efa2e1b624ee1fb671300969f3d79a9db
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: cca48889670c3bd67366c879ccede94c89542c8d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661668"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139685"
 ---
-# <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Procédure : écrire une boucle Parallel.ForEach avec des variables locales de partition
+# <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Guide pratique pour écrire une boucle Parallel.ForEach avec des variables locales de partition
 
 L’exemple suivant montre comment écrire une méthode <xref:System.Threading.Tasks.Parallel.ForEach%2A> qui utilise des variables locales de partition. Quand une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A> s’exécute, elle divise sa collection source en plusieurs partitions. Chaque partition a sa propre copie de la variable locale de partition. Une variable locale de partition est similaire à une [variable locale de thread](xref:System.Threading.ThreadLocal%601), à la différence près que plusieurs partitions peuvent s’exécuter sur un thread unique.
 
-Le code et les paramètres dans cet exemple ressemblent beaucoup à la méthode <xref:System.Threading.Tasks.Parallel.For%2A> correspondante. Pour plus d'informations, voir [Procédure : écrire une boucle Parallel.For avec des variables locales de thread](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).
+Le code et les paramètres dans cet exemple ressemblent beaucoup à la méthode <xref:System.Threading.Tasks.Parallel.For%2A> correspondante. Pour plus d’informations, voir [Guide pratique : écrire une boucle Parallel.For avec des variables locales de thread](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).
 
 Pour utiliser une variable locale de partition dans une boucle <xref:System.Threading.Tasks.Parallel.ForEach%2A>, vous devez appeler l’une des surcharges de méthode qui accepte deux paramètres de type. Le premier paramètre de type, `TSource`, spécifie le type d’élément source, tandis que le second, `TLocal`, spécifie le type de la variable locale de partition.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant appelle la surcharge <xref:System.Threading.Tasks.Parallel.ForEach%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%601%2C%60%601%7D%2CSystem.Action%7B%60%601%7D%29?displayProperty=nameWithType> pour calculer la somme d’un tableau d’un million d’éléments. Cette surcharge possède quatre paramètres :
 
@@ -53,5 +51,5 @@ L’exemple suivant appelle la surcharge <xref:System.Threading.Tasks.Parallel.F
 ## <a name="see-also"></a>Voir aussi
 
 - [Parallélisme de données](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [Guide pratique pour écrire une boucle Parallel.For avec des variables locales de thread](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
+- [Guide pratique : écrire une boucle Parallel.For avec des variables locales de thread](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
 - [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

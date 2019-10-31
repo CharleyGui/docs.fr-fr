@@ -2,17 +2,15 @@
 title: ICorDebugMutableDataTarget, interface
 ms.date: 03/30/2017
 ms.assetid: 14aad5b3-84ab-4bbc-94e3-1eb92e258d10
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a8b33b07e7c9f83f5874dea1455cd70dcc3206de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 682e927388d3392d970338314f97d46c9e57e760
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942426"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139335"
 ---
 # <a name="icordebugmutabledatatarget-interface"></a>ICorDebugMutableDataTarget, interface
-Étend la [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) interface pour prendre en charge des cibles de données mutables.  
+Étend l’interface [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) pour prendre en charge les cibles de données mutables.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -23,13 +21,13 @@ ms.locfileid: "61942426"
 |[WriteVirtual, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-writevirtual-method.md)|Écrit la mémoire dans l'espace d'adressage du processus cible.|  
   
 ## <a name="remarks"></a>Notes  
- Cette extension pour le [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) interface peut être implémentée par les outils de débogage qui vous souhaitent modifier le processus cible (par exemple, pour effectuer un débogage INVASIF en direct).  
+ Cette extension de l’interface [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) peut être implémentée par les outils de débogage qui souhaitent modifier le processus cible (par exemple, pour effectuer un débogage invasif en direct).  
   
  Toutes ces méthodes sont facultatives dans le sens où aucune fonctionnalité de débogage principale basée sur l'inspection n'est perdue en cas de non-implémentation de cette interface ou en cas d'échec des appels à ces méthodes.  Tout `HRESULT` d'échec issu de ces méthodes se propage sous la forme d'un `HRESULT` de l'appel de méthode ICorDebug.  
   
  Notez qu'un seul appel de méthode ICorDebug peut entraîner plusieurs mutations et qu'il n'existe aucun mécanisme garantissant l'application en mode transactionnel (tout ou rien) des mutations connexes.  Cela signifie que si une mutation échoue après la réussite d'autres mutations (pour le même appel ICorDebug), le processus cible peut se retrouver dans un état incohérent pouvant nuire à la fiabilité du débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

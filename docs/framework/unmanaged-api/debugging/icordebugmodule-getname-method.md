@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: db499637-7ba9-421e-b8b1-35856995e80b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a7f62385031967c164915fd31735a6d962f557fa
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: b27e7a2cdcbfc3a88a734230118d99c2dd5c700e
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894986"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73129534"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName, méthode
 Obtient le nom de fichier du module.  
@@ -48,14 +46,14 @@ HRESULT GetName(
  à Tableau qui stocke le nom retourné.  
   
 ## <a name="remarks"></a>Notes  
- La `GetName` méthode retourne un HRESULT S_OK si le nom de fichier du module correspond au nom sur le disque. `GetName`retourne un S_FALSE HRESULT si le nom est fabriqué, par exemple pour un module dynamique ou en mémoire.  
+ La méthode `GetName` retourne un HRESULT S_OK si le nom de fichier du module correspond au nom sur le disque. `GetName` retourne une valeur S_FALSE HRESULT si le nom est fabriqué, par exemple pour un module dynamique ou en mémoire.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

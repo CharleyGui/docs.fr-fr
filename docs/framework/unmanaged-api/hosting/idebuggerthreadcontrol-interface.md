@@ -14,32 +14,30 @@ helpviewer_keywords:
 ms.assetid: 0a270c42-a7d1-45f1-a64d-fa3e84d14532
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7a551d3cc6ab3dd3887f232018f8201de4036d1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a65f9f0f29a43cf3d26b4b2bc5f6f594f0557009
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699654"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133158"
 ---
 # <a name="idebuggerthreadcontrol-interface"></a>IDebuggerThreadControl, interface
-Fournit des méthodes pour notifier l’hôte sur le blocage et déblocage des threads par les services de débogage.  
+Fournit des méthodes pour notifier l’hôte concernant le blocage et le déblocage de threads par les services de débogage.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ThreadIsBlockingForDebugger, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-threadisblockingfordebugger-method.md)|Avertit l’hôte que le thread qui envoie ce rappel concerne à blocs dans les services de débogage.|  
-|[ReleaseAllRuntimeThreads, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-releaseallruntimethreads-method.md)|Avertit l’hôte que les services de débogage sont sur le point de mise en production de tous les threads qui sont bloqués.|  
-|[StartBlockingForDebugger, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-startblockingfordebugger-method.md)|Avertit l’hôte que les services de débogage sont sur le point de démarrer tous les threads de blocage.|  
+|[ThreadIsBlockingForDebugger, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-threadisblockingfordebugger-method.md)|Avertit l’hôte que le thread qui envoie ce rappel va être bloqué dans les services de débogage.|  
+|[ReleaseAllRuntimeThreads, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-releaseallruntimethreads-method.md)|Avertit l’hôte que les services de débogage sont sur le paragraphe de libérer tous les threads qui sont bloqués.|  
+|[StartBlockingForDebugger, méthode](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-startblockingfordebugger-method.md)|Avertit l’hôte que les services de débogage sont sur le paragraphe duquel ils commencent à bloquer tous les threads.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

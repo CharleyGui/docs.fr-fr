@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: fd9085ff-7beb-4c38-97f0-037cd8ba4f65
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 05f5d3fbe05ad1e97a1ae61ed0496f314c4ec5cd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae64edd8a3a628100d4c51d0b78be1bc8d49fc17
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765972"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138283"
 ---
 # <a name="customdumpitem-structure"></a>CustomDumpItem, structure
-Décrit un élément à ajouter à une image personnalisée dans le rapport d’erreurs.  
+Décrit un élément à ajouter à un dump personnalisé dans le rapport d’erreurs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,18 +39,18 @@ struct {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`itemKind`|Un [ECustomDumpItemKind](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) valeur qui indique le type d’élément à ajouter.|  
-|`pReserved`|Actuellement non utilisé. Les éléments ajoutés à l’union doivent être ne dépassant pas la taille du pointeur. Si un `struct` est nécessaire, vous devez allouer séparément et pointer dessus.|  
+|`itemKind`|Valeur [ECustomDumpItemKind,](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) qui indique le type d’élément à ajouter.|  
+|`pReserved`|Non utilisé actuellement. Tout élément ajouté à l’Union ne doit pas être supérieur à la taille du pointeur. Si un `struct` est requis, vous devez l’allouer séparément et pointer dessus.|  
   
 ## <a name="remarks"></a>Notes  
- [ICLRErrorReportingManager::BeginCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) prend un paramètre de type `CustomDumpItem`.  
+ [ICLRErrorReportingManager :: BeginCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) prend un paramètre de type `CustomDumpItem`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.idl  
+ **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

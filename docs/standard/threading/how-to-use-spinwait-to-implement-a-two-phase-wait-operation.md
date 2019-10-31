@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : utiliser SpinWait pour implémenter une opération d’attente en deux phases'
+title: "Comment : utiliser SpinWait pour implémenter une opération d'attente en deux phases"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - SpinWait, how to synchronize two-phase wait
 ms.assetid: b2ac4e4a-051a-4f65-b4b9-f8e103aff195
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 52b9164546d2061a65c79fb167b14543b0dae5a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 5bac174660177fd47e1f345e64581e35ae4c0ffc
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576510"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137942"
 ---
-# <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Procédure : utiliser SpinWait pour implémenter une opération d’attente en deux phases
+# <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Comment : utiliser SpinWait pour implémenter une opération d'attente en deux phases
 L’exemple suivant montre comment utiliser un objet <xref:System.Threading.SpinWait?displayProperty=nameWithType> pour implémenter une opération d’attente en deux phases. Durant la première phase, l’objet de synchronisation (`Latch`) tourne pendant quelques cycles, le temps de vérifier si le verrou est disponible. Durant la deuxième phase, si le verrou est enfin disponible, la méthode `Wait` est retournée sans utiliser le <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> pour exécuter son attente. Dans le cas contraire, `Wait` exécute l’attente.  
   
 ## <a name="example"></a>Exemple  

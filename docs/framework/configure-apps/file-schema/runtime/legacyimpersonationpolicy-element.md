@@ -8,21 +8,19 @@ helpviewer_keywords:
 - <legacyImpersonationPolicy> element
 - legacyImpersonationPolicy element
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cd09598800b74c4807163bc921806f5b470e0d24
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 18a027bc09f2400a10a06efdc4c5355686bcb56d
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252498"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73116542"
 ---
-# <a name="legacyimpersonationpolicy-element"></a>\<legacyImpersonationPolicy >, élément
+# <a name="legacyimpersonationpolicy-element"></a>\<élément legacyImpersonationPolicy >
 Spécifie que l’identité Windows n’est pas transmise entre des points asynchrones, indépendamment des paramètres de flux du contexte d’exécution sur le thread actif.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyImpersonationPolicy>**  
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyImpersonationPolicy** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +36,17 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie que <xref:System.Security.Principal.WindowsIdentity> le n’est pas transmis entre des points asynchrones <xref:System.Threading.ExecutionContext> , quels que soient les paramètres de flow sur le thread actuel.|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie que le <xref:System.Security.Principal.WindowsIdentity> n’est pas transmis entre des points asynchrones, quels que soient les paramètres de <xref:System.Threading.ExecutionContext> Flow sur le thread actuel.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|`false`|<xref:System.Security.Principal.WindowsIdentity>passe entre des points asynchrones en fonction <xref:System.Threading.ExecutionContext> des paramètres de flux du thread actuel. Il s'agit de la valeur par défaut.|  
-|`true`|<xref:System.Security.Principal.WindowsIdentity>n’est pas transmis entre des points asynchrones, <xref:System.Threading.ExecutionContext> quels que soient les paramètres de flow sur le thread actuel.|  
+|`false`|<xref:System.Security.Principal.WindowsIdentity> est transmis entre des points asynchrones en fonction des paramètres de flux de <xref:System.Threading.ExecutionContext> pour le thread actuel. Il s'agit de la valeur par défaut.|  
+|`true`|<xref:System.Security.Principal.WindowsIdentity> n’est pas transmis entre des points asynchrones, quels que soient les paramètres de <xref:System.Threading.ExecutionContext> de flow sur le thread actuel.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -58,29 +56,29 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Dans les versions de .NET Framework 1,0 et 1,1, <xref:System.Security.Principal.WindowsIdentity> le n’est pas transmis sur les points asynchrones définis par l’utilisateur. À partir de la version .NET Framework 2,0, il existe <xref:System.Threading.ExecutionContext> un objet qui contient des informations sur le thread en cours d’exécution et qui est transmis entre des points asynchrones au sein d’un domaine d’application. Le <xref:System.Security.Principal.WindowsIdentity> est inclus dans ce contexte d’exécution et est, par conséquent, transmis entre les points asynchrones, ce qui signifie que si un contexte d’emprunt d’identité existe, il est également transmis.  
+ Dans les versions 1,0 et 1,1 de .NET Framework, le <xref:System.Security.Principal.WindowsIdentity> n’est pas transmis sur les points asynchrones définis par l’utilisateur. À partir de la version .NET Framework 2,0, il existe un objet <xref:System.Threading.ExecutionContext> qui contient des informations sur le thread en cours d’exécution et qui est transmis entre des points asynchrones au sein d’un domaine d’application. Le <xref:System.Security.Principal.WindowsIdentity> est inclus dans ce contexte d’exécution et est, par conséquent, transmis entre les points asynchrones, ce qui signifie que si un contexte d’emprunt d’identité existe, il est également transmis.  
   
- À partir de la .NET Framework 2,0, vous pouvez utiliser `<legacyImpersonationPolicy>` l’élément pour spécifier <xref:System.Security.Principal.WindowsIdentity> que ne passe pas entre des points asynchrones.  
+ À partir de la .NET Framework 2,0, vous pouvez utiliser l’élément `<legacyImpersonationPolicy>` pour spécifier que <xref:System.Security.Principal.WindowsIdentity> n’est pas transmis entre des points asynchrones.  
   
 > [!NOTE]
-> Le common language runtime (CLR) tient compte des opérations d’emprunt d’identité effectuées à l’aide du code managé uniquement, et non de l’emprunt d’identité effectué en dehors du code managé, par exemple par le biais de l’appel de code non managé au code non managé ou via des appels directs à des fonctions Win32. Seuls les <xref:System.Security.Principal.WindowsIdentity> objets managés peuvent circuler entre des points `alwaysFlowImpersonationPolicy` asynchrones, sauf si l’élément`<alwaysFlowImpersonationPolicy enabled="true"/>`a la valeur true (). L’affectation `alwaysFlowImpersonationPolicy` de la valeur true à l’élément spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité. Pour plus d’informations sur le passage de l’emprunt d’identité non managé entre des points asynchrones, consultez [ \<alwaysFlowImpersonationPolicy > Element](alwaysflowimpersonationpolicy-element.md).  
+> Le common language runtime (CLR) tient compte des opérations d’emprunt d’identité effectuées à l’aide du code managé uniquement, et non de l’emprunt d’identité effectué en dehors du code managé, par exemple par le biais de l’appel de code non managé au code non managé ou via des appels directs à des fonctions Win32. Seuls les objets <xref:System.Security.Principal.WindowsIdentity> managés peuvent circuler entre des points asynchrones, sauf si l’élément `alwaysFlowImpersonationPolicy` a la valeur true (`<alwaysFlowImpersonationPolicy enabled="true"/>`). L’affectation de la valeur true à l’élément `alwaysFlowImpersonationPolicy` spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment de la façon dont l’emprunt d’identité a été effectué. Pour plus d’informations sur le passage de l’emprunt d’identité non managé entre des points asynchrones, consultez [\<élément alwaysFlowImpersonationPolicy >](alwaysflowimpersonationpolicy-element.md).  
   
  Vous pouvez modifier ce comportement par défaut de deux manières :  
   
 1. En code managé pour chaque thread.  
   
-     Vous pouvez supprimer le workflow pour chaque <xref:System.Threading.ExecutionContext> thread en modifiant les paramètres et <xref:System.Security.SecurityContext> à l’aide de la <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>méthode, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType> ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> .  
+     Vous pouvez supprimer le workflow pour chaque thread en modifiant les paramètres <xref:System.Threading.ExecutionContext> et <xref:System.Security.SecurityContext> à l’aide de la méthode <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType> ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType>.  
   
 2. Dans l’appel à l’interface d’hébergement non managée pour charger le common language runtime (CLR).  
   
-     Si une interface d’hébergement non managée (au lieu d’un simple exécutable managé) est utilisée pour charger le CLR, vous pouvez spécifier un indicateur spécial dans l’appel à la fonction [CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) . Pour activer le mode de compatibilité pour l’ensemble du processus, `flags` définissez le paramètre de la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) sur STARTUP_LEGACY_IMPERSONATION.  
+     Si une interface d’hébergement non managée (au lieu d’un simple exécutable managé) est utilisée pour charger le CLR, vous pouvez spécifier un indicateur spécial dans l’appel à la fonction [CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) . Pour activer le mode de compatibilité pour l’ensemble du processus, définissez le paramètre `flags` pour la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) sur STARTUP_LEGACY_IMPERSONATION.  
   
- Pour plus d’informations, consultez l' [ \<élément alwaysFlowImpersonationPolicy >](alwaysflowimpersonationpolicy-element.md).  
+ Pour plus d’informations, consultez l' [élément\<alwaysFlowImpersonationPolicy >](alwaysflowimpersonationpolicy-element.md).  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
  Dans une application .NET Framework, cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.  
   
- Pour une application ASP.net, le workflow d’emprunt d’identité peut être configuré dans le fichier Aspnet. config qui se \<trouve dans le dossier Windows > répertoire \Microsoft.NET\Framework\vx.x.xxxx.  
+ Pour une application ASP.NET, le workflow d’emprunt d’identité peut être configuré dans le fichier Aspnet. config qui se trouve dans le dossier Windows \<> répertoire \Microsoft.NET\Framework\vx.x.xxxx.  
   
  Par défaut, ASP.NET désactive le workflow d’emprunt d’identité dans le fichier Aspnet. config à l’aide des paramètres de configuration suivants :  
   
@@ -119,4 +117,4 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [\<alwaysFlowImpersonationPolicy >, élément](alwaysflowimpersonationpolicy-element.md)
+- [\<élément alwaysFlowImpersonationPolicy >](alwaysflowimpersonationpolicy-element.md)

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_GetNames function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 266462a5393c8e26aa2bc3f2ec8ab72d4410a431
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bd0a67987dd8ffa825114726d066249aed40cf05
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798295"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141693"
 ---
 # <a name="qualifierset_getnames-function"></a>QualifierSet_GetNames fonction)
 
@@ -51,20 +49,20 @@ dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli
 `lFlags`\
 dans L’un des indicateurs ou valeurs suivants qui spécifient les noms à inclure dans l’énumération.
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |  | 0 | Retourne les noms de tous les qualificateurs. |
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Retourne uniquement les noms des qualificateurs spécifiques à la propriété ou à l’objet actuel. <br/> Pour une propriété : Retourne uniquement les qualificateurs spécifiques à la propriété (y compris les substitutions), et non les qualificateurs propagés à partir de la définition de classe. <br/> Pour une instance : Retourne uniquement des noms de qualificateurs spécifiques à l’instance. <br/> Pour une classe : Retourne uniquement les qualificateurs spécifiques à la classe qui est dérivée.
-|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Retourne uniquement les noms des qualificateurs propagés à partir d’un autre objet. <br/> Pour une propriété : Retourne uniquement les qualificateurs propagés à cette propriété à partir de la définition de classe, et non ceux de la propriété elle-même. <br/> Pour une instance : Retourne uniquement les qualificateurs propagés à partir de la définition de classe. <br/> Pour une classe : Retourne uniquement les noms de qualificateur hérités des classes parentes. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Retourne uniquement les noms des qualificateurs spécifiques à la propriété ou à l’objet actuel. <br/> Pour une propriété : retourner uniquement les qualificateurs spécifiques à la propriété (y compris les substitutions), et non les qualificateurs propagés à partir de la définition de classe. <br/> Pour une instance : retourner uniquement des noms de qualificateurs spécifiques à l’instance. <br/> Pour une classe : retourne uniquement les qualificateurs spécifiques à la classe qui est dérivée.
+|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Retourne uniquement les noms des qualificateurs propagés à partir d’un autre objet. <br/> Pour une propriété : Retournez uniquement les qualificateurs propagés à cette propriété à partir de la définition de classe, et non ceux de la propriété elle-même. <br/> Pour une instance : retourner uniquement les qualificateurs propagés à partir de la définition de classe. <br/> Pour une classe : Retournez uniquement les noms de qualificateur hérités des classes parentes. |
 
 `pstrNames`\
-à Nouveau `SAFEARRAY` qui contient les noms demandés. Le tableau peut avoir 0 élément. Si une erreur se produit, un `SAFEARRAY` nouveau n’est pas retourné.
+à Nouvelle `SAFEARRAY` qui contient les noms demandés. Le tableau peut avoir 0 élément. Si une erreur se produit, une nouvelle `SAFEARRAY` n’est pas retournée.
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire disponible insuffisante pour commencer une nouvelle énumération. |
@@ -76,13 +74,13 @@ Cette fonction encapsule un appel à la méthode [IWbemQualifierSet :: GetNames
 
 Une fois que vous avez récupéré les noms de qualificateurs, vous pouvez accéder à chaque qualificateur par son nom en appelant la fonction [QualifierSet_Get](qualifierset-get.md) .
 
-Il n’y a pas d’erreur pour un objet donné à avoir des qualificateurs nuls, donc le nombre `pstrNames` de chaînes dans on return peut être 0, même `WBEM_S_NO_ERROR`si la fonction retourne.
+Il n’y a pas d’erreur pour un objet donné à avoir des qualificateurs nuls, donc le nombre de chaînes dans `pstrNames` au retour peut être 0, même si la fonction retourne `WBEM_S_NO_ERROR`.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** WMINet_Utils.idl
+**En-tête :** WMINet_Utils. idl
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 

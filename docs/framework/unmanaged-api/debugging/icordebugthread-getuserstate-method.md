@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ae0cfd73-8ead-4d36-9310-dccaac9db0bd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f7d3325c8aee44849ff1fb7a6cc06a0ed7c2c6f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f3511ff5ee9b9221037c64a5e17d61f6bf52e5f3
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769104"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133407"
 ---
 # <a name="icordebugthreadgetuserstate-method"></a>ICorDebugThread::GetUserState, méthode
-Obtient l’état utilisateur actuel de ICorDebugThread.  
+Obtient l’état utilisateur actuel de ce ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +35,12 @@ HRESULT GetUserState (
   
 ## <a name="parameters"></a>Paramètres  
  `pState`  
- [out] Pointeur vers une combinaison au niveau du bit des valeurs d’énumération CorDebugUserState qui décrivent l’état utilisateur actuel de ce thread.  
+ à Pointeur vers une combinaison d’opérations de bits de valeurs d’énumération CorDebugUserState, qui décrivent l’état utilisateur actuel de ce thread.  
   
 ## <a name="remarks"></a>Notes  
- L’état utilisateur du thread est l’état du thread lorsqu’il est examiné par le programme est en cours de débogage. Un thread peut avoir plusieurs bits d’état à définir.  
+ L’état utilisateur du thread est l’état du thread lorsqu’il est examiné par le programme en cours de débogage. Un thread peut avoir plusieurs bits d’État définis.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

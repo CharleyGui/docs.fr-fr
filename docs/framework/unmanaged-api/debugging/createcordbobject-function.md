@@ -16,17 +16,15 @@ helpviewer_keywords:
 ms.assetid: b259821d-4fa7-464d-85cf-304dfffc8089
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2ab86277956469e558d20cea81174a7fdcc0020b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d21e0d3d0370ec7c1b223be29099f6b99822463b
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739324"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132104"
 ---
 # <a name="createcordbobject-function"></a>Fonction CreateCordbObject
-Crée une interface de débogueur ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)) qui fournit des fonctionnalités d’instanciation d’une session de débogage managée sur un processus distant.  
+Creates a debugger interface ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)) that provides functionality for instantiating a managed debugging session on a remote process.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +40,7 @@ HRESULT CordbCreateObject (
  [in] Version de débogage du processus cible. Ce paramètre doit être CorDebugVersion_2_0 pour le débogage distant.  
   
  `ppCordb`  
- [out] Pointeur vers un pointeur vers un objet qui sera être casté en un [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface et retourné.  
+ [out] Pointer to a pointer to an object that will be cast to an [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface and returned.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
@@ -58,13 +56,13 @@ HRESULT CordbCreateObject (
  Autres échecs.  
   
 ## <a name="remarks"></a>Notes  
- Le [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface retournée dans `ppCordb` est l’interface de débogage de niveau supérieur pour tous les services de débogage managés.  
+ The [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface that is returned in `ppCordb` is the top-level debugging interface for all managed debugging services.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CoreClrRemoteDebuggingInterfaces.h  
+ **Header:** CoreClrRemoteDebuggingInterfaces.h  
   
- **Bibliothèque :** mscordbi_macx86.dll  
+ **Library:** mscordbi_macx86.dll  
   
- **Versions du .NET framework :** 3.5 SP1
+ **.NET Framework Versions:** 3.5 SP1

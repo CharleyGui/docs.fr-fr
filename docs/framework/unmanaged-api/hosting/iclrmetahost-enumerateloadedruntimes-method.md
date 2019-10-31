@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22fc0a3f-dce4-4766-9a3c-9fab15f4b4ca
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b77a01a6adf40c21e0d56853b860982e39b9b27e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f89307ad7ed41f872ad66a99be03663ac1f30f13
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779799"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140974"
 ---
 # <a name="iclrmetahostenumerateloadedruntimes-method"></a>ICLRMetaHost::EnumerateLoadedRuntimes, méthode
-Retourne une énumération qui inclut un valide [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) pointeur d’interface pour chaque version du common language runtime (CLR) qui est chargé dans un processus donné. Cette méthode remplace la [GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) (fonction).  
+Retourne une énumération qui comprend un pointeur d’interface [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) valide pour chaque version du Common Language Runtime (CLR) qui est chargé dans un processus donné. Cette méthode remplace la fonction [GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,10 +36,10 @@ HRESULT EnumerateLoadedRuntimes (
   
 ## <a name="parameters"></a>Paramètres  
  `hndProcess`  
- [in] Le handle du processus à inspecter pour les runtimes chargés.  
+ dans Handle du processus à examiner pour les runtimes chargés.  
   
  `ppEnumerator`  
- [out] Un <xref:Microsoft.VisualStudio.OLE.Interop.IEnumUnknown> énumération de [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interfaces correspondant à chaque CLR qui est chargé par le processus.  
+ à Une <xref:Microsoft.VisualStudio.OLE.Interop.IEnumUnknown> énumération d’interfaces [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) correspondant à chaque CLR chargé par le processus.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -52,14 +50,14 @@ HRESULT EnumerateLoadedRuntimes (
 |E_POINTER|`ppEnumerator` a la valeur null.|  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est répertorie toutes les exécutions chargées, même si elles ont été chargées avec les fonctions déconseillées comme [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md).  
+ Cette méthode répertorie tous les runtimes chargés, même s’ils ont été chargés avec des fonctions déconseillées telles que [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

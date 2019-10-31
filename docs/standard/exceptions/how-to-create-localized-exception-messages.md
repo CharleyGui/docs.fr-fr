@@ -2,18 +2,17 @@
 title: 'Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés'
 description: Découvrez comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 author: Youssef1313
-ms.author: ronpet
 ms.date: 09/13/2019
-ms.openlocfilehash: b4aa567fccda9354bc5959d6b9838d678d53abef
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 453e332541628770932da2a6802fdcaee5211a84
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696715"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141525"
 ---
 # <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 
-Dans cet article, vous allez apprendre à créer des exceptions définies par l’utilisateur qui sont héritées de la classe de base <xref:System.Exception> avec des messages d’exception localisés à l’aide d’assemblys satellites.
+Dans cet article, vous allez apprendre à créer des exceptions définies par l’utilisateur qui sont héritées de la classe de <xref:System.Exception> de base avec des messages d’exception localisés à l’aide d’assemblys satellites.
 
 ## <a name="create-custom-exceptions"></a>Créer des exceptions personnalisées
 
@@ -83,7 +82,7 @@ Les [assemblys satellites](../../framework/resources/creating-satellite-assembli
 Pour créer les messages d’exception localisés :
 
 1. Créez un dossier nommé *Resources* pour contenir les fichiers de ressources.
-1. Ajoutez-lui un nouveau fichier de ressources. Pour ce faire, dans Visual Studio, cliquez avec le bouton droit sur le dossier dans **Explorateur de solutions**, puis sélectionnez **Ajouter** > **nouveau élément** > **ressources**. Nommez le fichier *ExceptionMessages. resx*. Il s’agit du fichier de ressources par défaut.
+1. Ajoutez-lui un nouveau fichier de ressources. Pour ce faire, dans Visual Studio, cliquez avec le bouton droit sur le dossier dans **Explorateur de solutions**, puis sélectionnez **Ajouter** > **nouvel élément** > **fichier de ressources**. Nommez le fichier *ExceptionMessages. resx*. Il s’agit du fichier de ressources par défaut.
 1. Ajoutez une paire nom/valeur pour votre message d’exception, comme dans l’illustration suivante :
 
    ![Ajouter des ressources à la culture par défaut](media/add-resources-to-default-culture.jpg)

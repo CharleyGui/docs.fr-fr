@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 73098077e3860d3f4a8a02921ecedf8dff24165b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc956827ad59fc655137e4147e6d98b6d097d470
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774049"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138187"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType, énumération
-Contient des valeurs qui indiquent le type de tâche est représentée par un [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) ou un [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) interface.  
+Contient des valeurs qui indiquent le type de tâche représenté par une interface [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) ou [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,24 +46,24 @@ typedef enum ETaskType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`TT_ADUNLOAD`|L’interface représente une tâche de déchargement du domaine application.|  
+|`TT_ADUNLOAD`|L’interface représente une tâche de déchargement de domaine d’application.|  
 |`TT_DEBUGGERHELPER`|L’interface représente une tâche d’assistance du débogueur.|  
-|`TT_FINALIZER`|L’interface représente une tâche du finaliseur.|  
-|`TT_GC`|L’interface représente une tâche de garbage collection.|  
-|`TT_THREADPOOL_GATE`|L’interface représente une tâche du thread porte.|  
-|`TT_THREADPOOL_IOCOMPLETION`|L’interface représente une tâche du thread d’e/s ou une tâche de thread de port de fin.|  
-|`TT_THREADPOOL_TIMER`|L’interface représente une tâche du thread du minuteur.|  
+|`TT_FINALIZER`|L’interface représente une tâche de finaliseur.|  
+|`TT_GC`|L’interface représente une tâche garbage collection.|  
+|`TT_THREADPOOL_GATE`|L’interface représente une tâche de thread de la porte.|  
+|`TT_THREADPOOL_IOCOMPLETION`|L’interface représente une tâche de thread d’e/s ou une tâche de thread de terminaison de port.|  
+|`TT_THREADPOOL_TIMER`|L’interface représente une tâche de thread de minuterie.|  
 |`TT_THREADPOOL_WAIT`|L’interface représente une tâche de thread d’attente.|  
-|`TT_THREADPOOL_WORKER`|L’interface représente une tâche du thread de travail.|  
+|`TT_THREADPOOL_WORKER`|L’interface représente une tâche de thread de travail.|  
 |`TT_UNKNOWN`|La tâche est inconnue.|  
 |`TT_USER`|L’interface représente une tâche utilisateur.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

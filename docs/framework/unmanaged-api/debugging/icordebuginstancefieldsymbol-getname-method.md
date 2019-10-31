@@ -1,17 +1,15 @@
 ---
-title: ICorDebugInstanceFieldSymbol::GetName, méthode
+title: 'Icordebuginstancefieldsymbol, :: GetName, méthode'
 ms.date: 03/30/2017
 ms.assetid: d9c12b1f-9c1d-4943-8e9e-93b55faf085f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5b1b3cc489c504942806b043fa2e3b76d5415d84
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d88e18b8d6d497098e340b396972f9ead28dbaf6
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936931"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139049"
 ---
-# <a name="icordebuginstancefieldsymbolgetname-method"></a>ICorDebugInstanceFieldSymbol::GetName, méthode
+# <a name="icordebuginstancefieldsymbolgetname-method"></a>Icordebuginstancefieldsymbol, :: GetName, méthode
 Obtient le nom du champ d'instance.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,12 +37,12 @@ HRESULT GetName(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

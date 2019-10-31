@@ -1,17 +1,15 @@
 ---
-title: ICorDebugMutableDataTarget::ContinueStatusChanged, méthode
+title: ICorDebugMutableDataTarget::ContinueStatusChanged Method
 ms.date: 03/30/2017
 ms.assetid: 5a66d3f4-dd16-4d62-9dcc-0eab7041d894
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f43e98530fcd6d11b7c76295a92d42baceddcd6e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: abaf2d0542e16f526ecbe369370c31c225808f1f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764625"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139351"
 ---
-# <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a>ICorDebugMutableDataTarget::ContinueStatusChanged, méthode
+# <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a>ICorDebugMutableDataTarget::ContinueStatusChanged Method
 Modifie l'état de continuation de l'événement de débogage en suspens sur le thread spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,7 +30,7 @@ HRESULT ContinueStatusChanged(
 ## <a name="remarks"></a>Notes  
  Le débogueur appelle la méthode `ContinueStatusChanged` quand il appelle une méthode ICorDebug qui nécessite une gestion potentiellement anormale de l'événement de débogage actif. Par exemple, si une exception est en suspens et que le débogueur demande une opération susceptible d’annuler l’exception (comme [ICorDebugILFrame::SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) ou `FuncEval`), cette API permet de demander l’annulation de l’exception.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

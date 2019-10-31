@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c431617a-b055-44a0-8730-48b7a86d9610
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b1a044d1600f7e21e3abfbf704daef5213617b4c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87549118742da797ef0dd1b08ae9e72c466f7841
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780048"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139568"
 ---
 # <a name="icorruntimehostgetconfiguration-method"></a>ICorRuntimeHost::GetConfiguration, méthode
-Obtient un objet qui permet à l’hôte spécifier la configuration de rappel du common language runtime (CLR).  
+Obtient un objet qui permet à l’hôte de spécifier la configuration de rappel du common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetConfiguration(
   
 ## <a name="parameters"></a>Paramètres  
  `pConfiguration`  
- [out] Un pointeur vers l’adresse d’un [ICorConfiguration](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md) objet qui peut être utilisé pour configurer le CLR.  
+ à Pointeur vers l’adresse d’un objet [ICorConfiguration](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md) qui peut être utilisé pour configurer le CLR.  
   
 ## <a name="remarks"></a>Notes  
- Le CLR doit être configuré avant son initialisation ; Sinon, le `GetConfiguration` méthode retourne une valeur HRESULT indiquant une erreur.  
+ Le CLR doit être configuré avant son initialisation ; Sinon, la méthode `GetConfiguration` retourne un HRESULT indiquant une erreur.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET framework :** 1.0, 1.1  
+ **Versions de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

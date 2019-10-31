@@ -10,17 +10,15 @@ api_type:
 ms.assetid: 15212cb5-93d4-4025-bec9-d4b9919eb1fe
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8d35e0f27968b2649a63b035759a6e72d53b2b94
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b3094eb6e3006be49cf17c1ca2a220b8ec58b673
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928192"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139061"
 ---
 # <a name="icordebugilframe3-interface"></a>ICorDebugILFrame3, interface
-Fournit une méthode qui encapsule la valeur de retour d'une fonction. `ICorDebugILFrame3`est une extension logique des interfaces ICorDebugILFrame et ICorDebugILFrame2.  
+Fournit une méthode qui encapsule la valeur de retour d'une fonction. `ICorDebugILFrame3` est une extension logique des interfaces ICorDebugILFrame et ICorDebugILFrame2.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -33,12 +31,12 @@ Fournit une méthode qui encapsule la valeur de retour d'une fonction. `ICorDebu
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   

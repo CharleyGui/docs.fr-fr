@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 7b949961e854facf8414c81c47f995b2ac57af3f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3c57021061c1566b369cdd43847e3994cf54e2da
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755383"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139676"
 ---
 # <a name="icordebugprocesssetthreadcontext-method"></a>ICorDebugProcess::SetThreadContext, méthode
-Définit le contexte pour le thread donné dans ce processus.  
+Définit le contexte du thread donné dans ce processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +37,24 @@ HRESULT SetThreadContext(
   
 ## <a name="parameters"></a>Paramètres  
  `threadID`  
- [in] L’ID du thread pour lequel définir le contexte.  
+ dans ID du thread pour lequel définir le contexte.  
   
  `contextSize`  
  [in] Taille du tableau `context`.  
   
  `context`  
- [in] Un tableau d’octets qui décrivent le contexte du thread.  
+ dans Tableau d’octets qui décrivent le contexte du thread.  
   
  Le contexte spécifie l’architecture du processeur sur lequel le thread s’exécute.  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur doit appeler cette méthode plutôt que Win32 `SetThreadContext` fonctionner, car le thread peut être dans un état « infiltré », son contexte dans lequel a été temporairement modifié. Cette méthode doit être utilisée uniquement lorsqu’un thread est en code natif. Utilisez [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pour les threads en code managé. Vous ne devez jamais modifier le contexte d’un thread pendant un événement de débogage hors-bande (OOB).  
+ Le débogueur doit appeler cette méthode plutôt que la fonction `SetThreadContext` Win32, car le thread peut être dans un État « détourné », dans lequel son contexte a été modifié temporairement. Cette méthode doit être utilisée uniquement quand un thread est en code natif. Utilisez [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pour les threads dans le code managé. Vous ne devez jamais modifier le contexte d’un thread pendant un événement de débogage hors bande (OOB).  
   
  Les données passées doivent être une structure de contexte pour la plateforme actuelle.  
   
- Cette méthode peut endommager le runtime pour une utilisation incorrecte.  
+ Cette méthode peut endommager le runtime si elle est utilisée de manière incorrecte.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

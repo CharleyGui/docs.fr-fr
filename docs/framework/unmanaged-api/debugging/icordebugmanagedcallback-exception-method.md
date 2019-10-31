@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ab18a509-dff3-4930-b585-bd15e0414176
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e944a6debf790907b75760c8856ae3a365a84650
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: af2dab65629093401219f1016538b912bee4d067
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759619"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130823"
 ---
 # <a name="icordebugmanagedcallbackexception-method"></a>ICorDebugManagedCallback::Exception, méthode
 Notifie le débogueur qu’une exception a été levée à partir du code managé.  
@@ -39,18 +37,18 @@ HRESULT Exception (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’exception a été levée.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’exception a été levée.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’exception a été levée.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’exception a été levée.  
   
  `unhandled`  
- [in] Si cette valeur est `false`, l’exception n’a pas encore été traitée par l’application ; sinon, l’exception n’est pas gérée et le processus prendra fin.  
+ dans Si cette valeur est `false`, l’exception n’a pas encore été traitée par l’application ; dans le cas contraire, l’exception n’est pas gérée et met fin au processus.  
   
 ## <a name="remarks"></a>Notes  
  L’exception spécifique peut être récupérée à partir de l’objet thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7df1e492-8014-43ea-80d1-a4743e9b1c17
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 44973bcf98eb776735e0144ff1c2747b1445c5d7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b6569b5dab89a88a24cf2dfc873da9740e5af505
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770899"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133380"
 ---
 # <a name="icorruntimehostswitchinlogicalthreadstate-method"></a>ICorRuntimeHost::SwitchInLogicalThreadState, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
@@ -37,16 +35,16 @@ HRESULT SwitchInLogicalThreadState(
   
 ## <a name="parameters"></a>Paramètres  
  `pFiberCookie`  
- [in] Cookie qui indique la fibre à utiliser.  
+ dans Cookie qui indique la fibre à utiliser.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Version du .NET framework :** 1.0, 1.1  
+ **Version de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

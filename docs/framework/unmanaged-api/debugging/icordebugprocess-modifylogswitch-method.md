@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5fd30875-555e-4e96-877b-5dd266cde7c4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96db1ca115ffed47b5eb8eadd9c3d2f620060c4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86b8737577bdb5f61f1061cb217620fae03ebd0c
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755446"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139370"
 ---
 # <a name="icordebugprocessmodifylogswitch-method"></a>ICorDebugProcess::ModifyLogSwitch, méthode
-Définit le niveau de gravité du commutateur de journal spécifié.  
+Définit le niveau de gravité du commutateur de journalisation spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT ModifyLogSwitch(
   
 ## <a name="parameters"></a>Paramètres  
  `pLogSwitchName`  
- [in] Un pointeur vers une chaîne qui spécifie le nom du commutateur de journal.  
+ dans Pointeur vers une chaîne qui spécifie le nom du commutateur de journal.  
   
  `lLevel`  
- [in] Le niveau de gravité à définir pour le commutateur de journal spécifié.  
+ dans Niveau de gravité à définir pour le commutateur de journalisation spécifié.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est valide uniquement après la [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) rappel s’est produite.  
+ Cette méthode est valide uniquement après que le rappel [ICorDebugManagedCallback :: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) s’est produit.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

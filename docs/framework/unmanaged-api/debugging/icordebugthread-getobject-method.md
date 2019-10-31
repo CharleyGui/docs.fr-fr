@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1590febe-96c2-4046-97db-d81d81d67e01
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3695f150797e6a59a2fb1d58c99f233a35d687ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5cb95fb7cf70dbf7616e9bc59ebf44de090de883
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771847"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133430"
 ---
 # <a name="icordebugthreadgetobject-method"></a>ICorDebugThread::GetObject, méthode
-Obtient un pointeur d’interface vers le thread de common language runtime (CLR).  
+Obtient un pointeur d’interface vers le thread common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetObject (
   
 ## <a name="parameters"></a>Paramètres  
  `ppObject`  
- [out] Pointeur vers l’adresse d’un objet d’interface ICorDebugValue qui représente le thread de CLR.  
+ à Pointeur vers l’adresse d’un objet d’interface ICorDebugValue qui représente le thread CLR.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9e00337f-b307-4602-9bc3-965a8dbf02cd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3eac353252f5a97402cbd883895b3e397c39edd6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: dc241324f5844610d7b86b7cb9668f84d4525395
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799179"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140665"
 ---
 # <a name="gethashfromhandle-function"></a>GetHashFromHandle, fonction
 Génère un hachage sur le contenu du fichier avec le handle de fichier spécifié, à l’aide de l’algorithme de hachage spécifié.  
@@ -51,17 +49,17 @@ HRESULT GetHashFromHandle (
  à Mémoire tampon de hachage retournée.  
   
  `cchHash`  
- dans Taille maximale demandée de `pbHash`.  
+ dans Taille maximale de `pbHash`demandée.  
   
  `pchHash`  
- à Taille, en octets, du retourné `pbHash`.  
+ à Taille, en octets, de la `pbHash`retournée.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

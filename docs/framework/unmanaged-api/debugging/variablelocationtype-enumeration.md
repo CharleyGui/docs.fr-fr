@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8635ee3a-c84b-4626-876c-416bee54f787
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2093466c78b039a06a01e2d850b88ff4543d0ab3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 861d5daa481132d3d6527e8d5fbccfab6436c5fe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752458"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139117"
 ---
 # <a name="variablelocationtype-enumeration"></a>VariableLocationType, énumération
-Indique le type d’emplacement native d’une variable.  
+Indique le type d’emplacement natif d’une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,14 +39,14 @@ typedef enum VariableLocationType
   
 |Membre|Description|  
 |------------|-----------------|  
-|`VLT_REGISTER`|La variable est dans un Registre.|  
-|`VLT_REGISTER_RELATIVE`|La variable est dans un emplacement de mémoire relative au Registre.|  
-|`VLT_INVALID`|La variable n’est pas stockée dans un Registre ou un emplacement de mémoire relative au Registre.|  
+|`VLT_REGISTER`|La variable se trouve dans un registre.|  
+|`VLT_REGISTER_RELATIVE`|La variable se trouve dans un emplacement de mémoire relatif à un registre.|  
+|`VLT_INVALID`|La variable n’est pas stockée dans un registre ou un emplacement de mémoire relatif à un registre.|  
   
 ## <a name="remarks"></a>Notes  
- Un membre de la `VariableLocationType` énumération est retournée par la [ICorDebugVariableHome::GetLocationType](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getlocationtype-method.md) (méthode).  
+ Un membre de l’énumération `VariableLocationType` est retourné par la méthode [ICorDebugVariableHome :: GetLocationType](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getlocationtype-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

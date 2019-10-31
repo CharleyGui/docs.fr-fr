@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e235ea80-b84c-4442-a4c3-fc96c25a8eb9
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e3b17ca32051cd5fc0673ef26124b855a66f9785
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 429ce0510162b3256cdf58f4820b04dd80243e29
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779974"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139633"
 ---
 # <a name="icorruntimehostcreateevidence-method"></a>ICorRuntimeHost::CreateEvidence, méthode
-Obtient un pointeur d’interface de type <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, ce qui permet à l’hôte de créer la preuve de sécurité à passer à la [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) ou [CreateDomainEx](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) (méthode).  
+Obtient un pointeur d’interface de type <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, qui permet à l’hôte de créer une preuve de sécurité à passer à la méthode [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) ou [CreateDomainEx](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +35,28 @@ HRESULT CreateEvidence (
   
 ## <a name="parameters"></a>Paramètres  
  `pEvidence`  
- [out] Un pointeur d’interface vers un <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> instance utilisée pour créer la preuve de sécurité. Ce pointeur est tapé `IUnknown`, de sorte que les appelants doivent généralement appeler `QueryInterface` sur cette interface pour obtenir un pointeur vers un <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.  
+ à Pointeur d’interface vers une instance de <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> utilisée pour créer des preuves de sécurité. Ce pointeur est typé `IUnknown`. ainsi, les appelants doivent généralement appeler `QueryInterface` sur cette interface pour obtenir un pointeur vers un <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|L’opération a réussi.|  
-|S_FALSE|L’opération a échoué.|  
-|E_FAIL|Une défaillance grave et inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à toute API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
+|S_FALSE|L’opération n’a pas pu se terminer.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à des API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode retourne une collection vide qui ne peuvent pas être remplie à partir du code natif. Vous devez utiliser le <xref:System.Security.Policy.Evidence> méthode à la place.  
+ Cette méthode retourne une collection vide qui ne peut pas être remplie à partir du code natif. Vous devez utiliser la méthode <xref:System.Security.Policy.Evidence> à la place.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Version du .NET framework :** 1.0, 1.1  
+ **Version de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

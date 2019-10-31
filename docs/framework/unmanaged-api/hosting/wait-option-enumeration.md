@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 962fc293-8ded-4b3b-90ce-2c21a4f1b244
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: eda866c1a1f1f69f0d042ccfde3dfad293df9b37
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ecfb551b55551e5f6cc7e7e9ffb55e5a96259ee
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776511"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141519"
 ---
-# <a name="waitoption-enumeration"></a>WAIT_OPTION, énumération
-Contient des valeurs qui indiquent que l’action qu’un hôte doit effectuer si l’opération demandée par le common language runtime (CLR) bloque.  
+# <a name="wait_option-enumeration"></a>WAIT_OPTION, énumération
+Contient des valeurs qui indiquent l’action qu’un hôte doit effectuer si une opération demandée par le common language runtime (CLR) se bloque.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`WAIT_ALERTABLE`|Avertit l’hôte que la tâche doit être réactivée si le CLR appelle le [IHostTask::Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) (méthode).|  
-|`WAIT_MSGPUMP`|Avertit l’hôte qu’il doit pomper des messages sur le thread de système d’exploitation actuel si le thread se bloque. Le runtime spécifie cette valeur uniquement sur un <xref:System.Threading.ApartmentState.STA> thread.|  
-|`WAIT_NOTINDEADLOCK`|Avertit l’hôte que la demande de synchronisation spécifiée ne peut pas être arrêtée par un hôte. Autrement dit, l’hôte ne peut pas retourner `HOST_E_DEADLOCK`.|  
+|`WAIT_ALERTABLE`|Avertit l’hôte que la tâche doit être réutilisée si le CLR appelle la méthode [IHostTask :: Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) .|  
+|`WAIT_MSGPUMP`|Indique à l’hôte qu’il doit pomper les messages sur le thread de système d’exploitation actuel si le thread est bloqué. Le runtime spécifie cette valeur uniquement sur un thread <xref:System.Threading.ApartmentState.STA>.|  
+|`WAIT_NOTINDEADLOCK`|Indique à l’hôte que la demande de synchronisation spécifiée ne peut pas être interrompue par un hôte. Autrement dit, l’hôte ne peut pas retourner `HOST_E_DEADLOCK`.|  
   
 ## <a name="remarks"></a>Notes  
- Le [IHostTaskManager::Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) et [IHostTaskManager::SwitchToTask](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) méthodes prennent toutes deux un paramètre de ce type.  
+ Les méthodes [IHostTaskManager :: Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) et [IHostTaskManager :: SwitchToTask,](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) prennent toutes deux un paramètre de ce type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

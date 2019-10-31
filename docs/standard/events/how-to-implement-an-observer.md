@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : implémenter un observateur'
+title: 'Comment : implémenter une méthode Observer'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,16 +9,14 @@ helpviewer_keywords:
 - observers [.NET Framework], observer design pattern
 - observer design pattern [.NET Framework], implementing observers
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b410b9381246cef2e61086e333c4c5b07646a575
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: e6aba4d85e502563291478640927bd0f234736a8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301059"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139313"
 ---
-# <a name="how-to-implement-an-observer"></a>Procédure : implémenter un observateur
+# <a name="how-to-implement-an-observer"></a>Comment : implémenter une méthode Observer
 Le modèle de design observateur requiert une division entre un observateur, qui s’inscrit pour recevoir des notifications, et un fournisseur, qui surveille les données et envie des notifications à un ou plusieurs observateurs. Cette rubrique décrit comment créer un observateur. Une rubrique connexe, [Guide pratique pour implémenter un fournisseur](../../../docs/standard/events/how-to-implement-a-provider.md), explique comment créer un fournisseur.  
   
 ### <a name="to-create-an-observer"></a>Pour créer un observateur  

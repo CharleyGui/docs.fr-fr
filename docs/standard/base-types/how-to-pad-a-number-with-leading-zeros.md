@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : remplir un nombre avec des zéros non significatifs'
+title: 'Comment : remplir un nombre avec des zéros non significatifs'
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,16 +11,14 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 54c3eb734184adf5168607cfc8bcbf6c17ea493a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678891"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73131976"
 ---
-# <a name="how-to-pad-a-number-with-leading-zeros"></a>Procédure : remplir un nombre avec des zéros non significatifs
+# <a name="how-to-pad-a-number-with-leading-zeros"></a>Comment : remplir un nombre avec des zéros non significatifs
 
 Vous pouvez ajouter des zéros non significatifs à un entier en utilisant la [chaîne de format numérique standard](../../../docs/standard/base-types/standard-numeric-format-strings.md) « D » avec un spécificateur de précision. Vous pouvez ajouter des zéros non significatifs aux nombres entiers et à virgule flottante en utilisant une [chaîne de format numérique personnalisée](../../../docs/standard/base-types/custom-numeric-format-strings.md). Cet article montre comment utiliser les deux méthodes pour remplir un nombre avec des zéros non significatifs.
 
@@ -85,7 +83,7 @@ L’exemple suivant met en forme plusieurs valeurs numériques avec des zéros n
 
     1. Si tel est le cas, déterminez le nombre de caractères à gauche du séparateur décimal.
 
-         - ou -
+         ou
 
          Sinon, déterminez la longueur de la chaîne.
 
@@ -104,6 +102,6 @@ L'exemple suivant remplit deux valeurs <xref:System.Double> avec cinq zéros non
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md)

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - QualifierSet_Next function [.NET WMI and performance counters]
 topic_type:
 - Reference
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f97a19f236b87a7f4c5b2014aca6ee4abd338c63
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c9c824b0158618848c13183d92f88604460d5099
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70798280"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141726"
 ---
 # <a name="qualifierset_next-function"></a>QualifierSet_Next fonction)
 Récupère le qualificateur suivant dans une énumération commencée avec un appel à la fonction [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md).   
@@ -53,19 +51,19 @@ dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli
 [in] Réservée. Ce paramètre doit avoir la valeur 0.
 
 `pstrName`   
-à Nom du qualificateur. Si `null`la valeur est, ce paramètre est ignoré `pstrName` ; sinon, ne doit pas `BSTR` pointer vers un valide ou une fuite de mémoire se produit. Si la valeur n’est pas null, la fonction alloue `BSTR` toujours une nouvelle `WBEM_S_NO_ERROR`quand elle retourne.
+à Nom du qualificateur. Si `null`, ce paramètre est ignoré ; dans le cas contraire, `pstrName` ne doit pas pointer vers une `BSTR` valide ou une fuite de mémoire se produit. Si la valeur n’est pas null, la fonction alloue toujours une nouvelle `BSTR` lorsqu’elle retourne `WBEM_S_NO_ERROR`.
 
 `pVal`   
-à En cas de réussite, il s’agit de la valeur du qualificateur. Si la fonction échoue, le `VARIANT` pointé par `pVal` n’est pas modifié. Si ce paramètre est `null`, le paramètre est ignoré.
+à En cas de réussite, il s’agit de la valeur du qualificateur. Si la fonction échoue, le `VARIANT` désigné par `pVal` n’est pas modifié. Si ce paramètre est `null`, le paramètre est ignoré.
 
 `plFlavor`   
-à Pointeur vers une valeur de type LONG qui reçoit la version du qualificateur. Si les informations de version ne sont pas souhaitées, `null`ce paramètre peut avoir la la. 
+à Pointeur vers une valeur de type LONG qui reçoit la version du qualificateur. Si les informations de version ne sont pas souhaitées, ce paramètre peut être `null`. 
 
 ## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | L’appelant n’a pas appelé [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md). |
@@ -77,14 +75,14 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 Cette fonction encapsule un appel à la méthode [IWbemQualifierSet :: Next](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-next) .
 
-Vous appelez la `QualifierSet_Next` fonction à plusieurs reprises pour énumérer tous les qualificateurs jusqu’à ce `WBEM_S_NO_MORE_DATA`que la fonction retourne. Pour terminer l’énumération tôt, appelez la fonction [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) .
+Vous appelez la fonction `QualifierSet_Next` à plusieurs reprises pour énumérer tous les qualificateurs jusqu’à ce que la fonction retourne `WBEM_S_NO_MORE_DATA`. Pour terminer l’énumération tôt, appelez la fonction [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) .
 
 L’ordre des qualificateurs retournés pendant l’énumération n’est pas défini.
 
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   

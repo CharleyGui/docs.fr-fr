@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b518a3be939c70b207a71d79a3d362dba26fd3d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2f91891164f1f80617cab10347eb4a7a08762c10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774191"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140352"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName, méthode
-Obtient le nom du domaine d’application qui est représenté par ce [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  
+Obtient le nom du domaine d’application représenté par ce [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,20 +41,20 @@ HRESULT GetName (
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] Un pointeur vers le nombre de caractères larges, y compris le caractère null, retourné dans le `szName` tableau.  
+ à Pointeur vers le nombre de caractères larges, y compris le caractère null, retourné dans le tableau de `szName`.  
   
  `szName`  
- [out] Tableau dans lequel stocker le nom.  
+ à Tableau dans lequel stocker le nom.  
   
 ## <a name="remarks"></a>Notes  
- Si `szName` n’est pas null, le `GetName` méthode copie jusqu'à `cchName` caractères (y compris le terminateur null) dans `szName`. Si une valeur non null est retournée dans `pcchName`, le nombre réel de caractères dans le nom (y compris le terminateur null) est stocké dans le `szName` tableau.  
+ Si `szName` n’est pas null, la méthode `GetName` copie jusqu’à `cchName` caractères (y compris la marque de fin null) dans `szName`. Si une valeur non null est retournée dans `pcchName`, le nombre réel de caractères dans le nom (y compris la marque de fin null) est stocké dans le tableau `szName`.  
   
- Le `GetName` méthode retourne une valeur S_OK HRESULT, quel que soit le nombre de caractères ont été copié.  
+ La méthode `GetName` retourne un HRESULT S_OK quel que soit le nombre de caractères copiés.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

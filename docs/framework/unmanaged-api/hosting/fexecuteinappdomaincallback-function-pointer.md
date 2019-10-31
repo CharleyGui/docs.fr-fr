@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 2709f18f-3eee-497f-bc33-3ab7a485599b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8edd2a42ed1b826e1b6ea09e92165bc9fa967a8b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 970468bc2f50144c62c6e3cbcf9c00c2027f7663
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760251"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138183"
 ---
 # <a name="fexecuteinappdomaincallback-function-pointer"></a>FExecuteInAppDomainCallback (pointeur fonction)
-Pointe vers une fonction qui est appelée par le common language runtime (CLR) pour exécuter le code managé.  
+Pointe vers une fonction qui est appelée par le common language runtime (CLR) pour exécuter du code managé.  
   
- Ce pointeur de fonction a été déconseillé dans le .NET Framework 4.  
+ Ce pointeur de fonction est déconseillé dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +36,16 @@ typedef HRESULT (__stdcall *FExecuteInAppDomainCallback) (
   
 ## <a name="parameters"></a>Paramètres  
  `cookie`  
- [in] Un pointeur vers la mémoire allouée par l’appelant opaque qui contient le code managé doit être exécuté.  
+ dans Pointeur vers la mémoire allouée par l’appelant opaque qui contient le code managé à exécuter.  
   
- L’allocation et la durée de vie de cette mémoire sont contrôlées par l’appelant (autrement dit, le CLR). Cela n’est pas mémoire de tas managé CLR.  
+ L’allocation et la durée de vie de cette mémoire sont contrôlées par l’appelant (autrement dit, le CLR). Il ne s’agit pas de la mémoire du tas managé CLR.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorWks.dll  
+ **Bibliothèque :** MSCorWks. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

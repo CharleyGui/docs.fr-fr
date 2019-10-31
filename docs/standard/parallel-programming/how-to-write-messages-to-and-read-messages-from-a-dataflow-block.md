@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Écrire et lire des messages dans un bloc de flux de données'
+title: 'Comment : écrire des messages dans un bloc de flux de données et les lire'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,16 +9,14 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, reading and writing messages
 ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 22d0f8abd1481bfd75a0d08f49b28cebf78bb4cb
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 58927803b741acf6c1964b35f6603e6901f9cbf1
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169149"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139286"
 ---
-# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Procédure : Écrire et lire des messages dans un bloc de flux de données
+# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Comment : écrire des messages dans un bloc de flux de données et les lire
 Ce document explique comment utiliser la bibliothèque de flux de données TPL pour écrire et lire des messages sur un bloc de flux de données. La bibliothèque de flux de données TPL fournit à la fois des méthodes synchrones et asynchrones pour lire et écrire des messages sur un bloc de flux de données. Ce document utilise la classe <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType>. La classe <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> met en mémoire tampon des messages et fonctionne à la fois comme source et comme cible de message.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -52,7 +50,7 @@ Ce document explique comment utiliser la bibliothèque de flux de données TPL p
  [!code-vb[TPLDataflow_ReadWrite#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_readwrite/vb/dataflowreadwrite.vb#1)]  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- Cet exemple montre comment lire et écrire directement sur un bloc de messages. Vous pouvez aussi connecter des blocs de flux de données pour former des *pipelines*, qui sont des séquences linéaires de blocs de flux de données, ou des *réseaux*, qui sont des graphiques des blocs de flux de données. Dans un pipeline ou un réseau, les sources propagent des données de manière asynchrone vers les cibles à mesure que les données deviennent disponibles. Pour obtenir un exemple qui crée un pipeline de flux de données de base, consultez [Procédure pas à pas : Création d’un pipeline de flux de données](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Pour obtenir un exemple qui crée un réseau plus complexe de flux de données, consultez [Procédure pas à pas : Utilisation d’un flux de données dans une application Windows Forms](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
+ Cet exemple montre comment lire et écrire directement sur un bloc de messages. Vous pouvez aussi connecter des blocs de flux de données pour former des *pipelines*, qui sont des séquences linéaires de blocs de flux de données, ou des *réseaux*, qui sont des graphiques des blocs de flux de données. Dans un pipeline ou un réseau, les sources propagent des données de manière asynchrone vers les cibles à mesure que les données deviennent disponibles. Pour obtenir un exemple de création d’un pipeline de flux de données, consultez [Procédure pas à pas : création d’un pipeline de flux de données](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Pour obtenir un exemple de création d’un réseau de flux de données plus complexe, consultez [Procédure pas à pas : utilisation de flux de données dans une application Windows Forms](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

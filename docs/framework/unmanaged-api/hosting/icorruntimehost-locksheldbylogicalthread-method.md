@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c3601255-d894-4d7c-b1df-c31334551700
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3eed83cbc983d59e99b3a42e667e9e126316c263
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f6ef7e06d94cb22d266949927cb15105b1602d3a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780099"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139527"
 ---
 # <a name="icorruntimehostlocksheldbylogicalthread-method"></a>ICorRuntimeHost::LocksHeldByLogicalThread, méthode
-Récupère le nombre de verrous que le thread actif détient.  
+Récupère le nombre de verrous que le thread actuel contient.  
   
  Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
@@ -39,16 +37,16 @@ HRESULT LocksHeldByLogicalThread(
   
 ## <a name="parameters"></a>Paramètres  
  `pCount`  
- [out] Pointeur vers le nombre de verrous maintenus par le thread actuel.  
+ à Pointeur vers le nombre de verrous que le thread actuel contient.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
- **Versions du .NET framework :** 1.0, 1.1  
+ **Versions de .NET Framework :** 1,0, 1,1  
   
 ## <a name="see-also"></a>Voir aussi
 

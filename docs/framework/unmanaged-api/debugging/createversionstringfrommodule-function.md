@@ -16,14 +16,12 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b68624b962ed610dbeecd3e4cead769ab1400f4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1571ff796a10c5ddcd85cc2ce130e62eab2ed8f2
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739208"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73132086"
 ---
 # <a name="createversionstringfrommodule-function"></a>Fonction CreateVersionStringFromModule
 Crée une chaîne de version à partir d’un chemin d’accès au Common Language Runtime (CLR) dans un processus cible.  
@@ -74,15 +72,15 @@ HRESULT CreateVersionStringFromModule (
  `pidDebuggee` ne fait pas référence à un processus valide ou à tout autre échec.  
   
 ## <a name="remarks"></a>Notes  
- Cette fonction accepte un processus CLR identifié par `pidDebuggee` et un chemin d'accès de chaîne spécifié par `szModuleName`. La chaîne de version est retournée dans la mémoire tampon vers laquelle pointe `pBuffer`. Cette chaîne est opaque à l'utilisateur de la fonction ; autrement dit, il n'y a aucune signification intrinsèque dans la chaîne de version elle-même. Il est utilisé uniquement dans le contexte de cette fonction et le [fonction CreateDebuggingInterfaceFromVersion](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
+ Cette fonction accepte un processus CLR identifié par `pidDebuggee` et un chemin d'accès de chaîne spécifié par `szModuleName`. La chaîne de version est retournée dans la mémoire tampon vers laquelle pointe `pBuffer`. Cette chaîne est opaque à l'utilisateur de la fonction ; autrement dit, il n'y a aucune signification intrinsèque dans la chaîne de version elle-même. Elle est utilisée uniquement dans le contexte de cette fonction et de la [fonction CreateDebuggingInterfaceFromVersion](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
   
  Cette fonction doit être appelée deux fois. Quand vous appelez pour la première fois, passez la valeur null pour `pBuffer` et `cchBuffer`. Quand vous procédez ainsi, la taille de la mémoire tampon nécessaire pour `pBuffer` est retournée dans `pdwLength`. Vous pouvez ensuite appeler la fonction une seconde fois et passer la mémoire tampon dans `pBuffer` et sa taille dans `cchBuffer`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** dbgshim.h  
+ **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim.dll  
+ **Bibliothèque :** dbgshim. dll  
   
- **Versions du .NET framework :** 3.5 SP1
+ **Versions de .NET Framework :** 3,5 SP1

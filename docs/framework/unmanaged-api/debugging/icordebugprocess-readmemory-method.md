@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 28e4b2f6-9589-445c-be24-24a3306795e7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d74da502492065dbffb5e5499581263760636c7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ef9e339c74b2d2785d758ed9c4adfc1901073253
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737067"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139361"
 ---
 # <a name="icordebugprocessreadmemory-method"></a>ICorDebugProcess::ReadMemory, méthode
-Lit une zone spécifiée de mémoire pour ce processus.  
+Reads a specified area of memory for this process.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +37,25 @@ HRESULT ReadMemory(
   
 ## <a name="parameters"></a>Paramètres  
  `address`  
- [in] Un `CORDB_ADDRESS` valeur qui spécifie l’adresse de base de la mémoire à lire.  
+ [in] A `CORDB_ADDRESS` value that specifies the base address of the memory to be read.  
   
  `size`  
- [in] Le nombre d’octets à lire à partir de la mémoire.  
+ [in] The number of bytes to be read from memory.  
   
  `buffer`  
- [out] Une mémoire tampon qui reçoit le contenu de la mémoire.  
+ [out] A buffer that receives the contents of the memory.  
   
  `read`  
- [out] Un pointeur vers le nombre d’octets transférés vers la mémoire tampon spécifiée.  
+ [out] A pointer to the number of bytes transferred into the specified buffer.  
   
 ## <a name="remarks"></a>Notes  
- Le `ReadMemory` méthode est principalement destinée à être utilisée par le débogage d’interopérabilité pour inspecter les régions de mémoire qui sont utilisées par la partie non managée de l’élément débogué. Cette méthode peut également être utilisée pour lire le code Microsoft intermediate language (MSIL) et le code natif compilé par JIT.  
+ The `ReadMemory` method is primarily intended to be used by interop debugging to inspect memory regions that are being used by the unmanaged portion of the debuggee. This method can also be used to read Microsoft intermediate language (MSIL) code and native JIT-compiled code.  
   
- Les points d’arrêt gérés ne sont plus à partir des données qui sont retournées dans le `buffer` paramètre. Aucun réglage n’est effectué pour les points d’arrêt natifs définis [ICorDebugProcess2::SetUnmanagedBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md).  
+ Any managed breakpoints will be removed from the data that is returned in the `buffer` parameter. No adjustments will be made for native breakpoints set by [ICorDebugProcess2::SetUnmanagedBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md).  
   
- Aucune mise en cache de mémoire de processus n’est effectuée.  
+ No caching of process memory is performed.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

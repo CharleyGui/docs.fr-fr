@@ -8,14 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ac1f2283ad30499748511e6fed6d5ce98da7fd14
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 628d6a96606117d447c61d01595d13dd4a957ce4
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960107"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73138111"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> est une primitive de synchronisation qui débloque ses threads en attente après avoir été signalée un certain nombre de fois. <xref:System.Threading.CountdownEvent> est conçu pour les scénarios dans lesquels vous devriez sinon utiliser un <xref:System.Threading.ManualResetEvent> ou <xref:System.Threading.ManualResetEventSlim> et décrémenter manuellement une variable avant de signaler l’événement. Par exemple, dans un scénario de duplication/jointure, vous pouvez simplement créer un <xref:System.Threading.CountdownEvent> avec 5 signaux, puis démarrer cinq éléments de travail sur le pool de threads, chaque élément de travail appellant <xref:System.Threading.CountdownEvent.Signal%2A> lorsqu’il est terminé. Chaque appel à <xref:System.Threading.CountdownEvent.Signal%2A> décrémente le nombre de signaux de 1. Sur le thread principal, l’appel à <xref:System.Threading.CountdownEvent.Wait%2A> sera bloqué jusqu’à ce que le nombre de signaux soit de zéro.  

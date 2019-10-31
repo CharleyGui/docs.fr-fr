@@ -1,35 +1,33 @@
 ---
-title: 'Procédure : Rechercher le nom qualifié complet d’un assembly'
+title: 'Comment : Rechercher le nom qualifié complet d’un assembly'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - names [.NET Framework], fully qualified type names
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
-author: rpetrusha
-ms.author: ronpet
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 4fc670adc80a6f4ce7b36074185dcd3bb85fbc67
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 49d6d6cf5c138df671d061beb23cb57bcb0667b5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991309"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140304"
 ---
-# <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Procédure : Rechercher le nom qualifié complet d’un assembly
+# <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Comment : Rechercher le nom qualifié complet d’un assembly
 
-Pour découvrir le nom qualifié complet d’un assembly de .NET Framework dans le Global Assembly Cache, utilisez l’outil global assembly cache ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Voir [Guide pratique pour Affichez le contenu du Global Assembly Cache](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
+Pour découvrir le nom qualifié complet d’un assembly de .NET Framework dans le Global Assembly Cache, utilisez l’outil global assembly cache ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Consultez [Comment : afficher le contenu du global assembly cache](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
 
 Pour les assemblys .NET Core, et pour les assemblys .NET Framework qui ne sont pas dans le Global Assembly Cache, vous pouvez obtenir le nom complet de l’assembly de plusieurs façons :
 
 - Vous pouvez utiliser le code pour sortir les informations dans la console ou dans une variable, ou vous pouvez utiliser le [désassembleur il](../../framework/tools/ildasm-exe-il-disassembler.md) pour examiner les métadonnées de l’assembly, qui contient le nom complet.
 
-- Si l'assembly est déjà chargé par l'application, vous pouvez récupérer la valeur de la propriété <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> pour obtenir le nom complet. Vous pouvez utiliser la <xref:System.Type.Assembly> propriété d’un <xref:System.Type> défini dans cet assembly pour récupérer une référence à <xref:System.Reflection.Assembly> l’objet. Cet exemple en fournit une illustration.
+- Si l'assembly est déjà chargé par l'application, vous pouvez récupérer la valeur de la propriété <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> pour obtenir le nom complet. Vous pouvez utiliser la propriété <xref:System.Type.Assembly> d’un <xref:System.Type> défini dans cet assembly pour récupérer une référence à l’objet <xref:System.Reflection.Assembly>. Cet exemple en fournit une illustration.
 
-- Si vous connaissez le chemin d’accès au système de fichiers de l’assemblyC#, vous `Shared` pouvez appeler la <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> `static` méthode () ou (Visual Basic) pour obtenir le nom complet de l’assembly. Voici un exemple simple.
+- Si vous connaissez le chemin d’accès au système de fichiers de l’assembly,C#vous pouvez appeler la méthode `static` () ou `Shared` (Visual Basic) <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> pour obtenir le nom complet de l’assembly. Voici un exemple simple.
 
   ```csharp
   using System;
@@ -64,7 +62,7 @@ Pour plus d’informations sur la définition des attributs d’assembly, tels q
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment afficher le nom qualifié complet d’un assembly contenant une classe spécifiée dans la console. Elle utilise la <xref:System.Type.Assembly?displayProperty=nameWithType> propriété pour récupérer une référence à un assembly à partir d’un type défini dans cet assembly.
+L’exemple suivant montre comment afficher le nom qualifié complet d’un assembly contenant une classe spécifiée dans la console. Elle utilise la propriété <xref:System.Type.Assembly?displayProperty=nameWithType> pour récupérer une référence à un assembly à partir d’un type défini dans cet assembly.
 
 ```cpp
 #using <System.dll>

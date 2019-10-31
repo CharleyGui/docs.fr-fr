@@ -10,14 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 6b4e9072100a25c297dbf3bfb70a928e16b06da4
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: a43ce44e11a9231dee2961ee02bac745d9ca71cb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956892"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141600"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
 Les expressions régulières dans .NET incluent trois constructions de langage diverses. L’une d’elles vous permet d’activer ou de désactiver des options de mise en correspondance particulières au milieu d’un modèle d’expression régulière. Grâce aux deux autres, vous pouvez inclure des commentaires dans une expression régulière.  
@@ -40,7 +38,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
  Toute modification des options d’expression régulière définies par la construction `(?imnsx-imnsx)` reste en vigueur jusqu’à la fin du groupe englobant.  
   
 > [!NOTE]
-> La construction de regroupement `(?imnsx-imnsx:`*sous-expression*`)` fournit une fonctionnalité identique pour une sous-expression. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+> La construction de regroupement `(?imnsx-imnsx:`*sous-expression*`)` fournit une fonctionnalité identique pour une sous-expression. Pour plus d'informations, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  L’exemple suivant utilise les options `i`, `n` et `x` pour activer le non-respect de la casse et les captures explicites, et pour ignorer l’espace blanc dans le modèle d’expression régulière au milieu d’une expression régulière.  
   
@@ -66,11 +64,11 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
 |Motif|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
-|`(?# case-sensitive comparison)`|Un commentaire. Il n’affecte pas le comportement de mise correspondance du modèle.|  
+|`(?# case-sensitive comparison)`|Commentaire. Il n’affecte pas le comportement de mise correspondance du modèle.|  
 |`(D\w+)`|Mettre en correspondance un « D » majuscule suivi d’un ou de plusieurs caractères alphabétiques. Il s'agit du premier groupe de capture.|  
 |`\s`|Mettre en correspondance un espace blanc.|  
 |`(?ixn)`|À partir de ce point, effectuer des comparaisons sans respect de la casse, effectuer seulement des captures explicites et ignorer l’espace blanc dans le modèle d’expression régulière.|  
-|`(?#case-insensitive comparison)`|Un commentaire. Il n’affecte pas le comportement de mise correspondance du modèle.|  
+|`(?#case-insensitive comparison)`|Commentaire. Il n’affecte pas le comportement de mise correspondance du modèle.|  
 |`(d\w+)`|Mettre en correspondance un « d » majuscule ou minuscule suivi d’un ou de plusieurs caractères alphabétiques. Il s’agit du deuxième groupe de capture.|  
 |`\b`|Mettre en correspondance la limite d'un mot.|  
   

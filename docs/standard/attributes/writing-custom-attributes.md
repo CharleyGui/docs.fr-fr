@@ -16,14 +16,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1d0a0659c99a49770d0d08460026363ecef06654
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: HT
+ms.openlocfilehash: 6570c6994c0f2e6571361c3eadc73b02a55f1584
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836316"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140589"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
 Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de maîtriser les nombreux nouveaux concepts. Si vous êtes familiarisé avec la programmation orientée objet et savez concevoir des classes, vous possédez déjà la plupart des connaissances nécessaires. Les attributs personnalisés sont essentiellement des classes traditionnelles qui dérivent directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>. Tout comme les classes traditionnelles, les attributs personnalisés contiennent des méthodes qui stockent et récupèrent les données.  
@@ -47,7 +45,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
  [!code-csharp[Conceptual.Attributes.Usage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#5)]
  [!code-vb[Conceptual.Attributes.Usage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#5)]  
   
- <xref:System.AttributeUsageAttribute> a trois membres importants pour la création d’attributs personnalisés : [AttributeTargets](#attributetargets-member), [Inherited](#inherited-property) et [AllowMultiple](#allowmultiple-property).  
+ <xref:System.AttributeUsageAttribute> possède trois membres importants pour la création d’attributs personnalisés : [AttributeTargets](#attributetargets-member), [Inherited](#inherited-property)et [AllowMultiple](#allowmultiple-property).  
   
 ### <a name="attributetargets-member"></a>Membre AttributeTargets  
  Dans l’exemple précédent, <xref:System.AttributeTargets.All?displayProperty=nameWithType> est spécifié, ce qui indique que cet attribut peut être appliqué à tous les éléments de programme. Vous pouvez également spécifier <xref:System.AttributeTargets.Class?displayProperty=nameWithType>, qui indique que votre attribut peut être appliqué uniquement à une classe, ou <xref:System.AttributeTargets.Method?displayProperty=nameWithType>, qui indique que votre attribut peut être appliqué uniquement à une méthode. Tous les éléments de programme peuvent être marqués pour description par un attribut personnalisé de cette manière.  
@@ -127,7 +125,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Déclaration des propriétés  
- Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set** . L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
+ Si vous voulez définir un paramètre nommé ou fournir un moyen facile de retourner les valeurs stockées par votre attribut, déclarez une [propriété](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Les propriétés d’attribut doivent être déclarées comme des entités publiques avec une description du type de données à retourner. Définissez la variable qui contient la valeur de votre propriété et associez-la aux méthodes **get** et **set**. L’exemple de code suivant montre comment implémenter une propriété simple dans votre attribut.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

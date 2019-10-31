@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 63a7d47a-0d54-4e29-9767-9f09feaa38b7
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 04b8ac6751024e64cc866fce1cfe72fb42e41200
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4518637eb47acf416a02c045f8ca6f8a90167277
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760441"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130789"
 ---
 # <a name="icordebugmanagedcallbackexitprocess-method"></a>ICorDebugManagedCallback::ExitProcess, méthode
 Notifie le débogueur qu’un processus s’est arrêté.  
@@ -37,16 +35,16 @@ HRESULT ExitProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `pProcess`  
- [in] Pointeur vers un objet ICorDebugProcess qui représente le processus.  
+ dans Pointeur vers un objet ICorDebugProcess qui représente le processus.  
   
 ## <a name="remarks"></a>Notes  
- Vous ne pouvez pas continuer à partir d’un `ExitProcess` événement. Cet événement peut se déclencher en mode asynchrone et d’autres événements alors que le processus semble être arrêté. Cela peut se produire si le processus se termine lorsque l’état arrêté, généralement en raison d’une force externe.  
+ Vous ne pouvez pas poursuivre à partir d’un événement `ExitProcess`. Cet événement peut se déclencher de manière asynchrone vers d’autres événements pendant que le processus semble être arrêté. Cela peut se produire si le processus se termine alors qu’il est arrêté, généralement en raison d’une force externe.  
   
- Si le common language runtime (CLR) distribue déjà un rappel managé, cet événement sera différé jusqu'à une fois ce rappel a retourné.  
+ Si le common language runtime (CLR) est déjà en cours de distribution d’un rappel managé, cet événement est retardé jusqu’à ce que le rappel soit retourné.  
   
- Le `ExitProcess` événement est le seul événement de sortie/déchargement appel lors de l’arrêt est garanti.  
+ L’événement `ExitProcess` est le seul événement de sortie/déchargement qui est garanti pour être appelé lors de l’arrêt.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

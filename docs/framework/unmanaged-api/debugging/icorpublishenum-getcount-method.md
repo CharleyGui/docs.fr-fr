@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: d228f684-2be3-4029-93ae-31fe02213c1f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1465a667763c12593c4bc89148d70f85371fcc67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a03b06143c0bd92425c7bfc13af6e374dc629f10
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775558"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140478"
 ---
 # <a name="icorpublishenumgetcount-method"></a>ICorPublishEnum::GetCount, méthode
 Obtient le nombre d’éléments dans l’énumération.  
@@ -37,12 +35,12 @@ HRESULT GetCount (
   
 ## <a name="parameters"></a>Paramètres  
  `pcelt`  
- [out] Pointeur vers le nombre d’éléments dans l’énumération.  
+ à Pointeur vers le nombre d’éléments dans l’énumération.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

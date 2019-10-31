@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: c0765321-656c-441e-bab5-58176292be1e
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2d7d4a295832a958fb6a8fe2e6c43a09135500d3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cf490bcd167b7a498ae21f479f616694ccb5521
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696676"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139480"
 ---
 # <a name="ihostsemaphore-interface"></a>IHostSemaphore, interface
-Représente l’implémentation de l’hôte d’un sémaphore pour le thread.  
+Représente l’implémentation de l’hôte d’un sémaphore pour le Threading.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ReleaseSemaphore, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|Augmente le nombre de cours `IHostSemaphore` instance de la quantité spécifiée.|  
-|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|Fait en `IHostSemaphore` instance attendre jusqu'à ce qu’il appartient ou la quantité de temps s’écoule spécifiée.|  
+|[ReleaseSemaphore, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|Augmente le nombre de l’instance de `IHostSemaphore` actuelle de la valeur spécifiée.|  
+|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|Entraîne l’attente de l’instance de `IHostSemaphore` actuelle jusqu’à ce qu’elle appartienne ou que la durée spécifiée soit écoulée.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

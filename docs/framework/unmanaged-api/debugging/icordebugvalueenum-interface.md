@@ -14,35 +14,33 @@ helpviewer_keywords:
 ms.assetid: 88989482-a09f-4bd0-9adb-16f47b0291fd
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0aa7e5cfce67c2854f943f65909acb39cfc0d214
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4cc9849ee8cd160a33ae9c769f7b98a87eafb8dd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913989"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134601"
 ---
 # <a name="icordebugvalueenum-interface"></a>ICorDebugValueEnum, interface
-Implémente les méthodes «ICorDebugEnum» et énumère les tableaux «ICorDebugValue».  
+Implémente les méthodes « ICorDebugEnum » et énumère les tableaux « ICorDebugValue ».  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-next-method.md)|Obtient le nombre d' `ICorDebugValue` instances spécifié à partir de l’énumération, en commençant à la position actuelle.|  
+|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorDebugValue` à partir de l’énumération, en commençant à la position actuelle.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug. idl, CorDebug. h  
+ **En-tête :** CorDebug.idl, CorDebug.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

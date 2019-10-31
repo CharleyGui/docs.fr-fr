@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: dc9a0a6c-d592-4fb7-86ed-62684da3b0e1
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 45a409bda8861701e68d3ea1a956a4c35ce88ddd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ccb5cda11a2466496a4b3981e8185cbb7130f66f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738784"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73122895"
 ---
 # <a name="iclrdatatargetgetcurrentthreadid-method"></a>ICLRDataTarget::GetCurrentThreadID, méthode
 Obtient l’identificateur de système d’exploitation pour le thread actuel.  
@@ -37,15 +35,15 @@ HRESULT GetCurrentThreadID (
   
 ## <a name="parameters"></a>Paramètres  
  `threadID`  
- [out] Un pointeur vers l’identificateur de système d’exploitation du thread actuel pour le processus cible.  
+ à Pointeur vers l’identificateur de système d’exploitation du thread actuel pour le processus cible.  
   
 ## <a name="remarks"></a>Notes  
- S’il n’existe aucun thread actuel pour le processus cible, le `GetCurrentThreadID` méthode peut échouer.  
+ S’il n’existe aucun thread actuel pour le processus cible, la méthode `GetCurrentThreadID` peut échouer.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ClrData.idl, ClrData.h  
+ **En-tête :** ClrData. idl, ClrData. h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5bbb8d1b-bbc4-47b0-b1b1-2d54cc0be291
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 894f74f12de7ed0754dcca34eacb815efc33c766
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2a6ca9f4d74c508ac0a2af68c2a5b0a3e6d6b217
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752572"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139182"
 ---
 # <a name="logswitchcallreason-enumeration"></a>LogSwitchCallReason, énumération
 Indique l'opération qui a été effectuée sur un commutateur de débogage/suivi.  
@@ -40,11 +38,11 @@ typedef enum LogSwitchCallReason {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`SWITCH_CREATE`|Un commutateur de débogage/suivi a été créé.|  
-|`SWITCH_MODIFY`|Un commutateur de débogage/suivi a été modifié.|  
-|`SWITCH_DELETE`|Un commutateur de débogage/suivi a été supprimé.|  
+|`SWITCH_CREATE`|A debugging/tracing switch was created.|  
+|`SWITCH_MODIFY`|A debugging/tracing switch was modified.|  
+|`SWITCH_DELETE`|A debugging/tracing switch was deleted.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: bb798c56-042e-475d-a245-b6fac36d0c07
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0f6d4af7c01f91dff77d6ba715ef845f523c7fb6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cbe2aa48a8b67b0b6e88f7b5267bc70848fe3cec
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993549"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140329"
 ---
 # <a name="icorpublishappdomainenum-interface"></a>ICorPublishAppDomainEnum, interface
-Une sous-classe de la [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) interface qui fournit des méthodes pour parcourir une collection de [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) les objets qui existent actuellement dans un processus.  
+Sous-classe de l’interface [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) qui fournit des méthodes pour parcourir une collection d’objets [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) qui existent actuellement dans un processus.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-next-method.md)|Obtient le nombre spécifié de `ICorPublishAppDomain` instances à partir de la collection, en commençant à la position actuelle.|  
+|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorPublishAppDomain` de la collection, en commençant à la position actuelle.|  
   
 ## <a name="remarks"></a>Notes  
- Le `ICorPublishAppDomainEnum` interface implémente les méthodes de l’interface abstraite, [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
+ L’interface `ICorPublishAppDomainEnum` implémente les méthodes de l’interface abstraite, [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

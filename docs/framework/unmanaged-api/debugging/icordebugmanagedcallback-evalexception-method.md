@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d6036345-18a3-45c1-a302-b1c6f2dced9b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: dbf12612bb432f8935d08bdeac0bbcb471c38c54
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 70ae72968c3411a6732b09c0afe3d82931410cb5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759637"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73130813"
 ---
 # <a name="icordebugmanagedcallbackevalexception-method"></a>ICorDebugManagedCallback::EvalException, méthode
-Notifie le débogueur qu’une évaluation s’est terminée avec une exception non gérée.  
+Notifie le débogueur qu’une évaluation s’est terminée par une exception non gérée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +37,15 @@ HRESULT EvalException (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppDomain`  
- [in] Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’évaluation a été interrompue.  
+ dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’évaluation s’est terminée.  
   
  `pThread`  
- [in] Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’évaluation a été interrompue.  
+ dans Pointeur vers un objet ICorDebugThread qui représente le thread dans lequel l’évaluation s’est terminée.  
   
  `pEval`  
- [in] Pointeur vers un objet ICorDebugEval qui représente le code qui a effectué l’évaluation.  
+ dans Pointeur vers un objet ICorDebugEval qui représente le code qui a effectué l’évaluation.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

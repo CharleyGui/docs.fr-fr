@@ -18,14 +18,12 @@ helpviewer_keywords:
 ms.assetid: e91bf8c3-7c26-4732-938e-2e5b04abfc99
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 021fa1668247bc59a4412d2b5f4bac3f5ee8cc6b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: dd83fc6a7f553b54cc2acd5e9a93d8d58747d75a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799113"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141702"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo, fonction
 Obtient le dernier code d’erreur déclenché par l’une des fonctions de nom fort.  
@@ -42,13 +40,13 @@ HRESULT StrongNameErrorInfo ();
  Dernier code d’erreur COM défini par l’une des fonctions Strong Name.  
   
 ## <a name="remarks"></a>Notes  
- La plupart des méthodes Strong Name renvoient une `true` simple `false` ou une indication de la réussite de l’opération. Utilisez la `StrongNameErrorInfo` fonction pour récupérer un HRESULT qui spécifie la dernière erreur générée par les fonctions Strong Name.  
+ La plupart des méthodes Strong Name renvoient une `true` simple ou `false` une indication de la réussite de l’opération. Utilisez la fonction `StrongNameErrorInfo` pour récupérer un HRESULT qui spécifie la dernière erreur générée par les fonctions Strong Name.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  

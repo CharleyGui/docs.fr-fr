@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6e21872f-602f-411a-a423-bff5cdf27000
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f381cc687b4c28dd58a02aea8cf931f569cf9611
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cbd6fa5f7935a57799d695c3ebb617d856e6dbd9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780520"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133178"
 ---
 # <a name="idebuggerinfoisdebuggerattached-method"></a>IDebuggerInfo::IsDebuggerAttached, méthode
 Obtient une valeur qui indique si un débogueur managé est attaché à ce processus.  
@@ -37,14 +35,14 @@ HRESULT IsDebuggerAttached (
   
 ## <a name="parameters"></a>Paramètres  
  `pbAttached`  
- [out] Un pointeur vers une valeur qui est `true` si un débogueur managé est attaché au processus ; sinon, `false`.  
+ à Pointeur vers une valeur `true` si un débogueur managé est attaché au processus ; Sinon, `false`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

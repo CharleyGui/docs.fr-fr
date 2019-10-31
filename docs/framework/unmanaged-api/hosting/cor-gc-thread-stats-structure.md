@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3f56ceca5269ebffb29908c63e698ce794027d8a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 37da471aaa8e9f802a8430d7b3289b375ff1b40a
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768064"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136988"
 ---
-# <a name="corgcthreadstats-structure"></a>COR_GC_THREAD_STATS, structure
-Contient des statistiques par thread relatives au garbage collection.  
+# <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS, structure
+Contains per-thread statistics pertaining to garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +37,18 @@ typedef struct _COR_GC_THREAD_STATS {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`PerThreadAllocation`|Le nombre d’octets de mémoire allouée sur le thread qui est associé à l’actuel `COR_GC_THREAD_STATS` instance. Ce nombre est remis à zéro à chaque fois qu'un zéro de la génération de garbage collection se produit.|  
-|`Flags`|Le nombre d’octets promus à une génération supérieure garbage collection le plus récent.|  
+|`PerThreadAllocation`|The number of bytes of memory allocated on the thread that is associated with the current `COR_GC_THREAD_STATS` instance. This number is cleared to zero each time a generation-zero garbage collection occurs.|  
+|`Flags`|The number of bytes promoted to a higher generation at the most recent garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- [ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) prend un paramètre de sortie de type `COR_GC_THREAD_STATS`.  
+ [ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) takes an output parameter of type `COR_GC_THREAD_STATS`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** GCHost.idl  
+ **Header:** GCHost.idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Library:** Included as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

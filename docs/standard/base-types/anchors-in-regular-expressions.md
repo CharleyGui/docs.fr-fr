@@ -16,15 +16,13 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 5f722977928604e5876e52a7329eef5c933bf2a7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: bf5e98f895c17a3ab9b16e63601fa40fb9e15417
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046467"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140548"
 ---
 # <a name="anchors-in-regular-expressions"></a>Ancres dans les expressions régulières
 <a name="top"></a> Les ancres, ou assertions atomiques de largeur nulle, spécifient une position dans la chaîne où une correspondance doit se produire. Quand vous utilisez une ancre dans votre expression de recherche, le moteur des expressions régulières n'avance pas dans la chaîne ou ne consomme pas de caractères ; il recherche uniquement une correspondance à la position spécifiée. Par exemple, `^` spécifie que la correspondance doit commencer au début d'une ligne ou d'une chaîne. Par conséquent, l'expression régulière `^http:` correspond uniquement à « http: » quand elle se produit au début d'une ligne. Le tableau suivant répertorie les ancres prises en charge par les expressions régulières dans .NET.  
@@ -58,7 +56,7 @@ ms.locfileid: "70046467"
 |Motif|Description|  
 |-------------|-----------------|  
 |`^`|Commencer la correspondance au début de la chaîne d'entrée (ou au début de la ligne si la méthode est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> ).|  
-|`((\w+(\s?)){2,}`|Mettre en correspondance un ou plusieurs caractères de mot suivis de zéro ou d’un espace au moins deux fois. Il s'agit du premier groupe de capture. Cette expression définit également un deuxième et un troisième groupe de capture : le deuxième se compose du mot capturé, et le troisième se compose de l’espace blanc capturé.|  
+|`((\w+(\s?)){2,}`|Mettre en correspondance un ou plusieurs caractères de mot suivis de zéro ou d’un espace au moins deux fois. Il s'agit du premier groupe de capture. Cette expression définit également un deuxième et un troisième groupe de capture : le deuxième se compose du mot capturé, et le troisième est constitué de l’espace blanc capturé.|  
 |`,\s`|Mettre en correspondance une virgule suivie d'un caractère d'espace blanc.|  
 |`(\w+\s\w+)`|Mettre en correspondance un ou plusieurs caractères de mot suivis d'un espace, suivi d'un ou plusieurs caractères de mot. Il s'agit du quatrième groupe de capture.|  
 |`,`|Mettre en correspondance une virgule.|  
@@ -141,7 +139,7 @@ ms.locfileid: "70046467"
   
 <a name="WordBoundary"></a>   
 ## <a name="word-boundary-b"></a>Limite de mot : \b  
- L'ancre `\b` spécifie que la correspondance doit se produire à la limite entre un caractère de mot (élément de langage `\w` ) et un caractère n'appartenant pas à un mot (élément de langage `\W` ). Les caractères de mot se composent de caractères alphanumériques et de traits de soulignement ; un caractère n'appartenant pas à un mot est un caractère qui n'est pas alphanumérique ou qui n'est pas un trait de soulignement. (Pour plus d'informations, consultez [Classes de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) La correspondance peut également se produire à la limite d'un mot au début ou à la fin de la chaîne.  
+ L'ancre `\b` spécifie que la correspondance doit se produire à la limite entre un caractère de mot (élément de langage `\w` ) et un caractère n'appartenant pas à un mot (élément de langage `\W` ). Les caractères de mot se composent de caractères alphanumériques et de traits de soulignement ; un caractère n'appartenant pas à un mot est un caractère qui n'est pas alphanumérique ou qui n'est pas un trait de soulignement. (Pour plus d’informations, consultez [classes de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) La correspondance peut également se produire à la limite d’un mot au début ou à la fin de la chaîne.  
   
  L'ancre `\b` est fréquemment utilisée pour faire en sorte qu'une sous-expression corresponde à un mot entier plutôt qu'au début ou à la fin d'un mot uniquement. L'expression régulière `\bare\w*\b` dans l'exemple suivant illustre cette utilisation. Elle correspond à tout mot qui commence par la sous-chaîne « are ». La sortie de l'exemple illustre également que `\b` correspond à la fois au début et la fin de la chaîne d'entrée.  
   

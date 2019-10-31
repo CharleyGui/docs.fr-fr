@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 9ea07b57-96e2-44df-8711-8fe6c119087f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 569efa9d14ef10d8c5cf735091778a6c78882815
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e661bd82ecf6d804e852cca4a4478084edf303c5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781164"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141500"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW, fonction
 Exécute la commande spécifiée.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ Cette fonction a été dépréciée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,23 +39,23 @@ HRESULT RunDll32ShimW (
   
 ## <a name="parameters"></a>Paramètres  
  `hwnd`  
- [in] Un handle de fenêtre dans lequel la sortie de commande s’affiche.  
+ dans Handle d’une fenêtre dans laquelle le résultat de la commande s’affiche.  
   
  `hinst`  
- [in] Handle vers la bibliothèque qui contient la commande.  
+ dans Handle de la bibliothèque qui contient la commande.  
   
  `lpszCmdLine`  
- [in] Chaîne qui spécifie la commande à exécuter.  
+ dans Chaîne qui spécifie la commande à exécuter.  
   
  `nCmdShow`  
- [in] Entier qui spécifie le mode d’affichage de la fenêtre de sortie.  
+ dans Entier qui spécifie le mode d’affichage pour la fenêtre sortie.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE.dll  
+ **Bibliothèque :** MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

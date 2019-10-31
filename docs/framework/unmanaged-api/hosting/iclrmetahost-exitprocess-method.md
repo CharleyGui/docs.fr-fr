@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b4df98cc-4e4e-407b-b8f4-e0076afef3a4
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0288c9912125e20cfb9f9aaaac5003ae9e0b51e9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d8643c54950486b6374045ff83928c8c7fb568a9
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779788"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140952"
 ---
 # <a name="iclrmetahostexitprocess-method"></a>ICLRMetaHost::ExitProcess, méthode
-Tente d’arrêter correctement les runtimes tous chargés et puis met fin au processus. Remplace le [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) (fonction).  
+Tente d’arrêter correctement tous les runtimes chargés, puis termine le processus. Remplace la fonction [CorExitProcess,](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +34,19 @@ HRESULT ExitProcess (
   
 ## <a name="parameters"></a>Paramètres  
  `iExitCode`  
- [in] Le code de sortie pour le processus.  
+ dans Code de sortie du processus.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode ne retourne jamais, donc sa valeur de retour n’est pas défini.  
+ Cette méthode ne retourne jamais, donc sa valeur de retour n’est pas définie.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MetaHost.h  
+ **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

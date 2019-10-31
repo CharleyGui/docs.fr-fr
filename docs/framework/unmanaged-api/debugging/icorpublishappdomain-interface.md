@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5e7885a6-d17a-4bfc-a4c6-23cbb7337ad5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d9dbaac5b08cf3f700b5f2581c60d0cb7bf3f545
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8d651f19b7d4cb0cbe163c2fa59e1ef07ceb480
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986672"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140333"
 ---
 # <a name="icorpublishappdomain-interface"></a>ICorPublishAppDomain, interface
 Représente et fournit des informations à propos d'un domaine d'application.  
@@ -30,13 +28,13 @@ Représente et fournit des informations à propos d'un domaine d'application.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetID, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|Obtient l’identificateur unique pour ce `ICorPublishAppDomain`.|  
-|[GetName, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|Obtient le nom du domaine d’application référencé par ce `ICorPublishAppDomain`.|  
+|[GetID, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|Obtient l’identificateur unique de cette `ICorPublishAppDomain`.|  
+|[GetName, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|Obtient le nom du domaine d’application référencé par cet `ICorPublishAppDomain`.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   

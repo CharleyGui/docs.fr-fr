@@ -16,19 +16,17 @@ helpviewer_keywords:
 ms.assetid: e36e1fd8-8456-4359-bdc3-3ec1765f041f
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 96968de84182b74f7baa89d5dfc12a4797ade595
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: de27851b4afc3eccad46531848c68723bff346d5
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779232"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136822"
 ---
 # <a name="createiceefilegen-function"></a>CreateICeeFileGen, fonction
-Crée un [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objet.  
+Creates an [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) object.  
   
- Cette fonction a été déconseillée dans le .NET Framework 4.  
+ This function has been deprecated in the .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT CreateICeeFileGen (
   
 ## <a name="parameters"></a>Paramètres  
  `ceeFileGen`  
- [out] Un pointeur vers l’adresse d’un nouveau `ICeeFileGen` objet.  
+ [out] A pointer to the address of a new `ICeeFileGen` object.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur COM standard.  
+ This method returns standard COM error codes.  
   
 ## <a name="remarks"></a>Notes  
- Le `ICeeFileGen` objet est utilisé pour créer de common language runtime (CLR) les fichiers exécutables portables (PE).  
+ The `ICeeFileGen` object is used to create common language runtime (CLR) portable executable (PE) files.  
   
- Appelez le [DestroyICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) fonction détruire le `ICeeFileGen` issue de l’objet.  
+ Call the [DestroyICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) function to destroy the `ICeeFileGen` object when finished.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** ICeeFileGen.h  
+ **Header:** ICeeFileGen.h  
   
- **Bibliothèque :** MSCorPE.dll  
+ **Library:** MSCorPE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5ccb74f3-f891-430c-b70a-e370624edde2
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 0d287305934c7884d5474935e50de3d26e225975
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 132e0868426670ba61d8ee12ba7007be1a8a52de
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746162"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139398"
 ---
 # <a name="icordebugnativeframegetlocalregistervalue-method"></a>ICorDebugNativeFrame::GetLocalRegisterValue, méthode
-Obtient la valeur d’un argument ou une variable locale qui est stockée dans le Registre spécifié pour ce frame natif.  
+Obtient la valeur d’un argument ou d’une variable locale stockée dans le registre spécifié pour ce frame natif.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +38,21 @@ HRESULT GetLocalRegisterValue (
   
 ## <a name="parameters"></a>Paramètres  
  `reg`  
- [in] Une valeur de l’énumération « CorDebugRegister » qui spécifie le Registre contenant la valeur.  
+ dans Valeur de l’énumération « CorDebugRegister » qui spécifie le registre contenant la valeur.  
   
  `cbSigBlob`  
- [in] Entier qui spécifie la taille de la signature de métadonnées binaires qui est référencée par le `pvSigBlob` paramètre.  
+ dans Entier qui spécifie la taille de la signature de métadonnées binaires référencée par le paramètre `pvSigBlob`.  
   
  `pvSigBlob`  
- [in] Un `PCCOR_SIGNATURE` valeur pointe vers la signature de métadonnées binaires du type de valeur.  
+ dans Valeur `PCCOR_SIGNATURE` qui pointe vers la signature de métadonnées binaires du type de la valeur.  
   
  `ppValue`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugValue » représentant la valeur récupérée qui est stockée dans le Registre spécifié.  
+ à Pointeur vers l’adresse d’un objet « ICorDebugValue » représentant la valeur récupérée qui est stockée dans le registre spécifié.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetLocalRegisterValue` méthode peut être utilisée dans un frame natif ou un juste-à-temps (JIT)-frame compilé.  
+ La méthode `GetLocalRegisterValue` peut être utilisée dans un frame natif ou dans un frame compilé juste-à-temps (JIT).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

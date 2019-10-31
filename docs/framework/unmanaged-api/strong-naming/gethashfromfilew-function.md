@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd96b5acb22f63b6e06c981119186680d6593a79
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: db6f39119d143d27c0d3a80a9c65565d4dfd0d39
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799187"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140673"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW, fonction
 Génère un hachage sur le contenu du fichier spécifié par une chaîne Unicode.  
@@ -51,7 +49,7 @@ HRESULT GetHashFromFileW (
  à Tableau d’octets contenant le hachage généré.  
   
  `cchHash`  
- dans Taille maximale de la mémoire tampon vers `pbHash`laquelle pointe.  
+ dans Taille maximale de la mémoire tampon vers laquelle pointe `pbHash`.  
   
  `pchHash`  
  à Taille, en octets, de `pbHash`.  
@@ -59,12 +57,12 @@ HRESULT GetHashFromFileW (
 ## <a name="remarks"></a>Notes  
  Cette fonction est identique à [GetHashFromFile (](gethashfromfile-function.md), à ceci près que la spécification de nom de fichier est au format Unicode au lieu de ANSI.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** StrongName.h  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 18485a27-cae3-4c6a-baa8-f7df601122d5
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8d245afe2d34c06a5bb9ca39b1c0dd4924fadada
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 107644270dbc9b14912dac9b97fc716aaeba7f4f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911247"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133219"
 ---
 # <a name="icorthreadpool-interface"></a>ICorThreadpool, interface
 Fournit des méthodes pour accéder au pool de threads.  
@@ -45,12 +43,12 @@ Fournit des méthodes pour accéder au pool de threads.
 |[CorGetMaxThreads, méthode](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetmaxthreads-method.md)|Réservé à un usage interne uniquement.|  
 |[CorGetAvailableThreads, méthode](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetavailablethreads-method.md)|Réservé à un usage interne uniquement.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

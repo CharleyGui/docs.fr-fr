@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 72ea68b4-689f-4733-9416-9664b75e8892
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 46dab35c44e59a149822005575c83c13e9350455
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc5324683daa9a02a6a89b2a3fb57ee9fd5dbe72
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758546"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136961"
 ---
-# <a name="corexemain2-function"></a>_CorExeMain2, fonction
+# <a name="_corexemain2-function"></a>_CorExeMain2, fonction
 Exécute le point d’entrée dans le code mappé en mémoire spécifié. Cette fonction est appelée par le chargeur du système d’exploitation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,26 +38,26 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
   
 ## <a name="parameters"></a>Paramètres  
  `pUnmappedPE`  
- [in] Pointeur vers le code mappé en mémoire.  
+ dans Pointeur vers le code mappé en mémoire.  
   
  `cUnmappedPE`  
- [in] Le nombre d’éléments `pUnmappedPE` peut contenir.  
+ dans Nombre d’éléments que `pUnmappedPE` peut contenir.  
   
  `pImageNameIn`  
- [in] Un pointeur vers le nom de l’image exécutable.  
+ dans Pointeur vers le nom de l’image exécutable.  
   
  `pLoadersFileName`  
- [in] Le nom du fichier de chargeur.  
+ dans Nom du fichier de chargeur.  
   
  `pCmdLine`  
- [in] Paramètres de ligne de commande, le cas échéant.  
+ dans Paramètres de ligne de commande, le cas échéant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

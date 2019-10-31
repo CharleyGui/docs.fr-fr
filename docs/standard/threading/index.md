@@ -6,14 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 763646bfb358b8e5faf13a14f2facb98f855b5c8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d6b8a0a4e16aa3169888958fa1376bfa61526dbd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913282"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73137926"
 ---
 # <a name="managed-threading"></a>Threading managé
 Que votre développement s’applique à des ordinateurs avec un ou plusieurs processeurs, votre application doit fournir l’interaction la plus réactive avec l’utilisateur, même si l’application effectue actuellement d’autres opérations. Utiliser plusieurs threads d’exécution est l’une des manières les plus efficaces pour maintenir la réactivité de votre application vis-à-vis de l’utilisateur, tout en exploitant le processeur entre voire pendant des événements utilisateur. Bien que cette section présente les concepts de base du threading, elle se concentre sur les concepts de threading managé et son utilisation.  
@@ -34,7 +32,7 @@ Que votre développement s’applique à des ordinateurs avec un ou plusieurs pr
  [Fonctionnalités et objets de threading](../../../docs/standard/threading/threading-objects-and-features.md)  
  Décrit les classes managées que vous pouvez utiliser pour synchroniser les activités de threads et les données d’objets ouvertes sur différents threads, et fournit une vue d’ensemble des threads du pool.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Threading>  
  Contient des classes pour l’utilisation et la synchronisation de threads managés.  
   

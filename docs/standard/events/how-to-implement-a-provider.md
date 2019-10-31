@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : implémenter un fournisseur'
+title: 'Comment : implémenter un fournisseur'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,17 +10,15 @@ helpviewer_keywords:
 - providers [.NET Framework], in observer design pattern
 - observables [.NET Framework], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 12c229b3a1436f9794258fec13905cce0fb767aa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: f5bb3cda0caa39ba3fd094b80e0b769a4bfc1f85
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324771"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73141558"
 ---
-# <a name="how-to-implement-a-provider"></a>Procédure : implémenter un fournisseur
-Le modèle de design observateur requiert une division entre un fournisseur, qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent des notifications (rappels) du fournisseur. Cette rubrique décrit comment créer un fournisseur. Une rubrique connexe, [Guide pratique pour implémenter un observateur](../../../docs/standard/events/how-to-implement-an-observer.md), explique comment créer un observateur.  
+# <a name="how-to-implement-a-provider"></a>Comment : implémenter un fournisseur
+Le modèle de design observateur requiert une division entre un fournisseur, qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent des notifications (rappels) du fournisseur. Cette rubrique décrit comment créer un fournisseur. Une rubrique connexe, [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md), explique comment créer un observateur.  
   
 ### <a name="to-create-a-provider"></a>Pour créer un fournisseur  
   
@@ -64,5 +62,5 @@ Le modèle de design observateur requiert une division entre un fournisseur, qui
 
 - <xref:System.IObservable%601>
 - [Modèle de conception Observateur](../../../docs/standard/events/observer-design-pattern.md)
-- [Guide pratique pour implémenter un observateur](../../../docs/standard/events/how-to-implement-an-observer.md)
+- [Guide pratique pour implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)
 - [Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)

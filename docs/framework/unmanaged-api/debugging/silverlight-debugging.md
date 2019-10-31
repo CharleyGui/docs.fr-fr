@@ -5,14 +5,12 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 5e903e04-17d0-4014-ac9a-a43330ec8b1c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1d20bc002e52c3c6a42b45c0d1c5d559e65dc52c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7af03197a43976c47b7ddc30346d622e6b97207
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763661"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73139147"
 ---
 # <a name="silverlight-debugging"></a>Débogage Silverlight
 Les rubriques de cette section décrivent l'environnement et les interfaces fournis par le Common Language Runtime (CLR) pour prendre en charge le débogage des applications Silverlight qui s'exécutent sur le système d'exploitation Windows ou sur la plateforme Macintosh.  
@@ -22,7 +20,7 @@ Les rubriques de cette section décrivent l'environnement et les interfaces four
  Fournit un mécanisme pour énumérer les CLR dans un processus.  
   
  [CloseCLREnumeration, fonction](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md)  
- Ferme les événements de continuer-démarrage CLR valides situés dans un tableau de handles retourné par la [fonction EnumerateCLRs](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)et libère la mémoire pour les tableaux de chemin d’accès de handles et de chaînes.  
+ Ferme tous les événements continue-Startup valides du CLR situés dans un tableau de handles retournés par la [fonction EnumerateCLRs](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)et libère la mémoire pour les tableaux de handles et de chemins d’accès de chaîne.  
   
  [CreateCoreClrDebugTarget, fonction](../../../../docs/framework/unmanaged-api/debugging/createcoreclrdebugtarget-function.md)  
  Crée une connexion à une cible distante pour l'énumération des processus et du runtime.  
@@ -34,7 +32,7 @@ Les rubriques de cette section décrivent l'environnement et les interfaces four
  Crée une chaîne de version à partir d'un chemin d'accès au CLR dans un processus cible.  
   
  [CreateDebuggingInterfaceFromVersion, fonction](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md)  
- Accepte une chaîne de version CLR retournée à partir de [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)de fonction et retourne une interface de débogueur correspondante.  
+ Accepte une chaîne de version CLR retournée par la fonction de [fonction CreateVersionStringFromModule](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)et retourne une interface de débogueur correspondante.  
   
  [CoreClrDebugProcInfo, structure](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md)  
  Représente un processus qui s'exécute sur un ordinateur distant.  

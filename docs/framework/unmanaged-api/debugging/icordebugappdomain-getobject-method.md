@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78232e6f-ae18-4cfa-a6cd-e79471cf9d76
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 1201ac0dca9cbd48c24b2621eba079ae672fd310
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f2c881603cfa0e4b3d2dc8d1e996631b51d1e850
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737845"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134711"
 ---
 # <a name="icordebugappdomaingetobject-method"></a>ICorDebugAppDomain::GetObject, méthode
-Obtient un pointeur d’interface vers le domaine d’application du common language runtime (CLR).  
+Obtient un pointeur d’interface vers le domaine d’application common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT GetObject (
   
 ## <a name="parameters"></a>Paramètres  
  `ppObject`  
- [out] Pointeur vers l’adresse d’un objet d’interface ICorDebugValue qui représente le domaine d’application CLR.  
+ à Pointeur vers l’adresse d’un objet d’interface ICorDebugValue qui représente le domaine d’application CLR.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Si un géré <xref:System.AppDomain?displayProperty=nameWithType> objet n’a pas été construit pour ce domaine d’application, la méthode retourne `S_FALSE` et place `NULL` dans `*ppObject`.  
+ Si un objet <xref:System.AppDomain?displayProperty=nameWithType> managé n’a pas été construit pour ce domaine d’application, la méthode retourne `S_FALSE` et place `NULL` dans `*ppObject`.  
   
 ## <a name="remarks"></a>Notes  
- Chaque domaine d’application dans un processus peut avoir un géré <xref:System.AppDomain?displayProperty=nameWithType> objet dans le runtime qui le représente. Cette fonction obtient un objet d’interface ICorDebugValue qui correspond à cet gérés <xref:System.AppDomain?displayProperty=nameWithType> objet.  
+ Chaque domaine d’application dans un processus peut avoir un objet <xref:System.AppDomain?displayProperty=nameWithType> managé dans le runtime qui le représente. Cette fonction obtient un objet d’interface ICorDebugValue qui correspond à cet objet de <xref:System.AppDomain?displayProperty=nameWithType> managé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

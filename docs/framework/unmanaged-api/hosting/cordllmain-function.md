@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9a02a899fd6fbffd04ef25913adb6a65ade27177
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f60f159ab4770023cee7123b39109040243e1ccd
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755661"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73136967"
 ---
-# <a name="cordllmain-function"></a>\_CorDllMain (fonction)
+# <a name="_cordllmain-function"></a>\_fonction CorDllMain
 
-Initialise le common language runtime (CLR), recherche le point d’entrée managé dans l’en-tête CLR de l’assembly DLL et commence l’exécution.  
+Initialise le common language runtime (CLR), localise le point d’entrée managé dans l’en-tête CLR de l’assembly de DLL et commence l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +37,33 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
   
 ## <a name="parameters"></a>Paramètres  
  `hInst`  
- [in] Le handle d’instance du module chargé.  
+ dans Handle d’instance du module chargé.  
   
  `dwReason`  
- [in] Indique la raison pour laquelle la fonction de point d’entrée DLL est appelée. Ce paramètre peut être une des valeurs suivantes : DLL\_PROCESS_ATTACH, DLL\_THREAD\_attacher, DLL\_THREAD\_attacher ou DLL\_processus\_détacher. Pour obtenir une description de ces valeurs, consultez le `DllMain` documentation dans le kit Platform SDK.  
+ dans Indique la raison pour laquelle la fonction de point d’entrée de la DLL est appelée. Ce paramètre peut avoir l’une des valeurs suivantes : DLL\_PROCESS_ATTACH, DLL\_THREAD\_attacher, DLL\_THREAD\_attacher ou DLL\_processus\_détacher. Pour obtenir une description de ces valeurs, consultez la documentation `DllMain` dans le kit de développement Platform SDK.  
   
  `lpReserved`  
- [in] Inutilisé.  
+ dans Inutilisé.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne `true` de réussite et `false` si une erreur se produit.  
+ Cette méthode retourne `true` pour Success et `false` si une erreur se produit.  
   
 ## <a name="remarks"></a>Notes  
- Cette fonction est appelée par le chargeur du système d’exploitation pour les assemblys DLL. Pour les assemblys exécutables, le chargeur appelle le [ \_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) fonctionner à la place.  
+ Cette fonction est appelée par le chargeur du système d’exploitation pour les assemblys DLL. Pour les assemblys exécutables, le chargeur appelle à la place la fonction [\_du CORExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) .  
   
- Le chargeur du système d’exploitation appelle cette méthode, quel que soit le point d’entrée spécifié dans le fichier DLL.  
+ Le chargeur du système d’exploitation appelle cette méthode quel que soit le point d’entrée spécifié dans le fichier DLL.  
   
-Le `_CorDllMain` fonction est appelée directement par le chargeur du système d’exploitation.
+La fonction `_CorDllMain` est appelée directement par le chargeur du système d’exploitation.
   
- Pour plus d’informations, consultez la section Remarques dans le [ \_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) rubrique.  
+ Pour plus d’informations, consultez la section Notes de la rubrique [\_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
 
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

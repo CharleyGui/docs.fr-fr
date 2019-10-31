@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: ccc9387a-9f44-4f4f-bf8f-0ea6d2afa21b
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 193604068e379d62107b25f2bc348cd7c8bc6e98
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2493b5338824e1eab3f82a9023bbcced59a98fc8
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796706"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73134464"
 ---
 # <a name="iassemblycacheitem-interface"></a>IAssemblyCacheItem, interface
 Représente un assembly unique dans le Global Assembly Cache.  
@@ -34,8 +32,8 @@ Représente un assembly unique dans le Global Assembly Cache.
 |[Commit, méthode](iassemblycacheitem-commit-method.md)|Valide la référence de l’assembly mis en cache dans la mémoire.|  
 |[CreateStream, méthode](iassemblycacheitem-createstream-method.md)|Crée un flux de donnée avec le nom et le format spécifiés.|  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   

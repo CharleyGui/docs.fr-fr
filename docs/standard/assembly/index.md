@@ -12,14 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 5fb809b564df17d6320b7ffce3d757fa0fee7639
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 7ac9ea194095832f6c3825ce414350bca89c26fb
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583013"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73107244"
 ---
 # <a name="assemblies-in-net"></a>Assemblys dans .NET
 

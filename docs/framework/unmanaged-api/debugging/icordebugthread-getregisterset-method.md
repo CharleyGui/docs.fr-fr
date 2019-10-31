@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3b9b6260-98ac-4cfd-88e5-5d7614f94a0c
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8769293364c111754f4bfe9360a0dca93c0ba13c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3c62bd73b693322bd679b07b46e3549e1cfc8a56
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770609"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73133399"
 ---
 # <a name="icordebugthreadgetregisterset-method"></a>ICorDebugThread::GetRegisterSet, méthode
-Obtient un pointeur d’interface vers le jeu de Registre qui est associé à la partie active de cet objet ICorDebugThread.  
+Obtient un pointeur d’interface vers le jeu de registres associé à la partie active de cet objet ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +35,9 @@ HRESULT GetRegisterSet (
   
 ## <a name="parameters"></a>Paramètres  
  `ppRegisters`  
- [out] Un pointeur vers l’adresse d’un [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) objet d’interface qui représente le Registre est définie pour la partie active de ce thread.  
+ à Pointeur vers l’adresse d’un objet d’interface [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) qui représente le jeu de registres pour la partie active de ce thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

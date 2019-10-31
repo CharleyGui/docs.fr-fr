@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: b712d862-f2d0-4b55-87d4-65bbeadef982
 topic_type:
 - apiref
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 59b4df08157ce14a58393e54b671e8f41b8998ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d1027aea1d800bda1654b223fec992aa70efd4b7
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799228"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73140713"
 ---
 # <a name="gethashfromblob-function"></a>GetHashFromBlob, fonction
 
@@ -57,18 +55,18 @@ dans Longueur, en octets, du bloc de mémoire.
 à Mémoire tampon de hachage retournée.
 
 `cchHash`\
-dans Taille maximale demandée de `pbHash`.
+dans Taille maximale de `pbHash`demandée.
 
 `pchHash`\
-à Taille, en octets, du retourné `pbHash`.
+à Taille, en octets, de la `pbHash`retournée.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** StrongName.h
+**En-tête :** StrongName. h
 
-**Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll
+**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
