@@ -9,14 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: f4d7cbd00dbf94900185643490b952ced7887965
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 6a7f29a95cd3042cda1c508ad7472e9378817ebe
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895222"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73126434"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 Le moteur d’expression régulière du .NET Framework est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans le .NET Framework sont implémentées à l’aide d’un moteur NFA classique.  
@@ -124,7 +122,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
   
      Pour plus d’informations sur la mise en correspondance de droite à gauche, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
-- Postanalyse positive et négative : `(?<=`*sous-expression*`)` pour une postanalyse positive et `(?<!`*sous-expression*`)` pour une postanalyse négative. Cette fonctionnalité est semblable à la préanalyse décrite précédemment dans cette rubrique. Comme le moteur d’expression régulière autorise une mise en correspondance complète de droite à gauche, les expressions régulières autorisent les postanalyses illimitées. La postanalyse positive et négative peut également servir à éviter d’imbriquer des quantificateurs lorsque la sous-expression imbriquée est un sur-ensemble d’une expression externe. Les expressions régulières comportant ces quantificateurs imbriqués offrent souvent des performances médiocres. L’exemple suivant vérifie qu’une chaîne commence et se termine par un caractère alphanumérique et que tout autre caractère contenu dans la chaîne fait partie d’un sur-ensemble plus grand. Il forme une partie de l’expression régulière utilisée pour valider des adresses e-mail. Pour plus d’informations, consultez [Guide pratique : Vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
+- Postanalyse positive et négative : `(?<=`*sous-expression*`)` pour une postanalyse positive et `(?<!`*sous-expression*`)` pour une postanalyse négative. Cette fonctionnalité est semblable à la préanalyse décrite précédemment dans cette rubrique. Comme le moteur d’expression régulière autorise une mise en correspondance complète de droite à gauche, les expressions régulières autorisent les postanalyses illimitées. La postanalyse positive et négative peut également servir à éviter d’imbriquer des quantificateurs lorsque la sous-expression imbriquée est un sur-ensemble d’une expression externe. Les expressions régulières comportant ces quantificateurs imbriqués offrent souvent des performances médiocres. L’exemple suivant vérifie qu’une chaîne commence et se termine par un caractère alphanumérique et que tout autre caractère contenu dans la chaîne fait partie d’un sur-ensemble plus grand. Il forme une partie de l’expression régulière utilisée pour valider des adresses e-mail. Pour plus d’informations, consultez [Guide pratique : vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]  
@@ -135,7 +133,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
     |-------------|-----------------|  
     |`^`|Commencer la correspondance au début de la chaîne.|  
     |`[A-Z0-9]`|Mettre en correspondance n’importe quel caractère numérique ou alphanumérique. (La comparaison respecte la casse.)|  
-    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])\*</code>|Mettre en correspondance zéro, une ou plusieurs occurrences de n’importe quel caractère ou de l’un des caractères suivants :  -, !, #, $, %, &, ’, ., \*, +, /, =, ?, ^, \`, {, }, &#124; ou ~.|  
+    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])\*</code>| Correspond à zéro, une ou plusieurs occurrences d’un caractère alphabétique, ou à l’un des caractères suivants :-, !, #, $,%, &, ',., \*, +,/, =, ?, ^, \`, &#124;{,}, ou ~.|  
     |`(?<=[A-Z0-9])`|Postanalyser jusqu’au caractère précédent, qui doit être numérique ou alphanumérique. (La comparaison respecte la casse.)|  
     |`$`|Termine la correspondance à la fin de la chaîne.|  
   
@@ -153,5 +151,5 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 |[Exemples d’expressions régulières](../../../docs/standard/base-types/regular-expression-examples.md)|Contient des exemples de code qui illustrent l’utilisation des expressions régulières dans des applications courantes.|  
 |[Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

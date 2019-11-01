@@ -14,14 +14,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a8a2cb64d4dcfba1580d714c7dffae7e91ef01fb
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fb84e746e1dffedebfbe289c8e7599bc50097f07
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040989"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73128077"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
