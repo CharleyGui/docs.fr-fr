@@ -10,15 +10,13 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-author: rpetrusha
-ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 89585ff97183912feb9b9af0bd326041b7381bfb
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 56014469f14280deae5f220da6d786f4363ea98f
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774308"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73105722"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -43,7 +41,7 @@ Pour faire correspondre une entrée sans contrainte, une expression régulière 
 Le dernier type de texte est problématique pour une expression régulière écrite pour gérer les entrées avec contrainte. Si cette expression régulière repose également sur une [rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md) complète, le traitement d’un texte apparemment anodin par le moteur d’expression régulière risque d’être extrêmement long (dans certains cas, un grand nombre d’heures ou de jours).
 
 > [!WARNING]
-> L'exemple suivant utilise une expression régulière sujette à des rétroactions excessives et susceptible de rejeter des adresses e-mail valides. Vous ne devez pas l’utiliser dans une routine de validation d’e-mails. Si vous souhaitez une expression régulière qui valide des adresses e-mail, consultez [Guide pratique : Vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).
+> L'exemple suivant utilise une expression régulière sujette à des rétroactions excessives et susceptible de rejeter des adresses e-mail valides. Vous ne devez pas l’utiliser dans une routine de validation d’e-mails. Si vous souhaitez une expression régulière qui valide des adresses e-mail, consultez [Guide pratique : vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).
 
 Prenons l'exemple d'une expression régulière très fréquemment utilisée, mais extrêmement problématique, pour la validation de l'alias d'une adresse e-mail. L'expression régulière `^[0-9A-Z]([-.\w]*[0-9A-Z])*$` est écrite pour traiter ce qui est considéré comme une adresse e-mail valide. Cette dernière se compose d'un caractère alphanumérique suivi de zéro, ou de plusieurs caractères (caractères alphanumériques, points ou traits d'union). L'expression régulière doit se terminer par un caractère alphanumérique. Toutefois, comme illustré dans l'exemple suivant, bien que cette expression régulière gère facilement une entrée valide, elle s'avère particulièrement inefficace lorsqu'il s'agit de traiter une entrée presque valide.
 
@@ -65,7 +63,7 @@ Pour résoudre ce problème, vous pouvez effectuer les opérations suivantes :
 La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> est au cœur du modèle d'objet d'expression régulière de .NET. Elle représente le moteur d’expressions régulières. Souvent, la façon dont le moteur <xref:System.Text.RegularExpressions.Regex> est utilisé est le facteur principal ayant un impact sur les performances des expressions régulières. La définition d’une expression régulière implique une association étroite entre le moteur des expressions régulières et un modèle d’expression régulière. Ce processus est forcément onéreux, qu’il implique l’instanciation d’un objet <xref:System.Text.RegularExpressions.Regex> en passant à son constructeur un modèle d’expression régulière ou l’appel d’une méthode statique en lui passant le modèle d’expression régulière avec la chaîne à analyser.
 
 > [!NOTE]
-> Pour obtenir une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées, consultez l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.
+> Vous trouverez une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l'équipe BCL.
 
 Vous pouvez associer le moteur des expressions régulières à un modèle d’expression régulière spécifique, puis utiliser le moteur pour faire correspondre du texte de plusieurs façons :
 
@@ -135,9 +133,9 @@ Le modèle d'expression régulière utilisé dans l'exemple, `\b(\w+((\r?\n)|,?\
 |`\w+`|Mettre en correspondance un ou plusieurs caractères alphabétiques.|
 |`[.?:;!]`|Mettre en correspondance un point, un point d'interrogation, deux-points, un point-virgule ou un point d'exclamation.|
 
-### <a name="regular-expressions-compiled-to-an-assembly"></a>Expressions régulières : Compilé dans un assembly
+### <a name="regular-expressions-compiled-to-an-assembly"></a>Expressions régulières : compilées dans un assembly
 
-.NET permet également de créer un assembly contenant des expressions régulières compilées. La baisse de performances des expressions régulières est alors ressentie au moment du design et non au moment de l'exécution. Toutefois, cela engendre également un travail supplémentaire : vous devez définir les expressions régulières à l’avance et les compiler dans un assembly. Le compilateur peut ensuite référencer cet assembly lors de la compilation du code source qui utilise les expressions régulières de l'assembly. Chaque expression régulière compilée dans l'assembly est représentée par une classe qui dérive de <xref:System.Text.RegularExpressions.Regex>.
+.NET permet également de créer un assembly contenant des expressions régulières compilées. La baisse de performances des expressions régulières est alors ressentie au moment du design et non au moment de l'exécution. Toutefois, cela engendre également un travail supplémentaire : vous devez définir les expressions régulières à l'avance et les compiler dans un assembly. Le compilateur peut ensuite référencer cet assembly lors de la compilation du code source qui utilise les expressions régulières de l'assembly. Chaque expression régulière compilée dans l'assembly est représentée par une classe qui dérive de <xref:System.Text.RegularExpressions.Regex>.
 
 Pour compiler des expressions régulières dans un assembly, vous appelez la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%28System.Text.RegularExpressions.RegexCompilationInfo%5B%5D%2CSystem.Reflection.AssemblyName%29?displayProperty=nameWithType> et vous lui passez un tableau d'objets <xref:System.Text.RegularExpressions.RegexCompilationInfo> représentant les expressions régulières à compiler, ainsi qu'un objet <xref:System.Reflection.AssemblyName> contenant des informations sur l'assembly à créer.
 
@@ -149,7 +147,7 @@ Nous vous conseillons de compiler les expressions régulières dans un assembly 
 
 Si vous utilisez des expressions régulières compilées pour optimiser les performances, vous ne devez pas utiliser la réflexion pour créer l’assembly, charger le moteur des expressions régulières et exécuter ses méthodes de critères spéciaux. Vous devez donc éviter de générer dynamiquement des modèles d’expressions régulières et spécifier les options de critères spéciaux (tels que des critères spéciaux de non respect de la casse) au moment de la création de l’assembly. Vous devez également séparer le code qui crée l'assembly du code qui utilise l'expression régulière.
 
-L'exemple suivant montre comment créer un assembly qui contient une expression régulière compilée. Il crée un assembly nommé `RegexLib.dll` avec une classe d’expression régulière unique, `SentencePattern`, qui contient le modèle d’expression régulière de phrase correspondante utilisé dans la section [Expressions régulières interprétées/ Expressions régulières compilées](#interpreted-vs-compiled-regular-expressions).
+L'exemple suivant montre comment créer un assembly qui contient une expression régulière compilée. Il crée un assembly nommé `RegexLib.dll` avec une classe d’expression régulière unique, `SentencePattern`, qui contient le modèle d’expression régulière de phrase qui est utilisé dans la section [expressions régulières interprétées et expressions régulières compilées](#interpreted-vs-compiled-regular-expressions) .
 
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/compile1.cs#6)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/compile1.vb#6)]
@@ -164,7 +162,7 @@ Lorsque l'exemple est compilé dans un exécutable et qu'il est exécuté, il cr
 Normalement, le moteur des expressions régulières utilise une progression linéaire pour se déplacer dans une chaîne d’entrée et pour la comparer à un modèle d’expression régulière. Toutefois, lorsque les quantificateurs indéterminés, `*`, `+` et `?`, par exemple, sont utilisés dans un modèle d’expression régulière, le moteur des expressions régulières peut abandonner une partie des correspondances partielles trouvées et revenir à un état précédemment enregistré pour trouver une correspondance pour le modèle entier. Ce processus est appelé « rétroaction ».
 
 > [!NOTE]
-> Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière dans l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.
+> Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l'équipe BCL.
 
 La prise en charge de la rétroaction confère aux expressions régulières leur puissance et leur flexibilité. La responsabilité de contrôle du fonctionnement du moteur des expressions régulières est alors confiée aux développeurs d'expressions régulières. Souvent, les développeurs ne sont pas conscients de cette responsabilité. Leur utilisation incorrecte de la rétroaction ou leur dépendance vis-à-vis d'une rétroaction excessive a souvent un impact négatif très important sur les performances des expressions régulières. Dans le pire des scénarios, la durée d'exécution peut doubler pour chaque caractère supplémentaire de la chaîne d'entrée. En réalité, lorsque la rétroaction est utilisée de manière excessive, il est facile de créer l'équivalent de programmation d'une boucle sans fin si l'entrée correspond presque au modèle d'expression régulière. Le moteur des expressions régulières peut alors traiter une chaîne d'entrée relativement courte en plusieurs heures, voire en plusieurs jours.
 
@@ -207,7 +205,7 @@ L'exemple suivant illustre l'utilisation de cette expression régulière pour fa
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack4.cs#11)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack4.vb#11)]
 
-Le langage d’expression régulière dans .NET comprend les éléments de langage suivants, que vous pouvez utiliser pour éliminer les quantificateurs imbriqués. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+Le langage d’expression régulière dans .NET comprend les éléments de langage suivants, que vous pouvez utiliser pour éliminer les quantificateurs imbriqués. Pour plus d'informations, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
 |Élément du langage|Description|
 |----------------------|-----------------|
@@ -220,7 +218,7 @@ Le langage d’expression régulière dans .NET comprend les éléments de langa
 
 Si une expression régulière traite une entrée qui correspond presque au modèle d'expression régulière, elle peut souvent se baser sur une rétroaction excessive, laquelle affecte considérablement ses performances. En plus d'envisager soigneusement l'utilisation de la rétroaction et de tester l'expression régulière sur une entrée presque correspondante, vous devez toujours définir une valeur de délai d'attente pour garantir la minimalisation de l'impact d'une rétroaction excessive, le cas échéant.
 
-Le délai d'attente d'expression régulière définit le laps de temps pendant lequel le moteur des expressions régulières recherchera une correspondance unique avant d'expirer. Le délai d’attente par défaut est <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, ce qui signifie que l’expression régulière n’expirera pas. Vous pouvez remplacer cette valeur et définir un délai d'attente comme suit :
+L’intervalle de délai d’attente des expressions régulières définit la période pendant laquelle le moteur d’expression régulière recherche une correspondance unique avant d’expirer. L’intervalle de délai d’attente par défaut est <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, ce qui signifie que l’expression régulière n’expirera pas. Vous pouvez remplacer cette valeur et définir un intervalle de délai d’attente comme suit :
 
 - En fournissant une valeur de délai d'attente quand vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> en appelant le constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>.
 
@@ -268,7 +266,7 @@ Vous pouvez désactiver les captures de l'une des façons suivantes :
 
 - Utilisez l'option <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>. Elle désactive toutes les captures implicites ou sans nom dans le modèle d’expression régulière. Avec cette option, seules les sous-chaînes qui correspondent à des groupes nommés définis avec l'élément de langage `(?<name>subexpression)` peuvent être capturées. L'indicateur <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> peut être passé au paramètre `options` d'un constructeur de classe <xref:System.Text.RegularExpressions.Regex> ou au paramètre `options` d'une méthode correspondante statique <xref:System.Text.RegularExpressions.Regex>.
 
-- Utilisez l'option `n` dans l'élément de langage `(?imnsx)`. Cette option désactive toutes les captures implicites ou sans nom à partir du point où l’élément apparaît dans le modèle d’expression régulière. Les captures sont désactivées jusqu’à la fin du modèle ou jusqu’à ce que l’option `(-n)` active les captures implicites ou sans nom. Pour plus d’informations, consultez [Constructions diverses](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md).
+- Utilisez l'option `n` dans l'élément de langage `(?imnsx)`. Cette option désactive toutes les captures implicites ou sans nom à partir du point où l’élément apparaît dans le modèle d’expression régulière. Les captures sont désactivées jusqu’à la fin du modèle ou jusqu’à ce que l’option `(-n)` active les captures implicites ou sans nom. Pour plus d'informations, consultez [Miscellaneous Constructs](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md).
 
 - Utilisez l'option `n` dans l'élément de langage `(?imnsx:subexpression)`. Cette option désactive toutes les captures implicites ou sans nom dans `subexpression`. Les captures effectuées par les groupes de capture imbriqués implicites ou sans nom sont également désactivées.
 

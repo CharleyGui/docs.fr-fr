@@ -1,5 +1,5 @@
 ---
-title: "Comment : vérifier que des chaînes sont dans un format d'adresse de messagerie valide"
+title: Guide pratique pour vérifier que des chaînes sont dans un format d’adresse e-mail valide
 ms.date: 12/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,16 +18,14 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 352808e561a0f59d41f092eb7c70c40a591da5b6
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: c02fc215fa66951ae3333175191ab96a226a2afe
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846768"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197581"
 ---
-# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Comment : vérifier que des chaînes sont dans un format d’adresse e-mail valide
+# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Guide pratique pour vérifier que des chaînes sont dans un format d’adresse e-mail valide
 
 L'exemple suivant utilise une expression régulière pour vérifier qu'une chaîne est dans un format d'adresse de messagerie valide.
 
@@ -52,7 +50,7 @@ Notez que la méthode `IsValidEmail` n'effectue pas d'authentification pour vali
 [!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
 [!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]
 
-Dans cet exemple, le modèle d’expression régulière ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][-a-z0-9]{0,22}[a-z0-9]))$`` est interprété comme indiqué dans la légende suivante. L’expression régulière est compilée à l’aide de l’indicateur <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.
+Dans cet exemple, le modèle d’expression régulière ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` est interprété comme indiqué dans la légende suivante. L’expression régulière est compilée à l’aide de l’indicateur <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.
 
 `^`de modèle : commencer la correspondance au début de la chaîne.
 
@@ -64,7 +62,7 @@ Dans cet exemple, le modèle d’expression régulière ``^(?(")(".+?(?<!\\)"@)|
 
 `(\.(?!\.))`de modèle : si le caractère suivant est un point, associez-le. Dans le cas contraire, effectue une préanalyse du caractère suivant et continue la recherche de correspondances. `(?!\.)` est une assertion de préanalyse négative de largeur nulle qui empêche deux points consécutifs de s'afficher dans la partie locale d'une adresse de messagerie.
 
-``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``de modèle : si le caractère suivant n’est pas un point, correspond à un caractère alphabétique ou à l’un des caractères suivants :- ! # $% & ' * +/= ? ^ '{}| ~
+``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``de modèle : si le caractère suivant n’est pas un point, correspond à un caractère alphabétique ou à l’un des caractères suivants :- ! # $% & '\*+/= ? ^\`{}| ~
 
 ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*``de modèle : correspond au modèle d’alternative (un point suivi d’un non-point, ou un nombre de caractères) zéro, une ou plusieurs fois.
 
