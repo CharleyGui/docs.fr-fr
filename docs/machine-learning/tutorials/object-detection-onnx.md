@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6d13e7e4788dfd2bad6fd26015d76342b38f1142
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1364b6a1cf6d424975828185a50175b2763c6516
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774451"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420066"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Didacticiel : détecter des objets à l’aide de ONNX dans ML.NET
 
@@ -45,7 +45,7 @@ Cet exemple crée une application console .NET Core qui détecte les objets dans
 
 La détection d’objets est un problème de vision par ordinateur. Même si elle est étroitement liée à la classification d’images, la détection d’objets effectue une classification d’images à une échelle plus précise. La détection d’objets localise _et_ catégorise les entités dans les images. Utilisez la détection d’objets quand les images contiennent plusieurs objets de différents types.
 
-![Images côte à côte montrant la classification d’images d’un chien sur la gauche et la classification d’objet d’un groupe à l’écran d’un chien à droite](./media/object-detection-onnx/img-classification-obj-detection.PNG)
+![Captures d’écran montrant la classification des images par rapport à la classification des objets.](./media/object-detection-onnx/img-classification-obj-detection.png)
 
 Voici quelques cas d’utilisation de la détection d’objets :
 
@@ -66,7 +66,7 @@ Il existe différents types de réseaux neuronaux, les plus courants étant les 
 
 La détection d’objets est une tâche de traitement d’images. C’est pourquoi la plupart des modèles de deep learning préentraînés pour résoudre ce problème sont des réseaux CNN. Le modèle utilisé dans ce didacticiel est le petit modèle YOLOv2, une version plus compacte du modèle YOLOv2 décrit dans le document : [« YOLO9000 : meilleur, plus rapide et plus puissant » par RedMon et Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Tiny YOLOv2 est entraîné sur le jeu de données Pascal COV et est constitué de 15 couches qui peuvent prédire 20 classes différentes d’objets. Étant donné que Tiny YOLOv2 est une version condensée du modèle YOLOv2 d’origine, un compromis est établi entre la vitesse et la précision. Les différentes couches qui composent le modèle peuvent être visualisées à l’aide d’outils comme Netron. L’inspection du modèle produit un mappage des connexions entre toutes les couches qui composent le réseau neuronal, où chaque couche contient le nom de la couche ainsi que les dimensions des entrée/sortie respectives. Les structures de données utilisées pour décrire les entrées et les sorties du modèle sont appelées des tenseurs. Les tenseurs peuvent être considérés comme des conteneurs qui stockent des données dans N dimensions. Dans le cas de Tiny YOLOv2, le nom de la couche d’entrée est `image` et il attend un tenseur de dimensions `3 x 416 x 416`. Le nom de la couche de sortie est `grid` et génère un tenseur de sortie de dimensions `125 x 13 x 13`.
 
-![Couche d’entrée fractionnée en couches masquées, puis couche de sortie](./media/object-detection-onnx/netron-model-map.png)
+![Couche d’entrée fractionnée en couches masquées, puis couche de sortie](./media/object-detection-onnx/netron-model-map-layers.png)
 
 Le modèle YOLO prend une image `3(RGB) x 416px x 416px`. Le modèle prend cette entrée et la passe à travers les différentes couches pour produire une sortie. La sortie divise l’image d’entrée en une grille `13 x 13`, chaque cellule de la grille contenant les valeurs `125`.
 
@@ -74,11 +74,11 @@ Le modèle YOLO prend une image `3(RGB) x 416px x 416px`. Le modèle prend cette
 
 ONNX (Open Neural Network Exchange) est un format open source pour les modèles IA. ONNX prend en charge l’interopérabilité entre les frameworks. Cela signifie que vous pouvez entraîner un modèle dans l’un des nombreux frameworks de machine learning connus tels que PyTorch, le convertir au format ONNX et consommer le modèle ONNX dans un autre framework comme ML.NET. Pour en savoir plus, consultez le [site web ONNX](https://onnx.ai/).
 
-![ONNX des formats pris en charge en cours d’importation dans ONNX, puis utilisés par d’autres formats pris en charge par ONNX](./media/object-detection-onnx/onnx-frameworks.png)
+![Diagramme des formats pris en charge par ONNX.](./media/object-detection-onnx/onyx-supported-formats.png)
 
 Le modèle Tiny YOLOv2 préentraîné est stocké au format ONNX, représentation sérialisée des couches et des motifs appris de ces couches. Dans ML.NET, l’interopérabilité avec ONNX s’obtient avec les packages NuGet [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) et [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer). Le package[`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) contient une série de transformations qui prennent une image et l’encodent en valeurs numériques pouvant être utilisées comme entrée dans un pipeline de prédiction ou d’entraînement. Le package [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) tire profit du runtime ONNX afin de charger un modèle ONNX et de l’utiliser pour faire des prédictions en fonction de l’entrée fournie.
 
-![Le workflow de données du fichier ONNX dans le runtime ONNX, et enfin C# à l’application](./media/object-detection-onnx/onnx-ml-net-integration.png)
+![Le workflow de données du fichier ONNX dans le runtime ONNX.](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
 ## <a name="set-up-the-net-core-project"></a>Configurer le projet .NET Core
 
@@ -703,7 +703,7 @@ person and its Confidence score: 0.5551759
 
 Pour voir les images avec les rectangles englobants, accédez au répertoire `assets/images/output/`. Voici un exemple de l’une des images traitées.
 
-![Exemple d’image traitée d’une salle de Dinning](./media/object-detection-onnx/image3.jpg)
+![Exemple d’image traitée d’une salle de Dinning](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
 Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
 

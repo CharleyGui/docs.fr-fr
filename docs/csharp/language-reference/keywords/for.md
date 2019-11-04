@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: 61315a04ca8d5a619a3dcaf43b15a309919d3c42
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 5ebc478f8840173cacc0bc211061f3013379abd9
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167869"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422789"
 ---
 # <a name="for-c-reference"></a>for (référence C#)
 
@@ -105,11 +105,11 @@ L’exemple suivant définit la boucle `for` infinie :
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, voir la section [Instruction for](~/_csharplang/spec/statements.md#the-for-statement) de la [spécification du langage C#](../language-specification/index.md).
+Pour plus d’informations, voir la section [Instruction for](~/_csharplang/spec/statements.md#the-for-statement) de la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [foreach, in](foreach-in.md)

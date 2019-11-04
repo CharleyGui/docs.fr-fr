@@ -4,12 +4,12 @@ ms.date: 03/28/2018
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-ms.openlocfilehash: cb186e1c893e1c97c96f641edbdf1537a135bfcb
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 0e31502f617012c4f3596497f5b9c911c2dde167
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191973"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421291"
 ---
 # <a name="visual-basic-guide"></a>Guide Visual Basic
 
@@ -42,7 +42,7 @@ Si vous n’avez pas encore Visual Basic, vous pouvez télécharger une version 
 - [COM Interop](../visual-basic/programming-guide/com-interop/index.md)  
   Explique les problèmes d’interopérabilité associés à la création et à l’utilisation d’objets COM (Component Object Model) avec Visual Basic.
 
-- [Exemples](../visual-basic/sample-applications.md)  
+- [Exemples](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)  
   Contient des informations sur les exemples.
 
 - [Procédures pas à pas](../visual-basic/walkthroughs.md)  

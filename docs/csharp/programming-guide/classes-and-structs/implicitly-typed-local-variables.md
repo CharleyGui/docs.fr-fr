@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 8c09ddc5a9db71a4e0bef0434d2fc14a4c088352
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 7010c38797ab64e5106c96c06cd814c143ca9c24
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635549"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419386"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 
@@ -45,17 +45,17 @@ Le mot clé `var` peut être utilisé dans les contextes suivants :
     using (var file = new StreamReader("C:\\myfile.txt")) {...}
     ```
 
-Pour plus d'informations, voir [Procédure : Utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
+Pour plus d’informations, consultez [Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 
 ## <a name="var-and-anonymous-types"></a>Types var et anonymes
 
-Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant avec les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations, consultez [Types anonymes](anonymous-types.md).
+Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant avec les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations, consultez la page [Types anonymes](anonymous-types.md).
 
 Du point de vue de votre code source, un type anonyme n’a pas de nom. Par conséquent, si une variable de requête a été initialisée avec `var`, la seule façon d’accéder aux propriétés de la séquence d’objets retournée consiste à utiliser `var` comme type pour la variable d’itération de l’instruction `foreach`.
 
 [!code-csharp[csProgGuideLINQ#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#44)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les restrictions suivantes s’appliquent aux déclarations de variables implicitement typées :
 
@@ -93,13 +93,13 @@ Toutefois, l’utilisation de `var` risque de rendre votre code plus difficile �
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Informations de référence sur C#](../../language-reference/index.md)
 - [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md)
-- [Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
+- [Comment : utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Types anonymes](anonymous-types.md)
 - [Initialiseurs d’objets et de collections](object-and-collection-initializers.md)
 - [var](../../language-reference/keywords/var.md)
-- [Expressions de requête LINQ](../linq-query-expressions/index.md)
+- [LINQ en C#](../../linq/index.md)
 - [LINQ (Language Integrated Query)](../../linq/index.md)
 - [for](../../language-reference/keywords/for.md)
 - [foreach, in](../../language-reference/keywords/foreach-in.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 81cf336f94815dd3f2c88995eb34ae03b8220097
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 9588ec73250e8745426f6f6020c8d555a174d627
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179917"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422958"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (Options du compilateur C#)
 
@@ -40,7 +40,7 @@ Force le compilateur à accepter uniquement la syntaxe incluse dans la spécific
 |7.2|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.2 ou une version antérieure.|
 |7.1|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.1 ou une version antérieure.|
 |7|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.0 ou une version antérieure.|
-|6\.|Le compilateur accepte uniquement la syntaxe incluse dans C# 6.0 ou une version antérieure.|
+|6|Le compilateur accepte uniquement la syntaxe incluse dans C# 6.0 ou une version antérieure.|
 |5|Le compilateur accepte uniquement la syntaxe incluse dans C# 5.0 ou une version antérieure.|
 |4|Le compilateur accepte uniquement la syntaxe incluse dans C# 4.0 ou une version antérieure.|
 |3|Le compilateur accepte uniquement la syntaxe incluse dans C# 3.0 ou une version antérieure.|
@@ -68,12 +68,12 @@ Pour plus d'informations sur la façon de définir cette option du compilateur p
 |Version|Lien|Description|
 |-------|----|-----------|
 |C# 7.0 et versions ultérieures||actuellement non disponible|
-|C# 6.0|[Lien](../language-specification/index.md)|Spécification du langage C# version 6 - Ébauche non officielle : .NET Foundation|
+|C# 6.0|[Lien](/dotnet/csharp/language-reference/language-specification/introduction)|Spécification du langage C# version 6 - Ébauche non officielle : .NET Foundation|
 |C# 5.0|[Télécharger PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)|Norme ECMA-334 5e édition|
-|C# 3.0|[Télécharger DOC](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|Spécification du langage C# Version 3.0 : Microsoft Corporation|
+|C# 3.0|[Télécharger DOC](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|Spécification du langage C# version 3.0 : Microsoft Corporation|
 |C# 2.0|[Télécharger PDF](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%204th%20edition%20June%202006.pdf)|Norme ECMA-334 4e édition|
-|C# 1.2|[Télécharger DOC](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%202nd%20edition%20December%202002.pdf)|Spécification du langage C# Version 1.2 : Microsoft Corporation|
-|C# 1.0|[Télécharger DOC](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%201st%20edition%20December%202001.pdf)|Spécification du langage C# Version 1.0 : Microsoft Corporation|
+|C# 1.2|[Télécharger DOC](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%202nd%20edition%20December%202002.pdf)|Spécification du langage C# version 1.2 : Microsoft Corporation|
+|C# 1.0|[Télécharger DOC](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%201st%20edition%20December%202001.pdf)|Spécification du langage C# version 1.0 : Microsoft Corporation|
 
 ## <a name="minimum-sdk-version-needed-to-support-all-language-features"></a>Version minimale du kit de développement logiciel nécessaire pour prendre en charge toutes les fonctionnalités de langage
 

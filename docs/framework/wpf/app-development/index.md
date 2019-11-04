@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 85218bd4b6e900bd4508a5c90132419a07846f2c
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: ce37eecf7edf2adcc4f56af27a5c658400f7abba
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920210"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420641"
 ---
 # <a name="application-development"></a>Développement de l'application
 <a name="introduction"></a>Windows Presentation Foundation (WPF) est une infrastructure de présentation qui peut être utilisée pour développer les types d’applications suivants :  
   
 - Applications autonomes (applications Windows de style traditionnel générées sous forme d’assemblys exécutables qui sont installés et exécutés sur l’ordinateur client).  
   
-- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (applications composées de pages de navigation générées sous forme d’assemblys exécutables et hébergées par des navigateurs Web tels que Microsoft Internet Explorer ou Mozilla Firefox).  
+- Applications de navigateur XAML (XBAP) (applications composées de pages de navigation générées sous forme d’assemblys exécutables et hébergées par des navigateurs Web tels que Microsoft Internet Explorer ou Mozilla Firefox).  
   
 - Bibliothèques de contrôles personnalisés (assemblys non exécutables contenant des contrôles réutilisables).  
   
@@ -46,7 +46,7 @@ ms.locfileid: "72920210"
   
 - Gestion des fenêtres dans des applications autonomes.  
   
-- Suivi de la navigation dans les [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)], et applications autonomes avec des fenêtres et des frames de navigation.  
+- Suivi de la navigation dans les applications de navigateur XAML (XBAP) et les applications autonomes avec des fenêtres de navigation et des cadres.  
   
  Ces fonctionnalités sont implémentées par la classe <xref:System.Windows.Application> que vous ajoutez à vos applications à l’aide d’une *définition d’application*.  
   
@@ -86,15 +86,15 @@ ms.locfileid: "72920210"
   
 - Pages autonomes hébergées dans un navigateur web.  
   
-- Pages compilées dans une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] qui est hébergée dans un navigateur web.  
+- Pages compilées dans une application XBAP qui est hébergée dans un navigateur Web.  
   
 - Pages compilées dans une application autonome et hébergées par une fenêtre de navigation (<xref:System.Windows.Navigation.NavigationWindow>).  
   
-- Pages hébergées par un frame (<xref:System.Windows.Controls.Frame>) qui peut être hébergé dans une page autonome, ou page compilée dans une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] ou une application autonome.  
+- Pages hébergées par un frame (<xref:System.Windows.Controls.Frame>), qui peut être hébergé dans une page autonome, ou une page compilée dans une application XBAP ou autonome.  
   
  Pour faciliter la navigation, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implémente les éléments suivants :  
   
-- <xref:System.Windows.Navigation.NavigationService>, le moteur de navigation partagé pour traiter les demandes de navigation qui est utilisé par <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow> et [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] afin de prendre en charge la navigation intra-applications.  
+- <xref:System.Windows.Navigation.NavigationService>, le moteur de navigation partagé pour traiter les demandes de navigation utilisées par <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Navigation.NavigationWindow>et les XBAP pour prendre en charge la navigation intra-applications.  
   
 - Méthodes de navigation pour lancer la navigation.  
   
@@ -108,7 +108,7 @@ ms.locfileid: "72920210"
   
 <a name="Hosting"></a>   
 ## <a name="hosting"></a>Hébergement  
- les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] peuvent être hébergés dans Microsoft Internet Explorer ou Firefox. Chaque modèle d’hébergement possède son propre ensemble de considérations et de contraintes qui sont couvertes dans la rubrique [Hébergement d’applications WPF](hosting-wpf-applications.md).  
+ Les applications XBAP peuvent être hébergées dans Microsoft Internet Explorer ou Firefox. Chaque modèle d’hébergement possède son propre ensemble de considérations et de contraintes qui sont couvertes dans la rubrique [Hébergement d’applications WPF](hosting-wpf-applications.md).  
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Génération et déploiement  
@@ -124,7 +124,7 @@ ms.locfileid: "72920210"
 |[Vue d’ensemble de la gestion d’applications](application-management-overview.md)|Fournit une vue d’ensemble de la classe <xref:System.Windows.Application>, dont la gestion de la durée de vie de l’application, des fenêtres, des ressources de l’application et de la navigation.|  
 |[Fenêtres dans les applications WPF](windows-in-wpf-applications.md)|Fournit des détails sur la gestion des fenêtres dans votre application, notamment la manière d’utiliser la classe <xref:System.Windows.Window> et les boîtes de dialogue.|  
 |[Vue d’ensemble de la navigation](navigation-overview.md)|Fournit une vue d’ensemble de la gestion de la navigation entre les pages de votre application.|  
-|[Hébergement](hosting-wpf-applications.md)|Présente une vue d'ensemble de [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].|  
+|[Hébergement](hosting-wpf-applications.md)|Fournit une vue d’ensemble des applications de navigateur XAML (XBAP).|  
 |[Génération et déploiement d’applications WPF](building-and-deploying-wpf-applications.md)|Décrit comment générer et déployer votre application WPF.|  
 |[Présentation de WPF dans Visual Studio](../getting-started/introduction-to-wpf-in-vs.md)|Décrit les principales fonctionnalités de WPF.|  
 |[Procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)|Procédure pas à pas qui indique comment créer une application WPF à l’aide de la navigation entre les pages, la disposition, les contrôles, les images, les styles et la liaison.|

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 31ab511bf88bfbc2134029564ecbf70aa75119d7
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: 3c6f29ead76f2e835d78a15d782e1aaca28942c8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659848"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423275"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>Délégués génériques (guide de programmation C#)
-Un [délégué](../../language-reference/keywords/delegate.md) peut définir ses propres paramètres de type. Le code qui référence le délégué générique peut spécifier l’argument de type pour créer un type construit fermé, comme lors de l’instanciation d’une classe générique ou d’un appel d’une méthode générique, ainsi que l’illustre l’exemple ci-dessous :  
+Un [délégué](../../language-reference/builtin-types/reference-types.md) peut définir ses propres paramètres de type. Le code qui référence le délégué générique peut spécifier l’argument de type pour créer un type construit fermé, comme lors de l’instanciation d’une classe générique ou d’un appel d’une méthode générique, ainsi que l’illustre l’exemple ci-dessous :  
   
  [!code-csharp[csProgGuideGenerics#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#36)]  
   

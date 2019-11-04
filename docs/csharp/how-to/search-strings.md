@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: b9c27e419d37b6c0730f214d3b2b9bbdf7e30d11
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: HT
+ms.openlocfilehash: 12fb0e7c9fe02c3438fa989059dbea6238d24104
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202871"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420308"
 ---
 # <a name="how-to-search-strings"></a>Guide pratique pour faire des recherches dans des chaînes
 
@@ -19,7 +19,7 @@ Vous pouvez utiliser deux stratégies principales pour rechercher du texte dans 
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Le type [string](../language-reference/keywords/string.md), qui est un alias de la classe <xref:System.String?displayProperty=nameWithType>, propose un certain nombre de méthodes utiles pour rechercher le contenu d’une chaîne. En voici quelques-unes : <xref:System.String.Contains%2A>, <xref:System.String.StartsWith%2A>, <xref:System.String.EndsWith%2A>, <xref:System.String.IndexOf%2A>, <xref:System.String.LastIndexOf%2A>. La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> fournit un vocabulaire étendu pour rechercher des modèles dans du texte. Dans cet article, vous découvrez ces techniques et comment choisir la meilleure méthode pour vos besoins.
+Le type [string](../language-reference/builtin-types/reference-types.md#the-string-type), qui est un alias de la classe <xref:System.String?displayProperty=nameWithType>, propose un certain nombre de méthodes utiles pour rechercher le contenu d’une chaîne. En voici quelques-unes : <xref:System.String.Contains%2A>, <xref:System.String.StartsWith%2A>, <xref:System.String.EndsWith%2A>, <xref:System.String.IndexOf%2A>, <xref:System.String.LastIndexOf%2A>. La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> fournit un vocabulaire étendu pour rechercher des modèles dans du texte. Dans cet article, vous découvrez ces techniques et comment choisir la meilleure méthode pour vos besoins.
 
 ## <a name="does-a-string-contain-text"></a>Une chaîne contient-elle un certain texte ?
 

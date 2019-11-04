@@ -5,12 +5,12 @@ ms.date: 10/15/2019
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: 7e6d1b663007d430f71f81923f343f1c43f5dd2d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: f5ff78eaf9d565a9708c7a3a11754579389e79e8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579181"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422246"
 ---
 # <a name="using-statement-c-reference"></a>using, instruction (référence C#)
 
@@ -56,7 +56,7 @@ Pour plus d’informations sur la suppression d’objets `IDisposable`, consulte
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez [Instruction using](~/_csharplang/spec/statements.md#the-using-statement) dans la [spécification du langage C#](../language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Instruction using](~/_csharplang/spec/statements.md#the-using-statement) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 

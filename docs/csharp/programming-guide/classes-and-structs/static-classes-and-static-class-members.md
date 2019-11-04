@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 57ab0282c88a85b59c8fed7506ef811c8cced58f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 2eda5a44d4c2dfd9a745871bdc345b7c50e6af49
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924446"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418795"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -57,7 +57,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Les classes statiques sont scellées (sealed) et ne peuvent par conséquent pas être héritées. Elles ne peuvent hériter d’aucune classe à part <xref:System.Object>. Les classes statiques ne peuvent pas contenir un constructeur d’instance. Toutefois, elles peuvent contenir un constructeur statique. Les classes non statiques doivent également définir un constructeur statique si la classe contient des membres statiques qui requièrent une initialisation non triviale. Pour plus d’informations, consultez [Constructeurs statiques](./static-constructors.md).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Voici un exemple d’une classe statique qui contient deux méthodes qui convertissent la température des degrés Celsius en degrés Fahrenheit et des degrés Fahrenheit en degrés Celsius :  
   
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
@@ -87,7 +87,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
-Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.md#static-classes) et [Membres statiques et d’instances](~/_csharplang/spec/classes.md#static-and-instance-members) dans la [spécification du langage C#](../../language-reference/language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.md#static-classes) et [Membres statiques et d’instances](~/_csharplang/spec/classes.md#static-and-instance-members) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="see-also"></a>Voir aussi
 
