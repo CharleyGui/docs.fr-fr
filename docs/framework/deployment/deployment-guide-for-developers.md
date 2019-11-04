@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 1f13053ea23e45b66b4767295af28a758f474ab5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3e87ba8c9442c4bba24e4e569cd20bdbdc76f6ec
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121550"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457997"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
 Cette rubrique fournit des informations destinées aux développeurs qui souhaitent installer une version du .NET Framework (du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]) avec leurs applications.
@@ -168,7 +168,7 @@ Dans Visual Studio, choisissez le déploiement d'InstallShield et ajoutez une d�
 
 ### <a name="windows-installer-xml-wix-deployment"></a>Déploiement via XML de Windows Installer (WiX)
 
-L'ensemble d'outils XML de Windows Installer (WiX) génère des packages d'installation Windows à partir de code source XML. WiX prend en charge un environnement en ligne de commande qui peut être intégré dans vos processus de génération pour générer des packages d'installation MSI et MSM. Grâce à WiX, vous pouvez [spécifier le .NET Framework en tant que composant requis](http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html)ou [créer un programme de chaînage](http://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) pour contrôler entièrement l’expérience de déploiement du .NET Framework. Pour plus d’informations sur WiX, consultez le site web [Ensemble d’outils du programme d’installation XML Windows (WiX)](http://wixtoolset.org/)
+L'ensemble d'outils XML de Windows Installer (WiX) génère des packages d'installation Windows à partir de code source XML. WiX prend en charge un environnement en ligne de commande qui peut être intégré dans vos processus de génération pour générer des packages d'installation MSI et MSM. Grâce à WiX, vous pouvez [spécifier le .NET Framework en tant que composant requis](https://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html)ou [créer un programme de chaînage](https://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) pour contrôler entièrement l’expérience de déploiement du .NET Framework. Pour plus d’informations sur WiX, consultez le site web [Ensemble d’outils du programme d’installation XML Windows (WiX)](https://wixtoolset.org/)
 
 <a name="installing_manually"></a>
 

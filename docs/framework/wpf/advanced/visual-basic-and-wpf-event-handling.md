@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic [WPF], event handlers
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
-ms.openlocfilehash: 12ced911c6fded5dd9016ea377a3a4518c9c2ee1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 9a3d579019db4d2b59a0252dbe63b4a6a0468849
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920337"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458299"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Gestion des événements Visual Basic et WPF
 Pour le langage Microsoft Visual Basic .NET, vous pouvez utiliser le mot clé `Handles` spécifique au langage pour associer des gestionnaires d’événements à des instances, au lieu d’attacher des gestionnaires d’événements à des attributs ou à l’aide de la méthode <xref:System.Windows.UIElement.AddHandler%2A>. La technique `Handles` présente toutefois quelques limitations, car la syntaxe de `Handles` ne prend pas en charge certaines fonctionnalités d’événement routé spécifiques du système d’événement [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -47,4 +47,4 @@ Pour le langage Microsoft Visual Basic .NET, vous pouvez utiliser le mot clé `H
 - <xref:System.Windows.UIElement.AddHandler%2A>
 - [Marquage des événements routés comme gérés et gestion de classe](marking-routed-events-as-handled-and-class-handling.md)
 - [Vue d’ensemble des événements routés](routed-events-overview.md)
-- [Vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md)
+- [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

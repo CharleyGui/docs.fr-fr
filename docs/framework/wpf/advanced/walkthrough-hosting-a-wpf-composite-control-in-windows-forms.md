@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: 4a0b15ded5050833d4e87a30b977139834b624d4
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 39124b03b21fe1bc2a5dce3d8fb90ff372ab4853
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197935"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458923"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d'un contrôle composite WPF dans les Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous investissez dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] code, il peut être plus efficace d’étendre votre application [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] existante avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] plutôt que de la réécrire à partir de zéro. Un scénario courant est lorsque vous souhaitez incorporer un ou plusieurs contrôles implémentés avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans votre application Windows Forms. Pour plus d’informations sur la personnalisation des contrôles WPF, consultez [personnalisation](../controls/control-customization.md)des contrôles.  
@@ -87,7 +87,7 @@ Cette procédure pas à pas nécessite Visual Studio.
 #### <a name="styling-the-ui-elements"></a>Styles des éléments d’interface utilisateur  
  De nombreux éléments du formulaire de saisie de données ont une apparence semblable, ce qui signifie qu’ils ont des paramètres identiques pour plusieurs de leurs propriétés. Au lieu de définir séparément les attributs de chaque élément, le code XAML précédent utilise <xref:System.Windows.Style> éléments pour définir des paramètres de propriété standard pour les classes d’éléments. Cette approche réduit la complexité du contrôle et permet de modifier l’apparence de plusieurs éléments via un même attribut de style.  
   
- Les éléments <xref:System.Windows.Style> sont contenus dans la propriété <xref:System.Windows.FrameworkElement.Resources%2A> de l’élément <xref:System.Windows.Controls.Grid>, de sorte qu’ils peuvent être utilisés par tous les éléments du contrôle. Si un style est nommé, vous l’appliquez à un élément en ajoutant un <xref:System.Windows.Style> élément défini sur le nom du style. Les styles qui ne sont pas nommés deviennent le style par défaut de l’élément. Pour plus d’informations sur les styles de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], consultez [style et création de modèles](../controls/styling-and-templating.md).  
+ Les éléments <xref:System.Windows.Style> sont contenus dans la propriété <xref:System.Windows.FrameworkElement.Resources%2A> de l’élément <xref:System.Windows.Controls.Grid>, de sorte qu’ils peuvent être utilisés par tous les éléments du contrôle. Si un style est nommé, vous l’appliquez à un élément en ajoutant un <xref:System.Windows.Style> élément défini sur le nom du style. Les styles qui ne sont pas nommés deviennent le style par défaut de l’élément. Pour plus d’informations sur les styles de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], consultez [style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).  
   
  Le code XAML suivant montre les éléments de <xref:System.Windows.Style> pour le contrôle composite. Pour voir comment les styles sont appliqués aux éléments, reportez-vous au code XAML précédent. Par exemple, le dernier élément <xref:System.Windows.Controls.TextBlock> a le style `inlineText` et le dernier élément <xref:System.Windows.Controls.TextBox> utilise le style par défaut.  
   

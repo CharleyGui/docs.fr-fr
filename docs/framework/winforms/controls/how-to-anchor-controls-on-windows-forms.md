@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ancrer des contrôles dans des Windows Forms'
+title: 'Comment : ancrer des contrôles aux Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Anchor property [Windows Forms], enabling resizable forms
@@ -12,21 +12,21 @@ helpviewer_keywords:
 - Windows Forms, resizing
 - controls [Windows Forms], positioning
 ms.assetid: 59ea914f-fbd3-427a-80fe-decd02f7ae6d
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 94fa6fe90e5583a3bfecf376af59d53f6d8528af
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 15f12cb0d389344351c4ddf97ee9db37882de460
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69987491"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459680"
 ---
-# <a name="how-to-anchor-controls-on-windows-forms"></a>Procédure : Contrôles d’ancrage sur Windows Forms
+# <a name="how-to-anchor-controls-on-windows-forms"></a>Comment : ancrer des contrôles sur Windows Forms
 
-Si vous concevez un formulaire que l’utilisateur peut redimensionner au moment de l’exécution, les contrôles de votre formulaire doivent être redimensionnés et repositionnés correctement. Pour redimensionner des contrôles de manière dynamique avec le formulaire, vous <xref:System.Windows.Forms.Control.Anchor%2A> pouvez utiliser la propriété de Windows Forms contrôles. La <xref:System.Windows.Forms.Control.Anchor%2A> propriété définit une position d’ancrage pour le contrôle. Lorsqu’un contrôle est ancré à un formulaire et que le formulaire est redimensionné, le contrôle maintient la distance entre le contrôle et les positions d’ancrage. Par exemple, si vous avez un <xref:System.Windows.Forms.TextBox> contrôle ancré sur les bords gauche, droit et inférieur du formulaire, au fur et à mesure que le formulaire est redimensionné, le <xref:System.Windows.Forms.TextBox> contrôle est redimensionné horizontalement afin qu’il conserve la même distance à partir des côtés droit et gauche du formulaire. En outre, le contrôle se positionne verticalement afin que son emplacement soit toujours la même distance que le bord inférieur du formulaire. Si un contrôle n’est pas ancré et que le formulaire est redimensionné, la position du contrôle par rapport aux bords du formulaire est modifiée.
+Si vous concevez un formulaire que l’utilisateur peut redimensionner au moment de l’exécution, les contrôles de votre formulaire doivent être redimensionnés et repositionnés correctement. Pour redimensionner des contrôles de manière dynamique avec le formulaire, vous pouvez utiliser la propriété <xref:System.Windows.Forms.Control.Anchor%2A> de Windows Forms contrôles. La propriété <xref:System.Windows.Forms.Control.Anchor%2A> définit une position d’ancrage pour le contrôle. Lorsqu’un contrôle est ancré à un formulaire et que le formulaire est redimensionné, le contrôle maintient la distance entre le contrôle et les positions d’ancrage. Par exemple, si vous avez un contrôle <xref:System.Windows.Forms.TextBox> qui est ancré aux bords gauche, droit et inférieur du formulaire, au fur et à mesure que le formulaire est redimensionné, le contrôle <xref:System.Windows.Forms.TextBox> se redimensionne horizontalement afin qu’il conserve la même distance à partir des côtés droit et gauche du formulaire. En outre, le contrôle se positionne verticalement afin que son emplacement soit toujours la même distance que le bord inférieur du formulaire. Si un contrôle n’est pas ancré et que le formulaire est redimensionné, la position du contrôle par rapport aux bords du formulaire est modifiée.
 
-La <xref:System.Windows.Forms.Control.Anchor%2A> propriété interagit avec la <xref:System.Windows.Forms.Control.AutoSize%2A> propriété. Pour plus d’informations, consultez [vue d’ensemble](autosize-property-overview.md)de la propriété AutoSize.
+La propriété <xref:System.Windows.Forms.Control.Anchor%2A> interagit avec la propriété <xref:System.Windows.Forms.Control.AutoSize%2A>. Pour plus d’informations, consultez [vue d’ensemble de la propriété AutoSize](autosize-property-overview.md).
 
 ## <a name="anchor-a-control-on-a-form"></a>Ancrer un contrôle dans un formulaire
 
@@ -35,7 +35,7 @@ La <xref:System.Windows.Forms.Control.Anchor%2A> propriété interagit avec la <
     > [!NOTE]
     > Vous pouvez ancrer plusieurs contrôles simultanément en appuyant sur la touche CTRL, en cliquant sur chaque contrôle pour le sélectionner, puis en suivant le reste de cette procédure.
 
-2. Dans la fenêtre **Propriétés** , cliquez sur la flèche à droite de la <xref:System.Windows.Forms.Control.Anchor%2A> propriété.
+2. Dans la fenêtre **Propriétés** , cliquez sur la flèche à droite de la propriété <xref:System.Windows.Forms.Control.Anchor%2A>.
 
      Un éditeur affiche une croix.
 
@@ -45,20 +45,20 @@ La <xref:System.Windows.Forms.Control.Anchor%2A> propriété interagit avec la <
 
 4. Pour effacer un côté du contrôle qui a été ancré, cliquez sur ce bras de la Croix.
 
-5. Pour fermer l' <xref:System.Windows.Forms.Control.Anchor%2A> éditeur de propriétés, cliquez <xref:System.Windows.Forms.Control.Anchor%2A> à nouveau sur le nom de la propriété.
+5. Pour fermer l’éditeur de propriétés <xref:System.Windows.Forms.Control.Anchor%2A>, cliquez à nouveau sur le nom de la propriété <xref:System.Windows.Forms.Control.Anchor%2A>.
 
 Lorsque votre formulaire s’affiche au moment de l’exécution, le contrôle est redimensionné pour rester positionné à la même distance que le bord du formulaire. La distance à partir du bord ancré reste toujours la même que la distance définie lorsque le contrôle est positionné dans le Concepteur Windows Forms.
 
 > [!NOTE]
-> Certains contrôles, tels que le <xref:System.Windows.Forms.ComboBox> contrôle, ont une limite à leur hauteur. L’ancrage du contrôle au bas de son formulaire ou conteneur ne peut pas forcer le contrôle à dépasser sa limite de hauteur.
+> Certains contrôles, tels que le contrôle <xref:System.Windows.Forms.ComboBox>, ont une limite à leur hauteur. L’ancrage du contrôle au bas de son formulaire ou conteneur ne peut pas forcer le contrôle à dépasser sa limite de hauteur.
 
-Les contrôles hérités `Protected` doivent être en mesure d’être ancrés. Pour modifier le niveau d’accès d’un contrôle, définissez `Modifiers` sa propriété dans la fenêtre **Propriétés** .
+Les contrôles hérités doivent être `Protected` pour pouvoir être ancrés. Pour modifier le niveau d’accès d’un contrôle, définissez sa propriété `Modifiers` dans la fenêtre **Propriétés** .
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Contrôles Windows Forms](index.md)
 - [Vue d’ensemble de la propriété AutoSize](autosize-property-overview.md)
-- [Guide pratique pour Ancrer les contrôles sur Windows Forms](how-to-dock-controls-on-windows-forms.md)
-- [Procédure pas à pas : Réorganisation des contrôles sur Windows Forms à l’aide d’un FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
-- [Procédure pas à pas : Réorganisation des contrôles sur Windows Forms à l’aide d’un TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Procédure pas à pas : Disposition des contrôles Windows Forms avec le remplissage, les marges et la propriété AutoSize](windows-forms-controls-padding-autosize.md)
+- [Guide pratique pour fixer des contrôles sur des Windows Forms](how-to-dock-controls-on-windows-forms.md)
+- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Procédure pas à pas : disposition des contrôles Windows Forms avec les propriétés Padding, Margins et AutoSize](windows-forms-controls-padding-autosize.md)

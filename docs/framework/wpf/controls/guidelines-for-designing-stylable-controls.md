@@ -5,12 +5,12 @@ helpviewer_keywords:
 - style design for controls [WPF]
 - controls [WPF], style design
 ms.assetid: c52dde45-a311-4531-af4c-853371c4d5f4
-ms.openlocfilehash: a5a91d6a1f046b31ff26e769e9fcc1c7516904c8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 0fbb515afbeac05168ced6f0a99f50eb29a5c848
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662600"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459651"
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Recommandations pour la conception de contrôles auxquels un style peut être appliqué
 
@@ -30,15 +30,15 @@ Ce document récapitule un ensemble de meilleures pratiques à envisager lors de
 
 - Modèles de données.
 
-Pour obtenir une présentation de l’application d’un style et la création de modèles, consultez [Application d’un style et création de modèles](styling-and-templating.md).
+Pour obtenir une présentation de l’application d’un style et la création de modèles, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 <a name="Before_You_Start__Understanding_Your_Control"></a>
 
-## <a name="before-you-start-understanding-your-control"></a>Avant de commencer : Présentation de votre contrôle
+## <a name="before-you-start-understanding-your-control"></a>Avant de commencer : bien comprendre le contrôle
 
 Avant d’explorer ces recommandations, il est important que vous compreniez et que vous ayez défini l’utilisation courante de votre contrôle. L’application d’un style expose un ensemble de possibilités souvent non maîtrisé. Les contrôles qui sont écrits pour être utilisés globalement (dans de nombreuses applications, par de nombreux développeurs) sont confrontés au fait que l’application d’un style peut être utilisée pour apporter des modifications de grande envergure à l’apparence visuelle du contrôle. En fait, le contrôle stylé peut ne pas ressembler aux intentions premières de l’auteur du contrôle. La souplesse offerte par l’application d’un style étant infinie, vous pouvez utiliser la notion d’utilisation courante pour vous aider à cerner vos décisions.
 
-Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de réfléchir à la proposition de valeur du contrôle. Qu’est-ce qui rend votre contrôle unique par rapport à tous les autres contrôles ? L’utilisation courante n’implique pas une apparence visuelle spécifique, mais plutôt la philosophie du contrôle et un ensemble raisonnable d’attentes concernant son utilisation. Cette compréhension vous permet de formuler des hypothèses sur le modèle de composition et les comportements définis par le style du contrôle dans le cas courant. Dans le cas de <xref:System.Windows.Controls.ComboBox>, par exemple, comprendre l’utilisation courante ne vous donne aucune information sur Si tel <xref:System.Windows.Controls.ComboBox> a des angles arrondis est utilisée, mais il vous donnera un aperçu dans le fait que le <xref:System.Windows.Controls.ComboBox> a probablement besoin d’une fenêtre contextuelle et un moyen de basculer si elle est ouverte.
+Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de réfléchir à la proposition de valeur du contrôle. Qu’est-ce qui rend votre contrôle unique par rapport à tous les autres contrôles ? L’utilisation courante n’implique pas une apparence visuelle spécifique, mais plutôt la philosophie du contrôle et un ensemble raisonnable d’attentes concernant son utilisation. Cette compréhension vous permet de formuler des hypothèses sur le modèle de composition et les comportements définis par le style du contrôle dans le cas courant. Dans le cas de <xref:System.Windows.Controls.ComboBox>, par exemple, la compréhension de l’utilisation courante ne vous donne aucune idée de savoir si un <xref:System.Windows.Controls.ComboBox> particulier a des angles arrondis, mais il vous donne un aperçu du fait que l' <xref:System.Windows.Controls.ComboBox> a probablement besoin d’une fenêtre contextuelle et d’une certaine façon de le basculement s’il est ouvert.
 
 <a name="General_Guidelines"></a>
 
@@ -62,15 +62,15 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
   Le tableau suivant présente les éléments d’assistance utilisés par les styles de contrôle actuellement (cette liste n’est pas exhaustive) :
 
-  |Élément|Type|Utilisé par|
+  |Élément|Tapez|Utilisé par|
   |-------------|----------|-------------|
-  |<xref:System.Windows.Controls.ContentPresenter>|Basé sur le type|<xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.RadioButton>, <xref:System.Windows.Controls.Frame>, et ainsi de suite (tous les <xref:System.Windows.Controls.ContentControl> types)|
-  |<xref:System.Windows.Controls.ItemsPresenter>|Basé sur le type|<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.Menu>, et ainsi de suite (tous les <xref:System.Windows.Controls.ItemsControl> types)|
+  |<xref:System.Windows.Controls.ContentPresenter>|Basé sur le type|<xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.RadioButton>, <xref:System.Windows.Controls.Frame>, etc. (tous les types de <xref:System.Windows.Controls.ContentControl>)|
+  |<xref:System.Windows.Controls.ItemsPresenter>|Basé sur le type|<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.Menu>, etc. (tous les types de <xref:System.Windows.Controls.ItemsControl>)|
   |<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>|Nommé|<xref:System.Windows.Controls.ToolBar>|
-  |<xref:System.Windows.Controls.Primitives.Popup>|Autonome|<xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ToolBar>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.ToolTip>, et ainsi de suite|
-  |<xref:System.Windows.Controls.Primitives.RepeatButton>|Nommé|<xref:System.Windows.Controls.Slider>, <xref:System.Windows.Controls.Primitives.ScrollBar>, et ainsi de suite|
+  |<xref:System.Windows.Controls.Primitives.Popup>|Autonome|<xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ToolBar>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.ToolTip>, etc.|
+  |<xref:System.Windows.Controls.Primitives.RepeatButton>|Nommé|<xref:System.Windows.Controls.Slider>, <xref:System.Windows.Controls.Primitives.ScrollBar>, etc.|
   |<xref:System.Windows.Controls.Primitives.ScrollBar>|Nommé|<xref:System.Windows.Controls.ScrollViewer>|
-  |<xref:System.Windows.Controls.ScrollViewer>|Autonome|<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.Frame>, et ainsi de suite|
+  |<xref:System.Windows.Controls.ScrollViewer>|Autonome|<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.Frame>, etc.|
   |<xref:System.Windows.Controls.Primitives.TabPanel>|Autonome|<xref:System.Windows.Controls.TabControl>|
   |<xref:System.Windows.Controls.TextBox>|Nommé|<xref:System.Windows.Controls.ComboBox>|
   |<xref:System.Windows.Controls.Primitives.TickBar>|Basé sur le type|<xref:System.Windows.Controls.Slider>|
@@ -79,7 +79,7 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
   - Les éléments d’assistance nommés doivent être identifiés par le parent et le parent doit établir les paramètres requis sur l’élément d’assistance.
 
-  - Les éléments d’assistance basés sur le type doivent établir les paramètres requis directement sur eux-mêmes. Pour ce faire, l’élément d’assistance peut demander des informations sur le contexte dans lequel il est utilisé, notamment son `TemplatedParent` (le type de contrôle du modèle dans lequel il est utilisé). Par exemple, <xref:System.Windows.Controls.ContentPresenter> lie automatiquement le `Content` propriété de son `TemplatedParent` à son <xref:System.Windows.Controls.ContentPresenter.Content%2A> propriété lorsqu’il est utilisé dans un <xref:System.Windows.Controls.ContentControl> type dérivé.
+  - Les éléments d’assistance basés sur le type doivent établir les paramètres requis directement sur eux-mêmes. Pour ce faire, l’élément d’assistance peut demander des informations sur le contexte dans lequel il est utilisé, notamment son `TemplatedParent` (le type de contrôle du modèle dans lequel il est utilisé). Par exemple, <xref:System.Windows.Controls.ContentPresenter> lie automatiquement la propriété `Content` de son `TemplatedParent` à sa propriété <xref:System.Windows.Controls.ContentPresenter.Content%2A> lorsqu’il est utilisé dans un type dérivé <xref:System.Windows.Controls.ContentControl>.
 
   - Il est impossible d’optimiser les éléments d’assistance autonomes de cette façon car, par définition, ni l’élément d’assistance ni le parent n’ont conscience l’un de l’autre.
 
@@ -89,9 +89,9 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
   1. Liaison de propriété. Exemple : liaison entre <xref:System.Windows.Controls.ComboBox.IsDropDownOpen%2A?displayProperty=nameWithType> et <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A?displayProperty=nameWithType>.
 
-  2. Déclenchement des modifications de propriété ou des animations de propriété. Exemple : l’état de survol d’un <xref:System.Windows.Controls.Button>.
+  2. Déclenchement des modifications de propriété ou des animations de propriété. Exemple : état de survol d’un <xref:System.Windows.Controls.Button>.
 
-  3. Commande. Exemple : <xref:System.Windows.Controls.Primitives.ScrollBar.LineUpCommand>  /  <xref:System.Windows.Controls.Primitives.ScrollBar.LineDownCommand> dans <xref:System.Windows.Controls.Primitives.ScrollBar>.
+  3. Commande. Exemple : <xref:System.Windows.Controls.Primitives.ScrollBar.LineUpCommand> / <xref:System.Windows.Controls.Primitives.ScrollBar.LineDownCommand> dans <xref:System.Windows.Controls.Primitives.ScrollBar>.
 
   4. Éléments d’assistance autonomes. Exemple : <xref:System.Windows.Controls.Primitives.TabPanel> dans <xref:System.Windows.Controls.TabControl>.
 
@@ -105,7 +105,7 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
 - **Utilisez des déclencheurs de style (par opposition aux déclencheurs de modèle) avec parcimonie**. Les déclencheurs qui affectent des propriétés sur les éléments dans le modèle doivent être déclarés dans le modèle. Les déclencheurs qui affectent des propriétés sur le contrôle (aucun `TargetName`) peuvent être déclarés dans le style, sauf si vous savez que la modification du modèle détruirait également le déclencheur.
 
-- **Soyez cohérent avec les modèles de styles existants.** Il existe souvent plusieurs façons de résoudre un problème. Tenez compte et soyez cohérent, lorsque possible, concernant les modèles de styles existants. Ceci est particulièrement important pour les contrôles qui dérivent du même type de base (par exemple, <xref:System.Windows.Controls.ContentControl>, <xref:System.Windows.Controls.ItemsControl>, <xref:System.Windows.Controls.Primitives.RangeBase>, et ainsi de suite).
+- **Soyez cohérent avec les modèles de styles existants.** Il existe souvent plusieurs façons de résoudre un problème. Tenez compte et soyez cohérent, lorsque possible, concernant les modèles de styles existants. Cela est particulièrement important pour les contrôles qui dérivent du même type de base (par exemple, <xref:System.Windows.Controls.ContentControl>, <xref:System.Windows.Controls.ItemsControl>, <xref:System.Windows.Controls.Primitives.RangeBase>, etc.).
 
 - **Exposez des propriétés pour activer des scénarios de personnalisation courants sans recréer un modèle**. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne prend pas en charge les composants enfichables/personnalisables, donc un utilisateur du contrôle dispose de seulement deux méthodes de personnalisation : définir des propriétés directement ou définir des propriétés à l’aide de styles. Dans cette optique, il convient d’exposer un nombre limité de propriétés destinées à des scénarios de personnalisation très courants, de priorité élevée, qui nécessiteraient sinon la recréation d’un modèle. Voici les meilleures pratiques pour savoir quand et comment activer des scénarios de personnalisation :
 
@@ -119,7 +119,7 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
 ## <a name="theme-considerations"></a>Considérations relatives au thème
 
-- **Les styles de thème doivent, autant que possible, posséder une sémantique des propriétés cohérente entre tous les thèmes, sans aucune garantie**. Dans le cadre de sa documentation, votre contrôle doit posséder un document décrivant la sémantique des propriétés du contrôle, autrement dit, la « signification » d’une propriété pour un contrôle. Par exemple, le <xref:System.Windows.Controls.ComboBox> contrôle doit définir la signification de la <xref:System.Windows.Controls.Control.Background%2A> propriété dans <xref:System.Windows.Controls.ComboBox>. Les styles par défaut de votre contrôle doivent, autant que possible, respecter la sémantique définie dans ce document pour tous les thèmes. Les utilisateurs du contrôle, en revanche, doivent savoir que la sémantique des propriétés peut changer d’un thème à l’autre. Dans certains cas, une propriété donnée peut ne pas pouvoir être exprimée avec les contraintes visuelles imposées par un thème particulier. (Le thème Classique, par exemple, n’a pas de bordure simple à laquelle `Thickness` peut être appliqué pour de nombreux contrôles.)
+- **Les styles de thème doivent, autant que possible, posséder une sémantique des propriétés cohérente entre tous les thèmes, sans aucune garantie**. Dans le cadre de sa documentation, votre contrôle doit posséder un document décrivant la sémantique des propriétés du contrôle, autrement dit, la « signification » d’une propriété pour un contrôle. Par exemple, le contrôle <xref:System.Windows.Controls.ComboBox> doit définir la signification de la propriété <xref:System.Windows.Controls.Control.Background%2A> dans <xref:System.Windows.Controls.ComboBox>. Les styles par défaut de votre contrôle doivent, autant que possible, respecter la sémantique définie dans ce document pour tous les thèmes. Les utilisateurs du contrôle, en revanche, doivent savoir que la sémantique des propriétés peut changer d’un thème à l’autre. Dans certains cas, une propriété donnée peut ne pas pouvoir être exprimée avec les contraintes visuelles imposées par un thème particulier. (Le thème Classique, par exemple, n’a pas de bordure simple à laquelle `Thickness` peut être appliqué pour de nombreux contrôles.)
 
 - **Les styles de thème ne requièrent pas que la sémantique de déclencheur soit cohérente entre tous les thèmes**. Le comportement exposé par un style de contrôle par le biais de déclencheurs ou d’animations peut varier d’un thème à l’autre. Les utilisateurs du contrôle doivent savoir qu’un contrôle n’utilise pas nécessairement le même mécanisme dans tous les thèmes pour obtenir un comportement particulier. Un thème, par exemple, peut utiliser une animation pour exprimer le comportement de survol alors qu’un autre thème utilise un déclencheur. Cela peut entraîner des disparités dans la préservation du comportement au niveau des contrôles personnalisés. (La modification de la propriété d’arrière-plan, par exemple, peut ne pas affecter l’état de survol du contrôle si cet état est exprimé à l’aide d’un déclencheur. Toutefois, si l’état de survol est implémenté à l’aide d’une animation, la modification de l’arrière-plan pourrait altérer irrémédiablement l’animation et, par conséquent, la transition de l’état.)
 
@@ -127,5 +127,5 @@ Pour comprendre l’utilisation courante de votre contrôle, il est judicieux de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Vue d’ensemble de la création de contrôles](control-authoring-overview.md)

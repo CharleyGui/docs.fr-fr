@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serialization [WPF]
 - tree [WPF]
 ms.assetid: 8f57e879-180b-421f-b3d0-ac007ff2ce80
-ms.openlocfilehash: 4c178213e08add247311f0b71517ed292bd6658a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afddaab6a7f5e9ef445da48d013ace59b84611cd
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962435"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460472"
 ---
 # <a name="element-tree-and-serialization"></a>Sérialisation et arborescence d'éléments
 Il existe souvent des éléments de programmation WPF sous une forme quelconque de relation d’arborescence. Par exemple, une interface utilisateur d’application créée en XAML peut être conceptualisée sous la forme d’une arborescence d’objets. L’arborescence d’éléments peut être à son tour divisée en deux arborescences discrètes, mais néanmoins parfois parallèles : l’arborescence logique et l’arborescence visuelle. La sérialisation dans WPF implique l’enregistrement de l’état de ces deux arborescences et de l’application, et son écriture dans un fichier, éventuellement au format XAML.  
@@ -24,7 +24,7 @@ Il existe souvent des éléments de programmation WPF sous une forme quelconque 
  [Initialisation d’éléments objet ne figurant pas dans une arborescence d’objets](initialization-for-object-elements-not-in-an-object-tree.md)  
  [Rubriques de guide pratique](element-tree-and-serialization-how-to-topics.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Markup>  
   
  <xref:System.Windows.LogicalTreeHelper>  
@@ -39,5 +39,5 @@ Il existe souvent des éléments de programmation WPF sous une forme quelconque 
   [Événements](events-wpf.md)  
   [Entrée](input-wpf.md)  
   [Ressources](resources-wpf.md)  
-  [Application d’un style et création de modèles](../controls/styling-and-templating.md)  
+  [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [Modèle de thread](threading-model.md)

@@ -5,15 +5,15 @@ helpviewer_keywords:
 - XAML 2009 [XAML Services]
 - XAML [XAML Services], XAML 2009
 ms.assetid: f6bb18d8-c86a-4549-8862-323e6b32a8dd
-ms.openlocfilehash: 05f811cd0d95f7605963dae851430fb6bf0e9f7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac18be4732d223561d3a0afcef0e650587385822
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938801"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459891"
 ---
 # <a name="xaml-2009-language-features"></a>Fonctionnalités de langage XAML 2009
-XAML 2009 est l'abréviation désignant les nouvelles fonctionnalités du langage XAML qui étendent la spécification du langage XAML existante. XAML 2009 introduit plusieurs nouvelles directives et constructions. Ceux-ci incluent le [x : Arguments Directive](x-arguments-directive.md); le [x : FactoryMethod Directive](x-factorymethod-directive.md); le [x : Reference Markup Extension](x-reference-markup-extension.md); le [x : TypeArguments, Directive ](x-typearguments-directive.md); et les types intégrés pour les primitives de langage courantes (par exemple `x:Char`).  
+XAML 2009 est l'abréviation désignant les nouvelles fonctionnalités du langage XAML qui étendent la spécification du langage XAML existante. XAML 2009 introduit plusieurs nouvelles directives et constructions. Celles-ci incluent la [directive x :arguments](x-arguments-directive.md); [directive x :FactoryMethod](x-factorymethod-directive.md); l' [extension de balisage de x :Reference](x-reference-markup-extension.md); [directive x :TypeArguments](x-typearguments-directive.md); et les types intégrés pour les primitives de langage courantes (par exemple `x:Char`).  
   
 <a name="xaml_2009_support_in_wpf_and_visual_studio"></a>   
 ## <a name="xaml-2009-support-in-wpf-and-visual-studio"></a>Prise en charge de XAML 2009 dans WPF et Visual Studio  
@@ -34,4 +34,4 @@ XAML 2009 est l'abréviation désignant les nouvelles fonctionnalités du langag
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du langage XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Vue d’ensemble du langage XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

@@ -1,5 +1,5 @@
 ---
-title: "Procédure pas à pas : Héritage d'un contrôle Windows Forms à l'aide de Visual C#"
+title: "Procédure pas à pas : héritage d'un contrôle Windows Forms à l'aide de Visual C#"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - inheritance [Windows Forms], custom controls
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 4a9a4b9bc15d2579837c3f4969a8d85293f10967
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: c54733a340b1855b3fc7b90ff2b5178fad8c5303
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015668"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460593"
 ---
-# <a name="walkthrough-inherit-from-a-windows-forms-control-with-c"></a>Procédure pas à pas : Hériter d’un contrôle Windows Forms avec C\#
+# <a name="walkthrough-inherit-from-a-windows-forms-control-with-c"></a>Procédure pas à pas : hériter d’un contrôle Windows Forms avec C\#
 
 Avec Visual C#, vous pouvez créer des contrôles personnalisés puissants par le biais de *l’héritage*. L’héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, tout en intégrant des fonctionnalités personnalisées. Dans cette procédure pas à pas, vous allez créer un contrôle hérité simple appelé `ValueButton`. Ce bouton hérite des fonctionnalités du contrôle de <xref:System.Windows.Forms.Button> Windows Forms standard et expose une propriété personnalisée appelée `ButtonValue`.
 
@@ -36,16 +36,16 @@ Lorsque vous créez un nouveau projet, vous spécifiez son nom afin de définir 
 
 3. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **ValueButton.cs**, puis sélectionnez **Afficher le code**.
 
-4. Recherchez la `class` ligne d’instruction `public partial class ValueButton`,, et changez le type de <xref:System.Windows.Forms.UserControl> à <xref:System.Windows.Forms.Button>partir duquel ce contrôle hérite de. Cela permet à votre contrôle hérité d’hériter de toutes les <xref:System.Windows.Forms.Button> fonctionnalités du contrôle.
+4. Localisez la ligne d’instruction `class`, `public partial class ValueButton`et remplacez le type dont hérite ce contrôle <xref:System.Windows.Forms.UserControl> par <xref:System.Windows.Forms.Button>. Cela permet à votre contrôle hérité d’hériter de toutes les fonctionnalités du contrôle <xref:System.Windows.Forms.Button>.
 
 5. Dans **l’Explorateur de solutions**, ouvrez le nœud **ValueButton.cs** pour afficher le fichier de code généré par le concepteur, **ValueButton.Designer.cs**. Ouvrez ce fichier dans **l’éditeur de code**.
 
-6. Recherchez la `InitializeComponent` méthode et supprimez la ligne qui assigne <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> la propriété. Cette propriété n’existe pas dans le <xref:System.Windows.Forms.Button> contrôle.
+6. Recherchez la méthode `InitializeComponent` et supprimez la ligne qui affecte la propriété <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>. Cette propriété n’existe pas dans le contrôle <xref:System.Windows.Forms.Button>.
 
 7. Dans le menu **Fichier**, sélectionnez **Enregistrer tout** pour enregistrer le projet.
 
     > [!NOTE]
-    > Plus aucun concepteur visuel n’est disponible. Étant donné <xref:System.Windows.Forms.Button> que le contrôle effectue sa propre peinture, vous ne pouvez pas modifier son apparence dans le concepteur. Sa représentation visuelle sera exactement la même que celle de la classe dont elle hérite (autrement dit, <xref:System.Windows.Forms.Button>), sauf si elle est modifiée dans le code. Vous pouvez toujours ajouter sur l’aide de conception des composants n’ayant aucun élément d’interface utilisateur.
+    > Plus aucun concepteur visuel n’est disponible. Étant donné que le contrôle <xref:System.Windows.Forms.Button> effectue sa propre peinture, vous ne pouvez pas modifier son apparence dans le concepteur. Sa représentation visuelle sera exactement la même que celle de la classe dont elle hérite (autrement dit, <xref:System.Windows.Forms.Button>), sauf si elle est modifiée dans le code. Vous pouvez toujours ajouter sur l’aide de conception des composants n’ayant aucun élément d’interface utilisateur.
 
 ## <a name="add-a-property-to-your-inherited-control"></a>Ajouter une propriété à votre contrôle hérité
 
@@ -117,7 +117,7 @@ Dans le menu **Générer** , cliquez sur **Générer la solution**. L’opérati
 
 5. Affectez à la propriété **ButtonValue** la valeur **5**.
 
-6. Dans l’onglet **tous les Windows Forms** de la **boîte à outils**, double-cliquez sur <xref:System.Windows.Forms.Label> **étiquette** pour ajouter un contrôle à votre formulaire.
+6. Dans l’onglet **tous les Windows Forms** de la **boîte à outils**, double-cliquez sur **étiquette** pour ajouter un contrôle de <xref:System.Windows.Forms.Label> à votre formulaire.
 
 7. Déplacez l’étiquette au centre du formulaire.
 
@@ -143,5 +143,5 @@ Dans le menu **Générer** , cliquez sur **Générer la solution**. L’opérati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Afficher un contrôle dans la boîte de dialogue choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
-- [Procédure pas à pas : Création d’un contrôle composite à l’aide de VisualC#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)

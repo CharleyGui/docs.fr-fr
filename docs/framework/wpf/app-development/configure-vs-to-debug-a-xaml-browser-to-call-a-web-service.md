@@ -8,15 +8,15 @@ helpviewer_keywords:
 - configuring Visual Studio to debug XAML browser applications [WPF]
 - configuring Visual Studio to debug XBAPs [WPF]
 ms.assetid: fd1db082-a7bb-4c4b-9331-6ad74a0682d0
-ms.openlocfilehash: 27319179a9a30c5693f47039bf1e24c59adf0e68
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: d8cfae2fb47876d578c51e5f4acdfe0c31e752fe
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424656"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460909"
 ---
 # <a name="how-to-configure-visual-studio-to-debug-a-xaml-browser-application-to-call-a-web-service"></a>Comment : configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service Web
-Les applications de navigateur XAML (XBAP) s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Ce jeu d’autorisations restreint les appels de service Web aux seuls services Web situés sur le site d’origine de l’application XBAP. Toutefois, lorsqu’un XBAP est débogué à partir de Visual Studio 2005, il n’est pas considéré comme ayant le même site d’origine que le service Web auquel il fait référence. Cela entraîne le déclenchement d’exceptions de sécurité lorsque l’application XBAP tente d’appeler le service Web. Toutefois, un projet de [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] Visual Studio 2005 peut être configuré pour simuler le même site d’origine que le service Web qu’il appelle pendant le débogage. Cela permet à l’application XBAP d’appeler sans risque le service Web sans provoquer d’exceptions de sécurité.
+Les applications de navigateur XAML (XBAP) s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Ce jeu d’autorisations restreint les appels de service Web aux seuls services Web situés sur le site d’origine de l’application XBAP. Toutefois, lorsqu’un XBAP est débogué à partir de Visual Studio 2005, il n’est pas considéré comme ayant le même site d’origine que le service Web auquel il fait référence. Cela entraîne le déclenchement d’exceptions de sécurité lorsque l’application XBAP tente d’appeler le service Web. Toutefois, un projet d’application de navigateur XAML (WPF) Visual Studio 2005 peut être configuré pour simuler le même site d’origine que le service Web qu’il appelle pendant le débogage. Cela permet à l’application XBAP d’appeler sans risque le service Web sans provoquer d’exceptions de sécurité.
 
 ## <a name="configuring-visual-studio"></a>Configuration de Visual Studio
  Pour configurer Visual Studio 2005 afin de déboguer une application XBAP qui appelle un service Web :
@@ -38,7 +38,7 @@ Les applications de navigateur XAML (XBAP) s’exécutent dans un bac à sable (
      `-debug c:\example.xbap`
 
 > [!NOTE]
-> Il s’agit de la configuration par défaut pour les solutions créées avec le modèle de projet Visual Studio 2005 [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)].
+> Il s’agit de la configuration par défaut pour les solutions créées avec le modèle de projet d’application de navigateur XAML (WPF) Visual Studio 2005.
 
 1. Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**.
 

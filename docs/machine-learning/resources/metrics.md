@@ -3,12 +3,12 @@ title: Métriques ML.NET
 description: Découvrir les métriques qui sont utilisées pour évaluer les performances d’un modèle ML.NET
 ms.date: 04/29/2019
 author: natke
-ms.openlocfilehash: 45176902a195906e7b5cffd24fc9da839406ad9d
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
-ms.translationtype: HT
+ms.openlocfilehash: 362f2f382d050ff9ae246af2dffe3e15d22452eb
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410535"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460729"
 ---
 # <a name="model-evaluation-metrics-in-mlnet"></a>Métriques d’évaluation de modèle dans ML.NET
 
@@ -17,8 +17,8 @@ ms.locfileid: "67410535"
 | Métriques   |      Description      |  Recherche |
 |-----------|-----------------------|-----------|
 | **Précision** |  La [précision](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) est la proportion de prédictions correctes avec un jeu de données de test. Elle représente le rapport entre le nombre de prédictions correctes et le nombre total d’échantillons d’entrée. Elle n’est efficace que s’il existe un nombre similaire d’échantillons dans chaque classe.| **Plus la précision est proche de 1,00, meilleure est la qualité**. Toutefois, la valeur exacte 1,00 indique un problème (en règle générale, une fuite d’étiquette/cible, un surapprentissage ou un test avec des données d’entraînement). Quand les données de test sont asymétriques (la plupart des instances appartiennent à une des classes), que le jeu de données est très petit ou que les scores approchent 0,00 ou 1,00, la précision ne capture pas vraiment l’efficacité d’un classifieur, ce qui vous oblige à vérifier des métriques supplémentaires. |
-| **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ou *Zone sous la courbe* : mesure de la zone sous la courbe créée par le balayage du taux de vrais positifs par rapport au taux de faux positifs.  |   **Plus la précision est proche de 1,00, meilleure est la qualité**. La valeur doit être supérieure à 0,50 pour qu’un modèle soit acceptable ; un modèle avec une métrique AUC inférieure ou égale à 0,50 est sans intérêt. |
-| **Zone sous une courbe de précision/rappel** | [Zone sous une courbe de précision/rappel](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) ou *zone sous la courbe d’une courbe précision/rappel* : mesure utile de la réussite de la prédiction quand les classes sont très déséquilibrées (jeux de données très asymétriques). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
+| **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ou *zone sous la courbe*: cela mesure la zone sous la courbe créée en balayant le taux réel positif par rapport au taux de faux positifs.  |   **Plus la précision est proche de 1,00, meilleure est la qualité**. La valeur doit être supérieure à 0,50 pour qu’un modèle soit acceptable ; un modèle avec une métrique AUC inférieure ou égale à 0,50 est sans intérêt. |
+| **Zone sous une courbe de précision/rappel** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) ou *zone sous la courbe d’une courbe de rappel de précision*: mesure utile du succès de la prédiction lorsque les classes sont très déséquilibrées (jeux de données très faussés). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
 | **Score F1** | [Score F1](https://en.wikipedia.org/wiki/F1_score) également appelé *balanced F-score or F-measure*. Il s’agit de la moyenne harmonique de la précision et du rappel. Le score F1 est utile quand vous souhaitez rechercher un équilibre entre la précision et le rappel.| **Plus la précision est proche de 1,00, meilleure est la qualité**.  Un score F1 atteint sa meilleure valeur à 1,00 et la pire à 0,00. Il vous indique le degré de précision de votre classifieur. |
 
 Pour plus d’informations sur les métriques de classification binaire, consultez les articles suivants :
@@ -47,7 +47,7 @@ La macro-précision accorde une pondération supérieure aux petites équipes da
 
 Pour plus d’informations sur les métriques de classification multiclasse, consultez les articles suivants :
 
-- [Micro- and Macro-average of Precision, Recall and F-Score](http://rushdishams.blogspot.com/2011/08/micro-and-macro-average-of-precision.html)
+- [Micro- and Macro-average of Precision, Recall and F-Score](https://rushdishams.blogspot.com/2011/08/micro-and-macro-average-of-precision.html)
 - [Multiclass Classification with Imbalanced Dataset](https://towardsdatascience.com/machine-learning-multiclass-classification-with-imbalanced-data-set-29f6a177c1a)
 
 ## <a name="metrics-for-regression"></a>Métriques de régression
@@ -61,7 +61,7 @@ Pour plus d’informations sur les métriques de classification multiclasse, con
 
 Pour plus d’informations sur les métriques de régression, consultez les articles suivants :
 
-- [Regression Analysis: How Do I Interpret R-squared and Assess the Goodness-of-Fit?](https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit)
+- [Analyse de régression : comment interpréter la R-squareie et évaluer l’adéquation ?](https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit)
 - [How To Interpret R-squared in Regression Analysis](https://statisticsbyjim.com/regression/interpret-r-squared-regression)
 - [R-Squared Definition](https://www.investopedia.com/terms/r/r-squared.asp)
 - [Mean Squared Error Definition](https://www.statisticshowto.datasciencecentral.com/mean-squared-error/)

@@ -2,12 +2,12 @@
 title: 'Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées'
 ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
-ms.openlocfilehash: 5174c67e4204c2e20e5730ab7c092ccbb0aeda1a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7757e8d1fd0258ab2d972b7321082e4afa37f710
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126260"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457942"
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>Atténuation : implémentations IMessageFilter.PreFilterMessage personnalisées
 
@@ -47,4 +47,4 @@ De plus, les applications qui ciblent des versions antérieures du .NET Framewor
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-1.md)
+- [Compatibilité des applications](application-compatibility.md)

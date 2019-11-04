@@ -2,12 +2,12 @@
 title: 'Atténuation : Normalisation des chemins d’accès'
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
-ms.openlocfilehash: 9ec34d8215c88329066b1cb86da018db82e16c5c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1e7b540975b84320d099ca004df5b6a87aa60f6a
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126209"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457885"
 ---
 # <a name="mitigation-path-normalization"></a>Atténuation : Normalisation des chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, la normalisation des chemins d’accès dans le .NET Framework a été modifiée.  
@@ -61,4 +61,4 @@ Les applications qui ciblent .NET Framework 4.6.1 ou antérieur, mais qui s’e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-2.md)
+- [Compatibilité des applications](application-compatibility.md)

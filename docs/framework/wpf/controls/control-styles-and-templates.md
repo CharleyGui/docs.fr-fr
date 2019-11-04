@@ -10,15 +10,15 @@ helpviewer_keywords:
 - states [WPF]
 - templates [WPF]
 ms.assetid: c19049bb-5ceb-492d-afd2-751dca0ed8e3
-ms.openlocfilehash: c5c33327c5a80a4e275d1eaa505c1d20d3d7ba4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c6d6b7beba03aaa5c978b5cb72c09ce625e0d7e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62017655"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460415"
 ---
 # <a name="control-styles-and-templates"></a>Styles et modèles Control
-Les contrôles dans Windows Presentation Foundation (WPF) ont un <xref:System.Windows.Controls.ControlTemplate> qui contient l’arborescence visuelle de ce contrôle. Vous pouvez modifier la structure et l’apparence d’un contrôle en modifiant le <xref:System.Windows.Controls.ControlTemplate> de ce contrôle. Il n’existe aucun moyen de remplacer uniquement une partie de l’arborescence visuelle d’un contrôle ; Pour modifier l’arborescence visuelle d’un contrôle, vous devez définir le <xref:System.Windows.Controls.Control.Template%2A> propriété du contrôle à son nouveau et complète <xref:System.Windows.Controls.ControlTemplate>.  
+Les contrôles de Windows Presentation Foundation (WPF) ont un <xref:System.Windows.Controls.ControlTemplate> qui contient l’arborescence d’éléments visuels de ce contrôle. Vous pouvez modifier la structure et l’apparence d’un contrôle en modifiant le <xref:System.Windows.Controls.ControlTemplate> de ce contrôle. Il n’existe aucun moyen de remplacer uniquement une partie de l’arborescence visuelle d’un contrôle ; pour modifier l’arborescence d’éléments visuels d’un contrôle, vous devez affecter à la propriété <xref:System.Windows.Controls.Control.Template%2A> du contrôle la valeur New et Complete <xref:System.Windows.Controls.ControlTemplate>.  
   
  Les thèmes du Bureau déterminent quel dictionnaire de ressources est utilisé. Pour obtenir les dictionnaires de ressources pour les thèmes du Bureau, consultez [Thèmes WPF par défaut](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
@@ -50,7 +50,7 @@ Les contrôles dans Windows Presentation Foundation (WPF) ont un <xref:System.Wi
  [Styles et modèles ListView](listview-styles-and-templates.md)  
  [Styles et modèles Menu](menu-styles-and-templates.md)  
  [Styles et modèles NavigationWindow](navigationwindow-styles-and-templates.md)  
- [PasswordBox Styles et modèles](passwordbox-styles-and-templates.md)  
+ [Styles et modèles de PasswordBox](passwordbox-styles-and-templates.md)  
  [Styles et modèles ProgressBar](progressbar-styles-and-templates.md)  
  [Styles et modèles RadioButton](radiobutton-styles-and-templates.md)  
  [Styles et modèles RepeatButton](repeatbutton-styles-and-templates.md)  
@@ -60,14 +60,14 @@ Les contrôles dans Windows Presentation Foundation (WPF) ont un <xref:System.Wi
  [Styles et modèles StatusBar](statusbar-styles-and-templates.md)  
  [Styles et modèles TabControl](tabcontrol-styles-and-templates.md)  
  [Styles et modèles TextBox](textbox-styles-and-templates.md)  
- [Thumb Styles et modèles](thumb-styles-and-templates.md)  
+ [Styles et modèles Thumb](thumb-styles-and-templates.md)  
  [Styles et modèles ToggleButton](togglebutton-styles-and-templates.md)  
  [Styles et modèles ToolBar](toolbar-styles-and-templates.md)  
  [Styles et modèles ToolTip](tooltip-styles-and-templates.md)  
  [Styles et modèles TreeView](treeview-styles-and-templates.md)  
  [Styles et modèles Window](window-styles-and-templates.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Controls>  
   
  <xref:System.Windows.Controls.ControlTemplate>  
@@ -75,4 +75,4 @@ Les contrôles dans Windows Presentation Foundation (WPF) ont un <xref:System.Wi
 ## <a name="related-sections"></a>Rubriques connexes  
  [Vue d’ensemble de la création de contrôles](control-authoring-overview.md)  
   
- [Application d’un style et création de modèles](styling-and-templating.md)
+ [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

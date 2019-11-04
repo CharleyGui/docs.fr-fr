@@ -7,21 +7,21 @@ helpviewer_keywords:
 - styles [WPF]
 - templates [WPF]
 ms.assetid: 7fd571fd-d54a-40fc-b332-4c4015a5b6ff
-ms.openlocfilehash: d7a5e9515e78dd9c762973ca9854e04b44c1e18d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b47b9b7091e5421278fe867f79eb8abc62588b93
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790908"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459060"
 ---
 # <a name="styles-and-templates"></a>Styles et modèles
-Création de modèles et styles de Windows Presentation Foundation (WPF) font référence à une suite de fonctionnalités (styles, modèles, déclencheurs et tables de montage séquentiel) qui permettent une application, un document ou un concepteur d’interface (interface utilisateur) créer des applications visuellement attrayantes et Standardisez un aspect particulier pour leur produit.  
+Les styles et les modèles de Windows Presentation Foundation (WPF) font référence à une suite de fonctionnalités (styles, modèles, déclencheurs et storyboards) qui permettent à une application, un document ou un concepteur d’interface utilisateur de créer des applications visuellement attrayantes et à Standardisez un aspect particulier du produit.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Application d’un style et création de modèles](styling-and-templating.md)  
-  [Guide pratique pour Rechercher des éléments générés par ControlTemplate](how-to-find-controltemplate-generated-elements.md)  
+ [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
+  [Guide pratique pour rechercher des éléments générés par ControlTemplate](how-to-find-controltemplate-generated-elements.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Style>  
   <xref:System.Windows.Controls.ControlTemplate>  
   <xref:System.Windows.DataTemplate>  

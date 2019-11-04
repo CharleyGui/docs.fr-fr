@@ -1,18 +1,15 @@
 ---
-title: 'Procédure : activer la persistance SQL pour les workflow et les services de workflow'
+title: 'Procédure : activer la persistance SQL pour les workflows et les services de workflow'
 ms.date: 03/30/2017
-dev_langs:
-- csharp
-- vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: b3ba21234af9555a4e40a0b587ac21473cff8761
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 4dc5648d748372828c5b9a36441bfb02eef045e1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834840"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460875"
 ---
-# <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Procédure : activer la persistance SQL pour les workflow et les services de workflow
+# <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Procédure : activer la persistance SQL pour les workflows et les services de workflow
 
 Cette rubrique décrit comment configurer la fonctionnalité de magasin d’instances de workflow SQL pour activer la persistance pour vos workflows et services de workflow à la fois par programmation et en utilisant un fichier de configuration.
 
@@ -29,7 +26,7 @@ Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, 
 > [!IMPORTANT]
 > Si vous ne créez pas de base de données de persistance, la fonctionnalité de magasin d’instances de workflow SQL lève une exception semblable à la suivante lorsqu’un hôte essaie de rendre des workflows persistants.
 >
-> System. Data. SqlClient. SqlException : Impossible de trouver la procédure stockée System. Activities. DurableInstancing. CreateLockOwner
+> System.Data.SqlClient.SqlException : Impossible de trouver la procédure stockée « System.Activities.DurableInstancing.CreateLockOwner »
 
 Les sections suivantes décrivent comment activer la persistance pour les workflows et les services de workflow à l'aide du magasin d'instances de workflow SQL. Pour plus d’informations sur les propriétés du magasin d’instances de workflow SQL, consultez [Propriétés du magasin d’instances de workflow SQL](properties-of-sql-workflow-instance-store.md).
 
@@ -72,7 +69,7 @@ Vous pouvez activer la persistance pour les workflows auto-hébergés qui utilis
    ```
 
 > [!NOTE]
-> Consultez le [How pour : Créez et exécutez un flux de travail de longue durée @ no__t-0 dans le [didacticiel prise en main](getting-started-tutorial.md) pour obtenir des instructions pas à pas.
+> Pour obtenir des instructions pas à pas, consultez l’étape [Comment : créer et exécuter un flux de travail à long terme](how-to-create-and-run-a-long-running-workflow.md) du [didacticiel de prise en main](getting-started-tutorial.md) .
 
 ## <a name="enabling-persistence-for-self-hosted-workflow-services-that-use-the-workflowservicehost"></a>Activation de la persistance pour les services de workflow auto-hébergés qui utilisent WorkflowServiceHost
 
@@ -129,7 +126,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 Vous pouvez activer la persistance pour les services de workflow auto-hébergés ou hébergés par le service d'activation des processus Windows (WAS) à l'aide d'un fichier de configuration. Un service de workflow hébergé par le service d'activation de processus Windows utilise WorkflowServiceHost de la même façon que les services de workflow auto-hébergés.
 
-Le `SqlWorkflowInstanceStoreBehavior`, un comportement de service qui vous permet de modifier facilement les propriétés du [magasin d’instances de workflow SQL](sql-workflow-instance-store.md) par le biais de la configuration XML. Pour les services de workflow hébergés par le service d'activation de processus Windows, utilisez le fichier Web.config. L'exemple de configuration suivant indique comment configurer le magasin d'instances de workflow SQL en utilisant l'élément de comportement `sqlWorkflowInstanceStore` dans un fichier de configuration.
+Le `SqlWorkflowInstanceStoreBehavior`, un comportement de service qui vous permet de modifier facilement les propriétés du [magasin d’instances de workflow SQL](sql-workflow-instance-store.md) via la configuration XML. Pour les services de workflow hébergés par le service d'activation de processus Windows, utilisez le fichier Web.config. L'exemple de configuration suivant indique comment configurer le magasin d'instances de workflow SQL en utilisant l'élément de comportement `sqlWorkflowInstanceStore` dans un fichier de configuration.
 
 ```xml
 <serviceBehaviors>
@@ -140,9 +137,8 @@ Le `SqlWorkflowInstanceStoreBehavior`, un comportement de service qui vous perme
                     instanceCompletionAction="DeleteAll | DeleteNothing"
                     instanceLockedExceptionAction="NoRetry | BasicRetry |AggressiveRetry"
                     hostLockRenewalPeriod="00:00:30"
-                    runnableInstancesDetectionPeriod="00:00:05">
+                    runnableInstancesDetectionPeriod="00:00:05" />
 
-        <sqlWorkflowInstanceStore/>
     </behavior>
 </serviceBehaviors>
 ```
@@ -172,6 +168,6 @@ L'installation de [!INCLUDE[netfx_current_short](../../../includes/netfx-current
                     <add name="sqlWorkflowInstanceStore" type="System.Activities.DurableInstancing.SqlWorkflowInstanceStoreElement, System.Activities.DurableInstancing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
                 </behaviorExtensions>
             </extensions>
-        <system.serviceModel>
-    <configuration>
+        </system.serviceModel>
+    </configuration>
     ```

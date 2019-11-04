@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Localiser une application'
+title: Guide pratique pour localiser une application
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: b3ad3d0c3223d5baf937ca22fd48d46a80979aac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 26c09e547205e7819ebb43d6e34b6e18d6d9ff98
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913670"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460840"
 ---
-# <a name="how-to-localize-an-application"></a>Procédure : Localiser une application
+# <a name="how-to-localize-an-application"></a>Guide pratique pour localiser une application
 Ce didacticiel explique comment créer une application localisée à l'aide de l'outil LocBaml.  
   
 > [!NOTE]
@@ -27,7 +27,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
  Ce document vous propose une approche pas à pas pour localiser une application. Tout d'abord, vous allez préparer votre application de façon à pouvoir extraire le texte qui sera traduit. Une fois le texte traduit, vous le fusionnerez dans une nouvelle copie de l'application d'origine.  
   
 <a name="Requirements"></a>   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  Au cours de cette discussion, vous allez utiliser Microsoft Build Engine (MSBuild), qui est un compilateur qui s’exécute à partir de la ligne de commande.  
   
  De même, vous serez invité à utiliser un fichier de projet. Pour obtenir des instructions sur l’utilisation de MSBuild et des fichiers projet, consultez [génération et déploiement](../app-development/building-and-deploying-wpf-applications.md).  
@@ -36,7 +36,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 <a name="create_sample_app"></a>   
 ## <a name="create-a-sample-application"></a>Créer un exemple d'application  
- Dans cette étape, vous allez préparer votre application en vue de sa localisation. L'exemple HelloApp, qui est fourni dans les exemples [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], sera utilisé dans les exemples de code fournis dans ce document. Si vous souhaitez utiliser cet exemple, téléchargez les [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] fichiers à partir de l’exemple d' [outil LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
+ Dans cette étape, vous allez préparer votre application en vue de sa localisation. L'exemple HelloApp, qui est fourni dans les exemples [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], sera utilisé dans les exemples de code fournis dans ce document. Si vous souhaitez utiliser cet exemple, téléchargez les fichiers [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] à partir de l' [exemple d’outil LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
   
 1. Développez votre application jusqu'au point où vous voulez démarrer la localisation.  
   
@@ -44,13 +44,13 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
      `<UICulture>en-US</UICulture>`  
   
-3. Ajoutez des UID à vos fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Les UID permettent de suivre les modifications apportées aux fichiers et d'identifier les éléments qui doivent être traduits. Pour ajouter des UID à vos fichiers, exécutez **updateuid** sur votre fichier projet:  
+3. Ajoutez des UID à vos fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Les UID permettent de suivre les modifications apportées aux fichiers et d'identifier les éléments qui doivent être traduits. Pour ajouter des UID à vos fichiers, exécutez **updateuid** sur votre fichier projet :  
   
-     **msbuild -t:updateuid helloapp.csproj**  
+     **MSBuild-t :updateuid HelloApp. csproj**  
   
      Pour vérifier que vous n’avez pas d’UID ou d’UID en double, exécutez **checkuid**:  
   
-     **msbuild -t:checkuid helloapp.csproj**  
+     **MSBuild-t :checkuid HelloApp. csproj**  
   
      Après l’exécution de **updateuid**, vos fichiers doivent contenir des UID. Par exemple, dans le fichier Pane1.xaml de HelloApp, vous devez trouver les éléments suivants :  
   
@@ -66,7 +66,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
 ## <a name="create-the-neutral-language-resources-satellite-assembly"></a>Créer l'assembly satellite de ressources de langage neutre  
  Après avoir configuré l'application pour générer un assembly satellite de ressources de langage neutre, vous devez générer l'application. Cela a pour effet de générer l'assembly d'application principal, ainsi que l'assembly satellite de ressources de langage neutre dont a besoin LocBaml pour la localisation. Pour générer l'application :  
   
-1. Compilez HelloApp pour créer une bibliothèque de liens dynamiques (DLL):  
+1. Compilez HelloApp pour créer une bibliothèque de liens dynamiques (DLL) :  
   
      **msbuild helloapp.csproj**  
   
@@ -91,21 +91,21 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 4. Les options que vous pouvez spécifier pendant l'exécution de LocBaml sont les suivantes :  
   
-    - **Parse** ou **-p:** Analyse les fichiers BAML, les ressources ou les DLL pour générer un fichier. csv ou. txt.  
+    - **Parse** ou **-p : analyse les** fichiers BAML, les ressources ou les fichiers dll pour générer un fichier. csv ou. txt.  
   
-    - **générer** ou **-g:** Génère un fichier binaire localisé à l’aide d’un fichier traduit.  
+    - **generate** ou **-g :** génère un fichier binaire localisé à l’aide d’un fichier traduit.  
   
-    - **out** ou **-o** {*répertoirefichiers*] **:** Nom du fichier de sortie.  
+    - **out** ou **-o** {*répertoirefichiers*] **:** nom du fichier de sortie.  
   
-    - **culture** ou **-cul** {*culture*] **:** Paramètres régionaux des assemblys de sortie.  
+    - **culture** ou **-cul** {*culture*] **:** paramètres régionaux des assemblys de sortie.  
   
-    - **translation** ou **-TRANS** {*translation. csv*] **:** Fichier traduit ou localisé.  
+    - **translation** ou **-TRANS** {*translation. csv*] **:** fichier traduit ou localisé.  
   
-    - **asmpath** ou **-asmpath:** {*répertoirefichiers*] **:** Si votre [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] code contient des contrôles personnalisés, vous devez fournir le **asmpath** à l’assembly de contrôle personnalisé.  
+    - **asmpath** ou **-asmpath :** {*répertoirefichiers*] **:** si votre code [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] contient des contrôles personnalisés, vous devez fournir le **asmpath** à l’assembly de contrôle personnalisé.  
   
-    - **nologo** N’affiche aucun logo ni information de copyright.  
+    - **nologo:** N’affiche aucun logo ni information de droits d’auteur.  
   
-    - **verbose** Affiche des informations détaillées sur le mode.  
+    - **verbose:** Affiche des informations en mode détaillé.  
   
     > [!NOTE]
     > Si vous avez besoin d’une liste des options lorsque vous exécutez l’outil, tapez **LocBaml. exe** et appuyez sur entrée.  
@@ -137,11 +137,11 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
    2. **Resource Key**. Identificateur de la ressource localisée.  
   
-   3. **Category**. Type de valeur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
+   3. **Catégorie** : Type de valeur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
-   4. **Readability**. Indique si la valeur peut être lue par un localisateur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
+   4. **Lisibilité** : Indique si la valeur peut être lue par un localisateur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
-   5. **Modifiability**. Indique si la valeur peut être modifiée par un localisateur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
+   5. **Modifiabilité** : Indique si la valeur peut être modifiée par un localisateur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
    6. **Comments**. Description supplémentaire de la valeur pour aider à déterminer comment une valeur est localisée. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
@@ -149,19 +149,19 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
    Le tableau suivant montre comment ces champs sont mappés par rapport aux valeurs délimitées du fichier .csv :  
   
-   |BAML name|Resource key|Category|Readability|Modifiability|Comments|Value|  
+   |BAML name|Resource key|Category|Readability|Modifiability|Comments|valeur|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
-   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignore|FALSE|FALSE||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|None|TRUE|TRUE||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Aucun|TRUE|TRUE||Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignore|false|false||#Text1;#Text2|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|aucune.|true|true||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|aucune.|true|true||Goodbye World|
   
-   Notez que toutes les valeurs du champ de **Commentaires** ne contiennent aucune valeur; Si un champ n’a pas de valeur, il est vide. Notez également que l’élément de la première ligne n’est ni lisible ni modifiable et qu’il a «ignore» comme valeur de **catégorie** , ce qui indique que la valeur n’est pas localisable.  
+   Notez que toutes les valeurs du champ de **Commentaires** ne contiennent aucune valeur ; Si un champ n’a pas de valeur, il est vide. Notez également que l’élément de la première ligne n’est ni lisible ni modifiable et qu’il a « ignore » comme valeur de **catégorie** , ce qui indique que la valeur n’est pas localisable.  
   
 4. Pour faciliter la découverte des éléments localisables dans les fichiers analysés, en particulier dans les fichiers volumineux, vous pouvez trier ou filtrer les éléments par **catégorie**, **lisibilité**et **modifiabilité**. Par exemple, vous pouvez filtrer les valeurs illisibles et non modifiables.  
   
 <a name="translate_loc_content"></a>   
 ## <a name="translate-the-localizable-content"></a>Traduire le contenu localisable  
- Utilisez n'importe quel outil à votre disposition pour traduire le contenu extrait. Une bonne façon de procéder est d'écrire les ressources dans un fichier .csv et de les afficher dans [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)], en apportant les modifications de traduction dans la dernière colonne (value).  
+ Utilisez n'importe quel outil à votre disposition pour traduire le contenu extrait. Une bonne façon de procéder consiste à écrire les ressources dans un fichier. csv et à les afficher dans Microsoft Excel, en apportant des modifications de traduction à la dernière colonne (valeur).  
   
 <a name="merge_translations"></a>   
 ## <a name="use-locbaml-to-generate-a-new-resourcesdll-file"></a>Utiliser LocBaml pour générer un nouveau fichier .resources.dll  

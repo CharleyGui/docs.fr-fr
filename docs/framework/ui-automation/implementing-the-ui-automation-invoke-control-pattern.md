@@ -6,17 +6,17 @@ helpviewer_keywords:
 - control patterns, Invoke
 - Invoke control pattern
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
-ms.openlocfilehash: e9815e4c2c0740f213632681200e48c8e4786657
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 616bbab4d659cf00b1f730492e73ad6b847e3926
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043391"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458004"
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implémentation du modèle de contrôle Invoke d’UI Automation
 
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
 
 Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IInvokeProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.
 
@@ -24,7 +24,7 @@ Le modèle de contrôle <xref:System.Windows.Automation.InvokePattern> est utili
 
 <a name="Implementation_Guidelines_and_Conventions"></a>
 
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation
 
 Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et recommandations suivantes :
 
@@ -47,11 +47,11 @@ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et
 > [!NOTE]
 > Cette implémentation est considérée comme un problème d’accessibilité si le contrôle ne peut être appelé que suite à un effet secondaire lié à la souris.
 
-- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. Par exemple, l’appel d’un élément de la liste de documents [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] dans le dossier Mes documents sélectionne l’élément et ouvre le document.
+- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. Par exemple, l’appel d’un élément de liste de documents Microsoft Word dans le dossier Mes documents sélectionne l’élément et ouvre le document.
 
 - Un élément peut disparaître de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dès qu’il est appelé. La requête d’informations de l’élément fourni par le rappel d’événement peut échouer. La pré-récupération des informations mises en cache est la solution recommandée.
 
-- Les contrôles peuvent implémenter plusieurs modèles de contrôle. Par exemple, le contrôle Fill Color dans la barre d’outils [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] implémente les deux modèles de contrôle <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.ExpandCollapsePattern> . <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
+- Les contrôles peuvent implémenter plusieurs modèles de contrôle. Par exemple, le contrôle Fill Color dans la barre d’outils Microsoft Excel implémente à la fois les modèles de contrôle <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.ExpandCollapsePattern>. <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 
@@ -59,9 +59,9 @@ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et
 
 Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IInvokeProvider>.
 
-|Membres requis|Type de membre|Notes|
+|Membres nécessaires|Type de membre|Notes|
 |----------------------|-----------------|-----------|
-|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|method|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> est un appel asynchrone et doit retourner immédiatement une valeur sans se bloquer.<br /><br /> Ce comportement est particulièrement critique pour les contrôles qui, directement ou indirectement, lancent une boîte de dialogue modale lorsqu’ils sont appelés. Tout client UI Automation à l’origine de l’événement reste bloqué jusqu’à la fermeture de la boîte de dialogue modale.|
+|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|méthode|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> est un appel asynchrone et doit retourner immédiatement une valeur sans se bloquer.<br /><br /> Ce comportement est particulièrement critique pour les contrôles qui, directement ou indirectement, lancent une boîte de dialogue modale lorsqu’ils sont appelés. Tout client UI Automation à l’origine de l’événement reste bloqué jusqu’à la fermeture de la boîte de dialogue modale.|
 
 <a name="Exceptions"></a>
 

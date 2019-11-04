@@ -8,17 +8,17 @@ helpviewer_keywords:
 - XAML [WPF], DynamicResource markup extension
 - DynamicResource markup extensions [WPF]
 ms.assetid: 7324f243-03af-4c2b-b0db-26ac6cdfcbe4
-ms.openlocfilehash: 06355c64d36d2688ef027c1940688d4c87e51ec8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a04e1569f77fed73a480fda3d63cabf6dbc30664
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964797"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460509"
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource, extension de balisage
-Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] importe quel attribut de propriété en différant cette valeur en tant que référence à une ressource définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l’exécution.  
+Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en différant cette valeur en tant que référence à une ressource définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l’exécution.  
   
-## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
 ```xml  
 <object property="{DynamicResource key}" .../>  
@@ -38,27 +38,27 @@ Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sha
   
 |||  
 |-|-|  
-|`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x:Key](../../xaml-services/x-key-directive.md) si une ressource a été créée dans le `key` balisage ou si elle a été fournie en tant que paramètre lors de l’appel <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> de si la ressource a été créée dans le code.|  
+|`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x :Key](../../xaml-services/x-key-directive.md) si une ressource a été créée dans le balisage ou si elle a été fournie en tant que paramètre `key` lors de l’appel de <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
   
 ## <a name="remarks"></a>Notes  
- Un `DynamicResource` crée une expression temporaire pendant la compilation initiale et par conséquent, la recherche des ressources est différée jusqu’à ce que la valeur de ressource demandée soit réellement requise pour construire un objet. Cela peut se faire éventuellement après [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] le chargement de la page. La valeur de ressource est recherchée en fonction de la recherche de clé par rapport à tous les dictionnaires de ressources actifs en commençant par l’étendue de la page actuelle, et remplace l’expression d’espace réservé de la compilation.  
+ Une `DynamicResource` créera une expression temporaire pendant la compilation initiale et différera donc la recherche des ressources jusqu’à ce que la valeur de ressource demandée soit réellement requise pour construire un objet. Cela peut se faire éventuellement après le chargement de la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. La valeur de ressource est recherchée en fonction de la recherche de clé par rapport à tous les dictionnaires de ressources actifs en commençant par l’étendue de la page actuelle, et remplace l’expression d’espace réservé de la compilation.  
   
 > [!IMPORTANT]
-> En termes de priorité des propriétés de dépendance `DynamicResource` , une expression est équivalente à la position à laquelle la référence de ressource dynamique est appliquée. Si vous définissez une valeur locale pour une propriété qui avait précédemment une `DynamicResource` expression comme valeur locale, le `DynamicResource` est complètement supprimé. Pour plus d’informations, consultez [Priorité de la valeur de propriété de dépendance](dependency-property-value-precedence.md).  
+> En termes de priorité des propriétés de dépendance, une expression `DynamicResource` est équivalente à la position à laquelle la référence de ressource dynamique est appliquée. Si vous définissez une valeur locale pour une propriété qui avait précédemment une expression `DynamicResource` comme valeur locale, la `DynamicResource` est complètement supprimée. Pour plus d’informations, consultez [Priorité de la valeur de propriété de dépendance](dependency-property-value-precedence.md).  
   
- Certains scénarios d’accès aux ressources sont particulièrement `DynamicResource` appropriés pour, par opposition à une [extension de balisage StaticResource](staticresource-markup-extension.md). Consultez [ressources XAML](xaml-resources.md) pour une discussion sur les avantages relatifs et les implications relatives `DynamicResource` aux `StaticResource`performances de et.  
+ Certains scénarios d’accès aux ressources sont particulièrement appropriés pour les `DynamicResource` par opposition à une [extension de balisage StaticResource](staticresource-markup-extension.md). Consultez [ressources XAML](xaml-resources.md) pour une discussion sur les avantages relatifs et les implications sur les performances de `DynamicResource` et `StaticResource`.  
   
- Le spécifié <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> doit correspondre à une ressource existante déterminée par la [directive x:Key](../../xaml-services/x-key-directive.md) à un certain niveau de la page, de l’application, des thèmes de contrôle disponibles et des ressources externes, ou des ressources système, et la recherche de ressource se produit. dans cet ordre. Pour plus d’informations sur la recherche de ressources pour les ressources statiques et dynamiques, consultez [ressources XAML](xaml-resources.md).  
+ Le <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> spécifié doit correspondre à une ressource existante déterminée par [la directive x :Key](../../xaml-services/x-key-directive.md) à un certain niveau de la page, de l’application, des thèmes de contrôle disponibles et des ressources externes, ou des ressources système, et la recherche de ressources se produira dans cet ordre. Pour plus d’informations sur la recherche de ressources pour les ressources statiques et dynamiques, consultez [ressources XAML](xaml-resources.md).  
   
- Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../xaml-services/xamlname-grammar.md). Une clé de ressource peut également être d’autres types d’objets, <xref:System.Type>tels qu’un. Une <xref:System.Type> clé est essentielle à la façon dont les contrôles peuvent être mis en forme par des thèmes. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
+ Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../xaml-services/xamlname-grammar.md). Une clé de ressource peut également être d’autres types d’objets, tels qu’un <xref:System.Type>. Une clé de <xref:System.Type> est essentielle à la façon dont les contrôles peuvent être mis en forme par des thèmes. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
   
- Les API de recherche de valeurs de ressource, <xref:System.Windows.FrameworkElement.FindResource%2A>telles que, suivent la même logique de recherche de `DynamicResource`ressource que celle utilisée par.  
+ Les API de recherche de valeurs de ressource, telles que <xref:System.Windows.FrameworkElement.FindResource%2A>, suivent la même logique de recherche de ressource que celle utilisée par `DynamicResource`.  
   
  Les autres méthodes déclaratives de référencement d’une ressource sont en tant qu' [extension de balisage StaticResource](staticresource-markup-extension.md).  
   
  La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d’identificateur `DynamicResource` est assigné en tant que valeur <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> de la classe d’extension <xref:System.Windows.DynamicResourceExtension> sous-jacente.  
   
- `DynamicResource`peut être utilisé dans la syntaxe d’élément objet. Dans ce cas, la spécification de la valeur <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> de la propriété est obligatoire.  
+ `DynamicResource` peut être utilisé dans la syntaxe d’élément objet. Dans ce cas, il est nécessaire de spécifier la valeur de la propriété <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A>.  
   
  `DynamicResource` peut également être utilisé dans une utilisation d'attributs en clair qui spécifie la propriété <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> en tant que paire propriété=valeur :  
   
@@ -68,7 +68,7 @@ Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sha
   
  L'utilisation en clair est souvent utile pour les extensions qui comportent plusieurs propriétés définissables ou si certaines propriétés sont facultatives. `DynamicResource` ne comportant qu'une seule propriété définissable (obligatoire), cette utilisation en clair n'est pas classique.  
   
- Dans l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implémentation du processeur, la gestion de cette extension de balisage est <xref:System.Windows.DynamicResourceExtension> définie par la classe.  
+ Dans l’implémentation du processeur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], la gestion de cette extension de balisage est définie par la classe <xref:System.Windows.DynamicResourceExtension>.  
   
  `DynamicResource` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. Toutes les extensions de balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilisent les caractères { et } dans leur syntaxe d’attribut, convention selon laquelle un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] reconnaît qu’une extension de balisage doit traiter l’attribut. Pour plus d’informations, consultez [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
   
@@ -77,7 +77,7 @@ Fournit une valeur pour n' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sha
 - [Ressources XAML](xaml-resources.md)
 - [Ressources et code](resources-and-code.md)
 - [x:Key, directive](../../xaml-services/x-key-directive.md)
-- [Vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md)
+- [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md)
 - [StaticResource, extension de balisage](staticresource-markup-extension.md)
 - [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md)

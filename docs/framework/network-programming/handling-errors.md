@@ -31,21 +31,22 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: bb478f0742e85cadd9509de823abb0d486170d37
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 7084c4579dd5fca0075c7516754195f7cea9e27c
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048496"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458042"
 ---
 # <a name="handling-errors"></a>Gestion des erreurs
+
 Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèvent à la fois les exceptions système (comme <xref:System.ArgumentException>) et les exceptions spécifiques au web (qui sont des <xref:System.Net.WebException> levées par la méthode <xref:System.Net.WebRequest.GetResponse%2A>).  
   
- Chaque **WebException** comprend une propriété <xref:System.Net.WebException.Status%2A> qui contient une valeur de l’énumération <xref:System.Net.WebExceptionStatus>. Vous pouvez examiner la propriété **Status** afin d’identifier l’erreur qui s’est produite et de prendre les mesures appropriées pour la résoudre.  
+Chaque **WebException** comprend une propriété <xref:System.Net.WebException.Status%2A> qui contient une valeur de l’énumération <xref:System.Net.WebExceptionStatus>. Vous pouvez examiner la propriété **Status** afin d’identifier l’erreur qui s’est produite et de prendre les mesures appropriées pour la résoudre.  
   
- Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.  
+Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.  
   
-|Statut|Description|  
+|Status|Description|  
 |------------|-----------------|  
 |ConnectFailure|Le service distant n’a pas pu être contacté au niveau du transport.|  
 |ConnectionClosed|La connexion a été interrompue prématurément.|  
@@ -57,18 +58,18 @@ Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèven
 |SecureChannelFailure|Une erreur s’est produite dans un lien de canal sécurisé.|  
 |SendFailure|Une demande complète n’a pas pu être envoyée au serveur distant.|  
 |ServerProtocolViolation|La réponse du serveur n’était pas une réponse HTTP valide.|  
-|Succès|Aucune erreur n’a été rencontrée.|  
+|Opération réussie|Aucune erreur n’a été rencontrée.|  
 |Délai|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
 |TrustFailure|Un certificat de serveur n’a pas pu être validé.|  
 |MessageLengthLimitExceeded|Un message a été reçu qui dépassait la limite spécifiée lors de l’envoi d’une demande ou de la réception d’une réponse du serveur.|  
-|Pending|Une demande asynchrone interne est en attente.|  
+|En attente|Une demande asynchrone interne est en attente.|  
 |PipelineFailure|Cette valeur prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement dans votre code.|  
 |ProxyNameResolutionFailure|Le service de résolution de nom n’a pas pu résoudre le nom d’hôte proxy.|  
 |UnknownError|Une exception de type inconnu s’est produite.|  
   
- Quand la propriété **Status** a la valeur **WebExceptionStatus.ProtocolError**, une **WebResponse** qui contient la réponse du serveur est disponible. Vous pouvez examiner cette réponse afin de déterminer la source réelle de l’erreur de protocole.  
+Quand la propriété **Status** a la valeur **WebExceptionStatus.ProtocolError**, une **WebResponse** qui contient la réponse du serveur est disponible. Vous pouvez examiner cette réponse afin de déterminer la source réelle de l’erreur de protocole.  
   
- L’exemple suivant indique comment intercepter une **WebException**.  
+L’exemple suivant indique comment intercepter une **WebException**.  
   
 ```csharp  
 try   
@@ -163,11 +164,11 @@ Catch e As Exception
 End Try  
 ```  
   
- Les applications qui utilisent la classe <xref:System.Net.Sockets.Socket> lèvent des <xref:System.Net.Sockets.SocketException> quand des erreurs se produisent sur le socket Windows. Les classes <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener> et <xref:System.Net.Sockets.UdpClient> sont générées sur la classe **Socket** et lèvent également des **SocketExceptions**.  
+Les applications qui utilisent la classe <xref:System.Net.Sockets.Socket> lèvent des <xref:System.Net.Sockets.SocketException> quand des erreurs se produisent sur le socket Windows. Les classes <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener> et <xref:System.Net.Sockets.UdpClient> sont générées sur la classe **Socket** et lèvent également des **SocketExceptions**.  
   
- Quand une **SocketException** est levée, la classe **SocketException** affecte à la propriété <xref:System.Net.Sockets.SocketException.ErrorCode%2A> la dernière erreur de socket du système d’exploitation s’étant produite. Pour plus d’informations sur les codes d’erreur de socket, consultez la documentation relative aux codes d’erreur des API Winsock 2.0 dans MSDN.  
+Quand une **SocketException** est levée, la classe **SocketException** affecte à la propriété <xref:System.Net.Sockets.SocketException.ErrorCode%2A> la dernière erreur de socket du système d’exploitation s’étant produite. Pour plus d’informations sur les codes d’erreur de socket, consultez la documentation relative aux codes d’erreur des API Winsock 2.0 dans MSDN.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Notions de base de la gestion des exceptions](../../standard/exceptions/exception-handling-fundamentals.md)
+- [Gestion et levée d’exceptions dans .NET](../../standard/exceptions/index.md)
 - [Demande de données](requesting-data.md)

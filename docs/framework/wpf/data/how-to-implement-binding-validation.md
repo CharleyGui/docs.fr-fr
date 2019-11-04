@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [WPF], validation of binding
 - binding [WPF], validation of
 ms.assetid: eb98b33d-9866-49ae-b981-bc5ff20d607a
-ms.openlocfilehash: 7a1a8df78a785066992472c7de37f958ae3467f1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 245b05d9cfa7ca66dec310bd9a5291def0101d19
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920153"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459107"
 ---
 # <a name="how-to-implement-binding-validation"></a>Comment : implémenter la validation de la liaison
 
@@ -41,9 +41,9 @@ Comme indiqué dans l’exemple suivant, la <xref:System.Windows.Controls.ToolTi
 
 Pour obtenir un exemple complet, consultez [exemple de validation de liaison](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/BindValidation).
   
-Notez que si vous ne fournissez pas de <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> personnalisé, le modèle d’erreur par défaut apparaît pour fournir des commentaires visuels à l’utilisateur en cas d’erreur de validation. Pour plus d’informations, consultez la section relative à la validation de données de la rubrique [Vue d’ensemble de la liaison de données](data-binding-overview.md). En outre, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit une règle de validation intégrée qui capte les exceptions levées pendant la mise à jour de la propriété de source de liaison. Pour plus d'informations, consultez <xref:System.Windows.Controls.ExceptionValidationRule>.
+Notez que si vous ne fournissez pas de <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> personnalisé, le modèle d’erreur par défaut apparaît pour fournir des commentaires visuels à l’utilisateur en cas d’erreur de validation. Pour plus d’informations, consultez la section relative à la validation de données de la rubrique [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md). En outre, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit une règle de validation intégrée qui capte les exceptions levées pendant la mise à jour de la propriété de source de liaison. Pour plus d'informations, consultez <xref:System.Windows.Controls.ExceptionValidationRule>.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
+- [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
 - [Rubriques de guide pratique](data-binding-how-to-topics.md)
