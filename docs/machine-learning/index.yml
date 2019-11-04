@@ -10,12 +10,12 @@ metadata:
   author: natke
   ms.author: nakersha
   ms.date: 10/30/2019
-  ms.openlocfilehash: 90ed33381fb4a078978ee8a9f53101603cbe8572
-  ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+  ms.openlocfilehash: 05d357af2088321524841bfc05f94f816f1bc306
+  ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/31/2019
-  ms.locfileid: "73197079"
+  ms.lasthandoff: 11/01/2019
+  ms.locfileid: "73423937"
 landingContent:
 - title: Notions de base de ML.NET
   linkLists:
@@ -63,6 +63,8 @@ landingContent:
       url: tutorials/object-detection-onnx.md
     - text: Détecter les anomalies dans les ventes de produits (API)
       url: tutorials/sales-anomaly-detection.md
+    - text: Prévision de la demande de location de vélos (API & SQL Server)
+      url: tutorials/time-series-demand-forecasting.md
     - text: Créer un conseiller de film (API)
       url: tutorials/movie-recommendation.md
 - title: 'Guides pratiques :'
