@@ -17,12 +17,12 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 77f3c519308f39f83dac399aef395d5d36a7195e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 6b1a78ec56032d84d9699c2ecda89308779ee2da
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040924"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421137"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF
 Les applications Microsoft Windows dépendent souvent de fichiers qui contiennent des données non exécutables, telles que des [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des images, des vidéos et de l’audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
@@ -187,15 +187,15 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
   
  [!code-xaml[WPFAssemblyResourcesSnippets#AbsolutePackUriFileHttpReferenceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/AbsolutePackUriPage.xaml#absolutepackurifilehttpreferencexaml)]  
   
- Toutefois, pour les schémas file:/// et http:// votre application doit bénéficier d’une confiance totale. Si votre application est une [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] qui a été lancée à partir d’Internet ou d’un intranet et qu’elle demande uniquement le jeu d’autorisations autorisé pour les applications lancées à partir de ces emplacements, les fichiers libres peuvent uniquement être chargés à partir du site d’origine de l’application ( emplacement de lancement). Ces fichiers sont appelés fichiers *de site d’origine* .  
+ Toutefois, pour les schémas file:/// et http:// votre application doit bénéficier d’une confiance totale. Si votre application est une application de navigateur XAML (XBAP) lancée à partir d’Internet ou d’un intranet, et qu’elle demande uniquement le jeu d’autorisations autorisé pour les applications lancées à partir de ces emplacements, les fichiers libres peuvent uniquement être chargés à partir du site d’origine de l’application (emplacement de lancement). Ces fichiers sont appelés fichiers *de site d’origine* .  
   
  Les fichiers du site d’origine sont la seule option pour les applications partiellement fiables. Toutefois, ils ne se limitent pas à ces applications. Les applications entièrement fiables peuvent tout de même avoir besoin de charger des fichiers de données d’application dont ils n’ont pas connaissance au moment de la génération. Bien que les applications entièrement fiables puissent utiliser file:///, les fichiers de données d’application sont probablement installés dans le même dossier ou sous-dossier que l’assembly d’application. Dans ce cas, l’utilisation du référencement du site d’origine est plus facile que l’utilisation de file:///, car avec file:/// vous devez résoudre le chemin complet du fichier.  
   
 > [!NOTE]
-> Les fichiers de site d’origine ne sont pas mis en cache avec un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] sur un ordinateur client, alors que les fichiers de contenu sont. Ils sont donc téléchargés à la demande. Si une application [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] contient des fichiers multimédias volumineux, leur configuration en tant que fichiers de site d’origine signifie que le lancement de l’application initiale est beaucoup plus rapide et que les fichiers sont téléchargés uniquement à la demande.  
+> Les fichiers de site d’origine ne sont pas mis en cache avec une application de navigateur XAML (XBAP) sur un ordinateur client, tandis que les fichiers de contenu sont. Ils sont donc téléchargés à la demande. Si une application de navigateur XAML (XBAP) contient des fichiers multimédias volumineux, leur configuration en tant que fichiers de site d’origine signifie que le lancement de l’application initiale est beaucoup plus rapide et que les fichiers ne sont téléchargés qu’à la demande.  
   
 ### <a name="configuring-site-of-origin-files"></a>Configuration des fichiers du site d’origine  
- Si vos fichiers de site d’origine sont inexistants ou inconnus au moment de la compilation, vous devez utiliser des mécanismes de déploiement traditionnels pour vous assurer que les fichiers requis sont disponibles au moment de l’exécution, y compris en utilisant le programme de ligne de commande `XCopy` ou le [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
+ Si vos fichiers de site d’origine sont inexistants ou inconnus au moment de la compilation, vous devez utiliser des mécanismes de déploiement traditionnels pour vous assurer que les fichiers requis sont disponibles au moment de l’exécution, y compris en utilisant le programme de ligne de commande `XCopy` ou Microsoft Windows D'.  
   
  Si vous savez au moment de la compilation les fichiers que vous souhaitez placer sur le site d’origine, mais que vous souhaitez toujours éviter une dépendance explicite, vous pouvez ajouter ces fichiers à un projet MSBuild en tant qu’élément `None`. Comme pour les fichiers de contenu, vous devez définir l’attribut `CopyToOutputDirectory` MSBuild pour spécifier que le fichier du site d’origine est copié vers un emplacement relatif à l’assembly généré, en spécifiant la valeur `Always` ou la valeur `PreserveNewest`.  
   

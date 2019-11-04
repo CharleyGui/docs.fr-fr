@@ -4,12 +4,12 @@ description: En savoir plus sur le type struct et la manière de le créer
 ms.date: 10/12/2016
 ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: a7cdd84677cb84038aae89da9774c6e365275963
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 10971dc1a0b2c9d64ac8766734b3f6f630aa3ccf
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039741"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423116"
 ---
 # <a name="structs"></a>Structures
 
@@ -71,5 +71,5 @@ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](language-refer
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Classes](classes.md)
+- [Classes](programming-guide/classes-and-structs/classes.md)
 - [Types de base](basic-types.md)

@@ -2,12 +2,12 @@
 title: Route by Body
 ms.date: 03/30/2017
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-ms.openlocfilehash: 6df95a23aa66f39ab716912bae770a160c79da25
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dfe6d9e5a640efd9b516e0c0ff006ae0ed659834
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038938"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424264"
 ---
 # <a name="route-by-body"></a>Route by Body
 Cet exemple montre comment implémenter un service qui accepte des objets de message avec toute action SOAP. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Le service implémente une opération `Calculate` unique qui accepte un paramètre de demande <xref:System.ServiceModel.Channels.Message> et retourne une réponse <xref:System.ServiceModel.Channels.Message>.  
@@ -19,7 +19,7 @@ Cet exemple montre comment implémenter un service qui accepte des objets de mes
   
  L'exemple illustre la distribution des messages selon le contenu du corps. Le mécanisme de répartition des messages du modèle de service Windows Communication Foundation (WCF) intégré est basé sur les actions de message. Toutefois, il existe de nombreux services Web qui définissent toutes leurs opérations avec l'action="". Il est impossible de générer un service reposant sur WSDL qui continue à distribuer des messages de demande selon les informations d'action. Cet exemple montre un contrat de service basé sur WSDL (WSDL est contenu dans Service.wsdl, lui-même inclus dans l'exemple). Le contrat de service est Calculator, semblable à celui utilisé dans [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md). Toutefois, le `[OperationContract]` spécifie `Action=""` pour toutes les opérations.  
   
-```  
+```csharp  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),    
                  XmlSerializerFormat, DispatchByBodyBehavior]  
     public interface ICalculator  
@@ -39,7 +39,7 @@ Cet exemple montre comment implémenter un service qui accepte des objets de mes
   
  Le client utilise un proxy généré automatiquement à partir du WSDL exporté par le service à l’aide de l' [outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
-```  
+```console  
 svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples /uxs http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedProxy.cs  
 ```  
   
@@ -47,7 +47,7 @@ svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
   
  Le code client effectue plusieurs calculs. Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-```  
+```console
 Add(100, 15.99) = 115.99  
 Subtract(145, 76.54) = 68.46  
 Multiply(9, 81.25) = 731.25  
@@ -69,6 +69,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\RouteByBody`  

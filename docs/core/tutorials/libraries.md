@@ -4,18 +4,18 @@ description: Découvrez comment créer des bibliothèques .NET Core à l’aide 
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: 536319bc02b45e7948c89ae67988e821a55a842d
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: dcd454f0bd1739597fc27dccf2849fc259767292
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117423"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420461"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Développement de bibliothèques avec des outils multiplateformes
 
-Cet article explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](libraries-with-vs.md).
+Cet article explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](library-with-visual-studio.md).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 [Le SDK .NET Core et l’interface CLI](https://dotnet.microsoft.com/download) doivent être installés sur votre ordinateur.
 
@@ -29,7 +29,7 @@ Par ailleurs, si vous voulez prendre en charge des versions cibles de .NET Frame
 | 4.6                    | Pack de ciblage .NET Framework 4.6                      |
 | 4.5.2                  | Pack du développeur .NET Framework 4.5.2                    |
 | 4.5.1                  | Pack du développeur .NET Framework 4.5.1                    |
-| 4.5                    | SDK Windows pour Windows 8         |
+| 4,5                    | SDK Windows pour Windows 8         |
 | 4.0                    | SDK pour Windows 7 et .NET Framework 4         |
 | 2.0, 3.0 et 3.5      | Runtime .NET Framework 3.5 SP1 (ou version Windows 8+) |
 
@@ -80,7 +80,7 @@ Si vous voulez atteindre le nombre maximal de développeurs et de projets, utili
 | .NET Framework 4.0     | `net40`  |
 | .NET Framework 4.5     | `net45`  |
 | .NET Framework 4.5.1   | `net451` |
-| .NET Framework 4.5.2   | `net452` |
+| .NET Framework 4.5.2   | `net452` |
 | .NET Framework 4.6     | `net46`  |
 | .NET Framework 4.6.1   | `net461` |
 | .NET Framework 4.6.2   | `net462` |

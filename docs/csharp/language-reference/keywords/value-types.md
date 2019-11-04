@@ -9,18 +9,18 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 2a3e7f02ee9d210acae881edd170edbced82dab6
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 940d21bdd90d4594a39edc20283ca6a45ccf81fe
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353753"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422198"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
 Il existe deux sortes de types valeur :
 
-- [Structs](struct.md)
+- [Structures](struct.md)
 
 - [Énumérations](enum.md)
 
@@ -54,7 +54,7 @@ Les types simples diffèrent des autres types struct en ce qu’ils autorisent d
 
 - Les expressions constantes, dont les opérandes sont tous des constantes de type simple, sont évaluées au moment de la compilation.
 
-Pour plus d’informations, voir la section [Types simples](~/_csharplang/spec/types.md#simple-types) de la [spécification du langage C#](../language-specification/index.md).
+Pour plus d’informations, voir la section [Types simples](~/_csharplang/spec/types.md#simple-types) de la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).
 
 ## <a name="initializing-value-types"></a>Initialiser des types valeur
 
@@ -82,7 +82,7 @@ Bien entendu, vous pouvez intégrer la déclaration et l’initialisation dans u
 int myInt = new int();
 ```
 
-\- ou -
+– ou –
 
 ```csharp
 int myInt = 0;
@@ -104,9 +104,9 @@ Pour plus d’informations sur la mise en forme de la sortie des types numériqu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Types](types.md)
+- [Types](/dotnet/csharp/language-reference/keywords)
 - [Types référence](reference-types.md)
 - [Types valeur Nullable](../../programming-guide/nullable-types/index.md)

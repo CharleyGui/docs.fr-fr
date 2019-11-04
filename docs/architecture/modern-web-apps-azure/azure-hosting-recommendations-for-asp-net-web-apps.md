@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: ed8771a4d79b45d8fad0e5309c886c2e00402ec7
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331986"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416712"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Recommandations sur l’hébergement Azure pour les applications web ASP.NET Core
 
@@ -116,7 +116,7 @@ Azure propose un large éventail d’options de stockage des données, afin que 
 
 Pour les données transactionnelles relationnelles, les bases de données Azure SQL Database sont la meilleure option. Pour de hautes performances avec les données qui sont principalement en lecture, un cache Redis s’appuyant sur une base de données Azure SQL Database est une bonne solution.
 
-Les données JSON non structurées peuvent être stockées de différentes façons : colonnes SQL Database, objets blob ou tables dans Stockage Azure, ou encore DocumentDB. Parmi ces possibilités, DocumentDB offre les meilleures fonctionnalités de requête et il s’agit de l’option recommandée pour de grandes quantités de documents JSON qui doivent prendre en charge les requêtes.
+Les données JSON non structurées peuvent être stockées de différentes façons, de SQL Database des colonnes aux objets BLOB ou aux tables dans le stockage Azure, pour Azure Cosmos DB. Azure Cosmos DB offre les meilleures fonctionnalités d’interrogation et est l’option recommandée pour un grand nombre de documents JSON qui doivent prendre en charge l’interrogation.
 
 Les données basées sur des commandes ou des événements transitoires pour orchestrer le comportement des applications peuvent utiliser Azure Service Bus ou Stockage File d’attente Azure. Azure Service Bus offre davantage de souplesse et est le service recommandé pour les échanges complexes de messages au sein des applications et entre elles.
 

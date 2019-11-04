@@ -2,12 +2,12 @@
 title: Token Provider
 ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-ms.openlocfilehash: 9f008204c6ff8d3d134dbb17fc445b460f757f13
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6971a70e633f7768c165ee6171fd83f0eefc4183
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038751"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425119"
 ---
 # <a name="token-provider"></a>Token Provider
 Cet exemple montre comment implémenter un fournisseur de jetons personnalisé. Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec le fournisseur de jetons du gestionnaire d’informations d’identification par défaut. WCF est également fourni avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :
@@ -107,7 +107,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons personnalisé. 
 </system.serviceModel>
 ```
 
- Les étapes suivantes montrent comment développer un fournisseur de jetons personnalisé et l’intégrer à l’infrastructure de sécurité WCF:
+ Les étapes suivantes montrent comment développer un fournisseur de jetons personnalisé et l’intégrer à l’infrastructure de sécurité WCF :
 
 1. Écrivez un fournisseur de jetons personnalisé.
 
@@ -223,7 +223,7 @@ static void DisplayIdentityInformation()
 
      Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser. La variable `%SERVER_NAME%` spécifie le nom du serveur. Modifiez cette variable pour spécifier votre propre nom de serveur. La valeur par défaut dans ce fichier de commandes est localhost.
 
-    ```
+    ```console
     echo ************
     echo Server cert setup starting
     echo %SERVER_NAME%
@@ -237,7 +237,7 @@ static void DisplayIdentityInformation()
 
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
-    ```
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 

@@ -9,64 +9,64 @@ helpviewer_keywords:
 - styles [WPF], DatePicker
 - states [WPF], DatePicker
 ms.assetid: c430a657-692f-44bd-a549-2341f92d6115
-ms.openlocfilehash: 013076fdac8666b974fdf0ce9b09740197031c15
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 323768b6221061d46446ab18f85555f5f7415e74
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170538"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460367"
 ---
 # <a name="datepicker-styles-and-templates"></a>Styles et modèles DatePicker
-Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.DatePicker> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner le contrôle une apparence unique. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DatePicker>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="datepicker-parts"></a>Composants de DatePicker  
- Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.DatePicker> contrôle.  
+## <a name="datepicker-parts"></a>Composants DatePicker  
+ Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.DatePicker>.  
   
-|Élément|Type|Description|  
+|Élément|Tapez|Description|  
 |-|-|-|  
-|PART_Root|<xref:System.Windows.Controls.Grid>|La racine du contrôle.|  
-|PART_Button|<xref:System.Windows.Controls.Button>|Le bouton qui ouvre et ferme le <xref:System.Windows.Controls.Calendar>.|  
-|PART_TextBox|<xref:System.Windows.Controls.Primitives.DatePickerTextBox>|La zone de texte qui vous permet d’entrer une date.|  
-|PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|La fenêtre contextuelle pour la <xref:System.Windows.Controls.DatePicker> contrôle.|  
+|PART_Root|<xref:System.Windows.Controls.Grid>|Racine du contrôle.|  
+|PART_Button|<xref:System.Windows.Controls.Button>|Bouton qui ouvre et ferme le <xref:System.Windows.Controls.Calendar>.|  
+|PART_TextBox|<xref:System.Windows.Controls.Primitives.DatePickerTextBox>|Zone de texte qui vous permet d’entrer une date.|  
+|PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|Popup pour le contrôle de <xref:System.Windows.Controls.DatePicker>.|  
   
-## <a name="datepicker-states"></a>États de DatePicker  
- Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.DatePicker> contrôle.  
+## <a name="datepicker-states"></a>États DatePicker  
+ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.DatePicker>.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Désactivé|CommonStates|Le <xref:System.Windows.Controls.DatePicker> est désactivé.|  
-|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
-|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
-|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
+|Disabled|CommonStates|Le <xref:System.Windows.Controls.DatePicker> est désactivé.|  
+|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
+|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
+|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
   
-## <a name="datepickertextbox-parts"></a>Parties DatePickerTextBox  
- Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> contrôle.  
+## <a name="datepickertextbox-parts"></a>Composants DatePickerTextBox  
+ Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.  
   
-|Élément|Type|Description|  
+|Élément|Tapez|Description|  
 |-|-|-|  
-|PART_Watermark|<xref:System.Windows.Controls.ContentControl>|L’élément qui contient le texte initial dans le <xref:System.Windows.Controls.DatePicker>.|  
-|PART_ContentElement|<xref:System.Windows.FrameworkElement>|Un élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.TextBox> s’affiche dans cet élément.|  
+|PART_Watermark|<xref:System.Windows.Controls.ContentControl>|Élément qui contient le texte initial dans le <xref:System.Windows.Controls.DatePicker>.|  
+|PART_ContentElement|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.TextBox> s’affiche dans cet élément.|  
   
-## <a name="datepickertextbox-states"></a>États de DatePickerTextBox  
- Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> contrôle.  
+## <a name="datepickertextbox-states"></a>États DatePickerTextBox  
+ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est désactivé.|  
+|Disabled|CommonStates|Le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
-|ReadOnly|CommonStates|L’utilisateur ne peut pas modifier le texte dans le <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
+|ReadOnly|CommonStates|L’utilisateur ne peut pas modifier le texte dans la <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
-|Lui appliquer un filigrane|WatermarkStates|Le contrôle affiche son texte d’origine.  Le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est dans l’état lorsque l’utilisateur n’a pas entré du texte ou sélectionné une date.|  
-|Unwatermarked|WatermarkStates|L’utilisateur a entré du texte dans le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> ou sélectionné une date dans le <xref:System.Windows.Controls.DatePicker>.|  
-|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
-|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle a le focus.|  
-|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle n’a pas le focus.|  
+|Filigrane|WatermarkStates|Le contrôle affiche son texte initial.  La <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est dans l’État lorsque l’utilisateur n’a pas entré de texte ou sélectionné une date.|  
+|Pas de filigrane|WatermarkStates|L’utilisateur a entré du texte dans le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> ou sélectionné une date dans le <xref:System.Windows.Controls.DatePicker>.|  
+|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
+|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` et le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|La <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` et le contrôle n’a pas le focus.|  
   
-## <a name="datepicker-controltemplate-example"></a>Exemple de ControlTemplate DatePicker  
- L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.DatePicker> contrôle.  
+## <a name="datepicker-controltemplate-example"></a>DatePicker ControlTemplate, exemple  
+ L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.DatePicker>.  
   
  [!code-xaml[ControlTemplateExamples#DatePicker](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datepicker.xaml#datepicker)]  
   
@@ -82,5 +82,5 @@ Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Contr
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

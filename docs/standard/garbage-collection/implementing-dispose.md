@@ -9,18 +9,18 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 8a29584dd5ed47ad1e8a336a7283cba9271f3abd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 95726d4bfae6da43cd845d461caf8f1848d774f1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121212"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424331"
 ---
 # <a name="implementing-a-dispose-method"></a>Implémentation d’une méthode Dispose
 
 Vous implémentez une méthode <xref:System.IDisposable.Dispose%2A> pour libérer les ressources non managées utilisées par votre application. Le Garbage collector .NET n’alloue pas de mémoire non managée, et n’en libère pas non plus.  
   
-Le modèle pour supprimer un objet, dénommé [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md), impose un ordre sur la durée de vie d’un objet. Le modèle de suppression est utilisé uniquement pour les objets qui accèdent à des ressources non managées, telles que les handles de fichiers et de canaux, les handles d’attente, les handles d’attente ou les pointeurs vers les blocs de mémoire non managée. Cela est dû au fait que le récupérateur de mémoire est très efficace pour récupérer les objets managés inutilisés, mais ne peut pas récupérer les objets non managés.  
+Le modèle pour supprimer un objet, dénommé [modèle de suppression](implementing-dispose.md), impose un ordre sur la durée de vie d’un objet. Le modèle de suppression est utilisé uniquement pour les objets qui accèdent à des ressources non managées, telles que les handles de fichiers et de canaux, les handles d’attente, les handles d’attente ou les pointeurs vers les blocs de mémoire non managée. Cela est dû au fait que le récupérateur de mémoire est très efficace pour récupérer les objets managés inutilisés, mais ne peut pas récupérer les objets non managés.  
   
 Le modèle de suppression comporte deux variantes :  
   
@@ -167,4 +167,4 @@ L'exemple suivant illustre le modèle de suppression d'une classe dérivée, `Di
 - <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>
 - <xref:System.Object.Finalize%2A?displayProperty=nameWithType>
 - [Guide pratique pour définir et consommer des classes et des structs (C++-CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli)
-- [Dispose, modèle](../../../docs/standard/design-guidelines/dispose-pattern.md)
+- [Dispose, modèle](implementing-dispose.md)

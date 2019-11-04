@@ -8,18 +8,18 @@ helpviewer_keywords:
 - configuring Visual Studio to debug XAML browser applications [WPF]
 - configuring Visual Studio to debug XBAPs [WPF]
 ms.assetid: fd1db082-a7bb-4c4b-9331-6ad74a0682d0
-ms.openlocfilehash: 7730ab452e227b11e5a9dd69cdabec51f333ce4f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 27319179a9a30c5693f47039bf1e24c59adf0e68
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321197"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424656"
 ---
 # <a name="how-to-configure-visual-studio-to-debug-a-xaml-browser-application-to-call-a-web-service"></a>Comment : configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service Web
-[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] s’exécute dans un bac à sable (sandbox) de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Ce jeu d’autorisations restreint les appels de service Web aux seuls services Web situés sur le site d’origine de l’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Toutefois, lorsqu’un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] est débogué à partir de Visual Studio 2005, il n’est pas considéré comme ayant le même site d’origine que le service Web auquel il fait référence. Cela entraîne le déclenchement d’exceptions de sécurité lorsque le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] tente d’appeler le service Web. Toutefois, un projet Visual Studio 2005 [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] peut être configuré pour simuler le même site d’origine que le service Web qu’il appelle pendant le débogage. Cela permet au [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] d’appeler en toute sécurité le service Web sans causer d’exceptions de sécurité.
+Les applications de navigateur XAML (XBAP) s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Ce jeu d’autorisations restreint les appels de service Web aux seuls services Web situés sur le site d’origine de l’application XBAP. Toutefois, lorsqu’un XBAP est débogué à partir de Visual Studio 2005, il n’est pas considéré comme ayant le même site d’origine que le service Web auquel il fait référence. Cela entraîne le déclenchement d’exceptions de sécurité lorsque l’application XBAP tente d’appeler le service Web. Toutefois, un projet de [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] Visual Studio 2005 peut être configuré pour simuler le même site d’origine que le service Web qu’il appelle pendant le débogage. Cela permet à l’application XBAP d’appeler sans risque le service Web sans provoquer d’exceptions de sécurité.
 
 ## <a name="configuring-visual-studio"></a>Configuration de Visual Studio
- Pour configurer Visual Studio 2005 afin de déboguer un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] qui appelle un service Web :
+ Pour configurer Visual Studio 2005 afin de déboguer une application XBAP qui appelle un service Web :
 
 1. Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**.
 
@@ -50,7 +50,7 @@ ms.locfileid: "72321197"
 
      La valeur de l' *URL* pour le paramètre **-DEBUGSECURITYZONEURL** est l’URL de l’emplacement que vous souhaitez simuler comme étant le site d’origine de votre application.
 
- Par exemple, considérez un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] qui utilise un service Web avec l’URL suivante :
+ Par exemple, considérez une application de navigateur XAML (XBAP) qui utilise un service Web avec l’URL suivante :
 
  `http://services.msdn.microsoft.com/ContentServices/ContentService.asmx`
 

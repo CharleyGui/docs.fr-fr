@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 08e791c56582ecc2354696293cd5633051064848
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 7d648741676ba947d901d26e3ee7c1289d3d4bc3
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581933"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453880"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Vue d'ensemble des fonctionnalités bidirectionnelles dans WPF
 
@@ -44,7 +44,7 @@ L’exemple suivant illustre la définition de <xref:System.Windows.FrameworkEle
 
 [!code-xaml[FlowDirection#FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDirection/CS/Window1.xaml#flowdirection)]
 
-Le <xref:System.Windows.Window> de niveau supérieur a un <xref:System.Windows.FlowDirection> <xref:System.Windows.FlowDirection.RightToLeft>, donc tous les éléments qu’il contient héritent également du même <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Pour qu’un élément substitue un <xref:System.Windows.FrameworkElement.FlowDirection%2A> spécifié, il doit ajouter une modification de direction explicite, telle que la deuxième <xref:System.Windows.Controls.TextBlock> de l’exemple précédent, qui devient <xref:System.Windows.FlowDirection.LeftToRight>. Quand aucun <xref:System.Windows.FrameworkElement.FlowDirection%2A> n’est défini, le <xref:System.Windows.FlowDirection.LeftToRight> par défaut s’applique.
+Le <xref:System.Windows.Window> de niveau supérieur a un <xref:System.Windows.FlowDirection><xref:System.Windows.FlowDirection.RightToLeft>, donc tous les éléments qu’il contient héritent également du même <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Pour qu’un élément substitue un <xref:System.Windows.FrameworkElement.FlowDirection%2A> spécifié, il doit ajouter une modification de direction explicite, telle que la deuxième <xref:System.Windows.Controls.TextBlock> de l’exemple précédent, qui devient <xref:System.Windows.FlowDirection.LeftToRight>. Quand aucun <xref:System.Windows.FrameworkElement.FlowDirection%2A> n’est défini, le <xref:System.Windows.FlowDirection.LeftToRight> par défaut s’applique.
 
 Le graphique suivant montre la sortie de l’exemple précédent :
 
@@ -174,7 +174,7 @@ Les <xref:System.Windows.Controls.Image> et <xref:System.Windows.Shapes.Path> so
 
 Historiquement, Windows prend en charge la substitution de nombres en autorisant la représentation de différentes formes culturelles pour les mêmes chiffres tout en conservant le stockage interne de ces chiffres unifié parmi les différents paramètres régionaux, par exemple les nombres sont stockés dans leur valeurs hexadécimales bien connues, 0x40, 0x41 vers, mais affichées en fonction de la langue sélectionnée.
 
-Cela a permis aux applications de traiter des valeurs numériques sans avoir besoin de les convertir d’une langue à une autre, par exemple, un utilisateur peut ouvrir une feuille de calcul [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] dans une fenêtre arabe localisée et afficher les nombres en arabe, mais l’ouvrir dans une Communauté européenne. version de Windows et consultez la représentation européenne des mêmes nombres. Ceci est également nécessaire pour les autres symboles tels que les virgules et le symbole du pourcentage, car ils accompagnent habituellement des nombres dans le même document.
+Cela a permis aux applications de traiter des valeurs numériques sans avoir besoin de les convertir d’une langue à une autre, par exemple, un utilisateur peut ouvrir une feuille de calcul Microsoft Excel dans une fenêtre arabe localisée et afficher les nombres en arabe, mais l’ouvrir dans un Version européenne de Windows et consultez la représentation européenne des mêmes nombres. Ceci est également nécessaire pour les autres symboles tels que les virgules et le symbole du pourcentage, car ils accompagnent habituellement des nombres dans le même document.
 
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] continue dans la même tradition et ajoute une prise en charge supplémentaire de cette fonctionnalité qui permet un meilleur contrôle de l’utilisateur sur quand et comment la substitution est utilisée. Bien que cette fonctionnalité soit conçue pour n’importe quelle langue, elle est particulièrement utile pour du contenu bidirectionnel, où la mise en forme des chiffres pour une langue spécifique est habituellement un défi pour les développeurs d’application du fait des différentes cultures dans lesquelles peut s’exécuter l’application.
 
@@ -186,7 +186,7 @@ Cette propriété spécifie la manière dont est déterminée la culture pour le
 
 - Override : la culture des nombres est celle de <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> propriété.
 
-- Text : la culture pour les nombres est la culture de l’exécution de texte. Dans le balisage, il s’agit de `xml:lang` ou de sa propriété alias `Language` (<xref:System.Windows.FrameworkElement.Language%2A> ou <xref:System.Windows.FrameworkContentElement.Language%2A>). Par ailleurs, il s’agit de la valeur par défaut pour les classes dérivant de <xref:System.Windows.FrameworkContentElement>. Ces classes incluent <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> et ainsi de suite.
+- Text : la culture pour les nombres est la culture de l’exécution de texte. Dans le balisage, il s’agit de `xml:lang`ou de sa propriété alias `Language` (<xref:System.Windows.FrameworkElement.Language%2A> ou <xref:System.Windows.FrameworkContentElement.Language%2A>). Par ailleurs, il s’agit de la valeur par défaut pour les classes dérivant de <xref:System.Windows.FrameworkContentElement>. Ces classes incluent <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> et ainsi de suite.
 
 - User : la culture pour les nombres est la culture du thread actuel. Cette propriété est la valeur par défaut pour toutes les sous-classes de <xref:System.Windows.FrameworkElement> comme <xref:System.Windows.Controls.Page>, <xref:System.Windows.Window> et <xref:System.Windows.Controls.TextBlock>.
 
@@ -198,17 +198,17 @@ La propriété <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A>
 
 Cette propriété spécifie le type de substitution de nombres à effectuer. Elle prend l’une des valeurs d’énumération <xref:System.Windows.Media.NumberSubstitutionMethod> suivantes :
 
-- <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture> : la méthode de substitution est déterminée en fonction de la propriété de <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> de la culture des nombres. Il s'agit de la valeur par défaut.
+- <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: la méthode de substitution est déterminée en fonction de la propriété de <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> de la culture des nombres. Il s'agit de la valeur par défaut.
 
 - <xref:System.Windows.Media.NumberSubstitutionMethod.Context> : si la culture du nombre est une culture arabe ou persan, elle spécifie que les chiffres dépendent du contexte.
 
 - <xref:System.Windows.Media.NumberSubstitutionMethod.European> : les nombres sont toujours rendus en tant que chiffres européens.
 
-- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> : les nombres sont restitués à l’aide des chiffres nationaux pour la culture des nombres, comme spécifié par la <xref:System.Globalization.CultureInfo.NumberFormat%2A> de la culture.
+- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>: les nombres sont restitués à l’aide des chiffres nationaux pour la culture des nombres, comme spécifié par la <xref:System.Globalization.CultureInfo.NumberFormat%2A>de la culture.
 
 - <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional> : les nombres sont restitués à l’aide des chiffres traditionnels pour la culture des nombres. Pour la plupart des cultures, il s’agit de la même chose que <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Toutefois, <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> produit des chiffres latins pour certaines cultures arabes, alors que cette valeur génère des chiffres arabes pour toutes les cultures arabes.
 
-Que signifient ces valeurs pour un développeur de contenu bidirectionnel ? Dans la plupart des cas, le développeur peut avoir besoin uniquement de définir <xref:System.Windows.FlowDirection> et le langage de chaque élément de [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de texte, par exemple `Language="ar-SA"` et la logique de <xref:System.Windows.Media.NumberSubstitution> prend soin d’afficher les nombres en fonction de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] correcte. L’exemple suivant illustre l’utilisation des nombres arabes et anglais dans une application [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] s’exécutant dans une version arabe de Windows.
+Que signifient ces valeurs pour un développeur de contenu bidirectionnel ? Dans la plupart des cas, le développeur peut avoir besoin uniquement de définir <xref:System.Windows.FlowDirection> et le langage de chaque élément de [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de texte, par exemple `Language="ar-SA"` et la logique de <xref:System.Windows.Media.NumberSubstitution> prend soin d’afficher les nombres en fonction de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]correcte. L’exemple suivant illustre l’utilisation des nombres arabes et anglais dans une application [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] s’exécutant dans une version arabe de Windows.
 
 [!code-xaml[Numbers#Numbers](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers/CS/Window1.xaml#numbers)]
 
@@ -220,7 +220,7 @@ Le <xref:System.Windows.FlowDirection> était important dans ce cas car la défi
 
 **Définition des règles de substitution**
 
-Dans une application réelle, il est possible que vous ayez besoin de définir la langue par programmation. Par exemple, vous souhaitez affecter à l’attribut `xml:lang` la même valeur que celle utilisée par le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] du système, ou peut-être modifier la langue en fonction de l’état de l’application.
+Dans une application réelle, il est possible que vous ayez besoin de définir la langue par programmation. Par exemple, vous souhaitez affecter à l’attribut `xml:lang` la même valeur que celle utilisée par le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]du système, ou peut-être modifier la langue en fonction de l’état de l’application.
 
 Si vous souhaitez apporter des modifications en fonction de l’état de l’application, utilisez d’autres fonctionnalités fournies par [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].
 

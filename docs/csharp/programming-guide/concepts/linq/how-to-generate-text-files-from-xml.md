@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Générer des fichiers texte à partir de données XML (C#)'
+title: Guide pratique pour générer des fichiers texte à partir de données XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 9ad283f7-7cac-42ff-bf32-92aa866e6883
-ms.openlocfilehash: 76fcca69236ef97374855ebbb19259aa5e119ea0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8e36bbda60bea207707dcf869afc059e645ec8ad
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253595"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418306"
 ---
-# <a name="how-to-generate-text-files-from-xml-c"></a>Procédure : Générer des fichiers texte à partir de données XML (C#)
+# <a name="how-to-generate-text-files-from-xml-c"></a>Guide pratique pour générer des fichiers texte à partir de données XML (C#)
 Cet exemple montre comment générer un fichier de valeurs séparées par des virgules (CSV) à partir d'un fichier XML.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  La version C# de cet exemple utilise la syntaxe de méthode et l'opérateur `Aggregate` pour générer un fichier CSV à partir d'un document XML dans une expression simple. Pour plus d’informations, consultez [Syntaxe de requête et syntaxe de méthode dans LINQ](./query-syntax-and-method-syntax-in-linq.md).  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement custOrd = XElement.Load("CustomersOrders.xml");  
@@ -55,4 +55,4 @@ LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,Sa
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Projections et transformations (LINQ to XML) (C#)](./projections-and-transformations-linq-to-xml.md)
+- [Projections et transformations (LINQ to XML) (C#)](how-to-work-with-dictionaries-using-linq-to-xml.md)

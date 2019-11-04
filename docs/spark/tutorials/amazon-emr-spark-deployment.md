@@ -4,18 +4,18 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 0eea5a40ae4643c7447e2f7281dc8b0db609ca79
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a1ff1ba4d5e855e0ac36b99b0c9d63adfaaaac1e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117955"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454935"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-amazon-emr-spark"></a>Déployer une application .NET pour Apache Spark sur Amazon EMR Spark
 
 Ce tutoriel explique comment déployer une application .NET pour Apache Spark sur Amazon EMR Spark.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
 >
@@ -24,7 +24,7 @@ Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > * Déployer votre application sur Amazon EMR Spark
 > * Exécuter votre application
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Avant de commencer, procédez comme suit :
 
@@ -63,7 +63,7 @@ Avant de commencer, procédez comme suit :
 
 4. Chargez les éléments suivants sur un système de fichiers distribués (par exemple S3) auquel votre cluster a accès :
 
-   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Ce fichier jar est inclus dans le package NuGet [Microsoft.Spark](https://www.nuget.org/packages/Microsoft.Spark/) et est colocalisé dans le répertoire de sortie de la génération de votre application.
+   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: ce fichier jar est inclus dans le package NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) et colocalisé dans le répertoire de sortie de génération de votre application.
    * `<your app>.zip`
    * Les fichiers (comme les fichiers de dépendances ou les données communes accessibles à chaque worker) ou les assemblys (comme les DLL qui contiennent vos fonctions définies par l’utilisateur ou les bibliothèques dont dépend votre application) doivent être placés dans le répertoire de travail de chaque exécuteur.
 
@@ -71,7 +71,7 @@ Avant de commencer, procédez comme suit :
 
 [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html) est une plateforme de cluster gérée qui simplifie l’exécution de frameworks Big Data sur AWS.
 
-> [!NOTE] 
+> [!NOTE]
 > Amazon EMR Spark est basé sur Linux. Par conséquent, si vous voulez déployer votre application sur Amazon EMR Spark, vérifiez que votre application est compatible avec .NET Standard et que vous utilisez le [compilateur .NET Core](https://dotnet.microsoft.com/download) pour compiler votre application.
 
 ### <a name="deploy-microsoftsparkworker"></a>Déployer Microsoft.Spark.Worker

@@ -1,26 +1,26 @@
 ---
-title: Délégués avec méthodes nommées et Méthodes anonymes - Guide de programmation C#
+title: Délégués avec méthodes nommées et méthodes anonymes-Guide de C# programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 9df143fb183ef2fc7e951b2cee47d18ce4b11942
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 50df0e9c42d366c9c79dde3b0d34f85b8e552a45
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590647"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418031"
 ---
-# <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Délégués avec méthodes nommées et Méthodes anonymes (Guide de programmation C#)
-Un [délégué](../../language-reference/keywords/delegate.md) peut être associé à une méthode nommée. Quand vous instanciez un délégué à l’aide d’une méthode nommée, la méthode est passée en tant que paramètre, par exemple :  
+# <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Délégués avec méthodes nommées et méthodes anonymes (Guide de programmation C#)
+Un [délégué](../../language-reference/builtin-types/reference-types.md) peut être associé à une méthode nommée. Quand vous instanciez un délégué à l’aide d’une méthode nommée, la méthode est passée en tant que paramètre, par exemple :  
   
  [!code-csharp[csProgGuideDelegates#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#1)]  
   
  C’est ce qui s’appelle utiliser une méthode nommée. Les délégués construits avec une méthode nommée peuvent encapsuler une méthode [static](../../language-reference/keywords/static.md) ou une méthode d’instance. Les méthodes nommées représentent la seule façon d’instancier un délégué dans les versions précédentes de C#. Toutefois, dans une situation où la création d’une méthode constitue une charge de travail non souhaitée, C# vous permet d’instancier un délégué et de spécifier immédiatement un bloc de code que le délégué traite quand il est appelé. Le bloc peut contenir une expression lambda ou une méthode anonyme. Pour plus d’informations, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La méthode que vous passez en tant que paramètre de délégué doit avoir la même signature que la déclaration du délégué.  
   
  Une instance de délégué encapsule soit une méthode statique soit une méthode d’instance.  

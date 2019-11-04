@@ -4,20 +4,20 @@ description: En savoir plus sur les scénarios de Apache Spark et de Big Data.
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 187a37897c23809d91820bd79b476e775fb5b99b
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 653f355d09a045feabb3dee0f5737cb691cf2dc4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583478"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458174"
 ---
 # <a name="what-is-apache-spark"></a>Qu’est-ce que Apache Spark ?
 
-[Apache Spark](https://spark.apache.org/) est une infrastructure de traitement parallèle Open source qui prend en charge le traitement en mémoire pour améliorer les performances des applications qui analysent les Big Data. Les solutions Big Data sont conçues pour gérer les données qui sont trop volumineuses ou complexes pour les bases de données traditionnelles. Spark traite de grandes quantités de données en mémoire, ce qui est beaucoup plus rapide que les alternatives sur disque. 
+[Apache Spark](https://spark.apache.org/) est une infrastructure de traitement parallèle Open source qui prend en charge le traitement en mémoire pour améliorer les performances des applications qui analysent les Big Data. Les solutions Big Data sont conçues pour gérer les données qui sont trop volumineuses ou complexes pour les bases de données traditionnelles. Spark traite de grandes quantités de données en mémoire, ce qui est beaucoup plus rapide que les alternatives sur disque.
 
 ## <a name="common-big-data-scenarios"></a>Scénarios de Big Data courants
 
-Vous pouvez envisager une architecture Big Data si vous avez besoin de stocker et traiter de gros volumes de données, de transformer des données non structurées ou de traiter des données de streaming. Spark est un moteur de traitement distribué à usage général qui peut être utilisé pour plusieurs scénarios de Big Data. 
+Vous pouvez envisager une architecture Big Data si vous avez besoin de stocker et traiter de gros volumes de données, de transformer des données non structurées ou de traiter des données de streaming. Spark est un moteur de traitement distribué à usage général qui peut être utilisé pour plusieurs scénarios de Big Data.
 
 ### <a name="extract-transform-and-load-etl"></a>Extraction, transformation et chargement (ETL)
 
@@ -33,7 +33,7 @@ L' [extraction, la transformation et le chargement (ETL)](/azure/architecture/da
 
 ### <a name="real-time-data-stream-processing"></a>Traitement du flux de données en temps réel
 
-Les données en continu ou en temps réel sont des données en mouvement. La télémétrie des appareils IoT, Weblogs et parcours sont des exemples de données de streaming. Les données en temps réel peuvent être traitées pour fournir des informations utiles, telles que l’analyse géographique, la surveillance à distance et la détection d’anomalies. Tout comme les données relationnelles, vous pouvez filtrer, agréger et préparer les données de diffusion en continu avant de déplacer les données vers un récepteur de sortie. Apache Spark prend en charge [le traitement des flux de données en temps réel](/azure/architecture/data-guide/big-data/real-time-processing) via [Spark streaming](https://spark.apache.org/streaming/). 
+Les données en continu ou en temps réel sont des données en mouvement. La télémétrie des appareils IoT, Weblogs et parcours sont des exemples de données de streaming. Les données en temps réel peuvent être traitées pour fournir des informations utiles, telles que l’analyse géographique, la surveillance à distance et la détection d’anomalies. Tout comme les données relationnelles, vous pouvez filtrer, agréger et préparer les données de diffusion en continu avant de déplacer les données vers un récepteur de sortie. Apache Spark prend en charge [le traitement des flux de données en temps réel](/azure/architecture/data-guide/big-data/real-time-processing) via [Spark streaming](https://spark.apache.org/streaming/).
 
 ### <a name="batch-processing"></a>Traitement par lots
 

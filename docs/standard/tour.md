@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: a83253e37d3afde9ed8266ec1195c9726f6462cc
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 8a2904d02b34058a87a77bbedbed3ccba4c80c58
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291593"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421584"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -37,7 +37,7 @@ Microsoft développe et prend en charge activement trois langages .NET : C#, F#
 
 ## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
 
-.NET utilise le [garbage collection (GC)](garbagecollection/index.md) pour fournir une gestion automatique de la mémoire pour les programmes. Le récupérateur de mémoire opère avec une approche différée de la gestion de la mémoire, préférant le débit de l’application à la collecte immédiate de la mémoire. Pour plus d’informations sur le garbage collector .NET, consultez [Notions de base du garbage collection (GC)](garbagecollection/fundamentals.md).
+.NET utilise le [garbage collection (GC)](garbage-collection/index.md) pour fournir une gestion automatique de la mémoire pour les programmes. Le récupérateur de mémoire opère avec une approche différée de la gestion de la mémoire, préférant le débit de l’application à la collecte immédiate de la mémoire. Pour plus d’informations sur le garbage collector .NET, consultez [Notions de base du garbage collection (GC)](garbage-collection/fundamentals.md).
 
 Les deux lignes suivantes allouent de la mémoire :
 
@@ -55,7 +55,7 @@ Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException`
 
 Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET. Par exemple, un handle de fichier est une ressource non managée. Un objet <xref:System.IO.FileStream> est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas. Quand vous avez fini d’utiliser l’objet <xref:System.IO.FileStream>, vous devez libérer le handle de fichier.
 
-Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une [instruction `using`](../csharp/language-reference/keywords/using.md) pratique pour ces objets, comme illustré dans l’exemple suivant :
+Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une [instruction`using`](../csharp/language-reference/keywords/using.md) pratique pour ces objets, comme illustré dans l’exemple suivant :
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
@@ -64,7 +64,7 @@ Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement l
 Pour plus de détails, consultez les rubriques suivantes :
 
 * Pour C#, consultez la rubrique [using, instruction (référence C#)](../csharp/language-reference/keywords/using-statement.md).
-* Pour F#, consultez [Gestion des ressources : mot clé use](../fsharp/language-reference/resource-management-the-use-keyword.md).
+* Pour F#, consultez [Gestion des ressources : mot clé use](../fsharp/language-reference/resource-management-the-use-keyword.md).
 * Pour VB, consultez la rubrique [using, instruction (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md).
 
 ## <a name="type-safety"></a>Cohérence des types

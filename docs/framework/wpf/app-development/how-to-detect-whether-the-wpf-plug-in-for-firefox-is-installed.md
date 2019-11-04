@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Détecter si le plug-in WPF de Firefox est installé'
+title: 'Comment : détecter si le plug-in WPF de Firefox est installé'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - plug-in for Firefox [WPF]
@@ -8,23 +8,23 @@ helpviewer_keywords:
 - Firefox [WPF], detecting installation
 - detecting whether the WPF plug-in for Firefox is installed [WPF]
 ms.assetid: 5f839373-e3fb-44f1-88ad-4a0761f02189
-ms.openlocfilehash: f84a0a2af43931b3ada1f674390ec5d841b79a1c
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: fdc7b516c316c7efc7056b549baf43191a5aedd1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690419"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423746"
 ---
-# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Procédure : Détecter si le plug-in WPF de Firefox est installé
+# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Comment : détecter si le plug-in WPF de Firefox est installé
 
-Windows Presentation Foundation (WPF) plug-in de Firefox permet [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et perdre les fichiers XAML à exécuter dans le navigateur Mozilla Firefox. Cette rubrique fournit un script écrit en HTML et JavaScript, les administrateurs peuvent utiliser pour déterminer si le WPF plug-in de Firefox est installé.
+Le plug-in Windows Presentation Foundation (WPF) pour Firefox permet aux applications de navigateur XAML (XBAP) et aux fichiers XAML libres de s’exécuter dans le navigateur Mozilla Firefox. Cette rubrique fournit un script écrit en HTML et JavaScript que les administrateurs peuvent utiliser pour déterminer si le plug-in WPF de Firefox est installé.
 
 > [!NOTE]
-> Pour plus d’informations sur l’installation, déploiement et la détection du .NET Framework, consultez [installer le .NET Framework pour les développeurs](../../install/guide-for-developers.md).
+> Pour plus d’informations sur l’installation, le déploiement et la détection de la .NET Framework, consultez [installer le .NET Framework pour les développeurs](../../install/guide-for-developers.md).
 
 ## <a name="example"></a>Exemple
 
-Lorsque le .NET Framework 3.5 est installé, l’ordinateur client est configuré avec un plug-in WPF de Firefox. L’exemple de script suivant vérifie le plug-in WPF de Firefox, puis affiche un message d’état approprié.
+Lorsque la .NET Framework 3,5 est installée, l’ordinateur client est configuré avec un plug-in WPF pour Firefox. L’exemple de script suivant recherche le plug-in WPF pour Firefox, puis affiche un message d’état approprié.
 
 ```html
 <HTML>
@@ -56,11 +56,11 @@ Lorsque le .NET Framework 3.5 est installé, l’ordinateur client est configur�
 </HTML>
 ```
 
-Si la vérification pour le plug-in WPF de Firefox est réussie, le message d’état suivant s’affiche :
+Si la vérification du plug-in WPF pour Firefox réussit, le message d’état suivant s’affiche :
 
 `The WPF plug-in for Firefox is installed.`
 
-Sinon, le message d’état suivant s’affiche :
+Dans le cas contraire, le message d’état suivant s’affiche :
 
 `The WPF plug-in for Firefox is not installed. Please install or reinstall the .NET Framework 3.5.`
 

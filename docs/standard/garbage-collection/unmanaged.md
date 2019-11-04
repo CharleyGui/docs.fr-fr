@@ -12,12 +12,12 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-ms.openlocfilehash: 04bed819b472abe23ae6a9e89de149e715272505
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e05cfb949ee3f206f212ca7015f3ff4c22cd2a12
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141352"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423036"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Nettoyage de ressources non managées
 
@@ -25,7 +25,7 @@ Pour la majorité des objets créés par votre application, vous pouvez laisser 
 
 Si vos types utilisent les ressources non managées, procédez comme suit :
 
-- Implémentez le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md). Pour ce faire, vous devez fournir une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour activer la version déterministe des ressources non managées. Un consommateur de votre type appelle la méthode <xref:System.IDisposable.Dispose%2A> lorsque l'objet (et les ressources qu'il utilise) n'est plus nécessaire. La méthode <xref:System.IDisposable.Dispose%2A> libère immédiatement les ressources non managées.
+- Implémentez le [modèle de suppression](implementing-dispose.md). Pour ce faire, vous devez fournir une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour activer la version déterministe des ressources non managées. Un consommateur de votre type appelle la méthode <xref:System.IDisposable.Dispose%2A> lorsque l'objet (et les ressources qu'il utilise) n'est plus nécessaire. La méthode <xref:System.IDisposable.Dispose%2A> libère immédiatement les ressources non managées.
 
 - Prévoyez que vos ressources non managées soient libérées si un consommateur de votre type oublie d'appeler la méthode <xref:System.IDisposable.Dispose%2A>. Il existe deux façons d'effectuer cette opération :
 
@@ -39,7 +39,7 @@ Les consommateurs de votre type peuvent ensuite appeler directement votre implé
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Implémentation d’une méthode Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) Explique comment implémenter le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md) pour libérer les ressources non managées.
+[Implémentation d’une méthode Dispose](../../../docs/standard/garbage-collection/implementing-dispose.md) Explique comment implémenter le [modèle de suppression](implementing-dispose.md) pour libérer les ressources non managées.
 
 [Utilisation d’objets implémentant IDisposable](../../../docs/standard/garbage-collection/using-objects.md) Décrit comment les consommateurs d’un type vérifient que son implémentation <xref:System.IDisposable.Dispose%2A> est appelée. Pour ce faire, nous vous recommandons d'utiliser l'instruction `using` en C# ou l'instruction `Using` en Visual Basic.
 

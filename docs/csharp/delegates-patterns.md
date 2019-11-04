@@ -3,12 +3,12 @@ title: Modèles courants pour les délégués
 description: Découvrez les modèles courants pour l’utilisation de délégués dans votre code afin d’éviter un couplage important entre vos composants.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: ea0e0b7af361b76c4b46b0a180e07b44c1fa07e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 174ae4129464c9d2e787048793cec764121ca4aa
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095696"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454080"
 ---
 # <a name="common-patterns-for-delegates"></a>Modèles courants pour les délégués
 
@@ -58,7 +58,7 @@ Commençons par quelque chose de simple : l’implémentation initiale accepter
 
 La classe statique ci-dessus est la chose la plus simple qui peut fonctionner. Nous devons écrire l’implémentation unique pour la méthode qui écrit des messages dans la console : 
 
-[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/Program.cs#LogToConsole "A Console logger.")]
+[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/LoggingMethods.cs#LogToConsole "A Console logger.")]
 
 Pour finir, nous devons raccorder le délégué en l’attachant au délégué WriteMessage déclaré dans l’enregistreur d’événements :
 
@@ -70,7 +70,7 @@ Jusqu’à présent, notre exemple est assez simple, mais il illustre quand mêm
 
 L’utilisation des types délégués définis dans le Core Framework permet aux utilisateurs de travailler facilement avec les délégués. Vous n’avez pas besoin de définir de nouveaux types, et les développeurs qui utilisent votre bibliothèque n’ont pas besoin d’apprendre de nouveaux types délégués spécialisés.
 
-Les interfaces utilisées sont aussi minimales et flexibles que possible : pour créer un nouvel enregistreur d’événements de sortie, il faut créer une méthode. Il peut s’agir d’une méthode statique ou d’une méthode d’instance. Elle peut avoir n’importe quel accès.
+Les interfaces utilisées sont le plus minimal et flexible possible : pour créer un enregistreur d’événements de sortie, vous devez créer une méthode. Il peut s’agir d’une méthode statique ou d’une méthode d’instance. Elle peut avoir n’importe quel accès.
 
 ## <a name="formatting-output"></a>Mise en forme de sortie
 
@@ -107,13 +107,13 @@ Ces deux méthodes ne s’excluent pas mutuellement. Nous pourrions attacher les
 
 ```csharp
 var fileOutput = new FileLogger("log.txt");
-Logger.WriteMessage += LogToConsole;
+Logger.WriteMessage += LoggingMethods.LogToConsole; // LoggingMethods is the static class we utilized earlier
 ```
 
 Plus tard, même dans la même application, nous pourrions supprimer l’un des délégués sans provoquer d’autre problème dans le système :
 
 ```csharp
-Logger.WriteMessage -= LogToConsole;
+Logger.WriteMessage -= LoggingMethods.LogToConsole;
 ```
 
 ## <a name="practices"></a>Méthodes
@@ -153,4 +153,4 @@ Nous venons de voir le début d’un composant de journal qui peut être étendu
 
 La classe Logger peut apporter des améliorations ou des modifications sans introduire de modifications avec rupture. Comme toute classe, vous ne pouvez pas modifier l’API publique sans risque de modifications avec rupture. Toutefois, le couplage entre l’enregistreur d’événements et les moteurs de sortie étant uniquement par l’intermédiaire du délégué, aucun autre type (tel que les interfaces ou classes de base) n’est appelé. Le couplage est aussi réduit que possible.
 
-[Next](events-overview.md)
+[Suivant](events-overview.md)

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 55034aa5-3c1d-442a-8293-f4692d8ea6ae
-ms.openlocfilehash: a1f7105ee6590314eb2ebbfa52b511f55f83dc05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0d3c5198c6c4146cf92201b08781041043c4a72
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926409"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453594"
 ---
 # <a name="base-elements"></a>Éléments de base
-Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, et <xref:System.Windows.FrameworkContentElement>--implémentent une grande partie de la fonctionnalité des éléments courants disponible dans la programmation WPF. Ces quatre classes sont appelés dans ce SDK les classes d’élément de base.  
+Quatre classes clés :<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>et <xref:System.Windows.FrameworkContentElement>--implémentez un pourcentage substantiel des fonctionnalités d’éléments communes disponibles dans la programmation WPF. Ces quatre classes sont référencées dans ce kit de développement logiciel (SDK) en tant que classes d’éléments de base.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble des éléments de base](base-elements-overview.md)  
@@ -22,7 +22,7 @@ Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.Cont
  [Vue d'ensemble de l'alignement, des marges et du remplissage](alignment-margins-and-padding-overview.md)  
  [Rubriques de guide pratique](base-elements-how-to-topics.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  
@@ -39,5 +39,5 @@ Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.Cont
   [Événements](events-wpf.md)  
   [Entrée](input-wpf.md)  
   [Ressources](resources-wpf.md)  
-  [Application d’un style et création de modèles](../controls/styling-and-templating.md)  
+  [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [Modèle de thread](threading-model.md)

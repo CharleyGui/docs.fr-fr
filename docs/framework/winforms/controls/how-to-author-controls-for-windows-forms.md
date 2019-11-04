@@ -1,22 +1,22 @@
 ---
-title: 'Procédure : créer des contrôles pour Windows Forms'
+title: 'Comment : créer des contrôles pour des Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], creating
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 45a6ae68102204ad8506027065c2676e02fdd7a3
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 3776e47191d9b10431acbb9a2a7257996e531ba8
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015915"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459423"
 ---
-# <a name="how-to-author-controls-for-windows-forms"></a>Procédure : Créer des contrôles pour Windows Forms
+# <a name="how-to-author-controls-for-windows-forms"></a>Comment : créer des contrôles pour Windows Forms
 
 Un contrôle désigne un lien graphique entre l’utilisateur et le programme. Un contrôle peut fournir ou traiter des données, accepter des entrées d’utilisateur, répondre à des événements ou effectuer de nombreuses autres fonctions afin de connecter l’utilisateur et l’application. Un contrôle étant essentiellement un composant doté d’une interface graphique, il peut servir n’importe quelle fonction d’un composant, mais aussi fournir une interaction utilisateur. Les contrôles sont utilisés à des fins spécifiques, et la création de contrôles représente simplement une autre tâche de programmation. Dans cette optique, les étapes suivantes constituent une vue d’ensemble du processus de création de contrôle. Les liens renvoient vers des informations supplémentaires concernant les étapes individuelles.
 
@@ -40,9 +40,9 @@ Un contrôle désigne un lien graphique entre l’utilisateur et le programme. U
 
 5. Si vous avez besoin d’une peinture personnalisée pour votre contrôle, ajoutez du code. Pour plus d’informations, consultez [Peinture et rendu personnalisés des contrôles](custom-control-painting-and-rendering.md).
 
-6. Si votre contrôle hérite de <xref:System.Windows.Forms.UserControl>, vous pouvez tester son comportement d’exécution en générant le projet de contrôle et en l’exécutant dans le **conteneur de test UserControl**. Pour plus d’informations, consultez [Guide pratique pour Tester le comportement d’un UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)au moment de l’exécution.
+6. Si votre contrôle hérite de <xref:System.Windows.Forms.UserControl>, vous pouvez tester son comportement d’exécution en générant le projet de contrôle et en l’exécutant dans le **conteneur de test UserControl**. Pour plus d’informations, consultez l’article [Comment : tester le comportement d’un UserControl au moment de l’exécution](how-to-test-the-run-time-behavior-of-a-usercontrol.md).
 
-7. Vous pouvez également tester et déboguer votre contrôle en créant un projet, comme une application Windows, et en le plaçant dans un conteneur. Ce processus est illustré dans le cadre [de la procédure pas à pas: Création d’un contrôle](walkthrough-authoring-a-composite-control-with-visual-csharp.md)composite.
+7. Vous pouvez également tester et déboguer votre contrôle en créant un projet, comme une application Windows, et en le plaçant dans un conteneur. Ce processus est illustré dans le cadre de la [procédure pas à pas : création d’un contrôle composite](walkthrough-authoring-a-composite-control-with-visual-csharp.md).
 
 8. À chaque ajout de fonctionnalité, ajoutez des fonctionnalités à votre projet de test pour tester cette nouvelle fonctionnalité.
 
@@ -52,8 +52,8 @@ Un contrôle désigne un lien graphique entre l’utilisateur et le programme. U
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Guide pratique pour Hériter de la classe de contrôle](how-to-inherit-from-the-control-class.md)
-- [Guide pratique pour Hériter de contrôles Windows Forms existants](how-to-inherit-from-existing-windows-forms-controls.md)
-- [Guide pratique pour Tester le comportement d’un UserControl au moment de l’exécution](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Comment : hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Guide pratique pour hériter de la classe du contrôle](how-to-inherit-from-the-control-class.md)
+- [Guide pratique pour hériter de contrôles Windows Forms existants](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Comment : tester le comportement d’un UserControl au moment de l’exécution](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 - [Variétés de contrôles personnalisés](varieties-of-custom-controls.md)

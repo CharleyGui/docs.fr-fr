@@ -2,12 +2,12 @@
 title: Modules
 description: Découvrez comment un F# module est un regroupement de code F# , tel que des valeurs, des types et des valeurs de fonction, F# dans un programme.
 ms.date: 04/24/2017
-ms.openlocfilehash: 685ab638e7e1b6c8d47d1a316483abcc18e40199
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: fbde0c8b001d88614ba2de49c4aa7bfa098c6945
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627425"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425052"
 ---
 # <a name="modules"></a>Modules
 
@@ -26,7 +26,7 @@ module [accessibility-modifier] module-name =
 
 ## <a name="remarks"></a>Notes
 
-Un F# module est un regroupement de constructions F# de code telles que des types, des valeurs, des valeurs de fonction et `do` du code dans des liaisons. Elle est implémentée en tant que classe common language runtime (CLR) qui n’a que des membres statiques. Il existe deux types de déclarations de module, selon que le fichier entier est inclus dans le module: une déclaration de module de niveau supérieur et une déclaration de module locale. Une déclaration de module de niveau supérieur comprend l’intégralité du fichier dans le module. Une déclaration de module de niveau supérieur ne peut apparaître qu’en tant que première déclaration dans un fichier.
+Un F# module est un regroupement de constructions F# de code telles que des types, des valeurs, des valeurs de fonction et du code dans `do` liaisons. Elle est implémentée en tant que classe common language runtime (CLR) qui n’a que des membres statiques. Il existe deux types de déclarations de module, selon que le fichier entier est inclus dans le module : une déclaration de module de niveau supérieur et une déclaration de module locale. Une déclaration de module de niveau supérieur comprend l’intégralité du fichier dans le module. Une déclaration de module de niveau supérieur ne peut apparaître qu’en tant que première déclaration dans un fichier.
 
 Dans la syntaxe de la déclaration de module de niveau supérieur, l' *espace de noms qualifié* facultatif est la séquence de noms d’espaces de noms imbriqués qui contient le module. Il n’est pas nécessaire que l’espace de noms qualifié soit précédemment déclaré.
 
@@ -36,7 +36,7 @@ Si un fichier de code ne commence pas par une déclaration de module de niveau s
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/modules/snippet6601.fs)]
 
-Ce fichier est compilé comme s’il avait été écrit de cette manière:
+Ce fichier est compilé comme s’il avait été écrit de cette manière :
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/modules/snippet6602.fs)]
 
@@ -46,7 +46,7 @@ Si vous avez plusieurs modules dans un fichier, vous devez utiliser une déclara
 
 Si vous avez plusieurs fichiers dans un projet ou dans une compilation unique, ou si vous générez une bibliothèque, vous devez inclure une déclaration d’espace de noms ou une déclaration de module en haut du fichier. Le F# compilateur ne détermine un nom de module implicitement qu’en présence d’un seul fichier dans un projet ou d’une ligne de commande de compilation, et que vous créez une application.
 
-Le *modificateur Accessibility* peut être l’un des suivants: `public`, `private`, `internal`. Pour plus d’informations, consultez [Contrôle d’accès](access-control.md). La valeur par défaut est « public ».
+Le *modificateur accessibility-modifier* peut être l’un des suivants : `public`, `private``internal`. Pour plus d’informations, consultez [Contrôle d’accès](access-control.md). La valeur par défaut est « public ».
 
 ## <a name="referencing-code-in-modules"></a>Référencement du code dans des modules
 
@@ -54,7 +54,7 @@ Quand vous référencez des fonctions, des types et des valeurs d’un autre mod
 
 `Namespace1.Namespace2.ModuleName.Identifier`
 
-Vous pouvez ouvrir le module ou un ou plusieurs des espaces de noms pour simplifier le code. Pour plus d’informations sur l’ouverture des espaces de noms [et des modules, consultez déclarations d’importation: `open` Mot clé](import-declarations-the-open-keyword.md).
+Vous pouvez ouvrir le module ou un ou plusieurs des espaces de noms pour simplifier le code. Pour plus d’informations sur l’ouverture des espaces de noms et des modules, consultez [déclarations d’importation : le mot clé `open`](import-declarations-the-open-keyword.md).
 
 L’exemple de code suivant affiche un module de niveau supérieur qui contient tout le code jusqu’à la fin du fichier.
 
@@ -70,10 +70,10 @@ Les modules peuvent être imbriqués. Les modules internes doivent être mis en 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/modules/snippet6607.fs)]
 
-Toutefois, `Z` le module est un frère `Y` du module dans le code suivant.
+Toutefois, le module `Z` est un frère du module `Y` dans le code suivant.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/modules/snippet6608.fs)]
-Module `Z` est également un module frère dans le code suivant, car il n’est pas mis en retrait en ce qui concerne les `Y`autres déclarations dans le module.
+Module `Z` est également un module frère dans le code suivant, car il n’est pas mis en retrait en ce qui concerne les autres déclarations du module `Y`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/modules/snippet6609.fs)]
 Enfin, si le module externe n’a pas de déclaration et est immédiatement suivi par une autre déclaration de module, la nouvelle déclaration de module est supposée être un module interne, mais le compilateur vous avertit si la deuxième définition de module n’est pas mise en retrait plus loin que le premier.
@@ -88,7 +88,7 @@ Si vous souhaitez que tout le code d’un fichier se trouve dans un module exter
 
 ## <a name="recursive-modules"></a>Modules récursifs
 
-F#4,1 introduit la notion de modules qui permettent à tous les codes contenus d’être mutuellement récursifs.  Cette opération est effectuée `module rec`via.  L’utilisation `module rec` de peut atténuer les difficultés liées à l’impossibilité d’écrire du code mutuellement référentiel entre les types et les modules.  Voici un exemple:
+F#4,1 introduit la notion de modules qui permettent à tous les codes contenus d’être mutuellement récursifs.  Cette opération s’effectue via `module rec`.  L’utilisation de `module rec` peut atténuer les difficultés liées à l’impossibilité d’écrire du code mutuellement référentiel entre les types et les modules.  Voici un exemple :
 
 ```fsharp
 module rec RecursiveModule =
@@ -112,7 +112,7 @@ module rec RecursiveModule =
         let peel (b: Banana) =
             let flip (banana: Banana) =
                 match banana.Orientation with
-                | Up -> 
+                | Up ->
                     banana.Orientation <- Down
                     banana
                 | Down -> banana
@@ -128,12 +128,12 @@ module rec RecursiveModule =
             | Down -> b |> peelSides
 ```
 
-Notez que l’exception `DontSqueezeTheBananaException` et la classe `Banana` font toutes les deux référence.  En outre, le module `BananaHelpers` et la classe `Banana` font également référence l’un à l’autre.  Cela ne serait pas possible d’exprimer dans F# si vous avez supprimé `rec` le mot clé `RecursiveModule` du module.
+Notez que l’exception `DontSqueezeTheBananaException` et la classe `Banana` faire référence les unes aux autres.  En outre, le module `BananaHelpers` et la classe `Banana` également faire référence les uns aux autres.  Cela ne serait pas possible d’exprimer dans F# si vous avez supprimé le mot clé `rec` du module `RecursiveModule`.
 
 Cette fonctionnalité est également possible dans les [espaces](namespaces.md) de F# noms avec 4,1.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F#](index.md)
 - [Espaces de noms](namespaces.md)
 - [F#RFC FS-1009-autoriser les types et les modules mutuellement référentiels sur des étendues plus grandes au sein des fichiers](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)

@@ -2,12 +2,12 @@
 title: Types de retour Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 07890291-ee72-42d3-932a-fa4d312f2c60
-ms.openlocfilehash: f85b3ec536033fd6d3cdec8f5a6ac4f9f66077f3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a5553070dd68a0bc3eaad1c5e8c000f7a31f8783
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524332"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423967"
 ---
 # <a name="async-return-types-visual-basic"></a>Types de retour Async (Visual Basic)
 
@@ -66,7 +66,7 @@ Vous pouvez mieux comprendre comment cela se produit en séparant l’appel à `
 Dim integerTask As Task(Of Integer) = TaskOfT_MethodAsync()
 
 ' You can do other work that does not rely on resultTask before awaiting.
-textBox1.Text &= String.Format("Application can continue working while the Task(Of T) runs. . . . " & vbCrLf)
+textBox1.Text &= "Application can continue working while the Task(Of T) runs. . . . " & vbCrLf
 
 Dim result2 As Integer = Await integerTask
 ```
@@ -76,9 +76,9 @@ Les instructions d’affichage dans le code suivant vérifient que les valeurs d
 ```vb
 ' Display the values of the result1 variable, the result2 variable, and
 ' the resultTask.Result property.
-textBox1.Text &= String.Format(vbCrLf & "Value of result1 variable:   {0}" & vbCrLf, result1)
-textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, result2)
-textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)
+textBox1.Text &= vbCrLf & $"Value of result1 variable:   {result1}" & vbCrLf
+textBox1.Text &= $"Value of result2 variable:   {result2}" & vbCrLf
+textBox1.Text &= $"Value of resultTask.Result:  {integerTask.Result}" & vbCrLf
 ```
 
 ## <a name="BKMK_TaskReturnType"></a> Type de retour Task
@@ -95,7 +95,7 @@ Async Function Task_MethodAsync() As Task
     ' asynchronous call.
     ' Task.Delay is a placeholder for actual work.
     Await Task.Delay(2000)
-    textBox1.Text &= String.Format(vbCrLf & "Sorry for the delay. . . ." & vbCrLf)
+    textBox1.Text &= vbCrLf & "Sorry for the delay. . . ." & vbCrLf
 
     ' This method has no return statement, so its return type is Task.
 End Function
@@ -119,7 +119,7 @@ Le code suivant sépare l’appel à `Task_MethodAsync` de l’attente de la tâ
 Dim simpleTask As Task = Task_MethodAsync()
 
 ' You can do other work that does not rely on simpleTask before awaiting.
-textBox1.Text &= String.Format(vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf)
+textBox1.Text &= vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf
 
 Await simpleTask
 ```
@@ -218,15 +218,15 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
             Dim integerTask As Task(Of Integer) = TaskOfT_MethodAsync()
 
             ' You can do other work that does not rely on resultTask before awaiting.
-            textBox1.Text &= String.Format("Application can continue working while the Task(Of T) runs. . . . " & vbCrLf)
+            textBox1.Text &= "Application can continue working while the Task(Of T) runs. . . . " & vbCrLf
 
             Dim result2 As Integer = Await integerTask
 
             ' Display the values of the result1 variable, the result2 variable, and
             ' the resultTask.Result property.
-            textBox1.Text &= String.Format(vbCrLf & "Value of result1 variable:   {0}" & vbCrLf, result1)
-            textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, result2)
-            textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)
+            textBox1.Text &= vbCrLf & $"Value of result1 variable:   {result1}" & vbCrLf
+            textBox1.Text &= $"Value of result2 variable:   {result2}" & vbCrLf
+            textBox1.Text &= $"Value of resultTask.Result:  {integerTask.Result}" & vbCrLf
 
             ' Task
             ' Call and await the Task-returning async method in the same statement.
@@ -236,7 +236,7 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
             Dim simpleTask As Task = Task_MethodAsync()
 
             ' You can do other work that does not rely on simpleTask before awaiting.
-            textBox1.Text &= String.Format(vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf)
+            textBox1.Text &= vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf
 
             Await simpleTask
         End Function
@@ -269,7 +269,7 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
             ' asynchronous call.
             ' Task.Delay is a placeholder for actual work.
             Await Task.Delay(2000)
-            textBox1.Text &= String.Format(vbCrLf & "Sorry for the delay. . . ." & vbCrLf)
+            textBox1.Text &= vbCrLf & "Sorry for the delay. . . ." & vbCrLf
 
             ' This method has no return statement, so its return type is Task.
         End Function

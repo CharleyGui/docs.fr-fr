@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: 1029d34ae8823fe91c7e4bc92e168fcc1061c707
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: af7bf487ff4ed250025b946f0948c269fcc5bf09
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594402"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418563"
 ---
 # <a name="c-features-that-support-linq"></a>Fonctionnalités C# qui prennent en charge LINQ
 
@@ -26,7 +26,7 @@ var query = from str in stringArray
             select stringGroup;
 ```
 
-Pour plus d’informations, consultez [Expressions de requête LINQ](../../linq-query-expressions/index.md).
+Pour plus d’informations, consultez [Expressions de requête LINQ](../../../linq/index.md).
 
 ## <a name="implicitly-typed-variables-var"></a>Variables implicitement typées (var)
 
@@ -42,7 +42,7 @@ var query = from str in stringArray
 
 Les variables déclarées comme `var` sont aussi fortement typées que les variables dont vous spécifiez explicitement le type. `var` permet de créer des types anonymes, mais peut être utilisé uniquement pour les variables locales. Les tableaux peuvent également être déclarés avec un typage implicite.
 
-Pour plus d’informations, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).
+Pour plus d’informations, consultez la page [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).
 
 ## <a name="object-and-collection-initializers"></a>Initialiseurs d’objets et de collections
 
@@ -80,9 +80,9 @@ Un type anonyme est construit par le compilateur et le nom du type est uniquemen
 select new {name = cust.Name, phone = cust.Phone};
 ```
 
-Pour plus d’informations, consultez [Types anonymes](../../classes-and-structs/anonymous-types.md).
+Pour plus d’informations, consultez la page [Types anonymes](../../classes-and-structs/anonymous-types.md).
 
-## <a name="extension-methods"></a>Méthodes d’extension
+## <a name="extension-methods"></a>méthodes d’extension.
 
 Une méthode d’extension est une méthode statique qui peut être associée à un type, de manière à être appelée comme une méthode d’instance de ce type. Cette fonctionnalité permet d’ajouter de nouvelles méthodes aux types existants sans les modifier. Les opérateurs de requête standard sont un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601>.
 

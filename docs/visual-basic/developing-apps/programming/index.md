@@ -5,12 +5,12 @@ helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
-ms.openlocfilehash: 09bc9254c880d58ffed22971d3ff96ba341fdf83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 68c200b3e47a0f96963e5872c854633a7c24e938
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61812670"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423974"
 ---
 # <a name="programming-in-visual-basic"></a>Programmation dans Visual Basic
 Cette section décrit les tâches de programmation qu’il peut être intéressant d’approfondir pour créer une application Visual Basic.  
@@ -34,12 +34,12 @@ Cette section décrit les tâches de programmation qu’il peut être intéressa
  [Accès aux paramètres d’application](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
  Contient une documentation sur l’accès aux paramètres d’une application avec l’objet `My.Settings`.  
   
- [Traitement de lecteurs, de répertoires et de fichiers](../../../visual-basic/developing-apps/programming/drives-directories-files/processing.md)  
+ [Traitement de lecteurs, de répertoires et de fichiers](drives-directories-files/index.md)  
  Contient une documentation sur l’accès du système de fichier avec l’objet `My.Computer.FileSystem`.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Fonctionnalités du langage Visual Basic](../../../visual-basic/programming-guide/language-features/index.md)
 - [Concepts de programmation](../../../visual-basic/programming-guide/concepts/index.md)
-- [Collections](../../../visual-basic/programming-guide/concepts/collections.md)
+- [Regroupements](../../../visual-basic/programming-guide/concepts/collections.md)
 - [Développement d’applications avec Visual Basic](../../../visual-basic/developing-apps/index.md)

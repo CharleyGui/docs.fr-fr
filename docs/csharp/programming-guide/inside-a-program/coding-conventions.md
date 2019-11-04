@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 27001d1697def083580ecdc742b4b8db924545aa
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 42e1814af38fa442255f6da79fb4862ce3d0f361
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589413"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423205"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
  Les conventions de codage répondent aux objectifs suivants :  
@@ -93,7 +93,7 @@ ms.locfileid: "69589413"
   
      [!code-csharp[csProgGuideCodingConventions#10](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#10)]  
   
-- Évitez d’utiliser `var` à la place de [dynamic](../../language-reference/keywords/dynamic.md).  
+- Évitez d’utiliser `var` à la place de [dynamic](../../language-reference/builtin-types/reference-types.md).  
   
 - Utilisez le typage implicite pour déterminer le type de la variable de boucle dans les boucles [for](../../language-reference/keywords/for.md) et [foreach](../../language-reference/keywords/foreach-in.md).  
   
@@ -163,7 +163,7 @@ ms.locfileid: "69589413"
   
 ### <a name="static-members"></a>Membres static  
   
-- Appelez les membres [static](../../language-reference/keywords/static.md) en utilisant le nom de la classe : *ClassName.StaticMember*. Cette pratique rend le code plus lisible en clarifiant l'accès aux membres static.  Ne qualifiez pas un membre static défini dans une classe de base avec le nom d'une classe dérivée.  Lorsque ce code est compilé, la lisibilité du code est trompeuse et le code peut s'interrompre à l'avenir si vous ajoutez à la classe dérivée un membre static de même nom.  
+- Appelez les membres [static](../../language-reference/keywords/static.md) en utilisant le nom de la classe : *Nom_classe.Membre_statique*. Cette pratique rend le code plus lisible en clarifiant l'accès aux membres static.  Ne qualifiez pas un membre static défini dans une classe de base avec le nom d'une classe dérivée.  Lorsque ce code est compilé, la lisibilité du code est trompeuse et le code peut s'interrompre à l'avenir si vous ajoutez à la classe dérivée un membre static de même nom.  
   
 ### <a name="linq-queries"></a>Requêtes LINQ  
   

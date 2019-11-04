@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 08/07/2019
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: b5ef70967c8404dc5ce5b816bb9a1c3b1d7e4230
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c7e314e9712c3b569ecc813a72670942651feda1
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117355"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454740"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande
 
@@ -19,7 +19,7 @@ Cette rubrique décrit comment commencer à développer des applications multipl
 
 Si vous n’êtes pas familiarisé avec l’ensemble d’outils CLI .NET Core, consultez [Vue d’ensemble du SDK .NET Core](../tools/index.md).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - [Kit SDK .NET Core 2,1](https://dotnet.microsoft.com/download) ou versions ultérieures.
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -39,18 +39,18 @@ Suivons une procédure pas à pas rapide :
 
 1. `dotnet new console`
 
-   [`dotnet new`](../tools/dotnet-new.md) crée un fichier projet `Hello.csproj` à jour avec les dépendances nécessaires pour générer une application console.  Il crée également `Program.cs`, un fichier de base contenant le point d’entrée pour l’application.
+   [`dotnet new`](../tools/dotnet-new.md) crée un fichier projet *Hello. csproj* à jour avec les dépendances nécessaires pour générer une application console. Il crée également un *Program.cs*, un fichier de base contenant le point d’entrée de l’application.
 
-   `Hello.csproj`:
+   *Bonjour. csproj*:
 
-   [!code[Hello.csproj](../../../samples/core/console-apps/HelloMsBuild/Hello.csproj)]
+   [!code-xml[Hello.csproj](../../../samples/core/console-apps/HelloMsBuild/Hello.csproj)]
 
    Le fichier projet spécifie tout ce qui est nécessaire pour restaurer les dépendances et générer le programme.
 
    - La balise `OutputType` spécifie que nous générons un fichier exécutable, autrement dit une application console.
    - La balise `TargetFramework` spécifie l’implémentation .NET que nous ciblons. Dans un scénario avancé, vous pouvez spécifier plusieurs frameworks cibles et y effectuer une génération globale en une seule opération. Dans ce tutoriel, nous nous en tiendrons à une génération limitée à .NET Core 2.1.
 
-   `Program.cs`:
+   *Program.cs* :
 
    [!code-csharp[Program.cs](../../../samples/core/console-apps/HelloMsBuild/Program.cs)]
 

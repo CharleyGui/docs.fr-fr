@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 1442daf646a29c3822d06d0b649f462b37523fe2
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 3506406a441cb2028c00d5b8ed87b57cc6dff38b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002115"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423252"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
 
@@ -39,7 +39,7 @@ Les exceptions ont les propriétés suivantes :
 - Le code qui se trouve dans un bloc `finally` est exécuté même si une exception est levée. Utilisez un bloc `finally` pour libérer des ressources, par exemple pour fermer tous les flux ou fichiers qui ont été ouverts dans le bloc `try`.
 - Les exceptions gérées dans .NET Framework sont implémentées au-dessus du mécanisme de gestion structurée des exceptions de Win32. Pour plus d’informations, consultez les pages [Gestion structurée des exceptions (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) et [Cours intensif sur la gestion structurée des exceptions de Win32](https://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).
 
-## <a name="related-sections"></a>Sections connexes
+## <a name="related-sections"></a>Rubriques connexes
 
 Pour plus d’informations sur les exceptions et la gestion des exceptions, consultez les articles suivants :
 
@@ -47,13 +47,13 @@ Pour plus d’informations sur les exceptions et la gestion des exceptions, cons
 - [Gestion des exceptions](exception-handling.md)
 - [Création et levée d’exceptions](creating-and-throwing-exceptions.md)
 - [Exceptions générées par le compilateur](compiler-generated-exceptions.md)
-- [Guide pratique pour gérer une exception à l’aide de try/catch (Guide de programmation C#)](how-to-handle-an-exception-using-try-catch.md)
-- [Guide pratique pour exécuter le code de nettoyage à l’aide de finally](how-to-execute-cleanup-code-using-finally.md)
-- [Guide pratique pour Intercepter une exception non-CLS @ no__t-0
+- [Guide pratique : gérer une exception à l’aide de try/catch (Guide de programmation C#)](how-to-handle-an-exception-using-try-catch.md)
+- [Comment : exécuter le code de nettoyage à l’aide de finally](how-to-execute-cleanup-code-using-finally.md)
+- [Comment : intercepter une exception non-CLS](how-to-catch-a-non-cls-exception.md)
 
 ## <a name="c-language-specification"></a>Spécification du langage C#
 
-Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions.md) dans la [Spécification du langage C#](../../language-reference/language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions.md) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 

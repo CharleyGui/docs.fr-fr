@@ -2,12 +2,12 @@
 title: Trusted Facade Service
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: ea2aa3840c48ba24bafeee3f10d0cb903b25dcac
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: f49d0ee2a8f58e12ba8e250e2eacf4012c30cec8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045432"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424256"
 ---
 # <a name="trusted-facade-service"></a>Trusted Facade Service
 Cet exemple de scénario montre comment transmettre les informations d’identité d’un appelant d’un service à un autre à l’aide de l’infrastructure de sécurité Windows Communication Foundation (WCF).  
@@ -22,7 +22,7 @@ Cet exemple de scénario montre comment transmettre les informations d’identit
   
 - Service principal de calculatrice  
   
- Le service de façade est chargé de valider la demande et d'authentifier l'appelant. Après authentification de l'appelant et validation de la demande, il transfert celle-ci au service principal à l'aide du canal de communication contrôlé depuis le réseau de périmètre vers le réseau interne. Le service de façade ajoute à la demande transférée des informations relatives à l'identité de l'appelant que le service principal pourra utiliser à des fins de traitement. L'identité de l'appelant est transmise à l'aide d'un jeton de sécurité `Username` figurant dans l'en-tête `Security` du message. L’exemple utilise l’infrastructure de sécurité WCF pour transmettre et extraire ces informations à `Security` partir de l’en-tête.  
+ Le service de façade est chargé de valider la demande et d'authentifier l'appelant. Après authentification de l'appelant et validation de la demande, il transfert celle-ci au service principal à l'aide du canal de communication contrôlé depuis le réseau de périmètre vers le réseau interne. Le service de façade ajoute à la demande transférée des informations relatives à l'identité de l'appelant que le service principal pourra utiliser à des fins de traitement. L'identité de l'appelant est transmise à l'aide d'un jeton de sécurité `Username` figurant dans l'en-tête `Security` du message. L’exemple utilise l’infrastructure de sécurité WCF pour transmettre et extraire ces informations à partir de l’en-tête `Security`.  
   
 > [!IMPORTANT]
 > Le service principal approuve le service de façade pour authentifier l'appelant. C'est pourquoi le service principal n'authentifie pas à nouveau l'appelant. Il utilise, en revanche, les informations d'identité fournies par le service de façade dans la demande transférée. Dans le cadre de cette relation de confiance, il est essentiel que le service principal authentifie le service de façade afin de garantir la provenance depuis une source fiable (dans ce cas, le service de façade) du message transféré.  
@@ -47,7 +47,7 @@ Cet exemple de scénario montre comment transmettre les informations d’identit
   
  Le service de façade authentifie l'appelant à l'aide de l'implémentation `UserNamePasswordValidator` personnalisée. Dans le cadre de cet exemple, le processus d'authentification se contente seulement de vérifier que le nom d'utilisateur de l'appelant correspond au mot de passe présenté. Dans la réalité, il y a de grandes chances que l'utilisateur soit authentifié à l'aide d'Active Directory ou d'un fournisseur d'appartenances ASP.NET personnalisé. L'implémentation du validateur réside dans le fichier `FacadeService.cs` .  
   
-```  
+```csharp  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
 {  
     public override void Validate(string userName, string password)  
@@ -109,13 +109,13 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 </bindings>  
 ```  
   
- L’élément de liaison [Security > s’occupe de la transmission et de l’extraction du nom d’utilisateur de l’appelant initial. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) Les > [ \<par windowsStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) et [ \<TcpTransport](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) prennent en charge l’authentification de la façade et des services principaux et la protection des messages.  
+ L’élément de liaison [\<security >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) s’occupe de la transmission et de l’extraction du nom d’utilisateur de l’appelant initial. Les [\<par windowsstreamsecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) et [\<TcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) prennent en charge l’authentification de la façade et des services principaux et la protection des messages.  
   
  Pour transférer la demande, l’implémentation du service de façade doit fournir le nom d’utilisateur de l’appelant initial afin que l’infrastructure de sécurité WCF puisse la placer dans le message transféré. Pour que l'implémentation du service de façade puisse fournir ce nom d'utilisateur, ce dernier doit être défini dans la propriété `ClientCredentials` de l'instance de proxy de client utilisée par ce service pour communiquer avec le service principal.  
   
  Le code suivant illustre la manière dont la méthode `GetCallerIdentity` est implémentée sur le service de façade. Ce même modèle est utilisé par d'autres méthodes.  
   
-```  
+```csharp  
 public string GetCallerIdentity()  
 {  
     CalculatorClient client = new CalculatorClient();  
@@ -130,7 +130,7 @@ public string GetCallerIdentity()
   
  Sur le service principal, les informations contenues dans le jeton de sécurité de nom d'utilisateur doivent être authentifiées. Par défaut, la sécurité WCF tente de mapper l’utilisateur à un compte Windows à l’aide du mot de passe fourni. Dans ce cas, aucun mot de passe n'est communiqué et le service principal n'est pas obligé d'authentifier le nom d'utilisateur, le service de façade ayant déjà procédé à cette authentification. Pour implémenter cette fonctionnalité dans WCF, un `UserNamePasswordValidator` personnalisé est fourni, qui impose uniquement qu’un nom d’utilisateur est spécifié dans le jeton et n’exécute pas d’authentification supplémentaire.  
   
-```  
+```csharp  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
 {  
     public override void Validate(string userName, string password)  
@@ -168,7 +168,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  Pour extraire les informations de nom d'utilisateur et les informations concernant le compte du service de façade approuvé, l'implémentation de service principal utilise la classe `ServiceSecurityContext` . L'exemple de code suivant illustre la manière dont la méthode `GetCallerIdentity` est implémentée.  
   
-```  
+```csharp  
 public string GetCallerIdentity()  
 {  
     // Facade service is authenticated using Windows authentication.  
@@ -209,12 +209,12 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Les informations relatives au compte du service de façade sont extraites à l'aide de la propriété `ServiceSecurityContext.Current.WindowsIdentity` . Pour accéder aux informations de l'appelant initial, le service principal utilise la propriété `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` . Le service recherche une revendication `Identity` ayant le type `Name`. Cette revendication est générée automatiquement par l’infrastructure de sécurité WCF à partir des informations `Username` contenues dans le jeton de sécurité.  
+ Les informations relatives au compte du service de façade sont extraites à l'aide de la propriété `ServiceSecurityContext.Current.WindowsIdentity` . Pour accéder aux informations de l'appelant initial, le service principal utilise la propriété `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` . Le service recherche une revendication `Identity` ayant le type `Name`. Cette revendication est générée automatiquement par l’infrastructure de sécurité WCF à partir des informations contenues dans le jeton de sécurité `Username`.  
   
-## <a name="running-the-sample"></a>Exécution de l’exemple  
+## <a name="running-the-sample"></a>Exécution de l'exemple  
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter. Vous pouvez appuyer sur le bouton ENTER de la fenêtre du service de façade ou de la fenêtre du service principal pour arrêter ces derniers.  
   
-```  
+```console  
 Username authentication required.  
 Provide a valid machine or domain ac  
    Enter username:  
@@ -238,7 +238,7 @@ Press <ENTER> to terminate client.
   
      Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser.  
   
-    ```  
+    ```console  
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  
@@ -254,7 +254,7 @@ Press <ENTER> to terminate client.
   
      La ligne suivante copie le certificat du service de façade dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.  
   
-    ```  
+    ```console  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
@@ -287,6 +287,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  

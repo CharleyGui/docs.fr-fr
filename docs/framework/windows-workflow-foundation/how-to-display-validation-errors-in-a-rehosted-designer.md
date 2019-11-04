@@ -2,12 +2,12 @@
 title: 'Procédure : afficher les erreurs de validation dans un concepteur réhébergé'
 ms.date: 03/30/2017
 ms.assetid: 5aa8fb53-8f75-433b-bc06-7c7d33583d5d
-ms.openlocfilehash: 608868882f4bec23c03f0ec78f65673e76056030
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: d36883eb77864ccc16cb5882d0de216e1aaaa589
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989663"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420608"
 ---
 # <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a>Procédure : afficher les erreurs de validation dans un concepteur réhébergé
 Cette rubrique explique comment récupérer et publier des erreurs de validation dans un [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] réhébergé. Cette opération fournit une procédure permettant de confirmer la validité d'un workflow dans un concepteur réhébergé.  
@@ -30,7 +30,7 @@ Cette rubrique explique comment récupérer et publier des erreurs de validation
         {  
             public void ShowValidationErrors(IList<ValidationErrorInfo> errors)  
             {  
-                errors.ToList().ForEach(vei => Debug.WriteLine(string.Format("Error: {0} ", vei.Message)));  
+                errors.ToList().ForEach(vei => Debug.WriteLine($"Error: {vei.Message}"));  
             }  
         }  
     }  

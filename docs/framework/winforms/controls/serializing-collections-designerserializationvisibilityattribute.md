@@ -11,23 +11,23 @@ helpviewer_keywords:
 - collections [Windows Forms], serializing
 - collections [Windows Forms], standard types
 ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: f051d7a51a5f4ff8debf40fafbb8acfd8f7098f5
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 297a7080b0c34fa10f976cbbbfb48d8c35786aca
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182631"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458082"
 ---
-# <a name="walkthrough-serialize-collections-of-standard-types"></a>Procédure pas à pas : Sérialiser des collections de types standard
+# <a name="walkthrough-serialize-collections-of-standard-types"></a>Procédure pas à pas : sérialiser des collections de types standard
 
-Vos contrôles personnalisés exposent parfois une collection en tant que propriété. Cette procédure pas à pas montre comment <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> utiliser la classe pour contrôler la façon dont une collection est sérialisée au moment du Design. L’application <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> de la valeur à votre propriété de collection garantit que la propriété sera sérialisée.
+Vos contrôles personnalisés exposent parfois une collection en tant que propriété. Cette procédure pas à pas montre comment utiliser la classe <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> pour contrôler la façon dont une collection est sérialisée au moment du Design. L’application de la valeur <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> à votre propriété de collection garantit que la propriété sera sérialisée.
 
-Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Guide pratique pour Sérialiser des collections de types standard avec DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
+Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : sérialiser des collections de types standard avec DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -37,11 +37,11 @@ La première étape consiste à créer un contrôle qui a une collection sérial
 
 1. Dans Visual Studio, créez un projet de bibliothèque de contrôles Windows, puis nommez-le **SerializationDemoControlLib**.
 
-2. `UserControl1` Renommez `SerializationDemoControl`-le. Pour plus d’informations, consultez [Renommer un symbole de code refactorisation](/visualstudio/ide/reference/rename).
+2. Renommez `UserControl1` `SerializationDemoControl`. Pour plus d’informations, consultez [Renommer un symbole de code refactorisation](/visualstudio/ide/reference/rename).
 
-3. Dans la fenêtre **Propriétés** , affectez à la <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> propriété la valeur **10**.
+3. Dans la fenêtre **Propriétés** , affectez à la propriété <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> la valeur **10**.
 
-4. Placez un <xref:System.Windows.Forms.TextBox> contrôle dans le `SerializationDemoControl`.
+4. Placez un contrôle de <xref:System.Windows.Forms.TextBox> dans le `SerializationDemoControl`.
 
 5. Sélectionnez le contrôle <xref:System.Windows.Forms.TextBox>. Dans la fenêtre **Propriétés** , définissez les propriétés suivantes.
 
@@ -52,16 +52,16 @@ La première étape consiste à créer un contrôle qui a une collection sérial
     |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars.Vertical>|
     |**ReadOnly**|`true`|
 
-6. Dans l' **éditeur de code**, déclarez un champ de `stringsValue` tableau `SerializationDemoControl`de chaînes nommé dans.
+6. Dans l' **éditeur de code**, déclarez un champ de tableau de chaînes nommé `stringsValue` dans `SerializationDemoControl`.
 
      [!code-cpp[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/cpp/form1.cpp#4)]
      [!code-csharp[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/CS/form1.cs#4)]
      [!code-vb[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/VB/form1.vb#4)]
 
-7. Définissez la `Strings` propriété sur le `SerializationDemoControl`.
+7. Définissez la propriété `Strings` sur l' `SerializationDemoControl`.
 
    > [!NOTE]
-   > La <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> valeur est utilisée pour activer la sérialisation de la collection.
+   > La valeur <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> est utilisée pour activer la sérialisation de la collection.
 
    [!code-cpp[System.ComponentModel.DesignerSerializationVisibilityAttribute#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/cpp/form1.cpp#5)]
    [!code-csharp[System.ComponentModel.DesignerSerializationVisibilityAttribute#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/CS/form1.cs#5)]
@@ -69,12 +69,12 @@ La première étape consiste à créer un contrôle qui a une collection sérial
 
 8. Appuyez sur **F5** pour générer le projet et exécuter votre contrôle dans le **conteneur de test UserControl**.
 
-9. Recherchez la propriété **Strings** dans <xref:System.Windows.Forms.PropertyGrid> le du **conteneur de test UserControl**. Sélectionnez la **propriété chaînes** , puis cliquez sur le bouton![de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
+9. Recherchez la propriété **Strings** dans le <xref:System.Windows.Forms.PropertyGrid> du **conteneur de test UserControl**. Sélectionnez la propriété **Strings** , puis sélectionnez les points de suspension (![le bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
 
 10. Entrez plusieurs chaînes dans l **'éditeur de collections String**. Séparez-les en appuyant sur la touche **entrée** à la fin de chaque chaîne. Cliquez sur **OK** lorsque vous avez terminé d’entrer des chaînes.
 
    > [!NOTE]
-   > Les chaînes que vous avez tapées <xref:System.Windows.Forms.TextBox> apparaissent dans `SerializationDemoControl`le de.
+   > Les chaînes que vous avez tapées apparaissent dans le <xref:System.Windows.Forms.TextBox> du `SerializationDemoControl`.
 
 ## <a name="serialize-a-collection-property"></a>Sérialiser une propriété de collection
 
@@ -82,22 +82,22 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
 
 1. Ajoutez un projet d’application Windows à la solution. Attribuez un nom au projet `SerializationDemoControlTest`.
 
-2. Dans la **boîte à outils**, recherchez l’onglet **Composants SerializationDemoControlLib**. Dans cet onglet, vous trouverez le `SerializationDemoControl`. Pour plus d’informations, consultez [Procédure pas à pas : Remplissage automatique de la boîte à outils](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)avec des composants personnalisés.
+2. Dans la **boîte à outils**, recherchez l’onglet **Composants SerializationDemoControlLib**. Dans cet onglet, vous trouverez la `SerializationDemoControl`. Pour plus d’informations, consultez [Procédure pas à pas : remplissage automatique de la boîte à outils avec des composants personnalisés](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).
 
-3. Placez un `SerializationDemoControl` sur votre formulaire.
+3. Placez un `SerializationDemoControl` dans votre formulaire.
 
-4. Recherchez la `Strings` propriété dans la fenêtre **Propriétés** . Cliquez sur `Strings` la propriété, puis sur le![bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
+4. Recherchez la propriété `Strings` dans la fenêtre **Propriétés** . Cliquez sur la propriété `Strings`, puis sur les points de suspension (![le bouton de sélection (...) du bouton Fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
 
 5. Tapez plusieurs chaînes dans l **'éditeur de collections String**. Séparez-les en appuyant sur **entrée** à la fin de chaque chaîne. Cliquez sur **OK** lorsque vous avez terminé d’entrer des chaînes.
 
     > [!NOTE]
-    > Les chaînes que vous avez tapées <xref:System.Windows.Forms.TextBox> apparaissent dans `SerializationDemoControl`le de.
+    > Les chaînes que vous avez tapées apparaissent dans le <xref:System.Windows.Forms.TextBox> du `SerializationDemoControl`.
 
 6. Dans l’**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.
 
 7. Ouvrez le nœud **Form1** . En dessous, il s’agit d’un fichier nommé **Form1.Designer.cs** ou **Form1. Designer. vb**. Il s’agit du fichier dans lequel le **Concepteur Windows Forms** émet du code représentant l’État au moment du design de votre formulaire et de ses contrôles enfants. Ouvrez ce fichier dans **l’éditeur de code**.
 
-8. Ouvrez la région appelée **code généré par le Concepteur Windows Form** et recherchez la section intitulée **serializationDemoControl1**. Sous cette étiquette se trouve le code qui représente l’État sérialisé de votre contrôle. Les chaînes que vous avez tapées à l’étape 5 apparaissent dans `Strings` une assignation à la propriété. Les exemples de code suivants C# dans et Visual Basic, montrent un code similaire à ce que vous verrez si vous avez tapé les chaînes « Red », « orange » et « Yellow ».
+8. Ouvrez la région appelée **code généré par le Concepteur Windows Form** et recherchez la section intitulée **serializationDemoControl1**. Sous cette étiquette se trouve le code qui représente l’État sérialisé de votre contrôle. Les chaînes que vous avez tapées à l’étape 5 apparaissent dans une assignation à la propriété `Strings`. Les exemples de code suivants C# dans et Visual Basic, montrent un code similaire à ce que vous verrez si vous avez tapé les chaînes « Red », « orange » et « Yellow ».
 
     ```csharp
     this.serializationDemoControl1.Strings = new string[] {
@@ -110,7 +110,7 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
     Me.serializationDemoControl1.Strings = New String() {"red", "orange", "yellow"}
     ```
 
-9. Dans l' **éditeur de code**, affectez à <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> <xref:System.ComponentModel.DesignerSerializationVisibility.Hidden>la `Strings` propriété de la propriété la valeur.
+9. Dans l' **éditeur de code**, remplacez la valeur de la <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> de la propriété `Strings` par <xref:System.ComponentModel.DesignerSerializationVisibility.Hidden>.
 
     ```csharp
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -123,7 +123,7 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
 10. Régénérez la solution et répétez les étapes 3 et 4.
 
 > [!NOTE]
-> Dans ce cas, le **Concepteur Windows Forms** n’émet aucune assignation à `Strings` la propriété.
+> Dans ce cas, le **Concepteur Windows Forms** n’émet aucune assignation à la propriété `Strings`.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -135,9 +135,9 @@ Une fois que vous savez comment sérialiser une collection de types standard, en
 
 - [Vue d’ensemble de la sérialisation du concepteur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
 
-- [Procédure pas à pas : Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](creating-a-wf-control-design-time-features.md)
+- [Procédure pas à pas : création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](creating-a-wf-control-design-time-features.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>
-- [Procédure pas à pas : Remplissage automatique de la boîte à outils avec des composants personnalisés](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+- [Procédure pas à pas : remplissage automatique de la boîte à outils avec des composants personnalisés](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

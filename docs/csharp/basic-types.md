@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: f984321ab01fc4b5ddd92a20b178748de50246da
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 7a75ad5080cd2646070447cbc3dcc46b8c73dd65
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037670"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420710"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -66,7 +66,7 @@ Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui serv
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
-L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](language-reference/keywords/object.md). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `strings` dans l’exemple précédent. Pour plus d’informations, consultez la page [Génériques](programming-guide/generics/index.md).
+L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](language-reference/builtin-types/reference-types.md#the-object-type). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `strings` dans l’exemple précédent. Pour plus d’informations, consultez la page [Génériques](programming-guide/generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>Types implicites, types anonymes et types tuple
 
@@ -82,9 +82,9 @@ Il est important de comprendre ces deux points fondamentaux à propos du systèm
   
 - Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut, à son tour, dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, y compris les types numériques intégrés tels que <xref:System.Int32> (mot clé C# : `int`), dérivent au final d’un seul type de base, qui est <xref:System.Object> (mot clé C# : `object`). Cette hiérarchie de types unifiée est appelée [Système de type commun](../standard/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](programming-guide/classes-and-structs/inheritance.md).  
   
-- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET Framework, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé [struct](language-reference/keywords/struct.md) sont des types valeur ; tous les types numériques intégrés sont des **structs**. Pour plus d’informations sur les types valeur, consultez [Structs](structs.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](classes.md). Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.
+- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET Framework, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé [struct](language-reference/keywords/struct.md) sont des types valeur ; tous les types numériques intégrés sont des **structs**. Pour plus d’informations sur les types valeur, consultez [Structs](structs.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](programming-guide/classes-and-structs/classes.md). Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Structures](structs.md)
-- [Classes](classes.md)
+- [Classes](programming-guide/classes-and-structs/classes.md)

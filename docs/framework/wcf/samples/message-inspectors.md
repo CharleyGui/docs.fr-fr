@@ -2,12 +2,12 @@
 title: Message Inspectors
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: e7846b8710fa52a5b13de245b8b7147e217533db
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 01553084aa049688cd05fa36e46fb6f67983fb21
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039397"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424149"
 ---
 # <a name="message-inspectors"></a>Message Inspectors
 Cet exemple montre comment implémenter et configurer des inspecteurs de message de service et client.  
@@ -19,7 +19,7 @@ Cet exemple montre comment implémenter et configurer des inspecteurs de message
 ## <a name="message-inspector"></a>Inspecteur de message  
  Les inspecteurs de message client et de service implémentent respectivement l'interface <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> et l'interface <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector>. Les implémentations peuvent être combinées dans une classe unique pour former un inspecteur de message qui fonctionne pour les deux côtés. Cet exemple implémente un inspecteur de message combiné de ce type. L'inspecteur est construit en passant un jeu de schémas par rapport auquel les messages entrants et sortants sont validés. Il permet au développeur de spécifier si les messages entrants ou sortants sont validés et si l'inspecteur est en mode client ou répartiteur, ce qui affecte la gestion des erreurs tel que développé ultérieurement dans cette rubrique.  
   
-```  
+```csharp  
 public class SchemaValidationMessageInspector : IClientMessageInspector, IDispatchMessageInspector  
 {  
     XmlSchemaSet schemaSet;  
@@ -43,7 +43,7 @@ public class SchemaValidationMessageInspector : IClientMessageInspector, IDispat
   
  <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> est appelé par le répartiteur lorsqu'un message a été reçu, traité par la pile de canaux et assigné à un service, mais avant qu'il soit désérialisé et distribué à une opération. Si le message entrant a été chiffré, le message est déjà déchiffré lorsqu'il atteint l'inspecteur de message. La méthode obtient le message `request` passé comme paramètre de référence, qui autorise le message à être inspecté, manipulé ou remplacé selon les besoins. La valeur de retour peut être n'importe quel objet et est utilisée comme objet d'état de corrélation passé à <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> lorsque le service retourne une réponse au message actuel. Dans cet exemple, <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> délègue l'inspection (validation) du message à la méthode locale privée `ValidateMessageBody` et ne retourne pas d'objet d'état de corrélation. Cette méthode garantit qu'aucun message non valide ne passe dans le service.  
   
-```  
+```csharp  
 object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel, System.ServiceModel.InstanceContext instanceContext)  
 {  
     if (validateRequest)  
@@ -60,7 +60,7 @@ object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Cha
   
  Si une erreur de validation se produit sur le service, la méthode `ValidateMessageBody` lève <xref:System.ServiceModel.FaultException> (exceptions dérivées). Dans <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, ces exceptions peuvent être placées dans l'infrastructure de modèle de service où elles sont automatiquement transformées en erreurs SOAP et relayées au client. Dans <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A>, les exceptions <xref:System.ServiceModel.FaultException> ne doivent pas être placées dans l'infrastructure, car la transformation des exceptions levées par le service se produit avant l'appel de l'inspecteur de message. Par conséquent, l'implémentation suivante intercepte l'exception `ReplyValidationFault` connue et remplace le message de réponse par un message d'erreur explicite. Cette méthode garantit qu'aucun message non valide n'est retourné par l'implémentation de service.  
   
-```  
+```csharp  
 void IDispatchMessageInspector.BeforeSendReply(ref System.ServiceModel.Channels.Message reply, object correlationState)  
 {  
     if (validateReply)  
@@ -88,7 +88,7 @@ void IDispatchMessageInspector.BeforeSendReply(ref System.ServiceModel.Channels.
   
  L'implémentation <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> garantit qu'aucun message non valide n'est envoyé au service.  
   
-```  
+```csharp  
 object IClientMessageInspector.BeforeSendRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel)  
 {  
     if (validateRequest)  
@@ -101,7 +101,7 @@ object IClientMessageInspector.BeforeSendRequest(ref System.ServiceModel.Channel
   
  L'implémentation `AfterReceiveReply` garantit qu'aucun message non valide reçu du service n'est relayé au code utilisateur client.  
   
-```  
+```csharp  
 void IClientMessageInspector.AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)  
 {  
     if (validateReply)  
@@ -115,7 +115,7 @@ void IClientMessageInspector.AfterReceiveReply(ref System.ServiceModel.Channels.
   
  Si aucune erreur ne se produit, un nouveau message est construit : il copie les propriétés ainsi que les en-têtes du message d'origine et utilise l'infoset maintenant validé dans le flux de mémoire, lequel est encapsulé par un <xref:System.Xml.XmlDictionaryReader> et ajouté au message de remplacement.  
   
-```  
+```csharp  
 void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool isRequest)  
 {  
     if (!message.IsFault)  
@@ -162,7 +162,7 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
   
  Comme indiqué précédemment, les exceptions levées par le gestionnaire diffèrent entre le client et le service. Sur le service, les exceptions sont dérivées de <xref:System.ServiceModel.FaultException> ; sur le client, il s'agit d'exceptions personnalisées normales.  
   
-```  
+```csharp  
         void InspectionValidationHandler(object sender, ValidationEventArgs e)  
 {  
     if (e.Severity == XmlSeverityType.Error)  
@@ -206,7 +206,7 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
   
  La classe `SchemaValidationBehavior` suivante est le comportement utilisé pour ajouter l'inspecteur de message de cet exemple à l'exécution du client ou du répartiteur. L'implémentation est plutôt basique dans les deux cas. Dans <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> et <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A>, l'inspecteur de message est créé et ajouté à la collection <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> de l'exécution respective.  
   
-```  
+```csharp  
 public class SchemaValidationBehavior : IEndpointBehavior  
 {  
     XmlSchemaSet schemaSet;   
@@ -259,7 +259,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
 > Ce comportement spécifique ne joue pas le rôle d'attribut et, par conséquent, ne peut pas être ajouté de façon déclarative sur un type de contrat d'un type de service. Cette décision de conception a été prise car la collection de schémas ne peut pas être chargée dans une déclaration attribute, et faire référence à un emplacement de configuration supplémentaire (par exemple aux paramètres d’application) dans cet attribut revient à créer un élément de configuration qui n’est pas cohérent avec le reste de la configuration de modèle de service. Par conséquent, ce comportement peut uniquement être ajouté de façon impérative via le code et une extension de configuration de modèle de service.  
   
 ## <a name="adding-the-message-inspector-through-configuration"></a>Ajout de l'inspecteur de message via la configuration  
- Pour configurer un comportement personnalisé sur un point de terminaison dans le fichier de configuration de l’application, le modèle de service requiert des implémenteurs pour créer un *élément* d’extension <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>de configuration représenté par une classe dérivée de. Cette extension doit être ensuite ajoutée à la section de configuration du modèle de service pour les extensions, tel qu’indiqué pour l’extension suivante traitée dans cette section.  
+ Pour configurer un comportement personnalisé sur un point de terminaison dans le fichier de configuration de l’application, le modèle de service requiert des implémenteurs pour créer un *élément d’extension* de configuration représenté par une classe dérivée de <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>. Cette extension doit être ensuite ajoutée à la section de configuration du modèle de service pour les extensions, tel qu’indiqué pour l’extension suivante traitée dans cette section.  
   
 ```xml  
 <system.serviceModel>  
@@ -299,7 +299,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
   
  La méthode `CreateBehavior` substituée change les données de configuration en objet de comportement lorsque l'exécution évalue les données de configuration car elle génère un client ou un point de terminaison.  
   
-```  
+```csharp  
 public class SchemaValidationBehaviorExtensionElement : BehaviorExtensionElement  
 {  
     public SchemaValidationBehaviorExtensionElement()  
@@ -369,7 +369,7 @@ public bool ValidateRequest
 ## <a name="adding-message-inspectors-imperatively"></a>Ajout d'inspecteurs de message de façon impérative  
  Excepté via les attributs (approche qui n'est pas prise en charge dans cet exemple pour la raison précédemment citée) et la configuration, des comportements peuvent être assez facilement ajoutés à une exécution de client et de service à l'aide de code impératif. Dans cet exemple, cette opération s'effectue dans l'application cliente afin de tester l'inspecteur de message client. La classe `GenericClient` est dérivée de <xref:System.ServiceModel.ClientBase%601>, qui expose la configuration de point de terminaison au code utilisateur. Avant que le client ne soit implicitement ouvert, la configuration de point de terminaison peut être modifiée, par exemple en ajoutant des comportements tel qu'indiqué dans le code suivant. L'ajout du comportement sur le service est en grande partie équivalent à la technique du client présentée ici et doit être effectué avant que l'hôte de service ne soit ouvert.  
   
-```  
+```csharp  
 try  
 {  
     Console.WriteLine("*** Call 'Hello' with generic client, with client behavior");  
@@ -409,6 +409,6 @@ catch (Exception e)
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageInspectors`  

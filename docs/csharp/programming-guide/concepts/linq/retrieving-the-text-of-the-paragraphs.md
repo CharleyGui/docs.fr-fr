@@ -2,12 +2,12 @@
 title: Récupération du texte des paragraphes (C#)
 ms.date: 07/20/2015
 ms.assetid: 127d635e-e559-408f-90c8-2bb621ca50ac
-ms.openlocfilehash: 986145fa62722a35d23831a3818b89e63529b85f
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cedca9df84ee687a9e304cde0015b46d07956364
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253057"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423340"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-c"></a>Récupération du texte des paragraphes (C#)
 Cet exemple s’appuie sur l’exemple précédent, [Récupération des paragraphes et de leurs styles (C#)](./retrieving-the-paragraphs-and-their-styles.md). Ce nouvel exemple récupère le texte de chaque paragraphe en tant que chaîne.  
@@ -18,7 +18,7 @@ Cet exemple s’appuie sur l’exemple précédent, [Récupération des paragrap
   
  Bien entendu, il serait possible d'écrire une requête unique contenant la fonctionnalité de récupération des paragraphes, du style de chaque paragraphe et du texte de chaque paragraphe. Toutefois, il est souvent utile de découper une requête compliquée en plusieurs requêtes car le code obtenu sera plus modulable et plus facile à maintenir. En outre, si vous avez besoin de réutiliser une partie de la requête, il est plus facile de refactoriser si les requêtes sont écrites de cette manière.  
   
- Ces requêtes, qui sont chaînées, utilisent le modèle de traitement détaillé dans la rubrique [Tutoriel : Chaînage de requêtes (C#)](./tutorial-chaining-queries-together.md).  
+ Ces requêtes, qui sont chaînées ensemble, utilisent le modèle de traitement examiné en détail dans la rubrique [Didacticiel : chaînage de requêtes (C#)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
 ## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML et détermine le nœud d'élément, le nom de style et le texte de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
@@ -144,5 +144,5 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](./tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](shape-of-wordprocessingml-documents.md)
 - [Exécution et évaluation différées dans LINQ to XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

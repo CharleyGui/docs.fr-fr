@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: bbdbcaf466e0b4dca4b78902ca9e7a49b02ac718
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 699887d635ab074fc9ffa4cd7fa354372eb82f25
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70394233"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422633"
 ---
 # <a name="override-c-reference"></a>override (référence C#)
 
@@ -21,7 +21,7 @@ Le modificateur `override` est nécessaire pour étendre ou modifier l’implém
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, la `Square` classe doit fournir une implémentation substituée de `GetArea` , `GetArea` car est héritée de `Shape` la classe abstraite :
+Dans cet exemple, la classe `Square` doit fournir une implémentation substituée de `GetArea`, car `GetArea` est héritée de la classe `Shape` abstraite :
 
 [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
 
@@ -49,11 +49,11 @@ Cet exemple définit une classe de base nommée `Employee` et une classe dériv�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Héritage](../../programming-guide/classes-and-structs/inheritance.md)
 - [Mots clés C#](index.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [abstract](abstract.md)
 - [virtual](virtual.md)
 - [new (modificateur)](new-modifier.md)

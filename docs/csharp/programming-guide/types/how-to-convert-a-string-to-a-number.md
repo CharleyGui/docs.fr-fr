@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Convertir une chaîne en nombre - Guide de programmation C#'
+title: 'Comment : convertir une chaîne en un guide de C# programmation de nombres'
 ms.custom: seodec18
 ms.date: 02/11/2019
 helpviewer_keywords:
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: 377074bf09cf1e24ec022cee506588a9dcb8cb80
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
-ms.translationtype: HT
+ms.openlocfilehash: c39602afbece4faaf6599a5c76f5746defffe03a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133702"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417647"
 ---
-# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Procédure : Convertir une chaîne en nombre (Guide de programmation C#)
+# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Guide pratique pour convertir une chaîne en nombre (Guide de programmation C#)
 
-Vous pouvez convertir une [chaîne](../../language-reference/keywords/string.md) en nombre en appelant la méthode `Parse` ou `TryParse` des différents types numériques (`int`, `long`, `double`, etc.), ou bien en utilisant des méthodes dans la classe <xref:System.Convert?displayProperty=nameWithType>.  
+Vous pouvez convertir une [chaîne](../../language-reference/builtin-types/reference-types.md) en nombre en appelant la méthode `Parse` ou `TryParse` des différents types numériques (`int`, `long`, `double`, etc.), ou bien en utilisant des méthodes dans la classe <xref:System.Convert?displayProperty=nameWithType>.  
   
  Si vous avez une chaîne, il est légèrement plus efficace et direct d’appeler une méthode `TryParse` (par exemple [`int.TryParse("11", out number)`](xref:System.Int32.TryParse%2A)) ou une méthode `Parse` (par exemple, [`var number = int.Parse("11")`](xref:System.Int32.Parse%2A)).  L'utilisation d'une méthode <xref:System.Convert> s'avère plus utile pour les objets généraux qui implémentent <xref:System.IConvertible>.  
   
@@ -51,12 +51,12 @@ Le tableau suivant répertorie quelques unes des méthodes de la classe <xref:Sy
 |`uint`|<xref:System.Convert.ToUInt32%28System.String%29>|  
 |`ulong`|<xref:System.Convert.ToUInt64%28System.String%29>|  
   
- L’exemple suivant appelle la méthode <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> pour convertir une entrée de type chaîne en [int](../../language-reference/builtin-types/integral-numeric-types.md). L’exemple intercepte les deux exceptions les plus communes qui peuvent être levées par cette méthode, <xref:System.FormatException> et <xref:System.OverflowException>. Si le nombre obtenu peut être incrémenté sans dépasser <xref:System.Int32.MaxValue?displayProperty=nameWithType>, l’exemple ajoute 1 au résultat et affiche la sortie.  
+ L’exemple suivant appelle la méthode <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> pour convertir une chaîne d’entrée en [int](../../language-reference/builtin-types/integral-numeric-types.md). L’exemple intercepte les deux exceptions les plus courantes qui peuvent être levées par cette méthode, <xref:System.FormatException> et <xref:System.OverflowException>. Si le nombre obtenu peut être incrémenté sans dépasser <xref:System.Int32.MaxValue?displayProperty=nameWithType>, l’exemple ajoute 1 au résultat et affiche la sortie.  
   
 [!code-csharp[Parsing with Convert methods](~/samples/snippets/csharp/programming-guide/string-to-number/convert/program.cs)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Types](./index.md)
-- [Guide pratique pour déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Comment : déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)

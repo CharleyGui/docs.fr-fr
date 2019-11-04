@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 93f02b8a0f828be89c6a1b7bfcdc6ba2a2a93e81
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: c6eff1cae79e7b555c5a41d10712b4f3022ff793
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597193"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419488"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Types anonymes (Guide de programmation C#)
 
@@ -29,7 +29,7 @@ var v = new { Amount = 108, Message = "Hello" };
 Console.WriteLine(v.Amount + v.Message);  
 ```  
   
- Les types anonymes sont en règle générale utilisés dans la clause [select](../../language-reference/keywords/select-clause.md) d’une expression de requête pour retourner un sous-ensemble de propriétés de chaque objet dans la séquence source. Pour plus d’informations sur les requêtes, consultez [Expressions de requête LINQ](../linq-query-expressions/index.md).  
+ Les types anonymes sont en règle générale utilisés dans la clause [select](../../language-reference/keywords/select-clause.md) d’une expression de requête pour retourner un sous-ensemble de propriétés de chaque objet dans la séquence source. Pour plus d’informations sur les requêtes, consultez [LINQ in C# ](../../linq/index.md).  
   
  Les types anonymes contiennent une ou plusieurs propriétés en lecture seule publiques. Aucun autre type de membres de classe, tels que des méthodes ou des événements, n'est valide. L'expression qui est utilisée pour initialiser une propriété ne peut pas être `null`, une fonction anonyme ou un type pointeur.  
   
@@ -47,8 +47,8 @@ Console.WriteLine(v.Amount + v.Message);
 var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", diam = 1 }};  
 ```  
   
-## <a name="remarks"></a>Remarques  
- Les types anonymes sont des types [class](../../language-reference/keywords/class.md) qui dérivent directement d’[object](../../language-reference/keywords/object.md) et qui ne peuvent pas être castés en type à l’exception du type [object](../../language-reference/keywords/object.md). Le compilateur fournit un nom pour chaque type anonyme, bien que votre application ne puisse pas y accéder. Du point de vue du CLR, un type anonyme n'est pas différent des autres types de référence.  
+## <a name="remarks"></a>Notes  
+ Les types anonymes sont des types [class](../../language-reference/keywords/class.md) qui dérivent directement d’[object](../../language-reference/builtin-types/reference-types.md) et qui ne peuvent pas être castés en type à l’exception du type [object](../../language-reference/builtin-types/reference-types.md). Le compilateur fournit un nom pour chaque type anonyme, bien que votre application ne puisse pas y accéder. Du point de vue du CLR, un type anonyme n'est pas différent des autres types de référence.  
   
  Si plusieurs initialiseurs d'objet dans un assembly spécifient une séquence de propriétés dans le même ordre et qui sont du même type et portent le même nom, le compilateur traite les objets comme des instances du même type. Elles partagent les mêmes informations de type générées par le compilateur.  
   
@@ -60,5 +60,5 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 
 - [Guide de programmation C#](../index.md)
 - [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md)
-- [Bien démarrer avec LINQ en C#](../concepts/linq/getting-started-with-linq.md)
-- [Expressions de requête LINQ](../linq-query-expressions/index.md)
+- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)
+- [LINQ en C#](../../linq/index.md)

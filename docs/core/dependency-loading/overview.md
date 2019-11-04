@@ -5,16 +5,16 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: 0388bd1fa29ce1caad93c917503dac9eed8974e1
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f6b5fc1f92171b61dcab162b782ca7212c602d76
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926396"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416663"
 ---
 # <a name="dependency-loading-in-net-core"></a>Chargement des dépendances dans .NET Core
 
-Chaque application .NET Core a des dépendances. Même l’application `hello world` simple a des dépendances sur des parties des bibliothèques de classes .net core.
+Chaque application .NET Core a des dépendances. Même l’application `hello world` simple a des dépendances sur des portions des bibliothèques de classes .NET Core.
 
 La compréhension de la logique de chargement d’assembly .NET Core par défaut peut aider à comprendre et à déboguer les problèmes de déploiement classiques.
 
@@ -22,7 +22,7 @@ Dans certaines applications, les dépendances sont déterminées dynamiquement a
 
 ## <a name="understanding-assemblyloadcontext"></a>Présentation d’AssemblyLoadContext
 
-L' <xref:System.Runtime.Loader.AssemblyLoadContext> API est essentielle à la conception du chargement .net core. L’article [Présentation de AssemblyLoadContext](understanding-assemblyloadcontext.md) fournit une vue d’ensemble conceptuelle de la conception.
+L’API <xref:System.Runtime.Loader.AssemblyLoadContext> est essentielle à la conception du chargement .NET Core. L’article [Présentation de AssemblyLoadContext](understanding-assemblyloadcontext.md) fournit une vue d’ensemble conceptuelle de la conception.
 
 ## <a name="loading-details"></a>Chargement des détails
 
@@ -35,8 +35,8 @@ Les détails de l’algorithme de chargement sont présentés brièvement dans p
 
 ## <a name="create-a-net-core-application-with-plugins"></a>Créer une application .NET Core avec des plug-ins
 
-Le didacticiel [créer une application .net core avec des plug-ins](../tutorials/creating-app-with-plugin-support.md) décrit comment créer un AssemblyLoadContext personnalisé. Il utilise un <xref:System.Runtime.Loader.AssemblyDependencyResolver> pour résoudre les dépendances du plug-in. Le didacticiel isole correctement les dépendances du plug-in à partir de l’application d’hébergement.
+Le didacticiel [créer une application .net core avec des plug-ins](../tutorials/creating-app-with-plugin-support.md) décrit comment créer un AssemblyLoadContext personnalisé. Il utilise une <xref:System.Runtime.Loader.AssemblyDependencyResolver> pour résoudre les dépendances du plug-in. Le didacticiel isole correctement les dépendances du plug-in à partir de l’application d’hébergement.
 
 ## <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>Comment utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core
 
-L’article [comment utiliser et déboguer l’assembly dans .net Core](../../standard/assembly/unloadability-howto.md) est un didacticiel pas à pas. Il montre comment charger une application .NET Core, l’exécuter, puis la décharger. L’article fournit également des conseils de débogage.
+L’article [comment utiliser et déboguer l’assembly dans .net Core](../../standard/assembly/unloadability.md) est un didacticiel pas à pas. Il montre comment charger une application .NET Core, l’exécuter, puis la décharger. L’article fournit également des conseils de débogage.

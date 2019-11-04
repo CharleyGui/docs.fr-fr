@@ -2,12 +2,12 @@
 title: Tri des données (C#)
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 28cf4025d0b9bca841695c9873a0ff7972726b98
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 78b263c384895b736b11cc524befa42b4a896380
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591040"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418187"
 ---
 # <a name="sorting-data-c"></a>Tri des données (C#)
 Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs. Le premier critère de tri effectue un tri principal sur les éléments. En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.  
@@ -131,5 +131,5 @@ foreach (string str in query)
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [orderby, clause](../../../language-reference/keywords/orderby-clause.md)
-- [Guide pratique pour classer les résultats d’une clause join](../../linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)
+- [Comment : classer les résultats d’une clause Join](../../../linq/order-the-results-of-a-join-clause.md)
 - [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

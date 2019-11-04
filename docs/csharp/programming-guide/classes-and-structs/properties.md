@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: dec4d4239fd1a953da6e64a1e1aff9593e2863e2
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 16dbfddb6f947ca07b60ab0e676e8c0ed118ac40
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596156"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418855"
 ---
 # <a name="properties-c-programming-guide"></a>Propriétés (Guide de programmation C#)
 
@@ -72,7 +72,7 @@ Si une propriété a les accesseurs `get` et `set`, tous deux doivent être impl
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
-Pour plus d’informations, consultez [Propriétés](~/_csharplang/spec/classes.md#properties) dans la [spécification du langage C#](../../language-reference/language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Propriétés](~/_csharplang/spec/classes.md#properties) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="see-also"></a>Voir aussi
 

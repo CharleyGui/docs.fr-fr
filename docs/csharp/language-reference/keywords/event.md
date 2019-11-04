@@ -10,17 +10,17 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 4149663422908069b5b65ed3c32ccc6dbdfd7729
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: a6a62881f7205891bafe039a42da44eb8f8d03c0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605810"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422829"
 ---
 # <a name="event-c-reference"></a>event (référence C#)
 Le mot clé `event` sert à déclarer un événement dans une classe d’éditeur.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment déclarer et déclencher un événement qui utilise <xref:System.EventHandler> comme type délégué sous-jacent. Pour obtenir l’exemple de code complet qui illustre aussi comment utiliser le type délégué générique <xref:System.EventHandler%601> et comment s’abonner à un événement et créer une méthode de gestionnaire d’événements, consultez [Guide pratique pour publier des événements conformes aux indications du .NET Framework](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
   
  [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
@@ -39,7 +39,7 @@ Le mot clé `event` sert à déclarer un événement dans une classe d’éditeu
 |[sealed](./sealed.md)|Spécifie que pour les classes dérivées l’événement n’est plus virtuel.||  
 |[abstract](./abstract.md)|Le compilateur ne génère pas les blocs d’accesseurs d’événement `add` et `remove`, et par conséquent les classes dérivées doivent fournir leur propre implémentation.||  
   
- Un événement peut être déclaré comme événement statique à l’aide du mot clé [static](./static.md). Cela rend le champ accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Un événement peut être déclaré comme événement statique à l’aide du mot clé [static](./static.md). Cela rend le champ accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
  Un événement peut être marqué comme événement virtuel à l’aide du mot clé [virtual](./virtual.md). Cela permet aux classes dérivées de substituer le comportement d’événement à l’aide du mot clé [override](./override.md). Pour plus d’informations, consultez [Héritage](../../programming-guide/classes-and-structs/inheritance.md). Un événement qui se substitue à un événement virtuel peut également être [sealed](./sealed.md), ce qui signifie que pour les classes dérivées il n’est plus virtuel. Pour finir, un événement peut être déclaré [abstract](./abstract.md), ce qui signifie que le compilateur ne génère pas les blocs d’accesseurs d’événement `add` et `remove`. Ainsi, les classes dérivées doivent fournir leur propre implémentation.  
   
@@ -48,10 +48,10 @@ Le mot clé `event` sert à déclarer un événement dans une classe d’éditeu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [add](./add.md)
 - [remove](./remove.md)
-- [Modificateurs](./modifiers.md)
+- [Modificateurs](index.md)
 - [Guide pratique pour combiner des délégués (délégués multicast)](../../programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

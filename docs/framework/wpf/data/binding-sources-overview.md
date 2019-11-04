@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: cf5873cdf137573826d5361d077e0534e8cba1f0
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 5d0d28213ed8b4a0d464793aeba6823db2405bbe
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920290"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459015"
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.
@@ -54,7 +54,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 ## <a name="using-entire-objects-as-a-binding-source"></a>Utilisation d’objets entiers comme source de liaison
  Vous pouvez utiliser un objet entier comme source de liaison. Vous pouvez spécifier une source de liaison à l’aide de la <xref:System.Windows.Data.Binding.Source%2A> ou de la propriété <xref:System.Windows.FrameworkElement.DataContext%2A>, puis fournir une déclaration de liaison vide : `{Binding}`. Les scénarios dans lesquels cela est utile incluent la liaison aux objets qui sont de type chaîne, la liaison à des objets ayant plusieurs propriétés qui vous intéressent ou une liaison à des objets de collection. Pour obtenir un exemple de liaison à un objet de collection entier, consultez [Utiliser le modèle maître/détail avec des données hiérarchiques](how-to-use-the-master-detail-pattern-with-hierarchical-data.md).
 
- Notez que vous devrez peut-être appliquer une logique personnalisée afin que les données soient significatives pour votre propriété cible liée aux données. La logique personnalisée peut se présenter sous la forme d’un convertisseur personnalisé (si la conversion de type par défaut n’existe pas) ou d’un <xref:System.Windows.DataTemplate>. Pour plus d’informations sur les convertisseurs, consultez la section Conversion de données de [Vue d'ensemble de la liaison de données](data-binding-overview.md). Pour plus d’informations sur les modèles de données, consultez [Vue d’ensemble des modèles de données](data-templating-overview.md).
+ Notez que vous devrez peut-être appliquer une logique personnalisée afin que les données soient significatives pour votre propriété cible liée aux données. La logique personnalisée peut se présenter sous la forme d’un convertisseur personnalisé (si la conversion de type par défaut n’existe pas) ou d’un <xref:System.Windows.DataTemplate>. Pour plus d’informations sur les convertisseurs, consultez la section Conversion de données de [Vue d'ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md). Pour plus d’informations sur les modèles de données, consultez [Vue d’ensemble des modèles de données](data-templating-overview.md).
 
 <a name="collections"></a>
 ## <a name="using-collection-objects-as-a-binding-source"></a>Utilisation d’objets de collection comme source de liaison
@@ -64,7 +64,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 
  La classe <xref:System.Collections.ObjectModel.ObservableCollection%601> est une implémentation intégrée d’une collection de données qui expose l’interface <xref:System.Collections.Specialized.INotifyCollectionChanged>. Les objets de données individuels dans la collection doivent satisfaire les spécifications décrites dans les sections précédentes. Pour obtenir un exemple, consultez [Créer et effectuer une liaison à un ObservableCollection](how-to-create-and-bind-to-an-observablecollection.md). Avant d’implémenter votre propre collection, envisagez d’utiliser <xref:System.Collections.ObjectModel.ObservableCollection%601> ou l’une des classes de collection existantes, telles que <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>et <xref:System.ComponentModel.BindingList%601>, parmi de nombreuses autres.
 
- WPF ne lie jamais directement à la collection. Si vous spécifiez une collection comme source de liaison, WPF lie plutôt à la vue par défaut de la collection. Pour plus d’informations sur les vues par défaut, consultez [Vue d’ensemble de la liaison de données](data-binding-overview.md).
+ WPF ne lie jamais directement à la collection. Si vous spécifiez une collection comme source de liaison, WPF lie plutôt à la vue par défaut de la collection. Pour plus d’informations sur les vues par défaut, consultez [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md).
 
  Si vous avez un scénario avancé et que vous souhaitez implémenter votre propre collection, envisagez d’utiliser l’interface <xref:System.Collections.IList>. <xref:System.Collections.IList> fournit une collection non générique d’objets accessibles individuellement par index, ce qui peut améliorer les performances.
 
@@ -97,6 +97,6 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 - <xref:System.Windows.Data.ObjectDataProvider>
 - <xref:System.Windows.Data.XmlDataProvider>
 - [Spécifier la source de liaison](how-to-specify-the-binding-source.md)
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
+- [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
 - [Vue d’ensemble de la liaison de données WPF avec LINQ to XML](wpf-data-binding-with-linq-to-xml-overview.md)
 - [Optimiser les performances de liaison de données](../advanced/optimizing-performance-data-binding.md)

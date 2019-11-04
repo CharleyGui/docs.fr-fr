@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: 5013738e74aaa260ab6f5bcd4d73904cfbdcc3c8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 895f561c15941d851980ea9b392d2e86db2462f3
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590268"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423284"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Gestion des exceptions (Guide de programmation C#)
 Un bloc [try](../../language-reference/keywords/try-catch.md) est utilisé par les programmeurs C# pour partitionner du code susceptible d’être affecté par une exception. Des blocs [catch](../../language-reference/keywords/try-catch.md) associés sont utilisés pour gérer les exceptions générées. Un bloc [finally](../../language-reference/keywords/try-finally.md) contient du code qui s’exécute dans tous les cas, qu’une exception soit levée ou non dans le bloc `try` (il peut s’agir par exemple de la libération des ressources allouées dans le bloc `try`). Un bloc `try` doit être associé à un ou plusieurs blocs `catch`, à un bloc `finally`, ou aux deux.  
@@ -54,11 +54,11 @@ Un bloc [try](../../language-reference/keywords/try-catch.md) est utilisé par l
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
-Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions.md) et [Instruction try](~/_csharplang/spec/statements.md#the-try-statement) dans la [spécification du langage C#](../../language-reference/language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions.md) et [Instruction try](~/_csharplang/spec/statements.md#the-try-statement) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Informations de référence sur C#](../../language-reference/index.md)
 - [Guide de programmation C#](../index.md)
 - [Exceptions et gestion des exceptions](./index.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)

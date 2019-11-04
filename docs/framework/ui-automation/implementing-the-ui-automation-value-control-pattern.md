@@ -6,23 +6,23 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: 54991ce16aa905f4138013944fb8b5a317675d9b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 75cf628b6faad1f8c52a70c77baa4ede21160510
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043158"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458134"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implémentation du modèle de contrôle Value d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IValueProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.ValuePattern> est utilisé pour prendre en charge les contrôles qui ont une valeur intrinsèque ne couvrant pas de plage et qui peuvent être représentés sous forme de chaîne. Cette chaîne peut être modifiée, en fonction du contrôle et de ses paramètres. Pour obtenir des exemples de contrôles implémentant ce modèle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle Value, notez les conventions et recommandations suivantes :  
   
 - Les contrôles tels que <xref:System.Windows.Automation.ControlType.ListItem> et <xref:System.Windows.Automation.ControlType.TreeItem> doivent prendre en charge <xref:System.Windows.Automation.ValuePattern> si la valeur d’un des éléments est modifiable, indépendamment du mode d’édition actuel du contrôle. Le contrôle parent doit également prendre en charge <xref:System.Windows.Automation.ValuePattern> si les éléments enfants sont modifiables.  
@@ -36,7 +36,7 @@ Exemple d’élément de liste modifiable
   
 - <xref:System.Windows.Automation.Provider.IValueProvider> ne prend pas en charge la récupération des informations de mise en forme ou des valeurs d’une sous-chaîne. Implémentez <xref:System.Windows.Automation.Provider.ITextProvider> dans ces scénarios.  
   
-- <xref:System.Windows.Automation.Provider.IValueProvider>doit être implémenté par des contrôles tels que le contrôle de sélection de [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] **Sélecteur de couleurs** de (illustré ci-dessous), qui prend en charge le mappage de chaînes entre une valeur de couleur (par exemple, « jaune ») et une structure RVB interne équivalente.  
+- <xref:System.Windows.Automation.Provider.IValueProvider> doit être implémenté par des contrôles tels que le contrôle de sélection du **Sélecteur de couleurs** de Microsoft Word (illustré ci-dessous), qui prend en charge le mappage de chaînes entre une valeur de couleur (par exemple, « jaune ») et une structure RVB interne équivalente.  
   
  ![Sélecteur de couleurs jaune mis en surbrillance.](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Exemple de mappage d’une chaîne d’échantillons de couleurs  
@@ -47,11 +47,11 @@ Exemple de mappage d’une chaîne d’échantillons de couleurs
 ## <a name="required-members-for-ivalueprovider"></a>Membres obligatoires pour IValueProvider  
  Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IValueProvider>.  
   
-|Membres requis|Type de membre|Notes|  
+|Membres nécessaires|Type de membre|Notes|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Méthode|Aucun|  
+|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Méthode|aucune.|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Exceptions  

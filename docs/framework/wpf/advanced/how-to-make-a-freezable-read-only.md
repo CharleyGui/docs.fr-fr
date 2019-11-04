@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Mettre un Freezable en lecture seule'
+title: 'Comment : mettre un Freezable en lecture seule'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,33 +7,33 @@ dev_langs:
 helpviewer_keywords:
 - Freezable objects [WPF], making read-only
 ms.assetid: 6c544b7d-d3c9-4736-aa90-4b8728234ccb
-ms.openlocfilehash: 5748b7929db18578bbe00e3217b1578ac5fbc0f4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4185966d864be425bc631953461f6f27ab983bee
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614587"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460073"
 ---
-# <a name="how-to-make-a-freezable-read-only"></a>Procédure : Mettre un Freezable en lecture seule
-Cet exemple montre comment rendre un <xref:System.Windows.Freezable> en lecture seule en appelant son <xref:System.Windows.Freezable.Freeze%2A> (méthode).  
+# <a name="how-to-make-a-freezable-read-only"></a>Comment : mettre un Freezable en lecture seule
+Cet exemple montre comment rendre un <xref:System.Windows.Freezable> en lecture seule en appelant sa méthode <xref:System.Windows.Freezable.Freeze%2A>.  
   
- Vous ne pouvez pas figer un <xref:System.Windows.Freezable> objet si l’une des conditions suivantes est `true` sur l’objet :  
+ Vous ne pouvez pas geler un objet <xref:System.Windows.Freezable> si l’une des conditions suivantes est `true` à propos de l’objet :  
   
-- Il a animé ou propriétés liées aux données.  
+- Il a des propriétés animées ou liées aux données.  
   
-- Il possède des propriétés qui sont définies par une ressource dynamique. Pour plus d’informations sur les ressources dynamiques, consultez le [XAML ressources](xaml-resources.md).  
+- Elle possède des propriétés qui sont définies par une ressource dynamique. Pour plus d’informations sur les ressources dynamiques, consultez [ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
-- Il contient <xref:System.Windows.Freezable> sous-objets qui ne peut pas être figés.  
+- Il contient <xref:System.Windows.Freezable> sous-objets qui ne peuvent pas être figés.  
   
- Si ces conditions sont `false` pour votre <xref:System.Windows.Freezable> objet et que vous ne souhaitez pas modifier, envisagez de geler pour profiter des avantages de performances.  
+ Si ces conditions sont `false` pour votre objet <xref:System.Windows.Freezable> et que vous n’envisagez pas de la modifier, pensez à la figer pour obtenir des avantages en matière de performances.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant se fige un <xref:System.Windows.Media.SolidColorBrush>, qui est un type de <xref:System.Windows.Freezable> objet.  
+ L’exemple suivant gèle un <xref:System.Windows.Media.SolidColorBrush>, qui est un type d' <xref:System.Windows.Freezable> objet.  
   
  [!code-csharp[freezablesample_procedural#FreezeExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#freezeexample1)]
  [!code-vb[freezablesample_procedural#FreezeExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#freezeexample1)]  
   
- Pour plus d’informations sur <xref:System.Windows.Freezable> , voir la [vue d’ensemble des objets Freezable](freezable-objects-overview.md).  
+ Pour plus d’informations sur les objets <xref:System.Windows.Freezable>, consultez [vue d’ensemble des objets Freezable](freezable-objects-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

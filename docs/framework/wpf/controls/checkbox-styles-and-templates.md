@@ -9,39 +9,39 @@ helpviewer_keywords:
 - CheckBox [WPF], styles and templates
 - styles [WPF], CheckBox
 ms.assetid: bfdaec96-d101-4d3d-864d-c27e6b621d03
-ms.openlocfilehash: b3f417a676b141a4a6dbccfe51bf5b7abe669198
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b85e13b13c849e278a6535e09cd0dbaec396bf10
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912416"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460796"
 ---
 # <a name="checkbox-styles-and-templates"></a>Styles et modèles CheckBox
-Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.CheckBox> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner le contrôle une apparence unique. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.CheckBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="checkbox-parts"></a>Parties de la case à cocher  
- Le <xref:System.Windows.Controls.CheckBox> contrôle n’a pas de composants nommés.  
+## <a name="checkbox-parts"></a>Parties de cases à cocher  
+ Le contrôle <xref:System.Windows.Controls.CheckBox> n’a pas de parties nommées.  
   
-## <a name="checkbox-states"></a>États de case à cocher  
- Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.CheckBox> contrôle.  
+## <a name="checkbox-states"></a>États des cases à cocher  
+ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.CheckBox>.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |----------------------|---------------------------|-----------------|  
 |Normale|CommonStates|État par défaut.|  
-|MouseOver|CommonStates|Le pointeur de la souris est positionné sur le contrôle.|  
+|MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
 |Appuyé|CommonStates|Le contrôle est enfoncé.|  
-|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|Disabled|CommonStates|Le contrôle est désactivé.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
 |Activé|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `true`.|  
-|Elle est désactivée|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `false`.|  
-|Indeterminate|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> est `true`, et <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> est `null`.|  
-|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
-|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
-|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
+|Désactivée|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> a la valeur `false`.|  
+|Déterminée|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> est `true`et <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> est `null`.|  
+|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
+|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
+|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
   
-## <a name="checkbox-controltemplate-example"></a>Exemple de ControlTemplate de case à cocher  
- L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.CheckBox> contrôle.  
+## <a name="checkbox-controltemplate-example"></a>CheckBox, exemple de ControlTemplate  
+ L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.CheckBox>.  
   
  [!code-xaml[ControlTemplateExamples#CheckBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/checkbox.xaml#checkbox)]  
   
@@ -57,5 +57,5 @@ Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Contr
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

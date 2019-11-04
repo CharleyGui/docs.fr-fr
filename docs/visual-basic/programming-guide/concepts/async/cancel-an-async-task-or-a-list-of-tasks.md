@@ -2,12 +2,12 @@
 title: Annuler une tâche asynchrone ou une liste de tâches (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 73627455b1f4460edfe165126a388e961e98921f
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 89a78e9e423ab4cce9fd3627ec433072ade238dc
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353129"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419865"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Annuler une tâche asynchrone ou une liste de tâches (Visual Basic)
 
@@ -16,7 +16,7 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
 Les exemples utilisent l’interface utilisateur que décrit pour [ajuster votre application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) .
 
 > [!NOTE]
-> Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
+> Pour exécuter les exemples, Visual Studio 2012 ou ultérieur et le .NET Framework 4.5 ou ultérieur doivent être installés sur votre ordinateur.
 
 ## <a name="BKMK_CancelaTask"></a> Annuler une tâche
 
@@ -24,7 +24,7 @@ Le premier exemple associe le bouton **Annuler** à une tâche de téléchargeme
 
 ### <a name="downloading-the-example"></a>Téléchargement de l'exemple
 
-Téléchargez l’intégralité des projets Windows Presentation Foundation (WPF) à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async  : Réglage précis de votre application), puis suivez ces étapes.
+Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea), puis procédez comme suit.
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
@@ -86,7 +86,7 @@ Ajoutez ensuite les modifications suivantes au fichier MainWindow. Xaml. vb de c
           Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)
 
           resultsTextBox.Text &=
-              String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)
+              vbCrLf & $"Length of the downloaded string: {contentLength}." & vbCrLf
 
           ' *** If cancellation is requested, an OperationCanceledException results.
       Catch ex As OperationCanceledException
@@ -107,8 +107,7 @@ Ajoutez ensuite les modifications suivantes au fichier MainWindow. Xaml. vb de c
 
         Dim client As HttpClient = New HttpClient()
 
-        resultsTextBox.Text &=
-            String.Format(vbCrLf & "Ready to download." & vbCrLf)
+        resultsTextBox.Text &= vbCrLf & "Ready to download." & vbCrLf
 
         ' You might need to slow things down to have a chance to cancel.
         Await Task.Delay(250)
@@ -145,7 +144,7 @@ Vous pouvez étendre l’exemple précédent pour annuler de nombreuses tâches 
 
 ### <a name="downloading-the-example"></a>Téléchargement de l'exemple
 
-Téléchargez l’intégralité des projets Windows Presentation Foundation (WPF) à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async  : Réglage précis de votre application), puis suivez ces étapes.
+Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea), puis procédez comme suit.
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
@@ -206,7 +205,7 @@ Pour étendre l’exemple vous-même, pas à pas, suivez les instructions de la 
         Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()
 
         resultsTextBox.Text &=
-            String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)
+            vbCrLf & $"Length of the downloaded string: {urlContents.Length}." & vbCrLf
     Next
     ```
 
@@ -258,7 +257,7 @@ Pour étendre l’exemple vous-même, pas à pas, suivez les instructions de la 
 
 Les sections suivantes contiennent le code correspondant à chacun des exemples précédents. Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
-Vous pouvez télécharger les projets sur [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async : Réglage précis de votre application).
+Vous pouvez télécharger les projets à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ### <a name="cancel-a-task-example"></a>Exemple d’annulation d’une tâche
 
@@ -287,7 +286,7 @@ Class MainWindow
             Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)
 
             resultsTextBox.Text &=
-                String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)
+                vbCrLf & $"Length of the downloaded string: {contentLength}." & vbCrLf
 
             ' *** If cancellation is requested, an OperationCanceledException results.
         Catch ex As OperationCanceledException
@@ -315,7 +314,7 @@ Class MainWindow
         Dim client As HttpClient = New HttpClient()
 
         resultsTextBox.Text &=
-            String.Format(vbCrLf & "Ready to download." & vbCrLf)
+            vbCrLf & "Ready to download." & vbCrLf
 
         ' You might need to slow things down to have a chance to cancel.
         Await Task.Delay(250)
@@ -413,7 +412,7 @@ Class MainWindow
             Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()
 
             resultsTextBox.Text &=
-                String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)
+                vbCrLf & $"Length of the downloaded string: {urlContents.Length}." & vbCrLf
         Next
     End Function
 
@@ -470,4 +469,4 @@ End Class
 - <xref:System.Threading.CancellationToken>
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
 - [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Exemple Async : Réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

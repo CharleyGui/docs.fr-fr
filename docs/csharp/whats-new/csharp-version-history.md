@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 11463f7d47c5fb5b71bd16d73039b22e4a6ca43e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 490f001d4ed648d6621f8ec059201830acb90af0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039650"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423085"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -104,7 +104,7 @@ C#la version 4,0, publiée avec Visual Studio 2010, aurait eu un temps difficile
 
 La version suivante introduisit de nouvelles fonctionnalités intéressantes :
 
-- [Liaison dynamique](../language-reference/keywords/dynamic.md)
+- [Liaison dynamique](../language-reference/builtin-types/reference-types.md)
 - [Arguments nommés/facultatifs](../programming-guide/classes-and-structs/named-and-optional-arguments.md)
 - [Covariance et contravariance génériques](../../standard/generics/covariance-and-contravariance.md)
 - [Types interop incorporés](../../framework/interop/type-equivalence-and-embedded-interop-types.md)

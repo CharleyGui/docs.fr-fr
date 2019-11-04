@@ -9,41 +9,41 @@ helpviewer_keywords:
 - states [WPF], Expander
 - parts [WPF], Expander
 ms.assetid: da2e5a1c-5230-4c21-98a5-59c7895facd7
-ms.openlocfilehash: c5f805c251d3f6b256035e568798cd6d252ea9a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26989474f264161be12bcc14fed614fdc7f775b6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911730"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460332"
 ---
 # <a name="expander-styles-and-templates"></a>Styles et modèles Expander
-Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.Expander> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner le contrôle une apparence unique. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Expander>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="expander-parts"></a>Composants d’Expander  
- Le <xref:System.Windows.Controls.Expander> contrôle n’a pas de composants nommés.  
+## <a name="expander-parts"></a>Parties de l’Expander  
+ Le contrôle <xref:System.Windows.Controls.Expander> n’a pas de parties nommées.  
   
-## <a name="expander-states"></a>États d’Expander  
- Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.Expander> contrôle.  
+## <a name="expander-states"></a>États de l’Expander  
+ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.Expander>.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|Disabled|CommonStates|Le contrôle est désactivé.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
 |Étendu|ExpansionStates|Le contrôle est développé.|  
 |Collapsed|ExpansionStates|Le contrôle n’est pas développé.|  
-|ExpandDown|ExpandDirectionStates|Le contrôle se développe vers le bas.|  
-|ExpandUp|ExpandDirectionStates|Le contrôle se développe des.|  
-|ExpandLeft|ExpandDirectionStates|Le contrôle se développe de gauche.|  
-|ExpandRight|ExpandDirectionStates|Le contrôle s’étend vers la droite.|  
-|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
-|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
-|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
+|ExpandDown|ExpandDirectionStates|Le contrôle se développe vers le PG.|  
+|ExpandUp|ExpandDirectionStates|Le contrôle s’agrandit.|  
+|ExpandLeft|ExpandDirectionStates|Le contrôle se développe à gauche.|  
+|ExpandRight|ExpandDirectionStates|Le contrôle se développe à droite.|  
+|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
+|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
+|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
   
-## <a name="expander-controltemplate-example"></a>Exemple de ControlTemplate Expander  
- L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.Expander> contrôle.  
+## <a name="expander-controltemplate-example"></a>Expander ControlTemplate, exemple  
+ L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.Expander>.  
   
  [!code-xaml[ControlTemplateExamples#Expander](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/expander.xaml#expander)]  
   
@@ -59,5 +59,5 @@ Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Contr
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

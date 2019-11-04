@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 4d0801cd81e00c84be278b44730058798b0acfa9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: b9b9f145f8f2d945fa06d53efa89f5754766963f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588191"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423129"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 
@@ -23,9 +23,9 @@ void* identifier; //allowed but not recommended
 
 Le type spécifié avant `*` dans un type de pointeur est appelé **type référent**. Seul un [type non managé](../../language-reference/builtin-types/unmanaged-types.md) peut être un type référent.
 
-Les types pointeur n’héritent pas de [object](../../language-reference/keywords/object.md), et aucune conversion n’est possible entre les types pointeur et `object`. Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs. Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.
+Les types pointeur n’héritent pas de [object](../../language-reference/builtin-types/reference-types.md), et aucune conversion n’est possible entre les types pointeur et `object`. Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs. Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.
 
-Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque (*) est écrit conjointement au type sous-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur. Par exemple :
+Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque (*) est écrit conjointement au type sous-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur. Exemple :
 
 ```csharp
 int* p1, p2, p3;   // Ok
@@ -36,7 +36,7 @@ Un pointeur ne peut pas pointer vers une référence ou vers un [struct](../../l
 
 La valeur de la variable pointeur de type `myType*` est l'adresse d'une variable de type `myType`. Les éléments suivants sont des exemples de déclarations de type pointeur :
 
-|Exemples|Description|
+|Exemple|Description|
 |-------------|-----------------|
 |`int* p`|`p` est un pointeur vers un entier.|
 |`int** p`|`p` est un pointeur vers un pointeur vers un entier.|
@@ -87,5 +87,5 @@ Pour plus d’informations, consultez la section [Types de pointeur](~/_csharpla
 - [Guide de programmation C#](../index.md)
 - [Pointeurs et code unsafe](index.md)
 - [Conversions de pointeurs](pointer-conversions.md)
-- [Types](../../language-reference/keywords/types.md)
+- [Types](/dotnet/csharp/language-reference/keywords)
 - [unsafe](../../language-reference/keywords/unsafe.md)

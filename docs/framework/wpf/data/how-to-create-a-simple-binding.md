@@ -1,31 +1,31 @@
 ---
-title: 'Procédure : Créer une liaison simple'
+title: 'Comment : créer une liaison simple'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - simple binding [WPF], creating
 - data binding [WPF], creating simple bindings
 - binding data [WPF], creating
 ms.assetid: 69b80f72-6259-44cb-8294-5bdcebca1e08
-ms.openlocfilehash: d617c8b97aa679398ed2d061a652f5164f1e499b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: faef59ed426059eb2d488d0584d3325c8d46d415
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61931562"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453511"
 ---
-# <a name="how-to-create-a-simple-binding"></a>Procédure : Créer une liaison simple
-Cet exemple vous montre comment créer un simple <xref:System.Windows.Data.Binding>.  
+# <a name="how-to-create-a-simple-binding"></a>Comment : créer une liaison simple
+Cet exemple montre comment créer un <xref:System.Windows.Data.Binding>simple.  
   
 ## <a name="example"></a>Exemple  
- Dans cet exemple, vous avez un `Person` objet avec une propriété de chaîne nommée `PersonName`. Le `Person` objet est défini dans l’espace de noms appelé `SDKSample`.  
+ Dans cet exemple, vous avez un objet `Person` avec une propriété de chaîne nommée `PersonName`. L’objet `Person` est défini dans l’espace de noms appelé `SDKSample`.  
   
- La ligne en surbrillance qui contient le `<src>` élément dans l’exemple suivant instancie le `Person` de l’objet avec un `PersonName` valeur de propriété `Joe`. Cette opération est effectuée le `Resources` section et affecté un `x:Key`.  
+ La ligne surlignée qui contient l’élément `<src>` dans l’exemple suivant instancie l’objet `Person` avec une valeur de propriété `PersonName` de `Joe`. Cette opération s’effectue dans la section `Resources` et reçoit une `x:Key`.  
   
  [!code-xaml[SimpleBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml?highlight=9,37)]  
   
- La ligne en surbrillance qui contient le `<TextBlock>` élément lie ensuite le <xref:System.Windows.Controls.TextBlock> le contrôle à la `PersonName` propriété. Par conséquent, le <xref:System.Windows.Controls.TextBlock> apparaît avec la valeur « Joe ».  
+ La ligne surlignée qui contient l’élément `<TextBlock>` lie ensuite le contrôle <xref:System.Windows.Controls.TextBlock> à la propriété `PersonName`. Par conséquent, le <xref:System.Windows.Controls.TextBlock> apparaît avec la valeur « Joe ».  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
+- [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
 - [Rubriques de guide pratique](data-binding-how-to-topics.md)

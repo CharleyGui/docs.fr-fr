@@ -17,21 +17,21 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: 013e1960e6c5721e0bd7ce6998848ddce15a4e4d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 361101258caca763502f92d897866c75bc8d7da2
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924394"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418719"
 ---
 # <a name="basic-linq-query-operations-c"></a>Opérations de requête LINQ de base (C#)
 Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] et quelques-uns des types d’opérations classiques que vous effectuez dans une requête. Vous trouverez des informations plus détaillées dans les rubriques suivantes :  
   
- [Expressions de requête LINQ](../../linq-query-expressions/index.md)  
+ [Expressions de requête LINQ](../../../linq/index.md)  
   
  [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)  
   
- [Procédure pas à pas : Écriture de requêtes en C#](./walkthrough-writing-queries-linq.md)  
+ [Procédure pas à pas : écriture de requêtes en C#](./walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
 > Si vous êtes déjà familiarisé avec un langage de requête tel que SQL ou XQuery, vous pouvez ignorer la plupart des informations de cette rubrique. Consultez le paragraphe « Clause `from` » de la section suivante pour en savoir plus sur l’ordre des clauses dans les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
@@ -44,7 +44,7 @@ Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbtec
  La variable de portée est similaire à la variable d’itération dans une boucle `foreach`, à la différence qu’aucune itération réelle ne se produit dans une expression de requête. Quand la requête est exécutée, la variable de portée sert de référence à chaque élément consécutif dans `customers`. Comme le compilateur déduit le type de `cust`, vous n’avez pas à le spécifier explicitement. Des variables de portée supplémentaires peuvent être introduites par une clause `let`. Pour plus d’informations, consultez [let, clause](../../../language-reference/keywords/let-clause.md).  
   
 > [!NOTE]
-> Pour les sources de données non génériques telles que <xref:System.Collections.ArrayList>, la variable de portée doit être explicitement typée. Pour plus d'informations, voir [Procédure : Interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) et [from, clause](../../../language-reference/keywords/from-clause.md).  
+> Pour les sources de données non génériques telles que <xref:System.Collections.ArrayList>, la variable de portée doit être explicitement typée. Pour plus d’informations, consultez [Guide pratique pour interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) et [from, clause](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrage  
  L'opération de requête la plus courante est probablement l'application d'un filtre sous forme d'expression booléenne. Du fait du filtre, la requête retourne uniquement les éléments pour lesquels l’expression a la valeur true. Le résultat est produit à l'aide de la clause `where`. En effet, le filtre spécifie les éléments à exclure de la séquence source. Dans l’exemple suivant, seuls les clients (`customers`) qui ont une adresse à Londres sont retournés.  
@@ -101,7 +101,7 @@ from order in Customer.Orders...
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions de requête LINQ](../../linq-query-expressions/index.md)
-- [Procédure pas à pas : Écriture de requêtes en C#](./walkthrough-writing-queries-linq.md)
+- [Expressions de requête LINQ](../../../linq/index.md)
+- [Procédure pas à pas : écriture de requêtes en C#](./walkthrough-writing-queries-linq.md)
 - [Mots clés de requête (LINQ)](../../../language-reference/keywords/query-keywords.md)
 - [Types anonymes](../../classes-and-structs/anonymous-types.md)

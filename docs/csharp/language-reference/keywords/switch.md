@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 5257d1d677246cdd6d826cd71ed3ffe116d2a4a6
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
-ms.translationtype: HT
+ms.openlocfilehash: 76c778d1e2d45990793b5d9c7d4a8ee5a99fed46
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424123"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422297"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -44,7 +44,7 @@ L’expression de correspondance fournit la valeur à mettre en correspondance a
 Avec C# 6 (et les versions antérieures), l’expression de correspondance doit retourner une valeur d’un des types suivants :
 
 - [char](char.md),
-- [string](string.md),
+- [string](../builtin-types/reference-types.md),
 - [bool](bool.md),
 - valeur intégrale, telle que [int](../builtin-types/integral-numeric-types.md) ou [long](../builtin-types/integral-numeric-types.md),
 - ou valeur [enum](enum.md).
@@ -59,7 +59,7 @@ Une instruction `switch` peut inclure un nombre quelconque de sections de commut
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur de compilation, CS0163 : « Le contrôle ne peut pas passer d’une étiquette case (\<étiquette case>) à une autre. »
+Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur du compilateur, CS0163 : « le contrôle ne peut pas passer d’une étiquette case (\<étiquette case >) à une autre. »
 
 ```csharp
 switch (caseSwitch)
@@ -125,7 +125,7 @@ où *constant* est la valeur à tester. *constant* peut être l’une quelconque
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
 - Un littéral de type [char](char.md)
-- Un littéral de type [string](string.md)
+- Un littéral de type [string](../builtin-types/reference-types.md)
 
 L’expression constante est évaluée de la manière suivante :
 
@@ -195,11 +195,11 @@ Notez que la clause `when` de l’exemple qui tente de tester si un objet `Shape
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez la section [Instruction switch](~/_csharplang/spec/statements.md#the-switch-statement) dans la [spécification du langage C#](../language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez la section [Instruction switch](~/_csharplang/spec/statements.md#the-switch-statement) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [if-else](if-else.md)

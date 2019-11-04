@@ -1,26 +1,26 @@
 ---
-title: Annuler les tâches Asynch restantes après une est terminée (Visual Basic)
+title: Annuler les tâches asynchrones restantes une fois l’opération terminée (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: 587c863ba110f035ace5207d8404fd70b3befe37
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 329c1eb738f065ae34540e9980c80d44248da05c
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755834"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419803"
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Annuler les tâches Asynch restantes après une est terminée (Visual Basic)
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Annuler les tâches asynchrones restantes une fois l’opération terminée (Visual Basic)
 
 Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> avec un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.
 
 Cet exemple montre comment utiliser un jeton d’annulation avec `WhenAny` pour attendre la fin de la première tâche de la collection et annuler les tâches restantes. Chaque tâche télécharge le contenu d’un site web. L’exemple affiche la longueur du contenu du premier téléchargement terminé et annule les autres téléchargements.
 
 > [!NOTE]
-> Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
+> Pour exécuter les exemples, Visual Studio 2012 ou ultérieur et le .NET Framework 4.5 ou ultérieur doivent être installés sur votre ordinateur.
 
 ## <a name="downloading-the-example"></a>Téléchargement de l'exemple
 
-Téléchargez l’intégralité des projets Windows Presentation Foundation (WPF) à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async  : Réglage précis de votre application), puis suivez ces étapes.
+Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea), puis procédez comme suit.
 
 1. Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.
 
@@ -44,7 +44,7 @@ L’exemple de cette rubrique ajoute au projet développé dans [annuler une tâ
 
 Pour générer vous-même l’exemple, suivez les instructions pas à pas de la section « Téléchargement de l’exemple », mais choisissez **CancelAListOfTasks** comme **Projet de démarrage**. Ajoutez les changements de cette rubrique à ce projet.
 
-Dans le fichier MainWindow.xaml.vb de le **CancelAListOfTasks** project, commencez la transition en déplaçant les étapes de traitement pour chaque site Web à partir de la boucle dans `AccessTheWebAsync` vers la méthode async suivante.
+Dans le fichier MainWindow. Xaml. vb du projet **CancelAListOfTasks** , commencez la transition en déplaçant les étapes de traitement de chaque site Web de la boucle dans `AccessTheWebAsync` vers la méthode Async suivante.
 
 ```vb
 ' ***Bundle the processing steps for a website into one async method.
@@ -100,18 +100,18 @@ Dans `AccessTheWebAsync`, effectuez les changements suivants. Les astérisques s
 
     ```vb
     Dim length = Await firstFinishedTask
-    resultsTextBox.Text &= String.Format(vbCrLf & "Length of the downloaded website:  {0}" & vbCrLf, length)
+    resultsTextBox.Text &= vbCrLf & $"Length of the downloaded website:  {length}" & vbCrLf
     ```
 
 Exécutez le programme plusieurs fois pour vérifier que différents téléchargements se terminent en premier.
 
 ## <a name="complete-example"></a>Exemple complet
 
-Le code suivant est le fichier MainWindow.xaml.vb ou MainWindow.xaml.cs complet pour l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.
+Le code suivant est le fichier MainWindow. Xaml. vb ou MainWindow.xaml.cs complet pour l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.
 
 Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
-Vous pouvez télécharger le projet à partir de la page [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) (Exemple Async : Réglage précis de votre application).
+Vous pouvez télécharger le projet à partir de la page [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -175,7 +175,7 @@ Class MainWindow
         ''    Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()
 
         ''    resultsTextBox.Text &=
-        ''        String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)
+        ''        vbCrLf & $"Length of the downloaded string: {urlContents.Length}." & vbCrLf
         ''Next
 
         ' ***Create a query that, when executed, returns a collection of tasks.
@@ -196,7 +196,7 @@ Class MainWindow
         ' Run the program several times to demonstrate that different
         ' websites can finish first.
         Dim length = Await firstFinishedTask
-        resultsTextBox.Text &= String.Format(vbCrLf & "Length of the downloaded website:  {0}" & vbCrLf, length)
+        resultsTextBox.Text &= vbCrLf & $"Length of the downloaded website:  {length}" & vbCrLf
     End Function
 
     ' ***Bundle the processing steps for a website into one async method.
@@ -241,4 +241,4 @@ End Class
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Exemple Async : Réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

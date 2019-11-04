@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 4e3e8bc0868c23aca90fa4baec738347db59c6f2
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: be6f6b2d2213e96bc4e695ffbf7bc77f755ed492
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425343"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454984"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -1264,7 +1264,7 @@ Pour plus d’informations sur .NET Framework 4.6.1, consultez les rubriques su
 
 - [Liste des changements de .NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkId=622964)
 
-- [Compatibilité des applications dans la version 4.6.1](../migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)
+- [Compatibilité des applications dans la version 4.6.1](../migration-guide/application-compatibility.md)
 
 - [Différences de l’API .NET Framework](https://go.microsoft.com/fwlink/?LinkId=622989) (sur GitHub)
 

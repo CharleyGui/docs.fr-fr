@@ -2,12 +2,12 @@
 title: Supporting Tokens
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: 14cc7bed55d41352acd93d4443b20f8bda966263
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 9d665c82f4af969204e1c87f982c6398b55cda01
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044626"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421375"
 ---
 # <a name="supporting-tokens"></a>Supporting Tokens
 Cet exemple montre comment ajouter des jetons supplémentaires à un message qui utilise WS-Security. L'exemple ajoute un jeton de sécurité binaire X.509 outre un jeton de sécurité de nom d'utilisateur. Le jeton est passé dans un en-tête de message WS-Security du client au service et une partie du message est signée avec la clé privée associée au jeton de sécurité X.509 pour prouver la possession du certificat X.509 au récepteur. Cela s’avère utile dans le cas où plusieurs revendications doivent être associées à un message pour authentifier ou autoriser l’expéditeur. Le service implémente un contrat qui définit un modèle de communication demande-réponse.
@@ -357,7 +357,7 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 
  Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasin `CurrentUser`.
 
-```
+```console
 echo ************
 echo making client cert
 echo ************
@@ -367,7 +367,7 @@ makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -p
 ### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>Installation du certificat client dans le magasin approuvé du serveur :
  La ligne suivante du fichier de commandes Setup.bat copie le certificat client dans le magasin de personnes de confiance du serveur. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système du serveur. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
-```
+```console
 echo ************
 echo copying client cert to server's CurrentUserstore
 echo ************
@@ -379,7 +379,7 @@ certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s Tru
 
  Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasins LocalMachine. Le certificat est stocké dans le magasin LocalMachine pour les services hébergés par IIS. Pour les services auto-hébergés, vous devez modifier le fichier de commandes afin de stocker le certificat de serveur dans l'emplacement de magasin CurrentUser en remplaçant la chaîne LocalMachine par CurrentUser.
 
-```
+```console
 echo ************
 echo Server cert setup starting
 echo %SERVER_NAME%
@@ -392,7 +392,7 @@ makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -
 ### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>Installation du certificat de serveur dans le magasin de certificats approuvé du client :
  Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
-```
+```console
 echo ************
 echo copying server cert to client's TrustedPeople store
 echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
@@ -401,7 +401,7 @@ echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r C
 ### <a name="enabling-access-to-the-certificates-private-key"></a>Activation de l'accès à la clé privée du certificat
  Pour activer l'accès à la clé privée du certificat à partir du service hébergé par IIS, le compte d'utilisateur sous lequel le processus hébergé par IIS s'exécute doit disposer des autorisations permettant d'y accéder. Cette opération est effectuée par les dernières étapes du script Setup.bat.
 
-```
+```console
 echo ************
 echo setting privileges on server certificates
 echo ************
@@ -441,13 +441,13 @@ iisreset
   
 4. Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-5. Sur le serveur, exécutez `setup.bat service` dans un invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L' `setup.bat` exécution avec `service` l’argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
+5. Sur le serveur, exécutez `setup.bat service` dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L’exécution de `setup.bat` avec l’argument `service` crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service vers un fichier nommé service. cer.  
   
-6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat `findValue` (dans l’attribut de l' [ \<> serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) qui est le même que le nom de domaine complet de l’ordinateur.  
+6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat (dans l’attribut `findValue` de la [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), qui est identique au nom de domaine complet de l’ordinateur.  
   
 7. Copiez le fichier Service.cer du répertoire de service dans le répertoire client sur l'ordinateur client.  
   
-8. Sur le client, exécutez `setup.bat client` dans un invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L'exécution de `setup.bat` à l'aide de l'argument `client` crée un certificat client appelé client.com, puis exporte ce certificat vers un fichier nommé Client.cer.  
+8. Sur le client, exécutez `setup.bat client` dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L'exécution de `setup.bat` à l'aide de l'argument `client` crée un certificat client appelé client.com, puis exporte ce certificat vers un fichier nommé Client.cer.  
   
 9. Dans le fichier Client.exe.config sur l'ordinateur client, modifiez la valeur d'adresse du point de terminaison pour qu'il corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez localhost par le nom de domaine complet du serveur.  
   
@@ -464,4 +464,4 @@ iisreset
 - Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.  
   
 > [!NOTE]
-> Ce script ne supprime pas les certificats de service figurant sur le client lorsque l'exemple est exécuté sur plusieurs ordinateurs. Si vous avez exécuté des exemples WCF qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Par exemple: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+> Ce script ne supprime pas les certificats de service figurant sur le client lorsque l'exemple est exécuté sur plusieurs ordinateurs. Si vous avez exécuté des exemples WCF qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

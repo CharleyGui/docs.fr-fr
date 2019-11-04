@@ -1,18 +1,18 @@
 ---
-title: "Procédure : Retourner des sous-ensembles de propriétés d'éléments dans une requête - Guide de programmation C#"
+title: 'Comment : retourner des sous-ensembles de propriétés d’élément dans un C# Guide de programmation de requêtes'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 2c9fea2189819058187020c2e67b8826659fbed4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 196383731507137bf4309d38d27b36f29b23a06c
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205444"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419301"
 ---
-# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Procédure : Retourner des sous-ensembles de propriétés d'éléments dans une requête (Guide de programmation C#)
+# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Guide pratique pour retourner des sous-ensembles de propriétés d'éléments dans une requête (Guide de programmation C#)
 Utilisez un type anonyme dans une expression de requête lorsque les deux conditions suivantes s’appliquent :  
   
 - Vous souhaitez retourner uniquement certaines propriétés de chaque élément source.  
@@ -25,7 +25,7 @@ Utilisez un type anonyme dans une expression de requête lorsque les deux condit
 select student.ID;  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser un type anonyme pour retourner uniquement un sous-ensemble des propriétés de chaque élément source qui répond à la condition spécifiée.  
   
  [!code-csharp[csProgGuideLINQ#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#31)]  
@@ -50,4 +50,4 @@ Pour exécuter ce code, copiez et collez la classe dans une application console�
 
 - [Guide de programmation C#](../index.md)
 - [Types anonymes](./anonymous-types.md)
-- [Expressions de requête LINQ](../linq-query-expressions/index.md)
+- [LINQ en C#](../../linq/index.md)

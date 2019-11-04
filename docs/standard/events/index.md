@@ -14,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: 67cba143957b50e8e8d7fa68e62b52775ca2f144
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a53a8123db64948503bd6d2da9a27fc414dc1e1f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131633"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423526"
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 
@@ -50,7 +50,7 @@ Les délégués ont de nombreux usages dans .NET. Dans le contexte des événeme
   
 Les délégués sont [multidiffusion](xref:System.MulticastDelegate), ce qui signifie qu'ils peuvent contenir des références à plusieurs méthodes de gestion des événements. Pour plus d'informations, consultez la page de référence <xref:System.Delegate>. Les délégués assurent une souplesse et un contrôle précis lors de la gestion des événements. Un délégué agit comme un répartiteur d’événements pour la classe qui déclenche l’événement en gérant une liste de gestionnaires d’événements inscrits pour l’événement.  
   
-Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et <xref:System.EventHandler%601> ne fonctionnent pas, vous pouvez définir un délégué. Les scénarios qui nécessitent de définir un délégué sont très rares, par exemple lorsque vous devez utiliser du code qui ne reconnaît pas les génériques. Vous marquez un délégué avec le mot clé C# [`delegate`](../../csharp/language-reference/keywords/delegate.md)et Visual Basic [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) dans la déclaration. L'exemple suivant montre comment déclarer un délégué nommé `ThresholdReachedEventHandler`.  
+Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et <xref:System.EventHandler%601> ne fonctionnent pas, vous pouvez définir un délégué. Les scénarios qui nécessitent de définir un délégué sont très rares, par exemple lorsque vous devez utiliser du code qui ne reconnaît pas les génériques. Vous marquez un délégué avec le mot clé C# [`delegate`](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type)et Visual Basic [`Delegate`](../../visual-basic/language-reference/statements/delegate-statement.md) dans la déclaration. L'exemple suivant montre comment déclarer un délégué nommé `ThresholdReachedEventHandler`.  
   
 [!code-csharp[EventsOverview#4](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
 [!code-vb[EventsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  

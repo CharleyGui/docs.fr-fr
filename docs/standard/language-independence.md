@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: af266a551a194f55bc4951a8bdb0e9af6f823663
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: e1f419dd57c1e90d7ebb57ef572f338a34d1c509
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663002"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423636"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -21,7 +21,7 @@ ms.locfileid: "67663002"
 > [!NOTE]
 > La première partie de cet article décrit la création de composants indépendants du langage, c’est-à-dire de composants qui peuvent être utilisés par des applications écrites dans n’importe quel langage. Vous pouvez également créer un composant ou une application unique à partir de code source écrit dans plusieurs langages. Consultez [Interopérabilité multilingue](#cross-language-interoperability) dans la deuxième partie de cet article.
 
-Pour interagir entièrement avec d’autres objets écrits dans un langage quelconque, les objets ne doivent exposer aux appelants que les fonctionnalités communes à tous les langages. Cet ensemble commun de fonctionnalités est défini par la spécification CLS (Common Language Specification), qui est un ensemble de règles qui s’appliquent aux assemblys générés. La spécification CLS (Common Language Specification) est définie dans la Partition I, clauses 7 à 11 du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (Standard ECMA-335 : Common Language Infrastructure).
+Pour interagir entièrement avec d’autres objets écrits dans un langage quelconque, les objets ne doivent exposer aux appelants que les fonctionnalités communes à tous les langages. Cet ensemble commun de fonctionnalités est défini par la spécification CLS (Common Language Specification), qui est un ensemble de règles qui s’appliquent aux assemblys générés. La spécification CLS (Common Language Specification) est définie dans la Partition I, clauses 7 à 11 du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 Si votre composant est conforme à la spécification CLS, il est garanti d'être conforme CLS et accessible à partir du code dans les assemblys écrits dans n'importe quel langage de programmation qui prend en charge la spécification CLS. Vous pouvez déterminer si votre composant est conforme à la spécification CLS (Common Language Specification) au moment de la compilation en appliquant l’attribut [CSLCompliantAttribute](xref:System.CLSCompliantAttribute) à votre code source. Pour plus d’informations, consultez [Attribut CLSCompliantAttribute](#the-clscompliantattribute-attribute).
 
@@ -65,7 +65,7 @@ Dans cet article :
 
 ## <a name="cls-compliance-rules"></a>Règles de conformité CLS
 
-Cette section présente les règles de création d'un composant conforme à CLS. Pour obtenir une liste complète des règles, consultez la Partition I, clause 11 du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (Standard ECMA-335 : Common Language Infrastructure).
+Cette section présente les règles de création d'un composant conforme à CLS. Pour obtenir une liste complète des règles, consultez la Partition I, clause 11 du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 > [!NOTE]
 > La spécification CLS (Common Language Specification) présente chaque règle de conformité CLS telle qu'elle s'applique aux consommateurs (les développeurs qui accèdent par programme à un composant conforme CLS), aux infrastructures (les développeurs qui utilisent un compilateur de langage pour créer des bibliothèques conformes CLS) et aux extendeurs (les développeurs qui créent un outil tel qu'un compilateur de langage ou un analyseur de code qui crée des composants conformes CLS). Cet article se concentre sur les règles applicables aux infrastructures. Notez, toutefois, qu’une partie des règles qui s’appliquent aux extendeurs peut également s’appliquer aux assemblys créés à l’aide de [Reflection.Emit](xref:System.Reflection.Emit).
@@ -150,7 +150,7 @@ L'interface publique d'une bibliothèque inclut les éléments suivants :
 
 * Paramètres et types de retour des méthodes publiques des classes publiques, et paramètres et types de retour des méthodes accessibles aux classes dérivées.
 
-Les règles de conformité CLS sont répertoriées dans le tableau suivant. Le texte des règles est repris mot pour mot du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (Standard ECMA-335 : Common Language Infrastructure) qui est protégé par les droits d’auteur d’Ecma International de 2012. Vous trouverez des informations plus détaillées sur ces règles dans les sections suivantes.
+Les règles de conformité CLS sont répertoriées dans le tableau suivant. Le texte des règles est repris mot pour mot du document [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), qui est protégé par copyright 2012 par Ecma International. Vous trouverez des informations plus détaillées sur ces règles dans les sections suivantes.
 
 Category | Voir | Règle | Numéro de règle
 -------- | --- | ---- | -----------
@@ -158,18 +158,18 @@ Accessibilité | [Accessibilité des membres](#member-accessibility) | L'accessi
 Accessibilité | [Accessibilité des membres](#member-accessibility) | La visibilité et l'accessibilité des types et des membres seront déterminées de telle sorte que les types utilisés dans la signature d'un membre seront visibles et accessibles lorsque le membre proprement dit est visible et accessible. Par exemple, une méthode publique qui est visible à l'extérieur de son assembly n'aura pas d'argument dont le type est visible uniquement dans l'assembly. La visibilité et l'accessibilité des types composant un type générique instancié utilisé dans la signature d'un membre seront visibles et accessibles lorsque le membre proprement dit est visible et accessible. Par exemple, un type générique instancié présent dans la signature d'un membre qui est visible à l'extérieur de l'assembly n'aura pas d'argument générique dont le type est visible uniquement dans l'assembly. | 12
 Tableaux | [Tableaux](#arrays) | Les tableaux auront des éléments avec un type conforme à CLS, et toutes les dimensions du tableau auront des limites inférieures égales à zéro. Seul le fait qu'un élément soit un tableau et le type d'élément du tableau seront requis pour distinguer les surcharges. Lorsque la surcharge est basée sur deux ou plusieurs types de tableau, les types d'élément seront des types nommés. | 16
 Attributs | [Attributs](#attributes) | Les attributs doivent être de type [System.Attribute](xref:System.Attribute) ou d’un type hérité de celui-ci. | 41
-Attributs | [Attributs](#attributes) | La spécification CLS autorise uniquement un sous-ensemble des encodages d'attributs personnalisés. Les seuls types qui doivent apparaître dans ces codages sont (voir Partition IV) : [System.Type](xref:System.Type), [System.String](xref:System.String), [System.Char](xref:System.Char), [System.Boolean](xref:System.Boolean), [System.Byte](xref:System.Byte), [System.Int16](xref:System.Int16), [System.Int32](xref:System.Int32), [System.Int64](xref:System.Int64), [System.Single](xref:System.Single), [System.Double](xref:System.Double) et tout type d’énumération reposant sur un type entier de base conforme CLS. | 34
+Attributs | [Attributs](#attributes) | La spécification CLS autorise uniquement un sous-ensemble des encodages d'attributs personnalisés. Les seuls types qui doivent apparaître dans ces codages sont (voir Partition IV) : [System.Type](xref:System.Type), [System.String](xref:System.String), [System.Char](xref:System.Char), [System.Boolean](xref:System.Boolean), [System.Byte](xref:System.Byte), [System.Int16](xref:System.Int16), [System.Int32](xref:System.Int32), [System.Int64](xref:System.Int64), [System.Single](xref:System.Single), [System.Double](xref:System.Double) et tout type d’énumération reposant sur un type entier de base conforme CLS. | 34
 Attributs | [Attributs](#attributes) | La spécification CLS n'autorise pas les modificateurs obligatoires visibles publiquement (`modreq`, voir Partition II), mais autorise les modificateurs facultatifs (`modopt`, voir Partition II) qu'elle ne comprend pas. | 35
 Constructeurs | [Constructeurs](#constructors) | Un constructeur d'objet appellera un constructeur d'instance de sa classe de base avant tout accès aux données d'instance héritées. (Cela ne s'applique pas aux types de valeurs, qui n'ont pas besoin de constructeurs.)  | 21
 Constructeurs | [Constructeurs](#constructors) | Un constructeur d'objet ne sera pas appelé sauf dans le cadre de la création d'un objet, et un objet ne sera pas initialisé deux fois. | 22
 Énumérations | [Énumérations](#enumerations) | Le type sous-jacent d'une énumération devra être un type d'entier CLS intégré, le nom du champ devra être « valeur__ » et ce champ devra être marqué `RTSpecialName`. |  7
 Énumérations | [Énumérations](#enumerations) | Il existe deux sortes distinctes d’énumérations, signalées par la présence ou l’absence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute) (voir Partition IV, Library). L'un représente des valeurs entières nommées ; l'autre représente les indicateurs binaires nommés qui peuvent être combinés pour générer une valeur sans nom. La valeur d'une `enum` n'est pas limitée aux valeurs spécifiées. |  8
 Énumérations | [Énumérations](#enumerations) | Les champs static littéraux d’une énumération auront le type de l’énumération elle-même. |  9
-Événements | [Événements](#events) | Les méthodes qui implémentent un événement doivent être marquées `SpecialName` dans les métadonnées. |29
-Événements | [Événements](#events) | L’accessibilité d’un événement et de ses accesseurs sera identique. |30
-Événements | [Événements](#events) | Les méthodes `add` et `remove` d'un événement devront toutes les deux être présentes ou absentes. |31
-Événements | [Événements](#events) | Les méthodes `add` et `remove` d’un événement doivent chacune accepter un paramètre dont le type définit le type de l’événement et qui doit être dérivé de [System.Delegate](xref:System.Delegate). |32
-Événements | [Événements](#events) | Les événements adhéreront à un modèle d’attribution de nom spécifique. L’attribut SpecialName dont il est question dans la règle 29 de la spécification CLS doit être ignoré dans les comparaisons de noms appropriées et doit respecter les règles d’identificateur.  |33
+événements | [Événements](#events) | Les méthodes qui implémentent un événement doivent être marquées `SpecialName` dans les métadonnées. |29
+événements | [Événements](#events) | L’accessibilité d’un événement et de ses accesseurs sera identique. |30
+événements | [Événements](#events) | Les méthodes `add` et `remove` d'un événement devront toutes les deux être présentes ou absentes. |31
+événements | [Événements](#events) | Les méthodes `add` et `remove` d’un événement doivent chacune accepter un paramètre dont le type définit le type de l’événement et qui doit être dérivé de [System.Delegate](xref:System.Delegate). |32
+événements | [Événements](#events) | Les événements adhéreront à un modèle d’attribution de nom spécifique. L’attribut SpecialName dont il est question dans la règle 29 de la spécification CLS doit être ignoré dans les comparaisons de noms appropriées et doit respecter les règles d’identificateur.  |33
 Exceptions | [Exceptions](#exceptions) | Les objets levés doivent être de type [System.Exception](xref:System.Exception) ou d’un type hérité de celui-ci. Néanmoins, les méthodes conformes à CLS ne sont pas requises pour bloquer la propagation d'autres types d'exceptions. | 40
 Général | [Règles de conformité CLS](#cls-compliance-rules) | Les règles CLS s'appliquent uniquement aux éléments d'un type qui sont accessibles ou visibles en dehors de l'assembly de définition. | 1
 Général | [Règles de conformité CLS](#cls-compliance-rules) | Les membres de types non conformes à CLS ne seront pas marqués comme conformes à CLS. | 2
@@ -187,8 +187,8 @@ Membres | [Membres de types en général](#type-members-in-general) | La contrai
 Conventions d'attribution d'un nom | [Conventions d’attribution d’un nom](#naming-conventions) | Les assemblys doivent suivre l’Annexe 7 du Rapport technique 15 de la norme Unicode 3.0 régissant l’ensemble des caractères autorisés pour lancer les identificateurs et être inclus dans ces derniers. Cette annexe est disponible en ligne sous [Unicode Normalization Forms](https://www.unicode.org/unicode/reports/tr15/tr15-18.html) (Formes de normalisation Unicode). Les identificateurs doivent être dans un format canonique défini par la forme C de normalisation Unicode. Dans le cadre de la spécification CLS, deux identificateurs sont les mêmes si leurs mappages en minuscules (comme spécifié par les mappages en minuscules un-à-un insensibles aux paramètres régionaux Unicode) sont identiques. Autrement dit, pour que deux identificateurs soient considérés comme différents dans le cadre de la spécification CLS, ils doivent être différenciés par d’autres éléments que leur casse. Toutefois, pour remplacer une définition héritée, l’infrastructure CLI nécessite l’utilisation de l’encodage exact de la déclaration d’origine. | 4
 Surcharge | [Conventions d’attribution d’un nom](#naming-conventions) | Tous les noms introduits dans une portée conforme CLS doivent être distincts, indépendamment de leur type, sauf quand les noms sont identiques et résolus par surcharge. Par exemple, alors que CTS autorise un type à utiliser le même nom pour une méthode et un champ, CLS ne l’autorise pas. | 5
 Surcharge | [Conventions d’attribution d’un nom](#naming-conventions) | Les champs et les types imbriqués seront distincts par comparaison d'identificateurs seule, même si CTS autorise la distinction de signatures différentes. Les méthodes, les propriétés et les événements qui portent le même nom (par comparaison d’identificateurs) doivent différer par d’autres éléments que le seul type de retour, sauf dans les cas spécifiés dans la règle 39 de la spécification CLS | 6
-Surcharge | [Overloads](#overloads) | Seules les propriétés et les méthodes peuvent être surchargées. | 37
-Surcharge | [Overloads](#overloads) |Les propriétés et les méthodes peuvent être surchargées en fonction du nombre et des types de leurs paramètres uniquement, à l'exception des opérateurs de conversion nommés `op_Implicit` et `op_Explicit`, qui peuvent également être surchargés selon leur type de retour. | 38
+Surcharge | [Surcharges](#overloads) | Seules les propriétés et les méthodes peuvent être surchargées. | 37
+Surcharge | [Surcharges](#overloads) |Les propriétés et les méthodes peuvent être surchargées en fonction du nombre et des types de leurs paramètres uniquement, à l'exception des opérateurs de conversion nommés `op_Implicit` et `op_Explicit`, qui peuvent également être surchargés selon leur type de retour. | 38
 Surcharge | -- | Si deux ou plusieurs méthodes conformes CLS déclarées dans un type ont le même nom et, pour un jeu spécifique d’instanciations de types, ont le même paramètre et les mêmes types de retour, alors toutes ces méthodes sont sémantiquement équivalentes à ces instanciations de type. | 48
 Propriétés | [Propriétés](#properties) | Les méthodes qui implémentent les méthodes getter et setter d’une propriété doivent être marquées `SpecialName` dans les métadonnées. | 24
 Propriétés | [Propriétés](#properties) | Les accesseurs d’une propriété devront tous être statiques, virtuels ou être des instances. | 26
@@ -230,7 +230,7 @@ public class Counter
 
    public override string ToString()
    {
-      return String.Format("{0}). ", ctr);
+      return $"{ctr}). ";
    }
 
    public UInt32 Value
@@ -276,7 +276,7 @@ Public Class Counter
    End Sub
 
    Public Overrides Function ToString() As String
-      Return String.Format("{0}). ", ctr)
+      Return $"{ctr}). "
    End Function
 
    Public ReadOnly Property Value As UInt32
@@ -607,7 +607,7 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-Les identificateurs de langage de programmation, comme les noms d’espaces de noms, de types et de membres, doivent être conformes au document [Unicode Standard 3.0, Technical Report 15, Annex 7](https://www.unicode.org/reports/tr15/tr15-18.html) (Norme Unicode 3.0, Rapport technique 15, Annexe 7). Cela signifie que :
+Les identificateurs de langage de programmation, comme les noms d’espaces de noms, de types et de membres, doivent être conformes au document [Unicode Standard 3.0, Technical Report 15, Annex 7](https://www.unicode.org/reports/tr15/tr15-18.html) (Norme Unicode 3.0, Rapport technique 15, Annexe 7). Cela signifie que :
 
 * Le premier caractère d'un identificateur peut être une lettre majuscule, une lettre minuscule, une initiale majuscule, une lettre de modificateur, une autre lettre ou un nombre sous forme de lettre, Unicode. Pour plus d’informations sur les catégories de caractères Unicode, consultez l’énumération [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory).
 
@@ -1110,7 +1110,7 @@ Les tableaux conformes à CLS respectent les règles suivantes :
 
 Les interfaces conformes à CLS peuvent définir des propriétés, des événements et des méthodes virtuelles (méthodes sans implémentation). Une interface conforme à CLS ne peut avoir aucune des caractéristiques suivantes :
 
-* Méthodes statiques ou champs static. Le compilateur C# génère des erreurs de compilation si un membre statique est défini dans une interface.
+* Méthodes statiques ou champs statiques. Le compilateur C# génère des erreurs de compilation si un membre statique est défini dans une interface.
 
 * Champs. Le compilateur C# génère des erreurs de compilation si un champ est défini dans une interface.
 
@@ -1317,9 +1317,9 @@ Pour plus d’informations, consultez la documentation de la structure [Enum](xr
 
 ### <a name="type-members-in-general"></a>Membres de types en général
 
-La spécification CLS (Common Language Specification) nécessite que tous les champs et toutes les méthodes soient accessibles en tant que membres d'une classe particulière. Par conséquent, les méthodes et les champs static globaux (autrement dit, les méthodes ou les champs static définis en dehors d’un type) ne sont pas conformes à CLS. Si vous essayez d’inclure un champ global ou une méthode globale dans votre code source, le compilateur C# génère une erreur de compilateur.
+La spécification CLS (Common Language Specification) nécessite que tous les champs et toutes les méthodes soient accessibles en tant que membres d'une classe particulière. Par conséquent, les méthodes et les champs statiques globaux (autrement dit, les méthodes ou les champs statiques définis en dehors d'un type) ne sont pas conformes à CLS. Si vous essayez d’inclure un champ global ou une méthode globale dans votre code source, le compilateur C# génère une erreur de compilateur.
 
-La spécification CLS (Common Language Specification) prend uniquement en charge la convention d’appel managée standard. Elle ne prend pas en charge les conventions d'appel non managées ni les méthodes avec des listes d'arguments variables marquées avec le mot clé `varargs`. Pour les listes d’arguments variables compatibles avec la convention d’appel managée standard, utilisez l’attribut [ParamArrayAttribute](xref:System.ParamArrayAttribute) ou l’implémentation de chaque langage, comme le mot clé `params` en C# et le mot clé `ParamArray` en Visual Basic.
+La spécification CLS (Common Language Specification) prend uniquement en charge la convention d'appel managée standard. Elle ne prend pas en charge les conventions d'appel non managées ni les méthodes avec des listes d'arguments variables marquées avec le mot clé `varargs`. Pour les listes d’arguments variables compatibles avec la convention d’appel managée standard, utilisez l’attribut [ParamArrayAttribute](xref:System.ParamArrayAttribute) ou l’implémentation de chaque langage, comme le mot clé `params` en C# et le mot clé `ParamArray` en Visual Basic.
 
 ### <a name="member-accessibility"></a>Accessibilité des membres
 
@@ -2058,7 +2058,7 @@ Les propriétés dans les types conformes à CLS doivent suivre ces règles :
 
 * Si une propriété possède une méthode getter et une méthode setter, elles doivent être toutes les deux virtuelles, statiques ou être toutes les deux des instances. Le compilateur C# applique automatiquement cette règle par le biais de la syntaxe de définition de propriété.
 
-### <a name="events"></a>Événements
+### <a name="events"></a>événements
 
 Un événement est défini par son nom et son type. Le type d'événement est un délégué utilisé pour indiquer l'événement. Par exemple, l'événement `DbConnection.StateChange` est de type `StateChangeEventHandler`. Outre l'événement lui-même, trois méthodes avec des noms basés sur le nom de l'événement fournissent une implémentation de l'événement et sont marquées comme `SpecialName` dans les métadonnées de l'assembly :
 

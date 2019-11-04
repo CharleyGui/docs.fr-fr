@@ -1,17 +1,21 @@
 ---
 title: Commande dotnet run
 description: La commande dotnet run fournit une option pratique pour exécuter votre application à partir du code source.
-ms.date: 05/29/2018
-ms.openlocfilehash: ec2a24b78f435dd1905ec67b6f3f4a4ec3f7e7fa
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 10/31/2019
+ms.openlocfilehash: 87e9a57e874116533951a9c5eb676be76be2c98d
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117485"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454780"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
+**Cet article s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,6 +24,14 @@ ms.locfileid: "71117485"
 ## <a name="synopsis"></a>Résumé
 
 <!-- markdownlint-disable MD025 -->
+
+# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
+
+```dotnetcli
+dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile] [--no-build] [--no-dependencies]
+    [--no-launch-profile] [--no-restore] [-p|--project] [-r|--runtime] [-v|--verbosity] [[--] [application arguments]]
+dotnet run [-h|--help]
+```
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
@@ -68,6 +80,64 @@ Pour exécuter l’application, la commande `dotnet run` résout les dépendance
 
 ## <a name="options"></a>Options
 
+# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
+
+`--`
+
+Délimite les arguments à `dotnet run` parmi les arguments de l’application en cours d’exécution. Tous les arguments après ce délimiteur sont passés à l’application exécutée.
+
+`-c|--configuration {Debug|Release}`
+
+Définit la configuration de build. La valeur par défaut de la plupart des projets est `Debug`.
+
+`-f|--framework <FRAMEWORK>`
+
+Crée et exécute l’application à l’aide du [framework](../../standard/frameworks.md) spécifié. Le framework doit être spécifié dans le fichier projet.
+
+`--force`
+
+Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*.
+
+`-h|--help`
+
+Affiche une aide brève pour la commande.
+
+`--interactive`
+
+Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple).
+
+`--launch-profile <NAME>`
+
+Nom du profil de lancement éventuel à utiliser au lancement de l’application. Les profils de lancement sont définis dans le fichier *launchSettings.json* et s’appellent généralement `Development`, `Staging` et `Production`. Pour plus d’informations, consultez [Utilisation de plusieurs environnements](/aspnet/core/fundamentals/environments).
+
+`--no-build`
+
+Ne génère pas le projet avant l’exécution. L’indicateur `--no-restore` est également défini implicitement.
+
+`--no-dependencies`
+
+En cas de restauration d’un projet avec des références entre projets (P2P), restaure le projet racine et non les références.
+
+`--no-launch-profile`
+
+N’essaie pas d’utiliser *launchSettings.json* pour configurer l’application.
+
+`--no-restore`
+
+N’effectue pas de restauration implicite à l’exécution de la commande.
+
+`-p|--project <PATH>`
+
+Spécifie le chemin du fichier projet à exécuter (nom de dossier ou chemin complet). Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+
+`--runtime <RUNTIME_IDENTIFIER>`
+
+Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).
+
+`-v|--verbosity <LEVEL>`
+
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--`
@@ -76,7 +146,7 @@ Délimite les arguments à `dotnet run` parmi les arguments de l’application e
 
 `-c|--configuration {Debug|Release}`
 
-Définit la configuration de build. La valeur par défaut est `Debug`.
+Définit la configuration de build. La valeur par défaut de la plupart des projets est `Debug`.
 
 `-f|--framework <FRAMEWORK>`
 
@@ -130,7 +200,7 @@ Délimite les arguments à `dotnet run` parmi les arguments de l’application e
 
 `-c|--configuration {Debug|Release}`
 
-Définit la configuration de build. La valeur par défaut est `Debug`.
+Définit la configuration de build. La valeur par défaut de la plupart des projets est `Debug`.
 
 `-f|--framework <FRAMEWORK>`
 
@@ -180,7 +250,7 @@ Délimite les arguments à `dotnet run` parmi les arguments de l’application e
 
 `-c|--configuration {Debug|Release}`
 
-Définit la configuration de build. La valeur par défaut est `Debug`.
+Définit la configuration de build. La valeur par défaut de la plupart des projets est `Debug`.
 
 `-f|--framework <FRAMEWORK>`
 
@@ -192,7 +262,7 @@ Affiche une aide brève pour la commande.
 
 `-p|--project <PATH/PROJECT.csproj>`
 
-Spécifie le chemin d’accès et le nom du fichier projet. (Voir la REMARQUE.) Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+Spécifie le chemin d’accès et le nom du fichier projet. (Voir la remarque.) S’il n’est pas spécifié, le répertoire actif est utilisé par défaut.
 
 > [!NOTE]
 > Utilisez le chemin d’accès et le nom du fichier projet avec l’option `-p|--project`. Une régression dans l’interface CLI empêche de fournir un chemin de dossier avec le SDK .NET Core 1.x. Pour plus d’informations sur ce problème, consultez la page [dotnet run -p, impossible de démarrer un projet (dotnet/cli #5992)](https://github.com/dotnet/cli/issues/5992).

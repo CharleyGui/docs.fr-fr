@@ -8,12 +8,12 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 837a18ca18d0c634dfa5cc133aa013919cfb9d96
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a39d25f03583ab9020878b7a659bc99489231ff9
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053897"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458889"
 ---
 # <a name="xamlname-grammar"></a>XamlName, grammaire
 La grammaire XamlName est une grammaire spécifique qui est définie dans la spécification du langage XAML [MS-XAML], qui est reproduite ici pour des raisons pratiques.  
@@ -46,7 +46,7 @@ CombiningCharacter ::= UnicodeMn | UnicodeMc
 | Nd                 | Nombre, décimal               |
 | Nl                 | Number, Letter                |
  
- XAML définit une deuxième grammaire, DottedXamlName, qui est utilisée pour les références qualifiées de propriété et d’événement, ainsi que pour les membres attachés. Pour plus d’informations, <xref:System.Windows.DependencyProperty> consultez et [vue d’ensemble du langage XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md).  
+ XAML définit une deuxième grammaire, DottedXamlName, qui est utilisée pour les références qualifiées de propriété et d’événement, ainsi que pour les membres attachés. Pour plus d’informations, consultez [vue d’ensemble de <xref:System.Windows.DependencyProperty> et XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md).  
   
  Les valeurs de chaîne qui sont de type DottedXamlName doivent être conformes à la grammaire suivante :  
   
@@ -55,4 +55,4 @@ DottedXamlName ::= XamlName '.' XamlName
 ```  
   
 ## <a name="remarks"></a>Notes  
- Pour obtenir la spécification complète, consultez [ \[MS-\]XAML](https://go.microsoft.com/fwlink/?LinkId=114525).
+ Pour obtenir la spécification complète, consultez [\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).

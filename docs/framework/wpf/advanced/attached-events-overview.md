@@ -12,20 +12,20 @@ helpviewer_keywords:
 - backing attached events with routed events [WPF]
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
-ms.openlocfilehash: 40e7bd34388bec06cd8a7c3610599d814aef101f
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 76ff60cfe26f9105d4504164802987115fc2a7e2
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038153"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455466"
 ---
 # <a name="attached-events-overview"></a>Vue d'ensemble des événements attachés
 
 Extensible Application Markup Language (XAML) définit un composant de langage et le type d’événement appelé *événement attaché*. Le concept d’un événement attaché vous permet d’ajouter un gestionnaire pour un événement particulier à un élément arbitraire plutôt qu’à un élément qui définit réellement l’événement ou qui en hérite. Dans ce cas, ni l’objet qui déclenche potentiellement l’événement, ni l’instance de gestion de destination ne définit ou ne « détient » l’événement.  
 
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Prérequis  
- Cette rubrique suppose que vous avez lu [Vue d’ensemble des événements routés](routed-events-overview.md) et [Vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md).  
+## <a name="prerequisites"></a>Configuration requise  
+ Cette rubrique suppose que vous avez lu [Vue d’ensemble des événements routés](routed-events-overview.md) et [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
   
 <a name="Syntax"></a>   
 ## <a name="attached-event-syntax"></a>Syntaxe d’un événement attaché  
@@ -33,7 +33,7 @@ Extensible Application Markup Language (XAML) définit un composant de langage e
   
  Dans la syntaxe XAML, l’événement attaché est spécifié non seulement par son nom d’événement, mais par son type propriétaire plus le nom de l’événement, séparé par un point (.). Comme le nom de l’évènement est qualifié avec le nom de son type propriétaire, la syntaxe de l’événement attaché permet à celui-ci d’être attaché à tout élément pouvant être instancié.  
   
- Par exemple, voici la syntaxe XAML permettant d’attacher un gestionnaire pour un événement attaché personnalisé `NeedsCleaning` :  
+ Par exemple, voici la syntaxe XAML permettant d’attacher un gestionnaire pour un événement `NeedsCleaning` attaché personnalisé :  
   
  [!code-xaml[WPFAquariumSln#AE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquarium/Window1.xaml#ae)]  
   
@@ -42,15 +42,15 @@ Extensible Application Markup Language (XAML) définit un composant de langage e
 <a name="WPFImplements"></a>   
 ## <a name="how-wpf-implements-attached-events"></a>Comment WPF implémente des événements attachés
 
-Dans WPF, les événements attachés sont sauvegardés <xref:System.Windows.RoutedEvent> par un champ et sont routés via l’arborescence après leur déclenchement. En général, la source de l’événement attaché (l’objet qui déclenche l’événement) est une source système ou de service. L’objet qui exécute le code qui déclenche l’événement ne fait donc pas directement partie de l’arborescence d’éléments.  
+Dans WPF, les événements attachés sont sauvegardés par un champ <xref:System.Windows.RoutedEvent> et sont routés via l’arborescence après leur déclenchement. En général, la source de l’événement attaché (l’objet qui déclenche l’événement) est une source système ou de service. L’objet qui exécute le code qui déclenche l’événement ne fait donc pas directement partie de l’arborescence d’éléments.  
   
 <a name="Scenarios"></a>   
 ## <a name="scenarios-for-attached-events"></a>Scénarios pour les événements attachés  
- Dans WPF, les événements attachés sont présents dans certains domaines de fonctionnalités où il existe une abstraction au niveau du service, par exemple pour les <xref:System.Windows.Input.Mouse> événements activés <xref:System.Windows.Controls.Validation> par la classe statique ou la classe. Les classes qui interagissent avec le service, ou qui l’utilisent, peuvent employer l’événement dans la syntaxe de l’événement attaché ou choisir de surfacer l’événement attaché en tant qu’événement routé faisant partie de la façon dont la classe intègre les fonctionnalités du service.  
+ Dans WPF, les événements attachés sont présents dans certains domaines de fonctionnalités où il existe une abstraction au niveau du service, par exemple pour les événements activés par la classe <xref:System.Windows.Input.Mouse> statique ou la classe <xref:System.Windows.Controls.Validation>. Les classes qui interagissent avec le service, ou qui l’utilisent, peuvent employer l’événement dans la syntaxe de l’événement attaché ou choisir de surfacer l’événement attaché en tant qu’événement routé faisant partie de la façon dont la classe intègre les fonctionnalités du service.  
   
  Bien que WPF définisse plusieurs événements attachés, les scénarios où vous allez utiliser ou gérer directement l’événement attaché sont très limités. En règle générale, l’événement attaché répond à un objectif d’architecture, mais est ensuite transféré à un événement routé non attaché (avec un wrapper d’événement CLR).  
   
- Par exemple, l’événement <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType> attaché sous-jacent peut être géré plus facilement sur tout donné <xref:System.Windows.UIElement.MouseDown> <xref:System.Windows.UIElement> en utilisant <xref:System.Windows.UIElement> sur, plutôt que de traiter la syntaxe de l’événement attaché en XAML ou dans le code. L’événement attaché a une fonction d’architecture, car il permet l’extension future des périphériques d’entrée. L’appareil hypothétique n’aurait besoin d’être <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType> déclenché que pour simuler l’entrée de la souris et n’aurait pas <xref:System.Windows.Input.Mouse> besoin de dériver de pour ce faire. Toutefois, ce scénario implique la gestion du code des événements, et la gestion XAML de l’événement attaché ne s’applique pas à ce scénario.  
+ Par exemple, l’événement attaché sous-jacent <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType> peut être géré plus facilement sur une <xref:System.Windows.UIElement> donnée à l’aide de <xref:System.Windows.UIElement.MouseDown> sur ce <xref:System.Windows.UIElement> plutôt que de gérer la syntaxe d’événement attaché en XAML ou dans le code. L’événement attaché a une fonction d’architecture, car il permet l’extension future des périphériques d’entrée. L’appareil hypothétique doit simplement déclencher <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType> pour simuler l’entrée de la souris, et n’a pas besoin de dériver de <xref:System.Windows.Input.Mouse> pour ce faire. Toutefois, ce scénario implique la gestion du code des événements, et la gestion XAML de l’événement attaché ne s’applique pas à ce scénario.  
   
 <a name="Handling"></a>   
 ## <a name="handling-an-attached-event-in-wpf"></a>Gestion d’un événement attaché dans WPF  
@@ -58,7 +58,7 @@ Dans WPF, les événements attachés sont sauvegardés <xref:System.Windows.Rout
   
  En général, un événement attaché WPF n’est pas très différent d’un événement routé WPF. Les différences sont le mode de source de l’événement et la façon dont il est exposé par une classe en tant que membre (ce qui affecte également la syntaxe du gestionnaire XAML).  
   
- Toutefois, comme indiqué précédemment, les événements attachés WPF existants ne sont pas particulièrement destinés à être pris en charge dans WPF. Le plus souvent, le but de l’événement est de permettre à un élément composé de signaler un état à un élément parent au moment de la composition. Dans ce cas, l’événement est généralement déclenché dans du code et compte également sur une gestion de classe dans la classe parente appropriée. Par exemple, les éléments d' <xref:System.Windows.Controls.Primitives.Selector> un sont censés déclencher l' <xref:System.Windows.Controls.Primitives.Selector.Selected> événement attaché, qui est ensuite géré par la <xref:System.Windows.Controls.Primitives.Selector> classe, puis potentiellement converti par la <xref:System.Windows.Controls.Primitives.Selector> classe en un événement routé différent, <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> . Pour plus d’informations sur les événements routés et la gestion de classe, consultez [Marquage des événements routés comme gérés et gestion de classe](marking-routed-events-as-handled-and-class-handling.md).  
+ Toutefois, comme indiqué précédemment, les événements attachés WPF existants ne sont pas particulièrement destinés à être pris en charge dans WPF. Le plus souvent, le but de l’événement est de permettre à un élément composé de signaler un état à un élément parent au moment de la composition. Dans ce cas, l’événement est généralement déclenché dans du code et compte également sur une gestion de classe dans la classe parente appropriée. Par exemple, les éléments d’un <xref:System.Windows.Controls.Primitives.Selector> sont supposés déclencher l’événement <xref:System.Windows.Controls.Primitives.Selector.Selected> attaché, qui est ensuite géré par la classe <xref:System.Windows.Controls.Primitives.Selector> puis éventuellement converti par la classe <xref:System.Windows.Controls.Primitives.Selector> en un événement routé différent, <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged>. Pour plus d’informations sur les événements routés et la gestion de classe, consultez [Marquage des événements routés comme gérés et gestion de classe](marking-routed-events-as-handled-and-class-handling.md).  
   
 <a name="Custom"></a>   
 ## <a name="defining-your-own-attached-events-as-routed-events"></a>Définition de vos propres événements attachés en tant qu’événements routés  
@@ -72,24 +72,24 @@ Dans WPF, les événements attachés sont sauvegardés <xref:System.Windows.Rout
   
  La méthode d’accesseur __Add*EventName*Handler__ facilite le traitement XAML lorsque des attributs de gestionnaire d’événements attachés sont déclarés sur un élément. Les méthodes de gestionnaire __Add*EventName*__ et __Remove*NomÉvénement*__ permettent également d’accéder au code du magasin de gestionnaires d’événements pour l’événement attaché.  
   
- Ce modèle général n’est pas encore suffisamment précis pour une implémentation pratique dans une infrastructure, car toute implémentation de lecteur XAML donnée peut avoir des modèles différents pour identifier les événements sous-jacents dans le langage et l’architecture de prise en charge. C’est l’une des raisons pour lesquelles WPF implémente les événements attachés en tant qu’événements routés; l’identificateur à utiliser pour un événement (<xref:System.Windows.RoutedEvent>) est déjà défini par le système d’événements WPF. En outre, le routage d’un événement est une extension d’implémentation naturelle sur le concept de niveau de langage XAML d’un événement attaché.  
+ Ce modèle général n’est pas encore suffisamment précis pour une implémentation pratique dans une infrastructure, car toute implémentation de lecteur XAML donnée peut avoir des modèles différents pour identifier les événements sous-jacents dans le langage et l’architecture de prise en charge. C’est l’une des raisons pour lesquelles WPF implémente les événements attachés en tant qu’événements routés ; l’identificateur à utiliser pour un événement (<xref:System.Windows.RoutedEvent>) est déjà défini par le système d’événements WPF. En outre, le routage d’un événement est une extension d’implémentation naturelle sur le concept de niveau de langage XAML d’un événement attaché.  
   
- L’implémentation du __Gestionnaire Add*NomÉvénement*__ pour un événement attaché WPF consiste à appeler <xref:System.Windows.UIElement.AddHandler%2A> le avec l’événement routé et le gestionnaire comme arguments.  
+ L’implémentation du __Gestionnaire Add*EventName*__ pour un événement attaché WPF consiste à appeler la <xref:System.Windows.UIElement.AddHandler%2A> avec l’événement routé et le gestionnaire comme arguments.  
   
- Cette stratégie d’implémentation et le système d’événement routé en général restreignent la gestion des événements <xref:System.Windows.UIElement> attachés à <xref:System.Windows.ContentElement> des classes dérivées ou à des classes <xref:System.Windows.UIElement.AddHandler%2A> dérivées, car seules ces classes ont des implémentations.  
+ Cette stratégie d’implémentation et le système d’événement routé en général restreignent la gestion des événements attachés à des classes <xref:System.Windows.UIElement> dérivées ou à des classes dérivées <xref:System.Windows.ContentElement>, car seules ces classes ont des implémentations de <xref:System.Windows.UIElement.AddHandler%2A>.  
   
- Par exemple, le code suivant définit l' `NeedsCleaning` événement attaché sur la classe `Aquarium`propriétaire, à l’aide de la stratégie d’événement attaché WPF qui consiste à déclarer l’événement attaché en tant qu’événement routé.  
+ Par exemple, le code suivant définit l' `NeedsCleaning` événement attaché sur la classe propriétaire `Aquarium`, à l’aide de la stratégie d’événement attaché WPF qui consiste à déclarer l’événement attaché en tant qu’événement routé.  
   
  [!code-csharp[WPFAquariumSln#AECode](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#aecode)]
  [!code-vb[WPFAquariumSln#AECode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#aecode)]  
   
- Notez que la méthode utilisée pour établir le champ d’identificateur d’événement attaché <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>,, est en fait la même méthode que celle utilisée pour enregistrer un événement routé non attaché. Les événements attachés et les événements routés sont tous inscrits dans un magasin interne centralisé. Cette implémentation du magasin d’événements rend possible la considération conceptuelle des « événements en tant qu’interface » traitée dans [Vue d’ensemble des événements routés](routed-events-overview.md).  
+ Notez que la méthode utilisée pour établir le champ d’identificateur d’événement attaché, <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>, est en fait la même méthode que celle utilisée pour enregistrer un événement routé non attaché. Les événements attachés et les événements routés sont tous inscrits dans un magasin interne centralisé. Cette implémentation du magasin d’événements rend possible la considération conceptuelle des « événements en tant qu’interface » traitée dans [Vue d’ensemble des événements routés](routed-events-overview.md).  
   
 <a name="Raising"></a>   
 ## <a name="raising-a-wpf-attached-event"></a>Déclenchement d’un événement attaché WPF  
- En général, vous n’avez pas besoin de déclencher des événements attachés définis par WPF existants à partir de votre code. Ces événements suivent le modèle conceptuel «service» général, et les classes de service <xref:System.Windows.Input.InputManager> telles que sont chargées de déclencher les événements.  
+ En général, vous n’avez pas besoin de déclencher des événements attachés définis par WPF existants à partir de votre code. Ces événements suivent le modèle conceptuel « service » général, et les classes de service telles que <xref:System.Windows.Input.InputManager> sont responsables du déclenchement des événements.  
   
- Toutefois, si vous définissez un événement attaché personnalisé basé sur le modèle WPF d’événements attachés de base <xref:System.Windows.RoutedEvent>sur, vous pouvez <xref:System.Windows.UIElement.RaiseEvent%2A> utiliser pour déclencher un événement attaché à <xref:System.Windows.UIElement> partir <xref:System.Windows.ContentElement>de n’importe quel ou. Le déclenchement d’un événement routé (attaché ou non) requiert que vous déclariez un élément particulier dans l’arborescence d’éléments comme source d’événement; cette source est signalée comme <xref:System.Windows.UIElement.RaiseEvent%2A> appelant. Votre service est chargé de déterminer quel est l’élément signalé en tant que source dans l’arborescence  
+ Toutefois, si vous définissez un événement attaché personnalisé basé sur le modèle WPF de base des événements attachés sur <xref:System.Windows.RoutedEvent>, vous pouvez utiliser <xref:System.Windows.UIElement.RaiseEvent%2A> pour déclencher un événement attaché à partir de n’importe quel <xref:System.Windows.UIElement> ou <xref:System.Windows.ContentElement>. Le déclenchement d’un événement routé (attaché ou non) requiert que vous déclariez un élément particulier dans l’arborescence d’éléments comme source d’événement ; cette source est signalée en tant qu’appelant <xref:System.Windows.UIElement.RaiseEvent%2A>. Votre service est chargé de déterminer quel est l’élément signalé en tant que source dans l’arborescence  
   
 ## <a name="see-also"></a>Voir aussi
 

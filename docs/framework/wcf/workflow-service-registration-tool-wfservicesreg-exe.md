@@ -2,19 +2,19 @@
 title: Outil WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
-ms.openlocfilehash: 0a9cd5039c085f82f5507c93ebe0855cc620825d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb0989fb8747a5065ce3d7332311cdefba95b80d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916826"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425288"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Outil WorkFlow Service Registration (WFServicesReg.exe)
 Workflow Services Registration (WFServicesReg.exe) est un outil autonome qui peut être utilisé pour ajouter, supprimer ou réparer les éléments de configuration correspondant aux services Windows Workflow Foundation (WF).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 WFServicesReg.exe [-c | -r | -v | -m | -i]  
 ```  
   
@@ -56,11 +56,11 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
   
  L'outil enregistre également des mappages de scripts .xoml et .rules ainsi que des gestionnaires dans la métabase IIS.  
   
- Sur [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] les [!INCLUDE[wxp](../../../includes/wxp-md.md)] ordinateurs et (IIS 5,1 et IIS 6,0), un ensemble de scriptmaps. xoml et. Rules sont inscrits.  
+ Sur les ordinateurs [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../includes/wxp-md.md)] (IIS 5,1 et IIS 6,0), un ensemble de scriptmaps. xoml et. Rules est inscrit.  
   
  Sur les ordinateurs 64 bits, l'outil enregistre les mappages de scripts en mode WOW si le commutateur `Enable32BitAppOnWin64` est activé, ou les mappages de scripts 64 bits natifs si le commutateur `Enable32BitAppOnWin64` est désactivé.  
   
- Sur [!INCLUDE[wv](../../../includes/wv-md.md)] et Windows Server 2008 (IIS 7,0 et versions ultérieures), deux ensembles de gestionnaires. xoml et. Rules sont inscrits: un pour le mode intégré et un pour le mode classique.  
+ Sur les ordinateurs [!INCLUDE[wv](../../../includes/wv-md.md)] et Windows Server 2008 (IIS 7,0 et versions ultérieures), deux ensembles de gestionnaires. xoml et. Rules sont inscrits : un pour le mode intégré et un pour le mode classique.  
   
  Sur les ordinateurs 64 bits, trois jeux de gestionnaires sont enregistrés (indépendamment de l'état du commutateur `Enable32BitAppOnWin64`) : un pour le mode intégré, un pour le mode classique WOW et le dernier pour le mode classique 64 bits natif.  
   
@@ -82,7 +82,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 #### <a name="scriptmap-deleted-under-a-particular-web-site"></a>Mappage de scripts supprimé sous un site web particulier  
  Sous [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un mappage de scripts .xoml ou .rules est supprimé par erreur d’un site web particulier (celui par défaut, par exemple) et non du nœud Sites Web.  
   
- Pour réparer des gestionnaires supprimés pour un site Web particulier, exécutez «WFServicesReg. exe/r» pour supprimer les gestionnaires de tous les sites Web, puis exécutez «WFServicesReg. exe/c» pour créer les gestionnaires appropriés pour tous les sites Web.  
+ Pour réparer des gestionnaires supprimés pour un site Web particulier, exécutez « WFServicesReg. exe/r » pour supprimer les gestionnaires de tous les sites Web, puis exécutez « WFServicesReg. exe/c » pour créer les gestionnaires appropriés pour tous les sites Web.  
   
 ### <a name="configuring-handlers-after-switching-iis-mode"></a>Configuration de gestionnaires après activation du mode IIS  
- Si les services IIS sont en mode de configuration partagé et si [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] est installé, la métabase IIS est configurée sous un emplacement partagé. Si vous basculez IIS en mode de configuration non partagé, la métabase locale ne contiendra pas les gestionnaires requis. Pour configurer correctement la métabase locale, vous pouvez soit importer la métabase partagée vers la métabase locale, soit exécuter «WFServicesReg. exe/c», ce qui configure la métabase locale.
+ Si les services IIS sont en mode de configuration partagé et si [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] est installé, la métabase IIS est configurée sous un emplacement partagé. Si vous basculez IIS en mode de configuration non partagé, la métabase locale ne contiendra pas les gestionnaires requis. Pour configurer correctement la métabase locale, vous pouvez soit importer la métabase partagée vers la métabase locale, soit exécuter « WFServicesReg. exe/c », ce qui configure la métabase locale.
