@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 51e4f3784db58e23ab4293c2d9f4e52e0d6617b5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a1127a39d67b6c24994a2957298c62d87703950d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093442"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416747"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -16,7 +16,7 @@ ms.locfileid: "73093442"
 - **Multiplateforme :** S’exécute sur les [systèmes d’exploitation](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md)Windows, MacOS et Linux.
 - **Cohérent entre architectures :** Exécute votre code avec le même comportement sur plusieurs architectures, notamment x64, x86 et ARM.
 - **Outils de ligne de commande :** Intègre des outils de ligne de commande faciles qui peuvent être utilisés pour le développement local et dans des scénarios d’intégration continue.
-- **Déploiement flexible :** Peut être inclus dans votre application ou installé côte à côte (installations à l’ensemble de l’utilisateur ou de l’ensemble du système). Peut être utilisé avec des [conteneurs Docker](docker/index.md).
+- **Déploiement flexible :** Peut être inclus dans votre application ou installé côte à côte (installations à l’ensemble de l’utilisateur ou de l’ensemble du système). Peut être utilisé avec des [conteneurs Docker](docker/introduction.md).
 - **Compatible :** .net Core est compatible avec .NET Framework, Xamarin et mono, via [.NET standard](../standard/net-standard.md).
 - **Open Source :** la plateforme .NET Core est open source et utilise des licences MIT et Apache 2. .NET Core est un projet [.NET Foundation](https://dotnetfoundation.org/).
 - **Pris en charge par Microsoft :** Le .NET Core est pris en charge par Microsoft, via le [Support .NET Core](https://dotnet.microsoft.com/platform/support/policy).

@@ -8,18 +8,20 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 77db5201ab21dff1f04f76da5dd10d07aa377813
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: a7ddaac56177d13248caf6559221fff26d2d2c00
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191807"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416733"
 ---
 # <a name="c-guide"></a>Guide C#
 
 Le guide C# fournit de nombreuses ressources sur le langage C#. Ce site s’adresse à des publics très différents. En fonction de votre expérience en programmation, ou avec le langage C# et .NET, vous pouvez explorer les différentes sections de ce guide.
 
 - Pour les développeurs débutants :
+  - Regardez la [ C# série de vidéos 101](https://aka.ms/dotnet3-csharp). Il fournit une présentation des concepts importants que vous allez explorer dans ces didacticiels.
+
   - Commencez par les [tutoriels de présentation de C#](tutorials/intro-to-csharp/index.md). Ces tutoriels vous permettent d’explorer le langage C# interactivement dans votre navigateur. À partir de là, vous pouvez passer à d’autres [tutoriels](tutorials/index.md). Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro. Les didacticiels fournissent une procédure pas à pas pour créer des programmes. Ils présentent les concepts du langage et vous expliquent comment générer vos propres programmes en C#. Si vous préférez commencer par lire des informations d’ensemble, essayez la [présentation du langage C#](tour-of-csharp/index.md). Elle explique les concepts du langage C#. Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.
 
 - Pour les développeurs qui découvrent C# :
@@ -61,7 +63,7 @@ Il y a plusieurs sections dans le Guide de C#. Vous pouvez les lire dans l’ord
 - [Référence du langage](language-reference/index.md)
   - Cette section contient la documentation de référence sur le langage C#. Ce document vous aide à comprendre la syntaxe et la sémantique du langage C#. Il comprend également des informations de référence sur les types, les opérateurs, les attributs, les directives de préprocesseur, les commutateurs de compilation ainsi que les erreurs et avertissements du compilateur.
 
-- [Spécification du langage C#](./language-reference/language-specification/index.md)
+- [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction)
   - Fournit des liens vers les dernières versions de la spécification du langage C#.
 
 ## <a name="see-also"></a>Voir aussi

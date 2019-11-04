@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 8ecf399e48da12a9dee19bb217b8668c6a53d3ad
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 30419200cfce785d7fcbbf59650241580a1f0ce4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191857"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454964"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -33,7 +33,7 @@ Le mot clé `readonly` est un modificateur qui peut être utilisé dans quatre c
 - Dans une [définition de membre`readonly`](#readonly-member-examples), `readonly` indique qu’un membre d’un `struct` ne fait pas muter l’état interne de la structure.
 - Dans une [`ref readonly` méthode retournée](#ref-readonly-return-example), le modificateur `readonly` indique que la méthode retourne une référence et que les écritures ne sont pas autorisées dans cette référence.
 
-Les contextes `readonly sturct` et `ref readonly` ont été ajoutés C# dans 7,2. `readonly` membres de struct ont été C# ajoutés dans 8,0
+Les contextes `readonly struct` et `ref readonly` ont été ajoutés C# dans 7,2. `readonly` membres de struct ont été C# ajoutés dans 8,0
 
 ## <a name="readonly-field-example"></a>Exemple de champ en lecture seule
 
@@ -161,6 +161,6 @@ Vous pouvez également consulter les propositions de spécification de langage 
 - [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [const](const.md)
 - [Champs](../../programming-guide/classes-and-structs/fields.md)

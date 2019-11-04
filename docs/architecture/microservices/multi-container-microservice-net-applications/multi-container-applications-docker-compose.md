@@ -2,16 +2,16 @@
 title: Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 description: Comment spécifier la composition des microservices pour une application multiconteneur avec docker-compose.yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: 8c0f1a654d27b32e613b84d3862198ad96f32e1c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 938a9aa192f82628051bd7dc065f661f510ba544
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039743"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416707"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 
-Dans ce guide, le fichier [docker-compose.yml](https://docs.docker.com/compose/compose-file/) a été introduit dans la section [Étape 4. Définir vos services dans docker-compose.yml au moment de générer une application Docker à plusieurs conteneurs](../docker-application-development-process/docker-app-development-workflow.md#step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application). Toutefois, il existe d’autres modes d’utilisation des fichiers docker-compose qui méritent d’être abordés plus en détail.
+Dans ce guide, le fichier [docker-compose. yml](https://docs.docker.com/compose/compose-file/) a été introduit dans la section [étape 4. Définissez vos services dans docker-compose. yml lors de la création d’une application d’ancrage à plusieurs conteneurs](../docker-application-development-process/docker-app-development-workflow.md#step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application). Toutefois, il existe d’autres modes d’utilisation des fichiers docker-compose qui méritent d’être abordés plus en détail.
 
 Par exemple, vous pouvez décrire explicitement la façon dont vous souhaitez déployer votre application à plusieurs conteneurs dans le fichier docker-compose.yml. Éventuellement, vous pouvez également décrire la façon dont vous allez générer vos images Docker personnalisées. (Vous pouvez également générer des images Docker personnalisées avec l’interface de ligne de commande Docker CLI.)
 
@@ -446,11 +446,11 @@ Dans le modèle reposant sur un conteneur et des microservices, vous démarrez c
 
 L’équipe .NET a effectué un travail important pour faire de .NET Core et d’ASP.NET Core un framework optimisé pour les conteneurs. .NET Core n’est pas seulement un framework léger doté d’une faible empreinte mémoire. L’équipe s’est concentrée sur des images Docker optimisées pour trois grands scénarios et les a publiées dans le registre Docker Hub à l’emplacement *dotnet/core*, à compter de la version 2.1 :
 
-1. **Développement** : la priorité est donnée à la rapidité des itérations et du débogage des modifications, la taille étant secondaire.
+1. **Développement**: la priorité est la capacité à itérer et à déboguer rapidement les modifications, et où la taille est secondaire.
 
 2. **Génération** : la priorité est la compilation de l’application, et cela inclut les fichiers binaires et les autres dépendances pour optimiser les fichiers binaires.
 
-3. **Production** : l’objectif étant de déployer et de lancer rapidement les conteneurs, ces images sont limitées aux binaires et au contenu nécessaires pour exécuter l’application.
+3. **Production**: lorsque le focus est le déploiement et le démarrage rapides des conteneurs, ces images sont limitées aux fichiers binaires et au contenu nécessaires pour exécuter l’application.
 
 Pour cela, l’équipe .NET fournit trois variantes de base dans [dotnet/core](https://hub.docker.com/_/microsoft-dotnet-core/) (sur Docker Hub) :
 
@@ -467,7 +467,7 @@ Pour accélérer le démarrage, les images de runtime définissent aussi automat
   <https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/>
 
 - **Création d’images Docker pour les applications .NET Core**  
-  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](../../../core/docker/building-net-docker-images.md)
+  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
 
 > [!div class="step-by-step"]
 > [Précédent](data-driven-crud-microservice.md)

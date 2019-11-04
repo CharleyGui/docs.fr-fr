@@ -3,16 +3,16 @@ title: Créer des bibliothèques clientes gRPC-gRPC pour les développeurs WCF
 description: Discussion sur les bibliothèques/packages client partagés pour les services gRPC.
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 12c628d2b58199a8103c60aa123bb75a34e0797d
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b403e7e1638496947ac7f6fc976cbeab2f435bbf
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846701"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419923"
 ---
 # <a name="create-grpc-client-libraries"></a>Créer des bibliothèques clientes gRPC
 
-Il n’est pas nécessaire de distribuer les bibliothèques clientes pour une application gPRC. Vous pouvez créer une bibliothèque partagée de fichiers `.proto` au sein de votre organisation, et d’autres équipes peuvent utiliser ces fichiers pour générer le code client dans leurs propres projets. Toutefois, si vous disposez d’un référentiel NuGet privé et que de nombreuses autres équipes utilisent .NET Core, la création et la publication de packages NuGet client dans le cadre de votre projet de service peuvent être un bon moyen de partager et de promouvoir votre service.
+Il n’est pas nécessaire de distribuer les bibliothèques clientes pour une application gRPC. Vous pouvez créer une bibliothèque partagée de fichiers `.proto` au sein de votre organisation, et d’autres équipes peuvent utiliser ces fichiers pour générer le code client dans leurs propres projets. Toutefois, si vous disposez d’un référentiel NuGet privé et que de nombreuses autres équipes utilisent .NET Core, la création et la publication de packages NuGet client dans le cadre de votre projet de service peuvent être un bon moyen de partager et de promouvoir votre service.
 
 L’un des avantages de la distribution d’une bibliothèque cliente est que vous pouvez améliorer les classes gRPC et Protobuf générées avec des méthodes et des propriétés pratiques. Dans le code client, comme dans le serveur, toutes les classes sont déclarées comme `partial` afin que vous puissiez les étendre sans modifier le code généré. Cela signifie qu’il est facile d’ajouter des constructeurs, des méthodes, des propriétés calculées, etc., aux types de base.
 
@@ -23,7 +23,7 @@ Dans un environnement multiplateforme où différentes équipes utilisent fréqu
 
 ## <a name="useful-extensions"></a>Extensions utiles
 
-Il existe deux interfaces couramment utilisées dans .NET pour gérer les flux d’objets : <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.IObservable%601>. À compter de .NET Core 3,0 C# et 8,0, il existe une interface<xref:System.Collections.Generic.IAsyncEnumerable%601>pour le traitement asynchrone des flux, et une syntaxe`await foreach`pour l’utilisation de l’interface. Cette section présente le code réutilisable pour l’application de ces interfaces aux flux gRPC.
+Il existe deux interfaces couramment utilisées dans .NET pour gérer les flux d’objets : <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.IObservable%601>. À compter de .NET Core 3,0 C# et 8,0, il existe une interface <xref:System.Collections.Generic.IAsyncEnumerable%601> pour le traitement asynchrone des flux, et une syntaxe `await foreach` pour l’utilisation de l’interface. Cette section présente le code réutilisable pour l’application de ces interfaces aux flux gRPC.
 
 Avec les bibliothèques clientes gRPC .NET Core, il existe une méthode d’extension `ReadAllAsync` pour `IAsyncStreamReader<T>` qui crée une `IAsyncEnumerable<T>`. Pour les développeurs qui utilisent la programmation réactive, une méthode d’extension équivalente pour créer un `IObservable<T>` peut se présenter comme suit.
 

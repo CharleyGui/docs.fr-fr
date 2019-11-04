@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 91bb3be207c9919eb7eb0119e96e76aae94858be
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 656c92c417283366e4bb757489c189ecbc0ea815
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373764"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416686"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
@@ -75,7 +75,7 @@ Au lieu de dupliquer la logique, encapsulez-la dans une construction de programm
 
 ### <a name="persistence-ignorance"></a>Ignorance de la persistance
 
-**L’ignorance de la persistance** fait référence aux types qui doivent être stockés, mais dont le code n’est pas affecté par le choix de la technologie de stockage. Ces types dans .NET sont parfois appelés des OCT (objets CLR traditionnels), car ils n’ont pas besoin d’hériter d’une classe de base particulière ni d’implémenter une interface particulière. L’ignorance de la persistance est pratique, car elle permet au même modèle métier d’être stocké de plusieurs façons, ce qui offre davantage de flexibilité à l’application. Les choix de stockage peuvent changer au fil du temps, d’une technologie de base de données à une autre, ou bien d’autres formes de persistance peuvent être nécessaires en plus de ce avec quoi l’application a démarré (par exemple l’utilisation d’un cache Redis ou d’Azure DocumentDB en plus d’une base de données relationnelle).
+**L’ignorance de la persistance** fait référence aux types qui doivent être stockés, mais dont le code n’est pas affecté par le choix de la technologie de stockage. Ces types dans .NET sont parfois appelés des OCT (objets CLR traditionnels), car ils n’ont pas besoin d’hériter d’une classe de base particulière ni d’implémenter une interface particulière. L’ignorance de la persistance est pratique, car elle permet au même modèle métier d’être stocké de plusieurs façons, ce qui offre davantage de flexibilité à l’application. Les choix de persistance peuvent changer au fil du temps, d’une technologie de base de données à l’autre, ou des formes de persistance supplémentaires peuvent être nécessaires en plus de ce que l’application a démarré (par exemple, à l’aide d’un cache Redims ou Azure Cosmos DB en plus d’un base de données relationnelle).
 
 Voici quelques exemples de violation de ce principe :
 
@@ -101,7 +101,7 @@ Au minimum, les applications web individuelles doivent s’efforcer d’être le
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Modèles de conception JAVA : principes](https://java-design-patterns.com/principles/)
+- [Modèles de conception JAVA : principes](https://java-design-patterns.com/principles/)
 - [Contexte délimité](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]

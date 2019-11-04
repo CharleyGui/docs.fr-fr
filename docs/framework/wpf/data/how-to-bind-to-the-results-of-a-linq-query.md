@@ -5,12 +5,12 @@ helpviewer_keywords:
 - running a LINQ query [WPF], bind to results
 - binding to LINQ query results [WPF]
 ms.assetid: ff2844d9-17ed-4ea6-aab1-5111af0bc684
-ms.openlocfilehash: 70f4b439d231d69e5671216bc4e62d0789ce66c7
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: d21ac5f366e001ea76d6eda64ed62583248796f6
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920136"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454413"
 ---
 # <a name="how-to-bind-to-the-results-of-a-linq-query"></a>Comment : effectuer une liaison avec les résultats d'une requête LINQ
 
@@ -35,4 +35,4 @@ La deuxième zone de liste est liée à cette collection, car sa valeur <xref:Sy
 - [Rendre des données disponibles pour la liaison en XAML](how-to-make-data-available-for-binding-in-xaml.md)
 - [Effectuer une liaison à une collection et afficher des informations basées sur la sélection](how-to-bind-to-a-collection-and-display-information-based-on-selection.md)
 - [Nouveautés de WPF version 4.5](../getting-started/whats-new.md)
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
+- [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)

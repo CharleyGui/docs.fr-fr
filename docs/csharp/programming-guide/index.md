@@ -9,19 +9,19 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: 25b686e654c5d6bb44a56b96cbf4045d14e95b62
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 5eb9313003f767daf64a5b5c4f229c6c58a018ec
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392429"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423245"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 Cette section fournit des informations détaillées sur les fonctionnalités et fonctions clés du langage C# accessibles par .NET Framework.  
   
  La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes débutant en programmation ou avec C#, vous souhaiterez peut-être consulter la [Présentation des C# didacticiels](../tutorials/intro-to-csharp/index.md) ou le [didacticiel .net dans le navigateur](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), où aucune connaissance préalable de la programmation n’est requise.  
   
- Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](../language-reference/language-specification/index.md).  
+ Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction).  
   
 ## <a name="program-sections"></a>Sections du programme
 
@@ -56,7 +56,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Itérateurs](./concepts/iterators.md)
   
- [Expressions de requête LINQ](./linq-query-expressions/index.md)  
+ [Expressions de requête LINQ](../linq/index.md)  
   
  [Expressions lambda](./statements-expressions-operators/lambda-expressions.md)  
   
@@ -75,7 +75,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Attributs](./concepts/attributes/index.md)  
   
- [Collections](./concepts/collections.md)  
+ [Regroupements](./concepts/collections.md)  
   
  [Exceptions et gestion des exceptions](./exceptions/index.md)  
   
@@ -87,5 +87,5 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../language-reference/index.md)
+- [Informations de référence sur C#](../language-reference/index.md)
 - [C#](../index.md)

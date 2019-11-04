@@ -2,12 +2,12 @@
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
 ms.date: 05/06/2019
-ms.openlocfilehash: b61b5fd53f470c30b636026fa19ebfad834d6354
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c9529e135f48c80f445c91038294a3e7266486f1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117661"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420480"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -629,7 +629,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 **web**
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
 
 `--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
 
@@ -656,9 +656,9 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 `-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
 
 `--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
 
@@ -693,7 +693,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 `-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
 
 `--use-browserlink` : inclut BrowserLink dans le projet.
 
@@ -776,6 +776,6 @@ Créez un fichier *global.json* dans le répertoire actif en définissant la ver
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèles personnalisés pour dotnet new](custom-templates.md)
-- [Créer un modèle personnalisé pour dotnet new](../tutorials/create-custom-template.md)
+- [Créer un modèle personnalisé pour dotnet new](../tutorials/cli-templates-create-item-template.md)
 - [Dépôt GitHub dotnet/dotnet-template-samples](https://github.com/dotnet/dotnet-template-samples)
 - [Modèles disponibles pour dotnet new](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)

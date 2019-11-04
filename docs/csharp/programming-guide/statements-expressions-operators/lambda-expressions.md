@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 1a608a9102e5fb19e40294761c0de98f7e008133
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: d401c832dd3b29de609e9eaab69ea3334d6591b9
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168978"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73417682"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
 
@@ -42,7 +42,7 @@ Les expressions lambda peuvent également être converties en types d’[arbores
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Vous pouvez utiliser des expressions lambda dans tout code qui requiert des instances de types délégués ou d’arborescences d’expressions, par exemple en tant qu’argument de la méthode <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> pour passer le code qui doit être exécuté en arrière-plan. Vous pouvez également utiliser des expressions lambda quand vous écrivez des [expressions de requête LINQ](../../linq/index.md), comme le montre l’exemple suivant :
+Vous pouvez utiliser des expressions lambda dans tout code qui requiert des instances de types délégués ou d’arborescences d’expressions, par exemple en tant qu’argument de la méthode <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> pour passer le code qui doit être exécuté en arrière-plan. Vous pouvez également utiliser des expressions lambda lorsque vous écrivez [LINQ C#dans ](../../linq/index.md), comme le montre l’exemple suivant :
 
 [!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
@@ -58,7 +58,7 @@ Une expression lambda comportant une expression à droite de l’opérateur `=>`
 
 Les parenthèses sont facultatives uniquement si le lambda comporte un paramètre d'entrée ; sinon, elles sont obligatoires.
 
-Utilisez des parenthèses vides s'il n'y a aucun paramètre d'entrée :  
+Spécifiez des paramètres d'entrée de zéro avec des parenthèses vides :  
 
 [!code-csharp[zero parameters](~/samples/snippets/csharp/programming-guide/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
 
@@ -90,7 +90,7 @@ Les instructions lambda ne peuvent pas être utilisées pour créer des arboresc
   
 ## <a name="async-lambdas"></a>Lambdas asynchrones
 
-Vous pouvez facilement créer des expressions et des instructions lambda qui incorporent le traitement asynchrone à l'aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) . Par exemple, l'exemple Windows Forms suivant contient un gestionnaire d'événements qui appelle et attend une méthode async `ExampleMethodAsync`.
+Vous pouvez facilement créer des expressions et des instructions lambda qui incorporent un traitement asynchrone en utilisant les mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md). Par exemple, l'exemple Windows Forms suivant contient un gestionnaire d'événements qui appelle et attend une méthode async `ExampleMethodAsync`.
 
 ```csharp
 public partial class Form1 : Form
@@ -148,7 +148,7 @@ Vous définissez un tuple en plaçant entre des parenthèses une liste de ses co
 
 [!code-csharp-interactive[lambda and tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithoutComponentName)]
 
-En général, les champs d’un tuple sont nommés `Item1`, `Item2`, etc. Vous pouvez cependant définir un tuple avec des composants nommés, comme dans l’exemple suivant.
+En règle générale, les champs d’un tuple sont nommés `Item1`, `Item2`, etc. Toutefois, vous pouvez définir un tuple avec des composants nommés, comme le montre l’exemple suivant.
 
 [!code-csharp-interactive[lambda and named tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithComponentName)]
 
@@ -156,7 +156,7 @@ Pour plus d’informations sur les tuples C#, voir [Types tuples C#](../../tuple
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>Lambdas avec les opérateurs de requête standard
 
-LINQ to Objects, parmi d’autres implémentations, a un paramètre d’entrée dont le type fait partie de la famille <xref:System.Func%601> de délégués génériques. Ces délégués utilisent des paramètres de type pour définir le nombre et le type des paramètres d’entrée, ainsi que le type de retour du délégué. Les délégués`Func` sont très utiles pour l'encapsulation des expressions définies par l'utilisateur appliquées à chaque élément dans un jeu de données sources. Prenons par exemple le type délégué <xref:System.Func%602> :  
+LINQ to Objects, parmi d’autres implémentations, a un paramètre d’entrée dont le type fait partie de la famille <xref:System.Func%601> de délégués génériques. Ces délégués utilisent des paramètres de type pour définir le nombre et le type des paramètres d’entrée, ainsi que le type de retour du délégué. Les délégués `Func` sont très utiles pour l'encapsulation des expressions définies par l'utilisateur appliquées à chaque élément dans un jeu de données sources. Prenons par exemple le type délégué <xref:System.Func%602> :  
 
 ```csharp
 public delegate TResult Func<in T, out TResult>(T arg)
@@ -230,7 +230,7 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 
 - [Guide de programmation C#](../index.md)
 - [LINQ (Language Integrated Query)](../concepts/linq/index.md)
-- [Arborescences d’expressions](../concepts/expression-trees/index.md)
+- [Arborescences d’expression](../concepts/expression-trees/index.md)
 - [Comparaison entre les fonctions locales et les expressions lambda](../../local-functions-vs-lambdas.md)
 - [Expressions lambda implicitement typées](../../implicitly-typed-lambda-expressions.md)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)

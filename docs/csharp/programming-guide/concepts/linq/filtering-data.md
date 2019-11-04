@@ -2,12 +2,12 @@
 title: Filtrage des données (C#)
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: 17d3a65b6042c9679a263eff0048f5360c4aa546
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: eb448c1c2ea6d9b3fcf0120043cafebc01cd3805
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594397"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418473"
 ---
 # <a name="filtering-data-c"></a>Filtrage des données (C#)
 Le filtrage fait référence à l’opération de restriction du jeu de résultats pour que celui-ci contienne uniquement les éléments qui répondent à une condition spécifiée. Cette opération est également appelée « sélection ».  
@@ -50,7 +50,7 @@ foreach (string str in query)
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [where, clause](../../../language-reference/keywords/where-clause.md)
-- [Guide pratique pour spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)
+- [Guide pratique pour spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
 - [Guide pratique pour interroger les métadonnées d’un assembly avec la réflexion (LINQ) (C#)](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [Guide pratique pour rechercher des fichiers ayant un attribut ou un nom donné (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Guide pratique pour interroger des fichiers ayant un attribut ou un nom donné (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
 - [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

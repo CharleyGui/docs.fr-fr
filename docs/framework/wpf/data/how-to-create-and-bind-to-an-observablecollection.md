@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer et effectuer une liaison à un ObservableCollection'
+title: 'Comment : créer et effectuer une liaison à un ObservableCollection'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - data binding [WPF], ObservableCollection class
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
-ms.openlocfilehash: 8db9f2051a0401e01f233f9c959e015eb657bdac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 596f6ae71e83c5aa3b2b80764f68a8abf08cdb7b
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965478"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73453514"
 ---
-# <a name="how-to-create-and-bind-to-an-observablecollection"></a>Procédure : Créer et effectuer une liaison à un ObservableCollection
-Cet exemple montre comment créer et effectuer une liaison à une collection qui dérive de <xref:System.Collections.ObjectModel.ObservableCollection%601> la classe, qui est une classe de collection qui fournit des notifications lorsque des éléments sont ajoutés ou supprimés.  
+# <a name="how-to-create-and-bind-to-an-observablecollection"></a>Comment : créer et effectuer une liaison à un ObservableCollection
+Cet exemple montre comment créer et effectuer une liaison à une collection qui dérive de la classe <xref:System.Collections.ObjectModel.ObservableCollection%601>, qui est une classe de collection qui fournit des notifications lorsque des éléments sont ajoutés ou supprimés.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant illustre l’implémentation d’une collection `NameList` :  
@@ -136,14 +136,14 @@ End Class
  La définition de `NameItemTemplate` n’est pas indiquée ici.  
   
 > [!NOTE]
-> Les objets de votre collection doivent satisfaire aux conditions décrites dans la [Vue d’ensemble des sources de liaison](binding-sources-overview.md). En particulier, si vous utilisez <xref:System.Windows.Data.BindingMode.OneWay> ou <xref:System.Windows.Data.BindingMode.TwoWay> (par exemple, vous souhaitez que votre [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se met à jour lorsque les propriétés sources changent dynamiquement), vous devez implémenter un mécanisme de notification de modification de propriété approprié, tel que le <xref:System.ComponentModel.INotifyPropertyChanged>interface.  
+> Les objets de votre collection doivent satisfaire aux conditions décrites dans la [Vue d’ensemble des sources de liaison](binding-sources-overview.md). En particulier, si vous utilisez <xref:System.Windows.Data.BindingMode.OneWay> ou <xref:System.Windows.Data.BindingMode.TwoWay> (par exemple, si vous souhaitez que vos [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] soient mises à jour lorsque les propriétés sources changent dynamiquement), vous devez implémenter un mécanisme de notification de modification de propriété approprié, tel que l’interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
- Pour plus d’informations, consultez la section « Liaisons de collections » de la [Vue d’ensemble de la liaison de données](data-binding-overview.md).  
+ Pour plus d’informations, consultez la section « Liaisons de collections » de la [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Trier des données dans une vue](how-to-sort-data-in-a-view.md)
 - [Filtrer les données d’une vue](how-to-filter-data-in-a-view.md)
 - [Trier et grouper des données à l'aide d'une vue en XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)
-- [Vue d’ensemble de la liaison de données](data-binding-overview.md)
+- [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
 - [Rubriques de guide pratique](data-binding-how-to-topics.md)

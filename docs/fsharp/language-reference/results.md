@@ -1,17 +1,17 @@
 ---
 title: Résultats
-description: Découvrez comment utiliser le F# « Result » tapez pour vous aider à écrire du code à tolérance d’erreur.
+description: Découvrez comment utiliser le type F# « résultat » pour vous aider à écrire du code tolérant aux erreurs.
 ms.date: 04/24/2017
-ms.openlocfilehash: 36f60df8a2991c1d318e4921af6c9e89a0156918
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645321"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424854"
 ---
 # <a name="results"></a>Résultats
 
-En commençant par F# 4.1, il existe un `Result<'T,'TFailure>` type que vous pouvez utiliser pour l’écriture de code à tolérance d’erreur qui peut être composée.
+À F# partir de 4,1, il existe un type de `Result<'T,'TFailure>` que vous pouvez utiliser pour écrire du code tolérant aux erreurs qui peut être composé.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -20,20 +20,20 @@ En commençant par F# 4.1, il existe un `Result<'T,'TFailure>` type que vous pou
 [<StructuralEquality; StructuralComparison>]
 [<CompiledName("FSharpResult`2")>]
 [<Struct>]
-type Result<'T,'TError> = 
-    | Ok of ResultValue:'T 
+type Result<'T,'TError> =
+    | Ok of ResultValue:'T
     | Error of ErrorValue:'TError
 ```
 
 ## <a name="remarks"></a>Notes
 
-Notez que le type de résultat est un [union discriminée de struct](discriminated-unions.md#struct-discriminated-unions), qui est une autre fonctionnalité introduite dans F# 4.1.  Sémantique d’égalité structurelle s’appliquent ici.
+Notez que le type de résultat est une [union discriminée struct](discriminated-unions.md#struct-discriminated-unions), qui est une autre fonctionnalité F# introduite dans 4,1.  La sémantique d’égalité structurelle s’applique ici.
 
-Le `Result` type est généralement utilisé dans monadic-gestion des erreurs, qui sont souvent appelée [programmation orientée sur les chemins de fer](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) au sein de la F# Communauté.  L’exemple simple suivant illustre cette approche.
+Le type de `Result` est généralement utilisé dans la gestion des erreurs monadic, qui est souvent appelée [programmation orientée ferroviaire](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) au sein F# de la communauté.  L’exemple trivial suivant illustre cette approche.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
-type Request = 
+type Request =
     { Name: string
       Email: string }
 
@@ -57,11 +57,11 @@ let validateEmail req =
     | _ -> Ok req
 
 let validateRequest reqResult =
-    reqResult 
+    reqResult
     |> Result.bind validateName
     |> Result.bind validateEmail
 
-let test() = 
+let test() =
     // Now, create a Request and pattern match on the result.
     let req1 = { Name = "Phillip"; Email = "phillip@contoso.biz" }
     let res1 = validateRequest (Ok req1)
@@ -80,7 +80,7 @@ let test() =
 test()
 ```
 
-Comme vous pouvez le voir, il est assez facile de chaîner les diverses fonctions de validation si vous tous les forcez à retourner un `Result`.  Vous pouvez ainsi vous décomposez les fonctionnalités de ce genre en petits éléments qui sont aussi composables comme vous le souhaitez.  Cela a également la valeur ajoutée de *en appliquant* l’utilisation de [critères spéciaux](pattern-matching.md) à la fin d’un cycle de validation, ce qui réduit applique un degré plus élevé de l’exactitude du programme.
+Comme vous pouvez le voir, il est assez facile de chaîner plusieurs fonctions de validation si vous les forcez à retourner une `Result`.  Cela vous permet de décomposer des fonctionnalités comme celles-ci en petites parties, comme vous le souhaitez.  Cela a également la valeur ajoutée de l' *application* de l’utilisation des [critères spéciaux](pattern-matching.md) à la fin d’un cycle de validation, qui, à son tour, applique un degré plus élevé de corrections du programme.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Collections (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 712ae4c9b4cf577ab728e4b78582445070e08049
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 23d73a26bbe0e711bb3a081994826e06634c4bac
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595296"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73418708"
 ---
 # <a name="collections-c"></a>Collections (C#)
 
@@ -70,7 +70,7 @@ foreach (var salmon in salmons)
 // Output: chinook coho pink sockeye
 ```
 
-Si le contenu d’une collection est connu d’avance, vous pouvez utiliser un *initialiseur de collection* pour initialiser la collection. Pour plus d’informations, consultez [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md).
+Si le contenu d’une collection est connu d’avance, vous pouvez utiliser un *initialiseur de collection* pour initialiser la collection. Pour plus d’informations, consultez la page [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md).
 
 L’exemple suivant est identique à l’exemple précédent, à la différence qu’un initialiseur de collection est utilisé pour ajouter des éléments à la collection.
 
@@ -200,7 +200,7 @@ Vous pouvez créer une collection générique en utilisant l’une des classes d
 
 Le tableau suivant liste quelques classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fréquemment utilisées :
 
-|Classe|Description|
+|Class|Description|
 |---|---|
 |<xref:System.Collections.Generic.Dictionary%602>|Représente une collection de paires clé/valeur organisées en fonction de la clé.|
 |<xref:System.Collections.Generic.List%601>|Représente une liste d’objets accessibles par index. Fournit des méthodes de recherche, de tri et de modification de listes.|
@@ -230,7 +230,7 @@ Si possible, vous devez utiliser les collections génériques dans l’espace de
 
 Le tableau suivant répertorie certaines des classes fréquemment utilisées de l’espace de noms `System.Collections` :
 
-|Classe|Description|
+|Class|Description|
 |---|---|
 |<xref:System.Collections.ArrayList>|Représente un tableau d’objets dont la taille est augmentée de manière dynamique selon les besoins.|
 |<xref:System.Collections.Hashtable>|Représente une collection de paires clé/valeur qui sont organisées en fonction du code de hachage de la clé.|
@@ -351,7 +351,7 @@ private static void FindInDictionary2(string symbol)
 
 ## <a name="using-linq-to-access-a-collection"></a>Utilisation de LINQ pour accéder à une collection
 
-LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [Bien démarrer avec LINQ en C#](./linq/getting-started-with-linq.md).
+LINQ (Language-Integrated Query) peut être utilisé pour accéder aux collections. Les requêtes LINQ fournissent des fonctionnalités de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [Bien démarrer avec LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/).
 
 L’exemple suivant exécute une requête LINQ sur un `List` générique. La requête LINQ retourne une autre collection qui contient les résultats.
 
