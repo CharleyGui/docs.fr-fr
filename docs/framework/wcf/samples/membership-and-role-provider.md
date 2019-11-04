@@ -2,12 +2,12 @@
 title: Membership and Role Provider
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: 139d85a1ec36509690f35f24c7ddf04716a7e909
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 7fba608d6d0ed3b7caab62ff16926d7b03516ed1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039432"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424666"
 ---
 # <a name="membership-and-role-provider"></a>Membership and Role Provider
 L’exemple de fournisseur d’appartenances et de rôles montre comment un service peut utiliser les fournisseurs d’appartenances et de rôles ASP.NET pour authentifier et autoriser des clients.  
@@ -69,7 +69,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 </system.web>  
 ```  
   
- Le service expose un point de terminaison unique de communication avec le service, qui est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une `wsHttpBinding`standard, qui utilise par défaut l'authentification Windows. Cet exemple définit la `wsHttpBinding` standard de manière à utiliser l'authentification du nom d'utilisateur. Le comportement spécifie que le certificat de serveur sera utilisé pour l'authentification du service. Le certificat de serveur doit contenir la même valeur pour `SubjectName` le `findValue` en tant qu’attribut dans l' [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) élément de configuration serviceCertificate >. En outre, le comportement spécifie que l’authentification des paires nom d’utilisateur/mot de passe est effectuée par le fournisseur d’appartenances ASP.NET et que le mappage de rôle est effectué par le fournisseur de rôle ASP.NET en spécifiant les noms définis pour les deux fournisseurs.  
+ Le service expose un point de terminaison unique de communication avec le service, qui est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une `wsHttpBinding`standard, qui utilise par défaut l'authentification Windows. Cet exemple définit la `wsHttpBinding` standard de manière à utiliser l'authentification du nom d'utilisateur. Le comportement spécifie que le certificat de serveur sera utilisé pour l'authentification du service. Le certificat de serveur doit contenir la même valeur pour le `SubjectName` que l’attribut `findValue` dans l’élément de configuration [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) . En outre, le comportement spécifie que l’authentification des paires nom d’utilisateur/mot de passe est effectuée par le fournisseur d’appartenances ASP.NET et que le mappage de rôle est effectué par le fournisseur de rôle ASP.NET en spécifiant les noms définis pour les deux fournisseurs.  
   
 ```xml  
 <system.serviceModel>  
@@ -114,7 +114,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 </system.serviceModel>  
 ```  
   
- Lorsque vous exécutez l’exemple, le client appelle les différentes opérations de service sous trois comptes d’utilisateur différents: Alice, Bob et Charlie. Les demandes et réponses de l'opération sont affichées dans la fenêtre de console cliente. Les quatre appels passés par l'utilisateur « Alice » doivent réussir. L'utilisateur « Bob » doit obtenir une erreur d'accès refusé lors de la tentative d'appel de la méthode Divide. L'utilisateur  « Charlie » doit obtenir à une erreur d'accès refusé lors de la tentative d'appel de la méthode Multiply. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
+ Lorsque vous exécutez l'exemple, le client appelle plusieurs opérations de service sous trois comptes d'utilisateurs différents : Alice, Bob et Charlie. Les demandes et réponses de l'opération sont affichées dans la fenêtre de console cliente. Les quatre appels passés par l'utilisateur « Alice » doivent réussir. L'utilisateur « Bob » doit obtenir une erreur d'accès refusé lors de la tentative d'appel de la méthode Divide. L'utilisateur  « Charlie » doit obtenir à une erreur d'accès refusé lors de la tentative d'appel de la méthode Multiply. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -150,9 +150,9 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
 4. Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-5. Sur le serveur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur `setup.bat service`et exécutez. L' `setup.bat` exécution avec `service` l’argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
+5. Sur le serveur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez `setup.bat service`. L’exécution de `setup.bat` avec l’argument `service` crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service vers un fichier nommé service. cer.  
   
-6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat `findValue` (dans l’attribut de l' [ \<> serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), qui est le même que le nom de domaine complet de l’ordinateur.  
+6. Modifiez le fichier Web. config pour refléter le nouveau nom de certificat (dans l’attribut `findValue` de la [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), qui est identique au nom de domaine complet de l’ordinateur.  
   
 7. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
@@ -167,7 +167,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 - Exécutez Cleanup.bat dans le dossier exemples une fois que vous avez terminé d'exécuter l'exemple.  
   
 > [!NOTE]
-> Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Par exemple: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+> Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
 ## <a name="the-setup-batch-file"></a>Le fichier de commandes d'installation  
  Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec les certificats pertinents pour exécuter une application auto-hébergée qui requiert une sécurité basée sur le certificat du serveur. Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.  
@@ -180,7 +180,7 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
      Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasins LocalMachine.  
   
-    ```  
+    ```console
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  
@@ -194,6 +194,6 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
   
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.  
   
-    ```  
+    ```bat  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  

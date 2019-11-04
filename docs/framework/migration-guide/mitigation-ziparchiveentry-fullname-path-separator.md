@@ -8,12 +8,12 @@ helpviewer_keywords:
 - .NET Framework 4.6.1 retargeting changes
 - retargeting changes
 ms.assetid: 8d575722-4fb6-49a2-8a06-f72d62dc3766
-ms.openlocfilehash: 495377403e2f0c0f5f4f166f51d738265c16ef7e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 021d22e90ba39a4d01cf7d64588fab2d724b6640
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126058"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457737"
 ---
 # <a name="mitigation-ziparchiveentryfullname-path-separator"></a>Atténuation : Séparateur de chemin ZipArchiveEntry.FullName
 À compter des applications qui ciblent .NET Framework 4.6.1, le séparateur de chemin utilisé dans la propriété <xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType> a été changé. Il ne s’agit plus de la barre oblique inverse (« \\ ») utilisée dans les versions antérieures du .NET Framework, mais de la barre oblique (« / »).   Les objets <xref:System.IO.Compression.ZipArchiveEntry?displayProperty=nameWithType> sont créés en appelant l’une des surcharges de la méthode <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A?displayProperty=nameWithType>.  
@@ -45,4 +45,4 @@ ms.locfileid: "73126058"
 ## <a name="see-also"></a>Voir aussi
 
 - [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-1.md)
-- [Compatibilité des applications dans la version 4.6.1](application-compatibility-in-the-net-framework-4-6-1.md)
+- [Compatibilité des applications](application-compatibility.md)

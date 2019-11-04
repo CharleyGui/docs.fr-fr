@@ -1,21 +1,21 @@
 ---
-title: 'Transport : Exemple de transactions personnalisées sur UDP'
+title: 'Transport: Custom Transactions over UDP Sample'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: aeab56c122cff4c8a1ee87cb067f03ee0c2f3227
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: fcbc0ef6e747af953f545a06da965835595dd419
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044703"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423885"
 ---
-# <a name="transport-custom-transactions-over-udp-sample"></a>Transport : Exemple de transactions personnalisées sur UDP
-Cet exemple est basé sur le [transport: Exemple](../../../../docs/framework/wcf/samples/transport-udp.md) UDP dans l'[extensibilité du transport](../../../../docs/framework/wcf/samples/transport-extensibility.md)Windows Communication Foundation (WCF). Il étend l’exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l’utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.  
+# <a name="transport-custom-transactions-over-udp-sample"></a>Transport: Custom Transactions over UDP Sample
+Cet exemple est basé sur l’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) dans l'[extensibilité du transport](../../../../docs/framework/wcf/samples/transport-extensibility.md)Windows Communication Foundation (WCF). Il étend l’exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l’utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.  
   
 ## <a name="code-changes-in-the-udp-transport-sample"></a>Modifications du code dans l'exemple UDP Transport  
  Pour illustrer le flux de transactions, l'exemple modifie le contrat de service de `ICalculatorContract` afin qu'une portée de transaction soit requise pour `CalculatorService.Add()`. L'exemple ajoute également un paramètre `System.Guid` supplémentaire au contrat de l'opération `Add`. Ce paramètre permet de transmettre l’identificateur de la transaction cliente au service.  
   
-```  
+```csharp  
 class CalculatorService : IDatagramContract, ICalculatorContract  
 {  
     [OperationBehavior(TransactionScopeRequired=true)]  
@@ -38,23 +38,23 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- Le [transport: L'](../../../../docs/framework/wcf/samples/transport-udp.md) exemple UDP utilise des paquets UDP pour transmettre des messages entre un client et un service. Le [transport: L’exemple](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) de transport personnalisé utilise le même mécanisme pour transporter les messages, mais lorsqu’une transaction est passée, elle est insérée dans le paquet UDP avec le message encodé.  
+ L’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) utilise des paquets UDP pour transmettre des messages entre un client et un service. L' [exemple transport : Custom transport](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) utilise le même mécanisme pour transporter les messages, mais lorsqu’une transaction est passée, elle est insérée dans le paquet UDP avec le message encodé.  
   
-```  
-byte[] txmsgBuffer =                TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
+```csharp  
+byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
   
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
  `TransactionMessageBuffer.WriteTransactionMessageBuffer` est une méthode d'assistance qui contient de nouvelles fonctionnalités permettant de fusionner le jeton de propagation de la transaction actuelle avec l'entité de message, et de le placer dans une mémoire tampon.  
   
- Pour le transport de workflow de transaction personnalisé, l’implémentation du client doit connaître les opérations de service qui nécessitent un workflow de transaction et transmettre ces informations à WCF. Un mécanisme doit également permettre de transmettre la transaction utilisateur à la couche de transport. Cet exemple utilise des «inspecteurs de messages WCF» pour obtenir ces informations. L’inspecteur de message client implémenté ici et appelé `TransactionFlowInspector` effectue les tâches suivantes :  
+ Pour le transport de workflow de transaction personnalisé, l’implémentation du client doit connaître les opérations de service qui nécessitent un workflow de transaction et transmettre ces informations à WCF. Un mécanisme doit également permettre de transmettre la transaction utilisateur à la couche de transport. Cet exemple utilise des « inspecteurs de messages WCF » pour obtenir ces informations. L’inspecteur de message client implémenté ici et appelé `TransactionFlowInspector` effectue les tâches suivantes :  
   
 - Il détermine si une transaction doit être transmise pour une action de message donnée (cette opération a lieu dans `IsTxFlowRequiredForThisOperation()`).  
   
 - Il joint la transaction ambiante actuelle au message à l’aide de `TransactionFlowProperty`, si une transaction doit être transmise (cette opération s’effectue dans `BeforeSendRequest()`).  
   
-```  
+```csharp  
 public class TransactionFlowInspector : IClientMessageInspector  
 {  
    void IClientMessageInspector.AfterReceiveReply(ref           System.ServiceModel.Channels.Message reply, object correlationState)  
@@ -94,7 +94,7 @@ public class TransactionFlowInspector : IClientMessageInspector
   
  Le `TransactionFlowInspector` lui-même est passé à l'infrastructure à l'aide d'un comportement personnalisé : `TransactionFlowBehavior`.  
   
-```  
+```csharp  
 public class TransactionFlowBehavior : IEndpointBehavior  
 {  
        public void AddBindingParameters(ServiceEndpoint endpoint,            System.ServiceModel.Channels.BindingParameterCollection bindingParameters)  
@@ -119,7 +119,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
   
  Le mécanisme précédent étant en place, le code utilisateur crée un `TransactionScope` avant d'appeler l'opération de service. L'inspecteur de message veille à ce que la transaction soit passée au transport si elle doit être transmise à l'opération de service.  
   
-```  
+```csharp  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
 calculatorClient.Endpoint.Behaviors.Add(new TransactionFlowBehavior());               
   
@@ -153,7 +153,7 @@ catch (Exception)
   
  Après réception d'un paquet UDP émanant du client, le service désérialise ce paquet afin d'extraire le message et éventuellement une transaction.  
   
-```  
+```csharp  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
   
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
@@ -163,7 +163,7 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
   
  Si une transaction a été transmise, elle est ajoutée au message dans `TransactionMessageProperty`.  
   
-```  
+```csharp  
 message = MessageEncoderFactory.Encoder.ReadMessage(msg, bufferManager);  
   
 if (transaction != null)  
@@ -178,11 +178,11 @@ if (transaction != null)
   
 1. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. L’exemple actuel doit être exécuté de la même façon [que le transport: Exemple](../../../../docs/framework/wcf/samples/transport-udp.md) UDP. Pour l'exécuter, démarrez le service avec UdpTestService.exe. Si vous exécutez [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], vous devez démarrer le service avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur UdpTestService. exe dans l’Explorateur de fichiers, puis cliquez sur **exécuter en tant qu’administrateur**.  
+2. L’exemple actuel doit être exécuté de la même façon que l’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) . Pour l'exécuter, démarrez le service avec UdpTestService.exe. Si vous exécutez [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], vous devez démarrer le service avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur UdpTestService. exe dans l’Explorateur de fichiers, puis cliquez sur **exécuter en tant qu’administrateur**.  
   
 3. La sortie suivante est alors générée.  
   
-    ```  
+    ```console  
     Testing Udp From Code.  
     Service is started from code...  
     Press <ENTER> to terminate the service and start service from config...  
@@ -190,7 +190,7 @@ if (transaction != null)
   
 4. À ce stade, vous pouvez démarrer le client en exécutant UdpTestClient.exe. La sortie générée par le client se présente comme suit.  
   
-    ```  
+    ```console 
     0  
     3  
     6  
@@ -201,7 +201,7 @@ if (transaction != null)
   
 5. La sortie du service se présente comme suit.  
   
-    ```  
+    ```console 
     Hello, world!  
     Hello, world!  
     Hello, world!  
@@ -223,7 +223,7 @@ if (transaction != null)
   
 7. Pour exécuter l'application cliente sur des points de terminaison publiés à l'aide de la configuration, appuyez sur ENTRÉE dans la fenêtre d'application de service, puis réexécutez le client test. La sortie suivante doit s'afficher sur le service.  
   
-    ```  
+    ```console  
     Testing Udp From Config.  
     Service is started from config...  
     Press <ENTER> to terminate the service and exit...  
@@ -233,7 +233,7 @@ if (transaction != null)
   
 9. Pour régénérer la configuration et le code client à l'aide de Svcutil.exe, démarrez l'application de service, puis exécutez la commande Svcutil.exe suivante à partir du répertoire racine de l'exemple.  
   
-    ```  
+    ```console  
     svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
@@ -258,10 +258,10 @@ if (transaction != null)
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transport PASSERELLE](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

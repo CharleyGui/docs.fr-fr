@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 95c36cd039436dcddd3e2e2a3e1fae98ee885677
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: a78488ad902b0a96a30ad197b0ece043543c3d69
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924664"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422315"
 ---
 # <a name="struct-c-reference"></a>struct (Référence C#)
 
@@ -28,7 +28,7 @@ public struct Book
 }
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les structs peuvent également contenir des [constructeurs](../../programming-guide/classes-and-structs/constructors.md), des [constantes](../../programming-guide/classes-and-structs/constants.md), des [champs](../../programming-guide/classes-and-structs/fields.md), des [méthodes](../../programming-guide/classes-and-structs/methods.md), des [propriétés](../../programming-guide/classes-and-structs/properties.md), des [indexeurs](../../programming-guide/indexers/index.md), des [opérateurs](../operators/index.md), des [événements](../../programming-guide/events/index.md) et des [types imbriqués](../../programming-guide/classes-and-structs/nested-types.md). Toutefois, si plusieurs membres sont nécessaires, il est conseillé de plutôt utiliser une classe.
 
@@ -48,12 +48,12 @@ Pour obtenir des exemples, consultez [Utilisation de structs](../../programming-
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Tableau des valeurs par défaut](default-values-table.md)
 - [Tableau des types intégrés](built-in-types-table.md)
-- [Types](types.md)
+- [Types](/dotnet/csharp/language-reference/keywords)
 - [Types valeur](value-types.md)
 - [class](class.md)
 - [interface](interface.md)

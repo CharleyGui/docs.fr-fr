@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: ff6e76838ef2e3826c5b3dbeb44c748682902591
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: HT
+ms.openlocfilehash: a1441f0cc3a7ac715a173be12e68c055ce36ff00
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421072"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460133"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Déploiement d'une application WPF (WPF)
 Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. Windows et le .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépend du type d’application. Cette rubrique fournit une vue d’ensemble des différentes technologies de déploiement et explique leur utilisation avec les spécifications de déploiement de chaque type d’application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -83,7 +83,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
   
  Les pages de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage peuvent être installées dans le système de fichiers local à l’aide de XCopy ou de Windows Installer. Ces pages peuvent être affichées à l’aide d’Internet Explorer ou de l’Explorateur Windows.  
   
- Pour plus d’informations sur XAML, consultez [Vue d’ensemble du langage XAML (WPF)](../advanced/xaml-overview-wpf.md).  
+ Pour plus d’informations sur XAML, consultez [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
   
 <a name="Deploying_XAML_Browser_Applications"></a>   
 ### <a name="deploying-xaml-browser-applications"></a>Déploiement d’applications du navigateur XAML  

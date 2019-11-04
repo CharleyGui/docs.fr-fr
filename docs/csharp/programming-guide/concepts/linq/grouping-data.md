@@ -2,12 +2,12 @@
 title: Regroupement des données (C#)
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-ms.openlocfilehash: 15dafdb144ee9fd4184d4c8281d041e03161a16b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e7f10b121a7a1c599d88731a806fe784eb1a7e66
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594204"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423415"
 ---
 # <a name="grouping-data-c"></a>Regroupement des données (C#)
 Le regroupement consiste à placer des données dans des groupes afin que les éléments de chaque groupe partagent un attribut commun.  
@@ -22,7 +22,7 @@ Le regroupement consiste à placer des données dans des groupes afin que les é
   
 |Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`group … by`<br /><br /> -ou-<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
+|GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`group … by`<br /><br /> ou<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
 |ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clés.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
@@ -64,8 +64,8 @@ foreach (var group in query)
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [group, clause](../../../language-reference/keywords/group-clause.md)
-- [Guide pratique pour créer un groupe imbriqué](../../linq-query-expressions/how-to-create-a-nested-group.md)
+- [Comment : créer un groupe imbriqué](../../../linq/create-a-nested-group.md)
 - [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)
-- [Guide pratique pour regrouper les résultats d’une requête](../../linq-query-expressions/how-to-group-query-results.md)
-- [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
+- [Comment : regrouper les résultats d’une requête](../../../linq/group-query-results.md)
+- [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../linq/perform-a-subquery-on-a-grouping-operation.md)
 - [Guide pratique pour fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

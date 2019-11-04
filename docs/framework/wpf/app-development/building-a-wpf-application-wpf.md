@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: cac7a7552d1a24480d614b7b90fdd8cf0ef8a3e8
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 04183b2404d26c783e14dc6f4cb4141bab0d7621
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197790"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424432"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Génération d'une application WPF (WPF)
 
@@ -136,13 +136,13 @@ L’étape de compilation principale implique la compilation des fichiers de cod
 
 À la fin du processus de génération, une fois que tous les assemblys d’application et les fichiers de contenu sont prêts, les manifestes ClickOnce pour l’application sont générés.
 
-Le fichier manifeste de déploiement décrit le modèle de déploiement : la version actuelle, le comportement de mise à jour et l’identité d’éditeur avec la signature numérique. Ce manifeste est prévu pour être créé par les administrateurs qui gèrent le déploiement. L’extension de fichier est .xbap (pour les [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]) et .application pour les applications installées. La première extension est déterminée par la propriété du projet `HostInBrowser` et, en conséquence, le manifeste identifie l’application comme étant hébergée par le navigateur.
+Le fichier manifeste de déploiement décrit le modèle de déploiement : la version actuelle, le comportement de mise à jour et l’identité d’éditeur avec la signature numérique. Ce manifeste est prévu pour être créé par les administrateurs qui gèrent le déploiement. L’extension de fichier est. XBAP (pour les applications de navigateur XAML (XBAP)) et. application pour les applications installées. La première extension est déterminée par la propriété du projet `HostInBrowser` et, en conséquence, le manifeste identifie l’application comme étant hébergée par le navigateur.
 
 Le manifeste de l’application (un fichier .exe.manifest) décrit les assemblys d’application et les bibliothèques dépendantes, et répertorie les autorisations requises par l’application. Ce fichier est prévu pour être créé par le développeur d’applications. Pour lancer une application ClickOnce, un utilisateur ouvre le fichier de manifeste de déploiement de l’application.
 
-Ces fichiers manifeste sont toujours créés pour les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]. Pour les applications installées, ils ne sont pas créés à moins que la propriété `GenerateManifests` ne soit spécifiée dans le fichier projet avec la valeur `true`.
+Ces fichiers manifestes sont toujours créés pour les applications XBAP. Pour les applications installées, ils ne sont pas créés à moins que la propriété `GenerateManifests` ne soit spécifiée dans le fichier projet avec la valeur `true`.
 
-[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] obtenir deux autorisations supplémentaires au-dessus des autorisations affectées aux applications de zone Internet typiques : <xref:System.Security.Permissions.WebBrowserPermission> et <xref:System.Security.Permissions.MediaPermission>. Le système de génération [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] déclare ces autorisations dans le manifeste de l’application.
+Les XBAP obtiennent deux autorisations supplémentaires au-dessus des autorisations affectées aux applications de zone Internet typiques : <xref:System.Security.Permissions.WebBrowserPermission> et <xref:System.Security.Permissions.MediaPermission>. Le système de génération [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] déclare ces autorisations dans le manifeste de l’application.
 
 <a name="Incremental_Build_Support"></a>
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 7559c7ec9aef8f95336d53e62ca9bf5861a9b22f
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9c237c06de1388de4c1fe6a6edb3fb5b52522d1f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040726"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424625"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Stratégie de sécurité de WPF - sécurité de la plateforme
 Bien que Windows Presentation Foundation (WPF) fournisse divers services de sécurité, il tire également parti des fonctionnalités de sécurité de la plateforme sous-jacente, qui inclut le système d’exploitation, le CLR et Internet Explorer. Ces couches se combinent pour fournir à [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] un modèle de sécurité de défense en profondeur renforcé qui essaie d'éviter le moindre point de défaillance, comme cela est illustré dans l'image suivante :  
@@ -70,7 +70,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
 ### <a name="limited-rights-process-for-browser-hosted-applications"></a>Processus de droits limités pour les applications hébergées par un navigateur  
  Les applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] hébergées par un navigateur s'exécutent dans le bac à sable (sandbox) de la zone Internet. l’intégration d' [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] à Microsoft Internet Explorer étend cette protection avec une prise en charge supplémentaire.  
   
- Sachant que les [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] sont généralement placées dans le bac à sable (sandbox) par le jeu d'autorisations de la zone Internet, la suppression de ces privilèges ne nuit pas aux [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] du point de vue de la compatibilité. En revanche, une couche de défense en profondeur supplémentaire est créée. Si une application sandbox peut exploiter d'autres couches et détourner le processus, celui-ci aura encore des privilèges limités.  
+ Étant donné que les applications de navigateur XAML (XBAP) sont généralement bac à sable (sandbox) par le jeu d’autorisations de la zone Internet, la suppression de ces privilèges n’endommage pas les applications de navigateur XAML (XBAP) du point de vue de la compatibilité. En revanche, une couche de défense en profondeur supplémentaire est créée. Si une application sandbox peut exploiter d'autres couches et détourner le processus, celui-ci aura encore des privilèges limités.  
   
  Consultez [utilisation d’un compte d’utilisateur doté de privilèges minimum](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29).  
   
@@ -166,7 +166,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
  Notez que .NET Framework autorise le code de confiance à étendre le bac à sable (sandbox) de la zone Internet XBAP en permettant aux développeurs d’écrire des assemblys managés marqués avec <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) et déployés dans le global assembly cache (GAC) de l’utilisateur. Marquer un assembly avec APTCA est une opération de sécurité très sensible, car n'importe quel code peut appeler cet assembly, y compris du code malveillant en provenance d'Internet. Cette opération exige la plus grande prudence et le respect des meilleures pratiques. De plus, les utilisateurs doivent décider d'approuver ce logiciel pour pouvoir l'installer.  
   
 ## <a name="microsoft-internet-explorer-security"></a>Sécurité de Microsoft Internet Explorer  
- Au-delà de la réduction des problèmes de sécurité et de la simplification de la configuration de la sécurité, Microsoft Internet Explorer 6 (SP2) contient plusieurs fonctionnalités qui améliorent la sécurité des utilisateurs de [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. L'idée-force de ces fonctionnalités est d'offrir aux utilisateurs un contrôle accru sur leur navigation.  
+ En plus de réduire les problèmes de sécurité et de simplifier la configuration de la sécurité, Microsoft Internet Explorer 6 (SP2) contient plusieurs fonctionnalités qui améliorent la sécurité pour les utilisateurs des applications de navigateur XAML (XBAP). L'idée-force de ces fonctionnalités est d'offrir aux utilisateurs un contrôle accru sur leur navigation.  
   
  Avant IE6 SP2, les utilisateurs pouvaient être soumis à l’un des éléments suivants :  
   
@@ -182,7 +182,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
  La même logique d’initiation d’utilisateur est également appliquée pour **ouvrir** /**Enregistrer** les invites de sécurité. Les boîtes de dialogue d’installation ActiveX sont toujours interceptées sous la barre d’informations, sauf si elles représentent une mise à niveau à partir d’un contrôle installé précédemment. Ces mesures se combinent pour donner à l'utilisateur une expérience plus sûre et mieux contrôlée, puisqu'ils sont protégés contre les sites qui les poussent à installer des logiciels indésirables ou malveillants.  
   
- Ces fonctionnalités protègent également les clients qui utilisent IE6 SP2 pour accéder aux sites Web qui leur permettent de télécharger et d’installer des applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. En particulier, il s’agit du fait que IE6 SP2 offre une meilleure expérience utilisateur qui réduit le risque que les utilisateurs installent des applications malveillantes ou détentes, quelle que soit la technologie utilisée pour les créer, y compris [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’ajoute à ces protections à l’aide de ClickOnce pour faciliter le téléchargement de ses applications sur Internet. Comme les [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] s'exécutent dans un bac à sable (sandbox) de sécurité de la zone Internet, elles peuvent être lancées de manière transparente. En revanche, les applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] autonome nécessitent une confiance totale pour s'exécuter. Pour ces applications, ClickOnce affiche une boîte de dialogue de sécurité pendant le processus de lancement pour notifier l’utilisation des exigences de sécurité supplémentaires de l’application. Cependant, cette opération nécessite également l'intervention de l'utilisateur et peut être annulée.  
+ Ces fonctionnalités protègent également les clients qui utilisent IE6 SP2 pour accéder aux sites Web qui leur permettent de télécharger et d’installer des applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. En particulier, il s’agit du fait que IE6 SP2 offre une meilleure expérience utilisateur qui réduit le risque que les utilisateurs installent des applications malveillantes ou détentes, quelle que soit la technologie utilisée pour les créer, y compris [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’ajoute à ces protections à l’aide de ClickOnce pour faciliter le téléchargement de ses applications sur Internet. Étant donné que les applications de navigateur XAML (XBAP) s’exécutent dans un bac à sable (sandbox) de sécurité de zone Internet, elles peuvent être lancées en toute transparence. En revanche, les applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] autonome nécessitent une confiance totale pour s'exécuter. Pour ces applications, ClickOnce affiche une boîte de dialogue de sécurité pendant le processus de lancement pour notifier l’utilisation des exigences de sécurité supplémentaires de l’application. Cependant, cette opération nécessite également l'intervention de l'utilisateur et peut être annulée.  
   
  Internet Explorer 7 intègre et étend les fonctionnalités de sécurité d’IE6 SP2 dans le cadre d’un engagement continu pour la sécurité.  
   

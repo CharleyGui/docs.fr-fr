@@ -2,12 +2,12 @@
 title: Expressions de requête
 description: En savoir plus sur la prise en charge des F# expressions de requête pour LINQ dans le langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6eaac16336cca752eaac355276300c6809c570a8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: f0c7245a930a06576487a61d73a1e5b94190ee59
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216812"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424885"
 ---
 # <a name="query-expressions"></a>Expressions de requête
 
@@ -24,7 +24,7 @@ query { expression }
 
 ## <a name="remarks"></a>Notes
 
-Les expressions de requête sont un type d’expression de calcul similaire aux expressions de séquence. Tout comme vous spécifiez une séquence en fournissant du code dans une expression de séquence, vous spécifiez un jeu de données en fournissant du code dans une expression de requête. Dans une expression de séquence, `yield` le mot clé identifie les données à retourner dans le cadre de la séquence résultante. Dans les expressions de requête `select` , le mot clé exécute la même fonction. Outre le `select` mot clé, F# prend également en charge un certain nombre d’opérateurs de requête qui sont similaires aux parties d’une instruction SQL SELECT. Voici un exemple d’expression de requête simple, ainsi que du code qui se connecte à la source OData Northwind.
+Les expressions de requête sont un type d’expression de calcul similaire aux expressions de séquence. Tout comme vous spécifiez une séquence en fournissant du code dans une expression de séquence, vous spécifiez un jeu de données en fournissant du code dans une expression de requête. Dans une expression de séquence, le mot clé `yield` identifie les données à retourner dans le cadre de la séquence résultante. Dans les expressions de requête, le mot clé `select` exécute la même fonction. Outre le mot clé `select`, F# prend également en charge un certain nombre d’opérateurs de requête qui sont similaires aux parties d’une instruction SQL SELECT. Voici un exemple d’expression de requête simple, ainsi que du code qui se connecte à la source OData Northwind.
 
 ```fsharp
 // Use the OData type provider to create types that can be used to access the Northwind database.
@@ -46,15 +46,15 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-Dans l’exemple de code précédent, l’expression de requête est entre accolades. La signification du code dans l’expression est, retourne chaque client de la table Customers dans la base de données dans les résultats de la requête. Les expressions de requête retournent un <xref:System.Linq.IQueryable%601> type <xref:System.Collections.Generic.IEnumerable%601>qui implémente et, et elles peuvent donc être itérées à l’aide du [module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) comme le montre l’exemple.
+Dans l’exemple de code précédent, l’expression de requête est entre accolades. La signification du code dans l’expression est, retourne chaque client de la table Customers dans la base de données dans les résultats de la requête. Les expressions de requête retournent un type qui implémente <xref:System.Linq.IQueryable%601> et <xref:System.Collections.Generic.IEnumerable%601>, et peuvent donc être itérés à l’aide du [module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) comme le montre l’exemple.
 
-Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de `QueryBuilder`la requête est. Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe LINQ. querybuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Chaque type d’expression de calcul est construit à partir d’une classe de générateur. La classe du générateur pour l’expression de calcul de la requête est `QueryBuilder`. Pour plus d’informations, consultez [expressions de calcul](computation-expressions.md) et [classe LINQ. querybuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
 
 ## <a name="query-operators"></a>Opérateurs de requête
 
-Les opérateurs de requête vous permettent de spécifier les détails de la requête, par exemple pour placer des critères sur les enregistrements à retourner ou pour spécifier l’ordre de tri des résultats. La source de la requête doit prendre en charge l’opérateur de requête. Si vous tentez d’utiliser un opérateur de requête non pris `System.NotSupportedException` en charge, est levé.
+Les opérateurs de requête vous permettent de spécifier les détails de la requête, par exemple pour placer des critères sur les enregistrements à retourner ou pour spécifier l’ordre de tri des résultats. La source de la requête doit prendre en charge l’opérateur de requête. Si vous tentez d’utiliser un opérateur de requête non pris en charge, `System.NotSupportedException` sera levée.
 
-Seules les expressions qui peuvent être traduites en SQL sont autorisées dans les expressions de requête. Par exemple, aucun appel de fonction n’est autorisé dans les expressions lorsque vous `where` utilisez l’opérateur de requête.
+Seules les expressions qui peuvent être traduites en SQL sont autorisées dans les expressions de requête. Par exemple, aucun appel de fonction n’est autorisé dans les expressions lorsque vous utilisez l’opérateur de requête `where`.
 
 Le tableau 1 montre les opérateurs de requête disponibles. En outre, consultez table2, qui compare les requêtes SQL et les F# expressions de requête équivalentes, plus loin dans cette rubrique. Certains opérateurs de requête ne sont pas pris en charge par certains fournisseurs de type. En particulier, le fournisseur de type OData est limité dans les opérateurs de requête qu’il prend en charge en raison de limitations dans OData. Pour plus d’informations, consultez [fournisseur de typeF#ODataService ()](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
 
@@ -83,7 +83,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 <table style="width:100%">
   <tr>
-    <th>Opérateur</th>
+    <th>opérateur</th>
     <th>Description</th>
   </tr>
   <tr>
@@ -231,7 +231,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenBy</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre croissant par la clé de tri donnée. Cet opérateur ne peut être utilisé qu’après <code>sortBy</code>un <code>sortByDescending</code>, <code>thenBy</code>, ou <code>thenByDescending</code>.<br/><br/>
+<td><code>thenBy</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre croissant par la clé de tri donnée. Cet opérateur ne peut être utilisé qu’après un <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>ou <code>thenByDescending</code>.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -243,7 +243,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByDescending</code></td><td>Effectue un classement des éléments sélectionnés jusqu’ici dans l’ordre décroissant par la clé de tri donnée. Cet opérateur ne peut être utilisé qu’après <code>sortBy</code>un <code>sortByDescending</code>, <code>thenBy</code>, ou <code>thenByDescending</code>.<br/><br/>
+<td><code>thenByDescending</code></td><td>Effectue un classement des éléments sélectionnés jusqu’ici dans l’ordre décroissant par la clé de tri donnée. Cet opérateur ne peut être utilisé qu’après un <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>ou <code>thenByDescending</code>.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -265,7 +265,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>join</code></td><td>Met en corrélation deux ensembles de valeurs sélectionnées en fonction des clés correspondantes. Notez que l’ordre des clés autour du signe = dans une expression de jointure est important. Dans toutes les jointures, si la ligne est fractionnée <code>-&gt;</code> après le symbole, la mise en retrait doit être mise en retrait au moins jusqu' <code>for</code>au mot clé.<br/><br/>
+<td><code>join</code></td><td>Met en corrélation deux ensembles de valeurs sélectionnées en fonction des clés correspondantes. Notez que l’ordre des clés autour du signe = dans une expression de jointure est important. Dans toutes les jointures, si la ligne est fractionnée après le symbole <code>-&gt;</code>, la mise en retrait doit être mise en retrait au moins jusqu’au mot clé <code>for</code>.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -353,7 +353,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
     for student in db.Student do
     join selection in db.CourseSelection
         on (student.StudentID = selection.StudentID)
-    distinct       
+    distinct
 }
 </code></pre>
 
@@ -474,7 +474,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullable</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre croissant par la clé de tri Nullable donnée. Cet opérateur ne peut être utilisé qu’immédiatement après <code>sortBy</code>un <code>sortByDescending</code>, <code>thenBy</code>, ou <code>thenByDescending</code>, ou leurs variantes Nullable.<br/><br/>
+<td><code>thenByNullable</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre croissant par la clé de tri Nullable donnée. Cet opérateur ne peut être utilisé qu’immédiatement après un <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>ou <code>thenByDescending</code>, ou leurs variantes Nullable.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -485,7 +485,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullableDescending</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre décroissant par la clé de tri Nullable donnée. Cet opérateur ne peut être utilisé qu’immédiatement après <code>sortBy</code>un <code>sortByDescending</code>, <code>thenBy</code>, ou <code>thenByDescending</code>, ou leurs variantes Nullable.<br/><br/>
+<td><code>thenByNullableDescending</code></td><td>Effectue un classement ultérieur des éléments sélectionnés jusqu’à présent dans l’ordre décroissant par la clé de tri Nullable donnée. Cet opérateur ne peut être utilisé qu’immédiatement après un <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>ou <code>thenByDescending</code>, ou leurs variantes Nullable.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -499,6 +499,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </table>
 
 ## <a name="comparison-of-transact-sql-and-f-query-expressions"></a>Comparaison entre Transact-SQL et F# les expressions de requête
+
 Le tableau suivant présente quelques requêtes Transact-SQL courantes et leurs équivalents dans F#. Le code de ce tableau suppose également la même base de données que la table précédente et le même code initial pour configurer le fournisseur de type.
 
 ### <a name="table-2-transact-sql-and-f-query-expressions"></a>Tableau 2. Transact-SQL et F# expressions de requête
@@ -533,7 +534,7 @@ Compter les enregistrements dans une table.<br/>
 
 <pre><code class="lang-fsharp">// Count of students.
 query {
-    for student in db.Student do       
+    for student in db.Student do
     count
 }
 </code></pre>
@@ -638,7 +639,7 @@ GROUP BY Student.Age
 <pre><code class="lang-fsharp">// Group students by age and sum ages.
 query {
     for student in db.Student do
-    groupBy student.Age into g       
+    groupBy student.Age into g
     let total =
         query {
             for student in g do
@@ -666,14 +667,14 @@ ORDER BY COUNT( * ) DESC
 query {
     for student in db.Student do
     groupBy student.Age into g
-    where (g.Count() > 1)       
+    where (g.Count() > 1)
     sortByDescending (g.Count())
     select (g.Key, g.Count())
 }
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>ensemble de valeurs spécifiées<br/>
+<code>IN</code> un ensemble de valeurs spécifiées<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -714,7 +715,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>avec l’ensemble de correspondances de modèle.<br/>
+<code>LIKE</code> avec ensemble de correspondances de modèle.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -726,12 +727,12 @@ WHERE Student.Name LIKE '[abc]%'
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
     where (SqlMethods.Like( student.Name, "[abc]%") )
-    select student 
+    select student
 }
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>avec le modèle d’exclusion défini.<br/>
+<code>LIKE</code> avec le modèle d’exclusion défini.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -750,7 +751,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>sur un champ, mais sélectionnez un autre champ.<br/>
+<code>LIKE</code> sur un champ, mais sélectionnez un autre champ.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -761,11 +762,11 @@ WHERE Student.Name LIKE '[^abc]%'
 <pre><code class="lang-fsharp">query {
     for n in db.Student do
     where (SqlMethods.Like( n.Name, "[^abc]%") )
-    select n.StudentID   
+    select n.StudentID
 }
 </code></pre>
 
-</td></tr><tr><td><code>LIKE</code>, avec recherche de sous-chaînes.<br/>
+</td></tr><tr><td><code>LIKE</code>, avec la recherche de sous-chaînes.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Name like '%A%'
@@ -782,7 +783,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-Simple <code>JOIN</code> avec deux tables.<br/>
+<code>JOIN</code> simple avec deux tables.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 JOIN CourseSelection
@@ -800,7 +801,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>avec deux tables.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> avec deux tables.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -819,7 +820,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code>avec<code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code> avec <code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -902,7 +903,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>avec classement<br/>
+</td></tr><tr><td><code>OR</code> avec classement<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -920,7 +921,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>TOP</code>classement <code>OR</code>, et.<br/>
+</td></tr><tr><td><code>TOP</code>, <code>OR</code>et classement.<br/>
 
 <pre><code class="lang-sql">SELECT TOP 2 student.Name FROM Student
 WHERE Student.Age = 11 OR Student.Age = 12
@@ -942,7 +943,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>de deux requêtes.<br/>
+</td></tr><tr><td><code>UNION</code> de deux requêtes.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
@@ -991,7 +992,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>Etat.<br/>
+</td></tr><tr><td>condition de <code>CASE</code>.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -2423,6 +2424,6 @@ end
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F#](index.md)
 - [Classe LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 - [Expressions de calcul](Computation-Expressions.md)

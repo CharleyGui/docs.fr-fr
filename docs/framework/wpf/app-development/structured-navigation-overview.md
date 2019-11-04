@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 76330c1228b1f55a5dbaf58a1acd231a391d550c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 09c3c57f3ac1009416a5c67b37c035fe30cd5b5e
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72580512"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425325"
 ---
 # <a name="structured-navigation-overview"></a>Vue d'ensemble de la navigation structurée
 
-Le contenu qui peut être hébergé par un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], un <xref:System.Windows.Controls.Frame> ou un <xref:System.Windows.Navigation.NavigationWindow> est composé de pages qui peuvent être identifiées par des URI (Uniform Resource Identifier) de Pack et qui sont parcourues par des liens hypertexte. La structure des pages et comment elles sont accessibles, tel que défini par des liens hypertexte, porte le nom de topologie de navigation. Une telle topologie convient à différents types d’applications, notamment celles permettant de parcourir des documents. Pour de telles applications, l’utilisateur peut naviguer d’une page à une autre page sans qu’une page ait besoin de savoir quoi que ce soit sur l’autre page.
+Le contenu qui peut être hébergé par une application de navigateur XAML (XBAP), une <xref:System.Windows.Controls.Frame>ou un <xref:System.Windows.Navigation.NavigationWindow> est composé de pages qui peuvent être identifiées par des URI (Uniform Resource Identifier) de Pack et qui sont parcourues par des liens hypertexte. La structure des pages et comment elles sont accessibles, tel que défini par des liens hypertexte, porte le nom de topologie de navigation. Une telle topologie convient à différents types d’applications, notamment celles permettant de parcourir des documents. Pour de telles applications, l’utilisateur peut naviguer d’une page à une autre page sans qu’une page ait besoin de savoir quoi que ce soit sur l’autre page.
 
 Toutefois, d’autres types d’applications ont des pages qui ont besoin de savoir quand une navigation parmi les pages a eu lieu. Par exemple, considérez une application de ressources humaines ayant une page pour répertorier tous les employés d’une organisation, la page « Liste des employés ». Cette page pourrait également permettre aux utilisateurs d’ajouter un nouvel employé en cliquant sur un lien hypertexte. En cas de clic sur ce lien, l’utilisateur accède à une page « Ajouter un employé » pour recueillir les détails du nouvel employé et les retourner à la page « Liste des employés » afin de créer le nouvel employé et de mettre à jour la liste. Ce style de navigation s’apparente à l’appel d’une méthode pour effectuer un traitement et retourner une valeur, ce qui porte le nom de programmation structurée. Ce style de navigation est appelé *navigation structurée*.
 
@@ -129,9 +129,9 @@ Vous n’êtes pas obligé de passer des paramètres à la page appelée. Au lie
 
   2. Stockez les paramètres dans <xref:System.Windows.Application.Properties%2A>.
 
-  3. Accédez à la <xref:System.Windows.Navigation.PageFunction%601> appelée.
+  3. Accédez à la <xref:System.Windows.Navigation.PageFunction%601>appelée.
 
-- À partir de la <xref:System.Windows.Navigation.PageFunction%601> appelée :
+- À partir de la <xref:System.Windows.Navigation.PageFunction%601>appelée :
 
   - Récupérez et utilisez les paramètres stockés dans <xref:System.Windows.Application.Properties%2A>.
 

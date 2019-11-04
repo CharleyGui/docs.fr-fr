@@ -2,12 +2,12 @@
 title: Paramètres de type résolus statiquement
 description: Découvrez comment utiliser un F# paramètre de type résolu statiquement, qui est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution.
 ms.date: 05/16/2016
-ms.openlocfilehash: bc3310192cdaa5ae4862b8aee46b6152f61da38a
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 017c18dd3caaa484ddc653557573f548e3224ca0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71082923"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425010"
 ---
 # <a name="statically-resolved-type-parameters"></a>Paramètres de type résolus statiquement
 
@@ -21,16 +21,16 @@ Un *paramètre de type résolu statiquement* est un paramètre de type qui est r
 
 ## <a name="remarks"></a>Notes
 
-Dans le F# langage, il existe deux genres distincts de paramètres de type. Le premier type est le paramètre de type générique standard. Celles-ci sont indiquées par une apostrophe ('), `'T` comme `'U`dans et. Ils sont équivalents aux paramètres de type générique dans d’autres langages de .NET Framework. L’autre type est résolu statiquement et est indiqué par un symbole de signe insertion, comme `^T` dans `^U`et.
+Dans le F# langage, il existe deux genres distincts de paramètres de type. Le premier type est le paramètre de type générique standard. Celles-ci sont indiquées par une apostrophe ('), comme dans `'T` et `'U`. Ils sont équivalents aux paramètres de type générique dans d’autres langages de .NET Framework. L’autre type est résolu statiquement et est indiqué par un symbole de signe insertion, comme dans `^T` et `^U`.
 
 Les paramètres de type résolus statiquement sont principalement utiles avec les contraintes de membre, qui sont des contraintes qui vous permettent de spécifier qu’un argument de type doit avoir un membre ou des membres particuliers pour être utilisé. Il n’existe aucun moyen de créer ce type de contrainte à l’aide d’un paramètre de type générique standard.
 
 Le tableau suivant récapitule les similitudes et les différences entre les deux genres de paramètres de type.
 
-|Fonctionnalité|Générique|Résolu statiquement|
+|Fonction|Generic|Résolu statiquement|
 |-------|-------|-------------------|
 |Syntaxe|`'T`, `'U`|`^T`, `^U`|
-|Temps de résolution|En cours d’exécution|Temps de compilation|
+|Temps de résolution|Au moment de l'exécution|Temps de compilation|
 |Contraintes de membre|Ne peut pas être utilisé avec des contraintes de membre.|Peut être utilisé avec des contraintes de membre.|
 |Génération de code|Un type (ou une méthode) avec des paramètres de type générique standard entraîne la génération d’un type ou d’une méthode générique unique.|Plusieurs instanciations de types et de méthodes sont générées, une pour chaque type requis.|
 |Utiliser avec les types|Peut être utilisé sur les types.|Ne peut pas être utilisé sur les types.|
@@ -42,7 +42,7 @@ Les méthodes inline et les fonctions qui utilisent des opérateurs, ou utilisen
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
 
-Le type résolu de `(+@)` est basé sur l’utilisation `(+)` de et `(*)`, les deux ayant provoqué l’inférence de type pour déduire les contraintes de membre sur les paramètres de type résolus statiquement. Le type résolu, comme indiqué dans l' F# interpréteur, est le suivant.
+Le type résolu de `(+@)` est basé sur l’utilisation des `(+)` et des `(*)`, qui entraînent l’inférence de type pour déduire les contraintes de membre sur les paramètres de type résolus statiquement. Le type résolu, comme indiqué dans l' F# interpréteur, est le suivant.
 
 ```fsharp
 ^a -> ^c -> ^d
@@ -62,7 +62,7 @@ La sortie est la suivante.
 ```fsharp
 let inline konst x _ = x
 
-type CFunctor() = 
+type CFunctor() =
     static member inline fmap (f: ^a -> ^b, a: ^a list) = List.map f a
     static member inline fmap (f: ^a -> ^b, a: ^a option) =
         match a with

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: df9c66d47d1f5e345858ae08b3d926d0e938a255
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 04001f88e0f59fd4eb3ca84d846456be7740737e
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038323"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460487"
 ---
 # <a name="globalization-for-wpf"></a>Globalisation pour WPF
 Cette rubrique présente les problèmes que vous devez prendre en compte lors de l’écriture d’applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pour le marché mondial. Les éléments de programmation de la globalisation sont définis dans .NET dans l’espace de noms <xref:System.Globalization>.
@@ -121,7 +121,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
 - Myanmar
 
-- Sinhala
+- Cingalais
 
  Tous les moteurs de système d’écriture prennent en charge les polices OpenType. Les polices OpenType peuvent inclure les tableaux de disposition OpenType qui permettent aux créateurs de polices de concevoir de meilleures polices typographiques internationales et haut de gamme. Les tableaux de disposition des polices OpenType contiennent des informations sur les substitutions de glyphe, le positionnement des glyphes, la justification et le positionnement de la ligne de base, ce qui permet aux applications de traitement de texte d’améliorer la disposition du texte.
 
@@ -149,7 +149,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 ### <a name="localizable-user-interface"></a>Interface utilisateur localisable
  les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilisent [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour définir leurs [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] permet aux développeurs de spécifier une hiérarchie d’objets avec un ensemble de propriétés et une logique. L’utilisation principale de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] consiste à développer des applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], mais elle peut être utilisée pour spécifier une hiérarchie d’objets common language runtime (CLR). La plupart des développeurs utilisent [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour spécifier le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de leur application et utiliser un langage C# de programmation tel que pour réagir à l’interaction de l’utilisateur.
 
- Du point de vue de la ressource, un fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] conçu pour décrire un [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] dépendant du langage est un élément de ressource et, par conséquent, son format de distribution final doit être localisable pour prendre en charge les langues internationales. Étant donné que [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ne peut pas gérer d’événements, de nombreuses applications [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] contiennent des blocs de code pour effectuer cette opération. Pour plus d’informations, consultez [vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md). Le code est supprimé et compilé en différents binaires lorsqu’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est sous forme de jeton dans le formulaire BAML de XAML. Le formulaire BAML des fichiers, des images et d’autres types d’objets de ressources managées XAML est incorporé dans l’assembly des ressources satellites, pouvant être localisé dans d’autres langues, ou dans l’assembly principal, quand la localisation n’est pas nécessaire.
+ Du point de vue de la ressource, un fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] conçu pour décrire un [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] dépendant du langage est un élément de ressource et, par conséquent, son format de distribution final doit être localisable pour prendre en charge les langues internationales. Étant donné que [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ne peut pas gérer d’événements, de nombreuses applications [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] contiennent des blocs de code pour effectuer cette opération. Pour plus d’informations, consultez [vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md). Le code est supprimé et compilé en différents binaires lorsqu’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est sous forme de jeton dans le formulaire BAML de XAML. Le formulaire BAML des fichiers, des images et d’autres types d’objets de ressources managées XAML est incorporé dans l’assembly des ressources satellites, pouvant être localisé dans d’autres langues, ou dans l’assembly principal, quand la localisation n’est pas nécessaire.
 
 > [!NOTE]
 > les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prennent en charge toutes les ressources CLR [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)], y compris les tables de chaînes, les images, etc.

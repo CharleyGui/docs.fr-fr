@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: 1a3c23a70bc7dc519c824426f8939cb15e87a7fb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c3e2368bc5977d7f50ae7ecea8557c5c545e82a4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128054"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455593"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
 
@@ -49,7 +49,7 @@ Dans la pratique, cette compatibilité peut être arrêtée par des modification
 
 Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framework 4.5 (avec ses versions intermédiaires, NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 ou 4.8), utilisez les check-lists suivantes :
 
-- Si votre application a été développée pour s’exécuter sur n’importe quelle version du .NET Framework en commençant par .NET Framework 4.0, consultez [Compatibilité des applications dans le .NET Framework](application-compatibility.md) pour générer des listes de modifications entre votre version du .NET Framework ciblée et la version sur laquelle votre application est en cours d’exécution.
+- Si votre application a été développée pour s’exécuter sur n’importe quelle version de la .NET Framework à partir de la .NET Framework 4,0, consultez [compatibilité des applications](application-compatibility.md) pour générer des listes de modifications entre votre version de .NET Framework ciblée et la version sur laquelle votre application s’exécute.
 
 - S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md).
 

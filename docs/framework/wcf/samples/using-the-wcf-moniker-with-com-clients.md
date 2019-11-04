@@ -2,12 +2,12 @@
 title: Using the WCF Moniker with COM Clients
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 2836b8c034a62602822ca629189e38eff818180a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 321d59285b0ef86e4631634d90229a0d8e79657b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038726"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424723"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Using the WCF Moniker with COM Clients
 Cet exemple montre comment utiliser le moniker de service Windows Communication Foundation (WCF) pour intégrer des services Web dans des environnements de développement COM, tels que Microsoft Office Visual Basic pour Applications (Office VBA) ou Visual Basic 6,0. Il se compose d'un client Windows Script Host (.vbs), d'une bibliothèque de client assurant la prise en charge (.dll) et d'une bibliothèque de service (.dll) hébergée par les services IIS (Internet Information Services). Le service correspond à un service de calculatrice et le client COM appelle les opérations mathématiques suivantes sur le service : addition, soustraction, multiplication et division. L'activité du client s'affiche dans les fenêtres de message.  
@@ -20,7 +20,7 @@ Cet exemple montre comment utiliser le moniker de service Windows Communication 
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
   
@@ -70,7 +70,7 @@ regasm.exe /tlb:CalcProxy.tlb client.dll
   
  L'assembly créé doit être ajouté au Global Assembly Cache. Bien que cela ne soit pas strictement nécessaire, cela permet de localiser plus facilement l'assembly pendant l'exécution. La commande suivante ajoute l'assembly au Global Assembly Cache :  
   
-```  
+```console  
 gacutil.exe /i client.dll  
 ```  
   
@@ -193,15 +193,15 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
     > [!NOTE]
     > Si vous utilisez [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 ou Windows Server 2008 R2, veillez à exécuter l'invite de commandes avec des privilèges d'administrateur.  
   
-4. `tlbexp.exe client.dll /out:CalcProxy.tlb` Tapez pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
+4. Tapez `tlbexp.exe client.dll /out:CalcProxy.tlb` pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
   
-5. `regasm.exe /tlb:CalcProxy.tlb client.dll` Tapez pour inscrire les types avec com. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
+5. Tapez `regasm.exe /tlb:CalcProxy.tlb client.dll` pour enregistrer les types avec COM. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
   
-6. `gacutil.exe /i client.dll` Tapez pour ajouter l’assembly au global assembly cache.  
+6. Tapez `gacutil.exe /i client.dll` pour ajouter l’assembly au global assembly cache.  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur  
   
-1. Vérifiez que vous pouvez accéder au service à l’aide d’un navigateur en tapant l’adresse `http://localhost/servicemodelsamples/service.svc`suivante:. Une page de confirmation doit s'afficher en réponse.  
+1. Vérifiez que vous pouvez accéder au service à l’aide d’un navigateur en tapant l’adresse suivante : `http://localhost/servicemodelsamples/service.svc`. Une page de confirmation doit s'afficher en réponse.  
   
 2. Exécutez ComCalcClient.vbs à partir du dossier \client figurant dans le dossier correspondant à votre langue. L'activité du client est affichée dans les fenêtres de message.  
   
@@ -223,11 +223,11 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 7. À partir d'une invite de commandes, naviguez jusqu'à ce répertoire de destination. Si vous utilisez [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], assurez-vous d'exécuter l'invite de commandes en tant qu'administrateur.  
   
-8. `tlbexp.exe client.dll /out:CalcProxy.tlb` Tapez pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
+8. Tapez `tlbexp.exe client.dll /out:CalcProxy.tlb` pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
   
-9. `regasm.exe /tlb:CalcProxy.tlb client.dll` Tapez pour inscrire les types avec com. Assurez-vous que le chemin d’accès a été `regasm.exe` défini sur le dossier qui contient avant d’exécuter la commande.  
+9. Tapez `regasm.exe /tlb:CalcProxy.tlb client.dll` pour enregistrer les types avec COM. Assurez-vous que le chemin d’accès a été défini sur le dossier qui contient `regasm.exe` avant d’exécuter la commande.  
   
-10. `gacutil.exe /i client.dll` Tapez pour ajouter l’assembly au global assembly cache. Assurez-vous que le chemin d’accès a été `gacutil.exe` défini sur le dossier qui contient avant d’exécuter la commande.  
+10. Tapez `gacutil.exe /i client.dll` pour ajouter l’assembly au global assembly cache. Assurez-vous que le chemin d’accès a été défini sur le dossier qui contient `gacutil.exe` avant d’exécuter la commande.  
   
 11. Assurez-vous que le service est accessible depuis l'ordinateur client à l'aide d'un navigateur.  
   

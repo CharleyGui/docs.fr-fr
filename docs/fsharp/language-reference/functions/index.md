@@ -2,12 +2,12 @@
 title: Fonctions
 description: Découvrez les fonctions dans F# et comment F# prend en charge les constructions de programmation fonctionnelle courantes.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6f65ce692169b71abe8d2eff7ef07b66975d478b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c6b8307f51ffcdc77fe4352b2305fca1f247ccbb
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630705"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423957"
 ---
 # <a name="functions"></a>Fonctions
 
@@ -38,7 +38,7 @@ Dans l’exemple précédent, le nom de la fonction est `f`, l’argument est 
 
 Les fonctions peuvent être marquées comme étant `inline`. Pour plus d’informations sur `inline`, consultez [Fonctions inline](../functions/inline-functions.md).
 
-## <a name="scope"></a>`Scope`
+## <a name="scope"></a>Étendue
 
 À tout niveau de la portée, sauf dans la portée de module, la réutilisation d’une valeur ou d’un nom de fonction ne constitue pas une erreur. Si vous réutilisez un nom, le nom déclaré en second lieu occulte le nom précédemment déclaré. Toutefois, à la portée de niveau supérieur dans un module, les noms doivent être uniques. Par exemple, le code suivant produit une erreur quand il apparaît au niveau de la portée de module, mais pas quand il apparaît à l’intérieur d’une fonction :
 
@@ -76,7 +76,7 @@ Un corps de fonction peut contenir des définitions de variables et de fonctions
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet103.fs)]
 
-Pour plus d’informations, consultez [Indications pour la mise en forme du code](../code-formatting-guidelines.md) et [Syntaxe détaillée](../verbose-syntax.md).
+Pour plus d’informations, consultez [Indications pour la mise en forme du code](../../style-guide/formatting.md) et [Syntaxe détaillée](../verbose-syntax.md).
 
 ## <a name="return-values"></a>Valeurs de retour
 
@@ -142,7 +142,7 @@ Une *expression lambda* est une fonction sans nom. Dans les exemples précédent
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-Pour définir des expressions lambda, utilisez le mot clé `fun`. Une expression lambda ressemble à une définition de fonction, sauf que le jeton `->` est utilisé à la place du jeton `=` pour séparer la liste d’arguments du corps de la fonction. Comme dans une définition de fonction normale, les types d’argument peuvent être déduits ou spécifiés explicitement, et le type de retour de l’expression lambda est déduit du type de la dernière expression dans le corps. Pour plus d’informations, [consultez Expressions lambda: `fun` Mot clé](../functions/lambda-expressions-the-fun-keyword.md).
+Pour définir des expressions lambda, utilisez le mot clé `fun`. Une expression lambda ressemble à une définition de fonction, sauf que le jeton `->` est utilisé à la place du jeton `=` pour séparer la liste d’arguments du corps de la fonction. Comme dans une définition de fonction normale, les types d’argument peuvent être déduits ou spécifiés explicitement, et le type de retour de l’expression lambda est déduit du type de la dernière expression dans le corps. Pour plus d’informations, consultez [Expressions lambda : mot clé `fun`](../functions/lambda-expressions-the-fun-keyword.md).
 
 ## <a name="function-composition-and-pipelining"></a>Composition de fonction et traitement « pipeline »
 

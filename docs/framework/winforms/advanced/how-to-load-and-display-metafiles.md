@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : charger et afficher des métafichiers'
+title: 'Comment : charger et afficher des métafichiers'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,30 +8,30 @@ helpviewer_keywords:
 - examples [Windows Forms], metafiles
 - metafiles [Windows Forms], displaying
 ms.assetid: 60af1714-f148-4d85-a739-0557965ffa73
-ms.openlocfilehash: 39b7251b2789c7410e1d59b4aa7990a2f73055fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6c17e0b2d023ccf80b0d32301b7ee6765edcae9f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61723222"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424817"
 ---
-# <a name="how-to-load-and-display-metafiles"></a>Procédure : charger et afficher des métafichiers
-Le <xref:System.Drawing.Imaging.Metafile> (classe), qui hérite de la <xref:System.Drawing.Image> class, fournit des méthodes pour l’enregistrement, d’affichage et examen d’images vectorielles.  
+# <a name="how-to-load-and-display-metafiles"></a>Comment : charger et afficher des métafichiers
+La classe <xref:System.Drawing.Imaging.Metafile>, qui hérite de la classe <xref:System.Drawing.Image>, fournit des méthodes pour l’enregistrement, l’affichage et l’examen d’images vectorielles.  
   
 ## <a name="example"></a>Exemple  
- Pour afficher une image vectorielle (métafichier) sur l’écran, vous devez un <xref:System.Drawing.Imaging.Metafile> objet et un <xref:System.Drawing.Graphics> objet. Passez le nom d’un fichier (ou un flux de données) à un <xref:System.Drawing.Imaging.Metafile> constructeur. Après avoir créé un <xref:System.Drawing.Imaging.Metafile> d’objet, qui passez <xref:System.Drawing.Imaging.Metafile> de l’objet à la <xref:System.Drawing.Graphics.DrawImage%2A> méthode d’un <xref:System.Drawing.Graphics> objet.  
+ Pour afficher une image vectorielle (métafichier) sur l’écran, vous avez besoin d’un objet <xref:System.Drawing.Imaging.Metafile> et d’un objet <xref:System.Drawing.Graphics>. Transmettez le nom d’un fichier (ou d’un flux) à un constructeur <xref:System.Drawing.Imaging.Metafile>. Après avoir créé un objet <xref:System.Drawing.Imaging.Metafile>, transmettez cet objet <xref:System.Drawing.Imaging.Metafile> à la méthode <xref:System.Drawing.Graphics.DrawImage%2A> d’un objet <xref:System.Drawing.Graphics>.  
   
- L’exemple crée un <xref:System.Drawing.Imaging.Metafile> objet à partir d’un fichier EMF (métafichier amélioré), puis dessine l’image avec son coin supérieur gauche à (60, 10).  
+ L’exemple crée un objet <xref:System.Drawing.Imaging.Metafile> à partir d’un fichier EMF (métafichier amélioré), puis dessine l’image avec son angle supérieur gauche à (60, 10).  
   
  L’illustration suivante montre le métafichier dessiné à l’emplacement spécifié.  
   
- ![Position de l’image](./media/imageposition2.png "imageposition2")  
+ ![Capture d’écran montrant la position de l’image.](./media/how-to-load-and-display-metafiles/metafile-drawn-specified-location.png "imageposition2")  
   
  [!code-csharp[System.Drawing.WorkingWithImages#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.WorkingWithImages#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- L’exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de la <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements.  
+ L’exemple précédent est conçu pour être utilisé avec Windows Forms, et il requiert <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d’événements <xref:System.Windows.Forms.Control.Paint>.  
   
 ## <a name="see-also"></a>Voir aussi
 

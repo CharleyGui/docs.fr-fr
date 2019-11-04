@@ -3,12 +3,12 @@ title: Bien démarrer avec le stockage Fichier Azure en F#
 description: Stockez les données de fichier dans le Cloud avec le stockage de fichiers Azure, puis montez votre partage de fichiers Cloud à partir d’une machine virtuelle Azure ou d’une application locale exécutant Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: a0e3cab56ba0f3db27335822616b4976a5d9de62
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9c25ab930abcbe7b358ae63c709aba4e97aed3be
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630494"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423864"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Prise en main du stockage de fichiers Azure à l’aide de F\#
 
@@ -16,20 +16,20 @@ Le stockage de fichiers Azure est un service qui offre des partages de fichiers 
 
 Pour obtenir une vue d’ensemble conceptuelle du stockage de fichiers, consultez [le guide .net pour le stockage de fichiers](/azure/storage/storage-dotnet-how-to-use-files).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/storage-create-storage-account).
 Vous aurez également besoin de votre clé d’accès de stockage pour ce compte.
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Créer un F# script et démarrer F# interactive
 
-Les exemples de cet article peuvent être utilisés dans une F# application ou un F# script. Pour créer un F# script, créez un fichier avec l' `.fsx` extension, par exemple `files.fsx`, dans votre F# environnement de développement.
+Les exemples de cet article peuvent être utilisés dans une F# application ou un F# script. Pour créer un F# script, créez un fichier avec l’extension `.fsx`, par exemple `files.fsx`, dans votre F# environnement de développement.
 
-Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer le `WindowsAzure.Storage` package et la `WindowsAzure.Storage.dll` référence dans votre script à `#r` l’aide d’une directive.
+Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer le package `WindowsAzure.Storage` et référencez `WindowsAzure.Storage.dll` dans votre script à l’aide d’une directive `#r`.
 
 ### <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
 
-Ajoutez les instructions `open` suivantes au début `files.fsx` du fichier:
+Ajoutez les instructions `open` suivantes en haut du fichier `files.fsx` :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L1-L5)]
 
@@ -37,29 +37,29 @@ Ajoutez les instructions `open` suivantes au début `files.fsx` du fichier:
 
 Vous aurez besoin d’une chaîne de connexion de stockage Azure pour ce didacticiel. Pour plus d’informations sur les chaînes de connexion, consultez [configurer des chaînes de connexion de stockage](/azure/storage/storage-configure-connection-string).
 
-Pour le didacticiel, vous allez entrer votre chaîne de connexion dans votre script, comme suit:
+Pour le didacticiel, vous allez entrer votre chaîne de connexion dans votre script, comme suit :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L11-L11)]
 
 Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine de votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la distribuer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres utilisateurs. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
 
-Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit:
+Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L13-L15)]
 
-L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type de `ConfigurationManager` .NET Framework.
+L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type `ConfigurationManager` de .NET Framework.
 
 ### <a name="parse-the-connection-string"></a>Analyser la chaîne de connexion
 
-Pour analyser la chaîne de connexion, utilisez:
+Pour analyser la chaîne de connexion, utilisez :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L21-L22)]
 
-Cela renverra un `CloudStorageAccount`.
+Une `CloudStorageAccount`est alors retournée.
 
 ### <a name="create-the-file-service-client"></a>Créer le client du service de fichiers
 
-Le `CloudFileClient` type vous permet d’utiliser par programme des fichiers stockés dans le stockage de fichiers. Voici un moyen de créer le client de service:
+Le type de `CloudFileClient` vous permet d’utiliser par programme des fichiers stockés dans le stockage de fichiers. Voici un moyen de créer le client de service :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L28-L28)]
 
@@ -67,7 +67,7 @@ Vous êtes maintenant prêt à écrire du code qui lit et écrit des données da
 
 ## <a name="create-a-file-share"></a>Créer un partage de fichiers
 
-Cet exemple montre comment créer un partage de fichiers s’il n’existe pas déjà:
+Cet exemple montre comment créer un partage de fichiers s’il n’existe pas déjà :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L34-L35)]
 
@@ -91,7 +91,7 @@ Ici, vous téléchargez le fichier que vous venez de créer, en ajoutant le cont
 
 ### <a name="set-the-maximum-size-for-a-file-share"></a>Définir la taille maximale d’un partage de fichiers
 
-L’exemple ci-dessous montre comment vérifier l’utilisation actuelle d’un partage et comment définir le quota pour le partage. `FetchAttributes`doit être appelé pour remplir un partage `Properties`et `SetProperties` pour propager les modifications locales au stockage fichier Azure.
+L’exemple ci-dessous montre comment vérifier l’utilisation actuelle d’un partage et comment définir le quota pour le partage. `FetchAttributes` doit être appelé pour remplir le `Properties`d’un partage, et `SetProperties` pour propager les modifications locales au stockage fichier Azure.
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L62-L72)]
 
@@ -127,7 +127,7 @@ Vous pouvez copier un objet BLOB dans un fichier de la même façon. Si l’obje
 
 Azure Storage Analytics prend en charge les métriques pour le stockage de fichiers. Avec les données de métriques, vous pouvez suivre les demandes et diagnostiquer les problèmes.
 
-Vous pouvez activer les métriques pour le stockage de fichiers à partir du [portail Azure](https://portal.azure.com), ou vous F# pouvez le faire de la manière suivante:
+Vous pouvez activer les métriques pour le stockage de fichiers à partir du [portail Azure](https://portal.azure.com), ou vous F# pouvez le faire de la manière suivante :
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L126-L140)]
 
@@ -137,7 +137,7 @@ Pour plus d’informations sur le stockage de fichiers Azure, consultez les lien
 
 ### <a name="conceptual-articles-and-videos"></a>Articles et vidéos conceptuelles
 
-- [Stockage Azure Files: système de fichiers SMB Cloud sans friction pour Windows et Linux](https://azure.microsoft.com/resources/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
+- [Stockage Azure Files : système de fichiers SMB Cloud sans friction pour Windows et Linux](https://azure.microsoft.com/resources/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Utilisation du stockage de fichiers Azure avec Linux](/azure/storage/storage-how-to-use-files-linux)
 
 ### <a name="tooling-support-for-file-storage"></a>Prise en charge des outils pour le stockage de fichiers
@@ -146,7 +146,7 @@ Pour plus d’informations sur le stockage de fichiers Azure, consultez les lien
 - [Utilisation de AzCopy avec Stockage Microsoft Azure](/azure/storage/storage-use-azcopy)
 - [Utilisation de l’Azure CLI avec le stockage Azure](/azure/storage/storage-azure-cli#create-and-manage-file-shares)
 
-### <a name="reference"></a>Référence
+### <a name="reference"></a>Reference
 
 - [Référence de la bibliothèque cliente de stockage pour .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx)
 - [Référence de l’API REST du service de fichiers](/rest/api/storageservices/fileservices/File-Service-REST-API)
@@ -154,6 +154,6 @@ Pour plus d’informations sur le stockage de fichiers Azure, consultez les lien
 ### <a name="blog-posts"></a>Billets de blog
 
 - [Le stockage de fichiers Azure est désormais mis à la disposition générale](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-- [À l’intérieur du stockage fichier Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/) 
-- [Présentation de Microsoft Azure File Service](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/12/introducing-microsoft-azure-file-service/)
-- [Conservation des connexions vers les fichiers Microsoft Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/26/persisting-connections-to-microsoft-azure-files/)
+- [À l’intérieur du stockage fichier Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/)
+- [Présentation du service de fichiers Microsoft Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/12/introducing-microsoft-azure-file-service/)
+- [Persistance des connexions aux fichiers Microsoft Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/26/persisting-connections-to-microsoft-azure-files/)

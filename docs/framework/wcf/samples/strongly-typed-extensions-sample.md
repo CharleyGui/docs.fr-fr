@@ -2,12 +2,12 @@
 title: Strongly-Typed Extensions, exemple
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: 1fd873e02dcc1fc824c8b17c52231c80c61e7c60
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5ee2f13df9d3c0841b3e8b62b1633ea4520d3860
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045487"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421511"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Strongly-Typed Extensions, exemple
 L'exemple utilise la classe <xref:System.ServiceModel.Syndication.SyndicationFeed>. Toutefois, les modèles présentés dans cet exemple peuvent être utilisés avec toutes les classes Syndication qui prennent en charge les données d'extension.  
@@ -40,12 +40,12 @@ L'exemple utilise la classe <xref:System.ServiceModel.Syndication.SyndicationFee
 </entry>  
 ```  
   
- L' `<in-reply-to>` élément spécifie trois attributs requis`ref`( `type` , `href`et), tout en autorisant également la présence d’attributs d’extension et d’éléments d’extension supplémentaires.  
+ L’élément `<in-reply-to>` spécifie trois attributs requis (`ref`, `type` et `href`) tout en autorisant la présence d’attributs d’extension et d’éléments d’extension supplémentaires.  
   
 ## <a name="modeling-the-in-reply-to-element"></a>Modélisation de l'élément In-Reply-To  
  Dans cet exemple, l'élément `<in-reply-to>` est modélisé en tant que CLR qui implémente <xref:System.Xml.Serialization.IXmlSerializable>, ce qui active son utilisation avec <xref:System.Runtime.Serialization.DataContractSerializer>. Il implémente également quelques méthodes et propriétés pour accéder aux données de l'élément, comme le montre l'exemple de code suivant.  
   
-```  
+```csharp  
 [XmlRoot(ElementName = "in-reply-to", Namespace = "http://contoso.org/syndication/thread/1.0")]  
 public class InReplyToElement : IXmlSerializable  
 {  
@@ -90,7 +90,7 @@ public class InReplyToElement : IXmlSerializable
   
  La classe `InReplyToElement` implémente l'interface <xref:System.Xml.Serialization.IXmlSerializable>, qui autorise le contrôle direct de la manière dont les instances d'objet sont lues et écrites en XML. La méthode `ReadXml` lit en premier les valeurs pour les propriétés `Ref`, `HRef`, `Source` et `MediaType` du <xref:System.Xml.XmlReader> qui lui est passé. Les attributs inconnus sont stockés dans la collection <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A>. Lorsque tous les attributs ont été lus, <xref:System.Xml.XmlReader.ReadStartElement> est appelé pour faire avancer le lecteur à l'élément suivant. Vu que l'élément modélisé par cette classe ne contient aucun enfant requis, les éléments enfants sont mis en mémoire tampon dans des instances de `XElement` et stockés dans la collection <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A>, comme illustré dans le code suivant.  
   
-```  
+```csharp  
 public void ReadXml(System.Xml.XmlReader reader)  
 {  
     bool isEmpty = reader.IsEmptyElement;  
@@ -146,7 +146,7 @@ public void ReadXml(System.Xml.XmlReader reader)
   
  Dans `WriteXml`, la méthode `InReplyToElement` écrit d'abord les valeurs des propriétés `Ref`, `HRef`, `Source` et `MediaType` en tant qu'attributs XML (`WriteXml` n'est pas chargé d'écrire l'élément externe réel lui-même, car cela est fait par l'appelant de `WriteXml`). Elle écrit également le contenu de <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> et de <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> dans le writer, comme illustré dans le code suivant.  
   
-```  
+```csharp  
 public void WriteXml(System.Xml.XmlWriter writer)  
 {  
     if (this.Ref != null)  
@@ -189,7 +189,7 @@ public void WriteXml(System.Xml.XmlWriter writer)
   
  La classe `ThreadedFeed` est héritée de `SyndicationFeed` et substitue la méthode `OnCreateItem` pour retourner un `ThreadedItem`. Elle implémente également une méthode pour accéder à la collection `Items` en tant que `ThreadedItems`, comme illustré dans le code suivant.  
   
-```  
+```csharp  
 public class ThreadedFeed : SyndicationFeed  
 {  
     public ThreadedFeed()  
@@ -213,7 +213,7 @@ public class ThreadedFeed : SyndicationFeed
   
  La classe `ThreadedItem` est héritée de `SyndicationItem` et fait de `InReplyToElement` une propriété fortement typée. Cela fournit accès par programme commode aux données d’extension `InReplyTo`. Elle implémente également `TryParseElement` et `WriteElementExtensions` pour lire et écrire ses données d'extension, comme illustré dans le code suivant.  
   
-```  
+```csharp  
 public class ThreadedItem : SyndicationItem  
 {  
     private InReplyToElement inReplyTo;  
@@ -283,6 +283,6 @@ public class ThreadedItem : SyndicationItem
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  

@@ -5,21 +5,21 @@ ms.technology: dotnet-standard
 ms.assetid: 1bbb4d05-ead7-4bda-8ece-f86d35c57ad4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f1a4587838180896b52bb79d447ed7ede3e22d1a
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: HT
+ms.openlocfilehash: 7fee2b5f4950efedc6ee335d5fbd417b8c178fbd
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836485"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424408"
 ---
 # <a name="processing-xml-data-in-memory"></a>Traitement de données XML en mémoire
-Microsoft .NET Framework comprend trois modèles pour le traitement des données XML : la classe <xref:System.Xml.XmlDocument>, la classe <xref:System.Xml.XPath.XPathDocument>, [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
+Microsoft .NET Framework comprend trois modèles pour le traitement des données XML : la classe <xref:System.Xml.XmlDocument>, la classe <xref:System.Xml.XPath.XPathDocument>, [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
   
  La classe <xref:System.Xml.XmlDocument> implémente les recommandations du W3C relatives aux modèles objet de document (DOM), niveaux 1 et 2 (noyau). Le DOM est une représentation sous la forme d'une arborescence (cache) en mémoire d'un document XML. L'objet <xref:System.Xml.XmlDocument> et les classes y afférentes permettent de construire des documents XML, de charger et d'accéder à des données, de modifier des données et d'enregistrer des modifications.  
   
  La classe <xref:System.Xml.XPath.XPathDocument> est un magasin de données en mémoire en lecture seule basé sur le modèle de données XPath. La classe <xref:System.Xml.XPath.XPathNavigator> propose plusieurs options de modification et fonctionnalités de navigation à l'aide d'un modèle de curseur entre des documents XML contenus dans la classe <xref:System.Xml.XPath.XPathDocument> en lecture seule ainsi que dans la classe <xref:System.Xml.XmlDocument>.  
   
- [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) est un modèle introduit dans .NET Framework version 3.5 pour le traitement des données XML. Il s’agit d’un modèle en mémoire qui tire parti de [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md). LINQ étend la syntaxe des langages C# et Visual Basic pour fournir de nouvelles capacités de requête.  
+ [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) est un modèle introduit dans .NET Framework version 3.5 pour le traitement des données XML. Il s’agit d’un modèle en mémoire qui tire parti de [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md). LINQ étend la syntaxe des langages C# et Visual Basic pour fournir de nouvelles capacités de requête.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  

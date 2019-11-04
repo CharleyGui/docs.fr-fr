@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : superposer des objets dans des Windows Forms'
+title: 'Comment : superposer des objets dans les Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,17 +12,17 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 2e4c6a3236b3a2a2afaad73fee21c3cf59b992b8
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 5b8f6c00e70df94ae3a82c2c195fa781f0840a53
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69987559"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458357"
 ---
-# <a name="how-to-layer-objects-on-windows-forms"></a>Procédure : Objets de couche sur Windows Forms
+# <a name="how-to-layer-objects-on-windows-forms"></a>Comment : superposer des objets sur Windows Forms
 
 Lorsque vous créez une interface utilisateur complexe ou que vous utilisez un formulaire d’interface multidocument (MDI), vous souhaiterez souvent superposer les contrôles et les formulaires enfants pour créer des interfaces utilisateur plus complexes. Pour déplacer et suivre les contrôles et les fenêtres dans le contexte d’un groupe, vous manipulez leur *ordre de plan*. L’ordre de plan est la superposition visuelle des contrôles sur un formulaire le long de l’axe z (profondeur) du formulaire. La fenêtre située en haut de l’ordre de plan chevauche toutes les autres fenêtres. Toutes les autres fenêtres chevauchent la fenêtre en bas de l’ordre de plan.
 
@@ -34,9 +34,9 @@ Lorsque vous créez une interface utilisateur complexe ou que vous utilisez un f
 
 ## <a name="to-layer-controls-programmatically"></a>Pour superposer des contrôles par programmation
 
-Utilisez les <xref:System.Windows.Forms.Control.BringToFront%2A> méthodes <xref:System.Windows.Forms.Control.SendToBack%2A> et pour manipuler l’ordre de plan des contrôles.
+Utilisez les méthodes <xref:System.Windows.Forms.Control.BringToFront%2A> et <xref:System.Windows.Forms.Control.SendToBack%2A> pour manipuler l’ordre de plan des contrôles.
 
-Par exemple, si un <xref:System.Windows.Forms.TextBox> contrôle, `txtFirstName`, se trouve sous un autre contrôle et que vous souhaitez l’utiliser en premier, utilisez le code suivant:
+Par exemple, si un contrôle <xref:System.Windows.Forms.TextBox>, `txtFirstName`se trouve sous un autre contrôle et que vous souhaitez l’utiliser en premier, utilisez le code suivant :
 
 ```vb
 txtFirstName.BringToFront()
@@ -51,7 +51,7 @@ txtFirstName->BringToFront();
 ```
 
 > [!NOTE]
-> Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur <xref:System.Windows.Forms.RadioButton> , tel qu' <xref:System.Windows.Forms.GroupBox> un certain nombre de contrôles dans un contrôle. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
+> Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur, par exemple un certain nombre de contrôles <xref:System.Windows.Forms.RadioButton> dans un contrôle <xref:System.Windows.Forms.GroupBox>. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
 
 ## <a name="see-also"></a>Voir aussi
 

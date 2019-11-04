@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: e1d87920f64242379d1931a424aa38b676dc5ef5
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c7d9eeceaba2ed8b624d3001dae86868ef626c08
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039444"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458102"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients
 > [!NOTE]
@@ -40,7 +40,7 @@ ms.locfileid: "73039444"
   
 <a name="uiautomation_with_variable_patterns"></a>   
 ## <a name="controls-with-variable-patterns"></a>Contrôles avec modèles variables  
- Certains types de contrôles prennent en charge différents modèles selon leur état ou la manière dont le contrôle est utilisé. Les affichages de liste (miniatures, mosaïques, icônes, liste, détails), les graphiques [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] (secteurs, courbes, barres, valeurs de cellule avec une formule), la zone de document de [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)](normal, page Web, plan, impression, aperçu avant impression) et Apparences du lecteur Microsoft Windows Media.  
+ Certains types de contrôles prennent en charge différents modèles selon leur état ou la manière dont le contrôle est utilisé. Les affichages de liste (miniatures, mosaïques, icônes, liste, détails), les graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), la zone de document de Microsoft Word (normal, page Web, plan, impression, impression, imprimer) sont des exemples de contrôles qui peuvent avoir des modèles de variable. Version préliminaire) et Microsoft Windows Media Player.  
   
  Les contrôles implémentant des types de contrôles personnalisés peuvent disposer de n’importe quel jeu de modèles de contrôle nécessaires pour représenter leurs fonctionnalités.  
   

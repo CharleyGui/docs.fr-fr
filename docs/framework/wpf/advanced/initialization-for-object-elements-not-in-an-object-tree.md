@@ -10,12 +10,12 @@ helpviewer_keywords:
 - elements [WPF], initializing
 - initializing elements [WPF]
 ms.assetid: 7b8dfc9b-46ac-4ce8-b7bb-035734d688b7
-ms.openlocfilehash: 4f8ee4b31c135595770338831c23d8a0f419e8cd
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 1a1d956ee7f41ac1ac0fc9bd051a18b9ff438930
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67857010"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459837"
 ---
 # <a name="initialization-for-object-elements-not-in-an-object-tree"></a>Initialisation d'éléments objet ne figurant pas dans une arborescence d'objets
 Certains aspects de l’initialisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont différés à des processus qui reposent généralement sur le fait que cet élément est connecté à l’arborescence logique ou à l’arborescence d’éléments visuels. Cette rubrique décrit les étapes qui peuvent être nécessaires pour initialiser un élément qui n’est connecté à aucune de ces arborescences.  
@@ -25,15 +25,15 @@ Certains aspects de l’initialisation [!INCLUDE[TLA#tla_winclient](../../../../
   
  L’arborescence d’éléments visuels participe également à ce processus. De plus, les éléments qui font partie de l’arborescence d’éléments visuels par l’intermédiaire des modèles ne sont totalement instanciés que quand ils sont connectés.  
   
- Les conséquences de ce comportement sont que certaines opérations qui reposent sur l’achèvement des caractéristiques visuelles d’un élément nécessitent des étapes supplémentaires. (par exemple si vous essayez d’obtenir les caractéristiques visuelles d’une classe qui a été construite mais pas encore attachée à une arborescence). Par exemple, si vous souhaitez appeler <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> sur un <xref:System.Windows.Media.Imaging.RenderTargetBitmap> et le visuel que vous transmettez est un élément non connecté à une arborescence, cet élément n’est pas terminé visuellement tant que vous devez effectuer les étapes d’initialisation supplémentaires.  
+ Les conséquences de ce comportement sont que certaines opérations qui reposent sur l’achèvement des caractéristiques visuelles d’un élément nécessitent des étapes supplémentaires. (par exemple si vous essayez d’obtenir les caractéristiques visuelles d’une classe qui a été construite mais pas encore attachée à une arborescence). Par exemple, si vous souhaitez appeler <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> sur un <xref:System.Windows.Media.Imaging.RenderTargetBitmap> et que l’élément visuel que vous passez est un élément qui n’est pas connecté à une arborescence, cet élément n’est pas terminé visuellement tant que des étapes d’initialisation supplémentaires ne sont pas terminées.  
   
 ### <a name="using-begininit-and-endinit-to-initialize-the-element"></a>Utilisation de BeginInit et EndInit pour initialiser l’élément  
- Différentes classes dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implémenter la <xref:System.ComponentModel.ISupportInitialize> interface. Vous utilisez le <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> et <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> méthodes de l’interface pour désigner une région dans votre code qui contient les étapes d’initialisation (telles que la définition de propriété valeurs affectant le rendu). Après avoir <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> est appelée dans la séquence, le système de disposition peut traiter l’élément et commencer à rechercher un style implicite.  
+ Diverses classes dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implémentent l’interface <xref:System.ComponentModel.ISupportInitialize>. Vous utilisez les méthodes <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> et <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> de l’interface pour désigner une région de votre code qui contient des étapes d’initialisation (telles que la définition des valeurs de propriété qui affectent le rendu). Une fois que <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> est appelé dans la séquence, le système de disposition peut traiter l’élément et commencer à rechercher un style implicite.  
   
- Si l’élément vous définissez les propriétés est un <xref:System.Windows.FrameworkElement> ou <xref:System.Windows.FrameworkContentElement> classe dérivée, vous pouvez appeler les versions de la classe de <xref:System.Windows.FrameworkElement.BeginInit%2A> et <xref:System.Windows.FrameworkElement.EndInit%2A> au lieu d’effectuer un cast vers <xref:System.ComponentModel.ISupportInitialize>.  
+ Si l’élément sur lequel vous définissez les propriétés est un <xref:System.Windows.FrameworkElement> ou <xref:System.Windows.FrameworkContentElement> classe dérivée, vous pouvez appeler les versions de classe de <xref:System.Windows.FrameworkElement.BeginInit%2A> et <xref:System.Windows.FrameworkElement.EndInit%2A> plutôt que de procéder à une conversion en <xref:System.ComponentModel.ISupportInitialize>.  
   
 ### <a name="sample-code"></a>Exemple de code  
- L’exemple suivant est l’exemple de code pour une application console qui utilise l’API de rendu et <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> de libre [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier pour illustrer le positionnement correct de <xref:System.Windows.FrameworkElement.BeginInit%2A> et <xref:System.Windows.FrameworkElement.EndInit%2A> autour d’autres appels d’API qui ajustent des propriétés qui affecter le rendu.  
+ L’exemple suivant illustre un exemple de code pour une application console qui utilise des API de rendu et <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> d’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libre pour illustrer le placement correct de <xref:System.Windows.FrameworkElement.BeginInit%2A> et <xref:System.Windows.FrameworkElement.EndInit%2A> autour d’autres appels d’API qui ajustent les propriétés qui affectent le rendu.  
   
  L’exemple illustre uniquement la fonction principale. Les fonctions `Rasterize` et `Save` (non illustrées) sont des fonctions utilitaires qui assurent le traitement d’image et les E/S.  
   
@@ -44,4 +44,4 @@ Certains aspects de l’initialisation [!INCLUDE[TLA#tla_winclient](../../../../
 
 - [Arborescences dans WPF](trees-in-wpf.md)
 - [Vue d’ensemble du rendu graphique de WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
-- [Vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md)
+- [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

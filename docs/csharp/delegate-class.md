@@ -4,12 +4,12 @@ description: En savoir plus sur les classes du .NET Framework qui prennent en ch
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 7aca2d3ba7aefd103ac927a6ce905938262ae39c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f4635ff623feec9407021792cabd1677184b4d34
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037452"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420364"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate et le mot clé `delegate`
 
@@ -32,7 +32,7 @@ Continuons à utiliser la méthode List.Sort() comme dans notre exemple. La prem
 public delegate int Comparison<in T>(T left, T right);
 ```
 
-Le compilateur génère une classe, dérivée de `System.Delegate`, qui correspond à la signature utilisée (dans le cas présent, une méthode qui retourne un entier et qui a deux arguments). Le type de ce délégué est `Comparison`. Le type délégué `Comparison` est un type générique. Pour plus d’informations sur les génériques, cliquez [ici](generics.md).
+Le compilateur génère une classe, dérivée de `System.Delegate`, qui correspond à la signature utilisée (dans le cas présent, une méthode qui retourne un entier et qui a deux arguments). Le type de ce délégué est `Comparison`. Le type délégué `Comparison` est un type générique. Pour plus d’informations sur les génériques, cliquez [ici](programming-guide/generics/index.md).
 
 Notez que la syntaxe peut sembler déclarer une variable, alors qu’elle déclare en fait un *type*. Vous pouvez définir des types délégués dans des classes, directement dans des espaces de noms, ou même dans l’espace de noms global.
 

@@ -3,18 +3,18 @@ title: protected internal - Référence C#
 ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: ddfefa2a0bb145aa49a60f06a40725d2706cecb5
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: 6e5a4c6e63c2c05df54df6bed542eab3f43f9272
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661651"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422584"
 ---
 # <a name="protected-internal-c-reference"></a>protected internal (Référence C#)
 
 La combinaison de mots clés `protected internal` est un modificateur d’accès de membre. Un membre interne protégé est accessible depuis l’assembly actif ou depuis des types dérivés de la classe conteneur. Pour obtenir une comparaison de `protected internal` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Un membre interne protégé d’une classe de base est accessible depuis n’importe quel type au sein de son assembly conteneur. Il est également accessible dans une classe dérivée qui se trouve dans un autre assembly seulement si l’accès s’effectue via une variable du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -68,12 +68,12 @@ Les membres de struct ne peuvent pas être `protected internal`, car le struct n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)

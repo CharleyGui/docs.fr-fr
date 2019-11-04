@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 9efd7a7581a1e8bd2cb5f544edd1b4c965aa1866
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 54b5f97aca131f52b9b5d9f54d7fa5ec00ba3d5b
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395934"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423673"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. pipelines dans .NET
 
@@ -91,7 +91,7 @@ Dans la première boucle :
 
 * <xref:System.IO.Pipelines.PipeWriter.GetMemory(System.Int32)?displayProperty=nameWithType> est appelé pour récupérer la mémoire à partir du writer sous-jacent.
 * <xref:System.IO.Pipelines.PipeWriter.Advance(System.Int32)?displayProperty=nameWithType> est appelé pour indiquer à la `PipeWriter` la quantité de données qui a été écrite dans la mémoire tampon.
-* <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType> est appelé pour rendre les données disponibles pour la `PipeReader`.
+* <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType> est appelé pour mettre les données à la disposition du `PipeReader`.
 
 Dans la deuxième boucle, le `PipeReader` consomme les tampons écrits par `PipeWriter`. Les mémoires tampons proviennent du Socket. L’appel à `PipeReader.ReadAsync` :
 
@@ -123,14 +123,14 @@ Pour des performances optimales, il existe un équilibre entre les pauses fréqu
 
 Pour résoudre le problème précédent, le `Pipe` a deux paramètres pour contrôler le workflow de données :
 
-* <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold> : détermine la quantité de données qui doit être mise en mémoire tampon avant les appels à <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> pause.
+* <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold>: détermine la quantité de données qui doit être mise en mémoire tampon avant les appels à <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> suspendre.
 * <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold> : détermine la quantité de données que le lecteur doit observer avant les appels à la reprise de `PipeWriter.FlushAsync`.
 
 ![Diagramme avec ResumeWriterThreshold et PauseWriterThreshold](./media/pipelines/resume-pause.png)
 
 <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>:
 
-* Retourne un @no__t incomplet-0 lorsque la quantité de données dans la `Pipe` traverse `PauseWriterThreshold`.
+* Retourne un `ValueTask<FlushResult>` incomplet lorsque la quantité de données du `Pipe` traverse `PauseWriterThreshold`.
 * Termine `ValueTask<FlushResult>` lorsqu’il est inférieur à `ResumeWriterThreshold`.
 
 Deux valeurs sont utilisées pour empêcher un cycle rapide, ce qui peut se produire si une valeur est utilisée.
@@ -146,11 +146,11 @@ var pipe = new Pipe(options);
 
 ### <a name="pipescheduler"></a>PipeScheduler
 
-En général, lors de l’utilisation de `async` et `await`, le code asynchrone reprend sur un <xref:System.Threading.Tasks.TaskScheduler> ou sur le @no__t actuel-3.
+En général, lorsque vous utilisez `async` et `await`, le code asynchrone reprend sur un <xref:System.Threading.Tasks.TaskScheduler> ou sur le <xref:System.Threading.SynchronizationContext>actuel.
 
 Lors des e/s, il est important de contrôler précisément l’emplacement d’exécution des e/s. Ce contrôle permet de tirer efficacement parti des caches de l’UC. Une mise en cache efficace est essentielle pour les applications hautes performances, comme les serveurs Web. <xref:System.IO.Pipelines.PipeScheduler> permet de contrôler l’emplacement d’exécution des rappels asynchrones. Par défaut :
 
-* Le @no__t actuel-0 est utilisé.
+* Le <xref:System.Threading.SynchronizationContext> actuel est utilisé.
 * S’il n’existe aucun `SynchronizationContext`, il utilise le pool de threads pour exécuter les rappels.
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/Program.cs?name=snippet)]
@@ -159,11 +159,11 @@ Lors des e/s, il est important de contrôler précisément l’emplacement d’e
 
 ### <a name="pipe-reset"></a>Réinitialisation du canal
 
-Il est souvent efficace de réutiliser l’objet `Pipe`. Pour réinitialiser le canal, appelez <xref:System.IO.Pipelines.PipeReader> <xref:System.IO.Pipelines.Pipe.Reset%2A> lorsque les `PipeReader` et `PipeWriter` sont terminés.
+Il est souvent efficace de réutiliser l’objet `Pipe`. Pour réinitialiser le canal, appelez <xref:System.IO.Pipelines.PipeReader> <xref:System.IO.Pipelines.Pipe.Reset%2A> lorsque le `PipeReader` et le `PipeWriter` sont terminés.
 
 ## <a name="pipereader"></a>PipeReader
 
-<xref:System.IO.Pipelines.PipeReader> gère la mémoire au nom de l’appelant. Appelez **toujours** <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType> après avoir appelé <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType>. Cela permet à l' `PipeReader` de savoir quand l’appelant est en mesure de faire en sorte qu’il puisse être suivi. La `ReadOnlySequence<byte>` retournée à partir de `PipeReader.ReadAsync` est valide uniquement jusqu’à ce que l’appel de la `PipeReader.AdvanceTo`. L’utilisation de `ReadOnlySequence<byte>` est illégale après l’appel de `PipeReader.AdvanceTo`.
+<xref:System.IO.Pipelines.PipeReader> gère la mémoire au nom de l’appelant. Appelez **toujours** <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType> après l’appel de <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType>. Cela permet à l' `PipeReader` de savoir quand l’appelant est en mesure de faire en sorte qu’il puisse être suivi. La `ReadOnlySequence<byte>` retournée à partir de `PipeReader.ReadAsync` est valide uniquement jusqu’à ce que l’appel de la `PipeReader.AdvanceTo`. L’utilisation de `ReadOnlySequence<byte>` est illégale après l’appel de `PipeReader.AdvanceTo`.
 
 `PipeReader.AdvanceTo` accepte deux arguments <xref:System.SequencePosition> :
 
@@ -194,7 +194,7 @@ Le code suivant lit un message unique à partir d’un `PipeReader` et le retour
 Le code précédent :
 
 * Analyse un message unique.
-* Met à jour le @no__t utilisé-0 et examine `SequencePosition` pour pointer vers le début de la mémoire tampon d’entrée tronquée.
+* Met à jour le `SequencePosition` consommé et examine `SequencePosition` pour pointer vers le début de la mémoire tampon d’entrée tronquée.
 
 Les deux arguments `SequencePosition` sont mis à jour, car `TryParseMessage` supprime le message analysé de la mémoire tampon d’entrée. En général, lors de l’analyse d’un message unique à partir de la mémoire tampon, la position examinée doit être l’une des suivantes :
 
@@ -311,21 +311,21 @@ La <xref:System.IO.Pipelines.PipeWriter> gère les tampons pour l’écriture au
 
 Le code précédent :
 
-* Demande une mémoire tampon d’au moins 5 octets à partir du `PipeWriter` à l’aide de <xref:System.IO.Pipelines.PipeWriter.GetSpan%2A>.
-* Écrit les octets de la chaîne ASCII `"Hello"` dans la `Span<byte>` retournée.
+* Demande une mémoire tampon d’au moins 5 octets à partir du `PipeWriter` à l’aide de <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A>.
+* Écrit les octets de la chaîne ASCII `"Hello"` dans le `Memory<byte>`retourné.
 * Appelle <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pour indiquer le nombre d’octets qui ont été écrits dans la mémoire tampon.
 * Vide la `PipeWriter`, qui envoie les octets à l’appareil sous-jacent.
 
-La méthode d’écriture précédente utilise les mémoires tampons fournies par le `PipeWriter`. Vous pouvez également <xref:System.IO.Pipelines.PipeWriter.WriteAsync%2A?displayProperty=nameWithType> :
+La méthode d’écriture précédente utilise les mémoires tampons fournies par le `PipeWriter`. Vous pouvez également <xref:System.IO.Pipelines.PipeWriter.WriteAsync%2A?displayProperty=nameWithType>:
 
 * Copie la mémoire tampon existante sur le `PipeWriter`.
-* Appelle `GetSpan`, `Advance` selon le cas et appelle <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A>.
+* Appelle `GetSpan`, `Advance` en fonction des besoins et appelle <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A>.
 
 [!code-csharp[MyPipeWriter#2](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet2)]
 
 ### <a name="cancellation"></a>Annulation
 
-<xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> prend en charge le passage d’une <xref:System.Threading.CancellationToken>. Le passage d’un `CancellationToken` entraîne une `OperationCanceledException` si le jeton est annulé alors qu’il y a un vidage en attente. `PipeWriter.FlushAsync` permet d’annuler l’opération de vidage en cours via <xref:System.IO.Pipelines.PipeWriter.CancelPendingFlush%2A?displayProperty=nameWithType> sans lever d’exception. L’appel de `PipeWriter.CancelPendingFlush` provoque l’appel actuel ou suivant à `PipeWriter.FlushAsync` ou `PipeWriter.WriteAsync` pour retourner un <xref:System.IO.Pipelines.FlushResult> avec `IsCanceled` défini sur `true`. Cela peut être utile pour stopper le vidage à l’arrêt d’une façon non destructrice et non exceptionnelle.
+<xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> prend en charge le passage d’une <xref:System.Threading.CancellationToken>. Le passage d’un `CancellationToken` entraîne une `OperationCanceledException` si le jeton est annulé alors qu’il y a un vidage en attente. `PipeWriter.FlushAsync` prend en charge un moyen d’annuler l’opération de vidage en cours via <xref:System.IO.Pipelines.PipeWriter.CancelPendingFlush%2A?displayProperty=nameWithType> sans lever d’exception. L’appel de `PipeWriter.CancelPendingFlush` provoque l’appel actuel ou suivant à `PipeWriter.FlushAsync` ou `PipeWriter.WriteAsync` pour retourner un <xref:System.IO.Pipelines.FlushResult> avec `IsCanceled` défini sur `true`. Cela peut être utile pour stopper le vidage à l’arrêt d’une façon non destructrice et non exceptionnelle.
 
 <a name="pwcp"></a>
 
@@ -333,7 +333,7 @@ La méthode d’écriture précédente utilise les mémoires tampons fournies pa
 
 * <xref:System.IO.Pipelines.PipeWriter.GetSpan%2A> et <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A> retournent une mémoire tampon avec au moins la quantité de mémoire demandée. **Ne** supposez pas des tailles de mémoire tampon exactes.
 * Il n’y a aucune garantie que les appels successifs retourneront la même mémoire tampon ou la même mémoire tampon de taille.
-* Une nouvelle mémoire tampon doit être demandée après l’appel de <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pour poursuivre l’écriture de données supplémentaires. Impossible d’écrire dans la mémoire tampon acquise précédemment.
+* Une nouvelle mémoire tampon doit être demandée après l’appel de <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pour continuer à écrire davantage de données. Impossible d’écrire dans la mémoire tampon acquise précédemment.
 * L’appel de `GetMemory` ou `GetSpan` alors qu’il existe un appel incomplet à `FlushAsync` n’est pas sécurisé.
 * L’appel de `Complete` ou `CompleteAsync` pendant qu’il y a des données non vidées peut entraîner une altération de la mémoire.
 
@@ -345,4 +345,4 @@ Le <xref:System.IO.Pipelines.IDuplexPipe> est un contrat pour les types qui pren
 
 ## <a name="streams"></a>Flux
 
-Lors de la lecture ou de l’écriture de données de flux, vous lisez généralement les données à l’aide d’un désérialiseur et écrivez des données à l’aide d’un sérialiseur. La plupart de ces API de flux de lecture et d’écriture ont un paramètre `Stream`. Pour faciliter l’intégration avec ces API existantes, `PipeReader` et `PipeWriter` exposent un <xref:System.IO.Pipelines.PipeReader.AsStream%2A>.  <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> retourne une implémentation de `Stream` autour du `PipeReader` ou de `PipeWriter`.
+Lors de la lecture ou de l’écriture de données de flux, vous lisez généralement les données à l’aide d’un désérialiseur et écrivez des données à l’aide d’un sérialiseur. La plupart de ces API de flux de lecture et d’écriture ont un paramètre `Stream`. Pour faciliter l’intégration avec ces API existantes, `PipeReader` et `PipeWriter` exposer un <xref:System.IO.Pipelines.PipeReader.AsStream%2A>.  <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> retourne une implémentation de `Stream` autour du `PipeReader` ou `PipeWriter`.

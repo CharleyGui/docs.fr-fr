@@ -5,12 +5,12 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: db42ba4916aad739bd2c9d8b547f16022fce44bd
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 043b9b85633e81670783e7870f1be7726ab07e81
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104944"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454621"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -39,7 +39,7 @@ Vous pouvez tirer parti des fonctionnalités et des améliorations du dernier ki
 
 À de rares occasions, vous pouvez être amené à utiliser une version antérieure du kit SDK. Vous devez dans ce cas spécifier cette version dans un [ fichier *global.json*](../tools/global-json.md). La stratégie « utiliser la dernière version » signifie que vous utilisez uniquement *global.json* pour spécifier une version du kit SDK .NET Core antérieure à la dernière version installée.
 
-*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version est installée, elle est utilisée. Si le kit SDK spécifié dans le fichier *global.json* est introuvable, l’interface CLI .NET restaure par progression le dernier kit SDK installé. La restauration par progression correspond au comportement par défaut, quand aucun fichier *global.json* n’est trouvé.
+*global.json* peut être placé n’importe où dans la hiérarchie des fichiers. L’interface CLI effectue une recherche vers le haut dans le répertoire du projet et s’arrête au premier fichier *global.json* trouvé. Vous pouvez contrôler les projets auxquels un fichier *global.json* donné s’applique par son emplacement dans le système de fichiers. L’interface CLI .NET recherche un fichier *global.json* de manière itérative en parcourant le chemin de bas en haut dans le répertoire de travail actif. Le premier fichier *global.json* trouvé spécifie la version utilisée. Si cette version du kit de développement logiciel (SDK) est installée, cette version est utilisée. Si le kit de développement logiciel (SDK) spécifié dans *global. JSON* est introuvable, l’interface CLI .NET utilise des [règles de correspondance](../tools/global-json.md#matching-rules) pour sélectionner un kit de développement logiciel (SDK) compatible, ou échoue si aucune n’est trouvée.
 
 L’exemple suivant présente la syntaxe du fichier *global.json* :
 

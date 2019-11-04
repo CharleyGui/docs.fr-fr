@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer des contrôles composites'
+title: 'Comment : créer des contrôles composites'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UserControl class [Windows Forms], creating composite controls
@@ -7,17 +7,17 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 08cb07ceebf08b3096415f9b7370e2d955152cb6
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 42ea424507b89576df8099fd4849dd2665135a55
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015933"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459439"
 ---
-# <a name="how-to-author-composite-controls"></a>Procédure : Créer des contrôles composites
+# <a name="how-to-author-composite-controls"></a>Comment : créer des contrôles composites
 
 Les contrôles composites peuvent être utilisés de plusieurs façons. Vous pouvez les créer dans le cadre d’un projet d’application de bureau Windows et les utiliser uniquement sur les formulaires du projet. Ou vous pouvez les créer dans un projet de bibliothèque de contrôles Windows, compiler le projet dans un assembly et utiliser les contrôles dans d’autres projets. Vous pouvez même hériter de ces éléments et utiliser l’héritage visuel pour les personnaliser rapidement à des fins spéciales.
 
@@ -79,8 +79,8 @@ Les contrôles composites peuvent être utilisés de plusieurs façons. Vous pou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : Création d’un contrôle composite](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
-- [Procédure pas à pas : Héritage à partir d’un contrôle Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Procédure pas à pas : création d’un contrôle composite](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Procédure pas à pas : héritage d’un contrôle Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 - [Recommandations relatives au type de contrôle](control-type-recommendations.md)
-- [Guide pratique pour Créer des contrôles pour Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Guide pratique pour créer des contrôles pour des Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Variétés de contrôles personnalisés](varieties-of-custom-controls.md)

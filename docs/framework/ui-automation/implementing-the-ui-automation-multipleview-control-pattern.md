@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: edef213c0f4d43a15b7c6842ef6c62e95544da66
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 62f0ba1dc8b7836a3b4699699b91b567eb8051f3
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039500"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458181"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implémentation du modèle de contrôle MultipleView d’UI Automation
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "73039500"
   
  Le modèle de contrôle <xref:System.Windows.Automation.MultipleViewPattern> permet de prendre en charge des contrôles qui fournissent plusieurs représentations du même ensemble d’informations ou de contrôles enfants, et permettent de basculer entre elles.  
   
- Les exemples de contrôles qui peuvent présenter plusieurs affichages sont le mode liste (qui peut afficher son contenu sous forme de miniatures, de vignettes, d’icônes ou de détails), [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] des graphiques (secteurs, courbes, barres, valeurs de cellule avec une formule), [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] des documents (normal, disposition Web, mise en page, lecture, mode plan), calendrier Microsoft Outlook (année, mois, semaine, jour) et apparences du lecteur Microsoft Windows Media. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
+ Les exemples de contrôles qui peuvent présenter plusieurs affichages sont le mode liste (qui peut afficher son contenu sous forme de miniatures, de vignettes, d’icônes ou de détails), les graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), les documents Microsoft Word (normal, page Web, imprimer). disposition, lecture, disposition, plan), calendrier Microsoft Outlook (année, mois, semaine, jour) et habillages du lecteur Microsoft Windows Media. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  

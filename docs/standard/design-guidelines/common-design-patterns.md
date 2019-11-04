@@ -7,22 +7,22 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
 author: KrzysztofCwalina
-ms.openlocfilehash: d0b16530863b009010383c8739c9512738dfdffd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1fa45c2934ec1c8358bd024af7a05877d183b945
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026469"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421359"
 ---
 # <a name="common-design-patterns"></a>Modèles de design courants
-Il existe de nombreux ouvrages sur les modèles logiciels, des langages de modèle et des anti-modèles que le sujet très large de modèles d’adresses. Par conséquent, ce chapitre fournit des instructions et discussion liée à un ensemble très limité de modèles qui sont fréquemment utilisées dans la conception de l’API .NET Framework.  
+Il existe de nombreux ouvrages sur les modèles de logiciels, les langages de modèle et les anti-modèles qui traitent le sujet très large des modèles. Ainsi, ce chapitre fournit des instructions et des discussions relatives à un ensemble très limité de modèles utilisés fréquemment dans la conception des API .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Propriétés de dépendance](../../../docs/standard/design-guidelines/dependency-properties.md)  
- [Dispose, modèle](../../../docs/standard/design-guidelines/dispose-pattern.md)  
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ [Dispose, modèle](../garbage-collection/implementing-dispose.md)  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

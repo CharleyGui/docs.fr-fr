@@ -2,12 +2,12 @@
 title: 'Atténuation : Gestion de versions de produit'
 ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
-ms.openlocfilehash: 63075136b7de4aeaa4f94c092996ae1829b449a7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 64a68d2b79a0a3ccdd806949ffd6cb3760974390
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126166"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457826"
 ---
 # <a name="mitigation-product-versioning"></a>Atténuation : Gestion de versions de produit
 
@@ -42,4 +42,4 @@ En général, les applications doivent s'appuyer sur les techniques recommandée
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications du runtime](runtime-changes-in-the-net-framework-4-6.md)
+- [Compatibilité des applications](application-compatibility.md)

@@ -3,12 +3,12 @@ title: private protected - Référence C#
 ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: c739dd0b5a5457a66c11962ed86bcd2ffbf811ab
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.openlocfilehash: dfb2e754d81116012b9fc3f8fd4f6fe1ad0daef1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661675"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422624"
 ---
 # <a name="private-protected-c-reference"></a>private protected (Référence C#)
 
@@ -17,7 +17,7 @@ La combinaison de mots clés `private protected` est un modificateur d’accès 
 > [!NOTE]
 > Le modificateur d’accès `private protected` est valide dans C# 7.2 et ultérieur.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Un membre protégé privé d’une classe de base est accessible à partir des types dérivés de son assembly conteneur seulement si le type statique de la variable est le type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :  
 
@@ -71,12 +71,12 @@ Les membres de struct ne peuvent pas être `private protected`, car le struct ne
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)

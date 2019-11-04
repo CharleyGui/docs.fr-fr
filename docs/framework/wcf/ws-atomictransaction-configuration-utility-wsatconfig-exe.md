@@ -2,19 +2,19 @@
 title: Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)
 ms.date: 03/30/2017
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
-ms.openlocfilehash: 5333c9c5caad502ce925fe4a45a039c553812ba6
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 161ac59e64e1a933049ed36ebb7140901686929c
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320199"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425270"
 ---
 # <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a>Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)
 L'utilitaire de configuration WS-AtomicTransaction permet de configurer les paramètres de prise en charge WS-AtomicTransaction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 wsatConfig [Options]  
 ```  
   
@@ -42,7 +42,7 @@ wsatConfig [Options]
 |-Port : \<portNum >|Définit le port HTTPS pour WS-AtomicTransaction.<br /><br /> Si vous avez déjà activé le pare-feu avant d'exécuter cet outil, le port est enregistré automatiquement dans la liste d'exceptions. Si le pare-feu est désactivé avant l'exécution de cet outil, aucun élément supplémentaire n'est configuré concernant le pare-feu.<br /><br /> Si vous activez le pare-feu après avoir configuré WS-AT, vous devez exécuter de nouveau cet outil et fournir le numéro de port à l'aide de ce paramètre. Si vous désactivez le pare-feu après la configuration, WS-AT continue à fonctionner sans entrée supplémentaire.|  
 |-Timeout : \<sec >|Spécifie le délai d'attente par défaut, exprimé en secondes. Les valeurs valides sont comprises entre 1et 3 600.|  
 |-traceActivity : \<enable&#124;Disable >|Active ou désactive le suivi d'événements d'activité.|  
-|-traceLevel : @no__t-erreur&#124;&#124;0Off-&#124;informations&#124;critiques&#124; sur&#124;les avertissements pour tout >}|Spécifie le niveau de suivi.|  
+|&#124;-traceLevel :\<&#124;&#124;&#124;&#124; les informations d’avertissement critique sur l’erreur désactivent toutes les >}&#124;|Spécifie le niveau de suivi.|  
 |-tracePII : \<enable&#124;Disable >|Active ou désactive le suivi des informations d'identification personnelle.|  
 |-traceProp : \<enable&#124;Disable >|Active ou désactive le suivi d'événements de propagation.|  
 |-restart|Redémarre MSDTC pour activer immédiatement les modifications apportées. Si cette option n'est pas spécifiée, les modifications entrent en vigueur lorsque MSDTC est redémarré.|  

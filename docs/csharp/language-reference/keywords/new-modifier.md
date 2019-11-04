@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: f62255be9c74a221836b23058bd48a835f38f629
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 082cd37eca6b5de1251d73a5483665f8a98b0132
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608629"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422666"
 ---
 # <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
 
@@ -18,7 +18,7 @@ En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` ma
 
 Vous pouvez également utiliser le mot clé `new` pour [créer une instance d’un type](../operators/new-operator.md) ou l’utiliser comme une [contrainte de type générique](./new-constraint.md).
 
-Pour masquer un membre hérité, déclarez-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez-le à l'aide du mot-clé `new`. Par exemple :
+Pour masquer un membre hérité, déclarez-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez-le à l'aide du mot-clé `new`. Exemple :
 
 [!code-csharp[csrefKeywordsOperator#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#8)]
 
@@ -36,13 +36,13 @@ L’utilisation des opérateurs `new` et [override](override.md) sur le même me
 
 L'utilisation du modificateur `new` dans une déclaration qui ne masque pas un membre hérité génère un avertissement.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans cet exemple, une classe de base, `BaseC` et une classe dérivée, `DerivedC`, utilisent le même nom de champ `x`, masquant ainsi la valeur du champ hérité. Cet exemple illustre l'utilisation du modificateur `new`. Il montre aussi comment accéder aux membres masqués de la classe de base en utilisant leurs noms complets.
 
 [!code-csharp[csrefKeywordsOperator#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#9)]
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans cet exemple, une classe imbriquée masque une classe du même nom dans la classe de base. Cet exemple illustre l'utilisation du modificateur `new` pour éliminer le message d'avertissement, ainsi que l'accès aux membres de la classe masquée à l'aide de leurs noms complets.
 
@@ -60,9 +60,9 @@ Pour plus d’informations, consultez la section [Modificateur new](~/_csharplan
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Informations de référence sur C#](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [Versioning avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
 - [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)

@@ -28,18 +28,18 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: e62825a88858a63984860cbc8a1c570f784f663f
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 8c650ceab57a46cb6dd396111e7a93163a62299f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040866"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424942"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] autonomes fournissent leur propre Windows en utilisant la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  
   
 > [!NOTE]
-> Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergées sur un navigateur, y compris les [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] libres, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
+> Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergées par un navigateur, y compris les applications de navigateur XAML (XBAP) et les pages de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] faible, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
 
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Window, classe  
@@ -257,7 +257,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
  [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
 
- Un <xref:System.ComponentModel.CancelEventArgs>, qui implémente la propriété de<xref:System.ComponentModel.CancelEventArgs.Cancel%2A> `Boolean`que vous affectez à `true`, est passé au gestionnaire d’événements <xref:System.Windows.Window.Closing> pour empêcher la fermeture d’une fenêtre.  
+ Un <xref:System.ComponentModel.CancelEventArgs>, qui implémente la propriété de <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> `Boolean`que vous affectez à `true`, est passé au gestionnaire d’événements <xref:System.Windows.Window.Closing> pour empêcher la fermeture d’une fenêtre.  
   
  Si <xref:System.Windows.Window.Closing> n’est pas gérée ou si elle est gérée mais pas annulée, la fenêtre se ferme. Juste avant la fermeture d’une fenêtre, <xref:System.Windows.Window.Closed> est déclenché. À ce stade, il est impossible d’empêcher une fenêtre de se fermer.  
   
@@ -471,7 +471,7 @@ L’apparence par défaut d’une fenêtre comprend un bouton de barre des tâch
   
  Toutefois, cela se situe en dehors de l’ensemble des autorisations accordées aux applications qui sont lancées à partir de la zone Internet ou Intranet local à l’aide de ClickOnce. Par conséquent, les utilisateurs recevront un avertissement de sécurité ClickOnce et devront élever le jeu d’autorisations pour l’application à confiance totale.  
   
- En outre, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] ne peut pas afficher les fenêtres ou les boîtes de dialogue par défaut. Pour une discussion sur les considérations relatives à la sécurité des applications autonomes, consultez [stratégie de sécurité de WPF-sécurité de la plateforme](../wpf-security-strategy-platform-security.md).  
+ En outre, les XBAP ne peuvent pas afficher les fenêtres ou les boîtes de dialogue par défaut. Pour une discussion sur les considérations relatives à la sécurité des applications autonomes, consultez [stratégie de sécurité de WPF-sécurité de la plateforme](../wpf-security-strategy-platform-security.md).  
   
 <a name="Other_Types_of_Windows"></a>   
 ## <a name="other-types-of-windows"></a>Autres types de fenêtre  

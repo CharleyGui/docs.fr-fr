@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : chiffrer des éléments XML avec des clés symétriques'
+title: 'Comment : chiffrer des éléments XML avec des clés symétriques'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,17 +18,17 @@ helpviewer_keywords:
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 996ae7c1882107a829fb658cb8e5e0c49b555c44
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b792fd6eea0a33b0143fafa03641a78947d7e127
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645318"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458072"
 ---
-# <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Procédure : chiffrer des éléments XML avec des clés symétriques
-Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML vous permet de stocker et de transporter du code XML sensible, en empêchant qu'il soit facilement lu.  Cette procédure déchiffre un élément XML à l'aide de l'algorithme AES (Advanced Encryption Standard), également appelé Rijndael.  
+# <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Comment : chiffrer des éléments XML avec des clés symétriques
+Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML vous permet de stocker et de transporter du code XML sensible, en empêchant qu'il soit facilement lu.  Cette procédure chiffre un élément XML à l’aide de l’algorithme Advanced Encryption Standard (AES), également appelé Rijndael.  
   
- Pour plus d’informations sur le déchiffrement d’un élément XML qui a été chiffré à l’aide de cette procédure, consultez [Comment : Déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md).  
+ Pour plus d’informations sur le déchiffrement d’un élément XML chiffré à l’aide de cette procédure, consultez [Comment : déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md).  
   
  Quand vous utilisez un algorithme symétrique comme AES pour chiffrer des données XML, vous devez utiliser la même clé pour chiffrer et déchiffrer les données XML.  L'exemple de cette procédure suppose que le code XML chiffré sera déchiffré à l'aide de la même clé, et que les parties chargées du chiffrement et du déchiffrement se sont mises d'accord sur l'algorithme et la clé à utiliser.  Dans cet exemple, la clé AES n'est ni stockée ni chiffrée dans le code XML chiffré.  
   
@@ -104,4 +104,4 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Cryptography.Xml>
-- [Guide pratique pour Déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md)
+- [Comment : déchiffrer des éléments XML avec des clés symétriques](../../../docs/standard/security/how-to-decrypt-xml-elements-with-symmetric-keys.md)

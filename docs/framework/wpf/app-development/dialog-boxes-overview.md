@@ -10,15 +10,15 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: bf4617d838ba7f02523d7bbdbb57932c033f4a9e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9ec6716fefdc8de75d7e523c56ae0b3a02c8cf02
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958672"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424641"
 ---
 # <a name="dialog-boxes-overview"></a>Vue d’ensemble des boîtes de dialogue
-En général, les applications autonomes ont une fenêtre principale qui affiche les données principales sur lesquelles l’application s’exécute et expose les fonctionnalités permettant [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] de traiter ces données via des mécanismes tels que des barres de menus, des barres d’outils et des barres d’État. Une application non triviale peut également afficher des fenêtres supplémentaires pour effectuer les opérations suivantes :  
+En général, les applications autonomes ont une fenêtre principale qui affiche les données principales sur lesquelles l’application s’exécute et expose les fonctionnalités permettant de traiter ces données par le biais de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mécanismes tels que des barres de menus, des barres d’outils et des barres d’État. Une application non triviale peut également afficher des fenêtres supplémentaires pour effectuer les opérations suivantes :  
   
 - Présenter des informations spécifiques aux utilisateurs  
   
@@ -26,11 +26,11 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
   
 - Afficher et recueillir des informations  
   
- Ces types de fenêtres sont appelés *boîtes de dialogue*et il existe deux types: modal et non modal.  
+ Ces types de fenêtres sont appelés *boîtes de dialogue*et il existe deux types : modal et non modal.  
   
- Une boîte de dialogue modale est affichée par une fonction quand la fonction a besoin de données supplémentaires d’un utilisateur pour continuer. Étant donné que la fonction dépend de la boîte de dialogue modale pour recueillir des données, celle-ci empêche également un utilisateur d’activer d’autres fenêtres de l’application pendant qu’elle reste ouverte. Dans la plupart des cas, une boîte de dialogue modale permet à un utilisateur de signaler une fois qu’il a fini d’utiliser la boîte de dialogue modale en appuyant sur un bouton **OK** ou **Annuler** . Le fait d’appuyer sur le bouton **OK** indique qu’un utilisateur a entré des données et souhaite que la fonction continue le traitement avec ces données. Appuyez sur le bouton **Annuler** pour indiquer qu’un utilisateur souhaite empêcher la fonction de s’exécuter entièrement. Les exemples les plus courants de boîtes de dialogue modales sont présentés pour ouvrir, enregistrer et imprimer des données.  
+ Une boîte de dialogue *modale* est affichée par une fonction quand la fonction a besoin de données supplémentaires d’un utilisateur pour continuer. Étant donné que la fonction dépend de la boîte de dialogue modale pour recueillir des données, celle-ci empêche également un utilisateur d’activer d’autres fenêtres de l’application pendant qu’elle reste ouverte. Dans la plupart des cas, une boîte de dialogue modale permet à un utilisateur de signaler une fois qu’il a fini d’utiliser la boîte de dialogue modale en appuyant sur un bouton **OK** ou **Annuler** . Le fait d’appuyer sur le bouton **OK** indique qu’un utilisateur a entré des données et souhaite que la fonction continue le traitement avec ces données. Appuyez sur le bouton **Annuler** pour indiquer qu’un utilisateur souhaite empêcher la fonction de s’exécuter entièrement. Les exemples les plus courants de boîtes de dialogue modales sont présentés pour ouvrir, enregistrer et imprimer des données.  
   
- En revanche, une boîte de dialogue non modale n’empêche pas un utilisateur d’activer d’autres fenêtres pendant qu’elle est ouverte. Par exemple, si un utilisateur souhaite rechercher des occurrences d’un mot particulier dans un document, une fenêtre principale peut ouvrir une boîte de dialogue pour l’inviter à spécifier le mot qu’il recherche. Puisque rechercher un mot n’empêche pas l’utilisateur de modifier le document, la boîte de dialogue n’a pas besoin d’être modale. Une boîte de dialogue non modale au moins fournit un bouton **Fermer** pour fermer la boîte de dialogue, et peut fournir des boutons supplémentaires pour exécuter des fonctions spécifiques, comme un bouton **suivant** pour rechercher le mot suivant qui correspond aux critères de recherche d’une recherche de mots.  
+ En revanche, une boîte de dialogue non *modale* n’empêche pas un utilisateur d’activer d’autres fenêtres pendant qu’elle est ouverte. Par exemple, si un utilisateur souhaite rechercher des occurrences d’un mot particulier dans un document, une fenêtre principale peut ouvrir une boîte de dialogue pour l’inviter à spécifier le mot qu’il recherche. Puisque rechercher un mot n’empêche pas l’utilisateur de modifier le document, la boîte de dialogue n’a pas besoin d’être modale. Une boîte de dialogue non modale au moins fournit un bouton **Fermer** pour fermer la boîte de dialogue, et peut fournir des boutons supplémentaires pour exécuter des fonctions spécifiques, comme un bouton **suivant** pour rechercher le mot suivant qui correspond aux critères de recherche d’une recherche de mots.  
   
  Windows Presentation Foundation (WPF) vous permet de créer plusieurs types de boîtes de dialogue, notamment des boîtes de message, des boîtes de dialogue communes et des boîtes de dialogue personnalisées. Cette rubrique décrit chaque, et l' [exemple de boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984) fournit des exemples correspondants.  
 
@@ -40,12 +40,12 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
   
  ![Une boîte de dialogue traitement de texte vous demandant si vous souhaitez enregistrer les modifications apportées au document avant la fermeture de l’application.](./media/dialog-boxes-overview/word-processor-dialog.png)  
   
- Pour créer une boîte de message, vous utilisez <xref:System.Windows.MessageBox> la classe. <xref:System.Windows.MessageBox>vous permet de configurer le texte de la boîte de message, le titre, l’icône et les boutons à l’aide d’un code similaire à ce qui suit.  
+ Pour créer une boîte de message, vous utilisez la classe <xref:System.Windows.MessageBox>. <xref:System.Windows.MessageBox> vous permet de configurer le texte de la boîte de message, le titre, l’icône et les boutons à l’aide d’un code similaire à ce qui suit.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
   
- Pour afficher une boîte de message, vous appelez `static` la <xref:System.Windows.MessageBox.Show%2A> méthode, comme illustré dans le code suivant.  
+ Pour afficher une boîte de message, vous appelez la méthode `static`<xref:System.Windows.MessageBox.Show%2A>, comme illustré dans le code suivant.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowcodebehind)]  
@@ -55,9 +55,9 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowandresultcodebehind1)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowandresultcodebehind1)]  
   
- Pour plus d’informations sur l’utilisation des boîtes <xref:System.Windows.MessageBox>de message, consultez exemple [MessageBox](https://go.microsoft.com/fwlink/?LinkID=160023)et [exemple de boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984).  
+ Pour plus d’informations sur l’utilisation des boîtes de message, consultez exemple de <xref:System.Windows.MessageBox>, [MessageBox](https://go.microsoft.com/fwlink/?LinkID=160023)et de [boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984).  
   
- Bien <xref:System.Windows.MessageBox> que puisse offrir une expérience utilisateur simple de boîte de dialogue, l' <xref:System.Windows.MessageBox> avantage de l’utilisation de est que est le seul type de fenêtre qui peut être affiché par les applications qui s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle (voir [sécurité](../security-wpf.md)), par exemple [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
+ Bien que <xref:System.Windows.MessageBox> puisse offrir une expérience utilisateur simple de boîte de dialogue, l’avantage de l’utilisation de <xref:System.Windows.MessageBox> est le seul type de fenêtre qui peut être affiché par les applications qui s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle (voir [sécurité](../security-wpf.md)), par exemple le navigateur XAML applications (XBAP).  
   
  La plupart des boîtes de dialogue affichent et recueillent des données plus complexes que le résultat d’une boîte de message, notamment du texte, une sélection (cases à cocher), une sélection mutuellement exclusive (boutons radio) et une sélection dans une liste (zones de liste, zones de liste modifiable, zones de liste déroulante). Pour ces, Windows Presentation Foundation (WPF) fournit plusieurs boîtes de dialogue communes et vous permet de créer vos propres boîtes de dialogue, bien que l’utilisation de soit limitée aux applications qui s’exécutent avec un niveau de confiance totale.  
   
@@ -73,15 +73,15 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
   
  ![Boîte de dialogue ouverte qui indique l’emplacement de récupération du fichier.](./media/dialog-boxes-overview/open-file-dialog-box.png)  
   
- La boîte de dialogue Common Open file est implémentée <xref:Microsoft.Win32.OpenFileDialog> en tant que classe et se <xref:Microsoft.Win32> trouve dans l’espace de noms. Le code suivant montre comment en créer, configurer et afficher une, et comment traiter le résultat.  
+ La boîte de dialogue Common Open file est implémentée en tant que classe <xref:Microsoft.Win32.OpenFileDialog> et se trouve dans l’espace de noms <xref:Microsoft.Win32>. Le code suivant montre comment en créer, configurer et afficher une, et comment traiter le résultat.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#openfiledialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#openfiledialogboxcodebehind)]  
   
- Pour plus d’informations sur la boîte de dialogue Ouvrir un <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>fichier, consultez.  
+ Pour plus d’informations sur la boîte de dialogue Ouvrir un fichier, consultez <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>.  
   
 > [!NOTE]
-> <xref:Microsoft.Win32.OpenFileDialog>peut être utilisé pour récupérer en toute sécurité des noms de fichiers par des applications qui s’exécutent avec une confiance partielle (voir [sécurité](../security-wpf.md)).  
+> <xref:Microsoft.Win32.OpenFileDialog> peut être utilisé pour récupérer en toute sécurité des noms de fichiers par des applications qui s’exécutent avec une confiance partielle (voir [sécurité](../security-wpf.md)).  
   
 <a name="Save_File_Dialog"></a>   
 ### <a name="save-file-dialog-box"></a>Enregistrer le fichier (boîte de dialogue)  
@@ -89,12 +89,12 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
   
  ![Une boîte de dialogue Enregistrer sous indique l’emplacement d’enregistrement du fichier.](./media/dialog-boxes-overview/save-file-dialog-box.png)  
   
- La boîte de dialogue fichier d’enregistrement commun est implémentée en tant que <xref:Microsoft.Win32.SaveFileDialog> classe et se trouve dans l' <xref:Microsoft.Win32> espace de noms. Le code suivant montre comment en créer, configurer et afficher une, et comment traiter le résultat.  
+ La boîte de dialogue fichier d’enregistrement commun est implémentée en tant que classe <xref:Microsoft.Win32.SaveFileDialog> et se trouve dans l’espace de noms <xref:Microsoft.Win32>. Le code suivant montre comment en créer, configurer et afficher une, et comment traiter le résultat.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#SaveFileDialogBoxCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#savefiledialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#SaveFileDialogBoxCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#savefiledialogboxcodebehind)]  
   
- Pour plus d’informations sur la boîte de dialogue Enregistrer le <xref:Microsoft.Win32.SaveFileDialog?displayProperty=nameWithType>fichier, consultez.  
+ Pour plus d’informations sur la boîte de dialogue Enregistrer le fichier, consultez <xref:Microsoft.Win32.SaveFileDialog?displayProperty=nameWithType>.  
   
 <a name="Print_Dialog"></a>   
 ### <a name="print-dialog-box"></a>Boîte de dialogue Imprimer
@@ -103,22 +103,22 @@ La boîte de dialogue d’impression, illustrée ci-dessous, est utilisée par l
   
 ![Capture d’écran montrant une boîte de dialogue Imprimer.](./media/dialog-boxes-overview/print-data-dialog-box.png)  
   
-La boîte de dialogue d’impression courante est implémentée en tant que <xref:System.Windows.Controls.PrintDialog> classe et se trouve dans l' <xref:System.Windows.Controls> espace de noms. Le code suivant montre comment en créer, configurer et afficher une.  
+La boîte de dialogue d’impression courante est implémentée en tant que classe <xref:System.Windows.Controls.PrintDialog> et se trouve dans l’espace de noms <xref:System.Windows.Controls>. Le code suivant montre comment en créer, configurer et afficher une.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#printdialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#printdialogboxcodebehind)]  
   
- Pour plus d’informations sur la boîte de dialogue Imprimer <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>, consultez. Pour plus d’informations sur l’impression dans WPF, consultez [vue d’ensemble de l’impression](../advanced/printing-overview.md).  
+ Pour plus d’informations sur la boîte de dialogue Imprimer, consultez <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>. Pour plus d’informations sur l’impression dans WPF, consultez [vue d’ensemble de l’impression](../advanced/printing-overview.md).  
   
 <a name="Custom_Dialog_Boxes"></a>   
 ## <a name="custom-dialog-boxes"></a>Boîtes de dialogue personnalisées
 
-Bien que les boîtes de dialogue communes soient utiles (et doivent être utilisées dans la mesure du possible), elles ne prennent pas en charge les exigences des boîtes de dialogue propres au domaine. Dans ces cas-là, vous devez créer vos propres boîtes de dialogue. Comme nous allons le voir, une boîte de dialogue est une fenêtre avec des comportements spéciaux. <xref:System.Windows.Window>implémente ces comportements et, par conséquent, vous utilisez <xref:System.Windows.Window> pour créer des boîtes de dialogue modales et non modales personnalisées.  
+Bien que les boîtes de dialogue communes soient utiles (et doivent être utilisées dans la mesure du possible), elles ne prennent pas en charge les exigences des boîtes de dialogue propres au domaine. Dans ces cas-là, vous devez créer vos propres boîtes de dialogue. Comme nous allons le voir, une boîte de dialogue est une fenêtre avec des comportements spéciaux. <xref:System.Windows.Window> implémente ces comportements et, par conséquent, vous utilisez <xref:System.Windows.Window> pour créer des boîtes de dialogue modales personnalisées et non modales.  
   
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modal-custom-dialog-box"></a>Création d’une boîte de dialogue personnalisée modale
 
-Cette rubrique montre comment utiliser <xref:System.Windows.Window> pour créer une implémentation de boîte de dialogue modale standard, à l’aide de la `Margins` boîte de dialogue comme exemple (consultez exemple de boîte de [dialogue](https://go.microsoft.com/fwlink/?LinkID=159984)). La `Margins` boîte de dialogue est présentée dans la figure suivante.  
+Cette rubrique montre comment utiliser <xref:System.Windows.Window> pour créer une implémentation de boîte de dialogue modale standard, à l’aide de la boîte de dialogue `Margins` comme exemple (consultez exemple de [boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984)). La boîte de dialogue `Margins` est présentée dans la figure suivante.  
   
  ![Boîte de dialogue marges avec des champs pour définir la marge de gauche, la marge supérieure, la marge droite et la marge inférieure.](./media/dialog-boxes-overview/margin-size-dialog-box.png)  
   
@@ -144,9 +144,9 @@ L’interface utilisateur pour une boîte de dialogue classique comprend les él
   
 - Possibilité de redimensionner si possible pour empêcher la boîte de dialogue d’être trop petite et de fournir à l’utilisateur une taille par défaut utile. Pour cela, vous devez définir les dimensions par défaut et les dimensions minimales.  
   
-- Touche Échap comme raccourci clavier qui entraîne l’activation du bouton **Annuler** . Pour ce faire, affectez <xref:System.Windows.Controls.Button.IsCancel%2A> la valeur à `true`la propriété du bouton Annuler.  
+- Touche Échap comme raccourci clavier qui entraîne l’activation du bouton **Annuler** . Pour ce faire, définissez la propriété <xref:System.Windows.Controls.Button.IsCancel%2A> du bouton **Annuler** sur `true`.  
   
-- Touche entrée (ou retour) sous la forme d’un raccourci clavier qui entraîne l’appui sur le bouton **OK** . Pour ce faire, vous devez <xref:System.Windows.Controls.Button.IsDefault%2A> définir la propriété du bouton `true` **OK** .  
+- Touche entrée (ou retour) sous la forme d’un raccourci clavier qui entraîne l’appui sur le bouton **OK** . Pour ce faire, définissez la propriété <xref:System.Windows.Controls.Button.IsDefault%2A> du bouton **OK** `true`.  
   
 Le code suivant illustre cette configuration.  
   
@@ -168,12 +168,12 @@ Une boîte de dialogue apparaît généralement quand un utilisateur sélectionn
 [!code-csharp[Opening a modal dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-11,78-88,193-195)]
 [!code-vb[Opening a modal dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,58-67,130-132)]  
 
-Ici, le code passe les informations par défaut (les marges actuelles) à la boîte de dialogue. Elle définit également la <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType> propriété avec une référence à la fenêtre qui présente la boîte de dialogue. En général, vous devez toujours définir le propriétaire d’une boîte de dialogue pour fournir les comportements liés à l’état de la fenêtre qui sont communs à toutes les boîtes de dialogue (consultez [vue d’ensemble des fenêtres WPF](wpf-windows-overview.md) pour plus d’informations).
+Ici, le code passe les informations par défaut (les marges actuelles) à la boîte de dialogue. Il définit également la propriété <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType> avec une référence à la fenêtre qui présente la boîte de dialogue. En général, vous devez toujours définir le propriétaire d’une boîte de dialogue pour fournir les comportements liés à l’état de la fenêtre qui sont communs à toutes les boîtes de dialogue (consultez [vue d’ensemble des fenêtres WPF](wpf-windows-overview.md) pour plus d’informations).
 
 > [!NOTE]
 > Vous devez fournir un propriétaire pour prendre en charge l’automatisation de l’interface utilisateur pour les boîtes de dialogue (consultez [vue d’ensemble d’UI Automation](../../ui-automation/ui-automation-overview.md)).
 
-Une fois la boîte de dialogue configurée, elle s’affiche de façon modale en appelant la <xref:System.Windows.Window.ShowDialog%2A> méthode.  
+Une fois la boîte de dialogue configurée, elle s’affiche de façon modale en appelant la méthode <xref:System.Windows.Window.ShowDialog%2A>.  
   
 #### <a name="validating-user-provided-data"></a>Validation des données fournies par l’utilisateur
 
@@ -187,12 +187,12 @@ Quand une boîte de dialogue est ouverte et que l’utilisateur fournit les donn
   
 - Du point de vue des performances, la validation des données dans une application multicouche peut réduire le nombre d’allers-retours entre le client et les couches Application, en particulier quand l’application est composée de services web ou de bases de données basées sur serveur.  
 
-Pour valider un contrôle lié dans WPF, vous devez définir une règle de validation et l’associer à la liaison. Une règle de validation est une classe personnalisée qui dérive <xref:System.Windows.Controls.ValidationRule>de. L’exemple suivant montre une règle de validation `MarginValidationRule`,, qui vérifie qu’une valeur liée est <xref:System.Double> un et se trouve dans une plage spécifiée.  
+Pour valider un contrôle lié dans WPF, vous devez définir une règle de validation et l’associer à la liaison. Une règle de validation est une classe personnalisée qui dérive de <xref:System.Windows.Controls.ValidationRule>. L’exemple suivant montre une règle de validation, `MarginValidationRule`, qui vérifie qu’une valeur liée est un <xref:System.Double> et se trouve dans une plage spécifiée.  
 
 [!code-csharp[Margin validation rules](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginValidationRule.cs)]
 [!code-vb[Margin validation rules](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginValidationRule.vb)]  
 
-Dans ce code, la logique de validation d’une règle de validation est implémentée en <xref:System.Windows.Controls.ValidationRule.Validate%2A> remplaçant la méthode, qui valide les données et retourne un <xref:System.Windows.Controls.ValidationResult>approprié.  
+Dans ce code, la logique de validation d’une règle de validation est implémentée en remplaçant la méthode <xref:System.Windows.Controls.ValidationRule.Validate%2A>, qui valide les données et retourne un <xref:System.Windows.Controls.ValidationResult>approprié.  
 
 Pour associer la règle de validation au contrôle dépendant, vous utilisez le balisage suivant.  
   
@@ -202,50 +202,50 @@ Une fois la règle de validation associée, WPF l’applique automatiquement lor
   
 ![Boîte de dialogue marges avec une bordure rouge autour de la valeur de marge de gauche non valide.](./media/dialog-boxes-overview/invalid-left-margin-dialog.png)  
 
-WPF ne limite pas un utilisateur au contrôle non valide tant qu’il n’a pas entré de données valides. Il s’agit d’un bon comportement pour une boîte de dialogue. En effet, un utilisateur doit pouvoir naviguer librement entre les contrôles d’une boîte de dialogue, que les données soient valides ou non. Toutefois, cela signifie qu’un utilisateur peut entrer des données non valides et appuyer sur le bouton **OK** . Pour cette raison, votre code doit également valider tous les contrôles dans une boîte de dialogue lorsque le bouton **OK** est enfoncé en gérant <xref:System.Windows.Controls.Primitives.ButtonBase.Click> l’événement.  
+WPF ne limite pas un utilisateur au contrôle non valide tant qu’il n’a pas entré de données valides. Il s’agit d’un bon comportement pour une boîte de dialogue. En effet, un utilisateur doit pouvoir naviguer librement entre les contrôles d’une boîte de dialogue, que les données soient valides ou non. Toutefois, cela signifie qu’un utilisateur peut entrer des données non valides et appuyer sur le bouton **OK** . Pour cette raison, votre code doit également valider tous les contrôles dans une boîte de dialogue lorsque le bouton **OK** est enfoncé en gérant l’événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click>.  
   
 [!code-csharp[Validating all controls in a dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,26-29,33-68)]
 [!code-vb[Validating all controls in a dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,27-29,33-62)]  
 
-Ce code énumère tous les objets de dépendance sur une fenêtre et, si ceux-ci sont non valides (tels qu’ils sont retournés par <xref:System.Windows.Controls.Validation.GetHasError%2A>, `false`le contrôle non valide obtient le focus, la `IsValid` méthode retourne et la fenêtre est considérée comme non valide.  
+Ce code énumère tous les objets de dépendance sur une fenêtre et, si ceux-ci sont non valides (tels qu’ils sont retournés par <xref:System.Windows.Controls.Validation.GetHasError%2A>, le contrôle non valide obtient le focus, la méthode `IsValid` retourne `false`et la fenêtre est considérée comme non valide.  
   
 Une fois qu’une boîte de dialogue est valide, elle peut être fermée et retourner un résultat en toute sécurité. Dans le cadre du processus de retour, elle doit retourner un résultat à la fonction appelante.  
   
 #### <a name="setting-the-modal-dialog-result"></a>Définition du résultat de la boîte de dialogue modale
 
-L’ouverture d’une boîte <xref:System.Windows.Window.ShowDialog%2A> de dialogue à l’aide de est fondamentalement semblable à l’appel d’une méthode: <xref:System.Windows.Window.ShowDialog%2A> le code qui <xref:System.Windows.Window.ShowDialog%2A> a ouvert la boîte de dialogue à l’aide de attend jusqu’à ce que retourne. Lorsque <xref:System.Windows.Window.ShowDialog%2A> retourne, le code qui l’a appelé doit décider s’il faut continuer le traitement ou arrêter le traitement, selon que l’utilisateur a appuyé sur le bouton **OK** ou sur le bouton **Annuler** . Pour faciliter cette décision, la boîte de dialogue doit retourner le choix de l’utilisateur sous <xref:System.Boolean> la forme d’une valeur retournée par la <xref:System.Windows.Window.ShowDialog%2A> méthode.  
+L’ouverture d’une boîte de dialogue à l’aide de <xref:System.Windows.Window.ShowDialog%2A> revient fondamentalement à appeler une méthode : le code qui a ouvert la boîte de dialogue à l’aide de <xref:System.Windows.Window.ShowDialog%2A> attend jusqu’à ce que <xref:System.Windows.Window.ShowDialog%2A> retourne. Lorsque <xref:System.Windows.Window.ShowDialog%2A> retourne, le code qui l’a appelé doit décider s’il faut continuer le traitement ou arrêter le traitement, selon que l’utilisateur a appuyé sur le bouton **OK** ou sur le bouton **Annuler** . Pour faciliter cette décision, la boîte de dialogue doit retourner le choix de l’utilisateur sous la forme d’une <xref:System.Boolean> valeur retournée par la méthode <xref:System.Windows.Window.ShowDialog%2A>.  
 
-Lorsque l' utilisateur clique sur le bouton <xref:System.Windows.Window.ShowDialog%2A> OK, `true`doit retourner. Pour ce faire, définissez la <xref:System.Windows.Window.DialogResult%2A> propriété de la boîte de dialogue lorsque l’utilisateur clique sur le bouton **OK** .  
+Quand l’utilisateur clique sur le bouton **OK** , <xref:System.Windows.Window.ShowDialog%2A> doit retourner `true`. Pour ce faire, définissez la propriété <xref:System.Windows.Window.DialogResult%2A> de la boîte de dialogue lorsque l’utilisateur clique sur le bouton **OK** .  
 
 [!code-csharp[Responding to the OK button](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,25-27,32-33,67-68)]
 [!code-vb[Responding to the OK button](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,27,31-33,61-62)]  
 
-Notez que la définition <xref:System.Windows.Window.DialogResult%2A> de la propriété entraîne également la fermeture automatique de la fenêtre, ce qui évite d’avoir <xref:System.Windows.Window.Close%2A>à appeler explicitement.  
+Notez que la définition de la propriété <xref:System.Windows.Window.DialogResult%2A> entraîne également la fermeture automatique de la fenêtre, ce qui évite de devoir appeler explicitement <xref:System.Windows.Window.Close%2A>.  
   
-Quand l' utilisateur clique sur le bouton <xref:System.Windows.Window.ShowDialog%2A> annuler, `false`doit retourner, ce qui nécessite <xref:System.Windows.Window.DialogResult%2A> également la définition de la propriété.  
+Quand l’utilisateur clique sur le bouton **Annuler** , <xref:System.Windows.Window.ShowDialog%2A> doit retourner `false`, ce qui nécessite également la définition de la propriété <xref:System.Windows.Window.DialogResult%2A>.  
   
 [!code-csharp[Responding to the Cancel button](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs?range=1-8,19-24,67-68)]
 [!code-vb[Responding to the Cancel button](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb?range=1-8,22-25,61-62)]  
 
-Lorsque la propriété d' <xref:System.Windows.Controls.Button.IsCancel%2A> un bouton a la `true` valeur et que l’utilisateur appuie sur le bouton **Annuler** ou la touche <xref:System.Windows.Window.DialogResult%2A> `false`ÉCHAP, a automatiquement la valeur. Le balisage suivant a le même effet que le code précédent, sans qu’il soit nécessaire <xref:System.Windows.Controls.Primitives.ButtonBase.Click> de gérer l’événement.  
+Lorsque la propriété <xref:System.Windows.Controls.Button.IsCancel%2A> d’un bouton est définie sur `true` et que l’utilisateur appuie sur le bouton **Annuler** ou sur la touche échap, <xref:System.Windows.Window.DialogResult%2A> est automatiquement défini sur `false`. Le balisage suivant a le même effet que le code précédent, sans qu’il soit nécessaire de gérer l’événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click>.  
   
 [!code-xaml[Markup instead of handling the Click event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#L109-L109)]  
 
-Une boîte de dialogue s' `false` affiche automatiquement lorsqu’un utilisateur appuie sur le bouton **Fermer** dans la barre de titre ou choisit l’élément de menu **Fermer** dans le menu **système** .  
+Une boîte de dialogue retourne automatiquement `false` lorsqu’un utilisateur appuie sur le bouton **Fermer** dans la barre de titre ou choisit l’élément de menu **Fermer** dans le menu **système** .  
 
 #### <a name="processing-data-returned-from-a-modal-dialog-box"></a>Traitement des données retournées par une boîte de dialogue modale  
 
-Lorsque <xref:System.Windows.Window.DialogResult%2A> est défini par une boîte de dialogue, la fonction qui l’a ouvert peut obtenir le résultat de la boîte de <xref:System.Windows.Window.DialogResult%2A> dialogue en <xref:System.Windows.Window.ShowDialog%2A> inspectant la propriété lorsque retourne.  
+Lorsque <xref:System.Windows.Window.DialogResult%2A> est défini par une boîte de dialogue, la fonction qui l’a ouvert peut obtenir le résultat de la boîte de dialogue en inspectant la propriété <xref:System.Windows.Window.DialogResult%2A> lorsque <xref:System.Windows.Window.ShowDialog%2A> retourne.  
   
 [!code-csharp[Processing data returned from the modal dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-10,77-79,89-96,194-195)]
 [!code-vb[Processing data returned from the modal dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,58,69-73,131-132)]
 
-Si le résultat de la `true`boîte de dialogue est, la fonction l’utilise en tant que signal pour récupérer et traiter les données fournies par l’utilisateur.  
+Si le résultat de la boîte de dialogue est `true`, la fonction l’utilise en tant que signal pour récupérer et traiter les données fournies par l’utilisateur.  
   
 > [!NOTE]
-> Une <xref:System.Windows.Window.ShowDialog%2A> fois retourné, une boîte de dialogue ne peut pas être rouverte. Au lieu de cela, vous devez créer une nouvelle instance.
+> Une fois <xref:System.Windows.Window.ShowDialog%2A> retourné, une boîte de dialogue ne peut pas être rouverte. Au lieu de cela, vous devez créer une nouvelle instance.
 
-Si le résultat de la `false`boîte de dialogue est, la fonction doit terminer le traitement de manière appropriée.  
+Si le résultat de la boîte de dialogue est `false`, la fonction doit terminer le traitement de manière appropriée.  
   
 <a name="Creating_a_Modeless_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modeless-custom-dialog-box"></a>Création d’une boîte de dialogue personnalisée non modale
@@ -258,28 +258,28 @@ Toutefois, le comportement est légèrement différent, comme décrit dans les s
   
 #### <a name="opening-a-modeless-dialog-box"></a>Ouverture d’une boîte de dialogue non modale
 
-Une boîte de dialogue non modale est ouverte en <xref:System.Windows.Window.Show%2A> appelant la méthode.  
+Pour ouvrir une boîte de dialogue non modale, appelez la méthode <xref:System.Windows.Window.Show%2A>.  
 
 [!code-xaml[XAML to define a modeless dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#L21-L22)]  
  
 [!code-csharp[Opening a modeless dialog box](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs?range=1-10,65-76,194-195)]
 [!code-vb[Openng a modeless dialog box](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb?range=1-9,18-23,131,132)]  
 
-Contrairement <xref:System.Windows.Window.ShowDialog%2A>à <xref:System.Windows.Window.Show%2A> , retourne immédiatement. Ainsi, la fenêtre appelante ne peut pas savoir quand la boîte de dialogue non modale est fermée, et ne sait pas quand vérifier le résultat d’une boîte de dialogue ou obtenir des données à partir de la boîte de dialogue pour un traitement ultérieur. Au lieu de cela, la boîte de dialogue doit créer un autre moyen pour retourner des données à la fenêtre appelante en vue de leur traitement.  
+Contrairement à <xref:System.Windows.Window.ShowDialog%2A>, <xref:System.Windows.Window.Show%2A> est retourné immédiatement. Ainsi, la fenêtre appelante ne peut pas savoir quand la boîte de dialogue non modale est fermée, et ne sait pas quand vérifier le résultat d’une boîte de dialogue ou obtenir des données à partir de la boîte de dialogue pour un traitement ultérieur. Au lieu de cela, la boîte de dialogue doit créer un autre moyen pour retourner des données à la fenêtre appelante en vue de leur traitement.  
   
 #### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>Traitement des données retournées par une boîte de dialogue non modale  
 
-Dans cet exemple, `FindDialogBox` peut retourner un ou plusieurs résultats de recherche à la fenêtre principale, en fonction du texte recherché sans fréquence spécifique. Comme avec une boîte de dialogue modale, une boîte de dialogue non modale peut retourner des résultats à l’aide de propriétés. Toutefois, la fenêtre propriétaire de la boîte de dialogue doit savoir quand vérifier ces propriétés. L’une des solutions consiste à ce que la boîte de dialogue implémente un événement déclenché chaque fois que le texte est trouvé. `FindDialogBox`implémente `TextFoundEvent` à cet effet, qui requiert d’abord un délégué.  
+Dans cet exemple, la `FindDialogBox` peut retourner un ou plusieurs résultats de la recherche dans la fenêtre principale, en fonction du texte recherché sans fréquence spécifique. Comme avec une boîte de dialogue modale, une boîte de dialogue non modale peut retourner des résultats à l’aide de propriétés. Toutefois, la fenêtre propriétaire de la boîte de dialogue doit savoir quand vérifier ces propriétés. L’une des solutions consiste à ce que la boîte de dialogue implémente un événement déclenché chaque fois que le texte est trouvé. `FindDialogBox` implémente l' `TextFoundEvent` à cet effet, qui requiert tout d’abord un délégué.  
 
 [!code-csharp[The TextFoundEventHandler delegate](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs)]
 [!code-vb[The TextFoundEventHandler delegate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb)]  
 
-À l' `TextFoundEventHandler` aide du `FindDialogBox` délégué, implémente `TextFoundEvent`.
+À l’aide du délégué `TextFoundEventHandler`, `FindDialogBox` implémente le `TextFoundEvent`.
   
 [!code-csharp[The TextFound event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-17,125-126)]
 [!code-vb[The TextFound event](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-15,102-103)]
 
-Par conséquent `Find` , peut déclencher l’événement lorsqu’un résultat de recherche est trouvé.  
+Par conséquent, `Find` pouvez déclencher l’événement lorsqu’un résultat de recherche est trouvé.  
   
 [!code-csharp[Raising the TextFound event](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-9,50-52,91-94,124-127)]
 [!code-vb[Raising the TextFound event](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-9,15,60-64,102-103)]  
@@ -291,7 +291,7 @@ La fenêtre propriétaire doit ensuite s’inscrire pour cet événement et le g
 
 #### <a name="closing-a-modeless-dialog-box"></a>Fermeture d’une boîte de dialogue non modale
 
-Étant <xref:System.Windows.Window.DialogResult%2A> donné qu’elle n’a pas besoin d’être définie, une boîte de dialogue non modale peut être fermée à l’aide de mécanismes fournis par le système, notamment les suivants:  
+Étant donné que <xref:System.Windows.Window.DialogResult%2A> n’a pas besoin d’être défini, une boîte de dialogue non modale peut être fermée à l’aide de mécanismes fournis par le système, notamment les suivants :  
   
 - Cliquez sur le bouton **Fermer** dans la barre de titre.  
   

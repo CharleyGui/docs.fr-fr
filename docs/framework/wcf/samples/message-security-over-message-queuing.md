@@ -2,12 +2,12 @@
 title: Message Security over Message Queuing
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 039ec21296392321fec40df2cae7383ccb3be6ea
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d27ee01636e37ac8f09c4f7dc497f14bfac1b0f1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039343"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424122"
 ---
 # <a name="message-security-over-message-queuing"></a>Message Security over Message Queuing
 Cet exemple montre comment implémenter une application qui utilise WS-Security avec l'authentification de certificat X.509v3 pour le client et requiert l'authentification de serveur à l'aide du certificat X.509v3 du serveur via MSMQ. La sécurité de message est parfois plus souhaitable pour garantir que les messages du magasin MSMQ demeurent chiffrés et que l'application peut effectuer sa propre authentification du message.
@@ -55,9 +55,9 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
   
 3. Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-4. Sur le serveur, exécutez `setup.bat service`. L' `setup.bat` exécution avec `service` l’argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
+4. Sur le serveur, exécutez `setup.bat service`. L’exécution de `setup.bat` avec l’argument `service` crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service vers un fichier nommé service. cer.  
   
-5. Modifiez Service. exe. config du service pour refléter le nouveau nom de certificat (dans `findValue` l’attribut de l' [ \<> serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) qui est le même que le nom de domaine complet de l’ordinateur.  
+5. Modifiez Service. exe. config du service pour refléter le nouveau nom de certificat (dans l’attribut `findValue` de la [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) qui est le même que le nom de domaine complet de l’ordinateur.  
   
 6. Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
@@ -80,9 +80,9 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
 - Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.  
   
     > [!NOTE]
-    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Par exemple: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
  Cet exemple requiert l'installation et l'exécution de MSMQ.
 
 ## <a name="demonstrates"></a>Démonstrations
@@ -167,7 +167,7 @@ public interface IOrderProcessor
 
  Notez que le mode de sécurité est Message et que le ClientCredentialType a pour valeur Certificat.
 
- La configuration du service inclut un comportement de service qui spécifie les informations d'identification du service utilisées lorsque le client authentifie le service. Le nom du sujet du certificat de serveur est `findValue` spécifié dans l’attribut de la [ \<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).
+ La configuration du service inclut un comportement de service qui spécifie les informations d'identification du service utilisées lorsque le client authentifie le service. Le nom du sujet du certificat de serveur est spécifié dans l’attribut `findValue` de la [\<ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -271,7 +271,7 @@ public class OrderProcessorService : IOrderProcessor
 
  Lorsqu'il est exécuté, le code de service affiche l'identification du client. L'exemple suivant illustre une sortie du code de service :
 
-```
+```console
 The service is ready.
 Press <ENTER> to terminate service.
 
@@ -285,7 +285,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
         Order status: Pending
 ```
 
-## <a name="comments"></a>Commentaires
+## <a name="comments"></a>Comments
 
 - Création du certificat client
 
@@ -300,7 +300,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 
 - Installation du certificat client dans le magasin de certificats approuvés du serveur.
 
-     La ligne suivante du fichier de commandes copie le certificat client dans le magasin TrustedPeople du serveur afin que le serveur puisse prendre les décisions d'approbation ou de non-approbation appropriées. Pour qu’un certificat installé dans le magasin TrustedPeople soit approuvé par un service Windows Communication Foundation (WCF), le mode de `PeerOrChainTrust` validation du certificat client doit avoir la valeur ou. `PeerTrust` Pour connaître la procédure à suivre à l'aide d'un fichier de configuration, consultez l'exemple de configuration de service précédent.
+     La ligne suivante du fichier de commandes copie le certificat client dans le magasin TrustedPeople du serveur afin que le serveur puisse prendre les décisions d'approbation ou de non-approbation appropriées. Pour qu’un certificat installé dans le magasin TrustedPeople soit approuvé par un service Windows Communication Foundation (WCF), le mode de validation du certificat client doit être défini sur `PeerOrChainTrust` ou sur `PeerTrust` valeur. Pour connaître la procédure à suivre à l'aide d'un fichier de configuration, consultez l'exemple de configuration de service précédent.
 
     ```bat
     echo ************
@@ -323,24 +323,24 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
-     La variable %SERVER_NAME% spécifie le nom du serveur. Le certificat est stocké dans le magasin LocalMachine. Si le fichier de commandes d’installation est exécuté à l’aide d’un argument de `setup.bat service`service (tel que), le% SERVER_NAME% contient le nom de domaine complet de l’ordinateur. Dans le cas contraire, la valeur par défaut est localhost
+     La variable %SERVER_NAME% spécifie le nom du serveur. Le certificat est stocké dans le magasin LocalMachine. Si le fichier de commandes d’installation est exécuté avec un argument service (par exemple, `setup.bat service`),% SERVER_NAME% contient le nom de domaine complet de l’ordinateur. Dans le cas contraire, la valeur par défaut est localhost
 
 - Installation du certificat de serveur dans le magasin de certificats approuvés du client.
 
      La ligne suivante copie le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.
 
-    ```
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
     > [!NOTE]
-    > Si vous utilisez une édition anglaise non américaine de Microsoft Windows, vous devez modifier le fichier Setup.bat et remplacer le nom de compte « NT AUTHORITY\NETWORK SERVICE » par votre équivalent régional.
+    > Si vous utilisez une édition non-américaine de Microsoft Windows, vous devez modifier le fichier Setup. bat et remplacer le nom de compte « NT AUTHORITY\NETWORK SERVICE » par votre équivalent régional.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 2798c436ddfabc8fedf1f2c36c25e8ee2651b476
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 1efcee0ac3bdba1b7e1379a0ac072ea714add756
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191981"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423918"
 ---
 # <a name="whats-new-for-visual-basic"></a>Nouveautés de Visual Basic
 
@@ -212,7 +212,7 @@ Vous pouvez obtenir le nom de chaîne non qualifié d’un type ou membre et l�
 
 [Interpolation de chaîne](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 
-Vous pouvez utiliser des expressions d’interpolation de chaîne pour construire des chaînes.  Une expression de chaîne interpolée s’apparente à une chaîne de modèle contenant des expressions.  Les arguments d’une chaîne interpolée sont plus compréhensibles que dans une [Mise en forme composite](../../standard/base-types/composite-format.md).
+Vous pouvez utiliser des expressions d’interpolation de chaîne pour construire des chaînes.  Une expression de chaîne interpolée s’apparente à une chaîne de modèle contenant des expressions.  Les arguments d’une chaîne interpolée sont plus compréhensibles que dans une [Mise en forme composite](../../standard/base-types/composite-formatting.md).
 
 [Indexation et accès aux membres conditionnels Null](../language-reference/operators/null-conditional-operators.md)
 

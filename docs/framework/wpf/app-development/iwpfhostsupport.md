@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
-ms.openlocfilehash: 85309e46403b2f22f9afb760d4c4ae370c39246b
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 91a29233d12a842a64b7d3dd497312f6dc6742ca
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004092"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423648"
 ---
 # <a name="iwpfhostsupport"></a>IWpfHostSupport
-Les applications qui hébergent du contenu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] via PresentationHost. exe implémentent cette interface pour fournir un point d’intégration entre l’hôte et PresentationHost. exe.  
+Les applications qui hébergent [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contenu via PresentationHost. exe implémentent cette interface pour fournir un point d’intégration entre l’hôte et PresentationHost. exe.  
   
 ## <a name="remarks"></a>Notes  
- les applications [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], telles que les navigateurs Web, peuvent héberger du contenu WPF, y compris [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et du code XAML libre. Pour héberger du contenu WPF, les applications [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] créent une instance du [contrôle WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911). Pour être hébergé, WPF crée une instance de PresentationHost. exe, qui fournit le contenu WPF hébergé à l’hôte en vue de son affichage dans le [contrôle WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911).  
+ [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] applications telles que les navigateurs Web peuvent héberger du contenu WPF, y compris des applications de navigateur XAML (XBAP) et du code XAML libre. Pour héberger du contenu WPF, [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] applications créent une instance du [contrôle WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911). Pour être hébergé, WPF crée une instance de PresentationHost. exe, qui fournit le contenu WPF hébergé à l’hôte en vue de son affichage dans le [contrôle WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911).  
   
  L’intégration activée par `IWpfHostSupport` permet à PresentationHost. exe d’effectuer les opérations suivantes :  
   

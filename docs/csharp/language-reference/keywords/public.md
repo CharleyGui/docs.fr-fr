@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: a68cbf3af2568cd3c197eaece9e2d5a25cdb4a6a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: dfb6e341ea0740225d7600f07af2813d39141b45
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633713"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422556"
 ---
 # <a name="public-c-reference"></a>public (référence C#)
 
@@ -40,17 +40,17 @@ Si vous remplacez le niveau d’accès `public` par [private](private.md) ou [pr
 
 ## <a name="c-language-specification"></a>spécification du langage C#  
 
-Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/spec/basic-concepts.md#declared-accessibility) dans la [spécification du langage C#](../language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/spec/basic-concepts.md#declared-accessibility) dans la [spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)
-- [Modificateurs](modifiers.md)
+- [Modificateurs](index.md)
 - [private](private.md)
 - [protected](protected.md)
 - [internal](internal.md)

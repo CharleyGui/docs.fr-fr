@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], Label
 - Label control [WPF]
 ms.assetid: 241c1ce2-60f8-4613-a0ec-9b9bb25fb6af
-ms.openlocfilehash: 131eb251493b77f13b5dc59a3a03504be8868e8a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73f36325a2621cc834e1bef8d2060dec1a8c133d
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052051"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423773"
 ---
 # <a name="label"></a>Etiquette
-<xref:System.Windows.Controls.Label> contrôles fournissent généralement des informations dans le [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  Historiquement, un <xref:System.Windows.Controls.Label> contenait que du texte, mais étant donné que le <xref:System.Windows.Controls.Label> qui est livré avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est un <xref:System.Windows.Controls.ContentControl>, il peut contenir du texte ou un <xref:System.Windows.UIElement>.  
+les contrôles <xref:System.Windows.Controls.Label> fournissent généralement des informations dans le [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  Historiquement, un <xref:System.Windows.Controls.Label> n’a contenu que du texte, mais comme le <xref:System.Windows.Controls.Label> fourni avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est un <xref:System.Windows.Controls.ContentControl>, il peut contenir du texte ou un <xref:System.Windows.UIElement>.  
   
- Un <xref:System.Windows.Controls.Label> prend en charge fonctionnel et visuel clés d’accès. Il est fréquemment utilisé pour activer les touches d’accès rapide aux contrôles comme un <xref:System.Windows.Controls.TextBox>. Pour affecter un <xref:System.Windows.Controls.Label> à un <xref:System.Windows.Controls.Control>, définissez le <xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType> propriété au contrôle qui doit obtenir le focus lorsque l’utilisateur appuie sur la clé d’accès.  
+ Une <xref:System.Windows.Controls.Label> fournit une prise en charge fonctionnelle et visuelle des clés d’accès. Il est fréquemment utilisé pour permettre un accès rapide par le clavier à des contrôles tels qu’un <xref:System.Windows.Controls.TextBox>. Pour assigner un <xref:System.Windows.Controls.Label> à un <xref:System.Windows.Controls.Control>, définissez la propriété <xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType> sur le contrôle qui doit obtenir le focus lorsque l’utilisateur appuie sur la touche d’accès.  
   
- L’illustration suivante montre un <xref:System.Windows.Controls.Label> « Thèmes » qui cible un <xref:System.Windows.Controls.ComboBox>.  Lorsque l’utilisateur appuie sur, la <xref:System.Windows.Controls.ComboBox> reçoit le focus.  Pour plus d'informations, voir [Procédure : Définissez la propriété de cible d’une étiquette](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752101(v=vs.90)).  
+ L’illustration suivante montre un <xref:System.Windows.Controls.Label> « themes » qui cible une <xref:System.Windows.Controls.ComboBox>.  Quand l’utilisateur appuie sur, le <xref:System.Windows.Controls.ComboBox> reçoit le focus.  Pour plus d’informations, consultez [Comment : définir la propriété cible d’une étiquette](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752101(v=vs.90)).  
   
- ![Propriétés d’affichage montrent étiquetage par utilisation](./media/labeledby.JPG "LabeledBy")  
+ ![Capture d’écran de la boîte de dialogue des propriétés d’affichage montrant étiqueté par utilisation.](./media/label/display-properties-labeled-by.png "LabeledBy")  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Créer un contrôle qui a une clé d’accès et l’habillage du texte](how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md)  
+ [Comment : créer un contrôle avec une touche d’accès et un habillage de texte](how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Controls.Label>

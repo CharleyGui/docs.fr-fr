@@ -9,40 +9,40 @@ helpviewer_keywords:
 - ControlTemplate [WPF], Thumb
 - parts [WPF], Thumb
 ms.assetid: 86a49235-62d9-414e-923e-53126e3f930a
-ms.openlocfilehash: b7fc595f0c592d42f118c6b5542edf93716c2fca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c2114a02016db96d898a394b6892b6d3042d81ff
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790778"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458237"
 ---
 # <a name="thumb-styles-and-templates"></a>Styles et modèles Thumb
 
-Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.Primitives.Thumb> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner le contrôle une apparence unique. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Primitives.Thumb>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 
-## <a name="thumb-parts"></a>Composants de Thumb
+## <a name="thumb-parts"></a>Éléments Thumb
 
-Le <xref:System.Windows.Controls.Primitives.Thumb> contrôle n’a pas de composants nommés.
+Le contrôle <xref:System.Windows.Controls.Primitives.Thumb> n’a pas de parties nommées.
 
 ## <a name="thumb-states"></a>États de Thumb
 
-Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.Primitives.Thumb> contrôle.
+Le tableau suivant répertorie les États visuels du contrôle <xref:System.Windows.Controls.Primitives.Thumb>.
 
 |Nom VisualState|Nom VisualStateGroup|Description|
 |-|-|-|
 |Normale|CommonStates|État par défaut.|
-|MouseOver|CommonStates|Le pointeur de la souris est positionné sur le contrôle.|
+|MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|
 |Appuyé|CommonStates|Le contrôle est enfoncé.|
-|Désactivé|CommonStates|Le contrôle est désactivé.|
+|Disabled|CommonStates|Le contrôle est désactivé.|
 |Avec focus|FocusStates|Le contrôle a le focus.|
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|
-|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|
-|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|
-|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|
+|Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|
+|InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|
+|InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|
 
-## <a name="thumb-controltemplate-example"></a>Exemple de ControlTemplate Thumb
+## <a name="thumb-controltemplate-example"></a>Thumb ControlTemplate, exemple
 
-L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.Primitives.Thumb> contrôle.
+L’exemple suivant montre comment définir une <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.Primitives.Thumb>.
 
 [!code-xaml[ControlTemplateExamples#Thumb](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/slider.xaml#thumb)]
 
@@ -58,5 +58,5 @@ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

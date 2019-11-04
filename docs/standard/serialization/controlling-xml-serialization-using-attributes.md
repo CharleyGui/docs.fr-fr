@@ -15,19 +15,19 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 54660244c1b3cca8cb75539edbe23628b370afd5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e089924900196ae369de1becfe3d0b8f0a00b79c
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934496"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459274"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
 
-Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un autre flux XML, consultez [Comment : Spécifiez un nom d’élément différent pour un Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Si le code XML généré doit être conforme à la section 5 du document World Wide Web Consortium (W3C) intitulée [Simple objet Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs répertoriés dans [attributs que contrôle encodée SOAP Sérialisation](attributes-that-control-encoded-soap-serialization.md).
+> Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (W3C) intitulé [simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), utilisez les attributs listés dans [attributs qui contrôlent la sérialisation encodée](attributes-that-control-encoded-soap-serialization.md)selon le protocole SOAP.
 
 Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.
 
@@ -70,7 +70,7 @@ Pour plus d’informations sur les attributs, consultez [Attributs](../../../doc
 
 ## <a name="controlling-array-serialization"></a>Contrôle de la sérialisation de tableau
 
-Les attributs <xref:System.Xml.Serialization.XmlArrayAttribute> et <xref:System.Xml.Serialization.XmlArrayItemAttribute> sont conçus pour contrôler la sérialisation de tableaux. À l’aide de ces attributs, vous pouvez contrôler le nom de l’élément, un espace de noms et un type de données XSD (XML Schema) (tel que défini dans le document du World Wide Web Consortium [www.w3.org] intitulé « XML Schema Part 2 : Datatypes"). Vous pouvez également spécifier les types qui peuvent être inclus dans un tableau.
+Les attributs <xref:System.Xml.Serialization.XmlArrayAttribute> et <xref:System.Xml.Serialization.XmlArrayItemAttribute> sont conçus pour contrôler la sérialisation de tableaux. À l'aide de ces attributs, vous pouvez contrôler le type de données de nom d'élément, d'espace de noms et de schéma XML (XSD) (comme défini dans le document du World Wide Web Consortium [www.w3.org] intitulé « XML Schema Part 2: Datatypes »). Vous pouvez également spécifier les types qui peuvent être inclus dans un tableau.
 
 <xref:System.Xml.Serialization.XmlArrayAttribute> détermine les propriétés de l'élément XML englobant obtenu lorsqu'un tableau est sérialisé. Par exemple, la sérialisation du tableau suivant génère par défaut un élément XML nommé `Employees`. L'élément `Employees` contient une série d'éléments nommée d'après le type de tableau `Employee`.
 
@@ -202,7 +202,7 @@ Une instance sérialisée peut se présenter comme suit.
     <Employee xsi:type = "Manager">
         <Name>Ann</Name>
         <Level>3</Level>
-    <Employee>
+    </Employee>
 </Employees>
 </Group>
 ```
@@ -241,7 +241,7 @@ Une instance sérialisée peut se présenter comme suit.
 </Group>
 ```
 
-Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus d’informations sur l’utilisation de l’outil, consultez [Outil XML Schema Definition et sérialisation XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Lorsqu'aucun attribut n'est appliqué au champ, le schéma décrit l'élément de la manière suivante.
+Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus d’informations sur l’utilisation de l’outil, consultez [l’outil XML Schema Definition et SÉRIALISATION XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Quand aucun attribut n’est appliqué au champ, le schéma décrit l’élément de la manière suivante.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -321,6 +321,6 @@ Dans certains cas, une propriété ou un champ public ne doit pas être sériali
 - [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
 - [Exemples de sérialisation XML](examples-of-xml-serialization.md)
-- [Guide pratique pour Spécifiez un nom d’élément différent pour un Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-- [Guide pratique pour Sérialiser un objet](how-to-serialize-an-object.md)
-- [Guide pratique pour Désérialiser un objet](how-to-deserialize-an-object.md)
+- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
+- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)

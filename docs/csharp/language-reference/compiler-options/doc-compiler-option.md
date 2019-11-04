@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 7b22bbf75b29fdffd9927110ebe5b4e5309cd778
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 01ea71f3de9e30abe25184e38a59f3707b54bd5a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191839"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422974"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (Options du compilateur C#)
 L’option **-doc** vous permet de placer des commentaires de documentation dans un fichier XML.  
@@ -35,7 +35,7 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
 ## <a name="remarks"></a>Notes  
  Dans les fichiers de code source, les commentaires de documentation qui précèdent les éléments suivants peuvent être traités et ajoutés au fichier XML :  
   
-- Types définis par l’utilisateur, tels qu’une [classe](../keywords/class.md), un [délégué](../keywords/delegate.md) ou une [interface](../keywords/interface.md)  
+- Types définis par l’utilisateur, tels qu’une [classe](../keywords/class.md), un [délégué](../builtin-types/reference-types.md#the-delegate-type) ou une [interface](../keywords/interface.md)  
   
 - Membres tels qu’un champ, un [événement](../keywords/event.md), une [propriété](../../programming-guide/classes-and-structs/using-properties.md) ou une méthode  
   

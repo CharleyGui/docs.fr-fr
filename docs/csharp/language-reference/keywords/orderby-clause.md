@@ -9,12 +9,12 @@ helpviewer_keywords:
 - orderby clause [C#]
 - orderby keyword [C#]
 ms.assetid: 21f87f48-d69d-4e95-9a52-6fec47b37e1f
-ms.openlocfilehash: b62634c0f61e17c046cd474670fddf437287ab7a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 09a745fe3da3a5acb71972b9cf56391774c7016a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634096"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422641"
 ---
 # <a name="orderby-clause-c-reference"></a>orderby, clause (Référence C#)
 
@@ -32,14 +32,14 @@ L’exemple suivant effectue un tri principal sur les noms des étudiants, puis 
 
 [!code-csharp[cscsrefQueryKeywords#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Orderby.cs#22)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Au moment de la compilation, la clause `orderby` est traduite en appel à la méthode <xref:System.Linq.Enumerable.OrderBy%2A>. Les différentes clés présentes dans la clause `orderby` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.ThenBy%2A>.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés de requête (LINQ)](query-keywords.md)
 - [LINQ (Language Integrated Query)](../../linq/index.md)
 - [group, clause](group-clause.md)
-- [Bien démarrer avec LINQ en C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)

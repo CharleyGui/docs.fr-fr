@@ -2,12 +2,12 @@
 title: SAML Token Provider
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 4a6ee808d224696d4fc21337cc558fcc6218e71d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 87aef572c2179034d295361c62942cea2ad6ed7a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044769"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424239"
 ---
 # <a name="saml-token-provider"></a>SAML Token Provider
 Cet exemple montre comment implémenter un fournisseur de jetons SAML client personnalisé. Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec le fournisseur de jetons du gestionnaire d’informations d’identification par défaut. WCF est également fourni avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :
@@ -30,7 +30,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
 - la façon dont le serveur est authentifié auprès du client à l'aide du certificat X.509 du serveur.
 
- Le service expose deux points de terminaison de communication avec le service, qui sont définis à l'aide du fichier de configuration App.config. Chaque point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un `wsFederationHttpBinding` standard, qui utilise la sécurité des messages. Un point de terminaison attend une authentification du client à l'aide d'un jeton SAML qui utilise une clé de vérification symétrique tandis que l'autre attend une authentification du client avec un jeton SAML qui utilise une clé de vérification asymétrique. Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`. Le comportement `serviceCredentials` permet de configurer un certificat de service. Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages. La configuration suivante référence le certificat « localhost » installé pendant l'installation de l'exemple, comme décrit dans les instructions d'installation à la fin de cette rubrique. Le comportement `serviceCredentials` permet également de configurer des certificats approuvés pour la signature des jetons SAML. La configuration suivante référence le certificat « Alice » installé au cours de l'exemple.
+ Le service expose deux points de terminaison pour communiquer avec le service, défini à l’aide du fichier de configuration App. config. Chaque point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un `wsFederationHttpBinding` standard, qui utilise la sécurité des messages. Un point de terminaison attend une authentification du client à l'aide d'un jeton SAML qui utilise une clé de vérification symétrique tandis que l'autre attend une authentification du client avec un jeton SAML qui utilise une clé de vérification asymétrique. Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`. Le comportement `serviceCredentials` permet de configurer un certificat de service. Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages. La configuration suivante référence le certificat « localhost » installé pendant l'installation de l'exemple, comme décrit dans les instructions d'installation à la fin de cette rubrique. Le comportement `serviceCredentials` permet également de configurer des certificats approuvés pour la signature des jetons SAML. La configuration suivante référence le certificat « Alice » installé au cours de l'exemple.
 
 ```xml
 <system.serviceModel>
@@ -111,7 +111,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 </system.serviceModel>
 ```
 
- Les étapes suivantes montrent comment développer un fournisseur de jetons SAML personnalisé et l’intégrer à WCF: infrastructure de sécurité:
+ Les étapes suivantes montrent comment développer un fournisseur de jetons SAML personnalisé et l’intégrer à WCF : infrastructure de sécurité :
 
 1. Écrivez un fournisseur de jetons SAML personnalisé.
 
@@ -119,7 +119,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      Pour effectuer cette tâche, le fournisseur de jetons personnalisé est dérivé de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> et remplace la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A>. Cette méthode crée et retourne un nouveau `SecurityToken`.
 
-    ```
+    ```csharp
     protected override SecurityToken GetTokenCore(TimeSpan timeout)
     {
      // Create a SamlSecurityToken from the provided assertion
@@ -160,7 +160,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      La classe <xref:System.IdentityModel.Selectors.SecurityTokenManager> permet de créer <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pour la classe particulière <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> qui lui est transmise dans la méthode `CreateSecurityTokenProvider`. Le gestionnaire de jetons de sécurité permet également de créer des authentificateurs et des sérialiseurs de jeton, mais ceux-là ne sont pas traités dans cet exemple. Dans cet exemple, le gestionnaire de jetons de sécurité personnalisé hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> et remplace la méthode `CreateSecurityTokenProvider` pour retourner le fournisseur de jetons SAML personnalisé lorsque les exigences du jeton transmis indiquent que le jeton SAML est demandé. Si la classe d'informations d'identification du client (voir l'étape 3) n'a pas spécifié d'assertion, le gestionnaire de jetons de sécurité crée une instance appropriée.
 
-    ```
+    ```csharp
     public class SamlSecurityTokenManager :
      ClientCredentialsSecurityTokenManager
     {
@@ -232,7 +232,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      La classe d'informations d'identification du client est utilisée pour représenter les informations d'identification qui sont configurées pour le proxy client et crée un gestionnaire de jetons de sécurité qui permet d'obtenir des authentificateurs, des fournisseurs et un sérialiseur de jeton.
 
-    ```
+    ```csharp
     public class SamlClientCredentials : ClientCredentials
     {
      ClaimSet claims;
@@ -275,7 +275,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      L'exemple supprime la classe des informations d'identification du client par défaut et fournit la classe des nouvelles informations d'identification ; le client peut ainsi utiliser les informations d'identification personnalisées.
 
-    ```
+    ```csharp
     // Create new credentials class
     SamlClientCredentials samlCC = new SamlClientCredentials();
 
@@ -309,7 +309,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasins LocalMachine.
 
-    ```
+    ```console
     echo ************
     echo Server cert setup starting
     echo %SERVER_NAME%
@@ -323,7 +323,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.
 
-    ```
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r LocalMachine -s TrustedPeople
     ```
 
@@ -333,7 +333,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      Le certificat est stocké dans le magasin My sous l'emplacement de magasins CurrentUser.
 
-    ```
+    ```console
     echo ************
     echo Server cert setup starting
     echo %SERVER_NAME%
@@ -347,7 +347,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si un certificat est déjà associé au certificat racine approuvé du client, par exemple un certificat Microsoft, le remplissage du magasin de certificats du serveur avec le certificat de l'émetteur n'est pas obligatoire.
 
-    ```
+    ```console
     certmgr.exe -add -r CurrentUser -s My -c -n %USER_NAME% -r LocalMachine -s TrustedPeople
     ```
 

@@ -7,12 +7,12 @@ ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: b174a817e82f9a9f123c79581656cc8e7179b435
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f4b8402413f4d2f558d8e61ad4f10490dece9835
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929037"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423989"
 ---
 # <a name="customizing-structure-marshaling"></a>Personnalisation du marshaling de structures
 
@@ -26,7 +26,7 @@ Parfois, les règles de marshaling par défaut pour les structures ne sont pas e
 
 **FAITES ✔️** uniquement usage de `LayoutKind.Explicit` dans le marshaling lorsque votre struct natif a également une disposition explicite, par exemple une union.
 
-**ÉVITEZ ❌** d’utiliser `LayoutKind.Explicit` lors du marshaling de structures sur des plateformes autres que Windows. Le runtime .NET Core ne prend pas en charge le passage de structures explicites par valeur aux fonctions natives sur les systèmes Intel ou AMD 64 bits autres que Windows. Toutefois, le runtime prend en charge le passage de structures par référence sur toutes les plateformes.
+**❌ Évitez** d’utiliser des `LayoutKind.Explicit` lors du marshaling de structures sur des plateformes non-Windows si vous devez cibler des runtimes avant .net Core 3,0. Le Runtime .NET Core avant 3,0 ne prend pas en charge le passage de structures explicites par valeur aux fonctions natives sur les systèmes Intel ou AMD 64 bits non-Windows. Toutefois, le runtime prend en charge le passage de structures par référence sur toutes les plateformes.
 
 ## <a name="customizing-boolean-field-marshaling"></a>Personnalisation du marshaling des champs booléens
 

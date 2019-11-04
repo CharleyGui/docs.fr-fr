@@ -10,16 +10,15 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: ccc6a4c4640b5f473d21f4ab0c82df2034a8fd9d
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: fb7ad54f61d9dcfe94379aef14930a0395da5291
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920015"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424594"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
-<a name="introduction"></a>
-[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] associe les fonctionnalités des applications Web et des applications clientes riches. À l’instar des applications Web, les applications XBAP peuvent être déployées sur un serveur web et démarrées à partir d’Internet Explorer ou de Firefox. Comme les applications clientes riches, les XBAP peuvent tirer parti des fonctionnalités de WPF. Le développement d’applications XBAP est également semblable au développement d’applications clientes complètes. Cette rubrique fournit une présentation simple et détaillée du développement XBAP et décrit les différences de développement entre les applications XBAP et les applications clientes complètes standard.
+<a name="introduction"></a>Les applications de navigateur XAML (XBAP) associent les fonctionnalités des applications Web et des applications clientes riches. À l’instar des applications Web, les applications XBAP peuvent être déployées sur un serveur web et démarrées à partir d’Internet Explorer ou de Firefox. Comme les applications clientes riches, les XBAP peuvent tirer parti des fonctionnalités de WPF. Le développement d’applications XBAP est également semblable au développement d’applications clientes complètes. Cette rubrique fournit une présentation simple et détaillée du développement XBAP et décrit les différences de développement entre les applications XBAP et les applications clientes complètes standard.
 
  Cette rubrique contient les sections suivantes :
 

@@ -1,13 +1,13 @@
 ---
 title: Informations de référence sur les symboles et les opérateurs
-description: En savoir plus sur les symboles et opérateurs qui sont utilisés dans le F# langage de programmation.
+description: En savoir plus sur les symboles et les opérateurs utilisés dans F# le langage de programmation.
 ms.date: 02/11/2019
-ms.openlocfilehash: 14ea7a66f7e9a79d24b62a4aa0564eecb891ee1a
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 0c177242991c39aa1a2b7566415b50385f3403d1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306185"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424058"
 ---
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
@@ -20,7 +20,7 @@ Cette rubrique inclut un tableau des symboles et des opérateurs utilisés en F#
 
 Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit des liens vers les rubriques qui proposent des informations supplémentaires et donne une brève description de certaines utilisations du symbole. Les symboles sont classés selon l'ordre du jeu de caractères ASCII.
 
-|Symbole ou opérateur|Liens|Description|
+|Symbole ou opérateur|liens|Description|
 |------------------|-----|-----------|
 |`!`|[Cellules de référence](../reference-cells.md)<br /><br />[Expressions de calcul](../computation-expressions.md)|<ul><li>Déréférence une cellule de référence.<br /></li><li>Après un mot clé, indique une version modifiée du comportement du mot clé sous le contrôle d'un flux de travail.<br /></li></ul>|
 |`!=`|Non applicable.|<ul><li>Non utilisé en F#. Utilisez `<>` pour les opérations d'inégalité.<br /></li></ul>|
@@ -30,7 +30,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`$`|Aucune information supplémentaire n'est disponible.|<ul><li>Utilisé en interne pour certains noms de variable et de fonction générés par le compilateur.<br /></li></ul>|
 |`%`|[Opérateurs arithmétiques](arithmetic-operators.md)<br /><br />[Quotations de code](../code-quotations.md)|<ul><li>Calcule le reste entier.<br /></li><li>Utilisée pour les expressions d'ajout dans les quotations de code typé.<br /></li></ul>|
 |`%%`|[Quotations de code](../code-quotations.md)|<ul><li>Utilisée pour les expressions d'ajout dans les quotations de code non typé.<br /></li></ul>|
-|`%?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule le reste entier, lors de la partie droite est un type nullable.<br /></li></ul>|
+|`%?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule le reste entier, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`&`|[Expressions match](../match-expressions.md)|<ul><li>Calcule l'adresse d'une valeur mutable pour une utilisation lors de l'interaction avec d'autres langages.<br /></li><li>Utilisé dans les modèles AND.<br /></li></ul>|
 |`&&`|[Opérateurs booléens](boolean-operators.md)|<ul><li>Calcule l'opération booléenne AND.<br /></li></ul>|
 |`&&&`|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Calcule l'opération AND au niveau du bit.<br /></li></ul>|
@@ -49,9 +49,9 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`-`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Lorsqu'il est utilisé comme opérateur binaire, soustrait le côté droit du côté gauche.<br /></li><li>Lorsqu'il est utilisé comme opérateur unaire, effectue une opération de négation.<br /></li></ul>|
 |`-?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Soustrait le côté droit du côté gauche, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`->`|[Fonctions](../functions/index.md)<br /><br />[Expressions match](../match-expressions.md)|<ul><li>Dans les types de fonction, délimite les arguments et les valeurs de retour.<br /></li><li>Génère une expression (dans les expressions de séquence) ; équivalent au mot clé `yield`.<br /></li><li>Utilisé dans les expressions de correspondance<br /></li></ul>|
-|`.`|[Membres](../members/index.md)<br /><br />[Types primitifs](../primitive-types.md)|<ul><li>Accède à un membre et sépare les noms individuels dans un nom complet.<br /></li><li>Spécifie une virgule décimale dans les nombres à virgule flottante.<br /></li></ul>|
-|`..`|[Boucles : `for...in` Expression](../loops-for-in-expression.md)|<ul><li>Spécifie une plage.<br /></li></ul>|
-|`.. ..`|[Boucles : `for...in` Expression](../loops-for-in-expression.md)|<ul><li>Spécifie une plage et un incrément.<br /></li></ul>|
+|`.`|[Membres](../members/index.md)<br /><br />[Types primitifs](../basic-types.md)|<ul><li>Accède à un membre et sépare les noms individuels dans un nom complet.<br /></li><li>Spécifie une virgule décimale dans les nombres à virgule flottante.<br /></li></ul>|
+|`..`|[Boucles : expression `for...in`](../loops-for-in-expression.md)|<ul><li>Spécifie une plage.<br /></li></ul>|
+|`.. ..`|[Boucles : expression `for...in`](../loops-for-in-expression.md)|<ul><li>Spécifie une plage et un incrément.<br /></li></ul>|
 |`.[...]`|[Tableaux](../arrays.md)|<ul><li>Accède à un élément de tableau.<br /></li></ul>|
 |`/`|[Opérateurs arithmétiques](arithmetic-operators.md)<br /><br />[Unités de mesure](../units-of-measure.md)|<ul><li>Divise le côté gauche (numérateur) par le côté droit (dénominateur).<br /></li><li>Utilisé dans les types d'unités de mesure.<br /></li></ul>|
 |`/?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Divise le côté gauche par le côté droit lorsque ce dernier est un type Nullable.<br /></li></ul>|
@@ -61,7 +61,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`::`|[Listes](../lists.md)<br /><br />[Expressions match](../match-expressions.md)|<ul><li>Crée une liste. L’élément côté gauche est ajouté en préfixe à la liste côté droit.<br /></li><li>Utilisé dans les critères spéciaux pour séparer les parties d’une liste.<br /></li></ul>|
 |`:=`|[Cellules de référence](../reference-cells.md)|<ul><li>Assigne une valeur à une cellule de référence.<br /></li></ul>|
 |`:>`|[Casts et conversions](../casting-and-conversions.md)|<ul><li>Convertit un type en un type placé plus haut dans la hiérarchie.<br /></li></ul>|
-|`:?`|[Expressions match](../match-expressions.md)|<ul><li>Retourne `true` si la valeur correspond au type spécifié (y compris s’il s’agit d’un sous-type) ; sinon, retourne `false` (opérateur de test de type).<br /></li></ul>|
+|`:?`|[Expressions match](../match-expressions.md)|<ul><li>Retourne `true` si la valeur correspond au type spécifié (y compris s’il s’agit d’un sous-type); Sinon, retourne `false` (opérateur de test de type).<br /></li></ul>|
 |`:?>`|[Casts et conversions](../casting-and-conversions.md)|<ul><li>Convertit un type en un type placé plus bas dans la hiérarchie.<br /></li></ul>|
 |`;`|[Syntaxe détaillée](../verbose-syntax.md)<br /><br />[Listes](../lists.md)<br /><br />[Enregistrements](../records.md)|<ul><li>Sépare les expressions (utilisé principalement dans la syntaxe des commentaires).<br /></li><li>Sépare les éléments d'une liste.<br /></li><li>Sépare les champs d'un enregistrement.<br /></li></ul>|
 |`<`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Calcule l'opération « inférieur à ».<br /></li></ul>|
@@ -83,10 +83,10 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`=?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « égal à » lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`==`|Non applicable.|<ul><li>Non utilisé en F#. Utilisez `=` pour les opérations d'égalité.<br /></li></ul>|
 |`>`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est supérieur au côté droit ; sinon, retourne `false`.<br /></li></ul>|
-|`>?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l’opération « supérieure à » lorsque la partie droite est un type nullable.<br /></li></ul>|
+|`>?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l’opération « supérieur à » lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`>>`|[Fonctions](../functions/index.md)|<ul><li>Compose deux fonctions (opérateur de composition avant).<br /></li></ul>|
 |`>>>`|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Décale les bits de la quantité côté gauche vers la droite selon le nombre d'emplacements spécifié côté droit.<br /></li></ul>|
-|`>=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est supérieur ou égal au côté droit ; sinon, retourne `false`.<br /></li></ul>|
+|`>=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est supérieur ou égal au côté droit ; Sinon, retourne `false`.<br /></li></ul>|
 |`>=?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « supérieur ou égal à » lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`?`|[Paramètres et arguments](../parameters-and-arguments.md)|<ul><li>Spécifie un argument facultatif.<br /></li><li>Utilisé comme opérateur pour les appels de méthodes et de propriétés dynamiques. Vous devez fournir votre propre implémentation.<br /></li></ul>|
 |`? ... <- ...`|Aucune information supplémentaire n'est disponible.|<ul><li>Utilisé comme opérateur pour définir les propriétés dynamiques. Vous devez fournir votre propre implémentation.<br /></li></ul>|
@@ -118,7 +118,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 
 Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots clés d'expression en langage F#, de la priorité la plus basse à la priorité la plus élevée. L'associativité est également mentionnée, le cas échéant.
 
-|Opérateur|Associativité|
+|opérateur|Associativité|
 |--------|-------------|
 |`as`|Droit|
 |`when`|Droit|
@@ -142,9 +142,9 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |`*`*op*, `/`*op*, `%`*op*|Gauche|
 |`**`*op*|Droit|
 |`f x` (application de fonction)|Gauche|
-|<code>&#124;</code> (critères spéciaux)|Droit|
+|<code>&#124;</code> (correspondance de modèle)|Droit|
 |opérateurs de préfixe (`+`*op*, `-`*op*, `%`, `%%`, `&`, `&&`, `!`*op*, `~`*op*)|Gauche|
-|`.`|Left|
+|`.`|Gauche|
 |`f(x)`|Gauche|
 |`f<`*types*`>`|Gauche|
 
@@ -152,5 +152,5 @@ F# prend en charge la surcharge d'opérateur personnalisé. Cela signifie que vo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](../index.md)
+- [Informations de référence sur le langage F#](../index.md)
 - [Surcharge d'opérateur](../operator-overloading.md)

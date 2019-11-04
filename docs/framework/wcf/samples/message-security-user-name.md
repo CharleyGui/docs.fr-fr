@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-ms.openlocfilehash: cb1f42327333484f7952b6f95ea90115935a8fc8
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: cbc24ab20d28e877dd8b1a41d965d9176f15c581
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039283"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424083"
 ---
 # <a name="message-security-user-name"></a>Message Security User Name
 Cet exemple montre comment implémenter une application qui utilise WS-Security et l'authentification de nom d'utilisateur pour le client et qui nécessite l'authentification du serveur à l'aide de son certificat X.509v3. Tous les messages d'application échangés entre le client et le serveur sont signés et chiffrés. Par défaut, le nom d'utilisateur et le mot de passe fournis par le client sont utilisés pour ouvrir une session à l'aide d'un compte Windows valable. Cet exemple est basé sur [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). Cet exemple se compose d'un programme de console client (client.exe) et d'une bibliothèque de service hébergé par les services IIS (Internet Information Services). Le service implémente un contrat qui définit un modèle de communication demande-réponse.  
@@ -23,7 +23,7 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
   
 - Comment accéder aux informations d'identité de l'appelant à partir du code du service.  
   
- Le service expose un point de terminaison unique pour communiquer avec le service, lequel est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une [ \<> WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)standard, qui utilise par défaut la sécurité de message. Cet exemple définit le [ \<> WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) standard pour utiliser l’authentification du nom d’utilisateur du client. Le comportement spécifie que les informations d'identification de l'utilisateur doivent être utilisées à des fins d'authentification du service. Le certificat de serveur doit contenir la même valeur pour le nom du sujet `findValue` que l’attribut dans le [ \<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+ Le service expose un point de terminaison unique pour communiquer avec le service, qui est défini à l’aide du fichier de configuration Web. config. Le point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un [> standard\<WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), qui utilise par défaut la sécurité de message. Cet exemple définit le [> standard\<WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) pour utiliser l’authentification du nom d’utilisateur du client. Le comportement spécifie que les informations d'identification de l'utilisateur doivent être utilisées à des fins d'authentification du service. Le certificat de serveur doit contenir la même valeur pour le nom du sujet que l’attribut `findValue` dans le [\<ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
 ```xml  
 <system.serviceModel>  
@@ -134,7 +134,7 @@ client.Close();
 
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-```  
+```console  
 MyMachine\TestAccount  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
@@ -167,7 +167,7 @@ Press <ENTER> to terminate client.
   
      La ligne suivante copie le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.  
   
-    ```  
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
@@ -187,7 +187,7 @@ Press <ENTER> to terminate client.
     ```  
   
     > [!NOTE]
-    > Si vous utilisez une édition anglaise de Windows, vous devez modifier le fichier Setup.bat et remplacer le nom du compte `NT AUTHORITY\NETWORK SERVICE` par votre équivalent régional.  
+    > Si vous utilisez une édition non américaine de Windows, vous devez modifier le fichier Setup. bat et remplacer le `NT AUTHORITY\NETWORK SERVICE` nom de compte par votre équivalent régional.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -204,7 +204,7 @@ Press <ENTER> to terminate client.
     > [!NOTE]
     > Le fichier de commandes Setup. bat est conçu pour être exécuté à partir d’un Invite de commandes développeur pour Visual Studio. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable d’environnement est définie automatiquement dans un Invite de commandes développeur pour Visual Studio.  
   
-3. Vérifiez l’accès au service à l’aide d’un navigateur en `http://localhost/servicemodelsamples/service.svc`entrant l’adresse.
+3. Vérifiez l’accès au service à l’aide d’un navigateur en entrant l’adresse `http://localhost/servicemodelsamples/service.svc`.
   
 4. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
@@ -220,7 +220,7 @@ Press <ENTER> to terminate client.
   
 4. Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-5. Sur le serveur, exécutez `setup.bat service` dans un invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L' `setup.bat` exécution avec `service` l’argument crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé service. cer.  
+5. Sur le serveur, exécutez `setup.bat service` dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d’administrateur. L’exécution de `setup.bat` avec l’argument `service` crée un certificat de service avec le nom de domaine complet de l’ordinateur et exporte le certificat de service vers un fichier nommé service. cer.  
   
 6. Modifiez le fichier Web.config en fonction du nouveau nom du certificat (au niveau de l'attribut findValue de l'élément serviceCertificate), lequel correspond au nom de domaine complet de l'ordinateur`.`  
   
@@ -237,4 +237,4 @@ Press <ENTER> to terminate client.
 - Exécutez Cleanup.bat dans le dossier exemples une fois que vous avez terminé d'exécuter l'exemple.  
   
     > [!NOTE]
-    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Par exemple: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+    > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

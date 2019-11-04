@@ -2,12 +2,12 @@
 title: 'Atténuation : rendu de la fenêtre WPF'
 ms.date: 03/30/2017
 ms.assetid: 28ed6bf8-141b-4b73-a4e3-44a99fae5084
-ms.openlocfilehash: 374f24ff8a66f689fbd6ca635905ba73bc9e0450
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 42d6abf1ba6ed7c17a5a5604e98b5ee46d0c3ac2
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126099"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457771"
 ---
 # <a name="mitigation-wpf-window-rendering"></a>Atténuation : rendu de la fenêtre WPF
 
@@ -41,4 +41,4 @@ Vous pouvez désactiver cette modification et rétablir le comportement précéd
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications du runtime](runtime-changes-in-the-net-framework-4-6.md)
+- [Compatibilité des applications](application-compatibility.md)

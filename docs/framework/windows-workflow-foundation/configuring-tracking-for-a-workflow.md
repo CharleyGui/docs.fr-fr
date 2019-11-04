@@ -2,12 +2,12 @@
 title: Configuration du suivi d'un workflow
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 889efc804bb45b384dfde5b4deb520a81d1e5486
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 25edef2edc23a3823a892c64809df21f333478db
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353054"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458904"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Configuration du suivi d'un workflow
 
@@ -52,7 +52,7 @@ instance.Extensions.Add(trackingParticipant);
 
 Un flux de travail peut être exposé en tant que service WCF lorsqu’il est hébergé dans l’hôte de service <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> est une implémentation spécialisée de ServiceHost .NET pour un service basé sur un workflow. Cette section explique comment configurer le suivi pour un service de workflow [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] s'exécutant dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Il est configuré via un fichier Web.config (pour un service hébergé sur le Web) ou un fichier App.config (pour un service hébergé dans une application autonome, telle qu’une application console) en spécifiant un comportement de service ou via du code en ajoutant, à la collection <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>, un comportement spécifique au suivi pour l’hôte de service.
 
-Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowServiceHost>, vous pouvez ajouter la <xref:System.Activities.Tracking.EtwTrackingParticipant> à l’aide de l’élément < `behavior` > dans un fichier de configuration, comme indiqué dans l’exemple suivant.
+Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowServiceHost>, vous pouvez ajouter le <xref:System.Activities.Tracking.EtwTrackingParticipant> à l’aide de l’élément <`behavior`> dans un fichier de configuration, comme indiqué dans l’exemple suivant.
 
 ```xml
 <behaviors>
@@ -61,7 +61,7 @@ Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowSer
           <etwTracking profileName="Sample Tracking Profile" />
         </behavior>
    </serviceBehaviors>
-<behaviors>
+</behaviors>
 ```
 
 Pour un service de workflow hébergé dans <xref:System.ServiceModel.WorkflowServiceHost>, vous pouvez également ajouter l’extension de comportement <xref:System.Activities.Tracking.EtwTrackingParticipant> dans le code. Pour ajouter un participant au suivi personnalisé, créez une extension de comportement et ajoutez-le au <xref:System.ServiceModel.ServiceHost> comme indiqué dans l'exemple de code suivant.
@@ -196,7 +196,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
     </system.serviceModel>
     ```
 
-2. Copiez le fichier manifeste à partir de%windir%\Microsoft.NET\Framework @ no__t-0 @ no__t-1latest version de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] > \Microsoft.Windows.ApplicationServer.Applications.man vers un emplacement temporaire, puis renommez-le Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
+2. Copiez le fichier manifeste à partir de%windir%\Microsoft.NET\Framework\\\<dernière version de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man vers un emplacement temporaire, puis renommez-le Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
 
 3. Remplacez le GUID dans le fichier manifeste par le nouveau GUID.
 

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: 33b40ddbb0c959332f7d95ffa0f1633b910bcb33
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: cea6809ebf9a4ae516d59bd99bf8126d2e874788
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672014"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459563"
 ---
 # <a name="xaml-in-wpf"></a>Intégration du format XAML au format WPF
 
-[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]est un langage de balisage pour la programmation d’applications déclaratives. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]implémente une implémentation de processeur XAML et fournit la prise en charge du langage XAML. Les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] types sont implémentés de telle sorte qu’ils peuvent fournir le stockage de type requis pour une représentation XAML. En général, vous pouvez créer la majorité de l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] interface utilisateur de votre application dans le balisage XAML.  
+[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] est un langage de balisage pour la programmation d’applications déclaratives. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implémente une implémentation de processeur XAML et fournit la prise en charge du langage XAML. Les types de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont implémentés de telle sorte qu’ils peuvent fournir le type de stockage requis pour une représentation XAML. En général, vous pouvez créer la majorité de l’interface utilisateur de votre application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans le balisage XAML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
@@ -31,9 +31,9 @@ ms.locfileid: "68672014"
 [Traitement des espaces blancs en XAML](../../xaml-services/whitespace-processing-in-xaml.md)  
 [TypeConverters et XAML](typeconverters-and-xaml.md)  
 [Entités de caractères XML et XAML](../../xaml-services/xml-character-entities-and-xaml.md)  
-[Espace de noms XAML (x:) Fonctionnalités de langage](../../xaml-services/xaml-namespace-x-language-features.md)  
+[Fonctionnalités de langage pour les espaces de noms XAML (x:)](../../xaml-services/xaml-namespace-x-language-features.md)  
 [Extensions XAML WPF](wpf-xaml-extensions.md)  
-[Compatibilité du balisage (MC:) Fonctionnalités de langage](markup-compatibility-mc-language-features.md)  
+[Fonctionnalités de langage pour la compatibilité du balisage (mc:)](markup-compatibility-mc-language-features.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes  
 
@@ -44,5 +44,5 @@ ms.locfileid: "68672014"
 [Événements](events-wpf.md)  
 [Entrée](input-wpf.md)  
 [Ressources](resources-wpf.md)  
-[Application d’un style et création de modèles](../controls/styling-and-templating.md)  
+[Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
 [Modèle de thread](threading-model.md)

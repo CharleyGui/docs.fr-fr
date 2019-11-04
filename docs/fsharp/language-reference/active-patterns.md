@@ -2,12 +2,12 @@
 title: Modèles actifs
 description: Découvrez comment utiliser des modèles actifs pour définir des partitions nommées qui subdivisent les F# données d’entrée dans le langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0c1315f2386b3cea2def698f4725e4c1cf030609
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: f5ed4a8600cba10d23d01628aba6ca07e543c586
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083078"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425096"
 ---
 # <a name="active-patterns"></a>Modèles actifs
 
@@ -48,7 +48,7 @@ Le résultat de ce programme est le suivant :
 32 is even
 ```
 
-Une autre utilisation des modèles actifs consiste à décomposer les types de données de plusieurs façons, par exemple quand les mêmes données sous-jacentes ont différentes représentations possibles. Par exemple, un `Color` objet peut être décomposé en représentation RVB ou en représentation TSL.
+Une autre utilisation des modèles actifs consiste à décomposer les types de données de plusieurs façons, par exemple quand les mêmes données sous-jacentes ont différentes représentations possibles. Par exemple, un objet `Color` peut être décomposé dans une représentation RGB ou une représentation TSL.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5003.fs)]
 
@@ -78,7 +78,7 @@ Les expressions de critères spéciaux qui en résultent permettent d’écrire 
 
 ## <a name="partial-active-patterns"></a>Modèles actifs partiels
 
-Parfois, vous devez partitionner uniquement une partie de l’espace d’entrée. Dans ce cas, vous écrivez un ensemble de modèles partiels, chacun d’entre eux correspondant à des entrées, mais ne parviennent pas à mettre en correspondance d’autres entrées. Les modèles actifs qui ne produisent pas toujours une valeur sont appelés *modèles actifs partiels*; elles ont une valeur de retour qui est un type d’option. Pour définir un modèle actif partiel, utilisez un caractère générique (\_) à la fin de la liste de modèles à l’intérieur des éléments Banana. Le code suivant illustre l’utilisation d’un modèle actif partiel.
+Parfois, vous devez partitionner uniquement une partie de l’espace d’entrée. Dans ce cas, vous écrivez un ensemble de modèles partiels, chacun d’entre eux correspondant à des entrées, mais ne parviennent pas à mettre en correspondance d’autres entrées. Les modèles actifs qui ne produisent pas toujours une valeur sont appelés *modèles actifs partiels*; elles ont une valeur de retour qui est un type d’option. Pour définir un modèle actif partiel, vous utilisez un caractère générique (\_) à la fin de la liste de modèles à l’intérieur des éléments de la banane. Le code suivant illustre l’utilisation d’un modèle actif partiel.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5004.fs)]
 
@@ -92,7 +92,7 @@ La sortie de l’exemple précédent est la suivante :
 Something else : Not matched.
 ```
 
-Lorsque vous utilisez des modèles actifs partiels, les choix individuels peuvent être disjoints ou mutuellement exclusifs, mais ils n’ont pas besoin d’être. Dans l’exemple suivant, le modèle Square et le cube pattern ne sont pas disjoint, car certains nombres sont à la fois des carrés et des cubes, par exemple 64. Le programme suivant utilise le modèle et pour combiner les modèles de carré et de cube. Il imprime tous les entiers jusqu’à 1000 qui sont tous deux des carrés et des cubes, ainsi que ceux qui ne sont que des cubes. 
+Lorsque vous utilisez des modèles actifs partiels, les choix individuels peuvent être disjoints ou mutuellement exclusifs, mais ils n’ont pas besoin d’être. Dans l’exemple suivant, le modèle Square et le cube pattern ne sont pas disjoint, car certains nombres sont à la fois des carrés et des cubes, par exemple 64. Le programme suivant utilise le modèle et pour combiner les modèles de carré et de cube. Il imprime tous les entiers jusqu’à 1000 qui sont tous deux des carrés et des cubes, ainsi que ceux qui ne sont que des cubes.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 
@@ -113,7 +113,7 @@ La sortie est la suivante :
 
 ## <a name="parameterized-active-patterns"></a>Modèles actifs paramétrés
 
-Les modèles actifs prennent toujours au moins un argument pour l’élément qui est mis en correspondance, mais ils peuvent également prendre des arguments supplémentaires, auquel cas le *modèle actif paramétré* pour le nom s’applique. Les arguments supplémentaires permettent à un modèle général d’être spécialisé. Par exemple, les modèles actifs qui utilisent des expressions régulières pour analyser des chaînes incluent souvent l’expression régulière comme paramètre supplémentaire, comme dans le code suivant, qui utilise également le `Integer` modèle actif partiel défini dans l’exemple de code précédent. Dans cet exemple, les chaînes qui utilisent des expressions régulières pour différents formats de date sont fournies pour personnaliser le modèle actif ParseRegex général. Le modèle actif entier est utilisé pour convertir les chaînes mises en correspondance en entiers qui peuvent être passés au constructeur DateTime.
+Les modèles actifs prennent toujours au moins un argument pour l’élément qui est mis en correspondance, mais ils peuvent également prendre des arguments supplémentaires, auquel cas le *modèle actif paramétré* pour le nom s’applique. Les arguments supplémentaires permettent à un modèle général d’être spécialisé. Par exemple, les modèles actifs qui utilisent des expressions régulières pour analyser des chaînes incluent souvent l’expression régulière comme paramètre supplémentaire, comme dans le code suivant, qui utilise également le modèle actif partiel `Integer` défini dans l’exemple de code précédent. Dans cet exemple, les chaînes qui utilisent des expressions régulières pour différents formats de date sont fournies pour personnaliser le modèle actif ParseRegex général. Le modèle actif entier est utilisé pour convertir les chaînes mises en correspondance en entiers qui peuvent être passés au constructeur DateTime.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
 
@@ -136,5 +136,5 @@ Hello, George!
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F#](index.md)
 - [Expressions match](match-expressions.md)

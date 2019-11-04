@@ -2,18 +2,18 @@
 title: Vue d'ensemble de la découverte WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: fce16038b4c9ab65047125be1881be4b86976aee
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 56d19aa72cc5e7217a2135ef919d611c8b2c2f27
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931857"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424519"
 ---
 # <a name="wcf-discovery-overview"></a>Vue d'ensemble de la découverte WCF
 Les API de découverte offrent un modèle de programmation unifié pour la publication et la découverte dynamiques de services Web, à l'aide du protocole WS-Discovery. Ces API permettent aux services de se publier eux-mêmes et permettent aux clients de rechercher des services publiés. Une fois un service rendu détectable, le service a la capacité d'envoyer des messages d'annonce, ainsi que d'écouter des demandes de découverte et d'y répondre. Les services détectables peuvent envoyer des messages de type Hello pour annoncer leur arrivée sur un réseau et des messages de type Bye pour annoncer leur départ d'un réseau. Pour trouver un service, les clients envoient une demande `Probe` qui contient des critères spécifiques tels que le type de contrat de service, les mots clés et l'étendue sur le réseau. Les services reçoivent la demande `Probe` et déterminent s'ils correspondent aux critères. Si un service correspond, il répond en renvoyant au client un message `ProbeMatch`, avec les informations nécessaires pour contacter le service. Les clients peuvent également envoyer des demandes `Resolve` qui leur permettent de trouver des services dont l'adresse du point de terminaison risque d'avoir été modifiée. Les services correspondants répondent aux demandes `Resolve` en renvoyant un message `ResolveMatch` au client.  
   
 ## <a name="ad-hoc-and-managed-modes"></a>Modes ad hoc et managé  
- L’API de découverte prend en charge deux modes différents: Géré et ad hoc. Dans le mode managé, un serveur centralisé, appelé proxy de découverte, gère des informations sur les services disponibles. Le proxy de découverte peut être rempli des informations sur les services de diverses manières. Par exemple, les services peuvent envoyer au proxy de découverte des messages d'annonce lors du démarrage, ou le proxy peut lire les données d'une base de données ou d'un fichier de configuration pour déterminer quels services sont disponibles. La manière dont le proxy de découverte est rempli dépend entièrement du développeur. Les clients utilisent le proxy de découverte pour récupérer des informations concernant les services disponibles. Lorsqu'un client recherche un service, il envoie un message `Probe` au proxy de découverte et le proxy détermine si l'un des services qu'il connaît correspond au service recherché par le client. S'il existe des correspondances, le proxy de découverte renvoie au client une réponse `ProbeMatch`. Le client peut ensuite contacter directement le service à l'aide des informations de service retournées par le proxy. Le principe essentiel du mode managé est que les demandes de découverte sont envoyées en mode monodiffusion à une autorité, le proxy de découverte. Le .NET Framework contient des composants clés qui vous permettent de générer votre propre proxy. Les clients et les services peuvent trouver le proxy selon plusieurs méthodes :  
+ L'API de découverte prend en charge deux modes différents : managé et ad hoc. Dans le mode managé, un serveur centralisé, appelé proxy de découverte, gère des informations sur les services disponibles. Le proxy de découverte peut être rempli des informations sur les services de diverses manières. Par exemple, les services peuvent envoyer au proxy de découverte des messages d'annonce lors du démarrage, ou le proxy peut lire les données d'une base de données ou d'un fichier de configuration pour déterminer quels services sont disponibles. La manière dont le proxy de découverte est rempli dépend entièrement du développeur. Les clients utilisent le proxy de découverte pour récupérer des informations concernant les services disponibles. Lorsqu'un client recherche un service, il envoie un message `Probe` au proxy de découverte et le proxy détermine si l'un des services qu'il connaît correspond au service recherché par le client. S'il existe des correspondances, le proxy de découverte renvoie au client une réponse `ProbeMatch`. Le client peut ensuite contacter directement le service à l'aide des informations de service retournées par le proxy. Le principe essentiel du mode managé est que les demandes de découverte sont envoyées en mode monodiffusion à une autorité, le proxy de découverte. Le .NET Framework contient des composants clés qui vous permettent de générer votre propre proxy. Les clients et les services peuvent trouver le proxy selon plusieurs méthodes :  
   
 - Le proxy peut répondre aux messages ad hoc.  
   
@@ -30,8 +30,7 @@ Les API de découverte offrent un modèle de programmation unifié pour la publi
  Pour rendre un service détectable, il est nécessaire d'ajouter un objet <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> à l'hôte de service, ainsi qu'un point de terminaison de découverte pour spécifier l'endroit où écouter les messages de découverte. L'exemple de code suivant montre comment modifier un service auto-hébergé pour le rendre détectable.  
   
 ```csharp  
-Uri baseAddress = new Uri(string.Format("http://{0}:8000/discovery/scenarios/calculatorservice/{1}/",  
-        System.Net.Dns.GetHostName(), Guid.NewGuid().ToString()));
+Uri baseAddress = new Uri($"http://{System.Net.Dns.GetHostName()}:8000/discovery/scenarios/calculatorservice/{Guid.NewGuid().ToString()}/");
 
 // Create a ServiceHost for the CalculatorService type.
 using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))
@@ -62,8 +61,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
  Par défaut, la publication de service n'envoie pas de messages d'annonce. Le service doit être configuré pour envoyer des messages d'annonce. Cela offre aux développeurs de service une flexibilité supplémentaire, parce qu'ils peuvent annoncer le service séparément de l'écoute des messages de découverte. L'annonce de service peut également être utilisée comme mécanisme d'inscription des services avec un proxy de découverte ou d'autres registres de service. Le code suivant indique comment configurer un service pour envoyer des messages d’annonce sur une liaison UDP.  
   
 ```csharp  
-Uri baseAddress = new Uri(string.Format("http://{0}:8000/discovery/scenarios/calculatorservice/{1}/",
-        System.Net.Dns.GetHostName(), Guid.NewGuid().ToString()));
+Uri baseAddress = new Uri($"http://{System.Net.Dns.GetHostName()}:8000/discovery/scenarios/calculatorservice/{Guid.NewGuid().ToString()}/");
 
 // Create a ServiceHost for the CalculatorService type.
 using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))
@@ -155,7 +153,7 @@ class Client
   
 2. Utiliser un proxy de découverte pour communiquer pour le compte du service  
   
- Windows Server AppFabric possède une fonctionnalité de démarrage automatique qui permet de démarrer un service avant de recevoir des messages. Lorsque cette fonction de démarrage automatique est définie, un service hébergé IIS/WAS peut être configuré pour être détecté. Pour plus d’informations sur la fonctionnalité de démarrage automatique, consultez [fonctionnalité de démarrage automatique de Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=205545). En plus de l’activation de la fonctionnalité de démarrage automatique, vous devez configurer le service pour la découverte. Pour plus d’informations, consultez [Guide pratique pour Ajoutez par programmation une détectabilité à un service WCF et un client](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)qui configure la[découverte dans un fichier de configuration](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
+ Windows Server AppFabric possède une fonctionnalité de démarrage automatique qui permet de démarrer un service avant de recevoir des messages. Lorsque cette fonction de démarrage automatique est définie, un service hébergé IIS/WAS peut être configuré pour être détecté. Pour plus d’informations sur la fonctionnalité de démarrage automatique, consultez [fonctionnalité de démarrage automatique de Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=205545). En plus de l’activation de la fonctionnalité de démarrage automatique, vous devez configurer le service pour la découverte. Pour plus d’informations, consultez [Comment : ajouter par programmation la détectabilité à un service WCF et client](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[configuration de la découverte dans un fichier de configuration](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
   
  Un proxy de découverte peut être utilisé pour communiquer pour le compte du service WCF lorsque le service n'est pas exécuté. Le proxy peut écouter la sonde ou résoudre des messages et répondre au client. Le client peut ensuite envoyer des messages directement au service. Lorsque le client envoie un message au service, il est instancié pour répondre au message. Pour plus d’informations sur l’implémentation d’un proxy de découverte, consultez [implémentation d’un proxy de découverte](../../../../docs/framework/wcf/feature-details/implementing-a-discovery-proxy.md).  
   

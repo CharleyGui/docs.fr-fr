@@ -7,12 +7,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: ba4df55c3359e2a81eef0b4947a744d80ed49497
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a718a85ed42c4f8081348de20a195899f3c18c0a
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040600"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458122"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>Vue d'ensemble de TextPattern et des objets incorporés
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "73040600"
   
  Cette vue d'ensemble décrit comment [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] expose des objets incorporés ou des éléments enfants dans un document texte ou un conteneur.  
   
- Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] un objet incorporé est un élément qui a des limites non textuelles ; par exemple, une image, un lien hypertexte, un tableau ou un type de document tel qu’une feuille de calcul [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] ou un fichier Microsoft Windows Media. Cette notion est différente de la définition standard, où un élément est créé dans une application et incorporé, ou lié, dans une autre. La modification de l'objet dans son application d'origine est sans importance dans le contexte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] un objet incorporé est un élément qui a des limites non textuelles ; par exemple, une image, un lien hypertexte, un tableau ou un type de document tel qu’une feuille de calcul Microsoft Excel ou un fichier Microsoft Windows Media. Cette notion est différente de la définition standard, où un élément est créé dans une application et incorporé, ou lié, dans une autre. La modification de l'objet dans son application d'origine est sans importance dans le contexte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Embedded_Objects_and_the_UI_Automation_Tree"></a>   
 ## <a name="embedded-objects-and-the-ui-automation-tree"></a>Objets incorporés et arborescence UI Automation  

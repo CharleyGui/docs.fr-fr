@@ -6,14 +6,14 @@ ms.author: mairaw
 ms.date: 05/01/2017
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
-ms.openlocfilehash: 5c162258d6d365da8c6048590eb4c5eec6162973
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ac9ad7e3730f8c430d42c4c8c8b63ab3d9cd091f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799308"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423828"
 ---
-# <a name="get-started"></a>Bien démarrer
+# <a name="get-started"></a>Pour commencer
 
 Il existe plusieurs façons de bien démarrer avec .NET. .NET étant une plateforme massive, cette documentation comporte plusieurs articles qui montrent comment vous pouvez bien démarrer avec .NET, chacun selon une perspective différente.
 
@@ -21,7 +21,7 @@ Il existe plusieurs façons de bien démarrer avec .NET. .NET étant une platefo
 
 * Les articles [C# Getting Started](../csharp/getting-started/index.md) (Bien démarrer avec C#) et [C# Tutorials](../csharp/tutorials/index.md) (Didacticiels C#) fournissent plusieurs façons de se familiariser avec C#.
 
-* Les didacticiels [F# Getting Started](../fsharp/tutorials/getting-started/index.md) (Bien démarrer avec F#) fournissent trois méthodes principales d’utilisation de F# : avec Visual Studio, Visual Studio Code ou des outils en ligne de commande.
+* Les didacticiels [F# Getting Started](../fsharp/get-started/index.md) (Bien démarrer avec F#) fournissent trois méthodes principales d’utilisation de F# : avec Visual Studio, Visual Studio Code ou des outils en ligne de commande.
 
 * Les articles [Visual Basic Getting Started](../visual-basic/getting-started/index.md) (Bien démarrer avec Visual Basic) fournissent des guides d’utilisation de Visual Basic dans Visual Studio.
 

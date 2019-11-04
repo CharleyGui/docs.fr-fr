@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], data
 - data [WPF]
 ms.assetid: dea454e2-abd8-4c53-ba37-d3ed53187d64
-ms.openlocfilehash: c8fc25407eda75c7f2fbb188b96c68ac1b8342ad
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: aa8f872e807eccb81d0f1ca2c838485bb254c7c0
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400377"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460286"
 ---
 # <a name="data"></a>Données
 La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un moyen simple et cohérent pour les applications de présenter les données et d’interagir avec elles. Les éléments peuvent être liés à des données provenant de diverses sources de données sous la forme d’objets common language runtime (CLR) et XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit également un mécanisme de transfert de données via des opérations de glisser-déplacer.  
@@ -22,7 +22,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
  [Liaison de données](data-binding-wpf.md)  
  [Glisser-déposer](../advanced/drag-and-drop.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Data>  
   
  <xref:System.Windows.Data.Binding>  
@@ -34,11 +34,11 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles](../controls/index.md)  
   
- [Application d’un style et création de modèles](../controls/styling-and-templating.md)  
+ [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   
  [Liaison de données](../advanced/optimizing-performance-data-binding.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : Ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
-- [Procédure pas à pas : Mise en cache des données d’application dans une application WPF](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [Procédure pas à pas : mise en cache de données d’application dans une application WPF](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-ms.openlocfilehash: 5f8218d0f369f25b1add501fdc975d6dccfe90fa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: faa7a32766a3ea1ef9cddcdb8af8fd0dd5a6f287
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126149"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457810"
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Atténuation : Sérialisation des caractères de contrôle avec DataContractJsonSerializer
 
@@ -40,4 +40,4 @@ Si ce comportement n’est pas souhaitable, vous pouvez désactiver cette foncti
  
 ## <a name="see-also"></a>Voir aussi
 
-- [Reciblage des modifications dans le .NET Framework 4.7](retargeting-changes-in-the-net-framework-4-7.md)
+- [Compatibilité des applications](application-compatibility.md)

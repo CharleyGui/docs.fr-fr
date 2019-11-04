@@ -4,16 +4,16 @@ description: Explorez les différentes tâches Machine Learning ainsi que les t�
 ms.custom: seodec18
 ms.date: 04/23/2019
 author: natke
-ms.openlocfilehash: bcd967c11156ca9b837631560e78722b13fc7ae0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: d19593358361c9c8d3657053e766ec4a2c1ec163
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630057"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424231"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
-Lorsque vous créez un modèle d’apprentissage automatique, vous devez tout d’abord définir ce que vous souhaitez obtenir avec vos données. Ceci vous permet de choisir la tâche Machine Learning adaptée à votre situation. La liste suivante décrit les différentes tâches d’apprentissage automatique disponibles et présente certains cas d’usage courants.
+Lorsque vous créez un modèle d’apprentissage automatique, vous devez tout d’abord définir ce que vous souhaitez obtenir avec vos données. Ceci vous permet de choisir la tâche Machine Learning adaptée à votre situation. La liste suivante décrit les différentes tâches d’apprentissage automatique disponibles et présente certains cas d’usage courants. Pour plus d’informations sur le choix de la tâche adaptée à votre scénario, consultez [algorithmes](../how-to-choose-an-ml-net-algorithm.md).
 
 Une fois que vous avez décidé de tâche qui fonctionne pour votre scénario, vous devez choisir le meilleur algorithme pour entraîner le modèle. Les algorithmes disponibles sont listés dans la section pour chaque tâche.
 
@@ -24,7 +24,7 @@ Une tâche [Apprentissage automatique supervisé](glossary.md#supervised-machine
 * [Déterminer si des commentaires Twitter](../tutorials/sentiment-analysis.md) sont « positifs » ou « négatifs ».
 * Diagnostiquer si un patient est atteint ou non d’une certaine maladie.
 * Décider si un e-mail doit être considéré comme « spam » ou non.
-* Déterminer si une photo contient un chien ou un fruit.
+* Déterminer si une photo contient un élément particulier, tel qu’un chien ou un fruit.
 
 Pour plus d’informations, consultez l’article Wikipédia [Classification binaire](https://en.wikipedia.org/wiki/Binary_classification).
 
@@ -52,7 +52,7 @@ Pour tirer le meilleur parti de la classification binaire, vous devez équilibre
 Les données de la colonne d’étiquettes d’entrée doivent être <xref:System.Boolean>.
 Les données de la colonne des caractéristiques d’entrée doivent être un vecteur de taille fixe de <xref:System.Single>.
 
-Ces entraîneurs génèrent les colonnes suivantes :
+Ces formateurs génèrent les colonnes suivantes :
 
 | Nom de colonne de sortie | Type de colonne | Description|
 | -- | -- | -- |
@@ -91,7 +91,7 @@ La colonne des caractéristiques doit être un vecteur de taille fixe de <xref:S
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de la sortie | Tapez | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Les scores de toutes les classes. Une valeur supérieure signifie une plus forte probabilité d’appartenir à la classe associée. Si l’i-ème élément a la plus grande valeur, l’index de l’étiquette prédite est i. Notez que i est l’index de base zéro. |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index de l’étiquette prédite. Si sa valeur est i, l’étiquette réelle est la i-ème catégorie dans le type d’étiquette d’entrée avec une valeur de clé. |
@@ -124,7 +124,7 @@ Les données de la colonne d’étiquettes d’entrée doivent être <xref:Syste
 
 Les entraîneurs pour cette tâche génèrent le résultat suivant :
 
-| Nom de la sortie | Type | Description|
+| Nom de la sortie | Tapez | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score brut prédit par le modèle |
 
@@ -148,7 +148,7 @@ Les données de caractéristiques d’entrée doivent être <xref:System.Single>
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de la sortie | Tapez | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Distances entre le point de données spécifique et les centroïdes de tous les clusters |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index du cluster le plus proche prédit par le modèle. |
@@ -180,7 +180,7 @@ Les caractéristiques d’entrée doivent être un vecteur de taille fixe de <xr
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de la sortie | Tapez | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score non négatif sans borne calculé par le modèle de détection d’anomalie |
 
@@ -203,7 +203,7 @@ Les données de caractéristique doivent être un vecteur de taille fixe de <xre
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de la sortie | Tapez | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score sans borne calculé par le modèle pour déterminer la prédiction |
 

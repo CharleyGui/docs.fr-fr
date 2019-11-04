@@ -8,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: f0df3170289d780852ee14232e92c3b71412c548
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 02dc8c21b86438c801fb151d9f02a223b60d6197
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392381"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423235"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexeurs (Guide de programmation C#)
 
@@ -34,7 +34,7 @@ Il est courant pour l’accesseur get ou set d’un indexeur d’être constitu�
 
 Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n’est pas utilisé. 
 
-À partir de C# 7.0, l’accesseur get et l’accesseur set peuvent être implémentés en tant que membres expression-bodied. Dans ce cas, les deux mots clés `get` et `set` doivent être utilisés. Exemple :
+À partir de C# 7.0, l’accesseur get et l’accesseur set peuvent être implémentés en tant que membres expression-bodied. Dans ce cas, les deux mots clés `get` et `set` doivent être utilisés. Exemple :
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
@@ -54,7 +54,7 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 - Les indexeurs peuvent avoir plusieurs paramètres formels, par exemple, quand vous accédez à un tableau à deux dimensions.  
   
-## <a name="BKMK_RelatedSections"></a> Rubriques connexes  
+## <a name="BKMK_RelatedSections"></a> Sections connexes  
   
 - [Utilisation d’indexeurs](./using-indexers.md)  
   
@@ -66,7 +66,7 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
-Pour plus d’informations, consultez [Indexeurs](~/_csharplang/spec/classes.md#indexers) dans la [Spécification du langage C#](../../language-reference/language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [Indexeurs](~/_csharplang/spec/classes.md#indexers) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Procédure d'installation unique pour les exemples Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 7c07f39ebff0caf97a9561f08826a0c95ac81140
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 90463a83b8a10085d4df90a2832886e43c51c734
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799031"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424926"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Procédure d'installation unique pour les exemples Windows Communication Foundation
 
@@ -31,7 +31,7 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
     > [!WARNING]
     > Si vous avez réinstallé IIS, réexécutez les commandes suivantes.
 
-    ```
+    ```console
     "%WINDIR%\Microsoft.Net\Framework\v4.0.30319\aspnet_regiis" –i –enable
     "%WINDIR%\Microsoft.Net\Framework\v4.0.30319\ServiceModelReg.exe" -r
     ```
@@ -65,7 +65,7 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
 
 11. Créez sur l'ordinateur un répertoire C:\logs ; certains exemples peuvent en avoir besoin. Assurez-vous que le compte approprié dispose d’un accès en écriture sur ce dossier. Pour Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]et Windows Server 2008 R2, ce compte est **service réseau**. Pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], le compte est Autorité NT\Service réseau. Pour [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], le compte est ASPNET.
 
-12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le \<dossier InstallPath > \WF_WCF_Samples\WCF\Setup  Ce script effectue les tâches suivantes :
+12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le dossier \<InstallPath > \WF_WCF_Samples\WCF\Setup\.  Ce script effectue les tâches suivantes :
 
     - génération de l'outil FindPrivateKey ;
 

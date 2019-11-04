@@ -4,35 +4,35 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: a0792beca358de52a24bd9bb0dd48a20c175f8ff
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 6738b9e66c1223ea4ec50c070a421d119fd30bc4
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920184"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458698"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Procédure pas à pas : créer un bouton avec XAML
 
-L’objectif de cette procédure pas à pas est d’apprendre à créer un bouton animé à utiliser dans une application Windows Presentation Foundation (WPF). Cette procédure pas à pas utilise des styles et un modèle pour créer une ressource de bouton personnalisée qui permet la réutilisation du code et la séparation de la logique de bouton à partir de la déclaration de bouton. Cette procédure pas à pas est écrite entièrement dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].
+The objective of this walkthrough is to learn how to create an animated button for use in a Windows Presentation Foundation (WPF) application. This walkthrough uses styles and a template to create a customized button resource that allows reuse of code and separation of button logic from the button declaration. This walkthrough is written entirely in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].
 
 > [!IMPORTANT]
-> Cette procédure pas à pas vous guide tout au long des étapes de création de l’application en tapant ou en copiant et collant [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] dans Visual Studio. Si vous préférez apprendre à utiliser un concepteur pour créer la même application, consultez [créer un bouton à l’aide de Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md).
+> This walkthrough guides you through the steps for creating the application by typing or copying and pasting [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] into Visual Studio. If you would prefer to learn how to use a designer to create the same application, see [Create a Button by Using Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md).
 
-L’illustration suivante montre les boutons terminés.
+The following figure shows the finished buttons.
 
-![Boutons personnalisés qui ont été créés à l’aide de XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
+![Custom buttons that were created by using XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")
 
-## <a name="create-basic-buttons"></a>Créer des boutons de base
+## <a name="create-basic-buttons"></a>Create Basic Buttons
 
-Commençons par créer un nouveau projet et à ajouter quelques boutons à la fenêtre.
+Let's start by creating a new project and adding a few buttons to the window.
 
-### <a name="to-create-a-new-wpf-project-and-add-buttons-to-the-window"></a>Pour créer un projet WPF et ajouter des boutons à la fenêtre
+### <a name="to-create-a-new-wpf-project-and-add-buttons-to-the-window"></a>To create a new WPF project and add buttons to the window
 
 1. Démarrez Visual Studio.
 
-2. **Créez un projet WPF :** Dans le menu **fichier** , pointez sur **nouveau**, puis cliquez sur **projet**. Recherchez le modèle d' **application Windows (WPF)** et nommez le projet « AnimatedButton ». Cette opération crée la structure de l’application.
+2. **Create a new WPF project:** On the **File** menu, point to **New**, and then click **Project**. Find the **Windows Application (WPF)** template and name the project "AnimatedButton". This will create the skeleton for the application.
 
-3. **Ajouter des boutons par défaut de base :** Tous les fichiers dont vous avez besoin pour cette procédure pas à pas sont fournis par le modèle. Ouvrez le fichier Window1. XAML en double-cliquant dessus dans Explorateur de solutions. Par défaut, il existe un élément <xref:System.Windows.Controls.Grid> dans Window1. Xaml. Supprimez l’élément <xref:System.Windows.Controls.Grid> et ajoutez quelques boutons à la page [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] en tapant ou en recopiant et collant le code en surbrillance suivant dans Window1. xaml :
+3. **Add basic default buttons:** All the files you need for this walkthrough are provided by the template. Open the Window1.xaml file by double clicking it in Solution Explorer. By default, there is a <xref:System.Windows.Controls.Grid> element in Window1.xaml. Remove the <xref:System.Windows.Controls.Grid> element and add a few buttons to the [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] page by typing or copy and pasting the following highlighted code to Window1.xaml:
 
     ```xaml
     <Window x:Class="AnimatedButton.Window1"
@@ -49,19 +49,19 @@ Commençons par créer un nouveau projet et à ajouter quelques boutons à la fe
     </Window>
     ```
 
-     Appuyez sur F5 pour exécuter l’application. vous devez voir un ensemble de boutons ressemblant à l’illustration suivante.
+     Press F5 to run the application; you should see a set of buttons that looks like the following figure.
 
-     ![Trois boutons de base](./media/custom-button-animatedbutton-1.gif "custom_button_AnimatedButton_1")
+     ![Three basic buttons](./media/custom-button-animatedbutton-1.gif "custom_button_AnimatedButton_1")
 
-     Maintenant que vous avez créé les boutons de base, vous avez fini de travailler dans le fichier Window1. Xaml. Le reste de la procédure pas à pas se concentre sur le fichier app. xaml, sur la définition des styles et un modèle pour les boutons.
+     Now that you have created the basic buttons, you are finished working in the Window1.xaml file. The rest of the walkthrough focuses on the app.xaml file, defining styles and a template for the buttons.
 
-## <a name="set-basic-properties"></a>Définir les propriétés de base
+## <a name="set-basic-properties"></a>Set Basic Properties
 
-Ensuite, nous allons définir des propriétés sur ces boutons pour contrôler l’apparence et la disposition du bouton. Au lieu de définir des propriétés sur les boutons individuellement, vous allez utiliser des ressources pour définir les propriétés de bouton de l’application entière. Les ressources d’application sont conceptuellement similaires aux feuilles de style en cascade externes (CSS) pour les pages Web ; Toutefois, les ressources sont bien plus puissantes que feuilles de style en cascade (CSS), comme vous le verrez à la fin de cette procédure pas à pas. Pour en savoir plus sur les ressources, consultez [ressources XAML](../advanced/xaml-resources.md).
+Next, let's set some properties on these buttons to control the button appearance and layout. Rather than setting properties on the buttons individually, you will use resources to define button properties for the entire application. Application resources are conceptually similar to external Cascading Style Sheets (CSS) for Web pages; however, resources are much more powerful than Cascading Style Sheets (CSS), as you will see by the end of this walkthrough. To learn more about resources, see [XAML Resources](../advanced/xaml-resources.md).
 
-### <a name="to-use-styles-to-set-basic-properties-on-the-buttons"></a>Pour utiliser des styles pour définir des propriétés de base sur les boutons
+### <a name="to-use-styles-to-set-basic-properties-on-the-buttons"></a>To use styles to set basic properties on the buttons
 
-1. **Définissez un bloc application. Resources :** Ouvrez App. xaml et ajoutez le balisage en surbrillance suivant s’il n’y figure pas déjà :
+1. **Define an Application.Resources block:** Open app.xaml and add the following highlighted markup if it is not already there:
 
     ```xaml
     <Application x:Class="AnimatedButton.App"
@@ -75,9 +75,9 @@ Ensuite, nous allons définir des propriétés sur ces boutons pour contrôler l
     </Application>
     ```
 
-     L’étendue des ressources est déterminée par l’emplacement de définition de la ressource. La définition des ressources dans `Application.Resources` dans le fichier app. Xaml permet d’utiliser la ressource depuis n’importe où dans l’application. Pour en savoir plus sur la définition de l’étendue de vos ressources, consultez [ressources XAML](../advanced/xaml-resources.md).
+     Resource scope is determined by where you define the resource. Defining resources in `Application.Resources` in the app.xaml file enables the resource to be used from anywhere in the application. To learn more about defining the scope of your resources, see [XAML Resources](../advanced/xaml-resources.md).
 
-2. **Créez un style et définissez les valeurs de propriété de base avec lui :** Ajoutez le balisage suivant au bloc `Application.Resources`. Ce balisage crée une <xref:System.Windows.Style> qui s’applique à tous les boutons de l’application, en affectant à la <xref:System.Windows.FrameworkElement.Width%2A> des boutons la valeur 90 et la <xref:System.Windows.FrameworkElement.Margin%2A> la valeur 10 :
+2. **Create a style and define basic property values with it:** Add the following markup to the `Application.Resources` block. Ce balisage crée une <xref:System.Windows.Style> qui s’applique à tous les boutons de l’application, en affectant à la <xref:System.Windows.FrameworkElement.Width%2A> des boutons la valeur 90 et la <xref:System.Windows.FrameworkElement.Margin%2A> la valeur 10 :
 
     ```xaml
     <Application.Resources>
@@ -92,7 +92,7 @@ Ensuite, nous allons définir des propriétés sur ces boutons pour contrôler l
 
      ![Boutons avec une largeur de 90 et une marge de 10](./media/custom-button-animatedbutton-2.gif "custom_button_AnimatedButton_2")
 
-     Vous pouvez faire bien d’autres choses avec les styles, y compris diverses façons d’affiner les objets ciblés, en spécifiant des valeurs de propriété complexes et même en utilisant des styles comme entrée pour d’autres styles. Pour plus d’informations, consultez [Application d’un style et création de modèles](styling-and-templating.md).
+     Vous pouvez faire bien d’autres choses avec les styles, y compris diverses façons d’affiner les objets ciblés, en spécifiant des valeurs de propriété complexes et même en utilisant des styles comme entrée pour d’autres styles. Pour plus d’informations, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 3. **Définissez une valeur de propriété de style sur une ressource :** Les ressources permettent de réutiliser facilement les objets et valeurs couramment définis. Il est particulièrement utile de définir des valeurs complexes à l’aide de ressources pour faciliter la modularité de votre code. Ajoutez le balisage en surbrillance suivant à App. Xaml.
 
@@ -439,7 +439,7 @@ Un moyen simple d’ajouter de l’interactivité (souris, survol, clic, etc.) c
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer un bouton à l'aide de Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md)
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Vue d’ensemble de l’animation](../graphics-multimedia/animation-overview.md)
 - [Vue d’ensemble de la peinture avec des couleurs unies ou des dégradés](../graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
 - [Vue d’ensemble des effets bitmap](../graphics-multimedia/bitmap-effects-overview.md)

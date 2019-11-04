@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
-ms.openlocfilehash: 0c79ba3dd42f2e65eb241409946e921577ced5f1
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 6d7401f9614e663351968dc6a2f85548735a176d
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920051"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460416"
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate
 <a name="introduction"></a><xref:System.Windows.Controls.ControlTemplate> spécifie la structure visuelle et le comportement visuel d’un contrôle. Vous pouvez personnaliser l’apparence d’un contrôle en lui donnant un nouveau <xref:System.Windows.Controls.ControlTemplate>. Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate>, vous remplacez l’apparence d’un contrôle existant sans modifier sa fonctionnalité. Par exemple, vous pouvez faire en sorte que les boutons de votre application s’arrondissent au lieu de la forme carrée par défaut, mais le bouton déclenchera toujours l’événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click>.
@@ -262,4 +262,4 @@ Bouton qui utilise un modèle de contrôle personnalisé dans l’état enfoncé
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Application d’un style et création de modèles](styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

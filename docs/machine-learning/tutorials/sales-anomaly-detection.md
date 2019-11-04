@@ -4,12 +4,12 @@ description: Découvrez comment créer une application de détection des anomali
 ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ed4c24fac2348c021982ad593417b33d50347dd1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 37c6b99fbd7db63c19201e0c6dce9b2b6d9f1932
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774438"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423611"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : détecter les anomalies dans les ventes de produits avec ML.NET
 
@@ -127,7 +127,7 @@ Les données dans ML.NET sont représentées en tant que [classe IDataView](xref
 
 La détection d’anomalie signale des événements ou des comportements inattendus ou inhabituels. Elle fournit des indices sur la localisation des problèmes potentiels et vous aide à déterminer si une situation est « étrange ».
 
-![Cette situation est-elle étrange ?](./media/sales-anomaly-detection/anomalydetection.png)
+![Exemple de détection d’anomalie « est-ce étrange ».](./media/sales-anomaly-detection/time-series-anomaly-detection.png)
 
 La détection d’anomalie est le processus d’identification des valeurs hors norme dans une série chronologique donnée, c’est-à-dire les points dont le comportement est inattendu ou « étrange ».
 
@@ -152,7 +152,7 @@ Vous allez analyser les mêmes données de ventes d’un produit pour détecter 
 
 L’objectif est d’identifier les poussées d’activité, par définition soudaines et temporaires, qui diffèrent considérablement de la majorité des valeurs de données de la série chronologique. Il est important de détecter au plus vite ces éléments, événements ou constats suspects pour pouvoir les minimiser. Vous pouvez utiliser l’approche suivante pour détecter de nombreuses anomalies, notamment des pannes, des cyberattaques et du contenu web viral. L’image suivante illustre des pics dans le jeu de données d’une série chronologique :
 
-![SpikeDetection](./media/sales-anomaly-detection/SpikeDetection.png)
+![Capture d’écran montrant deux détections pic.](./media/sales-anomaly-detection/two-spike-detections.png)
 
 ### <a name="add-the-createemptydataview-method"></a>Ajouter la méthode CreateEmptyDataView()
 
@@ -266,7 +266,7 @@ Alert   Score   P-Value
 
 Les points de changement (`Change points`) indiquent des changements persistants dans la distribution de valeurs d’un flux d’événements d’une série chronologique, comme des changements de niveau ou des tendances. Ces changements persistants durent beaucoup plus longtemps que les pics (`spikes`) et peuvent indiquer des événements catastrophiques. `Change points` ne sont généralement pas visibles à l’œil nu, mais vous pouvez les détecter dans vos données à l’aide d’approches comme celles décrites dans la méthode suivante.  L’image suivante illustre la détection des points de changement :
 
-![ChangePointDetection](./media/sales-anomaly-detection/ChangePointDetection.png)
+![Capture d’écran montrant une détection de point de modification.](./media/sales-anomaly-detection/change-point-detection.png)
 
 ### <a name="create-the-detectchangepoint-method"></a>Créer la méthode DetectChangepoint()
 

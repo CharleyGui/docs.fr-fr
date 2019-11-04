@@ -10,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, about interoperation
 - components [.NET Framework], interoperation with unmanaged code
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
-ms.openlocfilehash: cdd8d2781331956289d2b74162e653ba1ee8fad6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12183f390a5178f038c6dd2122a72a33e31ae0ee
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114241"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457970"
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Interopération avec du code non managé
 
@@ -40,9 +40,6 @@ Décrit le marshaling de COM Interop et de l’appel de code non managé.
 [Guide pratique pour mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)  
 Décrit le mappage entre les exceptions et les valeurs HRESULT.
 
-[Wrappers COM](com-wrappers.md)  
-Décrit les wrappers fournis par COM Interop.
-
 [Équivalence de type et types interop incorporés](type-equivalence-and-embedded-interop-types.md)  
 Décrit comment les informations de type pour les types COM sont incorporées dans les assemblys, et comment le common language runtime détermine l’équivalence des types COM incorporés.
 
@@ -57,3 +54,8 @@ Décrit comment COM Interop peut activer des composants sans utiliser le Registr
 
 [Comment : configurer les composants COM .NET Framework pour l'activation sans inscription](configure-net-framework-based-com-components-for-reg.md)  
 Décrit comment créer un manifeste d’application, puis explique comment créer et incorporer un manifeste de composant.
+
+## <a name="related-sections"></a>Rubriques connexes
+
+[Wrappers COM](../../standard/native-interop/com-wrappers.md)  
+Décrit les wrappers fournis par COM Interop.

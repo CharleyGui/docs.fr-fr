@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : hériter de la classe Control'
+title: 'Comment : hériter de la classe du contrôle'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-author: gewarren
-ms.author: gewarren
+author: jillre
+ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 02c40e310778bd476742f62ee8b9d8598b084a53
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 7af7d1fe8f14c71dfc90836d84023b98feb44961
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015851"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458386"
 ---
-# <a name="how-to-inherit-from-the-control-class"></a>Procédure : hériter de la classe Control
+# <a name="how-to-inherit-from-the-control-class"></a>Comment : hériter de la classe du contrôle
 
-Si vous souhaitez créer un contrôle entièrement personnalisé à utiliser sur un Windows Form, vous devez hériter de la <xref:System.Windows.Forms.Control> classe. L’héritage de la <xref:System.Windows.Forms.Control> classe nécessite que vous effectuiez davantage de planification et d’implémentation, mais vous offre également la plus grande variété d’options. Lorsque vous héritez <xref:System.Windows.Forms.Control>de, vous héritez des fonctionnalités de base qui permettent aux contrôles de fonctionner. Les fonctionnalités inhérentes à <xref:System.Windows.Forms.Control> la classe gèrent les entrées d’utilisateur par le biais du clavier et de la souris, définissent les limites et la taille du contrôle, fournissent un handle Windows et assurent la gestion et la sécurité des messages. Elles n’intègrent pas la peinture, qui désigne ici le rendu réel de l’interface graphique du contrôle, ni les fonctionnalités d’interaction utilisateur spécifiques. Vous devez fournir tous ces aspects par le biais de code personnalisé.
+Si vous souhaitez créer un contrôle entièrement personnalisé à utiliser sur un Windows Form, vous devez hériter de la classe <xref:System.Windows.Forms.Control>. Bien qu’hérite de la classe <xref:System.Windows.Forms.Control> nécessite que vous effectuiez davantage de planification et d’implémentation, elle vous fournit également la plus grande variété d’options. Lorsque vous héritez de <xref:System.Windows.Forms.Control>, vous héritez des fonctionnalités de base qui permettent aux contrôles de fonctionner. Les fonctionnalités inhérentes à la classe <xref:System.Windows.Forms.Control> gèrent les entrées d’utilisateur par le biais du clavier et de la souris, définissent les limites et la taille du contrôle, fournissent un handle Windows et assurent la gestion et la sécurité des messages. Elles n’intègrent pas la peinture, qui désigne ici le rendu réel de l’interface graphique du contrôle, ni les fonctionnalités d’interaction utilisateur spécifiques. Vous devez fournir tous ces aspects par le biais de code personnalisé.
 
 ## <a name="to-create-a-custom-control"></a>Pour créer un contrôle personnalisé
 
@@ -34,7 +34,7 @@ Si vous souhaitez créer un contrôle entièrement personnalisé à utiliser sur
 
 4. Appuyez sur **F7** pour ouvrir l' **éditeur de code** de votre contrôle personnalisé.
 
-5. Recherchez la <xref:System.Windows.Forms.Control.OnPaint%2A> méthode, qui sera vide à l’exception d’un appel à <xref:System.Windows.Forms.Control.OnPaint%2A> la méthode de la classe de base.
+5. Recherchez la méthode <xref:System.Windows.Forms.Control.OnPaint%2A>, qui sera vide, à l’exception d’un appel à la méthode <xref:System.Windows.Forms.Control.OnPaint%2A> de la classe de base.
 
 6. Modifiez le code afin d’incorporer la peinture personnalisée pour votre contrôle.
 
@@ -47,8 +47,8 @@ Si vous souhaitez créer un contrôle entièrement personnalisé à utiliser sur
 ## <a name="see-also"></a>Voir aussi
 
 - [Variétés de contrôles personnalisés](varieties-of-custom-controls.md)
-- [Guide pratique pour Hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Guide pratique pour Hériter de contrôles Windows Forms existants](how-to-inherit-from-existing-windows-forms-controls.md)
-- [Guide pratique : Créer des contrôles pour Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Comment : hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Guide pratique pour hériter de contrôles Windows Forms existants](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Guide pratique pour créer des contrôles pour des Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Dépannage des gestionnaires d’événements hérités en Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
 - [Développement de contrôles Windows Forms au moment du design](developing-windows-forms-controls-at-design-time.md)

@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 955522630af7eab458545e3b4e9631e6fbea31eb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 9f215bb5f6d2ec480022af477d93d9411fe190cd
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038465"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424479"
 ---
 # <a name="ws-transaction-flow"></a>WS Transaction Flow
-Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et des options de client et de serveur pour le flux de transaction, à l’aide du protocole WS-Atomic Transaction ou OleTransactions. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice, mais les opérations sont attribuées pour démontrer l' `TransactionFlowAttribute` utilisation du avec l’énumération **TransactionFlowOption** pour déterminer à quel degré le workflow de transaction est activé. Dans l’étendue de la transaction passée, un journal des opérations demandées est écrit dans une base de données et est conservé jusqu’à ce que la transaction coordonnée par le client soit terminée. Si la transaction cliente ne se termine pas, la transaction de service Web garantit que les mises à jour appropriées de la base de données ne sont pas validées.  
+Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et des options de client et de serveur pour le flux de transaction, à l’aide du protocole WS-Atomic Transaction ou OleTransactions. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice, mais les opérations sont attribuées pour illustrer l’utilisation de l' `TransactionFlowAttribute` avec l’énumération **TransactionFlowOption** pour déterminer à quel degré le workflow de transaction est activé. Dans l'étendue de la transaction passée, un journal des opérations demandées est écrit dans une base de données et est conservé jusqu'à ce que la transaction coordonnée par le client soit terminée. Si la transaction cliente ne se termine pas, la transaction de service Web garantit que les mises à jour appropriées de la base de données ne sont pas validées.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -39,15 +39,15 @@ public interface ICalculator
 
  Cela permet de définir les opérations dans l'ordre dans lequel elles seront traitées :  
   
-- Une demande d'opération `Add` doit inclure une transaction passée.  
+- Une demande d’opération `Add` doit inclure une transaction passée.  
   
-- Une demande d'opération `Subtract` peut inclure une transaction passée.  
+- Une demande d’opération `Subtract` peut inclure une transaction passée.  
   
-- Une demande d'opération `Multiply` ne doit pas inclure de transaction passée par l'intermédiaire du paramètre NotAllowed explicite.  
+- Une demande d’opération `Multiply` ne doit pas inclure de transaction passée par l’intermédiaire du paramètre NotAllowed explicite.  
   
 - Une demande d'opération `Divide` ne doit pas inclure de transaction passée par omission d'un attribut `TransactionFlow`.  
   
- Pour activer le workflow de transaction, les liaisons avec la [ \<propriété TransactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) activée doivent être utilisées en plus des attributs d’opération appropriés. Dans cet exemple, la configuration du service expose un point de terminaison TCP et un point de terminaison HTTP en plus du point de terminaison d'échange de métadonnées. Le point de terminaison TCP et le point de terminaison http utilisent les liaisons suivantes, qui ont toutes les deux la [ \<propriété TransactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) activée.  
+ Pour activer le workflow de transaction, les liaisons avec la propriété [\<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) activée doivent être utilisées en plus des attributs d’opération appropriés. Dans cet exemple, la configuration du service expose un point de terminaison TCP et un point de terminaison HTTP en plus du point de terminaison d'échange de métadonnées. Le point de terminaison TCP et le point de terminaison HTTP utilisent les liaisons suivantes, qui ont la propriété [\<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) activée.  
   
 ```xml  
 <bindings>  
@@ -66,7 +66,7 @@ public interface ICalculator
 > [!NOTE]
 > netTcpBinding fourni par le système autorise la spécification de transactionProtocol alors que wsHttpBinding fourni par le système utilise uniquement le protocole WSAtomicTransactionOctober2004 plus interopérable. Le protocole OleTransactions est uniquement disponible pour une utilisation par les clients Windows Communication Foundation (WCF).  
   
- Pour la classe qui implémente l'interface `ICalculator`, toutes les méthodes sont attribuées avec la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> définie sur `true`. Ce paramètre déclare que toutes les actions prises dans la méthode se produisent dans l'étendue d'une transaction. Dans ce cas, les actions prises incluent l'enregistrement dans la base de données journal. Si la demande d'opération inclut une transaction passée, les actions se produisent alors dans l'étendue de la transaction entrante ou une nouvelle étendue de transaction est automatiquement générée.  
+ Pour la classe qui implémente l'interface `ICalculator`, toutes les méthodes sont attribuées avec la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> définie sur `true`. Ce paramètre déclare que toutes les actions prises dans la méthode se produisent dans l’étendue d’une transaction. Dans ce cas, les actions prises incluent l'enregistrement dans la base de données journal. Si la demande d’opération inclut une transaction passée, les actions se produisent alors dans l’étendue de la transaction entrante ou une nouvelle étendue de transaction est automatiquement générée.  
   
 > [!NOTE]
 > La propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> définit le comportement local appliqué aux implémentations de méthode de service et ne définit pas la capacité du client à transmettre la transaction, ni l'obligation de cette transmission.  
@@ -190,11 +190,11 @@ Console.WriteLine("Transaction committed");
   
 - La demande `Multiply` ne transmet pas de transaction au service, car la définition générée du client de l’interface `ICalculator` inclut un <xref:System.ServiceModel.TransactionFlowAttribute> ayant la valeur <xref:System.ServiceModel.TransactionFlowOption>`NotAllowed`.  
   
-- La demande `Divide` ne transmet pas de transaction au service, car la définition générée du client de l'interface `ICalculator` n'inclut pas de `TransactionFlowAttribute`. Les actions du service se produisent encore dans l'étendue d'une autre transaction nouvelle et non connectée.  
+- La demande `Divide` ne transmet pas de transaction au service, car la définition générée du client de l'interface `ICalculator` n'inclut pas de `TransactionFlowAttribute`. Les actions du service se produisent encore dans l’étendue d’une autre transaction nouvelle et non connectée.  
   
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-```  
+```console  
 Starting transaction  
   Add(100,15.99) = 115.99  
   Subtract(145,76.54) = 68.46  
@@ -208,7 +208,7 @@ Press <ENTER> to terminate client.
   
  Le journal des demandes faites à l'opération de service est visible dans la fenêtre de console du service. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-```  
+```console  
 Press <ENTER> to terminate the service.  
   Writing row to database: Adding 100 to 15.99  
   Writing row to database: Subtracting 76.54 from 145  
@@ -219,7 +219,7 @@ Press <ENTER> to terminate the service.
   
  Après une exécution réussie, l'étendue de transaction du client se termine et toutes les actions prises dans cette étendue sont validées. En particulier, les 5 enregistrements distingués sont conservés dans la base de données du service. Les deux premiers se sont produits dans l'étendue de la transaction du client.  
   
- Si une exception s'est produite dans le `TransactionScope` du client, la transaction ne peut alors pas se terminer. Les enregistrements consignés dans cette étendue ne sont alors par validés dans la base de données. Pour observer cet effet, répétez l'exécution de l'exemple après avoir commenté l'appel pour qu'il termine le `TransactionScope` externe. Sur cette exécution, seules les 3 dernières actions (demandes de la seconde `Subtract`, `Multiply` et `Divide`) sont enregistrées, car la transaction cliente ne leur a pas été transmise.  
+ Si une exception s’est produite dans le `TransactionScope` du client, la transaction ne peut alors pas se terminer. Les enregistrements consignés dans cette étendue ne sont alors par validés dans la base de données. Pour observer cet effet, répétez l'exécution de l'exemple après avoir commenté l'appel pour qu'il termine le `TransactionScope` externe. Sur cette exécution, seules les 3 dernières actions (demandes de la seconde `Subtract`, `Multiply` et `Divide`) sont enregistrées, car la transaction cliente ne leur a pas été transmise.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -234,7 +234,7 @@ Press <ENTER> to terminate the service.
   
  Que vous exécutiez l’exemple sur le même ordinateur ou sur des ordinateurs différents, vous devez configurer le Distributed Transaction Coordinator Microsoft (MSDTC) pour activer le workflow de transaction réseau et utiliser l’outil WsatConfig. exe pour activer la prise en charge réseau des transactions WCF.  
   
-### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Pour configurer Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l’exécution de l’exemple  
+### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Pour configurer Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l'exécution de l'exemple  
   
 1. Sur un ordinateur de service Windows Server 2003 ou Windows XP, configurez MSDTC pour autoriser des transactions réseau entrantes en suivant ces instructions.  
   
@@ -266,7 +266,7 @@ Press <ENTER> to terminate the service.
   
     6. Cliquez sur **OK** pour fermer la boîte de dialogue.  
   
-3. Sur l’ordinateur client, configurez MSDTC pour autoriser les transactions réseau sortantes :  
+3. Sur l'ordinateur client, configurez MSDTC pour autoriser les transactions réseau sortantes :  
   
     1. Dans le menu **Démarrer** , accédez à `Control Panel`, puis **Outils d’administration**et **services de composants**.  
   
@@ -285,6 +285,6 @@ Press <ENTER> to terminate the service.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\TransactionFlow`

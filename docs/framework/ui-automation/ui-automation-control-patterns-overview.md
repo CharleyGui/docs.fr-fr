@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: a3daf75417260d7e761da2e90c595471b2a4b2a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: acb10df0da97954f4c2f7451d75d2f3042938e48
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131514"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458096"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
 > [!NOTE]
@@ -55,7 +55,7 @@ ms.locfileid: "73131514"
 |---------------------------|------------------------|-----------------|  
 |<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.Provider.IDockProvider>|Utilisées pour les contrôles qui peuvent être ancrés dans un conteneur d’ancrage. Par exemple, les barres d’outils ou les palettes d’outils.|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern>|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Utilisées pour les contrôles qui peuvent être développés ou réduits. Par exemple, les éléments de menu dans une application, comme le menu **Fichier** .|  
-|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Utilisées pour les contrôles qui prennent en charge des fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. Par exemple, le mode Grandes icônes dans l’Explorateur Windows ou les tableaux simples sans en-têtes dans [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)].|  
+|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.Provider.IGridProvider>|Utilisées pour les contrôles qui prennent en charge des fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. Par exemple, la vue grande icône dans l’Explorateur Windows ou les tableaux simples sans en-têtes dans Microsoft Word.|  
 |<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Utilisées pour les contrôles dont les grilles contiennent des cellules. Les cellules individuelles doivent prendre en charge le modèle GridItem. Par exemple, chaque cellule dans l’affichage détaillé de l’Explorateur Microsoft Windows.|  
 |<xref:System.Windows.Automation.InvokePattern>|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Utilisées pour les contrôles qui peuvent être appelés, tel qu’un bouton.|  
 |<xref:System.Windows.Automation.MultipleViewPattern>|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Utilisées pour les contrôles qui peuvent basculer entre plusieurs représentations du même ensemble d’informations, de données ou d’enfants. Par exemple, un contrôle list view où les données sont disponibles en affichage Miniatures, Mosaïques, Icônes, Liste ou Détails.|  
@@ -64,13 +64,13 @@ ms.locfileid: "73131514"
 |<xref:System.Windows.Automation.ScrollItemPattern>|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|Utilisées pour les contrôles qui disposent d’éléments individuels dans une liste déroulante. Par exemple, un contrôle de liste qui dispose d’éléments individuels dans la liste déroulante, comme un contrôle zone de liste déroulante.|  
 |<xref:System.Windows.Automation.SelectionPattern>|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Utilisées pour les contrôles conteneur de sélection. Par exemple, les zones de liste et zones de liste modifiable.|  
 |<xref:System.Windows.Automation.SelectionItemPattern>|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Utilisées pour les éléments individuels dans les contrôles conteneur de sélection, tels que les zones de liste et zones de liste modifiables.|  
-|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Utilisées pour les contrôles qui disposent d’une grille ainsi que d’informations d’en-tête. Par exemple, les feuilles de calcul [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] .|  
+|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.Provider.ITableProvider>|Utilisées pour les contrôles qui disposent d’une grille ainsi que d’informations d’en-tête. Par exemple, les feuilles de calcul Microsoft Excel.|  
 |<xref:System.Windows.Automation.TableItemPattern>|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Utilisées pour les éléments d’une table.|  
 |<xref:System.Windows.Automation.TextPattern>|<xref:System.Windows.Automation.Provider.ITextProvider>|Utilisées pour les contrôles d’édition et les documents qui exposent des informations textuelles.|  
 |<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.Provider.IToggleProvider>|Utilisées pour les contrôles dont l’état peut être activé et désactivé. Par exemple, les cases à cocher et les éléments de menu pouvant être activés.|  
 |<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.Provider.ITransformProvider>|Utilisées pour les contrôles qui peuvent être redimensionnés, déplacés et pivotés. Les utilisations courantes du modèle de contrôle Transform se font dans les concepteurs, les formulaires les éditeurs graphiques et les applications de dessin.|  
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|Permet aux clients d’obtenir ou de définir une valeur sur des contrôles qui ne prennent pas en charge une plage de valeurs. Par exemple, un sélecteur de date et heure.|  
-|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Expose des informations spécifiques à Windows, un concept fondamental du système d’exploitation Microsoft Windows. Les fenêtres d’application de niveau supérieur ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], l’Explorateur Microsoft Windows, etc.), les fenêtres enfants et les boîtes de dialogue de l’interface multidocument (MDI) sont des exemples de contrôles Windows.|  
+|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Expose des informations spécifiques à Windows, un concept fondamental du système d’exploitation Microsoft Windows. Les fenêtres d’application de niveau supérieur (Microsoft Word, Explorateur Microsoft Windows, etc.), les fenêtres enfants MDI et les boîtes de dialogue sont des exemples de contrôles qui sont des fenêtres.|  
   
 ## <a name="see-also"></a>Voir aussi
 

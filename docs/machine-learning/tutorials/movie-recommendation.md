@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 51dcf5cd85913f0e69ea51dff5101426cc57390f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2d960a43f7934e262fa0e19abfea0209aa4e9ff0
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774464"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425244"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Didacticiel : créer un conseiller de film à l’aide de factorizaton de matrice avec ML.NET
 
@@ -73,7 +73,7 @@ Il existe plusieurs façons d’aborder les problèmes de suggestion, par exempl
 
 2. Dans l'Explorateur de solutions, cliquez avec le bouton droit sur chacun des fichiers \*.csv, puis sélectionnez **Propriétés**. Sous **Avancé**, définissez la valeur **Copier dans le répertoire de sortie** sur **Copier si plus récent**.
 
-   ![copier si plus récent dans Visual Studio](./media/movie-recommendation/copytoout.gif)
+   ![GIF d’un utilisateur qui sélectionne copier si plus récent dans Visual Studio.](./media/movie-recommendation/copy-to-output-if-newer.gif)
 
 ## <a name="load-your-data"></a>Charger vos données
 
@@ -83,7 +83,7 @@ Les données d’évaluation pour les suggestions sont divisées en jeux de donn
 
 Voici un aperçu des données de vos fichiers \*.csv :
 
-![aperçu des données](./media/movie-recommendation/csv-dataset-preview.png)
+![Capture d’écran de la préversion du jeu de données CVS.](./media/movie-recommendation/csv-file-dataset-preview.png)
 
 Les fichiers \*.csv comportent quatre colonnes :
 
@@ -171,11 +171,11 @@ Il existe trois concepts majeurs dans ML.NET : les [données](../resources/glos
 
 Les algorithmes d’entraînement de machine Learning nécessitent des données dans un certain format. Les `Transformers` servent à transformer les données tabulaires dans un format compatible.
 
-![image de transformateur](./media/movie-recommendation/transformer.png)
+![Diagramme du flux de données du transformateur.](./media/movie-recommendation/data-transformer-transformed.png)
 
 Vous créez des `Transformers` dans ML.NET en créant des `Estimators`. Les `Estimators` prennent des données et retournent des `Transformers`.
 
-![image d’estimateur](./media/movie-recommendation/estimator.png)
+![Diagramme du flux de données de l’estimateur.](./media/movie-recommendation/data-estimator-transformer.png)
 
 L’algorithme d’entraînement de suggestion que vous utiliserez pour l’entraînement de votre modèle est un exemple d’`Estimator`.
 

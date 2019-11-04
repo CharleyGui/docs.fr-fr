@@ -3,14 +3,14 @@ title: Bien démarrer avec le stockage Table Azure en F#
 description: Stockez des données structurées dans le Cloud à l’aide du stockage table Azure ou Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: 30ffd5f099dbb8efbf57104a2ade6c26304b7cee
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 6833e2264f7543f50b94892b6980140e4bf1cdd1
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395209"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424607"
 ---
-# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Prise en main du stockage table Azure et du Azure Cosmos DB API Table à l’aide de F @ no__t-0
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Prise en main du stockage table Azure et du Azure Cosmos DB API Table à l’aide de F\#
 
 Le stockage table Azure est un service qui stocke des données NoSQL structurées dans le Cloud. Le stockage table est un magasin de clés/attributs avec une conception sans schéma. Étant donné que le stockage de tables est sans schéma, il est facile d’adapter vos données à mesure que les besoins de votre application évoluent. L’accès aux données est rapide et économique pour tous les types d’applications. Le stockage de table est généralement beaucoup plus économique que le SQL traditionnel pour des volumes de données similaires.
 
@@ -54,7 +54,7 @@ Si vous vous connectez à un service de table de stockage Azure, vous aurez beso
 
 ### <a name="get-your-azure-cosmos-db-connection-string"></a>Obtient votre chaîne de connexion Azure Cosmos DB
 
-Si vous vous connectez à Azure Cosmos DB, vous aurez besoin de votre chaîne de connexion pour ce didacticiel. Vous pouvez copier votre chaîne de connexion à partir du Portail Azure. Dans le Portail Azure, dans votre compte Cosmos DB, accédez à **paramètres** > **chaîne de connexion**, puis cliquez sur le bouton **copier** pour copier votre chaîne de connexion principale. 
+Si vous vous connectez à Azure Cosmos DB, vous aurez besoin de votre chaîne de connexion pour ce didacticiel. Vous pouvez copier votre chaîne de connexion à partir du Portail Azure. Dans le Portail Azure, dans votre compte Cosmos DB, accédez à **paramètres** > **chaîne de connexion**, puis cliquez sur le bouton **copier** pour copier votre chaîne de connexion principale.
 
 Pour le didacticiel, entrez votre chaîne de connexion dans votre script, comme dans l’exemple suivant :
 

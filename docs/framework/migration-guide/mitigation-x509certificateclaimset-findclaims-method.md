@@ -2,12 +2,12 @@
 title: 'Atténuation : X509CertificateClaimSet.FindClaims, méthode'
 ms.date: 03/30/2017
 ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
-ms.openlocfilehash: 5591ecebeb924f84cc0efdaf78f40f9d835d2d02
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e75b1cae599b153012b8525a0e1e36ed116e695f
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126085"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457754"
 ---
 # <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Atténuation : X509CertificateClaimSet.FindClaims, méthode
 En commençant par les applications qui ciblent .NET Framework 4.6.1, la méthode <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> tente de trouver une correspondance à l’argument `claimType` parmi toutes les entrées DNS de son champ SAN.  
@@ -36,4 +36,4 @@ En commençant par les applications qui ciblent .NET Framework 4.6.1, la méthod
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-1.md)
+- [Compatibilité des applications](application-compatibility.md)

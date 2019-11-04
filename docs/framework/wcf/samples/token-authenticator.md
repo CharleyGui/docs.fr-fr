@@ -2,12 +2,12 @@
 title: Token Authenticator
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: a8a8713cd35e73b5126dadd7e0e17a3f8304188b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 835a158ba668a3aef749602c73fd9157e8d83a40
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045456"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425033"
 ---
 # <a name="token-authenticator"></a>Token Authenticator
 Cet exemple montre comment implémenter un authentificateur de jetons personnalisé. Un authentificateur de jetons dans Windows Communication Foundation (WCF) est utilisé pour valider le jeton utilisé avec le message, vérifier qu’il est auto-cohérent et authentifier l’identité associée au jeton.
@@ -108,7 +108,7 @@ Cet exemple montre comment implémenter un authentificateur de jetons personnali
 
  L'implémentation cliente définit le nom d'utilisateur et le mot de passe à utiliser.
 
-```
+```csharp
 static void Main()
 {
      ...
@@ -125,7 +125,7 @@ static void Main()
 
      L'exemple implémente un authentificateur de jetons personnalisé qui valide que le nom d'utilisateur a un format d'adresse de messagerie valide. Il dérive <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator>. La méthode la plus importante de cette classe est <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29>. Dans cette méthode, l'authentificateur valide le format du nom d'utilisateur et également que le nom d'hôte ne provient pas d'un domaine non autorisé. Si ces deux conditions sont vérifiées, il retourne une collection d'instances <xref:System.IdentityModel.Policy.IAuthorizationPolicy> en lecture seule qui est par la suite utilisée pour fournir des revendications représentant les informations stockée à l'intérieur du jeton de nom d'utilisateur.
 
-    ```
+    ```csharp
     protected override ReadOnlyCollection<IAuthorizationPolicy> ValidateUserNamePasswordCore(string userName, string password)
     {
         if (!ValidateUserNameFormat(userName))
@@ -144,7 +144,7 @@ static void Main()
 
      Cet exemple fournit sa propre implémentation de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> appelé `UnconditionalPolicy` qui retourne l'ensemble de revendications et d'identités qui lui ont été passées dans son constructeur.
 
-    ```
+    ```csharp
     class UnconditionalPolicy : IAuthorizationPolicy
     {
         String id = Guid.NewGuid().ToString();
@@ -214,7 +214,7 @@ static void Main()
 
      <xref:System.IdentityModel.Selectors.SecurityTokenManager> permet de créer <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> pour des objets <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> spécifiques qui lui sont passés dans la méthode `CreateSecurityTokenAuthenticator`. Le gestionnaire de jetons de sécurité permet également de créer des fournisseurs et des sérialiseurs de jeton, mais ceux-ci ne sont pas traités dans cet exemple. Dans cet exemple, le gestionnaire de jetons de sécurité personnalisé hérite de classe <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> et substitue la méthode `CreateSecurityTokenAuthenticator` pour retourner l’authentificateur de jeton de nom d’utilisateur personnalisé lorsque les exigences de jeton passées indiquent que l’authentificateur de nom d’utilisateur est demandé.
 
-    ```
+    ```csharp
     public class MySecurityTokenManager : ServiceCredentialsSecurityTokenManager
     {
         MyUserNameCredential myUserNameCredential;
@@ -244,7 +244,7 @@ static void Main()
 
      La classe d'informations d'identification de service permet de représenter les informations d'identification qui sont configurées pour le service et crée un gestionnaire de jetons de sécurité utilisé pour obtenir des authentificateurs, des fournisseurs et des sérialiseurs de jeton.
 
-    ```
+    ```csharp
     public class MyUserNameCredential : ServiceCredentials
     {
 
@@ -270,7 +270,7 @@ static void Main()
 
      Pour que le service utilise l'information d'identification de service personnalisée, nous supprimons la classe d'informations d'identification de service par défaut après avoir capturé le certificat de service qui est déjà préconfiguré dans les informations d'identification de service par défaut, puis nous configurons la nouvelle instance d'informations d'identification de service afin qu'elle utilise les certificats de service préconfigurés et ajoutons cette nouvelle instance aux comportements de service.
 
-    ```
+    ```csharp
     ServiceCredentials sc = serviceHost.Credentials;
     X509Certificate2 cert = sc.ServiceCertificate.Certificate;
     MyUserNameCredential serviceCredential = new MyUserNameCredential();
@@ -281,7 +281,7 @@ static void Main()
 
  Pour afficher les informations sur l'appelant, vous pouvez utiliser <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A>, tel qu'indiqué dans le code suivant. <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> contient des informations sur les revendications relatives à l'appelant actuel.
 
-```
+```csharp
 static void DisplayIdentityInformation()
 {
     Console.WriteLine("\t\tSecurity context identity  :  {0}",
@@ -301,7 +301,7 @@ static void DisplayIdentityInformation()
 
      Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser. La variable `%SERVER_NAME%` spécifie le nom du serveur. Modifiez cette variable pour spécifier votre propre nom de serveur. La valeur par défaut dans ce fichier de commandes est localhost.
 
-    ```
+    ```console
     echo ************
     echo Server cert setup starting
     echo %SERVER_NAME%
@@ -315,7 +315,7 @@ static void DisplayIdentityInformation()
 
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
-    ```
+    ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 

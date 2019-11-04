@@ -13,23 +13,23 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: b9d9efb62e0c6bc0925662bc9424065922a1534c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5cf10a4d50aec561fea4f8537098345f8e03a26a
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051983"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457978"
 ---
-# <a name="developing-client-applications-with-the-net-framework"></a>Développement d’applications clientes avec le .NET Framework
+# <a name="develop-client-applications-with-the-net-framework"></a>Développez des applications clientes avec le .NET Framework
 
-Il existe plusieurs façons de développer des applications Windows avec le .NET Framework. Vous pouvez utiliser l’un de ces outils et de ces frameworks : 
+Il existe plusieurs façons de développer des applications Windows avec le .NET Framework. Vous pouvez utiliser l’un de ces outils et de ces frameworks :
 
 - [Plateforme Windows universelle (UWP)](https://developer.microsoft.com/windows/apps)
 - [Windows Presentation Foundation (WPF)](./wpf/index.md)
 - [Windows Forms](./winforms/index.md)
 
 Cette section contient des rubriques qui décrivent comment créer des applications Windows avec Windows Presentation Foundation ou avec Windows Forms. Toutefois, vous pouvez aussi créer des applications web avec le .NET Framework et des applications clientes pour les ordinateurs et les appareils que vous mettez à disposition dans le Microsoft Store.
- 
+
 ## <a name="in-this-section"></a>Dans cette section
 
 [Windows Presentation Foundation](./wpf/index.md)  
@@ -37,9 +37,6 @@ Fournit des informations sur le développement d'applications à l'aide de WPF
 
 [Windows Forms](./winforms/index.md)  
 Fournit des informations sur le développement d'applications à l'aide de Windows Forms.
-
-[Technologies clientes communes](./common-client-technologies/index.md)  
-Fournit des informations sur d'autres technologies qui peuvent être utilisées lors du développement d'applications clientes
 
 ## <a name="related-sections"></a>Rubriques connexes
 

@@ -1,16 +1,16 @@
 ---
-title: 'Transport : Interopérabilité TCP WSE 3.0'
+title: 'Transport: WSE 3.0 TCP Interoperability'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 9b73f9ef93ebfabf2b1c39363bd64785e2892956
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6541ddf322a2084601daf2f1271ac5c888073f8f
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941034"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73423875"
 ---
-# <a name="transport-wse-30-tcp-interoperability"></a>Transport : Interopérabilité TCP WSE 3.0
-L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment implémenter une session duplex TCP en tant que transport Windows Communication Foundation personnalisé (WCF). Il décrit également comment utiliser l'extensibilité de la couche du canal pour assurer l'interface sur le câble avec les systèmes déployés existants. Les étapes suivantes montrent comment générer ce transport WCF personnalisé:  
+# <a name="transport-wse-30-tcp-interoperability"></a>Transport: WSE 3.0 TCP Interoperability
+L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment implémenter une session duplex TCP en tant que transport Windows Communication Foundation personnalisé (WCF). Il décrit également comment utiliser l'extensibilité de la couche du canal pour assurer l'interface sur le câble avec les systèmes déployés existants. Les étapes suivantes montrent comment générer ce transport WCF personnalisé :  
   
 1. À partir d'un socket TCP, créez les implémentations serveur et client de <xref:System.ServiceModel.Channels.IDuplexSessionChannel> qui utilisent le tramage DIME pour définir les limites de message.  
   
@@ -23,7 +23,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 5. Ajoutez un élément de liaison qui ajoute le transport personnalisé à une pile de canaux. Pour plus d’informations, consultez [Ajout d’un élément de liaison].  
   
 ## <a name="creating-iduplexsessionchannel"></a>Création de IDuplexSessionChannel  
- La première étape de l'écriture du transport WSE 3.0 TCP Interoperability consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IDuplexSessionChannel> sur <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` dérive de <xref:System.ServiceModel.Channels.ChannelBase>. La logique d’envoi d’un message se compose de deux parties principales: (1) encodage du message en octets et (2) détailler ces octets et les envoyer sur le câble.  
+ La première étape de l'écriture du transport WSE 3.0 TCP Interoperability consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IDuplexSessionChannel> sur <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` dérive de <xref:System.ServiceModel.Channels.ChannelBase>. La logique d'envoi d'un message comporte deux parties principales : (1) encodage du message en octets, et (2) tramage et envoi des octets sur le câble.  
   
  `ArraySegment<byte> encodedBytes = EncodeMessage(message);`  
   
@@ -52,7 +52,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 ## <a name="channel-factory"></a>Fabrique de canaux  
  L'étape suivante de l'écriture du transport TCP consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IChannelFactory> pour les canaux clients.  
   
-- `WseTcpChannelFactory`dérive de <xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel >. Il s'agit d'une fabrique qui substitue `OnCreateChannel` pour produire des canaux clients.  
+- `WseTcpChannelFactory` dérive de <xref:System.ServiceModel.Channels.ChannelFactoryBase>\<IDuplexSessionChannel >. Il s'agit d'une fabrique qui substitue `OnCreateChannel` pour produire des canaux clients.  
   
  `protected override IDuplexSessionChannel OnCreateChannel(EndpointAddress remoteAddress, Uri via)`  
   
@@ -62,7 +62,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
   
  `}`  
   
-- `ClientWseTcpDuplexSessionChannel`Ajoute de la logique à `WseTcpDuplexSessionChannel` la base pour se connecter à un `channel.Open` serveur TCP à l’heure. Le nom d'hôte est d'abord résolu en une adresse IP, comme indiqué dans le code suivant.  
+- `ClientWseTcpDuplexSessionChannel` ajoute de la logique au `WseTcpDuplexSessionChannel` de base pour se connecter à un serveur TCP à `channel.Open` moment. Le nom d'hôte est d'abord résolu en une adresse IP, comme indiqué dans le code suivant.  
   
  `hostEntry = Dns.GetHostEntry(Via.Host);`  
   
@@ -79,7 +79,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 ## <a name="channel-listener"></a>Écouteur de canal  
  L'étape suivante de l'écriture du transport TCP consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IChannelListener> permettant d'accepter les canaux serveur.  
   
-- `WseTcpChannelListener`dérive de <xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel > et des remplacements sur [begin] Open et on [begin] Close pour contrôler la durée de vie de son socket d’écoute. Dans OnOpen, un socket est créé pour écouter sur IP_ANY. Des implémentations plus avancées peuvent créer un deuxième socket pour écouter également sur IPv6. Elles permettent également de spécifier l'adresse IP dans le nom d'hôte.  
+- `WseTcpChannelListener` dérive des <xref:System.ServiceModel.Channels.ChannelListenerBase>\<IDuplexSessionChannel > et des remplacements sur [begin] Open et on [begin] Close pour contrôler la durée de vie de son socket d’écoute. Dans OnOpen, un socket est créé pour écouter sur IP_ANY. Des implémentations plus avancées peuvent créer un deuxième socket pour écouter également sur IPv6. Elles permettent également de spécifier l'adresse IP dans le nom d'hôte.  
   
  `IPEndPoint localEndpoint = new IPEndPoint(IPAddress.Any, uri.Port);`  
   
@@ -135,7 +135,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
   
  Client :  
   
-```  
+```console  
 Calling soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  
   
 Symbol: FABRIKAM  
@@ -159,7 +159,7 @@ Press enter.
   
  Serveur :  
   
-```  
+```console  
 Listening for messages at soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  
   
 Press any key to exit when done...  

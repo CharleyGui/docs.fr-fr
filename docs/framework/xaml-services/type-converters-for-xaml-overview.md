@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: e401b40e1c11504e3c27d5b3601d71ef8f5821e1
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: b54731cc1aba1a47ed6b11f2bff5c596a53fd4b5
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169002"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73458507"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Vue d'ensemble des convertisseurs de types pour XAML
 Les convertisseurs de type fournissent la logique nécessaire à un writer d'objet qui convertit une chaîne de balisage XAML en objets particuliers d'un graphique d'objets. Dans les services XAML .NET Framework, le convertisseur de type doit être une classe dérivée de <xref:System.ComponentModel.TypeConverter>. Certains convertisseurs prennent également en charge le chemin d'enregistrement XAML et peuvent être utilisés pour sérialiser un objet sous forme de chaîne dans le balisage de sérialisation. Cette rubrique décrit comment et quand les convertisseurs de type en XAML sont appelés, et fournit des conseils d'implémentation pour les substitutions de méthode de <xref:System.ComponentModel.TypeConverter>.  
@@ -60,7 +60,7 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> et <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> sont des méthodes de support utilisées lorsqu'un service interroge les fonctions de l'implémentation <xref:System.ComponentModel.TypeConverter> . Vous devez implémenter ces méthodes pour retourner `true` dans des cas spécifiques au type pris en charge par les méthodes de conversion correspondantes de votre convertisseur. Pour le langage XAML, cela correspond généralement au type <xref:System.String> .  
   
 ### <a name="culture-information-and-type-converters-for-xaml"></a>Informations de culture et convertisseurs de type pour XAML  
- Chaque implémentation <xref:System.ComponentModel.TypeConverter> peut interpréter de façon unique ce qui constitue une chaîne valide dans le cadre d'une conversion ; elle peut également utiliser ou ignorer la description de type passée en tant que paramètres. Considération importante relative à la culture et à la conversion de type XAML : bien que l'utilisation de chaînes localisables en tant que valeurs d'attribut soit prise en charge par XAML, vous ne pouvez pas employer ces chaînes localisables comme entrée de convertisseur de type avec des spécifications de culture particulières. Cette restriction est due au fait que les convertisseurs de types des valeurs d'attribut XAML impliquent un comportement de traitement XAML de langage fixe qui utilise la culture `en-US` . Pour plus d’informations sur les raisons de conception de cette restriction, consultez la spécification de langage XAML ([\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525)) ou [vue d’ensemble de la globalisation et de la localisation WPF](../wpf/advanced/wpf-globalization-and-localization-overview.md).  
+ Chaque implémentation <xref:System.ComponentModel.TypeConverter> peut interpréter de façon unique ce qui constitue une chaîne valide dans le cadre d'une conversion ; elle peut également utiliser ou ignorer la description de type passée en tant que paramètres. Considération importante relative à la culture et à la conversion de type XAML : bien que l'utilisation de chaînes localisables en tant que valeurs d'attribut soit prise en charge par XAML, vous ne pouvez pas employer ces chaînes localisables comme entrée de convertisseur de type avec des spécifications de culture particulières. Cette restriction est due au fait que les convertisseurs de types des valeurs d'attribut XAML impliquent un comportement de traitement XAML de langage fixe qui utilise la culture `en-US` . Pour plus d’informations sur les raisons de conception de cette restriction, consultez la spécification du langage XAML ([\[MS-xaml\]](https://go.microsoft.com/fwlink/?LinkId=114525)) ou [vue d’ensemble de la globalisation et de la localisation WPF](../wpf/advanced/wpf-globalization-and-localization-overview.md).  
   
  Par exemple, certaines cultures utilisent une virgule au lieu d'un point comme séparateur décimal pour les nombres sous forme de chaîne, ce qui peut poser un problème. Cette utilisation crée un conflit avec le comportement de nombreux convertisseurs de type existants, qui consiste à utiliser une virgule comme délimiteur. Le passage d'une culture via `xml:lang` dans le code XAML environnant ne résout pas le problème.  
   
@@ -70,7 +70,7 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
  Chaque implémentation de <xref:System.ComponentModel.TypeConverter> peut interpréter de façon unique ce qui constitue une chaîne valide dans le cadre d'une conversion ; elle peut également utiliser ou ignorer la description de type ou les contextes de culture passés en tant que paramètres. Cependant, le traitement XAML WPF ne passe pas nécessairement des valeurs au contexte de description de type dans tous les cas, ni de culture en fonction de `xml:lang`.  
   
 > [!NOTE]
-> N’utilisez pas les accolades ({}), en particulier l’accolade ouvrante ({), en tant qu’élément de votre format de chaîne. Ces caractères sont réservés comme entrée et sortie d'une séquence d'extension de balisage.  
+> N’utilisez pas les accolades ({}), en particulier l’accolade ouvrante ({), en tant qu’élément de votre format de chaîne. Ces caractères sont réservés comme entrée et sortie d’une séquence d’extension de balisage.  
   
  Il convient de lever une exception si votre convertisseur de type doit accéder à un service XAML à partir du writer d'objet de services XAML .NET Framework, mais que l'appel à <xref:System.IServiceProvider.GetService%2A> effectué par rapport au contexte ne retourne pas ce service.  
   
@@ -93,9 +93,9 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
   
 <a name="Applying_the_TypeConverterAttribute"></a>   
 ## <a name="applying-the-typeconverterattribute"></a>Application de TypeConverterAttribute  
- Pour que votre convertisseur de type personnalisé soit utilisé comme convertisseur de type agissant pour une classe personnalisée en .NET Framework les <xref:System.ComponentModel.TypeConverterAttribute> services XAML, vous devez appliquer à votre définition de classe. La propriété <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> que vous spécifiez via l'attribut doit être le nom de type du convertisseur de type personnalisé. Si vous appliquez cet attribut, lorsqu'un processeur XAML gère des valeurs où le type de propriété utilise votre type de classe personnalisée, il peut entrer des chaînes et retourner des instances d'objet.  
+ Pour que votre convertisseur de type personnalisé soit utilisé comme convertisseur de type agissant pour une classe personnalisée en .NET Framework les services XAML, vous devez appliquer la <xref:System.ComponentModel.TypeConverterAttribute> à votre définition de classe. La propriété <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> que vous spécifiez via l'attribut doit être le nom de type du convertisseur de type personnalisé. Si vous appliquez cet attribut, lorsqu'un processeur XAML gère des valeurs où le type de propriété utilise votre type de classe personnalisée, il peut entrer des chaînes et retourner des instances d'objet.  
   
- Vous pouvez également fournir un convertisseur de type en fonction de la propriété. Au lieu d’appliquer <xref:System.ComponentModel.TypeConverterAttribute> un à la définition de classe, appliquez-le à une définition de propriété (la définition `get` principale, et non les / `set` implémentations qu’il contient). Le type de la propriété doit correspondre au type traité par votre convertisseur de type personnalisé. Avec cet attribut appliqué, lorsqu'un processeur XAML gère des valeurs de cette propriété, il peut traiter des chaînes d'entrée et retourner des instances d'objet. La technique de conversion de type par propriété est particulièrement utile si vous choisissez d’utiliser un type de propriété à partir de Microsoft .NET Framework ou d’une autre bibliothèque où vous ne pouvez pas contrôler la <xref:System.ComponentModel.TypeConverterAttribute> définition de classe et ne pouvez pas l’appliquer.  
+ Vous pouvez également fournir un convertisseur de type en fonction de la propriété. Au lieu d’appliquer un <xref:System.ComponentModel.TypeConverterAttribute> à la définition de classe, appliquez-le à une définition de propriété (la définition principale, et non à la `get`/`set` implémentations qu’il contient). Le type de la propriété doit correspondre au type traité par votre convertisseur de type personnalisé. Avec cet attribut appliqué, lorsqu'un processeur XAML gère des valeurs de cette propriété, il peut traiter des chaînes d'entrée et retourner des instances d'objet. La technique de conversion de type par propriété est particulièrement utile si vous choisissez d’utiliser un type de propriété à partir de Microsoft .NET Framework ou d’une autre bibliothèque où vous ne pouvez pas contrôler la définition de classe et ne pouvez pas appliquer un <xref:System.ComponentModel.TypeConverterAttribute> à cet endroit.  
   
  Pour fournir un comportement de conversion de type pour un membre attaché personnalisé, appliquez <xref:System.ComponentModel.TypeConverterAttribute> à la méthode `Get` d'accesseur du modèle d'implémentation du membre attaché.  
   
@@ -111,4 +111,4 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
 
 - <xref:System.ComponentModel.TypeConverterAttribute>
 - [Convertisseurs de types et extensions de balisage pour XAML](type-converters-and-markup-extensions-for-xaml.md)
-- [Vue d’ensemble du langage XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Vue d’ensemble du langage XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

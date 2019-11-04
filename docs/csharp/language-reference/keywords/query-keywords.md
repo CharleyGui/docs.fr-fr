@@ -6,12 +6,12 @@ helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: ed931871e8abbfd9ff421a1307fb21c3490493fb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 44af3bf1a7c013c16c7b4a4528c3516621bea149
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608455"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422540"
 ---
 # <a name="query-keywords-c-reference"></a>Mots clés de requête (référence C#)
 
@@ -40,5 +40,5 @@ Cette section contient les mots clés contextuels utilisés dans les expression
 
 - [Mots clés C#](index.md)
 - [LINQ (Language Integrated Query)](../../programming-guide/concepts/linq/index.md)
-- [Expressions de requête LINQ](../../programming-guide/linq-query-expressions/index.md)
-- [Bien démarrer avec LINQ en C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [LINQ en C#](../../linq/index.md)
+- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)

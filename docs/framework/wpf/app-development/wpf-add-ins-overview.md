@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: e1daf9efd59b89d5d5be5f51cf9ac5e00750dda3
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 319f8b8c0225c7730112b1db073884b391945ac8
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919727"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73421098"
 ---
 # <a name="wpf-add-ins-overview"></a>Vue d'ensemble des compléments WPF
 
@@ -171,21 +171,21 @@ Les compléments fournissent souvent plusieurs interfaces utilisateur que les ap
 
 ## <a name="add-ins-and-xaml-browser-applications"></a>Compléments et applications de navigateur XAML
 
-Dans les exemples présentés jusqu’à maintenant, l’application hôte a été installée en tant qu’application autonome. Toutefois, les applications [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] peuvent également héberger des compléments, bien que ceux-ci s’accompagnent des exigences de génération et d’implémentation supplémentaires suivantes :
+Dans les exemples présentés jusqu’à maintenant, l’application hôte a été installée en tant qu’application autonome. Toutefois, les applications de navigateur XAML (XBAP) peuvent également héberger des compléments, bien qu’avec les exigences de génération et d’implémentation supplémentaires suivantes :
 
-- Le manifeste d’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] doit être configuré spécialement pour télécharger le pipeline (dossiers et assemblys) et l’assembly de complément dans le cache d’application ClickOnce sur l’ordinateur client, dans le même dossier que le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
+- Le manifeste de l’application XBAP doit être configuré spécialement pour télécharger le pipeline (dossiers et assemblys) et l’assembly du complément dans le cache d’application ClickOnce sur l’ordinateur client, dans le même dossier que le XBAP.
 
-- Le code [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] pour découvrir et charger des compléments doit utiliser le cache d’application ClickOnce pour le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] comme emplacement de pipeline et de complément.
+- Le code XBAP permettant de détecter et de charger les compléments doit utiliser le cache d’application ClickOnce pour l’application XBAP comme emplacement du pipeline et du complément.
 
-- L’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] doit charger le complément dans un contexte de sécurité spécial si ce complément référence des fichiers libres situés sur le site d’origine. Quand ils sont hébergés par l’application [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], les compléments peuvent uniquement référencer les fichiers libres situés sur le site d’origine de l’application hôte.
+- L’application XBAP doit charger le complément dans un contexte de sécurité spécial si le complément fait référence à des fichiers libres situés sur le site d’origine ; lorsqu’ils sont hébergés par des applications XBAP, les compléments peuvent uniquement faire référence à des fichiers libres situés sur le site d’origine de l’application hôte.
 
 Ces tâches sont décrites en détail dans les sous-sections suivantes.
 
 ### <a name="configuring-the-pipeline-and-add-in-for-clickonce-deployment"></a>Configuration du pipeline et du complément pour un déploiement ClickOnce
 
-[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] sont téléchargés et exécutés à partir d’un dossier sécurisé dans le cache de déploiement ClickOnce. Pour qu’une application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] héberge un complément, l’assembly de pipeline et de complément doit également être téléchargé dans ce dossier sécurisé. Ainsi, vous devez configurer le manifeste de l’application pour qu’il contienne l’assembly de pipeline et de complément à télécharger. Cette opération est plus facile dans Visual Studio, bien que l’assembly de pipeline et de complément doive se trouver dans le dossier racine du projet de [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] hôte afin que Visual Studio puisse détecter les assemblys de pipeline.
+Les applications XBAP sont téléchargées et exécutées à partir d’un dossier sécurisé dans le cache de déploiement ClickOnce. Pour qu’une application XBAP héberge un complément, l’assembly de pipeline et de complément doit également être téléchargé dans le dossier sécurisé. Ainsi, vous devez configurer le manifeste de l’application pour qu’il contienne l’assembly de pipeline et de complément à télécharger. Cette opération est plus facile dans Visual Studio, bien que l’assembly de pipeline et de complément doive se trouver dans le dossier racine du projet XBAP hôte afin que Visual Studio puisse détecter les assemblys de pipeline.
 
-La première étape consiste donc à générer l’assembly de pipeline et de complément à la racine du projet [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] en définissant la sortie de build de chaque projet d’assembly de pipeline et d’assembly de complément. Le tableau suivant présente les chemins de sortie de build des projets d’assembly de pipeline et du projet d’assembly de complément se trouvant dans le même dossier solution et racine que le projet [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] de l’hôte.
+Par conséquent, la première étape consiste à générer l’assembly de pipeline et de complément à la racine du projet XBAP en définissant la sortie de génération de chaque assembly de pipeline et de chaque projet d’assembly de complément. Le tableau suivant répertorie les chemins de sortie de la génération pour les projets d’assembly de pipeline et le projet d’assembly de complément qui se trouvent dans le même dossier de solution et le même dossier racine que le projet XBAP hôte.
 
 Tableau 1 : Chemins de sortie de build des assemblys de pipeline hébergés par une application XBAP
 
@@ -197,21 +197,21 @@ Tableau 1 : Chemins de sortie de build des assemblys de pipeline hébergés pa
 |Adaptateur côté hôte|`..\HostXBAP\HostSideAdapters\`|
 |Complément|`..\HostXBAP\AddIns\WPFAddIn1`|
 
-L’étape suivante consiste à spécifier les assemblys de pipeline et l’assembly de complément comme [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] fichiers de contenu dans Visual Studio en procédant comme suit :
+L’étape suivante consiste à spécifier les assemblys de pipeline et l’assembly de complément en tant que fichiers de contenu XBAP dans Visual Studio en procédant comme suit :
 
 1. Ajoutez l’assembly de pipeline et de complément au projet en cliquant avec le bouton droit sur chaque dossier de pipeline dans l’Explorateur de solutions, puis choisissez **Inclure dans le projet**.
 
 2. Affectez à l’**Action de génération** de chaque assembly de pipeline et de complément le **Contenu** de la fenêtre **Propriétés**.
 
-La dernière étape consiste à configurer le manifeste de l’application pour inclure les fichiers d’assembly de pipeline et de complément à télécharger. Les fichiers doivent se trouver dans des dossiers à la racine du dossier dans le cache ClickOnce que l’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] occupe. La configuration peut être obtenue dans Visual Studio en procédant comme suit :
+La dernière étape consiste à configurer le manifeste de l’application pour inclure les fichiers d’assembly de pipeline et de complément à télécharger. Les fichiers doivent se trouver dans des dossiers à la racine du dossier dans le cache ClickOnce que l’application XBAP occupe. La configuration peut être obtenue dans Visual Studio en procédant comme suit :
 
-1. Cliquez avec le bouton droit sur le projet [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], cliquez sur **Propriétés**, sur **Publier**, puis sur le bouton **Fichiers d’application**.
+1. Cliquez avec le bouton droit sur le projet XBAP, cliquez sur **Propriétés**, sur **publier**, puis sur le bouton **fichiers d’application** .
 
 2. Dans la boîte de dialogue **Fichiers d’application**, affectez à l’**État de la publication** de chaque DLL de pipeline et de complément la valeur **Inclure (automatique)** , puis affectez au **Groupe de téléchargement** de chaque DLL de pipeline et de complément la valeur **(Requis)** .
 
 ### <a name="using-the-pipeline-and-add-in-from-the-application-base"></a>Utilisation du pipeline et du complément à partir de la base de l’application
 
-Lorsque le pipeline et le complément sont configurés pour le déploiement ClickOnce, ils sont téléchargés dans le même dossier de cache ClickOnce que le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. Pour permettre l’utilisation du pipeline et du complément à partir de l’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], le code de l’application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] doit les obtenir à partir de la base de l’application. Les différents types et membres du modèle de complément .NET Framework pour l’utilisation de pipelines et de compléments fournissent une prise en charge spéciale pour ce scénario. Tout d’abord, le chemin d’accès est identifié par la valeur d’énumération <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase>. Vous utilisez cette valeur avec les surcharges des membres de complément adéquats pour utiliser des pipelines incluant les éléments suivants :
+Lorsque le pipeline et le complément sont configurés pour le déploiement ClickOnce, ils sont téléchargés dans le même dossier de cache ClickOnce que le XBAP. Pour utiliser le pipeline et le complément à partir de l’application XBAP, le code XBAP doit les récupérer à partir de la base de l’application. Les différents types et membres du modèle de complément .NET Framework pour l’utilisation de pipelines et de compléments fournissent une prise en charge spéciale pour ce scénario. Tout d’abord, le chemin d’accès est identifié par la valeur d’énumération <xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase>. Vous utilisez cette valeur avec les surcharges des membres de complément adéquats pour utiliser des pipelines incluant les éléments suivants :
 
 - <xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>
 
