@@ -8,23 +8,23 @@ f1_keywords:
 helpviewer_keywords:
 - ascending keyword [C#]
 ms.assetid: 57fbb619-8187-481c-b68e-3a91996fde69
-ms.openlocfilehash: 479e15b8c1103ea1e5fdd803812944d25d965a81
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: f0b183f9e7cf0997947e5a8cdd73fb90fd7e44ea
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602333"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73422916"
 ---
-# <a name="ascending-c-reference"></a><span data-ttu-id="e650c-102">ascending (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="e650c-102">ascending (C# Reference)</span></span>
-<span data-ttu-id="e650c-103">Le mot clé contextuel `ascending` est utilisé dans la [clause orderby](./orderby-clause.md) dans les expressions de requête afin de spécifier que l’ordre de tri est du plus petit au plus grand.</span><span class="sxs-lookup"><span data-stu-id="e650c-103">The `ascending` contextual keyword is used in the [orderby clause](./orderby-clause.md) in query expressions to specify that the sort order is from smallest to largest.</span></span> <span data-ttu-id="e650c-104">`ascending` étant l’ordre de tri par défaut, vous n’avez pas à le spécifier.</span><span class="sxs-lookup"><span data-stu-id="e650c-104">Because `ascending` is the default sort order, you do not have to specify it.</span></span>  
+# <a name="ascending-c-reference"></a><span data-ttu-id="75dfd-102">ascending (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="75dfd-102">ascending (C# Reference)</span></span>
+<span data-ttu-id="75dfd-103">Le mot clé contextuel `ascending` est utilisé dans la [clause orderby](./orderby-clause.md) dans les expressions de requête afin de spécifier que l’ordre de tri est du plus petit au plus grand.</span><span class="sxs-lookup"><span data-stu-id="75dfd-103">The `ascending` contextual keyword is used in the [orderby clause](./orderby-clause.md) in query expressions to specify that the sort order is from smallest to largest.</span></span> <span data-ttu-id="75dfd-104">`ascending` étant l’ordre de tri par défaut, vous n’avez pas à le spécifier.</span><span class="sxs-lookup"><span data-stu-id="75dfd-104">Because `ascending` is the default sort order, you do not have to specify it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e650c-105">Exemples</span><span class="sxs-lookup"><span data-stu-id="e650c-105">Example</span></span>  
- <span data-ttu-id="e650c-106">L’exemple suivant illustre l’utilisation de `ascending` dans une [clause orderby](./orderby-clause.md).</span><span class="sxs-lookup"><span data-stu-id="e650c-106">The following example shows the use of `ascending` in an [orderby clause](./orderby-clause.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="75dfd-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="75dfd-105">Example</span></span>  
+ <span data-ttu-id="75dfd-106">L’exemple suivant illustre l’utilisation de `ascending` dans une [clause orderby](./orderby-clause.md).</span><span class="sxs-lookup"><span data-stu-id="75dfd-106">The following example shows the use of `ascending` in an [orderby clause](./orderby-clause.md).</span></span>  
   
 [!code-csharp[csrefKeywordsContextual#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#14)]
   
-## <a name="see-also"></a><span data-ttu-id="e650c-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e650c-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="75dfd-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="75dfd-107">See also</span></span>
 
-- [<span data-ttu-id="e650c-108">Référence C#</span><span class="sxs-lookup"><span data-stu-id="e650c-108">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="e650c-109">Expressions de requête LINQ</span><span class="sxs-lookup"><span data-stu-id="e650c-109">LINQ Query Expressions</span></span>](../../programming-guide/linq-query-expressions/index.md)
-- [<span data-ttu-id="e650c-110">descending</span><span class="sxs-lookup"><span data-stu-id="e650c-110">descending</span></span>](./descending.md)
+- [<span data-ttu-id="75dfd-108">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="75dfd-108">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="75dfd-109">LINQ en C#</span><span class="sxs-lookup"><span data-stu-id="75dfd-109">LINQ in C#</span></span>](../../linq/index.md)
+- [<span data-ttu-id="75dfd-110">descending</span><span class="sxs-lookup"><span data-stu-id="75dfd-110">descending</span></span>](./descending.md)
