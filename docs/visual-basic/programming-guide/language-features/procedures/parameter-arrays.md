@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: 5a2813b81490e7c2fcf1abcf5fd36ca89d9d7929
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 285a5f10e2394fcb001a652fad66e8128b9fbc1a
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933861"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73424618"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Tableaux de paramètres (Visual Basic)
 En règle générale, vous ne pouvez pas appeler une procédure avec plus d’arguments que la déclaration de procédure ne le spécifie. Lorsque vous avez besoin d’un nombre indéfini d’arguments, vous pouvez déclarer un *tableau de paramètres*, ce qui permet à une procédure d’accepter un tableau de valeurs pour un paramètre. Vous n’avez pas besoin de connaître le nombre d’éléments dans le tableau de paramètres lorsque vous définissez la procédure. La taille du tableau est déterminée individuellement par chaque appel à la procédure.  
@@ -32,21 +32,21 @@ En règle générale, vous ne pouvez pas appeler une procédure avec plus d’ar
 - Tous les paramètres qui précèdent le tableau de paramètres doivent être requis. Le tableau de paramètres doit être le seul paramètre facultatif.  
   
 ## <a name="calling-a-paramarray"></a>Appel d’un ParamArray  
- Quand vous appelez une procédure qui définit un tableau de paramètres, vous pouvez fournir l’argument de l’une des manières suivantes:  
+ Quand vous appelez une procédure qui définit un tableau de paramètres, vous pouvez fournir l’argument de l’une des manières suivantes :  
   
-- Rien: vous pouvez omettre l’argument [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) . Dans ce cas, un tableau vide est passé à la procédure. Vous pouvez également transmettre le mot clé [Nothing](../../../../visual-basic/language-reference/nothing.md) , avec le même effet.  
+- Rien : vous pouvez omettre l’argument [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) . Dans ce cas, un tableau vide est passé à la procédure. Si vous transmettez explicitement le mot clé [Nothing](../../../../visual-basic/language-reference/nothing.md) , un tableau null est passé à la procédure et peut provoquer une exception NullReferenceException si la procédure appelée ne vérifie pas cette condition.
   
-- Liste d’un nombre arbitraire d’arguments, séparés par des virgules. Le type de données de chaque argument doit être implicitement convertible en `ParamArray` type d’élément.  
+- Liste d’un nombre arbitraire d’arguments, séparés par des virgules. Le type de données de chaque argument doit être implicitement convertible en type d’élément `ParamArray`.  
   
 - Tableau avec le même type d’élément que le type d’élément du tableau de paramètres.  
   
- Dans tous les cas, le code de la procédure traite le tableau de paramètres comme un tableau unidimensionnel avec des éléments du même type de données `ParamArray` que le type de données.  
+ Dans tous les cas, le code de la procédure traite le tableau de paramètres comme un tableau unidimensionnel avec des éléments du même type de données que le type de données `ParamArray`.  
   
 > [!IMPORTANT]
 > Chaque fois que vous traitez un tableau qui peut être indéfiniment volumineux, il existe un risque de surexécution de la capacité interne de votre application. Si vous acceptez un tableau de paramètres, vous devez tester la taille du tableau auquel le code appelant est passé. Prenez les mesures appropriées si elle est trop volumineuse pour votre application. Pour plus d’informations, consultez [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-## <a name="example"></a>Exemples  
- L’exemple suivant définit et appelle la fonction `calcSum`. Le `ParamArray` modificateur du paramètre `args` permet à la fonction d’accepter un nombre variable d’arguments.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant définit et appelle la fonction `calcSum`. Le modificateur `ParamArray` pour le paramètre `args` permet à la fonction d’accepter un nombre variable d’arguments.  
   
  [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]  
   
@@ -66,4 +66,4 @@ En règle générale, vous ne pouvez pas appeler une procédure avec plus d’ar
 - [Paramètres facultatifs](./optional-parameters.md)
 - [Surcharge de procédure](./procedure-overloading.md)
 - [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Facultatif](../../../../visual-basic/language-reference/modifiers/optional.md)
+- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)
