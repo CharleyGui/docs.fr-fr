@@ -2,12 +2,12 @@
 title: Implémentation d’un modèle de domaine de microservice avec .NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: b2ad62c2a16dd3993b9624ec14f0070e934ac2de
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: be8dc9339f5815139616e9785b5b3e3e5931b57e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676586"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737238"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
@@ -17,7 +17,9 @@ Dans la section précédente, les modèles et principes fondamentaux de concepti
 
 L’organisation des dossiers utilisée pour l’application de référence eShopOnContainers montre le modèle DDD pour l’application. Vous pouvez trouver qu’une organisation des dossiers différente communique plus clairement les choix de conception effectués pour votre application. Comme vous pouvez le voir dans la figure 7-10, il existe deux agrégats dans le modèle de domaine de commandes : l’agrégat des commandes et l’agrégat des acheteurs. Chaque agrégat est un groupe d’entités de domaine et d’objets de valeur, bien que vous puissiez également avoir un agrégat composé d’une entité de domaine unique (la racine d’agrégat ou l’entité racine).
 
-![La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun d’eux contenant ses classes d’entité, ses fichiers objets de valeur, etc. ](./media/image11.png)
+:::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Capture d’écran du projet Ordering. Domain dans Explorateur de solutions.":::
+La vue Explorateur de solutions pour le projet Ordering.Domain, montrant le dossier AggregatesModel contenant les dossiers BuyerAggregate et OrderAggregate, chacun d’eux contenant ses classes d’entité, ses fichiers objets de valeur, etc.
+:::image-end:::
 
 **Figure 7-10.** Structure de modèle de domaine pour le microservice de commandes dans eShopOnContainers
 
@@ -31,7 +33,9 @@ Un agrégat fait référence à un cluster d’objets de domaine regroupés pour
 
 La cohérence transactionnelle signifie qu’il est certain qu’un agrégat est cohérent et à jour à la fin d’une action métier. Par exemple, l’agrégat des commandes du modèle de domaine de microservice de commandes eShopOnContainers est composé comme indiqué dans la figure 7-11.
 
-![Vue détaillée du dossier OrderAggregate : Address.cs est un objet de valeur, IOrderRepository est une interface de référentiel, Order.cs est une racine d’agrégat, OrderItem.cs est une entité enfant et OrderStatus.cs est une classe d’énumération.](./media/image12.png)
+:::image type="complex" source="./media/net-core-microservice-domain-model/vs-solution-explorer-order-aggregate.png" alt-text="Capture d’écran du dossier OrderAggregate et de ses classes.":::
+Vue détaillée du dossier OrderAggregate : Address.cs est un objet de valeur, IOrderRepository est une interface de référentiel, Order.cs est une racine d’agrégat, OrderItem.cs est une entité enfant et OrderStatus.cs est une classe d’énumération.
+:::image-end:::
 
 **Figure 7-11.** Agrégat des commandes dans une solution Visual Studio
 
@@ -166,13 +170,13 @@ Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plus
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Vaughn Vernon. Modeling Aggregates with DDD and Entity Framework.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
+- **Vaughn Vernon. Modélisation des agrégats avec DDD et Entity Framework.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
-- **Julie Lerman. Points de données – Coder pour la conception pilotée par domaine : conseils pour les développeurs focalisés sur les données** \
+- **Julie Lerman. Points de données-codage pour la conception pilotée par domaine : conseils pour les développeurs orientés données** \
   <https://msdn.microsoft.com/magazine/dn342868.aspx>
 
-- **Udi Dahan. How to create fully encapsulated Domain Models** \
+- **UDI Dahan. Comment créer des modèles de domaine entièrement encapsulés** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 > [!div class="step-by-step"]

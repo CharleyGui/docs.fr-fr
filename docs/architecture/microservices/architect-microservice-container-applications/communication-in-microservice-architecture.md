@@ -2,12 +2,12 @@
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
 ms.date: 09/20/2018
-ms.openlocfilehash: 25d99d3d9b00b8c20c5ded6d8b40c77fcbe0eb46
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: add1ff74bee456e0fa7f2fb54d2cf4e536402db4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673296"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738041"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -51,9 +51,11 @@ De plus, l’existence de dépendances HTTP entre microservices, par exemple dur
 
 Plus vous ajoutez des dépendances synchrones entre microservices, comme des demandes avec des requêtes, plus le temps de réponse global se dégrade pour les applications clientes.
 
-![Dans une communication synchrone, une « chaîne » de requêtes est créée entre microservices durant le traitement de la requête cliente. Ceci est un antimodèle. Dans une communication asynchrone, les microservices utilisent des messages asynchrones ou une interrogation HTTP pour communiquer avec d’autres microservices, mais la requête cliente est immédiatement traitée.](./media/image15.png)
+![Diagramme montrant trois types de communications entre les microservices.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
 
 **Figure 4-15**. Antimodèles et modèles de communication entre microservices
+
+Comme indiqué dans le diagramme ci-dessus, dans la communication synchrone, une « chaîne » de demandes est créée entre les microservices tout en desservant la demande du client. Ceci est un antimodèle. Dans une communication asynchrone, les microservices utilisent des messages asynchrones ou une interrogation HTTP pour communiquer avec d’autres microservices, mais la requête cliente est immédiatement traitée.
 
 Si votre microservice doit déclencher une action supplémentaire dans un autre microservice, si possible, n’effectuez pas cette action de façon synchrone ni dans le cadre de l’opération de requête et réponse du microservice d’origine. Au lieu de cela, effectuez l’opération de façon asynchrone (en utilisant une messagerie asynchrone ou des événements d’intégration, des files d’attente, etc.). Cependant, autant que possible, n’appelez pas l’action de façon synchrone dans le cadre de l’opération de requête et de réponse synchrone d’origine.
 
@@ -75,7 +77,7 @@ Il existe également plusieurs formats de message, comme JSON ou XML, ou même d
 
 Quand un client utilise une communication demande/réponse, il envoie une demande à un service, puis le service traite la demande et renvoie une réponse. La communication demande/réponse est particulièrement bien adaptée pour interroger des données pour une interface utilisateur en temps réel (une interface utilisateur dynamique) à partir d’applications clientes. Dans une architecture de microservices, vous allez donc probablement utiliser ce mécanisme de communication pour la plupart des requêtes, comme indiqué sur la figure 4-16.
 
-![Vous pouvez utiliser une communication de type requête-réponse pour les requêtes dynamiques quand le client envoie la requête à une passerelle d’API, en supposant que la réponse des microservices arrive dans un délai très bref.](./media/image16.png)
+![Diagramme montrant les comms de requête/réponse pour les requêtes et les mises à jour actives.](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
 
 **Figure 4-16**. Utilisation d’une communication demande/réponse HTTP (synchrone ou asynchrone)
 
@@ -87,7 +89,7 @@ Vous profitez d’autres avantages si vous utilisez les services HTTP REST en ta
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Martin Fowler. Richardson Maturity Model** : description du modèle REST. \
+- **Martin Fowler. Richardson Maturity Model** une description du modèle Rest. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>
 
 - **Swagger** : site officiel. \
@@ -99,11 +101,11 @@ Une autre possibilité (généralement utilisée à des fins différentes de RES
 
 Comme le montre la figure 4-17, la communication HTTP en temps réel signifie que le code serveur peut envoyer (push) du contenu à des clients connectés à mesure que les données sont disponibles, au lieu que le serveur attende qu’un client demande de nouvelles données.
 
-![SignalR est un bon moyen d’effectuer une communication en temps réel pour envoyer (push) du contenu aux clients à partir d’un serveur back-end.](./media/image17.png)
+![Diagramme montrant des comms push et en temps réel basées sur Signalr.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
 
 **Figure 4-17**. Communication par messages asynchrones un-à-un en temps réel
 
-Étant donné que la communication est en temps réel, les applications clientes montrent les modifications quasi instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
+Signalr est un bon moyen d’obtenir une communication en temps réel pour transmettre du contenu aux clients à partir d’un serveur principal. Étant donné que la communication est en temps réel, les applications clientes affichent les modifications presque instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
 
 >[!div class="step-by-step"]
 >[Précédent](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

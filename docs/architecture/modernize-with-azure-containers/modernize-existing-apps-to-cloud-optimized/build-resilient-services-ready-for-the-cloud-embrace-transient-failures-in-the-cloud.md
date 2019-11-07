@@ -2,14 +2,14 @@
 title: Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 ms.date: 04/30/2018
-ms.openlocfilehash: 5f44029a214cf1f366fc787e27a9ac34599c4dca
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: e6fae8140b55cb0308dca9f4b77e961501b41f8f
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373968"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739396"
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients compatibles avec le cloud : gérer les échecs passagers dans le cloud
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créez des services résilients prêts pour le Cloud : adoptez des échecs temporaires dans le Cloud
 
 La résilience est la capacité à surmonter les défaillances et à continuer de fonctionner. La résilience ne permet pas d’éviter les défaillances, mais accepte le fait que des échecs se produisent, puis répond à celles-ci de manière à éviter les temps d’arrêt ou la perte de données. La résilience vise à remettre l’application dans un état entièrement fonctionnel après une défaillance.
 
@@ -27,7 +27,7 @@ Un scénario similaire peut se produire dans une application qui consomme des se
 
 Une application résiliente telle que celle illustrée dans la figure 4-9 doit implémenter des techniques telles que « nouvelles tentatives avec interruption exponentielle » pour permettre à l’application de gérer les défaillances temporaires dans les ressources. Vous devez également utiliser des « disjoncteurs » dans vos applications. Un disjoncteur empêche une application d’essayer d’accéder à une ressource lorsqu’il s’agit d’une défaillance à long terme. À l’aide d’un disjoncteur, l’application évite de provoquer un déni de service à lui-même.
 
-![Échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle](./media/image9.png)
+![Diagramme des échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle.](./media/build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud/retry-partial-failures.png)
 
 **Figure 4-9.** Échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle
 

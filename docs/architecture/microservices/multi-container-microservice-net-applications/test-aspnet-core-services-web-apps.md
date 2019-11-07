@@ -2,12 +2,12 @@
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
 ms.date: 10/02/2018
-ms.openlocfilehash: 278d12b8215195351673a41149db5af6fcecddfb
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 324b71d830bca43be71e8847fe2dd1b8b1593556
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772017"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739482"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -144,7 +144,7 @@ Les tests de l’application de référence (eShopOnContainers) ont été récem
 
 Les tests unitaires et les tests d’intégration par microservice se trouvent dans le dossier de test de chaque microservice, et les tests d’application et de charge sont contenus sous le dossier de test du dossier de solution, comme l’illustre la figure 6-25.
 
-![Structure des tests dans eShopOnContainers : chaque service dispose d’un dossier « test » qui inclut des tests unitaires et fonctionnels. Sous le dossier « test » de la solution se trouvent le test de charge et les tests fonctionnels au niveau de l’application.](./media/image42.png)
+![Capture d’écran de VS désignant certains des projets de test dans la solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
 **Figure 6-25.** Tester la structure des dossiers dans eShopOnContainers
 

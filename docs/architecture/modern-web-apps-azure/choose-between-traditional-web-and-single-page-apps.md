@@ -4,12 +4,12 @@ description: Apprenez à choisir entre des applications web traditionnelles et d
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: d68c167dce791a31eeb5ca5729b50ec22c64f9b0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 9ede64249705aba3f22a9663b8a258e41f030aca
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675476"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739459"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Choisir entre des applications web traditionnelles et des applications monopages
 
@@ -40,7 +40,7 @@ Les améliorations de l’expérience utilisateur rendues possibles avec le mod�
 
 ## <a name="blazor"></a>Blazor
 
-ASP.NET Core 3.0 introduit un nouveau modèle permettant de créer une interface utilisateur riche, interactive et composable, appelée Blazor. Blazor côté serveur permet aux développeurs de générer une interface utilisateur avec Razor sur le serveur. Il permet aussi de fournir ce code au navigateur et de l’exécuter côté client à l’aide d’une bibliothèque JavaScript appelée WebAssembly. ASP.NET Core 3.0 est toujours en développement, mais vous verrez plus d’informations sur cette technologie dans la mise à jour 3.0 de ce livre électronique. Pour plus d’informations sur Blazor, consultez [Bien démarrer avec Blazor](https://blazor.net/docs/get-started.html).
+ASP.NET Core 3.0 introduit un nouveau modèle permettant de créer une interface utilisateur riche, interactive et composable, appelée Blazor. Le côté serveur de éblouissant permet aux développeurs de créer des interfaces utilisateur avec Razor sur le serveur et de les remettre au navigateur et de les exécuter côté client à l’aide de [Webassembly](https://webassembly.org/). ASP.NET Core 3.0 est toujours en développement, mais vous verrez plus d’informations sur cette technologie dans la mise à jour 3.0 de ce livre électronique. Pour plus d’informations sur Blazor, consultez [Bien démarrer avec Blazor](https://blazor.net/docs/get-started.html).
 
 ## <a name="when-to-choose-traditional-web-apps"></a>Quand choisir les applications web traditionnelles
 

@@ -2,12 +2,12 @@
 title: Implémentation du modèle Disjoncteur
 description: Découvrez comment implémenter le modèle Disjoncteur en tant que système complémentaire aux nouvelles tentatives Http.
 ms.date: 10/16/2018
-ms.openlocfilehash: a1a24094ae98d8c767ccf692fe8ded6e28d47854
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 00ca39b4b6fac37ff60adf128c3f4e22c5fc14e2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094114"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732853"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implémenter le modèle Disjoncteur
 
@@ -94,7 +94,7 @@ Par exemple, une fois que l’application est en cours d’exécution, vous pouv
 
 Vous pouvez alors vérifier l’état à l’aide de l’URI `http://localhost:5103/failing`, comme illustré à la Figure 8-5.
 
-![Vue dans le navigateur du résultat de la vérification de l’état de l’échec de simulation du middleware](./media/image4.png)
+![Capture d’écran de la vérification de l’état de la simulation d’un intergiciel (middleware) défaillant.](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
 
 **Figure 8-5**. Vérification de l’état du middleware ASP.NET (désactivé dans le cas présent) « Failing » (En échec).
 
@@ -134,7 +134,7 @@ public class CartController : Controller
 
 Voici un résumé. La stratégie Nouvelle tentative tente plusieurs fois d’exécuter la requête HTTP et obtient des erreurs HTTP. Quand le nombre maximal de nouvelles tentatives pour la stratégie Disjoncteur est atteint (dans le cas présent, 5), l’application lève une exception BrokenCircuitException. Le résultat est un message convivial, comme illustré à la Figure 8-6.
 
-![Vue dans le navigateur de l’application web MVC montrant un message « basket service inoperative » déclenché par la stratégie de disjoncteur](./media/image5.png)
+![Capture d’écran de l’application Web MVC avec l’erreur inopérante du service de panier.](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 
 **Figure 8-6**. Disjoncteur retournant une erreur à l’interface utilisateur
 

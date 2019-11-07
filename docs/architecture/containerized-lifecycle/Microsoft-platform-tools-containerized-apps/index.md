@@ -2,12 +2,12 @@
 title: Présentation de la plateforme et des outils Microsoft pour les applications en conteneur
 description: Familiarisez-vous avec les offres de Microsoft visant à prendre en charge le cycle de vie des applications Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 1829ce1051f091065f543a6cadcf5d179a284834
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9c8c0f5688bf226351abfc7bf52d4ace05f8c6d8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094457"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738094"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Présentation de la plateforme et des outils Microsoft pour les applications en conteneur
 
@@ -15,7 +15,9 @@ ms.locfileid: "73094457"
 
 La figure 3-1 illustre les principaux piliers du cycle de vie des applications Docker, classés selon le type de travail fourni par plusieurs équipes (développement d’applications, processus d’infrastructure DevOps, gestion et opérations informatiques). Dans l’entreprise, les profils du « persona » en charge de chaque zone sont généralement différents. Ses compétences varient aussi.
 
-![Outils Microsoft. Pour la charge de travail de développement/conception : le moteur d’ancrage pour Windows, VS et VS Code, .NET Core, service Kubernetes Azure. Pour la charge de travail Build/test/Ship : Azure DevOps, Team Foundation Server, CLI CLI, service Kubernetes Azure. Pour la charge de travail exécuter/surveiller/gérer : Azure Monitor, le portail Azure Azure Kubernetes services, Service Fabric et d’autres orchestrateurs.](./media/image1.png)
+:::image type="complex" source="./media/index/microsoft-tools-contanerized-docker-app.png" alt-text="Diagramme montrant les outils Microsoft nécessaires à la gestion des applications de l’ancrage.":::
+Outils Microsoft. Pour la charge de travail de développement/conception : le moteur d’ancrage pour Windows, VS et VS Code, .NET Core, service Kubernetes Azure. Pour la charge de travail Build/test/Ship : Azure DevOps, Team Foundation Server, CLI CLI, service Kubernetes Azure. Pour la charge de travail exécuter/surveiller/gérer : Azure Monitor, le portail Azure Azure Kubernetes services, Service Fabric et d’autres orchestrateurs.
+:::image-end:::
 
 **Figure 3-1** : Principaux piliers du cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 

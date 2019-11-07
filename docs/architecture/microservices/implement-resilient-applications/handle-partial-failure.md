@@ -2,12 +2,12 @@
 title: Gestion d’une défaillance partielle
 description: Découvrez comment gérer correctement les défaillances partielles. Un microservice peut ne pas être entièrement opérationnel, mais il peut toujours être en mesure d’effectuer un travail utile.
 ms.date: 10/16/2018
-ms.openlocfilehash: a667ad2e1456db7b5846023de27d3797dad58731
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: f00e5349df74b543deb6ac941c751cb130b3837c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674696"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732969"
 ---
 # <a name="handle-partial-failure"></a>Gérer une défaillance partielle
 
@@ -15,13 +15,13 @@ Dans les systèmes distribués tels que les applications basées sur des microse
 
 Prenons la page des détails de commande dans l’exemple d’application eShopOnContainers. Si le microservice Ordering ne répond pas quand l’utilisateur tente d’envoyer sa commande, une mauvaise implémentation du processus client (l’application web MVC) peut bloquer indéfiniment les threads en attente d’une réponse. C’est le cas, par exemple, si le code client est défini pour utiliser des RPC synchrones sans délai d’expiration. En plus de la mauvaise expérience que cela représente pour l’utilisateur, chaque attente de réponse consomme ou bloque un thread. Or, les applications hautement scalables ont besoin de beaucoup de threads. Si de nombreux threads sont bloqués, le runtime de l’application peut finir par ne plus disposer de suffisamment de threads. Dans ce cas, l’application risque de ne plus répondre du tout au lieu de ne plus répondre juste partiellement, comme illustré à la Figure 8-1.
 
-![Diagramme illustrant le paragraphe précédent](./media/image1.png)
+![Diagramme montrant les échecs partiels.](./media/handle-partial-failure/partial-failures-diagram.png)
 
 **Figure 8-1** : Défaillances partielles dues à des dépendances qui impactent la disponibilité des threads du service
 
-Dans une large application basée sur des microservices, une défaillance partielle peut avoir un impact plus global, surtout si la plupart des interactions de microservices internes sont basées sur des appels HTTP synchrones (ce qui est considéré comme anti-modèle). Pensez à un système qui reçoit des millions d’appels par jour. Si votre système a une mauvaise conception basée sur de longues chaînes d’appels HTTP synchrones, ces appels entrants peuvent provoquer des millions d’appels sortants supplémentaires (avec un ratio estimé de 1 pour 4) vers des dizaines de microservices internes et dépendances synchrones. Cette situation est illustrée à la Figure 8-2, en particulier la dépendance \#3.
+Dans une large application basée sur des microservices, une défaillance partielle peut avoir un impact plus global, surtout si la plupart des interactions de microservices internes sont basées sur des appels HTTP synchrones (ce qui est considéré comme anti-modèle). Pensez à un système qui reçoit des millions d’appels par jour. Si votre système a une mauvaise conception basée sur de longues chaînes d’appels HTTP synchrones, ces appels entrants peuvent provoquer des millions d’appels sortants supplémentaires (avec un ratio estimé de 1 pour 4) vers des dizaines de microservices internes et dépendances synchrones. Cette situation est illustrée dans la figure 8-2, en particulier dépendance \#3, qui démarre une chaîne, en appelant la dépendance #4. que les appelle #5.
 
-![Conception incorrecte pour un microservice d’application web qui dépend d’une chaîne de dépendances sur d’autres microservices](./media/image2.png)
+![Diagramme montrant plusieurs dépendances distribuées.](./media/handle-partial-failure/multiple-distributed-dependencies.png)
 
 **Figure 8-2** : Impact d’une mauvaise conception avec de longues chaînes de requêtes HTTP
 
@@ -29,7 +29,7 @@ Une défaillance intermittente est inévitable dans un système cloud et distrib
 
 Si vous ne concevez pas et n’implémentez pas de techniques de tolérance de panne, même de courts temps d’arrêt peuvent avoir des répercussions amplifiées. Par exemple, l’existence de 50 dépendances avec 99,99 % de disponibilité se traduit par plusieurs heures d’arrêt chaque mois en raison de cet effet amplificateur. En cas d’échec d’une dépendance de microservice pendant le traitement d’un grand nombre de requêtes, cette défaillance peut rapidement saturer tous les threads de requête disponibles dans chaque service et entraîner le blocage de l’application entière.
 
-![Les défaillances partielles peuvent être sérieusement amplifiées par les dépendances chaînées](./media/image3.png)
+![Diagramme montrant une défaillance partielle amplifiée dans les microservices.](./media/handle-partial-failure/partial-failure-amplified-microservices.png)
 
 **Figure 8-3** : Défaillance partielle amplifiée par les microservices avec de longues chaînes d’appels HTTP synchrones
 

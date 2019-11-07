@@ -2,12 +2,12 @@
 title: Implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer les détails d’implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core.
 ms.date: 10/08/2018
-ms.openlocfilehash: 7e3480999b115ac13f8d7ebcaed826b407aa7637
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: b70ede6b47cbf990d0435aef841416c68f6439b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674096"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737920"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implémenter la couche de persistance de l’infrastructure avec Entity Framework Core
 
@@ -174,11 +174,11 @@ Toutefois, l’implémentation de dépôts personnalisés présente plusieurs av
 
 Dans la figure 7-18, vous pouvez voir les différences entre ne pas utiliser de référentiels (utilisation directe de DbContext EF) et l’utilisation de référentiels qui facilitent la simulation de ces référentiels.
 
-![Comparaison entre l’utilisation d’un référentiel personnalisé et un DbContext brut : le référentiel personnalisé ajoute une couche d’abstraction qui peut être utilisée pour faciliter le test en simulant le référentiel.](./media/image19.png)
+![Diagramme montrant les composants et le flux de données dans les deux référentiels.](./media/infrastructure-persistence-layer-implemenation-entity-framework-core/custom-repo-versus-db-context.png)
 
 **Figure 7-18**. Utilisation de dépôts personnalisés par rapport à un simple DbContext
 
-Il existe plusieurs alternatives lors de la simulation. Vous pouvez simuler uniquement les dépôts ou l’intégralité d’une unité de travail. Généralement, la simulation des dépôts uniquement est suffisante, et la tâche complexe d’abstraction et de simulation de l’intégralité d’une unité de travail n’est pas nécessaire.
+La figure 7-18 montre que l’utilisation d’un référentiel personnalisé ajoute une couche d’abstraction qui peut être utilisée pour faciliter les tests en simulant le référentiel. Il existe plusieurs alternatives lors de la simulation. Vous pouvez simuler uniquement les dépôts ou l’intégralité d’une unité de travail. Généralement, la simulation des dépôts uniquement est suffisante, et la tâche complexe d’abstraction et de simulation de l’intégralité d’une unité de travail n’est pas nécessaire.
 
 Plus tard, quand nous nous concentrerons sur la couche d’application, vous verrez comment fonctionne l’injection de dépendances dans ASP.NET Core et comment elle est implémentée lors de l’utilisation de dépôts.
 
@@ -235,10 +235,10 @@ Notez que l’utilisation de la durée de vie singleton pour le dépôt peut vou
 - **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
-- **Jonathan Allen. Implementation Strategies for the Repository Pattern with Entity Framework, Dapper, and Chain** \
+- **Jonathan Allen. Stratégies d’implémentation pour le modèle de référentiel avec Entity Framework, dapper et Chain** \
   <https://www.infoq.com/articles/repository-implementation-strategies>
 
-- **Cesar de la Torre. Comparing ASP.NET Core IoC container service lifetimes with Autofac IoC container instance scopes** \
+- **Cesar de la Torre. Comparaison ASP.NET Core les durées de vie du service de conteneur IoC avec les portées d’instance de conteneur IoC Autofac** \
   <https://devblogs.microsoft.com/cesardelatorre/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/>
 
 ## <a name="table-mapping"></a>Mappage de tables
@@ -458,7 +458,7 @@ Même si nous ne recommandons pas de retourner des données IQueryable à partir
 - **Backing Fields** \
   [https://docs.microsoft.com/ef/core/modeling/backing-field](/ef/core/modeling/backing-field)
 
-- **Steve Smith. Encapsulated Collections in Entity Framework Core** \
+- **Steve Smith. Collections encapsulées dans Entity Framework Core** \
   <https://ardalis.com/encapsulated-collections-in-entity-framework-core>
 
 - **Propriétés cachées** \

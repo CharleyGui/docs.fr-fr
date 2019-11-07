@@ -2,12 +2,12 @@
 title: Conception d’une application orientée microservices
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les avantages et les inconvénients d’une application orientée microservices pour vous permettre de prendre une décision éclairée.
 ms.date: 10/02/2018
-ms.openlocfilehash: 1c2fe341c62111e915df35aab818b8a980004834
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a783d582f39d25be0123f410553a54af970a4f67
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772057"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739547"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Conception d’une application orientée microservices
 
@@ -65,9 +65,11 @@ Pour vous éviter d’avoir à réfléchir sur un domaine d’activité hypothé
 
 L’application est constituée de divers sous-systèmes, notamment de plusieurs front-ends d’interface utilisateur de magasin (une application web et une application mobile native), ainsi que des microservices et des conteneurs back-end pour toutes les opérations côté serveur nécessaires avec plusieurs passerelles d’API comme points d’entrée consolidés dans les microservices internes. La figure 6-1 illustre l’architecture de l’application de référence.
 
-![Les clients mobile et SPA communiquent avec des points de terminaison de passerelle d’API uniques qui communiquent ensuite avec les microservices. Les clients Web traditionnels communiquent avec le microservice MVC, qui communique avec les microservices](./media/image1.png)
+![Diagramme des applications clientes utilisant eShopOnContainers dans un hôte d’ancrage unique.](./media/microservice-application-design/eshoponcontainers-reference-application-architecture.png)
 
 **Figure 6-1** : Architecture d’application de référence eShopOnContainers pour l’environnement de développement
+
+Le diagramme ci-dessus montre que les clients mobile et SPA communiquent avec des points de terminaison de passerelle d’API uniques, qui communiquent ensuite avec les microservices. Les clients Web traditionnels communiquent avec le microservice MVC, qui communique avec les microservices via la passerelle d’API.
 
 **Environnement d’hébergement** : dans la figure 6-1, vous pouvez constater que plusieurs conteneurs sont déployés dans un seul hôte Docker. Cela se produit quand le déploiement est exécuté dans un seul hôte Docker avec la commande docker-compose up. Cependant, si vous utilisez un cluster d’orchestrateurs ou de conteneurs, chaque conteneur peut s’exécuter dans un hôte (nœud) distinct, et un nœud peut exécuter n’importe quel nombre de conteneurs, comme nous l’avons vu dans la section traitant de l’architecture.
 
@@ -140,7 +142,7 @@ Comme indiqué dans la section traitant de l’architecture, si vous avez l’in
 
 Une architecture externe est une architecture de microservices composée de plusieurs services, conformément aux principes décrits dans la section de ce guide traitant de l’architecture. Cependant, selon la nature de chaque microservice, et quelle que soit l’architecture de microservices générale que vous choisissez, il est courant et parfois conseillé d’avoir différentes architectures internes, chacune basée sur des modèles différents, pour les différents types de microservice. Les microservices peuvent même utiliser des technologies et des langages de programmation différents. La figure 6-2 illustre cette diversité.
 
-![Différence entre une architecture externe (modèles de microservices, passerelles d’API, communications résilientes, pub/sub, etc.) et une architecture interne (modèles pilotés par les données/CRUD, DDD, injection de dépendances, multiples bibliothèques, etc.)](./media/image2.png)
+![Diagramme comparant les modèles d’architecture externes et internes.](./media/microservice-application-design/external-versus-internal-architecture.png)
 
 **Figure 6-2** : architectures externe/interne et conception
 
@@ -170,11 +172,11 @@ Vous pouvez aussi générer des microservices avec diverses technologies et dive
 
 Le point important est qu’aucun modèle ou style d’architecture en particulier, ni aucune technologie en particulier, ne convient à toutes les situations. La figure 6-3 présente certaines approches et technologies (dans un ordre aléatoire) qui pourraient être utilisées dans différentes microservices.
 
-![Le modèle à plusieurs architectures avec microservices polyglottes permet de combiner les langages et les technologies pour les adapter aux besoins de chaque microservice tout en leur permettant de communiquer entre eux.](./media/image3.png)
+![Diagramme montrant 12 microservices complexes dans une architecture polyglotte World.](./media/microservice-application-design/multi-architectural-patterns-polyglot-microservices.png)
 
 **Figure 6-3.** l’univers des modèles à plusieurs architectures et des microservices polyglottes
 
-Comme le montre la figure 6-3, dans les applications constituées de nombreux microservices (on parle de contextes limités dans la terminologie de la conception pilotée par le domaine, ou simplement de « sous-systèmes » pour les microservices autonomes), vous pouvez implémenter chaque microservice d’une façon différente. Chacun d’eux peut s’appuyer sur un modèle d’architecture différent et utiliser des langages et des bases de données qui varient en fonction de la nature de l’application, des exigences de l’entreprise et des priorités. Dans certains cas, les microservices peuvent être similaires. Mais ce n’est généralement pas le cas, car la limite de contexte et les exigences de chaque sous-système sont en principe différentes.
+Le modèle à plusieurs architectures avec microservices polyglottes permet de combiner les langages et les technologies pour les adapter aux besoins de chaque microservice tout en leur permettant de communiquer entre eux. Comme le montre la figure 6-3, dans les applications constituées de nombreux microservices (on parle de contextes limités dans la terminologie de la conception pilotée par le domaine, ou simplement de « sous-systèmes » pour les microservices autonomes), vous pouvez implémenter chaque microservice d’une façon différente. Chacun d’eux peut s’appuyer sur un modèle d’architecture différent et utiliser des langages et des bases de données qui varient en fonction de la nature de l’application, des exigences de l’entreprise et des priorités. Dans certains cas, les microservices peuvent être similaires. Mais ce n’est généralement pas le cas, car la limite de contexte et les exigences de chaque sous-système sont en principe différentes.
 
 Par exemple, pour une application de gestion CRUD simple, concevoir et implémenter des modèles DDD ne se justifie pas. Mais pour votre domaine de base ou votre cœur de métier, vous devrez peut-être appliquer des modèles plus élaborés pour faire face à la complexité métier avec des règles métier en constante évolution.
 

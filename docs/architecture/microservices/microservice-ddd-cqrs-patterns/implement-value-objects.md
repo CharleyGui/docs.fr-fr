@@ -2,12 +2,12 @@
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
 ms.date: 10/08/2018
-ms.openlocfilehash: b2f7b0f36fea25c25edd47731d9387810bd2b44d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 2608517c4006f5e8da1d31b2c337d8ddd3ddd542
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674146"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739873"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -17,11 +17,11 @@ Un objet de valeur peut faire référence à d’autres entités. Par exemple, d
 
 La figure 7-13 illustre l’objet de valeur Address dans l’agrégat Order.
 
-![Objet de valeur Address dans l’agrégat Order.](./media/image14.png)
+![Diagramme montrant l’objet Address value-à l’intérieur de l’agrégat Order.](./media/implement-value-objects/value-object-within-aggregate.png)
 
 **Figure 7-13**. Objet de valeur Address dans l’agrégat Order
 
-Comme le montre la figure 7-13, une entité est généralement composée de plusieurs attributs. Par exemple, l’entité `Order` peut être modélisée comme entité avec une identité et composée en interne d’un ensemble d’attributs comme OrderId, OrderDate, OrderItems, etc. Toutefois, l’adresse, qui est simplement une valeur complexe comprenant un pays ou une région, une rue, une ville, etc. et qui n’a pas d’identité dans ce domaine, doit être modélisée et traitée comme objet de valeur.
+Comme le montre la figure 7-13, une entité est généralement composée de plusieurs attributs. Par exemple, l’entité `Order` peut être modélisée en tant qu’entité avec une identité et composée en interne d’un ensemble d’attributs tels que OrderId, OrderDate, OrderItems, etc. Toutefois, l’adresse, qui est simplement une valeur complexe composée d’un pays/d’une région, d’une rue, d’une ville, etc. et qui n’a pas d’identité dans ce domaine, doit être modélisée et traitée comme un objet de valeur.
 
 ## <a name="important-characteristics-of-value-objects"></a>Caractéristiques importantes des objets de valeur
 
@@ -307,13 +307,13 @@ public class Address
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Martin Fowler. Modèle ValueObject** \
+- **Martin Fowler. \ de modèle ValueObject**
   <https://martinfowler.com/bliki/ValueObject.html>
 
-- **Eric Evans. Domain-Driven Design : Tackling Complexity in the Heart of Software.** (Livre incluant une discussion sur les objets de valeur) \
+- **Eric Evans. Conception pilotée par domaine : la complexité du logiciel est plus complexe.** (Livre incluant une discussion sur les objets de valeur) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
-- **Vaughn Vernon. Implementing Domain-Driven Design.** (Livre incluant une discussion sur les objets de valeur) \
+- **Vaughn Vernon. Implémentation de la conception pilotée par le domaine.** (Livre incluant une discussion sur les objets de valeur) \
   <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
 - **Propriétés cachées** \

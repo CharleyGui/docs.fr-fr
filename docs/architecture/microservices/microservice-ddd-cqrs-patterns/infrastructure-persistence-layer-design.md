@@ -2,12 +2,12 @@
 title: Conception de la couche de persistance de l’infrastructure
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer le modèle de référentiel dans la conception de la couche de persistance de l’infrastructure.
 ms.date: 10/08/2018
-ms.openlocfilehash: 76f545403a1b595ce7a541a96d212b9406d89c10
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: f1c5df1cc5672760374610a416ae22b45cd76c25
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674116"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737945"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Concevoir la couche de persistance de l’infrastructure
 
@@ -33,9 +33,11 @@ Si l’utilisateur apporte des modifications, les données à mettre à jour pas
 
 Il est important de souligner à nouveau que vous devez définir seulement un référentiel pour chaque racine d’agrégat, comme illustré dans la figure 7-17. Pour atteindre l’objectif de la racine d’agrégat visant à maintenir la cohérence transactionnelle entre tous les objets au sein de l’agrégat, vous ne devez jamais créer un dépôt pour chaque table dans la base de données.
 
-![Relations entre les couches Domaine et Infrastructure : L’agrégat Buyer dépend de IBuyerRepository et l’agrégat Order dépend des interfaces IOrderRepository ; ces interfaces sont implémentées dans la couche Infrastructure par les référentiels correspondants qui dépendent de UnitOfWork également implémentée ici, qui accède aux tables dans la couche Données.](./media/image18.png)
+![Diagramme montrant les relations entre domaine et autre infrastructure.](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
 
 **Figure 7-17**. Relation entre les dépôts, les agrégats et les tables de base de données
+
+Le diagramme ci-dessus montre les relations entre les couches de domaine et d’infrastructure : l’agrégat des achats dépend du IBuyerRepository et de l’agrégat de commandes dépend des interfaces IOrderRepository, ces interfaces étant implémentées dans la couche d’infrastructure par les dépôts correspondants qui dépendent de UnitOfWork, également implémenté ici, qui accède aux tables de la couche données.
 
 ### <a name="enforce-one-aggregate-root-per-repository"></a>Appliquer une seule racine d’agrégat par référentiel
 
@@ -111,13 +113,13 @@ Les référentiels peuvent être utiles, mais ils ne sont pas critiques pour vot
 - **The Repository pattern** \
   <https://deviq.com/repository-pattern/>
 
-- **Edward Hieatt et Rob Mee. Repository pattern.** \
+- **Edward Hieatt et Rob me. Modèle de référentiel.** \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
 - **The Repository pattern** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)>
 
-- **Eric Evans. Domain-Driven Design : Tackling Complexity in the Heart of Software.** (Un livre, qui inclut une présentation du modèle de référentiel) \
+- **Eric Evans. Conception pilotée par domaine : la complexité du logiciel est plus complexe.** (Un livre, qui inclut une présentation du modèle de référentiel) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="unit-of-work-pattern"></a>Modèle Unité de travail

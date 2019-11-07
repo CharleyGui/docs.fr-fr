@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 10/02/2018
-ms.openlocfilehash: cb452c330712ecf536cdf09f41fdbf828a4e9314
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 6c576a17d784777557bfb8bd99438eb111e8ec2e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771184"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737725"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
@@ -22,7 +22,7 @@ L’application de microservices de référence [eShopOnContainers](https://gith
 
 Le diagramme d’architecture suivant illustre l’implémentation de passerelles d’API avec Ocelot dans eShopOnContainers.
 
-![Diagramme d’architecture eShopOnContainers illustrant les applications clientes, les microservices et les passerelles d’API intermédiaires](./media/image28.png)
+![Diagramme montrant l’architecture eShopOnContainers.](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture.png)
 
 **Figure 6-28.** Architecture d’eShopOnContainers avec passerelles d’API
 
@@ -46,7 +46,7 @@ Comme élément clé à retenir, pour de nombreuses applications moyennes ou gra
 
 Par exemple, eShopOnContainers a environ six types de microservices internes qui doivent être publiés par le biais des passerelles API, comme illustré à la figure suivante.
 
-![Seuls les microservices Basket, Catalog, Location, Marketing, Ordering et Payment sont publiés par le biais de la passerelle API.](./media/image29.png)
+![Capture d’écran du dossier services montrant ses sous-dossiers.](./media/implement-api-gateways-with-ocelot/eshoponcontainers-microservice-folders.png)
 
 **Figure 6-29.** Dossiers de microservices dans une solution eShopOnContainers dans Visual Studio
 
@@ -54,7 +54,7 @@ En ce qui concerne le service Identity, dans sa conception, il est tenu à l’�
 
 Tous ces services sont actuellement implémentés en tant que services d’API web ASP.NET Core, comme vous pouvez le voir dans le code. Concentrons-nous sur l’un de ces microservices, tel que le code du microservice de catalogue (Catalog).
 
-![Vue Explorateur de solutions du projet Catalog.API.](./media/image30.png)
+![Capture d’écran de Explorateur de solutions montrant le contenu du projet Catalog. API.](./media/implement-api-gateways-with-ocelot/catalog-api-microservice-folders.png)
 
 **Figure 6-30.** Exemple de microservice d’API web (microservice Catalog)
 
@@ -130,7 +130,7 @@ Cette commande exécute uniquement le conteneur de service catalog.api, ainsi qu
 
 Ensuite, vous pouvez accéder directement au microservice Catalog et voir ses méthodes par le biais de l’interface utilisateur Swagger, en accédant directement via ce port « externe » ; dans le cas présent, `http://localhost:5101/swagger` :
 
-![Affichage dans le navigateur de la page d’interface utilisateur Swagger pour l’API REST Catalog.API.](./media/image31.png)
+![Capture d’écran de l’interface utilisateur Swagger montrant l’API REST Catalog. API.](./media/implement-api-gateways-with-ocelot/test-catalog-microservice.png)
 
 **Figure 6-31.** Test du microservice Catalog avec son interface utilisateur Swagger
 
@@ -152,7 +152,7 @@ Install-Package Ocelot
 
 Dans eShopOnContainers, son implémentation des passerelles d’API est un projet WebHost ASP.NET Core simple et les middlewares d’Ocelot traitent toutes les fonctionnalités des passerelles d’API, comme illustré dans l’image suivante :
 
-![Vue Explorateur de solutions du projet passerelle API Ocelot.](./media/image32.png)
+![Capture d’écran de Explorateur de solutions montrant le projet de passerelle d’API ocelot.](./media/implement-api-gateways-with-ocelot/ocelotapigw-base-project.png)
 
 **Figure 6-32.** Projet de base OcelotApiGw dans eShopOnContainers
 
@@ -280,7 +280,7 @@ Toutefois, comme indiqué dans la section d’architecture et de conception, si 
 
 Dans eShopOnContainers, nous utilisons une seule image conteneur Docker avec la passerelle API Ocelot, mais au moment de l’exécution, nous créons différents conteneurs/services pour chaque type de passerelle API/BFF. Pour cela, nous fournissons un fichier configuration.json différent, en utilisant un volume Docker pour accéder à un dossier de PC différent pour chaque service.
 
-![Une seule image Docker pour la passerelle API Ocelot est utilisée pour les quatre passerelles API](./media/image33.png)
+![Diagramme d’une image de station d’accueil de passerelle Ocelot unique pour toutes les passerelles d’API.](./media/implement-api-gateways-with-ocelot/reusing-single-ocelot-docker-image.png)
 
 **Figure 6-33.** Réutilisation d’une image Docker d’Ocelot unique sur plusieurs types de passerelle API
 
@@ -354,7 +354,7 @@ webmarketingapigw:
 
 En raison de ce code précédent et comme l’indique l’Explorateur Visual Studio ci-dessous, le seul fichier nécessaire pour définir chaque passerelle d’API d’entreprise/BFF spécifique est un fichier configuration.json, étant donné que les quatre passerelles d’API reposent sur la même image Docker.
 
-![La seule différence entre toutes les passerelles API est un fichier configuration.json sur chacune d’elle.](./media/image34.png)
+![Capture d’écran montrant toutes les passerelles d’API avec les fichiers configuration. JSON.](./media/implement-api-gateways-with-ocelot/ocelot-configuration-files.png)
 
 **Figure 6-34.** Le seul fichier nécessaire pour définir chaque passerelle d’API / BFF avec Ocelot est un fichier de configuration
 
@@ -364,13 +364,13 @@ Maintenant, si vous exécutez eShopOnContainers avec les passerelles d’API (in
 
 Par exemple, lors de la visite de l’URL en amont `http://localhost:5202/api/v1/c/catalog/items/2/` prise en charge par la passerelle API webshoppingapigw, vous obtenez le même résultat à partir de l’URL interne en aval `http://catalog.api/api/v1/2` dans l’hôte Docker, comme dans le navigateur suivant.
 
-![Vue du navigateur d’une réponse de Catalog.api passant par la passerelle API.](./media/image35.png)
+![Capture d’écran d’un navigateur montrant une réponse passant par la passerelle d’API.](./media/implement-api-gateways-with-ocelot/access-microservice-through-url.png)
 
 **Figure 6-35.** Accès à un microservice via une URL fournie par la passerelle d’API
 
 En raisons des tests ou du débogage, si vous souhaitez accéder directement au conteneur Docker Catalog (uniquement dans l’environnement de développement) sans passer par la passerelle d’API, dans la mesure où « catalog.api » est une résolution DNS interne à l’hôte Docker (découverte de service gérée par les noms de service docker-compose), la seule façon d’accéder directement au conteneur est via le port externe publié dans le fichier docker-compose.override.yml, qui est fourni uniquement pour les tests de développement, comme `http://localhost:5101/api/v1/Catalog/items/1` dans le navigateur suivant.
 
-![Vue du navigateur d’une réponse de Catalog.api allant directement vers Catalog.api, identique à celle passant par la passerelle API.](./media/image36.png)
+![Capture d’écran d’un navigateur montrant une réponse directe à l’API Catalog.](./media/implement-api-gateways-with-ocelot/direct-access-microservice-testing.png)
 
 **Figure 6-36.** Accès direct à un microservice à des fins de test
 
@@ -384,13 +384,13 @@ Selon cette approche, le diagramme de composition de passerelle API est en réal
 
 Dans le diagramme suivant, vous pouvez également voir les services d’agrégation fonctionner avec leurs passerelles d’API associées.
 
-![Architecture d’eShopOnContainers, montrant les services d’agrégation.](./media/image37.png)
+![Diagramme de l’architecture eShopOnContainers montrant les services d’agrégation.](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture-aggregator-services.png)
 
 **Figure 6-37.** Architecture eShopOnContainers avec services d’agrégation
 
 En faisant un zoom avant sur le secteur d’activité « Shopping » (Achat) dans l’image suivante, vous pouvez voir que les échanges entre les applications clientes et les microservices sont réduits quand vous utilisez les services d’agrégation dans les passerelles API.
 
-![eShopOnContainers architecture zoom in, qui montre les services d’agrégation, qui « assemble » une réponse « joignant » la réponse de plusieurs microservices pour réduire les échanges excessifs avec le client final.](./media/image38.png)
+![Diagramme montrant l’architecture eShopOnContainers zoom avant.](./media/implement-api-gateways-with-ocelot/zoom-in-vision-aggregator-services.png)
 
 **Figure 6-38.** Vision agrandie des services d’agrégation
 
@@ -404,17 +404,17 @@ Dans une passerelle d’API Ocelot, vous pouvez placer le service d’authentifi
 
 Comme eShopOnContainers utilise plusieurs passerelles d’API avec des limites basées sur des secteurs d’activité et BFF, le service d’identité ou d’authentification est tenu à l’écart des passerelles d’API, tel qu’indiqué en jaune dans le diagramme suivant.
 
-![Diagramme de l’architecture d’eShopOnContainers montrant le microservice Identity sous la passerelle API.](./media/image39.png)
+![Diagramme montrant le microservice d’identité sous la passerelle d’API.](./media/implement-api-gateways-with-ocelot/eshoponcontainers-identity-service-position.png)
 
 **Figure 6-39.** Position du service d’identité dans eShopOnContainers
 
 Toutefois, Ocelot prend également en charge le placement du microservice d’identité/d’authentification dans les limites de la passerelle API, comme dans cet autre diagramme.
 
-![L’authentification avec le microservice Identity sous la passerelle API (AG) : 1) AG demande un jeton d’authentification au microservice d’identité. 2) Le microservice Identity retourne le jeton à AG. 3-4) AG émet des requêtes aux microservices à l’aide du jeton d’authentification.](./media/image40.png)
+![Diagramme montrant l’authentification dans une passerelle d’API ocelot.](./media/implement-api-gateways-with-ocelot/ocelot-authentication.png)
 
 **Figure 6-40.** Authentification dans Ocelot
 
-Étant donné que l’application eShopOnContainers a divisé la passerelle d’API en plusieurs passerelles d’API BFF (Backend for Frontend) et de secteurs d’activité, une autre option aurait été de créer une passerelle d’API supplémentaire pour les problèmes transversaux. Ce choix serait juste dans une architecture basée sur des microservices plus complexes avec plusieurs microservices de problèmes transversaux. Comme un seul problème transversal figure dans eShopOnContainers, il a été décidé de gérer simplement le service de sécurité hors du domaine des passerelles d’API, par souci de simplicité.
+Comme le montre le diagramme précédent, lorsque le microservice d’identité se trouve sous la passerelle d’API (AG) : 1) AG demande un jeton d’authentification à l’identité microservice, 2) le microservice d’identité retourne le jeton aux demandes GA, 3-4) AG des microservices à l’aide du jeton d’authentification. Étant donné que l’application eShopOnContainers a divisé la passerelle d’API en plusieurs passerelles d’API BFF (Backend for Frontend) et de secteurs d’activité, une autre option aurait été de créer une passerelle d’API supplémentaire pour les problèmes transversaux. Ce choix serait juste dans une architecture basée sur des microservices plus complexes avec plusieurs microservices de problèmes transversaux. Comme un seul problème transversal figure dans eShopOnContainers, il a été décidé de gérer simplement le service de sécurité hors du domaine des passerelles d’API, par souci de simplicité.
 
 Dans tous les cas, si l’application est sécurisée au niveau des passerelles d’API, le module d’authentification de la passerelle d’API Ocelot est consulté dans un premier temps lorsque vous tentez d’utiliser un microservice sécurisé quelconque. Cela redirige la requête HTTP pour consulter le microservice d’identité ou d’authentification afin d’obtenir le jeton d’accès permettant de consulter les services protégés avec le jeton d’accès.
 
@@ -540,11 +540,11 @@ Toutefois, l’entrée redirige simplement les requêtes HTTP et n’essaie pas 
 
 Le fait d’avoir un niveau Nginx d’entrée dans Kubernetes en face des applications web, ainsi que plusieurs passerelles d’API/BFF Ocelot, constitue l’architecture idéale, telle qu’elle est illustrée dans le diagramme suivant.
 
-![Une entrée Kubernetes agit comme un proxy inverse pour tout le trafic vers l’application, notamment les applications web, qui sont généralement en dehors de l’étendue de la passerelle API.](./media/image41.png)
+![Diagramme montrant comment un niveau d’entrée s’adapte à l’environnement AKS.](./media/implement-api-gateways-with-ocelot/eshoponcontainer-ingress-tier.png)
 
 **Figure 6-41.** Niveau d’entrée dans eShopOnContainers lors d’un déploiement dans Kubernetes
 
-Quand vous déployez eShopOnContainers dans Kubernetes, il expose simplement quelques services ou points de terminaison via _l’entrée_, en fait la liste suivante de suffixes sur les URL :
+Une entrée Kubernetes agit comme un proxy inverse pour tout le trafic vers l’application, notamment les applications web, qui sont généralement en dehors de l’étendue de la passerelle API. Quand vous déployez eShopOnContainers dans Kubernetes, il expose simplement quelques services ou points de terminaison via _l’entrée_, en fait la liste suivante de suffixes sur les URL :
 
 - `/` pour l’application web SPA cliente
 - `/webmvc` pour l’application web MVC cliente

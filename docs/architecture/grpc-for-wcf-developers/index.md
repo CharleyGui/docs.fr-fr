@@ -1,14 +1,14 @@
 ---
 title: ASP.NET Core gRPC pour les développeurs WCF-gRPC pour les développeurs WCF
-description: À ÉCRIRE
+description: Introduction à la création de services gRPC dans ASP.NET Core 3,0 pour les développeurs WCF
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6a5b4f6d0b47a272f7a753e22bfd61b06202944a
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: b89f5974dd18e7005c6479c5b9eead039364e654
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919375"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738069"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pour les développeurs WCF
 
@@ -50,23 +50,15 @@ Rédacteurs :
 
 ## <a name="introduction"></a>Introduction
 
-TODO
-
-## <a name="purpose"></a>Fonction
-
-TODO
+gRPC est une infrastructure moderne pour la création de services en réseau et d’applications distribuées. Imaginez les performances des liaisons NetTCP de WCF avec l’interopérabilité multiplateforme de SOAP. gRPC s’appuie sur HTTP/2 et le protocole d’encodage de message Protobuf pour fournir une communication haute performance et à faible bande passante entre les applications et les services. Il prend en charge la génération de code serveur et client dans les langages et plateformes de programmation les plus populaires, notamment .NET, Java C++ , Python, node. js, Go, etc. Avec la prise en charge de première classe de gRPC dans ASP.NET Core 3,0, en plus des outils et bibliothèques gRPC existants pour .NET 4. x, nous pensons qu’il s’agit d’une excellente alternative à WCF pour les équipes de développement souhaitant adopter .NET Core dans leurs organisations.
 
 ## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
-**METTRE À JOUR**
-
-Ce guide est destiné aux développeurs WCF, aux responsables du développement et aux architectes qui souhaitent migrer des solutions WCF sur .NET Framework 4 et versions antérieures vers ASP.NET Core 3,0 à l’aide des services gRPC.
+Ce guide a été rédigé pour les développeurs qui travaillent dans .NET Framework ou .NET Core qui ont déjà utilisé WCF et qui cherchent à migrer leurs applications vers un environnement RPC moderne pour .NET Core 3,0 et versions ultérieures. Le guide peut également être utilisé plus généralement pour les développeurs qui effectuent la mise à niveau vers .NET Core 3,0 qui souhaitent utiliser les outils gRPC intégrés.
 
 ## <a name="how-you-can-use-this-guide"></a>Utilisation de ce guide
 
-**METTRE À JOUR**
-
-Il s’agit d’une brève introduction à la création de services gRPC dans ASP.NET Core 3,0 avec une référence particulière à WCF en tant que plateforme analogue. Il explique les principes de gRPC, en associant chaque concept aux fonctionnalités équivalentes de WCF, et fournit des conseils pour la migration d’une application WCF existante vers gRPC. Elle est également utile pour les développeurs qui ont une expérience de WCF et qui cherchent à apprendre gRPC à créer de nouveaux services. L’exemple d’application peut être utilisé comme modèle ou référence pour vos propres projets, et vous êtes libre de copier et réutiliser le code du livre ou de ses exemples.
+Il s’agit d’une brève introduction à la création de services gRPC dans ASP.NET Core 3,0 avec une référence particulière à WCF en tant que plateforme analogue. Il explique les principes de gRPC, en associant chaque concept aux fonctionnalités équivalentes de WCF, et fournit des conseils pour la migration d’une application WCF existante vers gRPC. Elle est également utile pour les développeurs qui ont une expérience de WCF et qui cherchent à apprendre gRPC à créer de nouveaux services. Les exemples d’applications peuvent être utilisés comme modèle ou référence pour vos propres projets, et vous êtes libre de copier et réutiliser le code du livre ou de ses exemples.
 
 N’hésitez pas à faire connaître ce guide pour favoriser une compréhension partagée de ces considérations et de ces opportunités. Le fait que chacun utilise un même ensemble de terminologie et de principes sous-jacents permet d’obtenir plus facilement une application cohérente des modèles et des pratiques en matière d’architecture.
 

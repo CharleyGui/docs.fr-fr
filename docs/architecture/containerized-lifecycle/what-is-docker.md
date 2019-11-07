@@ -2,22 +2,22 @@
 title: Présentation de Docker
 description: Approfondissez un peu votre connaissance de Docker ; une analogie simple peut vous y aider.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7fd3c599afda2d59e0d56756bd61495f2d0370a0
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8636ae3b1ad32158e10ce2aa58423f9c9824d8c0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770718"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738150"
 ---
 # <a name="what-is-docker"></a>Présentation de Docker
 
 [Docker](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) permettant d’automatiser le déploiement d’applications en tant que conteneurs portables et autonomes exécutables sur le cloud ou localement. Docker est également une [entreprise](https://www.docker.com/) qui développe et diffuse cette technologie, en collaboration avec des fournisseurs de services cloud, Linux et Windows, notamment Microsoft.
 
-![Les conteneurs Docker peuvent s’exécuter n’importe où, en local dans le centre de données client, dans un fournisseur de services externe ou dans le cloud, sur Azure.](./media/image2.png)
+![Diagramme montrant les emplacements que les conteneurs de l’ancrage peuvent exécuter.](./media/what-is-docker/docker-containers-run-anywhere.png)
 
 **Figure 1-2**. Docker déploie des conteneurs dans toutes les couches du cloud hybride
 
-Les conteneurs d’images Docker peuvent s’exécuter en mode natif sur Linux et Windows. Toutefois, les images Windows peuvent s’exécuter uniquement sur des hôtes Windows et les images Linux peuvent s’exécuter sur des hôtes Linux et des hôtes Windows (à l’aide d’une machine virtuelle Linux Hyper-V, jusqu’à présent), où le terme « hôte » désigne un serveur ou une machine virtuelle.
+Comme indiqué dans le diagramme ci-dessus, les conteneurs de l’arrimeur peuvent s’exécuter n’importe où, localement dans le centre de donnes client, dans un fournisseur de services externes ou dans le Cloud, sur Azure. Les conteneurs d’images d’ancrage peuvent également s’exécuter en mode natif sur Linux et Windows. Toutefois, les images Windows peuvent s’exécuter uniquement sur des hôtes Windows et les images Linux peuvent s’exécuter sur des hôtes Linux et des hôtes Windows (à l’aide d’une machine virtuelle Linux Hyper-V, jusqu’à présent), où le terme « hôte » désigne un serveur ou une machine virtuelle.
 
 Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux et peuvent créer des images seulement pour les conteneurs Linux. (Les développeurs qui travaillent sur le Mac peuvent modifier le code ou exécuter l’interface de ligne de commande (CLI) de l’Ancreur à partir de macOS, mais au cours de cet article, les conteneurs ne s’exécutent pas directement sur macOS). Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
 
@@ -35,9 +35,11 @@ Les images de ces deux types de conteneurs sont créées et fonctionnent exactem
 
 La figure 1-3 compare les machines virtuelles et les conteneurs Docker.
 
-![Pour les machines virtuelles, il existe trois couches de base dans le serveur hôte, de bas en haut : infrastructure, système d’exploitation hôte et un hyperviseur, et par-dessus chaque machine virtuelle a son propre système d’exploitation et toutes les bibliothèques nécessaires. D’un autre côté, pour l’arrimeur, le serveur hôte n’a que l’infrastructure et le système d’exploitation et, en plus de cela, le moteur de conteneur, qui garde le conteneur isolé mais partage les services du système d’exploitation de base.](./media/image3.png)
+![Diagramme montrant une comparaison entre les environnements de machines virtuelles et de conteneurs.](./media/what-is-docker/comparison-vms-docker-conatiners.png)
 
 **Figure 1-3**. Comparaison entre les machines virtuelles traditionnelles et les conteneurs Docker
+
+Comme indiqué dans le diagramme ci-dessus, pour les machines virtuelles, il existe trois couches de base dans le serveur hôte. Du bas vers le haut : infrastructure, système d’exploitation hôte et hyperviseur. Au-dessus de tout cela, chaque machine virtuelle possède son propre système d’exploitation et toutes les bibliothèques nécessaires. D’un autre côté, pour l’arrimeur, le serveur hôte dispose uniquement de l’infrastructure et du système d’exploitation. En plus de cela, le moteur de conteneur conserve les conteneurs isolés, mais les autorise à partager les services d’un système d’exploitation de base unique.
 
 Du fait que les conteneurs nécessitent beaucoup moins de ressources (par exemple, ils n’ont pas besoin d’un système d’exploitation complet), leur démarrage est rapide et leur déploiement est simple. Cela vous permet d’avoir une densité plus élevée, ce qui vous permet d’exécuter plus de services sur la même unité matérielle, limitant les coûts.
 

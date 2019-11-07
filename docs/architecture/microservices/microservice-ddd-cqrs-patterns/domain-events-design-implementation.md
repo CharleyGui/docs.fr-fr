@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: eea72633d3460f51821e8a939b14acff2f17965c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f0dbd6b0e70d825122d319611a327438df065588
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093953"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739901"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -47,11 +47,11 @@ Par conséquent, l’interface du bus d’événements a besoin d’une infrastr
 
 Si l’exécution d’une commande liée à une instance d’agrégat nécessite que d’autres règles de domaine soient exécutées sur un ou plusieurs autres agrégats, vous devez concevoir et implémenter ces effets secondaires de manière à ce qu’ils soient déclenchés par les événements de domaine. Comme le montre la figure 7-14, et c’est là un des principaux cas d’utilisation, un événement de domaine doit être utilisé pour propager les changements d’état sur plusieurs agrégats au sein du même modèle de domaine.
 
-![La cohérence entre les agrégats est obtenue via des événements de domaine : l’agrégat Order (Commande) envoie un événement de domaine OrderStarted qui est géré pour mettre à jour l’agrégat Buyer (Acheteur). ](./media/image15.png)
+![Diagramme montrant un événement de domaine contrôlant les données à un agrégat d’acheteur.](./media/domain-events-design-implementation/domain-model-ordering-microservice.png)
 
 **Figure 7-14**. Utilisation des événements de domaine pour obtenir la cohérence entre les différents agrégats d’un même domaine
 
-Dans la figure ci-dessus, lorsque l’utilisateur démarre la création d’une commande, l’événement de domaine OrderStarted déclenche la création d’un objet Acheteur dans le microservice de commande, en se basant sur les informations de l’utilisateur d’origine provenant du microservice d’identité (avec les informations fournies dans la commande CreateOrder). L’événement de domaine est généré par l’agrégat de commande lors de sa création.
+La figure 7-14 montre comment la cohérence entre les agrégats est obtenue par les événements de domaine. Lorsque l’utilisateur initie une commande, l’agrégat de commande envoie un événement de domaine `OrderStarted`. L’événement de domaine OrderStarted est géré par l’agrégat Buyer pour créer un objet Buyer dans le microservice de commande, en fonction des informations de l’utilisateur d’origine à partir du microservice d’identité (avec les informations fournies dans la commande CreateOrder).
 
 Vous pouvez également abonner l’agrégat racine aux événements déclenchés par les membres de ses agrégats (entités enfants). Par exemple, chaque entité enfant d’OrderItem peut déclencher un événement lorsque le prix du produit est supérieur à un montant donné, ou lorsque le montant du produit est trop élevé. L’agrégat racine peut ensuite recevoir ces événements et effectuer un calcul global ou un agrégat.
 
@@ -78,11 +78,11 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 
 Comme le montre la figure 7-15, à partir du même événement de domaine, vous pouvez gérer plusieurs actions liées aux autres agrégats du domaine ou à d’autres actions d’application à exécuter sur les microservices qui se connectent aux événements d’intégration et au bus d’événements.
 
-![Il peut exister plusieurs gestionnaires pour le même événement de domaine dans la couche Application, un gestionnaire peut résoudre la cohérence entre les agrégats, et un autre gestionnaire peut publier un événement d’intégration, pour que d’autres microservices puissent en faire quelque chose.](./media/image16.png)
+![Diagramme montrant un événement de domaine passant des données à plusieurs gestionnaires d’événements.](./media/domain-events-design-implementation/aggregate-domain-event-handlers.png)
 
 **Figure 7-15**. Gestion de plusieurs actions par domaine
 
-Les gestionnaires d’événements se trouvent en général dans la couche Application, car vous allez utiliser les objets d’infrastructure comme les dépôts ou une API d’application pour le comportement du microservice. Dans ce sens, les gestionnaires d’événements sont similaires aux gestionnaires de commandes, car tous deux font partie de la couche Application. La principale différence est qu’une commande ne doit être traitée qu’une seule fois. Un événement de domaine peut être traité zéro ou *n* fois, car il peut être reçu par plusieurs récepteurs ou gestionnaires d’événements, chacun ayant un objectif différent.
+Il peut exister plusieurs gestionnaires pour le même événement de domaine dans la couche Application, un gestionnaire peut résoudre la cohérence entre les agrégats, et un autre gestionnaire peut publier un événement d’intégration, pour que d’autres microservices puissent en faire quelque chose. Les gestionnaires d’événements se trouvent en général dans la couche Application, car vous allez utiliser les objets d’infrastructure comme les dépôts ou une API d’application pour le comportement du microservice. Dans ce sens, les gestionnaires d’événements sont similaires aux gestionnaires de commandes, car tous deux font partie de la couche Application. La principale différence est qu’une commande ne doit être traitée qu’une seule fois. Un événement de domaine peut être traité zéro ou *n* fois, car il peut être reçu par plusieurs récepteurs ou gestionnaires d’événements, chacun ayant un objectif différent.
 
 Le fait d’avoir un nombre ouvert de gestionnaires par événement de domaine vous permet d’ajouter autant de règles de domaine que nécessaire, sans affecter le code actuel. Par exemple, pour implémenter la règle métier suivante, vous pouvez simplement ajouter quelques gestionnaires d’événements (voire un seul) :
 
@@ -244,7 +244,7 @@ L’une des méthodes possibles consiste à utiliser un système de messagerie r
 
 Une autre façon de mapper des événements à plusieurs gestionnaires d’événements est d’utiliser l’inscription des types dans un conteneur IoC, pour déduire dynamiquement où distribuer les événements. En d’autres termes, vous devez savoir ce dont les gestionnaires d’événements ont besoin pour recevoir un événement spécifique. La figure 7-16 montre une approche simplifiée de ceci.
 
-![L’injection de dépendances peut être utilisée pour associer des événements à des gestionnaires d’événements : c’est l’approche utilisée par MediatR](./media/image17.png)
+![Diagramme montrant un répartiteur d’événements de domaine envoyant des événements aux gestionnaires appropriés.](./media/domain-events-design-implementation/domain-event-dispatcher.png)
 
 **Figure 7-16**. Répartiteur d’événements de domaine utilisant l’IoC
 

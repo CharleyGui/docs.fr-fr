@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 10/02/2018
-ms.openlocfilehash: 208b0f27aa1e6ceb6686e9e846b6e31d9f1c74df
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c607f8b980f7dffacf3564688c6c9bb498264d96
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035640"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737070"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -139,7 +139,7 @@ Lorsque vous implémentez les étapes de publication des événements, vous avez
 
 La figure 6-22 montre l’architecture de la première de ces approches.
 
-![Une approche pour gérer l’atomicité lors de la publication d’événements : utiliser une transaction pour valider l’événement auprès d’une table de journal des événements, puis une autre transaction pour effectuer la publication (utilisée dans eShopOnContainers)](./media/image23.png)
+![Diagramme de l’atomicité lors de la publication sans un microservice de travail.](./media/subscribe-events/atomicity-publish-event-bus.png)
 
 **Figure 6-22.** Atomicité lors de la publication d’événements dans le bus d’événements
 
@@ -147,7 +147,7 @@ Il manque à l’approche illustrée à la figure 6-22 un microservice de worke
 
 Pour la deuxième approche, vous devez utiliser la table EventLog comme une file d’attente et toujours utiliser un microservice de worker pour publier les messages. Dans ce cas, le processus est similaire à celui illustré dans la figure 6-23. On y voit un microservice supplémentaire, ainsi que la table qui est la seule source lors de la publication d’événements.
 
-![Une autre approche pour gérer l’atomicité : publier dans une table de journal des événements, puis faire publier l’événement par un autre microservice (un worker en arrière plan).](./media/image24.png)
+![Diagramme de l’atomicité lors de la publication avec un microservice de travail.](./media/subscribe-events/atomicity-publish-worker-microservice.png)
 
 **Figure 6-23.** Atomicité lors de la publication d’événements dans le bus d’événements avec un microservice de worker
 
@@ -279,7 +279,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 Le gestionnaire d’événements doit vérifier si le produit se trouve dans une des instances du panier d’achat. Il met également à jour le prix de chaque article associé. Enfin, il crée une alerte pour l’utilisateur concernant le changement de prix, comme indiqué dans la figure 6-24.
 
-![Affichage dans le navigateur de la notification de changement de processus dans le panier de l’utilisateur.](./media/image25.png)
+![Capture d’écran d’un navigateur montrant la notification de changement de prix sur le panier de l’utilisateur.](./media/subscribe-events/display-item-price-change.png)
 
 **Figure 6-24.** Affichage du changement de prix d’un article du panier, communiqué par les événements d’intégration
 

@@ -2,12 +2,12 @@
 title: Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser RabbitMQ pour implémenter une messagerie de bus d’événements pour les événements d’intégration des environnements de développement ou de test.
 ms.date: 10/02/2018
-ms.openlocfilehash: 7d51054d444ce1e35fabab94cc803e74dbd96f19
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 211348caec3c101435fcdd99bd96fd8e17a6456b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089741"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739487"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 
@@ -17,11 +17,11 @@ L’une des implémentations personnalisées du bus d’événements dans eShopO
 
 L’implémentation du bus d’événements avec RabbitMQ permet aux microservices de s’abonner aux événements, aux événements de publication et aux événements de réception, comme le montre la figure 6-21.
 
-![RabbitMQ fonctionne comme un intermédiaire entre le serveur de publication des messages et les abonnés pour gérer la distribution.](./media/image22.png)
+![Diagramme montrant les RabbitMQ entre l’expéditeur et le récepteur du message.](./media/rabbitmq-event-bus-development-test-environment/rabbitmq-implementation.png)
 
 **Figure 6-21.** Implémentation RabbitMQ d’un bus d’événements
 
-Dans le code, la classe EventBusRabbitMQ implémente l’interface IEventBus générique. Cette opération est basée sur une injection de dépendances pour vous permettre de passer de cette version de développement/test à une version de production.
+RabbitMQ fonctionne comme un intermédiaire entre le serveur de publication des messages et les abonnés pour gérer la distribution. Dans le code, la classe EventBusRabbitMQ implémente l’interface IEventBus générique. Cette opération est basée sur une injection de dépendances pour vous permettre de passer de cette version de développement/test à une version de production.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable

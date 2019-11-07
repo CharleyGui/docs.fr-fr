@@ -2,12 +2,12 @@
 title: Conception d’un microservice orienté DDD
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la conception du microservice orienté DDD (Domain Driven Design) et de ses couches d’application.
 ms.date: 10/08/2018
-ms.openlocfilehash: 303f8909d12dddef93b20604a00b9ea8e8493ee5
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: c5ac55978ca979a3ae055d9b0cd2d3c6b3187b4e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674346"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739944"
 ---
 # <a name="design-a-ddd-oriented-microservice"></a>Concevoir un microservice orienté DDD
 
@@ -37,13 +37,13 @@ Quand le problème de la complexité est abordé, il est important de disposer d
 
 La figure 7-5 montre l’implémentation d’une conception par couches dans l’application eShopOnContainers.
 
-![Les trois couches dans un microservice DDD comme Ordering. Chaque couche est un projet VS : la couche Application est Ordering.API, la couche Domaine est Ordering.Domain et la couche Infrastructure est Ordering.Infrastructure.](./media/image6.png)
+![Diagramme montrant les couches dans un microservice de conception piloté par domaine.](./media/ddd-oriented-microservice/domain-driven-design-microservice.png)
 
 **Figure 7-5**. Couches DDD dans le microservice de commandes dans eShopOnContainers
 
-Vous souhaitez concevoir le système afin que chaque couche communique uniquement avec certaines autres couches. Cela peut être plus facile à appliquer si les couches sont implémentées comme des bibliothèques de classes différentes, car vous pouvez identifier clairement les dépendances définies entre les bibliothèques. Par exemple, la couche de modèle de domaine ne nécessite pas de dépendance sur une autre couche (les classes de modèle de domaine doivent être des classes d’objets CLR traditionnels ou [OCT](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)). Comme illustré dans la figure 7-6, la bibliothèque de la couche **Ordering.Domain** a des dépendances de bibliothèques .NET Core ou de packages NuGet seulement, et n’a pas de dépendances d’autres bibliothèques personnalisées, comme la bibliothèque de données ou la bibliothèque de persistance.
+Les trois couches dans un microservice DDD comme Ordering. Chaque couche est un projet Visual Studio : la couche Application est Ordering.API, la couche Domaine est Ordering.Domain et la couche Infrastructure est Ordering.Infrastructure. Vous souhaitez concevoir le système afin que chaque couche communique uniquement avec certaines autres couches. Cela peut être plus facile à appliquer si les couches sont implémentées comme des bibliothèques de classes différentes, car vous pouvez identifier clairement les dépendances définies entre les bibliothèques. Par exemple, la couche de modèle de domaine ne nécessite pas de dépendance sur une autre couche (les classes de modèle de domaine doivent être des classes d’objets CLR traditionnels ou [OCT](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)). Comme illustré dans la figure 7-6, la bibliothèque de la couche **Ordering.Domain** a des dépendances de bibliothèques .NET Core ou de packages NuGet seulement, et n’a pas de dépendances d’autres bibliothèques personnalisées, comme la bibliothèque de données ou la bibliothèque de persistance.
 
-![La vue Explorateur de solutions des dépendances de Ordering.Domain, montrant qu’elle dépend seulement de bibliothèques .NET Core.](./media/image7.png)
+![Capture d’écran des dépendances de classement. domain.](./media/ddd-oriented-microservice/ordering-domain-dependencies.png)
 
 **Figure 7-6**. Les couches implémentées comme des bibliothèques permettent de mieux contrôler les dépendances entre les couches
 
@@ -51,7 +51,7 @@ Vous souhaitez concevoir le système afin que chaque couche communique uniquemen
 
 L’excellent livre d’Eric Evans [Domain Driven Design](https://domainlanguage.com/ddd/) affirme ce qui suit à propos de la couche de modèle de domaine et de la couche d’application.
 
-**Couche Modèle de domaine** : chargée de représenter les concepts de l’entreprise, des informations sur sa situation ainsi que ses règles. L’état qui reflète la situation de l’entreprise est contrôlé et utilisé ici, même si les détails techniques du stockage sont délégués à l’infrastructure. Cette couche est au cœur des logiciels d’entreprise.
+**Couche de modèle de domaine** : chargée de représenter les concepts de l’entreprise, des informations sur sa situation ainsi que ses règles. L’état qui reflète la situation de l’entreprise est contrôlé et utilisé ici, même si les détails techniques du stockage sont délégués à l’infrastructure. Cette couche est au cœur des logiciels d’entreprise.
 
 La couche de modèle de domaine est l’endroit où l’entreprise s’exprime. Quand vous implémentez une couche de modèle de domaine de microservice dans .NET, cette couche est codée comme une bibliothèque de classes avec les entités de domaine qui capturent les données ainsi que le comportement (méthodes avec logique).
 
@@ -69,7 +69,7 @@ En outre, cela ne signifie pas que vous pouvez prendre un modèle conçu pour un
 
 En passant à la couche d’application, nous pouvons à nouveau citer le livre d’Eric Evans [Domain Driven Design](https://domainlanguage.com/ddd/) :
 
-**Couche Application** : définit les travaux que le logiciel est supposé effectuer et dirige les objets de domaine expressifs pour résoudre les problèmes. Les tâches dont cette couche est responsable sont significatives pour l’entreprise ou nécessaires pour l’interaction avec les couches d’application d’autres systèmes. Cette couche reste mince. Elle ne contient pas de règles métier ni de connaissances métier, mais coordonne uniquement les tâches et le travail des délégués pour les collaborations des objets de domaine dans la couche suivante. Elle ne présente pas d’état reflétant la situation de l’entreprise, mais peut avoir un état qui reflète la progression d’une tâche pour l’utilisateur ou le programme.
+**Couche d’application :** définit les travaux que le logiciel est supposé effectuer et dirige les objets de domaine expressifs pour résoudre les problèmes. Les tâches dont cette couche est responsable sont significatives pour l’entreprise ou nécessaires pour l’interaction avec les couches d’application d’autres systèmes. Cette couche reste mince. Elle ne contient pas de règles métier ni de connaissances métier, mais coordonne uniquement les tâches et le travail des délégués pour les collaborations des objets de domaine dans la couche suivante. Elle ne présente pas d’état reflétant la situation de l’entreprise, mais peut avoir un état qui reflète la progression d’une tâche pour l’utilisateur ou le programme.
 
 La couche d’application d’un microservice dans .NET est généralement codée comme un projet d’API web ASP.NET Core. Le projet implémente l’interaction du microservice, l’accès réseau à distance et les API web externes utilisées dans les applications clientes ou l’interface utilisateur. Il inclut des requêtes dans le cadre d’une approche CQRS, des commandes acceptées par le microservice et même la communication pilotée par événements entre les microservices (événements d’intégration). L’API web ASP.NET Core qui représente la couche d’application ne doit pas contenir de règles métier ni de connaissances de domaine (notamment des règles de domaine pour les transactions ou les mises à jour) : celles-ci doivent appartenir à la bibliothèque de classes de modèle de domaine. La couche d’application doit uniquement coordonner les tâches et ne doit pas contenir ni définir d’état de domaine (modèle de domaine). Elle délègue l’exécution des règles métier aux classes de modèle de domaine (racines d’agrégat et entités de domaine) qui vont finalement mettre à jour les données au sein de ces entités de domaine.
 
@@ -85,21 +85,21 @@ Conformément aux principes [d’ignorance de la persistance](https://deviq.com/
 
 Ainsi, vos couches ou vos bibliothèques et projets de classes doivent au final s’appuyer sur votre couche de modèle de domaine (bibliothèque), et pas l’inverse, comme illustré dans la figure 7-7.
 
-![Dépendances dans un service de conception DDD : la couche Application dépend des couches Domaine et Infrastructure, la couche Infrastructure dépend de la couche Domaine, mais la couche Domaine ne dépend d’aucune couche.](./media/image8.png)
+![Diagramme montrant les dépendances qui existent entre les couches de service de DDD.](./media/ddd-oriented-microservice/ddd-service-layer-dependencies.png)
 
 **Figure 7-7**. Dépendances entre les couches dans DDD
 
-Cette conception de couche doit être indépendante pour chaque microservice. Comme indiqué précédemment, vous pouvez implémenter les microservices les plus complexes suivant des modèles DDD, tout en implémentant des microservices pilotés par des données plus simples (CRUD de base dans une couche unique) plus simplement.
+Dépendances dans un service de conception DDD : la couche Application dépend des couches Domaine et Infrastructure, la couche Infrastructure dépend de la couche Domaine, mais la couche Domaine ne dépend d’aucune couche. Cette conception de couche doit être indépendante pour chaque microservice. Comme indiqué précédemment, vous pouvez implémenter les microservices les plus complexes suivant des modèles DDD, tout en implémentant des microservices pilotés par des données plus simples (CRUD de base dans une couche unique) plus simplement.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **DevIQ. Persistence Ignorance principle** \
+- **DevIQ. Principe d’ignorance de la persistance** \
   <https://deviq.com/persistence-ignorance/>
 
-- **Oren Eini. Infrastructure Ignorance** \
+- **Oren Eini.**  \ d’ignorance de l’infrastructure
   <https://ayende.com/blog/3137/infrastructure-ignorance>
 
-- **Angel Lopez. Layered Architecture In Domain-Driven Design** \
+- **Ange Lopez. Architecture en couches dans la conception pilotée par domaine** \
   <https://ajlopez.wordpress.com/2008/09/12/layered-architecture-in-domain-driven-design/>
 
 >[!div class="step-by-step"]

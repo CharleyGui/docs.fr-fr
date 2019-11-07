@@ -2,12 +2,12 @@
 title: Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser le concept de seedwork comme point de départ pour démarrer l’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 87cbc5ce96b66a9ac3e1c2bfc8c863d1b20714db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f53988b92a05fb54f3f05d9f463450d1a11a0843
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093804"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737218"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)
 
@@ -15,7 +15,9 @@ Le dossier solution contient un dossier *SeedWork*. Ce dossier contient des clas
 
 La figure 7-12 montre les classes qui constituent le seedwork du modèle de domaine dans le microservice Ordering. Il comporte quelques classes de base personnalisées comme Entity, ValueObject et Enumeration, ainsi que quelques interfaces. Ces interfaces (IRepository et IUnitOfWork) informent la couche d’infrastructure sur ce qui doit être implémenté. Elles sont également utilisées par injection de dépendances à partir de la couche Application.
 
-![Contenu détaillé du dossier SeedWork, avec des classes de base et des interfaces : Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs et ValueObject.cs](./media/image13.PNG)
+:::image type="complex" source="./media/seedwork-domain-model-base-classes-interfaces/vs-solution-seedwork-classes.png" alt-text="Capture d’écran des classes contenues dans le dossier SeedWork.":::
+Contenu détaillé du dossier SeedWork, contenant les classes et interfaces de base : Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs et ValueObject.cs.
+:::image-end:::
 
 **Figure 7-12**. Exemple d’ensemble de classes de base et d’interfaces « seedwork » de modèle de domaine
 
