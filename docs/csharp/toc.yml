@@ -1152,14 +1152,6 @@
           href: programming-guide/namespaces/using-namespaces.md
         - name: Comment utiliser l’espace de noms My
           href: programming-guide/namespaces/how-to-use-the-my-namespace.md
-    - name: Types valeur Nullable
-      items:
-        - name: Vue d'ensemble
-          href: programming-guide/nullable-types/index.md
-        - name: Utilisation de types valeur Nullable
-          href: programming-guide/nullable-types/using-nullable-types.md
-        - name: Guide pratique pour identifier un type valeur Nullable
-          href: programming-guide/nullable-types/how-to-identify-a-nullable-type.md
     - name: Pointeurs et code unsafe
       items:
         - name: Vue d’ensemble et restrictions
@@ -1314,6 +1306,9 @@
                   href: language-reference/keywords/enum.md
                 - name: struct
                   href: language-reference/keywords/struct.md
+                - name: Types valeur Nullable
+                  href: language-reference/builtin-types/nullable-value-types.md
+                  displayName: '? token, ? symbol'
             - name: Types référence
               items:
                 - name: Caractéristiques des types référence
