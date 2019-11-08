@@ -2,21 +2,18 @@
 title: Modifications avec rupture de chiffrement, version 2,2 à 3,0-.NET Core
 description: Répertorie les modifications avec rupture de la version 2,2 à la version 3,0 de .NET Core, ASP.NET Core et EF Core.
 ms.date: 09/10/2019
-ms.openlocfilehash: ba330bdef4be8cfe0e74f5645adaf66b2e0051ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8b2894e6988c0b475e45c6d5602a7f54943f3ed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089581"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739422"
 ---
-# <a name="breaking-changes-for-migration-from-version-22-to-30"></a><span data-ttu-id="60ffe-103">Dernières modifications pour la migration de la version 2,2 vers 3,0</span><span class="sxs-lookup"><span data-stu-id="60ffe-103">Breaking changes for migration from Version 2.2 to 3.0</span></span>
+# <a name="breaking-changes-for-migration-from-version-22-to-30"></a><span data-ttu-id="3a8f9-103">Dernières modifications pour la migration de la version 2,2 vers 3,0</span><span class="sxs-lookup"><span data-stu-id="3a8f9-103">Breaking changes for migration from Version 2.2 to 3.0</span></span>
 
-> [!IMPORTANT]
-> <span data-ttu-id="60ffe-104">Cet article est en cours de construction.</span><span class="sxs-lookup"><span data-stu-id="60ffe-104">This article is under construction.</span></span> <span data-ttu-id="60ffe-105">Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="60ffe-105">This is not a complete list of .NET Core breaking changes.</span></span> <span data-ttu-id="60ffe-106">Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="60ffe-106">For more information on .NET Core breaking changes, you can examine individual [breaking changes issues](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) in the dotnet/docs repository on GitHub.</span></span> 
+<span data-ttu-id="3a8f9-104">Si vous effectuez une migration de la version 2,2 vers la version 3,0 de .NET Core, ASP.NET Core ou EF Core, consultez les rubriques suivantes pour connaître les dernières modifications susceptibles d’affecter votre application :</span><span class="sxs-lookup"><span data-stu-id="3a8f9-104">If you are migrating from version 2.2 to version 3.0 of .NET Core, ASP.NET Core, or EF Core, review the following topics for breaking changes that may affect your app:</span></span>
 
-<span data-ttu-id="60ffe-107">Si vous effectuez une migration de la version 2,2 vers la version 3,0 de .NET Core, ASP.NET Core ou EF Core, consultez les rubriques suivantes pour connaître les dernières modifications susceptibles d’affecter votre application :</span><span class="sxs-lookup"><span data-stu-id="60ffe-107">If you are migrating from version 2.2 to version 3.0 of .NET Core, ASP.NET Core, or EF Core, review the following topics for breaking changes that may affect your app:</span></span>
-
-## <a name="corefx"></a><span data-ttu-id="60ffe-108">CoreFx</span><span class="sxs-lookup"><span data-stu-id="60ffe-108">CoreFx</span></span>
+## <a name="corefx"></a><span data-ttu-id="3a8f9-105">CoreFx</span><span class="sxs-lookup"><span data-stu-id="3a8f9-105">CoreFx</span></span>
 
 [!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/version-information-changes.md)]
 
@@ -44,7 +41,7 @@ ms.locfileid: "73089581"
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/ziparchiveentry-and-inconsistent-entry-sizes.md)]
 
-## <a name="cryptography"></a><span data-ttu-id="60ffe-109">Chiffrement</span><span class="sxs-lookup"><span data-stu-id="60ffe-109">Cryptography</span></span>
+## <a name="cryptography"></a><span data-ttu-id="3a8f9-106">Chiffrement</span><span class="sxs-lookup"><span data-stu-id="3a8f9-106">Cryptography</span></span>
 
 [!INCLUDE[EnvelopedCms defaults to AES-256 encryption](~/includes/core-changes/cryptography/envelopedcms-defaults-to-aes256.md)]
 
@@ -56,14 +53,14 @@ ms.locfileid: "73089581"
 
 [!INCLUDE[.NET Core 3.0 prefers OpenSSL 1.1.x to OpenSSL 1.0.x](~/includes/core-changes/cryptography/net-core-3-0-prefers-openssl-1-1-x.md)]
 
-## <a name="globalization"></a><span data-ttu-id="60ffe-110">Globalisation</span><span class="sxs-lookup"><span data-stu-id="60ffe-110">Globalization</span></span>
+## <a name="globalization"></a><span data-ttu-id="3a8f9-107">Globalisation</span><span class="sxs-lookup"><span data-stu-id="3a8f9-107">Globalization</span></span>
 
 [!INCLUDE["C" locale maps to the invariant locale](~/includes/core-changes/globalization/c-locale-maps-to-invariant-locale.md)]
 
-## <a name="visual-basic"></a><span data-ttu-id="60ffe-111">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="60ffe-111">Visual Basic</span></span>
+## <a name="visual-basic"></a><span data-ttu-id="3a8f9-108">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="3a8f9-108">Visual Basic</span></span>
 
 [!INCLUDE[vbNewLine is obsolete](~/includes/core-changes/visualbasic/vbnewline-is-obsolete.md)]
 
-## <a name="entity-framework-core"></a><span data-ttu-id="60ffe-112">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="60ffe-112">Entity Framework Core</span></span>
+## <a name="entity-framework-core"></a><span data-ttu-id="3a8f9-109">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="3a8f9-109">Entity Framework Core</span></span>
 
-[<span data-ttu-id="60ffe-113">Modifications avec rupture Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="60ffe-113">Entity Framework Core breaking changes</span></span>](/ef/core/what-is-new/ef-core-3.0/breaking-changes)
+[<span data-ttu-id="3a8f9-110">Modifications avec rupture Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="3a8f9-110">Entity Framework Core breaking changes</span></span>](/ef/core/what-is-new/ef-core-3.0/breaking-changes)
