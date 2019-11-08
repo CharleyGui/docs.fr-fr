@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
-ms.openlocfilehash: 74d13de78369b13fbf970dce9a3ef5ae7cbaac7f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 932649bf063beb8cb334966c0bec0a8df86c7625
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698884"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736900"
 ---
 # <a name="null-c-reference"></a>null (référence C#)
 
-Le mot clé `null` est un littéral qui représente une référence null, c’est-à-dire qui ne fait pas référence à un objet. `null` est la valeur par défaut des variables de type référence. Les types valeur ordinaires ne peuvent pas être null, à l’exception des [types valeur Nullable](../../programming-guide/nullable-types/index.md).
+Le mot clé `null` est un littéral qui représente une référence null, c’est-à-dire qui ne fait pas référence à un objet. `null` est la valeur par défaut des variables de type référence. Les types valeur ordinaires ne peuvent pas être null, à l’exception des [types valeur Nullable](../builtin-types/nullable-value-types.md).
 
 L’exemple suivant illustre certains comportements du mot clé null :
 

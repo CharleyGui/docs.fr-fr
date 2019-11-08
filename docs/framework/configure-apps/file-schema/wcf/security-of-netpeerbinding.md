@@ -2,22 +2,22 @@
 title: <security> de <netPeerBinding>
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
-ms.openlocfilehash: 88aa2898472c20c9e52cfd5830c0e41e8ea9ba21
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 3d1ac85073c44f683fe0c054737c5ec7ed1cbf52
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399814"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738663"
 ---
-# <a name="security-of-netpeerbinding"></a>\<> de sécurité \<de netPeerBinding >
-Définit les paramètres de sécurité de l' [ \<> NetPeerTcpBinding](netpeertcpbinding.md), y compris le type d’authentification utilisé et la sécurité utilisée pour le transport des messages.  
+# <a name="security-of-netpeerbinding"></a>\<> de sécurité de \<netPeerBinding >
+Définit les paramètres de sécurité de l' [\<NetPeerTcpBinding](netpeertcpbinding.md), y compris le type d’authentification utilisé et la sécurité utilisée pour le transport de messages.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**NetPeerTcpBinding**](netpeertcpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,14 +38,14 @@ Définit les paramètres de sécurité de l' [ \<> NetPeerTcpBinding](netpeertcp
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|mode|facultatif. Spécifie le type de sécurité utilisé par les homologues configurés avec cette liaison. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.SecurityMode>.|  
+|mode|Optionnel. Spécifie le type de sécurité utilisé par les homologues configurés avec cette liaison. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.SecurityMode>.|  
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |Message|La sécurité SOAP assure l'authentification, l'intégrité et la confidentialité.|  
-|Aucun|La sécurité est désactivée.|  
+|aucune.|La sécurité est désactivée.|  
 |Transport|La sécurité est fournie à l'aide de HTTPS.|  
 |TransportWithMessageCredential|Le protocole HTTPS assure l'authentification et la confidentialité. Les messages SOAP fournissent des types d'informations d'identification enrichies.|  
   
@@ -53,13 +53,13 @@ Définit les paramètres de sécurité de l' [ \<> NetPeerTcpBinding](netpeertcp
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<transport>](transport-of-netpeertcpbinding.md)|Définit le type de transport pour les messages sécurisés envoyés par des homologues configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
+|[> de transport \<](transport-of-netpeertcpbinding.md)|Définit le type de transport pour les messages sécurisés envoyés par des homologues configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<binding>](../../../misc/binding.md)|Définit toutes les fonctions de liaison de l' [ \<> NetPeerTcpBinding](netpeertcpbinding.md).|  
+|[liaison de \<](bindings.md)|Définit toutes les fonctions de liaison du [\<NetPeerTcpBinding](netpeertcpbinding.md).|  
   
 ## <a name="remarks"></a>Notes  
  La sécurité peut être spécifique au message ou au transport.  
@@ -75,4 +75,4 @@ Définit les paramètres de sécurité de l' [ \<> NetPeerTcpBinding](netpeertcp
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

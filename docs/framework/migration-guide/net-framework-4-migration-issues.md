@@ -5,32 +5,18 @@ helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: d3966ff15e06baf293ea02dad031bd5849b4a20f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 889e63feb71682065641fcdc56ada017dcf6c58c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126043"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735122"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problèmes de migration du .NET Framework 4
 
-Cette rubrique décrit les problèmes de migration entre le .NET Framework version 3.5 Service Pack 1 et le .NET Framework version 4, notamment les correctifs, les mises en conformité avec les normes et la sécurité, et les changements basés sur les commentaires des clients. La plupart de ces modifications ne requièrent aucun changement dans la programmation de vos applications. Si des changements s’avèrent nécessaires, consultez la colonne Changements recommandés du tableau.
+Cette rubrique décrit les problèmes de migration entre le .NET Framework version 3.5 Service Pack 1 et le .NET Framework version 4, notamment les correctifs, les mises en conformité avec les normes et la sécurité, et les changements basés sur les commentaires des clients. La plupart de ces modifications ne requièrent aucun changement dans la programmation de vos applications. Si des changements s’avèrent nécessaires, consultez la colonne Changements recommandés du tableau. Les modifications notables sont décomposées par zone, par exemple, ASP.NET et Windows Presentation Foundation (WPF).
 
-Cette rubrique décrit des modifications importantes dans les domaines suivants :
-
-- [ASP.NET et web](#aspnet-and-web)
-
-- [Fonctionnalités de base](#core)
-
-- [Data](#data)
-
-- [Windows Communication Foundation (WCF)](#windows-communication-foundation-wcf)
-
-- [Windows Presentation Foundation (WPF)](#windows-presentation-foundation-wpf)
-
-- [XML](#xml)
-
-Pour obtenir une vue d’ensemble globale des problèmes dans cette rubrique, consultez [Guide de migration vers le .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
+Pour obtenir une vue d’ensemble plus détaillée des problèmes de cette rubrique, consultez le [Guide de migration vers le .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
 
 Pour plus d’informations sur les nouvelles fonctionnalités, consultez [Nouveautés du .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868%28v=vs.100%29).
 

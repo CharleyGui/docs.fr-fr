@@ -4,12 +4,12 @@ description: Découvrez comment créer une application .NET Core qui prend en ch
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 5267a56d0742d8e1cae4a81c058bc4ee05e83b4e
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 16fc9d3c721ddd0618c980c7dc406b7ad7864ff5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579501"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739702"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Créer une application .NET Core avec des plug-ins
 
@@ -285,3 +285,7 @@ Cela empêche la copie des assemblys `A.PluginBase` dans le répertoire de sorti
 ## <a name="plugin-target-framework-recommendations"></a>Recommandations concernant le framework cible des plug-ins
 
 Sachant que le chargement des dépendances de plug-in utilise le fichier *.deps.json*, il existe un piège lié au framework cible des plug-ins. Plus précisément, vos plug-ins doivent cibler un runtime, comme .NET Core 3.0, et non une version de .NET Standard. Le fichier *.deps.json* est généré en fonction du framework cible du projet, et comme de nombreux packages compatibles avec .NET Standard intègrent des assemblys de référence pour développer par rapport à .NET Standard et aux assemblys d’implémentation de runtimes spécifiques, il se peut que *.deps.json* ne voie pas correctement les assemblys d’implémentation ou qu’il s’empare de la version .NET Standard d’un assembly au lieu de la version .NET Core attendue.
+
+## <a name="plugin-framework-references"></a>Références de l’infrastructure de plug-in
+
+Actuellement, les plug-ins ne peuvent pas introduire de nouveaux frameworks dans le processus. Par exemple, vous ne pouvez pas charger un plug-in qui utilise le Framework `Microsoft.AspNetCore.App` dans une application qui utilise uniquement l’infrastructure racine `Microsoft.NETCore.App`. L’application hôte doit déclarer des références à tous les frameworks requis par les plug-ins.

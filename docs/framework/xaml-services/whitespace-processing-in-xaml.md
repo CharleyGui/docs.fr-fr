@@ -7,19 +7,19 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: 930e8a0013dd601aaafcd81340b3b9b8b69f8fdd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 3661563dc7f5fa7346a12abab15013b56c376325
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458496"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740584"
 ---
 # <a name="white-space-processing-in-xaml"></a>Traitement des espaces blancs en XAML
 Les règles de langage pour l’État XAML dont l’espace blanc significatif doit être traité par une implémentation du processeur [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]. Cette rubrique documente ces règles de langage XAML. Il documente également la gestion des espaces blancs supplémentaires définie par l’implémentation [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] du processeur XAML et le writer XAML pour la sérialisation.  
   
 <a name="whitespace_definition"></a>   
 ## <a name="white-space-definition"></a>Définition de l’espace blanc  
- Cohérente avec [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)], les espaces blancs dans les [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] sont l’espace, le saut de ligne et la tabulation. Ils correspondent respectivement aux valeurs Unicode 0020, 000A et 0009.  
+ Cohérent avec XML, les espaces blancs dans [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] sont l’espace, le saut de ligne et la tabulation. Ils correspondent respectivement aux valeurs Unicode 0020, 000A et 0009.  
   
 <a name="whitespace_normalization"></a>   
 ## <a name="white-space-normalization"></a>Normalisation des espaces blancs  

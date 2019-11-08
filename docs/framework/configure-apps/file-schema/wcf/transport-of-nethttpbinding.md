@@ -2,23 +2,23 @@
 title: <transport> de <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: 521aaf3913a1d30d10a674b71d4d98affcabc296
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: b975015a9c9a0af53117900c45d917ce1c1a53e9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399339"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732811"
 ---
-# <a name="transport-of-nethttpbinding"></a>\<> de transport \<de NetHttpBinding >
+# <a name="transport-of-nethttpbinding"></a>\<> de transport de \<netHttpBinding >
 Définit les propriétés qui déterminent les paramètres d'authentification pour le transport HTTP.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**NetHttpBinding**](nethttpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **&nbsp;&nbsp;\<** ](security-of-nethttpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,41 +47,41 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|clientCredentialType|-Spécifie le type d’informations d’identification à utiliser lors de l’authentification du client à l’aide de l’authentification HTTP.  Par défaut, il s’agit de `None`. Cet attribut est de type <xref:System.ServiceModel.HttpClientCredentialType>.|  
+|clientCredentialType|-Spécifie le type d’informations d’identification à utiliser lors de l’authentification du client à l’aide de l’authentification HTTP.  La valeur par défaut est `None`, Cet attribut est de type <xref:System.ServiceModel.HttpClientCredentialType>.|  
 |proxyCredentialType|-Spécifie le type d’informations d’identification à utiliser lors de l’authentification du client à partir d’un domaine à l’aide d’un proxy sur HTTP. Cet attribut est applicable uniquement lorsque l'attribut `mode` de l'élément `security` parent est `Transport` ou `TransportCredentialsOnly`. Cet attribut est de type <xref:System.ServiceModel.HttpProxyCredentialType>.|  
 |realm|Chaîne qui spécifie le domaine utilisé par la méthode d'authentification HTTP pour l'authentification Digest ou de base. La valeur par défaut est une chaîne vide.|  
-|policyEnforcement|Cette énumération spécifie à quel moment <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> doit être appliqué.<br /><br /> 1.  Never : la stratégie n'est jamais appliquée (la protection étendue est désactivée).<br />2.  WhenSupported : la stratégie est appliquée uniquement si le client prend en charge la protection étendue.<br />3.  Always : la stratégie est toujours appliquée. Les clients qui ne prennent pas en charge la protection étendue ne pourront pas être authentifiés.|  
+|policyEnforcement|Cette énumération spécifie à quel moment <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> doit être appliqué.<br /><br /> 1. jamais : la stratégie n’est jamais appliquée (la protection étendue est désactivée).<br />2. WhenSupported : la stratégie est appliquée uniquement si le client prend en charge la protection étendue.<br />3. Always : la stratégie est toujours appliquée. Les clients qui ne prennent pas en charge la protection étendue ne pourront pas être authentifiés.|  
 |protectionScenario|Cette énumération spécifie le scénario de protection appliqué par la stratégie.|  
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|Aucun|Les messages ne sont pas sécurisés pendant le transfert.|  
-|De base|Spécifie l'authentification de base.|  
+|aucune.|Les messages ne sont pas sécurisés pendant le transfert.|  
+|Basic|Spécifie l'authentification de base.|  
 |Digest|Spécifie l’authentification Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
   
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType  
   
-|`Value`|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|Aucun|-Les messages ne sont pas sécurisés lors du transfert.|  
-|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
-|Digest|Spécifie l’authentification Digest telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
+|aucune.|-Les messages ne sont pas sécurisés lors du transfert.|  
+|Basic|Spécifie l’authentification de base telle que définie par RFC 2617 – Authentification HTTP : Authentification de base et Digest.|  
+|Digest|Spécifie l'authentification Digest telle que définie par RFC 2617 – Authentification HTTP : Authentification de base et Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
 |Certificat|Effectue l'authentification du client à l'aide d'un certificat. Cette option fonctionne uniquement si l'attribut `Mode` de l'élément `security` parent est configuré pour le transport et ne fonctionnera pas s'il a la valeur TransportCredentialOnly.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<> de sécurité](security-of-nethttpbinding.md)|Définit les fonctionnalités de sécurité pour le [ \<> NetHttpBinding](nethttpbinding.md).|  
+|[> de sécurité \<](security-of-nethttpbinding.md)|Définit les fonctionnalités de sécurité pour le [\<NetHttpBinding](nethttpbinding.md).|  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant montre l'utilisation de la sécurité de transport SSL avec la liaison de base. Par défaut, la liaison de base prend en charge la communication HTTP.  
@@ -127,4 +127,4 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

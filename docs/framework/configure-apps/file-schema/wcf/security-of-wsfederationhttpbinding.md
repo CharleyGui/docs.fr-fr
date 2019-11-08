@@ -2,22 +2,22 @@
 title: <security> de <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
-ms.openlocfilehash: 6c07d1ca18837f66548411262b84b9a326f5ec4a
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: ea029444cee331a235c7a2fc140b4321d7530063
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399729"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736329"
 ---
-# <a name="security-of-wsfederationhttpbinding"></a>\<> de sécurité \<de wsFederationHttpBinding >
-Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfederationhttpbinding.md).  
+# <a name="security-of-wsfederationhttpbinding"></a>\<> de sécurité de \<wsFederationHttpBinding >
+Définit les paramètres de sécurité du [\<WSFederationHttpBinding](wsfederationhttpbinding.md).  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**WSFederationHttpBinding**](wsfederationhttpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -86,13 +86,13 @@ Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfe
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|Mode|facultatif. Spécifie le type de sécurité appliqué. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
+|Mode|Optionnel. Spécifie le type de sécurité appliqué. La valeur par défaut est `Message`. Cet attribut est de type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
   
 ## <a name="mode-attribute"></a>Mode, attribut  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|Aucun|Le message SOAP n'est pas sécurisé pendant le transfert.|  
+|aucune.|Le message SOAP n'est pas sécurisé pendant le transfert.|  
 |Message|L'intégrité, la confidentialité, l'authentification du serveur et l'authentification du client sont fournies à l'aide de la sécurité des messages SOAP. Par défaut, le corps est chiffré et signé. Le service doit être configuré avec un certificat. L'authentification du client est basée sur le jeton émis au client par un service d'émission de jeton de sécurité|  
 |TransportWithMessageCredential|L'intégrité, la confidentialité et l'authentification du serveur sont fournies par HTTPS. Le service doit être configuré avec un certificat. L'authentification du client est fournie au moyen de la sécurité des messages SOAP et est basée sur le jeton émis au client par un service d'émission de jeton de sécurité.|  
   
@@ -100,13 +100,13 @@ Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfe
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<message>](message-element-of-wsfederationhttpbinding.md)|Définit les paramètres de sécurité au niveau du message. Cet élément est de type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
+|[message de \<](message-element-of-wsfederationhttpbinding.md)|Définit les paramètres de sécurité au niveau du message. Cet élément est de type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<binding>](../../../misc/binding.md)|Définit toutes les fonctions de liaison de l' [ \<> WSDualHttpBinding](wsdualhttpbinding.md).|  
+|[liaison de \<](bindings.md)|Définit toutes les fonctions de liaison du [\<WSDualHttpBinding](wsdualhttpbinding.md).|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -114,10 +114,10 @@ Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfe
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [Guide pratique : Créer un WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Guide pratique pour créer une liaison WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
 - [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Sélection d’un type d’informations d’identification](../../../wcf/feature-details/selecting-a-credential-type.md)
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

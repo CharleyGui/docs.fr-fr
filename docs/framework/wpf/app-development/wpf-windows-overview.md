@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 8c650ceab57a46cb6dd396111e7a93163a62299f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 87d5ff67a9e95c5ec5385802d09d667ee8b6e0f9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424942"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740679"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] autonomes fournissent leur propre Windows en utilisant la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  
@@ -88,7 +88,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  Pour permettre à un fichier de balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et à un fichier code-behind de fonctionner ensemble, les conditions suivantes sont requises :  
   
-- Dans le balisage, l’élément `Window` doit inclure l’attribut `x:Class`. Lorsque l’application est générée, l’existence d' `x:Class` dans le fichier de balisage permet à Microsoft Build Engine (MSBuild) de créer une classe `partial` qui dérive de <xref:System.Windows.Window> et qui porte le nom spécifié par l’attribut `x:Class`. Cela nécessite l’ajout d’une déclaration d’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] pour le schéma de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). La classe `partial` générée implémente la méthode `InitializeComponent`, qui est appelée pour inscrire les événements et définir les propriétés implémentées dans le balisage.  
+- Dans le balisage, l’élément `Window` doit inclure l’attribut `x:Class`. Lorsque l’application est générée, l’existence d' `x:Class` dans le fichier de balisage permet à Microsoft Build Engine (MSBuild) de créer une classe `partial` qui dérive de <xref:System.Windows.Window> et qui porte le nom spécifié par l’attribut `x:Class`. Cela nécessite l’ajout d’une déclaration d’espace de noms XML pour le schéma de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). La classe `partial` générée implémente la méthode `InitializeComponent`, qui est appelée pour inscrire les événements et définir les propriétés implémentées dans le balisage.  
   
 - Dans le code-behind, la classe doit être une classe `partial` portant le même nom que celui spécifié par l’attribut `x:Class` dans le balisage, et elle doit dériver de <xref:System.Windows.Window>. Cela permet au fichier code-behind d’être associé à la classe `partial` générée pour le fichier de balisage quand l’application est générée (consultez [génération d’une application WPF](building-a-wpf-application-wpf.md)).  
   

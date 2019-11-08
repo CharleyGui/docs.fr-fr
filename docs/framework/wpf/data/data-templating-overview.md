@@ -10,12 +10,12 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-ms.openlocfilehash: d088342a08076c69b34f6c3d39dce076cb3890d4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 377ee76e7e3537e9cae010189306611a503acbed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460046"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740627"
 ---
 # <a name="data-templating-overview"></a>Vue d'ensemble des modèles de données
 Le modèle de création de modèles de données WPF offre une grande souplesse pour définir la présentation des données. Les contrôles WPF possèdent des fonctionnalités intégrées permettant de prendre en charge la personnalisation de la présentation des données. Cette rubrique explique d’abord comment définir une <xref:System.Windows.DataTemplate>, puis introduit d’autres fonctionnalités de création de modèles de données, telles que la sélection de modèles en fonction de la logique personnalisée et la prise en charge de l’affichage des données hiérarchiques.  
@@ -54,7 +54,7 @@ Le modèle de création de modèles de données WPF offre une grande souplesse p
   
  ![Capture d’écran exemple de création de modèles de données](./media/datatemplatingintro-fig2.png "DataTemplatingIntro_fig2")  
   
- Toutefois, cet affichage est restrictif et rigide. En outre, si la liaison porte sur des données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], vous ne pourrez pas remplacer `ToString`.  
+ Toutefois, cet affichage est restrictif et rigide. En outre, si vous effectuez une liaison à des données XML, vous ne seriez pas en mesure de substituer `ToString`.  
   
 <a name="defining_simple_datatemplate"></a>   
 ### <a name="defining-a-simple-datatemplate"></a>Définir un DataTemplate simple  
@@ -62,7 +62,7 @@ Le modèle de création de modèles de données WPF offre une grande souplesse p
   
  [!code-xaml[DataTemplatingIntro_snip#Inline](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#inline)]  
   
- Les données sous-jacentes pour les exemples de cette rubrique sont une collection d’objets CLR. si la liaison porte sur des données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], les concepts de base sont identiques, mais il y a une légère différence syntaxique. Par exemple, au lieu d’avoir `Path=TaskName`, vous devez définir <xref:System.Windows.Data.Binding.XPath%2A> sur `@TaskName` (si `TaskName` est un attribut de votre nœud [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]).  
+ Les données sous-jacentes pour les exemples de cette rubrique sont une collection d’objets CLR. Si vous effectuez une liaison à des données XML, les concepts fondamentaux sont les mêmes, mais il existe une légère différence syntaxique. Par exemple, au lieu d’avoir `Path=TaskName`, vous devez définir <xref:System.Windows.Data.Binding.XPath%2A> sur `@TaskName` (si `TaskName` est un attribut de votre nœud XML).  
   
  À présent, notre <xref:System.Windows.Controls.ListBox> se présente comme suit :  
   

@@ -1,15 +1,15 @@
 ---
-title: propriété
+title: Propriété
 ms.date: 03/30/2017
 ms.assetid: a941c53f-fc97-42c2-8832-0fb9f1d55c06
-ms.openlocfilehash: 97d934ac581e7b1a923bf77dcf46121782fe8eab
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d1e20a6570c458041ec5d8ececbfa291ca9e4612
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783175"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735392"
 ---
-# <a name="property"></a>propriété
+# <a name="property"></a>Propriété
 Les *Propriétés* sont les blocs de construction fondamentaux des [types d’entité](entity-type.md) et des [types complexes](complex-type.md). Les propriétés définissent la forme et les caractéristiques des données qui sont contenues dans une instance de type d'entité ou une instance de type complexe. Les propriétés dans un modèle conceptuel sont analogues aux propriétés définies sur une classe. De même que les propriétés sur une classe définissent la forme de la classe et acheminent des informations sur les objets, les propriétés dans un modèle conceptuel définissent la forme d'un type d'entité et acheminent des informations sur les instances de type d'entité.  
   
 > [!NOTE]
@@ -21,9 +21,9 @@ Les *Propriétés* sont les blocs de construction fondamentaux des [types d’en
   
 - Type de propriété. (Requis)  
   
-- Ensemble de [facettes](facet.md). (facultatif)  
+- Ensemble de [facettes](facet.md). (Facultatif)  
   
- Une propriété peut contenir des données de type primitif (comme une chaîne, un entier ou une valeur booléenne) ou des données structurées (comme un type complexe). Les propriétés de type primitif sont également appelées des propriétés scalaires. Pour plus d’informations, [consultez Entity Data Model : Types](entity-data-model-primitive-data-types.md)de données primitifs.  
+ Une propriété peut contenir des données de type primitif (comme une chaîne, un entier ou une valeur booléenne) ou des données structurées (comme un type complexe). Les propriétés de type primitif sont également appelées des propriétés scalaires. Pour plus d’informations, consultez [Entity Data Model : types de données primitifs](entity-data-model-primitive-data-types.md).  
   
 > [!NOTE]
 > Un type complexe peut lui-même avoir des propriétés qui sont des types complexes.  
@@ -33,7 +33,7 @@ Les *Propriétés* sont les blocs de construction fondamentaux des [types d’en
   
  ![Exemple de modèle avec trois types d’entité](./media/property/example-model-three-entity-types.gif)  
   
- Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` (tel que présenté dans le diagramme ci-dessus) et indique le type et le nom de chaque propriété à l'aide d'attributs XML. Une facette facultative, `Nullable`, est également définie à l'aide d'un attribut XML.  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` (tel que présenté dans le diagramme ci-dessus) et indique le type et le nom de chaque propriété à l'aide d'attributs XML. Une facette facultative, `Nullable`, est également définie à l'aide d'un attribut XML.  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   

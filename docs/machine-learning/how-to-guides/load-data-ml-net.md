@@ -1,16 +1,16 @@
 ---
 title: Charger des données depuis des fichiers et d’autres sources
 description: Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
-ms.date: 09/11/2019
+ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 82a4d19a6296faa6d195e301016b1bf97d483a2c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 07b3e7f5302a03f5fa4c936679c8a3c00d19a7b0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040803"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740549"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
@@ -107,10 +107,10 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 
 ## <a name="load-data-from-a-relational-database"></a>Charger des données à partir d’une base de données relationnelle
 
-> [!NOTE]
-> DatabaseLoader est actuellement en version préliminaire. Il peut être utilisé en référençant les packages NuGet [Microsoft. ml. expérimental](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) et [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) .
-
 ML.NET prend en charge le chargement de données à partir de diverses bases de données relationnelles prises en charge par [`System.Data`](xref:System.Data) qui incluent SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2 et bien d’autres encore.
+
+> [!NOTE]
+> Pour utiliser `DatabaseLoader`, référencez le package NuGet [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) .
 
 À partir d’une base de données avec une table nommée `House` et le schéma suivant :
 

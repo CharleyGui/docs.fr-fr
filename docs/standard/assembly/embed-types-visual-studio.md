@@ -5,12 +5,12 @@ ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 648aaaa86cf2d6bd2de989739694ba188c4bbc04
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 47a339de60301e01b52a4b8a3a85945624daf940
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73041028"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733200"
 ---
 # <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio
 
@@ -34,7 +34,7 @@ Dans cette procédure pas à pas, vous allez :
 
 ## <a name="conditions-and-limitations"></a>Conditions et limitations
 
-Vous pouvez incorporer des informations de type à partir d’un assembly dans les conditions suivantes : 
+Vous pouvez incorporer des informations de type à partir d’un assembly dans les conditions suivantes :
 
 - L’assembly expose au moins une interface publique.
 - Les interfaces incorporées sont annotées avec des attributs `ComImport` et des attributs `Guid` avec des GUID uniques.
@@ -321,5 +321,4 @@ Accédez à l’emplacement du dossier de sortie de la génération et exécutez
 - [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
 - [Guide de programmation C#](../../csharp/programming-guide/index.md)
 - [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
-- [Programmer avec des assemblys](program.md)
 - [Assemblys dans .NET](index.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Entity Data Model : Héritage'
+title: 'Entity Data Model : héritage'
 ms.date: 03/30/2017
 ms.assetid: 42c7ef24-710a-4af9-8493-cd41c399ecb0
-ms.openlocfilehash: 21dbdff63c07dbcdac8de7bf4b3a8e5d0ece7901
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4c4abc371000006d40ede3d904b0437f3f85e3e7
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784072"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738454"
 ---
-# <a name="entity-data-model-inheritance"></a>Entity Data Model : Héritage
+# <a name="entity-data-model-inheritance"></a>Entity Data Model : héritage
 Le Entity Data Model (EDM) prend en charge l’héritage pour les [types d’entités](entity-type.md). L'héritage dans le modèle EDM est semblable à l'héritage pour les classes dans les langages de programmation orientés objet. Comme pour les classes dans les langages orientés objet, dans un modèle conceptuel, vous pouvez définir un type d’entité ( *type dérivé*) qui hérite d’un autre type d’entité ( *type de base*). Toutefois, contrairement aux classes dans la programmation orientée objet, dans un modèle conceptuel, le type dérivé hérite toujours de toutes les [Propriétés](property.md) et [Propriétés de navigation](navigation-property.md) du type de base. Vous ne pouvez pas remplacer les propriétés héritées dans un type dérivé.  
   
  Dans un modèle conceptuel, vous pouvez générer des hiérarchies d'héritage dans lesquelles un type dérivé hérite d'un autre type dérivé. Le type situé en haut de la hiérarchie (celui de la hiérarchie qui n’est pas un type dérivé) est appelé *type racine*. Dans une hiérarchie d’héritage, la [clé d’entité](entity-key.md) doit être définie sur le type racine.  
@@ -18,11 +18,11 @@ Le Entity Data Model (EDM) prend en charge l’héritage pour les [types d’ent
   
 ## <a name="example"></a>Exemple  
 
-Le diagramme suivant montre un modèle conceptuel avec quatre types d’entités `Book`: `FictionBook`, `Publisher`, et `Author`. Le type d'entité `FictionBook` est un type dérivé qui hérite du type d'entité `Book`. Le type `FictionBook` hérite les propriétés `ISBN (Key)`, `Title` et `Revision`, et définit une propriété supplémentaire appelée `Genre`.  
+Le diagramme suivant montre un modèle conceptuel avec quatre types d’entités : `Book`, `FictionBook`, `Publisher`et `Author`. Le type d'entité `FictionBook` est un type dérivé qui hérite du type d'entité `Book`. Le type `FictionBook` hérite les propriétés `ISBN (Key)`, `Title` et `Revision`, et définit une propriété supplémentaire appelée `Genre`.  
   
  ![Diagramme qui montre un modèle conceptuel avec quatre types d’entités.](./media/entity-data-model-inheritance/entity-type-inheritance.gif)  
   
- Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit un type d'entité, `FictionBook`, qui hérite du type `Book` (comme dans le diagramme ci-dessus) :  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) pour définir des modèles conceptuels. Le CSDL suivant définit un type d'entité, `FictionBook`, qui hérite du type `Book` (comme dans le diagramme ci-dessus) :  
   
  [!code-xml[EDM_Example_Model#DerivedType](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books5.edmx#derivedtype)]  
   

@@ -2,22 +2,22 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 409d2e47b411c0bfaa2b0fe46fc242bd8453a042
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 6761d090206e55e58001ea2bb885eaa69f26d9eb
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399488"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738652"
 ---
-# <a name="tcptransport"></a>\<tcpTransport>
+# <a name="tcptransport"></a>\<tcpTransport >
 Définit un transport TCP qui peut être utilisé par un canal pour transférer des messages pour une liaison personnalisée.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<tcpTransport >**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**tcpTransport >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,19 +61,19 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |maxPendingAccepts|Obtient ou définit le nombre maximal d'opérations d'acception asynchrones en attente qui sont disponibles pour traiter les connexions entrantes au service.|  
 |maxPendingConnections|Obtient ou définit le nombre maximal de connexions en attente de distribution sur le service.|  
 |maxReceivedMessageSize|Obtient et définit la taille de message maximale autorisée qui peut être reçue.|  
-|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. Par défaut, il s’agit de `false`.<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
-|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. Par défaut, il s’agit de `false`.<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Cette propriété s'applique uniquement à [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] et [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. Pour Teredo, [!INCLUDE[wv](../../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur. Cette propriété est donc ignorée lors de l'exécution de Vista. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service. Pour plus d’informations sur la configuration de Teredo, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Pour plus d’informations, consultez [centres de technologie Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. La valeur par défaut est `false`,<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
+|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. La valeur par défaut est `false`,<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Cette propriété s'applique uniquement à [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] et [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. Pour Teredo, [!INCLUDE[wv](../../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur. Cette propriété est donc ignorée lors de l'exécution de Vista. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service. Pour plus d’informations sur la configuration de Teredo, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Pour plus d’informations, consultez [centres de technologie Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
 |transferMode|Obtient ou définit une valeur qui indique si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.|  
 |connectionPoolSettings|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<binding>](../../../misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[liaison de \<](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
  Ce transport utilise des URI au format "net.tcp://nom_hôte:port/chemin". Les autres composants URI sont facultatifs.  
@@ -91,4 +91,4 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 - [Liaisons](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding>](custombinding.md)
+- [\<customBinding >](custombinding.md)

@@ -3,12 +3,12 @@ title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types de référence Nullable C# , ajoutés dans 8,0. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.technology: csharp-null-safety
 ms.date: 02/19/2019
-ms.openlocfilehash: e20ea6efa389ba1aa0d8432a408c0b2a06a61c30
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ded7234ecb746ba03ba59505b7189272886f1cbf
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039779"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737839"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -28,7 +28,7 @@ Cette nouvelle fonctionnalité fournit des avantages significatifs sur la gestio
 
 En ajoutant des types référence nullables, vous pouvez déclarer votre intention plus clairement. La valeur `null` est un bon moyen de représenter qu’une variable ne fait pas référence à une valeur. N’utilisez pas cette fonctionnalité pour supprimer toutes les valeurs `null` de votre code. Déclarez plutôt votre intention au compilateur et aux autres développeurs qui lisent votre code. Quand vous déclarez votre intention, le compilateur vous informe si vous écrivez du code qui n’est pas en phase avec cette intention.
 
-Un **type de référence nullable** est inidqué avec la même syntaxe que celle des [types valeur nullable](programming-guide/nullable-types/index.md) : un `?` est ajouté au type de la variable. Par exemple, la déclaration de variable suivante représente une variable de chaîne nullable, `name` :
+Un **type de référence nullable** est inidqué avec la même syntaxe que celle des [types valeur nullable](language-reference/builtin-types/nullable-value-types.md) : un `?` est ajouté au type de la variable. Par exemple, la déclaration de variable suivante représente une variable de chaîne nullable, `name` :
 
 ```csharp
 string? name;

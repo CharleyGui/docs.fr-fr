@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: 5d0d28213ed8b4a0d464793aeba6823db2405bbe
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e7546021fbfde3fceea7fd4f1eba10cdc90dff8b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459015"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740610"
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.
@@ -25,7 +25,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 |objets common language runtime (CLR)|Vous pouvez lier des propriétés publiques, des sous-propriétés, ainsi que des indexeurs, de n’importe quel objet common language runtime (CLR). Le moteur de liaison utilise la réflexion CLR pour récupérer les valeurs des propriétés. Les objets qui implémentent <xref:System.ComponentModel.ICustomTypeDescriptor> ou ont un <xref:System.ComponentModel.TypeDescriptionProvider> inscrit fonctionnent également avec le moteur de liaison.<br /><br /> Pour plus d’informations sur la façon d’implémenter une classe qui peut servir de source de liaison, consultez la page [Implémentation d’une classe pour la source de liaison](#classes) plus loin dans cette rubrique.|
 |objets dynamiques|Vous pouvez lier aux propriétés et indexeurs disponibles d’un objet qui implémente l’interface <xref:System.Dynamic.IDynamicMetaObjectProvider>. Si vous pouvez accéder au membre dans le code, vous pouvez lier celui-ci. Par exemple, si un objet dynamique vous permet d’accéder à un membre dans le code via `someObjet.AProperty`, vous pouvez le lier en affectant le chemin de liaison `AProperty`.|
 |Objets ADO.NET|Vous pouvez lier des objets ADO.NET, tels que <xref:System.Data.DataTable>. Le <xref:System.Data.DataView> ADO.NET implémente l’interface <xref:System.ComponentModel.IBindingList>, qui fournit des notifications de modification que le moteur de liaison écoute.|
-|Objets [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].|Vous pouvez lier et exécuter des requêtes `XPath` sur une <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>ou <xref:System.Xml.XmlElement>. Un moyen pratique d’accéder à [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] données qui est la source de liaison dans le balisage consiste à utiliser un objet <xref:System.Windows.Data.XmlDataProvider>. Pour plus d’informations, consultez [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Vous pouvez également effectuer une liaison à une <xref:System.Xml.Linq.XElement> ou à un <xref:System.Xml.Linq.XDocument>, ou effectuer une liaison avec les résultats des requêtes exécutées sur des objets de ces types à l’aide de LINQ to XML. Un moyen pratique d’utiliser LINQ to XML pour accéder aux données XML qui est la source de liaison dans le balisage consiste à utiliser un objet <xref:System.Windows.Data.ObjectDataProvider>. Pour plus d’informations, consultez [Effectuer une liaison avec XDocument, XElement ou LINQ pour des résultats de requête XML](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|
+|Objets XML|Vous pouvez lier et exécuter des requêtes `XPath` sur une <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>ou <xref:System.Xml.XmlElement>. Un moyen pratique d’accéder aux données XML qui est la source de liaison dans le balisage consiste à utiliser un objet <xref:System.Windows.Data.XmlDataProvider>. Pour plus d’informations, consultez [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Vous pouvez également effectuer une liaison à une <xref:System.Xml.Linq.XElement> ou à un <xref:System.Xml.Linq.XDocument>, ou effectuer une liaison avec les résultats des requêtes exécutées sur des objets de ces types à l’aide de LINQ to XML. Un moyen pratique d’utiliser LINQ to XML pour accéder aux données XML qui est la source de liaison dans le balisage consiste à utiliser un objet <xref:System.Windows.Data.ObjectDataProvider>. Pour plus d’informations, consultez [Effectuer une liaison avec XDocument, XElement ou LINQ pour des résultats de requête XML](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|
 |Objets <xref:System.Windows.DependencyObject>.|Vous pouvez lier aux propriétés de dépendance de n’importe quel <xref:System.Windows.DependencyObject>. Pour obtenir un exemple, consultez [Lier les propriétés de deux contrôles](how-to-bind-the-properties-of-two-controls.md).|
 
 <a name="classes"></a>
@@ -86,7 +86,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 
 - Vous pouvez toujours lier aux propriétés de dépendance.
 
- L’exigence d’autorisation pour la liaison [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] est similaire. Dans un bac à sable (sandbox) de confiance partielle, <xref:System.Windows.Data.XmlDataProvider> échoue lorsqu’il ne dispose pas des autorisations nécessaires pour accéder aux données spécifiées.
+ L’exigence d’autorisation pour la liaison XML est similaire. Dans un bac à sable (sandbox) de confiance partielle, <xref:System.Windows.Data.XmlDataProvider> échoue lorsqu’il ne dispose pas des autorisations nécessaires pour accéder aux données spécifiées.
 
  Les objets avec un type anonyme sont internes. Vous pouvez lier des propriétés de types anonymes uniquement lors de l’exécution en confiance totale. Pour plus d’informations sur les types anonymes, consultez [Types anonymes (Guide de programmation C#)](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md) ou [Types anonymes (Visual Basic)](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) (pour Visual Basic).
 

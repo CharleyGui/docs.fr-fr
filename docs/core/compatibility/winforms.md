@@ -2,17 +2,14 @@
 title: Windows Forms modifications avec rupture-.NET Core
 description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core.
 ms.date: 09/20/2019
-ms.openlocfilehash: 2aac8c81372a36f00df1b7f3ccd3432409f6c834
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7bdf17911ccefd19c5a3458f328b6ee41352acd9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092901"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739758"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
-
-> [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.
 
 La liste suivante répertorie les dernières modifications apportées à Windows Forms par la version de .NET Core.
 

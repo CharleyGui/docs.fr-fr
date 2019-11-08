@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: a912e0437bf986aff65fc722065e912571427189
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b8777e1402bef1708136a5f81a641beb8c761905
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035796"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740712"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 
@@ -70,7 +70,7 @@ Lorsque vous localisez des applications basées sur des [!INCLUDE[TLA2#tla_wincl
 
 ## <a name="localize-a-wpf-application"></a>Localiser une application WPF
 
-Lorsque vous localisez une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vous avez plusieurs options. Par exemple, vous pouvez lier les ressources localisables dans votre application à un fichier [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], stocker du texte localisable dans des tables resx ou demander à votre Localisateur d’utiliser des fichiers [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Cette section décrit un flux de travail de localisation qui utilise le formulaire BAML de XAML, qui offre plusieurs avantages :
+Lorsque vous localisez une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vous avez plusieurs options. Par exemple, vous pouvez lier les ressources localisables dans votre application à un fichier XML, stocker du texte localisable dans les tables resx ou demander à votre Localisateur d’utiliser [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] fichiers. Cette section décrit un flux de travail de localisation qui utilise le formulaire BAML de XAML, qui offre plusieurs avantages :
 
 - Vous pouvez localiser une fois que vous avez créé.
 

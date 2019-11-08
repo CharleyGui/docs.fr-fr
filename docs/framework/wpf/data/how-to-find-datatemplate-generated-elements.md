@@ -8,18 +8,18 @@ helpviewer_keywords:
 - finding DataTemplate elements [WPF]
 - DataTemplate [WPF]
 ms.assetid: bfcd564e-5e9e-451e-8641-a9b5c3cfac90
-ms.openlocfilehash: f9265e3f7b287e1e8c264e89325f7c9649eebe2c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2cb3d73574cd207c0e06abe15f6a953a67cd5c78
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459134"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733427"
 ---
 # <a name="how-to-find-datatemplate-generated-elements"></a>Comment : rechercher des éléments générés par DataTemplate
 Cet exemple montre comment rechercher des éléments générés par un <xref:System.Windows.DataTemplate>.  
   
 ## <a name="example"></a>Exemple  
- Dans cet exemple, il existe un <xref:System.Windows.Controls.ListBox> lié à certaines données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] :  
+ Dans cet exemple, il existe un <xref:System.Windows.Controls.ListBox> lié à des données XML :  
   
  [!code-xaml[FindGeneratedItems#LB](~/samples/snippets/csharp/VS_Snippets_Wpf/FindGeneratedItems/CSharp/Window1.xaml#lb)]  
   

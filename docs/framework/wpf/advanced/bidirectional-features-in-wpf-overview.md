@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 7d648741676ba947d901d26e3ee7c1289d3d4bc3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 385ce8d263991361512371dcacff52fcf0bbe738
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453880"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740936"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Vue d'ensemble des fonctionnalités bidirectionnelles dans WPF
 
@@ -98,7 +98,7 @@ Le graphique suivant montre un autre exemple qui utilise des nombres et des expr
 
 Les utilisateurs de cette application seront déçus par la sortie, même si le <xref:System.Windows.FlowDirection> est correct, les nombres ne sont pas mis en forme, car les nombres arabes doivent être mis en forme.
 
-Les éléments XAML peuvent inclure un attribut [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] (`xml:lang`) qui définit le langage de chaque élément. XAML prend également en charge un principe de langage [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] par lequel `xml:lang` valeurs appliquées aux éléments parents dans l’arborescence sont utilisées par les éléments enfants. Dans l’exemple précédent, comme un langage n’a pas été défini pour l’élément <xref:System.Windows.Documents.Run> ou l’un de ses éléments de niveau supérieur, le `xml:lang` par défaut a été utilisé, ce qui est `en-US` pour XAML. L’algorithme de mise en forme des nombres internes de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sélectionne les nombres dans la langue correspondante, dans ce cas l’anglais. Pour que les nombres arabes s’affichent correctement `xml:lang` doit être défini.
+Les éléments XAML peuvent inclure un attribut XML (`xml:lang`) qui définit le langage de chaque élément. XAML prend également en charge un principe de langage XML par lequel `xml:lang` valeurs appliquées aux éléments parents dans l’arborescence sont utilisées par les éléments enfants. Dans l’exemple précédent, comme un langage n’a pas été défini pour l’élément <xref:System.Windows.Documents.Run> ou l’un de ses éléments de niveau supérieur, le `xml:lang` par défaut a été utilisé, ce qui est `en-US` pour XAML. L’algorithme de mise en forme des nombres internes de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sélectionne les nombres dans la langue correspondante, dans ce cas l’anglais. Pour que les nombres arabes s’affichent correctement `xml:lang` doit être défini.
 
 Le graphique suivant montre l’exemple avec `xml:lang` ajoutée.
 

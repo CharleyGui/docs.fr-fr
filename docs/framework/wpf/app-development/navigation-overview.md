@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 619dc101cd8851cee24651b7e3098ae12ef46259
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a0916a2957eab6ae340fe914395eda44860da3b7
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459772"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733738"
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 
@@ -85,7 +85,7 @@ Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vous
 
 [!code-xaml[NavigationOverviewSnippets#Page1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page1.xaml#page1xaml)]
 
-Une <xref:System.Windows.Controls.Page> implémentée dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage a `Page` comme élément racine et requiert la déclaration d’espace de noms [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. L’élément `Page` contient le contenu auquel vous souhaitez accéder et que vous souhaitez afficher. Vous ajoutez du contenu en définissant l’élément de propriété `Page.Content`, comme indiqué dans le balisage suivant.
+Une <xref:System.Windows.Controls.Page> implémentée dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage a `Page` comme élément racine et requiert la déclaration d’espace de noms XML [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. L’élément `Page` contient le contenu auquel vous souhaitez accéder et que vous souhaitez afficher. Vous ajoutez du contenu en définissant l’élément de propriété `Page.Content`, comme indiqué dans le balisage suivant.
 
 [!code-xaml[NavigationOverviewSnippets#Page2XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page2.xaml#page2xaml)]
 
@@ -106,7 +106,7 @@ Une <xref:System.Windows.Controls.Page> de balisage uniquement est utile pour af
 
 Pour permettre à un fichier de balisage et un fichier code-behind de fonctionner ensemble, la configuration suivante est nécessaire :
 
-- Dans le balisage, l’élément `Page` doit inclure l’attribut `x:Class`. Lorsque l’application est générée, l’existence d' `x:Class` dans le fichier de balisage permet à Microsoft Build Engine (MSBuild) de créer une classe `partial` qui dérive de <xref:System.Windows.Controls.Page> et qui porte le nom spécifié par l’attribut `x:Class`. Cela nécessite l’ajout d’une déclaration d’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] pour le schéma de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). La classe `partial` générée implémente `InitializeComponent`, qui est appelé pour inscrire les événements et définir les propriétés implémentées dans le balisage.
+- Dans le balisage, l’élément `Page` doit inclure l’attribut `x:Class`. Lorsque l’application est générée, l’existence d' `x:Class` dans le fichier de balisage permet à Microsoft Build Engine (MSBuild) de créer une classe `partial` qui dérive de <xref:System.Windows.Controls.Page> et qui porte le nom spécifié par l’attribut `x:Class`. Cela nécessite l’ajout d’une déclaration d’espace de noms XML pour le schéma de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`). La classe `partial` générée implémente `InitializeComponent`, qui est appelé pour inscrire les événements et définir les propriétés implémentées dans le balisage.
 
 - Dans le code-behind, la classe doit être une classe `partial` portant le même nom que celui spécifié par l’attribut `x:Class` dans le balisage, et elle doit dériver de <xref:System.Windows.Controls.Page>. Cela permet au fichier code-behind d’être associé à la classe `partial` générée pour le fichier de balisage quand l’application est générée (consultez [génération d’une application WPF](building-a-wpf-application-wpf.md)).
 

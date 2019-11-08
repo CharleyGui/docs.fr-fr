@@ -1,23 +1,23 @@
 ---
 title: Déployer un modèle sur Azure Functions
 description: Alimentez un modèle Machine Learning d’analyse des sentiments ML.NET à des fins de prédiction sur Internet avec Azure Functions.
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: bd08982e96f39a9685ddabc090ac3bc5c7855022
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5ef6331950845b2900e33b2c51c308644ba17fd6
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424347"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733355"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Déployer un modèle sur Azure Functions
 
 Découvrez comment déployer un modèle Machine Learning ML.NET préentraîné pour effectuer des prédictions sur HTTP par le bais d’un environnement serverless Azure Functions.
 
 > [!NOTE]
-> L’extension de service `PredictionEnginePool` est disponible en préversion.
+> Cet exemple exécute une version préliminaire du service `PredictionEnginePool`.
 
 ## <a name="prerequisites"></a>Configuration requise
 
@@ -46,11 +46,11 @@ Cet exemple est un  **C# déclencheur http Azure Functions application** qui uti
 
     Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme Source du package, sélectionnez l’onglet Parcourir, recherchez **Microsoft.Azure.Functions.Extensions**, sélectionnez ce package dans la liste, puis sélectionnez le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
-1. Installez le **package NuGet Microsoft.extensions.ml** version **1.3.1**:
+1. Installez la version du **package NuGet Microsoft.extensions.ml** **0.15.1**:
 
     Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme Source du package, sélectionnez l’onglet Parcourir, recherchez **Microsoft.Extensions.ML**, sélectionnez ce package dans la liste, puis sélectionnez le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
-1. Installez la version du **package NuGet Microsoft. net. Sdk. Functions** 1.0.28 + :
+1. Installez la version du **package NuGet Microsoft. net. Sdk. Functions** **1.0.28 +** :
 
     Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet installé, recherchez **Microsoft. net. Sdk. Functions**, sélectionnez ce package dans la liste, sélectionnez **1.0.28 ou version ultérieure** dans la liste déroulante version, puis cliquez sur le bouton **mettre à jour** . Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 

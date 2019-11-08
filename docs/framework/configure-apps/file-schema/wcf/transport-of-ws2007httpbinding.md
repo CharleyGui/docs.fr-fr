@@ -2,23 +2,23 @@
 title: <transport> de <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
-ms.openlocfilehash: 4ea60ccaba58bc0b3fa8f2263295bf1413d25e89
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 0cd20c607b0c4ddd3ecfd806d38ba63b4a5c5a25
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399268"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732764"
 ---
-# <a name="transport-of-ws2007httpbinding"></a>\<> de transport \<de WS2007HttpBinding >
+# <a name="transport-of-ws2007httpbinding"></a>\<> de transport de \<ws2007HttpBinding >
 Définit les paramètres d'authentification correspondant au transport HTTP.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007HttpBinding >** ](ws2007httpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-ws2007httpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**WS2007HttpBinding**](ws2007httpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **&nbsp;&nbsp;\<** ](security-of-ws2007httpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,7 +28,7 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
            realm="string" />
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>Tapez  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
@@ -44,10 +44,10 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|Aucun|La sécurité est désactivée.|  
-|De base|Utilise l'authentification de base.|  
+|aucune.|La sécurité est désactivée.|  
+|Basic|Utilise l'authentification de base.|  
 |Digest|Utilise l’authentification Digest.|  
 |Ntlm|Utilise l'authentification NTLM comme solution de secours dans un domaine Windows.|  
 |Windows|Utilise l'authentification intégrée Windows.|  
@@ -55,23 +55,23 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
   
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType  
   
-|Valeur|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
-|Aucun|La sécurité est désactivée.|  
-|De base|Utilise l'authentification de base.|  
+|aucune.|La sécurité est désactivée.|  
+|Basic|Utilise l'authentification de base.|  
 |Digest|Utilise l’authentification Digest.|  
 |Ntlm|Utilise l'authentification NTLM comme solution de secours dans un domaine Windows.|  
 |Windows|Utilise l'authentification intégrée Windows.|  
 |Certificat|Utilise des certificats X.509 pour authentifier le client.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<> de sécurité](security-of-ws2007httpbinding.md)|Représente les fonctionnalités de sécurité de l' [ \<élément WS2007HttpBinding >](ws2007httpbinding.md) .|  
+|[> de sécurité \<](security-of-ws2007httpbinding.md)|Représente les fonctionnalités de sécurité de l’élément [\<ws2007HttpBinding >](ws2007httpbinding.md) .|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -83,4 +83,4 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

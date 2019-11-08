@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 11087ed4da23d73fc8edc36680dd1b3587c011ce
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 0ba4e8ff639cdfbbec596da45a6e950fff921974
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004926"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740720"
 ---
 # <a name="typography-in-wpf"></a>Typographie dans WPF
 Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces fonctionnalités incluent une amélioration de la qualité et des performances du rendu du texte, de la prise en charge de typographie OpenType, du texte international amélioré, de la prise en charge améliorée des polices et des nouvelles interfaces de programmation d’applications (API) de texte.  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Amélioration de la qualité et des performances du texte  
- Le texte de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est rendu à l’aide de Microsoft ClearType, ce qui améliore la clarté et la lisibilité du texte. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType utilise le rendu de sous-pixel qui autorise l’affichage du texte avec une plus grande fidélité à sa forme réelle en alignant les caractères sur une partie fractionnaire d’un pixel. Cette résolution accrue augmente la netteté des détails dans l’affichage textuel, ce qui facilite grandement la lecture pendant des périodes prolongées. Une autre amélioration de ClearType dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est l’anticrénelage de direction y, qui lisse le haut et le bas des courbes superficielles dans les caractères de texte. Pour plus d’informations sur les fonctionnalités ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
+ Le texte de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est affiché à l’aide de Microsoft ClearType, ce qui améliore la clarté et la lisibilité du texte. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType utilise le rendu de sous-pixel qui autorise l’affichage du texte avec une plus grande fidélité à sa forme réelle en alignant les caractères sur une partie fractionnaire d’un pixel. Cette résolution accrue augmente la netteté des détails dans l’affichage textuel, ce qui facilite grandement la lecture pendant des périodes prolongées. Une autre amélioration de ClearType dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est l’anticrénelage de direction y, qui lisse le haut et le bas des courbes superficielles dans les caractères de texte. Pour plus d’informations sur les fonctionnalités ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
   
  ![Texte avec anticrénelage ClearType dans la direction y](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
 Texte avec anticrénelage ClearType dans la direction y  
@@ -33,11 +33,11 @@ Texte avec anticrénelage ClearType dans la direction y
   
  La police OpenType Pericles contient des glyphes supplémentaires qui fournissent des variantes stylistiques à l’ensemble de glyphes standard. Le texte suivant présente des glyphes de style alternatif.  
   
- ![Texte utilisant des glyphes de style alternatifs OpenType](./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "à l’aide de glyphes de style alternatif OpenType")  
+ ![Texte utilisant des glyphes de style alternatif OpenType](./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "Texte utilisant des glyphes de style alternatif OpenType")  
   
  Les lettres ornées sont des glyphes décoratifs qui utilisent une ornementation élaborée souvent associée à la calligraphie. Le texte suivant présente des glyphes standard et des glyphes à lettres ornées avec la police Pescadero.  
   
- ![Texte utilisant du texte de glyphes standard et ornés OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "à l’aide de glyphes standard et ornés OpenType")  
+ ![Texte utilisant des glyphes standard et ornés OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "Texte utilisant des glyphes standard et ornés OpenType")  
   
  Pour plus d’informations sur les fonctionnalités OpenType, consultez [caractéristiques des polices OpenType](opentype-font-features.md).  
   
@@ -59,11 +59,11 @@ Texte avec anticrénelage ClearType dans la direction y
   
 - Comportement de police indépendant des paramètres globaux, tels que les paramètres régionaux du système.  
   
-- Séparez les types <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch> et <xref:System.Windows.FontStyle> pour définir une <xref:System.Windows.Media.FontFamily>. Cette fonctionnalité offre une souplesse plus importante que dans la programmation [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], dans laquelle des combinaisons Boolean de caractères italiques et gras sont utilisées pour définir une famille de polices.  
+- Séparer les types <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>et <xref:System.Windows.FontStyle> pour la définition d’un <xref:System.Windows.Media.FontFamily>. Cette fonctionnalité offre une souplesse plus importante que dans la programmation [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], dans laquelle des combinaisons Boolean de caractères italiques et gras sont utilisées pour définir une famille de polices.  
   
 - Sens d’écriture (horizontal ou vertical) géré indépendamment du nom de police.  
   
-- Police de liaison et police de substitution dans un fichier [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] portable, à l’aide de la technologie de police composite. Les polices composites permettent de générer une gamme complète de polices multilingues. Les polices composites fournissent également un mécanisme qui évite d’afficher les glyphes manquants. Pour plus d’informations, consultez les notes de la classe <xref:System.Windows.Media.FontFamily>.  
+- Liaison de polices et police de secours dans un fichier XML portable à l’aide de la technologie de police composite. Les polices composites permettent de générer une gamme complète de polices multilingues. Les polices composites fournissent également un mécanisme qui évite d’afficher les glyphes manquants. Pour plus d’informations, consultez les notes de la classe <xref:System.Windows.Media.FontFamily>.  
   
 - Polices internationales générées à partir de polices composites, à l’aide d’un groupe de polices d’une seule langue. Cela permet de limiter les coûts de ressources lors du développement de polices pour plusieurs langues.  
   
@@ -80,7 +80,7 @@ Texte avec anticrénelage ClearType dans la direction y
 - **Mise en forme du texte avancée**. Permet d’implémenter un moteur de texte personnalisé.  
   
 ### <a name="layout-and-user-interface"></a>Disposition et interface utilisateur  
- Au niveau de fonctionnalité le plus élevé, les API Text fournissent des contrôles [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] communs, tels que <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBlock> et <xref:System.Windows.Controls.TextBox>. Ces contrôles fournissent les éléments [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de base dans une application et proposent une méthode simple pour présenter le texte et interagir avec celui-ci. Les contrôles tels que <xref:System.Windows.Controls.RichTextBox> et <xref:System.Windows.Controls.PasswordBox> permettent une gestion de texte plus avancée ou spécialisée. Les classes et, telles que <xref:System.Windows.Documents.TextRange>, <xref:System.Windows.Documents.TextSelection> et <xref:System.Windows.Documents.TextPointer>, permettent une manipulation de texte utile. Ces contrôles [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] fournissent des propriétés telles que <xref:System.Windows.Controls.Control.FontFamily%2A>, <xref:System.Windows.Controls.Control.FontSize%2A> et <xref:System.Windows.Controls.Control.FontStyle%2A>, qui vous permettent de contrôler la police utilisée pour restituer le texte.  
+ Au plus haut niveau de fonctionnalité, les API de texte fournissent des contrôles de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] communs tels que <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBlock>et <xref:System.Windows.Controls.TextBox>. Ces contrôles fournissent les éléments [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de base dans une application et proposent une méthode simple pour présenter le texte et interagir avec celui-ci. Les contrôles tels que <xref:System.Windows.Controls.RichTextBox> et <xref:System.Windows.Controls.PasswordBox> permettent une gestion de texte plus avancée ou spécialisée. Les classes et, telles que <xref:System.Windows.Documents.TextRange>, <xref:System.Windows.Documents.TextSelection>et <xref:System.Windows.Documents.TextPointer> permettent une manipulation de texte utile. Ces contrôles [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] fournissent des propriétés telles que <xref:System.Windows.Controls.Control.FontFamily%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>et <xref:System.Windows.Controls.Control.FontStyle%2A>, qui vous permettent de contrôler la police utilisée pour restituer le texte.  
   
 #### <a name="using-bitmap-effects-transforms-and-text-effects"></a>Utilisation d’effets bitmap, de transformations et d’effets de texte  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de créer des utilisations visuellement intéressantes de texte par le biais des fonctionnalités d’utilisation telles que les effets bitmap, les transformations et les effets de texte. L’exemple suivant présente un type classique d’effet d’ombre portée appliqué au texte.  
@@ -112,9 +112,9 @@ Texte avec anticrénelage ClearType dans la direction y
  ![Capture d'écran : effet de rotation du texte](./media/typography-in-wpf/rotating-text-effect.jpg) 
   
 #### <a name="using-flow-documents"></a>Utilisation de documents dynamiques  
- En plus des contrôles [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] courants, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] offre un contrôle de disposition pour la présentation du texte, l’élément <xref:System.Windows.Documents.FlowDocument>. L’élément <xref:System.Windows.Documents.FlowDocument>, conjointement avec l’élément <xref:System.Windows.Controls.DocumentViewer>, fournit un contrôle pour de grandes quantités de texte avec des exigences de disposition variables. Les contrôles de disposition permettent d’accéder à la typographie avancée par le biais de l’objet <xref:System.Windows.Documents.Typography> et des propriétés relatives aux polices d’autres contrôles [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
+ Outre les contrôles de [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] courants, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] offre un contrôle de disposition pour la présentation de texte, l’élément <xref:System.Windows.Documents.FlowDocument>. L’élément <xref:System.Windows.Documents.FlowDocument>, conjointement avec l’élément <xref:System.Windows.Controls.DocumentViewer>, fournit un contrôle pour de grandes quantités de texte avec des exigences de disposition variables. Les contrôles de disposition fournissent un accès à la typographie avancée via l’objet <xref:System.Windows.Documents.Typography> et les propriétés liées à la police d’autres contrôles [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
- L’exemple suivant montre le contenu de texte hébergé dans un <xref:System.Windows.Controls.FlowDocumentReader>, qui assure la prise en charge de la recherche, de la navigation, de la pagination et de la mise à l’échelle du contenu.  
+ L’exemple suivant montre le contenu de texte hébergé dans une <xref:System.Windows.Controls.FlowDocumentReader>, qui fournit la prise en charge de la recherche, de la navigation, de la pagination et de la mise à l’échelle du contenu.  
   
  ![Capture d’écran montrant les polices OpenType.](./media/typography-in-wpf/typography-text-flowdocumentreader.png)
   
@@ -140,7 +140,7 @@ Texte avec anticrénelage ClearType dans la direction y
  Pour plus d’informations sur l’objet <xref:System.Windows.Media.FormattedText>, consultez [dessin du texte mis en forme](drawing-formatted-text.md).  
   
 ### <a name="advanced-text-formatting"></a>Mise en forme de texte avancée  
- Au niveau le plus avancé des API Text, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de créer une disposition de texte personnalisée en utilisant l’objet <xref:System.Windows.Media.TextFormatting.TextFormatter> et d’autres types dans l’espace de noms <xref:System.Windows.Media.TextFormatting>. Les classes <xref:System.Windows.Media.TextFormatting.TextFormatter> et associées vous permettent d’implémenter une disposition de texte personnalisée qui prend en charge votre propre définition de formats de caractères, de styles de paragraphes, de règles de saut de ligne et d’autres fonctionnalités de disposition pour le texte international. Dans certains cas, vous pouvez être amené à remplacer l’implémentation par défaut de la prise en charge de la disposition du texte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Toutefois, si vous créez une application ou un contrôle d’édition de texte, vous aurez peut-être besoin d’une implémentation différente de l’implémentation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] par défaut.  
+ Au niveau le plus avancé des API Text, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de créer une disposition de texte personnalisée à l’aide de l’objet <xref:System.Windows.Media.TextFormatting.TextFormatter> et d’autres types dans l’espace de noms <xref:System.Windows.Media.TextFormatting>. Les classes <xref:System.Windows.Media.TextFormatting.TextFormatter> et associées vous permettent d’implémenter une disposition de texte personnalisée qui prend en charge votre propre définition de formats de caractères, de styles de paragraphes, de règles de saut de ligne et d’autres fonctionnalités de disposition pour le texte international. Dans certains cas, vous pouvez être amené à remplacer l’implémentation par défaut de la prise en charge de la disposition du texte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Toutefois, si vous créez une application ou un contrôle d’édition de texte, vous aurez peut-être besoin d’une implémentation différente de l’implémentation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] par défaut.  
   
  Contrairement à une API texte traditionnelle, le <xref:System.Windows.Media.TextFormatting.TextFormatter> interagit avec un client de disposition de texte par le biais d’un ensemble de méthodes de rappel. Elle requiert que le client fournisse ces méthodes dans une implémentation de la classe <xref:System.Windows.Media.TextFormatting.TextSource>. Le diagramme suivant illustre l’interaction de la disposition du texte entre l’application cliente et <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
@@ -156,5 +156,5 @@ Texte avec anticrénelage ClearType dans la direction y
 - [Fonctionnalités des polices OpenType](opentype-font-features.md)
 - [Dessin du texte mis en forme](drawing-formatted-text.md)
 - [Mise en forme de texte avancée](advanced-text-formatting.md)
-- [Text](optimizing-performance-text.md)
+- [Texte](optimizing-performance-text.md)
 - [Typographie Microsoft](https://docs.microsoft.com/typography/)

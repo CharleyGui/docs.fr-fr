@@ -3,22 +3,28 @@ title: Branches et boucles – Tutoriel d’introduction à C#
 description: Dans ce tutoriel sur les branches et les boucles, vous allez écrire du code en C# pour explorer la syntaxe du langage qui gère les branches et les boucles conditionnelles permettant d’exécuter des instructions de manière répétée.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: a0701a63d6c3aece6bac4263cbcf8a682a623cf7
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 44b634e3c2120116ee7fd66770398a6b66c8ed8c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834127"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739124"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Découvrir la logique conditionnelle avec des instructions de branches et de boucles
 
 Ce tutoriel explique comment écrire du code qui examine des variables et modifie le chemin d’exécution en fonction de ces variables. Vous allez écrire un code en C# et afficher les résultats de la compilation et de l’exécution du code. Ce tutoriel comporte une série de leçons visant à explorer les constructions de type branches et boucles en C#. Ces leçons présentent les concepts de base du langage C#.
 
-Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Prendre des décisions à l’aide de l’instruction `if`
 
-Créez un répertoire nommé *branches-tutorial*. Faites-en le répertoire actuel et exécutez `dotnet new console -n BranchesAndLoops -o .`. Cette commande crée une nouvelle application console .NET Core dans le répertoire actuel.
+Créez un répertoire nommé *branches-tutorial*. Créez le répertoire actif et exécutez la commande suivante :
+
+```dotnetcli
+dotnet new console -n BranchesAndLoops -o .
+```
+
+Cette commande crée une nouvelle application console .NET Core dans le répertoire actuel.
 
 Ouvrez *Program.cs* dans votre éditeur favori, puis remplacez la ligne `Console.WriteLine("Hello World!");` par le code qui suit :
 

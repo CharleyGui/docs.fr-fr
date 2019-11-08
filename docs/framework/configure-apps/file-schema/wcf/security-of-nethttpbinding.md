@@ -2,23 +2,23 @@
 title: <security> de <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: dc41f6f7-cabc-4a64-9fa0-ceabf861b348
-ms.openlocfilehash: 890cee3271c410a921b3a88f78d0705ba8718252
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 97c52fa4f062ed0c65d5b1a8ca47a1439ab04cf5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399854"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736479"
 ---
-# <a name="security-of-nethttpbinding"></a>\<> de sécurité \<de NetHttpBinding >
+# <a name="security-of-nethttpbinding"></a>\<> de sécurité de \<netHttpBinding >
 
-Définit les fonctionnalités de sécurité de l' [ \<> NetHttpBinding](nethttpbinding.md).
+Définit les fonctionnalités de sécurité du [\<NetHttpBinding](nethttpbinding.md).
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**NetHttpBinding**](nethttpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,13 +40,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|mode|facultatif. Spécifie le type de sécurité qui est utilisé. Par défaut, il s’agit de `None`. Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|
+|mode|Optionnel. Spécifie le type de sécurité qui est utilisé. La valeur par défaut est `None`, Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|
 
 ## <a name="mode-attribute"></a>attribut mode
 
-|Valeur|Description|
+|valeur|Description|
 |-----------|-----------------|
-|Aucun|-Les messages ne sont pas sécurisés lors du transfert.|
+|aucune.|-Les messages ne sont pas sécurisés lors du transfert.|
 |Transport|La sécurité est fournie à l'aide du transport HTTPS. Les messages SOAP sont sécurisés par HTTPS. Le service est authentifié auprès du client à l'aide du certificat X.509 du service. Le client est authentifié à l'aide du ClientCredentialType fourni.|
 |Message|La sécurité est fournie à l'aide de la sécurité des messages SOAP. Par défaut, le corps est chiffré et signé. Pour cette liaison, le système impose que le certificat de serveur soit fourni au client hors bande. Le seul `ClientCredentialType` valide pour cette liaison est `Certificate`.|
 |TransportWithMessageCredential|L'intégrité, la confidentialité et l'authentification de serveur sont fournies par la sécurité du transport. L'authentification du client est fournie au moyen de la sécurité des messages SOAP. Ce mode est utile lorsque l'utilisateur effectue une authentification à l'aide du nom d'utilisateur/mot de passe et qu'il existe un déploiement HTTP pour sécuriser le transfert des messages.|
@@ -56,14 +56,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<transport>](transport-of-nethttpbinding.md)|Définit les paramètres de sécurité de transport pour un service HTTP de base. Cet élément correspond à <xref:System.ServiceModel.HttpTransportSecurity>.|
-|[\<message>](message-of-nethttpbinding.md)|Définit les paramètres de sécurité de message pour un service HTTP de base. Cet élément correspond à <xref:System.ServiceModel.BasicHttpMessageSecurity>.|
+|[> de transport \<](transport-of-nethttpbinding.md)|Définit les paramètres de sécurité de transport pour un service HTTP de base. Cet élément correspond à <xref:System.ServiceModel.HttpTransportSecurity>.|
+|[message de \<](message-of-nethttpbinding.md)|Définit les paramètres de sécurité de message pour un service HTTP de base. Cet élément correspond à <xref:System.ServiceModel.BasicHttpMessageSecurity>.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|liaison|Élément de liaison de l' [ \<> BasicHttpBinding](basichttpbinding.md).|
+|liaison|Élément de liaison de la [\<basicHttpBinding >](basichttpbinding.md).|
 
 ## <a name="remarks"></a>Notes
 
@@ -78,4 +78,4 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

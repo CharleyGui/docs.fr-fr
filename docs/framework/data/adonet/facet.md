@@ -1,15 +1,15 @@
 ---
-title: facette
+title: facet
 ms.date: 03/30/2017
 ms.assetid: 91c4e6aa-3e54-4b6c-a38a-abf27808cc85
-ms.openlocfilehash: 1ac46c882b266fbb73d5c709c9fdf297e2b55b1b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0157105290a297eff2c1bf799a2065872082e40e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783969"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735642"
 ---
-# <a name="facet"></a>facette
+# <a name="facet"></a>facet
 Une *facette* est utilisée pour ajouter des détails à une définition de propriété de type primitif. Une définition de [propriété](property.md) contient des informations sur le type de propriété, mais elle est souvent plus détaillée. Par exemple, un type d'entité dans un modèle conceptuel peut avoir une propriété de type `String` dont la valeur ne peut pas être null. Les facettes vous permettent de spécifier ce niveau de détail.  
   
  Le tableau suivant décrit les facettes prises en charge dans le modèle EDM.  
@@ -30,7 +30,7 @@ Une *facette* est utilisée pour ajouter des détails à une définition de prop
 |`Unicode`|Indique si la valeur de propriété est stockée au format Unicode.|`String`|  
   
 ## <a name="example"></a>Exemple  
- Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit un type d'entité `Book`. Notez que les facettes sont implémentées en tant qu'attributs XML. Les valeurs de facette indiquent qu'aucune propriété ne peut avoir la valeur null, et que les facettes `Scale` et `Precision` de la propriété `Revision` ont la valeur 29.  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) pour définir des modèles conceptuels. Le CSDL suivant définit un type d'entité `Book`. Notez que les facettes sont implémentées en tant qu'attributs XML. Les valeurs de facette indiquent qu'aucune propriété ne peut avoir la valeur null, et que les facettes `Scale` et `Precision` de la propriété `Revision` ont la valeur 29.  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   

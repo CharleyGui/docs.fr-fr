@@ -5,15 +5,15 @@ helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-ms.openlocfilehash: 31fdc3c31c8792fea5f3e71dedb7370ebd63c98e
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 9b302be3ed9f01ccd27470063f49966dc7d74708
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458548"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740800"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimisation des performances : liaison de données
-La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un moyen simple et cohérent pour les applications de présenter les données et d’interagir avec elles. Les éléments peuvent être liés à des données provenant de diverses sources de données sous la forme d’objets CLR et de [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
+La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un moyen simple et cohérent pour les applications de présenter les données et d’interagir avec elles. Les éléments peuvent être liés à des données provenant de diverses sources de données sous la forme d’objets CLR et XML.  
   
  Cette rubrique fournit des recommandations sur les performances de la liaison de données.  
 
@@ -69,7 +69,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="Do_not_Convert_CLR_objects_to_Xml_Just_For_Data_Binding"></a>   
 ## <a name="do-not-convert-clr-objects-to-xml-just-for-data-binding"></a>Ne convertissez pas des objets CLR en XML seulement à des fins de liaison de données.  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de lier des données à [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] contenu ; Toutefois, la liaison de données à [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] contenu est plus lente que la liaison de données aux objets CLR. Ne convertissez pas les données d’objet CLR en XML si le seul objectif est de lier les données.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de lier des données à du contenu XML ; Toutefois, la liaison de données au contenu XML est plus lente que la liaison de données aux objets CLR. Ne convertissez pas les données d’objet CLR en XML si le seul objectif est de lier les données.  
   
 ## <a name="see-also"></a>Voir aussi
 

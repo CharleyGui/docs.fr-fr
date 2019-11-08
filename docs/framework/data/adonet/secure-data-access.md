@@ -2,12 +2,12 @@
 title: Sécuriser l'accès aux données
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 122bdaf8467994f8f56ce3f6c92457be6b8b3155
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c08f41be67f5d87635021e86ba5a5b33af9304cd
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782776"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735277"
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -55,7 +55,7 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Notions de base de la gestion des exceptions](../../../standard/exceptions/exception-handling-fundamentals.md)|Décrit les formes de base de la gestion des exceptions structurée autour du bloc try/catch/finally.|  
+|[Gestion et levée d’exceptions dans .NET](../../../standard/exceptions/index.md)|Décrit les formes de base de la gestion des exceptions structurée autour du bloc try/catch/finally.|  
 |[Meilleures pratiques pour les exceptions](../../../standard/exceptions/best-practices-for-exceptions.md)|Décrit les meilleures pratiques de gestion des exceptions.|  
   
 ## <a name="protecting-microsoft-access-and-excel-data-sources"></a>Protection des sources de données Microsoft Access et Excel  

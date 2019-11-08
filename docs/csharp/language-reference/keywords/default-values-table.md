@@ -6,27 +6,27 @@ ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: d9889ce389eed73a9af0a3f72dcca6ec476cae15
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
-ms.translationtype: HT
+ms.openlocfilehash: 02f86ef8ee73ff31a6c5c9d17a44a443f72ef05e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796509"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739281"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 
 Le tableau suivant présente les valeurs par défaut des types C# :
 
-|Type|Valeur par défaut|
+|Tapez|Valeur par défaut|
 |---------|------------------|
-|Tout type référence|`null`|
+|tout type référence ;|`null`|
 |Tout [type numérique intégral intégré](../builtin-types/integral-numeric-types.md)|0 (zéro)|
 |Tout [type numérique à virgule flottante intégré](../builtin-types/floating-point-numeric-types.md)|0 (zéro)|
 |[bool](bool.md)|`false`|
 |[char](char.md)|`'\0'` (U+0000)|
 |[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
-|Tout [type valeur Nullable](../../programming-guide/nullable-types/index.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *Null* du type valeur Nullable.|
+|Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *null* d’un type valeur Nullable.|
 
 Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type, comme illustré dans l’exemple suivant :
 

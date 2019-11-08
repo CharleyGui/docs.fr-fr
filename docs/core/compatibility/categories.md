@@ -2,22 +2,22 @@
 title: Catégories de changements cassants - .NET Core
 description: Découvrez comment les changements cassants sont catégorisés dans .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 058f2c2cdeed1e3e984f1de8ab493971d3937876
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 68bc51b6662de070ef901b73fb75ff3aced95726
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089444"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739363"
 ---
 # <a name="breaking-change-categories"></a>Catégories de changements cassants
 
-*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Un changement particulier peut affecter la compatibilité de six façons différentes. Les [différents types de changements individuels sont pris en compte lors de l’évaluation de la compatibilité](index.md) appartiennent aux cinq premières catégories. 
+*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Un changement particulier peut affecter la compatibilité de six façons différentes. Les [différents types de changements individuels sont pris en compte lors de l’évaluation de la compatibilité](index.md) appartiennent aux cinq premières catégories.
 
 ## <a name="behavioral-change"></a>Changements de comportement
 
 Un changement de comportement représente un changement du comportement d’un membre. Le changement peut être visible de l’extérieur (par exemple, une méthode peut lever une autre exception) ou il peut représenter une implémentation modifiée (par exemple, une modification de la façon dont une valeur de retour est calculée, l’ajout ou la suppression d’appels de méthode internes, ou même une amélioration significative des performances).
 
-Quand des changements de comportement sont visibles de l’extérieur et modifient le contrat public d’un type, ils sont faciles à évaluer, car ils affectent la compatibilité binaire. Les changements d’implémentation sont bien plus difficiles à évaluer : en fonction de la nature du changement et de la fréquence et des modèles d’utilisation de l’API, l’impact d’un changement peut aller de grave à banal.  
+Quand des changements de comportement sont visibles de l’extérieur et modifient le contrat public d’un type, ils sont faciles à évaluer, car ils affectent la compatibilité binaire. Les changements d’implémentation sont bien plus difficiles à évaluer : en fonction de la nature du changement et de la fréquence et des modèles d’utilisation de l’API, l’impact d’un changement peut aller de grave à banal.
 
 ## <a name="binary-compatibility"></a>Compatibilité binaire
 
@@ -25,7 +25,7 @@ La compatibilité binaire fait référence à la capacité d’un consommateur d
 
 ## <a name="source-compatibility"></a>Compatibilité source
 
- La compatibilité source fait référence à la capacité des consommateurs existants d’une API à effectuer une recompilation avec une version plus récente sans aucune modification de la source. Un *changement incompatible au niveau source* se produit quand un consommateur doit modifier le code source pour qu’il soit généré avec succès sur une version plus récente d’une API.
+La compatibilité source fait référence à la capacité des consommateurs existants d’une API à effectuer une recompilation avec une version plus récente sans aucune modification de la source. Un *changement incompatible au niveau source* se produit quand un consommateur doit modifier le code source pour qu’il soit généré avec succès sur une version plus récente d’une API.
 
 ## <a name="design-time-compatibility"></a>Compatibilité au moment du design
 
@@ -39,9 +39,9 @@ Les changements qui affectent la compatibilité descendante sont fortement déco
 
 ## <a name="forward-compatibility"></a>Compatibilité ascendante
 
-La compatibilité ascendante fait référence à la capacité d’un consommateur existant d’une API à s’exécuter avec une version plus ancienne tout en montrant le même comportement. Si un consommateur ne peut pas s’exécuter ou se comporte différemment lors de l’exécution avec une version plus ancienne de l’API, l’API est *incompatible au niveau ascendant*. 
+La compatibilité ascendante fait référence à la capacité d’un consommateur existant d’une API à s’exécuter avec une version plus ancienne tout en montrant le même comportement. Si un consommateur ne peut pas s’exécuter ou se comporte différemment lors de l’exécution avec une version plus ancienne de l’API, l’API est *incompatible au niveau ascendant*.
 
-La conservation de la compatibilité ascendante empêche virtuellement toute modification ou ajout d’une version à l’autre, car ces changements empêchent un consommateur qui cible une version ultérieure de s’exécuter sous une version antérieure. Les développeurs s’attendent à ce qu’un consommateur qui s’appuie sur une API plus récente ne puisse ne pas fonctionner correctement avec l’API plus ancienne. 
+La conservation de la compatibilité ascendante empêche virtuellement toute modification ou ajout d’une version à l’autre, car ces changements empêchent un consommateur qui cible une version ultérieure de s’exécuter sous une version antérieure. Les développeurs s’attendent à ce qu’un consommateur qui s’appuie sur une API plus récente ne puisse ne pas fonctionner correctement avec l’API plus ancienne.
 
 La conservation de la compatibilité ascendante n’est pas un objectif de .NET Core.
 

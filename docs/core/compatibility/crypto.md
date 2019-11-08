@@ -2,17 +2,14 @@
 title: Modifications avec rupture de chiffrement, version 2,2 à 3,0-.NET Core
 description: Répertorie les modifications avec rupture de la version 2,2 à la version 3,0 de .NET Core, ASP.NET Core et EF Core.
 ms.date: 09/10/2019
-ms.openlocfilehash: ba330bdef4be8cfe0e74f5645adaf66b2e0051ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8b2894e6988c0b475e45c6d5602a7f54943f3ed
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089581"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739422"
 ---
 # <a name="breaking-changes-for-migration-from-version-22-to-30"></a>Dernières modifications pour la migration de la version 2,2 vers 3,0
-
-> [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub. 
 
 Si vous effectuez une migration de la version 2,2 vers la version 3,0 de .NET Core, ASP.NET Core ou EF Core, consultez les rubriques suivantes pour connaître les dernières modifications susceptibles d’affecter votre application :
 

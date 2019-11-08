@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 2abe89abf1ab246464c8f7a7ca7c87295b0b3946
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 178145b06cb937fb677b8454357bed774ed3003b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458980"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740850"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorité de la valeur de propriété de dépendance
 <a name="introduction"></a> Cette rubrique explique comment le fonctionnement du système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] peut affecter la valeur d’une propriété de dépendance, et décrit la priorité selon laquelle les aspects du système de propriétés s’appliquent à la valeur effective d’une propriété.  
@@ -109,7 +109,7 @@ ms.locfileid: "73458980"
   
 <a name="animations"></a>   
 ## <a name="coercion-animations-and-base-value"></a>Forçage, animations et valeur de base  
- Le forçage et l’animation agissent tous deux sur une valeur appelée « valeur de base » dans ce [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. La valeur de base est donc toute valeur déterminée par l’intermédiaire d’une évaluation vers le haut parmi les éléments jusqu’à ce que l’élément 2 soit atteint.  
+ La contrainte et l’animation agissent toutes deux sur une valeur appelée « valeur de base » dans ce kit de développement logiciel (SDK). La valeur de base est donc toute valeur déterminée par l’intermédiaire d’une évaluation vers le haut parmi les éléments jusqu’à ce que l’élément 2 soit atteint.  
   
  Pour une animation, la valeur de base peut avoir un effet sur la valeur animée, si cette animation ne spécifie pas à la fois « From » et « To » pour certains comportements, ou si l’animation rétablit délibérément la valeur de base une fois terminé. Pour voir cela en pratique, exécutez l’[Exemple de valeurs cibles d’animation From, To et By](https://go.microsoft.com/fwlink/?LinkID=159988). Essayez de définir les valeurs locales de la hauteur du rectangle dans l’exemple, telles que la valeur locale initiale soit différente de toute valeur « From » dans l’animation. Vous noterez que les animations démarrent immédiatement en utilisant les valeurs « From », et qu’elles remplacent la valeur de base une fois qu’elles ont commencé. L’animation peut spécifier de retourner à la valeur trouvée avant l’animation une fois qu’elle est terminée en spécifiant le <xref:System.Windows.Media.Animation.FillBehavior>d’arrêt. Par la suite, la priorité normale est utilisée pour déterminer la valeur de base.  
   

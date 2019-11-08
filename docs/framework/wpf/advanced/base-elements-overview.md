@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
-ms.openlocfilehash: 6f8542be5a84a4b8b4cabf594c32d6fdfd3757d2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 823c81bf6b21b88d719503387a68ce6e7d643d61
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453769"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740912"
 ---
 # <a name="base-elements-overview"></a>Vue d'ensemble des éléments de base
-Un pourcentage élevé de classes dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est dérivé de quatre classes souvent appelées classes d’éléments de base dans la documentation du [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Ces classes sont <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>et <xref:System.Windows.FrameworkContentElement>. La classe <xref:System.Windows.DependencyObject> est également associée, car il s’agit d’une classe de base commune des <xref:System.Windows.UIElement> et <xref:System.Windows.ContentElement>  
+Un pourcentage élevé de classes dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont dérivés de quatre classes qui sont communément appelées dans la documentation du kit de développement logiciel (SDK) comme classes d’éléments de base. Ces classes sont <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>et <xref:System.Windows.FrameworkContentElement>. La classe <xref:System.Windows.DependencyObject> est également associée, car il s’agit d’une classe de base commune des <xref:System.Windows.UIElement> et <xref:System.Windows.ContentElement>  
 
 <a name="base_apis"></a>   
 ## <a name="base-element-apis-in-wpf-classes"></a>API d’élément de base dans les classes WPF  

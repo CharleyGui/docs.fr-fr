@@ -7,19 +7,19 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 04001f88e0f59fd4eb3ca84d846456be7740737e
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1d6430ba5969d8a05db47baf9521d2409e596c23
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460487"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740868"
 ---
 # <a name="globalization-for-wpf"></a>Globalisation pour WPF
 Cette rubrique présente les problèmes que vous devez prendre en compte lors de l’écriture d’applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pour le marché mondial. Les éléments de programmation de la globalisation sont définis dans .NET dans l’espace de noms <xref:System.Globalization>.
 
 <a name="xaml_globalization"></a>
 ## <a name="xaml-globalization"></a>Globalisation XAML
- Extensible Application Markup Language (XAML) est basé sur [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] et tire parti de la prise en charge de la globalisation définie dans la spécification [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Les sections suivantes décrivent certaines fonctionnalités de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] que vous devez connaître.
+ Extensible Application Markup Language (XAML) est basé sur XML et tire parti de la prise en charge de la globalisation définie dans la spécification XML. Les sections suivantes décrivent certaines fonctionnalités de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] que vous devez connaître.
 
 <a name="char_reference"></a>
 ### <a name="character-references"></a>Références de caractères
@@ -143,7 +143,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
 <a name="mui"></a>
 ### <a name="multilingual-user-interface"></a>Interface utilisateur multilingue
- Les interfaces utilisateur multilingues (MUI) sont un support Microsoft permettant de basculer des interfaces utilisateur d’une langue à une autre. Une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le modèle d’assembly pour prendre en charge MUI. Une application contient des assemblys indépendants de la langue ainsi que des assemblys de ressources satellites dépendants de la langue. Le point d’entrée est un .EXE managé dans l’assembly principal.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] le chargeur de ressources tire parti du gestionnaire de ressources de l' [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]pour prendre en charge la recherche et la restauration des ressources. Les assemblys satellites multilingues fonctionnent avec le même assembly principal. L’assembly de ressource chargé dépend de la <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> du thread actuel.
+ Les interfaces utilisateur multilingues (MUI) sont un support Microsoft permettant de basculer des interfaces utilisateur d’une langue à une autre. Une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le modèle d’assembly pour prendre en charge MUI. Une application contient des assemblys indépendants de la langue ainsi que des assemblys de ressources satellites dépendants de la langue. Le point d’entrée est un .EXE managé dans l’assembly principal.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] le chargeur de ressources tire parti du gestionnaire de ressources de l’infrastructure pour prendre en charge la recherche et le secours des ressources. Les assemblys satellites multilingues fonctionnent avec le même assembly principal. L’assembly de ressource chargé dépend de la <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> du thread actuel.
 
 <a name="localizable_ui"></a>
 ### <a name="localizable-user-interface"></a>Interface utilisateur localisable
@@ -152,7 +152,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
  Du point de vue de la ressource, un fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] conçu pour décrire un [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] dépendant du langage est un élément de ressource et, par conséquent, son format de distribution final doit être localisable pour prendre en charge les langues internationales. Étant donné que [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ne peut pas gérer d’événements, de nombreuses applications [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] contiennent des blocs de code pour effectuer cette opération. Pour plus d’informations, consultez [vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md). Le code est supprimé et compilé en différents binaires lorsqu’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est sous forme de jeton dans le formulaire BAML de XAML. Le formulaire BAML des fichiers, des images et d’autres types d’objets de ressources managées XAML est incorporé dans l’assembly des ressources satellites, pouvant être localisé dans d’autres langues, ou dans l’assembly principal, quand la localisation n’est pas nécessaire.
 
 > [!NOTE]
-> les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prennent en charge toutes les ressources CLR [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)], y compris les tables de chaînes, les images, etc.
+> les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prennent en charge toutes les ressources FrameworkCLR, y compris les tables de chaînes, les images, etc.
 
 <a name="building_localizable_apps"></a>
 ### <a name="building-localizable-applications"></a>Génération d’applications localisables

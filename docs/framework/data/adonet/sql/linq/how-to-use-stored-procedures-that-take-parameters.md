@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Utiliser des procédures stockées qui prennent des paramètres'
+title: 'Comment : utiliser des procédures stockées qui prennent des paramètres'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-ms.openlocfilehash: e9d77cd1dc82e1b103c5f0d9f3f447ed105acaec
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: faf4ea9c52b91c3fc0f2f775e7bd5dfe039c53a8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003244"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738114"
 ---
-# <a name="how-to-use-stored-procedures-that-take-parameters"></a>Procédure : Utiliser des procédures stockées qui prennent des paramètres
+# <a name="how-to-use-stored-procedures-that-take-parameters"></a>Comment : utiliser des procédures stockées qui prennent des paramètres
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mappe des paramètres de sortie à des paramètres de référence et, pour les types valeur, déclare le paramètre comme Nullable.  
   
- Pour obtenir un exemple d’utilisation d’un paramètre d’entrée dans une requête qui retourne un ensemble de lignes, consultez [How à : Retourne les ensembles de lignes @ no__t-0.  
+ Pour obtenir un exemple d’utilisation d’un paramètre d’entrée dans une requête qui retourne un ensemble de lignes, consultez [How to : Return](how-to-return-rowsets.md)rowset.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant prend un paramètre d'entrée unique (ID client) et retourne un paramètre de sortie (total des ventes pour ce client).  
@@ -43,5 +43,5 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
 
 - [Procédures stockées](stored-procedures.md)
 - [Téléchargement d’exemples de base de données](downloading-sample-databases.md)
-- [Utilisation des types valeur Nullable](../../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)
-- [Types valeur Nullable](../../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+- [Types valeur Nullable (C#)](../../../../../csharp/language-reference/builtin-types/nullable-value-types.md)
+- [Types valeur Nullable (Visual Basic)](../../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 5262aa70bb5ec2f03dda9425194b89ec1e809d76
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2bd6fe3d2d283e64eebc2251416fa5234e30bdad
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038960"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739661"
 ---
 # <a name="-and--operators-c-reference"></a>?? et ?? =, opérateursC# (référence)
 
@@ -28,7 +28,7 @@ Disponible dans C# 8,0 et versions ultérieures, l’opérateur d’assignation 
 
 L’opérande gauche de l’opérateur `??=` doit être une variable, une [propriété](../../programming-guide/classes-and-structs/properties.md)ou un élément [indexeur](../../programming-guide/indexers/index.md) .
 
-Dans C# 7,3 et les versions antérieures, le type de l’opérande gauche de l’opérateur`??`doit être un type référence ou un [type valeur Nullable](../../programming-guide/nullable-types/index.md). À partir C# de 8,0, cette exigence est remplacée par ce qui suit : le type de l’opérande gauche des opérateurs`??`et`??=`ne peut pas être un type valeur non Nullable. En particulier, à partir C# de 8,0, vous pouvez utiliser les opérateurs de fusion Null avec des paramètres de type sans contrainte :
+Dans C# 7,3 et les versions antérieures, le type de l’opérande gauche de l’opérateur `??` doit être un type [référence](../keywords/reference-types.md) ou un [type valeur Nullable](../builtin-types/nullable-value-types.md). À partir C# de 8,0, cette exigence est remplacée par ce qui suit : le type de l’opérande gauche des opérateurs`??`et`??=`ne peut pas être un type valeur non Nullable. En particulier, à partir C# de 8,0, vous pouvez utiliser les opérateurs de fusion Null avec des paramètres de type sans contrainte :
 
 [!code-csharp[unconstrained type parameter](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#UnconstrainedType)]
 
@@ -54,7 +54,7 @@ Les opérateurs `??` et `??=` peuvent être utiles dans les scénarios suivants�
 
   [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
 
-- Quand vous utilisez des [types valeur Nullable](../../programming-guide/nullable-types/index.md) et que vous devez fournir une valeur d’un type valeur sous-jacent, utilisez l’opérateur `??` pour spécifier la valeur à fournir dans le cas où une valeur de type nullable est `null`:
+- Quand vous utilisez des [types valeur Nullable](../builtin-types/nullable-value-types.md) et que vous devez fournir une valeur d’un type valeur sous-jacent, utilisez l’opérateur `??` pour spécifier la valeur à fournir dans le cas où une valeur de type nullable est `null`:
 
   [!code-csharp-interactive[with nullable types](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullableTypes)]
 

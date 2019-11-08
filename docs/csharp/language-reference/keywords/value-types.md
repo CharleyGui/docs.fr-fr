@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 940d21bdd90d4594a39edc20283ca6a45ccf81fe
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8703532ff8551e8bd42128eb9e8cdcf2afd9dad8
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422198"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739675"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -32,7 +32,7 @@ Tous les types valeur sont implicitement dérivés de <xref:System.ValueType?dis
 
 Contrairement aux types référence, vous ne pouvez pas faire dériver un nouveau type d’un type valeur. En revanche, comme les types référence, les structs peuvent implémenter des interfaces.
 
-Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types valeur Nullable](../../programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
+Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types valeur Nullable](../builtin-types/nullable-value-types.md) correspondants peuvent être `null`.
 
 Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
 
@@ -105,8 +105,6 @@ Pour plus d’informations sur la mise en forme de la sortie des types numériqu
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Types](/dotnet/csharp/language-reference/keywords)
 - [Types référence](reference-types.md)
-- [Types valeur Nullable](../../programming-guide/nullable-types/index.md)
+- [Types valeur Nullable](../builtin-types/nullable-value-types.md)

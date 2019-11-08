@@ -1,18 +1,18 @@
 ---
-title: Mettre à niveau les API avec des attributs pour définir des attentes null
-description: Cet article explique les motivations et les techniques permettant d’ajouter des attributs descriptifs pour décrire l’État null des arguments et les valeurs de retour des API
+title: Mettre à niveau les API pour les types de référence Nullable avec des attributs qui définissent des attentes pour les valeurs null
+description: Apprenez à utiliser les attributs descriptifs AllowNull a, DisallowNull, MaybeNull, NotNull et bien plus pour décrire en détail l’État null de vos API.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: 102598843b091ea25e6456aeedcccf43f056250d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 64dcc70565de0c3094ef1c10866aafce9e18a5c9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039378"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737881"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Mettre à jour les bibliothèques pour utiliser des types référence Nullable et communiquer des règles Nullable aux appelants
 
-L’ajout de [types de référence Nullable](nullable-references.md) signifie que vous pouvez déclarer si une valeur `null` est autorisée ou non pour chaque variable. Cela offre une excellente expérience lorsque vous écrivez du code. Vous recevez des avertissements si une variable qui n’accepte pas les valeurs NULL peut avoir la valeur `null`. Vous recevez des avertissements si une variable Nullable n’est pas vérifiée par null avant d’être déréférencée. La mise à jour de vos bibliothèques peut prendre du temps, mais les avantages le justifient. Plus d’informations que vous fournissez au compilateur sur le *moment où* une valeur `null` est autorisée ou interdite, les meilleurs avertissements que les utilisateurs de votre API obtiendront. Commençons par un exemple familier. Imaginez que votre bibliothèque possède l’API suivante pour récupérer une chaîne de ressource :
+L’ajout de [types de référence Nullable](nullable-references.md) signifie que vous pouvez déclarer si une valeur `null` est autorisée ou non pour chaque variable. En outre, vous pouvez appliquer un certain nombre d’attributs : `AllowNull`, `DisallowNull`, `MaybeNull`, `NotNull`, `NotNullWhen`, `MaybeNullWhen`et `NotNullWhenNotNull` pour décrire complètement les États null de l’argument et les valeurs de retour. Cela offre une excellente expérience lorsque vous écrivez du code. Vous recevez des avertissements si une variable qui n’accepte pas les valeurs NULL peut avoir la valeur `null`. Vous recevez des avertissements si une variable Nullable n’est pas vérifiée par null avant d’être déréférencée. La mise à jour de vos bibliothèques peut prendre du temps, mais les avantages le justifient. Plus d’informations que vous fournissez au compilateur sur le *moment où* une valeur `null` est autorisée ou interdite, les meilleurs avertissements que les utilisateurs de votre API obtiendront. Commençons par un exemple familier. Imaginez que votre bibliothèque possède l’API suivante pour récupérer une chaîne de ressource :
 
 ```csharp
 bool TryGetMessage(string key, out string message)

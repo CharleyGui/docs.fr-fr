@@ -9,15 +9,15 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: d8fdeec8784c9a44c9b272a0a5a8b9c56ace5230
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e14ab0ebc7d44e2792307b16c7c0581ff7a71bc6
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458818"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740821"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable, attribut
-Spécifie les préfixes d’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] rencontrés dans un fichier de balisage qui peuvent être ignorés par un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. L’attribut `mc:Ignorable` prend en charge la compatibilité du balisage pour le mappage d’espace de noms personnalisé et pour le contrôle de version [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+Spécifie les préfixes d’espaces de noms XML rencontrés dans un fichier de balisage qui peuvent être ignorés par un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. L’attribut `mc:Ignorable` prend en charge la compatibilité du balisage pour le mappage d’espace de noms personnalisé et pour le contrôle de version [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
 ## <a name="xaml-attribute-usage-single-prefix"></a>Utilisation des attributs XAML (préfixe unique)  
   
@@ -51,7 +51,7 @@ Spécifie les préfixes d’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../i
 |*ThisElementCanBeIgnored*|Élément qui peut être ignoré par [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implémentations du processeur, si le type sous-jacent ne peut pas être résolu.|  
   
 ## <a name="remarks"></a>Notes  
- Le préfixe d’espace de noms `mc` [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] est la Convention de préfixe recommandée à utiliser lors du mappage de l’espace de noms de compatibilité [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `http://schemas.openxmlformats.org/markup-compatibility/2006`.  
+ Le préfixe d’espace de noms XML `mc` est la Convention de préfixe recommandée à utiliser lors du mappage de l’espace de noms de compatibilité [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `http://schemas.openxmlformats.org/markup-compatibility/2006`.  
   
  Éléments ou attributs où la partie préfixe du nom de l’élément est identifiée comme `mc:Ignorable` ne déclenchera pas d’erreurs en cas de traitement par un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Si cet attribut n’a pas pu être résolu en un type sous-jacent ou une construction de programmation, cet élément est ignoré. Notez cependant que les éléments ignorés peuvent toujours générer des erreurs d’analyse supplémentaires pour des spécifications d’éléments supplémentaires qui sont des effets secondaires de cet élément qui ne sont pas traités. Par exemple, un modèle de contenu d’élément particulier peut nécessiter exactement un élément enfant, mais si l’élément enfant spécifié se trouvait dans un préfixe `mc:Ignorable` et que l’élément enfant spécifié n’a pas pu être résolu en un type, le processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] peut déclencher une erreur.  
   

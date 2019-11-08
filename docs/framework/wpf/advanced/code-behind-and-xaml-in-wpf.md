@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: 2e975745c2124ab2834eb82ed9b94563b44642b1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: c18cce1898b8834c20d5e4af70c1b010e4b96e11
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453677"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740901"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Code-behind et XAML dans WPF
 <a name="introduction"></a>Code-behind est un terme utilisé pour décrire le code joint aux objets définis par le balisage, quand une page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est compilée par balisage. Cette rubrique décrit la configuration requise pour code-behind, ainsi qu’un autre mécanisme de code inline pour le code dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
@@ -50,7 +50,7 @@ ms.locfileid: "73453677"
   
 <a name="x_Code"></a>   
 ## <a name="xcode"></a>x :Code  
- [x :code](../../xaml-services/x-code-intrinsic-xaml-type.md) est un élément de directive défini dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Un élément de directive `x:Code` peut contenir du code de programmation Inline. Le code qui est défini inline peut interagir avec le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sur la même page. L’exemple suivant illustre le code inline C# . Notez que le code se trouve à l’intérieur de l’élément `x:Code` et que le code doit être entouré par des `<CDATA[`...`]]>` pour échapper le contenu de [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], de sorte qu’un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (en interprétant le schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ou le schéma [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]) ne essayez d’interpréter le contenu littéralement comme [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)].  
+ [x :code](../../xaml-services/x-code-intrinsic-xaml-type.md) est un élément de directive défini dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Un élément de directive `x:Code` peut contenir du code de programmation Inline. Le code qui est défini inline peut interagir avec le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sur la même page. L’exemple suivant illustre le code inline C# . Notez que le code se trouve à l’intérieur de l’élément `x:Code` et que le code doit être entouré par des `<CDATA[`...`]]>` pour échapper le contenu de XML, afin qu’un processeur [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (en interprétant le schéma [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ou le schéma [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]) ne tente pas de interpréter le contenu littéralement comme XML.  
   
  [!code-xaml[XAMLOvwSupport#ButtonWithInlineCode](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page4.xaml#buttonwithinlinecode)]  
   

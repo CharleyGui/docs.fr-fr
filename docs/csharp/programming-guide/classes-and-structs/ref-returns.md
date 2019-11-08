@@ -2,12 +2,12 @@
 title: Les valeurs de retour de référence et variables locales ref (Guide C#)
 description: Découvrir comment définir et utiliser des valeurs de retour de référence et des variables locales ref
 ms.date: 04/04/2018
-ms.openlocfilehash: 99e0f9d995cf3bf5c0486415b6f2d578147d3c7f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7ade422b5b3805ef2e1f487252a98fb85cdfe70c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114486"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736820"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
 
@@ -25,7 +25,7 @@ Certaines restrictions s’appliquent à l’expression qu’une méthode peut r
 
 - La valeur de retour ne peut pas être le littéral `null`. Le retour de `null` génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
-   Une méthode avec un retour de référence peut retourner un alias à une variable dont la valeur est actuellement la valeur null (non instanciée) ou un [type valeur Nullable](../nullable-types/index.md) pour un type valeur.
+   Une méthode avec un retour de référence peut retourner un alias à une variable dont la valeur est actuellement la valeur null (non instanciée) ou un [type valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md) pour un type valeur.
 
 - La valeur de retour ne peut pas être une constante, un membre d’énumération, la valeur de retour par valeur d’une propriété, ou une méthode d’une `class` ou d’un `struct`. Le non-respect de cette règle génère l’erreur de compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 

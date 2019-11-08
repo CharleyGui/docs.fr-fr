@@ -2,12 +2,12 @@
 title: Évaluer les changements cassants - .NET Core
 description: Pour en savoir plus sur les façons dont .NET Core tente de maintenir la compatibilité pour les développeurs entre les versions de .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: a4a1b5c4e81cec783248c6110b0af9844eb3f4af
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: f4e18a17f58452c9325f36390626ae690f5ed777
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416671"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739347"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Évaluer les changements cassants dans .NET Core
 
@@ -52,7 +52,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 - **✔️ Changement d’un type [struct](../../csharp/language-reference/keywords/struct.md) en type `readonly struct`**
 
   Notez que le changement d’un type `readonly struct` en type `struct` n’est pas autorisé.
-  
+
 - **✔️ L’ajout du mot clé [sealed](../../csharp/language-reference/keywords/sealed.md) ou [abstraite](../../csharp/language-reference/keywords/abstract.md) à un type lorsqu’il y a aucun constructeur *accessible* (public ou protégé)**
 
 - **✔️ Extension de la visibilité d’un type**
@@ -138,9 +138,9 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 - **❌ le changement de nom d’un paramètre (y compris la modification de sa casse)**
 
   Cela est considéré comme un changement cassant pour deux raisons :
-  
+
   - Cela empêche les scénarios à liaison tardive comme la fonctionnalité de liaison tardive de Visual Basic et [dynamic](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) de C#.
-  
+
   - Cela annule la [compatibilité de la source](categories.md#source-compatibility) lorsque les développeurs utilisent des [arguments nommés](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments).
 
 - **❌ de la modification d’une valeur de retour de `ref` en une valeur de retour `ref readonly`**
@@ -153,9 +153,9 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Bien que cela n’est souvent pas un changement cassant, car le compilateur C# a tendance à émettre des instructions [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) en langage intermédiaire pour appeler des méthodes non virtuelles (`callvirt` effectue une vérification de valeur null, alors qu’un appel normal ne le fait pas), ce comportement n’est pas invariable pour plusieurs raisons :
   - C# n’est pas le seul langage que .NET cible.
-  
+
   - Le compilateur C# essaie progressivement d’optimiser `callvirt` en un appel normal chaque fois que la méthode cible est non virtuelle et n’a probablement pas la valeur null (par exemple une méthode accessible via [l’opérateur de propagation de NULL ?](../../csharp/language-reference/operators/member-access-operators.md#null-conditional-operators--and-)).
-  
+
   Rendre une méthode virtuelle signifie que le code consommateur finirait souvent par l’appeler de façon non virtuelle.
 
 - **❌ l’ajout du mot clé [Virtual](../../csharp/language-reference/keywords/virtual.md) à un membre**

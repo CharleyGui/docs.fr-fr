@@ -2,12 +2,12 @@
 title: contrainte d'intégrité référentielle
 ms.date: 03/30/2017
 ms.assetid: 3d3ba44b-4302-40d8-a7a9-62932e0395e5
-ms.openlocfilehash: 28880c7085f8b4e3dd2e51b5633c1f0e2a984a4b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ad35df7bcca62ffdbc3842b0817b22c5482a3d4d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794441"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738368"
 ---
 # <a name="referential-integrity-constraint"></a>contrainte d'intégrité référentielle
 Une *contrainte d’intégrité référentielle* dans le Entity Data Model (EDM) est similaire à une contrainte d’intégrité référentielle dans une base de données relationnelle. De la même façon qu’une colonne (ou des colonnes) d’une table de base de données peut faire référence à la clé primaire d’une autre table [, une ou plusieurs propriétés d'](property.md) un [type d’entité](entity-type.md) peuvent référencer la [clé d’entité](entity-key.md) d’un autre type d’entité. Le type d’entité référencé est appelé *terminaison principale* de la contrainte. Le type d’entité qui référence la terminaison principale est appelé *terminaison dépendante* de la contrainte.  
@@ -29,7 +29,7 @@ Une *contrainte d’intégrité référentielle* dans le Entity Data Model (EDM)
   
  ![RefConstraintModel](./media/referential-integrity-constraint/reference-constraint-model.gif "Exemple de modèle de contrainte référentielle")  
   
- Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit une contrainte d'intégrité référentielle sur l'association `PublishedBy` présentée dans le modèle conceptuel ci-dessus.  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) pour définir des modèles conceptuels. Le CSDL suivant définit une contrainte d'intégrité référentielle sur l'association `PublishedBy` présentée dans le modèle conceptuel ci-dessus.  
   
  [!code-xml[EDM_Example_Model#RefConstraint](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books4.edmx#refconstraint)]  
   

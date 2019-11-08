@@ -6,12 +6,12 @@ helpviewer_keywords:
 - limitations of XamlWriter.Save
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-ms.openlocfilehash: 0416b92a6264e6a8261355197b4ab2fa61f80ef2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 5b9141d5df40d74c4682f418a8fb089fddcfcaa9
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582590"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740741"
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Limitations de sérialisation de XamlWriter.Save
 L’API <xref:System.Windows.Markup.XamlWriter.Save%2A> peut être utilisée pour sérialiser le contenu d’une application [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sous la forme d’un fichier [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Toutefois, il existe quelques limitations importantes dans ce qui peut être sérialisé. Ces restrictions et certaines considérations d’ordre général sont abordées dans cette rubrique.  
@@ -40,4 +40,4 @@ L’API <xref:System.Windows.Markup.XamlWriter.Save%2A> peut être utilisée pou
   
 - Documents dynamiques et au format RTF : le texte, ainsi que toutes les mises en forme et imbrications des éléments qu’ils contiennent sont conservés dans la sortie. Ceci peut être utile pour les mécanismes qui se rapprochent de la fonctionnalité de Presse-papiers.  
   
-- Conservation des données d’objets métier : si vous avez stocké des données dans des éléments personnalisés, tels que des données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)], tant que vos objets métier suivent les règles [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de base telles que la fourniture de constructeurs personnalisés et la conversion de valeurs de propriété par référence, ces objets métier peuvent être conservés après la sérialisation.
+- Conservation des données d’objets métier : Si vous avez stocké des données dans des éléments personnalisés, tels que des données XML, tant que vos objets métier suivent les règles de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de base, telles que la fourniture de constructeurs personnalisés et la conversion des valeurs de propriété par référence, ces entreprises les objets peuvent être perpétués par le biais de la sérialisation.

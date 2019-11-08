@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 02a70e65cd53a8998395987770cd32efc82293d0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2ec979240b8fead10522817b77eef23e29409411
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459607"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740691"
 ---
 # <a name="wpf-architecture"></a>Architecture de WPF
 Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows Presentation Foundation (WPF). Elle couvre la plupart des principaux sous-systèmes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit leur mode d’interaction. Elle passe également en revue certains choix opérés par les architectes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -42,7 +42,7 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
  ll existe en fait deux concepts fondamentaux à comprendre au sujet de la concurrence dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] : le répartiteur et l’affinité de thread.  
   
- Pendant la phase de conception de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], l’objectif était de passer à un modèle avec un seul thread d’exécution, mais sans affinité de thread. L’affinité de thread intervient quand un composant utilise l’identité du thread d’exécution pour stocker un type d’état. Sa forme la plus courante est l’utilisation du stockage local des threads (TLS) pour stocker l’état. L’affinité de thread nécessite que chaque thread logique d’exécution soit détenu par un seul thread physique dans le système d’exploitation, susceptible d’utiliser beaucoup de mémoire. Au final, les architectes ont opté pour un modèle de thread WPF semblable au modèle de thread User32 existant, basé sur un seul thread d’exécution avec affinité de thread. Ce choix a été principalement motivé par les besoins d’interopérabilité, du fait que des systèmes comme [!INCLUDE[TLA2#tla_ole2.0](../../../../includes/tla2sharptla-ole2-0-md.md)], le Presse-papiers et Internet Explorer utilisent tous le modèle d’exécution STA (Single Thread Affinity).  
+ Pendant la phase de conception de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], l’objectif était de passer à un modèle avec un seul thread d’exécution, mais sans affinité de thread. L’affinité de thread intervient quand un composant utilise l’identité du thread d’exécution pour stocker un type d’état. Sa forme la plus courante est l’utilisation du stockage local des threads (TLS) pour stocker l’état. L’affinité de thread nécessite que chaque thread logique d’exécution soit détenu par un seul thread physique dans le système d’exploitation, susceptible d’utiliser beaucoup de mémoire. Au final, les architectes ont opté pour un modèle de thread WPF semblable au modèle de thread User32 existant, basé sur un seul thread d’exécution avec affinité de thread. L’interopérabilité est principalement due au fait que les systèmes comme OLE 2,0, le presse-papiers et Internet Explorer requièrent tous une exécution STA (single thread Affinity).  
   
  Étant donné que vous avez des objets avec des threads STA, vous devez prévoir un moyen de communiquer entre les threads et valider que vous êtes sur le thread approprié. C’est le rôle du répartiteur. Le répartiteur est un système de répartition de messages de base, avec plusieurs files d’attente de priorités différentes. Les messages concernés sont, par exemple, les notifications d’entrées brutes (déplacements de la souris), les fonctions de framework (disposition) ou les commandes utilisateur (exécuter cette méthode). En dérivant de <xref:System.Windows.Threading.DispatcherObject>, vous créez un objet CLR qui a un comportement STA et recevrez un pointeur vers un répartiteur au moment de la création.  
   

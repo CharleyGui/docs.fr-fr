@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés
+title: Lequel .NET Framework mises à jour de sécurité et les correctifs logiciels sont installés
 description: Découvrez comment déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur.
 ms.date: 11/27/2017
 dev_langs:
@@ -11,21 +11,21 @@ helpviewer_keywords:
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c69d4bb370087dddafbfed41cbfb1fef229677c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: aad202e7c9df01c2893e74a39744f2c32783f1f0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318967"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735198"
 ---
-# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Guide pratique pour déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Comment déterminer les .NET Framework mises à jour de sécurité et les correctifs logiciels installés
 
 Cet article montre comment rechercher les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur.
 
 > [!NOTE]
 > Toutes les techniques présentées dans cet article nécessitent un compte avec des privilèges administratifs.
 
-## <a name="to-find-installed-updates-using-the-registry"></a>Pour rechercher les mises à jour installées à l’aide du Registre
+## <a name="use-registry-editor"></a>Utiliser l’éditeur du Registre
 
 Les correctifs logiciels et mises à jour de sécurité installés pour chaque version du .NET Framework installée sur un ordinateur sont répertoriés dans le Registre Windows. Vous pouvez utiliser le programme Éditeur du Registre (*regedit.exe*) pour afficher ces informations.
 
@@ -33,13 +33,13 @@ Les correctifs logiciels et mises à jour de sécurité installés pour chaque v
 
 2. Dans l'Éditeur du Registre, ouvrez la sous-clé suivante :
 
-     `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates`
+     **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates**
 
      Les mises à jour installées sont répertoriées sous les sous-clés qui identifient la version du .NET Framework auquel elles s'appliquent. Chaque mise à jour est identifiée par un numéro de Base de connaissances (KB).
 
 Dans l'Éditeur du Registre, les versions du .NET Framework et les mises à jour installées pour chaque version sont stockées dans des sous-clés distinctes. Pour plus d’informations sur la détection des numéros des versions installées, consultez [Guide pratique pour déterminer les versions du .NET Framework installées](how-to-determine-which-versions-are-installed.md).
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-code"></a>Pour rechercher les mises à jour installées en interrogeant le Registre dans le code
+## <a name="query-the-registry-using-code"></a>Interroger le registre à l’aide de code
 
 L’exemple suivant détermine par programmation les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur :
 
@@ -67,7 +67,7 @@ Microsoft .NET Framework 4 Extended
   KB2600217
 ```
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-powershell"></a>Pour rechercher les mises à jour installées en interrogeant le Registre dans PowerShell
+## <a name="use-powershell-to-query-the-registry"></a>Utiliser PowerShell pour interroger le registre
 
 L’exemple suivant montre comment déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur à l’aide de PowerShell :
 

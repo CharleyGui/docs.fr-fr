@@ -2,19 +2,16 @@
 title: Modifications avec rupture, .NET Framework à .NET Core 3,0-.NET Core
 description: Répertorie les modifications avec rupture de .NET Framework à .NET Core 3,0 pour Windows Forms et Windows Presentation Foundation.
 ms.date: 09/10/2019
-ms.openlocfilehash: a374e35192c7aad07e986e0e0b75039642744edc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 80c93dd7a8715a9bcc6d81605ffe5af4b0461257
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089575"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739442"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core-30"></a>Dernières modifications pour la migration de .NET Framework vers .NET Core 3,0
 
-> [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub. 
-
-Si vous migrez une application Windows Forms ou Windows Presentation Foundation à partir de .NET Framework vers .NET Core 3,0, consultez les rubriques suivantes pour connaître les dernières modifications susceptibles d’affecter votre application :
+Si vous effectuez la migration d’une application Windows Forms ou Windows Presentation Foundation à partir de .NET Framework vers .NET Core 3,0, consultez les rubriques suivantes pour connaître les dernières modifications susceptibles d’affecter votre application :
 
 ## <a name="windows-forms"></a>Windows Forms
 

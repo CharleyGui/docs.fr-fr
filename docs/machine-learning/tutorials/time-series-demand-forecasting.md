@@ -1,17 +1,17 @@
 ---
 title: 'Didacticiel : prévoir une série chronologique de location de bicyclette'
 description: Ce didacticiel vous montre comment prévoir la demande pour un service de location de bicyclettes à l’aide de l’analyse de série chronologique Student et ML.NET.
-ms.date: 10/31/2019
+ms.date: 11/07/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: f30aac5f8467c2410e9008bafea3cf35af3f4e2a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e913c27c3501c4c553d7d62f948de31abb3d6f49
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425638"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740536"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Didacticiel : prévoir la demande du service de location de vélos avec l’analyse de série chronologique et ML.NET
 
@@ -26,9 +26,6 @@ Dans ce didacticiel, vous apprendrez à :
 > * Évaluer le modèle de prévision
 > * Enregistrer un modèle de prévision
 > * Utiliser un modèle de prévision
-
-> [!NOTE]
-> Ce didacticiel utilise une version préliminaire de DatabaseLoader.
 
 ## <a name="prerequisites"></a>Configuration requise
 
@@ -49,13 +46,13 @@ L’algorithme utilisé dans ce didacticiel est l' [analyse à un seul spectre (
 ## <a name="create-console-application"></a>Créer une application console
 
 1. Créez une nouvelle  **C# application console .net Core** appelée « BikeDemandForecasting ».
-1. Installer le package NuGet **Microsoft.ml** version **1.4.0-preview2**
+1. Installer le package NuGet **1.4.0** version **Microsoft.ml**
     1. Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**.
     1. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet **Parcourir** , puis recherchez **Microsoft.ml**.
     1. Cochez la case **inclure la version préliminaire** .
     1. Sélectionnez le bouton **Installer**.
     1. Sélectionnez le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis le bouton **J’accepte** dans la boîte de dialogue Acceptation de la licence si vous acceptez les termes du contrat de licence pour les packages de la liste.
-    1. Répétez ces étapes pour **System. Data. SqlClient** version **4.7.0**, **Microsoft. ml. expérimentale** version **0.16.0-preview2**et **Microsoft. ml. TimeSeries** version **1.4.0-preview2**.
+    1. Répétez ces étapes pour **System. Data. SqlClient** version **4.7.0** et **Microsoft. ml. TimeSeries** version **1.4.0**.
 
 ### <a name="prepare-and-understand-the-data"></a>Préparer et comprendre les données
 

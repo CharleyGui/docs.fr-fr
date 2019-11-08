@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: df2a235651a2242ffe18df377dce9995af31e99f
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 945d4b060dd9d08f6f16013b27980f66e804ad45
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392452"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739227"
 ---
 # <a name="structs-c-programming-guide"></a>Structures (Guide de programmation C#)
 
@@ -29,14 +29,14 @@ Les structs partagent quasiment la même syntaxe que les classes. Le nom du stru
 - Les structs peuvent déclarer des constructeurs qui ont des paramètres.
 - Un struct ne peut pas hériter d'un autre struct ou d'une classe ; il ne peut pas non plus servir de base à une classe. Tous les structs héritent directement de <xref:System.ValueType>, qui hérite de <xref:System.Object>.  
 - Un struct peut implémenter des interfaces.
-- Un struct ne peut pas être `null`, et une variable de struct ne peut pas être assignée `null`, sauf si la variable est déclarée en tant que type valeur Nullable.
+- Un struct ne peut pas être `null`, et une variable de struct ne peut pas être assignée `null` à moins que la variable soit déclarée en tant que type valeur Nullable.
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
 - [Classes et structs](index.md)
 - [Classes](classes.md)
-- [Types valeur Nullable](../nullable-types/index.md)
+- [Types valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md)
 - [Noms d’identificateur](../inside-a-program/identifier-names.md)
 - [Utilisation de structs](using-structs.md)
-- [Guide pratique pour différencier le passage d’un struct et le passage d’une référence de classe à une méthode](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)
+- [Comment : différencier le passage d’un struct et le passage d’une référence de classe à une méthode](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)

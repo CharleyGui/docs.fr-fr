@@ -4,12 +4,12 @@ ms.custom: seodec18
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 7b6b46a33430a4a58c78245a0ab3bed1e0fbcd9c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 24b7d6f98e331110ddcd971d0d0b21003dbe023d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455377"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736851"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -43,11 +43,10 @@ Les fonctions locales peuvent utiliser les modificateurs [async](../../language-
 
 Notez que toutes les variables locales définies dans le membre conteneur, y compris ses paramètres de méthode, sont accessibles dans la fonction locale. 
 
-Contrairement à la définition d’une méthode, la définition d’une fonction locale ne peut pas inclure les éléments suivants :
+Contrairement à une définition de méthode, une définition de fonction locale ne peut pas inclure le modificateur d’accès au membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
 
-- Le modificateur d’accès de membre. Comme toutes les fonctions locales sont privées, l’inclusion d’un modificateur d’accès, tel que le mot clé `private`, génère l’erreur de compilateur CS0106 : « Le modificateur « private » n’est pas valide pour cet élément ».
- 
-- Le mot clé [static](../../language-reference/keywords/static.md). L’inclusion du mot clé `static` génère l’erreur de compilateur CS0106 : « Le modificateur « static » n’est pas valide pour cet élément ».
+> [!NOTE]
+> Avant le C# 8,0, les fonctions locales ne peuvent pas inclure le modificateur `static`. L’inclusion du mot clé `static` génère l’erreur de compilateur CS0106 : « Le modificateur « static » n’est pas valide pour cet élément ».
 
 Par ailleurs, les attributs ne peuvent pas être appliqués à la fonction locale ou à ses paramètres et paramètres de type. 
  

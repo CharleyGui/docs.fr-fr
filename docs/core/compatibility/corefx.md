@@ -2,17 +2,14 @@
 title: Modifications avec rupture CoreFx-.NET Core
 description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: 04ae857b5f46748ad57c742b6ccf421f57bc3138
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 028a5c1059a855d1de644dde9fd9ad5f85f47ffe
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093430"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739793"
 ---
 # <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
-
-> [!IMPORTANT]
-> Cet article est en cours de construction. Il ne s’agit pas d’une liste complète des modifications avec rupture de .NET Core. Pour plus d’informations sur les modifications avec rupture de .NET Core, vous pouvez examiner les [problèmes liés](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) à l’évolution de la rupture dans le référentiel dotnet/docs sur GitHub.
 
 La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core. CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.
 

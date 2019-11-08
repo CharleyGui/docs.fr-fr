@@ -3,12 +3,12 @@ title: Nombres en C# – Tutoriel d’introduction à C#
 description: Découvrez C# en explorant les types numériques, leurs propriétés et méthodes.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: b392682a245101e37a182cb92d36ccb1dd34b13e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a06bc57e5c979b62e19407747cb2c8a2447ca114
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039691"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739142"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipuler les nombres intégraux et à virgule flottante en C\#
 
@@ -18,7 +18,11 @@ Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser
 
 ## <a name="explore-integer-math"></a>Explorer les mathématiques avec des entiers
 
-Créez un répertoire nommé *numbers-quickstart*. Faites-en le répertoire actuel et exécutez `dotnet new console -n NumbersInCSharp -o .`.
+Créez un répertoire nommé *numbers-quickstart*. Créez le répertoire actif et exécutez la commande suivante :
+
+```dotnetcli
+dotnet new console -n NumbersInCSharp -o .
+```
 
 Ouvrez *Program.cs* dans votre éditeur favori, puis remplacez la ligne `Console.WriteLine("Hello World!");` par ce qui suit :
 

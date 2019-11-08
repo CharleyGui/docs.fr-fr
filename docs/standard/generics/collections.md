@@ -13,18 +13,19 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 51938dade8ebd1b84010533e04b26cf989ed5f24
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 21d8ef3abfd16e11c9251edfc4f39b02e93eaab5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353944"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740923"
 ---
 # <a name="generic-collections-in-net"></a>Collections génériques dans .NET
 
  La bibliothèque de classes .NET fournit plusieurs classes de collections génériques dans les espaces de noms <xref:System.Collections.Generic> et <xref:System.Collections.ObjectModel>. Pour plus d’informations sur ces classes, consultez [Types de collections fréquemment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md).  
   
-### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
+## <a name="systemcollectionsgeneric"></a>System.Collections.Generic
+
  La plupart des types de collections génériques sont des équivalents directs de types non génériques. <xref:System.Collections.Generic.Dictionary%602> est une version générique de <xref:System.Collections.Hashtable> ; elle utilise la structure générique <xref:System.Collections.Generic.KeyValuePair%602> pour l'énumération, au lieu de <xref:System.Collections.DictionaryEntry>.  
   
  <xref:System.Collections.Generic.List%601> est une version générique de <xref:System.Collections.ArrayList>. Il existe des classes génériques <xref:System.Collections.Generic.Queue%601> et <xref:System.Collections.Generic.Stack%601> qui correspondent aux versions non génériques.  
@@ -33,14 +34,16 @@ ms.locfileid: "71353944"
   
  La classe générique <xref:System.Collections.Generic.LinkedList%601> est une véritable liste liée. Il n'a pas de contrepartie non générique.  
   
-### <a name="systemcollectionsobjectmodel"></a>System.Collections.ObjectModel  
+## <a name="systemcollectionsobjectmodel"></a>System.Collections.ObjectModel
+
  La classe générique <xref:System.Collections.ObjectModel.Collection%601> fournit une classe de base pour dériver vos propres types de collections génériques. La classe <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> offre un moyen facile de produire une collection en lecture seule à partir de n'importe quel type implémentant l'interface générique <xref:System.Collections.Generic.IList%601>. La classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602> fournit un moyen de stocker des objets qui contiennent leurs propres clés.  
   
-## <a name="other-generic-types"></a>Autres types génériques  
+## <a name="other-generic-types"></a>Autres types génériques
+
  La structure générique <xref:System.Nullable%601> vous permet d'utiliser des types valeur comme si la valeur `null` pouvait leur être affectée. Ceci peut être utile quand vous travaillez avec des requêtes de base de données, où des champs contenant des types valeur peuvent être manquants. Le paramètre de type générique peut être n'importe quel type valeur.  
   
 > [!NOTE]
-> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Consultez [types valeur Nullable (C# Guide de programmation)](../../csharp/programming-guide/nullable-types/index.md) et [types valeur Nullable (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).
+> En C# et Visual Basic, il n'est pas nécessaire d'utiliser <xref:System.Nullable%601> explicitement, car le langage a une syntaxe pour les types Nullables. Consultez types [valeur Nullable (C# référence)](../../csharp/language-reference/builtin-types/nullable-value-types.md) et [types valeur Nullable (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).
   
  La structure générique <xref:System.ArraySegment%601> offre un moyen de délimiter une plage d'éléments dans un tableau unidimensionnel de base zéro, de n'importe quel type. Le paramètre de type générique est le type des éléments du tableau.  
   

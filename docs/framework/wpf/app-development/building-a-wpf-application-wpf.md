@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 04183b2404d26c783e14dc6f4cb4141bab0d7621
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bf673195f06475daf8341fd17cd701b84a970b39
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424432"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740669"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Génération d'une application WPF (WPF)
 
@@ -46,7 +46,7 @@ Avant de générer, MSBuild détermine l’emplacement des outils et bibliothèq
 
 - .NET Framework.
 
-- Répertoires [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)].
+- Répertoires de SDK Windows.
 
 - Emplacement des assemblys de référence [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
 
@@ -64,7 +64,7 @@ Le processus de génération localise et lie les assemblys requis pour générer
 
 ### <a name="markup-compilationpass-1"></a>Compilation du balisage — Étape 1
 
-Dans cette étape, les fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sont analysés et compilés afin que le runtime ne perde pas de temps à analyser [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] et à valider des valeurs de propriété. Le fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] compilé est tokenisé au préalable de sorte que, lors de l’exécution, son chargement doit être beaucoup plus rapide que le chargement d’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
+Dans cette étape, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichiers sont analysés et compilés afin que le runtime ne perde pas de temps à analyser le code XML et à valider les valeurs des propriétés. Le fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] compilé est tokenisé au préalable de sorte que, lors de l’exécution, son chargement doit être beaucoup plus rapide que le chargement d’un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 Pendant cette étape, les activités suivantes ont lieu pour chaque fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui est un élément de génération `Page` :
 

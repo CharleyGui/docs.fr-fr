@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 6c06e18f7869f1b1041c4d5fb1608a87f2902d7b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8f381a06aa916be378052d00f0d65f37ef910433
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460575"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740650"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Espaces de noms XAML et mappage d'espace de noms pour XAML WPF
 Cette rubrique explique plus en détail la présence et la finalité des deux mappages d’espace de noms XAML qui figurent souvent dans la balise racine de chaque fichier XAML WPF. Elle décrit également comment produire des mappages similaires pour utiliser des éléments définis dans votre propre code et/ou dans des assemblys distincts.  
@@ -39,7 +39,7 @@ Cette rubrique explique plus en détail la présence et la finalité des deux ma
   
  La relation entre ces déclarations est la suivante : le mappage du préfixe `x:` prend en charge les intrinsèques qui font partie de la définition de langage XAML ; [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est une implémentation qui utilise XAML comme langage et définit un vocabulaire de ses objets pour XAML. Étant donné que les utilisations du vocabulaire WPF sont beaucoup plus courantes que les utilisations des intrinsèques XAML, le vocabulaire WPF est mappé comme valeur par défaut.  
   
- La convention de préfixage `x:` pour le mappage de prise en charge des intrinsèques en langage XAML est suivie par des modèles de projet, des exemple de code et la documentation des fonctionnalités de langage de ce kit [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. L’espace de noms XAML définit de nombreuses fonctions courantes qui sont nécessaires, notamment pour les applications WPF de base. Par exemple, pour joindre tout code-behind à un fichier XAML par le biais d’une classe partielle, vous devez nommer cette classe comme attribut `x:Class` dans l’élément racine du fichier XAML approprié. Ou bien, tout élément tel qu’il est défini dans une page XAML à laquelle vous souhaitez accéder comme une ressource à clé doit avoir l’attribut `x:Key` défini par l’élément en question. Pour plus d’informations sur ces questions et d’autres aspects du langage XAML, consultez [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) ou [Syntaxe XAML en détail](xaml-syntax-in-detail.md).  
+ La Convention de préfixe `x:` pour le mappage de la prise en charge des intrinsèques du langage XAML est suivie de modèles de projet, d’exemples de code et de la documentation des fonctionnalités de langage dans ce kit de développement logiciel (SDK). L’espace de noms XAML définit de nombreuses fonctions courantes qui sont nécessaires, notamment pour les applications WPF de base. Par exemple, pour joindre tout code-behind à un fichier XAML par le biais d’une classe partielle, vous devez nommer cette classe comme attribut `x:Class` dans l’élément racine du fichier XAML approprié. Ou bien, tout élément tel qu’il est défini dans une page XAML à laquelle vous souhaitez accéder comme une ressource à clé doit avoir l’attribut `x:Key` défini par l’élément en question. Pour plus d’informations sur ces questions et d’autres aspects du langage XAML, consultez [Vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) ou [Syntaxe XAML en détail](xaml-syntax-in-detail.md).  
   
 <a name="Mapping_To_Custom_Classes_and_Assemblies"></a>   
 ## <a name="mapping-to-custom-classes-and-assemblies"></a>Mappage aux classes et assemblys personnalisés  
@@ -105,7 +105,7 @@ End Namespace
   
 <a name="Mapping_CLR_Namespaces_to_XML_Namespaces_in_an"></a>   
 ## <a name="mapping-clr-namespaces-to-xml-namespaces-in-an-assembly"></a>Mappage d’espaces de noms CLR à des espaces de noms XML dans un assembly  
- WPF définit un attribut CLR qui est consommé par les processeurs XAML pour mapper plusieurs espaces de noms CLR à un espace de noms XAML unique. Cet attribut, <xref:System.Windows.Markup.XmlnsDefinitionAttribute>, est placé au niveau de l’assembly dans le code source qui produit l’assembly. Le code source de l’assembly WPF utilise cet attribut pour mapper les différents espaces de noms communs, tels que <xref:System.Windows> et <xref:System.Windows.Controls>, à l’espace de noms [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)].  
+ WPF définit un attribut CLR qui est consommé par les processeurs XAML pour mapper plusieurs espaces de noms CLR à un espace de noms XAML unique. Cet attribut, <xref:System.Windows.Markup.XmlnsDefinitionAttribute>, est placé au niveau de l’assembly dans le code source qui produit l’assembly. Le code source de l’assembly WPF utilise cet attribut pour mapper les différents espaces de noms communs, tels que <xref:System.Windows> et <xref:System.Windows.Controls>, à l’espace de noms `http://schemas.microsoft.com/winfx/2006/xaml/presentation`.  
   
  L' <xref:System.Windows.Markup.XmlnsDefinitionAttribute> accepte deux paramètres : le nom de l’espace de noms XML/XAML et le nom de l’espace de noms CLR. Plusieurs <xref:System.Windows.Markup.XmlnsDefinitionAttribute> peuvent exister pour mapper plusieurs espaces de noms CLR à un même espace de noms XML. Une fois mappés, les membres de ces espaces de noms peuvent également être référencés sans qualification complète, si vous le souhaitez, en fournissant l’instruction `using` appropriée dans la page code-behind de la classe partielle. Pour plus d'informations, consultez <xref:System.Windows.Markup.XmlnsDefinitionAttribute>.  
   

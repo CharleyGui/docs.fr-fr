@@ -6,12 +6,12 @@ helpviewer_keywords:
 - styling rows in ListViews implementing GridViews [WPF]
 - ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
-ms.openlocfilehash: 150988aab368e3ffef0107d29bea5ebc53163946
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ce79899d5c8e825ecb39e14ae8af4e0c33f13db3
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459319"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73733541"
 ---
 # <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a>Comment : appliquer un style à une ligne dans un ListView implémentant un GridView
 Cet exemple montre comment appliquer un style à une ligne dans un contrôle de <xref:System.Windows.Controls.ListView> qui implémente un mode de <xref:System.Windows.Controls.ListView.View%2A> <xref:System.Windows.Controls.GridView>.  
@@ -19,7 +19,7 @@ Cet exemple montre comment appliquer un style à une ligne dans un contrôle de 
 ## <a name="example"></a>Exemple  
  Vous pouvez affecter un style à une ligne dans un contrôle <xref:System.Windows.Controls.ListView> en définissant une <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> sur le contrôle <xref:System.Windows.Controls.ListView>. Définissez le style de ses éléments représentés en tant qu’objets <xref:System.Windows.Controls.ListViewItem>. Le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> référence les objets <xref:System.Windows.Controls.ControlTemplate> utilisés pour afficher le contenu de la ligne.  
   
- L’exemple complet, dont sont extraits les exemples suivants, affiche une collection d’informations sur des chansons, stockée dans une base de données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Chaque chanson de la base de données est associée à un champ d’évaluation. La valeur de ce champ spécifie comment afficher une ligne d’informations sur la chanson.  
+ L’exemple complet, qui extrait les exemples suivants, affiche une collection d’informations de chanson stockées dans une base de données XML. Chaque chanson de la base de données est associée à un champ d’évaluation. La valeur de ce champ spécifie comment afficher une ligne d’informations sur la chanson.  
   
  L’exemple suivant montre comment définir <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> pour les objets <xref:System.Windows.Controls.ListViewItem> qui représentent les chansons de la collection de chansons. Le <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> référence <xref:System.Windows.Controls.ControlTemplate> objets qui spécifient comment afficher une ligne d’informations de chanson.  
   

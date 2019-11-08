@@ -13,57 +13,57 @@ helpviewer_keywords:
 - properties [WPF], DefaultDrawingAttributes
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-ms.openlocfilehash: d2178a4cbf888baaf0ae84b03b3d463b0de658b1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8109e0d6a746d6ca23c25643c510014c1a1e656c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645733"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740874"
 ---
 # <a name="collect-ink"></a>Collecter l’encre
 
 La collecte d’encre numérique fait partie des principales fonctionnalités de la plateforme [Windows Presentation Foundation](../index.md). Cette rubrique décrit les méthodes de collecte d’encre dans Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
-Pour utiliser les exemples suivants, vous devez d’abord installer Visual Studio et le [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)]. Vous devez également comprendre comment écrire des applications pour le WPF. Pour plus d’informations sur la mise en route avec WPF, consultez [procédure pas à pas : Ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
+Pour utiliser les exemples suivants, vous devez d’abord installer Visual Studio et le SDK Windows. Vous devez également comprendre comment écrire des applications pour WPF. Pour plus d’informations sur la prise en main de WPF, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="use-the-inkcanvas-element"></a>Utilisez l’élément InkCanvas
+## <a name="use-the-inkcanvas-element"></a>Utiliser l’élément InkCanvas
 
-Le <xref:System.Windows.Controls.InkCanvas?displayProperty=fullName> élément fournit le moyen le plus simple pour collecter l’encre dans WPF. Utilisez un <xref:System.Windows.Controls.InkCanvas> élément pour recevoir et afficher l’entrée d’encre. Généralement, vous entrez de l’encre à l’aide d’un stylet qui interagit avec un digitaliseur pour produire des traits d’encre. En outre, vous pouvez utiliser une souris à la place du stylet. Les traits créés sont représentés en tant que <xref:System.Windows.Ink.Stroke> objets et ils peuvent être manipulés par programme et par l’utilisateur d’entrée. Le <xref:System.Windows.Controls.InkCanvas> permet aux utilisateurs de sélectionner, modifier ou supprimer une existante <xref:System.Windows.Ink.Stroke>.
+L’élément <xref:System.Windows.Controls.InkCanvas?displayProperty=fullName> offre le moyen le plus simple de collecter de l’encre dans WPF. Utilisez un élément <xref:System.Windows.Controls.InkCanvas> pour recevoir et afficher l’entrée manuscrite. Généralement, vous entrez de l’encre à l’aide d’un stylet qui interagit avec un digitaliseur pour produire des traits d’encre. En outre, vous pouvez utiliser une souris à la place du stylet. Les traits créés sont représentés en tant qu’objets <xref:System.Windows.Ink.Stroke>, et ils peuvent être manipulés à la fois par programmation et par entrée d’utilisateur. Le <xref:System.Windows.Controls.InkCanvas> permet aux utilisateurs de sélectionner, modifier ou supprimer un <xref:System.Windows.Ink.Stroke>existant.
 
-À l’aide de XAML, vous pouvez définir la collecte d’encre aussi facilement que l’ajout d’un **InkCanvas** élément à votre arborescence. L’exemple suivant ajoute un <xref:System.Windows.Controls.InkCanvas> à un projet WPF par défaut créé dans Visual Studio :
+À l’aide de XAML, vous pouvez configurer la collecte manuscrite aussi facilement que l’ajout d’un élément **InkCanvas** à votre arborescence. L’exemple suivant ajoute un <xref:System.Windows.Controls.InkCanvas> à un projet WPF par défaut créé dans Visual Studio :
 
 [!code-xaml[DigitalInkTopics#6](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#6)]
 
-Le **InkCanvas** élément peut également contenir des éléments enfants, ce qui permet d’ajouter des fonctions d’annotation manuscrite à quasiment tout type d’élément XAML. Par exemple, pour ajouter des fonctions d’encrage à un élément de texte, définissez-le simplement qu’un enfant d’un <xref:System.Windows.Controls.InkCanvas>:
+L’élément **InkCanvas** peut également contenir des éléments enfants, ce qui permet d’ajouter des fonctionnalités d’annotation manuscrite à presque n’importe quel type d’élément XAML. Par exemple, pour ajouter des fonctionnalités d’encrage à un élément de texte, il suffit d’en faire un enfant d’un <xref:System.Windows.Controls.InkCanvas>:
 
 [!code-xaml[DigitalInkTopics#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#5)]
 
-Ajout de prise en charge pour baliser une image avec l’encre est tout aussi simple :
+L’ajout de la prise en charge pour le marquage d’une image avec de l’encre est tout aussi simple :
 
 [!code-xaml[DigitalInkTopics#7](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#7)]
 
 ### <a name="inkcollection-modes"></a>Modes InkCollection
 
-Le <xref:System.Windows.Controls.InkCanvas> prend en charge de différents modes d’entrée via son <xref:System.Windows.Controls.InkCanvas.EditingMode%2A> propriété.
+Le <xref:System.Windows.Controls.InkCanvas> fournit la prise en charge de différents modes d’entrée par le biais de sa propriété <xref:System.Windows.Controls.InkCanvas.EditingMode%2A>.
 
 ### <a name="manipulate-ink"></a>Manipuler l’encre
 
-Le <xref:System.Windows.Controls.InkCanvas> prend en charge de nombreuses opérations de modification de l’encre. Par exemple, <xref:System.Windows.Controls.InkCanvas> prend en charge back-la gomme du stylet, et aucun code supplémentaire n’est nécessaire pour ajouter les fonctionnalités à l’élément.
+Le <xref:System.Windows.Controls.InkCanvas> prend en charge de nombreuses opérations de modification de l’encre. Par exemple, <xref:System.Windows.Controls.InkCanvas> prend en charge l’effacement du stylet, et aucun code supplémentaire n’est nécessaire pour ajouter la fonctionnalité à l’élément.
 
 #### <a name="selection"></a>Sélection
 
-Définition du mode de sélection est aussi simple que le paramètre le <xref:System.Windows.Controls.InkCanvasEditingMode> propriété **sélectionnez**.
+La définition du mode de sélection est aussi simple que la définition de la propriété <xref:System.Windows.Controls.InkCanvasEditingMode> sur **Select**.
 
-Le code suivant définit le mode d’édition basé sur la valeur d’un <xref:System.Windows.Forms.CheckBox>:
+Le code suivant définit le mode d’édition en fonction de la valeur d’une <xref:System.Windows.Forms.CheckBox>:
 
 [!code-csharp[DigitalInkTopics#8](~/samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml.cs#8)]
 [!code-vb[DigitalInkTopics#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window1.xaml.vb#8)]
 
 #### <a name="drawingattributes"></a>DrawingAttributes
 
-Utilisez le <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> propriété à modifier l’apparence des traits d’encre. Par exemple, le <xref:System.Windows.Ink.DrawingAttributes.Color%2A> membre <xref:System.Windows.Ink.DrawingAttributes> définit la couleur rendue <xref:System.Windows.Ink.Stroke>.
+Utilisez la propriété <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> pour modifier l’apparence des traits d’encre. Par exemple, le membre <xref:System.Windows.Ink.DrawingAttributes.Color%2A> de <xref:System.Windows.Ink.DrawingAttributes> définit la couleur de la <xref:System.Windows.Ink.Stroke>rendue.
 
 L’exemple suivant modifie la couleur des traits sélectionnés en rouge :
 
@@ -72,21 +72,21 @@ L’exemple suivant modifie la couleur des traits sélectionnés en rouge :
 
 ### <a name="defaultdrawingattributes"></a>DefaultDrawingAttributes
 
-Le <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> propriété fournit l’accès aux propriétés telles que la hauteur, la largeur et la couleur des traits à créer dans un <xref:System.Windows.Controls.InkCanvas>. Une fois que vous modifiez le <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>, tous les futurs traits entrés dans le <xref:System.Windows.Controls.InkCanvas> sont restitués avec les nouvelles valeurs de propriété.
+La propriété <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> permet d’accéder à des propriétés telles que la hauteur, la largeur et la couleur des traits à créer dans une <xref:System.Windows.Controls.InkCanvas>. Une fois que vous modifiez la <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>, tous les nouveaux traits entrés dans le <xref:System.Windows.Controls.InkCanvas> sont rendus avec les nouvelles valeurs de propriété.
 
-En plus de modifier le <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> dans le fichier code-behind, vous pouvez utiliser la syntaxe XAML pour la spécification <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> propriétés.
+En plus de modifier le <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> dans le fichier code-behind, vous pouvez utiliser la syntaxe XAML pour spécifier les propriétés de <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>.
 
-L’exemple suivant montre comment définir le <xref:System.Windows.Ink.DrawingAttributes.Color%2A> propriété. Pour utiliser ce code, créez un projet WPF intitulé « HelloInkCanvas » dans Visual Studio. Remplacez le code dans le *MainWindow.xaml* fichier par le code suivant :
+L’exemple suivant montre comment définir la propriété <xref:System.Windows.Ink.DrawingAttributes.Color%2A>. Pour utiliser ce code, créez un projet WPF appelé « HelloInkCanvas » dans Visual Studio. Remplacez le code du fichier *MainWindow. Xaml* par le code suivant :
 
 [!code-xaml[HelloInkCanvas#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml#1)]
 
-Ensuite, ajoutez les gestionnaires d’événements de bouton suivant pour le fichier code-behind, à l’intérieur de la classe MainWindow :
+Ensuite, ajoutez les gestionnaires d’événements de bouton suivants au fichier code-behind, à l’intérieur de la classe MainWindow :
 
 [!code-csharp[HelloInkCanvas#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml.cs#2)]
 
 Après avoir copié ce code, appuyez sur **F5** dans Visual Studio pour exécuter le programme dans le débogueur.
 
-Notez comment la <xref:System.Windows.Controls.StackPanel> place les boutons en haut de la <xref:System.Windows.Controls.InkCanvas>. Si vous tentez de l’encre en haut des boutons, le <xref:System.Windows.Controls.InkCanvas> collecte et restitue l’encre derrière les boutons. Il s’agit, car les boutons sont des frères du <xref:System.Windows.Controls.InkCanvas> par opposition aux enfants. De même, les boutons sont plus haut dans l’ordre de plan ; l’encre est donc restituée derrière eux.
+Notez que le <xref:System.Windows.Controls.StackPanel> place les boutons en haut du <xref:System.Windows.Controls.InkCanvas>. Si vous essayez d’utiliser de l’encre en haut des boutons, le <xref:System.Windows.Controls.InkCanvas> collecte et restitue l’encre derrière les boutons. Cela est dû au fait que les boutons sont frères de la <xref:System.Windows.Controls.InkCanvas>, par opposition aux enfants. De même, les boutons sont plus haut dans l’ordre de plan ; l’encre est donc restituée derrière eux.
 
 ## <a name="see-also"></a>Voir aussi
 

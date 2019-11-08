@@ -2,22 +2,22 @@
 title: <security> de <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: c780b157d0d566e24c6826c253401a51fbfab69d
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 7877fd59aff581eee5b62a1ca224dbf51c956069
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399838"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738669"
 ---
-# <a name="security-of-netmsmqbinding"></a>\<> de sécurité \<de NetMsmqBinding >
+# <a name="security-of-netmsmqbinding"></a>\<> de sécurité de \<netMsmqBinding >
 Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si le transport ou la sécurité SOAP sont activés et, si c'est le cas, le mode d'authentification et les niveaux de protection utilisés.  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netMsmqBinding >** ](netmsmqbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**NetMsmqBinding**](netmsmqbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +39,20 @@ Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|mode|Spécifie le type de sécurité qui contrôle l'intégrité, la confidentialité et l'authentification. Les valeurs valides sont les suivantes :<br /><br /> None Cela désactive la sécurité.<br />Transport La protection et l’authentification sont proposées par le transport. Cela s'applique à la sécurité des message entre les deux gestionnaires de files d'attente. Il n'y a aucune sécurité offerte entre l'application et gestionnaire de files d'attente. Les applications Msmq existantes sont équivalentes au niveau des fonctionnalités avec ce type de mode de sécurité.<br />Attente Spécifie la sécurité de l’application de bout en bout. Il n'y a aucune sécurité offerte à la couche de transport. Cette valeur est semblable à la sécurité offerte par d’autres liaisons standard.<br />Versions Offre la sécurité au niveau du transport et de la couche de messagerie SOAP. La même information d'identification est requise pour les deux niveaux.<br /><br /> La valeur par défaut est Transport. Cet attribut est de type <xref:System.ServiceModel.NetMsmqSecurityMode>.|  
+|mode|Spécifie le type de sécurité qui contrôle l'intégrité, la confidentialité et l'authentification. Les valeurs valides sont les suivantes :<br /><br /> -None : cela désactive la sécurité.<br />-Transport : la protection et l’authentification sont proposées par le transport. Cela s'applique à la sécurité des message entre les deux gestionnaires de files d'attente. Il n'y a aucune sécurité offerte entre l'application et gestionnaire de files d'attente. Les applications Msmq existantes sont équivalentes au niveau des fonctionnalités avec ce type de mode de sécurité.<br />-Message : spécifie la sécurité de l’application de bout en bout. Il n'y a aucune sécurité offerte à la couche de transport. Cette valeur est semblable à la sécurité offerte par d’autres liaisons standard.<br />-Both : offre la sécurité au niveau du transport et de la couche de messagerie SOAP. La même information d'identification est requise pour les deux niveaux.<br /><br /> La valeur par défaut est Transport. Cet attribut est de type <xref:System.ServiceModel.NetMsmqSecurityMode>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<message>](message-of-netmsmqbinding.md)|Définit le les paramètres de sécurité des messages SOAP. Cet élément est de type <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
-|[\<transport>](transport-of-netmsmqbinding.md)|Définit les paramètres de sécurité pour le transport MSMQ. Cet élément est de type <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[message de \<](message-of-netmsmqbinding.md)|Définit le les paramètres de sécurité des messages SOAP. Cet élément est de type <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
+|[> de transport \<](transport-of-netmsmqbinding.md)|Définit les paramètres de sécurité pour le transport MSMQ. Cet élément est de type <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|liaison|Élément de liaison de l' [ \<> NetMsmqBinding](netmsmqbinding.md)|  
+|liaison|Élément de liaison de l' [\<netMsmqBinding >](netmsmqbinding.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -64,5 +64,5 @@ Définit les paramètres de sécurité pour une liaison MSMQ. Elle spécifie si 
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)
 - [Files d’attente dans WCF](../../../wcf/feature-details/queues-in-wcf.md)

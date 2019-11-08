@@ -2,12 +2,12 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: f764bd0183e3881bfb81ebda7d3c7dd49a4cbdde
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 855ea90d22174c2b7c0b53a526c47a5edbe5496d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591606"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73736886"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -65,8 +65,8 @@ Vous aurez peut-être besoin de convertir un objet en un autre type.
 - [Convertir une chaîne en nombre ](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
 - [Utiliser les critères spéciaux et les opérateurs `as` et `is` pour caster sans risque en un autre type](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Définir des conversions de type personnalisé](../language-reference/operators/user-defined-conversion-operators.md).
-- [Déterminer si un type est un type valeur nullable](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
-- [Convertir entre des types valeur nullable et non nullable](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type).
+- [Déterminer si un type est un type valeur nullable](../language-reference/builtin-types/nullable-value-types.md#how-to-identify-a-nullable-value-type).
+- [Convertir entre des types valeur nullable et non nullable](../language-reference/builtin-types/nullable-value-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type).
 
 ## <a name="equality-and-ordering-comparisons"></a>Comparaisons d’égalité et de classement
 

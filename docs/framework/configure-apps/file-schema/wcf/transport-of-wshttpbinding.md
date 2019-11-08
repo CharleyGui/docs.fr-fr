@@ -2,24 +2,24 @@
 title: <transport> de <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: 95cfa076f62f767af431ff5a0bcc2ca31b824e30
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 1afeed62fcbf3b083d69a7cedb7eb80b81f5c17b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399242"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732738"
 ---
-# <a name="transport-of-wshttpbinding"></a>\<> de transport \<de wsHttpBinding >
+# <a name="transport-of-wshttpbinding"></a>\<> de transport de \<wsHttpBinding >
 
 Définit les paramètres d'authentification correspondant au transport HTTP.
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsHttpBinding >** ](wshttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-wshttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**wsHttpBinding >** ](wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **&nbsp;&nbsp;\<** ](security-of-wshttpbinding.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,7 +41,7 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
 </wsHttpBinding>
 ```
 
-## <a name="type"></a>Type
+## <a name="type"></a>Tapez
 
 <xref:System.ServiceModel.HttpTransportSecurity>
 
@@ -56,11 +56,11 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |`clientCredentialType`|Spécifie les informations d'identification utilisées pour authentifier le client auprès du service. Cet attribut est de type <xref:System.ServiceModel.HttpClientCredentialType>.|
 |`proxyCredentialType`|Spécifie les informations d'identification utilisées pour authentifier le client auprès d'un proxy de domaine. Cet attribut est de type <xref:System.ServiceModel.HttpProxyCredentialType>.|
 |`realm`|Chaîne indiquant le domaine de l’authentification de base ou Digest. La valeur par défaut est une chaîne vide.<br /><br /> Un domaine d'authentification spécifie au moins le nom de l'hôte qui exécute l'authentification. Il peut également spécifier une collection d’utilisateurs disposant d’un accès. Un utilisateur peut interroger le domaine d'authentification pour vérifier quels noms d'utilisateurs et mots de passe peuvent être utilisés.|
-|`policyEnforcement`|Cette énumération spécifie à quel moment <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> doit être appliqué.<br /><br /> 1.  Never : la stratégie n'est jamais appliquée (la protection étendue est désactivée).<br />2.  WhenSupported : la stratégie est appliquée uniquement si le client prend en charge la protection étendue.<br />3.  Always : la stratégie est toujours appliquée. Les clients qui ne prennent pas en charge la protection étendue ne pourront pas être authentifiés.|
+|`policyEnforcement`|Cette énumération spécifie à quel moment <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> doit être appliqué.<br /><br /> 1. jamais : la stratégie n’est jamais appliquée (la protection étendue est désactivée).<br />2. WhenSupported : la stratégie est appliquée uniquement si le client prend en charge la protection étendue.<br />3. Always : la stratégie est toujours appliquée. Les clients qui ne prennent pas en charge la protection étendue ne pourront pas être authentifiés.|
 
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType
 
-|Valeur|Description|
+|valeur|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|
@@ -71,7 +71,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType
 
-|`Value`|Description|
+|valeur|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|
@@ -82,13 +82,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucun(e).
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<> de sécurité](security-of-wshttpbinding.md)|Représente les fonctionnalités de sécurité de l' [ \<> WSHttpBinding](wshttpbinding.md).|
+|[> de sécurité \<](security-of-wshttpbinding.md)|Représente les fonctionnalités de sécurité du [\<wsHttpBinding >](wshttpbinding.md).|
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -100,4 +100,4 @@ Aucun.
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

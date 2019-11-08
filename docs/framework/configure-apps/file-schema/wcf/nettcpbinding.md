@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: c2d0a5729aeea3cd30e07ce1cfa485bda7b8ed20
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: a3d5b87bc53ca541776d9f131204868fbe25d5b1
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400138"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738801"
 ---
-# <a name="nettcpbinding"></a>\<netTcpBinding>
+# <a name="nettcpbinding"></a>\<netTcpBinding >
 
 Spécifie une liaison sécurisée, fiable et optimisée, adaptée à la communication entre ordinateurs. Par défaut, elle génère une pile de communication du runtime avec Windows Security pour la sécurité et l'authentification des messages, TCP pour la remise de messages et un encodage de message binaire.
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> netTcpBinding**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**netTcpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -77,29 +77,29 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |`portSharingEnabled`|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si elle est définie à `false`, chaque de liaison utilise son propre port exclusif. Ce paramètre est uniquement pertinent aux services, du fait que les clients ne sont pas affectés.|  
 |`receiveTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|  
 |`sendTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
-|`transactionFlow`|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. Par défaut, il s’agit de `false`.|  
-|`transactionProtocol`|Spécifie le protocole de transaction à utiliser avec cette liaison. Les valeurs valides sont les suivantes :<br /><br /> -   OleTransactions<br />-   WSAtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions. Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
+|`transactionFlow`|Valeur booléenne qui spécifie si la liaison prend en charge le flux WS-Transactions. La valeur par défaut est `false`,|  
+|`transactionProtocol`|Spécifie le protocole de transaction à utiliser avec cette liaison. Les valeurs valides sont les suivantes :<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> La valeur par défaut est OleTransactions. Cet attribut est de type <xref:System.ServiceModel.TransactionProtocol>.|  
 |`transferMode`|Valeur <xref:System.ServiceModel.TransferMode> qui spécifie si les messages sont mis en mémoire tampon ou transmis en continu ou s'il s'agit d'une demande ou d'une réponse.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<> de sécurité](security-of-nettcpbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>.|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Spécifie si des sessions fiables sont établies entre les points de terminaison du canal.|  
+|[> de sécurité \<](security-of-nettcpbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>.|  
+|[\<readerQuotas >](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<reliableSession >](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Spécifie si des sessions fiables sont établies entre les points de terminaison du canal.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
+|[liaisons de\<](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes
 
 Par défaut, cette liaison génère une pile de communication au moment de l'exécution, qui utilise la sécurité de transport, le protocole TCP pour la remise des messages et un encodage de message binaire. Cette liaison est un choix approprié fourni par le système Windows Communication Foundation (WCF) pour communiquer sur un intranet.  
   
- La configuration par défaut de `netTcpBinding` est plus rapide que la configuration fournie par `wsHttpBinding`le, mais elle est destinée uniquement à la communication WCF. Le comportement de sécurité est configurable à l'aide de l'attribut facultatif `securityMode`. L'utilisation de WS-ReliableMessaging peut être configurée à l'aide de l'attribut facultatif `reliableSessionEnabled`. Mais les fonctionnalités de messagerie fiable sont désactivées par défaut. Plus généralement, les liaisons fournies par le système HTTP telles que `wsHttpBinding` et `basicHttpBinding` sont configurées pour activer certains éléments par défaut, alors que la liaison `netTcpBinding` en désactive par défaut. Par conséquent, vous devez demander de l’aide explicitement, par exemple pour les spécifications WS - *. Ainsi, la configuration TCP par défaut permet d’échanger des messages entre points de terminaison plus rapidement que ceux configurés par défaut pour les liaisons HTTP.  
+ La configuration par défaut de la `netTcpBinding` est plus rapide que la configuration fournie par le `wsHttpBinding`, mais elle est uniquement destinée à la communication WCF. Le comportement de sécurité est configurable à l'aide de l'attribut facultatif `securityMode`. L'utilisation de WS-ReliableMessaging peut être configurée à l'aide de l'attribut facultatif `reliableSessionEnabled`. Mais les fonctionnalités de messagerie fiable sont désactivées par défaut. Plus généralement, les liaisons fournies par le système HTTP telles que `wsHttpBinding` et `basicHttpBinding` sont configurées pour activer certains éléments par défaut, alors que la liaison `netTcpBinding` en désactive par défaut. Par conséquent, vous devez demander de l’aide explicitement, par exemple pour les spécifications WS - *. Ainsi, la configuration TCP par défaut permet d’échanger des messages entre points de terminaison plus rapidement que ceux configurés par défaut pour les liaisons HTTP.  
   
 ## <a name="example"></a>Exemple
 
@@ -154,4 +154,4 @@ La liaison est spécifiée dans les fichiers de configuration pour le client et 
 - [Liaisons](../../../wcf/bindings.md)
 - [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../misc/binding.md)
+- [liaison de \<](bindings.md)

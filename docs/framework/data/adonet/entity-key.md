@@ -2,12 +2,12 @@
 title: clé d'entité
 ms.date: 03/30/2017
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
-ms.openlocfilehash: db867b3a853bd29f1faf1be2faf77776e48be2d2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 39a7500f088aa85baf0244005d6a804b3bf0b521
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795137"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737791"
 ---
 # <a name="entity-key"></a>clé d'entité
 Une *clé d’entité* est une [propriété](property.md) ou un ensemble de propriétés d’un [type d’entité](entity-type.md) qui sont utilisées pour déterminer l’identité. Les propriétés qui composent une clé d'entité sont choisies au moment du design. Les valeurs des propriétés de clé d’entité doivent identifier de manière unique une instance de type d’entité dans un [jeu d’entités](entity-set.md) au moment de l’exécution. Les propriétés qui composent une clé d'entité doivent être choisies pour garantir l'unicité des instances dans un jeu d'entités.  
@@ -20,14 +20,14 @@ Une *clé d’entité* est une [propriété](property.md) ou un ensemble de prop
   
 - Les propriétés qui composent une clé d'entité pour un type d'entité donné ne peuvent pas être modifiées. Vous ne pouvez pas autoriser plusieurs clés d'entité possibles pour un type d'entité donné ; les clés de substitution ne sont pas prises en charge.  
   
-- Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine. Pour plus d’informations, [consultez Entity Data Model : Héritage](entity-data-model-inheritance.md).  
+- Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine. Pour plus d’informations, consultez [Entity Data Model : héritage](entity-data-model-inheritance.md).  
   
 ## <a name="example"></a>Exemple  
  Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`. Les propriétés de chaque type d'entité qui composent sa clé d'entité sont signalées par « (Key) ». Notez que le type d'entité `Author` possède une clé d'entité composée de deux propriétés : `Name` et `Address`.  
   
  ![Exemple de modèle avec trois types d’entité](./media/entity-key/example-model-three-entity-types.gif)  
   
- Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus. Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus. Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
