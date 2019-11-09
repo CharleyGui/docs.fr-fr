@@ -3,10 +3,10 @@ title: Conclusions
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | conclusions
 ms.date: 10/26/2017
 ms.openlocfilehash: c7c4042b224577238ae74bd786d4803e487998e7
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "69578482"
 ---
 # <a name="conclusions"></a>Conclusions

@@ -3,10 +3,10 @@ title: Présentation des applications cloud natives
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Qu’en est-il des applications Cloud natives ?
 ms.date: 04/28/2018
 ms.openlocfilehash: cf4c3b24a4eeb62ed84a5fccb294b675d38fcc36
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "72318441"
 ---
 # <a name="what-about-cloud-native-applications"></a>Présentation des applications cloud natives

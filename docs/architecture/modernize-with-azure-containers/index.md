@@ -3,10 +3,10 @@ title: Moderniser les applications .NET existantes avec le cloud Azure et des co
 description: Découvrez comment effectuer un lift-and-shift et moderniser les applications existantes avec le cloud Azure et des conteneurs dans ce livre électronique.
 ms.date: 04/28/2018
 ms.openlocfilehash: 67b1c7743697832684e96225e3d365da625ce6a3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "73089770"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)

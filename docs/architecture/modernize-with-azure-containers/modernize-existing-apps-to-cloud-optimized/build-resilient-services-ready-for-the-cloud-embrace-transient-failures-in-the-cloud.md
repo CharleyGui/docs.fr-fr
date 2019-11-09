@@ -6,7 +6,7 @@ ms.openlocfilehash: e6fae8140b55cb0308dca9f4b77e961501b41f8f
 ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "73739396"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créez des services résilients prêts pour le Cloud : adoptez des échecs temporaires dans le Cloud

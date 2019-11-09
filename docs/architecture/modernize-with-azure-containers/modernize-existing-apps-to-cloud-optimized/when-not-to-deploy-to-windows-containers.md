@@ -3,17 +3,17 @@ title: Quand ne pas déployer sur des conteneurs Windows
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Quand ne pas déployer sur des conteneurs Windows
 ms.date: 04/28/2018
 ms.openlocfilehash: 65e793b846b495e9a1be6db9ddfa38bbf0d49445
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "69577952"
 ---
 # <a name="when-not-to-deploy-to-windows-containers"></a>Quand ne pas déployer sur des conteneurs Windows
 
 Certaines technologies Windows ne sont pas prises en charge par les conteneurs Windows. Dans ce cas, vous devez toujours migrer vers des machines virtuelles standard, généralement avec Windows et IIS uniquement.
 
-Les cas non pris en charge dans les conteneurs Windows, à compter du 2018 mai:
+Les cas non pris en charge dans les conteneurs Windows, à compter du 2018 mai :
 
 - Microsoft Message Queuing (MSMQ) est actuellement disponible uniquement dans les conteneurs Windows basés sur Windows Server v1803 version, mais pas dans les versions antérieures.
 
@@ -33,7 +33,7 @@ Les cas non pris en charge dans les conteneurs Windows, à compter du 2018 mai:
 
 - Les rôles d’infrastructure Windows (DNS, DHCP, DC, NTP, impression, serveur de fichiers, IAM, etc.) ne sont pas des scénarios pris en charge.
 
-Pour obtenir des scénarios et des demandes supplémentaires non pris en charge par la Communauté, consultez le Forum UserVoice <https://windowsserver.uservoice.com/forums/304624-containers>pour les conteneurs Windows:.
+Pour obtenir des scénarios et des demandes supplémentaires non pris en charge par la Communauté, consultez le Forum UserVoice pour les conteneurs Windows : <https://windowsserver.uservoice.com/forums/304624-containers>.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

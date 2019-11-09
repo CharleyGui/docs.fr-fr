@@ -3,10 +3,10 @@ title: Quand déployer des conteneurs Windows sur Azure Container Service (autre
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Quand déployer des conteneurs Windows sur Azure Container Service (autrement dit, Kubernetes)
 ms.date: 04/30/2018
 ms.openlocfilehash: 903082deba635dd0dfc22d0186fbc589f8d05b92
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "69577942"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-service-that-is-kubernetes"></a>Quand déployer des conteneurs Windows sur Azure Container Service (autrement dit, Kubernetes)
@@ -19,7 +19,7 @@ Tous ces orchestrateurs sont des environnements matures si vous utilisez des con
 
 Par exemple, dans Kubernetes, la prise en charge des conteneurs est native (citoyen de première classe). par conséquent, l’utilisation de conteneurs Windows sur Kubernetes est également efficace (en préversion dans ACS à compter des 2018 premières).
 
-Remarque importante: La version évoluée et «plus PaaS» d’ACS (Azure Container Service) pour Kubernetes est AKS (service Kubernetes Azure). Toutefois, les conteneurs Windows ne sont toujours pas pris en charge à compter du 2018, mais ils seront bientôt pris en charge.
+Remarque importante : la version évoluée et « plus PaaS » d’ACS (Azure Container Service) pour Kubernetes est AKS (service Kubernetes Azure). Toutefois, les conteneurs Windows ne sont toujours pas pris en charge à compter du 2018, mais ils seront bientôt pris en charge.
 
 >[!div class="step-by-step"]
 >[Précédent](when-to-deploy-windows-containers-to-azure-container-instances-ACI.md)

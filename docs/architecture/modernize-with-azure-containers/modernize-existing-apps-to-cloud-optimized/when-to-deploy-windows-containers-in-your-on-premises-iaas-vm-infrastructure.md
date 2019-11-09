@@ -3,10 +3,10 @@ title: Quand déployer des conteneurs Windows dans votre infrastructure de machi
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Quand déployer des conteneurs Windows dans votre infrastructure de machine virtuelle IaaS locale
 ms.date: 04/28/2018
 ms.openlocfilehash: 5986073e295eeba5921a2d899b236c68a27251fd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "69577972"
 ---
 # <a name="when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure"></a>Quand déployer des conteneurs Windows dans votre infrastructure de machines virtuelles IaaS locale

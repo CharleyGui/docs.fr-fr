@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: b4e8fda0c1423c881c0807602e11f7c49ff7cfe4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "73093554"
 ---
 # <a name="serverless-design-examples"></a>Exemples de conceptions serverless

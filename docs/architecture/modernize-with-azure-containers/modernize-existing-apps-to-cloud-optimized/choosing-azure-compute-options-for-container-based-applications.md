@@ -6,7 +6,7 @@ ms.openlocfilehash: 079c9c5ca02b6dc75214d63cb59afdead03d3190
 ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "73737002"
 ---
 # <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Choix des plateformes de calcul Azure pour les applications basées sur des conteneurs

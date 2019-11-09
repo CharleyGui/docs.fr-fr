@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 7ece3d30209713d42ee44ef9c1be1cf0fe82464a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "69577452"
 ---
 # <a name="azure-logic-apps"></a>Azure Logic Apps
@@ -25,7 +25,7 @@ Comme Azure Functions, vous démarrez les workflows d’application logique avec
 
 ![Déclencheurs Logic Apps](./media/logic-app-triggers.png)
 
-Une fois l’application déclenchée, vous pouvez utiliser le concepteur visuel pour créer des étapes, des boucles, des conditions et des actions. Toutes les données ingérées au cours d’une étape précédente sont disponibles pour être utilisées dans les étapes suivantes. Le flux de travail suivant charge les URL à partir d’une base de données CosmosDB. Il trouve ceux qui ont un hôte `t.co` , puis les recherche sur Twitter. S’il trouve des tweets correspondants, il met à jour les documents avec les tweets associés en appelant une fonction.
+Une fois l’application déclenchée, vous pouvez utiliser le concepteur visuel pour créer des étapes, des boucles, des conditions et des actions. Toutes les données ingérées au cours d’une étape précédente sont disponibles pour être utilisées dans les étapes suivantes. Le flux de travail suivant charge les URL à partir d’une base de données CosmosDB. Il trouve ceux avec un hôte de `t.co` puis les recherche sur Twitter. S’il trouve des tweets correspondants, il met à jour les documents avec les tweets associés en appelant une fonction.
 
 ![Flux de travail d’application logique](./media/logic-app-workflow.png)
 

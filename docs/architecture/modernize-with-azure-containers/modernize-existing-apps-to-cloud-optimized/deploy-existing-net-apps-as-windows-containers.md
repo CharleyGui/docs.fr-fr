@@ -3,10 +3,10 @@ title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Déployer des applications .NET existantes en tant que conteneurs Windows
 ms.date: 04/29/2018
 ms.openlocfilehash: 28568ca363bfc8100f78b100f8a7f0242c4f04c9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 11/08/2019
 ms.locfileid: "73089557"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
