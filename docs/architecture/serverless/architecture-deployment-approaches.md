@@ -132,14 +132,14 @@ Les avantages des serveurs sans serveur sont les suivants :
 
 Le plus souvent, sans serveur, il est abordé dans le contexte de Compute, mais il peut également s’appliquer aux données. Par exemple, [Azure SQL](https://docs.microsoft.com/azure/sql-database) et [Cosmos DB](https://docs.microsoft.com/azure/cosmos-db) fournissent des bases de données Cloud qui ne nécessitent pas la configuration d’ordinateurs hôtes ou de clusters. Ce guide se concentre sur le calcul sans serveur.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Il existe un large éventail de choix disponibles pour l’architecture, y compris une approche hybride. Sans serveur simplifie l’approche, la gestion et le coût des fonctionnalités d’application au détriment du contrôle et de la portabilité. Toutefois, de nombreuses plates-formes sans serveur exposent la configuration pour aider à ajuster la solution. Les bonnes pratiques en matière de programmation peuvent également entraîner un plus grand nombre de code portable et une réduction du verrouillage des plates-formes sans serveur. Le tableau suivant illustre les approches d’architecture côte à côte. Choisissez sans serveur en fonction de vos besoins de mise à l’échelle, que vous souhaitiez gérer le runtime, et comment vous pouvez diviser vos charges de travail en petits composants. Vous en apprendrez plus sur les défis potentiels avec des points de décision sans serveur et autres dans le chapitre suivant.
 
 |         |IaaS     |PaaS     |Conteneur|Sans serveur|
 |---------|---------|---------|---------|----------|
 |**Échelle**|MACHINES       |Instance |Application      |Fonction  |
-|**Extrait**|Matériel|Plate-forme|Hôte de système d’exploitation|Exécution   |
+|**Extrait**|Matériel|Platform|Hôte de système d’exploitation|Runtime   |
 |**Unités** |MACHINES       |Projet  |Image    |Code      |
 |**Durée de vie**|Suivent|Jours à mois|Minutes et jours|Millisecondes en minutes|
 |**Entière**|Applications, dépendances, Runtime et système d’exploitation|Applications et dépendances|Applications, dépendances et Runtime|Fonction
@@ -156,7 +156,7 @@ Le chapitre suivant se concentre sur l’architecture sans serveur, les cas d’
 
 - [Guide d’architecture des applications Azure](https://docs.microsoft.com/azure/architecture/guide/)
 - [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
-- [SQL Azure](https://docs.microsoft.com/azure/sql-database)
+- [Azure SQL](https://docs.microsoft.com/azure/sql-database)
 - [Modèle d’architecture à N niveaux](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
 - [Kubernetes sur Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
 - [Microservices](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)

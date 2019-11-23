@@ -105,7 +105,7 @@ La syntaxe de modèle de routage est identique à la syntaxe de base utilisée p
 }
 ```
 
-Vous pouvez également spécifier des contraintes sur la valeur du paramètre d’itinéraire. Par exemple, pour contraindre l’ID de produit en tant que `int` :
+Vous pouvez également spécifier des contraintes sur la valeur du paramètre d’itinéraire. Par exemple, pour contraindre l’ID de produit en tant que `int`:
 
 ```razor
 @page "/product/{id:int}"
@@ -137,7 +137,7 @@ Le routage dans éblouissant est géré par le composant `Router`. Le composant 
 </Router>
 ```
 
-Le composant `Router` Découvre les composants routables dans le `AppAssembly` spécifié et dans la `AdditionalAssemblies` éventuellement spécifiée. Lorsque le navigateur navigue, le `Router` intercepte la navigation et restitue le contenu de son paramètre `Found` avec le `RouteData` extrait si un itinéraire correspond à l’adresse, sinon le `Router` restitue son paramètre `NotFound`.
+Le composant `Router` Découvre les composants routables dans le `AppAssembly` spécifié et dans la `AdditionalAssemblies`éventuellement spécifiée. Lorsque le navigateur navigue, le `Router` intercepte la navigation et restitue le contenu de son paramètre `Found` avec le `RouteData` extrait si un itinéraire correspond à l’adresse, sinon le `Router` restitue son paramètre `NotFound`.
 
 Le composant `RouteView` gère le rendu du composant correspondant spécifié par la `RouteData` avec sa disposition, le cas échéant. Si le composant correspondant n’a pas de disposition, la `DefaultLayout` éventuellement spécifiée est utilisée.
 
@@ -145,7 +145,7 @@ Le composant `LayoutView` restitue son contenu enfant dans la disposition spéci
 
 ## <a name="navigation"></a>Navigation
 
-Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Exemple :
+Dans ASP.NET Web Forms, vous déclenchez la navigation vers une page différente en renvoyant une réponse de redirection au navigateur. Par exemple :
 
 ```csharp
 protected void NavigateButton_Click(object sender, EventArgs e)

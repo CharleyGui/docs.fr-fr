@@ -69,7 +69,7 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Contournement de la stratégie d’éditeur
- Vous pouvez remplacer la stratégie d’éditeur dans le fichier de configuration d’application, si nécessaire. Par exemple, les nouvelles versions d’assemblys se déclarant à compatibilité descendante peuvent quand même bloquer une application. Si vous souhaitez ignorer la stratégie d’éditeur, ajoutez un élément [\<publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) à l’élément [\<dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) dans le fichier de configuration d’application, puis affectez à l’attribut **apply** la valeur **no**, qui remplace any paramètres **Yes** précédents.
+ Vous pouvez remplacer la stratégie d’éditeur dans le fichier de configuration d’application, si nécessaire. Par exemple, les nouvelles versions d’assemblys se déclarant à compatibilité descendante peuvent quand même bloquer une application. Si vous souhaitez ignorer la stratégie d’éditeur, ajoutez un élément [\<publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) à l’élément [\<dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) dans le fichier de configuration de l’application, puis affectez à l’attribut **apply** la valeur **no**, qui remplace tous les paramètres **Yes** précédents.
 
  `<publisherPolicy apply="no" />`
 
@@ -155,7 +155,7 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 ## <a name="see-also"></a>Voir aussi
 
 - [Comment : activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md)
-- [Élément @no__t 1bindingRedirect >](./file-schema/runtime/bindingredirect-element.md)
+- [\<l’élément de > bindingRedirect](./file-schema/runtime/bindingredirect-element.md)
 - [Autorisation de sécurité pour la redirection de liaison d’assembly](assembly-binding-redirection-security-permission.md)
 - [Assemblys dans .NET](../../standard/assembly/index.md)
 - [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)

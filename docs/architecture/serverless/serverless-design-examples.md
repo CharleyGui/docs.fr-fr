@@ -63,7 +63,7 @@ Les fonctions sans serveur peuvent être utilisées pour faciliter un pipeline d
 
 ![Pipeline de données sans serveur](./media/serverless-data-pipeline.png)
 
-## <a name="stream-processing"></a>Traitement de flux
+## <a name="stream-processing"></a>Traitement des flux de données
 
 Les appareils et les capteurs génèrent souvent des flux de données qui doivent être traités en temps réel. Il existe un certain nombre de technologies qui peuvent capturer des messages et des flux de [Event hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) et [IOT Hub](https://docs.microsoft.com/azure/iot-hub) à [service bus](https://docs.microsoft.com/azure/service-bus). Quel que soit le transport, sans serveur est un mécanisme idéal pour le traitement des messages et des flux de données au fur et à mesure de leur arrivée. Sans serveur peut évoluer rapidement pour répondre à la demande de grands volumes de données. Le code sans serveur peut appliquer la logique métier pour analyser les données et les sorties dans un format structuré pour l’action et l’analyse.
 

@@ -9,12 +9,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697767"
 ---
-# <a name="schemesettings-element-uri-settings"></a>\<schemeSettings >, élément (paramètres d’URI)
+# <a name="schemesettings-element-uri-settings"></a>\<élément schemeSettings > (paramètres d’URI)
 Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<schemeSettings >**  
+&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<schemeSettings** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,8 +26,8 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributes  
+ Aucun  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -43,8 +43,8 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
 |-----------------|---------------------|  
 |[URI](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
   
-## <a name="remarks"></a>Notes  
- Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
+## <a name="remarks"></a>Remarques  
+ Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule les délimiteurs de chemin d’accès encodés de pourcentage avant l’exécution de la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- C’est la raison pour laquelle la classe <xref:System.Uri?displayProperty=nameWithType> n’ignore pas les délimiteurs de chemin d’accès, puis applique la compression de chemin. Le résultat de la transmission de l’URL malveillante ci-dessus au constructeur de classe <xref:System.Uri?displayProperty=nameWithType> génère l’URI suivant :  
+ C’est pourquoi <xref:System.Uri?displayProperty=nameWithType> classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus à <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour ne pas prendre en charge l’échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
+ L’exemple suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour prendre en charge l’échappement des délimiteurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
 ```xml  
 <configuration>  
@@ -78,7 +78,7 @@ Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas sp�
   
 |||
 |-|-|  
-|Espace de noms|Système|  
+|Espace de noms|System|  
 |Nom du schéma||  
 |Fichier de validation||  
 |Peut être vide||  

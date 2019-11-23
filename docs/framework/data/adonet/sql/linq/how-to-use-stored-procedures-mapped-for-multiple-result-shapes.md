@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Utiliser des procédures stockées mappées pour plusieurs formes de résultats'
+title: 'Comment : utiliser des procédures stockées mappées pour plusieurs formes de résultats'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,10 +12,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72003272"
 ---
-# <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Procédure : Utiliser des procédures stockées mappées pour plusieurs formes de résultats
-Lorsqu'une procédure stockée peut retourner plusieurs formes de résultats, le type de retour ne peut pas être fortement typé en une forme de projection unique. Même si [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] peut générer tous les types de projection possibles, il ne peut pas connaître l’ordre dans lequel ils sont retournés.  
+# <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Comment : utiliser des procédures stockées mappées pour plusieurs formes de résultats
+Lorsqu'une procédure stockée peut retourner plusieurs formes de résultats, le type de retour ne peut pas être fortement typé en une forme de projection unique. Bien que [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] puisse générer tous les types de projection possibles, il ne peut pas connaître l’ordre dans lequel ils sont retournés.  
   
- Comparez ce scénario avec les procédures stockées qui produisent plusieurs formes de résultats de manière séquentielle. Pour plus d'informations, voir [Procédure : Utilisez des procédures stockées mappées pour des formes de résultats séquentielles @ no__t-0.  
+ Comparez ce scénario avec les procédures stockées qui produisent plusieurs formes de résultats de manière séquentielle. Pour plus d’informations, consultez [Comment : utiliser des procédures stockées mappées pour des formes de résultats séquentielles](how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md).  
   
  L'attribut <xref:System.Data.Linq.Mapping.ResultTypeAttribute> est appliqué aux procédures stockées qui retournent plusieurs types de résultats pour spécifier l'ensemble de types que la procédure peut retourner.  
   

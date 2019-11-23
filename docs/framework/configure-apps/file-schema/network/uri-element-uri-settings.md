@@ -9,11 +9,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697436"
 ---
-# <a name="uri-element-uri-settings"></a>\<uri >, élément (paramètres d’URI)
+# <a name="uri-element-uri-settings"></a>\<URI >, élément (paramètres d’URI)
 Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **\<uri >**  
+&nbsp;&nbsp; **\<uri >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,8 +25,8 @@ Contient des paramètres qui spécifient comment le .NET Framework gère les adr
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributes  
+ Aucune.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -42,7 +42,7 @@ Contient des paramètres qui spécifient comment le .NET Framework gère les adr
 |-----------------|---------------------|  
 |[configuration](../configuration-element.md)|Contient les paramètres de tous les espaces de noms.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’élément `uri` contient des paramètres pour les membres de la classe <xref:System.Uri> utilisée par les classes de l’espace de noms <xref:System.Net>. Les paramètres configurent la prise en charge des IRI et des IDN.  
   
 ## <a name="example"></a>Exemple  

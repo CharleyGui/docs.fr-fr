@@ -21,8 +21,8 @@ ms.locfileid: "73119084"
 Efface toutes les sections et tous les groupes de sections précédemment définis.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,9 +44,9 @@ Efface toutes les sections et tous les groupes de sections précédemment défin
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+Aucun
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 L’élément **\<clear >** supprime tous les sections et groupes de sections de votre application qui ont été définis précédemment dans le fichier de configuration actuel ou à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 

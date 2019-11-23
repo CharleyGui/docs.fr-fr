@@ -24,14 +24,14 @@ Spécifie la classe ou le module qui contient la procédure `Sub Main`.
   
 ## <a name="arguments"></a>Arguments  
  `location`  
- Obligatoire. Nom de la classe ou du module qui contient la procédure `Sub Main` à appeler au démarrage du programme. Il peut s’agir de la forme **-main : module** ou **-main : namespace. module**.  
+ Requis. Nom de la classe ou du module qui contient le `Sub Main` procédure à appeler au démarrage du programme. Il peut s’agir de la forme **-main : module** ou **-main : namespace. module**.  
   
-## <a name="remarks"></a>Notes  
- Utilisez cette option lorsque vous créez un fichier exécutable ou un programme exécutable Windows. Si l’option **-main** est omise, le compilateur recherche un @no__t partagé valide-1 dans toutes les classes et tous les modules publics.  
+## <a name="remarks"></a>Remarques  
+ Utilisez cette option lorsque vous créez un fichier exécutable ou un programme exécutable Windows. Si l’option **-main** est omise, le compilateur recherche un `Sub Main` partagé valide dans toutes les classes et tous les modules publics.  
   
  Pour plus d’informations sur les différentes formes de la procédure `Main`, consultez la [procédure principale dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) .  
   
- Lorsque `location` est une classe qui hérite de <xref:System.Windows.Forms.Form>, le compilateur fournit une procédure `Main` par défaut qui démarre l’application si la classe n’a pas de procédure `Main`. Cela vous permet de compiler du code sur la ligne de commande qui a été créée dans l’environnement de développement.  
+ Lorsque `location` est une classe qui hérite de <xref:System.Windows.Forms.Form>, le compilateur fournit une procédure `Main` par défaut qui démarre l’application si la classe n’a pas de `Main` procédure. Cela vous permet de compiler du code sur la ligne de commande qui a été créée dans l’environnement de développement.  
   
  [!code-vb[VbVbalrCompiler#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#16)]  
   

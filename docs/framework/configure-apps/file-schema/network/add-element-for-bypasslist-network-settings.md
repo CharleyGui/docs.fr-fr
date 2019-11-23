@@ -17,14 +17,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699610"
 ---
-# <a name="add-element-for-bypasslist-network-settings"></a>\<add > élément de bypasslist (paramètres réseau)
+# <a name="add-element-for-bypasslist-network-settings"></a>\<ajouter un élément > pour BypassList (paramètres réseau)
 Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Ajouter >**  
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy** >](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<BypassList >** ](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Ajouter des >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +37,14 @@ Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
 |**address**|Expression régulière décrivant une adresse IP ou un nom DNS.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -52,12 +52,12 @@ Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’élément `add` insère des expressions régulières décrivant des adresses IP ou des noms de serveurs DNS à la liste des adresses qui contournent un serveur proxy.  
   
  La valeur de l’attribut `address` doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôte.  
   
- Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière « [a-z] + @no__t -0.contoso\\.com » correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] + @no__t -0.contoso\\.com $ ».  
+ Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière "[a-z] +\\. contoso\\. com" correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] +\\. contoso\\. com $ ».  
   
  Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).  
   

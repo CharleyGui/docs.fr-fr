@@ -1,14 +1,13 @@
 ---
 title: Maillages de service-gRPC pour les développeurs WCF
 description: Utilisation d’une maille de service pour acheminer et équilibrer les demandes vers les services gRPC dans un cluster Kubernetes.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6bdfa57ba47ba0105092d1c140705599b7023c78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d20275082973f30bddbb342da90454401d4f019b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73090175"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966966"
 ---
 # <a name="service-meshes"></a>Maillages de service
 
@@ -16,7 +15,7 @@ Une maille de service est un composant d’infrastructure qui prend le contrôle
 
 - Détection du service
 - Équilibrage de charge
-- Tolérance de pannes
+- Tolérance de panne
 - Chiffrement
 - Analyse
 

@@ -4,12 +4,12 @@ description: Bonnes pratiques relatives à l’utilisation de Source Link pour a
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 7530c984ce4bbe9e40362bd550bec57ac585a550
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 89f9e3b1fd70003c528465f29a143b157468d539
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928988"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089282"
 ---
 # <a name="source-link"></a>Source Link
 
@@ -23,9 +23,9 @@ Source Link est une technologie qui permet aux développeurs de déboguer le cod
 
 Vous trouverez des instructions sur l’utilisation de Source Link dans le dépôt GitHub [dotnet/sourcelink](https://github.com/dotnet/sourcelink/blob/master/README.md).
 
-Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez que les métadonnées `Repository` sont présentes avec un identificateur de commentaire et que les fichiers .pdb se trouvent avec le fichier .dll de chaque cible.
+Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) pour vérifier que les métadonnées Source Link ont été correctement incorporées dans le package. Vérifiez que les métadonnées `Repository` sont présentes avec un identificateur de validation et que les fichiers. pdb sont situés avec le fichier. dll de chaque cible.
 
-![Source Link dans NuGet Package Explorer](./media/sourcelink/nuget-package-explorer-sourcelink.png "Source Link dans NuGet Package Explorer")
+![Lien source dans l’Explorateur de package NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Lien source dans l’Explorateur de package NuGet")
 
 **✔️ À ENVISAGER** : Utiliser Source Link pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
 

@@ -116,7 +116,7 @@ public class PrimeWebDefaultRequestShould
 - **Concepts de base des tests unitaires.** \
     [https://docs.microsoft.com/visualstudio/test/unit-test-basics](/visualstudio/test/unit-test-basics)
 
-- **Moq**. Dépôt GitHub. \
+- **Moq**. GitHub repo. \
     <https://github.com/moq/moq>
 
 - **NUnit**. Site officiel. \

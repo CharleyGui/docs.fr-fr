@@ -1,14 +1,13 @@
 ---
 title: Gestion des performances des applications-gRPC pour les développeurs WCF
 description: La journalisation, les métriques et le suivi pour les applications ASP.NET Core gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 6ba67fd069e7efc232f912e50c0e283facb79e9c
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 2b6a30ab68cb6e2fdc81c59e7faef81064b948c1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846721"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968181"
 ---
 # <a name="application-performance-management"></a>Gestion des performances des applications
 
@@ -56,7 +55,7 @@ Pour plus d’informations sur l’écriture de messages de journal et sur les r
 
 Le Runtime .NET Core fournit un ensemble de composants pour émettre et observer des métriques qui incluent des API telles que les classes <xref:System.Diagnostics.Tracing.EventSource> et <xref:System.Diagnostics.Tracing.EventCounter>. Ces API peuvent être utilisées pour émettre des données numériques de base qui peuvent être consommées par des processus externes tels que l' [outil Global dotnet-Counters](https://github.com/dotnet/diagnostics/blob/master/documentation/dotnet-counters-instructions.md), ou suivi d’v nements pour Windows. Pour plus d’informations sur l’utilisation de `EventCounter` dans votre propre code, consultez le didacticiel de [Présentation de EventCounter](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md) .
 
-Pour les métriques plus avancées et l’écriture de données de métriques dans un plus grand nombre de magasins de données, il existe un excellent projet open source appelé [métriques](https://www.app-metrics.io)de l’application. Cette suite de bibliothèques fournit un ensemble complet de types pour instrumenter votre code. Il offre également des packages pour écrire des mesures dans différents types de cibles qui incluent des bases de données de série chronologique, telles que Prometheus et InfluxDB, [Azure application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview), et bien plus encore. Le package NuGet [app. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) ajoute même un ensemble complet de métriques de base qui sont générées automatiquement par le biais de l’intégration avec l’infrastructure ASP.net Core, et le site Web fournit des [modèles](https://www.app-metrics.io/samples/grafana/) pour l’affichage de ces métriques. avec la plateforme de visualisation [Grafana](https://grafana.com/) .
+Pour les métriques plus avancées et l’écriture de données de métriques dans un plus grand nombre de magasins de données, il existe un excellent projet open source appelé [métriques](https://www.app-metrics.io)de l’application. Cette suite de bibliothèques fournit un ensemble complet de types pour instrumenter votre code. Il offre également des packages pour écrire des mesures dans différents types de cibles qui incluent des bases de données de série chronologique, telles que Prometheus et InfluxDB, [Azure application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview), et bien plus encore. Le package NuGet [app. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) ajoute même un ensemble complet de métriques de base qui sont générées automatiquement par le biais de l’intégration avec l’infrastructure ASP.net Core, et le site Web fournit des [modèles](https://www.app-metrics.io/samples/grafana/) pour l’affichage de ces métriques avec la plateforme de visualisation [Grafana](https://grafana.com/) .
 
 Pour plus d’informations et pour obtenir de la documentation sur les métriques d’application, consultez le site Web [app-Metrics.IO](https://app-metrics.io) .
 
@@ -66,10 +65,10 @@ La plupart des plateformes de métriques prennent en charge cinq types de métri
 
 | Type de métrique | Description |
 | ----------- | ----------- |
-| Counter     | Effectue le suivi de la fréquence des événements, tels que les demandes, les erreurs, etc. |
+| Compteur     | Effectue le suivi de la fréquence des événements, tels que les demandes, les erreurs, etc. |
 | Gabarit       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
 | Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille du jeu de données, en comptant le nombre d’enregistrements contenus < 10, le nombre de 11-100 et 101-1000, ainsi que les enregistrements > 1 000. |
-| Tswtclmt       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
+| Compteur       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
 | Minuterie       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
 
 À l’aide des *métriques d’application*, une interface de `IMetrics` peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de demandes de `Get` effectuées dans le temps :
@@ -160,7 +159,7 @@ public class Startup
 
 Le package OpenTracing est une couche d’abstraction et, en tant que tel, il requiert une implémentation propre à un serveur principal. Les implémentations de l’API OpenTracing sont disponibles pour les serveurs principaux Open source suivants.
 
-| Name | Package | Site Web |
+| Nom | Package | Site Web |
 | ---- | ------- | -------- |
 | Jaeger | [Jaeger](https://www.nuget.org/packages/Jaeger/) | [jaegertracing.io](https://jaegertracing.io) |
 | APM élastique | [Élastique. APM. NetCoreAll](https://www.nuget.org/packages/Elastic.Apm.NetCoreAll/) | [elastic.co/products/apm](https://www.elastic.co/products/apm) |

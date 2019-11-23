@@ -27,13 +27,13 @@ Pour plus d’informations, consultez [Microsoft Enterprise Library](https://doc
 
 ## <a name="dealing-with-expected-exceptions"></a>Traitement des exceptions attendues
 
-La bonne marche à suivre consiste à intercepter les exceptions attendues dans chaque opération ou point d’extensibilité approprié, à déterminer si elles peuvent être récupérées à partir de et à retourner l’erreur personnalisée appropriée dans un > @ no__t-0T FaultException.
+La bonne marche à suivre consiste à intercepter les exceptions attendues dans chaque opération ou point d’extensibilité approprié, à déterminer si elles peuvent être récupérées à partir de et à retourner l’erreur personnalisée appropriée dans un FaultException\<T >.
   
 ## <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Traitement des exceptions inattendues à l’aide d’un IErrorHandler
 
 Pour traiter les exceptions inattendues, il est recommandé de « raccorder » un IErrorHandler. Les gestionnaires d’erreurs interceptent uniquement les exceptions au niveau du runtime WCF (la couche « modèle de service »), et non au niveau de la couche du canal. La seule manière de connecter un IErrorHandler au niveau de canal consiste à créer un canal personnalisé, ce qui est déconseillé dans la plupart des scénarios.
 
-Une « exception inattendue » n’est généralement ni une exception irrécupérable ni une exception de traitement ; au lieu de cela, il s’agit d’une exception d’utilisateur inattendue. Une exception irrécupérable (par exemple, une exception de mémoire insuffisante), généralement gérée automatiquement par le [Gestionnaire d’exceptions de modèle de service](xref:System.ServiceModel.Dispatcher.ExceptionHandler) , ne peut généralement pas être gérée correctement, et la seule raison de gérer une telle exception peut être journalisation supplémentaire ou pour retourner une exception standard au client. Une exception de traitement se produit dans le traitement du message (par exemple, au niveau de la sérialisation, de l'encodeur ou du formateur), généralement elle ne peut pas être gérée dans un IErrorHandler, car il est trop tôt ou trop tard pour que le gestionnaire d'erreurs intervienne lorsque ces exceptions se produisent. De même, les exceptions de transport ne peuvent pas être gérées dans un IErrorHandler.
+Une « exception inattendue » n’est généralement ni une exception irrécupérable ni une exception de traitement ; au lieu de cela, il s’agit d’une exception d’utilisateur inattendue. Une exception irrécupérable (telle qu’une exception de mémoire insuffisante), généralement gérée automatiquement par le [Gestionnaire d’exceptions de modèle de service](xref:System.ServiceModel.Dispatcher.ExceptionHandler) , ne peut généralement pas être gérée correctement, et la seule raison de gérer une telle exception peut être d’effectuer une journalisation supplémentaire ou de retourner une exception standard au client. Une exception de traitement se produit dans le traitement du message (par exemple, au niveau de la sérialisation, de l'encodeur ou du formateur), généralement elle ne peut pas être gérée dans un IErrorHandler, car il est trop tôt ou trop tard pour que le gestionnaire d'erreurs intervienne lorsque ces exceptions se produisent. De même, les exceptions de transport ne peuvent pas être gérées dans un IErrorHandler.
 
 Avec un IErrorHandler, vous pouvez explicitement contrôler le comportement de votre application lorsqu'une exception est levée. Vous pouvez :  
 
@@ -53,7 +53,7 @@ IErrorHandler.ProvideFault contrôle le message d'erreur qui est envoyé au clie
 
 Un domaine dans lequel vous pouvez adopter cette approche est lorsque vous souhaitez créer une place centrale de conversion des exceptions en erreurs avant qu'elles ne soient envoyées au client (en veillant à ce que l'instance ne soit pas supprimée et le canal déplacé vers l'état d'erreur).
 
-La méthode IErrorHandler.HandleError est généralement utilisée pour implémenter des comportements d'erreur tels que l'enregistrement des erreurs, les notifications système, la fermeture de l'application, etc. IErrorHandler.HandleError peut être appelée à plusieurs endroits dans le service, et selon l'endroit où l'erreur est retournée, la méthode HandleError peut ou non être appelée par le thread même que l'opération ; aucune garantie n'est donnée à cet égard.
+La méthode IErrorHandler. HandleError est généralement utilisée pour implémenter des comportements liés aux erreurs, tels que la journalisation des erreurs, les notifications système, l’arrêt de l’application, etc. IErrorHandler. HandleError peut être appelé à plusieurs emplacements à l’intérieur du service et, en fonction de l’endroit où l’erreur est levée, la méthode HandleError peut ou non être appelée par le même thread que l’opération. aucune garantie n’est faite à cet égard.
 
 ## <a name="dealing-with-exceptions-outside-wcf"></a>Gestion des exceptions en dehors de WCF
 

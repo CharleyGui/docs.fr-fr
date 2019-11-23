@@ -93,7 +93,7 @@ Il existe plusieurs types de *variables* en C#, y compris les champs, les élém
   - Une valeur de ce type exact
 - Types valeur Nullable
   - Une valeur `null` ou une valeur de ce type exact
-- object
+- objet
   - Une référence `null`, une référence à un objet de tout type référence ou une référence à une valeur boxed de n’importe quel type valeur
 - Type de classe
   - Une référence `null`, une référence à une instance de ce type de classe ou une référence à une instance d’une classe dérivée de ce type de classe

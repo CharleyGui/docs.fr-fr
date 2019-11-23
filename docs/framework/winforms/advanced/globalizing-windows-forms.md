@@ -35,18 +35,18 @@ Présente la propriété `ImeMode`, qui sert à contrôler le type d'entrée acc
 
 - [Internationalisation et localisation d’applications .NET](../../../standard/globalization-localization/index.md)
 
-- [Procédure pas à pas : téléchargement d'assemblys satellites à la demande avec l'API du déploiement ClickOnce à l'aide du concepteur](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer)
+- [Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce à l’aide du concepteur](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer)
 
 - [Localisation des applications ClickOnce](/visualstudio/deployment/localizing-clickonce-applications)
 
 - [Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api)
 
-- [Guide pratique pour Définir la culture et la culture d’interface utilisateur pour la globalisation Windows Forms @ no__t-0
+- [Comment : définir la culture et la culture d’interface utilisateur pour la globalisation Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/b28bx3bh(v=vs.100))
 
-- [Guide pratique pour Créer des Windows Forms et des contrôles mis en miroir @ no__t-0
+- [Comment : créer des Windows Forms et des contrôles mis en miroir](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/xwbz5ws0(v=vs.100))
 
-- [Guide pratique pour Prendre en charge la localisation sur Windows Forms à l’aide de AutoSize et du contrôle TableLayoutPanel @ no__t-0
+- [Comment : prendre en charge la localisation dans les Windows Forms à l’aide du redimensionnement automatique et du contrôle TableLayoutPanel](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1zkt8b33(v=vs.100))
 
-- [Procédure pas à pas : Localisation Windows Forms @ no__t-0
+- [Procédure pas à pas : localisation de Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))
 
-- [Procédure pas à pas : Création d’une disposition qui ajuste la proportion pour la localisation @ no__t-0
+- [Procédure pas à pas : création d’une disposition qui ajuste la proportion pour la localisation](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))

@@ -1,14 +1,13 @@
 ---
 title: Kubernetes-gRPC pour les développeurs WCF
 description: Exécution des services ASP.NET Core gRPC dans un cluster Kubernetes.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 819c761a7a55485612b7fb0c8b392971751d8724
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 503b582ae9fdcf8c72c87558de3a8ddd898489aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846638"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967571"
 ---
 # <a name="kubernetes"></a>Kubernetes
 
@@ -26,7 +25,7 @@ Ce chapitre explique en détail comment déployer un service ASP.NET Core gRPC e
 
 ## <a name="kubernetes-terminology"></a>Terminologie Kubernetes
 
-Kubernetes utilise *la configuration d’état souhaité*: l’API est utilisée pour décrire des objets tels que les *Pod*, les *déploiements* et les *services*, et le *plan de contrôle* prend en charge l’implémentation de l’état souhaité sur tous les *nœuds.* dans un *cluster*. Un cluster Kubernetes possède un nœud *principal* qui exécute l' *API Kubernetes*, qui peut être communiquée par programmation ou à l’aide de l’outil de ligne de commande `kubectl`. `kubectl` pouvez créer et gérer des objets à l’aide d’arguments de ligne de commande, mais fonctionne mieux avec les fichiers YAML qui contiennent des données de déclaration pour les objets Kubernetes.
+Kubernetes utilise la *configuration d’état souhaité*: l’API est utilisée pour décrire des objets tels que les *Pod*, les *déploiements* et les *services*, et le *plan de contrôle* prend en charge l’implémentation de l’état souhaité sur tous les *nœuds* d’un *cluster*. Un cluster Kubernetes possède un nœud *principal* qui exécute l' *API Kubernetes*, qui peut être communiquée par programmation ou à l’aide de l’outil de ligne de commande `kubectl`. `kubectl` pouvez créer et gérer des objets à l’aide d’arguments de ligne de commande, mais fonctionne mieux avec les fichiers YAML qui contiennent des données de déclaration pour les objets Kubernetes.
 
 ### <a name="kubernetes-yaml-files"></a>Fichiers YAML Kubernetes
 
@@ -39,7 +38,7 @@ metadata:
   # Object properties
 ```
 
-La propriété `apiVersion` est utilisée pour spécifier la version (et l’API) à laquelle le fichier est destiné. La propriété `kind` spécifie le type d’objet représenté par le YAML. La propriété `metadata` contient des propriétés d’objet telles que `name`, `namespace` ou `labels`.
+La propriété `apiVersion` est utilisée pour spécifier la version (et l’API) à laquelle le fichier est destiné. La propriété `kind` spécifie le type d’objet représenté par le YAML. La propriété `metadata` contient des propriétés d’objet telles que `name`, `namespace`ou `labels`.
 
 La plupart des fichiers YAML Kubernetes comporteront également une section `spec` qui décrit les ressources et la configuration nécessaires à la création de l’objet.
 
@@ -182,7 +181,7 @@ spec:
     run: stockdata
 ```
 
-La spécification de service utilise la propriété `selector` pour faire correspondre les `Pods` en cours d’exécution. dans ce cas, recherchez les Pod avec une étiquette `run: stockdata`. La `port` spécifiée sur les Pod correspondants est publiée par le service nommé. Les autres pod en cours d’exécution dans l’espace de noms `stocks` peuvent accéder au protocole HTTP sur ce service à l’aide de `http://stockdata` comme adresse. Les pod en cours d’exécution dans d’autres espaces de noms peuvent utiliser le nom d’hôte `http://stockdata.stocks`. Vous pouvez contrôler l’accès au service entre espaces de noms à l’aide de [stratégies réseau](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+La spécification de service utilise la propriété `selector` pour faire correspondre les `Pods`en cours d’exécution. dans ce cas, recherchez les Pod avec une étiquette `run: stockdata`. La `port` spécifiée sur les Pod correspondants est publiée par le service nommé. Les autres pod en cours d’exécution dans l’espace de noms `stocks` peuvent accéder au protocole HTTP sur ce service à l’aide de `http://stockdata` comme adresse. Les pod en cours d’exécution dans d’autres espaces de noms peuvent utiliser le nom d’hôte `http://stockdata.stocks`. Vous pouvez contrôler l’accès au service entre espaces de noms à l’aide de [stratégies réseau](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 #### <a name="deploy-the-stockdata-application"></a>Déployer l’application StockData
 

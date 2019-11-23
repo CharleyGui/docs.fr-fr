@@ -53,4 +53,4 @@ Windows Communication Foundation (WCF) configure les comportements de deux mani√
   
 ## <a name="see-also"></a>Voir aussi
 
-- [@no__t 1behaviors >](../configure-apps/file-schema/wcf/behaviors.md)
+- [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md)

@@ -77,7 +77,7 @@ Le diagramme ci-dessus montre que les clients mobile et SPA communiquent avec de
 
 - Communication de client à microservice HTTP via des passerelles d’API. ce type de communication est utilisé pour les requêtes et quand il s’agit d’accepter les commandes de mise à jour ou les commandes transactionnelles des applications clientes. L’approche utilisant des passerelles d’API est expliquée en détail dans des sections ultérieures.
 
-- Communication asynchrone basé sur les événements : celle-ci emprunte un bus d’événements pour propager des mises à jour aux microservices ou pour s’intégrer avec des applications externes. Le bus d’événements peut être implémenté avec n’importe quelle technologie d’infrastructure de répartiteur de messagerie comme RabbitMQ ou en utilisant des Service Bus (de niveau d’abstraction) plus généralistes comme Azure Service Bus, NServiceBus, MassTransit ou Brighter.
+- Communication asynchrone basé sur les événements : celle-ci emprunte un bus d’événements pour propager des mises aux microservices ou pour s’intégrer avec des applications externes. Le bus d’événements peut être implémenté avec n’importe quelle technologie d’infrastructure de répartiteur de messagerie comme RabbitMQ ou en utilisant des Service Bus (de niveau d’abstraction) plus généralistes comme Azure Service Bus, NServiceBus, MassTransit ou Brighter.
 
 L’application est déployée comme un ensemble de microservices sous forme de conteneurs. Les applications clientes peuvent communiquer avec ces microservices exécutés en tant que conteneurs via les URL publiques publiées par les passerelles d’API.
 
@@ -91,7 +91,7 @@ Par conséquent, les unités de déploiement pour les microservices (et même po
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **EShopOnContainers GitHub référentiel. Code source de l’application de référence**  \
+- **EShopOnContainers GitHub référentiel. Code source de l’application de référence** \
   <https://aka.ms/eShopOnContainers/>
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Avantages d’une solution basée sur des microservices

@@ -35,7 +35,7 @@ Les images de ces deux types de conteneurs sont créées et fonctionnent de la m
 
 La figure 2-3 compare les machines virtuelles et les conteneurs Docker.
 
-| Machines virtuelles | Conteneurs Docker |
+| Ordinateurs virtuels | Conteneurs Docker |
 | -----------------| ------------------|
 |![Diagramme montrant la pile matérielle/logicielle d’une machine virtuelle traditionnelle.](./media/docker-defined/virtual-machine-hardware-software.png)|![Diagramme montrant la pile matérielle/logicielle pour les conteneurs de l’ancrage.](./media/docker-defined/docker-container-hardware-software.png)|
 |Les machines virtuelles incluent l’application, les bibliothèques ou binaires requis, et un système d’exploitation invité complet. La virtualisation complète nécessite plus de ressources que la mise en conteneur. | Les conteneurs incluent l’application et toutes ses dépendances. Toutefois, ils partagent le noyau du système d’exploitation avec d’autres conteneurs, exécutés en tant que processus isolés dans l’espace utilisateur sur le système d’exploitation hôte. (Ce n’est pas le cas des conteneurs Hyper-V, où chaque conteneur s’exécute sur une machine virtuelle spécifique.) |

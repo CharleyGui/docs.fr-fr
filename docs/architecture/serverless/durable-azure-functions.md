@@ -47,7 +47,7 @@ public static async Task<HttpResponseMessage> Run(
 
 L’annotation d’une fonction avec le OrchestrationTriggerAttribute dans Azure Functions marque cette fonction comme une fonction d’orchestrateur. Il est responsable de la gestion des différentes activités qui composent votre flux de travail avec état.
 
-Les fonctions d’orchestrateur ne peuvent pas utiliser des liaisons autres que OrchestrationTriggerAttribute. Cet attribut peut uniquement être utilisé avec un type de paramètre DurableOrchestrationContext. Aucune autre entrée ne peut être utilisée, car la désérialisation des entrées dans la signature de la fonction n’est pas prise en charge. Pour récupérer les entrées fournies par le client d’orchestration, vous devez utiliser la méthode GetInput \<T \>.
+Les fonctions d’orchestrateur ne peuvent pas utiliser des liaisons autres que OrchestrationTriggerAttribute. Cet attribut peut uniquement être utilisé avec un type de paramètre DurableOrchestrationContext. Aucune autre entrée ne peut être utilisée, car la désérialisation des entrées dans la signature de la fonction n’est pas prise en charge. Pour récupérer les entrées fournies par le client d’orchestration, vous devez utiliser la méthode GetInput\<T\>.
 
 En outre, les types de retour des fonctions d’orchestration doivent être void, Task ou une valeur sérialisable JSON.
 

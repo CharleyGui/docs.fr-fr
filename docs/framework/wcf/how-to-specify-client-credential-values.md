@@ -22,9 +22,9 @@ ms.locfileid: "72319863"
 
 2. Ouvrez le fichier de configuration XML. Si vous utilisez l'outil Svcutil.exe, le nom par défaut du fichier est Output.config.
 
-3. Recherchez l’élément **> @no__t-** sécurité avec l’attribut **mode** ( **\<security mode =** `MessageOrTransport` **>,** où `MessageOrTransport` est défini sur l’un des modes de sécurité.
+3. Recherchez l’élément **\<security >** avec l’attribut **mode** ( **\<Security mode =** `MessageOrTransport` **>** , où `MessageOrTransport` est défini sur l’un des modes de sécurité.
 
-4. Recherchez l'élément enfant qui correspond à la valeur de mode. Par exemple, si le mode est défini sur **message**, recherchez l’élément **\<message >** contenu dans l’élément **> \<security** .
+4. Recherchez l'élément enfant qui correspond à la valeur de mode. Par exemple, si le mode est défini sur **message**, recherchez le **\<message >** contenu dans l’élément **\<de > de sécurité** .
 
 5. Notez la valeur assignée à l’attribut **ClientCredentialType** . La valeur réelle dépend du mode utilisé, du transport ou du message.
 
@@ -58,11 +58,11 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
 
 ### <a name="to-specify-the-client-credential-value-on-the-client-in-configuration"></a>Pour spécifier la valeur d'information d'identification du client sur le client dans la configuration
 
-1. Ajoutez un élément [\<behavior >](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) à l’élément [> \<behaviors](../configure-apps/file-schema/wcf/behaviors.md) .
+1. Ajoutez un élément de [> de comportement\<](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) à l’élément de [> comportements\<](../configure-apps/file-schema/wcf/behaviors.md) .
 
-2. Ajoutez un élément [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) à l’élément [> \<behaviors](../configure-apps/file-schema/wcf/behaviors.md) . Assurez-vous d'affecter à l'attribut `name` requis une valeur appropriée.
+2. Ajoutez un élément [\<clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) à l’élément comportements de l' [\<>](../configure-apps/file-schema/wcf/behaviors.md) . Assurez-vous d'affecter à l'attribut `name` requis une valeur appropriée.
 
-3. Ajoutez un élément [\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) à l’élément [> \<clientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) .
+3. Ajoutez un élément [\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) à l’élément [\<ClientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) .
 
 4. Affectez aux attributs suivants des valeurs appropriées : `storeLocation`, `storeName`, `x509FindType` et `findValue`, comme illustré dans le code suivant. Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](./feature-details/working-with-certificates.md).
 
@@ -81,7 +81,7 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
     </behaviors>
     ```
 
-5. Lorsque vous configurez le client, spécifiez le comportement en définissant l'attribut `behaviorConfiguration` de l'élément `<endpoint>`, comme illustré dans le code suivant. L’élément de point de terminaison est un enfant de l’élément [\<client >](../configure-apps/file-schema/wcf/client.md) . Spécifiez également le nom de la configuration de liaison en affectant à l’attribut `bindingConfiguration` la liaison pour le client. Si vous utilisez un fichier de configuration généré, le nom de la liaison est généré automatiquement. Dans cet exemple, le nom est `"tcpBindingWithCredential"`.
+5. Lorsque vous configurez le client, spécifiez le comportement en définissant l'attribut `behaviorConfiguration` de l'élément `<endpoint>`, comme illustré dans le code suivant. L’élément de point de terminaison est un enfant de l’élément de [> du client\<](../configure-apps/file-schema/wcf/client.md) . Spécifiez également le nom de la configuration de liaison en affectant à l’attribut `bindingConfiguration` la liaison pour le client. Si vous utilisez un fichier de configuration généré, le nom de la liaison est généré automatiquement. Dans cet exemple, le nom est `"tcpBindingWithCredential"`.
 
     ```xml
     <client>
@@ -106,9 +106,9 @@ Cet exemple définit le mode de sécurité sur le mode Transport et définit la 
 - [Utilisation des certificats](./feature-details/working-with-certificates.md)
 - [Guide pratique pour créer un client](how-to-create-a-wcf-client.md)
 - [\<netTcpBinding>](../configure-apps/file-schema/wcf/nettcpbinding.md)
-- [@no__t-> de la ré](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
-- [@no__t 1Message >](../configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
-- [@no__t 1behavior >](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
-- [@no__t 1behaviors >](../configure-apps/file-schema/wcf/behaviors.md)
-- [@no__t 1clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)
-- [@no__t 1clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md)
+- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<message>](../configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
+- [\<behavior>](../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
+- [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md)
+- [\<clientCertificate>](../configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)
+- [\<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md)

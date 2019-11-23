@@ -1,20 +1,20 @@
 ---
-title: Spécification du langage Visual Basic
+title: Spécification du langage
 ms.date: 08/02/2017
 helpviewer_keywords:
 - resources [Visual Basic], specifications
 - Visual Basic code, specifications
 - specifications, Visual Basic
 ms.assetid: 42c30017-19d0-442e-87a2-850b66ddc3df
-ms.openlocfilehash: 399bc15f3249c99f1c94338869e77befc8c26015
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0df3f0a49d1dc84f5a6f3218b23f20ce3d43a1fc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766426"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352864"
 ---
 # <a name="visual-basic-language-specification"></a>Spécification du langage Visual Basic
-La spécification du langage Visual Basic est la source faisant autoritée pour obtenir des réponses à toutes les questions sur la syntaxe et la grammaire de Visual Basic. Il contient des informations détaillées sur le langage, y compris de nombreux points non couverts dans la documentation de référence de Visual Basic.  
+The Visual Basic Language Specification is the authoritative source for answers to all questions about Visual Basic grammar and syntax. It contains detailed information about the language, including many points not covered in the Visual Basic reference documentation.  
   
  La spécification est disponible sur le [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=188623).  
   
@@ -27,4 +27,4 @@ Les problèmes sur la spécification doivent être créés dans le dépôt [dotn
 - [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
 
 >[!div class="step-by-step"]
->[Next](../../../../_vblang/spec/introduction.md)
+>[Suivant](../../../../_vblang/spec/introduction.md)

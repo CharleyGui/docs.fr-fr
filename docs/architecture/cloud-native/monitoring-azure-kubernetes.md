@@ -1,6 +1,6 @@
 ---
-title: Surveillance dans les services Azure Kubernetes
-description: Surveillance dans les services Azure Kubernetes
+title: Supervision dans Azure Kubernetes Services
+description: Supervision dans Azure Kubernetes Services
 ms.date: 09/23/2019
 ms.openlocfilehash: 71192601eac2169db188b25da3dc91b71b860903
 ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71184987"
 ---
-# <a name="monitoring-in-azure-kubernetes-services"></a>Surveillance dans les services Azure Kubernetes
+# <a name="monitoring-in-azure-kubernetes-services"></a>Supervision dans Azure Kubernetes Services
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -28,15 +28,15 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 Cette opération installe Elasticsearch sur le cluster et cible l’envoi de tous les journaux de cluster vers ce dernier.
 
-![Exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés](./media/kibana-dashboard.png)
-à partir de la**figure 7-6**de Kubernetes. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
+![un exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés à partir de Kubernetes](./media/kibana-dashboard.png)
+**Figure 7-6**. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
 
 ## <a name="azure-container-monitoring"></a>Surveillance de conteneur Azure
 
 Azure Container Monitoring prend en charge la consommation des journaux à partir de non seulement Kubernetes mais également d’autres moteurs d’orchestration tels que DC/OS, Dockr essaim et Red Hat OpenShift.
 
-![Utilisation des journaux de divers conteneurs](./media/containers-diagram.png)
-**figure 7-7**.  Utilisation des journaux de différents conteneurs
+![consomment les journaux de divers conteneurs](./media/containers-diagram.png)
+la **Figure 7-7**.  Utilisation des journaux de différents conteneurs
 
 Les informations de journal et de métrique sont collectées non seulement à partir des conteneurs qui s’exécutent dans le cluster, mais également des hôtes de cluster eux-mêmes. Il permet de mettre en corrélation les informations de journalisation des deux, ce qui facilite grandement le suivi d’une erreur.
 
@@ -44,8 +44,8 @@ L’installation des collecteurs de journaux diffère sur les clusters [Windows]
 
 Quel que soit le système d’exploitation ou Orchestrator exécutant le démon Azure Monitor, les informations du journal sont transférées aux mêmes outils de Azure Monitor que ceux qui sont familiers aux utilisateurs. Cela garantit une expérience parallèle dans les environnements qui mélangent différentes sources de journaux, comme un environnement hybride Kubernetes/Azure Functions.
 
-![Exemple de tableau de bord présentant les informations de journalisation et de métrique d’un certain nombre de conteneurs en cours d’exécution. **Figure 7-8**. ](./media/containers-dashboard.png)
- Exemple de tableau de bord présentant les informations de journalisation et de métrique d’un certain nombre de conteneurs en cours d’exécution.
+![un exemple de tableau de bord présentant les informations de journalisation et de métrique d’un certain nombre de conteneurs en cours d’exécution.](./media/containers-dashboard.png)
+**Figure 7-8**. Exemple de tableau de bord présentant les informations de journalisation et de métrique d’un certain nombre de conteneurs en cours d’exécution.
 
 ## <a name="logfinalize"></a>Log. Finalize ()
 

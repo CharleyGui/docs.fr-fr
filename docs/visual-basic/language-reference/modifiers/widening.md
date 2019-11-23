@@ -1,5 +1,5 @@
 ---
-title: Widening (Visual Basic)
+title: Widening
 ms.date: 07/20/2015
 f1_keywords:
 - vb.widening
@@ -10,35 +10,35 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-ms.openlocfilehash: d7d43d4f5f931881d5c8b663c719fe7f92559799
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c9aa78549ca6e41c9fe54c12e0aaec8e7cc30cb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778662"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347830"
 ---
 # <a name="widening-visual-basic"></a>Widening (Visual Basic)
-Indique qu’un opérateur de conversion (`CType`) convertit une classe ou structure à un type qui peut contenir toutes les valeurs possibles de la classe ou la structure d’origine.  
+Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.  
   
-## <a name="converting-with-the-widening-keyword"></a>Conversion avec le mot clé étendu  
- La procédure de conversion doit spécifier `Public Shared` outre `Widening`.  
+## <a name="converting-with-the-widening-keyword"></a>Converting with the Widening Keyword  
+ The conversion procedure must specify `Public Shared` in addition to `Widening`.  
   
- Les conversions étendues aboutissent toujours en cours d’exécution et sans jamais aucune perte de données. Sont des exemples `Single` à `Double`, `Char` à `String`et un type dérivé à son type de base. Cette dernière conversion est étendue, car le type dérivé contient tous les membres du type de base et est donc une instance du type de base.  
+ Widening conversions always succeed at run time and never incur data loss. Examples are `Single` to `Double`, `Char` to `String`, and a derived type to its base type. This last conversion is widening because the derived type contains all the members of the base type and thus is an instance of the base type.  
   
- Le code de consommation n’a pas d’utiliser `CType` pour les conversions étendues, même si `Option Strict` est `On`.  
+ The consuming code does not have to use `CType` for widening conversions, even if `Option Strict` is `On`.  
   
- Le `Widening` mot clé peut être utilisé dans ce contexte :  
+ The `Widening` keyword can be used in this context:  
   
  [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- Par exemple des définitions d’étendues et restrictives des opérateurs de conversion, consultez [Comment : Définir un opérateur de Conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ For example definitions of widening and narrowing conversion operators, see [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
 - [Conversions étendues et restrictives](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
-- [Guide pratique pour Définir un opérateur](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Guide pratique : définir un opérateur](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
 - [CType (fonction)](../../../visual-basic/language-reference/functions/ctype-function.md)
 - [Option Strict (instruction)](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Guide pratique pour Définir un opérateur de Conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Guide pratique : définir un opérateur de conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

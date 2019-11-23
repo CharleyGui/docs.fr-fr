@@ -61,7 +61,7 @@ Les conteneurs étant immuables par conception, vous n’avez jamais à vous sou
 
 Bien que les applications monolithiques puissent tirer parti de Docker, nous n’en évoquons que les avantages les plus évidents. Les principaux avantages de la gestion des conteneurs viennent de la possibilité de déployer avec des orchestrateurs de conteneurs qui gèrent les différentes instances et le cycle de vie de chaque instance de conteneur. La décomposition de l’application monolithique en sous-systèmes qui peuvent être mis à l’échelle, développés et déployés individuellement est votre point d’entrée dans le domaine des microservices.
 
-Pour en savoir plus sur la façon de développer des applications monolithiques avec des conteneurs et sur la façon dont vous pouvez moderniser vos applications, vous pouvez lire ce guide Microsoft supplémentaire, [moderniser les applications .NET existantes avec les conteneurs Cloud et Windows Azure](../../modernize-with-azure-containers/index.md). vous pouvez également télécharger au format PDF à partir de <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Pour en savoir plus sur la façon de « soulever et déplacer » des applications monolithiques avec des conteneurs et sur la façon de moderniser vos applications, vous pouvez lire ce guide Microsoft supplémentaire, [moderniser les applications .NET existantes avec des conteneurs Cloud et Windows Azure](../../modernize-with-azure-containers/index.md), que vous pouvez également télécharger au format PDF à partir de <https://aka.ms/LiftAndShiftWithContainersEbook>.
 
 ## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publier une application conteneur Docker unique sur Azure App Service
 

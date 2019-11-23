@@ -30,7 +30,7 @@ HRESULT DynamicMethodJITCompilationFinished(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
 [in] `functionId`  
 Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
 
@@ -40,14 +40,14 @@ Valeur qui indique si la compilation JIT a réussi.
 [in] `fIsSafeToBlock`   
 `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
 
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
 
 Ce rappel est déclenché chaque fois que la compilation JIT d’une méthode dynamique est terminée. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
 > les valeurs `functionId` ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

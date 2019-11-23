@@ -17,11 +17,11 @@ ms.locfileid: "72291150"
 
 Une application ASP.NET Core est basée sur une série d’intergiciels (middleware). Les intergiciels sont des gestionnaires, qui sont organisés en pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une application éblouissante.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Le pipeline de requête ASP.NET Core est composé d’une séquence de délégués de requête, appelés l’un après l’autre. Le diagramme suivant illustre le concept. Le thread d’exécution suit les flèches noires.
 
-![Canaux](media/middleware/request-delegate-pipeline.png)
+![pipeline](media/middleware/request-delegate-pipeline.png)
 
 Le diagramme précédent n’a pas de concept d’événements de cycle de vie. Ce concept est fondamental pour gérer les demandes de ASP.NET Web Forms. Ce système facilite la définition du processus en cours et permet l’insertion d’un intergiciel (middleware) à tout moment. L’intergiciel s’exécute dans l’ordre dans lequel il est ajouté au pipeline de requête. Elles sont également ajoutées dans le code au lieu des fichiers de configuration, généralement dans *Startup.cs*.
 
@@ -39,17 +39,17 @@ Le tableau suivant répertorie les intergiciels et composants de remplacement da
 |-----------------------|-----------------------------|-------------------|
 |Erreurs HTTP            |`CustomErrorModule`          |[Middleware (intergiciel) de pages de codes d’état](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |Document par défaut       |`DefaultDocumentModule`      |[Middleware de fichiers par défaut](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
-|exploration des répertoires     |`DirectoryListingModule`     |[Middleware d’exploration des répertoires](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
+|Exploration des répertoires     |`DirectoryListingModule`     |[Middleware d’exploration des répertoires](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
 |Compression dynamique    |`DynamicCompressionModule`   |[Intergiciel (middleware) de compression des réponses](/aspnet/core/performance/response-compression)|
 |Suivi des demandes ayant échoué|`FailedRequestsTracingModule`|[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index#tracesource-provider)|
 |Mise en cache de fichiers           |`FileCacheModule`            |[Intergiciel de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
 |Mise en cache HTTP           |`HttpCacheModule`            |[Intergiciel de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
 |Journalisation HTTP           |`HttpLoggingModule`          |[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index)|
-|Redirection HTTP       |`HttpRedirectionModule`      |[Intergiciel de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
-|ISAPI (filtres)          |`IsapiFilterModule`          |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|
+|Redirection HTTP       |`HttpRedirectionModule`      |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
+|ISAPI, filtres          |`IsapiFilterModule`          |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|
 |ISAPI                  |`IsapiModule`                |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|
 |Filtrage des demandes      |`RequestFilteringModule`     |[Intergiciel (middleware) de réécriture d’URL IRule](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
-|Réécriture d’URL&#8224;   |`RewriteModule`              |[Intergiciel de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
+|Réécriture d’URL&#8224;   |`RewriteModule`              |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
 |Compression statique     |`StaticCompressionModule`    |[Intergiciel (middleware) de compression des réponses](/aspnet/core/performance/response-compression)|
 |Contenu statique         |`StaticFileModule`           |[Middleware de fichiers statiques](/aspnet/core/fundamentals/static-files)|
 |Autorisation d’URL      |`UrlAuthorizationModule`     |[Identité ASP.NET Core](/aspnet/core/security/authentication/identity)|

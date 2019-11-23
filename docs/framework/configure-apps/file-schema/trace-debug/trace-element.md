@@ -17,12 +17,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699182"
 ---
-# <a name="trace-element"></a>Élément @no__t 0trace >
+# <a name="trace-element"></a>Élément de > de trace \<
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<trace >**  
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<de trace** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
   
 |Attribut|Description|  
 |---------------|-----------------|  
@@ -71,7 +71,7 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<trace>` pour ajouter l’écouteur `MyListener` à la collection `Listeners`. `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L’attribut `useGlobalLock` a la valeur `false`, ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L’attribut `autoflush` a la valeur `true`, ce qui a pour effet que l’écouteur de la trace écrit dans le fichier, que la méthode <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> soit appelée ou non. L’attribut `indentsize` a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la méthode <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> est appelée.  
+ L’exemple suivant montre comment utiliser l’élément `<trace>` pour ajouter l’écouteur `MyListener` à la collection de `Listeners`. `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. L’attribut `useGlobalLock` est défini sur `false`, ce qui empêche l’utilisation du verrou global si l’écouteur de la trace est thread-safe. L’attribut `autoflush` est défini sur `true`, ce qui entraîne l’écriture de l’écouteur de la trace dans le fichier, que la méthode <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> soit appelée ou non. L’attribut `indentsize` a la valeur 0 (zéro), ce qui amène l’écouteur à mettre en retrait les espaces nuls lorsque la méthode <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> est appelée.  
   
 ```xml  
 <configuration>  

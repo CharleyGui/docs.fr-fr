@@ -32,7 +32,7 @@ Vous pouvez aussi créer votre propre image Docker si souhaitez utiliser une aut
 
 Au moment d’ajouter le nom de l’image à votre fichier Dockerfile, vous pouvez sélectionner le système d’exploitation et la version en fonction de la balise que vous utilisez, comme dans les exemples suivants :
 
-| Image | Comments |
+| Image | Commentaires |
 |-------|----------|
 | mcr.microsoft.com/dotnet/core/runtime:2.2 | Architecture multi-architecture .NET Core 2,2 : prend en charge Linux et Windows nano Server en fonction de l’hôte de la station d’accueil. |
 | mcr.microsoft.com/dotnet/core/aspnet:2.2 | Architecture multi-architecture ASP.NET Core 2,2 : prend en charge Linux et Windows nano Server en fonction de l’hôte de l’ordinateur de la station d’accueil. <br/> L’image aspnetcore a quelques optimisations pour ASP.NET Core. |

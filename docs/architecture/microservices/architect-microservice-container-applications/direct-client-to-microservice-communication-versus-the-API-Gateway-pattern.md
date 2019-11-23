@@ -132,7 +132,7 @@ En plus de répondre à vos besoins de passerelle API, le service [Gestion des A
 
 **Figure 4-14**. Utilisation de Gestion des API Azure pour votre passerelle d’API
 
-La gestion des API Azure résout vos besoins en matière de passerelle API et de gestion, comme la journalisation, la sécurité, le contrôle, etc. Dans ce cas, lors de l’utilisation d’un produit comme gestion des API Azure, le fait que vous ayez une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins » C# , ce qui signifie que vous n’implémentez pas de code personnalisé qui pourrait évoluer vers un composant monolithique.
+La gestion des API Azure résout vos besoins en matière de passerelle API et de gestion, comme la journalisation, la sécurité, le contrôle, etc. Dans ce cas, lors de l’utilisation d’un produit comme gestion des API Azure, le fait que vous puissiez avoir une seule passerelle d’API n’est pas si risqué, car ces types de passerelles d’API sont « plus fins C# », ce qui signifie que vous n’implémentez pas de code personnalisé qui pourrait évoluer vers un composant monolithique.
 
 Les produits Passerelle d’API agissent généralement comme un proxy inversé pour la communication en entrée, où vous pouvez aussi filtrer les API des microservices internes et appliquer une autorisation aux API publiées dans ce niveau unique.
 
@@ -146,7 +146,7 @@ Dans ce guide et dans l’exemple d’application de référence (eShopOnContain
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle API .NET Core open source conçue spécifiquement pour une architecture de microservices qui nécessite des points d’entrée unifiés dans son système. Elle est légère, rapide, évolutive et fournit le routage et l’authentification, parmi de nombreuses autres fonctionnalités.
 
-La principale raison de choisir Ocelot pour l' [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est que Ocelot est une passerelle d’API légère .net Core que vous pouvez déployer dans le même environnement de déploiement d’application que celui dans lequel vous déployez vos microservices/ conteneurs, tels qu’un hôte de station d’accueil, Kubernetes, etc. Et étant donné qu’il est basé sur .NET Core, il s’agit d’une plateforme multiplateforme qui vous permet de déployer sur Linux ou Windows.
+La principale raison de choisir Ocelot pour l' [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est que Ocelot est une passerelle d’API légère .net Core que vous pouvez déployer dans le même environnement de déploiement d’application que celui dans lequel vous déployez vos microservices/conteneurs, par exemple un hôte de station d’accueil, Kubernetes, etc. Et étant donné qu’il est basé sur .NET Core, il s’agit d’une plateforme multiplateforme qui vous permet de déployer sur Linux ou Windows.
 
 Les diagrammes précédents montrant des passerelles d’API personnalisée en cours d’exécution dans les conteneurs expliquent précisément comment vous pouvez également exécuter Ocelot dans un conteneur et dans une application basée sur un microservice.
 
@@ -170,7 +170,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Chris Richardson. Modèle : passerelle API/backend pour les  \ frontaux**
+- **Chris Richardson. Modèle : passerelle API/backend pour les \ frontaux**
   <https://microservices.io/patterns/apigateway.html>
 
 - **Modèle de passerelle API** \

@@ -22,7 +22,7 @@ L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du 
 > [!IMPORTANT]
 > Vous devez référencer des services uniquement à partir d’une source approuvée. L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
 <!-- markdownlint-disable MD025 -->
 
@@ -179,6 +179,6 @@ Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub]
 
 - Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md).
 
-## <a name="information"></a>Informations
+## <a name="information"></a>Information
 
 - [Package NuGet dotnet-svcutil](https://nuget.org/packages/dotnet-svcutil)

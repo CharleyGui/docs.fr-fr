@@ -19,15 +19,15 @@ La table de décision ci-dessous vous indique s’il convient d’utiliser .NET 
 | Architecture/type d’application | Conteneurs Linux | Conteneurs Windows |
 |-------------------------|------------------|--------------------|
 | Microservices sur des conteneurs | .NET Core | .NET Core |
-| Application monolithique | .NET Core | .NET Framework <br/> .NET Core |
+| Application monolithique | .NET Core | .NET Framework <br/> .NET Core |
 | Performances et scalabilité de pointe | .NET Core | .NET Core |
-| Migration d’application existante Windows Server (« brown-field ») vers des conteneurs | -- | .NET Framework |
+| Migration d’application existante Windows Server (« brown-field ») vers des conteneurs | -- | .NET Framework |
 | Développement basé sur un nouveau conteneur (« green-field ») | .NET Core | .NET Core |
-| ASP.NET Core | .NET Core | .NET Core (recommandé) <br/> .NET Framework |
-| ASP.NET 4 (MVC 5, API web 2 et Web Forms) | -- | .NET Framework |
-| Services SignalR | .NET Core 2.1 ou version ultérieure | .NET Framework <br/> .NET Core 2.1 ou version ultérieure |
+| ASP.NET Core | .NET Core | .NET Core (recommandé) <br/> .NET Framework |
+| ASP.NET 4 (MVC 5, API web 2 et Web Forms) | -- | .NET Framework |
+| Services SignalR | .NET Core 2.1 ou version ultérieure | .NET Framework <br/> .NET Core 2.1 ou version ultérieure |
 | WCF, WF et autres frameworks existants | WCF dans .NET Core (bibliothèque cliente uniquement) | .NET Framework <br/> WCF dans .NET Core (bibliothèque cliente uniquement) |
-| Consommation des services Azure | .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) | .NET Framework <br/> .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) |
+| Consommation des services Azure | .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) | .NET Framework <br/> .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) |
 
 >[!div class="step-by-step"]
 >[Précédent](net-framework-container-scenarios.md)

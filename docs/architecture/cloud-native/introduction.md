@@ -40,8 +40,8 @@ Tout est incorrect. Les monolithiques offrent des avantages distincts. Par exemp
 
 - build
 - test
-- Déployer
-- Résolution
+- déployer
+- résolution
 - mise à l'échelle
 
 De nombreuses applications qui existent aujourd’hui ont été créées en tant que monolithes. L’application est un accès et continue à évoluer, à l’itération après l’itération, et à ajouter de plus en plus de fonctionnalités.

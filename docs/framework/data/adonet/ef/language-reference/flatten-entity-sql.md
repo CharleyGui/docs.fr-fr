@@ -22,13 +22,13 @@ FLATTEN ( collection )
  `collection`  
  Expression valide qui retourne une collection de collections de valeurs à aplanir en une seule.  
   
-## <a name="remarks"></a>Notes  
- `FLATTEN` est l'un des opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] . Tous les opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sont évalués de gauche à droite. Pour plus d’informations sur les opérateurs [!INCLUDE[esql](../../../../../../includes/esql-md.md)] définis, consultez [except](except-entity-sql.md).  
+## <a name="remarks"></a>Remarques  
+ `FLATTEN` est l'un des opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] . Tous les opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sont évalués de gauche à droite. Pour plus d’informations sur les opérateurs [ définis, consultez ](except-entity-sql.md)except[!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur `FLATTEN` pour convertir une collection de collections en collection plane. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats StructuralType @ no__t-0.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

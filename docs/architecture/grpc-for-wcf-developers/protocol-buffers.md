@@ -1,14 +1,13 @@
 ---
 title: Mémoires tampons de protocole-gRPC pour les développeurs WCF
 description: Présentation du format de câble des mémoires tampons de protocole utilisé pour la mise en réseau gRPC.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 6b47c7f3576134d8ee44f79e329cc4879661e6c3
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: dbe8cb43475cfeec19051daf68452ef86269372f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846301"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967292"
 ---
 # <a name="protocol-buffers"></a>Mémoires tampons de protocole
 

@@ -80,19 +80,19 @@ Une fois que vous avez configuré votre compte Azure et votre processus CI/CD, l
 
 **Figure 10-3.** Flux de travail pas à pas pour la création d’applications ASP.NET Core et leur hébergement dans Azure
 
-#### <a name="step-1-local-dev-environment-inner-loop"></a>Étape 1. Boucle interne d’environnement de développement local
+#### <a name="step-1-local-dev-environment-inner-loop"></a>Étape 1. Boucle interne d’environnement de développement local
 
 Le développement d’une application ASP.NET Core pour le déploiement sur Azure ne diffère en aucune manière d’un développement ordinaire. Utilisez l’environnement de développement local avec lequel vous êtes à l’aise, que ce soit Visual Studio 2017 ou l’interface CLI dotnet et Visual Studio Code ou votre éditeur favori. Vous pouvez écrire du code, exécuter et déboguer vos modifications, exécuter des tests automatisés et effectuer des validations locales dans le contrôle de code source jusqu’à ce que vous soyez prêt à envoyer vos modifications dans votre référentiel de contrôle de code source partagée.
 
-#### <a name="step-2-application-code-repository"></a>Étape 2. Référentiel de code d’application
+#### <a name="step-2-application-code-repository"></a>Étape 2. Référentiel de code d’application
 
 Chaque fois que vous êtes prêt à partager votre code avec votre équipe, vous devez envoyer vos modifications de votre référentiel de code source local vers le référentiel de code source partagé de votre équipe. Si vous travaillez dans une branche personnalisée, cette étape nécessite généralement la fusion de votre code dans une branche partagée (par exemple au moyen d’une [demande de tirage (pull request)](https://docs.microsoft.com/azure/devops/git/pull-requests)).
 
-#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Étape 3. Serveur de builds : intégration continue. Générer, tester, empaqueter
+#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Étape 3. Serveur de builds : Intégration continue. Générer, tester, empaqueter
 
 Une nouvelle build est déclenchée sur le serveur de builds chaque fois qu’une nouvelle validation est effectuée dans le référentiel de code d’application partagé. Dans le cadre du processus CI, cette build doit compiler entièrement l’application et exécuter des tests automatisés afin de confirmer que tout fonctionne comme prévu. Le résultat final du processus CI doit être une version empaquetée de l’application web, prête pour le déploiement.
 
-#### <a name="step-4-build-server-continuous-delivery"></a>Étape 4. Serveur de builds : livraison continue
+#### <a name="step-4-build-server-continuous-delivery"></a>Étape 4. Serveur de builds : Livraison continue
 
 Une fois qu’une build a réussi, le processus CD prend en charge les artefacts de build générés, qui comprennent notamment un package de déploiement web. Le serveur de builds déploie ce package sur Azure App Service, en remplaçant tout service existant par celui qui vient d’être créé. En général, cette étape cible un environnement de préproduction, mais certaines applications sont déployées directement en production par le biais d’un processus CD.
 

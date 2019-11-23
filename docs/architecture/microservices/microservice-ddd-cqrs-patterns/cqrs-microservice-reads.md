@@ -2,12 +2,12 @@
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 064abd084ea6b99229f995f8ca899a99b69b7bc2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 235b0e471a17e2a37a883a111cf499b7837f3ea1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740020"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972085"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
@@ -189,7 +189,7 @@ L’image ci-dessus présente des exemples de valeurs basés sur les types ViewM
  <https://github.com/StackExchange/dapper-dot-net>
 
 - **Julie Lerman. Points de données-dapper, Entity Framework et applications hybrides (article MSDN Magazine)**  
-  <https://msdn.microsoft.com/magazine/mt703432>
+  <https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps>
 
 - **Pages d’aide sur l’API web ASP.NET Core avec Swagger**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>

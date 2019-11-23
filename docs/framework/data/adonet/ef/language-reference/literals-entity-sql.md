@@ -31,7 +31,7 @@ Cette rubrique décrit la prise en charge des littéraux dans [!INCLUDE[esql](..
 ## <a name="float-double"></a>Float, Double  
  Un nombre à virgule flottante double précision est une série de caractères numériques entrecoupée d'une virgule (,) et suivie d'un exposant. Un nombre à virgule flottante simple précision (ou float) est une syntaxe de nombre à virgule flottante double précision suivie d'un f minuscule.  
   
-## <a name="string"></a>Chaîne  
+## <a name="string"></a>String  
  Une chaîne (string) est une série de caractères figurant entre guillemets. Les guillemets peuvent être soit simples (`'`) tous les deux, soit doubles (") tous les deux. Les littéraux de chaîne de caractères peuvent être au format Unicode ou non. Pour déclarer un littéral de chaîne de caractères comme étant au format Unicode, faites-le précéder d'un N majuscule. Par défaut, les littéraux de chaîne de caractères ne sont pas au format Unicode. Aucun espace ne doit figurer entre le N et la charge utile du littéral de chaîne, et le N doit être majuscule.  
   
 ```sql  
@@ -45,7 +45,7 @@ N"This is a string!"
 ## <a name="datetime"></a>DateTime  
  Un littéral de date/heure (datetime) est indépendant des paramètres régionaux. Il est composé d'une partie date et d'une partie heure. Ces deux parties sont obligatoires et il n'existe pas de valeur par défaut.  
   
- La partie de date doit avoir le format suivant : `YYYY` @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4, où `YYYY` est une valeur d’année à quatre chiffres comprise entre 0001 et 9999, `MM` est le mois de 1 à 12 et `DD` est la valeur de jour valide pour le mois donné `MM`.  
+ La partie date doit avoir le format : `YYYY`-`MM`-`DD`, où `YYYY` est une valeur d’année à quatre chiffres comprise entre 0001 et 9999, `MM` est le mois compris entre 1 et 12 et `DD` est la valeur de jour valide pour le mois donné `MM`.  
   
  La partie heure doit avoir le format : `HH`:`MM`[:`SS`[.fffffff]], où `HH` est la valeur des heures comprise entre 0 et 23 inclus, `MM` est la valeur des minutes comprise entre 0 et 59 inclus, `SS` est la valeur des secondes comprise entre 0 et 59 inclus, et fffffff est la valeur des fractions de seconde comprise entre 0 et 9999999. Toutes les plages de valeurs sont inclusives. Les fractions de secondes sont facultatives. Les secondes sont facultatives à moins que les fractions de secondes soient spécifiées ; auquel cas, les secondes sont requises. Lorsque les secondes ou les fractions de secondes ne sont pas spécifiées, la valeur par défaut zéro est utilisée.  
   
@@ -91,8 +91,8 @@ BINARY    '0f0f0f0F0F0F0F0F0F0F'
 X'' –- empty binary string  
 ```  
   
-## <a name="guid"></a>GUID  
- Un littéral `GUID` représente un identificateur global unique. Il s’agit d’une séquence formée par le mot clé `GUID`, suivie de chiffres hexadécimaux sous la forme « format de *Registre* : 8-4-4-4-12 » entre guillemets simples. Les chiffres hexadécimaux ne respectent pas la casse.  
+## <a name="guid"></a>Guid  
+ Un littéral `GUID` représente un identificateur global unique. Il s’agit d’une séquence formée par le mot clé `GUID` suivi de chiffres hexadécimaux sous la forme « format de *Registre* : 8-4-4-4-12 » entre guillemets simples. Les chiffres hexadécimaux ne respectent pas la casse.  
   
  Le symbole GUID et la charge utile du littéral peuvent être séparés d'autant d'espaces que nécessaire, mais pas de nouvelles lignes.  
   

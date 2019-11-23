@@ -29,7 +29,7 @@ Décrit comment créer manuellement un wrapper COM dans du code source managé.
  [Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)  
  Décrit comment migrer du code DCOM managé vers WCF pour obtenir la solution la plus sécurisée.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Types de données COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
  Fournit les types de données managés et non managés correspondants.  
   

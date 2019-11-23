@@ -1,14 +1,13 @@
 ---
 title: Énumérations Protobuf-gRPC pour les développeurs WCF
 description: Découvrez comment déclarer et utiliser des énumérations dans Protobuf.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: f18196f54caba824d7101782a88cf3bf699560d5
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 4ea4d03bede2a9ebfd1f2c3ee56f299e918800e9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846344"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971573"
 ---
 # <a name="protobuf-enumerations"></a>Énumérations Protobuf
 
@@ -39,7 +38,7 @@ public enum AccountStatus
 }
 ```
 
-Les définitions d’énumération Protobuf **doivent** avoir une constante zéro comme premier champ. Comme dans C#, vous pouvez déclarer plusieurs champs avec la même valeur, mais vous devez activer explicitement cette option à l’aide de l’option`allow_alias`dans l’énumération :
+Les définitions d’énumération Protobuf **doivent** avoir une constante zéro comme premier champ. Comme dans C#, vous pouvez déclarer plusieurs champs avec la même valeur, mais vous devez activer explicitement cette option à l’aide de l’option `allow_alias` dans l’énumération :
 
 ```protobuf
 enum AccountStatus {

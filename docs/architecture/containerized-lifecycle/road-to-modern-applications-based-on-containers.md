@@ -21,7 +21,7 @@ Ce livre fait partie d’une suite de guides Microsoft qui couvrent la plupart d
 
 La liste ci-dessous recense d’autres livres électroniques Microsoft ayant trait aux conteneurs Docker :
 
-- **Microservices .net : architecture pour les applications .net en conteneur**  \
+- **Microservices .net : architecture pour les applications .net en conteneur** \
   [https://docs.microsoft.com/dotnet/architecture/microservices/](../microservices/index.md)
 
 - **Moderniser des applications .NET existantes avec le cloud Azure et des conteneurs Windows** \

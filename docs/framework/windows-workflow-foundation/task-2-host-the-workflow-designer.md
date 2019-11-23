@@ -1,5 +1,5 @@
 ---
-title: 'Tâche 2 : héberger le concepteur de flux de travail'
+title: 'Tâche 2 : héberger le Workflow Designer'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
 ms.openlocfilehash: 15657ad79632812d3802e4da22b9ef297d08f932
@@ -9,15 +9,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72180263"
 ---
-# <a name="task-2-host-the-workflow-designer"></a>Tâche 2 : héberger le concepteur de flux de travail
+# <a name="task-2-host-the-workflow-designer"></a>Tâche 2 : héberger le Workflow Designer
 
-Cette rubrique décrit la procédure d’hébergement d’une instance de la [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] dans une application Windows Presentation Foundation (WPF).
+Cette rubrique décrit la procédure d’hébergement d’une instance du [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] dans une application Windows Presentation Foundation (WPF).
 
-La procédure configure le contrôle **Grid** qui contient le concepteur, crée par programmation une instance de l' <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une activité <xref:System.Activities.Statements.Sequence> par défaut, inscrit les métadonnées du concepteur pour fournir une prise en charge du concepteur pour tous les les activités et hébergent le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans l’application WPF.
+La procédure configure le contrôle de **grille** qui contient le concepteur, crée par programmation une instance du <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une activité de <xref:System.Activities.Statements.Sequence> par défaut, inscrit les métadonnées du concepteur pour fournir la prise en charge du concepteur pour toutes les activités intégrées et héberge les [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans l’application WPF.
 
 ## <a name="to-host-the-workflow-designer"></a>Pour héberger le concepteur de workflow
 
-1. Ouvrez le projet HostingApplication que vous avez créé dans [Task 1 : Créez un nouveau Windows Presentation Foundation application @ no__t-0.
+1. Ouvrez le projet HostingApplication que vous avez créé dans [tâche 1 : créer une application de Windows Presentation Foundation](task-1-create-a-new-wpf-app.md).
 
 2. Pour faciliter l'utilisation du [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], ajustez la taille de la fenêtre. Pour ce faire, sélectionnez **MainWindow** dans le concepteur, appuyez sur F4 pour afficher la fenêtre **Propriétés** , puis, dans la section **disposition** , affectez à la **largeur** la valeur 600 et à la **hauteur** la valeur 350.
 
@@ -25,9 +25,9 @@ La procédure configure le contrôle **Grid** qui contient le concepteur, crée 
 
 4. Dans la fenêtre **Propriétés** , cliquez sur le bouton de sélection ( **...** ) en regard de la propriété `ColumnDefinitions` pour ouvrir la boîte de dialogue **éditeur de collections** .
 
-5. Dans la boîte de dialogue **éditeur de collection** , cliquez trois fois sur le bouton **Ajouter** pour insérer trois colonnes dans la mise en page. La première colonne contiendra la **boîte à outils**, la deuxième hébergera le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] et la troisième colonne sera utilisée pour l’inspecteur de propriété.
+5. Dans la boîte de dialogue **éditeur de collection** , cliquez trois fois sur le bouton **Ajouter** pour insérer trois colonnes dans la mise en page. La première colonne contient la **boîte à outils**, la deuxième héberge la [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], et la troisième colonne est utilisée pour l’inspecteur de propriété.
 
-6. Affectez à la propriété `Width` de la colonne du milieu la valeur « 4 * ».
+6. Affectez à la propriété `Width` de la colonne Middle la valeur « 4 * ».
 
 7. Cliquez sur **OK** pour enregistrer les modifications. Le code XAML suivant est ajouté à votre fichier *MainWindow. Xaml* :
 
@@ -69,7 +69,7 @@ La procédure configure le contrôle **Grid** qui contient le concepteur, crée 
         }
         ```
 
-    3. Ajoutez la méthode `AddDesigner` suivante à la classe `MainWindow`. L’implémentation crée une instance du <xref:System.Activities.Presentation.WorkflowDesigner>, lui ajoute une activité <xref:System.Activities.Statements.Sequence> et la place dans la colonne centrale de la **grille**grid1.
+    3. Ajoutez la méthode `AddDesigner` suivante à la classe `MainWindow`. L’implémentation crée une instance du <xref:System.Activities.Presentation.WorkflowDesigner>, y ajoute une activité de <xref:System.Activities.Statements.Sequence> et la place dans la colonne centrale de la **grille**grid1.
 
         ```csharp
         private void AddDesigner()
@@ -98,7 +98,7 @@ La procédure configure le contrôle **Grid** qui contient le concepteur, crée 
         }
         ```
 
-        Pour plus d’informations sur l’inscription des concepteurs d’activités, consultez [How à : Créez un concepteur d’activités personnalisées @ no__t-0.
+        Pour plus d’informations sur l’inscription des concepteurs d’activités, consultez [Comment : créer un concepteur d’activités personnalisées](how-to-create-a-custom-activity-designer.md).
 
     5. Dans le constructeur de classes `MainWindow`, ajoutez des appels aux méthodes précédemment déclarées pour enregistrer les métadonnées dans le but de la prise en charge du concepteur et pour créer l'objet <xref:System.Activities.Presentation.WorkflowDesigner>.
 
@@ -120,10 +120,10 @@ La procédure configure le contrôle **Grid** qui contient le concepteur, crée 
 
 9. Appuyez sur <kbd>F5</kbd> pour générer et exécuter la solution.
 
-10. Voir @no__t 0Task 3 : Créez les volets boîte à outils et PropertyGrid @ no__t-0 pour savoir comment ajouter la prise en charge de la **boîte à outils** et de **PropertyGrid** à votre concepteur de workflow réhébergé.
+10. Consultez [tâche 3 : créer les volets boîte à outils et PropertyGrid](task-3-create-the-toolbox-and-propertygrid-panes.md) pour savoir comment ajouter la prise en charge de la **boîte à outils** et de **PropertyGrid** à votre concepteur de workflow réhébergé.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Réhébergement du concepteur de flux de travail](rehosting-the-workflow-designer.md)
-- @no__t 0Task 1 : Créer une application de Windows Presentation Foundation @ no__t-0
-- @no__t 0Task 3 : Créer les volets boîte à outils et PropertyGrid @ no__t-0
+- [Tâche 1 : Créer une nouvelle application Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Tâche 3 : Créer les volets Toolbox et PropertyGrid](task-3-create-the-toolbox-and-propertygrid-panes.md)

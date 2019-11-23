@@ -19,7 +19,7 @@ ms.locfileid: "72004035"
 # <a name="annotations-overview"></a>Vue d'ensemble des annotations
 Écrire des notes ou des commentaires sur des documents papier est une activité si banale que nous pensons qu’elle va de soi. Ces notes ou commentaires sont des « annotations » que nous ajoutons à un document pour marquer des informations ou mettre en évidence des éléments présentant un intérêt particulier afin de nous y référer plus tard. Bien que la rédaction de notes sur des documents imprimés soit une tâche simple et banale, la possibilité d’ajouter des commentaires personnels à des documents électroniques, quand cette fonctionnalité est disponible, est généralement très limitée.  
   
- Cette rubrique passe en revue plusieurs types d’annotations courants, en particulier les pense-bêtes et les mises en évidence, et illustre comment l’infrastructure des annotations Microsoft facilite ces types d’annotations dans les applications via le Windows Presentation Foundation (WPF ) des contrôles d’affichage de document.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] les contrôles d’affichage de document qui prennent en charge les annotations incluent <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que des contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase>, tels que <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
+ Cette rubrique passe en revue plusieurs types d’annotations courants, en particulier les pense-bêtes et les mises en évidence, et illustre comment l’infrastructure des annotations Microsoft facilite ces types d’annotations dans les applications via le Windows Presentation Foundation (WPF ) des contrôles d’affichage de document.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] les contrôles d’affichage de document qui prennent en charge les annotations incluent <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que des contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase> tels que <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
 
 <a name="caf1_type_stickynotes"></a>   
 ## <a name="sticky-notes"></a>Pense-bêtes  
@@ -36,13 +36,13 @@ ms.locfileid: "72004035"
   
 <a name="caf1_type_callouts"></a>   
 ## <a name="highlights"></a>Mises en surbrillance  
- Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance dans Microsoft annotations Framework offrent une fonctionnalité similaire pour marquer les informations affichées dans les contrôles d’affichage de document [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+ Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance dans Microsoft annotations Framework offrent une fonctionnalité similaire pour marquer les informations affichées dans les contrôles d’affichage de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] document.  
   
  L’illustration suivante montre un exemple d’annotation en surbrillance.  
   
  ![Annotation en surbrillance](./media/caf-callouts.png "CAF_Callouts")  
   
- Les utilisateurs créent généralement des annotations en sélectionnant d’abord du texte ou un élément digne d’intérêt, puis en cliquant avec le bouton droit pour afficher un <xref:System.Windows.Controls.ContextMenu> des options d’annotation.  L’exemple suivant illustre la [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] que vous pouvez utiliser pour déclarer une <xref:System.Windows.Controls.ContextMenu> avec des commandes routées auxquelles les utilisateurs peuvent accéder pour créer et gérer des annotations.  
+ Les utilisateurs créent généralement des annotations en sélectionnant d’abord du texte ou un élément digne d’intérêt, puis en cliquant avec le bouton droit pour afficher un <xref:System.Windows.Controls.ContextMenu> d’options d’annotation.  L’exemple suivant illustre la [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] vous pouvez utiliser pour déclarer une <xref:System.Windows.Controls.ContextMenu> avec des commandes routées auxquelles les utilisateurs peuvent accéder pour créer et gérer des annotations.  
   
  [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
   
@@ -75,4 +75,4 @@ ms.locfileid: "72004035"
 - [Vue d’ensemble de ContextMenu](../controls/contextmenu-overview.md)
 - [Vue d’ensemble des commandes](commanding-overview.md)
 - [Vue d’ensemble des documents dynamiques](flow-document-overview.md)
-- [Guide pratique pour Ajouter une commande à un MenuItem @ no__t-0
+- [Guide pratique pour ajouter une commande à un MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))

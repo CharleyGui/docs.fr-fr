@@ -20,7 +20,7 @@ ms.locfileid: "73118833"
 Définit des paramètres dans une section de configuration personnalisée définie par une \<section > élément et utilise la classe <xref:System.Configuration.SingleTagSectionHandler>.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; *\<* de la >
+&nbsp;&nbsp; *\<sectionName>*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,7 +28,7 @@ Définit des paramètres dans une section de configuration personnalisée défin
 <sectionName key="value" key2="value2" ... />
 ```
 
-## <a name="attributes"></a>Attributs
+## <a name="attributes"></a>Attributes
 
 Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
@@ -40,9 +40,9 @@ Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+Aucun
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 L’élément\<de l’élément de **>** est un élément personnalisé défini par un [ **\<section >** ](section-element.md) balise dans l’élément [ **\<configSections >** ](configsections-element-for-configuration.md) . Le système de configuration retourne un objet <xref:System.Collections.IDictionary> lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 

@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: ff517aef93acf8c3a241c8fd8f240f7018467793
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7e84da784d34be1646df982fa2594764d43d99dd
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419990"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966880"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -282,7 +282,7 @@ Le premier DbContext est le \_catalogContext et le second DbContext se trouve da
 
 Bien qu’EF Core soit un bon choix pour la gestion de la persistance, et que dans la plupart des cas il encapsule les détails de la base de données des développeurs d’applications, ce n’est pas le seul choix possible. Une alternative open source populaire est [Dapper](https://github.com/StackExchange/Dapper), qui est ce que l’on appelle un micro-ORM. Un micro-ORM est un outil allégé, avec moins de fonctionnalités, qui permet de mapper des objets à des structures de données. Dans le cas de Dapper, ses objectifs de conception sont axés sur les performances, plutôt que sur l’encapsulation entière des requêtes sous-jacentes qu’il utilise afin de récupérer et de mettre à jour des données. Comme il n’effectue pas d’abstraction de SQL par rapport au développeur, Dapper est « au plus proche du métal » et permet aux développeurs d’écrire les requêtes exactes qu’ils souhaitent utiliser pour une opération d’accès aux données spécifique.
 
-EF Core offre deux fonctionnalités importantes qui le distinguent de Dapper, mais qui ajoutent également à sa surcharge de performances. La première est la conversion des expressions LINQ en SQL. Ces conversions sont mises en cache, mais leur exécution initiale implique tout de même une surcharge. La deuxième est le suivi des modifications sur les entités (afin que des instructions de mise à jour efficaces puissent être générées). Ce comportement peut être désactivé pour des requêtes spécifiques à l’aide de l’extension AsNotTracking. EF Core génère aussi des requêtes SQL qui sont en général très efficaces et dans tous les cas parfaitement acceptables du point de vue des performances, mais si vous avez besoin d’un contrôle affiné de la requête précise à exécuter, vous pouvez également passer du code SQL personnalisé (ou exécuter une procédure stockée) à l’aide d’EF Core. Dans ce cas, les performances de Dapper sont encore supérieures à celles d’EF Core, mais seulement légèrement. Julie Lerman présente certaines données de performances dans son article MSDN de mai 2016 intitulé [Dapper, Entity Framework, and Hybrid Apps (Dapper, Entity Framework et applications hybrides)](https://msdn.microsoft.com/magazine/mt703432.aspx). Vous trouverez des données de point de référence de performances supplémentaires pour diverses méthodes d’accès aux données sur [le site de Dapper](https://github.com/StackExchange/Dapper).
+EF Core offre deux fonctionnalités importantes qui le distinguent de Dapper, mais qui ajoutent également à sa surcharge de performances. La première est la conversion des expressions LINQ en SQL. Ces conversions sont mises en cache, mais leur exécution initiale implique tout de même une surcharge. La deuxième est le suivi des modifications sur les entités (afin que des instructions de mise à jour efficaces puissent être générées). Ce comportement peut être désactivé pour des requêtes spécifiques à l’aide de l’extension AsNotTracking. EF Core génère aussi des requêtes SQL qui sont en général très efficaces et dans tous les cas parfaitement acceptables du point de vue des performances, mais si vous avez besoin d’un contrôle affiné de la requête précise à exécuter, vous pouvez également passer du code SQL personnalisé (ou exécuter une procédure stockée) à l’aide d’EF Core. Dans ce cas, les performances de Dapper sont encore supérieures à celles d’EF Core, mais seulement légèrement. Julie Lerman présente certaines données de performances dans son article MSDN de mai 2016 intitulé [Dapper, Entity Framework, and Hybrid Apps (Dapper, Entity Framework et applications hybrides)](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Vous trouverez des données de point de référence de performances supplémentaires pour diverses méthodes d’accès aux données sur [le site de Dapper](https://github.com/StackExchange/Dapper).
 
 Pour comparer les syntaxes de Dapper et d’EF, examinez ces deux versions de la même méthode servant à récupérer une liste d’éléments :
 

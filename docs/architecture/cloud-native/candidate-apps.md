@@ -3,18 +3,18 @@ title: Applications candidates pour le Cloud Native
 description: Découvrez les types d’applications qui bénéficient d’une approche Cloud Native
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 127dca45ce8a5e025ca7511e6513afffe64e592d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 328af4081d830cf1a7959a37c2155090ec4da3ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087680"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968293"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Applications candidates pour le Cloud Native
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Examinez les applications de votre portefeuille. Combien d’entre elles sont éligibles pour une architecture Cloud Native ? Tous? Peut-être ?
+Examinez les applications de votre portefeuille. Combien d’entre elles sont éligibles pour une architecture Cloud Native ? Tous ? Peut-être ?
 
 En appliquant une analyse des coûts/avantages, il y a de bonnes chances que la plupart ne prenne pas en charge la balise Price lourdeur nécessaire pour être Cloud native. Le coût du Cloud Native dépasserait beaucoup la valeur métier de l’application.
 
@@ -64,7 +64,7 @@ Si vous et votre équipe estimez qu’une approche Cloud-native est appropriée,
 
 La stratégie de migration appropriée dépend des priorités organisationnelles et des systèmes que vous ciblez. Pour beaucoup, il peut s’avérer plus rentable de Cloud-optimiser une application monolithique ou d’ajouter des services à granularité grossière à une application multiniveau. Dans ce cas, vous pouvez toujours tirer pleinement parti des fonctionnalités PaaS du Cloud, telles que celles proposées par Azure App Service.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans ce chapitre, nous avons introduit l’informatique Native Cloud. Nous avons fourni une définition avec les fonctionnalités clés qui pilotent une application Cloud native. Nous avons examiné les types d’applications qui peuvent justifier cet investissement et ce travail.
 
@@ -89,8 +89,6 @@ Avec l’introduction de, nous nous penchons maintenant sur un examen bien plus 
 - [Comment Netflix déploie le code](https://www.infoq.com/news/2013/06/netflix/)
 
 - [Contrôle de surcharge pour la mise à l’échelle des microservices WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf)
-
-- [RayGun-étude de cas](https://raygun.com/case-study/ovation)
 
 >[!div class="step-by-step"]
 >[Précédent](definition.md)

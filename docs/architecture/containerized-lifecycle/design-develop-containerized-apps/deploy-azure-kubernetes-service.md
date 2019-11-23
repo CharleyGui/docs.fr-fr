@@ -64,7 +64,7 @@ Première étape : obtention des informations d’identification :
 az aks get-credentials --resource-group MSSampleK8ClusterRG --name MSSampleK8Cluster
 ```
 
-![Sortie de la commande ci-dessus dans la console : Merged "MsSampleK8Cluster as current context in /root/.kube/config.](media/get-credentials-command-result.png)
+![Sortie de la console à partir de la commande ci-dessus : fusionné «MsSampleK8Cluster en tant que contexte actuel dans/root/.Kube/config.](media/get-credentials-command-result.png)
 
 **Figure 4-19**. Résultat de la commande `aks get-credentials`.
 
@@ -74,7 +74,7 @@ Ensuite, obtention des nœuds à partir de Kubectl :
 kubectl get nodes
 ```
 
-![Sortie de la commande ci-dessus dans la console : Liste des nœuds avec indication de l’état, de l’âge (temps d’exécution) et de la version](media/kubectl-get-nodes-command-result.png)
+![Sortie de la console à partir de la commande ci-dessus : liste des nœuds dont l’État, l’âge (heure d’exécution) et la version](media/kubectl-get-nodes-command-result.png)
 
 **Figure 4-20**. Résultat de la commande `kubectl get nodes`.
 

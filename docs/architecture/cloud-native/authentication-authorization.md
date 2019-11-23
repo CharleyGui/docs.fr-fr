@@ -9,11 +9,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183727"
 ---
-# <a name="authentication-and-authorization-in-cloud-native-apps"></a>Authentification et autorisation dans les applications Cloud natives
+# <a name="authentication-and-authorization-in-cloud-native-apps"></a>Authentification et autorisation dans les applications cloud natives
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-L' *authentification* est le processus qui consiste à déterminer l’identité d’un principal de sécurité. L' *autorisation* consiste à accorder à un principal authentifié l’autorisation d’effectuer une action ou d’accéder à une ressource. Parfois `AuthN` , l’authentification est raccourcie et l’autorisation est raccourcie vers `AuthZ`. Les applications Cloud natives doivent s’appuyer sur des protocoles HTTP ouverts pour authentifier les principaux de sécurité, car les clients et les applications peuvent s’exécuter n’importe où dans le monde sur n’importe quelle plateforme ou n’importe quel appareil. Le seul facteur commun est HTTP.
+L' *authentification* est le processus qui consiste à déterminer l’identité d’un principal de sécurité. L' *autorisation* consiste à accorder à un principal authentifié l’autorisation d’effectuer une action ou d’accéder à une ressource. Parfois, l’authentification est raccourcie en `AuthN` et l’autorisation est raccourcie pour `AuthZ`. Les applications Cloud natives doivent s’appuyer sur des protocoles HTTP ouverts pour authentifier les principaux de sécurité, car les clients et les applications peuvent s’exécuter n’importe où dans le monde sur n’importe quelle plateforme ou n’importe quel appareil. Le seul facteur commun est HTTP.
 
 De nombreuses organisations s’appuient toujours sur des services d’authentification locaux tels que Services ADFS (ADFS). Bien que cette approche ait traditionnellement servi les organisations pour des besoins d’authentification locaux, les applications Cloud natives bénéficient des systèmes conçus spécifiquement pour le Cloud. Un avis récent de la du NCSC (National Cyber Security Centre) du Royaume-Uni 2019 déclare que « les organisations qui utilisent Azure AD comme source d’authentification principale vont en fait diminuer leurs risques par rapport à ADFS ». Voici quelques-unes des raisons décrites dans [cette analyse](https://oxfordcomputergroup.com/resources/o365-security-native-cloud-authentication/) :
 

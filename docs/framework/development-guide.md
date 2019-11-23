@@ -24,7 +24,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Applications clientes](develop-client-apps.md)  
  Explique comment créer des applications Windows à l'aide de WPF (Windows Presentation Foundation) ou de Windows Forms.  
   
- [Applications web avec ASP.NET](develop-web-apps-with-aspnet.md)  
+ [Applications Web avec ASP.NET](develop-web-apps-with-aspnet.md)  
  Fournit des liens vers les informations relatives à l'utilisation d'ASP.NET afin de générer des applications Web d'entreprise avec un minimum de codage.  
   
  [Applications orientées service avec WCF](./wcf/index.md)  
@@ -63,12 +63,12 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  [Performancess](./performance/index.md)  
  Fournit des informations sur la mise en cache, l'initialisation tardive, la fiabilité et les événements ETW (suivi d'événements Windows).  
  
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  [Bibliothèque de classes .NET Framework](/dotnet/api/?view=netframework-4.7)  
  Fournit la syntaxe, des exemples de code et les informations d’utilisation associées à chaque classe qui figure dans les espaces de noms .NET Framework.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Bien démarrer](./get-started/index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Prise en main](./get-started/index.md)  
  Fournit une vue d'ensemble complète du .NET Framework et des liens vers des ressources supplémentaires.  
   
  [Nouveautés](./whats-new/index.md)  

@@ -48,13 +48,13 @@ Nous vous encourageons cependant à utiliser les références suivantes pour en 
 - **Interface utilisateur composite avec ASP.NET (atelier particulier)**  
   <https://github.com/Particular/Workshop/tree/master/demos/asp-net-core>
 
-- **Ruben Oostinga. Frontend monolithique dans l’architecture de microservices @ no__t-0  
+- **Ruben Oostinga. Frontend monolithique dans l’architecture de microservices**  
   <https://xebia.com/blog/the-monolithic-frontend-in-the-microservices-architecture/>
 
-- **Mauro Servienti. Le secret de la meilleure composition de l’interface utilisateur @ no__t-0  
+- **Mauro Servienti. Le secret d’une meilleure composition d’interface utilisateur**  
   <https://particular.net/blog/secret-of-better-ui-composition>
 
-- **Viktor Farcic. Inclusion de composants Web frontaux dans les microservices @ no__t-0  
+- **Viktor Farcic. Inclusion de composants Web frontaux dans des microservices**  
   <https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/>
 
 - **Gestion des serveurs frontaux dans l’architecture des microservices**  

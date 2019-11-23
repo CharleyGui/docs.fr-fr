@@ -93,15 +93,15 @@ Lorsque vous ajoutez le nom de l’image à votre fichier fichier dockerfile, vo
 
 > | **Référence** | **Système et version** |
 > |---|---|
-> | **Microsoft/DotNet-Framework : 4. x-windowsservercore** | .NET Framework 4. x sur Windows Server Core |
-> | **Microsoft/ASPNET : 4. x-windowsservercore** | .NET Framework 4. x avec personnalisation supplémentaire des ASP.NET, sur Windows Server Core |
+> | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET Framework 4. x sur Windows Server Core |
+> | **microsoft/aspnet:4.x-windowsservercore** | .NET Framework 4. x avec personnalisation supplémentaire des ASP.NET, sur Windows Server Core |
 
 Pour .NET Core (multiplateforme pour Linux et Windows), les balises se présentent comme suit :
 
 > | **Référence** | **Système et version**
 > |---|---|
 > | **Microsoft/dotnet : 2.0.0-Runtime** | .NET Core 2,0 Runtime uniquement sur Linux |
-> | **Microsoft/dotnet : 2.0.0-Runtime-serveur** | .NET Core 2,0 Runtime uniquement sur Windows nano Server |
+> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET Core 2,0 Runtime uniquement sur Windows nano Server |
 
 ### <a name="multi-arch-images"></a>Images multi-arch
 

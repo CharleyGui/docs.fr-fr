@@ -1,14 +1,13 @@
 ---
 title: Docker-gRPC pour les développeurs WCF
 description: Création d’images d’ancrage pour les applications ASP.NET Core gRPC
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: cc369da9494ade532187dfc8d19a94a3a037ebab
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: a5aceb4b5270cb828965e990a62db4147012adff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846681"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967840"
 ---
 # <a name="docker"></a>Docker
 
@@ -25,7 +24,7 @@ Microsoft fournit une gamme d’images de base pour la création et l’exécuti
 
 Pour chaque image, il existe quatre variantes basées sur différentes distributions Linux, distinguées par des balises.
 
-| Balise (s) d’image | Linux | Notes |
+| Balise (s) d’image | Linux | Remarques |
 | --------- | ----- | ----- |
 | 3,0-Buster, 3,0 | Debian 10 | Image par défaut si aucun variant de système d’exploitation n’est spécifié. |
 | 3,0-Alpine | Alpine 3,9 | Les images de base Alpine sont plus petites que les images Debian ou Ubuntu. |
@@ -117,7 +116,7 @@ docker build --tag stockdata .
 
 L’indicateur `--tag` portant un nom confus (qui peut être abrégé en `-t`) spécifie le nom complet de l’image, *y compris* la balise réelle si elle est spécifiée. Le `.` à la fin spécifie le *contexte* dans lequel la build sera exécutée ; Répertoire de travail actuel pour les commandes `COPY` dans fichier dockerfile.
 
-Si vous avez plusieurs applications au sein d’une même solution, vous pouvez conserver le fichier dockerfile pour chaque application dans son propre dossier, en regard du fichier `.csproj`, mais vous devez toujours exécuter la commande `docker build` à partir du répertoire de base pour vous assurer que la solution et tous les les projets sont copiés dans l’image. Vous pouvez spécifier un fichier dockerfile sous le répertoire actif à l’aide de l’indicateur `--file` (ou `-f`).
+Si vous avez plusieurs applications au sein d’une même solution, vous pouvez conserver le fichier dockerfile pour chaque application dans son propre dossier, en regard du fichier `.csproj`, mais vous devez toujours exécuter la commande `docker build` à partir du répertoire de base pour vous assurer que la solution et tous les projets sont copiés dans l’image. Vous pouvez spécifier un fichier dockerfile sous le répertoire actif à l’aide de l’indicateur `--file` (ou `-f`).
 
 ```console
 docker build --tag stockdata --file src/StockData/Dockerfile .

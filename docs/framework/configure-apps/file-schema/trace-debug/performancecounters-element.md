@@ -15,13 +15,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697153"
 ---
-# <a name="performancecounters-element"></a>Élément @no__t 0performanceCounters >
+# <a name="performancecounters-element"></a>\<élément performanceCounters >
 
 Spécifie la taille de la mémoire globale partagée par les compteurs de performances.
 
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<performanceCounters >**  
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<PerformanceCounters** >  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,7 +33,7 @@ Spécifie la taille de la mémoire globale partagée par les compteurs de perfor
 
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
-### <a name="attributes"></a>Attributs
+### <a name="attributes"></a>Attributes
 
 |Attribut|Description|
 |---------------|-----------------|
@@ -41,7 +41,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucune.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -50,13 +50,13 @@ Aucun.
 |`Configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les compteurs de performance utilisent un fichier mappé en mémoire, ou mémoire partagée, pour publier les données de performances.  La taille de la mémoire partagée détermine le nombre d’instances qui peuvent être utilisées à la fois.  Il existe deux types de mémoire partagée : la mémoire partagée globale et la mémoire partagée séparée.  La mémoire partagée globale est utilisée par toutes les catégories de compteurs de performance installées avec les versions .NET Framework 1,0 ou 1,1.  Les catégories de compteurs de performance installées avec la version de .NET Framework 2,0 utilisent une mémoire partagée distincte, chaque catégorie de compteur de performances ayant sa propre mémoire.
 
 La taille de la mémoire partagée globale ne peut être définie qu’avec un fichier de configuration.  La taille par défaut est de 524 288 octets, la taille maximale est de 33 554 432 octets et la taille minimale est de 32 768 octets.  Étant donné que la mémoire partagée globale est partagée par tous les processus et toutes les catégories, le premier créateur spécifie la taille.  Si vous définissez la taille dans votre fichier de configuration de l’application, cette taille est utilisée uniquement si votre application est la première application qui provoque l’exécution des compteurs de performances.  Par conséquent, l’emplacement correct pour spécifier la valeur `filemappingsize` est le fichier machine. config.  La mémoire dans la mémoire partagée globale ne peut pas être libérée par des compteurs de performances individuels. par conséquent, la mémoire partagée globale finit par être épuisée si un grand nombre d’instances de compteur de performance avec des noms différents sont créés.
 
-Pour la taille de la mémoire partagée distincte, la valeur DWORD FileMappingSize dans la clé de Registre HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services @ no__t-0 *\<category name >* \Performance est référencée en premier, suivie de la valeur spécifié pour la mémoire partagée globale dans le fichier de configuration. Si la valeur FileMappingSize n’existe pas, la taille de la mémoire partagée séparée est définie sur un quatrième (1/4) du paramètre global dans le fichier de configuration.
+Pour la taille de la mémoire partagée séparée, la valeur de DWORD FileMappingSize dans la clé de Registre HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\\ *\<nom de la catégorie >* \Performance est référencée en premier, suivi de la valeur spécifiée pour la mémoire partagée globale dans le fichier de configuration. Si la valeur FileMappingSize n’existe pas, la taille de la mémoire partagée séparée est définie sur un quatrième (1/4) du paramètre global dans le fichier de configuration.
 
 ## <a name="see-also"></a>Voir aussi
 

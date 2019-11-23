@@ -231,10 +231,10 @@ Le tableau suivant montre plusieurs types d’animations courants et certaines p
 
 |Type de propriété|Animation de base (From/To/By) correspondante|Animation d’image clé correspondante|Animation de tracé correspondante|Exemple d’utilisation|
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|aucune.|Animer le <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou d’un <xref:System.Windows.Media.GradientStop>.|
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Aucun|Animer le <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou d’un <xref:System.Windows.Media.GradientStop>.|
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animer le <xref:System.Windows.FrameworkElement.Width%2A> d’un <xref:System.Windows.Controls.DockPanel> ou de la <xref:System.Windows.FrameworkElement.Height%2A> d’un <xref:System.Windows.Controls.Button>.|
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animer la position de <xref:System.Windows.Media.EllipseGeometry.Center%2A> d’un <xref:System.Windows.Media.EllipseGeometry>.|
-|<xref:System.String>|aucune.|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|aucune.|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou de la <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|
+|<xref:System.String>|Aucun|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Aucun|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou de la <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|
 
 <a name="animationsaretimelines"></a>
 
@@ -248,7 +248,7 @@ Trois propriétés de minutage fréquemment utilisées sont <xref:System.Windows
 
 #### <a name="the-duration-property"></a>La propriété Duration
 
-Comme indiqué plus haut, une chronologie représente un segment de temps. La longueur de ce segment est déterminée par la <xref:System.Windows.Media.Animation.Timeline.Duration%2A> de la chronologie, qui est généralement spécifiée à l’aide d’une valeur de <xref:System.Windows.Duration.TimeSpan%2A>. Lorsqu’une chronologie atteint la fin de sa durée, elle a terminé une itération.
+Comme mentionné plus haut, une chronologie représente un segment de temps. La longueur de ce segment est déterminée par la <xref:System.Windows.Media.Animation.Timeline.Duration%2A> de la chronologie, qui est généralement spécifiée à l’aide d’une valeur de <xref:System.Windows.Duration.TimeSpan%2A>. Lorsqu’une chronologie atteint la fin de sa durée, elle a terminé une itération.
 
 Une animation utilise sa propriété <xref:System.Windows.Media.Animation.Timeline.Duration%2A> pour déterminer sa valeur actuelle. Si vous ne spécifiez pas de valeur <xref:System.Windows.Media.Animation.Timeline.Duration%2A> pour une animation, elle utilise 1 seconde, qui est la valeur par défaut.
 
@@ -355,11 +355,11 @@ Les exemples de cette vue d’ensemble montrent comment animer à l’aide de st
 
 Les exemples suivants peuvent vous aider à commencer à ajouter animation à vos applications.
 
-- [Exemple de valeurs cibles d’animation From, To et By](https://go.microsoft.com/fwlink/?LinkID=159988)
+- [Exemple de valeurs cibles d’animation From, To, and By Animation Target Values Sample](https://go.microsoft.com/fwlink/?LinkID=159988)
 
   Présente les différents paramètres From/To/By.
 
-- [Animation Timing Behavior Sample](https://go.microsoft.com/fwlink/?LinkID=159970) (Exemple de comportement de minutage dans une animation)
+- [Comportement de minuterie d’animation exemple](https://go.microsoft.com/fwlink/?LinkID=159970)
 
   Montre les différentes façons, vous pouvez contrôler le comportement de minuterie d’une animation. Cet exemple également montre comment lier les données d’une valeur de destination d’animation.
 
@@ -376,18 +376,18 @@ Les exemples suivants peuvent vous aider à commencer à ajouter animation à vo
 |[Vue d'ensemble des animations d'image clé](key-frame-animations-overview.md)|Décrit comment créer une animation avec plusieurs valeurs cibles, notamment la possibilité de contrôler la méthode d’interpolation.|
 |[Fonctions d'accélération](easing-functions.md)|Explique comment appliquer des formules mathématiques à vos animations pour obtenir un comportement réaliste, tel que rebondissement.|
 |[Vue d'ensemble des animations de tracés](path-animations-overview.md)|Décrit comment déplacer ou faire pivoter un objet sur un tracé complexe.|
-|[Vue d’ensemble des techniques d’animation de propriétés](property-animation-techniques-overview.md)|Décrit des animations de propriété à l’aide de storyboards, animations locales, horloges et des animations image par image.|
-|[Vue d'ensemble des plans conceptuels](storyboards-overview.md)|Décrit comment utiliser les storyboards avec plusieurs chronologies pour créer des animations complexes.|
-|[Vue d’ensemble des comportements de minutage](timing-behaviors-overview.md)|Décrit les types de <xref:System.Windows.Media.Animation.Timeline> et les propriétés utilisés dans les animations.|
+|[Vue d'ensemble des techniques d'animation de propriétés](property-animation-techniques-overview.md)|Décrit des animations de propriété à l’aide de storyboards, animations locales, horloges et des animations image par image.|
+|[Vue d'ensemble des storyboards](storyboards-overview.md)|Décrit comment utiliser les storyboards avec plusieurs chronologies pour créer des animations complexes.|
+|[Vue d'ensemble des comportements de minuterie](timing-behaviors-overview.md)|Décrit les types de <xref:System.Windows.Media.Animation.Timeline> et les propriétés utilisés dans les animations.|
 |[Vue d'ensemble des événements de minuterie](timing-events-overview.md)|Décrit les événements disponibles sur les objets <xref:System.Windows.Media.Animation.Timeline> et <xref:System.Windows.Media.Animation.Clock> pour exécuter du code à des points de la chronologie, tels que Begin, pause, Resume, Skip ou stop.|
-|[Rubriques de guide pratique](animation-and-timing-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations et des chronologies dans votre application.|
+|[Rubriques pratiques](animation-and-timing-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations et des chronologies dans votre application.|
 |[Guides pratiques relatifs aux objets Clock](clocks-how-to-topics.md)|Contient des exemples de code pour l’utilisation de l’objet <xref:System.Windows.Media.Animation.Clock> dans votre application.|
 |[Guides pratiques relatifs aux images clés](key-frame-animation-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations d’image clé dans votre application.|
 |[Guides pratiques relatifs aux animations de tracés](path-animation-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations de tracés dans votre application.|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 - <xref:System.Windows.Media.Animation.Timeline>
 

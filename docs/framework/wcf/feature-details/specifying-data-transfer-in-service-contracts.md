@@ -52,7 +52,7 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- En outre, vous pouvez utiliser des paramètres de référence pour intégrer un paramètre à la fois au message de demande et au message de réponse. Les paramètres doivent être de types pouvant être sérialisés (convertis en XML). Par défaut, WCF utilise un composant appelé classe <xref:System.Runtime.Serialization.DataContractSerializer> pour effectuer cette conversion. La plupart des types primitifs (tels que `int`, `string`, `float` et `DateTime`) sont pris en charge. Les types définis par l'utilisateur doivent normalement avoir un contrat de données. Pour plus d’informations, consultez [utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ En outre, vous pouvez utiliser des paramètres de référence pour intégrer un paramètre à la fois au message de demande et au message de réponse. Les paramètres doivent être de types pouvant être sérialisés (convertis en XML). Par défaut, WCF utilise un composant appelé la classe <xref:System.Runtime.Serialization.DataContractSerializer> pour effectuer cette conversion. La plupart des types primitifs (tels que `int`, `string`, `float` et `DateTime`) sont pris en charge. Les types définis par l'utilisateur doivent normalement avoir un contrat de données. Pour plus d’informations, consultez [utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
 ```csharp
 public interface IAirfareQuoteService  
@@ -87,7 +87,7 @@ Public Interface IAirfareQuoteService
 End Interface  
 ```  
   
- Parfois, `DataContractSerializer` ne convient pas pour sérialiser vos types. WCF prend en charge un autre moteur de sérialisation, le <xref:System.Xml.Serialization.XmlSerializer>, que vous pouvez également utiliser pour sérialiser des paramètres. Le <xref:System.Xml.Serialization.XmlSerializer> vous permet de davantage contrôler le XML résultant à l'aide d'attributs tels que `XmlAttributeAttribute`. Pour utiliser le <xref:System.Xml.Serialization.XmlSerializer> pour une opération particulière ou pour le service entier, appliquez l'attribut <xref:System.ServiceModel.XmlSerializerFormatAttribute> à une opération ou à un service. Exemple :  
+ Parfois, `DataContractSerializer` ne convient pas pour sérialiser vos types. WCF prend en charge un autre moteur de sérialisation, le <xref:System.Xml.Serialization.XmlSerializer>, que vous pouvez également utiliser pour sérialiser des paramètres. Le <xref:System.Xml.Serialization.XmlSerializer> vous permet de davantage contrôler le XML résultant à l'aide d'attributs tels que `XmlAttributeAttribute`. Pour utiliser le <xref:System.Xml.Serialization.XmlSerializer> pour une opération particulière ou pour le service entier, appliquez l'attribut <xref:System.ServiceModel.XmlSerializerFormatAttribute> à une opération ou à un service. Par exemple :  
   
 ```csharp  
 [ServiceContract]  
@@ -432,7 +432,7 @@ End Class
 ## <a name="specifying-the-use-and-style"></a>Spécification de l'utilisation et du style  
  Lors de la description de services à l'aide du langage WSDL (Web Services Description Language), les deux styles couramment utilisés sont Document et appel de procédure distante (RPC). Dans le style Document, le corps du message entier est décrit à l'aide du schéma et le WSDL décrit les différentes parties du corps de message en faisant référence à des éléments dans ce schéma. Dans le style RPC, le WSDL fait référence à un type de schéma pour chaque partie de message plutôt qu'à un élément. Dans certains cas, vous devez sélectionner manuellement l'un de ces styles. Pour cela, vous pouvez appliquer l'attribut <xref:System.ServiceModel.DataContractFormatAttribute> et définir la propriété `Style` (lorsque le <xref:System.Runtime.Serialization.DataContractSerializer> est en cours d'utilisation), ou définir `Style` sur l'attribut <xref:System.ServiceModel.XmlSerializerFormatAttribute> (lors de l'utilisation du <xref:System.Xml.Serialization.XmlSerializer>).  
   
- En outre, <xref:System.Xml.Serialization.XmlSerializer> prend en charge deux formes de XML sérialisé : `Literal` et `Encoded`. `Literal` est la forme la plus couramment acceptée et la seule prise en charge par le <xref:System.Runtime.Serialization.DataContractSerializer>. `Encoded` est une forme héritée décrite à la section 5 de la spécification SOAP qui n'est pas recommandée pour les nouveaux services. Pour basculer en mode `Encoded`, affectez à la propriété `Use` sur l'attribut <xref:System.ServiceModel.XmlSerializerFormatAttribute> la valeur `Encoded`.  
+ En outre, <xref:System.Xml.Serialization.XmlSerializer> prend en charge deux formes de XML sérialisé : `Literal` et `Encoded`. `Literal` est la forme la plus couramment acceptée et est la seule forme que le <xref:System.Runtime.Serialization.DataContractSerializer> prend en charge. `Encoded` est un formulaire hérité décrit dans la section 5 de la spécification SOAP et n’est pas recommandé pour les nouveaux services. Pour basculer en mode `Encoded`, affectez à la propriété `Use` sur l'attribut <xref:System.ServiceModel.XmlSerializerFormatAttribute> la valeur `Encoded`.  
   
  Dans la plupart des cas, vous ne devez pas modifier les paramètres par défaut des propriétés `Style` et `Use`.  
   
@@ -577,5 +577,5 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation de la classe XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)
-- [Guide pratique pour Activer la diffusion en continu](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
-- [Guide pratique pour Créer un contrat de données de base pour une classe ou une structure @ no__t-0
+- [Guide pratique pour activer le streaming](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+- [Guide pratique pour créer un contrat de données de base destiné à une classe ou une structure](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

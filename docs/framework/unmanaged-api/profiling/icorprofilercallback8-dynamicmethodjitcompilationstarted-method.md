@@ -31,7 +31,7 @@ HRESULT DynamicMethodJITCompilationStarted(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
 [in] `functionId`  
 Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.   
 
@@ -44,7 +44,7 @@ Pointeur vers le premier octet de l’en-tête IL de la méthode.
 [in] `cbILHeader`    
 Nombre d’octets dans l’en-tête IL. 
 
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
 
 Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée juste-à-temps. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
@@ -53,7 +53,7 @@ Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée 
 
 Le pointeur de `pILHeader` est valide uniquement pendant le rappel.
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

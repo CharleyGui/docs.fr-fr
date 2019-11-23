@@ -16,12 +16,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119267"
 ---
-# <a name="appsettings-element-for-configuration"></a>\<élément > appSettings pour la configuration de \<
+# <a name="appsettings-element-for-configuration"></a>\<élément > appSettings pour la configuration de \<>
 
 Contient des paramètres d’application personnalisés. Il s’agit d’une section de configuration prédéfinie fournie par le .NET Framework.
 
 [ **\<configuration>** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings >**
+&nbsp;&nbsp; **\<appSettings>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -51,7 +51,7 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 | [ **\<clear>** ](clear-element-for-appsettings.md) | Efface tous les paramètres d’application précédemment définis. |
 | [ **\<remove>** ](remove-element-for-appsettings.md) | Supprime un paramètre d’application défini précédemment. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 L’élément **\<appSettings >** stocke des informations de configuration d’application personnalisées, telles que des chaînes de connexion de base de données, des chemins d’accès aux fichiers, des URL de service Web XML ou d’autres informations de configuration personnalisée pour une application. Les paires clé/valeur spécifiées dans l’élément **\<appSettings >** sont accessibles dans le code à l’aide de la classe <xref:System.Configuration.ConfigurationSettings>.
 

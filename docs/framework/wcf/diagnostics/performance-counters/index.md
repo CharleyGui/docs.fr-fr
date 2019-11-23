@@ -29,7 +29,7 @@ Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de 
   
 - All : tous les compteurs de catégorie (ServiceModelService, ServiceModelEndpoint et ServiceModelOperation) sont activés.  
   
-- ServiceOnly : seuls les compteurs de catégorie ServiceModelService sont activés. Valeur par défaut.  
+- ServiceOnly : seuls les compteurs de catégorie ServiceModelService sont activés. Il s'agit de la valeur par défaut.  
   
 - Off : les compteurs de performance ServiceModel* sont désactivés.  
   
@@ -51,7 +51,7 @@ config.Save();
 ```  
   
 ## <a name="viewing-performance-data"></a>Affichage des données de performance  
- Pour consulter des données capturées par les compteurs de performance, vous pouvez utiliser l'analyseur de performances (Perfmon.exe) fourni avec Windows. Vous pouvez lancer cet outil en accédant à **Démarrer**, puis en cliquant sur **exécuter** et en spécifiant `perfmon.exe` dans la boîte de dialogue.  
+ Pour consulter des données capturées par les compteurs de performance, vous pouvez utiliser l'analyseur de performances (Perfmon.exe) fourni avec Windows. Pour lancer cet outil, accédez à **Démarrer**, puis cliquez sur **exécuter** et tapez `perfmon.exe` dans la boîte de dialogue.  
   
 > [!NOTE]
 > Les instances de compteur de performance peuvent être diffusées avant le traitement des derniers messages par le répartiteur de point de terminaison. Il se peut alors que les données de performance de certains messages ne soient pas capturées.  
@@ -74,7 +74,7 @@ config.Save();
 ## <a name="types-of-performance-counters"></a>Types de compteurs de performance  
  Les compteurs de performance portent sur trois niveaux différents : service, point de terminaison et opération.  
   
- Vous pouvez utiliser WMI pour récupérer le nom d'une instance de compteur de performance. Par exemple :  
+ Vous pouvez utiliser WMI pour récupérer le nom d'une instance de compteur de performance. Par exemple :  
   
 - Le nom de l’instance du compteur de service peut être obtenu via la propriété « CounterInstanceName » de l’instance de [service](../wmi/service.md) WMI.  
   
@@ -121,11 +121,11 @@ config.Save();
 
 Plusieurs fichiers sont installés dans le dossier d’installation du kit de développement logiciel (SDK) pour vous permettre d’accéder par programme aux compteurs de performance WCF. Ces fichiers sont répertoriés comme suit :
   
-- *@no__t -1ServiceModelEndpointPerfCounters. VRG*
-- *@no__t -1ServiceModelOperationPerfCounters. VRG*
-- *@no__t -1ServiceModelServicePerfCounters. VRG*  
-- *@no__t -1SMSvcHostPerfCounters. VRG*
-- *@no__t -1TransactionBridgePerfCounters. VRG*
+- *\_ServiceModelEndpointPerfCounters. VRG*
+- *\_ServiceModelOperationPerfCounters. VRG*
+- *\_ServiceModelServicePerfCounters. VRG*  
+- *\_SMSvcHostPerfCounters. VRG*
+- *\_TransactionBridgePerfCounters. VRG*
   
 Pour plus d’informations sur l’accès par programme aux compteurs, consultez Architecture de [programmation des compteurs de performances](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90)).
   

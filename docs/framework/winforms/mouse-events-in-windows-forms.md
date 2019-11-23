@@ -28,9 +28,9 @@ Quand vous gérez l'entrée de souris, vous souhaitez habituellement connaître 
 
 ## <a name="mouse-information"></a>Informations sur la souris
 
-Un <xref:System.Windows.Forms.MouseEventArgs> est envoyé aux gestionnaires d'événements de souris liés aux clics de souris et au suivi des mouvements de souris. <xref:System.Windows.Forms.MouseEventArgs> fournit des informations sur l'état actuel de la souris, y compris l'emplacement du pointeur de la souris sous forme de coordonnées clientes, les boutons de souris qui sont enfoncés et si la roulette a défilé. Plusieurs événements de souris, tels que ceux qui indiquent simplement si le pointeur de souris pénétré ou quitté les limites d'un contrôle, envoient un <xref:System.EventArgs> au gestionnaire d'événements sans aucune information complémentaire.
+Un <xref:System.Windows.Forms.MouseEventArgs> est envoyé aux gestionnaires d'événements de souris liés aux clics de souris et au suivi des mouvements de souris. <xref:System.Windows.Forms.MouseEventArgs> fournit des informations sur l’état actuel de la souris, y compris l’emplacement du pointeur de la souris dans les coordonnées clientes, les boutons de la souris qui sont enfoncés et si la roulette de la souris a fait l’objet d’un défilement. Plusieurs événements de souris, tels que ceux qui indiquent simplement si le pointeur de souris pénétré ou quitté les limites d'un contrôle, envoient un <xref:System.EventArgs> au gestionnaire d'événements sans aucune information complémentaire.
 
-Si vous souhaitez connaître l'état actuel des boutons de la souris ou l'emplacement du pointeur de la souris et que vous souhaitez éviter de gérer un événement de souris, vous pouvez aussi utiliser les propriétés <xref:System.Windows.Forms.Control.MouseButtons%2A> et <xref:System.Windows.Forms.Control.MousePosition%2A> de la classe <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.MouseButtons%2A> retourne des informations sur les boutons de souris qui sont actuellement enfoncés. <xref:System.Windows.Forms.Control.MousePosition%2A> retourne les coordonnées d'écran du pointeur de la souris et est équivalente à la valeur retournée par <xref:System.Windows.Forms.Cursor.Position%2A>.
+Si vous souhaitez connaître l'état actuel des boutons de la souris ou l'emplacement du pointeur de la souris et que vous souhaitez éviter de gérer un événement de souris, vous pouvez aussi utiliser les propriétés <xref:System.Windows.Forms.Control.MouseButtons%2A> et <xref:System.Windows.Forms.Control.MousePosition%2A> de la classe <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.MouseButtons%2A> retourne des informations sur les boutons de la souris actuellement enfoncés. <xref:System.Windows.Forms.Control.MousePosition%2A> retourne les coordonnées d'écran du pointeur de la souris et est équivalente à la valeur retournée par <xref:System.Windows.Forms.Cursor.Position%2A>.
 
 ## <a name="converting-between-screen-and-client-coordinates"></a>Conversion entre les coordonnées clientes et d'écran
 
@@ -66,7 +66,7 @@ Voici l’ordre des événements déclenchés pour un clic double-bouton de la s
 
 8. Événement<xref:System.Windows.Forms.Control.MouseUp> .
 
-Pour obtenir un exemple de code illustrant l’ordre des événements de clic de souris, voir [How à : Gérer les événements d’entrée d’utilisateur dans les contrôles de Windows Forms @ no__t-0.
+Pour obtenir un exemple de code illustrant l’ordre des événements de clic de souris, consultez [Comment : gérer des événements d’entrée d’utilisateur dans les contrôles de Windows Forms](how-to-handle-user-input-events-in-windows-forms-controls.md).
 
 ### <a name="individual-controls"></a>Contrôles spécifiques
 
@@ -82,24 +82,24 @@ Les contrôles suivants n'ont pas le comportement d'événement de clic de souri
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Clic droit : Aucun événement Click n’est déclenché
+  - Clic droit : aucun événement de clic déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick> ; <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Double-clic droit : Aucun événement Click n’est déclenché
+  - Double-clic droit : aucun événement de clic déclenché
 
-- Contrôles <xref:System.Windows.Forms.TextBox>, <xref:System.Windows.Forms.RichTextBox>, <xref:System.Windows.Forms.ListBox>, <xref:System.Windows.Forms.MaskedTextBox> et <xref:System.Windows.Forms.CheckedListBox>
+- contrôles <xref:System.Windows.Forms.TextBox>, <xref:System.Windows.Forms.RichTextBox>, <xref:System.Windows.Forms.ListBox>, <xref:System.Windows.Forms.MaskedTextBox>et <xref:System.Windows.Forms.CheckedListBox>
 
   > [!NOTE]
   > Le comportement d'événement détaillé plus loin se produit quand l'utilisateur clique dans ces contrôles.
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Clic droit : Aucun événement Click n’est déclenché
+  - Clic droit : aucun événement de clic déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>
 
-  - Double-clic droit : Aucun événement Click n’est déclenché
+  - Double-clic droit : aucun événement de clic déclenché
 
 - Contrôle <xref:System.Windows.Forms.ListView>
 

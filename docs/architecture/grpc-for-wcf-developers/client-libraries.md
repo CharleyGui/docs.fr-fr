@@ -1,14 +1,13 @@
 ---
 title: Créer des bibliothèques clientes gRPC-gRPC pour les développeurs WCF
 description: Discussion sur les bibliothèques/packages client partagés pour les services gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: b403e7e1638496947ac7f6fc976cbeab2f435bbf
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2135fe8b24a2311a31cb2bed191d290b1112bc66
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419923"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967872"
 ---
 # <a name="create-grpc-client-libraries"></a>Créer des bibliothèques clientes gRPC
 
@@ -19,7 +18,7 @@ L’un des avantages de la distribution d’une bibliothèque cliente est que vo
 > [!CAUTION]
 > Vous **ne devez pas** utiliser de code personnalisé pour fournir des fonctionnalités essentielles, car cela signifierait que les fonctionnalités seraient limitées aux équipes .net utilisant la bibliothèque partagée, et non aux équipes utilisant d’autres langages ou plateformes, tels que Python ou Java.
 
-Dans un environnement multiplateforme où différentes équipes utilisent fréquemment des langages de programmation et des frameworks différents, ou où votre API est accessible en externe, le partage de fichiers `.proto` pour que les développeurs puissent générer leurs propres clients, c’est le meilleur moyen de s’assurer autant d’équipes que possible peuvent accéder à votre service gRPC.
+Dans un environnement multiplateforme où différentes équipes utilisent fréquemment des langages de programmation et des frameworks différents, ou où votre API est accessible de manière externe, le partage de fichiers `.proto` pour que les développeurs puissent générer leurs propres clients est le meilleur moyen de garantir que le plus grand nombre d’équipes possible peut accéder à votre service gRPC.
 
 ## <a name="useful-extensions"></a>Extensions utiles
 
@@ -146,7 +145,7 @@ namespace Grpc.Core
 }
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Les modèles `IAsyncEnumerable` et `IObservable` sont des méthodes bien prises en charge et bien documentées pour gérer les flux de données asynchrones dans .NET. les flux gRPC sont bien mappés aux deux paradigmes, offrant une intégration étroite avec l’infrastructure .NET Core moderne et des styles de programmation réactifs/asynchrones.
 

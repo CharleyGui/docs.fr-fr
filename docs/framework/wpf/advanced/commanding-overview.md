@@ -192,5 +192,5 @@ ms.locfileid: "72004597"
 - [Vue d’ensemble des entrées](input-overview.md)
 - [Vue d’ensemble des événements routés](routed-events-overview.md)
 - [Implémenter ICommandSource](how-to-implement-icommandsource.md)
-- [Guide pratique pour Ajouter une commande à un MenuItem @ no__t-0
+- [Guide pratique pour ajouter une commande à un MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))
 - [Créer un exemple RoutedCommand personnalisé](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)

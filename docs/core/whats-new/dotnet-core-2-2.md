@@ -84,7 +84,7 @@ Pour plus d’informations sur l’amélioration des performances offerte par la
 
 Dans .NET Core 2.2 Preview 2, la compilation hiérarchisée était activée par défaut. Toutefois, nous avons décidé que nous ne sommes pas encore prêts à l’activer par défaut. C’est pourquoi, dans .NET Core 2.2, elle reste une fonctionnalité sur option. Pour plus d’informations sur le choix de la compilation hiérarchisée, voir [Amélioration du compilateur JIT](dotnet-core-2-1.md#jit-compiler-improvements) dans [Nouveautés de .NET Core 2.1](dotnet-core-2-1.md).
 
-## <a name="runtime"></a>Exécution
+## <a name="runtime"></a>Runtime
 
 **Injecter du code avant d’exécuter la méthode Main**
 

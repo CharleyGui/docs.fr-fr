@@ -60,7 +60,7 @@ public static bool ProcessPayment([ActivityTrigger] DurableActivityContext conte
 
 Dans certains cas, les flux de travail peuvent contenir des activités qui prennent une durée relativement longue. Imaginez un processus qui lance la sauvegarde des fichiers multimédias dans le stockage d’objets BLOB. Selon la taille et la quantité des fichiers multimédias, le processus de sauvegarde peut prendre plusieurs heures.
 
-Dans ce scénario, la capacité de `DurableOrchestrationClient` de vérifier l’état d’un workflow en cours d’exécution devient utile. Lorsque vous utilisez un `HttpTrigger` pour démarrer un flux de travail, la méthode `CreateCheckStatusResponse` peut être utilisée pour retourner une instance de `HttpResponseMessage`. Cette réponse fournit au client un URI dans la charge utile qui peut être utilisé pour vérifier l’état du processus en cours d’exécution.
+Dans ce scénario, la capacité de `DurableOrchestrationClient`de vérifier l’état d’un workflow en cours d’exécution devient utile. Lorsque vous utilisez un `HttpTrigger` pour démarrer un flux de travail, la méthode `CreateCheckStatusResponse` peut être utilisée pour retourner une instance de `HttpResponseMessage`. Cette réponse fournit au client un URI dans la charge utile qui peut être utilisé pour vérifier l’état du processus en cours d’exécution.
 
 ```csharp
 [FunctionName("OrderWorkflow")]
@@ -149,7 +149,7 @@ public static async Task CheckStockPrice([OrchestrationTrigger] DurableOrchestra
 }
 ```
 
-la méthode de `CreateTimer` de `DurableOrchestrationContext` définit la planification de l’appel suivant de la boucle afin de vérifier les modifications du cours de l’action. `DurableOrchestrationContext` a également une propriété `CurrentUtcDateTime` pour obtenir la valeur DateTime actuelle en heure UTC. Il est préférable d’utiliser cette propriété au lieu de `DateTime.UtcNow`, car elle est facilement factice pour le test.
+la méthode de `CreateTimer` de `DurableOrchestrationContext`définit la planification de l’appel suivant de la boucle afin de vérifier les modifications du cours de l’action. `DurableOrchestrationContext` a également une propriété `CurrentUtcDateTime` pour obtenir la valeur DateTime actuelle en heure UTC. Il est préférable d’utiliser cette propriété au lieu de `DateTime.UtcNow`, car elle est facilement factice pour le test.
 
 ## <a name="recommended-resources"></a>Ressources recommandées
 

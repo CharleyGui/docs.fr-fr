@@ -26,9 +26,9 @@ Les paragraphes suivants décrivent les différences entre les opérateurs de re
 
 ### <a name="concat"></a>Concat
 
-La méthode <xref:System.Linq.Enumerable.Concat%2A> est définie pour des multijeux ordonnés lorsque les ordres du récepteur et de l’argument sont identiques. <xref:System.Linq.Enumerable.Concat%2A> fonctionne comme `UNION ALL` sur les multijeux suivis de l'ordre courant.
+La méthode <xref:System.Linq.Enumerable.Concat%2A> est définie pour des multijeux ordonnés lorsque les ordres du récepteur et de l’argument sont identiques. <xref:System.Linq.Enumerable.Concat%2A> fonctionne comme `UNION ALL` sur les multijeux suivis de l’ordre courant.
 
-L'étape finale est le classement dans SQL avant que les résultats ne soient générés. <xref:System.Linq.Enumerable.Concat%2A> ne conserve pas l'ordre de ses arguments. Pour garantir un classement approprié, vous devez classer explicitement les résultats de <xref:System.Linq.Enumerable.Concat%2A>.
+L'étape finale est le classement dans SQL avant que les résultats ne soient générés. <xref:System.Linq.Enumerable.Concat%2A> ne conserve pas l’ordre de ses arguments. Pour garantir un classement approprié, vous devez classer explicitement les résultats de <xref:System.Linq.Enumerable.Concat%2A>.
 
 ### <a name="intersect-except-union"></a>Intersect, Except, Union
 
@@ -41,7 +41,7 @@ La méthode <xref:System.Linq.Enumerable.Union%2A> est définie pour les multije
 les méthodes <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont bien définies uniquement par rapport aux *jeux ordonnés*. La sémantique des jeux non ordonnés ou des multijeux n'est pas définie.
 
 > [!NOTE]
-> <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont soumis à certaines limites lorsqu'ils sont utilisés dans des requêtes SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).
+> <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> présentent certaines limitations lorsqu’elles sont utilisées dans des requêtes sur SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).
 
 En raison des limitations de classement dans SQL, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] tente de déplacer le classement de l’argument de ces méthodes vers le résultat de la méthode. Prenons l'exemple de la requête [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] suivante :
 
@@ -80,17 +80,17 @@ Il devient évident que le classement spécifié doit être cohérent lorsque <x
 |<xref:System.Linq.Enumerable.Reverse%2A>|La traduction de cette méthode est possible pour un jeu ordonné mais n'est pas fournie actuellement par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
 |<xref:System.Linq.Enumerable.Last%2A>, <xref:System.Linq.Enumerable.LastOrDefault%2A>|La traduction de ces méthodes est possible pour un jeu ordonné mais n'est pas fournie actuellement par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
 |<xref:System.Linq.Enumerable.ElementAt%2A>, <xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|Les requêtes SQL fonctionnent sur des multijeux et non sur des séquences indexables.|
-|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A> (surcharge avec argument par défaut)|En général, il est impossible de spécifier une valeur par défaut pour un tuple arbitraire. Les valeurs null pour les tuples sont possibles dans certains cas par le biais de jointures externes.|
+|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A> (surcharge avec ARG par défaut)|En général, il est impossible de spécifier une valeur par défaut pour un tuple arbitraire. Les valeurs null pour les tuples sont possibles dans certains cas par le biais de jointures externes.|
 
-## <a name="expression-translation"></a>Traduction d'expressions
+## <a name="expression-translation"></a>Traduction d'expression
 
 ### <a name="null-semantics"></a>Sémantique Null
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] n'impose pas de sémantique de comparaison null sur SQL. Les opérateurs de comparaison sont traduits syntaxiquement dans leurs équivalents SQL. Pour cette raison, la sémantique reflète la sémantique SQL définie par le serveur ou les paramètres de connexion. Par exemple, deux valeurs NULL sont considérées comme non égales sous les paramètres par défaut SQL Server, mais vous pouvez modifier les paramètres pour changer la sémantique. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne tient pas compte des paramètres du serveur lorsqu'il traduit des requêtes.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] n’impose pas la sémantique de comparaison null sur SQL. Les opérateurs de comparaison sont traduits syntaxiquement dans leurs équivalents SQL. Pour cette raison, la sémantique reflète la sémantique SQL définie par le serveur ou les paramètres de connexion. Par exemple, deux valeurs NULL sont considérées comme non égales sous les paramètres par défaut SQL Server, mais vous pouvez modifier les paramètres pour changer la sémantique. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne tient pas compte des paramètres du serveur lorsqu’il traduit des requêtes.
 
 Une comparaison avec le littéral null est traduite dans la version SQL appropriée (`is null` ou `is not null`).
 
-La valeur `null` dans le classement est définie par SQL Server. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne change pas le classement.
+La valeur `null` dans le classement est définie par SQL Server. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne modifie pas le classement.
 
 ### <a name="aggregates"></a>Agrégats
 
@@ -102,7 +102,7 @@ De même, la traduction [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdl
 
 ### <a name="entity-arguments"></a>Arguments d’entité
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] permet d’utiliser les types d’entités dans les méthodes <xref:System.Linq.Enumerable.GroupBy%2A> et <xref:System.Linq.Enumerable.OrderBy%2A>. Dans la traduction de ces opérateurs, l’utilisation d’un argument d’un type est considérée comme équivalente à la spécification de tous les membres de ce type. Par exemple, le code suivant est équivalent :
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] permet d’utiliser les types d’entités dans les méthodes de <xref:System.Linq.Enumerable.GroupBy%2A> et de <xref:System.Linq.Enumerable.OrderBy%2A>. Dans la traduction de ces opérateurs, l’utilisation d’un argument d’un type est considérée comme équivalente à la spécification de tous les membres de ce type. Par exemple, le code suivant est équivalent :
 
 [!code-csharp[DLinqSQOTranslation#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#2)]
 [!code-vb[DLinqSQOTranslation#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#2)]
@@ -158,7 +158,7 @@ Méthodes de conversion :
 
 ### <a name="inheritance-mapping-restrictions"></a>Restrictions du mappage d'héritage
 
-Pour plus d'informations, voir [Procédure : Hiérarchies d’héritage de mappage @ no__t-0.
+Pour plus d’informations, consultez [Comment : mapper des hiérarchies d’héritage](how-to-map-inheritance-hierarchies.md).
 
 ### <a name="inheritance-in-queries"></a>Héritage dans les requêtes
 
@@ -188,7 +188,7 @@ Pour plus d’informations sur le mappage à ces SQL Server types de date et d�
 
 ## <a name="sql-server-2005-support"></a>Prise en charge de SQL Server 2005
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge les fonctionnalités SQL Server 2005 suivantes :
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge les fonctionnalités SQL Server 2005 suivantes :
 
 - Procédures stockées écrites pour le CLR SQL.
 
@@ -198,27 +198,27 @@ Pour plus d’informations sur le mappage à ces SQL Server types de date et d�
 
 ## <a name="sql-server-2000-support"></a>Prise en charge de SQL Server 2000
 
-Les limitations SQL Server 2000 suivantes (par rapport à Microsoft SQL Server 2005) affectent la prise en charge de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].
+Les limitations suivantes de l’SQL Server 2000 (par rapport à Microsoft SQL Server 2005) affectent [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prise en charge.
 
 ### <a name="cross-apply-and-outer-apply-operators"></a>Opérateurs Cross Apply et Outer Apply
 
 Ces opérateurs ne sont pas disponibles dans SQL Server 2000. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] tente une série de réécritures pour les remplacer par des jointures appropriées.
 
-`Cross Apply` et `Outer Apply` sont générés pour les navigations dans les relations. Le jeu des requêtes pour lequel ces réécritures sont possibles n'est pas bien défini. Pour cette raison, l’ensemble minimal de requêtes prises en charge pour SQL Server 2000 est l’ensemble qui n’implique pas de navigation entre les relations.
+`Cross Apply` et `Outer Apply` sont générés pour les navigations de relation. Le jeu des requêtes pour lequel ces réécritures sont possibles n'est pas bien défini. Pour cette raison, l’ensemble minimal de requêtes prises en charge pour SQL Server 2000 est l’ensemble qui n’implique pas de navigation entre les relations.
 
 ### <a name="text--ntext"></a>text / ntext
 
-Les types de données `text` @ no__t-1 @ no__t-2 ne peuvent pas être utilisés dans certaines opérations de requête sur `varchar(max)` @ no__t-4 @ no__t-5, qui sont pris en charge par Microsoft SQL Server 2005.
+Les types de données `text` / `ntext` ne peuvent pas être utilisés dans certaines opérations de requête sur `varchar(max)` / `nvarchar(max)`, qui sont pris en charge par Microsoft SQL Server 2005.
 
 Aucune résolution n’est disponible pour cette limitation. Précisément, vous ne pouvez pas utiliser `Distinct()` sur des résultats contenant des membres mappés à des colonnes `text` ou `ntext`.
 
 ### <a name="behavior-triggered-by-nested-queries"></a>Comportement déclenché par les sous-requêtes
 
-Le classeur SQL Server 2000 (via SP4) a certaines particularités qui sont déclenchées par des requêtes imbriquées. Le jeu de requêtes SQL qui déclenche ces spécificités n'est pas bien défini. Pour cette raison, vous ne pouvez pas définir l’ensemble de requêtes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui peuvent provoquer des exceptions de SQL Server.
+Le classeur SQL Server 2000 (via SP4) a certaines particularités qui sont déclenchées par des requêtes imbriquées. Le jeu de requêtes SQL qui déclenche ces spécificités n'est pas bien défini. Pour cette raison, vous ne pouvez pas définir le jeu de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requêtes qui peuvent provoquer des exceptions de SQL Server.
 
 ### <a name="skip-and-take-operators"></a>Opérateurs Skip et Take
 
-<xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont soumis à certaines limites lorsqu'ils sont utilisés dans des requêtes SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).
+<xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> présentent certaines limitations lorsqu’elles sont utilisées dans des requêtes sur SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).
 
 ## <a name="object-materialization"></a>Matérialisation d'objet
 
@@ -228,7 +228,7 @@ La matérialisation crée des objets CLR à partir de lignes retournées par une
 
   - Constructeurs
 
-  - Méthodes `ToString` dans les projections
+  - `ToString` méthodes dans les projections
 
   - Casts de type dans les projections
 

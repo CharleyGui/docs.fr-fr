@@ -1,14 +1,13 @@
 ---
 title: Points de terminaison WCF et méthodes gRPC-gRPC pour les développeurs WCF
 description: Comparaison des points de terminaison WCF déclarés avec les attributs ServiceContract et OperationContract et les méthodes gRPC déclarées dans Protobuf
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 1cb7fedf1fbb632438134375306801f356d7b921
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 763862a363afc6aab72335050cf4822754816c7a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846058"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966935"
 ---
 # <a name="wcf-endpoints-and-grpc-methods"></a>Points de terminaison WCF et méthodes gRPC
 
@@ -34,7 +33,7 @@ Le chapitre 3 a montré que les définitions de message Protobuf sont utilisées
 
 L’attribut [OperationContract](xref:System.ServiceModel.OperationContractAttribute) possède des propriétés permettant de contrôler ou d’affiner son fonctionnement. les méthodes gRPC n’offrent pas ce type de contrôle. Le tableau suivant présente les propriétés de `OperationContract` et la façon dont les fonctionnalités qu’elles spécifient sont (ou ne sont pas) traitées dans gRPC :
 
-| Propriété`OperationContract` | gRPC                                             |
+| Propriété `OperationContract` | gRPC                                             |
 | ---------------------------- | ------------------------------------------------ |
 | <xref:System.ServiceModel.OperationContractAttribute.Action>             | URI identifiant l’opération. gRPC utilise le nom de l' `package`, `service` et `rpc` du fichier `.proto`. |
 | <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern>       | Toutes les méthodes de service gRPC retournent des objets `Task`. |

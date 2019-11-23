@@ -8,7 +8,7 @@ ms.locfileid: "72394433"
 ---
 ### <a name="shared-framework-removed-microsoftaspnetcoreall"></a>Framework partagé : suppression de Microsoft. AspNetCore. All
 
-À partir de ASP.NET Core 3,0, le reconditionnement `Microsoft.AspNetCore.All` et l’infrastructure partagée `Microsoft.AspNetCore.All` correspondante ne sont plus produits. Ce package est disponible dans ASP.NET Core 2,2 et continuera à recevoir des mises à jour de maintenance dans ASP.NET Core 2,1.
+À partir de ASP.NET Core 3,0, le sous-package `Microsoft.AspNetCore.All` et l’infrastructure partagée `Microsoft.AspNetCore.All` correspondante ne sont plus produits. Ce package est disponible dans ASP.NET Core 2,2 et continuera à recevoir des mises à jour de maintenance dans ASP.NET Core 2,1.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,11 +16,11 @@ ms.locfileid: "72394433"
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les applications peuvent utiliser le reconditionnement `Microsoft.AspNetCore.All` pour cibler l’infrastructure partagée `Microsoft.AspNetCore.All` sur .NET Core.
+Les applications peuvent utiliser le sous-package `Microsoft.AspNetCore.All` pour cibler le `Microsoft.AspNetCore.All` Framework partagé sur .NET Core.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-.NET Core 3,0 n’inclut pas d’infrastructure partagée @no__t 0.
+.NET Core 3,0 n’inclut pas de `Microsoft.AspNetCore.All` Framework partagé.
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -30,13 +30,13 @@ Le sous-package `Microsoft.AspNetCore.All` incluait un grand nombre de dépendan
 
 Migrez votre projet pour utiliser l’infrastructure `Microsoft.AspNetCore.App`. Les composants qui étaient précédemment disponibles dans `Microsoft.AspNetCore.All` sont toujours disponibles sur NuGet. Ces composants sont maintenant déployés avec votre application au lieu d’être inclus dans le Framework partagé.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-aucune.
+Aucun
 
 <!-- 
 

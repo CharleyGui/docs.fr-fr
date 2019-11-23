@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : implémenter un proxy de détection'
+title: 'Procédure : implémenter un proxy de découverte'
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
 ms.openlocfilehash: dafd5e25f998f2dda3f736caeea51cd534ce8e5e
@@ -9,9 +9,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71351583"
 ---
-# <a name="how-to-implement-a-discovery-proxy"></a>Procédure : implémenter un proxy de détection
+# <a name="how-to-implement-a-discovery-proxy"></a>Procédure : implémenter un proxy de découverte
 
-Cette rubrique explique comment implémenter un proxy de découverte. Pour plus d’informations sur la fonctionnalité de découverte dans Windows Communication Foundation (WCF), consultez [vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Un proxy de découverte peut être implémenté en créant une classe qui étend la classe abstraite <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Un certain nombre d'autres classes de prise en charge sont définies et utilisées dans cet exemple. `OnResolveAsyncResult`, `OnFindAsyncResult` et `AsyncResult`. Ces classes implémentent l'interface <xref:System.IAsyncResult>. Pour plus d’informations sur <xref:System.IAsyncResult>, consultez [interface System. IAsyncResult](xref:System.IAsyncResult).
+Cette rubrique explique comment implémenter un proxy de découverte. Pour plus d’informations sur la fonctionnalité de découverte dans Windows Communication Foundation (WCF), consultez [vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Un proxy de découverte peut être implémenté en créant une classe qui étend la classe abstraite <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Un certain nombre d'autres classes de prise en charge sont définies et utilisées dans cet exemple. `OnResolveAsyncResult`, `OnFindAsyncResult`et `AsyncResult`. Ces classes implémentent l'interface <xref:System.IAsyncResult>. Pour plus d’informations sur <xref:System.IAsyncResult> consultez [interface System. IAsyncResult](xref:System.IAsyncResult).
 
  L'implémentation d'un proxy de découverte est divisée en trois parties principales dans cette rubrique :
 
@@ -546,7 +546,7 @@ Les méthodes OnBegin. / OnEnd. les méthodes fournissent la logique pour les op
     }
     ```
 
-Vous avez terminé l'implémentation du proxy de découverte. Passez à [How pour : Implémentez un service détectable qui s’inscrit auprès du proxy de découverte @ no__t-0.
+Vous avez terminé l'implémentation du proxy de découverte. Continuez sur [Comment : implémenter un service détectable qui s’inscrit auprès du proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).
 
 ## <a name="example"></a>Exemple
 
@@ -976,6 +976,6 @@ namespace Microsoft.Samples.Discovery
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Guide pratique pour Implémenter un service détectable qui s’inscrit auprès du proxy de découverte @ no__t-0
-- [Guide pratique pour Implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service @ no__t-0
-- [Guide pratique pour Tester le proxy de découverte @ no__t-0
+- [Guide pratique pour implémenter un service détectable qui s’inscrit auprès du proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Guide pratique pour implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [Guide pratique pour tester le proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
