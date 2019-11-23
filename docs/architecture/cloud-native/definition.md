@@ -85,7 +85,7 @@ Le tableau suivant met en évidence la méthodologie à douze facteurs :
 | 5 | Build, Release, exécuter | Chaque version doit appliquer une séparation stricte entre les étapes de génération, de mise en œuvre et d’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration. Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. |
 | 6 | Processus | Chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données. |
 | 7 | Liaison de port | Chaque microservice doit être autonome avec ses interfaces et fonctionnalités exposées sur son propre port. Cela permet d’isoler les autres microservices. |
-| 8 | Concurrency | Les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible. |
+| 8 | Concurrence | Les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible. |
 | 9 | Disposability | Les instances de service doivent être jetables, favorisant des Démarrages rapides pour augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence. |
 | 10 | Parité dev/prod | Conservez les environnements tout au long du cycle de vie des applications comme possible, en évitant les raccourcis coûteux. Ici, l’adoption de conteneurs peut contribuer de façon considérable en promouvant le même environnement d’exécution. |
 | 11 | Journalisation | Traitez les journaux générés par les microservices en tant que flux d’événements. Traitez-les avec une agrégation d’événements et Propagez les données aux outils de gestion des journaux et de l’exploration de données, comme Azure Monitor ou Splunk, et enfin un archivage à long terme. |
@@ -155,7 +155,7 @@ La figure 1-4 compare une approche d’application monolithique avec une approch
 
 Notez comment les microservices favorisent le principe « une base de code, une application » de l' [application à 12 facteurs](https://12factor.net/), abordé plus haut dans le chapitre.
 
-> *Factor \#1 spécifie «un code base unique pour chaque microservice, stocké dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements.*
+> *Le facteur \#1 spécifie «un code base unique pour chaque microservice, stocké dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements.*
 
 ### <a name="why-microservices"></a>Pourquoi les microservices ?
 
@@ -197,7 +197,7 @@ Notez que chaque conteneur gère son propre ensemble de dépendances et d’exé
 
 Notez la manière dont le modèle de conteneur adopte le principe de « dépendances » de l' [application à douze facteurs](https://12factor.net/).
 
-> *Factor \#2 spécifie que chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système.»*
+> *Le facteur \#2 spécifie que chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système.»*
 
 Les conteneurs prennent en charge les charges de travail Linux et Windows. Azure Cloud adopte les deux. Ce qui est intéressant, c’est qu’il s’agit de Linux, et non de Windows Server, qui est devenu le système d’exploitation le plus populaire dans Azure.
 
@@ -228,17 +228,17 @@ Le tableau suivant décrit les tâches d’orchestration courantes.
 | Planification | Approvisionner automatiquement des instances de conteneur.|
 | Affinité/anti-affinité | Approvisionner des conteneurs à proximité ou éloignés les uns des autres, ce qui contribue à la disponibilité et aux performances. |
 | Surveillance de l’intégrité | Détectez et corrigez automatiquement les défaillances.|
-| Échec | Reconfigurer automatiquement l’instance défaillante sur des machines saines.|
+| Basculement | Reconfigurer automatiquement l’instance défaillante sur des machines saines.|
 | Mise à l'échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
-| Réseau | Gérez une superposition de mise en réseau pour la communication de conteneur.|
+| Mise en réseau | Gérez une superposition de mise en réseau pour la communication de conteneur.|
 | Découverte de service | Activez les conteneurs pour les localiser.|
 | Mises à niveau propagées | Coordonner les mises à niveau incrémentielles avec un déploiement sans temps d’arrêt. Annule automatiquement les modifications problématiques.|
 
 Notez comment les orchestrateurs adoptent les principes de disposability et d’accès concurrentiel de l' [application à 12 facteurs](https://12factor.net/), abordés plus haut dans ce chapitre.
 
-> *Le facteur \#9 spécifie que les instances de service doivent être jetables, favorisant ainsi les Démarrages rapides afin d’augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence.»*
+> *Le facteur \#9 spécifie que les «instances de service doivent être jetables, favorisant les Démarrages rapides afin d’augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence.»*
 
-> *Facteur \#8 spécifie que les services sont mis à l’échelle sur un grand nombre de processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
+> *Le facteur \#8 spécifie que les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
 
 Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde Cloud-native. Il s’agit d’une plate-forme portable, extensible et open source pour la gestion des charges de travail en conteneur.
 
@@ -258,7 +258,7 @@ Les systèmes Cloud natifs dépendent de nombreuses ressources accessoires diff�
 
 Les services de sauvegarde promeuvent le principe « abandon » de l' [application à 12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
 
->*Factor \#6* spécifie que «chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données.»
+>Le *facteur \#6* spécifie que chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données.»
 
 Vous pouvez héberger vos propres services de stockage, mais vous serez alors responsable de la gestion des licences, de l’approvisionnement et de la gestion de ces ressources.
 
@@ -268,9 +268,9 @@ Les systèmes Cloud natifs favorisent les services de stockage gérés des fourn
 
 Une meilleure pratique consiste à traiter un service de sauvegarde en tant que *ressource attachée*, liée de manière dynamique à un microservice avec des informations (URL et informations d’identification) stockées dans une configuration externe. Ce guide est écrit dans l’application à [12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
 
->*Factor \#4* spécifie que les services de stockage doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.»
+>Le *facteur \#4* spécifie que les services de stockage doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.»
 
->*Factor \#3* spécifie que les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de la configuration en dehors du code.»
+>Le *facteur \#3* spécifie que les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de la configuration en dehors du code.»
 
 Avec ce modèle, un service de sauvegarde peut être attaché et détaché sans modification du code. Vous pouvez promouvoir un microservice de l’AQ en un environnement intermédiaire. Vous mettez à jour la configuration du microservice pour pointer vers les services de stockage dans un environnement intermédiaire et injectez les paramètres dans votre conteneur par le biais d’une variable d’environnement.
 
@@ -298,7 +298,7 @@ Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://d
 
 L' [application à 12 facteurs](https://12factor.net/), abordée précédemment, appelle des étapes distinctes lors de la transformation du code complet en une application en cours d’exécution.
 
-> *Le facteur \#5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
+> Le *facteur \#5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
 
 Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. Ils fournissent des étapes de déploiement distinctes et permettent de garantir un code cohérent et de qualité accessible aux utilisateurs.
 

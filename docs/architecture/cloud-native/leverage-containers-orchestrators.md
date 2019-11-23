@@ -139,7 +139,7 @@ Qu’est-ce que Minikube ? Le projet Minikube indique « Minikube implémente 
 - Activation de l’interface réseau du conteneur (CNI)
 - Pénètre
 
-Après avoir installé Minikube, vous pouvez commencer rapidement à l’utiliser en exécutant la commande `minikube start`, qui télécharge une image et démarre le cluster Kubernetes local. Une fois le cluster démarré, vous interagissez avec lui à l’aide des commandes Kubernetes `kubectl` standard.
+Après avoir installé Minikube, vous pouvez commencer rapidement à l’utiliser en exécutant la commande `minikube start`, qui télécharge une image et démarre le cluster Kubernetes local. Une fois le cluster démarré, vous interagissez avec lui à l’aide des commandes standard Kubernetes `kubectl`.
 
 ### <a name="docker-desktop"></a>Bureau de l’ancrage
 
@@ -194,7 +194,7 @@ Le comportement par défaut lors de l’exécution de l’application est égale
 
 En plus du développement local, [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) offre un moyen pratique à plusieurs développeurs de travailler avec leurs propres configurations Kubernetes dans Azure. Comme vous pouvez le voir dans la figure 3-7, vous pouvez également exécuter l’application dans Azure Dev Spaces.
 
-Si vous n’ajoutez pas la prise en charge de l’ancrage à votre application ASP.NET Core lorsque vous la créez, vous pouvez toujours l’ajouter ultérieurement. Dans le Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter**la**prise en charge**de l’ancrage  > , comme illustré à la figure 3-8.
+Si vous n’ajoutez pas la prise en charge de l’ancrage à votre application ASP.NET Core lorsque vous la créez, vous pouvez toujours l’ajouter ultérieurement. Dans le Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **ajouter** > **prise en charge**de l’ancrage, comme illustré à la figure 3-8.
 
 ![Ajout de la prise en charge de l’ancrage à Visual Studio](./media/visual-studio-add-docker-support.png)
 

@@ -1,14 +1,13 @@
 ---
 title: Protobuf tous les champs et OneOf pour les types variant-gRPC pour les développeurs WCF
 description: Découvrez comment utiliser le type any et le mot clé OneOf pour représenter des types d’objets variants dans des messages.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 10f55288eb4a6aa603228da5b4850317d6bde614
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: af3ba22c238aa80a8c6119f62d5d8914770cad68
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846389"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971614"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf tous les champs et OneOf pour les types variant
 
@@ -16,7 +15,7 @@ La gestion des types de propriétés dynamiques (autrement dit, les propriétés
 
 Protobuf fournit deux options plus simples pour traiter les valeurs qui peuvent être de plus d’un type. Le type de `Any` peut représenter n’importe quel type de message Protobuf connu, tandis que le mot clé `oneof` vous permet de spécifier qu’une seule plage de champs peut être définie dans un message donné.
 
-## <a name="any"></a>Any
+## <a name="any"></a>Tous
 
 `Any` est l’un des « types connus » d’Protobuf : une collection de types de messages utiles et réutilisables avec des implémentations dans toutes les langues prises en charge. Pour utiliser le type de `Any`, vous devez importer la définition de la `google/protobuf/any.proto`.
 
@@ -39,7 +38,7 @@ message ChangeNotification {
 }
 ```
 
-Dans le C# code, la classe`Any`fournit des méthodes pour définir le champ, extraire le message et vérifier le type.
+Dans le C# code, la classe `Any` fournit des méthodes pour définir le champ, extraire le message et vérifier le type.
 
 ```csharp
 public void FormatChangeNotification(ChangeNotification change)

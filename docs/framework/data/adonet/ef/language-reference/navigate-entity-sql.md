@@ -21,9 +21,9 @@ navigate(instance-expression, [relationship-type], [to-end [, from-end] ])
 
 ## <a name="arguments"></a>Arguments
 
-`instance-expression` instance d’une entité.
+`instance-expression` une instance d’une entité.
 
-`relationship-type` nom de type de la relation, à partir du fichier Conceptual Schema Definition Language (CSDL). La `relationship-type` est qualifiée de \<namespace >. \<relationship nom de type >.
+`relationship-type` le nom de type de la relation, à partir du fichier Conceptual Schema Definition Language (CSDL). Le `relationship-type` est qualifié en tant qu’espace de noms \<>. nom du type de relation\<>.
 
 `to` la fin de la relation.
 
@@ -33,7 +33,7 @@ navigate(instance-expression, [relationship-type], [to-end [, from-end] ])
 
 Si la cardinalité de la terminaison To est 1, la valeur retournée est `Ref<T>`. Si la cardinalité de la terminaison To est n, la valeur retournée est `Collection<Ref<T>>`.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les relations sont des constructions de première classe dans le Entity Data Model (EDM). Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre. `from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.
 
@@ -43,14 +43,14 @@ Une construction de navigation se présente généralement sous la forme suivant
 
 navigate(`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ] ] )
 
-Exemple :
+Par exemple :
 
 ```sql
 Select o.Id, navigate(o, OrderCustomer, Customer, Order)
 From LOB.Orders as o
 ```
 
-Où OrderCustomer est le `relationship`, et Client et Order sont les terminaisons `to-end` (customer) et `from-end` (order) de la relation. Si OrderCustomer était une relation n :1, le type de résultat de l’expression de navigation est Ref @ no__t-0Customer >.
+Où OrderCustomer est le `relationship`, et Client et Order sont les terminaisons `to-end` (customer) et `from-end` (order) de la relation. Si OrderCustomer était une relation n :1, le type de résultat de l’expression de navigation est Ref\<> client.
 
 Voici la même expression sous une forme plus simple :
 
@@ -59,7 +59,7 @@ Select o.Id, navigate(o, OrderCustomer)
 From LOB.Orders as o
 ```
 
-De même, dans une requête de la forme suivante, l’expression de navigation produirait une collection < Ref @ no__t-0Order > >.
+De même, dans une requête de la forme suivante, l’expression de navigation produit une collection < Ref\<Order > >.
 
 ```sql
 Select c.Id, navigate(c, OrderCustomer, Order, Customer)

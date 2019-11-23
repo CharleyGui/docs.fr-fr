@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 8985434467346acc360e9a89c052803f495e87d1
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: b376f8b38749f242f4e78a10808532989e0ac834
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332005"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972130"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -146,7 +146,7 @@ Dans les applications monolithiques, les projets Noyau de l’application, Infra
 
 Dans une architecture propre, les responsabilités de chaque projet sont clairement établies. À cet effet, certains types sont communs à chaque projet et vous trouverez souvent plusieurs dossiers correspondant à ces types dans le projet en question.
 
-La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces renferment les abstractions des opérations à effectuer dans la couche Infrastructure, comme l’accès aux données, les accès au système de fichiers, les appels réseau, etc. Les services ou interfaces définis dans cette couche doivent parfois interagir avec des types qui ne sont pas des entités et qui n’ont pas de dépendance sur les couches Interface utilisateur ou Infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
+La couche Noyau de l’application contient le modèle métier, qui définit les entités, les services et les interfaces. Ces interfaces incluent des abstractions pour les opérations qui seront effectuées à l’aide de l’infrastructure, telles que l’accès aux données, l’accès au système de fichiers, les appels réseau, etc. Parfois, les services ou les interfaces définis au niveau de cette couche doivent fonctionner avec des types non-entité qui n’ont pas de dépendances sur l’interface utilisateur ou l’infrastructure. Ils peuvent alors être définis comme objets de transfert de données (DTO).
 
 ### <a name="application-core-types"></a>Types de la couche Noyau de l’application
 
@@ -260,13 +260,12 @@ networks:
       name: nat
 ```
 
-Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
+Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Web` de `Dockerfile` :
 
 ```Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /app
 
-COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
 RUN dotnet restore

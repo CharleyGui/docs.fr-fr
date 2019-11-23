@@ -1,78 +1,78 @@
 ---
-title: 'Procédure : Accéder aux membres d’un objet (Visual Basic)'
+title: "Comment : accéder aux membres d'un objet"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - members [Visual Basic], accessing
 - object variables [Visual Basic], accessing members
 ms.assetid: a0072514-6a79-4dd6-8d03-ca8c13e61ddc
-ms.openlocfilehash: 882046b829ade2da7c10b3db4c0d6c9ca9f3d579
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d44b538e8413eb1412e937375e9bca77600a29b7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630832"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348667"
 ---
-# <a name="how-to-access-members-of-an-object-visual-basic"></a>Procédure : Accéder aux membres d’un objet (Visual Basic)
+# <a name="how-to-access-members-of-an-object-visual-basic"></a>Comment : accéder aux membres d'un objet (Visual Basic)
 
-Quand vous avez une variable objet qui fait référence à un objet, vous souhaitez souvent travailler avec les membres de cet objet, tels que ses méthodes, propriétés, champs et événements. Par exemple, une fois que vous avez créé <xref:System.Windows.Forms.Form> un nouvel objet, vous pouvez définir sa <xref:System.Windows.Forms.Control.Text%2A> propriété ou appeler sa <xref:System.Windows.Forms.Control.Focus%2A> méthode.
+When you have an object variable that refers to an object, you often want to work with the members of that object, such as its methods, properties, fields, and events. For example, once you have created a new <xref:System.Windows.Forms.Form> object, you might want to set its <xref:System.Windows.Forms.Control.Text%2A> property or call its <xref:System.Windows.Forms.Control.Focus%2A> method.
 
-## <a name="accessing-members"></a>Accès aux membres
+## <a name="accessing-members"></a>Accessing Members
 
-Vous accédez aux membres d’un objet par le biais de la variable qui y fait référence.
+You access an object's members through the variable that refers to it.
 
-#### <a name="to-access-members-of-an-object"></a>Pour accéder aux membres d’un objet
+#### <a name="to-access-members-of-an-object"></a>To access members of an object
 
-- Utilisez l’opérateur d’accès aux membres`.`() entre le nom de la variable objet et le nom du membre.
+- Use the member-access operator (`.`) between the object variable name and the member name.
 
     ```vb
     currentText = newForm.Text
     ```
 
-    Si le membre est [partagé](../../../../visual-basic/language-reference/modifiers/shared.md), vous n’avez pas besoin d’une variable pour y accéder.
+    If the member is [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), you do not need a variable to access it.
 
-## <a name="accessing-members-of-an-object-of-known-type"></a>Accès aux membres d’un objet de type connu
+## <a name="accessing-members-of-an-object-of-known-type"></a>Accessing Members of an Object of Known Type
 
-Si vous connaissez le type d’un objet au moment de la compilation, vous pouvez utiliser la *liaison précoce* pour une variable qui y fait référence.
+If you know the type of an object at compile time, you can use *early binding* for a variable that refers to it.
 
-#### <a name="to-access-members-of-an-object-for-which-you-know-the-type-at-compile-time"></a>Pour accéder aux membres d’un objet pour lequel vous connaissez le type au moment de la compilation
+#### <a name="to-access-members-of-an-object-for-which-you-know-the-type-at-compile-time"></a>To access members of an object for which you know the type at compile time
 
-1. Déclarez la variable objet comme étant du type de l’objet que vous souhaitez assigner à la variable.
+1. Declare the object variable to be of the type of the object you intend to assign to the variable.
 
     ```vb
     Dim extraForm As System.Windows.Forms.Form
     ```
 
-    Avec `Option Strict On`, vous pouvez assigner uniquement <xref:System.Windows.Forms.Form> des objets (ou des objets d' <xref:System.Windows.Forms.Form>un type `extraForm`dérivé de) à. Si vous avez défini une classe ou une structure avec une `CType` conversion étendue en <xref:System.Windows.Forms.Form>, vous pouvez également assigner cette classe ou structure à. `extraForm`
+    With `Option Strict On`, you can assign only <xref:System.Windows.Forms.Form> objects (or objects of a type derived from <xref:System.Windows.Forms.Form>) to `extraForm`. If you have defined a class or structure with a widening `CType` conversion to <xref:System.Windows.Forms.Form>, you can also assign that class or structure to `extraForm`.
 
-2. Utilisez l’opérateur d’accès aux membres`.`() entre le nom de la variable objet et le nom du membre.
+2. Use the member-access operator (`.`) between the object variable name and the member name.
 
     ```vb
     extraForm.Show()
     ```
 
-    Vous pouvez accéder à toutes les méthodes et propriétés spécifiques à la <xref:System.Windows.Forms.Form> classe, quel que soit le `Option Strict` paramètre.
+    You can access all of the methods and properties specific to the <xref:System.Windows.Forms.Form> class, no matter what the `Option Strict` setting is.
 
-## <a name="accessing-members-of-an-object-of-unknown-type"></a>Accès aux membres d’un objet de type inconnu
+## <a name="accessing-members-of-an-object-of-unknown-type"></a>Accessing Members of an Object of Unknown Type
 
-Si vous ne connaissez pas le type d’un objet au moment de la compilation, vous devez utiliser la *liaison tardive* pour toute variable qui y fait référence.
+If you do not know the type of an object at compile time, you must use *late binding* for any variable that refers to it.
 
-#### <a name="to-access-members-of-an-object-for-which-you-do-not-know-the-type-at-compile-time"></a>Pour accéder aux membres d’un objet pour lequel vous ne connaissez pas le type au moment de la compilation
+#### <a name="to-access-members-of-an-object-for-which-you-do-not-know-the-type-at-compile-time"></a>To access members of an object for which you do not know the type at compile time
 
-1. Déclarez la variable objet comme étant du [type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md). (Déclarer une variable comme `Object` étant identique à la déclarer comme <xref:System.Object?displayProperty=nameWithType>.)
+1. Declare the object variable to be of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). (Declaring a variable as `Object` is the same as declaring it as <xref:System.Object?displayProperty=nameWithType>.)
 
     ```vb
     Dim someControl As Object
     ```
 
-    Avec `Option Strict On`, vous pouvez accéder uniquement aux membres qui sont définis sur la <xref:System.Object> classe.
+    With `Option Strict On`, you can access only the members that are defined on the <xref:System.Object> class.
 
-2. Utilisez l’opérateur d’accès aux membres`.`() entre le nom de la variable objet et le nom du membre.
+2. Use the member-access operator (`.`) between the object variable name and the member name.
 
     ```vb
     someControl.GetType()
     ```
 
-    Pour pouvoir accéder aux membres de n’importe quel objet que vous affectez à la variable objet, vous `Option Strict Off`devez définir. Dans ce cas, le compilateur ne peut pas garantir qu’un membre donné est exposé par l’objet que vous affectez à la variable. Si l’objet n’expose pas un membre auquel vous essayez d’accéder <xref:System.MemberAccessException> , une exception se produit.
+    To be able to access the members of any object you assign to the object variable, you must set `Option Strict Off`. When you do this, the compiler cannot guarantee that a given member is exposed by the object you assign to the variable. If the object does not expose a member you attempt to access, a <xref:System.MemberAccessException> exception occurs.
 
 ## <a name="see-also"></a>Voir aussi
 

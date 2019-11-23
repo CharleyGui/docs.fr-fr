@@ -1,14 +1,13 @@
 ---
 title: Informations d’identification de canal-gRPC pour les développeurs WCF
 description: Comment implémenter et utiliser les informations d’identification du canal gRPC dans ASP.NET Core 3,0.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 61141dc4143f36f9ac511c3369c3fde668c9d703
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b424db49337a2dc6e3d0245d36349e3f408cdf6c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846709"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967962"
 ---
 # <a name="channel-credentials"></a>Informations d’identification de la chaîne
 
@@ -49,7 +48,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ```
 
-Le paramètre `ClientCertificateMode.RequireCertificate` fait en sorte que Kestrel rejette immédiatement toute demande de connexion qui ne fournit pas de certificat client, mais ne valide pas le certificat. L’ajout du rappel `ClientCertificateValidation` permet à Kestrel de valider le certificat client (dans ce cas, de s’assurer qu’il a été émis par la même *autorité de certification* que le certificat de serveur) au point où la connexion est établie, avant le pipeline ASP.net Core est engagé.
+Le paramètre `ClientCertificateMode.RequireCertificate` fait en sorte que Kestrel rejette immédiatement toute demande de connexion qui ne fournit pas de certificat client, mais ne valide pas le certificat. L’ajout du rappel `ClientCertificateValidation` permet à Kestrel de valider le certificat client (dans ce cas, de s’assurer qu’il a été émis par la même *autorité de certification* que le certificat de serveur) au point où la connexion est établie, avant que le pipeline ASP.net Core soit engagé.
 
 ### <a name="adding-aspnet-core-certificate-authentication"></a>Ajout d’ASP.NET Core l’authentification par certificat
 

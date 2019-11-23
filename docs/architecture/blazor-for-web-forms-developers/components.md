@@ -79,13 +79,13 @@ Le tableau suivant récapitule les différentes directives Razor utilisées dans
 
 |Directive    |Description|Exemple|Équivalent Web Forms|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|aucune.|
+|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|Aucun|
 |`@code`      |Ajoute des membres de classe au composant|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser du code-behind|
 |`@inherits`  |Hérite de la classe de base spécifiée|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|aucune.|
+|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|Aucun|
 |`@layout`    |Spécifie un composant de disposition pour le composant|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|aucune.|
+|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|Aucun|
 |`@page`      |Spécifie l’itinéraire pour le composant|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser du code-behind|
 |`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *Web. config*|
@@ -110,12 +110,12 @@ Les différents attributs de directive utilisés par éblouissant (`@onclick`, `
 
 La plupart des syntaxes utilisées dans les fichiers *. aspx* et *. ascx* ont des syntaxes parallèles dans Razor. Vous trouverez ci-dessous une comparaison simple des syntaxes pour ASP.NET Web Forms et Razor.
 
-|Fonction                      |Web Forms           |Syntaxe               |Razor         |Syntaxe |
+|Composant                      |Web Forms           |Syntaxe               |Razor         |Syntaxe |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |Directives                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Blocs de code                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
 |Expressions<br>(Encodé en HTML)|`<%: %>`            |`<%:DateTime.Now %>` |Implicite : `@`<br>Explicite : `@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
-|Comments                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
+|Commentaires                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
 |Liaison de données                 |`<%# %>`            |`<%# Bind("Name") %>`|`@bind`       |`<input @bind="username" />`|
 
 Pour ajouter des membres à la classe de composant Razor, utilisez la directive `@code`. Cette technique est similaire à l’utilisation d’un bloc `<script runat="server">...</script>` dans un contrôle utilisateur ou une page ASP.NET Web Forms.
@@ -156,7 +156,7 @@ Considérez les composants Razor comme des types .NET, car c’est exactement ce
 <Counter />
 ```
 
-Comme indiqué dans les projets éblouissants par défaut, il est courant de placer les directives `@using` dans un fichier *_Imports. Razor* afin qu’elles soient importées dans tous les fichiers *. Razor* dans le même répertoire et dans les répertoires enfants.
+Comme indiqué dans les projets éblouissants par défaut, il est courant de placer les directives `@using` dans un fichier *_Imports. Razor* afin qu’elles soient importées dans tous les fichiers *. Razor* du même répertoire et dans les répertoires enfants.
 
 Si l’espace de noms d’un composant n’est pas dans l’étendue, vous pouvez spécifier un composant à l’aide de son C#nom de type complet, comme vous pouvez le faire dans :
 
@@ -379,7 +379,7 @@ Pour établir une liaison avec un paramètre de composant, utilisez un attribut 
 }
 ```
 
-## <a name="state-changes"></a>Modification de l'état
+## <a name="state-changes"></a>Modifications d'état
 
 Si l’état du composant a été modifié en dehors d’un événement d’interface utilisateur normal ou d’un rappel d’événement, le composant doit indiquer manuellement qu’il doit être de nouveau restitué. Pour signaler que l’état d’un composant a changé, appelez la méthode `StateHasChanged` sur le composant.
 
@@ -418,7 +418,7 @@ public class AppState
 
 ## <a name="component-lifecycle"></a>Cycle de vie des composants
 
-ASP.NET Web Forms Framework a des méthodes de cycle de vie bien définies pour les modules, les pages et les contrôles. Par exemple, le contrôle suivant implémente des gestionnaires d’événements pour les événements de cycle de vie `Init`, `Load` et `UnLoad` :
+ASP.NET Web Forms Framework a des méthodes de cycle de vie bien définies pour les modules, les pages et les contrôles. Par exemple, le contrôle suivant implémente des gestionnaires d’événements pour les événements de cycle de vie `Init`, `Load`et `UnLoad` :
 
 *Counter.ascx.cs*
 

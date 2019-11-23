@@ -8,7 +8,7 @@ ms.locfileid: "72394138"
 ---
 ### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a>Protection des données : DataProtection. AzureStorage utilise les nouvelles API de stockage Azure
 
-<xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> dépend des [bibliothèques de stockage Azure](https://github.com/Azure/azure-storage-net). Ces bibliothèques ont renommé leurs assemblys, leurs packages et leurs espaces de noms. À partir de ASP.NET Core 3,0, `Microsoft.AspNetCore.DataProtection.AzureStorage` utilise les nouvelles API et packages de préfixe @no__t 1-1.
+<xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> dépend des [bibliothèques de stockage Azure](https://github.com/Azure/azure-storage-net). Ces bibliothèques ont renommé leurs assemblys, leurs packages et leurs espaces de noms. À compter de ASP.NET Core 3,0, `Microsoft.AspNetCore.DataProtection.AzureStorage` utilise les nouvelles API et packages de préfixe de `Microsoft.Azure.Storage.`.
 
 Pour toute question sur les API de stockage Azure, utilisez <https://github.com/Azure/azure-storage-net>. Pour plus d’informations sur ce problème, consultez [ASPNET/AspNetCore # 8472](https://github.com/aspnet/AspNetCore/issues/8472).
 
@@ -18,7 +18,7 @@ Pour toute question sur les API de stockage Azure, utilisez <https://github.com/
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le package a référencé le package NuGet `WindowsAzure.Storage`.
+Le package a référencé le package `WindowsAzure.Storage` NuGet.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
@@ -30,7 +30,7 @@ Cette modification permet à `Microsoft.AspNetCore.DataProtection.AzureStorage` 
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Si vous avez encore besoin d’utiliser les anciennes API de stockage Azure avec ASP.NET Core 3,0, ajoutez une dépendance directe au package [WindowsAzure. Storage](https://www.nuget.org/packages/WindowsAzure.Storage/) . Ce package peut être installé avec les nouvelles API `Microsoft.Azure.Storage`.
+Si vous avez encore besoin d’utiliser les anciennes API de stockage Azure avec ASP.NET Core 3,0, ajoutez une dépendance directe au package [WindowsAzure. Storage](https://www.nuget.org/packages/WindowsAzure.Storage/) . Ce package peut être installé avec les nouvelles API de `Microsoft.Azure.Storage`.
 
 Dans de nombreux cas, la mise à niveau implique uniquement la modification des instructions `using` pour utiliser les nouveaux espaces de noms :
 
@@ -41,13 +41,13 @@ Dans de nombreux cas, la mise à niveau implique uniquement la modification des 
 + using Microsoft.Azure.Storage.Blob;
 ```
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-aucune.
+Aucun
 
 <!-- 
 

@@ -13,7 +13,7 @@ ms.locfileid: "72291543"
 Cet exemple montre comment générer la pile de canaux de façon personnalisée en implémentant <xref:System.ServiceModel.ServiceHostBase> directement et comment créer un répartiteur de canal personnalisé dans un environnement avec hôte Web. Le répartiteur de canal interagit avec <xref:System.ServiceModel.Channels.IChannelListener> pour accepter des canaux et récupère des messages de la pile de canaux. Cet exemple fournit également un exemple de base pour montrer comment construire une pile de canaux dans un environnement avec hôte Web à l'aide de <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
   
 ## <a name="custom-servicehostbase"></a>Custom ServiceHostBase  
- Cet exemple implémente le type de base <xref:System.ServiceModel.ServiceHostBase> au lieu de <xref:System.ServiceModel.ServiceHost> pour montrer comment remplacer l’implémentation de la pile Windows Communication Foundation (WCF) par une couche de gestion des messages personnalisée située en haut de la pile de canaux. Vous devez substituer la méthode virtuelle <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> pour générer des écouteurs de canal et le répartiteur de canal.  
+ Cet exemple implémente le type de base <xref:System.ServiceModel.ServiceHostBase> au lieu de <xref:System.ServiceModel.ServiceHost> pour montrer comment remplacer l’implémentation de la pile Windows Communication Foundation (WCF) par une couche de gestion des messages personnalisée en haut de la pile de canaux. Vous devez substituer la méthode virtuelle <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> pour générer des écouteurs de canal et le répartiteur de canal.  
   
  Pour implémenter un service hébergé sur le Web, obtenez l’extension de service <xref:System.ServiceModel.Activation.VirtualPathExtension> de la collection <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> et ajoutez-la au <xref:System.ServiceModel.Channels.BindingParameterCollection> afin que la couche transport sache comment configurer l’écouteur de canal selon les paramètres de l’environnement d’hébergement, à savoir, les paramètres Internet Information Services (IIS) et ceux du service d’activation des processus Windows (WAS).  
   
@@ -29,7 +29,7 @@ Cet exemple montre comment générer la pile de canaux de façon personnalisée 
   
  Vous avez géré le verbe HTTP-GET de manière spéciale en retournant un message HTML personnalisé dans ce cas, aussi pouvez-vous parcourir le service à partir d'un navigateur et vérifier qu'il est correctement compilé. Si l'action SOAP ne correspond pas, renvoyez un message d'erreur pour indiquer que la demande n'est pas prise en charge.  
   
- Le client de cet exemple est un client WCF normal qui ne prend rien du service. Par conséquent, le service est spécialement conçu pour correspondre à ce que vous obteniez à partir d’une implémentation WCF @ no__t-0 normale. Par conséquent, seul un contrat de service est obligatoire sur le client.  
+ Le client de cet exemple est un client WCF normal qui ne prend rien du service. Par conséquent, le service est spécialement conçu pour correspondre à ce que vous obteniez à partir d’une implémentation de<xref:System.ServiceModel.ServiceHost> WCF normale. Par conséquent, seul un contrat de service est obligatoire sur le client.  
   
 ## <a name="using-the-sample"></a>Utilisation de l'exemple  
  L'exécution de l'application cliente produit directement la sortie suivante.  

@@ -15,11 +15,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699090"
 ---
-# <a name="systemweb-element-web-settings"></a>@no__t élément -0System. Web > (paramètres Web)
+# <a name="systemweb-element-web-settings"></a>\<l’élément System. Web > (paramètres Web)
 Contient des informations sur la façon dont la couche d’hébergement ASP.NET gère le comportement à l’ensemble du processus.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **@no__t -3System. web >**  
+&nbsp;&nbsp; **\<System. web >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,9 +32,9 @@ Contient des informations sur la façon dont la couche d’hébergement ASP.NET 
 
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
 
-Aucun.  
+Aucune.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -48,9 +48,9 @@ Aucun.
 |-------------|-----------------|  
 |[\<configuration>](../configuration-element.md)|Spécifie l’élément racine dans chaque fichier de configuration utilisé par les applications common language runtime et .NET Framework.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
 
-L’élément `system.web` et son élément enfant `applicationPool` ont été ajoutés à la .NET Framework à partir de .NET Framework 3,5 SP1. Lorsque vous exécutez IIS 7,0 ou des versions ultérieures en mode intégré, cette combinaison d’éléments vous permet de configurer la manière dont ASP.NET gère les threads et la façon dont il met en file d’attente les demandes lorsque ASP.NET est hébergé dans un pool d’applications IIS. Si vous exécutez IIS 7,0 ou des versions ultérieures en mode classique ou ISAPI, ces paramètres sont ignorés.  
+L’élément `system.web` et son élément `applicationPool` enfant ont été ajoutés à la .NET Framework à partir de .NET Framework 3,5 SP1. Lorsque vous exécutez IIS 7,0 ou des versions ultérieures en mode intégré, cette combinaison d’éléments vous permet de configurer la manière dont ASP.NET gère les threads et la façon dont il met en file d’attente les demandes lorsque ASP.NET est hébergé dans un pool d’applications IIS. Si vous exécutez IIS 7,0 ou des versions ultérieures en mode classique ou ISAPI, ces paramètres sont ignorés.  
   
 ## <a name="example"></a>Exemple  
 

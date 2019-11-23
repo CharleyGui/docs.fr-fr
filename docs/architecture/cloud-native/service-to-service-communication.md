@@ -3,12 +3,12 @@ title: Communication de service à service
 description: Découvrez comment les microservices dorsaux Cloud-natives communiquent avec d’autres microservices back-end.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 6a7e72491cb56d925e684b94109b1aaa98e24df3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5124b8b83f62ff17b1230ead63db26e0c1f2a5b
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094623"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087594"
 ---
 # <a name="service-to-service-communication"></a>Communication de service à service
 
@@ -30,7 +30,7 @@ Tenez compte des types d’interaction suivants :
 
 Les systèmes de microservices utilisent généralement une combinaison de ces types d’interaction lors de l’exécution d’opérations nécessitant une interaction entre les services. Jetons un coup d’œil à chacun et à la façon dont vous pouvez les implémenter.
 
-## <a name="queries"></a>Requêtes
+## <a name="queries"></a>Queries
 
 Bien souvent, un microservice peut avoir besoin d' *interroger* un autre, ce qui nécessite une réponse immédiate pour effectuer une opération. Un microservice de panier d’achat peut nécessiter des informations sur le produit et un prix pour ajouter un article à son panier. Il existe plusieurs approches pour implémenter des opérations de requête.
 
@@ -50,7 +50,7 @@ L’exécution d’une requête peu fréquente qui effectue un appel HTTP unique
 
 **Figure 4-9**. Chaînage des requêtes HTTP
 
-Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe-t-il si l’étape \#3 échoue ? Ou l’étape \#8 échoue ? Comment voulez-vous récupérer ? Que se passe-t-il si l’étape \#6 est lente parce que le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
+Vous pouvez certainement imaginer le risque dans la conception présentée dans l’image précédente. Que se passe-t-il si l’étape \#3 échoue ? Ou l’étape \#8 échoue ? Comment voulez-vous récupérer ? Que se passe-t-il si l’étape \#6 est lente car le service sous-jacent est occupé ? Comment continuer ? Même si tout fonctionne correctement, pensez à la latence de cet appel, qui correspond à la somme de la latence de chaque étape.
 
 Le grand degré de couplage dans l’image précédente suggère que les services n’ont pas été modélisés de manière optimale. Il appartient l’équipe à revisiter sa conception.
 
@@ -144,7 +144,7 @@ La figure 4-14 présente l’architecture de haut niveau d’une file d’attent
 
 Dans l’illustration précédente, notez la relation point à point. Deux instances du même fournisseur empilent des messages dans une file d’attente de Service Bus unique. Chaque message est consommé par une seule des trois instances de consommateur à droite. Ensuite, nous expliquons comment implémenter la messagerie dans laquelle les différents consommateurs peuvent être intéressés par le même message.
 
-## <a name="events"></a>événements
+## <a name="events"></a>Événements
 
 Message Queuing est un moyen efficace d’implémenter une communication dans laquelle un producteur peut envoyer un message de manière asynchrone à un consommateur. Toutefois, que se passe-t-il lorsque de *nombreux consommateurs* sont intéressés par le même message ? Une file d’attente de messages dédiée pour chaque consommateur n’est pas bien adaptée et devient difficile à gérer.
 
@@ -166,7 +166,7 @@ Avec l’événement, nous passons de la technologie de mise en file d’attente
 
 **Figure 4-16**. Architecture des rubriques
 
-Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \#1 et l’abonnement \#3, mais pas à l’abonnement \#2. Un événement « OrderCompleted » est envoyé à l’abonnement \#2 et à l’abonnement \#3.
+Dans la figure précédente, les éditeurs envoient des messages à la rubrique. À la fin, les abonnés reçoivent des messages des abonnements. Au milieu, la rubrique transfère les messages aux abonnements en fonction d’un ensemble de *règles*, affichées dans des zones bleu foncé. Les règles agissent comme un filtre qui transfère des messages spécifiques à un abonnement. Ici, un événement « CreateOrder » est envoyé à l’abonnement \#1 et à l’abonnement \#3, mais pas à l’abonnement \#2. Un événement « OrderCompleted » est envoyé à l’abonnement \#2 et à l’abonnement \#3.
 
 Le Cloud Azure prend en charge deux services de rubrique différents : Azure Service Bus rubriques et Azure EventGrid.
 
@@ -208,7 +208,7 @@ Event Grid est un service Cloud sans serveur entièrement géré. Elle est mise 
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Diffusion en continu de messages dans le Cloud Azure
 
-Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document a été inséré dans un Cosmos DB. Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](https://msdn.microsoft.com/magazine/dn904671) sont plus complexes. Ils sont généralement classés dans le temps, interdépendants et doivent être traités en tant que groupe.
+Azure Service Bus et Event Grid offrent une excellente prise en charge des applications qui exposent des événements simples et discrets tels qu’un nouveau document a été inséré dans un Cosmos DB. Mais, que se passe-t-il si votre système Cloud natif doit traiter un *flux d’événements connexes*? Les [flux d’événements](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) sont plus complexes. Ils sont généralement classés dans le temps, interdépendants et doivent être traités en tant que groupe.
 
 [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/) est une plateforme de diffusion de données et un service d’ingestion d’événements qui collecte, transforme et stocke des événements. Il est affiné pour capturer les données de streaming, telles que les notifications d’événements continus émises à partir d’un contexte de télémétrie. Le service est hautement évolutif et peut stocker et [traiter des millions d’événements par seconde](https://docs.microsoft.com/azure/event-hubs/event-hubs-about). Comme illustré à la figure 4-18, il s’agit souvent d’une porte d’entrée pour un pipeline d’événements, ce qui permet de découpler le flux de réception de la consommation d’événements.
 
@@ -220,7 +220,7 @@ Event Hub prend en charge la faible latence et la durée de rétention configura
 
 Event Hub prend en charge les protocoles de publication d’événements courants, notamment HTTPs et AMQP. Il prend également en charge Kafka 1,0. Les [applications Kafka existantes peuvent communiquer avec Event Hub](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) à l’aide du protocole Kafka, qui offre une alternative à la gestion des clusters Kafka volumineux. De nombreux systèmes Cloud natifs Open source intègrent Kafka.
 
-Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle active une grande échelle horizontale pour le traitement des événements et fournit d’autres fonctionnalités axées sur les flux qui ne sont pas disponibles dans les files d’attente et les rubriques. Une partition est une séquence ordonnée d’événements qui est conservée dans un Event Hub. À mesure que des événements plus récents arrivent, ils sont ajoutés à la fin de cette séquence. La figure 4-19 illustre le partitionnement dans un hub d’événements.
+Event Hubs implémente la diffusion de messages via un [modèle de consommateur partitionné](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) dans lequel chaque consommateur lit uniquement un sous-ensemble spécifique, ou partition, du flux de message. Ce modèle permet de disposer d'une échelle horizontale considérable pour le traitement des événements, et offre d'autres fonctionnalités axées sur le flux, qui ne sont pas disponibles dans les rubriques et les files d'attente. Une partition est une séquence ordonnée d’événements qui est conservée dans un Event Hub. À mesure que des événements plus récents arrivent, ils sont ajoutés à la fin de cette séquence. La figure 4-19 illustre le partitionnement dans un hub d’événements.
 
 ![Partitionnement de hub d’événements](./media/event-hub-partitioning.png)
 

@@ -1,14 +1,13 @@
 ---
 title: Sécurité dans les applications gRPC-gRPC pour les développeurs WCF
 description: Vue d’ensemble de l’authentification et de l’autorisation de l’appel et du canal dans gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: d0b7ff5bef755c5eeb9b3c419dcda1cb75ac4031
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: b88ed0c01d1ca4432c7e4fe7115246f4227159df
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846231"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967250"
 ---
 # <a name="security-in-grpc-applications"></a>Sécurité dans les applications gRPC
 

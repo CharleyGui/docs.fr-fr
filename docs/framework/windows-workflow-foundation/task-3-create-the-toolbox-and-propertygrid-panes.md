@@ -1,5 +1,5 @@
 ---
-title: 'Tâche 3 : créer les volets Toolbox et PropertyGrid'
+title: 'Tâche 3 : créer les volets de PropertyGrid et boîte à outils'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
 ms.openlocfilehash: 402a25c1cb82c245afa94f58cefc180515622ea9
@@ -9,15 +9,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72275861"
 ---
-# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Tâche 3 : créer les volets Toolbox et PropertyGrid
+# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Tâche 3 : créer les volets de PropertyGrid et boîte à outils
 
-Dans cette tâche, vous allez créer les volets **boîte à outils** et **PropertyGrid** et les ajouter au @no__t réhébergés-2.
+Dans cette tâche, vous allez créer les volets **boîte à outils** et **PropertyGrid** et les ajouter au [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]réhébergé.
 
 Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs après avoir effectué les trois tâches du [réhébergement de la série concepteur de flux de travail](rehosting-the-workflow-designer.md) de rubriques est fourni à la fin de cette rubrique.
 
 ## <a name="to-create-the-toolbox-and-add-it-to-the-grid"></a>Pour créer la boîte à outils et l'ajouter à la grille
 
-1. Ouvrez le projet HostingApplication que vous avez obtenu en suivant la procédure décrite dans [Task 2 : Hébergez le Concepteur de flux de travail @ no__t-0.
+1. Ouvrez le projet HostingApplication que vous avez obtenu en suivant la procédure décrite dans [tâche 2 : héberger le concepteur de flux de travail](task-2-host-the-workflow-designer.md).
 
 2. Dans le volet **Explorateur de solutions** , cliquez avec le bouton droit sur le fichier *MainWindow. Xaml* et sélectionnez **afficher le code**.
 
@@ -50,7 +50,7 @@ Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs
     }
     ```
 
-4. Ajoutez une méthode `AddToolbox` privée à la classe `MainWindow` qui place la **boîte à outils** dans la colonne de gauche de la grille.
+4. Ajoutez une méthode de `AddToolbox` privée à la classe `MainWindow` qui place la **boîte à outils** dans la colonne de gauche de la grille.
 
     ```csharp
     private void AddToolBox()
@@ -61,7 +61,7 @@ Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs
     }
     ```
 
-5. Ajoutez un appel à la méthode `AddToolBox` dans le constructeur de classe `MainWindow()`, comme indiqué dans le code suivant :
+5. Ajoutez un appel à la méthode `AddToolBox` dans le `MainWindow()` constructeur de classe, comme indiqué dans le code suivant :
 
     ```csharp
     public MainWindow()
@@ -90,7 +90,7 @@ Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs
     }
     ```
 
-3. Ajoutez un appel à la méthode `AddPropertyInspector` dans le constructeur de classe `MainWindow()`, comme indiqué dans le code suivant :
+3. Ajoutez un appel à la méthode `AddPropertyInspector` dans le `MainWindow()` constructeur de classe, comme indiqué dans le code suivant :
 
     ```csharp
     public MainWindow()
@@ -104,7 +104,7 @@ Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs
     }
     ```
 
-4. Appuyez sur <kbd>F5</kbd> pour générer et exécuter la solution. La **boîte à outils**, la zone de conception de workflow et les volets **PropertyGrid** doivent tous être affichés. quand vous faites glisser une activité <xref:System.Activities.Statements.Assign> ou une activité <xref:System.Activities.Statements.Sequence> sur la zone de conception, la grille des propriétés doit être mise à jour en fonction de l’activité en surbrillance.
+4. Appuyez sur <kbd>F5</kbd> pour générer et exécuter la solution. La **boîte à outils**, la zone de conception de workflow et les volets **PropertyGrid** doivent tous être affichés, et lorsque vous faites glisser une activité de <xref:System.Activities.Statements.Assign> ou une activité de <xref:System.Activities.Statements.Sequence> sur la zone de conception, la grille des propriétés doit être mise à jour en fonction de l’activité en surbrillance.
 
 ## <a name="example"></a>Exemple
 
@@ -217,5 +217,5 @@ namespace HostingApplication
 ## <a name="see-also"></a>Voir aussi
 
 - [Réhébergement du concepteur de flux de travail](rehosting-the-workflow-designer.md)
-- @no__t 0Task 1 : Créer une application de Windows Presentation Foundation @ no__t-0
-- @no__t 0Task 2 : Héberger le Concepteur de flux de travail @ no__t-0
+- [Tâche 1 : Créer une nouvelle application Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Tâche 2 : Héberger le concepteur de flux de travail](task-2-host-the-workflow-designer.md)

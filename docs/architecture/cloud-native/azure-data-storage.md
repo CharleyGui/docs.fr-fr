@@ -21,7 +21,7 @@ Au lieu de cela, une [base de données en tant que service (DBaaS)](https://www.
 
 Nous allons ensuite examiner les options DBaaS disponibles dans Azure. Vous verrez comment Microsoft continue s’engage à maintenir Azure une « plateforme ouverte », offrant une prise en charge gérée pour de nombreuses bases de données relationnelles et NoSQL Open source et effectuant des contributions clés aux différents fondations Open source en tant que membre actif.
 
-## <a name="azure-sql-database"></a>Azure SQL Database
+## <a name="azure-sql-database"></a>Base de données SQL Azure
 
 [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) est une base de données relationnelle en tant que service (DBaaS) riche en fonctionnalités, basée sur les moteur de base de données Microsoft SQL Server. Elle est entièrement gérée par Microsoft et est une base de données Cloud haute performance, fiable et sécurisée. Le service partage un grand nombre des fonctionnalités présentes dans la version locale de SQL Server.
 
@@ -35,7 +35,7 @@ La figure 5-12 montre les options de déploiement pour Azure SQL Database.
 
 Notez les alternatives de la figure précédente lors du déploiement d’une SQL Database :
 
-- Une [seule base de données](https://docs.microsoft.com/azure/sql-database/sql-database-single-database)  with son propre ensemble de ressources gérées par un [serveur SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-servers). Une base de données unique est similaire à une [base de données à relation contenant-contenu](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases)  in un déploiement SQL Server local.
+- Une [seule base de données](https://docs.microsoft.com/azure/sql-database/sql-database-single-database) avec son propre ensemble de ressources gérées par un [serveur SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-servers). Une base de données unique est similaire à une [base de données à relation contenant-contenu](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) dans un déploiement SQL Server local.
 
 - [Pool élastique](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) dans lequel une collection de bases de données SQL partage un seul serveur de SQL Database à un prix défini. Les bases de données uniques peuvent être déplacées vers et à l’extérieur d’un pool élastique en fonction des besoins afin d’optimiser les performances du prix d’un groupe de bases de données.
 
@@ -51,9 +51,9 @@ Enfin, il existe la nouvelle [Azure SQL Database niveau tarifaire hyperscale](ht
 
 Outre la pile de Microsoft SQL Server traditionnelle, Azure propose également des versions gérées de plusieurs bases de données Open source populaires.
 
-## <a name="azure-database-for-mysql"></a>Base de données Azure pour MySQL
+## <a name="azure-database-for-mysql"></a>Azure Database pour MySQL
 
-[MySQL](https://en.wikipedia.org/wiki/MySQL)  is une [base de données relationnelle](https://en.wikipedia.org/wiki/Relational_database_management_system) [Open source](https://en.wikipedia.org/wiki/Open-source_software). Il s’agit d’un composant de la [pile de logiciels LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) et utilisé par de nombreuses grandes organisations, notamment Facebook, Twitter et YouTube. L’édition Community est disponible gratuitement et l’édition Enterprise requiert un achat de licence. Initialement créé dans 1995, le produit a été acheté par Sun Microsystems dans 2008, qui a été acquis par Oracle au 2010.
+[MySQL](https://en.wikipedia.org/wiki/MySQL)  est une  [base de données relationnelle](https://en.wikipedia.org/wiki/Open-source_software)  [Open source](https://en.wikipedia.org/wiki/Relational_database_management_system). Il s’agit d’un composant de la [pile de logiciels LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) et utilisé par de nombreuses grandes organisations, notamment Facebook, Twitter et YouTube. L’édition Community est disponible gratuitement et l’édition Enterprise requiert un achat de licence. Initialement créé dans 1995, le produit a été acheté par Sun Microsystems dans 2008, qui a été acquis par Oracle au 2010.
 
 [Azure Database pour MySQL](https://azure.microsoft.com/services/mysql/) est un service de base de données relationnelle entièrement géré, adapté à l’entreprise et basé sur le moteur Open source MySQL Server. En implémentant MySQL Community Edition, il comprend les fonctionnalités PaaS suivantes sans coût supplémentaire :
 
@@ -97,11 +97,11 @@ MariaDB a une bonne suite et est utilisée par de nombreuses grandes entreprises
 
 - Sécurité et conformité à l’échelle de l’entreprise.
 
-## <a name="azure-database-for-postgresql"></a>Base de données Azure pour PostgreSQL
+## <a name="azure-database-for-postgresql"></a>Azure Database pour PostgreSQL
 
 [PostgreSQL](https://www.postgresql.org/) est une autre base de données relationnelle Open source populaire avec plus de 30 ans de développement actif. Il s’agit d’un système de gestion de base de données à usage général et relationnel objet. Ses licences sont considérées comme « libérales » et le produit est libre d’utiliser, de modifier et de distribuer dans n’importe quel format. De nombreuses grandes entreprises, dont Apple, Red Hat et Fujitsu, ont créé des produits à l’aide de PostgreSQL.
 
-[Azure Database pour PostgreSQL](https://azure.microsoft.com/services/postgresql/) est un service de base de données relationnelle entièrement géré, basé sur le moteur de base de données postgres Open source. Il peut gérer des charges de travail stratégiques avec des performances prévisibles, une sécurité, une haute disponibilité et une évolutivité dynamique. Il prend en charge plusieurs langages et infrastructures Open source, C++notamment, Java, Python, Node, C \# et php. Il permet la [migration](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) de bases de données PostgreSQL via une interface de ligne de commande ou le [service de migration de données Azure](https://azure.microsoft.com/services/database-migration/).
+[Azure Database pour PostgreSQL](https://azure.microsoft.com/services/postgresql/) est un service de base de données relationnelle entièrement géré, basé sur le moteur de base de données postgres Open source. Il peut gérer des charges de travail stratégiques avec des performances prévisibles, une sécurité, une haute disponibilité et une évolutivité dynamique. Il prend en charge plusieurs langages et infrastructures Open source, C++notamment, Java, Python, Node, C\#et php. Il permet la [migration](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) de bases de données PostgreSQL via une interface de ligne de commande ou le [service de migration de données Azure](https://azure.microsoft.com/services/database-migration/).
 
 Le service inclut [une intelligence intégrée](https://docs.microsoft.com/azure/postgresql/concepts-monitoring) qui étudie vos modèles de base de données uniques et fournit des recommandations et des informations personnalisées pour vous aider à optimiser les performances de votre base de données PostgreSQL. [Advanced Threat Protection](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-threat-protection) surveille votre base de données autour de l’horloge et détecte les activités malveillantes potentielles, en vous avertissant de la détection pour vous permettre d’intervenir immédiatement.
 
@@ -109,7 +109,7 @@ La base de données Azure pour PostgreSQL est disponible sous la forme de deux o
 
 - L’option de déploiement de [serveur unique](https://docs.microsoft.com/azure/postgresql/concepts-servers) est un point d’administration central pour plusieurs bases de données. Il s’agit du même moteur de serveur PostgreSQL que celui disponible pour les déploiements locaux. Avec elle, vous pouvez créer une seule base de données par serveur pour utiliser toutes les ressources ou créer plusieurs bases de données pour partager les ressources. La tarification est structurée par serveur en fonction des cœurs et du stockage.
 
-- L' [option hyperscale (CITUS)](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/) est optimisée par les  technology de [données CITUS](https://www.citusdata.com/) . Il permet une mise à l’échelle hautes performances grâce à la mise à l’échelle horizontale d’une base de données sur des centaines de nœuds afin de fournir des performances et une évolutivité très rapides. Cette option permet au moteur d’intégrer plus de données en mémoire, de paralléliser les requêtes sur des centaines de nœuds et d’indexer les données plus rapidement. La fonctionnalité hyperscale est compatible avec les dernières innovations, versions et outils pour PostgreSQL, ce qui vous permet de tirer parti de votre expertise PostgreSQL existante.
+- L' [option hyperscale (CITUS)](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/) est optimisée par la technologie de de [données CITUS](https://www.citusdata.com/) . Il permet une mise à l’échelle hautes performances grâce à la mise à l’échelle horizontale d’une base de données sur des centaines de nœuds afin de fournir des performances et une évolutivité très rapides. Cette option permet au moteur d’intégrer plus de données en mémoire, de paralléliser les requêtes sur des centaines de nœuds et d’indexer les données plus rapidement. La fonctionnalité hyperscale est compatible avec les dernières innovations, versions et outils pour PostgreSQL, ce qui vous permet de tirer parti de votre expertise PostgreSQL existante.
 
 ## <a name="cosmos-db"></a>Cosmos DB
 

@@ -71,7 +71,7 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 2. Recevez la commande dans un gestionnaire de commandes.
    - Exécutez la transaction d’un seul agrégat.
    - (Facultatif) Déclenchez des événements de domaine pour les effets secondaires (par exemple, OrderStartedDomainEvent).
-3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Exemple :
+3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Par exemple :
    - Vérifiez ou créez l’acheteur et la méthode de paiement.
    - Créez et envoyez un événement d’intégration associé au bus d’événements pour propager les états sur les microservices ou déclencher des actions externes, comme l’envoi d’un e-mail à l’acheteur.
    - Gérez les autres effets secondaires.
@@ -224,7 +224,7 @@ Cette logique est basée sur l’exécution de transactions affinées plutôt qu
 
 Toutefois, les autres développeurs et architectes comme Jimmy Bogard sont d’accord pour utiliser une même transaction sur plusieurs agrégats, mais uniquement si les agrégats supplémentaires sont associés à des effets secondaires de la même commande d’origine. Par exemple, dans [A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/), Bogard dit ceci :
 
-> En règle générale, je souhaite que les effets secondaires d’un événement de domaine se produisent dans la même transaction logique, mais pas nécessairement dans la même étendue de déclenchement de l’événement de domaine \[...\] juste avant de valider notre transaction, nous distribuerons nos événements à leur gestionnaires respectifs.
+> En règle générale, je souhaite que les effets secondaires d’un événement de domaine se produisent dans la même transaction logique, mais pas nécessairement dans la même étendue de déclenchement de l’événement de domaine \[...\] juste avant de valider notre transaction, nous distribuerons nos événements à leurs gestionnaires respectifs.
 
 Si vous distribuez les événements de domaine juste *avant* de valider la transaction d’origine, c’est parce que les effets secondaires doivent être inclus dans la même transaction. Par exemple, si la méthode SaveChanges du DbContext EF échoue, la transaction annule toutes les modifications, y compris le résultat de toutes les opérations d’effet secondaire implémentées par les gestionnaires d’événements de domaine associés. Cela est dû au fait que la durée de vie de DbContext est configurée par défaut comme étant limitée. Par conséquent, l’objet DbContext est partagé par plusieurs objets de dépôt qui sont instanciés dans la même étendue ou le même graphe d’objet. Cela coïncide avec l’étendue HttpRequest lors du développement d’API web ou d’applications MVC.
 

@@ -68,10 +68,10 @@ Par exemple, supposons qu’un élément de la page doit être visible si la val
 |--------------------------|------------|-------------|
 | Fait abstraction du DOM | **Oui** | **Oui** |
 | Prise en charge d’Ajax | **Oui** | **Oui** |
-| Liaison de données déclarative | **Non** | **Oui** |
-| Routage de style MVC | **Non** | **Oui** |
-| Création de modèles | **Non** | **Oui** |
-| Routage de lien ciblé | **Non** | **Oui** |
+| Liaison de données déclarative | **No** | **Oui** |
+| Routage de style MVC | **No** | **Oui** |
+| Création de modèles | **No** | **Oui** |
+| Routage de lien ciblé | **No** | **Oui** |
 
 La plupart des fonctionnalités absentes dans jQuery peuvent être ajoutées par le biais d’autres bibliothèques. Toutefois, un framework SPA comme Angular fournit ces fonctionnalités de façon plus intégrée, puisqu’elles sont prises en compte dès sa conception. Par ailleurs, jQuery est une bibliothèque très impérative, c'est-à-dire qu’à chaque fois que vous voulez utiliser jQuery, vous devez appeler une fonction jQuery. La plupart des tâches et des fonctionnalités que fournissent les frameworks SPA peuvent être effectuées de façon déclarative, sans avoir réellement à écrire du code.
 
@@ -108,7 +108,7 @@ Contrairement à Angular, qui offre une implémentation complète du modèle MVC
 
 Une des fonctionnalités les plus importantes de React est qu’il utilise un modèle DOM virtuel. Le modèle DOM virtuel offre à React plusieurs avantages, notamment au niveau des performances (le modèle DOM virtuel peut optimiser les parties du modèle DOM réel qui doivent être mises à jour) et de la testabilité (pas besoin d’utiliser un navigateur pour tester React et ses interactions avec son modèle DOM virtuel).
 
-React est également inédit dans la façon dont il utilise le code HTML. Au lieu d’avoir une séparation stricte entre le code et le balisage (avec des références à JavaScript apparaissant dans des attributs HTML, par exemple), React ajoute du code HTML directement dans le code JavaScript sous la forme JSX. JSX est une syntaxe de type HTML qui peut compiler du code en JavaScript pur. Par exemple :
+React est également inédit dans la façon dont il utilise le code HTML. Au lieu d’avoir une séparation stricte entre le code et le balisage (avec des références à JavaScript apparaissant dans des attributs HTML, par exemple), React ajoute du code HTML directement dans le code JavaScript sous la forme JSX. JSX est une syntaxe de type HTML qui peut compiler du code en JavaScript pur. Par exemple :
 
 ```js
 <ul>
@@ -144,7 +144,7 @@ Les frameworks JavaScript évoluent très rapidement. Utilisez les considératio
 >
 > - **HTML et CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs. LESS**  
+> - **Sass et LESS**  
 > <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Application de styles aux applications ASP.NET Core avec LESS, Sass et Font Awesome**  
 > <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>

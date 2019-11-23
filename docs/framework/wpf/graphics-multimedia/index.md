@@ -137,7 +137,7 @@ Pour plus d’informations, consultez [Vue d’ensemble de l’animation](animat
 
 <a name="media"></a>
 
-## <a name="media"></a>Médias
+## <a name="media"></a>Support
 
 Les images, la vidéo et l’audio constituent des méthodes multimédia riches de transférer des informations et des expériences utilisateur.
 
@@ -169,7 +169,7 @@ Pour plus d'informations, consultez [Vue d’ensemble du multimédia](multimedia
 - [Graphiques 2D et acquisition d'images](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
 - [Vue d’ensemble des formes et dessins de base dans WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Vue d’ensemble de la peinture avec des couleurs unies ou des dégradés](painting-with-solid-colors-and-gradients-overview.md)
-- [Peinture avec des images, des dessins et des objets visuels](painting-with-images-drawings-and-visuals.md)
+- [Peinture avec des objets d'image, de dessin et visuels](painting-with-images-drawings-and-visuals.md)
 - [Rubriques de procédures relatives à l’animation et au minutage](animation-and-timing-how-to-topics.md)
 - [Vue d’ensemble des graphiques 3D](3-d-graphics-overview.md)
 - [Vue d’ensemble multimédia](multimedia-overview.md)

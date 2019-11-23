@@ -25,13 +25,13 @@ SELECT DEREF ( o.expression ) FROM Table AS o;
 ## <a name="return-value"></a>Valeur de retour  
  Valeur de l'entité référencée.  
   
-## <a name="remarks"></a>Notes  
- L'opérateur DEREF déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, si `r` est une référence de type REF @ no__t-1T >, `Deref(r)` est une expression de type `T` qui génère l’entité référencée par `r`. Si la valeur de référence est null ou non résolue (autrement dit, la cible de la référence n'existe pas), le résultat de l'opérateur DEREF est null.  
+## <a name="remarks"></a>Remarques  
+ L'opérateur DEREF déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, si `r` est une référence de type REF\<T >, `Deref(r)` est une expression de type `T` qui génère l’entité référencée par `r`. Si la valeur de référence est null ou non résolue (autrement dit, la cible de la référence n'existe pas), le résultat de l'opérateur DEREF est null.  
   
 ## <a name="example"></a>Exemple  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur DEREF pour déréférencer une valeur de référence et générer le résultat de ce déréférencement. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats PrimitiveType @ no__t-0.  
+1. Suivez la procédure décrite dans [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
 2. Passez à la méthode ExecutePrimitiveTypeQuery la requête suivante en tant qu'argument :  
   

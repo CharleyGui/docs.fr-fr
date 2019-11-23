@@ -19,8 +19,8 @@ ms.locfileid: "71697462"
 Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4webRequestModules >  
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;\<webRequestModules >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,8 +32,8 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributes  
+ Aucune.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -49,10 +49,10 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’élément `webRequestModules` inscrit les descendants de la classe <xref:System.Net.WebRequest> pour gérer les demandes d’informations aux hôtes réseau. Les modules de demande Web doivent implémenter l’interface <xref:System.Net.IWebRequestCreate>.  
   
- Le .NET Framework comprend des modules de demande Web pour les URI qui commencent par `http://`, `https://` et `file://`. Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
+ Le .NET Framework comprend des modules de demande Web pour les URI qui commencent par `http://`, `https://`et `file://`. Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

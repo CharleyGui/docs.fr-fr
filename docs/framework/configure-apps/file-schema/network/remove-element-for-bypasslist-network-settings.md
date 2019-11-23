@@ -17,15 +17,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697892"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<remove > élément de bypasslist (paramètres réseau)
+# <a name="remove-element-for-bypasslist-network-settings"></a>\<supprimer > élément de bypasslist (paramètres réseau)
 
 Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.
 
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<remove >**  
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy** >](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<BypassList >** ](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,7 +39,7 @@ Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.
 
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
-### <a name="attributes"></a>Attributs
+### <a name="attributes"></a>Attributes
 
 |**Attribut**|**Description**|
 |-------------------|---------------------|
@@ -47,7 +47,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucune.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -55,9 +55,9 @@ Aucun.
 |-----------------|---------------------|
 |[bypasslist](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-L’élément `remove` supprime les expressions régulières décrivant les adresses IP ou les noms de serveurs DNS de la liste des adresses qui contournent un serveur proxy. Les adresses ont été définies précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
+L’élément `remove` supprime les expressions régulières décrivant des adresses IP ou des noms de serveurs DNS de la liste des adresses qui contournent un serveur proxy. Les adresses ont été définies précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
 
 La valeur de l’attribut `address` doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôte.
 

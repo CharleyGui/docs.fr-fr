@@ -64,7 +64,7 @@ Comme toute passerelle d’API, ses principales fonctionnalités sont de transf�
 | Routage | Authentification |
 | Agrégation des demandes | Autorisation |
 | Découverte de service (avec consul et Eureka) | Throttling |
-| Équilibrage de charge | Journalisation, suivi |
+| Équilibrage de la charge | Journalisation, suivi |
 | Mise en cache | En-têtes/transformation de chaîne de requête |
 | Transfert de corrélation | Intergiciel (middleware) personnalisé |
 | Qualité de service | Stratégies de nouvelle tentative |

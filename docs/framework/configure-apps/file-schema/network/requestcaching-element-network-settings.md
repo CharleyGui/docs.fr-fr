@@ -19,8 +19,8 @@ ms.locfileid: "71697825"
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requestCaching >**  
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<requestCaching** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
   
 |Attribut|Description|  
 |---------------|-----------------|  
 |`isPrivateCache`|Spécifie si le cache assure l’isolement entre les informations des différents utilisateurs. La valeur par défaut est `true`. Cette valeur doit être `false` pour les applications de niveau intermédiaire.|  
 |`disableAllCaching`|Spécifie que la mise en cache est désactivée pour toutes les réponses Web et ne peut pas être substituée par programmation.|  
-|`defaultPolicyLevel`|Une des valeurs dans l’énumération <xref:System.Net.Cache.RequestCacheLevel>. La valeur par défaut est `BypassCache`.|  
+|`defaultPolicyLevel`|Une des valeurs dans l'énumération <xref:System.Net.Cache.RequestCacheLevel>. La valeur par défaut est `BypassCache`.|  
 |`unspecifiedMaximumAge`|Spécifie l’heure par défaut après laquelle le contenu est marqué comme ayant expiré.|  
   
 ## <a name="policylevel-attribute"></a>policyLevel (attribut)  

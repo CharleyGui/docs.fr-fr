@@ -52,7 +52,7 @@ Une fois qu’un composant gère un événement, éblouissant affiche le composa
 
 ![Interaction avec le DOM éblouissant](./media/architecture-comparison/blazor-dom-interaction.png)
 
-Les composants peuvent également indiquer manuellement qu’ils doivent être rendus si leur état change en dehors d’un événement d’interface utilisateur normal. Éblouissant utilise un `SynchronizationContext` pour appliquer un seul thread logique d’exécution. Les méthodes de cycle de vie d’un composant et les rappels d’événements déclenchés par éblouissant sont exécutés sur ce `SynchronizationContext`.
+Les composants peuvent également indiquer manuellement qu’ils doivent être rendus si leur état change en dehors d’un événement d’interface utilisateur normal. Éblouissant utilise un `SynchronizationContext` pour appliquer un seul thread logique d’exécution. Les méthodes de cycle de vie d’un composant et les rappels d’événements déclenchés par éblouissant sont exécutés sur cette `SynchronizationContext`.
 
 >[!div class="step-by-step"]
 >[Précédent](introduction.md)

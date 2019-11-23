@@ -12,7 +12,7 @@ ms.locfileid: "72321190"
 # <a name="wcf-test-client-wcftestclientexe"></a>Client test WCF (WcfTestClient.exe)
 Le client de test Windows Communication Foundation (WCF) (WcfTestClient. exe) est un outil d’interface utilisateur graphique qui permet aux utilisateurs d’entrer des paramètres de test, d’envoyer cette entrée au service et d’afficher la réponse renvoyée par le service. Il fournit une expérience de test de service transparente lorsqu’il est associé à l’hôte de service WCF.
 
-Vous pouvez généralement trouver le client test WCF (WcfTestClient. exe) à l’emplacement suivant : `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`-la Communauté peut être « entreprise », « professionnel » ou « communauté » selon le niveau de Visual Studio installé.
+Vous pouvez généralement trouver le client test WCF (WcfTestClient. exe) à l’emplacement suivant : `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`-Community peut être « Enterprise », « Professional » ou « Community », selon le niveau de Visual Studio installé.
 
 ## <a name="scenarios-for-using-test-client"></a>Scénarios d'utilisation du client test
 
@@ -32,7 +32,7 @@ Vous pouvez également utiliser le client test WCF pour déboguer un projet de s
 
 Vous pouvez également appeler le client test WCF (WcfTestClient. exe) en dehors de Visual Studio pour tester un service arbitraire sur Internet. Pour localiser l'outil, allez à l'emplacement suivant :
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (où Community peut être « Enterprise », « Professional » ou « Community », selon le niveau de Visual Studio installé sur l’ordinateur)
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (où Communauté peut être « entreprise », « professionnel » ou « communauté » selon le niveau de Visual Studio installé sur l’ordinateur)
 
 Pour utiliser l'outil, double-cliquez sur le nom de fichier afin de l'ouvrir à partir de cet emplacement ou lancez-le à partir d'une ligne de commandes.
 
@@ -73,7 +73,7 @@ Si vous avez spécifié une opération particulière comme étant unidirectionne
 
 La case à cocher **Démarrer un nouveau proxy** dans l’onglet d’une opération de service vous permet d’activer ou de désactiver la prise en charge des sessions. Elle est désactivée par défaut.
 
-Lorsque vous entrez des paramètres de test pour une opération spécifique (ou une autre opération dans le même point de terminaison de service) et que vous cliquez sur **appeler** plusieurs fois avec la case à cocher désactivée, ces opérations partagent un proxy et l’état du service est conservé sur plusieurs traitements.
+Lorsque vous entrez des paramètres de test pour une opération spécifique (ou une autre opération dans le même point de terminaison de service) et que vous cliquez sur **appeler** plusieurs fois avec la case à cocher désactivée, ces opérations partagent un proxy et l’état du service est rendu persistant entre plusieurs opérations.
 
 Si la case à cocher **Démarrer un nouveau proxy** est activée, un nouveau proxy est démarré pour chaque **appel**, le scénario de session précédent est terminé et l’état du service est réinitialisé.
 
@@ -103,7 +103,7 @@ Pendant la génération de proxy, la compilation binaire ou l’appel de service
 
 #### <a name="persist-client-configuration"></a>Rendre la configuration client persistante
 
-L’onglet **outils**@no__t-**1 @no__t**-3**client Configuration** contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers fichiers de contrat de service et d’application de service. config.
+Les **options** **Outils**->->onglet **configuration du client** contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers fichiers de contrat de service et d’application de service. config.
 
 Si vous avez modifié la configuration du client pour votre service WCF et que vous souhaitez toujours utiliser ce fichier mis à jour pour déboguer votre service, vous pouvez décocher l’option **régénérer** . En procédant ainsi, même lorsque vous mettez à jour le service et rouvrez le client test WCF, le fichier client. dll. config est celui que vous avez précédemment mis à jour au lieu d’un client regénéré en fonction du service mis à jour.
 
@@ -112,7 +112,7 @@ Toutefois, il peut s'avérer nécessaire de modifier le fichier de configuration
 > [!CAUTION]
 > Si vous avez modifié le fichier de configuration client et décidez de le réutiliser ultérieurement, vous le trouverez à l'emplacement suivant :
 >
-> \Documents and Settings @ no__t-0 [User Account] \Mes Documents\Test client Projects.
+> \Documents and Settings\\[User Account] \Mes Documents\Test client Projects.
 >
 > Toutes les informations d'identification mises à jour stockées dans le fichier de configuration client sont protégées par la Liste de contrôle d'Accès (ACL) de ce dossier.
 
@@ -142,7 +142,7 @@ Pendant la génération d'un proxy, une compilation binaire ou l'appel d'un serv
 
 ## <a name="location-of-files-generated-by-the-test-client"></a>Emplacement des fichiers générés par le client test
 
-Par défaut, le client test WCF stocke les fichiers de code client et de configuration générés dans le dossier « %appdata%\Local\temp\Test client Projects ». Ce dossier est supprimé après la sortie du client test WCF. Si un fichier de configuration est modifié dans le client test WCF et que l’option **toujours régénérer la configuration au démarrage des services** est désactivée, le fichier modifié est copié dans le dossier « CachedConfig » sous « mes projets client Documents\test » avec un mappage ( fichier XML de métadonnées-adresse-à-fichier) en tant qu’index.
+Par défaut, le client test WCF stocke les fichiers de code client et de configuration générés dans le dossier « %appdata%\Local\temp\Test client Projects ». Ce dossier est supprimé après la sortie du client test WCF. Si un fichier de configuration est modifié dans le client test WCF et que l’option **toujours régénérer la configuration au démarrage des services** est désactivée, le fichier modifié est copié dans le dossier « CachedConfig » sous « mes projets client Documents\test » avec un fichier XML de mappage (nom de métadonnées-adresse-fichier) en tant qu’index.
 
 Vous pouvez également démarrer le client test WCF dans une ligne de commande, utiliser le commutateur `/ProjectPath` pour spécifier un nouveau chemin d’accès souhaité pour le stockage des fichiers générés ou utiliser le commutateur `/RestoreProjectPath` pour restaurer l’emplacement par défaut. La syntaxe est la suivante :
 

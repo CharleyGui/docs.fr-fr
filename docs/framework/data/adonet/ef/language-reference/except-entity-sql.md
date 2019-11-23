@@ -25,7 +25,7 @@ expression EXCEPT expression
 ## <a name="return-value"></a>Valeur de retour  
  Collection du même type que l' `expression`ou d'un type de base commun ou dérivé de celui-ci.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  EXCEPT est l'un des opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] . Tous les opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sont évalués de gauche à droite. Le tableau ci-dessous présente la priorité des opérateurs Set [!INCLUDE[esql](../../../../../../includes/esql-md.md)] .  
   
 |Priorité|Opérateurs|  
@@ -38,7 +38,7 @@ expression EXCEPT expression
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur EXCEPT pour retourner une collection de valeurs distinctes provenant de deux expressions de requête. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats StructuralType @ no__t-0.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

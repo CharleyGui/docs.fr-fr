@@ -22,7 +22,7 @@ ms.locfileid: "71698152"
 # <a name="network-settings-schema"></a>Schéma des paramètres réseau
 Les paramètres réseau spécifient la façon dont le .NET Framework se connecte à Internet.
 
-Les paramètres @no__t -0System. net > spécifient la façon dont le .NET Framework se connecte au réseau. Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<system.Net>, élément (paramètres réseau)](system-net-element-network-settings.md).  
+Les paramètres \<System. net > spécifient la façon dont le .NET Framework se connecte au réseau. Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<system.Net>, élément (paramètres réseau)](system-net-element-network-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  
@@ -33,7 +33,7 @@ Les paramètres @no__t -0System. net > spécifient la façon dont le .NET Framew
 |[\<requestCaching>, élément (paramètres réseau)](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
 |[\<webRequestModules>, élément (paramètres réseau)](webrequestmodules-element-network-settings.md)|Spécifie les modules utilisés pour demander des informations à partir des hôtes Internet.|  
   
-Les paramètres de > \<uri spécifient la façon dont le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier). Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous l' [élément \<uri > (paramètres d’URI)](uri-element-uri-settings.md).  
+Les paramètres de > URI \<spécifient la façon dont le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier). Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous le [\<uri > élément (paramètres d’URI)](uri-element-uri-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  

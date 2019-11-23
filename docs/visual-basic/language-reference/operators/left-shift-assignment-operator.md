@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
 ms.openlocfilehash: aae71069bdcb88efa5842526dd7eb47806f248d0
 ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71701105"
 ---
-# <a name="-operator-visual-basic"></a>\< @ no__t-1 =, opérateur (Visual Basic)
+# <a name="-operator-visual-basic"></a>\<\<=, opérateur (Visual Basic)
 Effectue un décalage arithmétique vers la gauche sur la valeur d’une variable ou d’une propriété et assigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,12 +29,12 @@ variableorproperty <<= amount
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Obligatoire. Variable ou propriété d’un type intégral (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long` ou `ULong`).  
+ Requis. Variable ou propriété d’un type intégral (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`ou `ULong`).  
   
  `amount`  
- Obligatoire. Expression numérique d’un type de données qui s’étend à `Integer`.  
+ Requis. Expression numérique d’un type de données qui s’étend à `Integer`.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’élément situé à gauche de l’opérateur `<<=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
  L’opérateur `<<=` effectue d’abord un décalage arithmétique vers la gauche sur la valeur de la variable ou de la propriété. L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
@@ -51,7 +51,7 @@ variableorproperty <<= amount
   
 ## <a name="see-also"></a>Voir aussi
 
-- [<< (opérateur)](../../../visual-basic/language-reference/operators/left-shift-operator.md)
+- [<<, opérateur](../../../visual-basic/language-reference/operators/left-shift-operator.md)
 - [Opérateurs d’assignation](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Opérateurs de décalage de bits](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)

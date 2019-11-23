@@ -1,14 +1,13 @@
 ---
 title: Pourquoi gRPC est recommandé pour les développeurs WCF-gRPC pour les développeurs WCF
 description: Une discussion sur la raison pour laquelle gRPC est adapté aux développeurs WCF qui cherchent à migrer vers des architectures et des plateformes modernes.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: f96e9a059dc9f12a13c9eb5bb7184ee75d602458
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: da712e1ceee92f0a1a2661252dcda602f5dde9a0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846070"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966943"
 ---
 # <a name="why-grpc-is-recommended-for-wcf-developers"></a>Pourquoi gRPC est recommandé pour les développeurs WCF
 
@@ -34,7 +33,7 @@ Il existe des outils et des bibliothèques gRPC pour tous les principaux langage
 
 gRPC est une solution RPC complète. Il fonctionne de manière cohérente sur plusieurs langages et plateformes, et fournit un excellent outil, avec une grande partie du code réutilisable généré automatiquement, de sorte que davantage de temps pour les développeurs est libéré pour se concentrer sur la logique métier.
 
-### <a name="streaming"></a>Diffusion en continu
+### <a name="streaming"></a>Diffusion
 
 gRPC dispose d’une diffusion en continu bidirectionnelle complète qui offre des fonctionnalités très similaires aux services duplex complets de WCF. la diffusion en continu gRPC peut fonctionner sur des connexions Internet régulières, des équilibrages de charge et des maillages de service.
 

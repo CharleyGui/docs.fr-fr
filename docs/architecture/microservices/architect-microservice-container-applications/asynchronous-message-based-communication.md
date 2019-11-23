@@ -73,7 +73,7 @@ L’implémentation d’une architecture pilotée par les événements sur plusi
 
 - Utilisation d’une file d’attente transactionnelle, basée sur DTC, comme MSMQ. (Toutefois, il s’agit d’une approche héritée.)
 
-- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
+- Utilisation de [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
 - Utilisation de la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
@@ -89,7 +89,7 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 - **Publish/Subscribe Channel** \
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **UDI Dahan. CQRS** \ clarifié
+- **UDI Dahan. \ CQRS clarifiée**
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 - **CQRS (séparation des responsabilités en matière de commande et de requête)**  \
@@ -101,7 +101,7 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 - **Cohérence à terme** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy bogard. Refactorisation vers la résilience : évaluation**de l’association  \
+- **Jimmy bogard. Refactorisation en vue de la résilience : évaluation du couplage** \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]

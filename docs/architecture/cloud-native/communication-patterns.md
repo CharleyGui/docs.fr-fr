@@ -44,7 +44,7 @@ Bien qu’elles offrent de nombreux avantages, les microservices ne sont pas gra
 
 - Le chiffrement/déchiffrement des messages devient important.
 
-Les microservices .net Book [: L’architecture des applications](https://docs.microsoft.com/dotnet/standard/microservices-architecture/).net en conteneur, disponible gratuitement auprès de Microsoft, fournit une couverture approfondie des modèles de communication pour les applications de microservices. Dans ce chapitre, nous fournissons une vue d’ensemble détaillée de ces modèles, ainsi que des options d’implémentation disponibles dans le Cloud Azure.
+L’ouvrage [.net microservices : architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/standard/microservices-architecture/), disponible gratuitement auprès de Microsoft, fournit une couverture approfondie des modèles de communication pour les applications de microservices. Dans ce chapitre, nous fournissons une vue d’ensemble détaillée de ces modèles, ainsi que des options d’implémentation disponibles dans le Cloud Azure.
 
 Dans ce chapitre, nous allons commencer par traiter la communication entre les applications frontales et les microservices back-end. Nous examinerons ensuite les microservices principaux qui communiquent entre eux. Nous allons explorer les technologies de communication gRPC et up. Enfin, nous allons découvrir de nouveaux modèles de communication novateurs à l’aide de la technologie service Mesh. Nous verrons également comment le Cloud Azure fournit différents types de *services de stockage* pour prendre en charge la communication Native Cloud.
 

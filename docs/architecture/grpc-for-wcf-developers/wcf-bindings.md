@@ -1,14 +1,13 @@
 ---
 title: Liaisons et transports WCF-gRPC pour les développeurs WCF
 description: Découvrez comment les différents transports et liaisons WCF sont comparés à gRPC.
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 34321395ddd7059ac7e3c268e313a03251662911
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 233e3d030bc1f4450bd5cd6a7d7770486ca9e95a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846051"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966902"
 ---
 # <a name="wcf-bindings-and-transports"></a>Liaisons WCF et transports
 

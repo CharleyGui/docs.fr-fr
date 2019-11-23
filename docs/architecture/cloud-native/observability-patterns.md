@@ -1,5 +1,5 @@
 ---
-title: Modèles d’observation
+title: Modèles d’observabilité
 description: Modèles d’observation pour les applications Cloud natives
 ms.date: 09/23/2019
 ms.openlocfilehash: 23320144c03278d631b8a1fcc1d1c0954e907296
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71184875"
 ---
-# <a name="observability-patterns"></a>Modèles d’observation
+# <a name="observability-patterns"></a>Modèles d’observabilité
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -26,15 +26,15 @@ Chaque langage de programmation dispose d’outils qui autorisent l’écriture 
 * Verbose
 * Débogage
 * Information
-* Warning
+* Avertissement
 * Error
-* Fatal
+* Erreur irrécupérable
 
 Ces différents niveaux de journalisation fournissent la granularité de la journalisation. Lorsque l’application fonctionne correctement en production, elle peut être configurée pour enregistrer uniquement les messages importants. Lorsque l’application ne fonctionne pas correctement, le niveau de journalisation peut être augmenté pour que les journaux plus détaillés soient collectés. Cela équilibre les performances par rapport à la facilité de débogage.
 
 Les performances élevées des outils de journalisation et le tunability de commentaires doivent inciter les développeurs à se connecter fréquemment. De nombreux favorisent un modèle de journalisation de l’entrée et de la sortie de chaque méthode. Cette approche peut sembler excessive, mais il est peu fréquent que les développeurs souhaitent moins de journalisation. En fait, il n’est pas rare d’effectuer des déploiements dans le seul but d’ajouter la journalisation autour d’une méthode problématique. ERR sur le côté de la journalisation trop importante et non trop petit. Notez que certains outils peuvent être utilisés pour fournir automatiquement ce type de journalisation.
 
-Dans les applications traditionnelles, les fichiers journaux étaient généralement stockés sur l’ordinateur local. En fait, sur les systèmes d’exploitation de type UNIX, il existe une structure de dossiers définie pour contenir tous les `/var/log`journaux, généralement sous. L’utilité de la journalisation dans un fichier plat sur un seul ordinateur est considérablement réduite dans un environnement Cloud. Les applications qui produisent des journaux peuvent ne pas avoir accès au disque local ou le disque local peut être très transitoire, car les conteneurs sont mélangés à des machines physiques.
+Dans les applications traditionnelles, les fichiers journaux étaient généralement stockés sur l’ordinateur local. En fait, sur les systèmes d’exploitation de type UNIX, il existe une structure de dossiers définie pour contenir tous les journaux, généralement sous `/var/log`. L’utilité de la journalisation dans un fichier plat sur un seul ordinateur est considérablement réduite dans un environnement Cloud. Les applications qui produisent des journaux peuvent ne pas avoir accès au disque local ou le disque local peut être très transitoire, car les conteneurs sont mélangés à des machines physiques.
 
 Les applications Cloud natives développées à l’aide d’une architecture de microservices présentent également des défis pour les enregistreurs basés sur des fichiers. Les demandes de l’utilisateur peuvent maintenant s’étendre sur plusieurs services qui sont exécutés sur des ordinateurs différents et peuvent inclure des fonctions sans serveur sans accès à un système de fichiers local. Il serait très difficile de mettre en corrélation les journaux d’un utilisateur ou d’une session sur ces nombreux services et ordinateurs.
 
@@ -44,8 +44,8 @@ Heureusement, il existe des alternatives fantastiques à l’utilisation de la j
 
 Il est également utile de suivre certaines pratiques standard lors de la création d’une journalisation qui s’étend sur de nombreux services. Par exemple, la génération d’un [ID de corrélation](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/) au début d’une interaction longue, puis son enregistrement dans chaque message associé à cette interaction facilite la recherche de tous les messages associés. Il suffit de rechercher un seul message et d’extraire l’ID de corrélation pour trouver tous les messages associés. Un autre exemple consiste à s’assurer que le format de journal est le même pour tous les services, quel que soit le langage ou la bibliothèque de journalisation qu’il utilise. Cette normalisation facilite grandement la lecture des journaux. La figure 7-1 montre comment une architecture de microservices peut tirer parti de la journalisation centralisée dans le cadre de son flux de travail.
 
-![Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé. **Figure 7-1**. ](./media/centralized-logging.png)
- Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé.
+![journaux de différentes sources sont ingérés dans un magasin de journaux centralisé.](./media/centralized-logging.png)
+**Figure 7-1**. Les journaux provenant de différentes sources sont ingérés dans un magasin de journaux centralisé.
 
 ## <a name="when-to-use-monitoring"></a>Quand utiliser l’analyse
 

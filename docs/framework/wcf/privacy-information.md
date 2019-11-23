@@ -56,7 +56,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour [!INCLUDE[wv](../../../includes/wv-md.md)] et [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un enregistrement est entré dans le journal des événements de sécurité.  
   
-## <a name="transactions"></a>Transactions  
+## <a name="transactions"></a>transactions  
  La fonctionnalité transactions fournit des services transactionnels à une application WCF.  
   
  Les en-têtes de transaction utilisés dans la propagation de transaction peuvent contenir des ID de transaction ou des ID d'inscription, qui sont des GUID.  
@@ -127,13 +127,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Clés qui sont supprimées :  
   
- \- pour xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- Pour xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
  wst:Entropy  
   
- \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -141,7 +141,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Informations potentiellement personnelles qui sont supprimées :  
   
- \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
@@ -149,7 +149,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  \- pour xmlns : SAML = "urn : Oasis : Names : TC : SAML : 1.0 : assertion" les éléments en gras (ci-dessous) sont supprimés :  
   
- @no__t 0Assertion  
+ Assertion de \<  
   
  MajorVersion="1"  
   
@@ -163,41 +163,41 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  >  
   
- \<Conditions NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
+ \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
   
- @no__t 0AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
- \<Audience > [URI] \</audience > +  
+ \<Audience>[uri]\</Audience>+  
   
- \</AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition/> *  
+ \<DoNotCacheCondition />*  
   
- < @ no__t-1--type de base abstrait  
+ <\!--type de base abstrait  
   
- \<Condition/> *  
+ \<condition/> *  
   
  -->  
   
- \</conditions >?  
+ \</Conditions>?  
   
- @no__t 0Advice >  
+ > de Conseil \<  
   
- \<AssertionIDReference > [ID] \</AssertionIDReference > *  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>*  
   
- \<Assertion > [assertion] \</assertion > *  
+ \<Assertion>[assertion]\</Assertion>*  
   
  [indifférent]*  
   
- \</> de conseils ?  
+ \<>/Advice ?  
   
- < @ no__t-1--types de base abstraits  
+ <\!--types de base abstraits  
   
- \<Statement/> *  
+ Instruction \</> *  
   
- @no__t 0SubjectStatement >  
+ \<SubjectStatement >  
   
- @no__t 0Subject >  
+ \<objet >  
   
  `<NameIdentifier`  
   
@@ -211,23 +211,23 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `</NameIdentifier>?`  
   
- @no__t 0SubjectConfirmation >  
+ \<SubjectConfirmation>  
   
- \<ConfirmationMethod > [anyURI] \</ConfirmationMethod > +  
+ \<ConfirmationMethod>[anyUri]\</ConfirmationMethod>+  
   
- \<SubjectConfirmationData > [Any] \</SubjectConfirmationData >?  
+ \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
   
- \<DS : KeyInfo >... \</DS : KeyInfo >?  
+ \<DS : KeyInfo >...\</DS : KeyInfo >?  
   
- \</SubjectConfirmation >?  
+ \</SubjectConfirmation>?  
   
- \</objet >  
+ \</Subject>  
   
- \</SubjectStatement > *  
+ \</SubjectStatement>*  
   
  -->  
   
- @no__t 0AuthenticationStatement  
+ \<AuthenticationStatement  
   
  AuthenticationMethod="[uri]"  
   
@@ -255,13 +255,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  />*  
   
- \</AuthenticationStatement > *  
+ \</AuthenticationStatement>*  
   
- @no__t 0AttributeStatement >  
+ \<AttributeStatement >  
   
  [Objet]  
   
- @no__t 0Attribute  
+ Attribut \<  
   
  AttributeName="[chaîne]"  
   
@@ -271,40 +271,40 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</> d’attributs +  
+ \</attribute > +  
   
- \</AttributeStatement > *  
+ \</AttributeStatement>*  
   
- @no__t 0AuthorizationDecisionStatement  
+ \<AuthorizationDecisionStatement  
   
  Resource="[uri]"  
   
- Décision = "[autoriser&#124;refuser&#124;indéterminé]"  
+ Decision="[Permit&#124;Deny&#124;Indeterminate]"  
   
  >  
   
  [Objet]  
   
- \<Action espace de noms = "[URI]" > [chaîne] \</action > +  
+ \<action Namespace = "[URI]" > [String]\</action > +  
   
- @no__t 0Evidence >  
+ > de preuve \<  
   
- \<AssertionIDReference > [ID] \</AssertionIDReference > +  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>+  
   
- \<Assertion > [assertion] \</assertion > +  
+ \<Assertion>[assertion]\</Assertion>+  
   
- \</> de preuve ?  
+ \<>/Evidence ?  
   
- \</AuthorizationDecisionStatement > *  
+ \</AuthorizationDecisionStatement>*  
   
- \</assertion >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informations supprimées des corps de messages lors de l'enregistrement des messages déchiffrés/non chiffrés  
  Comme décrit précédemment, WCF supprime les clés et les informations potentiellement personnelles connues des en-têtes de message pour les messages déchiffrés/non chiffrés. En outre, WCF supprime les clés et les informations potentiellement personnelles connues des corps de message pour les éléments et actions du corps de la liste suivante, qui décrivent les messages de sécurité impliqués dans l’échange de clés.  
   
  Pour les espaces de noms suivants :  
   
- xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
+ xmlns:WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
   
  Les informations sont supprimées pour ces éléments de corps, qui impliquent l'échange de clé :  
   

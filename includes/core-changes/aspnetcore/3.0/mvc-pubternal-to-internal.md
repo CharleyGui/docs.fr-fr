@@ -8,11 +8,11 @@ ms.locfileid: "72394024"
 ---
 ### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC : les types « Pubternal » sont devenus internes
 
-Dans ASP.NET Core 3,0, tous les types « pubternal » dans MVC ont été mis à jour pour être `public` dans un espace de noms pris en charge ou `internal`, le cas échéant.
+Dans ASP.NET Core 3,0, tous les types « pubternal » dans MVC ont été mis à jour pour être `public` dans un espace de noms pris en charge ou `internal` le cas échéant.
 
 #### <a name="change-description"></a>Modifier la description
 
-Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public`, mais ils résident dans un espace de noms @no__t avec suffixe 1. Bien que ces types soient `public`, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
+Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public` mais résident dans un espace de noms avec suffixe `.Internal`. Bien que ces types soient `public`, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -20,7 +20,7 @@ Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public`, m
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Certains types dans MVC étaient `public`, mais dans un espace de noms `.Internal`. Ces types n’ont pas de stratégie de prise en charge et ont fait l’objet de modifications avec rupture.
+Certains types dans MVC étaient `public` mais dans un espace de noms `.Internal`. Ces types n’ont pas de stratégie de prise en charge et ont fait l’objet de modifications avec rupture.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
@@ -34,9 +34,9 @@ L’utilisation accidentelle des types « pubternal » a été courante, entra
 
 Si vous utilisez des types qui sont réellement `public` et qui ont été déplacés dans un nouvel espace de noms pris en charge, mettez à jour vos références pour qu’elles correspondent aux nouveaux espaces de noms.
 
-Si vous utilisez des types qui ont été marqués comme `internal`, vous devez trouver une alternative. Les types « pubternal » précédemment n’étaient jamais pris en charge pour une utilisation publique. S’il existe des types spécifiques dans ces espaces de noms qui sont essentiels à vos applications, émettez un problème au niveau de [ASPNET/AspNetCore](https://github.com/aspnet/AspNetCore/issues). Des considérations peuvent être prises pour effectuer les types demandés `public`.
+Si vous utilisez des types qui ont été marqués comme `internal`, vous devez trouver une alternative. Les types « pubternal » précédemment n’étaient jamais pris en charge pour une utilisation publique. S’il existe des types spécifiques dans ces espaces de noms qui sont essentiels à vos applications, émettez un problème au niveau de [ASPNET/AspNetCore](https://github.com/aspnet/AspNetCore/issues). Il est possible de prendre en compte les types demandés `public`.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 

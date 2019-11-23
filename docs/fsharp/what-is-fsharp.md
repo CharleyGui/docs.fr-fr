@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71332734"
 ---
-# <a name="what-is-f"></a>Qu’est-ce que F @ no__t-0 ?
+# <a name="what-is-f"></a>Qu’est-ce que F\#
 
 F#est un langage de programmation fonctionnelle qui facilite l’écriture de code correct et facile à gérer.
 
@@ -120,6 +120,6 @@ module Set =
 
 Plutôt que d’écrire du code orienté objet, dans, F#vous écrirez souvent du code qui traite les objets comme un autre type de données pour les fonctions à manipuler. Les fonctionnalités telles que les [interfaces génériques](./language-reference/interfaces.md), les [expressions d’objet](./language-reference/object-expressions.md)et l’utilisation judicieuse des [membres](./language-reference/members/index.md) sont F# communes aux programmes plus volumineux.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Pour en savoir plus sur un plus grand F# ensemble de fonctionnalités, consultez la [ F# visite guidée](tour.md).

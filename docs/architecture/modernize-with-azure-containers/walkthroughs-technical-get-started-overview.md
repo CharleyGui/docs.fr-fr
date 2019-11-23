@@ -39,7 +39,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 [procédures pas à pas du wiki eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing/wiki)
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Dans cette procédure pas à pas, vous pouvez explorer l’implémentation initiale de trois exemples d’applications héritées. Les deux premiers exemples d’applications Web ont une architecture monolithique et ont été créés à l’aide de ASP.NET classiques. Une application est basée sur ASP.NET 4. x MVC ; la seconde application est basée sur ASP.NET 4. x Web Forms.
 La troisième application est une application à trois niveaux composée par une application WinForms client et un service de Windows Communication Foundation côté serveur [(WCF)](../../framework/wcf/whats-wcf.md) .
@@ -74,7 +74,7 @@ La figure ci-dessous illustre le scénario simple de l’application héritée �
 
 Les avantages de cette procédure pas à pas sont simples : Familiarisez-vous avec le code et les applications initiales.
 
-### <a name="next-steps"></a>Étapes suivantes
+### <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub :
 
@@ -83,7 +83,7 @@ Explorez ce contenu plus en détail sur le wiki GitHub :
 
 ## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Procédure pas à pas 2 : mise en conteneur de vos applications .NET existantes avec des conteneurs Windows
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Utilisez des conteneurs Windows pour améliorer le déploiement d’applications .NET existantes, comme celles basées sur MVC, Web Forms ou WCF, dans des environnements de production, de développement et de test.
 
@@ -121,7 +121,7 @@ Les applications en conteneur ont également une courbe de montée en puissance 
 
 Dans les situations idéales, le conteneur ne nécessite pas d’apporter des modifications au code de l’application (C\#). Dans la plupart des scénarios, vous avez simplement besoin des fichiers de métadonnées de déploiement de l’arrimeur (fichiers dockerfile et Docker Compose).
 
-### <a name="next-steps"></a>Étapes suivantes
+### <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub :
 
@@ -134,7 +134,7 @@ Explorez ce contenu plus en détail sur le wiki GitHub :
 
 La procédure pas à pas complète technique est disponible dans le wiki eShopModernizing GitHub référentiel : <https://github.com/dotnet-architecture/eShopModernizing/wiki/06.-Deploying-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)>
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Le déploiement sur un ordinateur hôte de station d’accueil sur une machine virtuelle Windows Server 2016 dans Azure vous permet de configurer rapidement des environnements de développement, de test et de mise en lots. Il permet également aux testeurs ou aux utilisateurs professionnels de valider l’application. Les machines virtuelles peuvent également être des environnements de production IaaS (infrastructure as a service) valides.
 
@@ -174,7 +174,7 @@ Azure fournit actuellement une machine virtuelle nommée **Windows Server 2016 a
 
 Bien que les conteneurs Windows puissent être déployés sur des machines virtuelles Windows Server 2016 locales, lorsque vous déployez sur Azure, vous disposez d’un moyen plus simple de commencer, avec des machines virtuelles de conteneur Windows Server prêtes à l’emploi. Vous disposez également d’un emplacement en ligne commun qui est accessible aux testeurs et de l’extensibilité automatique par le biais de groupes de machines virtuelles identiques Azure.
 
-### <a name="next-steps"></a>Étapes suivantes
+### <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub :
 
@@ -188,7 +188,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 [Déploiement des applications sur ACI (Azure Container Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 [Azure Container instances (ACI)](https://docs.microsoft.com/azure/container-instances/) est le moyen le plus rapide de disposer d’un environnement de développement/test/intermédiaire de conteneurs dans lequel vous pouvez déployer des instances uniques de conteneurs.
 
@@ -212,7 +212,7 @@ Le déploiement de conteneurs Windows avec l’ensemble des .NET Framework/ASP.N
 
 En guise de conclusion principale, l’utilisation de Azure Container Instances est une option très intéressante pour les scénarios de développement/test et pour les pipelines CI/CD.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub :
 
@@ -226,7 +226,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Une application basée sur des conteneurs Windows devra rapidement utiliser des plateformes, en se déplaçant encore plus loin des machines virtuelles IaaS. Cela est nécessaire pour obtenir facilement une évolutivité élevée et une plus grande évolutivité automatisée, et pour une amélioration significative des déploiements et du contrôle de version automatisés. Vous pouvez atteindre ces objectifs à l’aide d’Orchestrator [Kubernetes](https://kubernetes.io/), disponible dans [Azure Container Services](https://azure.microsoft.com/services/container-service/).
 
@@ -274,7 +274,7 @@ Avec Kubernetes, les développeurs peuvent progresser de la réflexion sur les m
 
 - Vérifications de l’intégrité des applications
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub : <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
@@ -286,7 +286,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 <https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 
-### <a name="overview"></a>Vue d'ensemble
+### <a name="overview"></a>Vue d’ensemble
 
 Une application en conteneur simple utilisant des conteneurs Windows peut facilement être déployée pour Azure App Service pour les conteneurs. Il s’agit de l’approche recommandée pour la plupart des applications basées sur des conteneurs Windows.
 
@@ -302,7 +302,7 @@ L’objectif de cette procédure pas à pas est d’apprendre à déployer une a
 
 Le déploiement sur Azure App Service pour les conteneurs offre les avantages des conteneurs associés aux avantages PaaS de Azure App Service. App service peut facilement être mis à l’échelle verticalement et horizontalement, et peut être configuré pour être mis à l’échelle automatiquement pour répondre aux demandes fluctuantes. Les mises à jour peuvent être effectuées sans temps d’arrêt et la configuration d’un déploiement continu à partir d’un registre est facilement configurée.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Explorez ce contenu plus en détail sur le wiki GitHub : <https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 

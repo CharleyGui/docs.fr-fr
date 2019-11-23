@@ -76,7 +76,7 @@ La définition de la propriété `ClientCredentialType` dépend de la valeur aff
 
 ### <a name="to-set-the-mode-and-clientcredentialtype-property-in-configuration"></a>Pour définir le mode et la propriété ClientCredentialType dans la configuration
 
-1. Ajoutez un élément de liaison approprié à l’élément [\<bindings >](../configure-apps/file-schema/wcf/bindings.md) du fichier de configuration. L’exemple suivant ajoute un élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .
+1. Ajoutez un élément de liaison approprié aux [liaisons\<>](../configure-apps/file-schema/wcf/bindings.md) élément du fichier de configuration. L’exemple suivant ajoute un élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .
 
 2. Ajoutez un élément `<binding>` et affectez à son attribut `name` une valeur appropriée.
 
@@ -124,6 +124,6 @@ Pour plus d’informations, consultez [Comment : utiliser la sécurité de tran
 - [Sécurité de message](./feature-details/message-security-in-wcf.md)
 - [Vue d’ensemble de la sécurité](./feature-details/security-overview.md)
 - [Liaisons fournies par le système](system-provided-bindings.md)
-- [@no__t-> de la ré](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [@no__t-> de la ré](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [@no__t-> de la ré](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [> de sécurité \<](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

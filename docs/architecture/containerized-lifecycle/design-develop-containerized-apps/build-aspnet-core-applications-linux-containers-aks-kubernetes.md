@@ -47,7 +47,7 @@ Si vous avez des versions antérieures de .NET Core, vous pouvez télécharger e
 
 Vous pouvez ajouter la prise en charge de Docker lors de la création du projet ou par la suite, de sorte à pouvoir « dockeriser » votre projet à tout moment. Pour ajouter la prise en charge de Docker après la création du projet, cliquez avec le bouton droit sur le nœud du projet dans l’Explorateur de solutions et sélectionnez **Ajouter** > **Prise en charge de Docker** dans le menu contextuel.
 
-![Option de menu contextuel permettant d’ajouter la prise en charge de Docker à un projet existant : Cliquez avec le bouton droit (sur le projet) > Ajouter > Prise en charge de Docker.](media/add-docker-support-to-project.png)
+![Option de menu contextuel pour ajouter la prise en charge de l’ancrage à un projet existant : cliquez avec le bouton droit (sur le projet) > ajoutez > prise en charge de l’ancrage.](media/add-docker-support-to-project.png)
 
 **Figure 4-38**. Ajout de la prise en charge de Docker à un projet existant
 
@@ -69,7 +69,7 @@ Après avoir exécuté le projet, vous pouvez lister les images à l’aide de l
 docker images
 ```
 
-![La sortie de console issue de la commande docker images présente une liste avec les détails suivants : Repository (Référentiel), Tag (Balise), Image ID (ID d’image), Created (Date de création) and Size (Taille).](media/docker-images-command.png)
+![La sortie de console de la commande dockers images affiche une liste avec : dépôt, étiquette, ID d’image, créé (date) et taille.](media/docker-images-command.png)
 
 **Figure 4-40**. Affichage des images Docker
 
@@ -89,7 +89,7 @@ Si vous exécutez la commande `docker image`, vous voyez deux images créées, u
 
 ### <a name="create-a-new-tag-for-the-image"></a>Créer une balise pour l’image
 
-Chaque image de conteneur doit être marquée avec le `loginServer` nom du Registre. Cette balise est utilisée pour le routage lors du push d’images de conteneur dans un registre d’images.
+Chaque image de conteneur doit être marquée avec le nom `loginServer` du Registre. Cette balise est utilisée pour le routage lors du push d’images de conteneur dans un registre d’images.
 
 Vous pouvez voir le nom `loginServer` à partir du portail Azure, en prenant les informations auprès d’Azure Container Registry.
 
@@ -190,7 +190,7 @@ Vous êtes maintenant presque prêt à effectuer un déploiement en utilisant **
 az aks get-credentials --resource-group MSSampleResourceGroupAKS --name mssampleclusterk801
 ```
 
-![Sortie de console issue de la commande ci-dessus : Merged "MSSampleK8Cluster as current context in /root/.kube/config](media/getting-aks-credentials.png)
+![Sortie de la console à partir de la commande ci-dessus : fusionné «MSSampleK8Cluster en tant que contexte actuel dans/root/.Kube/config](media/getting-aks-credentials.png)
 
 **Figure 4-47**. Obtention des informations d’identification
 

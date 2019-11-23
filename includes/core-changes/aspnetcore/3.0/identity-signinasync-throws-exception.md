@@ -24,19 +24,19 @@ Par défaut, `SignInAsync` lève une exception pour les principaux/identités da
 
 #### <a name="reason-for-change"></a>Motif de modification
 
-L’ancien comportement était problématique parce que, par défaut, ces principaux ont été rejetés par `[Authorize]` @ no__t-1 @ no__t-2.
+L’ancien comportement était problématique parce que, par défaut, ces principaux ont été rejetés par `[Authorize]` / `RequireAuthenticatedUser()`.
 
 #### <a name="recommended-action"></a>Action recommandée
 
 Dans ASP.NET Core 3,0 Preview 6, il existe un indicateur `RequireAuthenticatedSignIn` sur `AuthenticationOptions` qui est `true` par défaut. Définissez cet indicateur sur `false` pour restaurer l’ancien comportement.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-aucune.
+Aucun
 
 <!-- 
 

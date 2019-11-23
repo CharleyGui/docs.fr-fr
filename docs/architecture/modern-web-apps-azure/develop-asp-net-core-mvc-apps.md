@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 19d1d5f81b5be9b843698b6e61d8571d4edfa66f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: b57741ed68b3481ad2c85b1c3d62717f09c7570e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181941"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971585"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -20,7 +20,7 @@ ASP.NET Core est un framework open source multiplateforme qui permet de génére
 
 ## <a name="mvc-and-razor-pages"></a>MVC et pages Razor
 
-ASP.NET Core MVC offre de nombreuses fonctionnalités qui sont utiles pour la création d’applications et d’API basées sur le web. Le terme MVC signifie « Model-View-Controller », un modèle d’interface utilisateur qui sépare en plusieurs parties les responsabilités relatives au fait de répondre aux demandes des utilisateurs. En plus de suivre ce modèle, vous pouvez également implémenter des fonctionnalités dans vos applications ASP.NET Core sous la forme de pages Razor. Les pages Razor sont intégrées à ASP.NET Core MVC et utilisent les mêmes fonctionnalités de routage, de liaison de modèle, etc. Toutefois, au lieu d’avoir des fichiers et des dossiers distincts pour les contrôleurs, les vues, etc., et d’utiliser un routage basé sur les attributs, les pages Razor sont placées dans un dossier unique (« /Pages »), routent en fonction de leur emplacement relatif dans ce dossier et gèrent les demandes à l’aide de gestionnaires à la place d’actions de contrôleur.
+ASP.NET Core MVC offre de nombreuses fonctionnalités qui sont utiles pour la création d’applications et d’API basées sur le web. Le terme MVC signifie « Model-View-Controller », un modèle d’interface utilisateur qui sépare en plusieurs parties les responsabilités relatives au fait de répondre aux demandes des utilisateurs. En plus de suivre ce modèle, vous pouvez également implémenter des fonctionnalités dans vos applications ASP.NET Core sous la forme de pages Razor. Les Razor Pages sont intégrées à ASP.NET Core MVC et utilisent les mêmes fonctionnalités pour le routage, la liaison de modèle, etc. Toutefois, au lieu d’avoir des dossiers et des fichiers distincts pour les contrôleurs, les vues, etc. et l’utilisation du routage basé sur les attributs, les Razor Pages sont placés dans un dossier unique (« /pages »), sont acheminés en fonction de leur emplacement relatif dans ce dossier et gèrent les demandes avec les gestionnaires au lieu des actions du contrôleur.
 
 Lorsque vous créez une nouvelle application ASP.NET Core, vous devez avoir un plan à l’esprit pour le type d’application que vous souhaitez générer. Dans Visual Studio, vous effectuez votre choix parmi plusieurs modèles. Les trois modèles de projet les plus courants sont API web, Application web et Application web (Model-View-Controller). Vous pouvez prendre cette décision seulement lorsque vous créez un projet, mais ce n’est pas une décision irrévocable. Le projet API web utilise des contrôleurs Model-View-Controller standard : il ne dispose pas de vues par défaut. De même, le modèle Application web par défaut utilise les pages Razor et ne dispose donc également pas d’un dossier de vues. Vous pouvez ajouter un dossier de vues à ces projets plus tard, pour prendre en charge le comportement basé sur les vues. Les projets API web et Model-View-Controller n’incluent pas de dossier de pages par défaut, mais vous pouvez en ajouter un plus tard pour prendre en charge le comportement basé sur les pages Razor. Vous pouvez considérer ces trois modèles comme prenant en charge trois différents types d’interactions utilisateur par défaut : données (API web), basées sur les pages et basées sur les vues. Toutefois, vous pouvez mélanger et traiter plusieurs ou tous les types d’interactions dans un seul projet si vous le souhaitez.
 
@@ -49,9 +49,9 @@ app.UseMvc(routes =>
 });
 ```
 
-Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Elle définit un modèle de routage avec des espaces réservés pour _controller_, _action_ et _id_. Les valeurs par défaut sont spécifiées pour les espaces réservés controller et action (« Home » et « Index », respectivement), tandis que l’espace réservé id est facultatif (ce qui est dénoté par « ? »). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
+Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Il définit un modèle de routage avec des espaces réservés pour le _contrôleur_, l' _action_et l' _ID_. Les espaces réservés de contrôleur et d’action sont spécifiés par défaut (« orig » et « index », respectivement), et l’espace réservé d’ID est facultatif (en vertu d’un «  ? » appliqué). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
 
-Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
+Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
 
 ```csharp
 [Route("Home")]
@@ -90,7 +90,7 @@ Dans l’exemple précédent, la page en question correspondrait à une route av
 
 Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un paramètre id de type int, la liaison de données tente de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. Si une valeur id est trouvée, elle est convertie en entier avant d’être passée à la méthode d’action.
 
-La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Vous pouvez spécifier certaines valeurs comme étant obligatoires, les limiter à une certaine longueur ou plage numérique, etc. Si des attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState.IsValid a la valeur false et le jeu de règles de validation ayant échoué peut être envoyé au client à l’origine de la requête.
+La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Certaines valeurs peuvent être spécifiées comme obligatoires, ou limitées à une certaine longueur ou plage numérique, etc. Si les attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState. IsValid prend la valeur false et le jeu de règles de validation qui échoue est disponible pour envoi au client qui effectue la demande.
 
 Si vous utilisez la validation du modèle, veillez à toujours vérifier que le modèle est valide avant d’exécuter des commandes de modification de l’état, et ce pour garantir que votre application n’est pas endommagée par des données non valides. Vous pouvez utiliser un [filtre](/aspnet/core/mvc/controllers/filters) pour ne pas avoir à ajouter du code dans chaque action. Les filtres ASP.NET Core MVC offrent un moyen d’intercepter des groupes de requêtes, ce qui permet d’appliquer des stratégies courantes et des problèmes transversaux de manière ciblée. Des filtres peuvent être appliqués à des actions individuelles, à des contrôleurs entiers ou à une application de manière globale.
 
@@ -172,7 +172,7 @@ Une autre approche pour découpler l’application des détails d’implémentat
 
 ### <a name="feature-organization"></a>Organisation par fonctionnalité
 
-Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style d’organisation est généralement désigné par les expressions « dossiers de fonctionnalités » ou [tranches de fonctionnalités](https://msdn.microsoft.com/magazine/mt763233.aspx) (voir aussi : [Tranches verticales](https://deviq.com/vertical-slices/)).
+Par défaut, les applications ASP.NET Core organisent leur structure de dossiers de manière à inclure Controllers et Views, et couramment ViewModels. Le code côté client utilisé pour prendre en charge ces structures côté serveur est généralement stocké séparément dans le dossier wwwroot. Toutefois, cette organisation peut poser des problèmes pour les applications volumineuses dans la mesure où le développement d’une fonctionnalité donnée nécessite souvent de passer d’un dossier à un autre. Le niveau de complexité croît à mesure que le nombre de fichiers et de sous-dossiers dans chaque dossier augmente, occasionnant de nombreuses opérations de défilement dans l’Explorateur de solutions. Une solution à ce problème consiste à organiser le code de l’application par _fonctionnalité_ plutôt que par type de fichier. Ce style organisationnel est généralement désigné sous le terme de dossiers de fonctionnalités ou de [tranches de fonctionnalités](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) (voir aussi : [tranches verticales](https://deviq.com/vertical-slices/)).
 
 À cet effet, ASP.NET Core MVC prend en charge Areas. Les zones vous permettent de créer des jeux distincts de dossiers Controllers et Views (ainsi que tout modèle associé) dans chaque dossier Area. La Figure 7-1 montre un exemple de structure de dossiers avec Areas.
 
@@ -237,7 +237,7 @@ Vous pouvez ensuite spécifier cette convention comme option quand vous ajoutez 
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Pour découvrir plus en détail cette approche et télécharger un exemple fonctionnel, consultez l’article [Feature Slices for ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt763233.aspx) sur MSDN.
+ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous pouvez la remplacer par une convention personnalisée de manière à ce que les vues soient établies dans les dossiers de fonctionnalité (en utilisant le nom de fonctionnalité fourni par FeatureConvention ci-dessus). Pour découvrir plus en détail cette approche et télécharger un exemple fonctionnel, consultez l’article [Feature Slices for ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc) sur MSDN.
 
 ### <a name="cross-cutting-concerns"></a>Problèmes transversaux
 
@@ -311,18 +311,18 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Pour découvrir plus en détail les filtres d’implémentation et télécharger un exemple fonctionnel, consultez l’article [Real World ASP.NET Core MVC Filters](https://msdn.microsoft.com/magazine/mt767699.aspx) (Filtres MVC ASP.NET Core dans le monde réel) sur MSDN.
+Pour découvrir plus en détail les filtres d’implémentation et télécharger un exemple fonctionnel, consultez l’article [Real World ASP.NET Core MVC Filters](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters) (Filtres MVC ASP.NET Core dans le monde réel) sur MSDN.
 
 > ### <a name="references--structuring-applications"></a>Références – Structuration des applications
 >
-> - **Les zones (areas)**  
+> - **Zones**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN Magazine – Feature Slices for ASP.NET Core MVC**  
->   <https://msdn.microsoft.com/magazine/mt763233.aspx>
-> - **Les filtres**  
+>   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
+> - **Filtres**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – Real World ASP.NET Core MVC Filters**  
->   <https://msdn.microsoft.com/magazine/mt767699.aspx>
+>   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
 ## <a name="security"></a>Sécurité
 

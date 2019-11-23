@@ -22,7 +22,7 @@ GROUPPARTITION( [ALL|DISTINCT] expression )
  `expression`  
  Toute expression [!INCLUDE[esql](../../../../../../includes/esql-md.md)] .  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  La requête suivante produit une liste de produits et une collection de quantités de ligne de commande pour chaque produit :  
   
 ```sql  
@@ -41,13 +41,13 @@ SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
   
  L'opérateur `GROUPPARTITION` peut être utilisé conjointement à des fonctions d'agrégation définies par l'utilisateur.  
   
-`GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Exemple :
+`GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Par exemple :
   
 ```sql  
 SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
- Avec un @no__t normal-0, les résultats du regroupement sont masqués. Vous pouvez utiliser les résultats uniquement dans une fonction d'agrégation. Pour voir les résultats du regroupement, vous devez mettre en corrélation les résultats du regroupement et le jeu de données d'entrée à l'aide d'une sous-requête. Les deux requêtes suivantes sont équivalentes :  
+ Avec un `GROUP BY`régulier, les résultats du regroupement sont masqués. Vous pouvez utiliser les résultats uniquement dans une fonction d'agrégation. Pour voir les résultats du regroupement, vous devez mettre en corrélation les résultats du regroupement et le jeu de données d'entrée à l'aide d'une sous-requête. Les deux requêtes suivantes sont équivalentes :  
   
 ```sql  
 SELET p, (SELECT q FROM GroupPartition(ol.Quantity) AS q) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p

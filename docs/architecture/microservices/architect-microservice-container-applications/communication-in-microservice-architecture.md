@@ -2,12 +2,12 @@
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
 ms.date: 09/20/2018
-ms.openlocfilehash: add1ff74bee456e0fa7f2fb54d2cf4e536402db4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 7bd45e0b8f8ea3330cf8d2b613e54111cc72f14f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738041"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966975"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -105,7 +105,7 @@ Comme le montre la figure 4-17, la communication HTTP en temps réel signifie qu
 
 **Figure 4-17**. Communication par messages asynchrones un-à-un en temps réel
 
-Signalr est un bon moyen d’obtenir une communication en temps réel pour transmettre du contenu aux clients à partir d’un serveur principal. Étant donné que la communication est en temps réel, les applications clientes affichent les modifications presque instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
+SignalR est un bon moyen d’effectuer une communication en temps réel pour envoyer (push) du contenu aux clients à partir d’un serveur back-end. Étant donné que la communication est en temps réel, les applications clientes montrent les modifications quasi instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
 
 >[!div class="step-by-step"]
 >[Précédent](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

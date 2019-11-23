@@ -22,8 +22,8 @@ Indique les groupes dans lesquels doivent être placés les objets retournés pa
  `aliasedExpression`  
  Toute expression de requête valide sur laquelle le regroupement est effectué. `expression` peut être une propriété ou une expression non agrégée qui référence une propriété retournée par la clause FROM. Chaque expression contenue dans une clause GROUP BY doit être évaluée à un type pouvant être comparé en égalité. Ces types sont généralement des primitives scalaires telles que des nombres, des chaînes et des dates. Vous ne pouvez pas effectuer de regroupement sur une collection.  
   
-## <a name="remarks"></a>Notes  
- Si les fonctions d’agrégation sont incluses dans la clause SELECT @no__t la liste 0select >, GROUP BY calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
+## <a name="remarks"></a>Remarques  
+ Si les fonctions d’agrégation sont incluses dans la clause SELECT \<liste de sélection >, GROUP BY calcule une valeur de synthèse pour chaque groupe. Lorsque la clause GROUP BY est spécifiée, vous devez inclure dans la liste GROUP BY chaque nom de propriété des expressions de non-agrégation figurant dans la liste de sélection, ou l'expression GROUP BY doit correspondre exactement à l'expression figurant dans la liste de sélection.  
   
 > [!NOTE]
 > Si la clause ORDER BY n'est pas spécifiée, les groupes retournés par la clause GROUP BY ne sont pas triés dans un ordre particulier. Nous vous recommandons de toujours utiliser la clause ORDER BY pour définir un ordre de classement des données particulier.  
@@ -62,7 +62,7 @@ GROUP BY 1   -- BAD, a constant is not allowed
 ## <a name="example"></a>Exemple  
  La requête Entity SQL suivante utilise l'opérateur GROUP BY pour spécifier les groupes dans lesquels les objets sont retournés par une requête. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats PrimitiveType @ no__t-0.  
+1. Suivez la procédure décrite dans [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   

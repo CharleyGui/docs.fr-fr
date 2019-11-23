@@ -16,7 +16,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699417"
 ---
-# <a name="startup-element"></a>élément @no__t 0startup >
+# <a name="startup-element"></a>\<> élément de démarrage
 
 Spécifie common language runtime informations de démarrage.
 
@@ -34,7 +34,7 @@ Spécifie common language runtime informations de démarrage.
 
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
-### <a name="attributes"></a>Attributs
+### <a name="attributes"></a>Attributes
 
 |Attribut|Description|
 |---------------|-----------------|
@@ -60,18 +60,18 @@ Spécifie common language runtime informations de démarrage.
 |-------------|-----------------|
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
  L’élément **\<supportedRuntime >** doit être utilisé par toutes les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime. Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l’élément **\<requiredRuntime >** .
 
- Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore l’élément **\<startup >** et ses éléments enfants.
+ Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore le\<élément de **démarrage >** et ses éléments enfants.
 
 ## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>Attribut useLegacyV2RuntimeActivationPolicy
 
- Cet attribut est utile si votre application utilise des chemins d’activation hérités, tels que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et si vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec le .net Framework 4, mais a une dépendance sur un assembly en mode mixte créé avec une version antérieure du .NET Framework. Dans ces scénarios, affectez la valeur `true` à l’attribut.
+ Cet attribut est utile si votre application utilise des chemins d’activation hérités, tels que la [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et si vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec l' .NET Framework 4, mais qu’elle a une dépendance sur un assembly en mode mixte créé avec une version antérieure du .NET Framework. Dans ces scénarios, affectez à l’attribut la valeur `true`.
 
 > [!NOTE]
-> La définition de l’attribut sur `true` empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process (voir [exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
+> La définition de l’attribut sur `true` empêche le chargement du CLR version 1,1 ou CLR version 2,0 dans le même processus, ce qui a pour effet de désactiver la fonctionnalité côte à côte in-process (consultez [exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
 
 ## <a name="example"></a>Exemple
 
@@ -97,6 +97,6 @@ Spécifie common language runtime informations de démarrage.
 
 - [Schéma des paramètres de démarrage](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
 - [Exécution côte à côte pour COM Interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
 - [Exécution côte à côte in-process](../../../deployment/in-process-side-by-side-execution.md)

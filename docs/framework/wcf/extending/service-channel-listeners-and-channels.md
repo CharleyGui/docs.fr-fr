@@ -1,5 +1,5 @@
 ---
-title: 'Service : Écouteurs de canal et canaux'
+title: 'Service : écouteurs de canal et canaux'
 ms.date: 03/30/2017
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
 ms.openlocfilehash: 4367d844867db7fdad013e30d047f9385addbce5
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71834796"
 ---
-# <a name="service-channel-listeners-and-channels"></a>Service : Écouteurs de canal et canaux
+# <a name="service-channel-listeners-and-channels"></a>Service : écouteurs de canal et canaux
 
 Il existe trois catégories d’objets de canal : les canaux, les écouteurs de canal et les fabriques de canaux. Les canaux sont l'interface entre l'application et la pile de canaux. Les écouteurs de canal sont chargés de créer des canaux du côté réception (ou écoute), généralement en réponse à une nouvelle connexion ou un nouveau message entrant. Les fabrications de canaux sont chargées de créer des canaux du côté envoi afin d'initier la communication avec un point de terminaison.
 
@@ -33,9 +33,9 @@ WCF fournit des applications auxiliaires de classe de base pour ce processus. Po
 
 - La classe <xref:System.ServiceModel.Channels.ChannelFactoryBase> implémente <xref:System.ServiceModel.Channels.ChannelManagerBase> et <xref:System.ServiceModel.Channels.IChannelFactory> et consolide les surcharges `CreateChannel` dans une méthode abstraite `OnCreateChannel`.
 
-- La <xref:System.ServiceModel.Channels.ChannelListenerBase> classe<xref:System.ServiceModel.Channels.IChannelListener>implémente. Elle se charge de la gestion d'état de base.
+- La classe <xref:System.ServiceModel.Channels.ChannelListenerBase> implémente <xref:System.ServiceModel.Channels.IChannelListener>. Elle se charge de la gestion d'état de base.
 
-La discussion suivante est basée sur le [Transport : Exemple](../samples/transport-udp.md) UDP.
+La discussion suivante est basée sur l’exemple [transport : UDP](../samples/transport-udp.md) .
 
 ## <a name="creating-a-channel-listener"></a>Création d’un écouteur de canal
 
@@ -48,8 +48,8 @@ message = UdpConstants.MessageEncoder.ReadMessage(
 );
 ```
 
-Étant donné que le même canal de datagramme représente des messages qui arrivent de plusieurs sources, l'`UdpChannelListener` est un écouteur Singleton. Il y a au plus un @no__t actif associé à cet écouteur à la fois. L'exemple en génère un autre uniquement si un canal retourné par la méthode <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> est disposé par la suite. Lorsqu’un message est reçu, il est mis en file d’attente dans ce canal Singleton.
+Étant donné que le même canal de datagramme représente des messages qui arrivent de plusieurs sources, l'`UdpChannelListener` est un écouteur Singleton. Il y a au plus un <xref:System.ServiceModel.Channels.IChannel> actif associé à cet écouteur à la fois. L'exemple en génère un autre uniquement si un canal retourné par la méthode <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> est disposé par la suite. Lorsqu’un message est reçu, il est mis en file d’attente dans ce canal Singleton.
 
 ### <a name="udpinputchannel"></a>UdpInputChannel
 
-La `UdpInputChannel` classe<xref:System.ServiceModel.Channels.IInputChannel>implémente. Elle se compose d'une file d'attente de messages entrants remplie par le socket de `UdpChannelListener`. Ces messages sont extraits de la file d'attente par la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A>.
+La classe `UdpInputChannel` implémente <xref:System.ServiceModel.Channels.IInputChannel>. Elle se compose d'une file d'attente de messages entrants remplie par le socket de `UdpChannelListener`. Ces messages sont extraits de la file d'attente par la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A>.

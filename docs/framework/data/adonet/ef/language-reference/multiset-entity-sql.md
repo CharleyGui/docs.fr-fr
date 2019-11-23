@@ -25,9 +25,9 @@ MULTISET ( expression [{, expression }] )
  Toute liste de valeurs valide.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Collection de type multijeu @ no__t-0T >.  
+ Collection de type multiensemble\<T >.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] propose trois types de constructeurs : constructeurs de ligne, constructeurs d'objets et constructeurs de multiensemble (ou de collection). Pour plus d’informations, consultez [construction de types](constructing-types-entity-sql.md).  
   
  Le constructeur de multiensemble crée une instance d'un multiensemble à partir d'une liste de valeurs. Toutes les valeurs du constructeur doivent être d'un type compatible.  

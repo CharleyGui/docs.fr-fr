@@ -41,7 +41,7 @@ FUNCTION function-name
  `data_type`  
  Nom d'un type pris en charge.  
   
- COLLECTION (< type_definition @ no__t-0)  
+ COLLECTION (< type_definition`>`)  
  Expression qui retourne une collection de types, lignes ou références pris en charge.  
   
  REF **(** `data_type` **)**  
@@ -50,7 +50,7 @@ FUNCTION function-name
  ROW **(** `row_expression` **)**  
  Expression qui retourne des enregistrements anonymes, structurellement typés à partir d'une ou plusieurs valeurs. Pour plus d'informations, consultez [ROW](row-entity-sql.md).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Plusieurs fonctions du même nom peuvent être déclarées inline, à condition que les signatures des fonctions soient différentes. Pour plus d'informations, consultez [Function Overload Resolution](function-overload-resolution-entity-sql.md).  
   
  Une fonction incluse peut être appelée dans une commande Entity SQL après seulement qu'elle a été définie dans cette commande. Toutefois, une fonction incluse peut être appelée au sein d'une autre fonction incluse avant ou après la définition de la fonction appelée. Dans l'exemple suivant, la fonction  A appelle la fonction B avant que la fonction  B soit définie :  
@@ -61,7 +61,7 @@ FUNCTION function-name
   
  `A()`  
   
- Pour plus d'informations, voir [Procédure : Appelez une fonction définie par l’utilisateur @ no__t-0.  
+ Pour plus d’informations, consultez [Comment : appeler une fonction définie par l’utilisateur](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
   
  Les fonctions peuvent également être déclarées dans le modèle lui-même. Les fonctions déclarées dans le modèle sont exécutées de la même façon que les fonctions déclarées inline dans la commande. Pour plus d’informations, consultez [fonctions définies par l’utilisateur](user-defined-functions-entity-sql.md).  
   

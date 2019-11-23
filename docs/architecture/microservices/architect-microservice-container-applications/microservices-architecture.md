@@ -43,19 +43,19 @@ Parmi ces aspects, seuls les trois premiers sont couverts ou présentés dans ce
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Mark Russinovich. Microservices : Une révolution des applications grâce au cloud** \
+- **Mark Russinovich. Microservices : une révolution d’application alimentée par le Cloud** \
   <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
-- **Martin Fowler. Microservices** \
+- **Martin Fowler. \ de microservices**
   <https://www.martinfowler.com/articles/microservices.html>
 
-- **Martin Fowler. Microservice Prerequisites** \
+- **Martin Fowler. Conditions préalables pour les microservices** \
   <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
-- **Jimmy Nilsson. Chunk Cloud Computing** \
+- **Jimmy Nilsson. Segmentation du Cloud Computing** \
   <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
-- **Cesar de la Torre. Containerized Docker Application Lifecycle with Microsoft Platform and Tools** (livre électronique téléchargeable) \
+- **Cesar de la Torre. Cycle de vie des applications de l’arrimeur en conteneur avec la plateforme et les outils Microsoft** (livre électronique téléchargeable) \
   <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]

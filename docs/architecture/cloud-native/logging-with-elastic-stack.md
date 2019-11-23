@@ -64,7 +64,7 @@ La recherche élastique est un moteur de recherche puissant qui peut indexer les
 
 Les messages de journal qui ont été conçus pour contenir des paramètres ou dont les paramètres ont été fractionnés à l’aide du traitement Logstash peuvent être interrogés directement, car Elasticsearch conserve ces informations.
 
-Une requête qui recherche les 10 premières pages visitées par `jill@example.com`, apparaît dans la figure 7-4.
+Une requête qui recherche les 10 premières pages visitées par `jill@example.com`s’affiche dans la figure 7-4.
 
 ```
 "query": {

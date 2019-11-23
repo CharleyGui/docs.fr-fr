@@ -38,7 +38,7 @@ Dans les applications Windows Communication Foundation (WCF), une opération de 
   
     2. Une opération `BeginSampleMethod` asynchrone.  
   
-    3. Paire d’opérations asynchrones `BeginServiceAsyncMethod` @ no__t-1 @ no__t-2.  
+    3. Une paire d’opérations `EndServiceAsyncMethod` `BeginServiceAsyncMethod`asynchrone /.  
   
 2. Une implémentation de service utilisant un objet <xref:System.IAsyncResult?displayProperty=nameWithType>.  
   

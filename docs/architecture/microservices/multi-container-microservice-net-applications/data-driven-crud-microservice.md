@@ -291,13 +291,13 @@ Ce mécanisme de gestion de version est simple et dépend du serveur qui achemin
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Scott Hanselman. Le contrôle de version de l’API Web RESTful ASP.NET Core** simplifié  \
+- **Scott Hanselman. Le contrôle de version de l’API Web RESTful ASP.NET Core** simplifié \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
 - **Gestion des versions d’une API web RESTful** \
   <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
-- **Champ Roy. Contrôle de version, hypermédia et REST**  \
+- **Champ Roy. Contrôle de version, hypermédia et REST** \
   <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 ## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Génération de métadonnées de description Swagger à partir de votre API web ASP.NET Core
@@ -330,7 +330,7 @@ Les métadonnées Swagger sont utilisées par Microsoft Flow, PowerApps et Azure
 
 Il existe plusieurs options pour automatiser la génération de métadonnées Swagger pour les applications API REST ASP.NET Core, sous la forme de pages d’aide de l’API fonctionnelles, en fonction de *swagger-ui*.
 
-La meilleure connaissance est probablement [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) qui est actuellement utilisé dans [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) . nous aborderons en détail ce guide, mais il est également possible d’utiliser [NSwag](https://github.com/RSuter/NSwag), qui peut générer une machine à écrire et des clients d’API C \#, ainsi que C \# les contrôleurs, à partir d’une spécification Swagger ou OpenAPI, et même en analysant le fichier. dll qui contient les contrôleurs, à l’aide de [NSwagStudio](https://github.com/RSuter/NSwag/wiki/NSwagStudio).
+La meilleure connaissance est probablement [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) qui est actuellement utilisé dans [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) . nous aborderons plus en détail ce guide, mais il est également possible d’utiliser [NSwag](https://github.com/RSuter/NSwag), qui peut générer des clients de machine à écrire et de c\# API, ainsi que des contrôleurs de\# [, à partir](https://github.com/RSuter/NSwag/wiki/NSwagStudio)d’une spécification Swagger ou openapi, et même en analysant le fichier.
 
 ### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Comment automatiser la génération de métadonnées d’API Swagger avec le package NuGet Swashbuckle
 

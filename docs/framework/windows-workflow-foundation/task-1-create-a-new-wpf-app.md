@@ -1,5 +1,5 @@
 ---
-title: 'Tâche 1 : créer une application Windows Presentation Foundation'
+title: 'Tâche 1 : créer une nouvelle application Windows Presentation Foundation.'
 ms.date: 03/30/2017
 ms.assetid: 270eaeba-9492-4532-af9f-403ce5c9935b
 ms.openlocfilehash: 3205840da575041b449eb841fc8084e89937fca7
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/08/2019
 ms.locfileid: "72031899"
 ---
-# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Tâche 1 : créer une application Windows Presentation Foundation
+# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Tâche 1 : créer une nouvelle application Windows Presentation Foundation.
 
 Dans cette tâche, vous allez créer une application Windows Presentation Foundatione (WPF) vide à l’aide du modèle Visual Studio d’application WPF et ajouter des références aux assemblys de workflow [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] appropriés.  
   
@@ -37,9 +37,9 @@ Dans cette tâche, vous allez créer une application Windows Presentation Founda
     - System.Activities.Presentation
     - System.Activities.Core.Presentation
 
-10. Voir [Task 2 : Hébergez le Concepteur de flux de travail @ no__t-0 pour apprendre à héberger la zone de conception du concepteur de Workflow.
+10. Consultez [tâche 2 : héberger le concepteur de flux de travail](task-2-host-the-workflow-designer.md) pour savoir comment héberger la zone de conception du concepteur de flux de travail.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Réhébergement du concepteur de flux de travail](rehosting-the-workflow-designer.md)
-- @no__t 0Task 2 : Héberger le Concepteur de flux de travail @ no__t-0
+- [Tâche 2 : Héberger le concepteur de flux de travail](task-2-host-the-workflow-designer.md)

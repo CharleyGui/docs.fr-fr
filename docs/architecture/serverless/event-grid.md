@@ -92,23 +92,23 @@ L’un des principaux avantages de l’utilisation de Event Grid est l’automat
 
 | Ressource Azure | Type d'événement | Description |
 | -------------- | ---------- | ----------- |
-| Abonnement Azure | Microsoft. resources. ResourceWriteSuccess | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est réussie. |
-| | Microsoft. resources. ResourceWriteFailure | Déclenché lorsqu’une opération de création ou de mise à jour de ressource échoue. |
-| | Microsoft. resources. ResourceWriteCancel | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est annulée. |
-|  | Microsoft. resources. ResourceDeleteSuccess | Déclenché lorsqu’une opération de suppression de ressource est réussie. |
-|  | Microsoft. resources. ResourceDeleteFailure | Déclenché en cas d’échec d’une opération de suppression de ressource. |
-| | Microsoft. resources. ResourceDeleteCancel | Déclenché lorsqu’une opération de suppression de ressource est annulée. Cet événement se produit lorsqu’un déploiement de modèle est annulé. |
-| Stockage d’objets BLOB | Microsoft. Storage. BlobCreated | Déclenché lors de la création d’un objet BLOB. |
-| | Microsoft. Storage. BlobDeleted | Déclenché lorsqu’un objet blob est supprimé. |
-| Hubs d’événements | Microsoft. EventHub. CaptureFileCreated | Déclenché lors de la création d’un fichier de capture.
-| IoT Hub | Microsoft. Devices. DeviceCreated | Publié lorsqu’un appareil est inscrit auprès d’un hub IoT. |
-| | Microsoft. Devices. DeviceDeleted | Publié lorsqu’un appareil est supprimé d’un hub IoT. |
-| Groupes de ressources | Microsoft. resources. ResourceWriteSuccess | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est réussie. |
-| | Microsoft. resources. ResourceWriteFailure | Déclenché lorsqu’une opération de création ou de mise à jour de ressource échoue. |
-| | Microsoft. resources. ResourceWriteCancel | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est annulée. |
-| | Microsoft. resources. ResourceDeleteSuccess | Déclenché lorsqu’une opération de suppression de ressource est réussie. |
-| | Microsoft. resources. ResourceDeleteFailure | Déclenché en cas d’échec d’une opération de suppression de ressource. |
-| | Microsoft. resources. ResourceDeleteCancel | Déclenché lorsqu’une opération de suppression de ressource est annulée. Cet événement se produit lorsqu’un déploiement de modèle est annulé. |
+| Abonnement Azure | Microsoft.Resources.ResourceWriteSuccess | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est réussie. |
+| | Microsoft.Resources.ResourceWriteFailure | Déclenché lorsqu’une opération de création ou de mise à jour de ressource échoue. |
+| | Microsoft.Resources.ResourceWriteCancel | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est annulée. |
+|  | Microsoft.Resources.ResourceDeleteSuccess | Déclenché lorsqu’une opération de suppression de ressource est réussie. |
+|  | Microsoft.Resources.ResourceDeleteFailure | Déclenché en cas d’échec d’une opération de suppression de ressource. |
+| | Microsoft.Resources.ResourceDeleteCancel | Déclenché lorsqu’une opération de suppression de ressource est annulée. Cet événement se produit lorsqu’un déploiement de modèle est annulé. |
+| Stockage d’objets BLOB | Microsoft.Storage.BlobCreated | Déclenché lors de la création d’un objet BLOB. |
+| | Microsoft.Storage.BlobDeleted | Déclenché lorsqu’un objet blob est supprimé. |
+| Hubs d’événements | Microsoft.EventHub.CaptureFileCreated | Déclenché lors de la création d’un fichier de capture.
+| IoT Hub | Microsoft.Devices.DeviceCreated | Publié lorsqu’un appareil est inscrit auprès d’un hub IoT. |
+| | Microsoft.Devices.DeviceDeleted | Publié lorsqu’un appareil est supprimé d’un hub IoT. |
+| Groupes de ressources | Microsoft.Resources.ResourceWriteSuccess | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est réussie. |
+| | Microsoft.Resources.ResourceWriteFailure | Déclenché lorsqu’une opération de création ou de mise à jour de ressource échoue. |
+| | Microsoft.Resources.ResourceWriteCancel | Déclenché lorsqu’une opération de création ou de mise à jour de ressource est annulée. |
+| | Microsoft.Resources.ResourceDeleteSuccess | Déclenché lorsqu’une opération de suppression de ressource est réussie. |
+| | Microsoft.Resources.ResourceDeleteFailure | Déclenché en cas d’échec d’une opération de suppression de ressource. |
+| | Microsoft.Resources.ResourceDeleteCancel | Déclenché lorsqu’une opération de suppression de ressource est annulée. Cet événement se produit lorsqu’un déploiement de modèle est annulé. |
 
 Pour plus d’informations, consultez [Azure Event Grid le schéma d’événement](https://docs.microsoft.com/azure/event-grid/event-schema).
 

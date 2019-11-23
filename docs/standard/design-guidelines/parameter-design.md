@@ -34,7 +34,7 @@ Cette section fournit des instructions générales sur la conception des paramè
   
  **✓ DO** placer tous les `out` paramètres après toute la valeur et `ref` paramètres (à l’exclusion des tableaux de paramètres), même si cela aboutit à une incohérence dans le paramètre de classement entre les surcharges (consultez [membre La surcharge](../../../docs/standard/design-guidelines/member-overloading.md)).  
   
- Les paramètres `out` peuvent être considérés comme des valeurs de retour supplémentaires et leur regroupement rend la signature de méthode plus facile à comprendre.  
+ Les paramètres de `out` peuvent être considérés comme des valeurs de retour supplémentaires et les regrouper ensemble rendent la signature de méthode plus facile à comprendre.  
   
  **✓ DO** cohérente dans les paramètres d’affectation de noms lors de la substitution de membres ou de l’implémentation des membres d’interface.  
   
@@ -67,17 +67,17 @@ Cette section fournit des instructions générales sur la conception des paramè
  Si le membre est sensible à la sécurité, il est recommandé d’effectuer une copie, puis de valider et de traiter l’argument.  
   
 ### <a name="parameter-passing"></a>Passage de paramètres  
- Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, les paramètres `ref` et les paramètres `out`.  
+ Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, les paramètres de `ref` et les paramètres de `out`.  
   
  Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires C#, tels que, C++VB.net et, transmettent par défaut des paramètres par valeur.  
   
- Quand un argument est passé via un paramètre `ref`, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. les paramètres `Ref` peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.  
+ Quand un argument est passé via un paramètre `ref`, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. `Ref` paramètres peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.  
   
- les paramètres `Out` sont similaires aux paramètres de `ref`, avec quelques petites différences. Initialement, le paramètre est considéré comme non assigné et ne peut pas être lu dans le corps du membre avant qu’une valeur ne lui soit assignée. En outre, une valeur doit être assignée au paramètre avant que le membre retourne.  
+ les paramètres de `Out` sont similaires aux paramètres de `ref`, avec quelques petites différences. Initialement, le paramètre est considéré comme non assigné et ne peut pas être lu dans le corps du membre avant qu’une valeur ne lui soit assignée. En outre, une valeur doit être assignée au paramètre avant que le membre retourne.  
   
  **X AVOID** à l’aide de `out` ou `ref` paramètres.  
   
- L’utilisation de paramètres `out` ou `ref` nécessite une expérience avec les pointeurs, en comprenant les différences entre les types valeur et les types référence, ainsi que la gestion des méthodes avec plusieurs valeurs de retour. En outre, la différence `out` entre `ref` les paramètres et n’est pas largement comprise. Les architectes d’infrastructure qui sont conçus pour un public général ne doivent pas s’attendre à ce que les utilisateurs maîtrisent le travail avec les paramètres `out` ou `ref`.  
+ L’utilisation de paramètres `out` ou `ref` requiert une expérience avec les pointeurs, en comprenant les différences entre les types valeur et les types référence, ainsi que la gestion des méthodes avec plusieurs valeurs de retour. En outre, la différence entre les paramètres de `out` et de `ref` n’est pas largement comprise. Les architectes d’infrastructure qui sont conçus pour un public général ne doivent pas s’attendre à ce que les utilisateurs maîtrisent le travail avec des paramètres de `out` ou `ref`.  
   
  **X DO NOT** passage de types référence par référence.  
   
@@ -138,7 +138,7 @@ public class String {
   
  **X DO NOT** utiliser le `varargs` méthodes en tant que les points de suspension.  
   
- Certains langages CLR, tels C++que, prennent en charge une autre convention pour passer des listes de paramètres de variables appelées méthodes `varargs`. La Convention ne doit pas être utilisée dans les frameworks, car elle n’est pas conforme CLS.  
+ Certains langages CLR, tels C++que, prennent en charge une autre convention pour passer des listes de paramètres de variables appelées `varargs` méthodes. La Convention ne doit pas être utilisée dans les frameworks, car elle n’est pas conforme CLS.  
   
 ### <a name="pointer-parameters"></a>Paramètres du pointeur  
  En général, les pointeurs ne doivent pas apparaître dans la surface d’exposition publique d’un Framework de code géré bien conçu. La plupart du temps, les pointeurs doivent être encapsulés. Toutefois, dans certains cas, les pointeurs sont requis pour des raisons d’interopérabilité et l’utilisation de pointeurs dans de tels cas est appropriée.  
@@ -151,9 +151,9 @@ public class String {
   
  Par exemple, il n’est pas nécessaire de passer l’index de début, car une opération arithmétique de pointeur simple peut être utilisée pour obtenir le même résultat.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Reprinted par l’autorisation de Pearson Education, Inc. des instructions de conception @no__t 1Framework : Conventions, idiomes et modèles pour les bibliothèques .NET réutilisables, 2e édition @ no__t-0 par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 de Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

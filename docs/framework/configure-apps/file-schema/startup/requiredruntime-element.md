@@ -16,13 +16,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697488"
 ---
-# <a name="requiredruntime-element"></a>élément @no__t 0requiredRuntime >
+# <a name="requiredruntime-element"></a>élément \<requiredRuntime >
 
 Spécifie que l’application prend en charge uniquement la version 1.0 du common language runtime. Cet élément est déconseillé et ne doit plus être utilisé. L’élément [`supportedRuntime`](supportedruntime-element.md) doit être utilisé à la place.
 
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<startup >** ](startup-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requiredRuntime >**  
+&nbsp;&nbsp;[ **\<de démarrage >** ](startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<requiredRuntime >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,7 +36,7 @@ safemode="true|false"/>
 
 Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.
 
-### <a name="attributes"></a>Attributs
+### <a name="attributes"></a>Attributes
 
 |Attribut|Description|
 |---------------|-----------------|
@@ -47,21 +47,21 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Value|Description|
 |-----------|-----------------|
-|`false`|Le code de démarrage du runtime recherche dans le registre. Valeur par défaut.|
+|`false`|Le code de démarrage du runtime recherche dans le registre. Il s'agit de la valeur par défaut.|
 |`true`|Le code de démarrage du runtime n’examine pas le registre.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucune.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
-|`startup`|Contient l' `<requiredRuntime>` élément.|
+|`startup`|Contient l’élément `<requiredRuntime>`.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
  Les applications générées pour prendre en charge uniquement la version 1,0 du Runtime doivent utiliser l’élément `<requiredRuntime>`. Les applications générées à l’aide de la version 1,1 ou ultérieure du Runtime doivent utiliser l’élément `<supportedRuntime>`.
 
 > [!NOTE]
@@ -88,4 +88,4 @@ L’exemple suivant montre comment spécifier la version du runtime dans un fich
 
 - [Schéma des paramètres de démarrage](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

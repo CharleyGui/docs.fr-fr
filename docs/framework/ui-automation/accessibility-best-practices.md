@@ -14,7 +14,7 @@ ms.locfileid: "72291402"
 ---
 # <a name="accessibility-best-practices"></a>Meilleures pratiques d'accessibilité
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les plus récentes sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez API d’automatisation [Windows : UI Automation @ no__t-0.  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  L’implémentation des meilleures pratiques suivantes dans les contrôles ou les applications améliore leur accessibilité pour les personnes qui utilisent des appareils de technologie d’assistance. Une grande partie de ces meilleures pratiques se concentrent sur une bonne conception de l' [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] . Chaque meilleure pratique inclut des informations d'implémentation des contrôles ou applications [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] . Dans de nombreux cas, le travail nécessaire pour appliquer ces meilleures pratiques est déjà inclus dans les contrôles [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] .  
   
@@ -26,17 +26,17 @@ ms.locfileid: "72291402"
 ### <a name="enable-programmatic-access-to-all-ui-elements-and-text"></a>Activer l'accès par programmation à tous les éléments de l'interface utilisateur et le texte  
  Les éléments de l’interface utilisateur doivent activer l’accès par programme. Si l' [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] est un contrôle [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] standard, la prise en charge de l'accès par programmation est incluse dans le contrôle. Si le contrôle est un contrôle personnalisé, tel qu'un contrôle qui a été sous-classé à partir d'un contrôle commun ou un contrôle qui a été sous-classé à partir de Control, vous devez alors vérifier l'implémentation d' <xref:System.Windows.Automation.Peers.AutomationPeer> pour les zones qui peuvent nécessiter des modifications.  
   
- Suivre cette meilleure pratique permet aux fournisseurs de technologies d’assistance d’identifier et de manipuler les éléments de la @no__t de votre produit-0.  
+ Suivre cette meilleure pratique permet aux fournisseurs de technologies d’assistance d’identifier et de manipuler les éléments du [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]de votre produit.  
   
 <a name="Place_Names__Titles_and_Descriptions_on_UI_Objects_"></a>   
 ### <a name="place-names-titles-and-descriptions-on-ui-objects-frames-and-pages"></a>Placer des noms, titres et descriptions sur les objets, les cadres et les pages de l'interface utilisateur  
  Les technologies d'assistance, particulièrement les lecteurs d'écran, utilisent le titre pour déterminer l'emplacement du cadre, de l'objet ou de la page dans le schéma de navigation. Par conséquent, le titre doit être très descriptif. Par exemple, un titre de page web tel que « Page web Microsoft » n'est d'aucune utilité si l'utilisateur a navigué de façon poussée dans une zone particulière. Un titre descriptif est une information critique pour les utilisateurs malvoyants ou non-voyants qui dépendent des lecteurs d'écran. De même, pour les contrôles [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], <xref:System.Windows.Automation.AutomationProperties.NameProperty> et <xref:System.Windows.Automation.AutomationProperties.HelpTextProperty> sont importants pour les appareils de technologie d’assistance.  
   
- Suivre cette meilleure pratique permet aux technologies d’assistance d’identifier et de manipuler [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] dans des exemples de contrôles et d’applications.  
+ L’application de cette meilleure pratique permet aux technologies d’assistance d’identifier et de manipuler des [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] dans des exemples de contrôles et d’applications.  
   
 <a name="Ensure_Programmatic_Events_are_Triggered_by_all_UI"></a>   
 ### <a name="ensure-programmatic-events-are-triggered-by-all-ui-activities"></a>Vérifier que les événements par programmation sont déclenchés par toutes les activités de l'interface utilisateur  
- Suivre cette meilleure pratique permet aux technologies d’assistance d’écouter les modifications apportées au [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et de notifier ces modifications à l’utilisateur.  
+ L’utilisation de cette meilleure pratique permet aux technologies d’assistance d’écouter les modifications apportées au [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et d’informer l’utilisateur de ces modifications.  
   
 <a name="User_Settings"></a>   
 ## <a name="user-settings"></a>Paramètres utilisateur  
@@ -66,7 +66,7 @@ ms.locfileid: "72291402"
   
 <a name="Ensure_all_UI_Correctly_Scales_by_any_DPI_Setting"></a>   
 ### <a name="ensure-all-ui-correctly-scales-by-any-dpi-setting"></a>Vérifier que toute l'interface utilisateur est correctement mise à l'échelle par tous les paramètres PPP  
- Assurez-vous que tous les [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] peuvent être correctement mis à l’échelle en fonction du paramètre de points par pouce (dpi). Assurez-vous également que les éléments [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] tiennent dans un écran de 1024 x 768 avec 120 points par pouce (dpi).  
+ Assurez-vous que tous les [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] peuvent être mis à l’échelle correctement avec n’importe quel paramètre en points par pouce (dpi). En outre, assurez-vous que [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] éléments tiennent dans un écran de 1024 x 768 avec 120 points par pouce (dpi).  
   
 <a name="Navigation"></a>   
 ## <a name="navigation"></a>Navigation  

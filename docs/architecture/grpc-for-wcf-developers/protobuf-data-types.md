@@ -1,20 +1,19 @@
 ---
 title: Types de données scalaires Protobuf-gRPC pour les développeurs WCF
 description: En savoir plus sur les types de données de base et connus pris en charge par Protobuf et gRPC dans .NET Core.
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: cae9cc483ffb791a9b53e6a2d9d7c0924d725a67
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: ae7f5f48099000dff0eefb36e23cb9b9f2ac517c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846350"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971551"
 ---
 # <a name="protobuf-scalar-data-types"></a>Types de données scalaires Protobuf
 
 Protobuf prend en charge une plage de types valeur scalaire native. Le tableau suivant les répertorie avec leur type C# équivalent :
 
-| Type Protobuf | Type C#      | Notes |
+| Type Protobuf | Type C#      | Remarques |
 | ------------- | ------------ | ----- |
 | `double`      | `double`     |       |
 | `float`       | `float`      |       |
@@ -32,18 +31,18 @@ Protobuf prend en charge une plage de types valeur scalaire native. Le tableau s
 | `string`      | `string`     | 3     |
 | `bytes`       | `ByteString` | 4     |
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
-1. L’encodage standard pour `int32` et `int64` est inefficace lorsque vous utilisez des valeurs signées. Si votre champ est susceptible de contenir des nombres négatifs, utilisez `sint32` ou `sint64` à la place. Les deux types sont mappés respectivement aux types C#`int`et`long`.
+1. L’encodage standard pour `int32` et `int64` est inefficace lorsque vous utilisez des valeurs signées. Si votre champ est susceptible de contenir des nombres négatifs, utilisez `sint32` ou `sint64` à la place. Les deux types sont mappés respectivement aux types C# `int` et `long`.
 2. Les champs `fixed` utilisent toujours le même nombre d’octets, quelle que soit la valeur de. Ce comportement permet d’accélérer la sérialisation et la désérialisation des valeurs plus élevées.
 3. Les chaînes Protobuf sont encodées en UTF-8 (ou ASCII 7 bits), et la longueur encodée ne peut pas être supérieure à 2<sup>32</sup>.
-4. Le runtime Protobuf fournit un type de `ByteString` qui est facilement mappé vers C# et à partir de`byte[]`tableaux.
+4. Le runtime Protobuf fournit un type de `ByteString` qui est facilement mappé vers C# et à partir de `byte[]` tableaux.
 
 ## <a name="other-net-primitive-types"></a>Autres types primitifs .NET
 
 ### <a name="dates-and-times"></a>Dates et heures
 
-Les types scalaires natifs ne fournissent pas de valeurs de date et C#d’heure, ce qui équivaut à<xref:System.DateTimeOffset>,<xref:System.DateTime>et<xref:System.TimeSpan>. Ces types peuvent être spécifiés à l’aide d’extensions de type « bien connu » de Google, qui assurent la génération de code et la prise en charge du runtime pour les types de champs plus complexes sur les plateformes prises en charge. Le tableau suivant indique les types de date et d’heure :
+Les types scalaires natifs ne fournissent pas de valeurs de date et C#d’heure, ce qui équivaut à <xref:System.DateTimeOffset>, <xref:System.DateTime>et <xref:System.TimeSpan>. Ces types peuvent être spécifiés à l’aide d’extensions de type « bien connu » de Google, qui assurent la génération de code et la prise en charge du runtime pour les types de champs plus complexes sur les plateformes prises en charge. Le tableau suivant indique les types de date et d’heure :
 
 | Type C# | Protobuf, type connu |
 | ------- | ------------------------ |
@@ -90,7 +89,7 @@ Le type de <xref:System.Guid>, connu sous le nom de `UUID` sur d’autres platef
 
 ### <a name="nullable-types"></a>Types Nullable
 
-La génération de code Protobuf C# pour utilise les types natifs, tels que`int`pour les`int32`. Cela signifie que les valeurs sont toujours incluses et ne peuvent pas être null. Pour les valeurs qui requièrent une valeur null explicite, telles que C# l’utilisation de `int?` dans votre code, les « types connus » de Protobuf incluent des C# wrappers qui sont compilés en types Nullable. Pour les utiliser, importez `wrappers.proto` dans votre fichier `.proto`, comme suit :
+La génération de code Protobuf C# pour utilise les types natifs, tels que `int` pour les `int32`. Cela signifie que les valeurs sont toujours incluses et ne peuvent pas être null. Pour les valeurs qui requièrent une valeur null explicite, telles que C# l’utilisation de `int?` dans votre code, les « types connus » de Protobuf incluent des C# wrappers qui sont compilés en types Nullable. Pour les utiliser, importez `wrappers.proto` dans votre fichier `.proto`, comme suit :
 
 ```protobuf  
 syntax = "proto3"
@@ -120,11 +119,11 @@ Le tableau suivant présente la liste complète des types de wrappers avec C# le
 
 Les types connus `Timestamp` et `Duration` sont représentés dans .NET en tant que classes. il n’est donc pas nécessaire de disposer d’une version Nullable, mais il est important de vérifier la présence de valeurs NULL sur les propriétés de ces types lors de la conversion en `DateTimeOffset` ou `TimeSpan`.
 
-## <a name="decimals"></a>décimales
+## <a name="decimals"></a>Décimales
 
 Protobuf ne prend pas en charge en mode natif le type de `decimal` .NET, mais simplement `double` et `float`. Il existe une discussion continue dans le projet Protobuf sur la possibilité d’ajouter un type de `Decimal` standard aux types connus, avec la prise en charge de plateforme pour les langages et les infrastructures qui le prennent en charge, mais rien n’a encore été implémenté.
 
-Il est possible de créer une définition de message pour représenter le type de `decimal` qui fonctionnerait pour la sérialisation sécurisée entre les clients et les serveurs .NET, mais les développeurs sur d’autres plateformes doivent comprendre le format utilisé et implémenter leur propre gestion pour le service informatique.
+Il est possible de créer une définition de message pour représenter le type de `decimal` qui fonctionnerait pour la sérialisation sécurisée entre les clients et les serveurs .NET, mais les développeurs sur d’autres plateformes doivent comprendre le format utilisé et implémenter leur propre gestion.
 
 ### <a name="creating-a-custom-decimal-type-for-protobuf"></a>Création d’un type décimal personnalisé pour Protobuf
 

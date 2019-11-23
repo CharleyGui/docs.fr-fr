@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Utiliser des procédures stockées mappées pour des formes de résultats séquentielles'
+title: 'Comment : utiliser des procédures stockées mappées pour des formes de résultats séquentielles'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,8 +12,8 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72003221"
 ---
-# <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Procédure : Utiliser des procédures stockées mappées pour des formes de résultats séquentielles
-Ce type de procédure stockée peut générer plusieurs formes de résultats, mais vous savez dans quel ordre les résultats sont retournés. Comparez ce scénario à celui dans lequel vous ne connaissez pas la séquence des retours. Pour plus d'informations, voir [Procédure : Utilisez des procédures stockées mappées pour plusieurs formes de résultats @ no__t-0.  
+# <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Comment : utiliser des procédures stockées mappées pour des formes de résultats séquentielles
+Ce type de procédure stockée peut générer plusieurs formes de résultats, mais vous savez dans quel ordre les résultats sont retournés. Comparez ce scénario à celui dans lequel vous ne connaissez pas la séquence des retours. Pour plus d’informations, consultez [Comment : utiliser des procédures stockées mappées pour plusieurs formes de résultats](how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md).  
   
 ## <a name="example"></a>Exemple  
  Le T-SQL d'une procédure stockée qui retourne plusieurs formes de résultats de manière séquentielle est présenté ci-dessous :  

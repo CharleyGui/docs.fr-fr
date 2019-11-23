@@ -1,14 +1,13 @@
 ---
 title: Chiffrement et sécurité réseau-gRPC pour les développeurs WCF
 description: Quelques remarques sur la sécurité réseau et le chiffrement dans gRPC
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 67ee1ffaf00ea0cc6b771ede9f49b6a691af0968
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: fd993a2d75e97011c6c92cee02c24c5358a211ad
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846675"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967778"
 ---
 # <a name="encryption-and-network-security"></a>Chiffrement et sécurité réseau
 

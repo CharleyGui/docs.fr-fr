@@ -59,7 +59,7 @@ Le fichier projet pour une application de webassembly éblouissant est légèrem
 
 Les projets de webassembly éblouissant ciblent .NET Standard au lieu de .NET Core, car ils s’exécutent dans le navigateur sur un Runtime .NET basé sur webassembly. Vous ne pouvez pas installer .NET dans un navigateur Web comme vous le pouvez sur un serveur ou un ordinateur de développement. Par conséquent, le projet fait référence au Framework éblouissant à l’aide de références de package individuelles.
 
-Par comparaison, un projet ASP.NET Web Forms par défaut comprend près de 300 lignes de code XML dans son fichier *. csproj* , dont la plupart répertorient explicitement les différents fichiers de code et de contenu du projet. La plupart des simplifications dans les projets .NET Core et .NET Standard proviennent des cibles et des propriétés par défaut importées en référençant le kit de développement logiciel (SDK) `Microsoft.NET.Sdk.Web`, souvent appelé simplement le kit de développement logiciel (SDK) Web. Le kit de développement logiciel (SDK) Web comprend des caractères génériques et d’autres pratiques qui simplifient l’inclusion de code et de fichiers de contenu dans le projet. Vous n’avez pas besoin de répertorier les fichiers explicitement. Quand vous ciblez .NET Core, le kit de développement logiciel (SDK) Web ajoute également des références d’infrastructure aux frameworks partagés .NET Core et ASP.NET Core. Les frameworks sont visibles à partir du nœud **dépendances**  > **infrastructures** dans la fenêtre **Explorateur de solutions** . Les frameworks partagés sont des collections d’assemblys qui ont été installés sur l’ordinateur lors de l’installation de .NET Core.
+Par comparaison, un projet ASP.NET Web Forms par défaut comprend près de 300 lignes de code XML dans son fichier *. csproj* , dont la plupart répertorient explicitement les différents fichiers de code et de contenu du projet. La plupart des simplifications dans les projets .NET Core et .NET Standard proviennent des cibles et des propriétés par défaut importées en référençant le kit de développement logiciel (SDK) `Microsoft.NET.Sdk.Web`, souvent appelé simplement le kit de développement logiciel (SDK) Web. Le kit de développement logiciel (SDK) Web comprend des caractères génériques et d’autres pratiques qui simplifient l’inclusion de code et de fichiers de contenu dans le projet. Vous n’avez pas besoin de répertorier les fichiers explicitement. Quand vous ciblez .NET Core, le kit de développement logiciel (SDK) Web ajoute également des références d’infrastructure aux frameworks partagés .NET Core et ASP.NET Core. Les frameworks sont visibles à partir du nœud **dépendances** > **infrastructures** dans la fenêtre **Explorateur de solutions** . Les frameworks partagés sont des collections d’assemblys qui ont été installés sur l’ordinateur lors de l’installation de .NET Core.
 
 Bien qu’elles soient prises en charge, les références d’assembly individuelles sont moins fréquentes dans les projets .NET Core. La plupart des dépendances de projet sont gérées en tant que références de package NuGet. Il vous suffit de référencer les dépendances de package de niveau supérieur dans les projets .NET Core. Les dépendances transitives sont incluses automatiquement. Au lieu d’utiliser le fichier *packages. config* couramment trouvé dans les projets ASP.NET Web Forms pour référencer des packages, des références de package sont ajoutées au fichier projet à l’aide de l’élément `<PackageReference>`.
 
@@ -151,7 +151,7 @@ Les itinéraires des composants ne sont pas actuellement déduits par l’emplac
 
 Nous examinerons plus en détail le routage dans éblouissant dans la section [pages, routage et dispositions](./pages-routing-layouts.md) .
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
 Dans ASP.NET Web Forms Apps, la disposition de page courante est gérée à l’aide de pages maîtres (*site. Master*). Dans les applications éblouissantes, la mise en page est gérée à l’aide de composants de disposition (*Shared/MainLayout. Razor*). Les composants de disposition seront abordés plus en détail dans la section [page, routage et dispositions](./pages-routing-layouts.md) .
 
@@ -170,7 +170,7 @@ Dans l’application de serveur éblouissant, la page hôte du composant racine 
 |`RenderMode.ServerPrerendered`|Premier prérendu puis rendu interactif|
 |`RenderMode.Static`           |Rendu en tant que contenu statique|
 
-La référence de script à *_framework/éblouissant. Server. js* établit la connexion en temps réel avec le serveur, puis traite toutes les interactions utilisateur et les mises à jour de l’interface utilisateur.
+La référence de script à *_framework/blazor.Server.js* établit la connexion en temps réel avec le serveur, puis traite toutes les interactions utilisateur et les mises à jour de l’interface utilisateur.
 
 ```razor
 @page "/"

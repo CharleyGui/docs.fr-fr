@@ -17,7 +17,8 @@ Bien que cela ne soit pas obligatoire, Azure est bien adapté à la prise en cha
 
 L’architecture de l’application est illustrée dans la figure 2-5. À gauche, les applications clientes sont décomposées en versions mobiles, traditionnelles Web et d’application à page unique (SPA) Web. À droite se trouvent les composants côté serveur qui composent le système, qui peuvent chacun être hébergés dans des conteneurs et des clusters Kubernetes. L’application Web traditionnelle est alimentée par l’application ASP.NET Core MVC affichée en jaune. Cette application et les applications mobiles et Web SPA communiquent avec les microservices individuels par le biais d’une ou de plusieurs passerelles d’API. Les passerelles d’API suivent le modèle « principaux pour les serveurs frontaux » (BFF), ce qui signifie que chaque passerelle est conçue pour prendre en charge un client frontal donné. Les microservices individuels sont répertoriés à droite des passerelles d’API et incluent à la fois la logique métier et un magasin de persistance. Les différents services utilisent des bases de données SQL Server, des instances de cache Redims et des magasins MongoDB/CosmosDB. À l’extrême droite se trouve le bus d’événements du système, qui est utilisé pour la communication entre les microservices.
 
-![eShopOnContainers architecture @ no__t-1**Figure 2-5**. L’architecture eShopOnContainers.
+![architecture eShopOnContainers](./media/eshoponcontainers-architecture.png)
+**Figure 2-5**. L’architecture eShopOnContainers.
 
 Les composants côté serveur de cette architecture sont tous mappés facilement aux services Azure.
 

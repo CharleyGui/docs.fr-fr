@@ -27,13 +27,13 @@ expression == expression
 ## <a name="result-types"></a>Types de résultats  
  `true` si l'expression de gauche est égale à l'expression de droite ; sinon, `false`.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L'opérateur « = = » est équivalent à « = ».  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur de comparaison « = » pour comparer l'égalité de deux expressions. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats StructuralType @ no__t-0.  
+1. Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

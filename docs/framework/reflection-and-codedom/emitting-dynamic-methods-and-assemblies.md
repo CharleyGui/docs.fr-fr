@@ -53,7 +53,7 @@ Montre comment créer, émettre et appeler une méthode générique simple.
 [Assemblys pouvant être collectés pour la génération de type dynamique](collectible-assemblies.md)   
 Introduit les assemblys pouvant être collectés, qui sont des assemblys dynamiques qui peuvent être déchargés sans décharger le domaine d’application dans lequel ils ont été créés.
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
 <xref:System.Reflection.Emit.OpCodes>  
 Répertorie les codes des instructions MSIL que vous pouvez utiliser pour créer des corps de méthode.  
@@ -67,7 +67,7 @@ Décrit la classe <xref:System.Type>, qui représente des types dans la réflexi
 <xref:System.Reflection>  
 Contient des classes managées utilisées pour explorer les métadonnées et le code managé.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
 [Réflexion](reflection.md)  
 Explique comment explorer les métadonnées et le code managé.  

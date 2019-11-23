@@ -1,5 +1,5 @@
 ---
-title: Élément <listeners> pour <source>
+title: <listeners>, élément de <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners
@@ -14,14 +14,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697303"
 ---
-# <a name="listeners-element-for-source"></a>\<listeners > élément de \<Source >
+# <a name="listeners-element-for-source"></a>\<écouteurs > élément de \<source >
 Ajoute ou supprime des écouteurs dans la collection <xref:System.Diagnostics.TraceSource.Listeners%2A> pour une <xref:System.Diagnostics.TraceSource>. Un écouteur dirige la sortie de suivi vers une cible appropriée, telle qu’un journal, une fenêtre ou un fichier texte.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<listeners >**  
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **sources**\<](sources-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ &nbsp;&nbsp;\<>](source-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,8 +36,8 @@ Ajoute ou supprime des écouteurs dans la collection <xref:System.Diagnostics.Tr
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributes  
+ Aucune.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -56,13 +56,13 @@ Ajoute ou supprime des écouteurs dans la collection <xref:System.Diagnostics.Tr
 |`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<listeners>` pour ajouter un écouteur de suivi de console à la source `mySource` et supprimer l’écouteur de suivi par défaut.  
+ L’exemple suivant montre comment utiliser l’élément `<listeners>` pour ajouter un écouteur de suivi de console à la source de `mySource` et pour supprimer l’écouteur de suivi par défaut.  
   
 ```xml  
 <configuration>  

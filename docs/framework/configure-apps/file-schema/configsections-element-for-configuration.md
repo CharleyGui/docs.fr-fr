@@ -16,16 +16,16 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119013"
 ---
-# <a name="configsections-element-for-configuration"></a>\<configSections > élément de configuration de \<
+# <a name="configsections-element-for-configuration"></a>\<configSections > élément de configuration de \<>
 
 Contient la section de configuration et les déclarations d’espace de noms.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections >**
+&nbsp;&nbsp; **\<configSections>**
 
-## <a name="attributes"></a>Attributs
+## <a name="attributes"></a>Attributes
 
-aucune.
+Aucun
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -37,12 +37,12 @@ aucune.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<section >** ](section-element.md) | Contient une déclaration de section de configuration. |
-| [ **\<de sectionGroup >** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [ **\<section>** ](section-element.md) | Contient une déclaration de section de configuration. |
+| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
 | [ **\<remove>** ](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
 | [ **\<clear>** ](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément enfant de l’élément de **> de configuration\<** .
 

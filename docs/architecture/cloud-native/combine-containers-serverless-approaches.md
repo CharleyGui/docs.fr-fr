@@ -1,5 +1,5 @@
 ---
-title: Combinaison de conteneurs et d’approches sans serveur
+title: Combinaison de conteneurs et d’approches serverless
 description: Combinaison de conteneurs et de Kubernetes avec des approches sans serveur
 ms.date: 06/30/2019
 ms.openlocfilehash: 58aff43adbdd2e629370cc685f32c7b61c25f85e
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183433"
 ---
-# <a name="combining-containers-and-serverless-approaches"></a>Combinaison de conteneurs et d’approches sans serveur
+# <a name="combining-containers-and-serverless-approaches"></a>Combinaison de conteneurs et d’approches serverless
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -37,7 +37,7 @@ Choisissez le runtime de travail de votre choix parmi les options suivantes :
 - `node` (JavaScript)
 - `python`
 
-Lorsque le projet est créé, il inclut un fichier dockerfile. À présent, vous pouvez créer et tester votre fonction localement. Générez et exécutez-le `docker build` à `docker run` l’aide des commandes et. Pour obtenir des instructions détaillées pour commencer à créer des Azure Functions avec la prise en charge de l’ancrage, consultez le didacticiel [créer une fonction sur Linux à l’aide d’une image personnalisée](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .
+Lorsque le projet est créé, il inclut un fichier dockerfile. À présent, vous pouvez créer et tester votre fonction localement. Générez et exécutez-le à l’aide des commandes `docker build` et `docker run`. Pour obtenir des instructions détaillées pour commencer à créer des Azure Functions avec la prise en charge de l’ancrage, consultez le didacticiel [créer une fonction sur Linux à l’aide d’une image personnalisée](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>Comment combiner sans serveur et Kubernetes avec KEDA
 

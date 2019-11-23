@@ -16,11 +16,11 @@ Le fournisseur de données .NET Framework pour SQL Server (SqlClient) fournit 
 
 ## <a name="avgexpression"></a>AVG (expression)
 
-Retourne la moyenne des valeurs d'une collection. Les valeurs NULL sont ignorées.
+Retourne la moyenne des valeurs d'une collection. Les valeurs Null sont ignorées.
 
 **Arguments**
 
-@No__t-0, `Int64`, `Double` et `Decimal`.
+`Int32`, `Int64`, `Double`et `Decimal`.
 
 **Valeur de retour**
 
@@ -32,7 +32,7 @@ Type d'élément `expression`.
 
 ## <a name="checksum_aggcollection"></a>CHECKSUM_AGG (collection)
  
- Retourne la somme de contrôle des valeurs d’une collection. Les valeurs NULL sont ignorées.
+ Retourne la somme de contrôle des valeurs d’une collection. Les valeurs Null sont ignorées.
  
  **Arguments**
  
@@ -40,7 +40,7 @@ Type d'élément `expression`.
  
  **Valeur de retour**
  
- Élément `Int32`.
+ `Int32`.
  
  **Exemple**
  
@@ -52,7 +52,7 @@ Retourne le nombre d’éléments d’une collection sous la forme d’une valeu
 
 **Arguments**
 
-Collection @ no__t-0T >, où T est l’un des types suivants :
+Collection\<T >, où T est l’un des types suivants :
 
 |   |   |   |   |
 |---|---|---|---|
@@ -61,7 +61,7 @@ Collection @ no__t-0T >, où T est l’un des types suivants :
 
 **Valeur de retour**
 
-Élément `Int32`.
+`Int32`.
 
 **Exemple**
 
@@ -82,7 +82,7 @@ Retourne le nombre d’éléments d’une collection sous la forme d’une valeu
 
 **Valeur de retour**
 
-Élément `Int64`.
+`Int64`.
 
 **Exemple**
 

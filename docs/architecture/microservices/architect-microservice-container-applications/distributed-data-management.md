@@ -11,7 +11,7 @@ ms.locfileid: "71834458"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problématiques et solutions pour la gestion des données distribuées
 
-## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Défi \#1 : Comment définir les limites de chaque microservice
+## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Problématique \#1 : Comment définir les limites de chaque microservice
 
 Définir les limites d’un microservice est sans doute la première problématique à laquelle tout le monde est confronté. Chaque microservice doit être un composant de votre application et chaque microservice doit être autonome, avec tous les avantages et les défis induits. Mais comment identifier ces limites ?
 
@@ -19,7 +19,7 @@ Vous devez d’abord vous concentrer sur les modèles de domaine logique de l’
 
 La façon dont vous identifiez les limites entre plusieurs contextes d’application avec un domaine différent pour chaque contexte correspond exactement à la façon dont vous pouvez identifier les limites pour chaque microservice métier, et son modèle de domaine et ses données associés. Vous essayez toujours de minimiser le couplage entre ces microservices. Ce guide présente plus en détails cette identification et cette conception du modèle de domaine plus loin dans la section [Identification des limites du modèle de domaine pour chaque microservice](identify-microservice-domain-model-boundaries.md).
 
-## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Défi \#2 : Comment créer des requêtes qui récupèrent des données de plusieurs microservices
+## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Problématique \#2 : Comment créer des requêtes qui extraient des données de plusieurs microservices
 
 Une deuxième problématique est la façon d’implémenter des requêtes qui extraient des données de plusieurs microservices, tout en évitant des communication intensives entre les microservices et les applications clientes distantes. Par exemple, un écran d’une application mobile a besoin d’afficher les informations utilisateur détenues par des microservices distincts gérant respectivement le panier d’achat, le catalogue et l’identité des utilisateurs. Un autre exemple est un rapport complexe impliquant plusieurs tables qui se trouvent dans plusieurs microservices. La bonne solution dépend de la complexité des requêtes. Dans tous les cas, il vous faut un moyen d’agréger les informations pour améliorer l’efficacité des communications de votre système. Les solutions les plus répandues sont les suivantes :
 
@@ -35,9 +35,9 @@ Cette approche résout non seulement le problème d’origine (comment faire des
 
 Gardez à l’esprit que cette base de données centralisée doit être utilisée seulement pour les requêtes et les rapports qui n’ont pas besoin de données en temps réel. Les mises à jour et les transactions d’origine, qui constituent votre source de référence, doivent être effectuées dans les données de vos microservices. Vous allez synchroniser les données via une communication pilotée par les événements (traitée dans les sections suivantes) ou via d’autres outils d’importation/exportation de l’infrastructure de base de données. Si vous utilisez une communication pilotée par les événements, ce processus d’intégration est similaire à la façon dont vous propagez les données comme cela a été décrit précédemment pour les tables de requête CQRS.
 
-Toutefois, si la conception de votre application implique d’agréger constamment les informations provenant de plusieurs microservices pour des requêtes complexes, cela peut être le symptôme d’une mauvaise conception : un microservice doit être aussi isolé que possible des autres microservices. (Ceci exclut les rapports/analyses qui doivent toujours utiliser des bases de données centrales contenant des données froides.) Le fait que ce problème se pose souvent peut être une raison pour fusionner des microservices. Vous devez équilibrer l’autonomie de l’évolution et du déploiement de chaque microservice avec des dépendances fortes, la cohésion et l’agrégation des données.
+Toutefois, si la conception de votre application implique d’agréger constamment les informations provenant de plusieurs microservices pour des requêtes complexes, cela peut être le symptôme d’une mauvaise conception : un microservice doit être aussi isolé que possible des autres microservices. (Cela exclut les rapports/analyses qui doivent toujours utiliser des bases de données centrales à froid.) Ce problème peut souvent être dû à la fusion de microservices. Vous devez équilibrer l’autonomie de l’évolution et du déploiement de chaque microservice avec des dépendances fortes, la cohésion et l’agrégation des données.
 
-## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Défi \#3 : Comment garantir la cohérence entre plusieurs microservices
+## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Problématique \#3 : Comment garantir la cohérence entre plusieurs microservices
 
 Comme indiqué précédemment, les données détenues par chaque microservice sont privées pour ce microservice et sont accessibles seulement via son API de microservice. Ainsi, le problème est de savoir comment implémenter des processus métier de bout en bout tout en conservant la cohérence entre plusieurs microservices.
 
@@ -59,7 +59,7 @@ De plus, les transactions de style ACID ou avec validation en deux phases ne son
 
 Une bonne solution pour résoudre ce problème est d’utiliser la cohérence à terme entre les microservices, articulée autour d’une communication pilotée par les événements et d’un système de publication-abonnement. Ces rubriques sont traitées dans la section [Communication asynchrone pilotée par les événements](asynchronous-message-based-communication.md#asynchronous-event-driven-communication) plus loin dans ce guide.
 
-## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Défi \#4 : Comment concevoir la communication entre les limites des microservices
+## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Problématique \#4 : Comment concevoir la communication entre les limites des microservices
 
 La communication entre les limites des microservices est une vraie problématique. Dans ce contexte, la communication ne fait pas référence au protocole à utiliser (HTTP et REST, AMQP, messagerie, etc.). Au lieu de cela, elle concerne le style de communication que vous devez utiliser, et en particulier comment vos microservices doivent être couplés. Selon le niveau de couplage, l’impact d’une défaillance sur votre système varie considérablement.
 
@@ -98,13 +98,13 @@ L’utilisation d’une communication asynchrone est détaillée plus loin dans 
 - **Vue matérialisée** \
   <https://docs.microsoft.com/azure/architecture/patterns/materialized-view>
 
-- **Charles Row. ACID vs. BASE: The Shifting pH of Database Transaction Processing** \
+- **Charles Row. ACID et BASE : l’évolution du pH du traitement des transactions de base de données** \
   <https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/>
 
 - **Transaction de compensation** \
   <https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction>
 
-- **Udi Dahan. Service Oriented Composition** \
+- **UDI Dahan. \ de la composition orientée services**
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 >[!div class="step-by-step"]

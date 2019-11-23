@@ -1,5 +1,5 @@
 ---
-title: Déploiement de eShopOnContainers sur Azure
+title: Déploiement d’eShopOnContainers sur Azure
 description: Déploiement de l’application eShopOnContainers à l’aide du service Azure Kubernetes, Helm et DevSpaces.
 ms.date: 06/30/2019
 ms.openlocfilehash: 21033cc904dc595193c69f3452ce2522740f8ff6
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71183272"
 ---
-# <a name="deploying-eshoponcontainers-to-azure"></a>Déploiement de eShopOnContainers sur Azure
+# <a name="deploying-eshoponcontainers-to-azure"></a>Déploiement d’eShopOnContainers sur Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -27,22 +27,22 @@ Les déploiements de base sur AKS peuvent utiliser des scripts CLI personnalisé
 
 Vous trouverez les graphiques eShopOnContainers Helm dans le dossier/K8S/Helm. La figure 2-6 montre comment les différents composants de l’application sont organisés dans une structure de dossiers utilisée par Helm pour définir et gérer des déploiements.
 
-![eShopOnContainers architecture](./media/eshoponcontainers-helm-folder.png)
-de la**figure 2-6**. Dossier eShopOnContainers Helm.
+![architecture eShopOnContainers](./media/eshoponcontainers-helm-folder.png)
+**Figure 2-6**. Dossier eShopOnContainers Helm.
 
-Chaque composant individuel est installé à l' `helm install` aide d’une commande. Ces commandes sont facilement scriptées, et eShopOnContainers fournit un script « déployer tout » qui parcourt les différents composants et les installe à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne. En particulier lorsqu’il est associé à Azure Dev Spaces, cela permet aux développeurs de diagnostiquer et de tester facilement leurs modifications individuelles sur leurs applications Cloud natives basées sur des microservices.
+Chaque composant individuel est installé à l’aide d’une commande `helm install`. Ces commandes sont facilement scriptées, et eShopOnContainers fournit un script « déployer tout » qui parcourt les différents composants et les installe à l’aide de leurs graphiques Helm respectifs. Le résultat est un processus reproductible, avec version avec l’application dans le contrôle de code source, que tous les membres de l’équipe peuvent déployer sur un cluster AKS à l’aide d’une commande de script d’une ligne. En particulier lorsqu’il est associé à Azure Dev Spaces, cela permet aux développeurs de diagnostiquer et de tester facilement leurs modifications individuelles sur leurs applications Cloud natives basées sur des microservices.
 
 ## <a name="azure-dev-spaces"></a>Azure Dev Spaces
 
 Azure Dev Spaces aide les développeurs individuels à héberger leur propre version unique de clusters AKS dans Azure pendant le développement. Cela réduit la configuration requise de l’ordinateur local et permet aux membres de l’équipe de voir rapidement comment leurs modifications se comporteront dans un environnement AKS réel. Azure Dev Spaces offre une interface CLI permettant aux développeurs de gérer leurs espaces de développement et de les déployer dans un espace de développement enfant spécifique en fonction des besoins. Chaque espace de développement enfant est référencé à l’aide d’un sous-domaine d’URL unique, ce qui permet des déploiements côte à côte de clusters modifiés, de sorte que les développeurs individuels puissent éviter les conflits entre les travaux en cours. Dans la figure 2-7, vous pouvez voir comment Developer Julie a déployé sa propre version du microservice Bikes dans son espace de développement. Elle est ensuite en mesure de tester ses modifications à l’aide d’une URL personnalisée commençant par le nom de son espace (susie.s.dev.myapp.eus.azds.io).
 
-![eShopOnContainers architecture](./media/azure-devspaces-one.png)
-de la**figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
+![architecture eShopOnContainers](./media/azure-devspaces-one.png)
+**Figure 2-7**. Developer Julie déploie sa propre version du microservice Bikes et le teste.
 
 En même temps, le développeur John souhaite personnaliser le microservice de réservations et doit tester ses modifications. Il peut déployer ses modifications dans son propre espace de développement sans conflit avec les modifications apportées à Julie, comme illustré dans la figure 2-8. Il peut tester ses modifications à l’aide de sa propre URL, qui est précédée du nom de son espace (john.s.dev.myapp.eus.azds.io).
 
-![eShopOnContainers architecture](./media/azure-devspaces-two.png)
-de la**figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
+![architecture eShopOnContainers](./media/azure-devspaces-two.png)
+**Figure 2-8**. Le développeur John déploie sa propre version du microservice de réservations et le teste sans conflit avec d’autres développeurs.
 
 À l’aide de Azure Dev Spaces, les équipes peuvent travailler directement avec AKS tout en modifiant, déployant et testant leurs modifications de manière indépendante. Cette approche réduit le besoin d’environnements hébergés dédiés distincts, car chaque développeur a son propre environnement AKS. Les développeurs peuvent travailler avec Azure Dev Spaces à l’aide de l’interface CLI ou lancer leur application pour Azure Dev Spaces directement à partir de Visual Studio. [En savoir plus sur le fonctionnement de Azure Dev Spaces et sur la configuration.](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
 
@@ -52,8 +52,8 @@ L’exemple eShopOnContainers comprend la prise en charge du suivi des campagnes
 
 ## <a name="references"></a>Références
 
-- [EShopOnContainers Créer un cluster Kubernetes dans AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
-- [EShopOnContainers Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
+- [eShopOnContainers : créer un cluster Kubernetes dans AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
+- [eShopOnContainers : Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
 - [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
 
 >[!div class="step-by-step"]

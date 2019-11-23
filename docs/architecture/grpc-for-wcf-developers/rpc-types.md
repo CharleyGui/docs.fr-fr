@@ -1,14 +1,13 @@
 ---
 title: Types de RPC-gRPC pour les développeurs WCF
 description: Examen des types d’appel de procédure distante pris en charge par WCF et de leurs équivalents dans gRPC
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: ce5bf03b01dff3f7bb201ff08c9065abc2e58360
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 64375236da17c0aedbafe1cb441e72a144203358
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846229"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967271"
 ---
 # <a name="types-of-rpc"></a>Types de RPC
 
@@ -62,7 +61,7 @@ Comme vous pouvez le voir, l’implémentation d’une méthode de service RPC u
 
 ## <a name="wcf-duplex-one-way-to-client"></a>Duplex WCF, unidirectionnel pour le client
 
-Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur, et le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à l’aide d’une *interface de rappel* spécifiée dans le <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> propriété.
+Les applications WCF (avec certaines liaisons) peuvent créer une connexion permanente entre le client et le serveur, et le serveur peut envoyer de manière asynchrone des données au client jusqu’à ce que la connexion soit fermée, à l’aide d’une *interface de rappel* spécifiée dans la propriété <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>.
 
 les services gRPC offrent des fonctionnalités similaires à celles des flux de messages. Les flux ne sont pas mappés *exactement* aux services duplex WCF en termes d’implémentation, mais les mêmes résultats peuvent être obtenus.
 

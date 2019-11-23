@@ -33,7 +33,7 @@ Les références à d’autres objets ou collections d’autres objets dans vos 
   
  Pour aider à maintenir cette illusion, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implémente une technique appelée *chargement différé*. Pour plus d’informations, consultez [différé et chargement immédiat](deferred-versus-immediate-loading.md).  
   
- Considérez la requête SQL suivante pour projeter une liste de paires `CustomerID` @ no__t-1 @ no__t-2 :  
+ Considérez la requête SQL suivante pour projeter une liste de paires d' `OrderID` de `CustomerID`-:  
   
 ```sql
 SELECT t0.CustomerID, t1.OrderID  
@@ -42,12 +42,12 @@ FROM   Customers AS t0 INNER JOIN
 WHERE  (t0.City = @p0)  
 ```  
   
- Pour obtenir les mêmes résultats avec [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous utilisez la référence de propriété `Orders` qui existe déjà dans la classe `Customer`. La référence `Orders` fournit les informations nécessaires pour exécuter la requête et projeter les paires `CustomerID` @ no__t-2 @ no__t-3, comme dans le code suivant :  
+ Pour obtenir les mêmes résultats avec [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous utilisez la référence de propriété `Orders` qui existe déjà dans la classe `Customer`. La référence `Orders` fournit les informations nécessaires pour exécuter la requête et projeter le `CustomerID`-paires de `OrderID`, comme dans le code suivant :  
   
  [!code-csharp[DLinqQueryConcepts#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#5)]
  [!code-vb[DLinqQueryConcepts#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#5)]  
   
- Vous pouvez également effectuer l'opération inverse. Vous pouvez en effet interroger `Orders` et utiliser sa référence de relation `Customer` pour accéder aux informations sur l'objet `Customer` associé. Le code suivant projette les mêmes paires `CustomerID` @ no__t-1 @ no__t-2 que précédemment, mais cette fois-ci en interrogeant `Orders` au lieu de `Customers`.  
+ Vous pouvez également effectuer l'opération inverse. Vous pouvez en effet interroger `Orders` et utiliser sa référence de relation `Customer` pour accéder aux informations sur l'objet `Customer` associé. Le code suivant projette le même `CustomerID`-`OrderID` paires qu’auparavant, mais cette fois en interrogeant les `Orders` au lieu de `Customers`.  
   
  [!code-csharp[DLinqQueryConcepts#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#6)]
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  

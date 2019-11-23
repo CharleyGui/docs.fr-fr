@@ -11,7 +11,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/13/2019
 ms.locfileid: "70969010"
 ---
-# <a name="versioning"></a>Gestion de version
+# <a name="versioning"></a>Versioning
 
 Une bibliothèque de logiciels est rarement terminée dans la version 1.0. Les bonnes bibliothèques évoluent au fil du temps, avec l’ajout de fonctionnalités, la résolution de bogues et l’amélioration des performances. Il est important de publier de nouvelles versions d’une bibliothèque .NET, fournissant une valeur supplémentaire à chaque version, sans interrompre les utilisateurs existants.
 

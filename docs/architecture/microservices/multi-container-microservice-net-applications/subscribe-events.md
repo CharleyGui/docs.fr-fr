@@ -103,7 +103,7 @@ Comme déjà mentionné dans la section relative à l’architecture, plusieurs 
 
 - Utiliser la version complète du [modèle d’approvisionnement en événements](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
 
-- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
+- Utilisation de [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
 - Utiliser le [modèle de boîte d’envoi](https://www.kamilgrzybek.com/design/the-outbox-pattern/) Il s’agit d’une table transactionnelle permettant de stocker les événements d’intégration (en étendant la transaction locale).
 
@@ -328,7 +328,7 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 - **Event Driven Messaging** \
     <https://patterns.arcitura.com/soa-patterns/design_patterns/event_driven_messaging>
 
-- **Jimmy bogard. Refactorisation vers la résilience : évaluation**de l’association  \
+- **Jimmy bogard. Refactorisation en vue de la résilience : évaluation du couplage** \
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 - **Publish-Subscribe channel** \

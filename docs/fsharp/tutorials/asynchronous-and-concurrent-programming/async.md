@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72395787"
 ---
-# <a name="async-programming-in-f"></a>Programmation asynchrone en F @ no__t-0
+# <a name="async-programming-in-f"></a>Programmation asynchrone en F\#
 
 La programmation asynchrone est un mécanisme essentiel pour les applications modernes pour diverses raisons. La plupart des développeurs rencontrent deux cas d’utilisation principaux :
 
@@ -43,8 +43,8 @@ Le principal pas à pas est que les calculs asynchrones sont indépendants du pr
 
 Dans F#, la programmation asynchrone est centrée autour de trois concepts fondamentaux :
 
-- Le type `Async<'T>`, qui représente un calcul asynchrone composable.
-- Les fonctions du module `Async`, qui vous permettent de planifier un travail asynchrone, de composer des calculs asynchrones et de transformer des résultats asynchrones.
+- Le type de `Async<'T>`, qui représente un calcul asynchrone composable.
+- Les fonctions de module `Async`, qui vous permettent de planifier un travail asynchrone, de composer des calculs asynchrones et de transformer des résultats asynchrones.
 - L' [expression de calcul](../../language-reference/computation-expressions.md)`async { }`, qui fournit une syntaxe pratique pour la génération et le contrôle des calculs asynchrones.
 
 Vous pouvez voir ces trois concepts dans l’exemple suivant :
@@ -69,7 +69,7 @@ let main argv =
     0
 ```
 
-Dans l’exemple, la fonction `printTotalFileBytes` est de type `string -> Async<unit>`. L’appel de la fonction n’exécute pas réellement le calcul asynchrone. Au lieu de cela, elle retourne un `Async<unit>` qui agit comme une spécification-du travail qui doit s’exécuter de façon asynchrone. Elle appellera `Async.AwaitTask` dans son corps, qui convertit le résultat de <xref:System.IO.File.WriteAllBytesAsync%2A> en type approprié lorsqu’il est appelé.
+Dans l’exemple, la fonction `printTotalFileBytes` est de type `string -> Async<unit>`. L’appel de la fonction n’exécute pas réellement le calcul asynchrone. Au lieu de cela, elle retourne un `Async<unit>` qui agit comme une spécification du travail qui doit s’exécuter de façon asynchrone. Elle appellera `Async.AwaitTask` dans son corps, qui convertit le résultat de <xref:System.IO.File.WriteAllBytesAsync%2A> en type approprié lorsqu’il est appelé.
 
 Une autre ligne importante est l’appel à `Async.RunSynchronously`. Il s’agit de l’une des fonctions de démarrage de module Async que vous devrez appeler si vous souhaitez réellement exécuter F# un calcul asynchrone.
 
@@ -103,10 +103,10 @@ let main argv =
 
 Comme vous pouvez le voir, la fonction `main` a d’autres appels effectués. D’un plan conceptuel, elle effectue les opérations suivantes :
 
-1. Transformez les arguments de ligne de commande en calculs `Async<unit>` avec `Array.map`.
+1. Transformez les arguments de ligne de commande en `Async<unit>` calculs avec `Array.map`.
 2. Créez un `Async<'T[]>` qui planifie et exécute les calculs `printTotalFileBytes` en parallèle lorsqu’il s’exécute.
-3. Créez un `Async<unit>` qui exécutera le calcul parallèle et ignore son résultat.
-4. Exécutez explicitement le dernier calcul avec `Async.RunSynchronously` et le bloc jusqu’à ce qu’il soit terminé.
+3. Créer un `Async<unit>` qui exécutera le calcul parallèle et ignorer son résultat.
+4. Exécuter explicitement le dernier calcul avec `Async.RunSynchronously` et bloquer jusqu’à ce qu’il soit terminé.
 
 Quand ce programme s’exécute, `printTotalFileBytes` s’exécute en parallèle pour chaque argument de ligne de commande. Étant donné que les calculs asynchrones s’exécutent indépendamment du déroulement du programme, il n’y a aucun ordre dans lequel ils impriment leurs informations et terminent leur exécution. Les calculs sont planifiés en parallèle, mais leur ordre d’exécution n’est pas garanti.
 
@@ -131,7 +131,7 @@ let main argv =
     |> ignore
 ```
 
-Cela permet de planifier `printTotalFileBytes` pour s’exécuter dans l’ordre des éléments de `argv` au lieu de les planifier en parallèle. Étant donné que l’élément suivant n’est pas planifié tant que le dernier calcul n’a pas fini de s’exécuter, les calculs sont séquencés de telle sorte qu’il n’y a aucun chevauchement de leur exécution.
+Cela permet de planifier l’exécution de `printTotalFileBytes` dans l’ordre des éléments de `argv` plutôt que de les planifier en parallèle. Étant donné que l’élément suivant n’est pas planifié tant que le dernier calcul n’a pas fini de s’exécuter, les calculs sont séquencés de telle sorte qu’il n’y a aucun chevauchement de leur exécution.
 
 ## <a name="important-async-module-functions"></a>Fonctions importantes du module Async
 
@@ -175,11 +175,11 @@ Quand utiliser :
 
 Ce qu’il faut surveiller :
 
-- Le code dans le calcul asynchrone s’exécutera sur le thread sur lequel il se produit. Cela peut être problématique si ce thread est sensible, par exemple un thread d’interface utilisateur. Dans ce cas, `Async.StartImmediate` est susceptible d’être inapproprié.
+- Le code dans le calcul asynchrone s’exécutera sur le thread sur lequel il se produit. Cela peut être problématique si ce thread est sensible, par exemple un thread d’interface utilisateur. Dans ce cas, `Async.StartImmediate` est probablement inapproprié à utiliser.
 
 ### <a name="asyncstartastask"></a>Async. StartAsTask
 
-Exécute un calcul dans le pool de threads. Retourne un <xref:System.Threading.Tasks.Task%601> qui sera terminé à l’état correspondant une fois le calcul terminé (produit le résultat, lève une exception ou est annulé). Si aucun jeton d’annulation n’est fourni, le jeton d’annulation par défaut est utilisé.
+Exécute un calcul dans le pool de threads. Retourne une <xref:System.Threading.Tasks.Task%601> qui sera terminée à l’état correspondant une fois le calcul terminé (produit le résultat, lève une exception ou est annulé). Si aucun jeton d’annulation n’est fourni, le jeton d’annulation par défaut est utilisé.
 
 Signature
 
@@ -236,7 +236,7 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncawaittask"></a>Async. AwaitTask
 
-Retourne un calcul asynchrone qui attend la fin de l' @no__t donné et retourne son résultat sous la forme d’une `Async<'T>`
+Retourne un calcul asynchrone qui attend la fin de l' <xref:System.Threading.Tasks.Task%601> donné et retourne son résultat sous la forme d’une `Async<'T>`
 
 Signature
 
@@ -250,11 +250,11 @@ Quand utiliser :
 
 Ce qu’il faut surveiller :
 
-- Les exceptions sont encapsulées dans <xref:System.AggregateException> à la suite de la Convention de la bibliothèque parallèle de tâches, F# et cela diffère de la façon dont Async distingue généralement les exceptions.
+- Les exceptions sont encapsulées dans <xref:System.AggregateException> suivant la Convention de la bibliothèque parallèle de tâches, et cela diffère F# de la façon dont Async recouvre généralement les exceptions.
 
 ### <a name="asynccatch"></a>Async. catch
 
-Crée un calcul asynchrone qui exécute un @no__t donné-0, en retournant un `Async<Choice<'T, exn>>`. Si le @no__t donné-0 se termine correctement, un `Choice1Of2` est retourné avec la valeur résultante. Si une exception est levée avant qu’elle ne se termine, un `Choice2of2` est retourné avec l’exception levée. S’il est utilisé sur un calcul asynchrone qui est lui-même composé de plusieurs calculs, et que l’un de ces calculs lève une exception, le calcul englobant est arrêté entièrement.
+Crée un calcul asynchrone qui exécute un `Async<'T>`donné, en retournant un `Async<Choice<'T, exn>>`. Si le `Async<'T>` donné se termine correctement, un `Choice1Of2` est retourné avec la valeur résultante. Si une exception est levée avant qu’elle ne se termine, une `Choice2of2` est retournée avec l’exception levée. S’il est utilisé sur un calcul asynchrone qui est lui-même composé de plusieurs calculs, et que l’un de ces calculs lève une exception, le calcul englobant est arrêté entièrement.
 
 Signature
 
@@ -286,7 +286,7 @@ Quand utiliser :
 
 Ce qu’il faut surveiller :
 
-- Si vous devez l’utiliser, car vous souhaitez utiliser `Async.Start` ou une autre fonction qui requiert `Async<unit>`, envisagez d’ignorer le résultat. Il n’est généralement pas nécessaire de faire en sorte que les résultats soient ignorés pour correspondre à une signature de type.
+- Si vous devez l’utiliser, si vous souhaitez utiliser `Async.Start` ou une autre fonction qui requiert `Async<unit>`, envisagez d’ignorer le résultat. Il n’est généralement pas nécessaire de faire en sorte que les résultats soient ignorés pour correspondre à une signature de type.
 
 ### <a name="asyncrunsynchronously"></a>Async. RunSynchronously
 
@@ -309,7 +309,7 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncstart"></a>Async. Start
 
-Démarre un calcul asynchrone dans le pool de threads qui retourne `unit`. N’attend pas son résultat. Les calculs imbriqués démarrés avec `Async.Start` sont démarrés entièrement indépendamment du calcul parent qui les a appelés. Leur durée de vie n’est pas liée à un calcul parent. Si le calcul parent est annulé, aucun calcul enfant n’est annulé.
+Démarre un calcul asynchrone dans le pool de threads qui retourne `unit`. N’attend pas son résultat. Les calculs imbriqués lancés avec `Async.Start` sont démarrés entièrement indépendamment du calcul parent qui les a appelés. Leur durée de vie n’est pas liée à un calcul parent. Si le calcul parent est annulé, aucun calcul enfant n’est annulé.
 
 Signature
 
@@ -331,11 +331,11 @@ Ce qu’il faut surveiller :
 
 ## <a name="interoperating-with-net"></a>Interopérabilité avec .NET
 
-Vous utilisez peut-être une bibliothèque .NET ou C# un code base qui utilise la programmation asynchrone de style asynchrone [/await](../../../standard/async.md). Étant C# donné que et la majorité des bibliothèques .NET utilisent les types <xref:System.Threading.Tasks.Task%601> et <xref:System.Threading.Tasks.Task> comme leurs abstractions de base plutôt que `Async<'T>`, vous devez franchir une limite entre ces deux approches pour l’asynchronie.
+Vous utilisez peut-être une bibliothèque .NET ou C# un code base qui utilise la programmation asynchrone de style asynchrone [/await](../../../standard/async.md). Étant C# donné que et la majorité des bibliothèques .NET utilisent les types <xref:System.Threading.Tasks.Task%601> et <xref:System.Threading.Tasks.Task> comme abstractions principales plutôt que `Async<'T>`, vous devez franchir une limite entre ces deux approches pour l’asynchronie.
 
 ### <a name="how-to-work-with-net-async-and-taskt"></a>Utilisation de .NET Async et `Task<T>`
 
-L’utilisation de bibliothèques et de codes base .NET Async qui utilisent <xref:System.Threading.Tasks.Task%601> (autrement dit, les calculs asynchrones ayant des valeurs de retour) est simple et offre une prise F#en charge intégrée avec.
+L’utilisation de bibliothèques et de codes base .NET Async qui utilisent <xref:System.Threading.Tasks.Task%601> (autrement dit, les calculs asynchrones ayant des valeurs de retour) est simple et offre une prise F#en charge intégrée de.
 
 Vous pouvez utiliser la fonction `Async.AwaitTask` pour attendre un calcul asynchrone .NET :
 
@@ -359,7 +359,7 @@ let computationForCaller param =
 
 ### <a name="how-to-work-with-net-async-and-task"></a>Utilisation de .NET Async et `Task`
 
-Pour utiliser des API qui utilisent <xref:System.Threading.Tasks.Task> (autrement dit, les calculs asynchrones .NET qui ne retournent pas de valeur), vous devrez peut-être ajouter une fonction supplémentaire qui convertira une `Async<'T>` en <xref:System.Threading.Tasks.Task> :
+Pour utiliser des API qui utilisent des <xref:System.Threading.Tasks.Task> (c’est-à-dire des calculs asynchrones .NET qui ne retournent pas de valeur), vous devrez peut-être ajouter une fonction supplémentaire qui convertira un `Async<'T>` en <xref:System.Threading.Tasks.Task>:
 
 ```fsharp
 module Async =
@@ -368,7 +368,7 @@ module Async =
         Async.StartAsTask comp :> Task
 ```
 
-Il existe déjà un `Async.AwaitTask` qui accepte un <xref:System.Threading.Tasks.Task> comme entrée. Avec cette et la fonction `startTaskFromAsyncUnit` précédemment définie, vous pouvez démarrer et attendre <xref:System.Threading.Tasks.Task> types à partir F# d’un calcul asynchrone.
+Il existe déjà un `Async.AwaitTask` qui accepte un <xref:System.Threading.Tasks.Task> comme entrée. Avec cette et la fonction `startTaskFromAsyncUnit` définie précédemment, vous pouvez démarrer et attendre <xref:System.Threading.Tasks.Task> types à partir F# d’un calcul asynchrone.
 
 ## <a name="relationship-to-multithreading"></a>Relation avec le multithreading
 

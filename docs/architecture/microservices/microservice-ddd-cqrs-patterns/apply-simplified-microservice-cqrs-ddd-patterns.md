@@ -37,7 +37,7 @@ La couche Application peut être l’API web elle-même. Ici, l’aspect importa
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Greg Young. La gestion de versions dans un système provisionné par des événements** (lecture en ligne de du livre électronique gratuite) \
+- **Greg Young. Contrôle de version dans un système de source d’événements** (gratuit pour lire le livre électronique en ligne) \
    <https://leanpub.com/esversioning/read>
 
 >[!div class="step-by-step"]

@@ -86,7 +86,7 @@ Dès l’installation, la plupart des ressources Azure PaaS n’ont que la confi
 
 Heureusement, la plupart des ressources Azure peuvent être placées dans un réseau virtuel Azure qui permet un contrôle d’accès plus affiné. De la même façon que les réseaux locaux établissent des réseaux privés protégés du monde plus étendu, les réseaux virtuels sont des îlots d’adresses IP privées qui se trouvent dans le réseau Azure.
 
-![Figure 10-1 un réseau virtuel dans Azure ](./media/virtual-network.png)
+![figure 10-1 un réseau virtuel dans Azure](./media/virtual-network.png)
 **Figure 10-1**. Un réseau virtuel dans Azure.
 
 De la même façon que les réseaux locaux disposent d’un pare-feu qui régit l’accès au réseau, vous pouvez établir un pare-feu similaire à la limite du réseau virtuel. Par défaut, toutes les ressources d’un réseau virtuel peuvent toujours communiquer avec Internet. Il s’agit uniquement de connexions entrantes qui requièrent une certaine forme d’exception de pare-feu explicite.
@@ -109,7 +109,7 @@ RBAC est un système qui fournit une identité aux applications s’exécutant d
 
 Le premier composant dans RBAC est un principal de sécurité. Un principal de sécurité peut être un utilisateur, un groupe, un principal du service ou une identité gérée.
 
-![Figure 10-2 différents types de principaux de sécurité ](./media/rbac-security-principal.png)
+![figure 10-2 différents types de principaux de sécurité](./media/rbac-security-principal.png)
 **Figure 10-2**. Différents types de principaux de sécurité.
 
 - Utilisateur : tout utilisateur disposant d’un compte dans Azure Active Directory est un utilisateur.
@@ -123,7 +123,7 @@ L’entité de sécurité peut être appliquée à la plupart des ressources. Ce
 
 Un principal de sécurité peut prendre de nombreux rôles ou, à l’aide d’une analogie plus sartorial, porter de nombreux chapeaux. Chaque rôle définit une série d’autorisations telles que « lire les messages à partir d’Azure Service Bus point de terminaison ». Le jeu d’autorisations effectif d’un principal de sécurité est la combinaison de toutes les autorisations affectées à tous les rôles que possède le principal de sécurité. Azure dispose d’un grand nombre de rôles intégrés et les utilisateurs peuvent définir leurs propres rôles.
 
-![Figure 10-3 définitions de rôle RBAC ](./media/rbac-role-definition.png)
+![figure 10-3 définitions de rôle RBAC](./media/rbac-role-definition.png)
 **Figure 10-3**. Définitions de rôle RBAC.
 
 Intégré à Azure est également un certain nombre de rôles de haut niveau, tels que le propriétaire, le contributeur, le lecteur et l’administrateur de compte d’utilisateur. Avec le rôle de propriétaire, un principal de sécurité peut accéder à toutes les ressources et affecter des autorisations à d’autres utilisateurs. Un contributeur a le même niveau d’accès à toutes les ressources, mais il ne peut pas affecter d’autorisations. Un lecteur peut uniquement afficher les ressources Azure existantes et un administrateur de compte d’utilisateur peut gérer l’accès aux ressources Azure.
@@ -132,7 +132,7 @@ Des rôles intégrés plus granulaires, tels que le [contributeur de zone DNS](h
 
 ## <a name="scopes"></a>Portées
 
-Les rôles peuvent être appliqués à un ensemble restreint de ressources dans Azure. Par exemple, en appliquant l’étendue à l’exemple précédent de lecture à partir d’une file d’attente Service Bus, vous pouvez limiter l’autorisation à une seule file d’attente : « lire les messages de Azure Service Bus point de terminaison `blah.servicebus.windows.net/queue1` »
+Les rôles peuvent être appliqués à un ensemble restreint de ressources dans Azure. Par exemple, en appliquant l’étendue à l’exemple précédent de lecture à partir d’une file d’attente Service Bus, vous pouvez limiter l’autorisation à une seule file d’attente : « lire les messages de Azure Service Bus point de terminaison `blah.servicebus.windows.net/queue1`»
 
 L’étendue peut être aussi limitée qu’une seule ressource, ou elle peut être appliquée à un groupe de ressources entier, un abonnement ou même un groupe d’administration.
 
@@ -148,7 +148,7 @@ Les règles de refus sont prioritaires sur les règles d’autorisation. Mainten
 
 Comme vous pouvez l’imaginer, le fait de disposer d’un grand nombre de rôles et d’étendues peut compliquer la recherche de l’autorisation effective d’un principal de service. Empilez les règles de refus en plus de cela, sert uniquement à accroître la complexité. Heureusement, il existe une calculatrice des autorisations qui peut afficher les autorisations effectives pour n’importe quel principal du service. Il se trouve généralement sous l’onglet IAM dans le portail, comme illustré à la figure 10-3.
 
-![Figure 10-4 l’outil Calculatrice des autorisations pour un app service ](./media/check-rbac.png)
+![figure 10-4 Calculatrice des autorisations pour un app service](./media/check-rbac.png)
 **Figure 10-4**. Calculatrice des autorisations pour un app service.
 
 ## <a name="securing-secrets"></a>Sécurisation des secrets
@@ -215,7 +215,7 @@ Cette vérification peut être effectuée par un service externe, tel que le tes
 
 Même les services comme les bases de données SQL Azure utilisent le chiffrement TLS pour conserver les données masquées. La partie intéressante du chiffrement des données en transit à l’aide de TLS est qu’il n’est pas possible, même pour Microsoft, d’écouter la connexion entre les ordinateurs exécutant TLS. Cela devrait permettre aux entreprises soucieuses que leurs données soient menacées par Microsoft, voire un acteur d’État, avec plus de ressources que l’attaquant standard.
 
-![Figure rapport des laboratoires SSL 10-5 présentant le score d’un pour un point de terminaison Service Bus. ](./media/ssl-report.png)
+![figure 10-5 rapport des laboratoires SSL présentant le score d’un pour un point de terminaison Service Bus.](./media/ssl-report.png)
 **Figure 10-5**. Rapport des laboratoires SSL présentant le score d’un pour un point de terminaison Service Bus.
 
 Bien que ce niveau de chiffrement ne soit pas suffisant pour tout le temps, il doit s’inspirer de la fiabilité des connexions Azure TLS. Azure continuera à évoluer ses normes de sécurité à mesure que le chiffrement s’améliore. Il est agréable de savoir qu’une personne regarde les normes de sécurité et met à jour Azure à mesure qu’elles s’améliorent.
@@ -234,7 +234,7 @@ Par défaut, les clés utilisées pour le chiffrement du stockage Azure sont gé
 
 Les machines virtuelles utilisent un stockage chiffré, mais il est possible de fournir une autre couche de chiffrement à l’aide de technologies telles que BitLocker sur Windows ou DM-crypt sur Linux. Ces technologies signifient que même si l’image de disque a été divulguée à partir du stockage, elle reste presque impossible à lire.
 
-### <a name="azure-sql"></a>SQL Azure
+### <a name="azure-sql"></a>SQL Azure
 
 Les bases de données hébergées sur Azure SQL utilisent une technologie appelée [transparent Data Encryption (TDE)](/sql/relational-databases/security/encryption/transparent-data-encryption) pour s’assurer que les données restent chiffrées. Elle est activée par défaut sur toutes les bases de données SQL nouvellement créées, mais doit être activée manuellement pour les bases de données héritées. TDE exécute le chiffrement et le déchiffrement en temps réel de non seulement la base de données, mais également les sauvegardes et les journaux de transactions.
 
@@ -244,7 +244,7 @@ La partie « transparente » de TDS vient du fait qu’il n’y a pas de modif
 
 La configuration de ce niveau de chiffrement nécessite l’exécution d’un assistant dans SQL Server Management Studio pour sélectionner le type de chiffrement et l’emplacement de stockage des clés associées dans Key Vault.
 
-![Figure 10-6 la sélection de colonnes dans une table à chiffrer à l’aide de Always Encrypted ](./media/always-encrypted.png)
+![figure 10-6 sélection de colonnes dans une table à chiffrer à l’aide de Always Encrypted](./media/always-encrypted.png)
 **Figure 10-6**. Sélection de colonnes dans une table à chiffrer à l’aide de Always Encrypted.
 
 Les applications clientes qui lisent des informations à partir de ces colonnes chiffrées doivent apporter des autorisations spéciales pour lire les données chiffrées. Les chaînes de connexion doivent être mises à jour avec `Column Encryption Setting=Enabled` et les informations d’identification du client doivent être récupérées à partir du Key Vault. Le client SQL Server doit ensuite être amorcé avec les clés de chiffrement de colonne. Une fois cette opération effectuée, les autres actions utilisent les interfaces standard du client SQL. Autrement dit, les outils tels que dapper et Entity Framework, qui reposent sur le client SQL, continuent de fonctionner sans modification. Always Encrypted n’est peut-être pas encore disponible pour chaque SQL Server pilote dans chaque langue.
@@ -255,8 +255,8 @@ La combinaison de TDE et Always Encrypted, qui peut être utilisée avec des cl�
 
 Cosmos DB est la base de données la plus récente fournie par Microsoft dans Azure. Il a été conçu dès le départ avec la sécurité et le chiffrement à l’esprit. Le chiffrement AES-256bit est standard pour toutes les bases de données Cosmos DB et ne peut pas être désactivé. Couplée à l’exigence TLS 1,2 pour la communication, la solution de stockage complète est chiffrée.
 
-![Figure 10-7 le déroulement du chiffrement des données dans Cosmos DB ](./media/cosmos-encryption.png)
-**Figure 10-7**. Le déroulement du chiffrement des données dans Cosmos DB.
+![figure 10-7 le déroulement du chiffrement des données dans Cosmos DB](./media/cosmos-encryption.png)
+**figure 10-7**. Le déroulement du chiffrement des données dans Cosmos DB.
 
 Bien que Cosmos DB ne fournisse pas de clés de chiffrement client, un travail important a été effectué par l’équipe pour s’assurer qu’elle reste conforme à la norme PCI-DSS sans cela. Cosmos DB ne prend pas non plus en charge le type de chiffrement à une seule colonne similaire à la Always Encrypted de SQL Azure.
 

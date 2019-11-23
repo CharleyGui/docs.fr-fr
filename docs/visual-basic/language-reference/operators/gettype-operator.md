@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
 ms.openlocfilehash: 2e3e05973f2ef72fef5e429bc98cc58b4b21f2c2
 ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/28/2019
 ms.locfileid: "71592151"
@@ -23,14 +23,14 @@ Retourne un objet <xref:System.Type> pour le type spécifié. L’objet <xref:Sy
 GetType(typename)  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
   
 |Paramètre|Description|  
 |---|---|  
 |`typename`|Nom du type pour lequel vous souhaitez obtenir des informations.|  
   
-## <a name="remarks"></a>Notes  
- L’opérateur `GetType` retourne l’objet <xref:System.Type> pour le @no__t spécifié-2. Vous pouvez passer le nom de n’importe quel type défini dans `typename`. Notamment :  
+## <a name="remarks"></a>Remarques  
+ L’opérateur `GetType` retourne l’objet <xref:System.Type> pour le `typename`spécifié. Vous pouvez passer le nom de n’importe quel type défini dans `typename`. Ce dernier est détaillé ci-après :  
   
 - Tout Visual Basic type de données, tel que `Boolean` ou `Date`.  
   
@@ -53,7 +53,7 @@ GetType(typename)
 - Vous souhaitez comparer deux références d’objet pour voir si elles font référence à des instances du même type. Si c’est le cas, `GetType` retourne des références au même objet <xref:System.Type>.  
   
 ## <a name="example"></a>Exemple  
- Les exemples suivants montrent l’opérateur `GetType` en cours d’utilisation.  
+ Les exemples suivants illustrent l’opérateur `GetType` en cours d’utilisation.  
   
  [!code-vb[VbVbalrOperators#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#26)]  
   

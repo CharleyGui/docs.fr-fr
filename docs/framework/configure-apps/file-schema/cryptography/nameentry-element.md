@@ -15,14 +15,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699781"
 ---
-# <a name="nameentry-element"></a>Élément @no__t 0nameEntry >
+# <a name="nameentry-element"></a>\<élément élément nameEntry >
 Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une classe d’avoir plusieurs noms conviviaux.  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<nameEntry >**  
+&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptographySettings** >](cryptographysettings-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[ **cryptoNameMapping >** ](cryptonamemapping-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<élément nameentry >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,15 +33,15 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
   
 |Attribut|Description|  
 |---------------|-----------------|  
 |**name**|Attribut requis.<br /><br /> Spécifie le nom convivial de l’algorithme que la classe de chiffrement implémente.|  
-|**class**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans l’élément [\<cryptoClass >](cryptoclass-element.md) .|  
+|**classe**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans l’élément [\<cryptoClass >](cryptoclass-element.md) .|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -50,11 +50,11 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.web`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’attribut **Name** peut être le nom de l’une des classes abstraites se trouvant dans l’espace de noms <xref:System.Security.Cryptography>. Quand vous appelez la méthode **Create** sur une classe de chiffrement abstraite, le nom de la classe abstraite est passé à la méthode <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>. **CreateFromName** retourne une instance du type indiqué par l’attribut de **classe** . Si l’attribut **Name** est un nom abrégé, tel que RSA, vous pouvez utiliser ce nom lors de l’appel de la méthode **CreateFromName** .  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément **\<nameEntry >** pour faire référence à une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la méthode <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> et utiliser la méthode <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pour retourner un objet `MyCryptoRSAClass`.  
+ L’exemple suivant montre comment utiliser l’élément **\<élément nameentry >** pour faire référence à une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne « RSA » à la méthode <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> et utiliser la méthode <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pour retourner un objet `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  
@@ -79,5 +79,5 @@ Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une 
 
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
+- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
 - [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

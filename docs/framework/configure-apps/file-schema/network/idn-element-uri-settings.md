@@ -9,13 +9,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71698170"
 ---
-# <a name="idn-element-uri-settings"></a>\<idn >, élément (paramètres d’URI)
+# <a name="idn-element-uri-settings"></a>Élément \<IDN > (paramètres d’URI)
 
 Spécifie si l’analyse des IDN (Internationalized Domain Name) est appliquée à un nom de domaine.
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<idn >**  
+&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<IDN** >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,7 +28,7 @@ Spécifie si l’analyse des IDN (Internationalized Domain Name) est appliquée 
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a>Attributes  
 
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
@@ -36,7 +36,7 @@ Spécifie si l’analyse des IDN (Internationalized Domain Name) est appliquée 
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+Aucun
   
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -44,9 +44,9 @@ Aucun.
 |-----------------|---------------------|  
 |[URI](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
-La classe <xref:System.Uri> existante a été étendue dans .NET Framework 3,5. 3,0 SP1 et 2,0 SP1 avec prise en charge des IRI (International Resource Identifiers) et des noms de domaine internationaux (IDN). Les utilisateurs actuels ne voient aucune modification du comportement .NET Framework 2,0, sauf s’ils activent spécifiquement la prise en charge des IRI et des IDN. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.
+La classe de <xref:System.Uri> existante a été étendue dans .NET Framework 3,5. 3,0 SP1 et 2,0 SP1 avec prise en charge des IRI (International Resource Identifiers) et des noms de domaine internationaux (IDN). Les utilisateurs actuels ne voient aucune modification du comportement .NET Framework 2,0, sauf s’ils activent spécifiquement la prise en charge des IRI et des IDN. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.
 
 Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises :
 
