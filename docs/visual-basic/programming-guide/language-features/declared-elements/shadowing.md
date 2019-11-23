@@ -1,5 +1,5 @@
 ---
-title: Occultation dans Visual Basic
+title: Copie shadow
 ms.date: 07/20/2015
 helpviewer_keywords:
 - inheritance [Visual Basic], shadowing
@@ -18,46 +18,46 @@ helpviewer_keywords:
 - objects [Visual Basic], names
 - names [Visual Basic], shadowing
 ms.assetid: 54bb4c25-12c4-4181-b4a0-93546053964e
-ms.openlocfilehash: 30c02cf367c461c3896a01538d03380627de294f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: HT
+ms.openlocfilehash: 034b5c0ecf3be6e77048fb7318e931801575f07a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004856"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345325"
 ---
 # <a name="shadowing-in-visual-basic"></a>Occultation dans Visual Basic
-Lorsque deux éléments de programmation partagent le même nom, l’un d’eux peut masquer ou *occulter*l’autre. Dans ce cas, l’élément occulté n’est pas disponible à des fins de référence ; au lieu de cela, lorsque votre code utilise le nom d’élément, le compilateur Visual Basic le résout en l’élément d’occultation.  
+When two programming elements share the same name, one of them can hide, or *shadow*, the other one. In such a situation, the shadowed element is not available for reference; instead, when your code uses the element name, the Visual Basic compiler resolves it to the shadowing element.  
   
 ## <a name="purpose"></a>Fonction  
- L’objectif principal de l’occultation est de protéger la définition de vos membres de classe. La classe de base peut subir une modification qui crée un élément avec le même nom que celui que vous avez déjà défini. Dans ce cas, le modificateur de `Shadows` force les références via votre classe à être résolues sur le membre que vous avez défini, et non sur le nouvel élément de la classe de base.  
+ The main purpose of shadowing is to protect the definition of your class members. The base class might undergo a change that creates an element with the same name as one you have already defined. If this happens, the `Shadows` modifier forces references through your class to be resolved to the member you defined, instead of to the new base class element.  
   
-## <a name="types-of-shadowing"></a>Types d’occultation  
- Un élément peut occulter un autre élément de deux façons différentes. L’élément d’occultation peut être déclaré à l’intérieur d’une sous-région de la région contenant l’élément occulté, auquel cas l’occultation s’effectue *par le biais*de l’étendue. Ou une classe dérivée peut redéfinir un membre d’une classe de base, auquel cas l’occultation s’effectue *par le biais*de l’héritage.  
+## <a name="types-of-shadowing"></a>Types of Shadowing  
+ An element can shadow another element in two different ways. The shadowing element can be declared inside a subregion of the region containing the shadowed element, in which case the shadowing is accomplished *through scope*. Or a deriving class can redefine a member of a base class, in which case the shadowing is done *through inheritance*.  
   
-### <a name="shadowing-through-scope"></a>Occultation par portée  
- Il est possible que des éléments de programmation dans le même module, la même classe ou la même structure aient le même nom mais une portée différente. Lorsque deux éléments sont déclarés de cette manière et que le code fait référence au nom qu’ils partagent, l’élément avec la portée plus étroite occulte l’autre élément (la portée de bloc est la plus étroite).  
+### <a name="shadowing-through-scope"></a>Shadowing Through Scope  
+ It is possible for programming elements in the same module, class, or structure to have the same name but different scope. When two elements are declared in this manner and the code refers to the name they share, the element with the narrower scope shadows the other element (block scope is the narrowest).  
   
- Par exemple, un module peut définir une variable `Public` nommée `temp`et une procédure dans le module peut déclarer une variable locale également nommée `temp`. Les références à `temp` à partir de la procédure accèdent à la variable locale, tandis que les références à `temp` en dehors de la procédure accèdent à la variable `Public`. Dans ce cas, la variable de procédure `temp` occulte la variable de module `temp`.  
+ For example, a module can define a `Public` variable named `temp`, and a procedure within the module can declare a local variable also named `temp`. References to `temp` from within the procedure access the local variable, while references to `temp` from outside the procedure access the `Public` variable. In this case, the procedure variable `temp` shadows the module variable `temp`.  
   
- L’illustration suivante montre deux variables, toutes deux nommées `temp`. La variable locale `temp` occulte la variable de membre `temp` lorsqu’elle est accessible à partir de sa propre `p`de procédure. Toutefois, le mot clé `MyClass` contourne l’occultation et accède à la variable membre.  
+ The following illustration shows two variables, both named `temp`. The local variable `temp` shadows the member variable `temp` when accessed from within its own procedure `p`. However, the `MyClass` keyword bypasses the shadowing and accesses the member variable.  
   
- ![Graphique illustrant l’occultation par le biais de l’étendue.](./media/shadowing/shadow-scope-diagram.gif)
+ ![Graphic that shows shadowing through scope.](./media/shadowing/shadow-scope-diagram.gif)
   
- Pour obtenir un exemple d’occultation par le biais de l’étendue, consultez [Comment : masquer une variable portant le même nom que votre variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
+ For an example of shadowing through scope, see [How to: Hide a Variable with the Same Name as Your Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
   
-### <a name="shadowing-through-inheritance"></a>Occultation par héritage  
- Si une classe dérivée redéfinit un élément de programmation hérité d’une classe de base, l’élément redéfinissant occulte l’élément d’origine. Vous pouvez occulter tout type d’élément déclaré, ou un ensemble d’éléments surchargés, avec n’importe quel autre type. Par exemple, une variable `Integer` peut occulter une procédure `Function`. Si vous occultez une procédure à l’aide d’une autre procédure, vous pouvez utiliser une liste de paramètres différente et un type de retour différent.  
+### <a name="shadowing-through-inheritance"></a>Shadowing Through Inheritance  
+ If a derived class redefines a programming element inherited from a base class, the redefining element shadows the original element. You can shadow any type of declared element, or set of overloaded elements, with any other type. For example, an `Integer` variable can shadow a `Function` procedure. If you shadow a procedure with another procedure, you can use a different parameter list and a different return type.  
   
- L’illustration suivante montre une classe de base `b` et une classe dérivée `d` qui hérite de `b`. La classe de base définit une procédure nommée `proc`, et la classe dérivée l’occulte avec une autre procédure portant le même nom. La première `Call` instruction accède au `proc` de clichés instantanés dans la classe dérivée. Toutefois, le mot clé `MyBase` contourne l’occultation et accède à la procédure occultée dans la classe de base.  
+ The following illustration shows a base class `b` and a derived class `d` that inherits from `b`. The base class defines a procedure named `proc`, and the derived class shadows it with another procedure of the same name. The first `Call` statement accesses the shadowing `proc` in the derived class. However, the `MyBase` keyword bypasses the shadowing and accesses the shadowed procedure in the base class.  
   
  ![Diagramme graphique d'une occultation par héritage](./media/shadowing/shadowing-inherit-diagram.gif)  
   
- Pour obtenir un exemple d’occultation par héritage, consultez [Comment : masquer une variable portant le même nom que votre variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) et [Comment : masquer une variable héritée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
+ For an example of shadowing through inheritance, see [How to: Hide a Variable with the Same Name as Your Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) and [How to: Hide an Inherited Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
   
-#### <a name="shadowing-and-access-level"></a>Cliché instantané et niveau d’accès  
- L’élément d’occultation n’est pas toujours accessible à partir du code à l’aide de la classe dérivée. Par exemple, il peut être déclaré `Private`. Dans ce cas, l’occultation est invalidée et le compilateur résout toute référence au même élément qu’il aurait si aucune occultation n’avait été apportée. Cet élément est l’élément accessible le moins d’étapes de dérivation à partir de la classe d’occultation. Si l’élément occulté est une procédure, la résolution est la version la plus proche accessible avec le même nom, la même liste de paramètres et le même type de retour.  
+#### <a name="shadowing-and-access-level"></a>Shadowing and Access Level  
+ The shadowing element is not always accessible from the code using the derived class. For example, it might be declared `Private`. In such a case, shadowing is defeated and the compiler resolves any reference to the same element it would have if there had been no shadowing. This element is the accessible element the fewest derivational steps backward from the shadowing class. If the shadowed element is a procedure, the resolution is to the closest accessible version with the same name, parameter list, and return type.  
   
- L’exemple suivant montre une hiérarchie d’héritage de trois classes. Chaque classe définit une `display`de procédure `Sub`, et chaque classe dérivée occulte la procédure `display` dans sa classe de base.  
+ The following example shows an inheritance hierarchy of three classes. Each class defines a `Sub` procedure `display`, and each derived class shadows the `display` procedure in its base class.  
   
 ```vb  
 Public Class firstClass  
@@ -92,23 +92,23 @@ Module callDisplay
 End Module  
 ```  
   
- Dans l’exemple précédent, la classe dérivée `secondClass` Shadows `display` avec une procédure `Private`. Quand le module `callDisplay` appelle `display` dans `secondClass`, le code appelant se trouve en dehors de `secondClass` et ne peut donc pas accéder à la procédure `display` privée. L’occultation est invalidée et le compilateur résout la référence à la classe de base `display` procédure.  
+ In the preceding example, the derived class `secondClass` shadows `display` with a `Private` procedure. When module `callDisplay` calls `display` in `secondClass`, the calling code is outside `secondClass` and therefore cannot access the private `display` procedure. Shadowing is defeated, and the compiler resolves the reference to the base class `display` procedure.  
   
- Toutefois, la classe dérivée plus `thirdClass` déclare `display` comme `Public`, donc le code de `callDisplay` peut y accéder.  
+ However, the further derived class `thirdClass` declares `display` as `Public`, so the code in `callDisplay` can access it.  
   
-## <a name="shadowing-and-overriding"></a>Occultation et substitution  
- Ne confondez pas l’occultation et la substitution. Les deux sont utilisés lorsqu’une classe dérivée hérite d’une classe de base, et redéfinissent tous deux un élément déclaré avec un autre. Mais il existe des différences significatives entre les deux. Pour obtenir une comparaison, consultez [différences entre l’occultation et la substitution](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
+## <a name="shadowing-and-overriding"></a>Shadowing and Overriding  
+ Do not confuse shadowing with overriding. Both are used when a derived class inherits from a base class, and both redefine one declared element with another. But there are significant differences between the two. For a comparison, see [Differences Between Shadowing and Overriding](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
   
-## <a name="shadowing-and-overloading"></a>Occultation et surcharge  
- Si vous occultez le même élément de classe de base avec plusieurs éléments dans votre classe dérivée, les éléments d’occultation deviennent des versions surchargées de cet élément. Pour plus d'informations, consultez [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+## <a name="shadowing-and-overloading"></a>Shadowing and Overloading  
+ If you shadow the same base class element with more than one element in your derived class, the shadowing elements become overloaded versions of that element. Pour plus d'informations, consultez [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
   
-## <a name="accessing-a-shadowed-element"></a>Accès à un élément occulté  
- Lorsque vous accédez à un élément à partir d’une classe dérivée, vous le faites normalement via l’instance actuelle de cette classe dérivée, en qualifiant le nom de l’élément avec le mot clé `Me`. Si votre classe dérivée occulte l’élément dans la classe de base, vous pouvez accéder à l’élément de classe de base en le qualifiant avec le mot clé `MyBase`.  
+## <a name="accessing-a-shadowed-element"></a>Accessing a Shadowed Element  
+ When you access an element from a derived class, you normally do so through the current instance of that derived class, by qualifying the element name with the `Me` keyword. If your derived class shadows the element in the base class, you can access the base class element by qualifying it with the `MyBase` keyword.  
   
- Pour obtenir un exemple d’accès à un élément occulté, consultez [Comment : accéder à une variable masquée par une classe dérivée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
+ For an example of accessing a shadowed element, see [How to: Access a Variable Hidden by a Derived Class](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
   
-### <a name="declaration-of-the-object-variable"></a>Déclaration de la variable objet  
- La façon dont vous créez la variable objet peut également affecter si la classe dérivée accède à un élément occultant ou à l’élément occulté. L’exemple suivant crée deux objets à partir d’une classe dérivée, mais un objet est déclaré comme classe de base et l’autre comme classe dérivée.  
+### <a name="declaration-of-the-object-variable"></a>Declaration of the Object Variable  
+ How you create the object variable can also affect whether the derived class accesses a shadowing element or the shadowed element. The following example creates two objects from a derived class, but one object is declared as the base class and the other as the derived class.  
   
 ```vb  
 Public Class baseCls  
@@ -135,12 +135,12 @@ Public Class useClasses
 End Class  
 ```  
   
- Dans l’exemple précédent, la variable `basObj` est déclarée en tant que classe de base. L’assignation d’un objet `dervCls` à celui-ci constitue une conversion étendue et est donc valide. Toutefois, la classe de base ne peut pas accéder à la version occultante de la variable `z` de la classe dérivée, de sorte que le compilateur résout `basObj.z` à la valeur de la classe de base d’origine.  
+ In the preceding example, the variable `basObj` is declared as the base class. Assigning a `dervCls` object to it constitutes a widening conversion and is therefore valid. However, the base class cannot access the shadowing version of the variable `z` in the derived class, so the compiler resolves `basObj.z` to the original base class value.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Références aux éléments déclarés](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Étendue dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Conversions étendues et restrictives](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
