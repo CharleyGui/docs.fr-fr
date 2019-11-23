@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: fa00aed2cd1e96ec788d4bc9c1c63f20561d8d1c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d33dadc14510feb00e05ca557b507b0cf8fa0dd0
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698183"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087455"
 ---
 # <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest >, élément (paramètres réseau)
 Personnalise les paramètres de la demande Web.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<httpWebRequest >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**paramètres**](settings-element-network-settings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**httpWebRequest >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -47,16 +47,16 @@ Personnalise les paramètres de la demande Web.
 |`useUnsafeHeaderParsing`|Spécifie si l’analyse d’en-tête non sécurisé est activée. La valeur par défaut est `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
+|[Paramètres](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, le .NET Framework applique strictement la norme RFC 2616 pour l’analyse d’URI. Certaines réponses du serveur peuvent inclure des caractères de contrôle dans les champs interdits, ce qui entraîne la levée d’une <xref:System.Net.WebException> par la méthode <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>. Si **UseUnsafeHeaderParsing** a la valeur **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> ne lève pas d’exception dans ce cas ; Toutefois, votre application est vulnérable à plusieurs formes d’attaques d’analyse d’URI. La meilleure solution consiste à modifier le serveur afin que la réponse n’inclue pas les caractères de contrôle.  
+ Par défaut, le .NET Framework applique strictement la norme RFC 2616 pour l’analyse d’URI. Certaines réponses du serveur peuvent inclure des caractères de contrôle dans les champs interdits, ce qui entraîne la levée d’une <xref:System.Net.WebException>par la méthode <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>. Si **UseUnsafeHeaderParsing** a la valeur **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> ne lève pas d’exception dans ce cas ; Toutefois, votre application est vulnérable à plusieurs formes d’attaques d’analyse d’URI. La meilleure solution consiste à modifier le serveur afin que la réponse n’inclue pas les caractères de contrôle.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

@@ -1,14 +1,13 @@
 ---
 title: Introduction-gRPC pour les développeurs WCF
 description: Introduction
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 9eb12d5060ddf4f345ebe095738c98238c6caab7
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 3fb7ae440f65cc2daa2a2c984d01d0c0c1eac0aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846627"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967619"
 ---
 # <a name="introduction"></a>Introduction
 

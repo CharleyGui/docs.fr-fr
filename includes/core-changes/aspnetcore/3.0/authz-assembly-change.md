@@ -1,21 +1,20 @@
 ---
-ms.openlocfilehash: 65bac44c84589fb55d2b04c39088c2825c451a6b
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: b91cdc7a0d2e4258662155a840500ce21ab35760
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393978"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74100937"
 ---
 ### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autorisation : surcharge AddAuthorization déplacée vers un assembly différent
 
-Les méthodes principales `AddAuthorization` qui se trouvent dans `Microsoft.AspNetCore.Authorization` ont été renommées en `AddAuthorizationCore`. Les anciennes méthodes `AddAuthorization` existent toujours, mais elles se trouvent dans le package `Microsoft.AspNetCore.Authorization.Policy` à la place. Les applications qui utilisent les deux méthodes ne doivent pas avoir d’impact. Les applications qui n’utilisent pas le package de stratégie doivent passer à l’utilisation de `AddAuthorizationCore`.
+Les méthodes principales `AddAuthorization` qui se trouvent dans `Microsoft.AspNetCore.Authorization` ont été renommées en `AddAuthorizationCore`. Les anciennes méthodes `AddAuthorization` existent toujours, mais elles se trouvent dans l’assembly `Microsoft.AspNetCore.Authorization.Policy` à la place. Les applications qui utilisent les deux méthodes ne doivent pas avoir d’impact. Notez que `Microsoft.AspNetCore.Authorization.Policy` est désormais fourni dans le Framework partagé au lieu d’un package autonome, comme indiqué dans [Framework partagé : assemblys supprimés de Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp).
 
 #### <a name="version-introduced"></a>Version introduite
 
 3,0
 
 #### <a name="old-behavior"></a>Ancien comportement
-
 les méthodes `AddAuthorization` existaient dans `Microsoft.AspNetCore.Authorization`.
 
 #### <a name="new-behavior"></a>Nouveau comportement

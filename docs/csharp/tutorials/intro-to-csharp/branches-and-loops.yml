@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Collection de listes
-  ms.openlocfilehash: 445017337663aea428af2f8dcd4027d716d05751
-  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+  ms.openlocfilehash: ab709b6b30b5a173e2faf08b577e4d7a3d9a9034
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/09/2019
-  ms.locfileid: "72179883"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969425"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: Prendre des décisions à l’aide de l’instruction if
   durationInMinutes: 4
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -51,7 +51,7 @@ items:
     ```
 
 
-    Cliquez de nouveau sur le bouton **Exécuter**. La réponse étant inférieure à 10, rien ne s’affiche. La **condition** que vous testez a une valeur false. Vous n’avez pas de code à exécuter, car vous avez uniquement écrit l’une des branches possibles pour une instruction `if` : la branche true.
+    Cliquez à nouveau sur le bouton **exécuter** . La réponse étant inférieure à 10, rien ne s’affiche. La **condition** que vous testez a une valeur false. Vous n’avez pas de code à exécuter, car vous avez uniquement écrit l’une des branches possibles pour une instruction `if` : la branche true.
 
 
     > [!TIP]
@@ -221,7 +221,7 @@ items:
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - title: Félicitations !
   content: >
-    Vous avez terminé le tutoriel interactif « Branches et boucles ». Vous pouvez cliquer sur le lien **collection de listes** ci-dessous pour commencer le tutoriel interactif suivant, ou consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
+    Vous avez terminé le tutoriel interactif « Branches et boucles ». Vous pouvez sélectionner le lien de **regroupement de listes** ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour en savoir plus sur ces concepts, consultez les rubriques suivantes :
