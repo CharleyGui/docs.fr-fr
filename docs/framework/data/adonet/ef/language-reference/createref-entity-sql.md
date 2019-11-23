@@ -9,44 +9,44 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71833923"
 ---
-# <a name="createref-entity-sql"></a><span data-ttu-id="a8735-102">CREATEREF (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="a8735-102">CREATEREF (Entity SQL)</span></span>
-<span data-ttu-id="a8735-103">Crée les références à une entité dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="a8735-103">Fabricates references to an entity in an entityset.</span></span>  
+# <a name="createref-entity-sql"></a><span data-ttu-id="1a14a-102">CREATEREF (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="1a14a-102">CREATEREF (Entity SQL)</span></span>
+<span data-ttu-id="1a14a-103">Crée les références à une entité dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="1a14a-103">Fabricates references to an entity in an entityset.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a8735-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a8735-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1a14a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1a14a-104">Syntax</span></span>  
   
 ```sql  
 CreateRef(entityset_identifier, row_typed_expression)  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="a8735-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="a8735-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="1a14a-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="1a14a-105">Arguments</span></span>  
  `entityset_identifier`  
- <span data-ttu-id="a8735-106">Identificateur de jeu d'entités ; ne correspond pas à un littéral de chaîne.</span><span class="sxs-lookup"><span data-stu-id="a8735-106">The entityset identifier, not a string literal.</span></span>  
+ <span data-ttu-id="1a14a-106">Identificateur de jeu d'entités ; ne correspond pas à un littéral de chaîne.</span><span class="sxs-lookup"><span data-stu-id="1a14a-106">The entityset identifier, not a string literal.</span></span>  
   
  `row_typed_expression`  
- <span data-ttu-id="a8735-107">Expression typée ligne correspondant aux propriétés de clés du type d'entité.</span><span class="sxs-lookup"><span data-stu-id="a8735-107">A row-typed expression that corresponds to the key properties of the entity type.</span></span>  
+ <span data-ttu-id="1a14a-107">Expression typée ligne correspondant aux propriétés de clés du type d'entité.</span><span class="sxs-lookup"><span data-stu-id="1a14a-107">A row-typed expression that corresponds to the key properties of the entity type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a8735-108">Notes</span><span class="sxs-lookup"><span data-stu-id="a8735-108">Remarks</span></span>  
- <span data-ttu-id="a8735-109">La structure de`row_typed_expression` doit être équivalente au type de clé de l'entité.</span><span class="sxs-lookup"><span data-stu-id="a8735-109">`row_typed_expression` must be structurally equivalent to the key type for the entity.</span></span> <span data-ttu-id="a8735-110">Autrement dit, les champs qu'elle contient doivent être identiques en nombre et en types à ceux des clés de l'entité, et ils doivent être disposés dans le même ordre.</span><span class="sxs-lookup"><span data-stu-id="a8735-110">That is, it must have the same number and types of fields in the same order as the entity keys.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1a14a-108">Remarques</span><span class="sxs-lookup"><span data-stu-id="1a14a-108">Remarks</span></span>  
+ <span data-ttu-id="1a14a-109">La structure de`row_typed_expression` doit être équivalente au type de clé de l'entité.</span><span class="sxs-lookup"><span data-stu-id="1a14a-109">`row_typed_expression` must be structurally equivalent to the key type for the entity.</span></span> <span data-ttu-id="1a14a-110">Autrement dit, les champs qu'elle contient doivent être identiques en nombre et en types à ceux des clés de l'entité, et ils doivent être disposés dans le même ordre.</span><span class="sxs-lookup"><span data-stu-id="1a14a-110">That is, it must have the same number and types of fields in the same order as the entity keys.</span></span>  
   
- <span data-ttu-id="a8735-111">Dans l'exemple ci-dessous, Orders et BadOrders sont des jeux d'entités de type Order, et Id est supposé être l'unique propriété de clé de type Order.</span><span class="sxs-lookup"><span data-stu-id="a8735-111">In the example below, Orders and BadOrders are both entitysets of type Order, and Id is assumed to be the single key property of Order.</span></span> <span data-ttu-id="a8735-112">Cet exemple montre comment produire une référence à une entité de BadOrders.</span><span class="sxs-lookup"><span data-stu-id="a8735-112">The example illustrates how we may produce a reference to an entity in BadOrders.</span></span> <span data-ttu-id="a8735-113">Notez que la référence peut être non résolue.</span><span class="sxs-lookup"><span data-stu-id="a8735-113">Note that the reference may be dangling.</span></span>  <span data-ttu-id="a8735-114">Autrement dit, la référence peut ne pas identifier réellement une entité spécifique.</span><span class="sxs-lookup"><span data-stu-id="a8735-114">That is, the reference may not actually identify a specific entity.</span></span> <span data-ttu-id="a8735-115">Dans ce cas, une opération `DEREF` sur cette référence retourne une valeur NULL.</span><span class="sxs-lookup"><span data-stu-id="a8735-115">In those cases, a `DEREF` operation on that reference returns a null.</span></span>  
+ <span data-ttu-id="1a14a-111">Dans l'exemple ci-dessous, Orders et BadOrders sont des jeux d'entités de type Order, et Id est supposé être l'unique propriété de clé de type Order.</span><span class="sxs-lookup"><span data-stu-id="1a14a-111">In the example below, Orders and BadOrders are both entitysets of type Order, and Id is assumed to be the single key property of Order.</span></span> <span data-ttu-id="1a14a-112">Cet exemple montre comment produire une référence à une entité de BadOrders.</span><span class="sxs-lookup"><span data-stu-id="1a14a-112">The example illustrates how we may produce a reference to an entity in BadOrders.</span></span> <span data-ttu-id="1a14a-113">Notez que la référence peut être non résolue.</span><span class="sxs-lookup"><span data-stu-id="1a14a-113">Note that the reference may be dangling.</span></span>  <span data-ttu-id="1a14a-114">Autrement dit, la référence peut ne pas identifier réellement une entité spécifique.</span><span class="sxs-lookup"><span data-stu-id="1a14a-114">That is, the reference may not actually identify a specific entity.</span></span> <span data-ttu-id="1a14a-115">Dans ce cas, une opération `DEREF` sur cette référence retourne une valeur NULL.</span><span class="sxs-lookup"><span data-stu-id="1a14a-115">In those cases, a `DEREF` operation on that reference returns a null.</span></span>  
   
 ```sql  
 SELECT CreateRef(LOB.BadOrders, row(o.Id))
 FROM LOB.Orders AS o
 ```  
   
-## <a name="example"></a><span data-ttu-id="a8735-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="a8735-116">Example</span></span>  
- <span data-ttu-id="a8735-117">La requête Entity SQL ci-dessous utilise l'opérateur CREATEREF pour créer des références à une entité contenue dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="a8735-117">The following Entity SQL query uses the CREATEREF operator to fabricate references to an entity in an entity set.</span></span> <span data-ttu-id="a8735-118">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="a8735-118">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="a8735-119">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="a8735-119">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="1a14a-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="1a14a-116">Example</span></span>  
+ <span data-ttu-id="1a14a-117">La requête Entity SQL ci-dessous utilise l'opérateur CREATEREF pour créer des références à une entité contenue dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="1a14a-117">The following Entity SQL query uses the CREATEREF operator to fabricate references to an entity in an entity set.</span></span> <span data-ttu-id="1a14a-118">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="1a14a-118">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="1a14a-119">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="1a14a-119">To compile and run this query, follow these steps:</span></span>  
   
-1. <span data-ttu-id="a8735-120">Suivez la procédure indiquée dans [How pour : Exécutez une requête qui retourne les résultats StructuralType @ no__t-0.</span><span class="sxs-lookup"><span data-stu-id="a8735-120">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
+1. <span data-ttu-id="1a14a-120">Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="1a14a-120">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2. <span data-ttu-id="a8735-121">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="a8735-121">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
+2. <span data-ttu-id="1a14a-121">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="1a14a-121">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-sql[DP EntityServices Concepts#CREATEREF](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#createref)]  
   
-## <a name="see-also"></a><span data-ttu-id="a8735-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a8735-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1a14a-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1a14a-122">See also</span></span>
 
-- [<span data-ttu-id="a8735-123">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="a8735-123">Entity SQL Reference</span></span>](entity-sql-reference.md)
-- [<span data-ttu-id="a8735-124">DEREF</span><span class="sxs-lookup"><span data-stu-id="a8735-124">DEREF</span></span>](deref-entity-sql.md)
-- [<span data-ttu-id="a8735-125">KEY</span><span class="sxs-lookup"><span data-stu-id="a8735-125">KEY</span></span>](key-entity-sql.md)
-- [<span data-ttu-id="a8735-126">REF</span><span class="sxs-lookup"><span data-stu-id="a8735-126">REF</span></span>](ref-entity-sql.md)
+- [<span data-ttu-id="1a14a-123">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="1a14a-123">Entity SQL Reference</span></span>](entity-sql-reference.md)
+- [<span data-ttu-id="1a14a-124">DEREF</span><span class="sxs-lookup"><span data-stu-id="1a14a-124">DEREF</span></span>](deref-entity-sql.md)
+- [<span data-ttu-id="1a14a-125">KEY</span><span class="sxs-lookup"><span data-stu-id="1a14a-125">KEY</span></span>](key-entity-sql.md)
+- [<span data-ttu-id="1a14a-126">REF</span><span class="sxs-lookup"><span data-stu-id="1a14a-126">REF</span></span>](ref-entity-sql.md)
