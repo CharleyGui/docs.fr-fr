@@ -14,19 +14,17 @@ helpviewer_keywords:
 ms.assetid: 8027df7c-cfad-4724-bda0-7538d9519070
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6be71878ba354ebe53b4b8b9b40db3222ec828f3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1362efbf518310240ce665badc93810d1c0b9b89
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781739"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450191"
 ---
-# <a name="cornativelinkflags-enumeration"></a><span data-ttu-id="25603-102">CorNativeLinkFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="25603-102">CorNativeLinkFlags Enumeration</span></span>
-<span data-ttu-id="25603-103">Fournit des valeurs d'indicateur utilisées par l'éditeur de liens lors de la liaison du code natif.</span><span class="sxs-lookup"><span data-stu-id="25603-103">Provides flag values used by the linker when linking native code.</span></span>  
+# <a name="cornativelinkflags-enumeration"></a><span data-ttu-id="4113c-102">CorNativeLinkFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="4113c-102">CorNativeLinkFlags Enumeration</span></span>
+<span data-ttu-id="4113c-103">Fournit des valeurs d'indicateur utilisées par l'éditeur de liens lors de la liaison du code natif.</span><span class="sxs-lookup"><span data-stu-id="4113c-103">Provides flag values used by the linker when linking native code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="25603-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="25603-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4113c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4113c-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum  
@@ -38,24 +36,24 @@ typedef enum
 } CorNativeLinkFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="25603-105">Membres</span><span class="sxs-lookup"><span data-stu-id="25603-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="4113c-105">Membres</span><span class="sxs-lookup"><span data-stu-id="4113c-105">Members</span></span>  
   
-|<span data-ttu-id="25603-106">Membre</span><span class="sxs-lookup"><span data-stu-id="25603-106">Member</span></span>|<span data-ttu-id="25603-107">Description</span><span class="sxs-lookup"><span data-stu-id="25603-107">Description</span></span>|  
+|<span data-ttu-id="4113c-106">Membre</span><span class="sxs-lookup"><span data-stu-id="4113c-106">Member</span></span>|<span data-ttu-id="4113c-107">Description</span><span class="sxs-lookup"><span data-stu-id="4113c-107">Description</span></span>|  
 |------------|-----------------|  
-|`nlfNone`|<span data-ttu-id="25603-108">Ne spécifie aucun indicateur.</span><span class="sxs-lookup"><span data-stu-id="25603-108">Indicates no flags.</span></span>|  
-|`nlfLastError`|<span data-ttu-id="25603-109">Indique un `setLastError` mot clé.</span><span class="sxs-lookup"><span data-stu-id="25603-109">Indicates a `setLastError` keyword.</span></span>|  
-|`nlfNoMangle`|<span data-ttu-id="25603-110">Indique un `nomangle` mot clé.</span><span class="sxs-lookup"><span data-stu-id="25603-110">Indicates a `nomangle` keyword.</span></span>|  
-|`nlfMaxValue`|<span data-ttu-id="25603-111">Non utilisé.</span><span class="sxs-lookup"><span data-stu-id="25603-111">Not used.</span></span>|  
+|`nlfNone`|<span data-ttu-id="4113c-108">Indicates no flags.</span><span class="sxs-lookup"><span data-stu-id="4113c-108">Indicates no flags.</span></span>|  
+|`nlfLastError`|<span data-ttu-id="4113c-109">Indicates a `setLastError` keyword.</span><span class="sxs-lookup"><span data-stu-id="4113c-109">Indicates a `setLastError` keyword.</span></span>|  
+|`nlfNoMangle`|<span data-ttu-id="4113c-110">Indicates a `nomangle` keyword.</span><span class="sxs-lookup"><span data-stu-id="4113c-110">Indicates a `nomangle` keyword.</span></span>|  
+|`nlfMaxValue`|<span data-ttu-id="4113c-111">Non utilisé.</span><span class="sxs-lookup"><span data-stu-id="4113c-111">Not used.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="25603-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="25603-112">Requirements</span></span>  
- <span data-ttu-id="25603-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="25603-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4113c-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="4113c-112">Requirements</span></span>  
+ <span data-ttu-id="4113c-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4113c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="25603-114">**En-tête :** Cor.h</span><span class="sxs-lookup"><span data-stu-id="25603-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="4113c-114">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="4113c-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="25603-115">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="25603-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="4113c-115">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4113c-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="25603-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="25603-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="4113c-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4113c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="25603-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="25603-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4113c-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4113c-117">See also</span></span>
 
-- [<span data-ttu-id="25603-118">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="25603-118">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="4113c-118">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="4113c-118">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
