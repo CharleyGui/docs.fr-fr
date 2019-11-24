@@ -11,16 +11,16 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 00bfc9fc21ed39226fd21c4096305c254d73ee11
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: c33a868b643cb3e3fd5dfaf436e3078bc590705c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69665724"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449817"
 ---
-# <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10:: RequestReJITWithInliners, méthode
+# <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10::RequestReJITWithInliners Method
 
-ReJITs les méthodes demandées, ainsi que les Inlines des méthodes demandées.
+ReJITs the methods requested, as well as any inliners of the methods requested.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,7 +34,7 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
 #### <a name="parameters"></a>Paramètres
 
 `dwRejitFlags` \
-dans Masque de [réCOR_PRF_REJIT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-rejit-flags-enumeration.md).
+[in] A bitmask of [COR_PRF_REJIT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-rejit-flags-enumeration.md).
 
 `cFunctions` \
 [in] Nombre de fonctions à recompiler.
@@ -47,18 +47,18 @@ dans Masque de [réCOR_PRF_REJIT_FLAGS](../../../../docs/framework/unmanaged-api
 
 ## <a name="remarks"></a>Notes
 
-[Requestrejit,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) n’effectue aucun suivi des méthodes Inline. Le profileur devait bloquer l’incorporation ou suivre l’inline et appeler `RequestReJIT` pour tous les inlineers pour s’assurer que chaque instance d’une méthode Inline était ReJITted. Cela pose un problème avec ReJIT lors de l’attachement, car le profileur n’est pas présent pour surveiller l’incorporation. Cette méthode peut être appelée pour garantir que l’ensemble complet des Inlines sera également ReJITted.
+[RequestReJIT](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) does not do any tracking of inlined methods. The profiler was expected to either block inlining or track inlining and call `RequestReJIT` for all inliners to make sure every instance of an inlined method was ReJITted. This poses a problem with ReJIT on attach, since the profiler is not present to monitor inlining. This method can be called to guarantee that the full set of inliners will be ReJITted as well.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/windows-prerequisites.md#net-core-supported-operating-systems).
+**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
-**Versions de .net:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [ICorProfilerInfo10 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)

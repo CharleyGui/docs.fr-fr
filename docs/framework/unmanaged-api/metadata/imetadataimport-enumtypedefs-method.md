@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e508711-da92-4381-aaf8-6803075cdaa2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 621582536c07b269dd723c9014e23c50e561957a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3854cb4aa3d229c87466c0a35a72447ceb235624
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774613"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449996"
 ---
 # <a name="imetadataimportenumtypedefs-method"></a>IMetaDataImport::EnumTypeDefs, méthode
 Énumère les jetons TypeDef représentant tous les types au sein la portée actuelle.  
@@ -40,33 +38,33 @@ HRESULT EnumTypeDefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [out] Un pointeur vers le nouvel énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [out] A pointer to the new enumerator. This must be NULL for the first call of this method.  
   
  `rTypeDefs`  
- [in] Tableau utilisé pour stocker les jetons TypeDef.  
+ [in] The array used to store the TypeDef tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeDefs`.  
   
  `pcTypeDefs`  
- [out] Le nombre de jetons TypeDef retournés dans `rTypeDefs`.  
+ [out] The number of TypeDef tokens returned in `rTypeDefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcTypeDefs` est égal à zéro.|  
+|`S_OK`|`EnumTypeDefs` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeDefs` is zero.|  
   
 ## <a name="remarks"></a>Notes  
- Le jeton TypeDef représente un type tel qu’une classe ou une interface, ainsi que n’importe quel type ajouté via un mécanisme d’extensibilité.  
+ The TypeDef token represents a type such as a class or an interface, as well as any type added via an extensibility mechanism.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a85283d8-379c-417a-9736-ddeeef9bcf50
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ef5a98d510eee8942a2cad0525b6902e3e4eaa52
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f1bd9c33f24847eae4ff7d26c5b996cd34afb72
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769389"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448926"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges, méthode
-Une position donnée dans un document, retourne un tableau de début et fin paires d’offsets qui correspondent aux plages de langage intermédiaire Microsoft (MSIL) qui traite de la position au sein de cette méthode. Le tableau est un tableau d’entiers et a le format [début, fin, début, fin]. Le nombre de paires de plage est la longueur du tableau divisée par 2.  
+Given a position in a document, returns an array of start and end offset pairs that correspond to the ranges of Microsoft intermediate language (MSIL) that the position covers within this method. The array is an array of integers and has the format [start, end, start, end]. The number of range pairs is the length of the array divided by 2.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +40,28 @@ HRESULT GetRanges(
   
 ## <a name="parameters"></a>Paramètres  
  `document`  
- [in] Le document pour lequel l’offset est demandé.  
+ [in] The document for which the offset is requested.  
   
  `line`  
- [in] Ligne du document correspondant aux plages.  
+ [in] The document line corresponding to the ranges.  
   
  `column`  
- [in] Colonne du document correspondant aux plages.  
+ [in] The document column corresponding to the ranges.  
   
  `cRanges`  
  [in] Taille du tableau `ranges`.  
   
  `pcRanges`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les plages.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the ranges.  
   
  `ranges`  
- [out] Pointeur vers la mémoire tampon qui reçoit les plages.  
+ [out] A pointer to the buffer that receives the ranges.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

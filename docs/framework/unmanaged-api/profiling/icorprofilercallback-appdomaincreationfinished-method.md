@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 910f8b7f78b6348ace9036d35c0844f2a64cf433
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eaf0ae2a1b86234495c1804cff8b74331b3e8021
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763144"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445277"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished, méthode
-Informe le profileur qu’un domaine d’application a été créé.  
+Notifies the profiler that an application domain has been created.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT AppDomainCreationFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `appDomainId`  
- [in] Identifie le domaine qui a été créé.  
+ [in] Identifies the domain which has been created.  
   
  `hrStatus`  
- [in] HRESULT qui indique si la création du domaine d’application a été terminée avec succès.  
+ [in] An HRESULT that indicates whether creation of the application domain completed successfully.  
   
 ## <a name="remarks"></a>Notes  
- L’ID d’application n’est pas valide pour toute demande d’informations jusqu'à ce que le `AppDomainCreationFinished` méthode est appelée.  
+ The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.  
   
- Certaines parties du chargement du domaine d’application peuvent continuer après le `AppDomainCreationFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie de la création du domaine d’application a réussi.  
+ Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

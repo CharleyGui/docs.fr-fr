@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 75331c7b-988b-436c-9eb9-a270d37b4f06
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 81592b6da7fa7cdf275e9fa5b4b82ef0a15061c0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 42b8360ac6a7bb62f29046475d6cc98124619770
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782567"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449968"
 ---
 # <a name="imetadataimportenumtypespecs-method"></a>IMetaDataImport::EnumTypeSpecs, méthode
 Énumère les jetons TypeSpec définis dans la portée des métadonnées actuelle.  
@@ -40,33 +38,33 @@ HRESULT EnumTypeSpecs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cette valeur doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This value must be NULL for the first call of this method.  
   
  `rTypeSpecs`  
- [out] Tableau utilisé pour stocker les jetons TypeSpec.  
+ [out] The array used to store the TypeSpec tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeSpecs`.  
   
  `pcTypeSpecs`  
- [out] Le nombre de jetons TypeSpec retournés dans `rTypeSpecs`.  
+ [out] The number of TypeSpec tokens returned in `rTypeSpecs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeSpecs` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcTypeSpecs` est égal à zéro.|  
+|`S_OK`|`EnumTypeSpecs` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeSpecs` is zero.|  
   
 ## <a name="remarks"></a>Notes  
- Les jetons TypeSpec sont créés par le [IMetaDataEmit::GetTokenFromTypeSpec](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) (méthode).  
+ The TypeSpec tokens are created by the [IMetaDataEmit::GetTokenFromTypeSpec](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) method.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

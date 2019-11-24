@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7ae84d6-81e8-4cb7-a1f9-d48b6cde5d79
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a7fa192a8e8b8a876f672e36bb906a714b1266e2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 70c1d87ae32fb70f8d9f6e32b527394022459526
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736667"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446429"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument, méthode
-Obtient toutes les méthodes ayant des informations de ligne dans le document fourni.  
+Gets every method that has line information in the provided document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +38,22 @@ HRESULT GetMethodsInDocument(
   
 ## <a name="parameters"></a>Paramètres  
  `document`  
- [in] Pointeur vers le document.  
+ [in] A pointer to the document.  
   
  `cMethod`  
- [in] Un `ULONG32` qui indique la taille de la `pRetVal` tableau.  
+ [in] A `ULONG32` that indicates the size of the  `pRetVal` array.  
   
  `pcMethod`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les méthodes.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the methods.  
   
  `pRetVal`  
- [out] Pointeur vers la mémoire tampon qui reçoit les méthodes.  
+ [out] A pointer to the buffer that receives the methods.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

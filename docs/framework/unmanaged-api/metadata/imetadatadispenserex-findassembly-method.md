@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3afe7252-5f28-48d9-a74d-1927566c404c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 85ebddf4ef96be2a583e54082e4d4405b30adf46
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2d974b7368dd01062d2d310d076dce05e102eb81
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777771"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442285"
 ---
 # <a name="imetadatadispenserexfindassembly-method"></a>IMetaDataDispenserEx::FindAssembly, méthode
-Cette méthode n’est pas implémentée. Si elle est appelée, elle retourne E_NOTIMPL.  
+Cette méthode n’est pas implémentée. If called, it returns E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,32 +41,32 @@ HRESULT FindAssembly(
   
 ## <a name="parameters"></a>Paramètres  
  `szAppBase`  
- [in] Non utilisé.  
+ [in] Not used.  
   
  `szPrivateBin`  
- [in] Non utilisé.  
+ [in] Not used.  
   
  `szGlobalBin`  
- [in] Non utilisé.  
+ [in] Not used.  
   
  `szAssemblyName`  
- [in] L’assembly à rechercher.  
+ [in] The assembly to be found.  
   
  `szName`  
- [out] Le nom simple de l’assembly.  
+ [out] The simple name of the assembly.  
   
  `cchName`  
- [in] La taille, en octets, de `szName`.  
+ [in] The size, in bytes, of `szName`.  
   
  `pcName`  
- [out] Le nombre de caractères réellement retournés dans `szName`.  
+ [out] The number of characters actually returned in `szName`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

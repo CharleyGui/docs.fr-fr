@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 31214d3a-715e-49af-92b3-0fd11e4f218a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b89409a08ed2dff0111b3b6e552960ac78a5882e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 577a4f6bb8315cfb1cb462703dd0cb9b23b60704
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781530"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434054"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo, méthode
-Obtient un pointeur vers un tableau de jetons associé à l’index de ligne spécifié.  
+Gets a pointer to an array of tokens associated with the specified row index.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT GetCodedTokenInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `ixCdTkn`  
- [in] Le type de jeton codé à retourner.  
+ [in] The kind of coded token to return.  
   
  `pcTokens`  
- [out] Un pointeur vers la longueur de `ppTokens`.  
+ [out] A pointer to the length of `ppTokens`.  
   
  `ppTokens`  
- [out] Pointeur vers un pointeur vers un tableau qui contient la liste des jetons retournés.  
+ [out] A pointer to a pointer to an array that contains the list of returned tokens.  
   
  `ppName`  
- [out] Un pointeur vers un pointeur vers le nom du jeton à `ixCdTkn`.  
+ [out] A pointer to a pointer to the name of the token at `ixCdTkn`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

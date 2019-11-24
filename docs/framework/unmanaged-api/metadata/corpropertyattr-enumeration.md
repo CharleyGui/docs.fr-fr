@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 58ac8202-854d-4efd-acfb-d2da8b446e12
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5fb70d530af24798636972de0a4d6280dbcb8f1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2d49a146a465210cea8466a75666ca3f800b090b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781626"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450139"
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr, énumération
 Contient des valeurs qui décrivent les métadonnées d'une propriété.  
@@ -44,16 +42,16 @@ typedef enum CorPropertyAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`prSpecialName`|Spécifie que la propriété est spéciale et que son nom décrit comment.|  
-|`prReservedMask`|Réservé à un usage interne par le common language runtime.|  
-|`prRTSpecialName`|Spécifie que les métadonnées du common language runtime API internes doivent vérifier l’encodage du nom de la propriété.|  
-|`prHasDefault`|Spécifie que la propriété a une valeur par défaut.|  
+|`prSpecialName`|Specifies that the property is special, and that its name describes how.|  
+|`prReservedMask`|Reserved for internal use by the common language runtime.|  
+|`prRTSpecialName`|Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.|  
+|`prHasDefault`|Specifies that the property has a default value.|  
 |`prUnused`|Non utilisé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

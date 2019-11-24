@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a2dd5098-3e58-4be5-b7a2-e4160b3b505a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3de246c8b9c4387ea782b77f16edfbe792bb4427
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b6cf7293f1d65db1f60301f49ce655c74df3daca
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777017"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448317"
 ---
 # <a name="isymunmanagedreadergetglobalvariables-method"></a>ISymUnmanagedReader::GetGlobalVariables, méthode
-Retourne toutes les variables globales.  
+Returns all global variables.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetGlobalVariables(
   
 ## <a name="parameters"></a>Paramètres  
  `cVars`  
- [in] La longueur de la mémoire tampon vers laquelle pointe `pcVars`.  
+ [in] The length of the buffer pointed to by `pcVars`.  
   
  `pcVars`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.  
   
  `pVars`  
- [out] Une mémoire tampon qui contient les variables.  
+ [out] A buffer that contains the variables.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

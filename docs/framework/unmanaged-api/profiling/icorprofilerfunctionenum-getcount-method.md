@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 62ec65e3-3e9d-400b-ae61-d24b8963995b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6403540f9641ce885edf2760370e35f48faf1f10
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5ccd90e92e83d7f9f6f19a082fb84dc1f1c35f4c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780316"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447807"
 ---
 # <a name="icorprofilerfunctionenumgetcount-method"></a>ICorProfilerFunctionEnum::GetCount, méthode
 Obtient le nombre de fonctions qui ont été chargées par l'application ou chargées de force par le profileur.  
@@ -35,12 +33,12 @@ HRESULT GetCount([out] ULONG * pcelt);
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [out] Le nombre de fonctions qui ont été chargées.  
+ [out] The number of functions that were loaded.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

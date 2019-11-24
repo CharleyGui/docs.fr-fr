@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ae6cfb29-bc2c-4606-af86-1d32ebd31020
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 35dd8dd272ea8b4fc21cb9d7dce6899ceb836265
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9407942b81c5318509f2b026fa5db1cdd163e02d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777003"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448275"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod, méthode
-Obtient une méthode de lecteur de symboles, un jeton de méthode donné.  
+Gets a symbol reader method, given a method token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ HRESULT GetMethod (
   
 ## <a name="parameters"></a>Paramètres  
  `token`  
- [in] Le jeton de méthode.  
+ [in] The method token.  
   
  `pRetVal`  
- [out] Pointeur vers l’interface retournée.  
+ [out] A pointer to the returned interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

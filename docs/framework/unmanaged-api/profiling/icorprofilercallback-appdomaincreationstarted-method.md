@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b2a8240b-07fe-4859-bb2b-7d3adbfa0a9f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 17f7c985b27adbbb2a5c7ddc2bb62fc93a099a45
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6a0f6dc9d2559bafed416d409063088d2f51c27d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763132"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445213"
 ---
 # <a name="icorprofilercallbackappdomaincreationstarted-method"></a>ICorProfilerCallback::AppDomainCreationStarted, méthode
-Notifie le profileur qu’un domaine d’application est créé.  
+Notifies the profiler that an application domain is being created.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +34,15 @@ HRESULT AppDomainCreationStarted(
   
 ## <a name="parameters"></a>Paramètres  
  `appDomainId`  
- [in] Identifie le domaine qui est en cours de création.  
+ [in] Identifies the domain which is being created.  
   
 ## <a name="remarks"></a>Notes  
- L’ID n’est pas valide pour toute demande d’informations jusqu'à ce que le [ICorProfilerCallback::AppDomainCreationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) méthode est appelée.  
+ The ID is not valid for any information request until the [ICorProfilerCallback::AppDomainCreationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) method is called.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

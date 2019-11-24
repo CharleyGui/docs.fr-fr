@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bb203853-6a6d-4027-b9e9-603a7f28b9d3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 32b7505a9e512f3c3e3e7a9fcbff40276e98ecf4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1fcb885b6e19457065c2ca9971f068b42f97147d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759349"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448345"
 ---
 # <a name="isymunmanagedreadergetdocument-method"></a>ISymUnmanagedReader::GetDocument, méthode
-Recherche un document. Le langage du document, le fournisseur et le type sont facultatives.  
+Finds a document. The document language, vendor, and type are optional.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT GetDocument (
   
 ## <a name="parameters"></a>Paramètres  
  `url`  
- [in] L’URL qui identifie le document.  
+ [in] The URL that identifies the document.  
   
  `language`  
- [in] Le langage du document. Ce paramètre est optionnel.  
+ [in] The document language. Ce paramètre est optionnel.  
   
  `languageVendor`  
- [in] L’identité du fournisseur de langage du document. Ce paramètre est optionnel.  
+ [in] The identity of the vendor for the document language. Ce paramètre est optionnel.  
   
  `documentType`  
- [in] Le type du document. Ce paramètre est optionnel.  
+ [in] The type of the document. Ce paramètre est optionnel.  
   
  `pRetVal`  
- [out] Pointeur vers l’interface retournée.  
+ [out] A pointer to the returned interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

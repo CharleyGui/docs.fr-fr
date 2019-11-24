@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bc3e48185c3bc289a4f7bfd865f69d9c06a720c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2c2eb7d0dc04d813b1ce91fb1acf4b171f244592
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750508"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445762"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage, méthode
-Notifie le profileur que le processus a reçu une demande d’appel ou de l’activation de méthode distant.  
+Notifies the profiler that the process has received a remote method invocation or activation request.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +35,26 @@ HRESULT RemotingClientSendingMessage(
   
 ## <a name="parameters"></a>Paramètres  
  `pCookie`  
- [in] Valeur qui correspond à la valeur fournie dans [ICorProfilerCallback::RemotingClientSendingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) dans ces conditions :  
+ [in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingClientSendingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) under these conditions:  
   
-- Les cookies GUID de communication à distance sont actifs.  
+- Remoting GUID cookies are active.  
   
-- Le canal réussit à transmettre le message.  
+- The channel succeeds in transmitting the message.  
   
-- Les cookies GUID sont actifs sur le processus côté client.  
+- GUID cookies are active on the client-side process.  
   
- Cela permet un appariement simple d’appels de communication à distance et de la création d’une pile d’appel logique.  
+ This allows easy pairing of remoting calls and the creation of a logical call stack.  
   
  `fIsAsync`  
- [in] Une valeur qui est `true` si l’appel est asynchrone ; sinon, `false`.  
+ [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Si la demande de message est asynchrone, la demande peut être traitée par n’importe quel thread arbitraire.  
+ If the message request is asynchronous, the request can be serviced by any arbitrary thread.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

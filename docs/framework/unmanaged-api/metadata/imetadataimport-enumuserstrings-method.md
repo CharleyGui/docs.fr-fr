@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2b1f1418-4be8-4cdb-b418-b3abccc527a7
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ea144784f82c192f41f68394eb2ccdf443db54c2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1c9f15881d3515f24a63f29e9337a7a356937f2d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782552"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449944"
 ---
 # <a name="imetadataimportenumuserstrings-method"></a>IMetaDataImport::EnumUserStrings, méthode
 Énumère les jetons String représentant des chaînes codées en dur dans la portée des métadonnées actuelle.  
@@ -40,33 +38,33 @@ HRESULT EnumUserStrings (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `rStrings`  
- [out] Tableau utilisé pour stocker les jetons de chaîne.  
+ [out] The array used to store the String tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rStrings`.  
   
  `pcStrings`  
- [out] Le nombre de jetons de chaîne retournée dans `rStrings`.  
+ [out] The number of String tokens returned in `rStrings`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUserStrings` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcStrings` est égal à zéro.|  
+|`S_OK`|`EnumUserStrings` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcStrings` is zero.|  
   
 ## <a name="remarks"></a>Notes  
- Les jetons de chaîne sont créés par le [IMetaDataEmit::DefineUserString](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) (méthode). Cette méthode est conçue pour être utilisée par un navigateur de métadonnées plutôt que par un compilateur.  
+ The String tokens are created by the [IMetaDataEmit::DefineUserString](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) method. This method is designed to be used by a metadata browser rather than by a compiler.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

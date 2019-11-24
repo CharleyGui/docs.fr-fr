@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: b6b95c04-0f2c-4fcc-a8bc-3b1dcbdba731
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5741ba1b4564a703ff57b45c728bb9efac0bb35a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 01be6c30e16e4abdd6002fc8207b33a9c76a2eef
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782009"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448744"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer, méthode
-Détermine la mémoire tampon pour la section de code spécifié.  
+Determines the buffer for the specified code section.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +39,20 @@ HRESULT ComputePointer (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] La section de code pour laquelle retourner une mémoire tampon.  
+ [in] The code section for which to return a buffer.  
   
  `RVA`  
- [in] L’adresse virtuelle relative de la méthode pour laquelle obtenir un pointeur.  
+ [in] The relative virtual address of the method for which to get a pointer.  
   
  `lpBuffer`  
- [out] Pointeur vers la mémoire tampon retournée.  
+ [out] A pointer to the returned buffer.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

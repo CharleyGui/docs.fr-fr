@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3a8074f1-facc-4a3f-bb9b-d6574fc2fc74
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 39ad47ae7659734191d380d8b3c29fb1a6de6afc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9e8139a822c877e70731e18ae5a75b83e6b7578e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769430"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448955"
 ---
 # <a name="isymunmanagedmethodgetparameters-method"></a>ISymUnmanagedMethod::GetParameters, méthode
-Obtient les paramètres de cette méthode. Les paramètres sont retournés dans l’ordre dans lequel ils sont définis au sein de la signature de la méthode.  
+Gets the parameters for this method. The parameters are returned in the order in which they are defined within the method's signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,16 +40,16 @@ HRESULT GetParameters(
  [in] Taille du tableau `params`.  
   
  `pcParams`  
- [in] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon qui est nécessaire pour contenir les paramètres.  
+ [in] A pointer to a `ULONG32` that receives the size of the buffer that is required to contain the parameters.  
   
  `params`  
- [out] Pointeur vers la mémoire tampon qui reçoit les paramètres.  
+ [out] A pointer to the buffer that receives the parameters.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

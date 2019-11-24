@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0afc1197-2a5b-424f-8b82-9cb59a7e00db
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 335c25316b34f79b8d02eea5a7dd4ed7994fc754
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6999821412b3cdd614cb30858a0616c9f27a6baa
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780176"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448111"
 ---
 # <a name="icorprofilerinfogetclassfromtoken-method"></a>ICorProfilerInfo::GetClassFromToken, méthode
-Obtient l’ID de la classe, en fonction du jeton de métadonnées. Cette méthode est obsolète dans le .NET Framework version 2.0. Utilisez [ICorProfilerInfo2::GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) à la place.  
+Gets the ID of the class, given the metadata token. This method is obsolete in the .NET Framework version 2.0. Use [ICorProfilerInfo2::GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) instead.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +36,25 @@ HRESULT GetClassFromToken(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleID`  
- [in] L’ID du module qui contient la classe.  
+ [in] The ID of the module that contains the class.  
   
  `typeDef`  
- [in] Un `mdTypeDef` jeton de métadonnées qui fait référence à la classe.  
+ [in] An `mdTypeDef` metadata token that references the class.  
   
  `cTypeArgs`  
- [out] Un pointeur vers l’ID de classe.  
+ [out] A pointer to the class ID.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est obsolète ; au lieu de cela, utilisez `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` pour tous les types.  
+ This method is obsolete; instead, use `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` for all types.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET framework :** 1.0, 1.1  
+ **.NET Framework Versions:** 1.0, 1.1  
   
 ## <a name="see-also"></a>Voir aussi
 

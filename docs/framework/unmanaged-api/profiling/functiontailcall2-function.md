@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 249f9892-b5a9-41e1-b329-28a925904df6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9495624f7eca57a79518036937a5fb63d01d9c4b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: db3c3d38e0200f9849c84d7605a436816d56b813
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851208"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427421"
 ---
 # <a name="functiontailcall2-function"></a>FunctionTailcall2 (fonction)
-Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction et fournit des informations sur le frame de pile.  
+Notifies the profiler that the currently executing function is about to perform a tail call to another function and provides information about the stack frame.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,39 +36,39 @@ void __stdcall FunctionTailcall2 (
   
 ## <a name="parameters"></a>Paramètres  
  `funcId`  
- dans Identificateur de la fonction en cours d’exécution qui va effectuer un appel tail.  
+ [in] The identifier of the currently executing function that is about to make a tail call.  
   
  `clientData`  
- dans Identificateur de fonction remappée, que le profileur a précédemment spécifié via [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md), de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.  
+ [in] The remapped function identifier, which the profiler previously specified via [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md), of the currently executing function that is about to make a tail call.  
   
  `func`  
- dans `COR_PRF_FRAME_INFO` Valeur qui pointe vers les informations sur le frame de pile.  
+ [in] A `COR_PRF_FRAME_INFO` value that points to information about the stack frame.  
   
- Le profileur doit traiter ceci comme un handle opaque qui peut être retourné au moteur d’exécution dans la méthode [ICorProfilerInfo2 :: GetFunctionInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) .  
+ The profiler should treat this as an opaque handle that can be passed back to the execution engine in the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method.  
   
 ## <a name="remarks"></a>Notes  
- La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
+ The target function of the tail call will use the current stack frame, and will return directly to the caller of the function that made the tail call. This means that a [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) callback will not be issued for a function that is the target of a tail call.  
   
- La valeur du `func` paramètre n’est pas valide après le `FunctionTailcall2` retour de la fonction, car la valeur peut changer ou être détruite.  
+ The value of the `func` parameter is not valid after the `FunctionTailcall2` function returns because the value may change or be destroyed.  
   
- La `FunctionTailcall2` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec`attribut`naked`de classe de stockage ().  
+ The `FunctionTailcall2` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
   
- Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
+ The execution engine does not save any registers before calling this function.  
   
-- À l’entrée, vous devez enregistrer tous les registres que vous utilisez, y compris ceux de l’unité à virgule flottante (FPU).  
+- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
   
-- À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
+- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
   
- L’implémentation de `FunctionTailcall2` ne doit pas être bloquée, car elle retardera garbage collection. L’implémentation ne doit pas essayer un garbage collection, car la pile n’est peut-être pas dans un État garbage collection. Si une garbage collection est tentée, le runtime se bloque jusqu’à ce que `FunctionTailcall2` retourne la valeur.  
+ The implementation of `FunctionTailcall2` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionTailcall2` returns.  
   
- En outre, `FunctionTailcall2` la fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
+ Also, the `FunctionTailcall2` function must not call into managed code or in any way cause a managed memory allocation.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl  
+ **Header:** CorProf.idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

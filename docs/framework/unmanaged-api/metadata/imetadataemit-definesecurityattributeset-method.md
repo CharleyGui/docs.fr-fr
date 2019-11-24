@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 27064ca2-4186-4433-90a7-3b297785e891
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0f7c5378490dce93599086819ee6fc806c707aa2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b98fab6c6127c3f78151d3b84160d4ca0434b6cd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777492"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428247"
 ---
 # <a name="imetadataemitdefinesecurityattributeset-method"></a>IMetaDataEmit::DefineSecurityAttributeSet, méthode
-Crée un jeu d’autorisations de sécurité à joindre à l’objet référencé par le jeton spécifié.  
+Creates a set of security permissions to attach to the object referenced by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT DefineSecurityAttributeSet (
   
 ## <a name="parameters"></a>Paramètres  
  `tkObj`  
- [in] Le jeton à laquelle les informations de sécurité sont attachées.  
+ [in] The token to which the security information is attached.  
   
  `rSecAttrs`  
- [in] Un tableau de `COR_SECATTR` structures.  
+ [in] An array of `COR_SECATTR` structures.  
   
  `cSecAttrs`  
- [in] Le nombre d’éléments dans `rSecAttrs`.  
+ [in] The number of elements in `rSecAttrs`.  
   
  `pulErrorAttr`  
- [out] Si la méthode échoue, spécifie l’index dans `rSecAttrs` de l’élément qui a provoqué le problème.  
+ [out] If the method fails, specifies the index in `rSecAttrs` of the element that caused the problem.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

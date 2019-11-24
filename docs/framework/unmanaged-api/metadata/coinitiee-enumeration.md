@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 64264238-3b68-4bac-a887-36b552426a6c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 23f5a2b6b0970f3cb64ee339e6a1a409354a60e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ccc038b4420040779dae70f15e3a8827ba94180
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780953"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444101"
 ---
 # <a name="coinitiee-enumeration"></a>COINITIEE, énumération
-Spécifie les constantes utilisées par [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) lors de l’initialisation du common language runtime.  
+Specifies constants used by [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) when initializing the common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +38,16 @@ typedef enum tagCOINITEE {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COINITEE_DEFAULT`|Mode d’initialisation par défaut. Initialise l’exécution et crée la valeur par défaut <xref:System.AppDomain>.|  
-|`COINITEE_DLL`|Initialise l’exécution d’une DLL managée.|  
-|`COINITEE_MAIN`|Initialise l’exécution d’un EXE managé. Cela initialise le runtime, mais ne crée pas la valeur par défaut <xref:System.AppDomain>, qui est créé après avoir entré la routine principale de l’EXE.|  
+|`COINITEE_DEFAULT`|Default initialization mode. This initializes the runtime and creates the default <xref:System.AppDomain>.|  
+|`COINITEE_DLL`|Initializes to run a managed DLL.|  
+|`COINITEE_MAIN`|Initializes to run a managed EXE. This initializes the runtime but does not create the default <xref:System.AppDomain>, which is created after entering the main routine of the EXE.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

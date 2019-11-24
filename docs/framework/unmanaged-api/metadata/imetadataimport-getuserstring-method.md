@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fd3bb47-58b5-4083-b241-b9719df7a285
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: edeaefd0792a5cc03ae6d4385ff669a343ffdfc9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 690abec6104f6eed1ad5a0eae9a6b6bb18d35b0d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778807"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436688"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString, méthode
 Obtient la chaîne littérale représentée par le jeton de métadonnées spécifié.  
@@ -40,23 +38,23 @@ HRESULT GetUserString (
   
 ## <a name="parameters"></a>Paramètres  
  `stk`  
- [in] Le jeton de chaîne pour retourner la chaîne associée.  
+ [in] The String token to return the associated string for.  
   
  `szString`  
- [out] Une copie de la chaîne demandée.  
+ [out] A copy of the requested string.  
   
  `cchString`  
- [in] La taille maximale en caractères larges de demandé `szString`.  
+ [in] The maximum size in wide characters of the requested `szString`.  
   
  `pchString`  
- [out] La taille en caractères larges de retourné `szString`.  
+ [out] The size in wide characters of the returned `szString`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

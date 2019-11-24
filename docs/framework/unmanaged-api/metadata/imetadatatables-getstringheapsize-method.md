@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ed8f6335-81f5-4c09-81a9-2a909fc530c9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b842fb4d0853f473ae8e237a42e800cf0af8dc11
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 43599a7e39ca4cc9d27dab43a948dc2f04e5010a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781388"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426672"
 ---
 # <a name="imetadatatablesgetstringheapsize-method"></a>IMetaDataTables::GetStringHeapSize, méthode
-Obtient la taille, en octets, du tas de chaîne.  
+Gets the size, in bytes, of the string heap.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT GetStringHeapSize (
   
 ## <a name="parameters"></a>Paramètres  
  `pcbStrings`  
- [out] Pointeur vers la taille, en octets, du tas de chaîne.  
+ [out] A pointer to the size, in bytes, of the string heap.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -6,16 +6,16 @@ helpviewer_keywords:
 - Data Item control type
 - control types, Data Item
 ms.assetid: 181708fd-2595-4c43-9abd-75811627d64c
-ms.openlocfilehash: fc41b3eb775e80ae85026b226a60ce6a1d31c761
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9097fdcffb236d08264b881a171a86dcf8801133
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123113"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447940"
 ---
 # <a name="ui-automation-support-for-the-dataitem-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle DataItem
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique fournit des informations sur la prise en charge de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour le type de contrôle DataItem. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , un type de contrôle est un ensemble de conditions qu’un contrôle doit respecter pour pouvoir utiliser la propriété <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> . Ces conditions incluent des indications spécifiques pour l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , les valeurs de propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et les modèles de contrôle.  
   
@@ -28,7 +28,7 @@ ms.locfileid: "73123113"
   
 |Arborescence[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – Vue de contrôle|Arborescence[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] - Affichage du contenu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
-|DataItem<br /><br /> -Varie (0 ou plus ; peut être structuré dans la hiérarchie)|DataItem<br /><br /> -Varie (0 ou plus ; peut être structuré dans la hiérarchie)|  
+|DataItem<br /><br /> -   Varies (0 or more; can be structured in hierarchy)|DataItem<br /><br /> -   Varies (0 or more; can be structured in hierarchy)|  
   
  Un élément de données dans une grille de données peut héberger divers objets, notamment une autre couche d’éléments de données ou des éléments de grille spécifiques tels que du texte, des images ou des contrôles d’édition. Si l’élément de données a un rôle d’objet spécifique, il doit être exposé en tant que type de contrôle spécifique, par exemple un type de contrôle ListItem pour un élément de données sélectionnable dans la grille.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "73123113"
 ## <a name="working-with-data-items-in-large-lists"></a>Utilisation d’éléments de données dans les longues listes  
  Les longues listes sont souvent des données virtualisées dans des infrastructures d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] pour faciliter les performances. Ainsi, un client UI Automation ne peut pas utiliser la fonctionnalité de requête [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour capturer le contenu de l’arborescence complète de la même façon que dans d’autres conteneurs d’éléments. Un client doit faire défiler l’élément dans l’affichage (ou développer le contrôle pour afficher toutes les options pertinentes) avant d’accéder à l’ensemble des informations de l’élément de données.  
   
- Lors de l’appel de `SetFocus` sur l’élément [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour l’élément de données, le cas de l’Explorateur Microsoft Windows est retourné avec succès et entraîne la définition du focus sur la modification dans la sous-arborescence de l’élément de données.  
+ When calling `SetFocus` on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] element for the data item, the Microsoft Windows Explorer case will return successfully and cause focus to be set to the Edit within the data item subtree.  
   
 ## <a name="required-ui-automation-events"></a>Événements UI Automation requis  
  Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles d’élément de données. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
@@ -90,13 +90,13 @@ ms.locfileid: "73123113"
 ## <a name="dataitem-control-type-example"></a>Exemple de type de contrôle DataItem  
  L’image suivante illustre un contrôle de type DataItem dans un contrôle ListView avec prise en charge des informations détaillées pour les colonnes.  
   
- ![Graphique d’un contrôle d’affichage de liste avec deux éléments de données](./media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
+ ![Graphic of a List View control with two data items](./media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
   
  L’affichage de contrôle et l’affichage du contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] relative au contrôle d’élément de données sont indiqués ci-dessous. Les modèles de contrôle de chaque élément Automation sont indiqués entre parenthèses. Le groupe « Contoso » fait également partie de la grille du contrôle hôte de grille de données.  
   
 |Arborescence[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – Vue de contrôle|Arborescence[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] - Affichage du contenu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
-|-Group « contoso » (table, Grid)<br />-DataItem « Accounts Receivable. doc » (TableItem, GridItem, SelectionItem, Invoke)<br />-Image « Accounts Receivable. doc »<br />-Edit « Name » (TableItem, GridItem, value "Accounts Receivable. doc")<br />-Modifier la « date de modification » (TableItem, GridItem, valeur « 8/25/2006 3:29 PM »)<br />-Edit « Size » (GridItem, TableItem, value «11,0 Ko)<br />-DataItem « Accounts payable. doc » (TableItem, GridItem, SelectionItem, Invoke)<br />-   ...|-Group « contoso » (table, Grid)<br />-DataItem « Accounts Receivable. doc » (TableItem, GridItem, SelectionItem, Invoke)<br />-Image « Accounts Receivable. doc »<br />-Edit « Name » (TableItem, GridItem, value "Accounts Receivable. doc")<br />-Modifier la « date de modification » (TableItem, GridItem, valeur « 8/25/2006 3:29 PM »)<br />-Edit « Size » (GridItem, TableItem, value «11,0 Ko)<br />-DataItem « Accounts payable. doc » (TableItem, GridItem, SelectionItem, Invoke)<br />- ...|  
+|-   Group "Contoso" (Table, Grid)<br />-   DataItem "Accounts Receivable.doc" (TableItem, GridItem, SelectionItem, Invoke)<br />-   Image "Accounts Receivable.doc"<br />-   Edit "Name" (TableItem, GridItem, Value "Accounts Receivable.doc")<br />-   Edit "Date modified" (TableItem, GridItem, Value "8/25/2006 3:29 PM")<br />-   Edit "Size" (GridItem, TableItem, Value "11.0 KB)<br />-   DataItem "Accounts Payable.doc" (TableItem, GridItem, SelectionItem, Invoke)<br />-   ...|-   Group "Contoso" (Table, Grid)<br />-   DataItem "Accounts Receivable.doc" (TableItem, GridItem, SelectionItem, Invoke)<br />-   Image "Accounts Receivable.doc"<br />-   Edit "Name" (TableItem, GridItem, Value "Accounts Receivable.doc")<br />-   Edit "Date modified" (TableItem, GridItem, Value "8/25/2006 3:29 PM")<br />-   Edit "Size" (GridItem, TableItem, Value "11.0 KB)<br />-   DataItem "Accounts Payable.doc" (TableItem, GridItem, SelectionItem, Invoke)<br />-   …|  
   
  Si une grille représente une liste d’éléments sélectionnables, les éléments d’interface correspondants peuvent être exposés avec le type de contrôle ListItem au lieu du type de contrôle DataItem. Dans l’exemple précédent, vous pouvez améliorer les éléments DataItem ("Accounts Receivable.doc" et "Accounts Payable.doc") sous Group ("Contoso") en les exposant en tant que types de contrôle ListItem, car ce type prend déjà en charge le modèle de contrôle SelectionItem.  
   

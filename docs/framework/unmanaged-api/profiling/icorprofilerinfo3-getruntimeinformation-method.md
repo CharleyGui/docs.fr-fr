@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7087864d0305f0cdb0b4977f037cf5a7c4dee18d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20556d85655a0a1bbe069a94b99c19c774a13ce6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783139"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449678"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation, méthode
-Fournit des informations de version sur le common language runtime (CLR) qui est en cours de profilage.  
+Provides version information about the common language runtime (CLR) that is being profiled.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,39 +43,39 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>Paramètres  
  `pClrInstanceId`  
- [out] ID représentatif d’une instance CLR en cours d’exécution dans un processus. Ceci est le même que le `ClrInstanceID` que le suivi d’événements pour l’événement de démarrage de Windows (ETW) signale.  
+ [out] The representative ID of a running CLR instance in a process. This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.  
   
  `pRuntimeType`  
- [out] Le type de runtime. Ce paramètre retourne `COR_PRF_DESKTOP_CLR` pour la version de bureau du CLR, ou `COR_PRF_CORE_CLR` pour la version principale du CLR utilisée dans Silverlight.  
+ [out] The runtime type. This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.  
   
  `pMajorVersion`  
- [out] Numéro de version principale du CLR.  
+ [out] The major version number of the CLR.  
   
  `pMinorVersion`  
- [out] Numéro de version mineure du CLR.  
+ [out] The minor version number of the CLR.  
   
  `pBuildVersion`  
- [out] Le numéro de build du CLR.  
+ [out] The build version number of the CLR.  
   
  `pQFEVersion`  
- [out] Le numéro de version du CLR qui est associé à une mise à jour logicielle.  
+ [out] The version number of the CLR that is associated with a software update.  
   
  `cchVersionString`  
- [in] La longueur, en caractères, de la mémoire tampon qui `szVersionString` pointe vers.  
+ [in] The length, in characters, of the buffer that `szVersionString` points to.  
   
  `pcchVersionString`  
- [out] La longueur, en caractères, de `szVersionString`.  
+ [out] The length, in characters, of `szVersionString`.  
   
  `szVersionString`  
- [out] La chaîne de version CLR.  
+ [out] The CLR version string.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez passer null pour n’importe quel paramètre. Toutefois, `pcchVersionString` ne peut pas être null, sauf si `szVersionString` a également la valeur null.  
+ You may pass null for any parameter. However, `pcchVersionString` cannot be null unless `szVersionString` is also null.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -7,27 +7,25 @@ helpviewer_keywords:
 - diagnostics symbol store structures [.NET Framework]
 - structures [.NET Framework debugging]
 ms.assetid: 0d423791-d40d-45c6-a82b-1a165768d737
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2e7bd0fabcd4838990ae8704de4f83e9677dbc08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d58891be89aef0587922daaec1efaf53829501f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599284"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448514"
 ---
 # <a name="diagnostics-symbol-store-structures"></a>Structures du magasin de symboles de diagnostics
-Cette rubrique décrit les structures non managées qui utilise l’API du magasin de symboles de diagnostics.  
+This topic describes the unmanaged structures that the diagnostics symbol store API uses.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [CALL_ID, structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)  
- Fournit des informations à un débogueur sur une fonction qui est appelée.  
+ Provides information to a debugger about a function that is being called.  
   
  [SYMLINEDELTA, structure](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)  
- Fournit des informations pour le Gestionnaire de symboles sur les méthodes qui ont été déplacées à la suite de modifications.  
+ Provides information to the symbol handler about methods that were moved as a result of edits.  
   
  [USER_THREAD, structure](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md)  
- Fournit des informations à un débogueur sur un thread.  
+ Provides information to a debugger about a thread.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  

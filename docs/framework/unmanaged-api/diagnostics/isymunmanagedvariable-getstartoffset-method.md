@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63021fc1-9c2d-4788-811f-fe8ca077206a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3dbe5b4e57f21970b518e4974707175f4bdcf02a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38c4819a375cdd94ee31c2744871c600d8de0b40
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778222"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446004"
 ---
 # <a name="isymunmanagedvariablegetstartoffset-method"></a>ISymUnmanagedVariable::GetStartOffset, méthode
-Obtient l’offset de début de cette variable dans son parent. S’il s’agit d’une variable locale dans une étendue, le décalage de début est compris dans les offsets définis pour la portée.  
+Gets the start offset of this variable within its parent. If this is a local variable within a scope, the start offset will fall within the offsets defined for the scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +34,13 @@ HRESULT GetStartOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `pRetVal`  
- [out] Un pointeur vers un `ULONG32` qui reçoit l’offset de début.  
+ [out] A pointer to a `ULONG32` that receives the start offset.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

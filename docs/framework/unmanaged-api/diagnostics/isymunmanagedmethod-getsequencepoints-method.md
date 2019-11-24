@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f909ac48-3d8f-49fb-a369-e3d9959151cd
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1d8cfde8f0eb14919c12d261c3f9f7209365829c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 75d477af7395a9b7d3328b2a5787f810733f3749
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759447"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448879"
 ---
 # <a name="isymunmanagedmethodgetsequencepoints-method"></a>ISymUnmanagedMethod::GetSequencePoints, méthode
-Obtient tous les points de séquence au sein de cette méthode.  
+Gets all the sequence points within this method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +41,34 @@ HRESULT GetSequencePoints(
   
 ## <a name="parameters"></a>Paramètres  
  `cPoints`  
- [in] Un `ULONG32` qui reçoit la taille de la `offsets`, `documents`, `lines`, `columns`, `endLines`, et `endColumns` tableaux.  
+ [in] A `ULONG32` that receives the size of the `offsets`, `documents`, `lines`, `columns`, `endLines`, and `endColumns` arrays.  
   
  `pcPoints`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la longueur de la mémoire tampon requise pour contenir les points de séquence.  
+ [out] A pointer to a `ULONG32` that receives the length of the buffer required to contain the sequence points.  
   
  `offsets`  
- [in] Tableau dans lequel stocker le Microsoft intermediate language (MSIL) offsets à partir du début de la méthode pour les points de séquence.  
+ [in] An array in which to store the Microsoft intermediate language (MSIL) offsets from the beginning of the method for the sequence points.  
   
  `documents`  
- [in] Tableau dans lequel stocker les documents dans laquelle se trouvent les points de séquence.  
+ [in] An array in which to store the documents in which the sequence points are located.  
   
  `lines`  
- [in] Tableau dans lequel stocker les lignes des documents auxquelles figurent les points de séquence.  
+ [in] An array in which to store the lines in the documents at which the sequence points are located.  
   
  `columns`  
- [in] Tableau dans lequel stocker les colonnes des documents auxquelles figurent les points de séquence.  
+ [in] An array in which to store the columns in the documents at which the sequence points are located.  
   
  `endLines`  
- [in] Tableau de lignes des documents auxquelles la séquence de points de fin.  
+ [in] The array of lines in the documents at which the sequence points end.  
   
  `endColumns`  
- [in] Tableau de colonnes des documents auxquelles la séquence de points de fin.  
+ [in] The array of columns in the documents at which the sequence points end.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb412622-77cc-4abd-a2cd-c910fe8edd54
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 10a000fd98ad12dc39f8f8338485d6bb4093ee07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66643bbb8dbc914b2e0e48a7f0c87630fe95e5d3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782981"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445851"
 ---
 # <a name="icorprofilercallbackobjectallocated-method"></a>ICorProfilerCallback::ObjectAllocated, méthode
-Notifie le profileur de mémoire dans le tas a été allouée pour un objet.  
+Notifies the profiler that memory within the heap has been allocated for an object.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT ObjectAllocated(
   
 ## <a name="parameters"></a>Paramètres  
  `objectId`  
- [in] L’ID de l’objet pour lequel la mémoire a été allouée.  
+ [in] The ID of the object for which memory was allocated.  
   
  `classId`  
- [in] L’ID de la classe dont l’objet est une instance.  
+ [in] The ID of the class of which the object is an instance.  
   
 ## <a name="remarks"></a>Notes  
- Le `ObjectedAllocated` méthode n’est pas appelée pour les allocations de la pile ou de mémoire non managée. Le `classId` paramètre peut faire référence à une classe dans le code managé qui n’a pas encore été chargée. Le profileur reçoit un rappel de chargement de classe pour cette classe immédiatement après le `ObjectAllocated` rappel.  
+ The `ObjectedAllocated` method is not called for allocations from either the stack or unmanaged memory. The `classId` parameter can refer to a class in managed code that has not been loaded yet. The profiler will receive a class load callback for that class immediately after the `ObjectAllocated` callback.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

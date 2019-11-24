@@ -6,17 +6,15 @@ helpviewer_keywords:
 - unmanaged global static functions [.NET Framework], metadata
 - metadata global static functions [.NET Framework]
 ms.assetid: d3bbc8a7-b1c7-494f-b1cc-d71cf2ecb1bc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: daa0db44da10e41f742e99b11fcf8ea046f70f3c
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a76d57bb45e53e461a43f3a9fb3be707782faccc
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490727"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447824"
 ---
 # <a name="metadata-global-static-functions"></a>Fonctions statiques globales des métadonnées
-Commençant par le .NET Framework 4, la documentation relative à la `_Cor*`, `CoInitialize*`, `CoUninitialize*`, et `CoEEShutDownCOM` fonctions relatives à l’hébergement, se trouve dans [déconseillée fonctions d’hébergement CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md). Il n'existe aucune fonction statique globale relative aux métadonnées.  
+Beginning with the .NET Framework 4, the documentation for the `_Cor*`, `CoInitialize*`, `CoUninitialize*`, and `CoEEShutDownCOM` functions, which pertain to hosting, is located in [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md). Il n'existe aucune fonction statique globale relative aux métadonnées.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: efc097fd9b4da668aafce90ce601a3143ea57dc7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 25c208c98802be540bde7532c53798e6f7b35446
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763169"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445952"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler, méthode
 Attache le profileur spécifié au processus spécifié.  
@@ -53,7 +51,7 @@ HRESULT AttachProfiler(
  [in] Chemin d’accès complet au fichier DLL du profileur à charger. Cette chaîne ne doit pas comporter plus de 260 caractères, y compris le terminateur null. Si `wszProfilerPath` est null ou une chaîne vide, le Common Language Runtime (CLR) essaie de trouver l'emplacement du fichier DLL du profileur en recherchant le CLSID dans le Registre vers lequel `pClsidProfiler` pointe.  
   
  `pvClientData`  
- [in] Pointeur vers les données à passer au profileur par la [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) (méthode). Le processus déclencheur peut réutiliser cette mémoire suite au retour d'`AttachProfiler`. Si `pvClientData` a la valeur null, `cbClientData` doit être égal à 0 (zéro).  
+ [in] A pointer to data to be passed to the profiler by the [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method. Le processus déclencheur peut réutiliser cette mémoire suite au retour d'`AttachProfiler`. Si `pvClientData` a la valeur null, `cbClientData` doit être égal à 0 (zéro).  
   
  `cbClientData`  
  [in] Taille, en octets, des données vers lesquelles `pvClientData` pointe.  
@@ -74,17 +72,17 @@ HRESULT AttachProfiler(
 |HRESULT_FROM_WIN32(ERROR_TIMEOUT)|Le délai d'attente a expiré avant le chargement du profileur. Vous pouvez réessayer l'opération d'attachement. L'expiration d'un délai d'attente se produit quand un finaliseur du processus cible s'exécute plus longtemps que la valeur du délai d'attente.|  
 |E_INVALIDARG|Un ou plusieurs paramètres ont des valeurs non valides.|  
 |E_FAIL|Un autre échec non spécifié s'est produit.|  
-|Autres codes d'erreur|Si le profileur [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) méthode retourne un HRESULT qui indique un échec, `AttachProfiler` retourne ce même HRESULT. Dans ce cas, E_NOTIMPL est converti en CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
+|Autres codes d'erreur|If the profiler’s [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method returns an HRESULT that indicates failure, `AttachProfiler` returns that same HRESULT. Dans ce cas, E_NOTIMPL est converti en CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
   
 ## <a name="remarks"></a>Notes  
   
 ## <a name="memory-management"></a>Gestion de la mémoire  
  Conformément aux conventions COM, l'appelant d'`AttachProfiler` (par exemple, le code déclencheur créé par le développeur du profileur) est chargé de l'allocation et de la libération de la mémoire pour les données vers lesquelles le paramètre `pvClientData` pointe. Quand le CLR exécute l'appel `AttachProfiler`, il fait une copie de la mémoire vers laquelle `pvClientData` pointe et la transmet au processus cible. Quand le CLR à l'intérieur du processus cible reçoit sa propre copie du bloc `pvClientData`, il passe le bloc au générateur de profils via la méthode `InitializeForAttach`, puis libère sa copie du bloc `pvClientData` du processus cible.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

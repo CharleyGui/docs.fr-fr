@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8dcd7537-d0c6-498c-8a56-2c060310ef65
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 64971319f592ee097e45cff10ef46b76e8b3b0a5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1bbdfa93913b9fdf8aa164c8ca6c35cd33a228df
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782838"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449924"
 ---
 # <a name="icorprofilercallbackjitcompilationfinished-method"></a>ICorProfilerCallback::JITCompilationFinished, méthode
-Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la compilation d’une fonction.  
+Notifies the profiler that the just-in-time (JIT) compiler has finished compiling a function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +36,20 @@ HRESULT JITCompilationFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] L’ID de la fonction qui a été compilée.  
+ [in] The ID of the function that was compiled.  
   
  `hrStatus`  
- [in] Une valeur indiquant si la compilation a réussi.  
+ [in] A value indicating whether compilation was successful.  
   
  `fIsSafeToBlock`  
- [in] Une valeur qui indique au profileur si un blocage affectera le fonctionnement de l’exécution. La valeur est `true` si le blocage peut entraîner l’exécution pour attendre que le thread appelant retourner à partir de ce rappel ; sinon, `false`.  
+ [in] A value indicating to the profiler whether blocking will affect the operation of the runtime. The value is `true` if blocking may cause the runtime to wait for the calling thread to return from this callback; otherwise, `false`.  
   
- Bien que la valeur `true` ne nuise pas au runtime, elle peut fausser les résultats de profilage.  
+ Although a value of `true` will not harm the runtime, it can skew the profiling results.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

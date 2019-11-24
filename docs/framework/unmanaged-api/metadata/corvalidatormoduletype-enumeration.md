@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 748f1ab2-fbcb-4f55-89ec-8d23d81ebc80
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 04bed418d96658e29328cf2ce6bba445639b437f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a8dc09ee9f0f0fd79060bb86c599ab40a285153b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750757"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448761"
 ---
 # <a name="corvalidatormoduletype-enumeration"></a>CorValidatorModuleType, énumération
-Spécifie le type d’un module.  
+Specifies the type of a module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,20 +43,20 @@ typedef enum
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ValidatorModuleTypeInvalid`|Le module est un type non valide.|  
-|`ValidatorModuleTypeMin`|La valeur minimale de la `CorValidatorModuleType` enum.|  
-|`ValidatorModuleTypePE`|Le module est un fichier exécutable portable (PE).|  
-|`ValidatorModuleTypeObj`|Le module est un fichier .obj.|  
-|`ValidatorModuleTypeEnc`|Le module est une session de débogueur modifier et continuer.|  
-|`ValidatorModuleTypeIncr`|Le module est un qui a été générée de façon incrémentielle.|  
-|`ValidatorModuleTypeMax`|La valeur maximale de la `CorValidatorModuleType` enum.|  
+|`ValidatorModuleTypeInvalid`|The module is an invalid type.|  
+|`ValidatorModuleTypeMin`|The minimum value of the `CorValidatorModuleType` enum.|  
+|`ValidatorModuleTypePE`|The module is a portable executable (PE) file.|  
+|`ValidatorModuleTypeObj`|The module is a .obj file.|  
+|`ValidatorModuleTypeEnc`|The module is an edit-and-continue debugger session.|  
+|`ValidatorModuleTypeIncr`|The module is one that has been incrementally built.|  
+|`ValidatorModuleTypeMax`|The maximum value of the `CorValidatorModuleType` enum.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

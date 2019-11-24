@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3feb4796-2fab-45ce-beca-6f5bc530b971
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e0c72cd6e7dce784064f7653ba35e488061d9fd7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 458faedea418e626a6494ca2afcdbf0e034472e8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773581"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447736"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces, méthode
-Obtient les espaces de noms définis dans une portée globale dans ce magasin de symboles.  
+Gets the namespaces defined at global scope within this symbol store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT GetNamespaces (
   
 ## <a name="parameters"></a>Paramètres  
  `cNameSpaces`  
- [in] La taille du tableau d’espaces de noms.  
+ [in] The size of the namespaces array.  
   
  `pcNameSpaces`  
- [out] Pointeur vers une variable qui reçoit la longueur de la liste de l’espace de noms.  
+ [out] A pointer to a variable that receives the length of the namespace list.  
   
  `namespaces`  
- [out] Pointeur vers une variable qui reçoit la liste de l’espace de noms.  
+ [out] A pointer to a variable that receives the namespace list.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

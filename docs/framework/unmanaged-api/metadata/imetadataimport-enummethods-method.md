@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8cc3b0c3-d97d-4f71-9e7d-ef2a92b4959a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 187a5e673457d2d1eebb60cc1795e9885426c6d3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8e9e08ac903423b2e121f22cc9e43a660ccfac7b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781958"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450087"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods, méthode
 Énumère les jetons MethodDef représentant les méthodes du type spécifié.  
@@ -41,33 +39,33 @@ HRESULT EnumMethods (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `cl`  
- [in] Jeton TypeDef représentant le type dont les méthodes à énumérer.  
+ [in] A TypeDef token representing the type with the methods to enumerate.  
   
  `rMethods`  
- [out] Le tableau pour stocker les jetons MethodDef.  
+ [out] The array to store the MethodDef tokens.  
   
  `cMax`  
- [in] La taille maximale de le MethodDef `rMethods` tableau.  
+ [in] The maximum size of the MethodDef `rMethods` array.  
   
  `pcTokens`  
- [out] Le nombre de jetons MethodDef retournés dans `rMethods`.  
+ [out] The number of MethodDef tokens returned in `rMethods`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethods` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucune jetons MethodDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_OK`|`EnumMethods` returned successfully.|  
+|`S_FALSE`|There are no MethodDef tokens to enumerate. In that case, `pcTokens` is zero.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

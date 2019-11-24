@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 32f3ba58-9695-41e9-ba58-fd19e45ed396
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ce09eca30e1edb9e1afc02216a07955a5fed4fd2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8dae903ab76ab83ac0818c4bc4a76e81094bdf65
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787252"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445666"
 ---
 # <a name="importtypes2-method"></a>ImportTypes2, méthode
-Initialise l’importation de types. Appelez cette méthode pour commencer l’importation de types à partir de chaque étendue importée via la [méthode ImportFile](importfile-method.md).  
+Initiates the import of types. Call this method to begin importing types from each scope imported via [ImportFile Method](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT ImportTypes2(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly dans lequel effectuer l’importation.  
+ ID of assembly into which to import.  
   
  `FileToken`  
- ID du fichier à partir duquel effectuer l’importation.  
+ ID of file to from which to import.  
   
  `dwScope`  
- Étendue de base zéro à partir de laquelle effectuer l’importation.  
+ Zero-based scope from which to import.  
   
  `phEnum`  
- Reçoit un handle d’énumérateur pour les types dans l’étendue donnée.  
+ Receives enumerator handle for the types in the given scope.  
   
  `ppImportScope`  
- Reçoit éventuellement l’interface d' [interface IMetaDataImport2](../metadata/imetadataimport2-interface.md) .  
+ Optionally receives [IMetaDataImport2 Interface](../metadata/imetadataimport2-interface.md) interface.  
   
  `pdwCountOfTypes`  
- Reçoit éventuellement le nombre de types dans l’étendue spécifiée.  
+ Optionally receives count of types in the specified scope.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 

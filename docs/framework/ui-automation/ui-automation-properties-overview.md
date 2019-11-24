@@ -5,16 +5,16 @@ helpviewer_keywords:
 - UI Automation, properties
 - properties, UI Automation
 ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
-ms.openlocfilehash: 59d65601a37c9aba63708748a82fd5e85261b75b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2f96f3c7261882af58cd10038d729c4e723d6fa0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042141"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447955"
 ---
 # <a name="ui-automation-properties-overview"></a>Vue d'ensemble des propriétés UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Les fournisseurs UI Automation exposent des propriétés sur des éléments [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] . Ces propriétés permettent aux applications clientes UI Automation de découvrir des informations sur des parties de l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], en particulier les contrôles (données statiques et dynamiques comprises).  
   
@@ -26,11 +26,11 @@ ms.locfileid: "71042141"
   
 <a name="Property_Identifiers"></a>   
 ## <a name="property-identifiers"></a>Identificateurs de propriété  
- Chaque propriété est identifiée par un numéro et un nom. Les noms de propriétés sont utilisés uniquement pour le débogage et le diagnostic. Les fournisseurs utilisent les ID numériques pour identifier les demandes de propriété entrantes. Les applications clientes, toutefois, utilisent uniquement <xref:System.Windows.Automation.AutomationProperty>, qui encapsule le numéro et le nom, pour identifier les propriétés qu’elles souhaitent récupérer.  
+ Chaque propriété est identifiée par un numéro et un nom. Les noms de propriétés sont utilisés uniquement pour le débogage et le diagnostic. Providers use the numeric IDs to identify incoming property requests. Les applications clientes, toutefois, utilisent uniquement <xref:System.Windows.Automation.AutomationProperty>, qui encapsule le numéro et le nom, pour identifier les propriétés qu’elles souhaitent récupérer.  
   
  Les objets<xref:System.Windows.Automation.AutomationProperty> qui représentent des propriétés particulières sont disponibles sous forme de champs dans différentes classes. Pour des raisons de sécurité, les fournisseurs UI Automation obtiennent ces objets à partir d’un ensemble distinct de classes contenues dans Uiautomationtypes.dll.  
   
- Le tableau suivant classe les propriétés selon les classes qui contiennent les <xref:System.Windows.Automation.AutomationProperty>ID.  
+ The following table categorizes properties by the classes that contain the <xref:System.Windows.Automation.AutomationProperty>IDs.  
   
 |Types de propriétés|Les clients obtiennent les ID par le biais de|Les fournisseurs obtiennent les ID par le biais de|  
 |-------------------------|--------------------------|----------------------------|  
@@ -53,7 +53,7 @@ ms.locfileid: "71042141"
   
 <a name="Properties_by_Category"></a>   
 ## <a name="properties-by-category"></a>Propriétés par catégorie  
- Les tableaux suivants catégorisent les propriétés dont les ID sont trouvés <xref:System.Windows.Automation.AutomationElement> dans <xref:System.Windows.Automation.AutomationElementIdentifiers>et. Ces propriétés sont communes à tous les contrôles. Toutefois, certaines d’entre elles sont susceptibles d’être statiques pendant la durée de vie de l’application fournisseur. Les propriétés les plus dynamiques sont associées à des modèles de contrôle.  
+ The following tables categorize the properties whose IDs are found in <xref:System.Windows.Automation.AutomationElement> and <xref:System.Windows.Automation.AutomationElementIdentifiers>. Ces propriétés sont communes à tous les contrôles. Toutefois, certaines d’entre elles sont susceptibles d’être statiques pendant la durée de vie de l’application fournisseur. Les propriétés les plus dynamiques sont associées à des modèles de contrôle.  
   
  La colonne **Accès à la propriété** répertorie tous les autres accesseurs pour chaque propriété, en plus de <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> et <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Pour plus d’informations sur l’obtention des propriétés d’une application cliente, consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   

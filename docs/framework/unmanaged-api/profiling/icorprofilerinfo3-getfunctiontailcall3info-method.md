@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: afdb5ac9-5bf5-4b91-b7cb-f81db23d7da3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 74f0e6e39f99c9e6981066e6a3171bb9508cf1a5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e7a25fce945504cff0d07f499ae4bb79378e9f3a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782140"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449692"
 ---
 # <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a>ICorProfilerInfo3::GetFunctionTailcall3Info, méthode
-Fournit le frame de pile de la fonction signalée au profileur par la [FunctionTailcall3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) (fonction). Cette méthode peut être appelée uniquement pendant le rappel de `FunctionTailcall3WithInfo`.  
+Provides the stack frame of the function that is being reported to the profiler by the [FunctionTailcall3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) function. Cette méthode peut être appelée uniquement pendant le rappel de `FunctionTailcall3WithInfo`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +36,20 @@ HRESULT GetFunctionTailcall3Info(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] Le `FunctionID` de la fonction qui retourne.  
+ [in] The `FunctionID` of the function that is returning.  
   
  `eltInfo`  
- [in] Handle opaque qui représente des informations sur un frame de pile donné. Le profileur doit fournir les mêmes `eltInfo` qui a été donné au profileur par la `FunctionTailcall3WithInfo` (fonction).  
+ [in] Handle opaque qui représente des informations sur un frame de pile donné. The profiler should provide the same `eltInfo` that was given to the profiler by the `FunctionTailcall3WithInfo` function.  
   
  `pFrameInfo`  
  [out] Handle opaque qui représente des informations génériques sur un frame de pile donné. Ce handle est uniquement valide pendant le rappel `FunctionTailcall3WithInfo` au cours duquel le profileur a appelé la méthode `GetFunctionTailcall3Info`.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

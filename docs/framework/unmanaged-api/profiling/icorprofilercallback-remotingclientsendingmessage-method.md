@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 54d9a5a5-3877-49c1-a503-ce7c7943bc2a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4729a8d3ac2c6f7ec51a032a07ebfd1c2838cb9a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae9cb089ad6c0b0422063d3db413b97eb6ff1405
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782909"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445802"
 ---
 # <a name="icorprofilercallbackremotingclientsendingmessage-method"></a>ICorProfilerCallback::RemotingClientSendingMessage, méthode
-Notifie le profileur que le client envoie une demande au serveur.  
+Notifies the profiler that the client is sending a request to the server.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +35,23 @@ HRESULT RemotingClientSendingMessage(
   
 ## <a name="parameters"></a>Paramètres  
  `pCookie`  
- [in] Une valeur qui correspond à la valeur fournie dans [ICorProfilerCallback::RemotingServerReceivingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserverreceivingmessage-method.md) dans ces conditions :  
+ [in] A value that corresponds with the value provided in [ICorProfilerCallback::RemotingServerReceivingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserverreceivingmessage-method.md) under these conditions:  
   
-- Les cookies GUID de communication à distance sont actifs.  
+- Remoting GUID cookies are active.  
   
-- Le canal réussit à transmettre le message.  
+- The channel succeeds in transmitting the message.  
   
-- Les cookies GUID sont actifs sur le processus côté serveur.  
+- GUID cookies are active on the server-side process.  
   
- Cela permet un appariement simple d’appels de communication à distance et de la création d’une pile d’appel logique.  
+ This allows easy pairing of remoting calls and the creation of a logical call stack.  
   
  `fIsAsync`  
- [in] Une valeur qui est `true` si l’appel est asynchrone ; sinon, `false`.  
+ [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

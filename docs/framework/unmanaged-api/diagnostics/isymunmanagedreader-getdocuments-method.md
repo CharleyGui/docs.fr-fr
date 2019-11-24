@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e3b73a3f-d089-4101-a9a9-5e0765d05b61
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7fad7fae41fed70d996fcaaa7a7cdf69403b6094
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c26c0a5f8c597613266e2e6d1998edfca8f17b82
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763354"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448330"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments, méthode
-Retourne un tableau de tous les documents définis dans le magasin de symboles.  
+Returns an array of all the documents defined in the symbol store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,16 +40,16 @@ HRESULT GetDocuments (
  [in] Taille du tableau `pDocs`.  
   
  `pcDocs`  
- [out] Pointeur vers une variable qui reçoit la longueur du tableau.  
+ [out] A pointer to a variable that receives the array length.  
   
  `pDocs`  
- [out] Pointeur vers une variable qui reçoit le tableau de documents.  
+ [out] A pointer to a variable that receives the document array.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: 9c0b5a07277de6e87e2692ebb7c4f73c03702801
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ba3d5209571019f8ac38702939332fd953307202
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424969"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447999"
 ---
 # <a name="framework-libraries"></a>Bibliothèques de framework
 
@@ -33,7 +33,7 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 * <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) : Type décimal 128 bits.
 * <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) : Entier non signé 8 bits qui représente un octet de mémoire.
 * <xref:System.Boolean?displayProperty=nameWithType>([bool](../csharp/language-reference/keywords/bool.md)) : Type booléen qui représente `true` ou `false`.
-* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)) : Type numérique 16 bits qui représente un caractère Unicode.
+* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/builtin-types/char.md)) : Type numérique 16 bits qui représente un caractère Unicode.
 * <xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) : Représente une série de caractères. Différent de `char[]`, mais permet l’indexation dans chaque `char` individuel de `string`.
 
 ## <a name="data-structures"></a>Structures de données

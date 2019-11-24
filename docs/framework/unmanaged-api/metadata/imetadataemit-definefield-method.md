@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 057bae1d702fa091ebc3d3178c9fba35d5dd3d90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40f24a4ea628ce92a27ab1bfe97fc87a57dfa4f0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777656"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432547"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField, méthode
-Crée une définition pour un champ avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition de champ.  
+Creates a definition for a field with the specified metadata signature, and gets a token to that field definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,38 +43,38 @@ HRESULT DefineField (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le `mdTypeDef` jeton pour l’interface ou la classe englobante.  
+ [in] The `mdTypeDef` token for the enclosing class or interface.  
   
  `szName`  
- [in] Le nom du champ au format Unicode.  
+ [in] The field name in Unicode.  
   
  `dwFieldFlags`  
- [in] Les attributs de champ. Il s’agit d’un masque de bits de `CorFieldAttr` valeurs.  
+ [in] The field attributes. This is a bitmask of `CorFieldAttr` values.  
   
  `pvSigBlob`  
- [in] La signature de champ comme un objet BLOB.  
+ [in] The field signature as a BLOB.  
   
  `cbSigBlob`  
- [in] Le nombre d’octets dans `pvSigBlob`.  
+ [in] The count of bytes in `pvSigBlob`.  
   
  `dwCPlusTypeFlag`  
- [in] Le `ELEMENT_TYPE_` *\** pour la valeur de constante. Il s’agit d’un `CorElementType` valeur. Si vous ne définissez pas une valeur constante pour le champ, utilisez `ELEMENT_TYPE_END`.  
+ [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If not defining a constant value for the field, use `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] La valeur de constante pour le champ.  
+ [in] The constant value for the field.  
   
  `cchValue`  
- [in] La taille en caractères (Unicode) de `pValue`.  
+ [in] The size in (Unicode) characters of `pValue`.  
   
  `pmd`  
- [out] Le `mdFieldDef` jeton attribué.  
+ [out] The `mdFieldDef` token assigned.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

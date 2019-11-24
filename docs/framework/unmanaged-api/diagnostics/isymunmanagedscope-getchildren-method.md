@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0bed524e-cc48-4bf0-b9fa-25d665e63ddb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ffc4d5a1e6b8f1acc7603e9c2e01216e3188989e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c7e9d2fe94c33127d8b105333ad6dac9d6cc5af6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751309"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446373"
 ---
 # <a name="isymunmanagedscopegetchildren-method"></a>ISymUnmanagedScope::GetChildren, méthode
-Obtient les enfants de cette étendue.  
+Gets the children of this scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetChildren(
   
 ## <a name="parameters"></a>Paramètres  
  `cChildren`  
- [in] Un `ULONG32` qui indique la taille de la `children` tableau.  
+ [in] A `ULONG32` that indicates the size of the `children` array.  
   
  `pcChildren`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les enfants.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the children.  
   
  `children`  
- [out] Le tableau retourné d’enfants.  
+ [out] The returned array of children.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

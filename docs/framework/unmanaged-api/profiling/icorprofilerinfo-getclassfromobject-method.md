@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b97493fb-713e-49d5-a73e-5688b2ad0700
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 57f57d67c4f7641495feca0b9c128e6ccf456cab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 460162f0fbc9993635d1bce0c5b130358ced4fa7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780207"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448151"
 ---
 # <a name="icorprofilerinfogetclassfromobject-method"></a>ICorProfilerInfo::GetClassFromObject, méthode
-Obtient le `ClassID` d’un objet, étant donné son `ObjectID`.  
+Gets the `ClassID` of an object, given its `ObjectID`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetClassFromObject(
   
 ## <a name="parameters"></a>Paramètres  
  `objectId`  
- [in] L’ID de l’objet pour lequel obtenir le `ClassID`.  
+ [in] The ID of the object for which to get the `ClassID`.  
   
  `pClassId`  
- [out] Un pointeur vers le texte retourné `ClassID`.  
+ [out] A pointer to the returned `ClassID`.  
   
 ## <a name="remarks"></a>Notes  
- Une valeur null `pClassId` indique que `objectId` a un type qui est déchargement.  
+ A null `pClassId` indicates that `objectId` has a type that is unloading.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b9b4bf2f-1098-43d6-9619-a99b4bda1940
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8ac12d5b6bc2911e3bd879285a9a12f65c426f0d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fd362beb9f8fd7a1f2076eb6490a96c0358520e4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745855"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432153"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map, méthode
-Mappe une relation entre les assemblys à l’aide de signatures de métadonnées.  
+Maps a relationship between the assemblies using metadata signatures.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +36,20 @@ HRESULT Map (
   
 ## <a name="parameters"></a>Paramètres  
  `tkImp`  
- [in] Le jeton de métadonnées qui représente l’objet de code importé.  
+ [in] The metadata token that represents the imported code object.  
   
  `tkEmit`  
- [in] Le jeton de métadonnées qui représente l’objet de code émis.  
+ [in] The metadata token that represents the emitted code object.  
   
 ## <a name="remarks"></a>Notes  
- Lorsque le jeton remapper se produit pendant une fusion, le jeton d’origine est étendu dans la portée de métadonnées importées (source) et le nouveau jeton est limité dans la portée de métadonnées émise (cible).  
+ When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

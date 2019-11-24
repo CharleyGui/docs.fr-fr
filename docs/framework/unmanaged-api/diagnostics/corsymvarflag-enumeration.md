@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: c3f7d307-4047-4f9a-be8c-f152fca42fd0
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5b387ee7fd4cc0088c90d2b8278fbf18bb36f51
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86cac53508665c3c97caaa415d8d3c38660928bb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755682"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448549"
 ---
 # <a name="corsymvarflag-enumeration"></a>CorSymVarFlag, énumération
-Indique si une variable est générée par le compilateur.  
+Indicates whether a variable is compiler-generated.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +37,10 @@ typedef enum CorSymVarFlag
   
 |Membre|Description|  
 |------------|-----------------|  
-|`VAR_IS_COMP_GEN`|Indique que la variable donnée est généré par le compilateur.|  
+|`VAR_IS_COMP_GEN`|Indicates that the given variable is compiler-generated.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

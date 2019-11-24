@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 55989fa9-ab43-4f08-8eb6-2eb56fa7ca76
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0ae4ddd07a2a3d3ab9b5d024eceb43329db96915
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 36c99477e9faead5e24799d5b0ae8901f1dd13c9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448708"
 ---
 # <a name="exporttypeforwarder-method"></a>ExportTypeForwarder, méthode
-Ajoute un redirecteur de type à la table de types de l’assembly donné.  
+Adds a type forwarder to the type table of the given assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT ExportTypeForwarder(
   
 ## <a name="parameters"></a>Paramètres  
  `tkAssemblyRef`  
- Référence à l’assembly auquel le redirecteur de type fait référence.  
+ Reference to the assembly to which the type forwarder refers.  
   
  `pszTypename`  
- Nom de type qualifié complet à exporter.  
+ Fully qualified type name to export.  
   
  `dwFlags`  
- `ComType`indicateurs tels que `tdPublic` ou `tdNested`. Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` flags such as `tdPublic` or `tdNested`. This value may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Reçoit le jeton du type exporté. Cela est nécessaire uniquement pour l’émission de types imbriqués.  
+ Receives the token of the exported type. This is necessary only for emitting nested types.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 

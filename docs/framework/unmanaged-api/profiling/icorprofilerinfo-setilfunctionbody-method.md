@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b159c712-00f4-4fc7-a990-40bf9f642e8f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: abe0a0fc177c9ec89f4621e7defb5330c911034b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da81bd3e255898543c94d4ac64c6afbf39b6bdba
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778617"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449884"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody, méthode
-Remplace le corps de la fonction spécifiée dans le module spécifié.  
+Replaces the body of the specified function in the specified module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +36,25 @@ HRESULT SetILFunctionBody(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] L’ID du module dans lequel la fonction réside.  
+ [in] The ID of the module in which the function resides.  
   
  `methodid`  
- [in] Le jeton de la fonction pour laquelle remplacer le corps.  
+ [in] The token of the function for which to replace the body.  
   
  `pbNewILMethodHeader`  
- [in] Le nouvel en-tête pour la fonction.  
+ [in] The new header for the function.  
   
 ## <a name="remarks"></a>Notes  
- Le `SetILFunctionBody` méthode remplace l’adresse virtuelle relative de la fonction dans les métadonnées afin qu’il pointe vers le nouveau corps de fonction et ajuste les structures de données internes en fonction des besoins.  
+ The `SetILFunctionBody` method replaces the relative virtual address of the function in the metadata so that it points to the new function body, and adjusts any internal data structures as required.  
   
- Le `SetILFunctionBody` méthode peut être appelée uniquement sur les fonctions qui n’ont jamais été compilées par un compilateur juste-à-temps (JIT).  
+ The `SetILFunctionBody` method can be called on only those functions that have never been compiled by a just-in-time (JIT) compiler.  
   
- Utilisez le [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) méthode pour allouer de l’espace pour la nouvelle méthode pour vous assurer que la mémoire tampon est compatible.  
+ Use the [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) method to allocate space for the new method to ensure that the buffer is compatible.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

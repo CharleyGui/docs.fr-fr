@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: a9608861-ae64-4467-8a73-be05ad34beac
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 85f3ec6c2e0e452d3410437a7ec7cd45eb38cd5a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ee44c89ec30edcb6233081f0757fa0f7b7191178
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779850"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449647"
 ---
 # <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a>ICorProfilerInfo3::GetThreadStaticAddress2, méthode
 Obtient l'adresse du champ statique de thread spécifié qui est dans l'étendue du thread et du domaine d'application spécifiés.  
@@ -40,35 +38,35 @@ HRESULT GetThreadStaticAddress2(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] ID de la classe qui contient le champ thread-static demandé.  
+ [in] The ID of the class that contains the requested thread-static field.  
   
  `fieldToken`  
- [in] Le jeton de métadonnées pour le champ statique de thread demandé.  
+ [in] The metadata token for the requested thread-static field.  
   
  `appDomainId`  
  [in] ID du domaine d'application.  
   
  `threadId`  
- [in] L’ID du thread qui est la portée pour le champ statique demandé.  
+ [in] The ID of the thread that is the scope for the requested static field.  
   
  `ppAddress`  
- [out] Pointeur vers l’adresse du champ statique qui se trouve dans le thread spécifié.  
+ [out] A pointer to the address of the static field that is within the specified thread.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetThreadStaticAddress2` méthode peut retourner l’une des opérations suivantes :  
+ The `GetThreadStaticAddress2` method may return one of the following:  
   
-- Un HRESULT CORPROF_E_DATAINCOMPLETE si le champ statique donné n’a pas été assigné une adresse dans le contexte spécifié.  
+- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
   
-- Les adresses des objets qui peuvent être dans le tas de garbage collection. Ces adresses peuvent devenir non valides après le garbage collection, donc après le garbage collection, les profileurs ne doivent pas supposer qu’ils sont valides.  
+- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.  
   
- Avant la fin de constructeur de classe d’une classe, `GetThreadStaticAddress2` retournera CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains des champs statiques peuvent déjà être initialisés et utiliser des objets de garbage collection racine.  
+ Before a class’s class constructor is completed, `GetThreadStaticAddress2` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
   
- Le [ICorProfilerInfo2::GetThreadStaticAddress](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) méthode est similaire à la `GetThreadStaticAddress2` (méthode), mais n’accepte ne pas d’argument de domaine d’application.  
+ The [ICorProfilerInfo2::GetThreadStaticAddress](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) method is similar to the `GetThreadStaticAddress2` method, but does not accept an application domain argument.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

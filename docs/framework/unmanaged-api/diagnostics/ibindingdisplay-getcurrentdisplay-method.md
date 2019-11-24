@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d28eeea4-c4e0-40d4-91de-198d98cfa13c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d075aeeb904469613999829a1444511d069b9918
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9294dbf1caddd4b607185de54efd2b4764e6ca35
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775979"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448507"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay, méthode
-Retourne les informations d’affichage de liaison actuel.  
+Returns the current binding display information.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT GetCurrentDisplay (
   
 ## <a name="parameters"></a>Paramètres  
  `display`  
- [out, retval] Un pointeur vers un safearray qui contient les informations d’affichage de liaison.  
+ [out, retval] A pointer to a safearray containing the binding display information.  
   
 ## <a name="remarks"></a>Notes  
- Le [IBindingDisplay::InitializeForProcess](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) méthode doit avoir préalablement réussi et le programme doit être arrêté par un débogueur.  
+ The [IBindingDisplay::InitializeForProcess](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) method must have previously succeeded, and the program must be stopped by a debugger.  
   
- L’appelant doit libérer retourné `SAFEARRAY` mémoire à l’aide de [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
+ The caller must deallocate the returned `SAFEARRAY` memory by using [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** BindingDisplay.h  
+ **Header:** BindingDisplay.h  
   
- **Bibliothèque :** BindingDisplay.idl  
+ **Library:** BindingDisplay.idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

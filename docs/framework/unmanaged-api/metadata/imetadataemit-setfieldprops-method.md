@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1ccafea78aa2497c52442a10ad1af1c05771df7e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: efc627619d9abf9cfa6010e1c0ca709989b9cad3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737104"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445464"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps, méthode
-Définit ou met à jour la valeur par défaut pour le champ référencé par le jeton de champ spécifié.  
+Sets or updates the default value for the field referenced by the specified field token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Paramètres  
  `fd`  
- [in] Le jeton pour le champ cible.  
+ [in] The token for the target field.  
   
  `dwFieldFlags`  
- [in] Attributs de champ. Il s’agit d’un masque de bits de `CorFieldAttr` valeurs.  
+ [in] Field attributes. This is a bitmask of `CorFieldAttr` values.  
   
  `dwCPlusTypeFlag`  
- [in] Le `ELEMENT_TYPE_` *\** pour la valeur de constante. Il s’agit d’un `CorElementType` valeur. Si une constante n’est pas définie, définissez cette valeur sur `ELEMENT_TYPE_END`.  
+ [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If a constant is not being defined, set this value to `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] La valeur de constante pour le champ.  
+ [in] The constant value for the field.  
   
  `cchValue`  
- [in] La taille, en caractères Unicode, de `pValue`.  
+ [in] The size, in Unicode characters, of `pValue`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
