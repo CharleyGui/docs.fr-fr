@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2fc6c715-646f-41fd-9c12-c59b40575269
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7b8a8c3dbfb7b9949811025846484ab233ed3741
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cf399d0c7dec7528f02988ddfe6ca5c0b1f0c4c3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776623"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440984"
 ---
 # <a name="inotifyconnection2unregisternotifysource-method"></a>INotifyConnection2::UnregisterNotifySource, méthode
-Supprime un objet de source de notification spécifié à partir de la connexion.  
+Supprime de la connexion un objet source de notification spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +36,13 @@ HRESULT UnregisterNotifySource
   
 ## <a name="parameters"></a>Paramètres  
  `in_pNotifySource`  
- [in] Objet de notification doit être annulée.  
+ dans Objet de notification dont l’inscription doit être annulée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit.  
+ S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** ProtocolNotify2.idl  
+ **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 

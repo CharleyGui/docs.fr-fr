@@ -9,16 +9,16 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-ms.openlocfilehash: d342e4382cfe227e477ab87c2ca428834010768e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5f9362814eb671a6d7a111cadb96be6d06f5cb3d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042162"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441492"
 ---
 # <a name="ui-automation-events-overview"></a>Vue d'ensemble des événements UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  La notification d'événements[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] est une fonctionnalité clé pour les technologies d'assistance comme les lecteurs d'écran et les loupes. Ces clients UI Automation suivent les événements déclenchés par les fournisseurs UI Automation quand quelque chose se produit dans [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] et utilisent les informations pour avertir les utilisateurs finaux.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71042162"
   
  Les valeurs possibles pour <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> figurent dans le tableau ci-dessous, ainsi que le type utilisé pour les arguments d'événement. Notez que les identificateurs utilisés par les clients et les fournisseurs sont des champs de même nom issus de classes différentes.  
   
-|Identifiant du client|Identifiant du fournisseur|Type d'arguments d'événement|  
+|Identificateur client|Identifiant du fournisseur|Type d'arguments d'événement|  
 |-----------------------|-------------------------|--------------------------|  
 |<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AsyncContentLoadedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|  
 |<xref:System.Windows.Automation.SelectionItemPattern.ElementAddedToSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementRemovedFromSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionPattern.InvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.InvokePattern.InvokedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.LayoutInvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPattern.TextChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPattern.TextSelectionChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.WindowPatternIdentifiers.WindowOpenedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationEventArgs>|  
@@ -66,7 +66,7 @@ ms.locfileid: "71042162"
 ## <a name="ui-automation-event-arguments"></a>Arguments d'événement UI Automation  
  Les classes suivantes encapsulent des arguments d'événement.  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|Contient des informations concernant le chargement asynchrone de contenu, notamment le pourcentage de chargement effectué.|  
 |<xref:System.Windows.Automation.AutomationEventArgs>|Contient des informations sur un événement simple qui ne nécessite pas de données supplémentaires.|  
@@ -83,6 +83,6 @@ ms.locfileid: "71042162"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)
+- [UI Automation Events for Clients](ui-automation-events-for-clients.md)
 - [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)
 - [S’abonner à des événements UI Automation](subscribe-to-ui-automation-events.md)

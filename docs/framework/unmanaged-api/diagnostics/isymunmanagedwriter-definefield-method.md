@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6a1f797-dbf4-40f5-ab99-d9b4bfb26148
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 37794d40b4b379c5d3a05935cf1f2b7b3da11baa
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7eea63cae27c08260177dfc7746046b975434611
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777365"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428039"
 ---
 # <a name="isymunmanagedwriterdefinefield-method"></a>ISymUnmanagedWriter::DefineField, méthode
-Définit une variable unique qui n’est pas dans une méthode. Cette méthode est utilisée pour certains champs dans les classes, les champs de bits et ainsi de suite.  
+Définit une variable unique qui ne se trouve pas dans une méthode. Cette méthode est utilisée pour certains champs dans les classes, les champs de bits, etc.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +42,37 @@ HRESULT DefineField(
   
 ## <a name="parameters"></a>Paramètres  
  `parent`  
- [in] Le type de métadonnées ou la méthode jeton.  
+ dans Le type de métadonnées ou le jeton de méthode.  
   
  `name`  
- [in] Le nom du champ.  
+ dans Nom du champ.  
   
  `attributes`  
- [in] Les attributs de champ.  
+ dans Attributs du champ.  
   
  `cSig`  
- [in] Un `ULONG32` qui est la taille, en caractères, de la mémoire tampon requise pour contenir la signature de champ.  
+ dans `ULONG32` qui correspond à la taille, en caractères, de la mémoire tampon requise pour contenir la signature de champ.  
   
  `signature`  
- [in] Le tableau de signatures de champ.  
+ dans Tableau de signatures de champs.  
   
  `addrKind`  
- [in] Le type d’adresse.  
+ dans Type d’adresse.  
   
  `addr1`  
- [in] La première adresse de la spécification de champ.  
+ dans Première adresse de la spécification de champ.  
   
  `addr2`  
- [in] La deuxième adresse de la spécification de champ.  
+ dans Deuxième adresse de la spécification de champ.  
   
  `addr3`  
- [in] Troisième adresse de la spécification de champ.  
+ dans Troisième adresse de la spécification de champ.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

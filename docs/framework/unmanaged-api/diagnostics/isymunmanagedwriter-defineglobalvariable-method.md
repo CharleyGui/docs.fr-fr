@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 843c904a-8176-4d8f-bd47-b4d4c29f4c5c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5bc14c36563badb73ac9f9d955ea0c00f5330b4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94d1aa5bba87e8ca11b58bdf89a697e1ccf500b1
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777351"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428023"
 ---
 # <a name="isymunmanagedwriterdefineglobalvariable-method"></a>ISymUnmanagedWriter::DefineGlobalVariable, méthode
 Définit une variable globale unique.  
@@ -43,34 +41,34 @@ HRESULT DefineGlobalVariable(
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- [in] Un pointeur vers un `WCHAR` qui définit le nom de variable global.  
+ dans Pointeur vers un `WCHAR` qui définit le nom de la variable globale.  
   
  `attributes`  
- [in] Attributs de la variable globale.  
+ dans Attributs de la variable globale.  
   
  `cSig`  
- [in] Un `ULONG32` qui indique la taille, en caractères, de la `signature` mémoire tampon.  
+ dans `ULONG32` qui indique la taille, en caractères, de la mémoire tampon de `signature`.  
   
  `signature`  
- [in] La signature de variable globale.  
+ dans Signature de la variable globale.  
   
  `addrKind`  
- [in] Le type d’adresse.  
+ dans Type d’adresse.  
   
  `addr1`  
- [in] La première adresse de la spécification de paramètre.  
+ dans Première adresse de la spécification de paramètre.  
   
  `addr2`  
- [in] La deuxième adresse de la spécification de paramètre.  
+ dans Deuxième adresse de la spécification de paramètre.  
   
  `addr3`  
- [in] Troisième adresse de la spécification de paramètre.  
+ dans Troisième adresse de la spécification de paramètre.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7b0e9b10-8cef-4ba6-8432-40bf63e65ab1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 574ac706a07e7fcd701ab04f923d5171bea6f64a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 462512fd2c2b33905b45bb67599b23b301fc71f7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782388"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437994"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps, méthode
 Obtient les métadonnées associées au champ référencé par le jeton FieldDef spécifié.  
@@ -47,44 +45,44 @@ HRESULT GetFieldProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- [in] Jeton FieldDef qui représente le champ pour obtenir les métadonnées associées.  
+ dans Jeton FieldDef qui représente le champ pour lequel obtenir les métadonnées associées.  
   
  `pClass`  
- [out] Pointeur vers un jeton TypeDef qui représente le type de la classe à laquelle appartient le champ.  
+ à Pointeur vers un jeton TypeDef qui représente le type de la classe à laquelle le champ appartient.  
   
  `szField`  
- [out] Le nom du champ.  
+ à Nom du champ.  
   
  `cchField`  
- [in] La taille en caractères larges de la mémoire tampon pour *szField*.  
+ dans Taille en caractères larges de la mémoire tampon pour *szField*.  
   
  `pchField`  
- [out] La taille réelle de la mémoire tampon retournée.  
+ à Taille réelle de la mémoire tampon retournée.  
   
  `pdwAttr`  
- [out] Indicateurs associés aux métadonnées du champ.  
+ à Indicateurs associés aux métadonnées du champ.  
   
  `ppvSigBlob`  
- [in] Pointeur vers la valeur de métadonnées binaires qui décrit le champ.  
+ dans Pointeur vers la valeur de métadonnées binaires qui décrit le champ.  
   
  `pcbSigBlob`  
- [out] La taille en octets de `ppvSigBlob`.  
+ à Taille en octets de `ppvSigBlob`.  
   
  `pdwCPlusTypeFlag`  
- [out] Un indicateur qui spécifie le type de valeur du champ.  
+ à Indicateur qui spécifie le type de valeur du champ.  
   
  `ppValue`  
- [out] Une valeur constante pour le champ.  
+ à Valeur constante pour le champ.  
   
  `pcchValue`  
- [out] La taille en caractères de `ppValue`, ou zéro si aucune chaîne n’existe.  
+ à Taille en caractères de `ppValue`, ou zéro si aucune chaîne n’existe.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

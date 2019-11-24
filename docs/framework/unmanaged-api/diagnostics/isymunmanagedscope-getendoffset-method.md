@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1d0b15c9-8059-435f-9fce-346a08b9bd36
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4b99825a210a7a0f1253a01485a61bdbfeacf160
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 25a8188e3ab62c095355b72b3e63e767a6768114
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751291"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446357"
 ---
 # <a name="isymunmanagedscopegetendoffset-method"></a>ISymUnmanagedScope::GetEndOffset, méthode
-Obtient l’offset de fin pour cette étendue.  
+Obtient l’offset de fin pour cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +34,13 @@ HRESULT GetEndOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `pRetVal`  
- [out] Un pointeur vers un `ULONG32` qui reçoit l’offset de fin.  
+ à Pointeur vers un `ULONG32` qui reçoit le décalage de fin.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

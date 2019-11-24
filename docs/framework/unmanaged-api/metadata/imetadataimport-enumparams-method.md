@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 52118dc9-fe6e-4b39-aa48-c3cc3ea4214d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d64a39dcdb6e3b26ff38106673719e475315f5dc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e5fa3647c86d97730e7ad6a2576dd34af75251d6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782109"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433961"
 ---
 # <a name="imetadataimportenumparams-method"></a>IMetaDataImport::EnumParams, méthode
 Énumère les jetons ParamDef représentant les paramètres de la méthode référencée par le jeton MethodDef spécifié.  
@@ -41,33 +39,33 @@ HRESULT EnumParams (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `mb`  
- [in] Jeton MethodDef représentant la méthode avec les paramètres à énumérer.  
+ dans Jeton MethodDef représentant la méthode avec les paramètres à énumérer.  
   
  `rParams`  
- [out] Tableau utilisé pour stocker les jetons ParamDef.  
+ à Tableau utilisé pour stocker les jetons ParamDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rParams`.  
   
  `pcTokens`  
- [out] Le nombre de jetons ParamDef retournés dans `rParams`.  
+ à Nombre de jetons ParamDef retournés dans `rParams`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumParams` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

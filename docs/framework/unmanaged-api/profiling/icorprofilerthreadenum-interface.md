@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1e35031b-e095-4c14-9644-8deeb3081e0b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 47359cd71460732100364f07e0dc5efacc44c760
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b83706176091fd70d48e0f50a0fe5988c876f606
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61597437"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447619"
 ---
 # <a name="icorprofilerthreadenum-interface"></a>ICorProfilerThreadEnum, interface
 Fournit des méthodes pour itérer séquentiellement une collection de threads dans le Common Language Runtime.  
@@ -42,7 +40,7 @@ Fournit des méthodes pour itérer séquentiellement une collection de threads d
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

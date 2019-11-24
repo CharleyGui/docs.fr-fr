@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cf2a1bca6115902d96f72c19dc469d0a1c8588cd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 79a9e4513a98a29edc11cc76c599f03c9c3a72b4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756214"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450111"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags, énumération
-Fournit des valeurs d’indicateur utilisées pour l’inscription lors de l’installation d’un module ou une image composite.  
+Fournit des valeurs d’indicateur utilisées pour l’inscription lors de l’installation d’un module ou d’une image composite.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,16 +39,16 @@ typedef enum
   
 |Membre|Description|  
 |------------|-----------------|  
-|`regNoCopy`|Spécifie que les fichiers ne doivent pas être copiées dans la destination.|  
+|`regNoCopy`|Spécifie que les fichiers ne doivent pas être copiés dans la destination.|  
 |`regConfig`|Spécifie que le module ou composite est une configuration.|  
-|`regHasRefs`|Spécifie que le module ou composite a des références de classe.|  
+|`regHasRefs`|Spécifie que le module ou le composite a des références de classe.|  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

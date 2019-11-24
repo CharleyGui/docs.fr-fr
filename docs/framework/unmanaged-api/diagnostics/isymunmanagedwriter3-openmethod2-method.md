@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2e686e332cf1d35537e5d4306a3a9cbf9d46c47e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3a628aec0823c5db07d31d33813a020606906163
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752368"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438124"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2, méthode
-Ouvre une méthode et fournit son décalage de la section réel dans l’image.  
+Ouvre une méthode et fournit son décalage de section réel dans l’image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT OpenMethod2(
   
 ## <a name="parameters"></a>Paramètres  
  `method`  
- [in] Le jeton de métadonnées pour la méthode à ouvrir.  
+ dans Jeton de métadonnées de la méthode à ouvrir.  
   
  `isect`  
- [in] Le décalage de la section dans l’image.  
+ dans Décalage de la section dans l’image.  
   
  `offset`  
- [in] Le décalage de l’image.  
+ dans Décalage dans l’image.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

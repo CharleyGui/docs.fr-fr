@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1ccda329-d752-4d89-abe8-511af3c3f4c9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0d446e2b78f41d43aa70f429e23f1f4be22fd799
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 59512cc1c1b280d7fe6deb2f9d721ad53547e356
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782507"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437957"
 ---
 # <a name="imetadataimportfindmemberref-method"></a>IMetaDataImport::FindMemberRef, méthode
-Obtient un pointeur vers le jeton MemberRef pour le membre de référence qui est délimitée par spécifié <xref:System.Type> et qui a la signature de nom et de métadonnées spécifiée.  
+Obtient un pointeur vers le jeton MemberRef pour la référence de membre qui est incluse dans la <xref:System.Type> spécifiée et qui a le nom et la signature de métadonnées spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +39,33 @@ HRESULT FindMemberRef (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le jeton TypeRef pour la classe ou interface qui englobe la référence de membre à rechercher. Si cette valeur est `mdTokenNil`, la recherche est effectuée pour une variable globale ou une référence de fonction globale.  
+ dans Jeton TypeRef pour la classe ou l’interface qui englobe la référence de membre à rechercher. Si cette valeur est `mdTokenNil`, la recherche est effectuée pour une variable globale ou une référence de fonction globale.  
   
  `szName`  
- [in] Le nom de la référence de membre à rechercher.  
+ dans Nom de la référence de membre à rechercher.  
   
  `pvSigBlob`  
- [in] Pointeur vers la signature de métadonnées binaires de la référence de membre.  
+ dans Pointeur vers la signature de métadonnées binaires de la référence de membre.  
   
  `cbSigBlob`  
- [in] La taille en octets de `pvSigBlob`.  
+ dans Taille en octets de `pvSigBlob`.  
   
  `pmr`  
- [out] Pointeur vers le jeton MemberRef correspondant.  
+ à Pointeur vers le jeton MemberRef correspondant.  
   
 ## <a name="remarks"></a>Notes  
- Vous spécifiez le membre à l’aide de son interface ou la classe englobante (`td`), son nom (`szName`) et éventuellement sa signature (`pvSigBlob`).  
+ Vous spécifiez le membre à l’aide de l’interface ou de la classe englobante (`td`), son nom (`szName`) et éventuellement sa signature (`pvSigBlob`).  
   
- La signature est passé à `FindMemberRef` doit avoir été générée dans la portée actuelle, car les signatures sont liées à une étendue spécifique. Une signature peut incorporer un jeton qui identifie le type de valeur ou de la classe englobant. Le jeton est un index dans la table TypeDef local. Vous ne pouvez pas générer une signature d’exécution en dehors du contexte de la portée actuelle et utiliser cette signature comme entrée dans `FindMemberRef`.  
+ La signature transmise à `FindMemberRef` doit avoir été générée dans l’étendue actuelle, car les signatures sont liées à une portée particulière. Une signature peut incorporer un jeton qui identifie la classe englobante ou le type valeur. Le jeton est un index dans la table TypeDef locale. Vous ne pouvez pas générer de signature au moment de l’exécution en dehors du contexte de l’étendue actuelle et utiliser cette signature comme entrée pour `FindMemberRef`.  
   
- `FindMemberRef` recherche uniquement les références de membre ont été définis directement dans la classe ou interface ; Il ne trouve pas de références de membre hérité.  
+ `FindMemberRef` recherche uniquement les références de membre qui ont été définies directement dans la classe ou l’interface ; il ne trouve pas les références de membre héritées.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

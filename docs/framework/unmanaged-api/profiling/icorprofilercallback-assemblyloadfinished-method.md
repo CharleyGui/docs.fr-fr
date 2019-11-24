@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 86d98f39-52e6-4c61-a625-9760f695ff12
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 174e71fca8c59dbd4842d0fc0b84bb9a3d7b10df
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 33b72c8d089e5b335069fe465987086dfa1243bc
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763046"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445173"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished, méthode
-Notifie le profileur qu’un assembly a été chargé.  
+Notifie le profileur qu’un chargement de l’assembly est terminé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT AssemblyLoadFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `assemblyId`  
- [in] Identifie l’assembly qui a été chargé.  
+ dans Identifie l’assembly qui a été chargé.  
   
  `hrStatus`  
- [in] HRESULT qui indique si l’assembly chargé avec succès.  
+ dans HRESULT qui indique si le chargement de l’assembly s’est terminé correctement.  
   
 ## <a name="remarks"></a>Notes  
- La valeur de `assemblyId` n’est pas valide pour une demande d’informations jusqu'à ce que le `AssemblyLoadFinished` méthode est appelée.  
+ La valeur de `assemblyId` n’est pas valide pour une demande d’informations jusqu’à ce que la méthode `AssemblyLoadFinished` soit appelée.  
   
- Certaines parties du chargement de l’assembly peuvent continuer après le `AssemblyLoadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de l’assembly a réussi.  
+ Certaines parties du chargement de l’assembly peuvent continuer après le rappel `AssemblyLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de l’assembly a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

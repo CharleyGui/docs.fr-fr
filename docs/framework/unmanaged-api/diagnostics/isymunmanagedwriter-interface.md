@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7d6733ec-f081-4166-bc17-de09e16dc304
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4ac95cd5b79a2e1762fa9adf29d4d7926ab4ab7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc19ee25e903046daef376e4297c8feb3d01ad47
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986061"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427936"
 ---
 # <a name="isymunmanagedwriter-interface"></a>ISymUnmanagedWriter, interface
-Représente un writer de symbole et fournit des méthodes pour définir des documents, les points de séquence, les portées lexicales et variables.  
+Représente un writer de symboles et fournit des méthodes pour définir des documents, des points de séquence, des étendues lexicales et des variables.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -32,31 +30,31 @@ Représente un writer de symbole et fournit des méthodes pour définir des docu
 |------------|-----------------|  
 |[Abort, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md)|Ferme le writer de symbole sans valider les symboles dans le magasin de symboles.|  
 |[Close, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md)|Ferme le writer de symbole après avoir validé les symboles dans le magasin de symboles.|  
-|[CloseMethod, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md)|Ferme la méthode actuelle. Une fois qu’une méthode est fermée, plus aucun symbole ne peut être définie qu’il contient.|  
-|[CloseNamespace, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)|Espace de noms le plus récemment ouvert par se ferme.|  
+|[CloseMethod, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md)|Ferme la méthode actuelle. Une fois qu’une méthode est fermée, aucun autre symbole ne peut être défini à l’intérieur de celle-ci.|  
+|[CloseNamespace, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)|Ferme l’espace de noms le plus récemment ouvert.|  
 |[CloseScope, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closescope-method.md)|Ferme la portée lexicale actuelle.|  
-|[DefineConstant, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineconstant-method.md)|Définit un nom pour une valeur constante.|  
+|[DefineConstant, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineconstant-method.md)|Définit un nom pour une valeur de constante.|  
 |[DefineDocument, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definedocument-method.md)|Définit un document source.|  
-|[DefineField, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definefield-method.md)|Définit une variable unique qui n’est pas dans une méthode.|  
+|[DefineField, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definefield-method.md)|Définit une variable unique qui ne se trouve pas dans une méthode.|  
 |[DefineGlobalVariable, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)|Définit une variable globale unique.|  
 |[DefineLocalVariable, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)|Définit une variable unique dans la portée lexicale actuelle.|  
 |[DefineParameter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineparameter-method.md)|Définit un paramètre unique dans la méthode actuelle.|  
 |[DefineSequencePoints, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definesequencepoints-method.md)|Définit un groupe de points de séquence dans la méthode actuelle.|  
-|[GetDebugInfo, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md)|Retourne les informations nécessaires pour un compilateur écrire l’entrée de répertoire de débogage dans l’en-tête du fichier exécutable portable (PE).|  
-|[Initialize, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)|Définit l’interface d’émetteur de métadonnées avec laquelle ce writer sera associé et définit le nom de fichier de sortie dans lequel les symboles de débogage doit être écrite.|  
-|[Initialize2, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize2-method.md)|Définit l’interface d’émetteur de métadonnées avec laquelle ce writer sera associé, définit le nom de fichier de sortie auquel les symboles de débogage seront écrites et définit l’emplacement du fichier programme (PDB) de la base de données final.|  
-|[OpenMethod, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)|Ouvre une méthode dans le symbole qui est émis plus d’informations.|  
+|[GetDebugInfo, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md)|Retourne les informations nécessaires à un compilateur pour écrire l’entrée de répertoire de débogage dans l’en-tête de fichier exécutable portable (PE).|  
+|[Initialize, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)|Définit l’interface d’émetteur de métadonnées à laquelle ce writer sera associé et définit le nom du fichier de sortie dans lequel les symboles de débogage seront écrits.|  
+|[Initialize2, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize2-method.md)|Définit l’interface d’émetteur de métadonnées à laquelle ce writer sera associé, définit le nom du fichier de sortie dans lequel les symboles de débogage seront écrits et définit l’emplacement final du fichier de base de données du programme (PDB).|  
+|[OpenMethod, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)|Ouvre une méthode dans laquelle les informations de symboles sont émises.|  
 |[OpenNamespace, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-opennamespace-method.md)|Ouvre un nouvel espace de noms.|  
 |[OpenScope, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md)|Ouvre une nouvelle portée lexicale dans la méthode actuelle.|  
-|[RemapToken, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-remaptoken-method.md)|Avertit le writer de symbole qu’un jeton de métadonnées a été remappé comme les métadonnées a été émises.|  
-|[SetMethodSourceRange, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setmethodsourcerange-method.md)|Spécifie les véritables début et la fin d’une méthode dans un fichier source.|  
+|[RemapToken, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-remaptoken-method.md)|Notifie le writer de symbole qu’un jeton de métadonnées a été remappé à la sortie des métadonnées.|  
+|[SetMethodSourceRange, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setmethodsourcerange-method.md)|Spécifie le début et la fin d’une méthode dans un fichier source.|  
 |[SetScopeRange, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md)|Définit la plage d'offsets pour la portée lexicale spécifiée.|  
 |[SetSymAttribute, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setsymattribute-method.md)|Définit un attribut personnalisé en fonction de son nom.|  
-|[SetUserEntryPoint, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setuserentrypoint-method.md)|Spécifie la méthode définie par l’utilisateur qui est le point d’entrée pour ce module.|  
+|[SetUserEntryPoint, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setuserentrypoint-method.md)|Spécifie la méthode définie par l’utilisateur qui est le point d’entrée de ce module.|  
 |[UsingNamespace, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-usingnamespace-method.md)|Spécifie que le nom d’espace de noms complet donné est utilisé dans la portée lexicale actuellement ouverte.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
