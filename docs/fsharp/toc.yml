@@ -7,12 +7,12 @@
       href: get-started/install-fsharp.md
     - name: 'Bien démarrer avec F# dans Visual Studio'
       href: get-started/get-started-visual-studio.md
-    - name: 'Bien démarrer avec F# dans Visual Studio pour Mac'
-      href: get-started/get-started-with-visual-studio-for-mac.md
-    - name: 'Bien démarrer avec F# dans Visual Studio Code et Ionide'
+    - name: 'Bien démarrer avec F# dans Visual Studio Code'
       href: get-started/get-started-vscode.md
     - name: 'Bien démarrer avec F# dans le CLI .NET Core'
       href: get-started/get-started-command-line.md
+    - name: 'Bien démarrer avec F# dans Visual Studio pour Mac'
+      href: get-started/get-started-with-visual-studio-for-mac.md
 - name: "Qu’est-ce que F#\_?"
   href: what-is-fsharp.md
 - name: 'Présentation de F#'
