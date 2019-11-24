@@ -4,12 +4,12 @@ description: Cette rubrique vous guide lors de la création d’une application 
 author: mairaw
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 77e676c327b62369e7ddb9444bf8f246d3c5c2e8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: feaed88e902080c5c3b07578b78f8437489a690c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182497"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428586"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac
 
@@ -21,11 +21,11 @@ Visual Studio pour Mac fournit un environnement de développement intégré (ID
 > * Dans Visual Studio pour Mac, sélectionnez **Aide** > **Signaler un problème** dans le menu ou **Signaler un problème** sur l’écran d’accueil, ce qui ouvre une fenêtre permettant de soumettre un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/8/index.html).
 > * Pour soumettre une suggestion, sélectionnez **Aide** > **Faire une suggestion** dans le menu ou **Faire une suggestion** sur l’écran d’accueil, ce qui vous amène à la [page web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
-Consultez la rubrique [Prérequis de .NET Core sur Mac](../macos-prerequisites.md).
+See the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos) topic.
 
-Consultez l’article sur la [prise en charge de .net Core](/visualstudio/mac/net-core-support) pour vous assurer que vous utilisez une version prise en charge de .net core.
+Check the [.NET Core Support](/visualstudio/mac/net-core-support) article to ensure you're using a supported version of .NET Core.
 
 ## <a name="get-started"></a>Prise en main
 

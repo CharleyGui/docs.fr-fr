@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d8ec8d3c-70f7-4cc6-9957-68068fd8f49c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a82ce9709e008e092c5f31372a89bf9a16e1f88b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6b551743227dc1c6069796038782a515e6dbe8c4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767018"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443776"
 ---
 # <a name="corcheckduplicatesfor-enumeration"></a>CorCheckDuplicatesFor, énumération
-Spécifie les jetons de métadonnées qui seront vérifiés pour les doublons.  
+Specifies the metadata tokens that will be checked for duplicates.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -70,38 +68,38 @@ typedef enum CorCheckDuplicatesFor {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`MDDupAll`|Vérifiez tous les jetons de métadonnées pour les doublons.|  
+|`MDDupAll`|Check all metadata tokens for duplicates.|  
 |`MDDupENC`|Non utilisé.|  
-|`MDNoDupChecks`|Ne pas vérifier les jetons de métadonnées pour les doublons.|  
-|`MDDupTypeDef`|Vérifier les doublons de `mdTypeDef` jetons.|  
-|`MDDupInterfaceImpl`|Vérifier les doublons de `mdInterfaceImpl` jetons.|  
-|`MDDupMethodDef`|Vérifier les doublons de `mdMethodDef` jetons.|  
-|`MDDupTypeRef`|Vérifier les doublons de `mdTypeRef` jetons.|  
-|`MDDupMemberRef`|Vérifier les doublons de `mdMemberRef` jetons.|  
-|`MDDupCustomAttribute`|Vérifier les doublons de `mdCustomAttribute` jetons.|  
-|`MDDupParamDef`|Vérifier les doublons de `mdParamDef` jetons.|  
-|`MDDupPermission`|Vérifier les doublons de `mdPermission` jetons.|  
-|`MDDupProperty`|Vérifier les doublons de `mdProperty` jetons.|  
-|`MDDupEvent`|Vérifier les doublons de `mdEvent` jetons.|  
-|`MDDupFieldDef`|Vérifier les doublons de `mdFieldDef` jetons.|  
-|`MDDupSignature`|Vérifier les doublons de `mdSignature` jetons.|  
-|`MDDupModuleRef`|Vérifier les doublons de `mdModuleRef` jetons.|  
-|`MDDupTypeSpec`|Vérifier les doublons de `mdTypeSpec` jetons.|  
-|`MDDupImplMap`|Vérifier les doublons de `mdImplMap` jetons.|  
-|`MDDupAssemblyRef`|Vérifier les doublons de `mdAssemblyRef` jetons.|  
-|`MDDupFile`|Vérifier les doublons de `mdFile` jetons.|  
-|`MDDupExportedType`|Vérifier les doublons de `mdExportedType` jetons.|  
-|`MDDupManifestResource`|Vérifier les doublons de `mdManifestResource` jetons.|  
-|`MDDupGenericParam`|Vérifier les doublons de `mdGenericParam` jetons.|  
-|`MDDupMethodSpec`|Vérifier les doublons de `mdMethodSpec` jetons.|  
-|`MDDupGenericParamConstraint`|Vérifier les doublons de `mdGenericParamConstraint` jetons.|  
-|`MDDupAssembly`|Vérifier les doublons de `mdAssembly` jetons.|  
-|`MDDupDefault`|Vérifier les doublons de `mdMemberRef`, `mdTypeRef`, `mdSignature`, `mdTypeSpec`, et `mdMethodSpec` jetons.|  
+|`MDNoDupChecks`|Do not check metadata tokens for duplicates.|  
+|`MDDupTypeDef`|Check for duplicates of `mdTypeDef` tokens.|  
+|`MDDupInterfaceImpl`|Check for duplicates of `mdInterfaceImpl` tokens.|  
+|`MDDupMethodDef`|Check for duplicates of `mdMethodDef` tokens.|  
+|`MDDupTypeRef`|Check for duplicates of `mdTypeRef` tokens.|  
+|`MDDupMemberRef`|Check for duplicates of `mdMemberRef` tokens.|  
+|`MDDupCustomAttribute`|Check for duplicates of `mdCustomAttribute` tokens.|  
+|`MDDupParamDef`|Check for duplicates of `mdParamDef` tokens.|  
+|`MDDupPermission`|Check for duplicates of `mdPermission` tokens.|  
+|`MDDupProperty`|Check for duplicates of `mdProperty` tokens.|  
+|`MDDupEvent`|Check for duplicates of `mdEvent` tokens.|  
+|`MDDupFieldDef`|Check for duplicates of `mdFieldDef` tokens.|  
+|`MDDupSignature`|Check for duplicates of `mdSignature` tokens.|  
+|`MDDupModuleRef`|Check for duplicates of `mdModuleRef` tokens.|  
+|`MDDupTypeSpec`|Check for duplicates of `mdTypeSpec` tokens.|  
+|`MDDupImplMap`|Check for duplicates of `mdImplMap` tokens.|  
+|`MDDupAssemblyRef`|Check for duplicates of `mdAssemblyRef` tokens.|  
+|`MDDupFile`|Check for duplicates of `mdFile` tokens.|  
+|`MDDupExportedType`|Check for duplicates of `mdExportedType` tokens.|  
+|`MDDupManifestResource`|Check for duplicates of `mdManifestResource` tokens.|  
+|`MDDupGenericParam`|Check for duplicates of `mdGenericParam` tokens.|  
+|`MDDupMethodSpec`|Check for duplicates of `mdMethodSpec` tokens.|  
+|`MDDupGenericParamConstraint`|Check for duplicates of `mdGenericParamConstraint` tokens.|  
+|`MDDupAssembly`|Check for duplicates of `mdAssembly` tokens.|  
+|`MDDupDefault`|Check for duplicates of `mdMemberRef`, `mdTypeRef`, `mdSignature`, `mdTypeSpec`, and `mdMethodSpec` tokens.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

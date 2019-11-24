@@ -157,21 +157,21 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-ms.openlocfilehash: 5d75f60cb96ddb7bd9e24a7cdc4b8d2b61aff8f4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e99bdd106c845964f63915c87617e30eb51488f4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104188"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447299"
 ---
 # <a name="winmdexpexe-error-messages"></a>Messages d'erreur Winmdexp.exe
 Le processus de génération appelle [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) quand vous utilisez le modèle de composant **Windows Runtime Component** dans Visual Studio 2012, et les messages d’erreur de Winmdexp.exe apparaissent donc dans la **liste d’erreurs**. Winmdexp.exe fonctionne sur un module compilé avec l’option `/target:winmdobj`. Comme il nécessite un module compilé en entrée, ses messages d’erreur ne s’affichent pas, sauf si la compilation réussit.  
   
- Les messages d’erreur sont conçus pour contenir toutes les informations dont vous avez besoin pour résoudre les conditions d’erreur qu’ils signalent. Toutefois, certains problèmes nécessitent plus d’informations que celles qui sont contenues dans le message. Vous pouvez trouver des informations supplémentaires dans [Diagnostic des conditions d’erreur du composant Windows Runtime](https://go.microsoft.com/fwlink/p/?LinkId=251127) dans le Centre de développement Windows.  
+ Les messages d’erreur sont conçus pour contenir toutes les informations dont vous avez besoin pour résoudre les conditions d’erreur qu’ils signalent. Toutefois, certains problèmes nécessitent plus d’informations que celles qui sont contenues dans le message. You can find additional information in [Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
   
- Si l’erreur n’est pas abordée dans cet article et que vous pensez que le message ne contient pas suffisamment d’informations pour résoudre le problème, utilisez le lien de commentaires dans cet article et incluez-y le message d’erreur. Vous pouvez aussi rapporter un bogue sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/p/?LinkId=251130). Vous pouvez également rechercher plus d’informations sur les [Forums Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=251129).  
+ Si l’erreur n’est pas abordée dans cet article et que vous pensez que le message ne contient pas suffisamment d’informations pour résoudre le problème, utilisez le lien de commentaires dans cet article et incluez-y le message d’erreur. Alternatively, you can file a bug at the [Developer Community website](https://developercommunity.visualstudio.com/). Vous pouvez également rechercher plus d’informations sur les [Forums Microsoft](https://social.msdn.microsoft.com/Forums/).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md)
-- [Diagnostic des conditions d’erreur du composant Windows Runtime](https://go.microsoft.com/fwlink/p/?LinkId=251127)
+- [Diagnostic des conditions d’erreur du composant Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))

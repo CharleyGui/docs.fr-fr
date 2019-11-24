@@ -6,14 +6,12 @@ helpviewer_keywords:
 - native API reference [.NET Framework], metadata
 - metadata [.NET Framework], using the unmanaged API
 ms.assetid: 10cfea92-db5e-4bcb-b301-ef029bcf77a3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 194184f6ddafa1341fbb731ba51e9635ea66ffa3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 4e8e59d1c8b413d15c55eb8f9478118f1f645293
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768782"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443285"
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Métadonnées (Informations de référence sur les API non managées)
 L'API de métadonnées permet à un client, comme un compilateur, de générer les métadonnées d'un composant ou d'y accéder sans que le Common Language Runtime (CLR) ne charge les types.  

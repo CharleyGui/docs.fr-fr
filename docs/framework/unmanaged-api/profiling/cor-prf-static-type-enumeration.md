@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 753c3b38187dd69593dcb0520acef9ce4b137039
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40efe81f72a2043503bf521e3e47dad1a7f4530c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751900"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448452"
 ---
-# <a name="corprfstatictype-enumeration"></a>COR_PRF_STATIC_TYPE, énumération
-Indique si un champ est statique et si oui, la qualité statique qui s'y applique. Ces valeurs peuvent être combinées à l’aide de l’opération OR au niveau du bit pour indiquer que le champ a plusieurs qualités statiques différentes.  
+# <a name="cor_prf_static_type-enumeration"></a>COR_PRF_STATIC_TYPE, énumération
+Indique si un champ est statique et si oui, la qualité statique qui s'y applique. These values can be combined using the bitwise OR operation to indicate that the field has multiple, different static qualities.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,16 +40,16 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_NOT_A_STATIC`|Le champ n’est pas statique.|  
-|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|Le champ est statique de domaine d’application.|  
-|`COR_PRF_FIELD_THREAD_STATIC`|Le champ est thread-static.|  
-|`COR_PRF_FIELD_CONTEXT_STATIC`|Le champ est statique de contexte.|  
-|`COR_PRF_FIELD_RVA_STATIC`|Le champ est l’adresse virtuelle relative (RVA)-statique.|  
+|`COR_PRF_FIELD_NOT_A_STATIC`|The field is not static.|  
+|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|The field is application domain-static.|  
+|`COR_PRF_FIELD_THREAD_STATIC`|The field is thread-static.|  
+|`COR_PRF_FIELD_CONTEXT_STATIC`|The field is context-static.|  
+|`COR_PRF_FIELD_RVA_STATIC`|The field is relative virtual address (RVA)-static.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

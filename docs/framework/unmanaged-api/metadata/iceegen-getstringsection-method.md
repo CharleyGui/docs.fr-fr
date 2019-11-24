@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: a2267d39-69d1-4de1-bf37-f752cafacc71
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 68dc80c657c3794a416f6e142f70cfb05bee2c77
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ba8da686d1834c81111828e9856525b96f575b93
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745893"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443266"
 ---
 # <a name="iceegengetstringsection-method"></a>ICeeGen::GetStringSection, méthode
-Obtient une représentation sous forme de chaîne de la section de code référencée par le handle spécifié.  
+Gets a string representation of the code section referenced by the specified handle.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +37,14 @@ HRESULT GetStringSection (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in, out] Le handle vers la section de code.  
+ [in, out] The handle to the code section.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

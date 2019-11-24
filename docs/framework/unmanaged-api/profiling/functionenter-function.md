@@ -14,20 +14,18 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 354736890a4b042a8da5e747a0ab6ea3777e398e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ad34592223433f0bf541c390674bcf96839b6ca8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952903"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440820"
 ---
 # <a name="functionenter-function"></a>FunctionEnter (fonction)
-Indique au profileur que le contrôle est passé à une fonction.  
+Notifies the profiler that control is being passed to a function.  
   
 > [!NOTE]
-> La `FunctionEnter` fonction est déconseillée dans la version 2,0 de .NET Framework, et son utilisation entraîne une baisse des performances. Utilisez la fonction [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) à la place.  
+> The `FunctionEnter` function is deprecated in the .NET Framework version 2.0, and its use will incur a performance penalty. Use the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) function instead.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +37,29 @@ void __stdcall FunctionEnter (
   
 ## <a name="parameters"></a>Paramètres  
  `funcID`  
- dans Identificateur de la fonction à laquelle le contrôle est passé.  
+ [in] The identifier of the function to which control is passed.  
   
 ## <a name="remarks"></a>Notes  
- La `FunctionEnter` fonction est un rappel; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec`attribut`naked`de classe de stockage ().  
+ The `FunctionEnter` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
   
- Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
+ The execution engine does not save any registers before calling this function.  
   
-- À l’entrée, vous devez enregistrer tous les registres que vous utilisez, y compris ceux de l’unité à virgule flottante (FPU).  
+- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
   
-- À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
+- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
   
- L’implémentation de `FunctionEnter` ne doit pas être bloquée, car elle retardera garbage collection. L’implémentation ne doit pas essayer un garbage collection, car la pile n’est peut-être pas dans un État garbage collection. Si une garbage collection est tentée, le runtime se bloque jusqu’à ce que `FunctionEnter` retourne la valeur.  
+ The implementation of `FunctionEnter` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionEnter` returns.  
   
- En outre, `FunctionEnter` la fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
+ Also, the `FunctionEnter` function must not call into managed code or in any way cause a managed memory allocation.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl  
+ **Header:** CorProf.idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
- **Versions de .NET Framework:** 1.1, 1.0  
+ **.NET Framework Versions:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Voir aussi
 

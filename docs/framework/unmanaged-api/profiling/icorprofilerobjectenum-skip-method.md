@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f8e498f8-f93a-4b82-bd22-55bdbf5e8d45
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b5818cb8d7da7415feb61532799df5fa5a16fd3b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3c573c709e765fa723a726f5c8990ba59222ed1f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781218"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428128"
 ---
 # <a name="icorprofilerobjectenumskip-method"></a>ICorProfilerObjectEnum::Skip, méthode
-Avance le curseur de cet énumérateur depuis sa position actuelle afin que le nombre spécifié d’éléments soit ignoré.  
+Advances the cursor of this enumerator from its current position so that the specified number of elements are skipped.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT Skip (
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’éléments à ignorer.  
+ [in] The number of elements to be skipped.  
   
 ## <a name="remarks"></a>Notes  
- La nouvelle position du curseur de cet énumérateur est : (position actuelle) + `celt` .  
+ The new position of this enumerator's cursor is: (current position) + `celt` .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

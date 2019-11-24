@@ -14,29 +14,27 @@ helpviewer_keywords:
 ms.assetid: c1018789-4206-455d-aacc-2d876fc0d0bb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4f5307ce00160bb4151a7559daac4724367c6497
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af50c82974b779b901135795f37e3bd4c8b8c156
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940398"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440973"
 ---
 # <a name="inotifysink2-interface"></a>INotifySink2, interface
-Déclare des méthodes pour la notification du récepteur.  
+Declares methods for sink notification.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Est appelé lors de la saisie d’un appel.|  
-|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
-|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Appelée lorsque l’appel est sortant.|  
-|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Appelée lorsqu’un appel est retourné.|  
+|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Gets invoked when entering a call.|  
+|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Gets invoked when exiting a call.|  
+|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Gets invoked when a call is out.|  
+|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Gets invoked when a call returns.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** ProtocolNotify2.idl  
+## <a name="requirements"></a>spécifications  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Voir aussi
 

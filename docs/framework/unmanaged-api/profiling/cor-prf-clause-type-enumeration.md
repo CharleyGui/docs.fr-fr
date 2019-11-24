@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: f64c325a-ed3a-4aaf-b847-a88edbc4fefc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 18197f0c500a205a66bdda8a9401f31d4208ae67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94230cbad95ff0a5d4234c27aa5d1d56ac5be9bb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780430"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428403"
 ---
-# <a name="corprfclausetype-enumeration"></a>COR_PRF_CLAUSE_TYPE, énumération
+# <a name="cor_prf_clause_type-enumeration"></a>COR_PRF_CLAUSE_TYPE, énumération
 Indique le type de clause d'exception où le code vient d'entrer ou qu'il vient de quitter.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,15 +39,15 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_CLAUSE_NONE`|La clause d’exception n’est pas valide.|  
-|`COR_PRF_CLAUSE_FILTER`|La clause d’exception est une expression de filtre.|  
-|`COR_PRF_CLAUSE_CATCH`|La clause d’exception est un `catch` instruction.|  
-|`COR_PRF_CLAUSE_FINALLY`|La clause d’exception est un `finally` instruction.|  
+|`COR_PRF_CLAUSE_NONE`|The exception clause is not valid.|  
+|`COR_PRF_CLAUSE_FILTER`|The exception clause is a filter expression.|  
+|`COR_PRF_CLAUSE_CATCH`|The exception clause is a `catch` statement.|  
+|`COR_PRF_CLAUSE_FINALLY`|The exception clause is a `finally` statement.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

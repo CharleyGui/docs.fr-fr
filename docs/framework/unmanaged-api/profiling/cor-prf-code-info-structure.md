@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: cf30e27c-1f7e-43a2-ba1e-01e4137301db
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2f236a74da04dfddef852514eccb02215ad2d15a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 643c9d7104c374d9141a604083f3fdcd540156c4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752386"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428388"
 ---
-# <a name="corprfcodeinfo-structure"></a>COR_PRF_CODE_INFO, structure
+# <a name="cor_prf_code_info-structure"></a>COR_PRF_CODE_INFO, structure
 Représente un bloc contigu de code natif stocké en mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,13 +37,13 @@ typedef struct _COR_PRF_CODE_INFO {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`startAddress`|Adresse de départ du bloc contigu de code.|  
-|`size`|La taille du bloc.|  
+|`startAddress`|The starting address of the contiguous block of code.|  
+|`size`|The size of the block.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl  
+ **Header:** CorProf.idl  
   
  **Bibliothèque :** CorGuids.lib  
   

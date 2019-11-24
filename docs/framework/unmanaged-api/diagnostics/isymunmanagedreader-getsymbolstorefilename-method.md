@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c84f4846-9bc8-44a4-9a76-e39106d6d8b2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 50cd6d1e3666dd1f15c1e6a6b4f7dcb931b79d8d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b3674c4058dba2f6185418b55b35eefb14c312f6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777066"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431241"
 ---
 # <a name="isymunmanagedreadergetsymbolstorefilename-method"></a>ISymUnmanagedReader::GetSymbolStoreFileName, méthode
-Fournit le nom de fichier sur disque du magasin de symboles.  
+Provides the on-disk file name of the symbol store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetSymbolStoreFileName (
   
 ## <a name="parameters"></a>Paramètres  
  `cchName`  
- [in] La taille de la `szName` mémoire tampon.  
+ [in] The size of the `szName` buffer.  
   
  `pcchName`  
- [out] Un pointeur vers la variable qui reçoit la longueur du nom retourné dans `szName`, y compris le caractère null de fin.  
+ [out] A pointer to the variable that receives the length of the name returned in `szName`, including the null termination.  
   
  `szName`  
- [out] Pointeur vers la variable qui reçoit le nom de fichier du magasin de symboles.  
+ [out] A pointer to the variable that receives the file name of the symbol store.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

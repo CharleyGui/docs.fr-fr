@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91d688f3-a80e-419d-9755-ff94bc04188a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4229332ef3a079a5a294e27b624dde0e1fb46691
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ba021ec223d00e57081567b76f70f59768e6b9a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782963"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445857"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass, méthode
-Informe le profileur sur le nombre d’instances de chaque classe spécifiée qui ont été créés depuis le dernier garbage collection.  
+Notifies the profiler about the number of instances of each specified class that have been created since the most recent garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +36,25 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="parameters"></a>Paramètres  
  `cClassCount`  
- [in] La taille de la `classIds` et `cObjects` tableaux.  
+ [in] The size of the `classIds` and `cObjects` arrays.  
   
  `classIds`  
- [in] Tableau d’ID, où chaque ID spécifie une classe avec une ou plusieurs instances de classe.  
+ [in] An array of class IDs, where each ID specifies a class with one or more instances.  
   
  `cObjects`  
- [in] Un tableau d’entiers, où chaque entier spécifie le nombre d’instances pour la classe correspondante dans le `classIds` tableau.  
+ [in] An array of integers, where each integer specifies the number of instances for the corresponding class in the `classIds` array.  
   
 ## <a name="remarks"></a>Notes  
- Le `classIds` et `cObjects` tableaux sont des tableaux parallèles. Par exemple, `classIds[i]` et `cObjects[i]` référencent la même classe. Si aucune instance d’une classe n’a été créé depuis le dernier garbage collection, la classe est omise. Le `ObjectsAllocatedByClass` rappel ne signale pas les objets alloués dans le tas d’objets volumineux.  
+ The `classIds` and `cObjects` arrays are parallel arrays. For example, `classIds[i]` and `cObjects[i]` reference the same class. If no instance of a class has been created since the previous garbage collection, the class is omitted. The `ObjectsAllocatedByClass` callback will not report objects allocated in the large object heap.  
   
- Les nombres signalés par `ObjectsAllocatedByClass` ne sont que des estimations. Pour des nombres exacts, utilisez [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
   
- Le `classIds` tableau peut contenir une ou plusieurs entrées null si le correspondant `cObjects` tableau possède des types qui sont le déchargement.  
+ The `classIds` array may contain one or more null entries if the corresponding `cObjects` array has types that are unloading.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7f230961-23a6-4d56-ad2d-7a876d65705f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5e00e7f39bc2f8c14db0676102a52089c7710bd6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 57515ac4670b9b7e25bb496851347a62e1b246df
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772255"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438713"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass, méthode
-Détermine si la classe spécifiée est une classe array.  
+Determines whether the specified class is an array class.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +37,24 @@ HRESULT IsArrayClass(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] L’ID de la classe doit être examinée.  
+ [in] The ID of the class to be examined.  
   
  `pBaseElemType`  
- [out] Pointeur vers une valeur de l’énumération CorElementType qui indique le type des éléments du tableau.  
+ [out] A pointer to a value of the CorElementType enumeration that indicates the type of the array elements.  
   
  `pBaseClassId`  
- [out] Pointeur vers l’ID de classe des éléments du tableau, lorsqu’il est disponible.  
+ [out] A pointer to the class ID of the array elements, when available.  
   
  `pcRank`  
- [out] Pointeur vers un entier qui indique le classement (autrement dit, le nombre de dimensions) du tableau.  
+ [out] A pointer to an integer that indicates the rank (that is, number of dimensions) of the array.  
   
 ## <a name="remarks"></a>Notes  
- Si la classe spécifiée est une classe array, la `IsArrayClass` méthode retourne une valeur S_OK HRESULT et des valeurs des paramètres de sortie non null. Sinon, elle retourne S_FALSE.  
+ If the specified class is an array class, the `IsArrayClass` method returns an S_OK HRESULT and values for any non-null output parameters. Otherwise, it returns S_FALSE.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

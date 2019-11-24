@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1af98e57-9145-4d35-bb78-77d1da7c91a5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a5039117c649943a1f05a91ecccf22eb4230e5e7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 24ec1f7d553a59425f7eb02af8e91010d940eb07
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776380"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444264"
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA, structure
-Contient des informations sur l’assembly référencé, y compris sa version et son niveau de prise en charge des paramètres régionaux, des processeurs et systèmes d’exploitation.  
+Contains information about the referenced assembly, including its version and its level of support for locales, processors, and operating systems.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,23 +45,23 @@ typedef struct {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`usMajorVersion`|Numéro de version principale de l’assembly référencé. Cette valeur ne peut pas être égal à zéro. Si tous les bits de `usMajorVersion` sont définis, la version principale n’est pas spécifiée.|  
-|`usMinorVersion`|Numéro de version secondaire de l’assembly référencé. Cette valeur ne peut pas être égal à zéro. Si tous les bits de `usMinorVersion` sont définis, la version secondaire n’est pas spécifiée.|  
-|`usBuildNumber`|Le numéro de build de l’assembly référencé. Cette valeur ne peut pas être égal à zéro. Si tous les bits de `usBuildNumber` sont définis, le numéro de build n’est pas spécifié.|  
-|`usRevisionNumber`|Le numéro de révision de l’assembly référencé. Cette valeur ne peut pas être égal à zéro. Si tous les bits de `usRevisionNumber` sont définis, le numéro de révision n’est pas spécifié.|  
-|`szLocale`|Une liste de noms de paramètres régionaux conformément à la spécification RFC1766, séparée par des points-virgules, spécifiant les paramètres régionaux pris en charge par l’assembly référencé. Une valeur null indique l’indépendance des paramètres régionaux. **Remarque :**  Dans le .NET Framework version 1.0, vous ne pouvez pas spécifier plusieurs paramètres régionaux.|  
-|`cbLocale`|La taille en caractères larges de `szLocale`.|  
-|`rdwProcessor`|Un tableau d’identificateurs, tel que défini dans Winnt.h, pour les types de processeurs qui sont pris en charge par l’assembly référencé. Une valeur NULL indique l’indépendance des processeurs.|  
-|`ulProcessor`|La longueur de la `rdwProcessor` tableau.|  
-|`rOS`|Un tableau de [OSINFO](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md) instances spécifiant les systèmes d’exploitation pris en charge par l’assembly référencé. Une valeur NULL indique l’indépendance du système d’exploitation.|  
-|`ulOS`|La longueur de la `rOS` tableau.|  
+|`usMajorVersion`|The major version number of the referenced assembly. This value cannot be zero. If all the bits of `usMajorVersion` are set, the major version is not specified.|  
+|`usMinorVersion`|The minor version number of the referenced assembly. This value cannot be zero. If all the bits of `usMinorVersion` are set, the minor version is not specified.|  
+|`usBuildNumber`|The build number of the referenced assembly. This value cannot be zero. If all the bits of `usBuildNumber` are set, the build number is not specified.|  
+|`usRevisionNumber`|The revision number of the referenced assembly. This value cannot be zero. If all the bits of `usRevisionNumber` are set, the revision number is not specified.|  
+|`szLocale`|A list of locale names conforming to the RFC1766 specification, separated by semicolons, specifying the locales supported by the referenced assembly. A null value indicates locale independence. **Note:**  In the .NET Framework version 1.0 you cannot specify more than one locale.|  
+|`cbLocale`|The size in wide characters of `szLocale`.|  
+|`rdwProcessor`|An array of identifiers, as defined in Winnt.h, for the processor types that are supported by the referenced assembly. A NULL value indicates processor independence.|  
+|`ulProcessor`|The length of the `rdwProcessor` array.|  
+|`rOS`|An array of [OSINFO](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md) instances specifying the operating systems that are supported by the referenced assembly. A NULL value indicates operating-system independence.|  
+|`ulOS`|The length of the `rOS` array.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

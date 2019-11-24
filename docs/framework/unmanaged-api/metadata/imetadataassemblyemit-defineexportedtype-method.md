@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: fad01d7a-3178-4c8c-9f0a-4641e3701c9b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3b4d143d8dd5391283736d0140e8f1ced1dec53e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 44f97ef498eb8e64c55fc86b9f290b9e088293f6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775327"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432068"
 ---
 # <a name="imetadataassemblyemitdefineexportedtype-method"></a>IMetaDataAssemblyEmit::DefineExportedType, méthode
 Crée une structure `ExportedType` contenant les métadonnées pour le type exporté spécifié et retourne le jeton de métadonnées associé.  
@@ -41,37 +39,37 @@ HRESULT DefineExportedType (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [in] Le nom du type à exporter. Pour la version 1.1 du common language runtime, le nom du type exporté doit correspondre exactement au nom donné dans le `TypeDef` pour le type.  
+ [in] The name of type to be exported. For version 1.1 of the common language runtime, the name of the exported type must exactly match the name given in the `TypeDef` for the type.  
   
  `tkImplementation`  
- [in] Jeton spécifiant où le type exporté est implémenté. Les valeurs valides et leurs significations associées sont :  
+ [in] A token specifying where the exported type is implemented. The valid values and their associated meanings are:  
   
-- `mdFile` Le type est implémenté dans un fichier différent au sein de cet assembly.  
+- `mdFile` The type is implemented in a different file within this assembly.  
   
-- `mdAssemblyRef` Le type est implémenté dans un autre assembly.  
+- `mdAssemblyRef` The type is implemented in a different assembly.  
   
-- `mdExportedTYpe` Le type est imbriqué dans un autre type.  
+- `mdExportedTYpe` The type is nested within some other type.  
   
-- `mdFileNil` Le type est dans le même fichier que le manifeste et n’est pas un type imbriqué.  
+- `mdFileNil` The type is in the same file as the manifest and is not a nested type.  
   
  `tkTypeDef`  
- [in] Un jeton de métadonnées qui spécifie le type à exporter. Cette valeur est entrée dans le `TypeDef` table dans le fichier qui implémente le type et est pertinente uniquement si ce fichier se trouve dans cet assembly.  
+ [in] A token to the metadata that specifies the type to be exported. This value is entered in the `TypeDef` table in the file that implements the type and is relevant only if that file is in this assembly.  
   
  `dwExportedTypeFlags`  
- [in] Une combinaison au niveau du bit de [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) des valeurs d’énumération qui définissent les paramètres de propriété pour le type exporté.  
+ [in] A bitwise combination of [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) enumeration values that define the property settings for the exported type.  
   
  `pmdct`  
- [out] Pointeur vers le jeton de métadonnées retourné qui indique le type exporté.  
+ [out] A pointer to the returned metadata token that indicates the exported type.  
   
 ## <a name="remarks"></a>Notes  
- Un `ExportedType` structure des métadonnées doit être définie pour chaque type qui est exposé par cet assembly et qui est implémenté dans un module autre que celui qui contient le manifeste.  
+ An `ExportedType` metadata structure must be defined for each type that is exposed by this assembly and that is implemented in a module other than the one containing the manifest.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

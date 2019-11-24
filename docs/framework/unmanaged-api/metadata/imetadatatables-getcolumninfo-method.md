@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: dd67d9faafedf4fb92c69618d4464ebb2ce47dcc
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 854d3ad28cc00c03e903b9e1d2ce3863e3ceef17
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774259"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436095"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo, méthode
-Obtient les données relatives à la colonne spécifiée dans la table spécifiée.  
+Gets data about the specified column in the specified table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,31 +42,31 @@ HRESULT GetColumnInfo (
 =======
 
  `ixTbl`  
- dans Index de la table souhaitée.  
+ [in] The index of the desired table.  
   
  `ixCol`  
- dans Index de la colonne souhaitée.  
+ [in] The index of the desired column.  
   
  `poCol`  
- à Pointeur vers le décalage de la colonne dans la ligne.  
+ [out] A pointer to the offset of the column in the row.  
   
  `pcbCol`  
- à Pointeur vers la taille, en octets, de la colonne.  
+ [out] A pointer to the size, in bytes, of the column.  
   
  `pType`  
- à Pointeur vers le type des valeurs de la colonne.  
+ [out] A pointer to the type of the values in the column.  
   
  `ppName`  
- à Pointeur vers un pointeur vers le nom de la colonne.  
+ [out] A pointer to a pointer to the column name.  
  
 ## <a name="remarks"></a>Notes
 
-Le type de colonne retourné est compris dans une plage de valeurs :
+The returned column type falls within a range of values:
 
-| pType                    | Description   | Fonction d’assistance                   |
+| pType                    | Description   | Helper function                   |
 |--------------------------|---------------|-----------------------------------|
-| `0`.. `iRidMax`<br>(0.. 63)   | RID           | **IsRidType**<br>**IsRidOrToken** |
-| `iCodedToken`.. `iCodedTokenMax`<br>(64.. 95) | Jeton codé | **IsCodedTokenType** <br>**IsRidOrToken** |
+| `0`..`iRidMax`<br>(0..63)   | Rid           | **IsRidType**<br>**IsRidOrToken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | Coded token | **IsCodedTokenType** <br>**IsRidOrToken** |
 | `iSHORT` (96)            | Int16         | **IsFixedType**                   |
 | `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
 | `iLONG` (98)             | Int32         | **IsFixedType**                   |
@@ -78,21 +76,21 @@ Le type de colonne retourné est compris dans une plage de valeurs :
 | `iGUID` (102)            | GUID          | **IsHeapType**                    |
 | `iBLOB` (103)            | Blob          | **IsHeapType**                    |
 
-Les valeurs stockées dans le *tas* (autrement dit, `IsHeapType == true`) peuvent être lues à l’aide de :
+Values that are stored in the *heap* (that is, `IsHeapType == true`) can be read using:
 
-- `iSTRING` : **IMetadataTables. GetString**
-- `iGUID` : **IMetadataTables. GetGuid**
-- `iBLOB` : **IMetadataTables. getBlob**
+- `iSTRING`: **IMetadataTables.GetString**
+- `iGUID`: **IMetadataTables.GetGUID**
+- `iBLOB`: **IMetadataTables.GetBlob**
 
 > [!IMPORTANT]
-> Pour utiliser les constantes définies dans le tableau ci-dessus, incluez la directive `#define _DEFINE_META_DATA_META_CONSTANTS` fournie par le fichier d’en-tête *Cor. h* .
+> To use the constants defined in the table above, include the directive `#define _DEFINE_META_DATA_META_CONSTANTS` provided by the *cor.h* header file.
 
 ## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

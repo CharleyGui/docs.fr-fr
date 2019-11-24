@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: aeb0fc63-9eff-4384-9284-cb9900572d74
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 753449924f3415eb826b59d3a887eb69b9efba39
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: edf24de8ae38aab97e41a53cc86ae5aa6c592c50
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778782"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434691"
 ---
 # <a name="imetadataimportisvalidtoken-method"></a>IMetaDataImport::IsValidToken, méthode
 Obtient une valeur indiquant si le jeton spécifié contient une référence valide à un objet de code.  
@@ -37,17 +35,17 @@ BOOL IsValidToken (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Le jeton pour vérifier la validité de la référence.  
+ [in] The token to check the reference validity for.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true` Si `tk` est un jeton de métadonnées valide dans la portée actuelle. Sinon, `false`.  
+ `true` if `tk` is a valid metadata token within the current scope. Sinon, `false`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

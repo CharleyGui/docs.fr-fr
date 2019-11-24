@@ -7,12 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 22d70d0ee976d9c1a6aabd57e5d13dc70cd2d081
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 681328af3f3624a8398d5125b952593f2c0510c7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454257"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427695"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -167,7 +167,7 @@ Dans les applications qui ciblent .NET Framework 4.7.2 et versions antérieures
 
 La figure suivante montre l’info-bulle lorsque l’utilisateur a sélectionné un bouton à l’aide du clavier.
 
-![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](./media/tooltip.png)
+![Screenshot of tooltip when user navigates to button with the keyboard.](./media/whats-new-in-accessibility/select-tooltip-with-keyboard.png)
 
 <a name="wpf48" />
 
@@ -187,7 +187,7 @@ Dans .NET Framework 4.7.2, WPF permet désormais de dessiner une sélection de 
 
 Pour utiliser cette propriété, il suffit de l’ajouter à votre code XAML et d’utiliser le pinceau ou la liaison appropriés. La sélection de texte qui en résulte ressemble à ceci :
 
-![Info-bulle quand l’utilisateur accède à un bouton à l’aide du clavier](./media/selectiontextbrush-property.png)
+![Screenshot of the app running with the words Hello World selected.](./media/whats-new-in-accessibility/selectiontextbrush-property.png)
 
 Vous pouvez combiner l’utilisation des propriétés `SelectionBrush` et `SelectionTextBrush` pour générer la combinaison de couleurs de premier plan et d’arrière-plan qui vous convient.
 
@@ -480,11 +480,11 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   Avant : 
 
-  ![Contrôle Expander avec focus avant les améliorations apportées à l’accessibilité](./media/expander-before.png)
+  ![Screenshot of the expander control with focus and no focus visual.](./media/whats-new-in-accessibility/expander-control-before.png)
 
   Après : 
 
-  ![Contrôle Expander avec focus après les améliorations apportées à l’accessibilité](./media/expander-after.png)
+  ![Screenshot of the expander control with focus showing a dotted line around the control's text.](./media/whats-new-in-accessibility/expander-control-after.png)
 
 - Contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton>
 
@@ -492,11 +492,11 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   Avant : 
 
-  ![Case d’option à contraste élevé avec focus avant les améliorations apportées à l’accessibilité](./media/radio-button-before.png)
+  ![Screenshot of radio and check buttons with poor text visibility on high contrast themes.](./media/whats-new-in-accessibility/high-contrast-radio-button-before.png)
 
   Après : 
 
-  ![Case d’option à contraste élevé avec focus après les améliorations apportées à l’accessibilité](./media/radio-button-after.png)
+  ![Screenshot of radio and check buttons with better text visibility on high contrast themes.](./media/whats-new-in-accessibility/high-contrast-radio-button-after.png)
 
 - Contrôle <xref:System.Windows.Controls.ComboBox>
 
@@ -504,31 +504,31 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   Avant : 
 
-  ![Texte et bordure d’un contrôle ComboBox désactivé avant les améliorations apportées à l’accessibilité](./media/combo-disabled-before.png)
+  ![Screenshot of a disabled ComboBox with border and control text in different colors.](./media/whats-new-in-accessibility/combo-disabled-before.png)
 
   Après :   
 
-  ![Texte et bordure d’un contrôle ComboBox désactivé après les améliorations apportées à l’accessibilité](./media/combo-disabled-after.png)
+  ![Screenshot of a disabled ComboBox with border the same color as the control text.](./media/whats-new-in-accessibility/combo-disabled-after.png)
 
   En outre, les boutons désactivés et actifs utilisent la couleur de thème correcte.
 
   Avant :
 
-  ![Couleurs de thème des boutons avant les améliorations apportées à l’accessibilité](./media/button-themes-before.png) 
+  ![Screenshot of a black button with gray text saying Focus Me.](./media/whats-new-in-accessibility/button-theme-colors-before.png) 
 
   Après : 
 
-  ![Couleurs de thème des boutons après les améliorations apportées à l’accessibilité](./media/button-themes-after.png) 
+  ![Screenshot of a blue button with black text saying Focus Me.](./media/whats-new-in-accessibility/button-theme-colors-after.png) 
 
   Enfin, dans .NET Framework 4.7 et versions antérieures, la définition du style d’un contrôle <xref:System.Windows.Controls.ComboBox> sur `Toolbar.ComboBoxStyleKey` rendait la flèche déroulante invisible. Ce problème est résolu depuis .NET Framework 4.7.1. Exemple :
 
   Avant : 
 
-  ![Toolbar.ComboBoxStyleKey avant les améliorations apportées à l’accessibilité](./media/comboboxstylekey-before.png) 
+  ![Screenshot of a ComboBox control with an invisible drop-down arrow.](./media/whats-new-in-accessibility/combo-box-style-key-before.png) 
 
   Après : 
 
-  ![Toolbar.ComboBoxStyleKey après les améliorations apportées à l’accessibilité](./media/comboboxstylekey-after.png) 
+  ![Screenshot of a ComBoxBox control displaying the drop-down arrow.](./media/whats-new-in-accessibility/combo-box-style-key-after.png) 
 
 - Contrôle <xref:System.Windows.Controls.DataGrid>
 
@@ -536,21 +536,21 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   Avant : 
 
-  ![Flèche d’indicateur de tri avant les améliorations apportées à l’accessibilité](./media/sort-indicator-before.png) 
+  ![Screenshot of sort indicator arrow before improvements.](./media/whats-new-in-accessibility/sort-indicator-before.png) 
 
   Après :   
 
-  ![Flèche d’indicateur de tri après les améliorations apportées à l’accessibilité](./media/sort-indicator-after.png) 
+  ![Screenshot of sort indicator arrow after improvements.](./media/whats-new-in-accessibility/sort-indicator-after.png) 
 
   En outre, dans .NET Framework 4.7 et versions antérieures, le style de lien par défaut prenait une couleur incorrecte lorsque l’utilisateur pointait avec la souris dans des modes de contraste élevé. Ce problème est résolu depuis .NET Framework 4.7.1. De même, depuis .NET Framework 4.7.1, les colonnes de cases à cocher <xref:System.Windows.Controls.DataGrid> utilisent les couleurs attendues pour les commentaires de focus clavier.
 
   Avant : 
 
-  ![Style de lien par défaut DataGrid avant les améliorations apportées à l’accessibilité](./media/default-link-style-before.png) 
+  ![Screenshot of a link saying Click Me! in red.](./media/whats-new-in-accessibility/default-link-style-before.png) 
 
   Après :    
 
-  ![Style de lien par défaut DataGrid après les améliorations apportées à l’accessibilité](./media/default-link-style-after.png) 
+  ![Screenshot of a link saying Click Me! in yellow.](./media/whats-new-in-accessibility/default-link-style-after.png) 
 
 Pour plus d’informations sur les améliorations apportées à l’accessibilité WPF dans .NET Framework 4.7.1, consultez [Améliorations apportées à l’accessibilité dans WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf).
 
@@ -581,11 +581,11 @@ Voici quelques exemples de modifications du contraste élevé :
 
   Avant :
 
-  ![Texte désactivé avant les améliorations apportées à l’accessibilité](./media/wf-disabled-before.png) 
+  ![Screenshot of an app that uses different controls running in high contrast mode before accessibility improvements.](./media/whats-new-in-accessibility/high-contrast-mode-menu-items-before.png) 
 
   Après :
 
-  ![Texte désactivé après les améliorations apportées à l’accessibilité](./media/wf-disabled-after.png) 
+  ![Screenshot of an app that uses different controls running in high contrast mode after accessibility improvements.](./media/whats-new-in-accessibility/high-contrast-mode-menu-items-after.png) 
 
 - Améliorations du contraste élevé dans la boîte de dialogue Thread Exception (Exception de thread).
 
@@ -626,7 +626,7 @@ Dans .NET Framework 4.7.1, Windows Forms inclut les améliorations suivantes au
 
 ### <a name="aspnet-web-controls"></a>Contrôles web ASP.NET
 
-À compter de .NET Framework 4.7.1 et de Visual Studio 2017 version 15,3, ASP.NET améliore le fonctionnement des contrôles Web ASP.NET avec la technologie d’accessibilité dans Visual Studio. Les changements apportés sont les suivants :
+Starting with .NET Framework 4.7.1 and Visual Studio 2017 version 15.3, ASP.NET improves how ASP.NET web controls work with accessibility technology in Visual Studio. Les changements apportés sont les suivants :
 
 - Changements visant à implémenter les modèles d’accessibilité de l’interface utilisateur manquants dans les contrôles, comme la boîte de dialogue **Ajouter un champ** de l’Assistant **Vue Détails** ou la boîte de dialogue **Configurer ListView** de l’Assistant **ListView**.
 

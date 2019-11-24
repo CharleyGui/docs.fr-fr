@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b374116-0972-416a-8cf5-79213129be9a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2c5c8165d44cc3a305820f8e97c07da37f2a0693
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d5d7da343148d5f1c2aa9b2b639b094f8269199b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775805"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433201"
 ---
 # <a name="icorprofilerinfo2getcontextstaticaddress-method"></a>ICorProfilerInfo2::GetContextStaticAddress, méthode
-Obtient l’adresse pour le champ statique de contexte spécifié qui est dans la portée du contexte spécifié.  
+Gets the address for the specified context-static field that is in the scope of the specified context.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +37,30 @@ HRESULT GetContextStaticAddress(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] ID de la classe qui contient le champ statique de contexte demandé.  
+ [in] The ID of the class that contains the requested context-static field.  
   
  `fieldToken`  
- [in] Le jeton de métadonnées pour le champ statique de contexte demandé.  
+ [in] The metadata token for the requested context-static field.  
   
  `contextId`  
- [in] ID du contexte qui est la portée pour le champ statique de contexte demandé.  
+ [in] The ID of the context that is the scope for the requested context-static field.  
   
  `ppAddress`  
- [out] Pointeur vers l’adresse du champ statique qui est dans le contexte spécifié.  
+ [out] A pointer to the address of the static field that is within the specified context.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetContextStaticAddress` méthode peut retourner l’une des opérations suivantes :  
+ The `GetContextStaticAddress` method may return one of the following:  
   
-- Un HRESULT CORPROF_E_DATAINCOMPLETE si le champ statique donné n’a pas été assigné une adresse dans le contexte spécifié.  
+- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
   
-- Les adresses des objets qui peuvent être dans le tas de garbage collection. Ces adresses peuvent devenir non valides après le garbage collection, donc après le garbage collection, les profileurs ne doivent pas supposer qu’ils sont valides.  
+- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.  
   
- Avant la fin de constructeur de classe d’une classe, `GetContextStaticAddress` retournera CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains des champs statiques peuvent déjà être initialisés et utiliser des objets de garbage collection racine.  
+ Before a class’s class constructor is completed, `GetContextStaticAddress` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

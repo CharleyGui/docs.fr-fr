@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f4c2cd88-ac28-4bad-9ab1-2cf9d2de41e6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7f182dad17e28cc5d19393bb4e13d747e34249fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1b1c557eea62cae6d2ad09303441e4635abc899
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782475"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437835"
 ---
 # <a name="imetadataimportfindtypedefbyname-method"></a>IMetaDataImport::FindTypeDefByName, méthode
-Obtient un pointeur vers les métadonnées TypeDef jeton pour le <xref:System.Type> portant le nom spécifié.  
+Gets a pointer to the TypeDef metadata token for the <xref:System.Type> with the specified name.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT FindTypeDefByName
   
 ## <a name="parameters"></a>Paramètres  
  `szTypeDef`  
- [in] Le nom du type pour lequel obtenir le jeton TypeDef.  
+ [in] The name of the type for which to get the TypeDef token.  
   
  `tkEnclosingClass`  
- [in] Jeton TypeDef ou TypeRef qui représente la classe englobante. Si le type à rechercher n’est pas une classe imbriquée, définissez cette valeur sur NULL.  
+ [in] A TypeDef or TypeRef token representing the enclosing class. If the type to find is not a nested class, set this value to NULL.  
   
  `ptd`  
- [out] Pointeur vers le jeton TypeDef correspondant.  
+ [out] A pointer to the matching TypeDef token.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

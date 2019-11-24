@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01de7ac6-0aad-42ef-bf93-50737667b0a4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ad694f1a041346bc360e623829d2d38245773aaf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6cd6b7981c9b6b7f2efd30b045e8e179a22a3b87
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756073"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445372"
 ---
 # <a name="icorprofilercallbackexceptionsearchfunctionleave-method"></a>ICorProfilerCallback::ExceptionSearchFunctionLeave, méthode
-Notifie le profileur que la phase de recherche de gestion des exceptions a terminé la recherche d’une fonction.  
+Notifies the profiler that the search phase of exception handling has finished searching a function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,10 +31,10 @@ Notifie le profileur que la phase de recherche de gestion des exceptions a termi
 HRESULT ExceptionSearchFunctionLeave();  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

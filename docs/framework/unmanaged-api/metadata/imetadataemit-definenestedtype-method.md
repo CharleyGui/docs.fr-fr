@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1e994de6-4628-459c-b967-b34be1e9fe4f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7676c83e8b231606896cb6d1224633b4fa15e725
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d985e22ba77053127610445374b8c13ca6b97f1
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777560"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431705"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType, méthode
-Crée la signature de métadonnées d’une définition de type, retourne un `mdTypeDef` pour ce type de jeton et spécifie que le type défini est un membre du type référencé par le `tdEncloser` paramètre.  
+Creates the metadata signature of a type definition, returns an `mdTypeDef` token for that type, and specifies that the defined type is a member of the type referenced by the `tdEncloser` parameter.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,29 +40,29 @@ HRESULT DefineNestedType (
   
 ## <a name="parameters"></a>Paramètres  
  `szTypeDef`  
- [in] Le nom du type au format Unicode.  
+ [in] The name of the type in Unicode.  
   
  `dwTypeDefFlags`  
- [in] `TypeDef` attributs. Il s’agit d’un masque de bits de `CorTypeAttr` valeurs.  
+ [in] `TypeDef` attributes. This is a bitmask of `CorTypeAttr` values.  
   
  `tkExtends`  
- [in] Le jeton de la classe de base. Il s’agit soit un `mdTypeDef` ou un `mdTypeRef` jeton.  
+ [in] The token of the base class. This is either a `mdTypeDef` or a `mdTypeRef` token.  
   
  `rtkImplements`[]  
- [in] Un tableau de jetons qui spécifient les interfaces qui implémente cette classe ou une interface.  
+ [in] An array of tokens that specify the interfaces that this class or interface implements.  
   
  `tdEncloser`  
- [in] Le jeton du type englobant. Le dernier élément du tableau doit être `mdTokenNil`.  
+ [in] The token of the enclosing type. The last element of the array must be `mdTokenNil`.  
   
  `ptd`  
- [out] Le `mdTypeDef` jeton attribué.  
+ [out] The `mdTypeDef` token assigned.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

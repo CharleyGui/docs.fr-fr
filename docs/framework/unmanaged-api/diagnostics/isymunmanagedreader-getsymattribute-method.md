@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c675ce7e-76e7-45ff-8273-3b6489a2767c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 26458e2512f331ff7a8c41868c99d092cfd30977
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7f04b5c100f1fd9c44e671b883fe469b16d33fa6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737239"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440136"
 ---
 # <a name="isymunmanagedreadergetsymattribute-method"></a>ISymUnmanagedReader::GetSymAttribute, méthode
-Obtient un attribut personnalisé en fonction de son nom. Contrairement aux attributs personnalisés des métadonnées, ces attributs personnalisés sont stockés dans le magasin de symboles.  
+Gets a custom attribute based upon its name. Unlike metadata custom attributes, these custom attributes are held in the symbol store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +39,25 @@ HRESULT GetSymAttribute (
   
 ## <a name="parameters"></a>Paramètres  
  `parent`  
- [in] Le jeton de métadonnées pour l’objet pour lequel l’attribut est demandé.  
+ [in] The metadata token for the object for which the attribute is requested.  
   
  `name`  
- [in] Pointeur vers la variable qui indique l’attribut à récupérer.  
+ [in] A pointer to the variable that indicates the attribute to retrieve.  
   
  `cBuffer`  
  [in] Taille du tableau `buffer`.  
   
  `pcBuffer`  
- [out] Pointeur vers la variable qui reçoit la longueur des données d’attribut.  
+ [out] A pointer to the variable that receives the length of the attribute data.  
   
  `buffer`  
- [out] Pointeur vers la variable qui reçoit les données d’attribut.  
+ [out] A pointer to the variable that receives the attribute data.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

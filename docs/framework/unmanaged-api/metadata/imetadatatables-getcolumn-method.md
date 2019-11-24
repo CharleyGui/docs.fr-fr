@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1032055b-cabb-45c5-a50e-7e853201b175
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 853f137d91e1b3eb4f3f65a06522618f8441dcb3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 376b9ff09ad38ca43d57fcf064458e0331da8aad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053676"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441996"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn, méthode
-Obtient un pointeur vers la valeur contenue dans la cellule de la colonne et de la ligne spécifiées dans la table donnée.  
+Gets a pointer to the value contained in the cell of the specified column and row in the given table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,46 +39,46 @@ HRESULT GetColumn (
 ## <a name="parameters"></a>Paramètres
 
  `ixTbl`  
- dans Index de la table.  
+ [in] The index of the table.  
   
  `ixCol`  
- dans Index de la colonne dans la table.  
+ [in] The index of the column in the table.  
   
  `rid`  
- dans Index de la ligne dans la table.  
+ [in] The index of the row in the table.  
   
  `pVal`  
- à Pointeur vers la valeur dans la cellule.  
+ [out] A pointer to the value in the cell.  
  
 ## <a name="remarks"></a>Notes
 
-L’interprétation de la valeur retournée par `pVal` dépend du type de la colonne. Le type de colonne peut être déterminé en appelant [IMetaDataTables. GetColumnInfo](imetadatatables-getcolumninfo-method.md).
+The interpretion of the value returned through `pVal` depends on the column's type. The column type can be determined by calling [IMetaDataTables.GetColumnInfo](imetadatatables-getcolumninfo-method.md).
 
-- La méthode **GetColumn** convertit automatiquement les colonnes de type **RID** ou **CodedToken** en valeurs 32 `mdToken` bits complètes.
-- Il convertit également automatiquement les valeurs de 8 ou 16 bits en valeurs 32 bits complètes. 
-- Pour les colonnes de type *Heap* , le *pval* retourné est un index dans le tas correspondant.
+- The **GetColumn** method automatically converts columns of type **Rid** or **CodedToken** to full 32-bit `mdToken` values.
+- It also automatically converts 8-bit or 16-bit values to full 32-bit values. 
+- For *heap* type columns, the returned *pVal* will be an index into the corresponding heap.
 
-| Type de colonne              | pVal contient | Commentaire                          |
+| Column type              | pVal contains | Commentaire                          |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0.. 63)  | mdToken     | *pval* contient un jeton complet. La fonction convertit automatiquement le RID en jeton complet. |
-| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | mdToken | Lors du retour, *pval* contient un jeton complet. La fonction décompresse automatiquement le CodedToken en jeton complet. |
-| `iSHORT`(96)            | Int16         | Signature automatique-étendu à 32 bits.  |
-| `iUSHORT`(97)           | UInt16        | Signature automatique-étendu à 32 bits.  |
-| `iLONG`(98)             | Int32         |                                        | 
-| `iULONG`(99)            | UInt32        |                                        |
-| `iBYTE`(100)            | Byte          | Signature automatique-étendu à 32 bits.  |
-| `iSTRING`(101)          | Index du tas de chaîne | *pval* est un index dans le tas de chaîne. Utilisez [IMetadataTables :: GetString](imetadatatables-getstring-method.md) pour récupérer la valeur de la chaîne de colonne réelle. |
-| `iGUID`(102)            | Index du tas GUID | *pval* est un index dans le tas GUID. Utilisez [IMetadataTables :: GetGuid](imetadatatables-getguid-method.md) pour récupérer la valeur du GUID de colonne réel. |
-| `iBLOB`(103)            | Index du tas d’objets BLOB | *pval* est un index dans le tas d’objets BLOB. Utilisez [IMetadataTables :: GetBlob](imetadatatables-getblob-method.md) pour récupérer la valeur réelle de l’objet blob de colonne. |
+| `0`..`iRidMax`<br>(0..63)  | mdToken     | *pVal* will contain a full Token. The function automatically converts the Rid into a full token. |
+| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | mdToken | Upon return, *pVal* will contain a full Token. The function automatically decompresses the CodedToken into a full token. |
+| `iSHORT` (96)            | Int16         | Automatically sign-extended to 32-bit.  |
+| `iUSHORT` (97)           | UInt16        | Automatically sign-extended to 32-bit.  |
+| `iLONG` (98)             | Int32         |                                        | 
+| `iULONG` (99)            | UInt32        |                                        |
+| `iBYTE` (100)            | Byte          | Automatically sign-extended to 32-bit.  |
+| `iSTRING` (101)          | String heap index | *pVal* is an index into the String heap. Use [IMetadataTables::GetString](imetadatatables-getstring-method.md) to get the actual column String value. |
+| `iGUID` (102)            | Guid heap index | *pVal* is an index into the Guid heap. Use [IMetadataTables::GetGuid](imetadatatables-getguid-method.md) to get the actual column Guid value. |
+| `iBLOB` (103)            | Blob heap index | *pVal* is an index into the Blob heap. Use [IMetadataTables::GetBlob](imetadatatables-getblob-method.md) to get the actual column Blob value. |
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor. h  
+ **Header:** Cor.h  
   
- **Bibliothèque** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Versions de .NET Framework**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: b1d74e83-a200-4d00-8fbd-27918808616d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8e81cea13fb8d25701ccbe163f112904baf47a9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08d9ba8f8c9a251bd0db0ffe256af7db0164ba2f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939917"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449229"
 ---
 # <a name="isymunmanageddispose-interface"></a>ISymUnmanagedDispose, interface
-Libère les ressources non managées.  
+Disposes of unmanaged resources.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Destroy, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-destroy-method.md)|Provoque l’objet sous-jacent libérer toutes les références internes et renvoient une erreur sur les appels de méthode suivants.|  
+|[Destroy, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-destroy-method.md)|Causes the underlying object to release all internal references and return failure on any subsequent method calls.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

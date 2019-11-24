@@ -6,12 +6,12 @@ ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 02f86ef8ee73ff31a6c5c9d17a44a443f72ef05e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2f1ad5cc029b93261153e46d854cd8bf3e31ce92
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739281"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428536"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 
@@ -23,10 +23,10 @@ Le tableau suivant présente les valeurs par défaut des types C# :
 |Tout [type numérique intégral intégré](../builtin-types/integral-numeric-types.md)|0 (zéro)|
 |Tout [type numérique à virgule flottante intégré](../builtin-types/floating-point-numeric-types.md)|0 (zéro)|
 |[bool](bool.md)|`false`|
-|[char](char.md)|`'\0'` (U+0000)|
+|[char](../builtin-types/char.md)|`'\0'` (U+0000)|
 |[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
-|Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *null* d’un type valeur Nullable.|
+|Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. That default value is also known as the *null* value of a nullable value type.|
 
 Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type, comme illustré dans l’exemple suivant :
 

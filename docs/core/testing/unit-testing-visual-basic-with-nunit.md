@@ -4,12 +4,12 @@ description: Apprenez les concepts des tests unitaires dans .NET Core de manièr
 author: rprouse
 ms.date: 10/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 97902bbfb035d3403d3e7236a0c67fa60d7d9d94
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 4776916c316e18de954c8ccaa985075dc2ea0fc5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117333"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428730"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de NUnit
 
@@ -17,7 +17,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure).
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -47,8 +47,6 @@ dotnet new classlib -lang VB
 Renommez *Class1.VB* en *PrimeService.VB*. Créez une implémentation défaillante de la classe `PrimeService` :
 
 ```vb
-Imports System
-
 Namespace Prime.Services
     Public Class PrimeService
         Public Function IsPrime(candidate As Integer) As Boolean

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e47b1807e51427487d6af2f96ff5af437c4653eb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c1792ed0f15f8cfb62567593c9694453650f0bb9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760951"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436318"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps, méthode
-Obtient le jeu de propriétés de la ressource de manifeste avec la signature de métadonnées spécifié.  
+Gets the set of properties of the manifest resource with the specified metadata signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,32 +41,32 @@ HRESULT GetManifestResourceProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mdmr`  
- [in] Un `mdManifestResource` jeton qui représente la ressource pour laquelle obtenir les propriétés.  
+ [in] An `mdManifestResource` token that represents the resource for which to get the properties.  
   
  `szName`  
- [out] Le nom de la ressource.  
+ [out] The name of the resource.  
   
  `cchName`  
- [in] La taille, en caractères étendus de `szName`.  
+ [in] The size, in wide chars, of `szName`.  
   
  `pchName`  
- [out] Un pointeur vers le nombre de caractères étendus réellement retournés dans `szName`.  
+ [out] A pointer to the number of wide chars actually returned in `szName`.  
   
  `ptkImplementation`  
- [out] Un pointeur vers un `mdFile` jeton ou un `mdAssemblyRef` jeton qui représente le fichier ou l’assembly, respectivement, qui contient la ressource.  
+ [out] A pointer to an `mdFile` token or an `mdAssemblyRef` token that represents the file or assembly, respectively, that contains the resource.  
   
  `pdwOffset`  
- [out] Pointeur vers une valeur qui spécifie l’offset de début de la ressource dans le fichier.  
+ [out] A pointer to a value that specifies the offset to the beginning of the resource within the file.  
   
  `pdwResourceFlags`  
- [out] Un pointeur vers les indicateurs qui décrivent les métadonnées appliquées à une ressource. La valeur des indicateurs est une combinaison d’une ou plusieurs [CorManifestResourceFlags](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md) valeurs.  
+ [out] A pointer to flags that describe the metadata applied to a resource. The flags value is a combination of one or more [CorManifestResourceFlags](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md) values.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

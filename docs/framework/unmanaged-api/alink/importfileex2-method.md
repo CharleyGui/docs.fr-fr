@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 02c789fd-16fc-48c6-9619-56e87e2a37ca
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a1c950e9a6e53e04cc0f2e52a140612562b32ff1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7e270dbfc63c03e77cb4b0694296e48c2035b8a6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70776981"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445689"
 ---
 # <a name="importfileex2-method"></a>ImportFileEx2, méthode
-Importe les assemblys et les modules indépendants. Cette méthode est semblable à la [méthode ImportFile](importfile-method.md), mais fonctionne même si le fichier importé n’existe pas sur le disque.  
+Imports assemblies and unbound modules. This method is like [ImportFile Method](importfile-method.md), but works even if the file being imported does not exist on disk.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +41,34 @@ HRESULT ImportFileEx2(
   
 ## <a name="parameters"></a>Paramètres  
  `pszFilename`  
- Nom du fichier à importer.  
+ Name of file to be imported.  
   
  `pszTargetName`  
- Nom facultatif du fichier cible.  
+ Optional name of target file.  
   
  `pAssemblyScopeIn`  
- Option de l’interface de l’interface [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) facultative.  
+ Optional import scope [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface.  
   
  `fSmartImport`  
- Si la valeur est TRUE, ImportTypes, est utilisé, sinon l’importation doit être effectuée manuellement.  
+ If TRUE, ImportTypes is used, otherwise importing must be performed manually.  
   
  `dwOpenFlags`  
- Indicateurs à passer à la [méthode OpenScope](../metadata/imetadatadispenser-openscope-method.md).  
+ Flags to be passed along to [OpenScope Method](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Reçoit l’ID unique de l’assembly ou du fichier.  
+ Receives unique ID for the assembly or file.  
   
  `ppAssemblyScope`  
- Reçoit l’interface de l’interface d’importation d’assembly [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . Peut avoir la valeur NULL si le fichier n’est pas un assembly.  
+ Receives assembly import scope [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface. Can be NULL if the file is not an assembly.  
   
  `pdwCountOfScopes`  
- Reçoit le nombre de fichiers et/ou d’étendues importés.  
+ Receives the number of files and/or scopes imported.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h.  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h.  
   
 ## <a name="see-also"></a>Voir aussi
 

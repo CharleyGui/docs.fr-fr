@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d1de53ad-9435-4b5f-9df7-07f21210e5b5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1f657957d42cef1421ab3aa19f297bd04b0cacd8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0c78ce8192d6456dd1b1be990d87b9209b028e09
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781331"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440358"
 ---
 # <a name="imetadataimportcountenum-method"></a>IMetaDataImport::CountEnum, méthode
-Obtient le nombre d’éléments dans l’énumération qui a été récupérée par l’énumérateur spécifié.  
+Gets the number of elements in the enumeration that was retrieved by the specified enumerator.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +36,20 @@ HRESULT CountEnum (
   
 ## <a name="parameters"></a>Paramètres  
  `hEnum`  
- [in] Le handle pour l’énumérateur.  
+ [in] The handle for the enumerator.  
   
  `pulCount`  
- [out] Le nombre d’éléments énumérés.  
+ [out] The number of elements enumerated.  
   
 ## <a name="remarks"></a>Notes  
- Le handle spécifié par `hEnum` est obtenue à partir d’une précédente `Enum` *nom* appeler (par exemple, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
+ The handle specified by `hEnum` is obtained from a previous `Enum`*Name* call (for example, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

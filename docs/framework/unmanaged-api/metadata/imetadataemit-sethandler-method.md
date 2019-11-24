@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6c1aaaf-e2cd-407c-b73e-fbe6ffd83bb3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d50198cc6156d5bec8b8302a4624b0b7411a9c2d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6737275fb77e6f177832eb1d96214c37942bcd22
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751094"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442154"
 ---
 # <a name="imetadataemitsethandler-method"></a>IMetaDataEmit::SetHandler, méthode
-Définit la méthode référencée par le `IUnknown` pointeur comme un rappel de notification pour remappages du jeton.  
+Sets the method referenced by the specified `IUnknown` pointer as a notification callback for token remaps.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +35,19 @@ HRESULT SetHandler (
   
 ## <a name="parameters"></a>Paramètres  
  `pUnk`  
- [in] Gestionnaire à inscrire.  
+ [in] The handler to register.  
   
 ## <a name="remarks"></a>Notes  
- Le moteur de métadonnées envoie la notification à l’aide de la méthode qui est fournie par `SetHandler`, pour les compilateurs qui ne génèrent pas d’enregistrements de manière optimisée et qui souhaitent optimiser les enregistrements sauvegardés.  
+ The metadata engine sends notification by using the method that is provided by `SetHandler`, to compilers that do not generate records in an optimized way and that would like to optimize saved records.  
   
- Si la méthode de rappel n’est pas fournie via `SetHandler`, aucune optimisation ne sera effectuée sur Enregistrer, à l’exception où plusieurs importent étendues ont été fusionnées à l’aide de `IMapToken` sur la fusion pour chaque étendue.  
+ If the callback method is not provided through `SetHandler`, no optimization will be performed on save except where several import scopes have been merged using `IMapToken` on merge for each scope.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

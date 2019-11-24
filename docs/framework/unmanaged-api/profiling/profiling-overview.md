@@ -27,18 +27,16 @@ helpviewer_keywords:
 - security, profiling API considerations
 - stack depth [.NET Framework profiling]
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6dbf36cec1bcd2ec1e96d57a889ddd9d9baef269
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 08015e2e5918ca64f601ec912a906cfb6319ed6c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663889"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427105"
 ---
 # <a name="profiling-overview"></a>Vue d'ensemble du profilage
 
-<a name="top"></a> Un profileur est un outil qui surveille l’exécution d’une autre application. Un profileur CLR (Common Language Runtime) est une bibliothèque de liens dynamiques (DLL) qui se compose de fonctions qui reçoivent des messages du CLR et qui lui en envoient à l'aide de l'API de profilage. La DLL du profileur est chargée par le CLR au moment de l'exécution.
+Un profileur est un outil qui surveille l'exécution d'une autre application. Un profileur CLR (Common Language Runtime) est une bibliothèque de liens dynamiques (DLL) qui se compose de fonctions qui reçoivent des messages du CLR et qui lui en envoient à l'aide de l'API de profilage. La DLL du profileur est chargée par le CLR au moment de l'exécution.
 
 Les outils de profilage traditionnels se contentent sur la mesure de l'exécution de l'application. Autrement dit, ils mesurent le temps passé dans chaque fonction ou l'utilisation de la mémoire de l'application au fil du temps. L'API de profilage cible une classe plus large d'outils de diagnostic tels que les utilitaires de couverture du code et même des outils de débogage avancés. Ces utilisations relèvent du diagnostic de par leur nature. L'API de profilage non seulement mesure mais surveille également l'exécution d'une application. C'est pourquoi l'API de profilage ne doit jamais être utilisée par l'application elle-même et l'exécution de l'application ne doit pas dépendre du profileur (ni être affectée par lui).
 
@@ -46,56 +44,28 @@ Le profilage d'une application CLR requiert plus de support qu'un profilage de c
 
 La compilation JIT au moment de l'exécution offre de bonnes possibilités au profilage. L'API de profilage permet à un profileur de modifier le flux de code MSIL en mémoire par une routine avant sa compilation JIT. De cette manière, le profileur peut ajouter dynamiquement le code d'instrumentation à des routines particulières nécessitant un examen plus approfondi. Bien que cette approche soit possible dans les scénarios conventionnels, il est beaucoup plus facile à implémenter pour le CLR à l'aide de l'API de profilage.
 
-Cette vue d'ensemble comprend les sections suivantes :
-
-- [L’API de profilage](#profiling_api)
-
-- [Fonctionnalités prises en charge](#support)
-
-- [Threads de notification](#notification_threads)
-
-- [Sécurité](#security)
-
-- [Combinaison de Code managé et dans un Code de Profiler](#combining_managed_unmanaged)
-
-- [Profilage de Code non managé](#unmanaged)
-
-- [À l’aide de COM](#com)
-
-- [Les piles d’appels](#call_stacks)
-
-- [Rappels et profondeur de la pile](#callbacks)
-
-- [Rubriques connexes](#related_topics)
-
-<a name="profiling_api"></a>
-
 ## <a name="the-profiling-api"></a>L'API de profilage
 
-En règle générale, l’API de profilage est utilisé pour écrire un *profileur de code*, qui est un programme qui surveille l’exécution d’une application managée.
+Typically, the profiling API is used to write a *code profiler*, which is a program that monitors the execution of a managed application.
 
-L'API de profilage est utilisée par une DLL du profileur, chargée dans le même processus que l'application en cours de profilage. La DLL du profileur implémente une interface de rappel ([ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) dans le .NET Framework version 1.0 et 1.1, [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) dans la version 2.0 et versions ultérieure). Le CLR appelle les méthodes dans cette interface pour notifier le profileur des événements dans le processus profilé. Le profileur peut rappeler dans le runtime en utilisant les méthodes dans le [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) et [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) interfaces pour obtenir des informations sur l’état de l’application profilée.
+L'API de profilage est utilisée par une DLL du profileur, chargée dans le même processus que l'application en cours de profilage. The profiler DLL implements a callback interface ([ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) in the .NET Framework version 1.0 and 1.1, [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) in version 2.0 and later). Le CLR appelle les méthodes dans cette interface pour notifier le profileur des événements dans le processus profilé. The profiler can call back into the runtime by using the methods in the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) interfaces to obtain information about the state of the profiled application.
 
 > [!NOTE]
 > Seule la partie collecte de données de la solution du profileur doit s'exécuter dans le même processus que l'application profilée. Toutes les analyses de données et d'interface utilisateur doivent être effectuées dans un processus séparé.
 
 L'illustration suivante montre comment la DLL du profileur interagit avec l'application en cours de profilage et le CLR.
 
-![Capture d’écran montrant l’architecture de profilage.](./media/profiling-overview/profiling-architecture.png)
+![Screenshot that shows the profiling architecture.](./media/profiling-overview/profiling-architecture.png)
 
 ### <a name="the-notification-interfaces"></a>Interfaces de notification
 
-[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) et [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) peuvent être considérées comme des interfaces de notification. Ces interfaces se composent de méthodes telles que [ClassLoadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md), et [JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). Chaque fois que le CLR charge ou décharge une classe, compile une fonction, etc., il appelle la méthode correspondante dans l'interface `ICorProfilerCallback` ou `ICorProfilerCallback2` du profileur.
+[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) can be considered notification interfaces. These interfaces consist of methods such as [ClassLoadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md), and [JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). Chaque fois que le CLR charge ou décharge une classe, compile une fonction, etc., il appelle la méthode correspondante dans l'interface `ICorProfilerCallback` ou `ICorProfilerCallback2` du profileur.
 
-Par exemple, un profileur pourrait mesurer les performances du code via deux fonctions de notification : [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) et [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md). Il horodate simplement chaque notification, cumule les résultats et génère une liste qui indique quelles fonctions ont consommé le plus de temps processeur ou de temps horloge pendant l'exécution de l'application.
+For example, a profiler could measure code performance through two notification functions: [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) and [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md). Il horodate simplement chaque notification, cumule les résultats et génère une liste qui indique quelles fonctions ont consommé le plus de temps processeur ou de temps horloge pendant l'exécution de l'application.
 
 ### <a name="the-information-retrieval-interfaces"></a>Interfaces de récupération d'informations
 
-Les autres principales interfaces impliquées dans le profilage sont [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) et [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md). Le profileur appelle ces interfaces au besoin pour obtenir plus d'informations afin de faciliter son analyse. Par exemple, chaque fois que le CLR appelle le [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) (fonction), il fournit un identificateur de fonction. Le profileur peut obtenir plus d’informations sur cette fonction en appelant le [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) méthode pour découvrir la classe parente de la fonction, son nom et ainsi de suite.
-
-[Retour au début](#top)
-
-<a name="support"></a>
+The other main interfaces involved in profiling are [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md). Le profileur appelle ces interfaces au besoin pour obtenir plus d'informations afin de faciliter son analyse. For example, whenever the CLR calls the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) function, it supplies a function identifier. The profiler can get more information about that function by calling the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method to discover the function's parent class, its name, and so on.
 
 ## <a name="supported-features"></a>Fonctionnalités prises en charge
 
@@ -135,7 +105,7 @@ L'API de profilage peut être appelée à partir de tout langage compatible COM 
 
 L'API est efficace en matière de consommation de processeur et de mémoire. Le profilage n'implique pas de modifications de l'application profilée suffisamment significatives pour générer des résultats trompeurs.
 
-L'API de profilage s'avère utile à la fois pour les profileurs d'échantillonnage et de non-échantillonnage. Un *profileur d’échantillonnage* inspecte le profil à des battements d’horloge réguliers, par exemple, toutes les 5 millisecondes. Un *profileur de non échantillonnage* est informé d’un événement de façon synchrone avec le thread qui provoque l’événement.
+L'API de profilage s'avère utile à la fois pour les profileurs d'échantillonnage et de non-échantillonnage. A *sampling profiler* inspects the profile at regular clock ticks, say, at 5 milliseconds apart. A *non-sampling profiler* is informed of an event synchronously with the thread that causes the event.
 
 ### <a name="unsupported-functionality"></a>Fonctionnalités non prises en charge
 
@@ -155,29 +125,17 @@ L'API de profilage ne prend pas en charge les fonctionnalités suivantes :
 
 - Profilage dans des environnements de production avec des exigences de haute disponibilité. L'API de profilage a été créée pour prendre en charge les diagnostics au moment du développement. Elle n'a pas subi les tests rigoureux requis pour prendre en charge des environnements de production.
 
-[Retour au début](#top)
-
-<a name="notification_threads"></a>
-
 ## <a name="notification-threads"></a>Threads de notification
 
-Dans la plupart des cas, le thread qui génère un événement exécute également des notifications. Ces notifications (par exemple, [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) et [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)) n’avez pas besoin de fournir l’explicite `ThreadID`. En outre, le profileur peut décider d'utiliser le stockage local des threads pour stocker et mettre à jour ses blocs d'analyse au lieu d'indexer les blocs d'analyse dans le stockage global, selon le `ThreadID` du thread affecté.
+Dans la plupart des cas, le thread qui génère un événement exécute également des notifications. Such notifications (for example, [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) and [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)) do not need to supply the explicit `ThreadID`. En outre, le profileur peut décider d'utiliser le stockage local des threads pour stocker et mettre à jour ses blocs d'analyse au lieu d'indexer les blocs d'analyse dans le stockage global, selon le `ThreadID` du thread affecté.
 
-Notez que ces rappels ne sont pas sérialisés. Les utilisateurs doivent protéger leur code en créant des structures de données thread-safe et en verrouillant le code du profileur si nécessaire pour empêcher tout accès parallèle à partir de plusieurs threads. Par conséquent, dans certains cas, vous pouvez recevoir une séquence inhabituelle de rappels. Par exemple, supposons qu'une application managée engendre deux threads qui exécutent un code identique. Dans ce cas, il est possible de recevoir un [ICorProfilerCallback::JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) événement pour une fonction d’un thread et un `FunctionEnter` rappel à partir de l’autre thread avant de recevoir le [ ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) rappel. Le cas échéant, l'utilisateur reçoit un rappel `FunctionEnter` pour une fonction qui n'a peut-être pas encore été entièrement compilée juste-à-temps (JIT).
-
-[Retour au début](#top)
-
-<a name="security"></a>
+Notez que ces rappels ne sont pas sérialisés. Les utilisateurs doivent protéger leur code en créant des structures de données thread-safe et en verrouillant le code du profileur si nécessaire pour empêcher tout accès parallèle à partir de plusieurs threads. Par conséquent, dans certains cas, vous pouvez recevoir une séquence inhabituelle de rappels. Par exemple, supposons qu'une application managée engendre deux threads qui exécutent un code identique. In this case, it is possible to receive a [ICorProfilerCallback::JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) event for some function from one thread and a `FunctionEnter` callback from the other thread before receiving the [ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) callback. Le cas échéant, l'utilisateur reçoit un rappel `FunctionEnter` pour une fonction qui n'a peut-être pas encore été entièrement compilée juste-à-temps (JIT).
 
 ## <a name="security"></a>Sécurité
 
 Une DLL de profileur est une DLL non managée qui s'exécute dans le cadre du moteur d'exécution du Common Language Runtime. Par conséquent, le code inclus dans la DLL de profileur n'est pas soumis aux restrictions de sécurité d'accès du code managé. Les seules limitations applicables à la DLL de profileur sont celles imposées par le système d'exploitation sur l'utilisateur qui exécute l'application profilée.
 
 Les auteurs de profileur doivent prendre les précautions appropriées pour éviter les problèmes de sécurité. Par exemple, lors de l'installation, une DLL de profileur doit être ajoutée à la liste de contrôle d'accès (ACL) afin qu'aucun utilisateur malveillant ne puisse la modifier.
-
-[Retour au début](#top)
-
-<a name="combining_managed_unmanaged"></a>
 
 ## <a name="combining-managed-and-unmanaged-code-in-a-code-profiler"></a>Combinaison de code managé et non managé dans un profileur de code
 
@@ -187,15 +145,11 @@ Une revue de l’API de profilage CLR peut donner l’impression de pouvoir écr
 
 Bien que cela soit possible du point de vue de la conception, l'API de profilage ne prend pas en charge les composants managés. Un profileur CLR doit être entièrement non managé. Toute tentative de combiner du code managé et non managé dans un profileur CLR risque d'entraîner des violations d'accès, des échecs de programme ou des interblocages. Les composants managés du profileur déclenchent des événements sur leurs composants non managés, qui rappellent ensuite les composants managés, ce qui entraîne des références circulaires.
 
-Le seul emplacement où un profileur CLR peut appeler du code managé en toute sécurité est le corps MSIL (Microsoft Intermediate Language) d'une méthode. Il est conseillé de modifier le corps MSIL consiste à utiliser les méthodes de recompilation JIT dans les [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface.
+Le seul emplacement où un profileur CLR peut appeler du code managé en toute sécurité est le corps MSIL (Microsoft Intermediate Language) d'une méthode. The recommended practice for modifying the MSIL body is to use the  JIT recompilation methods in the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface.
 
-Il est également possible d'utiliser les anciennes méthodes d'instrumentation pour modifier du code MSIL. Avant la fin de la compilation juste-à-temps (JIT) d’une fonction, le profileur peut insérer des appels managés dans le corps MSIL d’une méthode, puis effectuer la compilation JIT il (voir la [ICorProfilerInfo::GetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md) méthode). Cette technique peut être utilisée avec succès pour l'instrumentation sélective du code managé, ou pour collecter des statistiques et des données de performance sur la compilation JIT.
+Il est également possible d'utiliser les anciennes méthodes d'instrumentation pour modifier du code MSIL. Before the just-in-time (JIT) compilation of a function is completed, the profiler can insert managed calls in the MSIL body of a method and then JIT-compile it (see the [ICorProfilerInfo::GetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md) method). Cette technique peut être utilisée avec succès pour l'instrumentation sélective du code managé, ou pour collecter des statistiques et des données de performance sur la compilation JIT.
 
 Un profileur de code peut également insérer des raccordements natifs dans le corps MSIL de chaque fonction managée appelée dans du code non managé. Cette technique peut être utilisée pour l'instrumentation et la couverture. Par exemple, un profileur de code peut insérer des raccordements d'instrumentation après chaque bloc MSIL pour vous assurer que le bloc a été exécuté. La modification du corps MSIL d'une méthode est une opération très délicate et il existe de nombreux facteurs à prendre en considération.
-
-[Retour au début](#top)
-
-<a name="unmanaged"></a>
 
 ## <a name="profiling-unmanaged-code"></a>Profilage de code non managé
 
@@ -207,19 +161,11 @@ L'API de profilage CLR (Common Language Runtime) fournit la prise en charge mini
 
 Dans les versions 1.0 et 1.1 du .NET Framework, ces méthodes sont disponibles via le sous-ensemble in-process de l'API de débogage CLR. Elles sont définies dans le fichier CorDebug.idl.
 
-Dans le .NET Framework 2.0 et versions ultérieures, vous pouvez utiliser la [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) méthode pour cette fonctionnalité.
-
-[Retour au début](#top)
-
-<a name="com"></a>
+In the .NET Framework 2.0 and later, you can use the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method for this functionality.
 
 ## <a name="using-com"></a>Utilisation de COM
 
-Bien que les interfaces de profilage soient définies en tant qu'interfaces COM, le Common Language Runtime (CLR) n'initialise pas réellement COM pour utiliser ces interfaces. La raison est d’éviter d’avoir à définir le modèle de thread à l’aide de la [CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize) fonctionner avant que l’application managée n’ait pu spécifier son modèle de thread. De même, le profileur lui-même ne doit pas appeler `CoInitialize`, car il risque de choisir un modèle de thread qui n'est pas compatible avec l'application en cours de profilage, ce qui risque d'entraîner l'échec de l'application.
-
-[Retour au début](#top)
-
-<a name="call_stacks"></a>
+Bien que les interfaces de profilage soient définies en tant qu'interfaces COM, le Common Language Runtime (CLR) n'initialise pas réellement COM pour utiliser ces interfaces. The reason is to avoid having to set the threading model by using the [CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize) function before the managed application has had a chance to specify its desired threading model. De même, le profileur lui-même ne doit pas appeler `CoInitialize`, car il risque de choisir un modèle de thread qui n'est pas compatible avec l'application en cours de profilage, ce qui risque d'entraîner l'échec de l'application.
 
 ## <a name="call-stacks"></a>Piles des appels
 
@@ -229,25 +175,17 @@ L'API de profilage fournit deux méthodes pour obtenir des piles des appels : u
 
 Un instantané de pile est une trace de la pile d'un thread à un instant précis. L'API de profilage prend en charge le traçage des fonctions managées sur la pile, mais elle laisse le traçage des fonctions non managées au propre analyseur de pile du profileur.
 
-Pour plus d’informations sur comment programmer le profileur permettant de remonter les piles gérées, consultez le [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) méthode dans cette documentation, et [Profiler parcours de la pile dans le .NET Framework 2.0 : Principes de base et d’autres fonctionnalités](https://go.microsoft.com/fwlink/?LinkId=73638).
+For more information about how to program the profiler to walk managed stacks, see the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method in this documentation set, and [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](https://go.microsoft.com/fwlink/?LinkId=73638).
 
 ### <a name="shadow-stack"></a>Pile cachée
 
-L'utilisation trop fréquente de la méthode d'instantané de pile peut rapidement créer un problème de performances. Si vous voulez suivre fréquemment les traces de pile, votre profileur doit générer à la place d’une pile cachée à l’aide de la [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md), et [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) rappels d’exception. La pile cachée est toujours actuelle et peut rapidement être copiée vers le stockage, chaque fois qu'un instantané de pile est nécessaire.
+L'utilisation trop fréquente de la méthode d'instantané de pile peut rapidement créer un problème de performances. If you want to take stack traces frequently, your profiler should instead build a shadow stack by using the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md), and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) exception callbacks. La pile cachée est toujours actuelle et peut rapidement être copiée vers le stockage, chaque fois qu'un instantané de pile est nécessaire.
 
 Une pile cachée peut obtenir des arguments de fonction, des valeurs de retour et des informations sur les instanciations génériques. Ces informations sont uniquement disponibles via la pile cachée et peuvent être obtenues quand le contrôle est transmis à une fonction. Toutefois, ces informations peuvent devenir indisponibles lors de l'exécution ultérieure de la fonction.
-
-[Retour au début](#top)
-
-<a name="callbacks"></a>
 
 ## <a name="callbacks-and-stack-depth"></a>Rappels et profondeur de la pile
 
 Les rappels du profileur peuvent être émis dans des circonstances où la pile est contrainte. De plus, un débordement de la pile dans un rappel du profileur entraîne une sortie immédiate du processus. Un profileur doit veiller à utiliser une pile aussi petite que possible en réponse à des rappels. Si le profileur est prévu pour être utilisé avec des processus robustes face à un débordement de pile, il doit également éviter lui-même de déclencher un débordement de pile.
-
-[Retour au début](#top)
-
-<a name="related_topics"></a>
 
 ## <a name="related-topics"></a>Rubriques connexes
 

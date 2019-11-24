@@ -1,23 +1,23 @@
 ---
-title: dotnet-trace-.NET Core
-description: Installation et utilisation de l’outil en ligne de commande dotnet-trace.
+title: dotnet-trace tool - .NET Core
+description: Installing and using the dotnet-trace command-line tool.
 author: sdmaclea
 ms.author: stmaclea
-ms.date: 10/14/2019
-ms.openlocfilehash: 6513cf63070bc1984006da75313e9912d76a6c95
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.date: 11/21/2019
+ms.openlocfilehash: 07eaec843e27f5d291b6d18fab53c43051794626
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321581"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428882"
 ---
-# <a name="trace-for-performance-analysis-utility-dotnet-trace"></a>Utilitaire de trace pour l’analyse des performances (`dotnet-trace`)
+# <a name="dotnet-trace-performance-analysis-utility"></a>dotnet-trace performance analysis utility
 
-**Cet article s’applique à :** .net Core 3,0 SDK et versions ultérieures
+**This article applies to:** ✓ .NET Core 3.0 SDK and later versions
 
-## <a name="installing-dotnet-trace"></a>Installation de `dotnet-trace`
+## <a name="install-dotnet-trace"></a>Install dotnet-trace
 
-Pour installer la dernière version Release du [package NuGet](https://www.nuget.org/packages/dotnet-trace)`dotnet-trace`, utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Install `dotnet-trace` [NuGet package](https://www.nuget.org/packages/dotnet-trace) with the [dotnet tool install](../tools/dotnet-tool-install.md) command:
 
 ```dotnetcli
 dotnet tool install --global dotnet-trace
@@ -31,30 +31,35 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="description"></a>Description
 
-L’outil `dotnet-trace` est un outil global de l’interface CLI multiplateforme qui permet la collecte des traces .NET Core d’un processus en cours d’exécution sans qu’un profileur natif ne soit impliqué. Il est basé sur la technologie multiplateforme `EventPipe` du Runtime .NET Core. `dotnet-trace` offre la même expérience sur Windows, Linux ou macOS.
+The `dotnet-trace` tool:
+
+* Is a cross-platform .NET Core tool.
+* Enables the collection of .NET Core traces of a running process without a native profiler.
+* Is built around the cross-platform `EventPipe` technology of the .NET Core runtime.
+* Delivers the same experience on Windows, Linux, or macOS.
 
 ## <a name="options"></a>Options
 
-- **`--version`**
+- **`--version`**  
 
-Affichez la version de l’utilitaire dotnet-Counters.
+  Displays the version of the dotnet-counters utility.
 
 - **`-h|--help`**
 
-Affichez l’aide de la ligne de commande.
+  Shows command-line help.
 
 ## <a name="commands"></a>Commandes
 
 | Commande                                                     |
 | ----------------------------------------------------------- |
-| [dotnet-collecte des traces](#dotnet-trace-collect)               |
-| [conversion dotnet-trace](#dotnet-trace-convert)               |
-| [liste dotnet-trace-processus](#dotnet-trace-list-processes) |
-| [liste de suivi dotnet-profils](#dotnet-trace-list-profiles)   |
+| [dotnet-trace collect](#dotnet-trace-collect)               |
+| [dotnet-trace convert](#dotnet-trace-convert)               |
+| [dotnet-trace ps](#dotnet-trace-ps) |
+| [dotnet-trace list-profiles](#dotnet-trace-list-profiles)   |
 
-## <a name="dotnet-trace-collect"></a>dotnet-collecte des traces
+## <a name="dotnet-trace-collect"></a>dotnet-trace collect
 
-Collecte une trace de diagnostic à partir d’un processus en cours d’exécution.
+Collects a diagnostic trace from a running process.
 
 ### <a name="synopsis"></a>Résumé
 
@@ -67,37 +72,37 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 
 - **`-p|--process-id <PID>`**
 
-  Processus à partir duquel la trace doit être collectée.
+  The process to collect the trace from.
 
 - **`--buffersize <size>`**
 
-  Définit la taille de la mémoire tampon circulaire en mémoire en mégaoctets. 256 Mo par défaut.
+  Sets the size of the in-memory circular buffer, in megabytes. Default 256 MB.
 
 - **`-o|--output <trace-file-path>`**
 
-  Chemin de sortie pour les données de trace collectées. S’il n’est pas spécifié, sa valeur par défaut est `trace.nettrace`.
+  The output path for the collected trace data. If not specified it defaults to `trace.nettrace`.
 
 - **`--providers <list-of-comma-separated-providers>`**
 
-  Liste séparée par des virgules des fournisseurs `EventPipe` à activer. Ces fournisseurs complètent tous les fournisseurs implicites par `--profile <profile-name>`. S’il existe une incohérence pour un fournisseur particulier, la configuration est prioritaire par rapport à la configuration implicite à partir du profil.
+  A comma-separated list of `EventPipe` providers to be enabled. These providers supplement any providers implied by `--profile <profile-name>`. If there's any inconsistency for a particular provider, this configuration takes precedence over the implicit configuration from the profile.
 
-  Cette liste de fournisseurs se présente sous la forme suivante :
+  This list of providers is in the form:
 
   - `Provider[,Provider]`
-  - `Provider` se présente sous la forme : `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.
-  - `KeyValueArgs` se présente sous la forme : `[key1=value1][;key2=value2]`.
+  - `Provider` is in the form: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.
+  - `KeyValueArgs` is in the form: `[key1=value1][;key2=value2]`.
 
 - **`--profile <profile-name>`**
 
-  Ensemble de configurations de fournisseur nommé prédéfini qui permet de spécifier succinctement des scénarios de suivi courants.
+  A named pre-defined set of provider configurations that allows common tracing scenarios to be specified succinctly.
 
-- **`--format <NetTrace|Speedscope>`**
+- **`--format {NetTrace|Speedscope}`**
 
-  Définit le format de sortie pour la conversion du fichier de trace.
+  Sets the output format for the trace file conversion. La valeur par défaut est `NetTrace`,
 
-## <a name="dotnet-trace-convert"></a>conversion dotnet-trace
+## <a name="dotnet-trace-convert"></a>dotnet-trace convert
 
-Convertit les traces `nettrace` en d’autres formats pour les utiliser avec d’autres outils d’analyse de trace.
+Converts `nettrace` traces to alternate formats for use with alternate trace analysis tools.
 
 ### <a name="synopsis"></a>Résumé
 
@@ -109,31 +114,31 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 - **`<input-filename>`**
 
-  Fichier de trace d’entrée à convertir. La valeur par défaut est *trace. NetTrace*.
+  Input trace file to be converted. Defaults to *trace.nettrace*.
 
 ### <a name="options"></a>Options
 
 - **`--format <NetTrace|Speedscope>`**
 
-  Définit le format de sortie pour la conversion du fichier de trace.
+  Sets the output format for the trace file conversion.
 
 - **`-o|--output <output-filename>`**
 
-  Nom du fichier de sortie. L’extension du format cible sera ajoutée.
+  Output filename. Extension of target format will be added.
 
-## <a name="dotnet-trace-list-processes"></a>liste dotnet-trace-processus
+## <a name="dotnet-trace-ps"></a>dotnet-trace ps
 
-Répertorie les processus dotnet qui peuvent être suivis.
+Lists dotnet processes that can be attached to.
 
 ### <a name="synopsis"></a>Résumé
 
 ```console
-dotnet-trace list-processes [-h|--help]
+dotnet-trace ps [-h|--help]
 ```
 
-## <a name="dotnet-trace-list-profiles"></a>liste de suivi dotnet-profils
+## <a name="dotnet-trace-list-profiles"></a>dotnet-trace list-profiles
 
-Répertorie les profils de suivi prédéfinis avec une description des fournisseurs et des filtres dans chaque profil.
+Lists pre-built tracing profiles with a description of what providers and filters are in each profile.
 
 ### <a name="synopsis"></a>Résumé
 
@@ -141,62 +146,72 @@ Répertorie les profils de suivi prédéfinis avec une description des fournisse
 dotnet-trace list-profiles [-h|--help]
 ```
 
-## <a name="collect-a-trace-with-dotnet-trace"></a>Collecter une trace avec `dotnet-trace`
+## <a name="collect-a-trace-with-dotnet-trace"></a>Collect a trace with dotnet-trace
 
-- Pour collecter des traces à l’aide de `dotnet-trace`, vous devez d’abord Rechercher l’identificateur de processus (PID) de l’application .NET Core à partir de laquelle collecter les traces.
+To collect traces using `dotnet-trace`:
 
-  - Sous Windows, il existe des options telles que l’utilisation du gestionnaire des tâches ou la commande `tasklist`.
-  - Sur Linux, l’option trivial peut utiliser la commande `ps`.
+- Get the process identifier (PID) of the .NET Core application to collect traces from.
 
-Vous pouvez également utiliser la commande [dotnet-trace List-Processes](#dotnet-trace-list-processes) pour savoir quels sont les processus .net core en cours d’exécution, ainsi que leurs PID.
+  - On Windows, you can use Task Manager or the `tasklist` command, for example.
+  - On Linux, for example, the `ps` command.
+  - [dotnet-trace ps](#dotnet-trace-ps)
 
-- Exécutez ensuite la commande suivante :
+- Exécutez la commande suivante :
 
-```console
-> dotnet-trace collect --process-id <PID>
+  ```console
+  dotnet-trace collect --process-id <PID>
+  ```
 
-Press <Enter> to exit...
-Connecting to process: <Full-Path-To-Process-Being-Profiled>/dotnet.exe
-Collecting to file: <Full-Path-To-Trace>/trace.nettrace
+  The preceding command generates output similar to the following:
+
+  ```console
+  Press <Enter> to exit...
+  Connecting to process: <Full-Path-To-Process-Being-Profiled>/dotnet.exe
+  Collecting to file: <Full-Path-To-Trace>/trace.nettrace
   Session Id: <SessionId>
   Recording trace 721.025 (KB)
-```
+  ```
 
-- Enfin, arrêtez la collecte en appuyant sur la touche `<Enter>`, et `dotnet-trace` terminera la journalisation des événements dans le fichier `trace.nettrace`.
+- Stop collection by pressing the `<Enter>` key. `dotnet-trace` will finish logging events to the *trace.nettrace* file.
 
-## <a name="viewing-the-trace-captured-from-dotnet-trace"></a>Affichage de la trace capturée à partir de `dotnet-trace`
+## <a name="view-the-trace-captured-from-dotnet-trace"></a>View the trace captured from dotnet-trace
 
-Sur Windows, les fichiers `.nettrace` peuvent être affichés sur [PerfView](https://github.com/microsoft/perfview) pour l’analyse, tout comme les traces collectées avec ETW ou LTTng. Pour les traces collectées sur Linux, vous pouvez déplacer la trace vers un ordinateur Windows à afficher sur PerfView.
+On Windows, *.nettrace* files can be viewed on [PerfView](https://github.com/microsoft/perfview) for analysis: For traces collected on other platforms, the trace file can be moved to a Windows machine to be viewed on PerfView.
 
-Vous pouvez également afficher le suivi sur un ordinateur Linux en modifiant le format de sortie de `dotnet-trace` à `speedscope`. Vous pouvez modifier le format du fichier de sortie à l’aide de l’option `-f|--format`-`-f speedscope` fera `dotnet-trace` pour produire un fichier `speedscope`. Vous pouvez actuellement choisir entre `nettrace` (option par défaut) et `speedscope`. `Speedscope` fichiers peuvent être ouverts à <https://www.speedscope.app>.
+On Linux, the trace can be viewed by changing the output format of `dotnet-trace` to `speedscope`. The output file format can be changed using the `-f|--format` option - `-f speedscope` will make `dotnet-trace` produce a `speedscope` file. You can choose between `nettrace` (the default option) and `speedscope`. `Speedscope` files can be opened at <https://www.speedscope.app>.
 
 > [!NOTE]
-> Le Runtime .NET Core génère des traces au format `nettrace`, et elles sont converties en speedscope (si spécifié) une fois la trace terminée. Étant donné que certaines conversions peuvent entraîner une perte de données, le fichier d’origine `nettrace` est conservé en regard du fichier converti.
+> The .NET Core runtime generates traces in the `nettrace` format. The traces are converted to speedscope (if specified) after the trace is completed. Since some conversions may result in loss of data, the original `nettrace` file is preserved next to the converted file.
 
-## <a name="using-dotnet-trace-to-collect-counter-values-over-time"></a>Utilisation de `dotnet-trace` pour collecter des valeurs de compteur au fil du temps
+## <a name="use-dotnet-trace-to-collect-counter-values-over-time"></a>Use dotnet-trace to collect counter values over time
 
-Si vous essayez d’utiliser `EventCounter` pour la surveillance de l’intégrité de base dans des paramètres sensibles aux performances comme des environnements de production et que vous souhaitez collecter des traces au lieu de les regarder en temps réel, vous pouvez le faire avec `dotnet-trace`.
+`dotnet-trace` can:
 
-Par exemple, si vous souhaitez collecter les valeurs des compteurs de performance du runtime, vous pouvez utiliser la commande suivante :
+* Use `EventCounter` for basic health monitoring in performance-sensitive environments. For example, in production.
+* Collect traces so they don't need to be viewed in real time.
+
+For example, to collect runtime performance counter values, use the following command:
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1
 ```
 
-Cette commande indique aux compteurs Runtime d’être signalés une fois par seconde pour une surveillance de l’intégrité légère. Le remplacement de `EventCounterIntervalSec=1` par une valeur plus élevée (par exemple, 60) vous permet de collecter une trace plus petite avec moins de granularité dans les données de compteur.
+The preceding command tells the runtime counters to report once every second for lightweight health monitoring. Replacing `EventCounterIntervalSec=1` with a higher value (for example, 60) allows collection of a smaller trace with less granularity in the counter data.
 
-Si vous souhaitez désactiver les événements d’exécution pour réduire encore davantage la surcharge (et la taille de la trace), vous pouvez utiliser la commande suivante pour désactiver les événements d’exécution et Managed Stack Profiler.
+The following command reduces overhead and trace size more than the preceding one:
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1,Microsoft-Windows-DotNETRuntime:0:1,Microsoft-DotNETCore-SampleProfiler:0:1
 ```
 
-## <a name="net-providers"></a>Fournisseurs .NET
+The preceding command disables runtime events and the managed stack profiler.
 
-Le Runtime .NET Core prend en charge les fournisseurs .NET suivants. .NET Core utilise les mêmes mots clés pour activer à la fois les traces `Event Tracing for Windows (ETW)` et `EventPipe`.
+## <a name="net-providers"></a>.NET Providers
 
-| Nom du fournisseur                            | Informations |
+The .NET Core runtime supports the following .NET providers. .NET Core uses the same keywords to enable both `Event Tracing for Windows (ETW)` and `EventPipe` traces.
+
+| Provider name                            | Informations |
 |------------------------------------------|-------------|
-| `Microsoft-Windows-DotNETRuntime`        | [Fournisseur du Runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Mots clés du runtime CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
-| `Microsoft-Windows-DotNETRuntimeRundown` | [Fournisseur d’arrêt](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Mots clés d’arrêt du CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
-| `Microsoft-DotNETCore-SampleProfiler`    | Active l’exemple de profileur. |
+| `Microsoft-Windows-DotNETRuntime`        | [The Runtime Provider](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[CLR Runtime Keywords](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
+| `Microsoft-Windows-DotNETRuntimeRundown` | [The Rundown Provider](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[CLR Rundown Keywords](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
+| `Microsoft-DotNETCore-SampleProfiler`    | Enables the sample profiler. |

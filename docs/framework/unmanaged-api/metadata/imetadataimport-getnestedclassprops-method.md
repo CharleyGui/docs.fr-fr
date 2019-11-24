@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 704d19f1-bdef-4745-af8c-6476eb246fb3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d7dd59c1e0e8b28c557910da3fd9c6489370cc62
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0adf4f91e1bc7bfb72f634cb3bf038710198b74f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778952"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437141"
 ---
 # <a name="imetadataimportgetnestedclassprops-method"></a>IMetaDataImport::GetNestedClassProps, méthode
-Obtient le jeton TypeDef pour le parent <xref:System.Type> du type imbriqué.  
+Gets the TypeDef token for the parent <xref:System.Type> of the specified nested type.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +36,17 @@ HRESULT GetNestedClassProps (
   
 ## <a name="parameters"></a>Paramètres  
  `tdNestedClass`  
- [in] Jeton TypeDef représentant le <xref:System.Type> pour renvoyer la classe parente jeton pour.  
+ [in] A TypeDef token representing the <xref:System.Type> to return the parent class token for.  
   
  `ptdEnclosingClass`  
- [out] Un pointeur vers le jeton TypeDef pour le <xref:System.Type> qui `tdNestedClass` est imbriqué dans.  
+ [out] A pointer to the TypeDef token for the <xref:System.Type> that `tdNestedClass` is nested in.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

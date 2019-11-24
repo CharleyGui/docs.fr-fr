@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea7c1617-f3ce-4220-8288-f2b50eaf0f0f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 813f57377c1885b09190ada3c73f4391a3f2d931
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 98ed5556020b93fb1f31d1dde84690fc33092627
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895050"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448376"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables, méthode
-Retourne toutes les variables définies au niveau de la portée globale au sein de cet espace de noms.  
+Returns all variables defined at global scope within this namespace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetVariables(
   
 ## <a name="parameters"></a>Paramètres  
  `cVars`  
- dans Qui indique la taille `pVars` du tableau. `ULONG32`  
+ [in] A `ULONG32` that indicates the size of the `pVars` array.  
   
  `pcVars`  
- à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les espaces de noms.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the namespaces.  
   
  `pVars`  
- à Pointeur vers une mémoire tampon qui contient les espaces de noms.  
+ [out] A pointer to a buffer that contains the namespaces.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym. idl, CorSym. h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

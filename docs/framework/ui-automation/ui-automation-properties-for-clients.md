@@ -8,16 +8,16 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-ms.openlocfilehash: 9c92ea154a078ff5a059edd82f06b8f3d5bab239
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3ef1e7c6e21f30c5bdea096003f192c38059ab2e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042134"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441363"
 ---
 # <a name="ui-automation-properties-for-clients"></a>Propriétés UI Automation pour les clients
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette vue d’ensemble présente les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] telles qu’elles sont exposées aux applications clientes UI Automation.  
   
@@ -27,15 +27,15 @@ ms.locfileid: "71042134"
   
  Les propriétés[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sont en lecture seule. Pour définir les propriétés d’un contrôle, vous devez utiliser les méthodes du modèle de contrôle approprié. Par exemple, utilisez <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> pour changer les valeurs de position d’une fenêtre de défilement.  
   
- Pour améliorer les performances, vous pouvez mettre en cache les valeurs des propriétés des contrôles et des modèles de contrôle quand des objets <xref:System.Windows.Automation.AutomationElement> sont récupérés. Pour plus d’informations, consultez [mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md).  
+ Pour améliorer les performances, vous pouvez mettre en cache les valeurs des propriétés des contrôles et des modèles de contrôle quand des objets <xref:System.Windows.Automation.AutomationElement> sont récupérés. For more information, see [Caching in UI Automation Clients](caching-in-ui-automation-clients.md).  
   
 ## <a name="property-ids"></a>ID de propriété  
- Les identificateurs de propriété (ID) sont des valeurs constantes uniques qui sont <xref:System.Windows.Automation.AutomationProperty> encapsulées dans des objets. Les applications clientes UI Automation obtiennent ces ID <xref:System.Windows.Automation.AutomationElement> à partir de la classe ou de la classe de modèle <xref:System.Windows.Automation.ScrollPattern>de contrôle appropriée, telle que. Les fournisseurs UI Automation les obtiennent à partir de <xref:System.Windows.Automation.AutomationElementIdentifiers> , ou de l’une des classes d’identificateurs de modèle de contrôle, par exemple <xref:System.Windows.Automation.ScrollPatternIdentifiers>.  
+ Property identifiers (IDs) are unique, constant values that are encapsulated in <xref:System.Windows.Automation.AutomationProperty> objects. UI Automation client applications get these IDs from the <xref:System.Windows.Automation.AutomationElement> class or from the appropriate control pattern class, such as <xref:System.Windows.Automation.ScrollPattern>. Les fournisseurs UI Automation les obtiennent à partir de <xref:System.Windows.Automation.AutomationElementIdentifiers> , ou de l’une des classes d’identificateurs de modèle de contrôle, par exemple <xref:System.Windows.Automation.ScrollPatternIdentifiers>.  
   
  Les fournisseurs utilisent l’ <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> numérique de <xref:System.Windows.Automation.AutomationProperty> pour identifier les propriétés interrogées dans la méthode <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> . En général, les applications clientes n’ont pas besoin d’examiner l’ <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>. <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> n’est utilisé que pour le débogage et le diagnostic.  
   
 ## <a name="property-conditions"></a>Conditions de propriété  
- Les ID de propriété sont utilisés dans la <xref:System.Windows.Automation.PropertyCondition> construction des objets utilisés <xref:System.Windows.Automation.AutomationElement> pour rechercher des objets. Par exemple, vous pouvez être amené à rechercher un <xref:System.Windows.Automation.AutomationElement> ayant un nom spécifique, ou tous les contrôles qui sont activés. Chaque <xref:System.Windows.Automation.PropertyCondition> spécifie un identificateur <xref:System.Windows.Automation.AutomationProperty> et la valeur à laquelle la propriété doit correspondre.  
+ The property IDs are used in constructing <xref:System.Windows.Automation.PropertyCondition> objects used to find <xref:System.Windows.Automation.AutomationElement> objects. Par exemple, vous pouvez être amené à rechercher un <xref:System.Windows.Automation.AutomationElement> ayant un nom spécifique, ou tous les contrôles qui sont activés. Chaque <xref:System.Windows.Automation.PropertyCondition> spécifie un identificateur <xref:System.Windows.Automation.AutomationProperty> et la valeur à laquelle la propriété doit correspondre.  
   
  Pour plus d’informations, consultez les rubriques de référence suivantes :  
   
@@ -90,7 +90,7 @@ ms.locfileid: "71042134"
 ## <a name="additional-automationelement-properties"></a>Propriétés AutomationElement supplémentaires  
  Outre les structures de propriété <xref:System.Windows.Automation.AutomationElement.Current%2A> et <xref:System.Windows.Automation.AutomationElement.Cached%2A> , <xref:System.Windows.Automation.AutomationElement> possède les propriétés suivantes, qui sont récupérées via des accesseurs de propriétés simples.  
   
-|Les|Description|  
+|Property|Description|  
 |--------------|-----------------|  
 |<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>|Collection d’objets <xref:System.Windows.Automation.AutomationElement> enfants qui se trouvent dans le cache.|  
 |<xref:System.Windows.Automation.AutomationElement.CachedParent%2A>|Objet parent <xref:System.Windows.Automation.AutomationElement> qui se trouve dans le cache.|  

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0c6ac12-22ea-43f5-b799-8cda0faf3336
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2aefd79e251d751a6c8354fa827863cb5aedf305
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1fb3f4486bc0ee7a85975770f94a8241999f10e0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751053"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442116"
 ---
 # <a name="imetadataemitsetmethodprops-method"></a>IMetaDataEmit::SetMethodProps, méthode
-Définit ou met à jour de la fonctionnalité, stockée à l’adresse virtuelle relative spécifiée, d’une méthode définie par un appel antérieur à [IMetaDataEmit::DefineMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md).  
+Sets or updates the feature, stored at the specified relative virtual address, of a method defined by a prior call to [IMetaDataEmit::DefineMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT SetMethodProps (
   
 ## <a name="parameters"></a>Paramètres  
  `md`  
- [in] Le jeton pour la méthode à modifier.  
+ [in] The token for the method to be changed.  
   
  `dwMethodFlags`  
- [in] Les attributs de membre.  
+ [in] The member attributes.  
   
  `ulCodeRVA`  
- [in] L’adresse du code.  
+ [in] The address of the code.  
   
  `dwImplFlags`  
- [in] Les indicateurs d’implémentation pour la méthode.  
+ [in] The implementation flags for the method.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

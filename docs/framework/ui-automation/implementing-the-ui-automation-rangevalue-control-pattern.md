@@ -6,30 +6,30 @@ helpviewer_keywords:
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-ms.openlocfilehash: 57986fa28a7a1bb7f70409b332147ff5b9615ec0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 04db9f97ccea10cf8c65df0f0117c272a5e868dd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043421"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435100"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implémentation du modèle de contrôle RangeValue d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IRangeValueProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> est utilisé pour prendre en charge les contrôles auxquels vous pouvez affecter une valeur comprise dans une plage. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle RangeValue, notez les conventions et recommandations suivantes :  
   
 - Les contrôles autorisent le réétalonnage de leurs propriétés prises en charge en fonction des paramètres régionaux ou des préférences de l’utilisateur. Par exemple, vous pouvez définir un contrôle de thermomètre pour afficher la température en degrés Fahrenheit ou Celsius.  
   
 - Les contrôles qui ont des valeurs de plage ambiguës, telles que les barres de progression ou les curseurs, doivent normaliser ces valeurs.  
   
- ![Barre de progression.](./media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
+ ![Progress bar.](./media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
 Exemple d’une barre de progression où la valeur est de type entier, et où les valeurs de propriété minimale et maximale sont normalisées à 0 et 100, respectivement  
   
 <a name="Required_Members_for_the_IRangeValueProvider"></a>   
@@ -37,13 +37,13 @@ Exemple d’une barre de progression où la valeur est de type entier, et où le
   
 |Membre obligatoire|Type de membre|Notes|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|Aucun|  
+|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Property|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|aucune.|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   

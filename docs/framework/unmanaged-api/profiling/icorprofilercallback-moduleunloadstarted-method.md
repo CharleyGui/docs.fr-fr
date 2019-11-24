@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2debcaab-6005-4245-afdb-4268bb7e74bd
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c99ddc66cca0a0d0083cfa19cfca34a1e557d4e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f0000e9b063022e828e52b9b940ec6f4e0ce4165
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769149"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445906"
 ---
 # <a name="icorprofilercallbackmoduleunloadstarted-method"></a>ICorProfilerCallback::ModuleUnloadStarted, méthode
-Notifie le profileur qu’un module est déchargé.  
+Notifies the profiler that a module is being unloaded.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +34,15 @@ HRESULT ModuleUnloadStarted(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] L’ID du module qui est en cours de déchargement.  
+ [in] The ID of the module that is being unloaded.  
   
 ## <a name="remarks"></a>Notes  
- La valeur de `moduleId` n’est pas valide pour une demande d’informations après la `ModuleUnloadStarted` retourne de la méthode, il s’agit dernière chance du profileur d’obtenir des informations sur ce module.  
+ The value of `moduleId` is not valid for an information request after the `ModuleUnloadStarted` method returns — this is the profiler's last chance to get information about this module.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -14,31 +14,29 @@ helpviewer_keywords:
 ms.assetid: 3367166f-31fe-43d0-8107-2e786f984e50
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: af0b38e955ac10592dc5cd0d0e18b0cff08834af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce8129c2a6cc29717743f255c0aac86a0836fa31
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599531"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448476"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay, interface
-Fournit des méthodes qui affichent des informations de liaison actuelles sur l’application en cours d’exécution.  
+Provides methods that display current binding information about the running application.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetCurrentDisplay, méthode](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-getcurrentdisplay-method.md)|Retourne les informations d’affichage de liaison actuel.|  
-|[InitializeForProcess, méthode](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|Initialise le `IBindingDisplay` objet.|  
+|[GetCurrentDisplay, méthode](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-getcurrentdisplay-method.md)|Returns the current binding display information.|  
+|[InitializeForProcess, méthode](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|Initializes the `IBindingDisplay` object.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** BindingDisplay.h  
+ **Header:** BindingDisplay.h  
   
- **Bibliothèque :** BindingDisplay.idl  
+ **Library:** BindingDisplay.idl  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

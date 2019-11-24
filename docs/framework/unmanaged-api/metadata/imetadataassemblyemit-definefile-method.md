@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: c065aadf-c1ca-4981-bde6-597042cb29c4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 54d5a233da2bf033d960fd02961ac89eb57151d2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0b7ca6f9878ed2fa2d90ea93e5101f0a66ec2d5e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776289"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440207"
 ---
 # <a name="imetadataassemblyemitdefinefile-method"></a>IMetaDataAssemblyEmit::DefineFile, méthode
 Crée une structure `File` contenant les métadonnées pour l'assembly référencé par cet assembly et retourne le jeton de métadonnées associé.  
@@ -41,29 +39,29 @@ HRESULT DefineFile (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [in] Le nom du fichier à être consommés.  
+ [in] The name of the file to be consumed.  
   
  `pbHashValue`  
- [in] Pointeur vers les données de hachage associées à l’assembly.  
+ [in] A pointer to the hash data associated with the assembly.  
   
  `cbHashValue`  
- [in] La taille en octets de `pbHashValue`.  
+ [in] The size in bytes of `pbHashValue`.  
   
  `dwFileFlags`  
- [in] Une combinaison au niveau du bit de `FileFlags` valeurs qui spécifient les paramètres de propriété.  
+ [in] A bitwise combination of `FileFlags` values that specify property settings.  
   
  `pmdf`  
- [out] Un pointeur vers le texte retourné `File` jeton.  
+ [out] A pointer to the returned `File` token.  
   
 ## <a name="remarks"></a>Notes  
- Un seul `File` structure des métadonnées doit être définie pour chaque fichier qui faisait partie de cet assembly au moment où cet assembly a été généré, à l’exclusion du fichier qui contient les métadonnées.  
+ One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateforme :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

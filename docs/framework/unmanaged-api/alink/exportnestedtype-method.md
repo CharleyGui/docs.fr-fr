@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dec7df60-4d30-47c8-99db-72e0419e5f76
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 570e48788a11045882ef546bf6bc22315c2a02b0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: fded6b95144d4088a2abc8dfcc4ef8eda331c34f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777278"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438423"
 ---
 # <a name="exportnestedtype-method"></a>ExportNestedType, méthode
-Spécifie que les types imbriqués sont exportables. La [méthode ExportType](exporttype-method.md) peut également exporter des types imbriqués, mais cette méthode est plus rapide.  
+Specifies nested types as exportable. The [ExportType Method](exporttype-method.md) can also export nested types, but this method is faster.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,31 +41,31 @@ HRESULT ExportNestedType(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly à partir duquel effectuer l’exportation.  
+ ID of assembly to export from.  
   
  `FileToken`  
- Jeton de fichier ou assembly de fichier qui définit le type à rendre exportable.  
+ File token or Assembly of file that defines the type to be made exportable.  
   
  `TypeToken`  
- Jeton de type de type à rendre exportable.  
+ Type token of type to be made exportable.  
   
  `ParentType`  
- Jeton de type parent.  
+ Token of parent type.  
   
  `pszTypename`  
- Nom de type qualifié complet à exporter.  
+ Fully qualified type name to export.  
   
  `dwFlags`  
- `ComType`indicateurs tels que `tdPublic` ou `tdNested`. Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` flags such as `tdPublic` or `tdNested`. This value may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Reçoit le jeton pour le type exporté.  
+ Receives token for exported type.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 

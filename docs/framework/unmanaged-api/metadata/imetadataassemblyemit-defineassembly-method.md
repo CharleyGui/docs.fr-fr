@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d53409e0be43dbf5d0cf7ba0fcbc170e2117f6a1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20628e708261076c6e172ff30c366a0d69c2e0f2
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745813"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432120"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly, méthode
-Crée un `Assembly` de structure qui contient les métadonnées pour l’assembly spécifié et retourne le jeton de métadonnées associé.  
+Creates an `Assembly` structure containing metadata for the specified assembly and returns the associated metadata token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,35 +41,35 @@ HRESULT DefineAssembly (
   
 ## <a name="parameters"></a>Paramètres  
  `pbPublicKey`  
- [in] La clé publique qui identifie l’éditeur de l’assembly, ou NULL si l’assembly n'est pas un nom fort.  
+ [in] The public key that identifies the publisher of the assembly, or NULL if the assembly is not strongly named.  
   
  `cbPublicKey`  
- [in] La taille en octets de `pbPublicKey`.  
+ [in] The size in bytes of `pbPublicKey`.  
   
  `uHashAlgId`  
- [in] Identificateur de l’algorithme de hachage à utiliser pour chiffrer les fichiers dans l’assembly, ou NULL pour spécifier l’algorithme SHA-1.  
+ [in] The identifier of the hashing algorithm to use to encrypt the files in the assembly, or NULL to specify the SHA-1 algorithm.  
   
  `szName`  
- [in] Le nom lisible de l’assembly. Cette valeur ne doit pas dépasser 1 024 caractères.  
+ [in] The human-readable text name of the assembly. This value must not exceed 1024 characters.  
   
  `pMetaData`  
- [in] Pointeur vers une instance ASSEMBLYMETADATA qui contient les informations de version, la plateforme et aux paramètres régionaux de l’assembly.  
+ [in] A pointer to an ASSEMBLYMETADATA instance that contains the version, platform, and locale information for the assembly.  
   
  `dwAssemblyFlags`  
- [in] Une combinaison de [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) valeurs qui décrivent les fonctionnalités de l’assembly.  
+ [in] A combination of [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values that describe features of the assembly.  
   
  `pmda`  
- [out] Pointeur vers le jeton de métadonnées.  
+ [out] A pointer to the metadata token.  
   
 ## <a name="remarks"></a>Notes  
- Seul `Assembly` structure des métadonnées peut être défini dans un manifeste.  
+ Only one `Assembly` metadata structure can be defined within a manifest.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

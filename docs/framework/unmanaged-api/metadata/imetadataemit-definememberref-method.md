@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 21b5bcb8-ea75-4962-8acc-ad17584061e5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 38e4928ad0f3560698cbecab81a11630d67e4db2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 696389b51328e167212fb2292a873c34b9263811
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777614"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431822"
 ---
 # <a name="imetadataemitdefinememberref-method"></a>IMetaDataEmit::DefineMemberRef, méthode
-Définit une référence à un membre d’un module en dehors de la portée actuelle et obtient un jeton pour cette définition de référence.  
+Defines a reference to a member of a module outside the current scope, and gets a token to that reference definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ HRESULT DefineMemberRef (
   
 ## <a name="parameters"></a>Paramètres  
  `tkImport`  
- [in] Jeton pour la classe ou une interface, le membre cible si le membre n’est pas global ; Si le membre est global, le `mdModuleRef` jeton pour cet autre fichier.  
+ [in] Token for the target member's class or interface, if the member is not global; if the member is global, the `mdModuleRef` token for that other file.  
   
  `szName`  
- [in] Le nom du membre cible.  
+ [in] The name of the target member.  
   
  `pvSigBlob`  
- [in] La signature du membre cible.  
+ [in] The signature of the target member.  
   
  `cbSigBlob`  
- [in] Le nombre d’octets dans `pvSigBlob`.  
+ [in] The count of bytes in `pvSigBlob`.  
   
  `pmr`  
- [out] Le `mdMemberRef` jeton attribué.  
+ [out] The `mdMemberRef` token assigned.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

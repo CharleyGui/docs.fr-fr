@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8d746e0a-d158-4983-88da-db0a0856bc0b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0076b70c85c21f0c4b1fb140b15000f99dbff742
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cb0af78092822875204f45ec3dca1484e5b5fc90
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755138"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427472"
 ---
 # <a name="isymunmanagedwriterusingnamespace-method"></a>ISymUnmanagedWriter::UsingNamespace, méthode
-Spécifie que le nom d’espace de noms complet donné est utilisé dans la portée lexicale actuellement ouverte. L’espace de noms sera utilisé dans toutes les portées qui héritent de la portée actuellement ouverte. Fermeture de la portée actuelle s’arrête également l’utilisation de l’espace de noms.  
+Specifies that the given fully qualified namespace name is being used within the currently open lexical scope. The namespace will be used within all scopes that inherit from the currently open scope. Closing the current scope will also stop the use of the namespace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +34,13 @@ HRESULT UsingNamespace(
   
 ## <a name="parameters"></a>Paramètres  
  `fullName`  
- [in] Pointeur vers le nom qualifié complet de l’espace de noms.  
+ [in] A pointer to the fully qualified name of the namespace.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

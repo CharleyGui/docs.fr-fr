@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 35449514-333f-4918-9c60-7aa198d655d2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6c52f96ad9458dfd5cdedc5cc73154aa570c6759
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 26948261c571dbe963811e8e9631551685a63bdb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751965"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450372"
 ---
-# <a name="corprfruntimetype-enumeration"></a>COR_PRF_RUNTIME_TYPE, énumération
-Contient des valeurs qui indiquent la version du common language runtime (CLR) : bureau ou CoreCLR, qui est utilisé dans Silverlight.  
+# <a name="cor_prf_runtime_type-enumeration"></a>COR_PRF_RUNTIME_TYPE, énumération
+Contains values that indicate the version of the common language runtime (CLR): desktop or CoreCLR, which is used in Silverlight.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +38,15 @@ typedef enum
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_DESKTOP_CLR`|La version du CLR de bureau.|  
-|`COR_PRF_CORE_CLR`|La version principale du CLR, utilisée dans Silverlight.|  
+|`COR_PRF_DESKTOP_CLR`|The desktop version of the CLR.|  
+|`COR_PRF_CORE_CLR`|The core version of the CLR, used in Silverlight.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

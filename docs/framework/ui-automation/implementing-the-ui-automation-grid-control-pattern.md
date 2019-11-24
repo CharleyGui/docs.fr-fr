@@ -6,30 +6,30 @@ helpviewer_keywords:
 - grid control pattern
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
-ms.openlocfilehash: 222f79934b183b836f74575cdcc611588b41ce2a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f4b5f1763b655026b20f37605d4649606af7fea6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043446"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435374"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implémentation du modèle de contrôle Grid d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique présente les conventions et directives à respecter pour implémenter <xref:System.Windows.Automation.Provider.IGridProvider>, notamment les informations sur les propriétés, les méthodes et les événements. Des liens vers des références supplémentaires sont répertoriés à la fin de la vue d'ensemble.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.GridPattern> permet de prendre en charge les contrôles qui agissent comme des conteneurs pour une collection d’éléments enfants. Les enfants de cet élément doivent implémenter <xref:System.Windows.Automation.Provider.IGridItemProvider> et être organisés en un système de coordonnées logiques à deux dimensions, qui peut être parcouru par ligne et par colonne. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Quand vous implémentez le modèle de contrôle Grid, notez les conventions et recommandations suivantes :  
   
 - Les coordonnées de grille sont de base zéro, les coordonnées de la cellule supérieure gauche (ou supérieure droite en fonction des paramètres régionaux) ayant pour coordonnées (0, 0).  
   
 - Si une cellule est vide, un élément UI Automation doit être retourné pour permettre la prise en charge de la propriété <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> de cette cellule. Cela est possible quand la disposition des éléments enfants de la grille est semblable à celle d’un tableau non justifié (consultez l’exemple ci-dessous).  
   
- ![Affichage de l’Explorateur Windows avec mise en page irrégulière.](./media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
+ ![Windows Explorer view showing ragged layout.](./media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
 Exemple de contrôle Grid avec des coordonnées vides  
   
 - Une grille avec un seul élément est nécessaire pour implémenter <xref:System.Windows.Automation.Provider.IGridProvider> , s’il est logiquement considéré comme une grille. Le nombre d’éléments enfants de la grille est immatériel.  
@@ -46,11 +46,11 @@ Exemple de contrôle Grid avec des coordonnées vides
 ## <a name="required-members-for-igridprovider"></a>Membres obligatoires pour IGridProvider  
  Les propriétés et méthodes suivantes sont nécessaires à l’implémentation de l’interface IGridProvider.  
   
-|Membres requis|Type|Notes|  
+|Membres nécessaires|Tapez|Notes|  
 |----------------------|----------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|Property|aucune.|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Property|aucune.|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Méthode|aucune.|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
@@ -60,8 +60,8 @@ Exemple de contrôle Grid avec des coordonnées vides
   
 |Type d'exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -Si la coordonnée de la ligne demandée <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> est supérieure à ou si la coordonnée de la colonne est supérieure <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>à.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -Si l’une des coordonnées de la ligne ou de la colonne demandée est inférieure à zéro.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -   If the requested row coordinate is larger than the <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> or the column coordinate is larger than the <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -   If either of the requested row or column coordinates is less than zero.|  
   
 ## <a name="see-also"></a>Voir aussi
 

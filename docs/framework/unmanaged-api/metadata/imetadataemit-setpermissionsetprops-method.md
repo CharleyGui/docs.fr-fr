@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8eaee971-40bf-45e2-a3d8-6e57674213b6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f77e6e9711f05262e494f2814750af8ef7cd9f64
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 53a75b8e7edd15cd233577e0a3714fb5d981495f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750903"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432324"
 ---
 # <a name="imetadataemitsetpermissionsetprops-method"></a>IMetaDataEmit::SetPermissionSetProps, méthode
-Définit ou met à jour des fonctionnalités de la signature de métadonnées d’un jeu d’autorisations défini par un appel antérieur à [IMetaDataEmit::DefinePermissionSet](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
+Sets or updates features of the metadata signature of a permission set defined by a prior call to [IMetaDataEmit::DefinePermissionSet](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ HRESULT SetPermissionSetProps (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Un jeton de métadonnées qui représente l’objet à être décorés.  
+ [in] A metadata token that represents the object to be decorated.  
   
  `dwAction`  
- [in] Un [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) valeur qui spécifie le type de sécurité déclarative à utiliser.  
+ [in] A [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) value that specifies the type of declarative security to be used.  
   
  `pvPermission`  
- [in] L’objet BLOB d’autorisation.  
+ [in] The permission BLOB.  
   
  `cbPermission`  
- [in] La taille, en octets, de `pvPermission`.  
+ [in] The size, in bytes, of `pvPermission`.  
   
  `ppm`  
- [out] Un `mdPermission` jeton de métadonnées qui représente les autorisations mises à jour.  
+ [out] An `mdPermission` metadata token that represents the updated permissions.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

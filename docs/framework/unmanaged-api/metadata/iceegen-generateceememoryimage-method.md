@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: b3847495-0ae6-4a72-b496-65ce2424afc6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fc973aadde30b5d5e9bfd55cb544ac3115656a3b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a15b9bf5612e18196fc57266d60ec7be3691c682
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750548"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436361"
 ---
 # <a name="iceegengenerateceememoryimage-method"></a>ICeeGen::GenerateCeeMemoryImage, méthode
-Génère une image dans la mémoire pour la base de code.  
+Generates an image in memory for the code base.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +37,14 @@ HRESULT GenerateCeeMemoryImage (
   
 ## <a name="parameters"></a>Paramètres  
  `ppImage`  
- [out] Pointeur vers l’image générée.  
+ [out] A pointer to the generated image.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

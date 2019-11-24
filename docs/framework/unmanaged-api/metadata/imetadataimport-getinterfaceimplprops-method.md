@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: be3f5985-b1e4-4036-8602-c16e8508d4af
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2a4305b94d785a764671a2d73f43facefd0da0e6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e5eb735acac73d694a0719c206bd22711a8c0333
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782374"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437538"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps, méthode
-Obtient un pointeur vers les jetons de métadonnées pour le <xref:System.Type> qui implémente la méthode spécifiée, et pour l’interface qui déclare cette méthode.
+Gets a pointer to the metadata tokens for the <xref:System.Type> that implements the specified method, and for the interface that declares that method.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,47 +37,47 @@ HRESULT GetInterfaceImplProps (
   
 ## <a name="parameters"></a>Paramètres  
  `iiImpl`  
- [in] Représentant la méthode pour renvoyer les jetons de classe et d’interface pour le jeton de métadonnées.  
+ [in] The metadata token representing the method to return the class and interface tokens for.  
   
  `pClass`  
- [out] Le jeton de métadonnées représentant la classe qui implémente la méthode.  
+ [out] The metadata token representing the class that implements the method.  
   
  `ptkIface`  
- [out] Le jeton de métadonnées qui représente l’interface qui définit la méthode implémentée.  
+ [out] The metadata token representing the interface that defines the implemented method.  
 
 ## <a name="remarks"></a>Notes
 
- Vous obtenez la valeur de `iImpl` en appelant le [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md) (méthode).
+ You obtain the value for `iImpl` by calling the [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md) method.
  
- Par exemple, supposons qu’une classe a un `mdTypeDef` jeton la valeur de 0 x 02000007 et qu’elle implémente trois interfaces dont les types ont des jetons : 
+ For example, suppose that a class has an `mdTypeDef` token value of 0x02000007 and that it implements three interfaces whose types have tokens: 
 
 - 0x02000003 (TypeDef)
 - 0x0100000A (TypeRef)
 - 0x0200001C (TypeDef)
 
-Conceptuellement, ces informations sont stockées dans une table de mise en œuvre d’interface en tant que :
+Conceptually, this information is stored into an interface implementation table as:
 
-| Numéro de ligne | Jeton de classe | Jeton de l’interface |
+| Row number | Class token | Interface token |
 |------------|-------------|-----------------|
 | 4          |             |                 |
-| 5\.          | 02000007    | 02000003        |
-| 6\.          | 02000007    | 0100000A        |
+| 5          | 02000007    | 02000003        |
+| 6          | 02000007    | 0100000A        |
 | 7          |             |                 |
 | 8          | 02000007    | 0200001C        |
 
-Rappelez-vous, le jeton est une valeur de 4 octets :
+Recall, the token is a 4-byte value:
 
-- Les 3 octets contenant le nombre de lignes ou RID.
-- L’octet de poids fort conserve le type de jeton : 0 x 09 pour `mdtInterfaceImpl`.
+- The lower 3 bytes hold the row number, or RID.
+- The upper byte holds the token type – 0x09 for `mdtInterfaceImpl`.
 
-`GetInterfaceImplProps` Retourne les informations contenues dans la ligne dont le jeton que vous fournissez dans le `iImpl` argument. 
+`GetInterfaceImplProps` returns the information held in the row whose token you provide in the `iImpl` argument. 
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

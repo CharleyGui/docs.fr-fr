@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: b500a260-1d57-4953-95e1-c27063f7c8da
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: da3b83191ce1acdf40e27c5ee1d843a1fb4a54f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e5940f229e86b46bb8c5d5b2f9920a8261359f65
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750679"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436409"
 ---
 # <a name="iceegenaddsectionreloc-method"></a>ICeeGen::AddSectionReloc, méthode
-Ajoute une instruction .reloc à la base de code.  
+Adds a .reloc instruction to the code base.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,23 +40,23 @@ HRESULT AddSectionReloc (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] La section de code en mémoire à laquelle ajouter une instruction .reloc.  
+ [in] The section of in-memory code to which to add a .reloc instruction.  
   
  `offset`  
- [in] Le décalage de la section.  
+ [in] The offset of the section.  
   
  `relativeTo`  
- [in] La section à laquelle `offset` fait référence.  
+ [in] The section to which `offset` refers.  
   
  `relocType`  
- [in] Parmi les [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) valeurs indiquant le genre d’instruction .reloc à ajouter.  
+ [in] One of the [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

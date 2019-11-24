@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4e2d88c6-8a3a-4fbe-900b-b4f4c06bf6bf
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40d1817b9eb7f341899efddb469c7fa17a8f8c0e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1a4f7703536bcfdae75b0bcffae8dca0734e9e0f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782395"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437563"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal, méthode
-Obtient un pointeur vers le type natif non managé du champ représenté par le jeton de métadonnées de champ spécifié.  
+Gets a pointer to the native, unmanaged type of the field represented by the specified field metadata token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT GetFieldMarshal (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Le jeton de métadonnées qui représente le champ pour obtenir des informations de marshaling interop pour.  
+ [in] The metadata token that represents the field to get interop marshaling information for.  
   
  `ppvNativeType`  
- [out] Pointeur vers la signature de métadonnées du type natif du champ.  
+ [out] A pointer to the metadata signature of the field's native type.  
   
  `pcbNativeType`  
- [out] La taille en octets de `ppvNativeType`.  
+ [out] The size in bytes of `ppvNativeType`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

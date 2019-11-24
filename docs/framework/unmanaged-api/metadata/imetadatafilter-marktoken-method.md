@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bd492834-6529-4d39-b93d-f8cdbd3e297f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 08340c82acb8eff2ce5b778c719f350b58b51fa5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae105a60969e819f7974735ed8f075c60ba93916
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757531"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440348"
 ---
 # <a name="imetadatafiltermarktoken-method"></a>IMetaDataFilter::MarkToken, méthode
-Définit une valeur qui indique que le jeton de métadonnées spécifié a été traité.  
+Sets a value indicating that the specified metadata token has been processed.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,14 +35,14 @@ HRESULT MarkToken (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Le jeton à marquer comme traité.  
+ [in] The token to mark as processed.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

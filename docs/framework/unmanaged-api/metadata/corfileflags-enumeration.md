@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d16703fd-518f-412e-92cb-74433d11032e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5c6ac7dabd2dfcc7829fd42389c0a6c261fe456d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c315e2ae2753b59b4e277764d27c3fb3388b515c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781866"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445418"
 ---
 # <a name="corfileflags-enumeration"></a>CorFileFlags, énumération
-Contient des valeurs qui décrivent le type de fichier défini dans un appel à [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+Contains values that describe the type of file defined in a call to [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +39,13 @@ typedef enum CorFileFlags {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ffContainsMetaData`|Indique que le fichier n’est pas un fichier de ressources.|  
-|`ffContainsNoMetaData`|Indique que le fichier, éventuellement un fichier de ressources, ne contient pas de métadonnées.|  
+|`ffContainsMetaData`|Indicates that the file is not a resource file.|  
+|`ffContainsNoMetaData`|Indicates that the file, possibly a resource file, does not contain metadata.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

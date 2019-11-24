@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5da1bf3d-dddf-4892-b266-578ee54d570b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c5651da4c0065a4ac479fe31e54225ee5df51b32
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8af2b6834ac8655c64a7738c65550b515a4b6675
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780623"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74439049"
 ---
 # <a name="icorprofilerinfogetilfunctionbodyallocator-method"></a>ICorProfilerInfo::GetILFunctionBodyAllocator, méthode
-Obtient une interface qui fournit une méthode pour allouer de mémoire pouvant être utilisée pour permuter le corps d’une méthode dans le code Microsoft intermediate language (MSIL).  
+Gets an interface that provides a method to allocate memory to be used for swapping out the body of a method in Microsoft intermediate language (MSIL) code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT GetILFunctionBodyAllocator(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] L’ID du module dans lequel réside la méthode.  
+ [in] The ID of the module in which the method resides.  
   
  `ppMalloc`  
- [out] Un pointeur vers un [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) interface qui fournit une méthode pour allouer la mémoire.  
+ [out] A pointer to an [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) interface that provides a method to allocate the memory.  
   
 ## <a name="remarks"></a>Notes  
- Un corps de méthode en code MSIL doit se trouver en tant qu’une adresse virtuelle relative (RVA), par rapport à module chargé, ce qui signifie qu’il suit le module au sein de 4 Go. Pour faciliter un outil qui permet de permuter le corps d’une méthode, le `GetILFunctionBodyAllocator` méthode garantit que la mémoire est allouée dans cette plage.  
+ A method body in MSIL code must be located as a relative virtual address (RVA), relative to the loaded module, which means that it follows the module within 4 GB. To make it easier for a tool to swap out the body of a method, the `GetILFunctionBodyAllocator` method ensures that memory is allocated within that range.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

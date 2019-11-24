@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a04bf93a2b2809198673d15f29714f52c9435b68
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c8d0145b9dffe1c0ff6ed3281c90f3bcec082ab8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767840"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428063"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant, méthode
-Définit un nom pour une valeur constante.  
+Defines a name for a constant value.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT DefineConstant(
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- [in] Un pointeur vers un `WCHAR` qui définit le nom de constante.  
+ [in] A pointer to a `WCHAR` that defines the constant name.  
   
  `value`  
- [in] La valeur de la constante.  
+ [in] The value of the constant.  
   
  `cSig`  
  [in] Taille du tableau `signature`.  
   
  `signature`  
- [in] La signature de type pour la constante.  
+ [in] The type signature for the constant.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f9671e5a-7b14-4f5b-8404-58136422c8b2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 51c7235b4018fabb2ecf9c0db2800d5d9e54b327
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1b69c0522c47d4e675180af67adab166626da4d7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747142"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440026"
 ---
 # <a name="icorprofilercallbackthreadassignedtoosthread-method"></a>ICorProfilerCallback::ThreadAssignedToOSThread, méthode
-Notifie le profileur qu’un thread managé est implémenté à l’aide d’un thread de système d’exploitation particulier.  
+Notifies the profiler that a managed thread is being implemented using a particular operating system thread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +35,18 @@ HRESULT ThreadAssignedToOSThread(
   
 ## <a name="parameters"></a>Paramètres  
  `managedThreadId`  
- [in] L’identificateur du thread managé.  
+ [in] The identifier of the managed thread.  
   
  `osThreadId`  
- [in] L’identificateur du thread de système d’exploitation.  
+ [in] The identifier of the operating system thread.  
   
 ## <a name="remarks"></a>Notes  
- Le `ThreadAssignedToOSThread` rappel existe afin que le profileur peut assurer un mappage précis entre les fibres de threads de système d’exploitation et les threads managés.  
+ The `ThreadAssignedToOSThread` callback exists so that the profiler can maintain an accurate mapping across fibers of operating system threads to managed threads.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

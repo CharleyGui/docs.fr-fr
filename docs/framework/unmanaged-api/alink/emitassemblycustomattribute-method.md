@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b72f5409-79af-4fa7-90a7-7630eec170f1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 77d54f6c8f67dda5132518d1fbd579a91ce82071
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ec0a86e3396ad42152bc0a244f74ad13deba16e4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777444"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446507"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute, méthode
-Appelez pour définir des attributs personnalisés au niveau de l’assembly.  
+Call to set assembly-level custom attributes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,31 +41,31 @@ HRESULT EmitAssemblyCustomAttribute(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly.  
+ ID of the assembly.  
   
  `FileToken`  
- Fichier qui défile l’attribut. Peut avoir la valeur `AssemblyID` null si n’indique pas un netmodule indépendant.  
+ File that defiles the attribute. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
   
  `tkType`  
- Type de l’attribut personnalisé.  
+ Type of the custom attribute.  
   
  `pCustomValue`  
- Données de valeur personnalisée.  
+ Custom value data.  
   
  `cbCustomValue`  
- Longueur des données de la valeur personnalisée.  
+ Length of custom value data.  
   
  `bSecurity`  
- TRUE si l’attribut personnalisé est lié à la signature de l’assembly.  
+ TRUE if the custom attribute is related to assembly signing.  
   
  `bAllowMulti`  
- TRUE si plusieurs attributs doivent être émis.  
+ TRUE if multiple attributes are to be emitted.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a11b264-8540-4732-aa35-bc2d95b95b8e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2fa4b1c45b7bf10d167089f80686f438d54288cf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8637be3c0a59676dc52aea985d7418bfd8f247bc
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782227"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443105"
 ---
 # <a name="icorprofilerinfo2getthreadappdomain-method"></a>ICorProfilerInfo2::GetThreadAppDomain, méthode
-Obtient l’ID du domaine d’application dans lequel le thread spécifié est en cours d’exécution code.  
+Gets the ID of the application domain in which the specified thread is currently executing code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +35,15 @@ HRESULT GetThreadAppDomain(
   
 ## <a name="parameters"></a>Paramètres  
  `threadId`  
- [in] ID spécifiant le thread.  
+ [in] The ID specifying the thread.  
   
  `pAppDomainId`  
- [out] Un pointeur vers l’ID du domaine d’application.  
+ [out] A pointer to the ID of the application domain.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea3dc625-5650-4bf4-8e67-01e42be065b1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 85f788ec61cc441e7271fb7a8aba843f37d20a57
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3f6320d6d962e40acf494acbb5c95adda62d1461
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782724"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445288"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionenter-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionEnter, méthode
-Notifie le profileur que la phase de déroulement de la gestion des exceptions a commencé à une fonction de déroulement.  
+Notifies the profiler that the unwind phase of exception handling has begun to unwind a function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,17 +34,17 @@ HRESULT ExceptionUnwindFunctionEnter(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] L’ID de la fonction qui n’est pas vidée.  
+ [in] The ID of the function that is being unwound.  
   
 ## <a name="remarks"></a>Notes  
- Le profileur ne doit pas bloquer dans son implémentation de cette méthode, car la pile ne peut pas être dans un état qui autorise le garbage collection, et par conséquent, le garbage collection préemptif ne peut pas être activé. Si le profileur bloque ici et le garbage collection est tenté, le runtime bloque jusqu'à ce que ce rappel renvoie.  
+ The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
   
- L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’une allocation de mémoire managée.  
+ The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

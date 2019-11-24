@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50a58a83-6287-40a4-b315-47823cea0a5c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: afc2192fe46ed75ed6fb75e0d58268152856b746
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f1262181fa745e1b6d3fc48a4ad728c1020705b5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770778"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434316"
 ---
 # <a name="imetadataemitgettokenfromsig-method"></a>IMetaDataEmit::GetTokenFromSig, méthode
-Obtient un jeton pour la signature de métadonnées spécifié.  
+Gets a token for the specified metadata signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT GetTokenFromSig (
   
 ## <a name="parameters"></a>Paramètres  
  `pvSig`  
- [in] La signature à rendre persistante et stockées.  
+ [in] The signature to be persisted and stored.  
   
  `cbSig`  
- [in] Le nombre d’octets dans `pvSig`.  
+ [in] The count of bytes in `pvSig`.  
   
  `pmsig`  
- [out] Le `mdSignature` jeton attribué.  
+ [out] The `mdSignature` token assigned.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

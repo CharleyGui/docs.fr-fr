@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 77f72fb7eb7b0542dc9a3179811a78b189d6b3b0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c9ac624e17223def206e86fd92ee4fd2de7f6082
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778842"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436748"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps, méthode
-Retourne des informations de métadonnées pour le <xref:System.Type> représenté par le jeton TypeDef spécifié.  
+Returns metadata information for the <xref:System.Type> represented by the specified TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,29 +40,29 @@ HRESULT GetTypeDefProps (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le jeton TypeDef qui représente le type à retourner les métadonnées.  
+ [in] The TypeDef token that represents the type to return metadata for.  
   
  `szTypeDef`  
- [out] Une mémoire tampon contenant le nom de type.  
+ [out] A buffer containing the type name.  
   
  `cchTypeDef`  
- [in] La taille en caractères larges de `szTypeDef`.  
+ [in] The size in wide characters of `szTypeDef`.  
   
  `pchTypeDef`  
- [out] Le nombre de caractères étendus retournés dans `szTypeDef`.  
+ [out] The number of wide characters returned in `szTypeDef`.  
   
  `pdwTypeDefFlags`  
- [out] Pointeur vers tous les indicateurs qui modifient la définition de type. Cette valeur est un masque de bits à partir de la [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) énumération.  
+ [out] A pointer to any flags that modify the type definition. This value is a bitmask from the [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) enumeration.  
   
  `ptkExtends`  
- [out] Un jeton de métadonnées TypeDef ou TypeRef qui représente le type de base du type demandé.  
+ [out] A TypeDef or TypeRef metadata token that represents the base type of the requested type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

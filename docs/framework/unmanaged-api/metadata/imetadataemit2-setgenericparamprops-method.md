@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a0c9f104329818f47597e8735389e5e6205ca617
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7a93bbe0d7a9d9e6ff7505bbc215efa79176ad1f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777102"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440439"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps, méthode
-Définit les valeurs de propriété pour la définition de paramètre générique référencé par le jeton spécifié.  
+Sets property values for the generic parameter definition referenced by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ HRESULT SetGenericParamProps (
   
 ## <a name="parameters"></a>Paramètres  
  `gp`  
- [in] Le jeton pour la définition de paramètre générique pour lequel définir des valeurs.  
+ [in] The token for the generic parameter definition for which to set values.  
   
  `dwParamFlags`  
- [in] Une valeur de la [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) énumération qui décrit le type du paramètre générique.  
+ [in] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the type for the generic parameter.  
   
  `szName`  
- [in] Facultatif. Le nom du paramètre pour lequel définir des valeurs.  
+ [in] Facultatif. The name of the parameter for which to set values.  
   
  `reserved`  
- [in] Réservé pour une extensibilité future.  
+ [in] Reserved for future extensibility.  
   
  `rtkConstraints`  
- [in] Facultatif. Un tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un `mdTypeDef`, `mdTypeRef`, ou `mdTypeSpec` jeton de métadonnées.  
+ [in] Facultatif. A zero-terminated array of type constraints. Array members must be an `mdTypeDef`, `mdTypeRef`, or `mdTypeSpec` metadata token.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

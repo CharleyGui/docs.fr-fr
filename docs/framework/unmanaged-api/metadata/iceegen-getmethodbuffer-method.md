@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: c7c5b39a-d4ac-41f1-9d1e-44163f563a49
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 14ea8dab2c4258fe490ef362fd527d80bd8a0178
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8c8ecab9d957e72bb6c0817af07c863fcff97cde
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746107"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436331"
 ---
 # <a name="iceegengetmethodbuffer-method"></a>ICeeGen::GetMethodBuffer, méthode
-Obtient une mémoire tampon de la taille appropriée pour la méthode à l’adresse virtuelle relative spécifiée.  
+Gets a buffer of the appropriate size for the method at the specified relative virtual address.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,17 +38,17 @@ HRESULT GetMethodBuffer (
   
 ## <a name="parameters"></a>Paramètres  
  `RVA`  
- [in] L’adresse virtuelle relative de la méthode pour laquelle retourner une mémoire tampon.  
+ [in] The relative virtual address of the method for which to return a buffer.  
   
  `lpBuffer`  
- [out] Pointeur vers la mémoire tampon retournée.  
+ [out] A pointer to the returned buffer.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

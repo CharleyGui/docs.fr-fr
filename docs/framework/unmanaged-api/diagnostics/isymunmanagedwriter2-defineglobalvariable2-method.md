@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 04d569d6-a151-4957-9872-f3f694c3e4a9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a54d3cb1bb9abf740c2c9b5a9a8312a9612ae658
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 12475b1ac8a1a81e565aa689eac2ae1a9b55e73a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894455"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438288"
 ---
 # <a name="isymunmanagedwriter2defineglobalvariable2-method"></a>ISymUnmanagedWriter2::DefineGlobalVariable2, méthode
-Définit une variable globale unique.  
+Defines a single global variable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT DefineGlobalVariable2(
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- dans Nom de la variable globale.  
+ [in] The global variable name.  
   
  `attributes`  
- dans Attributs de la variable globale.  
+ [in] The global variable attributes.  
   
  `sigToken`  
- dans Jeton de métadonnées de la signature.  
+ [in] The metadata token of the signature.  
   
  `addrKind`  
- dans Type d’adresse.  
+ [in] The address type.  
   
  `addr1`  
- dans Première adresse de la spécification de paramètre.  
+ [in] The first address for the parameter specification.  
   
  `addr2`  
- dans Deuxième adresse de la spécification de paramètre.  
+ [in] The second address for the parameter specification.  
   
  `addr3`  
- dans Troisième adresse de la spécification de paramètre.  
+ [in] The third address for the parameter specification.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Voir aussi
 

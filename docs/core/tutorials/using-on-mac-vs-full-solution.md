@@ -4,12 +4,12 @@ description: Cette rubrique vous guide lors de la génération d’une solution 
 author: mairaw
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 46d118cc4dc54e34db0f964aa3f8d76f0ad67249
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 0081463c0a99acc5cb4e02bb96e2218bbcf61131
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925997"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428627"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Génération d’une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac
 
@@ -23,13 +23,13 @@ Ce didacticiel vous montre comment créer une application qui accepte un terme d
 > - Dans Visual Studio pour Mac, sélectionnez **Aide** > **Signaler un problème** dans le menu ou **Signaler un problème** sur l’écran d’accueil, ce qui ouvre une fenêtre permettant de soumettre un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/41/index.html).
 > - Pour soumettre une suggestion, sélectionnez **Aide** > **Faire une suggestion** dans le menu ou **Faire une suggestion** sur l’écran d’accueil, ce qui vous amène à la [page web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
-- OpenSSL (si exécution de .NET Core 1.1) : Consultez la rubrique [Prérequis de .NET Core sur Mac](../macos-prerequisites.md).
+- OpenSSL (if running .NET Core 1.1): See the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos) topic.
 - [Kit SDK .NET Core 1.1 ou version ultérieure](https://dotnet.microsoft.com/download)
 - [Visual Studio 2017 pour Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
-Pour plus d’informations sur la configuration requise, consultez la [configuration requise de .NET Core sur Mac](../macos-prerequisites.md). Pour connaître l’ensemble des exigences système de Visual Studio 2017 pour Mac, consultez la page [Exigences système de la famille de produits Visual Studio 2017 pour Mac](/visualstudio/productinfo/vs2017-system-requirements-mac).
+For more information on prerequisites, see the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos). Pour connaître l’ensemble des exigences système de Visual Studio 2017 pour Mac, consultez la page [Exigences système de la famille de produits Visual Studio 2017 pour Mac](/visualstudio/productinfo/vs2017-system-requirements-mac).
 
 ## <a name="building-a-library"></a>Génération d'une bibliothèque
 
@@ -75,7 +75,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Pour que la bibliothèque de test fonctionne avec la classe `WordCount`, ajoutez une référence au projet `TextUtils`. Dans la barre latérale **Solution**, cliquez avec le bouton droit sur **Dépendances** sous **TestLibrary**. Sélectionnez **Modifier les références** dans le menu contextuel.
 
-1. Dans la boîte de dialogue **Modifier les références**, sélectionnez le projet **TextUtils** dans l’onglet **Projets**. Sélectionnez **OK**.
+1. In the **Edit References** dialog, select the **TextUtils** project on the **Projects** tab. Select **OK**.
 
    ![Boîte de dialogue Modifier les références dans Visual Studio pour Mac](./media/using-on-mac-vs-full-solution/visual-studio-mac-edit-references.png)
 
@@ -173,7 +173,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
    ![Fenêtre de console Visual Studio pour Mac montrant votre application en cours d’exécution](./media/using-on-mac-vs-full-solution/visual-studio-mac-console-window.png)
 
-1. La dernière fonctionnalité à explorer est le débogage avec Visual Studio pour Mac. Définissez un point d’arrêt sur l’instruction `Console.WriteLine` : sélectionnez dans la marge gauche de la ligne 23 : un cercle rouge apparaît en regard de la ligne de code. Vous pouvez également faire une sélection sur la ligne de code, puis sélectionner **Exécuter** > **Basculer le point d’arrêt** dans le menu.
+1. La dernière fonctionnalité à explorer est le débogage avec Visual Studio pour Mac. Définissez un point d’arrêt sur l’instruction `Console.WriteLine`. Sélectionnez dans la marge gauche de la ligne 23 : un cercle rouge apparaît en regard de la ligne de code. Vous pouvez également faire une sélection sur la ligne de code, puis sélectionner **Exécuter** > **Basculer le point d’arrêt** dans le menu.
 
    ![Point d'arrêt défini dans Visual Studio pour Mac](./media/using-on-mac-vs-full-solution/visual-studio-mac-breakpoint.png)
 

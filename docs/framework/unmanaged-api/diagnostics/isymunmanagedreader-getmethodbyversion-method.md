@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ddb0631-4569-41b3-93e4-50fdfaa486dc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f3210f0186401729a5bc95369e88b290ae49a634
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d5f42e5ed3ce7829cfcf921f3002c238985710a9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776996"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426747"
 ---
 # <a name="isymunmanagedreadergetmethodbyversion-method"></a>ISymUnmanagedReader::GetMethodByVersion, méthode
-Obtient une méthode de lecteur de symboles, étant donné un jeton de méthode et un numéro de version de modifier et copier. Numéros de version commencent à 1 et sont incrémentés à chaque fois que la méthode est modifiée suite à une opération modifier et copier.  
+Gets a symbol reader method, given a method token and an edit-and-copy version number. Version numbers start at 1 and are incremented each time the method is changed as a result of an edit-and-copy operation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetMethodByVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `token`  
- [in] Le jeton de méthode.  
+ [in] The method token.  
   
  `version`  
- [in] La version de la méthode.  
+ [in] The method version.  
   
  `pRetVal`  
- [out] Pointeur vers l’interface retournée.  
+ [out] A pointer to the returned interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

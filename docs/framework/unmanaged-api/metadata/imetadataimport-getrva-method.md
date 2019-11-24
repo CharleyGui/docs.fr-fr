@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d305aa59c1b9e9e1225b30f12e36fc689d584db1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a3a5cadc1b5a9df7967aae271ff10296843121dd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778888"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436958"
 ---
 # <a name="imetadataimportgetrva-method"></a>IMetaDataImport::GetRVA, méthode
-Obtient l’adresse virtuelle relative (RVA) et les indicateurs d’implémentation de la méthode ou le champ représenté par le jeton spécifié.  
+Gets the relative virtual address (RVA) and the implementation flags of the method or field represented by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT GetRVA (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Un jeton de métadonnées MethodDef ou FieldDef qui représente l’objet de code pour retourner l’adresse RVA. Si le jeton est FieldDef, le champ doit être une variable globale.  
+ [in] A MethodDef or FieldDef metadata token that represents the code object to return the RVA for. If the token is a FieldDef, the field must be a global variable.  
   
  `pulCodeRVA`  
- [out] Pointeur vers l’adresse virtuelle relative de l’objet de code représenté par le jeton.  
+ [out] A pointer to the relative virtual address of the code object represented by the token.  
   
  `pdwImplFlags`  
- [out] Pointeur vers les indicateurs d’implémentation pour la méthode. Cette valeur est un masque de bits à partir de la [CorMethodImpl](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) énumération. La valeur de `pdwImplFlags` est valide uniquement si `tk` est un jeton MethodDef.  
+ [out] A pointer to the implementation flags for the method. This value is a bitmask from the [CorMethodImpl](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) enumeration. The value of `pdwImplFlags` is valid only if `tk` is a MethodDef token.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

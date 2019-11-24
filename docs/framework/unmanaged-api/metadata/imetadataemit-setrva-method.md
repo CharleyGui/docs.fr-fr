@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4d69fb6d-ee35-4318-8224-5eea2bd16818
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 02331bb3b0c70b946eaa28c9cd316f109ac927b6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0a1d244a4bf077970d2031c3c3b2bc56a0dd3d79
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777240"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426823"
 ---
 # <a name="imetadataemitsetrva-method"></a>IMetaDataEmit::SetRVA, méthode
-Définit l’adresse virtuelle relative de la méthode spécifiée.  
+Sets the relative virtual address of the specified method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +36,17 @@ HRESULT SetRVA (
   
 ## <a name="parameters"></a>Paramètres  
  `md`  
- [in] Le jeton pour la méthode cible ou l’implémentation de méthode.  
+ [in] The token for the target method or method implementation.  
   
  `ulRVA`  
- [in] L’adresse de la zone de code ou de données.  
+ [in] The address of the code or data area.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

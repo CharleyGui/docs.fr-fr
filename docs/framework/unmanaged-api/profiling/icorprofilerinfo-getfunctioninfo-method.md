@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c42b5891-019d-46b3-b551-4606295b75b8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b4b39e53af7abaf25cc4a563bfbec8450b1e57d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0a3ec1a317fbeba2bf792378663e2fe940a8ec10
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780655"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74439115"
 ---
 # <a name="icorprofilerinfogetfunctioninfo-method"></a>ICorProfilerInfo::GetFunctionInfo, méthode
-Obtient la classe parente et les métadonnées de jeton pour la fonction spécifiée.  
+Gets the parent class and metadata token for the specified function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +37,7 @@ HRESULT GetFunctionInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] L’ID de la fonction pour laquelle obtenir la classe parente et les métadonnées de jeton.  
+ [in] The ID of the function for which to get the parent class and metadata token.  
   
  `pClassId`  
  [out] Pointeur vers la classe parente de la fonction.  
@@ -51,14 +49,14 @@ HRESULT GetFunctionInfo(
  [out] Pointeur vers le jeton de métadonnées de la fonction.  
   
 ## <a name="remarks"></a>Notes  
- Le code de profileur peut appeler [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) pour obtenir une interface de métadonnées pour un module donné. Le jeton de métadonnées qui est retourné à l'emplacement référencé par `pToken` peut alors servir à accéder aux métadonnées pour la fonction.  
+ The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a metadata interface for a given module. Le jeton de métadonnées qui est retourné à l'emplacement référencé par `pToken` peut alors servir à accéder aux métadonnées pour la fonction.  
   
- Le `ClassID` d’une fonction sur une classe générique peut ne pas être obtenu sans plus d’informations contextuelles sur l’utilisation de la fonction. Dans ce cas, `pClassId` est égal à 0. Profiler le code doit utiliser [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) avec la valeur COR_PRF_FRAME_INFO pour fournir plus de contexte.  
+ The `ClassID` of a function on a generic class might not be obtainable without more contextual information about the use of the function. In this case, `pClassId` will be 0. Profiler code should use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) with a COR_PRF_FRAME_INFO value to provide more context.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

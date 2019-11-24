@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7c9e9120-3104-42f0-86ce-19a025f20dcc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 737ccc8af41c9eca765a7ea06f29d1aec1ccfad6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ed193aab8beb0de1321aa1d52ec9f963b08b316c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758856"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441663"
 ---
 # <a name="imetadataimportenummemberswithname-method"></a>IMetaDataImport::EnumMembersWithName, méthode
 Énumère les jetons MemberDef représentant les membres du type spécifié avec le nom spécifié.  
@@ -42,39 +40,39 @@ HRESULT EnumMembersWithName (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur.  
+ [in, out] A pointer to the enumerator.  
   
  `cl`  
- [in] Jeton TypeDef représentant le type de membres à énumérer.  
+ [in] A TypeDef token representing the type with members to enumerate.  
   
  `szName`  
- [in] Nom du membre qui limite l’étendue de l’énumérateur.  
+ [in] The member name that limits the scope of the enumerator.  
   
  `rMembers`  
- [out] Tableau utilisé pour stocker les jetons MemberDef.  
+ [out] The array used to store the MemberDef tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rMembers`.  
   
  `pcTokens`  
- [out] Le nombre réel de jetons MemberDef retournés dans `rMembers`.  
+ [out] The actual number of MemberDef tokens returned in `rMembers`.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode énumère les champs et méthodes, mais pas propriétés ou événements. Contrairement aux [IMetaDataImport::EnumMembers](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` ignore tous les jetons de champ et de membre qui n’ont pas le nom spécifié.  
+ This method enumerates fields and methods, but not properties or events. Unlike [IMetaDataImport::EnumMembers](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` discards all field and member tokens that do not have the specified name.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` retourné avec succès.|  
-|`S_FALSE`|Il n’y a aucune jetons MemberDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_OK`|`EnumTypeDefs` returned successfully.|  
+|`S_FALSE`|There are no MemberDef tokens to enumerate. In that case, `pcTokens` is zero.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

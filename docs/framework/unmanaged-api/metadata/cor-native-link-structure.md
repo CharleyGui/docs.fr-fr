@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 6ef78d3c-1c69-4141-b687-dcb065b7a74d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ae518e5a736a78a261dc3821d53d93afee95a271
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d03c22c455f0e44ce32d4593d9eee50ceef94a22
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779994"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443949"
 ---
-# <a name="cornativelink-structure"></a>COR_NATIVE_LINK, structure
+# <a name="cor_native_link-structure"></a>COR_NATIVE_LINK, structure
 Contient des informations utilisées pour lier du code natif.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,16 +39,16 @@ typedef struct
   
 |Membre|Description|  
 |------------|-----------------|  
-|`m_linkType`|Le type à lier en code natif. Cette valeur est un de la [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) valeurs.|  
-|`m_flags`|Indicateurs utilisés par l’éditeur de liens lors de la liaison du code natif. Cette valeur est un de la [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) valeurs.|  
-|`m_entryPoint`|Le jeton de métadonnées MemberRef qui représente le point d’entrée. Le format est `lib:entrypoint`.|  
+|`m_linkType`|The type to be linked in native code. This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.|  
+|`m_flags`|Flags used by the linker when linking native code. This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.|  
+|`m_entryPoint`|The MemberRef metadata token that represents the entry point. The format is `lib:entrypoint`.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

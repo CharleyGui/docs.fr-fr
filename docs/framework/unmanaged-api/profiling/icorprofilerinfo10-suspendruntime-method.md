@@ -11,16 +11,16 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 74300a12d000565a63cd7ea862c759d47b87bbe1
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f5104c779f99ef9f26a9eccc00008ded62336d8e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69665699"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426962"
 ---
-# <a name="icorprofilerinfo10suspendruntime-method"></a>ICorProfilerInfo10:: SuspendRuntime, méthode
+# <a name="icorprofilerinfo10suspendruntime-method"></a>ICorProfilerInfo10::SuspendRuntime Method
 
-Interrompt le runtime sans exécuter de GC.
+Suspends the runtime without performing a GC.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,16 +28,16 @@ Interrompt le runtime sans exécuter de GC.
 HRESULT SuspendRuntime();
 ```
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/windows-prerequisites.md#net-core-supported-operating-systems).
+**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
-**Versions de .net:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [ICorProfilerInfo10 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)

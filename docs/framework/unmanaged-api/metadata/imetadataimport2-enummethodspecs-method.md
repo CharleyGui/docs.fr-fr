@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b3fc1e6c-bcb6-4915-baf8-7dc0a31b8724
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b8cd086a86d104fdfebf1a8298a22b795cb2389b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4a1de144163ec2b4952bd16b59fb1c92b706631b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782645"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428299"
 ---
 # <a name="imetadataimport2enummethodspecs-method"></a>IMetaDataImport2::EnumMethodSpecs, méthode
-Obtient un énumérateur pour un tableau de jetons MethodSpec associé à le MethodDef ou MemberRef spécifié de jeton.  
+Gets an enumerator for an array of MethodSpec tokens associated with the specified MethodDef or MemberRef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +39,33 @@ HRESULT EnumMethodSpecs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Un pointeur vers l’énumérateur pour `rMethodSpecs`.  
+ [in, out] A pointer to the enumerator for `rMethodSpecs`.  
   
  `tk`  
- [in] Le jeton MemberRef ou MethodDef qui représente la méthode dont les jetons MethodSpec doivent être énumérés. Si la valeur de `tk` est 0 (zéro), tous les jetons MethodSpec dans la portée seront énumérés.  
+ [in] The MemberRef or MethodDef token that represents the method whose MethodSpec tokens are to be enumerated. If the value of `tk` is 0 (zero), all MethodSpec tokens in the scope will be enumerated.  
   
  `rMethodSpecs`  
- [out] Le tableau de jetons MethodSpec à énumérer.  
+ [out] The array of MethodSpec tokens to enumerate.  
   
  `cMax`  
- [in] Le nombre maximal demandé de jetons à placer dans `rMethodSpecs`.  
+ [in] The requested maximum number of tokens to place in `rMethodSpecs`.  
   
  `pcMethodSpecs`  
- [out] Le nombre retourné de jetons placés dans `rMethodSpecs`.  
+ [out] The returned number of tokens placed in `rMethodSpecs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSpecs` retourné avec succès.|  
-|`S_FALSE`|`phEnum` ne contient aucun élément de membre. Dans ce cas, `pcMethodSpecs` est définie sur 0 (zéro).|  
+|`S_OK`|`EnumMethodSpecs` returned successfully.|  
+|`S_FALSE`|`phEnum` has no member elements. In this case, `pcMethodSpecs` is set to 0 (zero).|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

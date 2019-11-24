@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 657bf91d-005a-4ea4-9298-04d1291c0bc3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4323423d3958fa1ca652c55f8f75749bb6e1ee79
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 43f32ac85bebc12d0a9253205aae3f1de0dc9e5b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759388"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433965"
 ---
 # <a name="isymunmanagednamespacegetname-method"></a>ISymUnmanagedNamespace::GetName, méthode
-Obtient le nom de cet espace de noms.  
+Gets the name of this namespace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Paramètres  
  `cchName`  
- [in] Un `ULONG32` qui indique la taille de la `szName` mémoire tampon.  
+ [in] A `ULONG32` that indicates the size of the `szName` buffer.  
   
  `pcchName`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nom de l’espace de noms, y compris le caractère null de fin.  
+ [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the namespace name, including the null termination.  
   
  `szName`  
- [out] Pointeur vers une mémoire tampon qui contient le nom de l’espace de noms.  
+ [out] A pointer to a buffer that contains the namespace name.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

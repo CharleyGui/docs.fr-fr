@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: fe4150e8-071d-43fb-8e06-c3c616dbeed2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2796be32154275387da891683cc5053095f534af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 39f72e670ddc700c257f50f6bad6fab702ec21b6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772328"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432773"
 ---
 # <a name="corsetenc-enumeration"></a>CorSetENC, énumération
 Contient des valeurs utilisées pour influencer le comportement pendant la génération de métadonnées.  
@@ -50,17 +48,17 @@ typedef enum CorSetENC {
 |------------|-----------------|  
 |`MDSetENCOn`|Obsolète.|  
 |`MDSetENCOff`|Obsolète.|  
-|`MDUpdateENC`|Indique que tandis que les métadonnées peuvent être mis à jour, jetons ne peut pas être déplacés.|  
-|`MDUpdateFull`|Indique que les jetons peuvent être déplacées au cours des mises à jour.|  
-|`MDUpdateExtension`|Indique que les mises à jour peuvent comporter que des ajouts. Les jetons ne peuvent pas être déplacées.|  
-|`MDUpdateIncremental`|Indique que la compilation est incrémentielle.|  
-|`MDUpdateDelta`|Indique que seules les métadonnées modifiées doivent être enregistrée.|  
-|`MDUpdateMask`|Inclut `MDUpdateENC`, `MDUpdateFull` et `MDUpdateIncremental`.|  
+|`MDUpdateENC`|Indicates that whereas metadata can be updated, tokens cannot be moved.|  
+|`MDUpdateFull`|Indicates that tokens can be moved during updates.|  
+|`MDUpdateExtension`|Indicates that updates can consist only of additions. Tokens cannot be moved.|  
+|`MDUpdateIncremental`|Indicates that compilation is incremental.|  
+|`MDUpdateDelta`|Indicates that only changed metadata should be saved.|  
+|`MDUpdateMask`|Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

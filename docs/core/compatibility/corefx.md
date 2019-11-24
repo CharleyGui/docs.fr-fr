@@ -1,23 +1,23 @@
 ---
-title: Modifications avec rupture CoreFx-.NET Core
-description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
+title: Base class library breaking changes - .NET Core
+description: Lists the breaking changes in .NET CoreFx, the base class library.
 ms.date: 09/20/2019
-ms.openlocfilehash: 028a5c1059a855d1de644dde9fd9ad5f85f47ffe
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 859eb30b8f6fa48350f81ee1822247e72698fead
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739793"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429197"
 ---
-# <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
+# <a name="corefx-breaking-changes"></a>CoreFx breaking changes
 
-La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core. CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.
+The following is a list of CoreFx breaking changes by .NET Core version. CoreFx provides the primitives and other general types used by .NET Core.
 
-## <a name="net-core-30-preview-7"></a>.NET Core 3,0 Preview 7
+## <a name="net-core-30-preview-7"></a>.NET Core 3.0 Preview 7
 
 [!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/jsonelement-api-changes.md)]
 
-## <a name="net-core-30-preview-8"></a>.NET Core 3,0 Preview 8
+## <a name="net-core-30-preview-8"></a>.NET Core 3.0 Preview 8
 
 [!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/change-in-null-in-utf8jsonwriter.md)]
 
@@ -29,7 +29,7 @@ La liste suivante répertorie les modifications avec rupture CoreFx par version 
 
 [!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/jsonfactoryconverter-createconverter.md)]
 
-## <a name="net-core-30-preview-9"></a>.NET Core 3,0 Preview 9
+## <a name="net-core-30-preview-9"></a>.NET Core 3.0 Preview 9
 
 [!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/serializer-throws-notsupportedexception.md)]
 

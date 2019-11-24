@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50cbe557-2322-41aa-8e0d-f967602eaa0f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4844834232e34ab5dacfa34e7aa5d204ee344612
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 662b628f3cc6d2d7138f56820beaccee9c5d9e81
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781359"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426661"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo, méthode
-Obtient le nom, la taille de ligne, le nombre de lignes, le nombre de colonnes et index de colonne clé de la table spécifiée.  
+Gets the name, row size, number of rows, number of columns, and key column index of the specified table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,29 +40,29 @@ HRESULT GetTableInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `ixTbl`  
- [in] L’identificateur de la table dont les propriétés à retourner.  
+ [in] The identifier of the table whose properties to return.  
   
  `pcbRow`  
- [out] Pointeur vers la taille, en octets, d’une ligne de table.  
+ [out] A pointer to the size, in bytes, of a table row.  
   
  `pcRows`  
- [out] Pointeur vers le nombre de lignes dans la table.  
+ [out] A pointer to the number of rows in the table.  
   
  `pcCols`  
- [out] Pointeur vers le nombre de colonnes dans la table.  
+ [out] A pointer to the number of columns in the table.  
   
  `piKey`  
- [out] Pointeur vers l’index de la colonne clé, ou -1 si la table ne comporte aucune colonne clé.  
+ [out] A pointer to the index of the key column, or -1 if the table has no key column.  
   
  `ppName`  
- [out] Pointeur vers un pointeur vers le nom de table.  
+ [out] A pointer to a pointer to the table name.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

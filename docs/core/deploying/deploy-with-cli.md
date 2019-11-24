@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: c8b4c60eb4ea09c8b10bd0b2fffc803d0a5fb6e0
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 41af1c708a264833f1f7217529b5c0206d405449
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834280"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428913"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publier des applications .NET Core avec l’interface CLI
 
@@ -23,15 +23,15 @@ Pour obtenir une vue d’ensemble de ces modes de publication, consultez [Déplo
 
 Vous recherchez une aide rapide sur l’utilisation de l’interface CLI ? Le tableau suivant présente quelques exemples illustrant comment publier votre application. Vous pouvez spécifier le framework cible avec le paramètre `-f <TFM>` ou en modifiant le fichier projet. Pour plus d’informations, consultez [Principes de base de la publication](#publishing-basics).
 
-| Mode de publication | Version du kit SDK | Command |
+| Mode de publication | Version du kit SDK | Commande |
 | ------------ | ----------- | ------- |
 | Déploiement dépendant du framework | 2.x | `dotnet publish -c Release` |
 | Exécutable dépendant du framework | 2.2 | `dotnet publish -c Release -r <RID> --self-contained false` |
-|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained false` |
+|                                | 3,0 | `dotnet publish -c Release -r <RID> --self-contained false` |
 |                                | 3.0* | `dotnet publish -c Release` |
 | Déploiement autonome      | 2.1 | `dotnet publish -c Release -r <RID> --self-contained true` |
 |                                | 2.2 | `dotnet publish -c Release -r <RID> --self-contained true` |
-|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained true` |
+|                                | 3,0 | `dotnet publish -c Release -r <RID> --self-contained true` |
 
 \*Quand vous utilisez un déploiement dépendant du framework avec la version 3.0 du SDK, il s’agit du mode de publication par défaut lors de l’exécution de la commande `dotnet publish` de base. Cela s’applique uniquement à un projet qui cible **.NET Core 2.1** ou **.NET Core 3.0**.
 
@@ -59,7 +59,7 @@ Vous trouverez davantage d’informations sur les binaires propres à la platefo
 
 ## <a name="sample-app"></a>Exemple d’application
 
-Vous pouvez utiliser l’application suivante pour explorer les commandes de publication. L’application est créée en exécutant les commandes suivantes dans votre terminal :
+You can use the following app to explore the publishing commands. L’application est créée en exécutant les commandes suivantes dans votre terminal :
 
 ```dotnetcli
 mkdir apptest1
@@ -86,8 +86,6 @@ namespace apptest1
 ```
 
 ```vb
-Imports System
-
 Module Program
     Sub Main(args As String())
         Console.WriteLine(Figgle.FiggleFonts.Standard.Render("Hello, World!"))
@@ -118,7 +116,7 @@ La publication d’un déploiement dépendant du framework crée une application
 
 ## <a name="framework-dependent-executable"></a>Exécutable dépendant du framework
 
-Pour le kit SDK .net Core 3. x CLI, l’exécutable dépendant du Framework (FDE) est le mode par défaut pour la `dotnet publish` commande de base. Vous n’avez pas besoin de spécifier d’autres paramètres tant que vous souhaitez cibler le système d’exploitation actuel.
+For the .NET Core SDK 3.x CLI, framework-dependent executable (FDE) is the default mode for the basic `dotnet publish` command. Vous n’avez pas besoin de spécifier d’autres paramètres tant que vous souhaitez cibler le système d’exploitation actuel.
 
 Dans ce mode, un hôte d’exécutable propre à la plateforme est créé pour héberger votre application multiplateforme. Ce mode est semblable au déploiement dépendant du framework, étant donné que celui-ci nécessite un ordinateur hôte sous la forme de la commande `dotnet`. Le nom de fichier de l’exécutable hôte varie en fonction de la plateforme, et ressemble à `<PROJECT-FILE>.exe`. Vous pouvez exécuter cet exécutable directement au lieu d’appeler `dotnet <PROJECT-FILE>.dll`, qui constitue tout de même une manière acceptable d’exécuter l’application.
 
@@ -137,11 +135,11 @@ Quand vous utilisez le commutateur `-r`, le chemin du dossier de sortie devient�
 Si vous utilisez l’[exemple d’application](#sample-app), exécutez `dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false`. Cette commande crée l’exécutable suivant : `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
 
 > [!NOTE]
-> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode de globalisation invariant** et sur la façon de l’activer, consultez [mode de globalisation de la globalisation .net Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). For more information about **globalization invariant mode** and how to enable it, see [.NET Core Globalization Invariant Mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
 
 ## <a name="self-contained-deployment"></a>Déploiement autonome
 
-Quand vous publiez un déploiement autonome, le kit SDK .NET Core crée un exécutable propre à la plateforme. La publication d’une SCD inclut tous les fichiers .NET Core requis pour exécuter votre application, mais elle n’inclut pas les [dépendances natives de .net Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Ces dépendances doivent être présentes sur le système avant l’exécution de l’application.
+Quand vous publiez un déploiement autonome, le kit SDK .NET Core crée un exécutable propre à la plateforme. Publishing an SCD includes all required .NET Core files to run your app but it doesn't include the [native dependencies of .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Ces dépendances doivent être présentes sur le système avant l’exécution de l’application.
 
 La publication d’un déploiement autonome crée une application qui n’extrapole pas vers la dernière version de correctif de sécurité .NET Core disponible. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
 
@@ -152,7 +150,7 @@ Vous devez utiliser les commutateurs suivants avec la commande `dotnet publish` 
 - `--self-contained true` Ce commutateur indique au kit SDK .NET Core qu’il doit créer un exécutable sous forme de déploiement autonome.
 
 > [!NOTE]
-> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). Pour plus d’informations sur le **mode de globalisation invariant** et sur la façon de l’activer, consultez [mode de globalisation de la globalisation .net Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Vous pouvez réduire la taille totale de votre déploiement en activant le **mode invariant de globalisation**. Ce mode est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture). For more information about **globalization invariant mode** and how to enable it, see [.NET Core Globalization Invariant Mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
 
 ## <a name="see-also"></a>Voir aussi
 

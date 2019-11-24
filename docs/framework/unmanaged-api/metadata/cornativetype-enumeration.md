@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: e47a72f1-9609-48ed-bb34-97170d7f6890
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 846c754aeb0a710fa70e906e666f694eaa77c576
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ef4788891e91608a394482319a89b8b0d258449f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781710"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436514"
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType, énumération
 Contient des valeurs qui décrivent les types non managés natifs.  
@@ -93,56 +91,56 @@ typedef enum CorNativeType {
 |------------|-----------------|  
 |`NATIVE_TYPE_END`|Obsolète.|  
 |`NATIVE_TYPE_VOID`|Obsolète.|  
-|`NATIVE_TYPE_BOOLEAN`|Valeur booléenne sur 4 octets, où la valeur TRUE est différente de zéro et la valeur FALSE est égal à zéro.|  
-|`NATIVE_TYPE_I1`|Une valeur d’entier 8 bits signé.|  
-|`NATIVE_TYPE_U1`|Valeur d’entier 8 bits non signé.|  
-|`NATIVE_TYPE_I2`|Une valeur d’entier 16 bits signé.|  
-|`NATIVE_TYPE_U2`|Valeur d’entier 16 bits non signé.|  
+|`NATIVE_TYPE_BOOLEAN`|A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.|  
+|`NATIVE_TYPE_I1`|A signed 8-bit integer value.|  
+|`NATIVE_TYPE_U1`|An unsigned 8-bit integer value.|  
+|`NATIVE_TYPE_I2`|A signed 16-bit integer value.|  
+|`NATIVE_TYPE_U2`|An unsigned 16-bit integer value.|  
 |`NATIVE_TYPE_I4`|Valeur d’entier 32 bits signé.|  
 |`NATIVE_TYPE_U4`|Valeur d'entier 32 bits non signé.|  
-|`NATIVE_TYPE_I8`|Une valeur d’entier 64 bits signé.|  
-|`NATIVE_TYPE_U8`|Valeur d’entier 64 bits non signé.|  
-|`NATIVE_TYPE_R4`|Une valeur numérique à virgule flottante sur 4 octets.|  
-|`NATIVE_TYPE_R8`|Une valeur numérique à virgule flottante de 8 octets.|  
+|`NATIVE_TYPE_I8`|A signed 64-bit integer value.|  
+|`NATIVE_TYPE_U8`|An unsigned 64-bit integer value.|  
+|`NATIVE_TYPE_R4`|A 4-byte floating-point numeric value.|  
+|`NATIVE_TYPE_R8`|An 8-byte floating-point numeric value.|  
 |`NATIVE_TYPE_SYSCHAR`|Obsolète.|  
 |`NATIVE_TYPE_VARIANT`|Obsolète.|  
-|`NATIVE_TYPE_CURRENCY`|Un type COM numérique qui correspond à managé <xref:System.Decimal> type.|  
+|`NATIVE_TYPE_CURRENCY`|A numeric COM type that corresponds to the managed <xref:System.Decimal> type.|  
 |`NATIVE_TYPE_PTR`|Obsolète.|  
 |`NATIVE_TYPE_DECIMAL`|Obsolète.|  
 |`NATIVE_TYPE_DATE`|Obsolète.|  
 |`NATIVE_TYPE_BSTR`|COM Interop.|  
-|`NATIVE_TYPE_LPSTR`|Une valeur de chaîne LPSTR.|  
-|`NATIVE_TYPE_LPWSTR`|Une valeur de chaîne LPWSTR.|  
-|`NATIVE_TYPE_LPTSTR`|Une valeur de chaîne LPTSTR.|  
-|`NATIVE_TYPE_FIXEDSYSSTRING`|Valeur de chaîne fixe, définie par le système.|  
+|`NATIVE_TYPE_LPSTR`|An LPSTR string value.|  
+|`NATIVE_TYPE_LPWSTR`|An LPWSTR string value.|  
+|`NATIVE_TYPE_LPTSTR`|An LPTSTR string value.|  
+|`NATIVE_TYPE_FIXEDSYSSTRING`|A fixed, system-defined string value.|  
 |`NATIVE_TYPE_OBJECTREF`|Obsolète.|  
 |`NATIVE_TYPE_IUNKNOWN`|COM Interop.|  
 |`NATIVE_TYPE_IDISPATCH`|COM Interop.|  
-|`NATIVE_TYPE_STRUCT`|Une valeur de la structure native.|  
+|`NATIVE_TYPE_STRUCT`|A native structure value.|  
 |`NATIVE_TYPE_INTF`|COM Interop.|  
 |`NATIVE_TYPE_SAFEARRAY`|COM Interop.|  
-|`NATIVE_TYPE_FIXEDARRAY`|Une valeur de tableau de longueur fixe.|  
-|`NATIVE_TYPE_INT`|Une valeur d’entier signé de 16 bits natif.|  
-|`NATIVE_TYPE_UINT`|Une valeur d’entier non signé de 16 bits natif.|  
-|`NATIVE_TYPE_NESTEDSTRUCT`|Obsolète.<br /><br /> Utilisez NATIVE_TYPE_STRUCT.|  
+|`NATIVE_TYPE_FIXEDARRAY`|A fixed-length array value.|  
+|`NATIVE_TYPE_INT`|A native 16-bit signed integer value.|  
+|`NATIVE_TYPE_UINT`|A native 16-bit unsigned integer value.|  
+|`NATIVE_TYPE_NESTEDSTRUCT`|Obsolète.<br /><br /> Use NATIVE_TYPE_STRUCT.|  
 |`NATIVE_TYPE_BYVALSTR`|COM Interop.|  
 |`NATIVE_TYPE_ANSIBSTR`|COM Interop.|  
-|`NATIVE_TYPE_TBSTR`|COM Interop.<br /><br /> Sélectionnez BSTR ou ANSIBSTR selon la plateforme.|  
-|`NATIVE_TYPE_VARIANTBOOL`|Valeur booléenne sur 2 octets où TRUE est -1 et FALSE est égal à zéro.|  
+|`NATIVE_TYPE_TBSTR`|COM Interop.<br /><br /> Select BSTR or ANSIBSTR depending on the platform.|  
+|`NATIVE_TYPE_VARIANTBOOL`|A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.|  
 |`NATIVE_TYPE_FUNC`|Pointeur de fonction.|  
-|`NATIVE_TYPE_ASANY`|Une référence à n’importe quel type natif.|  
-|`NATIVE_TYPE_ARRAY`|Une référence à un tableau avec les membres d’un type non spécifié.|  
-|`NATIVE_TYPE_LPSTRUCT`|Un pointeur d’entier 32 bits vers une structure.|  
-|`NATIVE_TYPE_CUSTOMMARSHALER`|Un type natif de marshaleur personnalisé.<br /><br /> Cela doit être suivie d’une chaîne au format suivant : « Type de marshaleur de nom/0Nom de type natif/0Cookie facultatif cookie/0 » ou « {natif type GUID} / 0Nom marshaleur type cookie/0Cookie facultatif/0 »|  
-|`NATIVE_TYPE_ERROR`|COM Interop.<br /><br /> Avec ELEMENT_TYPE_I4, ce type est mappé à VT_HRESULT.|  
-|`NATIVE_TYPE_IINSPECTABLE`|Native `IInspectable` type.|  
-|`NATIVE_TYPE_HSTRING`|Native `HString`.|  
-|`NATIVE_TYPE_MAX`|Une valeur non valide.|  
+|`NATIVE_TYPE_ASANY`|A reference to any native type.|  
+|`NATIVE_TYPE_ARRAY`|A reference to an array with members of an unspecified type.|  
+|`NATIVE_TYPE_LPSTRUCT`|A 32-bit integer pointer to a structure.|  
+|`NATIVE_TYPE_CUSTOMMARSHALER`|A custom marshaler native type.<br /><br /> This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"|  
+|`NATIVE_TYPE_ERROR`|COM Interop.<br /><br /> With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.|  
+|`NATIVE_TYPE_IINSPECTABLE`|A native `IInspectable` type.|  
+|`NATIVE_TYPE_HSTRING`|A native `HString`.|  
+|`NATIVE_TYPE_MAX`|An invalid value.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: cca4a9a1-731b-4411-9e04-00cffe7a56d8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2ce8e96a588036297794238650af9ef84fc9aaa9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0dafa741634cc88f8a7d86247e4fa8681d7c4305
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750568"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436376"
 ---
 # <a name="iceegengenerateceefile-method"></a>ICeeGen::GenerateCeeFile, méthode
-Génère un fichier de base de code qui contient la base de code actuellement chargé dans ce [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.  
+Generates a code-base file that contains the code base currently loaded into this [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,14 +34,14 @@ HRESULT GenerateCeeFile ();
 ```  
   
 ## <a name="parameters"></a>Paramètres  
- `GenerateCeeFile` ne prend aucun paramètre.  
+ `GenerateCeeFile` takes no parameters.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

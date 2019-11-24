@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f0d721e2-b946-426d-8e20-9124bd04e4cb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b32c402b20f9d7f0d370cfa6ec8376603efa8c3f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4549789ea1af584c0850a535d9f6bb54f844ce0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777990"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443544"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles, méthode
-Énumère les fichiers référencés dans le manifeste d’assembly actuel.  
+Enumerates the files referenced in the current assembly manifest.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,30 +38,30 @@ HRESULT EnumFiles (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être une valeur null pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be a null value for the first call of this method.  
   
  `rFiles`  
- [out] Tableau utilisé pour stocker le `mdFile` des jetons de métadonnées.  
+ [out] The array used to store the `mdFile` metadata tokens.  
   
  `cMax`  
- [in] Le nombre maximal de `mdFile` jetons qui peuvent être placés dans `rFiles`.  
+ [in] The maximum number of `mdFile` tokens that can be placed in `rFiles`.  
   
  `pcTokens`  
- [out] Le nombre de `mdFile` jetons placés dans `rFiles`.  
+ [out] The number of `mdFile` tokens actually placed in `rFiles`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcTokens` est défini à zéro.|  
+|`S_OK`|`EnumFiles` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In this case, `pcTokens` is set to zero.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

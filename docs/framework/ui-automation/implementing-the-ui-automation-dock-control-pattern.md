@@ -6,26 +6,26 @@ helpviewer_keywords:
 - dock control pattern
 - UI Automation, dock control pattern
 ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
-ms.openlocfilehash: b72d7f9a68c2309f2bd1a73741ac621cde1f3115
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 1e2084483a34709392b9d3ceab02472c36944132
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043469"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435436"
 ---
 # <a name="implementing-the-ui-automation-dock-control-pattern"></a>Implémentation du modèle de contrôle Dock d’UI Automation
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IDockProvider>, notamment des informations sur les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.DockPattern> est utilisé pour exposer les propriétés de l’ancrage d’un contrôle dans un conteneur d’ancrage. Un conteneur d’ancrage est un contrôle qui vous permet de réorganiser des éléments enfants horizontalement et verticalement, les uns par rapport aux autres. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
- ![Conteneur d’ancrage avec deux enfants ancrés.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
+ ![Docking container with two docked children.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
 Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » est DockPosition.Right et la fenêtre « Liste d’erreurs » est DockPosition.Bottom  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
  Lorsque vous implémentez le modèle de contrôle Dock, notez les conventions et recommandations suivantes :  
   
 - <xref:System.Windows.Automation.Provider.IDockProvider> n’expose aucune propriété du conteneur d’ancrage ni aucune propriété des contrôles qui sont ancrés de façon à être adjacents au contrôle actuel dans le conteneur d’ancrage.  
@@ -40,10 +40,10 @@ Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » 
 ## <a name="required-members-for-idockprovider"></a>Membres requis pour IDockProvider  
  Les propriétés et méthodes suivantes sont requises pour implémenter l’interface IDockProvider.  
   
-|Membres requis|Type de membre|Notes|  
+|Membres nécessaires|Type de membre|Notes|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Property|aucune.|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|Méthode|aucune.|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
@@ -53,7 +53,7 @@ Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » 
   
 |Type d'exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -Lorsqu’un contrôle n’est pas en mesure d’exécuter le style d’ancrage demandé.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -   When a control is not able to execute the requested dock style.|  
   
 ## <a name="see-also"></a>Voir aussi
 

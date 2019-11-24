@@ -4,12 +4,12 @@ description: Informations sur l’utilisation du SDK .NET Core et de ses outils 
 author: mairaw
 ms.date: 05/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 629b7a9e1f2b59981adb77ab4d3125be7036ff02
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
-ms.translationtype: HT
+ms.openlocfilehash: 481d54904192ee82da1f9d34bbf62fa8ffe1cd3b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299969"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428595"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 
@@ -34,7 +34,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](../linux-prerequisites.md).
+> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. For more information, see [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-linux).
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 

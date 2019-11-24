@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e0f865d-88b5-44bd-be35-492622e5e08e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b8be30e8c3b6bc7c03ede5f897f176e04153003b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 193e8788d5a1b28f43f2fb0d4d935a18542dd923
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781967"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427489"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls, méthode
 Énumère les jetons MethodBody et MethodDeclaration représentant les méthodes du type spécifié.  
@@ -42,36 +40,36 @@ HRESULT EnumMethodImpls (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `td`  
- [in] Jeton TypeDef représentant le type dont les implémentations de méthode à énumérer.  
+ [in] A TypeDef token for the type whose method implementations to enumerate.  
   
  `rMethodBody`  
- [out] Le tableau pour stocker les jetons MethodBody.  
+ [out] The array to store the MethodBody tokens.  
   
  `rMethodDecl`  
- [out] Le tableau pour stocker les jetons MethodDeclaration.  
+ [out] The array to store the MethodDeclaration tokens.  
   
  `cMax`  
- [in] La taille maximale de la `rMethodBody` et `rMethodDecl` tableaux.  
+ [in] The maximum size of the `rMethodBody` and `rMethodDecl` arrays.  
   
  `pcTokens`  
- [in] Le nombre réel de méthodes retournées dans `rMethodBody` et `rMethodDecl`.  
+ [in] The actual number of methods returned in `rMethodBody` and `rMethodDecl`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodImpls` retourné avec succès.|  
-|`S_FALSE`|Il n’existe aucun jeton de méthode à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
+|`S_OK`|`EnumMethodImpls` returned successfully.|  
+|`S_FALSE`|There are no method tokens to enumerate. In that case, `pcTokens` is zero.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

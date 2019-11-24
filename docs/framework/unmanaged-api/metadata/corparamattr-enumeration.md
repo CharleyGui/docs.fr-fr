@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: a7ff90ad-dad8-48e8-917d-4aa9a118cbc8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bfa8f1b5df76c7fdfe2f25b637b157bfa4424f7a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1d58c8c0413346536c3e61e67ca0077c08c2b387
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781654"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436491"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr, énumération
 Contient des valeurs qui décrivent les métadonnées d'un paramètre de méthode.  
@@ -48,18 +46,18 @@ typedef enum CorParamAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`pdIn`|Spécifie que le paramètre est passé dans l’appel de méthode.|  
-|`pdOut`|Spécifie que le paramètre est passé à partir de la méthode de retour.|  
-|`pdOptional`|Spécifie que le paramètre est facultatif.|  
-|`pdReservedMask`|Réservé à un usage interne par le common language runtime.|  
-|`pdHasDefault`|Spécifie que le paramètre a une valeur par défaut.|  
-|`pdHasFieldMarshal`|Spécifie que le paramètre a des informations de marshaling.|  
+|`pdIn`|Specifies that the parameter is passed into the method call.|  
+|`pdOut`|Specifies that the parameter is passed from the method return.|  
+|`pdOptional`|Specifies that the parameter is optional.|  
+|`pdReservedMask`|Reserved for internal use by the common language runtime.|  
+|`pdHasDefault`|Specifies that the parameter has a default value.|  
+|`pdHasFieldMarshal`|Specifies that the parameter has marshaling information.|  
 |`pdUnused`|Non utilisé.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

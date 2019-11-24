@@ -11,16 +11,16 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 9e8e4c7e6c367970100c98dc3dc8237b25f99221
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 1a5a259e6604d906e55166b3fcb770bc37d346c5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69665605"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444735"
 ---
-# <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9:: GetILToNativeMapping3, méthode
+# <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9::GetILToNativeMapping3 Method
 
-À partir de l’adresse de début du code natif, retourne les informations de mappage natives à IL pour cette version JIT du code.
+Given the native code start address, returns the native to IL mapping information for this jitted version of the code.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,31 +34,31 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 #### <a name="parameters"></a>Paramètres
 
 `pNativeCodeStartAddress` \
-dans Pointeur vers le début d’une fonction native.
+[in] A pointer to the start of a native function.
 
 `cMap` \
 [in] Taille maximale du tableau `map`.
 
 `pcMap` \
-à Nombre total de structures COR_DEBUG_IL_TO_NATIVE_MAP disponibles.
+[out] The total number of available COR_DEBUG_IL_TO_NATIVE_MAP structures.
 
 `map` \
-à Tableau des structures [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) , chacune spécifiant les décalages. Suite au retour de la méthode `GetILToNativeMapping3`, `map` contient une partie ou la totalité des structures `COR_DEBUG_IL_TO_NATIVE_MAP`.
+[out] An array of [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) structures, each of which specifies the offsets. Suite au retour de la méthode `GetILToNativeMapping3`, `map` contient une partie ou la totalité des structures `COR_DEBUG_IL_TO_NATIVE_MAP`.
 
 ## <a name="remarks"></a>Notes
 
-Lorsque la compilation à plusieurs niveaux est activée, une méthode peut avoir plusieurs corps de code natif. [ICorProfilerInfo9:: GetNativeCodeStartAddresses](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-getnativecodestartaddresses-method.md) retourne les adresses de démarrage de tous les corps de code natif.
+When tiered compilation is enabled, a method may have more than one native code body. [ICorProfilerInfo9::GetNativeCodeStartAddresses](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-getnativecodestartaddresses-method.md) will return the start addresses for all of the native code bodies.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/windows-prerequisites.md#net-core-supported-operating-systems).
+**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
 **Versions du .NET Framework :** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [ICorProfilerInfo9 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)

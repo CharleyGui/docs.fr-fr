@@ -7,23 +7,23 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 22bdfa197e3ce9c119203c74eeb0eb8217022a68
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 77a927a7735d565390c8a5560312ee36b9e48925
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422905"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428542"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tableau des types intégrés (référence C#)
 
-Le tableau suivant présente les mots clés des C# types intégrés, qui sont des alias de types prédéfinis dans l’espace de noms <xref:System> :
+The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace:
 
 |Type C#|Type .NET|  
 |--------------|-------------------------|  
 |[bool](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
 |[byte](../builtin-types/integral-numeric-types.md)|<xref:System.Byte?displayProperty=nameWithType>|  
 |[sbyte](../builtin-types/integral-numeric-types.md)|<xref:System.SByte?displayProperty=nameWithType>|  
-|[char](char.md)|<xref:System.Char?displayProperty=nameWithType>|  
+|[char](../builtin-types/char.md)|<xref:System.Char?displayProperty=nameWithType>|  
 |[decimal](../builtin-types/floating-point-numeric-types.md)|<xref:System.Decimal?displayProperty=nameWithType>|  
 |[double](../builtin-types/floating-point-numeric-types.md)|<xref:System.Double?displayProperty=nameWithType>|  
 |[float](../builtin-types/floating-point-numeric-types.md)|<xref:System.Single?displayProperty=nameWithType>|  

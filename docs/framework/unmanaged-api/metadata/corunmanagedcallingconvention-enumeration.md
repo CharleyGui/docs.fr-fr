@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 83058790-160b-4703-a5eb-74b66acbdfa9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9206fbde13f457d4b2e2941ee744d645c6df9774
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 58d30e71929d314ee36adb9f83270858ff8a161b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781995"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442438"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention, énumération
-Spécifie les conventions d’appel du code non managé.  
+Specifies the calling conventions for unmanaged code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,22 +46,22 @@ typedef enum CorUnmanagedCallingConvention {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|La convention d’appel langage C.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|La convention d’appel standard.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|« Thie » convention d’appel.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|La convention d’appel « rapide ».|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|The C language calling convention.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|The standard calling convention.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|The "this" calling convention.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|The "fast" calling convention.|  
 |`IMAGE_CEE_CS_CALLCONV_C`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_STDCALL`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_THISCALL`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Non utilisé.|  
   
 ## <a name="remarks"></a>Notes  
- Le CLR ne prend pas en charge la convention d’appel « rapide » dans le .NET Framework version 1.0.  
+ The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorHdr.h  
+ **Header:** CorHdr.h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

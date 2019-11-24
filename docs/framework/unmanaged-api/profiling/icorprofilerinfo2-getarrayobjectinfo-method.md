@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: bda75017-739f-4ce5-9000-f3b526e8473c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3ebf8c736cdd1362cae1b1e0b734ce14bea49b18
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 97b127c9a6aac0a0fefe25faf294791dcd2c8e41
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751889"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436033"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo, méthode
-Obtient des informations détaillées sur un objet tableau.  
+Gets detailed information about an array object.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +38,27 @@ HRESULT GetArrayObjectInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `objectId`  
- [in] L’ID d’un objet de tableau valide.  
+ [in] The ID of a valid array object.  
   
  `cDimensions`  
- [in] Le rang (nombre de dimensions) du tableau.  
+ [in] The rank (number of dimensions) of the array.  
   
  `pDimensionSizes`  
- [out] Tableau qui contient des entiers, chacun représentant la taille d’une dimension du tableau.  
+ [out] An array that contains integers, each representing the size of a dimension of the array.  
   
  `pDimensionLowerBounds`  
- [out] Un tableau qui contient des entiers, chacun représentant faible lié d’une dimension du tableau.  
+ [out] An array that contains integers, each representing the lower bound of a dimension of the array.  
   
  `ppData`  
- [out] Un pointeur vers l’adresse de la mémoire tampon brute pour le tableau, ce qui est disposé en fonction de la C++ convention.  
+ [out] A pointer to the address of the raw buffer for the array, which is laid out according to the C++ convention.  
   
 ## <a name="remarks"></a>Notes  
- Le `pDimensionSizes` et `pDimensionLowerBounds` sont des tableaux parallèles, les éléments situés au même index dans chaque tableau sont des caractéristiques de la même entité.  
+ The `pDimensionSizes` and `pDimensionLowerBounds` are parallel arrays, so the elements located at the same index in each array are characteristics of the same entity.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

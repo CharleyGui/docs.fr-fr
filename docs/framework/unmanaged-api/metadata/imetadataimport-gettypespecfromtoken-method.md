@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e7e060d2f72609b470dbd5060746a1458f5eed9d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3ab24ab869e1f2cff9beafe50e6982ba2e7cf0aa
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782312"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436693"
 ---
 # <a name="imetadataimportgettypespecfromtoken-method"></a>IMetaDataImport::GetTypeSpecFromToken, méthode
 Obtient la signature de métadonnées binaires de la spécification de type représentée par le jeton spécifié.  
@@ -39,23 +37,23 @@ HRESULT GetTypeSpecFromToken (
   
 ## <a name="parameters"></a>Paramètres  
  `typespec`  
- [in] Le jeton TypeSpec associé à la signature de métadonnées demandées.  
+ [in] The TypeSpec token associated with the requested metadata signature.  
   
  `ppvSig`  
- [out] Pointeur vers la signature de métadonnées binaires.  
+ [out] A pointer to the binary metadata signature.  
   
  `pcbSig`  
- [out] La taille, en octets, de la signature de métadonnées.  
+ [out] The size, in bytes, of the metadata signature.  
   
 ## <a name="return-value"></a>Valeur de retour  
- HRESULT qui indique la réussite ou l’échec. Échecs peuvent être testés avec la macro FAILED.  
+ An HRESULT that indicates success or failure. Failures can be tested with the FAILED macro.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

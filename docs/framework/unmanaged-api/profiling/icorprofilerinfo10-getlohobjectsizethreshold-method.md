@@ -11,16 +11,16 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 8c9a85e9f00027f597795eea55a9bbb0364790f8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7a38ee4ae74ca5b96dd082e752fc733eb85fca3f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69661238"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427023"
 ---
-# <a name="icorprofilerinfo10getlohobjectsizethreshold-method"></a>ICorProfilerInfo10:: GetLOHObjectSizeThreshold, méthode
+# <a name="icorprofilerinfo10getlohobjectsizethreshold-method"></a>ICorProfilerInfo10::GetLOHObjectSizeThreshold Method
 
-Obtient la valeur du seuil LOH (large Object Heap) configurée.
+Gets the value of the configured large object heap (LOH) threshold.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,22 +31,22 @@ HRESULT GetLOHObjectSizeThreshold( [out] DWORD *pThreshold );
 #### <a name="parameters"></a>Paramètres
 
 `pThreshold` \
-à Seuil du tas d’objets volumineux, en octets.
+[out] The large object heap threshold in bytes.
 
 ## <a name="remarks"></a>Notes
 
-Les objets plus grands que le seuil du tas d’objets volumineux seront alloués sur le tas des objets volumineux. À compter de .net Core 3,0 le seuil du tas d’objets volumineux est `pThreshold` configurable, contient la taille du seuil du tas d’objets volumineux actif, en octets.
+Objects larger than the large object heap threshold will be allocated on the large object heap. Starting with .NET Core 3.0 the large object heap threshold is configurable, `pThreshold` will contain the active large object heap threshold size in bytes.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-**Plateformes** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/windows-prerequisites.md#net-core-supported-operating-systems).
+**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
-**Versions de .net:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [ICorProfilerInfo10 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)

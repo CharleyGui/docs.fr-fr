@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 727819d5-1dab-4ebb-ac25-950b4111dc72
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7f27955467436d562c6a9acc9d7f666427e4c85b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4347a4da3e58a20c98e217de3a71c448e244eb29
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770717"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440119"
 ---
 # <a name="imetadataimportcloseenum-method"></a>IMetaDataImport::CloseEnum, méthode
-Ferme l’énumérateur qui est identifié par le handle spécifié.  
+Closes the enumerator that is identified by the specified handle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +35,17 @@ void CloseEnum (
   
 ## <a name="parameters"></a>Paramètres  
  `hEnum`  
- [in] Le handle pour l’énumérateur à fermer.  
+ [in] The handle for the enumerator to close.  
   
 ## <a name="remarks"></a>Notes  
- Le handle spécifié par `hEnum` est obtenue à partir d’une précédente `Enum` *nom* appeler (par exemple, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
+ The handle specified by `hEnum` is obtained from a previous `Enum`*Name* call (for example, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

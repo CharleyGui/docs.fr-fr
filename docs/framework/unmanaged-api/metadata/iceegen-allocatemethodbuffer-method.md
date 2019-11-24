@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 845ab77e-9639-47f5-99fb-f3b619e3e779
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 080c16d3a7baceaa277b3418ac2e17391090f00c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 34636f1ca8e42c452aa41f6145d439a26f01b0a7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750599"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436393"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer, méthode
-Crée une mémoire tampon de la taille spécifiée pour une méthode et obtient l’adresse virtuelle relative de la méthode.  
+Creates a buffer of the specified size for a method, and gets the relative virtual address of the method.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +39,20 @@ HRESULT AllocateMethodBuffer (
   
 ## <a name="parameters"></a>Paramètres  
  `cchBuffer`  
- [in] La longueur de la mémoire tampon à créer.  
+ [in] The length of the buffer to create.  
   
  `lpBuffer`  
- [out] La mémoire tampon retournée.  
+ [out] The returned buffer.  
   
  `RVA`  
- [out] L’adresse virtuelle relative de la méthode.  
+ [out] The relative virtual address of the method.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f8dd1daf3528bbc642033e254a809c18c3662ff1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 82302124828a2dab73b445128d7d847e112edd36
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779181"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448221"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps, méthode
-Obtient le jeu de propriétés du type exporté avec la signature de métadonnées spécifié.  
+Gets the set of properties of the exported type with the specified metadata signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,32 +41,32 @@ HRESULT GetExportedTypeProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mdct`  
- [in] Un `mdExportedType` jeton de métadonnées qui représente le type exporté.  
+ [in] An `mdExportedType` metadata token that represents the exported type.  
   
  `szName`  
- [out] Le nom du type exporté.  
+ [out] The name of the exported type.  
   
  `cchName`  
- [in] La taille, en caractères larges, de `szName`.  
+ [in] The size, in wide characters, of `szName`.  
   
  `pchName`  
- [out] Le nombre de caractères larges réellement retournés dans `szName`  
+ [out] The number of wide characters actually returned in `szName`  
   
  `ptkImplementation`  
- [out] Un `mdFile`, `mdAssemblyRef`, ou `mdExportedType` jeton de métadonnées qui contienne ou autorise l’accès aux propriétés du type exporté.  
+ [out] An `mdFile`, `mdAssemblyRef`, or `mdExportedType` metadata token that contains or allows access to the properties of the exported type.  
   
  `ptkTypeDef`  
- [out] Un pointeur vers un `mdTypeDef` jeton qui représente un type dans le fichier.  
+ [out] A pointer to an `mdTypeDef` token that represents a type in the file.  
   
  `pdwExportedTypeFlags`  
- [out] Pointeur vers les indicateurs qui décrivent les métadonnées appliquées pour le type exporté. La valeur des indicateurs peut être une ou plusieurs [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) valeurs.  
+ [out] A pointer to the flags that describe the metadata applied to the exported type. The flags value can be one or more [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) values.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

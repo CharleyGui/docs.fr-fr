@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 64d9b80e-b883-4539-89c7-03573185a1eb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4450c262b75a73114cb7de7de98567f053bbf564
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 8a4d205586921b377147eeab80754e1a0d9e52b0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894462"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427843"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute, méthode
-Définit un attribut personnalisé en fonction de son nom. Ces attributs sont conservés dans le magasin de symboles, contrairement aux attributs personnalisés des métadonnées.  
+Defines a custom attribute based upon its name. These attributes are held in the symbol store, unlike metadata custom attributes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT SetSymAttribute(
   
 ## <a name="parameters"></a>Paramètres  
  `parent`  
- dans Jeton de métadonnées pour lequel l’attribut est défini.  
+ [in] The metadata token for which the attribute is being defined.  
   
  `name`  
- dans Pointeur vers un `WCHAR` qui contient le nom de l’attribut.  
+ [in] A pointer to a `WCHAR` that contains the attribute name.  
   
  `cData`  
- dans Qui indique la taille `data` du tableau. `ULONG32`  
+ [in] A `ULONG32` that indicates the size of the `data` array.  
   
  `data`  
- dans Valeur de l’attribut.  
+ [in] The attribute value.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym. idl, CorSym. h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

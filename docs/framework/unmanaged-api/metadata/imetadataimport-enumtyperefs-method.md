@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: b4896b8f-8e97-469c-8089-e72a025661b5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f6af4c1d6eb9c305358573b06da164e2344ff46e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 778ebf1d4fad0c8703964be88fdc3ff8c033bc28
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774623"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449983"
 ---
 # <a name="imetadataimportenumtyperefs-method"></a>IMetaDataImport::EnumTypeRefs, méthode
 Énumère les jetons TypeRef définis dans la portée des métadonnées actuelle.  
@@ -40,33 +38,33 @@ HRESULT EnumTypeRefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `rTypeRefs`  
- [out] Tableau utilisé pour stocker les jetons TypeRef.  
+ [out] The array used to store the TypeRef tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeRefs`.  
   
  `pcTypeRefs`  
- [out] Un pointeur vers le nombre de jetons TypeRef retournés dans `rTypeRefs`.  
+ [out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeRefs` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcTypeRefs` est égal à zéro.|  
+|`S_OK`|`EnumTypeRefs` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeRefs` is zero.|  
   
 ## <a name="remarks"></a>Notes  
- Un jeton TypeRef représente une référence à un type.  
+ A TypeRef token represents a reference to a type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

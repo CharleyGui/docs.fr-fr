@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9e78c4d7319a931ca7090d6f99651bc9660e4af8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0fdec87324d6efa0f911e37573093c19b93c0349
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782053"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440546"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps, méthode
-Définit les fonctionnalités stockées dans les métadonnées pour une propriété définie par un appel antérieur à [DefineProperty, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,35 +42,35 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pr`  
- [in] Le jeton pour la propriété à modifier  
+ [in] The token for the property to be changed  
   
  `dwPropFlags`  
- [in] Indicateurs de propriété.  
+ [in] Property flags.  
   
  `dwCPlusTypeFlag`  
- [in] Le type de la valeur de propriété par défaut.  
+ [in] The type of the property's default value.  
   
  `pValue`  
- [in] La valeur par défaut pour la propriété.  
+ [in] The default value for the property.  
   
  `cchValue`  
- [in] Le nombre de caractères (Unicode) les caractères de `pValue`.  
+ [in] The count of (Unicode) characters in `pValue`.  
   
  `mdSetter`  
- [in] La méthode qui définit la valeur de propriété.  
+ [in] The method that sets the property value.  
   
  `mdGetter`  
- [in] La méthode qui obtient la valeur de propriété.  
+ [in] The method that gets the property value.  
   
  `rmdOtherMethods[]`  
- [in] Tableau des autres méthodes associées à la propriété. Mettre fin à ce tableau avec un `mdTokenNil` jeton.  
+ [in] An array of other methods associated with the property. Terminate this array with an `mdTokenNil` token.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

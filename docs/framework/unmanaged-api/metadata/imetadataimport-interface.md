@@ -14,14 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0adbbd35-5e8d-4fec-8268-dc70a07c5975
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a0f4eb244e02e13e418a55351dbc1eb1f5b5d16d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d45a369def193b9c8d8f9a3aa954ede600a87dd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617739"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434739"
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport, interface
 Fournit des méthodes pour importer et manipuler les métadonnées existantes à partir d'un fichier exécutable portable (PE) ou d'une autre source, comme une bibliothèque de types ou un fichier binaire de métadonnées autonome au moment de l'exécution.  
@@ -104,12 +102,12 @@ Fournit des méthodes pour importer et manipuler les métadonnées existantes à
   
 - Les méthodes Get sont conçues spécifiquement pour retourner les propriétés à valeur unique d'un élément de métadonnées. Quand la propriété est une référence à un autre élément, un jeton est retourné pour cet élément. Tout type d'entrée de pointeur peut être NULL pour indiquer que la valeur particulière n'est pas demandée. Pour obtenir les propriétés qui sont essentiellement des objets de collection (par exemple, la collection des interfaces qu’une classe implémente), utilisez les méthodes d’énumération.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

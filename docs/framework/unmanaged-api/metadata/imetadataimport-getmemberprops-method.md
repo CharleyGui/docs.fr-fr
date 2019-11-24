@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fcf32c4b27324ccc54eabbb248e8c9906cf693b6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bc5bbba2fa4a95955e52a2e083a2097178b5d96a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782360"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437522"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps, méthode
-Obtient les informations stockées dans les métadonnées pour une définition de membre spécifié, y compris le nom, le signature binaire et l’adresse virtuelle relative, de la <xref:System.Type> membre référencé par le jeton de métadonnées spécifié. Il s’agit d’une méthode d’assistance simple : si *Mo* est un MethodDef, puis **GetMethodProps** est appelé ; si *Mo* est FieldDef, puis **GetFieldProps** est appelée. Consultez ces autres méthodes pour plus d’informations. 
+Gets information stored in the metadata for a specified member definition, including the name, binary signature, and relative virtual address, of the <xref:System.Type> member referenced by the specified metadata token. This is a simple helper method: if *mb* is a MethodDef, then **GetMethodProps** is called; if *mb* is a FieldDef, then **GetFieldProps** is called. See these other methods for details. 
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,50 +47,50 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- [in] Le jeton qui référence le membre pour obtenir les métadonnées associées.  
+ [in] The token that references the member to get the associated metadata for.  
   
  `pClass`  
- [out] Pointeur vers le jeton de métadonnées qui représente la classe du membre.  
+ [out] A pointer to the metadata token that represents the class of the member.  
   
  `szMember`  
- [out] Le nom du membre.  
+ [out] The name of the member.  
   
  `cchMember`  
- [in] La taille en caractères larges de la `szMember` mémoire tampon.  
+ [in] The size in wide characters of the `szMember` buffer.  
   
  `pchMember`  
- [out] La taille en caractères larges du nom retourné.  
+ [out] The size in wide characters of the returned name.  
   
  `pdwAttr`  
- [out] Les valeurs d’indicateur appliqués au membre.  
+ [out] Any flag values applied to the member.  
   
  `ppvSigBlob`  
- [out] Pointeur vers la signature de métadonnées binaires du membre.  
+ [out] A pointer to the binary metadata signature of the member.  
   
  `pcbSigBlob`  
- [out] La taille en octets de `ppvSigBlob`.  
+ [out] The size in bytes of `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] Pointeur vers l’adresse virtuelle relative du membre.  
+ [out] A pointer to the relative virtual address of the member.  
   
  `pdwImplFlags`  
- [out] Les indicateurs d’implémentation méthode associés au membre.  
+ [out] Any method implementation flags associated with the member.  
   
  `pdwCPlusTypeFlag`  
- [out] Un indicateur qui marque un <xref:System.ValueType>. C’est un de le `ELEMENT_TYPE_*` valeurs.
+ [out] A flag that marks a <xref:System.ValueType>. It is one of the `ELEMENT_TYPE_*` values.
   
  `ppValue`  
- [out] Une valeur de chaîne constante retournée par ce membre.  
+ [out] A constant string value returned by this member.  
   
  `pcchValue`  
- [out] La taille en caractères de `ppValue`, ou zéro si `ppValue` ne contient pas de chaîne.  
+ [out] The size in characters of `ppValue`, or zero if `ppValue` does not hold a string.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

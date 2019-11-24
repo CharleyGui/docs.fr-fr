@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 91a7ce63-f5b8-4f16-b2c4-e1d0baa88944
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 455f71c5b576d1b57db591dab2a3e59f8a5eed67
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 84c41e467c57afd2562e7aa8dd72ce4796249667
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777288"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438572"
 ---
 # <a name="exporttype-method"></a>ExportType, méthode
-Spécifie qu’un type peut être exportable.  
+Specifies that a type is exportable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT ExportType(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly à partir duquel effectuer l’exportation.  
+ ID of the assembly to export from.  
   
  `FileToken`  
- Jeton de fichier ou ID d’assembly du fichier qui définit le type exportable.  
+ File token or assembly ID of file that defines the exportable type.  
   
  `TypeToken`  
- Jeton de type à rendre exportable.  
+ Token of type to be made exportable.  
   
  `pszTypename`  
- Nom de type qualifié complet à rendre exportable.  
+ Fully qualified type name to be made exportable.  
   
  `dwFlags`  
- `ComType`indicateurs tels que `tdPublic` ou `tdNested`. Ce paramètre peut être passé à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` flags such as `tdPublic` or `tdNested`. This parameter may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Reçoit le jeton pour le type exporté.  
+ Receives token for exported type.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 

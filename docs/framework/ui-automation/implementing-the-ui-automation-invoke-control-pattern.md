@@ -6,17 +6,17 @@ helpviewer_keywords:
 - control patterns, Invoke
 - Invoke control pattern
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
-ms.openlocfilehash: 616bbab4d659cf00b1f730492e73ad6b847e3926
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 30ae83aa4b73f36afce1251387598ef9b61816d8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458004"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435160"
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implémentation du modèle de contrôle Invoke d’UI Automation
 
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
 Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IInvokeProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.
 
@@ -47,11 +47,11 @@ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et
 > [!NOTE]
 > Cette implémentation est considérée comme un problème d’accessibilité si le contrôle ne peut être appelé que suite à un effet secondaire lié à la souris.
 
-- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. Par exemple, l’appel d’un élément de liste de documents Microsoft Word dans le dossier Mes documents sélectionne l’élément et ouvre le document.
+- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. For example, invoking a Microsoft Word document list item in the My Documents folder both selects the item and opens the document.
 
 - Un élément peut disparaître de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dès qu’il est appelé. La requête d’informations de l’élément fourni par le rappel d’événement peut échouer. La pré-récupération des informations mises en cache est la solution recommandée.
 
-- Les contrôles peuvent implémenter plusieurs modèles de contrôle. Par exemple, le contrôle Fill Color dans la barre d’outils Microsoft Excel implémente à la fois les modèles de contrôle <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.ExpandCollapsePattern>. <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
+- Les contrôles peuvent implémenter plusieurs modèles de contrôle. For example, the Fill Color control on the Microsoft Excel toolbar implements both the <xref:System.Windows.Automation.InvokePattern> and the <xref:System.Windows.Automation.ExpandCollapsePattern> control patterns. <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 

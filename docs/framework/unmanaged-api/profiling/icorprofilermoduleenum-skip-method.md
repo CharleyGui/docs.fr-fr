@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dc29c6a-e2ba-41d8-a1e0-0fdd21421e0b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: eecb2a5da9dddaccbab7fcc6d74af6e4c6bfb72c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d8c0f69ce407638aed6475c4d84d0e032cc6a8f5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775129"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435977"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip, méthode
 Fait avancer le curseur de l'énumérateur depuis sa position actuelle de manière à ignorer le nombre spécifié d'éléments.  
@@ -35,23 +33,23 @@ HRESULT Skip([in] ULONG celt);
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’éléments à ignorer.  
+ [in] The number of elements to be skipped.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`celt` éléments ont été ignorés.|  
-|S_FALSE|Moins de `celt` éléments ont été ignorés, ce qui indique qu’il n’y a aucun autre élément.|  
+|S_OK|`celt` elements were skipped.|  
+|S_FALSE|Fewer than `celt` elements were skipped, which indicates that there are no more elements.|  
   
 ## <a name="remarks"></a>Notes  
- La nouvelle position du curseur de cet énumérateur est (position actuelle) + `celt`.  
+ The new position of this enumerator's cursor is (current position) + `celt`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

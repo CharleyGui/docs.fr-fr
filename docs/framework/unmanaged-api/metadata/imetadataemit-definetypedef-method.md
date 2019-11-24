@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd11c485-be95-4b97-9cd8-68679a4fb432
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0777151d10149ec7311a7761bc7f6bff5ba98e0e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 031996813718a074eebab62ff54a2de52b898c22
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777487"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450216"
 ---
 # <a name="imetadataemitdefinetypedef-method"></a>IMetaDataEmit::DefineTypeDef, méthode
-Crée une définition de type pour un type common language runtime et obtient un jeton de métadonnées pour cette définition de type.  
+Creates a type definition for a common language runtime type, and gets a metadata token for that type definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +39,33 @@ HRESULT DefineTypeDef (
   
 ## <a name="parameters"></a>Paramètres  
  `szTypeDef`  
- [in] Le nom du type au format Unicode.  
+ [in] The name of the type in Unicode.  
   
  `dwTypeDefFlags`  
- [in] `TypeDef` attributs. Il s’agit d’un masque de bits de `CoreTypeAttr` valeurs.  
+ [in] `TypeDef` attributes. This is a bitmask of `CoreTypeAttr` values.  
   
  `tkExtends`  
- [in] Le jeton de la classe de base. Il doit être un `mdTypeDef` ou un `mdTypeRef` jeton.  
+ [in] The token of the base class. It must be either an `mdTypeDef` or an `mdTypeRef` token.  
   
  `rtkImplements`  
- [in] Un tableau de jetons spécifiant les interfaces qui implémente cette classe ou une interface.  
+ [in] An array of tokens specifying the interfaces that this class or interface implements.  
   
  `ptd`  
- [out] Le `mdTypeDef` jeton attribué.  
+ [out] The `mdTypeDef` token assigned.  
   
 ## <a name="remarks"></a>Notes  
- Un indicateur dans `dwTypeDefFlags` Spécifie si le type en cours de création est un common type system type référence (classe ou interface) ou un type de valeur système type commun.  
+ A flag in `dwTypeDefFlags` specifies whether the type being created is a common type system reference type (class or interface) or a common type system value type.  
   
- Selon les paramètres fournis, cette méthode, comme un effet secondaire, peut également créer un `mdInterfaceImpl` enregistrement pour chaque interface héritée ou implémentée par ce type. Toutefois, cette méthode ne retourne pas un de ces `mdInterfaceImpl` jetons. Si un client souhaite ultérieurement ajouter ou modifier un `mdInterfaceImpl` jeton, il doit utiliser le `IMetaDataImport` interface pour les énumérer. Si vous souhaitez utiliser une sémantique COM de le `[default]` interface, vous devez fournir l’interface par défaut comme premier élément dans `rtkImplements`; un attribut personnalisé est défini sur la classe indiquera que la classe possède une interface par défaut (qui est censé toujours pour être le tout d’abord `mdInterfaceImpl` jeton déclaré pour la classe).  
+ Depending on the parameters supplied, this method, as a side effect, may also create an `mdInterfaceImpl` record for each interface that is inherited or implemented by this type. However, this method does not return any of these `mdInterfaceImpl` tokens. If a client wants to later add or modify an `mdInterfaceImpl` token, it must use the `IMetaDataImport` interface to enumerate them. If you want to use COM semantics of the `[default]` interface, you should supply the default interface as the first element in `rtkImplements`; a custom attribute set on the class will indicate that the class has a default interface (which is always assumed to be the first `mdInterfaceImpl` token declared for the class).  
   
- Chaque élément de la `rtkImplements` tableau contient un `mdTypeDef` ou `mdTypeRef` jeton. Le dernier élément dans le tableau doit être `mdTokenNil`.  
+ Each element of the `rtkImplements` array holds an `mdTypeDef` or `mdTypeRef` token. The last element in the array must be `mdTokenNil`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

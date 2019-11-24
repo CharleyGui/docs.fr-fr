@@ -6,22 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - IALink interface
 ms.assetid: 50abd02d-6488-4815-999b-4fb89af4d568
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7324ddb63f000f55a16c4963c808f658aa9098a7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 73b6bb9eac3f706df5cb1fd63b2f67c9791c8ed2
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787318"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441821"
 ---
 # <a name="ialink-interface"></a>IALink, interface
-Facilite la construction d’assemblys .NET Framework. Entre autres choses, l’interface contient des méthodes qui facilitent l’écriture de manifestes d’assembly pour les assemblys multimodules, la signature d’assemblys avec des noms forts et la création de netmodules.  
+Helps in constructing .NET Framework assemblies. Among other things, the interface contains methods that assist in writing assembly manifests for multi-module assemblies, signing assemblies with strong names, and creating netmodules.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Méthode AddFile](addfile-method.md)  
+ [AddFile Method](addfile-method.md)  
   
- [Méthode AddImport,](addimport-method.md)  
+ [AddImport Method](addimport-method.md)  
   
  [CloseAssembly, méthode](closeassembly-method.md)  
   
@@ -53,7 +51,7 @@ Facilite la construction d’assemblys .NET Framework. Entre autres choses, l’
   
  [GetResolutionScope, méthode](getresolutionscope-method.md)  
   
- [Méthode GetScope,](getscope-method.md)  
+ [GetScope Method](getscope-method.md)  
   
  [GetWin32ResBlob, méthode](getwin32resblob-method.md)  
   
@@ -63,7 +61,7 @@ Facilite la construction d’assemblys .NET Framework. Entre autres choses, l’
   
  [ImportTypes, méthode](importtypes-method.md)  
   
- "Init, méthode"  
+ "Init Method"  
   
  [LinkResource, méthode](linkresource-method.md)  
   

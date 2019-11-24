@@ -6,14 +6,12 @@ helpviewer_keywords:
 - unmanaged structures [.NET Framework], metadata
 - metadata structures [.NET Framework]
 ms.assetid: 3eeaec36-5e1a-4a62-9de3-ea3942f67d04
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2095b6e490612cff5af193b1c1dfcbb6757fc23e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 663abfdad79b8e4878ee598587a1f3484f5afccc
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049828"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444610"
 ---
 # <a name="metadata-structures"></a>Structures de métadonnées
 Cette section décrit les structures non managées utilisées par l'API de métadonnées.  

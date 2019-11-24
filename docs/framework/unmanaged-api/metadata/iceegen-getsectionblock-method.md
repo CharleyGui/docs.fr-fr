@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 05c78aaf-5bbd-497e-9ae2-55f4fae0c5fb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 84ccbd7a8be7d90a541fb2d54baa3d7f66d3d31e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0731053fb37c775d25052a5fd99a479a44ff5862
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746115"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434881"
 ---
 # <a name="iceegengetsectionblock-method"></a>ICeeGen::GetSectionBlock, méthode
-Obtient un bloc de section de la base de code.  
+Gets a section block of the code base.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,26 +40,26 @@ HRESULT GetSectionBlock (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] La section à partir de laquelle récupérer un bloc de la base de code.  
+ [in] The section from which to retrieve a block of the code base.  
   
  `len`  
- [in] La longueur du bloc à récupérer.  
+ [in] The length of the block to be retrieved.  
   
  `align`  
- [in] L’octet par rapport au début de la section, avec lequel aligner le premier octet du bloc. Il s’agit de la position du bloc dans la section.  
+ [in] The byte, relative to the beginning of the section, with which to align the first byte of the block. This is the position of the block within the section.  
   
  `ppBytes`  
- [out] Pointeur vers un emplacement qui reçoit l’adresse du bloc récupéré.  
+ [out] A pointer to a location that receives the address of the retrieved block.  
   
 ## <a name="remarks"></a>Notes  
- Appelez `GetSectionBlock` uniquement si vous avez des exigences de section spéciale qui ne sont pas gérées par d’autres méthodes.  
+ Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

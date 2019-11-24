@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 25788ed1-0ce3-4b97-96fc-88f8997812a3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8a035e8dd7bd880c4ead500eede5e1b095d701f2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a59b50009e7f0ab2fff1b8439e368234403822c1
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778069"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446132"
 ---
 # <a name="isymunmanagedvariablegetaddressfield1-method"></a>ISymUnmanagedVariable::GetAddressField1, méthode
-Obtient le premier champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.  
+Gets the first address field for this variable. Its meaning depends on the kind of address.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +34,13 @@ HRESULT GetAddressField1(
   
 ## <a name="parameters"></a>Paramètres  
  `pRetVal`  
- [out] Un pointeur vers un `ULONG32` qui reçoit le premier champ d’adresse.  
+ [out] A pointer to a `ULONG32` that receives the first address field.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

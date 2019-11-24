@@ -6,21 +6,21 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: eb7156e0e2794fb7cb18e7bfce0e8488d0b145c3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 35754d49bf223e7afcdec32e8b24cfb749f48aa6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042764"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446849"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
 Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.
 
-L’implémentation des éléments Windows Presentation Foundation (WPF) et des éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] non-(tels que ceux conçus [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]pour) est fondamentalement différente. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.
+The implementation for Windows Presentation Foundation (WPF) elements and non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elements (such as those designed for [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) is fundamentally different. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.
 
 <a name="Security_Considerations"></a>
 

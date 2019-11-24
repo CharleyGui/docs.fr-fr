@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c30a4ce3-2d3e-411a-98df-e62ac4a5dd50
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f005ee9d3d9d4b8977cd6a1838fe46015e604df5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3dfdd473b01bfe83def52f957c52e0f4d11375ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777472"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434383"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName, méthode
-Obtient les métadonnées jeton pour un type qui est défini dans la portée spécifiée, qui est en dehors de la portée actuelle.  
+Gets a metadata token for a type that is defined in the specified scope, which is outside the current scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +37,30 @@ HRESULT DefineTypeRefByName (
   
 ## <a name="parameters"></a>Paramètres  
  `tkResolutionScope`  
- [in] Le jeton en spécifiant la résolution de portée. Les types de jetons suivants sont valides :  
+ [in] The token specifying the resolution scope. The following token types are valid:  
   
-- `mdModuleRef`, si le type est défini dans le même assembly dans lequel l’appelant est défini.  
+- `mdModuleRef`, if the type is defined in the same assembly in which the caller is defined.  
   
-- `mdAssemblyRef`, si le type est défini dans un assembly autre que celui dans lequel l’appelant est défini.  
+- `mdAssemblyRef`, if the type is defined in an assembly other than the one in which the caller is defined.  
   
-- `mdTypeRef`, si le type est un type imbriqué.  
+- `mdTypeRef`, if the type is a nested type.  
   
-- `mdModule`, si le type est défini dans le même module que celui dans lequel l’appelant est défini.  
+- `mdModule`, if the type is defined in the same module in which the caller is defined.  
   
-- Valeur null, si le type est défini dans le monde entier.  
+- Null, if the type is defined globally.  
   
  `szName`  
- [in] Le nom du type cible au format Unicode.  
+ [in] The name of the target type in Unicode.  
   
  `ptr`  
- [out] Un pointeur vers le `mdTypeRef` jeton qui est assigné au type.  
+ [out] A pointer to the `mdTypeRef` token that is assigned to the type.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

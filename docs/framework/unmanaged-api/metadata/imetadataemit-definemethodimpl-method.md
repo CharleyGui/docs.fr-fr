@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9dcc8b3d-33ee-4c7c-8d6f-322c57b94a0f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b64275def01d7b62f9a461de69a286769094305e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 99f529a151a42cf4a9ee1f74bd3a76a5b6b1b35f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777587"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445265"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl, méthode
-Crée une définition pour l’implémentation d’une méthode héritée d’une interface et retourne un jeton pour cette définition de l’implémentation de la méthode.  
+Creates a definition for implementation of a method inherited from an interface, and returns a token to that method-implementation definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT DefineMethodImpl (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le `mdTypedef` jeton de la classe d’implémentation.  
+ [in] The `mdTypedef` token of the implementing class.  
   
  `tkBody`  
- [in] Le `mdMethodDef` ou `mdMemberRef` jeton du corps du code.  
+ [in] The `mdMethodDef` or `mdMemberRef` token of the code body.  
   
  `tkDecl`  
- [in] Le `mdMethodDef` ou `mdMemberRef` jeton de la méthode d’interface en cours d’implémentation.  
+ [in] The `mdMethodDef` or `mdMemberRef` token of the interface method being implemented.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

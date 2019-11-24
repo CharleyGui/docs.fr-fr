@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 83605f1e-e4f3-49e6-859b-f13cad68bb54
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e283bea2ce2f4b2e17da6e8dcb85165d3c4d6693
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 923a92ea256f79a1b0130b61c4fd99460fda96a0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776963"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441809"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition, méthode
-Retourne un tableau des méthodes, chacune contenant le point d’arrêt à la position donnée dans un document.  
+Returns an array of methods, each of which contains the breakpoint at the given position in a document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +40,28 @@ HRESULT GetMethodsFromDocumentPosition (
   
 ## <a name="parameters"></a>Paramètres  
  `document`  
- [in] Le document spécifié.  
+ [in] The specified document.  
   
  `line`  
- [in] La ligne du document spécifié.  
+ [in] The line of the specified document.  
   
  `column`  
- [in] La colonne du document spécifié.  
+ [in] The column of the specified document.  
   
  `cMethod`  
  [in] Taille du tableau `pRetVal`.  
   
  `pcMethod`  
- [out] Un pointeur vers une variable qui reçoit le nombre d’éléments retournés dans le `pRetVal` tableau.  
+ [out] A pointer to a variable that receives the number of elements returned in the `pRetVal` array.  
   
  `pRetVal`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) objet qui représente une méthode qui contient le point d’arrêt.  
+ [out] An array of pointers, each of which points to an [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents a method containing the breakpoint.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: e5ceed11-0f54-4097-8302-883284dddbc1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5614ac6127fc07a1944889930c59db1ba7322f73
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ebb0951322f63b9f8802b7830e55976f824df21a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766946"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443403"
 ---
 # <a name="imetadatavalidatevalidatemetadata-method"></a>IMetaDataValidate::ValidateMetaData, méthode
 Valide les signatures de métadonnées des objets dans la portée de métadonnées actuelle.  
@@ -33,12 +31,12 @@ Valide les signatures de métadonnées des objets dans la portée de métadonné
 HRESULT ValidateMetaData ();  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

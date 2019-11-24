@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 03abf921-5154-4070-88fa-10b7092901fb
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c6421ca47c3439d94c1ae86caaf2198298872d53
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d4ea16a212ac5f0120d63510f07eaee69af739e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777521"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431487"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap, méthode
-Définit les fonctionnalités de la signature PInvoke de la méthode référencée par le jeton spécifié.  
+Sets features of the PInvoke signature of the method referenced by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT DefinePinvokeMap (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Le jeton pour la méthode cible.  
+ [in] The token for the target method.  
   
  `dwMappingFlags`  
- [in] Indicateurs utilisés par PInvoke pour effectuer le mappage.  
+ [in] Flags used by PInvoke to do the mapping.  
   
  `szImportName`  
- [in] Nom de la cible d’exportation méthode dans une DLL non managée.  
+ [in] The name of the target export method in an unmanaged DLL.  
   
  `mrImportDLL`  
- [in] Le jeton pour la cible de DLL native.  
+ [in] The token for the target native DLL.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

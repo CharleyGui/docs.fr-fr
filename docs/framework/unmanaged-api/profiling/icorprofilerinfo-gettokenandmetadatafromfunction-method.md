@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e525aa16-c923-4b16-833b-36f1f0dd70fc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b608b8818890bdb27a956a90c7987cf7c421304d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b3e14230888e9bf846879d5728c2b20883fb8d53
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772274"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438739"
 ---
 # <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a>ICorProfilerInfo::GetTokenAndMetadataFromFunction, méthode
-Obtient le jeton de métadonnées et une instance d’interface de métadonnées qui permettre être utilisée avec le jeton pour la fonction spécifiée.  
+Gets the metadata token and a metadata interface instance that can be used against the token for the specified function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,21 +37,21 @@ HRESULT GetTokenAndMetaDataFromFunction(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] L’ID de la fonction pour laquelle obtenir le jeton de métadonnées et l’interface de métadonnées.  
+ [in] The ID of the function for which to get the metadata token and metadata interface.  
   
  `riid`  
- [in] L’ID de référence de l’interface de métadonnées pour obtenir l’instance de.  
+ [in] The reference ID of the metadata interface to get the instance of.  
   
  `ppImport`  
- [out] Pointeur vers l’adresse de l’instance d’interface de métadonnées qui permettre être utilisé avec le jeton pour la fonction spécifiée.  
+ [out] A pointer to the address of the metadata interface instance that can be used against the token for the specified function.  
   
  `pToken`  
- [out] Pointeur vers le jeton de métadonnées pour la fonction spécifiée.  
+ [out] A pointer to the metadata token for the specified function.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

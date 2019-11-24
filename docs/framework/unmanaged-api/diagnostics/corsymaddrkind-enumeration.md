@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3ef841c2-cade-42ee-ba34-2ef91d6d0879
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba24f5394ef8fb31d8bfa4e74ac59e7bd4af86d8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 12f31d0bf224e38418818122dad3586ec687b2ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769865"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448578"
 ---
 # <a name="corsymaddrkind-enumeration"></a>CorSymAddrKind, énumération
-Indique le type d’adresse de mémoire.  
+Indicates the type of memory address.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,19 +46,19 @@ typedef enum CorSymAddrKind
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ADDR_IL_OFFSET`|Indique un index Microsoft intermediate language (MSIL) local variable ou un paramètre.|  
-|`ADDR_NATIVE_RVA`|Indique une adresse virtuelle relative dans un module.|  
-|`ADDR_NATIVE_REGISTER`|Indique un Registre du processeur.|  
-|`ADDR_NATIVE_REGREL`|Indique que la première adresse est un Registre et la deuxième adresse est un décalage.|  
-|`ADDR_NATIVE_OFFSET`|Indique un décalage à partir d’une adresse de base.|  
-|`ADDR_NATIVE_REGREG`|Indique que la première adresse est la partie basse d’un Registre, et la deuxième adresse est la partie haute.|  
-|`ADDR_NATIVE_REGSTK`|Indique que la première adresse est la partie basse d’un Registre, la seconde est la partie haute, et le troisième est un décalage.|  
-|`ADDR_NATIVE_STKREG`|Indique que la première adresse est un Registre, le second est un décalage, et le troisième est la partie haute du Registre.|  
-|`ADDR_BITFIELD`|Indique que la première adresse est le début d’un champ et la deuxième adresse est la longueur de champ.|  
-|`ADDR_NATIVE_ISECTOFFSET`|Indique que la première adresse est la section et la deuxième adresse est un décalage.|  
+|`ADDR_IL_OFFSET`|Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.|  
+|`ADDR_NATIVE_RVA`|Indicates a relative virtual address into a module.|  
+|`ADDR_NATIVE_REGISTER`|Indicates a CPU register.|  
+|`ADDR_NATIVE_REGREL`|Indicates that the first address is a register and the second address is an offset.|  
+|`ADDR_NATIVE_OFFSET`|Indicates an offset from a base address.|  
+|`ADDR_NATIVE_REGREG`|Indicates that the first address is the low portion of a register, and the second address is the high portion.|  
+|`ADDR_NATIVE_REGSTK`|Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.|  
+|`ADDR_NATIVE_STKREG`|Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.|  
+|`ADDR_BITFIELD`|Indicates that the first address is the start of a field and the second address is the field length.|  
+|`ADDR_NATIVE_ISECTOFFSET`|Indicates that the first address is the section and the second address is an offset.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

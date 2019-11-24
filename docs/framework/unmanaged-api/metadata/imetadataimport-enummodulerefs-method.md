@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 53441f3a-68d2-477c-906e-37c55dfcfb4d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: afa2d35a193a11360b52bcbdc1d9e5dae16d1c90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66186d25e8fee0d6b25c0a2069d46ff9a104c625
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782123"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450034"
 ---
 # <a name="imetadataimportenummodulerefs-method"></a>IMetaDataImport::EnumModuleRefs, méthode
 Énumère les jetons ModuleRef qui représentent des modules importés.  
@@ -40,30 +38,30 @@ HRESULT EnumModuleRefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] Pointeur vers l’énumérateur. Cela doit être NULL pour le premier appel de cette méthode.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `rModuleRefs`  
- [out] Tableau utilisé pour stocker les jetons ModuleRef.  
+ [out] The array used to store the ModuleRef tokens.  
   
  `cMax`  
  [in] Taille maximale du tableau `rModuleRefs`.  
   
  `pcModuleRefs`  
- [out] Le nombre de jetons ModuleRef retournés dans `rModuleRefs`.  
+ [out] The number of ModuleRef tokens returned in `rModuleRefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` retourné avec succès.|  
-|`S_FALSE`|Il n’existe pas de jetons à énumérer. Dans ce cas, `pcModuleRefs` est égal à zéro.|  
+|`S_OK`|`EnumModuleRefs` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcModuleRefs` is zero.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

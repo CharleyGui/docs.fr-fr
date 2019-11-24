@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47b2a3b6-907d-43dc-858d-1ae7dca1316a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 027547098edefdca71317b8f885e71f468dc6e77
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3898b095809e2b84f71aba2036f4d7a294dfdf6a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777203"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444652"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam, méthode
-Crée une définition pour un paramètre de type générique et obtient un jeton pour ce paramètre de type générique.  
+Creates a definition for a generic type parameter, and gets a token to that generic type parameter.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,32 +41,32 @@ HRESULT DefineGenericParam (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Un `mdTypeDef` ou `mdMethodDef` jeton qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
+ [in] An `mdTypeDef` or `mdMethodDef` token that represents the method or constructor for which to define a generic parameter.  
   
  `ulParamSeq`  
- [in] L’index du paramètre générique.  
+ [in] The index of the generic parameter.  
   
  `dwParamFlags`  
- [in] Une valeur de la [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) énumération qui décrit le type du paramètre générique.  
+ [in] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the type for the generic parameter.  
   
  `szname`  
- [in] Le nom du paramètre.  
+ [in] The name of the parameter.  
   
  `reserved`  
- [in] Ce paramètre est réservé pour une extensibilité future.  
+ [in] This parameter is reserved for future extensibility.  
   
  `rtkConstraints`  
- [in] Un tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un `mdTypeDef`, `mdTypeRef`, ou `mdTypeSpec` jeton de métadonnées.  
+ [in] A zero-terminated array of type constraints. Array members must be an `mdTypeDef`, `mdTypeRef`, or `mdTypeSpec` metadata token.  
   
  `pgp`  
- [out] Un jeton qui représente le paramètre générique.  
+ [out] A token that represents the generic parameter.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

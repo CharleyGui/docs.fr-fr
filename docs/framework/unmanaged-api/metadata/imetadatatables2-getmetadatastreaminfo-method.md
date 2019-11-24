@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8b280627-cc74-4789-95da-1fefc966de05
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4f559a269b48ceabfbe9c3a0cf3665458a2cf012
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 279e34689169d31ad89772e90155e7f50bdbac08
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769281"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426213"
 ---
 # <a name="imetadatatables2getmetadatastreaminfo-method"></a>IMetaDataTables2::GetMetaDataStreamInfo, méthode
-Obtient le nom, la taille et le contenu du flux de métadonnées à l’index spécifié.  
+Gets the name, size, and contents of the metadata stream at the specified index.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +38,23 @@ HRESULT GetMetaDataStreamInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `ix`  
- [in] L’index du flux de métadonnées demandées.  
+ [in] The index of the requested metadata stream.  
   
  `ppchName`  
- [out] Un pointeur vers le nom du flux.  
+ [out] A pointer to the name of the stream.  
   
  `ppv`  
- [out] Un pointeur vers le flux de métadonnées.  
+ [out] A pointer to the metadata stream.  
   
  `pcb`  
- [out] La taille, en octets, de `ppv`.  
+ [out] The size, in bytes, of `ppv`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

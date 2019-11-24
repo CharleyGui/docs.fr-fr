@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5fee4a0-b132-4e5e-8730-e586ce314b9a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e3868b07ff01f2d1fec79537dd478a2d005f490f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6d7884e896d6a0463639e7ef08b47dced10a27f4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778767"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431375"
 ---
 # <a name="imetadataimport2getgenericparamconstraintprops-method"></a>IMetaDataImport2::GetGenericParamConstraintProps, méthode
-Obtient les métadonnées associées à la contrainte de paramètre générique représentée par le jeton de la contrainte spécifiée.  
+Gets the metadata associated with the generic parameter constraint represented by the specified constraint token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +37,20 @@ HRESULT GetGenericParamConstraintProps (
   
 ## <a name="parameters"></a>Paramètres  
  `gpc`  
- [in] Le jeton à la contrainte de paramètre générique pour lequel retourner les métadonnées.  
+ [in] The token to the generic parameter constraint for which to return the metadata.  
   
  `ptGenericParam`  
- [out] Pointeur vers le jeton qui représente le paramètre générique est contraint.  
+ [out] A pointer to the token that represents the generic parameter that is constrained.  
   
  `ptkConstraintType`  
- [out] Un pointeur vers un jeton TypeDef, TypeRef ou TypeSpec qui représente une contrainte sur `ptGenericParam`.  
+ [out] A pointer to a TypeDef, TypeRef, or TypeSpec token that represents a constraint on `ptGenericParam`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

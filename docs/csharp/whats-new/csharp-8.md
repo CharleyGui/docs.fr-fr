@@ -1,20 +1,20 @@
 ---
-title: Nouveautés de C# 8,0- C# Guide
+title: What's new in C# 8.0 - C# Guide
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0.
 ms.date: 09/20/2019
-ms.openlocfilehash: e6a2357f4405b4eb31b12a1e3faa6896a31c21a1
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 540b95beaf00c17812a3b602602504278be69b0e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960829"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429390"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-C#8,0 ajoute les fonctionnalités suivantes et les améliorations apportées au C# langage :
+C# 8.0 adds the following features and enhancements to the C# language:
 
 - [Membres ReadOnly](#readonly-members)
-- [Méthodes d’interface par défaut](#default-interface-methods)
+- [Default interface methods](#default-interface-methods)
 - [Amélioration des critères spéciaux](#more-patterns-in-more-places) :
   - [Expressions switch](#switch-expressions)
   - [Modèles de propriétés](#property-patterns)
@@ -26,10 +26,12 @@ C#8,0 ajoute les fonctionnalités suivantes et les améliorations apportées au 
 - [Types de référence Nullable](#nullable-reference-types)
 - [Flux asynchrones](#asynchronous-streams)
 - [Index et plages](#indices-and-ranges)
-- [Assignation de fusion Null](#null-coalescing-assignment)
-- [Types construits non managés](#unmanaged-constructed-types)
-- [Stackalloc dans les expressions imbriquées](#stackalloc-in-nested-expressions)
-- [Amélioration des chaînes textuelles interpolées](#enhancement-of-interpolated-verbatim-strings)
+- [Null-coalescing assignment](#null-coalescing-assignment)
+- [Unmanaged constructed types](#unmanaged-constructed-types)
+- [Stackalloc in nested expressions](#stackalloc-in-nested-expressions)
+- [Enhancement of interpolated verbatim strings](#enhancement-of-interpolated-verbatim-strings)
+
+C# 8.0 is supported on **.NET Core 3.x** and **.NET Standard 2.1**. For more information, see [C# language versioning](../language-reference/configure-language-version.md).
 
 La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des articles détaillés sont disponibles, des liens vers ces tutoriels et vues d’ensemble sont indiqués. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
 
@@ -40,7 +42,7 @@ La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des ar
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
-Vous pouvez appliquer le modificateur `readonly` aux membres d’un struct. Elle indique que le membre ne modifie pas l’État. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct mutable suivant :
+You can apply the `readonly` modifier to members of a struct. It indicates that the member doesn't modify state. C’est plus précis que d’appliquer le modificateur `readonly` à une déclaration `struct`.  Examinons le struct mutable suivant :
 
 ```csharp
 public struct Point
@@ -54,28 +56,28 @@ public struct Point
 }
 ```
 
-Comme la plupart des structs, la méthode `ToString()` ne modifie pas l’État. Vous pouvez indiquer cela en ajoutant le modificateur `readonly` à la déclaration de `ToString()` :
+Like most structs, the `ToString()` method doesn't modify state. Vous pouvez indiquer cela en ajoutant le modificateur `readonly` à la déclaration de `ToString()` :
 
 ```csharp
 public readonly override string ToString() =>
     $"({X}, {Y}) is {Distance} from the origin";
 ```
 
-La modification précédente génère un avertissement du compilateur, car `ToString` accède à la propriété `Distance`, qui n’est pas marquée `readonly`:
+The preceding change generates a compiler warning, because `ToString` accesses the `Distance` property, which isn't marked `readonly`:
 
 ```console
 warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonly' member results in an implicit copy of 'this'
 ```
 
-Le compilateur vous avertit lorsqu’il a besoin de créer une copie défensive.  La propriété `Distance` ne change pas d’État. vous pouvez donc résoudre cet avertissement en ajoutant le modificateur `readonly` à la déclaration :
+Le compilateur vous avertit lorsqu’il a besoin de créer une copie défensive.  The `Distance` property doesn't change state, so you can fix this warning by adding the `readonly` modifier to the declaration:
 
 ```csharp
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Notez que le modificateur `readonly` est nécessaire sur une propriété en lecture seule. Le compilateur ne suppose pas que les accesseurs `get` ne modifient pas l’État ; vous devez déclarer `readonly` explicitement. Les propriétés implémentées automatiquement sont une exception. le compilateur traite tous les getters implémentés automatiquement comme ReadOnly. il n’est donc pas nécessaire d’ajouter le modificateur `readonly` aux propriétés `X` et `Y`.
+Notice that the `readonly` modifier is necessary on a read-only property. The compiler doesn't assume `get` accessors don't modify state; you must declare `readonly` explicitly. Auto-implemented properties are an exception; the compiler will treat all auto-implemented getters as readonly, so here there's no need to add the `readonly` modifier to the `X` and `Y` properties.
 
-Le compilateur applique la règle qui `readonly` membres ne modifient pas l’État. La méthode suivante n’est pas compilée, sauf si vous supprimez le modificateur `readonly` :
+The compiler does enforce the rule that `readonly` members don't modify state. The following method won't compile unless you remove the `readonly` modifier:
 
 ```csharp
 public readonly void Translate(int xOffset, int yOffset)
@@ -85,13 +87,13 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Cette fonctionnalité vous permet de spécifier votre intention de conception, afin que le compilateur puisse l’appliquer et procéder à des optimisations basées sur cette intention. Vous pouvez en savoir plus sur les membres en lecture seule dans l’article de référence sur les langages sur [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
+Cette fonctionnalité vous permet de spécifier votre intention de conception, afin que le compilateur puisse l’appliquer et procéder à des optimisations basées sur cette intention. You can learn more about readonly members in the language reference article on [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
 
 ## <a name="default-interface-methods"></a>Méthodes d’interface par défaut
 
-Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité de langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Les méthodes d’interface par défaut permettent également des scénarios semblables à une fonctionnalité de langage « traits ».
+Vous pouvez désormais ajouter des membres aux interfaces et fournir une implémentation pour ces membres. Cette fonctionnalité de langage permet aux auteurs d’API d’ajouter des méthodes à une interface dans les versions ultérieures sans pour autant nuire à la compatibilité des binaires ou des sources avec les implémentations existantes de cette interface. Les implémentations existantes *héritent* de l’implémentation par défaut. Cette fonctionnalité permet également à C# d’interagir avec les API ciblant Android ou Swift, qui prennent en charge des fonctionnalités similaires. Default interface methods also enable scenarios similar to a "traits" language feature.
 
-Les méthodes d’interface par défaut affectent de nombreux scénarios et éléments de langage. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-methods-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
+Default interface methods affects many scenarios and language elements. Ce premier tutoriel couvre [la mise à jour d’une interface à l’aide d’implémentations par défaut](../tutorials/default-interface-methods-versions.md). D’autres tutoriels et mises à jour de référence seront disponibles avant le lancement général.
 
 ## <a name="more-patterns-in-more-places"></a>Ajout de modèles à différents endroits
 
@@ -171,7 +173,7 @@ public static RGBColor FromRainbowClassic(Rainbow colorBand)
 
 ### <a name="property-patterns"></a>Modèles de propriétés
 
-Le **modèle de propriété** permet de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. Ce calcul n’est pas une responsabilité fondamentale d’une classe `Address`. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise le modèle de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
+Le **modèle de propriété** permet de faire correspondre les propriétés de l’objet examiné. Prenons un site d’e-commerce qui doit calculer les taxes sur les ventes en fonction de l’adresse de l’acheteur. That computation isn't a core responsibility of an `Address` class. Il changera au fil du temps, probablement plus souvent que n’évoluera le format de l’adresse. Le montant des taxes sur les ventes varie selon la propriété `State` de l’adresse. La méthode suivante utilise le modèle de propriété pour calculer les taxes sur les ventes à partir de l’adresse et du prix :
 
 ```csharp
 public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
@@ -254,7 +256,7 @@ static Quadrant GetQuadrant(Point point) => point switch
 };
 ```
 
-Le modèle discard dans le switch précédent indique une correspondance lorsque soit `x`, soit `y` est égal à 0, mais pas les deux. Une expression switch doit produire une valeur ou, si aucun des cas ne correspond, lever une exception. Le compilateur génère un avertissement pour vous si vous ne traitez pas tous les cas possibles dans votre expression de commutateur.
+Le modèle discard dans le switch précédent indique une correspondance lorsque soit `x`, soit `y` est égal à 0, mais pas les deux. Une expression switch doit produire une valeur ou, si aucun des cas ne correspond, lever une exception. The compiler generates a warning for you if you don't cover all possible cases in your switch expression.
 
 Vous pouvez explorer des techniques de critères spéciaux dans ce [tutoriel avancé sur les critères spéciaux](../tutorials/pattern-matching.md).
 
@@ -313,7 +315,7 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 
 Dans l’exemple précédent, le fichier est supprimé une fois l’accolade fermante associée à l’instruction `using` atteinte.
 
-Dans les deux cas, le compilateur génère l’appel à `Dispose()`. Le compilateur génère une erreur si l’expression dans l’instruction `using` n’est pas supprimable.
+Dans les deux cas, le compilateur génère l’appel à `Dispose()`. The compiler generates an error if the expression in the `using` statement isn't disposable.
 
 ## <a name="static-local-functions"></a>Fonctions locales statiques
 
@@ -347,13 +349,13 @@ int M()
 
 ## <a name="disposable-ref-structs"></a>Structs ref jetables
 
-Un `struct` déclaré avec le modificateur `ref` peut ne pas implémenter d’interfaces et ne peut donc pas implémenter <xref:System.IDisposable>. Par conséquent, pour qu’un `ref struct` soit supprimable, il doit avoir une méthode `void Dispose()` accessible. Cette fonctionnalité s’applique également aux déclarations de `readonly ref struct`.
+A `struct` declared with the `ref` modifier may not implement any interfaces and so can't implement <xref:System.IDisposable>. Par conséquent, pour qu’un `ref struct` soit supprimable, il doit avoir une méthode `void Dispose()` accessible. This feature also applies to `readonly ref struct` declarations.
 
 ## <a name="nullable-reference-types"></a>Types références Nullables
 
 Dans un contexte d’annotation Nullable, toute variable d’un type référence est considérée comme un **type référence n'acceptant pas la valeur Null**. Si vous souhaitez indiquer qu’une variable peut être Null, ajoutez `?` au nom de type pour la déclarer comme **type référence Nullable**.
 
-Avec les types références n'acceptant pas la valeur Null, le compilateur utilise l’analyse de flux pour que les variables locales soient initialisées à une valeur non Null une fois déclarées. Les champs doivent être initialisés à la construction. Le compilateur génère un avertissement si la variable n’est pas définie par un appel à l’un des constructeurs disponibles ou par un initialiseur. Par ailleurs, les types références n’acceptant pas la valeur Null ne peuvent pas avoir de valeur pouvant être Null.
+Avec les types références n'acceptant pas la valeur Null, le compilateur utilise l’analyse de flux pour que les variables locales soient initialisées à une valeur non Null une fois déclarées. Les champs doivent être initialisés à la construction. The compiler generates a warning if the variable isn't set by a call to any of the available constructors or by an initializer. Par ailleurs, les types références n’acceptant pas la valeur Null ne peuvent pas avoir de valeur pouvant être Null.
 
 Les types références Nullables font l’objet d’aucun contrôle visant à vérifier qu’ils ne sont pas affectés ou initialisées sur Null. Toutefois, le compilateur utilise l’analyse de flux pour comparer à Null toutes les variables d’un type référence Nullable avant d’y accéder ou de lui affecter un type référence n’acceptant pas la valeur Null.
 
@@ -393,18 +395,18 @@ Vous pouvez essayer par vous-même les flux asynchrones dans notre tutoriel [Cr�
 
 ## <a name="indices-and-ranges"></a>Index et plages
 
-Les index et les plages fournissent une syntaxe concise pour accéder à des éléments ou des plages uniques dans une séquence.
+Indices and ranges provide a succinct syntax for accessing single elements or ranges in a sequence.
 
-Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
+This language support relies on two new types, and two new operators:
 
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
-- L’index de l’opérateur end `^`, qui spécifie qu’un index est relatif à la fin de la séquence.
+- The index from end operator `^`, which specifies that an index is relative to the end of the sequence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- L’opérateur de plage `..`, qui spécifie le début et la fin d’une plage comme opérandes.
+- The range operator `..`, which specifies the start and end of a range as its operands.
 
 Commençons par les règles concernant les index. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence.Length - n`.
 
-Une plage spécifie son *début* et sa *fin*. Le début de la plage est compris, mais la fin de la plage est exclusive, ce qui signifie que le *début* est inclus dans la plage, mais que la *fin* n’est pas incluse dans la plage. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière.
+Une plage spécifie son *début* et sa *fin*. The start of the range is inclusive, but the end of the range is exclusive, meaning the *start* is included in the range but the *end* isn't included in the range. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière.
 
 Prenons quelques exemples. Examinez le tableau suivant, annoté avec son index à partir du début et de la fin :
 
@@ -437,7 +439,7 @@ Le code suivant crée une sous-plage qui comporte les mots « quick », « br
 var quickBrownFox = words[1..4];
 ```
 
-Le code suivant crée une sous-plage qui comporte « lazy » et « dog » et comprend `words[^2]` et `words[^1]`. L’index de fin `words[^0]` n’est pas inclus :
+Le code suivant crée une sous-plage qui comporte « lazy » et « dog » et comprend `words[^2]` et `words[^1]`. The end index `words[^0]` isn't included:
 
 ```csharp
 var lazyDog = words[^2..^0];
@@ -463,13 +465,13 @@ La plage peut ensuite être utilisée à l’intérieur des caractères `[` et `
 var text = words[phrase];
 ```
 
-Non seulement les tableaux prennent en charge les index et les plages. Vous pouvez également utiliser des index et des plages avec [chaîne](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>ou <xref:System.ReadOnlySpan%601>. Pour plus d’informations, consultez [prise en charge des types d’index et de plages](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+Not only arrays support indices and ranges. You also can use indices and ranges with [string](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>, or <xref:System.ReadOnlySpan%601>. For more information, see [Type support for indices and ranges](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
 Pour explorer davantage les index et les plages, consultez le tutoriel sur [les index et les plages](../tutorials/ranges-indexes.md).
 
-## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
+## <a name="null-coalescing-assignment"></a>Null-coalescing assignment
 
-C#8,0 introduit l’opérateur d’assignation de fusion Null `??=`. Vous pouvez utiliser l’opérateur `??=` pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend la valeur `null`.
+C# 8.0 introduces the null-coalescing assignment operator `??=`. You can use the `??=` operator to assign the value of its right-hand operand to its left-hand operand only if the left-hand operand evaluates to `null`.
 
 ```csharp
 List<int> numbers = null;
@@ -483,13 +485,13 @@ Console.WriteLine(string.Join(" ", numbers));  // output: 17 17
 Console.WriteLine(i);  // output: 17
 ```
 
-Pour plus d’informations, consultez [les = l’article Operators](../language-reference/operators/null-coalescing-operator.md) .
+For more information, see the [?? and ??= operators](../language-reference/operators/null-coalescing-operator.md) article.
 
-## <a name="unmanaged-constructed-types"></a>Types construits non managés
+## <a name="unmanaged-constructed-types"></a>Unmanaged constructed types
 
-Dans C# 7,3 et les versions antérieures, un type construit (un type qui comprend au moins un argument de type) ne peut pas être un [type non managé](../language-reference/builtin-types/unmanaged-types.md). À C# partir de 8,0, un type valeur construit est non managé s’il contient uniquement des champs de types non managés.
+In C# 7.3 and earlier, a constructed type (a type that includes at least one type argument) can't be an [unmanaged type](../language-reference/builtin-types/unmanaged-types.md). Starting with C# 8.0, a constructed value type is unmanaged if it contains fields of unmanaged types only.
 
-Par exemple, étant donné la définition suivante du type de `Coords<T>` générique :
+For example, given the following definition of the generic `Coords<T>` type:
 
 ```csharp
 public struct Coords<T>
@@ -499,7 +501,7 @@ public struct Coords<T>
 }
 ```
 
-le type de `Coords<int>` est un type non managé dans C# 8,0 et versions ultérieures. Comme pour tout type non managé, vous pouvez créer un pointeur vers une variable de ce type ou [allouer un bloc de mémoire sur la pile](../language-reference/operators/stackalloc.md) pour les instances de ce type :
+the `Coords<int>` type is an unmanaged type in C# 8.0 and later. Like for any unmanaged type, you can create a pointer to a variable of this type or [allocate a block of memory on the stack](../language-reference/operators/stackalloc.md) for instances of this type:
 
 ```csharp
 Span<Coords<int>> coordinates = stackalloc[]
@@ -510,11 +512,11 @@ Span<Coords<int>> coordinates = stackalloc[]
 };
 ```
 
-Pour plus d’informations, consultez [types non managés](../language-reference/builtin-types/unmanaged-types.md).
+For more information, see [Unmanaged types](../language-reference/builtin-types/unmanaged-types.md).
 
-## <a name="stackalloc-in-nested-expressions"></a>stackalloc dans les expressions imbriquées
+## <a name="stackalloc-in-nested-expressions"></a>Stackalloc in nested expressions
 
-À C# partir de 8,0, si le résultat d’une expression [stackalloc](../language-reference/operators/stackalloc.md) est du type<xref:System.Span%601?displayProperty=nameWithType>ou<xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, vous pouvez utiliser l’expression`stackalloc`dans d’autres expressions :
+Starting with C# 8.0, if the result of a [stackalloc](../language-reference/operators/stackalloc.md) expression is of the <xref:System.Span%601?displayProperty=nameWithType> or <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> type, you can use the `stackalloc` expression in other expressions:
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
@@ -522,6 +524,6 @@ var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
 Console.WriteLine(ind);  // output: 1
 ```
 
-## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
+## <a name="enhancement-of-interpolated-verbatim-strings"></a>Enhancement of interpolated verbatim strings
 
-L’ordre des jetons de `$` et de `@` dans les chaînes textuelles [interpolées](../language-reference/tokens/interpolated.md) peut être n’importe quel : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, le jeton `$` doit apparaître avant le jeton `@`.
+Order of the `$` and `@` tokens in [interpolated](../language-reference/tokens/interpolated.md) verbatim strings can be any: both `$@"..."` and `@$"..."` are valid interpolated verbatim strings. In earlier C# versions, the `$` token must appear before the `@` token.

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 185e3327-9f9c-44bc-8a5c-febea9a6bb5b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8dd5e2ecf22ce14765df8972611f1f95109f76ed
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40cb666c47c690dc930ec2cb7f6c89662464780e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769199"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445913"
 ---
 # <a name="icorprofilercallbackmoduleunloadfinished-method"></a>ICorProfilerCallback::ModuleUnloadFinished, méthode
-Notifie le profileur qu’un module a été déchargé.  
+Notifies the profiler that a module has finished unloading.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT ModuleUnloadFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] L’ID du module qui a été déchargé.  
+ [in] The ID of the module that was unloaded.  
   
  `hrStatus`  
- [in] HRESULT qui indique si le module a été déchargé.  
+ [in] An HRESULT that indicates whether the module was unloaded successfully.  
   
 ## <a name="remarks"></a>Notes  
- La valeur de `moduleId` n’est pas valide pour une demande d’informations après la [ICorProfilerCallback::ModuleUnloadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleunloadstarted-method.md) méthode retourne.  
+ The value of `moduleId` is not valid for an information request after the [ICorProfilerCallback::ModuleUnloadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleunloadstarted-method.md) method returns.  
   
- Certaines parties du déchargement de la classe peuvent continuer après le `ModuleUnloadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement du module a réussi.  
+ Some parts of unloading the class might continue after the `ModuleUnloadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the module has succeeded.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

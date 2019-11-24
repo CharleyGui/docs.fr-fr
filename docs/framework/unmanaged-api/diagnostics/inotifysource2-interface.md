@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: f432fb85-5c78-43d1-8302-53b8fc605c97
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 509d75e1e94a82e6a91cd235ab079603c267c70f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b62fbe47f9b5048b6cd74337d20b20eece5e01b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940320"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448699"
 ---
 # <a name="inotifysource2-interface"></a>INotifySource2, interface
-Déclare une méthode pour définir des filtres de notification.  
+Declares a method for setting notification filters.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[SetNotifyFilter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)|Assigne un filtre de notification pour une utilisation avec cette source.|  
+|[SetNotifyFilter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)|Assigns a notification filter for use with this source.|  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** ProtocolNotify2.idl  
+## <a name="requirements"></a>spécifications  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Voir aussi
 

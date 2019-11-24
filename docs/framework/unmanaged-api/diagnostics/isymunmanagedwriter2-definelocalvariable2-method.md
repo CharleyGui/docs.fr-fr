@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e774eefe-858c-4362-8d2d-28ebf2ba1a24
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8fa385805d3e2dca8fef3e1490b2c67dd0583373
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 73f536b4ab98aa596c2395810cb8b616ffd309e9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755070"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438291"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2, méthode
-Définit une variable unique dans la portée lexicale actuelle. Cette méthode peut être appelée plusieurs fois pour une variable du même nom qui a plusieurs maisons tout au long d’une étendue. Dans ce cas, toutefois, les valeurs de la `startOffset` et `endOffset` paramètres ne doivent pas se chevaucher.  
+Définit une variable unique dans la portée lexicale actuelle. This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope. In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +42,37 @@ HRESULT DefineLocalVariable2(
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- [in] Le nom de variable locale.  
+ [in] The local variable name.  
   
  `attributes`  
- [in] Attributs de variable locale.  
+ [in] The local variable attributes.  
   
  `sigToken`  
- [in] Le jeton de métadonnées de la signature.  
+ [in] The metadata token of the signature.  
   
  `addrKind`  
- [in] Le type d’adresse.  
+ [in] The address type.  
   
  `addr1`  
- [in] La première adresse de la spécification de paramètre.  
+ [in] The first address for the parameter specification.  
   
  `addr2`  
- [in] La deuxième adresse de la spécification de paramètre.  
+ [in] The second address for the parameter specification.  
   
  `addr3`  
- [in] Troisième adresse de la spécification de paramètre.  
+ [in] The third address for the parameter specification.  
   
  `startOffset`  
- [in] Offset de début pour la variable. Ce paramètre est optionnel. Si la valeur est 0, ce paramètre est ignoré et la variable est définie dans l’ensemble de la portée. Dans le cas d’une valeur différente de zéro, la variable est comprise entre les offsets de la portée actuelle.  
+ [in] The start offset for the variable. Ce paramètre est optionnel. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
   
  `endOffset`  
- [in] Offset de fin pour la variable. Ce paramètre est optionnel. Si la valeur est 0, ce paramètre est ignoré et la variable est définie dans l’ensemble de la portée. Dans le cas d’une valeur différente de zéro, la variable est comprise entre les offsets de la portée actuelle.  
+ [in] The end offset for the variable. Ce paramètre est optionnel. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Voir aussi
 

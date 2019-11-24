@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e83afcf6c872927e614fce33ca96e93f0da4f497
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 247a2793bf3806f5ee38585d50b4535820dfcb69
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778875"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437060"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps, méthode
-Obtient les métadonnées pour la propriété représentée par le jeton spécifié.  
+Gets the metadata for the property represented by the specified token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,59 +50,59 @@ HRESULT GetPropertyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `prop`  
- [in] Un jeton qui représente la propriété à retourner les métadonnées.  
+ [in] A token that represents the property to return metadata for.  
   
  `pClass`  
- [out] Pointeur vers le jeton TypeDef qui représente le type qui implémente la propriété.  
+ [out] A pointer to the TypeDef token that represents the type that implements the property.  
   
  `szProperty`  
- [out] Une mémoire tampon pour contenir le nom de propriété.  
+ [out] A buffer to hold the property name.  
   
  `cchProperty`  
- [in] La taille en caractères larges de `szProperty`.  
+ [in] The size in wide characters of `szProperty`.  
   
  `pchProperty`  
- [out] Le nombre de caractères étendus retournés dans `szProperty`.  
+ [out] The number of wide characters returned in `szProperty`.  
   
  `pdwPropFlags`  
- [out] Pointeur vers les indicateurs d’attribut appliqué à la propriété. Cette valeur est un masque de bits à partir de la [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) énumération.  
+ [out] A pointer to any attribute flags applied to the property. This value is a bitmask from the [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) enumeration.  
   
  `ppvSig`  
- [out] Pointeur vers la signature de métadonnées de la propriété.  
+ [out] A pointer to the metadata signature of the property.  
   
  `pbSig`  
- [out] Le nombre d’octets retournés dans `ppvSig`.  
+ [out] The number of bytes returned in `ppvSig`.  
   
  `pdwCPlusTypeFlag`  
- [out] Un indicateur qui spécifie le type de la constante qui est la valeur par défaut de la propriété. Cette valeur provient de l’énumération CorElementType.  
+ [out] A flag specifying the type of the constant that is the default value of the property. This value is from the CorElementType enumeration.  
   
  `ppDefaultValue`  
- [out] Un pointeur vers les octets qui stockent la valeur par défaut pour cette propriété.  
+ [out] A pointer to the bytes that store the default value for this property.  
   
  `pcchDefaultValue`  
- [out] La taille en caractères larges de `ppDefaultValue`si `pdwCPlusTypeFlag` a la valeur ELEMENT_TYPE_STRING ; sinon, cette valeur n’est pas pertinente. Dans ce cas, la longueur de `ppDefaultValue` est déduit du type spécifié par `pdwCPlusTypeFlag`.  
+ [out] The size in wide characters of `ppDefaultValue`, if `pdwCPlusTypeFlag` is ELEMENT_TYPE_STRING; otherwise, this value is not relevant. In that case, the length of `ppDefaultValue` is inferred from the type that is specified by `pdwCPlusTypeFlag`.  
   
  `pmdSetter`  
- [out] Pointeur vers le jeton MethodDef qui représente la méthode d’accesseur set pour la propriété.  
+ [out] A pointer to the MethodDef token that represents the set accessor method for the property.  
   
  `pmdGetter`  
- [out] Pointeur vers le jeton MethodDef qui représente la méthode d’accesseur get pour la propriété.  
+ [out] A pointer to the MethodDef token that represents the get accessor method for the property.  
   
  `rmdOtherMethod`  
- [out] Un tableau de jetons MethodDef représentant des autres méthodes associées à la propriété.  
+ [out] An array of MethodDef tokens that represent other methods associated with the property.  
   
  `cMax`  
- [in] Taille maximale du tableau `rmdOtherMethod`. Si vous ne fournissez pas un tableau suffisamment grand pour contenir toutes les méthodes, ils sont ignorés sans avertissement.  
+ [in] Taille maximale du tableau `rmdOtherMethod`. If you do not provide an array large enough to hold all the methods, they are skipped without warning.  
   
  `pcOtherMethod`  
- [out] Le nombre de jetons MethodDef retournés dans `rmdOtherMethod`.  
+ [out] The number of MethodDef tokens returned in `rmdOtherMethod`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

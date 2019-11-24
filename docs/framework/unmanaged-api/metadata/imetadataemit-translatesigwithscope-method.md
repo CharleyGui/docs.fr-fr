@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c571e37d87ffd136687452dc80a823b8ddbe3359
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cea84f47a5289df4bc9c50381e18d7077b3b8dad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782059"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440474"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope, méthode
-Importe un assembly dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
+Imports an assembly into the current scope and gets a new metadata signature for the merged scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,44 +45,44 @@ HRESULT TranslateSigWithScope (
   
 ## <a name="parameters"></a>Paramètres  
  `pAssemImport`  
- [in] L’interface pour importer l’assembly (où la signature est définie).  
+ [in] The interface for import assembly (where the signature is defined).  
   
  `pbHashValue`  
- [in] L’objet blob de hachage pour l’assembly.  
+ [in] The hash blob for the assembly.  
   
  `cbHashValue`  
- [in] Le nombre d’octets dans `pbHashValue`.  
+ [in] The count of bytes in `pbHashValue`.  
   
  `import`  
- [in] L’interface pour la portée d’importation de métadonnées.  
+ [in] The interface for import metadata scope.  
   
  `pbSigBlob`  
- [in] La signature doivent être importées.  
+ [in] The signature to be imported.  
   
  `cbSigBlob`  
- [in] La taille, en octets, de `pbSigBlob`.  
+ [in] The size, in bytes, of `pbSigBlob`.  
   
  `pAssemEmit`  
- [in] L’interface pour exporter l’assembly.  
+ [in] The interface for export assembly.  
   
  `emit`  
- [in] L’interface pour la portée de métadonnées d’exportation.  
+ [in] The interface for export metadata scope.  
   
  `pvTranslatedSig`  
- [out] La mémoire tampon pour stocker l’objet blob de signature traduite.  
+ [out] The buffer to hold the translated signature blob.  
   
  `cbTranslatedSigMax`  
- [in] La capacité, en octets, de `pvTranslatedSig`.  
+ [in] The capacity, in bytes, of `pvTranslatedSig`.  
   
  `pcbTranslatedSig`  
- [out] Le nombre d’octets réels dans la signature traduite.  
+ [out] The number of actual bytes in the translated signature.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

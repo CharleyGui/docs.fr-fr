@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 67fefd89-28d6-4588-84ea-dc7a5870e014
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 89d2f9c9cfa7d4c2498710b36796f3e2605bcbf0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bb9fcc4c6e1fd495e95caa1d2200d9fd516a7748
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763650"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444278"
 ---
 # <a name="coiniticor-enumeration"></a>COINITICOR, énumération
-Spécifie les constantes utilisées par [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) lorsqu’il initialise le common language runtime.  
+Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when it initializes the common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +37,14 @@ typedef enum tagCOINITCOR
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COINITCOR`|Indique le mode d’initialisation par défaut.|  
+|`COINITCOR`|Indicates the default initialization mode.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

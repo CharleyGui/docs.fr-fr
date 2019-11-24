@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5a8a4277-345b-448b-a028-fc8cff9998aa
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 62682ca19b9f987370ca11d2bda63fba27f28474
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fb09a9422f2aeec239f9aef25fb61c731e0aa2e9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782993"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74430607"
 ---
 # <a name="icorprofilercallbackruntimesuspendaborted-method"></a>ICorProfilerCallback::RuntimeSuspendAborted, méthode
-Notifie le profileur que le runtime a abandonné la suspension de runtime qui s’est produit.  
+Notifies the profiler that the runtime has aborted the runtime suspension that was occurring.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +32,16 @@ HRESULT RuntimeSuspendAborted();
 ```  
   
 ## <a name="remarks"></a>Notes  
- L’exécution peut être abandonné si deux threads tentent simultanément d’arrêter le runtime.  
+ The run-time suspension might be aborted if two threads simultaneously attempt to suspend the runtime.  
   
- Soit le [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) rappel ou `RuntimeSuspendAborted` rappel se produira un suivant le thread unique un [ICorProfilerCallback::RuntimeSuspendStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) rappel.  
+ Either the [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) callback or the `RuntimeSuspendAborted` callback will occur on a single thread following a [ICorProfilerCallback::RuntimeSuspendStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) callback.  
   
- Le `RuntimeSuspendAborted` rappel est assuré de se produire sur le même thread que le `RuntimeSuspendStarted` rappel.  
+ The `RuntimeSuspendAborted` callback is guaranteed to occur on the same thread as the `RuntimeSuspendStarted` callback.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

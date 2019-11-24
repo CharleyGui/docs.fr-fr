@@ -9,16 +9,16 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 806bc3de138ebae682d2e248593230c753eb7ba2
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dd14a4baf9967f41690e7978b8b6cf57c9275e36
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422763"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428503"
 ---
 # <a name="group-clause-c-reference"></a>group, clause (Référence C#)
 
-La clause `group` retourne une séquence d’objets <xref:System.Linq.IGrouping%602> qui contient zéro, un ou plusieurs éléments qui correspondent à la valeur de clé du groupe. Par exemple, vous pouvez regrouper une séquence de chaînes en fonction de la première lettre de chaque chaîne. Dans ce cas, la première lettre est la clé, elle a le type [char](char.md) et elle est stockée dans la propriété `Key` de chaque objet <xref:System.Linq.IGrouping%602>. Le compilateur déduit le type de la clé.
+La clause `group` retourne une séquence d’objets <xref:System.Linq.IGrouping%602> qui contient zéro, un ou plusieurs éléments qui correspondent à la valeur de clé du groupe. Par exemple, vous pouvez regrouper une séquence de chaînes en fonction de la première lettre de chaque chaîne. Dans ce cas, la première lettre est la clé, elle a le type [char](../builtin-types/char.md) et elle est stockée dans la propriété `Key` de chaque objet <xref:System.Linq.IGrouping%602>. Le compilateur déduit le type de la clé.
 
 Vous pouvez terminer une expression de requête avec une clause `group`, comme illustré dans l’exemple suivant :
 
@@ -66,7 +66,7 @@ Utilisez une clé composite quand vous souhaitez regrouper des éléments en fon
 group person by new {name = person.surname, city = person.city};
 ```
 
-Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [Guide pratique pour implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
+Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. For more information see [How to implement a lightweight class with auto-implemented properties](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) and [How to: Query for Duplicate Files in a Directory Tree](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
 
 ## <a name="example"></a>Exemple
 

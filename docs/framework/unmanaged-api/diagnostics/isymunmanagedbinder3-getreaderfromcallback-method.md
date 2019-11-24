@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ef83bd2-3d8e-499e-8a12-d9d6fd6ced30
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4ed0097e072b34dd43876ddf23abbc1f513670ff
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a0cccc0adfc666cc8e373bc1f89c8f6f97068fde
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776818"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449305"
 ---
 # <a name="isymunmanagedbinder3getreaderfromcallback-method"></a>ISymUnmanagedBinder3::GetReaderFromCallback, méthode
-Permet à l’utilisateur d’implémenter ou de fournir via un rappel un `IID_IDiaReadExeAtRVACallback` ou `IID_IDiaReadExeAtOffsetCallback` pour obtenir les informations de répertoire de débogage de la mémoire.  
+Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the debug directory information from memory.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT GetReaderFromCallback(
   
 ## <a name="parameters"></a>Paramètres  
  `importer`  
- [in] Pointeur vers l’interface d’importation de métadonnées.  
+ [in] A pointer to the metadata import interface.  
   
  `fileName`  
- [in] Pointeur vers le nom de fichier.  
+ [in] A pointer to the file name.  
   
  `searchPath`  
- [in] Pointeur vers le chemin de recherche.  
+ [in] A pointer to the search path.  
   
  `searchPolicy`  
- [in] Une valeur de la [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) énumération qui spécifie la stratégie à utiliser lors d’une recherche pour un lecteur de symboles.  
+ [in] A value of the [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) enumeration that specifies the policy to be used when doing a search for a symbol reader.  
   
  `callback`  
- [in] Pointeur vers la fonction de rappel.  
+ [in] A pointer to the callback function.  
   
  `pRetVal`  
- [out] Un pointeur qui est défini à retourné [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) interface.  
+ [out] A pointer that is set to the returned [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Voir aussi
 

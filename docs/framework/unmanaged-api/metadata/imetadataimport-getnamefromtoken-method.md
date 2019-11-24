@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: 32114ecf-8916-4ab2-a201-179c017344f1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fa6e8665e5e2194eb4a3dffad8e97a69deb202d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6ed30f07fcec9c730e1514350c594399f0aa16e5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778980"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437263"
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken, méthode
 Obtient le nom UTF-8 de l'objet référencé par le jeton de métadonnées spécifié. Cette méthode est obsolète.  
@@ -38,22 +36,22 @@ HRESULT GetNameFromToken (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] Le jeton représentant l’objet à retourner le nom de.  
+ [in] The token representing the object to return the name for.  
   
  `pszUtf8NamePtr`  
- [out] Pointeur vers le nom d’objet UTF-8 dans le tas.  
+ [out] A pointer to the UTF-8 object name in the heap.  
   
 ## <a name="remarks"></a>Notes  
- `GetNameFromToken` est obsolète. Comme alternative, appelez une méthode pour obtenir les propriétés du type particulier de jeton requis, tels que `GetFieldProps` pour un champ ou `GetMethodProps` pour une méthode.  
+ `GetNameFromToken` est obsolète. As an alternative, call a method to get the properties of the particular type of token required, such as `GetFieldProps` for a field or `GetMethodProps` for a method.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Versions du .NET framework :** 1.0  
+ **.NET Framework Versions:** 1.0  
   
 ## <a name="see-also"></a>Voir aussi
 

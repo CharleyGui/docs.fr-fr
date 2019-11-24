@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0451d752-1e5c-4c9a-8bad-6cd35b7ba3df
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 994f6668de3040cc9f2381356d6db06c18c9e984
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87a70587027f283ef5976089b3f2daf1204e68ec
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745883"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74426139"
 ---
 # <a name="iceegentruncatesection-method"></a>ICeeGen::TruncateSection, méthode
-Tronque la section de code spécifié par la longueur spécifiée.  
+Truncates the specified code section by the specified length.  
   
- Cette méthode est obsolète et ne doit pas être utilisée.  
+ This method is obsolete and should not be used.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +38,20 @@ HRESULT TruncateSection (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] La section à tronquer.  
+ [in] The section to truncate.  
   
  `len`  
- [in] La longueur, en octets, de laquelle tronquer la section.  
+ [in] The length, in bytes, by which to truncate the section.  
   
 ## <a name="remarks"></a>Notes  
- Appelez `TruncateSection` uniquement si vous avez des exigences de section spéciale qui ne sont pas gérées par d’autres méthodes.  
+ Call `TruncateSection` only if you have special section requirements that are not handled by other methods.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,20 +14,18 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 12ec27277fe57bd1a291c2cfe491ea2c6f40c30e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: c83a55a74542d94559b50b89ef784de0bd55d0db
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851159"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427347"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall (fonction)
-Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
+Notifies the profiler that the currently executing function is about to perform a tail call to another function.  
   
 > [!NOTE]
-> La `FunctionTailcall` fonction est déconseillée dans la version 2,0 de .NET Framework. Il continuera à fonctionner, mais entraînera une baisse des performances. Utilisez à la place la fonction [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) .  
+> The `FunctionTailcall` function is deprecated in the .NET Framework version 2.0. It will continue to work, but will incur a performance penalty. Use the [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) function instead.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +37,31 @@ void __stdcall FunctionTailcall (
   
 ## <a name="parameters"></a>Paramètres  
  `funcID`  
- dans Identificateur de la fonction en cours d’exécution qui va effectuer un appel tail.  
+ [in] The identifier of the currently executing function that is about to make a tail call.  
   
 ## <a name="remarks"></a>Notes  
- La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
+ The target function of the tail call will use the current stack frame, and will return directly to the caller of the function that made the tail call. This means that a [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) callback will not be issued for a function that is the target of a tail call.  
   
- La `FunctionTailcall` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec`attribut`naked`de classe de stockage ().  
+ The `FunctionTailcall` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
   
- Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
+ The execution engine does not save any registers before calling this function.  
   
-- À l’entrée, vous devez enregistrer tous les registres que vous utilisez, y compris ceux de l’unité à virgule flottante (FPU).  
+- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
   
-- À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
+- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
   
- L’implémentation de `FunctionTailcall` ne doit pas être bloquée, car elle retardera garbage collection. L’implémentation ne doit pas essayer un garbage collection, car la pile n’est peut-être pas dans un État garbage collection. Si une garbage collection est tentée, le runtime se bloque jusqu’à ce que `FunctionTailcall` retourne la valeur.  
+ The implementation of `FunctionTailcall` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionTailcall` returns.  
   
- En outre, `FunctionTailcall` la fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
+ Also, the `FunctionTailcall` function must not call into managed code or in any way cause a managed memory allocation.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl  
+ **Header:** CorProf.idl  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
- **Versions de .NET Framework :** 1.1, 1.0  
+ **.NET Framework Versions:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Voir aussi
 

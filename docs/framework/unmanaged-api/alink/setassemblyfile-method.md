@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3a912787-f139-43ca-a841-8bbda3107ecf
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 76d341aca7c96e5932a1fc155ccaee17ce6585da
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1db4c4ab7e47e223a492e08297ac3cedcb3a27eb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777002"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445606"
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile, méthode
-Assigne le nom de l’assembly à générer. Non utilisé lors de la génération de modules indépendants.  
+Assigns the name of the assembly to be built. Not for use when producing unbound modules.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT SetAssemblyFile(
   
 ## <a name="parameters"></a>Paramètres  
  `pszFilename`  
- Nom qualifié complet du fichier manifeste.  
+ Fully qualified name of the manifest file.  
   
  `pEmitter`  
- Pointeur vers l’interface d' [interface d’IMetaDataEmit](../metadata/imetadataemit-interface.md) .  
+ Pointer to [IMetaDataEmit Interface](../metadata/imetadataemit-interface.md) interface.  
   
  `afFlags`  
- Indicateurs tels que définis dans l' [énumération AssemblyFlags](../metadata/assemblyflags-enumeration.md).  
+ Flags as defined in [AssemblyFlags Enumeration](../metadata/assemblyflags-enumeration.md).  
   
  `pAssemblyID`  
- Pointeur vers l’ID de l’assembly résultant.  
+ Pointer to ID of resulting assembly.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h.  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h.  
   
 ## <a name="see-also"></a>Voir aussi
 

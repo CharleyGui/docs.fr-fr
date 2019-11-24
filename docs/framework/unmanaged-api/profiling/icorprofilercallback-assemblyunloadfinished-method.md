@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 53fca564-84b1-44d4-9e21-17a492d2aae7
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a75d31f0a2c844895363bb4693dbcb5aba4cce1f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 01404d23707be90b6b15cf741632400d49f164de
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445153"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished, méthode
-Informe le profileur qu’un assembly a été déchargé.  
+Notifies the profiler that an assembly has been unloaded.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +35,20 @@ HRESULT AssemblyUnloadFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `assemblyId`  
- [in] Identifie l’assembly qui est en cours de déchargement.  
+ [in] Identifies the assembly that is being unloaded.  
   
  `hrStatus`  
- [in] HRESULT qui indique si l’assembly a été déchargé.  
+ [in] An HRESULT that indicates whether the assembly was unloaded successfully.  
   
 ## <a name="remarks"></a>Notes  
- La valeur de `assemblyId` n’est pas valide pour une demande d’informations après la [ICorProfilerCallback::AssemblyUnloadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) méthode retourne.  
+ The value of `assemblyId` is not valid for an information request after the [ICorProfilerCallback::AssemblyUnloadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) method returns.  
   
- Certaines parties du déchargement de l’assembly peuvent continuer après le `AssemblyUnloadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement de l’assembly a réussi.  
+ Some parts of unloading the assembly might continue after the `AssemblyUnloadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the assembly has succeeded.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

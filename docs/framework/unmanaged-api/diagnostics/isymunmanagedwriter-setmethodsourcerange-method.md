@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c698b86e-ace7-4b21-9549-f52d6a034959
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6e06695f5ba348315523c7414822ce87d594bdbc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 85e65f6a3ec13c2acc31b8f87dbe4b4476ffc2a5
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776604"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427865"
 ---
 # <a name="isymunmanagedwritersetmethodsourcerange-method"></a>ISymUnmanagedWriter::SetMethodSourceRange, méthode
-Spécifie les véritables début et la fin d’une méthode dans un fichier source. Utilisez cette méthode pour spécifier l’étendue d’une méthode indépendamment les points de séquence qui existent au sein de la méthode.  
+Specifies the true start and end of a method within a source file. Use this method to specify the extent of a method independently of the sequence points that exist within the method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT SetMethodSourceRange(
   
 ## <a name="parameters"></a>Paramètres  
  `startDoc`  
- [in] Pointeur vers le document contenant la position de départ.  
+ [in] A pointer to the document containing the starting position.  
   
  `startLine`  
- [in] Le numéro de ligne de départ.  
+ [in] The starting line number.  
   
  `startColumn`  
- [in] La colonne de départ.  
+ [in] The starting column.  
   
  `endDoc`  
- [in] Pointeur vers le document contenant la position de fin.  
+ [in] A pointer to the document containing the ending position.  
   
  `endLine`  
- [in] Numéro de ligne de fin.  
+ [in] The ending line number.  
   
  `endColumn`  
- [in] Numéro de colonne de fin.  
+ [in] The ending column number.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
-## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>spécifications  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi
 

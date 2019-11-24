@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5237628-2675-45ed-a39e-65c0731b6a56
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e32c0ace5f999a75220d0d093b85e0cbbfc73889
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: be4fb0b4b49408a97b318e0f54f5a753f3f24ef1
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757584"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74435795"
 ---
 # <a name="imetadataemitsavetomemory-method"></a>IMetaDataEmit::SaveToMemory, méthode
-Enregistre toutes les métadonnées dans la portée actuelle dans la zone de mémoire spécifiée.  
+Saves all metadata in the current scope to the specified area of memory.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +36,17 @@ HRESULT SaveToMemory (
   
 ## <a name="parameters"></a>Paramètres  
  `pbData`  
- [out] L’adresse à laquelle commencer l’écriture des métadonnées.  
+ [out] The address at which to begin writing metadata.  
   
  `cbData`  
- [in] La taille, en octets, de la mémoire allouée.  
+ [in] The size, in bytes, of the allocated memory.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

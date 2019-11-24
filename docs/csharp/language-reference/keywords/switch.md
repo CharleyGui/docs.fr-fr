@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 76c778d1e2d45990793b5d9c7d4a8ee5a99fed46
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 012fa5b4d5f39b4dfa4d1c77bc3d6fbe181e78a6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422297"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428493"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -43,10 +43,10 @@ L’expression de correspondance fournit la valeur à mettre en correspondance a
 
 Avec C# 6 (et les versions antérieures), l’expression de correspondance doit retourner une valeur d’un des types suivants :
 
-- [char](char.md),
+- [char](../builtin-types/char.md),
 - [string](../builtin-types/reference-types.md),
 - [bool](bool.md),
-- valeur intégrale, telle que [int](../builtin-types/integral-numeric-types.md) ou [long](../builtin-types/integral-numeric-types.md),
+- an [integral](../builtin-types/integral-numeric-types.md) value, such as an `int` or a `long`.
 - ou valeur [enum](enum.md).
 
 À compter de C# 7.0, l’expression de correspondance peut être toute expression non Null.
@@ -59,7 +59,7 @@ Une instruction `switch` peut inclure un nombre quelconque de sections de commut
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Pour cette raison, le code suivant génère une erreur du compilateur, CS0163 : « le contrôle ne peut pas passer d’une étiquette case (\<étiquette case >) à une autre. »
+Une seule section de commutation s’exécute dans une instruction switch. C# ne permet pas à l’exécution de passer d’une section switch à la suivante. Because of this, the following code generates a compiler error, CS0163: "Control cannot fall through from one case label (\<case label>) to another."
 
 ```csharp
 switch (caseSwitch)
@@ -121,10 +121,10 @@ Le modèle de constante teste si l’expression de correspondance est égale à 
 où *constant* est la valeur à tester. *constant* peut être l’une quelconque des expressions constantes suivantes :
 
 - Un littéral de [valeur booléenne](bool.md), `true` ou `false`
-- Toute constante intégrale, de type [int](../builtin-types/integral-numeric-types.md), [long](../builtin-types/integral-numeric-types.md) ou [byte](../builtin-types/integral-numeric-types.md)
+- Any [integral](../builtin-types/integral-numeric-types.md) constant, such as an `int`, a `long`, or a `byte`.
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
-- Un littéral de type [char](char.md)
+- Un littéral de type [char](../builtin-types/char.md)
 - Un littéral de type [string](../builtin-types/reference-types.md)
 
 L’expression constante est évaluée de la manière suivante :

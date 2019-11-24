@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 80bff6f06851206ff01b861001c6ed7c90db7d1e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9a42198b1c89dbc47c6659564cf32738b683697b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758195"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74439304"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished, méthode
-Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la recompilation d’une fonction.  
+Notifies the profiler that the just-in-time (JIT) compiler has finished recompiling a function.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +36,23 @@ HRESULT ReJITCompilationFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] L’ID de la fonction qui a été recompilée.  
+ [in] The ID of the function that was recompiled.  
   
  `rejitId`  
  [in] Identité de la fonction recompilée juste-à-temps.  
   
  `hrStatus`  
- [in] Une valeur qui indique si la recompilation JIT a réussi.  
+ [in] A value that indicates whether the JIT recompilation was successful.  
   
  `fIsSafeToBlock`  
- [in] `true` pour indiquer que le blocage peut entraîner l’exécution pour attendre que le thread appelant retourner à partir de ce rappel ; `false` pour indiquer que le blocage n’affecte pas l’opération du runtime.  
+ [in] `true` to indicate that blocking may cause the runtime to wait for the calling thread to return from this callback; `false` to indicate that blocking will not affect the operation of the runtime.  
   
- La valeur `true` n’endommage pas le runtime, mais peut affecter les résultats de profilage.  
+ A value of `true` does not harm the runtime, but can affect the profiling results.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

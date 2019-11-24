@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0f9bde1d-e306-438d-941b-d0925b322304
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4225794740b7786c6f758c9a0953d323c31a1081
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 470b6511366cef1680eaf97f9ab376736add55c4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782491"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74437899"
 ---
 # <a name="imetadataimportfindmethod-method"></a>IMetaDataImport::FindMethod, méthode
-Obtient un pointeur vers le MethodDef jeton pour la méthode qui est comprise par le <xref:System.Type> et qui a la signature de nom et de métadonnées spécifiée.  
+Gets a pointer to the MethodDef token for the method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +39,33 @@ HRESULT FindMethod (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le `mdTypeDef` jeton pour le type (classe ou interface) qui encadre le membre à rechercher. Si cette valeur est `mdTokenNil`, puis la recherche est effectuée pour une fonction globale.  
+ [in] The `mdTypeDef` token for the type (a class or interface) that encloses the member to search for. If this value is `mdTokenNil`, then the lookup is done for a global function.  
   
  `szName`  
- [in] Le nom de la méthode à rechercher.  
+ [in] The name of the method to search for.  
   
  `pvSigBlob`  
- [in] Pointeur vers la signature de métadonnées binaires de la méthode.  
+ [in] A pointer to the binary metadata signature of the method.  
   
  `cbSigBlob`  
- [in] La taille en octets de `pvSigBlob`.  
+ [in] The size in bytes of `pvSigBlob`.  
   
  `pmb`  
- [out] Pointeur vers le jeton MethodDef correspondant.  
+ [out] A pointer to the matching MethodDef token.  
   
 ## <a name="remarks"></a>Notes  
- Vous spécifiez la méthode à l’aide de son interface ou la classe englobante (`td`), son nom (`szName`) et éventuellement sa signature (`pvSigBlob`). Il existe peut-être plusieurs méthodes portant le même nom dans une classe ou interface. Dans ce cas, passez signature de la méthode pour rechercher la correspondance unique.  
+ You specify the method using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`). There might be multiple methods with the same name in a class or interface. In that case, pass the method's signature to find the unique match.  
   
- La signature est passé à `FindMethod` doit avoir été générée dans la portée actuelle, car les signatures sont liées à une étendue spécifique. Une signature peut incorporer un jeton qui identifie le type de valeur ou de la classe englobant. Le jeton est un index dans la table TypeDef local. Vous ne pouvez pas générer une signature d’exécution en dehors du contexte de la portée actuelle et utiliser cette signature comme entrée `FindMethod`.  
+ The signature passed to `FindMethod` must have been generated in the current scope, because signatures are bound to a particular scope. A signature can embed a token that identifies the enclosing class or value type. The token is an index into the local TypeDef table. You cannot build a run-time signature outside the context of the current scope and use that signature as input to input to `FindMethod`.  
   
- `FindMethod` recherche uniquement les méthodes qui ont été définis directement dans la classe ou interface ; Il ne trouve pas de méthodes héritées.  
+ `FindMethod` finds only methods that were defined directly in the class or interface; it does not find inherited methods.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

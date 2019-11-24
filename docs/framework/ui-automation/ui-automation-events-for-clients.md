@@ -5,16 +5,16 @@ helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-ms.openlocfilehash: f4ce2d996d5a1a6ecd149118b7499650882a732f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4193f92223cb9c9f924c1021b2f3e58a5e8b988d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042291"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441509"
 ---
 # <a name="ui-automation-events-for-clients"></a>Événements UI Automation pour les clients
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique décrit comment les événements [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] sont utilisés par les clients UI Automation.  
   
@@ -25,7 +25,7 @@ ms.locfileid: "71042291"
 > [!NOTE]
 > Ne supposez pas que tous les événements possibles sont déclenchés par un fournisseur [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]. Par exemple, toutes les modifications de propriété n’entraînent pas nécessairement le déclenchement d’événements par les fournisseurs de proxys standard pour les contrôles [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)].  
   
- Pour une vue d’ensemble plus [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] large des événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
+ For a broader view of [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events, see [UI Automation Events Overview](ui-automation-events-overview.md).  
   
 <a name="Subscribing_to_Events"></a>   
 ## <a name="subscribing-to-events"></a>Abonnement à des événements  
@@ -55,11 +55,11 @@ ms.locfileid: "71042291"
 |<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|Annule l’inscription d’un gestionnaire d’événements qui a été inscrit à l’aide de <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>.|  
 |<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|Annule l’inscription de tous les gestionnaires d’événements inscrits.|  
   
- Pour obtenir un exemple de code, consultez [s’abonner à des événements UI Automation](subscribe-to-ui-automation-events.md).  
+ For example code, see [Subscribe to UI Automation Events](subscribe-to-ui-automation-events.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [S’abonner à des événements UI Automation](subscribe-to-ui-automation-events.md)
 - [Vue d’ensemble des événements UI Automation](ui-automation-events-overview.md)
 - [Vue d’ensemble des propriétés UI Automation](ui-automation-properties-overview.md)
-- [Exemple TrackFocus](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)
+- [TrackFocus Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)

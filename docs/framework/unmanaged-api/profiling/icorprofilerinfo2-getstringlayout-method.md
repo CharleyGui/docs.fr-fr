@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 43189651-a535-4803-a1d1-f1c427ace2ca
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 63ad2532240c9f18a00421281fae0d111dbfaec5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 71e2bc1d60e050d817429db5bc6926b3b16c637c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963793"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74431407"
 ---
 # <a name="icorprofilerinfo2getstringlayout-method"></a>ICorProfilerInfo2::GetStringLayout, méthode
-Obtient des informations sur la disposition d'un objet string. Cette méthode est déconseillée dans le .NET Framework 4 et est remplacée par la méthode [ICorProfilerInfo3:: GetStringLayout2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) .  
+Obtient des informations sur la disposition d'un objet string. This method is deprecated in the .NET Framework 4, and is superseded by the [ICorProfilerInfo3::GetStringLayout2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,34 +36,34 @@ HRESULT GetStringLayout(
   
 ## <a name="parameters"></a>Paramètres  
  `pBufferLengthOffset`  
- à Pointeur vers le décalage de l’emplacement, relatif au `ObjectID` pointeur, qui stocke la longueur de la chaîne. La longueur est stockée sous `DWORD`la forme d’un.  
+ [out] A pointer to the offset of the location, relative to the `ObjectID` pointer, that stores the length of the string. The length is stored as a `DWORD`.  
   
 > [!NOTE]
-> Ce paramètre retourne la longueur de la chaîne elle-même, pas la longueur de la mémoire tampon. La longueur de la mémoire tampon n’est plus disponible.  
+> This parameter returns the length of the string itself, not the length of the buffer. The length of the buffer is no longer available.  
   
  `PStringLengthOffset`  
- à Pointeur vers le décalage de l’emplacement, relatif au `ObjectID` pointeur, qui stocke la longueur de la chaîne elle-même. La longueur est stockée sous `DWORD`la forme d’un.  
+ [out] A pointer to the offset of the location, relative to the `ObjectID` pointer, that stores the length of the string itself. The length is stored as a `DWORD`.  
   
  `pBufferOffset`  
- à Pointeur vers l’offset de la mémoire tampon, relatif au `ObjectID` pointeur, qui stocke la chaîne de caractères larges.  
+ [out] A pointer to the offset of the buffer, relative to the `ObjectID` pointer, that stores the string of wide characters.  
   
 ## <a name="remarks"></a>Notes  
- La `GetStringLayout` méthode obtient les offsets, par rapport `ObjectID` au pointeur, des emplacements dans lesquels sont stockés les éléments suivants:  
+ The `GetStringLayout` method gets the offsets, relative to the `ObjectID` pointer, of the locations in which the following are stored:  
   
-- Longueur de la mémoire tampon de la chaîne.  
+- The length of the string's buffer.  
   
-- Longueur de la chaîne elle-même.  
+- The length of the string itself.  
   
-- Mémoire tampon qui contient la chaîne réelle de caractères larges.  
+- The buffer that contains the actual string of wide characters.  
   
- Les chaînes peuvent se terminer par un caractère null.  
+ Strings may be null-terminated.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>spécifications  
+ **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf. idl, CorProf. h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
- **Bibliothèque** CorGuids.lib  
+ **Bibliothèque :** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

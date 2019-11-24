@@ -15,14 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ab203fc054298971fadfd9abe4e787844313898b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3256f6f64e2ee4678b2627eea81e12cb4a02fd1e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67765329"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449619"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach, méthode
 Indique au runtime de détacher le profileur.  
@@ -44,23 +42,23 @@ HRESULT RequestProfilerDetach(
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|La demande de détachement est valide, et la procédure de détachement se poursuit maintenant sur un autre thread. Une fois le détachement terminé, un événement `ProfilerDetachSucceeded` est émis.|  
-|E_ CORPROF_E_CALLBACK3_REQUIRED|Le profileur a échoué un [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pour tenter du [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) interface, qu’il doit implémenter pour prendre en charge l’opération de détachement. La tentative de détachement n'a pas eu lieu.|  
+|E_ CORPROF_E_CALLBACK3_REQUIRED|The profiler failed an [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) attempt for the [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) interface, which it must implement to support the detach operation. La tentative de détachement n'a pas eu lieu.|  
 |CORPROF_E_IMMUTABLE_FLAGS_SET|Le détachement est impossible, car le profileur a défini des indicateurs immuables au démarrage. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.|  
-|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Le détachement est impossible car le profileur a utilisé instrumenté code Microsoft intermediate language (MSIL), ou inséré `enter` / `leave` hooks. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.<br /><br /> **Remarque** MSIL instrumenté est du code qui est fourni par le profileur à l’aide de la [SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) (méthode).|  
-|CORPROF_E_RUNTIME_UNINITIALIZED|Le runtime n'a pas encore été initialisé dans l'application managée. (Autrement dit, le runtime n'a pas été entièrement chargé.) Ce code d’erreur peut être retourné lorsque le détachement est demandé à l’intérieur du rappel de profileur [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) (méthode).|  
-|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` a été appelée à une heure non prise en charge. Cela se produit si la méthode est appelée sur un thread managé, mais pas à partir d’un [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) méthode ou à partir d’un [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) méthode qui ne peut pas tolérer de garbage collection. Pour plus d’informations, consultez [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
+|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Detachment is impossible because the profiler used instrumented Microsoft intermediate language (MSIL) code, or inserted `enter`/`leave` hooks. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.<br /><br /> **Note** Instrumented MSIL is code is code that is provided by the profiler using the [SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) method.|  
+|CORPROF_E_RUNTIME_UNINITIALIZED|Le runtime n'a pas encore été initialisé dans l'application managée. (That is, the runtime has not been fully loaded.) This error code may be returned when detachment is requested inside the profiler callback's [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) method.|  
+|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` a été appelée à une heure non prise en charge. This occurs if the method is called on a managed thread but not from within an [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) method or from within an [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) method that cannot tolerate a garbage collection. For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
   
 ## <a name="remarks"></a>Notes  
  Pendant la procédure de détachement, le thread de détachement (thread créé spécifiquement pour détacher le profileur) vérifie parfois si tous les threads ont quitté le code du profileur. Le profileur doit fournir une estimation de la durée de cette opération via le paramètre `dwExpectedCompletionMilliseconds`. Une valeur appropriée à utiliser est le temps passé par le profileur dans une méthode `ICorProfilerCallback*` donnée ; cette valeur ne doit pas être inférieure à la moitié du temps maximal que le profileur prévoit de passer.  
   
- Le thread de détachement utilise `dwExpectedCompletionMilliseconds` pour décider de la durée de la veille avant de vérifier si le code de rappel du profileur a été dépilé. Bien que les détails de l’algorithme suivant puissent changer dans les mises en production ultérieures du CLR, il illustre comment `dwExpectedCompletionMilliseconds` peut être utilisé pour déterminer si le profileur peut être déchargé en toute sécurité. Le thread de détachement est d'abord en veille pendant `dwExpectedCompletionMilliseconds` millisecondes. Si, après avoir quitté l’état de veille, le CLR détecte que le code de rappel du profileur est encore présent, le thread de détachement repasse en état, cette fois pour deux fois `dwExpectedCompletionMilliseconds` millisecondes. Si, après avoir quitté ce deuxième état de veille, le thread de détachement détermine que le code de rappel du profileur est encore présent, il repasse en état de veille pendant 10 minutes avant d'effectuer une nouvelle vérification. Le thread de détachement procède à une revérification toutes les 10 minutes.  
+ Le thread de détachement utilise `dwExpectedCompletionMilliseconds` pour décider de la durée de la veille avant de vérifier si le code de rappel du profileur a été dépilé. Bien que les détails de l’algorithme suivant puissent changer dans les mises en production ultérieures du CLR, il illustre comment `dwExpectedCompletionMilliseconds` peut être utilisé pour déterminer si le profileur peut être déchargé en toute sécurité. Le thread de détachement est d'abord en veille pendant `dwExpectedCompletionMilliseconds` millisecondes. If, after awakening from the sleep, the CLR finds that profiler callback code is still present, the detach thread sleeps again, this time for two times `dwExpectedCompletionMilliseconds` milliseconds. Si, après avoir quitté ce deuxième état de veille, le thread de détachement détermine que le code de rappel du profileur est encore présent, il repasse en état de veille pendant 10 minutes avant d'effectuer une nouvelle vérification. Le thread de détachement procède à une revérification toutes les 10 minutes.  
   
  Si le profileur affecte à `dwExpectedCompletionMilliseconds` la valeur 0 (zéro), le CLR utilise une valeur par défaut de 5000, ce qui signifie qu'il effectue une vérification après 5 secondes, une autre après 10 secondes, puis toutes les 10 minutes.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl, CorProf.h  
+ **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   

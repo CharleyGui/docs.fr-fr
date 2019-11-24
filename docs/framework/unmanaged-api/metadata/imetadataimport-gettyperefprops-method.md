@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01837955-ce1e-4068-b338-fd473bd77d1d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a4d8829c9cb2818eafe98809c9a0d5fd8109d076
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6ea7605e062eb77e0488b3a9561c4d83be16fa7d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778817"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436712"
 ---
 # <a name="imetadataimportgettyperefprops-method"></a>IMetaDataImport::GetTypeRefProps, méthode
-Obtient les métadonnées associées à la <xref:System.Type> référencé par le jeton TypeRef spécifié.  
+Gets the metadata associated with the <xref:System.Type> referenced by the specified TypeRef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ HRESULT GetTypeRefProps (
   
 ## <a name="parameters"></a>Paramètres  
  `tr`  
- [in] Le jeton TypeRef qui représente le type à retourner les métadonnées.  
+ [in] The TypeRef token that represents the type to return metadata for.  
   
  `ptkResolutionScope`  
- [out] Pointeur vers la portée dans laquelle la référence est faite. Cette valeur est un jeton AssemblyRef ou ModuleRef.  
+ [out] A pointer to the scope in which the reference is made. This value is an AssemblyRef or ModuleRef token.  
   
  `szName`  
- [out] Une mémoire tampon contenant le nom de type.  
+ [out] A buffer containing the type name.  
   
  `cchName`  
- [in] La taille demandée en caractères larges de `szName`.  
+ [in] The requested size in wide characters of `szName`.  
   
  `pchName`  
- [out] La taille retournée en caractères larges de `szName`.  
+ [out] The returned size in wide characters of `szName`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **Header:** Cor.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

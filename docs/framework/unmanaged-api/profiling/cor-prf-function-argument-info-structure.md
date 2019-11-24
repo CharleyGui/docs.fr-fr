@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 07cf3bab-e193-4991-8205-3f41cf2d67b3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 658b88349bedcbcefd0b97226c7bd1fa34f656c7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2b01acbd617b13a64ef3dca6c8661f1e6bb067ac
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781920"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447383"
 ---
-# <a name="corprffunctionargumentinfo-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO, structure
+# <a name="cor_prf_function_argument_info-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO, structure
 Représente les arguments d’une fonction, selon un ordre de gauche à droite.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,21 +38,21 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`numRanges`|Le nombre de blocs d’arguments. Autrement dit, cette valeur est le nombre de [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) structures dans le `ranges` tableau.|  
-|`totalArgumentSize`|La taille totale de tous les arguments. En d’autres termes, cette valeur est la somme des longueurs d’argument.|  
-|`ranges`|Un tableau de `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, chacun d’eux représente un bloc d’arguments de fonction.|  
+|`numRanges`|The number of blocks of arguments. That is, this value is the number of [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) structures in the `ranges` array.|  
+|`totalArgumentSize`|The total size of all arguments. In other words, this value is the sum of the argument lengths.|  
+|`ranges`|An array of `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, each of which represents one block of function arguments.|  
   
 ## <a name="remarks"></a>Notes  
- Une fonction peut avoir d’arguments. Ces arguments ne peuvent pas être stockés de façon contiguë en mémoire. Vous pouvez avoir un bloc de trois arguments au même endroit, un bloc de deux arguments à un autre endroit et un bloc final d’un argument dans un emplacement différent. Ces arguments sont tous pour la même fonction ; elles sont simplement stockées dans différents emplacements.  
+ A function may have many arguments. Those arguments might not be stored contiguously in memory. You might have a block of three arguments in one place, a block of two arguments in another place, and a final block of one argument in a different place. These arguments are all for the same function; they're just stored in different places.  
   
- Le `COR_PRF_FUNCTION_ARGUMENT_INFO` structure représente tous les arguments d’une fonction unique. Elle utilise un tableau pour référencer tous les blocs d’arguments de fonction. Par conséquent, pour une fonction unique, vous avez un seul `COR_PRF_FUNCTION_ARGUMENT_INFO` structure, qui fait référence à plusieurs `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, chacun d’eux pointe vers un ou plusieurs arguments de fonction.  
+ The `COR_PRF_FUNCTION_ARGUMENT_INFO` structure represents all the arguments of a single function. It uses an array to reference all the blocks of function arguments. So, for a single function, you have a single `COR_PRF_FUNCTION_ARGUMENT_INFO` structure, which references multiple `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, each of which points to one or more function arguments.  
   
- Les arguments qui sont stockés dans les registres sont dispersées dans la mémoire pour générer les structures.  
+ Arguments that are stored in registers are spilled into memory to build the structures.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorProf.idl  
+ **Header:** CorProf.idl  
   
  **Bibliothèque :** CorGuids.lib  
   

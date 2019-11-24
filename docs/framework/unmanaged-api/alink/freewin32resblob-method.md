@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d941102b-2679-4c49-b15e-c0fc9c53e11f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ea0fbceb1e778a2f26e0625a337b803f417b59eb
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2b1addc752c7238116e072c6e957d2b277ceb1e3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777250"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449404"
 ---
 # <a name="freewin32resblob-method"></a>FreeWin32ResBlob, méthode
-Libère l’objet blob de ressources Win32 et les ressources associées.  
+Releases the Win32 resource blob and associated resources.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +34,13 @@ HRESULT FreeWin32ResBlob(
   
 ## <a name="parameters"></a>Paramètres  
  `ppResBlob`  
- Objet blob de ressources à libérer. Cette méthode affecte le pointeur d’objet blob à NULL.  
+ The resource blob to be released. This method assigns the blob pointer to NULL.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode est réussie.  
+ Returns S_OK if the method succeeds.  
   
-## <a name="requirements"></a>Configuration requise  
- Requiert ALink. h  
+## <a name="requirements"></a>spécifications  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Voir aussi
 
