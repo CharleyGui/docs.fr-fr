@@ -14,42 +14,40 @@ helpviewer_keywords:
 ms.assetid: 8bb5acf5-cf4b-4ccb-93f1-46db1f3f8bf3
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 57520b4a67eb164c8f8631dc4d63d32c655dafa2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40698a49ac7012c4f67eb88b1ead04c80f3dea77
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753821"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428325"
 ---
-# <a name="corprffunction-structure"></a><span data-ttu-id="b7d32-102">COR_PRF_FUNCTION, structure</span><span class="sxs-lookup"><span data-stu-id="b7d32-102">COR_PRF_FUNCTION Structure</span></span>
-<span data-ttu-id="b7d32-103">Fournit une représentation unique d'une fonction en combinant son ID avec l'ID de sa version recompilée.</span><span class="sxs-lookup"><span data-stu-id="b7d32-103">Provides a unique representation of a function by combining its ID with the ID of its recompiled version.</span></span>  
+# <a name="cor_prf_function-structure"></a><span data-ttu-id="992a6-102">COR_PRF_FUNCTION, structure</span><span class="sxs-lookup"><span data-stu-id="992a6-102">COR_PRF_FUNCTION Structure</span></span>
+<span data-ttu-id="992a6-103">Fournit une représentation unique d'une fonction en combinant son ID avec l'ID de sa version recompilée.</span><span class="sxs-lookup"><span data-stu-id="992a6-103">Provides a unique representation of a function by combining its ID with the ID of its recompiled version.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b7d32-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7d32-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="992a6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="992a6-104">Syntax</span></span>  
   
 ```cpp  
 typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJitId;} COR_PRF_FUNCTION;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="b7d32-105">Membres</span><span class="sxs-lookup"><span data-stu-id="b7d32-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="992a6-105">Membres</span><span class="sxs-lookup"><span data-stu-id="992a6-105">Members</span></span>  
   
-|<span data-ttu-id="b7d32-106">Membre</span><span class="sxs-lookup"><span data-stu-id="b7d32-106">Member</span></span>|<span data-ttu-id="b7d32-107">Description</span><span class="sxs-lookup"><span data-stu-id="b7d32-107">Description</span></span>|  
+|<span data-ttu-id="992a6-106">Membre</span><span class="sxs-lookup"><span data-stu-id="992a6-106">Member</span></span>|<span data-ttu-id="992a6-107">Description</span><span class="sxs-lookup"><span data-stu-id="992a6-107">Description</span></span>|  
 |------------|-----------------|  
-|`functionId`|<span data-ttu-id="b7d32-108">L’ID de la fonction.</span><span class="sxs-lookup"><span data-stu-id="b7d32-108">The ID of the function.</span></span>|  
-|`reJitId`|<span data-ttu-id="b7d32-109">L’ID de la fonction recompilée.</span><span class="sxs-lookup"><span data-stu-id="b7d32-109">The ID of the recompiled function.</span></span> <span data-ttu-id="b7d32-110">La valeur 0 (zéro) représente la version d’origine de la fonction.</span><span class="sxs-lookup"><span data-stu-id="b7d32-110">A value of 0 (zero) represents the original version of the function.</span></span>|  
+|`functionId`|<span data-ttu-id="992a6-108">The ID of the function.</span><span class="sxs-lookup"><span data-stu-id="992a6-108">The ID of the function.</span></span>|  
+|`reJitId`|<span data-ttu-id="992a6-109">The ID of the recompiled function.</span><span class="sxs-lookup"><span data-stu-id="992a6-109">The ID of the recompiled function.</span></span> <span data-ttu-id="992a6-110">A value of 0 (zero) represents the original version of the function.</span><span class="sxs-lookup"><span data-stu-id="992a6-110">A value of 0 (zero) represents the original version of the function.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="b7d32-111">Notes</span><span class="sxs-lookup"><span data-stu-id="b7d32-111">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="992a6-111">Notes</span><span class="sxs-lookup"><span data-stu-id="992a6-111">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b7d32-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="b7d32-112">Requirements</span></span>  
- <span data-ttu-id="b7d32-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b7d32-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="992a6-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="992a6-112">Requirements</span></span>  
+ <span data-ttu-id="992a6-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="992a6-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b7d32-114">**En-tête :** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="b7d32-114">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="992a6-114">**Header:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="992a6-114">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="b7d32-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b7d32-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="992a6-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="992a6-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b7d32-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7d32-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="992a6-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="992a6-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b7d32-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b7d32-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="992a6-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="992a6-117">See also</span></span>
 
-- [<span data-ttu-id="b7d32-118">Structures de profilage</span><span class="sxs-lookup"><span data-stu-id="b7d32-118">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [<span data-ttu-id="992a6-118">Structures de profilage</span><span class="sxs-lookup"><span data-stu-id="992a6-118">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

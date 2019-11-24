@@ -14,30 +14,28 @@ helpviewer_keywords:
 ms.assetid: a034c21e-e371-4360-b470-29e88288948f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e26d79a5b597b8585f2fffd7f3945f00832ca134
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 115d4b58b01606c29719fb88ab7dbf5a858b1251
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650711"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438172"
 ---
-# <a name="isymunmanagedwriter3-interface"></a><span data-ttu-id="f835a-102">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="f835a-102">ISymUnmanagedWriter3 Interface</span></span>
-<span data-ttu-id="f835a-103">Représente un writer de symbole et fournit des méthodes pour définir des documents, les points de séquence, les portées lexicales et variables.</span><span class="sxs-lookup"><span data-stu-id="f835a-103">Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables.</span></span> <span data-ttu-id="f835a-104">Cette interface étend la [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) interface.</span><span class="sxs-lookup"><span data-stu-id="f835a-104">This interface extends the [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) interface.</span></span>  
+# <a name="isymunmanagedwriter3-interface"></a><span data-ttu-id="ffadf-102">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="ffadf-102">ISymUnmanagedWriter3 Interface</span></span>
+<span data-ttu-id="ffadf-103">Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables.</span><span class="sxs-lookup"><span data-stu-id="ffadf-103">Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables.</span></span> <span data-ttu-id="ffadf-104">This interface extends the [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) interface.</span><span class="sxs-lookup"><span data-stu-id="ffadf-104">This interface extends the [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) interface.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="f835a-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="f835a-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="ffadf-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="ffadf-105">Methods</span></span>  
   
-|<span data-ttu-id="f835a-106">Méthode</span><span class="sxs-lookup"><span data-stu-id="f835a-106">Method</span></span>|<span data-ttu-id="f835a-107">Description</span><span class="sxs-lookup"><span data-stu-id="f835a-107">Description</span></span>|  
+|<span data-ttu-id="ffadf-106">Méthode</span><span class="sxs-lookup"><span data-stu-id="ffadf-106">Method</span></span>|<span data-ttu-id="ffadf-107">Description</span><span class="sxs-lookup"><span data-stu-id="ffadf-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="f835a-108">Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="f835a-108">Commit Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-commit-method.md)|<span data-ttu-id="f835a-109">Valide les modifications écrites jusqu'à présent dans le flux.</span><span class="sxs-lookup"><span data-stu-id="f835a-109">Commits the changes written so far to the stream.</span></span>|  
-|[<span data-ttu-id="f835a-110">OpenMethod2, méthode</span><span class="sxs-lookup"><span data-stu-id="f835a-110">OpenMethod2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-openmethod2-method.md)|<span data-ttu-id="f835a-111">Ouvre une méthode et fournit son décalage de la section réel dans l’image.</span><span class="sxs-lookup"><span data-stu-id="f835a-111">Opens a method and provides its real section offset in the image.</span></span>|  
+|[<span data-ttu-id="ffadf-108">Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="ffadf-108">Commit Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-commit-method.md)|<span data-ttu-id="ffadf-109">Commits the changes written so far to the stream.</span><span class="sxs-lookup"><span data-stu-id="ffadf-109">Commits the changes written so far to the stream.</span></span>|  
+|[<span data-ttu-id="ffadf-110">OpenMethod2, méthode</span><span class="sxs-lookup"><span data-stu-id="ffadf-110">OpenMethod2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-openmethod2-method.md)|<span data-ttu-id="ffadf-111">Opens a method and provides its real section offset in the image.</span><span class="sxs-lookup"><span data-stu-id="ffadf-111">Opens a method and provides its real section offset in the image.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="f835a-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="f835a-112">Requirements</span></span>  
- <span data-ttu-id="f835a-113">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="f835a-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ffadf-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="ffadf-112">Requirements</span></span>  
+ <span data-ttu-id="ffadf-113">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ffadf-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f835a-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f835a-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ffadf-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ffadf-114">See also</span></span>
 
-- [<span data-ttu-id="f835a-115">Interfaces du magasin de symboles de diagnostics</span><span class="sxs-lookup"><span data-stu-id="f835a-115">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [<span data-ttu-id="f835a-116">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="f835a-116">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [<span data-ttu-id="f835a-117">ISymUnmanagedWriter2, interface</span><span class="sxs-lookup"><span data-stu-id="f835a-117">ISymUnmanagedWriter2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)
+- [<span data-ttu-id="ffadf-115">Interfaces du magasin de symboles de diagnostics</span><span class="sxs-lookup"><span data-stu-id="ffadf-115">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="ffadf-116">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="ffadf-116">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="ffadf-117">ISymUnmanagedWriter2, interface</span><span class="sxs-lookup"><span data-stu-id="ffadf-117">ISymUnmanagedWriter2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)

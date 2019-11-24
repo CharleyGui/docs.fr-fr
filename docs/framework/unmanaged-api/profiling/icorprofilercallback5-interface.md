@@ -14,36 +14,34 @@ helpviewer_keywords:
 ms.assetid: 61d2e9ef-5f1f-4771-8847-239616e35d84
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 114d97e02b0a6b80c46f971ed74a24dc3c397f1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce34d43091cdee0bca88f94711e49072fa4fd08c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049672"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74430069"
 ---
-# <a name="icorprofilercallback5-interface"></a><span data-ttu-id="ec056-102">ICorProfilerCallback5, interface</span><span class="sxs-lookup"><span data-stu-id="ec056-102">ICorProfilerCallback5 Interface</span></span>
-<span data-ttu-id="ec056-103">Complètent les informations pour identifier un profileur de la fermeture complète d’objets actifs, lorsqu’il est utilisé avec soit le [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) ou [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md)méthode avec le [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) et [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md) méthodes.</span><span class="sxs-lookup"><span data-stu-id="ec056-103">Supplements information to help a profiler identify the full closure of live objects, when used with either the [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) or [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) method together with the [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) and [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md) methods.</span></span>  
+# <a name="icorprofilercallback5-interface"></a><span data-ttu-id="ed20a-102">ICorProfilerCallback5, interface</span><span class="sxs-lookup"><span data-stu-id="ed20a-102">ICorProfilerCallback5 Interface</span></span>
+<span data-ttu-id="ed20a-103">Supplements information to help a profiler identify the full closure of live objects, when used with either the [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) or [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) method together with the [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) and [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md) methods.</span><span class="sxs-lookup"><span data-stu-id="ed20a-103">Supplements information to help a profiler identify the full closure of live objects, when used with either the [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) or [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) method together with the [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) and [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md) methods.</span></span>  
   
- <span data-ttu-id="ec056-104">`ICorProfilerCallback5` doit être implémentée par un profileur de mémoire managée pour s'abonner aux notifications relatives aux handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="ec056-104">`ICorProfilerCallback5` must be implemented by a managed memory profiler to subscribe to notifications related to dependent handles.</span></span>  
+ <span data-ttu-id="ed20a-104">`ICorProfilerCallback5` doit être implémentée par un profileur de mémoire managée pour s'abonner aux notifications relatives aux handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="ed20a-104">`ICorProfilerCallback5` must be implemented by a managed memory profiler to subscribe to notifications related to dependent handles.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ec056-105">Notes</span><span class="sxs-lookup"><span data-stu-id="ec056-105">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ed20a-105">Notes</span><span class="sxs-lookup"><span data-stu-id="ed20a-105">Remarks</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="ec056-106">Méthodes</span><span class="sxs-lookup"><span data-stu-id="ec056-106">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="ed20a-106">Méthodes</span><span class="sxs-lookup"><span data-stu-id="ed20a-106">Methods</span></span>  
   
-|<span data-ttu-id="ec056-107">Méthode</span><span class="sxs-lookup"><span data-stu-id="ec056-107">Method</span></span>|<span data-ttu-id="ec056-108">Description</span><span class="sxs-lookup"><span data-stu-id="ec056-108">Description</span></span>|  
+|<span data-ttu-id="ed20a-107">Méthode</span><span class="sxs-lookup"><span data-stu-id="ed20a-107">Method</span></span>|<span data-ttu-id="ed20a-108">Description</span><span class="sxs-lookup"><span data-stu-id="ed20a-108">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="ec056-109">ConditionalWeakTableElementReferences, méthode</span><span class="sxs-lookup"><span data-stu-id="ec056-109">ConditionalWeakTableElementReferences Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md)|<span data-ttu-id="ec056-110">Identifie la fermeture transitive des objets référencés par ces racines via les références des champs des membres directs et via les dépendances de `ConditionalWeakTable`.</span><span class="sxs-lookup"><span data-stu-id="ec056-110">Identifies the transitive closure of objects referenced by those roots through both direct member field references and through `ConditionalWeakTable` dependencies.</span></span>|  
+|[<span data-ttu-id="ed20a-109">ConditionalWeakTableElementReferences, méthode</span><span class="sxs-lookup"><span data-stu-id="ed20a-109">ConditionalWeakTableElementReferences Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md)|<span data-ttu-id="ed20a-110">Identifie la fermeture transitive des objets référencés par ces racines via les références des champs des membres directs et via les dépendances de `ConditionalWeakTable`.</span><span class="sxs-lookup"><span data-stu-id="ed20a-110">Identifies the transitive closure of objects referenced by those roots through both direct member field references and through `ConditionalWeakTable` dependencies.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="ec056-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="ec056-111">Requirements</span></span>  
- <span data-ttu-id="ec056-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ec056-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ed20a-111">spécifications</span><span class="sxs-lookup"><span data-stu-id="ed20a-111">Requirements</span></span>  
+ <span data-ttu-id="ed20a-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ed20a-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ec056-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="ec056-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="ed20a-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="ed20a-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="ec056-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ec056-114">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="ed20a-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ed20a-114">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ec056-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ec056-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ed20a-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ed20a-115">See also</span></span>
 
-- [<span data-ttu-id="ec056-116">Interfaces de profilage</span><span class="sxs-lookup"><span data-stu-id="ec056-116">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="ec056-117">ICorProfilerCallback2, interface</span><span class="sxs-lookup"><span data-stu-id="ec056-117">ICorProfilerCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [<span data-ttu-id="ed20a-116">Interfaces de profilage</span><span class="sxs-lookup"><span data-stu-id="ed20a-116">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="ed20a-117">ICorProfilerCallback2, interface</span><span class="sxs-lookup"><span data-stu-id="ed20a-117">ICorProfilerCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)

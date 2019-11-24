@@ -15,19 +15,17 @@ helpviewer_keywords:
 ms.assetid: 17c45f15-8c44-44da-b070-f902077b36e4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6e45f5411d48032b86403e35358d7ce83d5f97c6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bf932b63973f93c56883f099ddaadd9d1519f337
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777908"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446332"
 ---
-# <a name="isymunmanagedscopegetlocals-method"></a><span data-ttu-id="9d846-102">ISymUnmanagedScope::GetLocals, méthode</span><span class="sxs-lookup"><span data-stu-id="9d846-102">ISymUnmanagedScope::GetLocals Method</span></span>
-<span data-ttu-id="9d846-103">Obtient les variables locales définies dans cette portée.</span><span class="sxs-lookup"><span data-stu-id="9d846-103">Gets the local variables defined within this scope.</span></span>  
+# <a name="isymunmanagedscopegetlocals-method"></a><span data-ttu-id="9f659-102">ISymUnmanagedScope::GetLocals, méthode</span><span class="sxs-lookup"><span data-stu-id="9f659-102">ISymUnmanagedScope::GetLocals Method</span></span>
+<span data-ttu-id="9f659-103">Gets the local variables defined within this scope.</span><span class="sxs-lookup"><span data-stu-id="9f659-103">Gets the local variables defined within this scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9d846-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9d846-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9f659-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9f659-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetLocals(  
@@ -37,22 +35,22 @@ HRESULT GetLocals(
         length_is(*pcLocals)] ISymUnmanagedVariable* locals[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9d846-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="9d846-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9f659-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="9f659-105">Parameters</span></span>  
  `cLocals`  
- <span data-ttu-id="9d846-106">[in] Un `ULONG32` qui indique la taille de la `locals` tableau.</span><span class="sxs-lookup"><span data-stu-id="9d846-106">[in] A `ULONG32` that indicates the size of the `locals` array.</span></span>  
+ <span data-ttu-id="9f659-106">[in] A `ULONG32` that indicates the size of the `locals` array.</span><span class="sxs-lookup"><span data-stu-id="9f659-106">[in] A `ULONG32` that indicates the size of the `locals` array.</span></span>  
   
  `pcLocals`  
- <span data-ttu-id="9d846-107">[out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables locales.</span><span class="sxs-lookup"><span data-stu-id="9d846-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the local variables.</span></span>  
+ <span data-ttu-id="9f659-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the local variables.</span><span class="sxs-lookup"><span data-stu-id="9f659-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the local variables.</span></span>  
   
  `locals`  
- <span data-ttu-id="9d846-108">[out] Tableau qui reçoit les variables locales.</span><span class="sxs-lookup"><span data-stu-id="9d846-108">[out] The array that receives the local variables.</span></span>  
+ <span data-ttu-id="9f659-108">[out] The array that receives the local variables.</span><span class="sxs-lookup"><span data-stu-id="9f659-108">[out] The array that receives the local variables.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="9d846-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="9d846-109">Return Value</span></span>  
- <span data-ttu-id="9d846-110">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="9d846-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9f659-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="9f659-109">Return Value</span></span>  
+ <span data-ttu-id="9f659-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="9f659-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9d846-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="9d846-111">Requirements</span></span>  
- <span data-ttu-id="9d846-112">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9d846-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9f659-111">spécifications</span><span class="sxs-lookup"><span data-stu-id="9f659-111">Requirements</span></span>  
+ <span data-ttu-id="9f659-112">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9f659-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9d846-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9d846-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9f659-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9f659-113">See also</span></span>
 
-- [<span data-ttu-id="9d846-114">ISymUnmanagedScope, interface</span><span class="sxs-lookup"><span data-stu-id="9d846-114">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [<span data-ttu-id="9f659-114">ISymUnmanagedScope, interface</span><span class="sxs-lookup"><span data-stu-id="9f659-114">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
