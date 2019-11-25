@@ -5,18 +5,18 @@ ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to,title-hack-0625
-ms.openlocfilehash: f29103d0cf59cdec10a641b05ce359bf95c01ccd
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 87eae789478752423f3e682d4db6cead0391aa6e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169059"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976926"
 ---
 # <a name="train-a-machine-learning-model-using-cross-validation"></a>Entraîner un modèle Machine Learning avec la validation croisée
 
-Découvrez comment utiliser la validation croisée pour entraîner des modèles Machine Learning plus robustes dans ML.NET. 
+Découvrez comment utiliser la validation croisée pour entraîner des modèles Machine Learning plus robustes dans ML.NET.
 
-La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes. Cette technique améliore la robustesse du modèle en réservant des données à partir du processus d’entraînement. Outre améliorer les performances sur les observations invisibles, dans les environnements limités en données, cette technique peut être un outil efficace pour entraîner des modèles avec un jeu de données plus petit.
+La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes. Cette technique améliore la robustesse du modèle en réservant des données à partir du processus d’entraînement. En plus d’améliorer les performances sur les observations invisibles, dans les environnements limités en données, cette technique peut être un outil efficace pour entraîner des modèles avec un jeu de données plus petit.
 
 ## <a name="the-data-and-data-model"></a>Données et modèle de données
 
@@ -37,7 +37,7 @@ public class HousingData
 {
     [LoadColumn(0)]
     public float Size { get; set; }
- 
+
     [LoadColumn(1, 3)]
     [VectorType(3)]
     public float[] HistoricalPrices { get; set; }
@@ -50,13 +50,13 @@ public class HousingData
 
 ## <a name="prepare-the-data"></a>Préparer les données
 
-Prétraitez les données avant de les utiliser pour générer le modèle Machine Learning. Dans cet échantillon, les colonnes `Size` et `HistoricalPrices` sont combinées en un vecteur de caractéristiques unique, qui est généré dans une colonne nommée `Features` à l’aide de la méthode [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*). En plus d’obtenir les données dans le format attendu par les algorithmes ML.NET, la concaténation des colonnes optimise les opérations suivantes dans le pipeline en appliquant l’opération une fois pour la colonne concaténée au lieu de le faire pour chacune des colonnes. 
+Prétraitez les données avant de les utiliser pour générer le modèle Machine Learning. Dans cet échantillon, les colonnes `Size` et `HistoricalPrices` sont combinées en un vecteur de caractéristiques unique, qui est généré dans une colonne nommée `Features` à l’aide de la méthode [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*). En plus d’obtenir les données dans le format attendu par les algorithmes ML.NET, la concaténation des colonnes optimise les opérations suivantes dans le pipeline en appliquant l’opération une fois pour la colonne concaténée au lieu de le faire pour chacune des colonnes.
 
-Une fois les colonnes combinées en un vecteur unique, [`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) est appliqué à la colonne `Features` pour obtenir `Size` et `HistoricalPrices` dans la même plage comprise entre 0 et 1. 
+Une fois les colonnes combinées en un vecteur unique, [`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) est appliqué à la colonne `Features` pour obtenir `Size` et `HistoricalPrices` dans la même plage comprise entre 0 et 1.
 
 ```csharp
 // Define data prep estimator
-IEstimator<ITransformer> dataPrepEstimator = 
+IEstimator<ITransformer> dataPrepEstimator =
     mlContext.Transforms.Concatenate("Features", new string[] { "Size", "HistoricalPrices" })
         .Append(mlContext.Transforms.NormalizeMinMax("Features"));
 
@@ -69,7 +69,7 @@ IDataView transformedData = dataPrepTransformer.Transform(data);
 
 ## <a name="train-model-with-cross-validation"></a>Entraîner le modèle avec la validation croisée
 
-Une fois les données prétraitées, vous pouvez entraîner le modèle. Tout d’abord, sélectionnez l’algorithme qui convient le mieux pour la tâche de machine learning à effectuer. La valeur prédite étant une valeur numériquement continue, la tâche est la régression. Un des algorithmes de régression implémentés par ML.NET est l’algorithme [`StochasticDualCoordinateAscentCoordinator`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer). Pour entraîner le modèle avec la validation croisée, utilisez la méthode [`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*). 
+Une fois les données prétraitées, vous pouvez entraîner le modèle. Tout d’abord, sélectionnez l’algorithme qui convient le mieux pour la tâche de machine learning à effectuer. La valeur prédite étant une valeur numériquement continue, la tâche est la régression. Un des algorithmes de régression implémentés par ML.NET est l’algorithme [`StochasticDualCoordinateAscentCoordinator`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer). Pour entraîner le modèle avec la validation croisée, utilisez la méthode [`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*).
 
 > [!NOTE]
 > Bien que cet échantillon utilise un modèle de régression linéaire, CrossValidate s’applique à toutes les autres tâches de machine learning dans ML.NET, à l’exception de la détection d’anomalie.
@@ -86,17 +86,17 @@ var cvResults = mlContext.Regression.CrossValidate(transformedData, sdcaEstimato
 
 1. Elle partitionne les données en un nombre de partitions égal à la valeur spécifiée dans le paramètre `numberOfFolds`. Le résultat de chaque partition est un objet [`TrainTestData`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData).
 1. Un modèle est entraîné sur chacune des partitions à l’aide de l’estimateur d’algorithme de machine learning spécifié sur le jeu de données d’entraînement.
-1. Les performances de chaque modèle sont évaluées à l’aide de la méthode [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) sur le jeu de données de test. 
+1. Les performances de chaque modèle sont évaluées à l’aide de la méthode [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) sur le jeu de données de test.
 1. Pour chacun des modèles, le modèle ainsi que ses métriques sont retournés.
 
-Le résultat stocké dans `cvResults` est une collection d’objets [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601). Cet objet inclut le modèle entraîné ainsi que les métriques, qui sont respectivement accessibles à partir des propriétés [`Model`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) et [`Metrics`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics). Dans cet échantillon, la propriété `Model` est de type [`ITransformer`](xref:Microsoft.ML.ITransformer), tandis que la propriété `Metrics` est de type [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics). 
+Le résultat stocké dans `cvResults` est une collection d’objets [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601). Cet objet inclut le modèle entraîné ainsi que les métriques, qui sont respectivement accessibles à partir des propriétés [`Model`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) et [`Metrics`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics). Dans cet échantillon, la propriété `Model` est de type [`ITransformer`](xref:Microsoft.ML.ITransformer), tandis que la propriété `Metrics` est de type [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics).
 
 ## <a name="evaluate-the-model"></a>Évaluer le modèle
 
-Les métriques des différents modèles entraînés sont accessibles via la propriété `Metrics` de l’objet [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) concerné. En l’occurrence, la [métrique du coefficient de détermination](https://en.wikipedia.org/wiki/Coefficient_of_determination) est accessible et stockée dans la variable `rSquared`. 
+Les métriques des différents modèles entraînés sont accessibles via la propriété `Metrics` de l’objet [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) concerné. En l’occurrence, la [métrique du coefficient de détermination](https://en.wikipedia.org/wiki/Coefficient_of_determination) est accessible et stockée dans la variable `rSquared`.
 
 ```csharp
-IEnumerable<double> rSquared = 
+IEnumerable<double> rSquared =
     cvResults
         .Select(fold => fold.Metrics.RSquared);
 ```

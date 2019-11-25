@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: 02a964506d976cb10f3f28f83f0655fecc447e59
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 46c18ab540c90c4147514685c2acc824755b435f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582758"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976860"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Extension du modèle d'application Visual Basic
 
@@ -82,6 +82,7 @@ Si l’application est une application normale (application à instances multipl
  Le constructeur <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> appelle la propriété <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> pour déterminer le moteur de rendu de texte à utiliser pour les formulaires de l’application. Par défaut, la propriété <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> retourne `False`, ce qui indique que le moteur de rendu de texte GDI doit être utilisé, qui est la valeur par défaut dans Visual Basic 2005 et versions ultérieures. Vous pouvez substituer la propriété <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> pour retourner `True`, ce qui indique que le moteur de rendu de texte GDI+ doit être utilisé, qui est la valeur par défaut dans Visual Basic .NET 2002 et Visual Basic .NET 2003.
 
 ## <a name="configuring-the-application"></a>Configuration de l’application
+
  Dans le cadre du modèle d’application Visual Basic, la classe <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> fournit des propriétés protégées qui configurent l’application. Ces propriétés doivent être définies dans le constructeur de la classe d’implémentation.
 
  Dans un projet Windows Forms par défaut, le **Concepteur de projets** crée du code pour définir les propriétés à l’aide des paramètres du concepteur. Les propriétés sont utilisées uniquement lorsque l’application démarre ; leur définition après le démarrage de l’application n’a aucun effet.

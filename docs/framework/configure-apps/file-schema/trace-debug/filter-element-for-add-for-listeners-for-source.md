@@ -9,24 +9,24 @@ helpviewer_keywords:
 - <filter> element for <add> for <listeners> for <source>
 - filter element for <add> for <listeners> for <source>
 ms.assetid: 15808b80-4579-4c25-b385-178cfdf154ba
-ms.openlocfilehash: ec288685f47c8a35e2371c31d359b604a4967196
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 766088b8a26ce3218031df74b193658ba8024280
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697163"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088909"
 ---
-# <a name="filter-element-for-add-for-listeners-for-source"></a>\<filter > élément de \<Add > pour \<listeners > pour \<Source >
+# <a name="filter-element-for-add-for-listeners-for-source"></a>\<> un élément de filtre pour \<> d’écouteurs pour \<> Source \<
 Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9[ **&nbsp;2Add >** ](add-element-for-listeners-for-source.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 @ no__t-10 @ no__t-11 **&nbsp;3filter >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**sources**](sources-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**source**](source-element.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<\** ](listeners-element-for-source.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**Ajouter**](add-element-for-listeners-for-source.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -46,7 +46,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe de filtre spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -60,12 +60,12 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`add`|Ajoute un écouteur à la collection `Listeners` pour une source de trace.|  
   
 ## <a name="remarks"></a>Notes  
- L’élément `<filter>` doit être contenu dans un élément `<add>` pour un écouteur source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [> \<sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans une [> \<sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
+ L’élément `<filter>` doit être contenu dans un élément `<add>` pour un écouteur source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [\<sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans une [\<sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<filter>` pour ajouter un filtre à l’écouteur `console` dans la collection `Listeners` pour la source de suivi `myTraceSource`, en spécifiant le niveau d’événement de filtre en tant que `Error`.  
+ L’exemple suivant montre comment utiliser l’élément `<filter>` pour ajouter un filtre à l’écouteur `console` dans la collection `Listeners` pour le `myTraceSource`de la source de trace, en spécifiant le niveau d’événement de filtre en tant que `Error`.  
   
 ```xml  
 <configuration>  

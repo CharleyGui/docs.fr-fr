@@ -1,5 +1,5 @@
 ---
-title: Élément <clear> pour <listeners> pour <source>
+title: <clear>, élément de <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,23 +7,23 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 05c20040ef59f4dee6b15bbe0b0369281b532754
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 4567f236397435e89371ca4c80730ff964fddd21
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697187"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088934"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<clear > élément de \<listeners > pour \<Source >
+# <a name="clear-element-for-listeners-for-source"></a>\<> élément Clear pour \<écouteurs > pour \<source >
 Efface la collection `Listeners` pour une source de trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**sources**](sources-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**source**](source-element.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<\** ](listeners-element-for-source.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Clear** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -34,10 +34,10 @@ Efface la collection `Listeners` pour une source de trace.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -56,7 +56,7 @@ Efface la collection `Listeners` pour une source de trace.
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<clear>` avant d’utiliser les éléments `<add>` pour ajouter les écouteurs `console` et `textListener` à la collection `Listeners` pour la source de trace `TraceSourceApp`.  
+ L’exemple suivant montre comment utiliser l’élément `<clear>` avant d’utiliser les éléments `<add>` pour ajouter les écouteurs `console` et `textListener` à la collection `Listeners` pour le `TraceSourceApp`de la source de trace.  
   
 ```xml  
 <configuration>  

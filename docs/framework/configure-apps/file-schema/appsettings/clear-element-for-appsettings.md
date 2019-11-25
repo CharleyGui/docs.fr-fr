@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c3e1c3a3cfd61a9fa8e7abdae9a25ec1bc674492
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d321f3169344e9aa40d65b1722a533549de5315a
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119227"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088734"
 ---
 # <a name="clear-element-for-appsettings"></a>\<> élément Clear pour \<appSettings >
 
 Efface les paramètres d’application personnalisés.
 
-[ **\<configuration>** ](../configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
 
 ## <a name="syntax"></a>Syntaxe

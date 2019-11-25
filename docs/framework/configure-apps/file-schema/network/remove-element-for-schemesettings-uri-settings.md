@@ -2,21 +2,21 @@
 title: <remove>, élément de schemeSettings (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 4095ba51-de20-4f87-b562-018abe422c91
-ms.openlocfilehash: 0dc8c6111157ba1f23d4a0449bee8f6626027e23
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: faf254174527ea74638442a139841eb2365d1e5d
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697860"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089149"
 ---
-# <a name="remove-element-for-schemesettings-uri-settings"></a>Élément @no__t 0remove > pour schemeSettings (paramètres d’URI)
+# <a name="remove-element-for-schemesettings-uri-settings"></a>\<supprimer > élément de schemeSettings (paramètres d’URI)
 Supprime un paramètre de schéma pour un nom de schéma.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<schemeSettings >** ](schemesettings-element-uri-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<uri >** ](uri-element-uri-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<schemeSettings**](schemesettings-element-uri-settings.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -35,7 +35,7 @@ Supprime un paramètre de schéma pour un nom de schéma.
 |name|Nom du schéma auquel ce paramètre s’applique. Les seules valeurs prises en charge sont Name = "http" et Name = "https".|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -44,7 +44,7 @@ Supprime un paramètre de schéma pour un nom de schéma.
 |[\<schemeSettings, élément (paramètres d’Uri)](schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule l’échappement des délimiteurs de chemin d’accès encodés en pourcentage avant d’exécuter la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
+ Par défaut, la classe <xref:System.Uri?displayProperty=nameWithType> annule les délimiteurs de chemin d’accès encodés de pourcentage avant l’exécution de la compression de chemin d’accès. Cela a été implémenté comme un mécanisme de sécurité contre les attaques telles que les suivantes :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ Supprime un paramètre de schéma pour un nom de schéma.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- C’est la raison pour laquelle la classe <xref:System.Uri?displayProperty=nameWithType> n’ignore pas les délimiteurs de chemin d’accès, puis applique la compression de chemin. Le résultat de la transmission de l’URL malveillante ci-dessus au constructeur de classe <xref:System.Uri?displayProperty=nameWithType> génère l’URI suivant :  
+ C’est pourquoi <xref:System.Uri?displayProperty=nameWithType> classe First annule les délimiteurs de chemin d’accès, puis applique la compression de chemin d’accès. Le résultat de la transmission de l’URL malveillante ci-dessus à <xref:System.Uri?displayProperty=nameWithType> constructeur de classe génère l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   

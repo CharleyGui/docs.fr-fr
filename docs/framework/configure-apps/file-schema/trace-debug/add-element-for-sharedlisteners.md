@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <add> element for <sharedListeners>
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
-ms.openlocfilehash: 0c7665898f8c625c2d07b67ea6c7fe25113fddd8
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 116a9633d16b8dd36c82f07a8e727f6f9f98f0ee
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699478"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088968"
 ---
-# <a name="add-element-for-sharedlisteners"></a>\<add > élément de \<sharedListeners >
-Ajoute un écouteur à la collection `sharedListeners`. `sharedListeners` est une collection d’écouteurs qui peut faire référence à tout [\<source >](source-element.md) ou [\<trace >](trace-element.md) .  Par défaut, les écouteurs de la collection `sharedListeners` ne sont pas placés dans une collection `Listeners`. Ils doivent être ajoutés par nom à la > [\<source >](source-element.md) ou [\<trace](trace-element.md). Il n’est pas possible d’accéder aux écouteurs de la collection `sharedListeners` dans le code au moment de l’exécution.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sharedListeners >** ](sharedlisteners-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Ajouter >**  
-  
+# <a name="add-element-for-sharedlisteners"></a>\<ajoutez > élément pour \<sharedListeners >
+Ajoute un écouteur à la collection `sharedListeners`. `sharedListeners` est une collection d’écouteurs qui peut faire référence à n’importe quel [\<source](source-element.md) ou [\<de trace >](trace-element.md) .  Par défaut, les écouteurs de la collection `sharedListeners` ne sont pas placés dans une collection `Listeners`. Ils doivent être ajoutés par nom au [\<source >](source-element.md) ou [\<> de trace](trace-element.md). Il n’est pas possible d’accéder aux écouteurs de la collection `sharedListeners` dans le code au moment de l’exécution.  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sharedListeners**](sharedlisteners-element.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**ajouter >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -40,10 +40,10 @@ Ajoute un écouteur à la collection `sharedListeners`. `sharedListeners` est un
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`name`|Attribut requis.<br /><br /> Spécifie le nom de l’écouteur utilisé pour ajouter l’écouteur partagé à une collection `Listeners`.|  
+|`name`|Attribut requis.<br /><br /> Spécifie le nom de l’écouteur utilisé pour ajouter l’écouteur partagé à une collection de `Listeners`.|  
 |`type`|Attribut requis.<br /><br /> Spécifie le type de l’écouteur. Vous devez utiliser une chaîne qui répond aux exigences spécifiées dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée.|  
-|`traceOutputOptions`|Attribut facultatif.<br/><br/>Représentation sous forme de chaîne d’un ou plusieurs membres de l’énumération <xref:System.Diagnostics.TraceOptions> qui indique les données à écrire dans la sortie de trace. Plusieurs éléments sont séparés par des virgules. La valeur par défaut est « None ».|
+|`traceOutputOptions`|Attribut facultatif.<br/><br/>Représentation sous forme de chaîne d’un ou de plusieurs <xref:System.Diagnostics.TraceOptions> membres de l’énumération qui indique les données à écrire dans la sortie de trace. Plusieurs éléments sont séparés par des virgules. La valeur par défaut est « None ».|
 
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -69,7 +69,7 @@ Ajoute un écouteur à la collection `sharedListeners`. `sharedListeners` est un
   
 |Classe d’écouteur de suivi|valeur de l’attribut initializeData|  
 |--------------------------|------------------------------------|  
-|<xref:System.Diagnostics.ConsoleTraceListener>|La valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur « `true` » pour écrire la sortie de trace et de débogage dans le flux d’erreurs standard. Affectez-lui la valeur « `false` » pour écrire dans le flux de sortie standard.|  
+|<xref:System.Diagnostics.ConsoleTraceListener>|Valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur «`true`» pour écrire la sortie de trace et de débogage dans le flux d’erreur standard. Affectez-lui la valeur «`false`» pour écrire dans le flux de sortie standard.|  
 |<xref:System.Diagnostics.DelimitedListTraceListener>|Nom du fichier dans lequel le <xref:System.Diagnostics.DelimitedListTraceListener> écrit.|  
 |<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>|Nom d’une source de journal des événements existante.|  
 |<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.EventSchemaTraceListener> écrit.|  
@@ -80,7 +80,7 @@ Ajoute un écouteur à la collection `sharedListeners`. `sharedListeners` est un
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser les éléments `<add>` pour ajouter la <xref:System.Diagnostics.TextWriterTraceListener> @ no__t-2 à la collection `sharedListeners`.   `textListener` est ajouté par nom à la collection `Listeners` pour la source de suivi `TraceSourceApp`. L’écouteur `textListener` écrit la sortie de trace dans le fichier myListener. log.  
+ L’exemple suivant montre comment utiliser `<add>` éléments pour ajouter le <xref:System.Diagnostics.TextWriterTraceListener>`textListener` à la collection de `sharedListeners`.   `textListener` est ajouté par nom à la collection de `Listeners` pour le `TraceSourceApp`de la source de trace. L’écouteur de `textListener` écrit la sortie de trace dans le fichier myListener. log.  
   
 ```xml  
 <configuration>  

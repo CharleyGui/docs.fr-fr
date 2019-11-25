@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: f8209ea89ac8cd214389feddee8c475e10bc939a
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: ca3a78a491c61b6e23dab0f96eebceb3157706ae
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697816"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089133"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<remove > élément de webRequestModules (paramètres réseau)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<supprimer > élément de webRequestModules (paramètres réseau)
 Supprime un module de demande Web personnalisé de l’application.  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Supprime un module de demande Web personnalisé de l’application.
 |`prefix`|Préfixe URI pour les requêtes gérées par ce module de demande Web.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -54,7 +54,7 @@ Supprime un module de demande Web personnalisé de l’application.
 ## <a name="remarks"></a>Notes  
  L’élément `remove` supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
   
- La valeur de l’attribut `prefix` doit être celle des caractères de début d’un URI valide, par exemple « `http` » ou « `http://www.contoso.com` ».  
+ La valeur de l’attribut `prefix` doit être les caractères de début d’un URI valide, par exemple «`http`» ou «`http://www.contoso.com`».  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

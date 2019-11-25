@@ -8,20 +8,20 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: 96a8c9accc56274b5cc13dc2a871165857b3a2d9
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: ca0a9a4b37f28eb03f58de4fd9b120cb7e654e0c
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699822"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088639"
 ---
-# <a name="cryptographysettings-element"></a>Élément @no__t 0cryptographySettings >
+# <a name="cryptographysettings-element"></a>\<élément cryptographySettings >
 Contient des paramètres de chiffrement.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<cryptographySettings >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<cryptographySettings** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -33,24 +33,24 @@ Contient des paramètres de chiffrement.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<cryptoNameMapping>](cryptonamemapping-element.md)|Contient des mappages de classes à des noms conviviaux.|  
-|[\<oidMap>](oidmap-element.md)|Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.|  
+|[\<cryptoNameMapping >](cryptonamemapping-element.md)|Contient des mappages de classes à des noms conviviaux.|  
+|[\<oidMap >](oidmap-element.md)|Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`mscorlib`|Contient l' `cryptographySettings` élément.|  
+|`mscorlib`|Contient l’élément `cryptographySettings`.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément **\<cryptographySettings >** pour contenir les mappages de noms de chiffrement et les mappages OID. Cet exemple configure le runtime afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un objet `MyHashClass` et que la classe `MyCryptoClass` soit mappée à l’identificateur d’objet 1.3.36.2.1.  
+ L’exemple suivant montre comment utiliser l’élément **\<cryptographySettings >** pour contenir les mappages de noms de chiffrement et les mappages OID. Cet exemple configure le runtime afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un objet `MyHashClass` et que la classe `MyCryptoClass` corresponde à l’identificateur d’objet 1.3.36.2.1.  
   
 ```xml  
 <configuration>  
@@ -80,4 +80,4 @@ Contient des paramètres de chiffrement.
 
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
+- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)

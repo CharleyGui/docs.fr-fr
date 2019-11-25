@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 10/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f5010f944dba007e24d3c0e22d4e339f9ed0522a
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: bd6acd83df4d2d5f19d30da847212d60b1576199
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459186"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977354"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Didacticiel : prédire les prix à l’aide de la régression avec le générateur de modèles
 
@@ -84,7 +84,7 @@ Model Builder accepte des données de deux sources : une base de données SQL S
 1. Dans l’étape des données de l’outil Model Builder, sélectionnez *Fichier* dans la liste déroulante des sources de données.
 1. Sélectionnez le bouton en regard de la zone de texte *Sélectionner un fichier* et utilisez l’Explorateur de fichiers pour parcourir et sélectionner *taxi-fare-test.csv* dans le répertoire *Data*.
 1. Choisissez *fare_amount* dans la liste déroulante *colonne à prédire (étiquette)* .
-1. Développez la liste déroulante *colonnes d’entrée (fonctionnalités)* et décochez la colonne *trip_time_in_secs* pour l’exclure en tant que fonctionnalité pendant l’apprentissage.  Accédez à l’étape de formation de l’outil générateur de modèles.
+1. Développez la liste déroulante *colonnes d’entrée (fonctionnalités)* et décochez la *trip_time_in_secs* colonne pour l’exclure en tant que fonctionnalité pendant l’apprentissage.  Accédez à l’étape de formation de l’outil générateur de modèles.
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
@@ -126,7 +126,7 @@ Deux projets sont créés à la suite du processus d’entraînement.
     using TaxiFarePredictionML.Model;
     ```
 
-1. Pour effectuer une prédiction sur les nouvelles données à l’aide du modèle, créez une nouvelle instance de la classe `ModelInput` à l’intérieur de la méthode `Main` de votre application. Notez que le montant de la course ne fait pas partie de l’entrée. Cela est dû au fait que le modèle générera la prédiction pour celui-ci. 
+1. Pour effectuer une prédiction sur les nouvelles données à l’aide du modèle, créez une nouvelle instance de la classe `ModelInput` à l’intérieur de la méthode `Main` de votre application. Notez que le montant de la course ne fait pas partie de l’entrée. Cela est dû au fait que le modèle générera la prédiction pour celui-ci.
 
     ```csharp
     // Create sample data
@@ -140,7 +140,7 @@ Deux projets sont créés à la suite du processus d’entraînement.
     };
     ```
 
-1. Utilisez la méthode `Predict` de la classe `ConsumeModel`. La méthode `Predict` charge le modèle formé, crée une [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour le modèle et l’utilise pour effectuer des prédictions sur de nouvelles données. 
+1. Utilisez la méthode `Predict` de la classe `ConsumeModel`. La méthode `Predict` charge le modèle formé, crée une [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour le modèle et l’utilise pour effectuer des prédictions sur de nouvelles données.
 
     ```csharp
     // Make prediction

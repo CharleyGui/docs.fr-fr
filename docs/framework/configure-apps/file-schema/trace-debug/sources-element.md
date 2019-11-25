@@ -9,20 +9,20 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: 0ca35d9be5e1eaf36a2c9cae99efc2736ef3403d
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: a903d009f2056e65414c1792494fbbd20e224413
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699207"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088817"
 ---
-# <a name="sources-element"></a>Élément @no__t 0sources >
+# <a name="sources-element"></a>Élément > sources \<
 Spécifie les sources de suivi qui initialisent les messages de suivi.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<sources >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**sources**\<
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -35,7 +35,7 @@ Spécifie les sources de suivi qui initialisent les messages de suivi.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

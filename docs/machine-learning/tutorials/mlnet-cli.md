@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 5b3b0af5b46774beff9fb7a2a86c37e5399c0dd2
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: bea5cd1b42773e62601edbc113b2155ff78cf884
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957391"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977409"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -48,11 +48,11 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
 
     > [!NOTE]
-    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
+    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015 et hébergé dans le référentiel Machine Learning UCI-Dua, D. et karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine, Californie : Université de Californie, école d’informations et science des ordinateurs.
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
-3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Exemple :
+3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Exemple :
 
     ```console
     > cd /cli-test
@@ -66,7 +66,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
         | Texte (index de colonne 0) | Étiquette (index de colonne 1)|
         |--------------------------|-------|
-        | Super ! J’ai adoré cet endroit. | 1 |
+        | ... J’ai aimé cet endroit. | 1 |
         | La pâte n’est pas bonne. | 0 |
         | Elle n’avait aucun goût et sa texture n’était vraiment pas agréable. | 0 |
         | ...BEAUCOUP D’AUTRES LIGNES DE TEXTE... | ...(1 ou 0)... |
@@ -97,7 +97,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
     <!-- markdownlint-disable MD023 MD025 -->
 
-    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
 
@@ -105,7 +105,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
 
-    Dans ce cas particulier, en seulement 10 secondes et avec le petit jeu de données fourni, l’outil CLI a eu le temps d’exécuter plusieurs itérations, ce qui signifie qu’il a effectué plusieurs opérations d’entraînement en essayant diverses combinaisons d’algorithmes/configuration, avec différentes transformations de données internes et différents hyperparamètres d’algorithme. 
+    Dans ce cas particulier, en seulement 10 secondes et avec le petit jeu de données fourni, l’outil CLI a eu le temps d’exécuter plusieurs itérations, ce qui signifie qu’il a effectué plusieurs opérations d’entraînement en essayant diverses combinaisons d’algorithmes/configuration, avec différentes transformations de données internes et différents hyperparamètres d’algorithme.
 
     Au final, le modèle de « meilleure qualité » trouvé dans le délai de 10 secondes est un modèle qui utilise un entraîneur/algorithme particulier avec une configuration spécifique. La commande peut produire des résultats variables selon la durée de l’exploration. La sélection est basée sur toutes les métriques indiquées, comme `Accuracy`.
 
@@ -118,16 +118,16 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     Pour connaître les autres métriques et avoir **plus d’informations détaillées sur les métriques** telles que la précision (Accuracy), l’aire sous la courbe (AUC), l’aire sous la courbe précision/rappel (AUCPR), le score F1 utilisées pour évaluer les différents modèles, consultez [Présentation des métriques ML.NET](../resources/metrics.md)
 
     > [!NOTE]
-    > Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes). 
-        
-    Si vous souhaitez trouver un modèle de « meilleure/bonne qualité » qui soit un « modèle prêt pour la production » et ciblant des jeux de données plus volumineux, vous devez faire des essais avec la CLI, généralement en spécifiant une durée d’exploration beaucoup plus longue selon la taille du jeu de données. En fait, dans de nombreux cas, vous aurez besoin de spécifier une durée d’exploration de plusieurs heures, d’autant plus si le jeu de données contient beaucoup de lignes et de colonnes. 
+    > Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes).
+
+    Si vous souhaitez trouver un modèle de « meilleure/bonne qualité » qui soit un « modèle prêt pour la production » et ciblant des jeux de données plus volumineux, vous devez faire des essais avec la CLI, généralement en spécifiant une durée d’exploration beaucoup plus longue selon la taille du jeu de données. En fait, dans de nombreux cas, vous aurez besoin de spécifier une durée d’exploration de plusieurs heures, d’autant plus si le jeu de données contient beaucoup de lignes et de colonnes.
 
 1. L’exécution de la commande précédente a généré les ressources suivantes :
 
-    - Un fichier .zip de modèle sérialisé (le « meilleur modèle »), prêt à être utilisé. 
+    - Un fichier .zip de modèle sérialisé (le « meilleur modèle »), prêt à être utilisé.
     - Le code C# nécessaire pour exécuter/évaluer ce modèle généré (et pour effectuer des prédictions dans vos applications utilisateur avec ce modèle).
     - Le code C# d’entraînement utilisé pour générer ce modèle (à des fins d’apprentissage).
-    - Un fichier journal présentant toutes les itérations explorées, avec les détails de chaque algorithme essayé avec sa combinaison d’hyperparamètres et de transformations des données. 
+    - Un fichier journal présentant toutes les itérations explorées, avec les détails de chaque algorithme essayé avec sa combinaison d’hyperparamètres et de transformations des données.
 
     Les deux premières ressources (fichier .zip du modèle et code C# pour exécuter ce modèle) peuvent être utilisées directement dans vos applications utilisateur (application web ASP.NET Core, services, application de bureau, etc.) pour effectuer des prédictions à l’aide de ce modèle ML généré.
 
@@ -145,10 +145,10 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
     ![Solution Visual Studio générée par la CLI](./media/mlnet-cli/generated-csharp-solution-detailed.png)
 
     - Vous pouvez utiliser la **bibliothèque de classes** générée, qui contient le modèle ML sérialisé (fichier .zip) et les classes de données (modèles de données), directement dans votre application utilisateur final, éventuellement en référençant directement cette bibliothèque de classes (ou en déplaçant le code, selon votre préférence).
-    - L’**application console** générée contient le code d’exécution que vous devez revoir. Ensuite, vous réutilisez généralement le « score d’évaluation » (code qui exécute le modèle ML pour effectuer des prédictions) en déplaçant ce code simple (de quelques lignes) vers l’application utilisateur où vous souhaitez effectuer les prédictions. 
+    - L’**application console** générée contient le code d’exécution que vous devez revoir. Ensuite, vous réutilisez généralement le « score d’évaluation » (code qui exécute le modèle ML pour effectuer des prédictions) en déplaçant ce code simple (de quelques lignes) vers l’application utilisateur où vous souhaitez effectuer les prédictions.
 
-1. Ouvrez les fichiers de classes **ModelInput.cs** et **ModelOutput.cs** dans le projet de bibliothèque de classes. Vous voyez que ces classes sont les « classes de données » ou les classes POCO où sont stockées les données. Il s’agit de « code réutilisable », qui peut être utile de générer si votre jeu de données contient des dizaines ou des centaines de colonnes. 
-    - La classe `ModelInput` est utilisée pour lire les données du jeu de données. 
+1. Ouvrez les fichiers de classes **ModelInput.cs** et **ModelOutput.cs** dans le projet de bibliothèque de classes. Vous voyez que ces classes sont les « classes de données » ou les classes POCO où sont stockées les données. Il s’agit de « code réutilisable », qui peut être utile de générer si votre jeu de données contient des dizaines ou des centaines de colonnes.
+    - La classe `ModelInput` est utilisée pour lire les données du jeu de données.
     - La classe `ModelOutput` est utilisée pour obtenir le résultat de prédiction (données de prédiction).
 
 1. Ouvrez le fichier Program.cs et explorez le code. Quelques lignes suffisent pour exécuter le modèle et effectuer un exemple de prédiction.
@@ -164,7 +164,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
         ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
         var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
-        // Create sample data to do a single prediction with it 
+        // Create sample data to do a single prediction with it
         ModelInput sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
 
         // Try a single prediction
@@ -174,7 +174,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
     }
     ```
 
-- La première ligne de code crée simplement un objet `MLContext`, qui est nécessaire pour exécuter le code ML.NET. 
+- La première ligne de code crée simplement un objet `MLContext`, qui est nécessaire pour exécuter le code ML.NET.
 
 - La deuxième ligne de code est commentée, car vous n’avez pas besoin d’entraîner le modèle dans la mesure où celui-ci a déjà été entraîné automatiquement par l’outil CLI et enregistré dans le fichier .zip sérialisé du modèle. Toutefois, si vous souhaitez afficher les commentaires pour savoir *comment le modèle a été entraîné* par la CLI, vous pouvez décommenter cette ligne et exécuter/déboguer le code d’entraînement utilisé pour ce modèle ML spécifique.
 
@@ -194,7 +194,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
 1. Exécutez le projet, soit en utilisant l’exemple de données initialement chargé de la première ligne du jeu de données, soit en fournissant votre propre exemple de données personnalisées codées en dur. Vous devez obtenir une prédiction comparable à ceci :
 
-    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
     Exécutez l’application console à partir de Visual Studio en appuyant sur F5 (bouton de lecture) :
 
@@ -215,11 +215,11 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
     ---
 
-1. Essayez de remplacer l’exemple de données codées en dur par d’autres phrases avec un sentiment différent afin de voir comment le modèle prédit un sentiment positif ou négatif. 
+1. Essayez de remplacer l’exemple de données codées en dur par d’autres phrases avec un sentiment différent afin de voir comment le modèle prédit un sentiment positif ou négatif.
 
 ## <a name="infuse-your-end-user-applications-with-ml-model-predictions"></a>Intégrer les prédictions de modèle ML à vos applications utilisateur
 
-Vous pouvez utiliser du « code d’évaluation de modèle ML » similaire pour exécuter le modèle dans votre application utilisateur et effectuer des prédictions. 
+Vous pouvez utiliser du « code d’évaluation de modèle ML » similaire pour exécuter le modèle dans votre application utilisateur et effectuer des prédictions.
 
 Par exemple, déplacez ce code directement vers une application de bureau Windows, comme **WPP** et **WinForms**, puis exécutez le modèle de la même façon que dans l’application console.
 
@@ -229,14 +229,14 @@ Toutefois, la méthode d’implémentation de ces lignes de code pour exécuter 
 
 La création de l’objet modèle (`ITransformer` chargé d’un fichier .zip de modèle) et de l’objet `PredictionEngine` doit être optimisée, surtout en vue d’une exécution sur des applications web ou des services distribués scalables. Pour le premier cas, l’objet modèle (`ITransformer`), l’optimisation est simple. Dans la mesure où l’objet `ITransformer` est thread-safe, vous pouvez le mettre en cache en tant qu’objet singleton ou statique, afin de charger le modèle une seule fois.
 
-Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est pas si facile, car l’objet `PredictionEngine` n’est pas thread-safe. Vous ne pouvez donc pas instancier cet objet en tant qu’objet singleton ou statique dans une application ASP.NET Core. Ce problème est traité en détail dans ce [billet de blog](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/). 
+Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est pas si facile, car l’objet `PredictionEngine` n’est pas thread-safe. Vous ne pouvez donc pas instancier cet objet en tant qu’objet singleton ou statique dans une application ASP.NET Core. Ce problème est traité en détail dans ce [billet de blog](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/).
 
 Toutefois, les choses sont heureusement beaucoup plus simples pour vous que ce qui est expliqué dans ce billet de blog. Dans un souci de vous proposer une approche plus simple, nous avons créé un **« package d’intégration .NET Core »** très utile. Vous pouvez facilement vous en servir dans vos applications et services ASP.NET Core en l’inscrivant auprès des services DI, puis en l’utilisant directement à partir de votre code. Consultez le tutoriel et l’exemple ci-dessous pour savoir comment faire :
 
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
+- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
-## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité » 
+## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité »
 
 Pour approfondir l’apprentissage, vous pouvez également explorer le code C# généré qui a été utilisé par l’outil CLI pour entraîner le modèle généré.
 
@@ -244,16 +244,16 @@ Ce « code de modèle d’entraînement » est actuellement généré dans la 
 
 Plus important encore, pour ce scénario particulier (modèle « Analyse des sentiments »), vous pouvez également comparer ce code d’entraînement généré avec le code décrit dans le tutoriel suivant :
 
-- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
+- Compare : [Tutorial : utilisez ml.net dans un scénario de classification binaire d’analyse des sentiments](sentiment-analysis.md).
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
-- [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md) 
+- [Didacticiel : exécution de modèles ML.NET sur des applications Web et des API Web ASP.NET Core évolutives](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Exemple : modèle ML.NET évolutif sur ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
+- [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md)
 - [Guide pratique pour installer l’outil CLI ML.NET](../how-to-guides/install-ml-net-cli.md)
 - [Télémétrie dans la CLI ML.NET](../resources/ml-net-cli-telemetry.md)
 

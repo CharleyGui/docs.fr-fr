@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 2d960a43f7934e262fa0e19abfea0209aa4e9ff0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5b4541b527559ee05c9b97d84324e9e70599a014
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425244"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977383"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Didacticiel : créer un conseiller de film à l’aide de factorizaton de matrice avec ML.NET
 
@@ -102,7 +102,7 @@ Puisque vous souhaitez prédire des évaluations de films, c’est la colonne d�
 | `movieId`      |               |
 | `timestamp`     |               |
 
-C’est à vous de décider quelles `Features` sont utilisées pour prévoir la `Label`. Vous pouvez également utiliser des méthodes telles que l’[importance de la permutation de caractéristiques](../how-to-guides/determine-global-feature-importance-in-model.md) pour faciliter la sélection des meilleures `Features`.
+C’est à vous de décider quelles `Features` sont utilisées pour prévoir la `Label`. Vous pouvez également utiliser des méthodes comme l’importance de la [fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) pour vous aider à sélectionner le meilleur `Features`.
 
 Dans ce cas, vous devez retirer la colonne `timestamp` comme `Feature`, car l’horodatage n’affecte pas vraiment comment un utilisateur évalue un film donné et ne contribue donc pas à la précision de la prédiction :
 
@@ -373,7 +373,7 @@ Ajoutez la ligne de code suivante dans la méthode `Main()` pour appeler votre m
 
 ### <a name="use-your-saved-model"></a>Utiliser le modèle enregistré
 
-Une fois que vous avez enregistré votre modèle entraîné, vous pouvez l’utiliser dans différents environnements (voir le [« Guide de procédures »](../how-to-guides/consuming-model-ml-net.md) pour découvrir comment opérationnaliser un modèle Machine Learning entraîné dans des applications).
+Une fois que vous avez enregistré votre modèle formé, vous pouvez utiliser le modèle dans différents environnements. Consultez [enregistrer et charger des modèles formés](../how-to-guides/save-load-machine-learning-models-ml-net.md) pour apprendre à faire fonctionner un modèle de machine learning formé dans des applications.
 
 ## <a name="results"></a>Résultats
 
@@ -420,7 +420,7 @@ Il existe plusieurs façons d’améliorer les performances du modèle afin d’
 
 L’ajout de données d’entraînement comportant suffisamment d’échantillons pour chaque utilisateur et ID de film peut aider à améliorer la qualité du modèle de suggestion.
 
-La [validation croisée](../how-to-guides/train-cross-validation-ml-net.md) est une technique d’évaluation des modèles qui fractionne aléatoirement les données en sous-ensembles (au lieu d’extraire des données de test à partir du jeu de données comme vous l’avez fait dans ce tutoriel) et prend certains groupes comme données d’entraînement et certains autres comme données de test. En termes de qualité du modèle, cette méthode est supérieure à un fractionnement entraînement-test.
+La [validation croisée](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md) est une technique d’évaluation des modèles qui fractionne aléatoirement les données en sous-ensembles (au lieu d’extraire des données de test à partir du jeu de données comme vous l’avez fait dans ce tutoriel) et prend certains groupes comme données d’entraînement et certains autres comme données de test. En termes de qualité du modèle, cette méthode est supérieure à un fractionnement entraînement-test.
 
 ### <a name="features"></a>Fonctionnalités
 
@@ -428,7 +428,7 @@ Dans ce tutoriel, vous utilisez uniquement les trois `Features` (`user id`, `mov
 
 Même si c’est un bon point de départ, en réalité vous souhaiterez sans doute ajouter d’autres attributs ou `Features` (par exemple l’âge, le sexe, l’emplacement géographique et ainsi de suite) s’ils sont inclus dans le jeu de données. L’ajout de `Features` plus pertinentes peut aider à améliorer les performances de votre modèle de suggestion.
 
-Si vous ne savez pas trop quelles `Features` peuvent être les plus appropriées pour votre tâche machine learning, vous pouvez également utiliser le calcul de contribution de caractéristique et l’[importance de la permutation de caractéristiques](../how-to-guides/determine-global-feature-importance-in-model.md), qui sont des fonctionnalités proposées par ML.NET pour découvrir les `Features` les plus influentes.
+Si vous n’êtes pas sûr de la `Features` qui peut être la plus pertinente pour votre tâche de Machine Learning, vous pouvez également utiliser la FCC (Feature contribution Calculation) et l’importance de la [fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md), que ml.NET fournit pour découvrir les `Features`les plus influents.
 
 ### <a name="algorithm-hyperparameters"></a>Hyperparamètres d’algorithme
 

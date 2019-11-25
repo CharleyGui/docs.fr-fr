@@ -1,17 +1,17 @@
 ---
 title: Propriétés indexées
 description: En savoir plus sur les propriétés F#indexées dans, qui permettent un accès de type tableau aux données ordonnées.
-ms.date: 10/17/2018
-ms.openlocfilehash: 379417e31b8e178d8c939e5b23dc144bfb17e562
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 11/04/2019
+ms.openlocfilehash: f6cf3bfa737d2bf458e379594be5884696cee3e1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627559"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976608"
 ---
 # <a name="indexed-properties"></a>Propriétés indexées
 
-Lors de la définition d’une classe qui soustrait des données ordonnées, il peut parfois être utile de fournir un accès indexé à ces données sans exposer l’implémentation sous-jacente. Cette opération est effectuée avec `Item` le membre.
+Lors de la définition d’une classe qui soustrait des données ordonnées, il peut parfois être utile de fournir un accès indexé à ces données sans exposer l’implémentation sous-jacente. Cette opération est effectuée avec le membre `Item`.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,7 +36,7 @@ member self-identifier.Item
 
 ## <a name="remarks"></a>Notes
 
-Les formes de la syntaxe précédente montrent comment définir des propriétés indexées qui ont à la `get` fois une `set` méthode et une méthode `get` , une méthode uniquement ou une `set` méthode uniquement. Vous pouvez également combiner la syntaxe indiquée pour obtenir uniquement et la syntaxe indiquée pour Set only, et produire une propriété qui a à la fois la valeur obtenir et définir. Ce dernier formulaire vous permet de placer des modificateurs et des attributs d’accessibilité différents sur les méthodes d’extraction et de définition.
+Les formes de la syntaxe précédente montrent comment définir des propriétés indexées qui ont à la fois une `get` et une méthode `set`, une méthode `get` uniquement ou une méthode `set` uniquement. Vous pouvez également combiner la syntaxe indiquée pour obtenir uniquement et la syntaxe indiquée pour Set only, et produire une propriété qui a à la fois la valeur obtenir et définir. Ce dernier formulaire vous permet de placer des modificateurs et des attributs d’accessibilité différents sur les méthodes d’extraction et de définition.
 
 En utilisant le nom `Item`, le compilateur traite la propriété comme une propriété indexée par défaut. Une *propriété indexée par défaut* est une propriété à laquelle vous pouvez accéder à l’aide d’une syntaxe de type tableau sur l’instance d’objet. Par exemple, si `o` est un objet du type qui définit cette propriété, la syntaxe `o.[index]` est utilisée pour accéder à la propriété.
 
@@ -70,7 +70,7 @@ open System.Collections.Generic
 /// Basic implementation of a sparse matrix based on a dictionary
 type SparseMatrix() =
     let table = new Dictionary<(int * int), float>()
-    member __.Item
+    member _.Item
         // Because the key is comprised of two values, 'get' has two index values
         with get(key1, key2) = table.[(key1, key2)]
 

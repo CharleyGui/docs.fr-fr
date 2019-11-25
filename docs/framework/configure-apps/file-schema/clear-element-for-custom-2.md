@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e27bb7e21baf2eb4990d0107db4aae1b5f9a7d1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fff5a5c2a523480f2eaebb127ec98ff6e9908acf
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119076"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088715"
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<> élément Clear pour NameValueSectionHandler et DictionarySectionHandler
 
 Efface tous les paramètres précédemment définis dans une section.
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la  >.  
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la\ >.
 &nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
 
 ## <a name="syntax"></a>Syntaxe

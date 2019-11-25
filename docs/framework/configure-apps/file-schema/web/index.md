@@ -9,12 +9,12 @@ helpviewer_keywords:
 - configuration files [ASP.NET]
 - configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
-ms.openlocfilehash: 71b9e46a8c2d60c853af63ee78e2ed5dbe6e98f4
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 030841330ff37cddb0c9e3e466a55a4be098e784
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699136"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088788"
 ---
 # <a name="web-settings-schema"></a>Schéma des paramètres web
 Les paramètres web spécifient les paramètres d’UC et d’ASP.NET au niveau de l’exécution qui s’appliquent au comportement à l’échelle des processus géré par la couche d’hébergement ASP.NET. Ces paramètres se distinguent des paramètres de type de domaine d’application spécifiés dans le fichier Web.config d’une application ASP.NET.  
@@ -24,11 +24,11 @@ Les paramètres web sont contenus dans les fichiers Aspnet.config, qui se trouve
 `C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
   
 Les paramètres web ne sont utilisés dans aucun autre des fichiers de configuration, tels que le fichier machine.config, le fichier racine Web.config ou les fichiers Web.config au niveau de l’application.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. Web >** ](system-web-element-web-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<applicationPool >** ](applicationpool-element-web-settings.md)  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> System. web**](system-web-element-web-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ApplicationPool** >](applicationpool-element-web-settings.md)
+
 |Élément|Description|  
 |-------------|-----------------|  
 |[\<system.web>](system-web-element-web-settings.md)|Contient les informations utilisées par la couche d’hébergement ASP.NET.|  

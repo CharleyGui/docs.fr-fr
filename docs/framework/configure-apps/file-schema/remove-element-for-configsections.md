@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3f57dc9279c107ce751f71c2998670ab992db162
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: efc7208aa51cbf6abdb2fe151d48071c0aa95b5c
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73118436"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089050"
 ---
 # <a name="remove-element-for-configsections"></a>\<supprimer > élément de \<configSections >
 
 Supprime un groupe de sections ou de sections prédéfini.
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<supprimer >**
 
 ## <a name="syntax"></a>Syntaxe

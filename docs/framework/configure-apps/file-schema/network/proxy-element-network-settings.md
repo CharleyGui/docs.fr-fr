@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 94858f141e7d540454fca9c151c760c37f9ebbb0
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 5f327a2bb4fe316497614f14669907d514c20654
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697948"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089193"
 ---
-# <a name="proxy-element-network-settings"></a>\<proxy >, élément (paramètres réseau)
+# <a name="proxy-element-network-settings"></a>Élément \<proxy > (paramètres réseau)
 Définit un serveur proxy.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<proxy >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy**](defaultproxy-element-network-settings.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -43,13 +43,13 @@ Définit un serveur proxy.
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
 |`autoDetect`|Spécifie si le proxy est détecté automatiquement. La valeur par défaut est `unspecified`.|  
-|`bypassonlocal`|Spécifie si le proxy est contourné pour les ressources locales. Les ressources locales incluent le serveur local (`http://localhost`, `http://loopback` ou `http://127.0.0.1`) et un URI sans point (`http://webserver`). La valeur par défaut est `unspecified`.|  
+|`bypassonlocal`|Spécifie si le proxy est contourné pour les ressources locales. Les ressources locales incluent le serveur local (`http://localhost`, `http://loopback`ou `http://127.0.0.1`) et un URI sans point (`http://webserver`). La valeur par défaut est `unspecified`.|  
 |`proxyaddress`|Spécifie l’URI du proxy à utiliser.|  
 |`scriptLocation`|Spécifie l’emplacement du script de configuration. N’utilisez pas l’attribut `bypassonlocal` avec cet attribut. |  
 |`usesystemdefault`|Spécifie s’il faut utiliser les paramètres de proxy d’Internet Explorer. Si la valeur est `true`, les attributs suivants remplacent les paramètres de proxy d’Internet Explorer. La valeur par défaut est `unspecified`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -64,7 +64,7 @@ Définit un serveur proxy.
   
  La valeur de l’attribut `proxyaddress` doit être un URI (Uniform Resource Indicator) bien formé.  
   
- L’attribut `scriptLocation` fait référence à la détection automatique des scripts de configuration du proxy. La classe <xref:System.Net.WebProxy> tente de localiser un script de configuration (généralement nommé WPAD. dat) lorsque l’option **utiliser le script de configuration automatique** est sélectionnée dans Internet Explorer. Si `bypassonlocal` est défini sur n’importe quelle valeur, `scriptLocation` est ignoré.
+ L’attribut `scriptLocation` fait référence à la détection automatique des scripts de configuration du proxy. La classe <xref:System.Net.WebProxy> tente de localiser un script de configuration (généralement nommé WPAD. dat) lorsque l’option **utiliser le script de configuration automatique** est sélectionnée dans Internet Explorer. Si `bypassonlocal` est définie sur une valeur quelconque, `scriptLocation` est ignoré.
   
  Utilisez l’attribut `usesystemdefault` pour les applications .NET Framework version 1,1 qui migrent vers la version 2,0.  
   

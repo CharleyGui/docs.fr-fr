@@ -1,13 +1,13 @@
 ---
 title: Référence des mots clés
 description: Recherchez des liens vers des informations sur tous F# les mots clés du langage.
-ms.date: 05/16/2016
-ms.openlocfilehash: 2be6d078653a4595cbdfe97be7aab8e3b3c10ea9
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 11/04/2019
+ms.openlocfilehash: 64bb680a0861f4b8287f887ea67edb6fcf4f88a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425082"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976617"
 ---
 # <a name="keyword-reference"></a>Référence des mots clés
 
@@ -87,7 +87,7 @@ Le tableau suivant répertorie F# tous les mots clés dans l’ordre alphabétiq
 |`when`|[Contraintes](./generics/constraints.md)|Utilisé pour les conditions booléennes (*lorsque les gardes*) sur les correspondances de modèle et pour introduire une clause de contrainte pour un paramètre de type générique.|
 |`while`|[Boucles : expression `while...do`](loops-while-do-expression.md)|Introduit une construction de bouclage.|
 |`with`|[Expressions match](match-expressions.md)<br /><br />[Expressions d'objet](object-expressions.md)<br /><br />[Copie et mise à jour des expressions d’enregistrement](copy-and-update-record-expressions.md)<br /><br />[Extensions de type](type-extensions.md)<br /><br />[Exceptions : expression `try...with`](./exception-handling/the-try-with-expression.md)|Utilisé avec le mot clé `match` dans les expressions de critères spéciaux. Également utilisé dans les expressions d’objet, les expressions de copie d’enregistrement et les extensions de type pour introduire des définitions de membres et pour introduire des gestionnaires d’exceptions.|
-|`yield`|[Séquences](sequences.md)|Utilisé dans une expression de séquence pour produire une valeur pour une séquence.|
+|`yield`|[Listes](lists.md), [tableaux](arrays.md), [séquences](sequences.md)|Utilisé dans une liste, un tableau ou une expression de séquence pour produire une valeur pour une séquence. En général, peut être omis, car il est implicite dans la plupart des cas.|
 |`yield!`|[Expressions de calcul](computation-expressions.md)<br /><br />[Flux de travail asynchrones](asynchronous-workflows.md)|Utilisé dans une expression de calcul pour ajouter le résultat d’une expression de calcul donnée à une collection de résultats pour l’expression de calcul conteneur.|
 
 Les jetons suivants sont réservés dans F# , car il s’agit de mots clés dans le langage ocaml :

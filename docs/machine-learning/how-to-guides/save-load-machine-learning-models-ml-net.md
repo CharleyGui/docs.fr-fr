@@ -5,16 +5,16 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: f1a3131126f9f3af0bab0b1592430fbf7dddf78a
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: e3cebe979b5c279ce8cb90db5510f8758c24c2b4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799093"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977006"
 ---
 # <a name="save-and-load-trained-models"></a>Enregistrer et charger des modèles entraînés
 
-Découvrez comment enregistrer et charger des modèles entraînés dans votre application. 
+Découvrez comment enregistrer et charger des modèles entraînés dans votre application.
 
 Durant le processus de création de modèle, un modèle se trouve dans la mémoire et est accessible tout au long du cycle de vie de l’application. Toutefois, dès la fin de l’exécution de l’application, le modèle n’est plus accessible s’il n’est pas enregistré localement ou à distance. En général, les modèles sont utilisés après l’entraînement dans d’autres applications à des fins d’inférence ou de réentraînement. C’est pourquoi il est important de stocker le modèle. Enregistrez et chargez les modèles à l’aide de la procédure décrite dans les sections suivantes de ce document quand vous utilisez des pipelines de préparation des données et d’entraînement de modèle semblables à celui détaillé ci-après. Bien que cet exemple utilise un modèle de régression linéaire, le même processus s’applique aux autres algorithmes ML.NET.
 
@@ -60,7 +60,7 @@ ITransformer trainedModel = pipelineEstimator.Fit(data);
 mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 ```
 
-Étant donné que la plupart des modèles et des pipelines de préparation des données héritent du même ensemble de classes, les signatures des méthodes d’enregistrement et de chargement pour ces composants sont les mêmes. Selon votre cas d’usage, vous pouvez combiner le pipeline de préparation des données et le modèle en un seul [`EstimatorChain`](xref:Microsoft.ML.Data.TransformerChain%601), ce qui devrait produire un seul [`ITransformer`](xref:Microsoft.ML.ITransformer), ou les séparer et créer ainsi un [`ITransformer`](xref:Microsoft.ML.ITransformer) distinct pour chacun. 
+Étant donné que la plupart des modèles et des pipelines de préparation des données héritent du même ensemble de classes, les signatures des méthodes d’enregistrement et de chargement pour ces composants sont les mêmes. Selon votre cas d’usage, vous pouvez combiner le pipeline de préparation des données et le modèle en un seul [`EstimatorChain`](xref:Microsoft.ML.Data.TransformerChain%601), ce qui devrait produire un seul [`ITransformer`](xref:Microsoft.ML.ITransformer), ou les séparer et créer ainsi un [`ITransformer`](xref:Microsoft.ML.ITransformer) distinct pour chacun.
 
 ## <a name="save-a-model-locally"></a>Enregistrer un modèle localement
 
@@ -69,7 +69,7 @@ Quand vous enregistrez un modèle, vous avez besoin de deux choses :
 1. Le [`ITransformer`](xref:Microsoft.ML.ITransformer) du modèle.
 2. Le [`DataViewSchema`](xref:Microsoft.ML.DataViewSchema) de l’entrée prévue du [`ITransformer`](xref:Microsoft.ML.ITransformer).
 
-Après avoir entraîné le modèle, utilisez la méthode [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) pour enregistrer le modèle entraîné dans un fichier appelé `model.zip` à l’aide du `DataViewSchema` des données d’entrée. 
+Après avoir entraîné le modèle, utilisez la méthode [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) pour enregistrer le modèle entraîné dans un fichier appelé `model.zip` à l’aide du `DataViewSchema` des données d’entrée.
 
 ```csharp
 // Save Trained Model
@@ -78,7 +78,7 @@ mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 
 ## <a name="load-a-model-stored-locally"></a>Charger un modèle stocké localement
 
-Les modèles stockés localement peuvent être utilisés dans d’autres processus ou applications comme `ASP.NET Core` et `Serverless Web Applications`. Consultez les articles de procédure [Utiliser ML.NET dans l’API web](./serve-model-web-api-ml-net.md) et [Déployer une application web serverless ML.NET](./serve-model-serverless-azure-functions-ml-net.md) pour en savoir plus. 
+Les modèles stockés localement peuvent être utilisés dans d’autres processus ou applications comme `ASP.NET Core` et `Serverless Web Applications`. Consultez les articles de procédure [Utiliser ML.NET dans l’API web](./serve-model-web-api-ml-net.md) et [Déployer une application web serverless ML.NET](./serve-model-serverless-azure-functions-ml-net.md) pour en savoir plus.
 
 Dans une application ou processus distinct, utilisez la méthode [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load*) ainsi que le chemin de fichier pour obtenir le modèle entraîné dans votre application.
 
@@ -102,7 +102,7 @@ MLContext mlContext = new MLContext();
 DataViewSchema modelSchema;
 ITransformer trainedModel;
 
-// Load data prep pipeline and trained model 
+// Load data prep pipeline and trained model
 using (HttpClient client = new HttpClient())
 {
     Stream modelFile = await client.GetStreamAsync("<YOUR-REMOTE-FILE-LOCATION>");
@@ -151,7 +151,7 @@ mlContext.Model.Save(dataPrepTransformer, data.Schema, "data_preparation_pipelin
 mlContext.Model.Save(trainedModel, transformedData.Schema, "model.zip");
 ```
 
-### <a name="load-data-preparation-pipeline-and-trained-model"></a>Charger le pipeline de préparation des données et le modèle entraîné 
+### <a name="load-data-preparation-pipeline-and-trained-model"></a>Charger le pipeline de préparation des données et le modèle entraîné
 
 Dans une application ou un processus distinct, chargez le pipeline de préparation des données et le modèle entraîné simultanément comme suit :
 

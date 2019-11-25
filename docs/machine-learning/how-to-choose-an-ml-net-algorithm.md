@@ -4,12 +4,12 @@ description: Découvrez comment choisir un algorithme ML.NET pour votre modèle 
 author: natke
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: dfea21908258e6eb0b696de7affe1b03cff5cb3b
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
-ms.translationtype: HT
+ms.openlocfilehash: 0721418d8b0b3c9ab645eb9885b0f4951c37762e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972084"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976699"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Guide pratique pour choisir un algorithme ML.NET
 
@@ -19,9 +19,9 @@ Les algorithmes fonctionnent avec des **caractéristiques**. Les caractéristiqu
 
 ## <a name="trainer--algorithm--task"></a>Entraîneur = algorithme + tâche
 
-Un algorithme est une opération mathématique qui s’exécute pour produire un **modèle**. Différents algorithmes produisent des modèles avec des caractéristiques différentes. 
+Un algorithme est une opération mathématique qui s’exécute pour produire un **modèle**. Différents algorithmes produisent des modèles avec des caractéristiques différentes.
 
-Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, l’algorithme Stochastic Dual Coordinated Ascent peut s’appliquer aux tâches de classification binaire, de classification multiclasse et de régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche. 
+Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, l’algorithme Stochastic Dual Coordinated Ascent peut s’appliquer aux tâches de classification binaire, de classification multiclasse et de régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche.
 
 Pour chaque combinaison algorithme/tâche, ML.NET fournit un composant qui exécute l’algorithme d’entraînement et interprète la sortie. Ces composants sont appelés des « entraîneurs ». Par exemple, <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> utilise l’algorithme **StochasticDualCoordinatedAscent** appliqué à la tâche de **régression**.
 

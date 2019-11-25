@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: fd1649edbf7a2c8546992019df667f27df68e02c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 9261a430642cb4d5ac4507835bd0fd3561bd8c02
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698314"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088425"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy >, élément (paramètres réseau)
 Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<requestCaching >** ](requestcaching-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<defaultFtpCachePolicy >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching**](requestcaching-element-network-settings.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**defaultFtpCachePolicy >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -42,7 +42,7 @@ Indique si la mise en cache FTP est active et décrit la stratégie de mise en c
   
 ## <a name="policylevel-attribute"></a>policyLevel (attribut)  
   
-|Value|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |`Default`|Retourne la ressource mise en cache si la ressource est actualisée, si la longueur du contenu est exacte et si les attributs d’expiration, de modification et de longueur du contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
@@ -54,7 +54,7 @@ Indique si la mise en cache FTP est active et décrit la stratégie de mise en c
 |`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l’horodatage est le même que celui de la ressource sur le serveur ; dans le cas contraire, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

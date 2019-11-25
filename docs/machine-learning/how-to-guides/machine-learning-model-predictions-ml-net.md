@@ -5,12 +5,12 @@ ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: f764d2147ec56f8dcc38f96d566ac746cf205650
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 182350cc5143155133385c6fd77986b271f6db91
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799131"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977046"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Effectuer des prédictions avec un modèle entraîné
 
@@ -55,7 +55,7 @@ class HousingPrediction
 Que vous effectuiez une prédiction unique ou par lot, vous devez charger le pipeline de prédiction dans l’application. Ce pipeline contient les transformations de prétraitement de données ainsi que le modèle entraîné. L’extrait de code ci-dessous charge le pipeline de prédiction à partir d’un fichier nommé `model.zip`.
 
 ```csharp
-//Create MLContext 
+//Create MLContext
 MLContext mlContext = new MLContext();
 
 // Load Trained Model

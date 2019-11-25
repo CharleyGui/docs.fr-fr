@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a9e7d68530ae1f0666fc4940ffe7605c3bf8dfe3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ac07fc9ba6f030209a5e0d0160689fab95bc1b4a
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119615"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088763"
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<ajouter un élément > pour NameValueSectionHandler et DictionarySectionHandler
 
 Ajoute des paramètres d’application personnalisés. Chaque **\<ajouter >** balise contient une paire clé/valeur.
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la  >.  
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<** ](custom-element-2.md) de la\ >.
 &nbsp;&nbsp;&nbsp;&nbsp; **\<ajouter des >**
 
 ## <a name="syntax"></a>Syntaxe

@@ -1,5 +1,5 @@
 ---
-title: Élément <remove> pour <listeners> pour <source>
+title: <remove>, élément de <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/remove
@@ -7,23 +7,23 @@ helpviewer_keywords:
 - remove element for <listeners> for <source>
 - <remove> element for <listeners> for <source>
 ms.assetid: 3ff6b578-273d-407f-b07f-8251f1f9f5d0
-ms.openlocfilehash: 4a11308278f755ec8271477352d91d8797d105c5
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 75db45d4e868ce88e030ec6a43c8bdaf788a1102
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699497"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088856"
 ---
-# <a name="remove-element-for-listeners-for-source"></a>\<remove > élément de \<listeners > pour \<Source >
+# <a name="remove-element-for-listeners-for-source"></a>\<supprimer > élément pour \<écouteurs > pour \<source >
 Supprime un écouteur de la collection `Listeners` pour une source de trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**sources**](sources-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**source**](source-element.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<\** ](listeners-element-for-source.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**supprimer >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -37,10 +37,10 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`name`|Attribut requis.<br /><br /> Nom de l’écouteur à supprimer de la collection `Listeners`.|  
+|`name`|Attribut requis.<br /><br /> Nom de l’écouteur à supprimer de la collection de `Listeners`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -60,7 +60,7 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément `<remove>` avant d’utiliser l’élément `<add>` pour ajouter l’écouteur `console` à la collection `Listeners` pour la source de trace `TraceSourceApp`.  
+ L’exemple suivant montre comment utiliser l’élément `<remove>` avant d’utiliser l’élément `<add>` pour ajouter l’écouteur `console` à la collection `Listeners` pour le `TraceSourceApp`source de trace.  
   
 ```xml  
 <configuration>  

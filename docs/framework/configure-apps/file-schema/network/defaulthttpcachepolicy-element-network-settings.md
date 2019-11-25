@@ -8,21 +8,21 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: f3b029e8b931e976bee85c98dd926e020c5b8743
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698279"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088417"
 ---
 # <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy >, élément (paramètres réseau)
 Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<requestCaching >** ](requestcaching-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<defaultHttpCachePolicy >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching**](requestcaching-element-network-settings.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**defaultHttpCachePolicy >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -47,7 +47,7 @@ Indique si la mise en cache HTTP est active et décrit la stratégie de mise en 
 |`policyLevel`|Spécifie si la stratégie de mise en cache est automatique ou si le cache est contourné. La valeur par défaut est `BypassCache`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ aucune.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -58,7 +58,7 @@ Indique si la mise en cache HTTP est active et décrit la stratégie de mise en 
 ## <a name="remarks"></a>Notes  
  La valeur de l’attribut `policyLevel` est `BypassCache` ou `Default`.  
   
- Les valeurs des éléments `maximumAge`, `maximumStale` et `minimumFresh` sont soit un intervalle de temps explicite avec un format *d*. *hh*:*mm*:*SS* (jours, heures, minutes et secondes), ou les constantes `minValue` ou `maxValue`, selon le cas.  
+ Les valeurs des éléments `maximumAge`, `maximumStale`et `minimumFresh` sont soit un intervalle de temps explicite avec un format *d*. *hh*:*mm*:*SS* (jours, heures, minutes et secondes), ou les constantes `minValue` ou `maxValue`, selon le cas.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

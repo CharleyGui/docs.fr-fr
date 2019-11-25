@@ -5,12 +5,12 @@ helpviewer_keywords:
 - walkthroughs [WPF]
 - WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-ms.openlocfilehash: 34cd7e96442a570a3951e6303d2ac90ce5da6239
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: fbd5006611a0a8e0d90b589df7b2cb6a34101457
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920411"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977029"
 ---
 # <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants. Elles constituent donc un bon point de départ pour vous familiariser avec le produit ou un ensemble de fonctionnalités particulier.
@@ -21,11 +21,11 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 
 |Titre|Description|
 |-----------|-----------------|
-|[Procédure pas à pas : génération d’une application WPF simple avec le Concepteur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|Montre comment générer une application WPF simple avec l' [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|
+|[Procédure pas à pas : génération d’une application WPF simple avec le Concepteur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|Montre comment générer une application WPF simple avec le Concepteur WPF.|
 |[Procédure pas à pas : construction d’une disposition dynamique](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514519(v=vs.100))|Illustre la création d’une disposition dynamique à l’aide d’un contrôle de panneau <xref:System.Windows.Controls.Grid>.|
 |[Procédure pas à pas : création d’une application redimensionnable à l’aide du Concepteur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546954(v=vs.100))|Montre comment créer des dispositions de fenêtres redimensionnables par l’utilisateur au moment de l’exécution.|
-|[Procédure pas à pas : création d’une liaison de données à l’aide du Concepteur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|Montre comment utiliser l' [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données qui connectent des données à un contrôle.|
-|[Procédure pas à pas : utilisation d’un DesignInstance pour établir une liaison avec des données dans le concepteur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|Montre comment utiliser l' [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données au moment du design pour un contexte de données assigné au moment de l’exécution.|
+|[Procédure pas à pas : création d’une liaison de données à l’aide du Concepteur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|Montre comment utiliser le Concepteur WPF pour créer des liaisons de données qui connectent des données à un contrôle.|
+|[Procédure pas à pas : utilisation d’un DesignInstance pour établir une liaison avec des données dans le concepteur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|Montre comment utiliser le Concepteur WPF pour créer des liaisons de données au moment du design pour un contexte de données assigné au moment de l’exécution.|
 
 ## <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF
 

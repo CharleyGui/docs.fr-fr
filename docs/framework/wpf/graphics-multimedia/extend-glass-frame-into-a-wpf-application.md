@@ -10,27 +10,27 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: f8d50cb4d0112232f86579542650418a1906bda2
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ae4d7f23729f5bd39558902a58d33c6c45572d85
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039842"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977022"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Étendre le cadre de transparence dans une application WPF
 
-Cette rubrique montre comment étendre le [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] cadre de transparence dans la zone cliente d’une application Windows Presentation Foundation (WPF).
+Cette rubrique montre comment étendre le cadre de transparence Windows Vista dans la zone cliente d’une application Windows Presentation Foundation (WPF).
 
 > [!NOTE]
-> Cet exemple fonctionne uniquement sur une machine [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] exécutant le Gestionnaire de fenêtres du Bureau (DWM) avec transparence activée. La version Home Basic [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] ne prend pas en charge l’effet de transparence. Les zones qui affichent généralement un effet de transparence sur les autres versions de [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] offrent un rendu opaque.
+> Cet exemple ne fonctionne que sur un ordinateur Windows Vista exécutant le Gestionnaire de fenêtrage (DWM) avec la vitre activée. Windows Vista Édition personnelle basique ne prend pas en charge l’effet de transparence transparent. Les zones qui s’affichent normalement avec l’effet de transparence sur les autres éditions de Windows Vista sont rendues opaques.
 
 ## <a name="example"></a>Exemple
 
-L’illustration suivante montre le cadre de transparence étendu dans la barre d’adresses d’Internet Explorer 7:
+L’illustration suivante montre le cadre de transparence étendu dans la barre d’adresses d’Internet Explorer 7 :
 
 ![Capture d’écran montrant le cadre de transparence étendu en arrière-plan de la barre d’adresses IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pour étendre le cadre de transparence sur [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] une application, l’accès à l’API non managée est nécessaire. L’exemple de code suivant effectue un appel de code non managé (PInvoke) pour les deux API nécessaires à l’extension du frame dans la zone cliente. Chacune de ces API est déclarée dans une classe appelée **NonClientRegionAPI**.
+Pour étendre le cadre de transparence sur une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], l’accès à l’API non managée est nécessaire. L’exemple de code suivant effectue un appel de code non managé (PInvoke) pour les deux API nécessaires à l’extension du frame dans la zone cliente. Chacune de ces API est déclarée dans une classe appelée **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -64,9 +64,9 @@ End Function
 
 [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) est la fonction DWM qui étend le cadre dans la zone cliente. Elle nécessite deux paramètres ; un handle de fenêtre et une structure [MARGINS](/windows/win32/api/uxtheme/ns-uxtheme-margins). [MARGINS](/windows/win32/api/uxtheme/ns-uxtheme-margins) indique à DWM le niveau d’extension du cadre dans la zone cliente.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à <xref:System.Windows.Interop.HwndSource.Handle%2A> partir de la <xref:System.Windows.Interop.HwndSource>propriété d’un. Dans l’exemple suivant, le frame est étendu dans la zone cliente sur <xref:System.Windows.FrameworkElement.Loaded> l’événement de la fenêtre.
+Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à partir de la propriété <xref:System.Windows.Interop.HwndSource.Handle%2A> d’un <xref:System.Windows.Interop.HwndSource>. Dans l’exemple suivant, le frame est étendu dans la zone cliente de l’événement <xref:System.Windows.FrameworkElement.Loaded> de la fenêtre.
 
 ```csharp
 void OnLoaded(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étendu dans la zone cliente. Le cadre est étendu derrière la bordure supérieure qui contient les deux <xref:System.Windows.Controls.TextBox> objets.
+L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étendu dans la zone cliente. Le cadre est étendu derrière la bordure supérieure qui contient les deux objets <xref:System.Windows.Controls.TextBox>.
 
 ```xaml
 <Window x:Class="SDKSample.Window1"
@@ -145,7 +145,7 @@ L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étend
 </Window>
 ```
 
-L’illustration suivante montre le cadre de transparence étendu dans une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application:
+L’illustration suivante montre le cadre de transparence étendu dans une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] :
 
 ![Capture d’écran montrant un cadre de transparence étendu dans une application WPF.](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 

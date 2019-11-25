@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: c4f7e31422ccd8129599db1120f9b0cb327d9319
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: b59144f4772c940f8c7e6ca19aa21666069b4b55
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697208"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088833"
 ---
-# <a name="source-element"></a>Élément @no__t 0source >
+# <a name="source-element"></a>\<élément > source
 Spécifie une source de trace qui lance des messages de traçage.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<source >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**sources**](sources-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

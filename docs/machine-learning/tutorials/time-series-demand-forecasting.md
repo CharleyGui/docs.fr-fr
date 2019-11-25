@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: e913c27c3501c4c553d7d62f948de31abb3d6f49
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2482709abfadad0505a40f4c37fd58cee4a2634c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740536"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978200"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Didacticiel : prévoir la demande du service de location de vélos avec l’analyse de série chronologique et ML.NET
 
@@ -37,9 +37,9 @@ Cet exemple est une  **C# application console .net Core** qui prévoit la demand
 
 ## <a name="understand-the-problem"></a>Comprendre le problème
 
-Pour exécuter une opération efficace, la gestion des stocks joue un rôle clé. Le fait d’avoir une trop grande partie d’un produit en stock signifie que les produits invendus se trouvent sur les étagères qui ne génèrent aucun chiffre d’affaires. Le fait d’avoir trop peu de prospects pour les ventes et les clients qui achètent des produits concurrents. Par conséquent, la question constante est, quelle est la quantité optimale d’inventaire à conserver en main ? L’analyse des séries chronologiques vous aide à fournir une réponse à ces questions en examinant les données d’historique, en identifiant les modèles et en utilisant ces informations pour prévoir des valeurs à un moment donné dans le futur. 
+Pour exécuter une opération efficace, la gestion des stocks joue un rôle clé. Le fait d’avoir une trop grande partie d’un produit en stock signifie que les produits invendus se trouvent sur les étagères qui ne génèrent aucun chiffre d’affaires. Le fait d’avoir trop peu de prospects pour les ventes et les clients qui achètent des produits concurrents. Par conséquent, la question constante est, quelle est la quantité optimale d’inventaire à conserver en main ? L’analyse des séries chronologiques vous aide à fournir une réponse à ces questions en examinant les données d’historique, en identifiant les modèles et en utilisant ces informations pour prévoir des valeurs à un moment donné dans le futur.
 
-La technique d’analyse des données utilisée dans ce didacticiel est l’analyse de la série chronologique Student. Les analyses de série chronologique Student examinent une seule observation numérique sur une période à des intervalles spécifiques tels que les ventes mensuelles. 
+La technique d’analyse des données utilisée dans ce didacticiel est l’analyse de la série chronologique Student. Les analyses de série chronologique Student examinent une seule observation numérique sur une période à des intervalles spécifiques tels que les ventes mensuelles.
 
 L’algorithme utilisé dans ce didacticiel est l' [analyse à un seul spectre (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). La SSA fonctionne en décomposant une série chronologique en un ensemble de composants principaux. Ces composants peuvent être interprétés comme les parties d’un signal qui correspondent aux tendances, au bruit, au caractère saisonnier et à de nombreux autres facteurs. Ensuite, ces composants sont reconstruits et utilisés pour prévoir des valeurs à un moment donné dans le futur.
 
@@ -62,7 +62,7 @@ L’algorithme utilisé dans ce didacticiel est l' [analyse à un seul spectre (
 > [!NOTE]
 > Les données utilisées dans ce didacticiel proviennent du jeu de données de [partage de bicyclette UCI](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi et Gama, Joao, 'étiquetage des événements combinaison de détecteurs d’ensembles et de connaissances en arrière-plan', progression de l’intelligence artificielle (2013) : pp. 1-15, Springer Link Berlin Heidelberg, [lien Web](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
 
-Le jeu de données d’origine contient plusieurs colonnes correspondant à caractère saisonnier et météo. Par souci de concision et parce que l’algorithme utilisé dans ce didacticiel nécessite uniquement les valeurs d’une colonne numérique unique, le jeu de données d’origine a été condensé pour inclure uniquement les colonnes suivantes :  
+Le jeu de données d’origine contient plusieurs colonnes correspondant à caractère saisonnier et météo. Par souci de concision et parce que l’algorithme utilisé dans ce didacticiel nécessite uniquement les valeurs d’une colonne numérique unique, le jeu de données d’origine a été condensé pour inclure uniquement les colonnes suivantes :
 
 - **dteday**: date de l’observation.
 - **year**: année encodée de l’observation (0 = 2011, 1 = 2012).
@@ -94,7 +94,7 @@ Voici un exemple de données :
 
 1. Créez `ModelInput` classe. Sous la classe `Program`, ajoutez le code suivant.
 
-    [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L120-L127)]    
+    [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L120-L127)]
 
     La classe `ModelInput` contient les colonnes suivantes :
 
@@ -134,7 +134,7 @@ Voici un exemple de données :
 
     [!code-csharp [DefineSQLQuery](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L25)]
 
-    Les algorithmes ML.NET attendent que les données soient de type [`Single`](xref:System.Single). Par conséquent, les valeurs numériques provenant de la base de données qui ne sont pas de type [`Real`](xref:System.Data.SqlDbType), une valeur à virgule flottante simple précision, doivent être converties en [`Real`](xref:System.Data.SqlDbType). 
+    Les algorithmes ML.NET attendent que les données soient de type [`Single`](xref:System.Single). Par conséquent, les valeurs numériques provenant de la base de données qui ne sont pas de type [`Real`](xref:System.Data.SqlDbType), une valeur à virgule flottante simple précision, doivent être converties en [`Real`](xref:System.Data.SqlDbType).
 
     Les colonnes `Year` et `TotalRental` sont à la fois des types entiers dans la base de données. À l’aide de la fonction intégrée `CAST`, elles sont toutes les deux transtypées en `Real`.
 
@@ -146,7 +146,7 @@ Voici un exemple de données :
 
     [!code-csharp [LoadData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L31)]
 
-1. Le jeu de données contient deux années de données. Seules les données de la première année sont utilisées pour l’apprentissage, la deuxième année est conservée pour comparer les valeurs réelles par rapport aux prévisions produites par le modèle. Filtrez les données à l’aide de la transformation de [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) . 
+1. Le jeu de données contient deux années de données. Seules les données de la première année sont utilisées pour l’apprentissage, la deuxième année est conservée pour comparer les valeurs réelles par rapport aux prévisions produites par le modèle. Filtrez les données à l’aide de la transformation de [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) .
 
     [!code-csharp [SplitData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L33-L34)]
 
@@ -158,7 +158,7 @@ Voici un exemple de données :
 
     [!code-csharp [DefinePipeline](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L36-L45)]
 
-    La `forecastingPipeline` prend 365 points de données pour la première année et échantillonne ou divise le jeu de données de série chronologique en intervalles de 30 jours (mensuels), comme spécifié par le paramètre `seriesLength`. Chacun de ces exemples est analysé par une fenêtre hebdomadaire ou de 7 jours. Lors de la détermination de la valeur prévue pour la ou les périodes suivantes, les valeurs des sept jours précédents sont utilisées pour effectuer une prédiction. Le modèle est défini pour prévoir sept périodes dans le futur, comme défini par le paramètre `horizon`. Comme une prévision est une estimation réfléchie, elle n’est pas toujours de 100% précise. Par conséquent, il est bon de connaître la plage de valeurs dans les scénarios les plus perversaux et les plus pessimistes, comme défini par les limites supérieure et inférieure. Dans ce cas, le niveau de confiance pour les limites inférieure et supérieure est défini sur 95%. Le niveau de confiance peut être augmenté ou réduit en conséquence. Plus la valeur est élevée, plus la plage est large entre les limites supérieure et inférieure pour atteindre le niveau de confiance souhaité. 
+    La `forecastingPipeline` prend 365 points de données pour la première année et échantillonne ou divise le jeu de données de série chronologique en intervalles de 30 jours (mensuels), comme spécifié par le paramètre `seriesLength`. Chacun de ces exemples est analysé par une fenêtre hebdomadaire ou de 7 jours. Lors de la détermination de la valeur prévue pour la ou les périodes suivantes, les valeurs des sept jours précédents sont utilisées pour effectuer une prédiction. Le modèle est défini pour prévoir sept périodes dans le futur, comme défini par le paramètre `horizon`. Comme une prévision est une estimation réfléchie, elle n’est pas toujours de 100% précise. Par conséquent, il est bon de connaître la plage de valeurs dans les scénarios les plus perversaux et les plus pessimistes, comme défini par les limites supérieure et inférieure. Dans ce cas, le niveau de confiance pour les limites inférieure et supérieure est défini sur 95%. Le niveau de confiance peut être augmenté ou réduit en conséquence. Plus la valeur est élevée, plus la plage est large entre les limites supérieure et inférieure pour atteindre le niveau de confiance souhaité.
 
 1. Utilisez la méthode [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit*) pour former le modèle et ajuster les données à la `forecastingPipeline`précédemment définie.
 
@@ -173,7 +173,7 @@ Voici un exemple de données :
     ```csharp
     static void Evaluate(IDataView testData, ITransformer model, MLContext mlContext)
     {
-        
+
     }
     ```
 
@@ -200,7 +200,7 @@ Voici un exemple de données :
     Pour évaluer les performances, les métriques suivantes sont utilisées :
 
     - **Erreur absolue moyenne**: mesure la manière dont les prédictions sont fermées à la valeur réelle. Cette valeur est comprise entre 0 et l’infini. Plus la valeur est proche de 0, meilleure est la qualité du modèle.
-    - **Erreur du carré moyen racine**: résume l’erreur représentation dans le modèle. Cette valeur est comprise entre 0 et l’infini. Plus la valeur est proche de 0, meilleure est la qualité du modèle.
+    - **Erreur du carré moyen racine**: résume l’erreur dans le modèle. Cette valeur est comprise entre 0 et l’infini. Plus la valeur est proche de 0, meilleure est la qualité du modèle.
 
 1. Sortie des mesures vers la console.
 
@@ -278,7 +278,7 @@ L’inspection des valeurs réelles et prévues montre les relations suivantes 
 
 ![Comparaison entre les prévisions et les prévisions réelles](./media/time-series-demand-forecasting/forecast.png)
 
-Bien que les valeurs prévues ne prédisent pas le nombre exact de loyers, elles fournissent une plage de valeurs plus étroite qui permet à une opération d’optimiser son utilisation des ressources. 
+Bien que les valeurs prévues ne prédisent pas le nombre exact de loyers, elles fournissent une plage de valeurs plus étroite qui permet à une opération d’optimiser son utilisation des ressources.
 
 Félicitations ! Vous avez maintenant créé avec succès une série chronologique Machine Learning modèle pour prévoir la demande de location de bicyclette.
 

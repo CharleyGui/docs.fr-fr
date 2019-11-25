@@ -1,5 +1,5 @@
 ---
-title: Élément <add> pour <listeners> pour <trace>
+title: <add>, élément de <listeners> pour <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add
@@ -8,22 +8,22 @@ helpviewer_keywords:
 - <add> element for <listeners>
 - add element for <listeners>
 ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
-ms.openlocfilehash: d89a77107e7aff65b007a69c23af34771146570c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: eb3e9cf4a6d138998cfde865cda8ed4146be26d0
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697336"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088980"
 ---
-# <a name="add-element-for-listeners-for-trace"></a>\<add > élément de \<listeners > pour \<trace >
+# <a name="add-element-for-listeners-for-trace"></a>\<ajoutez > élément pour \<écouteurs > pour \<trace >
 Ajoute un écouteur à la collection d' **écouteurs** .  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<listeners >** ](listeners-element-for-trace.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Ajouter >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<de [**trace**](trace-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**écouteurs**](listeners-element-for-trace.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Ajouter des >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -61,7 +61,7 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 ## <a name="remarks"></a>Notes  
  Les classes <xref:System.Diagnostics.Debug> et <xref:System.Diagnostics.Trace> partagent la même collection d' **écouteurs** . Si vous ajoutez un objet écouteur à la collection dans l’une de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur dérivent de la <xref:System.Diagnostics.TraceListener>.  
   
- Si vous ne spécifiez pas l’attribut `name` de l’écouteur de la trace, la <xref:System.Diagnostics.TraceListener.Name%2A> de l’écouteur de la trace est une chaîne vide ("") par défaut. Si votre application n’a qu’un seul écouteur, vous pouvez l’ajouter sans spécifier de nom et la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier des noms uniques pour chaque écouteur de suivi, ce qui vous permet d’identifier et de gérer des écouteurs de suivi individuels dans les collections <xref:System.Diagnostics.Debug.Listeners%2A> et <xref:System.Diagnostics.Trace.Listeners%2A>.  
+ Si vous ne spécifiez pas l’attribut `name` de l’écouteur de la trace, la <xref:System.Diagnostics.TraceListener.Name%2A> de l’écouteur de la trace est une chaîne vide ("") par défaut. Si votre application n’a qu’un seul écouteur, vous pouvez l’ajouter sans spécifier de nom et la supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier des noms uniques pour chaque écouteur de suivi, ce qui vous permet d’identifier et de gérer des écouteurs de suivi individuels au sein de la <xref:System.Diagnostics.Debug.Listeners%2A> et <xref:System.Diagnostics.Trace.Listeners%2A> Collections.  
   
 > [!NOTE]
 > L’ajout de plusieurs écouteurs de suivi du même type et portant le même nom entraîne l’ajout d’un seul écouteur de suivi de ce type et d’un nom à la collection `Listeners`. Toutefois, vous pouvez ajouter par programmation plusieurs écouteurs identiques à la collection `Listeners`.  
@@ -75,7 +75,7 @@ Ajoute un écouteur à la collection d' **écouteurs** .
   
 |Classe d’écouteur de suivi|valeur de l’attribut initializeData|  
 |--------------------------|------------------------------------|  
-|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|La valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur « `true` » pour écrire la sortie de trace et de débogage sur <xref:System.Console.Error%2A?displayProperty=nameWithType>. « `false` » pour écrire dans <xref:System.Console.Out%2A?displayProperty=nameWithType>.|  
+|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|Valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur «`true`» pour écrire la sortie de trace et de débogage dans <xref:System.Console.Error%2A?displayProperty=nameWithType>; «`false`» pour écrire dans <xref:System.Console.Out%2A?displayProperty=nameWithType>.|  
 |<xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.DelimitedListTraceListener> écrit.|  
 |<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>|Nom du nom d’une source de journal des événements existante.|  
 |<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.EventSchemaTraceListener> écrit.|  
@@ -83,7 +83,7 @@ Ajoute un écouteur à la collection d' **écouteurs** .
 |<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.XmlWriterTraceListener> écrit.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser les éléments de **> \<Add** pour ajouter les écouteurs `MyListener` et `MyEventListener` à la collection d' **écouteurs** . `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
+ L’exemple suivant montre comment utiliser **\<ajouter** des éléments > pour ajouter les écouteurs `MyListener` et `MyEventListener` à la collection d' **écouteurs** . `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
   
 ```xml  
 <configuration>  

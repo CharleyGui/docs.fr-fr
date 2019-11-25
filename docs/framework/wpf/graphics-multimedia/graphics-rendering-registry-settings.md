@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: f2af32315f8f955495c51f2928c2b8eed5350759
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 0d6eda0aea9ad97063cc5362d83163443de034a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016081"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976957"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -24,7 +24,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Que sont XPDM et WDDM ?  
- Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Display Driver Model et WDDM est le Windows Display Driver Model. WDDM est disponible sur les ordinateurs exécutant [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] et [!INCLUDE[win7](../../../../includes/win7-md.md)]. XPDM est disponible sur les ordinateurs exécutant [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)], [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] et [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)]. Pour plus d'informations sur le modèle WDDM, consultez [Guide de conception Windows Vista Display Driver Model](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Display Driver Model et WDDM est le Windows Display Driver Model. WDDM est disponible sur les ordinateurs exécutant Windows Vista et [!INCLUDE[win7](../../../../includes/win7-md.md)]. XPDM est disponible sur les ordinateurs exécutant Windows Vista, [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]et [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)]. Pour plus d'informations sur le modèle WDDM, consultez [Guide de conception Windows Vista Display Driver Model](https://go.microsoft.com/fwlink/?LinkId=178394).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Paramètres du Registre  
@@ -57,7 +57,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- La **valeur d’échantillonnage multiples maximale** vous permet d’ajuster la quantité maximale d’anticrénelage du contenu 3D. Utilisez ce niveau pour désactiver l’anticrénelage 3D dans [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] ou l’activer dans. [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]  
+ La **valeur d’échantillonnage multiples maximale** vous permet d’ajuster la quantité maximale d’anticrénelage du contenu 3D. Utilisez ce niveau pour désactiver l’anticrénelage 3D dans Windows Vista ou activez-le dans [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].  
   
  La **valeur d’échantillonnage multiple maximale** est une valeur DWORD comprise entre 0 et 16. La valeur 0 spécifie que l’anticrénelage d’échantillonnage multiple du contenu 3D doit être désactivé, et la valeur 16 essaye d’utiliser jusqu’à 16 anticrénelages d’échantillonnage multiple, si cela est pris en charge par la carte vidéo. Veillez à ce que la définition de cette valeur de clé de Registre sur les ordinateurs utilisant des pilotes XPDM entraîne l’utilisation par les applications d’une grande quantité de mémoire vidéo supplémentaire, de la diminution des performances du rendu 3D et de la possibilité d’introduire des erreurs de rendu et de la stabilité. problèmes.  
   
@@ -68,7 +68,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 |Clé du Registre|Type de valeur|  
 |------------------|----------------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|Chaîne|  
   
  En novembre 2004, Microsoft a publié une nouvelle version des instructions de test des pilotes. les pilotes écrits après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
   
@@ -89,7 +89,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
   
- L' **option utiliser le rastériseur de référence** vous permet de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] forcer un mode de rendu matériel simulé pour le débogage: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] passe en mode matériel, mais utilise le rastériseur logiciel de référence Microsoft Direct3D, d3dref9. dll, au lieu d’un périphérique matériel réel.  
+ L' **option utiliser le rastériseur de référence** vous permet de forcer l' [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en mode de rendu matériel simulé pour le débogage : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] passe en mode matériel, mais utilise le rastériseur logiciel de référence Microsoft Direct3D, d3dref9. dll, au lieu d’un périphérique matériel réel.  
   
  Le rastériseur de référence est très lent, mais contourne votre pilote vidéo pour éviter tout problème de rendu provoqué par les problèmes liés au pilote. Pour cette raison, vous pouvez utiliser le rastériseur de référence pour déterminer si les problèmes de rendu sont provoqués par le pilote vidéo. Le fichier d3dref9.dll doit être dans un emplacement où l’application peut y accéder, comme n’importe quel emplacement dans le chemin d’accès système ou dans le répertoire local de l’application.  
   

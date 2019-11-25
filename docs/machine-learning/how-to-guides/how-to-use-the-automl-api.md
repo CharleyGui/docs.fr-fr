@@ -1,14 +1,14 @@
 ---
 title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
-ms.date: 04/24/2019
+ms.date: 11/7/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: bb1cd66e7341f2ada57d533d8b2dcbb48f08f726
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: c1c18decc48bc1499aa55210becff305cdec4a53
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774548"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977118"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -32,6 +32,7 @@ using Microsoft.ML.AutoML;
 ```
 
 ## <a name="select-the-machine-learning-task-type"></a>Sélectionner le type de tâche de machine learning
+
 Avant de créer une expérience, déterminer le type de problème de machine learning que vous voulez résoudre. Le machine learning automatisé prend en charge les tâches de ML suivantes :
 
 * Classification binaire
@@ -62,7 +63,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
 
 ## <a name="configure-experiment-settings"></a>Configurer les paramètres de l’expérience
 
-Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](https://docs.microsoft.com/dotnet/api/?view=automl-dotnet) pour obtenir la liste complète des paramètres de configuration.
+Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) pour obtenir la liste complète des paramètres de configuration.
 
 Voici quelques exemples :
 

@@ -4,12 +4,12 @@ description: La liste suivante est une compilation des principaux termes Machine
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: cb5681f1f72776ec9a8cbcfe45519befe02b8caf
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: bd4f2db701f537d5c87529115a6bd44035432534
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180182"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977288"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -29,9 +29,9 @@ Cas de [classification](#classification) où l’[étiquette](#label) provient u
 
 ## <a name="calibration"></a>Étalonnage
 
-L’étalonnage est le processus consistant à mapper un score brut à une appartenance de classe à des fins de classification binaire et multiclasse. Certains entraîneurs ML.NET ont un suffixe `NonCalibrated`. Ces algorithmes produisent un score brut qui doit ensuite être mappé à une probabilité de classe. 
+L’étalonnage est le processus consistant à mapper un score brut à une appartenance de classe à des fins de classification binaire et multiclasse. Certains entraîneurs ML.NET ont un suffixe `NonCalibrated`. Ces algorithmes produisent un score brut qui doit ensuite être mappé à une probabilité de classe.
 
-## <a name="catalog"></a>Catalogue 
+## <a name="catalog"></a>Catalogue
 
 Dans ML.NET, un catalogue est une collection de fonctions d’extension, regroupées selon un objectif commun.
 
@@ -65,7 +65,7 @@ Méthode .NET qui fait partie d’une classe, mais qui est définie en dehors de
 
 Les méthodes d’extension sont largement utilisées dans ML.NET pour construire des instances d’[estimateurs](#estimator).
 
-## <a name="feature"></a>Fonctionnalité
+## <a name="feature"></a>Fonction
 
 Propriété mesurable du phénomène mesuré, en général, une valeur (double) numérique. Plusieurs fonctionnalités sont appelées **vecteur de fonctionnalité** et sont généralement stockées en tant que `double[]`. Les fonctionnalités définissent les principales caractéristiques du phénomène mesuré. Pour plus d’informations, consultez l’article Wikipédia [Fonctionnalité](https://en.wikipedia.org/wiki/Feature_(machine_learning)).
 
@@ -170,7 +170,7 @@ Le processus d’identification d’un [modèle](#model) pour un jeu de données
 
 Classe ML.NET qui implémente l’interface <xref:Microsoft.ML.ITransformer>.
 
-Un transformateur transforme un <xref:Microsoft.ML.IDataView> en un autre. Un transformateur est créé par l’entraînement d’un [estimateur](#estimator) ou d’un pipeline d’estimateurs. 
+Un transformateur transforme un <xref:Microsoft.ML.IDataView> en un autre. Un transformateur est créé par l’entraînement d’un [estimateur](#estimator) ou d’un pipeline d’estimateurs.
 
 ## <a name="unsupervised-machine-learning"></a>Apprentissage automatique non supervisé
 

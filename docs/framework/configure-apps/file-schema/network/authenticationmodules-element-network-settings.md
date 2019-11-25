@@ -8,20 +8,20 @@ helpviewer_keywords:
 - authenticationModules element
 - <authenticationModules> element
 ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
-ms.openlocfilehash: 4fe44deba951e5302518ed855589ad1b0ca75343
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: bacaaf92464a355804a9ea8307f6e6f1caac1f05
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699532"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087612"
 ---
 # <a name="authenticationmodules-element-network-settings"></a>\<authenticationModules >, élément (paramètres réseau)
 Spécifie les modules utilisés pour authentifier les demandes réseau.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<authenticationModules >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<authenticationModules >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -33,7 +33,7 @@ Spécifie les modules utilisés pour authentifier les demandes réseau.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

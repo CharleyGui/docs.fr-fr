@@ -8,21 +8,21 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 1dda43be8c0e0c94bdf7b57b67aa4d403b547f97
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 7a6c1282c9ca8381d2dbb21ffdc82f95732c42b3
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699541"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087526"
 ---
-# <a name="bypasslist-element-network-settings"></a>\<bypasslist >, élément (paramètres réseau)
+# <a name="bypasslist-element-network-settings"></a>\<BypassList >, élément (paramètres réseau)
 Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<bypasslist >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy**](defaultproxy-element-network-settings.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<bypasslist >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -34,7 +34,7 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -51,9 +51,9 @@ Fournit un ensemble d’expressions régulières qui décrivent les adresses qui
 |[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="remarks"></a>Notes  
- La liste de contournement contient des expressions régulières qui décrivent les URI auxquels les instances <xref:System.Net.WebRequest> accèdent directement au lieu de passer par le serveur proxy.  
+ La liste de contournement contient des expressions régulières qui décrivent les URI auxquels <xref:System.Net.WebRequest> instances accèdent directement au lieu de passer par le serveur proxy.  
   
- Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière « [a-z] + @no__t -0.contoso\\.com » correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] + @no__t -0.contoso\\.com $ ».  
+ Vous devez faire attention lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière "[a-z] +\\. contoso\\. com" correspond à n’importe quel hôte dans le domaine contoso.com, mais correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour correspondre uniquement à un hôte dans le domaine contoso.com, utilisez un point d’ancrage (« $ ») : « [a-z] +\\. contoso\\. com $ ».  
   
  Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../standard/base-types/regular-expressions.md).  
   

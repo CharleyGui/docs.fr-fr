@@ -5,18 +5,18 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 1628d0669d8a9e677ff39b5869d3802d89d96410
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
-ms.translationtype: HT
+ms.openlocfilehash: 735782a4a0877a917b6e1885f009aa49d834170f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397701"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976963"
 ---
 # <a name="re-train-a-model"></a>Réentraîner un modèle
 
 Apprenez à réentraîner un modèle Machine Learning dans ML.NET.
 
-Le monde et les données qui l’entourent changent à un rythme constant. Ainsi, les modèles doivent également subir des changements et des mises à jour. ML.NET fournit des fonctionnalités à l’aide desquelles vous pouvez réentraîner les modèles à partir de paramètres de modèle appris. Ainsi, en vous appuyant en permanence sur l’expérience acquise, vous n’avez pas besoin de repartir de zéro à chaque fois.  
+Le monde et les données qui l’entourent changent à un rythme constant. Ainsi, les modèles doivent également subir des changements et des mises à jour. ML.NET fournit des fonctionnalités à l’aide desquelles vous pouvez réentraîner les modèles à partir de paramètres de modèle appris. Ainsi, en vous appuyant en permanence sur l’expérience acquise, vous n’avez pas besoin de repartir de zéro à chaque fois.
 
 Les algorithmes suivants sont réentraînables dans ML.NET :
 
@@ -33,7 +33,7 @@ Les algorithmes suivants sont réentraînables dans ML.NET :
 
 ## <a name="load-pre-trained-model"></a>Charger un modèle préentraîné
 
-Tout d’abord, chargez le modèle préentraîné dans votre application. Pour en savoir plus sur le chargement des pipelines et modèles d’entraînement, consultez l’[article de procédure](./consuming-model-ml-net.md) connexe.
+Tout d’abord, chargez le modèle préentraîné dans votre application. Pour en savoir plus sur le chargement des pipelines et des modèles d’apprentissage, consultez [enregistrer et charger un modèle formé](save-load-machine-learning-models-ml-net.md).
 
 ```csharp
 // Create MLContext
@@ -55,13 +55,13 @@ Une fois le modèle chargé, extrayez les paramètres de modèle appris en accé
 
 ```csharp
 // Extract trained model parameters
-LinearRegressionModelParameters originalModelParameters = 
+LinearRegressionModelParameters originalModelParameters =
     ((ISingleFeaturePredictionTransformer<object>)trainedModel).Model as LinearRegressionModelParameters;
 ```
 
 ## <a name="re-train-model"></a>Réentraîner le modèle
 
-Le processus de réentraînement d’un modèle ressemble beaucoup au processus d’entraînement d’un modèle. La seule différence est la suivante : la méthode [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*), en plus des données, prend en entrée les paramètres de modèle appris d’origine et les utilise comme point de départ dans le processus de réentraînement.  
+Le processus de réentraînement d’un modèle ressemble beaucoup au processus d’entraînement d’un modèle. La seule différence est la suivante : la méthode [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*), en plus des données, prend en entrée les paramètres de modèle appris d’origine et les utilise comme point de départ dans le processus de réentraînement.
 
 ```csharp
 // New Data
@@ -94,7 +94,7 @@ IDataView newData = mlContext.Data.LoadFromEnumerable<HousingData>(housingData);
 IDataView transformedNewData = dataPrepPipeline.Transform(newData);
 
 // Retrain model
-RegressionPredictionTransformer<LinearRegressionModelParameters> retrainedModel = 
+RegressionPredictionTransformer<LinearRegressionModelParameters> retrainedModel =
     mlContext.Regression.Trainers.OnlineGradientDescent()
         .Fit(transformedNewData, originalModelParameters);
 ```
@@ -108,7 +108,7 @@ Comment savoir si un réentraînement a eu lieu ? Une façon consisterait à d�
 LinearRegressionModelParameters retrainedModelParameters = retrainedModel.Model as LinearRegressionModelParameters;
 
 // Inspect Change in Weights
-var weightDiffs = 
+var weightDiffs =
     originalModelParameters.Weights.Zip(
         retrainedModelParameters.Weights, (original, retrained) => original - retrained).ToArray();
 
@@ -119,7 +119,7 @@ for(int i=0;i < weightDiffs.Count();i++)
 }
 ```
 
-Le tableau ci-dessous montre à quoi peut ressembler la sortie. 
+Le tableau ci-dessous montre à quoi peut ressembler la sortie.
 
 |D'origine | Réentraîné | Différence |
 |---|---|---|

@@ -3,20 +3,20 @@ title: Tutoriels ML.NET
 description: Consultez les tutoriels ML.NET pour découvrir comment créer des solutions IA personnalisées et comment les intégrer à vos applications .NET.
 ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: 6d5b622194cbaa20ed4e7283e6f1ea66f16a7b47
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bf59efb4118d9d4fac24413d7568df412a0e9475
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054012"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977172"
 ---
-# <a name="mlnet-tutorials"></a>Tutoriels ML.NET 
+# <a name="mlnet-tutorials"></a>Tutoriels ML.NET
 
 Les tutoriels suivants vous permettent de comprendre comment utiliser [ML.NET](../index.yml) pour créer des solutions d’apprentissage automatique personnalisées et les intégrer à vos applications .NET :
 
 - [Analyse des sentiments](sentiment-analysis.md) : montre comment appliquer une tâche de **classification binaire** avec ML.NET.
 - [Classification des problèmes GitHub](github-issue-classification.md) : montre comment appliquer une tâche de **classification multiclasse** à l’aide de ML.NET.
-- [Prévision du prix](taxi-fare.md) : montre comment appliquer une tâche de **régression** avec ML.NET.
+- [Prévision du prix](predict-prices.md) : montre comment appliquer une tâche de **régression** avec ML.NET.
 - [Clustering Iris](iris-clustering.md) : montre comment appliquer une tâche de **clustering** avec ML.NET.
 - [Recommandation](movie-recommendation.md) : générez des **recommandations** de films en fonction des évaluations utilisateur précédentes
 - [Classification d’images](image-classification.md) : montre comment réentraîner un modèle TensorFlow existant pour créer un classifieur d’images personnalisées avec ML.NET.

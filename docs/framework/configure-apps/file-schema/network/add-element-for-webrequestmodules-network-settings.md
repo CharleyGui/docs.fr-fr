@@ -10,21 +10,21 @@ helpviewer_keywords:
 - add element, webRequestModules
 - <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-ms.openlocfilehash: 0248706ed78de160ef0131a0c7595374febf1aa9
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 76dad0c0b75d20627e9f57fd1bb467bf17c9294c
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699589"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088515"
 ---
-# <a name="add-element-for-webrequestmodules-network-settings"></a>\<add > élément de webRequestModules (paramètres réseau)
+# <a name="add-element-for-webrequestmodules-network-settings"></a>\<ajouter un élément > pour webRequestModules (paramètres réseau)
 Ajoute un module de demande Web personnalisé à l’application.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Ajouter >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**ajouter >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -45,7 +45,7 @@ Ajoute un module de demande Web personnalisé à l’application.
 |`type`|Le nom de type qualifié complet (indiqué par la propriété <xref:System.Type.FullName%2A>) et le nom de l’assembly (indiqué par la propriété <xref:System.Reflection.Assembly.FullName%2A>), séparés par une virgule, qui implémente ce module de demande Web.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -58,7 +58,7 @@ Ajoute un module de demande Web personnalisé à l’application.
   
  Le module de demande Web est créé lorsqu’un préfixe d’URI correspondant est passé à la méthode <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>.  
   
- La valeur de l’attribut `prefix` doit être celle des caractères de début d’un URI valide. Par exemple, `http` ou `http://www.contoso.com`.
+ La valeur de l’attribut `prefix` doit être les caractères de début d’un URI valide. Par exemple, `http` ou `http://www.contoso.com`.
   
  La valeur de l’attribut `type` doit être un nom de type valide et le nom d’assembly correspondant, séparés par une virgule.
   

@@ -5,19 +5,19 @@ ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to, title-hack-0625
-ms.openlocfilehash: d6ddeb523fb229eb0ebc9c2f22809312060e4266
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
-ms.translationtype: HT
+ms.openlocfilehash: 11df1d5caaa7b7974360d863f85afbff18985e47
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402392"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977091"
 ---
 # <a name="inspect-intermediate-data-during-processing"></a>Inspecter les données intermédiaires pendant le traitement
 
 Découvrez comment inspecter les données intermédiaires pendant les étapes de chargement, de traitement et d’entraînement du modèle dans ML.NET. Les données intermédiaires sont les résultats de chaque étape dans le pipeline Machine Learning.
 
 Les données intermédiaires comme celles représentées ci-dessous, qui sont chargées dans un [`IDataView`](xref:Microsoft.ML.IDataView), peuvent être inspectées de plusieurs façons dans ML.NET.
- 
+
 ```csharp
 HousingData[] housingData = new HousingData[]
 {
@@ -62,7 +62,7 @@ HousingData[] housingData = new HousingData[]
 
 ## <a name="convert-idataview-to-ienumerable"></a>Convertir IDataView en IEnumerable
 
-Un des moyens les plus rapides pour inspecter un [`IDataView`](xref:Microsoft.ML.IDataView) consiste à le convertir en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601). Pour convertir un [`IDataView`](xref:Microsoft.ML.IDataView) en [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601), utilisez la méthode [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*). 
+Un des moyens les plus rapides pour inspecter un [`IDataView`](xref:Microsoft.ML.IDataView) consiste à le convertir en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601). Pour convertir un [`IDataView`](xref:Microsoft.ML.IDataView) en [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601), utilisez la méthode [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*).
 
 Pour optimiser les performances, définissez `reuseRowObject` sur `true`. Cette opération remplit tardivement le même objet avec les données de la ligne actuelle au moment de son évaluation, par opposition à la création d’un objet pour chaque ligne dans le jeu de données.
 
@@ -100,7 +100,7 @@ HousingData firstRow = housingDataArray[0];
 HousingData secondRow = housingDataArray[1];
 HousingData thirdRow = housingDataArray[2];
 float averageCurrentPrice = (firstRow.CurrentPrice + secondRow.CurrentPrice + thirdRow.CurrentPrice) / 3;
-``` 
+```
 
 ## <a name="inspect-values-in-a-single-column"></a>Inspecter les valeurs d’une colonne spécifique
 
@@ -115,7 +115,7 @@ IEnumerable<float> sizeColumn = data.GetColumn<float>("Size").ToList();
 [`IDataView`](xref:Microsoft.ML.IDataView) est évalué tardivement. Pour effectuer une itération sur les lignes d’un [`IDataView`](xref:Microsoft.ML.IDataView) sans opérer de conversion en [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) comme illustré dans les sections précédentes de ce document, créez un [`DataViewRowCursor`](xref:Microsoft.ML.DataViewRowCursor) en utilisant la méthode [`GetRowCursor`](xref:Microsoft.ML.IDataView.GetRowCursor*) et en passant le [DataViewSchema](xref:Microsoft.ML.DataViewSchema) de votre [`IDataView`](xref:Microsoft.ML.IDataView) comme paramètre. Ensuite, pour effectuer une itération sur les lignes, utilisez la méthode de curseur [`MoveNext`](xref:Microsoft.ML.DataViewRowCursor.MoveNext*) avec des délégués [`ValueGetter`](xref:Microsoft.ML.ValueGetter%601) pour extraire les valeurs respectives de chacune des colonnes.
 
 > [!IMPORTANT]
-> Pour des raisons de performances, les vecteurs dans ML.NET utilisent [`VBuffer`](xref:Microsoft.ML.Data.VBuffer%601) au lieu de types de collection native (autrement dit, `Vector`,`float[]`). 
+> Pour des raisons de performances, les vecteurs dans ML.NET utilisent [`VBuffer`](xref:Microsoft.ML.Data.VBuffer%601) au lieu de types de collection native (autrement dit, `Vector`,`float[]`).
 
 ```csharp
 // Get DataViewSchema of IDataView
@@ -133,7 +133,7 @@ using (DataViewRowCursor cursor = data.GetRowCursor(columns))
     ValueGetter<float> sizeDelegate = cursor.GetGetter<float>(columns[0]);
     ValueGetter<VBuffer<float>> historicalPriceDelegate = cursor.GetGetter<VBuffer<float>>(columns[1]);
     ValueGetter<float> currentPriceDelegate = cursor.GetGetter<float>(columns[2]);
-    
+
     // Iterate over each row
     while (cursor.MoveNext())
     {

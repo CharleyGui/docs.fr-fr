@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : créer un service WCF qui communique sur WebSockets'
+title: Procédure pour créer un service WCF qui communique sur WebSockets
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 706c2886bda9497835d98eeeb594e68c2191d8d8
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 8f8cf715269fd0ed67e2265eee4139a509f70cd1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970005"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977138"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Procédure : créer un service WCF qui communique sur WebSockets
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Procédure pour créer un service WCF qui communique sur WebSockets
 Les services et les clients WCF peuvent utiliser la liaison <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  WebSockets est utilisé lorsque <xref:System.ServiceModel.NetHttpBinding> détermine que le contrat de service définit un contrat de rappel. Cette rubrique décrit comment implémenter un service WCF et un client qui utilise <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  
   
 ### <a name="define-the-service"></a>Définir le service  
@@ -42,21 +42,21 @@ Les services et les clients WCF peuvent utiliser la liaison <xref:System.Service
   
     ```csharp
     public class StockQuoteService : IStockQuoteService  
+    {  
+        public async Task StartSendingQuotes()  
         {  
-            public async Task StartSendingQuotes()  
+            var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
+            var random = new Random();  
+            double price = 29.00;  
+
+            while (((IChannel)callback).State == CommunicationState.Opened)  
             {  
-                var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
-                var random = new Random();  
-                double price = 29.00;  
-  
-                while (((IChannel)callback).State == CommunicationState.Opened)  
-                {  
-                    await callback.SendQuote("MSFT", price);  
-                    price += random.NextDouble();  
-                    await Task.Delay(1000);  
-                }  
+                await callback.SendQuote("MSFT", price);  
+                price += random.NextDouble();  
+                await Task.Delay(1000);  
             }  
         }  
+    }  
     ```  
   
      L'opération de service `StartSendingQuotes` est implémentée comme un appel asynchrone. Nous récupérons le canal de rappel à l'aide de `OperationContext` et si le canal est ouvert, nous faisons un appel asynchrone sur le canal de rappel.  
@@ -160,7 +160,7 @@ Les services et les clients WCF peuvent utiliser la liaison <xref:System.Service
   
          Il n'y a aucune opération particulière à effectuer dans la configuration du client, il suffit de spécifier point de terminaison côté client à l'aide de `NetHttpBinding`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```csharp  

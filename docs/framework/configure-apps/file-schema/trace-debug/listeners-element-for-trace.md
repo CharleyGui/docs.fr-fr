@@ -7,21 +7,21 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: 84b67532825372e7f69d86e1ef6060f4263587eb
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 10530cfadf2e182f912c699e50294af4b57f47b5
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699354"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088865"
 ---
-# <a name="listeners-element-for-trace"></a>\<listeners > élément de \<trace >
+# <a name="listeners-element-for-trace"></a>\<écouteurs > élément pour \<trace >
 Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écouteurs dirigent la sortie de suivi vers une cible appropriée.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<listeners >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<de [**trace**](trace-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**écouteurs**\<
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -36,7 +36,7 @@ Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écout
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -61,7 +61,7 @@ Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écout
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser l’élément **\<listeners >** pour ajouter les écouteurs `MyListener` et `MyEventListener` à la collection d' **écouteurs** . `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
+ L’exemple suivant montre comment utiliser l’élément **\<écouteurs >** pour ajouter les écouteurs `MyListener` et `MyEventListener` à la collection d' **écouteurs** . `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. `MyEventListener` crée une entrée dans le journal des événements.  
   
 ```xml  
 <configuration>  

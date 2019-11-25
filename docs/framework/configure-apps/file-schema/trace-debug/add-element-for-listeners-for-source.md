@@ -1,5 +1,5 @@
 ---
-title: Élément <add> pour <listeners> pour <source>
+title: <add>, élément de <listeners> pour <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/add
@@ -8,23 +8,23 @@ helpviewer_keywords:
 - add element for <listeners> for <source>
 - <add> element for <listeners> for <source>
 ms.assetid: 4ce36ac1-81ef-48e8-b8b2-b5a5b0e2adcb
-ms.openlocfilehash: 0818d7ec248b210f215759069b9f69a3e29637f5
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c32205310f9fc451a5a55a943f925ee52f65c8a8
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699400"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089002"
 ---
-# <a name="add-element-for-listeners-for-source"></a>\<add > élément de \<listeners > pour \<Source >
+# <a name="add-element-for-listeners-for-source"></a>\<ajoutez > élément pour \<écouteurs > pour \<source >
 Ajoute un écouteur à la collection `Listeners` pour une source de trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<add>**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<[**sources**](sources-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**source**](source-element.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<\** ](listeners-element-for-source.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Ajouter** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -40,7 +40,7 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`type`|Attribut obligatoire, sauf si vous faites référence à un écouteur dans la collection `sharedListeners`, auquel cas vous devez uniquement faire référence à celui-ci par son nom (Voir l' [exemple](#example)).<br /><br /> Spécifie le type de l’écouteur. Vous devez utiliser une chaîne qui répond aux exigences spécifiées dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`type`|Attribut obligatoire, sauf si vous référencez un écouteur dans la collection `sharedListeners`, auquel cas vous devez uniquement faire référence à celui-ci par son nom (Voir l' [exemple](#example)).<br /><br /> Spécifie le type de l’écouteur. Vous devez utiliser une chaîne qui répond aux exigences spécifiées dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe spécifiée. Une <xref:System.Configuration.ConfigurationException> est levée si la classe n’a pas de constructeur qui prend une chaîne.|  
 |`name`|Attribut facultatif.<br /><br /> Spécifie le nom de l’écouteur.|  
 |`traceOutputOptions`|Attribut facultatif.<br /><br /> Spécifie la valeur de la propriété <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> pour l’écouteur de la trace.|  
@@ -79,7 +79,7 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
   
 |Classe d’écouteur de suivi|valeur de l’attribut initializeData|  
 |--------------------------|------------------------------------|  
-|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|La valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur « `true` » pour écrire la sortie de trace et de débogage dans le flux d’erreurs standard. Affectez-lui la valeur « `false` » pour écrire dans le flux de sortie standard.|  
+|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|Valeur `useErrorStream` pour le constructeur <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A>.  Affectez à l’attribut `initializeData` la valeur «`true`» pour écrire la sortie de trace et de débogage dans le flux d’erreur standard. Affectez-lui la valeur «`false`» pour écrire dans le flux de sortie standard.|  
 |<xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.DelimitedListTraceListener> écrit.|  
 |<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>|Nom d’une source de journal des événements existante.|  
 |<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Nom du fichier dans lequel le <xref:System.Diagnostics.EventSchemaTraceListener> écrit.|  
@@ -90,7 +90,7 @@ Ajoute un écouteur à la collection `Listeners` pour une source de trace.
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser les éléments `<add>` pour ajouter les écouteurs `console` et `textListener` à la collection `Listeners` pour la source de trace `TraceSourceApp`. L’écouteur `textListener` écrit la sortie de trace dans le fichier myListener. log.  
+ L’exemple suivant montre comment utiliser `<add>` éléments pour ajouter les écouteurs `console` et `textListener` à la collection `Listeners` pour le `TraceSourceApp`source de trace. L’écouteur de `textListener` écrit la sortie de trace dans le fichier myListener. log.  
   
 ```xml  
 <configuration>  

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <compilers> element
 - compilers element
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
-ms.openlocfilehash: 5232c5bd2d4fad8104d156bfa86141ceb7f0dd93
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: b09c2a1f67974a67a3f9d58af7cb8cf66a197026
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167688"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088702"
 ---
-# <a name="compilers-element"></a>\<compilateurs > élément
+# <a name="compilers-element"></a>\<les compilateurs > élément
 Conteneur des éléments de configuration du compilateur ; contient zéro ou plusieurs éléments [\<compiler>](compiler-element.md).  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. CodeDom >** ](system-codedom-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<compilateurs >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> System. codedom**](system-codedom-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;les **compilateurs**\<
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -35,7 +35,7 @@ Conteneur des éléments de configuration du compilateur ; contient zéro ou pl
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -48,10 +48,10 @@ Conteneur des éléments de configuration du compilateur ; contient zéro ou pl
 |Élément|Description|  
 |-------------|-----------------|  
 |[\<configuration>, élément](../configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|[\<System. CodeDom >, élément](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
+|[\<l’élément System. CodeDom >](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
   
 ## <a name="remarks"></a>Notes  
- L’élément compilers > contient les paramètres de configuration du compilateur pour les fournisseurs de langages sur un ordinateur. [ \<](compilers-element.md) Chaque élément de [> du compilateur spécifie les attributs de configuration du compilateur pour un fournisseur de langages spécifique. \<](compiler-element.md)  
+ L’élément [compileurs\<](compilers-element.md) contient les paramètres de configuration du compilateur pour les fournisseurs de langages sur un ordinateur. Chaque élément de [> du compilateur\<](compiler-element.md) spécifie les attributs de configuration du compilateur pour un fournisseur de langage spécifique.  
   
  Le .NET Framework définit les paramètres initiaux du fournisseur de langage et du compilateur dans le fichier de configuration de l’ordinateur (machine. config). Les développeurs et les éditeurs de compilateurs peuvent ajouter des paramètres de configuration pour une nouvelle implémentation <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>. Utilisez la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> pour énumérer par programmation les paramètres de configuration du compilateur et du fournisseur de langage sur un ordinateur.  
   

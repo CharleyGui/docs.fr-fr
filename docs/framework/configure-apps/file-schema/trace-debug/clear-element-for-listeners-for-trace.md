@@ -1,5 +1,5 @@
 ---
-title: Élément <clear> pour <listeners> pour <trace>
+title: <clear>, élément de <listeners> pour <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/clear
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear element for <listeners> for <trace>
 - <clear> element for <listeners> for <trace>
 ms.assetid: b44732a8-271f-4a06-ba9e-fe3298d6f192
-ms.openlocfilehash: 0361580724351f8f42d058d5e20354e3335bac2f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 049b8e7ed17633c0f34b062915afaf719927dad6
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699377"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088912"
 ---
-# <a name="clear-element-for-listeners-for-trace"></a>\<clear > élément de \<listeners > pour \<trace >
+# <a name="clear-element-for-listeners-for-trace"></a>\<élément > Clear pour \<écouteurs > pour \<trace >
 Efface la collection `Listeners` de la trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<listeners >** ](listeners-element-for-trace.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<clear >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<de [**trace**](trace-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**écouteurs**](listeners-element-for-trace.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**Clear** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -33,10 +33,10 @@ Efface la collection `Listeners` de la trace.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -55,7 +55,7 @@ Efface la collection `Listeners` de la trace.
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 > [!NOTE]
-> L’élément `<clear>` supprime la <xref:System.Diagnostics.DefaultTraceListener> de la collection `Listeners`, en modifiant le comportement des méthodes <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> et <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType>. L’appel d’une méthode `Assert` ou `Fail` entraîne normalement l’affichage d’une boîte de message. Toutefois, la boîte de message ne s’affiche pas si le <xref:System.Diagnostics.DefaultTraceListener> n’est pas dans la collection `Listeners`.  
+> L’élément `<clear>` supprime le <xref:System.Diagnostics.DefaultTraceListener> de la collection `Listeners`, en modifiant le comportement des méthodes <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>et <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType>. L’appel d’une méthode `Assert` ou `Fail` entraîne normalement l’affichage d’une boîte de message. Toutefois, la boîte de message ne s’affiche pas si le <xref:System.Diagnostics.DefaultTraceListener> ne se trouve pas dans la collection `Listeners`.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser l’élément `<clear>` avant d’utiliser l’élément `<add>` pour ajouter l’écouteur `console` à la collection `Listeners` pour la trace.  

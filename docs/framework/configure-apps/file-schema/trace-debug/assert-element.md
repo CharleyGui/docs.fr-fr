@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: 30ec24aefcf8c4d1e110238a2c60a958eded5545
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: f3c1a1670139a8262dea449bfff99c7c1c19f088
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699385"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088944"
 ---
-# <a name="assert-element"></a>Élément @no__t 0assert >
+# <a name="assert-element"></a>\<déclarer > élément
 Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<assert >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Assert >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -40,13 +40,13 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
   
 ## <a name="assertuienabled-attribute"></a>Attribut AssertUiEnabled  
   
-|Value|Description|  
+|valeur|Description|  
 |-----------|-----------------|  
 |`true`|Affiche la boîte de message. Il s'agit de la valeur par défaut.|  
 |`false`|N’affiche pas la boîte de message.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -56,7 +56,7 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
 ## <a name="remarks"></a>Notes  
- Les deux attributs de l’élément **\<assert >** sont facultatifs. Vous pouvez désactiver les boîtes de message sans spécifier de fichier dans lequel écrire les messages, ou vous pouvez spécifier un fichier dans lequel écrire les messages tout en laissant les boîtes de message activées.  
+ Les deux attributs de l’élément **\<Assert >** sont facultatifs. Vous pouvez désactiver les boîtes de message sans spécifier de fichier dans lequel écrire les messages, ou vous pouvez spécifier un fichier dans lequel écrire les messages tout en laissant les boîtes de message activées.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment désactiver l’affichage des boîtes de message lorsque vous appelez **Debug. Assert** et écrire les messages dans `c:\log.txt`.  

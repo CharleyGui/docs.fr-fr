@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 399e4ac223d2fcb728ece2c92d25a087990992f2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 6d89978b907c8f124b5162c97de5edc034cf1e95
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458671"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976668"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding, extension de balisage
 Cette extension lie la valeur d'une propriété dans un modèle de contrôle afin de la définir comme valeur d'une autre propriété exposée dans le contrôle basé sur un modèle.  
@@ -38,7 +38,7 @@ Cette extension lie la valeur d'une propriété dans un modèle de contrôle afi
 |`sourceProperty`|Autre propriété de dépendance qui existe sur le type basé sur un modèle, spécifiée par <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.<br /><br /> ou<br /><br /> Nom de propriété « dotted-down » défini par un autre type que le type de cible basé sur un modèle. Il s'agit en réalité d'un <xref:System.Windows.PropertyPath>. Consultez [syntaxe XAML PropertyPath](propertypath-xaml-syntax.md).|  
   
 ## <a name="remarks"></a>Notes  
- Une `TemplateBinding` est une forme optimisée d’une [liaison](binding-markup-extension.md) pour les scénarios de modèle, analogue à une `Binding` construite avec `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding` est toujours une liaison unidirectionnelle, même si les propriétés ont comme valeur par défaut des liaisons bidirectionnelles. Les deux propriétés doivent toutes être des propriétés de dépendance. Pour obtenir une liaison bidirectionnelle à un parent basé sur un modèle, utilisez l’instruction de liaison suivante à la place `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`. 
+ Une `TemplateBinding` est une forme optimisée d’une [liaison](binding-markup-extension.md) pour les scénarios de modèle, analogue à une `Binding` construite avec `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`. `TemplateBinding` est toujours une liaison unidirectionnelle, même si les propriétés ont comme valeur par défaut des liaisons bidirectionnelles. Les deux propriétés doivent toutes être des propriétés de dépendance. Pour obtenir une liaison bidirectionnelle à un parent basé sur un modèle, utilisez l’instruction de liaison suivante à la place `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`. 
   
  [RelativeSource](relativesource-markupextension.md) est une autre extension de balisage qui est parfois utilisée conjointement avec ou au lieu de `TemplateBinding` pour effectuer une liaison de propriété relative dans un modèle.  
   

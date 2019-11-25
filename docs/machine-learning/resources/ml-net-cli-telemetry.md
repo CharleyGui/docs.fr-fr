@@ -4,12 +4,12 @@ description: Découvrez les fonctionnalités de télémétrie de la CLI ML.NET, 
 ms.topic: conceptual
 ms.date: 09/03/2019
 ms.custom: ''
-ms.openlocfilehash: 77a24416a8008d36006c293cb174b5a8c2f516b7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: edd74b6f3d3c50d5eff012629f0b1db6b62d9021
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929280"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977263"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Collecte des données de télémétrie par la CLI ML.NET
 
@@ -17,15 +17,15 @@ La [CLI ML.NET](https://aka.ms/mlnet-cli) inclut une fonctionnalité de télém�
 
 ## <a name="how-microsoft-uses-the-data"></a>Comment Microsoft utilise les données
 
-L’équipe de produit utilise les données de télémétrie collectées par la CLI ML.NET pour essayer de comprendre comment améliorer les outils. Par exemple, si les clients utilisent rarement une tâche de machine learning spécifique, l’équipe de produit en analyse la raison, puis hiérarchise le développement des fonctionnalités à partir des conclusions qu’elle a tirées. En outre, les données de télémétrie collectées par la CLI ML.NET facilitent le débogage des problèmes tels que les plantages et les anomalies de code. 
+L’équipe de produit utilise les données de télémétrie collectées par la CLI ML.NET pour essayer de comprendre comment améliorer les outils. Par exemple, si les clients utilisent rarement une tâche de machine learning spécifique, l’équipe de produit en analyse la raison, puis hiérarchise le développement des fonctionnalités à partir des conclusions qu’elle a tirées. En outre, les données de télémétrie collectées par la CLI ML.NET facilitent le débogage des problèmes tels que les plantages et les anomalies de code.
 
 Bien que l’équipe de produit apprécie cet insight, nous savons également que tout le monde n’est pas disposé à envoyer ces données. [Découvrez comment désactiver la télémétrie.](#opt-out-of-data-collection)
 
-## <a name="scope"></a>`Scope`
+## <a name="scope"></a>Étendue
 
 La commande `mlnet` lance l’interface CLI ML.NET, mais ne collecte pas elle-même les données de télémétrie.
 
-La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Par exemple :
+La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Exemple :
 
 - `mlnet`
 - `mlnet --help`
@@ -51,12 +51,13 @@ La fonctionnalité recueille les données suivantes :
 - Nom de fichier de jeu de données haché
 - Compartiment de taille de fichier de jeu de données
 - Système d’exploitation et version
-- Valeur du paramètre --task : valeurs de catégorie, telles que `regression`, `binary-classification` et `multiclass-classification`
+- Valeur de--paramètre de tâche : valeurs catégoriques, telles que `regression`, `binary-classification`et `multiclass-classification`
 - Version de ML.NET CLI (c’est-à-dire, 0.3.27703.4)
 
 Les données sont envoyées de manière sécurisée à des serveurs Microsoft à l’aide de la technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/), stockées à un emplacement dont l’accès est strictement limité et utilisées conformément à des contrôles de sécurité stricts à partir de systèmes [Stockage Azure](https://azure.microsoft.com/services/storage/) sécurisés.
 
 ### <a name="data-points-not-collected"></a>Points de données non collectés
+
 La fonctionnalité de télémétrie *ne collecte pas* les données suivantes :
 
 - Données personnelles, telles que les noms d’utilisateur
@@ -67,7 +68,7 @@ Si vous pensez que la fonctionnalité de télémétrie de la CLI ML.NET collecte
 
 ## <a name="license"></a>Licence
 
-La distribution Microsoft de la CLI ML.NET est concédée sous licence avec les [Termes du contrat de licence logicielle Microsoft : bibliothèque Microsoft .NET](https://aka.ms/dotnet-core-eula). Pour plus d’informations sur la collecte et le traitement de données, consultez la section intitulée « Données ».
+La distribution Microsoft de ML.NET CLI est accordée avec les [termes du contrat de licence logiciel Microsoft : Microsoft .Net Library](https://aka.ms/dotnet-core-eula). Pour plus d’informations sur la collecte et le traitement de données, consultez la section intitulée « Données ».
 
 ## <a name="disclosure"></a>Divulgation d’informations
 
@@ -76,6 +77,6 @@ Quand vous exécutez pour la première fois une [commande de la CLI ML.NET](../r
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur l’interface de ligne de commande ML.NET](../reference/ml-net-cli-reference.md)
-- [Termes du contrat de licence logiciel Microsoft : bibliothèque Microsoft .NET](https://aka.ms/dotnet-core-eula)
+- [Termes du contrat de licence logiciel Microsoft : bibliothèque de Microsoft .NET](https://aka.ms/dotnet-core-eula)
 - [Confidentialité chez Microsoft](https://www.microsoft.com/trustcenter/privacy/)
-- [Déclaration de confidentialité Microsoft](https://privacy.microsoft.com/privacystatement)
+- [Déclaration de confidentialité de Microsoft](https://privacy.microsoft.com/privacystatement)

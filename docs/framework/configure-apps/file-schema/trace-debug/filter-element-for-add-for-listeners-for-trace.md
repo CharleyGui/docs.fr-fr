@@ -8,23 +8,23 @@ helpviewer_keywords:
 - filter element for <add> for <listeners> for <trace>
 - <filter> element for <add> for <listeners> for <trace>
 ms.assetid: eb9c18f5-dfa8-47c5-b91b-e4b93e76e1cc
-ms.openlocfilehash: f6b1ec99c5aab8e85df7f1920aca32f49a5be066
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: cc970240ac07ad3ea72be50d1e9af452da638fa9
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699364"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088889"
 ---
-# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<filter > élément de \<Add > pour \<listeners > pour \<trace >
+# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<> un élément de filtre pour \<> d’écouteur \<pour > trace \<
 Ajoute un filtre à un écouteur dans la collection `Listeners` pour une trace.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<listeners >** ](listeners-element-for-trace.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0add >** ](add-element-for-listeners-for-trace.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 **&nbsp;1filter >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<de [**trace**](trace-element.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**écouteurs**](listeners-element-for-trace.md) >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**Ajouter**](add-element-for-listeners-for-trace.md) des >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **&nbsp;&nbsp;\<** >
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -44,7 +44,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une trace.
 |`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe de filtre spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -57,7 +57,7 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une trace.
 |`add`|Ajoute un écouteur à la collection `Listeners`.|  
   
 ## <a name="remarks"></a>Notes  
- L’élément `<filter>` doit être contenu dans un élément `<add>` pour un écouteur de suivi qui spécifie le type de l’écouteur, et pas seulement le nom d’un écouteur défini dans un [> \<sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans une [> \<sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
+ L’élément `<filter>` doit être contenu dans un élément `<add>` pour un écouteur de trace qui spécifie le type de l’écouteur, et pas seulement le nom d’un écouteur défini dans un [\<sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans une [\<sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   

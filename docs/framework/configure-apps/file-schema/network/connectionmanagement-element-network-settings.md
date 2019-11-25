@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: d377a77a4a1b4c57e9edd4fbfa364387f1bae479
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: b769dd8d3ed0c617d0d8f908e7ef516615da09a7
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699428"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088459"
 ---
 # <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement >, élément (paramètres réseau)
 Spécifie le nombre maximal de connexions à un hôte réseau.  
-  
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4System. net >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<connectionManagement >**  
-  
+
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<connectionManagement >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -33,7 +33,7 @@ Spécifie le nombre maximal de connexions à un hôte réseau.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun(e).  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
