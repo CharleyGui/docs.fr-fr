@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Analyser une chaîne (Visual Basic)'
+title: 'Comment : analyser une chaîne'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: b97ce93c1018ec48649ab8b259d5f1a07109b9fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956380"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344496"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a>Procédure : Analyser une chaîne (Visual Basic)
-Cette rubrique montre comment créer une arborescence XML dans C#.  
+# <a name="how-to-parse-a-string-visual-basic"></a>How to: Parse a String (Visual Basic)
+This topic shows how to create an XML tree in C#.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez analyser une chaîne dans Visual Basic à l’aide `XElement.Parse` de la méthode. Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
+ You can parse a string in Visual Basic by using the `XElement.Parse` method. Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
   
- En utilisant des littéraux XML, vous pouvez simplement copier et coller votre code XML dans votre programme Visual Basic.  
+ By using XML literals, you can just copy and paste your XML into your Visual Basic program.  
   
 > [!NOTE]
 > L'analyse de texte ou le chargement d'un document XML à partir d'un fichier texte est moins efficace que la construction fonctionnelle. Si vous initialisez une arborescence XML à partir de code, la construction fonctionnelle requiert moins de temps processeur que l’analyse de texte.  
@@ -51,4 +51,4 @@ Dim contacts as XElement = _
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

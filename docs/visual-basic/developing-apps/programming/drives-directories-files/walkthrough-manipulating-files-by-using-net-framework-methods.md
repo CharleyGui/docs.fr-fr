@@ -1,5 +1,5 @@
 ---
-title: Manipulation de fichiers à l’aide de méthodes du .NET Framework (Visual Basic)
+title: manipulation de fichiers à l’aide de méthodes .NET Framework
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], walkthroughs
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: fc02b795834dba4a777dc78f4c8179238ac593af
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 02cdbcc59e8817ff4ec06c2f78f835cad77b10f2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582484"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333785"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework (Visual Basic)
 

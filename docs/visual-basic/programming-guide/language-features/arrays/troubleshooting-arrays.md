@@ -1,5 +1,5 @@
 ---
-title: Dépannage des tableaux (Visual Basic)
+title: Dépannage des tableaux
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting arrays
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - arrays [Visual Basic], declaration errors
 - arrays [Visual Basic], troubleshooting
 ms.assetid: f4e971c7-c0a4-4ed7-a77a-8d71039f266f
-ms.openlocfilehash: 69d5294eacc59718adb1b0a226594d2cf69273f5
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 3c50c68c2a39aa04cff2dd43b5dfde709aec290f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913463"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349063"
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>Dépannage des tableaux (Visual Basic)
-Cette page répertorie certains problèmes courants qui peuvent se produire lorsque vous travaillez avec des tableaux.  
+This page lists some common problems that can occur when working with arrays.  
   
-## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Déclaration et initialisation d’un tableau d’erreurs de compilation  
- Erreurs de compilation peuvent se produire à partir de la méconnaissance des relations entre les règles de déclaration, la création et initialisation des tableaux. Les causes les plus courantes d’erreurs sont les suivantes :  
+## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Compilation Errors Declaring and Initializing an Array  
+ Compilation errors can arise from misunderstanding of the rules for declaring, creating, and initializing arrays. The most common causes of errors are the following:  
   
-- En fournissant un [nouvel opérateur](../../../../visual-basic/language-reference/operators/new-operator.md) clause après avoir spécifié les longueurs de dimensions dans la déclaration de variable de tableau. Les lignes de code suivantes illustrent des déclarations non valides de ce type.  
+- Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -30,15 +30,15 @@ Cette page répertorie certains problèmes courants qui peuvent se produire lors
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
-- Spécification de longueurs de dimensions plus longtemps que le tableau de niveau supérieur d’un tableau en escalier. La ligne de code suivant montre une déclaration non valide de ce type.  
+- Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
-- En omettant le `New` mot clé lorsque vous spécifiez les valeurs d’élément. La ligne de code suivant montre une déclaration non valide de ce type.  
+- Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
-- En fournissant un `New` clause sans accolades (`{}`). Les lignes de code suivantes illustrent des déclarations non valides de ce type.  
+- Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
@@ -48,16 +48,16 @@ Cette page répertorie certains problèmes courants qui peuvent se produire lors
   
      `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
-## <a name="accessing-an-array-out-of-bounds"></a>L’accès à un tableau hors limites  
- Le processus d’initialisation d’un tableau assigne une limite supérieure et inférieure à chaque dimension. Chaque accès à un élément du tableau doit spécifier un index valide, ou un indice, pour chaque dimension. Si un index est inférieur à sa limite inférieure ou au-dessus de sa limite supérieure, une <xref:System.IndexOutOfRangeException> résultats de l’exception. Le compilateur ne peut pas détecter une telle erreur, donc une erreur se produit au moment de l’exécution.  
+## <a name="accessing-an-array-out-of-bounds"></a>Accessing an Array Out of Bounds  
+ The process of initializing an array assigns an upper bound and a lower bound to each dimension. Every access to an element of the array must specify a valid index, or subscript, for every dimension. If any index is below its lower bound or above its upper bound, an <xref:System.IndexOutOfRangeException> exception results. The compiler cannot detect such an error, so an error occurs at run time.  
   
-### <a name="determining-bounds"></a>Détermination des limites  
- Si un autre composant passe un tableau à votre code, par exemple en tant qu’argument de procédure, vous ne connaissez pas la taille de ce tableau ou les longueurs de ses dimensions. Vous devez toujours déterminer la limite supérieure de chaque dimension d’un tableau avant de tenter d’accéder aux éléments. Si le groupe a été créé par des moyens autres que Visual Basic `New` clause, la limite inférieure peut avoir une valeur différente de 0, et il est plus sûre déterminer ce inférieure.  
+### <a name="determining-bounds"></a>Determining Bounds  
+ If another component passes an array to your code, for example as a procedure argument, you do not know the size of that array or the lengths of its dimensions. You should always determine the upper bound for every dimension of an array before you attempt to access any elements. If the array has been created by some means other than a Visual Basic `New` clause, the lower bound might be something other than 0, and it is safest to determine that lower bound as well.  
   
-### <a name="specifying-the-dimension"></a>Spécification de la Dimension  
- Lorsque vous déterminez les limites d’un tableau multidimensionnel, veillez à vous spécifiez comment la dimension. Le `dimension` paramètres de le <xref:System.Array.GetLowerBound%2A> et <xref:System.Array.GetUpperBound%2A> méthodes sont basés sur 0, lors de la `Rank` paramètres de Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> et <xref:Microsoft.VisualBasic.Information.UBound%2A> fonctions sont de base 1.  
+### <a name="specifying-the-dimension"></a>Specifying the Dimension  
+ When determining the bounds of a multidimensional array, take care how you specify the dimension. The `dimension` parameters of the <xref:System.Array.GetLowerBound%2A> and <xref:System.Array.GetUpperBound%2A> methods are 0-based, while the `Rank` parameters of the Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> and <xref:Microsoft.VisualBasic.Information.UBound%2A> functions are 1-based.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Guide pratique pour Initialiser une Variable tableau en Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [Comment : initialiser une variable tableau en Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

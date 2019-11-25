@@ -1,15 +1,15 @@
 ---
-title: Clonage et Attachement (Visual Basic)
+title: Clonage et attachement
 ms.date: 07/20/2015
 ms.assetid: 3c3bd105-c9d3-49bd-875b-27ab4e8bc7a3
-ms.openlocfilehash: 2849c648d8d280200d742663cbc7188b344d8306
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 22e86ee78d5c3fa0a7b80ae559c39f424fc9d61a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71352967"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345691"
 ---
-# <a name="cloning-vs-attaching-visual-basic"></a>Clonage et Attachement (Visual Basic)
+# <a name="cloning-vs-attaching-visual-basic"></a>Cloning vs. Attaching (Visual Basic)
 Lors de l'ajout d'objets <xref:System.Xml.Linq.XNode> (y compris <xref:System.Xml.Linq.XElement>) ou <xref:System.Xml.Linq.XAttribute>, si le contenu n'a pas de parent, les objets sont simplement attachés à l'arborescence XML. Si le nouveau contenu a déjà un parent et fait partie d'une autre arborescence XML, il est cloné. Le nouveau contenu cloné est alors attaché à l'arborescence XML.  
   
 ## <a name="example"></a>Exemple  
@@ -52,4 +52,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

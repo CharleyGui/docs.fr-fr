@@ -2,17 +2,17 @@
 title: Activité Pick
 ms.date: 03/30/2017
 ms.assetid: b3e49b7f-0285-4720-8c09-11ae18f0d53e
-ms.openlocfilehash: b9ee6c06377760d27bc54d39c1d1f3ecf67ea0d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 51caf020042212b570ae915ead00a4225df2c588
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909418"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283178"
 ---
 # <a name="pick-activity"></a>Activité Pick
-L'activité <xref:System.Activities.Statements.Pick> simplifie la modélisation d'un jeu de déclencheurs d'événements suivis de leurs gestionnaires correspondants.  Une activité <xref:System.Activities.Statements.Pick> contient une collection d'activités <xref:System.Activities.Statements.PickBranch>, où chaque <xref:System.Activities.Statements.PickBranch> est un couplage entre une activité <xref:System.Activities.Statements.PickBranch.Trigger%2A> et une activité <xref:System.Activities.Statements.PickBranch.Action%2A>.  Au moment de l’exécution, les déclencheurs de toutes les branches sont exécutés en parallèle.  Une fois qu'un déclencheur a été exécuté, son action correspondante est exécutée, et tous les autres déclencheurs sont annulés.  L'activité [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] de <xref:System.Activities.Statements.Pick> se comporte de manière similaire à l'activité [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] de <xref:System.Workflow.Activities.ListenActivity>.  
+L'activité <xref:System.Activities.Statements.Pick> simplifie la modélisation d'un jeu de déclencheurs d'événements suivis de leurs gestionnaires correspondants.  Une activité <xref:System.Activities.Statements.Pick> contient une collection d'activités <xref:System.Activities.Statements.PickBranch>, où chaque <xref:System.Activities.Statements.PickBranch> est un couplage entre une activité <xref:System.Activities.Statements.PickBranch.Trigger%2A> et une activité <xref:System.Activities.Statements.PickBranch.Action%2A>.  Au moment de l’exécution, les déclencheurs de toutes les branches sont exécutés en parallèle.  Une fois qu'un déclencheur a été exécuté, son action correspondante est exécutée, et tous les autres déclencheurs sont annulés.  Le comportement de l’activité de <xref:System.Activities.Statements.Pick> [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]est semblable à l’activité <xref:System.Workflow.Activities.ListenActivity> .NET Framework 3,5.  
   
- La capture d’écran suivante de l’exemple du SDK [Utilisation de l’activité Pick](./samples/using-the-pick-activity.md) montre une activité Pick avec deux branches.  Une branche a un déclencheur appelé **Read input**, une activité personnalisée qui lit l’entrée à partir de la ligne de commande. La deuxième branche comporte un déclencheur d’activité <xref:System.Activities.Statements.Delay>. Si le **Read input** activité reçoit des données avant le <xref:System.Activities.Statements.Delay> fin de l’activité, <xref:System.Activities.Statements.Delay> délai sera annulé et un message d’accueil sera écrit dans la console.  Sinon, si l’activité **Read input** ne reçoit pas de données dans le délai alloué, elle est annulée et un message d’expiration du délai d’attente est écrit sur la console.  C’est un modèle commun utilisé pour ajouter un délai d’attente à une action.  
+ La capture d’écran suivante de l’exemple du SDK [Utilisation de l’activité Pick](./samples/using-the-pick-activity.md) montre une activité Pick avec deux branches.  Une branche contient un déclencheur appelé **Read input**, une activité personnalisée qui lit l'entrée à partir de la ligne de commande. La deuxième branche comporte un déclencheur d’activité <xref:System.Activities.Statements.Delay>. Si l'activité **Read input** reçoit des données avant la fin de l'activité <xref:System.Activities.Statements.Delay>, le délai <xref:System.Activities.Statements.Delay> sera annulé et un message d'accueil sera écrit dans la console.  Sinon, si l’activité **Read input** ne reçoit pas de données dans le délai alloué, elle est annulée et un message d’expiration du délai d’attente est écrit sur la console.  C’est un modèle commun utilisé pour ajouter un délai d’attente à une action.  
   
  ![Activité Pick](./media/pick-activity/pick-activity-two-branches.jpg)  
   

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Requête la plus grande ou des fichiers dans une arborescence de répertoires (LINQ) (Visual Basic)'
+title: 'Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-ms.openlocfilehash: 91cfba02bade5811dbc5f45a5106731ff637efcf
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4f7dcb46670612695b5a7219b12a7f2e83746af2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593281"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347664"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Procédure : Requête la plus grande ou des fichiers dans une arborescence de répertoires (LINQ) (Visual Basic)
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)
 Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
   
 - Comment récupérer la taille en octets du plus grand fichier.  
@@ -118,7 +118,7 @@ End Module
  La requête appelle une méthode distincte pour obtenir la taille du fichier en octets et ainsi permettre l’utilisation de l’exception éventuellement levée si un fichier a été supprimé sur un autre thread depuis la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> en utilisant la taille en octets la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, nous respectons la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Créer un projet d’application console VB.NET, avec un `Imports` instruction pour l’espace de noms System.Linq.
+Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
   
 ## <a name="see-also"></a>Voir aussi
 

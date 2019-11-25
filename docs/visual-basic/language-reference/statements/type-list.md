@@ -1,5 +1,5 @@
 ---
-title: Liste de types (Visual Basic)
+title: Type List
 ms.date: 07/20/2015
 f1_keywords:
 - StructureConstraint
@@ -24,16 +24,16 @@ helpviewer_keywords:
 - type parameters
 - constraints, Class keyword
 ms.assetid: 56db947a-2ae8-40f2-a70a-960764e9d0db
-ms.openlocfilehash: a0d489684b8f98e871211e6d0d95d42284275954
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 3f2aaa65293ed2bcc6c8eeb4bd77e49907d93425
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582894"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352775"
 ---
 # <a name="type-list-visual-basic"></a>Liste de types (Visual Basic)
 
-Spécifie les *paramètres de type* pour un élément de programmation *générique* . Plusieurs paramètres sont séparés par des virgules. Voici la syntaxe d’un paramètre de type.
+Specifies the *type parameters* for a *generic* programming element. Multiple parameters are separated by commas. Following is the syntax for one type parameter.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,55 +45,55 @@ Spécifie les *paramètres de type* pour un élément de programmation *généri
 
 |Terme|Définition|
 |---|---|
-|`genericmodifier`|Optionnel. Peut être utilisé uniquement dans les interfaces et les délégués génériques. Vous pouvez déclarer un covariant de type à l’aide du mot clé [out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md) ou de contravariant à l’aide du mot clé [in](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md) . Consultez [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|
-|`typename`|Requis. Nom du paramètre de type. Il s’agit d’un espace réservé, à remplacer par un type défini fourni par l’argument de type correspondant.|
-|`constraintlist`|Optionnel. Liste des exigences qui contraignent le type de données qui peut être fourni pour `typename`. Si vous avez plusieurs contraintes, mettez-les entre accolades (`{ }`) et séparez-les par des virgules. Vous devez introduire la liste de contraintes avec le mot clé [As](../../../visual-basic/language-reference/statements/as-clause.md) . Vous n’utilisez `As` qu’une seule fois, au début de la liste.|
+|`genericmodifier`|Optionnel. Can be used only in generic interfaces and delegates. You can declare a type covariant by using the [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md) keyword or contravariant by using the [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md) keyword. Consultez [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|
+|`typename`|Requis. Name of the type parameter. This is a placeholder, to be replaced by a defined type supplied by the corresponding type argument.|
+|`constraintlist`|Optionnel. List of requirements that constrain the data type that can be supplied for `typename`. If you have multiple constraints, enclose them in curly braces (`{ }`) and separate them with commas. You must introduce the constraint list with the [As](../../../visual-basic/language-reference/statements/as-clause.md) keyword. You use `As` only once, at the beginning of the list.|
 
 ## <a name="remarks"></a>Notes
 
-Chaque élément de programmation générique doit accepter au moins un paramètre de type. Un paramètre de type est un espace réservé pour un type spécifique (un *élément construit*) que le code client spécifie lorsqu’il crée une instance du type générique. Vous pouvez définir une classe, une structure, une interface, une procédure ou un délégué générique.
+Every generic programming element must take at least one type parameter. A type parameter is a placeholder for a specific type (a *constructed element*) that client code specifies when it creates an instance of the generic type. You can define a generic class, structure, interface, procedure, or delegate.
 
-Pour plus d’informations sur la définition d’un type générique, consultez [types génériques dans Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md). Pour plus d’informations sur les noms de paramètres de type, consultez [noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+For more information on when to define a generic type, see [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md). For more information on type parameter names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
 ## <a name="rules"></a>Règles
 
-- **Parenthèses.** Si vous fournissez une liste de paramètres de type, vous devez la placer entre parenthèses, et vous devez introduire la liste avec le mot clé [of](../../../visual-basic/language-reference/statements/of-clause.md) . Vous n’utilisez `Of` qu’une seule fois, au début de la liste.
+- **Parentheses.** If you supply a type parameter list, you must enclose it in parentheses, and you must introduce the list with the [Of](../../../visual-basic/language-reference/statements/of-clause.md) keyword. You use `Of` only once, at the beginning of the list.
 
-- **Contraintes.** Une liste de *contraintes* sur un paramètre de type peut inclure les éléments suivants dans n’importe quelle combinaison :
+- **Constraints.** A list of *constraints* on a type parameter can include the following items in any combination:
 
-  - N’importe quel nombre d’interfaces. Le type fourni doit implémenter chaque interface dans cette liste.
+  - Any number of interfaces. The supplied type must implement every interface in this list.
 
-  - Au plus une classe. Le type fourni doit hériter de cette classe.
+  - At most one class. The supplied type must inherit from that class.
 
-  - Mot clé `New`. Le type fourni doit exposer un constructeur sans paramètre auquel votre type générique peut accéder. Cela est utile si vous limitez un paramètre de type par une ou plusieurs interfaces. Un type qui implémente des interfaces n’expose pas nécessairement un constructeur et, selon le niveau d’accès d’un constructeur, le code dans le type générique peut ne pas être en mesure d’y accéder.
+  - Mot clé `New`. The supplied type must expose a parameterless constructor that your generic type can access. This is useful if you constrain a type parameter by one or more interfaces. A type that implements interfaces does not necessarily expose a constructor, and depending on the access level of a constructor, the code within the generic type might not be able to access it.
 
-  - Le mot clé `Class` ou le mot clé `Structure`. Le mot clé `Class` permet de contraindre un paramètre de type générique à exiger que tout argument de type soit passé comme type de référence, par exemple une chaîne, un tableau ou un délégué, ou un objet créé à partir d’une classe. Le mot clé `Structure` permet de contraindre un paramètre de type générique à exiger que tout argument de type soit passé comme type de valeur, par exemple une structure, une énumération ou un type de données élémentaire. Vous ne pouvez pas inclure à la fois des `Class` et des `Structure` dans le même `constraintlist`.
+  - Either the `Class` keyword or the `Structure` keyword. The `Class` keyword constrains a generic type parameter to require that any type argument passed to it be a reference type, for example a string, array, or delegate, or an object created from a class. The `Structure` keyword constrains a generic type parameter to require that any type argument passed to it be a value type, for example a structure, enumeration, or elementary data type. You cannot include both `Class` and `Structure` in the same `constraintlist`.
 
-  Le type fourni doit satisfaire à toutes les exigences que vous incluez dans `constraintlist`.
+  The supplied type must satisfy every requirement you include in `constraintlist`.
 
-  Les contraintes sur chaque paramètre de type sont indépendantes des contraintes sur d’autres paramètres de type.
+  Constraints on each type parameter are independent of constraints on other type parameters.
 
 ## <a name="behavior"></a>Comportement
 
-- **Substitution au moment de la compilation.** Lorsque vous créez un type construit à partir d’un élément de programmation générique, vous fournissez un type défini pour chaque paramètre de type. Le compilateur Visual Basic remplace ce type fourni pour chaque occurrence de `typename` dans l’élément générique.
+- **Compile-Time Substitution.** When you create a constructed type from a generic programming element, you supply a defined type for each type parameter. The Visual Basic compiler substitutes that supplied type for every occurrence of `typename` within the generic element.
 
-- **Absence de contraintes.** Si vous ne spécifiez pas de contraintes sur un paramètre de type, votre code est limité aux opérations et aux membres pris en charge par le [type de données objet](../../../visual-basic/language-reference/data-types/object-data-type.md) pour ce paramètre de type.
+- **Absence of Constraints.** If you do not specify any constraints on a type parameter, your code is limited to the operations and members supported by the [Object Data Type](../../../visual-basic/language-reference/data-types/object-data-type.md) for that type parameter.
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre une définition squelette d’une classe Dictionary générique, y compris une fonction squelette pour ajouter une nouvelle entrée au dictionnaire.
+The following example shows a skeleton definition of a generic dictionary class, including a skeleton function to add a new entry to the dictionary.
 
 [!code-vb[VbVbalrStatements#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#3)]
 
 ## <a name="example"></a>Exemple
 
-Étant donné que `dictionary` est générique, le code qui l’utilise peut créer divers objets à partir de celui-ci, chacun ayant la même fonctionnalité mais agissant sur un type de données différent. L’exemple suivant montre une ligne de code qui crée un objet `dictionary` avec des entrées `String` et des clés de `Integer`.
+Because `dictionary` is generic, the code that uses it can create a variety of objects from it, each having the same functionality but acting on a different data type. The following example shows a line of code that creates a `dictionary` object with `String` entries and `Integer` keys.
 
 [!code-vb[VbVbalrStatements#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#4)]
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant illustre la définition de squelette équivalente générée par l’exemple précédent.
+The following example shows the equivalent skeleton definition generated by the preceding example.
 
 [!code-vb[VbVbalrStatements#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#5)]
 
@@ -101,7 +101,7 @@ L’exemple suivant illustre la définition de squelette équivalente générée
 
 - [Of](../../../visual-basic/language-reference/statements/of-clause.md)
 - [New (opérateur)](../../../visual-basic/language-reference/operators/new-operator.md)
-- [Niveaux d’accès dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Object (type de données)](../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Structure (instruction)](../../../visual-basic/language-reference/statements/structure-statement.md)

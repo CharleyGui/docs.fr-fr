@@ -1,17 +1,17 @@
 ---
-title: Types de retour Async (Visual Basic)
+title: Types de retour Async
 ms.date: 07/20/2015
 ms.assetid: 07890291-ee72-42d3-932a-fa4d312f2c60
-ms.openlocfilehash: a5553070dd68a0bc3eaad1c5e8c000f7a31f8783
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 96d3a945a49a12f7c2d5d60e8ee59ce047a0bae6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423967"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347975"
 ---
-# <a name="async-return-types-visual-basic"></a>Types de retour Async (Visual Basic)
+# <a name="async-return-types-visual-basic"></a>Async Return Types (Visual Basic)
 
-Les méthodes async ont trois types de retour possibles : <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task> et void. En Visual Basic, le type de retour void est écrit sous forme de procédure [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md). Pour plus d’informations sur les méthodes Async, consultez [programmation asynchrone avec Async et await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
+Les méthodes async ont trois types de retour possibles : <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task> et void. En Visual Basic, le type de retour void est écrit sous forme de procédure [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md). For more information about async methods, see [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
 
 Chaque type de retour est examiné dans l’une des sections suivantes, et vous trouverez un exemple complet qui utilise les trois types à la fin de la rubrique.
 
@@ -20,7 +20,7 @@ Chaque type de retour est examiné dans l’une des sections suivantes, et vous 
 
 ## <a name="BKMK_TaskTReturnType"></a> Type de retour Task(T)
 
-Le type de retour <xref:System.Threading.Tasks.Task%601> est utilisé pour une méthode Async qui contient une instruction [Return](../../../../visual-basic/language-reference/statements/return-statement.md) dans laquelle l’opérande a le type `TResult`.
+The <xref:System.Threading.Tasks.Task%601> return type is used for an async method that contains a [Return](../../../../visual-basic/language-reference/statements/return-statement.md) statement in which the operand has type `TResult`.
 
 Dans l’exemple suivant, la méthode async `TaskOfT_MethodAsync` contient une instruction return qui retourne un entier. La déclaration de méthode doit donc spécifier un type de retour `Task(Of Integer)`.
 
@@ -47,7 +47,7 @@ Async Function TaskOfT_MethodAsync() As Task(Of Integer)
 End Function
 ```
 
-Quand `TaskOfT_MethodAsync` est appelé à partir d’une expression await, celle-ci récupère la valeur entière (la valeur de `leisureHours`) qui est stockée dans la tâche retournée par `TaskOfT_MethodAsync`. Pour plus d’informations sur les expressions await, consultez [await, opérateur](../../../../visual-basic/language-reference/operators/await-operator.md).
+Quand `TaskOfT_MethodAsync` est appelé à partir d’une expression await, celle-ci récupère la valeur entière (la valeur de `leisureHours`) qui est stockée dans la tâche retournée par `TaskOfT_MethodAsync`. For more information about await expressions, see [Await Operator](../../../../visual-basic/language-reference/operators/await-operator.md).
 
 Le code suivant appelle et attend la méthode `TaskOfT_MethodAsync`. Le résultat est assigné à la variable `result1`.
 
@@ -83,7 +83,7 @@ textBox1.Text &= $"Value of resultTask.Result:  {integerTask.Result}" & vbCrLf
 
 ## <a name="BKMK_TaskReturnType"></a> Type de retour Task
 
-Les méthodes async qui ne contiennent pas d’instruction return ou qui en contiennent une qui ne retourne pas d’opérande ont généralement un type de retour <xref:System.Threading.Tasks.Task>. Ces méthodes seraient des [sous](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) -procédures si elles ont été écrites pour s’exécuter de façon synchrone. Si vous utilisez un type de retour `Task` pour une méthode async, une méthode d’appel peut utiliser un opérateur `Await` pour suspendre l’achèvement de l’appelant jusqu’à ce que la méthode async soit terminée.
+Les méthodes async qui ne contiennent pas d’instruction return ou qui en contiennent une qui ne retourne pas d’opérande ont généralement un type de retour <xref:System.Threading.Tasks.Task>. Such methods would be [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) procedures if they were written to run synchronously. Si vous utilisez un type de retour `Task` pour une méthode async, une méthode d’appel peut utiliser un opérateur `Await` pour suspendre l’achèvement de l’appelant jusqu’à ce que la méthode async soit terminée.
 
 Dans l’exemple suivant, la méthode async `Task_MethodAsync` ne contient pas d’instruction return. Par conséquent, vous spécifiez le type de retour `Task` pour la méthode, ce qui permet à `Task_MethodAsync` d’être attendu. La définition du type `Task` n’inclut pas de propriété `Result` pour stocker une valeur de retour.
 
@@ -101,7 +101,7 @@ Async Function Task_MethodAsync() As Task
 End Function
 ```
 
-`Task_MethodAsync` est appelé et attendu à l’aide d’une instruction await et non d’une expression await, à l’instar de l’instruction d’appel d’une méthode `Sub` synchrone ou d’une méthode qui retourne une valeur void. Dans ce cas, l’application d’un opérateur `Await` ne produit pas de valeur.
+`Task_MethodAsync` est appelé et attendu à l’aide d’une instruction await et non d’une expression await, à l’instar de l’instruction d’appel d’une méthode `Sub` synchrone ou d’une méthode qui retourne une valeur void. The application of an `Await` operator in this case doesn't produce a value.
 
 Le code suivant appelle et attend la méthode `Task_MethodAsync`.
 
@@ -110,7 +110,7 @@ Le code suivant appelle et attend la méthode `Task_MethodAsync`.
 Await Task_MethodAsync()
 ```
 
-Comme dans l’exemple précédent <xref:System.Threading.Tasks.Task%601>, vous pouvez séparer l’appel à `Task_MethodAsync` de l’application d’un opérateur `Await`, comme le montre le code suivant. Cependant, n’oubliez pas qu’un type `Task` n’a pas de propriété `Result` et qu’aucune valeur n’est générée quand un opérateur await est appliqué à un type `Task`.
+As in the previous <xref:System.Threading.Tasks.Task%601> example, you can separate the call to `Task_MethodAsync` from the application of an `Await` operator, as the following code shows. Cependant, n’oubliez pas qu’un type `Task` n’a pas de propriété `Result` et qu’aucune valeur n’est générée quand un opérateur await est appliqué à un type `Task`.
 
 Le code suivant sépare l’appel à `Task_MethodAsync` de l’attente de la tâche que retourne `Task_MethodAsync`.
 
@@ -126,7 +126,7 @@ Await simpleTask
 
 ## <a name="BKMK_VoidReturnType"></a> Type de retour void
 
-L’utilisation principale de `Sub` procédures est dans les gestionnaires d’événements, où il n’y a aucun type de retour (appelé type de retour void dans d’autres langages). Le retour de type void peut aussi être utilisé pour remplacer les méthodes qui retournent void ou pour les méthodes qui effectuent des activités considérées comme autonomes après activation (« Fire and Forget ». Toutefois, vous devez retourner un type `Task` dans la mesure du possible, car une méthode async qui retourne un type void ne peut pas être attendue. Tout appelant d’une telle méthode doit pouvoir continuer jusqu’à l’achèvement sans attendre que la méthode async soit terminée, et l’appelant doit être indépendant des valeurs ou des exceptions générées par la méthode async.
+The primary use of `Sub` procedures is in event handlers, where there is no return type (referred to as a void return type in other languages). Le retour de type void peut aussi être utilisé pour remplacer les méthodes qui retournent void ou pour les méthodes qui effectuent des activités considérées comme autonomes après activation (« Fire and Forget ». Toutefois, vous devez retourner un type `Task` dans la mesure du possible, car une méthode async qui retourne un type void ne peut pas être attendue. Tout appelant d’une telle méthode doit pouvoir continuer jusqu’à l’achèvement sans attendre que la méthode async soit terminée, et l’appelant doit être indépendant des valeurs ou des exceptions générées par la méthode async.
 
 L’appelant d’une méthode async qui retourne une valeur void ne peut pas intercepter les exceptions levées à partir de la méthode, et ces exceptions non gérées peuvent entraîner l’échec de votre application. Si une exception se produit dans une méthode asyn qui retourne <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>, l’exception est stockée dans la tâche retournée et est à nouveau levée pendant l’attente de la tâche. Par conséquent, veillez à ce qu’une méthode async capable de générer une exception ait le type de retour <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> et que les appels à la méthode soient attendus.
 
@@ -161,7 +161,7 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
 
      La boîte de dialogue **Nouveau projet** s'affiche.
 
-3. Dans la catégorie **installé**, **modèles** , choisissez **Visual Basic**, puis choisissez **Windows**. Choisissez **Application WPF** dans la liste des types de projets.
+3. In the **Installed**, **Templates** category, choose **Visual Basic**, and then choose **Windows**. Choisissez **Application WPF** dans la liste des types de projets.
 
 4. Entrez `AsyncReturnTypes` comme nom de projet, puis cliquez sur le bouton **OK**.
 
@@ -188,7 +188,7 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
 
      Une fenêtre simple contenant une zone de texte et un bouton apparaît dans la fenêtre **Design** de MainWindow.xaml.
 
-7. Dans **Explorateur de solutions**, ouvrez le menu contextuel de MainWindow. Xaml. vb, puis choisissez **afficher le code**.
+7. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.
 
 8. Remplacez le code situé dans MainWindow.xaml.vb par le code suivant.
 
@@ -279,7 +279,7 @@ Le projet Windows Presentation Foundation (WPF) suivant contient les exemples de
 
 9. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
-     La sortie suivante doit s’afficher :
+     The following output should appear:
 
     ```console
     Application can continue working while the Task<T> runs. . . .

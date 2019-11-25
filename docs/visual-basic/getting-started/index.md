@@ -1,16 +1,16 @@
 ---
-title: Bien démarrer avec Visual Basic
+title: Prise en main
 ms.date: 09/10/2018
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: c5cd4ab82fde1604dea14718b3cdd1a104fdf922
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 386f7aa74efbcb69e1a2fc0e528c88f25b1d5e2b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425151"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344822"
 ---
 # <a name="get-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 
@@ -47,13 +47,13 @@ Fournit des liens vers un exemple de code en Visual Basic.
 - [Procédures pas à pas](../../visual-basic/walkthroughs.md)\
 Fournit une liste de pages d’aide qui illustrent les aspects du langage Visual Basic.
 
-- [Options de commentaires pour Visual Studio](/visualstudio/ide/feedback-options) \
+- [Feedback options for Visual Studio](/visualstudio/ide/feedback-options)\
 Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.
 
 - [Visual Studio](/visualstudio/)\
 Fournit des liens vers la documentation Visual Studio.
 
-- [C#](../../csharp/index.md)\
+- [C#](../../csharp/index.yml)\
 Fournit des liens vers la documentation sur le développement d’applications avec Visual C#.
 
 - [Visual C++](/cpp/)\

@@ -1,26 +1,26 @@
 ---
-title: Délégués (Visual Basic)
+title: Délégués
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [Visual Basic]
 - Visual Basic code, delegates
 ms.assetid: 410b60dc-5e60-4ec0-bfae-426755a2ee28
-ms.openlocfilehash: b3f333f1714a66a8ff462000385af92cf343a19e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15b4cb0a038429c5fe67d3e013818a7a2170abcc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050595"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345235"
 ---
 # <a name="delegates-visual-basic"></a>Délégués (Visual Basic)
 
-Les délégués sont des objets qui font référence à des méthodes. Ils sont parfois décrits comme des *pointeurs de fonction de type sécurisé*, car ils sont comparables aux pointeurs de fonction utilisés dans d’autres langages de programmation. Mais contrairement aux pointeurs de fonction, les délégués de Visual Basic sont un type de référence basé sur la classe <xref:System.Delegate?displayProperty=nameWithType>. Les délégués peuvent faire référence à des méthodes partagées (méthodes qui peuvent être appelées sans une instance spécifique de classe) et des méthodes d’instance.
+Les délégués sont des objets qui font référence à des méthodes. Ils sont parfois décrits comme des *pointeurs de fonction de type sécurisé*, car ils sont comparables aux pointeurs de fonction utilisés dans d’autres langages de programmation. But unlike function pointers, Visual Basic delegates are a reference type based on the class <xref:System.Delegate?displayProperty=nameWithType>. Les délégués peuvent faire référence à des méthodes partagées (méthodes qui peuvent être appelées sans une instance spécifique de classe) et des méthodes d’instance.
 
 ## <a name="delegates-and-events"></a>Délégués et événements
 
-Les délégués sont utiles dans les situations où un intermédiaire est nécessaire entre une procédure appelante et la procédure appelée. Par exemple, vous pouvez créer un objet qui déclenche des événements pour pouvoir appeler différents gestionnaires d’événements dans différentes circonstances. Malheureusement, l’objet qui déclenche les événements ne peut pas savoir à l’avance quel gestionnaire d’événements gère un événement donné. Visual Basic vous permet de gestionnaires d’événements associer de façon dynamique avec des événements en créant un délégué pour vous lorsque vous utilisez la `AddHandler` instruction. À l’exécution, le délégué transmet les appels au gestionnaire d’événements approprié.
+Les délégués sont utiles dans les situations où un intermédiaire est nécessaire entre une procédure appelante et la procédure appelée. Par exemple, vous pouvez créer un objet qui déclenche des événements pour pouvoir appeler différents gestionnaires d’événements dans différentes circonstances. Malheureusement, l’objet qui déclenche les événements ne peut pas savoir à l’avance quel gestionnaire d’événements gère un événement donné. Visual Basic lets you dynamically associate event handlers with events by creating a delegate for you when you use the `AddHandler` statement. À l’exécution, le délégué transmet les appels au gestionnaire d’événements approprié.
 
-Bien que vous pouvez créer vos propres délégués, dans la plupart des cas, Visual Basic crée le délégué et s’occupe des détails pour vous. Par exemple, une instruction `Event` définit implicitement une classe déléguée nommée `<EventName>EventHandler` comme classe imbriquée de la classe contenant l’instruction `Event`, avec la même signature que l’événement. L’instruction `AddressOf` crée implicitement une instance d’un délégué qui fait référence à une procédure spécifique. Les deux lignes de code suivantes sont équivalentes. Dans la première ligne, vous voyez la création explicite d’une instance de `EventHandler`, avec une référence à la méthode `Button1_Click` envoyée comme argument. La deuxième ligne est un moyen plus commode de faire la même chose.
+Although you can create your own delegates, in most cases Visual Basic creates the delegate and takes care of the details for you. Par exemple, une instruction `Event` définit implicitement une classe déléguée nommée `<EventName>EventHandler` comme classe imbriquée de la classe contenant l’instruction `Event`, avec la même signature que l’événement. L’instruction `AddressOf` crée implicitement une instance d’un délégué qui fait référence à une procédure spécifique. Les deux lignes de code suivantes sont équivalentes. Dans la première ligne, vous voyez la création explicite d’une instance de `EventHandler`, avec une référence à la méthode `Button1_Click` envoyée comme argument. La deuxième ligne est un moyen plus commode de faire la même chose.
 
 [!code-vb[VbVbalrDelegates#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#6)]
 
@@ -66,7 +66,7 @@ La signature de la fonction doit correspondre à celle du type délégué. Pour 
 
 |Titre|Description|
 |-----------|-----------------|
-|[Guide pratique pour Appeler une méthode déléguée](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)|Fournit un exemple d’association d’une méthode à un délégué, puis d’appel de cette méthode par le biais du délégué.|
-|[Guide pratique pour Passer des procédures à une autre procédure en Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)|Montre comment utiliser des délégués pour transmettre une procédure à une autre procédure.|
+|[Guide pratique : appeler une méthode déléguée](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)|Fournit un exemple d’association d’une méthode à un délégué, puis d’appel de cette méthode par le biais du délégué.|
+|[Guide pratique : passer des procédures à une autre procédure en Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)|Montre comment utiliser des délégués pour transmettre une procédure à une autre procédure.|
 |[Conversion simplifiée des délégués](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)|Explique comment affecter des sous-routines et des fonctions aux délégués ou aux gestionnaires même si leurs signatures ne sont pas identiques.|
 |[Événements](../../../../visual-basic/programming-guide/language-features/events/index.md)|Fournit une vue d’ensemble des événements en Visual Basic.|

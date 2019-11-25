@@ -1,18 +1,19 @@
 ---
-title: 'Procédure : créer un répertoire en Visual Basic'
+title: 'Comment : créer un répertoire'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - directories [Visual Basic], creating
 - folders [Visual Basic], creating
 ms.assetid: 0351a2ca-24d8-43b5-bb39-9b99e6401cff
-ms.openlocfilehash: 54696dab41c99774bb3638e0c19837a906144d27
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 3d838352a0a3dd69a1555dc34b8acba3afba278b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629078"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348815"
 ---
-# <a name="how-to-create-a-directory-in-visual-basic"></a>Procédure : créer un répertoire en Visual Basic
+# <a name="how-to-create-a-directory-in-visual-basic"></a>Guide pratique pour créer un répertoire en Visual Basic
+
 Utilisez la méthode `CreateDirectory` de l’objet `My.Computer.FileSystem` pour créer des répertoires.  
   
  Si le répertoire existe déjà, aucune exception n’est levée.  
@@ -24,6 +25,7 @@ Utilisez la méthode `CreateDirectory` de l’objet `My.Computer.FileSystem` pou
      [!code-vb[VbVbcnMyFileSystem#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#2)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les conditions ci-dessous peuvent générer une exception.  
   
 - Le format du nom du répertoire est incorrect. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (<xref:System.ArgumentException>).  

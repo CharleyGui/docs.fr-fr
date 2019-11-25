@@ -1,15 +1,15 @@
 ---
-title: 'Comment : calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (Visual Basic)'
+title: 'Comment : calculer des valeurs de colonnes dans un fichier texte CSV (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 4fa362b90ec6513136d1597461cbfd5a4023f9ec
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9ce6ec4c8d109fa06e672e967ac36c615a8fb38e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524176"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348396"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Comment : calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (Visual Basic)
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>How to: Compute Column Values in a CSV Text File (LINQ) (Visual Basic)
 
 Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, Average, Min et Max, avec les colonnes d’un fichier .csv. Les exemples de principes montrés ici sont applicables à d’autres types de texte structuré.
 
@@ -145,9 +145,9 @@ La requête fonctionne à l’aide de la méthode <xref:System.String.Split%2A> 
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

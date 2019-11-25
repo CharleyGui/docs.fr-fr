@@ -1,23 +1,23 @@
 ---
-title: 'Procédure : Créer une Extension méthode Add utilisée par un initialiseur de Collection (Visual Basic)'
+title: 'Comment : créer une méthode d’extension Add utilisée par un initialiseur de collection'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: f64b52c7-8b11-4410-93a6-cb3aeebcc772
-ms.openlocfilehash: a5af41e25b8f82aa173e2df28cc41b313c8d68dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d5f9d38b413b79f111a14ec3829c57a9797ce54
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907073"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346712"
 ---
-# <a name="how-to-create-an-add-extension-method-used-by-a-collection-initializer-visual-basic"></a>Procédure : Créer une Extension méthode Add utilisée par un initialiseur de Collection (Visual Basic)
-Lorsque vous utilisez un initialiseur de collection pour créer une collection, le compilateur Visual Basic cherche un `Add` méthode du type de collection pour laquelle les paramètres pour le `Add` méthode correspondent aux types des valeurs dans l’initialiseur de collection. Cela `Add` méthode est utilisée pour remplir la collection avec les valeurs à partir de l’initialiseur de collection.  
+# <a name="how-to-create-an-add-extension-method-used-by-a-collection-initializer-visual-basic"></a>Comment : créer une méthode d'extension Add utilisée par un initialiseur de collection (Visual Basic)
+When you use a collection initializer to create a collection, the Visual Basic compiler searches for an `Add` method of the collection type for which the parameters for the `Add` method match the types of the values in the collection initializer. This `Add` method is used to populate the collection with the values from the collection initializer.  
   
- Si aucune correspondance `Add` méthode existe et vous ne pouvez pas modifier le code de la collection, vous pouvez ajouter une méthode d’extension appelée `Add` qui accepte les paramètres qui sont requis par l’initialiseur de collection. Il s’agit généralement ce que vous devez faire lorsque vous utilisez des initialiseurs de collection pour les collections génériques.  
+ If no matching `Add` method exists and you cannot modify the code for the collection, you can add an extension method called `Add` that takes the parameters that are required by the collection initializer. This is typically what you need to do when you use collection initializers for generic collections.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment ajouter une méthode d’extension générique <xref:System.Collections.Generic.List%601> tapez afin qu’un initialiseur de collection peut être utilisé pour ajouter des objets de type `Employee`. La méthode d’extension vous permet d’utiliser la syntaxe d’initialiseur de collection abrégée.  
+ The following example shows how to add an extension method to the generic <xref:System.Collections.Generic.List%601> type so that a collection initializer can be used to add objects of type `Employee`. The extension method enables you to use the shortened collection initializer syntax.  
   
  [!code-vb[VbVbalrCollectionInitializersHowTo1#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializersHowTo1/VB/Module1.vb#1)]  
   
@@ -28,4 +28,4 @@ Lorsque vous utilisez un initialiseur de collection pour créer une collection, 
 ## <a name="see-also"></a>Voir aussi
 
 - [Initialiseurs de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
-- [Guide pratique pour Créer une Collection utilisée par un initialiseur de Collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)
+- [Guide pratique : créer une collection utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)

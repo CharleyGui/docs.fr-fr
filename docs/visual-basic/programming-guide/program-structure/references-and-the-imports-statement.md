@@ -1,5 +1,5 @@
 ---
-title: Références et l'instruction Imports (Visual Basic)
+title: Références et l'instruction Imports
 ms.date: 07/20/2015
 helpviewer_keywords:
 - assemblies [Visual Basic], namespaces
@@ -9,49 +9,49 @@ helpviewer_keywords:
 - Imports statement [Visual Basic], referencing assemblies
 - assemblies [Visual Basic], references
 ms.assetid: 38149bd4-0a6f-4b31-b5f8-94a8c33f1600
-ms.openlocfilehash: 5b810af86f8659ffbe27d23d36aece408516a9bd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 31b4fe001f2b8a62ac30488053c57cd186020421
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972058"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347276"
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>Références et l'instruction Imports (Visual Basic)
-Vous pouvez rendre des objets externes disponibles pour votre projet en sélectionnant la commande **Ajouter une référence** dans le menu **projet** . Les références dans Visual Basic peuvent pointer vers des assemblys, comme les bibliothèques de types, mais contiennent davantage d’informations.  
+You can make external objects available to your project by choosing the **Add Reference** command on the **Project** menu. References in Visual Basic can point to assemblies, which are like type libraries but contain more information.  
   
-## <a name="the-imports-statement"></a>Instruction Imports  
- Les assemblys incluent un ou plusieurs espaces de noms. Lorsque vous ajoutez une référence à un assembly, vous pouvez également ajouter `Imports` une instruction à un module qui contrôle la visibilité des espaces de noms de cet assembly dans le module. L' `Imports` instruction fournit un contexte d’étendue qui vous permet d’utiliser uniquement la partie de l’espace de noms nécessaire pour fournir une référence unique.  
+## <a name="the-imports-statement"></a>The Imports Statement  
+ Assemblies include one or more namespaces. When you add a reference to an assembly, you can also add an `Imports` statement to a module that controls the visibility of that assembly's namespaces within the module. The `Imports` statement provides a scoping context that lets you use only the portion of the namespace necessary to supply a unique reference.  
   
- L' `Imports` instruction a la syntaxe suivante :  
+ The `Imports` statement has the following syntax:  
   
  `Imports [Aliasname =] Namespace`  
   
- `Aliasname`fait référence à un nom abrégé que vous pouvez utiliser dans le code pour faire référence à un espace de noms importé. `Namespace`est un espace de noms disponible via une référence de projet, par le biais d’une définition dans le projet `Imports` ou par le biais d’une instruction précédente.  
+ `Aliasname` refers to a short name you can use within code to refer to an imported namespace. `Namespace` is a namespace available through either a project reference, through a definition within the project, or through a previous `Imports` statement.  
   
- Un module peut contenir un nombre quelconque `Imports` d’instructions. Ils doivent apparaître après toutes `Option` les instructions, le cas échéant, mais avant tout autre code.  
+ A module may contain any number of `Imports` statements. They must appear after any `Option` statements, if present, but before any other code.  
   
 > [!NOTE]
-> Ne confondez pas les références de `Imports` projet avec l' `Declare` instruction ou l’instruction. Les références de projet rendent des objets externes, tels que des objets dans les assemblys, accessibles aux projets Visual Basic. L' `Imports` instruction est utilisée pour simplifier l’accès aux références de projet, mais ne fournit pas l’accès à ces objets. L' `Declare` instruction permet de déclarer une référence à une procédure externe dans une bibliothèque de liens dynamiques (dll).  
+> Do not confuse project references with the `Imports` statement or the `Declare` statement. Project references make external objects, such as objects in assemblies, available to Visual Basic projects. The `Imports` statement is used to simplify access to project references, but does not provide access to these objects. The `Declare` statement is used to declare a reference to an external procedure in a dynamic-link library (DLL).  
   
-## <a name="using-aliases-with-the-imports-statement"></a>Utilisation d’alias avec l’instruction Imports  
- Grâce `Imports` à l’instruction, il est plus facile d’accéder aux méthodes des classes en éliminant le besoin de taper explicitement les noms complets des références. Les alias vous permettent d’assigner un nom plus convivial à une seule partie d’un espace de noms. Par exemple, la séquence de retour chariot/saut de ligne qui provoque l’affichage d’une seule partie du texte sur plusieurs lignes fait partie <xref:Microsoft.VisualBasic.ControlChars> du module dans <xref:Microsoft.VisualBasic?displayProperty=nameWithType> l’espace de noms. Pour utiliser cette constante dans un programme sans alias, vous devez taper le code suivant :  
+## <a name="using-aliases-with-the-imports-statement"></a>Using Aliases with the Imports Statement  
+ The `Imports` statement makes it easier to access methods of classes by eliminating the need to explicitly type the fully qualified names of references. Aliases let you assign a friendlier name to just one part of a namespace. For example, the carriage return/line feed sequence that causes a single piece of text to be displayed on multiple lines is part of the <xref:Microsoft.VisualBasic.ControlChars> module in the <xref:Microsoft.VisualBasic?displayProperty=nameWithType> namespace. To use this constant in a program without an alias, you would need to type the following code:  
   
  [!code-vb[VbVbalrApplication#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#3)]  
   
- `Imports`les instructions doivent toujours être les premières lignes qui suivent `Option` immédiatement les instructions d’un module. Le fragment de code suivant montre comment importer et assigner un alias <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType> au module :  
+ `Imports` statements must always be the first lines immediately following any `Option` statements in a module. The following code fragment shows how to import and assign an alias to the <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType> module:  
   
  [!code-vb[VbVbalrApplication#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#4)]  
   
- Les futures références à cet espace de noms peuvent être beaucoup plus courtes :  
+ Future references to this namespace can be considerably shorter:  
   
  [!code-vb[VbVbalrApplication#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#5)]  
   
- Si une `Imports` instruction n’inclut pas de nom d’alias, les éléments définis dans l’espace de noms importé peuvent être utilisés dans le module sans qualification. Si le nom d’alias est spécifié, il doit être utilisé en tant que qualificateur pour les noms contenus dans cet espace de noms.  
+ If an `Imports` statement does not include an alias name, elements defined within the imported namespace can be used in the module without qualification. If the alias name is specified, it must be used as a qualifier for names contained within that namespace.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:Microsoft.VisualBasic.ControlChars>
 - <xref:Microsoft.VisualBasic>
-- [Espaces de noms dans Visual Basic](namespaces.md)
+- [Namespaces in Visual Basic](namespaces.md)
 - [Assemblys dans .NET](../../../standard/assembly/index.md)
 - [Imports (instruction) (espace de noms et type .NET)](../../language-reference/statements/imports-statement-net-namespace-and-type.md)

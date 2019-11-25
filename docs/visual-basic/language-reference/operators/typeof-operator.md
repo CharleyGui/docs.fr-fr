@@ -1,5 +1,5 @@
 ---
-title: TypeOf, opérateur (Visual Basic)
+title: TypeOf, opérateur
 ms.date: 07/20/2015
 f1_keywords:
 - TypeOf
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: c6028f524a16b836310f0c8d564205244515cdc9
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 22af5b8f8488ca44e388596530decd52e33525dc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701282"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350889"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf, opérateur (Visual Basic)
-Vérifie si le type d’exécution du résultat d’une expression est compatible avec le type spécifié.
+Checks whether the runtime type of an expression's result is type-compatible with the specified type.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +37,17 @@ result = TypeOf objectexpression IsNot typename
  Retourné. Valeur `Boolean`.  
   
  `objectexpression`  
- Obligatoire. Toute expression ayant pour résultat un type référence.  
+ Requis. Toute expression ayant pour résultat un type référence.  
   
  `typename`  
- Obligatoire. Tout nom de type de données.  
+ Requis. Tout nom de type de données.  
   
 ## <a name="remarks"></a>Notes  
  L'opérateur `TypeOf` détermine si le type d'exécution de `objectexpression` est compatible avec `typename`. La compatibilité dépend de la catégorie du type de `typename`. Le tableau suivant illustre la manière dont la compatibilité est déterminée.  
   
 |Catégorie de type de `typename`|Critère de compatibilité|  
 |---------------------------------|-----------------------------|  
-|Classe|`objectexpression` est de type `typename` ou hérite de `typename`|  
+|Class|`objectexpression` est de type `typename` ou hérite de `typename`|  
 |Structure|`objectexpression` est de type `typename`|  
 |Interface|`objectexpression` implémente `typename` ou hérite d'une classe qui implémente `typename`|  
   
@@ -66,7 +66,7 @@ result = TypeOf objectexpression IsNot typename
 
 - [Is (opérateur)](../../../visual-basic/language-reference/operators/is-operator.md)
 - [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Opérateurs de comparaison dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

@@ -1,19 +1,19 @@
 ---
-title: Conversion des types de données (Visual Basic)
+title: Conversion des types de données
 ms.date: 07/20/2015
 ms.assetid: 9b0cf1ab-de48-4c6e-9f00-05b40fade46e
-ms.openlocfilehash: 744dec0093384a15470186fc09695c17e79468fa
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 25d21954f0bb7555f1f5666f83fb37f4f73e2a60
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524232"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354258"
 ---
-# <a name="converting-data-types-visual-basic"></a>Conversion des types de données (Visual Basic)
+# <a name="converting-data-types-visual-basic"></a>Converting Data Types (Visual Basic)
 
 Les méthodes de conversion changent le type d’objets en entrée.
 
- Les opérations de conversion dans les requêtes LINQ sont utiles dans diverses applications. Voici quelques exemples :
+ Les opérations de conversion dans les requêtes LINQ sont utiles dans diverses applications. The following are some examples:
 
 - La méthode <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType> peut être utilisée pour masquer l’implémentation personnalisée d’un type d’un opérateur de requête standard.
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les méthodes d’opérateur de requête standard
 
 Les méthodes de conversion de ce tableau dont les noms commencent par "As" modifient le type statique de la collection source mais ne l’énumèrent pas. Les méthodes dont les noms commencent par "To" énumèrent la collection source et placent les éléments dans le type de collection correspondant.
 
-|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations complémentaires|
+|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |AsEnumerable|Retourne l’entrée typée comme <xref:System.Collections.Generic.IEnumerable%601>.|Non applicable.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|
 |AsQueryable|Convertit un <xref:System.Collections.IEnumerable> (générique) en <xref:System.Linq.IQueryable> (générique).|Non applicable.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|
@@ -40,7 +40,7 @@ Les méthodes de conversion de ce tableau dont les noms commencent par "As" modi
 
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête
 
-L’exemple de code suivant utilise la clause `From As` pour effectuer un cast d’un type en un sous-type avant d’accéder à un membre qui est disponible uniquement sur le sous-type.
+The following code example uses the `From As` clause to cast a type to a subtype before accessing a member that is available only on the subtype.
 
 ```vb
 Class Plant
@@ -85,4 +85,4 @@ End Sub
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [From (clause)](../../../../visual-basic/language-reference/queries/from-clause.md)
-- [Comment : interroger un ArrayList avec LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+- [How to: Query an ArrayList with LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)

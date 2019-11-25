@@ -1,5 +1,5 @@
 ---
-title: Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
+title: Concepts de base du système de fichiers et des E/S de fichier du .NET Framework
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file access, file I/O in Visual Basic
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: 3ff305a6b22918681561ed7262a7377dbdf7aadc
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 5d60d0089d042c0be343c741c26de0b4b7778d6d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591515"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348942"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
 
@@ -55,17 +55,17 @@ Il existe de nombreux types de flux, mais dans le cadre de l’utilisation des e
 
 - <xref:System.IO.MemoryStream>
 
-- <xref:System.Net.Sockets.NetworkStream>.
+- <xref:System.Net.Sockets.NetworkStream>.,
 
 Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
 
-|À|Voir|
+|Vers|Voir|
 |---|---|
-|Lire et écrire dans un fichier de données|[Guide pratique pour lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
-|Lire le texte d’un fichier|[Guide pratique pour lire le texte d’un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
-|Écrire du texte dans un fichier|[Guide pratique pour écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
-|Lire les caractères d’une chaîne|[Guide pratique pour lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
-|Écrire des caractères dans une chaîne|[Guide pratique pour écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
+|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
+|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
+|Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
+|Lire les caractères d’une chaîne|[Comment : lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
+|Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
 |Chiffrer des données|[Chiffrement de données](../../../../standard/security/encrypting-data.md)|
 |Déchiffrer des données|[Déchiffrement de données](../../../../standard/security/decrypting-data.md)|
 
@@ -77,9 +77,9 @@ L’énumération <xref:System.IO.FileAttributes> vous permet de recueillir des 
 
 Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichiers et les attributs de fichiers :
 
-|À|Voir|
+|Vers|Voir|
 |---|---|
-|Ouvrir un fichier journal et y ajouter du texte|[Guide pratique pour ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
+|Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|
 
 ## <a name="file-permissions"></a>Autorisations de fichiers
@@ -92,15 +92,15 @@ Le stockage isolé est une tentative de résolution des problèmes créés lors 
 
 Le tableau suivant répertorie les tâches couramment associées au stockage de fichiers isolé.
 
-|À|Voir|
+|Vers|Voir|
 |---|---|
-|Créer un magasin isolé|[Guide pratique pour obtenir des magasins pour le stockage isolé](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
-|Énumérer les magasins isolés|[Guide pratique pour énumérer des magasins pour le stockage isolé](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
-|Supprimer un magasin isolé|[Guide pratique pour supprimer des magasins dans le stockage isolé](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
-|Créer un fichier ou un répertoire dans un stockage isolé|[Guide pratique pour créer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
-|Rechercher un fichier dans un stockage isolé|[Guide pratique pour rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
-|Lire ou écrire dans un fichier dans un stockage isolé|[Guide pratique pour lire et écrire des fichiers dans un stockage isolé](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
-|Supprimer un fichier ou un répertoire dans un stockage isolé|[Guide pratique pour supprimer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
+|Créer un magasin isolé|[Obtention de magasins](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
+|Énumérer les magasins isolés|[Énumération de magasins](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
+|Supprimer un magasin isolé|[Suppression de magasins](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
+|Créer un fichier ou un répertoire dans un stockage isolé|[Comment : créer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
+|Rechercher un fichier dans un stockage isolé|[Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
+|Lire ou écrire dans un fichier dans un stockage isolé|[Lecture et écriture dans des fichiers](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
+|Supprimer un fichier ou un répertoire dans un stockage isolé|[Comment : supprimer des fichiers et des répertoires dans un stockage isolé](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
 
 ## <a name="file-events"></a>Événements de fichiers
 

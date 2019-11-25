@@ -1,26 +1,26 @@
 ---
-title: Autorisation refusée (Visual Basic)
+title: Autorisation refusée
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID70
 ms.assetid: 71f46756-f522-4814-aab4-492bf9924245
-ms.openlocfilehash: ad75c556748bf5c0f9cef55310c4ffa7b01fd458
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 410301a1e99040fc617ab1bf1e851329ab3072d2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920833"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347003"
 ---
 # <a name="permission-denied-visual-basic"></a>Autorisation refusée (Visual Basic)
-Une tentative a été effectuée pour écrire sur un disque protégé en écriture ou accéder à un fichier verrouillé.  
+An attempt was made to write to a write-protected disk or to access a locked file.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Pour ouvrir un fichier protégé en écriture, modifiez l’attribut de protection en écriture du fichier.  
+1. To open a write-protected file, change the write-protection attribute of the file.  
   
-2. Assurez-vous qu’un autre processus n’a pas verrouillé le fichier et attendez pour ouvrir le fichier que l’autre processus libère.  
+2. Make sure that another process has not locked the file, and wait to open the file until the other process releases it.  
   
-3. Pour accéder au Registre, vérifiez que vos autorisations utilisateur incluent ce type d’accès au Registre.  
+3. To access the registry, check that your user permissions include this type of registry access.  
   
 ## <a name="see-also"></a>Voir aussi
 

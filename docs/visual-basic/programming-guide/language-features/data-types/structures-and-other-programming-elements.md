@@ -1,5 +1,5 @@
 ---
-title: Structures et autres éléments de programmation (Visual Basic)
+title: Structures et autres éléments de programmation
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structures [Visual Basic], arrays
@@ -8,21 +8,21 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: ec65c75fcfd907097f1cd1e0d3092a547272a782
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 309d0e5214897675e1758bd98b964392b379ca1b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933244"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346121"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Structures et autres éléments de programmation (Visual Basic)
-Vous pouvez utiliser des structures conjointement avec des tableaux, des objets et des procédures, ainsi qu’entre eux. Les interactions utilisent la même syntaxe que celles que ces éléments utilisent individuellement.  
+You can use structures in conjunction with arrays, objects, and procedures, as well as with each other. The interactions use the same syntax as these elements use individually.  
   
 > [!NOTE]
-> Vous ne pouvez pas initialiser l’un des éléments de structure dans la déclaration de structure. Vous pouvez assigner des valeurs uniquement aux éléments d’une variable déclarée comme étant d’un type structure.  
+> You cannot initialize any of the structure elements in the structure declaration. You can assign values only to elements of a variable that has been declared to be of a structure type.  
   
-## <a name="structures-and-arrays"></a>Structures et tableaux  
- Une structure peut contenir un tableau comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
+## <a name="structures-and-arrays"></a>Structures and Arrays  
+ A structure can contain an array as one or more of its elements. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Public Structure systemInfo  
@@ -33,7 +33,7 @@ Public Structure systemInfo
 End Structure   
 ```  
   
- Vous accédez aux valeurs d’un tableau dans une structure de la même façon que vous accédez à une propriété sur un objet. L'exemple suivant illustre ce comportement.  
+ You access the values of an array within a structure the same way you access a property on an object. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim mySystem As systemInfo  
@@ -41,13 +41,13 @@ ReDim mySystem.diskDrives(3)
 mySystem.diskDrives(0) = "1.44 MB"  
 ```  
   
- Vous pouvez également déclarer un tableau de structures. L'exemple suivant illustre ce comportement.  
+ You can also declare an array of structures. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
 ```  
   
- Vous suivez les mêmes règles pour accéder aux composants de cette architecture de données. L'exemple suivant illustre ce comportement.  
+ You follow the same rules to access the components of this data architecture. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 ReDim allSystems(5).diskDrives(3)  
@@ -55,8 +55,8 @@ allSystems(5).CPU = "386SX"
 allSystems(5).diskDrives(2) = "100M SCSI"  
 ```  
   
-## <a name="structures-and-objects"></a>Structures et objets  
- Une structure peut contenir un objet comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
+## <a name="structures-and-objects"></a>Structures and Objects  
+ A structure can contain an object as one or more of its elements. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Protected Structure userInput  
@@ -66,10 +66,10 @@ Protected Structure userInput
 End Structure  
 ```  
   
- Vous devez utiliser une classe d’objet spécifique dans une telle déclaration, plutôt `Object`que.  
+ You should use a specific object class in such a declaration, rather than `Object`.  
   
-## <a name="structures-and-procedures"></a>Structures et procédures  
- Vous pouvez passer une structure en tant qu’argument de procédure. L'exemple suivant illustre ce comportement.  
+## <a name="structures-and-procedures"></a>Structures and Procedures  
+ You can pass a structure as a procedure argument. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Public currentCPUName As String = "700MHz Pentium compatible"  
@@ -81,9 +81,9 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- L’exemple précédent passe la structure *par référence*, ce qui permet à la procédure de modifier ses éléments afin que les modifications prennent effet dans le code appelant. Si vous souhaitez protéger une structure contre une telle modification, transmettez-la par valeur.  
+ The preceding example passes the structure *by reference*, which allows the procedure to modify its elements so that the changes take effect in the calling code. If you want to protect a structure against such modification, pass it by value.  
   
- Vous pouvez également retourner une structure à partir `Function` d’une procédure. L'exemple suivant illustre ce comportement.  
+ You can also return a structure from a `Function` procedure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
@@ -96,8 +96,8 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## <a name="structures-within-structures"></a>Structures dans les structures  
- Les structures peuvent contenir d’autres structures. L'exemple suivant illustre ce comportement.  
+## <a name="structures-within-structures"></a>Structures Within Structures  
+ Structures can contain other structures. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Public Structure driveInfo  
@@ -118,19 +118,19 @@ ReDim allSystems(1).diskDrives(3)
 allSystems(1).diskDrives(0).type = "Floppy"  
 ```  
   
- Vous pouvez également utiliser cette technique pour encapsuler une structure définie dans un module au sein d’une structure définie dans un autre module.  
+ You can also use this technique to encapsulate a structure defined in one module within a structure defined in a different module.  
   
- Les structures peuvent contenir d’autres structures à une profondeur arbitraire.  
+ Structures can contain other structures to an arbitrary depth.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
 - [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Guide pratique pour déclarer une structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Guide pratique : déclarer une structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
 - [Variables de structure](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)
 - [Structures et classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
 - [Structure (instruction)](../../../../visual-basic/language-reference/statements/structure-statement.md)

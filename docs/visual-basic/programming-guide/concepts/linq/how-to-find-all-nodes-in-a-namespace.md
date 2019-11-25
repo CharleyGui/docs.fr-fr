@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher tous les nœuds dans un espace de noms (Visual Basic)'
+title: 'Comment : rechercher tous les nœuds dans un espace de noms'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: 5ccc996aa986c97fdffb3deeea36346da726a588
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: f6bc38140bc2ea43393133d78c798469d26671c5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249931"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352970"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Procédure : Rechercher tous les nœuds dans un espace de noms (Visual Basic)
+# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>How to: Find All Nodes in a Namespace (Visual Basic)
 Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.  
   
 ## <a name="example"></a>Exemple  
@@ -54,7 +54,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>Exemple  
  Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents. La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commandes fournisseur consolidées](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichiers XML : Commandes fournisseur consolidées](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -111,4 +111,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

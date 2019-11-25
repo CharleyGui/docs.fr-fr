@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Définir un paramètre pour une procédure (Visual Basic)'
+title: 'Comment : définir un paramètre pour une procédure'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedure parameters [Visual Basic], defining data types for
@@ -8,56 +8,56 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - procedure parameters [Visual Basic], defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
-ms.openlocfilehash: bf57d4dbd7e8596396fb2e9099d5984759d6e90d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 411959a7be92ea49a59558b508e992bfba8eff95
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665379"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344883"
 ---
-# <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Procédure : Définir un paramètre pour une procédure (Visual Basic)
-Un *paramètre* permet au code appelant de passer une valeur à la procédure lorsqu’il l’appelle. Vous déclarez chaque paramètre pour une procédure de la même façon que vous déclarez une variable, en spécifiant son nom et type de données. Vous spécifiez également le mécanisme de passage et indique si le paramètre est facultatif.  
+# <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Comment : définir un paramètre pour une procédure (Visual Basic)
+A *parameter* allows the calling code to pass a value to the procedure when it calls it. You declare each parameter for a procedure the same way you declare a variable, specifying its name and data type. You also specify the passing mechanism, and whether the parameter is optional.  
   
- Pour plus d’informations, consultez [les paramètres de procédure et les Arguments](./procedure-parameters-and-arguments.md).  
+ For more information, see [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md).  
   
-### <a name="to-define-a-procedure-parameter"></a>Pour définir un paramètre de procédure  
+### <a name="to-define-a-procedure-parameter"></a>To define a procedure parameter  
   
-1. Dans la déclaration de procédure, ajoutez le nom du paramètre à la liste de paramètres de la procédure, en le séparant des autres paramètres par des virgules.  
+1. In the procedure declaration, add the parameter name to the procedure's parameter list, separating it from other parameters by commas.  
   
-2. Déterminez le type de données du paramètre.  
+2. Decide the data type of the parameter.  
   
-3. Faites suivre le nom de paramètre avec un `As` clause pour spécifier le type de données.  
+3. Follow the parameter name with an `As` clause to specify the data type.  
   
-4. Choisissez le mécanisme de passage que vous souhaitez pour le paramètre. Normalement, vous passez un paramètre par valeur, sauf si vous souhaitez être en mesure de modifier sa valeur dans le code appelant la procédure.  
+4. Decide the passing mechanism you want for the parameter. Normally you pass a parameter by value, unless you want the procedure to be able to change its value in the calling code.  
   
-5. Faites précéder le nom de paramètre avec [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) pour spécifier le mécanisme de passage. Pour plus d’informations, consultez [différences entre passage d’un Argument par valeur et par référence](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
+5. Precede the parameter name with [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) to specify the passing mechanism. For more information, see [Differences Between Passing an Argument By Value and By Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
-6. Si le paramètre est facultatif, faites précéder le mécanisme de passage de [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) et suivez le type de données de paramètre par un signe égal (`=`) et une valeur par défaut.  
+6. If the parameter is optional, precede the passing mechanism with [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) and follow the parameter data type with an equal sign (`=`) and a default value.  
   
-     L’exemple suivant définit le contour d’un `Sub` procédure avec trois paramètres. Les deux premiers sont requis et le troisième est facultatif. Les déclarations de paramètre sont séparées dans la liste de paramètres par des virgules.  
+     The following example defines the outline of a `Sub` procedure with three parameters. The first two are required and the third is optional. The parameter declarations are separated in the parameter list by commas.  
   
      [!code-vb[VbVbcnProcedures#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#33)]  
   
-     Le premier paramètre accepte une `customer` objet, et `updateCustomer` peut mettre à jour directement la variable transmise à `c` , car l’argument est passé [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). La procédure ne peut pas modifier les valeurs des deux derniers arguments, car ils sont passés [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).  
+     The first parameter accepts a `customer` object, and `updateCustomer` can directly update the variable passed to `c` because the argument is passed [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). The procedure cannot change the values of the last two arguments because they are passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).  
   
-     Si le code appelant ne fournit pas une valeur pour le `level` paramètre, Visual Basic lui affecte la valeur par défaut 0.  
+     If the calling code does not supply a value for the `level` parameter, Visual Basic sets it to the default value of 0.  
   
-     Si le commutateur de vérification de type ([Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) est `Off`, le `As` clause est facultative lorsque vous définissez un paramètre. Toutefois, si un paramètre utilise un `As` clause, tous doivent l’utiliser. Si le commutateur de vérification de type est `On`, le `As` clause est requise pour chaque définition de paramètre.  
+     If the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `Off`, the `As` clause is optional when you define a parameter. However, if any one parameter uses an `As` clause, all of them must use it. If the type checking switch is `On`, the `As` clause is required for every parameter definition.  
   
-     Spécifier les types de données pour tous les éléments de programmation est appelé *un typage fort*. Lorsque vous définissez `Option Strict On`, Visual Basic applique un typage fort. Il est fortement recommandé, pour les raisons suivantes :  
+     Specifying data types for all your programming elements is known as *strong typing*. When you set `Option Strict On`, Visual Basic enforces strong typing. This is strongly recommended, for the following reasons:  
   
-    - Il permet la prise en charge IntelliSense pour vos variables et des paramètres. Cela vous permet de vous permet de voir leurs propriétés et autres membres en cours de frappe dans votre code.  
+    - It enables IntelliSense support for your variables and parameters. This allows you to see their properties and other members as you type in your code.  
   
-    - Il permet au compilateur d’effectuer la vérification du type. Cela permet d’identifier les instructions qui peuvent échouer au moment de l’exécution en raison d’erreurs de dépassement de capacité. Il intercepte également les appels aux méthodes sur des objets qui ne les prennent pas en charge.  
+    - It allows the compiler to perform type checking. This helps catch statements that can fail at run time due to errors such as overflow. It also catches calls to methods on objects that do not support them.  
   
-    - Il en résulte dans une exécution plus rapide de votre code. Une des raisons sont que si vous ne spécifiez pas un type de données pour un élément de programmation, le compilateur Visual Basic lui assigne la `Object` type. Votre code compilé peut avoir à convertir dans les deux sens entre `Object` et d’autres types de données, ce qui réduit les performances.  
+    - It results in faster execution of your code. One reason for this is that if you do not specify a data type for a programming element, the Visual Basic compiler assigns it the `Object` type. Your compiled code might have to convert back and forth between `Object` and other data types, which reduces performance.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédures](./index.md)
 - [Procédures Sub](./sub-procedures.md)
 - [Procédures Function](./function-procedures.md)
-- [Guide pratique pour Passer des Arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
+- [Guide pratique : passer des arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
 - [Passage d’un argument par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)
 - [Procédures récursives](./recursive-procedures.md)
 - [Surcharge de procédure](./procedure-overloading.md)

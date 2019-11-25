@@ -1,20 +1,20 @@
 ---
-title: Opérations d’égalité (Visual Basic)
+title: Opérations d'égalité
 ms.date: 07/20/2015
 ms.assetid: 1f2fcf87-6f52-4830-b9af-861f9ad999dc
-ms.openlocfilehash: e04fd037e0799a633902b491ad2c4b71fd317989
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8895c0f75a8df816372ed1faa98fd128ecd9311a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644250"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346835"
 ---
-# <a name="equality-operations-visual-basic"></a>Opérations d’égalité (Visual Basic)
+# <a name="equality-operations-visual-basic"></a>Equality Operations (Visual Basic)
 Deux séquences dont les éléments correspondants sont égaux et qui ont le même nombre d’éléments sont considérées comme égales.  
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe d’Expression de requête de Visual Basic|Informations complémentaires|  
+|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |SequenceEqual|Détermine si deux séquences sont égales en comparant les éléments par paires.|Non applicable.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
@@ -22,4 +22,4 @@ Deux séquences dont les éléments correspondants sont égaux et qui ont le mê
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Guide pratique pour Comparer le contenu de deux dossiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)
+- [How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)

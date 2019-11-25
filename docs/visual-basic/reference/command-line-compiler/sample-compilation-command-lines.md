@@ -1,5 +1,5 @@
 ---
-title: Exemples de lignes de commande de compilation (Visual Basic)
+title: Exemples de lignes de commande de compilation
 ms.date: 03/13/2018
 helpviewer_keywords:
 - command line [Visual Basic], compilers
@@ -8,33 +8,33 @@ helpviewer_keywords:
 - compiling source code [Visual Basic], from command line
 - Visual Basic compiler, sample command lines
 ms.assetid: 5bfbb487-5f47-4267-969a-39dfb917beeb
-ms.openlocfilehash: b7879c23bc64269c793c21b61b84d6f0fd4bdc24
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 27a20a5a3525353ffbced729b8ac9c98b3e48fc1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046290"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350852"
 ---
-# <a name="sample-compilation-command-lines-visual-basic"></a>Exemples de lignes de commande de compilation (Visual Basic)
+# <a name="sample-compilation-command-lines-visual-basic"></a>Sample compilation command lines (Visual Basic)
 
-En guise d’alternative à la compilation de Visual Basic programmes dans Visual Studio, vous pouvez compiler à partir de la ligne de commande pour produire des fichiers exécutables (. exe) ou des fichiers de bibliothèque de liens dynamiques (. dll).
+As an alternative to compiling Visual Basic programs from within Visual Studio, you can compile from the command line to produce executable (.exe) files or dynamic-link library (.dll) files.
 
-Le Visual Basic compilateur de ligne de commande prend en charge un ensemble complet d’options qui contrôlent les fichiers d’entrée et de sortie, les assemblys, ainsi que les options de débogage et de préprocesseur. Chaque option est disponible dans deux formulaires interchangeables: `-option` et `/option`. Cette documentation affiche uniquement le `-option` formulaire.
+The Visual Basic command-line compiler supports a complete set of options that control input and output files, assemblies, and debug and preprocessor options. Each option is available in two interchangeable forms: `-option` and `/option`. This documentation shows only the `-option` form.
 
-Le tableau suivant répertorie quelques exemples de lignes de commande que vous pouvez modifier pour votre propre usage.
+The following table lists some sample command lines you can modify for your own use.
 
-|À|Utilisez|
+|Vers|Utilisez|
 |--------|---------|
-|Compiler file. vb et créer file. exe|`vbc -reference:Microsoft.VisualBasic.dll File.vb`|
-|Compiler file. vb et créer file. dll|`vbc -target:library File.vb`|
-|Compiler file. vb et créer My. exe|`vbc -out:My.exe File.vb`|
-|Compiler file. vb et créer une bibliothèque et un assembly de référence nommé file. dll|`vbc -target:library -ref:.\debug\bin\ref\file.dll File.vb`|
-|Compiler tous les fichiers Visual Basic dans le répertoire actif, avec les optimisations sur `DEBUG` et le symbole défini, générant fichier2. exe|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|
-|Compilez tous les fichiers Visual Basic dans le répertoire actif, en générant une version de débogage du fichier fichier2. dll sans afficher le logo ou les avertissements|`vbc -target:library -out:File2.dll -nowarn -nologo -debug *.vb`|
-|Compiler tous les fichiers Visual Basic du répertoire actif dans un fichier. dll|`vbc -target:library -out:Something.dll *.vb`|
+|Compile File.vb and create File.exe|`vbc -reference:Microsoft.VisualBasic.dll File.vb`|
+|Compile File.vb and create File.dll|`vbc -target:library File.vb`|
+|Compile File.vb and create My.exe|`vbc -out:My.exe File.vb`|
+|Compile File.vb and create both a library and a reference assembly named File.dll|`vbc -target:library -ref:.\debug\bin\ref\file.dll File.vb`|
+|Compile all Visual Basic files in the current directory, with optimizations on and the `DEBUG` symbol defined, producing File2.exe|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|
+|Compile all Visual Basic files in the current directory, producing a debug version of File2.dll without displaying the logo or warnings|`vbc -target:library -out:File2.dll -nowarn -nologo -debug *.vb`|
+|Compile all Visual Basic files in the current directory to Something.dll|`vbc -target:library -out:Something.dll *.vb`|
 
 > [!TIP]
-> Quand vous générez un projet à l’aide de l’IDE de Visual Studio, vous pouvez afficher des informations sur la commande **vbc** associée avec ses options de compilateur dans la fenêtre sortie. Pour afficher ces informations, ouvrez la [boîte de dialogue Options, projets et solutions, générer et exécuter](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), puis définissez le niveau de détail de la **sortie de génération du projet MSBuild** sur **normal** ou sur un niveau de détail plus élevé.
+> When you build a project by using the Visual Studio IDE, you can display information about the associated **vbc** command with its compiler options in the output window. To display this information, open the [Options Dialog Box,  Projects and Solutions, Build and Run](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), and then set the **MSBuild project build output verbosity** to **Normal** or a higher level of verbosity.
 
 ## <a name="see-also"></a>Voir aussi
 

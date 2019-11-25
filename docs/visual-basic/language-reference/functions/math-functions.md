@@ -1,5 +1,5 @@
 ---
-title: Fonctions mathématiques (Visual Basic)
+title: Fonctions mathématiques
 ms.date: 07/20/2015
 helpviewer_keywords:
 - math functions, Visual Basic
@@ -7,56 +7,56 @@ helpviewer_keywords:
 - math routines
 - Atn function
 ms.assetid: 4d2d82e7-6924-42fe-a4a7-b4dd5bebbd0c
-ms.openlocfilehash: e5f87a8e367e8c9df65b979fea3781b42ee3ce83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1cd6a846a7dc1dddcf6bdb5eb99ebc1c57a012c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801346"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348073"
 ---
 # <a name="math-functions-visual-basic"></a>Fonctions mathématiques (Visual Basic)
-Les méthodes de la <xref:System.Math?displayProperty=nameWithType> classe fournir trigonométriques, logarithmiques et d’autres fonctions mathématiques courantes.  
+The methods of the <xref:System.Math?displayProperty=nameWithType> class provide trigonometric, logarithmic, and other common mathematical functions.  
   
 ## <a name="remarks"></a>Notes  
- Le tableau suivant répertorie les méthodes de la <xref:System.Math?displayProperty=nameWithType> classe. Vous pouvez les utiliser dans un programme Visual Basic.  
+ The following table lists methods of the <xref:System.Math?displayProperty=nameWithType> class. You can use these in a Visual Basic program.  
   
-|Méthode .NET|Description|  
+|.NET method|Description|  
 |---------------------------|-----------------|  
 |<xref:System.Math.Abs%2A>|Retourne la valeur absolue d'un nombre.|  
 |<xref:System.Math.Acos%2A>|Retourne l'angle dont le cosinus est le nombre spécifié.|  
 |<xref:System.Math.Asin%2A>|Retourne l'angle dont le sinus est le nombre spécifié.|  
 |<xref:System.Math.Atan%2A>|Retourne l'angle dont la tangente est le nombre spécifié.|  
 |<xref:System.Math.Atan2%2A>|Retourne l'angle dont la tangente est le quotient de deux nombres spécifiés.|  
-|<xref:System.Math.BigMul%2A>|Retourne le produit intégral de deux nombres 32 bits.|  
-|<xref:System.Math.Ceiling%2A>|Retourne la plus petite valeur intégrale qui est supérieure ou égale à spécifié `Decimal` ou `Double`.|  
+|<xref:System.Math.BigMul%2A>|Returns the full product of two 32-bit numbers.|  
+|<xref:System.Math.Ceiling%2A>|Returns the smallest integral value that's greater than or equal to the specified `Decimal` or `Double`.|  
 |<xref:System.Math.Cos%2A>|Retourne le cosinus de l'angle spécifié.|  
 |<xref:System.Math.Cosh%2A>|Retourne le cosinus hyperbolique de l'angle spécifié.|  
-|<xref:System.Math.DivRem%2A>|Renvoie le quotient de deux entiers signés 32 bits ou 64 bits et retourne également le reste dans un paramètre de sortie.|  
-|<xref:System.Math.Exp%2A>|Retourne e (la base des logarithmes naturels) élevé à la puissance spécifiée.|  
-|<xref:System.Math.Floor%2A>|Retourne le plus grand entier inférieur ou égal à l’élément spécifié est `Decimal` ou `Double` nombre.|  
-|<xref:System.Math.IEEERemainder%2A>|Retourne le reste de la division d’un nombre spécifié par un autre de nombre spécifié.|  
-|<xref:System.Math.Log%2A>|Retourne le logarithme népérien (base e) d’un nombre spécifié ou le logarithme d’un nombre spécifié dans une base spécifiée.|  
+|<xref:System.Math.DivRem%2A>|Returns the quotient of two 32-bit or 64-bit signed integers, and also returns the remainder in an output parameter.|  
+|<xref:System.Math.Exp%2A>|Returns e (the base of natural logarithms) raised to the specified power.|  
+|<xref:System.Math.Floor%2A>|Returns the largest integer that's less than or equal to the specified `Decimal` or `Double` number.|  
+|<xref:System.Math.IEEERemainder%2A>|Returns the remainder that results from the division of a specified number by another specified number.|  
+|<xref:System.Math.Log%2A>|Returns the natural (base e) logarithm of a specified number or the logarithm of a specified number in a specified base.|  
 |<xref:System.Math.Log10%2A>|Retourne le logarithme de base 10 d'un nombre spécifié.|  
-|<xref:System.Math.Max%2A>|Retourne le plus grand de deux nombres.|  
+|<xref:System.Math.Max%2A>|Returns the larger of two numbers.|  
 |<xref:System.Math.Min%2A>|Retourne le plus petit de deux nombres.|  
 |<xref:System.Math.Pow%2A>|Retourne un nombre spécifié élevé à la puissance spécifiée.|  
-|<xref:System.Math.Round%2A>|Retourne un `Decimal` ou `Double` valeur arrondie à la valeur intégrale la plus proche ou à un nombre spécifié de chiffres fractionnaires.|  
-|<xref:System.Math.Sign%2A>|Retourne un `Integer` valeur indiquant le signe d’un nombre.|  
+|<xref:System.Math.Round%2A>|Returns a `Decimal` or `Double` value rounded to the nearest integral value or to a specified number of fractional digits.|  
+|<xref:System.Math.Sign%2A>|Returns an `Integer` value indicating the sign of a number.|  
 |<xref:System.Math.Sin%2A>|Retourne le sinus de l'angle spécifié.|  
 |<xref:System.Math.Sinh%2A>|Retourne le sinus hyperbolique de l'angle spécifié.|  
 |<xref:System.Math.Sqrt%2A>|Retourne la racine carrée d'un nombre spécifié.|  
 |<xref:System.Math.Tan%2A>|Retourne la tangente de l'angle spécifié.|  
 |<xref:System.Math.Tanh%2A>|Retourne la tangente hyperbolique de l'angle spécifié.|  
-|<xref:System.Math.Truncate%2A>|Calcule la partie entière d’une certaine `Decimal` ou `Double` nombre.|  
+|<xref:System.Math.Truncate%2A>|Calculates the integral part of a specified `Decimal` or `Double` number.|  
   
- Pour utiliser ces fonctions sans qualification, importez le <xref:System.Math?displayProperty=nameWithType> espace de noms dans votre projet en ajoutant le code suivant en haut de votre fichier source :  
+ To use these functions without qualification, import the <xref:System.Math?displayProperty=nameWithType> namespace into your project by adding the following code to the top of your source file:  
   
 ```vb
 Imports System.Math  
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Abs%2A> méthode de la <xref:System.Math> classe pour calculer la valeur absolue d’un nombre.  
+ This example uses the <xref:System.Math.Abs%2A> method of the <xref:System.Math> class to compute the absolute value of a number.  
   
 ```vb
 ' Returns 50.3.  
@@ -66,7 +66,7 @@ Dim MyNumber2 As Double = Math.Abs(-50.3)
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Atan%2A> méthode de la <xref:System.Math> classe pour calculer la valeur de pi.  
+ This example uses the <xref:System.Math.Atan%2A> method of the <xref:System.Math> class to calculate the value of pi.  
   
 ```vb
 Public Function GetPi() As Double  
@@ -76,7 +76,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Cos%2A> méthode de la <xref:System.Math> classe pour retourner le cosinus d’un angle.  
+ This example uses the <xref:System.Math.Cos%2A> method of the <xref:System.Math> class to return the cosine of an angle.  
   
 ```vb
 Public Function Sec(ByVal angle As Double) As Double  
@@ -86,7 +86,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Exp%2A> méthode de la <xref:System.Math> classe pour retourner la valeur e élevée à une puissance.  
+ This example uses the <xref:System.Math.Exp%2A> method of the <xref:System.Math> class to return e raised to a power.  
   
 ```vb
 Public Function Sinh(ByVal angle As Double) As Double  
@@ -96,7 +96,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Log%2A> méthode de la <xref:System.Math> classe pour retourner le logarithme naturel d’un nombre.  
+ This example uses the <xref:System.Math.Log%2A> method of the <xref:System.Math> class to return the natural logarithm of a number.  
   
 ```vb
 Public Function Asinh(ByVal value As Double) As Double  
@@ -106,7 +106,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Round%2A> méthode de la <xref:System.Math> classe pour arrondir un nombre à l’entier le plus proche.  
+ This example uses the <xref:System.Math.Round%2A> method of the <xref:System.Math> class to round a number to the nearest integer.  
   
 ```vb
 ' Returns 3.  
@@ -114,7 +114,7 @@ Dim MyVar2 As Double = Math.Round(2.8)
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Sign%2A> méthode de la <xref:System.Math> classe pour déterminer le signe d’un nombre.  
+ This example uses the <xref:System.Math.Sign%2A> method of the <xref:System.Math> class to determine the sign of a number.  
   
 ```vb
 ' Returns 1.  
@@ -126,7 +126,7 @@ Dim MySign3 As Integer = Math.Sign(0)
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Sin%2A> méthode de la <xref:System.Math> classe pour retourner le sinus d’un angle.  
+ This example uses the <xref:System.Math.Sin%2A> method of the <xref:System.Math> class to return the sine of an angle.  
   
 ```vb
 Public Function Csc(ByVal angle As Double) As Double  
@@ -136,7 +136,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Sqrt%2A> méthode de la <xref:System.Math> classe pour calculer la racine carrée d’un nombre.  
+ This example uses the <xref:System.Math.Sqrt%2A> method of the <xref:System.Math> class to calculate the square root of a number.  
   
 ```vb
 ' Returns 2.  
@@ -150,7 +150,7 @@ Dim MySqr4 As Double = Math.Sqrt(-4)
 ```  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Math.Tan%2A> méthode de la <xref:System.Math> classe pour retourner la tangente d’un angle.  
+ This example uses the <xref:System.Math.Tan%2A> method of the <xref:System.Math> class to return the tangent of an angle.  
   
 ```vb
 Public Function Ctan(ByVal angle As Double) As Double  
@@ -159,12 +159,12 @@ Public Function Ctan(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Classe :** <xref:System.Math>  
   
  **Espace de noms :** <xref:System>  
   
- **Assembly :** mscorlib (dans mscorlib.dll)  
+ **Assembly:** mscorlib (in mscorlib.dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

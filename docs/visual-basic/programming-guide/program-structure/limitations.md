@@ -1,5 +1,5 @@
 ---
-title: Restrictions liées à Visual Basic
+title: Limitations
 ms.date: 07/20/2015
 helpviewer_keywords:
 - limits
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - limits, Visual Basic code
 - Visual Basic code, limitations
 ms.assetid: cf1646b7-5d24-48c6-9616-bda8a4849d91
-ms.openlocfilehash: 9fa0844f4508906ae30b936e41fb4392b74d1437
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f7e19977a011565bb4b1536af5cab195f8a01017
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648733"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347367"
 ---
 # <a name="visual-basic-limitations"></a>Restrictions liées à Visual Basic
-Les versions antérieures de Visual Basic imposaient des limites dans le code, tel que la longueur des noms de variables, le nombre de variables autorisé dans les modules et la taille du module. Dans Visual Basic .NET, ces restrictions ont été moins stricte, ce qui vous donne une plus grande liberté d’écriture et d’organisation de votre code.  
+Earlier versions of Visual Basic enforced boundaries in code, such as the length of variable names, the number of variables allowed in modules, and module size. In Visual Basic .NET, these restrictions have been relaxed, giving you greater freedom in writing and arranging your code.  
   
- Les limites physiques dépendent de plus de mémoire d’exécution que sur les considérations relatives à la compilation. Si vous utilisez des pratiques de programmation prudentes et divisez des applications volumineuses en plusieurs classes et les modules, il est très peu de chance de rencontrer une limitation de Visual Basic interne.  
+ Physical limits are dependent more on run-time memory than on compile-time considerations. If you use prudent programming practices, and divide large applications into multiple classes and modules, then there is very little chance of encountering an internal Visual Basic limitation.  
   
- Voici quelques limitations que vous pouvez rencontrer dans les cas extrêmes :  
+ The following are some limitations that you might encounter in extreme cases:  
   
-- **Longueur du nom.** Il est un nombre maximal de caractères pour le nom de chaque élément de programmation déclaré. Cette limite s’applique à une chaîne de qualification entière si le nom de l’élément est qualifié. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+- **Name Length.** There is a maximum number of characters for the name of every declared programming element. This maximum applies to an entire qualification string if the element name is qualified. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
-- **Longueur de ligne.** Il existe un maximum de 65 535 caractères dans une ligne de code source physique. La ligne de code source logique peut être plus longue si vous utilisez des caractères de continuation de ligne. Voir [Guide pratique pour Diviser et combiner des instructions dans le Code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
+- **Line Length.** There is a maximum of 65535 characters in a physical line of source code. The logical source code line can be longer if you use line continuation characters. See [How to: Break and Combine Statements in Code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
-- **Dimensions du tableau.** Il est un nombre maximal de dimensions, que vous pouvez déclarer un tableau. Cela limite le nombre d’index que vous pouvez utiliser pour spécifier un élément de tableau. Consultez [Array Dimensions in Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
+- **Array Dimensions.** There is a maximum number of dimensions you can declare for an array. This limits how many indexes you can use to specify an array element. See [Array Dimensions in Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
-- **Longueur de chaîne.** Il est un nombre maximal de caractères Unicode que vous pouvez stocker dans une chaîne unique. Consultez [Type de données chaîne](../../../visual-basic/language-reference/data-types/string-data-type.md).  
+- **String Length.** There is a maximum number of Unicode characters you can store in a single string. See [String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
-- **Longueur de chaîne d’environnement.** Il existe un maximum de 32 768 caractères pour n’importe quelle chaîne d’environnement utilisée comme un argument de ligne de commande. Il s’agit d’une limitation sur toutes les plateformes.  
+- **Environment String Length.** There is a maximum of 32768 characters for any environment string used as a command-line argument. This is a limitation on all platforms.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Conventions d’affectation de noms de Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)

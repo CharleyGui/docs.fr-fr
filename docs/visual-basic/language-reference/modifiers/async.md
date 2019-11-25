@@ -1,5 +1,5 @@
 ---
-title: Async (Visual Basic)
+title: Async
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Async
@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Async [Visual Basic]
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
-ms.openlocfilehash: aaf5a95edb9cba9726163be3925b006a7641597c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 73d433c66750ead3a97b1c283cc26b4c43f078df
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040858"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351625"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)
 
-Le modificateur `Async` indique que la méthode ou l' [expression lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md) qu’il modifie est asynchrone. Ces méthodes sont appelées *méthodes Async*.
+The `Async` modifier indicates that the method or [lambda expression](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md) that it modifies is asynchronous. Such methods are referred to as *async methods*.
 
-Une méthode async offre un moyen pratique d'exécuter un travail potentiellement long sans bloquer le thread de l'appelant. L’appelant d’une méthode Async peut reprendre son travail sans attendre la fin de la méthode Async.
+Une méthode async offre un moyen pratique d'exécuter un travail potentiellement long sans bloquer le thread de l'appelant. The caller of an async method can resume its work without waiting for the async method to finish.
 
 > [!NOTE]
-> Les mots clés `Async` et `Await` ont été introduits dans Visual Studio 2012. Pour une introduction à la programmation asynchrone, consultez [programmation asynchrone avec Async et await](../../../visual-basic/programming-guide/concepts/async/index.md).
+> Les mots clés `Async` et `Await` ont été introduits dans Visual Studio 2012. For an introduction to async programming, see [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md).
 
-L’exemple suivant illustre la structure d’une méthode Async. Par Convention, les noms de méthodes Async se terminent par « Async ».
+The following example shows the structure of an async method. By convention, async method names end in "Async."
 
 ```vb
 Public Async Function ExampleMethodAsync() As Task(Of Integer)
@@ -43,23 +43,23 @@ Public Async Function ExampleMethodAsync() As Task(Of Integer)
 End Function
 ```
 
-En règle générale, une méthode modifiée par le mot clé `Async` contient au moins une expression ou une instruction [await](../../../visual-basic/language-reference/modifiers/async.md) . La méthode s’exécute de façon synchrone jusqu’à ce qu’elle atteigne le premier `Await`, point où elle s’interrompt jusqu’à ce que la tâche attendue se termine. Dans le même temps, le contrôle est retourné à l’appelant de la méthode. Si la méthode ne contient pas d’expression ou d’instruction `Await`, la méthode n’est pas suspendue et s’exécute comme une méthode synchrone. Un avertissement du compilateur vous signale toutes les méthodes Async qui ne contiennent pas de `Await`, car cette situation peut indiquer une erreur. Pour plus d’informations, consultez l' [Erreur du compilateur](../error-messages/bc42358.md).
+Typically, a method modified by the `Async` keyword contains at least one [Await](../../../visual-basic/language-reference/modifiers/async.md) expression or statement. The method runs synchronously until it reaches the first `Await`, at which point it suspends until the awaited task completes. In the meantime, control is returned to the caller of the method. If the method doesn't contain an `Await` expression or statement, the method isn't suspended and executes as a synchronous method does. A compiler warning alerts you to any async methods that don't contain `Await` because that situation might indicate an error. For more information, see the [compiler error](../error-messages/bc42358.md).
 
-Le mot clé `Async` est un mot clé non réservé. Il s’agit d’un mot clé lorsqu’il modifie une méthode ou une expression lambda. Dans tous les autres contextes, il est interprété comme un identificateur.
+The `Async` keyword is an unreserved keyword. It is a keyword when it modifies a method or a lambda expression. In all other contexts, it is interpreted as an identifier.
 
 ## <a name="return-types"></a>Types de retours
 
-Une méthode Async est soit une procédure [Sub](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) , soit une procédure de [fonction](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md) qui a un type de retour <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. La méthode ne peut pas déclarer de paramètres [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) .
+An async method is either a [Sub](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) procedure, or a [Function](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md) procedure that has a return type of <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>. The method cannot declare any [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) parameters.
 
-Vous spécifiez `Task(Of TResult)` pour le type de retour d’une méthode Async si l’instruction [Return](../../../visual-basic/language-reference/statements/return-statement.md) de la méthode a un opérande de type TResult. Utilisez `Task` si aucune valeur significative n'est retournée lorsque la méthode est terminée. Autrement dit, un appel à la méthode retourne un `Task`, mais lorsque la `Task` est terminée, toute instruction `Await` qui attend le `Task` ne produit pas de valeur de résultat.
+You specify `Task(Of TResult)` for the return type of an async method if the [Return](../../../visual-basic/language-reference/statements/return-statement.md) statement of the method has an operand of type TResult. Utilisez `Task` si aucune valeur significative n'est retournée lorsque la méthode est terminée. That is, a call to the method returns a `Task`, but when the `Task` is completed, any `Await` statement that's awaiting the `Task` doesn’t produce a result value.
 
-Les sous-routines Async sont principalement utilisées pour définir des gestionnaires d’événements dans lesquels une procédure `Sub` est requise. L’appelant d’une sous-routine Async ne peut pas l’attendre et ne peut pas intercepter les exceptions levées par la méthode.
+Async subroutines are used primarily to define event handlers where a `Sub` procedure is required. The caller of an async subroutine can't await it and can't catch exceptions that the method throws.
 
 Pour obtenir plus d’informations et des exemples, consultez [Types de retour Async](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
 
 ## <a name="example"></a>Exemple
 
-Les exemples suivants illustrent un gestionnaire d’événements asynchrones, une expression lambda Async et une méthode Async. Pour obtenir un exemple complet qui utilise ces éléments, consultez [procédure pas à pas : accès au Web avec Async et await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Vous pouvez télécharger le code de procédure à partir des [Exemples de code du développeur](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
+The following examples show an async event handler, an async lambda expression, and an async method. For a full example that uses these elements, see [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Vous pouvez télécharger le code de procédure à partir des [Exemples de code du développeur](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 
 ```vb
 ' An event handler must be a Sub procedure.

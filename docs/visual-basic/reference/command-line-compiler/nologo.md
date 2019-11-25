@@ -1,5 +1,5 @@
 ---
-title: -nologo (Visual Basic)
+title: -nologo
 ms.date: 03/13/2018
 helpviewer_keywords:
 - -nologo compiler option [Visual Basic]
@@ -7,15 +7,15 @@ helpviewer_keywords:
 - nologo compiler option [Visual Basic]
 - /nologo compiler option [Visual Basic]
 ms.assetid: 25ef54b6-d676-4639-a2d2-a747a158bc07
-ms.openlocfilehash: bb64a468f67745b80b47b42c4fac18852279035d
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 03dc98c45a894304a67765c3e49cd19bbb089c8c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005422"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335433"
 ---
 # <a name="-nologo-visual-basic"></a>-nologo (Visual Basic)
-Supprime l’affichage de la bannière de copyright et des messages d’information pendant la compilation.  
+Suppresses display of the copyright banner and informational messages during compilation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,13 +24,13 @@ Supprime l’affichage de la bannière de copyright et des messages d’informat
 ```  
   
 ## <a name="remarks"></a>Notes  
- Si vous spécifiez `-nologo`, le compilateur n’affiche pas de bannière de copyright. Par défaut, l'option `-nologo` n'est pas activée.  
+ If you specify `-nologo`, the compiler does not display a copyright banner. Par défaut, l'option `-nologo` n'est pas activée.  
   
 > [!NOTE]
-> L’option `-nologo` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` et n’affiche pas de bannière de copyright.  
+ The following code compiles `T2.vb` and does not display a copyright banner.  
   
 ```console
 vbc -nologo t2.vb  

@@ -1,5 +1,5 @@
 ---
-title: Validation de chaînes en Visual Basic
+title: Validation de chaînes
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, strings
@@ -7,28 +7,28 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: ab7b41e03e561a619349176c6bf7e021e1399730
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e9a034a430ff7f30c259bcdd395ebf6147dfc582
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938279"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346242"
 ---
 # <a name="validating-strings-in-visual-basic"></a>Validation de chaînes en Visual Basic
-Cette section explique comment valider des chaînes en Visual Basic.  
+This section discusses how to validate strings in Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Valider les noms de fichiers et chemins d’accès dans Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
- Comment déterminer si une chaîne représente un nom de fichier ou le chemin d’accès.  
+ [How to: Validate File Names and Paths in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
+ How to determine whether a string represents a file name or path.  
   
- [Guide pratique pour Valider des chaînes qui représentent des Dates ou des heures](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
- Comment déterminer si une chaîne représente une date valide.  
+ [Guide pratique : valider des chaînes qui représentent des dates ou des heures](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
+ How to determine whether a string represents a valid date.  
   
- [Utilisation d’Expressions régulières avec le contrôle MaskedTextBox en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
- Montre comment convertir des expressions régulières simples pour travailler avec le <xref:System.Windows.Forms.MaskedTextBox> contrôle.  
+ [Using Regular Expressions with the MaskedTextBox Control in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
+ Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.  
   
- [Procédure pas à pas : Validation de mots de passe complexes](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
- Comment déterminer si une chaîne a les caractéristiques d’un mot de passe fort.  
+ [Procédure pas à pas : validation de la complexité des mots de passe](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
+ How to determine whether a string has the characteristics of a strong password.  
   
 ## <a name="see-also"></a>Voir aussi
 

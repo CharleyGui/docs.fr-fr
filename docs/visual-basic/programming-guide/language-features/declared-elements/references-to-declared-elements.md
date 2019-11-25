@@ -1,24 +1,24 @@
 ---
-title: Références aux éléments déclarés (Visual Basic)
+title: References to Declared Elements
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declared elements [Visual Basic]
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-ms.openlocfilehash: de4d42803be48a87f4dfd37a92b1b22fa2d5c554
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a6477a9f0abaf8eb9176f4f6ab2a920af6c8f500
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524554"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345301"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Références aux éléments déclarés (Visual Basic)
-Quand votre code fait référence à un élément déclaré, le compilateur Visual Basic correspond au nom dans votre référence à la déclaration appropriée de ce nom. Si plusieurs éléments sont déclarés avec le même nom, vous pouvez contrôler lequel de ces éléments doit être référencé en *qualifiant* son nom.  
+When your code refers to a declared element, the Visual Basic compiler matches the name in your reference to the appropriate declaration of that name. If more than one element is declared with the same name, you can control which of those elements is to be referenced by *qualifying* its name.  
   
- Le compilateur tente de faire correspondre une référence de nom à une déclaration de nom avec l’étendue la plus *étroite*. Cela signifie qu’elle commence par le code qui fait la référence et fonctionne vers l’extérieur à travers les niveaux successifs des éléments contenants.  
+ The compiler attempts to match a name reference to a name declaration with the *narrowest scope*. This means it starts with the code making the reference and works outward through successive levels of containing elements.  
   
- L’exemple suivant montre des références à deux variables portant le même nom. L’exemple déclare deux variables, chacune nommée `totalCount`, à différents niveaux de portée dans le `container` de module. Lorsque la procédure `showCount` affiche `totalCount` sans qualification, le compilateur Visual Basic résout la référence à la déclaration avec la portée la plus étroite, à savoir la déclaration locale à l’intérieur de `showCount`. Quand il qualifie `totalCount` avec le module contenant `container`, le compilateur résout la référence à la déclaration avec la portée plus large.  
+ The following example shows references to two variables with the same name. The example declares two variables, each named `totalCount`, at different levels of scope in module `container`. When the procedure `showCount` displays `totalCount` without qualification, the Visual Basic compiler resolves the reference to the declaration with the narrowest scope, namely the local declaration inside `showCount`. When it qualifies `totalCount` with the containing module `container`, the compiler resolves the reference to the declaration with the broader scope.  
   
 ```vb  
 ' Assume these two modules are both in the same assembly.  
@@ -41,16 +41,16 @@ Module callingModule
 End Module  
 ```  
   
-## <a name="qualifying-an-element-name"></a>Qualification d’un nom d’élément  
- Si vous souhaitez remplacer ce processus de recherche et spécifier un nom déclaré dans une étendue plus large, vous devez *qualifier* le nom avec l’élément conteneur de la portée plus large. Dans certains cas, vous devrez peut-être également qualifier l’élément conteneur.  
+## <a name="qualifying-an-element-name"></a>Qualifying an Element Name  
+ If you want to override this search process and specify a name declared in a broader scope, you must *qualify* the name with the containing element of the broader scope. In some cases, you might also have to qualify the containing element.  
   
- Qualifier un nom signifie le précéder dans votre instruction source avec des informations qui identifient l’emplacement de définition de l’élément cible. Ces informations sont appelées une *chaîne de qualification*. Il peut inclure un ou plusieurs espaces de noms et un module, une classe ou une structure.  
+ Qualifying a name means preceding it in your source statement with information that identifies where the target element is defined. This information is called a *qualification string*. It can include one or more namespaces and a module, class, or structure.  
   
- La chaîne de qualification doit spécifier de manière non ambiguë le module, la classe ou la structure contenant l’élément cible. Le conteneur peut à son tour se trouver dans un autre élément contenant, généralement un espace de noms. Vous devrez peut-être inclure plusieurs éléments contenant dans la chaîne de qualification.  
+ The qualification string should unambiguously specify the module, class, or structure containing the target element. The container might in turn be located in another containing element, usually a namespace. You might need to include several containing elements in the qualification string.  
   
-#### <a name="to-access-a-declared-element-by-qualifying-its-name"></a>Pour accéder à un élément déclaré en qualifiant son nom  
+#### <a name="to-access-a-declared-element-by-qualifying-its-name"></a>To access a declared element by qualifying its name  
   
-1. Déterminez l’emplacement dans lequel l’élément a été défini. Cela peut inclure un espace de noms, ou même une hiérarchie d’espaces de noms. Dans l’espace de noms de niveau inférieur, l’élément doit être contenu dans un module, une classe ou une structure.  
+1. Determine the location in which the element has been defined. This might include a namespace, or even a hierarchy of namespaces. Within the lowest-level namespace, the element must be contained in a module, class, or structure.  
   
     ```vb  
     ' Assume the following hierarchy exists outside your code.  
@@ -66,23 +66,23 @@ End Module
     End Namespace  
     ```  
   
-2. Déterminez un chemin d’accès de qualification en fonction de l’emplacement de l’élément cible. Commencez par l’espace de noms de niveau supérieur, passez à l’espace de noms de niveau le plus bas, et terminez par le module, la classe ou la structure contenant l’élément cible. Chaque élément du chemin d’accès doit contenir l’élément qui le suit.  
+2. Determine a qualification path based on the target element's location. Start with the highest-level namespace, proceed to the lowest-level namespace, and end with the module, class, or structure containing the target element. Each element in the path must contain the element that follows it.  
   
      `outerSpace` → `innerSpace` → `holdsTotals` → `totals`  
   
-3. Préparez la chaîne de qualification pour l’élément cible. Placez un point (`.`) après chaque élément dans le tracé. Votre application doit avoir accès à chaque élément de votre chaîne de qualification.  
+3. Prepare the qualification string for the target element. Place a period (`.`) after every element in the path. Your application must have access to every element in your qualification string.  
   
     ```vb  
     outerSpace.innerSpace.holdsTotals.totals.  
     ```  
   
-4. Écrivez l’expression ou l’instruction d’assignation qui fait référence à l’élément cible de manière normale.  
+4. Write the expression or assignment statement referring to the target element in the normal way.  
   
     ```vb  
     grandTotal = 9000  
     ```  
   
-5. Faites précéder le nom de l’élément cible de la chaîne de qualification. Le nom doit suivre immédiatement le point (`.`) qui suit le module, la classe ou la structure qui contient l’élément.  
+5. Precede the target element name with the qualification string. The name should immediately follow the period (`.`) that follows the module, class, or structure that contains the element.  
   
     ```vb  
     ' Assume the following module is part of your code.  
@@ -93,9 +93,9 @@ End Module
     End Module  
     ```  
   
-6. Le compilateur utilise la chaîne de qualification pour rechercher une déclaration claire et non ambiguë à laquelle il peut correspondre à la référence de l’élément cible.  
+6. The compiler uses the qualification string to find a clear, unambiguous declaration to which it can match the target element reference.  
   
- Vous devrez peut-être également qualifier une référence de nom si votre application a accès à plus d’un élément de programmation portant le même nom. Par exemple, les espaces de noms <xref:System.Windows.Forms> et <xref:System.Web.UI.WebControls> contiennent tous deux une classe `Label` (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> et <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). Si votre application utilise les deux, ou si elle définit sa propre `Label` classe, vous devez distinguer les différents objets `Label`. Incluez l’espace de noms ou l’alias d’importation dans la déclaration de la variable. L’exemple suivant utilise l’alias d’importation.  
+ You might also have to qualify a name reference if your application has access to more than one programming element that has the same name. For example, the <xref:System.Windows.Forms> and <xref:System.Web.UI.WebControls> namespaces both contain a `Label` class (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> and <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). If your application uses both, or if it defines its own `Label` class, you must distinguish the different `Label` objects. Include the namespace or import alias in the variable declaration. The following example uses the import alias.  
   
 ```vb  
 ' The following statement must precede all your declarations.  
@@ -104,21 +104,21 @@ Imports win = System.Windows.Forms, web = System.Web.UI.WebControls
 Dim winLabel As New win.Label()  
 ```  
   
-## <a name="members-of-other-containing-elements"></a>Membres d’autres éléments conteneur  
- Quand vous utilisez un membre non partagé d’une autre classe ou structure, vous devez d’abord qualifier le nom du membre à l’aide d’une variable ou d’une expression qui pointe vers une instance de la classe ou de la structure. Dans l’exemple suivant, `demoClass` est une instance d’une classe nommée `class1`.  
+## <a name="members-of-other-containing-elements"></a>Members of Other Containing Elements  
+ When you use a nonshared member of another class or structure, you must first qualify the member name with a variable or expression that points to an instance of the class or structure. In the following example, `demoClass` is an instance of a class named `class1`.  
   
 ```vb  
 Dim demoClass As class1 = New class1()  
 demoClass.someSub[(argumentlist)]  
 ```  
   
- Vous ne pouvez pas utiliser le nom de la classe proprement dit pour qualifier un membre qui n’est pas [partagé](../../../../visual-basic/language-reference/modifiers/shared.md). Vous devez d’abord créer une instance dans une variable objet (dans ce cas `demoClass`), puis la référencer par le nom de la variable.  
+ You cannot use the class name itself to qualify a member that is not [Shared](../../../../visual-basic/language-reference/modifiers/shared.md). You must first create an instance in an object variable (in this case `demoClass`) and then reference it by the variable name.  
   
- Si une classe ou une structure possède un membre `Shared`, vous pouvez qualifier ce membre soit avec le nom de la classe ou de la structure, soit avec une variable ou une expression qui pointe vers une instance.  
+ If a class or structure has a `Shared` member, you can qualify that member either with the class or structure name or with a variable or expression that points to an instance.  
   
- Un module n’a pas d’instances distinctes, et tous ses membres sont `Shared` par défaut. Par conséquent, vous qualifiez un membre de module avec le nom du module.  
+ A module does not have any separate instances, and all its members are `Shared` by default. Therefore, you qualify a module member with the module name.  
   
- L’exemple suivant montre des références qualifiées à des procédures de membre de module. L’exemple déclare deux procédures `Sub`, nommées `perform`, dans différents modules d’un projet. Chacune d’elles peut être spécifiée sans qualification dans son propre module, mais elle doit être qualifiée si elle est référencée ailleurs. Étant donné que la référence finale dans `module3` ne qualifie pas `perform`, le compilateur ne peut pas résoudre cette référence.  
+ The following example shows qualified references to module member procedures. The example declares two `Sub` procedures, both named `perform`, in different modules in a project. Each one can be specified without qualification within its own module but must be qualified if referenced from anywhere else. Because the final reference in `module3` does not qualify `perform`, the compiler cannot resolve that reference.  
   
 ```vb  
 ' Assume these three modules are all in the same assembly.  
@@ -149,10 +149,10 @@ Module module3
 End Module  
 ```  
   
-## <a name="references-to-projects"></a>Références aux projets  
- Pour utiliser des éléments [publics](../../../../visual-basic/language-reference/modifiers/public.md) définis dans un autre projet, vous devez d’abord définir une *référence* à l’assembly ou la bibliothèque de types de ce projet. Pour définir une référence, cliquez sur **Ajouter une référence** dans le menu **projet** ou utilisez l’option du compilateur de ligne [de commande-Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) .  
+## <a name="references-to-projects"></a>References to Projects  
+ To use [Public](../../../../visual-basic/language-reference/modifiers/public.md) elements defined in another project, you must first set a *reference* to that project's assembly or type library. To set a reference, click **Add Reference** on the **Project** menu, or use the [-reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) command-line compiler option.  
   
- Par exemple, vous pouvez utiliser le modèle objet XML de l' .NET Framework. Si vous définissez une référence à l’espace de noms <xref:System.Xml>, vous pouvez déclarer et utiliser l’une de ses classes, comme <xref:System.Xml.XmlDocument>. L’exemple suivant utilise <xref:System.Xml.XmlDocument>.  
+ For example, you can use the XML object model of the .NET Framework. If you set a reference to the <xref:System.Xml> namespace, you can declare and use any of its classes, such as <xref:System.Xml.XmlDocument>. The following example uses <xref:System.Xml.XmlDocument>.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -160,8 +160,8 @@ End Module
 Dim xDoc As System.Xml.XmlDocument  
 ```  
   
-## <a name="importing-containing-elements"></a>Importation d’éléments contenants  
- Vous pouvez utiliser l' [instruction Imports (espace de noms et type .net)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour *Importer* les espaces de noms qui contiennent les modules ou les classes que vous souhaitez utiliser. Cela vous permet de faire référence aux éléments définis dans un espace de noms importé sans qualification complète de leurs noms. L’exemple suivant réécrit l’exemple précédent pour importer l’espace de noms <xref:System.Xml>.  
+## <a name="importing-containing-elements"></a>Importing Containing Elements  
+ You can use the [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) to *import* the namespaces that contain the modules or classes that you want to use. This enables you to refer to the elements defined in an imported namespace without fully qualifying their names. The following example rewrites the previous example to import the <xref:System.Xml> namespace.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -171,7 +171,7 @@ Imports System.Xml
 Dim xDoc As XmlDocument  
 ```  
   
- En outre, l’instruction `Imports` peut définir un *alias d’importation* pour chaque espace de noms importé. Cela peut rendre le code source plus concis et plus facile à lire. L’exemple suivant réécrit l’exemple précédent pour utiliser `xD` en tant qu’alias pour l’espace de noms <xref:System.Xml>.  
+ In addition, the `Imports` statement can define an *import alias* for each imported namespace. This can make the source code shorter and easier to read. The following example rewrites the previous example to use `xD` as an alias for the <xref:System.Xml> namespace.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -181,17 +181,17 @@ Imports xD = System.Xml
 Dim xDoc As xD.XmlDocument  
 ```  
   
- L’instruction `Imports` ne rend pas les éléments d’autres projets disponibles pour votre application. Autrement dit, il ne remplace pas la définition d’une référence. L’importation d’un espace de noms supprime simplement la nécessité de qualifier les noms définis dans cet espace de noms.  
+ The `Imports` statement does not make elements from other projects available to your application. That is, it does not take the place of setting a reference. Importing a namespace just removes the requirement to qualify the names defined in that namespace.  
   
- Vous pouvez également utiliser l’instruction `Imports` pour importer des modules, des classes, des structures et des énumérations. Vous pouvez ensuite utiliser les membres de ces éléments importés sans qualification. Toutefois, vous devez toujours qualifier les membres non partagés des classes et des structures à l’aide d’une variable ou d’une expression qui prend la valeur d’une instance de la classe ou de la structure.  
+ You can also use the `Imports` statement to import modules, classes, structures, and enumerations. You can then use the members of such imported elements without qualification. However, you must always qualify nonshared members of classes and structures with a variable or expression that evaluates to an instance of the class or structure.  
   
 ## <a name="naming-guidelines"></a>Indications concernant l'attribution d'un nom  
- Lorsque vous définissez deux ou plusieurs éléments de programmation portant le même nom, une *ambiguïté de nom* peut se produire lorsque le compilateur tente de résoudre une référence à ce nom. Si plusieurs définitions sont dans la portée, ou si aucune définition n’est dans la portée, la référence est insoluble. Pour obtenir un exemple, consultez « exemple de référence qualifiée » dans cette page d’aide.  
+ When you define two or more programming elements that have the same name, a *name ambiguity* can result when the compiler attempts to resolve a reference to that name. If more than one definition is in scope, or if no definition is in scope, the reference is irresolvable. For an example, see "Qualified Reference Example" on this Help page.  
   
- Vous pouvez éviter toute ambiguïté de nom en attribuant à tous vos éléments des noms uniques. Vous pouvez ensuite faire référence à n’importe quel élément sans avoir à qualifier son nom avec un espace de noms, un module ou une classe. Vous réduisez également le risque de faire référence à un élément incorrect.  
+ You can avoid name ambiguity by giving all your elements unique names. Then you can make reference to any element without having to qualify its name with a namespace, module, or class. You also reduce the chances of accidentally referring to the wrong element.  
   
 ## <a name="shadowing"></a>Copie shadow  
- Lorsque deux éléments de programmation partagent le même nom, l’un d’eux peut masquer ou *occulter*l’autre. Un élément occulté n’est pas disponible à des fins de référence ; au lieu de cela, lorsque votre code utilise le nom d’élément occulté, le compilateur Visual Basic le résout en l’élément occultant. Pour obtenir une explication plus détaillée des exemples, consultez [occultation dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ When two programming elements share the same name, one of them can hide, or *shadow*, the other one. A shadowed element is not available for reference; instead, when your code uses the shadowed element name, the Visual Basic compiler resolves it to the shadowing element. For a more detailed explanation with examples, see [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

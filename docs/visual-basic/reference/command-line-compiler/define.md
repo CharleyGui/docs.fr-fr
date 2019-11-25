@@ -1,5 +1,5 @@
 ---
-title: -définir (Visual Basic)
+title: -define
 ms.date: 03/10/2018
 helpviewer_keywords:
 - -d compiler option [Visual Basic]
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: 5b2c0173416418f67446c5441a93e5b06e93dc12
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fd0875f09bf3ba7211ede500aa0da45f8b7cd2c7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002372"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344761"
 ---
-# <a name="-define-visual-basic"></a>-définir (Visual Basic)
+# <a name="-define-visual-basic"></a>-define (Visual Basic)
 Définit des constantes conditionnelles du compilateur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,7 +25,7 @@ Définit des constantes conditionnelles du compilateur.
 -define:["]symbol[=value][,symbol[=value]]["]  
 ```
 
-ou
+or
 
 ```console  
 -d:["]symbol[=value][,symbol[=value]]["]  
@@ -35,8 +35,8 @@ ou
   
 |Terme|Définition|  
 |---|---|  
-|`symbol`|Obligatoire. Symbole à définir.|  
-|`value`|facultatif. Valeur à affecter au `symbol`. Si `value` est une chaîne, elle doit être entourée par des séquences de barres obliques inverses (\\ ") au lieu de guillemets. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
+|`symbol`|Requis. Symbole à définir.|  
+|`value`|Optionnel. Valeur à affecter au `symbol`. If `value` is a string, it must be surrounded by backslash/quotation-mark sequences (\\") instead of quotation marks. Si aucune valeur n'est spécifiée, il prend la valeur True.|  
   
 ## <a name="remarks"></a>Notes  
  L'option `-define` revient à utiliser la directive de préprocesseur `#Const` dans votre fichier source, excepté que les constantes définies avec `-define` sont publiques et s'appliquent à tous les fichiers du projet.  
@@ -49,7 +49,7 @@ ou
   
 |Pour définir /define dans l'environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Avancé**.<br />4.  Modifiez la valeur dans la zone **constantes personnalisées** .|  
+|1.  Have a project selected in **Solution Explorer**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Click the **Compile** tab.<br />3.  Click **Advanced**.<br />4.  Modify the value in the **Custom Constants** box.|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant définit deux constantes de compilation conditionnelle, puis les utilise.  

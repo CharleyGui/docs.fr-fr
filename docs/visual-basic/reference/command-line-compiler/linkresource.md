@@ -1,5 +1,5 @@
 ---
-title: -linkresource (Visual Basic)
+title: -linkresource
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /linkresource compiler option [Visual Basic]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - linkres compiler option [Visual Basic]
 - -linkres compiler option [Visual Basic]
 ms.assetid: cf4dcad8-17b7-404c-9184-29358aa05b15
-ms.openlocfilehash: dee5384696d543442f3280b9fdb535a7d9b6f863
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 0315645eccdc899ac9cf4d0be105297e1fa2a4c4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005488"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335480"
 ---
 # <a name="-linkresource-visual-basic"></a>-linkresource (Visual Basic)
 Crée un lien à une ressource managée.  
@@ -25,7 +25,7 @@ Crée un lien à une ressource managée.
 -linkresource:filename[,identifier[,public|private]]  
 ```
 
-ou  
+or  
 
 ```console
 -linkres:filename[,identifier[,public|private]]  
@@ -33,27 +33,27 @@ ou
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Obligatoire. Fichier de ressources à lier à l’assembly. Si le nom de fichier contient un espace, mettez-le entre guillemets ("").  
+ Requis. The resource file to link to the assembly. If the file name contains a space, enclose the name in quotation marks (" ").  
   
  `identifier`  
- facultatif. Nom logique de la ressource. Nom utilisé pour charger la ressource. La valeur par défaut est le nom du fichier. Si vous le souhaitez, vous pouvez spécifier si le fichier est public ou privé dans le manifeste de l’assembly, par exemple : `-linkres:filename.res,myname.res,public`. Par défaut, `filename` est public dans l’assembly.  
+ Optionnel. The logical name for the resource. The name that is used to load the resource. La valeur par défaut est le nom du fichier. Optionally, you can specify whether the file is public or private in the assembly manifest, for example: `-linkres:filename.res,myname.res,public`. By default, `filename` is public in the assembly.  
   
 ## <a name="remarks"></a>Notes  
- L’option `-linkresource` n’incorpore pas le fichier de ressources dans le fichier de sortie ; pour ce faire, utilisez l’option `-resource`.  
+ The `-linkresource` option does not embed the resource file in the output file; use the `-resource` option to do this.  
   
- L’option `-linkresource` requiert l’une des options `-target` autres que `-target:module`.  
+ The `-linkresource` option requires one of the `-target` options other than `-target:module`.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen. exe (générateur de fichiers de ressources)](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l’environnement de développement, il est accessible avec les membres de l’espace de noms <xref:System.Resources>. (Pour plus d'informations, consultez <xref:System.Resources.ResourceManager>.) Pour accéder à toutes les autres ressources au moment de l’exécution, utilisez les méthodes qui commencent par `GetManifestResource` dans la classe <xref:System.Reflection.Assembly>.  
+ If `filename` is a .NET Framework resource file created, for example, by the [Resgen.exe (Resource File Generator)](../../../framework/tools/resgen-exe-resource-file-generator.md) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace. (For more information, see <xref:System.Resources.ResourceManager>.) To access all other resources at run time, use the methods that begin with `GetManifestResource` in the <xref:System.Reflection.Assembly> class.  
   
- Le nom de fichier peut être n’importe quel format de fichier. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly.  
+ The file name can be any file format. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly.  
   
  La forme abrégée de `-linkresource` est `-linkres`.  
   
 > [!NOTE]
-> L’option `-linkresource` n’est pas disponible à partir de l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir de la ligne de commande.  
+> The `-linkresource` option is not available from the Visual Studio development environment; it is available only when you compile from the command line.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `in.vb` et les liens vers le fichier de ressources `rf.resource`.  
+ The following code compiles `in.vb` and links to resource file `rf.resource`.  
   
 ```console  
 vbc -linkresource:rf.resource in.vb  
@@ -62,6 +62,6 @@ vbc -linkresource:rf.resource in.vb
 ## <a name="see-also"></a>Voir aussi
 
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-cible (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [-ressource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md)
+- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [-resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

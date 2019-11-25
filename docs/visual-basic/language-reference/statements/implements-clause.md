@@ -1,5 +1,5 @@
 ---
-title: Implements, clause (Visual Basic)
+title: Implements (clause)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ImplementsClause
@@ -17,28 +17,28 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: dcd20f21a989c327dcfcf27d5638d500b6e4b6da
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f114aee75356e59eafd9d3ba6af9c64402cb374f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929320"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345871"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements, clause (Visual Basic)
-Indique qu’un membre de classe ou de structure fournit l’implémentation d’un membre défini dans une interface.  
+Indicates that a class or structure member is providing the implementation for a member defined in an interface.  
   
 ## <a name="remarks"></a>Notes  
-Le `Implements` mot clé n’est pas le même que l' [instruction Implements](../../../visual-basic/language-reference/statements/implements-statement.md). Utilisez l' `Implements` instruction pour spécifier qu’une classe ou une structure implémente une ou plusieurs interfaces, puis, pour chaque membre, vous utilisez `Implements` le mot clé pour spécifier l’interface et le membre qu’elle implémente.
+The `Implements` keyword is not the same as the [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md). You use the `Implements` statement to specify that a class or structure implements one or more interfaces, and then for each member you use the `Implements` keyword to specify which interface and which member it implements.
 
-Si une classe ou une structure implémente une interface, elle doit inclure `Implements` l’instruction immédiatement après l’instruction de la [classe](../../../visual-basic/language-reference/statements/class-statement.md) ou de la [structure](../../../visual-basic/language-reference/statements/structure-statement.md), et elle doit implémenter tous les membres définis par l’interface.
+If a class or structure implements an interface, it must include the `Implements` statement immediately after the [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md) or [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md), and it must implement all the members defined by the interface.
 
-## <a name="reimplementation"></a>Réimplémentation  
-Dans une classe dérivée, vous pouvez réimplémenter un membre d’interface que la classe de base a déjà implémenté. Cela diffère de la substitution du membre de classe de base dans les aspects suivants :
+## <a name="reimplementation"></a>Reimplementation  
+In a derived class, you can reimplement an interface member that the base class has already implemented. This is different from overriding the base class member in the following respects:
 
-- Le membre de la classe de base n’a pas besoin d’être [substituable](../../../visual-basic/language-reference/modifiers/overridable.md) pour être réimplémenté.
-- Vous pouvez réimplémenter le membre avec un nom différent.
+- The base class member does not need to be [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) to be reimplemented.
+- You can reimplement the member with a different name.
 
-Le `Implements` mot clé peut être utilisé dans les contextes suivants :
+The `Implements` keyword can be used in the following contexts:
 
 - [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)

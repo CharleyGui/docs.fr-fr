@@ -1,5 +1,5 @@
 ---
-title: Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic
+title: Création, suppression et déplacement de fichiers et de répertoires
 ms.date: 07/20/2015
 helpviewer_keywords:
 - examples [Visual Basic], moving files and directories
@@ -22,17 +22,19 @@ helpviewer_keywords:
 - I/O [Visual Basic], renaming folders
 - I/O [Visual Basic], moving files
 ms.assetid: 8f814fcc-4c42-4dbb-a131-005ec445ac9e
-ms.openlocfilehash: 8b734b553e0ef4c14e372892e53b1184798390e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8e0b291c0bb526c21654a1e8c08bd168d95ac53a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590944"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348907"
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic
+
 Cette section liste les tâches associées à la création, la suppression, le déplacement et la modification du nom de fichiers et de répertoires dans Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Guide pratique : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)  
  Montre comment copier des fichiers dotés d’un modèle de nom spécifique, par exemple des fichiers .txt, dans un répertoire.  
   
@@ -63,19 +65,20 @@ Cette section liste les tâches associées à la création, la suppression, le d
  [Guide pratique : créer un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)  
  Montre comment créer un répertoire.  
   
- [Guide pratique pour rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
+ [Guide pratique : rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)  
  Montre comment lister des répertoires dotés d’un modèle de nom spécifique.  
   
- [Guide pratique pour placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
+ [Guide pratique : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)  
  Montre comment lister les fichiers d’un répertoire.  
   
  [Guide pratique : récupérer le contenu du répertoire Mes Documents](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)  
  Montre comment lire des répertoires spéciaux.  
   
- [Guide pratique pour analyser des chemins](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
+ [Guide pratique : analyser des chemins d’accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
  Montre comment utiliser les méthodes `My` pour combiner des chemins d’accès aux fichiers.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
+
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  
   
@@ -116,6 +119,7 @@ Cette section liste les tâches associées à la création, la suppression, le d
  Décrit l’objet `SpecialDirectories`.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
+
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Liste les tâches associées à la lecture de fichiers.  
   

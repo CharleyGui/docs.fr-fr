@@ -1,27 +1,27 @@
 ---
-title: 'Procédure : Appeler une méthode déléguée (Visual Basic)'
+title: 'Comment : appeler une méthode déléguée'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: c2bdb65c9d060e854db3319e4aa5b2e93b9681af
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 520bacfbe6103490e0459cd5af149c1d55a8fce4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629588"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345262"
 ---
-# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Procédure : Appeler une méthode déléguée (Visual Basic)
+# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Comment : appeler une méthode déléguée (Visual Basic)
 
-Cet exemple montre comment associer une méthode à un délégué, puis comment appeler cette méthode via le délégué.
+This example shows how to associate a method with a delegate and then invoke that method through the delegate.
 
-### <a name="create-the-delegate-and-matching-procedures"></a>Créer le délégué et les procédures de correspondance
+### <a name="create-the-delegate-and-matching-procedures"></a>Create the delegate and matching procedures
 
-1. Créez un délégué nommé `MySubDelegate`.
+1. Create a delegate named `MySubDelegate`.
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
     ```
 
-2. Déclarez une classe qui contient une méthode avec la même signature que le délégué.
+2. Declare a class that contains a method with the same signature as the delegate.
 
     ```vb
     Class class1
@@ -31,7 +31,7 @@ Cet exemple montre comment associer une méthode à un délégué, puis comment 
     End Class
     ```
 
-3. Définissez une méthode qui crée une instance du délégué et appelle la méthode associée au délégué en appelant la `Invoke` méthode intégrée.
+3. Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.
 
     ```vb
     Protected Sub DelegateTest()

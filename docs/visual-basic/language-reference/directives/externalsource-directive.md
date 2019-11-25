@@ -1,5 +1,5 @@
 ---
-title: '#ExternalSource, directive (Visual Basic)'
+title: '#ExternalSource, directive'
 ms.date: 07/20/2015
 f1_keywords:
 - '#Externalsource'
@@ -12,15 +12,16 @@ helpviewer_keywords:
 - ExternalSource directive (#ExternalSource)
 - '#ExternalSource directive'
 ms.assetid: 243bc6a2-34c3-4eeb-a776-9fd2bf988149
-ms.openlocfilehash: ac7096e998dd8d2a416dc739e1d7625e1abff7a6
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: fa0a40827c1b3865b90c7d796ea4dd364774e1c4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696822"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343829"
 ---
 # <a name="externalsource-directive"></a>#ExternalSource, directive
-Indique un mappage entre des lignes spécifiques de code source et du texte externe à la source.  
+
+Indicates a mapping between specific lines of source code and text external to the source.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,24 +32,26 @@ Indique un mappage entre des lignes spécifiques de code source et du texte exte
 ```  
   
 ## <a name="parts"></a>Composants  
+
  `StringLiteral`  
- Chemin d’accès à la source externe.  
+ The path to the external source.  
   
  `IntLiteral`  
- Numéro de ligne de la première ligne de la source externe.  
+ The line number of the first line of the external source.  
   
  `LogicalLine`  
- Ligne où l’erreur se produit dans la source externe.  
+ The line where the error occurs in the external source.  
   
  `#End ExternalSource`  
  Met fin au bloc `#ExternalSource`.  
   
 ## <a name="remarks"></a>Notes  
- Cette directive est utilisée uniquement par le compilateur et le débogueur.  
+
+ This directive is used only by the compiler and the debugger.  
   
- Un fichier source peut inclure des directives de source externe, qui indiquent un mappage entre des lignes de code spécifiques dans le fichier source et du texte externe à la source, tel qu’un fichier. aspx. Si des erreurs sont rencontrées dans le code source désigné pendant la compilation, elles sont identifiées comme provenant de la source externe.  
+ A source file may include external source directives, which indicate a mapping between specific lines of code in the source file and text external to the source, such as an .aspx file. If errors are encountered in the designated source code during compilation, they are identified as coming from the external source.  
   
- Les directives de source externe n’ont aucun effet sur la compilation et ne peuvent pas être imbriquées. Ils sont destinés à un usage interne par l’application uniquement.  
+ External source directives have no effect on compilation and cannot be nested. They are intended for internal use by the application only.  
   
 ## <a name="see-also"></a>Voir aussi
 

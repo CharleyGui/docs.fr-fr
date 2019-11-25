@@ -1,15 +1,15 @@
 ---
-title: Accès aux attributs à l’aide de la réflexion (Visual Basic)
+title: Accès à des attributs à l'aide de la réflexion
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: a50c308a66637768dbe0089e612fcfe73bafdfa2
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 94352f07cf1f7e4a35f023503f138596ae5ac227
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524341"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353555"
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accès aux attributs à l’aide de la réflexion (Visual Basic)
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accessing Attributes by Using Reflection (Visual Basic)
 
 La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d'informations, consultez <xref:System.Attribute>.
 

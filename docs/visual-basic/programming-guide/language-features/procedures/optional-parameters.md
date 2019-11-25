@@ -1,5 +1,5 @@
 ---
-title: Paramètres facultatifs (Visual Basic)
+title: Paramètres facultatifs
 ms.date: 07/20/2015
 helpviewer_keywords:
 - parameters [Visual Basic], optional
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: 9236080d50638bc38bbdd3ddaf8aabf9e675e43f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d859f7eaaefa051cfdf703d8589bc8c679a3ee85
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639128"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345965"
 ---
 # <a name="optional-parameters-visual-basic"></a>Paramètres facultatifs (Visual Basic)
-Vous pouvez spécifier qu’un paramètre de procédure est facultatif et qu’il n’est pas nécessaire de fournir un argument lorsque la procédure est appelée. *Paramètres facultatifs* sont indiquées par le `Optional` mot clé dans la définition de procédure. Les règles suivantes s'appliquent :  
+Vous pouvez spécifier qu’un paramètre de procédure est facultatif et qu’il n’est pas nécessaire de fournir un argument lorsque la procédure est appelée. *Optional parameters* are indicated by the `Optional` keyword in the procedure definition. Les règles suivantes s'appliquent :  
   
 - Chaque paramètre facultatif dans la définition de la procédure doit spécifier une valeur par défaut.  
   
@@ -50,7 +50,7 @@ Sub name(argument 1, , , argument 4)
  [!code-vb[VbVbcnProcedures#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#47)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>Détermination de la présence d’un argument facultatif  
- Une procédure ne peut pas détecter au moment de l’exécution si un argument donné a été omis ou si le code appelant a explicitement fourni la valeur par défaut. Pour établir cette distinction, vous pouvez définir une valeur improbable comme valeur par défaut. La procédure suivante définit le paramètre facultatif `office`et teste sa valeur par défaut, `QJZ`, pour voir s’il a été omis dans l’appel :  
+ Une procédure ne peut pas détecter au moment de l’exécution si un argument donné a été omis ou si le code appelant a explicitement fourni la valeur par défaut. Pour établir cette distinction, vous pouvez définir une valeur improbable comme valeur par défaut. The following procedure defines the optional parameter `office`, and tests for its default value, `QJZ`, to see if it has been omitted in the call:  
   
  [!code-vb[VbVbcnProcedures#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#46)]  
   

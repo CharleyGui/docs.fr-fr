@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Préfixes d’espaces de noms de contrôle (Visual Basic) (LINQ to XML)'
+title: 'How to: Control Namespace Prefixes (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2fcf28a5-31b6-409d-84ea-27c22f71fc9f
-ms.openlocfilehash: 2b89b49aa76df526c08143cad49685386ffd5e7c
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 5ba415452a8671466c3a4c71a88731e5bd3cda60
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709819"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348375"
 ---
-# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Procédure : Préfixes d’espaces de noms de contrôle (Visual Basic) (LINQ to XML)
+# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Comment : contrôler les préfixes d'espaces de noms (Visual Basic) (LINQ to XML)
 Cette rubrique décrit comment contrôler les préfixes d'espaces de noms.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- Cet exemple déclare deux espaces de noms. Il spécifie que `http://www.adventure-works.com` l’espace de noms `aw`a le préfixe `www.fourthcoffee.com` et que l’espace de `fc`noms a le préfixe.  
+ Cet exemple déclare deux espaces de noms. It specifies that the `http://www.adventure-works.com` namespace has the prefix `aw`, and that the `www.fourthcoffee.com` namespace has the prefix of `fc`.  
   
 ### <a name="code"></a>Code  
   
@@ -40,7 +40,7 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Commentaires  
+### <a name="comments"></a>Comments  
  Cet exemple génère la sortie suivante :  
   
 ```xml  
@@ -55,4 +55,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

@@ -1,15 +1,15 @@
 ---
-title: Opérations de projection (Visual Basic)
+title: Opérations de projection
 ms.date: 07/20/2015
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-ms.openlocfilehash: 9db8284d59baa764a5509b1acef0c4d315fb28a7
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: d7efb46ccfe3208ae6c58043a64c236171d0c147
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524103"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346627"
 ---
-# <a name="projection-operations-visual-basic"></a>Opérations de projection (Visual Basic)
+# <a name="projection-operations-visual-basic"></a>Projection Operations (Visual Basic)
 
 La projection désigne l’opération de transformation d’un objet en une nouvelle forme qui se compose souvent uniquement des propriétés à utiliser ensuite. À l'aide de la projection, vous pouvez créer un nouveau type qui est généré à partir de chaque objet. Vous pouvez projeter une propriété et effectuer une fonction mathématique sur celle-ci. Vous pouvez également projeter l’objet d’origine sans le modifier.
 
@@ -17,7 +17,7 @@ Les méthodes d’opérateurs de requête standard qui effectuent des opération
 
 ## <a name="methods"></a>Méthodes
 
-|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations complémentaires|
+|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |Sélectionner|Projette les valeurs qui sont basées sur une fonction de transformation.|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
 |SelectMany|Projette les séquences de valeurs qui sont basées sur une fonction de transformation, puis les aplatit en une seule séquence.|Utilisation de plusieurs clauses `From`|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|
@@ -52,7 +52,7 @@ MsgBox(sb.ToString())
 
 ### <a name="selectmany"></a>SelectMany
 
-L’exemple suivant utilise plusieurs clauses `From` pour projeter chaque mot de chaque chaîne dans une liste de chaînes.
+The following example uses multiple `From` clauses to project each word from each string in a list of strings.
 
 ```vb
 Dim phrases = New List(Of String) From {"an apple a day", "the quick brown fox"}
@@ -181,6 +181,6 @@ End Sub
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Select (clause)](../../../../visual-basic/language-reference/queries/select-clause.md)
 - [Guide pratique : combiner des données avec des jointures](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
-- [Comment : remplir des collections d’objets à partir de plusieurs sources (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
 - [Guide pratique : retourner un résultat de requête LINQ comme type spécifique](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
-- [Comment : fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)

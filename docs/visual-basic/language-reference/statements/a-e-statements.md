@@ -1,24 +1,24 @@
 ---
-title: Instructions A-E (Visual Basic)
+title: Instructions A-E
 ms.date: 07/20/2015
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
-ms.openlocfilehash: cfe28b28f197759bb2620d12d550a057d47f4d74
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 7d56c059ac4f2f136e57aedc161c4819022f028a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591999"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350227"
 ---
 # <a name="a-e-statements"></a>Instructions A-E
-Le tableau suivant contient une liste d’instructions Visual Basic Language.  
+The following table contains a listing of Visual Basic language statements.  
   
 |||||  
 |---|---|---|---|  
 |[AddHandler](addhandler-statement.md)|[Call](call-statement.md)|[Classe](class-statement.md)|[Const](const-statement.md)|  
 |[Continue](continue-statement.md)|[Declare](declare-statement.md)|[Delegate](delegate-statement.md)|[Dim](dim-statement.md)|  
-|[... Circuit](do-loop-statement.md)|[Else](else-statement.md)|[Fin](end-statement.md)|[End \<mot clé>](end-keyword-statement.md)|  
+|[Do...Loop](do-loop-statement.md)|[Else](else-statement.md)|[Fin](end-statement.md)|[End \<mot clé>](end-keyword-statement.md)|  
 |[Enum](enum-statement.md)|[Erase](erase-statement.md)|[Error](error-statement.md)|[Event](event-statement.md)|  
-|[Quitter](exit-statement.md)||||  
+|[Exit](exit-statement.md)||||  
   
 ## <a name="see-also"></a>Voir aussi
 

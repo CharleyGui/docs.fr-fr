@@ -1,32 +1,32 @@
 ---
-title: Littéraux XML et spécification XML 1.0 (Visual Basic)
+title: Littéraux XML et spécification XML 1.0
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML literals [Visual Basic], XML 1.0 specification
 ms.assetid: 46f046e5-293c-41a3-b893-4e5f6e32e78a
-ms.openlocfilehash: e00812ccf463342502eef96c91d62ba63223424f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d5dd90899c8a3c4fb4670258e7ff636822c479da
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639864"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346182"
 ---
 # <a name="xml-literals-and-the-xml-10-specification-visual-basic"></a>Littéraux XML et spécification XML 1.0 (Visual Basic)
-La syntaxe des littéraux XML en Visual Basic prend en charge la plupart de la spécification Extensible Markup Language (XML) 1.0. Pour plus d’informations sur la spécification XML 1.0, consultez [Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml) sur le site Web de W3C.  
+The XML literal syntax in Visual Basic supports most of the Extensible Markup Language (XML) 1.0 specification. For details about the XML 1.0 specification, see [Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml) on the W3C Web site.  
   
-## <a name="what-visual-basic-does-not-support"></a>Ce que Visual Basic ne prend pas en charge  
+## <a name="what-visual-basic-does-not-support"></a>What Visual Basic Does Not Support  
   
-- Un littéral XML ne peut pas contenir une définition de type de document (DTD).  
+- An XML literal cannot contain a document type definition (DTD).  
   
-- Un littéral de document XML doit commencer par une déclaration de document XML.  
+- An XML document literal must start with an XML document declaration.  
   
-- Un littéral XML ne peut pas contenir plus de 65 535 caractères sur une seule ligne.  
+- An XML literal cannot contain more than 65,535 characters on one line.  
   
-- Préfixes d’espace de noms XML, les noms d’éléments et les noms d’attribut ne peut pas contenir plus de 1 024 caractères.  
+- XML namespace prefixes, element names, and attribute names cannot contain more than 1,024 characters.  
   
-## <a name="extra-features-that-visual-basic-supports"></a>Fonctionnalités supplémentaires qui prend en charge de Visual Basic  
+## <a name="extra-features-that-visual-basic-supports"></a>Extra Features That Visual Basic Supports  
   
-- La syntaxe d’expression incorporée autorisée dans les littéraux de document et élément n’est pas un XML valide.  
+- The embedded expression syntax allowed in document and element literals is not valid XML.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,5 +1,5 @@
 ---
-title: Comparaisons de valeurs (Visual Basic)
+title: Comparaisons de valeurs
 ms.date: 07/20/2015
 helpviewer_keywords:
 - variables [Visual Basic], comparing values
@@ -10,37 +10,37 @@ helpviewer_keywords:
 - operators [Visual Basic], comparison
 - expressions [Visual Basic], comparing
 ms.assetid: 60da0c76-9458-4afc-97e9-44a7939c064c
-ms.openlocfilehash: 270b226d0a1aa7d08721e6f9ed36d68492685af3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f766eaaada486a0f70838bafb754d25070ff4174
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864389"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346285"
 ---
 # <a name="value-comparisons-visual-basic"></a>Comparaisons de valeurs (Visual Basic)
-Opérateurs de comparaison peuvent être utilisés pour construire des expressions qui comparent les valeurs de variables numériques. Ces expressions retournent un `Boolean` valeur selon que la comparaison est true ou false. Voici quelques exemples de ce type d’expression.  
+Comparison operators can be used to construct expressions that compare the values of numeric variables. These expressions return a `Boolean` value based on whether the comparison is true or false. Examples of such an expression are as follows.  
   
  `45 > 26`  
   
  `26 > 45`  
   
- La première expression prend la valeur `True`, car 45 est supérieur à 26. Le deuxième exemple prend la valeur `False`, car 26 n’est pas supérieure à 45.  
+ The first expression evaluates to `True`, because 45 is greater than 26. The second example evaluates to `False`, because 26 is not greater than 45.  
   
- Vous pouvez également comparer des expressions numériques de cette façon. Les expressions que vous comparez peuvent être des expressions complexes, comme dans l’exemple suivant.  
+ You can also compare numeric expressions in this fashion. The expressions you compare can themselves be complex expressions, as in the following example.  
   
  `x / 45 * (y +17) >= System.Math.Sqrt(z) / (p - (x * 16))`  
   
- L’expression précédente complexe inclut des littéraux, des variables et des appels de fonction. Les expressions des deux côtés de l’opérateur de comparaison sont évaluées et les valeurs résultantes sont ensuite comparés à l’aide de la `>=` opérateur de comparaison. Si la valeur de l’expression sur le côté gauche est supérieure ou égal à la valeur de l’expression de droite, l’ensemble de l’expression prend la valeur `True`; sinon, il renvoie la valeur `False`.  
+ The preceding complex expression includes literals, variables, and function calls. The expressions on both sides of the comparison operator are evaluated, and the resulting values are then compared using the `>=` comparison operator. If the value of the expression on the left side is greater than or equal to the value of the expression on the right, the entire expression evaluates to `True`; otherwise, it evaluates to `False`.  
   
- Les expressions qui comparent des valeurs sont couramment utilisées dans `If...Then` constructions, comme dans l’exemple suivant.  
+ Expressions that compare values are most commonly used in `If...Then` constructions, as in the following example.  
   
  [!code-vb[VbVbalrOperators#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#84)]  
   
- Le `=` signe est un opérateur de comparaison ainsi que d’un opérateur d’assignation. Lorsqu’il est utilisé comme un opérateur de comparaison, il évalue si la valeur sur la gauche est égale à la valeur à droite, comme indiqué dans l’exemple suivant.  
+ The `=` sign is a comparison operator as well as an assignment operator. When used as a comparison operator, it evaluates whether the value on the left is equal to the value on the right, as shown in the following example.  
   
  [!code-vb[VbVbalrOperators#85](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#85)]  
   
- Vous pouvez également utiliser une expression de comparaison n’importe où un `Boolean` valeur est nécessaire, comme dans un `If`, `While`, `Loop`, ou `ElseIf` instruction, ou lors de l’assignation ou du passage d’une valeur à une `Boolean` variable. Dans l’exemple suivant, la valeur retournée par l’expression de comparaison est assignée à un `Boolean` variable.  
+ You can also use a comparison expression anywhere a `Boolean` value is needed, such as in an `If`, `While`, `Loop`, or `ElseIf` statement, or when assigning to or passing a value to a `Boolean` variable. In the following example, the value returned by the comparison expression is assigned to a `Boolean` variable.  
   
  [!code-vb[VbVbalrOperators#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#86)]  
   
@@ -48,6 +48,6 @@ Opérateurs de comparaison peuvent être utilisés pour construire des expressio
 
 - [Expressions booléennes](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
 - [Opérateurs et expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Opérateurs de comparaison en Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Guide pratique pour Calculer des valeurs numériques](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-calculate-numeric-values.md)
+- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Guide pratique : calculer des valeurs numériques](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-calculate-numeric-values.md)
 - [Priorité des opérateurs en Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)

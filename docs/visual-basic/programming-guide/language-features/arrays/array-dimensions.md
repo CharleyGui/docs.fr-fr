@@ -1,5 +1,5 @@
 ---
-title: Dimensions du tableau dans Visual Basic
+title: Dimensions du tableau
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dimensions, arrays
@@ -9,89 +9,89 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: bbc9e523e9b74cf380c65135e7416f1feba01a2e
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 12e983ae62fa9f9ea762d434ffe5b73873a4a2e8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512893"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351907"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Dimensions du tableau dans Visual Basic
 
-Une *dimension* est un sens dans lequel vous pouvez faire varier la spécification des éléments d’un tableau. Un tableau qui contient le total des ventes pour chaque jour du mois a une dimension (le jour du mois). Un tableau qui contient le total des ventes par département pour chaque jour du mois a deux dimensions (le numéro de service et le jour du mois). Le nombre de dimensions d’un tableau est appelé son *rang*.
+A *dimension* is a direction in which you can vary the specification of an array's elements. An array that holds the sales total for each day of the month has one dimension (the day of the month). An array that holds the sales total by department for each day of the month has two dimensions (the department number and the day of the month). The number of dimensions an array has is called its *rank*.
 
 > [!NOTE]
-> Vous pouvez utiliser la <xref:System.Array.Rank%2A> propriété pour déterminer le nombre de dimensions d’un tableau.
+> You can use the <xref:System.Array.Rank%2A> property to determine the how many dimensions an array has.
 
-## <a name="working-with-dimensions"></a>Utilisation de dimensions
+## <a name="working-with-dimensions"></a>Working with Dimensions
 
-Vous spécifiez un élément d’un tableau en fournissant un *index* ou un *indice* pour chacune de ses dimensions. Les éléments sont contigus le long de chaque dimension à partir de l’index 0 jusqu’à l’index le plus élevé pour cette dimension.
+You specify an element of an array by supplying an *index* or *subscript* for each of its dimensions. The elements are contiguous along each dimension from index 0 through the highest index for that dimension.
 
-Les illustrations suivantes montrent la structure conceptuelle des tableaux avec des rangs différents. Chaque élément dans les illustrations affiche les valeurs d’index qui y accèdent. Par exemple, vous pouvez accéder au premier élément de la deuxième ligne du tableau à deux dimensions en spécifiant des index `(1, 0)`.
+The following illustrations show the conceptual structure of arrays with different ranks. Each element in the illustrations shows the index values that access it. For example, you can access the first element of the second row of the two-dimensional array by specifying indexes `(1, 0)`.
 
-![Diagramme qui montre un tableau unidimensionnel.](./media/array-dimensions/one-dimensional-array.gif)
+![Diagram that shows a one-dimensional array.](./media/array-dimensions/one-dimensional-array.gif)
 
-![Diagramme qui montre un tableau à deux dimensions.](./media/array-dimensions/two-dimensional-array.gif)
+![Diagram that shows a two-dimensional array.](./media/array-dimensions/two-dimensional-array.gif)
 
-![Diagramme qui montre un tableau à trois dimensions.](./media/array-dimensions/three-dimensional-array.gif)
+![Diagram that shows a three-dimensional array.](./media/array-dimensions/three-dimensional-array.gif)
 
-### <a name="one-dimension"></a>Une dimension
+### <a name="one-dimension"></a>One Dimension
 
-De nombreux tableaux n’ont qu’une seule dimension, comme le nombre de personnes de chaque âge. La seule condition requise pour spécifier un élément est l’âge pour lequel cet élément contient le nombre. Par conséquent, un tel tableau utilise un seul index. L’exemple suivant déclare une variable qui doit contenir un *tableau unidimensionnel* de nombres d’âge pour les âges de 0 à 120.
+Many arrays have only one dimension, such as the number of people of each age. The only requirement to specify an element is the age for which that element holds the count. Therefore, such an array uses only one index. The following example declares a variable to hold a *one-dimensional array* of age counts for ages 0 through 120.
 
 ```vb
 Dim ageCounts(120) As UInteger
 ```
 
-### <a name="two-dimensions"></a>Deux dimensions
+### <a name="two-dimensions"></a>Two Dimensions
 
-Certains tableaux ont deux dimensions, telles que le nombre de bureaux à chaque étage de chaque bâtiment sur un campus. La spécification d’un élément nécessite à la fois le numéro de bâtiment et le plancher, et chaque élément contient le nombre pour cette combinaison de construction et d’étage. Par conséquent, un tel tableau utilise deux index. L’exemple suivant déclare une variable destinée à contenir un *tableau à deux dimensions* de nombres de bureaux, pour les bâtiments de 0 à 40 et les étages de 0 à 5.
+Some arrays have two dimensions, such as the number of offices on each floor of each building on a campus. The specification of an element requires both the building number and the floor, and each element holds the count for that combination of building and floor. Therefore, such an array uses two indexes. The following example declares a variable to hold a *two-dimensional array* of office counts, for buildings 0 through 40 and floors 0 through 5.
 
 ```vb
 Dim officeCounts(40, 5) As Byte
 ```
 
-Un tableau à deux dimensions est également appelé *tableau rectangulaire*.
+A two-dimensional array is also called a *rectangular array*.
 
-### <a name="three-dimensions"></a>Trois dimensions
+### <a name="three-dimensions"></a>Three Dimensions
 
-Quelques tableaux ont trois dimensions, telles que des valeurs dans un espace tridimensionnel. Ce type de tableau utilise trois index, qui dans ce cas représentent les coordonnées x, y et z de l’espace physique. L’exemple suivant déclare une variable qui doit contenir un *tableau à trois dimensions* de températures atmosphériques à différents points d’un volume tridimensionnel.
+A few arrays have three dimensions, such as values in three-dimensional space. Such an array uses three indexes, which in this case represent the x, y, and z coordinates of physical space. The following example declares a variable to hold a *three-dimensional array* of air temperatures at various points in a three-dimensional volume.
 
 ```vb
 Dim airTemperatures(99, 99, 24) As Single
 ```
 
-### <a name="more-than-three-dimensions"></a>Plus de trois dimensions
+### <a name="more-than-three-dimensions"></a>More than Three Dimensions
 
-Bien qu’un tableau puisse avoir jusqu’à 32 dimensions, il est rare d’en avoir plus de trois.
+Although an array can have as many as 32 dimensions, it is rare to have more than three.
 
 > [!NOTE]
-> Lorsque vous ajoutez des dimensions à un tableau, le stockage total requis par le tableau augmente considérablement, donc utilisez des tableaux multidimensionnels avec précaution.
+> When you add dimensions to an array, the total storage needed by the array increases considerably, so use multidimensional arrays with care.
 
-## <a name="using-different-dimensions"></a>Utilisation de différentes dimensions
+## <a name="using-different-dimensions"></a>Using Different Dimensions
 
-Supposons que vous souhaitez effectuer le suivi des montants des ventes pour chaque jour du mois présent. Vous pouvez déclarer un tableau unidimensionnel avec 31 éléments, un pour chaque jour du mois, comme le montre l’exemple suivant.
+Suppose you want to track sales amounts for every day of the present month. You might declare a one-dimensional array with 31 elements, one for each day of the month, as the following example shows.
 
 ```vb
 Dim salesAmounts(30) As Double
 ```
 
-Supposons à présent que vous souhaitiez suivre les mêmes informations non seulement pour chaque jour du mois, mais également pour chaque mois de l’année. Vous pouvez déclarer un tableau à deux dimensions avec 12 lignes (pour les mois) et 31 colonnes (pour les jours), comme le montre l’exemple suivant.
+Now suppose you want to track the same information not only for every day of a month but also for every month of the year. You might declare a two-dimensional array with 12 rows (for the months) and 31 columns (for the days), as the following example shows.
 
 ```vb
 Dim salesAmounts(11, 30) As Double
 ```
 
-Supposons à présent que vous décidiez que votre tableau conserve les informations pendant plus d’un an. Si vous souhaitez effectuer le suivi des montants des ventes pendant 5 ans, vous pouvez déclarer un tableau à trois dimensions avec 5 couches, 12 lignes et 31 colonnes, comme le montre l’exemple suivant.
+Now suppose you decide to have your array hold information for more than one year. If you want to track sales amounts for 5 years, you could declare a three-dimensional array with 5 layers, 12 rows, and 31 columns, as the following example shows.
 
 ```vb
 Dim salesAmounts(4, 11, 30) As Double
 ```
 
-Notez que, étant donné que chaque index varie de 0 à son maximum, chaque `salesAmounts` dimension de est déclarée comme une valeur inférieure à la longueur requise pour cette dimension. Notez également que la taille du tableau augmente avec chaque nouvelle dimension. Les trois tailles dans les exemples précédents sont respectivement 31, 372 et 1 860 éléments.
+Note that, because each index varies from 0 to its maximum, each dimension of `salesAmounts` is declared as one less than the required length for that dimension. Note also that the size of the array increases with each new dimension. The three sizes in the preceding examples are 31, 372, and 1,860 elements respectively.
 
 > [!NOTE]
-> Vous pouvez créer un tableau sans utiliser l' `Dim` instruction ou la `New` clause. Par exemple, vous pouvez appeler la <xref:System.Array.CreateInstance%2A> méthode, ou un autre composant peut passer votre code à un tableau créé de cette manière. Un tel tableau peut avoir une limite inférieure différente de 0. Vous pouvez toujours tester la limite inférieure d’une dimension à l’aide de <xref:System.Array.GetLowerBound%2A> la méthode `LBound` ou de la fonction.
+> You can create an array without using the `Dim` statement or the `New` clause. For example, you can call the <xref:System.Array.CreateInstance%2A> method, or another component can pass your code an array created in this manner. Such an array can have a lower bound other than 0. You can always test for the lower bound of a dimension by using the <xref:System.Array.GetLowerBound%2A> method or the `LBound` function.
 
 ## <a name="see-also"></a>Voir aussi
 

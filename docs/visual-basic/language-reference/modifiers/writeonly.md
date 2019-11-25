@@ -1,5 +1,5 @@
 ---
-title: WriteOnly (Visual Basic)
+title: WriteOnly
 ms.date: 07/20/2015
 f1_keywords:
 - WriteOnly
@@ -11,40 +11,40 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-ms.openlocfilehash: 43507ac8e9b5843e8fa9496737a3d77b3a425a7f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 847617ea6534089857a759fbea3bb16a3a5a36a1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963771"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344188"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
-Spécifie qu’une propriété peut être écrite mais pas lue.  
+Specifies that a property can be written but not read.  
   
 ## <a name="remarks"></a>Notes  
   
 ## <a name="rules"></a>Règles  
- **Contexte de déclaration.** Vous pouvez utiliser `WriteOnly` seulement au niveau du module. Cela signifie que le contexte de Déclaration `WriteOnly` pour une propriété doit être une classe, une structure ou un module, et ne peut pas être un fichier source, un espace de noms ou une procédure.  
+ **Declaration Context.** Vous pouvez utiliser `WriteOnly` seulement au niveau du module. This means the declaration context for a `WriteOnly` property must be a class, structure, or module, and cannot be a source file, namespace, or procedure.  
   
- Vous pouvez déclarer une propriété en `WriteOnly`tant que, mais pas en tant que variable.  
+ You can declare a property as `WriteOnly`, but not a variable.  
   
-## <a name="when-to-use-writeonly"></a>Quand utiliser WriteOnly  
- Parfois, vous souhaitez que le code de consommation soit en mesure de définir une valeur, mais pas de le découvrir. Par exemple, les données sensibles, telles qu’un numéro d’enregistrement social ou un mot de passe, doivent être protégées contre tout composant qui n’a pas été défini. Dans ce cas, vous pouvez utiliser une `WriteOnly` propriété pour définir la valeur.  
+## <a name="when-to-use-writeonly"></a>When to Use WriteOnly  
+ Sometimes you want the consuming code to be able to set a value but not discover what it is. For example, sensitive data, such as a social registration number or a password, needs to be protected from access by any component that did not set it. In these cases, you can use a `WriteOnly` property to set the value.  
   
 > [!IMPORTANT]
-> Lorsque vous définissez et utilisez une `WriteOnly` propriété, tenez compte des mesures de protection supplémentaires suivantes:  
+> When you define and use a `WriteOnly` property, consider the following additional protective measures:  
   
-- **Substitution.** Si la propriété est membre d’une classe, autorisez-la comme valeur par défaut [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)et ne la `Overridable` déclarez `MustOverride`pas ou. Cela empêche une classe dérivée d’accéder à un accès indésirable par le biais d’une substitution.  
+- **Overriding.** If the property is a member of a class, allow it to default to [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), and do not declare it `Overridable` or `MustOverride`. This prevents a derived class from making undesired access through an override.  
   
-- **Niveau d’accès.** Si vous conservez les données sensibles de la propriété dans une ou plusieurs variables, déclarez-les comme [privées](../../../visual-basic/language-reference/modifiers/private.md) afin qu’aucun autre code ne puisse y accéder.  
+- **Access Level.** If you hold the property's sensitive data in one or more variables, declare them [Private](../../../visual-basic/language-reference/modifiers/private.md) so that no other code can access them.  
   
-- **Chiffre.** Stockez toutes les données sensibles au format chiffré plutôt qu’en texte brut. Si du code malveillant parvient à accéder à cette zone de mémoire, il est plus difficile d’utiliser les données. Le chiffrement est également utile s’il est nécessaire de sérialiser les données sensibles.  
+- **Encryption.** Store all sensitive data in encrypted form rather than in plain text. If malicious code somehow gains access to that area of memory, it is more difficult to make use of the data. Encryption is also useful if it is necessary to serialize the sensitive data.  
   
-- **La réinitialisation.** Lorsque la classe, la structure ou le module définissant la propriété est terminé, réinitialisez les données sensibles aux valeurs par défaut ou à d’autres valeurs non significatives. Cela offre une protection supplémentaire lorsque cette zone de mémoire est libérée pour un accès général.  
+- **Resetting.** When the class, structure, or module defining the property is being terminated, reset the sensitive data to default values or to other meaningless values. This gives extra protection when that area of memory is freed for general access.  
   
-- **Persistance.** Ne conservez pas les données sensibles, par exemple sur le disque, si vous pouvez les éviter. En outre, n’écrivez pas de données sensibles dans le presse-papiers.  
+- **Persistence.** Do not persist any sensitive data, for example on disk, if you can avoid it. Also, do not write any sensitive data to the Clipboard.  
   
- Le `WriteOnly` modificateur peut être utilisé dans ce contexte:  
+ The `WriteOnly` modifier can be used in this context:  
   
  [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
   
