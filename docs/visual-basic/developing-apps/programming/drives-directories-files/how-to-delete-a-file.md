@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : supprimer un fichier en Visual Basic'
+title: 'Comment : supprimer un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Delete method [Visual Basic]
@@ -7,61 +7,63 @@ helpviewer_keywords:
 - files [Visual Basic], manipulating
 - File object
 ms.assetid: 4b721769-3e45-4be7-b7fe-b08dc4141b44
-ms.openlocfilehash: dcaf74a6ff99113903f066740ebf143dfad95f74
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 57182f1a1d92b7fe954fd26b32c5e4b1107823ee
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629156"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348783"
 ---
-# <a name="how-to-delete-a-file-in-visual-basic"></a><span data-ttu-id="aecfe-102">Procédure : supprimer un fichier en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="aecfe-102">How to: Delete a File in Visual Basic</span></span>
-<span data-ttu-id="aecfe-103">La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de supprimer un fichier.</span><span class="sxs-lookup"><span data-stu-id="aecfe-103">The `DeleteFile` method of the `My.Computer.FileSystem` object allows you to delete a file.</span></span> <span data-ttu-id="aecfe-104">Elle offre entre autres les options suivantes : envoyer ou non le fichier supprimé à la **Corbeille**, demander ou non à l’utilisateur de confirmer que le fichier doit être supprimé et l’action à effectuer quand l’utilisateur annule l’opération.</span><span class="sxs-lookup"><span data-stu-id="aecfe-104">Among the options it offers are: whether to send the deleted file to the **Recycle Bin**, whether to ask the user to confirm that the file should be deleted, and what to do when the user cancels the operation.</span></span>  
+# <a name="how-to-delete-a-file-in-visual-basic"></a><span data-ttu-id="d9dd9-102">Guide pratique pour supprimer un fichier dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d9dd9-102">How to: Delete a File in Visual Basic</span></span>
+
+<span data-ttu-id="d9dd9-103">La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de supprimer un fichier.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-103">The `DeleteFile` method of the `My.Computer.FileSystem` object allows you to delete a file.</span></span> <span data-ttu-id="d9dd9-104">Elle offre entre autres les options suivantes : envoyer ou non le fichier supprimé à la **Corbeille**, demander ou non à l’utilisateur de confirmer que le fichier doit être supprimé et l’action à effectuer quand l’utilisateur annule l’opération.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-104">Among the options it offers are: whether to send the deleted file to the **Recycle Bin**, whether to ask the user to confirm that the file should be deleted, and what to do when the user cancels the operation.</span></span>  
   
-### <a name="to-delete-a-text-file"></a><span data-ttu-id="aecfe-105">Pour supprimer un fichier texte</span><span class="sxs-lookup"><span data-stu-id="aecfe-105">To delete a text file</span></span>  
+### <a name="to-delete-a-text-file"></a><span data-ttu-id="d9dd9-105">Pour supprimer un fichier texte</span><span class="sxs-lookup"><span data-stu-id="d9dd9-105">To delete a text file</span></span>  
   
-- <span data-ttu-id="aecfe-106">Utilisez la méthode `DeleteFile` pour supprimer le fichier.</span><span class="sxs-lookup"><span data-stu-id="aecfe-106">Use the `DeleteFile` method to delete the file.</span></span> <span data-ttu-id="aecfe-107">Le code suivant illustre comment supprimer le fichier nommé `test.txt`.</span><span class="sxs-lookup"><span data-stu-id="aecfe-107">The following code demonstrates how to delete the file named `test.txt`.</span></span>  
+- <span data-ttu-id="d9dd9-106">Utilisez la méthode `DeleteFile` pour supprimer le fichier.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-106">Use the `DeleteFile` method to delete the file.</span></span> <span data-ttu-id="d9dd9-107">Le code suivant illustre comment supprimer le fichier nommé `test.txt`.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-107">The following code demonstrates how to delete the file named `test.txt`.</span></span>  
   
      [!code-vb[VbVbcnMyFileSystem#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#22)]  
   
-### <a name="to-delete-a-text-file-and-ask-the-user-to-confirm-that-the-file-should-be-deleted"></a><span data-ttu-id="aecfe-108">Pour supprimer un fichier texte et demander à l’utilisateur de confirmer que le fichier doit être supprimé</span><span class="sxs-lookup"><span data-stu-id="aecfe-108">To delete a text file and ask the user to confirm that the file should be deleted</span></span>  
+### <a name="to-delete-a-text-file-and-ask-the-user-to-confirm-that-the-file-should-be-deleted"></a><span data-ttu-id="d9dd9-108">Pour supprimer un fichier texte et demander à l’utilisateur de confirmer que le fichier doit être supprimé</span><span class="sxs-lookup"><span data-stu-id="d9dd9-108">To delete a text file and ask the user to confirm that the file should be deleted</span></span>  
   
-- <span data-ttu-id="aecfe-109">Utilisez la méthode `DeleteFile` pour supprimer le fichier en affectant `showUI` à `AllDialogs`.</span><span class="sxs-lookup"><span data-stu-id="aecfe-109">Use the `DeleteFile` method to delete the file, setting `showUI` to `AllDialogs`.</span></span> <span data-ttu-id="aecfe-110">Le code suivant illustre comment supprimer le fichier nommé `test.txt` et permettre à l’utilisateur de confirmer que le fichier doit être supprimé.</span><span class="sxs-lookup"><span data-stu-id="aecfe-110">The following code demonstrates how to delete the file named `test.txt` and allow the user to confirm that the file should be deleted.</span></span>  
+- <span data-ttu-id="d9dd9-109">Utilisez la méthode `DeleteFile` pour supprimer le fichier en affectant `showUI` à `AllDialogs`.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-109">Use the `DeleteFile` method to delete the file, setting `showUI` to `AllDialogs`.</span></span> <span data-ttu-id="d9dd9-110">Le code suivant illustre comment supprimer le fichier nommé `test.txt` et permettre à l’utilisateur de confirmer que le fichier doit être supprimé.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-110">The following code demonstrates how to delete the file named `test.txt` and allow the user to confirm that the file should be deleted.</span></span>  
   
      [!code-vb[VbFileIOMisc#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#9)]  
   
-### <a name="to-delete-a-text-file-and-send-it-to-the-recycle-bin"></a><span data-ttu-id="aecfe-111">Pour supprimer un fichier texte et l’envoyer à la Corbeille</span><span class="sxs-lookup"><span data-stu-id="aecfe-111">To delete a text file and send it to the Recycle Bin</span></span>  
+### <a name="to-delete-a-text-file-and-send-it-to-the-recycle-bin"></a><span data-ttu-id="d9dd9-111">Pour supprimer un fichier texte et l’envoyer à la Corbeille</span><span class="sxs-lookup"><span data-stu-id="d9dd9-111">To delete a text file and send it to the Recycle Bin</span></span>  
   
-- <span data-ttu-id="aecfe-112">Utilisez la méthode `DeleteFile` pour supprimer le fichier en spécifiant `SendToRecycleBin` pour le paramètre `recycle`.</span><span class="sxs-lookup"><span data-stu-id="aecfe-112">Use the `DeleteFile` method to delete the file, specifying `SendToRecycleBin` for the `recycle` parameter.</span></span> <span data-ttu-id="aecfe-113">Le code suivant illustre comment supprimer le fichier nommé `test.txt` et l’envoyer à la **Corbeille**.</span><span class="sxs-lookup"><span data-stu-id="aecfe-113">The following code demonstrates how to delete the file named `test.txt` and send it to the **Recycle Bin**.</span></span>  
+- <span data-ttu-id="d9dd9-112">Utilisez la méthode `DeleteFile` pour supprimer le fichier en spécifiant `SendToRecycleBin` pour le paramètre `recycle`.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-112">Use the `DeleteFile` method to delete the file, specifying `SendToRecycleBin` for the `recycle` parameter.</span></span> <span data-ttu-id="d9dd9-113">Le code suivant illustre comment supprimer le fichier nommé `test.txt` et l’envoyer à la **Corbeille**.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-113">The following code demonstrates how to delete the file named `test.txt` and send it to the **Recycle Bin**.</span></span>  
   
      [!code-vb[VbFileIOMisc#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#10)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="aecfe-114">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="aecfe-114">Robust Programming</span></span>  
- <span data-ttu-id="aecfe-115">Les conditions ci-dessous peuvent générer une exception.</span><span class="sxs-lookup"><span data-stu-id="aecfe-115">The following conditions may cause an exception:</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="d9dd9-114">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="d9dd9-114">Robust Programming</span></span>  
+
+ <span data-ttu-id="d9dd9-115">Les conditions ci-dessous peuvent générer une exception.</span><span class="sxs-lookup"><span data-stu-id="d9dd9-115">The following conditions may cause an exception:</span></span>  
   
-- <span data-ttu-id="aecfe-116">Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-116">The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).</span></span>  
+- <span data-ttu-id="d9dd9-116">Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-116">The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).</span></span>  
   
-- <span data-ttu-id="aecfe-117">Le chemin n’est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-117">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
+- <span data-ttu-id="d9dd9-117">Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-117">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
   
-- <span data-ttu-id="aecfe-118">Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-118">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>  
+- <span data-ttu-id="d9dd9-118">Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-118">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>  
   
-- <span data-ttu-id="aecfe-119">Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-119">A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>  
+- <span data-ttu-id="d9dd9-119">Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-119">A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>  
   
-- <span data-ttu-id="aecfe-120">Le fichier est en cours d’utilisation (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-120">The file is in use (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="d9dd9-120">Le fichier est en cours d’utilisation (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-120">The file is in use (<xref:System.IO.IOException>).</span></span>  
   
-- <span data-ttu-id="aecfe-121">L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-121">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>  
+- <span data-ttu-id="d9dd9-121">L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-121">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>  
   
-- <span data-ttu-id="aecfe-122">Le fichier n'existe pas (<xref:System.IO.FileNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-122">The file does not exist (<xref:System.IO.FileNotFoundException>).</span></span>  
+- <span data-ttu-id="d9dd9-122">Le fichier n'existe pas (<xref:System.IO.FileNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-122">The file does not exist (<xref:System.IO.FileNotFoundException>).</span></span>  
   
-- <span data-ttu-id="aecfe-123">L’utilisateur n’a pas l’autorisation de supprimer le fichier ou le fichier est en lecture seule (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-123">The user does not have permission to delete the file, or the file is read-only (<xref:System.UnauthorizedAccessException>).</span></span>  
+- <span data-ttu-id="d9dd9-123">L’utilisateur n’a pas l’autorisation de supprimer le fichier ou le fichier est en lecture seule (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-123">The user does not have permission to delete the file, or the file is read-only (<xref:System.UnauthorizedAccessException>).</span></span>  
   
-- <span data-ttu-id="aecfe-124">Une situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes existe (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-124">A partial-trust situation exists in which the user does not have sufficient permissions (<xref:System.Security.SecurityException>).</span></span>  
+- <span data-ttu-id="d9dd9-124">Une situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes existe (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-124">A partial-trust situation exists in which the user does not have sufficient permissions (<xref:System.Security.SecurityException>).</span></span>  
   
-- <span data-ttu-id="aecfe-125">L’utilisateur a annulé l’opération et `onUserCancel` a la valeur `ThrowException` (<xref:System.OperationCanceledException>).</span><span class="sxs-lookup"><span data-stu-id="aecfe-125">The user cancelled the operation and `onUserCancel` is set to `ThrowException` (<xref:System.OperationCanceledException>).</span></span>  
+- <span data-ttu-id="d9dd9-125">L’utilisateur a annulé l’opération et `onUserCancel` a la valeur `ThrowException` (<xref:System.OperationCanceledException>).</span><span class="sxs-lookup"><span data-stu-id="d9dd9-125">The user cancelled the operation and `onUserCancel` is set to `ThrowException` (<xref:System.OperationCanceledException>).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="aecfe-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aecfe-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9dd9-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d9dd9-126">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.UIOption>
 - <xref:Microsoft.VisualBasic.FileIO.RecycleOption>
-- [<span data-ttu-id="aecfe-127">Guide pratique pour placer la collection de fichiers dans un répertoire</span><span class="sxs-lookup"><span data-stu-id="aecfe-127">How to: Get the Collection of Files in a Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [<span data-ttu-id="d9dd9-127">Guide pratique : placer la collection de fichiers dans un répertoire</span><span class="sxs-lookup"><span data-stu-id="d9dd9-127">How to: Get the Collection of Files in a Directory</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

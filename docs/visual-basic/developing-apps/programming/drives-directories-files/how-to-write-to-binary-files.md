@@ -1,49 +1,49 @@
 ---
-title: 'Procédure : écrire dans des fichiers binaires en Visual Basic'
+title: 'Comment : écrire dans des fichiers binaires'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], binary access
 - WriteAllBytes method [Visual Basic]
 - binary files [Visual Basic], writing in Visual Basic
 ms.assetid: 59fae125-de5b-4c96-883c-209f4a55112c
-ms.openlocfilehash: ab42fa50aaf39397ac51db8a4cc3a3b00f6ce878
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 72d019f5f49868bd84d0507535e8ebc547b50e25
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039415"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74334432"
 ---
-# <a name="how-to-write-to-binary-files-in-visual-basic"></a><span data-ttu-id="0e509-102">Procédure : écrire dans des fichiers binaires en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="0e509-102">How to: Write to Binary Files in Visual Basic</span></span>
+# <a name="how-to-write-to-binary-files-in-visual-basic"></a><span data-ttu-id="8611f-102">Guide pratique pour écrire dans des fichiers binaires en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8611f-102">How to: Write to Binary Files in Visual Basic</span></span>
 
-<span data-ttu-id="0e509-103">La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> écrit des données dans un fichier binaire.</span><span class="sxs-lookup"><span data-stu-id="0e509-103">The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> method writes data to a binary file.</span></span> <span data-ttu-id="0e509-104">Si le paramètre `append` est `True`, elle ajoute les données au fichier ; sinon, les données dans le fichier sont remplacées.</span><span class="sxs-lookup"><span data-stu-id="0e509-104">If the `append` parameter is `True`, it will append the data to the file; otherwise data in the file is overwritten.</span></span>
+<span data-ttu-id="8611f-103">La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> écrit des données dans un fichier binaire.</span><span class="sxs-lookup"><span data-stu-id="8611f-103">The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> method writes data to a binary file.</span></span> <span data-ttu-id="8611f-104">Si le paramètre `append` est `True`, elle ajoute les données au fichier ; sinon, les données dans le fichier sont remplacées.</span><span class="sxs-lookup"><span data-stu-id="8611f-104">If the `append` parameter is `True`, it will append the data to the file; otherwise data in the file is overwritten.</span></span>
 
-<span data-ttu-id="0e509-105">Si le chemin spécifié (nom de fichier exclu) n’est pas valide, une exception <xref:System.IO.DirectoryNotFoundException> est levée.</span><span class="sxs-lookup"><span data-stu-id="0e509-105">If the specified path excluding the file name is not valid, a <xref:System.IO.DirectoryNotFoundException> exception will be thrown.</span></span> <span data-ttu-id="0e509-106">Si le chemin est valide mais que le fichier n’existe pas, le fichier est créé.</span><span class="sxs-lookup"><span data-stu-id="0e509-106">If the path is valid but the file does not exist, the file will be created.</span></span>
+<span data-ttu-id="8611f-105">Si le chemin spécifié (nom de fichier exclu) n’est pas valide, une exception <xref:System.IO.DirectoryNotFoundException> est levée.</span><span class="sxs-lookup"><span data-stu-id="8611f-105">If the specified path excluding the file name is not valid, a <xref:System.IO.DirectoryNotFoundException> exception will be thrown.</span></span> <span data-ttu-id="8611f-106">Si le chemin est valide mais que le fichier n’existe pas, le fichier est créé.</span><span class="sxs-lookup"><span data-stu-id="8611f-106">If the path is valid but the file does not exist, the file will be created.</span></span>
 
-## <a name="to-write-to-a-binary-file"></a><span data-ttu-id="0e509-107">Pour écrire dans un fichier binaire</span><span class="sxs-lookup"><span data-stu-id="0e509-107">To write to a binary file</span></span>
+## <a name="to-write-to-a-binary-file"></a><span data-ttu-id="8611f-107">Pour écrire dans un fichier binaire</span><span class="sxs-lookup"><span data-stu-id="8611f-107">To write to a binary file</span></span>
 
-<span data-ttu-id="0e509-108">Utilisez la méthode `WriteAllBytes` en fournissant le chemin et le nom du fichier, ainsi que les octets à écrire.</span><span class="sxs-lookup"><span data-stu-id="0e509-108">Use the `WriteAllBytes` method, supplying the file path and name and the bytes to be written.</span></span> <span data-ttu-id="0e509-109">Cet exemple ajoute le tableau de données `CustomerData` au fichier nommé `CollectedData.dat`.</span><span class="sxs-lookup"><span data-stu-id="0e509-109">This example appends the data array `CustomerData` to the file named `CollectedData.dat`.</span></span>
+<span data-ttu-id="8611f-108">Utilisez la méthode `WriteAllBytes` en fournissant le chemin et le nom du fichier, ainsi que les octets à écrire.</span><span class="sxs-lookup"><span data-stu-id="8611f-108">Use the `WriteAllBytes` method, supplying the file path and name and the bytes to be written.</span></span> <span data-ttu-id="8611f-109">Cet exemple ajoute le tableau de données `CustomerData` au fichier nommé `CollectedData.dat`.</span><span class="sxs-lookup"><span data-stu-id="8611f-109">This example appends the data array `CustomerData` to the file named `CollectedData.dat`.</span></span>
 
 [!code-vb[VbVbcnMyFileSystem#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#27)]
 
-## <a name="robust-programming"></a><span data-ttu-id="0e509-110">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="0e509-110">Robust Programming</span></span>
+## <a name="robust-programming"></a><span data-ttu-id="8611f-110">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="8611f-110">Robust Programming</span></span>
 
-<span data-ttu-id="0e509-111">Les conditions ci-dessous peuvent générer une exception :</span><span class="sxs-lookup"><span data-stu-id="0e509-111">The following conditions may create an exception:</span></span>
+<span data-ttu-id="8611f-111">Les conditions ci-dessous peuvent générer une exception :</span><span class="sxs-lookup"><span data-stu-id="8611f-111">The following conditions may create an exception:</span></span>
 
-- <span data-ttu-id="0e509-112">Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs ou il contient des caractères non valides.</span><span class="sxs-lookup"><span data-stu-id="0e509-112">The path is not valid for one of the following reasons: it is a zero-length string; it contains only white space; or it contains invalid characters.</span></span> <span data-ttu-id="0e509-113">(<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-113">(<xref:System.ArgumentException>).</span></span>
+- <span data-ttu-id="8611f-112">Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs ou il contient des caractères non valides.</span><span class="sxs-lookup"><span data-stu-id="8611f-112">The path is not valid for one of the following reasons: it is a zero-length string; it contains only white space; or it contains invalid characters.</span></span> <span data-ttu-id="8611f-113">(<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-113">(<xref:System.ArgumentException>).</span></span>
 
-- <span data-ttu-id="0e509-114">Le chemin n’est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-114">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>
+- <span data-ttu-id="8611f-114">Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-114">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>
 
-- <span data-ttu-id="0e509-115">`File` pointe vers un chemin qui n’existe pas (<xref:System.IO.FileNotFoundException> ou <xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-115">`File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).</span></span>
+- <span data-ttu-id="8611f-115">`File` pointe vers un chemin qui n’existe pas (<xref:System.IO.FileNotFoundException> ou <xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-115">`File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).</span></span>
 
-- <span data-ttu-id="0e509-116">Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-116">The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).</span></span>
+- <span data-ttu-id="8611f-116">Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-116">The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).</span></span>
 
-- <span data-ttu-id="0e509-117">Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-117">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>
+- <span data-ttu-id="8611f-117">Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-117">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>
 
-- <span data-ttu-id="0e509-118">Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-118">A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>
+- <span data-ttu-id="8611f-118">Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-118">A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>
 
-- <span data-ttu-id="0e509-119">L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="0e509-119">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>
+- <span data-ttu-id="8611f-119">L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="8611f-119">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0e509-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0e509-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8611f-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8611f-120">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
-- [<span data-ttu-id="0e509-121">Guide pratique : insérer du texte dans des fichiers</span><span class="sxs-lookup"><span data-stu-id="0e509-121">How to: Write Text to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)
+- [<span data-ttu-id="8611f-121">Guide pratique : insérer du texte dans des fichiers</span><span class="sxs-lookup"><span data-stu-id="8611f-121">How to: Write Text to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)

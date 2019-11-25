@@ -1,5 +1,5 @@
 ---
-title: Validation de chaînes en Visual Basic
+title: Validation de chaînes
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, strings
@@ -7,30 +7,30 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: ab7b41e03e561a619349176c6bf7e021e1399730
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e9a034a430ff7f30c259bcdd395ebf6147dfc582
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938279"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346242"
 ---
-# <a name="validating-strings-in-visual-basic"></a><span data-ttu-id="f0757-102">Validation de chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f0757-102">Validating Strings in Visual Basic</span></span>
-<span data-ttu-id="f0757-103">Cette section explique comment valider des chaînes en Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="f0757-103">This section discusses how to validate strings in Visual Basic.</span></span>  
+# <a name="validating-strings-in-visual-basic"></a><span data-ttu-id="2e815-102">Validation de chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="2e815-102">Validating Strings in Visual Basic</span></span>
+<span data-ttu-id="2e815-103">This section discusses how to validate strings in Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="2e815-103">This section discusses how to validate strings in Visual Basic.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f0757-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="f0757-104">In This Section</span></span>  
- [<span data-ttu-id="f0757-105">Guide pratique pour Valider les noms de fichiers et chemins d’accès dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f0757-105">How to: Validate File Names and Paths in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
- <span data-ttu-id="f0757-106">Comment déterminer si une chaîne représente un nom de fichier ou le chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="f0757-106">How to determine whether a string represents a file name or path.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="2e815-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="2e815-104">In This Section</span></span>  
+ [<span data-ttu-id="2e815-105">How to: Validate File Names and Paths in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="2e815-105">How to: Validate File Names and Paths in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-file-names-and-paths.md)  
+ <span data-ttu-id="2e815-106">How to determine whether a string represents a file name or path.</span><span class="sxs-lookup"><span data-stu-id="2e815-106">How to determine whether a string represents a file name or path.</span></span>  
   
- [<span data-ttu-id="f0757-107">Guide pratique pour Valider des chaînes qui représentent des Dates ou des heures</span><span class="sxs-lookup"><span data-stu-id="f0757-107">How to: Validate Strings That Represent Dates or Times</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
- <span data-ttu-id="f0757-108">Comment déterminer si une chaîne représente une date valide.</span><span class="sxs-lookup"><span data-stu-id="f0757-108">How to determine whether a string represents a valid date.</span></span>  
+ [<span data-ttu-id="2e815-107">Guide pratique : valider des chaînes qui représentent des dates ou des heures</span><span class="sxs-lookup"><span data-stu-id="2e815-107">How to: Validate Strings That Represent Dates or Times</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-validate-strings-that-represent-dates-or-times.md)  
+ <span data-ttu-id="2e815-108">How to determine whether a string represents a valid date.</span><span class="sxs-lookup"><span data-stu-id="2e815-108">How to determine whether a string represents a valid date.</span></span>  
   
- [<span data-ttu-id="f0757-109">Utilisation d’Expressions régulières avec le contrôle MaskedTextBox en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f0757-109">Using Regular Expressions with the MaskedTextBox Control in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
- <span data-ttu-id="f0757-110">Montre comment convertir des expressions régulières simples pour travailler avec le <xref:System.Windows.Forms.MaskedTextBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f0757-110">Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
+ [<span data-ttu-id="2e815-109">Using Regular Expressions with the MaskedTextBox Control in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="2e815-109">Using Regular Expressions with the MaskedTextBox Control in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/using-regular-expressions-with-the-maskedtextbox-control.md)  
+ <span data-ttu-id="2e815-110">Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.</span><span class="sxs-lookup"><span data-stu-id="2e815-110">Demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
   
- [<span data-ttu-id="f0757-111">Procédure pas à pas : Validation de mots de passe complexes</span><span class="sxs-lookup"><span data-stu-id="f0757-111">Walkthrough: Validating That Passwords Are Complex</span></span>](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
- <span data-ttu-id="f0757-112">Comment déterminer si une chaîne a les caractéristiques d’un mot de passe fort.</span><span class="sxs-lookup"><span data-stu-id="f0757-112">How to determine whether a string has the characteristics of a strong password.</span></span>  
+ [<span data-ttu-id="2e815-111">Procédure pas à pas : validation de la complexité des mots de passe</span><span class="sxs-lookup"><span data-stu-id="2e815-111">Walkthrough: Validating That Passwords Are Complex</span></span>](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
+ <span data-ttu-id="2e815-112">How to determine whether a string has the characteristics of a strong password.</span><span class="sxs-lookup"><span data-stu-id="2e815-112">How to determine whether a string has the characteristics of a strong password.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f0757-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f0757-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2e815-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2e815-113">See also</span></span>
 
-- [<span data-ttu-id="f0757-114">Chaînes</span><span class="sxs-lookup"><span data-stu-id="f0757-114">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)
-- [<span data-ttu-id="f0757-115">MaskedTextBox, contrôle</span><span class="sxs-lookup"><span data-stu-id="f0757-115">MaskedTextBox Control</span></span>](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [<span data-ttu-id="2e815-114">Chaînes</span><span class="sxs-lookup"><span data-stu-id="2e815-114">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [<span data-ttu-id="2e815-115">MaskedTextBox, contrôle</span><span class="sxs-lookup"><span data-stu-id="2e815-115">MaskedTextBox Control</span></span>](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)

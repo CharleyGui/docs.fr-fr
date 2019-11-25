@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Interroger des fichiers avec un attribut spécifié ou un nom (Visual Basic)'
+title: 'Comment : interroger des fichiers possédant un attribut ou un nom donné'
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 05dfe3e88274efe8d817defcac2f47efe053b12b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 68b8f02e3c7f53092ef91f2b8b96736a644a7fd1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586490"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347686"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a><span data-ttu-id="ece2c-102">Procédure : Interroger des fichiers avec un attribut spécifié ou un nom (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ece2c-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>
-<span data-ttu-id="ece2c-103">Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée.</span><span class="sxs-lookup"><span data-stu-id="ece2c-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="ece2c-104">Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.</span><span class="sxs-lookup"><span data-stu-id="ece2c-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a><span data-ttu-id="55a91-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="55a91-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>
+<span data-ttu-id="55a91-103">Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée.</span><span class="sxs-lookup"><span data-stu-id="55a91-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="55a91-104">Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.</span><span class="sxs-lookup"><span data-stu-id="55a91-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ece2c-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="ece2c-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="55a91-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="55a91-105">Example</span></span>  
   
 ```vb  
 Module FindFileByExtension  
@@ -60,10 +60,10 @@ Module FindFileByExtension
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="ece2c-106">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="ece2c-106">Compiling the Code</span></span>  
-<span data-ttu-id="ece2c-107">Créer un projet d’application console VB.NET, avec un `Imports` instruction pour l’espace de noms System.Linq.</span><span class="sxs-lookup"><span data-stu-id="ece2c-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="55a91-106">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="55a91-106">Compiling the Code</span></span>  
+<span data-ttu-id="55a91-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span><span class="sxs-lookup"><span data-stu-id="55a91-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="ece2c-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ece2c-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="55a91-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="55a91-108">See also</span></span>
 
-- [<span data-ttu-id="ece2c-109">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ece2c-109">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="ece2c-110">LINQ et répertoires de fichiers (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ece2c-110">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="55a91-109">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="55a91-109">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="55a91-110">LINQ et répertoires de fichiers (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="55a91-110">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
