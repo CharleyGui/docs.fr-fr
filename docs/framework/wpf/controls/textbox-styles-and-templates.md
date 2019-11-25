@@ -9,20 +9,20 @@ helpviewer_keywords:
 - templates [WPF], TextBox
 - TextBox [WPF], styles and templates
 ms.assetid: aa99130c-43a1-450f-9b46-c40ae0db0cca
-ms.openlocfilehash: 7c4680a3ea9352e94d628e786fc8e4fd71018d00
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 41e390c261836909240cc146a48729d48c4a410e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458251"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283700"
 ---
 # <a name="textbox-styles-and-templates"></a>Styles et modèles TextBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TextBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TextBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="textbox-parts"></a>Parties de zone de texte  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.TextBox>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_ContentHost|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.TextBox> s’affiche dans cet élément.|  
   
@@ -33,7 +33,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |----------------------|---------------------------|-----------------|  
 |Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
 |ReadOnly|CommonStates|L’utilisateur ne peut pas modifier le texte dans la <xref:System.Windows.Controls.TextBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
@@ -59,4 +59,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

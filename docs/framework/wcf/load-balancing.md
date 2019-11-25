@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: 572537826074dd51b56f1cae9edb767708bc1c3d
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c9a1e889ab5adcb8f0eb5ea851c81a4f9ee56e95
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321032"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138548"
 ---
 # <a name="load-balancing"></a>Équilibrage de charge
 Une façon d’augmenter la capacité des applications Windows Communication Foundation (WCF) consiste à les mettre à l’échelle en les déployant dans une batterie de serveurs à charge équilibrée. Les applications WCF peuvent être équilibrées en charge à l’aide de techniques d’équilibrage de charge standard, notamment des équilibreurs de charge logiciels tels que l’équilibrage de charge réseau Windows, ainsi que des appliances d’équilibrage de charge basées sur le matériel.  
@@ -17,7 +17,7 @@ Une façon d’augmenter la capacité des applications Windows Communication Fou
  Les sections suivantes traitent des considérations relatives à l’équilibrage de charge des applications WCF générées à l’aide de différentes liaisons fournies par le système.  
   
 ## <a name="load-balancing-with-the-basic-http-binding"></a>Équilibrage de charge avec la liaison HTTP de base  
- Du point de vue de l’équilibrage de charge, les applications WCF qui communiquent à l’aide du <xref:System.ServiceModel.BasicHttpBinding> ne sont pas différentes des autres types courants de trafic réseau HTTP (contenu HTML statique, pages ASP.NET ou services Web ASMX). Les canaux WCF qui utilisent cette liaison sont fondamentalement sans État et terminent leurs connexions lorsque le canal se ferme. C'est la raison pour laquelle <xref:System.ServiceModel.BasicHttpBinding> fonctionne bien avec les techniques d'équilibrage de charge HTTP existantes.  
+ Du point de vue de l’équilibrage de charge, les applications WCF qui communiquent à l’aide de la <xref:System.ServiceModel.BasicHttpBinding> ne sont pas différentes des autres types courants de trafic réseau HTTP (contenu HTML statique, pages ASP.NET ou services Web ASMX). Les canaux WCF qui utilisent cette liaison sont fondamentalement sans État et terminent leurs connexions lorsque le canal se ferme. C'est la raison pour laquelle <xref:System.ServiceModel.BasicHttpBinding> fonctionne bien avec les techniques d'équilibrage de charge HTTP existantes.  
   
  Par défaut, <xref:System.ServiceModel.BasicHttpBinding> envoie un en-tête HTTP de connexion dans les messages contenant une valeur `Keep-Alive`, ce qui permet aux clients d'établir des connexions persistantes aux services qui les prennent en charge. Cette configuration offre un débit supérieur car les connexions précédemment établies peuvent être réutilisées pour envoyer les messages suivants au même serveur. Toutefois, la réutilisation des connexions peut provoquer une forte association des clients à un serveur spécifique dans la batterie à charge équilibrée, ce qui réduit l'efficacité de l'équilibrage de charge tourniquet. Si vous ne souhaitez pas ce type de comportement, `Keep-Alive` HTTP peut être désactivé sur le serveur à l'aide de la propriété <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> avec <xref:System.ServiceModel.Channels.CustomBinding> ou <xref:System.ServiceModel.Channels.Binding> défini par l'utilisateur. L'exemple suivant montre comment procéder à l'aide de la configuration :  
   
@@ -56,7 +56,7 @@ Une façon d’augmenter la capacité des applications Windows Communication Fou
 </configuration>  
 ```  
   
- À l'aide de la configuration simplifiée présentée dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], le même comportement peut être obtenu à l'aide de la configuration simplifiée suivante.  
+ À l’aide de la configuration simplifiée introduite dans .NET Framework 4, le même comportement peut être obtenu à l’aide de la configuration simplifiée suivante.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

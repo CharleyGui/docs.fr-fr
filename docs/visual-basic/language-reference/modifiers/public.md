@@ -1,5 +1,5 @@
 ---
-title: Public (Visual Basic)
+title: Public
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Public
@@ -8,32 +8,32 @@ helpviewer_keywords:
 - Public keyword [Visual Basic], syntax
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
-ms.openlocfilehash: 0b8c31facc3605ff5a77aecf7b11456b33fbab72
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 35bf1a65e0b8f24a1263adc480719c69b95dff9b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647748"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351295"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
-Spécifie ne qu’aucune restriction d’accès à un ou plusieurs éléments de programmation déclarés.  
+Specifies that one or more declared programming elements have no access restrictions.  
   
 ## <a name="remarks"></a>Notes  
- Si vous publiez un composant ou un ensemble de composants, tels qu’une bibliothèque de classes, vous souhaitez généralement les éléments de programmation accessibles par tout code qui interagit avec votre assembly. Pour octroyer cet accès illimité sur un élément, vous pouvez le déclarer avec `Public`.  
+ If you are publishing a component or set of components, such as a class library, you usually want the programming elements to be accessible by any code that interoperates with your assembly. To confer such unlimited access on an element, you can declare it with `Public`.  
   
- L’accès public est le niveau normal pour un élément de programmation lorsque vous n’avez pas besoin de restreindre l’accès. Notez que le niveau d’accès d’un élément déclaré dans une interface, un module, une classe ou une structure par défaut est `Public` si vous ne déclarez pas une dans le cas contraire.  
+ Public access is the normal level for a programming element when you do not need to limit access to it. Note that the access level of an element declared within an interface, module, class, or structure defaults to `Public` if you do not declare it otherwise.  
   
 ## <a name="rules"></a>Règles  
   
-- **Contexte de déclaration.** Vous pouvez utiliser `Public` uniquement au niveau du module, interface ou espace de noms. Cela signifie que le contexte de déclaration pour un `Public` élément doit être un fichier source, un espace de noms, un module, une classe ou une structure et ne peut pas être une procédure.  
+- **Declaration Context.** You can use `Public` only at module, interface, or namespace level. This means the declaration context for a `Public` element must be a source file, namespace, interface, module, class, or structure, and cannot be a procedure.  
   
 ## <a name="behavior"></a>Comportement  
   
-- **Niveau d’accès.** Tout le code qui peut accéder à un module, une classe ou une structure peut accéder à ses `Public` éléments.  
+- **Access Level.** All code that can access a module, class, or structure can access its `Public` elements.  
   
-- **Accès par défaut.** Les variables locales à l’intérieur d’une procédure reviennent par défaut pour l’accès public et vous ne pouvez pas utiliser n’importe quel modificateur d’accès sur ces derniers.  
+- **Default Access.** Local variables inside a procedure default to public access, and you cannot use any access modifiers on them.  
   
-- **Modificateurs d’accès.** Les mots clés qui spécifient le niveau d’accès sont appelés *modificateurs d’accès*. Pour obtenir une comparaison des modificateurs d’accès, consultez [niveaux en Visual Basic d’accès](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Access Modifiers.** The keywords that specify access level are called *access modifiers*. For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  Le modificateur `Public` peut être utilisé dans les contextes suivants :  
   
@@ -72,7 +72,7 @@ Spécifie ne qu’aucune restriction d’accès à un ou plusieurs éléments de
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Private Protected](private-protected.md)
 - [Protected Friend](protected-friend.md)
-- [Niveaux d’accès dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procédures](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objets et classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

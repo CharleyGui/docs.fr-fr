@@ -1,35 +1,35 @@
 ---
-title: Opérateurs (Visual Basic)
+title: Opérateurs
 ms.date: 10/17/2018
 helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: 3d3421df-fcc5-4888-9249-d78f16774ce6
-ms.openlocfilehash: a2a9fb5343c4e07fa28d87bc991beea4c390b042
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 1398b58c1e95bfb172c9b314e562262003632713
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035591"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330989"
 ---
 # <a name="operators-visual-basic"></a>Opérateurs (Visual Basic)
 
 ## <a name="in-this-section"></a>Dans cette section
 
-- [Priorité des opérateurs dans Visual Basic](operator-precedence.md)
-- [Opérateurs listés par fonctionnalité](operators-listed-by-functionality.md)
-- [Types de données des résultats d’opérateur](data-types-of-operator-results.md)
-- [DirectCast, opérateur](directcast-operator.md)
-- [TryCast, opérateur](trycast-operator.md)
-- [Opérateur NameOf](nameof.md)
-- [Nouvel opérateur](new-operator.md)
-- [Opérateurs conditionnels null](null-conditional-operators.md)
+- [Operator precedence in Visual Basic](operator-precedence.md)
+- [Operators listed by functionality](operators-listed-by-functionality.md)
+- [Data types of operator results](data-types-of-operator-results.md)
+- [DirectCast operator](directcast-operator.md)
+- [TryCast operator](trycast-operator.md)
+- [NameOf operator](nameof.md)
+- [New operator](new-operator.md)
+- [Null-conditional operators](null-conditional-operators.md)
 - [Opérateurs arithmétiques](arithmetic-operators.md)
 - [Opérateurs d’assignation](assignment-operators.md)
-- [Opérateurs de décalage de bits](bit-shift-operators.md)
+- [Bit Shift operators](bit-shift-operators.md)
 - [Opérateurs de comparaison](comparison-operators.md)
-- [Opérateurs de concaténation](concatenation-operators.md)
-- [Opérateurs logiques/de bits](logical-bitwise-operators.md)
-- [Opérateurs divers](miscellaneous-operators.md)
+- [Concatenation operators](concatenation-operators.md)
+- [Logical/Bitwise operators](logical-bitwise-operators.md)
+- [Miscellaneous operators](miscellaneous-operators.md)
 
 ## <a name="related-sections"></a>Rubriques connexes
 

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - ToolBar [WPF], styles and templates
 - templates [WPF], ToolBar
 ms.assetid: bd875f46-4690-46f5-81e0-f11a9822484f
-ms.openlocfilehash: b782e62500edd14b40b1267c3b7f92758210a5c0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a984311234386cb205d5db35f18a743ca535ff05
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458211"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283653"
 ---
 # <a name="toolbar-styles-and-templates"></a>Styles et modèles ToolBar
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ToolBar>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ToolBar>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="toolbar-parts"></a>Composants de barre d’outils  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.ToolBar>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_ToolBarPanel|<xref:System.Windows.Controls.Primitives.ToolBarPanel>|Objet qui contient les contrôles sur le <xref:System.Windows.Controls.ToolBar>.|  
 |PART_ToolBarOverflowPanel|<xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>|Objet qui contient les contrôles qui se trouvent dans la zone de débordement du <xref:System.Windows.Controls.ToolBar>.|  
@@ -56,4 +56,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

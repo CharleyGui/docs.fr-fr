@@ -1,17 +1,17 @@
 ---
-title: 'Didacticiel : classer les problèmes de support technique-Classification multiclasse'
+title: 'Tutorial: Categorize support issues - multiclass classification'
 description: Découvrez comment utiliser ML.NET dans un scénario de classification multiclasse pour classer des problèmes GitHub et les affecter à une zone donnée.
-ms.date: 10/30/2019
+ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 1cd213653c23c4d713e03d53394885f1f3ebb6f5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 65b83c4396c1f80281cbb60b5e9e6e91c802472b
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094589"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74205036"
 ---
-# <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Didacticiel : classer les problèmes de prise en charge à l’aide de la classification multiclasse avec ML .NET
+# <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Tutorial: Categorize support issues using multiclass classification with ML .NET
 
 Ce tutoriel montre comment utiliser ML.NET pour créer un classifieur de problèmes GitHub afin d’entraîner un modèle qui classe et prédit l’étiquette Area d’un problème GitHub par le biais d’une application console .NET Core en C# dans Visual Studio.
 
@@ -29,7 +29,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 ## <a name="prerequisites"></a>Configuration requise
 
-* [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
+* [Visual Studio 2017 version 15.6 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) with the ".NET Core cross-platform development" workload installed.
 
 * [Fichier de problèmes GitHub séparés par des tabulations (issues_train.tsv)](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_train.tsv).
 * [Fichier de test des problèmes GitHub séparés par des tabulations (issues_test.tsv)](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_test.tsv).
@@ -50,7 +50,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 4. Installez le **package NuGet Microsoft.ML** :
 
-    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet Parcourir, recherchez **Microsoft.ML**, sélectionnez le package **v 1.0.0** dans la liste, puis sélectionnez le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
+    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choose "nuget.org" as the Package source, select the Browse tab, search for **Microsoft.ML** and select the **Install** button. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
 ### <a name="prepare-your-data"></a>Préparer vos données
 
@@ -272,13 +272,13 @@ Notez l’utilisation de la méthode [Transform()](xref:Microsoft.ML.ITransforme
 
 Les métriques suivantes sont évaluées pour la classification multiclasse :
 
-* Micro-précision : chaque paire exemple-classe contribue de manière égale à la métrique de précision.  Vous souhaitez que la micro-précision soit aussi proche que possible.
+* Micro-précision : chaque paire exemple-classe contribue de manière égale à la métrique de précision.  You want Micro Accuracy to be as close to one as possible.
 
-* Macro-précision : chaque classe contribue de manière égale à la métrique de précision. Les classes minoritaires sont aussi importantes que les classes plus grandes. Vous souhaitez que la précision de la macro soit aussi proche que possible.
+* Macro-précision : chaque classe contribue de manière égale à la métrique de précision. Les classes minoritaires sont aussi importantes que les classes plus grandes. You want Macro Accuracy to be as close to one as possible.
 
 * Perte logarithmique : consultez [Perte logarithmique](../resources/glossary.md#log-loss). Vous voulez que la perte logarithmique soit aussi proche de zéro que possible.
 
-* Réduction de la perte de journal-plages de [-inf, 1,00], où 1,00 est une prédiction parfaite et 0 indique des prédictions moyennes. Vous souhaitez que la réduction de la perte de journal soit aussi proche que possible.
+* Log-loss reduction - Ranges from [-inf, 1.00], where 1.00 is perfect predictions and 0 indicates mean predictions. You want Log-loss reduction to be as close to one as possible.
 
 ### <a name="displaying-the-metrics-for-model-validation"></a>Affichage des métriques pour la validation du modèle
 
@@ -340,7 +340,7 @@ Comme vous l’avez fait précédemment, créez une instance `PredictionEngine` 
 
 [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CreatePredictionEngine)]
 
-Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application)
+The [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) is a convenience API, which allows you to perform a prediction on a single instance of data. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. It's acceptable to use in single-threaded or prototype environments. For improved performance and thread safety in production environments, use the `PredictionEnginePool` service, which creates an [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) of [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objects for use throughout your application. See this guide on how to [use `PredictionEnginePool` in an ASP.NET Core Web API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application)
 
 > [!NOTE]
 > L’extension de service `PredictionEnginePool` est disponible en préversion.
@@ -388,4 +388,4 @@ Dans ce didacticiel, vous avez appris à :
 
 Passer au tutoriel suivant pour en savoir plus
 > [!div class="nextstepaction"]
-> [Prédiction du prix d’une course de taxi](taxi-fare.md)
+> [Prédiction du prix d’une course de taxi](predict-prices.md)

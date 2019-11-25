@@ -1,19 +1,19 @@
 ---
-title: <typeparam> (Visual Basic)
+title: <typeparam>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: dbd99997fed33c192a2160fb45a739addbae254a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 00cb62827381146c172e0d15a2c64b167c21f025
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524625"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352187"
 ---
-# <a name="typeparam-visual-basic"></a>> \<typeparam (Visual Basic)
-Définit un nom de paramètre de type et une description.  
+# <a name="typeparam-visual-basic"></a>\<typeparam> (Visual Basic)
+Defines a type parameter name and description.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,15 +26,15 @@ Définit un nom de paramètre de type et une description.
  Nom du paramètre de type. Mettez le nom entre guillemets doubles (" ").  
   
  `description`  
- Description du paramètre de type.  
+ A description of the type parameter.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez la balise `<typeparam>` dans le commentaire pour un type générique ou une déclaration de membre générique pour décrire l’un des paramètres de type.  
+ Use the `<typeparam>` tag in the comment for a generic type or generic member declaration to describe one of the type parameters.  
   
  Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la balise `<typeparam>` pour décrire le paramètre `id`.  
+ This example uses the `<typeparam>` tag to describe the `id` parameter.  
   
  [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  
   

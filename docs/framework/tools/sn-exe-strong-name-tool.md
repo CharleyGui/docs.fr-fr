@@ -10,12 +10,12 @@ helpviewer_keywords:
 - strong-named assemblies, signing files
 - key pairs for signing files
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
-ms.openlocfilehash: dc9b8beafe1b174543afaf9da7e7180638d561ff
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90cad6529b3ac2a8afedaca0c43d5c7561dcf9e6
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104352"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138963"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../standard/assembly/strong-named.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
@@ -55,7 +55,7 @@ sn [-quiet][option [parameter(s)]]
 |`-o infile [outfile]`|Extrait la clé publique d’*infile* et la stocke dans un fichier .csv. Chaque octet de la clé publique est séparé par une virgule. Ce format s'avère utile pour les références de codage en dur aux clés sous forme de tableaux initialisés dans le code source. Si *outfile* n’est pas spécifié, cette option place la sortie dans le Presse-papiers. **Remarque :** Cette option ne vérifie pas si l’entrée est une clé publique uniquement. Si `infile` contient une paire de clés dont une est privée, la clé privée est également extraite.|  
 |`-p infile outfile [hashalg]`|Extrait la clé publique de la paire de clés dans *infile* et la stocke dans *outfile*, éventuellement à l’aide de l’algorithme RSA spécifié par *hashalg*. Cette clé publique permet de différer la signature d’un assembly à l’aide des options **/delaysign+** et **/keyfile** d’[Assembly Linker (Al.exe)](al-exe-assembly-linker.md). En cas signature différée d'un assembly, seule la clé publique est définie au moment de la compilation et un espace est réservé dans le fichier pour la signature qui sera ajoutée par la suite, lorsque la clé privée sera connue.|  
 |`-pc container outfile [hashalg]`|Extrait la clé publique de la paire de clés figurant dans *container* et la stocke dans *outfile*. Si vous utilisez l’option *hashalg*, l’algorithme RSA est utilisé pour récupérer la clé publique.|  
-|`-Pb [y &#124; n]`|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. La valeur par défaut est `y`, **Remarque :** Sur les ordinateurs 64 bits, vous devez définir ce paramètre à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
+|`-Pb [y|n]`|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. La valeur par défaut est `y`, **Remarque :** Sur les ordinateurs 64 bits, vous devez définir ce paramètre à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
 |`-q[uiet]`|Spécifie le mode silencieux ; supprime l'affichage des messages d'opération réussie.|  
 |`-R[a] assembly infile`|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *infile*.<br /><br /> Si **-Ra** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  
 |`-Rc[a] assembly container`|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *container*.<br /><br /> Si **-Rca** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer des objets GenericPrincipal et GenericIdentity'
+title: 'Comment : créer des objets GenericPrincipal et GenericIdentity'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1f768242bffe619051779f87e950138ae9fcec6c
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 37f5543ceaca83a024132c5d010b6d969876454f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353188"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353830"
 ---
-# <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Procédure : créer des objets GenericPrincipal et GenericIdentity
+# <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Comment : créer des objets GenericPrincipal et GenericIdentity
 
-Vous pouvez utiliser la classe <xref:System.Security.Principal.GenericIdentity> conjointement avec la classe <xref:System.Security.Principal.GenericPrincipal> pour créer un schéma d’autorisation indépendant d’un domaine Windows.
+You can use the <xref:System.Security.Principal.GenericIdentity> class in conjunction with the <xref:System.Security.Principal.GenericPrincipal> class to create an authorization scheme that exists independent of a Windows domain.
 
 ### <a name="to-create-a-genericprincipal-object"></a>Pour créer un objet GenericPrincipal
 
@@ -48,7 +48,7 @@ Vous pouvez utiliser la classe <xref:System.Security.Principal.GenericIdentity> 
     GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myStringArray);
     ```
 
-3. Utilisez le code suivant pour joindre le principal au thread actuel. Cela est utile dans les situations où le principal doit être validé plusieurs fois, qu’il doit être validé par un autre code s’exécutant dans votre application ou qu’il doit être validé par un objet <xref:System.Security.Permissions.PrincipalPermission>. Vous pouvez toujours exécuter une validation basée sur les rôles sur l’objet principal sans le joindre au thread. Pour plus d’informations, consultez [Remplacement d’un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md).
+3. Utilisez le code suivant pour joindre le principal au thread actuel. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. Vous pouvez toujours exécuter une validation basée sur les rôles sur l’objet principal sans le joindre au thread. Pour plus d’informations, consultez [Remplacement d’un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md).
 
     ```vb
     Thread.CurrentPrincipal = myPrincipal
@@ -63,7 +63,6 @@ Vous pouvez utiliser la classe <xref:System.Security.Principal.GenericIdentity> 
 L’exemple de code suivant montre comment créer une instance d’un **GenericPrincipal** et d’un **GenericIdentity**. Ce code affiche les valeurs de ces objets dans la console.
 
 ```vb
-Imports System
 Imports System.Security.Principal
 Imports System.Threading
 

@@ -2,12 +2,12 @@
 title: Outil WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
-ms.openlocfilehash: bb0989fb8747a5065ce3d7332311cdefba95b80d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6b1a0b990b1657e724f527b5beccce0e8a6391a6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425288"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281667"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Outil WorkFlow Service Registration (WFServicesReg.exe)
 Workflow Services Registration (WFServicesReg.exe) est un outil autonome qui peut être utilisé pour ajouter, supprimer ou réparer les éléments de configuration correspondant aux services Windows Workflow Foundation (WF).  
@@ -19,7 +19,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ```  
   
 ## <a name="remarks"></a>Notes  
- Cet outil se trouve à l'emplacement d'installation de [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)], c'est-à-dire %windir%\Microsoft.NET\Framework\v3.5 ou %windir%\Microsoft.NET\Framework64\v3.5 pour les ordinateurs 64 bits.  
+ L’outil se trouve à l’emplacement d’installation .NET Framework 3,5, en particulier%windir%\Microsoft.NET\Framework\v3.5 ou sur%windir%\Microsoft.NET\Framework64\v3.5 sur les ordinateurs 64 bits.  
   
  Les tableaux suivants décrivent les options pouvant être utilisées avec l'outil Workflow Services Registration (WFServicesReg.exe).  
   
@@ -34,7 +34,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ## <a name="registration"></a>Inscription  
  L'outil vérifie le fichier Web.config et enregistre les éléments suivants :  
   
-- Assemblys de référence de [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)].  
+- .NET Framework des assemblys de référence 3,5.  
   
 - Fournisseur de version pour fichiers .xoml.  
   
@@ -70,7 +70,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ## <a name="usage-scenarios"></a>Scénarios d'utilisation  
   
 ### <a name="installing-iis-after-net-framework-35-is-installed"></a>Installation des services IIS après l'installation de .NET Framework 3.5  
- Sous [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] est installé avant les services IIS. En raison de l'indisponibilité de la métabase IIS, l'installation de [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aboutit sans installer les mappages de scripts .xoml et .rules.  
+ Sur un ordinateur [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], .NET Framework 3,5 est installé avant l’installation d’IIS. En raison de l’indisponibilité de la métabase IIS, l’installation de .NET Framework 3,5 s’effectue correctement sans installer les scriptmaps. xoml et. Rules.  
   
  Après avoir installé les services IIS, vous pouvez utiliser l'outil WFServicesReg.exe avec le commutateur `/c` pour installer ces mappages de scripts spécifiques.  
   
@@ -85,4 +85,4 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
  Pour réparer des gestionnaires supprimés pour un site Web particulier, exécutez « WFServicesReg. exe/r » pour supprimer les gestionnaires de tous les sites Web, puis exécutez « WFServicesReg. exe/c » pour créer les gestionnaires appropriés pour tous les sites Web.  
   
 ### <a name="configuring-handlers-after-switching-iis-mode"></a>Configuration de gestionnaires après activation du mode IIS  
- Si les services IIS sont en mode de configuration partagé et si [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] est installé, la métabase IIS est configurée sous un emplacement partagé. Si vous basculez IIS en mode de configuration non partagé, la métabase locale ne contiendra pas les gestionnaires requis. Pour configurer correctement la métabase locale, vous pouvez soit importer la métabase partagée vers la métabase locale, soit exécuter « WFServicesReg. exe/c », ce qui configure la métabase locale.
+ Quand IIS est en mode de configuration partagée et .NET Framework 3,5 est installé, la métabase IIS est configurée sous un emplacement partagé. Si vous basculez IIS en mode de configuration non partagé, la métabase locale ne contiendra pas les gestionnaires requis. Pour configurer correctement la métabase locale, vous pouvez soit importer la métabase partagée vers la métabase locale, soit exécuter « WFServicesReg. exe/c », ce qui configure la métabase locale.

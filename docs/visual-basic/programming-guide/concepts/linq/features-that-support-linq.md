@@ -1,102 +1,102 @@
 ---
-title: Fonctionnalités Visual Basic prenant en charge LINQ
+title: Features That Support LINQ
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: 155d5c36483accc12d066a5530fea20a563e1498
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e81d0434aa60e0c7b316b72fb78ebfe2a3782cbb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61977559"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353517"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Fonctionnalités Visual Basic prenant en charge LINQ
-Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence à la technologie en Visual Basic prend en charge la syntaxe de requête et les autres constructions de langage directement dans le langage. Avec [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous n’avez pas à apprendre un nouveau langage de requête sur une source de données externe. Vous pouvez interroger les données dans les bases de données relationnelles, de magasins XML ou d’objets à l’aide de Visual Basic. Cette intégration de fonctions de requête dans le langage permet la vérification au moment de la compilation pour les erreurs de syntaxe et de sécurité de type. Cette intégration garantit également que vous connaissez déjà la majeure partie de ce que vous devez savoir pour écrire des requêtes riches et variées dans Visual Basic.  
+The name [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] refers to technology in Visual Basic that supports query syntax and other language constructs directly in the language. With [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], you do not have to learn a new language to query against an external data source. You can query against data in relational databases, XML stores, or objects by using Visual Basic. This integration of query capabilities into the language enables compile-time checking for syntax errors and type safety. This integration also ensures that you already know most of what you have to know to write rich, varied queries in Visual Basic.  
   
- Les sections suivantes décrivent les constructions de langage qui prennent en charge LINQ suffisamment détaillés pour vous permettent de lire la documentation d’introduction, les exemples de code et les exemples d’applications. Vous pouvez également cliquer sur les liens pour trouver des explications plus détaillées de la façon dont les fonctionnalités de langage sont combinent pour activer language integrated query. Un bon point de départ est [procédure pas à pas : Écriture de requêtes dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
+ The following sections describe the language constructs that support LINQ in enough detail to enable you to get started in reading the introductory documentation, code examples, and sample applications. You can also click the links to find more detailed explanations of how the language features come together to enable language-integrated query. A good place to start is [Walkthrough: Writing Queries in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
   
 ## <a name="query-expressions"></a>Expressions de requête  
- En Visual Basic, les expressions de requête peuvent être exprimées dans une syntaxe déclarative semblable à celle de SQL ou XQuery. Au moment de la compilation, la syntaxe de requête est convertie en appels de méthode à l’implémentation d’un fournisseur LINQ des méthodes d’extension de requête standard opérateur. Contrôle d’applications qui sont des opérateurs de requête standard dans la portée en spécifiant l’espace de noms approprié avec une `Imports` instruction. Syntaxe d’une expression de requête Visual Basic ressemble à ceci :  
+ Query expressions in Visual Basic can be expressed in a declarative syntax similar to that of SQL or XQuery. At compile time, query syntax is converted into method calls to a LINQ provider's implementation of the standard query operator extension methods. Applications control which standard query operators are in scope by specifying the appropriate namespace with an `Imports` statement. Syntax for a Visual Basic query expression looks like this:  
   
  [!code-vb[VbLINQVbFeatures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#1)]  
   
- Pour plus d’informations, consultez [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ For more information, see [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
-## <a name="implicitly-typed-variables"></a>Variables implicitement typées  
- Au lieu de spécifier explicitement un type lorsque vous déclarez et initialisez une variable, vous pouvez activer le compilateur doit déduire et assigner le type. Cela est appelé *inférence de type local*.  
+## <a name="implicitly-typed-variables"></a>Implicitly Typed Variables  
+ Instead of explicitly specifying a type when you declare and initialize a variable, you can enable the compiler to infer and assign the type. This is referred to as *local type inference*.  
   
- Les variables dont les types sont déduits sont fortement typées, comme les variables dont vous spécifiez explicitement le type. Inférence de type local fonctionne uniquement lorsque vous définissez une variable locale à l’intérieur d’un corps de méthode. Pour plus d’informations, consultez [Option Infer, instruction](../../../../visual-basic/language-reference/statements/option-infer-statement.md) et [l’inférence de Type Local](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+ Variables whose types are inferred are strongly typed, just like variables whose type you specify explicitly. Local type inference works only when you are defining a local variable inside a method body. For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
- L’exemple suivant illustre l’inférence de type local. Pour utiliser cet exemple, vous devez définir `Option Infer` à `On`.  
+ The following example illustrates local type inference. To use this example, you must set `Option Infer` to `On`.  
   
  [!code-vb[VbLINQVbFeatures#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#2)]  
   
- Inférence de type local rend également possible de créer des types anonymes, qui sont décrites plus loin dans cette section et sont nécessaires pour les requêtes LINQ.  
+ Local type inference also makes it possible to create anonymous types, which are described later in this section and are necessary for LINQ queries.  
   
- Dans l’exemple suivant de LINQ, l’inférence de type se produit si `Option Infer` est soit `On` ou `Off`. Une erreur de compilation se produit si `Option Infer` est `Off` et `Option Strict` est `On`.  
+ In the following LINQ example, type inference occurs if `Option Infer` is either `On` or `Off`. A compile-time error occurs if `Option Infer` is `Off` and `Option Strict` is `On`.  
   
  [!code-vb[VbLINQVbFeatures#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#3)]  
   
 ## <a name="object-initializers"></a>Initialiseurs d'objets  
- Initialiseurs d’objets sont utilisés dans les expressions de requête lorsque vous devez créer un type anonyme pour stocker les résultats d’une requête. Ils peuvent également être utilisés pour initialiser des objets de types nommés en dehors des requêtes. En utilisant un initialiseur d’objet, vous pouvez initialiser un objet dans une seule ligne sans appeler explicitement un constructeur. En supposant que vous avez une classe nommée `Customer` qui a public `Name` et `Phone` propriétés, ainsi que d’autres propriétés, un initialiseur d’objet peut être utilisé de cette manière :  
+ Object initializers are used in query expressions when you have to create an anonymous type to hold the results of a query. They also can be used to initialize objects of named types outside of queries. By using an object initializer, you can initialize an object in a single line without explicitly calling a constructor. Assuming that you have a class named `Customer` that has public `Name` and `Phone` properties, along with other properties, an object initializer can be used in this manner:  
   
  [!code-vb[VbLINQVbFeatures#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#4)]  
   
- Pour plus d’informations, consultez [initialiseurs d’objets : Types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
+ For more information, see [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="anonymous-types"></a>Types anonymes  
- Les types anonymes fournissent un moyen pratique pour regrouper temporairement un ensemble de propriétés dans un élément que vous souhaitez inclure dans un résultat de requête. Cela vous permet de choisir n’importe quelle combinaison des champs disponibles dans la requête, dans n’importe quel ordre, sans définir un type de données nommé pour l’élément.  
+ Anonymous types provide a convenient way to temporarily group a set of properties into an element that you want to include in a query result. This enables you to choose any combination of available fields in the query, in any order, without defining a named data type for the element.  
   
- Un *type anonyme* est construit dynamiquement par le compilateur. Le nom du type est attribué par le compilateur, et il peut changer à chaque nouvelle compilation. Par conséquent, le nom ne peut pas être utilisé directement. Les types anonymes sont initialisés de la manière suivante :  
+ An *anonymous type* is constructed dynamically by the compiler. The name of the type is assigned by the compiler, and it might change with each new compilation. Therefore, the name cannot be used directly. Anonymous types are initialized in the following way:  
   
  [!code-vb[VbLINQVbFeatures#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#5)]  
   
- Pour plus d’informations, consultez [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+ Pour plus d’informations, consultez la page [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
-## <a name="extension-methods"></a>Méthodes d’extension  
- Méthodes d’extension permettent d’ajouter des méthodes à un type de données ou d’une interface à partir d’en dehors de la définition. Cette fonctionnalité vous permet, en effet, ajouter de nouvelles méthodes à un type existant sans modifier réellement. Les opérateurs de requête standard sont eux-mêmes un ensemble de méthodes d’extension qui fournissent des [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] fonctionnalité de requête pour n’importe quel type qui implémente <xref:System.Collections.Generic.IEnumerable%601>. Autres extensions à <xref:System.Collections.Generic.IEnumerable%601> incluent <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>, et <xref:System.Linq.Enumerable.Intersect%2A>.  
+## <a name="extension-methods"></a>méthodes d’extension.  
+ Extension methods enable you to add methods to a data type or interface from outside the definition. This feature enables you to, in effect, add new methods to an existing type without actually modifying the type. The standard query operators are themselves a set of extension methods that provide [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query functionality for any type that implements <xref:System.Collections.Generic.IEnumerable%601>. Other extensions to <xref:System.Collections.Generic.IEnumerable%601> include <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>, and <xref:System.Linq.Enumerable.Intersect%2A>.  
   
- La méthode d’extension suivante ajoute une méthode d’impression à la <xref:System.String> classe.  
+ The following extension method adds a print method to the <xref:System.String> class.  
   
  [!code-vb[VbLINQVbFeatures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#6)]  
   
- La méthode est appelée comme une méthode d’instance ordinaire de <xref:System.String>:  
+ The method is called like an ordinary instance method of <xref:System.String>:  
   
  [!code-vb[VbLINQVbFeatures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#7)]  
   
  Pour plus d’informations, consultez [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
   
 ## <a name="lambda-expressions"></a>Expressions lambda  
- Une expression lambda est une fonction sans nom qui calcule et retourne une valeur unique. Contrairement aux fonctions nommées, une expression lambda peut être définie et exécutée en même temps. L’exemple suivant affiche 4.  
+ A lambda expression is a function without a name that calculates and returns a single value. Unlike named functions, a lambda expression can be defined and executed at the same time. The following example displays 4.  
   
  [!code-vb[VbLINQVbFeatures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#8)]  
   
- Vous pouvez affecter la définition d’expression lambda à un nom de variable, puis utiliser le nom d’appeler la fonction. L’exemple suivant affiche également 4.  
+ You can assign the lambda expression definition to a variable name and then use the name to call the function. The following example also displays 4.  
   
  [!code-vb[VbLINQVbFeatures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#12)]  
   
- Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], expressions lambda sous-tendent à la plupart des opérateurs de requête standard. Le compilateur crée des expressions lambda pour capturer les calculs qui sont définis dans les méthodes de requête fondamentaux tels que `Where`, `Select`, `Order By`, `Take While`et d’autres.  
+ In [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], lambda expressions underlie many of the standard query operators. The compiler creates lambda expressions to capture the calculations that are defined in fundamental query methods such as `Where`, `Select`, `Order By`, `Take While`, and others.  
   
- Par exemple, le code suivant définit une requête qui retourne tous les étudiants seniors dans une liste d’étudiants.  
+ For example, the following code defines a query that returns all senior students from a list of students.  
   
  [!code-vb[VbLINQVbFeatures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#9)]  
   
- La définition de requête est compilée en code qui est similaire à l’exemple suivant, qui utilise deux expressions lambda pour spécifier les arguments pour `Where` et `Select`.  
+ The query definition is compiled into code that is similar to the following example, which uses two lambda expressions to specify the arguments for `Where` and `Select`.  
   
  [!code-vb[VbLINQVbFeatures#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#10)]  
   
- Deux versions peuvent être exécutées à l’aide un `For Each` boucle :  
+ Either version can be run by using a `For Each` loop:  
   
  [!code-vb[VbLINQVbFeatures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#11)]  
   
- Pour plus d’informations, consultez [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Pour plus d’informations, voir [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
 - [Bien démarrer avec LINQ en Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [Option Infer (instruction)](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
 - [Option Strict (instruction)](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

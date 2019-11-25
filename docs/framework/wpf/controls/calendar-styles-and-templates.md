@@ -9,20 +9,20 @@ helpviewer_keywords:
 - Calendar [WPF], styles and templates
 - ControlTemplate [WPF], Calendar
 ms.assetid: f4fcf046-7a8f-41b8-b5a8-534b64e0345c
-ms.openlocfilehash: 49d9ced42572ac06a4ff824ec41a59c14497d215
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 64cb62a3459a3eeea6aa5e91b433a58a88ab08ea
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460923"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283559"
 ---
 # <a name="calendar-styles-and-templates"></a>Styles et modèles Calendar
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Calendar>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Calendar>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="calendar-parts"></a>Composants de calendrier  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Calendar>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_CalendarItem|<xref:System.Windows.Controls.Primitives.CalendarItem>|Mois ou année actuellement affiché sur le <xref:System.Windows.Controls.Calendar>.|  
 |PART_Root|<xref:System.Windows.Controls.Panel>|Panneau qui contient le <xref:System.Windows.Controls.Primitives.CalendarItem>.|  
@@ -39,7 +39,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="calendaritem-parts"></a>Composants CalendarItem  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Primitives.CalendarItem>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_Root|<xref:System.Windows.FrameworkElement>|Racine du contrôle.|  
 |PART_PreviousButton|<xref:System.Windows.Controls.Button>|Bouton qui affiche la page précédente du calendrier quand l’utilisateur clique dessus.|  
@@ -73,7 +73,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarDayButton> est désactivé.|  
+|Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarDayButton> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
 |Appuyé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarDayButton> est enfoncé.|  
 |Selected|SelectionStates|Le bouton est sélectionné.|  
@@ -101,7 +101,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarButton> est désactivé.|  
+|Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarButton> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
 |Appuyé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarButton> est enfoncé.|  
 |Selected|SelectionStates|Le bouton est sélectionné.|  
@@ -134,4 +134,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

@@ -1,5 +1,5 @@
 ---
-title: MustOverride (Visual Basic)
+title: MustOverride
 ms.date: 07/20/2015
 f1_keywords:
 - vb.MustOverride
@@ -15,28 +15,28 @@ helpviewer_keywords:
 - MustOverride keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-ms.openlocfilehash: f5932b28c4664dd59dad829228f2186e78108af5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc6a153a604fd0e5cee9d7d46ebcd63294f33628
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661239"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351483"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
-Spécifie qu’une propriété ou procédure n’est pas implémentée dans cette classe et doit être substitué dans une classe dérivée avant de pouvoir être utilisé.  
+Specifies that a property or procedure is not implemented in this class and must be overridden in a derived class before it can be used.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez utiliser `MustOverride` uniquement dans une instruction de déclaration de propriété ou de procédure. La propriété ou procédure spécifie `MustOverride` doit être un membre d’une classe, et la classe doit être marquée [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
+ You can use `MustOverride` only in a property or procedure declaration statement. The property or procedure that specifies `MustOverride` must be a member of a class, and the class must be marked [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
   
 ## <a name="rules"></a>Règles  
   
-- **Déclaration incomplète.** Lorsque vous spécifiez `MustOverride`, vous ne fournissez pas de lignes supplémentaires de code pour la propriété ou procédure, pas même le `End Function`, `End Property`, ou `End Sub` instruction.  
+- **Incomplete Declaration.** When you specify `MustOverride`, you do not supply any additional lines of code for the property or procedure, not even the `End Function`, `End Property`, or `End Sub` statement.  
   
-- **Modificateurs combinés.** Vous ne pouvez pas spécifier `MustOverride` avec `NotOverridable`, `Overridable`, ou `Shared` dans la même déclaration.  
+- **Combined Modifiers.** You cannot specify `MustOverride` together with `NotOverridable`, `Overridable`, or `Shared` in the same declaration.  
   
-- **Occultation et substitution.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. Pour plus d’informations, consultez [occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+- **Shadowing and Overriding.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
-- **Autres termes.** Un élément qui ne peut pas être utilisé sauf dans une substitution est parfois appelé un *pure virtuel* élément.  
+- **Alternate Terms.** An element that cannot be used except in an override is sometimes called a *pure virtual* element.  
   
  Le modificateur `MustOverride` peut être utilisé dans les contextes suivants :  
   
@@ -53,4 +53,4 @@ Spécifie qu’une propriété ou procédure n’est pas implémentée dans cett
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
 - [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
 - [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
-- [Occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

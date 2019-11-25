@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher des éléments connexes (XPath-LINQ to XML) (C#)'
+title: Guide pratique pour rechercher des éléments connexes (XPath-LINQ to XMLC#) ()
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: 2aa3f6c6c2c2ac327ff2dffc206cdd294e12d7a2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cdc281d0b08ee7b7f93ac28b14e82fa113a3379d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253644"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141036"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Procédure : Rechercher des éléments connexes (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des éléments connexes (XPath-LINQ to XMLC#) ()
 Cette rubrique montre comment obtenir un élément en sélectionnant un attribut auquel il est fait référence par la valeur d'un autre élément.  
   
  L’expression XPath est la suivante :  
@@ -21,7 +21,7 @@ Cette rubrique montre comment obtenir un élément en sélectionnant un attribut
   
  Notez que l’indexation dans une liste en .NET est en base « zéro ». L'indexation dans une collection de nœuds dans un prédicat XPath est basée sur « un ». Cet exemple reflète cette différence.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XDocument co = XDocument.Load("CustomersOrders.xml");  

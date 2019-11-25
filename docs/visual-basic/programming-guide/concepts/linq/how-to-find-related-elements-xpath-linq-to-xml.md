@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher des éléments connexes (XPath-LINQ to XML) (Visual Basic)'
+title: 'Comment : rechercher des éléments connexes (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 6b0ef058-d704-48a5-98cd-33f00d088af9
-ms.openlocfilehash: a430291925037f16883a27ca9deea5a4ec7a8175
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: e250572e7bd73e769e4ab06b7b7ff9e3b3d38c47
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250075"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344645"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>Procédure : Rechercher des éléments connexes (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>How to: Find Related Elements (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir un élément en sélectionnant un attribut auquel il est fait référence par la valeur d'un autre élément.  
   
  L’expression XPath est la suivante :  
@@ -21,7 +21,7 @@ Cette rubrique montre comment obtenir un élément en sélectionnant un attribut
   
  Notez que l’indexation dans une liste en .NET est en base « zéro ». L'indexation dans une collection de nœuds dans un prédicat XPath est basée sur « un ». Cet exemple reflète cette différence.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Clients et commandes (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XDocument = XDocument.Load("CustomersOrders.xml")  
@@ -75,4 +75,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

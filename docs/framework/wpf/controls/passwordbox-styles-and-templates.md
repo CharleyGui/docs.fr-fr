@@ -9,22 +9,22 @@ helpviewer_keywords:
 - PasswordBox [WPF], styles and templates
 - parts [WPF], PasswordBox
 ms.assetid: deb52107-959f-4a60-b303-d21a0a933060
-ms.openlocfilehash: 227ccbda8d570868258508935a5d95f0f40663ab
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 4ba90182468466773644c7375059f0cc01675b33
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458839"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283464"
 ---
 # <a name="passwordbox-styles-and-templates"></a>Styles et modèles PasswordBox
 
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.PasswordBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.PasswordBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 ## <a name="passwordbox-parts"></a>Parties de PasswordBox
 
 Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.PasswordBox>.
 
-|Élément|Tapez|Description|
+|Élément|Type|Description|
 |-|-|-|
 |PART_ContentHost|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.PasswordBox> s’affiche dans cet élément.|
 
@@ -36,7 +36,7 @@ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Wind
 |-|-|-|
 |Normale|CommonStates|État par défaut.|
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|
-|Disabled|CommonStates|Le contrôle est désactivé.|
+|Désactivé|CommonStates|Le contrôle est désactivé.|
 |Avec focus|FocusStates|Le contrôle a le focus.|
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|
@@ -62,4 +62,4 @@ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

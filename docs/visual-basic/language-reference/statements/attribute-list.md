@@ -1,19 +1,19 @@
 ---
-title: Liste d'attributs (Visual Basic)
+title: Liste d'attributs
 ms.date: 07/20/2015
 helpviewer_keywords:
 - attribute list
 - attributes [Visual Basic], applying
 ms.assetid: 5880073a-68a4-4b6b-8a07-ace32959a4e2
-ms.openlocfilehash: 771757afe214919649e13fda3990e1154be8e1e1
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: f9332f52622551bb6b944242f71bd80f439982e9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004527"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354061"
 ---
 # <a name="attribute-list-visual-basic"></a>Liste d'attributs (Visual Basic)
-Spécifie les attributs à appliquer à un élément de programmation déclaré. Les attributs multiples sont séparés par des virgules. Voici la syntaxe d’un attribut.  
+Specifies the attributes to be applied to a declared programming element. Les attributs multiples sont séparés par des virgules. Following is the syntax for one attribute.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,38 +24,38 @@ Spécifie les attributs à appliquer à un élément de programmation déclaré.
 ## <a name="parts"></a>Composants  
 |||
 |---|---|
-|`attributemodifier`|Obligatoire pour les attributs appliqués au début d’un fichier source. Il peut s’agir d’un [assembly](../../../visual-basic/language-reference/modifiers/assembly.md) ou d’un [module](../../../visual-basic/language-reference/modifiers/module-keyword.md).|
-|`attributename`| Obligatoire. Nom de l'attribut.|
-|`attributearguments`|facultatif. Liste des arguments positionnels pour cet attribut. Les arguments multiples sont séparés par des virgules.|
-|`attributeinitializer`|facultatif. Liste d’initialiseurs de variable ou de propriété pour cet attribut. Plusieurs initialiseurs sont séparés par des virgules.|
+|`attributemodifier`|Required for attributes applied at the beginning of a source file. Can be [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md) or [Module](../../../visual-basic/language-reference/modifiers/module-keyword.md).|
+|`attributename`| Requis. Nom de l'attribut.|
+|`attributearguments`|Optionnel. List of positional arguments for this attribute. Multiple arguments are separated by commas.|
+|`attributeinitializer`|Optionnel. List of variable or property initializers for this attribute. Multiple initializers are separated by commas.|
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez appliquer un ou plusieurs attributs à presque n’importe quel élément de programmation (types, procédures, propriétés, etc.). Les attributs apparaissent dans les métadonnées de votre assembly. ils peuvent vous aider à annoter votre code ou à spécifier comment utiliser un élément de programmation particulier. Vous pouvez appliquer des attributs définis par Visual Basic et le .NET Framework, et vous pouvez définir vos propres attributs.  
+ You can apply one or more attributes to nearly any programming element (types, procedures, properties, and so forth). Attributes appear in your assembly's metadata, and they can help you annotate your code or specify how to use a particular programming element. You can apply attributes defined by Visual Basic and the .NET Framework, and you can define your own attributes.  
 
- Pour plus d’informations sur l’utilisation des attributs, consultez [vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md). Pour plus d’informations sur les noms d’attributs, consultez [noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ For more information on when to use attributes, see [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md). For information on attribute names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 ## <a name="rules"></a>Règles  
   
-- **Importation.** Vous pouvez appliquer des attributs aux éléments de programmation les plus déclarés. Pour appliquer un ou plusieurs attributs, vous placez un *bloc d’attributs* au début de la déclaration de l’élément. Chaque entrée de la liste d’attributs spécifie un attribut que vous souhaitez appliquer, ainsi que le modificateur et les arguments que vous utilisez pour cet appel de l’attribut.  
+- **Placement.** You can apply attributes to most declared programming elements. To apply one or more attributes, you place an *attribute block* at the beginning of the element declaration. Each entry in the attribute list specifies an attribute you wish to apply, and the modifier and arguments you are using for this invocation of the attribute.  
   
-- **Chevrons.** Si vous fournissez une liste d’attributs, vous devez la placer entre crochets pointus (« `<` » et « `>` »).  
+- **Angle Brackets.** If you supply an attribute list, you must enclose it in angle brackets ("`<`" and "`>`").  
   
-- **Partie de la déclaration.** L’attribut doit faire partie de la déclaration de l’élément, et non d’une instruction distincte. Vous pouvez utiliser la séquence de continuation de ligne (« `_` ») pour étendre l’instruction de déclaration sur plusieurs lignes de code source.  
+- **Part of the Declaration.** The attribute must be part of the element declaration, not a separate statement. You can use the line-continuation sequence (" `_`") to extend the declaration statement onto multiple source-code lines.  
   
-- **Modificateurs.** Un modificateur d’attribut (`Assembly` ou `Module`) est requis sur chaque attribut appliqué à un élément de programmation au début d’un fichier source. Les modificateurs d’attribut ne sont pas autorisés sur les attributs appliqués aux éléments qui ne sont pas au début d’un fichier source.  
+- **Modifiers.** An attribute modifier (`Assembly` or `Module`) is required on every attribute applied to a programming element at the beginning of a source file. Attribute modifiers are not allowed on attributes applied to elements that are not at the beginning of a source file.  
   
-- **Arguments.** Tous les arguments positionnels d’un attribut doivent précéder tout initialiseur de variable ou de propriété.  
+- **Arguments.** All positional arguments for an attribute must precede any variable or property initializers.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant applique l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> à une définition squelette d’une procédure `Function`.  
+ The following example applies the <xref:System.Runtime.InteropServices.DllImportAttribute> attribute to a skeleton definition of a `Function` procedure.  
   
  [!code-vb[VbVbalrStatements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#1)]  
   
- <xref:System.Runtime.InteropServices.DllImportAttribute> indique que la procédure avec attributs représente un point d’entrée dans une bibliothèque de liens dynamiques (DLL) non managée. L’attribut fournit le nom de la DLL comme argument positionnel et les autres informations sous forme d’initialiseurs de variables.  
+ <xref:System.Runtime.InteropServices.DllImportAttribute> indicates that the attributed procedure represents an entry point in an unmanaged dynamic-link library (DLL). The attribute supplies the DLL name as a positional argument and the other information as variable initializers.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)
 - [\<mot clé> du module](../../../visual-basic/language-reference/modifiers/module-keyword.md)
 - [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [Guide pratique pour diviser et combiner des instructions dans le code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
+- [Guide pratique : diviser et combiner des instructions dans le code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

@@ -1,5 +1,5 @@
 ---
-title: Default (Visual Basic)
+title: Valeur par défaut
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Default
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - Default keyword [Visual Basic]
 - default properties
 ms.assetid: 45fce9b9-d212-4b2d-ab86-6e359b8b57af
-ms.openlocfilehash: f78ffe42a9d618d44da2a50c0de831396576430c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad4c9528f208cc2c31f07b0506d1b049a7568c86
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800930"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351583"
 ---
 # <a name="default-visual-basic"></a>Default (Visual Basic)
-Identifie une propriété comme la propriété par défaut de sa classe, une structure ou une interface.  
+Identifies a property as the default property of its class, structure, or interface.  
   
 ## <a name="remarks"></a>Notes  
- Une classe, une structure ou une interface peut désigner au plus une de ses propriétés comme le *propriété par défaut*, à condition que la propriété prend au moins un paramètre. Si le code fait référence à une classe ou structure sans spécifier un membre, Visual Basic résout qu’une référence à la propriété par défaut.  
+ A class, structure, or interface can designate at most one of its properties as the *default property*, provided that property takes at least one parameter. If code makes a reference to a class or structure without specifying a member, Visual Basic resolves that reference to the default property.  
   
- Propriétés par défaut peuvent entraîner une légère réduction dans les caractères de code source, mais ils peuvent rendre votre code plus difficile à lire. Si le code appelant n’est pas familiarisé avec votre classe ou structure, lorsqu’il fait référence au nom de classe ou structure il ne peut pas être certains que cette référence accède à la classe ou structure lui-même ou une propriété par défaut. Cela peut entraîner des erreurs du compilateur ou des erreurs de logique d’exécution subtiles.  
+ Default properties can result in a small reduction in source code-characters, but they can make your code more difficult to read. If the calling code is not familiar with your class or structure, when it makes a reference to the class or structure name it cannot be certain whether that reference accesses the class or structure itself, or a default property. This can lead to compiler errors or subtle run-time logic errors.  
   
- Vous pouvez légèrement réduire les risques d’erreurs de propriété par défaut en utilisant toujours la [Option Strict, instruction](../../../visual-basic/language-reference/statements/option-strict-statement.md) pour définir le contrôle de type du compilateur `On`.  
+ You can somewhat reduce the chance of default property errors by always using the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md) to set compiler type checking to `On`.  
   
- Si vous envisagez d’utiliser une classe prédéfinie ou une structure dans votre code, vous devez déterminer s’il possède une propriété par défaut et si c’est le cas, ce que son nom est.  
+ If you are planning to use a predefined class or structure in your code, you must determine whether it has a default property, and if so, what its name is.  
   
- En raison de ces inconvénients, vous devez envisager de ne pas définir les propriétés par défaut. Pour la lisibilité du code, vous devez également envisager de toujours faire explicitement référence à toutes les propriétés, même les propriétés par défaut.  
+ Because of these disadvantages, you should consider not defining default properties. For code readability, you should also consider always referring to all properties explicitly, even default properties.  
   
- Le `Default` modificateur peut être utilisé dans ce contexte :  
+ The `Default` modifier can be used in this context:  
   
  [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Déclarer et appeler une propriété par défaut en Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
+- [How to: Declare and Call a Default Property in Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
 - [Mots clés](../../../visual-basic/language-reference/keywords/index.md)

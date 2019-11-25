@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 95726d4bfae6da43cd845d461caf8f1848d774f1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 0583329ae75fa54cf000212479895ccebdbd30d8
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424331"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74142058"
 ---
 # <a name="implementing-a-dispose-method"></a>Implémentation d’une méthode Dispose
 
@@ -103,7 +103,7 @@ Voici le modèle général d’implémentation du modèle de suppression d’une
   
 ## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a>Implémentation du modèle de suppression d’une classe dérivée
 
-Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées. À la place, pour implémenter le modèle de suppression d’une classe dérivée, vous fournissez ce qui suit :  
+Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées. Au lieu de cela, pour libérer des ressources d’une classe dérivée, vous fournissez les éléments suivants :  
   
 - Une méthode `protected Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée. Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer son état disposing pour l’argument.  
   

@@ -2,12 +2,12 @@
 title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: 8c0eb71fffdd29d9599d74c789a66ec7caf1faeb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b0cc47604b65a5883643d61b44b1e9878ec4b1bf
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418173"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140893"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 « LINQ to Objects » fait référence à l’utilisation directe de requêtes LINQ avec n’importe quelle collection <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>, sans utiliser de fournisseur LINQ ou d’API intermédiaire comme [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) ou [LINQ to XML](./linq-to-xml-overview.md). Vous pouvez utiliser LINQ pour interroger des collections énumérables telles que <xref:System.Collections.Generic.List%601>, <xref:System.Array> ou <xref:System.Collections.Generic.Dictionary%602>. La collection peut être définie par l’utilisateur ou retournée par une API du .NET Framework.  
@@ -39,7 +39,7 @@ ms.locfileid: "73418173"
  [Guide pratique pour interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)  
  Montre comment interroger une ArrayList en C#.  
   
- [Guide pratique pour ajouter des méthodes personnalisées pour les requêtes LINQ (C#)](./how-to-add-custom-methods-for-linq-queries.md)  
+ [Comment ajouter des méthodes personnalisées pour les requêtesC#LINQ ()](./how-to-add-custom-methods-for-linq-queries.md)  
  Explique comment étendre l'ensemble des méthodes utilisables pour les requêtes LINQ en ajoutant des méthodes d'extension à l'interface <xref:System.Collections.Generic.IEnumerable%601>.  
   
  [LINQ (Language-Integrated Query) (C#)](./index.md)  

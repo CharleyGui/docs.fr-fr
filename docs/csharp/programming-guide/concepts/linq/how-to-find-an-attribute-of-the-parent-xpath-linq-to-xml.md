@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher un attribut du parent (XPath-LINQ to XML) (C#)'
+title: Comment rechercher un attribut du parent (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: aa602f6876b014c48a73dea9b2ff42eb953e5c4c
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: bfe7554a5c767adde5e7170c8e1ea0537155f6df
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253772"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141178"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Procédure : Rechercher un attribut du parent (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Comment rechercher un attribut du parent (XPath-LINQ to XML) (C#)
 
 Cette rubrique montre comment naviguer jusqu'à l'élément parent et rechercher un attribut de celui-ci.
 
@@ -21,7 +21,7 @@ L’expression XPath est la suivante :
 
 Cet exemple recherche d'abord un élément `Author`. Il recherche ensuite l'attribut `id` de l'élément parent.
 
-Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).
+Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");

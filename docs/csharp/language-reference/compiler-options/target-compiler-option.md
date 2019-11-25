@@ -9,18 +9,18 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: 073660fa732c04cdc987af5617b894a277ebcc0f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: af7bd917f57c8752a2026fbb98aa8b22adc98db7
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970112"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204514"
 ---
 # <a name="-target-c-compiler-options"></a>-target (Options du compilateur C#)
 L’option du compilateur **-target** peut être spécifiée sous quatre formes différentes :  
   
  [/target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
- Pour créer un fichier .exe pour des applications [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)].  
+ To create an .exe file for Windows 8.x Store apps.  
   
  [/target:exe](./target-exe-compiler-option.md)  
  Pour créer un fichier .exe.  
@@ -37,7 +37,7 @@ L’option du compilateur **-target** peut être spécifiée sous quatre formes 
  [/target:winmdobj](./target-winmdobj-compiler-option.md)  
  Pour créer un fichier .winmdobj intermédiaire.  
   
- Sauf si vous spécifiez **-target:module**, **-target** entraîne le placement d’un manifeste de l’assembly .NET Framework dans un fichier de sortie. Pour plus d’informations, consultez [assemblys dans .net](../../../standard/assembly/index.md) et [attributs communs](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Sauf si vous spécifiez **-target:module**, **-target** entraîne le placement d’un manifeste de l’assembly .NET Framework dans un fichier de sortie. For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../../programming-guide/concepts/attributes/common-attributes.md).  
   
  Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe. Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :  
   

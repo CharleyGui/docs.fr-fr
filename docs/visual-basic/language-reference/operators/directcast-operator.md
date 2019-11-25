@@ -1,5 +1,5 @@
 ---
-title: Opérateur DirectCast (Visual Basic)
+title: DirectCast, opérateur
 ms.date: 07/20/2015
 f1_keywords:
 - vb.directCast
@@ -7,39 +7,39 @@ f1_keywords:
 helpviewer_keywords:
 - DirectCast keyword [Visual Basic]
 ms.assetid: 63e5a1d0-4d9e-4732-bf8f-e90c0c8784b8
-ms.openlocfilehash: 628ce4f06b91d0f514f71dea3aad8ea0fee6dccf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ea29b80cf27bbb2c21a8cebbfaa0a294e05f11d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778545"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74331305"
 ---
 # <a name="directcast-operator-visual-basic"></a>Opérateur DirectCast (Visual Basic)
-Introduit une opération de conversion de type en fonction d’héritage ou d’implémentation.  
+Introduces a type conversion operation based on inheritance or implementation.  
   
 ## <a name="remarks"></a>Notes  
- `DirectCast` n’utilise pas le routines d’assistance d’exécution pour la conversion, donc il peut fournir un peu de meilleures performances que Visual Basic `CType` lors de la conversion vers et depuis le type de données `Object`.  
+ `DirectCast` does not use the Visual Basic run-time helper routines for conversion, so it can provide somewhat better performance than `CType` when converting to and from data type `Object`.  
   
- Vous utilisez le `DirectCast` mot clé similaire à la façon dont vous utilisez le [CType (fonction)](../../../visual-basic/language-reference/functions/ctype-function.md) et [opérateur TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md) mot clé. Vous fournissez une expression comme le premier argument et un type pour le convertir comme deuxième argument. `DirectCast` nécessite une relation d’héritage ou d’implémentation entre les types de données des deux arguments. Cela signifie qu’un type doit hériter ou implémenter l’autre.  
+ You use the `DirectCast` keyword similar to the way you use the [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md) and the [TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md) keyword. You supply an expression as the first argument and a type to convert it to as the second argument. `DirectCast` requires an inheritance or implementation relationship between the data types of the two arguments. This means that one type must inherit from or implement the other.  
   
-## <a name="errors-and-failures"></a>Erreurs et échecs  
- `DirectCast` génère une erreur du compilateur s’il détecte qu’il n’existe aucune relation d’héritage ou d’implémentation. Mais l’absence d’une erreur du compilateur ne garantit pas une conversion réussie. Si la conversion souhaitée est restrictive, il peut échouer au moment de l’exécution. Si cela se produit, le runtime lève une <xref:System.InvalidCastException> erreur.  
+## <a name="errors-and-failures"></a>Errors and Failures  
+ `DirectCast` generates a compiler error if it detects that no inheritance or implementation relationship exists. But the lack of a compiler error does not guarantee a successful conversion. If the desired conversion is narrowing, it could fail at run time. If this happens, the runtime throws an <xref:System.InvalidCastException> error.  
   
 ## <a name="conversion-keywords"></a>Mots clés de conversion  
- Voici une comparaison des mots clés de conversion de type.  
+ A comparison of the type conversion keywords is as follows.  
   
-|Mot clé|Types de données|Relation d’argument|Échec d’exécution|  
+|Mot clé|Types de données|Argument relationship|Run-time failure|  
 |---|---|---|---|  
-|[CType (fonction)](../../../visual-basic/language-reference/functions/ctype-function.md)|Les types de données|Conversion restrictive ou étendue doit être défini entre les deux types de données|Lève <xref:System.InvalidCastException>|  
-|`DirectCast`|Les types de données|Un type doit hériter ou implémenter l’autre type|Lève <xref:System.InvalidCastException>|  
-|[TryCast (opérateur)](../../../visual-basic/language-reference/operators/trycast-operator.md)|Seuls les types de référence|Un type doit hériter ou implémenter l’autre type|Retourne [Nothing](../../../visual-basic/language-reference/nothing.md)|  
+|[CType (fonction)](../../../visual-basic/language-reference/functions/ctype-function.md)|Any data types|Widening or narrowing conversion must be defined between the two data types|Throws <xref:System.InvalidCastException>|  
+|`DirectCast`|Any data types|One type must inherit from or implement the other type|Throws <xref:System.InvalidCastException>|  
+|[TryCast (opérateur)](../../../visual-basic/language-reference/operators/trycast-operator.md)|Reference types only|One type must inherit from or implement the other type|Returns [Nothing](../../../visual-basic/language-reference/nothing.md)|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre deux utilisations de `DirectCast`, une qui échoue au moment de l’exécution et l’autre qui réussit.  
+ The following example demonstrates two uses of `DirectCast`, one that fails at run time and one that succeeds.  
   
  [!code-vb[VbVbalrKeywords#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#1)]  
   
- Dans l’exemple précédent, type de la durée d’exécution de `q` est `Double`. `CType` réussit car `Double` peut être converti en `Integer`. Toutefois, la première `DirectCast` échoue au moment de l’exécution, car le type de la durée d’exécution de `Double` n’a aucune relation d’héritage avec `Integer`, même s’il existe une conversion. La seconde `DirectCast` réussit car elle convertit du type <xref:System.Windows.Forms.Form> à taper <xref:System.Windows.Forms.Control>, à partir de laquelle <xref:System.Windows.Forms.Form> hérite.  
+ In the preceding example, the run-time type of `q` is `Double`. `CType` succeeds because `Double` can be converted to `Integer`. However, the first `DirectCast` fails at run time because the run-time type of `Double` has no inheritance relationship with `Integer`, even though a conversion exists. The second `DirectCast` succeeds because it converts from type <xref:System.Windows.Forms.Form> to type <xref:System.Windows.Forms.Control>, from which <xref:System.Windows.Forms.Form> inherits.  
   
 ## <a name="see-also"></a>Voir aussi
 

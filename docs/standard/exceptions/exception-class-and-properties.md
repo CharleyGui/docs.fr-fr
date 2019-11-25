@@ -8,23 +8,21 @@ helpviewer_keywords:
 ms.assetid: e2e1f8c4-e7b4-467d-9a66-13c90861221d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 283b3b1aa0d56b50b6f9e67b66de3e0b68ae2331
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: HT
+ms.openlocfilehash: e17fa07fe2dd19cdcd03bc923940abfef886219c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44216540"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283121"
 ---
 # <a name="exception-class-and-properties"></a>Classe et propriétés d’exception
 
 La classe <xref:System.Exception> est la classe de base dont héritent les exceptions. Par exemple, la hiérarchie de classes <xref:System.InvalidCastException> se présente comme suit :
 
-```
-Object
-  Exception
-    SystemException
-       InvalidCastException
-```
+<xref:System.Object>\
+&nbsp;&nbsp;<xref:System.Exception>\
+&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.SystemException>\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.InvalidCastException>
 
 La classe <xref:System.Exception> a les propriétés suivantes qui vous permettront de mieux comprendre une exception.
 

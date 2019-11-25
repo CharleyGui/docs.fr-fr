@@ -1,15 +1,15 @@
 ---
-title: Guide pratique pour créer une arborescence à partir d’un XmlReader (C#)
+title: Comment créer une arborescence à partir d’un XmlReaderC#()
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
-ms.openlocfilehash: a0cff596e0a6d50aefab3645a99beec3277d05ec
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 196779a10678bdd3aa5399cf883af8c4b074e5df
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418324"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141313"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Guide pratique pour créer une arborescence à partir d’un XmlReader (C#)
+# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Comment créer une arborescence à partir d’un XmlReaderC#()
 Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>. Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément. L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée. Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.  
   
 ## <a name="example"></a>Exemple  

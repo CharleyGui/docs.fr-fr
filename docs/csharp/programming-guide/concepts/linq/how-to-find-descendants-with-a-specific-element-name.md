@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Rechercher les descendants avec un nom d’élément spécifique (C#)'
+title: Comment rechercher des descendants avec un nom d’élément spécifiqueC#()
 ms.date: 07/20/2015
 ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
-ms.openlocfilehash: 8c859c555109a6f68a6b4290c536b10114620f3d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b3200a2fdf75dbf52079a2b3d27aa1a88d313406
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253697"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141082"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Procédure : Rechercher les descendants avec un nom d’élément spécifique (C#)
+# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Comment rechercher des descendants avec un nom d’élément spécifiqueC#()
 Parfois, vous souhaitez rechercher tous les descendants avec un nom particulier. Vous pourriez écrire du code pour itérer au sein de tous les descendants, mais il est plus facile d'utiliser l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rechercher des descendants en fonction du nom d'élément.  
   
 ```csharp  

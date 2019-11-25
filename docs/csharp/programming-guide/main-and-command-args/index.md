@@ -13,12 +13,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 5de7e565560928b1867ba96c8937fd354c276806
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a5707e8cfff11dd9d27fffc9deb41662fb2c4460
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774123"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281764"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() et arguments de ligne de commande (Guide de programmation C#)
 
@@ -35,6 +35,19 @@ La méthode `Main` est le point d’entrée d’une application C#. (Les bibliot
 - `Main` peut avoir un type de retour `void`, `int` ou, à partir de C# 7.1, `Task` ou `Task<int>`.
 - Si et seulement si `Main` retourne un `Task` ou `Task<int>`, la déclaration de `Main` peut inclure le modificateur [`async`](../../language-reference/keywords/async.md). Notez que cela exclut spécifiquement une méthode `async void Main`.
 - La méthode `Main` peut être déclarée avec ou sans paramètre `string[]`, qui contient des arguments de ligne de commande. Lorsque vous utilisez Visual Studio pour créer des applications Windows, vous pouvez ajouter le paramètre manuellement ou utiliser la méthode <xref:System.Environment.GetCommandLineArgs> pour obtenir les [arguments de ligne de commande](command-line-arguments.md). Les paramètres sont lus comme des arguments de ligne de commande avec index de base zéro. Contrairement à C C++et, le nom du programme n’est pas traité comme le premier argument de ligne de commande dans le tableau `args`, mais il s’agit du premier élément de la méthode <xref:System.Environment.GetCommandLineArgs>.
+
+La liste suivante répertorie les signatures de `Main` valides :
+
+```csharp
+public static void Main() { }
+public static int Main() { }
+public static void Main(string[] args) { }
+public static int Main(string[] args) { }
+public static async Task Main() { }
+public static async Task<int> Main() { }
+public static async Task Main(string[] args) { }
+public static async Task<int> Main(string[] args) { }
+```
 
 L’ajout des types de retour `async` et `Task`, `Task<int>` simplifie le code de programme lorsque les applications de console doivent démarrer et `await` des opérations asynchrones dans `Main`.
 

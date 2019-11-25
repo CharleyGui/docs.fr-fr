@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : rechercher un seul descendant à l’aide de la méthode Descendants (C#)'
+title: Comment rechercher un seul descendant à l’aide de la méthode descendants (C#)
 ms.date: 07/20/2015
 ms.assetid: 6f735be9-0293-4680-8007-ca9d96bfebed
-ms.openlocfilehash: 29cac5a666f7e9a560c550ad20a5bb68d02ee1ea
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 59d8cfb93ec527a6ceaa58b422a154e16d712533
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253794"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141202"
 ---
-# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Procédure : rechercher un seul descendant à l’aide de la méthode Descendants (C#)
+# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Comment rechercher un seul descendant à l’aide de la méthode descendants (C#)
 Vous pouvez utiliser la méthode d'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> pour écrire rapidement du code afin de rechercher un seul élément nommé de manière unique. Cette technique est particulièrement utile lorsque vous souhaitez rechercher un descendant particulier avec un nom spécifique. Vous pourriez écrire du code pour naviguer jusqu'à l'élément souhaité, mais il est souvent plus rapide et plus facile d'écrire le code à l'aide de l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple utilise l'opérateur de requête standard <xref:System.Linq.Enumerable.First%2A>.  
   
 ```csharp  

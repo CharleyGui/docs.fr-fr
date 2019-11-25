@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
-ms.openlocfilehash: 926edb4478551affa03619f44ee886d5eb591e4d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 41be55391ae9481f6c2e4feb76443f7fb676b69d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637273"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141928"
 ---
 # <a name="customizing-the-workflow-design-experience"></a>Personnalisation de l'expérience de conception de workflow
 
-Les scénarios destinés à la conception d'activités personnalisées et au réhébergement du [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] ont été considérablement simplifiés dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Le développement et le déploiement sont maintenant à la fois plus facile et plus souple. La modification d’infrastructure clé est que le nouveau modèle de programmation concepteur activité repose sur Windows Presentation Foundation (WPF). Cela vous permet de définir des concepteurs d'activités de façon déclarative et de réhéberger le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans d'autres applications en toute simplicité. Lors du réhébergement, un éditeur d'expressions personnalisé peut être développé pour prendre en charge IntelliSense ou un domaine d'expression simplifié. L’intégration avec Windows Communication Foundation (WCF) est devenue plus transparente avec l’utilisation des services de flux de travail. Les concepteurs d'activités personnalisées et l'arborescence d'éléments de modèle peuvent être utilisés pour améliorer les expériences au moment du design dans les concepteurs de workflow réhébergés.
+Les scénarios de conception d’activités personnalisées et de réhébergement du [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] ont été considérablement simplifiés dans .NET Framework 4. Le développement et le déploiement sont maintenant à la fois plus facile et plus souple. La principale modification de l’infrastructure est que le nouveau modèle de programmation de concepteur d’activités repose sur Windows Presentation Foundation (WPF). Cela vous permet de définir des concepteurs d'activités de façon déclarative et de réhéberger le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans d'autres applications en toute simplicité. Lors du réhébergement, un éditeur d'expressions personnalisé peut être développé pour prendre en charge IntelliSense ou un domaine d'expression simplifié. L’intégration à Windows Communication Foundation (WCF) est devenue plus transparente grâce à l’utilisation des services de Workflow. Les concepteurs d'activités personnalisées et l'arborescence d'éléments de modèle peuvent être utilisés pour améliorer les expériences au moment du design dans les concepteurs de workflow réhébergés.
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -23,13 +23,13 @@ Les scénarios destinés à la conception d'activités personnalisées et au ré
 
  [Réhébergement du concepteur de flux de travail](rehosting-the-workflow-designer.md)
 
- Décrit comment ré-héberger le [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] en dehors de Visual Studio et comment afficher les erreurs de validation.
+ Décrit comment réhéberger le [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] en dehors de Visual Studio et comment afficher les erreurs de validation.
 
  [Utilisation d’un éditeur d’expressions personnalisé](using-a-custom-expression-editor.md)
 
- Décrit comment implémenter un éditeur d’expressions personnalisées à utiliser avec les concepteurs de workflow réhébergés en dehors de Visual Studio 2010.
+ Décrit comment implémenter un éditeur d’expressions personnalisé à utiliser avec les concepteurs de workflow réhébergés en dehors de Visual Studio 2010.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
 <xref:System.Activities.Presentation.ActivityDesigner>
 

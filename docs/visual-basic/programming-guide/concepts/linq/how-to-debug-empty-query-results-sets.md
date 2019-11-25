@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Déboguer des ensembles de résultats de requête vides (Visual Basic)'
+title: 'Comment : déboguer des ensembles de résultats de requête vides'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-ms.openlocfilehash: 6fc194432b1d44c1214da32d2c6978a4eeb316dc
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 21c161a702338c0c6943fa09212deaea7fdd72f9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351776"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353073"
 ---
-# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Procédure : Déboguer des ensembles de résultats de requête vides (Visual Basic)
+# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>How to: Debug Empty Query Results Sets (Visual Basic)
 
 L'un des problèmes les plus courants lors de l'interrogation d'une arborescence XML est que si celle-ci possède un espace de noms par défaut, le développeur écrit parfois la requête comme si le code XML n'était dans aucun espace de noms.
 
@@ -17,7 +17,7 @@ Le premier ensemble d'exemples dans cette rubrique illustre le chargement de cod
 
 Le deuxième ensemble d'exemples illustre les corrections que vous devez apporter pour pouvoir interroger du code XML dans un espace de noms.
 
-Pour plus d’informations, consultez [vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).
+For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).
 
 ## <a name="example"></a>Exemple
 
@@ -54,7 +54,7 @@ End of result set
 
 Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.
 
-La solution consiste à déclarer et à initialiser un espace de noms global par défaut. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.
+The solution is to declare and initialize a global default namespace. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.
 
 ```vb
 Imports <xmlns="http://www.adventure-works.com">
@@ -94,4 +94,4 @@ End of result set
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

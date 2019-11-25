@@ -9,15 +9,15 @@ helpviewer_keywords:
 - ListView [WPF], styles and templates
 - templates [WPF], ListView
 ms.assetid: d2387356-2171-4785-822a-7247e024b4ee
-ms.openlocfilehash: 5f5a9d9f747246ee9b72b42a45291a42bb04cb88
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 579ce6fd7e4e7a1179fc686daeb95b9dea21ac90
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459379"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283721"
 ---
 # <a name="listview-styles-and-templates"></a>Styles et modèles ListView
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ListView>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ListView>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="listview-parts"></a>Composants ListView  
  Le contrôle <xref:System.Windows.Controls.ListView> n’a pas de parties nommées.  
@@ -42,7 +42,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle de <xref:System.Windows.Controls.ComboBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
@@ -71,4 +71,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

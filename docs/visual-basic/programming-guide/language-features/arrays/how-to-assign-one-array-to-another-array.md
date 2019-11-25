@@ -1,27 +1,27 @@
 ---
-title: 'Procédure : Assigner un tableau à un autre tableau (Visual Basic)'
+title: 'Comment : assigner un tableau à un autre tableau'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - covariance, arrays
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: a39888f19e5033a5c6622313fb7451d6463b2f7c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be5337e36c2cc7ad9f9b32182b8575ac66bb4a50
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64858884"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351888"
 ---
-# <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Procédure : Assigner un tableau à un autre tableau (Visual Basic)
+# <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Comment : assigner un tableau à un autre tableau (Visual Basic)
 
-Étant donné que les tableaux sont des objets, vous pouvez les utiliser dans les instructions d’assignation, comme d’autres types d’objets. Une variable de tableau conserve un pointeur vers les données constituant les éléments du tableau et les informations de classement et de longueur et une attribution de copie uniquement ce pointeur.
+Because arrays are objects, you can use them in assignment statements like other object types. An array variable holds a pointer to the data constituting the array elements and the rank and length information, and an assignment copies only this pointer.
 
-### <a name="to-assign-one-array-to-another-array"></a>Pour assigner un tableau à un autre tableau
+### <a name="to-assign-one-array-to-another-array"></a>To assign one array to another array
 
-1. Assurez-vous que les deux tableaux ont le même rang (nombre de dimensions) et les types de données d’élément compatibles.
+1. Ensure that the two arrays have the same rank (number of dimensions) and compatible element data types.
 
-2. Utilisez une instruction d’assignation standard pour assigner le tableau source vers le tableau de destination. Ne suivez pas les noms du tableau de parenthèses.
+2. Use a standard assignment statement to assign the source array to the destination array. Do not follow either array name with parentheses.
 
     ```vb
     Dim formArray() As System.Windows.Forms.Form
@@ -29,19 +29,19 @@ ms.locfileid: "64858884"
     controlArray = formArray
     ```
 
-Lorsque vous affectez un tableau à un autre, les règles suivantes s’appliquent :
+When you assign one array to another, the following rules apply:
 
-- **Rangs identiques.** Le rang (nombre de dimensions) du tableau de destination doit être identique à celui du tableau source.
+- **Equal Ranks.** The rank (number of dimensions) of the destination array must be the same as that of the source array.
 
-  Condition les rangs des deux tableaux sont égaux, les dimensions n’avez pas besoin être égale. Le nombre d’éléments dans une dimension donnée peut changer lors de l’attribution.
+  Provided the ranks of the two arrays are equal, the dimensions do not need to be equal. The number of elements in a given dimension can change during assignment.
 
-- **Types d’éléments.** Soit les deux tableaux doivent avoir *type référence* éléments ou les deux tableaux doit avoir *type valeur* éléments. Pour plus d'informations, consultez [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+- **Element Types.** Either both arrays must have *reference type* elements or both arrays must have *value type* elements. Pour plus d'informations, consultez [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
 
-  - Si les deux tableaux ont des éléments de type valeur, les types de données d’élément doivent être exactement le même. La seule exception à cela est que vous pouvez assigner un tableau de `Enum` éléments vers un tableau de type de base de qui `Enum`.
+  - If both arrays have value type elements, the element data types must be exactly the same. The only exception to this is that you can assign an array of `Enum` elements to an array of the base type of that `Enum`.
 
-  - Si les deux tableaux ont des éléments de type référence, le type d’élément source doit dériver du type d’élément de destination. Lorsque c’est le cas, les deux tableaux ont la même relation d’héritage que leurs éléments. Il s’agit *covariance de tableau*.
+  - If both arrays have reference type elements, the source element type must derive from the destination element type. When this is the case, the two arrays have the same inheritance relationship as their elements. This is called *array covariance*.
 
-Le compilateur signale une erreur si les règles ci-dessus sont violées, par exemple si les types de données ne sont pas compatibles ou les rangs sont inégaux. Vous pouvez ajouter à votre code pour vous assurer que les tableaux sont compatibles avant de tenter une affectation de gestion des erreurs. Vous pouvez également utiliser le [opérateur TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md) mot clé si vous souhaitez éviter de lever une exception.
+The compiler reports an error if the above rules are violated, for example if the data types are not compatible or the ranks are unequal. You can add error handling to your code to make sure that the arrays are compatible before attempting an assignment. You can also use the [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md) keyword if you want to avoid throwing an exception.
 
 ## <a name="see-also"></a>Voir aussi
 

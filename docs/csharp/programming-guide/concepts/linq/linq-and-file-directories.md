@@ -2,12 +2,12 @@
 title: LINQ et répertoires de fichiers (C#)
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: 1d2109fe7f4f907317275188057fa6e5e71b2679
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 2a91e397686b329d47380a8b03f61be2e2ec5043
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591972"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140934"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ et répertoires de fichiers (C#)
 De nombreuses opérations du système de fichiers sont des requêtes et l’approche de LINQ leur convient donc bien.  
@@ -16,7 +16,7 @@ De nombreuses opérations du système de fichiers sont des requêtes et l’appr
   
  Cette section contient les rubriques suivantes :  
   
- [Guide pratique pour rechercher des fichiers ayant un attribut ou un nom donné (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ [Guide pratique pour interroger des fichiers ayant un attribut ou un nom donné (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)  
  Montre comment rechercher des fichiers en examinant une ou plusieurs propriétés de son objet <xref:System.IO.FileInfo>.  
   
  [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)  
@@ -25,19 +25,19 @@ De nombreuses opérations du système de fichiers sont des requêtes et l’appr
  [Guide pratique pour rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)  
  Montre comment retourner le nombre total d’octets dans tous les fichiers d’une arborescence de répertoires spécifiée.  
   
- [Guide pratique pour comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)  
+ [Comment comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)  
  Montre comment retourner tous les fichiers qui sont présents dans deux dossiers spécifiés, ainsi que tous les fichiers qui sont présents dans un dossier mais pas dans l’autre.  
   
- [Guide pratique pour rechercher les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)  
+ [Guide pratique pour interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)  
  Montre comment retourner le fichier le plus grand ou le plus petit, ou un nombre spécifié de fichiers, dans une arborescence de répertoires.  
   
- [Guide pratique pour rechercher les fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
+ [Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)](./how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
  Montre comment regrouper tous les noms de fichier qui se trouvent dans plusieurs emplacements d’une arborescence de répertoires spécifiée. Montre aussi comment effectuer des comparaisons plus complexes avec un comparateur personnalisé.  
   
  [Guide pratique pour interroger le contenu de fichiers dans un dossier (LINQ) (C#)](./how-to-query-the-contents-of-files-in-a-folder-lin.md)  
  Montre comment itérer au sein des dossiers d’une arborescence, ouvrir chaque fichier et interroger le contenu du fichier.  
   
-## <a name="comments"></a>Commentaires  
+## <a name="comments"></a>Comments  
  La création d’une source de données représentant avec précision le contenu du système de fichiers et la gestion correcte des exceptions induisent une certaine complexité. Les exemples de cette section créent une collection d’instantanés d’objets <xref:System.IO.FileInfo> qui représente tous les fichiers d’un dossier racine spécifié et de tous ses sous-dossiers. L’état réel de chaque <xref:System.IO.FileInfo> peut changer dans le temps entre le début et la fin de l’exécution d’une requête. Par exemple, vous pouvez créer une liste d’objets <xref:System.IO.FileInfo> à utiliser comme source de données. Si vous essayez d’accéder à la propriété `Length` dans une requête, l’objet <xref:System.IO.FileInfo> tente d’accéder au système de fichiers pour mettre à jour la valeur de `Length`. Si le fichier n’existe plus, vous obtenez une exception <xref:System.IO.FileNotFoundException> dans votre requête, même si vous n’interrogez pas directement le système de fichiers. Certaines requêtes de cette section utilisent une méthode distincte qui consomme ces exceptions particulières dans certains cas. Une autre option consiste à conserver votre source de données à jour dynamiquement en utilisant <xref:System.IO.FileSystemWatcher>.  
   
 ## <a name="see-also"></a>Voir aussi

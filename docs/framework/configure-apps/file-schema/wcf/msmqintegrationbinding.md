@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: 95942e9818eccc018c123148949c6f2dee4fa6e0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ba28a81dd2ea0684ed863821afd3a8f31c0fb064
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736627"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140766"
 ---
 # <a name="msmqintegrationbinding"></a>\<msmqIntegrationBinding >
 Définit une liaison qui prend en charge la mise en file d’attente par routage des messages via MSMQ.  
@@ -62,7 +62,7 @@ Définit une liaison qui prend en charge la mise en file d’attente par routage
 |exactlyOnce|Valeur booléenne indiquant si chaque message est remis une seule fois. L'expéditeur est ensuite notifié des échecs de remise. Lorsque `durable` a pour valeur `false`, cet attribut est ignoré et les messages sont transférés sans garantie de remise. La valeur par défaut est `true`, Pour plus d'informations, consultez <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>.|  
 |maxReceivedMessageSize|Entier positif qui définit la taille maximale du message (en octets, en-têtes compris), qui est traité par cette liaison. L'expéditeur d'un message qui dépasse cette limite se verra notifier une erreur SOAP. Ce dernier dépose le message et crée une entrée d’événement dans le journal de suivi. La valeur par défaut est 65536. Cette limite de taille des messages a pour but d'atténuer l'exposition aux attaques par déni de service (DoS).|  
 |maxRetryCycles|Entier indiquant le nombre de cycles de tentatives utilisés par la fonctionnalité de détection de messages incohérents. Un message devient incohérent lorsque toutes les tentatives de remise de tous les cycles échouent. La valeur par défaut est 2. Pour plus d'informations, consultez <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>.|  
-|name|Chaîne qui contient le nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|name|Chaîne qui contient le nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. À compter de .NET Framework 4, les liaisons et les comportements n’ont pas besoin d’un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |openTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
 |receiveErrorHandling|Valeur <xref:System.ServiceModel.ReceiveErrorHandling> qui spécifie la façon dont sont gérés les messages incohérents et ne pouvant être distribués.|  
 |receiveRetryCount|Entier indiquant le nombre maximal de nouvelles tentatives immédiates devant être effectuées par le gestionnaire de files d'attente si la transmission d'un message entre la file d'attente de l'application et l'application échoue.<br /><br /> Si le nombre maximal de tentatives de remise est atteint sans que l'application accède au message, ce dernier est envoyé à une file d'attente de nouvelles tentatives. La durée qui s'écoule avant que le message ne soit renvoyé à la file d'attente émettrice est contrôlée par `retryCycleDelay`. Si les cycles de nouvelles tentatives atteignent la valeur `maxRetryCycles`, soit le message est envoyé à la file d'attente de messages incohérents, soit un accusé de réception négatif est renvoyé à l'expéditeur.|  

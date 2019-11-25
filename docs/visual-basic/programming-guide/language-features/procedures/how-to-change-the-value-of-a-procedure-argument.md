@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Modifiez la valeur d’un Argument de procédure (Visual Basic)'
+title: "Comment : modifier la valeur d'un argument de la procédure"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -13,49 +13,49 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: a56bdf888163c9559b87e857abb33522c547ed45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e562c0f5ec01380c792b4dc064554171cfb007e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665830"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74339954"
 ---
-# <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Procédure : Modifiez la valeur d’un Argument de procédure (Visual Basic)
-Lorsque vous appelez une procédure, chaque argument que vous fournissez correspond à un des paramètres définis dans la procédure. Dans certains cas, le code de procédure peut modifier la valeur sous-jacente d’un argument dans le code appelant. Dans d’autres cas, la procédure peut modifier uniquement sa copie locale d’un argument.  
+# <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Comment : modifier la valeur d'un argument de la procédure (Visual Basic)
+When you call a procedure, each argument you supply corresponds to one of the parameters defined in the procedure. In some cases, the procedure code can change the value underlying an argument in the calling code. In other cases, the procedure can change only its local copy of an argument.  
   
- Lorsque vous appelez la procédure, Visual Basic effectue une copie locale de chaque argument est passé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Pour chaque argument passé [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic fournit le code de procédure une référence directe à l’élément de programmation sous-jacent à l’argument dans le code appelant.  
+ When you call the procedure, Visual Basic makes a local copy of every argument that is passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). For each argument passed [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic gives the procedure code a direct reference to the programming element underlying the argument in the calling code.  
   
- Si l’élément sous-jacent dans le code appelant est un élément modifiable et que l’argument est passé `ByRef`, le code de procédure peut utiliser la référence directe pour modifier la valeur de l’élément dans le code appelant.  
+ If the underlying element in the calling code is a modifiable element and the argument is passed `ByRef`, the procedure code can use the direct reference to change the element's value in the calling code.  
   
-## <a name="changing-the-underlying-value"></a>Modification de la valeur sous-jacente  
+## <a name="changing-the-underlying-value"></a>Changing the Underlying Value  
   
-#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>Pour modifier la valeur sous-jacente d’un argument de procédure dans le code appelant  
+#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>To change the underlying value of a procedure argument in the calling code  
   
-1. Dans la déclaration de procédure, spécifiez [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) pour le paramètre correspondant à l’argument.  
+1. In the procedure declaration, specify [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) for the parameter corresponding to the argument.  
   
-2. Dans le code appelant, passez un élément de programmation modifiable comme argument.  
+2. In the calling code, pass a modifiable programming element as the argument.  
   
-3. Dans le code appelant, ne placez pas l’argument entre parenthèses dans la liste d’arguments.  
+3. In the calling code, do not enclose the argument in parentheses in the argument list.  
   
-4. Dans le code de procédure, utilisez le nom de paramètre pour affecter une valeur à l’élément sous-jacent dans le code appelant.  
+4. In the procedure code, use the parameter name to assign a value to the underlying element in the calling code.  
   
- Consultez l’exemple ci-dessous pour une démonstration.  
+ See the example further down for a demonstration.  
   
-## <a name="changing-local-copies"></a>Modification des Copies locales  
- Si l’élément sous-jacent dans le code appelant est un élément non modifiable, ou si l’argument est passé `ByVal`, la procédure ne peut pas modifier sa valeur dans le code appelant. Toutefois, la procédure peut modifier sa copie locale de l’argument.  
+## <a name="changing-local-copies"></a>Changing Local Copies  
+ If the underlying element in the calling code is a nonmodifiable element, or if the argument is passed `ByVal`, the procedure cannot change its value in the calling code. However, the procedure can change its local copy of such an argument.  
   
-#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>Pour modifier la copie d’un argument de procédure dans le code de procédure  
+#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>To change the copy of a procedure argument in the procedure code  
   
-1. Dans la déclaration de procédure, spécifiez [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) pour le paramètre correspondant à l’argument.  
+1. In the procedure declaration, specify [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) for the parameter corresponding to the argument.  
   
-     - ou -  
+     ou  
   
-     Dans le code appelant, mettez l’argument entre parenthèses dans la liste d’arguments. Cela force Visual Basic pour passer l’argument par valeur, même si le paramètre correspondant spécifie `ByRef`.  
+     In the calling code, enclose the argument in parentheses in the argument list. This forces Visual Basic to pass the argument by value, even if the corresponding parameter specifies `ByRef`.  
   
-2. Dans le code de procédure, utilisez le nom de paramètre pour assigner une valeur à la copie locale de l’argument. La valeur sous-jacente dans le code appelant n’est pas modifiée.  
+2. In the procedure code, use the parameter name to assign a value to the local copy of the argument. The underlying value in the calling code is not changed.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre deux procédures qui acceptent une variable tableau et opèrent sur ses éléments. Le `increase` procédure ajoute simplement 1 à chaque élément. Le `replace` procédure assigne un nouveau tableau au paramètre `a()` , puis ajoute 1 à chaque élément.  
+ The following example shows two procedures that take an array variable and operate on its elements. The `increase` procedure simply adds one to each element. The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element.  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -63,29 +63,29 @@ Lorsque vous appelez une procédure, chaque argument que vous fournissez corresp
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- Le premier `MsgBox` appel affiche « après Increase (n) : 11, 21, 31, 41". Étant donné que le tableau `n` est un type référence, `replace` peut modifier ses membres, même si le mécanisme de passage est `ByVal`.  
+ The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41". Because the array `n` is a reference type, `replace` can change its members, even though the passing mechanism is `ByVal`.  
   
- La seconde `MsgBox` appel affiche « après Replace (n) : 101, 201, 301". Étant donné que `n` est passée `ByRef`, `replace` peut modifier la variable `n` dans le code appelant et affecter un nouveau tableau. Étant donné que `n` est un type référence, `replace` peut également modifier ses membres.  
+ The second `MsgBox` call displays "After replace(n): 101, 201, 301". Because `n` is passed `ByRef`, `replace` can modify the variable `n` in the calling code and assign a new array to it. Because `n` is a reference type, `replace` can also change its members.  
   
- Vous pouvez empêcher la procédure de modification de la variable elle-même dans le code appelant. Voir [Guide pratique pour Protéger un Argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md).  
+ You can prevent the procedure from modifying the variable itself in the calling code. See [How to: Protect a Procedure Argument Against Value Changes](./how-to-protect-a-procedure-argument-against-value-changes.md).  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Lorsque vous passez une variable par référence, vous devez utiliser le `ByRef` mot clé pour spécifier ce mécanisme.  
+ When you pass a variable by reference, you must use the `ByRef` keyword to specify this mechanism.  
   
- La valeur par défaut en Visual Basic consiste à passer des arguments par valeur. Toutefois, il est conseillé en programmation pour inclure le [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword avec chaque paramètre déclaré. Cela rend votre code plus facile à lire.  
+ The default in Visual Basic is to pass arguments by value. However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter. This makes your code easier to read.  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Il y a toujours un risque de permettre à une procédure modifier la valeur sous-jacente à un argument dans le code appelant. Assurez-vous que cette valeur pour être modifié et être prêt à vérifier la validité avant de l’utiliser.  
+ There is always a potential risk in allowing a procedure to change the value underlying an argument in the calling code. Make sure you expect this value to be changed, and be prepared to check it for validity before using it.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédures](./index.md)
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
-- [Guide pratique pour Passer des Arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
+- [Guide pratique : passer des arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)
 - [Passage d’un argument par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)
 - [Différences entre les arguments modifiables et non modifiables](./differences-between-modifiable-and-nonmodifiable-arguments.md)
 - [Différences entre le passage d’un argument par valeur et par référence](./differences-between-passing-an-argument-by-value-and-by-reference.md)
-- [Guide pratique pour Protéger un Argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md)
-- [Guide pratique pour Forcer un Argument d’être passés par valeur](./how-to-force-an-argument-to-be-passed-by-value.md)
+- [Guide pratique : protéger un argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md)
+- [Guide pratique : forcer le passage d’un argument par valeur](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [Passage des arguments par position et par nom](./passing-arguments-by-position-and-by-name.md)
-- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

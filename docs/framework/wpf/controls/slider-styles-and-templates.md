@@ -9,20 +9,20 @@ helpviewer_keywords:
 - templates [WPF], Slider
 - ControlTemplate [WPF], Slider
 ms.assetid: d89aa97b-075a-4752-9c41-9679df65c491
-ms.openlocfilehash: 334cb4a44788980262110eadac3305283bb61a92
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f533142d5ba202bd4aaf628487eaaa2a18a535d0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458394"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283387"
 ---
 # <a name="slider-styles-and-templates"></a>Styles et modèles Slider
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Slider>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Slider>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="slider-parts"></a>Composants Slider  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Slider>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_Track|<xref:System.Windows.Controls.Primitives.Track>|Conteneur de l’élément qui indique la position du <xref:System.Windows.Controls.Slider>.|  
 |PART_SelectionRange|<xref:System.Windows.FrameworkElement>|Élément qui affiche une plage de sélection le long du <xref:System.Windows.Controls.Slider>.  La plage de sélection est visible uniquement si la propriété <xref:System.Windows.Controls.Slider.IsSelectionRangeEnabled%2A> est `true`.|  
@@ -34,7 +34,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |----------------------|---------------------------|-----------------|  
 |Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
@@ -59,4 +59,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

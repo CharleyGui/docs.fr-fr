@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (C#)'
+title: Comment rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XMLC#) ()
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
-ms.openlocfilehash: 1adbbb6dd074ffcb39269a800024e444cf8791d1
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253759"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141118"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Procédure : Rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Comment rechercher des éléments enfants en fonction de leur position (XPath-LINQ to XMLC#) ()
 Parfois, vous souhaitez rechercher des éléments en fonction de leur position. Vous pourriez souhaiter rechercher le deuxième élément, ou les troisième, quatrième et cinquième éléments.  
   
  L’expression XPath est la suivante :  
@@ -21,7 +21,7 @@ Parfois, vous souhaitez rechercher des éléments en fonction de leur position. 
 ## <a name="example"></a>Exemple  
  Cet exemple recherche les deuxième, troisième et quatrième éléments `Test`. Le résultat est une collection d’éléments.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  

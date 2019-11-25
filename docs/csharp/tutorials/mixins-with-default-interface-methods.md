@@ -3,14 +3,14 @@ title: Créer des types mixin à l’aide de méthodes d’interface par défaut
 description: À l’aide des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: 798413f0071159893de39f3e190a9b2693571bb7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039276"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140847"
 ---
-# <a name="tutorial-mix-in-functionality-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : mélanger les fonctionnalités lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
+# <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : combiner les fonctionnalités dans lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
 
 Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Cette fonctionnalité offre de nouvelles fonctionnalités qui vous permettent de définir des implémentations par défaut pour les fonctionnalités déclarées dans les interfaces. Les classes peuvent choisir quand remplacer les fonctionnalités, quand utiliser les fonctionnalités par défaut et quand ne pas déclarer la prise en charge des fonctionnalités discrètes.
 
@@ -65,7 +65,7 @@ Ensuite, nous allons définir l’interface pour une lumière qui peut s’étei
 
 [!code-csharp[pure Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
-Vous pouvez ajouter une implémentation de base à la lumière de la surcharge, mais une meilleure solution consiste à modifier cette définition d’interface pour fournir une implémentation par défaut `virtual` :
+Vous pouvez ajouter une implémentation de base à la lumière de la surcharge, mais une meilleure solution consiste à modifier cette définition d’interface pour fournir une implémentation `virtual` par défaut :
 
 [!code-csharp[Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
@@ -79,7 +79,7 @@ Un type de lumière différent peut prendre en charge un protocole plus sophisti
 
 [!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
-Contrairement aux méthodes de classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la classe `HalogenLight` n’utilise pas le mot clé `override`. 
+Contrairement aux méthodes de la classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la classe `HalogenLight` n’utilise pas le mot clé `override`. 
 
 ## <a name="mix-and-match-capabilities"></a>Fonctionnalités Mix et match
 
@@ -91,15 +91,15 @@ L’implémentation par défaut permet à tout éclairage de clignoter. La lumi�
 
 [!code-csharp[Use the default blink function](~/samples/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
 
-Un nouveau type de lumière, le `LEDLight` prend directement en charge la fonction de minuteur et la fonction Blink. Ce style clair implémente à la fois les interfaces `ITimerLight` et `IBlinkingLight`, et remplace la méthode `Blink` :
+Un nouveau type de lumière, le `LEDLight` prend en charge la fonction de minuteur et la fonction Blink directement. Ce style clair implémente à la fois les interfaces `ITimerLight` et `IBlinkingLight`, et remplace la méthode `Blink` :
 
 [!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
 
-Un `ExtraFancyLight` peut prendre en charge les fonctions Blink et Timer directement :
+Une `ExtraFancyLight` peut prendre en charge les fonctions de clignotement et de minuteur directement :
 
 [!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
-La `HalogenLight` que vous avez créée précédemment ne prend pas en charge le clignotement. Par conséquent, n’ajoutez pas le `IBlinkingLight` à la liste des interfaces prises en charge.
+Le `HalogenLight` que vous avez créé précédemment ne prend pas en charge le clignotement. Par conséquent, n’ajoutez pas le `IBlinkingLight` à la liste des interfaces prises en charge.
 
 ## <a name="detect-the-light-types-using-pattern-matching"></a>Détecter les types de lumière à l’aide de critères spéciaux
 

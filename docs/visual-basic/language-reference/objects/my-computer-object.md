@@ -1,28 +1,28 @@
 ---
-title: My.Computer (objet) (Visual Basic)
+title: My.Computer, objet
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer object
 ms.assetid: cc814d79-6f7f-4e54-8b9d-5ecfdd77a0b8
-ms.openlocfilehash: f0fbd2a795d90cb88a4b185669a6393c5ef22752
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1d6113872f2196f2db4ac1849222cd69f95ffd7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62031081"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332113"
 ---
 # <a name="mycomputer-object"></a>My.Computer, objet
 Fournit des propriétés permettant de manipuler des composants informatiques tels que le son, l’horloge, le clavier, le système de fichiers, etc.  
   
 ## <a name="remarks"></a>Notes  
- Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Computer` , consultez <xref:Microsoft.VisualBasic.Devices.Computer>. La classe de base <xref:Microsoft.VisualBasic.Devices.ServerComputer> fournit les membres qui sont disponibles dans tous les projets.  
+ Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Computer` , consultez <xref:Microsoft.VisualBasic.Devices.Computer>. The base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>spécifications  
  **Espace de noms :** <xref:Microsoft.VisualBasic.Devices>  
   
- **Classe :** <xref:Microsoft.VisualBasic.Devices.Computer> (la classe de base <xref:Microsoft.VisualBasic.Devices.ServerComputer> fournit les membres qui sont disponibles dans tous les projets).  
+ **Class:** <xref:Microsoft.VisualBasic.Devices.Computer> (the base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects).  
   
- **Assembly :** bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,19 +2,19 @@
 title: <behaviors>
 ms.date: 03/30/2017
 ms.assetid: 0e5da4e6-1aa5-466c-924e-f10efee57f0b
-ms.openlocfilehash: a87966f643fe46d0ef69f843dc306151ca7c18bb
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: bcdd26f038b343040d81b0add83bf166a5e3151f
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400595"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74139691"
 ---
-# <a name="behaviors"></a>\<behaviors>
-Cet élément définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par les points de terminaison et les services. Chaque élément de comportement est identifié par son attribut `name` unique. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
+# <a name="behaviors"></a>comportements de \<
+Cet élément définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par les points de terminaison et les services. Chaque élément de comportement est identifié par son attribut `name` unique. À compter de .NET Framework 4, les liaisons et les comportements n’ont pas besoin d’un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<comportements >**  
+&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+&nbsp;&nbsp;&nbsp;&nbsp;des **comportements**\<  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,14 +31,14 @@ Cet élément définit deux collections enfants nommées `endpointBehaviors` et 
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ aucune.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<endpointBehaviors>](endpointbehaviors.md)|Cette section de configuration représente tous les comportements définis pour un point de terminaison spécifique.|  
-|[\<serviceBehaviors>](servicebehaviors.md)|Cette section de configuration représente tous les comportements définis pour un service spécifique.|  
+|[\<endpointBehaviors >](endpointbehaviors.md)|Cette section de configuration représente tous les comportements définis pour un point de terminaison spécifique.|  
+|[\<serviceBehaviors >](servicebehaviors.md)|Cette section de configuration représente tous les comportements définis pour un service spécifique.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

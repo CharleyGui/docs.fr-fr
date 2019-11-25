@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : supprimer une clé de Registre en Visual Basic'
+title: 'Comment : supprimer une clé de Registre'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.DeleteSetting
@@ -11,14 +11,15 @@ helpviewer_keywords:
 - registry [Visual Basic], deleting keys
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
-ms.openlocfilehash: 2e0c8990fcc55bc4208b1c23690ff748b7167002
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: f38301a3a717a35b98e55804d6435d046bbbbab4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662768"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345654"
 ---
-# <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Procédure : supprimer une clé de Registre en Visual Basic
+# <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Guide pratique pour supprimer une clé de Registre en Visual Basic
+
 Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> et <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> pour supprimer les clés de Registre.  
   
 ## <a name="procedure"></a>Procédure  
@@ -30,6 +31,7 @@ Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey
      [!code-vb[VbResourceTasks#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#19)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  La méthode `DeleteSubKey` retourne une chaîne vide si la paire clé/valeur n’existe pas.  
   
  Les conditions ci-dessous peuvent générer une exception.  
@@ -43,6 +45,7 @@ Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey
 - La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
+
  Les appels au Registre échouent quand l’utilisateur ne dispose pas des autorisations d’exécution nécessaires (<xref:System.Security.Permissions.RegistryPermission>) ou de l’accès correct (tel que déterminé par les listes de contrôle d’accès) pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -1,5 +1,5 @@
 ---
-title: Interfaces (Visual Basic)
+title: Interfaces
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, interfaces
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 968e5d9bb08f168e3c77b40ea42b16dc66e93e64
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 619aa6695db756e56a836fd76693cc8a3976f8e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956300"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345057"
 ---
 # <a name="interfaces-visual-basic"></a>Interfaces (Visual Basic)
 Les *interfaces* définissent les propriétés, méthodes et événements qui peuvent être implémentés par les classes. Les interfaces vous permettent de définir des fonctionnalités sous forme de petits groupes de propriétés, méthodes et événements étroitement liés. Les risques d’incompatibilité sont ainsi limités, car vous pouvez développer des implémentations avancées pour vos interfaces sans mettre en danger le code existant. Vous pouvez ajouter de nouvelles fonctionnalités à tout moment en développant des interfaces et implémentations supplémentaires.  
@@ -40,13 +40,13 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>Implémentation des interfaces  
- Le mot `Implements` réservé Visual Basic est utilisé de deux manières. L'instruction `Implements` signifie qu'une classe ou une structure implémente une interface. Le mot clé `Implements` signifie qu'un membre de classe ou un membre de structure implémente un membre d'interface spécifique.  
+ The Visual Basic reserved word `Implements` is used in two ways. L'instruction `Implements` signifie qu'une classe ou une structure implémente une interface. Le mot clé `Implements` signifie qu'un membre de classe ou un membre de structure implémente un membre d'interface spécifique.  
   
 ### <a name="implements-statement"></a>Implements, instruction  
  Si une classe ou une structure implémente une ou plusieurs interfaces, elle doit inclure l'instruction `Implements` immédiatement après l'instruction `Class` ou `Structure`. L'instruction `Implements` requiert une liste séparée par des virgules des interfaces qui doivent être implémentées par une classe. La classe ou la structure doit implémenter tous les membres d'interface à l'aide du mot clé `Implements`.  
   
 ### <a name="implements-keyword"></a>Implements, mot clé  
- Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. Le nom d’un membre qui implémente un membre d’interface peut utiliser n’importe quel identificateur légal, et il n’est pas `InterfaceName_MethodName` limité à la Convention utilisée dans les versions antérieures de Visual Basic.  
+ Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. The name of a member that implements an interface member can use any legal identifier, and it is not limited to the `InterfaceName_MethodName` convention used in earlier versions of Visual Basic.  
   
  Par exemple, le code suivant montre comment déclarer une sous-routine nommée `Sub1` qui implémente une méthode d'une interface :  
   
@@ -83,5 +83,5 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Procédure pas à pas : Création et implémentation d’interfaces](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Fournit une procédure détaillée qui vous guide tout au long du processus de définition et d'implémentation de votre propre interface.|  
+|[Procédure pas à pas : création et implémentation d’interfaces](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Fournit une procédure détaillée qui vous guide tout au long du processus de définition et d'implémentation de votre propre interface.|  
 |[Variance dans les interfaces génériques](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Décrit la covariance et la contravariance dans les interfaces génériques et fournit la liste des interfaces génériques de type variant dans le .NET Framework.|

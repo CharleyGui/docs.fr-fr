@@ -1,25 +1,25 @@
 ---
-title: 'Procédure : Rechercher des nœuds frères (XPath-LINQ to XML) (C#)'
+title: Comment rechercher des nœuds frères (XPath-LINQ to XML)C#()
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: 6c7509ea0667bb84d62ee804f4d232d74fa7f6e0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 24bad37151f3d63b03ec28c0fbea95bef02ab614
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253609"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141015"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Procédure : Rechercher des nœuds frères (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Comment rechercher des nœuds frères (XPath-LINQ to XML)C#()
 Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique. La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.  
   
  L’expression XPath est la suivante :  
   
  `../Book`  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`. La collection résultante inclut le nœud de contexte.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  

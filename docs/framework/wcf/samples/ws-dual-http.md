@@ -2,12 +2,12 @@
 title: WS Dual Http
 ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
-ms.openlocfilehash: bc8958ab092f97e94a75bc366d576441c1a5bbbd
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 44fdf6f0b27e15c486afa32f67668e9fd6eeac10
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424554"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138677"
 ---
 # <a name="ws-dual-http"></a>WS Dual Http
 
@@ -88,7 +88,7 @@ Lorsque vous exécutez l'exemple, vous pouvez consulter les messages retournés 
 4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
     > [!IMPORTANT]
-    > Quand vous exécutez le client dans une configuration inter-ordinateurs, veillez à remplacer localhost dans l’attribut `address` du [point de terminaison\<> de \<élément > client](../../configure-apps/file-schema/wcf/endpoint-of-client.md) et l’attribut `clientBaseAddress` de la [liaison\<](../../../../docs/framework/misc/binding.md) > de l’élément [\<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) avec le nom de l’ordinateur approprié, comme indiqué ci-dessous :
+    > Quand vous exécutez le client dans une configuration inter-ordinateurs, veillez à remplacer localhost dans l’attribut `address` du [point de terminaison\<> de \<élément > client](../../configure-apps/file-schema/wcf/endpoint-of-client.md) et l’attribut `clientBaseAddress` de la [liaison\<](../../configure-apps/file-schema/wcf/bindings.md) > de l’élément [\<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) avec le nom de l’ordinateur approprié, comme indiqué ci-dessous :
 
     ```xml
     <client>

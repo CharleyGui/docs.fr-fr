@@ -1,5 +1,5 @@
 ---
-title: Nom des attributs et des éléments XML déclarés (Visual Basic)
+title: Nom des attributs et des éléments XML déclarés
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declarations [XML in Visual Basic]
@@ -8,41 +8,41 @@ helpviewer_keywords:
 - attribute names [XML in Visual Basic]
 - XML literals [Visual Basic], element names
 ms.assetid: cc110118-b6cf-4ff9-a4e4-6233c90c9fbf
-ms.openlocfilehash: dbe85b456f46c40c9cc9a703b38e11992edd24cf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 12fbd1f4332391b1acdcf12e101d82627ebbeaff
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598277"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335989"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>Nom des attributs et des éléments XML déclarés (Visual Basic)
-Cette rubrique fournit des instructions de Visual Basic pour nommer les éléments XML et les attributs dans les littéraux XML.  Dans un littéral XML, vous pouvez spécifier un nom local ou un nom qualifié. Un nom qualifié se compose d’un préfixe d’espace de noms XML, un signe deux-points et un nom local. Pour plus d’informations sur les préfixes d’espace de noms XML, consultez [XML élément littéral](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+This topic provides Visual Basic guidelines for naming XML elements and attributes in XML literals.  In an XML literal, you can specify a local name or a qualified name. A qualified name consists of an XML namespace prefix, a colon, and a local name. For more information about XML namespace prefixes, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="rules"></a>Règles  
- Un nom local d’un élément ou attribut en Visual Basic doit respecter les règles suivantes.  
+ A local name of an element or attribute in Visual Basic must adhere to the following rules.  
   
-- Il peut commencer par un espace de noms. Il doit commencer par un caractère alphabétique ou un trait de soulignement (`_`).  
+- It can begin with a namespace. It must begin with an alphabetical character or an underscore (`_`).  
   
-- Il doit contenir uniquement des caractères alphabétiques, des chiffres décimaux, des traits de soulignement, points (.) et des traits d’union (-).  
+- It must contain only alphabetical characters, decimal digits, underscores, periods (.), and hyphens (-).  
   
-- Il ne doit pas être plus de 1 024 caractères.  
+- It must not be more than 1,024 characters long.  
   
-- Signes deux-points qui apparaissent dans les noms indiquent la délimitation de l’espace de noms. Par conséquent, vous pouvez utiliser des signes deux-points uniquement pour spécifier un espace de noms XML pour un nom particulier.  
+- Colons that appear in names indicate namespace demarcation. Therefore, you can use colons only to specify an XML namespace for a particular name.  
   
- En outre, vous devez respecter les recommandations ci-après.  
+ In addition, you should adhere to the following guideline.  
   
-- La spécification XML 1.0 réserve tous les noms commençant par la chaîne « xml » de toute variation de la mise en majuscules. Par conséquent, n’utilisez pas ces noms pour votre élément et les noms d’attributs.  
+- The XML 1.0 specification reserves all names starting with the string "xml", of any capitalization variation. Therefore, do not use those names for your element and attribute names.  
   
-### <a name="name-length-guidelines"></a>Instructions de longueur de nom  
- Dans la pratique, un nom doit être aussi court que possible tout en identifiant clairement la nature de l’élément. Cela améliore la lisibilité de votre code et réduit la taille de ligne de longueur et le fichier source.  
+### <a name="name-length-guidelines"></a>Name Length Guidelines  
+ As a practical matter, a name should be as short as possible while still clearly identifying the nature of the element. This improves the readability of your code and reduces line length and source-file size.  
   
- Toutefois, votre nom ne doit pas être si court que ne pas correctement décrit l’élément ou la façon dont votre code utilise. Ceci est important pour la lisibilité de votre code. Si quelqu'un d’autre tente de le comprendre, ou si vous avez vous-même l’observer beaucoup de temps après que l’avoir écrit, noms d’éléments appropriés peuvent gagner du temps.  
+ However, your name should not be so short that it does not adequately describe the element or how your code uses it. This is important for the readability of your code. If somebody else is trying to understand it, or if you yourself are looking at it a long time after you wrote it, appropriate element names can save time.  
   
-## <a name="case-sensitivity-in-names"></a>Respecte la casse dans les noms  
- Noms d’élément XML respectent la casse. Cela signifie que lorsque le compilateur Visual Basic compare deux noms qui diffèrent uniquement par la casse des lettres, il les interprète comme des noms différents. Par exemple, il interprète `ABC` et `abc` en tant que deux éléments distincts.  
+## <a name="case-sensitivity-in-names"></a>Case Sensitivity in Names  
+ XML element names are case sensitive. This means that when the Visual Basic compiler compares two names that differ in alphabetical case only, it interprets them as different names. For example, it interprets `ABC` and `abc` as referring to separate elements.  
   
 ## <a name="xml-namespaces"></a>Espaces de noms XML  
- Lorsque vous créez un élément XML littérale, vous pouvez spécifier le préfixe d’espace de noms XML pour le nom d’élément. Pour plus d’informations, consultez [XML élément littéral](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+ When creating an XML element literal, you can specify the XML namespace prefix for the element name. For more information, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

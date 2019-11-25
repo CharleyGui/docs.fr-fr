@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Comparer le contenu de deux dossiers (LINQ) (C#)'
+title: Comment comparer le contenu de deux dossiers (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: df71712ca1b59c706ede66488af8b1580677e299
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: f64c82fcc63085c9479b0a3af91f0bdf5ee9eb95
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924222"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141394"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Procédure : Comparer le contenu de deux dossiers (LINQ) (C#)
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Comment comparer le contenu de deux dossiers (LINQ) (C#)
 Cet exemple montre trois façons de comparer deux listes de fichiers :  
   
 - En recherchant une valeur booléenne qui spécifie si les deux listes sont identiques  

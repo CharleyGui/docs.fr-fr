@@ -1,17 +1,17 @@
 ---
-title: Guide pratique pour écrire des informations sur des événements dans un fichier texte (Visual Basic)
+title: 'Comment : écrire des informations sur des événements dans un fichier texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs [Visual Studio], writing event information
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: 54169f1133ed4f77026c4332493a7b5f4532aec0
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c3c81e331eb3d8ee450ba0cac38e57976846ee63
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583288"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352073"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Guide pratique pour écrire des informations sur des événements dans un fichier texte (Visual Basic)
 

@@ -1,25 +1,25 @@
 ---
-title: 'Procédure : Filtrer sur un attribut (XPath-LINQ to XML) (C#)'
+title: Comment filtrer sur un attribut (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: 2537fbbac4f16a56d8a7f074b5fd10a4fcd0c09c
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: ab2cd439f4dd1454de4fa565658ef5dac14b8c22
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205300"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141275"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Procédure : Filtrer sur un attribut (XPath-LINQ to XML) (C#)
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Comment filtrer sur un attribut (XPath-LINQ to XML) (C#)
 Cette rubrique montre comment obtenir les éléments descendants avec un nom spécifié et avec un attribut avec une valeur spécifiée.  
   
  L’expression XPath est la suivante :  
   
  `.//Address[@Type='Shipping']`  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple recherche tous les éléments descendants avec le nom `Address` et avec un attribut `Type` avec une valeur de « Shipping ».  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  

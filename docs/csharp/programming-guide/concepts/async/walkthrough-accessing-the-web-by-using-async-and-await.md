@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : accès au web avec Async et Await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 30677be2299dfa4411263dc5c61093fc0ca0f442
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 42b09dab26fd514e184163eaf41aff117d3a463f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195648"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281781"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : accès au web avec Async et Await (C#)
 
@@ -38,7 +38,7 @@ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez tél
 
 ## <a name="design-a-simple-wpf-mainwindow"></a>Concevoir une simple fenêtre MainWindow WPF
 
-1. Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .
+1. Dans l’éditeur de Visual Studio Code, choisissez l’onglet **MainWindow.xaml**.
 
 2. Si la fenêtre **Boîte à outils** n’est pas visible, ouvrez le menu **Affichage**, puis choisissez **Boîte à outils**.
 
@@ -46,7 +46,7 @@ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez tél
 
 4. Mettez en surbrillance le contrôle **TextBox** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :
 
-    - Affectez la valeur `resultsTextBox` à la propriété **Name**.
+    - Affectez la valeur **à la propriété**Name`resultsTextBox`.
 
     - Affectez la valeur 250 à la propriété **Height**.
 
@@ -56,21 +56,21 @@ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez tél
 
 5. Mettez en surbrillance le contrôle **Button** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :
 
-    - Affectez la valeur `startButton` à la propriété **Name**.
+    - Affectez la valeur **à la propriété**Name`startButton`.
 
     - Remplacez la valeur **Button** de la propriété **Content** par **Démarrer**.
 
 6. Placez la zone de texte et le bouton de manière à ce qu’ils apparaissent tous les deux dans la fenêtre **MainWindow**.
 
-     Pour plus d’informations sur le concepteur XAML WPF, consultez [Création d’une interface utilisateur à l’aide du concepteur XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+     Pour plus d'informations sur le concepteur XAML WPF, consultez [Création d'une interface utilisateur à l'aide du concepteur XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
 
 ## <a name="add-a-reference"></a>Ajouter une référence
 
-1. Dans l’**Explorateur de solutions**, mettez en surbrillance le nom de votre projet.
+1. Dans l'**Explorateur de solutions**, mettez en surbrillance le nom de votre projet.
 
 2. Dans la barre de menus, choisissez **Projet** > **Ajouter une référence**.
 
-     La boîte de dialogue **Gestionnaire de références** s’affiche.
+     La boîte de dialogue **Gestionnaire de références** s'affiche.
 
 3. En haut de la boîte de dialogue, vérifiez que votre projet cible .NET Framework 4.5 ou version ultérieure.
 
@@ -254,13 +254,13 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
      L'appel à `webReq.GetResponseAsync` retourne un `Task(Of WebResponse)` ou `Task<WebResponse>`. Un opérateur await est alors appliqué à la tâche pour récupérer la valeur `WebResponse`.
 
-     Si votre méthode async a un travail à effectuer qui ne dépend pas de la complétion de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l’appel à la méthode async et avant l’application de l’opérateur `await`. Pour obtenir des exemples, consultez [Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+     Si votre méthode async a un travail à effectuer qui ne dépend pas de la complétion de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l’appel à la méthode async et avant l’application de l’opérateur `await`. Pour obtenir des exemples, consultez Guide pratique [pour effectuer plusieurs requêtes Web en parallèle en utilisant AsyncC#et await ()](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [comment étendre la procédure pas à pas Async àC#l’aide de Task. WhenAll ()](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
 3. Comme vous avez ajouté l’opérateur `await` à l’étape précédente, une erreur de compilation se produit. L’opérateur peut être utilisé uniquement dans les méthodes marquées avec le modificateur [async](../../../language-reference/keywords/async.md). Ignorez l'erreur quand que vous répétez les étapes de conversion pour remplacer l'appel à `CopyTo` par un appel à `CopyToAsync`.
 
     - Remplacez le nom de la méthode appelée par <xref:System.IO.Stream.CopyToAsync%2A>.
 
-    - La méthode `CopyTo` ou `CopyToAsync` copie les octets dans son argument, `content`, et ne retourne pas de valeur significative. Dans la version synchrone, l'appel à `CopyTo` est une simple instruction qui ne retourne aucune valeur. La version asynchrone, `CopyToAsync`, retourne un <xref:System.Threading.Tasks.Task>. La tâche fonctionne comme Task(void) et permet à la méthode d'être attendue. Appliquez `Await` ou `await` à l'appel à `CopyToAsync`, comme le montre le code suivant.
+    - La méthode `CopyTo` ou `CopyToAsync` copie les octets dans son argument, `content`, et ne retourne pas de valeur significative. Dans la version synchrone, l'appel à `CopyTo` est une simple instruction qui ne retourne aucune valeur. La version asynchrone, `CopyToAsync`, retourne un <xref:System.Threading.Tasks.Task>. La tâche fonctionne comme Task(void) et permet à la méthode d’être attendue. Appliquez `Await` ou `await` à l'appel à `CopyToAsync`, comme le montre le code suivant.
 
         ```csharp
         await responseStream.CopyToAsync(content);
@@ -285,7 +285,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
 5. Le type de retour d’une méthode async peut uniquement être <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> ou `void` en C#. En règle générale, le type de retour `void` est utilisé uniquement dans un gestionnaire d’événements asynchrones, où `void` est obligatoire. Dans d’autres cas, vous utilisez `Task(T)` si la méthode exécutée comporte une instruction [return](../../../language-reference/keywords/return.md) qui retourne une valeur de type T et vous utilisez `Task` si la méthode exécutée ne retourne aucune valeur significative. Vous pouvez considérer que le type de retour `Task` signifie Task(void).
 
-     Pour plus d’informations, consultez [Types de retour Async (C#)](./async-return-types.md).
+     Pour plus d’informations, consultez [Types de retour async (C#)](./async-return-types.md).
 
      La méthode `GetURLContents` comporte une instruction return et l'instruction retourne un tableau d'octets. Ainsi, le type de retour de la version asynchrone est Task(T), où T est un tableau d'octets. Apportez les modifications suivantes dans la signature de la méthode :
 
@@ -393,7 +393,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
     - Les résultats ne se produisent pas tous en même temps, une fois le traitement terminé. Par exemple, les deux programmes contiennent une ligne dans `startButton_Click` qui efface la zone de texte. L’objectif est d’effacer la zone de texte entre les exécutions si vous choisissez le bouton **Démarrer** une deuxième fois, une fois qu’un jeu de résultats est apparu. Dans la version synchrone, la zone de texte s’efface juste avant que les nombres n’apparaissent pour la deuxième fois, quand les téléchargements sont terminés et que le thread d’interface utilisateur est libre d’effectuer autre chose. Dans la version asynchrone, la zone de texte s’efface immédiatement après avoir choisi le bouton **Démarrer**.
 
-    - Plus important encore, le thread d'interface utilisateur n'est pas bloqué pendant les téléchargements. Vous pouvez déplacer ou redimensionner la fenêtre pendant le téléchargement, la comptabilisation et l'affichage des ressources web. Si l’un des sites web est lent ou ne répond pas, vous pouvez annuler l’opération en choisissant le bouton **Fermer** (le x dans le champ rouge situé dans le coin supérieur droit).
+    - Plus important encore, le thread d'interface utilisateur n'est pas bloqué pendant les téléchargements. Vous pouvez déplacer ou redimensionner la fenêtre pendant le téléchargement, la comptabilisation et l'affichage des ressources web. Si l'un des sites web est lent ou ne répond ne pas, vous pouvez annuler l'opération en choisissant le bouton **Fermer** (le x dans le champ rouge situé dans le coin supérieur droit).
 
 ## <a name="replace-method-geturlcontentsasync-with-a-net-framework-method"></a>Remplacer la méthode GetURLContentsAsync par une méthode .NET Framework
 
@@ -690,11 +690,11 @@ namespace AsyncExampleWPF
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple Async : accès à la procédure web (C# et Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Exemple Async : accès à la procédure web (C# et Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh300224(v=vs.110))
 - [async](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
 - [Types de retour async (C#)](./async-return-types.md)
 - [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957)
-- [Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Guide pratique : effectuer plusieurs requêtes web en parallèle avec async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Comment étendre la procédure pas à pas Async à l’aide deC#Task. WhenAll ()](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Comment effectuer plusieurs requêtes Web en parallèle en utilisant Async et await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

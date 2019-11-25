@@ -1,12 +1,12 @@
 ---
 title: Attributs (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 7b78d5832c15d3d1142b80d2ccb96a72e4e20390
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 2a07035ea97bb0ff1a8f4793fe8a30d3a42c34a7
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374366"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141569"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -25,7 +25,7 @@ Les attributs peuvent être placés sur la quasi-totalité des déclarations, m�
 
 Dans cet exemple, l’attribut <xref:System.SerializableAttribute> est utilisé pour appliquer une caractéristique spécifique à une classe :
 
-[!code-csharp[Using the serializable attribute](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#1)]
+[!code-csharp[Using the serializable attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#1)]
 
 Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> est déclarée comme dans l’exemple suivant :
 
@@ -33,12 +33,12 @@ Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAtt
 
 Plusieurs attributs peuvent être placés dans une déclaration comme dans l’exemple suivant :
 
-[!code-csharp[Including the interop namespace](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#3)]
-[!code-csharp[Declaring two way marshaling for arguments](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#4)]
+[!code-csharp[Including the interop namespace](~/samples/snippets/csharp/attributes/AttributesOverview.cs#3)]
+[!code-csharp[Declaring two way marshaling for arguments](~/samples/snippets/csharp/attributes/AttributesOverview.cs#4)]
 
 Certains attributs peuvent être spécifiés plusieurs fois pour une entité donnée. <xref:System.Diagnostics.ConditionalAttribute> est un exemple d’attribut à utilisation multiple :
 
-[!code-csharp[Using the conditional attribute](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
+[!code-csharp[Using the conditional attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
 
 > [!NOTE]
 > Par convention, tous les noms d’attributs se terminent par le mot « Attribute » pour les différencier d’autres éléments dans les bibliothèques .NET. Toutefois, il est inutile de spécifier le suffixe d’attribut lorsque les attributs sont utilisés dans le code. Par exemple, `[DllImport]` équivaut à `[DllImportAttribute]`, mais `DllImportAttribute` est le nom réel de l’attribut dans la bibliothèque de classes .NET Framework.
@@ -72,10 +72,10 @@ La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 |`assembly`|Assembly entier|
 |`module`|Module d’assembly actuel|
 |`field`|Champ dans une classe ou un struct|
-|`event`|Événement|
+|`event`|événement|
 |`method`|Méthode ou accesseurs de propriété `get` et `set`|
 |`param`|Paramètres de méthode ou paramètres d’accesseur de propriété `set`|
-|`property`|Propriété|
+|`property`|Property|
 |`return`|Valeur de retour d’une méthode, indexeur de propriété ou accesseur de propriété `get`|
 |`type`|Struct, classe, interface, énumération ou délégué|
 
@@ -119,7 +119,7 @@ Pour plus d'informations, voir :
 
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
-- [Guide pratique : créer une union C/C++ à l’aide d’attributs (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Comment créer un C/C++ Union à l’aide d’attributsC#()](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Attributs courants (C#)](common-attributes.md)  
 - [Informations relatives à l’appelant (C#)](../caller-information.md)  
 

@@ -3,12 +3,12 @@ title: Présentation des événements
 description: En savoir plus sur les événements dans .NET Core et nos objectifs de conception de langage pour les événements dans cette vue d’ensemble.
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: b1fd2ebe2ae91b55c9179f280d8894f6b40ced9b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: ceae2b9319a1de9f01102987735c7db2c2883f18
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771915"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138519"
 ---
 # <a name="introduction-to-events"></a>Présentation des événements
 
@@ -26,18 +26,18 @@ L’abonnement à un événement crée également un couplage entre deux objets 
 
 ## <a name="design-goals-for-event-support"></a>Objectifs de conception pour la prise en charge des événements
 
-La conception du langage pour les événements cible ces objectifs.
+La conception de langage pour les événements cible ces objectifs :
 
-Tout d’abord, activez un couplage minimal entre une source d’événement et un récepteur d’événements. Ces deux composants peuvent ne pas avoir été écrits par la même organisation, et peuvent même être mis à jour d’après une planification totalement différente.
+- Activez un couplage très minimal entre une source d’événement et un récepteur d’événements. Ces deux composants peuvent ne pas avoir été écrits par la même organisation, et peuvent même être mis à jour d’après une planification totalement différente.
 
-Ensuite, il doit être très simple de s’abonner à un événement et de se désabonner de ce même événement.
+- Il doit être très simple de s’abonner à un événement et de se désabonner de ce même événement.
 
-Pour finir, les sources d’événements doivent prendre en charge plusieurs abonnés aux événements. Elles doivent aussi prendre en charge les scénarios où aucun abonné aux événements n’est attaché.
+- Les sources d’événements doivent prendre en charge plusieurs abonnés aux événements. Elles doivent aussi prendre en charge les scénarios où aucun abonné aux événements n’est attaché.
 
 Vous pouvez constater que les objectifs pour les événements sont très similaires aux objectifs pour les délégués.
 C’est pourquoi la prise en charge linguistique des événements repose sur la prise en charge linguistique des délégués.
 
-## <a name="language-support-for-events"></a>Prise en charge linguistique des événements
+## <a name="language-support-for-events"></a>Prise en charge linguistique pour les événements
 
 La syntaxe de définition des événements, et d’abonnement ou d’annulation des abonnements, est une extension de la syntaxe des délégués.
 
@@ -69,7 +69,7 @@ EventHandler<FileListArgs> onProgress = (sender, eventArgs) =>
 fileLister.Progress += onProgress;
 ```
 
-La méthode de gestionnaire est en général le préfixe « On » suivi du nom de l’événement, comme indiqué ci-dessus.
+La méthode de gestionnaire a généralement le préfixe « on » suivi du nom de l’événement, comme indiqué ci-dessus.
 
 Vous pouvez vous désinscrire à l’aide de l’opérateur `-=` :
 

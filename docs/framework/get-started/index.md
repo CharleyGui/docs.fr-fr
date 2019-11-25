@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: cb56097d49b194234031aba3ee9811b961ae6c64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca2a4e6c44a26889a2fffa5cc5fa2cbba3eab782
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107726"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281832"
 ---
 # <a name="get-started-with-the-net-framework"></a>Bien démarrer avec le .NET Framework
 
@@ -47,7 +47,7 @@ Si vous ne développez pas d’applications .NET Framework, mais que vous les ut
 
 Si vous utilisez le système d’exploitation Windows, le .NET Framework est peut-être déjà installé sur votre ordinateur. De plus, si vous installez une application qui nécessite le .NET Framework, le programme d’installation de l’application peut installer une version spécifique du .NET Framework sur votre ordinateur. Dans certains cas, vous pouvez afficher une boîte de dialogue qui vous demande d'installer le .NET Framework. Si cette boîte de dialogue apparaît quand vous essayez d’exécuter une application et que votre ordinateur a accès à Internet, vous pouvez accéder à une page web qui vous permet d’installer la version manquante du .NET Framework. Pour plus d’informations, consultez le [guide d’installation](../install/index.md).
 
-En règle générale, vous ne devez pas désinstaller les versions du .NET Framework installées sur votre ordinateur. Il existe deux raisons à cela :
+En règle générale, vous ne devez pas désinstaller les versions du .NET Framework installées sur votre ordinateur. Il existe deux raisons à cela :
 
 - Si une application que vous utilisez dépend d’une version spécifique du .NET Framework, elle peut cesser de fonctionner si cette version est supprimée.
 
@@ -65,7 +65,7 @@ Pour développer des applications ou des composants .NET Framework, procédez co
 
 1. Si elle n’est pas préinstallée sur votre système d’exploitation, installez la version du .NET Framework ciblée par votre application. La version de production la plus récente est le .NET Framework 4.8. Elle est préinstallée sur la Mise à jour de mai 2019 de Windows 10 et elle est disponible en téléchargement sur les versions précédentes du système d’exploitation Windows. Pour la configuration système requise du .NET Framework, consultez [Configuration requise](system-requirements.md). Pour plus d’informations sur l’installation d’autres versions du .NET Framework, consultez [Guide d’installation](../install/guide-for-developers.md). Les autres packages .NET Framework sont fournis hors bande, ce qui signifie qu’ils sont publiés en continu, en dehors d’un cycle de publications classique ou planifié. Pour plus d’informations sur ces packages, consultez [Versions finales hors plage du .NET Framework](the-net-framework-and-out-of-band-releases.md).
 
-2. Sélectionnez le ou les langages pris en charge par le .NET Framework que vous prévoyez d’utiliser pour développer vos applications. Microsoft propose plusieurs langages, notamment [Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.md), [F#](../../fsharp/index.md) et [C++/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp). (Un langage de programmation qui vous permet de développer des applications pour le .NET Framework respecte la [spécification CLI (Common Language Infrastructure)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).)
+2. Sélectionnez le ou les langages pris en charge par le .NET Framework que vous prévoyez d’utiliser pour développer vos applications. Microsoft propose plusieurs langages, notamment [Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.yml), [F#](../../fsharp/index.md) et [C++/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp). (Un langage de programmation qui vous permet de développer des applications pour le .NET Framework respecte la [spécification CLI (Common Language Infrastructure)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).)
 
 3. Sélectionnez et installez l’environnement de développement à utiliser pour créer vos applications et qui prend en charge le ou les langages de programmation sélectionnés. L’environnement de développement intégré (IDE) de Microsoft pour les applications .NET Framework est [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Il est disponible dans plusieurs éditions.
 
@@ -75,17 +75,17 @@ Pour plus d’informations sur le développement d’applications qui ciblent le
 
 | Titre | Description |
 | ----- |------------ |
-| [Vue d’ensemble](overview.md) | Fournit des informations détaillées pour les développeurs qui créent des applications ciblant le .NET Framework. |
+| [Overview](overview.md) | Fournit des informations détaillées pour les développeurs qui créent des applications ciblant le .NET Framework. |
 | [Guide d’installation](../install/index.md) | Fournit des informations sur l'installation du .NET Framework. |  
 | [Versions finales hors plage de .NET Framework](the-net-framework-and-out-of-band-releases.md) | Décrit les versions release hors bande du .NET Framework et leur utilisation dans votre application. |
-| [Configuration système requise](system-requirements.md) | Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework. |
-| [.NET Core et Open-Source](net-core-and-open-source.md) | Décrit le .NET Core en rapport avec le .NET Framework et comment accéder aux projets .NET Core open source. |
+| [Configuration requise](system-requirements.md) | Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework. |
+| [.NET Core et open source](net-core-and-open-source.md) | Décrit le .NET Core en rapport avec le .NET Framework et comment accéder aux projets .NET Core open source. |
 | [Documentation .NET Core](../../core/index.md) | Fournit la documentation de référence sur les concepts et les API de .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | Traite de .NET Standard, une spécification avec version prise en charge par les implémentations .NET individuelles afin de garantir la disponibilité d’un ensemble cohérent d’API sur plusieurs plateformes.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide du .NET Framework](../index.md)
+- [.NET Framework Guide](../index.md) (Guide du .NET Framework)
 - [Nouveautés](../whats-new/index.md)
 - [Navigateur d’API .NET](../../../api/index.md)
 - [Guide de développement](../development-guide.md)

@@ -2,12 +2,12 @@
 title: Opérations d’égalité (C#)
 ms.date: 07/20/2015
 ms.assetid: 9d9a5bf2-f211-4865-bd19-c59ffa004615
-ms.openlocfilehash: afcc2715f088896fb3c669524f17bb22ef873b01
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 306129c1fe0c3f0003f8be579d987edcaeb63709
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594383"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141500"
 ---
 # <a name="equality-operations-c"></a>Opérations d’égalité (C#)
 Deux séquences dont les éléments correspondants sont égaux et qui ont le même nombre d’éléments sont considérées comme égales.  
@@ -22,4 +22,4 @@ Deux séquences dont les éléments correspondants sont égaux et qui ont le mê
 
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
-- [Guide pratique pour comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)
+- [Comment comparer le contenu de deux dossiers (LINQ) (C#)](./how-to-compare-the-contents-of-two-folders-linq.md)

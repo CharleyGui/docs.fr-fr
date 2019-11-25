@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: ac69b38df3439932be7f65d871c64700585538cb
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 65990c699bafa8eec1ba7dcbce624c88316cbb72
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774297"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283284"
 ---
 # <a name="working-with-certificates"></a>Utilisation des certificats
 
@@ -34,7 +34,7 @@ Les certificats sont stockés dans des magasins. Deux emplacements de magasin ma
 
 - **Magasin de la machine locale**. Contient les certificats accessibles par les processus de l’ordinateur, tels que ASP.NET. Utilisez cet emplacement pour y stocker les certificats qui authentifient les serveurs auprès des clients.
 
-- **Magasin de l’utilisateur actuel**. Les applications interactives stockent en principe les certificats à cet emplacement pour l'utilisateur en train d'utiliser l'ordinateur. Si vous créer des applications clientes, c'est également l'emplacement que vous utiliserez en principe pour stocker les certificats qui authentifient les utilisateurs auprès des services.
+- **Magasin de l'utilisateur en cours**. Les applications interactives stockent en principe les certificats à cet emplacement pour l'utilisateur en train d'utiliser l'ordinateur. Si vous créer des applications clientes, c'est également l'emplacement que vous utiliserez en principe pour stocker les certificats qui authentifient les utilisateurs auprès des services.
 
 Ces deux magasins sont divisés en sous-magasins. Les plus importants d’entre eux pour la programmation avec WCF sont notamment :
 
@@ -72,7 +72,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Class|Property|
+|Class|Les|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -184,7 +184,7 @@ Lorsque cette fonctionnalité est activée, vous pouvez affecter à la propriét
 
 Le mappage d'un certificat X.509 au jeton représentant le compte utilisateur Windows est considéré comme un rehaussement des droits de ce compte. Une fois mappé, le jeton Windows peut en effet être utilisé pour accéder à des ressources protégées. C'est pourquoi la stratégie de domaine spécifie que le certificat X.509 doit être conforme aux règles qu'elle contient avant de pouvoir être mappé. Le package de sécurité *SChannel* applique cette exigence.
 
-Quand vous utilisez [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] ou une version ultérieure, WCF vérifie que le certificat est conforme à la stratégie de domaine avant d’être mappé à un compte Windows.
+Lorsque vous utilisez .NET Framework 3,5 ou versions ultérieures, WCF garantit que le certificat est conforme à la stratégie de domaine avant d’être mappé à un compte Windows.
 
 Dans la première version de WCF, le mappage est effectué sans prise en compte de la stratégie de domaine. Par conséquent, avec d'anciennes applications habituées à s'exécuter sous la première version, il est possible que le mappage échoue si la fonctionnalité de mappage est activée et si le certificat X.509 n'est pas conforme à la stratégie de domaine.
 
@@ -194,4 +194,4 @@ Dans la première version de WCF, le mappage est effectué sans prise en compte 
 - <xref:System.ServiceModel.Security>
 - <xref:System.ServiceModel>
 - <xref:System.Security.Cryptography.X509Certificates.X509FindType>
-- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

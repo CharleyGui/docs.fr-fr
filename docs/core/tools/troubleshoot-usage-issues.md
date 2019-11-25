@@ -3,12 +3,12 @@ title: Résoudre les problèmes d’utilisation de l’outil .NET Core
 description: Découvrez les problèmes courants liés à l’exécution des outils .NET Core et des solutions possibles.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: fc6c520ab57235c78148a6b77717cbd80a989451
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318286"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74282505"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Résoudre les problèmes d’utilisation de l’outil .NET Core
 
@@ -25,7 +25,7 @@ En cas d’échec de l’exécution d’un outil .NET Core, vous avez probableme
 
 Si le fichier exécutable est introuvable, un message semblable au suivant s’affiche :
 
-```
+```console
 Could not execute because the specified command or file was not found.
 Possible reasons for this include:
   * You misspelled a built-in dotnet command.
@@ -63,7 +63,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
 
 * Outils locaux
 
-  Si vous essayez d’exécuter un outil local, vérifiez qu’il existe un fichier manifeste nommé *dotnet-Tools. JSON* dans le répertoire actif ou dans l’un de ses répertoires parents. Ce fichier peut également résider sous un dossier nommé *. config* n’importe où dans l’arborescence des dossiers du projet, et non dans le dossier racine. Si *dotnet-Tools. JSON* existe, ouvrez-le et recherchez l’outil que vous essayez d’exécuter. Si le fichier ne contient pas d’entrée pour `"isRoot": true`, consultez également la hiérarchie des fichiers pour obtenir des fichiers manifestes d’outils supplémentaires.
+  Si vous essayez d’exécuter un outil local, vérifiez qu’il existe un fichier manifeste nommé *dotnet-Tools. JSON* dans le répertoire actif ou dans l’un de ses répertoires parents. Ce fichier peut également résider sous un dossier nommé *. config* n’importe où dans l’arborescence des dossiers du projet, et non dans le dossier racine. Si *dotnet-Tools. JSON* existe, ouvrez-le et recherchez l’outil que vous essayez d’exécuter. Si le fichier ne contient pas d’entrée pour `"isRoot": true`, activez également la case à cocher plus haut dans la hiérarchie des fichiers pour les fichiers de manifeste d’outils supplémentaires.
 
   Si vous essayez d’exécuter un outil .NET Core qui a été installé avec un chemin d’accès spécifié, vous devez inclure ce chemin d’accès lors de l’utilisation de l’outil. Voici un exemple d’utilisation d’un outil d’installation de chemin d’accès d’outil :
 
@@ -95,13 +95,13 @@ dotnet --info
 
 Si vous pensez que l’outil doit prendre en charge la version du runtime que vous avez installée actuellement, vous pouvez contacter l’auteur de l’outil et voir s’il peut mettre à jour le numéro de version ou le multi-cible. Une fois qu’ils ont recompilé et republié leur package d’outils dans NuGet avec un numéro de version mis à jour, vous pouvez mettre à jour votre copie. Bien que cela ne se produise pas, la solution la plus rapide consiste à installer une version du runtime qui fonctionnerait avec l’outil que vous essayez d’exécuter. Pour télécharger une version spécifique du Runtime .NET Core, visitez la [page de téléchargement de .net Core](https://dotnet.microsoft.com/download/dotnet-core).
 
-Si vous installez le kit SDK .NET Core à un emplacement autre que celui par défaut, vous devez définir la variable d’environnement `DOTNET_ROOT` sur le répertoire qui contient l’exécutable `dotnet`.
+Si vous installez le kit SDK .NET Core à un emplacement autre que celui par défaut, vous devez définir la variable d’environnement `DOTNET_ROOT` sur le répertoire qui contient le fichier exécutable `dotnet`.
 
 ## <a name="net-core-tool-installation-fails"></a>Échec de l’installation de l’outil .NET Core
 
 Il existe plusieurs raisons pour lesquelles l’installation d’un outil Global ou local .NET Core peut échouer. Lorsque l’installation de l’outil échoue, un message semblable à celui-ci s’affiche :
 
-```
+```console
 Tool '{0}' failed to install. This failure may have been caused by:
 
 * You are attempting to install a preview release and did not use the --version option to specify the version.

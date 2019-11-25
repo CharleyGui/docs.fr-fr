@@ -1,5 +1,5 @@
 ---
-title: '>>=, opérateur (Visual Basic)'
+title: '>>=, opérateur'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.>>=
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 - '>>= operator [Visual Basic]'
 ms.assetid: 2bcd9abb-7a8c-4229-b75d-8816ff1dc700
-ms.openlocfilehash: 08d4e251a96ca387a709319e752351db6825d9e8
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: cad021c7730782d6233c60841483df7173308dc1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701355"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351992"
 ---
-# <a name="-operator-visual-basic"></a>> > =, opérateur (Visual Basic)
-Effectue un décalage arithmétique vers la droite sur la valeur d’une variable ou d’une propriété et réassigne le résultat à la variable ou à la propriété.  
+# <a name="-operator-visual-basic"></a>>>= Operator (Visual Basic)
+Performs an arithmetic right shift on the value of a variable or property and assigns the result back to the variable or property.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,29 +28,29 @@ variableorproperty >>= amount
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Obligatoire. Variable ou propriété d’un type intégral (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long` ou `ULong`).  
+ Requis. Variable or property of an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).  
   
  `amount`  
- Obligatoire. Expression numérique d’un type de données qui s’étend à `Integer`.  
+ Requis. Numeric expression of a data type that widens to `Integer`.  
   
 ## <a name="remarks"></a>Notes  
- L’élément situé à gauche de l’opérateur `>>=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ The element on the left side of the `>>=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- L’opérateur `>>=` effectue d’abord un décalage arithmétique à droite sur la valeur de la variable ou de la propriété. L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
+ The `>>=` operator first performs an arithmetic right shift on the value of the variable or property. The operator then assigns the result of that operation back to the variable or property.  
   
- Les décalages arithmétiques ne sont pas circulaires, ce qui signifie que les bits décalés d’une extrémité du résultat ne sont pas réintroduits à l’autre extrémité. Dans un décalage arithmétique vers la droite, les bits décalés au-delà de la position du bit le plus à droite sont ignorés, et le bit le plus à gauche est propagé dans les positions de bits libérées à gauche. Cela signifie que si `variableorproperty` a une valeur négative, les positions libérées sont définies sur un. Si `variableorproperty` est positif, ou si son type de données est un type non signé, les positions libérées sont définies à zéro.  
+ Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic right shift, the bits shifted beyond the rightmost bit position are discarded, and the leftmost bit is propagated into the bit positions vacated at the left. This means that if `variableorproperty` has a negative value, the vacated positions are set to one. If `variableorproperty` is positive, or if its data type is an unsigned type, the vacated positions are set to zero.  
   
 ## <a name="overloading"></a>Surcharge  
- L' [opérateur > >](../../../visual-basic/language-reference/operators/right-shift-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `>>` affecte le comportement de l’opérateur `>>=`. Si votre code utilise `>>=` sur une classe ou une structure qui surcharge `>>`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The [>> Operator](../../../visual-basic/language-reference/operators/right-shift-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `>>` operator affects the behavior of the `>>=` operator. If your code uses `>>=` on a class or structure that overloads `>>`, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise l’opérateur `>>=` pour déplacer le modèle binaire d’une variable `Integer` vers la droite selon la valeur spécifiée et assigner le résultat à la variable.  
+ The following example uses the `>>=` operator to shift the bit pattern of an `Integer` variable right by the specified amount and assign the result to the variable.  
   
  [!code-vb[VbVbalrOperators#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#15)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [>> (opérateur)](../../../visual-basic/language-reference/operators/right-shift-operator.md)
+- [>>, opérateur](../../../visual-basic/language-reference/operators/right-shift-operator.md)
 - [Opérateurs d’assignation](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Opérateurs de décalage de bits](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)

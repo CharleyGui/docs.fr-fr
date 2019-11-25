@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 36ff76db984a864a201313ddb7478cc1e93888fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 51292d977f2be87cec7c3481f5004fe5fe756224
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139983"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204540"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -268,7 +268,7 @@ La bibliothèque parallèle de tâches possède plusieurs nouveaux types publics
 
 Nous vous recommandons de ne pas hériter de <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Nous vous recommandons d'utiliser plutôt la propriété <xref:System.Threading.Tasks.Task.AsyncState%2A> pour associer d'autres données ou états à un objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Vous pouvez également utiliser des méthodes d'extension pour étendre les fonctionnalités des classes <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations sur les méthodes d’extension, consultez [Méthodes d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) et [Méthodes d’extension](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
-Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>, vous ne pouvez pas utiliser les classes <xref:System.Threading.Tasks.Task.Run%2A>, <xref:System.Threading.Tasks.Task.Run%2A> ou les classes <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> pour créer des instances de votre tâche personnalisée parce que ces mécanismes créent uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. En outre, vous ne pouvez pas utiliser les mécanismes de continuation des tâches fournis par <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601><xref:System.Threading.Tasks.TaskFactory> et <xref:System.Threading.Tasks.TaskFactory%601> pour créer des instances de votre type de tâche personnalisé parce que ces mécanismes créent également uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>.
+If you must inherit from <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>, you cannot use <xref:System.Threading.Tasks.Task.Run%2A>, or the <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType>, or <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> classes to create instances of your custom task type because these mechanisms create only <xref:System.Threading.Tasks.Task> and <xref:System.Threading.Tasks.Task%601> objects. En outre, vous ne pouvez pas utiliser les mécanismes de continuation des tâches fournis par <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601><xref:System.Threading.Tasks.TaskFactory> et <xref:System.Threading.Tasks.TaskFactory%601> pour créer des instances de votre type de tâche personnalisé parce que ces mécanismes créent également uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

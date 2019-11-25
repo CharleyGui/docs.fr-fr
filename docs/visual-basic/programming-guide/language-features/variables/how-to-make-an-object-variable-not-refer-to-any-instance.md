@@ -1,23 +1,23 @@
 ---
-title: 'Procédure : Faire en sorte qu’une variable objet ne fasse pas référence à une instance (Visual Basic)'
+title: "Comment : faire en sorte qu'une variable objet ne fasse pas référence à une instance"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Nothing keyword [Visual Basic], variable assignment
 - object variables [Visual Basic], null reference
 ms.assetid: e6d30578-bdae-4142-a3ac-a10697bf696a
-ms.openlocfilehash: e647f2f891b06aa1767faac49b01df98ea31ec1c
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 320dadb61c12f3339c5328dcef31c41503892c56
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004917"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352892"
 ---
-# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a>Procédure : Faire en sorte qu’une variable objet ne fasse pas référence à une instance (Visual Basic)
-Vous pouvez dissocier une variable objet d’une instance d’objet en lui affectant la valeur [Nothing](../../../../visual-basic/language-reference/nothing.md).  
+# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a>Comment : faire en sorte qu'une variable objet ne fasse pas référence à une instance (Visual Basic)
+You can disassociate an object variable from any object instance by setting it to [Nothing](../../../../visual-basic/language-reference/nothing.md).  
   
-### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a>Pour dissocier une variable objet d’une instance d’objet  
+### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a>To disassociate an object variable from any object instance  
   
-- Affectez à la variable la valeur `Nothing` dans une instruction d’assignation.  
+- Set the variable to `Nothing` in an assignment statement.  
   
     ```vb  
     ' Assume account is a defined class  
@@ -26,10 +26,10 @@ Vous pouvez dissocier une variable objet d’une instance d’objet en lui affec
     ```  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Si votre code tente d’accéder à un membre d’une variable objet qui a été définie sur `Nothing`, une <xref:System.NullReferenceException> se produit. Si vous affectez à une variable objet la valeur `Nothing` fréquemment, ou si la variable n’est pas initialisée, il est judicieux de placer les accès aux membres dans un bloc `Try...Catch...Finally`.  
+ If your code tries to access a member of an object variable that has been set to `Nothing`, a <xref:System.NullReferenceException> occurs. If you set an object variable to `Nothing` frequently, or if it is possible the variable is not initialized, it is a good idea to enclose member accesses in a `Try...Catch...Finally` block.  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Si vous utilisez une variable objet pour des objets qui contiennent des données confidentielles ou sensibles, vous pouvez définir la variable sur `Nothing` lorsque vous n’êtes pas activement confronté à l’un de ces objets. Cela réduit le risque que du code malveillant ait accès aux données.  
+ If you use an object variable for objects that contain confidential or sensitive data, you can set the variable to `Nothing` when you are not actively dealing with one of those objects. This reduces the chance of malicious code gaining access to the data.  
   
 ## <a name="see-also"></a>Voir aussi
 

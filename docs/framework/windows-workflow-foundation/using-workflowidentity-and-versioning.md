@@ -2,12 +2,12 @@
 title: Utilisation de WorkflowIdentity et du versioning
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 6b769224edcd9dfc51879c2c99e061a0e3f77e8d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 66ef4fed682554d9fab2a7b0f85bb9cfaf8e8a29
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958389"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74142047"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Utilisation de WorkflowIdentity et du versioning
 
@@ -89,9 +89,9 @@ The WorkflowIdentity ('MortgageWorkflow v1; Version=1.0.0.0') of the loaded inst
 Pour récupérer le <xref:System.Activities.WorkflowIdentity> d'une instance persistante de workflow, la méthode <xref:System.Activities.WorkflowApplication.GetInstance%2A> est utilisée. La méthode <xref:System.Activities.WorkflowApplication.GetInstance%2A> prend le <xref:System.Activities.WorkflowApplication.Id%2A> de l'instance persistante de workflow et le <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> qui contient l'instance rendue persistante et retourne un <xref:System.Activities.WorkflowApplicationInstance>. Un <xref:System.Activities.WorkflowApplicationInstance> contient des informations sur une instance persistante de workflow, y compris son <xref:System.Activities.WorkflowIdentity> associé. Ce <xref:System.Activities.WorkflowIdentity> associé peut être utilisé par l'hôte pour fournir la définition correcte de workflow lors du chargement et de la reprise de l'instance de workflow.
 
 > [!NOTE]
-> Un <xref:System.Activities.WorkflowIdentity> null est valide, et peut être utilisé par l'hôte pour mapper les instances qui ont été rendues persistantes sans <xref:System.Activities.WorkflowIdentity> associé à la définition appropriée de workflow. Ce scénario peut se produire lorsqu'une application de workflow n'a pas été écrite initialement avec versioning de workflow, ou lorsqu'une application est mise à niveau à partir du [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Pour plus d’informations, consultez [mise à niveau de bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
+> Un <xref:System.Activities.WorkflowIdentity> null est valide, et peut être utilisé par l'hôte pour mapper les instances qui ont été rendues persistantes sans <xref:System.Activities.WorkflowIdentity> associé à la définition appropriée de workflow. Ce scénario peut se produire lorsqu’une application de workflow n’a pas été initialement écrite avec le contrôle de version de workflow, ou lorsqu’une application est mise à niveau à partir de .NET Framework 4. Pour plus d’informations, consultez [mise à niveau de bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
 
-Dans l’exemple suivant, `Dictionary<WorkflowIdentity, Activity>` un est utilisé pour <xref:System.Activities.WorkflowIdentity> associer des instances à leurs définitions de workflow correspondantes, et un flux `MortgageWorkflow` de travail est démarré à l’aide de `identityV1` la définition de workflow, qui est associée à l' <xref:System.Activities.WorkflowIdentity>instance.
+Dans l’exemple suivant, un `Dictionary<WorkflowIdentity, Activity>` est utilisé pour associer des instances de <xref:System.Activities.WorkflowIdentity> à leurs définitions de workflow correspondantes, et un flux de travail est démarré à l’aide de la définition de flux de travail `MortgageWorkflow`, qui est associée au <xref:System.Activities.WorkflowIdentity>de `identityV1`.
 
 ```csharp
 WorkflowIdentity identityV1 = new WorkflowIdentity
@@ -146,9 +146,9 @@ wfApp.Load(instance);
 
 ## <a name="UpdatingWF4PersistenceDatabases"></a>Mise à niveau des bases de données de persistance .NET Framework 4 pour prendre en charge le contrôle de version de workflow
 
-Le script de base de données SqlWorkflowInstanceStoreSchemaUpgrade.sql est fourni pour mettre à niveau les bases de données de persistance créées à l'aide de scripts de base de données [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Ce script met à jour les bases de données pour prendre en charge les nouvelles fonctionnalités de contrôle de version introduites dans .NET Framework 4,5. Des valeurs de versioning par défaut sont attribuées à toutes les instances persistantes de workflow dans les bases de données et ces instances peuvent ensuite participer côte à côte à l'exécution et à la mise à jour dynamique.
+Un script de base de données SqlWorkflowInstanceStoreSchemaUpgrade. SQL est fourni pour mettre à niveau les bases de données de persistance créées à l’aide des scripts de base de données .NET Framework 4. Ce script met à jour les bases de données pour prendre en charge les nouvelles fonctionnalités de contrôle de version introduites dans .NET Framework 4,5. Des valeurs de versioning par défaut sont attribuées à toutes les instances persistantes de workflow dans les bases de données et ces instances peuvent ensuite participer côte à côte à l'exécution et à la mise à jour dynamique.
 
-Si une application de flux de travail .NET Framework 4,5 tente d’effectuer des opérations de persistance qui utilisent les nouvelles fonctionnalités de contrôle de version sur une base de données de persistance qui n' <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> a pas été mise à niveau à l’aide du script fourni, une exception est levée avec un message semblable au message suivant.
+Si une application de flux de travail .NET Framework 4,5 tente d’effectuer des opérations de persistance qui utilisent les nouvelles fonctionnalités de contrôle de version sur une base de données de persistance qui n’a pas été mise à niveau à l’aide du script fourni, une <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> est levée avec un message similaire au message suivant.
 
 ```
 The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersistenceCommand 'System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand' cannot be run against this database version.  Please upgrade the database to '4.5.0.0'.
@@ -166,4 +166,4 @@ The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersis
 
 5. Choisissez **exécuter** dans le menu **requête** .
 
-Lorsque la requête est terminée, le schéma de base de données est mis à niveau, et si vous le souhaitez, vous pouvez afficher l'identité du workflow par défaut affectée aux instances persistantes de workflow. Développez votre base de données de persistance dans le nœud **bases de données** de l' **Explorateur d’objets**, puis développez le nœud **vues** . Cliquez avec le bouton droit sur **System. Activities. DurableInstancing. instances** et choisissez **Sélectionner les 1000 premières lignes**. Faites défiler jusqu’à la fin des colonnes et Notez qu’il y a six colonnes supplémentaires ajoutées à la vue: **IdentityName**, **IdentityPackage**, **Build**, **major**, **Minor**et **Revision**. Les flux de travail persistants ont une valeur **null** pour ces champs, qui représente une identité de workflow null.
+Lorsque la requête est terminée, le schéma de base de données est mis à niveau, et si vous le souhaitez, vous pouvez afficher l'identité du workflow par défaut affectée aux instances persistantes de workflow. Développez votre base de données de persistance dans le nœud **bases de données** de l' **Explorateur d’objets**, puis développez le nœud **vues** . Cliquez avec le bouton droit sur **System. Activities. DurableInstancing. instances** et choisissez **Sélectionner les 1000 premières lignes**. Faites défiler jusqu’à la fin des colonnes et Notez qu’il y a six colonnes supplémentaires ajoutées à la vue : **IdentityName**, **IdentityPackage**, **Build**, **major**, **Minor**et **Revision**. Les flux de travail persistants ont une valeur **null** pour ces champs, qui représente une identité de workflow null.

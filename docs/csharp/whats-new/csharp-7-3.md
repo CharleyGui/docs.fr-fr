@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.3
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: ca53073db1b61300186a483001f79bf0caa79169
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
-ms.translationtype: HT
+ms.openlocfilehash: ba4cea302d91b395e88940d087fcaed306920840
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433523"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204560"
 ---
 # <a name="whats-new-in-c-73"></a>Nouveautés de C# 7.3
 
@@ -129,7 +129,7 @@ Pour plus d’informations, consultez l’article [Instruction `fixed`](../langu
 
 Vous pouvez maintenant spécifier le type <xref:System.Enum?displayProperty=nameWithType> ou <xref:System.Delegate?displayProperty=nameWithType> en tant que contraintes de classe de base pour un paramètre de type.
 
-Vous pouvez également utiliser la nouvelle contrainte `unmanaged` pour spécifier qu’un paramètre de type doit être un [type non managé](../language-reference/builtin-types/unmanaged-types.md).
+You can also use the new `unmanaged` constraint, to specify that a type parameter must be a non-nullable [unmanaged type](../language-reference/builtin-types/unmanaged-types.md).
 
 Pour plus d’informations, consultez les articles sur les [contraintes génériques `where`](../language-reference/keywords/where-generic-type-constraint.md) et les [contraintes sur les paramètres de type](../programming-guide/generics/constraints-on-type-parameters.md).
 

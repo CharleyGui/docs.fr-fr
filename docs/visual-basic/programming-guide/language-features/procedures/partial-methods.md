@@ -1,5 +1,5 @@
 ---
-title: Méthodes partielles (Visual Basic)
+title: Méthodes partielles
 ms.date: 07/20/2015
 f1_keywords:
 - vb.PartialMethod
@@ -11,36 +11,36 @@ helpviewer_keywords:
 - methods [Visual Basic], partial methods
 - inserting custom logic into code
 ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
-ms.openlocfilehash: 50d7f24fd9f854d36bb2ed48c2e41a996c29dfe8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7abf0565a985f1fb44fcf2bb91b9220d57a10f20
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638883"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352637"
 ---
 # <a name="partial-methods-visual-basic"></a>Méthodes partielles (Visual Basic)
-Méthodes partielles permettent aux développeurs d’insérer une logique personnalisée dans du code. En règle générale, le code fait partie d’une classe généré par le concepteur. Les méthodes partielles sont définies dans une classe partielle qui est créée par un générateur de code, et ils sont couramment utilisés pour fournir une notification que quelque chose a été modifiée. Ils permettent au développeur de spécifier un comportement personnalisé en réponse à la modification.  
+Partial methods enable developers to insert custom logic into code. Typically, the code is part of a designer-generated class. Partial methods are defined in a partial class that is created by a code generator, and they are commonly used to provide notification that something has been changed. They enable the developer to specify custom behavior in response to the change.  
   
- Le concepteur du Générateur de code définit uniquement la signature de méthode et un ou plusieurs appels à la méthode. Les développeurs peuvent ensuite fournir des implémentations de la méthode s’ils souhaitent personnaliser le comportement du code généré. Lorsqu’aucune implémentation n’est fournie, les appels à la méthode sont supprimés par le compilateur, ce qui entraîne aucune surcharge de performances supplémentaires.  
+ The designer of the code generator defines only the method signature and one or more calls to the method. Developers can then provide implementations for the method if they want to customize the behavior of the generated code. When no implementation is provided, calls to the method are removed by the compiler, resulting in no additional performance overhead.  
   
 ## <a name="declaration"></a>Déclaration  
- Le code généré marque la définition d’une méthode partielle en plaçant le mot clé `Partial` au début de la ligne de signature.  
+ The generated code marks the definition of a partial method by placing the keyword `Partial` at the start of the signature line.  
   
 ```vb  
 Partial Private Sub QuantityChanged()  
 End Sub  
 ```  
   
- La définition doit remplir les conditions suivantes :  
+ The definition must meet the following conditions:  
   
-- La méthode doit être un `Sub`, et non un `Function`.  
+- The method must be a `Sub`, not a `Function`.  
   
-- Le corps de la méthode doit être laissé vide.  
+- The body of the method must be left empty.  
   
-- Le modificateur d’accès doit être `Private`.  
+- The access modifier must be `Private`.  
   
 ## <a name="implementation"></a>Implémentation  
- L’implémentation consiste principalement à remplir le corps de la méthode partielle. L’implémentation est généralement dans une classe partielle distincte de la définition et est écrite par un développeur qui souhaite étendre le code généré.  
+ The implementation consists primarily of filling in the body of the partial method. The implementation is typically in a separate partial class from the definition, and is written by a developer who wants to extend the generated code.  
   
 ```vb  
 Private Sub QuantityChanged()  
@@ -48,25 +48,25 @@ Private Sub QuantityChanged()
 End Sub  
 ```  
   
- L’exemple précédent reproduit la signature dans la déclaration exactement, mais des variations sont possibles. En particulier, autres modificateurs peuvent être ajoutés, tels que `Overloads` ou `Overrides`. Seul `Overrides` modificateur est autorisé. Pour plus d’informations sur les modificateurs de méthode, consultez [Sub, instruction](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ The previous example duplicates the signature in the declaration exactly, but variations are possible. In particular, other modifiers can be added, such as `Overloads` or `Overrides`. Only one `Overrides` modifier is permitted. For more information about method modifiers, see [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="use"></a>Utilisez  
- Vous appelez une méthode partielle comme vous appelleriez n’importe quel autre `Sub` procédure. Si la méthode a été implémentée, les arguments sont évalués et le corps de la méthode est exécuté. Toutefois, n’oubliez pas que l’implémentation d’une méthode partielle est facultative. Si la méthode n’est pas implémentée, un appel à ce dernier n’a aucun effet, et les expressions passées comme arguments à la méthode ne sont pas évaluées.  
+ You call a partial method as you would call any other `Sub` procedure. If the method has been implemented, the arguments are evaluated and the body of the method is executed. However, remember that implementing a partial method is optional. If the method is not implemented, a call to it has no effect, and expressions passed as arguments to the method are not evaluated.  
   
 ## <a name="example"></a>Exemple  
- Dans un fichier nommé Product.Designer.vb, définissez une `Product` classe a un `Quantity` propriété.  
+ In a file named Product.Designer.vb, define a `Product` class that has a `Quantity` property.  
   
  [!code-vb[VbVbalrPartialMeths#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#4)]  
   
- Dans un fichier nommé Product.vb, fournir une implémentation pour `QuantityChanged`.  
+ In a file named Product.vb, provide an implementation for `QuantityChanged`.  
   
  [!code-vb[VbVbalrPartialMeths#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#5)]  
   
- Enfin, dans la méthode Main d’un projet, déclarez un `Product` de l’instance et de fournir une valeur initiale pour son `Quantity` propriété.  
+ Finally, in the Main method of a project, declare a `Product` instance and provide an initial value for its `Quantity` property.  
   
  [!code-vb[VbVbalrPartialMeths#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#6)]  
   
- Une boîte de message doit apparaître qui affiche ce message :  
+ A message box should appear that displays this message:  
   
  `Quantity was changed to 100`  
   

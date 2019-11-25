@@ -9,20 +9,20 @@ helpviewer_keywords:
 - styles [WPF], DatePicker
 - states [WPF], DatePicker
 ms.assetid: c430a657-692f-44bd-a549-2341f92d6115
-ms.openlocfilehash: 323768b6221061d46446ab18f85555f5f7415e74
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 002d1c3271827239dcd3a319621f66fb5bc68d4e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460367"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283774"
 ---
 # <a name="datepicker-styles-and-templates"></a>Styles et modèles DatePicker
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DatePicker>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DatePicker>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="datepicker-parts"></a>Composants DatePicker  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.DatePicker>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_Root|<xref:System.Windows.Controls.Grid>|Racine du contrôle.|  
 |PART_Button|<xref:System.Windows.Controls.Button>|Bouton qui ouvre et ferme le <xref:System.Windows.Controls.Calendar>.|  
@@ -35,7 +35,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le <xref:System.Windows.Controls.DatePicker> est désactivé.|  
+|Désactivé|CommonStates|Le <xref:System.Windows.Controls.DatePicker> est désactivé.|  
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
 |InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
 |InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
@@ -43,7 +43,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="datepickertextbox-parts"></a>Composants DatePickerTextBox  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_Watermark|<xref:System.Windows.Controls.ContentControl>|Élément qui contient le texte initial dans le <xref:System.Windows.Controls.DatePicker>.|  
 |PART_ContentElement|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.TextBox> s’affiche dans cet élément.|  
@@ -54,7 +54,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est désactivé.|  
+|Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.DatePickerTextBox> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
 |ReadOnly|CommonStates|L’utilisateur ne peut pas modifier le texte dans la <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
@@ -83,4 +83,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

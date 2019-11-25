@@ -9,12 +9,12 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 581fcbfdfd7806b8f0f70347ac96f1bf09fa9098
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d0aa2c54f05cea658c95dc2c23b7ba4bb78835c9
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460938"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138931"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Procédure pas à pas : style de contenu WPF
 
@@ -61,7 +61,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
 
    `UserControl1` s’ouvre dans le Concepteur WPF.
 
-1. En mode XAML, insérez le code XAML suivant après l’étiquette d’ouverture `<UserControl>`. Ce code XAML crée un dégradé avec une bordure de dégradé contrastée. Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé. Pour plus d’informations, consultez [Application d’un style et création de modèles](../../wpf/controls/styling-and-templating.md).
+1. En mode XAML, insérez le code XAML suivant après l’étiquette d’ouverture `<UserControl>`. Ce code XAML crée un dégradé avec une bordure de dégradé contrastée. Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé. Pour plus d’informations, consultez [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
    ```xaml
    <UserControl.Resources>
@@ -142,4 +142,4 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
 - [Utilisation de contrôles WPF](using-wpf-controls.md)
 - [Concevoir en XAML dans Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Vue d’ensemble du langage XAML (WPF)](../../wpf/advanced/xaml-overview-wpf.md)
-- [Application d’un style et création de modèles](../../wpf/controls/styling-and-templating.md)
+- [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-ms.openlocfilehash: c98035ef0b4ea1add22b09fb9927bcd49c00cd9b
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: d9cf092cf47d4fb70b15033d039777d3279b633a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920040"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283570"
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Création d'un contrôle avec une apparence personnalisable
 
@@ -36,9 +36,9 @@ Si vous suivez le modèle des parties et des États lorsque vous créez un contr
 ![Contrôle personnalisé NumericUpDown.](./media/ndp-numericupdown.png "NDP_NumericUPDown")
 Contrôle NumericUpDown personnalisé
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes :
 
-- [Prérequis](#prerequisites)
+- [Composants requis](#prerequisites)
 
 - [Modèle des parties et des États](#parts_and_states_model)
 
@@ -52,9 +52,9 @@ Cette rubrique contient les sections suivantes :
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Cette rubrique suppose que vous savez comment créer un <xref:System.Windows.Controls.ControlTemplate> pour un contrôle existant, que vous connaissez les éléments d’un contrat de contrôle et que vous comprenez les concepts abordés dans [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Cette rubrique suppose que vous savez comment créer un <xref:System.Windows.Controls.ControlTemplate> pour un contrôle existant, que vous connaissez bien les éléments d’un contrat de contrôle et que vous comprenez les concepts abordés dans [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 > [!NOTE]
 > Pour créer un contrôle dont l’apparence peut être personnalisée, vous devez créer un contrôle qui hérite de la classe <xref:System.Windows.Controls.Control> ou de l’une de ses sous-classes autres que <xref:System.Windows.Controls.UserControl>.  Un contrôle qui hérite de <xref:System.Windows.Controls.UserControl> est un contrôle qui peut être rapidement créé, mais il n’utilise pas de <xref:System.Windows.Controls.ControlTemplate> et vous ne pouvez pas personnaliser son apparence.
@@ -77,7 +77,7 @@ Lorsque vous définissez la structure visuelle et le comportement visuel dans le
 
 ## <a name="defining-the-visual-structure-and-visual-behavior-of-a-control-in-a-controltemplate"></a>Définition de la structure visuelle et du comportement visuel d’un contrôle dans un ControlTemplate
 
-Lorsque vous créez votre contrôle personnalisé à l’aide du modèle de composants et d’États, vous définissez la structure visuelle et le comportement visuel du contrôle dans son <xref:System.Windows.Controls.ControlTemplate> plutôt que dans sa logique.  La structure visuelle d’un contrôle est l’composite d' <xref:System.Windows.FrameworkElement> objets qui composent le contrôle.  Le comportement visuel est le mode d’affichage du contrôle lorsqu’il est dans un certain état.   Pour plus d’informations sur la création d’un <xref:System.Windows.Controls.ControlTemplate> qui spécifie la structure visuelle et le comportement visuel d’un contrôle, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Lorsque vous créez votre contrôle personnalisé à l’aide du modèle de composants et d’États, vous définissez la structure visuelle et le comportement visuel du contrôle dans son <xref:System.Windows.Controls.ControlTemplate> plutôt que dans sa logique.  La structure visuelle d’un contrôle est l’composite d' <xref:System.Windows.FrameworkElement> objets qui composent le contrôle.  Le comportement visuel est le mode d’affichage du contrôle lorsqu’il est dans un certain état.   Pour plus d’informations sur la création d’un <xref:System.Windows.Controls.ControlTemplate> qui spécifie la structure visuelle et le comportement visuel d’un contrôle, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 Dans l’exemple du contrôle `NumericUpDown`, la structure visuelle comprend deux contrôles <xref:System.Windows.Controls.Primitives.RepeatButton> et un <xref:System.Windows.Controls.TextBlock>.  Si vous ajoutez ces contrôles dans le code du contrôle `NumericUpDown`, par exemple dans son constructeur, les positions de ces contrôles ne peuvent pas être modifiées.  Au lieu de définir la structure visuelle et le comportement visuel du contrôle dans son code, vous devez le définir dans l' <xref:System.Windows.Controls.ControlTemplate>.  Un développeur d’applications peut ensuite personnaliser la position des boutons et <xref:System.Windows.Controls.TextBlock> et spécifier le comportement qui se produit quand `Value` est négatif, car le <xref:System.Windows.Controls.ControlTemplate> peut être remplacé.
 
@@ -85,7 +85,7 @@ L’exemple suivant illustre la structure visuelle du contrôle `NumericUpDown`,
 
 [!code-xaml[VSMCustomControl#VisualStructure](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#visualstructure)]
 
-Un comportement visuel du contrôle `NumericUpDown` est que la valeur est en rouge si elle est négative.  Si vous modifiez la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> dans le code lorsque le `Value` est négatif, le `NumericUpDown` affiche toujours une valeur négative rouge. Vous spécifiez le comportement visuel du contrôle dans le <xref:System.Windows.Controls.ControlTemplate> en ajoutant des objets <xref:System.Windows.VisualState> à la <xref:System.Windows.Controls.ControlTemplate>.  L’exemple suivant montre les objets <xref:System.Windows.VisualState> pour les États `Positive` et `Negative`.  `Positive` et `Negative` s’excluent mutuellement (le contrôle est toujours exactement dans l’un des deux), l’exemple place les objets <xref:System.Windows.VisualState> dans un <xref:System.Windows.VisualStateGroup>unique.  Lorsque le contrôle passe à l’État `Negative`, la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> devient rouge.  Lorsque le contrôle est dans l’État `Positive`, le <xref:System.Windows.Controls.TextBlock.Foreground%2A> retourne à sa valeur d’origine.  La définition d’objets <xref:System.Windows.VisualState> dans un <xref:System.Windows.Controls.ControlTemplate> est expliquée plus en détail dans [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Un comportement visuel du contrôle `NumericUpDown` est que la valeur est en rouge si elle est négative.  Si vous modifiez la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> dans le code lorsque le `Value` est négatif, le `NumericUpDown` affiche toujours une valeur négative rouge. Vous spécifiez le comportement visuel du contrôle dans le <xref:System.Windows.Controls.ControlTemplate> en ajoutant des objets <xref:System.Windows.VisualState> à la <xref:System.Windows.Controls.ControlTemplate>.  L’exemple suivant montre les objets <xref:System.Windows.VisualState> pour les États `Positive` et `Negative`.  `Positive` et `Negative` s’excluent mutuellement (le contrôle est toujours exactement dans l’un des deux), l’exemple place les objets <xref:System.Windows.VisualState> dans un <xref:System.Windows.VisualStateGroup>unique.  Lorsque le contrôle passe à l’État `Negative`, la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> devient rouge.  Lorsque le contrôle est dans l’État `Positive`, le <xref:System.Windows.Controls.TextBlock.Foreground%2A> retourne à sa valeur d’origine.  Pour plus d’informations sur la définition d’objets <xref:System.Windows.VisualState> dans un <xref:System.Windows.Controls.ControlTemplate>, voir [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 > [!NOTE]
 > Veillez à définir la propriété jointe <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> sur le <xref:System.Windows.FrameworkElement> racine de la <xref:System.Windows.Controls.ControlTemplate>.
@@ -132,7 +132,7 @@ En suivant les pratiques présentées dans les exemples précédents, vous vous 
 
 Le <xref:System.Windows.VisualStateManager> effectue le suivi des États d’un contrôle et exécute la logique nécessaire pour passer d’un État à l’autre. Lorsque vous ajoutez des objets <xref:System.Windows.VisualState> à l' <xref:System.Windows.Controls.ControlTemplate>, vous les ajoutez à un <xref:System.Windows.VisualStateGroup> et vous ajoutez l' <xref:System.Windows.VisualStateGroup> à la propriété jointe <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> afin que le <xref:System.Windows.VisualStateManager> y ait accès.
 
-L’exemple suivant répète l’exemple précédent qui montre les <xref:System.Windows.VisualState> objets qui correspondent aux États de `Positive` et de `Negative` du contrôle. La <xref:System.Windows.Media.Animation.Storyboard> dans le `Negative`<xref:System.Windows.VisualState> convertit la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> rouge.   Lorsque le contrôle de `NumericUpDown` est dans l’État `Negative`, le Storyboard de l’état de `Negative` commence.  Ensuite, le <xref:System.Windows.Media.Animation.Storyboard> dans l’État `Negative` s’arrête lorsque le contrôle revient à l’État `Positive`.  Le<xref:System.Windows.VisualState> `Positive`n’a pas besoin de contenir un <xref:System.Windows.Media.Animation.Storyboard>, car lorsque le <xref:System.Windows.Media.Animation.Storyboard> pour le `Negative` s’arrête, le <xref:System.Windows.Controls.TextBlock.Foreground%2A> retourne à sa couleur d’origine.
+L’exemple suivant répète l’exemple précédent qui montre les <xref:System.Windows.VisualState> objets qui correspondent aux États de `Positive` et de `Negative` du contrôle. La <xref:System.Windows.Media.Animation.Storyboard> dans le `Negative`<xref:System.Windows.VisualState> convertit la <xref:System.Windows.Controls.TextBlock.Foreground%2A> du <xref:System.Windows.Controls.TextBlock> rouge.   Lorsque le contrôle de `NumericUpDown` est dans l’État `Negative`, le Storyboard de l’état de `Negative` commence.  Ensuite, le <xref:System.Windows.Media.Animation.Storyboard> dans l’État `Negative` s’arrête lorsque le contrôle revient à l’État `Positive`.  Le <xref:System.Windows.VisualState> `Positive`n’a pas besoin de contenir un <xref:System.Windows.Media.Animation.Storyboard>, car lorsque le <xref:System.Windows.Media.Animation.Storyboard> pour le `Negative` s’arrête, le <xref:System.Windows.Controls.TextBlock.Foreground%2A> retourne à sa couleur d’origine.
 
 [!code-xaml[VSMCustomControl#ValueStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#valuestates)]
 
@@ -168,7 +168,7 @@ Une méthode unique qui met à jour tous les États centralise les appels au <xr
 
 Si vous transmettez un nom d’État à <xref:System.Windows.VisualStateManager.GoToState%2A> lorsque le contrôle est déjà dans cet État, <xref:System.Windows.VisualStateManager.GoToState%2A> ne fait rien, vous n’avez donc pas besoin de vérifier l’état actuel du contrôle.  Par exemple, si `Value` passe d’un nombre négatif à un autre nombre négatif, le Storyboard de l’état de `Negative` n’est pas interrompu et l’utilisateur ne voit pas de modification dans le contrôle.
 
-L' <xref:System.Windows.VisualStateManager> utilise des objets <xref:System.Windows.VisualStateGroup> pour déterminer l’État à quitter lorsque vous appelez <xref:System.Windows.VisualStateManager.GoToState%2A>. Le contrôle est toujours dans un État pour chaque <xref:System.Windows.VisualStateGroup> défini dans son <xref:System.Windows.Controls.ControlTemplate> et ne quitte un État que lorsqu’il passe à un autre État du même <xref:System.Windows.VisualStateGroup>. Par exemple, le <xref:System.Windows.Controls.ControlTemplate> du contrôle `NumericUpDown` définit le `Positive` et `Negative`objets<xref:System.Windows.VisualState> dans une <xref:System.Windows.VisualStateGroup> et les objets `Focused` et `Unfocused`<xref:System.Windows.VisualState> dans un autre. (Vous pouvez voir les `Focused` et les `Unfocused`<xref:System.Windows.VisualState> définis dans la section [exemple complet](#complete_example) de cette rubrique lorsque le contrôle passe de l’État `Positive` à l’État `Negative`, ou vice versa, le contrôle reste dans la `Focused` ou `Unfocused` Département.
+L' <xref:System.Windows.VisualStateManager> utilise des objets <xref:System.Windows.VisualStateGroup> pour déterminer l’État à quitter lorsque vous appelez <xref:System.Windows.VisualStateManager.GoToState%2A>. Le contrôle est toujours dans un État pour chaque <xref:System.Windows.VisualStateGroup> défini dans son <xref:System.Windows.Controls.ControlTemplate> et ne quitte un État que lorsqu’il passe à un autre État du même <xref:System.Windows.VisualStateGroup>. Par exemple, le <xref:System.Windows.Controls.ControlTemplate> du contrôle `NumericUpDown` définit le `Positive` et `Negative`objets <xref:System.Windows.VisualState> dans une <xref:System.Windows.VisualStateGroup> et les objets `Focused` et `Unfocused`<xref:System.Windows.VisualState> dans un autre. (Vous pouvez voir les `Focused` et les `Unfocused`<xref:System.Windows.VisualState> définis dans la section [exemple complet](#complete_example) de cette rubrique lorsque le contrôle passe de l’État `Positive` à l’État `Negative`, ou vice versa, le contrôle reste dans l’État `Focused` ou `Unfocused`.
 
 Il existe trois emplacements classiques où l’état d’un contrôle peut changer :
 
@@ -255,5 +255,5 @@ L’exemple suivant illustre la logique de la `NumericUpDown`.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)
 - [Personnalisation des contrôles](control-customization.md)

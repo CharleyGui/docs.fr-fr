@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: c9d879d1760f543d5a4722977d4dee8bca856016
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ad4e953941e189e6ed9baefb6cb07e7955000c7f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739195"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283117"
 ---
 # <a name="c-programming-guide"></a>Guide de programmation C#
 
@@ -70,13 +70,13 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="platform-sections"></a>Sections de la plateforme
 
- [Domaines d’application](../../framework/app-domains/application-domains.md)  
+ [Domaines d'application](../../framework/app-domains/application-domains.md)  
   
  [Assemblys dans .NET](../../standard/assembly/index.md)  
   
  [Attributs](./concepts/attributes/index.md)  
   
- [Regroupements](./concepts/collections.md)  
+ [Collections](./concepts/collections.md)  
   
  [Exceptions et gestion des exceptions](./exceptions/index.md)  
   
@@ -88,5 +88,4 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../language-reference/index.md)
-- [C#](../index.md)
+- [Référence C#](../language-reference/index.md)

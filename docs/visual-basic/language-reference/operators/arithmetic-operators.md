@@ -1,20 +1,20 @@
 ---
-title: Opérateurs arithmétiques (Visual Basic)
+title: Opérateurs arithmétiques
 ms.date: 07/20/2015
 helpviewer_keywords:
 - operators [Visual Basic], arithmetic
 - arithmetic operators [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 330178e0-a375-4742-b662-b3080c89fa54
-ms.openlocfilehash: da76f528ea6087fd973bd267c67952ce8687dc86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 747d5d8882b55f323f82202eac0eba449992be3d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608409"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350217"
 ---
 # <a name="arithmetic-operators-visual-basic"></a>Opérateurs arithmétiques (Visual Basic)
-Voici les opérateurs arithmétiques définis dans Visual Basic.  
+The following are the arithmetic operators defined in Visual Basic.  
   
  [^ (opérateur)](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
   
@@ -26,11 +26,11 @@ Voici les opérateurs arithmétiques définis dans Visual Basic.
   
  [Mod (opérateur)](../../../visual-basic/language-reference/operators/mod-operator.md)  
   
- [+, Opérateur](../../../visual-basic/language-reference/operators/addition-operator.md) (unaire et binaire)  
+ [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md) (unary and binary)  
   
- [-, Opérateur](../../../visual-basic/language-reference/operators/subtraction-operator.md) (unaire et binaire)  
+ [- Operator](../../../visual-basic/language-reference/operators/subtraction-operator.md) (unary and binary)  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Opérateurs arithmétiques en Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

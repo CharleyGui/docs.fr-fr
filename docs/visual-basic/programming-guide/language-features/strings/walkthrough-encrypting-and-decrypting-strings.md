@@ -1,5 +1,5 @@
 ---
-title: Chiffrement et déchiffrement de chaînes dans Visual Basic
+title: Chiffrement et déchiffrement de chaînes
 ms.date: 07/20/2015
 helpviewer_keywords:
 - encryption [Visual Basic], strings
@@ -7,72 +7,72 @@ helpviewer_keywords:
 - decryption [Visual Basic], strings
 - strings [Visual Basic], decrypting
 ms.assetid: 1f51e40a-2f88-43e2-a83e-28a0b5c0d6fd
-ms.openlocfilehash: ee8691fedb537d1aa588eaac61624b445da64d1f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 36e405c7362993471d3e6da8e319bccb854e1026
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944425"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343583"
 ---
-# <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Procédure pas à pas : Chiffrement et déchiffrement de chaînes dans Visual Basic
-Cette procédure pas à pas vous montre comment <xref:System.Security.Cryptography.DESCryptoServiceProvider> utiliser la classe pour chiffrer et déchiffrer des chaînes à l’aide de la version du fournisseur de services<xref:System.Security.Cryptography.TripleDES>de chiffrement (CSP) de l’algorithme Triple Data Encryption Standard (). La première étape consiste à créer une classe wrapper simple qui encapsule l’algorithme 3DES et stocke les données chiffrées sous la forme d’une chaîne codée en base 64. Ce wrapper est ensuite utilisé pour stocker en toute sécurité les données utilisateur privées dans un fichier texte accessible publiquement.  
+# <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Procédure pas à pas : chiffrement et déchiffrement de chaînes en Visual Basic
+This walkthrough shows you how to use the <xref:System.Security.Cryptography.DESCryptoServiceProvider> class to encrypt and decrypt strings using the cryptographic service provider (CSP) version of the Triple Data Encryption Standard (<xref:System.Security.Cryptography.TripleDES>) algorithm. The first step is to create a simple wrapper class that encapsulates the 3DES algorithm and stores the encrypted data as a base-64 encoded string. Then, that wrapper is used to securely store private user data in a publicly accessible text file.  
   
- Vous pouvez utiliser le chiffrement pour protéger les secrets des utilisateurs (par exemple, les mots de passe) et rendre les informations d’identification illisibles pour les utilisateurs non autorisés. Cela peut empêcher le vol de l’identité d’un utilisateur autorisé, ce qui protège les ressources de l’utilisateur et fournit une non-répudiation. Le chiffrement peut également empêcher les utilisateurs non autorisés d’accéder aux données d’un utilisateur.  
+ You can use encryption to protect user secrets (for example, passwords) and to make credentials unreadable by unauthorized users. This can protect an authorized user's identity from being stolen, which protects the user's assets and provides non-repudiation. Encryption can also protect a user's data from being accessed by unauthorized users.  
   
  Pour plus d’informations, consultez [Services de cryptographie](../../../../standard/security/cryptographic-services.md).  
   
 > [!IMPORTANT]
-> Les algorithmes Rijndael (désormais appelé Advanced Encryption Standard [AES]) et 3DES (Triple Data Encryption Standard) offrent une plus grande sécurité que DES, car ils nécessitent beaucoup de ressources informatiques. Pour plus d’informations, consultez <xref:System.Security.Cryptography.DES> et <xref:System.Security.Cryptography.Rijndael>.  
+> The Rijndael (now referred to as Advanced Encryption Standard [AES]) and Triple Data Encryption Standard (3DES) algorithms provide greater security than DES because they are more computationally intensive. Pour plus d’informations, consultez <xref:System.Security.Cryptography.DES> et <xref:System.Security.Cryptography.Rijndael>.  
   
-### <a name="to-create-the-encryption-wrapper"></a>Pour créer le wrapper de chiffrement  
+### <a name="to-create-the-encryption-wrapper"></a>To create the encryption wrapper  
   
-1. Créez la `Simple3Des` classe pour encapsuler les méthodes de chiffrement et de déchiffrement.  
+1. Create the `Simple3Des` class to encapsulate the encryption and decryption methods.  
   
      [!code-vb[VbVbalrStrings#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#38)]  
   
-2. Ajoutez une importation de l’espace de noms Cryptography au début du fichier qui contient la `Simple3Des` classe.  
+2. Add an import of the cryptography namespace to the start of the file that contains the `Simple3Des` class.  
   
      [!code-vb[VbVbalrStrings#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#77)]  
   
-3. Dans la `Simple3Des` classe, ajoutez un champ privé pour stocker le fournisseur de services de chiffrement 3DES.  
+3. In the `Simple3Des` class, add a private field to store the 3DES cryptographic service provider.  
   
      [!code-vb[VbVbalrStrings#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#39)]  
   
-4. Ajoutez une méthode privée qui crée un tableau d’octets d’une longueur spécifiée à partir du hachage de la clé spécifiée.  
+4. Add a private method that creates a byte array of a specified length from the hash of the specified key.  
   
      [!code-vb[VbVbalrStrings#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#41)]  
   
-5. Ajoutez un constructeur pour initialiser le fournisseur de services de chiffrement 3DES.  
+5. Add a constructor to initialize the 3DES cryptographic service provider.  
   
-     Le `key` paramètre contrôle les `EncryptData` méthodes `DecryptData` et.  
+     The `key` parameter controls the `EncryptData` and `DecryptData` methods.  
   
      [!code-vb[VbVbalrStrings#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#40)]  
   
-6. Ajoutez une méthode publique qui chiffre une chaîne.  
+6. Add a public method that encrypts a string.  
   
      [!code-vb[VbVbalrStrings#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#42)]  
   
-7. Ajoutez une méthode publique qui déchiffre une chaîne.  
+7. Add a public method that decrypts a string.  
   
      [!code-vb[VbVbalrStrings#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#43)]  
   
-     La classe wrapper peut maintenant être utilisée pour protéger les ressources de l’utilisateur. Dans cet exemple, il est utilisé pour stocker en toute sécurité des données utilisateur privées dans un fichier texte accessible publiquement.  
+     The wrapper class can now be used to protect user assets. In this example, it is used to securely store private user data in a publicly accessible text file.  
   
-### <a name="to-test-the-encryption-wrapper"></a>Pour tester le wrapper de chiffrement  
+### <a name="to-test-the-encryption-wrapper"></a>To test the encryption wrapper  
   
-1. Dans une classe distincte, ajoutez une méthode qui utilise la méthode du `EncryptData` wrapper pour chiffrer une chaîne et l’écrire dans le dossier Mes documents de l’utilisateur.  
+1. In a separate class, add a method that uses the wrapper's `EncryptData` method to encrypt a string and write it to the user's My Documents folder.  
   
      [!code-vb[VbVbalrStrings#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#78)]  
   
-2. Ajoutez une méthode qui lit la chaîne chiffrée à partir du dossier Mes documents de l’utilisateur et déchiffre la chaîne avec la `DecryptData` méthode du wrapper.  
+2. Add a method that reads the encrypted string from the user's My Documents folder and decrypts the string with the wrapper's `DecryptData` method.  
   
      [!code-vb[VbVbalrStrings#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#79)]  
   
-3. Ajoutez le code de l’interface utilisateur `TestEncoding` pour `TestDecoding` appeler les méthodes et.  
+3. Add user interface code to call the `TestEncoding` and `TestDecoding` methods.  
   
 4. Exécutez l'application.  
   
-     Lorsque vous testez l’application, Notez qu’elle ne déchiffrera pas les données si vous fournissez un mot de passe incorrect.  
+     When you test the application, notice that it will not decrypt the data if you provide the wrong password.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -81,4 +81,4 @@ Cette procédure pas à pas vous montre comment <xref:System.Security.Cryptograp
 - <xref:System.Security.Cryptography.DES>
 - <xref:System.Security.Cryptography.TripleDES>
 - <xref:System.Security.Cryptography.Rijndael>
-- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
+- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)

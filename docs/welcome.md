@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: bc525aeefe2c247c610886fae6ae7d79cb9e6517
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: d0ea5aefa62dd4029610ab8a7f7ce9ed52a59600
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274332"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283935"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -18,7 +18,7 @@ Consultez [Bien démarrer avec .NET Core](core/get-started.md) pour apprendre à
 
 Créez de nombreux types d’applications avec .NET, notamment des applications cloud et IoT ainsi que des jeux en utilisant des outils multiplateformes gratuits. Vos applications peuvent s’exécuter sur Android, iOS, Linux, Mac OS et Windows. Déployez vos applications sur des serveurs ou des postes de travail et publiez-les sur des magasins d’applications afin de les déployer sur des appareils mobiles. .NET est accessible aux étudiants et aux amateurs qui souhaitent rejoindre une communauté de développeurs internationaux enthousiastes et désireux d’apporter leur contribution aux nombreuses technologies .NET.
 
-## <a name="news"></a>Actualités
+## <a name="news"></a>Informations
 
 Pour plus d’informations sur .NET, consultez les blogs suivants :
 
@@ -47,7 +47,7 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 - [Guide de .NET](standard/index.md)
 - [Guide .NET Core](core/index.md)
 - [.NET Framework Guide](framework/index.md) (Guide du .NET Framework)
-- [Guide C#](csharp/index.md)
+- [Guide C#](csharp/index.yml)
 - [Guide F#](fsharp/index.md)
 - [Guide Visual Basic](visual-basic/index.md)
 - [Guide ML.NET](machine-learning/index.yml)
@@ -62,7 +62,7 @@ Explorez des vidéos sur le Web, les appareils C#mobiles, les postes de travail,
 
 [Série de vidéos .NET 101](https://dotnet.microsoft.com/learn/videos)
 
-## <a name="open-source"></a>Open source
+## <a name="open-source"></a>Ouvrir la source
 
 Cette documentation est entièrement [open source](https://github.com/dotnet/docs). Vous pouvez y contribuer comme vous le souhaitez, du signalement de problèmes à la création de rubriques de documentation. Par ailleurs, .NET est en grande partie également open source. La liste suivante présente les principaux dépôts .NET GitHub :
 

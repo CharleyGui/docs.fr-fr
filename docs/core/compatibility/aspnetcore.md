@@ -1,15 +1,15 @@
 ---
 title: ASP.NET Core modifications avec rupture-.NET Core
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 10/17/2019
+ms.date: 11/20/2019
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 4a382fc94eac656605260f628f3eaa5b41bc24da
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 26b1fc2d2abe2dd8421a8c527add6b9fd4f3f847
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579986"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74282515"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -86,6 +86,10 @@ La liste suivante répertorie les modifications avec rupture de ASP.NET Core par
 ***
 
 [!INCLUDE[HTTP: Response body infrastructure changes](~/includes/core-changes/aspnetcore/3.0/http-response-body-changes.md)]
+
+***
+
+[!INCLUDE[HTTP: Some cookie SameSite default values changed](~/includes/core-changes/aspnetcore/3.0/http-cookie-samesite-defaults-change.md)]
 
 ***
 

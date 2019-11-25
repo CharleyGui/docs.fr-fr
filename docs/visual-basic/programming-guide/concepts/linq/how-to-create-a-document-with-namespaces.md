@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Créer un document avec des espaces de noms (LINQ to XML) (Visual Basic)'
+title: 'How to: Create a Document with Namespaces (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
-ms.openlocfilehash: c61076da5616d98673c4b9258125e3ff0c8821aa
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: bbd23840b0356cf14d2c7d6cb71591fe6461a8bd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710440"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332584"
 ---
-# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Procédure : Créer un document avec des espaces de noms (LINQ to XML) (Visual Basic)
+# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Comment : créer un document avec des espaces de noms (LINQ to XML) (Visual Basic)
 Cette rubrique montre comment créer un document avec des espaces de noms dans Visual Basic.  
   
  Lorsque vous utilisez des littéraux XML en Visual Basic, les utilisateurs peuvent définir un espace de noms XML global par défaut. Cet espace de noms est l'espace de noms par défaut pour les littéraux XML et les propriétés XML. L'espace de noms XML par défaut peut être défini au niveau projet ou au niveau fichier. S'il est défini au niveau fichier, il remplace l'espace de noms par défaut défini au niveau projet.  
@@ -18,7 +18,7 @@ Cette rubrique montre comment créer un document avec des espaces de noms dans V
   
  Vous définissez les espaces de noms par défaut et les espaces de noms avec préfixe à l'aide du mot clé `Imports`.  
   
- Pour plus d’informations, consultez [Introduction aux littéraux XML dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
+ For more information, see [Introduction to XML Literals in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
   
  Notez que l'espace de noms XML par défaut s'applique uniquement aux éléments, et non aux attributs. Par défaut, les attributs ne sont jamais dans aucun espace de noms. Toutefois, vous pouvez utiliser un préfixe d'espace de noms pour placer un attribut dans un espace de noms.  
   
@@ -116,4 +116,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

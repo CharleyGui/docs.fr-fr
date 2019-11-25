@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee35ce1016d9e0a825254fad4b08d4b94da16943
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
-ms.translationtype: HT
+ms.openlocfilehash: d534553fcc6ee63d560e731a535d44c3acd1a214
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170957"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347895"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformations XSLT avec la classe XslTransform
 
@@ -43,12 +43,11 @@ Le tableau suivant répertorie les classes généralement utilisées lors de l�
 
 Les fonctions `msxsl:script` et `msxsl:node-set` sont les seules extensions de Microsoft XML Core Services (MSXML) XSLT prises en charge par la classe <xref:System.Xml.Xsl.XslTransform>.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L'exemple de code suivant charge une feuille de style XSLT, lit un fichier nommé mydata.xml dans un objet <xref:System.Xml.XPath.XPathDocument> et effectue une transformation des données sur un fichier fictif nommé myStyleSheet.xsl, en envoyant le résultat mis en forme à la console.
 
 ```vb
-Imports System
 Imports System.IO
 Imports System.Xml
 Imports System.Xml.XPath

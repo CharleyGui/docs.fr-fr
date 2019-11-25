@@ -1,26 +1,26 @@
 ---
-title: 'Comment : créer des assemblys friend non signés'
+title: 'How to: Create unsigned friend assemblies'
 ms.date: 08/19/2019
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: d8fdc3061067d85498dc5bbed7bf324f99169a36
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: f8fec064507553b8208083578165965de2303a33
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774349"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352435"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies"></a>Comment : créer des assemblys friend non signés
+# <a name="how-to-create-unsigned-friend-assemblies"></a>How to: Create unsigned friend assemblies
 
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.
 
-## <a name="create-an-assembly-and-a-friend-assembly"></a>Créer un assembly et un assembly friend
+## <a name="create-an-assembly-and-a-friend-assembly"></a>Create an assembly and a friend assembly
 
 1. Ouvrez une invite de commandes.
 
-2. Créez un C# fichier ou Visual Basic nommé *friend_unsigned_A* qui contient le code suivant. Le code utilise l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> pour déclarer *friend_unsigned_B* comme un assembly friend.
+2. Create a C# or Visual Basic file named *friend_unsigned_A* that contains the following code. The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare *friend_unsigned_B* as a friend assembly.
 
    ```csharp
    // friend_unsigned_A.cs
@@ -55,7 +55,6 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    ' Compile with:
    ' vbc -target:library friend_unsigned_A.vb
    Imports System.Runtime.CompilerServices
-   Imports System
 
    <Assembly: InternalsVisibleTo("friend_unsigned_B")>
 
@@ -74,7 +73,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    End Class
    ```
 
-3. Compilez et signez *friend_unsigned_A* à l’aide de la commande suivante :
+3. Compile and sign *friend_unsigned_A* by using the following command:
 
    ```csharp
    csc /target:library friend_unsigned_A.cs
@@ -84,7 +83,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    vbc -target:library friend_unsigned_A.vb
    ```
 
-4. Créez un C# fichier ou Visual Basic nommé *friend_unsigned_B* qui contient le code suivant. Étant donné que *friend_unsigned_A* spécifie *friend_unsigned_B* comme assembly friend, le code dans *friend_unsigned_B* peutC#accéder aux types et aux membres `internal` () ou `Friend` (Visual Basic) à partir de *friend_unsigned_A*.
+4. Create a C# or Visual Basic file named *friend_unsigned_B* that contains the following code. Because *friend_unsigned_A* specifies *friend_unsigned_B* as a friend assembly, the code in *friend_unsigned_B* can access `internal` (C#) or `Friend` (Visual Basic) types and members from *friend_unsigned_A*.
 
    ```csharp
    // friend_unsigned_B.cs
@@ -126,7 +125,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    End Module
    ```
 
-5. Compilez *friend_unsigned_B* à l’aide de la commande suivante.
+5. Compile *friend_unsigned_B* by using the following command.
 
    ```csharp
    csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs
@@ -136,21 +135,21 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb
    ```
 
-   Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assembly de sortie ( *. exe* ou *. dll*) à l’aide de l’option du compilateur `-out`. Pour plus d’informations, consultez [-outC# (options du compilateur)](../../csharp/language-reference/compiler-options/out-compiler-option.md) ou [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
+   Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. You must explicitly specify the name of the output assembly ( *.exe* or *.dll*) by using the `-out` compiler option. For more information, see [-out (C# compiler options)](../../csharp/language-reference/compiler-options/out-compiler-option.md) or [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)..
 
-6. Exécutez le fichier *friend_unsigned_B. exe* .
+6. Run the *friend_unsigned_B.exe* file.
 
-   Le programme génère deux chaînes : **Class1. test** et **Classe2. test**.
+   The program outputs two strings: **Class1.Test** and **Class2.Test**.
 
 ## <a name="net-security"></a>Sécurité .NET
 
-Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence réside dans le fait que <xref:System.Security.Permissions.StrongNameIdentityPermission> pouvez demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des types et des membres `internal` ou `Friend` (Visual Basic).
+Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal`  or `Friend` (Visual Basic) types and members.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Assemblys dans .NET](index.md)
-- [Assemblys friend](friend.md)
-- [Comment : créer des assemblys friend signés](create-signed-friend.md)
+- [Friend assemblies](friend.md)
+- [How to: Create signed friend assemblies](create-signed-friend.md)
 - [Guide de programmation C#](../../csharp/programming-guide/index.md)
-- [Concepts de programmation (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
+- [Programming concepts (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)

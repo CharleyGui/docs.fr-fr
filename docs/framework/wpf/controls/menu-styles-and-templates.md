@@ -9,15 +9,15 @@ helpviewer_keywords:
 - templates [WPF], Menu
 - parts [WPF], Menu
 ms.assetid: b89da183-9b87-42c6-ac53-731a42c7b09e
-ms.openlocfilehash: 979ed7292a0f6582753305d1a7704c48aa751003
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 3ce0be1fdeeee1465c2facb414cc7a081b268eb5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460212"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283479"
 ---
 # <a name="menu-styles-and-templates"></a>Styles et modèles Menu
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Menu>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Menu>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="menu-parts"></a>Éléments de menu  
  Le contrôle <xref:System.Windows.Controls.Menu> n’a pas de parties nommées.  
@@ -36,7 +36,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="menuitem-parts"></a>Éléments MenuItem  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.Menu>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|Zone du sous-menu.|  
   
@@ -77,4 +77,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

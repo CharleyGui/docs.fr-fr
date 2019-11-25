@@ -1,15 +1,15 @@
 ---
-title: Guide pratique pour chaîner des appels à des méthodes d’axe (LINQ to XML) (C#)
+title: Comment chaîner des appels de méthode d’axe (C#LINQ to XML) ()
 ms.date: 07/20/2015
 ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
-ms.openlocfilehash: 3dfb2849bc2e2af9290738ed06938f80f3416f72
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ccfbf516a7fddbef357bfb0072288e250768616b
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418412"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141434"
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Guide pratique pour chaîner des appels à des méthodes d’axe (LINQ to XML) (C#)
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Comment chaîner des appels de méthode d’axe (C#LINQ to XML) ()
 Un schéma courant que vous utiliserez dans votre code consiste à appeler une méthode d’axe, puis à appeler l’un des axes de méthode d’extension.  
   
  Il existe deux axes avec le nom `Elements` qui retournent une collection d'éléments : la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> et la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>. Vous pouvez combiner ces deux axes pour rechercher tous les éléments d’un nom spécifié à une profondeur donnée dans l’arborescence.  

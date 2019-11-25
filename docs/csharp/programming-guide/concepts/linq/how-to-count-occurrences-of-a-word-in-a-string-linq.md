@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Compter les occurrences d’un mot dans une chaîne (LINQ) (C#)'
+title: Comment compter les occurrences d’un mot dans une chaîne (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
-ms.openlocfilehash: 12118c6322df0cfb93cb3d4a4dbbc02d68a0c776
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 0411b0c17b57a49e031f078412b9e45692c619fe
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593916"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141337"
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Procédure : Compter les occurrences d’un mot dans une chaîne (LINQ) (C#)
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Comment compter les occurrences d’un mot dans une chaîne (LINQ) (C#)
 Cet exemple montre comment utiliser une requête LINQ pour compter les occurrences d’un mot spécifié dans une chaîne. Notez que, pour effectuer le décompte, la méthode <xref:System.String.Split%2A> est d’abord appelée pour créer un tableau de mots. La méthode <xref:System.String.Split%2A> a un coût en matière de performances. Si la seule opération sur la chaîne consiste à compter les mots, il est préférable d’utiliser les méthodes <xref:System.Text.RegularExpressions.Regex.Matches%2A> ou <xref:System.String.IndexOf%2A>. Toutefois, si les performances ne sont pas un facteur critique, ou si vous avez déjà fractionné la phrase pour effectuer d’autres types de requêtes sur elle, il est judicieux d’utiliser LINQ pour compter les mots ou les expressions.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class CountWords  

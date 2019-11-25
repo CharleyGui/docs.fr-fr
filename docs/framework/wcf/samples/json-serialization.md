@@ -2,20 +2,23 @@
 title: Exemple DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 3c2c4747-7510-4bdf-b4fe-64f98428ef4a
-ms.openlocfilehash: 1711c826397dfb8b54ecedee08e88e67cb58d2a4
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 509f80812bb815e4fa56fa3ebdc9236ac0622ace
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180225"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141820"
 ---
 # <a name="datacontractjsonserializer-sample"></a>Exemple DataContractJsonSerializer
-Cet exemple montre comment utiliser le <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> pour sérialiser et désérialiser des données au format JSON (JavaScript Objet Notation). Ce moteur de sérialisation convertit les données JSON en instances de .NET Framework types et les renvoie en données JSON. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> prend en charge les mêmes types que <xref:System.Runtime.Serialization.DataContractSerializer>. Le format de données JSON est particulièrement utile lors de l'écriture d'applications Web de style JavaScript et XML (AJAX) asynchrones. La prise en charge d’AJAX dans Windows Communication Foundation (WCF) est optimisée pour une utilisation avec ASP.NET AJAX par le biais du contrôle ScriptManager. Pour obtenir des exemples d’utilisation de Windows Communication Foundation (WCF) avec ASP.NET AJAX, consultez les [exemples Ajax](ajax.md).  
-  
+
 > [!NOTE]
-> La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
+> Cet exemple est destiné à <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pour la plupart des scénarios qui impliquent la sérialisation et la désérialisation de JSON, nous vous recommandons d’utiliser les outils de l' [espace de noms System. Text. JSON](../../../standard/serialization/system-text-json-overview.md). 
+
+<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> prend en charge les mêmes types que <xref:System.Runtime.Serialization.DataContractSerializer>. Le format de données JSON est particulièrement utile lors de l'écriture d'applications Web de style JavaScript et XML (AJAX) asynchrones. La prise en charge d’AJAX dans Windows Communication Foundation (WCF) est optimisée pour une utilisation avec ASP.NET AJAX par le biais du contrôle ScriptManager. Pour obtenir des exemples d’utilisation de Windows Communication Foundation (WCF) avec ASP.NET AJAX, consultez les [exemples Ajax](ajax.md).  
   
- L'exemple utilise un contrat de données `Person` pour illustrer la sérialisation et la désérialisation.  
+La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
+  
+L'exemple utilise un contrat de données `Person` pour illustrer la sérialisation et la désérialisation.  
 
 ```csharp
 [DataContract]

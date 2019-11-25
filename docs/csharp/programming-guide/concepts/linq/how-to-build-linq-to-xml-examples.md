@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Générer des exemples LINQ to XML (C#)'
+title: Comment générer des exemples de LINQ to XMLC#()
 ms.date: 07/20/2015
 ms.assetid: e5d18fa1-2704-48fe-a44b-1564f97c9e9c
-ms.openlocfilehash: 9bbd04731854d67b9276f339a15f2c7f2193f9b4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 289a13daed7e3c871156bf50c6fa04c113c0cd13
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594117"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141454"
 ---
-# <a name="how-to-build-linq-to-xml-examples-c"></a>Procédure : Générer des exemples LINQ to XML (C#)
+# <a name="how-to-build-linq-to-xml-examples-c"></a>Comment générer des exemples de LINQ to XMLC#()
 Les différents extraits et exemples présentés dans cette documentation utilisent des classes et des types de différents espaces de noms. Lors de la compilation de code Visual C#, vous devez fournir des directives `using` appropriées.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Le code suivant contient les directives `using` requises pour la génération et l'exécution des exemples C#. Toutes les directives `using` ne sont pas requises pour tous les exemples.  
   
 ```csharp  

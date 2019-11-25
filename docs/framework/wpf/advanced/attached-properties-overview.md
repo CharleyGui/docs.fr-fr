@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: 403c4e76e302536513b9de0694ab7b0de621d5d2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f4e8ea9fb0643a4a434bf20fa719c3fd2d01435b
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455520"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089330"
 ---
 # <a name="attached-properties-overview"></a>Vue d'ensemble des propriétés jointes
 
@@ -60,7 +60,7 @@ Le scénario le plus courant dans lequel WPF définit une propriété jointe est
 
 ## Propriétés jointes dans le code<a name="attached_properties_code"></a>
 
-Les propriétés jointes dans WPF n’ont pas les méthodes de « wrapper » CLR typiques pour un accès facile en obtenir/définir. Cela est dû au fait que la propriété jointe ne fait pas nécessairement partie de l’espace de noms CLR pour les instances où la propriété est définie. Toutefois, un processeur XAML doit pouvoir définir ces valeurs quand XAML est analysé. Pour prendre en charge l’utilisation d’une propriété jointe effective, le type de propriétaire de la propriété jointe doit implémenter des méthodes d’accesseur dédiées au format **Get_PropertyName_** et **Set_PropertyName_** . Ces méthodes d’accesseur dédiées sont également utiles pour obtenir ou définir la propriété jointe dans le code. Du point de vue du code, une propriété jointe s’apparente à un champ de stockage comportant des accesseurs de méthode au lieu d’accesseurs de propriété, et ce champ de stockage peut exister sur tout objet plutôt que devoir être défini de manière spécifique.
+Les propriétés jointes dans WPF n’ont pas les méthodes de « wrapper » CLR typiques pour un accès facile en obtenir/définir. Cela est dû au fait que la propriété jointe ne fait pas nécessairement partie de l’espace de noms CLR pour les instances où la propriété est définie. Toutefois, un processeur XAML doit pouvoir définir ces valeurs quand XAML est analysé. Pour prendre en charge l’utilisation d’une propriété jointe effective, le type de propriétaire de la propriété jointe doit implémenter des méthodes d’accesseur dédiées sous la forme **Get_PropertyName_** et **Set_PropertyName_** . Ces méthodes d’accesseur dédiées sont également utiles pour obtenir ou définir la propriété jointe dans le code. Du point de vue du code, une propriété jointe s’apparente à un champ de stockage comportant des accesseurs de méthode au lieu d’accesseurs de propriété, et ce champ de stockage peut exister sur tout objet plutôt que devoir être défini de manière spécifique.
 
 L’exemple suivant illustre la définition d’une propriété jointe dans le code. Dans cet exemple, `myCheckBox` est une instance de la classe <xref:System.Windows.Controls.CheckBox>.
 
@@ -91,7 +91,7 @@ Comme mentionné précédemment, vous devez enregistrer une propriété jointe s
 
 Si votre classe définit la propriété jointe strictement pour une utilisation sur d’autres types, la classe n’a pas à dériver de <xref:System.Windows.DependencyObject>. Toutefois, vous devez dériver de <xref:System.Windows.DependencyObject> si vous suivez le modèle WPF global qui consiste à faire en sorte que la propriété jointe soit également une propriété de dépendance.
 
-Définissez votre propriété jointe en tant que propriété de dépendance en déclarant un champ `public static readonly` de type <xref:System.Windows.DependencyProperty>. Vous définissez ce champ à l’aide de la valeur de retour de la méthode <xref:System.Windows.DependencyProperty.RegisterAttached%2A>. Le nom du champ doit correspondre au nom de la propriété jointe, ajouté à la chaîne `Property`, pour suivre le modèle WPF établi pour nommer les champs d’identification et les propriétés qu’ils représentent. Le fournisseur de propriétés jointes doit également fournir des méthodes **Get_PropertyName_** et **Set_PropertyName_** statiques comme accesseurs pour la propriété jointe ; Si vous ne le faites pas, le système de propriétés ne pourra pas utiliser votre propriété jointe.
+Définissez votre propriété jointe en tant que propriété de dépendance en déclarant un champ `public static readonly` de type <xref:System.Windows.DependencyProperty>. Vous définissez ce champ à l’aide de la valeur de retour de la méthode <xref:System.Windows.DependencyProperty.RegisterAttached%2A>. Le nom du champ doit correspondre au nom de la propriété jointe, ajouté à la chaîne `Property`, pour suivre le modèle WPF établi pour nommer les champs d’identification et les propriétés qu’ils représentent. Le fournisseur de propriétés jointes doit également fournir des méthodes **Get_PropertyName_** et **Set_PropertyName_** statiques comme accesseurs de la propriété jointe ; Si vous ne le faites pas, le système de propriétés ne pourra pas utiliser votre propriété jointe.
 
 > [!NOTE]
 > Si vous omettez l’accesseur Get de la propriété jointe, la liaison de données sur la propriété ne fonctionnera pas dans les outils de conception, tels que Visual Studio et Blend pour Visual Studio.
@@ -123,7 +123,7 @@ L’exemple suivant montre l’inscription de la propriété de dépendance (à 
 
 #### <a name="attached-property-attributes"></a>Attributs des propriétés jointes
 
-WPF définit plusieurs [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] qui sont destinées à fournir des informations sur les propriétés jointes aux processus de réflexion, et aux utilisateurs typiques de la réflexion et des informations de propriété telles que les concepteurs. Les propriétés jointes ayant un type de portée illimitée, les concepteurs ont besoin d’un moyen d’éviter que les utilisateurs croulent sous une liste globale de toutes les propriétés jointes qui sont définies dans l’implémentation d’une technologie particulière utilisant XAML. Les [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] que WPF définit pour les propriétés jointes peuvent être utilisées pour définir la portée des situations où une propriété jointe donnée doit être affichée dans une fenêtre de propriétés. Vous pouvez également envisager l’application de ces attributs à vos propres propriétés jointes personnalisées. La finalité et la syntaxe des [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] sont décrites dans les pages de référence appropriées :
+WPF définit plusieurs attributs .NET qui sont destinés à fournir des informations sur les propriétés jointes aux processus de réflexion, ainsi qu’aux utilisateurs typiques de la réflexion et des informations de propriété telles que les concepteurs. Les propriétés jointes ayant un type de portée illimitée, les concepteurs ont besoin d’un moyen d’éviter que les utilisateurs croulent sous une liste globale de toutes les propriétés jointes qui sont définies dans l’implémentation d’une technologie particulière utilisant XAML. Les attributs .NET que WPF définit pour les propriétés jointes peuvent être utilisés pour définir la portée des situations où une propriété jointe donnée doit être affichée dans une fenêtre de propriétés. Vous pouvez également envisager l’application de ces attributs à vos propres propriétés jointes personnalisées. L’objectif et la syntaxe des attributs .NET sont décrits dans les pages de référence appropriées :
 
 - <xref:System.Windows.AttachedPropertyBrowsableAttribute>
 

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - parts [WPF], DocumentViewer
 - styles [WPF], DocumentViewer
 ms.assetid: 6bd4ff8f-ea6a-4084-ac58-e7a67446ce1c
-ms.openlocfilehash: 7a812ff913703e3aa8408da8a11d28ee5adfa7fd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ac1dc4f74a8e8f3ad2e84c6d50239ec827306c28
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460345"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283528"
 ---
 # <a name="documentviewer-styles-and-templates"></a>Styles et modèles DocumentViewer
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DocumentViewer>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DocumentViewer>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="documentviewer-parts"></a>Parties DocumentViewer  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.DocumentViewer>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_ContentHost|<xref:System.Windows.Controls.ScrollViewer>|Contenu et zone de défilement.|  
 |PART_FindToolBarHost|<xref:System.Windows.Controls.ContentControl>|Par défaut, la zone de recherche est située en bas.|  
@@ -54,4 +54,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

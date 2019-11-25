@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher tous les nœuds dans un espace de noms (C#)'
+title: Comment rechercher tous les nœuds dans un espaceC#de noms ()
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: f8a6f33084417e0dd489002eaa5d2de509e30d39
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253789"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141182"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Procédure : Rechercher tous les nœuds dans un espace de noms (C#)
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Comment rechercher tous les nœuds dans un espaceC#de noms ()
 Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.  
   
 ## <a name="example"></a>Exemple  
@@ -43,10 +43,10 @@ Nodes in the http://www.adventure-works.com namespace
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents. La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commandes fournisseur consolidées](./sample-xml-file-consolidated-purchase-orders.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichiers XML : Commandes fournisseur consolidées](./sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  

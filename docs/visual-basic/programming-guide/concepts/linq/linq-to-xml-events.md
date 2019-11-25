@@ -1,15 +1,15 @@
 ---
-title: Événements de LINQ to XML (Visual Basic)
+title: Événements LINQ to XML
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-ms.openlocfilehash: d35f8063fe87ee4be3dd49a3c0221cb9c47cb22e
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 06191fb94f808d9a3ece8de000dec1c5de769dde
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834980"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351925"
 ---
-# <a name="linq-to-xml-events-visual-basic"></a>Événements de LINQ to XML (Visual Basic)
+# <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML Events (Visual Basic)
 Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
   
  Vous pouvez ajouter des événements à une instance de n'importe quel objet <xref:System.Xml.Linq.XObject>. Le gestionnaire d'événements recevra alors des événements en cas de modification apportée à cet objet <xref:System.Xml.Linq.XObject> et à l'un de ses descendants. Par exemple, vous pouvez ajouter un gestionnaire d'événements à la racine de l'arborescence et gérer toutes les modifications apportées à l'arborescence à partir de ce gestionnaire d'événements.  
@@ -19,14 +19,14 @@ Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous perm
 ## <a name="types-and-events"></a>Types et événements  
  Vous utilisez les types suivants lorsque vous travaillez avec des événements :  
   
-|Type|Description|  
+|Tapez|Description|  
 |----------|-----------------|  
 |<xref:System.Xml.Linq.XObjectChange>|Spécifie le type d'événement lorsqu'un événement est déclenché pour un objet <xref:System.Xml.Linq.XObject>.|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|Fournit des données pour les événements <xref:System.Xml.Linq.XObject.Changing> et <xref:System.Xml.Linq.XObject.Changed>.|  
   
  Les événements suivants sont déclenchés lorsque vous modifiez une arborescence XML :  
   
-|Événement|Description|  
+|événement|Description|  
 |-----------|-----------------|  
 |<xref:System.Xml.Linq.XObject.Changing>|Se produit juste avant que cet objet <xref:System.Xml.Linq.XObject> ou l'un de ses descendants ne change.|  
 |<xref:System.Xml.Linq.XObject.Changed>|Se produit lorsqu'un objet <xref:System.Xml.Linq.XObject> ou l'un des ses descendants a changé.|  
@@ -92,7 +92,7 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Commentaires  
+### <a name="comments"></a>Comments  
  Ce code génère la sortie suivante :  
   
 ```console  
@@ -116,4 +116,4 @@ Total:308
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

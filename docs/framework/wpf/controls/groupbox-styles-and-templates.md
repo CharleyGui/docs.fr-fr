@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], GroupBox
 - templates [WPF], GroupBox
 ms.assetid: 33df7037-0a1b-476f-b9d0-41566a777699
-ms.openlocfilehash: 0835c106ffbda86bca8e01bc61adebfc1ab0c2cb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e5befffc86f26176da4accfc01239a08d4978713
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459636"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283764"
 ---
 # <a name="groupbox-styles-and-templates"></a>Styles et modèles GroupBox
-<a name="introduction"></a>Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.GroupBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+<a name="introduction"></a>Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.GroupBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 <a name="groupbox_parts"></a>   
 ## <a name="groupbox-parts"></a>Composants de GroupBox  
@@ -52,4 +52,4 @@ ms.locfileid: "73459636"
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

@@ -1,5 +1,5 @@
 ---
-title: Await, opérateur (Visual Basic)
+title: Await, opérateur
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Await
@@ -7,25 +7,25 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: ac1e56ae8b78277c8c8c5687598b97e6764dac0c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c2389ff0c94afc2156e594f5d93535d1ed0107a8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72580402"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74336262"
 ---
 # <a name="await-operator-visual-basic"></a>Await, opérateur (Visual Basic)
 
-Vous appliquez l’opérateur `Await` à un opérande dans une méthode asynchrone ou une expression lambda pour interrompre l’exécution de la méthode jusqu’à ce que la tâche attendue se termine. La tâche représente un travail en cours.
+You apply the `Await` operator to an operand in an asynchronous method or lambda expression to suspend execution of the method until the awaited task completes. La tâche représente un travail en cours.
 
-La méthode dans laquelle `Await` est utilisé doit avoir un modificateur [Async](../../../visual-basic/language-reference/modifiers/async.md) . Cette méthode, définie à l’aide du modificateur `Async` et contenant généralement une ou plusieurs expressions `Await`, est appelée *méthode async*.
+The method in which `Await` is used must have an [Async](../../../visual-basic/language-reference/modifiers/async.md) modifier. Cette méthode, définie à l’aide du modificateur `Async` et contenant généralement une ou plusieurs expressions `Await`, est appelée *méthode async*.
 
 > [!NOTE]
-> Les mots clés `Async` et `Await` ont été introduits dans Visual Studio 2012. Pour une introduction à la programmation asynchrone, consultez [programmation asynchrone avec Async et await](../../../visual-basic/programming-guide/concepts/async/index.md).
+> Les mots clés `Async` et `Await` ont été introduits dans Visual Studio 2012. For an introduction to async programming, see [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md).
 
-En règle générale, la tâche à laquelle vous appliquez l’opérateur `Await` est la valeur de retour d’un appel à une méthode qui implémente le [modèle asynchrone basé sur les tâches](https://go.microsoft.com/fwlink/?LinkId=204847), autrement dit, un <xref:System.Threading.Tasks.Task> ou un <xref:System.Threading.Tasks.Task%601>.
+Typically, the task to which you apply the `Await` operator is the return value from a call to a method that implements the [Task-Based Asynchronous Pattern](https://go.microsoft.com/fwlink/?LinkId=204847), that is, a <xref:System.Threading.Tasks.Task> or a <xref:System.Threading.Tasks.Task%601>.
 
-Dans le code suivant, la méthode <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> retourne `getContentsTask`, un `Task(Of Byte())`. La tâche est une promesse de produire le tableau d’octets réel lorsque l’opération est terminée. L'opérateur `Await` est appliqué à `getContentsTask` pour suspendre l'exécution dans `SumPageSizesAsync` jusqu'à ce que `getContentsTask` soit terminé. Entre-temps, le contrôle revient à l'appelant de `SumPageSizesAsync`. Quand `getContentsTask` est terminé, l'expression `Await` s'évalue en tableau d'octets.
+In the following code, the <xref:System.Net.Http.HttpClient> method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> returns `getContentsTask`, a `Task(Of Byte())`. The task is a promise to produce the actual byte array when the operation is complete. L'opérateur `Await` est appliqué à `getContentsTask` pour suspendre l'exécution dans `SumPageSizesAsync` jusqu'à ce que `getContentsTask` soit terminé. Entre-temps, le contrôle revient à l'appelant de `SumPageSizesAsync`. Quand `getContentsTask` est terminé, l'expression `Await` s'évalue en tableau d'octets.
 
 ```vb
 Private Async Function SumPageSizesAsync() As Task
@@ -46,7 +46,7 @@ End Function
 > [!IMPORTANT]
 > Pour obtenir un exemple complet, consultez [Procédure pas à pas : accès au web avec async et await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Vous pouvez télécharger l’exemple à partir des [exemples de code pour les développeurs](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) sur le site web de Microsoft. L'exemple est dans le projet AsyncWalkthrough_HttpClient.
 
-Si `Await` est appliqué au résultat d’un appel de méthode qui retourne un `Task(Of TResult)`, le type de l’expression d' `Await` est TResult. Si `Await` est appliqué au résultat d’un appel de méthode qui retourne un `Task`, l’expression de `Await` ne retourne pas de valeur. L'exemple suivant illustre la différence.
+If `Await` is applied to the result of a method call that returns a `Task(Of TResult)`, the type of the `Await` expression is TResult. If `Await` is applied to the result of a method call that returns a `Task`, the `Await` expression doesn't return a value. L'exemple suivant illustre la différence.
 
 ```vb
 ' Await used with a method that returns a Task(Of TResult).
@@ -56,9 +56,9 @@ Dim result As TResult = Await AsyncMethodThatReturnsTaskTResult()
 Await AsyncMethodThatReturnsTask()
 ```
 
-Une expression ou une instruction `Await` ne bloque pas le thread sur lequel elle s’exécute. Au lieu de cela, il force le compilateur à inscrire le reste de la méthode Async, après l’expression `Await`, en tant que continuation sur la tâche attendue. Le contrôle revient alors à l'appelant de la méthode async. Quand la tâche est terminée, elle appelle sa continuation et l'exécution de la méthode async reprend là où elle s'était arrêtée.
+An `Await` expression or statement does not block the thread on which it is executing. Instead, it causes the compiler to sign up the rest of the async method, after the `Await` expression, as a continuation on the awaited task. Le contrôle revient alors à l'appelant de la méthode async. Quand la tâche est terminée, elle appelle sa continuation et l'exécution de la méthode async reprend là où elle s'était arrêtée.
 
-Une expression `Await` peut se produire uniquement dans le corps d’une méthode immédiatement englobante ou d’une expression lambda qui est marquée par un modificateur de `Async`. Le terme *await* sert de mot clé uniquement dans ce contexte. Partout ailleurs, il est interprété en tant qu'identificateur. Dans une méthode Async ou une expression lambda, une expression `Await` ne peut pas se produire dans une expression de requête, dans le bloc `catch` ou `finally` d’un bloc [try... Catch... Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) , dans l’expression de variable de contrôle de boucle d’une boucle `For` ou `For Each`, ou dans le corps d’une instruction [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) .
+An `Await` expression can occur only in the body of an immediately enclosing method or lambda expression that is marked by an `Async` modifier. The term *Await* serves as a keyword only in that context. Partout ailleurs, il est interprété en tant qu'identificateur. Within the async method or lambda expression, an `Await` expression cannot occur in a query expression, in the `catch` or `finally` block of a [Try…Catch…Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) statement, in the loop control variable expression of a `For` or `For Each` loop, or in the body of a [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) statement.
 
 ## <a name="exceptions"></a>Exceptions
 
@@ -66,15 +66,15 @@ La plupart des méthodes async retournent un <xref:System.Threading.Tasks.Task> 
 
 Si vous attendez une méthode async retournant des tâches qui lève une exception, l'opérateur `Await` lève de nouveau l'exception.
 
-Si vous attendez une méthode Async retournant des tâches qui est annulée, l’opérateur `Await` lève à nouveau une <xref:System.OperationCanceledException>.
+If you await a task-returning async method that is canceled, the `Await` operator rethrows an <xref:System.OperationCanceledException>.
 
 Une tâche qui se trouve dans un état d’erreur peut refléter plusieurs exceptions.  Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, l’opération await lève à nouveau une seule des exceptions. Toutefois, vous ne pouvez pas prédire laquelle de ces exceptions est de nouveau levée.
 
-Pour obtenir des exemples de gestion des erreurs dans les méthodes Async, consultez [try... Catch... Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).
+For examples of error handling in async methods, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).
 
 ## <a name="example"></a>Exemple
 
-L'exemple Windows Forms suivant illustre l'utilisation de `Await` dans une méthode async, `WaitAsynchronouslyAsync`. Comparez le comportement de cette méthode avec celui de `WaitSynchronously`. Sans opérateur `Await`, `WaitSynchronously` s’exécute de façon synchrone en dépit de l’utilisation du modificateur `Async` dans sa définition et d’un appel à <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> dans son corps.
+L'exemple Windows Forms suivant illustre l'utilisation de `Await` dans une méthode async, `WaitAsynchronouslyAsync`. Comparez le comportement de cette méthode avec celui de `WaitSynchronously`. Without an `Await` operator, `WaitSynchronously` runs synchronously despite the use of the `Async` modifier in its definition and a call to <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> in its body.
 
 ```vb
 Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/02/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 93dbc711e38c17c2f502c4d04239d037ff015059
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6ce570460984d975b19fd2a696b668bc41e9054e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425186"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283836"
 ---
 # <a name="net-guide"></a>Guide de .NET
 
@@ -49,15 +49,15 @@ Si vous vous intéressez à certains des principaux concepts de .NET, consultez�
 * [Composants architecturaux de .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Interopérabilité native](native-interop/index.md)
-* [Nettoyage de la mémoire](garbage-collection/index.md)
+* [Garbage collection](garbage-collection/index.md)
 * [Types de base dans .NET](base-types/index.md)
-* [Regroupements](collections/index.md)
+* [Collections](collections/index.md)
 * [Dates, heures et fuseaux horaires](datetime/index.md)
 * [Programmation asynchrone](async.md)
 
 Vous pouvez également consulter le guide propre à chaque langage pour en savoir plus sur les trois principaux langages de .NET :
 
-* [Guide C#](../csharp/index.md)
+* [Guide C#](../csharp/index.yml)
 * [Guide F#](../fsharp/index.md)
 * [Guide Visual Basic](../visual-basic/index.md)
 

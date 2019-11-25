@@ -3,16 +3,15 @@ title: Nouveautés de .NET Core 3.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core 3.0.
 dev_langs:
 - csharp
-- vb
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: dcbf1073c12650101efdcf6022db0b29ace2eb3f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9cb2568aa36af9ced0525660962966375d69e35b
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420756"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140685"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -117,19 +116,32 @@ La [compilation hiérarchisée](https://devblogs.microsoft.com/dotnet/tiered-com
 
 Le principal avantage de la compilation hiérarchisée est d’autoriser les méthode (re-) JIT avec un niveau de moins bonne qualité mais plus rapide, ou avec un niveau de meilleure qualité mais plus lent. Cela permet d’améliorer les performances d’une application quand elle passe par les différents stades de l’exécution, du démarrage à l’état stable. Ceci contraste avec l’approche de la compilation non hiérarchisée, où chaque méthode est compilée d’une seule manière (la même que le niveau de qualité supérieure), qui privilégie la stabilité de l’état au détriment des performances au démarrage.
 
-Pour activer Quick JIT (code JIT de niveau 0), utilisez ce paramétrage dans votre fichier projet :
+Lorsque TC est activé, au démarrage d’une méthode appelée :
+
+- Si la méthode a du code compilé par l’AOA (ReadyToRun), le code prégénéré est utilisé.
+- Dans le cas contraire, la méthode sera traités avec JIT. En général, ces méthodes sont actuellement des génériques sur les types valeur.
+  - Le JIT rapide produit un code de qualité inférieure plus rapidement. Le JIT rapide est activé par défaut dans .NET Core 3,0 pour les méthodes qui ne contiennent pas de boucles et est préférable au démarrage.
+  - Le JIT entièrement optimisé produit un code de qualité supérieure plus lentement. Pour les méthodes où le JIT rapide ne doit pas être utilisé (par exemple, si la méthode est attribuée avec `[MethodImpl(MethodImplOptions.AggressiveOptimization)]`), le JIT entièrement optimisé est utilisé.
+
+Enfin, une fois que les méthodes sont appelées plusieurs fois, elles sont réexécutées avec JIT avec l’optimisation complète de JIT en arrière-plan.
+
+Le code généré par JIT rapide peut s’exécuter plus lentement, allouer davantage de mémoire ou utiliser plus d’espace de pile. En cas de problème, le JIT rapide peut être désactivé à l’aide de ce paramètre dans votre fichier projet :
 
 ```xml
 <PropertyGroup>
-  <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+  <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
 </PropertyGroup>
 ```
 
 Pour désactiver complètement la compilation hiérarchisée, utilisez ce paramétrage dans votre fichier projet :
 
 ```xml
-<TieredCompilation>false</TieredCompilation>
+<PropertyGroup>
+  <TieredCompilation>false</TieredCompilation>
+</PropertyGroup>
 ```
+
+Toutes les modifications apportées aux paramètres ci-dessus dans le fichier projet peuvent nécessiter qu’une build propre soit reflétée (supprimer les répertoires `obj` et `bin` et reconstruire).
 
 ### <a name="readytorun-images"></a>Images ReadyToRun
 
@@ -332,12 +344,12 @@ Des [images Docker pour .NET Core sur ARM64](https://hub.docker.com/r/microsoft/
 
 .NET Core 3.0 utilise **OpenSSL 1.1.1**, **OpenSSL 1.1.0** ou **OpenSSL 1.0.2** sur un système Linux s’ils sont disponibles. Quand **OpenSSL 1.1.1** est disponible, les types <xref:System.Net.Security.SslStream?displayProperty=nameWithType> et <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> utilisent **TLS 1.3** (sous réserve que le client et le serveur prennent en charge **TLS 1.3**).
 
->[!IMPORTANT]
->Windows et macOS ne prennent pas encore en charge **TLS 1.3**. .NET Core 3.0 prendra en charge **TLS 1.3** sur ces systèmes d’exploitation dès que de la prise en charge sera disponible.
+> [!IMPORTANT]
+> Windows et macOS ne prennent pas encore en charge **TLS 1.3**. .NET Core 3.0 prendra en charge **TLS 1.3** sur ces systèmes d’exploitation dès que de la prise en charge sera disponible.
 
 L’exemple C# 8.0 suivant montre comment .NET Core 3.0 sur Ubuntu 18.10 se connecte à <https://www.cloudflare.com> :
 
-[!CODE-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+[!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
 
 ### <a name="cryptography-ciphers"></a>Chiffrements
 
@@ -345,7 +357,7 @@ L’exemple C# 8.0 suivant montre comment .NET Core 3.0 sur Ubuntu 18.10 se c
 
 Le code suivant montre l’utilisation du chiffrement `AesGcm` pour chiffrer et déchiffrer des données aléatoires.
 
-[!CODE-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+[!code-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
 
 ### <a name="cryptographic-key-importexport"></a>Importation/exportation d’une clé de chiffrement
 
@@ -370,7 +382,7 @@ Les clés RSA prennent également en charge :
 
 Les méthodes d’exportation produisent des données binaires encodées au format DER, tout comme les méthodes d’importation. Si une clé est stockée au format PEM compatible avec le texte, l’appelant devra décoder le contenu au format base64 avant d’appeler une méthode d’importation.
 
-[!CODE-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+[!code-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
 
 Les fichiers **PKCS#8** peuvent être inspectés avec <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType>, tandis que les fichiers **PFX/PKCS#12** peuvent être inspectés avec <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. Les fichiers **PFX/PKCS#12** peuvent être manipulés avec <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
 
@@ -495,15 +507,15 @@ Le type <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> prend en 
 
 Le protocole par défaut reste HTTP/1.1, mais HTTP/2 peut être activé de deux manières différentes. Tout d’abord, vous pouvez définir le message de requête HTTP de sorte à utiliser HTTP/2 :
 
-[!CODE-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+[!code-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
 
 Ensuite, vous pouvez modifier <xref:System.Net.Http.HttpClient> pour utiliser HTTP/2 par défaut :
 
-[!CODE-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+[!code-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
 
 Souvent, lorsque vous développez une application, vous souhaiterez utiliser une connexion non chiffrée. Si vous savez que le point de terminaison cible utilisera HTTP/2, vous pouvez activer les connexions non chiffrées pour HTTP/2. Vous pouvez activer cela en définissant la variable d’environnement `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` sur `1` ou en l’activant dans le contexte de l’application :
 
-[!CODE-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
+[!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
 ## <a name="next-steps"></a>Étapes suivantes
 

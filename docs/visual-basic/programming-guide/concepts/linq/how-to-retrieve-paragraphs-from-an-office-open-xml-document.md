@@ -1,25 +1,25 @@
 ---
-title: 'Procédure : récupérer des paragraphes à partir d’un document Office Open XML (Visual Basic)'
+title: "Comment : récupérer des paragraphes à partir d'un document Office Open XML"
 ms.date: 07/20/2015
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-ms.openlocfilehash: 42b6779fd3f9254fb1d57c44282809de462078db
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: cfb4c106a7c2c70f220d5a5d20a64870753c3389
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320442"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347534"
 ---
-# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>Procédure : récupérer des paragraphes à partir d’un document Office Open XML (Visual Basic)
+# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>How to: Retrieve Paragraphs from an Office Open XML Document (Visual Basic)
 Cette rubrique présente un exemple qui ouvre un document Office Open XML et récupère une collection de tous les paragraphes du document.  
   
- Pour plus d’informations sur Office Open XML, consultez le [blog d’Eric White](http://www.ericwhite.com).  
+ For more information on Office Open XML, see [Eric White's Blog](http://www.ericwhite.com).  
   
 ## <a name="example"></a>Exemple  
  Cet exemple ouvre un package Office Open XML et utilise les relations dans le package Open XML pour rechercher le document et les parties de style. Il interroge ensuite le document et projette une collection d'un type anonyme qui contient le nœud <xref:System.Xml.Linq.XElement> de paragraphe, le nom de style de chaque paragraphe et le texte de chaque paragraphe.  
   
  L'exemple utilise une méthode d'extension nommée `StringConcatenate`, qui est également fournie dans l'exemple.  
   
- Pour obtenir un didacticiel détaillé qui explique le fonctionnement de cet exemple, consultez [transformations fonctionnelles pures de XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
+ For a detailed tutorial that explains how this example works, see [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -152,7 +152,7 @@ Module Module1
 End Module  
 ```  
   
- Lorsqu’il est exécuté avec l’exemple de document Open XML décrit dans [création du document Office Open XML source (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante :  
+ When run with the sample Open XML document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:  
   
 ```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -174,4 +174,4 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

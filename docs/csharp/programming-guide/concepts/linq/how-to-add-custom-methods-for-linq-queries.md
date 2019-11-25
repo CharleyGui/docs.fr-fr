@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Ajouter des méthodes personnalisées pour les requêtes LINQ (C#)'
+title: Comment ajouter des méthodes personnalisées pour les requêtesC#LINQ ()
 ms.date: 07/20/2015
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
-ms.openlocfilehash: fcf6814c8b3076a18e807a378796094a9ce2cf84
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e16175d3332b6ce36458eaa78af093e4f8772723
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594145"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141472"
 ---
-# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Procédure : Ajouter des méthodes personnalisées pour les requêtes LINQ (C#)
+# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Comment ajouter des méthodes personnalisées pour les requêtesC#LINQ ()
 
 Vous pouvez étendre l’ensemble de méthodes que vous pouvez utiliser pour les requêtes LINQ en ajoutant des méthodes d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, en plus des opérations standard d’obtention de valeur moyenne et maximale, vous pouvez créer une méthode d’agrégation personnalisée pour calculer une valeur unique à partir d’une séquence de valeurs. Vous pouvez également créer une méthode qui fonctionne comme un filtre personnalisé ou une transformation de données pour une séquence de valeurs, et qui retourne une nouvelle séquence. <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Reverse%2A> en sont quelques exemples.
 

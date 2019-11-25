@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer une copie d’un fichier dans un autre répertoire en Visual Basic'
+title: "Comment : créer une copie d'un fichier dans un autre répertoire"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.FileSystem.CopyFile method, copying files [Visual Basic]
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - CopyFile method [Visual Basic], copying files in Visual Basic
 - I/O [Visual Basic], copying files
 ms.assetid: 88e2145c-d414-45a5-ad03-6f5d58ecca26
-ms.openlocfilehash: fa4289f33a8c9498648dc71cb92d6403ece30524
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: e9a14e1f3743979548b92a3db653d09a470a1875
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628809"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348832"
 ---
-# <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Procédure : créer une copie d’un fichier dans un autre répertoire en Visual Basic
+# <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Guide pratique pour créer une copie d'un fichier dans un autre répertoire en Visual Basic
+
 La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses paramètres permettent de remplacer les fichiers existants, de renommer le fichier, d’afficher la progression de l’opération et d’autoriser l’utilisateur à annuler l’opération.  
   
 ### <a name="to-copy-a-text-file-to-another-folder"></a>Pour copier un fichier texte dans un autre dossier  
@@ -24,6 +25,7 @@ La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses
      [!code-vb[VbFileIOMisc#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#24)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les conditions ci-dessous peuvent générer une exception :  
   
 - Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).  
@@ -59,7 +61,7 @@ La méthode `My.Computer.FileSystem.CopyFile` permet de copier des fichiers. Ses
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
-- [Guide pratique pour copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
-- [Guide pratique pour créer une copie d’un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Guide pratique pour copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
-- [Guide pratique pour renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Guide pratique : copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
+- [Guide pratique : créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Guide pratique : copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
+- [Guide pratique : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Filtrer sur un élément facultatif (C#)'
+title: Comment filtrer sur un élément facultatif (C#)
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
-ms.openlocfilehash: 0f8e17d99085ad04ed76b83bce806418ca6d60cd
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c9f844619cbb3d7a66ca66989baa900e0fd7bc2f
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253821"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141256"
 ---
-# <a name="how-to-filter-on-an-optional-element-c"></a>Procédure : Filtrer sur un élément facultatif (C#)
+# <a name="how-to-filter-on-an-optional-element-c"></a>Comment filtrer sur un élément facultatif (C#)
 Parfois, vous souhaitez appliquer un filtrage sur un élément sans être certain qu'il existe dans votre document XML. La recherche doit être exécutée de telle sorte que, si l'élément particulier ne possède pas l'élément enfant, aucune exception de référence Null ne soit déclenchée suite au filtrage. Dans l'exemple suivant, l'élément `Child5` ne possède pas d'élément enfant `Type`, mais la requête s'exécute tout de même correctement.  
   
 ## <a name="example"></a>Exemple  

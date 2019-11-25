@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Déclarer et appeler une propriété par défaut en Visual Basic'
+title: 'How to: Declare and Call a Default Property'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - defaults [Visual Basic], properties
@@ -10,76 +10,76 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-ms.openlocfilehash: 9ca9a0ccdac3ac13429928233a0c09d58427ce74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b01188ed8a9ff4da95a6975dcac3509625fdffb2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665765"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349683"
 ---
-# <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Procédure : Déclarer et appeler une propriété par défaut en Visual Basic
-Un *propriété par défaut* est une propriété de classe ou structure auquel votre code peut accéder sans la spécifier. Lors de l’appel des noms de code, une classe ou structure, mais pas une propriété et le contexte autorise l’accès à une propriété, Visual Basic résout l’accès à cette classe ou propriété par défaut de la structure s’il en existe.  
+# <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Comment : déclarer et appeler une propriété par défaut en Visual Basic
+A *default property* is a class or structure property that your code can access without specifying it. When calling code names a class or structure but not a property, and the context allows access to a property, Visual Basic resolves the access to that class or structure's default property if one exists.  
   
- Une classe ou structure peut avoir au plus une propriété par défaut. Toutefois, vous pouvez surcharger une propriété par défaut et avoir plusieurs versions de celui-ci.  
+ A class or structure can have at most one default property. However, you can overload a default property and have more than one version of it.  
   
- Pour plus d’informations, consultez [par défaut](../../../../visual-basic/language-reference/modifiers/default.md).  
+ For more information, see [Default](../../../../visual-basic/language-reference/modifiers/default.md).  
   
-### <a name="to-declare-a-default-property"></a>Pour déclarer une propriété par défaut  
+### <a name="to-declare-a-default-property"></a>To declare a default property  
   
-1. Déclarez la propriété de façon normale. Ne spécifiez pas le `Shared` ou `Private` mot clé.  
+1. Declare the property in the normal way. Do not specify the `Shared` or `Private` keyword.  
   
-2. Inclure le `Default` mot clé dans la déclaration de propriété.  
+2. Include the `Default` keyword in the property declaration.  
   
-3. Spécifiez au moins un paramètre pour la propriété. Vous ne pouvez pas définir une propriété par défaut qui n’accepte pas d’au moins un argument.  
+3. Specify at least one parameter for the property. You cannot define a default property that does not take at least one argument.  
   
      [!code-vb[VbVbcnProcedures#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#17)]  
   
-### <a name="to-call-a-default-property"></a>Pour appeler une propriété par défaut  
+### <a name="to-call-a-default-property"></a>To call a default property  
   
-1. Déclarez une variable du type de classe ou la structure conteneur.  
+1. Declare a variable of the containing class or structure type.  
   
      [!code-vb[VbVbcnProcedures#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#16)]  
   
-2. Utilisez le nom de variable seul dans une expression où vous inclurez normalement le nom de propriété.  
+2. Use the variable name alone in an expression where you would normally include the property name.  
   
      [!code-vb[VbVbcnProcedures#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#21)]  
   
-3. Suivez le nom de variable avec une liste d’arguments entre parenthèses. Une propriété par défaut doit prendre au moins un argument.  
+3. Follow the variable name with an argument list in parentheses. A default property must take at least one argument.  
   
      [!code-vb[VbVbcnProcedures#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#20)]  
   
-4. Pour récupérer la valeur de propriété par défaut, utilisez le nom de variable avec une liste d’arguments dans une expression ou après l’égal (`=`) connectez-vous à une instruction d’assignation.  
+4. To retrieve the default property value, use the variable name, with an argument list, in an expression or following the equal (`=`) sign in an assignment statement.  
   
      [!code-vb[VbVbcnProcedures#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#15)]  
   
-5. Pour définir la valeur de propriété par défaut, utilisez le nom de variable avec une liste d’arguments, sur le côté gauche d’une instruction d’assignation.  
+5. To set the default property value, use the variable name, with an argument list, on the left side of an assignment statement.  
   
      [!code-vb[VbVbcnProcedures#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#14)]  
   
-6. Vous pouvez toujours spécifier le nom de propriété par défaut avec le nom de variable, comme vous le feriez pour accéder à n’importe quelle autre propriété.  
+6. You can always specify the default property name together with the variable name, just as you would do to access any other property.  
   
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant déclare une propriété par défaut sur une classe.  
+ The following example declares a default property on a class.  
   
  [!code-vb[VbVbcnProcedures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment appeler la propriété par défaut `myProperty` sur la classe `class1`. Stockent des valeurs dans les trois instructions d’assignation `myProperty`et le <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> appel lit les valeurs.  
+ The following example demonstrates how to call the default property `myProperty` on class `class1`. The three assignment statements store values in `myProperty`, and the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> call reads the values.  
   
  [!code-vb[VbVbcnProcedures#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#13)]  
   
- L’utilisation la plus courante d’une propriété par défaut est le <xref:Microsoft.VisualBasic.Collection.Item%2A> propriété sur différentes classes de collection.  
+ The most common use of a default property is the <xref:Microsoft.VisualBasic.Collection.Item%2A> property on various collection classes.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Propriétés par défaut peuvent entraîner une légère réduction dans les caractères de code source, mais ils peuvent rendre votre code plus difficile à lire. Si le code appelant n’est pas familiarisé avec votre classe ou structure, lorsqu’il fait référence au nom de classe ou structure il ne peut pas être certains que cette référence accède à la classe ou structure lui-même ou une propriété par défaut. Cela peut entraîner des erreurs du compilateur ou des erreurs de logique d’exécution subtiles.  
+ Default properties can result in a small reduction in source code-characters, but they can make your code more difficult to read. If the calling code is not familiar with your class or structure, when it makes a reference to the class or structure name it cannot be certain whether that reference accesses the class or structure itself, or a default property. This can lead to compiler errors or subtle run-time logic errors.  
   
- Vous pouvez légèrement réduire les risques d’erreurs de propriété par défaut en utilisant toujours la [Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md) pour définir le contrôle de type du compilateur `On`.  
+ You can somewhat reduce the chance of default property errors by always using the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) to set compiler type checking to `On`.  
   
- Si vous envisagez d’utiliser une classe prédéfinie ou une structure dans votre code, vous devez déterminer s’il possède une propriété par défaut et si c’est le cas, ce que son nom est.  
+ If you are planning to use a predefined class or structure in your code, you must determine whether it has a default property, and if so, what its name is.  
   
- En raison de ces inconvénients, vous devez envisager de ne pas définir les propriétés par défaut. Pour la lisibilité du code, vous devez également envisager de toujours faire explicitement référence à toutes les propriétés, même les propriétés par défaut.  
+ Because of these disadvantages, you should consider not defining default properties. For code readability, you should also consider always referring to all properties explicitly, even default properties.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -87,9 +87,9 @@ Un *propriété par défaut* est une propriété de classe ou structure auquel v
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
 - [Property (instruction)](../../../../visual-basic/language-reference/statements/property-statement.md)
 - [Default](../../../../visual-basic/language-reference/modifiers/default.md)
-- [Différences entre les propriétés et les Variables en Visual Basic](./differences-between-properties-and-variables.md)
-- [Guide pratique pour Créer une propriété](./how-to-create-a-property.md)
-- [Guide pratique pour Déclarer une propriété avec des niveaux d’accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Guide pratique pour Appeler une procédure de propriété](./how-to-call-a-property-procedure.md)
-- [Guide pratique pour Placer une valeur dans une propriété](./how-to-put-a-value-in-a-property.md)
-- [Guide pratique pour Obtenir une valeur d’une propriété](./how-to-get-a-value-from-a-property.md)
+- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Guide pratique : créer une propriété](./how-to-create-a-property.md)
+- [Guide pratique : déclarer une propriété avec des niveaux d’accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
+- [Guide pratique : appeler une procédure de propriété](./how-to-call-a-property-procedure.md)
+- [Guide pratique : placer une valeur dans une propriété](./how-to-put-a-value-in-a-property.md)
+- [Guide pratique : obtenir une valeur d’une propriété](./how-to-get-a-value-from-a-property.md)
