@@ -9,7 +9,7 @@
               href: microsoft.sqlserver.server.smiorderproperty.item.md
     - name: Système
       items:
-        - name: 'Exception, classe'
+        - name: Exception (classe)
           items:
             - name: 'Exception.PrepForRemoting, méthode'
               href: system.exception.prepforremoting.md
@@ -31,7 +31,7 @@
               href: system.data.sqltypes.sqlstreamchars.length.md
             - name: 'Close, méthode'
               href: system.data.sqltypes.sqlstreamchars.close.md
-            - name: 'Dispose, méthode'
+            - name: Dispose (méthode)
               href: system.data.sqltypes.sqlstreamchars.dispose.md
             - name: 'Flush, méthode'
               href: system.data.sqltypes.sqlstreamchars.flush.md
@@ -43,6 +43,12 @@
               href: system.data.sqltypes.sqlstreamchars.setlength.md
             - name: 'Write, méthode'
               href: system.data.sqltypes.sqlstreamchars.write.md
+    - name: System.IO
+      items:
+        - name: 'MemoryStream, classe'
+          items:
+            - name: 'InternalGetOriginAndLength, méthode'
+              href: system.io.memorystream.internalgetoriginandlength.md
     - name: System.Net
       items:
         - name: 'Connection, classe'
@@ -78,6 +84,8 @@
           items:
             - name: 'NetworkStream, propriété'
               href: system.net.pooledstream.networkstream.md
+        - name: 'RtcState, classe'
+          href: system.net.rtcstate.md
         - name: 'ServicePoint, classe'
           items:
             - name: 'm_ConnectionGroupList, champ'
@@ -94,6 +102,14 @@
           items:
             - name: 'SslProtocol, propriété'
               href: system.net.security.sslstate.sslprotocol.md
+    - name: System.ServiceModel.Channels
+      items:
+        - name: Classe Message
+          items:
+            - name: 'BodyToString, méthode'
+              href: system.servicemodel.channels.message.bodytostring.md
+            - name: 'WriteStartHeaders, méthode'
+              href: system.servicemodel.channels.message.writestartheaders.md
     - name: System.Windows.Diagnostics
       items:
         - name: 'VisualDiagnostics, classe'
@@ -132,7 +148,7 @@
               href: system.xml.xmlreader.createsqlreader.md
     - name: 'adodb, espace de noms'
       items:
-        - name: Interface de connexion
+        - name: 'Connection, interface'
           href: adodb.connection.md
         - name: 'EventReason, énumération'
           href: adodb.eventreasonenum.md

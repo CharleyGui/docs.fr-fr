@@ -115,12 +115,22 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Outils
-              tocHref: /dotnet/core/tools/
-              topicHref: /dotnet/core/tools/index
             - name: Compatibilité
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
+            - name: Configuration d’exécution
+              tocHref: /dotnet/core/run-time-config/
+              topicHref: /dotnet/core/run-time-config/index
+            - name: Outils
+              tocHref: /dotnet/core/tools/
+              topicHref: /dotnet/core/tools/index
+            - name: Guide d’installation
+              tocHref: /dotnet/core/install/
+              topicHref: /dotnet/core/install/index
+              items:
+                - name: Gestionnaires de packages Linux
+                  tocHref: /dotnet/core/install/
+                  topicHref: /dotnet/core/install/index
         - name: ".NET\_Framework"
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index

@@ -8,18 +8,20 @@
       href: breaking-changes.md
     - name: Par version
       items:
-        - name: .NET Framework à .NET Core
-          href: framework-core.md
-        - name: 2.2 à 3.0
-          href: 2.2-3.0.md
-        - name: "3.0\_Preview\_6 à 3.0\_Preview\_7"
-          href: 3.0.6-3.0.7.md
-        - name: "3.0\_Preview\_7 à 3.0\_Preview\_8"
-          href: 3.0.7-3.0.8.md
+        - name: 3.0 à 3.1
+          href: 3.0-3.1.md
+        - name: "3.0 Preview\_9 à\_3.0"
+          href: 3.0.9-3.0rc1.md
         - name: "3.0\_Preview\_8 à 3.0\_Preview\_9"
           href: 3.0.8-3.0.9.md
-        - name: "3.0\_Preview\_9 à 3.0\_RC1"
-          href: 3.0.9-3.0rc1.md
+        - name: "3.0\_Preview\_7 à 3.0\_Preview\_8"
+          href: 3.0.7-3.0.8.md
+        - name: "3.0\_Preview\_6 à 3.0\_Preview\_7"
+          href: 3.0.6-3.0.7.md
+        - name: 2.2 à 3.0
+          href: 2.2-3.0.md
+        - name: .NET Framework à .NET Core
+          href: framework-core.md
     - name: Par catégorie
       items:
         - name: ASP.NET Core
