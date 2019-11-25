@@ -7,12 +7,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 4e51c5dd226533e7d1ce79a136dba19cbb252f92
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 24ae6e285b8b4270188462b05f39c6142c6901ae
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253913"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972727"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 
@@ -33,10 +33,10 @@ La clause `where` peut spécifier que le type est une `class` ou un `struct`. La
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
 
-La `where` clause peut inclure la `notnull` contrainte. La `notnull` contrainte limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](struct.md) ou un type référence non Nullable. La `notnull` contrainte est disponible à partir C# de 8,0 pour le code compilé dans un [ `nullable enable` contexte](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type `notnull` viole la contrainte, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement `nullable enable` dans un contexte. 
+La clause `where` peut inclure la contrainte `notnull`. La contrainte de `notnull` limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](struct.md) ou un type référence non Nullable. La contrainte de `notnull` est disponible à C# partir de 8,0 pour le code compilé dans un [contexte de`nullable enable`](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type viole la contrainte de `notnull`, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement dans un contexte de `nullable enable`. 
 
 > [!IMPORTANT]
-> Les déclarations génériques qui incluent `notnull` la contrainte peuvent être utilisées dans un contexte oublie Nullable, mais le compilateur n’applique pas la contrainte.
+> Les déclarations génériques qui incluent la contrainte `notnull` peuvent être utilisées dans un contexte oublie Nullable, mais le compilateur n’applique pas la contrainte.
 
 [!code-csharp[using the nonnull constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#NotNull)]
 
@@ -44,7 +44,7 @@ La clause `where` peut aussi inclure une contrainte `unmanaged`. La contrainte `
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte new()](new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut. Par exemple :
+La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte New ()](new-constraint.md) permet au compilateur de savoir que tout argument de type fourni doit avoir un constructeur sans paramètre accessible. Exemple :
 
 [!code-csharp[using the new constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 
@@ -72,7 +72,7 @@ Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, con
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Introduction aux génériques](../../programming-guide/generics/index.md)
 - [new, contrainte](./new-constraint.md)

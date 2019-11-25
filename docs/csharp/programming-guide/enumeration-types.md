@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-ms.openlocfilehash: fea12a32d39f98ddc575e2d538e7501d2ff49768
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 3573959a1e10b475a9867631767de5d10a08b9ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590545"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969774"
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Types énumération (Guide de programmation C#)
 
@@ -21,7 +21,7 @@ Un type énumération (également appelé énumération ou enum) offre un moyen 
 
 [!code-csharp[csProgGuideEnums#1](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#1)]
 
-Par défaut, le type sous-jacent de chaque élément dans l’énumération est [int](../language-reference/builtin-types/integral-numeric-types.md). Vous pouvez spécifier un autre type numérique intégral à l’aide d’un signe deux-points, comme illustré dans l’exemple précédent. Pour obtenir une liste complète des types possibles, consultez [enum (référence C#)](../language-reference/keywords/enum.md).
+Par défaut, le type sous-jacent de chaque élément dans l’énumération est [int](../language-reference/builtin-types/integral-numeric-types.md). Vous pouvez spécifier un autre type numérique intégral à l’aide d’un signe deux-points, comme indiqué dans l’exemple précédent. Pour obtenir une liste complète des types possibles, consultez [enum (référence C#)](../language-reference/keywords/enum.md).
 
 Vous pouvez vérifier les valeurs numériques sous-jacentes en effectuant un cast sur le type sous-jacent, comme le montre l’exemple suivant.
 
@@ -84,9 +84,9 @@ Tous les enums sont des instances du type <xref:System.Enum?displayProperty=name
 
 [!code-csharp[csProgGuideEnums#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#5)]
 
-Pour plus d’informations, consultez <xref:System.Enum?displayProperty=nameWithType>.
+Pour plus d'informations, consultez <xref:System.Enum?displayProperty=nameWithType>.
 
-Vous pouvez également créer une méthode pour un enum à l’aide d’une méthode d’extension. Pour plus d'informations, voir [Procédure : Créer une méthode pour une énumération](./classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
+Vous pouvez également créer une méthode pour un enum à l’aide d’une méthode d’extension. Pour plus d’informations, consultez [comment créer une nouvelle méthode pour une énumération](./classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ## <a name="see-also"></a>Voir aussi
 

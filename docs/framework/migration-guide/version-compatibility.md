@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: c3e2368bc5977d7f50ae7ecea8557c5c545e82a4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e0de18b5a40875d1fec2633c16688111d8f4b9ee
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455593"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974957"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
 
@@ -53,9 +53,9 @@ Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framew
 
 - S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md).
 
-- S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkId=186989).
+- S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)).
 
-- S’il s’agit d’une application .NET Framework 1.1, consultez également [Modifications dans .NET Framework 2.0](https://go.microsoft.com/fwlink/?LinkID=125263).
+- S’il s’agit d’une application .NET Framework 1.1, consultez également [Modifications dans .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)).
 
 - Si vous recompilez le code source existant pour l’exécuter sur .NET Framework 4.5 ou ses versions intermédiaires, ou si vous développez une nouvelle version d’une application ou d’un composant qui cible .NET Framework 4.5 ou ses versions intermédiaires à partir d’une base de code source existante, consultez [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md) pour connaître les types et les membres obsolètes, et appliquer la solution de contournement décrite. (Le code précédemment compilé continuera à s'exécuter sur des types et des membres marqués comme obsolètes.)
 
@@ -72,5 +72,5 @@ Si vous ne trouvez pas de solution de contournement appropriée pour votre probl
 - [Nouveautés](../whats-new/index.md)
 - [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)
 - [Compatibilité des applications](../migration-guide/application-compatibility.md)
-- [Politique de support pour Microsoft .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=248212)
+- [.NET Framework la stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
 - [Problèmes de migration de .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md)

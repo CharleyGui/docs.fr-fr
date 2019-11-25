@@ -1,16 +1,16 @@
 ---
-title: Guide pratique pour comparer des chaînes - Guide C#
+title: Comment comparer des chaînes- C# Guide
 description: Découvrez comment comparer et trier des valeurs de chaîne, avec ou sans casse, avec ou sans tri propre à la culture
 ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: a3e5f8dd9cfac809aafc2533463390cd5a64e0d6
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: dda3ec8cb6a0131867e6ea3bb0cf7199d86058ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395457"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973322"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Comment comparer des chaînes en C\#
 
@@ -33,7 +33,7 @@ Par défaut, les opérations les plus courantes :
 
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
 - <xref:System.String.Equals%2A?displayProperty=nameWithType>
-- <xref:System.String.op_Equality%2A?displayProperty=nameWithType> et <xref:System.String.op_Inequality%2A?displayProperty=nameWithType>, autrement dit, les [opérateurs d’égalité `==` et `!=`](../language-reference/operators/equality-operators.md#string-equality), respectivement
+- <xref:System.String.op_Equality%2A?displayProperty=nameWithType> et <xref:System.String.op_Inequality%2A?displayProperty=nameWithType>, autrement dit, [les opérateurs d’égalité `==` et `!=`](../language-reference/operators/equality-operators.md#string-equality), respectivement
 
 effectue une comparaison ordinale respectant la casse et, si nécessaire, utilise la culture actuelle. L’exemple suivant illustre ce qui suit :
 
@@ -41,7 +41,7 @@ effectue une comparaison ordinale respectant la casse et, si nécessaire, utilis
 
 La comparaison ordinale par défaut ne prend pas en compte les règles linguistiques lors de la comparaison de chaînes. Elle compare la valeur binaire de chaque objet <xref:System.Char> dans les deux chaînes. La comparaison ordinale par défaut respecte ainsi également la casse.
 
-Notez que le test d’égalité avec <xref:System.String.Equals%2A?displayProperty=nameWithType> et les opérateurs `==` et `!=` diffère de la comparaison de chaînes à l’aide des méthodes <xref:System.String.CompareTo%2A?displayProperty=nameWithType> et <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)>. Tandis que les tests d’égalité effectuent une comparaison ordinale respectant la casse, les méthodes de comparaison effectuent une comparaison respectant la casse et dépendante de la culture à l’aide de la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
+Notez que le test d’égalité avec <xref:System.String.Equals%2A?displayProperty=nameWithType> et les opérateurs `==` et `!=` diffèrent de la comparaison de chaînes à l’aide des méthodes <xref:System.String.CompareTo%2A?displayProperty=nameWithType> et <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)>. Tandis que les tests d’égalité effectuent une comparaison ordinale respectant la casse, les méthodes de comparaison effectuent une comparaison respectant la casse et dépendante de la culture à l’aide de la culture actuelle. Étant donné que les méthodes de comparaison par défaut effectuent souvent différents types de comparaisons, nous vous recommandons de toujours indiquer clairement l’intention de votre code en appelant une surcharge qui spécifie explicitement le type de comparaison à effectuer.
 
 ## <a name="case-insensitive-ordinal-comparisons"></a>Comparaisons ordinales ne respectant pas la casse
 

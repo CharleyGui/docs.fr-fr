@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
-ms.openlocfilehash: db0df68aa89cdd5c8bf94ad95a2b8bc9b36d5685
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d834f0c4517f4ff9fe8645257d5a947c03893881
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786222"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968393"
 ---
 # <a name="loading-dataset-schema-information-from-xml"></a>Chargement des informations de schéma de DataSet à partir de XML
-Le schéma d’un <xref:System.Data.DataSet> (ses tables, colonnes, relations et contraintes) peut être défini par programme, créé par les méthodes **Fill** ou **FillSchema** d’un <xref:System.Data.Common.DataAdapter>ou chargé à partir d’un document XML. Pour charger les informations de schéma d’un **DataSet** à partir d’un document XML, vous pouvez utiliser la méthode **ReadXmlSchema** ou **InferXmlSchema** du **DataSet**. **ReadXmlSchema** vous permet de charger ou de déduire des informations de schéma de **DataSet** à partir du document contenant le schéma en langage XSD (XML Schema Definition) ou d’un document XML avec un schéma XML inline. **InferXmlSchema** vous permet de déduire le schéma à partir du document XML tout en ignorant certains espaces de noms XML que vous spécifiez.  
+Le schéma d’une <xref:System.Data.DataSet> (ses tables, colonnes, relations et contraintes) peut être défini par programme, créé par les méthodes **Fill** ou **FillSchema** d’un <xref:System.Data.Common.DataAdapter>, ou chargé à partir d’un document XML. Pour charger les informations de schéma d’un **DataSet** à partir d’un document XML, vous pouvez utiliser la méthode **ReadXmlSchema** ou **InferXmlSchema** du **DataSet**. **ReadXmlSchema** vous permet de charger ou de déduire des informations de schéma de **DataSet** à partir du document contenant le schéma en langage XSD (XML Schema Definition) ou d’un document XML avec un schéma XML inline. **InferXmlSchema** vous permet de déduire le schéma à partir du document XML tout en ignorant certains espaces de noms XML que vous spécifiez.  
   
 > [!NOTE]
 > L’ordre des tables dans un **DataSet** peut ne pas être préservé quand vous utilisez des services Web ou la sérialisation XML pour transférer un **DataSet** qui a été créé en mémoire à l’aide de constructions XSD (telles que les relations imbriquées). Par conséquent, le destinataire du **DataSet** ne doit pas dépendre de l’ordre des tables dans ce cas. Toutefois, l’ordre des tables est toujours préservé si le schéma du **jeu de données** transféré a été lu à partir de fichiers XSD, au lieu d’être créé en mémoire.  
@@ -40,7 +40,7 @@ dataSet.ReadXmlSchema("schema.xsd");
 ```  
   
 ```vb  
-Dim xmlStream As System.IO.StreamReader = New System.IO.StreamReader ("schema.xsd");  
+Dim xmlStream As New System.IO.StreamReader("schema.xsd")
 Dim dataSet As DataSet = New DataSet  
 dataSet.ReadXmlSchema(xmlStream)  
 xmlStream.Close()  
@@ -73,7 +73,7 @@ xmlStream.Close();
 </NewDataSet>  
 ```  
   
- En raison des attributs spécifiés pour les éléments du document XML précédent, la méthode **ReadXmlSchema** et la méthode **ReadXml** avec un **XmlReadMode** de **InferSchema** créent des tables pour chaque élément de l’élément document **Catégories**, **CategoryID**, **CategoryName**, **Description**, **Products**, **ProductID**, **ReorderLevel**et **Discontinued**. (Pour plus d’informations, consultez [déduction de la structure relationnelle d’un DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md).) Toutefois, une structure plus appropriée consiste à créer uniquement les tables **categories** et **Products** , puis à créer les colonnes **CategoryID**, **CategoryName**et **Description** dans la table **categories** , etLes colonnes ProductID, **ReorderLevel**et **discontinues** de la table **Products** . Pour vous assurer que le schéma inféré ignore les attributs spécifiés dans les éléments XML, utilisez la méthode **InferXmlSchema** et spécifiez que l’espace de noms XML de **officedata** doit être ignoré, comme illustré dans l’exemple suivant.  
+ En raison des attributs spécifiés pour les éléments du document XML précédent, la méthode **ReadXmlSchema** et la méthode **ReadXml** avec un **XmlReadMode** de **InferSchema** créent des tables pour chaque élément du document : **categories**, **CategoryID**, **CategoryName**, **Description**, **Products**, **ProductID**, **ReorderLevel**et **Discontinued**. (Pour plus d’informations, consultez [déduction de la structure relationnelle d’un DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md).) Toutefois, une structure plus appropriée consiste à créer uniquement les tables **categories** et **Products** , puis à créer les colonnes **CategoryID**, **CategoryName**et **Description** dans la table **categories** , et les colonnes **ProductID**, **ReorderLevel**et **Discontinued** dans la table **Products** . Pour vous assurer que le schéma inféré ignore les attributs spécifiés dans les éléments XML, utilisez la méthode **InferXmlSchema** et spécifiez que l’espace de noms XML de **officedata** doit être ignoré, comme illustré dans l’exemple suivant.  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  

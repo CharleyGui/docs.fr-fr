@@ -9,38 +9,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-ms.openlocfilehash: 7f5969bc6f73b2260ae1ffa4b0026d5b4119ff88
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c589e85a0bbfb3f0b5858698ffb2a294ff88cf2
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134273"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973780"
 ---
 # <a name="dataflow-task-parallel-library"></a>Flux de données (bibliothèque parallèle de tâches)
-<a name="top"></a> La bibliothèque parallèle de tâches (TPL) fournit des composants de flux de données destinés à augmenter la robustesse des applications prenant en charge l’accès concurrentiel. Ces composants de flux de données sont regroupés sous le nom de *bibliothèque de flux de données TPL*. Ce modèle de flux de données favorise la programmation basée sur les acteurs en fournissant une transmission de messages in-process pour les flux de données à granularité grossière et les tâches de traitement "pipeline". Les composants de flux de données reposent sur les types et l'infrastructure de planification de la bibliothèque parallèle de tâches, et s'intègrent à la prise en charge des langages C#, Visual Basic et F# de la programmation asynchrone. Ces composants de flux de données sont utiles quand vous avez plusieurs opérations qui doivent communiquer entre elles de façon asynchrone ou quand vous voulez traiter les données à mesure qu'elles deviennent disponibles. Prenons par exemple une application qui traite les données d'image d'une webcam. En utilisant le modèle de flux de données, l'application peut traiter les trames d'images à mesure qu'elles deviennent disponibles. Si l’application améliore les trames d’images, par exemple, en effectuant la correction de la lumière ou des yeux rouges, vous pouvez créer un *pipeline* de composants de flux de données. Chaque étape du pipeline peut utiliser plusieurs fonctionnalités de parallélisme à granularité grossière, telles que les fonctionnalités fournies par la bibliothèque TPL qui permettent de transformer les images.  
+La bibliothèque parallèle de tâches (TPL) fournit des composants de flux de données destinés à augmenter la robustesse des applications prenant en charge l'accès concurrentiel. Ces composants de flux de données sont regroupés sous le nom de *bibliothèque de flux de données TPL*. Ce modèle de flux de données favorise la programmation basée sur les acteurs en fournissant une transmission de messages in-process pour les flux de données à granularité grossière et les tâches de traitement "pipeline". Les composants de flux de données reposent sur les types et l'infrastructure de planification de la bibliothèque parallèle de tâches, et s'intègrent à la prise en charge des langages C#, Visual Basic et F# de la programmation asynchrone. Ces composants de flux de données sont utiles quand vous avez plusieurs opérations qui doivent communiquer entre elles de façon asynchrone ou quand vous voulez traiter les données à mesure qu'elles deviennent disponibles. Prenons par exemple une application qui traite les données d'image d'une webcam. En utilisant le modèle de flux de données, l'application peut traiter les trames d'images à mesure qu'elles deviennent disponibles. Si l’application améliore les trames d’images, par exemple, en effectuant la correction de la lumière ou des yeux rouges, vous pouvez créer un *pipeline* de composants de flux de données. Chaque étape du pipeline peut utiliser plusieurs fonctionnalités de parallélisme à granularité grossière, telles que les fonctionnalités fournies par la bibliothèque TPL qui permettent de transformer les images.  
   
  Ce document fournit une vue d'ensemble de la bibliothèque de flux de données TPL. Il décrit le modèle de programmation et les types de blocs de flux de données prédéfinis, et explique comment configurer des blocs de flux de données pour répondre aux besoins de vos applications.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
-  
- Ce document contient les sections suivantes :  
-  
-- [Modèle de programmation](#model)  
-  
-- [Types de blocs de flux de données prédéfinis](#predefined_types)  
-  
-- [Configuration du comportement des blocs de flux de données](#behavior)  
-  
-- [Blocs de flux de données personnalisés](#custom)  
-  
-<a name="model"></a>   
-## <a name="programming-model"></a>Modèle de programmation  
+
+## <a name="programming-model"></a>Modèle de programmation
  La bibliothèque de flux de données TPL constitue une base pour la transmission de messages et la parallélisation des applications nécessitant une utilisation importante du processeur et des E/S, et ayant un débit élevé et une faible latence. Elle permet également de contrôler explicitement la manière dont les données sont mises en mémoire tampon et se déplacent sur le système. Pour mieux comprendre le modèle de programmation de flux de données, imaginez une application qui charge des images à partir du disque de manière asynchrone et crée un composite de ces images. Les modèles de programmation traditionnels requièrent généralement l'utilisation de rappels et d'objets de synchronisation, tels que des verrous, pour coordonner les tâches et accéder aux données partagées. À l'aide du modèle de programmation de flux de données, vous pouvez créer des objets de flux de données qui traitent les images à mesure qu'elles sont lues à partir du disque. Sous le modèle de flux de données, vous déclarez la manière dont sont traitées les données quand elles deviennent disponibles, ainsi que les éventuelles dépendances qui existent entre les données. Le runtime gère les dépendances entre les données, ce qui vous évite d'avoir à synchroniser l'accès aux données partagées. De plus, étant donné que le runtime planifie les tâches en fonction de l'arrivée asynchrone des données, le flux de données peut améliorer la réactivité et le débit grâce à une gestion efficace des threads sous-jacents. Vous trouverez un exemple d’utilisation du modèle de programmation de flux de données pour implémenter le traitement d’image dans une application Windows Forms sur la page [Procédure pas à pas : utiliser les flux de données dans une application Windows Forms](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ### <a name="sources-and-targets"></a>Sources et cibles  
  La bibliothèque de flux de données TPL comprend des *blocs de flux de données*, structures de données qui mettent les données en mémoire tampon et les traitent. La bibliothèque parallèle de tâches définit trois types de blocs de flux de données : les *blocs sources*, les *blocs cibles* et les *blocs propagateurs*. Un bloc source agit comme une source de données et peut donc être lu. Un bloc cible joue le rôle de récepteur de données, il est donc possible d'y écrire. Un bloc propagateur agit à la fois comme un bloc source et un bloc cible, et peut donc faire l'objet d'une lecture et d'une écriture. La bibliothèque parallèle de tâches définit l'interface <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType> pour représenter les sources, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> pour représenter les cibles, et <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602?displayProperty=nameWithType> pour représenter les propagateurs. <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> hérite des deux <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> et de <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>.  
   
- La bibliothèque de flux de données TPL fournit plusieurs types de blocs de flux de données prédéfinis qui implémentent les interfaces <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> et <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602>. Ces types de blocs de flux de données sont décrits dans ce document dans la section [Types de blocs de flux de données prédéfinis](#predefined_types).  
+ La bibliothèque de flux de données TPL fournit plusieurs types de blocs de flux de données prédéfinis qui implémentent les interfaces <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> et <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602>. Ces types de blocs de flux de données sont décrits dans ce document dans la section [Types de blocs de flux de données prédéfinis](#predefined-dataflow-block-types).  
   
 ### <a name="connecting-blocks"></a>Connexion des blocs  
  Vous pouvez aussi connecter des blocs de flux de données pour former des *pipelines*, qui sont des séquences linéaires de blocs de flux de données, ou bien des *réseaux*, qui sont des graphiques de blocs de flux de données. Un pipeline est une forme de réseau. Dans un pipeline ou un réseau, les sources propagent des données de manière asynchrone vers les cibles à mesure que les données deviennent disponibles. La méthode <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A?displayProperty=nameWithType> lie un bloc de flux de données source à un bloc cible. Une source peut être liée à zéro, une ou plusieurs cibles. Une cible peut être liée à zéro, une ou plusieurs sources. Vous pouvez ajouter des blocs de flux de données à un pipeline ou en supprimer de manière simultanée. Les types de blocs de flux de données prédéfinis gèrent tous les aspects liés à la sécurité des threads pour les liaisons et les annulations de liaison.  
@@ -78,10 +67,7 @@ ms.locfileid: "73134273"
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
  Vous pouvez également utiliser des propriétés telles que <xref:System.Threading.Tasks.Task.IsCanceled%2A> dans le corps de la tâche de continuation pour obtenir des informations supplémentaires sur l'état d'achèvement d'un bloc de flux de données. Pour plus d’informations sur les tâches de continuation et leur rôle dans les annulations et la gestion des erreurs, consultez [Chaînage des tâches à l’aide de tâches de continuation](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md), [Annulation de tâches](../../../docs/standard/parallel-programming/task-cancellation.md) et [Gestion des exceptions](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
-  
- [[retour en haut](#top)]  
-  
-<a name="predefined_types"></a>   
+
 ## <a name="predefined-dataflow-block-types"></a>Types de blocs de flux de données prédéfinis  
  La bibliothèque de flux de données TPL fournit plusieurs types de blocs de flux de données prédéfinis. Ces types sont répartis en trois catégories : *blocs de mise en mémoire tampon*, *blocs d’exécution* et *blocs de regroupement*. Les sections suivantes décrivent les types de blocs qui composent ces catégories.  
   
@@ -201,10 +187,7 @@ ms.locfileid: "73134273"
  [!code-vb[TPLDataflow_Overview#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#9)]  
   
  Vous trouverez un exemple complet utilisant <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> pour capturer les résultats et toutes les exceptions qui se produisent quand le programme lit les données d'une base de données sur la page [Procédure pas à pas : utiliser BatchBlock et BatchedJoinBlock pour améliorer l'efficacité](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md).  
-  
- [[retour en haut](#top)]  
-  
-<a name="behavior"></a>   
+
 ## <a name="configuring-dataflow--block-behavior"></a>Configuration du comportement des blocs de flux de données  
  Vous pouvez activer des options supplémentaires en fournissant un objet <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions?displayProperty=nameWithType> au constructeur de types de blocs de flux de données. Ces options permettent de contrôler le comportement, comme celui du planificateur qui gère la tâche sous-jacente et le degré de parallélisme. <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions> possède également des types dérivés qui spécifient le comportement spécifique à certains types de blocs de flux de données. Le tableau suivant récapitule les types d'options qui sont associés à chaque type de bloc de flux de données.  
   
@@ -254,16 +237,11 @@ ms.locfileid: "73134273"
   
  Pour les types de blocs de regroupement tels que <xref:System.Threading.Tasks.Dataflow.JoinBlock%602>, le mode gourmand signifie que le bloc accepte immédiatement les données, même si les données correspondantes avec lesquelles effectuer le regroupement ne sont pas encore disponibles. Le mode non gourmand signifie que le bloc diffère tous les messages entrants jusqu'à ce que chacune de ses cibles ait reçu un message, permettant ainsi le regroupement. Si l'un des messages différés n'est plus disponible, le bloc de regroupement libère tous les messages différés et redémarre le processus. Pour la classe <xref:System.Threading.Tasks.Dataflow.BatchBlock%601>, les comportements gourmand et non gourmand sont similaires, à ceci près qu'en mode non gourmand, un objet <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> diffère tous les messages entrants jusqu'à ce que suffisamment de messages soient disponibles dans plusieurs sources distinctes pour former un lot.  
   
- Pour spécifier le mode non gourmand pour un bloc de flux de données, définissez <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> sur `False`. Vous trouverez un exemple qui montre comment utiliser le mode non gourmand pour permettre à plusieurs blocs de regroupement de partager une source de données plus efficacement sur la page [Guide pratique : utiliser JoinBlock pour lire des données issues de plusieurs sources](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md).  
-  
- [[retour en haut](#top)]  
-  
-<a name="custom"></a>   
+ Pour spécifier le mode non gourmand pour un bloc de flux de données, définissez <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> sur `False`. Vous trouverez un exemple qui montre comment utiliser le mode non gourmand pour permettre à plusieurs blocs de regroupement de partager une source de données plus efficacement sur la page [Guide pratique : utiliser JoinBlock pour lire des données issues de plusieurs sources](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md).
+
 ## <a name="custom-dataflow-blocks"></a>Blocs de flux de données personnalisés  
- Même si la bibliothèque de flux de données TPL fournit de nombreux types de blocs prédéfinis, vous pouvez créer d'autres types de blocs ayant un comportement personnalisé. Implémentez directement les interfaces <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> ou <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>, ou utilisez la méthode <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> pour créer un bloc complexe qui encapsule le comportement des types de blocs existants. Vous trouverez des exemples qui montrent comment implémenter la fonctionnalité de bloc de flux de données personnalisé sur la page [Procédure pas à pas : créer un type de bloc de flux de données personnalisé](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md).  
-  
- [[retour en haut](#top)]  
-  
+ Même si la bibliothèque de flux de données TPL fournit de nombreux types de blocs prédéfinis, vous pouvez créer d'autres types de blocs ayant un comportement personnalisé. Implémentez directement les interfaces <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> ou <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>, ou utilisez la méthode <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> pour créer un bloc complexe qui encapsule le comportement des types de blocs existants. Vous trouverez des exemples qui montrent comment implémenter la fonctionnalité de bloc de flux de données personnalisé sur la page [Procédure pas à pas : créer un type de bloc de flux de données personnalisé](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md).
+
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  

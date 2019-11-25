@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 450463100782f98b6ded0781b1d3c19b0db97534
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: d6d471cd27f35de6325a130e6c909d13cb1dcc85
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151774"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972742"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Options du compilateur C# par ordre alphabétique
 
 Les options du compilateur suivantes sont triées par ordre alphabétique. Pour obtenir la liste par catégorie, consultez [Options du compilateur C# par catégorie](listed-by-category.md).
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[@](response-file-compiler-option.md)|Lit un fichier réponse pour obtenir plus d'options.|
 |[-?](help-compiler-option.md)|Affiche un message d'utilisation dans stdout.|
@@ -48,7 +48,7 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |-incremental|Active la compilation incrémentielle [obsolète].|
 |[-keycontainer](keycontainer-compiler-option.md)|Spécifie un conteneur de clé de nom fort.|
 |[-keyfile](keyfile-compiler-option.md)|Spécifie un fichier de clé de nom fort.|
-|[-langversion:\<string>](langversion-compiler-option.md)|Spécifiez la version de langage : Par défaut, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 ou version ultérieure |
+|[-langversion:\<string>](langversion-compiler-option.md)|Spécifie la version de langage : Default, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 ou Latest |
 |[/lib](lib-compiler-option.md)|Spécifie les répertoires supplémentaires dans lesquels rechercher des références.|
 |[-link](link-compiler-option.md)|Rend les informations de type COM dans les assemblys spécifiés disponibles pour le projet.|
 |[-linkresource](linkresource-compiler-option.md)|Lie la ressource spécifiée à cet assembly.|
@@ -90,5 +90,5 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 
 - [Options du compilateur C#](index.md)
 - [Options du compilateur C# par catégorie](listed-by-category.md)
-- [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Comment définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [\<compiler> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

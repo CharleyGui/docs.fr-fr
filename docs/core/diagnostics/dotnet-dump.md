@@ -4,12 +4,12 @@ description: Installation et utilisation de l’outil en ligne de commande dotne
 author: sdmaclea
 ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: 7eba0cba28f0575be4b374b26e9aca26a70df603
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: bb4f7827f898431c55603b070f5b7a23fe44cba5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321595"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973454"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (`dotnet-dump`)
 
@@ -34,7 +34,7 @@ dotnet-dump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Description
 
-L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vidages Windows et Linux sans qu’un débogueur natif ne soit impliqué comme `lldb` sur Linux. Cet outil est important sur les plateformes telles que Alpine Linux où un @no__t entièrement opérationnel n’est pas disponible. L’outil `dotnet-dump` vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.
+L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vidages Windows et Linux sans qu’un débogueur natif ne soit impliqué comme `lldb` sur Linux. Cet outil est important sur les plateformes telles que Alpine Linux où un `lldb` entièrement opérationnel n’est pas disponible. L’outil `dotnet-dump` vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.
 
 ## <a name="options"></a>Options
 
@@ -75,7 +75,7 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`--type <Heap|Mini>`**
 
-  Spécifie le type passif, qui détermine les types d’informations collectées à partir du processus. Il existe deux types :
+  Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus. Il existe deux types :
 
   - `Heap`-un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.
   - `Mini`-un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.
@@ -88,7 +88,7 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
   S’il n’est pas spécifié :
 
-  - La valeur par défaut est *.\dump_YYYYMMDD_HHMMSS.dmp* sur Windows.
+  - La valeur par défaut est *. \ dump_YYYYMMDD_HHMMSS. dmp* sur Windows.
   - La valeur par défaut est *./core_YYYYMMDD_HHMMSS* sur Linux.
 
   AAAAMMJJ correspond à année/mois/jour et HHMMSS à heure/minute/seconde.
@@ -218,7 +218,7 @@ HResult: 80131604
 
 ## <a name="special-instructions-for-docker"></a>Instructions spéciales pour l’ancrage
 
-Si vous exécutez dans le cadre de l’arrimeur, la collection de vidages requiert des fonctionnalités `SYS_PTRACE` (`--cap-add=SYS_PTRACE` ou `--privileged`).
+Si vous exécutez dans le cadre de l’arrimeur, la collection de vidages requiert `SYS_PTRACE` fonctionnalités (`--cap-add=SYS_PTRACE` ou `--privileged`).
 
 Sur les images de la station d’accueil Linux Microsoft .NET Core SDK, certaines commandes `dotnet-dump` peuvent lever l’exception suivante :
 

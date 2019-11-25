@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9e40f93be7f2dad4a80a4f4d23f61f3c93061751
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 103d668dd7a7436fd1acdccdc0afc2431ed8372a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874937"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975006"
 ---
 # <a name="code-contracts"></a>Contrats de code
 
@@ -24,19 +24,19 @@ Les contrats de code incluent des classes pour le marquage de votre code, un ana
 
 Les contrats de code offrent les avantages suivants :
 
-- Tests améliorés : Contrats de code offrent la vérification de contrat statique, la vérification de runtime et la génération de documentation.
+- Tests améliorés : les contrats de code permettent la vérification de contrat statique, la vérification au moment de l'exécution et la génération de documentation.
 
-- Outils de test automatique : Vous pouvez utiliser des contrats de code pour générer des tests unitaires plus explicites en filtrant les arguments de test sans signification qui ne remplissent pas les conditions préalables.
+- Outils de test automatique : vous pouvez utiliser les contrats de code pour générer des tests unitaires plus explicites en filtrant les arguments de test sans signification qui ne remplissent pas les conditions préalables.
 
-- Vérification statique : Le vérificateur statique peut déterminer s’il existe des violations de contrat sans exécuter le programme. Il recherche des contrats implicites, tels que des déréférencements et des limites de tableau null, ainsi que des contrats explicites.
+- Vérification statique : le vérificateur statique peut déterminer s'il existe des violations de contrat sans exécuter le programme. Il recherche des contrats implicites, tels que des déréférencements et des limites de tableau null, ainsi que des contrats explicites.
 
-- Documentation de référence : Le Générateur de documentation complète des fichiers de documentation XML existants avec les informations de contrat. Des feuilles de style peuvent également être utilisées avec [Sandcastle](https://github.com/EWSoftware/SHFB) pour ajouter des sections de contrat dans les pages de documentation générées.
+- Documentation de référence : le générateur de documentation complète les fichiers de documentation XML existants avec des informations de contrat. Des feuilles de style peuvent également être utilisées avec [Sandcastle](https://github.com/EWSoftware/SHFB) pour ajouter des sections de contrat dans les pages de documentation générées.
 
 Tous les langages .NET Framework peuvent directement utiliser les contrats, sans que vous ayez besoin de développer un analyseur ou compilateur spécial. Un complément Visual Studio vous permet de spécifier le niveau d'analyse de contrats de code à effectuer. Les analyseurs peuvent vérifier que les contrats sont correctement écrits (contrôle de type et résolution de noms), et créer un formulaire compilé des contrats au format MSIL (Microsoft Intermediate Language). La création de contrats dans Visual Studio vous permet de tirer parti de la fonctionnalité IntelliSense standard fournie par l'outil.
 
 La plupart des méthodes dans la classe de contrat sont compilées de façon conditionnelle, à savoir que le compilateur effectue des appels à ces méthodes uniquement si vous définissez le symbole spécial CONTRACTS_FULL à l'aide de la directive `#define`. Avec CONTRACTS_FULL, vous pouvez écrire des contrats dans votre code sans utiliser de directives `#ifdef`, et générer ainsi différentes builds, avec et sans contrats.
 
-Pour télécharger les outils et obtenir des instructions détaillées sur l’utilisation des contrats de code, consultez [Contrats de code](https://go.microsoft.com/fwlink/?LinkId=152461) sur le site web MSDN DevLabs.
+Pour obtenir des outils et des instructions détaillées sur l’utilisation des contrats de code, consultez [contrats de code](https://marketplace.visualstudio.com/items?itemName=RiSEResearchinSoftwareEngineering.CodeContractsforNET) sur le site Visual Studio Marketplace.
 
 ## <a name="preconditions"></a>Conditions préalables
 
@@ -69,7 +69,7 @@ if (x == null) throw new ...
 Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ```
 
-Notez que la condition du test précédent est une condition préalable négative (la condition préalable réelle serait `x != null`). Une condition préalable négative est très restreinte : Elle doit être écrite comme indiqué dans l’exemple précédent ; Autrement dit, il ne doit pas contenir `else` clauses et le corps de la `then` clause doit être un seul `throw` instruction. Le test `if` est soumis aux règles de pureté et à celles de visibilité (voir [Indications relatives à l’utilisation](#usage_guidelines)), mais l’expression `throw` est soumise uniquement aux règles de pureté. Toutefois, le type de l'exception levée doit être aussi visible que la méthode dans laquelle le contrat se produit.
+Notez que la condition du test précédent est une condition préalable négative (La condition préalable réelle serait `x != null`.) Une condition préalable négative est très restreinte : elle doit être écrite comme indiqué dans l’exemple précédent. autrement dit, il ne doit pas contenir de clauses `else`, et le corps de la clause `then` doit être une seule instruction `throw`. Le test `if` est soumis aux règles de pureté et à celles de visibilité (voir [Indications relatives à l’utilisation](#usage_guidelines)), mais l’expression `throw` est soumise uniquement aux règles de pureté. Toutefois, le type de l'exception levée doit être aussi visible que la méthode dans laquelle le contrat se produit.
 
 ## <a name="postconditions"></a>Postconditions
 
@@ -101,11 +101,11 @@ Certains types d'exception sont difficiles à utiliser dans une post-condition e
 
 Les méthodes suivantes peuvent être utilisées uniquement au sein de post-conditions :
 
-- Vous pouvez faire référence aux valeurs de retour de la méthode dans les post-conditions à l'aide de l'expression `Contract.Result<T>()`, où `T` est remplacé par le type de retour de la méthode. Si le compilateur ne peut pas déduire le type, vous devez le fournir explicitement. Par exemple, le C# compilateur ne peut pas déduire les types pour les méthodes qui ne prennent pas d’arguments, elle nécessite la post-condition suivante : `Contract.Ensures(0 <Contract.Result<int>())` Les méthodes avec un type de retour `void` ne peut pas faire référence à `Contract.Result<T>()` dans leurs post-conditions.
+- Vous pouvez faire référence aux valeurs de retour de la méthode dans les post-conditions à l'aide de l'expression `Contract.Result<T>()`, où `T` est remplacé par le type de retour de la méthode. Si le compilateur ne peut pas déduire le type, vous devez le fournir explicitement. Par exemple, le compilateur C# ne peut pas déduire les types des méthodes qui ne prennent pas d'arguments. Il nécessite donc la post-condition suivante : `Contract.Ensures(0 <Contract.Result<int>())`. Les méthodes possédant le type de retour `void` ne peuvent pas faire référence à `Contract.Result<T>()` dans leurs post-conditions.
 
-- Une valeur de « pré-état » dans une post-condition fait référence à la valeur d'une expression au début d'une méthode ou d'une propriété. Elle utilise l'expression `Contract.OldValue<T>(e)`, où `T` est le type de `e`. Vous pouvez omettre l'argument de type générique chaque fois que le compilateur est en mesure de déduire son type (par exemple, le compilateur C# déduit toujours le type quand un argument est utilisé). Il existe plusieurs restrictions sur ce qui peut se produire dans `e` et les contextes dans lesquels une expression ancienne peut s'afficher. Une expression ancienne ne peut pas contenir une autre expression ancienne. Encore plus important, une expression ancienne doit faire référence à une valeur qui a existé dans l'état de condition préalable de la méthode. En d'autres termes, il doit s'agir d'une expression qui peut être évaluée tant que la condition préalable de la méthode est `true`. Voici plusieurs instances de cette règle :
+- Une valeur de « pré-état » dans une post-condition fait référence à la valeur d'une expression au début d'une méthode ou d'une propriété. Elle utilise l'expression `Contract.OldValue<T>(e)`, où `T` est le type de `e`. Vous pouvez omettre l'argument de type générique chaque fois que le compilateur est en mesure de déduire son type (Par exemple, le C# compilateur déduit toujours le type, car il accepte un argument.) Il existe plusieurs restrictions sur ce qui peut se produire dans `e` et les contextes dans lesquels une expression ancienne peut apparaître. Une expression ancienne ne peut pas contenir une autre expression ancienne. Encore plus important, une expression ancienne doit faire référence à une valeur qui a existé dans l'état de condition préalable de la méthode. En d'autres termes, il doit s'agir d'une expression qui peut être évaluée tant que la condition préalable de la méthode est `true`. Voici plusieurs instances de cette règle :
 
-  - La valeur doit exister dans l'état de condition préalable de la méthode. Pour référencer un champ sur un objet, les conditions préalables doivent garantir que l’objet est toujours non null.
+  - La valeur doit exister dans l'état de condition préalable de la méthode. Pour pouvoir référencer un champ sur un objet, les conditions préalables doivent garantir que l’objet est toujours non null.
 
   - Vous ne pouvez pas faire référence à la valeur de retour de la méthode dans une expression ancienne :
 
@@ -165,7 +165,7 @@ protected void ObjectInvariant ()
 }
 ```
 
-Les invariants sont définis de façon conditionnelle par le symbole de préprocesseur CONTRACTS_FULL. Ils sont vérifiés au moment de l'exécution à la fin de chaque méthode publique. Si un invariant spécifie une méthode publique dans la même classe, la vérification d'invariant prévue normalement à la fin de cette méthode publique est désactivée. À la place, la vérification se produit uniquement à la fin de l'appel de méthode le plus à l'extérieur de cette classe. Cela se produit également si la classe est à nouveau entrée à cause d'un appel à une méthode sur une autre classe. Ils ne sont pas vérifiés pour un finaliseur d’objet et un <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implémentation.
+Les invariants sont définis de façon conditionnelle par le symbole de préprocesseur CONTRACTS_FULL. Ils sont vérifiés au moment de l'exécution à la fin de chaque méthode publique. Si un invariant spécifie une méthode publique dans la même classe, la vérification d'invariant prévue normalement à la fin de cette méthode publique est désactivée. À la place, la vérification se produit uniquement à la fin de l'appel de méthode le plus à l'extérieur de cette classe. Cela se produit également si la classe est à nouveau entrée à cause d'un appel à une méthode sur une autre classe. Les invariants ne sont pas vérifiés pour un finaliseur d’objet et une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>.
 
 <a name="usage_guidelines"></a>
 

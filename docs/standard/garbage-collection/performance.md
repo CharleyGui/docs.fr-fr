@@ -6,48 +6,30 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 833bf46b973988196fea37da18bac9923ecd6dcc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d40091420c29c86f2ebb25f14c17ae4f7a1c44a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141369"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974765"
 ---
 # <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
 
-<a name="top"></a> Cette rubrique décrit les problèmes liés au garbage collection et à l’utilisation de la mémoire. Elle apporte des solutions aux problèmes concernant les tas managés et explique comment réduire l’effet du garbage collection sur vos applications. Chaque problème contient des liens vers des procédures à suivre pour résoudre le problème.
-
-Cette rubrique contient les sections suivantes :
-
-- [Outils d'analyse des performances](#performance_analysis_tools)
-
-- [Résolution des problèmes de performances](#troubleshooting_performance_issues)
-
-- [Instructions de dépannage](#troubleshooting_guidelines)
-
-- [Procédures de contrôle des performances](#performance_check_procedures)
-
-<a name="performance_analysis_tools"></a>
+Cette rubrique décrit les problèmes liés au garbage collection et à l'utilisation de la mémoire. Elle apporte des solutions aux problèmes concernant les tas managés et explique comment réduire l’effet du garbage collection sur vos applications. Chaque problème contient des liens vers des procédures à suivre pour résoudre le problème.
 
 ## <a name="performance-analysis-tools"></a>Outils d'analyse des performances
 
-Les sections suivantes décrivent les outils disponibles pour analyser les problèmes liés à l’utilisation de la mémoire et au garbage collection. Les [procédures](#performance_check_procedures) fournies plus loin dans cette rubrique font référence à ces outils.
-
-<a name="perf_counters"></a>
+Les sections suivantes décrivent les outils disponibles pour analyser les problèmes liés à l’utilisation de la mémoire et au garbage collection. Les [procédures](#performance-check-procedures) fournies plus loin dans cette rubrique font référence à ces outils.
 
 ### <a name="memory-performance-counters"></a>Compteurs de performance pour la mémoire
 
 Vous pouvez utiliser les compteurs de performances pour collecter des données sur les performances. Pour obtenir des instructions, voir [Génération de profils d'exécution](../../../docs/framework/debug-trace-profile/runtime-profiling.md). La catégorie Mémoire CLR .NET des compteurs de performances, telle qu'elle est décrite dans [Compteurs de performances dans le .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md), fournit des informations sur le garbage collector.
-
-<a name="sos"></a>
 
 ### <a name="debugging-with-sos"></a>Débogage avec l'extension SOS
 
 Vous pouvez utiliser le [Débogueur Windows (WinDbg)](/windows-hardware/drivers/debugger/index) pour inspecter les objets du tas managé.
 
 Pour installer WinDbg, installez les outils de débogage pour Windows à partir de la page [Outils de débogage pour Windows](/windows-hardware/drivers/debugger/debugger-download-tools).
-
-<a name="etw"></a>
 
 ### <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection
 
@@ -61,8 +43,6 @@ Le suivi d'événements pour Windows (ETW) est un système de suivi qui complèt
 
 La journalisation des événements ETW est efficace et ne masque pas les problèmes de performances liés au garbage collection. Un processus peut fournir ses propres événements conjointement aux événements ETW. Quand ils sont journalisés, les événements d'application et les événements de garbage collection peuvent être corrélés pour déterminer quand et comment les problèmes de tas se produisent. Par exemple, une application serveur peut fournir des événements au début et à la fin d'une demande client.
 
-<a name="profiling_api"></a>
-
 ### <a name="the-profiling-api"></a>L'API de profilage
 
 Les interfaces de profilage du common language runtime (CLR) fournissent des informations détaillées sur les objets qui ont été affectés pendant le garbage collection. Un profileur peut être informé quand un garbage collection commence et se termine. Il peut fournir des rapports sur les objets du tas managé, y compris une identification des objets au cours de chaque génération. Pour plus d'informations, voir [Vue d'ensemble du profilage](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md).
@@ -72,10 +52,6 @@ Les profileurs peuvent fournir des informations complètes. Toutefois, les profi
 ### <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application
 
 À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
-
-[Retour au début](#top)
-
-<a name="troubleshooting_performance_issues"></a>
 
 ## <a name="troubleshooting-performance-issues"></a>Résolution des problèmes de performances
 
@@ -213,10 +189,6 @@ La durée d’une collection est principalement un facteur du nombre d’objets 
 |------------------------|
 |[Déterminez si l’utilisation élevée du processeur est provoquée par le garbage collection.](#HighCPU)<br /><br /> [Définissez un point d’arrêt à la fin du garbage collection.](#GenBreak)|
 
-[Retour au début](#top)
-
-<a name="troubleshooting_guidelines"></a>
-
 ## <a name="troubleshooting-guidelines"></a>Instructions de dépannage
 
 Cette section comporte les instructions que vous devez prendre en compte avant de commencer vos recherches.
@@ -258,10 +230,6 @@ La procédure suivante décrit comment définir un point d'arrêt pour mesurer l
   Cette commande force un arrêt si **RestartEE** est exécuté après la récupération des objets de génération 2 pour le garbage collection.
 
   Dans le garbage collection pour serveur, un seul thread appelle **RestartEE**. Ainsi, le point d’arrêt se produit une seule fois pendant un garbage collection de génération 2.
-
-[Retour au début](#top)
-
-<a name="performance_check_procedures"></a>
 
 ## <a name="performance-check-procedures"></a>Procédures de contrôle des performances
 

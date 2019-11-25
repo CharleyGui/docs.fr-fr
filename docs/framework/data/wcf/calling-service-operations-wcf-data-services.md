@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: 21ae73054935373607909902e0b3e82ba5146f43
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a64a09195101cd4b1ec3c6f990dd09d54466aea0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791143"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975414"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Appel des opérations de service (WCF Data Services)
-[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] définit les opérations de service d'un service de données. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vous permet de définir ces opérations sous forme de méthodes dans le service de données. Comme les autres ressources du service de données, ces opérations de service sont adressées via les URI. Une opération de service peut retourner des collections de types d’entité, des instances uniques de type d’entité et des types primitifs, comme des entiers et des chaînes. Une opération de service peut également retourner `null` (`Nothing` en Visual Basic). La bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] peut être utilisée pour accéder aux opérations de service qui prennent en charge les requêtes HTTP GET. Ces types d'opérations de service sont définis en tant que méthodes ayant <xref:System.ServiceModel.Web.WebGetAttribute> appliqué. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
+Le Open Data Protocol (OData) définit des opérations de service pour un service de données. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vous permet de définir ces opérations sous forme de méthodes dans le service de données. Comme les autres ressources du service de données, ces opérations de service sont adressées via les URI. Une opération de service peut retourner des collections de types d’entité, des instances uniques de type d’entité et des types primitifs, comme des entiers et des chaînes. Une opération de service peut également retourner `null` (`Nothing` en Visual Basic). La bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] peut être utilisée pour accéder aux opérations de service qui prennent en charge les requêtes HTTP GET. Ces types d'opérations de service sont définis en tant que méthodes ayant <xref:System.ServiceModel.Web.WebGetAttribute> appliqué. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
   
- Les opérations de service sont exposées dans les métadonnées retournées par un service de données qui implémente [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Dans les métadonnées, les opérations de service sont représentées sous la forme d'éléments `FunctionImport`. Lors de la génération du <xref:System.Data.Services.Client.DataServiceContext>fortement typé, les outils Ajouter une référence de service et DataSvcUtil.exe ignorent cet élément. De ce fait, vous ne trouverez pas de méthode dans le contexte pouvant être utilisée pour appeler une opération de service directement. Toutefois, vous pouvez encore utiliser le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour appeler les opérations de service de l'une des deux façons suivantes :  
+ Les opérations de service sont exposées dans les métadonnées retournées par un service de données qui implémente le OData. Dans les métadonnées, les opérations de service sont représentées sous la forme d'éléments `FunctionImport`. Lors de la génération du <xref:System.Data.Services.Client.DataServiceContext>fortement typé, les outils Ajouter une référence de service et DataSvcUtil.exe ignorent cet élément. De ce fait, vous ne trouverez pas de méthode dans le contexte pouvant être utilisée pour appeler une opération de service directement. Toutefois, vous pouvez encore utiliser le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour appeler les opérations de service de l'une des deux façons suivantes :  
   
 - En appelant la méthode <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> sur <xref:System.Data.Services.Client.DataServiceContext> et en fournissant l'URI de l'opération de service, ainsi que tous paramètres. Cette méthode est utilisée pour appeler toute opération de service GET.  
   
@@ -24,7 +24,7 @@ ms.locfileid: "70791143"
 ## <a name="considerations-for-calling-service-operations"></a>Considérations sur l'appel des opérations de service  
  Les considérations suivantes s'appliquent lorsque vous utilisez le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour appeler des opérations de service.  
   
-- Lorsque vous accédez au service de données de façon asynchrone, vous devez utiliser les <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> méthodes asynchrones / / <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> équivalentes <xref:System.Data.Services.Client.DataServiceContext> sur <xref:System.Data.Services.Client.DataServiceQuery%601>ou sur les <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> méthodes sur.  
+- Lorsque vous accédez au service de données de façon asynchrone, vous devez utiliser les méthodes d' <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A>asynchrone équivalentes /<xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> sur <xref:System.Data.Services.Client.DataServiceContext> ou les méthodes <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A>/<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> sur <xref:System.Data.Services.Client.DataServiceQuery%601>.  
   
 - La bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ne peut pas matérialiser les résultats d'une opération de service qui retourne une collection de types primitifs.  
   
@@ -34,27 +34,27 @@ ms.locfileid: "70791143"
   
 - Envisagez de créer une méthode d’extension pour la classe partielle fortement typée <xref:System.Data.Services.Client.DataServiceContext>, générée par les outils, qui utilise la méthode <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> ou <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> pour appeler une opération de service. Cela vous permet d'appeler les opérations de service directement à partir du contexte. Pour plus d’informations, consultez le billet de blog [opérations de service et le Client WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=215668).  
   
-- Lorsque vous utilisez <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour appeler une opération de service, la bibliothèque cliente place automatiquement dans une séquence <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> d’échappement les caractères fournis au en effectuant un encodage en pourcentage des caractères réservés, tels que l’esperluette (&) et l’échappement des guillemets simples dans celles. Toutefois, lorsque vous appelez l’une des méthodes *Execute* pour appeler une opération de service, vous devez penser à effectuer cette séquence d’échappement de toutes les valeurs de chaîne fournies par l’utilisateur. Les guillemets simples des URI sont placés dans une séquence d'échappement comme guillemets doubles.  
+- Lorsque vous utilisez <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour appeler une opération de service, la bibliothèque cliente place automatiquement dans une séquence d’échappement les caractères fournis au <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> en effectuant un encodage en pourcentage des caractères réservés, tels que l’esperluette (&) et l’échappement des guillemets simples dans les chaînes. Toutefois, lorsque vous appelez l’une des méthodes *Execute* pour appeler une opération de service, vous devez penser à effectuer cette séquence d’échappement de toutes les valeurs de chaîne fournies par l’utilisateur. Les guillemets simples des URI sont placés dans une séquence d'échappement comme guillemets doubles.  
   
 ## <a name="examples-of-calling-service-operations"></a>Exemples d'appel d'opérations de service  
  Cette section contient les exemples suivants sur la façon d'appeler des opérations de service à l'aide de la bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] :  
   
-- [Appel d'&lt;Execute T&gt; pour retourner une collection d’entités](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
+- [Appel d’EXECUTE&lt;T&gt; pour retourner une collection d’entités](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
   
-- [Utilisation de&lt;CreateQuery&gt; T pour retourner une collection d’entités](calling-service-operations-wcf-data-services.md#CreateQueryIQueryable)  
+- [Utilisation de CreateQuery&lt;T&gt; pour retourner une collection d’entités](calling-service-operations-wcf-data-services.md#CreateQueryIQueryable)  
   
-- [Appel d'&lt;Execute T&gt; pour retourner une seule entité](calling-service-operations-wcf-data-services.md#ExecuteSingleEntity)  
+- [Appel d’EXECUTE&lt;T&gt; pour retourner une seule entité](calling-service-operations-wcf-data-services.md#ExecuteSingleEntity)  
   
-- [Appel d'&lt;Execute T&gt; pour retourner une collection de valeurs primitives](calling-service-operations-wcf-data-services.md#ExecutePrimitiveCollection)  
+- [Appel d’EXECUTE&lt;T&gt; pour retourner une collection de valeurs primitives](calling-service-operations-wcf-data-services.md#ExecutePrimitiveCollection)  
   
-- [Appel d'&lt;Execute T&gt; pour retourner une seule valeur primitive](calling-service-operations-wcf-data-services.md#ExecutePrimitiveValue)  
+- [Appel d’EXECUTE&lt;T&gt; pour retourner une seule valeur primitive](calling-service-operations-wcf-data-services.md#ExecutePrimitiveValue)  
   
 - [Appel d’une opération de service qui ne retourne aucune donnée](calling-service-operations-wcf-data-services.md#ExecuteVoid)  
   
 - [Appel d’une opération de service de façon asynchrone](calling-service-operations-wcf-data-services.md#ExecuteAsync)  
   
 <a name="ExecuteIQueryable"></a>   
-### <a name="calling-executet-to-return-a-collection-of-entities"></a>Appel d'\<Execute T > pour retourner une collection d’entités  
+### <a name="calling-executet-to-return-a-collection-of-entities"></a>Appel d’EXECUTE\<T > pour retourner une collection d’entités  
  L'exemple suivant appelle une opération de service nommée GetOrdersByCity, qui accepte un paramètre de chaîne `city` et retourne un <xref:System.Linq.IQueryable%601> :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationiqueryable)]
@@ -63,7 +63,7 @@ ms.locfileid: "70791143"
  Dans cet exemple, l’opération de service retourne une collection d’objets `Order` avec les objets `Order_Detail` associés.  
   
 <a name="CreateQueryIQueryable"></a>   
-### <a name="using-createqueryt-to-return-a-collection-of-entities"></a>Utilisation de\<CreateQuery T > pour retourner une collection d’entités  
+### <a name="using-createqueryt-to-return-a-collection-of-entities"></a>Utilisation de CreateQuery\<T > pour retourner une collection d’entités  
  L'exemple suivant utilise <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> pour retourner un <xref:System.Data.Services.Client.DataServiceQuery%601>, utilisé pour appeler la même opération de service GetOrdersByCity :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationcreatequery)]
@@ -72,7 +72,7 @@ ms.locfileid: "70791143"
  Dans cet exemple, la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> est utilisée pour ajouter le paramètre à la requête et la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> est utilisée pour inclure les objets Order_Details associés dans les résultats.  
   
 <a name="ExecuteSingleEntity"></a>   
-### <a name="calling-executet-to-return-a-single-entity"></a>Appel d'\<Execute T > pour retourner une seule entité  
+### <a name="calling-executet-to-return-a-single-entity"></a>Appel d’EXECUTE\<T > pour retourner une seule entité  
  L'exemple suivant appelle une opération de service nommée GetNewestOrder, qui retourne une seule entité Order :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleentity)]
@@ -81,13 +81,13 @@ ms.locfileid: "70791143"
  Dans cet exemple, la méthode <xref:System.Linq.Enumerable.FirstOrDefault%2A> permet de demander l'exécution d'une seule entité Order.  
   
 <a name="ExecutePrimitiveCollection"></a>   
-### <a name="calling-executet-to-return-a-collection-of-primitive-values"></a>Appel d'\<Execute T > pour retourner une collection de valeurs primitives  
+### <a name="calling-executet-to-return-a-collection-of-primitive-values"></a>Appel d’EXECUTE\<T > pour retourner une collection de valeurs primitives  
  L'exemple suivant appelle une opération de service qui retourne une collection de valeurs de chaîne :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationEnumString](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationenumstring)]  
   
 <a name="ExecutePrimitiveValue"></a>   
-### <a name="calling-executet-to-return-a-single-primitive-value"></a>Appel d'\<Execute T > pour retourner une seule valeur primitive  
+### <a name="calling-executet-to-return-a-single-primitive-value"></a>Appel d’EXECUTE\<T > pour retourner une seule valeur primitive  
  L'exemple suivant appelle une opération de service qui retourne une valeur de chaîne unique :  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleint)]

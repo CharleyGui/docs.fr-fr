@@ -1,18 +1,18 @@
 ---
-title: 'Comment : utiliser des tableaux et des variables locales implicitement typés dans un guide de C# programmation d’expression de requête'
+title: Comment utiliser des variables locales et des tableaux implicitement typés dans un guide de C# programmation d’expression de requête
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: 3cb47f9e80e1fc067a8bac860aa06f3e1860d33d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c6022aaa4c37bc0c11c09375d3637d8287fce61a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419319"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970438"
 ---
-# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Comment : utiliser des tableaux et des variables locales implicitement typés dans une expression de requête (Guide de programmation C#)
+# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Comment utiliser des variables locales et des tableaux implicitement typés dans une expression deC# requête (Guide de programmation)
 Vous pouvez utiliser des variables locales implicitement typées chaque fois que vous voulez que le compilateur détermine le type d’une variable locale. Vous devez utiliser des variables locales implicitement typées pour stocker des types anonymes, qui sont souvent utilisés dans les expressions de requête. Les exemples suivants illustrent des utilisations facultatives et obligatoires de variables locales implicitement typées dans des requêtes.  
   
  Les variables locales implicitement typées sont déclarées à l’aide du mot clé contextuel [var](../../language-reference/keywords/var.md). Pour plus d’informations, consultez [Variables locales implicitement typées](./implicitly-typed-local-variables.md) et [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md).  

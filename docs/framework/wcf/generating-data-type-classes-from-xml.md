@@ -2,12 +2,12 @@
 title: Génération de classes de type de données à partir de XML
 ms.date: 03/30/2017
 ms.assetid: e4e5e4e8-527f-44d1-92fa-8904a08784ea
-ms.openlocfilehash: bf5596211e78842153b7406273626a7fa3c3aeea
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 977b12b5c61c196a4f033361d37785e4ed0af73a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990288"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975854"
 ---
 # <a name="generating-data-type-classes-from-xml"></a>Génération de classes de type de données à partir de XML
 .NET Framework 4,5 comprend une nouvelle fonctionnalité qui permet de générer des classes de type de données à partir de XML. Cette rubrique explique comment générer automatiquement des types de données pour le flux RSS du blog .NET.  
@@ -28,13 +28,13 @@ ms.locfileid: "70990288"
   
 3. Sélectionnez **Edition**, **Collage spécial**, **coller XML en tant que classes**.  
   
-4. Les classes `link`appelées `rssChannel`, `rss`,, `rssChannelImage` et`rssChannelItem` sontcrééesaveclesmembresnécessairespouraccéderauxéléments`rssChannelItemGuid` dans le flux RSS.  
+4. Les classes appelées `link`, `rss`, `rssChannel`, `rssChannelImage`, `rssChannelItem` et `rssChannelItemGuid` sont créées avec les membres nécessaires pour accéder aux éléments dans le flux RSS.  
   
 ### <a name="using-the-generated-classes"></a>Utilisation des classes générées  
   
 1. Une fois les classes générées, elles peuvent être utilisées dans le code comme toute autre classe. L'exemple suivant retourne une nouvelle instance de la classe `rssChannelImage`.  
   
-    ```csharp  
+    ```csharp
     var channelImage = new rssChannelImage()   
     {   
         title = "MyImage",   

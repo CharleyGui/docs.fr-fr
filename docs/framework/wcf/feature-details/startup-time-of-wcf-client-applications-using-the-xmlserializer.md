@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : améliorer le délai de démarrage des applications clientes WCF à l’aide de XmlSerializer'
+title: "Comment : améliorer le temps de démarrage des applications clientes WCF à l'aide de XmlSerializer"
 ms.date: 03/30/2017
 ms.assetid: 21093451-0bc3-4b1a-9a9d-05f7f71fa7d0
-ms.openlocfilehash: f8766a5dfa2bcfc715a0f0e21274f7c6ac04ad15
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca15d710a30586135f0d030e155b09b63a22ee45
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944891"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976066"
 ---
-# <a name="how-to-improve-the-startup-time-of-wcf-client-applications-using-the-xmlserializer"></a>Procédure : améliorer le délai de démarrage des applications clientes WCF à l’aide de XmlSerializer
+# <a name="how-to-improve-the-startup-time-of-wcf-client-applications-using-the-xmlserializer"></a>Comment : améliorer le temps de démarrage des applications clientes WCF à l'aide de XmlSerializer
 Les applications clientes et de services qui utilisent des types de données sérialisables à l'aide de <xref:System.Xml.Serialization.XmlSerializer> génèrent et compilent le code de sérialisation de ces types de données lors de l'exécution, ce qui peut provoquer des performances de démarrage lentes.  
   
 > [!NOTE]
@@ -25,7 +25,7 @@ Les applications clientes et de services qui utilisent des types de données sé
   
 3. À l'invite de commandes, lancez l'outil Svcutil.exe à l'aide du format suivant.  
   
-    ```  
+    ```console  
     svcutil.exe /t:xmlSerializer  <assemblyPath>*  
     ```  
   
@@ -51,17 +51,17 @@ Les applications clientes et de services qui utilisent des types de données sé
   
 3. Générez l’application cliente.  
   
-4. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour créer un fichier serializer *. cs* pré-généré à l’aide de la commande:  
+4. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour créer un fichier serializer *. cs* pré-généré à l’aide de la commande :  
   
-    ```  
+    ```console  
     svcutil.exe /t:xmlSerializer  <assemblyPath>*  
     ```  
   
      L’argument assemblyPath spécifie le chemin d’accès à l’assembly du client WCF.  
   
-     Par exemple:  
+     Par exemple :  
   
-    ```  
+    ```console  
     svcutil.exe /t:xmlSerializer wcfclient.exe  
     ```  
   
@@ -69,9 +69,9 @@ Les applications clientes et de services qui utilisent des types de données sé
   
 5. Compilez l’assembly de sérialisation préalablement généré.  
   
-     En fonction de l’exemple de l’étape précédente, la commande compile est la suivante:  
+     En fonction de l’exemple de l’étape précédente, la commande compile est la suivante :  
   
-    ```  
+    ```console  
     csc /r:wcfclient.exe /out:WCFClient.XmlSerializers.dll /t:library WCFClient.XmlSerializers.dll.cs  
     ```  
   
@@ -82,7 +82,7 @@ Les applications clientes et de services qui utilisent des types de données sé
 ## <a name="example"></a>Exemple  
  La commande suivante génère des types de sérialisation pour les types `XmlSerializer` que les contrats de service de l'assembly utilisent.  
   
-```  
+```console  
 svcutil /t:xmlserializer myContractLibrary.exe  
 ```  
   

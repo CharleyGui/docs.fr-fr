@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: 945d4b060dd9d08f6f16013b27980f66e804ad45
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 35b39da0b15c41b7b2c7a6567bea5dca3fb430e7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739227"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970318"
 ---
 # <a name="structs-c-programming-guide"></a>Structures (Guide de programmation C#)
 
@@ -39,4 +39,4 @@ Les structs partagent quasiment la même syntaxe que les classes. Le nom du stru
 - [Types valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md)
 - [Noms d’identificateur](../inside-a-program/identifier-names.md)
 - [Utilisation de structs](using-structs.md)
-- [Comment : différencier le passage d’un struct et le passage d’une référence de classe à une méthode](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)
+- [Comment connaître la différence entre le passage d’un struct et le passage d’une référence de classe à une méthode](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)

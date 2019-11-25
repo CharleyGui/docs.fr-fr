@@ -1,19 +1,19 @@
 ---
-title: 'Tutoriel : Analyser le sentiment-classification binaire'
+title: 'Didacticiel : analyser le sentiment-classification binaire'
 description: Ce didacticiel vous montre comment créer une application Razor Pages qui classe les sentiments à partir de commentaires de site Web et prend les mesures appropriées. Le classifieur de sentiment binaire utilise le générateur de modèles dans Visual Studio.
 ms.date: 10/08/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4a97fb70caafd7b0003830259ddbb0ec72a2ca8a
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 5e5b60a53db70b33ed798bcf33497b74911ba727
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180269"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974796"
 ---
-# <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Tutoriel : Analyser les sentiments des commentaires de site Web dans une application Web à l’aide du générateur de modèles ML.NET
+# <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Didacticiel : analyser le sentiment de commentaires de site Web dans une application Web à l’aide du générateur de modèles ML.NET
 
 Découvrez comment analyser les sentiments de commentaires en temps réel dans une application Web.
 
@@ -117,8 +117,8 @@ Deux projets sont créés à la suite du processus d’entraînement.
 
     Les projets suivants doivent apparaître dans le **Explorateur de solutions**:
 
-    - *SentimentRazorML. ConsoleApp*: Application console .NET Core qui contient l’apprentissage du modèle et le code de prédiction.
-    - *SentimentRazorML. Model*: Bibliothèque de classes .NET Standard contenant les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie ainsi que la version enregistrée du modèle le plus performant au cours de l’apprentissage.
+    - *SentimentRazorML. ConsoleApp*: application console .net core qui contient l’apprentissage du modèle et le code de prédiction.
+    - *SentimentRazorML. Model*: bibliothèque de classes .NET standard contenant les modèles de données qui définissent le schéma des données de modèle d’entrée et de sortie ainsi que la version enregistrée du modèle le plus performant au cours de l’apprentissage.
 
     Pour ce didacticiel, seul le projet *SentimentRazorML. Model* est utilisé, car les prédictions sont effectuées dans l’application Web *SentimentRazor* plutôt que dans la console. Bien que *SentimentRazorML. ConsoleApp* ne soit pas utilisé pour le calcul de score, il peut être utilisé pour reformer le modèle à l’aide de nouvelles données ultérieurement. Toutefois, la reformation n’entre pas dans le cadre de ce didacticiel.
 
@@ -160,7 +160,7 @@ Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`]
 
         string fullPath = Path.Combine(assemblyFolderPath, relativePath);
         return fullPath;
-    }    
+    }
     ```
 
 1. Utilisez la méthode `GetAbsolutePath` dans le constructeur de classe `Startup` pour définir le `_modelPath`.
@@ -169,7 +169,7 @@ Pour effectuer une prédiction unique, vous devez créer un [`PredictionEngine`]
     _modelPath = GetAbsolutePath("MLModel.zip");
     ```
 
-1. Configurez la `PredictionEnginePool` pour votre application dans la méthode `ConfigureServices` :
+1. Configurez les `PredictionEnginePool` pour votre application dans la méthode `ConfigureServices` :
 
     ```csharp
     services.AddPredictionEnginePool<ModelInput, ModelOutput>()
@@ -201,10 +201,10 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
     public IndexModel(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
     {
         _predictionEnginePool = predictionEnginePool;
-    }    
+    }
     ```
 
-1. Créez un gestionnaire de méthode qui utilise le `PredictionEnginePool` pour faire des prédictions à partir de l’entrée utilisateur reçue de la page Web.
+1. Créez un gestionnaire de méthode qui utilise la `PredictionEnginePool` pour faire des prédictions à partir de l’entrée utilisateur reçue de la page Web.
 
     1. Sous la méthode `OnGet`, créez une nouvelle méthode appelée `OnGetAnalyzeSentiment`
 
@@ -233,7 +233,7 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
         var prediction = _predictionEnginePool.Predict(input);
         ```
 
-    1. Convertissez la valeur prédites `bool` en toxique ou non toxique avec le code suivant.
+    1. Convertissez la valeur de `bool` prédit en toxique ou non toxique avec le code suivant.
 
         ```csharp
         var sentiment = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
@@ -247,7 +247,7 @@ Les prédictions sont effectuées à l’intérieur de la page principale de l�
 
 ### <a name="configure-the-web-page"></a>Configurer la page Web
 
-Les résultats retournés par la `OnGetAnalyzeSentiment` seront affichés dynamiquement sur la page Web de `Index`.
+Les résultats retournés par la `OnGetAnalyzeSentiment` seront affichés dynamiquement sur la page Web `Index`.
 
 1. Ouvrez le fichier *index. cshtml* dans le répertoire *pages* et remplacez son contenu par le code suivant :
 
@@ -257,9 +257,9 @@ Les résultats retournés par la `OnGetAnalyzeSentiment` seront affichés dynami
 
     [!code-css [CssStyling](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/css/site.css#L61-L105)]
 
-1. Après cela, ajoutez du code pour envoyer des entrées de la page Web au gestionnaire `OnGetAnalyzeSentiment`.
+1. Après cela, ajoutez du code pour envoyer des entrées de la page Web au gestionnaire de `OnGetAnalyzeSentiment`.
 
-    1. Dans le fichier *site. js* situé dans le répertoire *wwwroot\js* , créez une fonction appelée `getSentiment` pour obtenir une requête HTTP avec l’entrée utilisateur du gestionnaire `OnGetAnalyzeSentiment`.
+    1. Dans le fichier *site. js* situé dans le répertoire *wwwroot\js* , créez une fonction appelée `getSentiment` pour effectuer une requête http obtenir avec l’entrée utilisateur dans le gestionnaire de `OnGetAnalyzeSentiment`.
 
         [!code-javascript [GetSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L5-L10)]
 
@@ -267,7 +267,7 @@ Les résultats retournés par la `OnGetAnalyzeSentiment` seront affichés dynami
 
         [!code-javascript [UpdateMarkerMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L12-L15)]
 
-    1. Créez une fonction de gestionnaire d’événements appelée `updateSentiment` pour récupérer l’entrée de l’utilisateur, envoyez-la à la fonction `OnGetAnalyzeSentiment` à l’aide de la fonction `getSentiment` et mettez à jour le marqueur avec la fonction `updateMarker`.
+    1. Créez une fonction de gestionnaire d’événements appelée `updateSentiment` pour récupérer l’entrée de l’utilisateur, l’envoyer à la fonction `OnGetAnalyzeSentiment` à l’aide de la fonction `getSentiment` et mettre à jour le marqueur avec la fonction `updateMarker`.
 
         [!code-javascript [UpdateSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L17-L34)]
 
@@ -283,7 +283,7 @@ Lorsque l’application démarre, entrez le *Générateur de modèles est cool 
 
 ![Fenêtre en cours d’exécution avec la fenêtre de sentiment prédite](./media/sentiment-analysis-model-builder/web-app.png)
 
-Si vous devez référencer les projets générés par le générateur de modèles ultérieurement dans une autre solution, vous pouvez les Rechercher dans le répertoire `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
+Si vous devez référencer les projets générés par le générateur de modèles ultérieurement dans une autre solution, vous pouvez les trouver dans le répertoire `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

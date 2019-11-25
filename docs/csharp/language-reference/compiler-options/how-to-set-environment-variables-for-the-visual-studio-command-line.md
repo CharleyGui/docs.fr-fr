@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Définir des variables d’environnement pour la ligne de commande Visual Studio'
+title: Comment définir des variables d’environnement pour la ligne de commande Visual Studio
 ms.date: 09/29/2017
 f1_keywords:
 - cs.build.commandline
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 9b26f6b80488ad4043054cd23f0f351773e8d6d1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 3b69a92d28663bbbd34245435a69aea80d20fdc9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602854"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972829"
 ---
-# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Procédure : Définir des variables d’environnement pour la ligne de commande Visual Studio
+# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Comment définir des variables d’environnement pour la ligne de commande Visual Studio
 
 Le fichier VsDevCmd.bat définit les variables d’environnement appropriées pour les générations à partir de la ligne de commande.
 

@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 36254062835b9ab70ba470f6286b7515003dec11
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: 365cf0b2ef36dd0be624d022e3dea5e16a9eb58c
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850799"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969407"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: Exécuter votre premier programme C#
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -96,7 +96,7 @@ items:
     ```
 
 
-    Cliquez de nouveau sur **Exécuter** pour afficher les résultats.
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats.
 
 
     Vous avez utilisé `+` pour générer des chaînes à partir de chaînes **variables** et **constantes**. Il existe une meilleure façon de procéder.
@@ -118,7 +118,7 @@ items:
     ```
 
 
-    Cliquez de nouveau sur **Exécuter** pour afficher les résultats. Au lieu de « Hello {aFriend} », le message doit être « Hello Maira ».
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats. Au lieu de « Hello {aFriend} », le message doit être « Hello Maira ».
 
 
     > [!NOTE]
@@ -296,7 +296,7 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez cliquer sur le lien **Nombres dans C#** ci-dessous pour démarrer le tutoriel interactif suivant, ou vous pouvez visiter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le SDK .NET Core, créer un projet sur votre machine et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
+    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez sélectionner les **numéros dans C# ** le lien ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour plus d’informations sur le type `string` :

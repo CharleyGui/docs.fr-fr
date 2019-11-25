@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Analyser des chaînes à l’aide de String.Split (Guide C#)'
+title: Comment analyser des chaînes à l’aide de StringC# . Split (Guide)
 description: String.Split retourne un tableau de chaînes fractionnées à partir d’un ensemble de délimiteurs. Il s’agit d’un moyen simple pour analyser des chaînes.
 ms.date: 01/03/2018
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: a8cb3a62497379f60e9cc6dec3d342192361f865
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: b46429f3b55658e1f2a7d21eed714c1d02236c57
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603717"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973233"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Procédure : Analyser des chaînes à l’aide de String.Split (Guide C#)
+# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Comment analyser des chaînes à l’aide de StringC# . Split (Guide)
 
 La méthode <xref:System.String.Split%2A?displayProperty=nameWithType> crée un tableau de sous-chaînes en fractionnant la chaîne d’entrée en fonction d’un ou plusieurs délimiteurs. C’est souvent le moyen le plus simple pour séparer une chaîne sur des limites de mots. Elle sert également à fractionner des chaînes sur d’autres caractères ou chaînes spécifiques.
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 8f9624414a2b423bd43e8790d11b70ae1ca6286d
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 8d9b8eb274777a0ed019a207c6e8610cc73ec390
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216226"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973309"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Exposition de composants .NET Core à COM
 
@@ -23,7 +23,7 @@ Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été co
 - Générer un serveur COM dans le cadre de la génération de votre bibliothèque .NET Core.
 - Générer automatiquement un manifeste de serveur côte à côte pour COM sans registre.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
@@ -39,7 +39,7 @@ La première étape consiste à créer la bibliothèque.
 
 2. Ouvrez `Class1.cs`.
 3. Ajoutez `using System.Runtime.InteropServices;` en haut du fichier.
-4. Créez une interface nommée `IServer`. Par exemple :
+4. Créez une interface nommée `IServer`. Exemple :
 
    [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
 
@@ -76,6 +76,6 @@ Un [exemple de serveur COM](https://github.com/dotnet/samples/tree/master/core/e
 
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
-Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. Vous devez écrire manuellement un fichier IDL ou un en-tête C++ pour les déclarations natives de vos interfaces.
+Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. L’aide consiste à écrire manuellement un fichier IDL ou un en-têteC++ C/pour les déclarations natives des interfaces com.
 
-En outre, le chargement du .NET Framework et de .NET Core dans le même processus n’est pas pris en charge : par conséquent, le chargement d’un serveur COM .NET Core dans un processus client COM .NET Framework ou vice versa n’est pas pris en charge.
+En outre, le chargement des .NET Framework et de .NET Core dans le même processus a des limitations de diagnostic. La principale limitation est le débogage des composants managés, car il n’est pas possible de déboguer à la fois .NET Framework et .NET Core. En outre, les deux instances de Runtime ne partagent pas d’assemblys managés. Cela signifie qu’il n’est pas possible de partager des types .NET réels entre les deux runtimes et que toutes les interactions doivent être limitées aux contrats d’interface COM exposés.

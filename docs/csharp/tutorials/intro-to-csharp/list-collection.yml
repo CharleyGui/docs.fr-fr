@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: fb08cef284a016dd65c99a1efb0a661624a731f1
-  ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+  ms.openlocfilehash: f7fd68120defbfcda6ac11e14bc749bf4d69c109
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/09/2019
-  ms.locfileid: "72179008"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969391"
 items:
 - durationInMinutes: 1
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Créer des listes
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive (remplacez `<name>` par votre nom) et cliquez sur le bouton **Exécuter** :
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive (remplacez `<name>` par votre nom), puis sélectionnez **exécuter**:
 
 
     ```csharp
@@ -106,7 +106,7 @@ items:
     ```
 
 
-    Cliquez de nouveau sur **Exécuter** pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
 
 
     > [!NOTE]

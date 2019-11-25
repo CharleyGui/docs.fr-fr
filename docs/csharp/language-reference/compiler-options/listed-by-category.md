@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 7319d424b84d5edd41fc255e3aea763da55961a9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 5cd5607c25dabd8f56ebb58366116666e8e649ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606729"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972705"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
 
@@ -19,14 +19,14 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 ## <a name="optimization"></a>Optimisation
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-filealign](filealign-compiler-option.md)|Spécifie la taille des sections dans le fichier de sortie.|
 |[-optimize](optimize-compiler-option.md)|Active/désactive les optimisations.|
 
 ## <a name="output-files"></a>Fichiers de sortie
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-deterministic](deterministic-compiler-option.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
 |[-doc](doc-compiler-option.md)|Spécifie un fichier XML dans lequel les commentaires de documentation traités doivent être écrits.|
@@ -42,7 +42,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 ## <a name="net-framework-assemblies"></a>Assemblys .NET Framework
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-addmodule](addmodule-compiler-option.md)|Spécifie un ou plusieurs modules à inclure dans cet assembly.|
 |[-delaysign](delaysign-compiler-option.md)|Indique au compilateur d'ajouter la clé publique mais de laisser l'assembly non signé.|
@@ -58,7 +58,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |-embed:\<file list>|Incorporer des fichiers spécifiques dans le PDB.|
 ## <a name="debuggingerror-checking"></a>Débogage/vérification des erreurs
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-bugreport](bugreport-compiler-option.md)|Crée un fichier qui contient des informations qui facilitent le signalement d'un bogue.|
 |[/checked](checked-compiler-option.md)|Indique si l'arithmétique sur les entiers qui dépasse les limites du type de données entraîne une exception au moment de l'exécution.|
@@ -72,13 +72,13 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 ## <a name="preprocessor"></a>Préprocesseur
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-define](define-compiler-option.md)|Définit les symboles du préprocesseur.|
 
 ## <a name="resources"></a>Ressources
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[-link](link-compiler-option.md)|Rend les informations de type COM dans les assemblys spécifiés disponibles pour le projet.|
 |[-linkresource](linkresource-compiler-option.md)|Crée un lien à une ressource managée.|
@@ -88,7 +88,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 ## <a name="miscellaneous"></a>Divers
 
-|Option|Objectif|
+|Option|Fonction|
 |------------|-------------|
 |[@](response-file-compiler-option.md)|Spécifie un fichier réponse.|
 |[-?](help-compiler-option.md)|Répertorie les options du compilateur dans stdout.|
@@ -96,7 +96,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-codepage](codepage-compiler-option.md)|Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.|
 |[-help](help-compiler-option.md)|Répertorie les options du compilateur dans stdout.|
 |[-highentropyva](highentropyva-compiler-option.md)|Spécifie que le fichier exécutable prend en charge la randomisation du format d'espace d'adresse (ASLR).|
-|[-langversion](langversion-compiler-option.md)|Spécifiez la version de langage : Par défaut, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 ou version ultérieure |
+|[-langversion](langversion-compiler-option.md)|Spécifie la version de langage : Default, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 ou Latest |
 |[-main](main-compiler-option.md)|Spécifie l’emplacement de la méthode **Main**.|
 |[-noconfig](noconfig-compiler-option.md)|Indique au compilateur ne pas compiler avec csc.rsp.|
 |[-nologo](nologo-compiler-option.md)|Supprime les informations de bannière du compilateur.|
@@ -109,7 +109,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 ## <a name="obsolete-options"></a>Options obsolètes
 
-|Option|Objectif|
+|Option|Fonction|
 |---|---|
 |-incremental|Active la compilation incrémentielle.|
 
@@ -117,4 +117,4 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 
 - [Options du compilateur C#](index.md)
 - [Options du compilateur C# par ordre alphabétique](listed-alphabetically.md)
-- [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Comment définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)

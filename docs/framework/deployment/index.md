@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f1d13c4c3e27b5af5b3c3e84995cae3df94a307d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 04cbfb8d41135b57c3e090959e041f95fcda2840
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052079"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975678"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
 
@@ -66,7 +66,7 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
 **Maintenance**
 
-- Pour obtenir des informations générales, consultez le [blog .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977).
+- Pour obtenir des informations générales, consultez le [blog .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
 - [Détection des versions](../migration-guide/how-to-determine-which-versions-are-installed.md)
 
@@ -171,7 +171,7 @@ Prenez également en compte les considérations de sécurité dans votre choix d
 |[Publication d’applications ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|
 |[Empaquetage et déploiement de ressources](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|Décrit le modèle « Hub and Spoke » utilisé par le .NET Framework pour empaqueter et déployer des ressources. Fournit des informations sur les conventions de dénomination des ressources, le processus de secours et les alternatives à l'empaquetage.|
 |[Déploiement d'une application d'interopérabilité](../interop/deploying-an-interop-application.md)|Explique comment livrer et installer des applications Interop, qui comportent généralement un assembly client .NET Framework, un ou plusieurs assemblys d'interopérabilité représentant des bibliothèques de types COM distinctes et un ou plusieurs composants COM inscrits.|
-|[Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|Décrit comment lancer et suivre le processus d'installation sans assistance du .NET Framework tout en affichant votre propre vue de la progression de l'installation.|
+|[Guide pratique : connaître la progression dans le programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|Décrit comment lancer et suivre le processus d'installation sans assistance du .NET Framework tout en affichant votre propre vue de la progression de l'installation.|
 
 ## <a name="see-also"></a>Voir aussi
 

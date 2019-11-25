@@ -2,12 +2,12 @@
 title: Élément <useLegacyJit>
 ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
-ms.openlocfilehash: 47aacb629dc234d9aeaab1ef6e6844fbbe5dbfdb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a126b8c0050a8d1fd96a3d090f9b018a9faa07a7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115109"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968858"
 ---
 # <a name="uselegacyjit-element"></a>\<useLegacyJit>, élément
 
@@ -66,7 +66,7 @@ Au lieu d’utiliser un paramètre de fichier de configuration, vous pouvez acti
 
   Affectez à la variable d’environnement `COMPLUS_useLegacyJit` la valeur `0` (utilisez le nouveau compilateur JIT 64 bits) ou `1` (utilisez l’ancien compilateur JIT 64 bits) :
   
-  ```  
+  ```env  
   COMPLUS_useLegacyJit=0|1  
   ```  
   

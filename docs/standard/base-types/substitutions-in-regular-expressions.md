@@ -13,28 +13,28 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: 5934a342f653f294c07e00d38d51dae6b159dab9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: db0e2234055c6869c4cf55196d9f3b62a6996c96
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122479"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972060"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
-<a name="Top"></a> Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d’une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
+Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d’une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
   
  Le .NET Framework définit les éléments de substitution répertoriés dans le tableau suivant.  
   
 |Substitution|Description|  
 |------------------|-----------------|  
-|$ *nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#Numbered).|  
-|${ *nom* }|Inclut la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<`*nom*`> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#Named).|  
-|$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#DollarSign).|  
-|$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#EntireMatch).|  
-|$\`|Inclut tout le texte de la chaîne d'entrée avant la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte avant la correspondance](#BeforeMatch).|  
-|$'|Inclut tout le texte de la chaîne d'entrée après la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte après la correspondance](#AfterMatch).|  
-|$+|Inclut le dernier groupe capturé dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du dernier groupe capturé](#LastGroup).|  
-|$_|Inclut la chaîne d'entrée entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la chaîne d'entrée entière](#EntireString).|  
+|$ *nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
+|${ *nom* }|Inclut la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<`*nom*`> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).|  
+|$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#substituting-a--character).|  
+|$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#substituting-the-entire-match).|  
+|$\`|Inclut tout le texte de la chaîne d'entrée avant la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte avant la correspondance](#substituting-the-text-before-the-match).|  
+|$'|Inclut tout le texte de la chaîne d'entrée après la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte après la correspondance](#substituting-the-text-after-the-match).|  
+|$+|Inclut le dernier groupe capturé dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du dernier groupe capturé](#substituting-the-last-captured-group).|  
+|$\_|Inclut la chaîne d'entrée entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la chaîne d'entrée entière](#substituting-the-entire-input-string).|  
   
 ## <a name="substitution-elements-and-replacement-patterns"></a>Éléments de substitution et modèles de remplacement  
  Les substitutions sont les seules constructions particulières acceptées dans un modèle de remplacement. Aucun des autres éléments de langage d'expression régulière, notamment les caractères d'échappement et le point (`.`), qui correspond à n'importe quel caractère, n'est pris en charge. De la même façon, les éléments de langage de substitution sont reconnus uniquement dans les modèles de remplacement et ne sont jamais valides dans les modèles d'expressions régulières.  
@@ -43,12 +43,11 @@ ms.locfileid: "73122479"
   
 > [!NOTE]
 > Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d'informations sur les références arrières, consultez [Constructions de références arrières](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
-  
-<a name="Numbered"></a>   
+
 ## <a name="substituting-a-numbered-group"></a>Substitution d'un groupe numéroté  
  L'élément de langage `$`*nombre* inclut la dernière sous-chaîne correspondant au groupe de capture *nombre* dans la chaîne de remplacement, où *nombre* est l'index du groupe de capture. Par exemple, le modèle de remplacement `$1` indique que la sous-chaîne correspondante sera remplacée par le premier groupe capturé. Pour plus d’informations sur les groupes de capture numérotés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
- Tous les chiffres qui suivent `$` sont interprétés comme appartenant au groupe *nombre* . Si ce n'est pas votre intention, vous pouvez remplacer un groupe nommé à la place. Par exemple, vous pouvez utiliser la chaîne de remplacement `${1}1` au lieu de `$11` pour définir la chaîne de remplacement comme la valeur du premier groupe capturé avec le numéro « 1 ». Pour plus d'informations, consultez [Substitution d'un groupe nommé](#Named).  
+ Tous les chiffres qui suivent `$` sont interprétés comme appartenant au groupe *nombre* . Si ce n'est pas votre intention, vous pouvez remplacer un groupe nommé à la place. Par exemple, vous pouvez utiliser la chaîne de remplacement `${1}1` au lieu de `$11` pour définir la chaîne de remplacement comme la valeur du premier groupe capturé avec le numéro « 1 ». Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).  
   
  Les groupes de capture auxquels des noms ne sont pas explicitement assignés à l'aide de la syntaxe `(?<`*nom*`>)` sont numérotés de gauche à droite en commençant à un. Les groupes nommés sont également numérotés de gauche à droite, en démarrant à un numéro de plus que l'index du dernier groupe sans nom. Par exemple, dans l'expression régulière `(\w)(?<digit>\d)`, l'index du groupe nommé `digit` est 2.  
   
@@ -69,10 +68,7 @@ ms.locfileid: "73122479"
 |`[.,]?`|Mettre en correspondance zéro ou un point ou une virgule.|  
 |`\d*`|Met en correspondance zéro ou plusieurs chiffres décimaux.|  
 |`(\s?\d+[.,]?\d*)`|Mettre en correspondance un espace blanc suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. Il s'agit du premier groupe de capture. Étant donné que le modèle de remplacement est `$1`, l'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace l'intégralité de la sous-chaîne correspondante par ce groupe capturé.|  
-  
- [Retour au début](#Top)  
-  
-<a name="Named"></a>   
+
 ## <a name="substituting-a-named-group"></a>Substitution d'un groupe nommé  
  L'élément de langage `${`*nom*`}` substitue la dernière sous-chaîne correspondante au groupe de capture *nom* , où *nom* est le nom d'un groupe de capture défini par l'élément de langage `(?<`*nom*`>)` . Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
@@ -95,10 +91,7 @@ ms.locfileid: "73122479"
 |`[.,]?`|Mettre en correspondance zéro ou un point ou une virgule.|  
 |`\d*`|Met en correspondance zéro ou plusieurs chiffres décimaux.|  
 |`(?<amount>\s?\d[.,]?\d*)`|Mettre en correspondance un espace blanc, suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. C'est le groupe de capture nommé `amount`. Étant donné que le modèle de remplacement est `${amount}`, l'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace l'intégralité de la sous-chaîne correspondante par ce groupe capturé.|  
-  
- [Retour au début](#Top)  
-  
-<a name="DollarSign"></a>   
+
 ## <a name="substituting-a--character"></a>Substitution d'un caractère « $ »  
  La substitution `$$` insère un caractère « $ » littéral dans la chaîne remplacée.  
   
@@ -116,8 +109,7 @@ ms.locfileid: "73122479"
 |`\.`|Mettre en correspondance un point (le séparateur décimal).|  
 |`(\d+)`|Mettre en correspondance un ou plusieurs chiffres décimaux. Il s'agit du troisième groupe de capture.|  
 |`(\.(\d+))?`|Mettre en correspondance zéro ou une occurrence d'un point suivi par un ou plusieurs chiffres décimaux. Il s'agit du deuxième groupe de capture.|  
-  
-<a name="EntireMatch"></a>   
+
 ## <a name="substituting-the-entire-match"></a>Substitution de la correspondance entière  
  La substitution `$&` inclut la correspondance entière dans la chaîne de remplacement. Souvent, elle est utilisée pour ajouter une sous-chaîne au début ou à la fin de la chaîne correspondante. Par exemple, le modèle de remplacement `($&)` ajoute des parenthèses au début et à la fin de chaque correspondance. S'il n'y a pas de correspondance, la substitution `$&` n'a aucun effet.  
   
@@ -135,10 +127,7 @@ ms.locfileid: "73122479"
 |`$`|Mettre en correspondance la fin de la chaîne d'entrée.|  
   
  Le modèle de remplacement `"$&"` ajoute un guillemet littéral au début et à la fin de chaque correspondance.  
-  
- [Retour au début](#Top)  
-  
-<a name="BeforeMatch"></a>   
+
 ## <a name="substituting-the-text-before-the-match"></a>Substitution du texte avant la correspondance  
  La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(l’exemple fournit une illustration.\) s’il n’y a aucune correspondance, la substitution de ``$` `` n’a aucun effet.  
   
@@ -155,11 +144,8 @@ ms.locfileid: "73122479"
 |2|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
 |3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
 |4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
-|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|  
-  
- [Retour au début](#Top)  
-  
-<a name="AfterMatch"></a>   
+|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**| 
+
 ## <a name="substituting-the-text-after-the-match"></a>Substitution du texte après la correspondance  
  La substitution `$'` remplace la chaîne correspondante par la chaîne d'entrée entière après la correspondance. Autrement dit, elle duplique la chaîne d'entrée après la correspondance en supprimant le texte correspondant. N'importe quel texte qui précède le texte correspondant est inchangé dans la chaîne de résultat. S'il n'y a pas de correspondance, la substitution  `$'` n'a aucun effet.  
   
@@ -177,10 +163,7 @@ ms.locfileid: "73122479"
 |3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5|  
 |4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5|  
 |5|14|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
-  
- [Retour au début](#Top)  
-  
-<a name="LastGroup"></a>   
+
 ## <a name="substituting-the-last-captured-group"></a>Substitution du dernier groupe capturé  
  La substitution `$+` remplace la chaîne correspondante par le dernier groupe capturé. S'il n'y a pas de groupes capturés ou si la valeur du dernier groupe capturé est <xref:System.String.Empty?displayProperty=nameWithType>, la substitution `$+` n'a aucun effet.  
   
@@ -198,10 +181,7 @@ ms.locfileid: "73122479"
 |`\s`|Mettre en correspondance un espace blanc.|  
 |`\1`|Mettre en correspondance le premier groupe capturé.|  
 |`\b`|Terminer la correspondance à la limite d'un mot.|  
-  
- [Retour au début](#Top)  
-  
-<a name="EntireString"></a>   
+
 ## <a name="substituting-the-entire-input-string"></a>Substitution de la chaîne d'entrée entière  
  La substitution `$_` remplace la chaîne correspondante par la chaîne d'entrée entière. Autrement dit, elle supprime le texte correspondant et le remplace par la chaîne entière, notamment le texte correspondant.  
   

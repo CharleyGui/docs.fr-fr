@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : suivre la progression du programme d’installation de .NET Framework 4.5'
+title: Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bdd2832f112706cef6050774ce3f6db5a940424a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e07bb3443fb9461fa707d66e74350a39980c60c0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052087"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975551"
 ---
-# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Procédure : suivre la progression du programme d’installation de .NET Framework 4.5
+# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
 
 .NET Framework 4.5 est un runtime redistribuable. Si vous développez des applications pour cette version du .NET Framework, vous pouvez inclure (chaîner) le programme d’installation de .NET Framework 4.5 en tant que composant requis du programme d’installation de votre application. Pour présenter une expérience d’installation unifiée ou personnalisée, vous souhaiterez peut-être lancer le programme d’installation de .NET Framework 4.5 en mode silencieux et suivre sa progression tout en affichant la progression de l’installation de votre application. Pour activer le suivi en mode silencieux, le programme d’installation de .NET Framework 4.5 (qui peut être observé) définit un protocole en utilisant un segment d’E/S mappées en mémoire (MMIO) pour communiquer avec votre programme d’installation (l’observateur ou le programme de chaînage). Ce protocole définit un moyen pour un programme de chaînage d’obtenir des informations sur la progression, d’obtenir des résultats détaillés, de répondre aux messages et d’annuler l’installation de .NET Framework 4.5.
 
@@ -34,7 +34,7 @@ ms.locfileid: "71052087"
 
         Remplacez ces noms par des noms uniques à votre programme d’installation.
 
-    2. Lisez à partir de la section MMIO. Dans .NET Framework 4.5, les opérations d’installation et de téléchargement sont simultanées : une partie du .NET Framework peut s’installer pendant qu’une autre partie est en cours de téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
+    2. Lisez à partir de la section MMIO. Dans le .NET Framework 4,5, les opérations de téléchargement et d’installation sont simultanées : une partie du .NET Framework peut être installée alors qu’une autre partie est en cours de téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
 
 - **Codes de sortie**. Les codes de sortie suivants de la commande d’appel du programme redistribuable de .NET Framework 4.5 indiquent si le programme d’installation a réussi ou échoué :
 
@@ -55,13 +55,13 @@ L’exemple de programme de chaînage lance et suit de manière silencieuse l’
 > [!WARNING]
 > Vous devez exécuter l’exemple en tant qu’administrateur.
 
-Vous pouvez télécharger la solution Visual Studio complète pour l’[exemple de programme de chaînage du .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkId=231345) à partir de la galerie d’exemples MSDN.
+Vous pouvez télécharger la solution Visual Studio complète pour l’[exemple de programme de chaînage du .NET Framework 4.5](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba) à partir de la galerie d’exemples MSDN.
 
 Les sections suivantes décrivent les fichiers importants dans cet exemple : MMIOChainer.h, ChainingdotNet4.cpp et IProgressObserver.h.
 
 #### <a name="mmiochainerh"></a>MMIOChainer.h
 
-- Le fichier MMIOChainer.h (voir le [code complet](https://go.microsoft.com/fwlink/?LinkId=231369)) contient la définition de la structure de données et la classe de base à partir de laquelle la classe de programme de chaînage doit être dérivée. .NET Framework 4.5 étend la structure de données MMIO pour gérer les données dont a besoin le programme d’installation de .NET Framework 4.5. Les modifications apportées à la structure MMIO sont à compatibilité descendante. Ainsi, un programme de chaînage du .NET Framework 4 peut fonctionner avec le programme d’installation du .NET Framework 4.5 sans nécessiter de recompilation. Toutefois, ce scénario ne prend pas en charge la fonctionnalité de réduction des redémarrages système.
+- Le fichier MMIOChainer.h (voir le [code complet](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=663039622)) contient la définition de la structure de données et la classe de base à partir de laquelle la classe de programme de chaînage doit être dérivée. .NET Framework 4.5 étend la structure de données MMIO pour gérer les données dont a besoin le programme d’installation de .NET Framework 4.5. Les modifications apportées à la structure MMIO sont à compatibilité descendante. Ainsi, un programme de chaînage du .NET Framework 4 peut fonctionner avec le programme d’installation du .NET Framework 4.5 sans nécessiter de recompilation. Toutefois, ce scénario ne prend pas en charge la fonctionnalité de réduction des redémarrages système.
 
     Un champ de version permet d’identifier les révisions du format de message et de la structure. Le programme d’installation du .NET Framework détermine la version de l’interface de programme de chaînage en appelant la fonction `VirtualQuery` pour déterminer la taille du mappage de fichier. Si la taille est assez élevée pour contenir le champ de version, le programme d’installation du .NET Framework utilise la valeur spécifiée. Si le mappage de fichier est trop petit pour contenir un champ de version, ce qui est le cas avec le .NET Framework 4, le processus d’installation part du principe que la version est 0 (4). Si le programme de chaînage ne prend pas en charge la version du message que le programme d’installation du .NET Framework souhaite envoyer, celui-ci considère que la réponse est « Ignorer ».
 
@@ -98,7 +98,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
 
 #### <a name="iprogressobserverh"></a>IProgressObserver.h
 
-- Le fichier IProgressObserver.h implémente un observateur de progression ([voir l’intégralité du code](https://go.microsoft.com/fwlink/?LinkId=231370)). L’observateur est informé de la progression du téléchargement et de l’installation (spécifiée en tant que `char` non signé compris entre 0 et 255, indiquant de 1 % à 100 % terminé). L’observateur est également averti quand l’élément chaîné envoie un message, et l’observateur doit envoyer une réponse.
+- Le fichier IProgressObserver.h implémente un observateur de progression ([voir l’intégralité du code](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1263700592)). L’observateur est informé de la progression du téléchargement et de l’installation (spécifiée en tant que `char` non signé compris entre 0 et 255, indiquant de 1 % à 100 % terminé). L’observateur est également averti quand l’élément chaîné envoie un message, et l’observateur doit envoyer une réponse.
 
     ```cpp
         class IProgressObserver
@@ -112,7 +112,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
 
 #### <a name="chainingdotnet45cpp"></a>ChainingdotNet4.5.cpp
 
-- Le fichier [ChainingdotNet4.5.cpp](https://go.microsoft.com/fwlink/?LinkId=231368) implémente la classe `Server`, qui dérive de la classe `MmioChainer` et substitue les méthodes appropriées pour afficher les informations de progression. MmioChainer crée une section avec le nom de section spécifié et initialise le programme de chaînage avec le nom d’événement spécifié. Le nom de l’événement est enregistré dans la structure de données mappée. Vous devez faire en sorte que les noms de section et d’événement soient uniques. La classe `Server` dans le code suivant lance le programme d’installation spécifié, surveille sa progression et retourne un code de sortie.
+- Le fichier [ChainingdotNet4.5.cpp](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1757268882) implémente la classe `Server`, qui dérive de la classe `MmioChainer` et substitue les méthodes appropriées pour afficher les informations de progression. MmioChainer crée une section avec le nom de section spécifié et initialise le programme de chaînage avec le nom d’événement spécifié. Le nom de l’événement est enregistré dans la structure de données mappée. Vous devez faire en sorte que les noms de section et d’événement soient uniques. La classe `Server` dans le code suivant lance le programme d’installation spécifié, surveille sa progression et retourne un code de sortie.
 
     ```cpp
     class Server : public ChainerSample::MmioChainer, public ChainerSample::IProgressObserver

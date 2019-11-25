@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: dab91ddd1f2b9c91560329eeb1c51ca7f6f175bd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455245"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972746"
 ---
 # <a name="c-compiler-options"></a>Options du compilateur C#
 
@@ -29,7 +29,7 @@ Dans Visual Studio, vous définissez les options du compilateur dans le fichier 
 
 - [Génération à partir de la ligne de commande avec CSC. exe](command-line-building-with-csc-exe.md) Informations sur la création d' C# une application visuelle à partir de la ligne de commande.
 
-- [Comment : définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Fournit la procédure d’exécution de *vsvars32. bat* pour activer les générations à partir de la ligne de commande.
+- [Comment définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Fournit la procédure d’exécution de *vsvars32. bat* pour activer les générations à partir de la ligne de commande.
 
 - [Options du compilateur classées par catégorie C# ](listed-by-category.md) Liste catégorique des options du compilateur.
 

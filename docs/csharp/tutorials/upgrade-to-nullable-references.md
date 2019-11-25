@@ -4,12 +4,12 @@ description: Ce tutoriel avancé présente les types référence Nullable. Il ex
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 9cb9ac1b292e61d6a8a5f84be29a6a6c323725fc
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: d0faea19ac1c7c7f28d9775fc3b69c71a752fbcb
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039687"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969345"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
 
@@ -32,7 +32,7 @@ Ce tutoriel suppose de connaître C# et .NET, y compris Visual Studio ou l’int
 
 ## <a name="explore-the-sample-application"></a>Explorer l’exemple d’application
 
-L’exemple d’application que vous allez migrer est une application web de lecteur de flux RSS. Il lit à partir d’un flux RSS unique et affiche des résumés des articles les plus récents. Vous pouvez cliquer sur l’un des articles pour visiter le site. L’application est relativement nouvelle, mais a été écrite avant que les types de référence nullable ne soient disponibles. Les décisions de conception de l’application constituent des principes solides, mais ne tirent pas parti de cette fonctionnalité de langage importante.
+L’exemple d’application que vous allez migrer est une application web de lecteur de flux RSS. Il lit à partir d’un flux RSS unique et affiche des résumés des articles les plus récents. Vous pouvez sélectionner n’importe quel article pour visiter le site. L’application est relativement nouvelle, mais a été écrite avant que les types de référence nullable ne soient disponibles. Les décisions de conception de l’application constituent des principes solides, mais ne tirent pas parti de cette fonctionnalité de langage importante.
 
 L’exemple d’application inclut une bibliothèque de tests unitaires qui valide les fonctionnalités principales de l’application. Ce projet facilite la mise à niveau en toute sécurité, si vous modifiez l’implémentation basée sur les avertissements générés. Vous pouvez télécharger l’exemple de démarrage à partir du référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start).
 

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 ms.custom: seodec18
-ms.openlocfilehash: b427c579b4190acaf715147908b38ea57ab7aea3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd6b24a6dd893f0c522573a0e19914164c15141f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120638"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973944"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 
@@ -340,7 +340,7 @@ Vous pouvez rendre persistantes des données non-chaînées soit comme données 
 L'exemple suivant illustre la portabilité limitée qui résulte de l'utilisation de la mise en forme qui tient compte de la culture pour assurer la persistance des données. L'exemple enregistre un tableau de valeurs de date et d'heure dans un fichier. Celles-ci sont mises en forme en utilisant les conventions culturelles de l'anglais (États-Unis). Une fois que l'application change la culture du thread actuel pour appliquer le français (Suisse), elle essaie de lire les valeurs enregistrées en utilisant les conventions de mise en forme de la culture actuelle. La tentative de lecture des éléments de données par deux fois renvoie une exception <xref:System.FormatException> , et le tableau de dates contient maintenant deux éléments incorrects qui sont identiques à <xref:System.DateTime.MinValue>.
 
 [!code-csharp[Conceptual.Strings.BestPractices#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
- [!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
+[!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
 
 Toutefois, si vous remplacez la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels à <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> et <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, les données de date et d’heure persistantes sont correctement restaurées, comme le montre la sortie suivante :
 

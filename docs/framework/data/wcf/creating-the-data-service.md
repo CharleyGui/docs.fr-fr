@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: 582f5f2d6d82613736ed795eebe5129284cdac6e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d30b2e30639837730ecb185a2c0f659a63955004
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052981"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975394"
 ---
 # <a name="create-the-data-service"></a>Créer le service de données
 
-Dans cette rubrique, vous allez créer un exemple de service de données qui utilise WCF Data Services [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] pour exposer un flux basé sur l’exemple de base de données Northwind. La tâche implique les étapes fondamentales suivantes :
+Dans cette rubrique, vous allez créer un exemple de service de données qui utilise WCF Data Services pour exposer un flux Open Data Protocol (OData) basé sur l’exemple de base de données Northwind. La tâche implique les étapes fondamentales suivantes :
 
 1. Créez une application Web ASP.NET.
 
@@ -26,7 +26,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 ## <a name="create-the-aspnet-web-app"></a>Créer l’application Web ASP.NET
 
-1. Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau** > **projet**.
+1. Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau**  > **projet**.
 
 1. Dans la boîte de dialogue **nouveau projet** , sous Visual Basic ou visuel C# , sélectionnez la catégorie **Web** , puis sélectionnez **application Web ASP.net**.
 
@@ -34,7 +34,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 1. Dans la boîte de dialogue **nouvelle application Web ASP.net** , sélectionnez **vide** , puis cliquez sur **OK**.
 
-1. (Facultatif) Spécifiez un numéro de port spécifique pour votre application Web. Remarque : le numéro `12345` de port est utilisé dans cette série de rubriques de démarrage rapide.
+1. (Facultatif) Spécifiez un numéro de port spécifique pour votre application Web. Remarque : le numéro de port `12345` est utilisé dans cette série de rubriques de démarrage rapide.
 
     1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ASP.net que vous venez de créer, puis choisissez **Propriétés**.
 
@@ -42,7 +42,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 ## <a name="define-the-data-model"></a>Définir le modèle de données
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet ASP.net, puis cliquez sur **Ajouter** > **nouvel élément**.
 
 2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez la catégorie **données** , puis sélectionnez **ADO.NET Entity Data Model**.
 
@@ -52,7 +52,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 5. Connectez le modèle de données à la base de données en procédant de l’une des manières suivantes, puis cliquez sur **suivant**:
 
-    - Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion. Pour plus d'informations, voir [Procédure : Créer des connexions aux bases de](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90))données SQL Server. Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
+    - Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion. Pour plus d'informations, consultez [How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
 
          \- ou -
 
@@ -64,7 +64,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 ## <a name="create-the-wcf-data-service"></a>Créer le service de données WCF
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ASP.net, puis choisissez **Ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ASP.net, puis choisissez **Ajouter** > **nouvel élément**.
 
 2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez le modèle élément de **service de données WCF** dans la catégorie **Web** .
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: eadb456bafb1703c687e73c6aecc81c9dccae72c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: bf0b4e5f85da48ad5d7cb08efd09ff925b6b04d9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739568"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975546"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 
@@ -64,7 +64,7 @@ Dans le tableau, les versions du .NET Framework qui sont installées sur les ver
   > [!NOTE]
   > .NET Framework 4.5.1 et .NET Framework 4.5 sont ici utilisés à titre d’exemples uniquement. Le principe décrit s’applique à toutes les applications qui ciblent une version ultérieure du .NET Framework que celle installée sur le système sur lequel elles s’exécutent.  
   
-Certaines modifications apportées à la .NET Framework peuvent nécessiter des modifications du code de votre application. Si vous exécutez une application existante sur .NET Framework 4,5 ou une version ultérieure, consultez [compatibilité des applications](application-compatibility.md). Pour plus d’informations sur l’installation de la version actuelle, consultez [installer les .NET Framework pour les développeurs](../install/guide-for-developers.md). Pour plus d’informations sur la prise en charge du .NET Framework, consultez la [FAQ sur la politique de support pour Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework) sur le site web Aide et Support de Microsoft.  
+Certaines modifications du .NET Framework peuvent nécessiter des modifications au niveau du code de votre application ; consultez [Compatibilité des applications](application-compatibility.md) avant d’exécuter vos applications existantes avec .NET Framework 4.5 ou les versions ultérieures. Pour plus d’informations sur l’installation de la version actuelle, consultez [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md). Pour plus d’informations sur la prise en charge de la .NET Framework, consultez [.NET Framework stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) sur le site Web .net.
   
 ## <a name="target-and-run-apps-for-older-versions"></a>Cibler et exécuter des applications pour les versions antérieures  
 
@@ -85,5 +85,5 @@ De plus, si votre application cible la version 2.0, 3.0 ou 3.5, vos utilisateurs
 ## <a name="see-also"></a>Voir aussi
 
 - [Compatibilité des versions](version-compatibility.md)
-- [Stratégie de cycle de vie du support Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
+- [.NET Framework la stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)

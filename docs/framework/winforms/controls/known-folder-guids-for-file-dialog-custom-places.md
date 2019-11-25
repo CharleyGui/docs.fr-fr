@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: ae4b89eb45a82299b6f35827eb576968f6cc5bae
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0ae9c406e91bc947ec73bb2393bb05962ca41177
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962586"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974355"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>GUID de dossier connus pour des emplacements personnalisés de boîtes de dialogue Fichier
-Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossier connu lorsque vous ajoutez des dossiers à <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> un regroupement. Les GUID de dossier connus ne respectent pas la casse et sont définis dans le fichier fichier KnownFolders. h dans le SDK Windows.  
+Vous utilisez une <xref:System.Guid> pour spécifier un dossier connu Windows Vista lorsque vous ajoutez des dossiers à un regroupement <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>. Les GUID de dossier connus ne respectent pas la casse et sont définis dans le fichier fichier KnownFolders. h dans le SDK Windows.  
   
 > [!NOTE]
-> Dans certains cas, un dossier connu ajouté à l <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> 'n’est pas affiché dans la zone **liens favoris** . Par exemple, si le dossier connu spécifié n’est pas présent sur l’ordinateur qui exécute l’application, le dossier connu n’est pas affiché.  
+> Dans certains cas, un dossier connu ajouté à la <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> ne s’affiche pas dans la zone **liens favoris** . Par exemple, si le dossier connu spécifié n’est pas présent sur l’ordinateur qui exécute l’application, le dossier connu n’est pas affiché.  
   
 ## <a name="list-of-guids"></a>Liste des GUID  
- Le tableau suivant répertorie [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] les dossiers connus et leurs associés. <xref:System.Guid>  
+ Le tableau suivant répertorie les dossiers connus de Windows Vista et leurs <xref:System.Guid>associés.  
   
  AddNewPrograms  
  DE61D971-5EBC-4F02-A3A9-6C82895E5C04  
@@ -44,7 +44,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  D0384E7D-BAC3-4797-8F14-CBA229B392B5  
   
  CommonOEMLinks  
- C1BAE2D0-10DF-4334-BEDD-7AA20B227A9D  
+ C1BAE2D0-10DF-4334-LITIÈRE-7AA20B227A9D  
   
  CommonPrograms  
  0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8  
@@ -58,13 +58,13 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  CommonTemplates  
  B94237E7-57AC-4347-9151-B08C6C32D1F7  
   
- Computer  
+ Ordinateur  
  0AC0837C-BBF8-452A-850D-79D08E667CA7  
   
- Conflit  
+ Conflits  
  4BFEFB45-347D-4006-A5BE-AC0CB0567192  
   
- connexions  
+ Connexions  
  6F0CD92B-2E97-45D1-88FF-B0D186B8DEDD  
   
  Contacts  
@@ -106,7 +106,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  InternetCache  
  352481E8-33BE-4251-BA85-6007CAEDCF9D  
   
- Liens  
+ liens  
  BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968  
   
  LocalAppData  
@@ -127,7 +127,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  OriginalImages  
  2C36C0AA-5812-4B87-BFD0-4CD0DFB19B39  
   
- PhotoAlbums  
+ PhotoAlbum  
  69D2CF90-FC33-4FB7-9A0C-EBB0F0FCB43C  
   
  Elles  
@@ -262,7 +262,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  SyncSetup  
  0F214138-B1D3-4A90-BBA9-27CBC0C5389A  
   
- System  
+ Système  
  1AC14E77-02E7-4E5D-B744-2EB1AE5198B7  
   
  SystemX86  
@@ -289,4 +289,4 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Guide pratique pour Ajouter un emplacement personnalisé à une boîte de dialogue de fichier](how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Guide pratique pour ajouter un emplacement personnalisé à une boîte de dialogue Fichier](how-to-add-a-custom-place-to-a-file-dialog-box.md)

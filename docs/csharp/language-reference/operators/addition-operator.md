@@ -14,12 +14,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 709994632d704c6a9c6c7f4fc7180ae08cb901d7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e6a190e3d6e283f2ce3b1690ec2bfd15d50dfc6e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039095"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972636"
 ---
 # <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
 
@@ -81,7 +81,7 @@ Pour plus d’informations, consultez les sections [Opérateur unaire plus](~/_c
 
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
-- [Guide pratique pour concaténer plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)
+- [Concaténation de plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Opérateurs arithmétiques](arithmetic-operators.md)
 - [- et -=, opérateurs](subtraction-operator.md)

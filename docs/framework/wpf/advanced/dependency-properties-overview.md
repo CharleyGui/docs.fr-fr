@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 663dd7a785200ddbc78cc0cd1fb5b43531982f42
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5803d656d765f3f4fe3039e28b9c06202218fcfc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458955"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973986"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -168,7 +168,7 @@ L’exemple suivant illustre une liaison et définit la propriété <xref:System
 Pour plus d’informations, consultez [Héritage de valeur de propriété](property-value-inheritance.md).
 
 ### <a name="wpf-designer-integration"></a>Intégration du concepteur WPF
-Un contrôle personnalisé avec des propriétés qui sont implémentées comme propriétés de dépendance reçoit la prise en charge du [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] appropriée. La possibilité de modifier des propriétés de dépendance directes et jointes avec la fenêtre **Propriétés** constitue un bon exemple. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).
+Un contrôle personnalisé avec des propriétés implémentées en tant que propriétés de dépendance recevra le Concepteur WPF approprié pour la prise en charge de Visual Studio. La possibilité de modifier des propriétés de dépendance directes et jointes avec la fenêtre **Propriétés** constitue un bon exemple. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).
 
 ## <a name="dependency-property-value-precedence"></a>Priorité de la valeur d’une propriété de dépendance
 Quand vous obtenez la valeur d’une propriété de dépendance, vous obtenez potentiellement une valeur définie pour cette propriété via l’une des autres entrées basées sur des propriétés qui participent au système de propriétés WPF. Il existe une priorité de valeur de propriété de dépendance, afin que différents scénarios d’obtention des valeurs par les propriétés puissent interagir de manière prévisible.

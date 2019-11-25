@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: f7f8c25844f41dd8915c0f4404d6714b4c81233c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 039ae0cb314eba2f1bb3e5b39f2127a5e694f334
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458477"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974159"
 ---
 # <a name="collection-type-dependency-properties"></a>Propriétés de dépendance de type collection
 Cette rubrique propose des conseils et des modèles suggérés pour l’implémentation d’une propriété de dépendance de type collection.  
@@ -28,8 +28,11 @@ Cette rubrique propose des conseils et des modèles suggérés pour l’impléme
 ## <a name="initializing-the-collection-beyond-the-default-value"></a>Initialisation de la collection au-delà de la valeur par défaut  
  Quand vous créez une propriété de dépendance, vous ne spécifiez pas sa valeur par défaut comme étant la valeur de champ initiale. Vous la spécifiez à l’aide des métadonnées de la propriété de dépendance. Si votre propriété est un type référence, la valeur par défaut spécifiée dans les métadonnées de la propriété de dépendance n’est pas une valeur par défaut par instance, mais bien une valeur par défaut qui s’applique à toutes les instances du type. Ainsi, vous devez prendre garde de ne pas utiliser la collection statique unique définie par les métadonnées de la propriété de type collection comme valeur par défaut active pour les instances créées de votre type. À la place, vous devez vous assurer que vous affectez délibérément à la valeur de collection une collection (instance) unique dans le cadre de votre logique de constructeur de classe. Sinon, vous créerez une classe singleton involontaire.  
   
- Prenons l'exemple suivant. La section suivante de l’exemple illustre la définition d’une classe `Aquarium`. La classe définit la propriété de dépendance de type collection `AquariumObjects`, qui utilise le type de <xref:System.Collections.Generic.List%601> générique avec une contrainte de type <xref:System.Windows.FrameworkElement>. Dans l’appel de <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> pour la propriété de dépendance, les métadonnées définissent la valeur par défaut en tant que nouvelle <xref:System.Collections.Generic.List%601>générique.  
-  
+ Prenons l'exemple suivant. La section suivante de l’exemple montre la définition d’une classe `Aquarium`, qui contient une faille avec la valeur par défaut. La classe définit la propriété de dépendance de type collection `AquariumObjects`, qui utilise le type de <xref:System.Collections.Generic.List%601> générique avec une contrainte de type <xref:System.Windows.FrameworkElement>. Dans l’appel de <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> pour la propriété de dépendance, les métadonnées définissent la valeur par défaut en tant que nouvelle <xref:System.Collections.Generic.List%601>générique.
+
+> [!WARNING]
+> Le code suivant ne se comporte pas correctement.
+
  [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
  [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
   

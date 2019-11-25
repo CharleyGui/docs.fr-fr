@@ -10,22 +10,22 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 8128fd3cab0ca20da87a1a98c2657aefab96beaf
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 17475cccf461371a909660bfe3f8db29bf1fa2fe
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779817"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975172"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projections de requête (services de données WCF)
 
-La [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] projection fournit un mécanisme dans pour réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, [consultez OData : Sélectionnez l’option de requête système (](https://go.microsoft.com/fwlink/?LinkId=186076)$Select).
+La projection fournit un mécanisme dans le Open Data Protocol (OData) pour réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, consultez [OData : option de requête système ($Select)](https://go.microsoft.com/fwlink/?LinkId=186076).
 
 Cette rubrique décrit comment définir une projection de requête, quelles sont les exigences pour les types d’entité et de non-entité, la mise à jour des résultats projetés, la création des types projetés et répertorie des considérations relatives à la projection.
 
 ## <a name="defining-a-query-projection"></a>Définition d'une projection de requête
 
-Vous pouvez ajouter une clause de projection à une requête soit à l' `$select` aide de l’option de requête dans un URI, soit à l’aide de la clause [Select](../../../csharp/language-reference/keywords/select-clause.md) ([Select](../../../visual-basic/language-reference/queries/select-clause.md) in Visual Basic) dans une requête LINQ. Les données d'entité retournées peuvent être projetées dans des types d'entités ou de non-entités sur le client. Les exemples de cette rubrique montrent comment utiliser la clause `select` dans une requête LINQ.
+Vous pouvez ajouter une clause de projection à une requête soit à l’aide de l’option de requête `$select` dans un URI, soit à l’aide de la clause [Select](../../../csharp/language-reference/keywords/select-clause.md) ([Select](../../../visual-basic/language-reference/queries/select-clause.md) in Visual Basic) dans une requête LINQ. Les données d'entité retournées peuvent être projetées dans des types d'entités ou de non-entités sur le client. Les exemples de cette rubrique montrent comment utiliser la clause `select` dans une requête LINQ.
 
 > [!IMPORTANT]
 > Une perte de données peut survenir dans le service de données lorsque vous enregistrez des mises à jour apportées aux types projetés. Pour plus d’informations, consultez [Considérations sur la projection](#considerations).
@@ -65,36 +65,36 @@ Les éléments suivants décrivent les comportements lors de la projection de r�
 
 **Création d’une nouvelle instance projetée à l’aide d’initialiseurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithinitializer)]
    [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithinitializer)]
 
-- Type d’entité : Pris en charge
+- Type d’entité : pris en charge
 
-- Type de non-entité : Pris en charge
+- Type non-entité : pris en charge
 
 **Création d’une nouvelle instance projetée à l’aide de constructeurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithconstructor)]
    [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithconstructor)]
 
-- Type d’entité : <xref:System.NotSupportedException> est levée.
+- Type d’entité : un <xref:System.NotSupportedException> est déclenché.
 
-- Type de non-entité : Pris en charge
+- Type non-entité : pris en charge
 
 **Utilisation de la projection pour transformer une valeur de propriété**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithtransform)]
    [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithtransform)]
 
-- Type d’entité : Cette transformation n'est pas prise en charge pour les types d'entité car cela peut engendrer une confusion et remplacer les données de la source de données qui appartient à une autre entité. <xref:System.NotSupportedException> est levée.
+- Type d’entité : cette transformation n’est pas prise en charge pour les types d’entité, car elle peut entraîner des confusions et remplacer potentiellement les données de la source de données qui appartiennent à une autre entité. <xref:System.NotSupportedException> est levée.
 
-- Type de non-entité : Pris en charge
+- Type non-entité : pris en charge
 
 <a name="considerations"></a>
 
@@ -114,7 +114,7 @@ Les considérations supplémentaires suivantes s'appliquent à la définition d'
 
 - Les requêtes de projections de requête sur le client sont traduites pour utiliser l'option de requête `$select` dans l'URI de requête. Lorsqu'une requête avec projection est exécutée sur une version précédente d'[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] qui ne prend pas en charge l'option de requête `$select`, une erreur est retournée. Cela peut également arriver lorsque <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> de <xref:System.Data.Services.DataServiceBehavior> pour le service de données est défini sur une valeur <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Pour plus d’informations, consultez contrôle de [version des services de données](data-service-versioning-wcf-data-services.md).
 
-Pour plus d'informations, voir [Procédure : Résultats](how-to-project-query-results-wcf-data-services.md)de la requête de projet.
+Pour plus d’informations, consultez Guide pratique [pour projeter des résultats de requête](how-to-project-query-results-wcf-data-services.md).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9da78fb161a906f6ef266f98a9f13633da91b61c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e2b030508897f13cce1fc6439809b98bbae17813
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052039"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975673"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Réduction des redémarrages système lors des installations de .NET Framework 4.5
-Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de redémarrage](https://go.microsoft.com/fwlink/?LinkId=231425) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d’informations, consultez [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md).  
+Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de redémarrage](/windows/win32/rstmgr/about-restart-manager) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d’informations, consultez [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md).  
   
 ## <a name="reasons-for-a-restart"></a>Raisons pour un redémarrage  
  Lors de l’installation de .NET Framework 4.5, vous devez redémarrer le système si une application .NET Framework 4 est en cours d’utilisation. En effet, .NET Framework 4.5 remplace les fichiers .NET Framework 4 et nécessite que ces fichiers soient disponibles pendant l’installation. Dans de nombreux cas, le redémarrage peut être évité par la détection préemptive et la fermeture des applications .NET Framework 4 en cours d'utilisation. Toutefois, certaines applications de système ne doivent pas être fermées. Dans ces cas là, un redémarrage ne peut pas être évité.  
@@ -37,4 +37,4 @@ Le programme d’installation de .NET Framework 4.5 utilise le [Gestionnaire de 
 
 - [Déploiement](index.md)
 - [Guide de déploiement pour les développeurs](deployment-guide-for-developers.md)
-- [Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)
+- [Guide pratique : connaître la progression dans le programme d’installation du .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)

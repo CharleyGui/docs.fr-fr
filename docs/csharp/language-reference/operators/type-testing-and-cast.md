@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: d2fd43644949c842ff883731d3c7f00228cabfd7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c3550a593eafb9b50fa7e419e2f747c3e7a0e2ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038868"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972648"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>Opérateurs de test et de cast de type (Référence C#)
 
@@ -154,5 +154,5 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
-- [Guide pratique pour caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Comment effectuer un cast en toute sécurité à l’aide de critères spéciaux et des opérateurs is et As](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Génériques en .NET](../../../standard/generics/index.md)

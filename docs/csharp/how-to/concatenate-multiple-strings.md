@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Concaténer plusieurs chaînes (Guide C#)'
+title: Comment concaténer plusieurs chaînes (C# Guide)
 description: Il existe plusieurs façons de concaténer des chaînes dans C#. Découvrez les options et les raisons de les choisir.
 ms.date: 02/20/2018
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: da83a79f58c236692e284a7920c7b98c3520e5d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 2e443030445d2817c8f53a044a261edd22eeb26e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710415"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973272"
 ---
-# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Procédure : Concaténer plusieurs chaînes (Guide C#)
+# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Comment concaténer plusieurs chaînes (C# Guide)
 
 La *concaténation* consiste à ajouter une chaîne à la fin d’une autre chaîne. Vous concaténez les chaînes à l’aide de l’opérateur `+`. Pour les littéraux de chaîne et les constantes de chaîne, la concaténation se produit au moment de la compilation ; aucune concaténation ne se produit au moment de l’exécution. Pour les variables de chaîne, la concaténation se produit uniquement au moment de l’exécution.
 

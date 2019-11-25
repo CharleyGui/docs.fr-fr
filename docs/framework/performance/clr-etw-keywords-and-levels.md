@@ -9,17 +9,16 @@ helpviewer_keywords:
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dce8c58f94c66bcf2336d3708ebc64699148d556
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 56ecdc41c5b5a3f7ee272768d5c2a3745da26633
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046702"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975514"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
-<a name="top"></a> Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#levels) sont identifiés par des indicateurs.  
+Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#clr-etw-keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#etw-event-levels) sont identifiés par des indicateurs.  
   
-<a name="keywords"></a>   
 ## <a name="clr-etw-keywords"></a>Mots clés ETW du CLR  
  Les mots clés sont des indicateurs qui peuvent être combinés pour générer des valeurs. Dans la pratique, vous utilisez les valeurs hexadécimales des mots clés au lieu de leurs noms lorsque vous appelez des utilitaires en ligne de commande.  
   
@@ -37,7 +36,7 @@ ms.locfileid: "71046702"
 ### <a name="clr-etw-runtime-keywords"></a>Mots clés de runtime ETW du CLR  
  Le tableau suivant répertorie les mots clés de runtime ETW du CLR, leurs valeurs et leur usage.  
   
-|Nom du mot clé de runtime|Valeur|Objectif|  
+|Nom du mot clé de runtime|valeur|Fonction|  
 |--------------------------|-----------|-------------|  
 |`GCKeyword`|0x00000001|Active la collecte d' [événements de garbage collection](garbage-collection-etw-events.md).|  
 |`LoaderKeyword`|0x00000008|Active la collecte d’ [événements de chargeur](loader-etw-events.md).|  
@@ -52,17 +51,15 @@ ms.locfileid: "71046702"
 |`ContentionKeyword`|0x00004000|Active la collecte d’ [événements de conflit](contention-etw-events.md).|  
 |`ExceptionKeyword`|0x00008000|Active la collecte d’ [événements d’exception](exception-thrown-v1-etw-event.md).|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’ [événements de pool de threads](thread-pool-etw-events.md).|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé de charge mémoire élevée `NGenKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À partir de la .NET Framework 4,5, les outils de profilage `NGenKeyword` doivent utiliser `OverrideAndSuppressNGenEventsKeyword` et ensemble pour supprimer la génération d’événements pour les méthodes dans les modules Ngen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé `NGenKeyword` à charge élevée et empêche la génération d’événements pour les méthodes qui se trouvent dans les modules NGen. À partir de la .NET Framework 4,5, les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsKeyword` et `NGenKeyword` pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleLoad` et `ModuleRange` .|  
 |`StackKeyword`|0x40000000|Active la collecte des [événements de trace de la pile](stack-etw-event.md).|  
-  
- [Revenir en haut](#top)  
   
 <a name="rundown"></a>   
 ### <a name="clr-etw-rundown-keywords"></a>Mots clés d’arrêt ETW du CLR  
  Le tableau suivant répertorie les mots clés d’arrêt ETW du CLR, leurs valeurs et leur usage.  
   
-|Nom du mot clé d’arrêt|Valeur|Objectif|  
+|Nom du mot clé d’arrêt|valeur|Fonction|  
 |--------------------------|-----------|-------------|  
 |`LoaderRundownKeyword`|0x00000008|Active la collecte d’événements de chargeur quand il est utilisé avec `StartRundownKeyword` et `EndRundownKeyword`.|  
 |`JitRundownKeyword`|0x00000010|Active la collecte des événements `DCStart` et `DCEnd` de méthode pour les méthodes compilées juste-à-temps (JIT) quand il est utilisé avec `StartRundownKeyword` et `EndRundownKeyword`.|  
@@ -71,40 +68,33 @@ ms.locfileid: "71046702"
 |`EndRundownKeyword`|0x00000100|Active l'énumération de l'état du système pendant un arrêt de fin.|  
 |`AppDomainResourceManagementRundownKeyword`|0x00000800|Active la collecte d'événements d'analyse de ressource à un niveau <xref:System.AppDomain> lorsqu'il est utilisé avec `StartRundownKeyword` ou `EndRundownKeyword`.|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’événements de pool de threads.|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé de charge mémoire élevée `NGenRundownKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À partir de la .NET Framework 4,5, les outils de profilage `NGenRundownKeyword` doivent utiliser `OverrideAndSuppressNGenEventsRundownKeyword` et ensemble pour supprimer la génération d’événements pour les méthodes dans les modules Ngen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
-|`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`et `ModuleRangeDCEnd` .|  
-  
- [Revenir en haut](#top)  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans la .NET Framework 4,5 et versions ultérieures.) Supprime le mot clé `NGenRundownKeyword` à charge élevée et empêche la génération d’événements pour les méthodes qui se trouvent dans les modules NGen. À partir de la .NET Framework 4,5, les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsRundownKeyword` et `NGenRundownKeyword` pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`et `ModuleRangeDCEnd` .|   
   
 <a name="runtime_combo"></a>   
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>Combinaisons de mots clés pour la résolution des symboles pour le fournisseur de runtime  
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements de chargement/déchargement de module|Événements de chargement/déchargement de méthode (sauf événements dynamiques)|Événements de chargement/destruction de méthode dynamique|  
 |------------------------|--------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------|  
-|`LoaderKeyword`|Événements de chargement et déchargement.|Aucune.|Aucune.|  
-|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` n'ajoute rien)|Aucune.|Événements de chargement.|Événements de chargement et déchargement.|  
-|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucune.|Événements de chargement et déchargement.|Événements de chargement et déchargement.|  
-|`NGenKeyword`|Aucune.|Aucun(e).|Non applicable.|  
-|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|Aucune.|Événements de chargement.|Non applicable.|  
-|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucune.|Événements de déchargement.|Non applicable.|  
-  
- [Revenir en haut](#top)  
+|`LoaderKeyword`|Événements de chargement et déchargement.|Aucun(e).|Aucun(e).|  
+|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` n'ajoute rien)|Aucun(e).|Événements de chargement.|Événements de chargement et déchargement.|  
+|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun(e).|Événements de chargement et déchargement.|Événements de chargement et déchargement.|  
+|`NGenKeyword`|Aucun(e).|Aucun(e).|Non applicable.|  
+|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|Aucun(e).|Événements de chargement.|Non applicable.|  
+|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun(e).|Événements de déchargement.|Non applicable.|  
   
 <a name="rundown_combo"></a>   
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>Combinaisons de mots clés pour la résolution des symboles pour le fournisseur d’arrêt  
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements DCStart/DCEnd de module|Événements DCStart/DCEnd de méthode (y compris les événements de méthode dynamique)|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
-|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|Événements`DCStart` .|Aucune.|  
-|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|Événements`DCEnd` .|Aucune.|  
-|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Aucune.|Événements`DCStart` .|  
-|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Aucune.|Événements`DCEnd` .|  
-|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Aucune.|Événements`DCStart` .|  
-|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Aucune.|Événements`DCEnd` .|  
-  
- [Revenir en haut](#top)  
-  
-<a name="levels"></a>   
+|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|Événements`DCStart` .|Aucun(e).|  
+|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|Événements`DCEnd` .|Aucun(e).|  
+|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Aucun(e).|Événements`DCStart` .|  
+|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Aucun(e).|Événements`DCEnd` .|  
+|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Aucun(e).|Événements`DCStart` .|  
+|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Aucun(e).|Événements`DCEnd` .|  
+
 ## <a name="etw-event-levels"></a>Niveaux d'événement ETW  
  Les événements ETW peuvent également être filtrés par niveau. Si le niveau est défini sur 0x5, les événements de tous les niveaux, y compris 0x5 et inférieurs (qui sont des événements qui appartiennent aux catégories activées via des mots clés), sont déclenchés. Si le niveau est défini sur 0x2, seuls les événements de niveau 0x2 et inférieurs sont déclenchés.  
   

@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: c3c4927a4afbf69f2101aa2596389e6f94cea243
-  ms.sourcegitcommit: 4aeac5d588ded58246f58030919e56b70a7674e4
+  ms.openlocfilehash: bc2d600afabbac9783e8fb12e3bd47e83a3495b7
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/27/2019
-  ms.locfileid: "72966978"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969439"
 items:
 - durationInMinutes: 2
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Créer une chaîne interpolée
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Pour cela, tapez le code dans la fenêtre interactive (remplacez `<name>` par votre nom) et sélectionnez **Exécuter** :
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive (remplacez `<name>` par votre nom), puis sélectionnez **exécuter**:
 
 
     ```csharp

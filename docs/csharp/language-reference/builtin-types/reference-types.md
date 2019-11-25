@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: a5a32fa0a98cda37d7f599b20ef2b507cadd730c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: d8858acb2743b26cc3a5172edf4765976d81adf4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69604215"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973015"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Types référence intégrés (Référence C#)
 
@@ -39,7 +39,7 @@ Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithTyp
 
 Le type `string` représente une séquence de zéro, un ou plusieurs caractères Unicode. `string` est un alias de <xref:System.String?displayProperty=nameWithType> dans .NET.
 
-Bien que `string` soit un type référence, les [opérateurs d’égalité`==` (`!=` et ](../operators/equality-operators.md#string-equality)) sont définis pour comparer les valeurs des objets `string`, pas les références. Cela permet de tester l’égalité de chaînes de façon plus intuitive. Par exemple :
+Bien que `string` soit un type référence, les [opérateurs d’égalité`==` (`!=` et ](../operators/equality-operators.md#string-equality)) sont définis pour comparer les valeurs des objets `string`, pas les références. Cela permet de tester l’égalité de chaînes de façon plus intuitive. Exemple :
 
 ```csharp-interactive
 string a = "hello";
@@ -105,7 +105,7 @@ Console.WriteLine(a);
 > [!NOTE]
 > Le code d’échappement `\udddd` (où `dddd` est un nombre à quatre chiffres) représente le caractère Unicode U+`dddd`. Les codes d’échappement Unicode à huit chiffres sont également reconnus : `\Udddddddd`.
 
-Les [littéraux de chaîne textuelle](../tokens/verbatim.md) commencent par `@` et sont placés entre guillemets doubles. Par exemple :
+Les [littéraux de chaîne textuelle](../tokens/verbatim.md) commencent par `@` et sont placés entre guillemets doubles. Exemple :
 
 ```csharp
 @"good morning"  // a string literal
@@ -170,7 +170,7 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](../keywords/index.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)
@@ -178,7 +178,7 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 - [Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)
 - [Création de chaînes](../../../standard/base-types/creating-new.md)
 - [Opérateurs de test et de cast de type](../operators/type-testing-and-cast.md)
-- [Guide pratique pour caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Comment effectuer un cast en toute sécurité à l’aide de critères spéciaux et des opérateurs As et is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Procédure pas à pas : création et utilisation d’objets dynamiques](../../programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
 - <xref:System.Object?displayProperty=nameWithType>
 - <xref:System.String?displayProperty=nameWithType>

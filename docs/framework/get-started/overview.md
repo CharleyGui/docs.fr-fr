@@ -7,12 +7,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: b5dacad4511df0476dded6ac3784014665234077
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 397a78514dc5878e83708882ceeb4d92160d9a78
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123235"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975658"
 ---
 # <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
 
@@ -96,4 +96,4 @@ Les classes Windows Forms sont un ensemble complet de types réutilisables qui s
 - [Guide de développement](../development-guide.md)
 - [Outils](../tools/index.md)
 - [Exemples et tutoriels .NET](../../samples-and-tutorials/index.md)
-- [Bibliothèque de classes .NET Framework](https://go.microsoft.com/fwlink/?LinkID=227195)
+- [Navigateur de l’API .NET](../../../api/index.md)

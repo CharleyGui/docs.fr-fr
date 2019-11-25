@@ -5,22 +5,22 @@ helpviewer_keywords:
 - WCF Data Services, quick-start example
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-ms.openlocfilehash: df6806cd77e7ff109d79f7ba61866763de4c7fc1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d0002182c5ae519c36348acdd2587bca499fe72e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790368"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975142"
 ---
 # <a name="quickstart-wcf-data-services"></a>Démarrage rapide (services de données WCF)
 
-Ce guide de démarrage rapide vous permet de vous familiariser avec WCF Data Services et le par le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] biais d’une série de tâches qui prennent en charge les rubriques de [prise en main](getting-started-with-wcf-data-services.md).
+Ce guide de démarrage rapide vous permet de vous familiariser avec WCF Data Services et le Open Data Protocol (OData) par le biais d’une série de tâches qui prennent en charge les rubriques dans [prise en main](getting-started-with-wcf-data-services.md).
 
 ## <a name="what-youll-learn"></a>Ce que vous allez apprendre
 
 La première tâche de ce guide de démarrage rapide montre comment créer un service de données pour exposer un flux OData à partir de l’exemple de base de données Northwind. Dans les rubriques ultérieures, vous accéderez au flux OData à l’aide d’un navigateur Web et vous créerez également une application cliente Windows Presentation Foundation (WPF) qui consomme le flux OData à l’aide des bibliothèques clientes.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Pour effectuer ce démarrage rapide, vous devez installer les composants suivants :
 

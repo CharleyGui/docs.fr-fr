@@ -2,12 +2,12 @@
 title: Évaluer les changements cassants - .NET Core
 description: Pour en savoir plus sur les façons dont .NET Core tente de maintenir la compatibilité pour les développeurs entre les versions de .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: f4e18a17f58452c9325f36390626ae690f5ed777
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739347"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973646"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Évaluer les changements cassants dans .NET Core
 
@@ -103,7 +103,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Notez qu’en cas d’ajout d’une substitution, les consommateurs précédents pourraient ignorer la substitution lors de l’appel de [base](../../csharp/language-reference/keywords/base.md).
 
-- **✔ Ajout d’un constructeur à une classe, ainsi que d’un constructeur par défaut (sans paramètre) si la classe n’avait auparavant aucun constructeur️**
+- **✔️ l’ajout d’un constructeur à une classe, avec un constructeur sans paramètre si la classe n’avait pas précédemment de constructeurs**
 
    Cependant, ajouter un constructeur à une classe qui n’avait auparavant aucun constructeur *sans* ajouter le constructeur sans paramètre n’est pas autorisé.
 

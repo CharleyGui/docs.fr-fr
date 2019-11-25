@@ -7,16 +7,14 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e4e472185b3b2ba39393c029bca3966fb5ec4b3
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f90b64b5e9ab5a167333a594ace7f247b1b2b7e7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206054"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975532"
 ---
 # <a name="security-transparent-code"></a>Code transparent de sécurité (security-transparent)
-
-<a name="top"></a>
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
@@ -24,16 +22,6 @@ La sécurité fait intervenir trois éléments interactifs : le sandboxing, les
 
 > [!IMPORTANT]
 > La stratégie de sécurité était un élément clé dans les versions précédentes du .NET Framework. À partir du .NET Framework 4, la stratégie de sécurité est obsolète. L'élimination de la stratégie de sécurité est indépendante de la transparence de la sécurité. Pour plus d’informations sur les effets de cette modification, consultez [compatibilité et migration de la stratégie de sécurité d’accès du code](code-access-security-policy-compatibility-and-migration.md).
-
-Cette rubrique décrit plus en détail le modèle de transparence. Elle contient les sections suivantes :
-
-- [Objectif du modèle de transparence](#purpose)
-
-- [Spécification du niveau de transparence](#level)
-
-- [Mise en application de la transparence](#enforcement)
-
-<a name="purpose"></a>
 
 ## <a name="purpose-of-the-transparency-model"></a>Objectif du modèle de transparence
 
@@ -47,11 +35,7 @@ L'objectif principal de la mise en application de la transparence est de fournir
 La transparence a été introduite dans le .NET Framework version 2.0 pour simplifier le modèle de sécurité et faciliter l'écriture et le déploiement de bibliothèques et d'applications sécurisées. Le code transparent est aussi utilisé dans Microsoft Silverlight pour simplifier le développement d'applications de niveau de confiance partielle.
 
 > [!NOTE]
-> Quand vous développez une application de niveau de confiance partielle, vous devez connaître les exigences d'autorisation pour vos hôtes cibles. Vous pouvez développer une application qui fasse appel à des ressources non autorisées par certains hôtes. Cette application se compilera sans erreur, mais son chargement dans l'environnement hébergé échouera. Si vous avez développé votre application l'aide de Visual Studio, vous pouvez activer le débogage en mode confiance partielle ou dans un jeu d'autorisations restreint à partir de l'environnement de développement. Pour plus d'informations, voir [Procédure : Déboguer une application ClickOnce avec des autorisations restreintes](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). La fonctionnalité de calcul des autorisations fournie pour les applications ClickOnce est aussi accessible à n'importe quelle application de niveau de confiance partielle.
-
-[Revenir en haut](#top)
-
-<a name="level"></a>
+> Quand vous développez une application de niveau de confiance partielle, vous devez connaître les exigences d'autorisation pour vos hôtes cibles. Vous pouvez développer une application qui fasse appel à des ressources non autorisées par certains hôtes. Cette application se compilera sans erreur, mais son chargement dans l'environnement hébergé échouera. Si vous avez développé votre application l'aide de Visual Studio, vous pouvez activer le débogage en mode confiance partielle ou dans un jeu d'autorisations restreint à partir de l'environnement de développement. Pour plus d'informations, consultez [How to: Debug a ClickOnce Application with Restricted Permissions](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). La fonctionnalité de calcul des autorisations fournie pour les applications ClickOnce est aussi accessible à n'importe quelle application de niveau de confiance partielle.
 
 ## <a name="specifying-the-transparency-level"></a>Spécification du niveau de transparence
 
@@ -59,7 +43,7 @@ L'attribut <xref:System.Security.SecurityRulesAttribute> au niveau niveau de l'a
 
 Voici les différents niveaux :
 
-- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>): règles de transparence du .NET Framework 4.
+- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>) : règles de transparence .NET Framework 4.
 
 - niveau 1 (<xref:System.Security.SecurityRuleSet.Level1>) : règles de transparence du .NET Framework 2.0.
 
@@ -107,10 +91,6 @@ Le modèle de transparence de niveau 1 présente les limitations suivantes :
 - Les règles d'héritage ne sont pas appliquées.
 
 - Le potentiel de nuisance du code transparent est bien réel quand il est exécuté en mode confiance totale.
-
-[Revenir en haut](#top)
-
-<a name="enforcement"></a>
 
 ## <a name="transparency-enforcement"></a>Mise en application de la transparence
 

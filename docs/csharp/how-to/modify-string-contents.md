@@ -1,16 +1,16 @@
 ---
-title: 'Procédure : Modifier le contenu des chaînes - Guide C#'
+title: Comment modifier le contenu d’une C# chaîne-Guide
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 2cc1166d98a6cc07e0827a138cecb09c0530b899
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
-ms.translationtype: HT
+ms.openlocfilehash: 539e313173d46c2c92399cefe94207c8beed03b4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267763"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973253"
 ---
-# <a name="how-to-modify-string-contents-in-c"></a>Procédure : Modifier le contenu des chaînes en C\#
+# <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu d’une chaîne en C\#
 
 Cet article présente plusieurs techniques pour produire un `string` en modifiant un `string` existant. Toutes les techniques présentées retournent le résultat des modifications sous la forme d’un nouvel objet `string`. Pour illustrer clairement ceci, tous les exemples stockent le résultat dans une nouvelle variable. Vous pouvez ensuite examiner le `string` d’origine et le `string` résultant de la modification quand vous exécutez chaque exemple.
 
@@ -48,7 +48,7 @@ Vous pouvez supprimer du texte d’une chaîne à l’aide de la méthode <xref:
 
 Vous pouvez utiliser des [expressions régulières](../../standard/base-types/regular-expressions.md) pour remplacer du texte correspondant à un modèle par un autre texte, éventuellement défini par un modèle. L’exemple suivant utilise la classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> pour trouver un modèle dans une chaîne source et le remplacer par du texte dont la casse est correcte. La méthode <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> accepte dans ses arguments une fonction qui fournit la logique du remplacement. Dans cet exemple, la fonction `LocalReplaceMatchCase` est une **fonction locale** déclarée à l’intérieur de l’exemple de méthode. `LocalReplaceMatchCase` utilise la classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> pour générer la chaîne de remplacement avec la casse correcte.
 
-Les expressions régulières sont plus utiles pour rechercher et remplacer du texte qui suit un modèle que du texte connu. Pour plus d’informations, consultez [Guide pratique pour faire des recherches dans des chaînes](search-strings.md). Le modèle de recherche, « the\s », recherche le mot « the » suivi d’un espace blanc. Cette partie du modèle permet d’exclure le mot « there » qui figure dans la chaîne source. Pour plus d’informations sur les éléments du langage des expressions régulières, consultez [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md).
+Les expressions régulières sont plus utiles pour rechercher et remplacer du texte qui suit un modèle que du texte connu. Pour plus d’informations, consultez [Comment rechercher des chaînes](search-strings.md) . Le modèle de recherche, « the\s », recherche le mot « the » suivi d’un espace blanc. Cette partie du modèle permet d’exclure le mot « there » qui figure dans la chaîne source. Pour plus d’informations sur les éléments du langage des expressions régulières, consultez [Langage des expressions régulières - Aide-mémoire](../../standard/base-types/regular-expression-language-quick-reference.md).
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
 

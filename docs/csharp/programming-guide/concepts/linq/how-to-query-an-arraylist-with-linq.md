@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Interroger un ArrayList avec LINQ (C#)'
+title: Guide pratique pour interroger un ArrayList avec LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
-ms.openlocfilehash: 51c42296b8acb6be1c9c4505f9af3d6fbaf248ce
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c22cd6ef22b5ca182266c1e8db10151e07567fc6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253449"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969824"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-c"></a>Procédure : Interroger un ArrayList avec LINQ (C#)
+# <a name="how-to-query-an-arraylist-with-linq-c"></a>Guide pratique pour interroger un ArrayList avec LINQ (C#)
 Quand vous utilisez LINQ pour interroger des collections <xref:System.Collections.IEnumerable> non génériques telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour qu’il reflète le type spécifique des objets de la collection. Par exemple, si vous avez un <xref:System.Collections.ArrayList> d’objets `Student`, votre [clause from](../../../language-reference/keywords/from-clause.md) doit ressembler à ceci :  
   
-```csharp  
+```csharp
 var query = from Student s in arrList  
 //...
 ```  

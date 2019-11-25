@@ -7,35 +7,28 @@ helpviewer_keywords:
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 145a53363c9d7aca622ee0b1ccb2700e5984397d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4daa0fc0d689815e3a2c65df09c6c046d06a25c4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046425"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975495"
 ---
 # <a name="jit-tracing-etw-events"></a>Événements ETW de traçage JIT
-<a name="top"></a> Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.  
-  
- Les événements de traçage JIT se composent des deux catégories suivantes :  
-  
-- [Événements d’incorporation (inlining) JIT](#jit_inlining_events)  
-  
-- [Événements d'appel tail JIT](#jit_tail_call_events)  
-  
-<a name="jit_inlining_events"></a>   
-## <a name="jit-inlining-events"></a>Événements d’incorporation (inlining) JIT  
-  
-### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed  
+Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.
+
+## <a name="jit-inlining-events"></a>Événements d’incorporation (inlining) JIT
+
+### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed
  Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitInliningFailed`|186|L’incorporation JIT a échoué.|  
   
@@ -59,13 +52,13 @@ ms.locfileid: "71046425"
 ### <a name="methodjitinliningsucceeded-event"></a>Événement MethodJitInliningSucceeded  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitInliningSucceeded`|185|L'incorporation de méthode a réussi.|  
   
@@ -83,22 +76,19 @@ ms.locfileid: "71046425"
 |InlineeName|win:UnicodeString|Méthode que le compilateur essaie d'incorporer (ne pas générer d’appel vers cette méthode).|  
 |InlineeNameSignature|win:UnicodeString|Signature de l’inlinee.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
-  
- [Revenir en haut](#top)  
-  
-<a name="jit_tail_call_events"></a>   
+
 ## <a name="jit-tail-call-events"></a>Événements d'appel tail JIT  
   
 ### <a name="methodjittailcallfailed-event"></a>Événement MethodJITTailCallFailed  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitTailCallFailed`|189|L'appel tail de méthode a échoué.|  
   
@@ -122,13 +112,13 @@ ms.locfileid: "71046425"
 ### <a name="methodjittailcallsucceeded-event"></a>Événement MethodJITTailCallSucceeded  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitTailCallSucceeded`|188|L'appel tail de méthode a réussi.|  
   

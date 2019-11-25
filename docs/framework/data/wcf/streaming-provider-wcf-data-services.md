@@ -10,22 +10,22 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 4d51011fddb856cf1ebd00943e9b79776d9181d0
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: da575c65902ec8751c12482d0c8d0abd523623e4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854110"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975118"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Fournisseurs de diffusion en continu (WCF Data Services)
 
-Un service de données peut exposer des données Large Object Binary. Ces données binaires peuvent représenter des flux vidéo et audio, des images, des fichiers de document ou d'autres types de supports binaires. Lorsqu'une entité du modèle de données inclut une ou plusieurs propriétés binaires, le service de données retourne ces données binaires encodées en Base 64 au sein de l'entrée dans le flux de réponse. Étant donné que le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] chargement et la sérialisation de données binaires volumineuses de cette manière peuvent affecter les performances, définit un mécanisme pour récupérer des données binaires indépendantes de l’entité à laquelle elles appartiennent. Cela s'effectue en séparant l'entité et les données binaires de l'entité dans un ou plusieurs flux de données
+Un service de données peut exposer des données Large Object Binary. Ces données binaires peuvent représenter des flux vidéo et audio, des images, des fichiers de document ou d'autres types de supports binaires. Lorsqu'une entité du modèle de données inclut une ou plusieurs propriétés binaires, le service de données retourne ces données binaires encodées en Base 64 au sein de l'entrée dans le flux de réponse. Étant donné que le chargement et la sérialisation de données binaires volumineuses de cette manière peuvent affecter les performances, le Open Data Protocol (OData) définit un mécanisme de récupération des données binaires indépendantes de l’entité à laquelle elles appartiennent. Cela s'effectue en séparant l'entité et les données binaires de l'entité dans un ou plusieurs flux de données
 
 - Ressource multimédia : données binaires qui appartiennent à une entité, telle qu'une vidéo, du son, une image ou d'autres types de flux de ressources multimédias.
 
 - Entrée de lien média : une entité ayant une référence à un flux de ressources multimédias associé.
 
-Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous définissez un flux de ressources binaires en implémentant un fournisseur de données en continu. L’implémentation du fournisseur de diffusion en continu fournit le service de données avec le flux de ressources multimédia associé <xref:System.IO.Stream> à une entité spécifique sous la forme d’un objet. Cette implémentation permet au service de données d'accepter et de retourner les ressources multimédias sur HTTP sous forme de flux de données binaires d'un type MIME spécifié.
+Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous définissez un flux de ressources binaires en implémentant un fournisseur de données en continu. L’implémentation du fournisseur de diffusion en continu fournit le service de données avec le flux de ressources multimédia associé à une entité spécifique sous la forme d’un objet <xref:System.IO.Stream>. Cette implémentation permet au service de données d'accepter et de retourner les ressources multimédias sur HTTP sous forme de flux de données binaires d'un type MIME spécifié.
 
 La configuration d'un service de données afin de prendre en charge la diffusion en continu de données binaires requiert les étapes suivantes :
 
@@ -39,7 +39,7 @@ La configuration d'un service de données afin de prendre en charge la diffusion
 
 5. Activer l'accès aux ressources binaires sur le serveur ou dans une source de données.
 
-Les exemples de cette rubrique sont basés sur un exemple de service de diffusion de photos en continu, qui est abordé [en détail dans la série publication de fournisseurs de diffusion en continu Data Services : Implémentation d’un fournisseur de diffusion en continu](https://go.microsoft.com/fwlink/?LinkID=198989)(partie 1). Le code source de cet exemple de service est disponible sur la page de l' [exemple streaming photo service](https://go.microsoft.com/fwlink/?LinkID=198988) dans la Galerie de code MSDN.
+Les exemples de cette rubrique sont basés sur un exemple de service de diffusion de photos en continu, qui est abordé en détail dans la série publication de fournisseurs de diffusion en continu [Data Services : implémentation d’un fournisseur de diffusion en continu (partie 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Le code source de cet exemple de service est disponible sur la page de l' [exemple streaming photo service](https://go.microsoft.com/fwlink/?LinkID=198988) dans la Galerie de code MSDN.
 
 ## <a name="defining-a-media-link-entry-in-the-data-model"></a>Définition d'une entrée de lien média dans le modèle de données
 
@@ -53,7 +53,7 @@ Pour indiquer qu'une entité est une entrée de lien média, ajoutez l'attribut 
 
 Vous devez également ajouter l'espace de noms `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` à l'entité ou à la racine du fichier .edmx ou .csdl qui définit le modèle de données.
 
-Pour obtenir un exemple de service de données qui utilise le fournisseur de Entity Framework et expose une ressource multimédia, consultez [la série publication de fournisseurs de diffusion en continu Data Services : Implémentation d’un fournisseur de diffusion en continu](https://go.microsoft.com/fwlink/?LinkID=198989)(partie 1).
+Pour obtenir un exemple de service de données qui utilise le fournisseur de Entity Framework et expose une ressource multimédia, consultez la [série publication de fournisseurs de diffusion en continu Data Services : implémentation d’un fournisseur de diffusion en continu (partie 1)](https://go.microsoft.com/fwlink/?LinkID=198989).
 
 **Fournisseur de réflexion**
 
@@ -91,11 +91,11 @@ Pour obtenir des informations générales sur la création d’un service de don
 Lorsque vous créez un service de données dans une application Web ASP.NET, Windows Communication Foundation (WCF) est utilisé pour fournir l’implémentation du protocole HTTP. Par défaut, WCF limite la taille des messages HTTP à 65 kilo-octets. Pour pouvoir transmettre en continu des données binaires volumineuses depuis et vers le service de données, vous devez également configurer l'application Web pour autoriser les fichiers binaires volumineux et utiliser des flux de données pour le transfert. Pour cela, ajoutez les éléments suivants dans l'élément `<configuration />` du fichier Web.config de l'application :
 
 > [!NOTE]
-> Vous devez utiliser un <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> mode de transfert pour vous assurer que les données binaires dans les messages de demande et de réponse sont diffusées en continu et ne sont pas mises en mémoire tampon par WCF.
+> Vous devez utiliser un mode de transfert <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> pour vous assurer que les données binaires dans les messages de demande et de réponse sont diffusées en continu et ne sont pas mises en mémoire tampon par WCF.
 
 Pour plus d’informations, consultez [transfert de messages en continu](../../wcf/feature-details/streaming-message-transfer.md) et quotas de [transport](../../wcf/feature-details/transport-quotas.md).
 
-Par défaut, Internet Information Services (IIS) limite également la taille des demandes à 4 Mo. Pour permettre à votre service de données de recevoir des flux d’une taille supérieure à 4 Mo lorsqu’ils s' `maxRequestLength` exécutent sur IIS, vous devez également définir l’attribut de `<system.web />` l' [élément httpRuntime (schéma des paramètres ASP.net)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) dans la section de configuration, comme indiqué dans l’exemple suivant : tels
+Par défaut, Internet Information Services (IIS) limite également la taille des demandes à 4 Mo. Pour permettre à votre service de données de recevoir des flux d’une taille supérieure à 4 Mo lorsqu’ils s’exécutent sur IIS, vous devez également définir l’attribut `maxRequestLength` de l' [élément httpRuntime (schéma des paramètres ASP.net)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) dans la section de configuration `<system.web />`, comme indiqué dans l’exemple suivant :
 
 ## <a name="using-data-streams-in-a-client-application"></a>Utilisation de flux de données en continu dans une application cliente
 
@@ -131,9 +131,9 @@ Les éléments suivants sont à prendre en compte lorsque vous implémentez un f
 
 ## <a name="versioning-requirements"></a>Exigences pour le contrôle de version
 
-Le fournisseur de diffusion en continu respecte les conditions requises pour le contrôle de version de protocole [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] suivantes :
+Le fournisseur de diffusion en continu a les spécifications de contrôle de version de protocole OData suivantes :
 
-- Le fournisseur de diffusion en continu requiert que le client et le service de données prennent en charge les versions 2.0 et ultérieures du protocole [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] .
+- Le fournisseur de diffusion en continu requiert que le service de données prenne en charge la version 2,0 du protocole OData et les versions ultérieures.
 
 Pour plus d’informations, consultez contrôle de [version des services de données](data-service-versioning-wcf-data-services.md).
 

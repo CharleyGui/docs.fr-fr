@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
-ms.openlocfilehash: c8a83dd3f7327d00979431ca7fa801ff642a4eef
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 94d175ec58f35b7e807786c221437d05c605c0bc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197803"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974223"
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Procédure pas à pas : mappage de propriétés à l'aide de l'élément WindowsFormsHost
 
@@ -57,7 +57,7 @@ L’application basée sur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tl
 
 ### <a name="to-define-the-application-layout"></a>Pour définir la disposition de l’application
 
-1. Ouvrez Window1. xaml dans la [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+1. Ouvrez Window1. xaml dans le Concepteur WPF.
 
 2. Remplacez le code existant par le code ci-dessous.
 

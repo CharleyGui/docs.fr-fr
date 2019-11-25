@@ -7,33 +7,27 @@ helpviewer_keywords:
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 787c6221b651a53dbb932a5a9d0edea123e1d97d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5db68cdce0db4f8f4d85e9d1dd03720bf235d865
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046434"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974935"
 ---
 # <a name="interop-etw-events"></a>Événements ETW d'interopérabilité
-<a name="top"></a> Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).  
+Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).  
+
+## <a name="ilstubgenerated-event"></a>Événement ILStubGenerated
+
+Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
- Cette catégorie comprend les événements suivants :  
-  
-- [Événement ILStubGenerated](#ilstubgenerated_event)  
-  
-- [Événement ILStubCacheHit](#ilstubcachehit_event)  
-  
-<a name="ilstubgenerated_event"></a>   
-## <a name="ilstubgenerated-event"></a>Événement ILStubGenerated  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
-  
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informatif(4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ILStubGenerated`|88|Le stub MSIL a été généré.|  
   
@@ -53,19 +47,17 @@ ms.locfileid: "71046434"
 |StubMethodILCode|win:UnicodeString|Code MSIL de la méthode stub|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
- [Revenir en haut](#top)  
-  
-<a name="ilstubcachehit_event"></a>   
 ## <a name="ilstubcachehit-event"></a>Événement ILStubCacheHit  
- Le tableau suivant montre les mots clés et les niveaux.  
+
+Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informatif(4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ILStubCacheHit`|89|Le cache MSIL a fait l’objet d’un accès.|  
   
@@ -80,8 +72,6 @@ ms.locfileid: "71046434"
 |ManagedInteropMethodName|win:UnicodeString|Nom de la méthode d’interopérabilité managée|  
 |ManagedInteropMethodSignature|win:UnicodeString|Signature de la méthode d'interopérabilité managée|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
-  
- [Revenir en haut](#top)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -12,29 +12,29 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 4cc62696cb6589151e3abc59bbea64b693e8b3a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a53d7517485d2a0b02b6f11928f478a7da3f9503
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121729"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972115"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
-<a name="Top"></a> Par défaut, la comparaison d’une chaîne d’entrée avec des caractères littéraux dans un modèle d’expression régulière respecte la casse, l’espace blanc dans un modèle d’expression régulière est interprété comme un espace blanc littéral et les groupes de capture dans une expression régulière sont nommés de manière implicite aussi bien qu’explicite. Vous pouvez modifier ces aspects, ainsi que d'autres, du comportement par défaut des expressions régulières en spécifiant des options d'expression régulière. Ces options, qui sont répertoriées dans le tableau suivant, peuvent être incluses inline dans le cadre du modèle d’expression régulière ou fournies à un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou à une méthode de mise en correspondance de modèle statique en tant que valeur d’énumération <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
+Par défaut, la comparaison d’une chaîne d’entrée avec des caractères littéraux dans un modèle d’expression régulière respecte la casse, l’espace blanc dans un modèle d’expression régulière est interprété comme un espace blanc littéral et les groupes de capture dans une expression régulière sont nommés de manière implicite aussi bien qu’explicite. Vous pouvez modifier ces aspects, ainsi que d'autres, du comportement par défaut des expressions régulières en spécifiant des options d'expression régulière. Ces options, qui sont répertoriées dans le tableau suivant, peuvent être incluses inline dans le cadre du modèle d’expression régulière ou fournies à un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou à une méthode de mise en correspondance de modèle statique en tant que valeur d’énumération <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
 |Membre RegexOptions|Caractère inline|Effet|
 |-------------------------|----------------------|------------|
-|<xref:System.Text.RegularExpressions.RegexOptions.None>|Non disponible|Utilise le comportement par défaut. Pour plus d’informations, consultez [Options par défaut](#Default).|
-|<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Utilise la correspondance qui ne respecte pas la casse. Pour plus d’informations, consultez [Correspondance qui ne respecte pas la casse](#Case).|
-|<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|Utilise le mode multiligne, où `^` et `$` correspondent au début et à la fin de chaque ligne (plutôt qu'au début et à la fin de la chaîne d'entrée). Pour plus d’informations, consultez [Mode multiligne](#Multiline).|
-|<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Utilise le mode à ligne simple, où le point (.) correspond à chaque caractère (y compris `\n`). Pour plus d’informations, consultez [Mode à ligne simple](#Singleline).|
-|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Ne capture aucun groupe sans nom. Les seules captures valides sont les groupes explicitement nommés ou numérotés de la forme `(?<`*nom*`>` *sous-expression*`)`. Pour plus d’informations, consultez [Captures explicites uniquement](#Explicit).|
-|<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Non disponible|Compile l'expression régulière en un assembly. Pour plus d’informations, consultez [Expressions régulières compilées](#Compiled).|
-|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Exclure du modèle l'espace blanc sans séquence d'échappement et autoriser les commentaires après un signe dièse (`#`). Pour plus d’informations, consultez [Ignorer l’espace blanc](#Whitespace).|
-|<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Non disponible|Modifie le sens de la recherche. La recherche s'effectue de droite à gauche au lieu de gauche à droite. Pour plus d’informations, consultez [Mode de recherche de droite à gauche](#RightToLeft).|
-|<xref:System.Text.RegularExpressions.RegexOptions.ECMAScript>|Non disponible|Active le comportement compatible ECMAScript pour l’expression. Pour plus d’informations, consultez [Comportement de correspondance ECMAScript](#ECMAScript).|
-|<xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant>|Non disponible|Ignorer les différences culturelles propres à la langue. Pour plus d’informations, consultez [Comparaison utilisant la culture dite indifférente](#Invariant).|
+|<xref:System.Text.RegularExpressions.RegexOptions.None>|Non disponible|Utilise le comportement par défaut. Pour plus d’informations, consultez [Options par défaut](#default-options).|
+|<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Utilise la correspondance qui ne respecte pas la casse. Pour plus d’informations, consultez [Correspondance qui ne respecte pas la casse](#case-insensitive-matching).|
+|<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|Utilise le mode multiligne, où `^` et `$` correspondent au début et à la fin de chaque ligne (plutôt qu'au début et à la fin de la chaîne d'entrée). Pour plus d’informations, consultez [Mode multiligne](#multiline-mode).|
+|<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Utilise le mode à ligne simple, où le point (.) correspond à chaque caractère (y compris `\n`). Pour plus d’informations, consultez [mode à ligne simple](#single-line-mode).|
+|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Ne capture aucun groupe sans nom. Les seules captures valides sont les groupes explicitement nommés ou numérotés de la forme `(?<`*nom*`>` *sous-expression*`)`. Pour plus d’informations, consultez [Captures explicites uniquement](#explicit-captures-only).|
+|<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Non disponible|Compile l'expression régulière en un assembly. Pour plus d’informations, consultez [Expressions régulières compilées](#compiled-regular-expressions).|
+|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Exclure du modèle l'espace blanc sans séquence d'échappement et autoriser les commentaires après un signe dièse (`#`). Pour plus d’informations, consultez [Ignorer l’espace blanc](#ignore-white-space).|
+|<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Non disponible|Modifie le sens de la recherche. La recherche s'effectue de droite à gauche au lieu de gauche à droite. Pour plus d’informations, consultez [Mode de recherche de droite à gauche](#right-to-left-mode).|
+|<xref:System.Text.RegularExpressions.RegexOptions.ECMAScript>|Non disponible|Active le comportement compatible ECMAScript pour l’expression. Pour plus d’informations, consultez [Comportement de correspondance ECMAScript](#ecmascript-matching-behavior).|
+|<xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant>|Non disponible|Ignorer les différences culturelles propres à la langue. Pour plus d’informations, consultez [Comparaison utilisant la culture dite indifférente](#comparison-using-the-invariant-culture).|
 
 ## <a name="specifying-the-options"></a>Spécification des options
 
@@ -108,8 +108,6 @@ Pour tester la présence de <xref:System.Text.RegularExpressions.RegexOptions.No
 
 Les sections suivantes répertorient les options prises en charge par les expressions régulières dans .NET.
 
-<a name="Default"></a>
-
 ## <a name="default-options"></a>Options par défaut
 
 L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> indique qu'aucune option n'a été spécifiée et que le moteur d'expression régulière utilise son comportement par défaut. Ce dernier est détaillé ci-après :
@@ -135,10 +133,6 @@ L'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=
 
 Comme l'option <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> représente le comportement par défaut du moteur d'expression régulière, elle est rarement spécifiée de manière explicite dans un appel de méthode. Un constructeur ou une méthode de mise en correspondance de modèle statique sans paramètre `options` est appelé à la place.
 
-[Retour au début](#Top)
-
-<a name="Case"></a>
-
 ## <a name="case-insensitive-matching"></a>Correspondance qui ne respecte pas la casse
 
 L'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>, ou l'option inline `i`, fournit une correspondance qui ne respecte pas la casse. Par défaut, les conventions de gestion de la casse de la culture actuelle sont utilisées.
@@ -152,10 +146,6 @@ L'exemple suivant modifie le modèle d'expression régulière proposé dans l'ex
 
 [!code-csharp[Conceptual.Regex.Language.Options#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/case2.cs#2)]
 [!code-vb[Conceptual.Regex.Language.Options#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/case2.vb#2)]
-
-[Retour au début](#Top)
-
-<a name="Multiline"></a>
 
 ## <a name="multiline-mode"></a>Mode multiligne
 
@@ -184,10 +174,6 @@ L'exemple suivant est équivalent à l'exemple précédent, à la différence qu
 [!code-csharp[Conceptual.Regex.Language.Options#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/multiline2.cs#4)]
 [!code-vb[Conceptual.Regex.Language.Options#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/multiline2.vb#4)]
 
-[Retour au début](#Top)
-
-<a name="Singleline"></a>
-
 ## <a name="single-line-mode"></a>Mode à ligne simple
 
 L'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>, ou l'option inline `s`, indique au moteur d'expression régulière de traiter la chaîne d'entrée comme si elle était composée d'une seule ligne. Pour ce faire, elle modifie le comportement de l'élément de langage point (`.`) de manière à mettre en correspondance chaque caractère, y compris le caractère de saut de ligne `\n` ou \u000A.
@@ -201,10 +187,6 @@ L'exemple suivant est équivalent à l'exemple précédent, à la différence qu
 
 [!code-csharp[Conceptual.Regex.Language.Options#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/singleline1.cs#5)]
 [!code-vb[Conceptual.Regex.Language.Options#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/singleline1.vb#5)]
-
-[Retour au début](#Top)
-
-<a name="Explicit"></a>
 
 ## <a name="explicit-captures-only"></a>Captures explicites uniquement
 
@@ -244,10 +226,6 @@ Enfin, vous pouvez utiliser l'élément de groupe inline `(?n:)` pour supprimer 
 [!code-csharp[Conceptual.Regex.Language.Options#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/explicit3.cs#11)]
 [!code-vb[Conceptual.Regex.Language.Options#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/explicit3.vb#11)]
 
-[Retour au début](#Top)
-
-<a name="Compiled"></a>
-
 ## <a name="compiled-regular-expressions"></a>Expressions régulières compilées
 
 Par défaut, les expressions régulières dans .NET sont interprétées. Quand un objet <xref:System.Text.RegularExpressions.Regex> est instancié ou qu'une méthode <xref:System.Text.RegularExpressions.Regex> statique est appelée, le modèle d'expression régulière est analysé de manière à générer un ensemble d'opcodes personnalisés, puis un interpréteur utilise ces opcodes pour exécuter l'expression régulière. Cela implique un compromis : le coût d'initialisation du moteur d'expression régulière est réduit au prix d'une baisse des performances au moment de l'exécution.
@@ -269,10 +247,6 @@ Toutefois, cette amélioration ne se produit que dans les conditions suivantes 
 
 > [!NOTE]
 > L'option <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> n'est pas liée à la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType>, qui crée un assembly à usage particulier contenant des expressions régulières compilées prédéfinies.
-
-[Retour au début](#Top)
-
-<a name="Whitespace"></a>
 
 ## <a name="ignore-white-space"></a>Ignorer l'espace blanc
 
@@ -302,7 +276,7 @@ L’exemple ci-après définit le modèle d’expression régulière suivant :
 
 `\b \(? ( (?>\w+) ,?\s? )+  [\.!?] \)? # Matches an entire sentence.`
 
-Ce modèle est similaire au modèle défini dans la section [Captures explicites uniquement](#Explicit), à la différence qu’il utilise l’option <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> pour ignorer l’espace blanc du modèle.
+Ce modèle est similaire au modèle défini dans la section [Captures explicites uniquement](#explicit-captures-only), à la différence qu’il utilise l’option <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> pour ignorer l’espace blanc du modèle.
 
 [!code-csharp[Conceptual.Regex.Language.Options#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/whitespace1.cs#12)]
 [!code-vb[Conceptual.Regex.Language.Options#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/whitespace1.vb#12)]
@@ -311,10 +285,6 @@ L'exemple suivant utilise l'option inline `(?x)` pour ignorer l'espace blanc du 
 
 [!code-csharp[Conceptual.Regex.Language.Options#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/whitespace2.cs#13)]
 [!code-vb[Conceptual.Regex.Language.Options#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/whitespace2.vb#13)]
-
-[Retour au début](#Top)
-
-<a name="RightToLeft"></a>
 
 ## <a name="right-to-left-mode"></a>Mode de recherche de droite à gauche
 
@@ -342,10 +312,6 @@ Le modèle d’expression régulière est défini comme indiqué dans le tableau
 |`,?`|Mettre en correspondance zéro ou une virgule.|
 |`\s`|Mettre en correspondance un espace blanc.|
 |`\d{4}`|Mettre en correspondance quatre chiffres décimaux.|
-
-[Retour au début](#Top)
-
-<a name="ECMAScript"></a>
 
 ## <a name="ecmascript-matching-behavior"></a>Comportement de correspondance ECMAScript
 
@@ -386,10 +352,6 @@ Le comportement des expressions régulières ECMAScript et canoniques diffère d
   |`\0` suivi de 0 à 2 chiffres octaux|Interpréter comme un octal. Par exemple, `\044` est toujours interprété comme une valeur octale et signifie « $ ».|Même comportement.|
   |`\` suivi d'un chiffre entre 1 et 9, non suivi de chiffres décimaux.|Interpréter comme une référence arrière. Par exemple, `\9` signifie toujours référence arrière 9, même si un neuvième groupe de capture n'existe pas. Si le groupe de capture n'existe pas, l'analyseur de l'expression régulière lève une <xref:System.ArgumentException>.|Si un groupe de capture avec chiffre décimal unique existe, effectuer une référence arrière au niveau de ce chiffre. Sinon, interpréter la valeur en tant que littéral.|
   |`\` suivi d'un chiffre entre 1 et 9, suivi de chiffres décimaux supplémentaires.|Interpréter les chiffres en tant que valeur décimale. Si ce groupe de capture existe, interpréter l'expression en tant que référence arrière.<br /><br /> Sinon, interpréter les chiffres octaux de début jusqu'à l'octal 377 ; en d'autres termes, ne prendre en compte que les 8 bits de poids faible de la valeur. Interpréter les autres chiffres comme des littéraux. Par exemple, dans l'expression `\3000`, si le groupe de capture 300 existe, interpréter en tant que référence arrière 300, sinon, interpréter en tant qu'octal 300 suivi de 0.|Interpréter en tant que référence arrière en convertissant autant de chiffres que possible en valeur décimale pouvant faire référence à une capture. Si aucun chiffre ne peut être converti, interpréter en tant qu'octal en utilisant les chiffres octaux de début jusqu'à l'octal 377 ; interpréter les autres chiffres en tant que littéraux.|
-
-[Retour au début](#Top)
-
-<a name="Invariant"></a>
 
 ## <a name="comparison-using-the-invariant-culture"></a>Comparaison utilisant la culture dite indifférente
 

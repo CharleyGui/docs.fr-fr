@@ -1,17 +1,17 @@
 ---
-title: 'Procédure : utiliser le moniker de service Windows Communication Foundation sans inscription'
+title: 'Comment : utiliser le moniker de service Windows Communication Foundation sans inscription'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: 16f428b614fe331faffabab477c6584fb682801d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c08fc362694469560eb7368eb5e536c08ec19bdf
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955242"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975996"
 ---
-# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Procédure : utiliser le moniker de service Windows Communication Foundation sans inscription
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Comment : utiliser le moniker de service Windows Communication Foundation sans inscription
 Pour vous connecter à un service Windows Communication Foundation (WCF) et communiquer avec celui-ci, une application cliente WCF doit avoir les détails de l’adresse du service, de la configuration de liaison et du contrat de service.  
   
  Le moniker de service WCF obtient généralement le contrat requis via l’inscription antérieure des types d’attributs requis, mais il peut y avoir des cas où cela n’est pas possible. À la place de l'inscription, le moniker peut obtenir la définition du contrat sous la forme d'un document WSDL (Web Services Definition Language) en utilisant le paramètre `wsdl` ou par le biais de l'échange de métadonnées en utilisant le paramètre `mexAddress`.  
@@ -24,10 +24,10 @@ Pour vous connecter à un service Windows Communication Foundation (WCF) et comm
 ## <a name="example"></a>Exemple  
  Cet exemple montre l'utilisation du moniker de service avec un contrat MEX. Un service associé au contrat suivant est exposé avec un wsHttpBinding.  
   
-```  
+```csharp
 using System.ServiceModel;  
   
-...  
+// ...
   
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Demo")]  
 public interface IAffiliate  
@@ -45,7 +45,7 @@ public interface IAffiliate
   
  Pour construire un client WCF pour le service distant, l’exemple de chaîne de moniker suivante peut être utilisé.  
   
-```  
+```
 service4:mexAddress="http://servername/Affiliates/service.svc/mex",  
 address="http://servername/Affiliates/service.svc",  
 contract=IAffiliate, contractNamespace=http://Microsoft.ServiceModel.Demo,  
@@ -59,4 +59,4 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Inscrire et configurer un moniker de service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [Guide pratique pour inscrire et configurer un moniker de service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

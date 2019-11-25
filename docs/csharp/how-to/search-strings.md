@@ -1,19 +1,19 @@
 ---
-title: Guide pratique pour faire des recherches dans des chaînes (Guide C#)
+title: Comment rechercher des chaînes (C# Guide)
 ms.date: 02/21/2018
 helpviewer_keywords:
 - searching strings [C#]
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 12fb0e7c9fe02c3438fa989059dbea6238d24104
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4a1eb818dfd8fb48b003ca184dd533f73d342662
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420308"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973107"
 ---
-# <a name="how-to-search-strings"></a>Guide pratique pour faire des recherches dans des chaînes
+# <a name="how-to-search-strings"></a>Comment rechercher des chaînes
 
 Vous pouvez utiliser deux stratégies principales pour rechercher du texte dans des chaînes. Les méthodes de la classe <xref:System.String> recherchent un texte spécifique. Les expressions régulières recherchent des modèles dans du texte.
 
